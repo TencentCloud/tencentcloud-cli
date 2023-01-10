@@ -33,7 +33,7 @@
     "DescribeRoom": {
       "document": "获取房间信息",
       "input": "DescribeRoomRequest",
-      "name": "房间信息",
+      "name": "获取房间信息",
       "output": "DescribeRoomResponse"
     },
     "DescribeRoomStatistics": {
@@ -360,7 +360,7 @@
           "type": "string"
         },
         {
-          "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦",
+          "document": "进入课堂时是否自动连麦。可以有以下取值：\n0 不自动连麦（需要手动申请上麦，默认值）\n1 自动连麦",
           "example": "1",
           "member": "uint64",
           "name": "AutoMic",
@@ -376,7 +376,7 @@
           "type": "int"
         },
         {
-          "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制",
+          "document": "上课后是否禁止自动录制。可以有以下取值：\n0 不禁止录制（自动开启录制，默认值）\n1 禁止录制\n注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
           "example": "1",
           "member": "uint64",
           "name": "DisableRecord",
@@ -540,7 +540,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦",
+          "document": "进入课堂时是否自动连麦。可以有以下取值：\n0 不自动连麦（需要手动申请上麦，默认值）\n1 自动连麦",
           "example": "1",
           "member": "uint64",
           "name": "AutoMic",
@@ -564,7 +564,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制",
+          "document": "上课后是否禁止自动录制。可以有以下取值：\n0 不禁止录制（自动开启录制，默认值）\n1 禁止录制\n注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
           "example": "1",
           "member": "uint64",
           "name": "DisableRecord",

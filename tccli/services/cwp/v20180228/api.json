@@ -18811,7 +18811,6 @@
           "example": "1",
           "member": "uint64",
           "name": "BasicVersionNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18820,7 +18819,6 @@
           "example": "1",
           "member": "uint64",
           "name": "ProVersionNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18829,7 +18827,14 @@
           "example": "0",
           "member": "uint64",
           "name": "UltimateVersionNum",
-          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "普惠版数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "GeneralVersionNum",
           "type": "int",
           "value_allowed_null": false
         },

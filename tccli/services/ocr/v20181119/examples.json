@@ -672,7 +672,7 @@
     ],
     "VerifyOfdVatInvoiceOCR": [
       {
-        "document": "",
+        "document": "ofd发票识别",
         "input": "https://ocr.tencentcloudapi.com/?Action=VerifyOfdVatInvoiceOCR\n&OfdFileUrl=https://xx/a.jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Note\": \"xx\",\n        \"GoodsInfos\": [\n            {\n                \"TaxAmount\": \"xx\",\n                \"Specification\": \"xx\",\n                \"MeasurementDimension\": \"xx\",\n                \"Item\": \"xx\",\n                \"Amount\": \"xx\",\n                \"TaxScheme\": \"xx\",\n                \"Price\": \"xx\",\n                \"Quantity\": \"xx\"\n            }\n        ],\n        \"InvoiceClerk\": \"xx\",\n        \"InvoiceCode\": \"xx\",\n        \"Type\": \"xx\",\n        \"TaxExclusiveTotalAmount\": \"xx\",\n        \"TaxTotalAmount\": \"xx\",\n        \"Seller\": {\n            \"AddrTel\": \"xx\",\n            \"Name\": \"xx\",\n            \"FinancialAccount\": \"xx\",\n            \"TaxId\": \"xx\"\n        },\n        \"TaxInclusiveTotalAmount\": \"xx\",\n        \"Payee\": \"xx\",\n        \"Checker\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaxControlCode\": \"xx\",\n        \"Buyer\": {\n            \"AddrTel\": \"xx\",\n            \"Name\": \"xx\",\n            \"FinancialAccount\": \"xx\",\n            \"TaxId\": \"xx\"\n        },\n        \"IssueDate\": \"xx\",\n        \"InvoiceNumber\": \"xx\",\n        \"InvoiceCheckCode\": \"xx\",\n        \"MachineNumber\": \"xx\"\n    }\n}",
         "title": "OFD发票识别示例代码"

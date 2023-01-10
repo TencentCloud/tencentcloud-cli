@@ -156,6 +156,12 @@
       "name": "查询内容管理接口配额",
       "output": "DescribeContentQuotaResponse"
     },
+    "DescribeDDoSAttackData": {
+      "document": "本接口（DescribeDDoSAttackData）用于查询DDoS攻击时序数据。",
+      "input": "DescribeDDoSAttackDataRequest",
+      "name": "查询DDoS攻击时序数据",
+      "output": "DescribeDDoSAttackDataResponse"
+    },
     "DescribeDDoSAttackTopData": {
       "document": "本接口（DescribeDDoSAttackTopData）用于查询DDoS攻击Top数据。",
       "input": "DescribeDDoSAttackTopDataRequest",
@@ -3432,6 +3438,105 @@
           "example": "无",
           "member": "Quota",
           "name": "PrefetchQuota",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSAttackDataRequest": {
+      "document": "DescribeDDoSAttackData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间。",
+          "example": "2020-04-29T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间。",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计指标列表，取值有：\n<li>ddos_attackMaxBandwidth：攻击带宽峰值；</li>\n<li>ddos_attackMaxPackageRate：攻击包速率峰值 ；</li>\n<li>ddos_attackBandwidth：攻击带宽曲线；</li>\n<li>ddos_attackPackageRate：攻击包速率曲线。</li>",
+          "example": "[\"ddos_attackFlowBandwidth\"]",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "站点集合，不填默认选择全部站点。",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "DDoS策略组ID列表，不填默认选择全部策略ID。",
+          "example": "[123,456]",
+          "member": "int64",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询时间粒度，取值有：\n<li>min：1分钟；</li>\n<li>5min：5分钟；</li>\n<li>hour：1小时；</li>\n<li>day：1天。</li>不填将根据开始时间与结束时间的间隔自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。",
+          "example": "“min”",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据归属地区，取值有：\n<li>overseas：全球（除中国大陆地区）数据；</li>\n<li>mainland：中国大陆地区数据；</li>\n<li>global：全球数据。</li>不填默认取值为global。",
+          "example": "\"overseas\"",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSAttackDataResponse": {
+      "document": "DescribeDDoSAttackData返回参数结构体",
+      "members": [
+        {
+          "document": "查询结果的总条数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DDoS攻击数据内容列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecEntry",
+          "name": "Data",
           "required": true,
           "type": "list",
           "value_allowed_null": true

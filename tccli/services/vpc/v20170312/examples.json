@@ -108,7 +108,7 @@
     ],
     "AssignIpv6CidrBlock": [
       {
-        "document": "",
+        "document": "分配IPv6网段",
         "input": "https://vpc.tencentcloudapi.com/?Action=AssignIpv6CidrBlock\n&VpcId=vpc-rkxd3pgh\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Ipv6CidrBlock\": \"3402:4e00:20:1000::/56\",\n        \"RequestId\": \"75221557-b667-440a-8cfe-ccd1bde2a234\"\n    }\n}",
         "title": "分配IPv6网段"

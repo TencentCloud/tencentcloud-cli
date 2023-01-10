@@ -2812,8 +2812,8 @@
       "document": "AssignIpv6CidrBlock请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。",
+          "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -2827,6 +2827,7 @@
       "members": [
         {
           "document": "分配的 `IPv6` 网段。形如：`3402:4e00:20:1000::/56`",
+          "example": "3402:4e00:20:1000::/56",
           "member": "string",
           "name": "Ipv6CidrBlock",
           "type": "string",
@@ -17307,8 +17308,8 @@
       "document": "IPv6子网段对象。",
       "members": [
         {
-          "default": "",
           "document": "子网实例`ID`。形如：`subnet-pxir56ns`。",
+          "example": "无",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -17316,8 +17317,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "`IPv6`子网段。形如：`3402:4e00:20:1001::/64`",
+          "example": "无",
           "member": "string",
           "name": "Ipv6CidrBlock",
           "required": false,
@@ -23997,7 +23998,6 @@
       "document": "子网对象",
       "members": [
         {
-          "default": "",
           "document": "`VPC`实例`ID`。",
           "example": "vpc-m0c2kcun",
           "member": "string",
@@ -24007,7 +24007,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网实例`ID`，例如：subnet-bthucmmy。",
           "example": "-",
           "member": "string",
@@ -24017,7 +24016,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网名称。",
           "example": "-",
           "member": "string",
@@ -24027,7 +24025,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网的 `IPv4` `CIDR`。",
           "example": "-",
           "member": "string",
@@ -24037,7 +24034,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否默认子网。",
           "example": "-",
           "member": "bool",
@@ -24047,7 +24043,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启广播。",
           "example": "-",
           "member": "bool",
@@ -24057,7 +24052,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区。",
           "example": "-",
           "member": "string",
@@ -24067,7 +24061,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "路由表实例ID，例如：rtb-l2h8d7c2。",
           "example": "-",
           "member": "string",
@@ -24077,7 +24070,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间。",
           "example": "-",
           "member": "string",
@@ -24087,7 +24079,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用`IPv4`数。",
           "example": "-",
           "member": "uint64",
@@ -24097,7 +24088,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网的 `IPv6` `CIDR`。",
           "example": "-",
           "member": "string",
@@ -24107,7 +24097,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关联`ACL`ID",
           "example": "-",
           "member": "string",
@@ -24117,7 +24106,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为 `SNAT` 地址池子网。",
           "example": "-",
           "member": "bool",
@@ -24127,7 +24115,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网`IPv4`总数。",
           "example": "-",
           "member": "uint64",
@@ -24137,7 +24124,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签键值对。",
           "example": "-",
           "member": "Tag",
@@ -24147,7 +24133,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "CDC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cluster-gbo27yc4",
           "member": "string",
@@ -24157,7 +24142,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否是CDC所属子网。0:否 1:是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -24617,7 +24601,6 @@
       "document": "私有网络(VPC)对象。",
       "members": [
         {
-          "default": "",
           "document": "`VPC`名称。",
           "example": "test",
           "member": "string",
@@ -24627,7 +24610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "`VPC`实例`ID`，例如：vpc-azd4dt1c。",
           "example": " vpc-azd4dt1c",
           "member": "string",
@@ -24637,7 +24619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "`VPC`的`IPv4` `CIDR`。",
           "example": "10.0.0.0/16",
           "member": "string",
@@ -24647,7 +24628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否默认`VPC`。",
           "example": " true",
           "member": "bool",
@@ -24657,7 +24637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启组播。",
           "example": "true ",
           "member": "bool",
@@ -24667,7 +24646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间。",
           "example": " 2021-01-03 22:25:45",
           "member": "string",
@@ -24677,7 +24655,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "`DNS`列表。",
           "example": " -",
           "member": "string",
@@ -24687,7 +24664,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "`DHCP`域名选项值。",
           "example": " test",
           "member": "string",
@@ -24697,7 +24673,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "`DHCP`选项集`ID`。",
           "example": " -",
           "member": "string",
@@ -24707,7 +24682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启`DHCP`。",
           "example": " false",
           "member": "bool",
@@ -24717,7 +24691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "`VPC`的`IPv6` `CIDR`。",
           "example": " -",
           "member": "string",
@@ -24727,7 +24700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签键值对",
           "example": "-",
           "member": "Tag",
@@ -24737,7 +24709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "辅助CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "AssistantCidr",

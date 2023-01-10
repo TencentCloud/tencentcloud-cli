@@ -435,6 +435,52 @@
       ],
       "usage": "in"
     },
+    "CFSOptionOverview": {
+      "document": "CFS存储选项概览信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统本地挂载路径。",
+          "example": "/data/",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统远程挂载ip及路径。",
+          "example": "172.0.0.1:/",
+          "member": "string",
+          "name": "RemotePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统协议类型。\n<li>NFS 3.0。\n<li>NFS 4.0。\n<li>TURBO。",
+          "example": "NFS 3.0",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。",
+          "example": "SD",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClusterActivity": {
       "document": "符合条件的集群活动信息。",
       "members": [
@@ -1169,7 +1215,6 @@
       "document": "DescribeClusterStorageOption请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID。",
           "example": "hpc-5lyv94lq",
           "member": "string",
@@ -1183,6 +1228,14 @@
     "DescribeClusterStorageOptionResponse": {
       "document": "DescribeClusterStorageOption返回参数结构体",
       "members": [
+        {
+          "document": "集群存储选项信息概览。",
+          "example": "无",
+          "member": "StorageOptionOverview",
+          "name": "StorageOption",
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1346,6 +1399,42 @@
         }
       ],
       "usage": "in"
+    },
+    "GooseFSOptionOverview": {
+      "document": "GooseFS存储选项概览信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统本地挂载路径。",
+          "example": "/data/",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统远程挂载路径。",
+          "example": "/data/goosefs-fuse/",
+          "member": "string",
+          "name": "RemotePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统master的ip和端口。",
+          "example": "无",
+          "member": "string",
+          "name": "Masters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InstanceChargePrepaid": {
       "document": "描述了实例的计费模式",
@@ -1855,6 +1944,32 @@
         }
       ],
       "usage": "in"
+    },
+    "StorageOptionOverview": {
+      "document": "集群存储选项概览信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "CFS存储选项概览信息列表。",
+          "example": "无",
+          "member": "CFSOptionOverview",
+          "name": "CFSOptions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "GooseFS存储选项概览信息列表。",
+          "example": "无",
+          "member": "GooseFSOptionOverview",
+          "name": "GooseFSOptions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SystemDisk": {
       "document": "描述了操作系统所在块设备即系统盘的信息",

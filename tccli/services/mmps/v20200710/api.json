@@ -102,7 +102,6 @@
       "document": "隐私合规应用信息",
       "members": [
         {
-          "default": "",
           "document": "小程序apiiid",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -112,7 +111,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "小程序应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试小程序",
           "member": "string",
@@ -122,7 +120,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "小程序应用版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "小程序版本",
           "member": "string",
@@ -132,7 +129,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "2",
           "member": "int64",
@@ -142,7 +138,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "小程序隐私诊断报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断报告下载链接",
           "member": "string",
@@ -152,7 +147,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "小程序隐私诊断报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断报告名称",
           "member": "string",
@@ -162,7 +156,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "小程序隐私诊断堆栈报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断堆栈报告下载链接",
           "member": "string",
@@ -172,7 +165,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "小程序隐私诊断堆栈报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断堆栈报告名称",
           "member": "string",
@@ -182,13 +174,39 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "诊断风险项数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
           "name": "HighRiskCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "隐私申明文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "隐私申明文本.txt",
+          "member": "string",
+          "name": "PrivacyTextName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "软件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c7991677cc57d3b9d4974316db0ac4f9f430593f",
+          "member": "string",
+          "name": "SoftwareMD5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "隐私文本MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3bc1efe919a5245f711071373a2b4523",
+          "member": "string",
+          "name": "PrivacyTextMD5",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -198,7 +216,6 @@
       "document": "应用隐私合规诊断任务数据",
       "members": [
         {
-          "default": "",
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
@@ -208,7 +225,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -218,7 +234,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "0:默认值(待检测/待咨询), 1.检测中, 2:待评估, 3:评估中, 4:任务完成/咨询完成, 5:任务失败, 6:咨询中;",
           "example": "0",
           "member": "int64",
@@ -228,7 +243,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "内部错误",
           "member": "string",
@@ -238,7 +252,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务来源,0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "0",
           "member": "int64",
@@ -248,7 +261,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "应用信息",
           "example": " 复杂类型",
           "member": "AppInfoItem",
@@ -258,7 +270,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务启动时间",
           "example": "2021-09-30 10:57:34",
           "member": "string",
@@ -268,7 +279,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务完成时间(更新时间)",
           "example": "2021-10-11 14:53:36",
           "member": "string",
@@ -276,6 +286,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "联系人信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "老王",
+          "member": "string",
+          "name": "ContactName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -11536,7 +11536,6 @@
       "document": "VerifyOfdVatInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "OFD文件的 Url 地址。",
           "example": "http://test.ofd",
           "member": "string",
@@ -11545,7 +11544,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "OFD文件的 Base64 值。\nOfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBase64。",
           "example": "base64",
           "member": "string",
@@ -11560,7 +11558,7 @@
       "document": "VerifyOfdVatInvoiceOCR返回参数结构体",
       "members": [
         {
-          "document": "发票类型\n026:增值税电子普通发票\n028:增值税电子专用发票",
+          "document": "发票类型\n026:增值税电子普通发票\n028:增值税电子专用发票\n010:电子发票（普通发票）\n020:电子发票（增值税专用发票）",
           "example": "026",
           "member": "string",
           "name": "Type",

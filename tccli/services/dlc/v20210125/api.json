@@ -360,6 +360,12 @@
       "name": "上报元数据心跳",
       "output": "ReportHeartbeatMetaDataResponse"
     },
+    "SuspendResumeDataEngine": {
+      "document": "本接口用于控制暂停或恢复数据引擎",
+      "input": "SuspendResumeDataEngineRequest",
+      "name": "暂停或恢复数据引擎",
+      "output": "SuspendResumeDataEngineResponse"
+    },
     "UnbindWorkGroupsFromUser": {
       "document": "解绑用户上的用户组",
       "input": "UnbindWorkGroupsFromUserRequest",
@@ -7021,6 +7027,51 @@
         }
       ],
       "usage": "out"
+    },
+    "SuspendResumeDataEngineRequest": {
+      "document": "SuspendResumeDataEngine请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "虚拟集群名称",
+          "example": "testHouse",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作类型 suspend/resume",
+          "example": "suspend",
+          "member": "string",
+          "name": "Operate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SuspendResumeDataEngineResponse": {
+      "document": "SuspendResumeDataEngine返回参数结构体",
+      "members": [
+        {
+          "document": "虚拟集群详细信息",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TableBaseInfo": {
       "document": "数据表配置信息",

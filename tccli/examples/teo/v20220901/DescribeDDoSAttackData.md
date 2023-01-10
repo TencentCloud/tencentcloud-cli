@@ -6,15 +6,12 @@ Input:
 
 ```
 tccli teo DescribeDDoSAttackData --cli-unfold-argument  \
-    --AttackType UDPFLOOD \
     --MetricNames ddos_attackMaxBandwidth \
-    --ProtocolType udp \
     --Interval min \
     --PolicyIds 1706 \
     --ZoneIds zone-21xfqlh4qjee \
     --StartTime 2022-08-22T00:00:00+00:00 \
     --EndTime 2022-08-23T00:00:00+00:00 \
-    --Port 22 \
     --Area overseas
 ```
 

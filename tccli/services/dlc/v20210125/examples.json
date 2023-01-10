@@ -480,6 +480,14 @@
         "title": "元数据心跳上报"
       }
     ],
+    "SuspendResumeDataEngine": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SuspendResumeDataEngine\n<公共请求参数>\n\n{\n    \"Operate\": \"xx\",\n    \"DataEngineName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngineName\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "UnbindWorkGroupsFromUser": [
       {
         "document": "",

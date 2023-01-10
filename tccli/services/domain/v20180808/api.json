@@ -1380,7 +1380,6 @@
       "document": "获取域名基础信息",
       "members": [
         {
-          "default": "",
           "document": "域名资源ID。",
           "example": "domain-12345",
           "member": "string",
@@ -1390,7 +1389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名名称。",
           "example": "test.com",
           "member": "string",
@@ -1400,7 +1398,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名实名认证状态。\nNotUpload：未实名认证\nInAudit：实名审核中\nApproved：实名审核通过\nReject：实名审核失败\nNoAudit: 无需实名认证",
           "example": "InAudit",
           "member": "string",
@@ -1410,7 +1407,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名实名认证不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "证件照片不清晰",
           "member": "string",
@@ -1420,7 +1416,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "域名命名审核状态。\nNotAudit：命名审核未上传\nPending：命名审核待上传\nAuditing：域名命名审核中\nApproved：域名命名审核通过\nRejected：域名命名审核拒绝",
           "example": "Pending",
           "member": "string",
@@ -1430,7 +1425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名命名审核不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "域名包含非法字符",
           "member": "string",
@@ -1440,7 +1434,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "注册时间。",
           "example": "2020-01-01",
           "member": "string",
@@ -1450,7 +1443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "到期时间",
           "example": "2020-01-01",
           "member": "string",
@@ -1460,8 +1452,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除",
+          "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除\nserverRenewProhibited: 注册局禁止续费\nclientRenewProhobited: 注册商禁止续费",
           "example": "ok",
           "member": "string",
           "name": "DomainStatus",
@@ -1470,7 +1461,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名购买状态。\nok：正常\nRegisterPending：待注册\nRegisterDoing：注册中\nRegisterFailed：注册失败\nAboutToExpire: 即将过期\nRenewPending：已进入续费期，需要进行续费\nRenewDoing：续费中\nRedemptionPending：已进入赎回期，需要进行续费\nRedemptionDoing：赎回中\nTransferPending：待转入中\nTransferTransing：转入中\nTransferFailed：转入失败",
           "example": "ok",
           "member": "string",
@@ -1480,7 +1470,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "注册商类型\nepp: DNSPod, Inc.（烟台帝思普网络科技有限公司）\nqcloud: Tencent Cloud Computing (Beijing) Limited Liability Company（腾讯云计算（北京）有限责任公司）\nyunxun: Guangzhou Yunxun Information Technology Co., Ltd.（广州云讯信息科技有限公司）\nxinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公司）",
           "example": "epp",
           "member": "string",
@@ -1490,7 +1479,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名绑定的ns",
           "example": "[\"new.dnspod.net\", \"oat.dnspod.net\"]",
           "member": "string",
@@ -1500,7 +1488,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "true：开启锁定\nfalse：关闭锁定",
           "example": "false",
           "member": "bool",
@@ -1510,7 +1497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "锁定结束时间",
           "example": "2021-08-31 18:17:32",
           "member": "string",

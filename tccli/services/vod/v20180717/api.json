@@ -13760,6 +13760,30 @@
       ],
       "usage": "in"
     },
+    "DynamicRangeInfo": {
+      "document": "画面动态范围信息。",
+      "members": [
+        {
+          "document": "画面动态范围信息。可取值：\n<li>SDR：Standard Dynamic Range 标准动态范围；</li>\n<li>HDR：High Dynamic Range 高动态范围。</li>",
+          "example": "SDR",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高动态范围类型，当 Type 为 HDR 时有效。目前支持的可取值：\n<li>hdr10：表示 hdr10 标准；</li>\n<li>hlg：表示 hlg 标准。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "HDRType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "EditMediaFileInfo": {
       "document": "编辑点播视频文件信息",
       "members": [
@@ -19082,6 +19106,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "画面动态范围信息。\n<li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>",
+          "example": "无",
+          "member": "DynamicRangeInfo",
+          "name": "DynamicRangeInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22423,7 +22457,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "审核的内容，可选值：\n<li>Media：原始音视频。</li>\n不填或填空数组时，默认为审核 Media。",
+          "document": "审核的内容，可选值：\n<li>Media：原始音视频；</li>\n<li>Cover：封面。</li>\n不填或填空数组时，默认为审核 Media。",
           "example": "无",
           "member": "string",
           "name": "ReviewContents",

@@ -256,6 +256,14 @@
         "title": "查询配额"
       }
     ],
+    "DescribeDDoSAttackData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSAttackData\n<公共请求参数>\n\n{\n    \"MetricNames\": [\n        \"ddos_attackMaxBandwidth\"\n    ],\n    \"Interval\": \"min\",\n    \"PolicyIds\": [\n        1706\n    ],\n    \"ZoneIds\": [\n        \"zone-21xfqlh4qjee\"\n    ],\n    \"StartTime\": \"2022-08-22T00:00:00+00:00\",\n    \"EndTime\": \"2022-08-23T00:00:00+00:00\",\n    \"Area\": \"overseas\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Max\": 100,\n                        \"Metric\": \"ddos_attackMaxBandwidth\",\n                        \"Avg\": 100.0,\n                        \"Detail\": [\n                            {\n                                \"Value\": 100\n                            }\n                        ],\n                        \"Sum\": 100.0\n                    }\n                ],\n                \"Key\": \"ddos_attackMaxBandwidth\"\n            }\n        ],\n        \"RequestId\": \"a79e60f8-34cc-4ee5-a7f9-a24adb572c68\"\n    }\n}",
+        "title": "查询DDoS攻击时序数据"
+      }
+    ],
     "DescribeDDoSAttackTopData": [
       {
         "document": "",
