@@ -1,6 +1,6 @@
 **Example 1: 通过交易ID查询**
 
-
+通过交易ID查询
 
 Input: 
 

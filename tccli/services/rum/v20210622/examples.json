@@ -444,10 +444,16 @@
     ],
     "DescribeScores": [
       {
-        "document": "",
+        "document": "获取首页Score",
         "input": "https://rum.tencentcloudapi.com/?Action=DescribeScores\n&ID=1\n&StartTime=2020011920\n&EndTime=2022051914\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ScoreSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取首页Score"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScores\n<公共请求参数>\n\n{\n    \"EndTime\": \"2021012611\",\n    \"ID\": \"1\",\n    \"StartTime\": \"2021012111\"\n}",
+        "output": "null",
+        "title": "12"
       }
     ],
     "DescribeTawAreas": [

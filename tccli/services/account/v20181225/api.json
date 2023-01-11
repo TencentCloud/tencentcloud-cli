@@ -23,6 +23,12 @@
       "input": "GetBackUpValidateRequest",
       "name": "获取备选校验方式",
       "output": "GetBackUpValidateResponse"
+    },
+    "GetUinByAppId": {
+      "document": "根据appid获取uin",
+      "input": "GetUinByAppIdRequest",
+      "name": "根据appid获取uin",
+      "output": "GetUinByAppIdResponse"
     }
   },
   "metadata": {
@@ -328,6 +334,64 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUinByAppIdRequest": {
+      "document": "GetUinByAppId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号appid",
+          "example": "123",
+          "member": "int64",
+          "name": "Appid",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetUinByAppIdResponse": {
+      "document": "GetUinByAppId返回参数结构体",
+      "members": [
+        {
+          "document": "账号uin",
+          "example": "123",
+          "member": "int64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "账号appid",
+          "example": "123",
+          "member": "int64",
+          "name": "Appid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "账号注册完成时间",
+          "example": "2022-12-15 15:35:40",
+          "member": "string",
+          "name": "AddTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

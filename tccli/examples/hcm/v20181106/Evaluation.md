@@ -7,7 +7,7 @@ Input:
 ```
 tccli hcm Evaluation --cli-unfold-argument  \
     --SessionId s_1596611058609_2868392 \
-    --Url https%3a%2f%2fhcm-test-1255701415.cos.ap-guangzhou.myqcloud.com%2ffcffd312dfa63b06376d0c6fa34a205c.jpg%3fq-sign-algorithm%3dsha1%26q-ak%3dAKIDtU0Z6XdMq136HtP1NQYS4DEcn3JNEoKs%26q-sign-time%3d1547438152%3b1547439952%26q-key-time%3d1547438152%3b1547439952%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d779baa6631bc3ceff42c580678bb5866c2591dbe%26x-cos-security-token%3d673ee4f1d5791b6e65ac0efec0b692983cef672210001
+    --Url xxx
 ```
 
 Output: 

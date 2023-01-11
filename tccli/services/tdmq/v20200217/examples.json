@@ -150,7 +150,7 @@
     ],
     "CreateRocketMQTopic": [
       {
-        "document": "",
+        "document": "创建主题",
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=CreateRocketMQTopic\n&Topic=example-topic\n&Type=Normal\n&Remark=example\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&Namespaces.0=example\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f844f173-93ed-4d89-979e-86e4e1d63b8a\"\n    }\n}",
         "title": "创建主题"

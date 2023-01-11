@@ -5935,40 +5935,40 @@
       "document": "DescribeScores请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "结束时间",
           "example": "2022051914",
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "开始时间",
           "example": "2020011920",
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "1",
           "member": "int64",
           "name": "ID",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "该参数已废弃",
           "example": "1",
           "member": "int64",
           "name": "IsDemo",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5981,9 +5981,9 @@
           "example": "无",
           "member": "ScoreInfo",
           "name": "ScoreSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7271,134 +7271,144 @@
       "document": "project Score分数实体",
       "members": [
         {
-          "default": "",
           "document": "duration",
           "example": "1",
           "member": "string",
           "name": "StaticDuration",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "pv",
           "example": "111",
           "member": "string",
           "name": "PagePv",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "失败",
           "example": "1",
           "member": "string",
           "name": "ApiFail",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "请求",
           "example": "12",
           "member": "string",
           "name": "ApiNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "fail",
           "example": "12",
           "member": "string",
           "name": "StaticFail",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "项目id",
           "example": "1",
           "member": "int64",
           "name": "ProjectID",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "uv",
           "example": "12",
           "member": "string",
           "name": "PageUv",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "请求次数",
           "example": "12",
           "member": "string",
           "name": "ApiDuration",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "分数",
           "example": "90",
           "member": "string",
           "name": "Score",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "error",
           "example": "111",
           "member": "string",
           "name": "PageError",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "num",
           "example": "12",
           "member": "string",
           "name": "StaticNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "num",
           "example": "1",
           "member": "int64",
           "name": "RecordNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "Duration",
           "example": "111",
           "member": "string",
           "name": "PageDuration",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20230111",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

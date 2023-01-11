@@ -43,7 +43,7 @@
       "output": "CreateImageDepositResponse"
     },
     "CreateVideoDeposit": {
-      "document": "用户通过本接口向BTOE写入待存证的视频的原文件或下载URL，BTOE对视频原文件存储后，将其Hash值存证上链，并生成含有电子签章的区块链存证电子凭证。视频文件支持格式：mp4、avi、mkv、mov、flv,wmv,rmvb,3gp；文件大小限制：直接上传原文件不大于5MB，下载URL文件大小不大于200 MB。",
+      "document": "用户通过本接口向BTOE写入待存证的视频的原文件或下载URL，BTOE对视频原文件存储后，将其Hash值存证上链，并生成含有电子签章的区块链存证电子凭证。视频文件支持格式：mp4、avi、mkv、mov、flv,wmv,rmvb,3gp；文件大小限制：直接上传原文件不大于5MB。",
       "input": "CreateVideoDepositRequest",
       "name": "视频文件存证",
       "output": "CreateVideoDepositResponse"
@@ -666,67 +666,67 @@
       "document": "CreateVideoDeposit请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "存证名称(长度最大30)",
           "example": "无",
           "member": "string",
           "name": "EvidenceName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据Base64编码，大小不超过5M",
           "example": "无",
           "member": "string",
           "name": "FileContent",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "带后缀的文件名称，如music.mkv",
           "example": "无",
           "member": "string",
           "name": "FileName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "文件hash",
           "example": "无",
           "member": "string",
           "name": "EvidenceHash",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "业务ID 透传 长度最大不超过64",
           "example": "无",
           "member": "string",
           "name": "BusinessId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
           "example": "0,1,2",
           "member": "uint64",
           "name": "HashType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "存证描述",
           "example": "无",
           "member": "string",
           "name": "EvidenceDescription",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -739,18 +739,18 @@
           "example": "无",
           "member": "string",
           "name": "BusinessId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "请求成功，返回存证编码,用于查询存证后续业务数据",
           "example": "无",
           "member": "string",
           "name": "EvidenceId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

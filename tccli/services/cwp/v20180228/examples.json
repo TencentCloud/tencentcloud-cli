@@ -688,6 +688,14 @@
         "title": "获取高危命令列表"
       }
     ],
+    "DescribeBashEventsNew": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBashEventsNew\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Uuid\": \"02db9a21-78fe-4a4c-b96f-a11bf819a962\",\n                \"Id\": 3148114,\n                \"Quuid\": \"02db9a21-78fe-4a4c-b96f-a11bf819a962\",\n                \"HostIp\": \"192.168.111.28\",\n                \"User\": \"root\",\n                \"Platform\": 4,\n                \"BashCmd\": \"./r3hook_tool moc -var www.test123.com\",\n                \"RuleId\": 0,\n                \"RuleName\": \"sysrule_custom_procmon_1\",\n                \"RuleLevel\": 1,\n                \"Status\": 0,\n                \"CreateTime\": \"2022-09-01 17:28:39\",\n                \"MachineName\": \"v_llzlu恶意请求\",\n                \"DetectBy\": 0,\n                \"Pid\": \"0\",\n                \"Exe\": \"\",\n                \"ModifyTime\": \"0001-01-01 00:00:00\",\n                \"RegexBashCmd\": \"\\\\./r3hook_tool moc -var www\\\\.test123\\\\.com\",\n                \"MachineType\": 0,\n                \"RuleCategory\": 0\n            }\n        ],\n        \"RequestId\": \"c787b780-0a35-4fa5-aca3-db339b9a20e8\",\n        \"TotalCount\": 51315\n    }\n}",
+        "title": "高危命令事件列表"
+      }
+    ],
     "DescribeBashRules": [
       {
         "document": "",

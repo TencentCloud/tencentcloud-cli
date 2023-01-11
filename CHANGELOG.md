@@ -1,3 +1,138 @@
+# Release 3.0.687.1
+
+## 账号中心(account) 版本：2018-12-25
+
+### 第 4 次发布
+
+发布时间：2023-01-12 01:05:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetUinByAppId](http://document.tencentcloudapi.woa.com/document/product/1594/76937)
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 43 次发布
+
+发布时间：2023-01-12 01:18:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBashEventsNew](http://document.tencentcloudapi.woa.com/document/product/296/76938)
+
+新增数据结构：
+
+* [BashEventNew](http://document.tencentcloudapi.woa.com/document/product/296/19867#BashEventNew)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 36 次发布
+
+发布时间：2023-01-12 01:26:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeExtendedServiceAuthInfo](http://document.tencentcloudapi.woa.com/document/product/1595/76940)
+* [ModifyExtendedService](http://document.tencentcloudapi.woa.com/document/product/1595/76939)
+
+新增数据结构：
+
+* [ExtentServiceAuthInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ExtentServiceAuthInfo)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 14 次发布
+
+发布时间：2023-01-12 01:27:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RoomUser](http://document.tencentcloudapi.woa.com/document/product/607/35375#RoomUser)
+
+	* 新增成员：StrUins
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 19 次发布
+
+发布时间：2023-01-12 01:39:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ScoreInfo](http://document.tencentcloudapi.woa.com/document/product/1464/61476#ScoreInfo)
+
+	* 新增成员：CreateTime
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 58 次发布
+
+发布时间：2023-01-12 01:51:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AssignIpv6CidrBlock](http://document.tencentcloudapi.woa.com/document/product/215/34466)
+
+	* 新增入参：ISPType
+
+
+新增数据结构：
+
+* [ISPIPv6CidrBlock](http://document.tencentcloudapi.woa.com/document/product/215/15824#ISPIPv6CidrBlock)
+
+修改数据结构：
+
+* [Subnet](http://document.tencentcloudapi.woa.com/document/product/215/15824#Subnet)
+
+	* 新增成员：Region, ISPType, LocalZone
+
+* [Vpc](http://document.tencentcloudapi.woa.com/document/product/215/15824#Vpc)
+
+	* 新增成员：Region, Ipv6CidrBlockSet
+
+
+
+
 # Release 3.0.686.1
 
 ## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23

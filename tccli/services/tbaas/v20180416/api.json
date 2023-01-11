@@ -2892,58 +2892,58 @@
       "document": "InvokeChainMakerContract请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "网络ID，可在区块链网络详情或列表中获取",
           "example": "251005746bc987bojjue8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "业务链编号，可在业务链列表中获取",
+          "document": "业务链ID，可在网络概览页获取",
           "example": "chain-test",
           "member": "string",
           "name": "ChainId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "合约名称，可在合约管理中获取",
           "example": "test",
           "member": "string",
           "name": "ContractName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "合约方法名",
           "example": "send",
           "member": "string",
           "name": "FuncName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "合约方法入参，json格式字符串，key/value都是string类型的map",
           "example": "{\\\"name\\\":\\\"test\\\"}",
           "member": "string",
           "name": "FuncParam",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否异步执行，1为是，否则为0；如果异步执行，可使用返回值中的交易TxID查询执行结果",
           "example": "1",
           "member": "int64",
           "name": "AsyncFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2956,9 +2956,9 @@
           "example": "无",
           "member": "ChainMakerContractResult",
           "name": "Result",
-          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2973,7 +2973,6 @@
       "document": "InvokeChainMakerDemoContract请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "网络ID，可在区块链网络详情或列表中获取",
           "example": "chainmaker-demo",
           "member": "string",
@@ -2983,8 +2982,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "业务链编号，可在业务链列表中获取",
+          "document": "业务链ID，可在网络概览页获取",
           "example": "chain_test",
           "member": "string",
           "name": "ChainId",
@@ -2993,7 +2991,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "合约名称，可在合约管理中获取",
           "example": "test",
           "member": "string",
@@ -3003,7 +3000,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "合约方法名",
           "example": "send",
           "member": "string",
@@ -3013,7 +3009,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "合约方法入参，json格式字符串，key/value都是string类型的map",
           "example": "{\\\"name\\\":\\\"test\\\"}",
           "member": "string",
@@ -3023,7 +3018,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否异步执行，1为是，否则为0；如果异步执行，可使用返回值中的交易TxID查询执行结果",
           "example": "1",
           "member": "int64",
@@ -3043,7 +3037,6 @@
           "example": "无",
           "member": "ChainMakerContractResult",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3250,7 +3243,6 @@
       "document": "QueryChainMakerBlockTransaction请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "网络ID，可在区块链网络详情或列表中获取",
           "example": "251005746bc987bojjue8",
           "member": "string",
@@ -3260,8 +3252,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "业务链编号，可在业务链列表中获取",
+          "document": "业务链ID，可在网络概览页获取",
           "example": "chain-test",
           "member": "string",
           "name": "ChainId",
@@ -3270,7 +3261,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "区块高度",
           "example": "1",
           "member": "int64",
@@ -3290,7 +3280,6 @@
           "example": "[]",
           "member": "ChainMakerTransactionResult",
           "name": "Result",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3300,7 +3289,6 @@
           "example": "1",
           "member": "int64",
           "name": "BlockHeight",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3310,7 +3298,6 @@
           "example": "1",
           "member": "int64",
           "name": "TxCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3320,7 +3307,6 @@
           "example": "1625572262",
           "member": "int64",
           "name": "BlockTimestamp",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3338,49 +3324,49 @@
       "document": "QueryChainMakerContract请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "网络ID，可在区块链网络详情或列表中获取",
           "example": "251005746bc987bojjue8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "业务链编号，可在业务链列表中获取",
+          "document": "业务链ID，可在网络概览页获取",
           "example": "chain-test",
           "member": "string",
           "name": "ChainId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "合约名称，可在合约管理中获取",
           "example": "test",
           "member": "string",
           "name": "ContractName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "合约方法名",
           "example": "send",
           "member": "string",
           "name": "FuncName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "合约方法入参，json格式字符串，key/value都是string类型的map",
           "example": "{\\\"name\\\":\\\"test\\\"}",
           "member": "string",
           "name": "FuncParam",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3393,9 +3379,9 @@
           "example": "无",
           "member": "ChainMakerContractResult",
           "name": "Result",
-          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3410,7 +3396,6 @@
       "document": "QueryChainMakerDemoBlockTransaction请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "网络ID，可在区块链网络详情或列表中获取",
           "example": "chainmaker-demo",
           "member": "string",
@@ -3420,8 +3405,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "业务链编号，可在业务链列表中获取",
+          "document": "业务链ID，可在网络概览页获取",
           "example": "chain_test",
           "member": "string",
           "name": "ChainId",
@@ -3430,7 +3414,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "区块高度",
           "example": "1",
           "member": "int64",
@@ -3450,7 +3433,6 @@
           "example": "[]",
           "member": "ChainMakerTransactionResult",
           "name": "Result",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3460,7 +3442,6 @@
           "example": "1",
           "member": "int64",
           "name": "BlockHeight",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3470,7 +3451,6 @@
           "example": "1",
           "member": "int64",
           "name": "TxCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3480,7 +3460,6 @@
           "example": "1625572262",
           "member": "int64",
           "name": "BlockTimestamp",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3498,7 +3477,6 @@
       "document": "QueryChainMakerDemoContract请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "网络ID，可在区块链网络详情或列表中获取",
           "example": "chainmaker-demo",
           "member": "string",
@@ -3508,8 +3486,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "业务链编号，可在业务链列表中获取",
+          "document": "业务链ID，可在网络概览页获取",
           "example": "chain_test",
           "member": "string",
           "name": "ChainId",
@@ -3518,7 +3495,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "合约名称，可在合约管理中获取",
           "example": "test",
           "member": "string",
@@ -3528,7 +3504,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "合约方法名",
           "example": "send",
           "member": "string",
@@ -3538,7 +3513,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "合约方法入参，json格式字符串，key/value都是string类型的map",
           "example": "{\\\"name\\\":\\\"test\\\"}",
           "member": "string",
@@ -3558,7 +3532,6 @@
           "example": "无",
           "member": "ChainMakerContractResult",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3576,7 +3549,6 @@
       "document": "QueryChainMakerDemoTransaction请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "网络ID，可在区块链网络详情或列表中获取",
           "example": "chainmaker-demo",
           "member": "string",
@@ -3586,8 +3558,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "业务链编号，可在业务链列表中获取",
+          "document": "业务链ID，可在网络概览页获取",
           "example": "chain_test",
           "member": "string",
           "name": "ChainId",
@@ -3596,7 +3567,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "交易ID，通过调用合约的返回值获取",
           "example": "HHHHHHHHHHHHHH",
           "member": "string",
@@ -3616,7 +3586,6 @@
           "example": "xx",
           "member": "ChainMakerTransactionResult",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3634,31 +3603,31 @@
       "document": "QueryChainMakerTransaction请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "网络ID，可在区块链网络详情或列表中获取",
           "example": "251005746bc987bojjue8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "业务链编号，可在业务链列表中获取",
+          "document": "业务链ID，可在网络概览页获取",
           "example": "chain-test",
           "member": "string",
           "name": "ChainId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "交易ID，通过调用合约的返回值获取",
           "example": "HHHHHHHHHHHHHH",
           "member": "string",
           "name": "TxID",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3671,9 +3640,9 @@
           "example": "xx",
           "member": "ChainMakerTransactionResult",
           "name": "Result",
-          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
