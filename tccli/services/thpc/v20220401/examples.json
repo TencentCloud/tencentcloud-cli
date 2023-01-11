@@ -56,6 +56,14 @@
         "title": "删除节点"
       }
     ],
+    "DescribeAutoScalingConfiguration": [
+      {
+        "document": "查询集群ID为hpc-rv7hahw2的集群弹性伸缩配置信息。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalingConfiguration\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-rv7hahw2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"hpc-rv7hahw2\",\n        \"ExpansionBusyTime\": 120,\n        \"ShrinkIdleTime\": 300,\n        \"QueueConfigs\": [\n            {\n                \"QueueName\": \"compute\",\n                \"MinSize\": 0,\n                \"MaxSize\": 10,\n                \"EnableAutoExpansion\": false,\n                \"EnableAutoShrink\": false,\n                \"ExpansionNodeConfigs\": [\n                    {\n                        \"InstanceType\": \"M5.SMALL8\",\n                        \"Placement\": {\n                            \"Zone\": \"ap-chongqing-1\"\n                        },\n                        \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                        \"InstanceChargePrepaid\": null,\n                        \"VirtualPrivateCloud\": {\n                            \"VpcId\": \"vpc-r9jw2jzv\",\n                            \"SubnetId\": \"subnet-r0zpktae\"\n                        },\n                        \"ImageId\": \"img-l8og963d\",\n                        \"InternetAccessible\": {\n                            \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                            \"InternetMaxBandwidthOut\": 0\n                        },\n                        \"SystemDisk\": {\n                            \"DiskType\": \"CLOUD_BSSD\",\n                            \"DiskSize\": 50\n                        },\n                        \"DataDisks\": null\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"935760b6-2a63-480d-9124-c5f5b9d4218b\"\n    }\n}",
+        "title": "查询扩缩容策略配置"
+      }
+    ],
     "DescribeClusterActivities": [
       {
         "document": "根据集群ID查询集群活动历史记录。",

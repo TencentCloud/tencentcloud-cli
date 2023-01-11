@@ -12,6 +12,12 @@
       "name": "应用合规隐私诊断重试任务",
       "output": "CreateAppScanTaskRepeatResponse"
     },
+    "DescribeChannelTaskReportUrl": {
+      "document": "获取子渠道的App合规诊断任务报告url",
+      "input": "DescribeChannelTaskReportUrlRequest",
+      "name": "获取子渠道应用合规隐私诊断任务报告url",
+      "output": "DescribeChannelTaskReportUrlResponse"
+    },
     "DescribeFileTicket": {
       "document": "获取应用合规文件上传凭证，用于上传诊断文件",
       "input": "DescribeFileTicketRequest",
@@ -613,6 +619,96 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelTaskReportUrlRequest": {
+      "document": "DescribeChannelTaskReportUrl请求参数结构体",
+      "members": [
+        {
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
+          "example": "2",
+          "member": "int64",
+          "name": "Source",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "应用平台, 0:android, 1: iOS，2:小程序",
+          "example": "0",
+          "member": "int64",
+          "name": "Platform",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "任务id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "报告类型, 0:诊断报告, 1:堆栈报告, 2:视频证据(预留), 3:报告json结果",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "子渠道APP MD5值",
+          "example": "无",
+          "member": "string",
+          "name": "AppMD5",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelTaskReportUrlResponse": {
+      "document": "DescribeChannelTaskReportUrl返回参数结构体",
+      "members": [
+        {
+          "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
+          "example": "0",
+          "member": "int64",
+          "name": "Result",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "诊断报告/堆栈信息/报告json结果下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "ReportUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "诊断报告/堆栈/报告json结果的名称",
+          "example": "无",
+          "member": "string",
+          "name": "ReportTitle",
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

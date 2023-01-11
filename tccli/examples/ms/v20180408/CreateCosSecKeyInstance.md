@@ -15,7 +15,7 @@ Output:
     "Response": {
         "CosAppid": 123456,
         "CosBucket": "ms-shield",
-        "CosId": "AKIDzgG3O5Cm9ii31sTgph1XhFISnvKPw0Zi",
+        "CosId": "XXXXzgG3O5Cm9ii31sTgph1XhFISnvKPw0Zi",
         "CosKey": "55VuqLWV4HKvuYom4tYkn6FdXpVoM7hz",
         "CosPrefix": "pctool/123456789/1542613158",
         "CosRegion": "ap-guangzhou",

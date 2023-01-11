@@ -11,6 +11,8 @@ from tccli.exceptions import ConfigurationError, ClientError, ParamError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.facefusion.v20220927 import facefusion_client as facefusion_client_v20220927
+from tencentcloud.facefusion.v20220927 import models as models_v20220927
 from tencentcloud.facefusion.v20181201 import facefusion_client as facefusion_client_v20181201
 from tencentcloud.facefusion.v20181201 import models as models_v20181201
 
@@ -226,11 +228,13 @@ def doFaceFusionLite(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20220927": facefusion_client_v20220927,
     "v20181201": facefusion_client_v20181201,
 
 }
 
 MODELS_MAP = {
+    "v20220927": models_v20220927,
     "v20181201": models_v20181201,
 
 }
@@ -244,6 +248,7 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20220927",
     "v20181201",
 
 ]

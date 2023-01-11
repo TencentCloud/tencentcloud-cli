@@ -42,6 +42,12 @@
       "name": "删除节点",
       "output": "DeleteNodesResponse"
     },
+    "DescribeAutoScalingConfiguration": {
+      "document": "本接口(DescribeAutoScalingConfiguration)用于查询集群弹性伸缩配置信息。本接口仅适用于弹性伸缩类型为THPC_AS的集群。",
+      "input": "DescribeAutoScalingConfigurationRequest",
+      "name": "查询弹性伸缩配置信息",
+      "output": "DescribeAutoScalingConfigurationResponse"
+    },
     "DescribeClusterActivities": {
       "document": "本接口（DescribeClusterActivities）用于查询集群活动历史记录列表。",
       "input": "DescribeClusterActivitiesRequest",
@@ -1148,6 +1154,64 @@
       ],
       "type": "object"
     },
+    "DescribeAutoScalingConfigurationRequest": {
+      "document": "DescribeAutoScalingConfiguration请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。\t",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScalingConfigurationResponse": {
+      "document": "DescribeAutoScalingConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-rv7hahw2",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务连续等待时间，队列的任务处于连续等待的时间。单位秒。",
+          "example": "120",
+          "member": "int64",
+          "name": "ExpansionBusyTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。",
+          "example": "300",
+          "member": "int64",
+          "name": "ShrinkIdleTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩容队列配置概览列表。",
+          "example": "无",
+          "member": "QueueConfigOverview",
+          "name": "QueueConfigs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClusterActivitiesRequest": {
       "document": "DescribeClusterActivities请求参数结构体",
       "members": [
@@ -1363,6 +1427,93 @@
         }
       ],
       "usage": "in"
+    },
+    "ExpansionNodeConfigOverview": {
+      "document": "扩容节点配置信息概览。",
+      "members": [
+        {
+          "document": "节点机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S2.SMALL2",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扩容实例所在的位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "私有网络相关信息配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img-3la7wgnt",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "公网带宽相关信息设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点系统盘配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点数据盘配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "GooseFSOption": {
       "document": "描述GooseFS挂载信息",
@@ -1855,6 +2006,66 @@
         }
       ],
       "usage": "in"
+    },
+    "QueueConfigOverview": {
+      "document": "扩容队列配置概览。",
+      "members": [
+        {
+          "document": "队列名称。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列中弹性节点数量最小值。取值范围0～200。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列中弹性节点数量最大值。取值范围0～200。",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启自动扩容。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoExpansion",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启自动缩容。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoShrink",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩容节点配置信息。",
+          "example": "无",
+          "member": "ExpansionNodeConfigOverview",
+          "name": "ExpansionNodeConfigs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SetAutoScalingConfigurationRequest": {
       "document": "SetAutoScalingConfiguration请求参数结构体",

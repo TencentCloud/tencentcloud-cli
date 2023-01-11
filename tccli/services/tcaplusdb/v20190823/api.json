@@ -2172,6 +2172,15 @@
           "name": "SnapshotName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "批量拉取快照的表格列表",
+          "example": "无",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2678,6 +2687,7 @@
         {
           "default": "",
           "document": "对应于appid",
+          "example": "5674209986",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2691,15 +2701,19 @@
       "members": [
         {
           "document": "RestProxy的状态，0为关闭，1为开启中，2为开启，3为关闭中",
+          "example": "1",
           "member": "uint64",
           "name": "RestProxyStatus",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务",
+          "example": "838418134-44",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

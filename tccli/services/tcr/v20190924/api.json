@@ -1243,7 +1243,6 @@
       "document": "CreateInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "企业版实例名称",
           "example": "tcr-test",
           "member": "string",
@@ -1252,7 +1251,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "企业版实例类型（basic 基础版；standard 标准版；premium 高级版）",
           "example": "basic",
           "member": "string",
@@ -1261,7 +1259,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云标签描述",
           "example": "test",
           "member": "TagSpecification",
@@ -1270,7 +1267,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "实例计费类型，0表示按量计费，1表示预付费，默认为按量计费",
           "example": "1",
           "member": "int64",
@@ -1279,7 +1275,14 @@
           "type": "int"
         },
         {
-          "default": "",
+          "document": "预付费自动续费标识和购买时长",
+          "example": "1 ",
+          "member": "RegistryChargePrepaid",
+          "name": "RegistryChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
           "document": "是否同步TCR云标签至生成的COS Bucket",
           "example": "false",
           "member": "bool",
@@ -1298,7 +1301,6 @@
           "example": "tcr-123456",
           "member": "string",
           "name": "RegistryId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

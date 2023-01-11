@@ -76,6 +76,14 @@
         "title": "重新提交诊断任务(appSha1和PrivacyTextMD5不为空)"
       }
     ],
+    "DescribeChannelTaskReportUrl": [
+      {
+        "document": "获取诊断报告",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannelTaskReportUrl\n<公共请求参数>\n\n{\n    \"Source\": \"2\",\n    \"Platform\": \"0\",\n    \"TaskID\": \"170******340\",\n    \"TaskType\": \"0\",\n    \"ReportType\": \"0\",\n    \"AppMD5\": \"12xxxxxxx03\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5*********3e6\",\n        \"Result\": 0,\n        \"ReportUrl\": \"诊断报告下载链接url\",\n        \"ReportTitle\": \"诊断报告名称\"\n    }\n}",
+        "title": "查询子渠道的App合规诊断任务报告url"
+      }
+    ],
     "DescribeFileTicket": [
       {
         "document": "获取app隐私诊断上传url",

@@ -296,6 +296,7 @@ SERVICE_VERSIONS = {
         "2020-12-22"
     ],
     "facefusion": [
+        "2022-09-27",
         "2018-12-01"
     ],
     "faceid": [

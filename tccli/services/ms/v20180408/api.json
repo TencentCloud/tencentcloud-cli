@@ -7,7 +7,7 @@
       "output": "CreateBindInstanceResponse"
     },
     "CreateCosSecKeyInstance": {
-      "document": "获取云COS文件存储临时密钥，密钥仅限于临时上传文件，有访问限制和时效性。",
+      "document": "获取云COS文件存储临时密钥，密钥仅限于临时上传文件，有访问限制和时效性，请保管好临时密钥。",
       "input": "CreateCosSecKeyInstanceRequest",
       "name": "获取云COS临时密钥",
       "output": "CreateCosSecKeyInstanceResponse"
@@ -683,6 +683,7 @@
         {
           "default": "",
           "document": "地域信息，例如广州：ap-guangzhou，上海：ap-shanghai，默认为广州。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "CosRegion",
           "required": false,
@@ -691,6 +692,7 @@
         {
           "default": "",
           "document": "密钥有效时间，默认为1小时。",
+          "example": "1111",
           "member": "uint64",
           "name": "Duration",
           "required": false,
@@ -704,57 +706,73 @@
       "members": [
         {
           "document": "COS密钥对应的AppId",
+          "example": "123456",
           "member": "uint64",
           "name": "CosAppid",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "COS密钥对应的存储桶名",
+          "example": "ms-shield",
           "member": "string",
           "name": "CosBucket",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "存储桶对应的地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "CosRegion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "密钥过期时间",
+          "example": "3600",
           "member": "uint64",
           "name": "ExpireTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "密钥ID信息",
+          "example": "XXXXzgG3O5Cm9ii31sTgph1XhFISnvKPw0Zi",
           "member": "string",
           "name": "CosId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "密钥KEY信息",
+          "example": "55VuqLWV4HKvuYom4tYkn6FdXpVoM7hz",
           "member": "string",
           "name": "CosKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "密钥TOCKEN信息",
+          "example": "13606435fd46b2765dd01aa4eaf356dfca88817030001",
           "member": "string",
           "name": "CosTocken",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "密钥可访问的文件前缀人。例如：CosPrefix=test/123/666，则该密钥只能操作test/123/666为前缀的文件，例如test/123/666/1.txt",
+          "example": "pctool/123456789/1542613158",
           "member": "string",
           "name": "CosPrefix",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

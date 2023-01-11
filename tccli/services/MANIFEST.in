@@ -199,6 +199,8 @@ include tccli/services/essbasic/v20210526/api.json
 include tccli/services/essbasic/v20210526/examples.json
 include tccli/services/essbasic/v20201222/api.json
 include tccli/services/essbasic/v20201222/examples.json
+include tccli/services/facefusion/v20220927/api.json
+include tccli/services/facefusion/v20220927/examples.json
 include tccli/services/facefusion/v20181201/api.json
 include tccli/services/facefusion/v20181201/examples.json
 include tccli/services/faceid/v20180301/api.json

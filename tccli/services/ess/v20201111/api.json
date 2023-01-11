@@ -1521,6 +1521,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "被抄送人的信息列表。\n注: 此功能为白名单功能，若有需要，请联系电子签客服开白使用。",
+          "example": "无",
+          "member": "CcInfo",
+          "name": "CcInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
