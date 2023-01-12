@@ -534,6 +534,12 @@
       "name": "复制个人版仓库镜像版本",
       "output": "DuplicateImagePersonalResponse"
     },
+    "ListChartRelease": {
+      "document": "获取仓库下的Chart版本信息列表",
+      "input": "ListChartReleaseRequest",
+      "name": "查询Chart版本列表",
+      "output": "ListChartReleaseResponse"
+    },
     "ManageExternalEndpoint": {
       "document": "管理实例公网访问",
       "input": "ManageExternalEndpointRequest",
@@ -842,6 +848,92 @@
         }
       ],
       "type": "object"
+    },
+    "ChartInfo": {
+      "document": "Chart信息",
+      "members": [
+        {
+          "document": "Chart名字",
+          "example": "nginx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "Chart版本信息",
+          "example": "v1.0.0",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "Chart信息描述",
+          "example": "this is description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "Api版本信息",
+          "example": "v1.0",
+          "member": "string",
+          "name": "ApiVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "App版本信息",
+          "example": "v2.0",
+          "member": "string",
+          "name": "AppVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "Url地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UrlList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "创建时间",
+          "example": "2022-01-20T07:04:22Z",
+          "member": "datetime_iso",
+          "name": "Created",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "Chart唯一标识",
+          "example": "8b7349239f79e5d7831a",
+          "member": "string",
+          "name": "Digest",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "CheckInstanceNameRequest": {
       "document": "CheckInstanceName请求参数结构体",
@@ -6045,6 +6137,96 @@
         }
       ],
       "usage": "out"
+    },
+    "ListChartReleaseRequest": {
+      "document": "ListChartRelease请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "命名空间名称",
+          "example": "ns",
+          "member": "string",
+          "name": "NameSpaceName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "Chart仓库名称",
+          "example": "repo",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "是否获取仓库内全部Chart信息",
+          "example": "true",
+          "member": "bool",
+          "name": "All",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "页数，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "每页个数，用于分页，默认20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ListChartReleaseResponse": {
+      "document": "ListChartRelease返回参数结构体",
+      "members": [
+        {
+          "document": "Chart信息列表",
+          "example": "无",
+          "member": "ChartInfo",
+          "name": "Charts",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "Chart总数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ManageExternalEndpointRequest": {
       "document": "ManageExternalEndpoint请求参数结构体",

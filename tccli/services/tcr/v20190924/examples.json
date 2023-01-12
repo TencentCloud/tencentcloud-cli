@@ -718,6 +718,14 @@
         "title": "复制个人版仓库镜像tag"
       }
     ],
+    "ListChartRelease": [
+      {
+        "document": "展示Harbor Chart 仓库列表",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListChartRelease\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"NameSpaceName\": \"chartns\",\n    \"RepositoryName\": \"chartRepo\",\n    \"RegistryId\": \"tcr-xxx\",\n    \"Offset\": 0,\n    \"All\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d76f7a1b-d9e9-4454-b95b\",\n        \"Charts\": [\n            {\n                \"Name\": \"test\",\n                \"Version\": \"v1.0.0\",\n                \"Description\": \"activity-apply\",\n                \"ApiVersion\": \"v1\",\n                \"AppVersion\": \"1.0.1\",\n                \"UrlList\": [\n                    \"charts/activity-apply-v1.0.1.tgz\"\n                ],\n                \"Created\": \"2021-01-20T07:04:22Z\",\n                \"Digest\": \"8b7349239f79e5d7831a1b13csasaxaf2812c29df80\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询Chart仓库信息列表"
+      }
+    ],
     "ManageExternalEndpoint": [
       {
         "document": "",

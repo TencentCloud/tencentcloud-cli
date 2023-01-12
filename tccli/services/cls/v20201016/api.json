@@ -2515,7 +2515,8 @@
           "member": "string",
           "name": "TopicId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2524,7 +2525,8 @@
           "member": "RuleInfo",
           "name": "Rule",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2533,25 +2535,38 @@
           "member": "bool",
           "name": "Status",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段",
+          "document": "内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true\n* false:不包含\n* true:包含",
           "example": "true",
           "member": "bool",
           "name": "IncludeInternalFields",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。",
+          "document": "元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1\n* 0:仅包含开启键值索引的元数据字段\n* 1:包含所有元数据字段\n* 2:不包含任何元数据字段",
           "example": "0",
           "member": "uint64",
           "name": "MetadataFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "自定义日志解析异常存储字段。",
+          "example": "RAWLOG",
+          "member": "string",
+          "name": "CoverageField",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -4079,7 +4094,8 @@
           "member": "string",
           "name": "TopicId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4094,7 +4110,8 @@
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否生效",
@@ -4103,7 +4120,8 @@
           "name": "Status",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "索引配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4112,7 +4130,8 @@
           "name": "Rule",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "索引修改时间，初始值为索引创建时间。",
@@ -4121,25 +4140,38 @@
           "name": "ModifyTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引\n* false:不包含\n* true:包含\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IncludeInternalFields",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "document": "元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引\n* 0:仅包含开启键值索引的元数据字段\n* 1:包含所有元数据字段\n* 2:不包含任何元数据字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "MetadataFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "自定义日志解析异常存储字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ROWLOG",
+          "member": "string",
+          "name": "CoverageField",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4254,16 +4286,6 @@
       "members": [
         {
           "default": "",
-          "document": "要查询的日志主题ID",
-          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
-          "member": "string",
-          "name": "TopicId",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
           "example": "1608794855000",
           "member": "int64",
@@ -4294,6 +4316,16 @@
         },
         {
           "default": "",
+          "document": "要查询的日志主题ID",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
           "document": "时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200",
           "example": "10",
           "member": "int64",
@@ -4301,6 +4333,16 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "要检索分析的日志主题ID列表。TopicId和TopicIds二个参数只能选择其中一个参数进行查询。",
+          "example": "[\"682d0718-07bb-4ec0-9fda-f1e9a2767e0b\"]",
+          "member": "string",
+          "name": "TopicIds",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -4337,6 +4379,16 @@
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "多日志主题检索，各个日志主题信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogTopics",
+          "name": "Topics",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5651,7 +5703,8 @@
           "name": "Time",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5661,7 +5714,8 @@
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5671,7 +5725,8 @@
           "name": "TopicName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5681,7 +5736,8 @@
           "name": "Source",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5691,7 +5747,8 @@
           "name": "FileName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5701,7 +5758,8 @@
           "name": "PkgId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5711,7 +5769,8 @@
           "name": "PkgLogId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5721,7 +5780,8 @@
           "name": "LogJson",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5731,7 +5791,8 @@
           "name": "HostName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -6768,7 +6829,7 @@
         },
         {
           "default": "",
-          "document": "全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段",
+          "document": "内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true\n* false:不包含\n* true:包含",
           "example": "false",
           "member": "bool",
           "name": "IncludeInternalFields",
@@ -6778,7 +6839,7 @@
         },
         {
           "default": "",
-          "document": "元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。",
+          "document": "元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1\n* 0:仅包含开启键值索引的元数据字段\n* 1:包含所有元数据字段\n* 2:不包含任何元数据字段",
           "example": "0",
           "member": "uint64",
           "name": "MetadataFlag",
@@ -7206,6 +7267,34 @@
       ],
       "usage": "both"
     },
+    "MultiTopicSearchInformation": {
+      "document": "多日志主题检索相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "要检索分析的日志主题ID",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时",
+          "example": "context",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
     "NoticeReceiver": {
       "document": "告警通知接收者信息",
       "members": [
@@ -7561,19 +7650,98 @@
       ],
       "usage": "both"
     },
-    "SearchLogRequest": {
-      "document": "SearchLog请求参数结构体",
+    "SearchLogErrors": {
+      "document": "多日志主题检索错误信息",
       "members": [
         {
           "default": "",
-          "document": "要检索分析的日志主题ID",
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "visibility": 1
+          "value_allowed_null": true,
+          "visibility": 2
         },
+        {
+          "default": "",
+          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-45000",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "error",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchLogInfos": {
+      "document": "多日志主题检索topic信息",
+      "members": [
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "存储生命周期",
+          "example": "30",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "冷热边界时间点（ms）",
+          "example": "1671415200000",
+          "member": "int64",
+          "name": "Border",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchLogRequest": {
+      "document": "SearchLog请求参数结构体",
+      "members": [
         {
           "default": "",
           "document": "要检索分析的日志的起始时间，Unix时间戳（毫秒）",
@@ -7596,11 +7764,21 @@
         },
         {
           "default": "",
-          "document": "检索分析语句，最大长度为12KB\n语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a> | <a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句",
+          "document": "检索分析语句，最大长度为12KB\n语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a> | <a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句\n使用*或空字符串可查询所有日志",
           "example": "http_status:200",
           "member": "string",
           "name": "Query",
           "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "要检索分析的日志主题ID",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
           "type": "string",
           "visibility": 1
         },
@@ -7617,7 +7795,7 @@
         {
           "default": "",
           "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时\n注意：\n* 透传该参数时，请勿修改除该参数外的其它参数\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL获取后续结果参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
-          "example": "context",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -7653,6 +7831,16 @@
           "required": false,
           "type": "float",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "要检索分析的日志主题列表信息。TopicId和Topics二个参数只能选择其中一个参数进行查询。",
+          "example": "无",
+          "member": "MultiTopicSearchInformation",
+          "name": "Topics",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -7662,7 +7850,7 @@
       "members": [
         {
           "document": "透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时",
-          "example": "context",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
           "member": "string",
           "name": "Context",
           "required": true,
@@ -7741,6 +7929,16 @@
           "visibility": 1
         },
         {
+          "document": "多日志主题检索，日志主题检索基本信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogTopics",
+          "name": "Topics",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7748,6 +7946,34 @@
         }
       ],
       "type": "object"
+    },
+    "SearchLogTopics": {
+      "document": "多topic检索返回信息",
+      "members": [
+        {
+          "default": "",
+          "document": "多日志主题检索对应的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogErrors",
+          "name": "Errors",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "多日志主题检索各日志主题信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogInfos",
+          "name": "Infos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
     },
     "ShipperInfo": {
       "document": "投递规则",

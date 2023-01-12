@@ -154,7 +154,7 @@
     ],
     "GetFaceIdToken": [
       {
-        "document": "",
+        "document": "获取 SDK 核验 token",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdToken\n<公共请求参数>\n\n{\n    \"CompareLib\": \"BUSINESS\",\n    \"IdCard\": \"xxxxxxxxxxxxxxxxx\",\n    \"Name\": \"xxxxxxxxxxxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"asdasdadasdasd\",\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\n    }\n}",
         "title": "获取token成功"

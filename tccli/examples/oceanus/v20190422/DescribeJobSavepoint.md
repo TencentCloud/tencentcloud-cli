@@ -30,6 +30,7 @@ Output:
                 "Path": "cosn://helloworld-guangzhou-12345/1234567890/100000000006/cql-asdf5678/2/flink-savepoints/savepoint-000000-9085e69e28c4",
                 "Size": 816,
                 "RecordType": 3,
+                "TimeConsuming": 1,
                 "Timeout": 1200,
                 "Description": "作业停止时自动生成的快照"
             }
