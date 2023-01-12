@@ -3666,7 +3666,6 @@
       "document": "CreateRocketMQTopic请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "主题名称，3-64个字符，只能包含字母、数字、“-”及“_”",
           "example": "test",
           "member": "string",
@@ -3675,7 +3674,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主题所在的命名空间，目前支持在单个命名空间下创建主题",
           "example": "无",
           "member": "string",
@@ -3684,8 +3682,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "主题类型，可选值为Normal, GlobalOrder, PartitionedOrder",
+          "document": "主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。",
           "example": "Default",
           "member": "string",
           "name": "Type",
@@ -3693,7 +3690,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
           "member": "string",
@@ -3702,7 +3698,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主题说明，最大128个字符",
           "example": "备注",
           "member": "string",
@@ -3711,7 +3706,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分区数，全局顺序无效",
           "example": "1",
           "member": "int64",

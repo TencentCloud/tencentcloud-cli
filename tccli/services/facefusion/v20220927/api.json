@@ -189,7 +189,7 @@
       "members": [
         {
           "default": "",
-          "document": "活动 ID，请在人脸融合控制台查看。",
+          "document": "活动 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
           "example": "300029",
           "member": "string",
           "name": "ProjectId",
@@ -198,7 +198,7 @@
         },
         {
           "default": "",
-          "document": "素材 ID，请在人脸融合控制台查看。",
+          "document": "素材 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
           "example": "qc_300029_453345_1",
           "member": "string",
           "name": "ModelId",

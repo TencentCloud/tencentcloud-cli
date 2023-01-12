@@ -1,6 +1,6 @@
 **Example 1: 通过交易ID查询长安链体验网络交易**
 
-
+QueryChainMakerDemoTransaction
 
 Input: 
 

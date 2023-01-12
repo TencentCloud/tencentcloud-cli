@@ -19,7 +19,7 @@
       "output": "ContinueMigrateJobResponse"
     },
     "ContinueSyncJob": {
-      "document": "恢复处于暂停中的数据同步任务。",
+      "document": "恢复处于已暂停状态的数据同步任务。",
       "input": "ContinueSyncJobRequest",
       "name": "恢复被暂停的同步任务",
       "output": "ContinueSyncJobResponse"
@@ -1140,7 +1140,6 @@
       "document": "ContinueSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "同步任务id",
           "example": "sync-xxxxxx",
           "member": "string",
@@ -5093,7 +5092,6 @@
       "document": "SkipCheckItem请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
           "member": "string",
@@ -5102,13 +5100,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要跳过校验项的步骤id，需要通过DescribeMigrationCheckJob接口返回StepInfo[i].StepId字段获取，例如：[\"OptimizeCheck\"]",
           "example": "[\"OptimizeCheck\"]",
           "member": "string",
           "name": "StepIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "document": "当出现外键依赖检查导致校验不通过时、可以通过该字段选择是否迁移外键依赖，当StepIds包含ConstraintCheck且该字段值为shield时表示不迁移外键依赖、当StepIds包含ConstraintCheck且值为migrate时表示迁移外键依赖",
+          "example": "shield",
+          "member": "string",
+          "name": "ForeignKeyFlag",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5116,6 +5121,14 @@
     "SkipCheckItemResponse": {
       "document": "SkipCheckItem返回参数结构体",
       "members": [
+        {
+          "document": "跳过的提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "skip item successfully",
+          "member": "string",
+          "name": "Message",
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

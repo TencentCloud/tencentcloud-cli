@@ -198,6 +198,14 @@
         "title": "创建并返回出证报告"
       }
     ],
+    "DescribeExtendedServiceAuthInfo": [
+      {
+        "document": "查询企业扩展服务授权信息",
+        "input": "{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID12344556667777777\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthInfo\": [\n            {\n                \"Name\": \"企业与港澳台居民*签署合同\",\n                \"OperateOn\": 1671692727,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"OVERSEA_SIGN\"\n            },\n            {\n                \"Name\": \"使用手机号验证签署方身份\",\n                \"OperateOn\": 1673331249,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"MOBILE_CHECK_APPROVER\"\n            },\n            {\n                \"Name\": \"企业静默签（自动签署）\",\n                \"OperateOn\": 1672989237,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"AUTO_SIGN\"\n            },\n            {\n                \"Name\": \"下载企业合同/文件\",\n                \"OperateOn\": 1673331721,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"ENABLE\",\n                \"Type\": \"DOWNLOAD_FLOW\"\n            },\n            {\n                \"Name\": \"骑缝章\",\n                \"OperateOn\": 1673331246,\n                \"OperatorOpenId\": \"622201199508023314\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"PAGING_SEAL\"\n            }\n        ],\n        \"RequestId\": \"s1673334710960667881\"\n    }\n}",
+        "title": "查询企业扩展服务授权信息"
+      }
+    ],
     "DescribeFlowDetailInfo": [
       {
         "document": "",
@@ -254,6 +262,26 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDownloadFlowUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2xxxxx1f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8xxxxe9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c5910xxxxaa382cc5ed0e\"\n    },\n    \"DownLoadFlows\": [\n        {\n            \"FlowIdList\": [\n                \"test-flow-id1\",\n                \"test-flow-id2\"\n            ],\n            \"FileName\": \"文件夹1\"\n        },\n        {\n            \"FlowIdList\": [\n                \"test-flow-id3\",\n                \"test-flow-id4\"\n            ],\n            \"FileName\": \"文件夹2\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"DownLoadUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1639587153&code=yDxjKUUgydjf9pxxxx4adWk38k&token=yDxjKxxxpruUuO4zjES4adWk38k&operate=downloadFlow\",\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
         "title": "生成批量下载控制连接地址"
+      }
+    ],
+    "ModifyExtendedService": [
+      {
+        "document": "开通企业静默签署扩展服务",
+        "input": "{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID122344555\"\n    },\n    \"ServiceType\": \"AUTO_SIGN\",\n    \"Operate\": \"CLOSE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OperateUrl\": \"\",\n        \"RequestId\": \"s1673342276656659884\"\n    }\n}",
+        "title": "关闭静默签署"
+      },
+      {
+        "document": "开通企业静默签署扩展服务",
+        "input": "{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID122344555\"\n    },\n    \"ServiceType\": \"AUTO_SIGN\",\n    \"Operate\": \"OPEN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OperateUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=OPEN_SERVER_SIGN&request_token=xxxxx&organizationId=xxxxx&channelType=xxxxx&expired_time=1673428532&login=1&verify=1\",\n        \"RequestId\": \"s1673342132009427709\"\n    }\n}",
+        "title": "开通企业静默签署"
+      },
+      {
+        "document": "开通骑缝章扩展服务",
+        "input": "{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID122344555\"\n    },\n    \"ServiceType\": \"PAGING_SEAL\",\n    \"Operate\": \"OPEN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OperateUrl\": \"\",\n        \"RequestId\": \"s1673342239896659883\"\n    }\n}",
+        "title": "开通骑缝章"
       }
     ],
     "OperateChannelTemplate": [

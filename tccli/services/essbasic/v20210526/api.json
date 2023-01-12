@@ -126,6 +126,12 @@
       "name": "查询出证报告",
       "output": "DescribeChannelFlowEvidenceReportResponse"
     },
+    "DescribeExtendedServiceAuthInfo": {
+      "document": "查询企业扩展服务授权信息，企业经办人需要时企业超管或者法人",
+      "input": "DescribeExtendedServiceAuthInfoRequest",
+      "name": "查询企业扩展服务授权信息",
+      "output": "DescribeExtendedServiceAuthInfoResponse"
+    },
     "DescribeFlowDetailInfo": {
       "document": "此接口（DescribeFlowDetailInfo）用于查询合同(签署流程)的详细信息。",
       "input": "DescribeFlowDetailInfoRequest",
@@ -155,6 +161,12 @@
       "input": "GetDownloadFlowUrlRequest",
       "name": "获取合同（流程）批量下载链接",
       "output": "GetDownloadFlowUrlResponse"
+    },
+    "ModifyExtendedService": {
+      "document": "修改（操作）企业扩展服务 ，企业经办人需要时企业超管或者法人",
+      "input": "ModifyExtendedServiceRequest",
+      "name": "修改企业扩展服务",
+      "output": "ModifyExtendedServiceResponse"
     },
     "OperateChannelTemplate": {
       "document": "此接口（OperateChannelTemplate）用于针对渠道模板库中的模板对子客企业可见性的查询和设置，不会直接分配渠道模板给子客企业。\n1、OperateType=select时：\n查询渠道模板库\n2、OperateType=update或者delete时：\n对子客企业进行模板库中模板可见性的修改、删除操作。",
@@ -2496,6 +2508,40 @@
       ],
       "type": "object"
     },
+    "DescribeExtendedServiceAuthInfoRequest": {
+      "document": "DescribeExtendedServiceAuthInfo请求参数结构体",
+      "members": [
+        {
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtendedServiceAuthInfoResponse": {
+      "document": "DescribeExtendedServiceAuthInfo返回参数结构体",
+      "members": [
+        {
+          "document": "企业扩展服务授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtentServiceAuthInfo",
+          "name": "AuthInfo",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlowDetailInfoRequest": {
       "document": "DescribeFlowDetailInfo请求参数结构体",
       "members": [
@@ -2935,6 +2981,57 @@
         }
       ],
       "usage": "in"
+    },
+    "ExtentServiceAuthInfo": {
+      "document": "企业扩展服务授权信息",
+      "members": [
+        {
+          "document": "扩展服务类型\n  AUTO_SIGN             企业静默签（自动签署）\n  OVERSEA_SIGN          企业与港澳台居民*签署合同\n  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份\n  PAGING_SEAL           骑缝章\n  DOWNLOAD_FLOW         授权渠道下载合同 ",
+          "example": "AUTO_SIGN",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩展服务名称 ",
+          "example": "企业静默签（自动签署）",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务状态 \nENABLE 开启 \nDISABLE 关闭",
+          "example": "DISABLE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最近操作人openid（经办人openid）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorOpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最近操作时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OperateOn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "此结构体 (Filter) 用于描述查询过滤条件。",
@@ -3706,6 +3803,56 @@
           "member": "string",
           "name": "DownLoadUrl",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyExtendedServiceRequest": {
+      "document": "ModifyExtendedService请求参数结构体",
+      "members": [
+        {
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "  扩展服务类型\n  AUTO_SIGN             企业静默签（自动签署）\n  OVERSEA_SIGN          企业与港澳台居民*签署合同\n  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份\n  PAGING_SEAL           骑缝章\n  DOWNLOAD_FLOW         授权渠道下载合同 ",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "操作类型 \nOPEN:开通 \nCLOSE:关闭",
+          "example": "无",
+          "member": "string",
+          "name": "Operate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyExtendedServiceResponse": {
+      "document": "ModifyExtendedService返回参数结构体",
+      "members": [
+        {
+          "document": "操作跳转链接，有效期24小时\n仅当操作类型是 OPEN 且 扩展服务类型是  AUTO_SIGN 或 DOWNLOAD_FLOW 或者 OVERSEA_SIGN 时返回 ，此时需要经办人(操作人)点击链接完成服务开通操作。若开通操作时没有返回跳转链接，表示无需跳转操作，此时会直接开通服务\n\n操作类型是CLOSE时，不会返回此链接，会直接关闭企业该扩展服务",
+          "example": "无",
+          "member": "string",
+          "name": "OperateUrl",
           "type": "string",
           "value_allowed_null": false
         },

@@ -5760,7 +5760,6 @@
       "document": "DescribeScores请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "结束时间",
           "example": "2022051914",
           "member": "string",
@@ -5769,7 +5768,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "开始时间",
           "example": "2020011920",
           "member": "string",
@@ -5778,7 +5776,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "1",
           "member": "int64",
@@ -5787,7 +5784,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "该参数已废弃",
           "example": "1",
           "member": "int64",
@@ -5806,7 +5802,6 @@
           "example": "无",
           "member": "ScoreInfo",
           "name": "ScoreSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7085,7 +7080,6 @@
       "document": "project Score分数实体",
       "members": [
         {
-          "default": "",
           "document": "duration",
           "example": "1",
           "member": "string",
@@ -7095,7 +7089,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "pv",
           "example": "111",
           "member": "string",
@@ -7105,7 +7098,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "失败",
           "example": "1",
           "member": "string",
@@ -7115,7 +7107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "请求",
           "example": "12",
           "member": "string",
@@ -7125,7 +7116,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "fail",
           "example": "12",
           "member": "string",
@@ -7135,7 +7125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目id",
           "example": "1",
           "member": "int64",
@@ -7145,7 +7134,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "uv",
           "example": "12",
           "member": "string",
@@ -7155,7 +7143,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "请求次数",
           "example": "12",
           "member": "string",
@@ -7165,7 +7152,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分数",
           "example": "90",
           "member": "string",
@@ -7175,7 +7161,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "error",
           "example": "111",
           "member": "string",
@@ -7185,7 +7170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "num",
           "example": "12",
           "member": "string",
@@ -7195,7 +7179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "num",
           "example": "1",
           "member": "int64",
@@ -7205,7 +7188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Duration",
           "example": "111",
           "member": "string",
@@ -7213,6 +7195,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20230111",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

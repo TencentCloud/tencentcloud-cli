@@ -5474,6 +5474,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-asoqewkn",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5723,6 +5733,16 @@
           "example": "RESULT_PASSED",
           "member": "string",
           "name": "CheckResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机节点的实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-asoqewkn ",
+          "member": "string",
+          "name": "InstanceId",
           "required": true,
           "type": "string",
           "value_allowed_null": true

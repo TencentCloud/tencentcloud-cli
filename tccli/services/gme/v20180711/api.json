@@ -1719,7 +1719,6 @@
       "document": "DescribeUserInAndOutTime请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用ID",
           "example": "1400440313",
           "member": "int64",
@@ -1728,7 +1727,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "房间ID",
           "example": "12675079",
           "member": "int64",
@@ -1737,7 +1735,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "用户ID",
           "example": "112675079",
           "member": "int64",
@@ -1746,7 +1743,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "字符串类型用户ID",
           "example": "112675079",
           "member": "string",
@@ -1755,7 +1751,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "字符串类型房间ID",
           "example": "12675079",
           "member": "string",
@@ -1774,7 +1769,6 @@
           "example": "无",
           "member": "InOutTimeInfo",
           "name": "InOutList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1783,7 +1777,6 @@
           "example": "2615453",
           "member": "int64",
           "name": "Duration",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1857,11 +1850,11 @@
       "type": "object"
     },
     "InOutTimeInfo": {
-      "document": "用户进出房间信息",
+      "document": "房间内的事件",
       "members": [
         {
-          "default": "",
           "document": "进入房间时间",
+          "example": "无",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -1869,8 +1862,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "退出房间时间",
+          "example": "无",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -2262,7 +2255,6 @@
       "document": "房间内用户信息",
       "members": [
         {
-          "default": "",
           "document": "房间id",
           "example": "1234",
           "member": "uint64",
@@ -2272,7 +2264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "房间里用户uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[123456]",
           "member": "uint64",
@@ -2282,13 +2273,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "字符串房间id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1234\"",
           "member": "string",
           "name": "StrRoomId",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "房间里用户字符串uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1234\"]",
+          "member": "string",
+          "name": "StrUins",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
