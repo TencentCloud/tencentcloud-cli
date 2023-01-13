@@ -150,8 +150,8 @@
     ],
     "CreateClusterVirtualNodePool": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterVirtualNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"Name\": \"vk-nodepoll\",\n    \"SubnetIds\": [\n        \"subnet-abcd1234\"\n    ]\n}",
+        "document": "创建虚拟节点池",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterVirtualNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"Name\": \"vk-nodepoll\",\n    \"SubnetIds\": [\n        \"subnet-abcd1234\"\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-abcd1234\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"NodePoolId\": \"np-abcd1234\",\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
         "title": "创建虚拟节点池"
       }
@@ -1520,7 +1520,7 @@
     ],
     "UpgradeClusterInstances": [
       {
-        "document": "",
+        "document": "给集群的一批work节点进行升级 ",
         "input": "https://tke.tencentcloudapi.com/?Action=UpgradeClusterInstances\n&ClusterId=cls-xxxxxx\n&UpgradeType=reset\n&Operation=create\n&InstanceIds.0=ins-xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "集群节点升级"

@@ -24,6 +24,14 @@
         "title": "策略绑定标签"
       }
     ],
+    "CheckIsPrometheusNewUser": [
+      {
+        "document": "判断用户是否为新用户",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckIsPrometheusNewUser\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "判断用户是否为新用户"
+      }
+    ],
     "CleanGrafanaInstance": [
       {
         "document": "",
@@ -112,12 +120,28 @@
         "title": "创建按量 Prometheus 实例"
       }
     ],
+    "CreatePrometheusRecordRuleYaml": [
+      {
+        "document": "创建新的聚合规则",
+        "input": "https://monitor.tencentcloudapi.com/?Action=CreatePrometheusRecordRuleYaml\n&InstanceId=prom-xxx\n&Content=xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建新的聚合规则"
+      }
+    ],
     "CreatePrometheusScrapeJob": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-abcd1234\",\n    \"AgentId\": \"agent-abcd1234\",\n    \"Config\": \"job_name:xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"job-xxfs\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "创建 Prometheus 抓取任务"
+      }
+    ],
+    "CreatePrometheusTemp": [
+      {
+        "document": "创建一个模板",
+        "input": "https://monitor.tencentcloudapi.com/?Action=CreatePrometheusTemp\n&Template.Name=t1\n&Template.Describe=一个模板\n&Template.ServiceMonitors.0.Name=s\n&Template.ServiceMonitors.0.Config=xx\n&Template.Level=cluster\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TemplateId\": \"temp-xxx\"\n    }\n}",
+        "title": "创建一个模板"
       }
     ],
     "CreateRecordingRule": [
@@ -208,12 +232,36 @@
         "title": "删除告警策略组"
       }
     ],
+    "DeletePrometheusRecordRuleYaml": [
+      {
+        "document": "删除聚合规则",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DeletePrometheusRecordRuleYaml\n&InstanceId=prom-xxx\n&Names.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除聚合规则"
+      }
+    ],
     "DeletePrometheusScrapeJobs": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusScrapeJobs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AgentId\": \"xx\",\n    \"JobIds\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "删除 Prometheus 抓取任务"
+      }
+    ],
+    "DeletePrometheusTemp": [
+      {
+        "document": "删除一个模板实例",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DeletePrometheusTemp\n&TemplateId=temp-xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除一个模板实例"
+      }
+    ],
+    "DeletePrometheusTempSync": [
+      {
+        "document": "解除模板同步",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DeletePrometheusTempSync\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "解除模板同步"
       }
     ],
     "DeleteRecordingRules": [
@@ -514,12 +562,58 @@
         "title": "分页查询产品列表"
       }
     ],
+    "DescribePrometheusAgentInstances": [
+      {
+        "document": "获取关联某集群的实例列表",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribePrometheusAgentInstances\n&ClusterId=cls-xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            \"prome-xxx\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取关联某集群的实例列表"
+      }
+    ],
     "DescribePrometheusAgents": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusAgents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"AgentSet\": [\n            {\n                \"AgentId\": \"xx\",\n                \"Name\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"HeartbeatTime\": \"xx\",\n                \"Ipv4\": \"xx\",\n                \"LastError\": \"xx\",\n                \"AgentVersion\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 12\n    }\n}",
         "title": "列出 Prometheus Agent"
+      }
+    ],
+    "DescribePrometheusAlertPolicy": [
+      {
+        "document": "告警列表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusAlertPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Type\": \"xx\",\n            \"Key\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AlertRules\": [\n            {\n                \"Name\": \"xx\",\n                \"Rules\": [\n                    {\n                        \"Describe\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"For\": \"xx\",\n                        \"Labels\": [\n                            {}\n                        ],\n                        \"Rule\": \"xx\",\n                        \"Template\": \"xx\",\n                        \"Annotations\": [\n                            {}\n                        ]\n                    }\n                ],\n                \"Notification\": {\n                    \"AlertManager\": {\n                        \"Url\": \"xx\",\n                        \"ClusterId\": \"xx\",\n                        \"ClusterType\": \"xx\"\n                    },\n                    \"RepeatInterval\": \"xx\",\n                    \"WebHook\": \"xx\",\n                    \"Enabled\": true,\n                    \"PhoneNotifyOrder\": [\n                        1\n                    ],\n                    \"PhoneInnerInterval\": 0,\n                    \"PhoneCircleInterval\": 0,\n                    \"NotifyWay\": [\n                        \"xx\"\n                    ],\n                    \"ReceiverGroups\": [\n                        1\n                    ],\n                    \"PhoneArriveNotice\": true,\n                    \"PhoneCircleTimes\": 0,\n                    \"TimeRangeStart\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"TimeRangeEnd\": \"xx\"\n                },\n                \"TemplateId\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"UpdatedAt\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "告警列表"
+      }
+    ],
+    "DescribePrometheusConfig": [
+      {
+        "document": "拉取prometheus配置",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribePrometheusConfig\r\n&InstanceId=prom-xxx\r\n&ClusterType=tke\r\n&ClusterId=cls-xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "拉取prometheus配置"
+      }
+    ],
+    "DescribePrometheusInstanceDetail": [
+      {
+        "document": "查询TMP实例详情",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstanceDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceStatus\": 0,\n        \"VpcId\": \"xx\",\n        \"AutoRenewFlag\": 0,\n        \"InstanceId\": \"xx\",\n        \"ExpireTime\": \"xx\",\n        \"SpecName\": \"xx\",\n        \"InstanceChargeType\": 0,\n        \"RequestId\": \"xx\",\n        \"EnableGrafana\": 0,\n        \"DataRetentionTime\": 0,\n        \"GrafanaURL\": \"xx\",\n        \"SubnetId\": \"xx\",\n        \"InstanceName\": \"xx\",\n        \"ChargeStatus\": 0\n    }\n}",
+        "title": "查询TMP实例详情"
+      }
+    ],
+    "DescribePrometheusInstanceInitStatus": [
+      {
+        "document": "获取2.0实例初始化任务状态",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstanceInitStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-7vp71ppt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"EksClusterId\": \"xx\",\n        \"Steps\": [\n            {\n                \"StartAt\": \"xx\",\n                \"Step\": \"xx\",\n                \"LifeState\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取2.0实例初始化任务状态"
+      },
+      {
+        "document": "获取初始化任务状态",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstanceInitStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"EksClusterId\": \"xx\",\n        \"Steps\": [\n            {\n                \"StartAt\": \"xx\",\n                \"Step\": \"xx\",\n                \"LifeState\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取初始化任务状态"
       }
     ],
     "DescribePrometheusInstanceUsage": [
@@ -538,12 +632,52 @@
         "title": "查看 Prometheus 实例列表"
       }
     ],
+    "DescribePrometheusInstancesOverview": [
+      {
+        "document": "获取实例列表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstancesOverview\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Type\": \"xx\",\n            \"Key\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"InstanceStatus\": 0,\n                \"BoundNormal\": 0,\n                \"VpcId\": \"xx\",\n                \"AutoRenewFlag\": 0,\n                \"InstanceId\": \"xx\",\n                \"BoundTotal\": 0,\n                \"ExpireTime\": \"xx\",\n                \"SpecName\": \"xx\",\n                \"InstanceChargeType\": 0,\n                \"EnableGrafana\": 0,\n                \"DataRetentionTime\": 0,\n                \"GrafanaURL\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"InstanceName\": \"xx\",\n                \"ChargeStatus\": 0\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取实例列表"
+      }
+    ],
+    "DescribePrometheusRecordRuleYaml": [
+      {
+        "document": "拉取聚合规则列表",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribePrometheusRecordRuleYaml\n&InstanceId=prom-xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "拉取聚合规则列表"
+      }
+    ],
+    "DescribePrometheusRecordRules": [
+      {
+        "document": "拉取聚合规则",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusRecordRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Content\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"Name\": \"xx\",\n                \"TemplateId\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取聚合规则"
+      }
+    ],
     "DescribePrometheusScrapeJobs": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusScrapeJobs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AgentId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"ScrapeJobSet\": [\n            {\n                \"AgentId\": \"xx\",\n                \"Config\": \"xx\",\n                \"Name\": \"xx\",\n                \"JobId\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "列出 Prometheus 抓取任务"
+      }
+    ],
+    "DescribePrometheusTemp": [
+      {
+        "document": "拉取模板列表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusTemp\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Type\": \"xx\",\n            \"Key\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"RecordRules\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"TemplateId\": \"xx\"\n                    }\n                ],\n                \"Version\": \"xx\",\n                \"Name\": \"xx\",\n                \"Level\": \"xx\",\n                \"Describe\": \"xx\",\n                \"TargetsTotal\": 0,\n                \"RawJobs\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"TemplateId\": \"xx\"\n                    }\n                ],\n                \"PodMonitors\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"TemplateId\": \"xx\"\n                    }\n                ],\n                \"TemplateId\": \"xx\",\n                \"AlertDetailRules\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Rules\": [\n                            {\n                                \"Describe\": \"xx\",\n                                \"Name\": \"xx\",\n                                \"For\": \"xx\",\n                                \"Labels\": [\n                                    {}\n                                ],\n                                \"Rule\": \"xx\",\n                                \"Template\": \"xx\",\n                                \"Annotations\": [\n                                    {}\n                                ]\n                            }\n                        ],\n                        \"Notification\": {\n                            \"AlertManager\": {\n                                \"Url\": \"xx\",\n                                \"ClusterId\": \"xx\",\n                                \"ClusterType\": \"xx\"\n                            },\n                            \"RepeatInterval\": \"xx\",\n                            \"WebHook\": \"xx\",\n                            \"Enabled\": true,\n                            \"PhoneNotifyOrder\": [\n                                1\n                            ],\n                            \"PhoneInnerInterval\": 0,\n                            \"PhoneCircleInterval\": 0,\n                            \"NotifyWay\": [\n                                \"xx\"\n                            ],\n                            \"ReceiverGroups\": [\n                                \"xx\"\n                            ],\n                            \"PhoneArriveNotice\": true,\n                            \"PhoneCircleTimes\": 0,\n                            \"TimeRangeStart\": \"xx\",\n                            \"Type\": \"xx\",\n                            \"TimeRangeEnd\": \"xx\"\n                        },\n                        \"TemplateId\": \"xx\",\n                        \"ClusterId\": \"xx\",\n                        \"UpdatedAt\": \"xx\",\n                        \"Id\": \"xx\"\n                    }\n                ],\n                \"IsDefault\": true,\n                \"ServiceMonitors\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"TemplateId\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取模板列表"
+      }
+    ],
+    "DescribePrometheusTempSync": [
+      {
+        "document": "拉取同步目标",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribePrometheusTempSync\n&TemplateId=\"temp-xxx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Targets\": [\n            {\n                \"Region\": \"ap-shanghai\",\n                \"InstanceId\": \"prom-xxx\",\n                \"ClusterId\": \"xxx\",\n                \"SyncTime\": \"2020-02-2\"\n            }\n        ]\n    }\n}",
+        "title": "拉取同步目标"
       }
     ],
     "DescribePrometheusZones": [
@@ -734,6 +868,22 @@
         "title": "修改 Prometheus 实例相关属性"
       }
     ],
+    "ModifyPrometheusRecordRuleYaml": [
+      {
+        "document": "修改聚合规则",
+        "input": "https://monitor.tencentcloudapi.com/?Action=ModifyPrometheusRecordRuleYaml\n&InstanceId=prom-xxx\n&Name=sss\n&Content=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改聚合规则"
+      }
+    ],
+    "ModifyPrometheusTemp": [
+      {
+        "document": "修改模板描述",
+        "input": "https://monitor.tencentcloudapi.com/?Action=ModifyPrometheusTemp\n&TemplateId=temp-xxx\n&Template.Describe=一个模板\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改模板描述"
+      }
+    ],
     "PutMonitorData": [
       {
         "document": "",
@@ -750,6 +900,14 @@
         "title": "恢复 Grafana 实例"
       }
     ],
+    "RunPrometheusInstance": [
+      {
+        "document": "初始化实例",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunPrometheusInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "初始化实例"
+      }
+    ],
     "SendCustomAlarmMsg": [
       {
         "document": "发送自定义消息告警",
@@ -764,6 +922,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetDefaultAlarmPolicy\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"PolicyId\": \"policy-jfg9hg2g2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"29ghj2hh-45-h53h234h-23\"\n    }\n}",
         "title": "设为默认告警策略"
+      }
+    ],
+    "SyncPrometheusTemp": [
+      {
+        "document": "同步模板到实例",
+        "input": "https://monitor.tencentcloudapi.com/?Action=SyncPrometheusTemp\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "同步模板到实例"
       }
     ],
     "TerminatePrometheusInstances": [

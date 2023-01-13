@@ -30,6 +30,12 @@
       "name": "删除房间",
       "output": "DeleteRoomResponse"
     },
+    "DescribeAppDetail": {
+      "document": "获取应用详情",
+      "input": "DescribeAppDetailRequest",
+      "name": "获取应用详情",
+      "output": "DescribeAppDetailResponse"
+    },
     "DescribeRoom": {
       "document": "获取房间信息",
       "input": "DescribeRoomRequest",
@@ -456,6 +462,23 @@
     },
     "DeleteRoomResponse": {
       "document": "DeleteRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppDetailRequest": {
+      "document": "DescribeAppDetail请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAppDetailResponse": {
+      "document": "DescribeAppDetail返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -967,10 +990,18 @@
           "type": "int"
         },
         {
-          "document": "回调地址。端口目前仅支持80、443",
+          "document": "回调地址。",
           "example": "abc",
           "member": "string",
           "name": "Callback",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "回调key。",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackKey",
           "required": false,
           "type": "string"
         }

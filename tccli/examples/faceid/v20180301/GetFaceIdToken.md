@@ -1,6 +1,6 @@
 **Example 1: 获取token成功**
 
-
+获取 SDK 核验 token
 
 Input: 
 

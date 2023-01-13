@@ -7095,6 +7095,24 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据库代理 IP 。",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "ProxyVips",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据库代理 ID 。",
+          "example": "[\"proxynode-xxxx\"]",
+          "member": "string",
+          "name": "ProxyIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

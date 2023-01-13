@@ -10030,9 +10030,8 @@
       "document": "计费资源",
       "members": [
         {
-          "default": "",
           "document": "资源 ID。",
-          "example": "edgeone-xxx",
+          "example": "edgeone-2cnw94j16y39",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -10040,7 +10039,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "付费模式，取值有：\n<li>0：后付费。</li>",
           "example": "0",
           "member": "int64",
@@ -10050,7 +10048,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -10060,7 +10057,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生效时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -10070,7 +10066,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "失效时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -10080,7 +10075,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "套餐状态，取值有：\n<li>normal：正常；</li>\n<li>isolated：隔离；</li>\n<li>destroyed：销毁。</li>",
           "example": "normal",
           "member": "string",
@@ -10090,7 +10084,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "询价参数。",
           "example": "无",
           "member": "Sv",
@@ -10100,7 +10093,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否自动续费，取值有：\n<li>0：默认状态；</li>\n<li>1：自动续费；</li>\n<li>2：不自动续费。</li>",
           "example": "1",
           "member": "int64",
@@ -10110,9 +10102,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "套餐关联资源 ID。",
-          "example": "edgeone-xxx",
+          "example": "edgeone-2cnw94j16y39",
           "member": "string",
           "name": "PlanId",
           "required": true,
@@ -10120,8 +10111,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "地域，取值有：\n<li>mainland：国内；</li>\n<li>overseas：海外。</li>",
+          "document": "地域，取值有：\n<li>mainland：国内；</li>\n<li>overseas：海外。</li>\n<li>global：全球。</li>",
           "example": "mainland",
           "member": "string",
           "name": "Area",
@@ -11844,7 +11834,6 @@
       "document": "询价参数",
       "members": [
         {
-          "default": "",
           "document": "询价参数键。",
           "example": "sv_xxx",
           "member": "string",
@@ -11854,7 +11843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "询价参数值。",
           "example": "1",
           "member": "string",
@@ -11864,7 +11852,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "SwitchConfig": {
       "document": "功能总开关",

@@ -7934,8 +7934,8 @@
       "document": "IP封堵记录",
       "members": [
         {
-          "default": "",
           "document": "IP",
+          "example": "无",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -7943,8 +7943,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态（Blocked：被封堵；UnBlocking：解封中；UnBlockFailed：解封失败）",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -7952,8 +7952,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "封堵时间",
+          "example": "无",
           "member": "datetime",
           "name": "BlockTime",
           "required": true,
@@ -7961,8 +7961,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "解封时间（预计解封时间）",
+          "example": "无",
           "member": "datetime",
           "name": "UnBlockTime",
           "required": true,
@@ -7970,12 +7970,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "解封类型（user：自助解封；auto：自动解封； update：升级解封；bind：绑定高防包解封）",
+          "example": "无",
           "member": "string",
           "name": "ActionType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高防标记，0：非高防，1：高防",
+          "example": "10000",
+          "member": "uint64",
+          "name": "ProtectFlag",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

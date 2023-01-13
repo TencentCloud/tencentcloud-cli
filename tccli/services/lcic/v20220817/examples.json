@@ -40,6 +40,14 @@
         "title": "删除房间"
       }
     ],
+    "DescribeAppDetail": [
+      {
+        "document": "获取应用配置",
+        "input": "{\n    \"ApplicationId\": \"3028839\",\n    \"DeveloperId\": \"db5bb499-8691-463f-ac64-1a48f80d968a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9dfae8e8a8c5e4b27b7abf37caa2e5bf\"\n    }\n}",
+        "title": "获取应用配置"
+      }
+    ],
     "DescribeRoom": [
       {
         "document": "获取课堂房间信息",

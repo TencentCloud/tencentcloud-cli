@@ -337,7 +337,7 @@
       "output": "DescribeListBGPIPInstancesResponse"
     },
     "DescribeListBGPInstances": {
-      "document": "获取高防包资产实例列表\n",
+      "document": "获取高防包资产实例列表",
       "input": "DescribeListBGPInstancesRequest",
       "name": "获取高防包资产实例列表",
       "output": "DescribeListBGPInstancesResponse"
@@ -1210,7 +1210,6 @@
       "document": "高防包资产实例信息",
       "members": [
         {
-          "default": "",
           "document": "资产实例的详细信息",
           "example": "{\"EipList\":[\"175.27.164.158\"],\"InstanceId\":\"bgp-0000015a\"}",
           "member": "InstanceRelation",
@@ -1220,7 +1219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例的规格信息",
           "example": "{\"ProtectBandwidth\":30000,\"ProtectCountLimit\":10,\"ProtectIPNumbe",
           "member": "BGPInstanceSpecification",
@@ -1230,7 +1228,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例的使用统计信息",
           "example": "{\"ProtectCountUsage\":0,\"ProtectIPNumberUsage\":1,\"Last7DayAttackC",
           "member": "BGPInstanceUsages",
@@ -1240,7 +1237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例所在的地域",
           "example": "{\"Region\":\"ap-nanjing\"}",
           "member": "RegionInfo",
@@ -1250,7 +1246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例的防护状态，状态码如下：\n\"idle\"：正常状态(无攻击)\n\"attacking\"：攻击中\n\"blocking\"：封堵中\n\"creating\"：创建中\n\"deblocking\"：解封中\n\"isolate\"：回收隔离中",
           "example": "idle",
           "member": "string",
@@ -1260,7 +1255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "购买时间",
           "example": "2021-04-25 23:04:10",
           "member": "datetime",
@@ -1270,7 +1264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "到期时间",
           "example": "2021-07-25 23:04:10",
           "member": "datetime",
@@ -1280,7 +1273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例的名称",
           "example": "“”",
           "member": "string",
@@ -1290,7 +1282,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例所属的套餐包信息，\n注意：当资产实例不是套餐包的实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "PackInfo",
@@ -1300,7 +1291,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高防包绑定的EIP属于的云产品信息",
           "example": "[{\"Ip\":\"175.27.164.158\",\"BizType\":\"public\",\"DeviceType\":\"cvm\",\"I",
           "member": "EipProductInfo",
@@ -1310,7 +1300,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "高防包绑定状态，取值[\n\"idle\"：绑定已完成\n \"bounding\"：正在绑定中\n\"failed\"：绑定失败\n]",
           "example": "idle",
           "member": "string",
@@ -1320,7 +1309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "四层防护严格级别",
           "example": "defalut",
           "member": "string",
@@ -1330,7 +1318,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "CC防护开关",
           "example": "1",
           "member": "int64",
@@ -1340,7 +1327,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源关联标签",
           "example": "null",
           "member": "TagInfo",
@@ -1350,7 +1336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "新版本1ip高防包",
           "example": "1",
           "member": "uint64",
@@ -1360,7 +1345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "攻击封堵套餐标记",
           "example": "1",
           "member": "uint64",
@@ -1370,7 +1354,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "网络线路\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1380,7 +1363,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "弹性业务带宽开关",
           "example": "1",
           "member": "uint64",
@@ -5927,7 +5909,6 @@
       "document": "DescribeListBGPInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "0",
           "member": "uint64",
@@ -5936,7 +5917,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "一页条数，当Limit=0时，默认一页条数为20;最大取值为100",
           "example": "25",
           "member": "uint64",
@@ -5945,7 +5925,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "IP搜索",
           "example": "1.1.1.1",
           "member": "string",
@@ -5954,7 +5933,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资产实例ID搜索，例如，bgp-00000001",
           "example": "bgp-00000001",
           "member": "string",
@@ -5963,7 +5941,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "地域搜索，例如，ap-guangzhou",
           "example": "ap-guangzhou",
           "member": "string",
@@ -5972,7 +5949,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "名称搜索",
           "example": "test",
           "member": "string",
@@ -5981,7 +5957,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "按照线路搜索, 1: BGP; 2: 三网",
           "example": "1",
           "member": "uint64",
@@ -5990,7 +5965,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中",
           "example": "attacking",
           "member": "string",
@@ -5999,7 +5973,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "高防包绑定状态搜索，bounding：绑定中； failed：绑定失败",
           "example": "bounding",
           "member": "string",
@@ -6008,7 +5981,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例id数组",
           "example": "[bgp-00000001]",
           "member": "string",
@@ -6017,8 +5989,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "企业版搜索",
+          "document": "企业版搜索,  1：包含重保护航套餐下的企业版列表, 2: 不包含重保护航套餐的企业版列表",
           "example": "1",
           "member": "uint64",
           "name": "FilterEnterpriseFlag",
@@ -6026,7 +5997,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "轻量版搜索",
           "example": "1",
           "member": "uint64",
@@ -6035,7 +6005,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "定制版搜索",
           "example": "1",
           "member": "uint64",
@@ -6044,7 +6013,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签搜索",
           "example": "无",
           "member": "TagFilter",
@@ -6053,7 +6021,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "试用资源搜索，1: 应急防护资源；2：PLG试用资源",
           "example": "1",
           "member": "uint64",
@@ -6062,13 +6029,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "重保护航搜索",
           "example": "1",
           "member": "uint64",
           "name": "FilterConvoy",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "默认false；接口传true，返回数据中不包含高级信息，高级信息包含：InstanceList[0].Usage。",
+          "example": "false",
+          "member": "bool",
+          "name": "ExcludeAdvancedInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6081,7 +6055,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6090,7 +6063,6 @@
           "example": "无",
           "member": "BGPInstance",
           "name": "InstanceList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8681,6 +8653,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被动探测配置状态，0： 正常，1：配置中，2：配置失败",
+          "example": "无",
+          "member": "uint64",
+          "name": "PassiveStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9667,7 +9649,6 @@
       "document": "L7规则",
       "members": [
         {
-          "default": "",
           "document": "转发协议，取值[http, https]",
           "example": "无",
           "member": "string",
@@ -9677,7 +9658,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发域名",
           "example": "无",
           "member": "string",
@@ -9687,7 +9667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "负载均衡方式，取值[1(加权轮询)]",
           "example": "无",
           "member": "uint64",
@@ -9697,7 +9676,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
           "example": "无",
           "member": "uint64",
@@ -9707,7 +9685,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "会话保持时间，单位秒",
           "example": "无",
           "member": "uint64",
@@ -9717,7 +9694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
           "example": "无",
           "member": "uint64",
@@ -9727,7 +9703,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "回源列表",
           "example": "无",
           "member": "L4RuleSource",
@@ -9737,7 +9712,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "区域码",
           "example": "无",
           "member": "uint64",
@@ -9747,7 +9721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源Id",
           "example": "无",
           "member": "string",
@@ -9757,7 +9730,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源Ip",
           "example": "无",
           "member": "string",
@@ -9767,7 +9739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
           "example": "无",
           "member": "string",
@@ -9777,7 +9748,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则描述",
           "example": "无",
           "member": "string",
@@ -9787,7 +9757,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
           "example": "无",
           "member": "uint64",
@@ -9797,7 +9766,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
           "example": "无",
           "member": "string",
@@ -9807,7 +9775,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
           "example": "无",
           "member": "string",
@@ -9817,7 +9784,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
           "example": "无",
           "member": "string",
@@ -9827,7 +9793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则状态，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
           "example": "无",
           "member": "uint64",
@@ -9837,7 +9802,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cc防护状态，取值[0(关闭), 1(开启)]",
           "example": "无",
           "member": "uint64",
@@ -9847,7 +9811,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]",
           "example": "无",
           "member": "uint64",
@@ -9857,7 +9820,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "HTTPS协议的CC防护阈值",
           "example": "无",
           "member": "uint64",
@@ -9867,7 +9829,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "HTTPS协议的CC防护等级",
           "example": "无",
           "member": "string",
@@ -9877,7 +9838,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "修改时间",
           "example": "无",
           "member": "datetime",
@@ -9887,7 +9847,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭",
           "example": "无",
           "member": "uint64",
@@ -9897,7 +9856,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -9907,7 +9865,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "http强制跳转https，1表示打开，0表示关闭",
           "example": "无",
           "member": "uint64",
@@ -9917,7 +9874,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则配置失败时的详细错误原因(仅当Status=2时有效)，1001证书不存在，1002证书获取失败，1003证书上传失败，1004证书已过期",
           "example": "无",
           "member": "uint64",
@@ -9927,7 +9883,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",

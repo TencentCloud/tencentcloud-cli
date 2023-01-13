@@ -127,10 +127,16 @@
       "output": "RecognizeCarProResponse"
     },
     "SearchImage": {
-      "document": "本接口用于对一张图片，在指定图片库中检索出与之相似的图片列表。\n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n",
+      "document": "本接口用于对一张图片，在指定图片库中检索出与之相似的图片列表。\n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n\n",
       "input": "SearchImageRequest",
       "name": "检索图片",
       "output": "SearchImageResponse"
+    },
+    "UpdateImage": {
+      "document": "本接口支持根据图库ID、物品ID、图片名称来修改图片信息（暂仅支持修改Tags）\n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n\n",
+      "input": "UpdateImageRequest",
+      "name": "更新图片",
+      "output": "UpdateImageResponse"
     }
   },
   "metadata": {
@@ -2751,6 +2757,60 @@
           "type": "object",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateImageRequest": {
+      "document": "UpdateImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图库ID。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物品ID，最多支持64个字符。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "EntityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片名称，最多支持64个字符。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "PicName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的自定义标签，最多不超过10个，格式为JSON。",
+          "example": "{}",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateImageResponse": {
+      "document": "UpdateImage返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

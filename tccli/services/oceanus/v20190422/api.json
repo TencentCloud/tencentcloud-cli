@@ -3386,123 +3386,129 @@
       "document": "描述Savepoint信息",
       "members": [
         {
-          "default": "",
           "document": "主键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "VersionId",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1652962710",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1652962710",
           "member": "int64",
           "name": "UpdateTime",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cosn://kkingtest-123/123/123/cql-i7985eg9/27/flink-checkpoints/0",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "89446",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RecordType",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "运行作业实例的顺序 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "JobRuntimeId",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Description",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "固定超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Timeout",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "快照 serialId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cql-6w8eab6f",
           "member": "string",
           "name": "SerialId",
-          "required": true,
+          "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeConsuming",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "快照路径状态 1：可用；2：不可用；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PathStatus",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

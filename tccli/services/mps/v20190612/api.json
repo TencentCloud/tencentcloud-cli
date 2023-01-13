@@ -1457,13 +1457,22 @@
       "document": "AI 视频智能分析输入参数类型",
       "members": [
         {
-          "default": "",
           "document": "视频内容分析模板 ID。",
+          "example": "0",
           "member": "uint64",
           "name": "Definition",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "扩展参数，其值为序列化的 json字符串。\n注意：此参数为定制需求参数，需要线下对接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

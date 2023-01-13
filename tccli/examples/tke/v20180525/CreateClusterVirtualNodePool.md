@@ -1,6 +1,6 @@
 **Example 1: 创建虚拟节点池**
 
-
+创建虚拟节点池
 
 Input: 
 
@@ -8,7 +8,8 @@ Input:
 tccli tke CreateClusterVirtualNodePool --cli-unfold-argument  \
     --ClusterId cls-abcd1234 \
     --Name vk-nodepoll \
-    --SubnetIds subnet-abcd1234
+    --SubnetIds subnet-abcd1234 \
+    --SecurityGroupIds sg-abcd1234
 ```
 
 Output: 

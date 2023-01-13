@@ -253,6 +253,20 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8bab9614-3f62-4b1d-bc9b-e773703c727e\",\n        \"Count\": 1,\n        \"ImageInfos\": [\n            {\n                \"EntityId\": \"test1\",\n                \"PicName\": \"test2\",\n                \"Score\": 100,\n                \"CustomContent\": \"\",\n                \"Tags\": \"{}\"\n            }\n        ],\n        \"Object\": {\n            \"Box\": {\n                \"Rect\": {\n                    \"Width\": 447,\n                    \"Height\": 816,\n                    \"X\": 88,\n                    \"Y\": 264\n                },\n                \"Score\": 53\n            },\n            \"Colors\": [\n                {\n                    \"Color\": \"0A0A0A\",\n                    \"Percentage\": 15,\n                    \"Label\": \"Black-black\"\n                },\n                {\n                    \"Color\": \"8B4513\",\n                    \"Percentage\": 11,\n                    \"Label\": \"Brown-saddlebrown\"\n                },\n                {\n                    \"Percentage\": 7,\n                    \"Label\": \"Yellow-khaki\",\n                    \"Color\": \"D8C59D\"\n                },\n                {\n                    \"Label\": \"Yellow-darkkhaki\",\n                    \"Color\": \"BDB76B\",\n                    \"Percentage\": 6\n                }\n            ],\n            \"CategoryId\": 5,\n            \"Attributes\": []\n        }\n    }\n}",
         "title": "调用成功示例"
       }
+    ],
+    "UpdateImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImage\n<公共请求参数>\n\n{\n    \"GroupId\": \"123\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\",\n    \"Tags\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4e26-8db5-d642f7385c30\"\n    }\n}",
+        "title": "更新图片接口调用成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImage\n<公共请求参数>\n\n{\n    \"GroupId\": \"\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d64123385c30\"\n    }\n}",
+        "title": "更新图片接口调用失败示例"
+      }
     ]
   },
   "version": "1.0"
