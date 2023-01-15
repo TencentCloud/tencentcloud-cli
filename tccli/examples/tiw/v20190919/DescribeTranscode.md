@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tiw DescribeTranscode --cli-unfold-argument  \
-    --SdkAppId 1400000001 \
-    --TaskId g0jb42ps49vtebjshilb
+    --TaskId g0jb42ps49vtebjshilb \
+    --SdkAppId 1400000001
 ```
 
 Output: 
@@ -24,7 +24,9 @@ Output:
         "Title": "59378.docx",
         "ThumbnailUrl": "https://transcode-thumbnal/0agdnligqtgtvkm65emb/",
         "ThumbnailResolution": "793x1122",
-        "CompressFileUrl": ""
+        "CompressFileUrl": "",
+        "ResourceListUrl": "https://transcode-result/0agdnligqtgtvkm65emb/resources.txt",
+        "Ext": "Office"
     }
 }
 ```
@@ -37,8 +39,8 @@ Input:
 
 ```
 tccli tiw DescribeTranscode --cli-unfold-argument  \
-    --SdkAppId 1400000001 \
-    --TaskId g0jb42ps49vtebjshilb
+    --TaskId g0jb42ps49vtebjshilb \
+    --SdkAppId 1400000001
 ```
 
 Output: 
@@ -55,7 +57,9 @@ Output:
         "Title": "59378.docx",
         "ThumbnailUrl": "",
         "ThumbnailResolution": "",
-        "CompressFileUrl": ""
+        "CompressFileUrl": "",
+        "ResourceListUrl": "https://transcode-result/0agdnligqtgtvkm65emb/resources.txt",
+        "Ext": "Office"
     }
 }
 ```

@@ -1,3 +1,71 @@
+# Release 3.0.689.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 40 次发布
+
+发布时间：2023-01-16 01:06:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CommonTimeWindow](http://document.tencentcloudapi.woa.com/document/product/236/15878#CommonTimeWindow)
+
+	* 新增成员：BackupPeriodStrategy, Days, BackupPeriodTime
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 37 次发布
+
+发布时间：2023-01-16 01:20:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/76965)
+
+新增数据结构：
+
+* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverUrlInfo)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 互动白板(tiw) 版本：2019-09-19
+
+### 第 9 次发布
+
+发布时间：2023-01-16 01:43:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTranscode](http://document.tencentcloudapi.woa.com/document/product/1137/40059)
+
+	* 新增出参：ResourceListUrl, Ext
+
+* [StartWhiteboardPush](http://document.tencentcloudapi.woa.com/document/product/1137/52081)
+
+	* 新增入参：TRTCEnterRoomMode
+
+
+
+
 # Release 3.0.688.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

@@ -78,6 +78,14 @@
         "title": "提交企业签署流程审批结果"
       }
     ],
+    "ChannelCreateFlowSignUrl": [
+      {
+        "document": "发起流程后，给其中的C端签署人创建签署链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf***********200fef3d\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc***********3aff766cac\"\n        },\n        \"AppId\": \"xx\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8***********0ee248f04\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"Mobile\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"FlowId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverType\": \"PERSON\",\n                \"Mobile\": \"xx\",\n                \"Name\": \"xx\",\n                \"SignUrl\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"s1672313474209059745\"\n    }\n}",
+        "title": "创建个人用户H5签署链接"
+      }
+    ],
     "ChannelCreateMultiFlowSignQRCode": [
       {
         "document": "",

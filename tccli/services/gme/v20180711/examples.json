@@ -2,9 +2,9 @@
   "actions": {
     "CreateAgeDetectTask": [
       {
-        "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=CreateAgeDetectTask\n&BizId=123456\n&Callback=https://xxx.com/callback\n&Tasks.0.DataId=xxx\n&Tasks.0.Url=https://yy.com/xx.wav\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxxxxxx\",\n        \"RequestId\": \"ecefce57a9ae2087d0cbf7fcc0e27bac\"\n    }\n}",
+        "document": "提交年龄语音识别任务",
+        "input": "https://gme.tencentcloudapi.com/?Action=CreateAgeDetectTask\n&BizId=123456\n&Callback=https://xxx.com/callback\n&Tasks.0.DataId=6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\n&Tasks.0.Url=https://yy.com/xx.wav\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\",\n        \"RequestId\": \"ecefce57a9ae2087d0cbf7fcc0e27bac\"\n    }\n}",
         "title": "提交年龄语音识别任务"
       }
     ],
@@ -18,25 +18,25 @@
     ],
     "CreateCustomization": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1,\n    \"TextUrl\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ModelId\": \"xx\"\n    }\n}",
+        "document": "用户使用该接口可以创建语音消息转文本热句模型，以供识别调用",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1400000000,\n    \"TextUrl\": \"https://gme-xxx.cos.xxx.com/customization/1400000000/1400000000_customization\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1338576-0231-4a4b-b441-a780e6ffe894\",\n        \"ModelId\": \"5100f4d60xxx11ed8d6a62xxxeb5fd43\"\n    }\n}",
         "title": "创建语音消息转文本热句模型"
       }
     ],
     "CreateScanUser": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScanUser\n<公共请求参数>\n\n{\n    \"UserId\": 1234,\n    \"BizId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "新增自定义送检用户",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScanUser\n<公共请求参数>\n\n{\n    \"UserId\": 1234,\n    \"BizId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"e1feec89-bf87-44d8-8456-9f0f7ffc6ad2\"\n    }\n}",
         "title": "新增自定义送检用户"
       }
     ],
     "DeleteCustomization": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1,\n    \"ModelId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "用户通过该接口可以删除语音消息转文本热句模型",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1400000000,\n    \"ModelId\": \"5100f4d60xxx11ed8d6a62xxxeb5fd43\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"5d686f47-d3c8-4e41-a65d-11ecf0d18e17\"\n    }\n}",
         "title": "删除热句模型"
       }
     ],
@@ -50,25 +50,25 @@
     ],
     "DeleteScanUser": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScanUser\n<公共请求参数>\n\n{\n    \"UserId\": 0,\n    \"BizId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "删除自定义送检用户",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScanUser\n<公共请求参数>\n\n{\n    \"UserId\": 123,\n    \"BizId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"ec975acd-0b19-4e97-90e2-a9ff7b9c26aa\"\n    }\n}",
         "title": "删除自定义送检用户"
       }
     ],
     "DescribeAgeDetectTask": [
       {
-        "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=DescribeAgeDetectTask\n&BizId=123456\n&TaskId=xxx-yyy-zzz\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxxxxxx\",\n        \"Results\": [\n            {\n                \"DataId\": \"xxxx\",\n                \"Url\": \"https://yy.com\",\n                \"Status\": 2,\n                \"Age\": 1\n            }\n        ],\n        \"RequestId\": \"ecefce57a9ae2087d0cbf7fcc0e27bac\"\n    }\n}",
+        "document": "查询年龄语音识别任务结果",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeAgeDetectTask\n&BizId=1400000000\n&TaskId=6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\",\n        \"Results\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"Url\": \"https://yy.com\",\n                \"Status\": 2,\n                \"Age\": 1\n            }\n        ],\n        \"RequestId\": \"c72659a3-841d-4e42-b5ea-040f4577cc67\"\n    }\n}",
         "title": "查询年龄语音识别任务结果"
       }
     ],
     "DescribeAppStatistics": [
       {
-        "document": "",
+        "document": "查询实时语音和离线语音2019-08-01至2019-08-03的用量统计",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppStatistics\n<公共请求参数>\n\n{\n    \"Services\": [\n        \"VoiceMessage\",\n        \"RealTimeSpeech\"\n    ],\n    \"StartDate\": \"2019-08-01\",\n    \"EndDate\": \"2019-08-03\",\n    \"BizId\": \"140000001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppStatistics\": [\n                {\n                    \"VoiceFilterStatisticsItem\": {\n                        \"Duration\": 1\n                    },\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandPcu\": 1,\n                        \"OverseaDuration\": 1,\n                        \"OverseaPcu\": 1,\n                        \"OverseaDau\": 1,\n                        \"MainLandDuration\": 1,\n                        \"MainLandDau\": 1\n                    },\n                    \"StreamTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"RealtimeTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 1\n                    },\n                    \"AudioTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"Date\": \"2020-09-22\",\n                    \"OverseaTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    }\n                },\n                {\n                    \"VoiceFilterStatisticsItem\": {\n                        \"Duration\": 1\n                    },\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandPcu\": 1,\n                        \"MainLandDuration\": 1,\n                        \"OverseaPcu\": 1,\n                        \"OverseaDau\": 1,\n                        \"OverseaDuration\": 1,\n                        \"MainLandDau\": 1\n                    },\n                    \"Date\": \"2020-09-22\",\n                    \"StreamTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"RealtimeTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 1\n                    },\n                    \"AudioTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"OverseaTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    }\n                },\n                {\n                    \"VoiceFilterStatisticsItem\": {\n                        \"Duration\": 1\n                    },\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandPcu\": 1,\n                        \"MainLandDuration\": 1,\n                        \"OverseaPcu\": 1,\n                        \"OverseaDau\": 1,\n                        \"OverseaDuration\": 1,\n                        \"MainLandDau\": 1\n                    },\n                    \"Date\": \"2020-09-22\",\n                    \"StreamTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"RealtimeTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 1\n                    },\n                    \"AudioTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"OverseaTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppStatistics\": [\n                {\n                    \"VoiceFilterStatisticsItem\": {\n                        \"Duration\": 1\n                    },\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandPcu\": 1,\n                        \"OverseaDuration\": 1,\n                        \"OverseaPcu\": 1,\n                        \"OverseaDau\": 1,\n                        \"MainLandDuration\": 1,\n                        \"MainLandDau\": 1\n                    },\n                    \"StreamTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"RealtimeTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 1\n                    },\n                    \"AudioTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"Date\": \"2020-09-22\",\n                    \"OverseaTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    }\n                },\n                {\n                    \"VoiceFilterStatisticsItem\": {\n                        \"Duration\": 1\n                    },\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandPcu\": 1,\n                        \"MainLandDuration\": 1,\n                        \"OverseaPcu\": 1,\n                        \"OverseaDau\": 1,\n                        \"OverseaDuration\": 1,\n                        \"MainLandDau\": 1\n                    },\n                    \"Date\": \"2020-09-22\",\n                    \"StreamTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"RealtimeTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 1\n                    },\n                    \"AudioTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"OverseaTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    }\n                },\n                {\n                    \"VoiceFilterStatisticsItem\": {\n                        \"Duration\": 1\n                    },\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandPcu\": 1,\n                        \"MainLandDuration\": 1,\n                        \"OverseaPcu\": 1,\n                        \"OverseaDau\": 1,\n                        \"OverseaDuration\": 1,\n                        \"MainLandDau\": 1\n                    },\n                    \"Date\": \"2020-09-22\",\n                    \"StreamTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"RealtimeTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 1\n                    },\n                    \"AudioTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    },\n                    \"OverseaTextStatisticsItem\": {\n                        \"Data\": 0.0\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"099d942a-f5c5-40d2-b96b-5c26a35813e0\"\n    }\n}",
         "title": "查询实时语音和离线语音2019-08-01至2019-08-03的用量统计"
       }
     ],
@@ -84,15 +84,15 @@
       {
         "document": "https://gme.tencentcloudapi.com/?Action=DescribeApplicationList\n&ProjectId=0\n&PageNo=0\n&PageSize=10\n&SearchText=测试\n&<公共请求参数>",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"SearchText\": \"测试\",\n    \"PageSize\": \"10\",\n    \"PageNo\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ApplicationList\": [\n            {\n                \"ServiceConf\": {\n                    \"Porn\": {\n                        \"Status\": 1\n                    },\n                    \"Live\": {\n                        \"Status\": 1\n                    },\n                    \"RealTimeSpeech\": {\n                        \"Status\": 1\n                    },\n                    \"RealTimeAsr\": {\n                        \"Status\": 1\n                    },\n                    \"VoiceMessage\": {\n                        \"Status\": 1\n                    }\n                },\n                \"BizId\": 1,\n                \"AppType\": 1,\n                \"AppName\": \"xx\",\n                \"ProjectId\": 1,\n                \"AppStatus\": 1,\n                \"CreateTime\": 1\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationList\": [\n            {\n                \"ServiceConf\": {\n                    \"Porn\": {\n                        \"Status\": 1\n                    },\n                    \"Live\": {\n                        \"Status\": 1\n                    },\n                    \"RealTimeSpeech\": {\n                        \"Status\": 1\n                    },\n                    \"RealTimeAsr\": {\n                        \"Status\": 1\n                    },\n                    \"VoiceMessage\": {\n                        \"Status\": 1\n                    }\n                },\n                \"BizId\": 1400000000,\n                \"AppType\": 1,\n                \"AppName\": \"test\",\n                \"ProjectId\": 1,\n                \"AppStatus\": 1,\n                \"CreateTime\": 1\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"65ba570f-dbbb-4e3b-a412-5e285a2fecc9\"\n    }\n}",
         "title": "获取自己名下名称中含有“测试”字样的应用列表"
       }
     ],
     "DescribeRealtimeScanConfig": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealtimeScanConfig\n<公共请求参数>\n\n{\n    \"BizId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"BizId\": 1,\n        \"UserIdRegex\": [\n            \"xx\"\n        ],\n        \"UserIdString\": \"xx\",\n        \"ErrorCode\": 0,\n        \"AuditType\": 0,\n        \"RequestId\": \"xx\",\n        \"RoomIdRegex\": [\n            \"xx\"\n        ],\n        \"RoomIdString\": \"xx\"\n    }\n}",
+        "document": "获取用户自定义送检信息",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealtimeScanConfig\n<公共请求参数>\n\n{\n    \"BizId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"BizId\": 1400000000,\n        \"UserIdRegex\": [\n            \"^[0-9]*$\"\n        ],\n        \"UserIdString\": \"0001,0002,0003\",\n        \"ErrorCode\": 0,\n        \"AuditType\": 0,\n        \"RequestId\": \"5e60ecbe-24f7-4821-ac4f-c9410b491277\",\n        \"RoomIdRegex\": [\n            \"^[0-9]*$\"\n        ],\n        \"RoomIdString\": \"0001,0002,0003\"\n    }\n}",
         "title": "获取用户自定义送检信息"
       }
     ],
@@ -112,9 +112,9 @@
     ],
     "DescribeScanResultList": [
       {
-        "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=DescribeScanResultList\r\n&BizId=1400000000\r\n&TaskIdList.0=xxx\r\n&Limit=20\r\n&<公共请求参数>",
-        "output": "{\r\n\t\"Data\": [{\r\n\t\t\"Code\": 0,\r\n\t\t\"DataId\": \"1400000000_test_data_id\",\r\n\t\t\"ScanFinishTime\": 1566720906,\r\n\t\t\"HitFlag\": true,\r\n\t\t\"Live\": false,\r\n\t\t\"Msg\": \"\",\r\n\t\t\"ScanPiece\": [{\r\n\t\t\t\"DumpUrl\": \"\",\r\n\t\t\t\"HitFlag\": true,\r\n\t\t\t\"MainType\": \"abuse\",\r\n\t\t\t\"Info\":\"\",\r\n                        \"Offset\": 0,\r\n                        \"Duration\": 3400,\r\n                        \"PieceStartTime\":1574684231,\r\n\t\t\t\"ScanDetail\": [{\r\n\t\t\t\t\"EndTime\": 1110,\r\n\t\t\t\t\"KeyWord\": \"xxx\",\r\n\t\t\t\t\"Label\": \"abuse\",\r\n\t\t\t\t\"Rate\": \"90.00\",\r\n\t\t\t\t\"StartTime\": 1110\r\n\t\t\t}, {\r\n\t\t\t\t\"EndTime\": 1380,\r\n\t\t\t\t\"KeyWord\": \"xxx\",\r\n\t\t\t\t\"Label\": \"abuse\",\r\n\t\t\t\t\"Rate\": \"90.00\",\r\n\t\t\t\t\"StartTime\": 930\r\n\t\t\t}, {\r\n\t\t\t\t\"EndTime\": 1560,\r\n\t\t\t\t\"KeyWord\": \"xxx\",\r\n\t\t\t\t\"Label\": \"abuse\",\r\n\t\t\t\t\"Rate\": \"90.00\",\r\n\t\t\t\t\"StartTime\": 930\r\n\t\t\t}, {\r\n\t\t\t\t\"EndTime\": 2820,\r\n\t\t\t\t\"KeyWord\": \"xxx\",\r\n\t\t\t\t\"Label\": \"abuse\",\r\n\t\t\t\t\"Rate\": \"90.00\",\r\n\t\t\t\t\"StartTime\": 2490\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"ScanStartTime\": 1566720905,\r\n\t\t\"Scenes\":[ \r\n                    \"default\"\r\n                ],\r\n\t\t\"Status\": \"Success\",\r\n\t\t\"TaskId\": \"xxx\",\r\n\t\t\"Url\": \"https://xxx/xxx.m4a\"\r\n\t}],\r\n\t\"RequestId\": \"xxx\"\r\n}",
+        "document": "查询语音检测结果",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeScanResultList\n&BizId=1400000000\n&TaskIdList.0=6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Code\": 0,\n                \"DataId\": \"1400000000_test_data_id\",\n                \"ScanFinishTime\": 1566720906,\n                \"HitFlag\": true,\n                \"Live\": false,\n                \"Msg\": \"\",\n                \"ScanPiece\": [\n                    {\n                        \"DumpUrl\": \"\",\n                        \"HitFlag\": true,\n                        \"MainType\": \"abuse\",\n                        \"Info\": \"\",\n                        \"Offset\": 0,\n                        \"Duration\": 3400,\n                        \"PieceStartTime\": 1574684231,\n                        \"ScanDetail\": [\n                            {\n                                \"EndTime\": 1110,\n                                \"KeyWord\": \"违规字\",\n                                \"Label\": \"abuse\",\n                                \"Rate\": \"90.00\",\n                                \"StartTime\": 1110\n                            },\n                            {\n                                \"EndTime\": 1380,\n                                \"KeyWord\": \"违规字\",\n                                \"Label\": \"abuse\",\n                                \"Rate\": \"90.00\",\n                                \"StartTime\": 930\n                            },\n                            {\n                                \"EndTime\": 1560,\n                                \"KeyWord\": \"违规字\",\n                                \"Label\": \"abuse\",\n                                \"Rate\": \"90.00\",\n                                \"StartTime\": 930\n                            },\n                            {\n                                \"EndTime\": 2820,\n                                \"KeyWord\": \"违规字\",\n                                \"Label\": \"abuse\",\n                                \"Rate\": \"90.00\",\n                                \"StartTime\": 2490\n                            }\n                        ]\n                    }\n                ],\n                \"ScanStartTime\": 1566720905,\n                \"Scenes\": [\n                    \"default\"\n                ],\n                \"Status\": \"Success\",\n                \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\",\n                \"Url\": \"https://xxx/xxx.m4a\"\n            }\n        ],\n        \"RequestId\": \"863a8976-4d76-4481-9789-c631226f2475\"\n    }\n}",
         "title": "查询语音检测结果"
       }
     ],
@@ -122,15 +122,15 @@
       {
         "document": "拉取用户在房间得进出时间",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInAndOutTime\n<公共请求参数>\n\n{\n    \"BizId\": 1400440313,\n    \"RoomId\": 12675079,\n    \"UserId\": 112675079\n}",
-        "output": "{\n    \"Response\": {\n        \"InOutList\": [\n            {\n                \"StartTime\": 1606355700701,\n                \"EndTime\": 1606355712545\n            },\n            {\n                \"StartTime\": 1606355835221,\n                \"EndTime\": 1606355983240\n            },\n            {\n                \"StartTime\": 1606356131997,\n                \"EndTime\": 1606356139161\n            },\n            {\n                \"StartTime\": 1606356140241,\n                \"EndTime\": 1606357417975\n            },\n            {\n                \"StartTime\": 1606357498484,\n                \"EndTime\": 1606357504722\n            },\n            {\n                \"StartTime\": 1606357505783,\n                \"EndTime\": 1606358646084\n            },\n            {\n                \"StartTime\": 1606358708098,\n                \"EndTime\": 1606358732251\n            }\n        ],\n        \"Duration\": 2615453,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InOutList\": [\n            {\n                \"StartTime\": 1606355700701,\n                \"EndTime\": 1606355712545\n            },\n            {\n                \"StartTime\": 1606355835221,\n                \"EndTime\": 1606355983240\n            },\n            {\n                \"StartTime\": 1606356131997,\n                \"EndTime\": 1606356139161\n            },\n            {\n                \"StartTime\": 1606356140241,\n                \"EndTime\": 1606357417975\n            },\n            {\n                \"StartTime\": 1606357498484,\n                \"EndTime\": 1606357504722\n            },\n            {\n                \"StartTime\": 1606357505783,\n                \"EndTime\": 1606358646084\n            },\n            {\n                \"StartTime\": 1606358708098,\n                \"EndTime\": 1606358732251\n            }\n        ],\n        \"Duration\": 2615453,\n        \"RequestId\": \"e6579213-8adf-4047-9b59-bfd3d0c0bb24\"\n    }\n}",
         "title": "拉取用户在房间得进出时间"
       }
     ],
     "GetCustomizationList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCustomizationList\n<公共请求参数>\n\n{\n    \"BizId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"CustomizationConfigs\": [\n            {\n                \"ModelState\": 0,\n                \"BizId\": 0,\n                \"ModelId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "查询语音消息转文本热句模型列表",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCustomizationList\n<公共请求参数>\n\n{\n    \"BizId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomizationConfigs\": [\n            {\n                \"ModelState\": 1,\n                \"BizId\": 1400000000,\n                \"ModelId\": \"5100f4d60xxx11ed8d6a62xxxeb5fd43\"\n            }\n        ],\n        \"RequestId\": \"c3be9d62-f233-495a-b657-213440efa4c7\"\n    }\n}",
         "title": "查询语音消息转文本热句模型列表"
       }
     ],
@@ -144,17 +144,17 @@
     ],
     "ModifyCustomization": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomization\n<公共请求参数>\n\n{\n    \"TextUrl\": \"xx\",\n    \"BizId\": 1,\n    \"ModelId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\",\n        \"ModelId\": \"xx\"\n    }\n}",
+        "document": "用户通过该接口可以更新语音消息转文本热句模型。",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomization\n<公共请求参数>\n\n{\n    \"TextUrl\": \"https://gme-xxx.cos.xxx.com/customization/1400000000/1400000000_customization\",\n    \"BizId\": 1400000000,\n    \"ModelId\": \"5100f4d60xxx11ed8d6a62xxxeb5fd43\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"29d0ba30-26f9-4f83-9f13-628ed30a824a\",\n        \"ModelId\": \"5100f4d60xxx11ed8d6a62xxxeb5fd43\"\n    }\n}",
         "title": "修改热句模型"
       }
     ],
     "ModifyCustomizationState": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomizationState\n<公共请求参数>\n\n{\n    \"ToState\": 0,\n    \"BizId\": 0,\n    \"ModelId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\",\n        \"ModelId\": \"xx\"\n    }\n}",
+        "document": "通过该接口，用户可以修改语音消息转文本热句模型状态，上下线热句模型",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomizationState\n<公共请求参数>\n\n{\n    \"ToState\": 0,\n    \"BizId\": 1400000000,\n    \"ModelId\": \"f440dfa77ae411eda5d3564a2eb5fd49\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"2b514d1d-ba80-4dcf-81cc-2a1fc25216ba\",\n        \"ModelId\": \"f440dfa77ae411eda5d3564a2eb5fd49\"\n    }\n}",
         "title": "修改热句模型状态"
       }
     ],
@@ -170,35 +170,35 @@
       {
         "document": "通过语音文件的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanVoice\n<公共请求参数>\n\n{\n    \"Callback\": \"https://0.0.0.0/user_callback\",\n    \"Live\": \"false\",\n    \"Tasks\": [\n        {\n            \"Url\": \"http://xxx/audio_store/xxxx.mp3\",\n            \"DataId\": \"1400000000_test_data_id\"\n        }\n    ],\n    \"BizId\": \"1400000000\",\n    \"Scenes\": [\n        \"default\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"xxx-xxx-xxx\"\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\"\n            }\n        ],\n        \"RequestId\": \"c91b5243-bbd1-48e0-af41-d66891cabecb\"\n    }\n}",
         "title": "提交语音文件检测任务-2"
       },
       {
         "document": "通过语音流的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanVoice\n<公共请求参数>\n\n{\n    \"Callback\": \"https://0.0.0.0/user_callback\",\n    \"Live\": \"true\",\n    \"Tasks\": [\n        {\n            \"Url\": \"https://xxxx\",\n            \"DataId\": \"1400000000_test_data_id\"\n        }\n    ],\n    \"BizId\": \"1400000000\",\n    \"Scenes\": [\n        \"default\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"xxx-xxx-xxx\"\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\"\n            }\n        ],\n        \"RequestId\": \"c91b5243-bbd1-48e0-af41-d66891cabecb\"\n    }\n}",
         "title": "提交语音流检测任务"
       },
       {
         "document": "通过语音文件的方式提交检测任务，可通过设置回调地址 Callback 获取检测结果",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanVoice\n<公共请求参数>\n\n{\n    \"Callback\": \"https://0.0.0.0/user_callback\",\n    \"Live\": \"false\",\n    \"Tasks\": [\n        {\n            \"Url\": \"http://xxxx/audio_store/xxxx.mp3\",\n            \"DataId\": \"1400000000_test_data_id\"\n        }\n    ],\n    \"BizId\": \"1400000000\",\n    \"Scenes\": [\n        \"default\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"xxx-xxx-xxx\"\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\"\n            }\n        ],\n        \"RequestId\": \"de52afb5-3887-462d-876a-f8b0b654dc92\"\n    }\n}",
         "title": "提交语音文件检测任务"
       }
     ],
     "UpdateScanRooms": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateScanRooms\n<公共请求参数>\n\n{\n    \"RoomIdRegex\": [\n        \"xx\"\n    ],\n    \"RoomIdString\": \"xx\",\n    \"BizId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "更新用户自定义送检房间号",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateScanRooms\n<公共请求参数>\n\n{\n    \"RoomIdRegex\": [\n        \"^[0-9]*$\"\n    ],\n    \"RoomIdString\": \"0001,0002,0003\",\n    \"BizId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"af453fd2-c666-4401-ae96-03ec6a35fb61\"\n    }\n}",
         "title": "更新用户自定义送检房间号"
       }
     ],
     "UpdateScanUsers": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateScanUsers\n<公共请求参数>\n\n{\n    \"UserIdRegex\": [\n        \"xx\"\n    ],\n    \"UserIdString\": \"xx\",\n    \"BizId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "更新用户自定义送检用户号",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateScanUsers\n<公共请求参数>\n\n{\n    \"UserIdRegex\": [\n        \"^[0-9]*$\"\n    ],\n    \"UserIdString\": \"0001,0002,0003\",\n    \"BizId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"454859b0-5e53-491d-814c-ac40faaca5f7\"\n    }\n}",
         "title": "更新用户自定义送检用户号"
       }
     ]
