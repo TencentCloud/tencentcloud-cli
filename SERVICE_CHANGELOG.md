@@ -1,29 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
 ### 第 40 次发布
 
-发布时间：2023-01-16 01:06:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CommonTimeWindow](http://document.tencentcloudapi.woa.com/document/product/236/15878#CommonTimeWindow)
-
-	* 新增成员：BackupPeriodStrategy, Days, BackupPeriodTime
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 37 次发布
-
-发布时间：2023-01-16 01:20:32
+发布时间：2023-01-17 01:12:51
 
 本次发布包含了以下内容：
 
@@ -31,38 +12,63 @@
 
 新增接口：
 
-* [ChannelCreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/76965)
+* [DescribeEdgePackTaskStatus](http://document.tencentcloudapi.woa.com/document/product/228/76968)
 
 新增数据结构：
 
-* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverUrlInfo)
+* [EdgePackTaskFilter](http://document.tencentcloudapi.woa.com/document/product/228/30987#EdgePackTaskFilter)
+* [EdgePackTaskStatus](http://document.tencentcloudapi.woa.com/document/product/228/30987#EdgePackTaskStatus)
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+## 微服务平台 TSF(tsf) 版本：2018-03-26
 
+### 第 27 次发布
 
-
-## 互动白板(tiw) 版本：2019-09-19
-
-### 第 9 次发布
-
-发布时间：2023-01-16 01:43:37
+发布时间：2023-01-17 01:49:39
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribeTranscode](http://document.tencentcloudapi.woa.com/document/product/1137/40059)
+* [CreateConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76981)
+* [CreateMicroserviceWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/76980)
+* [DeleteCluster](http://document.tencentcloudapi.woa.com/document/product/649/76979)
+* [DeleteConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76978)
+* [DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/649/76977)
+* [DescribeConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76976)
+* [DescribeFileConfigReleases](http://document.tencentcloudapi.woa.com/document/product/649/76975)
+* [ModifyApplication](http://document.tencentcloudapi.woa.com/document/product/649/76974)
+* [ModifyCluster](http://document.tencentcloudapi.woa.com/document/product/649/76973)
+* [ModifyGroup](http://document.tencentcloudapi.woa.com/document/product/649/76972)
+* [ModifyNamespace](http://document.tencentcloudapi.woa.com/document/product/649/76971)
+* [RevokeFileConfig](http://document.tencentcloudapi.woa.com/document/product/649/76970)
+* [UpdateConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76969)
 
-	* 新增出参：ResourceListUrl, Ext
+新增数据结构：
 
-* [StartWhiteboardPush](http://document.tencentcloudapi.woa.com/document/product/1137/52081)
+* [ClusterV2](http://document.tencentcloudapi.woa.com/document/product/649/36099#ClusterV2)
+* [ConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/36099#ConfigTemplate)
+* [TsfPageClusterV2](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfPageClusterV2)
+* [TsfPageFileConfigRelease](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfPageFileConfigRelease)
 
-	* 新增入参：TRTCEnterRoomMode
 
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 59 次发布
+
+发布时间：2023-01-17 01:53:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeNetworkAccountType](http://document.tencentcloudapi.woa.com/document/product/215/76982)
 
 
 
@@ -7083,6 +7089,23 @@
 
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 40 次发布
+
+发布时间：2023-01-17 01:12:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeEdgePackTaskStatus](http://document.tencentcloudapi.woa.com/document/product/228/76968)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[EdgePackTaskFilter](http://document.tencentcloudapi.woa.com/document/product/228/30987#EdgePackTaskFilter)](http://document.tencentcloudapi.woa.com/document/product/228/30987#[EdgePackTaskFilter](http://document.tencentcloudapi.woa.com/document/product/228/30987#EdgePackTaskFilter))
+* [[EdgePackTaskStatus](http://document.tencentcloudapi.woa.com/document/product/228/30987#EdgePackTaskStatus)](http://document.tencentcloudapi.woa.com/document/product/228/30987#[EdgePackTaskStatus](http://document.tencentcloudapi.woa.com/document/product/228/30987#EdgePackTaskStatus))
 
 ### 第 39 次发布
 
@@ -21812,11 +21835,11 @@
 
 新增接口：
 
-* [[ChannelCreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/76965)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ChannelCreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/76965)
 
 新增数据结构：
 
-* [[FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverUrlInfo)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverUrlInfo))
+* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverUrlInfo)
 
 ### 第 36 次发布
 
@@ -45384,6 +45407,37 @@
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
 
+### 第 27 次发布
+
+发布时间：2023-01-17 01:49:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76981)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateMicroserviceWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/76980)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteCluster](http://document.tencentcloudapi.woa.com/document/product/649/76979)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76978)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/649/76977)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76976)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeFileConfigReleases](http://document.tencentcloudapi.woa.com/document/product/649/76975)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyApplication](http://document.tencentcloudapi.woa.com/document/product/649/76974)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyCluster](http://document.tencentcloudapi.woa.com/document/product/649/76973)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyGroup](http://document.tencentcloudapi.woa.com/document/product/649/76972)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyNamespace](http://document.tencentcloudapi.woa.com/document/product/649/76971)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RevokeFileConfig](http://document.tencentcloudapi.woa.com/document/product/649/76970)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpdateConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76969)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ClusterV2](http://document.tencentcloudapi.woa.com/document/product/649/36099#ClusterV2)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[ClusterV2](http://document.tencentcloudapi.woa.com/document/product/649/36099#ClusterV2))
+* [[ConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/36099#ConfigTemplate)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[ConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/36099#ConfigTemplate))
+* [[TsfPageClusterV2](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfPageClusterV2)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[TsfPageClusterV2](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfPageClusterV2))
+* [[TsfPageFileConfigRelease](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfPageFileConfigRelease)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[TsfPageFileConfigRelease](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfPageFileConfigRelease))
+
 ### 第 26 次发布
 
 发布时间：2023-01-10 01:41:25
@@ -48462,6 +48516,18 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 59 次发布
+
+发布时间：2023-01-17 01:53:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeNetworkAccountType](http://document.tencentcloudapi.woa.com/document/product/215/76982)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 58 次发布
 

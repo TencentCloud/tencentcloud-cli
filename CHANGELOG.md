@@ -1,3 +1,77 @@
+# Release 3.0.690.1
+
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 40 次发布
+
+发布时间：2023-01-17 01:12:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeEdgePackTaskStatus](http://document.tencentcloudapi.woa.com/document/product/228/76968)
+
+新增数据结构：
+
+* [EdgePackTaskFilter](http://document.tencentcloudapi.woa.com/document/product/228/30987#EdgePackTaskFilter)
+* [EdgePackTaskStatus](http://document.tencentcloudapi.woa.com/document/product/228/30987#EdgePackTaskStatus)
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 27 次发布
+
+发布时间：2023-01-17 01:49:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76981)
+* [CreateMicroserviceWithDetailResp](http://document.tencentcloudapi.woa.com/document/product/649/76980)
+* [DeleteCluster](http://document.tencentcloudapi.woa.com/document/product/649/76979)
+* [DeleteConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76978)
+* [DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/649/76977)
+* [DescribeConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76976)
+* [DescribeFileConfigReleases](http://document.tencentcloudapi.woa.com/document/product/649/76975)
+* [ModifyApplication](http://document.tencentcloudapi.woa.com/document/product/649/76974)
+* [ModifyCluster](http://document.tencentcloudapi.woa.com/document/product/649/76973)
+* [ModifyGroup](http://document.tencentcloudapi.woa.com/document/product/649/76972)
+* [ModifyNamespace](http://document.tencentcloudapi.woa.com/document/product/649/76971)
+* [RevokeFileConfig](http://document.tencentcloudapi.woa.com/document/product/649/76970)
+* [UpdateConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/76969)
+
+新增数据结构：
+
+* [ClusterV2](http://document.tencentcloudapi.woa.com/document/product/649/36099#ClusterV2)
+* [ConfigTemplate](http://document.tencentcloudapi.woa.com/document/product/649/36099#ConfigTemplate)
+* [TsfPageClusterV2](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfPageClusterV2)
+* [TsfPageFileConfigRelease](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfPageFileConfigRelease)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 59 次发布
+
+发布时间：2023-01-17 01:53:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeNetworkAccountType](http://document.tencentcloudapi.woa.com/document/product/215/76982)
+
+
+
 # Release 3.0.689.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

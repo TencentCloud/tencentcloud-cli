@@ -1332,6 +1332,12 @@
       "name": "查询网络探测列表",
       "output": "DescribeNetDetectsResponse"
     },
+    "DescribeNetworkAccountType": {
+      "document": "判断用户在网络侧的用户类型，如标准（带宽上移），传统（非上移）。",
+      "input": "DescribeNetworkAccountTypeRequest",
+      "name": "查询用户类型",
+      "output": "DescribeNetworkAccountTypeResponse"
+    },
     "DescribeNetworkAclQuintupleEntries": {
       "document": "本接口（DescribeNetworkAclQuintupleEntries）查询入方向或出方向网络ACL五元组条目列表。",
       "input": "DescribeNetworkAclQuintupleEntriesRequest",
@@ -18076,6 +18082,33 @@
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetworkAccountTypeRequest": {
+      "document": "DescribeNetworkAccountType请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeNetworkAccountTypeResponse": {
+      "document": "DescribeNetworkAccountType返回参数结构体",
+      "members": [
+        {
+          "document": "用户账号的类型，STANDARD为标准用户，LEGACY为传统用户",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "NetworkAccountType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
