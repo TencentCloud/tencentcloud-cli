@@ -1,13 +1,13 @@
 **Example 1: 删除自定义送检用户**
 
-
+删除自定义送检用户
 
 Input: 
 
 ```
 tccli gme DeleteScanUser --cli-unfold-argument  \
-    --UserId 0 \
-    --BizId 1
+    --UserId 123 \
+    --BizId 1400000000
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "ErrorCode": 0,
-        "RequestId": "xx"
+        "RequestId": "ec975acd-0b19-4e97-90e2-a9ff7b9c26aa"
     }
 }
 ```

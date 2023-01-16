@@ -46,7 +46,7 @@ Output:
             }
         ],
         "Duration": 2615453,
-        "RequestId": "xx"
+        "RequestId": "e6579213-8adf-4047-9b59-bfd3d0c0bb24"
     }
 }
 ```

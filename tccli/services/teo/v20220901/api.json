@@ -4130,7 +4130,6 @@
       "document": "DescribeOriginProtection请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "查询的站点集合，不填默认查询所有站点。",
           "example": "[\"zone-276zs184g93m\",\"zone-27fil18zp2v1\"]",
           "member": "string",
@@ -4139,16 +4138,14 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>need-update<br>   按照【<strong>站点是否需要更新源站防护IP白名单</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   true：需要更新<br>   false：无需更新<br></li>\n<li>plan-support<br>   按照【<strong>站点套餐是否支持源站防护</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   true：支持<br>   false：不支持<br></li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "object"
+          "type": "list"
         },
         {
-          "default": "",
           "document": "分页查询偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -4157,7 +4154,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页查询限制数目。默认值：20，最大值：1000。",
           "example": "10",
           "member": "int64",
@@ -4176,7 +4172,6 @@
           "example": "无",
           "member": "OriginProtectionInfo",
           "name": "OriginProtectionInfo",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

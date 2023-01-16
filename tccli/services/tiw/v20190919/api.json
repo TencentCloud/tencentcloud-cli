@@ -1149,16 +1149,16 @@
       "document": "DescribeTranscode请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "客户的SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "document": "文档转码任务的唯一标识Id",
+          "example": "g0jb42ps49vtebjshilb",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1172,6 +1172,7 @@
       "members": [
         {
           "document": "文档的总页数",
+          "example": "1",
           "member": "int64",
           "name": "Pages",
           "type": "int",
@@ -1179,6 +1180,7 @@
         },
         {
           "document": "转码的当前进度,取值范围为0~100",
+          "example": "100",
           "member": "int64",
           "name": "Progress",
           "type": "int",
@@ -1186,6 +1188,7 @@
         },
         {
           "document": "文档的分辨率",
+          "example": "793x1122",
           "member": "string",
           "name": "Resolution",
           "type": "string",
@@ -1193,6 +1196,7 @@
         },
         {
           "document": "转码完成后结果的URL\n动态转码：PPT转动态H5的链接\n静态转码：文档每一页的图片URL前缀，比如，该URL前缀为`http://example.com/g0jb42ps49vtebjshilb/`，那么文档第1页的图片URL为\n`http://example.com/g0jb42ps49vtebjshilb/1.jpg`，其它页以此类推",
+          "example": "https://transcode-result/0agdnligqtgtvkm65emb/index.html",
           "member": "string",
           "name": "ResultUrl",
           "type": "string",
@@ -1200,6 +1204,7 @@
         },
         {
           "document": "任务的当前状态\n- QUEUED: 正在排队等待转换\n- PROCESSING: 转换中\n- FINISHED: 转换完成",
+          "example": "FINISHED",
           "member": "string",
           "name": "Status",
           "type": "string",
@@ -1207,6 +1212,7 @@
         },
         {
           "document": "转码任务的唯一标识Id",
+          "example": "0agdnligqtgtvkm65emb",
           "member": "string",
           "name": "TaskId",
           "type": "string",
@@ -1214,6 +1220,7 @@
         },
         {
           "document": "文档的文件名",
+          "example": "59378.docx",
           "member": "string",
           "name": "Title",
           "type": "string",
@@ -1221,6 +1228,7 @@
         },
         {
           "document": "缩略图URL前缀，比如，该URL前缀为`http://example.com/g0jb42ps49vtebjshilb/ `，那么动态PPT第1页的缩略图URL为\n`http://example.com/g0jb42ps49vtebjshilb/1.jpg`，其它页以此类推\n\n如果发起文档转码请求参数中带了ThumbnailResolution参数，并且转码类型为动态转码，该参数不为空，其余情况该参数为空字符串",
+          "example": "https://transcode-thumbnal/0agdnligqtgtvkm65emb/",
           "member": "string",
           "name": "ThumbnailUrl",
           "type": "string",
@@ -1228,6 +1236,7 @@
         },
         {
           "document": "动态转码缩略图生成分辨率",
+          "example": "793x1122",
           "member": "string",
           "name": "ThumbnailResolution",
           "type": "string",
@@ -1235,10 +1244,27 @@
         },
         {
           "document": "转码压缩文件下载的URL，如果发起文档转码请求参数中`CompressFileType`为空或者不是支持的压缩格式，该参数为空字符串",
+          "example": "无",
           "member": "string",
           "name": "CompressFileUrl",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "资源清单文件下载URL(内测体验)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceListUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文档制作方式(内测体验)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "office",
+          "member": "string",
+          "name": "Ext",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2466,7 +2492,6 @@
       "document": "StartWhiteboardPush请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "客户的SdkAppId",
           "example": "1400000001",
           "member": "int64",
@@ -2475,7 +2500,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "需要推流的白板房间号，取值范围: (1, 4294967295)。\n\n在没有指定TRTCRoomId和TRTCRoomIdStr的情况下，默认会以RoomId作为白板流进行推流的TRTC房间号。",
           "example": "12345",
           "member": "int64",
@@ -2484,8 +2508,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "用于白板推流服务进入白板房间的用户ID。在没有进行额外指定的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。\n用户ID最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。",
+          "document": "用于白板推流服务进入白板房间的用户ID。在没有额外指定`IMAuthParam`和`TRTCAuthParam`的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。\n用户ID最大长度不能大于60个字节，该用户ID必须是一个单独的未同时在其他地方使用的用户ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该用户ID和其他地方同时在使用的用户ID重复，会导致白板推流服务与其他使用场景帐号互踢，影响正常推流。",
           "example": "tic_push_12345_xxx",
           "member": "string",
           "name": "PushUserId",
@@ -2493,8 +2516,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "与PushUserId对应的签名",
+          "document": "与PushUserId对应的IM签名(usersig)。",
           "example": "eJwtjb0OgjAAhN*lK4a0tcVC4iDGkIg-g7K4NEiLViLUUsFgfHcRmS733eXuDY6b",
           "member": "string",
           "name": "PushUserSig",
@@ -2502,7 +2524,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "白板参数，例如白板宽高、背景颜色等",
           "example": "无",
           "member": "Whiteboard",
@@ -2511,7 +2532,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "自动停止推流超时时间，单位秒，取值范围[300, 259200], 默认值为1800秒。\n\n当白板超过设定时间没有操作的时候，白板推流服务会自动停止白板推流。",
           "example": "300",
           "member": "int64",
@@ -2520,7 +2540,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "对主白板推流任务进行操作时，是否同时同步操作备份任务",
           "example": "false",
           "member": "bool",
@@ -2529,7 +2548,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "备份白板推流相关参数。\n\n指定了备份参数的情况下，白板推流服务会在房间内新增一路白板画面视频流，即同一个房间内会有两路白板画面推流。",
           "example": "无",
           "member": "WhiteboardPushBackupParam",
@@ -2538,7 +2556,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "TRTC高级权限控制参数，如果在实时音视频开启了高级权限控制功能，必须提供PrivateMapKey才能保证正常推流。",
           "example": "无",
           "member": "string",
@@ -2547,7 +2564,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "白板推流视频帧率，取值范围[0, 30]，默认20fps",
           "example": "15",
           "member": "int64",
@@ -2556,7 +2572,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "白板推流码率， 取值范围[0, 2000]，默认1200kbps。\n\n这里的码率设置是一个参考值，实际推流的时候使用的是动态码率，所以真实码率不会固定为指定值，会在指定值附近波动。",
           "example": "1200",
           "member": "int64",
@@ -2565,7 +2580,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "在实时音视频云端录制模式选择为 `指定用户录制` 模式的时候是否自动录制白板推流。\n\n默认在实时音视频的云端录制模式选择为 `指定用户录制` 模式的情况下，不会自动进行白板推流录制，如果希望进行白板推流录制，请将此参数设置为true。\n\n如果实时音视频的云端录制模式选择为 `全局自动录制` 模式，可忽略此参数。",
           "example": "false",
           "member": "bool",
@@ -2574,7 +2588,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "指定白板推流录制的RecordID，指定的RecordID会用于填充实时音视频云端录制完成后的回调消息中的 \"userdefinerecordid\" 字段内容，便于您更方便的识别录制回调，以及在点播媒体资源管理中查找相应的录制视频文件。\n\n限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。\n\n此字段设置后，不管`AutoRecord`字段取值如何，都将自动进行白板推流录制。\n\n默认RecordId生成规则如下：\nurlencode(SdkAppID_RoomID_PushUserID)\n\n例如：\nSdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1\n那么：RecordId = 12345678_12345_push_user_1",
           "example": "12345678_12345_push_user_1",
           "member": "string",
@@ -2583,7 +2596,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "在实时音视频旁路推流模式选择为`指定用户旁路`模式的时候，是否自动旁路白板推流。\n\n默认在实时音视频的旁路推流模式选择为 `指定用户旁路` 模式的情况下，不会自动旁路白板推流，如果希望旁路白板推流，请将此参数设置为true。\n\n如果实时音视频的旁路推流模式选择为 `全局自动旁路` 模式，可忽略此参数。",
           "example": "false",
           "member": "bool",
@@ -2592,7 +2604,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "指定实时音视频在旁路白板推流时的StreamID，设置之后，您就可以在腾讯云直播 CDN 上通过标准直播方案（FLV或HLS）播放该用户的音视频流。\n\n限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符。\n\n此字段设置后，不管`AutoPublish`字段取值如何，都将自动旁路白板推流。\n\n默认StreamID生成规则如下：\nurlencode(SdkAppID_RoomID_PushUserID_main)\n\n例如：\nSdkAppID = 12345678，RoomID = 12345，PushUserID = push_user_1\n那么：StreamID = 12345678_12345_push_user_1_main",
           "example": "12345678_12345_push_user_1_main",
           "member": "string",
@@ -2601,7 +2612,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "内部参数，不需要关注此参数",
           "example": "无",
           "member": "string",
@@ -2610,7 +2620,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "TRTC数字类型房间号，取值范围: (1, 4294967295)。\n\n在同时指定了RoomId与TRTCRoomId的情况下，优先使用TRTCRoomId作为白板流进行推流的TRTC房间号。\n\n当指定了TRTCRoomIdStr的情况下，此字段将被忽略。",
           "example": "12345",
           "member": "int64",
@@ -2619,7 +2628,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "TRTC字符串类型房间号。\n\n在指定了TRTCRoomIdStr的情况下，会优先使用TRTCRoomIdStr作为白板流进行推流的TRTC房间号。",
           "example": "wbpush-12345",
           "member": "string",
@@ -2628,8 +2636,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "内测参数，需开通白名单进行体验。\n\nIM鉴权信息参数，用于IM鉴权。\n当白板信令所使用的IM应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应IM应用鉴权信息。\n\n如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板信令的传输通道，否则使用公共参数中的SdkAppId作为白板信令的传输通道。",
+          "document": "IM鉴权信息参数，用于IM鉴权。\n当白板信令所使用的IM应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应IM应用鉴权信息。\n\n如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板信令的传输通道，否则使用公共参数中的SdkAppId作为白板信令的传输通道。",
           "example": "无",
           "member": "AuthParam",
           "name": "IMAuthParam",
@@ -2637,13 +2644,20 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "内测参数，需开通白名单进行体验。\n\nTRTC鉴权信息参数，用于TRTC进房推流鉴权。\n当需要推流到的TRTC房间所对应的TRTC应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应的TRTC应用鉴权信息。\n\n如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板推流的目标TRTC应用，否则使用公共参数中的SdkAppId作为白板推流的目标TRTC应用。",
+          "document": "TRTC鉴权信息参数，用于TRTC进房推流鉴权。\n当需要推流到的TRTC房间所对应的TRTC应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应的TRTC应用鉴权信息。\n\n如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板推流的目标TRTC应用，否则使用公共参数中的SdkAppId作为白板推流的目标TRTC应用。",
           "example": "无",
           "member": "AuthParam",
           "name": "TRTCAuthParam",
           "required": false,
           "type": "object"
+        },
+        {
+          "document": "内测参数，需要提前申请白名单进行体验。\n\n指定白板推流时推流用户进TRTC房间的进房模式。默认为 TRTCAppSceneVideoCall\n\nTRTCAppSceneVideoCall - 视频通话场景，即绝大多数时间都是两人或两人以上视频通话的场景，内部编码器和网络协议优化侧重流畅性，降低通话延迟和卡顿率。\nTRTCAppSceneLIVE - 直播场景，即绝大多数时间都是一人直播，偶尔有多人视频互动的场景，内部编码器和网络协议优化侧重性能和兼容性，性能和清晰度表现更佳。",
+          "example": "TRTCAppSceneVideoCall",
+          "member": "string",
+          "name": "TRTCEnterRoomMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2656,7 +2670,6 @@
           "example": "0c69baivvc3lp8t4f80b",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2665,7 +2678,6 @@
           "example": "无",
           "member": "string",
           "name": "Backup",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

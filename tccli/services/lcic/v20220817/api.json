@@ -98,6 +98,11 @@
     "serviceShortName": "lcic"
   },
   "objects": {
+    "AppConfig": {
+      "document": "应用配置信息",
+      "members": [],
+      "usage": "out"
+    },
     "AppCustomContent": {
       "document": "应用自定义内容",
       "members": [
@@ -474,12 +479,53 @@
     },
     "DescribeAppDetailRequest": {
       "document": "DescribeAppDetail请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "开发商ID",
+          "example": "无",
+          "member": "string",
+          "name": "DeveloperId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeAppDetailResponse": {
       "document": "DescribeAppDetail返回参数结构体",
       "members": [
+        {
+          "document": "SdkAppId ",
+          "example": "无",
+          "member": "string",
+          "name": "SdkAppId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用配置",
+          "example": "无",
+          "member": "AppConfig",
+          "name": "AppConfig",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "场景配置",
+          "example": "无",
+          "member": "SceneItem",
+          "name": "SceneConfig",
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1091,6 +1137,11 @@
         }
       ],
       "type": "object"
+    },
+    "SceneItem": {
+      "document": "场景配置",
+      "members": [],
+      "usage": "out"
     },
     "SetAppCustomContentRequest": {
       "document": "SetAppCustomContent请求参数结构体",

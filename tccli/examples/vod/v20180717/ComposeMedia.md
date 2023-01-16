@@ -8,10 +8,10 @@ Input:
 tccli vod ComposeMedia --cli-unfold-argument  \
     --Output.Container mp4 \
     --Output.FileName test \
-    --Tracks.0.TrackItems.0.AudioItem.SourceMedia 5285485487985271488 \
-    --Tracks.0.TrackItems.0.Type Audio \
-    --Tracks.0.TrackItems.1.Type Empty \
-    --Tracks.0.TrackItems.1.EmptyItem.Duration 5 \
+    --Tracks.0.TrackItems.0.Type Empty \
+    --Tracks.0.TrackItems.0.EmptyItem.Duration 5 \
+    --Tracks.0.TrackItems.1.AudioItem.SourceMedia 5285485487985271488 \
+    --Tracks.0.TrackItems.1.Type Audio \
     --Tracks.0.TrackItems.2.AudioItem.Duration 14 \
     --Tracks.0.TrackItems.2.AudioItem.SourceMedia 5285485487985271489 \
     --Tracks.0.TrackItems.2.AudioItem.SourceMediaStartTime 2 \

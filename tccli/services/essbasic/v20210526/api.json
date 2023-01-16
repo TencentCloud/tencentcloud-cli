@@ -54,6 +54,12 @@
       "name": "提交企业签署流程审批结果",
       "output": "ChannelCreateFlowSignReviewResponse"
     },
+    "ChannelCreateFlowSignUrl": {
+      "document": "渠道版创建签署链接，需要联系运营人员开白后才可使用",
+      "input": "ChannelCreateFlowSignUrlRequest",
+      "name": "渠道版创建签署链接",
+      "output": "ChannelCreateFlowSignUrlResponse"
+    },
     "ChannelCreateMultiFlowSignQRCode": {
       "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多扫签署流程二维码。\n适用的模版仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模版，且模版中发起方没有填写控件。",
       "input": "ChannelCreateMultiFlowSignQRCodeRequest",
@@ -1066,6 +1072,78 @@
     "ChannelCreateFlowSignReviewResponse": {
       "document": "ChannelCreateFlowSignReview返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowSignUrlRequest": {
+      "document": "ChannelCreateFlowSignUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "流程编号",
+          "example": "xx",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流程签署人，其中Name和Mobile必传，其他可不传，ApproverType目前只支持PERSON类型的签署人，如果不传默认为该值。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。",
+          "example": "无",
+          "member": "FlowApproverInfo",
+          "name": "FlowApproverInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户信息，暂未开放",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "机构信息，暂未开放",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowSignUrlResponse": {
+      "document": "ChannelCreateFlowSignUrl返回参数结构体",
+      "members": [
+        {
+          "document": "签署人签署链接信息",
+          "example": "无",
+          "member": "FlowApproverUrlInfo",
+          "name": "FlowApproverUrlInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3360,6 +3438,52 @@
         }
       ],
       "usage": "in"
+    },
+    "FlowApproverUrlInfo": {
+      "document": "签署人签署链接信息",
+      "members": [
+        {
+          "default": "",
+          "document": "签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。",
+          "example": "xx",
+          "member": "string",
+          "name": "SignUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人手机号",
+          "example": "xx",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人姓名",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人类型 PERSON-个人",
+          "example": "PERSON",
+          "member": "string",
+          "name": "ApproverType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FlowDetailInfo": {
       "document": "此结构体(FlowDetailInfo)描述的是合同(流程)的详细信息",

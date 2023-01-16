@@ -6063,7 +6063,6 @@
       "document": "DescribeInstancesDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "（过滤条件）按照实例ID过滤",
           "example": "instance-will-s",
           "member": "string",
@@ -6072,8 +6071,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "（过滤条件）按照实例名称过滤，支持模糊查询",
+          "document": "（过滤条件）按照实例名,实例Id,可用区,私有网络id,子网id 过滤，支持模糊查询",
           "example": "tre",
           "member": "string",
           "name": "SearchWord",
@@ -6081,7 +6079,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部",
           "example": "[\"0\\r\\n\",\"1\\r\\n\",\"2\\r\\n\"]",
           "member": "int64",
@@ -6090,7 +6087,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，不填默认为0。",
           "example": "0",
           "member": "int64",
@@ -6099,7 +6095,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，不填则默认10，最大值20。",
           "example": "10",
           "member": "int64",
@@ -6108,7 +6103,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "匹配标签key值。",
           "example": "1",
           "member": "string",
@@ -6117,7 +6111,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.",
           "example": "无",
           "member": "Filter",
@@ -6126,7 +6119,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "已经废弃， 使用InstanceIdList",
           "example": "[instance-will-s]",
           "member": "string",
@@ -6135,7 +6127,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "按照实例ID过滤",
           "example": "[instance-will-s]",
           "member": "string",
@@ -6154,7 +6145,6 @@
           "example": "无",
           "member": "InstanceDetailResponse",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13319,8 +13309,8 @@
       "document": "实例详情中的标签对象",
       "members": [
         {
-          "default": "",
           "document": "标签的key",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -13328,8 +13318,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签的值",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -13337,7 +13327,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TdwParam": {
       "document": "Tdw类型入参",

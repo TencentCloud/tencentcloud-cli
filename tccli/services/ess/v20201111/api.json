@@ -60,6 +60,12 @@
       "name": "提交企业签署流程审批结果",
       "output": "CreateFlowSignReviewResponse"
     },
+    "CreateFlowSignUrl": {
+      "document": "创建签署链接，需要联系运营人员开白后才可使用",
+      "input": "CreateFlowSignUrlRequest",
+      "name": "创建签署链接",
+      "output": "CreateFlowSignUrlResponse"
+    },
     "CreateIntegrationEmployees": {
       "document": "创建员工",
       "input": "CreateIntegrationEmployeesRequest",
@@ -1618,6 +1624,69 @@
       ],
       "type": "object"
     },
+    "CreateFlowSignUrlRequest": {
+      "document": "CreateFlowSignUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流程编号",
+          "example": "xx",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。",
+          "example": "无",
+          "member": "FlowCreateApprover",
+          "name": "FlowApproverInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "机构信息，暂未开放",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用户信息，此结构体UserId必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowSignUrlResponse": {
+      "document": "CreateFlowSignUrl返回参数结构体",
+      "members": [
+        {
+          "document": "签署人签署链接信息",
+          "example": "无",
+          "member": "FlowApproverUrlInfo",
+          "name": "FlowApproverUrlInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateIntegrationEmployeesRequest": {
       "document": "CreateIntegrationEmployees请求参数结构体",
       "members": [
@@ -3071,6 +3140,52 @@
           "name": "OrganizationName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowApproverUrlInfo": {
+      "document": "签署链接信息",
+      "members": [
+        {
+          "default": "",
+          "document": "签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "SignUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ApproverMobile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ApproverName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人类型 1-个人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ApproverType",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

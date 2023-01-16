@@ -121,7 +121,7 @@
       "output": "ModifyUserMicStatusResponse"
     },
     "ScanVoice": {
-      "document": "本接口(ScanVoice)用于提交语音检测任务，检测任务列表最多支持100个。使用前请您登录[控制台 - 服务配置](https://console.cloud.tencent.com/gamegme/conf)开启语音内容安全服务。\n</br></br>\n\n<h4><b>功能试用说明：</b></h4>\n<li>打开前往<a href=\"https://console.cloud.tencent.com/gamegme/tryout\">控制台 - 产品试用</a>免费试用语音内容安全服务。</li>\n</br>\n\n<h4><b>接口功能说明：</b></h4>\n<li>支持对语音流或语音文件进行检测，判断其中是否包含违规内容。</li>\n<li>支持设置回调地址 Callback 获取检测结果，同时支持通过接口(查询语音检测结果)主动轮询获取检测结果。</li>\n<li>支持场景输入，包括：谩骂、色情等场景</li>\n<li>支持批量提交检测任务。检测任务列表最多支持100个。</li>\n</br>\n<h4><b>音频文件限制说明：</b></h4>\n<li>音频文件大小限制：100 M</li>\n<li>音频文件时长限制：30分钟</li>\n<li>音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg</li>\n</br>\n<h4><b>语音流限制说明：</b></h4>\n<li>语音流格式支持的类型：.m3u8、.flv</li>\n<li>语音流支持的传输协议：RTMP、HTTP、HTTPS</li>\n<li>语音流时长限制：4小时</li>\n<li>支持音视频流分离并对音频流进行分析</li>\n</br>\n<h4 id=\"Label_Value\"><b>Scenes 与 Label 参数说明：</b></h4>\n<p>提交语音检测任务时，需要指定 Scenes 场景参数，<font color=\"red\">目前要求您设置 Scenes 参数值为：[\"default\"]</font>；而在检测结果中，则包含请求时指定的场景，以及对应类型的检测结果。</p>\n<table>\n<thread>\n<tr>\n<th>场景</th>\n<th>描述</th>\n<th>Label</th>\n</tr>\n</thread>\n<tbody>\n<tr>\n<td>语音检测</td>\n<td>语音检测的检测类型</td>\n<td>\n<p>normal:正常文本</p>\n<p>porn:色情</p>\n<p>abuse:谩骂</p>\n<p>ad :广告</p>\n<p>illegal :违法</p>\n<p>moan :呻吟</p>\n<p>customized:自定义词库</p>\n</td>\n</tr>\n</tbody>\n</table>\n</br>\n<h4 id=\"Callback_Declare\"><b>回调相关说明：</b></h4>\n<li>如果在请求参数中指定了回调地址参数 Callback，即一个 HTTP(S) 协议接口的 URL，则需要支持 POST 方法，传输数据编码采用 UTF-8。</li>\n<li>在推送回调数据后，接收到的 HTTP 状态码为 200 时，表示推送成功。</li>\n<li>HTTP 请求参数（query）说明：</li>\n<table>\n<thread>\n<tr>\n<th>名称</th>\n<th>类型</th>\n<th>是否必需</th>\n<th>描述</th>\n</tr>\n</thread>\n<tbody>\n<tr>\n<td>Signatue</td>\n<td>string</td>\n<td>是</td>\n<td>签名，具体见<a href=\"#Callback_Signatue\">签名生成说明</a></td>\n</tr>\n</tbody>\n</table>\n<ul  id=\"Callback_Signatue\">\n\t<li>签名生成说明：</li>\n\t<ul>\n\t\t<li>使用 HMAC-SH1 算法, 最终结果做 BASE64 编码;</li>\n\t\t<li>签名原文串为 POST+body 的整个json内容(长度以 Content-Length 为准);</li>\n\t\t<li>签名key为应用的 SecretKey，可以通过控制台查看。</li>\n\t</ul>\n</ul>\n\n<li>回调示例如下<font color=\"red\">（详细字段说明见结构：\n<a href=\"https://cloud.tencent.com/document/api/607/35375#DescribeScanResult\" target=\"_blank\">DescribeScanResult</a>）</font>：</li>\n<pre><code>{\n\t\"Code\": 0,\n\t\"DataId\": \"1400000000_test_data_id\",\n\t\"ScanFinishTime\": 1566720906,\n\t\"HitFlag\": true,\n\t\"Live\": false,\n\t\"Msg\": \"\",\n\t\"ScanPiece\": [{\n\t\t\"DumpUrl\": \"\",\n\t\t\"HitFlag\": true,\n\t\t\"MainType\": \"abuse\",\n\t\t\"RoomId\": \"123\",\n\t\t\"OpenId\": \"xxx\",\n\t\t\"Info\":\"\",\n\t\t\"Offset\": 0,\n\t\t\"Duration\": 3400,\n\t\t\"PieceStartTime\":1574684231,\n\t\t\"ScanDetail\": [{\n\t\t\t\"EndTime\": 1110,\n\t\t\t\"KeyWord\": \"xxx\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 1110\n\t\t}, {\n\t\t\t\"EndTime\": 1380,\n\t\t\t\"KeyWord\": \"xxx\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 930\n\t\t}, {\n\t\t\t\"EndTime\": 1560,\n\t\t\t\"KeyWord\": \"xxx\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 930\n\t\t}, {\n\t\t\t\"EndTime\": 2820,\n\t\t\t\"KeyWord\": \"xxx\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 2490\n\t\t}]\n\t}],\n\t\"ScanStartTime\": 1566720905,\n\t\"Scenes\": [\n\t\t\"default\"\n\t],\n\t\"Status\": \"Success\",\n\t\"TaskId\": \"xxx\",\n\t\"Url\": \"https://xxx/xxx.m4a\"\n}\n</code></pre>",
+      "document": "本接口(ScanVoice)用于提交语音检测任务，检测任务列表最多支持100个。使用前请您登录[控制台 - 服务配置](https://console.cloud.tencent.com/gamegme/conf)开启语音内容安全服务。\n</br></br>\n\n<h4><b>功能试用说明：</b></h4>\n<li>打开前往<a href=\"https://console.cloud.tencent.com/gamegme/tryout\">控制台 - 产品试用</a>免费试用语音内容安全服务。</li>\n</br>\n\n<h4><b>接口功能说明：</b></h4>\n<li>支持对语音流或语音文件进行检测，判断其中是否包含违规内容。</li>\n<li>支持设置回调地址 Callback 获取检测结果，同时支持通过接口(查询语音检测结果)主动轮询获取检测结果。</li>\n<li>支持场景输入，包括：谩骂、色情等场景</li>\n<li>支持批量提交检测任务。检测任务列表最多支持100个。</li>\n</br>\n<h4><b>音频文件限制说明：</b></h4>\n<li>音频文件大小限制：100 M</li>\n<li>音频文件时长限制：30分钟</li>\n<li>音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg</li>\n</br>\n<h4><b>语音流限制说明：</b></h4>\n<li>语音流格式支持的类型：.m3u8、.flv</li>\n<li>语音流支持的传输协议：RTMP、HTTP、HTTPS</li>\n<li>语音流时长限制：4小时</li>\n<li>支持音视频流分离并对音频流进行分析</li>\n</br>\n<h4 id=\"Label_Value\"><b>Scenes 与 Label 参数说明：</b></h4>\n<p>提交语音检测任务时，需要指定 Scenes 场景参数，<font color=\"red\">目前要求您设置 Scenes 参数值为：[\"default\"]</font>；而在检测结果中，则包含请求时指定的场景，以及对应类型的检测结果。</p>\n<table>\n<thread>\n<tr>\n<th>场景</th>\n<th>描述</th>\n<th>Label</th>\n</tr>\n</thread>\n<tbody>\n<tr>\n<td>语音检测</td>\n<td>语音检测的检测类型</td>\n<td>\n<p>normal:正常文本</p>\n<p>porn:色情</p>\n<p>abuse:谩骂</p>\n<p>ad :广告</p>\n<p>illegal :违法</p>\n<p>moan :呻吟</p>\n<p>customized:自定义词库</p>\n</td>\n</tr>\n</tbody>\n</table>\n</br>\n<h4 id=\"Callback_Declare\"><b>回调相关说明：</b></h4>\n<li>如果在请求参数中指定了回调地址参数 Callback，即一个 HTTP(S) 协议接口的 URL，则需要支持 POST 方法，传输数据编码采用 UTF-8。</li>\n<li>在推送回调数据后，接收到的 HTTP 状态码为 200 时，表示推送成功。</li>\n<li>HTTP 请求参数（query）说明：</li>\n<table>\n<thread>\n<tr>\n<th>名称</th>\n<th>类型</th>\n<th>是否必需</th>\n<th>描述</th>\n</tr>\n</thread>\n<tbody>\n<tr>\n<td>Signatue</td>\n<td>string</td>\n<td>是</td>\n<td>签名，具体见<a href=\"#Callback_Signatue\">签名生成说明</a></td>\n</tr>\n</tbody>\n</table>\n<ul  id=\"Callback_Signatue\">\n\t<li>签名生成说明：</li>\n\t<ul>\n\t\t<li>使用 HMAC-SH1 算法, 最终结果做 BASE64 编码;</li>\n\t\t<li>签名原文串为 POST+body 的整个json内容(长度以 Content-Length 为准);</li>\n\t\t<li>签名key为应用的 SecretKey，可以通过控制台查看。</li>\n\t</ul>\n</ul>\n\n<li>回调示例如下<font color=\"red\">（详细字段说明见结构：\n<a href=\"https://cloud.tencent.com/document/api/607/35375#DescribeScanResult\" target=\"_blank\">DescribeScanResult</a>）</font>：</li>\n<pre><code>{\n\t\"Code\": 0,\n\t\"DataId\": \"1400000000_test_data_id\",\n\t\"ScanFinishTime\": 1566720906,\n\t\"HitFlag\": true,\n\t\"Live\": false,\n\t\"Msg\": \"\",\n\t\"ScanPiece\": [{\n\t\t\"DumpUrl\": \"\",\n\t\t\"HitFlag\": true,\n\t\t\"MainType\": \"abuse\",\n\t\t\"RoomId\": \"123\",\n\t\t\"OpenId\": \"111\",\n\t\t\"Info\":\"\",\n\t\t\"Offset\": 0,\n\t\t\"Duration\": 3400,\n\t\t\"PieceStartTime\":1574684231,\n\t\t\"ScanDetail\": [{\n\t\t\t\"EndTime\": 1110,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 1110\n\t\t}, {\n\t\t\t\"EndTime\": 1380,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 930\n\t\t}, {\n\t\t\t\"EndTime\": 1560,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 930\n\t\t}, {\n\t\t\t\"EndTime\": 2820,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 2490\n\t\t}]\n\t}],\n\t\"ScanStartTime\": 1566720905,\n\t\"Scenes\": [\n\t\t\"default\"\n\t],\n\t\"Status\": \"Success\",\n\t\"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\",\n\t\"Url\": \"https://xxx/xxx.m4a\"\n}\n</code></pre>",
       "input": "ScanVoiceRequest",
       "name": "提交语音检测任务",
       "output": "ScanVoiceResponse"
@@ -523,7 +523,6 @@
       "document": "CreateAgeDetectTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用id",
           "example": "123456",
           "member": "int64",
@@ -532,7 +531,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "语音检测子任务列表，列表最多支持100个检测子任务。结构体中包含：\n<li>DataId：数据的唯一ID</li>\n<li>Url：数据文件的url，为 urlencode 编码，流式则为拉流地址</li>",
           "example": "无",
           "member": "AgeDetectTask",
@@ -541,7 +539,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "任务结束时gme后台会自动触发回调",
           "example": "https://xxx.com/callback",
           "member": "string",
@@ -560,7 +557,6 @@
           "example": "xxx-yyy-zzz",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -762,7 +758,6 @@
       "document": "CreateCustomization请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "1234",
           "member": "int64",
@@ -771,7 +766,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
           "example": "abc",
           "member": "string",
@@ -780,7 +774,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模型名称，名称长度不超过36，默认为BizId。",
           "example": "ModelName",
           "member": "string",
@@ -799,7 +792,6 @@
           "example": "abc",
           "member": "string",
           "name": "ModelId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -816,7 +808,6 @@
       "document": "CreateScanUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用ID，登录控制台 - 服务管理创建应用得到的AppID",
           "example": "1",
           "member": "uint64",
@@ -825,7 +816,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "需要新增送检的用户号。示例：1234",
           "example": "1",
           "member": "uint64",
@@ -844,7 +834,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -861,7 +850,6 @@
       "document": "语音消息转文本热句模型配置",
       "members": [
         {
-          "default": "",
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "123",
           "member": "int64",
@@ -871,7 +859,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型ID",
           "example": "123",
           "member": "string",
@@ -881,7 +868,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型状态，-1下线状态，1上线状态, 0训练中, -2训练失败, 3上线中, 4下线中",
           "example": "1",
           "member": "int64",
@@ -891,7 +877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型名称",
           "example": "ModelName",
           "member": "string",
@@ -901,7 +886,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
           "example": "https://file.myqcloud.com/keywords_template.txt",
           "member": "string",
@@ -911,7 +895,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "更新时间，11位时间戳",
           "example": "1667465928843",
           "member": "int64",
@@ -921,13 +904,12 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DeleteCustomizationRequest": {
       "document": "DeleteCustomization请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "删除的模型ID",
           "example": "abc",
           "member": "string",
@@ -936,7 +918,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "1234",
           "member": "int64",
@@ -955,7 +936,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1059,7 +1039,6 @@
       "document": "DeleteScanUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用ID，登录控制台 - 服务管理创建应用得到的AppID",
           "example": "1",
           "member": "uint64",
@@ -1068,7 +1047,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "需要删除送检的用户号。示例：1234",
           "example": "1",
           "member": "uint64",
@@ -1087,7 +1065,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1104,7 +1081,6 @@
       "document": "DescribeAgeDetectTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用id",
           "example": "123456",
           "member": "int64",
@@ -1113,9 +1089,8 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "创建年龄语音识别任务时返回的taskid",
-          "example": "xxx-yyy-zzz",
+          "document": "[创建年龄语音识别任务](https://cloud.tencent.com/document/product/607/60620)时返回的taskid",
+          "example": "6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1132,7 +1107,6 @@
           "example": "xxx-yyy-zzz",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1141,7 +1115,6 @@
           "example": "无",
           "member": "AgeDetectTaskResult",
           "name": "Results",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1158,7 +1131,6 @@
       "document": "DescribeAppStatistics请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "GME应用ID",
           "example": "140000001",
           "member": "uint64",
@@ -1167,7 +1139,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13",
           "example": "2019-08-01",
           "member": "date",
@@ -1176,7 +1147,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13",
           "example": "2019-08-03",
           "member": "date",
@@ -1185,7 +1155,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText",
           "example": "[\"RealTimeSpeech\\r\\n\",\"VoiceMessage\\r\\n\"]",
           "member": "string",
@@ -1220,7 +1189,6 @@
           "example": "无",
           "member": "DescribeAppStatisticsResp",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1291,7 +1259,6 @@
       "document": "DescribeApplicationList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project",
           "example": "0",
           "member": "int64",
@@ -1300,7 +1267,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页码ID，0表示第一页，以此后推。默认填0",
           "example": "0",
           "member": "uint64",
@@ -1309,7 +1275,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "每页展示应用数量。默认填200",
           "example": "10",
           "member": "uint64",
@@ -1318,7 +1283,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用",
           "example": "测试",
           "member": "string",
@@ -1327,7 +1291,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签列表",
           "example": "无",
           "member": "Tag",
@@ -1336,7 +1299,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "查找过滤关键字列表",
           "example": "无",
           "member": "Filter",
@@ -1355,7 +1317,6 @@
           "example": "无",
           "member": "ApplicationList",
           "name": "ApplicationList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1364,7 +1325,6 @@
           "example": "9",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1381,7 +1341,6 @@
       "document": "DescribeRealtimeScanConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用ID",
           "example": "1",
           "member": "uint64",
@@ -1400,7 +1359,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1409,7 +1367,6 @@
           "example": "1",
           "member": "uint64",
           "name": "BizId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1418,7 +1375,6 @@
           "example": "0",
           "member": "int64",
           "name": "AuditType",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1427,7 +1383,6 @@
           "example": "[\"0\"]",
           "member": "string",
           "name": "UserIdRegex",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1436,7 +1391,6 @@
           "example": "[\"0\"]",
           "member": "string",
           "name": "RoomIdRegex",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1445,7 +1399,6 @@
           "example": "\"1\"",
           "member": "string",
           "name": "UserIdString",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1454,7 +1407,6 @@
           "example": "\"1\"",
           "member": "string",
           "name": "RoomIdString",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1670,24 +1622,24 @@
       "document": "DescribeScanResultList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用 ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
+          "example": "1400000000",
           "member": "uint64",
           "name": "BizId",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询的任务 ID 列表，任务 ID 列表最多支持 100 个。",
+          "example": "[\"xxx\\r\\n\"]",
           "member": "string",
           "name": "TaskIdList",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "document": "任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1701,6 +1653,7 @@
       "members": [
         {
           "document": "要查询的语音检测任务的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeScanResult",
           "name": "Data",
           "type": "list",
@@ -1817,7 +1770,6 @@
       "document": "GetCustomizationList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "1234",
           "member": "int64",
@@ -1836,7 +1788,6 @@
           "example": "无",
           "member": "CustomizationConfigs",
           "name": "CustomizationConfigs",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1948,7 +1899,6 @@
       "document": "ModifyCustomization请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "123",
           "member": "int64",
@@ -1957,7 +1907,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
           "example": "abc",
           "member": "string",
@@ -1966,7 +1915,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "修改的模型ID",
           "example": "abc",
           "member": "string",
@@ -1985,7 +1933,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1994,7 +1941,6 @@
           "example": "123",
           "member": "string",
           "name": "ModelId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2011,7 +1957,6 @@
       "document": "ModifyCustomizationState请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模型ID",
           "example": "abc",
           "member": "string",
@@ -2020,7 +1965,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "想要变换的模型状态，-1代表下线，1代表上线",
           "example": "1",
           "member": "int64",
@@ -2029,7 +1973,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "应用 ID，登录控制台创建应用得到的AppID",
           "example": "1234",
           "member": "int64",
@@ -2048,7 +1991,6 @@
           "example": "abc",
           "member": "string",
           "name": "ModelId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2057,7 +1999,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2350,6 +2291,7 @@
         {
           "default": "",
           "document": "流检测时返回，音频转存地址，保留30min\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "DumpUrl",
           "required": true,
@@ -2359,6 +2301,7 @@
         {
           "default": "",
           "document": "是否违规",
+          "example": "false",
           "member": "bool",
           "name": "HitFlag",
           "required": true,
@@ -2368,6 +2311,7 @@
         {
           "default": "",
           "document": "违规主要类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal",
           "member": "string",
           "name": "MainType",
           "required": true,
@@ -2377,6 +2321,7 @@
         {
           "default": "",
           "document": "语音检测详情",
+          "example": "无",
           "member": "ScanDetail",
           "name": "ScanDetail",
           "required": true,
@@ -2386,6 +2331,7 @@
         {
           "default": "",
           "document": "gme实时语音房间ID，透传任务传入时的RoomId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -2395,6 +2341,7 @@
         {
           "default": "",
           "document": "gme实时语音用户ID，透传任务传入时的OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
           "member": "string",
           "name": "OpenId",
           "required": true,
@@ -2404,6 +2351,7 @@
         {
           "default": "",
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "Info",
           "required": true,
@@ -2413,6 +2361,7 @@
         {
           "default": "",
           "document": "流检测时分片在流中的偏移时间，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2422,6 +2371,7 @@
         {
           "default": "",
           "document": "流检测时分片时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "Duration",
           "required": true,
@@ -2431,6 +2381,7 @@
         {
           "default": "",
           "document": "分片开始检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "PieceStartTime",
           "required": true,
@@ -2726,7 +2677,6 @@
       "document": "UpdateScanRooms请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用ID",
           "example": "1",
           "member": "uint64",
@@ -2735,7 +2685,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "需要送检的所有房间号。多个房间号之间用\",\"分隔。示例：\"0001,0002,0003\"",
           "example": "\"1\"",
           "member": "string",
@@ -2744,7 +2693,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "符合此正则表达式规则的房间号将被送检。示例：[\"^6.*\"] 表示所有以6开头的房间号将被送检",
           "example": "[\"1\"]",
           "member": "string",
@@ -2763,7 +2711,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2780,7 +2727,6 @@
       "document": "UpdateScanUsers请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用ID",
           "example": "1",
           "member": "uint64",
@@ -2789,7 +2735,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "需要送检的所有用户号。多个用户号之间用\",\"分隔。示例：\"0001,0002,0003\"",
           "example": "\"1\"",
           "member": "string",
@@ -2798,7 +2743,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "符合此正则表达式规则的用户号将被送检。示例：[\"^6.*\"] 表示所有以6开头的用户号将被送检",
           "example": "[\"1\"]",
           "member": "string",
@@ -2817,7 +2761,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

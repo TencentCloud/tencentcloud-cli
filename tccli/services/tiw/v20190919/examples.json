@@ -87,14 +87,14 @@
     "DescribeTranscode": [
       {
         "document": "查询文档动态转码任务结果",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTranscode\n&SdkAppId=1400000001\n&TaskId=g0jb42ps49vtebjshilb\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Pages\": 1,\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Resolution\": \"793x1122\",\n        \"ResultUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/index.html\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\",\n        \"Title\": \"59378.docx\",\n        \"ThumbnailUrl\": \"https://transcode-thumbnal/0agdnligqtgtvkm65emb/\",\n        \"ThumbnailResolution\": \"793x1122\",\n        \"CompressFileUrl\": \"\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscode\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Pages\": 1,\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Resolution\": \"793x1122\",\n        \"ResultUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/index.html\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\",\n        \"Title\": \"59378.docx\",\n        \"ThumbnailUrl\": \"https://transcode-thumbnal/0agdnligqtgtvkm65emb/\",\n        \"ThumbnailResolution\": \"793x1122\",\n        \"CompressFileUrl\": \"\",\n        \"ResourceListUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/resources.txt\",\n        \"Ext\": \"Office\"\n    }\n}",
         "title": "查询文档动态转码任务"
       },
       {
         "document": "查询文档静态转码任务结果",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTranscode\n&SdkAppId=1400000001\n&TaskId=g0jb42ps49vtebjshilb\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Pages\": 1,\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Resolution\": \"793x1122\",\n        \"ResultUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\",\n        \"Title\": \"59378.docx\",\n        \"ThumbnailUrl\": \"\",\n        \"ThumbnailResolution\": \"\",\n        \"CompressFileUrl\": \"\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscode\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Pages\": 1,\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Resolution\": \"793x1122\",\n        \"ResultUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\",\n        \"Title\": \"59378.docx\",\n        \"ThumbnailUrl\": \"\",\n        \"ThumbnailResolution\": \"\",\n        \"CompressFileUrl\": \"\",\n        \"ResourceListUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/resources.txt\",\n        \"Ext\": \"Office\"\n    }\n}",
         "title": "查询文档静态转码任务"
       }
     ],
@@ -240,7 +240,7 @@
     ],
     "StartWhiteboardPush": [
       {
-        "document": "",
+        "document": "创建一个白板推流任务",
         "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWhiteboardPush\n<公共请求参数>\n\n{\n    \"PushUserId\": \"tic_push_user_1203_141551\",\n    \"PushUserSig\": \"usersig_of_<tic_push_user_1203_141551>\",\n    \"RoomId\": \"1203\",\n    \"SdkAppId\": \"1400000001\"\n}",
         "output": "{\n    \"Response\": {\n        \"Backup\": \"{\\\"RequestId\\\":\\\"8e9b2bc4-ec7f-46cd-823b-66676e2375f8\\\",\\\"TaskId\\\":\\\"052lfmu5uc3lp0rrqvvb\\\"}\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"bj0mt2l23osdj300hl30\"\n    }\n}",
         "title": "开始白板推流"

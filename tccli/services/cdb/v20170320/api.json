@@ -2792,6 +2792,7 @@
         {
           "default": "",
           "document": "周一的时间窗，格式如： 02:00-06:00",
+          "example": "02:00-06:00",
           "member": "string",
           "name": "Monday",
           "required": false,
@@ -2801,6 +2802,7 @@
         {
           "default": "",
           "document": "周二的时间窗，格式如： 02:00-06:00",
+          "example": "02:00-06:00",
           "member": "string",
           "name": "Tuesday",
           "required": false,
@@ -2810,6 +2812,7 @@
         {
           "default": "",
           "document": "周三的时间窗，格式如： 02:00-06:00",
+          "example": "02:00-06:00",
           "member": "string",
           "name": "Wednesday",
           "required": false,
@@ -2819,6 +2822,7 @@
         {
           "default": "",
           "document": "周四的时间窗，格式如： 02:00-06:00",
+          "example": "02:00-06:00",
           "member": "string",
           "name": "Thursday",
           "required": false,
@@ -2828,6 +2832,7 @@
         {
           "default": "",
           "document": "周五的时间窗，格式如： 02:00-06:00",
+          "example": "02:00-06:00",
           "member": "string",
           "name": "Friday",
           "required": false,
@@ -2837,6 +2842,7 @@
         {
           "default": "",
           "document": "周六的时间窗，格式如： 02:00-06:00",
+          "example": "02:00-06:00",
           "member": "string",
           "name": "Saturday",
           "required": false,
@@ -2846,8 +2852,39 @@
         {
           "default": "",
           "document": "周日的时间窗，格式如： 02:00-06:00",
+          "example": "02:00-06:00",
           "member": "string",
           "name": "Sunday",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "常规备份保留策略，weekly-按周备份，monthly-按月备份，默认为weekly",
+          "example": "weekly",
+          "member": "string",
+          "name": "BackupPeriodStrategy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果设置为按月备份，需填入每月具体备份日期，相邻备份天数不得超过两天。例[1,4,7,9,11,14,17,19,22,25,28,30,31]",
+          "example": "[1,4,7,9,11,14,17,19,22,25,28,30,31]",
+          "member": "int64",
+          "name": "Days",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "月度备份时间窗，BackupPeriodStrategy为monthly时必填。格式如： 02:00-06:00",
+          "example": "02:00-06:00",
+          "member": "string",
+          "name": "BackupPeriodTime",
           "required": false,
           "type": "string",
           "value_allowed_null": false

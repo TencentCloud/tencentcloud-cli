@@ -300,7 +300,6 @@
       "document": "批次",
       "members": [
         {
-          "default": "",
           "document": "批次号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20121212000001",
           "member": "string",
@@ -310,7 +309,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -320,7 +318,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "批次编码(未使用)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20121212000001",
           "member": "string",
@@ -330,7 +327,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "码数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -340,7 +336,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "所属商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "eqdmnz7020bmtvi9",
           "member": "string",
@@ -350,7 +345,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
@@ -360,7 +354,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "批次类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -370,7 +363,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
@@ -380,7 +372,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "微信模板\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "微信模板",
           "member": "string",
@@ -390,7 +381,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "批次状态 0: 未激活 1: 已激活 -1: 已冻结\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -400,7 +390,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-01T06:48:45.000Z",
           "member": "string",
@@ -410,7 +399,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-01T06:48:45.000Z",
           "member": "string",
@@ -420,7 +408,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "所属商户名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "所属商户名称",
           "member": "string",
@@ -430,7 +417,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "产品名称",
           "member": "string",
@@ -440,7 +426,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "未使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "扩展字段",
           "member": "Ext",
@@ -450,7 +435,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "模板名称",
           "member": "string",
@@ -460,7 +444,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "调度任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Job",
@@ -492,7 +475,6 @@
       "document": "码包类型",
       "members": [
         {
-          "default": "",
           "document": "码id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -502,7 +484,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "企业id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -512,7 +493,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "商户id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -522,7 +502,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
@@ -532,7 +511,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
@@ -542,7 +520,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -552,7 +529,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[time] xx",
           "member": "string",
@@ -562,7 +538,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -572,7 +547,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "码数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -582,7 +556,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "防伪码长度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -592,7 +565,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "码类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -602,7 +574,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否暗码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -612,7 +583,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "[弃用] 文字码地址，通过另一个接口查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -622,7 +592,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "[弃用] 二维码地址，通过另一个接口查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -632,7 +601,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "商户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
@@ -642,7 +610,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "码规则类型 0: 默认, 1: 自定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -652,7 +619,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自定义码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -662,7 +628,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "码包类型 0: 普通码包 1: 层级码包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -672,7 +637,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "生码层级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -682,7 +646,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "层级码配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": " 无",
           "member": "PackSpec",
@@ -4454,7 +4417,6 @@
       "document": "溯源码",
       "members": [
         {
-          "default": "",
           "document": "二维码",
           "example": "https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
           "member": "string",
@@ -4464,7 +4426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -4474,7 +4435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "码包ID",
           "example": "z1vt4ma2jpladh362o",
           "member": "string",
@@ -4484,7 +4444,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "批次ID",
           "example": "xfetmgoiky2nms6nk8",
           "member": "string",
@@ -4494,7 +4453,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "所属商户ID",
           "example": "eqdmnz7020bmtvi9",
           "member": "string",
@@ -4504,7 +4462,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品ID",
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
@@ -4514,7 +4471,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "码状态 0: 冻结 1: 激活",
           "example": "0",
           "member": "uint64",
@@ -4524,7 +4480,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2021-12-01T09:04:50.000Z",
           "member": "string",
@@ -4534,7 +4489,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "修改时间",
           "example": "2021-12-01T09:04:50.000Z",
           "member": "string",
@@ -4544,7 +4498,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "商户名称",
           "example": "商户名称",
           "member": "string",
@@ -4554,13 +4507,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品名称",
           "example": "产品名称",
           "member": "string",
           "name": "ProductName",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "渠道商ID",
+          "example": "100",
+          "member": "uint64",
+          "name": "AgentId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "码层级 0: 最小级, 1: 一级, 2: 二级",
+          "example": "0",
+          "member": "uint64",
+          "name": "Level",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

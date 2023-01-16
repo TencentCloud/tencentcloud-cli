@@ -1,14 +1,14 @@
 **Example 1: 查询源站防护信息**
 
-
+查询源站防护信息
 
 Input: 
 
 ```
 tccli teo DescribeOriginProtection --cli-unfold-argument  \
     --ZoneIds zone-276zs184g93m \
-    --Filters.Values true \
-    --Filters.Name need-update \
+    --Filters.0.Values true \
+    --Filters.0.Name need-update \
     --Offset 0 \
     --Limit 20
 ```

@@ -40,16 +40,16 @@ Output:
                         "Status": 1
                     }
                 },
-                "BizId": 1,
+                "BizId": 1400000000,
                 "AppType": 1,
-                "AppName": "xx",
+                "AppName": "test",
                 "ProjectId": 1,
                 "AppStatus": 1,
                 "CreateTime": 1
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "65ba570f-dbbb-4e3b-a412-5e285a2fecc9"
     }
 }
 ```
