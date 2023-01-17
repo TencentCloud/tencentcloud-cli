@@ -1369,7 +1369,6 @@
       "document": "CreateCRWork请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "作品名称",
           "example": "西游记",
           "member": "string",
@@ -1378,7 +1377,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "作品分类",
           "example": "010101",
           "member": "string",
@@ -1387,7 +1385,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "作品内容类型",
           "example": "01",
           "member": "string",
@@ -1396,7 +1393,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "作品标签",
           "example": "孙悟空、猪八戒",
           "member": "string",
@@ -1405,7 +1401,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "字段已废弃，作品图片",
           "example": "https://test.com",
           "member": "string",
@@ -1414,7 +1409,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "作品描述",
           "example": "经典四大名著之一",
           "member": "string",
@@ -1423,7 +1417,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否原创：0-否 1-是",
           "example": "1",
           "member": "string",
@@ -1432,7 +1425,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否发布：0-未发布 1-已发布",
           "example": "1",
           "member": "string",
@@ -1441,7 +1433,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "字段已废弃，著作权人ID",
           "example": "0",
           "member": "int64",
@@ -1450,7 +1441,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "创作时间",
           "example": "2022-01-01 00:00:00",
           "member": "string",
@@ -1459,7 +1449,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "字段已废弃",
           "example": "https://test.com",
           "member": "string",
@@ -1468,7 +1457,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "作品下载地址",
           "example": "https://test.com",
           "member": "string",
@@ -1477,7 +1465,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "作品在线地址",
           "example": "https://test.com",
           "member": "string",
@@ -1486,7 +1473,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "字段已废弃，授予类型",
           "example": "1",
           "member": "string",
@@ -1495,7 +1481,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否监测：0-不监测 1-监测",
           "example": "1",
           "member": "string",
@@ -1504,7 +1489,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否存证：0-不存证  2-存证 注意是2",
           "example": "1",
           "member": "string",
@@ -1513,7 +1497,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "存证回调地址",
           "example": "https://test.com",
           "member": "string",
@@ -1522,7 +1505,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "监测回调地址",
           "example": "https://test.com",
           "member": "string",
@@ -1531,7 +1513,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "字段已废弃，创作性质",
           "example": "原创",
           "member": "string",
@@ -1540,7 +1521,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "白名单列表",
           "example": "[\"qq.com\",\"baidu.com\"]",
           "member": "string",
@@ -1549,7 +1529,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "作品ID，忽略该字段",
           "example": "0",
           "member": "int64",
@@ -1558,7 +1537,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "著作权人姓名",
           "example": "张三",
           "member": "string",
@@ -1567,7 +1545,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "作者，小说类型必填",
           "example": "张三",
           "member": "string",
@@ -1576,7 +1553,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "授权书下载地址",
           "example": "https://test.com",
           "member": "string",
@@ -1585,7 +1561,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "授权书开始时间",
           "example": "2022-01-01 00:00:00",
           "member": "string",
@@ -1594,7 +1569,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "授权书结束时间",
           "example": "2025-01-01 00:00:00",
           "member": "string",
@@ -1603,7 +1577,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "内容格式，支持txt、doc等，表示Content的具体格式",
           "example": "txt",
           "member": "string",
@@ -1612,7 +1585,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件内容base64编码，该字段仅在无法提供下载链接时使用",
           "example": "xxx",
           "member": "string",
@@ -1621,7 +1593,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "监测结束时间",
           "example": "2025-01-01 00:00:00",
           "member": "string",
@@ -1630,7 +1601,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "申请人ID，用于存证和取证",
           "example": "123456",
           "member": "string",
@@ -1639,11 +1609,18 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "申请人姓名，用于存证和取证",
           "example": "张三",
           "member": "string",
           "name": "ApplierName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "是否自动续期",
+          "example": "无",
+          "member": "string",
+          "name": "IsAutoRenew",
           "required": false,
           "type": "string"
         }
@@ -1658,7 +1635,6 @@
           "example": "123",
           "member": "int64",
           "name": "WorkId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1667,7 +1643,6 @@
           "example": "123",
           "member": "int64",
           "name": "EvidenceId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2070,7 +2045,6 @@
       "document": "DescribeCRMonitors请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤条件",
           "example": "无",
           "member": "Filter",
@@ -2079,7 +2053,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "页数",
           "example": "10",
           "member": "int64",
@@ -2088,7 +2061,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页码",
           "example": "1",
           "member": "int64",
@@ -2107,7 +2079,6 @@
           "example": "无",
           "member": "Monitor",
           "name": "Monitors",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2116,7 +2087,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2125,7 +2095,6 @@
           "example": "https://test.com",
           "member": "string",
           "name": "ExportURL",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3070,7 +3039,6 @@
       "document": "版权保护-监测结果",
       "members": [
         {
-          "default": "",
           "document": "作品ID",
           "example": "1",
           "member": "int64",
@@ -3080,7 +3048,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "作品名称",
           "example": "xxx",
           "member": "string",
@@ -3090,7 +3057,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "作品内容类型 01-视频 02-音频 03-文本 04-图片",
           "example": "01",
           "member": "string",
@@ -3100,7 +3066,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "侵权平台数量",
           "example": "1",
           "member": "int64",
@@ -3110,7 +3075,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "侵权链接数量",
           "example": "1",
           "member": "int64",
@@ -3120,7 +3084,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "监测时间",
           "example": "xxx",
           "member": "string",
@@ -3130,7 +3093,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "0-待监测 1-监测中 2-不监测 3-暂停监测",
           "example": "1",
           "member": "int64",
@@ -3140,7 +3102,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "作品类型",
           "example": "010101",
           "member": "string",
@@ -3150,7 +3111,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "新增时间",
           "example": "xx",
           "member": "string",
@@ -3160,7 +3120,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "监测状态说明",
           "example": "xx",
           "member": "string",
@@ -3170,7 +3129,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "作品类型全部展示",
           "example": "010101",
           "member": "string",
@@ -3180,7 +3138,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "存证状态",
           "example": "1",
           "member": "int64",
@@ -3190,7 +3147,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "存证状态说明",
           "example": "xxx",
           "member": "string",
@@ -3200,12 +3156,29 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "侵权站点数量",
           "example": "1",
           "member": "int64",
           "name": "TortSiteNum",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "监测截止时间",
+          "example": "无",
+          "member": "string",
+          "name": "MonitorEndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否自动续费",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }

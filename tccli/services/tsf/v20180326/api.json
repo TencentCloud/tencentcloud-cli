@@ -84,6 +84,12 @@
       "name": "创建配置项",
       "output": "CreateConfigResponse"
     },
+    "CreateConfigTemplate": {
+      "document": "创建参数模板",
+      "input": "CreateConfigTemplateRequest",
+      "name": "创建参数模板",
+      "output": "CreateConfigTemplateResponse"
+    },
     "CreateContainGroup": {
       "document": "创建容器部署组",
       "input": "CreateContainGroupRequest",
@@ -125,6 +131,12 @@
       "input": "CreateMicroserviceRequest",
       "name": "新增微服务",
       "output": "CreateMicroserviceResponse"
+    },
+    "CreateMicroserviceWithDetailResp": {
+      "document": "新增微服务返回id",
+      "input": "CreateMicroserviceWithDetailRespRequest",
+      "name": "新增微服务返回id",
+      "output": "CreateMicroserviceWithDetailRespResponse"
     },
     "CreateNamespace": {
       "document": "创建命名空间",
@@ -180,11 +192,23 @@
       "name": "删除应用",
       "output": "DeleteApplicationResponse"
     },
+    "DeleteCluster": {
+      "document": "删除集群",
+      "input": "DeleteClusterRequest",
+      "name": "删除集群",
+      "output": "DeleteClusterResponse"
+    },
     "DeleteConfig": {
       "document": "删除配置项",
       "input": "DeleteConfigRequest",
       "name": "删除配置项",
       "output": "DeleteConfigResponse"
+    },
+    "DeleteConfigTemplate": {
+      "document": "删除模板",
+      "input": "DeleteConfigTemplateRequest",
+      "name": "删除模板",
+      "output": "DeleteConfigTemplateResponse"
     },
     "DeleteContainerGroup": {
       "document": "删除容器部署组",
@@ -372,6 +396,12 @@
       "name": "查询集群实例",
       "output": "DescribeClusterInstancesResponse"
     },
+    "DescribeClusters": {
+      "document": "获取集群列表",
+      "input": "DescribeClustersRequest",
+      "name": "获取集群列表",
+      "output": "DescribeClustersResponse"
+    },
     "DescribeConfig": {
       "document": "查询配置",
       "input": "DescribeConfigRequest",
@@ -395,6 +425,12 @@
       "input": "DescribeConfigSummaryRequest",
       "name": "查询配置汇总列表",
       "output": "DescribeConfigSummaryResponse"
+    },
+    "DescribeConfigTemplate": {
+      "document": "导入配置",
+      "input": "DescribeConfigTemplateRequest",
+      "name": "导入配置",
+      "output": "DescribeConfigTemplateResponse"
     },
     "DescribeConfigs": {
       "document": "查询配置项列表",
@@ -461,6 +497,12 @@
       "input": "DescribeEnabledUnitRuleRequest",
       "name": "查询生效的单元化规则",
       "output": "DescribeEnabledUnitRuleResponse"
+    },
+    "DescribeFileConfigReleases": {
+      "document": "查询文件配置项发布信息",
+      "input": "DescribeFileConfigReleasesRequest",
+      "name": "查询文件配置项发布信息",
+      "output": "DescribeFileConfigReleasesResponse"
     },
     "DescribeFileConfigs": {
       "document": "查询文件配置项列表",
@@ -894,6 +936,18 @@
       "name": "虚拟机部署组添加实例",
       "output": "ExpandGroupResponse"
     },
+    "ModifyApplication": {
+      "document": "修改应用",
+      "input": "ModifyApplicationRequest",
+      "name": "修改应用",
+      "output": "ModifyApplicationResponse"
+    },
+    "ModifyCluster": {
+      "document": "修改集群信息",
+      "input": "ModifyClusterRequest",
+      "name": "修改集群信息",
+      "output": "ModifyClusterResponse"
+    },
     "ModifyContainerGroup": {
       "document": "修改容器部署组",
       "input": "ModifyContainerGroupRequest",
@@ -905,6 +959,12 @@
       "input": "ModifyContainerReplicasRequest",
       "name": "修改容器部署组实例数",
       "output": "ModifyContainerReplicasResponse"
+    },
+    "ModifyGroup": {
+      "document": "更新部署组信息",
+      "input": "ModifyGroupRequest",
+      "name": "更新分组信息",
+      "output": "ModifyGroupResponse"
     },
     "ModifyLane": {
       "document": "更新泳道信息",
@@ -923,6 +983,12 @@
       "input": "ModifyMicroserviceRequest",
       "name": "修改微服务详情",
       "output": "ModifyMicroserviceResponse"
+    },
+    "ModifyNamespace": {
+      "document": "修改命名空间",
+      "input": "ModifyNamespaceRequest",
+      "name": "修改命名空间",
+      "output": "ModifyNamespaceResponse"
     },
     "ModifyPathRewrite": {
       "document": "修改路径重写",
@@ -1019,6 +1085,12 @@
       "input": "RevocationPublicConfigRequest",
       "name": "撤回已发布的公共配置",
       "output": "RevocationPublicConfigResponse"
+    },
+    "RevokeFileConfig": {
+      "document": "撤回已发布的文件配置",
+      "input": "RevokeFileConfigRequest",
+      "name": "撤回已发布的文件配置",
+      "output": "RevokeFileConfigResponse"
     },
     "RollbackConfig": {
       "document": "回滚配置",
@@ -1121,6 +1193,12 @@
       "input": "UpdateApiTimeoutsRequest",
       "name": "更新API超时",
       "output": "UpdateApiTimeoutsResponse"
+    },
+    "UpdateConfigTemplate": {
+      "document": "更新参数模板",
+      "input": "UpdateConfigTemplateRequest",
+      "name": "更新参数模板",
+      "output": "UpdateConfigTemplateResponse"
     },
     "UpdateGatewayApi": {
       "document": "更新API",
@@ -3277,6 +3355,372 @@
       ],
       "usage": "out"
     },
+    "ClusterV2": {
+      "document": "集群详情",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所属私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterCIDR",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群总CPU，单位: 核\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "ClusterTotalCpu",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群总内存，单位: G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "ClusterTotalMem",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群已使用CPU，单位: 核\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "ClusterUsedCpu",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群已使用内存，单位: G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "ClusterUsedMem",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群机器实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群运行中的机器实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RunInstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群正常状态的机器实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NormalInstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除标记：true：可以删除；false：不可删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所属TSF地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TsfRegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所属TSF地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TsfRegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所属TSF可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TsfZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所属TSF可用区名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TsfZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群不可删除的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DeleteFlagReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所属私有网络子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群剩余 cpu limit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterLimitCpu",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群剩余 memory limit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterLimitMem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行服务实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RunServiceInstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "给前端的按钮控制信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OperationInfo",
+          "name": "OperationInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器集群版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行中部署组数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RunGroupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "停止中部署组数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "StopGroupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "异常部署组数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AbnormalGroupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群备注名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterRemarkName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "api地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "KuberneteApiServer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "K : kubeconfig, S : service account\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "KuberneteNativeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "native secret\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "KuberneteNativeSecret",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Config": {
       "document": "配置项",
       "members": [
@@ -3685,6 +4129,75 @@
         }
       ],
       "usage": "out"
+    },
+    "ConfigTemplate": {
+      "document": "配置模板对象",
+      "members": [
+        {
+          "default": "",
+          "document": "配置模板Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigTemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigTemplateName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigTemplateDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置模板对应的微服务框架\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigTemplateType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置模板数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigTemplateValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ContainGroup": {
       "document": "部署组列表（应用下钻界面的）",
@@ -5476,6 +5989,78 @@
       ],
       "type": "object"
     },
+    "CreateConfigTemplateRequest": {
+      "document": "CreateConfigTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置模板名称",
+          "example": "配置1",
+          "member": "string",
+          "name": "ConfigTemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置模板对应的微服务框架",
+          "example": "Ribbon",
+          "member": "string",
+          "name": "ConfigTemplateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置模板数据",
+          "example": "#请求处理超时时间ribbon.ReadTimeout: 5000#请求连接超时时间ribbon.ConnectTimeout: 2000#同一实例最大重试次数，不包括首次调用ribbon.MaxAutoRetries: 0#重试其他实例的最大重试次数，不包括首次所选的serverribbon.MaxAutoRetriesNextServer: 1#是否对所有操作请求都进行重试ribbon.OkToRetryOnAllOperations: false",
+          "member": "string",
+          "name": "ConfigTemplateValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置模板描述",
+          "example": "11111111111",
+          "member": "string",
+          "name": "ConfigTemplateDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigTemplateResponse": {
+      "document": "CreateConfigTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "true：创建成功；false：创建失败",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateContainGroupRequest": {
       "document": "CreateContainGroup请求参数结构体",
       "members": [
@@ -6145,6 +6730,60 @@
           "member": "bool",
           "name": "Result",
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMicroserviceWithDetailRespRequest": {
+      "document": "CreateMicroserviceWithDetailResp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间ID",
+          "example": "无",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微服务名称",
+          "example": "无",
+          "member": "string",
+          "name": "MicroserviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微服务描述信息",
+          "example": "无",
+          "member": "string",
+          "name": "MicroserviceDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMicroserviceWithDetailRespResponse": {
+      "document": "CreateMicroserviceWithDetailResp返回参数结构体",
+      "members": [
+        {
+          "document": "id",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6859,6 +7498,47 @@
       ],
       "type": "object"
     },
+    "DeleteClusterRequest": {
+      "document": "DeleteCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否只解绑，不删除容器集群，默认不传则删除容器集群。",
+          "member": "bool",
+          "name": "Unbind",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterResponse": {
+      "document": "DeleteCluster返回参数结构体",
+      "members": [
+        {
+          "document": "删除集群操作是否成功。\ntrue：操作成功。\nfalse：操作失败。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteConfigRequest": {
       "document": "DeleteConfig请求参数结构体",
       "members": [
@@ -6875,6 +7555,39 @@
     },
     "DeleteConfigResponse": {
       "document": "DeleteConfig返回参数结构体",
+      "members": [
+        {
+          "document": "true：删除成功；false：删除失败",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigTemplateRequest": {
+      "document": "DeleteConfigTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "member": "string",
+          "name": "ConfigTemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigTemplateResponse": {
+      "document": "DeleteConfigTemplate返回参数结构体",
       "members": [
         {
           "document": "true：删除成功；false：删除失败",
@@ -8906,6 +9619,96 @@
       ],
       "type": "object"
     },
+    "DescribeClustersRequest": {
+      "document": "DescribeClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索词",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "无",
+          "member": "int64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页个数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "idList",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersResponse": {
+      "document": "DescribeClusters返回参数结构体",
+      "members": [
+        {
+          "document": "Cluster分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TsfPageClusterV2",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeConfigReleaseLogsRequest": {
       "document": "DescribeConfigReleaseLogs请求参数结构体",
       "members": [
@@ -9199,6 +10002,39 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigTemplateRequest": {
+      "document": "DescribeConfigTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "member": "string",
+          "name": "ConfigTemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigTemplateResponse": {
+      "document": "DescribeConfigTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "Result\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ConfigTemplate",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9766,6 +10602,95 @@
         {
           "document": "单元化规则对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "UnitRule",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileConfigReleasesRequest": {
+      "document": "DescribeFileConfigReleases请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项ID",
+          "member": "string",
+          "name": "ConfigId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置项名称",
+          "member": "string",
+          "name": "ConfigName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间ID",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "0",
+          "document": "偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "20",
+          "document": "每页条数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileConfigReleasesResponse": {
+      "document": "DescribeFileConfigReleases返回参数结构体",
+      "members": [
+        {
+          "document": "配置项发布信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TsfPageFileConfigRelease",
           "name": "Result",
           "type": "object",
           "value_allowed_null": true
@@ -17857,6 +18782,135 @@
       ],
       "usage": "both"
     },
+    "ModifyApplicationRequest": {
+      "document": "ModifyApplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用备注",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用备注名",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationRemarkName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务配置信息列表",
+          "example": "无",
+          "member": "ServiceConfig",
+          "name": "ServiceConfigList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationResponse": {
+      "document": "ModifyApplication返回参数结构体",
+      "members": [
+        {
+          "document": "true/false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterRequest": {
+      "document": "ModifyCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群描述信息",
+          "member": "string",
+          "name": "ClusterDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注名",
+          "member": "string",
+          "name": "ClusterRemarkName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterResponse": {
+      "document": "ModifyCluster返回参数结构体",
+      "members": [
+        {
+          "document": "更新集群详情操作是否成功。\ntrue： 操作成功。\nfalse：操作失败。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyContainerGroupRequest": {
       "document": "ModifyContainerGroup请求参数结构体",
       "members": [
@@ -17978,6 +19032,69 @@
           "name": "Result",
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGroupRequest": {
+      "document": "ModifyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "部署组ID",
+          "example": "group-9yn2q8yd",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGroupResponse": {
+      "document": "ModifyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "更新部署组详情是否成功。\ntrue：操作成功。\nfalse：操作失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -18150,6 +19267,56 @@
           "type": "bool",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNamespaceRequest": {
+      "document": "ModifyNamespace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间ID",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间备注",
+          "member": "string",
+          "name": "NamespaceDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启高可用",
+          "member": "string",
+          "name": "IsHaEnable",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNamespaceResponse": {
+      "document": "ModifyNamespace返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -20565,6 +21732,39 @@
       ],
       "type": "object"
     },
+    "RevokeFileConfigRequest": {
+      "document": "RevokeFileConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项发布ID",
+          "member": "string",
+          "name": "ConfigReleaseId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokeFileConfigResponse": {
+      "document": "RevokeFileConfig返回参数结构体",
+      "members": [
+        {
+          "document": "撤回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RollbackConfigRequest": {
       "document": "RollbackConfig请求参数结构体",
       "members": [
@@ -22790,6 +23990,30 @@
       ],
       "usage": "out"
     },
+    "TsfPageClusterV2": {
+      "document": "Tsf分页集群对象",
+      "members": [
+        {
+          "default": "",
+          "document": "集群总数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClusterV2",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TsfPageConfig": {
       "document": "TsfPage<Config>",
       "members": [
@@ -22930,6 +24154,30 @@
           "default": "",
           "document": "文件配置数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "FileConfig",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TsfPageFileConfigRelease": {
+      "document": "文件配置项发布信息列表",
+      "members": [
+        {
+          "default": "",
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FileConfigRelease",
           "name": "Content",
           "required": true,
           "type": "list",
@@ -23765,6 +25013,71 @@
           "member": "bool",
           "name": "Result",
           "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConfigTemplateRequest": {
+      "document": "UpdateConfigTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置模板id",
+          "member": "string",
+          "name": "ConfigTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置模板名称",
+          "member": "string",
+          "name": "ConfigTemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置模板对应的微服务框架",
+          "member": "string",
+          "name": "ConfigTemplateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置模板数据",
+          "member": "string",
+          "name": "ConfigTemplateValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置模板描述",
+          "member": "string",
+          "name": "ConfigTemplateDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConfigTemplateResponse": {
+      "document": "UpdateConfigTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "结果true：成功；false：失败；",
+          "member": "bool",
+          "name": "Result",
           "type": "bool",
           "value_allowed_null": false
         },

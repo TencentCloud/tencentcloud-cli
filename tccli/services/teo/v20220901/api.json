@@ -578,6 +578,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "托管定制规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AclUserRule",
+          "name": "Customizes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7077,6 +7087,30 @@
       ],
       "usage": "in"
     },
+    "FirstPartConfig": {
+      "document": "慢速攻击的首段包配置。",
+      "members": [
+        {
+          "document": "开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "StatTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FollowOrigin": {
       "document": "缓存遵循源站配置",
       "members": [
@@ -9639,10 +9673,9 @@
       "usage": "out"
     },
     "RateLimitConfig": {
-      "document": "RateLimit配置",
+      "document": "速率限制规则",
       "members": [
         {
-          "default": "",
           "document": "开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "off",
           "member": "string",
@@ -9652,7 +9685,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "速率限制-用户规则列表。如果为null，默认使用历史配置。",
           "example": "无",
           "member": "RateLimitUserRule",
@@ -9662,7 +9694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "速率限制模板功能。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RateLimitTemplate",
@@ -9672,13 +9703,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "智能客户端过滤。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RateLimitIntelligence",
           "name": "RateLimitIntelligence",
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "速率限制-托管定制规则。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RateLimitUserRule",
+          "name": "RateLimitCustomizes",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -11033,7 +11072,6 @@
       "document": "安全配置",
       "members": [
         {
-          "default": "",
           "document": "托管规则。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WafConfig",
@@ -11043,7 +11081,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "速率限制。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RateLimitConfig",
@@ -11053,7 +11090,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自定义规则。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AclConfig",
@@ -11063,7 +11099,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Bot配置。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BotConfig",
@@ -11073,7 +11108,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "七层防护总开关。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SwitchConfig",
@@ -11083,7 +11117,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "基础访问管控。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IpTableConfig",
@@ -11093,7 +11126,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "例外规则配置。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExceptConfig",
@@ -11103,7 +11135,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自定义拦截页面配置。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DropPageConfig",
@@ -11113,11 +11144,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模板配置。此处仅出参数使用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TemplateConfig",
           "name": "TemplateConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "慢速攻击配置。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SlowPostConfig",
+          "name": "SlowPostConfig",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -11330,6 +11369,90 @@
           "name": "MatchContent",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SlowPostConfig": {
+      "document": "慢速攻击配置。",
+      "members": [
+        {
+          "document": "开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "首包配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FirstPartConfig",
+          "name": "FirstPartConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "基础配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SlowRateConfig",
+          "name": "SlowRateConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "慢速攻击的处置动作，取值有：\n<li>monitor：观察；</li>\n<li>drop：拦截。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "monitor",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本规则的Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SlowRateConfig": {
+      "document": "慢速攻击的基础配置。",
+      "members": [
+        {
+          "document": "开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计的间隔，单位是秒，即在首段包传输结束后，将数据传输轴按照本参数切分，每个分片独立计算慢速攻击。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Interval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "统计时应用的速率阈值，单位是bps，即如果本分片中的传输速率没达到本参数的值，则判定为慢速攻击，应用慢速攻击的处置方式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "Threshold",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

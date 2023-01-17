@@ -144,6 +144,12 @@
       "name": "查询域名详细配置",
       "output": "DescribeDomainsConfigResponse"
     },
+    "DescribeEdgePackTaskStatus": {
+      "document": "DescribeEdgePackTaskStatus 用于查询动态打包任务状态列表",
+      "input": "DescribeEdgePackTaskStatusRequest",
+      "name": "查询动态打包任务状态列表",
+      "output": "DescribeEdgePackTaskStatusResponse"
+    },
     "DescribeEventLogData": {
       "document": "DescribeEventLogData 用于查询事件日志统计曲线",
       "input": "DescribeEventLogDataRequest",
@@ -5543,6 +5549,87 @@
       ],
       "type": "object"
     },
+    "DescribeEdgePackTaskStatusRequest": {
+      "document": "DescribeEdgePackTaskStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "xxx",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "xxx",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页查询限制数目，默认为 100，最大可设置为 1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询偏移量，默认为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询条件过滤器",
+          "example": "无",
+          "member": "EdgePackTaskFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgePackTaskStatusResponse": {
+      "document": "DescribeEdgePackTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "动态打包任务状态列表",
+          "example": "无",
+          "member": "EdgePackTaskStatus",
+          "name": "EdgePackTaskStatusSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数，用于分页查询",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEventLogDataRequest": {
       "document": "DescribeEventLogData请求参数结构体",
       "members": [
@@ -8661,6 +8748,108 @@
         }
       ],
       "type": "object"
+    },
+    "EdgePackTaskFilter": {
+      "document": "动态打包任务过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤字段名\napk: apk名称\nstatus: 母包处理进度 done, failed, processing",
+          "example": "apk",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤字段值",
+          "example": "[\"test.apk\"]",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用模糊查询，仅支持过滤字段名为 apk。\n模糊查询时，Value长度最大为1。",
+          "example": "true",
+          "member": "bool",
+          "name": "Fuzzy",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EdgePackTaskStatus": {
+      "document": "动态打包任务状态",
+      "members": [
+        {
+          "default": "",
+          "document": "APK 名称",
+          "example": "test.apk",
+          "member": "string",
+          "name": "Apk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出目录",
+          "example": "/ext/test.apk",
+          "member": "string",
+          "name": "DstDir",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传时间",
+          "example": "2023-01-10T18:51:44+08:00",
+          "member": "datetime_iso",
+          "name": "UploadTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态\ncreated: 创建成功\nprocessing: 处理中\ndone: 处理完成\nfailed: 处理失败",
+          "example": "created",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传目录",
+          "example": "[\"/src/test.apk\"]",
+          "member": "string",
+          "name": "SrcDir",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败任务状态详情",
+          "example": "APK 签名不一致",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "EnableCachesRequest": {
       "document": "EnableCaches请求参数结构体",

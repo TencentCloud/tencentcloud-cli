@@ -7014,7 +7014,7 @@
         },
         {
           "default": "",
-          "document": "负载均衡维度的个性化配置ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡维度的个性化配置ID，多个配置用逗号隔开。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pz-12345678",
           "member": "string",
           "name": "ConfigId",
