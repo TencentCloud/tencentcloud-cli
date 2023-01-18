@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli rum DescribeDataReportCount --cli-unfold-argument  \
-    --ID 1 \
-    --StartTime 1625444040 \
     --EndTime 1625454840 \
-    --ReportType custom
+    --ReportType custom \
+    --ID 1 \
+    --StartTime 1625444040
 ```
 
 Output: 

@@ -7,13 +7,13 @@ Input:
 ```
 tccli rum CreateProject --cli-unfold-argument  \
     --Name '测试项目' \
-    --Desc '项目描述' \
     --InstanceID "taw-123" \
-    --Type web \
-    --URL 'http://www.qq.com' \
     --Repo 'http://github.com/xxx' \
+    --URL 'http://www.qq.com' \
     --Rate "10" \
-    --EnableURLGroup 1
+    --EnableURLGroup 1 \
+    --Type web \
+    --Desc '项目描述'
 ```
 
 Output: 

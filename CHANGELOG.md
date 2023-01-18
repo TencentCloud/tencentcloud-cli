@@ -1,3 +1,24 @@
+# Release 3.0.691.1
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 27 次发布
+
+发布时间：2023-01-19 01:16:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TargetHealth](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetHealth)
+
+	* 新增成员：HealthStatusDetail
+
+
+
+
 # Release 3.0.690.1
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06

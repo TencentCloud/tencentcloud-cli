@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli rum DescribeProjects --cli-unfold-argument  \
-    --Offset 1 \
     --Limit 20 \
+    --Filters.0.Values '测试项目名2' '测试项目名' \
     --Filters.0.Name 'Name' \
-    --Filters.0.Values '测试项目名' '测试项目名2'
+    --Offset 1
 ```
 
 Output: 
@@ -31,8 +31,8 @@ Input:
 
 ```
 tccli rum DescribeProjects --cli-unfold-argument  \
-    --Offset 1 \
-    --Limit 20
+    --Limit 20 \
+    --Offset 1
 ```
 
 Output: 
