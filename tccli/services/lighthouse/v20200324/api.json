@@ -2806,7 +2806,6 @@
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
           "example": "无",
           "member": "string",
@@ -2815,7 +2814,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "过滤器列表。\n<li>instance-name</li>按照【实例名称】进行过滤。\n类型：String\n必选：否\n<li>private-ip-address</li>按照【实例主网卡的内网 IP】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n<li>zone</li>按照【可用区】进行过滤。\n类型：String\n必选：否\n<li>instance-state</li>按照【实例状态】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。",
           "example": "无",
           "member": "Filter",
@@ -2824,7 +2822,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -2833,7 +2830,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "1",
           "member": "int64",
@@ -2852,7 +2848,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2861,7 +2856,6 @@
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

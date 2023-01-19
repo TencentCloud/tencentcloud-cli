@@ -49,7 +49,7 @@
     "CloneLoadBalancer": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=CloneLoadBalancer\n&LoadBalancerId=lb-xxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloneLoadBalancer\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"lb-xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba22\"\n    }\n}",
         "title": "克隆负载均衡"
       }
@@ -606,8 +606,8 @@
     ],
     "ModifyLoadBalancerSla": [
       {
-        "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=ModifyLoadBalancerSla\n&LoadBalancerSla.0.LoadBalancerId=lb-db2n****\n&LoadBalancerSla.0.SlaType=SLA\n&<公共请求参数>",
+        "document": "将按量计费模式的共享型实例升级为性能容量型实例。",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancerSla\n<公共请求参数>\n\n{\n    \"LoadBalancerSla\": [\n        {\n            \"SlaType\": \"SLA\",\n            \"LoadBalancerId\": \"lb-db2n****\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1157c81-f3dc-4f2a-9346-76f161d548eb\"\n    }\n}",
         "title": "共享型实例升级为性能容量型"
       }

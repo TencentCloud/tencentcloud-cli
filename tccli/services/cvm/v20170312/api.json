@@ -3879,6 +3879,7 @@
       "members": [
         {
           "document": "可用区数量。",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -3886,6 +3887,7 @@
         },
         {
           "document": "可用区列表信息。",
+          "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneSet",
           "type": "list",

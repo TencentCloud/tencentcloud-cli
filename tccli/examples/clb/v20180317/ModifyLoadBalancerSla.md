@@ -1,13 +1,13 @@
 **Example 1: 共享型实例升级为性能容量型**
 
-
+将按量计费模式的共享型实例升级为性能容量型实例。
 
 Input: 
 
 ```
 tccli clb ModifyLoadBalancerSla --cli-unfold-argument  \
-    --LoadBalancerSla.0.LoadBalancerId lb-db2n**** \
-    --LoadBalancerSla.0.SlaType SLA
+    --LoadBalancerSla.0.SlaType SLA \
+    --LoadBalancerSla.0.LoadBalancerId lb-db2n****
 ```
 
 Output: 

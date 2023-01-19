@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli rum CreateStarProject --cli-unfold-argument  \
-    --ID 1 \
-    --InstanceID taw-123
+    --InstanceID taw-123 \
+    --ID 1
 ```
 
 Output: 

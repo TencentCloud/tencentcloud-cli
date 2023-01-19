@@ -288,6 +288,12 @@
       "name": "查询缓存分析时序数据",
       "output": "DescribeTimingL7CacheDataResponse"
     },
+    "DescribeTimingL7SourceData": {
+      "document": "本接口（DescribeTimingL7SourceData）查询七层回源分析时序数据。",
+      "input": "DescribeTimingL7SourceDataRequest",
+      "name": "查询回源分析时序数据",
+      "output": "DescribeTimingL7SourceDataResponse"
+    },
     "DescribeTopL7AnalysisData": {
       "document": "本接口（DescribeTopL7AnalysisData）用于查询七层流量前topN的数据。",
       "input": "DescribeTopL7AnalysisDataRequest",
@@ -5062,6 +5068,105 @@
           "example": "无",
           "member": "TimingDataRecord",
           "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimingL7SourceDataRequest": {
+      "document": "DescribeTimingL7SourceData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间。",
+          "example": "2020-04-29T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间。",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标列表，取值有:\n<li>l7Flow_outFlux_hy: Edgeone请求流量；</li>\n<li>l7Flow_outBandwidth_hy: Edgeone请求带宽；</li>\n<li>l7Flow_inFlux_hy: 源站响应流量；</li>\n<li>l7Flow_inBandwidth_hy: 源站响应带宽；</li>\n<li>l7Flow_request_hy: 回源请求数；</li>",
+          "example": "l7Flow_flow",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "站点集合，不填默认选择全部站点。",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询时间粒度，取值有：\n<li>min: 1分钟；</li>\n<li>5min: 5分钟；</li>\n<li>hour: 1小时；</li>\n<li>day: 1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。",
+          "example": "hour",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，详细的过滤条件如下：\n<li>domain<br>   按照【<strong>回源Host</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>\n<li>origin<br>   按照【<strong>源站</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>\n<li>originGroup<br>   按照【<strong>源站组</strong>】进行过滤，源站组形如：origin-xxxxx。<br>   类型：String<br>   必选：否</li>\n<li>flowType<br>   按照【<strong>源站响应类型</strong>】进行过滤，优先级高于 MetricNames.N 参数。<br>   类型：String<br>   必选：否<br>   可选项：<br>   inFlow：源站响应流量，对应MetricNames中l7Flow_inFlux_hy、l7Flow_inBandwidth_hy、l7Flow_request_hy三个指标；<br>   outFlow：EdgeOne请求流量，对应MetricNames中l7Flow_outFlux_hy、l7Flow_outBandwidth_hy、l7Flow_request_hy三个指标。</li>",
+          "example": "无",
+          "member": "QueryCondition",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据归属地区，取值有：\n<li>overseas：全球（除中国大陆地区）数据；</li>\n<li>mainland：中国大陆地区数据；</li>\n<li>global：全球数据。</li>不填默认取值为global。",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimingL7SourceDataResponse": {
+      "document": "DescribeTimingL7SourceData返回参数结构体",
+      "members": [
+        {
+          "document": "查询结果的总条数。",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "时序流量数据列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimingDataRecord",
+          "name": "TimingDataRecords",
           "required": true,
           "type": "list",
           "value_allowed_null": true

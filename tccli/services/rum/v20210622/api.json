@@ -211,9 +211,9 @@
       "output": "DescribeLogExportsResponse"
     },
     "DescribeLogList": {
-      "document": "获取项目下的日志列表（实例创建的项目下的日志列表）",
+      "document": "(已下线，请用DescribeRumLogList)",
       "input": "DescribeLogListRequest",
-      "name": "获取日志列表",
+      "name": "获取日志列表(已下线，请用DescribeRumLogList)",
       "output": "DescribeLogListResponse"
     },
     "DescribeOfflineLogConfigs": {
