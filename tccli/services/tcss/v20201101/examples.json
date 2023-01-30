@@ -607,7 +607,7 @@
     "DescribeABTestConfig": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeABTestConfig\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeABTestConfig\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Config\": [\n            {\n                \"ProjectName\": \"tcss_pro\",\n                \"Status\": true\n            },\n            {\n                \"ProjectName\": \"ban_switch\",\n                \"Status\": true\n            },\n            {\n                \"ProjectName\": \"v20200715\",\n                \"Status\": true\n            }\n        ],\n        \"RequestId\": \"8fa9bf5e-a0dc-d89d-9ece-d68c2232a4c6\"\n    }\n}",
         "title": "获取用户当前灰度配置"
       }

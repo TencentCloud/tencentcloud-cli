@@ -371,6 +371,12 @@
       "input": "UpgradeDCDBInstanceRequest",
       "name": "升级分布式数据库",
       "output": "UpgradeDCDBInstanceResponse"
+    },
+    "UpgradeHourDCDBInstance": {
+      "document": "本接口（UpgradeHourDCDBInstance）用于升级后付费分布式数据库实例。",
+      "input": "UpgradeHourDCDBInstanceRequest",
+      "name": "升级DCDB后付费实例",
+      "output": "UpgradeHourDCDBInstanceResponse"
     }
   },
   "metadata": {
@@ -7190,6 +7196,105 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeHourDCDBInstanceRequest": {
+      "document": "UpgradeHourDCDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "example": "dcdbt-ow728lmc",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升级类型，取值范围: \n<li> ADD: 新增分片 </li> \n <li> EXPAND: 升级实例中的已有分片 </li> \n <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>",
+          "example": "EXPAND",
+          "member": "string",
+          "name": "UpgradeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新增分片配置，当UpgradeType为ADD时生效。",
+          "example": "无",
+          "member": "AddShardConfig",
+          "name": "AddShardConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "扩容分片配置，当UpgradeType为EXPAND时生效。",
+          "example": "无",
+          "member": "ExpandShardConfig",
+          "name": "ExpandShardConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "切分分片配置，当UpgradeType为SPLIT时生效。",
+          "example": "无",
+          "member": "SplitShardConfig",
+          "name": "SplitShardConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "切换开始时间，格式如: \"2019-12-12 07:00:00\"。开始时间必须在当前时间一个小时以后，3天以内。",
+          "example": "2019-12-12 07:00:00",
+          "member": "datetime",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切换结束时间,  格式如: \"2019-12-12 07:15:00\"，结束时间必须大于开始时间。",
+          "example": "2019-12-12 07:15:00",
+          "member": "datetime",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动重试。 0：不自动重试  1：自动重试",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchAutoRetry",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区",
+          "example": "[]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeHourDCDBInstanceResponse": {
+      "document": "UpgradeHourDCDBInstance返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

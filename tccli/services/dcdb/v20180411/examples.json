@@ -501,6 +501,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"DealName\": \"20180103110035\"\n    }\n}",
         "title": "升级分布式数据库"
       }
+    ],
+    "UpgradeHourDCDBInstance": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=UpgradeHourDCDBInstance\n&InstanceId=dcdbt-fdpjf5zh\n&UpgradeType=ADD\n&AddShardConfig.ShardCount=2\n&AddShardConfig.ShardMemory=2\n&AddShardConfig.ShardStorage=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\"\n    }\n}",
+        "title": "升级后付费分布式DB"
+      }
     ]
   },
   "version": "1.0"

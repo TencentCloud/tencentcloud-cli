@@ -370,6 +370,14 @@
         "title": "查询克隆列表"
       }
     ],
+    "DescribeDBFeatures": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDBFeatures\r\n&InstanceId=cdb-qwerasdf\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"IsSupportAudit\": true,\n        \"AuditNeedUpgrade\": false,\n        \"IsSupportEncryption\": true,\n        \"EncryptionNeedUpgrade\": false,\n        \"IsRemoteRo\": false,\n        \"MasterRegion\": \"\",\n        \"IsSupportUpdateSubVersion\": true,\n        \"CurrentSubVersion\": \"20190203\",\n        \"TargetSubVersion\": \"20190930\"\n    }\n}",
+        "title": "查询实例版本属性"
+      }
+    ],
     "DescribeDBImportRecords": [
       {
         "document": "",

@@ -264,6 +264,12 @@
       "name": "查询克隆任务列表",
       "output": "DescribeCloneListResponse"
     },
+    "DescribeDBFeatures": {
+      "document": "本接口(DescribeDBFeatures)用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。",
+      "input": "DescribeDBFeaturesRequest",
+      "name": "查询实例版本属性",
+      "output": "DescribeDBFeaturesResponse"
+    },
     "DescribeDBImportRecords": {
       "document": "本接口(DescribeDBImportRecords)用于查询云数据库导入任务操作日志。",
       "input": "DescribeDBImportRecordsRequest",
@@ -6491,6 +6497,95 @@
           "name": "Items",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBFeaturesRequest": {
+      "document": "DescribeDBFeatures请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBFeaturesResponse": {
+      "document": "DescribeDBFeatures返回参数结构体",
+      "members": [
+        {
+          "document": "是否支持数据库审计功能。",
+          "member": "bool",
+          "name": "IsSupportAudit",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开启审计是否需要升级内核版本。",
+          "member": "bool",
+          "name": "AuditNeedUpgrade",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否支持数据库加密功能。",
+          "member": "bool",
+          "name": "IsSupportEncryption",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开启加密是否需要升级内核版本。",
+          "member": "bool",
+          "name": "EncryptionNeedUpgrade",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否为异地只读实例。",
+          "member": "bool",
+          "name": "IsRemoteRo",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主实例所在地域。",
+          "member": "string",
+          "name": "MasterRegion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否支持小版本升级。",
+          "member": "bool",
+          "name": "IsSupportUpdateSubVersion",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前内核版本。",
+          "member": "string",
+          "name": "CurrentSubVersion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可供升级的内核版本。",
+          "member": "string",
+          "name": "TargetSubVersion",
+          "type": "string",
           "value_allowed_null": false
         },
         {

@@ -6840,8 +6840,7 @@
       "document": "DescribeGrafanaEnvironments请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "Grafana 实例 ID，例如：Grafana 实例 ID，例如：grafana-abcdefghGrafana 实例 ID，例如：grafana-abcdefgh",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -6859,7 +6858,6 @@
           "example": "{\"env1\":\"value1\"}",
           "member": "string",
           "name": "Envs",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
