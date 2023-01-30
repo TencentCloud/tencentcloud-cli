@@ -18,10 +18,10 @@
     ],
     "CreateProject": [
       {
-        "document": "",
+        "document": "创建 RUM 应用",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{\n    \"Name\": \"'测试项目'\",\n    \"InstanceID\": \"\\\"taw-123\\\"\",\n    \"Repo\": \"'http://github.com/xxx'\",\n    \"URL\": \"'http://www.qq.com'\",\n    \"Rate\": \"\\\"10\\\"\",\n    \"EnableURLGroup\": \"1\",\n    \"Type\": \"web\",\n    \"Desc\": \"'项目描述'\"\n}",
         "output": "{\n    \"Response\": {\n        \"ID\": 1,\n        \"Key\": \"RlOmCVbPrKd4\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "创建 rum 项目"
+        "title": "创建 RUM 应用"
       }
     ],
     "CreateReleaseFile": [
@@ -34,10 +34,10 @@
     ],
     "CreateStarProject": [
       {
-        "document": "",
+        "document": "添加星标应用",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStarProject\n<公共请求参数>\n\n{\n    \"InstanceID\": \"taw-123\",\n    \"ID\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "添加星标项目"
+        "title": "添加星标应用"
       }
     ],
     "CreateTawInstance": [
@@ -64,10 +64,10 @@
     ],
     "DeleteInstance": [
       {
-        "document": "",
+        "document": "删除 RUM 业务系统",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rum-abcd1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c56dbc9-2b99-437a-9a5e-51ed6dcba7e5\"\n    }\n}",
-        "title": "删除实例"
+        "title": "删除 RUM 业务系统"
       }
     ],
     "DeleteLogExport": [
@@ -96,10 +96,10 @@
     ],
     "DeleteProject": [
       {
-        "document": "",
+        "document": "删除 RUM 应用",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProject\n<公共请求参数>\n\n{\n    \"ID\": \"6\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "删除 rum 项目"
+        "title": "删除 RUM 应用"
       }
     ],
     "DeleteReleaseFile": [
@@ -112,10 +112,10 @@
     ],
     "DeleteStarProject": [
       {
-        "document": "",
+        "document": "删除星标应用",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStarProject\n<公共请求参数>\n\n{\n    \"InstanceID\": \"taw-123\",\n    \"ID\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "删除星标项目"
+        "title": "删除星标应用"
       }
     ],
     "DeleteWhitelist": [
@@ -350,30 +350,24 @@
     ],
     "DescribeProjectLimits": [
       {
-        "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=DescribeProjectLimits\n&ProjectID=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ProjectLimitSet\": [\n            {\n                \"ProjectInterface\": \"xx\",\n                \"ProjectID\": 0,\n                \"ReportRate\": 0,\n                \"ReportType\": 0,\n                \"ID\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "获取项目上报率列表"
-      },
-      {
-        "document": "",
+        "document": "获取应用上报抽样信息",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjectLimits\n<公共请求参数>\n\n{\n    \"ProjectID\": \"8\"\n}",
         "output": "{\n    \"Response\": {\n        \"ProjectLimitSet\": [\n            {\n                \"ID\": 17,\n                \"ProjectID\": 8,\n                \"ProjectInterface\": \"web\",\n                \"ReportRate\": 10,\n                \"ReportType\": 1\n            }\n        ],\n        \"RequestId\": \"6f867613-843d-410a-8000-c74477ca48a8\"\n    }\n}",
-        "title": "获取抽样列表"
+        "title": "获取应用上报抽样信息"
       }
     ],
     "DescribeProjects": [
       {
-        "document": "",
+        "document": "根据过滤条件获取 RUM 应用列表",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"'测试项目名2'\",\n                \"'测试项目名'\"\n            ],\n            \"Name\": \"'Name'\"\n        }\n    ],\n    \"Offset\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ProjectSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "根据过滤条件获取 rum 项目列表"
+        "title": "根据过滤条件获取 RUM 应用列表"
       },
       {
-        "document": "",
+        "document": "获取 RUM 应用列表",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Offset\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ProjectSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取 rum 项目列表"
+        "title": "获取 RUM 应用列表"
       }
     ],
     "DescribePvList": [
@@ -394,10 +388,10 @@
     ],
     "DescribeReleaseFiles": [
       {
-        "document": "",
+        "document": "获取应用对应sourcemap文件列表",
         "input": "https://rum.tencentcloudapi.com/?Action=DescribeReleaseFiles\n&ProjectID=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Files\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取发布文件列表"
+        "title": "获取应用对应sourcemap文件列表"
       }
     ],
     "DescribeRumGroupLog": [
@@ -445,15 +439,9 @@
     "DescribeScores": [
       {
         "document": "获取首页Score",
-        "input": "https://rum.tencentcloudapi.com/?Action=DescribeScores\n&ID=1\n&StartTime=2020011920\n&EndTime=2022051914\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScores\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022051914\",\n    \"ID\": \"1\",\n    \"StartTime\": \"2020011920\"\n}",
         "output": "{\n    \"Response\": {\n        \"ScoreSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取首页Score"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScores\n<公共请求参数>\n\n{\n    \"EndTime\": \"2021012611\",\n    \"ID\": \"1\",\n    \"StartTime\": \"2021012111\"\n}",
-        "output": "null",
-        "title": "12"
       }
     ],
     "DescribeTawAreas": [
@@ -466,10 +454,10 @@
     ],
     "DescribeTawInstances": [
       {
-        "document": "",
+        "document": "查询 RUM 业务系统信息",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTawInstances\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"AreaId\": \"1\",\n                \"ChargeStatus\": 1,\n                \"ChargeType\": 1,\n                \"ClusterId\": \"1\",\n                \"CreatedAt\": \"2021-04-29 20:51:05\",\n                \"DataRetentionDays\": \"30\",\n                \"InstanceDesc\": \"\",\n                \"InstanceId\": \"taw-VJ2mHDEb\",\n                \"InstanceName\": \"test\",\n                \"InstanceStatus\": 2,\n                \"Tags\": [],\n                \"UpdatedAt\": \"2021-04-29 20:51:05\"\n            },\n            {\n                \"AreaId\": \"1\",\n                \"ChargeStatus\": 1,\n                \"ChargeType\": 1,\n                \"ClusterId\": \"1\",\n                \"CreatedAt\": \"2021-04-29 20:59:15\",\n                \"DataRetentionDays\": \"30\",\n                \"InstanceDesc\": \"\",\n                \"InstanceId\": \"taw-mE08H4Ez\",\n                \"InstanceName\": \"test\",\n                \"InstanceStatus\": 2,\n                \"Tags\": [],\n                \"UpdatedAt\": \"2021-04-29 20:59:15\"\n            }\n        ],\n        \"RequestId\": \"d356e035-ac3d-4237-add9-50a44c01dd39\",\n        \"TotalCount\": \"2\"\n    }\n}",
-        "title": "查询实例"
+        "title": "查询 RUM 业务系统信息"
       }
     ],
     "DescribeUvList": [
@@ -498,10 +486,10 @@
     ],
     "ModifyProject": [
       {
-        "document": "",
+        "document": "修改 RUM 应用信息",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"ID\": \"6\",\n    \"Name\": \"'测试项目'\"\n}",
         "output": "{\n    \"Response\": {\n        \"ID\": 1,\n        \"Msg\": \"success\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "修改 rum 项目"
+        "title": "修改 RUM 应用信息"
       }
     ],
     "ModifyProjectLimit": [
@@ -528,7 +516,7 @@
     ],
     "StopInstance": [
       {
-        "document": "",
+        "document": "停止后，业务系统内所有应用将无法上报数据",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rum-abcd1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c56dbc9-2b99-437a-9a5e-51ed6dcba7e5\"\n    }\n}",
         "title": "停止实例"
@@ -536,10 +524,10 @@
     ],
     "StopProject": [
       {
-        "document": "",
+        "document": "停止应用上报",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c56dbc9-2b99-437a-9a5e-51ed6dcba7e5\"\n    }\n}",
-        "title": "停止项目"
+        "title": "停止应用上报"
       }
     ]
   },

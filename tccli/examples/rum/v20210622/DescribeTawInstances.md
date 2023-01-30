@@ -1,6 +1,6 @@
-**Example 1: 查询实例**
+**Example 1: 查询 RUM 业务系统信息**
 
-
+查询 RUM 业务系统信息
 
 Input: 
 

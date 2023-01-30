@@ -1,10 +1,38 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 图片内容安全(ims) 版本：2020-12-29
 
-### 第 41 次发布
+### 第 4 次发布
 
-发布时间：2023-01-30 01:07:27
+发布时间：2023-01-31 01:24:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImageModeration](http://document.tencentcloudapi.woa.com/document/product/1125/53273)
+
+	* 新增出参：RecognitionResults
+
+
+新增数据结构：
+
+* [RecognitionResult](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionResult)
+* [RecognitionTag](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionTag)
+
+
+
+## 图片内容安全(ims) 版本：2020-07-13
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 26 次发布
+
+发布时间：2023-01-31 01:29:56
 
 本次发布包含了以下内容：
 
@@ -12,23 +40,42 @@
 
 新增接口：
 
-* [DescribeDBFeatures](http://document.tencentcloudapi.woa.com/document/product/236/76983)
+* [DescribeDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/237/76985)
 
 
 
-## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+## 分布式身份(tdid) 版本：2021-05-19
 
-### 第 27 次发布
+### 第 4 次发布
 
-发布时间：2023-01-30 01:18:27
+发布时间：2023-01-31 01:41:43
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+<font color="#dd0000">**删除接口**：</font>
 
-* [UpgradeHourDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/76984)
+* VerifyPurchase
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 24 次发布
+
+发布时间：2023-01-31 01:51:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddCustomRule](http://document.tencentcloudapi.woa.com/document/product/627/53608)
+
+	* 新增入参：EventId
+
 
 
 
@@ -6003,7 +6050,7 @@
 
 新增接口：
 
-* [[DescribeDBFeatures](http://document.tencentcloudapi.woa.com/document/product/236/76983)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDBFeatures](http://document.tencentcloudapi.woa.com/document/product/236/76983)
 
 ### 第 40 次发布
 
@@ -17604,7 +17651,7 @@
 
 新增接口：
 
-* [[UpgradeHourDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/76984)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpgradeHourDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/76984)
 
 ### 第 26 次发布
 
@@ -24886,6 +24933,26 @@
 
 ## 图片内容安全(ims) 版本：2020-12-29
 
+### 第 4 次发布
+
+发布时间：2023-01-31 01:24:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImageModeration](http://document.tencentcloudapi.woa.com/document/product/1125/53273)
+
+	* 新增出参：RecognitionResults
+
+
+新增数据结构：
+
+* [[RecognitionResult](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionResult)](http://document.tencentcloudapi.woa.com/document/product/1125/53274#[RecognitionResult](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionResult))
+* [[RecognitionTag](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionTag)](http://document.tencentcloudapi.woa.com/document/product/1125/53274#[RecognitionTag](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionTag))
+
 ### 第 3 次发布
 
 发布时间：2021-10-29 08:01:37
@@ -28149,6 +28216,18 @@
 
 
 ## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 26 次发布
+
+发布时间：2023-01-31 01:29:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/237/76985)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 25 次发布
 
@@ -40170,6 +40249,18 @@
 
 ## 分布式身份(tdid) 版本：2021-05-19
 
+### 第 4 次发布
+
+发布时间：2023-01-31 01:41:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* VerifyPurchase
+
 ### 第 3 次发布
 
 发布时间：2022-11-17 06:30:40
@@ -50421,6 +50512,21 @@
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 24 次发布
+
+发布时间：2023-01-31 01:51:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddCustomRule](http://document.tencentcloudapi.woa.com/document/product/627/53608)
+
+	* 新增入参：EventId
+
 
 ### 第 23 次发布
 

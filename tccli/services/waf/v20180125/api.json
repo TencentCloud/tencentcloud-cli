@@ -1,9 +1,9 @@
 {
   "actions": {
     "AddCustomRule": {
-      "document": "增加自定义策略",
+      "document": "增加访问控制（自定义策略）",
       "input": "AddCustomRuleRequest",
-      "name": "增加自定义策略",
+      "name": "增加访问控制（自定义策略）",
       "output": "AddCustomRuleResponse"
     },
     "AddDomainWhiteRule": {
@@ -129,7 +129,7 @@
     "DescribeDomains": {
       "document": "查询用户所有域名的详细信息",
       "input": "DescribeDomainsRequest",
-      "name": "查询用户所有域名的详细信息",
+      "name": "获取域名列表",
       "output": "DescribeDomainsResponse"
     },
     "DescribeFlowTrend": {
@@ -259,9 +259,9 @@
       "output": "ModifyCdcResourceResponse"
     },
     "ModifyCustomRuleStatus": {
-      "document": "开启或禁用自定义策略",
+      "document": "开启或禁用访问控制（自定义策略）",
       "input": "ModifyCustomRuleStatusRequest",
-      "name": "开启或禁用自定义策略",
+      "name": "开启或禁用访问控制（自定义策略）",
       "output": "ModifyCustomRuleStatusResponse"
     },
     "ModifyDomainWhiteRule": {
@@ -660,85 +660,94 @@
       "document": "AddCustomRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则名称",
           "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "优先级",
           "example": "无",
           "member": "string",
           "name": "SortId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "过期时间",
           "example": "无",
           "member": "string",
           "name": "ExpireTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "策略详情",
           "example": "无",
           "member": "Strategy",
           "name": "Strategies",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "需要添加策略的域名",
           "example": "无",
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "动作类型",
           "example": "无",
           "member": "string",
           "name": "ActionType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "如果动作是重定向，则表示重定向的地址；其他情况可以为空",
           "example": "无",
           "member": "string",
           "name": "Redirect",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "\"clb-waf\"或者\"sparta-waf\"",
+          "document": "WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF",
           "example": "无",
           "member": "string",
           "name": "Edition",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "放行的详情",
           "example": "无",
           "member": "string",
           "name": "Bypass",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "添加规则的来源，默认为空",
+          "example": "无",
+          "member": "string",
+          "name": "EventId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -751,18 +760,18 @@
           "example": "无",
           "member": "ResponseCode",
           "name": "Success",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "添加成功的规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7025",
           "member": "int64",
           "name": "RuleId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2189,31 +2198,31 @@
       "document": "DescribeAccessIndex返回参数结构体",
       "members": [
         {
-          "document": "是否生效",
+          "document": "是否生效，true表示生效，false表示未生效",
           "example": "true",
           "member": "bool",
           "name": "Status",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "索引配置信息\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "AccessRuleInfo",
           "name": "Rule",
-          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "索引修改时间，初始值为索引创建时间。",
           "example": "-",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2560,7 +2569,6 @@
       "document": "DescribeDomains请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "数据偏移量，从1开始。",
           "example": "1",
           "member": "uint64",
@@ -2570,7 +2578,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回域名的数量",
           "example": "20",
           "member": "uint64",
@@ -2580,7 +2587,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤数组",
           "example": "无",
           "member": "FiltersItemNew",
@@ -2600,7 +2606,6 @@
           "example": "2",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2610,7 +2615,6 @@
           "example": "无",
           "member": "DomainInfo",
           "name": "Domains",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -5500,40 +5504,40 @@
       "document": "ModifyCustomRuleStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "baidu.com",
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "规则ID",
           "example": "无",
           "member": "uint64",
           "name": "RuleId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "开关的状态，1是开启、0是关闭",
           "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。",
           "example": "无",
           "member": "string",
           "name": "Edition",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5546,9 +5550,9 @@
           "example": "无",
           "member": "ResponseCode",
           "name": "Success",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6756,7 +6760,6 @@
       "document": "UpsertIpAccessControl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "test.qcloudwaf.com",
           "member": "string",
@@ -6766,7 +6769,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "ip 参数列表，json数组由ip，source，note，action，valid_ts组成。ip对应配置的ip地址，source固定为custom值，note为注释，action值42为黑名单，40为白名单，valid_ts为有效日期，值为秒级时间戳",
           "example": "[{ip:1.2.3.4,source:custom,note:test,action:42,valid_ts:165009}]",
           "member": "string",
@@ -6776,8 +6778,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "clb-waf或者sparta-waf",
+          "document": "WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF",
           "example": "clb-waf",
           "member": "string",
           "name": "Edition",
@@ -6786,7 +6787,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否为多域名黑白名单",
           "example": "batch",
           "member": "string",
@@ -6806,7 +6806,6 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "FailedItems",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6816,7 +6815,6 @@
           "example": "0",
           "member": "int64",
           "name": "FailedCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1

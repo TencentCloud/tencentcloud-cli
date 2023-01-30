@@ -383,14 +383,6 @@
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"VerifyCode\": 0,\n        \"VerifyMessage\": \"success\",\n        \"RequestId\": \"72a6643f-7123-4288-9584-8dd4db7e8373\"\n    }\n}",
         "title": "VerifyCredential"
       }
-    ],
-    "VerifyPurchase": [
-      {
-        "document": "验证凭证",
-        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyPurchase\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "VerifyCredential"
-      }
     ]
   },
   "version": "1.0"

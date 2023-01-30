@@ -13,9 +13,9 @@
       "output": "CreateOfflineLogConfigResponse"
     },
     "CreateProject": {
-      "document": "创建项目（归属于某个团队）",
+      "document": "创建 RUM 应用（归属于某个团队）",
       "input": "CreateProjectRequest",
-      "name": "创建项目",
+      "name": "创建 RUM 应用",
       "output": "CreateProjectResponse"
     },
     "CreateReleaseFile": {
@@ -27,13 +27,13 @@
     "CreateStarProject": {
       "document": "个人用户添加星标项目",
       "input": "CreateStarProjectRequest",
-      "name": "添加星标项目",
+      "name": "添加星标应用",
       "output": "CreateStarProjectResponse"
     },
     "CreateTawInstance": {
-      "document": "创建Rum实例",
+      "document": "创建 RUM 业务系统",
       "input": "CreateTawInstanceRequest",
-      "name": "创建Rum实例",
+      "name": "创建 RUM 业务系统",
       "output": "CreateTawInstanceResponse"
     },
     "CreateWhitelist": {
@@ -45,7 +45,7 @@
     "DeleteInstance": {
       "document": "删除实例，谨慎操作，不可恢复",
       "input": "DeleteInstanceRequest",
-      "name": "删除实例",
+      "name": "删除 RUM 业务系统",
       "output": "DeleteInstanceResponse"
     },
     "DeleteLogExport": {
@@ -69,7 +69,7 @@
     "DeleteProject": {
       "document": "删除给定的 rum 的项目",
       "input": "DeleteProjectRequest",
-      "name": "删除 rum 项目",
+      "name": "删除 RUM 应用",
       "output": "DeleteProjectResponse"
     },
     "DeleteReleaseFile": {
@@ -81,7 +81,7 @@
     "DeleteStarProject": {
       "document": "删除用户名下的星标项目",
       "input": "DeleteStarProjectRequest",
-      "name": "删除星标项目",
+      "name": "删除星标应用",
       "output": "DeleteStarProjectResponse"
     },
     "DeleteWhitelist": {
@@ -235,15 +235,15 @@
       "output": "DescribeOfflineLogsResponse"
     },
     "DescribeProjectLimits": {
-      "document": "获取项目上报率列表",
+      "document": "获取应用上报抽样信息",
       "input": "DescribeProjectLimitsRequest",
-      "name": "获取项目上报率列表",
+      "name": "获取应用上报抽样信息",
       "output": "DescribeProjectLimitsResponse"
     },
     "DescribeProjects": {
       "document": "获取项目列表（实例创建的团队下的项目列表）",
       "input": "DescribeProjectsRequest",
-      "name": "获取项目列表",
+      "name": "获取 RUM 应用列表",
       "output": "DescribeProjectsResponse"
     },
     "DescribePvList": {
@@ -259,9 +259,9 @@
       "output": "DescribeReleaseFileSignResponse"
     },
     "DescribeReleaseFiles": {
-      "document": "获取项目对应sourcemap文件列表",
+      "document": "获取应用对应sourcemap文件列表",
       "input": "DescribeReleaseFilesRequest",
-      "name": "获取项目对应sourcemap文件列表",
+      "name": "获取应用对应sourcemap文件列表",
       "output": "DescribeReleaseFilesResponse"
     },
     "DescribeRumGroupLog": {
@@ -297,7 +297,7 @@
     "DescribeTawInstances": {
       "document": "查询实例信息",
       "input": "DescribeTawInstancesRequest",
-      "name": "查询实例信息",
+      "name": "查询 RUM 业务系统信息",
       "output": "DescribeTawInstancesResponse"
     },
     "DescribeUvList": {
@@ -313,15 +313,15 @@
       "output": "DescribeWhitelistsResponse"
     },
     "ModifyInstance": {
-      "document": "修改实例信息",
+      "document": "修改 RUM 业务系统",
       "input": "ModifyInstanceRequest",
-      "name": "修改实例信息",
+      "name": "修改 RUM 业务系统",
       "output": "ModifyInstanceResponse"
     },
     "ModifyProject": {
-      "document": "修改 rum 项目信息",
+      "document": "修改 RUM 应用信息",
       "input": "ModifyProjectRequest",
-      "name": "修改项目",
+      "name": "修改 RUM 应用信息",
       "output": "ModifyProjectResponse"
     },
     "ModifyProjectLimit": {
@@ -331,21 +331,21 @@
       "output": "ModifyProjectLimitResponse"
     },
     "ResumeInstance": {
-      "document": "恢复实例",
+      "document": "恢复 RUM 业务系统，恢复后，用户可以正常使用和上报数据",
       "input": "ResumeInstanceRequest",
-      "name": "恢复实例",
+      "name": "恢复 RUM 业务系统",
       "output": "ResumeInstanceResponse"
     },
     "StopInstance": {
       "document": "停止实例",
       "input": "StopInstanceRequest",
-      "name": "停止实例",
+      "name": "停止RUM业务系统",
       "output": "StopInstanceResponse"
     },
     "StopProject": {
       "document": "停止项目使用与上报数据",
       "input": "StopProjectRequest",
-      "name": "停止项目上报",
+      "name": "停止应用上报",
       "output": "StopProjectResponse"
     }
   },
@@ -495,7 +495,6 @@
       "document": "CreateProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "创建的项目名(不为空且最长为 200)",
           "example": "测试项目名",
           "member": "string",
@@ -505,7 +504,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "业务系统 ID",
           "example": "taw-123",
           "member": "string",
@@ -515,7 +513,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目抽样率(大于等于 0)",
           "example": "10",
           "member": "string",
@@ -525,7 +522,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启聚类",
           "example": "1",
           "member": "uint64",
@@ -535,7 +531,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目类型(\"web\", \"mp\", \"android\", \"ios\", \"node\", \"hippy\", \"weex\", \"viola\", \"rn\")",
           "example": "web",
           "member": "string",
@@ -545,7 +540,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目对应仓库地址(可选，最长为 256)",
           "example": "http://github.com/xxx",
           "member": "string",
@@ -555,7 +549,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目对应网页地址(可选，最长为 256)",
           "example": "http://www.qq.com/",
           "member": "string",
@@ -565,7 +558,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建的项目描述(可选，最长为 1000)",
           "example": "这是项目描述",
           "member": "string",
@@ -585,7 +577,6 @@
           "example": "1",
           "member": "uint64",
           "name": "ID",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -595,7 +586,6 @@
           "example": "RlOmCVbPrKd4",
           "member": "string",
           "name": "Key",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -658,7 +648,6 @@
       "document": "CreateStarProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID：taw-123",
           "example": "taw-123",
           "member": "string",
@@ -668,7 +657,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "1",
           "member": "int64",
@@ -688,7 +676,6 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -932,7 +919,6 @@
       "document": "DeleteInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要删除的实例id",
           "example": "rum-abcd1234",
           "member": "string",
@@ -1095,7 +1081,6 @@
       "document": "DeleteProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要删除的项目 ID",
           "example": "6",
           "member": "uint64",
@@ -1115,7 +1100,6 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1169,7 +1153,6 @@
       "document": "DeleteStarProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID：taw-123",
           "example": "taw-123",
           "member": "string",
@@ -1179,7 +1162,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "1",
           "member": "int64",
@@ -1199,7 +1181,6 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -5388,13 +5369,13 @@
       "document": "DescribeProjectLimits请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "项目ID",
           "example": "123",
           "member": "int64",
           "name": "ProjectID",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5407,9 +5388,9 @@
           "example": "无",
           "member": "ProjectLimit",
           "name": "ProjectLimitSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5424,7 +5405,6 @@
       "document": "DescribeProjects请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分页每页数目，整型",
           "example": "20",
           "member": "uint64",
@@ -5434,7 +5414,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "分页页码，整型",
           "example": "1",
           "member": "uint64",
@@ -5444,7 +5423,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤参数；demo模式传{\"Name\": \"IsDemo\", \"Values\":[\"1\"]}",
           "example": "无",
           "member": "Filter",
@@ -5454,7 +5432,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该参数已废弃，demo模式请在Filters内注明",
           "example": "1",
           "member": "int64",
@@ -5474,7 +5451,6 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5484,7 +5460,6 @@
           "example": "无",
           "member": "RumProject",
           "name": "ProjectSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5637,22 +5612,22 @@
       "document": "DescribeReleaseFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "项目 id",
           "example": "1",
           "member": "int64",
           "name": "ProjectID",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "文件版本",
           "example": "0.0.1",
           "member": "string",
           "name": "FileVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5665,9 +5640,9 @@
           "example": "无",
           "member": "ReleaseFile",
           "name": "Files",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5966,6 +5941,7 @@
       "document": "DescribeScores请求参数结构体",
       "members": [
         {
+          "default": "",
           "document": "结束时间",
           "example": "2022051914",
           "member": "string",
@@ -5975,6 +5951,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "开始时间",
           "example": "2020011920",
           "member": "string",
@@ -5984,6 +5961,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "项目ID",
           "example": "1",
           "member": "int64",
@@ -5993,6 +5971,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "该参数已废弃",
           "example": "1",
           "member": "int64",
@@ -6012,6 +5991,7 @@
           "example": "无",
           "member": "ScoreInfo",
           "name": "ScoreSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6110,7 +6090,6 @@
       "document": "DescribeTawInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "计费状态",
           "example": "无",
           "member": "int64",
@@ -6120,7 +6099,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "计费类型",
           "example": "无",
           "member": "int64",
@@ -6130,7 +6108,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "分页Limit",
           "example": "1",
           "member": "int64",
@@ -6140,7 +6117,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "分页Offset",
           "example": "0",
           "member": "int64",
@@ -6150,7 +6126,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "片区Id",
           "example": "无",
           "member": "int64",
@@ -6160,7 +6135,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明",
           "example": "无",
           "member": "int64",
@@ -6170,7 +6144,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例Id, 该参数已废弃，请在Filters内注明",
           "example": "无",
           "member": "string",
@@ -6180,7 +6153,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤参数；demo模式传{\"Name\": \"IsDemo\", \"Values\":[\"1\"]}",
           "example": "无",
           "member": "Filter",
@@ -6190,7 +6162,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该参数已废弃，demo模式请在Filters内注明",
           "example": "1",
           "member": "int64",
@@ -6210,7 +6181,6 @@
           "example": "无",
           "member": "RumInstanceInfo",
           "name": "InstanceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6220,7 +6190,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6609,7 +6578,6 @@
       "document": "ModifyProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "项目 id",
           "example": "6",
           "member": "uint64",
@@ -6619,7 +6587,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目名(可选，不为空且最长为 200)",
           "example": "测试项目名",
           "member": "string",
@@ -6629,7 +6596,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目网页地址(可选，最长为 256)",
           "example": "http://www.qq.com",
           "member": "string",
@@ -6639,7 +6605,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目仓库地址(可选，最长为 256)",
           "example": "http://github.com/xxx/yyy",
           "member": "string",
@@ -6649,7 +6614,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目需要转移到的实例 id(可选)",
           "example": "taw-123",
           "member": "string",
@@ -6659,7 +6623,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目采样率(可选)",
           "example": "10",
           "member": "string",
@@ -6669,7 +6632,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启聚类(可选)",
           "example": "0",
           "member": "uint64",
@@ -6679,7 +6641,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目类型(可接受值为 \"web\", \"mp\", \"android\", \"ios\", \"node\", \"hippy\", \"weex\", \"viola\", \"rn\")",
           "example": "web",
           "member": "string",
@@ -6689,7 +6650,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目描述(可选，最长为 1000)",
           "example": "这是项目描述",
           "member": "string",
@@ -6709,7 +6669,6 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6719,7 +6678,6 @@
           "example": "6",
           "member": "uint64",
           "name": "ID",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7463,7 +7421,6 @@
       "document": "StopInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要停止的实例id",
           "example": "rum-abcd1234",
           "member": "string",
@@ -7491,13 +7448,13 @@
       "document": "StopProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "项目 id",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

@@ -1,6 +1,6 @@
-**Example 1: 删除实例**
+**Example 1: 删除 RUM 业务系统**
 
-
+删除 RUM 业务系统
 
 Input: 
 

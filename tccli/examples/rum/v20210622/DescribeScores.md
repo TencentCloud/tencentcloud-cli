@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli rum DescribeScores --cli-unfold-argument  \
+    --EndTime 2022051914 \
     --ID 1 \
-    --StartTime 2020011920 \
-    --EndTime 2022051914
+    --StartTime 2020011920
 ```
 
 Output: 
@@ -19,23 +19,5 @@ Output:
         "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
     }
 }
-```
-
-**Example 2: 12**
-
-
-
-Input: 
-
-```
-tccli rum DescribeScores --cli-unfold-argument  \
-    --EndTime 2021012611 \
-    --ID 1 \
-    --StartTime 2021012111
-```
-
-Output: 
-```
-null
 ```
 
