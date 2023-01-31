@@ -70,6 +70,14 @@
         "title": "通过多文件创建合同组签署流程"
       }
     ],
+    "ChannelCreateFlowReminds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateFlowReminds\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf***********200fef3d\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc***********3aff766cac\"\n        },\n        \"AppId\": \"xx\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8***********0ee248f04\"\n    },\n    \"FlowIds\": [\n        \"xxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RemindFlowRecords\": [\n            {\n                \"CanRemind\": true,\n                \"FlowId\": \"xxx\",\n                \"RemindMessage\": \"签署人 xxx: 此签署人已催办过；\"\n            }\n        ],\n        \"RequestId\": \"s1675065415484184252\"\n    }\n}",
+        "title": "电子签渠道版-合同催办接口"
+      }
+    ],
     "ChannelCreateFlowSignReview": [
       {
         "document": "",
@@ -210,7 +218,7 @@
       {
         "document": "查询企业扩展服务授权信息",
         "input": "{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID12344556667777777\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"AuthInfo\": [\n            {\n                \"Name\": \"企业与港澳台居民*签署合同\",\n                \"OperateOn\": 1671692727,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"OVERSEA_SIGN\"\n            },\n            {\n                \"Name\": \"使用手机号验证签署方身份\",\n                \"OperateOn\": 1673331249,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"MOBILE_CHECK_APPROVER\"\n            },\n            {\n                \"Name\": \"企业静默签（自动签署）\",\n                \"OperateOn\": 1672989237,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"AUTO_SIGN\"\n            },\n            {\n                \"Name\": \"下载企业合同/文件\",\n                \"OperateOn\": 1673331721,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"ENABLE\",\n                \"Type\": \"DOWNLOAD_FLOW\"\n            },\n            {\n                \"Name\": \"骑缝章\",\n                \"OperateOn\": 1673331246,\n                \"OperatorOpenId\": \"622201199508023314\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"PAGING_SEAL\"\n            }\n        ],\n        \"RequestId\": \"s1673334710960667881\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthInfo\": [\n            {\n                \"Name\": \"企业与港澳台居民*签署合同\",\n                \"OperateOn\": 1671692727,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"OVERSEA_SIGN\"\n            },\n            {\n                \"Name\": \"使用手机号验证签署方身份\",\n                \"OperateOn\": 1673331249,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"MOBILE_CHECK_APPROVER\"\n            },\n            {\n                \"Name\": \"企业静默签（自动签署）\",\n                \"OperateOn\": 1672989237,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"AUTO_SIGN\"\n            },\n            {\n                \"Name\": \"下载企业合同/文件\",\n                \"OperateOn\": 1673331721,\n                \"OperatorOpenId\": \"admin-open-id\",\n                \"Status\": \"ENABLE\",\n                \"Type\": \"DOWNLOAD_FLOW\"\n            },\n            {\n                \"Name\": \"骑缝章\",\n                \"OperateOn\": 1673331246,\n                \"OperatorOpenId\": \"admin-openid\",\n                \"Status\": \"DISABLE\",\n                \"Type\": \"PAGING_SEAL\"\n            }\n        ],\n        \"RequestId\": \"s1673334710960667881\"\n    }\n}",
         "title": "查询企业扩展服务授权信息"
       }
     ],

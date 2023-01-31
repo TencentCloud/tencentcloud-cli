@@ -1,3 +1,100 @@
+# Release 3.0.694.1
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 10 次发布
+
+发布时间：2023-02-01 01:17:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeHealthScoreAndLevel](http://document.tencentcloudapi.woa.com/document/product/1130/76988)
+
+新增数据结构：
+
+* [HealthScoreAndLevel](http://document.tencentcloudapi.woa.com/document/product/1130/57812#HealthScoreAndLevel)
+* [TimeRangeHealthScoreInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TimeRangeHealthScoreInfo)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 25 次发布
+
+发布时间：2023-02-01 01:21:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
+
+	* 新增入参：EnableDiagnose
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 38 次发布
+
+发布时间：2023-02-01 01:21:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreateFlowReminds](http://document.tencentcloudapi.woa.com/document/product/1595/76989)
+
+新增数据结构：
+
+* [RemindFlowRecords](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RemindFlowRecords)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 60 次发布
+
+发布时间：2023-02-01 01:49:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [LockCcnBandwidths](http://document.tencentcloudapi.woa.com/document/product/215/71323)
+
+	* 新增入参：Instances
+
+* [UnlockCcnBandwidths](http://document.tencentcloudapi.woa.com/document/product/215/71321)
+
+	* 新增入参：Instances
+
+
+新增数据结构：
+
+* [CcnFlowLock](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnFlowLock)
+
+
+
 # Release 3.0.693.1
 
 ## 图片内容安全(ims) 版本：2020-12-29

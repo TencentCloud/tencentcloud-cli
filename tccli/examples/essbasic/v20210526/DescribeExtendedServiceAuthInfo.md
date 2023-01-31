@@ -43,7 +43,7 @@ Output:
             {
                 "Name": "骑缝章",
                 "OperateOn": 1673331246,
-                "OperatorOpenId": "622201199508023314",
+                "OperatorOpenId": "admin-openid",
                 "Status": "DISABLE",
                 "Type": "PAGING_SEAL"
             }

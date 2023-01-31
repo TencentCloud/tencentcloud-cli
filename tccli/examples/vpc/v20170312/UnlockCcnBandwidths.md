@@ -1,11 +1,15 @@
 **Example 1: 解封限速实例**
 
-
+解封限速实例
 
 Input: 
 
 ```
-tccli vpc UnlockCcnBandwidths --cli-unfold-argument ```
+tccli vpc UnlockCcnBandwidths --cli-unfold-argument  \
+    --Instances.0.CcnId ccn-025qoqpx \
+    --Instances.0.UserAccountID 3436874624 \
+    --Instances.0.RegionFlowControlId fcr-1duimd7w
+```
 
 Output: 
 ```

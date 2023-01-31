@@ -1,38 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 图片内容安全(ims) 版本：2020-12-29
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
-### 第 4 次发布
+### 第 10 次发布
 
-发布时间：2023-01-31 01:24:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ImageModeration](http://document.tencentcloudapi.woa.com/document/product/1125/53273)
-
-	* 新增出参：RecognitionResults
-
-
-新增数据结构：
-
-* [RecognitionResult](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionResult)
-* [RecognitionTag](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionTag)
-
-
-
-## 图片内容安全(ims) 版本：2020-07-13
-
-
-
-## 云数据库 MariaDB(mariadb) 版本：2017-03-12
-
-### 第 26 次发布
-
-发布时间：2023-01-31 01:29:56
+发布时间：2023-02-01 01:17:24
 
 本次发布包含了以下内容：
 
@@ -40,31 +12,24 @@
 
 新增接口：
 
-* [DescribeDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/237/76985)
+* [DescribeHealthScoreAndLevel](http://document.tencentcloudapi.woa.com/document/product/1130/76988)
+
+新增数据结构：
+
+* [HealthScoreAndLevel](http://document.tencentcloudapi.woa.com/document/product/1130/57812#HealthScoreAndLevel)
+* [TimeRangeHealthScoreInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TimeRangeHealthScoreInfo)
 
 
 
-## 分布式身份(tdid) 版本：2021-05-19
-
-### 第 4 次发布
-
-发布时间：2023-01-31 01:41:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* VerifyPurchase
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
 
 
 
-## Web 应用防火墙(waf) 版本：2018-01-25
+## Elasticsearch Service(es) 版本：2018-04-16
 
-### 第 24 次发布
+### 第 25 次发布
 
-发布时间：2023-01-31 01:51:17
+发布时间：2023-02-01 01:21:35
 
 本次发布包含了以下内容：
 
@@ -72,10 +37,61 @@
 
 修改接口：
 
-* [AddCustomRule](http://document.tencentcloudapi.woa.com/document/product/627/53608)
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
 
-	* 新增入参：EventId
+	* 新增入参：EnableDiagnose
 
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 38 次发布
+
+发布时间：2023-02-01 01:21:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreateFlowReminds](http://document.tencentcloudapi.woa.com/document/product/1595/76989)
+
+新增数据结构：
+
+* [RemindFlowRecords](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RemindFlowRecords)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 60 次发布
+
+发布时间：2023-02-01 01:49:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [LockCcnBandwidths](http://document.tencentcloudapi.woa.com/document/product/215/71323)
+
+	* 新增入参：Instances
+
+* [UnlockCcnBandwidths](http://document.tencentcloudapi.woa.com/document/product/215/71321)
+
+	* 新增入参：Instances
+
+
+新增数据结构：
+
+* [CcnFlowLock](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnFlowLock)
 
 
 
@@ -17345,6 +17361,23 @@
 
 ## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
+### 第 10 次发布
+
+发布时间：2023-02-01 01:17:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeHealthScoreAndLevel](http://document.tencentcloudapi.woa.com/document/product/1130/76988)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[HealthScoreAndLevel](http://document.tencentcloudapi.woa.com/document/product/1130/57812#HealthScoreAndLevel)](http://document.tencentcloudapi.woa.com/document/product/1130/57812#[HealthScoreAndLevel](http://document.tencentcloudapi.woa.com/document/product/1130/57812#HealthScoreAndLevel))
+* [[TimeRangeHealthScoreInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TimeRangeHealthScoreInfo)](http://document.tencentcloudapi.woa.com/document/product/1130/57812#[TimeRangeHealthScoreInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TimeRangeHealthScoreInfo))
+
 ### 第 9 次发布
 
 发布时间：2023-01-09 01:14:18
@@ -21193,6 +21226,21 @@
 
 ## Elasticsearch Service(es) 版本：2018-04-16
 
+### 第 25 次发布
+
+发布时间：2023-02-01 01:21:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
+
+	* 新增入参：EnableDiagnose
+
+
 ### 第 24 次发布
 
 发布时间：2022-12-12 06:32:51
@@ -21870,6 +21918,22 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 38 次发布
+
+发布时间：2023-02-01 01:21:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ChannelCreateFlowReminds](http://document.tencentcloudapi.woa.com/document/product/1595/76989)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[RemindFlowRecords](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RemindFlowRecords)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[RemindFlowRecords](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RemindFlowRecords))
 
 ### 第 37 次发布
 
@@ -24950,8 +25014,8 @@
 
 新增数据结构：
 
-* [[RecognitionResult](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionResult)](http://document.tencentcloudapi.woa.com/document/product/1125/53274#[RecognitionResult](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionResult))
-* [[RecognitionTag](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionTag)](http://document.tencentcloudapi.woa.com/document/product/1125/53274#[RecognitionTag](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionTag))
+* [RecognitionResult](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionResult)
+* [RecognitionTag](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionTag)
 
 ### 第 3 次发布
 
@@ -28227,7 +28291,7 @@
 
 新增接口：
 
-* [[DescribeDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/237/76985)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/237/76985)
 
 ### 第 25 次发布
 
@@ -48606,6 +48670,29 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 60 次发布
+
+发布时间：2023-02-01 01:49:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [LockCcnBandwidths](http://document.tencentcloudapi.woa.com/document/product/215/71323)
+
+	* 新增入参：Instances
+
+* [UnlockCcnBandwidths](http://document.tencentcloudapi.woa.com/document/product/215/71321)
+
+	* 新增入参：Instances
+
+
+新增数据结构：
+
+* [[CcnFlowLock](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnFlowLock)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[CcnFlowLock](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnFlowLock))
 
 ### 第 59 次发布
 

@@ -2097,7 +2097,8 @@
           "member": "string",
           "name": "RoleId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2106,7 +2107,8 @@
           "member": "string",
           "name": "RoleName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

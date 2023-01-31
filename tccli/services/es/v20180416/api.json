@@ -952,6 +952,16 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启智能巡检",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDiagnose",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"

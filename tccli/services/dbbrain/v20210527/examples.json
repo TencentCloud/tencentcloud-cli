@@ -168,6 +168,14 @@
         "title": "请求健康得分"
       }
     ],
+    "DescribeHealthScoreAndLevel": [
+      {
+        "document": "获取健康得分以及性能异常详情",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthScoreAndIssueInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-8jawylhf\",\n    \"Product\": \"mysql\",\n    \"StartTime\": \"2021-02-01T14:30:00+00:00\",\n    \"EndTime\": \"2021-02-01T14:50:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"698aed27-2780-4904-8d22-e0e3e0f95146\",\n        \"Data\": {\n            \"HealthScore\": 100,\n            \"Metric\": \"health_score\",\n            \"HealthLevel\": \"HEALTH\",\n            \"Unit\": \"分\",\n            \"TimeRangeHealthScore\": {\n                \"PerformanceHealthScoreMin\": 83,\n                \"PerformanceHealthLevelMin\": \"SUB_HEALTH\",\n                \"HealthScoreMin\": 83,\n                \"HealthLevelMin\": \"SUB_HEALTH\"\n            }\n        }\n    }\n}",
+        "title": "获取健康得分以及性能异常详情"
+      }
+    ],
     "DescribeMailProfile": [
       {
         "document": "",

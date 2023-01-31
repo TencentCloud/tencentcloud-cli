@@ -126,6 +126,12 @@
       "name": "获取健康得分",
       "output": "DescribeHealthScoreResponse"
     },
+    "DescribeHealthScoreAndLevel": {
+      "document": "根据实例ID获取实时健康分、指定时间段最低健康得分以及性能维度健康得分。",
+      "input": "DescribeHealthScoreAndLevelRequest",
+      "name": "获取健康得分以及等级",
+      "output": "DescribeHealthScoreAndLevelResponse"
+    },
     "DescribeMailProfile": {
       "document": "获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。",
       "input": "DescribeMailProfileRequest",
@@ -1836,6 +1842,78 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHealthScoreAndLevelRequest": {
+      "document": "DescribeHealthScoreAndLevel请求参数结构体",
+      "members": [
+        {
+          "document": "需要获取健康得分的实例ID。",
+          "example": "cdb-test123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "获取指定时间段健康得分的开始时间，时间格式如：2019-09-10 12:13:14。",
+          "example": "2019-01-01T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "获取指定时间段健康得分的结束时间，时间格式如：2019-09-10 12:13:14。",
+          "example": "2019-01-01T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "区分访问来源",
+          "example": "mysql",
+          "member": "string",
+          "name": "ProductSource",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHealthScoreAndLevelResponse": {
+      "document": "DescribeHealthScoreAndLevel返回参数结构体",
+      "members": [
+        {
+          "document": "指定时间段最低健康得分、等级以及性能维度最低健康得分、等级，实时健康得分、等级。",
+          "example": "-",
+          "member": "HealthScoreAndLevel",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3917,6 +3995,62 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HealthScoreAndLevel": {
+      "document": "指定时间段最低健康得分、等级以及性能维度最低健康得分、等级，实时健康得分。",
+      "members": [
+        {
+          "document": "指定时间段最低健康得分。",
+          "example": "-",
+          "member": "TimeRangeHealthScoreInfo",
+          "name": "TimeRangeHealthScore",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "实时健康得分。",
+          "example": "100",
+          "member": "int64",
+          "name": "HealthScore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "健康等级，取值包括：\"HEALTH\" - 健康；\"SUB_HEALTH\" - 亚健康；\"RISK\"- 危险；\"HIGH_RISK\" - 高危。",
+          "example": "HEALTH",
+          "member": "string",
+          "name": "HealthLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "健康得分标识，固定为health_score。",
+          "example": "health_score",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "健康得分单位。",
+          "example": "分",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -6206,6 +6340,52 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TimeRangeHealthScoreInfo": {
+      "document": "指定时间段的最低健康得分、等级，性能维度最低健康得分、等级。",
+      "members": [
+        {
+          "document": "指定时间段最低健康得分。",
+          "example": "100",
+          "member": "int64",
+          "name": "HealthScoreMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "指定时间段最低健康得分对应等级，取值包括：\"HEALTH\" - 健康；\"SUB_HEALTH\" - 亚健康；\"RISK\"- 危险；\"HIGH_RISK\" - 高危。",
+          "example": "HEALTH",
+          "member": "string",
+          "name": "HealthLevelMin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "指定时间段性能维度最低健康得分。",
+          "example": "100",
+          "member": "int64",
+          "name": "PerformanceHealthScoreMin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "指定时间段性能维度最低健康得分对应等级，取值包括：\"HEALTH\" - 健康；\"SUB_HEALTH\" - 亚健康；\"RISK\"- 危险；\"HIGH_RISK\" - 高危。",
+          "example": "HEALTH",
+          "member": "string",
+          "name": "PerformanceHealthLevelMin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "out"
