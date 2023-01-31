@@ -287,12 +287,6 @@
       "input": "VerifyCredentialRequest",
       "name": "验证凭证",
       "output": "VerifyCredentialResponse"
-    },
-    "VerifyPurchase": {
-      "document": "该接口已废弃\n\n验证购买",
-      "input": "VerifyPurchaseRequest",
-      "name": "验证购买",
-      "output": "VerifyPurchaseResponse"
     }
   },
   "metadata": {
@@ -4775,23 +4769,6 @@
         }
       ],
       "usage": "in"
-    },
-    "VerifyPurchaseRequest": {
-      "document": "VerifyPurchase请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "VerifyPurchaseResponse": {
-      "document": "VerifyPurchase返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     }
   },
   "version": "1.0"

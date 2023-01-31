@@ -1,6 +1,6 @@
-**Example 1: 获取发布文件列表**
+**Example 1: 获取应用对应sourcemap文件列表**
 
-
+获取应用对应sourcemap文件列表
 
 Input: 
 

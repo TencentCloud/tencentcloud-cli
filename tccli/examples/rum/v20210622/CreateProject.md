@@ -1,6 +1,6 @@
-**Example 1: 创建 rum 项目**
+**Example 1: 创建 RUM 应用**
 
-
+创建 RUM 应用
 
 Input: 
 

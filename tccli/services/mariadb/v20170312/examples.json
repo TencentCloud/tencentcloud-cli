@@ -120,6 +120,14 @@
         "title": "查询云数据库实例的备份时间窗口配置"
       }
     ],
+    "DescribeDBEncryptAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBEncryptAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-lyzax5rb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CipherText\": \"\",\n        \"EncryptStatus\": 0,\n        \"ExpireDate\": \"1970-01-01\",\n        \"RequestId\": \"7c04c9f9-4b1b-4eed-ac21-45d1d8a261f4\"\n    }\n}",
+        "title": "无"
+      }
+    ],
     "DescribeDBInstanceSpecs": [
       {
         "document": "",

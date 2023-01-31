@@ -1,35 +1,6 @@
-**Example 1: 获取项目上报率列表**
+**Example 1: 获取应用上报抽样信息**
 
-
-
-Input: 
-
-```
-tccli rum DescribeProjectLimits --cli-unfold-argument  \
-    --ProjectID 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ProjectLimitSet": [
-            {
-                "ProjectInterface": "xx",
-                "ProjectID": 0,
-                "ReportRate": 0,
-                "ReportType": 0,
-                "ID": 0
-            }
-        ],
-        "RequestId": "xx"
-    }
-}
-```
-
-**Example 2: 获取抽样列表**
-
-
+获取应用上报抽样信息
 
 Input: 
 

@@ -90,6 +90,12 @@
       "name": "查询备份时间",
       "output": "DescribeBackupTimeResponse"
     },
+    "DescribeDBEncryptAttributes": {
+      "document": "本接口(DescribeDBEncryptAttributes)用于查询实例数据加密状态。",
+      "input": "DescribeDBEncryptAttributesRequest",
+      "name": "查询实例数据加密状态",
+      "output": "DescribeDBEncryptAttributesResponse"
+    },
     "DescribeDBInstanceSpecs": {
       "document": "本接口(DescribeDBInstanceSpecs)用于查询可创建的云数据库可售卖的规格配置。",
       "input": "DescribeDBInstanceSpecsRequest",
@@ -3059,6 +3065,60 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBEncryptAttributesRequest": {
+      "document": "DescribeDBEncryptAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id，形如：tdsql-ow728lmc。",
+          "example": "tdsql-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBEncryptAttributesResponse": {
+      "document": "DescribeDBEncryptAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "是否启用加密，1-已开启；0-未开启。",
+          "example": "0",
+          "member": "int64",
+          "name": "EncryptStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DEK密钥",
+          "example": "无",
+          "member": "string",
+          "name": "CipherText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DEK密钥过期日期。",
+          "example": "2019-01-01 10:00:00",
+          "member": "string",
+          "name": "ExpireDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

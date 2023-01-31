@@ -232,6 +232,22 @@
         "title": "查询商品列表"
       }
     ],
+    "DescribeScanLogs": [
+      {
+        "document": "查询扫描记录",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanLogs\n<公共请求参数>\n\n{\n    \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz70000243813742005003\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Products\": [],\n        \"ScanLogs\": [\n            {\n                \"LogId\": 2,\n                \"Openid\": \"abc\",\n                \"Nickname\": \"demo\",\n                \"CreateTime\": \"2021-12-06T07:13:35.000Z\",\n                \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz70000243813742005003\",\n                \"CorpId\": 10000,\n                \"MerchantId\": \"\",\n                \"ProductId\": \"\",\n                \"Ip\": \"127.0.0.1\",\n                \"Country\": \"\",\n                \"Province\": \"广东\",\n                \"City\": \"广州\",\n                \"District\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"ee4f0117-953f-4a5b-9a3f-6a1831ac3c0a\"\n    }\n}",
+        "title": "查询扫描记录"
+      }
+    ],
+    "DescribeScanStats": [
+      {
+        "document": "分页查询某批次的扫码统计记录",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanStats\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\",\n    \"CorpId\": 10000,\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ScanStats\": [],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询扫码统计记录"
+      }
+    ],
     "DescribeTmpToken": [
       {
         "document": "",

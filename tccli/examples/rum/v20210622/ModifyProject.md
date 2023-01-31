@@ -1,6 +1,6 @@
-**Example 1: 修改 rum 项目**
+**Example 1: 修改 RUM 应用信息**
 
-
+修改 RUM 应用信息
 
 Input: 
 

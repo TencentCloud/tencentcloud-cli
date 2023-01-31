@@ -174,6 +174,18 @@
       "name": "查询商品列表",
       "output": "DescribeProductsResponse"
     },
+    "DescribeScanLogs": {
+      "document": "查询扫码日志明细",
+      "input": "DescribeScanLogsRequest",
+      "name": "查询扫码日志明细",
+      "output": "DescribeScanLogsResponse"
+    },
+    "DescribeScanStats": {
+      "document": "查询某个批次被扫码的统计列表，没有被扫过的不会返回",
+      "input": "DescribeScanStatsRequest",
+      "name": "查询扫码统计列表",
+      "output": "DescribeScanStatsResponse"
+    },
     "DescribeTmpToken": {
       "document": "查询临时Token，主要用于上传接口",
       "input": "DescribeTmpTokenRequest",
@@ -2907,6 +2919,127 @@
       ],
       "type": "object"
     },
+    "DescribeScanLogsRequest": {
+      "document": "DescribeScanLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "码",
+          "example": "aba",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanLogsResponse": {
+      "document": "DescribeScanLogs返回参数结构体",
+      "members": [
+        {
+          "document": "【弃用】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScanLog",
+          "name": "Products",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "条数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扫描记录",
+          "example": "无",
+          "member": "ScanLog",
+          "name": "ScanLogs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanStatsRequest": {
+      "document": "DescribeScanStats请求参数结构体",
+      "members": [
+        {
+          "document": "批次ID",
+          "example": "aba",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "分页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "当前分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanStatsResponse": {
+      "document": "DescribeScanStats返回参数结构体",
+      "members": [
+        {
+          "document": "统计记录",
+          "example": "无",
+          "member": "ScanStat",
+          "name": "ScanStats",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTmpTokenRequest": {
       "document": "DescribeTmpToken请求参数结构体",
       "members": [
@@ -4412,6 +4545,268 @@
         }
       ],
       "usage": "both"
+    },
+    "ScanLog": {
+      "document": "扫码明细",
+      "members": [
+        {
+          "default": "",
+          "document": "行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信openid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Openid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "Nickname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-06T07:13:35.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "int64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东省",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州市",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "县/区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "天河区",
+          "member": "string",
+          "name": "District",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信 unionid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Unionid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次扫码 0:否, 1:是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "First",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScanStat": {
+      "document": "扫码统计",
+      "members": [
+        {
+          "default": "",
+          "document": "安心码",
+          "example": "https://anxin.m.qq.com/qr/bmy7uus50t54",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商户ID",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "批次ID",
+          "example": "无",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫码次数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Pv",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫码人数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Uv",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TraceCode": {
       "document": "溯源码",

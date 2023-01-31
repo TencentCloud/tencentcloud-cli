@@ -1,6 +1,6 @@
-**Example 1: 删除 rum 项目**
+**Example 1: 删除 RUM 应用**
 
-
+删除 RUM 应用
 
 Input: 
 
