@@ -1540,7 +1540,6 @@
       "document": "DeleteIpAccessControl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "无",
           "member": "string",
@@ -1549,7 +1548,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "删除的ip数组",
           "example": "无",
           "member": "string",
@@ -1558,8 +1556,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "删除对应的域名下的所有黑/白IP名额单",
+          "document": "是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单",
           "example": "无",
           "member": "bool",
           "name": "DeleteAll",
@@ -1567,7 +1564,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否为多域名黑白名单",
           "example": "batch",
           "member": "string",
@@ -1586,7 +1582,6 @@
           "example": "无",
           "member": "string",
           "name": "FailedItems",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1595,7 +1590,6 @@
           "example": "无",
           "member": "int64",
           "name": "FailedCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2264,96 +2258,96 @@
       "document": "DescribeIpAccessControl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
+          "example": "test.testwaf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "计数标识",
+          "example": "1",
           "member": "uint64",
           "name": "Count",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
-          "document": "动作",
+          "document": "动作，40表示查询白名单，42表示查询黑名单",
+          "example": "40",
           "member": "uint64",
           "name": "ActionType",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
-          "document": "有效时间最小时间戳",
+          "document": "最小有效时间的时间戳",
+          "example": "1674958082000",
           "member": "uint64",
           "name": "VtsMin",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
-          "document": "有效时间最大时间戳",
+          "document": "最大有效时间的时间戳",
+          "example": "1675130882000",
           "member": "uint64",
           "name": "VtsMax",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
-          "document": "创建时间最小时间戳",
+          "document": "最小创建时间的时间戳",
+          "example": "1643594882000",
           "member": "uint64",
           "name": "CtsMin",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
-          "document": "创建时间最大时间戳",
+          "document": "最大创建时间的时间戳",
+          "example": "1646273282000",
           "member": "uint64",
           "name": "CtsMax",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
-          "document": "偏移",
+          "document": "分页开始条数",
+          "example": "0",
           "member": "uint64",
           "name": "OffSet",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
-          "document": "限制",
+          "document": "每页的条数",
+          "example": "50",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "来源",
+          "example": "custom",
           "member": "string",
           "name": "Source",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序参数",
+          "example": "ts_version:-1",
           "member": "string",
           "name": "Sort",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "ip",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -2367,6 +2361,7 @@
       "members": [
         {
           "document": "输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{       \"Res\": [         {           \"ActionType\": 40,           \"Ip\": \"1.1.1.234\",           \"Note\": \"测试白\",           \"Source\": \"custom\",           \"TsVersion\": 1675087938186,           \"ValidTs\": 2019571199         }       ],       \"TotalCount\": 1     },     \"RequestId\": \"4afdae60-51ec-44f0-b09b-faf904ae6c6b\"   }",
           "member": "IpAccessControlData",
           "name": "Data",
           "type": "object",

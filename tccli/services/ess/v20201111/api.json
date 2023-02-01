@@ -54,6 +54,12 @@
       "name": "创建并返回出证报告",
       "output": "CreateFlowEvidenceReportResponse"
     },
+    "CreateFlowReminds": {
+      "document": "指定需要批量撤销的签署流程Id，批量催办合同\n客户指定需要撤销的签署流程Id，最多100个；接口失败后返回错误信息\n注意:\n能撤回合同的只能是合同的发起人或者签署人\n该接口需要开白后使用",
+      "input": "CreateFlowRemindsRequest",
+      "name": "电子签企业版-合同催办接口",
+      "output": "CreateFlowRemindsResponse"
+    },
     "CreateFlowSignReview": {
       "document": "提交企业签署流程审批结果\n适用场景: \n在通过接口(CreateFlow 或者CreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true，且发起方企业作为签署方参与了流程签署，则可以调用此接口提交企业内部签署审批结果。\n若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。\n",
       "input": "CreateFlowSignReviewRequest",
@@ -1389,6 +1395,51 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowRemindsRequest": {
+      "document": "CreateFlowReminds请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要执行撤回的签署流程id数组，最多100个",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowRemindsResponse": {
+      "document": "CreateFlowReminds返回参数结构体",
+      "members": [
+        {
+          "document": "签署连接过期时间字符串：年月日-时分秒",
+          "example": "无",
+          "member": "RemindFlowRecords",
+          "name": "RemindFlowRecords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4119,6 +4170,42 @@
         }
       ],
       "usage": "in"
+    },
+    "RemindFlowRecords": {
+      "document": "催办接口返回详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否能够催办",
+          "example": "true",
+          "member": "bool",
+          "name": "CanRemind",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同id",
+          "example": "xx",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "催办详情",
+          "example": "xx",
+          "member": "string",
+          "name": "RemindMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SignQrCode": {
       "document": "一码多扫签署二维码对象",

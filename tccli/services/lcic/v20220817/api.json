@@ -481,7 +481,7 @@
       "document": "DescribeAppDetail请求参数结构体",
       "members": [
         {
-          "document": "应用ID",
+          "document": "应用ID。低代码互动课堂的SdkAppId。\n",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
@@ -503,7 +503,7 @@
       "document": "DescribeAppDetail返回参数结构体",
       "members": [
         {
-          "document": "SdkAppId ",
+          "document": "SDK 对应的AppId ",
           "example": "无",
           "member": "string",
           "name": "SdkAppId",

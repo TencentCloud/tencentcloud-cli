@@ -84,7 +84,7 @@
     ],
     "DeleteIpAccessControl": [
       {
-        "document": "",
+        "document": "删除IP黑白名单",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIpAccessControl\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Items\": [\n        \"1.2.3.4\"\n    ],\n    \"DeleteAll\": false\n}",
         "output": "{\n    \"Response\": {\n        \"FailedCount\": 0,\n        \"FailedItems\": \"\",\n        \"RequestId\": \"9fbb7be2-214b-44df-a5b9-6a69ca456409\"\n    }\n}",
         "title": "Waf IP黑白名单Delete接口"
@@ -172,7 +172,7 @@
     ],
     "DescribeIpAccessControl": [
       {
-        "document": "",
+        "document": "Waf ip黑名单查询",
         "input": "https://waf.tencentcloudapi.com/?Action=DescribeIpAccessControl\r\n&Domain=www.test.com\r\n&Count=1\r\n&ActionType=42\r\n&Limit=20\r\n&OffSet=0\r\n&Sort=ts_version:-1\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [\n                {\n                    \"ActionType\": 42,\n                    \"Ip\": \"1.1.1.1\",\n                    \"Note\": \"\",\n                    \"Source\": \"custom\",\n                    \"TsVersion\": 1579074751421,\n                    \"ValidTs\": 1579017599\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"c937ce96-cf53-4df8-b288-07c6e092072d\"\n    }\n}",
         "title": "Waf ip黑白名单查询"

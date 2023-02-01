@@ -1,6 +1,6 @@
 **Example 1: Waf ip黑白名单查询**
 
-
+Waf ip黑名单查询
 
 Input: 
 

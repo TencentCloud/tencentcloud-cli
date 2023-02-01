@@ -1,0 +1,91 @@
+{
+  "actions": {
+    "CreateDataRepositoryTask": {
+      "document": "创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。",
+      "input": "CreateDataRepositoryTaskRequest",
+      "name": "创建数据流通任务",
+      "output": "CreateDataRepositoryTaskResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-05-19",
+    "api_brief": "介绍如何使用API创建、删除、查询、管理数据加速器GooseFS，为GooseFS服务分发配置，管理存储在GooseFS服务中的文件等。",
+    "serviceNameCN": "数据加速器 GooseFS",
+    "serviceShortName": "goosefs"
+  },
+  "objects": {
+    "CreateDataRepositoryTaskRequest": {
+      "document": "CreateDataRepositoryTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者Bucket到文件系统(COS_TO_FS)",
+          "example": "FS_TO_BUCKET",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "bucket名",
+          "example": "mybucket-1250000",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置位空, 则表示全部数据",
+          "example": "aaa/bbb",
+          "member": "string",
+          "name": "TaskPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "example": "mydownload",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataRepositoryTaskResponse": {
+      "document": "CreateDataRepositoryTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "c1a2b3f4",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

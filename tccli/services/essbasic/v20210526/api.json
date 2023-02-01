@@ -48,6 +48,12 @@
       "name": "通过多文件创建合同组签署流程",
       "output": "ChannelCreateFlowGroupByFilesResponse"
     },
+    "ChannelCreateFlowReminds": {
+      "document": "指定需要批量撤销的签署流程Id，批量催办合同\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口失败后返回错误信息\n注意:\n能撤回合同的只能是合同的发起人或者签署人\n该接口需要开白后使用",
+      "input": "ChannelCreateFlowRemindsRequest",
+      "name": "电子签渠道版-合同催办接口",
+      "output": "ChannelCreateFlowRemindsResponse"
+    },
     "ChannelCreateFlowSignReview": {
       "document": "提交企业签署流程审批结果\n\n在通过接口(CreateFlowsByTemplates 或者ChannelCreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true,则可以调用此接口提交企业内部签署审批结果。\n若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。",
       "input": "ChannelCreateFlowSignReviewRequest",
@@ -133,7 +139,7 @@
       "output": "DescribeChannelFlowEvidenceReportResponse"
     },
     "DescribeExtendedServiceAuthInfo": {
-      "document": "查询企业扩展服务授权信息，企业经办人需要时企业超管或者法人",
+      "document": "查询企业扩展服务授权信息，企业经办人需要是企业超管或者法人",
       "input": "DescribeExtendedServiceAuthInfoRequest",
       "name": "查询企业扩展服务授权信息",
       "output": "DescribeExtendedServiceAuthInfoResponse"
@@ -169,7 +175,7 @@
       "output": "GetDownloadFlowUrlResponse"
     },
     "ModifyExtendedService": {
-      "document": "修改（操作）企业扩展服务 ，企业经办人需要时企业超管或者法人",
+      "document": "修改（操作）企业扩展服务 ，企业经办人需要是企业超管或者法人",
       "input": "ModifyExtendedServiceRequest",
       "name": "修改企业扩展服务",
       "output": "ModifyExtendedServiceResponse"
@@ -1008,6 +1014,51 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowRemindsRequest": {
+      "document": "ChannelCreateFlowReminds请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署流程Id数组，最多100个，超过100不处理",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowRemindsResponse": {
+      "document": "ChannelCreateFlowReminds返回参数结构体",
+      "members": [
+        {
+          "document": "合同催办详情信息",
+          "example": "无",
+          "member": "RemindFlowRecords",
+          "name": "RemindFlowRecords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2590,7 +2641,7 @@
       "document": "DescribeExtendedServiceAuthInfo请求参数结构体",
       "members": [
         {
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填\n\n注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId\n",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3943,7 +3994,7 @@
       "document": "ModifyExtendedService请求参数结构体",
       "members": [
         {
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。\n\n注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3973,7 +4024,7 @@
       "document": "ModifyExtendedService返回参数结构体",
       "members": [
         {
-          "document": "操作跳转链接，有效期24小时\n仅当操作类型是 OPEN 且 扩展服务类型是  AUTO_SIGN 或 DOWNLOAD_FLOW 或者 OVERSEA_SIGN 时返回 ，此时需要经办人(操作人)点击链接完成服务开通操作。若开通操作时没有返回跳转链接，表示无需跳转操作，此时会直接开通服务\n\n操作类型是CLOSE时，不会返回此链接，会直接关闭企业该扩展服务",
+          "document": "操作跳转链接，有效期24小时\n若操作时没有返回跳转链接，表示无需跳转操作，此时会直接开通/关闭服务。\n\n当操作类型是 OPEN 且 扩展服务类型是  AUTO_SIGN 或 DOWNLOAD_FLOW 或者 OVERSEA_SIGN 时返回操作链接，\n返回的链接需要平台方自行触达超管或法人，超管或法人点击链接完成服务开通操作。",
           "example": "无",
           "member": "string",
           "name": "OperateUrl",
@@ -4799,6 +4850,42 @@
         }
       ],
       "usage": "in"
+    },
+    "RemindFlowRecords": {
+      "document": "催办接口返回详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否能够催办",
+          "example": "true",
+          "member": "bool",
+          "name": "CanRemind",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同id",
+          "example": "xxx",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "催办详情",
+          "example": "xxx",
+          "member": "string",
+          "name": "RemindMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ResourceUrlInfo": {
       "document": "资源链接信息",

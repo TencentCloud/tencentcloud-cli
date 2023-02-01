@@ -171,7 +171,7 @@
     "DeleteRole": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=DeleteRole\n&RoleId=4611686018427844696\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRole\n<公共请求参数>\n\n{\n    \"RoleId\": \"4611686018427844696\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc9759b5-5345-490e-b276-a3a0dd45004c\"\n    }\n}",
         "title": "删除角色"
       }

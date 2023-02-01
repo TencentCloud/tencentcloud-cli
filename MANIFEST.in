@@ -213,6 +213,8 @@ include tccli/services/gaap/v20180529/api.json
 include tccli/services/gaap/v20180529/examples.json
 include tccli/services/gme/v20180711/api.json
 include tccli/services/gme/v20180711/examples.json
+include tccli/services/goosefs/v20220519/api.json
+include tccli/services/goosefs/v20220519/examples.json
 include tccli/services/gpm/v20200820/api.json
 include tccli/services/gpm/v20200820/examples.json
 include tccli/services/gs/v20191118/api.json

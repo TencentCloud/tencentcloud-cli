@@ -4010,6 +4010,39 @@
       ],
       "usage": "out"
     },
+    "CcnFlowLock": {
+      "document": "云联网限速实例锁对象，该对象特用于运营端使用，用于封禁实例流量。",
+      "members": [
+        {
+          "document": "带宽所属的云联网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例所属用户主账号ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserAccountID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionFlowControlId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "CcnInstance": {
       "document": "云联网（CCN）关联实例（Instance）对象。",
       "members": [
@@ -17434,7 +17467,16 @@
     },
     "LockCcnBandwidthsRequest": {
       "document": "LockCcnBandwidths请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "带宽实例的唯一ID数组。",
+          "example": "无",
+          "member": "CcnFlowLock",
+          "name": "Instances",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "LockCcnBandwidthsResponse": {
@@ -24565,7 +24607,16 @@
     },
     "UnlockCcnBandwidthsRequest": {
       "document": "UnlockCcnBandwidths请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "带宽实例对象数组。",
+          "example": "无",
+          "member": "CcnFlowLock",
+          "name": "Instances",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "UnlockCcnBandwidthsResponse": {

@@ -2066,10 +2066,10 @@
     ],
     "LockCcnBandwidths": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LockCcnBandwidths\n<公共请求参数>\n\n{}",
+        "document": "封禁限速实例",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LockCcnBandwidths\n<公共请求参数>\n\n{\n    \"Instances\": [\n        {\n            \"CcnId\": \"ccn-cdnjw6bv\",\n            \"UserAccountID\": \"3436874624\",\n            \"RegionFlowControlId\": \"fcr-1duimd7w\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"64fb0c22-3122-4a99-840e-19db26df5e04\"\n    }\n}",
-        "title": "封锁限速实例"
+        "title": "封禁限速实例"
       }
     ],
     "LockCcns": [
@@ -2750,8 +2750,8 @@
     ],
     "UnlockCcnBandwidths": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockCcnBandwidths\n<公共请求参数>\n\n{}",
+        "document": "解封限速实例",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockCcnBandwidths\n<公共请求参数>\n\n{\n    \"Instances\": [\n        {\n            \"CcnId\": \"ccn-025qoqpx\",\n            \"UserAccountID\": \"3436874624\",\n            \"RegionFlowControlId\": \"fcr-1duimd7w\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"098a99f2-d82c-47d4-8532-9322a315c8b4\"\n    }\n}",
         "title": "解封限速实例"
       }

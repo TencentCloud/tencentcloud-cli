@@ -907,6 +907,15 @@
           "name": "DiskEnhance",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启智能巡检",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDiagnose",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

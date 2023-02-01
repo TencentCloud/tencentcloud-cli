@@ -19,6 +19,9 @@ Output:
         "StartTimeMin": 10,
         "StartTimeMax": 14,
         "BackupTimeWindow": {
+            "BackupPeriodStrategy": "weekly",
+            "BackupPeriodTime": "00:00-12:00",
+            "Days": [],
             "Friday": "10:00-14:00",
             "Monday": "10:00-14:00",
             "Saturday": "10:00-14:00",

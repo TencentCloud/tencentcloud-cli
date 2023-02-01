@@ -1,6 +1,6 @@
 **Example 1: Waf IP黑白名单Delete接口**
 
-
+删除IP黑白名单
 
 Input: 
 
