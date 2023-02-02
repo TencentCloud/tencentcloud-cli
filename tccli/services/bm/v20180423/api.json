@@ -4,319 +4,372 @@
       "document": "服务器绑定CAM角色，该角色授权访问黑石物理服务器服务，为黑石物理服务器提供了访问资源的权限，如请求服务器的临时证书",
       "input": "AttachCamRoleRequest",
       "name": "服务器绑定CAM角色",
-      "output": "AttachCamRoleResponse"
+      "output": "AttachCamRoleResponse",
+      "status": "online"
     },
     "BindPsaTag": {
       "document": "为预授权规则绑定标签",
       "input": "BindPsaTagRequest",
       "name": "为预授权规则绑定标签",
-      "output": "BindPsaTagResponse"
+      "output": "BindPsaTagResponse",
+      "status": "online"
     },
     "BuyDevices": {
       "document": "购买黑石物理机",
       "input": "BuyDevicesRequest",
       "name": "购买物理机",
-      "output": "BuyDevicesResponse"
+      "output": "BuyDevicesResponse",
+      "status": "online"
     },
     "CreateCustomImage": {
       "document": "创建自定义镜像<br>\n每个AppId在每个可用区最多保留20个自定义镜像",
       "input": "CreateCustomImageRequest",
       "name": "创建自定义镜像",
-      "output": "CreateCustomImageResponse"
+      "output": "CreateCustomImageResponse",
+      "status": "online"
     },
     "CreatePsaRegulation": {
       "document": "创建预授权规则",
       "input": "CreatePsaRegulationRequest",
       "name": "创建预授权规则",
-      "output": "CreatePsaRegulationResponse"
+      "output": "CreatePsaRegulationResponse",
+      "status": "online"
     },
     "CreateSpotDevice": {
       "document": "创建黑石竞价实例",
       "input": "CreateSpotDeviceRequest",
       "name": "创建黑石竞价实例",
-      "output": "CreateSpotDeviceResponse"
+      "output": "CreateSpotDeviceResponse",
+      "status": "online"
     },
     "CreateUserCmd": {
       "document": "创建自定义脚本",
       "input": "CreateUserCmdRequest",
       "name": "创建自定义脚本",
-      "output": "CreateUserCmdResponse"
+      "output": "CreateUserCmdResponse",
+      "status": "online"
     },
     "DeleteCustomImages": {
       "document": "删除自定义镜像<br>\n正用于部署或重装中的镜像被删除后，镜像文件将保留一段时间，直到部署或重装结束",
       "input": "DeleteCustomImagesRequest",
       "name": "删除自定义镜像",
-      "output": "DeleteCustomImagesResponse"
+      "output": "DeleteCustomImagesResponse",
+      "status": "online"
     },
     "DeletePsaRegulation": {
       "document": "删除预授权规则",
       "input": "DeletePsaRegulationRequest",
       "name": "删除预授权规则",
-      "output": "DeletePsaRegulationResponse"
+      "output": "DeletePsaRegulationResponse",
+      "status": "online"
     },
     "DeleteUserCmds": {
       "document": "删除自定义脚本",
       "input": "DeleteUserCmdsRequest",
       "name": "删除自定义脚本",
-      "output": "DeleteUserCmdsResponse"
+      "output": "DeleteUserCmdsResponse",
+      "status": "online"
     },
     "DescribeCustomImageProcess": {
       "document": "查询自定义镜像制作进度",
       "input": "DescribeCustomImageProcessRequest",
       "name": "查询自定义镜像制作进度",
-      "output": "DescribeCustomImageProcessResponse"
+      "output": "DescribeCustomImageProcessResponse",
+      "status": "online"
     },
     "DescribeCustomImages": {
       "document": "查看自定义镜像列表",
       "input": "DescribeCustomImagesRequest",
       "name": "查看自定义镜像列表",
-      "output": "DescribeCustomImagesResponse"
+      "output": "DescribeCustomImagesResponse",
+      "status": "online"
     },
     "DescribeDeviceClass": {
       "document": "获取设备类型",
       "input": "DescribeDeviceClassRequest",
       "name": "查询设备型号",
-      "output": "DescribeDeviceClassResponse"
+      "output": "DescribeDeviceClassResponse",
+      "status": "online"
     },
     "DescribeDeviceClassPartition": {
       "document": "查询机型支持的RAID方式， 并返回系统盘的分区和逻辑盘的列表",
       "input": "DescribeDeviceClassPartitionRequest",
       "name": "查询机型RAID方式以及系统盘大小",
-      "output": "DescribeDeviceClassPartitionResponse"
+      "output": "DescribeDeviceClassPartitionResponse",
+      "status": "online"
     },
     "DescribeDeviceHardwareInfo": {
       "document": "查询设备硬件配置信息，如 CPU 型号，内存大小，磁盘大小和数量",
       "input": "DescribeDeviceHardwareInfoRequest",
       "name": "查询设备硬件配置信息",
-      "output": "DescribeDeviceHardwareInfoResponse"
+      "output": "DescribeDeviceHardwareInfoResponse",
+      "status": "online"
     },
     "DescribeDeviceInventory": {
       "document": "查询设备库存",
       "input": "DescribeDeviceInventoryRequest",
       "name": "查询设备库存",
-      "output": "DescribeDeviceInventoryResponse"
+      "output": "DescribeDeviceInventoryResponse",
+      "status": "online"
     },
     "DescribeDeviceOperationLog": {
       "document": "查询设备操作日志， 如设备重启，重装，设置密码等操作",
       "input": "DescribeDeviceOperationLogRequest",
       "name": "查询设备操作日志",
-      "output": "DescribeDeviceOperationLogResponse"
+      "output": "DescribeDeviceOperationLogResponse",
+      "status": "online"
     },
     "DescribeDevicePartition": {
       "document": "获取物理机的分区格式",
       "input": "DescribeDevicePartitionRequest",
       "name": "获取物理机的分区格式",
-      "output": "DescribeDevicePartitionResponse"
+      "output": "DescribeDevicePartitionResponse",
+      "status": "online"
     },
     "DescribeDevicePosition": {
       "document": "查询服务器所在的位置，如机架，上联交换机等信息",
       "input": "DescribeDevicePositionRequest",
       "name": "查询设备位置信息",
-      "output": "DescribeDevicePositionResponse"
+      "output": "DescribeDevicePositionResponse",
+      "status": "online"
     },
     "DescribeDevicePriceInfo": {
       "document": "查询服务器价格信息，支持设备的批量查找，支持标准机型和弹性机型的混合查找",
       "input": "DescribeDevicePriceInfoRequest",
       "name": "查询服务器价格信息",
-      "output": "DescribeDevicePriceInfoResponse"
+      "output": "DescribeDevicePriceInfoResponse",
+      "status": "online"
     },
     "DescribeDevices": {
       "document": "查询物理服务器，可以按照实例，业务IP等过滤",
       "input": "DescribeDevicesRequest",
       "name": "查询物理机信息",
-      "output": "DescribeDevicesResponse"
+      "output": "DescribeDevicesResponse",
+      "status": "online"
     },
     "DescribeHardwareSpecification": {
       "document": "查询自定义机型部件信息，包括CpuId对应的型号，DiskTypeId对应的磁盘类型",
       "input": "DescribeHardwareSpecificationRequest",
       "name": "查询自定义机型部件信息",
-      "output": "DescribeHardwareSpecificationResponse"
+      "output": "DescribeHardwareSpecificationResponse",
+      "status": "online"
     },
     "DescribeHostedDeviceOutBandInfo": {
       "document": "查询托管设备带外信息",
       "input": "DescribeHostedDeviceOutBandInfoRequest",
       "name": "查询托管设备带外信息",
-      "output": "DescribeHostedDeviceOutBandInfoResponse"
+      "output": "DescribeHostedDeviceOutBandInfoResponse",
+      "status": "online"
     },
     "DescribeOperationResult": {
       "document": "获取异步操作状态的完成状态",
       "input": "DescribeOperationResultRequest",
       "name": "查询异步任务状态",
-      "output": "DescribeOperationResultResponse"
+      "output": "DescribeOperationResultResponse",
+      "status": "online"
     },
     "DescribeOsInfo": {
       "document": "查询指定机型所支持的操作系统",
       "input": "DescribeOsInfoRequest",
       "name": "查询操作系统信息",
-      "output": "DescribeOsInfoResponse"
+      "output": "DescribeOsInfoResponse",
+      "status": "online"
     },
     "DescribePsaRegulations": {
       "document": "获取预授权规则列表",
       "input": "DescribePsaRegulationsRequest",
       "name": "获取预授权规则列表",
-      "output": "DescribePsaRegulationsResponse"
+      "output": "DescribePsaRegulationsResponse",
+      "status": "online"
     },
     "DescribeRegions": {
       "document": "查询地域以及可用区",
       "input": "DescribeRegionsRequest",
       "name": "查询地域以及可用区",
-      "output": "DescribeRegionsResponse"
+      "output": "DescribeRegionsResponse",
+      "status": "online"
     },
     "DescribeRepairTaskConstant": {
       "document": "维修任务配置获取",
       "input": "DescribeRepairTaskConstantRequest",
       "name": "维修任务配置获取",
-      "output": "DescribeRepairTaskConstantResponse"
+      "output": "DescribeRepairTaskConstantResponse",
+      "status": "online"
     },
     "DescribeTaskInfo": {
       "document": "获取用户维修任务列表及详细信息<br>\n<br>\nTaskStatus（任务状态ID）与状态中文名的对应关系如下：<br>\n1：未授权<br>\n2：处理中<br>\n3：待确认<br>\n4：未授权-暂不处理<br>\n5：已恢复<br>\n6：待确认-未恢复<br>",
       "input": "DescribeTaskInfoRequest",
       "name": "维修任务信息获取",
-      "output": "DescribeTaskInfoResponse"
+      "output": "DescribeTaskInfoResponse",
+      "status": "online"
     },
     "DescribeTaskOperationLog": {
       "document": "获取维修任务操作日志",
       "input": "DescribeTaskOperationLogRequest",
       "name": "维修任务操作日志获取",
-      "output": "DescribeTaskOperationLogResponse"
+      "output": "DescribeTaskOperationLogResponse",
+      "status": "online"
     },
     "DescribeUserCmdTaskInfo": {
       "document": "获取自定义脚本任务详细信息",
       "input": "DescribeUserCmdTaskInfoRequest",
       "name": "获取自定义脚本任务详细信息",
-      "output": "DescribeUserCmdTaskInfoResponse"
+      "output": "DescribeUserCmdTaskInfoResponse",
+      "status": "online"
     },
     "DescribeUserCmdTasks": {
       "document": "获取自定义脚本任务列表",
       "input": "DescribeUserCmdTasksRequest",
       "name": "获取自定义脚本任务列表",
-      "output": "DescribeUserCmdTasksResponse"
+      "output": "DescribeUserCmdTasksResponse",
+      "status": "online"
     },
     "DescribeUserCmds": {
       "document": "获取自定义脚本信息列表",
       "input": "DescribeUserCmdsRequest",
       "name": "获取自定义脚本信息列表",
-      "output": "DescribeUserCmdsResponse"
+      "output": "DescribeUserCmdsResponse",
+      "status": "online"
     },
     "DetachCamRole": {
       "document": "服务器绑定CAM角色",
       "input": "DetachCamRoleRequest",
       "name": "服务器解绑CAM角色",
-      "output": "DetachCamRoleResponse"
+      "output": "DetachCamRoleResponse",
+      "status": "online"
     },
     "ModifyCustomImageAttribute": {
       "document": "用于修改自定义镜像名或描述",
       "input": "ModifyCustomImageAttributeRequest",
       "name": "修改自定义镜像属性",
-      "output": "ModifyCustomImageAttributeResponse"
+      "output": "ModifyCustomImageAttributeResponse",
+      "status": "online"
     },
     "ModifyDeviceAliases": {
       "document": "修改服务器名称",
       "input": "ModifyDeviceAliasesRequest",
       "name": "修改服务器名称",
-      "output": "ModifyDeviceAliasesResponse"
+      "output": "ModifyDeviceAliasesResponse",
+      "status": "online"
     },
     "ModifyDeviceAutoRenewFlag": {
       "document": "修改物理机服务器自动续费标志",
       "input": "ModifyDeviceAutoRenewFlagRequest",
       "name": "修改物理机服务器自动续费标志",
-      "output": "ModifyDeviceAutoRenewFlagResponse"
+      "output": "ModifyDeviceAutoRenewFlagResponse",
+      "status": "online"
     },
     "ModifyLanIp": {
       "document": "修改物理机内网IP（不重装系统）",
       "input": "ModifyLanIpRequest",
       "name": "修改物理机内网IP（不重装系统）",
-      "output": "ModifyLanIpResponse"
+      "output": "ModifyLanIpResponse",
+      "status": "online"
     },
     "ModifyPayModePre2Post": {
       "document": "将设备的预付费模式修改为后付费计费模式，支持批量转换。（前提是客户要加入黑石物理机后付费计费的白名单，申请黑石物理机后付费可以联系腾讯云客服）",
       "input": "ModifyPayModePre2PostRequest",
       "name": "将设备从预付费转换为后付费",
-      "output": "ModifyPayModePre2PostResponse"
+      "output": "ModifyPayModePre2PostResponse",
+      "status": "online"
     },
     "ModifyPsaRegulation": {
       "document": "允许修改规则信息及关联故障类型",
       "input": "ModifyPsaRegulationRequest",
       "name": "修改预授权规则",
-      "output": "ModifyPsaRegulationResponse"
+      "output": "ModifyPsaRegulationResponse",
+      "status": "online"
     },
     "ModifyUserCmd": {
       "document": "修改自定义脚本",
       "input": "ModifyUserCmdRequest",
       "name": "修改自定义脚本",
-      "output": "ModifyUserCmdResponse"
+      "output": "ModifyUserCmdResponse",
+      "status": "online"
     },
     "OfflineDevices": {
       "document": "销毁黑石物理机实例：可以销毁物理机列表中的竞价实例，或回收站列表中所有计费模式的实例",
       "input": "OfflineDevicesRequest",
       "name": "退还服务器",
-      "output": "OfflineDevicesResponse"
+      "output": "OfflineDevicesResponse",
+      "status": "online"
     },
     "RebootDevices": {
       "document": "重启机器",
       "input": "RebootDevicesRequest",
       "name": "重启机器",
-      "output": "RebootDevicesResponse"
+      "output": "RebootDevicesResponse",
+      "status": "online"
     },
     "RecoverDevices": {
       "document": "恢复回收站中的物理机（仅限后付费的物理机）",
       "input": "RecoverDevicesRequest",
       "name": "恢复物理机",
-      "output": "RecoverDevicesResponse"
+      "output": "RecoverDevicesResponse",
+      "status": "online"
     },
     "ReloadDeviceOs": {
       "document": "重装操作系统",
       "input": "ReloadDeviceOsRequest",
       "name": "重装操作系统",
-      "output": "ReloadDeviceOsResponse"
+      "output": "ReloadDeviceOsResponse",
+      "status": "online"
     },
     "RepairTaskControl": {
       "document": "此接口用于操作维修任务<br>\n入参TaskId为维修任务ID<br>\n入参Operate表示对维修任务的操作，支持如下取值：<br>\nAuthorizeRepair（授权维修）<br>\nIgnore（暂不提醒）<br>\nConfirmRecovered（维修完成后，确认故障恢复）<br>\nConfirmUnRecovered（维修完成后，确认故障未恢复，该操作已不推荐用）<br>\nNeedRepairAgain（维修完成后，故障未恢复，需要重新维修，推荐用此操作打回）<br>\n入参OperateRemark仅在Operate为NeedRepairAgain时有效，表示打回重修原因，建议给出打回的具体原因。<br>\n<br>\n操作约束（当前任务状态(TaskStatus)->对应可执行的操作）：<br>\n未授权(1)->授权维修；暂不处理<br>\n暂不处理(4)->授权维修<br>\n待确认(3)->确认故障恢复；确认故障未恢复；需要重新维修<br>\n未恢复(6)->确认故障恢复<br>\n<br>\n对于Ping不可达故障的任务，还允许：<br>\n未授权->确认故障恢复<br>\n暂不处理->确认故障恢复<br>\n<br>\n处理中与已恢复状态的任务不允许进行操作。<br>\n<br>\n详细信息请访问：https://cloud.tencent.com/document/product/386/18190",
       "input": "RepairTaskControlRequest",
       "name": "维修任务管理",
-      "output": "RepairTaskControlResponse"
+      "output": "RepairTaskControlResponse",
+      "status": "online"
     },
     "ResetDevicePassword": {
       "document": "重置服务器密码",
       "input": "ResetDevicePasswordRequest",
       "name": "重置密码",
-      "output": "ResetDevicePasswordResponse"
+      "output": "ResetDevicePasswordResponse",
+      "status": "online"
     },
     "ReturnDevices": {
       "document": "退回物理机至回收站，支持批量退还不同计费模式的物理机（包括预付费、后付费、预付费转后付费）",
       "input": "ReturnDevicesRequest",
       "name": "退回物理机",
-      "output": "ReturnDevicesResponse"
+      "output": "ReturnDevicesResponse",
+      "status": "online"
     },
     "RunUserCmd": {
       "document": "运行自定义脚本",
       "input": "RunUserCmdRequest",
       "name": "运行自定义脚本",
-      "output": "RunUserCmdResponse"
+      "output": "RunUserCmdResponse",
+      "status": "online"
     },
     "SetOutBandVpnAuthPassword": {
       "document": "设置带外VPN认证用户密码",
       "input": "SetOutBandVpnAuthPasswordRequest",
       "name": "设置带外VPN认证用户密码",
-      "output": "SetOutBandVpnAuthPasswordResponse"
+      "output": "SetOutBandVpnAuthPasswordResponse",
+      "status": "online"
     },
     "ShutdownDevices": {
       "document": "关闭服务器",
       "input": "ShutdownDevicesRequest",
       "name": "关闭服务器",
-      "output": "ShutdownDevicesResponse"
+      "output": "ShutdownDevicesResponse",
+      "status": "online"
     },
     "StartDevices": {
       "document": "开启服务器",
       "input": "StartDevicesRequest",
       "name": "开启服务器",
-      "output": "StartDevicesResponse"
+      "output": "StartDevicesResponse",
+      "status": "online"
     },
     "UnbindPsaTag": {
       "document": "解除标签与预授权规则的绑定",
       "input": "UnbindPsaTagRequest",
       "name": "解除标签与预授权规则的绑定",
-      "output": "UnbindPsaTagResponse"
+      "output": "UnbindPsaTagResponse",
+      "status": "online"
     }
   },
   "metadata": {

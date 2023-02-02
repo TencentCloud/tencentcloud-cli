@@ -4,781 +4,911 @@
       "document": "申请一个或多个弹性公网IP（简称 EIP）",
       "input": "AllocateAddressesRequest",
       "name": "创建弹性公网IP",
-      "output": "AllocateAddressesResponse"
+      "output": "AllocateAddressesResponse",
+      "status": "online"
     },
     "AssignIpv6Addresses": {
       "document": "本接口（AssignIpv6Addresses）用于弹性网卡申请IPv6地址。",
       "input": "AssignIpv6AddressesRequest",
       "name": "分配IPv6地址",
-      "output": "AssignIpv6AddressesResponse"
+      "output": "AssignIpv6AddressesResponse",
+      "status": "online"
     },
     "AssignPrivateIpAddresses": {
       "document": "弹性网卡申请内网 IP",
       "input": "AssignPrivateIpAddressesRequest",
       "name": "弹性网卡申请内网 IP",
-      "output": "AssignPrivateIpAddressesResponse"
+      "output": "AssignPrivateIpAddressesResponse",
+      "status": "online"
     },
     "AssociateAddress": {
       "document": "将弹性公网IP（简称 EIP）绑定到实例或弹性网卡的指定内网 IP 上。\n将 EIP 绑定到实例（ECM）上，其本质是将 EIP 绑定到实例上主网卡的主内网 IP 上。\n将 EIP 绑定到指定网卡的内网 IP上，内网IP已经绑定了EIP或普通公网IP，则反馈失败。必须先解绑该 EIP，才能再绑定新的。\n只有状态为 UNBIND 的 EIP 才能够绑定内网IP。",
       "input": "AssociateAddressRequest",
       "name": "绑定弹性公网IP",
-      "output": "AssociateAddressResponse"
+      "output": "AssociateAddressResponse",
+      "status": "online"
     },
     "AssociateSecurityGroups": {
       "document": "绑定安全组",
       "input": "AssociateSecurityGroupsRequest",
       "name": "绑定安全组",
-      "output": "AssociateSecurityGroupsResponse"
+      "output": "AssociateSecurityGroupsResponse",
+      "status": "online"
     },
     "AttachDisks": {
       "document": "本接口（AttachDisks）用于挂载云硬盘。\n \n* 支持批量操作，将多块云盘挂载到同一云主机。如果多个云盘中存在不允许挂载的云盘，则操作不执行，返回特定的错误码。\n* 本接口为异步接口，当挂载云盘的请求成功返回时，表示后台已发起挂载云盘的操作，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHING”变为“ATTACHED”，则为挂载成功。",
       "input": "AttachDisksRequest",
       "name": "挂载云硬盘",
-      "output": "AttachDisksResponse"
+      "output": "AttachDisksResponse",
+      "status": "online"
     },
     "AttachNetworkInterface": {
       "document": "弹性网卡绑定云主机",
       "input": "AttachNetworkInterfaceRequest",
       "name": "弹性网卡绑定云主机",
-      "output": "AttachNetworkInterfaceResponse"
+      "output": "AttachNetworkInterfaceResponse",
+      "status": "online"
     },
     "BatchDeregisterTargets": {
       "document": "批量解绑后端服务。",
       "input": "BatchDeregisterTargetsRequest",
       "name": "批量解绑后端服务",
-      "output": "BatchDeregisterTargetsResponse"
+      "output": "BatchDeregisterTargetsResponse",
+      "status": "online"
     },
     "BatchModifyTargetWeight": {
       "document": "批量修改监听器绑定的后端机器的转发权重。",
       "input": "BatchModifyTargetWeightRequest",
       "name": "批量修改监听器绑定的后端机器的转发权重",
-      "output": "BatchModifyTargetWeightResponse"
+      "output": "BatchModifyTargetWeightResponse",
+      "status": "online"
     },
     "BatchRegisterTargets": {
       "document": "批量绑定后端目标。",
       "input": "BatchRegisterTargetsRequest",
       "name": "批量绑定后端目标",
-      "output": "BatchRegisterTargetsResponse"
+      "output": "BatchRegisterTargetsResponse",
+      "status": "online"
     },
     "CreateDisks": {
       "document": "本接口（CreateDisks）用于创建云硬盘。\n\n* 预付费云盘的购买会预先扣除本次云盘购买所需金额，在调用本接口前请确保账户余额充足。\n* 本接口支持传入数据盘快照来创建云盘，实现将快照数据复制到新购云盘上。\n* 本接口为异步接口，当创建请求下发成功后会返回一个新建的云盘ID列表，此时云盘的创建并未立即完成。可以通过调用[DescribeDisks](/document/product/362/16315)接口根据DiskId查询对应云盘，如果能查到云盘，且状态为'UNATTACHED'或'ATTACHED'，则表示创建成功。",
       "input": "CreateDisksRequest",
       "name": "创建云硬盘",
-      "output": "CreateDisksResponse"
+      "output": "CreateDisksResponse",
+      "status": "online"
     },
     "CreateHaVip": {
       "document": "本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）",
       "input": "CreateHaVipRequest",
       "name": "创建HAVIP",
-      "output": "CreateHaVipResponse"
+      "output": "CreateHaVipResponse",
+      "status": "online"
     },
     "CreateImage": {
       "document": "本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。",
       "input": "CreateImageRequest",
       "name": "创建镜像",
-      "output": "CreateImageResponse"
+      "output": "CreateImageResponse",
+      "status": "online"
     },
     "CreateKeyPair": {
       "document": "用于创建一个 OpenSSH RSA 密钥对，可以用于登录 Linux 实例。",
       "input": "CreateKeyPairRequest",
       "name": "创建密钥对",
-      "output": "CreateKeyPairResponse"
+      "output": "CreateKeyPairResponse",
+      "status": "online"
     },
     "CreateListener": {
       "document": "创建负载均衡监听器。",
       "input": "CreateListenerRequest",
       "name": "创建负载均衡监听器",
-      "output": "CreateListenerResponse"
+      "output": "CreateListenerResponse",
+      "status": "online"
     },
     "CreateLoadBalancer": {
       "document": "购买负载均衡实例。",
       "input": "CreateLoadBalancerRequest",
       "name": "购买负载均衡实例",
-      "output": "CreateLoadBalancerResponse"
+      "output": "CreateLoadBalancerResponse",
+      "status": "online"
     },
     "CreateModule": {
       "document": "创建模块",
       "input": "CreateModuleRequest",
       "name": "创建模块",
-      "output": "CreateModuleResponse"
+      "output": "CreateModuleResponse",
+      "status": "online"
     },
     "CreateNetworkInterface": {
       "document": "创建弹性网卡",
       "input": "CreateNetworkInterfaceRequest",
       "name": "创建弹性网卡",
-      "output": "CreateNetworkInterfaceResponse"
+      "output": "CreateNetworkInterfaceResponse",
+      "status": "online"
     },
     "CreateRouteTable": {
       "document": "创建了VPC后，系统会创建一个默认路由表，所有新建的子网都会关联到默认路由表。默认情况下您可以直接使用默认路由表来管理您的路由策略。当您的路由策略较多时，您可以调用创建路由表接口创建更多路由表管理您的路由策略。",
       "input": "CreateRouteTableRequest",
       "name": "创建路由表",
-      "output": "CreateRouteTableResponse"
+      "output": "CreateRouteTableResponse",
+      "status": "online"
     },
     "CreateRoutes": {
       "document": "创建路由策略",
       "input": "CreateRoutesRequest",
       "name": "创建路由策略",
-      "output": "CreateRoutesResponse"
+      "output": "CreateRoutesResponse",
+      "status": "online"
     },
     "CreateSecurityGroup": {
       "document": "创建安全组",
       "input": "CreateSecurityGroupRequest",
       "name": "创建安全组",
-      "output": "CreateSecurityGroupResponse"
+      "output": "CreateSecurityGroupResponse",
+      "status": "online"
     },
     "CreateSecurityGroupPolicies": {
       "document": "<p>本接口（CreateSecurityGroupPolicies）用于创建安全组规则（SecurityGroupPolicy）。</p>\n<p>在 SecurityGroupPolicySet 参数中：</p>\n<ul>\n<li>Version 安全组规则版本号，用户每次更新安全规则版本会自动加1，防止您更新的路由规则已过期，不填不考虑冲突。</li>\n<li>在创建出站和入站规则（Egress 和 Ingress）时：<ul>\n<li>Protocol 字段支持输入TCP, UDP, ICMP, GRE, ALL。</li>\n<li>CidrBlock 字段允许输入符合cidr格式标准的任意字符串。在基础网络中，如果 CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n<li>SecurityGroupId 字段允许输入与待修改的安全组位于相同项目中的安全组 ID，包括这个安全组 ID 本身，代表安全组下所有云服务器的内网 IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个 ID 所关联的云服务器变化而变化，不需要重新修改。</li>\n<li>Port 字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当 Protocol 字段是 TCP 或 UDP 时，Port 字段才被接受，即 Protocol 字段不是 TCP 或 UDP 时，Protocol 和 Port 排他关系，不允许同时输入，否则会接口报错。</li>\n<li>Action 字段只允许输入 ACCEPT 或 DROP。</li>\n<li>CidrBlock, SecurityGroupId, AddressTemplate 是排他关系，不允许同时输入，Protocol + Port 和 ServiceTemplate 二者是排他关系，不允许同时输入。</li>\n<li>一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。</li>\n</ul></li></ul>\n<p>默认接口请求频率限制：20次/秒。</p>",
       "input": "CreateSecurityGroupPoliciesRequest",
       "name": "安全组添加规则",
-      "output": "CreateSecurityGroupPoliciesResponse"
+      "output": "CreateSecurityGroupPoliciesResponse",
+      "status": "online"
     },
     "CreateSubnet": {
       "document": "创建子网，若创建成功，则此子网会成为此可用区的默认子网。",
       "input": "CreateSubnetRequest",
       "name": "创建子网",
-      "output": "CreateSubnetResponse"
+      "output": "CreateSubnetResponse",
+      "status": "online"
     },
     "CreateVpc": {
       "document": "创建私有网络",
       "input": "CreateVpcRequest",
       "name": "创建VPC",
-      "output": "CreateVpcResponse"
+      "output": "CreateVpcResponse",
+      "status": "online"
     },
     "DeleteHaVip": {
       "document": "用于删除高可用虚拟IP（HAVIP）",
       "input": "DeleteHaVipRequest",
       "name": "删除HAVIP",
-      "output": "DeleteHaVipResponse"
+      "output": "DeleteHaVipResponse",
+      "status": "online"
     },
     "DeleteImage": {
       "document": "删除镜像",
       "input": "DeleteImageRequest",
       "name": "删除镜像",
-      "output": "DeleteImageResponse"
+      "output": "DeleteImageResponse",
+      "status": "online"
     },
     "DeleteListener": {
       "document": "删除负载均衡监听器。",
       "input": "DeleteListenerRequest",
       "name": "删除负载均衡监听器",
-      "output": "DeleteListenerResponse"
+      "output": "DeleteListenerResponse",
+      "status": "online"
     },
     "DeleteLoadBalancer": {
       "document": "删除负载均衡实例。",
       "input": "DeleteLoadBalancerRequest",
       "name": "删除负载均衡实例",
-      "output": "DeleteLoadBalancerResponse"
+      "output": "DeleteLoadBalancerResponse",
+      "status": "online"
     },
     "DeleteLoadBalancerListeners": {
       "document": "删除负载均衡多个监听器",
       "input": "DeleteLoadBalancerListenersRequest",
       "name": "删除负载均衡多个监听器",
-      "output": "DeleteLoadBalancerListenersResponse"
+      "output": "DeleteLoadBalancerListenersResponse",
+      "status": "online"
     },
     "DeleteModule": {
       "document": "删除业务模块",
       "input": "DeleteModuleRequest",
       "name": "删除业务模块",
-      "output": "DeleteModuleResponse"
+      "output": "DeleteModuleResponse",
+      "status": "online"
     },
     "DeleteNetworkInterface": {
       "document": "删除弹性网卡",
       "input": "DeleteNetworkInterfaceRequest",
       "name": "删除弹性网卡",
-      "output": "DeleteNetworkInterfaceResponse"
+      "output": "DeleteNetworkInterfaceResponse",
+      "status": "online"
     },
     "DeleteRouteTable": {
       "document": "删除路由表",
       "input": "DeleteRouteTableRequest",
       "name": "删除路由表",
-      "output": "DeleteRouteTableResponse"
+      "output": "DeleteRouteTableResponse",
+      "status": "online"
     },
     "DeleteRoutes": {
       "document": "对某个路由表批量删除路由策略",
       "input": "DeleteRoutesRequest",
       "name": "删除路由策略",
-      "output": "DeleteRoutesResponse"
+      "output": "DeleteRoutesResponse",
+      "status": "online"
     },
     "DeleteSecurityGroup": {
       "document": "只有当前账号下的安全组允许被删除。\n安全组实例ID如果在其他安全组的规则中被引用，则无法直接删除。这种情况下，需要先进行规则修改，再删除安全组。\n删除的安全组无法再找回，请谨慎调用。",
       "input": "DeleteSecurityGroupRequest",
       "name": "删除安全组",
-      "output": "DeleteSecurityGroupResponse"
+      "output": "DeleteSecurityGroupResponse",
+      "status": "online"
     },
     "DeleteSecurityGroupPolicies": {
       "document": "SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。",
       "input": "DeleteSecurityGroupPoliciesRequest",
       "name": "删除安全组规则",
-      "output": "DeleteSecurityGroupPoliciesResponse"
+      "output": "DeleteSecurityGroupPoliciesResponse",
+      "status": "online"
     },
     "DeleteSnapshots": {
       "document": "本接口（DeleteSnapshots）用于删除快照。\n\n* 快照必须处于NORMAL状态，快照状态可以通过[DescribeSnapshots](/document/product/362/15647)接口查询，见输出参数中SnapshotState字段解释。\n* 支持批量操作。如果多个快照存在无法删除的快照，则操作不执行，以返回特定的错误码返回。",
       "input": "DeleteSnapshotsRequest",
       "name": "删除快照",
-      "output": "DeleteSnapshotsResponse"
+      "output": "DeleteSnapshotsResponse",
+      "status": "online"
     },
     "DeleteSubnet": {
       "document": "删除子网，若子网为可用区下的默认子网，则默认子网会回退到系统自动创建的默认子网，非用户最新创建的子网。若默认子网不满足需求，可调用设置默认子网接口设置。",
       "input": "DeleteSubnetRequest",
       "name": "删除子网",
-      "output": "DeleteSubnetResponse"
+      "output": "DeleteSubnetResponse",
+      "status": "online"
     },
     "DeleteVpc": {
       "document": "删除私有网络",
       "input": "DeleteVpcRequest",
       "name": "删除VPC",
-      "output": "DeleteVpcResponse"
+      "output": "DeleteVpcResponse",
+      "status": "online"
     },
     "DescribeAddressQuota": {
       "document": "查询您账户的弹性公网IP（简称 EIP）在当前地域的配额信息",
       "input": "DescribeAddressQuotaRequest",
       "name": "查询弹性公网IP配额",
-      "output": "DescribeAddressQuotaResponse"
+      "output": "DescribeAddressQuotaResponse",
+      "status": "online"
     },
     "DescribeAddresses": {
       "document": "查询弹性公网IP列表",
       "input": "DescribeAddressesRequest",
       "name": "查询弹性公网IP列表",
-      "output": "DescribeAddressesResponse"
+      "output": "DescribeAddressesResponse",
+      "status": "online"
     },
     "DescribeBaseOverview": {
       "document": "获取概览页统计的基本数据",
       "input": "DescribeBaseOverviewRequest",
       "name": "获取概览页统计的基本数据",
-      "output": "DescribeBaseOverviewResponse"
+      "output": "DescribeBaseOverviewResponse",
+      "status": "online"
     },
     "DescribeConfig": {
       "document": "获取带宽硬盘等数据的限制",
       "input": "DescribeConfigRequest",
       "name": "获取配置限制信息",
-      "output": "DescribeConfigResponse"
+      "output": "DescribeConfigResponse",
+      "status": "online"
     },
     "DescribeCustomImageTask": {
       "document": "查询导入镜像任务",
       "input": "DescribeCustomImageTaskRequest",
       "name": "查询导入镜像任务",
-      "output": "DescribeCustomImageTaskResponse"
+      "output": "DescribeCustomImageTaskResponse",
+      "status": "online"
     },
     "DescribeDefaultSubnet": {
       "document": "查询可用区的默认子网",
       "input": "DescribeDefaultSubnetRequest",
       "name": "查询可用区的默认子网",
-      "output": "DescribeDefaultSubnetResponse"
+      "output": "DescribeDefaultSubnetResponse",
+      "status": "online"
     },
     "DescribeDisks": {
       "document": "本接口（DescribeDisks）用于查询云硬盘列表。\n\n* 可以根据云硬盘ID、云硬盘类型或者云硬盘状态等信息来查询云硬盘的详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘列表。",
       "input": "DescribeDisksRequest",
       "name": "查询云硬盘列表",
-      "output": "DescribeDisksResponse"
+      "output": "DescribeDisksResponse",
+      "status": "online"
     },
     "DescribeHaVips": {
       "document": "用于查询高可用虚拟IP（HAVIP）列表。",
       "input": "DescribeHaVipsRequest",
       "name": "查询HAVIP列表",
-      "output": "DescribeHaVipsResponse"
+      "output": "DescribeHaVipsResponse",
+      "status": "online"
     },
     "DescribeImage": {
       "document": "展示镜像列表",
       "input": "DescribeImageRequest",
       "name": "展示镜像列表",
-      "output": "DescribeImageResponse"
+      "output": "DescribeImageResponse",
+      "status": "online"
     },
     "DescribeImportImageOs": {
       "document": "查询外部导入镜像支持的OS列表",
       "input": "DescribeImportImageOsRequest",
       "name": "查询外部导入镜像支持的OS列表",
-      "output": "DescribeImportImageOsResponse"
+      "output": "DescribeImportImageOsResponse",
+      "status": "online"
     },
     "DescribeInstanceTypeConfig": {
       "document": "获取机型配置列表",
       "input": "DescribeInstanceTypeConfigRequest",
       "name": "获取机型配置列表",
-      "output": "DescribeInstanceTypeConfigResponse"
+      "output": "DescribeInstanceTypeConfigResponse",
+      "status": "online"
     },
     "DescribeInstanceVncUrl": {
       "document": "查询实例管理终端地址",
       "input": "DescribeInstanceVncUrlRequest",
       "name": "查询实例管理终端地址",
-      "output": "DescribeInstanceVncUrlResponse"
+      "output": "DescribeInstanceVncUrlResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "获取实例的相关信息。",
       "input": "DescribeInstancesRequest",
       "name": "获取实例相关信息",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeInstancesDeniedActions": {
       "document": "通过实例id获取当前禁止的操作",
       "input": "DescribeInstancesDeniedActionsRequest",
       "name": "获取禁止的操作列表",
-      "output": "DescribeInstancesDeniedActionsResponse"
+      "output": "DescribeInstancesDeniedActionsResponse",
+      "status": "online"
     },
     "DescribeListeners": {
       "document": "查询负载均衡的监听器列表。",
       "input": "DescribeListenersRequest",
       "name": "查询负载均衡的监听器列表",
-      "output": "DescribeListenersResponse"
+      "output": "DescribeListenersResponse",
+      "status": "online"
     },
     "DescribeLoadBalanceTaskStatus": {
       "document": "查询负载均衡相关的任务状态",
       "input": "DescribeLoadBalanceTaskStatusRequest",
       "name": "查询负载均衡相关的任务状态",
-      "output": "DescribeLoadBalanceTaskStatusResponse"
+      "output": "DescribeLoadBalanceTaskStatusResponse",
+      "status": "online"
     },
     "DescribeLoadBalancers": {
       "document": "查询负载均衡实例列表。",
       "input": "DescribeLoadBalancersRequest",
       "name": "查询负载均衡实例列表",
-      "output": "DescribeLoadBalancersResponse"
+      "output": "DescribeLoadBalancersResponse",
+      "status": "online"
     },
     "DescribeModule": {
       "document": "获取模块列表",
       "input": "DescribeModuleRequest",
       "name": "获取模块列表",
-      "output": "DescribeModuleResponse"
+      "output": "DescribeModuleResponse",
+      "status": "online"
     },
     "DescribeModuleDetail": {
       "document": "展示模块详细信息",
       "input": "DescribeModuleDetailRequest",
       "name": "展示模块详细信息",
-      "output": "DescribeModuleDetailResponse"
+      "output": "DescribeModuleDetailResponse",
+      "status": "online"
     },
     "DescribeMonthPeakNetwork": {
       "document": "获取客户节点上的出入带宽月峰和计费带宽信息",
       "input": "DescribeMonthPeakNetworkRequest",
       "name": "获取客户节点上的出入月峰和计费带宽",
-      "output": "DescribeMonthPeakNetworkResponse"
+      "output": "DescribeMonthPeakNetworkResponse",
+      "status": "online"
     },
     "DescribeNetworkInterfaces": {
       "document": "查询弹性网卡列表",
       "input": "DescribeNetworkInterfacesRequest",
       "name": "查询弹性网卡列表",
-      "output": "DescribeNetworkInterfacesResponse"
+      "output": "DescribeNetworkInterfacesResponse",
+      "status": "online"
     },
     "DescribeNode": {
       "document": "获取节点列表",
       "input": "DescribeNodeRequest",
       "name": "获取节点列表",
-      "output": "DescribeNodeResponse"
+      "output": "DescribeNodeResponse",
+      "status": "online"
     },
     "DescribePackingQuotaGroup": {
       "document": "使用本接口获取某种机型在某些区域的装箱配额（当使用虚拟机型时，返回的是一组相互关联的装箱配额）。",
       "input": "DescribePackingQuotaGroupRequest",
       "name": "获取装箱配额组",
-      "output": "DescribePackingQuotaGroupResponse"
+      "output": "DescribePackingQuotaGroupResponse",
+      "status": "online"
     },
     "DescribePeakBaseOverview": {
       "document": "CPU 内存 硬盘等基础信息峰值数据",
       "input": "DescribePeakBaseOverviewRequest",
       "name": "基础信息峰值数据",
-      "output": "DescribePeakBaseOverviewResponse"
+      "output": "DescribePeakBaseOverviewResponse",
+      "status": "online"
     },
     "DescribePeakNetworkOverview": {
       "document": "获取网络峰值数据",
       "input": "DescribePeakNetworkOverviewRequest",
       "name": "获取网络峰值数据",
-      "output": "DescribePeakNetworkOverviewResponse"
+      "output": "DescribePeakNetworkOverviewResponse",
+      "status": "online"
     },
     "DescribePriceRunInstance": {
       "document": "查询实例价格",
       "input": "DescribePriceRunInstanceRequest",
       "name": "查询实例价格",
-      "output": "DescribePriceRunInstanceResponse"
+      "output": "DescribePriceRunInstanceResponse",
+      "status": "online"
     },
     "DescribeRouteConflicts": {
       "document": "查询自定义路由策略与云联网路由策略冲突列表",
       "input": "DescribeRouteConflictsRequest",
       "name": "查询路由策略冲突列表",
-      "output": "DescribeRouteConflictsResponse"
+      "output": "DescribeRouteConflictsResponse",
+      "status": "online"
     },
     "DescribeRouteTables": {
       "document": "查询路由表对象列表",
       "input": "DescribeRouteTablesRequest",
       "name": "查询路由表对象列表",
-      "output": "DescribeRouteTablesResponse"
+      "output": "DescribeRouteTablesResponse",
+      "status": "online"
     },
     "DescribeSecurityGroupAssociationStatistics": {
       "document": "查询安全组关联实例统计",
       "input": "DescribeSecurityGroupAssociationStatisticsRequest",
       "name": "查询安全组关联统计",
-      "output": "DescribeSecurityGroupAssociationStatisticsResponse"
+      "output": "DescribeSecurityGroupAssociationStatisticsResponse",
+      "status": "online"
     },
     "DescribeSecurityGroupLimits": {
       "document": "查询用户安全组配额",
       "input": "DescribeSecurityGroupLimitsRequest",
       "name": "查询用户安全组配额",
-      "output": "DescribeSecurityGroupLimitsResponse"
+      "output": "DescribeSecurityGroupLimitsResponse",
+      "status": "online"
     },
     "DescribeSecurityGroupPolicies": {
       "document": "查询安全组规则",
       "input": "DescribeSecurityGroupPoliciesRequest",
       "name": "查询安全组规则",
-      "output": "DescribeSecurityGroupPoliciesResponse"
+      "output": "DescribeSecurityGroupPoliciesResponse",
+      "status": "online"
     },
     "DescribeSecurityGroups": {
       "document": "查看安全组",
       "input": "DescribeSecurityGroupsRequest",
       "name": "查看安全组",
-      "output": "DescribeSecurityGroupsResponse"
+      "output": "DescribeSecurityGroupsResponse",
+      "status": "online"
     },
     "DescribeSnapshots": {
       "document": "本接口（DescribeSnapshots）用于查询快照的详细信息。\n\n* 根据快照ID、创建快照的云硬盘ID、创建快照的云硬盘类型等对结果进行过滤，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n*  如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的快照列表。",
       "input": "DescribeSnapshotsRequest",
       "name": "查询快照列表",
-      "output": "DescribeSnapshotsResponse"
+      "output": "DescribeSnapshotsResponse",
+      "status": "online"
     },
     "DescribeSubnets": {
       "document": "查询子网列表",
       "input": "DescribeSubnetsRequest",
       "name": "查询子网列表",
-      "output": "DescribeSubnetsResponse"
+      "output": "DescribeSubnetsResponse",
+      "status": "online"
     },
     "DescribeTargetHealth": {
       "document": "获取负载均衡后端服务的健康检查状态。",
       "input": "DescribeTargetHealthRequest",
       "name": "获取负载均衡后端服务的健康检查状态",
-      "output": "DescribeTargetHealthResponse"
+      "output": "DescribeTargetHealthResponse",
+      "status": "online"
     },
     "DescribeTargets": {
       "document": "查询负载均衡绑定的后端服务列表。",
       "input": "DescribeTargetsRequest",
       "name": "查询负载均衡绑定的后端服务列表",
-      "output": "DescribeTargetsResponse"
+      "output": "DescribeTargetsResponse",
+      "status": "online"
     },
     "DescribeTaskResult": {
       "document": "查询EIP异步任务执行结果",
       "input": "DescribeTaskResultRequest",
       "name": "查询异步任务执行结果",
-      "output": "DescribeTaskResultResponse"
+      "output": "DescribeTaskResultResponse",
+      "status": "online"
     },
     "DescribeTaskStatus": {
       "document": "本接口(DescribeTaskStatus)用于获取异步任务状态",
       "input": "DescribeTaskStatusRequest",
       "name": "获取任务状态",
-      "output": "DescribeTaskStatusResponse"
+      "output": "DescribeTaskStatusResponse",
+      "status": "online"
     },
     "DescribeVpcs": {
       "document": "查询私有网络列表",
       "input": "DescribeVpcsRequest",
       "name": "查询VPC列表",
-      "output": "DescribeVpcsResponse"
+      "output": "DescribeVpcsResponse",
+      "status": "online"
     },
     "DetachDisks": {
       "document": "本接口（DetachDisks）用于卸载云硬盘。\n\n* 支持批量操作，卸载挂载在同一主机上的多块云盘。如果多块云盘中存在不允许卸载的云盘，则操作不执行，返回特定的错误码。\n* 本接口为异步接口，当请求成功返回时，云盘并未立即从主机卸载，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHED”变为“UNATTACHED”，则为卸载成功。",
       "input": "DetachDisksRequest",
       "name": "卸载云硬盘",
-      "output": "DetachDisksResponse"
+      "output": "DetachDisksResponse",
+      "status": "online"
     },
     "DetachNetworkInterface": {
       "document": "弹性网卡解绑云主机",
       "input": "DetachNetworkInterfaceRequest",
       "name": "弹性网卡解绑云主机",
-      "output": "DetachNetworkInterfaceResponse"
+      "output": "DetachNetworkInterfaceResponse",
+      "status": "online"
     },
     "DisableRoutes": {
       "document": "禁用已启用的子网路由",
       "input": "DisableRoutesRequest",
       "name": "禁用子网路由",
-      "output": "DisableRoutesResponse"
+      "output": "DisableRoutesResponse",
+      "status": "online"
     },
     "DisassociateAddress": {
       "document": "解绑弹性公网IP（简称 EIP）\n只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。\nEIP 如果被封堵，则不能进行解绑定操作。",
       "input": "DisassociateAddressRequest",
       "name": "解绑定弹性公网IP",
-      "output": "DisassociateAddressResponse"
+      "output": "DisassociateAddressResponse",
+      "status": "online"
     },
     "DisassociateInstancesKeyPairs": {
       "document": "用于解除实例的密钥绑定关系。",
       "input": "DisassociateInstancesKeyPairsRequest",
       "name": "解绑密钥对",
-      "output": "DisassociateInstancesKeyPairsResponse"
+      "output": "DisassociateInstancesKeyPairsResponse",
+      "status": "online"
     },
     "DisassociateSecurityGroups": {
       "document": "解绑安全组",
       "input": "DisassociateSecurityGroupsRequest",
       "name": "解绑安全组",
-      "output": "DisassociateSecurityGroupsResponse"
+      "output": "DisassociateSecurityGroupsResponse",
+      "status": "online"
     },
     "EnableRoutes": {
       "document": "启用已禁用的子网路由。\n本接口会校验启用后，是否与已有路由冲突，如果冲突，则无法启用，失败处理。路由冲突时，需要先禁用与之冲突的路由，才能启用该路由。",
       "input": "EnableRoutesRequest",
       "name": "启用子网路由",
-      "output": "EnableRoutesResponse"
+      "output": "EnableRoutesResponse",
+      "status": "online"
     },
     "ImportCustomImage": {
       "document": "导入自定义镜像，支持 RAW、VHD、QCOW2、VMDK 镜像格式",
       "input": "ImportCustomImageRequest",
       "name": "导入自定义镜像",
-      "output": "ImportCustomImageResponse"
+      "output": "ImportCustomImageResponse",
+      "status": "online"
     },
     "ImportImage": {
       "document": "从CVM产品导入镜像到ECM",
       "input": "ImportImageRequest",
       "name": "导入镜像",
-      "output": "ImportImageResponse"
+      "output": "ImportImageResponse",
+      "status": "online"
     },
     "MigrateNetworkInterface": {
       "document": "弹性网卡迁移",
       "input": "MigrateNetworkInterfaceRequest",
       "name": "弹性网卡迁移",
-      "output": "MigrateNetworkInterfaceResponse"
+      "output": "MigrateNetworkInterfaceResponse",
+      "status": "online"
     },
     "MigratePrivateIpAddress": {
       "document": "弹性网卡内网IP迁移。\n该接口用于将一个内网IP从一个弹性网卡上迁移到另外一个弹性网卡，主IP地址不支持迁移。\n迁移前后的弹性网卡必须在同一个子网内。",
       "input": "MigratePrivateIpAddressRequest",
       "name": "弹性网卡内网IP迁移",
-      "output": "MigratePrivateIpAddressResponse"
+      "output": "MigratePrivateIpAddressResponse",
+      "status": "online"
     },
     "ModifyAddressAttribute": {
       "document": "修改弹性公网IP属性",
       "input": "ModifyAddressAttributeRequest",
       "name": "修改弹性公网IP属性",
-      "output": "ModifyAddressAttributeResponse"
+      "output": "ModifyAddressAttributeResponse",
+      "status": "online"
     },
     "ModifyAddressesBandwidth": {
       "document": "调整弹性公网IP带宽\n",
       "input": "ModifyAddressesBandwidthRequest",
       "name": "调整弹性公网IP带宽",
-      "output": "ModifyAddressesBandwidthResponse"
+      "output": "ModifyAddressesBandwidthResponse",
+      "status": "online"
     },
     "ModifyDefaultSubnet": {
       "document": "修改在一个可用区下创建实例时使用的默认子网（创建实例时，未填写VPC参数时使用的sunbetId）",
       "input": "ModifyDefaultSubnetRequest",
       "name": "修改默认子网",
-      "output": "ModifyDefaultSubnetResponse"
+      "output": "ModifyDefaultSubnetResponse",
+      "status": "online"
     },
     "ModifyHaVipAttribute": {
       "document": "用于修改高可用虚拟IP（HAVIP）属性",
       "input": "ModifyHaVipAttributeRequest",
       "name": "修改HAVIP属性",
-      "output": "ModifyHaVipAttributeResponse"
+      "output": "ModifyHaVipAttributeResponse",
+      "status": "online"
     },
     "ModifyImageAttribute": {
       "document": "本接口（ModifyImageAttribute）用于修改镜像属性。",
       "input": "ModifyImageAttributeRequest",
       "name": "修改镜像属性",
-      "output": "ModifyImageAttributeResponse"
+      "output": "ModifyImageAttributeResponse",
+      "status": "online"
     },
     "ModifyInstancesAttribute": {
       "document": "修改实例的属性。",
       "input": "ModifyInstancesAttributeRequest",
       "name": "修改实例属性",
-      "output": "ModifyInstancesAttributeResponse"
+      "output": "ModifyInstancesAttributeResponse",
+      "status": "online"
     },
     "ModifyIpv6AddressesAttribute": {
       "document": "本接口（ModifyIpv6AddressesAttribute）用于修改弹性网卡IPv6地址属性。",
       "input": "ModifyIpv6AddressesAttributeRequest",
       "name": "修改弹性网卡IPv6地址属性",
-      "output": "ModifyIpv6AddressesAttributeResponse"
+      "output": "ModifyIpv6AddressesAttributeResponse",
+      "status": "online"
     },
     "ModifyListener": {
       "document": "修改负载均衡监听器属性。",
       "input": "ModifyListenerRequest",
       "name": "修改负载均衡监听器属性",
-      "output": "ModifyListenerResponse"
+      "output": "ModifyListenerResponse",
+      "status": "online"
     },
     "ModifyLoadBalancerAttributes": {
       "document": "修改负载均衡实例的属性。",
       "input": "ModifyLoadBalancerAttributesRequest",
       "name": "修改负载均衡实例的属性",
-      "output": "ModifyLoadBalancerAttributesResponse"
+      "output": "ModifyLoadBalancerAttributesResponse",
+      "status": "online"
     },
     "ModifyModuleConfig": {
       "document": "修改模块配置，已关联实例的模块不支持调整配置。",
       "input": "ModifyModuleConfigRequest",
       "name": "修改模块配置",
-      "output": "ModifyModuleConfigResponse"
+      "output": "ModifyModuleConfigResponse",
+      "status": "online"
     },
     "ModifyModuleDisableWanIp": {
       "document": "修改模块是否禁止分配外网ip的属性。",
       "input": "ModifyModuleDisableWanIpRequest",
       "name": "修改模块是否禁止分配外网ip",
-      "output": "ModifyModuleDisableWanIpResponse"
+      "output": "ModifyModuleDisableWanIpResponse",
+      "status": "online"
     },
     "ModifyModuleImage": {
       "document": "修改模块的默认镜像",
       "input": "ModifyModuleImageRequest",
       "name": "修改模块默认镜像",
-      "output": "ModifyModuleImageResponse"
+      "output": "ModifyModuleImageResponse",
+      "status": "online"
     },
     "ModifyModuleIpDirect": {
       "document": "修改模块IP直通。",
       "input": "ModifyModuleIpDirectRequest",
       "name": "修改模块IP直通",
-      "output": "ModifyModuleIpDirectResponse"
+      "output": "ModifyModuleIpDirectResponse",
+      "status": "online"
     },
     "ModifyModuleName": {
       "document": "修改模块名称",
       "input": "ModifyModuleNameRequest",
       "name": "修改模块名称",
-      "output": "ModifyModuleNameResponse"
+      "output": "ModifyModuleNameResponse",
+      "status": "online"
     },
     "ModifyModuleNetwork": {
       "document": "修改模块默认带宽上限",
       "input": "ModifyModuleNetworkRequest",
       "name": "修改模块默认带宽上限",
-      "output": "ModifyModuleNetworkResponse"
+      "output": "ModifyModuleNetworkResponse",
+      "status": "online"
     },
     "ModifyModuleSecurityGroups": {
       "document": "修改模块默认安全组",
       "input": "ModifyModuleSecurityGroupsRequest",
       "name": "修改模块默认安全组",
-      "output": "ModifyModuleSecurityGroupsResponse"
+      "output": "ModifyModuleSecurityGroupsResponse",
+      "status": "online"
     },
     "ModifyPrivateIpAddressesAttribute": {
       "document": "用于修改弹性网卡内网IP属性。",
       "input": "ModifyPrivateIpAddressesAttributeRequest",
       "name": "修改弹性网卡内网IP信息",
-      "output": "ModifyPrivateIpAddressesAttributeResponse"
+      "output": "ModifyPrivateIpAddressesAttributeResponse",
+      "status": "online"
     },
     "ModifyRouteTableAttribute": {
       "document": "修改路由表属性",
       "input": "ModifyRouteTableAttributeRequest",
       "name": "修改路由表属性",
-      "output": "ModifyRouteTableAttributeResponse"
+      "output": "ModifyRouteTableAttributeResponse",
+      "status": "online"
     },
     "ModifySecurityGroupAttribute": {
       "document": "修改安全组属性",
       "input": "ModifySecurityGroupAttributeRequest",
       "name": "修改安全组属性",
-      "output": "ModifySecurityGroupAttributeResponse"
+      "output": "ModifySecurityGroupAttributeResponse",
+      "status": "online"
     },
     "ModifySecurityGroupPolicies": {
       "document": "修改安全组出站和入站规则",
       "input": "ModifySecurityGroupPoliciesRequest",
       "name": "修改安全组出站和入站规则",
-      "output": "ModifySecurityGroupPoliciesResponse"
+      "output": "ModifySecurityGroupPoliciesResponse",
+      "status": "online"
     },
     "ModifySubnetAttribute": {
       "document": "修改子网属性",
       "input": "ModifySubnetAttributeRequest",
       "name": "修改子网属性",
-      "output": "ModifySubnetAttributeResponse"
+      "output": "ModifySubnetAttributeResponse",
+      "status": "online"
     },
     "ModifyTargetPort": {
       "document": "修改监听器绑定的后端机器的端口。",
       "input": "ModifyTargetPortRequest",
       "name": "修改监听器绑定的后端机器的端口",
-      "output": "ModifyTargetPortResponse"
+      "output": "ModifyTargetPortResponse",
+      "status": "online"
     },
     "ModifyTargetWeight": {
       "document": "修改监听器绑定的后端机器的转发权重。",
       "input": "ModifyTargetWeightRequest",
       "name": "修改监听器绑定的后端机器的转发权重",
-      "output": "ModifyTargetWeightResponse"
+      "output": "ModifyTargetWeightResponse",
+      "status": "online"
     },
     "ModifyVpcAttribute": {
       "document": "修改私有网络（VPC）的相关属性",
       "input": "ModifyVpcAttributeRequest",
       "name": "修改VPC属性",
-      "output": "ModifyVpcAttributeResponse"
+      "output": "ModifyVpcAttributeResponse",
+      "status": "online"
     },
     "RebootInstances": {
       "document": "只有状态为RUNNING的实例才可以进行此操作；接口调用成功时，实例会进入REBOOTING状态；重启实例成功时，实例会进入RUNNING状态；支持强制重启，强制重启的效果等同于关闭物理计算机的电源开关再重新启动。强制重启可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常重启时使用。",
       "input": "RebootInstancesRequest",
       "name": "重启实例",
-      "output": "RebootInstancesResponse"
+      "output": "RebootInstancesResponse",
+      "status": "online"
     },
     "ReleaseAddresses": {
       "document": "释放一个或多个弹性公网IP（简称 EIP）。\n该操作不可逆，释放后 EIP 关联的 IP 地址将不再属于您的名下。\n只有状态为 UNBIND 的 EIP 才能进行释放操作。",
       "input": "ReleaseAddressesRequest",
       "name": "释放弹性公网IP",
-      "output": "ReleaseAddressesResponse"
+      "output": "ReleaseAddressesResponse",
+      "status": "online"
     },
     "ReleaseIpv6Addresses": {
       "document": "本接口（UnassignIpv6Addresses）用于释放弹性网卡IPv6地址。",
       "input": "ReleaseIpv6AddressesRequest",
       "name": "释放IPv6地址",
-      "output": "ReleaseIpv6AddressesResponse"
+      "output": "ReleaseIpv6AddressesResponse",
+      "status": "online"
     },
     "RemovePrivateIpAddresses": {
       "document": "弹性网卡退还内网 IP。\n退还弹性网卡上的辅助内网IP，接口自动解关联弹性公网 IP。不能退还弹性网卡的主内网IP。",
       "input": "RemovePrivateIpAddressesRequest",
       "name": "弹性网卡退还内网 IP",
-      "output": "RemovePrivateIpAddressesResponse"
+      "output": "RemovePrivateIpAddressesResponse",
+      "status": "online"
     },
     "ReplaceRouteTableAssociation": {
       "document": "修改子网关联的路由表，一个子网只能关联一个路由表。",
       "input": "ReplaceRouteTableAssociationRequest",
       "name": "替换路由表绑定关系",
-      "output": "ReplaceRouteTableAssociationResponse"
+      "output": "ReplaceRouteTableAssociationResponse",
+      "status": "online"
     },
     "ReplaceRoutes": {
       "document": "替换路由策略",
       "input": "ReplaceRoutesRequest",
       "name": "替换路由策略",
-      "output": "ReplaceRoutesResponse"
+      "output": "ReplaceRoutesResponse",
+      "status": "online"
     },
     "ReplaceSecurityGroupPolicy": {
       "document": "替换单条安全组路由规则, 单个请求中只能替换单个方向的一条规则, 必须要指定索引（PolicyIndex）。",
       "input": "ReplaceSecurityGroupPolicyRequest",
       "name": "替换单条安全组路由规则",
-      "output": "ReplaceSecurityGroupPolicyResponse"
+      "output": "ReplaceSecurityGroupPolicyResponse",
+      "status": "online"
     },
     "ResetInstances": {
       "document": "重装实例，若指定了ImageId参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装；若未指定密码，则密码通过站内信形式随后发送。",
       "input": "ResetInstancesRequest",
       "name": "重装实例",
-      "output": "ResetInstancesResponse"
+      "output": "ResetInstancesResponse",
+      "status": "online"
     },
     "ResetInstancesMaxBandwidth": {
       "document": "重置实例的最大带宽上限。",
       "input": "ResetInstancesMaxBandwidthRequest",
       "name": "重置实例的最大带宽上限",
-      "output": "ResetInstancesMaxBandwidthResponse"
+      "output": "ResetInstancesMaxBandwidthResponse",
+      "status": "online"
     },
     "ResetInstancesPassword": {
       "document": "重置处于运行中状态的实例的密码，需要显式指定强制关机参数ForceStop。如果没有显式指定强制关机参数，则只有处于关机状态的实例才允许执行重置密码操作。",
       "input": "ResetInstancesPasswordRequest",
       "name": "重置实例密码",
-      "output": "ResetInstancesPasswordResponse"
+      "output": "ResetInstancesPasswordResponse",
+      "status": "online"
     },
     "ResetRoutes": {
       "document": "对某个路由表名称和所有路由策略（Route）进行重新设置",
       "input": "ResetRoutesRequest",
       "name": "重置路由表名称和路由策略",
-      "output": "ResetRoutesResponse"
+      "output": "ResetRoutesResponse",
+      "status": "online"
     },
     "RunInstances": {
       "document": "创建ECM实例。",
       "input": "RunInstancesRequest",
       "name": "创建实例",
-      "output": "RunInstancesResponse"
+      "output": "RunInstancesResponse",
+      "status": "online"
     },
     "SetLoadBalancerSecurityGroups": {
       "document": "设置负载均衡实例的安全组。",
       "input": "SetLoadBalancerSecurityGroupsRequest",
       "name": "设置负载均衡实例的安全组",
-      "output": "SetLoadBalancerSecurityGroupsResponse"
+      "output": "SetLoadBalancerSecurityGroupsResponse",
+      "status": "online"
     },
     "SetSecurityGroupForLoadbalancers": {
       "document": "绑定或解绑一个安全组到多个负载均衡实例。",
       "input": "SetSecurityGroupForLoadbalancersRequest",
       "name": "绑定或解绑一个安全组到多个负载均衡实例",
-      "output": "SetSecurityGroupForLoadbalancersResponse"
+      "output": "SetSecurityGroupForLoadbalancersResponse",
+      "status": "online"
     },
     "StartInstances": {
       "document": "只有状态为STOPPED的实例才可以进行此操作；接口调用成功时，实例会进入STARTING状态；启动实例成功时，实例会进入RUNNING状态。",
       "input": "StartInstancesRequest",
       "name": "开启实例",
-      "output": "StartInstancesResponse"
+      "output": "StartInstancesResponse",
+      "status": "online"
     },
     "StopInstances": {
       "document": "只有处于\"RUNNING\"状态的实例才能够进行关机操作；\n调用成功时，实例会进入STOPPING状态；关闭实例成功时，实例会进入STOPPED状态；\n支持强制关闭，强制关机的效果等同于关闭物理计算机的电源开关，强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
       "input": "StopInstancesRequest",
       "name": "实例关机",
-      "output": "StopInstancesResponse"
+      "output": "StopInstancesResponse",
+      "status": "online"
     },
     "TerminateDisks": {
       "document": "本接口（TerminateDisks）用于退还云硬盘。\n\n* 不再使用的云盘，可通过本接口主动退还。\n* 本接口支持退还预付费云盘和按小时后付费云盘。按小时后付费云盘可直接退还，预付费云盘需符合退还规则。\n* 支持批量操作，每次请求批量云硬盘的上限为50。如果批量云盘存在不允许操作的，请求会以特定错误码返回。",
       "input": "TerminateDisksRequest",
       "name": "退还云硬盘",
-      "output": "TerminateDisksResponse"
+      "output": "TerminateDisksResponse",
+      "status": "online"
     },
     "TerminateInstances": {
       "document": "销毁实例",
       "input": "TerminateInstancesRequest",
       "name": "销毁实例",
-      "output": "TerminateInstancesResponse"
+      "output": "TerminateInstancesResponse",
+      "status": "online"
     }
   },
   "metadata": {

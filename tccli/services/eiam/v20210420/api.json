@@ -4,253 +4,295 @@
       "document": "账号组添加账号",
       "input": "AddAccountToAccountGroupRequest",
       "name": "账号组添加账号",
-      "output": "AddAccountToAccountGroupResponse"
+      "output": "AddAccountToAccountGroupResponse",
+      "status": "online"
     },
     "AddUserToUserGroup": {
       "document": "加入用户到用户组",
       "input": "AddUserToUserGroupRequest",
       "name": "加入用户到用户组",
-      "output": "AddUserToUserGroupResponse"
+      "output": "AddUserToUserGroupResponse",
+      "status": "online"
     },
     "CreateAccountGroup": {
       "document": "创建账号组",
       "input": "CreateAccountGroupRequest",
       "name": "创建账号组",
-      "output": "CreateAccountGroupResponse"
+      "output": "CreateAccountGroupResponse",
+      "status": "online"
     },
     "CreateAppAccount": {
       "document": "创建应用账号",
       "input": "CreateAppAccountRequest",
       "name": "创建应用账号",
-      "output": "CreateAppAccountResponse"
+      "output": "CreateAppAccountResponse",
+      "status": "online"
     },
     "CreateOrgNode": {
       "document": "新建一个机构节点",
       "input": "CreateOrgNodeRequest",
       "name": "新建机构节点",
-      "output": "CreateOrgNodeResponse"
+      "output": "CreateOrgNodeResponse",
+      "status": "online"
     },
     "CreateUser": {
       "document": "新建一个用户",
       "input": "CreateUserRequest",
       "name": "新建用户",
-      "output": "CreateUserResponse"
+      "output": "CreateUserResponse",
+      "status": "online"
     },
     "CreateUserGroup": {
       "document": "新建用户组",
       "input": "CreateUserGroupRequest",
       "name": "新建用户组",
-      "output": "CreateUserGroupResponse"
+      "output": "CreateUserGroupResponse",
+      "status": "online"
     },
     "DeleteAccountGroup": {
       "document": "删除账号组",
       "input": "DeleteAccountGroupRequest",
       "name": "删除账号组",
-      "output": "DeleteAccountGroupResponse"
+      "output": "DeleteAccountGroupResponse",
+      "status": "online"
     },
     "DeleteAppAccount": {
       "document": "删除应用账号",
       "input": "DeleteAppAccountRequest",
       "name": "删除应用账号",
-      "output": "DeleteAppAccountResponse"
+      "output": "DeleteAppAccountResponse",
+      "status": "online"
     },
     "DeleteOrgNode": {
       "document": "删除一个机构节点",
       "input": "DeleteOrgNodeRequest",
       "name": "删除机构节点",
-      "output": "DeleteOrgNodeResponse"
+      "output": "DeleteOrgNodeResponse",
+      "status": "online"
     },
     "DeleteUser": {
       "document": "通过用户名或用户 id 删除用户。",
       "input": "DeleteUserRequest",
       "name": "删除用户",
-      "output": "DeleteUserResponse"
+      "output": "DeleteUserResponse",
+      "status": "online"
     },
     "DeleteUserGroup": {
       "document": "删除一个用户组",
       "input": "DeleteUserGroupRequest",
       "name": "删除用户组",
-      "output": "DeleteUserGroupResponse"
+      "output": "DeleteUserGroupResponse",
+      "status": "online"
     },
     "DeleteUsers": {
       "document": "批量删除当前节点下的用户。如果出现个别用户删除错误，将不影响其余被勾选用户被删除的操作，同时提示未被删除的用户名称/用户ID。",
       "input": "DeleteUsersRequest",
       "name": "批量删除用户",
-      "output": "DeleteUsersResponse"
+      "output": "DeleteUsersResponse",
+      "status": "online"
     },
     "DescribeAccountGroup": {
       "document": "查询账号组列表",
       "input": "DescribeAccountGroupRequest",
       "name": "查询账号组列表",
-      "output": "DescribeAccountGroupResponse"
+      "output": "DescribeAccountGroupResponse",
+      "status": "online"
     },
     "DescribeAppAccount": {
       "document": "查询应用账号列表",
       "input": "DescribeAppAccountRequest",
       "name": "查询应用账号列表",
-      "output": "DescribeAppAccountResponse"
+      "output": "DescribeAppAccountResponse",
+      "status": "online"
     },
     "DescribeApplication": {
       "document": "获取一个应用的信息。",
       "input": "DescribeApplicationRequest",
       "name": "获取应用信息",
-      "output": "DescribeApplicationResponse"
+      "output": "DescribeApplicationResponse",
+      "status": "online"
     },
     "DescribeOrgNode": {
       "document": "根据机构节点ID读取机构节点信息",
       "input": "DescribeOrgNodeRequest",
       "name": "读取机构节点信息",
-      "output": "DescribeOrgNodeResponse"
+      "output": "DescribeOrgNodeResponse",
+      "status": "online"
     },
     "DescribeOrgResourcesAuthorization": {
       "document": "查询指定机构下的资源授权列表",
       "input": "DescribeOrgResourcesAuthorizationRequest",
       "name": "查询指定机构下的资源授权列表",
-      "output": "DescribeOrgResourcesAuthorizationResponse"
+      "output": "DescribeOrgResourcesAuthorizationResponse",
+      "status": "online"
     },
     "DescribePublicKey": {
       "document": "获取JWT公钥信息。",
       "input": "DescribePublicKeyRequest",
       "name": "获取JWT公钥信息",
-      "output": "DescribePublicKeyResponse"
+      "output": "DescribePublicKeyResponse",
+      "status": "online"
     },
     "DescribeUserGroup": {
       "document": "获取用户组信息",
       "input": "DescribeUserGroupRequest",
       "name": "获取用户组信息",
-      "output": "DescribeUserGroupResponse"
+      "output": "DescribeUserGroupResponse",
+      "status": "online"
     },
     "DescribeUserGroupResourcesAuthorization": {
       "document": "查询指定用户组下的资源授权列表",
       "input": "DescribeUserGroupResourcesAuthorizationRequest",
       "name": "查询指定用户组下的资源授权列表",
-      "output": "DescribeUserGroupResourcesAuthorizationResponse"
+      "output": "DescribeUserGroupResourcesAuthorizationResponse",
+      "status": "online"
     },
     "DescribeUserInfo": {
       "document": "通过用户名或用户 id 搜索用户",
       "input": "DescribeUserInfoRequest",
       "name": "获取用户信息",
-      "output": "DescribeUserInfoResponse"
+      "output": "DescribeUserInfoResponse",
+      "status": "online"
     },
     "DescribeUserResourcesAuthorization": {
       "document": "查询指定用户下的资源授权列表",
       "input": "DescribeUserResourcesAuthorizationRequest",
       "name": "查询指定用户下的资源授权列表",
-      "output": "DescribeUserResourcesAuthorizationResponse"
+      "output": "DescribeUserResourcesAuthorizationResponse",
+      "status": "online"
     },
     "DescribeUserThirdPartyAccountInfo": {
       "document": "通过用户名或用户 id 获取用户的第三方账号绑定信息。",
       "input": "DescribeUserThirdPartyAccountInfoRequest",
       "name": "获取用户的第三方账号绑定信息",
-      "output": "DescribeUserThirdPartyAccountInfoResponse"
+      "output": "DescribeUserThirdPartyAccountInfoResponse",
+      "status": "online"
     },
     "ListAccountInAccountGroup": {
       "document": " 获取账号组中的账号列表",
       "input": "ListAccountInAccountGroupRequest",
       "name": "获取账号组中的账号列表",
-      "output": "ListAccountInAccountGroupResponse"
+      "output": "ListAccountInAccountGroupResponse",
+      "status": "online"
     },
     "ListApplicationAuthorizations": {
       "document": "应用授权关系列表（含搜索条件匹配）。",
       "input": "ListApplicationAuthorizationsRequest",
       "name": "应用授权关系列表信息",
-      "output": "ListApplicationAuthorizationsResponse"
+      "output": "ListApplicationAuthorizationsResponse",
+      "status": "online"
     },
     "ListApplications": {
       "document": "获取应用列表信息。",
       "input": "ListApplicationsRequest",
       "name": "获取应用列表信息",
-      "output": "ListApplicationsResponse"
+      "output": "ListApplicationsResponse",
+      "status": "online"
     },
     "ListAuthorizedApplicationsToOrgNode": {
       "document": "通过机构节点ID获得被授权访问的应用列表。",
       "input": "ListAuthorizedApplicationsToOrgNodeRequest",
       "name": "获取机构节点被授权访问的应用列表",
-      "output": "ListAuthorizedApplicationsToOrgNodeResponse"
+      "output": "ListAuthorizedApplicationsToOrgNodeResponse",
+      "status": "online"
     },
     "ListAuthorizedApplicationsToUser": {
       "document": "通过用户ID获得被授权访问的应用列表。",
       "input": "ListAuthorizedApplicationsToUserRequest",
       "name": "获取用户被授权访问的应用列表",
-      "output": "ListAuthorizedApplicationsToUserResponse"
+      "output": "ListAuthorizedApplicationsToUserResponse",
+      "status": "online"
     },
     "ListAuthorizedApplicationsToUserGroup": {
       "document": "通过用户组ID获得被授权访问的应用列表。",
       "input": "ListAuthorizedApplicationsToUserGroupRequest",
       "name": "获取用户组被授权访问的应用列表",
-      "output": "ListAuthorizedApplicationsToUserGroupResponse"
+      "output": "ListAuthorizedApplicationsToUserGroupResponse",
+      "status": "online"
     },
     "ListUserGroups": {
       "document": "获取用户组列表信息（包含查询条件）。",
       "input": "ListUserGroupsRequest",
       "name": "获取用户组列表信息",
-      "output": "ListUserGroupsResponse"
+      "output": "ListUserGroupsResponse",
+      "status": "online"
     },
     "ListUserGroupsOfUser": {
       "document": "获取用户所在的用户组列表",
       "input": "ListUserGroupsOfUserRequest",
       "name": "获取用户所在的用户组列表",
-      "output": "ListUserGroupsOfUserResponse"
+      "output": "ListUserGroupsOfUserResponse",
+      "status": "online"
     },
     "ListUsers": {
       "document": "获取用户列表信息。",
       "input": "ListUsersRequest",
       "name": "获取用户列表信息",
-      "output": "ListUsersResponse"
+      "output": "ListUsersResponse",
+      "status": "online"
     },
     "ListUsersInOrgNode": {
       "document": "根据机构节点ID读取节点下用户",
       "input": "ListUsersInOrgNodeRequest",
       "name": "读取节点下用户",
-      "output": "ListUsersInOrgNodeResponse"
+      "output": "ListUsersInOrgNodeResponse",
+      "status": "online"
     },
     "ListUsersInUserGroup": {
       "document": "获取用户组中的用户列表",
       "input": "ListUsersInUserGroupRequest",
       "name": "获取用户组中的用户列表",
-      "output": "ListUsersInUserGroupResponse"
+      "output": "ListUsersInUserGroupResponse",
+      "status": "online"
     },
     "ModifyAccountGroup": {
       "document": "修改账号组",
       "input": "ModifyAccountGroupRequest",
       "name": "修改账号组",
-      "output": "ModifyAccountGroupResponse"
+      "output": "ModifyAccountGroupResponse",
+      "status": "online"
     },
     "ModifyAppAccount": {
       "document": "修改应用账号",
       "input": "ModifyAppAccountRequest",
       "name": "修改应用账号",
-      "output": "ModifyAppAccountResponse"
+      "output": "ModifyAppAccountResponse",
+      "status": "online"
     },
     "ModifyApplication": {
       "document": "更新一个应用的信息",
       "input": "ModifyApplicationRequest",
       "name": "更新应用",
-      "output": "ModifyApplicationResponse"
+      "output": "ModifyApplicationResponse",
+      "status": "online"
     },
     "ModifyUserInfo": {
       "document": "通过用户名或用户 id 冻结用户",
       "input": "ModifyUserInfoRequest",
       "name": "修改用户",
-      "output": "ModifyUserInfoResponse"
+      "output": "ModifyUserInfoResponse",
+      "status": "online"
     },
     "RemoveAccountFromAccountGroup": {
       "document": "从账号组中移除账号",
       "input": "RemoveAccountFromAccountGroupRequest",
       "name": "从账号组中移除账号",
-      "output": "RemoveAccountFromAccountGroupResponse"
+      "output": "RemoveAccountFromAccountGroupResponse",
+      "status": "online"
     },
     "RemoveUserFromUserGroup": {
       "document": "从用户组中移除用户",
       "input": "RemoveUserFromUserGroupRequest",
       "name": "从用户组中移除用户",
-      "output": "RemoveUserFromUserGroupResponse"
+      "output": "RemoveUserFromUserGroupResponse",
+      "status": "online"
     },
     "UpdateOrgNode": {
       "document": "新建一个机构节点，",
       "input": "UpdateOrgNodeRequest",
       "name": "更新机构节点",
-      "output": "UpdateOrgNodeResponse"
+      "output": "UpdateOrgNodeResponse",
+      "status": "online"
     }
   },
   "metadata": {

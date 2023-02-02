@@ -4,13 +4,15 @@
       "document": "删除etcd实例",
       "input": "DeleteEtcdInstanceRequest",
       "name": "删除etcd实例",
-      "output": "DeleteEtcdInstanceResponse"
+      "output": "DeleteEtcdInstanceResponse",
+      "status": "online"
     },
     "DescribeEtcdInstances": {
       "document": "查询etcd实例列表",
       "input": "DescribeEtcdInstancesRequest",
       "name": "查询etcd实例列表",
-      "output": "DescribeEtcdInstancesResponse"
+      "output": "DescribeEtcdInstancesResponse",
+      "status": "online"
     }
   },
   "metadata": {

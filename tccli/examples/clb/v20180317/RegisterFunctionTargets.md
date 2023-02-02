@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli clb RegisterFunctionTargets --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw**** \
-    --ListenerId lbl-d1ub**** \
     --LocationId loc-abcd1234 \
-    --FunctionTargets.0.Weight 66 \
+    --ListenerId lbl-d1ub**** \
     --FunctionTargets.0.Function.FunctionNamespace ns_test \
     --FunctionTargets.0.Function.FunctionName name_test \
-    --FunctionTargets.0.Function.FunctionQualifier version_test
+    --FunctionTargets.0.Function.FunctionQualifier version_test \
+    --FunctionTargets.0.Weight 66 \
+    --LoadBalancerId lb-cuxw****
 ```
 
 Output: 

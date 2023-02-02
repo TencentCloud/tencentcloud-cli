@@ -4,559 +4,652 @@
       "document": "本接口 (AssociateDDoSEipAddress) 用于将高防弹性公网IP绑定到实例或弹性网卡的指定内网 IP 上。",
       "input": "AssociateDDoSEipAddressRequest",
       "name": "绑定高防弹性公网IP",
-      "output": "AssociateDDoSEipAddressResponse"
+      "output": "AssociateDDoSEipAddressResponse",
+      "status": "online"
     },
     "AssociateDDoSEipLoadBalancer": {
       "document": "本接口 (AssociateDDoSEipLoadBalancer) 用于将高防弹性公网IP绑定到负载均衡指定内网 IP 上。",
       "input": "AssociateDDoSEipLoadBalancerRequest",
       "name": "绑定高防弹性公网IP到Clb",
-      "output": "AssociateDDoSEipLoadBalancerResponse"
+      "output": "AssociateDDoSEipLoadBalancerResponse",
+      "status": "online"
     },
     "CreateBlackWhiteIpList": {
       "document": "添加DDoS防护的IP黑白名单",
       "input": "CreateBlackWhiteIpListRequest",
       "name": "添加DDoS防护的IP黑白名单",
-      "output": "CreateBlackWhiteIpListResponse"
+      "output": "CreateBlackWhiteIpListResponse",
+      "status": "online"
     },
     "CreateBoundIP": {
       "document": "绑定IP到高防包实例，支持独享包、共享包；需要注意的是此接口绑定或解绑IP是异步接口，当处于绑定或解绑中时，则不允许再进行绑定或解绑，需要等待当前绑定或解绑完成。",
       "input": "CreateBoundIPRequest",
       "name": "绑定IP到高防包实例",
-      "output": "CreateBoundIPResponse"
+      "output": "CreateBoundIPResponse",
+      "status": "online"
     },
     "CreateCCPrecisionPolicy": {
       "document": "新增CC精准防护策略",
       "input": "CreateCCPrecisionPolicyRequest",
       "name": "新增CC精准防护策略",
-      "output": "CreateCCPrecisionPolicyResponse"
+      "output": "CreateCCPrecisionPolicyResponse",
+      "status": "online"
     },
     "CreateCCReqLimitPolicy": {
       "document": "新增CC频率限制策略",
       "input": "CreateCCReqLimitPolicyRequest",
       "name": "新增CC频率限制策略",
-      "output": "CreateCCReqLimitPolicyResponse"
+      "output": "CreateCCReqLimitPolicyResponse",
+      "status": "online"
     },
     "CreateCcBlackWhiteIpList": {
       "document": "新建CC四层黑白名单",
       "input": "CreateCcBlackWhiteIpListRequest",
       "name": "新建CC四层黑白名单",
-      "output": "CreateCcBlackWhiteIpListResponse"
+      "output": "CreateCcBlackWhiteIpListResponse",
+      "status": "online"
     },
     "CreateCcGeoIPBlockConfig": {
       "document": "新建cc防护的地域封禁配置",
       "input": "CreateCcGeoIPBlockConfigRequest",
       "name": "新建cc防护的地域封禁配置",
-      "output": "CreateCcGeoIPBlockConfigResponse"
+      "output": "CreateCcGeoIPBlockConfigResponse",
+      "status": "online"
     },
     "CreateDDoSAI": {
       "document": "设置DDoS防护的AI防护开关",
       "input": "CreateDDoSAIRequest",
       "name": "设置DDoS防护的AI防护开关",
-      "output": "CreateDDoSAIResponse"
+      "output": "CreateDDoSAIResponse",
+      "status": "online"
     },
     "CreateDDoSBlackWhiteIpList": {
       "document": "添加DDoS防护的IP网段黑白名单",
       "input": "CreateDDoSBlackWhiteIpListRequest",
       "name": "添加DDoS防护的IP网段黑白名单",
-      "output": "CreateDDoSBlackWhiteIpListResponse"
+      "output": "CreateDDoSBlackWhiteIpListResponse",
+      "status": "online"
     },
     "CreateDDoSConnectLimit": {
       "document": "配置DDoS连接抑制选项",
       "input": "CreateDDoSConnectLimitRequest",
       "name": "配置DDoS连接抑制选项",
-      "output": "CreateDDoSConnectLimitResponse"
+      "output": "CreateDDoSConnectLimitResponse",
+      "status": "online"
     },
     "CreateDDoSGeoIPBlockConfig": {
       "document": "添加DDoS防护的区域封禁配置",
       "input": "CreateDDoSGeoIPBlockConfigRequest",
       "name": "添加DDoS防护的区域封禁配置",
-      "output": "CreateDDoSGeoIPBlockConfigResponse"
+      "output": "CreateDDoSGeoIPBlockConfigResponse",
+      "status": "online"
     },
     "CreateDDoSSpeedLimitConfig": {
       "document": "添加DDoS防护的访问限速配置",
       "input": "CreateDDoSSpeedLimitConfigRequest",
       "name": "添加DDoS防护的访问限速配置",
-      "output": "CreateDDoSSpeedLimitConfigResponse"
+      "output": "CreateDDoSSpeedLimitConfigResponse",
+      "status": "online"
     },
     "CreateDefaultAlarmThreshold": {
       "document": "设置单IP默认告警阈值配置",
       "input": "CreateDefaultAlarmThresholdRequest",
       "name": "设置单IP默认告警阈值配置",
-      "output": "CreateDefaultAlarmThresholdResponse"
+      "output": "CreateDefaultAlarmThresholdResponse",
+      "status": "online"
     },
     "CreateIPAlarmThresholdConfig": {
       "document": "设置单IP告警阈值配置",
       "input": "CreateIPAlarmThresholdConfigRequest",
       "name": "设置单IP告警阈值配置",
-      "output": "CreateIPAlarmThresholdConfigResponse"
+      "output": "CreateIPAlarmThresholdConfigResponse",
+      "status": "online"
     },
     "CreateL7RuleCerts": {
       "document": "批量配置L7转发规则的证书供SSL测调用",
       "input": "CreateL7RuleCertsRequest",
       "name": "批量配置L7转发规则的证书",
-      "output": "CreateL7RuleCertsResponse"
+      "output": "CreateL7RuleCertsResponse",
+      "status": "online"
     },
     "CreateNewL7Rules": {
       "document": "添加7层转发规则",
       "input": "CreateNewL7RulesRequest",
       "name": "添加7层转发规则",
-      "output": "CreateNewL7RulesResponse"
+      "output": "CreateNewL7RulesResponse",
+      "status": "online"
     },
     "CreatePacketFilterConfig": {
       "document": "添加DDoS防护的特征过滤规则",
       "input": "CreatePacketFilterConfigRequest",
       "name": "添加DDoS防护的特征过滤规则",
-      "output": "CreatePacketFilterConfigResponse"
+      "output": "CreatePacketFilterConfigResponse",
+      "status": "online"
     },
     "CreatePortAclConfig": {
       "document": "添加DDoS防护的端口acl策略",
       "input": "CreatePortAclConfigRequest",
       "name": "添加DDoS防护的端口acl策略",
-      "output": "CreatePortAclConfigResponse"
+      "output": "CreatePortAclConfigResponse",
+      "status": "online"
     },
     "CreatePortAclConfigList": {
       "document": "批量添加DDoS防护的端口acl策略",
       "input": "CreatePortAclConfigListRequest",
       "name": "批量添加DDoS防护的端口acl策略",
-      "output": "CreatePortAclConfigListResponse"
+      "output": "CreatePortAclConfigListResponse",
+      "status": "online"
     },
     "CreateProtocolBlockConfig": {
       "document": "设置DDoS防护的协议封禁配置",
       "input": "CreateProtocolBlockConfigRequest",
       "name": "设置DDoS防护的协议封禁配置",
-      "output": "CreateProtocolBlockConfigResponse"
+      "output": "CreateProtocolBlockConfigResponse",
+      "status": "online"
     },
     "CreateSchedulingDomain": {
       "document": "创建一个域名，可用于在封堵时调度切换IP",
       "input": "CreateSchedulingDomainRequest",
       "name": "创建调度的域名",
-      "output": "CreateSchedulingDomainResponse"
+      "output": "CreateSchedulingDomainResponse",
+      "status": "online"
     },
     "CreateWaterPrintConfig": {
       "document": "添加DDoS防护的水印防护配置",
       "input": "CreateWaterPrintConfigRequest",
       "name": "添加DDoS防护的水印防护配置",
-      "output": "CreateWaterPrintConfigResponse"
+      "output": "CreateWaterPrintConfigResponse",
+      "status": "online"
     },
     "CreateWaterPrintKey": {
       "document": "添加DDoS防护的水印防护密钥",
       "input": "CreateWaterPrintKeyRequest",
       "name": "添加DDoS防护的水印防护密钥",
-      "output": "CreateWaterPrintKeyResponse"
+      "output": "CreateWaterPrintKeyResponse",
+      "status": "online"
     },
     "DeleteCCLevelPolicy": {
       "document": "删除CC分级策略",
       "input": "DeleteCCLevelPolicyRequest",
       "name": "删除CC分级策略",
-      "output": "DeleteCCLevelPolicyResponse"
+      "output": "DeleteCCLevelPolicyResponse",
+      "status": "online"
     },
     "DeleteCCPrecisionPolicy": {
       "document": "删除CC精准防护策略",
       "input": "DeleteCCPrecisionPolicyRequest",
       "name": "删除CC精准防护策略",
-      "output": "DeleteCCPrecisionPolicyResponse"
+      "output": "DeleteCCPrecisionPolicyResponse",
+      "status": "online"
     },
     "DeleteCCRequestLimitPolicy": {
       "document": "删除CC频率限制策略",
       "input": "DeleteCCRequestLimitPolicyRequest",
       "name": "删除CC频率限制策略",
-      "output": "DeleteCCRequestLimitPolicyResponse"
+      "output": "DeleteCCRequestLimitPolicyResponse",
+      "status": "online"
     },
     "DeleteCCThresholdPolicy": {
       "document": "删除CC清洗阈值策略",
       "input": "DeleteCCThresholdPolicyRequest",
       "name": "删除CC清洗阈值策略",
-      "output": "DeleteCCThresholdPolicyResponse"
+      "output": "DeleteCCThresholdPolicyResponse",
+      "status": "online"
     },
     "DeleteCcBlackWhiteIpList": {
       "document": "删除CC四层黑白名单",
       "input": "DeleteCcBlackWhiteIpListRequest",
       "name": "删除CC四层黑白名单",
-      "output": "DeleteCcBlackWhiteIpListResponse"
+      "output": "DeleteCcBlackWhiteIpListResponse",
+      "status": "online"
     },
     "DeleteCcGeoIPBlockConfig": {
       "document": "删除CC防护的区域封禁配置",
       "input": "DeleteCcGeoIPBlockConfigRequest",
       "name": "删除CC防护的区域封禁配置",
-      "output": "DeleteCcGeoIPBlockConfigResponse"
+      "output": "DeleteCcGeoIPBlockConfigResponse",
+      "status": "online"
     },
     "DeleteDDoSBlackWhiteIpList": {
       "document": "删除DDoS防护的IP网段黑白名单",
       "input": "DeleteDDoSBlackWhiteIpListRequest",
       "name": "删除DDoS防护的IP网段黑白名单",
-      "output": "DeleteDDoSBlackWhiteIpListResponse"
+      "output": "DeleteDDoSBlackWhiteIpListResponse",
+      "status": "online"
     },
     "DeleteDDoSGeoIPBlockConfig": {
       "document": "删除DDoS防护的区域封禁配置",
       "input": "DeleteDDoSGeoIPBlockConfigRequest",
       "name": "删除DDoS防护的区域封禁配置",
-      "output": "DeleteDDoSGeoIPBlockConfigResponse"
+      "output": "DeleteDDoSGeoIPBlockConfigResponse",
+      "status": "online"
     },
     "DeleteDDoSSpeedLimitConfig": {
       "document": "删除DDoS防护的访问限速配置",
       "input": "DeleteDDoSSpeedLimitConfigRequest",
       "name": "删除DDoS防护的访问限速配置",
-      "output": "DeleteDDoSSpeedLimitConfigResponse"
+      "output": "DeleteDDoSSpeedLimitConfigResponse",
+      "status": "online"
     },
     "DeletePacketFilterConfig": {
       "document": "删除DDoS防护的特征过滤规则",
       "input": "DeletePacketFilterConfigRequest",
       "name": "删除DDoS防护的特征过滤规则",
-      "output": "DeletePacketFilterConfigResponse"
+      "output": "DeletePacketFilterConfigResponse",
+      "status": "online"
     },
     "DeletePortAclConfig": {
       "document": "删除DDoS防护的端口acl策略",
       "input": "DeletePortAclConfigRequest",
       "name": "删除DDoS防护的端口acl策略",
-      "output": "DeletePortAclConfigResponse"
+      "output": "DeletePortAclConfigResponse",
+      "status": "online"
     },
     "DeleteWaterPrintConfig": {
       "document": "删除DDoS防护的水印防护配置",
       "input": "DeleteWaterPrintConfigRequest",
       "name": "删除DDoS防护的水印防护配置",
-      "output": "DeleteWaterPrintConfigResponse"
+      "output": "DeleteWaterPrintConfigResponse",
+      "status": "online"
     },
     "DeleteWaterPrintKey": {
       "document": "删除DDoS防护的水印防护密钥",
       "input": "DeleteWaterPrintKeyRequest",
       "name": "删除DDoS防护的水印防护密钥",
-      "output": "DeleteWaterPrintKeyResponse"
+      "output": "DeleteWaterPrintKeyResponse",
+      "status": "online"
     },
     "DescribeBasicDeviceStatus": {
       "document": "获取基础防护攻击状态",
       "input": "DescribeBasicDeviceStatusRequest",
       "name": "获取基础防护攻击状态",
-      "output": "DescribeBasicDeviceStatusResponse"
+      "output": "DescribeBasicDeviceStatusResponse",
+      "status": "online"
     },
     "DescribeBgpBizTrend": {
       "document": "获取高防包流量折线图",
       "input": "DescribeBgpBizTrendRequest",
       "name": "获取高防包流量折线图",
-      "output": "DescribeBgpBizTrendResponse"
+      "output": "DescribeBgpBizTrendResponse",
+      "status": "online"
     },
     "DescribeBizHttpStatus": {
       "document": "获取业务流量状态码统计列表",
       "input": "DescribeBizHttpStatusRequest",
       "name": "获取业务流量状态码统计列表",
-      "output": "DescribeBizHttpStatusResponse"
+      "output": "DescribeBizHttpStatusResponse",
+      "status": "online"
     },
     "DescribeBizTrend": {
       "document": "获取业务流量曲线",
       "input": "DescribeBizTrendRequest",
       "name": "获取业务流量曲线",
-      "output": "DescribeBizTrendResponse"
+      "output": "DescribeBizTrendResponse",
+      "status": "online"
     },
     "DescribeBlackWhiteIpList": {
       "document": "获取DDoS防护的IP黑白名单",
       "input": "DescribeBlackWhiteIpListRequest",
       "name": "获取DDoS防护的IP黑白名单",
-      "output": "DescribeBlackWhiteIpListResponse"
+      "output": "DescribeBlackWhiteIpListResponse",
+      "status": "online"
     },
     "DescribeCCLevelList": {
       "document": "获取边界防护CC防护等级列表",
       "input": "DescribeCCLevelListRequest",
       "name": "获取CC防护等级列表",
-      "output": "DescribeCCLevelListResponse"
+      "output": "DescribeCCLevelListResponse",
+      "status": "online"
     },
     "DescribeCCLevelPolicy": {
       "document": "获取CC分级策略",
       "input": "DescribeCCLevelPolicyRequest",
       "name": "获取CC分级策略",
-      "output": "DescribeCCLevelPolicyResponse"
+      "output": "DescribeCCLevelPolicyResponse",
+      "status": "online"
     },
     "DescribeCCPrecisionPlyList": {
       "document": "获取CC精准防护列表",
       "input": "DescribeCCPrecisionPlyListRequest",
       "name": "获取CC精准防护列表",
-      "output": "DescribeCCPrecisionPlyListResponse"
+      "output": "DescribeCCPrecisionPlyListResponse",
+      "status": "online"
     },
     "DescribeCCReqLimitPolicyList": {
       "document": "获取CC频率限制策略列表",
       "input": "DescribeCCReqLimitPolicyListRequest",
       "name": "获取CC频率限制策略列表",
-      "output": "DescribeCCReqLimitPolicyListResponse"
+      "output": "DescribeCCReqLimitPolicyListResponse",
+      "status": "online"
     },
     "DescribeCCThresholdList": {
       "document": "获取CC清洗阈值列表",
       "input": "DescribeCCThresholdListRequest",
       "name": "获取CC清洗阈值列表",
-      "output": "DescribeCCThresholdListResponse"
+      "output": "DescribeCCThresholdListResponse",
+      "status": "online"
     },
     "DescribeCCTrend": {
       "document": "获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)以及总请求次数和攻击请求次数",
       "input": "DescribeCCTrendRequest",
       "name": "获取CC攻击指标曲线",
-      "output": "DescribeCCTrendResponse"
+      "output": "DescribeCCTrendResponse",
+      "status": "online"
     },
     "DescribeCcBlackWhiteIpList": {
       "document": "获取CC四层黑白名单列表",
       "input": "DescribeCcBlackWhiteIpListRequest",
       "name": "获取CC四层黑白名单列表",
-      "output": "DescribeCcBlackWhiteIpListResponse"
+      "output": "DescribeCcBlackWhiteIpListResponse",
+      "status": "online"
     },
     "DescribeCcGeoIPBlockConfigList": {
       "document": "获取CC防护的区域封禁配置列表",
       "input": "DescribeCcGeoIPBlockConfigListRequest",
       "name": "获取CC防护的区域封禁配置列表",
-      "output": "DescribeCcGeoIPBlockConfigListResponse"
+      "output": "DescribeCcGeoIPBlockConfigListResponse",
+      "status": "online"
     },
     "DescribeDDoSBlackWhiteIpList": {
       "document": "获取DDoS防护的IP网段黑白名单",
       "input": "DescribeDDoSBlackWhiteIpListRequest",
       "name": "获取DDoS防护的IP网段黑白名单",
-      "output": "DescribeDDoSBlackWhiteIpListResponse"
+      "output": "DescribeDDoSBlackWhiteIpListResponse",
+      "status": "online"
     },
     "DescribeDDoSConnectLimitList": {
       "document": "获取DDoS连接抑制配置列表",
       "input": "DescribeDDoSConnectLimitListRequest",
       "name": "获取DDoS连接抑制配置列表",
-      "output": "DescribeDDoSConnectLimitListResponse"
+      "output": "DescribeDDoSConnectLimitListResponse",
+      "status": "online"
     },
     "DescribeDDoSTrend": {
       "document": "获取DDoS攻击流量带宽和攻击包速率数据",
       "input": "DescribeDDoSTrendRequest",
       "name": "获取DDoS攻击指标曲线",
-      "output": "DescribeDDoSTrendResponse"
+      "output": "DescribeDDoSTrendResponse",
+      "status": "online"
     },
     "DescribeDefaultAlarmThreshold": {
       "document": "获取单IP默认告警阈值配置",
       "input": "DescribeDefaultAlarmThresholdRequest",
       "name": "获取单IP默认告警阈值配置",
-      "output": "DescribeDefaultAlarmThresholdResponse"
+      "output": "DescribeDefaultAlarmThresholdResponse",
+      "status": "online"
     },
     "DescribeL7RulesBySSLCertId": {
       "document": "查询与证书ID对于域名匹配的七层规则",
       "input": "DescribeL7RulesBySSLCertIdRequest",
       "name": "查询与证书ID匹配的七层规则",
-      "output": "DescribeL7RulesBySSLCertIdResponse"
+      "output": "DescribeL7RulesBySSLCertIdResponse",
+      "status": "online"
     },
     "DescribeListBGPIPInstances": {
       "document": "获取高防IP资产实例列表\n",
       "input": "DescribeListBGPIPInstancesRequest",
       "name": "获取高防IP资产实例列表",
-      "output": "DescribeListBGPIPInstancesResponse"
+      "output": "DescribeListBGPIPInstancesResponse",
+      "status": "online"
     },
     "DescribeListBGPInstances": {
       "document": "获取高防包资产实例列表",
       "input": "DescribeListBGPInstancesRequest",
       "name": "获取高防包资产实例列表",
-      "output": "DescribeListBGPInstancesResponse"
+      "output": "DescribeListBGPInstancesResponse",
+      "status": "online"
     },
     "DescribeListBlackWhiteIpList": {
       "document": "获取DDoS防护的IP黑白名单列表",
       "input": "DescribeListBlackWhiteIpListRequest",
       "name": "获取DDoS防护的IP黑白名单列表",
-      "output": "DescribeListBlackWhiteIpListResponse"
+      "output": "DescribeListBlackWhiteIpListResponse",
+      "status": "online"
     },
     "DescribeListDDoSAI": {
       "document": "获取DDoS防护的AI防护开关列表",
       "input": "DescribeListDDoSAIRequest",
       "name": "获取DDoS防护的AI防护开关列表",
-      "output": "DescribeListDDoSAIResponse"
+      "output": "DescribeListDDoSAIResponse",
+      "status": "online"
     },
     "DescribeListDDoSGeoIPBlockConfig": {
       "document": "获取DDoS防护的区域封禁配置列表",
       "input": "DescribeListDDoSGeoIPBlockConfigRequest",
       "name": "获取DDoS防护的区域封禁配置列表",
-      "output": "DescribeListDDoSGeoIPBlockConfigResponse"
+      "output": "DescribeListDDoSGeoIPBlockConfigResponse",
+      "status": "online"
     },
     "DescribeListDDoSSpeedLimitConfig": {
       "document": "获取DDoS防护的访问限速配置列表",
       "input": "DescribeListDDoSSpeedLimitConfigRequest",
       "name": "获取DDoS防护的访问限速配置列表",
-      "output": "DescribeListDDoSSpeedLimitConfigResponse"
+      "output": "DescribeListDDoSSpeedLimitConfigResponse",
+      "status": "online"
     },
     "DescribeListIPAlarmConfig": {
       "document": "获取单IP告警阈值配置列表",
       "input": "DescribeListIPAlarmConfigRequest",
       "name": "获取单IP告警阈值配置列表",
-      "output": "DescribeListIPAlarmConfigResponse"
+      "output": "DescribeListIPAlarmConfigResponse",
+      "status": "online"
     },
     "DescribeListListener": {
       "document": "获取转发监听器列表",
       "input": "DescribeListListenerRequest",
       "name": "获取转发监听器列表",
-      "output": "DescribeListListenerResponse"
+      "output": "DescribeListListenerResponse",
+      "status": "online"
     },
     "DescribeListPacketFilterConfig": {
       "document": "获取DDoS防护的特征过滤规则列表",
       "input": "DescribeListPacketFilterConfigRequest",
       "name": "获取DDoS防护的特征过滤规则列表",
-      "output": "DescribeListPacketFilterConfigResponse"
+      "output": "DescribeListPacketFilterConfigResponse",
+      "status": "online"
     },
     "DescribeListPortAclList": {
       "document": "获取DDoS防护的端口acl策略列表",
       "input": "DescribeListPortAclListRequest",
       "name": "获取DDoS防护的端口acl策略列表",
-      "output": "DescribeListPortAclListResponse"
+      "output": "DescribeListPortAclListResponse",
+      "status": "online"
     },
     "DescribeListProtectThresholdConfig": {
       "document": "获取防护阈值配置列表，包括DDoS的AI、等级、CC阈值开关等",
       "input": "DescribeListProtectThresholdConfigRequest",
       "name": "获取防护阈值配置列表",
-      "output": "DescribeListProtectThresholdConfigResponse"
+      "output": "DescribeListProtectThresholdConfigResponse",
+      "status": "online"
     },
     "DescribeListProtocolBlockConfig": {
       "document": "获取DDoS防护的协议封禁配置列表",
       "input": "DescribeListProtocolBlockConfigRequest",
       "name": "获取DDoS防护的协议封禁配置列表",
-      "output": "DescribeListProtocolBlockConfigResponse"
+      "output": "DescribeListProtocolBlockConfigResponse",
+      "status": "online"
     },
     "DescribeListSchedulingDomain": {
       "document": "获取智能调度域名列表",
       "input": "DescribeListSchedulingDomainRequest",
       "name": "获取智能调度域名列表",
-      "output": "DescribeListSchedulingDomainResponse"
+      "output": "DescribeListSchedulingDomainResponse",
+      "status": "online"
     },
     "DescribeListWaterPrintConfig": {
       "document": "获取DDoS防护的水印防护配置列表",
       "input": "DescribeListWaterPrintConfigRequest",
       "name": "获取DDoS防护的水印防护配置列表",
-      "output": "DescribeListWaterPrintConfigResponse"
+      "output": "DescribeListWaterPrintConfigResponse",
+      "status": "online"
     },
     "DescribeNewL7Rules": {
       "document": "高防IP获取7层规则",
       "input": "DescribeNewL7RulesRequest",
       "name": "高防IP获取7层规则",
-      "output": "DescribeNewL7RulesResponse"
+      "output": "DescribeNewL7RulesResponse",
+      "status": "online"
     },
     "DescribeNewL7RulesErrHealth": {
       "document": "获取L7转发规则健康检查异常结果列表",
       "input": "DescribeNewL7RulesErrHealthRequest",
       "name": "获取L7转发规则健康检查异常结果列表",
-      "output": "DescribeNewL7RulesErrHealthResponse"
+      "output": "DescribeNewL7RulesErrHealthResponse",
+      "status": "online"
     },
     "DescribeOverviewAttackTrend": {
       "document": "拉取防护概览攻击趋势",
       "input": "DescribeOverviewAttackTrendRequest",
       "name": "拉取防护概览攻击趋势",
-      "output": "DescribeOverviewAttackTrendResponse"
+      "output": "DescribeOverviewAttackTrendResponse",
+      "status": "online"
     },
     "DescribeOverviewCCTrend": {
       "document": "获取防护概览总请求峰值(QPS)和攻击请求(QPS)以及总请求次数和攻击请求次数",
       "input": "DescribeOverviewCCTrendRequest",
       "name": "获取防护概览趋势图",
-      "output": "DescribeOverviewCCTrendResponse"
+      "output": "DescribeOverviewCCTrendResponse",
+      "status": "online"
     },
     "DescribeOverviewDDoSEventList": {
       "document": "获取防护概览的ddos攻击事件",
       "input": "DescribeOverviewDDoSEventListRequest",
       "name": "获取防护概览的ddos攻击事件",
-      "output": "DescribeOverviewDDoSEventListResponse"
+      "output": "DescribeOverviewDDoSEventListResponse",
+      "status": "online"
     },
     "DescribeOverviewDDoSTrend": {
       "document": "获取防护概览DDoS攻击流量带宽和攻击包速率数据",
       "input": "DescribeOverviewDDoSTrendRequest",
       "name": "获取防护概览DDoS攻击流量带宽和攻击包速率数据",
-      "output": "DescribeOverviewDDoSTrendResponse"
+      "output": "DescribeOverviewDDoSTrendResponse",
+      "status": "online"
     },
     "DescribeOverviewIndex": {
       "document": "拉取防护概览指标",
       "input": "DescribeOverviewIndexRequest",
       "name": "拉取防护概览指标",
-      "output": "DescribeOverviewIndexResponse"
+      "output": "DescribeOverviewIndexResponse",
+      "status": "online"
     },
     "DescribePendingRiskInfo": {
       "document": "查询账号维度待处理风险信息，包括是否为付费用户，查询攻击中、封堵中、过期资源数量等",
       "input": "DescribePendingRiskInfoRequest",
       "name": "查询账号维度待处理风险信息",
-      "output": "DescribePendingRiskInfoResponse"
+      "output": "DescribePendingRiskInfoResponse",
+      "status": "online"
     },
     "DisassociateDDoSEipAddress": {
       "document": "本接口 (DisassociateDDoSEipAddress) 用于解绑高防弹性公网IP。",
       "input": "DisassociateDDoSEipAddressRequest",
       "name": "解绑高防弹性公网IP",
-      "output": "DisassociateDDoSEipAddressResponse"
+      "output": "DisassociateDDoSEipAddressResponse",
+      "status": "online"
     },
     "ModifyCCLevelPolicy": {
       "document": "修改CC防护等级",
       "input": "ModifyCCLevelPolicyRequest",
       "name": "修改CC的防护等级",
-      "output": "ModifyCCLevelPolicyResponse"
+      "output": "ModifyCCLevelPolicyResponse",
+      "status": "online"
     },
     "ModifyCCPrecisionPolicy": {
       "document": "修改CC精准防护策略",
       "input": "ModifyCCPrecisionPolicyRequest",
       "name": "修改CC精准防护策略",
-      "output": "ModifyCCPrecisionPolicyResponse"
+      "output": "ModifyCCPrecisionPolicyResponse",
+      "status": "online"
     },
     "ModifyCCReqLimitPolicy": {
       "document": "修改CC频率限制策略",
       "input": "ModifyCCReqLimitPolicyRequest",
       "name": "修改CC频率限制策略",
-      "output": "ModifyCCReqLimitPolicyResponse"
+      "output": "ModifyCCReqLimitPolicyResponse",
+      "status": "online"
     },
     "ModifyCCThresholdPolicy": {
       "document": "修改CC清洗阈值",
       "input": "ModifyCCThresholdPolicyRequest",
       "name": "修改CC清洗阈值",
-      "output": "ModifyCCThresholdPolicyResponse"
+      "output": "ModifyCCThresholdPolicyResponse",
+      "status": "online"
     },
     "ModifyCcBlackWhiteIpList": {
       "document": "修改CC四层黑白名单",
       "input": "ModifyCcBlackWhiteIpListRequest",
       "name": "修改CC四层黑白名单",
-      "output": "ModifyCcBlackWhiteIpListResponse"
+      "output": "ModifyCcBlackWhiteIpListResponse",
+      "status": "online"
     },
     "ModifyDDoSBlackWhiteIpList": {
       "document": "修改DDoS黑白名单列表",
       "input": "ModifyDDoSBlackWhiteIpListRequest",
       "name": "修改DDoS黑白名单列表",
-      "output": "ModifyDDoSBlackWhiteIpListResponse"
+      "output": "ModifyDDoSBlackWhiteIpListResponse",
+      "status": "online"
     },
     "ModifyDDoSGeoIPBlockConfig": {
       "document": "修改DDoS防护的区域封禁配置",
       "input": "ModifyDDoSGeoIPBlockConfigRequest",
       "name": "修改DDoS防护的区域封禁配置",
-      "output": "ModifyDDoSGeoIPBlockConfigResponse"
+      "output": "ModifyDDoSGeoIPBlockConfigResponse",
+      "status": "online"
     },
     "ModifyDDoSLevel": {
       "document": "读取或修改DDoS的防护等级",
       "input": "ModifyDDoSLevelRequest",
       "name": "修改DDoSIP防护等级",
-      "output": "ModifyDDoSLevelResponse"
+      "output": "ModifyDDoSLevelResponse",
+      "status": "online"
     },
     "ModifyDDoSSpeedLimitConfig": {
       "document": "修改DDoS防护的访问限速配置",
       "input": "ModifyDDoSSpeedLimitConfigRequest",
       "name": "修改DDoS防护的访问限速配置",
-      "output": "ModifyDDoSSpeedLimitConfigResponse"
+      "output": "ModifyDDoSSpeedLimitConfigResponse",
+      "status": "online"
     },
     "ModifyDDoSThreshold": {
       "document": "修改DDoS清洗阈值",
       "input": "ModifyDDoSThresholdRequest",
       "name": "修改DDoS清洗阈值",
-      "output": "ModifyDDoSThresholdResponse"
+      "output": "ModifyDDoSThresholdResponse",
+      "status": "online"
     },
     "ModifyDomainUsrName": {
       "document": "修改智能解析域名名称",
       "input": "ModifyDomainUsrNameRequest",
       "name": "修改智能解析域名名称",
-      "output": "ModifyDomainUsrNameResponse"
+      "output": "ModifyDomainUsrNameResponse",
+      "status": "online"
     },
     "ModifyNewDomainRules": {
       "document": "修改7层转发规则",
       "input": "ModifyNewDomainRulesRequest",
       "name": "修改7层转发规则",
-      "output": "ModifyNewDomainRulesResponse"
+      "output": "ModifyNewDomainRulesResponse",
+      "status": "online"
     },
     "ModifyPacketFilterConfig": {
       "document": "修改DDoS防护的特征过滤规则",
       "input": "ModifyPacketFilterConfigRequest",
       "name": "修改DDoS防护的特征过滤规则",
-      "output": "ModifyPacketFilterConfigResponse"
+      "output": "ModifyPacketFilterConfigResponse",
+      "status": "online"
     },
     "ModifyPortAclConfig": {
       "document": "修改DDoS防护的端口acl策略",
       "input": "ModifyPortAclConfigRequest",
       "name": "修改DDoS防护的端口acl策略",
-      "output": "ModifyPortAclConfigResponse"
+      "output": "ModifyPortAclConfigResponse",
+      "status": "online"
     },
     "SwitchWaterPrintConfig": {
       "document": "开启或关闭DDoS防护的水印防护配置",
       "input": "SwitchWaterPrintConfigRequest",
       "name": "开启或关闭DDoS防护的水印防护配置",
-      "output": "SwitchWaterPrintConfigResponse"
+      "output": "SwitchWaterPrintConfigResponse",
+      "status": "online"
     }
   },
   "metadata": {

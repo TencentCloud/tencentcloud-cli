@@ -4,55 +4,64 @@
       "document": "单向认证测试TID ",
       "input": "AuthTestTidRequest",
       "name": "单向认证测试TID",
-      "output": "AuthTestTidResponse"
+      "output": "AuthTestTidResponse",
+      "status": "online"
     },
     "BurnTidNotify": {
       "document": "安全芯片TID烧录回执 ",
       "input": "BurnTidNotifyRequest",
       "name": "安全芯片TID烧录回执",
-      "output": "BurnTidNotifyResponse"
+      "output": "BurnTidNotifyResponse",
+      "status": "online"
     },
     "DeliverTidNotify": {
       "document": "安全芯片为载体的TID空发回执，绑定TID与订单号。 ",
       "input": "DeliverTidNotifyRequest",
       "name": "安全芯片TID空发回执",
-      "output": "DeliverTidNotifyResponse"
+      "output": "DeliverTidNotifyResponse",
+      "status": "online"
     },
     "DeliverTids": {
       "document": "设备服务商请求空发产品订单的TID信息 ",
       "input": "DeliverTidsRequest",
       "name": "请求空发TID信息",
-      "output": "DeliverTidsResponse"
+      "output": "DeliverTidsResponse",
+      "status": "online"
     },
     "DescribeAvailableLibCount": {
       "document": "查询指定订单的可空发的白盒密钥数量",
       "input": "DescribeAvailableLibCountRequest",
       "name": "查询可空发的白盒密钥数量",
-      "output": "DescribeAvailableLibCountResponse"
+      "output": "DescribeAvailableLibCountResponse",
+      "status": "online"
     },
     "DescribePermission": {
       "document": "查询企业用户TID平台控制台权限 ",
       "input": "DescribePermissionRequest",
       "name": "查询权限",
-      "output": "DescribePermissionResponse"
+      "output": "DescribePermissionResponse",
+      "status": "online"
     },
     "DownloadTids": {
       "document": "下载芯片订单的TID ",
       "input": "DownloadTidsRequest",
       "name": "下载芯片订单的TID",
-      "output": "DownloadTidsResponse"
+      "output": "DownloadTidsResponse",
+      "status": "online"
     },
     "UploadDeviceUniqueCode": {
       "document": "上传硬件唯一标识码，是软加固设备身份参数。本接口如遇到错误数据，则所有当次上传数据失效。",
       "input": "UploadDeviceUniqueCodeRequest",
       "name": "上传硬件唯一标识码",
-      "output": "UploadDeviceUniqueCodeResponse"
+      "output": "UploadDeviceUniqueCodeResponse",
+      "status": "online"
     },
     "VerifyChipBurnInfo": {
       "document": "下载控制台验证芯片烧录信息，保证TID与中心信息一致 ",
       "input": "VerifyChipBurnInfoRequest",
       "name": "验证芯片烧录TID信息",
-      "output": "VerifyChipBurnInfoResponse"
+      "output": "VerifyChipBurnInfoResponse",
+      "status": "online"
     }
   },
   "metadata": {

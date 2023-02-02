@@ -4,373 +4,435 @@
       "document": "添加互联网边界规则",
       "input": "AddAcRuleRequest",
       "name": "添加互联网边界规则",
-      "output": "AddAcRuleResponse"
+      "output": "AddAcRuleResponse",
+      "status": "online"
     },
     "AddEnterpriseSecurityGroupRules": {
       "document": "创建新企业安全组规则",
       "input": "AddEnterpriseSecurityGroupRulesRequest",
       "name": "创建新企业安全组规则",
-      "output": "AddEnterpriseSecurityGroupRulesResponse"
+      "output": "AddEnterpriseSecurityGroupRulesResponse",
+      "status": "online"
     },
     "CreateAcRules": {
       "document": "创建访问控制规则",
       "input": "CreateAcRulesRequest",
       "name": "创建访问控制规则",
-      "output": "CreateAcRulesResponse"
+      "output": "CreateAcRulesResponse",
+      "status": "online"
     },
     "CreateChooseVpcs": {
       "document": "创建、选择vpc",
       "input": "CreateChooseVpcsRequest",
       "name": "创建、选择vpc",
-      "output": "CreateChooseVpcsResponse"
+      "output": "CreateChooseVpcsResponse",
+      "status": "online"
     },
     "CreateDatabaseWhiteListRules": {
       "document": "创建暴露数据库白名单规则",
       "input": "CreateDatabaseWhiteListRulesRequest",
       "name": "创建暴露数据库白名单规则",
-      "output": "CreateDatabaseWhiteListRulesResponse"
+      "output": "CreateDatabaseWhiteListRulesResponse",
+      "status": "online"
     },
     "CreateNatFwInstance": {
       "document": "创建NAT防火墙实例（Region参数必填）",
       "input": "CreateNatFwInstanceRequest",
       "name": "创建NAT防火墙实例（Region参数必填）",
-      "output": "CreateNatFwInstanceResponse"
+      "output": "CreateNatFwInstanceResponse",
+      "status": "online"
     },
     "CreateNatFwInstanceWithDomain": {
       "document": "创建防火墙实例和接入域名（Region参数必填）",
       "input": "CreateNatFwInstanceWithDomainRequest",
       "name": "创建防火墙实例和接入域名（Region参数必填）",
-      "output": "CreateNatFwInstanceWithDomainResponse"
+      "output": "CreateNatFwInstanceWithDomainResponse",
+      "status": "online"
     },
     "CreateSecurityGroupRules": {
       "document": "创建企业安全组规则",
       "input": "CreateSecurityGroupRulesRequest",
       "name": "创建企业安全组规则",
-      "output": "CreateSecurityGroupRulesResponse"
+      "output": "CreateSecurityGroupRulesResponse",
+      "status": "online"
     },
     "DeleteAcRule": {
       "document": "删除规则",
       "input": "DeleteAcRuleRequest",
       "name": "删除规则",
-      "output": "DeleteAcRuleResponse"
+      "output": "DeleteAcRuleResponse",
+      "status": "online"
     },
     "DeleteAllAccessControlRule": {
       "document": "全部删除规则",
       "input": "DeleteAllAccessControlRuleRequest",
       "name": "全部删除规则",
-      "output": "DeleteAllAccessControlRuleResponse"
+      "output": "DeleteAllAccessControlRuleResponse",
+      "status": "online"
     },
     "DeleteNatFwInstance": {
       "document": "销毁防火墙实例",
       "input": "DeleteNatFwInstanceRequest",
       "name": "销毁防火墙实例",
-      "output": "DeleteNatFwInstanceResponse"
+      "output": "DeleteNatFwInstanceResponse",
+      "status": "online"
     },
     "DeleteResourceGroup": {
       "document": "DeleteResourceGroup-资产中心资产组删除",
       "input": "DeleteResourceGroupRequest",
       "name": "资产中心资产组删除",
-      "output": "DeleteResourceGroupResponse"
+      "output": "DeleteResourceGroupResponse",
+      "status": "online"
     },
     "DeleteSecurityGroupRule": {
       "document": "删除规则",
       "input": "DeleteSecurityGroupRuleRequest",
       "name": "删除安全组规则",
-      "output": "DeleteSecurityGroupRuleResponse"
+      "output": "DeleteSecurityGroupRuleResponse",
+      "status": "online"
     },
     "DeleteVpcInstance": {
       "document": "删除防火墙实例",
       "input": "DeleteVpcInstanceRequest",
       "name": "删除防火墙实例",
-      "output": "DeleteVpcInstanceResponse"
+      "output": "DeleteVpcInstanceResponse",
+      "status": "online"
     },
     "DescribeAcLists": {
       "document": "访问控制列表",
       "input": "DescribeAcListsRequest",
       "name": "访问控制列表",
-      "output": "DescribeAcListsResponse"
+      "output": "DescribeAcListsResponse",
+      "status": "online"
     },
     "DescribeAssociatedInstanceList": {
       "document": "获取安全组关联实例列表",
       "input": "DescribeAssociatedInstanceListRequest",
       "name": "获取安全组关联实例列表",
-      "output": "DescribeAssociatedInstanceListResponse"
+      "output": "DescribeAssociatedInstanceListResponse",
+      "status": "online"
     },
     "DescribeBlockByIpTimesList": {
       "document": "DescribeBlockByIpTimesList 告警中心阻断IP折线图\n",
       "input": "DescribeBlockByIpTimesListRequest",
       "name": "告警中心阻断IP折线图",
-      "output": "DescribeBlockByIpTimesListResponse"
+      "output": "DescribeBlockByIpTimesListResponse",
+      "status": "online"
     },
     "DescribeBlockStaticList": {
       "document": "DescribeBlockStaticList 告警中心柱形图\n",
       "input": "DescribeBlockStaticListRequest",
       "name": "告警中心柱形图",
-      "output": "DescribeBlockStaticListResponse"
+      "output": "DescribeBlockStaticListResponse",
+      "status": "online"
     },
     "DescribeCfwEips": {
       "document": "查询防火墙弹性公网IP",
       "input": "DescribeCfwEipsRequest",
       "name": "查询防火墙弹性公网IP",
-      "output": "DescribeCfwEipsResponse"
+      "output": "DescribeCfwEipsResponse",
+      "status": "online"
     },
     "DescribeDefenseSwitch": {
       "document": "获取入侵防御按钮列表",
       "input": "DescribeDefenseSwitchRequest",
       "name": "获取入侵防御按钮列表",
-      "output": "DescribeDefenseSwitchResponse"
+      "output": "DescribeDefenseSwitchResponse",
+      "status": "online"
     },
     "DescribeEnterpriseSecurityGroupRule": {
       "document": "查询新企业安全组规则",
       "input": "DescribeEnterpriseSecurityGroupRuleRequest",
       "name": "查询新企业安全组规则",
-      "output": "DescribeEnterpriseSecurityGroupRuleResponse"
+      "output": "DescribeEnterpriseSecurityGroupRuleResponse",
+      "status": "online"
     },
     "DescribeGuideScanInfo": {
       "document": "DescribeGuideScanInfo新手引导扫描接口信息",
       "input": "DescribeGuideScanInfoRequest",
       "name": "新手引导扫描接口信息",
-      "output": "DescribeGuideScanInfoResponse"
+      "output": "DescribeGuideScanInfoResponse",
+      "status": "online"
     },
     "DescribeIPStatusList": {
       "document": "ip防护状态查询",
       "input": "DescribeIPStatusListRequest",
       "name": "ip防护状态查询",
-      "output": "DescribeIPStatusListResponse"
+      "output": "DescribeIPStatusListResponse",
+      "status": "online"
     },
     "DescribeNatFwInfoCount": {
       "document": "获取当前用户接入nat防火墙的所有子网数及natfw实例个数",
       "input": "DescribeNatFwInfoCountRequest",
       "name": "获取当前用户接入nat防火墙的所有子网数及natfw实例个数",
-      "output": "DescribeNatFwInfoCountResponse"
+      "output": "DescribeNatFwInfoCountResponse",
+      "status": "online"
     },
     "DescribeNatFwInstance": {
       "document": "DescribeNatFwInstance 获取租户所有NAT实例",
       "input": "DescribeNatFwInstanceRequest",
       "name": "获取租户所有NAT实例",
-      "output": "DescribeNatFwInstanceResponse"
+      "output": "DescribeNatFwInstanceResponse",
+      "status": "online"
     },
     "DescribeNatFwInstanceWithRegion": {
       "document": "GetNatFwInstanceWithRegion 获取租户新增运维的NAT实例，带上地域",
       "input": "DescribeNatFwInstanceWithRegionRequest",
       "name": "获取租户可运维NAT实例",
-      "output": "DescribeNatFwInstanceWithRegionResponse"
+      "output": "DescribeNatFwInstanceWithRegionResponse",
+      "status": "online"
     },
     "DescribeNatFwInstancesInfo": {
       "document": "GetNatInstance 获取租户所有NAT实例及实例卡片信息",
       "input": "DescribeNatFwInstancesInfoRequest",
       "name": "获取租户所有NAT实例卡片信息",
-      "output": "DescribeNatFwInstancesInfoResponse"
+      "output": "DescribeNatFwInstancesInfoResponse",
+      "status": "online"
     },
     "DescribeNatFwVpcDnsLst": {
       "document": "展示当前natfw 实例对应的vpc dns开关",
       "input": "DescribeNatFwVpcDnsLstRequest",
       "name": "展示当前natfw 实例对应的vpc dns开关",
-      "output": "DescribeNatFwVpcDnsLstResponse"
+      "output": "DescribeNatFwVpcDnsLstResponse",
+      "status": "online"
     },
     "DescribeResourceGroup": {
       "document": "DescribeResourceGroup资产中心资产树信息",
       "input": "DescribeResourceGroupRequest",
       "name": "资产中心资产树信息查询",
-      "output": "DescribeResourceGroupResponse"
+      "output": "DescribeResourceGroupResponse",
+      "status": "online"
     },
     "DescribeResourceGroupNew": {
       "document": "DescribeResourceGroupNew资产中心资产树信息",
       "input": "DescribeResourceGroupNewRequest",
       "name": "资产中心资产树信息查询new",
-      "output": "DescribeResourceGroupNewResponse"
+      "output": "DescribeResourceGroupNewResponse",
+      "status": "online"
     },
     "DescribeRuleOverview": {
       "document": "查询规则列表概况",
       "input": "DescribeRuleOverviewRequest",
       "name": "查询规则列表概况",
-      "output": "DescribeRuleOverviewResponse"
+      "output": "DescribeRuleOverviewResponse",
+      "status": "online"
     },
     "DescribeSecurityGroupList": {
       "document": "查询安全组规则列表",
       "input": "DescribeSecurityGroupListRequest",
       "name": "查询安全组规则列表",
-      "output": "DescribeSecurityGroupListResponse"
+      "output": "DescribeSecurityGroupListResponse",
+      "status": "online"
     },
     "DescribeSourceAsset": {
       "document": "DescribeSourceAsset-查询资产组全部资产信息\n",
       "input": "DescribeSourceAssetRequest",
       "name": "查询资产组全部资产信息",
-      "output": "DescribeSourceAssetResponse"
+      "output": "DescribeSourceAssetResponse",
+      "status": "online"
     },
     "DescribeSwitchLists": {
       "document": "防火墙开关列表",
       "input": "DescribeSwitchListsRequest",
       "name": "防火墙开关列表",
-      "output": "DescribeSwitchListsResponse"
+      "output": "DescribeSwitchListsResponse",
+      "status": "online"
     },
     "DescribeTLogInfo": {
       "document": "DescribeTLogInfo告警中心概况\n",
       "input": "DescribeTLogInfoRequest",
       "name": "告警中心概况",
-      "output": "DescribeTLogInfoResponse"
+      "output": "DescribeTLogInfoResponse",
+      "status": "online"
     },
     "DescribeTLogIpList": {
       "document": "DescribeTLogIpList告警中心IP柱形图\n",
       "input": "DescribeTLogIpListRequest",
       "name": "告警中心IP柱形图",
-      "output": "DescribeTLogIpListResponse"
+      "output": "DescribeTLogIpListResponse",
+      "status": "online"
     },
     "DescribeTableStatus": {
       "document": "查询规则表状态",
       "input": "DescribeTableStatusRequest",
       "name": "查询规则表状态",
-      "output": "DescribeTableStatusResponse"
+      "output": "DescribeTableStatusResponse",
+      "status": "online"
     },
     "DescribeUnHandleEventTabList": {
       "document": "DescribeUnHandleEventTabList 告警中心伪攻击链事件未处置接口\n",
       "input": "DescribeUnHandleEventTabListRequest",
       "name": "告警中心伪攻击链事件未处置接口",
-      "output": "DescribeUnHandleEventTabListResponse"
+      "output": "DescribeUnHandleEventTabListResponse",
+      "status": "online"
     },
     "ExpandCfwVertical": {
       "document": "防火墙垂直扩容",
       "input": "ExpandCfwVerticalRequest",
       "name": "防火墙垂直扩容",
-      "output": "ExpandCfwVerticalResponse"
+      "output": "ExpandCfwVerticalResponse",
+      "status": "online"
     },
     "ModifyAcRule": {
       "document": "修改规则",
       "input": "ModifyAcRuleRequest",
       "name": "修改规则",
-      "output": "ModifyAcRuleResponse"
+      "output": "ModifyAcRuleResponse",
+      "status": "online"
     },
     "ModifyAllPublicIPSwitchStatus": {
       "document": "互联网边界防火墙一键开关",
       "input": "ModifyAllPublicIPSwitchStatusRequest",
       "name": "互联网边界防火墙一键开关",
-      "output": "ModifyAllPublicIPSwitchStatusResponse"
+      "output": "ModifyAllPublicIPSwitchStatusResponse",
+      "status": "online"
     },
     "ModifyAllRuleStatus": {
       "document": "启用停用全部规则",
       "input": "ModifyAllRuleStatusRequest",
       "name": "启用停用全部规则",
-      "output": "ModifyAllRuleStatusResponse"
+      "output": "ModifyAllRuleStatusResponse",
+      "status": "online"
     },
     "ModifyAllVPCSwitchStatus": {
       "document": "VPC防火墙一键开关",
       "input": "ModifyAllVPCSwitchStatusRequest",
       "name": "VPC防火墙一键开关",
-      "output": "ModifyAllVPCSwitchStatusResponse"
+      "output": "ModifyAllVPCSwitchStatusResponse",
+      "status": "online"
     },
     "ModifyAssetScan": {
       "document": "资产扫描",
       "input": "ModifyAssetScanRequest",
       "name": "资产扫描",
-      "output": "ModifyAssetScanResponse"
+      "output": "ModifyAssetScanResponse",
+      "status": "online"
     },
     "ModifyBlockIgnoreList": {
       "document": "支持对封禁列表、放通列表如下操作：\n批量增加封禁IP、放通IP/域名\n批量删除封禁IP、放通IP/域名\n批量修改封禁IP、放通IP/域名生效事件",
       "input": "ModifyBlockIgnoreListRequest",
       "name": "封禁列表和放通列表批量操作接口",
-      "output": "ModifyBlockIgnoreListResponse"
+      "output": "ModifyBlockIgnoreListResponse",
+      "status": "online"
     },
     "ModifyBlockTop": {
       "document": "ModifyBlockTop取消置顶接口",
       "input": "ModifyBlockTopRequest",
       "name": "取消阻断记录置顶接口",
-      "output": "ModifyBlockTopResponse"
+      "output": "ModifyBlockTopResponse",
+      "status": "online"
     },
     "ModifyNatFwReSelect": {
       "document": "防火墙实例重新选择vpc或nat",
       "input": "ModifyNatFwReSelectRequest",
       "name": "防火墙实例重新选择vpc或nat",
-      "output": "ModifyNatFwReSelectResponse"
+      "output": "ModifyNatFwReSelectResponse",
+      "status": "online"
     },
     "ModifyNatFwSwitch": {
       "document": "修改NAT防火墙开关",
       "input": "ModifyNatFwSwitchRequest",
       "name": "修改NAT防火墙开关",
-      "output": "ModifyNatFwSwitchResponse"
+      "output": "ModifyNatFwSwitchResponse",
+      "status": "online"
     },
     "ModifyNatFwVpcDnsSwitch": {
       "document": "nat 防火墙VPC DNS 开关切换",
       "input": "ModifyNatFwVpcDnsSwitchRequest",
       "name": "nat 防火墙VPC DNS 开关切换",
-      "output": "ModifyNatFwVpcDnsSwitchResponse"
+      "output": "ModifyNatFwVpcDnsSwitchResponse",
+      "status": "online"
     },
     "ModifyPublicIPSwitchStatus": {
       "document": "单个修改互联网边界防火墙开关",
       "input": "ModifyPublicIPSwitchStatusRequest",
       "name": "单个修改互联网边界防火墙开关",
-      "output": "ModifyPublicIPSwitchStatusResponse"
+      "output": "ModifyPublicIPSwitchStatusResponse",
+      "status": "online"
     },
     "ModifyResourceGroup": {
       "document": "ModifyResourceGroup-资产中心资产组信息修改\n\n",
       "input": "ModifyResourceGroupRequest",
       "name": "资产中心资产组信息修改",
-      "output": "ModifyResourceGroupResponse"
+      "output": "ModifyResourceGroupResponse",
+      "status": "online"
     },
     "ModifyRunSyncAsset": {
       "document": "同步资产-互联网&VPC（新）",
       "input": "ModifyRunSyncAssetRequest",
       "name": "同步资产-互联网&VPC（新）",
-      "output": "ModifyRunSyncAssetResponse"
+      "output": "ModifyRunSyncAssetResponse",
+      "status": "online"
     },
     "ModifySecurityGroupItemRuleStatus": {
       "document": "启用停用单条企业安全组规则",
       "input": "ModifySecurityGroupItemRuleStatusRequest",
       "name": "启用停用单条企业安全组规则",
-      "output": "ModifySecurityGroupItemRuleStatusResponse"
+      "output": "ModifySecurityGroupItemRuleStatusResponse",
+      "status": "online"
     },
     "ModifySecurityGroupRule": {
       "document": "编辑单条安全组规则",
       "input": "ModifySecurityGroupRuleRequest",
       "name": "编辑单条安全组规则",
-      "output": "ModifySecurityGroupRuleResponse"
+      "output": "ModifySecurityGroupRuleResponse",
+      "status": "online"
     },
     "ModifySecurityGroupSequenceRules": {
       "document": "企业安全组规则快速排序",
       "input": "ModifySecurityGroupSequenceRulesRequest",
       "name": "企业安全组规则快速排序",
-      "output": "ModifySecurityGroupSequenceRulesResponse"
+      "output": "ModifySecurityGroupSequenceRulesResponse",
+      "status": "online"
     },
     "ModifySequenceRules": {
       "document": "修改规则执行顺序",
       "input": "ModifySequenceRulesRequest",
       "name": "修改规则执行顺序",
-      "output": "ModifySequenceRulesResponse"
+      "output": "ModifySequenceRulesResponse",
+      "status": "online"
     },
     "ModifyTableStatus": {
       "document": "修改规则表状态",
       "input": "ModifyTableStatusRequest",
       "name": "修改规则表状态",
-      "output": "ModifyTableStatusResponse"
+      "output": "ModifyTableStatusResponse",
+      "status": "online"
     },
     "RemoveAcRule": {
       "document": "删除互联网边界规则",
       "input": "RemoveAcRuleRequest",
       "name": "删除互联网边界规则",
-      "output": "RemoveAcRuleResponse"
+      "output": "RemoveAcRuleResponse",
+      "status": "online"
     },
     "RemoveEnterpriseSecurityGroupRule": {
       "document": "删除新企业安全组规则",
       "input": "RemoveEnterpriseSecurityGroupRuleRequest",
       "name": "删除新企业安全组规则",
-      "output": "RemoveEnterpriseSecurityGroupRuleResponse"
+      "output": "RemoveEnterpriseSecurityGroupRuleResponse",
+      "status": "online"
     },
     "SetNatFwDnatRule": {
       "document": "配置防火墙Dnat规则",
       "input": "SetNatFwDnatRuleRequest",
       "name": "配置防火墙Dnat规则",
-      "output": "SetNatFwDnatRuleResponse"
+      "output": "SetNatFwDnatRuleResponse",
+      "status": "online"
     },
     "SetNatFwEip": {
       "document": "设置防火墙实例弹性公网ip，目前仅支持新增模式的防火墙实例",
       "input": "SetNatFwEipRequest",
       "name": "设置防火墙实例弹性公网ip",
-      "output": "SetNatFwEipResponse"
+      "output": "SetNatFwEipResponse",
+      "status": "online"
     },
     "StopSecurityGroupRuleDispatch": {
       "document": "中止安全组规则下发",
       "input": "StopSecurityGroupRuleDispatchRequest",
       "name": "中止安全组规则下发",
-      "output": "StopSecurityGroupRuleDispatchResponse"
+      "output": "StopSecurityGroupRuleDispatchResponse",
+      "status": "online"
     }
   },
   "metadata": {

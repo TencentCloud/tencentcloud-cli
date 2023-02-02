@@ -4,175 +4,204 @@
       "document": "本接口（ApplyCertificate）用于免费证书申请。",
       "input": "ApplyCertificateRequest",
       "name": "免费证书申请",
-      "output": "ApplyCertificateResponse"
+      "output": "ApplyCertificateResponse",
+      "status": "online"
     },
     "CancelCertificateOrder": {
       "document": "取消证书订单。",
       "input": "CancelCertificateOrderRequest",
       "name": "取消证书订单",
-      "output": "CancelCertificateOrderResponse"
+      "output": "CancelCertificateOrderResponse",
+      "status": "online"
     },
     "CheckCertificateChain": {
       "document": "本接口（CheckCertificateChain）用于检查证书链是否完整。",
       "input": "CheckCertificateChainRequest",
       "name": "检查证书链完整性",
-      "output": "CheckCertificateChainResponse"
+      "output": "CheckCertificateChainResponse",
+      "status": "online"
     },
     "CommitCertificateInformation": {
       "document": "提交证书订单。",
       "input": "CommitCertificateInformationRequest",
       "name": "提交证书订单",
-      "output": "CommitCertificateInformationResponse"
+      "output": "CommitCertificateInformationResponse",
+      "status": "online"
     },
     "CompleteCertificate": {
       "document": "本接口（CompleteCertificate）用于主动触发证书验证。仅非DNSPod和Wotrus品牌证书支持使用此接口。",
       "input": "CompleteCertificateRequest",
       "name": "主动触发证书验证",
-      "output": "CompleteCertificateResponse"
+      "output": "CompleteCertificateResponse",
+      "status": "online"
     },
     "CreateCertificate": {
       "document": "本接口（CreateCertificate）用于创建付费证书。",
       "input": "CreateCertificateRequest",
       "name": "创建付费证书",
-      "output": "CreateCertificateResponse"
+      "output": "CreateCertificateResponse",
+      "status": "online"
     },
     "DeleteCertificate": {
       "document": "本接口（DeleteCertificate）用于删除证书。",
       "input": "DeleteCertificateRequest",
       "name": "删除证书",
-      "output": "DeleteCertificateResponse"
+      "output": "DeleteCertificateResponse",
+      "status": "online"
     },
     "DeleteManager": {
       "document": "删除管理人",
       "input": "DeleteManagerRequest",
       "name": "删除管理人",
-      "output": "DeleteManagerResponse"
+      "output": "DeleteManagerResponse",
+      "status": "online"
     },
     "DescribeCertificate": {
       "document": "本接口（DescribeCertificate）用于获取证书信息。",
       "input": "DescribeCertificateRequest",
       "name": "获取证书信息",
-      "output": "DescribeCertificateResponse"
+      "output": "DescribeCertificateResponse",
+      "status": "online"
     },
     "DescribeCertificateDetail": {
       "document": "获取证书详情。",
       "input": "DescribeCertificateDetailRequest",
       "name": "获取证书详情",
-      "output": "DescribeCertificateDetailResponse"
+      "output": "DescribeCertificateDetailResponse",
+      "status": "online"
     },
     "DescribeCertificateOperateLogs": {
       "document": "获取用户账号下有关证书的操作日志。",
       "input": "DescribeCertificateOperateLogsRequest",
       "name": "获取证书操作日志",
-      "output": "DescribeCertificateOperateLogsResponse"
+      "output": "DescribeCertificateOperateLogsResponse",
+      "status": "online"
     },
     "DescribeCertificates": {
       "document": "本接口（DescribeCertificates）用于获取证书列表。",
       "input": "DescribeCertificatesRequest",
       "name": "获取证书列表",
-      "output": "DescribeCertificatesResponse"
+      "output": "DescribeCertificatesResponse",
+      "status": "online"
     },
     "DescribeDeployedResources": {
       "document": "证书查询关联资源",
       "input": "DescribeDeployedResourcesRequest",
       "name": "证书查询关联资源",
-      "output": "DescribeDeployedResourcesResponse"
+      "output": "DescribeDeployedResourcesResponse",
+      "status": "online"
     },
     "DescribeManagerDetail": {
       "document": "查询管理人详情",
       "input": "DescribeManagerDetailRequest",
       "name": "查询管理人详情",
-      "output": "DescribeManagerDetailResponse"
+      "output": "DescribeManagerDetailResponse",
+      "status": "online"
     },
     "DescribeManagers": {
       "document": "查询管理人列表",
       "input": "DescribeManagersRequest",
       "name": "查询管理人列表",
-      "output": "DescribeManagersResponse"
+      "output": "DescribeManagersResponse",
+      "status": "online"
     },
     "DescribePackages": {
       "document": "获得权益包列表",
       "input": "DescribePackagesRequest",
       "name": "获得权益包列表",
-      "output": "DescribePackagesResponse"
+      "output": "DescribePackagesResponse",
+      "status": "online"
     },
     "DownloadCertificate": {
       "document": "本接口（DownloadCertificate）用于下载证书。",
       "input": "DownloadCertificateRequest",
       "name": "下载证书",
-      "output": "DownloadCertificateResponse"
+      "output": "DownloadCertificateResponse",
+      "status": "online"
     },
     "HostCertificate": {
       "document": "云资源托管",
       "input": "HostCertificateRequest",
       "name": "云资源托管",
-      "output": "HostCertificateResponse"
+      "output": "HostCertificateResponse",
+      "status": "online"
     },
     "ModifyCertificateAlias": {
       "document": "用户传入证书id和备注来修改证书备注。",
       "input": "ModifyCertificateAliasRequest",
       "name": "修改证书备注",
-      "output": "ModifyCertificateAliasResponse"
+      "output": "ModifyCertificateAliasResponse",
+      "status": "online"
     },
     "ModifyCertificateProject": {
       "document": "批量修改证书所属项目。",
       "input": "ModifyCertificateProjectRequest",
       "name": "修改证书所属项目",
-      "output": "ModifyCertificateProjectResponse"
+      "output": "ModifyCertificateProjectResponse",
+      "status": "online"
     },
     "ModifyCertificatesExpiringNotificationSwitch": {
       "document": "修改忽略证书到期通知。打开或关闭证书到期通知。",
       "input": "ModifyCertificatesExpiringNotificationSwitchRequest",
       "name": "修改是否忽略证书到期通知",
-      "output": "ModifyCertificatesExpiringNotificationSwitchResponse"
+      "output": "ModifyCertificatesExpiringNotificationSwitchResponse",
+      "status": "online"
     },
     "ReplaceCertificate": {
       "document": "本接口（ReplaceCertificate）用于重颁发证书。已申请的免费证书仅支持 RSA 算法、密钥对参数为2048的证书重颁发，并且目前仅支持1次重颁发。",
       "input": "ReplaceCertificateRequest",
       "name": "重颁发证书",
-      "output": "ReplaceCertificateResponse"
+      "output": "ReplaceCertificateResponse",
+      "status": "online"
     },
     "RevokeCertificate": {
       "document": "本接口（RevokeCertificate）用于吊销证书。",
       "input": "RevokeCertificateRequest",
       "name": "吊销证书",
-      "output": "RevokeCertificateResponse"
+      "output": "RevokeCertificateResponse",
+      "status": "online"
     },
     "SubmitAuditManager": {
       "document": "重新提交审核管理人",
       "input": "SubmitAuditManagerRequest",
       "name": "重新提交审核管理人",
-      "output": "SubmitAuditManagerResponse"
+      "output": "SubmitAuditManagerResponse",
+      "status": "online"
     },
     "SubmitCertificateInformation": {
       "document": "提交证书资料。输入参数信息可以分多次提交，但提交的证书资料应最低限度保持完整。",
       "input": "SubmitCertificateInformationRequest",
       "name": "提交证书资料",
-      "output": "SubmitCertificateInformationResponse"
+      "output": "SubmitCertificateInformationResponse",
+      "status": "online"
     },
     "UploadCertificate": {
       "document": "本接口（UploadCertificate）用于上传证书。",
       "input": "UploadCertificateRequest",
       "name": "上传证书",
-      "output": "UploadCertificateResponse"
+      "output": "UploadCertificateResponse",
+      "status": "online"
     },
     "UploadConfirmLetter": {
       "document": "本接口（UploadConfirmLetter）用于上传证书确认函。",
       "input": "UploadConfirmLetterRequest",
       "name": "上传证书确认函",
-      "output": "UploadConfirmLetterResponse"
+      "output": "UploadConfirmLetterResponse",
+      "status": "online"
     },
     "UploadRevokeLetter": {
       "document": "本接口（UploadRevokeLetter）用于上传证书吊销确认函。",
       "input": "UploadRevokeLetterRequest",
       "name": "上传证书吊销确认函",
-      "output": "UploadRevokeLetterResponse"
+      "output": "UploadRevokeLetterResponse",
+      "status": "online"
     },
     "VerifyManager": {
       "document": "重新核验管理人",
       "input": "VerifyManagerRequest",
       "name": "重新核验管理人",
-      "output": "VerifyManagerResponse"
+      "output": "VerifyManagerResponse",
+      "status": "online"
     }
   },
   "metadata": {

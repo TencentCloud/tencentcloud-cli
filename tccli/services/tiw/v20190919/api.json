@@ -4,175 +4,204 @@
       "document": "创建白板板书生成任务, 在任务结束后，如果提供了回调地址，将通过回调地址通知板书生成结果",
       "input": "CreateSnapshotTaskRequest",
       "name": "创建白板板书生成任务",
-      "output": "CreateSnapshotTaskResponse"
+      "output": "CreateSnapshotTaskResponse",
+      "status": "online"
     },
     "CreateTranscode": {
       "document": "创建一个文档转码任务",
       "input": "CreateTranscodeRequest",
       "name": "创建文档转码任务",
-      "output": "CreateTranscodeResponse"
+      "output": "CreateTranscodeResponse",
+      "status": "online"
     },
     "CreateVideoGenerationTask": {
       "document": "创建视频生成任务",
       "input": "CreateVideoGenerationTaskRequest",
       "name": "创建录制视频生成任务",
-      "output": "CreateVideoGenerationTaskResponse"
+      "output": "CreateVideoGenerationTaskResponse",
+      "status": "online"
     },
     "DescribeOnlineRecord": {
       "document": "查询录制任务状态与结果",
       "input": "DescribeOnlineRecordRequest",
       "name": "查询实时录制任务",
-      "output": "DescribeOnlineRecordResponse"
+      "output": "DescribeOnlineRecordResponse",
+      "status": "online"
     },
     "DescribeOnlineRecordCallback": {
       "document": "查询实时录制回调地址",
       "input": "DescribeOnlineRecordCallbackRequest",
       "name": "查询实时录制回调地址",
-      "output": "DescribeOnlineRecordCallbackResponse"
+      "output": "DescribeOnlineRecordCallbackResponse",
+      "status": "online"
     },
     "DescribeQualityMetrics": {
       "document": "查询互动白板质量数据",
       "input": "DescribeQualityMetricsRequest",
       "name": "查询质量数据",
-      "output": "DescribeQualityMetricsResponse"
+      "output": "DescribeQualityMetricsResponse",
+      "status": "online"
     },
     "DescribeSnapshotTask": {
       "document": "获取指定白板板书生成任务信息",
       "input": "DescribeSnapshotTaskRequest",
       "name": "获取白板板书生成任务信息",
-      "output": "DescribeSnapshotTaskResponse"
+      "output": "DescribeSnapshotTaskResponse",
+      "status": "online"
     },
     "DescribeTIWDailyUsage": {
       "document": "查询互动白板天维度计费用量。\n1. 单次查询统计区间最多不能超过31天。\n2. 由于统计延迟等原因，暂时不支持查询当天数据，建议在次日上午7点以后再来查询前一天的用量，例如在10月27日上午7点后，再来查询到10月26日整天的用量\n",
       "input": "DescribeTIWDailyUsageRequest",
       "name": "查询天维度计费用量",
-      "output": "DescribeTIWDailyUsageResponse"
+      "output": "DescribeTIWDailyUsageResponse",
+      "status": "online"
     },
     "DescribeTIWRoomDailyUsage": {
       "document": "查询互动白板房间维度每天计费用量。\n1. 单次查询统计区间最多不能超过31天。\n2. 由于统计延迟等原因，暂时不支持查询当天数据，建议在次日上午7点以后再来查询前一天的用量，例如在10月27日上午7点后，再来查询到10月26日整天的用量\n",
       "input": "DescribeTIWRoomDailyUsageRequest",
       "name": "查询房间维度每天计费用量",
-      "output": "DescribeTIWRoomDailyUsageResponse"
+      "output": "DescribeTIWRoomDailyUsageResponse",
+      "status": "online"
     },
     "DescribeTranscode": {
       "document": "查询文档转码任务的执行进度与转码结果",
       "input": "DescribeTranscodeRequest",
       "name": "查询文档转码任务",
-      "output": "DescribeTranscodeResponse"
+      "output": "DescribeTranscodeResponse",
+      "status": "online"
     },
     "DescribeTranscodeCallback": {
       "document": "查询文档转码回调地址",
       "input": "DescribeTranscodeCallbackRequest",
       "name": "查询文档转码回调地址",
-      "output": "DescribeTranscodeCallbackResponse"
+      "output": "DescribeTranscodeCallbackResponse",
+      "status": "online"
     },
     "DescribeVideoGenerationTask": {
       "document": "查询录制视频生成任务状态与结果",
       "input": "DescribeVideoGenerationTaskRequest",
       "name": "查询录制视频生成任务",
-      "output": "DescribeVideoGenerationTaskResponse"
+      "output": "DescribeVideoGenerationTaskResponse",
+      "status": "online"
     },
     "DescribeVideoGenerationTaskCallback": {
       "document": "查询录制视频生成回调地址",
       "input": "DescribeVideoGenerationTaskCallbackRequest",
       "name": "查询录制视频生成回调地址",
-      "output": "DescribeVideoGenerationTaskCallbackResponse"
+      "output": "DescribeVideoGenerationTaskCallbackResponse",
+      "status": "online"
     },
     "DescribeWhiteboardPush": {
       "document": "查询推流任务状态与结果",
       "input": "DescribeWhiteboardPushRequest",
       "name": "查询白板推流任务",
-      "output": "DescribeWhiteboardPushResponse"
+      "output": "DescribeWhiteboardPushResponse",
+      "status": "online"
     },
     "DescribeWhiteboardPushCallback": {
       "document": "查询白板推流回调地址",
       "input": "DescribeWhiteboardPushCallbackRequest",
       "name": "查询白板推流回调地址",
-      "output": "DescribeWhiteboardPushCallbackResponse"
+      "output": "DescribeWhiteboardPushCallbackResponse",
+      "status": "online"
     },
     "PauseOnlineRecord": {
       "document": "暂停实时录制",
       "input": "PauseOnlineRecordRequest",
       "name": "暂停实时录制",
-      "output": "PauseOnlineRecordResponse"
+      "output": "PauseOnlineRecordResponse",
+      "status": "online"
     },
     "ResumeOnlineRecord": {
       "document": "恢复实时录制",
       "input": "ResumeOnlineRecordRequest",
       "name": "恢复实时录制",
-      "output": "ResumeOnlineRecordResponse"
+      "output": "ResumeOnlineRecordResponse",
+      "status": "online"
     },
     "SetOnlineRecordCallback": {
       "document": "设置实时录制回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40258",
       "input": "SetOnlineRecordCallbackRequest",
       "name": "设置实时录制回调地址",
-      "output": "SetOnlineRecordCallbackResponse"
+      "output": "SetOnlineRecordCallbackResponse",
+      "status": "online"
     },
     "SetOnlineRecordCallbackKey": {
       "document": "设置实时录制回调鉴权密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
       "input": "SetOnlineRecordCallbackKeyRequest",
       "name": "设置实时录制回调密钥",
-      "output": "SetOnlineRecordCallbackKeyResponse"
+      "output": "SetOnlineRecordCallbackKeyResponse",
+      "status": "online"
     },
     "SetTranscodeCallback": {
       "document": "设置文档转码回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260",
       "input": "SetTranscodeCallbackRequest",
       "name": "设置文档转码回调地址",
-      "output": "SetTranscodeCallbackResponse"
+      "output": "SetTranscodeCallbackResponse",
+      "status": "online"
     },
     "SetTranscodeCallbackKey": {
       "document": "设置文档转码回调鉴权密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
       "input": "SetTranscodeCallbackKeyRequest",
       "name": "设置文档转码回调密钥",
-      "output": "SetTranscodeCallbackKeyResponse"
+      "output": "SetTranscodeCallbackKeyResponse",
+      "status": "online"
     },
     "SetVideoGenerationTaskCallback": {
       "document": "设置录制视频生成回调地址",
       "input": "SetVideoGenerationTaskCallbackRequest",
       "name": "设置录制视频生成回调地址",
-      "output": "SetVideoGenerationTaskCallbackResponse"
+      "output": "SetVideoGenerationTaskCallbackResponse",
+      "status": "online"
     },
     "SetVideoGenerationTaskCallbackKey": {
       "document": "设置视频生成回调鉴权密钥",
       "input": "SetVideoGenerationTaskCallbackKeyRequest",
       "name": "设置录制视频生成回调密钥",
-      "output": "SetVideoGenerationTaskCallbackKeyResponse"
+      "output": "SetVideoGenerationTaskCallbackKeyResponse",
+      "status": "online"
     },
     "SetWhiteboardPushCallback": {
       "document": "设置白板推流回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
       "input": "SetWhiteboardPushCallbackRequest",
       "name": "设置白板推流回调地址",
-      "output": "SetWhiteboardPushCallbackResponse"
+      "output": "SetWhiteboardPushCallbackResponse",
+      "status": "online"
     },
     "SetWhiteboardPushCallbackKey": {
       "document": "设置白板推流回调鉴权密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
       "input": "SetWhiteboardPushCallbackKeyRequest",
       "name": "设置白板推流回调密钥",
-      "output": "SetWhiteboardPushCallbackKeyResponse"
+      "output": "SetWhiteboardPushCallbackKeyResponse",
+      "status": "online"
     },
     "StartOnlineRecord": {
       "document": "发起一个实时录制任务",
       "input": "StartOnlineRecordRequest",
       "name": "开始实时录制",
-      "output": "StartOnlineRecordResponse"
+      "output": "StartOnlineRecordResponse",
+      "status": "online"
     },
     "StartWhiteboardPush": {
       "document": "发起一个白板推流任务",
       "input": "StartWhiteboardPushRequest",
       "name": "开始白板推流",
-      "output": "StartWhiteboardPushResponse"
+      "output": "StartWhiteboardPushResponse",
+      "status": "online"
     },
     "StopOnlineRecord": {
       "document": "停止实时录制",
       "input": "StopOnlineRecordRequest",
       "name": "停止实时录制",
-      "output": "StopOnlineRecordResponse"
+      "output": "StopOnlineRecordResponse",
+      "status": "online"
     },
     "StopWhiteboardPush": {
       "document": "停止白板推流任务",
       "input": "StopWhiteboardPushRequest",
       "name": "结束白板推流",
-      "output": "StopWhiteboardPushResponse"
+      "output": "StopWhiteboardPushResponse",
+      "status": "online"
     }
   },
   "metadata": {

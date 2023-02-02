@@ -4,565 +4,659 @@
       "document": "申请AI模型",
       "input": "ApplyAIModelRequest",
       "name": "申请AI模型",
-      "output": "ApplyAIModelResponse"
+      "output": "ApplyAIModelResponse",
+      "status": "online"
     },
     "BatchUpdateFirmware": {
       "document": "本接口（BatchUpdateFirmware）用于批量更新设备固件 ",
       "input": "BatchUpdateFirmwareRequest",
       "name": "批量更新固件",
-      "output": "BatchUpdateFirmwareResponse"
+      "output": "BatchUpdateFirmwareResponse",
+      "status": "online"
     },
     "BindCloudStorageUser": {
       "document": "绑定云存用户",
       "input": "BindCloudStorageUserRequest",
       "name": "绑定云存用户",
-      "output": "BindCloudStorageUserResponse"
+      "output": "BindCloudStorageUserResponse",
+      "status": "online"
     },
     "CallDeviceActionAsync": {
       "document": "异步调用设备行为",
       "input": "CallDeviceActionAsyncRequest",
       "name": "异步调用设备行为",
-      "output": "CallDeviceActionAsyncResponse"
+      "output": "CallDeviceActionAsyncResponse",
+      "status": "online"
     },
     "CallDeviceActionSync": {
       "document": "同步调用设备行为",
       "input": "CallDeviceActionSyncRequest",
       "name": "同步调用设备行为",
-      "output": "CallDeviceActionSyncResponse"
+      "output": "CallDeviceActionSyncResponse",
+      "status": "online"
     },
     "CancelAIModelApplication": {
       "document": "取消AI模型申请",
       "input": "CancelAIModelApplicationRequest",
       "name": "取消AI模型申请",
-      "output": "CancelAIModelApplicationResponse"
+      "output": "CancelAIModelApplicationResponse",
+      "status": "online"
     },
     "CancelDeviceFirmwareTask": {
       "document": "本接口用于取消设备升级任务",
       "input": "CancelDeviceFirmwareTaskRequest",
       "name": "取消设备升级任务",
-      "output": "CancelDeviceFirmwareTaskResponse"
+      "output": "CancelDeviceFirmwareTaskResponse",
+      "status": "online"
     },
     "CheckForwardAuth": {
       "document": "判断是否开启的转发的权限",
       "input": "CheckForwardAuthRequest",
       "name": "判断是否开启的转发的权限",
-      "output": "CheckForwardAuthResponse"
+      "output": "CheckForwardAuthResponse",
+      "status": "online"
     },
     "ControlDeviceData": {
       "document": "根据设备产品ID、设备名称，设置控制设备的属性数据。",
       "input": "ControlDeviceDataRequest",
       "name": "设备远程控制",
-      "output": "ControlDeviceDataResponse"
+      "output": "ControlDeviceDataResponse",
+      "status": "online"
     },
     "CreateAIDetection": {
       "document": "发起AI推理请求",
       "input": "CreateAIDetectionRequest",
       "name": "发起AI推理请求",
-      "output": "CreateAIDetectionResponse"
+      "output": "CreateAIDetectionResponse",
+      "status": "online"
     },
     "CreateBatch": {
       "document": "创建批次",
       "input": "CreateBatchRequest",
       "name": "创建批次",
-      "output": "CreateBatchResponse"
+      "output": "CreateBatchResponse",
+      "status": "online"
     },
     "CreateCOSCredentials": {
       "document": "创建COS上传密钥",
       "input": "CreateCOSCredentialsRequest",
       "name": "创建COS上传密钥",
-      "output": "CreateCOSCredentialsResponse"
+      "output": "CreateCOSCredentialsResponse",
+      "status": "online"
     },
     "CreateCloudStorage": {
       "document": "开通云存服务",
       "input": "CreateCloudStorageRequest",
       "name": "开通云存服务",
-      "output": "CreateCloudStorageResponse"
+      "output": "CreateCloudStorageResponse",
+      "status": "online"
     },
     "CreateDataForward": {
       "document": "创建数据转发",
       "input": "CreateDataForwardRequest",
       "name": "创建数据转发",
-      "output": "CreateDataForwardResponse"
+      "output": "CreateDataForwardResponse",
+      "status": "online"
     },
     "CreateForwardRule": {
       "document": "创建转发规则",
       "input": "CreateForwardRuleRequest",
       "name": "创建转发规则",
-      "output": "CreateForwardRuleResponse"
+      "output": "CreateForwardRuleResponse",
+      "status": "online"
     },
     "CreateProduct": {
       "document": "创建产品",
       "input": "CreateProductRequest",
       "name": "创建产品",
-      "output": "CreateProductResponse"
+      "output": "CreateProductResponse",
+      "status": "online"
     },
     "CreateTaskFileUrl": {
       "document": "本接口（CreateTaskFileUrl）用于获取产品级任务文件上传链接",
       "input": "CreateTaskFileUrlRequest",
       "name": "获取任务文件上传链接",
-      "output": "CreateTaskFileUrlResponse"
+      "output": "CreateTaskFileUrlResponse",
+      "status": "online"
     },
     "DeleteDevice": {
       "document": "删除设备",
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
-      "output": "DeleteDeviceResponse"
+      "output": "DeleteDeviceResponse",
+      "status": "online"
     },
     "DeleteFirmware": {
       "document": "本接口（DeleteFirmware）用于删除固件 ",
       "input": "DeleteFirmwareRequest",
       "name": "删除固件",
-      "output": "DeleteFirmwareResponse"
+      "output": "DeleteFirmwareResponse",
+      "status": "online"
     },
     "DeleteForwardRule": {
       "document": "删除转发规则",
       "input": "DeleteForwardRuleRequest",
       "name": "删除转发规则",
-      "output": "DeleteForwardRuleResponse"
+      "output": "DeleteForwardRuleResponse",
+      "status": "online"
     },
     "DeleteProduct": {
       "document": "删除产品",
       "input": "DeleteProductRequest",
       "name": "删除产品",
-      "output": "DeleteProductResponse"
+      "output": "DeleteProductResponse",
+      "status": "online"
     },
     "DescribeAIModelApplications": {
       "document": "用户AI模型申请记录",
       "input": "DescribeAIModelApplicationsRequest",
       "name": "用户AI模型申请记录",
-      "output": "DescribeAIModelApplicationsResponse"
+      "output": "DescribeAIModelApplicationsResponse",
+      "status": "online"
     },
     "DescribeAIModelChannel": {
       "document": "查看AI推理结果推送配置",
       "input": "DescribeAIModelChannelRequest",
       "name": "查看AI推理结果推送配置",
-      "output": "DescribeAIModelChannelResponse"
+      "output": "DescribeAIModelChannelResponse",
+      "status": "online"
     },
     "DescribeAIModelUsage": {
       "document": "查看AI模型资源包",
       "input": "DescribeAIModelUsageRequest",
       "name": "查看AI模型资源包",
-      "output": "DescribeAIModelUsageResponse"
+      "output": "DescribeAIModelUsageResponse",
+      "status": "online"
     },
     "DescribeAIModels": {
       "document": "拉取AI模型列表",
       "input": "DescribeAIModelsRequest",
       "name": "拉取AI模型列表",
-      "output": "DescribeAIModelsResponse"
+      "output": "DescribeAIModelsResponse",
+      "status": "online"
     },
     "DescribeAccount": {
       "document": "获取消费版账号信息",
       "input": "DescribeAccountRequest",
       "name": "获取消费版账号信息",
-      "output": "DescribeAccountResponse"
+      "output": "DescribeAccountResponse",
+      "status": "online"
     },
     "DescribeBalance": {
       "document": "查询账户余额",
       "input": "DescribeBalanceRequest",
       "name": "查询账户余额",
-      "output": "DescribeBalanceResponse"
+      "output": "DescribeBalanceResponse",
+      "status": "online"
     },
     "DescribeBalanceTransactions": {
       "document": "拉取账户流水",
       "input": "DescribeBalanceTransactionsRequest",
       "name": "拉取账户流水",
-      "output": "DescribeBalanceTransactionsResponse"
+      "output": "DescribeBalanceTransactionsResponse",
+      "status": "online"
     },
     "DescribeBatch": {
       "document": "获取批次详情",
       "input": "DescribeBatchRequest",
       "name": "获取批次详情",
-      "output": "DescribeBatchResponse"
+      "output": "DescribeBatchResponse",
+      "status": "online"
     },
     "DescribeBatchs": {
       "document": "获取批次列表",
       "input": "DescribeBatchsRequest",
       "name": "获取批次列表",
-      "output": "DescribeBatchsResponse"
+      "output": "DescribeBatchsResponse",
+      "status": "online"
     },
     "DescribeBonuses": {
       "document": "查看运营活动资源包列表",
       "input": "DescribeBonusesRequest",
       "name": "查看运营活动资源包列表",
-      "output": "DescribeBonusesResponse"
+      "output": "DescribeBonusesResponse",
+      "status": "online"
     },
     "DescribeCategory": {
       "document": "获取Category详情",
       "input": "DescribeCategoryRequest",
       "name": "获取Category详情",
-      "output": "DescribeCategoryResponse"
+      "output": "DescribeCategoryResponse",
+      "status": "online"
     },
     "DescribeCloudStorage": {
       "document": "获取设备云存服务详情",
       "input": "DescribeCloudStorageRequest",
       "name": "获取设备云存服务详情",
-      "output": "DescribeCloudStorageResponse"
+      "output": "DescribeCloudStorageResponse",
+      "status": "online"
     },
     "DescribeCloudStorageDate": {
       "document": "获取具有云存的日期",
       "input": "DescribeCloudStorageDateRequest",
       "name": "获取具有云存的日期",
-      "output": "DescribeCloudStorageDateResponse"
+      "output": "DescribeCloudStorageDateResponse",
+      "status": "online"
     },
     "DescribeCloudStorageEvents": {
       "document": "拉取云存事件列表",
       "input": "DescribeCloudStorageEventsRequest",
       "name": "拉取云存事件列表",
-      "output": "DescribeCloudStorageEventsResponse"
+      "output": "DescribeCloudStorageEventsResponse",
+      "status": "online"
     },
     "DescribeCloudStoragePackageConsumeDetails": {
       "document": "获取云存套餐包消耗详细记录",
       "input": "DescribeCloudStoragePackageConsumeDetailsRequest",
       "name": "获取云存套餐包消耗详细记录",
-      "output": "DescribeCloudStoragePackageConsumeDetailsResponse"
+      "output": "DescribeCloudStoragePackageConsumeDetailsResponse",
+      "status": "online"
     },
     "DescribeCloudStoragePackageConsumeStats": {
       "document": "获取云存套餐包消耗统计",
       "input": "DescribeCloudStoragePackageConsumeStatsRequest",
       "name": "获取云存套餐包消耗统计",
-      "output": "DescribeCloudStoragePackageConsumeStatsResponse"
+      "output": "DescribeCloudStoragePackageConsumeStatsResponse",
+      "status": "online"
     },
     "DescribeCloudStorageStreamData": {
       "document": "获取设备图片流数据",
       "input": "DescribeCloudStorageStreamDataRequest",
       "name": "获取设备图片流数据",
-      "output": "DescribeCloudStorageStreamDataResponse"
+      "output": "DescribeCloudStorageStreamDataResponse",
+      "status": "online"
     },
     "DescribeCloudStorageThumbnail": {
       "document": "拉取云存事件缩略图",
       "input": "DescribeCloudStorageThumbnailRequest",
       "name": "拉取云存事件缩略图",
-      "output": "DescribeCloudStorageThumbnailResponse"
+      "output": "DescribeCloudStorageThumbnailResponse",
+      "status": "online"
     },
     "DescribeCloudStorageTime": {
       "document": "获取某一天云存时间轴",
       "input": "DescribeCloudStorageTimeRequest",
       "name": "获取某一天云存时间轴",
-      "output": "DescribeCloudStorageTimeResponse"
+      "output": "DescribeCloudStorageTimeResponse",
+      "status": "online"
     },
     "DescribeCloudStorageUsers": {
       "document": "拉取云存用户列表",
       "input": "DescribeCloudStorageUsersRequest",
       "name": "拉取云存用户列表",
-      "output": "DescribeCloudStorageUsersResponse"
+      "output": "DescribeCloudStorageUsersResponse",
+      "status": "online"
     },
     "DescribeDataForwardList": {
       "document": "获取数据转发列表",
       "input": "DescribeDataForwardListRequest",
       "name": "获取数据转发列表",
-      "output": "DescribeDataForwardListResponse"
+      "output": "DescribeDataForwardListResponse",
+      "status": "online"
     },
     "DescribeDevice": {
       "document": "查看设备详情",
       "input": "DescribeDeviceRequest",
       "name": "查看设备详情",
-      "output": "DescribeDeviceResponse"
+      "output": "DescribeDeviceResponse",
+      "status": "online"
     },
     "DescribeDeviceActionHistory": {
       "document": "为用户提供获取动作历史的能力。",
       "input": "DescribeDeviceActionHistoryRequest",
       "name": "获取设备动作历史",
-      "output": "DescribeDeviceActionHistoryResponse"
+      "output": "DescribeDeviceActionHistoryResponse",
+      "status": "online"
     },
     "DescribeDeviceCommLog": {
       "document": "获取设备在指定时间范围内的通讯日志",
       "input": "DescribeDeviceCommLogRequest",
       "name": "获取设备通讯日志",
-      "output": "DescribeDeviceCommLogResponse"
+      "output": "DescribeDeviceCommLogResponse",
+      "status": "online"
     },
     "DescribeDeviceData": {
       "document": "获取设备属性数据",
       "input": "DescribeDeviceDataRequest",
       "name": "获取设备属性数据",
-      "output": "DescribeDeviceDataResponse"
+      "output": "DescribeDeviceDataResponse",
+      "status": "online"
     },
     "DescribeDeviceDataHistory": {
       "document": "获取设备在指定时间范围内上报的历史数据。",
       "input": "DescribeDeviceDataHistoryRequest",
       "name": "获取设备历史数据",
-      "output": "DescribeDeviceDataHistoryResponse"
+      "output": "DescribeDeviceDataHistoryResponse",
+      "status": "online"
     },
     "DescribeDeviceDataStats": {
       "document": "查询设备数据统计",
       "input": "DescribeDeviceDataStatsRequest",
       "name": "查询设备数据统计",
-      "output": "DescribeDeviceDataStatsResponse"
+      "output": "DescribeDeviceDataStatsResponse",
+      "status": "online"
     },
     "DescribeDeviceEventHistory": {
       "document": "获取设备的历史事件",
       "input": "DescribeDeviceEventHistoryRequest",
       "name": "获取设备的历史事件",
-      "output": "DescribeDeviceEventHistoryResponse"
+      "output": "DescribeDeviceEventHistoryResponse",
+      "status": "online"
     },
     "DescribeDeviceStatusLog": {
       "document": "获取设备上下线日志",
       "input": "DescribeDeviceStatusLogRequest",
       "name": "获取设备上下线日志",
-      "output": "DescribeDeviceStatusLogResponse"
+      "output": "DescribeDeviceStatusLogResponse",
+      "status": "online"
     },
     "DescribeDevices": {
       "document": "获取设备列表",
       "input": "DescribeDevicesRequest",
       "name": "获取设备列表",
-      "output": "DescribeDevicesResponse"
+      "output": "DescribeDevicesResponse",
+      "status": "online"
     },
     "DescribeFirmware": {
       "document": "本接口（DescribeFirmware）用于查询固件信息",
       "input": "DescribeFirmwareRequest",
       "name": "查询固件信息",
-      "output": "DescribeFirmwareResponse"
+      "output": "DescribeFirmwareResponse",
+      "status": "online"
     },
     "DescribeFirmwareTask": {
       "document": "此接口查询固件升级任务详情",
       "input": "DescribeFirmwareTaskRequest",
       "name": "查询固件升级任务详情",
-      "output": "DescribeFirmwareTaskResponse"
+      "output": "DescribeFirmwareTaskResponse",
+      "status": "online"
     },
     "DescribeFirmwareTaskDevices": {
       "document": "本接口用于查询固件升级任务的设备列表",
       "input": "DescribeFirmwareTaskDevicesRequest",
       "name": "查询固件升级任务的设备列表",
-      "output": "DescribeFirmwareTaskDevicesResponse"
+      "output": "DescribeFirmwareTaskDevicesResponse",
+      "status": "online"
     },
     "DescribeFirmwareTaskDistribution": {
       "document": "本接口用于查询固件升级任务状态分布",
       "input": "DescribeFirmwareTaskDistributionRequest",
       "name": "查询固件升级任务状态分布",
-      "output": "DescribeFirmwareTaskDistributionResponse"
+      "output": "DescribeFirmwareTaskDistributionResponse",
+      "status": "online"
     },
     "DescribeFirmwareTaskStatistics": {
       "document": "本接口用于查询固件升级任务统计信息",
       "input": "DescribeFirmwareTaskStatisticsRequest",
       "name": "查询固件升级任务统计信息",
-      "output": "DescribeFirmwareTaskStatisticsResponse"
+      "output": "DescribeFirmwareTaskStatisticsResponse",
+      "status": "online"
     },
     "DescribeFirmwareTasks": {
       "document": "本接口用于查询固件升级任务列表",
       "input": "DescribeFirmwareTasksRequest",
       "name": "查询固件升级任务列表",
-      "output": "DescribeFirmwareTasksResponse"
+      "output": "DescribeFirmwareTasksResponse",
+      "status": "online"
     },
     "DescribeForwardRule": {
       "document": "获取产品转发规则",
       "input": "DescribeForwardRuleRequest",
       "name": "获取产品转发规则",
-      "output": "DescribeForwardRuleResponse"
+      "output": "DescribeForwardRuleResponse",
+      "status": "online"
     },
     "DescribeMessageDataStats": {
       "document": "查询设备消息数量统计",
       "input": "DescribeMessageDataStatsRequest",
       "name": "查询设备消息数量统计",
-      "output": "DescribeMessageDataStatsResponse"
+      "output": "DescribeMessageDataStatsResponse",
+      "status": "online"
     },
     "DescribeModelDefinition": {
       "document": "查询产品配置的数据模板信息",
       "input": "DescribeModelDefinitionRequest",
       "name": "查询产品数据模板",
-      "output": "DescribeModelDefinitionResponse"
+      "output": "DescribeModelDefinitionResponse",
+      "status": "online"
     },
     "DescribePackageConsumeTask": {
       "document": "查询套餐消耗记录详情",
       "input": "DescribePackageConsumeTaskRequest",
       "name": "查询套餐消耗记录详情",
-      "output": "DescribePackageConsumeTaskResponse"
+      "output": "DescribePackageConsumeTaskResponse",
+      "status": "online"
     },
     "DescribePackageConsumeTasks": {
       "document": "查询套餐消耗记录列表",
       "input": "DescribePackageConsumeTasksRequest",
       "name": "查询套餐消耗记录列表",
-      "output": "DescribePackageConsumeTasksResponse"
+      "output": "DescribePackageConsumeTasksResponse",
+      "status": "online"
     },
     "DescribeProduct": {
       "document": "获取产品详情",
       "input": "DescribeProductRequest",
       "name": "获取产品详情",
-      "output": "DescribeProductResponse"
+      "output": "DescribeProductResponse",
+      "status": "online"
     },
     "DescribeProductDynamicRegister": {
       "document": "获取产品动态注册详情",
       "input": "DescribeProductDynamicRegisterRequest",
       "name": "获取产品动态注册详情",
-      "output": "DescribeProductDynamicRegisterResponse"
+      "output": "DescribeProductDynamicRegisterResponse",
+      "status": "online"
     },
     "DescribeProducts": {
       "document": "获取产品列表",
       "input": "DescribeProductsRequest",
       "name": "获取产品列表",
-      "output": "DescribeProductsResponse"
+      "output": "DescribeProductsResponse",
+      "status": "online"
     },
     "DescribePushChannel": {
       "document": "查看推送通道",
       "input": "DescribePushChannelRequest",
       "name": "查看推送通道",
-      "output": "DescribePushChannelResponse"
+      "output": "DescribePushChannelResponse",
+      "status": "online"
     },
     "DescribeSDKLog": {
       "document": "获取设备sdk日志",
       "input": "DescribeSDKLogRequest",
       "name": "获取设备sdk日志",
-      "output": "DescribeSDKLogResponse"
+      "output": "DescribeSDKLogResponse",
+      "status": "online"
     },
     "DescribeUser": {
       "document": "获取video消费版用户信息",
       "input": "DescribeUserRequest",
       "name": "获取用户信息",
-      "output": "DescribeUserResponse"
+      "output": "DescribeUserResponse",
+      "status": "online"
     },
     "EditFirmware": {
       "document": "本接口用于编辑固件信息",
       "input": "EditFirmwareRequest",
       "name": "编辑固件信息",
-      "output": "EditFirmwareResponse"
+      "output": "EditFirmwareResponse",
+      "status": "online"
     },
     "GenSingleDeviceSignatureOfPublic": {
       "document": "获取设备的绑定签名",
       "input": "GenSingleDeviceSignatureOfPublicRequest",
       "name": "生成单个设备绑定的签名",
-      "output": "GenSingleDeviceSignatureOfPublicResponse"
+      "output": "GenSingleDeviceSignatureOfPublicResponse",
+      "status": "online"
     },
     "GenerateSignedVideoURL": {
       "document": "获取视频防盗链播放URL",
       "input": "GenerateSignedVideoURLRequest",
       "name": "获取视频防盗链播放URL",
-      "output": "GenerateSignedVideoURLResponse"
+      "output": "GenerateSignedVideoURLResponse",
+      "status": "online"
     },
     "GetAllFirmwareVersion": {
       "document": "本接口（GetAllFirmwareVersion）用于获取所有的版本列表 ",
       "input": "GetAllFirmwareVersionRequest",
       "name": "获取所有版本列表",
-      "output": "GetAllFirmwareVersionResponse"
+      "output": "GetAllFirmwareVersionResponse",
+      "status": "online"
     },
     "GetFirmwareURL": {
       "document": "本接口（GetFirmwareURL）用于获取固件存储的URL ",
       "input": "GetFirmwareURLRequest",
       "name": "获取固件下载地址",
-      "output": "GetFirmwareURLResponse"
+      "output": "GetFirmwareURLResponse",
+      "status": "online"
     },
     "ImportModelDefinition": {
       "document": "导入其它产品的数据模板，覆盖现有数据模板的物模型和产品分类信息",
       "input": "ImportModelDefinitionRequest",
       "name": "导入其它产品的数据模板",
-      "output": "ImportModelDefinitionResponse"
+      "output": "ImportModelDefinitionResponse",
+      "status": "online"
     },
     "InheritCloudStorageUser": {
       "document": "继承云存用户",
       "input": "InheritCloudStorageUserRequest",
       "name": "继承云存用户",
-      "output": "InheritCloudStorageUserResponse"
+      "output": "InheritCloudStorageUserResponse",
+      "status": "online"
     },
     "ListFirmwares": {
       "document": "本接口（ListFirmwares）用于获取固件列表 ",
       "input": "ListFirmwaresRequest",
       "name": "获取固件列表",
-      "output": "ListFirmwaresResponse"
+      "output": "ListFirmwaresResponse",
+      "status": "online"
     },
     "ModifyDataForward": {
       "document": "修改数据转发",
       "input": "ModifyDataForwardRequest",
       "name": "修改数据转发",
-      "output": "ModifyDataForwardResponse"
+      "output": "ModifyDataForwardResponse",
+      "status": "online"
     },
     "ModifyDataForwardStatus": {
       "document": "设置数据转发状态",
       "input": "ModifyDataForwardStatusRequest",
       "name": "设置数据转发状态",
-      "output": "ModifyDataForwardStatusResponse"
+      "output": "ModifyDataForwardStatusResponse",
+      "status": "online"
     },
     "ModifyDevice": {
       "document": "修改设备信息",
       "input": "ModifyDeviceRequest",
       "name": "修改设备信息",
-      "output": "ModifyDeviceResponse"
+      "output": "ModifyDeviceResponse",
+      "status": "online"
     },
     "ModifyDeviceLogLevel": {
       "document": "更新设备日志级别",
       "input": "ModifyDeviceLogLevelRequest",
       "name": "更新设备日志级别",
-      "output": "ModifyDeviceLogLevelResponse"
+      "output": "ModifyDeviceLogLevelResponse",
+      "status": "online"
     },
     "ModifyForwardRule": {
       "document": "修改转发规则",
       "input": "ModifyForwardRuleRequest",
       "name": "修改转发规则",
-      "output": "ModifyForwardRuleResponse"
+      "output": "ModifyForwardRuleResponse",
+      "status": "online"
     },
     "ModifyModelDefinition": {
       "document": "提供修改产品的数据模板的能力",
       "input": "ModifyModelDefinitionRequest",
       "name": "修改产品数据模板",
-      "output": "ModifyModelDefinitionResponse"
+      "output": "ModifyModelDefinitionResponse",
+      "status": "online"
     },
     "ModifyProduct": {
       "document": "修改产品信息",
       "input": "ModifyProductRequest",
       "name": "修改产品信息",
-      "output": "ModifyProductResponse"
+      "output": "ModifyProductResponse",
+      "status": "online"
     },
     "ModifyProductDynamicRegister": {
       "document": "修改产品动态注册",
       "input": "ModifyProductDynamicRegisterRequest",
       "name": "修改产品动态注册",
-      "output": "ModifyProductDynamicRegisterResponse"
+      "output": "ModifyProductDynamicRegisterResponse",
+      "status": "online"
     },
     "ModifyPushChannel": {
       "document": "更新推送通道",
       "input": "ModifyPushChannelRequest",
       "name": "更新推送通道",
-      "output": "ModifyPushChannelResponse"
+      "output": "ModifyPushChannelResponse",
+      "status": "online"
     },
     "PublishMessage": {
       "document": "本接口（PublishMessage）用于使用自定义透传协议进行设备远控",
       "input": "PublishMessageRequest",
       "name": "设备透传指令控制",
-      "output": "PublishMessageResponse"
+      "output": "PublishMessageResponse",
+      "status": "online"
     },
     "ReportAliveDevice": {
       "document": "上报活跃设备",
       "input": "ReportAliveDeviceRequest",
       "name": "上报活跃设备",
-      "output": "ReportAliveDeviceResponse"
+      "output": "ReportAliveDeviceResponse",
+      "status": "online"
     },
     "ResetCloudStorage": {
       "document": "重置云存服务",
       "input": "ResetCloudStorageRequest",
       "name": "重置云存服务",
-      "output": "ResetCloudStorageResponse"
+      "output": "ResetCloudStorageResponse",
+      "status": "online"
     },
     "RetryDeviceFirmwareTask": {
       "document": "本接口用于重试设备升级任务",
       "input": "RetryDeviceFirmwareTaskRequest",
       "name": "重试设备升级任务",
-      "output": "RetryDeviceFirmwareTaskResponse"
+      "output": "RetryDeviceFirmwareTaskResponse",
+      "status": "online"
     },
     "SetForwardAuth": {
       "document": "设置转发权限",
       "input": "SetForwardAuthRequest",
       "name": "设置转发权限",
-      "output": "SetForwardAuthResponse"
+      "output": "SetForwardAuthResponse",
+      "status": "online"
     },
     "TransferCloudStorage": {
       "document": "转移云存服务",
       "input": "TransferCloudStorageRequest",
       "name": "转移云存服务",
-      "output": "TransferCloudStorageResponse"
+      "output": "TransferCloudStorageResponse",
+      "status": "online"
     },
     "UpdateAIModelChannel": {
       "document": "更新AI推理结果推送配置",
       "input": "UpdateAIModelChannelRequest",
       "name": "更新AI推理结果推送配置",
-      "output": "UpdateAIModelChannelResponse"
+      "output": "UpdateAIModelChannelResponse",
+      "status": "online"
     },
     "UploadFirmware": {
       "document": "本接口（UploadFirmware）用于上传设备固件信息 ",
       "input": "UploadFirmwareRequest",
       "name": "上传固件信息",
-      "output": "UploadFirmwareResponse"
+      "output": "UploadFirmwareResponse",
+      "status": "online"
     },
     "WakeUpDevice": {
       "document": "设备唤醒",
       "input": "WakeUpDeviceRequest",
       "name": "设备唤醒",
-      "output": "WakeUpDeviceResponse"
+      "output": "WakeUpDeviceResponse",
+      "status": "online"
     }
   },
   "metadata": {

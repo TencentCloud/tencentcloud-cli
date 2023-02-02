@@ -4,127 +4,148 @@
       "document": "本接口(CreateAnalysis)用于创建一个分析项。\n调用本接口前需先调用创建文件凭证(CreateFileTicket)接口获取文件上传凭证，并利用该接口返回值构造请求上传文件。",
       "input": "CreateAnalysisRequest",
       "name": "创建分析项",
-      "output": "CreateAnalysisResponse"
+      "output": "CreateAnalysisResponse",
+      "status": "online"
     },
     "CreateFileTicket": {
       "document": "本接口(CreateFileTicket)用于创建文件上传所需的文件凭证。\n可通过接口返回值进行文件上传，返回值中的 URL 为实际上传文件请求的 URL，RequestHeaderSet 中的 Key 和 Value 用于该请求头的构造。\n以示例中的返回值为例，构造请求的关键参数如下：\n<pre>\nPUT /upload/1234567890-815e8385-82f8-4f8a-b35f-a7e5eac218c2 HTTP/1.1\nHost: bsca-1234567890.cos.ap-guangzhou.myqcloud.com\nContent-Length: 16\nAuthorization: q-sign-algorithm=sha1&q-ak=SecretID&q-sign-time=1631016205;1631019805&q-key-time=1631016205;1631019805&q-header-list=host&q-url-param-list=&q-signature=signature\n\n[Object Content]\n</pre>",
       "input": "CreateFileTicketRequest",
       "name": "创建文件凭证",
-      "output": "CreateFileTicketResponse"
+      "output": "CreateFileTicketResponse",
+      "status": "online"
     },
     "DeleteAnalysisList": {
       "document": "本接口(DeleteAnalysisList)用于批量删除分析项列表。",
       "input": "DeleteAnalysisListRequest",
       "name": "删除分析项列表",
-      "output": "DeleteAnalysisListResponse"
+      "output": "DeleteAnalysisListResponse",
+      "status": "online"
     },
     "DescribeAccount": {
       "document": "本接口(DescribeAccount)用于查询当前用户的账户流量信息。",
       "input": "DescribeAccountRequest",
       "name": "查询账户信息",
-      "output": "DescribeAccountResponse"
+      "output": "DescribeAccountResponse",
+      "status": "online"
     },
     "DescribeAnalysisList": {
       "document": "本接口(DescribeAnalysisList)用于查询分析项列表。",
       "input": "DescribeAnalysisListRequest",
       "name": "查询分析项列表",
-      "output": "DescribeAnalysisListResponse"
+      "output": "DescribeAnalysisListResponse",
+      "status": "online"
     },
     "DescribeCVEComponentList": {
       "document": "本接口(DescribeCVEComponentList)用于查询含有CVE的组件列表信息。",
       "input": "DescribeCVEComponentListRequest",
       "name": "查询CVE组件列表",
-      "output": "DescribeCVEComponentListResponse"
+      "output": "DescribeCVEComponentListResponse",
+      "status": "online"
     },
     "DescribeCVEList": {
       "document": "本接口(DescribeCVEList)用于查询某个组件的CVE列表信息。",
       "input": "DescribeCVEListRequest",
       "name": "查询CVE列表",
-      "output": "DescribeCVEListResponse"
+      "output": "DescribeCVEListResponse",
+      "status": "online"
     },
     "DescribeCheckSecList": {
       "document": "本接口(DescribeCheckSecList)用于查询分析的CheckSec列表信息。",
       "input": "DescribeCheckSecListRequest",
       "name": "查询CheckSec列表",
-      "output": "DescribeCheckSecListResponse"
+      "output": "DescribeCheckSecListResponse",
+      "status": "online"
     },
     "DescribeLicenseComponentList": {
       "document": "本接口(DescribeLicenseComponentList)用于查询含有风险License的组件列表信息。",
       "input": "DescribeLicenseComponentListRequest",
       "name": "查询风险License组件列表",
-      "output": "DescribeLicenseComponentListResponse"
+      "output": "DescribeLicenseComponentListResponse",
+      "status": "online"
     },
     "DescribeLicenseDetail": {
       "document": "本接口(DescribeLicenseDetail)用于查询某个license的详细信息。",
       "input": "DescribeLicenseDetailRequest",
       "name": "查询License详情",
-      "output": "DescribeLicenseDetailResponse"
+      "output": "DescribeLicenseDetailResponse",
+      "status": "online"
     },
     "DescribeLicenseFileList": {
       "document": "本接口(DescribeLicenseFileList)用于查询包含指定风险License组件的文件列表信息。",
       "input": "DescribeLicenseFileListRequest",
       "name": "查询License文件列表",
-      "output": "DescribeLicenseFileListResponse"
+      "output": "DescribeLicenseFileListResponse",
+      "status": "online"
     },
     "DescribeReportOverview": {
       "document": "本接口(DescribeReportOverview)用于查询分析报告概览。",
       "input": "DescribeReportOverviewRequest",
       "name": "查询报告概览",
-      "output": "DescribeReportOverviewResponse"
+      "output": "DescribeReportOverviewResponse",
+      "status": "online"
     },
     "DescribeSensitiveEmailDomainList": {
       "document": "本接口(DescribeSensitiveEmailDomainList)用于查询敏感邮箱域名信息列表。",
       "input": "DescribeSensitiveEmailDomainListRequest",
       "name": "查询敏感邮箱域名列表",
-      "output": "DescribeSensitiveEmailDomainListResponse"
+      "output": "DescribeSensitiveEmailDomainListResponse",
+      "status": "online"
     },
     "DescribeSensitiveEmailList": {
       "document": "本接口(DescribeSensitiveEmailList)用于查询敏感邮箱详情列表。",
       "input": "DescribeSensitiveEmailListRequest",
       "name": "查询敏感邮箱列表",
-      "output": "DescribeSensitiveEmailListResponse"
+      "output": "DescribeSensitiveEmailListResponse",
+      "status": "online"
     },
     "DescribeSensitiveIPList": {
       "document": "本接口(DescribeSensitiveIPList)用于查询敏感IP信息列表。",
       "input": "DescribeSensitiveIPListRequest",
       "name": "查询敏感IP列表",
-      "output": "DescribeSensitiveIPListResponse"
+      "output": "DescribeSensitiveIPListResponse",
+      "status": "online"
     },
     "DescribeSensitivePrivateKeyList": {
       "document": "本接口(DescribeSensitivePrivateKeyList)用于查询敏感私钥列表信息。",
       "input": "DescribeSensitivePrivateKeyListRequest",
       "name": "查询敏感私钥列表",
-      "output": "DescribeSensitivePrivateKeyListResponse"
+      "output": "DescribeSensitivePrivateKeyListResponse",
+      "status": "online"
     },
     "DescribeSensitiveURIDomainList": {
       "document": "本接口(DescribeSensitiveURIDomainList)用于查询敏感URI域名信息列表。",
       "input": "DescribeSensitiveURIDomainListRequest",
       "name": "查询敏感URI域名列表",
-      "output": "DescribeSensitiveURIDomainListResponse"
+      "output": "DescribeSensitiveURIDomainListResponse",
+      "status": "online"
     },
     "DescribeSensitiveURIList": {
       "document": "本接口(DescribeSensitiveURIList)用于查询敏感URI详情列表。",
       "input": "DescribeSensitiveURIListRequest",
       "name": "查询敏感URI列表",
-      "output": "DescribeSensitiveURIListResponse"
+      "output": "DescribeSensitiveURIListResponse",
+      "status": "online"
     },
     "DescribeSensitiveURIPwdList": {
       "document": "本接口(DescribeSensitiveURIPwdList)用于查询敏感URI密码列表信息。",
       "input": "DescribeSensitiveURIPwdListRequest",
       "name": "查询敏感URI密码列表",
-      "output": "DescribeSensitiveURIPwdListResponse"
+      "output": "DescribeSensitiveURIPwdListResponse",
+      "status": "online"
     },
     "ExecuteAnalysisList": {
       "document": "本接口(ExecuteAnalysisList)用于批量执行分析项列表，仅支持失败的分析项。",
       "input": "ExecuteAnalysisListRequest",
       "name": "执行分析项列表",
-      "output": "ExecuteAnalysisListResponse"
+      "output": "ExecuteAnalysisListResponse",
+      "status": "online"
     },
     "ModifyAnalysisAttribute": {
       "document": "本接口(ModifyAnalysisAttribute)用于修改分析项属性。",
       "input": "ModifyAnalysisAttributeRequest",
       "name": "修改分析项属性",
-      "output": "ModifyAnalysisAttributeResponse"
+      "output": "ModifyAnalysisAttributeResponse",
+      "status": "online"
     }
   },
   "metadata": {

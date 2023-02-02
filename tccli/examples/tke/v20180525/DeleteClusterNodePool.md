@@ -7,8 +7,8 @@ Input:
 ```
 tccli tke DeleteClusterNodePool --cli-unfold-argument  \
     --ClusterId cls-xxxxxx \
-    --NodePoolIds np-xxxxxxxx \
-    --KeepInstance true
+    --KeepInstance true \
+    --NodePoolIds np-xxxxxxxx
 ```
 
 Output: 

@@ -4,37 +4,43 @@
       "document": "活动商品下单取消商品配额扣减",
       "input": "CancelActivityGoodsQuotaDeductionRequest",
       "name": "活动商品下单取消商品配额扣减",
-      "output": "CancelActivityGoodsQuotaDeductionResponse"
+      "output": "CancelActivityGoodsQuotaDeductionResponse",
+      "status": "online"
     },
     "ConfirmActivityGoodsQuotaDeduction": {
       "document": "活动商品下单确认商品配额扣减",
       "input": "ConfirmActivityGoodsQuotaDeductionRequest",
       "name": "活动商品下单确认商品配额扣减",
-      "output": "ConfirmActivityGoodsQuotaDeductionResponse"
+      "output": "ConfirmActivityGoodsQuotaDeductionResponse",
+      "status": "online"
     },
     "DescribeActivityNonSensitiveInfo": {
       "document": "查询活动非敏感信息",
       "input": "DescribeActivityNonSensitiveInfoRequest",
       "name": "查询活动非敏感信息",
-      "output": "DescribeActivityNonSensitiveInfoResponse"
+      "output": "DescribeActivityNonSensitiveInfoResponse",
+      "status": "online"
     },
     "DescribeCvmRenewInstanceDetail": {
       "document": "获取新购CVM的信息，用于续费场景",
       "input": "DescribeCvmRenewInstanceDetailRequest",
       "name": "获取新购CVM的信息，用于续费场景",
-      "output": "DescribeCvmRenewInstanceDetailResponse"
+      "output": "DescribeCvmRenewInstanceDetailResponse",
+      "status": "online"
     },
     "SyncProductIntroPageData": {
       "document": "同步产品介绍页资源位数据",
       "input": "SyncProductIntroPageDataRequest",
       "name": "同步产品介绍页资源位数据",
-      "output": "SyncProductIntroPageDataResponse"
+      "output": "SyncProductIntroPageDataResponse",
+      "status": "online"
     },
     "TryDeductActivityGoodsQuota": {
       "document": "活动商品下单预扣减商品配额",
       "input": "TryDeductActivityGoodsQuotaRequest",
       "name": "活动商品下单预扣减商品配额",
-      "output": "TryDeductActivityGoodsQuotaResponse"
+      "output": "TryDeductActivityGoodsQuotaResponse",
+      "status": "online"
     }
   },
   "metadata": {

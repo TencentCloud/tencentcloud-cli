@@ -4,115 +4,134 @@
       "document": "取消一台或多台CVM实例执行的命令\n\n* 如果命令还未下发到agent，任务状态处于处于PENDING、DELIVERING、DELIVER_DELAYED，取消后任务状态是CANCELLED\n* 如果命令已下发到agent，任务状态处于RUNNING， 取消后任务状态是TERMINATED",
       "input": "CancelInvocationRequest",
       "name": "取消命令执行",
-      "output": "CancelInvocationResponse"
+      "output": "CancelInvocationResponse",
+      "status": "online"
     },
     "CreateCommand": {
       "document": "此接口用于创建命令。",
       "input": "CreateCommandRequest",
       "name": "创建命令",
-      "output": "CreateCommandResponse"
+      "output": "CreateCommandResponse",
+      "status": "online"
     },
     "CreateInvoker": {
       "document": "此接口用于创建执行器。",
       "input": "CreateInvokerRequest",
       "name": "创建执行器",
-      "output": "CreateInvokerResponse"
+      "output": "CreateInvokerResponse",
+      "status": "online"
     },
     "DeleteCommand": {
       "document": "此接口用于删除命令。\n如果命令与执行器关联，则无法被删除。",
       "input": "DeleteCommandRequest",
       "name": "删除命令",
-      "output": "DeleteCommandResponse"
+      "output": "DeleteCommandResponse",
+      "status": "online"
     },
     "DeleteInvoker": {
       "document": "此接口用于删除执行器。",
       "input": "DeleteInvokerRequest",
       "name": "删除执行器",
-      "output": "DeleteInvokerResponse"
+      "output": "DeleteInvokerResponse",
+      "status": "online"
     },
     "DescribeAutomationAgentStatus": {
       "document": "此接口用于查询自动化助手客户端的状态。",
       "input": "DescribeAutomationAgentStatusRequest",
       "name": "查询客户端状态",
-      "output": "DescribeAutomationAgentStatusResponse"
+      "output": "DescribeAutomationAgentStatusResponse",
+      "status": "online"
     },
     "DescribeCommands": {
       "document": "此接口用于查询命令详情。",
       "input": "DescribeCommandsRequest",
       "name": "查询命令详情",
-      "output": "DescribeCommandsResponse"
+      "output": "DescribeCommandsResponse",
+      "status": "online"
     },
     "DescribeInvocationTasks": {
       "document": "此接口用于查询执行任务详情。",
       "input": "DescribeInvocationTasksRequest",
       "name": "查询执行任务",
-      "output": "DescribeInvocationTasksResponse"
+      "output": "DescribeInvocationTasksResponse",
+      "status": "online"
     },
     "DescribeInvocations": {
       "document": "此接口用于查询执行活动详情。",
       "input": "DescribeInvocationsRequest",
       "name": "查询执行活动",
-      "output": "DescribeInvocationsResponse"
+      "output": "DescribeInvocationsResponse",
+      "status": "online"
     },
     "DescribeInvokerRecords": {
       "document": "此接口用于查询执行器的执行记录。",
       "input": "DescribeInvokerRecordsRequest",
       "name": "查询执行器执行记录",
-      "output": "DescribeInvokerRecordsResponse"
+      "output": "DescribeInvokerRecordsResponse",
+      "status": "online"
     },
     "DescribeInvokers": {
       "document": "此接口用于查询执行器信息。",
       "input": "DescribeInvokersRequest",
       "name": "查询执行器",
-      "output": "DescribeInvokersResponse"
+      "output": "DescribeInvokersResponse",
+      "status": "online"
     },
     "DescribeRegions": {
       "document": "此接口用于查询 TAT 产品后台地域列表。\nRegionState 为 AVAILABLE，代表该地域的 TAT 后台服务已经可用；未返回，代表该地域的 TAT 后台服务尚不可用。",
       "input": "DescribeRegionsRequest",
       "name": "查询地域列表",
-      "output": "DescribeRegionsResponse"
+      "output": "DescribeRegionsResponse",
+      "status": "online"
     },
     "DisableInvoker": {
       "document": "此接口用于停止执行器。",
       "input": "DisableInvokerRequest",
       "name": "停用执行器",
-      "output": "DisableInvokerResponse"
+      "output": "DisableInvokerResponse",
+      "status": "online"
     },
     "EnableInvoker": {
       "document": "此接口用于启用执行器。",
       "input": "EnableInvokerRequest",
       "name": "启用执行器",
-      "output": "EnableInvokerResponse"
+      "output": "EnableInvokerResponse",
+      "status": "online"
     },
     "InvokeCommand": {
       "document": "在指定的实例上触发命令，调用成功返回执行活动ID（inv-xxxxxxxx），每个执行活动内部有一个或多个执行任务（invt-xxxxxxxx），每个执行任务代表命令在一台 CVM 或一台 Lighthouse 上的执行记录。\n\n* 如果指定实例未安装 agent，或 agent 不在线，返回失败\n* 如果命令类型与 agent 运行环境不符，返回失败\n* 指定的实例需要处于 VPC 网络\n* 指定的实例需要处于 RUNNING 状态\n* 不可同时指定 CVM 和 Lighthouse",
       "input": "InvokeCommandRequest",
       "name": "触发命令",
-      "output": "InvokeCommandResponse"
+      "output": "InvokeCommandResponse",
+      "status": "online"
     },
     "ModifyCommand": {
       "document": "此接口用于修改命令。",
       "input": "ModifyCommandRequest",
       "name": "修改命令",
-      "output": "ModifyCommandResponse"
+      "output": "ModifyCommandResponse",
+      "status": "online"
     },
     "ModifyInvoker": {
       "document": "此接口用于修改执行器。",
       "input": "ModifyInvokerRequest",
       "name": "修改执行器",
-      "output": "ModifyInvokerResponse"
+      "output": "ModifyInvokerResponse",
+      "status": "online"
     },
     "PreviewReplacedCommandContent": {
       "document": "此接口用于预览自定义参数替换后的命令内容。不会触发真实执行。",
       "input": "PreviewReplacedCommandContentRequest",
       "name": "命令预览",
-      "output": "PreviewReplacedCommandContentResponse"
+      "output": "PreviewReplacedCommandContentResponse",
+      "status": "online"
     },
     "RunCommand": {
       "document": "执行命令，调用成功返回执行活动ID（inv-xxxxxxxx），每个执行活动内部有一个或多个执行任务（invt-xxxxxxxx），每个执行任务代表命令在一台 CVM 或一台 Lighthouse 上的执行记录。\n\n* 如果指定实例未安装 agent，或 agent 不在线，返回失败\n* 如果命令类型与 agent 运行环境不符，返回失败\n* 指定的实例需要处于 VPC 网络\n* 指定的实例需要处于 `RUNNING` 状态\n* 不可同时指定 CVM 和 Lighthouse",
       "input": "RunCommandRequest",
       "name": "执行命令",
-      "output": "RunCommandResponse"
+      "output": "RunCommandResponse",
+      "status": "online"
     }
   },
   "metadata": {

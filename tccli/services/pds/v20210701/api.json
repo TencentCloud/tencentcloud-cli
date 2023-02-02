@@ -4,13 +4,15 @@
       "document": "判断新用户信誉值",
       "input": "DescribeNewUserAcquisitionRequest",
       "name": "拉新判断服务",
-      "output": "DescribeNewUserAcquisitionResponse"
+      "output": "DescribeNewUserAcquisitionResponse",
+      "status": "online"
     },
     "DescribeStockEstimation": {
       "document": "查询存量判断服务",
       "input": "DescribeStockEstimationRequest",
       "name": "存量判断服务",
-      "output": "DescribeStockEstimationResponse"
+      "output": "DescribeStockEstimationResponse",
+      "status": "online"
     }
   },
   "metadata": {

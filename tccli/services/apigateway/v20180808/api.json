@@ -4,583 +4,680 @@
       "document": "绑定插件到API上。",
       "input": "AttachPluginRequest",
       "name": "插件绑定API",
-      "output": "AttachPluginResponse"
+      "output": "AttachPluginResponse",
+      "status": "online"
     },
     "BindApiApp": {
       "document": "本接口（BindApiApp）用于绑定应用到API。",
       "input": "BindApiAppRequest",
       "name": "绑定应用到API",
-      "output": "BindApiAppResponse"
+      "output": "BindApiAppResponse",
+      "status": "online"
     },
     "BindEnvironment": {
       "document": "本接口（BindEnvironment）用于绑定使用计划到服务或API。\n用户在发布服务到某个环境中后，如果 API 需要鉴权，还需要绑定使用计划才能进行调用，此接口用户将使用计划绑定到特定环境。\n目前支持绑定使用计划到API，但是同一个服务不能同时存在绑定到服务的使用计划和绑定到API的使用计划，所以对已经绑定过服务级别使用计划的环境，请先使用 服务级别使用计划降级 接口进行降级操作。",
       "input": "BindEnvironmentRequest",
       "name": "绑定使用计划到服务或API",
-      "output": "BindEnvironmentResponse"
+      "output": "BindEnvironmentResponse",
+      "status": "online"
     },
     "BindIPStrategy": {
       "document": "本接口（BindIPStrategy）用于API绑定IP策略。",
       "input": "BindIPStrategyRequest",
       "name": "API绑定IP策略",
-      "output": "BindIPStrategyResponse"
+      "output": "BindIPStrategyResponse",
+      "status": "online"
     },
     "BindSecretIds": {
       "document": "本接口（BindSecretIds）用于为使用计划绑定密钥。\n将密钥绑定到某个使用计划，并将此使用计划绑定到某个服务发布的环境上，调用者方可使用此密钥调用这个服务中的 API，可使用本接口为使用计划绑定密钥。",
       "input": "BindSecretIdsRequest",
       "name": "使用计划绑定密钥",
-      "output": "BindSecretIdsResponse"
+      "output": "BindSecretIdsResponse",
+      "status": "online"
     },
     "BindSubDomain": {
       "document": "本接口（BindSubDomain）用于绑定自定义域名到服务。\nAPI 网关中每个服务都会提供一个默认的域名供用户调用，但当用户想使用自己的已有域名时，也可以将自定义域名绑定到此服务，在做好备案、与默认域名的 CNAME 后，可直接调用自定义域名。",
       "input": "BindSubDomainRequest",
       "name": "服务绑定自定义域名",
-      "output": "BindSubDomainResponse"
+      "output": "BindSubDomainResponse",
+      "status": "online"
     },
     "BuildAPIDoc": {
       "document": "构建 API 文档",
       "input": "BuildAPIDocRequest",
       "name": "构建 API 文档",
-      "output": "BuildAPIDocResponse"
+      "output": "BuildAPIDocResponse",
+      "status": "online"
     },
     "CreateAPIDoc": {
       "document": "创建 API 文档",
       "input": "CreateAPIDocRequest",
       "name": "创建 API 文档",
-      "output": "CreateAPIDocResponse"
+      "output": "CreateAPIDocResponse",
+      "status": "online"
     },
     "CreateApi": {
       "document": "本接口（CreateApi）用于创建 API 接口，创建 API 前，用户需要先创建服务，每个 API 都有自己归属的服务。",
       "input": "CreateApiRequest",
       "name": "创建API",
-      "output": "CreateApiResponse"
+      "output": "CreateApiResponse",
+      "status": "online"
     },
     "CreateApiApp": {
       "document": "本接口（CreateApiApp）用于创建应用。",
       "input": "CreateApiAppRequest",
       "name": "创建应用",
-      "output": "CreateApiAppResponse"
+      "output": "CreateApiAppResponse",
+      "status": "online"
     },
     "CreateApiKey": {
       "document": "本接口（CreateApiKey）用于创建一对新的 API 密钥。",
       "input": "CreateApiKeyRequest",
       "name": "创建密钥",
-      "output": "CreateApiKeyResponse"
+      "output": "CreateApiKeyResponse",
+      "status": "online"
     },
     "CreateIPStrategy": {
       "document": "本接口（CreateIPStrategy）用于创建服务IP策略。",
       "input": "CreateIPStrategyRequest",
       "name": "创建服务IP策略",
-      "output": "CreateIPStrategyResponse"
+      "output": "CreateIPStrategyResponse",
+      "status": "online"
     },
     "CreatePlugin": {
       "document": "创建API网关插件。",
       "input": "CreatePluginRequest",
       "name": "创建插件",
-      "output": "CreatePluginResponse"
+      "output": "CreatePluginResponse",
+      "status": "online"
     },
     "CreateService": {
       "document": "本接口（CreateService）用于创建服务。\nAPI 网关使用的最大单元为服务，每个服务中可创建多个 API 接口。每个服务有一个默认域名供客户调用，用户也可绑定自定义域名到此服务中。 ",
       "input": "CreateServiceRequest",
       "name": "创建服务",
-      "output": "CreateServiceResponse"
+      "output": "CreateServiceResponse",
+      "status": "online"
     },
     "CreateUpstream": {
       "document": "用于创建创建后端通道",
       "input": "CreateUpstreamRequest",
       "name": "创建后端通道",
-      "output": "CreateUpstreamResponse"
+      "output": "CreateUpstreamResponse",
+      "status": "online"
     },
     "CreateUsagePlan": {
       "document": "本接口（CreateUsagePlan）用于创建使用计划。\n用户在使用 API 网关时，需要创建使用计划并将其绑定到服务的环境中使用。",
       "input": "CreateUsagePlanRequest",
       "name": "创建使用计划",
-      "output": "CreateUsagePlanResponse"
+      "output": "CreateUsagePlanResponse",
+      "status": "online"
     },
     "DeleteAPIDoc": {
       "document": "删除 API 文档",
       "input": "DeleteAPIDocRequest",
       "name": "删除 API 文档",
-      "output": "DeleteAPIDocResponse"
+      "output": "DeleteAPIDocResponse",
+      "status": "online"
     },
     "DeleteApi": {
       "document": "本接口（DeleteApi）用于删除已经创建的API。",
       "input": "DeleteApiRequest",
       "name": "删除API",
-      "output": "DeleteApiResponse"
+      "output": "DeleteApiResponse",
+      "status": "online"
     },
     "DeleteApiApp": {
       "document": "本接口（DeleteApiApp）用于删除已经创建的应用。",
       "input": "DeleteApiAppRequest",
       "name": "删除应用",
-      "output": "DeleteApiAppResponse"
+      "output": "DeleteApiAppResponse",
+      "status": "online"
     },
     "DeleteApiKey": {
       "document": "本接口（DeleteApiKey）用于删除一对 API 密钥。",
       "input": "DeleteApiKeyRequest",
       "name": "删除密钥",
-      "output": "DeleteApiKeyResponse"
+      "output": "DeleteApiKeyResponse",
+      "status": "online"
     },
     "DeleteIPStrategy": {
       "document": "本接口（DeleteIPStrategy）用于删除服务IP策略。",
       "input": "DeleteIPStrategyRequest",
       "name": "删除服务IP策略",
-      "output": "DeleteIPStrategyResponse"
+      "output": "DeleteIPStrategyResponse",
+      "status": "online"
     },
     "DeletePlugin": {
       "document": "删除API网关插件",
       "input": "DeletePluginRequest",
       "name": "删除插件",
-      "output": "DeletePluginResponse"
+      "output": "DeletePluginResponse",
+      "status": "online"
     },
     "DeleteService": {
       "document": "本接口（DeleteService）用于删除 API 网关中某个服务。",
       "input": "DeleteServiceRequest",
       "name": "删除服务",
-      "output": "DeleteServiceResponse"
+      "output": "DeleteServiceResponse",
+      "status": "online"
     },
     "DeleteServiceSubDomainMapping": {
       "document": "本接口（DeleteServiceSubDomainMapping）用于删除服务中某个环境的自定义域名映射。\n当用户使用自定义域名，并使用了自定义映射时，可使用此接口。但需注意，若删除了所有环境的映射时，调用此 API 均会返回失败。",
       "input": "DeleteServiceSubDomainMappingRequest",
       "name": "删除自定义域名的路径映射",
-      "output": "DeleteServiceSubDomainMappingResponse"
+      "output": "DeleteServiceSubDomainMappingResponse",
+      "status": "online"
     },
     "DeleteUpstream": {
       "document": "删除后端通道，需要注意有API绑定时，不允许删除",
       "input": "DeleteUpstreamRequest",
       "name": "删除后端通道",
-      "output": "DeleteUpstreamResponse"
+      "output": "DeleteUpstreamResponse",
+      "status": "online"
     },
     "DeleteUsagePlan": {
       "document": "本接口（DeleteUsagePlan）用于删除使用计划。",
       "input": "DeleteUsagePlanRequest",
       "name": "删除使用计划",
-      "output": "DeleteUsagePlanResponse"
+      "output": "DeleteUsagePlanResponse",
+      "status": "online"
     },
     "DemoteServiceUsagePlan": {
       "document": "本接口（DemoteServiceUsagePlan）用于将某个服务在某个环境的使用计划，降级到API上。\n如果服务内没有API不允许进行此操作。\n如果当前环境没有发布，不允许进行此操作。",
       "input": "DemoteServiceUsagePlanRequest",
       "name": "服务级别使用计划降级",
-      "output": "DemoteServiceUsagePlanResponse"
+      "output": "DemoteServiceUsagePlanResponse",
+      "status": "online"
     },
     "DescribeAPIDocDetail": {
       "document": "查询 API 文档详情",
       "input": "DescribeAPIDocDetailRequest",
       "name": "查询 API 文档详情",
-      "output": "DescribeAPIDocDetailResponse"
+      "output": "DescribeAPIDocDetailResponse",
+      "status": "online"
     },
     "DescribeAPIDocs": {
       "document": "查询 API 文档列表",
       "input": "DescribeAPIDocsRequest",
       "name": "查询 API 文档列表",
-      "output": "DescribeAPIDocsResponse"
+      "output": "DescribeAPIDocsResponse",
+      "status": "online"
     },
     "DescribeAllPluginApis": {
       "document": "展示插件相关的API列表，包括已绑定的和未绑定的API信息。",
       "input": "DescribeAllPluginApisRequest",
       "name": "展示插件相关的API列表",
-      "output": "DescribeAllPluginApisResponse"
+      "output": "DescribeAllPluginApisResponse",
+      "status": "online"
     },
     "DescribeApi": {
       "document": "本接口（DescribeApi）用于查询用户 API 网关的 API 接口的详细信息。​",
       "input": "DescribeApiRequest",
       "name": "查询API详情",
-      "output": "DescribeApiResponse"
+      "output": "DescribeApiResponse",
+      "status": "online"
     },
     "DescribeApiApp": {
       "document": "本接口（DescribeApiApp）用于根据应用ID搜索应用。",
       "input": "DescribeApiAppRequest",
       "name": "搜索应用",
-      "output": "DescribeApiAppResponse"
+      "output": "DescribeApiAppResponse",
+      "status": "online"
     },
     "DescribeApiAppBindApisStatus": {
       "document": "本接口（DescribeApiAppBindApisStatus）查询应用绑定的Api列表。",
       "input": "DescribeApiAppBindApisStatusRequest",
       "name": "查询应用绑定的Api列表",
-      "output": "DescribeApiAppBindApisStatusResponse"
+      "output": "DescribeApiAppBindApisStatusResponse",
+      "status": "online"
     },
     "DescribeApiAppsStatus": {
       "document": "本接口（DescribeApiAppsStatus）查询应用列表。",
       "input": "DescribeApiAppsStatusRequest",
       "name": "查询应用列表",
-      "output": "DescribeApiAppsStatusResponse"
+      "output": "DescribeApiAppsStatusResponse",
+      "status": "online"
     },
     "DescribeApiBindApiAppsStatus": {
       "document": "本接口（DescribeApiBindApiAppsStatus）查询Api绑定的应用列表。",
       "input": "DescribeApiBindApiAppsStatusRequest",
       "name": "查询Api绑定的应用列表",
-      "output": "DescribeApiBindApiAppsStatusResponse"
+      "output": "DescribeApiBindApiAppsStatusResponse",
+      "status": "online"
     },
     "DescribeApiEnvironmentStrategy": {
       "document": "本接口（DescribeApiEnvironmentStrategy）用于展示API绑定的限流策略。",
       "input": "DescribeApiEnvironmentStrategyRequest",
       "name": "展示API绑定的限流策略",
-      "output": "DescribeApiEnvironmentStrategyResponse"
+      "output": "DescribeApiEnvironmentStrategyResponse",
+      "status": "online"
     },
     "DescribeApiForApiApp": {
       "document": "本接口（DescribeApiForApiApp）用于应用使用者查询部署于 API 网关的 API 接口的详细信息。​",
       "input": "DescribeApiForApiAppRequest",
       "name": "应用使用者查询API详情",
-      "output": "DescribeApiForApiAppResponse"
+      "output": "DescribeApiForApiAppResponse",
+      "status": "online"
     },
     "DescribeApiKey": {
       "document": "本接口（DescribeApiKey）用于查询密钥详情。\n用户在创建密钥后，可用此接口查询一个 API 密钥的详情，该接口会显示密钥 Key。",
       "input": "DescribeApiKeyRequest",
       "name": "查询密钥详情",
-      "output": "DescribeApiKeyResponse"
+      "output": "DescribeApiKeyResponse",
+      "status": "online"
     },
     "DescribeApiKeysStatus": {
       "document": "本接口（DescribeApiKeysStatus）用于查询密钥列表。\n当用户创建了多个密钥对时，可使用本接口查询一个或多个 API 密钥信息。",
       "input": "DescribeApiKeysStatusRequest",
       "name": "查询密钥列表",
-      "output": "DescribeApiKeysStatusResponse"
+      "output": "DescribeApiKeysStatusResponse",
+      "status": "online"
     },
     "DescribeApiUsagePlan": {
       "document": "本接口（DescribeApiUsagePlan）用于查询服务中 API 使用计划详情。\n服务若需要鉴权限流生效，则需要绑定使用计划到此服务中，本接口用于查询绑定到一个服务及其中 API 的所有使用计划。",
       "input": "DescribeApiUsagePlanRequest",
       "name": "查询 API 使用计划详情",
-      "output": "DescribeApiUsagePlanResponse"
+      "output": "DescribeApiUsagePlanResponse",
+      "status": "online"
     },
     "DescribeApisStatus": {
       "document": "本接口（DescribeApisStatus）用于查看一个服务下的某个 API 或所有 API 列表及其相关信息。",
       "input": "DescribeApisStatusRequest",
       "name": "查询 API 接口列表",
-      "output": "DescribeApisStatusResponse"
+      "output": "DescribeApisStatusResponse",
+      "status": "online"
     },
     "DescribeExclusiveInstanceDetail": {
       "document": "本接口（DescribeExclusiveInstanceDetail）用于查询独享实例详情信息。​",
       "input": "DescribeExclusiveInstanceDetailRequest",
       "name": "查询独享实例详情",
-      "output": "DescribeExclusiveInstanceDetailResponse"
+      "output": "DescribeExclusiveInstanceDetailResponse",
+      "status": "online"
     },
     "DescribeExclusiveInstances": {
       "document": "本接口（DescribeExclusiveInstances）用于查询独享实例列表信息。​",
       "input": "DescribeExclusiveInstancesRequest",
       "name": "查询独享实例列表",
-      "output": "DescribeExclusiveInstancesResponse"
+      "output": "DescribeExclusiveInstancesResponse",
+      "status": "online"
     },
     "DescribeExclusiveInstancesStatus": {
       "document": "查询专享实例列表（新）",
       "input": "DescribeExclusiveInstancesStatusRequest",
       "name": "查询专享实例列表（新）",
-      "output": "DescribeExclusiveInstancesStatusResponse"
+      "output": "DescribeExclusiveInstancesStatusResponse",
+      "status": "online"
     },
     "DescribeIPStrategy": {
       "document": "本接口（DescribeIPStrategy）用于查询IP策略详情。",
       "input": "DescribeIPStrategyRequest",
       "name": "查询IP策略详情",
-      "output": "DescribeIPStrategyResponse"
+      "output": "DescribeIPStrategyResponse",
+      "status": "online"
     },
     "DescribeIPStrategyApisStatus": {
       "document": "本接口（DescribeIPStrategyApisStatus）用于查询IP策略可以绑定的API列表。即服务下所有API和该策略已绑定API的差集。",
       "input": "DescribeIPStrategyApisStatusRequest",
       "name": "查询IP策略绑定的API列表",
-      "output": "DescribeIPStrategyApisStatusResponse"
+      "output": "DescribeIPStrategyApisStatusResponse",
+      "status": "online"
     },
     "DescribeIPStrategysStatus": {
       "document": "本接口（DescribeIPStrategysStatus）用于查询服务IP策略列表。",
       "input": "DescribeIPStrategysStatusRequest",
       "name": "查询服务IP策略列表",
-      "output": "DescribeIPStrategysStatusResponse"
+      "output": "DescribeIPStrategysStatusResponse",
+      "status": "online"
     },
     "DescribeLogSearch": {
       "document": "本接口DescribeLogSearch用于搜索日志",
       "input": "DescribeLogSearchRequest",
       "name": "日志搜索服务",
-      "output": "DescribeLogSearchResponse"
+      "output": "DescribeLogSearchResponse",
+      "status": "online"
     },
     "DescribePlugin": {
       "document": "展示插件详情，支持按照插件ID进行。",
       "input": "DescribePluginRequest",
       "name": "查询插件详情",
-      "output": "DescribePluginResponse"
+      "output": "DescribePluginResponse",
+      "status": "online"
     },
     "DescribePluginApis": {
       "document": "查询指定插件下绑定的API信息",
       "input": "DescribePluginApisRequest",
       "name": "查询插件绑定的API列表",
-      "output": "DescribePluginApisResponse"
+      "output": "DescribePluginApisResponse",
+      "status": "online"
     },
     "DescribePlugins": {
       "document": "展示插件列表和详情，支持分页，支持按照插件类型查询，支持按照插件ID批量查询，支持按照插件名称查询。",
       "input": "DescribePluginsRequest",
       "name": "查询插件列表和详情",
-      "output": "DescribePluginsResponse"
+      "output": "DescribePluginsResponse",
+      "status": "online"
     },
     "DescribePluginsByApi": {
       "document": "展示API上已绑定的插件列表。",
       "input": "DescribePluginsByApiRequest",
       "name": "API上已绑定的插件",
-      "output": "DescribePluginsByApiResponse"
+      "output": "DescribePluginsByApiResponse",
+      "status": "online"
     },
     "DescribeService": {
       "document": "本接口（DescribeService）用于查询一个服务的详细信息、包括服务的描述、域名、协议、创建时间、发布情况等信息。",
       "input": "DescribeServiceRequest",
       "name": "查询服务详情",
-      "output": "DescribeServiceResponse"
+      "output": "DescribeServiceResponse",
+      "status": "online"
     },
     "DescribeServiceEnvironmentList": {
       "document": "本接口（DescribeServiceEnvironmentList）用于查询一个服务的环境列表，可查询到此服务下所有环境及其状态。",
       "input": "DescribeServiceEnvironmentListRequest",
       "name": "查询服务环境列表",
-      "output": "DescribeServiceEnvironmentListResponse"
+      "output": "DescribeServiceEnvironmentListResponse",
+      "status": "online"
     },
     "DescribeServiceEnvironmentReleaseHistory": {
       "document": "本接口（DescribeServiceEnvironmentReleaseHistory）用于查询服务环境的发布历史。\n用户在创建好服务后需要发布到某个环境中才能进行使用，本接口用于查询一个服务某个环境的发布记录。",
       "input": "DescribeServiceEnvironmentReleaseHistoryRequest",
       "name": "查询服务环境的发布历史",
-      "output": "DescribeServiceEnvironmentReleaseHistoryResponse"
+      "output": "DescribeServiceEnvironmentReleaseHistoryResponse",
+      "status": "online"
     },
     "DescribeServiceEnvironmentStrategy": {
       "document": "本接口（DescribeServiceEnvironmentStrategy）用于展示服务限流策略。",
       "input": "DescribeServiceEnvironmentStrategyRequest",
       "name": "展示服务限流策略",
-      "output": "DescribeServiceEnvironmentStrategyResponse"
+      "output": "DescribeServiceEnvironmentStrategyResponse",
+      "status": "online"
     },
     "DescribeServiceForApiApp": {
       "document": "本接口（DescribeServiceForApiApp）用于应用使用者查询一个服务的详细信息、包括服务的描述、域名、协议等信息。",
       "input": "DescribeServiceForApiAppRequest",
       "name": "应用使用者查询服务详情",
-      "output": "DescribeServiceForApiAppResponse"
+      "output": "DescribeServiceForApiAppResponse",
+      "status": "online"
     },
     "DescribeServiceReleaseVersion": {
       "document": "本接口（DescribeServiceReleaseVersion）查询一个服务下面所有已经发布的版本列表。\n用户在发布服务时，常有多个版本发布，可使用本接口查询已发布的版本。",
       "input": "DescribeServiceReleaseVersionRequest",
       "name": "查询服务已发布的版本",
-      "output": "DescribeServiceReleaseVersionResponse"
+      "output": "DescribeServiceReleaseVersionResponse",
+      "status": "online"
     },
     "DescribeServiceSubDomainMappings": {
       "document": "本接口（DescribeServiceSubDomainMappings）用于查询自定义域名的路径映射。\nAPI 网关可绑定自定义域名到服务，并且可以对自定义域名的路径进行映射，可自定义不同的路径映射到服务中的三个环境，本接口用于查询绑定服务的自定义域名的路径映射列表。",
       "input": "DescribeServiceSubDomainMappingsRequest",
       "name": "查询自定义域名的路径映射",
-      "output": "DescribeServiceSubDomainMappingsResponse"
+      "output": "DescribeServiceSubDomainMappingsResponse",
+      "status": "online"
     },
     "DescribeServiceSubDomains": {
       "document": "本接口（DescribeServiceSubDomains）用于查询自定义域名列表。\nAPI 网关可绑定自定义域名到服务，用于服务调用。此接口用于查询用户绑定在服务的自定义域名列表。",
       "input": "DescribeServiceSubDomainsRequest",
       "name": "查询自定义域名列表",
-      "output": "DescribeServiceSubDomainsResponse"
+      "output": "DescribeServiceSubDomainsResponse",
+      "status": "online"
     },
     "DescribeServiceUsagePlan": {
       "document": "本接口（DescribeServiceUsagePlan）用于查询服务使用计划详情。\n服务若需要鉴权限流生效，则需要绑定使用计划到此服务中，本接口用于查询绑定到一个服务的所有使用计划。",
       "input": "DescribeServiceUsagePlanRequest",
       "name": "查询服务使用计划详情",
-      "output": "DescribeServiceUsagePlanResponse"
+      "output": "DescribeServiceUsagePlanResponse",
+      "status": "online"
     },
     "DescribeServicesStatus": {
       "document": "本接口（DescribeServicesStatus）用于搜索查询某一个服务或多个服务的列表，并返回服务相关的域名、时间等信息。",
       "input": "DescribeServicesStatusRequest",
       "name": "查询服务列表状态",
-      "output": "DescribeServicesStatusResponse"
+      "output": "DescribeServicesStatusResponse",
+      "status": "online"
     },
     "DescribeUpstreamBindApis": {
       "document": "查询后端通道所绑定的API列表",
       "input": "DescribeUpstreamBindApisRequest",
       "name": "查询后端通道所绑定的API列表",
-      "output": "DescribeUpstreamBindApisResponse"
+      "output": "DescribeUpstreamBindApisResponse",
+      "status": "online"
     },
     "DescribeUpstreams": {
       "document": "查询后端通道列表详情",
       "input": "DescribeUpstreamsRequest",
       "name": "查询后端通道列表详情",
-      "output": "DescribeUpstreamsResponse"
+      "output": "DescribeUpstreamsResponse",
+      "status": "online"
     },
     "DescribeUsagePlan": {
       "document": "本接口（DescribeUsagePlan）用于查询一个使用计划的详细信息，包括名称、QPS、创建时间绑定的环境等。",
       "input": "DescribeUsagePlanRequest",
       "name": "查询使用计划详情",
-      "output": "DescribeUsagePlanResponse"
+      "output": "DescribeUsagePlanResponse",
+      "status": "online"
     },
     "DescribeUsagePlanEnvironments": {
       "document": "本接口（DescribeUsagePlanEnvironments）用于查询使用计划绑定的环境列表。\n用户在绑定了某个使用计划到环境后，可使用本接口查询这个使用计划绑定的所有服务的环境。",
       "input": "DescribeUsagePlanEnvironmentsRequest",
       "name": "查询使用计划绑定环境列表",
-      "output": "DescribeUsagePlanEnvironmentsResponse"
+      "output": "DescribeUsagePlanEnvironmentsResponse",
+      "status": "online"
     },
     "DescribeUsagePlanSecretIds": {
       "document": "本接口（DescribeUsagePlanSecretIds）用于查询使用计划绑定的密钥列表。\n在 API 网关中，一个使用计划可绑定多个密钥对，可使用本接口查询使用计划绑定的密钥列表。",
       "input": "DescribeUsagePlanSecretIdsRequest",
       "name": "查询使用计划绑定密钥列表",
-      "output": "DescribeUsagePlanSecretIdsResponse"
+      "output": "DescribeUsagePlanSecretIdsResponse",
+      "status": "online"
     },
     "DescribeUsagePlansStatus": {
       "document": "本接口（DescribeUsagePlanStatus）用于查询使用计划的列表。",
       "input": "DescribeUsagePlansStatusRequest",
       "name": "查询使用计划列表",
-      "output": "DescribeUsagePlansStatusResponse"
+      "output": "DescribeUsagePlansStatusResponse",
+      "status": "online"
     },
     "DetachPlugin": {
       "document": "解除插件与API绑定",
       "input": "DetachPluginRequest",
       "name": "插件解绑API",
-      "output": "DetachPluginResponse"
+      "output": "DetachPluginResponse",
+      "status": "online"
     },
     "DisableApiKey": {
       "document": "本接口（DisableApiKey）用于禁用一对 API 密钥。",
       "input": "DisableApiKeyRequest",
       "name": "禁用密钥",
-      "output": "DisableApiKeyResponse"
+      "output": "DisableApiKeyResponse",
+      "status": "online"
     },
     "EnableApiKey": {
       "document": "本接口（EnableApiKey）用于启动一对被禁用的 API 密钥。",
       "input": "EnableApiKeyRequest",
       "name": "启用密钥",
-      "output": "EnableApiKeyResponse"
+      "output": "EnableApiKeyResponse",
+      "status": "online"
     },
     "GenerateApiDocument": {
       "document": "本接口（GenerateApiDocument）用于自动生成 API 文档和 SDK，一个服务的一个环境生成一份文档和 SDK。",
       "input": "GenerateApiDocumentRequest",
       "name": "生成文档和 SDK",
-      "output": "GenerateApiDocumentResponse"
+      "output": "GenerateApiDocumentResponse",
+      "status": "online"
     },
     "ImportOpenApi": {
       "document": "本接口（ImportOpenApi）用于将OpenAPI规范定义的API导入到API网关。 ",
       "input": "ImportOpenApiRequest",
       "name": "导入OpenAPI",
-      "output": "ImportOpenApiResponse"
+      "output": "ImportOpenApiResponse",
+      "status": "online"
     },
     "ModifyAPIDoc": {
       "document": "修改 API 文档",
       "input": "ModifyAPIDocRequest",
       "name": "修改 API 文档",
-      "output": "ModifyAPIDocResponse"
+      "output": "ModifyAPIDocResponse",
+      "status": "online"
     },
     "ModifyApi": {
       "document": "本接口（ModifyApi）用于修改 API 接口，可调用此接口对已经配置的 API 接口进行编辑修改。修改后的 API 需要重新发布 API 所在的服务到对应环境方能生效。",
       "input": "ModifyApiRequest",
       "name": "修改API",
-      "output": "ModifyApiResponse"
+      "output": "ModifyApiResponse",
+      "status": "online"
     },
     "ModifyApiApp": {
       "document": "本接口（ModifyApiApp）用于修改已经创建的应用。",
       "input": "ModifyApiAppRequest",
       "name": "修改应用",
-      "output": "ModifyApiAppResponse"
+      "output": "ModifyApiAppResponse",
+      "status": "online"
     },
     "ModifyApiEnvironmentStrategy": {
       "document": "本接口（ModifyApiEnvironmentStrategy）用于修改API限流策略",
       "input": "ModifyApiEnvironmentStrategyRequest",
       "name": "修改API限流策略",
-      "output": "ModifyApiEnvironmentStrategyResponse"
+      "output": "ModifyApiEnvironmentStrategyResponse",
+      "status": "online"
     },
     "ModifyApiIncrement": {
       "document": "提供增量更新API能力，主要是给程序调用（区别于ModifyApi，该接口是需要传入API的全量参数，对console使用较友好）",
       "input": "ModifyApiIncrementRequest",
       "name": "增量更新API接口",
-      "output": "ModifyApiIncrementResponse"
+      "output": "ModifyApiIncrementResponse",
+      "status": "online"
     },
     "ModifyExclusiveInstance": {
       "document": "本接口（ModifyExclusiveInstance）用于修改独享实例信息。​",
       "input": "ModifyExclusiveInstanceRequest",
       "name": "修改独享实例",
-      "output": "ModifyExclusiveInstanceResponse"
+      "output": "ModifyExclusiveInstanceResponse",
+      "status": "online"
     },
     "ModifyIPStrategy": {
       "document": "本接口（ModifyIPStrategy）用于修改服务IP策略。",
       "input": "ModifyIPStrategyRequest",
       "name": "修改服务IP策略",
-      "output": "ModifyIPStrategyResponse"
+      "output": "ModifyIPStrategyResponse",
+      "status": "online"
     },
     "ModifyPlugin": {
       "document": "修改API网关插件。",
       "input": "ModifyPluginRequest",
       "name": "修改插件",
-      "output": "ModifyPluginResponse"
+      "output": "ModifyPluginResponse",
+      "status": "online"
     },
     "ModifyService": {
       "document": "本接口（ModifyService）用于修改服务的相关信息。当服务创建后，服务的名称、描述和服务类型均可被修改。",
       "input": "ModifyServiceRequest",
       "name": "修改服务",
-      "output": "ModifyServiceResponse"
+      "output": "ModifyServiceResponse",
+      "status": "online"
     },
     "ModifyServiceEnvironmentStrategy": {
       "document": "本接口（ModifyServiceEnvironmentStrategy）用于修改服务限流策略",
       "input": "ModifyServiceEnvironmentStrategyRequest",
       "name": "修改服务限流策略",
-      "output": "ModifyServiceEnvironmentStrategyResponse"
+      "output": "ModifyServiceEnvironmentStrategyResponse",
+      "status": "online"
     },
     "ModifySubDomain": {
       "document": "本接口（ModifySubDomain）用于修改服务的自定义域名设置中的路径映射，可以修改绑定自定义域名之前的路径映射规则。",
       "input": "ModifySubDomainRequest",
       "name": "服务修改自定义域名",
-      "output": "ModifySubDomainResponse"
+      "output": "ModifySubDomainResponse",
+      "status": "online"
     },
     "ModifyUpstream": {
       "document": "修改后端通道",
       "input": "ModifyUpstreamRequest",
       "name": "修改后端通道",
-      "output": "ModifyUpstreamResponse"
+      "output": "ModifyUpstreamResponse",
+      "status": "online"
     },
     "ModifyUsagePlan": {
       "document": "本接口（ModifyUsagePlan）用于修改使用计划的名称，描述及 QPS。",
       "input": "ModifyUsagePlanRequest",
       "name": "修改使用计划",
-      "output": "ModifyUsagePlanResponse"
+      "output": "ModifyUsagePlanResponse",
+      "status": "online"
     },
     "ReleaseService": {
       "document": "本接口（ReleaseService）用于发布服务。\nAPI 网关的服务创建后，需要发布到某个环境方生效后，使用者才能进行调用，此接口用于发布服务到环境，如 release 环境。",
       "input": "ReleaseServiceRequest",
       "name": "发布服务",
-      "output": "ReleaseServiceResponse"
+      "output": "ReleaseServiceResponse",
+      "status": "online"
     },
     "ResetAPIDocPassword": {
       "document": "重置API文档密码",
       "input": "ResetAPIDocPasswordRequest",
       "name": "重置API文档密码",
-      "output": "ResetAPIDocPasswordResponse"
+      "output": "ResetAPIDocPasswordResponse",
+      "status": "online"
     },
     "UnBindEnvironment": {
       "document": "本接口（UnBindEnvironment）用于将使用计划从特定环境解绑。",
       "input": "UnBindEnvironmentRequest",
       "name": "从服务环境解绑使用计划",
-      "output": "UnBindEnvironmentResponse"
+      "output": "UnBindEnvironmentResponse",
+      "status": "online"
     },
     "UnBindIPStrategy": {
       "document": "本接口（UnBindIPStrategy）用于服务解绑IP策略。",
       "input": "UnBindIPStrategyRequest",
       "name": "服务解绑IP策略",
-      "output": "UnBindIPStrategyResponse"
+      "output": "UnBindIPStrategyResponse",
+      "status": "online"
     },
     "UnBindSecretIds": {
       "document": "本接口（UnBindSecretIds）用于为使用计划解绑密钥。",
       "input": "UnBindSecretIdsRequest",
       "name": "使用计划解绑密钥",
-      "output": "UnBindSecretIdsResponse"
+      "output": "UnBindSecretIdsResponse",
+      "status": "online"
     },
     "UnBindSubDomain": {
       "document": "本接口（UnBindSubDomain）用于解绑自定义域名。\n用户使用 API 网关绑定了自定义域名到服务中后，若想要解绑此自定义域名，可使用此接口。",
       "input": "UnBindSubDomainRequest",
       "name": "服务解绑自定义域名",
-      "output": "UnBindSubDomainResponse"
+      "output": "UnBindSubDomainResponse",
+      "status": "online"
     },
     "UnReleaseService": {
       "document": "本接口（UnReleaseService）用于下线服务。\n用户发布服务到某个环境后，此服务中的 API 方可被调用者进行调用，当用户需要将此服务从发布环境中下线时，可调用此 API。下线后的服务不可被调用。",
       "input": "UnReleaseServiceRequest",
       "name": "下线服务",
-      "output": "UnReleaseServiceResponse"
+      "output": "UnReleaseServiceResponse",
+      "status": "online"
     },
     "UnbindApiApp": {
       "document": "本接口（UnbindApiApp）用于解除应用和API绑定。",
       "input": "UnbindApiAppRequest",
       "name": "解除应用和API绑定关系",
-      "output": "UnbindApiAppResponse"
+      "output": "UnbindApiAppResponse",
+      "status": "online"
     },
     "UpdateApiAppKey": {
       "document": "本接口（UpdateApiAppKey）用于更新应用密钥。",
       "input": "UpdateApiAppKeyRequest",
       "name": "更新应用密钥",
-      "output": "UpdateApiAppKeyResponse"
+      "output": "UpdateApiAppKeyResponse",
+      "status": "online"
     },
     "UpdateApiKey": {
       "document": "本接口（UpdateApiKey）用于更换用户已创建的一对 API 密钥。",
       "input": "UpdateApiKeyRequest",
       "name": "更换密钥",
-      "output": "UpdateApiKeyResponse"
+      "output": "UpdateApiKeyResponse",
+      "status": "online"
     },
     "UpdateService": {
       "document": "本接口（UpdateService）用于从服务发布的环境中运行版本切换到特定版本。用户在使用 API 网关创建服务并发布服务到某个环境后，多因为开发过程会产生多个版本，此时可调用本接口。",
       "input": "UpdateServiceRequest",
       "name": "更新服务版本",
-      "output": "UpdateServiceResponse"
+      "output": "UpdateServiceResponse",
+      "status": "online"
     }
   },
   "metadata": {

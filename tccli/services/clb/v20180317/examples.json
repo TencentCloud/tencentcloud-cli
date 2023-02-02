@@ -663,7 +663,7 @@
     "RegisterFunctionTargets": [
       {
         "document": "将一个云函数绑定到负载均衡实例的7层转发规则上。",
-        "input": "https://clb.tencentcloudapi.com/?Action=RegisterFunctionTargets\n&LoadBalancerId=lb-cuxw****\n&ListenerId=lbl-d1ub****\n&LocationId=loc-abcd1234\n&FunctionTargets.0.Weight=66\n&FunctionTargets.0.Function.FunctionNamespace=ns_test\n&FunctionTargets.0.Function.FunctionName=name_test\n&FunctionTargets.0.Function.FunctionQualifier=version_test\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterFunctionTargets\n<公共请求参数>\n\n{\n    \"LocationId\": \"loc-abcd1234\",\n    \"ListenerId\": \"lbl-d1ub****\",\n    \"FunctionTargets\": [\n        {\n            \"Function\": {\n                \"FunctionNamespace\": \"ns_test\",\n                \"FunctionName\": \"name_test\",\n                \"FunctionQualifier\": \"version_test\"\n            },\n            \"Weight\": \"66\"\n        }\n    ],\n    \"LoadBalancerId\": \"lb-cuxw****\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"11b4338f-2d00-4766-bc67-581d959b3488\"\n    }\n}",
         "title": "绑定云函数到转发规则上"
       }

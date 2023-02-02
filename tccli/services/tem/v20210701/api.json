@@ -4,301 +4,351 @@
       "document": "创建应用",
       "input": "CreateApplicationRequest",
       "name": "创建应用",
-      "output": "CreateApplicationResponse"
+      "output": "CreateApplicationResponse",
+      "status": "online"
     },
     "CreateApplicationAutoscaler": {
       "document": "创建弹性伸缩策略组合",
       "input": "CreateApplicationAutoscalerRequest",
       "name": "创建弹性伸缩策略组合",
-      "output": "CreateApplicationAutoscalerResponse"
+      "output": "CreateApplicationAutoscalerResponse",
+      "status": "online"
     },
     "CreateApplicationService": {
       "document": "新增访问方式",
       "input": "CreateApplicationServiceRequest",
       "name": "新增访问方式",
-      "output": "CreateApplicationServiceResponse"
+      "output": "CreateApplicationServiceResponse",
+      "status": "online"
     },
     "CreateConfigData": {
       "document": "创建配置",
       "input": "CreateConfigDataRequest",
       "name": "创建配置",
-      "output": "CreateConfigDataResponse"
+      "output": "CreateConfigDataResponse",
+      "status": "online"
     },
     "CreateCosToken": {
       "document": "生成Cos临时秘钥",
       "input": "CreateCosTokenRequest",
       "name": "生成Cos临时秘钥",
-      "output": "CreateCosTokenResponse"
+      "output": "CreateCosTokenResponse",
+      "status": "online"
     },
     "CreateEnvironment": {
       "document": "创建环境",
       "input": "CreateEnvironmentRequest",
       "name": "创建环境",
-      "output": "CreateEnvironmentResponse"
+      "output": "CreateEnvironmentResponse",
+      "status": "online"
     },
     "CreateLogConfig": {
       "document": "创建日志收集配置",
       "input": "CreateLogConfigRequest",
       "name": "创建日志收集配置",
-      "output": "CreateLogConfigResponse"
+      "output": "CreateLogConfigResponse",
+      "status": "online"
     },
     "CreateResource": {
       "document": "绑定云资源",
       "input": "CreateResourceRequest",
       "name": "绑定云资源",
-      "output": "CreateResourceResponse"
+      "output": "CreateResourceResponse",
+      "status": "online"
     },
     "DeleteApplication": {
       "document": "服务删除\n  - 停止当前运行服务\n  - 删除服务相关资源\n  - 删除服务",
       "input": "DeleteApplicationRequest",
       "name": "服务删除",
-      "output": "DeleteApplicationResponse"
+      "output": "DeleteApplicationResponse",
+      "status": "online"
     },
     "DeleteApplicationAutoscaler": {
       "document": "删除应用弹性策略组合",
       "input": "DeleteApplicationAutoscalerRequest",
       "name": "删除应用弹性策略组合",
-      "output": "DeleteApplicationAutoscalerResponse"
+      "output": "DeleteApplicationAutoscalerResponse",
+      "status": "online"
     },
     "DeleteApplicationService": {
       "document": "删除一条访问方式",
       "input": "DeleteApplicationServiceRequest",
       "name": "删除一条访问方式",
-      "output": "DeleteApplicationServiceResponse"
+      "output": "DeleteApplicationServiceResponse",
+      "status": "online"
     },
     "DeleteIngress": {
       "document": "删除 Ingress 规则",
       "input": "DeleteIngressRequest",
       "name": "删除 Ingress 规则",
-      "output": "DeleteIngressResponse"
+      "output": "DeleteIngressResponse",
+      "status": "online"
     },
     "DeployApplication": {
       "document": "应用部署",
       "input": "DeployApplicationRequest",
       "name": "应用部署",
-      "output": "DeployApplicationResponse"
+      "output": "DeployApplicationResponse",
+      "status": "online"
     },
     "DescribeApplicationAutoscalerList": {
       "document": "获取应用弹性策略组合",
       "input": "DescribeApplicationAutoscalerListRequest",
       "name": "获取应用弹性策略组合",
-      "output": "DescribeApplicationAutoscalerListResponse"
+      "output": "DescribeApplicationAutoscalerListResponse",
+      "status": "online"
     },
     "DescribeApplicationInfo": {
       "document": "服务基本信息查看",
       "input": "DescribeApplicationInfoRequest",
       "name": "服务基本信息查看",
-      "output": "DescribeApplicationInfoResponse"
+      "output": "DescribeApplicationInfoResponse",
+      "status": "online"
     },
     "DescribeApplicationPods": {
       "document": "获取应用实例列表",
       "input": "DescribeApplicationPodsRequest",
       "name": "获取应用实例列表",
-      "output": "DescribeApplicationPodsResponse"
+      "output": "DescribeApplicationPodsResponse",
+      "status": "online"
     },
     "DescribeApplicationServiceList": {
       "document": "查询应用访问方式列表",
       "input": "DescribeApplicationServiceListRequest",
       "name": "查询应用访问方式列表",
-      "output": "DescribeApplicationServiceListResponse"
+      "output": "DescribeApplicationServiceListResponse",
+      "status": "online"
     },
     "DescribeApplications": {
       "document": "获取运行服务列表",
       "input": "DescribeApplicationsRequest",
       "name": "获取运行服务列表",
-      "output": "DescribeApplicationsResponse"
+      "output": "DescribeApplicationsResponse",
+      "status": "online"
     },
     "DescribeApplicationsStatus": {
       "document": "单环境下所有应用状态查看",
       "input": "DescribeApplicationsStatusRequest",
       "name": "单环境下所有应用状态查看",
-      "output": "DescribeApplicationsStatusResponse"
+      "output": "DescribeApplicationsStatusResponse",
+      "status": "online"
     },
     "DescribeConfigData": {
       "document": "查询配置详情",
       "input": "DescribeConfigDataRequest",
       "name": "查询配置详情",
-      "output": "DescribeConfigDataResponse"
+      "output": "DescribeConfigDataResponse",
+      "status": "online"
     },
     "DescribeConfigDataList": {
       "document": "查询配置列表",
       "input": "DescribeConfigDataListRequest",
       "name": "查询配置列表",
-      "output": "DescribeConfigDataListResponse"
+      "output": "DescribeConfigDataListResponse",
+      "status": "online"
     },
     "DescribeDeployApplicationDetail": {
       "document": "获取分批发布详情",
       "input": "DescribeDeployApplicationDetailRequest",
       "name": "获取分批发布详情",
-      "output": "DescribeDeployApplicationDetailResponse"
+      "output": "DescribeDeployApplicationDetailResponse",
+      "status": "online"
     },
     "DescribeEnvironment": {
       "document": "获取环境基础信息",
       "input": "DescribeEnvironmentRequest",
       "name": "获取环境基础信息",
-      "output": "DescribeEnvironmentResponse"
+      "output": "DescribeEnvironmentResponse",
+      "status": "online"
     },
     "DescribeEnvironmentStatus": {
       "document": "获取环境状态",
       "input": "DescribeEnvironmentStatusRequest",
       "name": "获取环境状态",
-      "output": "DescribeEnvironmentStatusResponse"
+      "output": "DescribeEnvironmentStatusResponse",
+      "status": "online"
     },
     "DescribeEnvironments": {
       "document": "获取环境列表",
       "input": "DescribeEnvironmentsRequest",
       "name": "获取环境列表",
-      "output": "DescribeEnvironmentsResponse"
+      "output": "DescribeEnvironmentsResponse",
+      "status": "online"
     },
     "DescribeIngress": {
       "document": "查询 Ingress 规则",
       "input": "DescribeIngressRequest",
       "name": "查询 Ingress 规则",
-      "output": "DescribeIngressResponse"
+      "output": "DescribeIngressResponse",
+      "status": "online"
     },
     "DescribeIngresses": {
       "document": "查询 Ingress 规则列表",
       "input": "DescribeIngressesRequest",
       "name": "查询 Ingress 规则列表",
-      "output": "DescribeIngressesResponse"
+      "output": "DescribeIngressesResponse",
+      "status": "online"
     },
     "DescribeLogConfig": {
       "document": "查询日志收集配置详情",
       "input": "DescribeLogConfigRequest",
       "name": "查询日志收集配置详情",
-      "output": "DescribeLogConfigResponse"
+      "output": "DescribeLogConfigResponse",
+      "status": "online"
     },
     "DescribePagedLogConfigList": {
       "document": "查询分页的日志收集配置列表",
       "input": "DescribePagedLogConfigListRequest",
       "name": "查询分页的日志收集配置列表",
-      "output": "DescribePagedLogConfigListResponse"
+      "output": "DescribePagedLogConfigListResponse",
+      "status": "online"
     },
     "DescribeRelatedIngresses": {
       "document": "查询应用关联的 Ingress 规则列表",
       "input": "DescribeRelatedIngressesRequest",
       "name": "查询应用关联的 Ingress 规则列表",
-      "output": "DescribeRelatedIngressesResponse"
+      "output": "DescribeRelatedIngressesResponse",
+      "status": "online"
     },
     "DestroyConfigData": {
       "document": "销毁配置",
       "input": "DestroyConfigDataRequest",
       "name": "销毁配置",
-      "output": "DestroyConfigDataResponse"
+      "output": "DestroyConfigDataResponse",
+      "status": "online"
     },
     "DestroyEnvironment": {
       "document": "销毁环境",
       "input": "DestroyEnvironmentRequest",
       "name": "销毁环境",
-      "output": "DestroyEnvironmentResponse"
+      "output": "DestroyEnvironmentResponse",
+      "status": "online"
     },
     "DestroyLogConfig": {
       "document": "销毁日志收集配置",
       "input": "DestroyLogConfigRequest",
       "name": "销毁日志收集配置",
-      "output": "DestroyLogConfigResponse"
+      "output": "DestroyLogConfigResponse",
+      "status": "online"
     },
     "DisableApplicationAutoscaler": {
       "document": "关闭应用弹性策略组合",
       "input": "DisableApplicationAutoscalerRequest",
       "name": "关闭应用弹性策略组合",
-      "output": "DisableApplicationAutoscalerResponse"
+      "output": "DisableApplicationAutoscalerResponse",
+      "status": "online"
     },
     "EnableApplicationAutoscaler": {
       "document": "启用应用弹性策略组合",
       "input": "EnableApplicationAutoscalerRequest",
       "name": "启用应用弹性策略组合",
-      "output": "EnableApplicationAutoscalerResponse"
+      "output": "EnableApplicationAutoscalerResponse",
+      "status": "online"
     },
     "GenerateApplicationPackageDownloadUrl": {
       "document": "生成应用程序包预签名下载链接",
       "input": "GenerateApplicationPackageDownloadUrlRequest",
       "name": "生成应用程序包预签名下载链接",
-      "output": "GenerateApplicationPackageDownloadUrlResponse"
+      "output": "GenerateApplicationPackageDownloadUrlResponse",
+      "status": "online"
     },
     "ModifyApplicationAutoscaler": {
       "document": "修改弹性伸缩策略组合",
       "input": "ModifyApplicationAutoscalerRequest",
       "name": "修改弹性伸缩策略组合",
-      "output": "ModifyApplicationAutoscalerResponse"
+      "output": "ModifyApplicationAutoscalerResponse",
+      "status": "online"
     },
     "ModifyApplicationInfo": {
       "document": "修改应用基本信息",
       "input": "ModifyApplicationInfoRequest",
       "name": "修改应用基本信息",
-      "output": "ModifyApplicationInfoResponse"
+      "output": "ModifyApplicationInfoResponse",
+      "status": "online"
     },
     "ModifyApplicationReplicas": {
       "document": "修改应用实例数量",
       "input": "ModifyApplicationReplicasRequest",
       "name": "修改应用实例数量",
-      "output": "ModifyApplicationReplicasResponse"
+      "output": "ModifyApplicationReplicasResponse",
+      "status": "online"
     },
     "ModifyApplicationService": {
       "document": "修改服务访问方式列表",
       "input": "ModifyApplicationServiceRequest",
       "name": "修改服务访问方式列表",
-      "output": "ModifyApplicationServiceResponse"
+      "output": "ModifyApplicationServiceResponse",
+      "status": "online"
     },
     "ModifyConfigData": {
       "document": "编辑配置",
       "input": "ModifyConfigDataRequest",
       "name": "编辑配置",
-      "output": "ModifyConfigDataResponse"
+      "output": "ModifyConfigDataResponse",
+      "status": "online"
     },
     "ModifyEnvironment": {
       "document": "编辑环境",
       "input": "ModifyEnvironmentRequest",
       "name": "编辑环境",
-      "output": "ModifyEnvironmentResponse"
+      "output": "ModifyEnvironmentResponse",
+      "status": "online"
     },
     "ModifyIngress": {
       "document": "创建或者更新 Ingress 规则",
       "input": "ModifyIngressRequest",
       "name": "创建或者更新 Ingress 规则",
-      "output": "ModifyIngressResponse"
+      "output": "ModifyIngressResponse",
+      "status": "online"
     },
     "ModifyLogConfig": {
       "document": "编辑日志收集配置",
       "input": "ModifyLogConfigRequest",
       "name": "编辑日志收集配置",
-      "output": "ModifyLogConfigResponse"
+      "output": "ModifyLogConfigResponse",
+      "status": "online"
     },
     "RestartApplication": {
       "document": "服务重启",
       "input": "RestartApplicationRequest",
       "name": "服务重启",
-      "output": "RestartApplicationResponse"
+      "output": "RestartApplicationResponse",
+      "status": "online"
     },
     "RestartApplicationPod": {
       "document": "重启应用实例",
       "input": "RestartApplicationPodRequest",
       "name": "重启应用实例",
-      "output": "RestartApplicationPodResponse"
+      "output": "RestartApplicationPodResponse",
+      "status": "online"
     },
     "ResumeDeployApplication": {
       "document": "开始下一批次发布",
       "input": "ResumeDeployApplicationRequest",
       "name": "开始下一批次发布",
-      "output": "ResumeDeployApplicationResponse"
+      "output": "ResumeDeployApplicationResponse",
+      "status": "online"
     },
     "RevertDeployApplication": {
       "document": "回滚分批发布",
       "input": "RevertDeployApplicationRequest",
       "name": "回滚分批发布",
-      "output": "RevertDeployApplicationResponse"
+      "output": "RevertDeployApplicationResponse",
+      "status": "online"
     },
     "RollingUpdateApplicationByVersion": {
       "document": "更新应用部署版本",
       "input": "RollingUpdateApplicationByVersionRequest",
       "name": "更新应用部署版本",
-      "output": "RollingUpdateApplicationByVersionResponse"
+      "output": "RollingUpdateApplicationByVersionResponse",
+      "status": "online"
     },
     "StopApplication": {
       "document": "服务停止",
       "input": "StopApplicationRequest",
       "name": "服务停止",
-      "output": "StopApplicationResponse"
+      "output": "StopApplicationResponse",
+      "status": "online"
     }
   },
   "metadata": {

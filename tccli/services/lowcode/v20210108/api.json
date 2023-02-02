@@ -4,133 +4,155 @@
       "document": "将流程定义与前端组建绑定",
       "input": "BindProcessComponentRequest",
       "name": "绑定流程组件",
-      "output": "BindProcessComponentResponse"
+      "output": "BindProcessComponentResponse",
+      "status": "online"
     },
     "CopyProcessDetail": {
       "document": "复制流程详情",
       "input": "CopyProcessDetailRequest",
       "name": "复制流程详情",
-      "output": "CopyProcessDetailResponse"
+      "output": "CopyProcessDetailResponse",
+      "status": "online"
     },
     "CreateDataSourceDetail": {
       "document": "创建数据源详情信息",
       "input": "CreateDataSourceDetailRequest",
       "name": "创建数据源详情信息",
-      "output": "CreateDataSourceDetailResponse"
+      "output": "CreateDataSourceDetailResponse",
+      "status": "online"
     },
     "DeleteMaterialInfo": {
       "document": "删除素材",
       "input": "DeleteMaterialInfoRequest",
       "name": "删除素材",
-      "output": "DeleteMaterialInfoResponse"
+      "output": "DeleteMaterialInfoResponse",
+      "status": "online"
     },
     "DescribeDataSourceList": {
       "document": "获取数据源详情列表",
       "input": "DescribeDataSourceListRequest",
       "name": "获取数据源详情列表",
-      "output": "DescribeDataSourceListResponse"
+      "output": "DescribeDataSourceListResponse",
+      "status": "online"
     },
     "DescribeFoldProcessBasicInfos": {
       "document": "查询流程折叠基础信息列表",
       "input": "DescribeFoldProcessBasicInfosRequest",
       "name": "查询流程折叠基础信息列表",
-      "output": "DescribeFoldProcessBasicInfosResponse"
+      "output": "DescribeFoldProcessBasicInfosResponse",
+      "status": "online"
     },
     "DescribeMaterialInfoList": {
       "document": "获取素材列表",
       "input": "DescribeMaterialInfoListRequest",
       "name": "获取素材列表",
-      "output": "DescribeMaterialInfoListResponse"
+      "output": "DescribeMaterialInfoListResponse",
+      "status": "online"
     },
     "DescribeMaterialUploadUrl": {
       "document": "获取素材上传链接",
       "input": "DescribeMaterialUploadUrlRequest",
       "name": "获取素材上传链接",
-      "output": "DescribeMaterialUploadUrlResponse"
+      "output": "DescribeMaterialUploadUrlResponse",
+      "status": "online"
     },
     "DescribeMessageTemplates": {
       "document": "本接口（DescribeMessageTemplates）用于查询消息模板列表",
       "input": "DescribeMessageTemplatesRequest",
       "name": "查询消息模板列表",
-      "output": "DescribeMessageTemplatesResponse"
+      "output": "DescribeMessageTemplatesResponse",
+      "status": "online"
     },
     "DescribePermissionForAppPage": {
       "document": "查询应用页面权限列表",
       "input": "DescribePermissionForAppPageRequest",
       "name": "查询应用页面权限列表",
-      "output": "DescribePermissionForAppPageResponse"
+      "output": "DescribePermissionForAppPageResponse",
+      "status": "online"
     },
     "DescribePermissions": {
       "document": "查询资源权限信息",
       "input": "DescribePermissionsRequest",
       "name": "查询资源权限信息",
-      "output": "DescribePermissionsResponse"
+      "output": "DescribePermissionsResponse",
+      "status": "online"
     },
     "DescribeProcessBasicInfos": {
       "document": "查询流程基础信息列表",
       "input": "DescribeProcessBasicInfosRequest",
       "name": "查询流程基础信息列表",
-      "output": "DescribeProcessBasicInfosResponse"
+      "output": "DescribeProcessBasicInfosResponse",
+      "status": "online"
     },
     "DescribeProcessNodeList": {
       "document": "查询流程节点信息",
       "input": "DescribeProcessNodeListRequest",
       "name": "查询流程节点信息",
-      "output": "DescribeProcessNodeListResponse"
+      "output": "DescribeProcessNodeListResponse",
+      "status": "online"
     },
     "DescribeTemplateList": {
       "document": "查询外部数据源模板列表",
       "input": "DescribeTemplateListRequest",
       "name": "查询外部数据源模板列表",
-      "output": "DescribeTemplateListResponse"
+      "output": "DescribeTemplateListResponse",
+      "status": "online"
     },
     "DescribeWxAccessToken": {
       "document": "获取微信token",
       "input": "DescribeWxAccessTokenRequest",
       "name": "获取微信token",
-      "output": "DescribeWxAccessTokenResponse"
+      "output": "DescribeWxAccessTokenResponse",
+      "status": "online"
     },
     "DescribeWxAppInfo": {
       "document": "查询微信小程序信息",
       "input": "DescribeWxAppInfoRequest",
       "name": "查询微信小程序信息",
-      "output": "DescribeWxAppInfoResponse"
+      "output": "DescribeWxAppInfoResponse",
+      "status": "online"
     },
     "FlushEnvPreToProd": {
       "document": "刷新用户的预览环境到生产环境。",
       "input": "FlushEnvPreToProdRequest",
       "name": "刷新用户的预览环境到生产环境",
-      "output": "FlushEnvPreToProdResponse"
+      "output": "FlushEnvPreToProdResponse",
+      "status": "online"
     },
     "GetDataSourceToken": {
       "document": "GetDataSourceTokenRequestVO",
       "input": "GetDataSourceTokenRequest",
       "name": "获取数据源授权token",
-      "output": "GetDataSourceTokenResponse"
+      "output": "GetDataSourceTokenResponse",
+      "status": "online"
     },
     "ModifyDataSource": {
       "document": "修改数据源信息",
       "input": "ModifyDataSourceRequest",
       "name": "修改数据源信息",
-      "output": "ModifyDataSourceResponse"
+      "output": "ModifyDataSourceResponse",
+      "status": "online"
     },
     "OperateProcessBasicInfo": {
       "document": "操作流程基础信息",
       "input": "OperateProcessBasicInfoRequest",
       "name": "操作流程基础信息",
-      "output": "OperateProcessBasicInfoResponse"
+      "output": "OperateProcessBasicInfoResponse",
+      "status": "online"
     },
     "UnbindProcessComponent": {
       "document": "解绑流程节点和组件的关系。",
       "input": "UnbindProcessComponentRequest",
       "name": "解绑流程组件的关系",
-      "output": "UnbindProcessComponentResponse"
+      "output": "UnbindProcessComponentResponse",
+      "status": "online"
     },
     "UpdateMaterialInfo": {
       "document": "新增或更新素材信息",
       "input": "UpdateMaterialInfoRequest",
       "name": "新增或更新素材信息",
-      "output": "UpdateMaterialInfoResponse"
+      "output": "UpdateMaterialInfoResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,217 +4,253 @@
       "document": "绑定坐席所属技能组",
       "input": "BindStaffSkillGroupListRequest",
       "name": "绑定坐席所属技能组",
-      "output": "BindStaffSkillGroupListResponse"
+      "output": "BindStaffSkillGroupListResponse",
+      "status": "online"
     },
     "CreateAutoCalloutTask": {
       "document": "创建自动外呼任务",
       "input": "CreateAutoCalloutTaskRequest",
       "name": "创建自动外呼任务",
-      "output": "CreateAutoCalloutTaskResponse"
+      "output": "CreateAutoCalloutTaskResponse",
+      "status": "online"
     },
     "CreateCCCSkillGroup": {
       "document": "创建技能组",
       "input": "CreateCCCSkillGroupRequest",
       "name": "创建技能组",
-      "output": "CreateCCCSkillGroupResponse"
+      "output": "CreateCCCSkillGroupResponse",
+      "status": "online"
     },
     "CreateCallOutSession": {
       "document": "创建外呼会话，当前仅支持双呼，即先使用平台号码呼出到坐席手机上，坐席接听后，然后再外呼用户，而且由于运营商频率限制，坐席手机号必须先加白名单，避免频控导致外呼失败。",
       "input": "CreateCallOutSessionRequest",
       "name": "创建外呼会话（当前仅支持双呼）",
-      "output": "CreateCallOutSessionResponse"
+      "output": "CreateCallOutSessionResponse",
+      "status": "online"
     },
     "CreateCarrierPrivilegeNumberApplicant": {
       "document": "用于无限频率地呼叫坐席手机",
       "input": "CreateCarrierPrivilegeNumberApplicantRequest",
       "name": "申请运营商白名单号码",
-      "output": "CreateCarrierPrivilegeNumberApplicantResponse"
+      "output": "CreateCarrierPrivilegeNumberApplicantResponse",
+      "status": "online"
     },
     "CreateExtension": {
       "document": "创建话机账号",
       "input": "CreateExtensionRequest",
       "name": "创建话机账号",
-      "output": "CreateExtensionResponse"
+      "output": "CreateExtensionResponse",
+      "status": "online"
     },
     "CreateSDKLoginToken": {
       "document": "创建 SDK 登录 Token。",
       "input": "CreateSDKLoginTokenRequest",
       "name": "创建 SDK 登录 Token",
-      "output": "CreateSDKLoginTokenResponse"
+      "output": "CreateSDKLoginTokenResponse",
+      "status": "online"
     },
     "CreateStaff": {
       "document": "创建客服账号。",
       "input": "CreateStaffRequest",
       "name": "创建客服账号",
-      "output": "CreateStaffResponse"
+      "output": "CreateStaffResponse",
+      "status": "online"
     },
     "CreateUserSig": {
       "document": "创建用户数据签名",
       "input": "CreateUserSigRequest",
       "name": "创建用户数据签名",
-      "output": "CreateUserSigResponse"
+      "output": "CreateUserSigResponse",
+      "status": "online"
     },
     "DeleteExtension": {
       "document": "删除话机账号",
       "input": "DeleteExtensionRequest",
       "name": "删除话机账号",
-      "output": "DeleteExtensionResponse"
+      "output": "DeleteExtensionResponse",
+      "status": "online"
     },
     "DeleteStaff": {
       "document": "删除坐席信息",
       "input": "DeleteStaffRequest",
       "name": "删除坐席信息",
-      "output": "DeleteStaffResponse"
+      "output": "DeleteStaffResponse",
+      "status": "online"
     },
     "DescribeActiveCarrierPrivilegeNumber": {
       "document": "查询生效运营商白名单规则",
       "input": "DescribeActiveCarrierPrivilegeNumberRequest",
       "name": "查询生效运营商白名单规则",
-      "output": "DescribeActiveCarrierPrivilegeNumberResponse"
+      "output": "DescribeActiveCarrierPrivilegeNumberResponse",
+      "status": "online"
     },
     "DescribeAutoCalloutTask": {
       "document": "查询自动外呼任务详情",
       "input": "DescribeAutoCalloutTaskRequest",
       "name": "查询自动外呼任务详情",
-      "output": "DescribeAutoCalloutTaskResponse"
+      "output": "DescribeAutoCalloutTaskResponse",
+      "status": "online"
     },
     "DescribeAutoCalloutTasks": {
       "document": "批量查询自动任务外呼",
       "input": "DescribeAutoCalloutTasksRequest",
       "name": "批量查询自动任务外呼",
-      "output": "DescribeAutoCalloutTasksResponse"
+      "output": "DescribeAutoCalloutTasksResponse",
+      "status": "online"
     },
     "DescribeCCCBuyInfoList": {
       "document": "获取用户购买信息列表",
       "input": "DescribeCCCBuyInfoListRequest",
       "name": "获取用户购买信息列表",
-      "output": "DescribeCCCBuyInfoListResponse"
+      "output": "DescribeCCCBuyInfoListResponse",
+      "status": "online"
     },
     "DescribeCallInMetrics": {
       "document": "获取呼入实时数据统计指标",
       "input": "DescribeCallInMetricsRequest",
       "name": "获取呼入实时数据统计指标",
-      "output": "DescribeCallInMetricsResponse"
+      "output": "DescribeCallInMetricsResponse",
+      "status": "online"
     },
     "DescribeCarrierPrivilegeNumberApplicants": {
       "document": "查询单状态",
       "input": "DescribeCarrierPrivilegeNumberApplicantsRequest",
       "name": "查询运营商白名单号码申请",
-      "output": "DescribeCarrierPrivilegeNumberApplicantsResponse"
+      "output": "DescribeCarrierPrivilegeNumberApplicantsResponse",
+      "status": "online"
     },
     "DescribeChatMessages": {
       "document": "获取指定服务记录文本聊天内容，需要先使用查询在线客服记录（DescribeIMCdrs） API 获取服务记录 SessionId。\n\n文本聊天记录只保存了 1 年内的，1 年之前会自动清理。",
       "input": "DescribeChatMessagesRequest",
       "name": "查询服务的聊天记录",
-      "output": "DescribeChatMessagesResponse"
+      "output": "DescribeChatMessagesResponse",
+      "status": "online"
     },
     "DescribeExtension": {
       "document": "获取话机信息",
       "input": "DescribeExtensionRequest",
       "name": "获取话机信息",
-      "output": "DescribeExtensionResponse"
+      "output": "DescribeExtensionResponse",
+      "status": "online"
     },
     "DescribeExtensions": {
       "document": "查询话机列表信息",
       "input": "DescribeExtensionsRequest",
       "name": "查询话机列表信息",
-      "output": "DescribeExtensionsResponse"
+      "output": "DescribeExtensionsResponse",
+      "status": "online"
     },
     "DescribeIMCdrs": {
       "document": "获取包括全媒体和文本会话两种类型的服务记录。",
       "input": "DescribeIMCdrsRequest",
       "name": "查询在线客服记录",
-      "output": "DescribeIMCdrsResponse"
+      "output": "DescribeIMCdrsResponse",
+      "status": "online"
     },
     "DescribePSTNActiveSessionList": {
       "document": "获取当前正在通话的会话列表",
       "input": "DescribePSTNActiveSessionListRequest",
       "name": "获取 PSTN 活动会话列表",
-      "output": "DescribePSTNActiveSessionListResponse"
+      "output": "DescribePSTNActiveSessionListResponse",
+      "status": "online"
     },
     "DescribeProtectedTelCdr": {
       "document": "获取主被叫受保护的电话服务记录与录音",
       "input": "DescribeProtectedTelCdrRequest",
       "name": "获取主被叫受保护的电话服务记录与录音",
-      "output": "DescribeProtectedTelCdrResponse"
+      "output": "DescribeProtectedTelCdrResponse",
+      "status": "online"
     },
     "DescribeSkillGroupInfoList": {
       "document": "获取技能组信息列表",
       "input": "DescribeSkillGroupInfoListRequest",
       "name": "获取技能组信息列表",
-      "output": "DescribeSkillGroupInfoListResponse"
+      "output": "DescribeSkillGroupInfoListResponse",
+      "status": "online"
     },
     "DescribeStaffInfoList": {
       "document": "获取坐席信息列表",
       "input": "DescribeStaffInfoListRequest",
       "name": "获取坐席信息列表",
-      "output": "DescribeStaffInfoListResponse"
+      "output": "DescribeStaffInfoListResponse",
+      "status": "online"
     },
     "DescribeStaffStatusMetrics": {
       "document": "获取坐席实时状态统计指标",
       "input": "DescribeStaffStatusMetricsRequest",
       "name": "获取坐席实时状态统计指标",
-      "output": "DescribeStaffStatusMetricsResponse"
+      "output": "DescribeStaffStatusMetricsResponse",
+      "status": "online"
     },
     "DescribeTelCallInfo": {
       "document": "按实例获取电话消耗统计",
       "input": "DescribeTelCallInfoRequest",
       "name": "按实例获取电话消耗统计",
-      "output": "DescribeTelCallInfoResponse"
+      "output": "DescribeTelCallInfoResponse",
+      "status": "online"
     },
     "DescribeTelCdr": {
       "document": "获取电话服务记录与录音",
       "input": "DescribeTelCdrRequest",
       "name": "获取电话服务记录与录音",
-      "output": "DescribeTelCdrResponse"
+      "output": "DescribeTelCdrResponse",
+      "status": "online"
     },
     "DescribeTelSession": {
       "document": "获取 PSTN 会话信息",
       "input": "DescribeTelSessionRequest",
       "name": "获取 PSTN 会话信息",
-      "output": "DescribeTelSessionResponse"
+      "output": "DescribeTelSessionResponse",
+      "status": "online"
     },
     "DisableCCCPhoneNumber": {
       "document": "停用号码",
       "input": "DisableCCCPhoneNumberRequest",
       "name": "停用号码",
-      "output": "DisableCCCPhoneNumberResponse"
+      "output": "DisableCCCPhoneNumberResponse",
+      "status": "online"
     },
     "HangUpCall": {
       "document": "挂断电话",
       "input": "HangUpCallRequest",
       "name": "挂断电话",
-      "output": "HangUpCallResponse"
+      "output": "HangUpCallResponse",
+      "status": "online"
     },
     "ModifyExtension": {
       "document": "修改话机账号(绑定技能组、绑定坐席账号)",
       "input": "ModifyExtensionRequest",
       "name": "修改话机账号(绑定技能组、绑定坐席账号)",
-      "output": "ModifyExtensionResponse"
+      "output": "ModifyExtensionResponse",
+      "status": "online"
     },
     "ModifyStaff": {
       "document": "修改客服账号",
       "input": "ModifyStaffRequest",
       "name": "修改客服账号",
-      "output": "ModifyStaffResponse"
+      "output": "ModifyStaffResponse",
+      "status": "online"
     },
     "ResetExtensionPassword": {
       "document": "重置话机注册密码",
       "input": "ResetExtensionPasswordRequest",
       "name": "重置话机注册密码",
-      "output": "ResetExtensionPasswordResponse"
+      "output": "ResetExtensionPasswordResponse",
+      "status": "online"
     },
     "StopAutoCalloutTask": {
       "document": "停止自动外呼任务",
       "input": "StopAutoCalloutTaskRequest",
       "name": "停止自动外呼任务",
-      "output": "StopAutoCalloutTaskResponse"
+      "output": "StopAutoCalloutTaskResponse",
+      "status": "online"
     },
     "UnbindStaffSkillGroupList": {
       "document": "解绑坐席所属技能组",
       "input": "UnbindStaffSkillGroupListRequest",
       "name": "解绑坐席所属技能组",
-      "output": "UnbindStaffSkillGroupListResponse"
+      "output": "UnbindStaffSkillGroupListResponse",
+      "status": "online"
     }
   },
   "metadata": {

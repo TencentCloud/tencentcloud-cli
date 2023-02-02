@@ -4,187 +4,218 @@
       "document": "此接口可将已存在实例添加到计算环境中。\n实例需要满足如下条件：<br/>\n1.实例不在批量计算系统中。<br/>\n2.实例状态要求处于运行中。<br/>\n3.支持预付费实例，按小时后付费实例，专享子机实例。不支持竞价实例。<br/>\n\n此接口会将加入到计算环境中的实例重设UserData和重装操作系统。",
       "input": "AttachInstancesRequest",
       "name": "添加实例到计算环境",
-      "output": "AttachInstancesResponse"
+      "output": "AttachInstancesResponse",
+      "status": "online"
     },
     "CreateComputeEnv": {
       "document": "用于创建计算环境",
       "input": "CreateComputeEnvRequest",
       "name": "创建计算环境",
-      "output": "CreateComputeEnvResponse"
+      "output": "CreateComputeEnvResponse",
+      "status": "online"
     },
     "CreateCpmComputeEnv": {
       "document": "创建黑石计算环境",
       "input": "CreateCpmComputeEnvRequest",
       "name": "创建黑石计算环境",
-      "output": "CreateCpmComputeEnvResponse"
+      "output": "CreateCpmComputeEnvResponse",
+      "status": "online"
     },
     "CreateTaskTemplate": {
       "document": "用于创建任务模板",
       "input": "CreateTaskTemplateRequest",
       "name": "创建任务模板",
-      "output": "CreateTaskTemplateResponse"
+      "output": "CreateTaskTemplateResponse",
+      "status": "online"
     },
     "DeleteComputeEnv": {
       "document": "用于删除计算环境",
       "input": "DeleteComputeEnvRequest",
       "name": "删除计算环境",
-      "output": "DeleteComputeEnvResponse"
+      "output": "DeleteComputeEnvResponse",
+      "status": "online"
     },
     "DeleteJob": {
       "document": "用于删除作业记录。\n删除作业的效果相当于删除作业相关的所有信息。删除成功后，作业相关的所有信息都无法查询。\n待删除的作业必须处于完结状态，且其内部包含的所有任务实例也必须处于完结状态，否则会禁止操作。完结状态，是指处于 SUCCEED 或 FAILED 状态。",
       "input": "DeleteJobRequest",
       "name": "删除作业",
-      "output": "DeleteJobResponse"
+      "output": "DeleteJobResponse",
+      "status": "online"
     },
     "DeleteTaskTemplates": {
       "document": "用于删除任务模板信息",
       "input": "DeleteTaskTemplatesRequest",
       "name": "删除任务模板",
-      "output": "DeleteTaskTemplatesResponse"
+      "output": "DeleteTaskTemplatesResponse",
+      "status": "online"
     },
     "DescribeAvailableCvmInstanceTypes": {
       "document": "查看可用的CVM机型配置信息",
       "input": "DescribeAvailableCvmInstanceTypesRequest",
       "name": "获取批量计算可用的CVM机型配置信息",
-      "output": "DescribeAvailableCvmInstanceTypesResponse"
+      "output": "DescribeAvailableCvmInstanceTypesResponse",
+      "status": "online"
     },
     "DescribeComputeEnv": {
       "document": "用于查询计算环境的详细信息",
       "input": "DescribeComputeEnvRequest",
       "name": "获取计算环境详情",
-      "output": "DescribeComputeEnvResponse"
+      "output": "DescribeComputeEnvResponse",
+      "status": "online"
     },
     "DescribeComputeEnvActivities": {
       "document": "用于查询计算环境的活动信息",
       "input": "DescribeComputeEnvActivitiesRequest",
       "name": "查看计算环境活动信息",
-      "output": "DescribeComputeEnvActivitiesResponse"
+      "output": "DescribeComputeEnvActivitiesResponse",
+      "status": "online"
     },
     "DescribeComputeEnvCreateInfo": {
       "document": "查看计算环境的创建信息。",
       "input": "DescribeComputeEnvCreateInfoRequest",
       "name": "查看计算环境的创建信息",
-      "output": "DescribeComputeEnvCreateInfoResponse"
+      "output": "DescribeComputeEnvCreateInfoResponse",
+      "status": "online"
     },
     "DescribeComputeEnvCreateInfos": {
       "document": "用于查看计算环境创建信息列表，包括名称、描述、类型、环境参数、通知及期望节点数等。",
       "input": "DescribeComputeEnvCreateInfosRequest",
       "name": "查看计算环境创建信息列表",
-      "output": "DescribeComputeEnvCreateInfosResponse"
+      "output": "DescribeComputeEnvCreateInfosResponse",
+      "status": "online"
     },
     "DescribeComputeEnvs": {
       "document": "用于查看计算环境列表",
       "input": "DescribeComputeEnvsRequest",
       "name": "获取计算环境列表",
-      "output": "DescribeComputeEnvsResponse"
+      "output": "DescribeComputeEnvsResponse",
+      "status": "online"
     },
     "DescribeCpmOsInfo": {
       "document": "创建黑石计算环境时，查询批量计算环境支持的黑石操作系统信息",
       "input": "DescribeCpmOsInfoRequest",
       "name": "查询批量计算黑石操作系统信息",
-      "output": "DescribeCpmOsInfoResponse"
+      "output": "DescribeCpmOsInfoResponse",
+      "status": "online"
     },
     "DescribeCvmZoneInstanceConfigInfos": {
       "document": "获取批量计算可用区机型配置信息",
       "input": "DescribeCvmZoneInstanceConfigInfosRequest",
       "name": "获取批量计算可用区机型配置信息",
-      "output": "DescribeCvmZoneInstanceConfigInfosResponse"
+      "output": "DescribeCvmZoneInstanceConfigInfosResponse",
+      "status": "online"
     },
     "DescribeInstanceCategories": {
       "document": "目前对CVM现有实例族分类，每一类包含若干实例族。该接口用于查询实例分类信息。",
       "input": "DescribeInstanceCategoriesRequest",
       "name": "查询实例分类信息",
-      "output": "DescribeInstanceCategoriesResponse"
+      "output": "DescribeInstanceCategoriesResponse",
+      "status": "online"
     },
     "DescribeJob": {
       "document": "用于查看一个作业的详细信息，包括内部任务（Task）和依赖（Dependence）信息。",
       "input": "DescribeJobRequest",
       "name": "查看作业详情",
-      "output": "DescribeJobResponse"
+      "output": "DescribeJobResponse",
+      "status": "online"
     },
     "DescribeJobSubmitInfo": {
       "document": "用于查询指定作业的提交信息，其返回内容包括 JobId 和 SubmitJob 接口中作为输入参数的作业提交信息",
       "input": "DescribeJobSubmitInfoRequest",
       "name": "获取作业的提交信息",
-      "output": "DescribeJobSubmitInfoResponse"
+      "output": "DescribeJobSubmitInfoResponse",
+      "status": "online"
     },
     "DescribeJobs": {
       "document": "用于查询若干个作业的概览信息",
       "input": "DescribeJobsRequest",
       "name": "查看作业列表",
-      "output": "DescribeJobsResponse"
+      "output": "DescribeJobsResponse",
+      "status": "online"
     },
     "DescribeTask": {
       "document": "用于查询指定任务的详细信息，包括任务内部的任务实例信息。",
       "input": "DescribeTaskRequest",
       "name": "查询任务详情",
-      "output": "DescribeTaskResponse"
+      "output": "DescribeTaskResponse",
+      "status": "online"
     },
     "DescribeTaskLogs": {
       "document": "用于获取任务多个实例标准输出和标准错误日志。",
       "input": "DescribeTaskLogsRequest",
       "name": "获取任务日志详情",
-      "output": "DescribeTaskLogsResponse"
+      "output": "DescribeTaskLogsResponse",
+      "status": "online"
     },
     "DescribeTaskTemplates": {
       "document": "用于查询任务模板信息",
       "input": "DescribeTaskTemplatesRequest",
       "name": "获取任务模板",
-      "output": "DescribeTaskTemplatesResponse"
+      "output": "DescribeTaskTemplatesResponse",
+      "status": "online"
     },
     "DetachInstances": {
       "document": "将添加到计算环境中的实例从计算环境中移出。若是由批量计算自动创建的计算节点实例则不允许移出。",
       "input": "DetachInstancesRequest",
       "name": "从计算环境移出实例",
-      "output": "DetachInstancesResponse"
+      "output": "DetachInstancesResponse",
+      "status": "online"
     },
     "ModifyComputeEnv": {
       "document": "用于修改计算环境属性",
       "input": "ModifyComputeEnvRequest",
       "name": "修改计算环境",
-      "output": "ModifyComputeEnvResponse"
+      "output": "ModifyComputeEnvResponse",
+      "status": "online"
     },
     "ModifyTaskTemplate": {
       "document": "用于修改任务模板",
       "input": "ModifyTaskTemplateRequest",
       "name": "修改任务模板",
-      "output": "ModifyTaskTemplateResponse"
+      "output": "ModifyTaskTemplateResponse",
+      "status": "online"
     },
     "RetryJobs": {
       "document": "用于重试作业中失败的任务实例。\n当且仅当作业处于“FAILED”状态，支持重试操作。重试操作成功后，作业会按照“DAG”中指定的任务依赖关系，依次重试各个任务中失败的任务实例。任务实例的历史信息将被重置，如同首次运行一样，参与后续的调度和执行。",
       "input": "RetryJobsRequest",
       "name": "重试作业",
-      "output": "RetryJobsResponse"
+      "output": "RetryJobsResponse",
+      "status": "online"
     },
     "SubmitJob": {
       "document": "用于提交一个作业",
       "input": "SubmitJobRequest",
       "name": "提交作业",
-      "output": "SubmitJobResponse"
+      "output": "SubmitJobResponse",
+      "status": "online"
     },
     "TerminateComputeNode": {
       "document": "用于销毁计算节点。\n对于状态为CREATED、CREATION_FAILED、RUNNING和ABNORMAL的节点，允许销毁处理。",
       "input": "TerminateComputeNodeRequest",
       "name": "销毁计算节点",
-      "output": "TerminateComputeNodeResponse"
+      "output": "TerminateComputeNodeResponse",
+      "status": "online"
     },
     "TerminateComputeNodes": {
       "document": "用于批量销毁计算节点，不允许重复销毁同一个节点。",
       "input": "TerminateComputeNodesRequest",
       "name": "批量销毁计算节点",
-      "output": "TerminateComputeNodesResponse"
+      "output": "TerminateComputeNodesResponse",
+      "status": "online"
     },
     "TerminateJob": {
       "document": "用于终止作业。\n当作业处于“SUBMITTED”状态时，禁止终止操作；当作业处于“SUCCEED”状态时，终止操作不会生效。\n终止作业是一个异步过程。整个终止过程的耗时和任务总数成正比。终止的效果相当于所含的所有任务实例进行TerminateTaskInstance操作。具体效果和用法可参考TerminateTaskInstance。",
       "input": "TerminateJobRequest",
       "name": "终止作业",
-      "output": "TerminateJobResponse"
+      "output": "TerminateJobResponse",
+      "status": "online"
     },
     "TerminateTaskInstance": {
       "document": "用于终止任务实例。\n对于状态已经为“SUCCEED”和“FAILED”的任务实例，不做处理。\n对于状态为“SUBMITTED”、“PENDING”、“RUNNABLE”的任务实例，状态将置为“FAILED”状态。\n对于状态为“STARTING”、“RUNNING”、“FAILED_INTERRUPTED”的任务实例，分区两种情况：如果未显示指定计算环境，会先销毁CVM服务器，然后将状态置为“FAILED”，具有一定耗时；如果指定了计算环境EnvId，任务实例状态置为“FAILED”，并重启执行该任务的CVM服务器，具有一定的耗时。\n对于状态为“FAILED_INTERRUPTED”的任务实例，终止操作实际成功之后，相关资源和配额才会释放。",
       "input": "TerminateTaskInstanceRequest",
       "name": "终止任务实例",
-      "output": "TerminateTaskInstanceResponse"
+      "output": "TerminateTaskInstanceResponse",
+      "status": "online"
     }
   },
   "metadata": {

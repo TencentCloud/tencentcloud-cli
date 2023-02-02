@@ -4,289 +4,337 @@
       "document": "DID添加标签\n",
       "input": "AddLabelRequest",
       "name": "DID添加标签",
-      "output": "AddLabelResponse"
+      "output": "AddLabelResponse",
+      "status": "online"
     },
     "CancelAuthorityIssuer": {
       "document": "撤消权威机构认证",
       "input": "CancelAuthorityIssuerRequest",
       "name": "撤消权威机构认证",
-      "output": "CancelAuthorityIssuerResponse"
+      "output": "CancelAuthorityIssuerResponse",
+      "status": "online"
     },
     "CheckChain": {
       "document": "检查区块链信息",
       "input": "CheckChainRequest",
       "name": "检查区块链信息",
-      "output": "CheckChainResponse"
+      "output": "CheckChainResponse",
+      "status": "online"
     },
     "CheckDidDeploy": {
       "document": "检查部署情况",
       "input": "CheckDidDeployRequest",
       "name": "检查部署情况",
-      "output": "CheckDidDeployResponse"
+      "output": "CheckDidDeployResponse",
+      "status": "online"
     },
     "CreateCredential": {
       "document": "创建凭证",
       "input": "CreateCredentialRequest",
       "name": "创建凭证",
-      "output": "CreateCredentialResponse"
+      "output": "CreateCredentialResponse",
+      "status": "online"
     },
     "CreateDidService": {
       "document": "创建DID服务",
       "input": "CreateDidServiceRequest",
       "name": "创建DID服务",
-      "output": "CreateDidServiceResponse"
+      "output": "CreateDidServiceResponse",
+      "status": "online"
     },
     "CreateLabel": {
       "document": "新建标签",
       "input": "CreateLabelRequest",
       "name": "新建标签",
-      "output": "CreateLabelResponse"
+      "output": "CreateLabelResponse",
+      "status": "online"
     },
     "CreateSelectiveCredential": {
       "document": "创建选择性批露凭证",
       "input": "CreateSelectiveCredentialRequest",
       "name": "创建选择性批露凭证",
-      "output": "CreateSelectiveCredentialResponse"
+      "output": "CreateSelectiveCredentialResponse",
+      "status": "online"
     },
     "CreateTDid": {
       "document": "创建机构DID",
       "input": "CreateTDidRequest",
       "name": "创建机构DID",
-      "output": "CreateTDidResponse"
+      "output": "CreateTDidResponse",
+      "status": "online"
     },
     "CreateTDidByPrivateKey": {
       "document": "新建DID根据私钥生成Tdid",
       "input": "CreateTDidByPrivateKeyRequest",
       "name": "新建DID根据私钥生成Tdid",
-      "output": "CreateTDidByPrivateKeyResponse"
+      "output": "CreateTDidByPrivateKeyResponse",
+      "status": "online"
     },
     "CreateTDidByPublicKey": {
       "document": " 新建DID根据公钥生成Tdid",
       "input": "CreateTDidByPublicKeyRequest",
       "name": "新建DID根据公钥生成Tdid",
-      "output": "CreateTDidByPublicKeyResponse"
+      "output": "CreateTDidByPublicKeyResponse",
+      "status": "online"
     },
     "DeployByName": {
       "document": "通过Name部署TDID合约",
       "input": "DeployByNameRequest",
       "name": "通过Name部署TDID合约",
-      "output": "DeployByNameResponse"
+      "output": "DeployByNameResponse",
+      "status": "online"
     },
     "DownCpt": {
       "document": "凭证模版下载",
       "input": "DownCptRequest",
       "name": "凭证模版下载",
-      "output": "DownCptResponse"
+      "output": "DownCptResponse",
+      "status": "online"
     },
     "EnableHash": {
       "document": "启用合约",
       "input": "EnableHashRequest",
       "name": "启用合约",
-      "output": "EnableHashResponse"
+      "output": "EnableHashResponse",
+      "status": "online"
     },
     "GetAgencyTDid": {
       "document": "该接口已废弃\n\n本机构DID详情",
       "input": "GetAgencyTDidRequest",
       "name": "本机构DID详情",
-      "output": "GetAgencyTDidResponse"
+      "output": "GetAgencyTDidResponse",
+      "status": "deprecated"
     },
     "GetAuthoritiesList": {
       "document": "权威机构列表",
       "input": "GetAuthoritiesListRequest",
       "name": "权威机构列表",
-      "output": "GetAuthoritiesListResponse"
+      "output": "GetAuthoritiesListResponse",
+      "status": "online"
     },
     "GetAuthorityIssuer": {
       "document": "获取权威机构信息",
       "input": "GetAuthorityIssuerRequest",
       "name": "获取权威机构信息",
-      "output": "GetAuthorityIssuerResponse"
+      "output": "GetAuthorityIssuerResponse",
+      "status": "online"
     },
     "GetConsortiumClusterList": {
       "document": "获取联盟bcos网络列表",
       "input": "GetConsortiumClusterListRequest",
       "name": "获取联盟bcos网络列表",
-      "output": "GetConsortiumClusterListResponse"
+      "output": "GetConsortiumClusterListResponse",
+      "status": "online"
     },
     "GetConsortiumList": {
       "document": "获取联盟列表",
       "input": "GetConsortiumListRequest",
       "name": "获取联盟列表",
-      "output": "GetConsortiumListResponse"
+      "output": "GetConsortiumListResponse",
+      "status": "online"
     },
     "GetCptInfo": {
       "document": "凭证模版详情",
       "input": "GetCptInfoRequest",
       "name": "凭证模版详情",
-      "output": "GetCptInfoResponse"
+      "output": "GetCptInfoResponse",
+      "status": "online"
     },
     "GetCptList": {
       "document": "凭证模版列表",
       "input": "GetCptListRequest",
       "name": "凭证模版列表",
-      "output": "GetCptListResponse"
+      "output": "GetCptListResponse",
+      "status": "online"
     },
     "GetCredentialCptRank": {
       "document": "凭证颁发按机构排行",
       "input": "GetCredentialCptRankRequest",
       "name": "凭证颁发模板排行",
-      "output": "GetCredentialCptRankResponse"
+      "output": "GetCredentialCptRankResponse",
+      "status": "online"
     },
     "GetCredentialIssueRank": {
       "document": "凭证颁发按机构排行",
       "input": "GetCredentialIssueRankRequest",
       "name": "凭证颁发机构排行",
-      "output": "GetCredentialIssueRankResponse"
+      "output": "GetCredentialIssueRankResponse",
+      "status": "online"
     },
     "GetCredentialIssueTrend": {
       "document": "凭证颁发趋势",
       "input": "GetCredentialIssueTrendRequest",
       "name": "凭证颁发趋势",
-      "output": "GetCredentialIssueTrendResponse"
+      "output": "GetCredentialIssueTrendResponse",
+      "status": "online"
     },
     "GetCredentialStatus": {
       "document": "获取凭证链上状态信息",
       "input": "GetCredentialStatusRequest",
       "name": "获取凭证链上状态",
-      "output": "GetCredentialStatusResponse"
+      "output": "GetCredentialStatusResponse",
+      "status": "online"
     },
     "GetDataPanel": {
       "document": "概览\n",
       "input": "GetDataPanelRequest",
       "name": "概览",
-      "output": "GetDataPanelResponse"
+      "output": "GetDataPanelResponse",
+      "status": "online"
     },
     "GetDeployInfo": {
       "document": "合约部署详情\n",
       "input": "GetDeployInfoRequest",
       "name": "合约部署详情",
-      "output": "GetDeployInfoResponse"
+      "output": "GetDeployInfoResponse",
+      "status": "online"
     },
     "GetDeployList": {
       "document": "合约部署列表",
       "input": "GetDeployListRequest",
       "name": "合约部署列表",
-      "output": "GetDeployListResponse"
+      "output": "GetDeployListResponse",
+      "status": "online"
     },
     "GetDidClusterDetail": {
       "document": "获取DID区块链网络详情",
       "input": "GetDidClusterDetailRequest",
       "name": "获取DID网络详情",
-      "output": "GetDidClusterDetailResponse"
+      "output": "GetDidClusterDetailResponse",
+      "status": "online"
     },
     "GetDidClusterList": {
       "document": "获取用户的DID网络列表",
       "input": "GetDidClusterListRequest",
       "name": "获取DID网络列表",
-      "output": "GetDidClusterListResponse"
+      "output": "GetDidClusterListResponse",
+      "status": "online"
     },
     "GetDidDetail": {
       "document": "DID详情",
       "input": "GetDidDetailRequest",
       "name": "DID详情",
-      "output": "GetDidDetailResponse"
+      "output": "GetDidDetailResponse",
+      "status": "online"
     },
     "GetDidDocument": {
       "document": "查看DID文档\n",
       "input": "GetDidDocumentRequest",
       "name": "查看DID文档",
-      "output": "GetDidDocumentResponse"
+      "output": "GetDidDocumentResponse",
+      "status": "online"
     },
     "GetDidList": {
       "document": "DID列表",
       "input": "GetDidListRequest",
       "name": "DID列表",
-      "output": "GetDidListResponse"
+      "output": "GetDidListResponse",
+      "status": "online"
     },
     "GetDidRegisterTrend": {
       "document": "DID注册趋势",
       "input": "GetDidRegisterTrendRequest",
       "name": "DID注册趋势",
-      "output": "GetDidRegisterTrendResponse"
+      "output": "GetDidRegisterTrendResponse",
+      "status": "online"
     },
     "GetDidServiceDetail": {
       "document": "获取DID服务详情",
       "input": "GetDidServiceDetailRequest",
       "name": "获取DID服务详情",
-      "output": "GetDidServiceDetailResponse"
+      "output": "GetDidServiceDetailResponse",
+      "status": "online"
     },
     "GetDidServiceList": {
       "document": "获取DID服务列表",
       "input": "GetDidServiceListRequest",
       "name": "获取DID服务列表",
-      "output": "GetDidServiceListResponse"
+      "output": "GetDidServiceListResponse",
+      "status": "online"
     },
     "GetGroupList": {
       "document": "主群组配置列表",
       "input": "GetGroupListRequest",
       "name": "主群组配置列表",
-      "output": "GetGroupListResponse"
+      "output": "GetGroupListResponse",
+      "status": "online"
     },
     "GetLabelList": {
       "document": "标签列表",
       "input": "GetLabelListRequest",
       "name": "标签列表",
-      "output": "GetLabelListResponse"
+      "output": "GetLabelListResponse",
+      "status": "online"
     },
     "GetPolicyList": {
       "document": "披露策略Policy管理列表",
       "input": "GetPolicyListRequest",
       "name": "披露策略Policy管理列表",
-      "output": "GetPolicyListResponse"
+      "output": "GetPolicyListResponse",
+      "status": "online"
     },
     "GetPublicKey": {
       "document": "查看公钥",
       "input": "GetPublicKeyRequest",
       "name": "查看公钥",
-      "output": "GetPublicKeyResponse"
+      "output": "GetPublicKeyResponse",
+      "status": "online"
     },
     "QueryPolicy": {
       "document": "披露策略Policy查看",
       "input": "QueryPolicyRequest",
       "name": "披露策略Policy查看",
-      "output": "QueryPolicyResponse"
+      "output": "QueryPolicyResponse",
+      "status": "online"
     },
     "RecognizeAuthorityIssuer": {
       "document": "认证权威机构",
       "input": "RecognizeAuthorityIssuerRequest",
       "name": "认证权威机构",
-      "output": "RecognizeAuthorityIssuerResponse"
+      "output": "RecognizeAuthorityIssuerResponse",
+      "status": "online"
     },
     "RegisterClaimPolicy": {
       "document": "披露策略Policy注册",
       "input": "RegisterClaimPolicyRequest",
       "name": "披露策略Policy注册",
-      "output": "RegisterClaimPolicyResponse"
+      "output": "RegisterClaimPolicyResponse",
+      "status": "online"
     },
     "RegisterCpt": {
       "document": "凭证模版新建",
       "input": "RegisterCptRequest",
       "name": "凭证模版新建",
-      "output": "RegisterCptResponse"
+      "output": "RegisterCptResponse",
+      "status": "online"
     },
     "RegisterIssuer": {
       "document": "注册为权威机构",
       "input": "RegisterIssuerRequest",
       "name": "注册为权威机构",
-      "output": "RegisterIssuerResponse"
+      "output": "RegisterIssuerResponse",
+      "status": "online"
     },
     "RemoveHash": {
       "document": "删除合约",
       "input": "RemoveHashRequest",
       "name": "删除合约",
-      "output": "RemoveHashResponse"
+      "output": "RemoveHashResponse",
+      "status": "online"
     },
     "SetCredentialStatus": {
       "document": "设置凭证链上状态",
       "input": "SetCredentialStatusRequest",
       "name": "设置凭证链上状态",
-      "output": "SetCredentialStatusResponse"
+      "output": "SetCredentialStatusResponse",
+      "status": "online"
     },
     "VerifyCredential": {
       "document": "验证凭证",
       "input": "VerifyCredentialRequest",
       "name": "验证凭证",
-      "output": "VerifyCredentialResponse"
+      "output": "VerifyCredentialResponse",
+      "status": "online"
     }
   },
   "metadata": {

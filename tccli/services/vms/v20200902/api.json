@@ -4,13 +4,15 @@
       "document": "给用户发语音验证码（仅支持数字）。",
       "input": "SendCodeVoiceRequest",
       "name": "发送语音验证码",
-      "output": "SendCodeVoiceResponse"
+      "output": "SendCodeVoiceResponse",
+      "status": "online"
     },
     "SendTtsVoice": {
       "document": "给用户发送指定模板的语音通知。",
       "input": "SendTtsVoiceRequest",
       "name": "指定模板发送语音通知",
-      "output": "SendTtsVoiceResponse"
+      "output": "SendTtsVoiceResponse",
+      "status": "online"
     }
   },
   "metadata": {

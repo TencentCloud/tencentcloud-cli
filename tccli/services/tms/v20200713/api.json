@@ -4,7 +4,8 @@
       "document": "文本内容检测（Text Moderation）服务使用了深度学习技术，识别可能令人反感、不安全或不适宜的文本内容，同时支持用户配置词库黑白名单，打击自定义识别类型的图片。",
       "input": "TextModerationRequest",
       "name": "文本内容安全",
-      "output": "TextModerationResponse"
+      "output": "TextModerationResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,415 +4,484 @@
       "document": "本接口（BatchUpdateFirmware）用于批量更新设备固件 ",
       "input": "BatchUpdateFirmwareRequest",
       "name": "批量更新固件",
-      "output": "BatchUpdateFirmwareResponse"
+      "output": "BatchUpdateFirmwareResponse",
+      "status": "online"
     },
     "BindDevices": {
       "document": "本接口（BindDevices）用于网关设备批量绑定子设备 ",
       "input": "BindDevicesRequest",
       "name": "批量绑定子设备",
-      "output": "BindDevicesResponse"
+      "output": "BindDevicesResponse",
+      "status": "online"
     },
     "CancelDeviceFirmwareTask": {
       "document": "取消设备升级任务",
       "input": "CancelDeviceFirmwareTaskRequest",
       "name": "取消设备升级任务",
-      "output": "CancelDeviceFirmwareTaskResponse"
+      "output": "CancelDeviceFirmwareTaskResponse",
+      "status": "online"
     },
     "CancelTask": {
       "document": "本接口（CancelTask）用于取消一个未被调度的任务。 ",
       "input": "CancelTaskRequest",
       "name": "取消任务",
-      "output": "CancelTaskResponse"
+      "output": "CancelTaskResponse",
+      "status": "online"
     },
     "CreateDevice": {
       "document": "本接口（CreateDevice）用于新建一个物联网通信设备。 ",
       "input": "CreateDeviceRequest",
       "name": "创建设备",
-      "output": "CreateDeviceResponse"
+      "output": "CreateDeviceResponse",
+      "status": "online"
     },
     "CreateLoraDevice": {
       "document": "创建lora类型的设备",
       "input": "CreateLoraDeviceRequest",
       "name": "创建lora设备",
-      "output": "CreateLoraDeviceResponse"
+      "output": "CreateLoraDeviceResponse",
+      "status": "online"
     },
     "CreateMultiDevice": {
       "document": "本接口（CreateMultiDevice）用于批量创建物联云设备。",
       "input": "CreateMultiDeviceRequest",
       "name": "创建多个设备",
-      "output": "CreateMultiDeviceResponse"
+      "output": "CreateMultiDeviceResponse",
+      "status": "online"
     },
     "CreateMultiDevicesTask": {
       "document": "本接口（CreateMultiDevicesTask）用于创建产品级别的批量创建设备任务",
       "input": "CreateMultiDevicesTaskRequest",
       "name": "创建批量创建设备任务",
-      "output": "CreateMultiDevicesTaskResponse"
+      "output": "CreateMultiDevicesTaskResponse",
+      "status": "online"
     },
     "CreateProduct": {
       "document": "本接口（CreateProduct）用于创建一个新的物联网通信产品 ",
       "input": "CreateProductRequest",
       "name": "创建产品",
-      "output": "CreateProductResponse"
+      "output": "CreateProductResponse",
+      "status": "online"
     },
     "CreateTask": {
       "document": "本接口（CreateTask）用于创建一个批量任务。目前此接口可以创建批量更新影子以及批量下发消息的任务 ",
       "input": "CreateTaskRequest",
       "name": "创建任务",
-      "output": "CreateTaskResponse"
+      "output": "CreateTaskResponse",
+      "status": "online"
     },
     "CreateTaskFileUrl": {
       "document": "本接口（CreateTaskFileUrl）用于获取产品级任务文件上传链接",
       "input": "CreateTaskFileUrlRequest",
       "name": "获取任务文件上传链接",
-      "output": "CreateTaskFileUrlResponse"
+      "output": "CreateTaskFileUrlResponse",
+      "status": "online"
     },
     "CreateTopicPolicy": {
       "document": "本接口（CreateTopicPolicy）用于创建一个Topic ",
       "input": "CreateTopicPolicyRequest",
       "name": "创建Topic",
-      "output": "CreateTopicPolicyResponse"
+      "output": "CreateTopicPolicyResponse",
+      "status": "online"
     },
     "CreateTopicRule": {
       "document": "本接口（CreateTopicRule）用于创建一个规则 ",
       "input": "CreateTopicRuleRequest",
       "name": "创建规则",
-      "output": "CreateTopicRuleResponse"
+      "output": "CreateTopicRuleResponse",
+      "status": "online"
     },
     "DeleteDevice": {
       "document": "本接口（DeleteDevice）用于删除物联网通信设备。 ",
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
-      "output": "DeleteDeviceResponse"
+      "output": "DeleteDeviceResponse",
+      "status": "online"
     },
     "DeleteDeviceResource": {
       "document": "本接口（DeleteDeviceResource）用于删除设备资源",
       "input": "DeleteDeviceResourceRequest",
       "name": "删除设备资源",
-      "output": "DeleteDeviceResourceResponse"
+      "output": "DeleteDeviceResourceResponse",
+      "status": "online"
     },
     "DeleteLoraDevice": {
       "document": "删除lora类型的设备",
       "input": "DeleteLoraDeviceRequest",
       "name": "删除lora设备",
-      "output": "DeleteLoraDeviceResponse"
+      "output": "DeleteLoraDeviceResponse",
+      "status": "online"
     },
     "DeleteProduct": {
       "document": "本接口（DeleteProduct）用于删除一个物联网通信产品",
       "input": "DeleteProductRequest",
       "name": "删除产品",
-      "output": "DeleteProductResponse"
+      "output": "DeleteProductResponse",
+      "status": "online"
     },
     "DeleteTopicRule": {
       "document": "本接口（DeleteTopicRule）用于删除规则",
       "input": "DeleteTopicRuleRequest",
       "name": "删除规则",
-      "output": "DeleteTopicRuleResponse"
+      "output": "DeleteTopicRuleResponse",
+      "status": "online"
     },
     "DescribeAllDevices": {
       "document": "查询所有设备列表",
       "input": "DescribeAllDevicesRequest",
       "name": "查询所有设备列表",
-      "output": "DescribeAllDevicesResponse"
+      "output": "DescribeAllDevicesResponse",
+      "status": "online"
     },
     "DescribeDevice": {
       "document": "本接口（DescribeDevice）用于查看设备信息",
       "input": "DescribeDeviceRequest",
       "name": "查看设备详情",
-      "output": "DescribeDeviceResponse"
+      "output": "DescribeDeviceResponse",
+      "status": "online"
     },
     "DescribeDeviceClientKey": {
       "document": "获取证书认证类型设备的私钥，刚生成或者重置设备后仅可调用一次 ",
       "input": "DescribeDeviceClientKeyRequest",
       "name": "获取设备私钥",
-      "output": "DescribeDeviceClientKeyResponse"
+      "output": "DescribeDeviceClientKeyResponse",
+      "status": "online"
     },
     "DescribeDeviceResource": {
       "document": "本接口（DescribeDeviceResource）用于查询设备资源详情。 ",
       "input": "DescribeDeviceResourceRequest",
       "name": "查询设备资源详情",
-      "output": "DescribeDeviceResourceResponse"
+      "output": "DescribeDeviceResourceResponse",
+      "status": "online"
     },
     "DescribeDeviceResources": {
       "document": "本接口（DescribeDeviceResources）用于查询设备资源列表。 ",
       "input": "DescribeDeviceResourcesRequest",
       "name": "获取设备资源列表",
-      "output": "DescribeDeviceResourcesResponse"
+      "output": "DescribeDeviceResourcesResponse",
+      "status": "online"
     },
     "DescribeDeviceShadow": {
       "document": "本接口（DescribeDeviceShadow）用于查询虚拟设备信息。 ",
       "input": "DescribeDeviceShadowRequest",
       "name": "获取设备影子",
-      "output": "DescribeDeviceShadowResponse"
+      "output": "DescribeDeviceShadowResponse",
+      "status": "online"
     },
     "DescribeDevices": {
       "document": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 ",
       "input": "DescribeDevicesRequest",
       "name": "获取设备列表",
-      "output": "DescribeDevicesResponse"
+      "output": "DescribeDevicesResponse",
+      "status": "online"
     },
     "DescribeFirmware": {
       "document": "查询固件信息",
       "input": "DescribeFirmwareRequest",
       "name": "查询固件信息",
-      "output": "DescribeFirmwareResponse"
+      "output": "DescribeFirmwareResponse",
+      "status": "online"
     },
     "DescribeFirmwareTask": {
       "document": "查询固件升级任务详情",
       "input": "DescribeFirmwareTaskRequest",
       "name": "查询固件升级任务详情",
-      "output": "DescribeFirmwareTaskResponse"
+      "output": "DescribeFirmwareTaskResponse",
+      "status": "online"
     },
     "DescribeFirmwareTaskDevices": {
       "document": "查询固件升级任务的设备列表",
       "input": "DescribeFirmwareTaskDevicesRequest",
       "name": "查询固件升级任务的设备列表",
-      "output": "DescribeFirmwareTaskDevicesResponse"
+      "output": "DescribeFirmwareTaskDevicesResponse",
+      "status": "online"
     },
     "DescribeFirmwareTaskDistribution": {
       "document": "查询固件升级任务状态分布",
       "input": "DescribeFirmwareTaskDistributionRequest",
       "name": "查询固件升级任务状态分布",
-      "output": "DescribeFirmwareTaskDistributionResponse"
+      "output": "DescribeFirmwareTaskDistributionResponse",
+      "status": "online"
     },
     "DescribeFirmwareTaskStatistics": {
       "document": "查询固件升级任务统计信息",
       "input": "DescribeFirmwareTaskStatisticsRequest",
       "name": "查询固件升级任务统计信息",
-      "output": "DescribeFirmwareTaskStatisticsResponse"
+      "output": "DescribeFirmwareTaskStatisticsResponse",
+      "status": "online"
     },
     "DescribeFirmwareTasks": {
       "document": "查询固件升级任务列表",
       "input": "DescribeFirmwareTasksRequest",
       "name": "查询固件升级任务列表",
-      "output": "DescribeFirmwareTasksResponse"
+      "output": "DescribeFirmwareTasksResponse",
+      "status": "online"
     },
     "DescribeLoraDevice": {
       "document": "获取lora类型设备的详细信息 ",
       "input": "DescribeLoraDeviceRequest",
       "name": "获取lora设备详情",
-      "output": "DescribeLoraDeviceResponse"
+      "output": "DescribeLoraDeviceResponse",
+      "status": "online"
     },
     "DescribeMultiDevTask": {
       "document": "本接口（DescribeMultiDevTask）用于查询批量创建设备任务的执行状态。",
       "input": "DescribeMultiDevTaskRequest",
       "name": "获取创建多设备任务状态",
-      "output": "DescribeMultiDevTaskResponse"
+      "output": "DescribeMultiDevTaskResponse",
+      "status": "online"
     },
     "DescribeMultiDevices": {
       "document": "本接口（DescribeMultiDevices）用于查询批量创建设备的执行结果。",
       "input": "DescribeMultiDevicesRequest",
       "name": "获取创建多设备结果",
-      "output": "DescribeMultiDevicesResponse"
+      "output": "DescribeMultiDevicesResponse",
+      "status": "online"
     },
     "DescribeProduct": {
       "document": "本接口（DescribeProduct）用于查看产品详情",
       "input": "DescribeProductRequest",
       "name": "查看产品详情",
-      "output": "DescribeProductResponse"
+      "output": "DescribeProductResponse",
+      "status": "online"
     },
     "DescribeProductResource": {
       "document": "本接口（DescribeProductResource）用于查询产品资源详情。 ",
       "input": "DescribeProductResourceRequest",
       "name": "查询产品资源详情",
-      "output": "DescribeProductResourceResponse"
+      "output": "DescribeProductResourceResponse",
+      "status": "online"
     },
     "DescribeProductResources": {
       "document": "本接口（DescribeProductResources）用于查询产品资源列表。 ",
       "input": "DescribeProductResourcesRequest",
       "name": "获取产品资源列表",
-      "output": "DescribeProductResourcesResponse"
+      "output": "DescribeProductResourcesResponse",
+      "status": "online"
     },
     "DescribeProductTask": {
       "document": "本接口（DescribeProductTask）用于查看产品级别的任务信息",
       "input": "DescribeProductTaskRequest",
       "name": "查看产品任务详情",
-      "output": "DescribeProductTaskResponse"
+      "output": "DescribeProductTaskResponse",
+      "status": "online"
     },
     "DescribeProductTasks": {
       "document": "本接口（DescribeProductTasks）用于查看产品级别的任务列表",
       "input": "DescribeProductTasksRequest",
       "name": "获取产品级任务列表",
-      "output": "DescribeProductTasksResponse"
+      "output": "DescribeProductTasksResponse",
+      "status": "online"
     },
     "DescribeProducts": {
       "document": "本接口（DescribeProducts）用于列出产品列表。 ",
       "input": "DescribeProductsRequest",
       "name": "获取产品列表",
-      "output": "DescribeProductsResponse"
+      "output": "DescribeProductsResponse",
+      "status": "online"
     },
     "DescribePushResourceTaskStatistics": {
       "document": "查询推送资源任务统计信息",
       "input": "DescribePushResourceTaskStatisticsRequest",
       "name": "查询推送资源任务统计信息",
-      "output": "DescribePushResourceTaskStatisticsResponse"
+      "output": "DescribePushResourceTaskStatisticsResponse",
+      "status": "online"
     },
     "DescribeResourceTasks": {
       "document": "查询资源推送任务列表",
       "input": "DescribeResourceTasksRequest",
       "name": "查询资源推送任务列表",
-      "output": "DescribeResourceTasksResponse"
+      "output": "DescribeResourceTasksResponse",
+      "status": "online"
     },
     "DescribeTask": {
       "document": "本接口（DescribeTask）用于查询一个已创建任务的详情，任务保留一个月 ",
       "input": "DescribeTaskRequest",
       "name": "获取任务详情",
-      "output": "DescribeTaskResponse"
+      "output": "DescribeTaskResponse",
+      "status": "online"
     },
     "DescribeTasks": {
       "document": "本接口（DescribeTasks）用于查询已创建的任务列表，任务保留一个月 ",
       "input": "DescribeTasksRequest",
       "name": "获取任务列表",
-      "output": "DescribeTasksResponse"
+      "output": "DescribeTasksResponse",
+      "status": "online"
     },
     "DisableTopicRule": {
       "document": "本接口（DisableTopicRule）用于禁用规则",
       "input": "DisableTopicRuleRequest",
       "name": "禁用规则",
-      "output": "DisableTopicRuleResponse"
+      "output": "DisableTopicRuleResponse",
+      "status": "online"
     },
     "DownloadDeviceResource": {
       "document": "本接口（DownloadDeviceResource）用于下载设备资源",
       "input": "DownloadDeviceResourceRequest",
       "name": "下载设备资源",
-      "output": "DownloadDeviceResourceResponse"
+      "output": "DownloadDeviceResourceResponse",
+      "status": "online"
     },
     "EditFirmware": {
       "document": "编辑固件信息",
       "input": "EditFirmwareRequest",
       "name": "编辑固件信息",
-      "output": "EditFirmwareResponse"
+      "output": "EditFirmwareResponse",
+      "status": "online"
     },
     "EnableTopicRule": {
       "document": "本接口（EnableTopicRule）用于启用规则 ",
       "input": "EnableTopicRuleRequest",
       "name": "启用规则",
-      "output": "EnableTopicRuleResponse"
+      "output": "EnableTopicRuleResponse",
+      "status": "online"
     },
     "GetCOSURL": {
       "document": "本接口（GetCOSURL）用于获取固件存储在COS的URL ",
       "input": "GetCOSURLRequest",
       "name": "获取固件下载地址",
-      "output": "GetCOSURLResponse"
+      "output": "GetCOSURLResponse",
+      "status": "online"
     },
     "GetUserResourceInfo": {
       "document": "本接口（GetUserResourceInfo）用于查询用户资源使用信息。",
       "input": "GetUserResourceInfoRequest",
       "name": "获取用户资源信息",
-      "output": "GetUserResourceInfoResponse"
+      "output": "GetUserResourceInfoResponse",
+      "status": "online"
     },
     "ListLog": {
       "document": "本接口（ListLog）用于查看日志信息 ",
       "input": "ListLogRequest",
       "name": "查询日志",
-      "output": "ListLogResponse"
+      "output": "ListLogResponse",
+      "status": "online"
     },
     "ListLogPayload": {
       "document": "获取日志内容列表",
       "input": "ListLogPayloadRequest",
       "name": "获取日志内容列表",
-      "output": "ListLogPayloadResponse"
+      "output": "ListLogPayloadResponse",
+      "status": "online"
     },
     "ListSDKLog": {
       "document": "获取设备上报的日志",
       "input": "ListSDKLogRequest",
       "name": "获取设备sdk日志",
-      "output": "ListSDKLogResponse"
+      "output": "ListSDKLogResponse",
+      "status": "online"
     },
     "PublishAsDevice": {
       "document": "模拟lora类型的设备端向服务器端发送消息",
       "input": "PublishAsDeviceRequest",
       "name": "模拟lora设备发送消息",
-      "output": "PublishAsDeviceResponse"
+      "output": "PublishAsDeviceResponse",
+      "status": "online"
     },
     "PublishBroadcastMessage": {
       "document": "发布广播消息",
       "input": "PublishBroadcastMessageRequest",
       "name": "发布广播消息",
-      "output": "PublishBroadcastMessageResponse"
+      "output": "PublishBroadcastMessageResponse",
+      "status": "online"
     },
     "PublishMessage": {
       "document": "本接口（PublishMessage）用于向某个主题发消息。 ",
       "input": "PublishMessageRequest",
       "name": "发布消息",
-      "output": "PublishMessageResponse"
+      "output": "PublishMessageResponse",
+      "status": "online"
     },
     "PublishRRPCMessage": {
       "document": "发布RRPC消息",
       "input": "PublishRRPCMessageRequest",
       "name": "发布RRPC消息",
-      "output": "PublishRRPCMessageResponse"
+      "output": "PublishRRPCMessageResponse",
+      "status": "online"
     },
     "PublishToDevice": {
       "document": "服务器端下发消息给lora类型的设备",
       "input": "PublishToDeviceRequest",
       "name": "服务下发消息到lora设备",
-      "output": "PublishToDeviceResponse"
+      "output": "PublishToDeviceResponse",
+      "status": "online"
     },
     "ReplaceTopicRule": {
       "document": "本接口（ReplaceTopicRule）用于修改替换规则 ",
       "input": "ReplaceTopicRuleRequest",
       "name": "替换规则",
-      "output": "ReplaceTopicRuleResponse"
+      "output": "ReplaceTopicRuleResponse",
+      "status": "online"
     },
     "ResetDeviceState": {
       "document": "重置设备的连接状态 ",
       "input": "ResetDeviceStateRequest",
       "name": "重置设备状态",
-      "output": "ResetDeviceStateResponse"
+      "output": "ResetDeviceStateResponse",
+      "status": "online"
     },
     "RetryDeviceFirmwareTask": {
       "document": "重试设备升级任务",
       "input": "RetryDeviceFirmwareTaskRequest",
       "name": "重试设备升级任务",
-      "output": "RetryDeviceFirmwareTaskResponse"
+      "output": "RetryDeviceFirmwareTaskResponse",
+      "status": "online"
     },
     "SetProductsForbiddenStatus": {
       "document": "批量设置产品禁用状态",
       "input": "SetProductsForbiddenStatusRequest",
       "name": "批量设置产品禁用状态",
-      "output": "SetProductsForbiddenStatusResponse"
+      "output": "SetProductsForbiddenStatusResponse",
+      "status": "online"
     },
     "UnbindDevices": {
       "document": "本接口（UnbindDevices）用于网关设备批量解绑子设备 ",
       "input": "UnbindDevicesRequest",
       "name": "批量解绑子设备",
-      "output": "UnbindDevicesResponse"
+      "output": "UnbindDevicesResponse",
+      "status": "online"
     },
     "UpdateDeviceAvailableState": {
       "document": "启用或者禁用设备 ",
       "input": "UpdateDeviceAvailableStateRequest",
       "name": "切换设备可用状态",
-      "output": "UpdateDeviceAvailableStateResponse"
+      "output": "UpdateDeviceAvailableStateResponse",
+      "status": "online"
     },
     "UpdateDeviceShadow": {
       "document": "本接口（UpdateDeviceShadow）用于更新虚拟设备信息。",
       "input": "UpdateDeviceShadowRequest",
       "name": "更新设备影子",
-      "output": "UpdateDeviceShadowResponse"
+      "output": "UpdateDeviceShadowResponse",
+      "status": "online"
     },
     "UpdateDevicesEnableState": {
       "document": "批量启用或者禁用设备 ",
       "input": "UpdateDevicesEnableStateRequest",
       "name": "批量切换设备可用状态",
-      "output": "UpdateDevicesEnableStateResponse"
+      "output": "UpdateDevicesEnableStateResponse",
+      "status": "online"
     },
     "UpdateProductDynamicRegister": {
       "document": "更新产品动态注册的配置 ",
       "input": "UpdateProductDynamicRegisterRequest",
       "name": "更新产品动态注册",
-      "output": "UpdateProductDynamicRegisterResponse"
+      "output": "UpdateProductDynamicRegisterResponse",
+      "status": "online"
     },
     "UpdateTopicPolicy": {
       "document": "本接口（UpdateTopicPolicy）用于更新Topic信息",
       "input": "UpdateTopicPolicyRequest",
       "name": "更新Topic",
-      "output": "UpdateTopicPolicyResponse"
+      "output": "UpdateTopicPolicyResponse",
+      "status": "online"
     },
     "UploadFirmware": {
       "document": "本接口（UploadFirmware）用于上传设备固件信息 ",
       "input": "UploadFirmwareRequest",
       "name": "上传固件信息",
-      "output": "UploadFirmwareResponse"
+      "output": "UploadFirmwareResponse",
+      "status": "online"
     }
   },
   "metadata": {

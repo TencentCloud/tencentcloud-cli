@@ -4,31 +4,36 @@
       "document": "根据UIN查询注册IP地址",
       "input": "DescribeIpByUinRequest",
       "name": "根据UIN查询注册IP地址",
-      "output": "DescribeIpByUinResponse"
+      "output": "DescribeIpByUinResponse",
+      "status": "online"
     },
     "DescribeNickname": {
       "document": "获取用户昵称",
       "input": "DescribeNicknameRequest",
       "name": "获取用户昵称",
-      "output": "DescribeNicknameResponse"
+      "output": "DescribeNicknameResponse",
+      "status": "online"
     },
     "GetAuthNonSensitiveInfo": {
       "document": "获取实名认证非敏感信息",
       "input": "GetAuthNonSensitiveInfoRequest",
       "name": "获取实名认证非敏感信息",
-      "output": "GetAuthNonSensitiveInfoResponse"
+      "output": "GetAuthNonSensitiveInfoResponse",
+      "status": "online"
     },
     "GetBackUpValidate": {
       "document": "获取备选校验方式",
       "input": "GetBackUpValidateRequest",
       "name": "获取备选校验方式",
-      "output": "GetBackUpValidateResponse"
+      "output": "GetBackUpValidateResponse",
+      "status": "online"
     },
     "GetUinByAppId": {
       "document": "根据appid获取uin",
       "input": "GetUinByAppIdRequest",
       "name": "根据appid获取uin",
-      "output": "GetUinByAppIdResponse"
+      "output": "GetUinByAppIdResponse",
+      "status": "online"
     }
   },
   "metadata": {

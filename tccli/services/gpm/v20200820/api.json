@@ -4,109 +4,127 @@
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n取消匹配。",
       "input": "CancelMatchingRequest",
       "name": "取消匹配",
-      "output": "CancelMatchingResponse"
+      "output": "CancelMatchingResponse",
+      "status": "deprecated"
     },
     "CreateMatch": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n创建匹配",
       "input": "CreateMatchRequest",
       "name": "创建匹配",
-      "output": "CreateMatchResponse"
+      "output": "CreateMatchResponse",
+      "status": "deprecated"
     },
     "CreateRule": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n创建规则",
       "input": "CreateRuleRequest",
       "name": "创建规则",
-      "output": "CreateRuleResponse"
+      "output": "CreateRuleResponse",
+      "status": "deprecated"
     },
     "DeleteMatch": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n删除匹配",
       "input": "DeleteMatchRequest",
       "name": "删除匹配",
-      "output": "DeleteMatchResponse"
+      "output": "DeleteMatchResponse",
+      "status": "deprecated"
     },
     "DeleteRule": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n删除规则",
       "input": "DeleteRuleRequest",
       "name": "删除规则",
-      "output": "DeleteRuleResponse"
+      "output": "DeleteRuleResponse",
+      "status": "deprecated"
     },
     "DescribeData": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n统计数据",
       "input": "DescribeDataRequest",
       "name": "统计数据",
-      "output": "DescribeDataResponse"
+      "output": "DescribeDataResponse",
+      "status": "deprecated"
     },
     "DescribeMatch": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n查询匹配详情",
       "input": "DescribeMatchRequest",
       "name": "查询匹配详情",
-      "output": "DescribeMatchResponse"
+      "output": "DescribeMatchResponse",
+      "status": "deprecated"
     },
     "DescribeMatchCodes": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n分页查询匹配Code",
       "input": "DescribeMatchCodesRequest",
       "name": "分页查询匹配Code",
-      "output": "DescribeMatchCodesResponse"
+      "output": "DescribeMatchCodesResponse",
+      "status": "deprecated"
     },
     "DescribeMatches": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n分页查询匹配列表",
       "input": "DescribeMatchesRequest",
       "name": "分页查询匹配列表",
-      "output": "DescribeMatchesResponse"
+      "output": "DescribeMatchesResponse",
+      "status": "deprecated"
     },
     "DescribeMatchingProgress": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n查询匹配进度。",
       "input": "DescribeMatchingProgressRequest",
       "name": "查询匹配进度",
-      "output": "DescribeMatchingProgressResponse"
+      "output": "DescribeMatchingProgressResponse",
+      "status": "deprecated"
     },
     "DescribeRule": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n查询规则详情",
       "input": "DescribeRuleRequest",
       "name": "查询规则详情",
-      "output": "DescribeRuleResponse"
+      "output": "DescribeRuleResponse",
+      "status": "deprecated"
     },
     "DescribeRules": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n分页查询规则集列表",
       "input": "DescribeRulesRequest",
       "name": "分页查询规则集列表",
-      "output": "DescribeRulesResponse"
+      "output": "DescribeRulesResponse",
+      "status": "deprecated"
     },
     "DescribeToken": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n查询匹配Token，Token用于push消息验证。",
       "input": "DescribeTokenRequest",
       "name": "查询匹配Token",
-      "output": "DescribeTokenResponse"
+      "output": "DescribeTokenResponse",
+      "status": "deprecated"
     },
     "ModifyMatch": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n修改匹配",
       "input": "ModifyMatchRequest",
       "name": "修改匹配",
-      "output": "ModifyMatchResponse"
+      "output": "ModifyMatchResponse",
+      "status": "deprecated"
     },
     "ModifyRule": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n修改规则（描述、标签）",
       "input": "ModifyRuleRequest",
       "name": "修改规则",
-      "output": "ModifyRuleResponse"
+      "output": "ModifyRuleResponse",
+      "status": "deprecated"
     },
     "ModifyToken": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n修改匹配Token。",
       "input": "ModifyTokenRequest",
       "name": "修改匹配Token",
-      "output": "ModifyTokenResponse"
+      "output": "ModifyTokenResponse",
+      "status": "deprecated"
     },
     "StartMatching": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n支持传入一个玩家或多个玩家发起匹配，在同一个请求内的玩家将被分到同一个对局。",
       "input": "StartMatchingRequest",
       "name": "发起匹配",
-      "output": "StartMatchingResponse"
+      "output": "StartMatchingResponse",
+      "status": "deprecated"
     },
     "StartMatchingBackfill": {
       "document": "此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持\n\n通过调用StartMatchingBackfill，用户可以传入一个回填的匹配请求，GPM为回填请求搜索符合条件的ticket并形成一个新的match。",
       "input": "StartMatchingBackfillRequest",
       "name": "发起回填匹配",
-      "output": "StartMatchingBackfillResponse"
+      "output": "StartMatchingBackfillResponse",
+      "status": "deprecated"
     }
   },
   "metadata": {

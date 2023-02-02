@@ -4,163 +4,190 @@
       "document": "该接口支持安装了OpenLdap组件的集群。\n新增用户列表（用户管理）。",
       "input": "AddUsersForUserManagerRequest",
       "name": "新增用户列表",
-      "output": "AddUsersForUserManagerResponse"
+      "output": "AddUsersForUserManagerResponse",
+      "status": "online"
     },
     "CreateCluster": {
       "document": "创建EMR集群实例",
       "input": "CreateClusterRequest",
       "name": "创建EMR集群实例",
-      "output": "CreateClusterResponse"
+      "output": "CreateClusterResponse",
+      "status": "online"
     },
     "CreateInstance": {
       "document": "创建EMR集群实例",
       "input": "CreateInstanceRequest",
       "name": "创建EMR实例",
-      "output": "CreateInstanceResponse"
+      "output": "CreateInstanceResponse",
+      "status": "online"
     },
     "DeleteUserManagerUserList": {
       "document": "删除用户列表（用户管理）\n",
       "input": "DeleteUserManagerUserListRequest",
       "name": "删除用户列表",
-      "output": "DeleteUserManagerUserListResponse"
+      "output": "DeleteUserManagerUserListResponse",
+      "status": "online"
     },
     "DescribeClusterNodes": {
       "document": "查询集群节点信息",
       "input": "DescribeClusterNodesRequest",
       "name": "查询集群节点信息",
-      "output": "DescribeClusterNodesResponse"
+      "output": "DescribeClusterNodesResponse",
+      "status": "online"
     },
     "DescribeCvmQuota": {
       "document": "获取账户的CVM配额",
       "input": "DescribeCvmQuotaRequest",
       "name": "查询账户的CVM配额",
-      "output": "DescribeCvmQuotaResponse"
+      "output": "DescribeCvmQuotaResponse",
+      "status": "online"
     },
     "DescribeEmrApplicationStatics": {
       "document": " yarn application 统计接口查询",
       "input": "DescribeEmrApplicationStaticsRequest",
       "name": "查询YARN的任务统计信息",
-      "output": "DescribeEmrApplicationStaticsResponse"
+      "output": "DescribeEmrApplicationStaticsResponse",
+      "status": "online"
     },
     "DescribeInstanceRenewNodes": {
       "document": "查询待续费节点信息",
       "input": "DescribeInstanceRenewNodesRequest",
       "name": "查询待续费节点信息",
-      "output": "DescribeInstanceRenewNodesResponse"
+      "output": "DescribeInstanceRenewNodesResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "查询集群实例信息",
       "input": "DescribeInstancesRequest",
       "name": "查询集群实例信息",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeInstancesList": {
       "document": "查询集群列表",
       "input": "DescribeInstancesListRequest",
       "name": "查询集群列表",
-      "output": "DescribeInstancesListResponse"
+      "output": "DescribeInstancesListResponse",
+      "status": "online"
     },
     "DescribeJobFlow": {
       "document": "查询流程任务",
       "input": "DescribeJobFlowRequest",
       "name": "查询流程作业状态",
-      "output": "DescribeJobFlowResponse"
+      "output": "DescribeJobFlowResponse",
+      "status": "online"
     },
     "DescribeResourceSchedule": {
       "document": "查询YARN资源调度数据信息",
       "input": "DescribeResourceScheduleRequest",
       "name": "查询YARN资源调度数据信息",
-      "output": "DescribeResourceScheduleResponse"
+      "output": "DescribeResourceScheduleResponse",
+      "status": "online"
     },
     "DescribeUsersForUserManager": {
       "document": "该接口支持安装了OpenLdap组件的集群。\n批量导出用户。对于kerberos集群，如果需要kertab文件下载地址，可以将NeedKeytabInfo设置为true；注意SupportDownLoadKeyTab为true，但是DownLoadKeyTabUrl为空字符串，表示keytab文件在后台没有准备好（正在生成）。",
       "input": "DescribeUsersForUserManagerRequest",
       "name": "查询用户列表",
-      "output": "DescribeUsersForUserManagerResponse"
+      "output": "DescribeUsersForUserManagerResponse",
+      "status": "online"
     },
     "InquirePriceRenewEmr": {
       "document": "集群续费询价。",
       "input": "InquirePriceRenewEmrRequest",
       "name": "集群续费询价",
-      "output": "InquirePriceRenewEmrResponse"
+      "output": "InquirePriceRenewEmrResponse",
+      "status": "online"
     },
     "InquiryPriceCreateInstance": {
       "document": "创建实例询价",
       "input": "InquiryPriceCreateInstanceRequest",
       "name": "创建实例询价",
-      "output": "InquiryPriceCreateInstanceResponse"
+      "output": "InquiryPriceCreateInstanceResponse",
+      "status": "online"
     },
     "InquiryPriceRenewInstance": {
       "document": "续费询价。",
       "input": "InquiryPriceRenewInstanceRequest",
       "name": "续费询价",
-      "output": "InquiryPriceRenewInstanceResponse"
+      "output": "InquiryPriceRenewInstanceResponse",
+      "status": "online"
     },
     "InquiryPriceScaleOutInstance": {
       "document": "扩容询价. 当扩容时候，请通过该接口查询价格。",
       "input": "InquiryPriceScaleOutInstanceRequest",
       "name": "扩容询价",
-      "output": "InquiryPriceScaleOutInstanceResponse"
+      "output": "InquiryPriceScaleOutInstanceResponse",
+      "status": "online"
     },
     "InquiryPriceUpdateInstance": {
       "document": "变配询价",
       "input": "InquiryPriceUpdateInstanceRequest",
       "name": "变配询价",
-      "output": "InquiryPriceUpdateInstanceResponse"
+      "output": "InquiryPriceUpdateInstanceResponse",
+      "status": "online"
     },
     "ModifyResourcePools": {
       "document": "刷新YARN的动态资源池",
       "input": "ModifyResourcePoolsRequest",
       "name": "刷新YARN的动态资源池",
-      "output": "ModifyResourcePoolsResponse"
+      "output": "ModifyResourcePoolsResponse",
+      "status": "online"
     },
     "ModifyResourceScheduleConfig": {
       "document": "修改YARN资源调度的资源配置",
       "input": "ModifyResourceScheduleConfigRequest",
       "name": "修改YARN资源调度的资源配置",
-      "output": "ModifyResourceScheduleConfigResponse"
+      "output": "ModifyResourceScheduleConfigResponse",
+      "status": "online"
     },
     "ModifyResourceScheduler": {
       "document": "修改了yarn的资源调度器，点击部署生效",
       "input": "ModifyResourceSchedulerRequest",
       "name": "修改YARN的资源调度器",
-      "output": "ModifyResourceSchedulerResponse"
+      "output": "ModifyResourceSchedulerResponse",
+      "status": "online"
     },
     "RunJobFlow": {
       "document": "创建流程作业",
       "input": "RunJobFlowRequest",
       "name": "创建流程作业",
-      "output": "RunJobFlowResponse"
+      "output": "RunJobFlowResponse",
+      "status": "online"
     },
     "ScaleOutCluster": {
       "document": "扩容集群节点",
       "input": "ScaleOutClusterRequest",
       "name": "扩容集群节点",
-      "output": "ScaleOutClusterResponse"
+      "output": "ScaleOutClusterResponse",
+      "status": "online"
     },
     "ScaleOutInstance": {
       "document": "扩容节点",
       "input": "ScaleOutInstanceRequest",
       "name": "实例扩容",
-      "output": "ScaleOutInstanceResponse"
+      "output": "ScaleOutInstanceResponse",
+      "status": "online"
     },
     "SyncPodState": {
       "document": "EMR同步TKE中POD状态",
       "input": "SyncPodStateRequest",
       "name": "EMR同步POD状态",
-      "output": "SyncPodStateResponse"
+      "output": "SyncPodStateResponse",
+      "status": "online"
     },
     "TerminateInstance": {
       "document": "销毁EMR实例。此接口仅支持弹性MapReduce正式计费版本。",
       "input": "TerminateInstanceRequest",
       "name": "销毁EMR实例",
-      "output": "TerminateInstanceResponse"
+      "output": "TerminateInstanceResponse",
+      "status": "online"
     },
     "TerminateTasks": {
       "document": "缩容Task节点",
       "input": "TerminateTasksRequest",
       "name": "缩容Task节点",
-      "output": "TerminateTasksResponse"
+      "output": "TerminateTasksResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,127 +4,148 @@
       "document": "接受专用通道申请",
       "input": "AcceptDirectConnectTunnelRequest",
       "name": "接受专用通道申请",
-      "output": "AcceptDirectConnectTunnelResponse"
+      "output": "AcceptDirectConnectTunnelResponse",
+      "status": "online"
     },
     "ApplyInternetAddress": {
       "document": "申请互联网CIDR地址",
       "input": "ApplyInternetAddressRequest",
       "name": "申请互联网地址",
-      "output": "ApplyInternetAddressResponse"
+      "output": "ApplyInternetAddressResponse",
+      "status": "online"
     },
     "CreateDirectConnect": {
       "document": "申请物理专线接入。\n调用该接口时，请注意：\n账号要进行实名认证，否则不允许申请物理专线；\n若账户下存在欠费状态的物理专线，则不能申请更多的物理专线。",
       "input": "CreateDirectConnectRequest",
       "name": "申请物理专线",
-      "output": "CreateDirectConnectResponse"
+      "output": "CreateDirectConnectResponse",
+      "status": "online"
     },
     "CreateDirectConnectTunnel": {
       "document": "用于创建专用通道的接口",
       "input": "CreateDirectConnectTunnelRequest",
       "name": "创建专用通道",
-      "output": "CreateDirectConnectTunnelResponse"
+      "output": "CreateDirectConnectTunnelResponse",
+      "status": "online"
     },
     "DeleteDirectConnect": {
       "document": "删除物理专线。\n只能删除处于已连接状态的物理专线。",
       "input": "DeleteDirectConnectRequest",
       "name": "删除物理专线",
-      "output": "DeleteDirectConnectResponse"
+      "output": "DeleteDirectConnectResponse",
+      "status": "online"
     },
     "DeleteDirectConnectTunnel": {
       "document": "删除专用通道",
       "input": "DeleteDirectConnectTunnelRequest",
       "name": "删除专用通道",
-      "output": "DeleteDirectConnectTunnelResponse"
+      "output": "DeleteDirectConnectTunnelResponse",
+      "status": "online"
     },
     "DescribeAccessPoints": {
       "document": "查询物理专线接入点\n",
       "input": "DescribeAccessPointsRequest",
       "name": "查询物理专线接入点",
-      "output": "DescribeAccessPointsResponse"
+      "output": "DescribeAccessPointsResponse",
+      "status": "online"
     },
     "DescribeDirectConnectTunnelExtra": {
       "document": "本接口（DescribeDirectConnectTunnelExtra）用于查询专用通道扩展信息",
       "input": "DescribeDirectConnectTunnelExtraRequest",
       "name": "查询专用通道扩展信息",
-      "output": "DescribeDirectConnectTunnelExtraResponse"
+      "output": "DescribeDirectConnectTunnelExtraResponse",
+      "status": "online"
     },
     "DescribeDirectConnectTunnels": {
       "document": "用于查询专用通道列表。",
       "input": "DescribeDirectConnectTunnelsRequest",
       "name": "查询专用通道列表",
-      "output": "DescribeDirectConnectTunnelsResponse"
+      "output": "DescribeDirectConnectTunnelsResponse",
+      "status": "online"
     },
     "DescribeDirectConnects": {
       "document": "查询物理专线列表。",
       "input": "DescribeDirectConnectsRequest",
       "name": "查询物理专线列表",
-      "output": "DescribeDirectConnectsResponse"
+      "output": "DescribeDirectConnectsResponse",
+      "status": "online"
     },
     "DescribeInternetAddress": {
       "document": "获取用户互联网公网地址信息",
       "input": "DescribeInternetAddressRequest",
       "name": "获取用户互联网公网地址信息",
-      "output": "DescribeInternetAddressResponse"
+      "output": "DescribeInternetAddressResponse",
+      "status": "online"
     },
     "DescribeInternetAddressQuota": {
       "document": "获取用户互联网公网地址配额",
       "input": "DescribeInternetAddressQuotaRequest",
       "name": "获取互联网公网地址配额",
-      "output": "DescribeInternetAddressQuotaResponse"
+      "output": "DescribeInternetAddressQuotaResponse",
+      "status": "online"
     },
     "DescribeInternetAddressStatistics": {
       "document": "获取用户互联网公网地址分配统计信息",
       "input": "DescribeInternetAddressStatisticsRequest",
       "name": "获取用户互联网公网地址统计信息",
-      "output": "DescribeInternetAddressStatisticsResponse"
+      "output": "DescribeInternetAddressStatisticsResponse",
+      "status": "online"
     },
     "DescribePublicDirectConnectTunnelRoutes": {
       "document": "本接口（DescribePublicDirectConnectTunnelRoutes）用于查询互联网通道路由列表",
       "input": "DescribePublicDirectConnectTunnelRoutesRequest",
       "name": "查询互联网通道路由列表",
-      "output": "DescribePublicDirectConnectTunnelRoutesResponse"
+      "output": "DescribePublicDirectConnectTunnelRoutesResponse",
+      "status": "online"
     },
     "DisableInternetAddress": {
       "document": "停用用户申请的公网互联网地址",
       "input": "DisableInternetAddressRequest",
       "name": "停用公网互联网地址",
-      "output": "DisableInternetAddressResponse"
+      "output": "DisableInternetAddressResponse",
+      "status": "online"
     },
     "EnableInternetAddress": {
       "document": "启用已停用的互联网公网地址",
       "input": "EnableInternetAddressRequest",
       "name": "启用互联网公网地址",
-      "output": "EnableInternetAddressResponse"
+      "output": "EnableInternetAddressResponse",
+      "status": "online"
     },
     "ModifyDirectConnectAttribute": {
       "document": "修改物理专线的属性。",
       "input": "ModifyDirectConnectAttributeRequest",
       "name": "修改物理专线属性",
-      "output": "ModifyDirectConnectAttributeResponse"
+      "output": "ModifyDirectConnectAttributeResponse",
+      "status": "online"
     },
     "ModifyDirectConnectTunnelAttribute": {
       "document": "修改专用通道属性",
       "input": "ModifyDirectConnectTunnelAttributeRequest",
       "name": "修改专用通道属性",
-      "output": "ModifyDirectConnectTunnelAttributeResponse"
+      "output": "ModifyDirectConnectTunnelAttributeResponse",
+      "status": "online"
     },
     "ModifyDirectConnectTunnelExtra": {
       "document": "本接口（ModifyDirectConnectTunnelExtra）用于修改专用通道扩展信息",
       "input": "ModifyDirectConnectTunnelExtraRequest",
       "name": "修改专用通道扩展信息",
-      "output": "ModifyDirectConnectTunnelExtraResponse"
+      "output": "ModifyDirectConnectTunnelExtraResponse",
+      "status": "online"
     },
     "RejectDirectConnectTunnel": {
       "document": "拒绝专用通道申请",
       "input": "RejectDirectConnectTunnelRequest",
       "name": "拒绝专用通道申请",
-      "output": "RejectDirectConnectTunnelResponse"
+      "output": "RejectDirectConnectTunnelResponse",
+      "status": "online"
     },
     "ReleaseInternetAddress": {
       "document": "释放已申请的互联网地址",
       "input": "ReleaseInternetAddressRequest",
       "name": "释放互联网地址",
-      "output": "ReleaseInternetAddressResponse"
+      "output": "ReleaseInternetAddressResponse",
+      "status": "online"
     }
   },
   "metadata": {

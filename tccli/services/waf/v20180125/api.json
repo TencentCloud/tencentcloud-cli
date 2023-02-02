@@ -4,325 +4,379 @@
       "document": "增加访问控制（自定义策略）",
       "input": "AddCustomRuleRequest",
       "name": "增加访问控制（自定义策略）",
-      "output": "AddCustomRuleResponse"
+      "output": "AddCustomRuleResponse",
+      "status": "online"
     },
     "AddDomainWhiteRule": {
       "document": "增加域名规则白名单",
       "input": "AddDomainWhiteRuleRequest",
       "name": "增加域名规则白名单",
-      "output": "AddDomainWhiteRuleResponse"
+      "output": "AddDomainWhiteRuleResponse",
+      "status": "online"
     },
     "AddSpartaProtection": {
       "document": "添加Spart防护域名",
       "input": "AddSpartaProtectionRequest",
       "name": "添加Spart防护域名",
-      "output": "AddSpartaProtectionResponse"
+      "output": "AddSpartaProtectionResponse",
+      "status": "online"
     },
     "CreateAccessExport": {
       "document": "本接口用于创建访问日志导出",
       "input": "CreateAccessExportRequest",
       "name": "创建访问日志导出",
-      "output": "CreateAccessExportResponse"
+      "output": "CreateAccessExportResponse",
+      "status": "online"
     },
     "DeleteAccessExport": {
       "document": "本接口用于删除访问日志导出",
       "input": "DeleteAccessExportRequest",
       "name": "删除访问日志导出",
-      "output": "DeleteAccessExportResponse"
+      "output": "DeleteAccessExportResponse",
+      "status": "online"
     },
     "DeleteAttackDownloadRecord": {
       "document": "删除攻击日志下载任务记录",
       "input": "DeleteAttackDownloadRecordRequest",
       "name": "删除攻击日志下载任务记录",
-      "output": "DeleteAttackDownloadRecordResponse"
+      "output": "DeleteAttackDownloadRecordResponse",
+      "status": "online"
     },
     "DeleteCdcResource": {
       "document": "删除cdc资源数据",
       "input": "DeleteCdcResourceRequest",
       "name": "删除cdc资源数据",
-      "output": "DeleteCdcResourceResponse"
+      "output": "DeleteCdcResourceResponse",
+      "status": "online"
     },
     "DeleteDomainWhiteRules": {
       "document": "删除域名规则白名单\n\n",
       "input": "DeleteDomainWhiteRulesRequest",
       "name": "删除域名规则白名单",
-      "output": "DeleteDomainWhiteRulesResponse"
+      "output": "DeleteDomainWhiteRulesResponse",
+      "status": "online"
     },
     "DeleteDownloadRecord": {
       "document": "删除访问日志下载记录",
       "input": "DeleteDownloadRecordRequest",
       "name": "删除访问日志下载记录",
-      "output": "DeleteDownloadRecordResponse"
+      "output": "DeleteDownloadRecordResponse",
+      "status": "online"
     },
     "DeleteGlobalWhiteRule": {
       "document": "供内部运营系统调用，删除Tiga规则引擎全局白名单。",
       "input": "DeleteGlobalWhiteRuleRequest",
       "name": "删除规则引擎全局白名单",
-      "output": "DeleteGlobalWhiteRuleResponse"
+      "output": "DeleteGlobalWhiteRuleResponse",
+      "status": "online"
     },
     "DeleteIpAccessControl": {
       "document": "Waf IP黑白名单Delete接口",
       "input": "DeleteIpAccessControlRequest",
       "name": "Waf IP黑白名单Delete接口",
-      "output": "DeleteIpAccessControlResponse"
+      "output": "DeleteIpAccessControlResponse",
+      "status": "online"
     },
     "DeleteSession": {
       "document": "删除CC攻击的session设置",
       "input": "DeleteSessionRequest",
       "name": "删除CC攻击的session设置",
-      "output": "DeleteSessionResponse"
+      "output": "DeleteSessionResponse",
+      "status": "online"
     },
     "DeleteTsRegion": {
       "document": "删除ts接入区域",
       "input": "DeleteTsRegionRequest",
       "name": "删除ts接入区域",
-      "output": "DeleteTsRegionResponse"
+      "output": "DeleteTsRegionResponse",
+      "status": "online"
     },
     "DeleteTsResource": {
       "document": "删除自研引擎服务资源",
       "input": "DeleteTsResourceRequest",
       "name": "删除自研引擎服务资源",
-      "output": "DeleteTsResourceResponse"
+      "output": "DeleteTsResourceResponse",
+      "status": "online"
     },
     "DescribeAccessExports": {
       "document": "本接口用于获取访问日志导出列表",
       "input": "DescribeAccessExportsRequest",
       "name": "获取访问日志导出列表",
-      "output": "DescribeAccessExportsResponse"
+      "output": "DescribeAccessExportsResponse",
+      "status": "online"
     },
     "DescribeAccessFastAnalysis": {
       "document": "本接口用于访问日志的快速分析",
       "input": "DescribeAccessFastAnalysisRequest",
       "name": "访问日志快速分析统计",
-      "output": "DescribeAccessFastAnalysisResponse"
+      "output": "DescribeAccessFastAnalysisResponse",
+      "status": "online"
     },
     "DescribeAccessIndex": {
       "document": "本接口用于获取访问日志索引配置信息",
       "input": "DescribeAccessIndexRequest",
       "name": "获取访问日志索引配置信息",
-      "output": "DescribeAccessIndexResponse"
+      "output": "DescribeAccessIndexResponse",
+      "status": "online"
     },
     "DescribeAutoDenyIP": {
       "document": "描述WAF自动封禁IP详情,对齐自动封堵状态",
       "input": "DescribeAutoDenyIPRequest",
       "name": "描述WAF自动封禁IP详情",
-      "output": "DescribeAutoDenyIPResponse"
+      "output": "DescribeAutoDenyIPResponse",
+      "status": "online"
     },
     "DescribeCdcResource": {
       "document": "供运营后台获取Cdc资源列表",
       "input": "DescribeCdcResourceRequest",
       "name": "供运营后台获取Cdc资源列表",
-      "output": "DescribeCdcResourceResponse"
+      "output": "DescribeCdcResourceResponse",
+      "status": "online"
     },
     "DescribeDomainDetailsSaas": {
       "document": "查询单个saas域名详情",
       "input": "DescribeDomainDetailsSaasRequest",
       "name": "查询单个saas域名详情",
-      "output": "DescribeDomainDetailsSaasResponse"
+      "output": "DescribeDomainDetailsSaasResponse",
+      "status": "online"
     },
     "DescribeDomainWhiteRules": {
       "document": "获取域名的规则白名单\n\n",
       "input": "DescribeDomainWhiteRulesRequest",
       "name": "获取域名的规则白名单",
-      "output": "DescribeDomainWhiteRulesResponse"
+      "output": "DescribeDomainWhiteRulesResponse",
+      "status": "online"
     },
     "DescribeDomains": {
       "document": "查询用户所有域名的详细信息",
       "input": "DescribeDomainsRequest",
       "name": "获取域名列表",
-      "output": "DescribeDomainsResponse"
+      "output": "DescribeDomainsResponse",
+      "status": "online"
     },
     "DescribeFlowTrend": {
       "document": "获取waf流量访问趋势",
       "input": "DescribeFlowTrendRequest",
       "name": "获取waf流量访问趋势",
-      "output": "DescribeFlowTrendResponse"
+      "output": "DescribeFlowTrendResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "查询用户所有实例的详细信息",
       "input": "DescribeInstancesRequest",
       "name": "查询用户所有实例的详细信息",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeIpAccessControl": {
       "document": "Waf ip黑白名单查询",
       "input": "DescribeIpAccessControlRequest",
       "name": "Waf ip黑白名单查询",
-      "output": "DescribeIpAccessControlResponse"
+      "output": "DescribeIpAccessControlResponse",
+      "status": "online"
     },
     "DescribeIpHitItems": {
       "document": "Waf  IP封堵状态查询",
       "input": "DescribeIpHitItemsRequest",
       "name": "Waf  IP封堵状态查询",
-      "output": "DescribeIpHitItemsResponse"
+      "output": "DescribeIpHitItemsResponse",
+      "status": "online"
     },
     "DescribeOpAttackWhiteRuleNew": {
       "document": "运营平台接口：获取用户规则白名单列表",
       "input": "DescribeOpAttackWhiteRuleNewRequest",
       "name": "运营平台接口：获取用户规则白名单列表",
-      "output": "DescribeOpAttackWhiteRuleNewResponse"
+      "output": "DescribeOpAttackWhiteRuleNewResponse",
+      "status": "online"
     },
     "DescribeOpRuleUpdateLog": {
       "document": "运营后台：获取特征规则更新动态",
       "input": "DescribeOpRuleUpdateLogRequest",
       "name": "运营后台：获取特征规则更新动态",
-      "output": "DescribeOpRuleUpdateLogResponse"
+      "output": "DescribeOpRuleUpdateLogResponse",
+      "status": "online"
     },
     "DescribeOpSignatureRule": {
       "document": "运营后台接口，获取全量特征规则列表",
       "input": "DescribeOpSignatureRuleRequest",
       "name": "运营后台接口，获取全量特征规则列表",
-      "output": "DescribeOpSignatureRuleResponse"
+      "output": "DescribeOpSignatureRuleResponse",
+      "status": "online"
     },
     "DescribeOpUserSignaturePolicy": {
       "document": "运营后台接口：获取规则状态",
       "input": "DescribeOpUserSignaturePolicyRequest",
       "name": "运营后台接口：获取规则状态",
-      "output": "DescribeOpUserSignaturePolicyResponse"
+      "output": "DescribeOpUserSignaturePolicyResponse",
+      "status": "online"
     },
     "DescribeOpUserSignatureRule": {
       "document": "为运营后台获取用户规则",
       "input": "DescribeOpUserSignatureRuleRequest",
       "name": "为运营后台获取用户规则",
-      "output": "DescribeOpUserSignatureRuleResponse"
+      "output": "DescribeOpUserSignatureRuleResponse",
+      "status": "online"
     },
     "DescribeTsRegion": {
       "document": "获取ts接入区域",
       "input": "DescribeTsRegionRequest",
       "name": "获取ts接入区域",
-      "output": "DescribeTsRegionResponse"
+      "output": "DescribeTsRegionResponse",
+      "status": "online"
     },
     "DescribeTsResource": {
       "document": "供运营后台获取自研引擎服务资源列表",
       "input": "DescribeTsResourceRequest",
       "name": "获取自研引擎资源列表",
-      "output": "DescribeTsResourceResponse"
+      "output": "DescribeTsResourceResponse",
+      "status": "online"
     },
     "DescribeUserCdcClbWafRegions": {
       "document": "在CDC场景下，负载均衡型WAF的添加、编辑域名配置的时候，需要展示CDC负载均衡型WAF（cdc-clb-waf)支持的地域列表，通过DescribeUserCdcClbWafRegions既可以获得当前对客户已经开放的地域列表",
       "input": "DescribeUserCdcClbWafRegionsRequest",
       "name": "获取CDC场景下对客户已经开放的负载均衡型WAF(cdc-clb-waf)的地域",
-      "output": "DescribeUserCdcClbWafRegionsResponse"
+      "output": "DescribeUserCdcClbWafRegionsResponse",
+      "status": "online"
     },
     "DescribeUserClbWafRegions": {
       "document": "在负载均衡型WAF的添加、编辑域名配置的时候，需要展示负载均衡型WAF（clb-waf)支持的地域列表，通过DescribeUserClbWafRegions既可以获得当前对客户已经开放的地域列表",
       "input": "DescribeUserClbWafRegionsRequest",
       "name": "获取对客户已经开放的负载均衡型WAF(clb-waf)的地域",
-      "output": "DescribeUserClbWafRegionsResponse"
+      "output": "DescribeUserClbWafRegionsResponse",
+      "status": "online"
     },
     "DescribeWafAutoDenyRules": {
       "document": "返回ip惩罚规则详细信息",
       "input": "DescribeWafAutoDenyRulesRequest",
       "name": "查询ip惩罚规则",
-      "output": "DescribeWafAutoDenyRulesResponse"
+      "output": "DescribeWafAutoDenyRulesResponse",
+      "status": "online"
     },
     "DescribeWafAutoDenyStatus": {
       "document": "描述WAF自动封禁模块详情",
       "input": "DescribeWafAutoDenyStatusRequest",
       "name": "描述WAF自动封禁模块详情",
-      "output": "DescribeWafAutoDenyStatusResponse"
+      "output": "DescribeWafAutoDenyStatusResponse",
+      "status": "online"
     },
     "DescribeWafThreatenIntelligence": {
       "document": "描述WAF威胁情报封禁模块配置详情",
       "input": "DescribeWafThreatenIntelligenceRequest",
       "name": "描述WAF威胁情报封禁模块配置详情",
-      "output": "DescribeWafThreatenIntelligenceResponse"
+      "output": "DescribeWafThreatenIntelligenceResponse",
+      "status": "online"
     },
     "EditOpRuleUpdateLog": {
       "document": "运营后台接口：编辑规则更新日志",
       "input": "EditOpRuleUpdateLogRequest",
       "name": "运营后台接口：编辑规则更新日志",
-      "output": "EditOpRuleUpdateLogResponse"
+      "output": "EditOpRuleUpdateLogResponse",
+      "status": "online"
     },
     "EditOpRuleUpdateLogStatus": {
       "document": "运营后台接口：编辑规则更新日志的发布状态",
       "input": "EditOpRuleUpdateLogStatusRequest",
       "name": "运营后台接口：编辑规则更新日志的发布状态",
-      "output": "EditOpRuleUpdateLogStatusResponse"
+      "output": "EditOpRuleUpdateLogStatusResponse",
+      "status": "online"
     },
     "GetAttackDownloadRecords": {
       "document": "查询下载攻击日志任务记录列表",
       "input": "GetAttackDownloadRecordsRequest",
       "name": "查询下载攻击日志任务记录列表",
-      "output": "GetAttackDownloadRecordsResponse"
+      "output": "GetAttackDownloadRecordsResponse",
+      "status": "online"
     },
     "ModifyAccessPeriod": {
       "document": "本接口用于修改访问日志保存期限",
       "input": "ModifyAccessPeriodRequest",
       "name": "修改访问日志保存期限",
-      "output": "ModifyAccessPeriodResponse"
+      "output": "ModifyAccessPeriodResponse",
+      "status": "online"
     },
     "ModifyCdcResource": {
       "document": "修改CDC资源列表，如果id=0则添加，>0则修改",
       "input": "ModifyCdcResourceRequest",
       "name": "修改CDC资源列表",
-      "output": "ModifyCdcResourceResponse"
+      "output": "ModifyCdcResourceResponse",
+      "status": "online"
     },
     "ModifyCustomRuleStatus": {
       "document": "开启或禁用访问控制（自定义策略）",
       "input": "ModifyCustomRuleStatusRequest",
       "name": "开启或禁用访问控制（自定义策略）",
-      "output": "ModifyCustomRuleStatusResponse"
+      "output": "ModifyCustomRuleStatusResponse",
+      "status": "online"
     },
     "ModifyDomainWhiteRule": {
       "document": "更改某一条规则",
       "input": "ModifyDomainWhiteRuleRequest",
       "name": "更改某一条规则",
-      "output": "ModifyDomainWhiteRuleResponse"
+      "output": "ModifyDomainWhiteRuleResponse",
+      "status": "online"
     },
     "ModifyOpSignatureRule": {
       "document": "运营后台接口：修改规则",
       "input": "ModifyOpSignatureRuleRequest",
       "name": "运营后台接口：修改规则",
-      "output": "ModifyOpSignatureRuleResponse"
+      "output": "ModifyOpSignatureRuleResponse",
+      "status": "online"
     },
     "ModifyTsRegion": {
       "document": "修改ts接入区域",
       "input": "ModifyTsRegionRequest",
       "name": "修改ts接入区域",
-      "output": "ModifyTsRegionResponse"
+      "output": "ModifyTsRegionResponse",
+      "status": "online"
     },
     "ModifyTsResource": {
       "document": "修改Tiga资源列表，如果id=0则添加，>0则修改",
       "input": "ModifyTsResourceRequest",
       "name": "修改自研引擎资源",
-      "output": "ModifyTsResourceResponse"
+      "output": "ModifyTsResourceResponse",
+      "status": "online"
     },
     "ModifyWafAutoDenyRules": {
       "document": "修改ip惩罚规则",
       "input": "ModifyWafAutoDenyRulesRequest",
       "name": "修改ip惩罚规则",
-      "output": "ModifyWafAutoDenyRulesResponse"
+      "output": "ModifyWafAutoDenyRulesResponse",
+      "status": "online"
     },
     "ModifyWafAutoDenyStatus": {
       "document": "配置WAF自动封禁模块状态",
       "input": "ModifyWafAutoDenyStatusRequest",
       "name": "配置WAF自动封禁模块状态",
-      "output": "ModifyWafAutoDenyStatusResponse"
+      "output": "ModifyWafAutoDenyStatusResponse",
+      "status": "online"
     },
     "ModifyWafThreatenIntelligence": {
       "document": "配置WAF威胁情报封禁模块详情",
       "input": "ModifyWafThreatenIntelligenceRequest",
       "name": "配置WAF威胁情报封禁模块详情",
-      "output": "ModifyWafThreatenIntelligenceResponse"
+      "output": "ModifyWafThreatenIntelligenceResponse",
+      "status": "online"
     },
     "PostAttackDownloadTask": {
       "document": "创建搜索下载攻击日志任务，使用CLS新版本的搜索下载getlog接口",
       "input": "PostAttackDownloadTaskRequest",
       "name": "创建搜索下载攻击日志任务",
-      "output": "PostAttackDownloadTaskResponse"
+      "output": "PostAttackDownloadTaskResponse",
+      "status": "online"
     },
     "SearchAccessLog": {
       "document": "本接口用于搜索WAF访问日志",
       "input": "SearchAccessLogRequest",
       "name": "搜索访问日志",
-      "output": "SearchAccessLogResponse"
+      "output": "SearchAccessLogResponse",
+      "status": "online"
     },
     "UpsertIpAccessControl": {
       "document": "Waf IP黑白名单Upsert接口",
       "input": "UpsertIpAccessControlRequest",
       "name": "Waf IP黑白名单Upsert接口",
-      "output": "UpsertIpAccessControlResponse"
+      "output": "UpsertIpAccessControlResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -6429,64 +6483,74 @@
       "document": "tiga引擎规则更新动态日志",
       "members": [
         {
-          "default": "",
           "document": "id值",
           "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2021-11-11T17:12:37+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "修改时间",
           "example": "2021-11-11T17:12:37+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "详细修改动态",
           "example": "test",
           "member": "string",
           "name": "Detail",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "en/cn 描述信息语言",
           "example": "cn",
           "member": "string",
           "name": "Language",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "版本信息",
           "example": "v0.0.1",
           "member": "string",
           "name": "LogVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0/1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

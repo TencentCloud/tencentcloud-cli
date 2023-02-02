@@ -3,15 +3,9 @@
     "BeautifyPic": [
       {
         "document": "",
-        "input": "https://fmu.tencentcloudapi.com/?Action=BeautifyPic\r\n&Url=http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\r\n&Version=2019-12-13\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAFuAiYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqr...\",\n        \"RequestId\": \"9cf173a5-4ae5-46fb-9898-6c876263770d\"\n    }\n}",
-        "title": "调用成功示例"
-      },
-      {
-        "document": "",
-        "input": "https://fmu.tencentcloudapi.com/?Action=BeautifyPic\r\n&Url=IamNotAUrl\r\n&Version=2019-12-13\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"897d8a3d-6677-4c41-b647-f0a19a6dc13f\"\n    }\n}",
-        "title": "调用失败示例"
+        "input": "POST / HTTP/1.1\nHost: fmu.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BeautifyPic\n<公共请求参数>\n\n{\n    \"Url\": \"test.jpg\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultUrl\": \"result.jpg\",\n        \"ResultImage\": \"\",\n        \"RequestId\": \"1a2e88a4-3614-48a0-96b9-d09bf6de2fe4\"\n    }\n}",
+        "title": "人脸美颜请求示例"
       }
     ],
     "BeautifyVideo": [

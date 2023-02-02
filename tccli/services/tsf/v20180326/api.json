@@ -4,1225 +4,1429 @@
       "document": "添加云主机节点至TSF集群",
       "input": "AddClusterInstancesRequest",
       "name": "集群添加云主机",
-      "output": "AddClusterInstancesResponse"
+      "output": "AddClusterInstancesResponse",
+      "status": "online"
     },
     "AddInstances": {
       "document": "添加云主机节点至TSF集群",
       "input": "AddInstancesRequest",
       "name": "集群导入云主机",
-      "output": "AddInstancesResponse"
+      "output": "AddInstancesResponse",
+      "status": "online"
     },
     "AssociateBusinessLogConfig": {
       "document": "关联日志配置项到应用",
       "input": "AssociateBusinessLogConfigRequest",
       "name": "关联日志配置项到应用",
-      "output": "AssociateBusinessLogConfigResponse"
+      "output": "AssociateBusinessLogConfigResponse",
+      "status": "online"
     },
     "AssociateConfigWithGroup": {
       "document": "关联投递配置到部署组",
       "input": "AssociateConfigWithGroupRequest",
       "name": "关联投递配置到部署组",
-      "output": "AssociateConfigWithGroupResponse"
+      "output": "AssociateConfigWithGroupResponse",
+      "status": "online"
     },
     "BindApiGroup": {
       "document": "网关与API分组批量绑定",
       "input": "BindApiGroupRequest",
       "name": "网关与API分组批量绑定",
-      "output": "BindApiGroupResponse"
+      "output": "BindApiGroupResponse",
+      "status": "online"
     },
     "BindPlugin": {
       "document": "插件与网关分组/API批量绑定",
       "input": "BindPluginRequest",
       "name": "批量绑定插件",
-      "output": "BindPluginResponse"
+      "output": "BindPluginResponse",
+      "status": "online"
     },
     "ChangeApiUsableStatus": {
       "document": "启用或禁用API",
       "input": "ChangeApiUsableStatusRequest",
       "name": "启用或禁用API",
-      "output": "ChangeApiUsableStatusResponse"
+      "output": "ChangeApiUsableStatusResponse",
+      "status": "online"
     },
     "ContinueRunFailedTaskBatch": {
       "document": "对执行失败的任务批次执行续跑",
       "input": "ContinueRunFailedTaskBatchRequest",
       "name": "续跑任务批次",
-      "output": "ContinueRunFailedTaskBatchResponse"
+      "output": "ContinueRunFailedTaskBatchResponse",
+      "status": "online"
     },
     "CreateAllGatewayApiAsync": {
       "document": "一键导入API分组",
       "input": "CreateAllGatewayApiAsyncRequest",
       "name": "一键导入API分组",
-      "output": "CreateAllGatewayApiAsyncResponse"
+      "output": "CreateAllGatewayApiAsyncResponse",
+      "status": "online"
     },
     "CreateApiGroup": {
       "document": "创建API分组",
       "input": "CreateApiGroupRequest",
       "name": "创建API分组",
-      "output": "CreateApiGroupResponse"
+      "output": "CreateApiGroupResponse",
+      "status": "online"
     },
     "CreateApiRateLimitRule": {
       "document": "创建API限流规则",
       "input": "CreateApiRateLimitRuleRequest",
       "name": "创建API限流规则",
-      "output": "CreateApiRateLimitRuleResponse"
+      "output": "CreateApiRateLimitRuleResponse",
+      "status": "online"
     },
     "CreateApplication": {
       "document": "创建应用",
       "input": "CreateApplicationRequest",
       "name": "创建应用",
-      "output": "CreateApplicationResponse"
+      "output": "CreateApplicationResponse",
+      "status": "online"
     },
     "CreateCluster": {
       "document": "创建集群",
       "input": "CreateClusterRequest",
       "name": "创建集群",
-      "output": "CreateClusterResponse"
+      "output": "CreateClusterResponse",
+      "status": "online"
     },
     "CreateConfig": {
       "document": "创建配置项",
       "input": "CreateConfigRequest",
       "name": "创建配置项",
-      "output": "CreateConfigResponse"
+      "output": "CreateConfigResponse",
+      "status": "online"
     },
     "CreateConfigTemplate": {
       "document": "创建参数模板",
       "input": "CreateConfigTemplateRequest",
       "name": "创建参数模板",
-      "output": "CreateConfigTemplateResponse"
+      "output": "CreateConfigTemplateResponse",
+      "status": "online"
     },
     "CreateContainGroup": {
       "document": "创建容器部署组",
       "input": "CreateContainGroupRequest",
       "name": "创建容器部署组",
-      "output": "CreateContainGroupResponse"
+      "output": "CreateContainGroupResponse",
+      "status": "online"
     },
     "CreateFileConfig": {
       "document": "创建文件配置项",
       "input": "CreateFileConfigRequest",
       "name": "创建文件配置项",
-      "output": "CreateFileConfigResponse"
+      "output": "CreateFileConfigResponse",
+      "status": "online"
     },
     "CreateGatewayApi": {
       "document": "批量导入API至api分组(也支持新建API到分组)",
       "input": "CreateGatewayApiRequest",
       "name": "批量导入API至api分组",
-      "output": "CreateGatewayApiResponse"
+      "output": "CreateGatewayApiResponse",
+      "status": "online"
     },
     "CreateGroup": {
       "document": "创建虚拟机部署组",
       "input": "CreateGroupRequest",
       "name": "创建部署组",
-      "output": "CreateGroupResponse"
+      "output": "CreateGroupResponse",
+      "status": "online"
     },
     "CreateLane": {
       "document": "创建泳道",
       "input": "CreateLaneRequest",
       "name": "创建泳道",
-      "output": "CreateLaneResponse"
+      "output": "CreateLaneResponse",
+      "status": "online"
     },
     "CreateLaneRule": {
       "document": "创建泳道规则",
       "input": "CreateLaneRuleRequest",
       "name": "创建泳道规则",
-      "output": "CreateLaneRuleResponse"
+      "output": "CreateLaneRuleResponse",
+      "status": "online"
     },
     "CreateMicroservice": {
       "document": "新增微服务",
       "input": "CreateMicroserviceRequest",
       "name": "新增微服务",
-      "output": "CreateMicroserviceResponse"
+      "output": "CreateMicroserviceResponse",
+      "status": "online"
     },
     "CreateMicroserviceWithDetailResp": {
       "document": "新增微服务返回id",
       "input": "CreateMicroserviceWithDetailRespRequest",
       "name": "新增微服务返回id",
-      "output": "CreateMicroserviceWithDetailRespResponse"
+      "output": "CreateMicroserviceWithDetailRespResponse",
+      "status": "online"
     },
     "CreateNamespace": {
       "document": "创建命名空间",
       "input": "CreateNamespaceRequest",
       "name": "创建命名空间",
-      "output": "CreateNamespaceResponse"
+      "output": "CreateNamespaceResponse",
+      "status": "online"
     },
     "CreatePathRewrites": {
       "document": "创建路径重写",
       "input": "CreatePathRewritesRequest",
       "name": "创建路径重写",
-      "output": "CreatePathRewritesResponse"
+      "output": "CreatePathRewritesResponse",
+      "status": "online"
     },
     "CreatePublicConfig": {
       "document": "创建公共配置项",
       "input": "CreatePublicConfigRequest",
       "name": "创建公共配置项",
-      "output": "CreatePublicConfigResponse"
+      "output": "CreatePublicConfigResponse",
+      "status": "online"
     },
     "CreateRepository": {
       "document": "创建仓库",
       "input": "CreateRepositoryRequest",
       "name": "创建仓库",
-      "output": "CreateRepositoryResponse"
+      "output": "CreateRepositoryResponse",
+      "status": "online"
     },
     "CreateTask": {
       "document": "创建任务",
       "input": "CreateTaskRequest",
       "name": "创建任务",
-      "output": "CreateTaskResponse"
+      "output": "CreateTaskResponse",
+      "status": "online"
     },
     "CreateTaskFlow": {
       "document": "创建工作流",
       "input": "CreateTaskFlowRequest",
       "name": "创建工作流",
-      "output": "CreateTaskFlowResponse"
+      "output": "CreateTaskFlowResponse",
+      "status": "online"
     },
     "CreateUnitRule": {
       "document": "创建单元化规则",
       "input": "CreateUnitRuleRequest",
       "name": "创建单元化规则",
-      "output": "CreateUnitRuleResponse"
+      "output": "CreateUnitRuleResponse",
+      "status": "online"
     },
     "DeleteApiGroup": {
       "document": "删除Api分组",
       "input": "DeleteApiGroupRequest",
       "name": "删除Api分组",
-      "output": "DeleteApiGroupResponse"
+      "output": "DeleteApiGroupResponse",
+      "status": "online"
     },
     "DeleteApplication": {
       "document": "删除应用",
       "input": "DeleteApplicationRequest",
       "name": "删除应用",
-      "output": "DeleteApplicationResponse"
+      "output": "DeleteApplicationResponse",
+      "status": "online"
     },
     "DeleteCluster": {
       "document": "删除集群",
       "input": "DeleteClusterRequest",
       "name": "删除集群",
-      "output": "DeleteClusterResponse"
+      "output": "DeleteClusterResponse",
+      "status": "online"
     },
     "DeleteConfig": {
       "document": "删除配置项",
       "input": "DeleteConfigRequest",
       "name": "删除配置项",
-      "output": "DeleteConfigResponse"
+      "output": "DeleteConfigResponse",
+      "status": "online"
     },
     "DeleteConfigTemplate": {
       "document": "删除模板",
       "input": "DeleteConfigTemplateRequest",
       "name": "删除模板",
-      "output": "DeleteConfigTemplateResponse"
+      "output": "DeleteConfigTemplateResponse",
+      "status": "online"
     },
     "DeleteContainerGroup": {
       "document": "删除容器部署组",
       "input": "DeleteContainerGroupRequest",
       "name": "删除容器部署组",
-      "output": "DeleteContainerGroupResponse"
+      "output": "DeleteContainerGroupResponse",
+      "status": "online"
     },
     "DeleteGroup": {
       "document": "删除容器部署组",
       "input": "DeleteGroupRequest",
       "name": "删除虚拟机部署组",
-      "output": "DeleteGroupResponse"
+      "output": "DeleteGroupResponse",
+      "status": "online"
     },
     "DeleteImageTags": {
       "document": "批量删除镜像版本",
       "input": "DeleteImageTagsRequest",
       "name": "批量删除镜像版本",
-      "output": "DeleteImageTagsResponse"
+      "output": "DeleteImageTagsResponse",
+      "status": "online"
     },
     "DeleteLane": {
       "document": "删除泳道",
       "input": "DeleteLaneRequest",
       "name": "删除泳道",
-      "output": "DeleteLaneResponse"
+      "output": "DeleteLaneResponse",
+      "status": "online"
     },
     "DeleteLaneRule": {
       "document": "删除泳道规则",
       "input": "DeleteLaneRuleRequest",
       "name": "删除泳道规则",
-      "output": "DeleteLaneRuleResponse"
+      "output": "DeleteLaneRuleResponse",
+      "status": "online"
     },
     "DeleteMicroservice": {
       "document": "删除微服务",
       "input": "DeleteMicroserviceRequest",
       "name": "删除微服务",
-      "output": "DeleteMicroserviceResponse"
+      "output": "DeleteMicroserviceResponse",
+      "status": "online"
     },
     "DeleteNamespace": {
       "document": "删除命名空间",
       "input": "DeleteNamespaceRequest",
       "name": "删除命名空间",
-      "output": "DeleteNamespaceResponse"
+      "output": "DeleteNamespaceResponse",
+      "status": "online"
     },
     "DeletePathRewrites": {
       "document": "删除路径重写",
       "input": "DeletePathRewritesRequest",
       "name": "删除路径重写",
-      "output": "DeletePathRewritesResponse"
+      "output": "DeletePathRewritesResponse",
+      "status": "online"
     },
     "DeletePkgs": {
       "document": "从软件仓库批量删除程序包。\n一次最多支持删除1000个包，数量超过1000，返回UpperDeleteLimit错误。",
       "input": "DeletePkgsRequest",
       "name": "批量删除包",
-      "output": "DeletePkgsResponse"
+      "output": "DeletePkgsResponse",
+      "status": "online"
     },
     "DeletePublicConfig": {
       "document": "删除公共配置项",
       "input": "DeletePublicConfigRequest",
       "name": "删除公共配置项",
-      "output": "DeletePublicConfigResponse"
+      "output": "DeletePublicConfigResponse",
+      "status": "online"
     },
     "DeleteRepository": {
       "document": "删除仓库",
       "input": "DeleteRepositoryRequest",
       "name": "删除仓库",
-      "output": "DeleteRepositoryResponse"
+      "output": "DeleteRepositoryResponse",
+      "status": "online"
     },
     "DeleteServerlessGroup": {
       "document": "删除Serverless部署组",
       "input": "DeleteServerlessGroupRequest",
       "name": "删除部署组",
-      "output": "DeleteServerlessGroupResponse"
+      "output": "DeleteServerlessGroupResponse",
+      "status": "online"
     },
     "DeleteTask": {
       "document": "删除任务",
       "input": "DeleteTaskRequest",
       "name": "删除任务",
-      "output": "DeleteTaskResponse"
+      "output": "DeleteTaskResponse",
+      "status": "online"
     },
     "DeleteUnitNamespaces": {
       "document": "删除单元化命名空间",
       "input": "DeleteUnitNamespacesRequest",
       "name": "删除单元化命名空间",
-      "output": "DeleteUnitNamespacesResponse"
+      "output": "DeleteUnitNamespacesResponse",
+      "status": "online"
     },
     "DeleteUnitRule": {
       "document": "删除单元化规则",
       "input": "DeleteUnitRuleRequest",
       "name": "删除单元化规则",
-      "output": "DeleteUnitRuleResponse"
+      "output": "DeleteUnitRuleResponse",
+      "status": "online"
     },
     "DeployContainerGroup": {
       "document": "部署容器应用-更新",
       "input": "DeployContainerGroupRequest",
       "name": "部署容器应用",
-      "output": "DeployContainerGroupResponse"
+      "output": "DeployContainerGroupResponse",
+      "status": "online"
     },
     "DeployGroup": {
       "document": "部署虚拟机部署组应用",
       "input": "DeployGroupRequest",
       "name": "部署虚拟机部署组应用",
-      "output": "DeployGroupResponse"
+      "output": "DeployGroupResponse",
+      "status": "online"
     },
     "DescribeApiDetail": {
       "document": "查询API详情",
       "input": "DescribeApiDetailRequest",
       "name": "查询API详情",
-      "output": "DescribeApiDetailResponse"
+      "output": "DescribeApiDetailResponse",
+      "status": "online"
     },
     "DescribeApiGroup": {
       "document": "查询API分组",
       "input": "DescribeApiGroupRequest",
       "name": "查询API分组",
-      "output": "DescribeApiGroupResponse"
+      "output": "DescribeApiGroupResponse",
+      "status": "online"
     },
     "DescribeApiGroups": {
       "document": "查询API 分组信息列表",
       "input": "DescribeApiGroupsRequest",
       "name": "查询API 分组信息列表",
-      "output": "DescribeApiGroupsResponse"
+      "output": "DescribeApiGroupsResponse",
+      "status": "online"
     },
     "DescribeApiRateLimitRules": {
       "document": "查询API限流规则",
       "input": "DescribeApiRateLimitRulesRequest",
       "name": "查询API限流规则",
-      "output": "DescribeApiRateLimitRulesResponse"
+      "output": "DescribeApiRateLimitRulesResponse",
+      "status": "online"
     },
     "DescribeApiUseDetail": {
       "document": "查询网关API监控明细数据",
       "input": "DescribeApiUseDetailRequest",
       "name": "查询网关API监控明细数据",
-      "output": "DescribeApiUseDetailResponse"
+      "output": "DescribeApiUseDetailResponse",
+      "status": "online"
     },
     "DescribeApiVersions": {
       "document": "查询API 版本",
       "input": "DescribeApiVersionsRequest",
       "name": "查询API版本",
-      "output": "DescribeApiVersionsResponse"
+      "output": "DescribeApiVersionsResponse",
+      "status": "online"
     },
     "DescribeApplication": {
       "document": "获取应用详情",
       "input": "DescribeApplicationRequest",
       "name": "获取应用详情",
-      "output": "DescribeApplicationResponse"
+      "output": "DescribeApplicationResponse",
+      "status": "online"
     },
     "DescribeApplicationAttribute": {
       "document": "获取应用列表其它字段，如实例数量信息等",
       "input": "DescribeApplicationAttributeRequest",
       "name": "获取应用列表其它字段",
-      "output": "DescribeApplicationAttributeResponse"
+      "output": "DescribeApplicationAttributeResponse",
+      "status": "online"
     },
     "DescribeApplicationBusinessLogConfig": {
       "document": "查询应用关联日志配置项信息",
       "input": "DescribeApplicationBusinessLogConfigRequest",
       "name": "查询应用关联日志配置项信息",
-      "output": "DescribeApplicationBusinessLogConfigResponse"
+      "output": "DescribeApplicationBusinessLogConfigResponse",
+      "status": "online"
     },
     "DescribeApplications": {
       "document": "获取应用列表",
       "input": "DescribeApplicationsRequest",
       "name": "获取应用列表",
-      "output": "DescribeApplicationsResponse"
+      "output": "DescribeApplicationsResponse",
+      "status": "online"
     },
     "DescribeBasicResourceUsage": {
       "document": "TSF基本资源信息概览接口",
       "input": "DescribeBasicResourceUsageRequest",
       "name": "TSF基本资源信息概览",
-      "output": "DescribeBasicResourceUsageResponse"
+      "output": "DescribeBasicResourceUsageResponse",
+      "status": "online"
     },
     "DescribeBusinessLogConfig": {
       "document": "查询业务日志配置项信息",
       "input": "DescribeBusinessLogConfigRequest",
       "name": "查询业务日志配置项信息",
-      "output": "DescribeBusinessLogConfigResponse"
+      "output": "DescribeBusinessLogConfigResponse",
+      "status": "online"
     },
     "DescribeBusinessLogConfigs": {
       "document": "查询日志配置项列表",
       "input": "DescribeBusinessLogConfigsRequest",
       "name": "查询日志配置项列表",
-      "output": "DescribeBusinessLogConfigsResponse"
+      "output": "DescribeBusinessLogConfigsResponse",
+      "status": "online"
     },
     "DescribeClusterInstances": {
       "document": "查询集群实例",
       "input": "DescribeClusterInstancesRequest",
       "name": "查询集群实例",
-      "output": "DescribeClusterInstancesResponse"
+      "output": "DescribeClusterInstancesResponse",
+      "status": "online"
     },
     "DescribeClusters": {
       "document": "获取集群列表",
       "input": "DescribeClustersRequest",
       "name": "获取集群列表",
-      "output": "DescribeClustersResponse"
+      "output": "DescribeClustersResponse",
+      "status": "online"
     },
     "DescribeConfig": {
       "document": "查询配置",
       "input": "DescribeConfigRequest",
       "name": "查询配置",
-      "output": "DescribeConfigResponse"
+      "output": "DescribeConfigResponse",
+      "status": "online"
     },
     "DescribeConfigReleaseLogs": {
       "document": "查询配置发布历史",
       "input": "DescribeConfigReleaseLogsRequest",
       "name": "查询配置发布历史",
-      "output": "DescribeConfigReleaseLogsResponse"
+      "output": "DescribeConfigReleaseLogsResponse",
+      "status": "online"
     },
     "DescribeConfigReleases": {
       "document": "查询配置发布信息",
       "input": "DescribeConfigReleasesRequest",
       "name": "查询配置发布信息",
-      "output": "DescribeConfigReleasesResponse"
+      "output": "DescribeConfigReleasesResponse",
+      "status": "online"
     },
     "DescribeConfigSummary": {
       "document": "查询配置汇总列表",
       "input": "DescribeConfigSummaryRequest",
       "name": "查询配置汇总列表",
-      "output": "DescribeConfigSummaryResponse"
+      "output": "DescribeConfigSummaryResponse",
+      "status": "online"
     },
     "DescribeConfigTemplate": {
       "document": "导入配置",
       "input": "DescribeConfigTemplateRequest",
       "name": "导入配置",
-      "output": "DescribeConfigTemplateResponse"
+      "output": "DescribeConfigTemplateResponse",
+      "status": "online"
     },
     "DescribeConfigs": {
       "document": "查询配置项列表",
       "input": "DescribeConfigsRequest",
       "name": "查询配置项列表",
-      "output": "DescribeConfigsResponse"
+      "output": "DescribeConfigsResponse",
+      "status": "online"
     },
     "DescribeContainerEvents": {
       "document": "获取容器事件列表",
       "input": "DescribeContainerEventsRequest",
       "name": "获取容器事件列表",
-      "output": "DescribeContainerEventsResponse"
+      "output": "DescribeContainerEventsResponse",
+      "status": "online"
     },
     "DescribeContainerGroupDeployInfo": {
       "document": " 获取部署组详情",
       "input": "DescribeContainerGroupDeployInfoRequest",
       "name": "获取部署组详情",
-      "output": "DescribeContainerGroupDeployInfoResponse"
+      "output": "DescribeContainerGroupDeployInfoResponse",
+      "status": "online"
     },
     "DescribeContainerGroupDetail": {
       "document": " 容器部署组详情（已废弃，请使用  DescribeContainerGroupDeployInfo）",
       "input": "DescribeContainerGroupDetailRequest",
       "name": "查询容器部署组详情",
-      "output": "DescribeContainerGroupDetailResponse"
+      "output": "DescribeContainerGroupDetailResponse",
+      "status": "online"
     },
     "DescribeContainerGroups": {
       "document": "容器部署组列表",
       "input": "DescribeContainerGroupsRequest",
       "name": "容器部署组列表",
-      "output": "DescribeContainerGroupsResponse"
+      "output": "DescribeContainerGroupsResponse",
+      "status": "online"
     },
     "DescribeCreateGatewayApiStatus": {
       "document": "查询一键导入API分组任务的状态",
       "input": "DescribeCreateGatewayApiStatusRequest",
       "name": "查询一键导入API分组任务的状态",
-      "output": "DescribeCreateGatewayApiStatusResponse"
+      "output": "DescribeCreateGatewayApiStatusResponse",
+      "status": "online"
     },
     "DescribeDeliveryConfig": {
       "document": "获取单个投递项配置信息",
       "input": "DescribeDeliveryConfigRequest",
       "name": "获取单个投递项配置",
-      "output": "DescribeDeliveryConfigResponse"
+      "output": "DescribeDeliveryConfigResponse",
+      "status": "online"
     },
     "DescribeDeliveryConfigByGroupId": {
       "document": "用部署组id获取绑定信息",
       "input": "DescribeDeliveryConfigByGroupIdRequest",
       "name": "用部署组id获取绑定信息",
-      "output": "DescribeDeliveryConfigByGroupIdResponse"
+      "output": "DescribeDeliveryConfigByGroupIdResponse",
+      "status": "online"
     },
     "DescribeDeliveryConfigs": {
       "document": "获取多个投递项配置 ",
       "input": "DescribeDeliveryConfigsRequest",
       "name": "获取多个投递项配置",
-      "output": "DescribeDeliveryConfigsResponse"
+      "output": "DescribeDeliveryConfigsResponse",
+      "status": "online"
     },
     "DescribeDownloadInfo": {
       "document": "TSF上传的程序包存放在腾讯云对象存储（COS）中，通过该API可以获取从COS下载程序包需要的信息，包括包所在的桶、存储路径、鉴权信息等，之后使用COS API（或SDK）进行下载。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436",
       "input": "DescribeDownloadInfoRequest",
       "name": "获取下载程序包信息",
-      "output": "DescribeDownloadInfoResponse"
+      "output": "DescribeDownloadInfoResponse",
+      "status": "online"
     },
     "DescribeEnabledUnitRule": {
       "document": "查询生效的单元化规则",
       "input": "DescribeEnabledUnitRuleRequest",
       "name": "查询生效的单元化规则",
-      "output": "DescribeEnabledUnitRuleResponse"
+      "output": "DescribeEnabledUnitRuleResponse",
+      "status": "online"
     },
     "DescribeFileConfigReleases": {
       "document": "查询文件配置项发布信息",
       "input": "DescribeFileConfigReleasesRequest",
       "name": "查询文件配置项发布信息",
-      "output": "DescribeFileConfigReleasesResponse"
+      "output": "DescribeFileConfigReleasesResponse",
+      "status": "online"
     },
     "DescribeFileConfigs": {
       "document": "查询文件配置项列表",
       "input": "DescribeFileConfigsRequest",
       "name": "查询文件配置项列表",
-      "output": "DescribeFileConfigsResponse"
+      "output": "DescribeFileConfigsResponse",
+      "status": "online"
     },
     "DescribeFlowLastBatchState": {
       "document": "查询工作流最新一个批次的状态信息",
       "input": "DescribeFlowLastBatchStateRequest",
       "name": "查询工作流最近一个批次的执行状态",
-      "output": "DescribeFlowLastBatchStateResponse"
+      "output": "DescribeFlowLastBatchStateResponse",
+      "status": "online"
     },
     "DescribeGatewayAllGroupApis": {
       "document": "查询网关所有分组下Api列表",
       "input": "DescribeGatewayAllGroupApisRequest",
       "name": "查询网关所有分组下Api列表",
-      "output": "DescribeGatewayAllGroupApisResponse"
+      "output": "DescribeGatewayAllGroupApisResponse",
+      "status": "online"
     },
     "DescribeGatewayApis": {
       "document": "查询API分组下的Api列表信息",
       "input": "DescribeGatewayApisRequest",
       "name": "查询API分组下的Api列表信息",
-      "output": "DescribeGatewayApisResponse"
+      "output": "DescribeGatewayApisResponse",
+      "status": "online"
     },
     "DescribeGatewayMonitorOverview": {
       "document": "查询网关监控概览",
       "input": "DescribeGatewayMonitorOverviewRequest",
       "name": "查询网关监控概览",
-      "output": "DescribeGatewayMonitorOverviewResponse"
+      "output": "DescribeGatewayMonitorOverviewResponse",
+      "status": "online"
     },
     "DescribeGroup": {
       "document": "查询虚拟机部署组详情",
       "input": "DescribeGroupRequest",
       "name": "查询虚拟机部署组详情",
-      "output": "DescribeGroupResponse"
+      "output": "DescribeGroupResponse",
+      "status": "online"
     },
     "DescribeGroupAttribute": {
       "document": "获取部署组其他属性",
       "input": "DescribeGroupAttributeRequest",
       "name": "获取部署组其他属性",
-      "output": "DescribeGroupAttributeResponse"
+      "output": "DescribeGroupAttributeResponse",
+      "status": "online"
     },
     "DescribeGroupBindedGateways": {
       "document": "查询某个API分组已绑定的网关部署组信息列表",
       "input": "DescribeGroupBindedGatewaysRequest",
       "name": "查询某个API分组已绑定的网关部署组信息列表",
-      "output": "DescribeGroupBindedGatewaysResponse"
+      "output": "DescribeGroupBindedGatewaysResponse",
+      "status": "online"
     },
     "DescribeGroupBusinessLogConfigs": {
       "document": "查询分组管理日志配置列表",
       "input": "DescribeGroupBusinessLogConfigsRequest",
       "name": "查询分组管理日志配置列表",
-      "output": "DescribeGroupBusinessLogConfigsResponse"
+      "output": "DescribeGroupBusinessLogConfigsResponse",
+      "status": "online"
     },
     "DescribeGroupGateways": {
       "document": "查询某个网关绑定的API 分组信息列表",
       "input": "DescribeGroupGatewaysRequest",
       "name": "查询某个网关绑定的API 分组信息列表",
-      "output": "DescribeGroupGatewaysResponse"
+      "output": "DescribeGroupGatewaysResponse",
+      "status": "online"
     },
     "DescribeGroupInstances": {
       "document": "查询虚拟机部署组云主机列表",
       "input": "DescribeGroupInstancesRequest",
       "name": "查询虚拟机部署组云主机列表",
-      "output": "DescribeGroupInstancesResponse"
+      "output": "DescribeGroupInstancesResponse",
+      "status": "online"
     },
     "DescribeGroupRelease": {
       "document": "查询部署组相关的发布信息",
       "input": "DescribeGroupReleaseRequest",
       "name": "查询部署组发布信息",
-      "output": "DescribeGroupReleaseResponse"
+      "output": "DescribeGroupReleaseResponse",
+      "status": "online"
     },
     "DescribeGroupUseDetail": {
       "document": "查询网关分组监控明细数据",
       "input": "DescribeGroupUseDetailRequest",
       "name": "查询网关分组监控明细数据",
-      "output": "DescribeGroupUseDetailResponse"
+      "output": "DescribeGroupUseDetailResponse",
+      "status": "online"
     },
     "DescribeGroups": {
       "document": "获取虚拟机部署组列表",
       "input": "DescribeGroupsRequest",
       "name": "获取虚拟机部署组列表",
-      "output": "DescribeGroupsResponse"
+      "output": "DescribeGroupsResponse",
+      "status": "online"
     },
     "DescribeGroupsWithPlugin": {
       "document": "查询某个插件下绑定或未绑定的API分组",
       "input": "DescribeGroupsWithPluginRequest",
       "name": "查询某个插件下绑定或未绑定的API分组",
-      "output": "DescribeGroupsWithPluginResponse"
+      "output": "DescribeGroupsWithPluginResponse",
+      "status": "online"
     },
     "DescribeImageRepository": {
       "document": "镜像仓库列表 ",
       "input": "DescribeImageRepositoryRequest",
       "name": "镜像仓库列表",
-      "output": "DescribeImageRepositoryResponse"
+      "output": "DescribeImageRepositoryResponse",
+      "status": "online"
     },
     "DescribeImageTags": {
       "document": "镜像版本列表",
       "input": "DescribeImageTagsRequest",
       "name": "镜像版本列表",
-      "output": "DescribeImageTagsResponse"
+      "output": "DescribeImageTagsResponse",
+      "status": "online"
     },
     "DescribeInovcationIndicators": {
       "document": "查询调用监控指标",
       "input": "DescribeInovcationIndicatorsRequest",
       "name": "查询调用监控指标",
-      "output": "DescribeInovcationIndicatorsResponse"
+      "output": "DescribeInovcationIndicatorsResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "无",
       "input": "DescribeInstancesRequest",
       "name": "查询机器列表",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeInvocationMetricDataCurve": {
       "document": "查询调用指标数据变化曲线",
       "input": "DescribeInvocationMetricDataCurveRequest",
       "name": "查询调用指标数据变化曲线",
-      "output": "DescribeInvocationMetricDataCurveResponse"
+      "output": "DescribeInvocationMetricDataCurveResponse",
+      "status": "online"
     },
     "DescribeInvocationMetricDataDimension": {
       "document": "查询维度",
       "input": "DescribeInvocationMetricDataDimensionRequest",
       "name": "查询维度",
-      "output": "DescribeInvocationMetricDataDimensionResponse"
+      "output": "DescribeInvocationMetricDataDimensionResponse",
+      "status": "online"
     },
     "DescribeInvocationMetricDataPoint": {
       "document": "查询单值指标维度",
       "input": "DescribeInvocationMetricDataPointRequest",
       "name": "查询单值指标维度",
-      "output": "DescribeInvocationMetricDataPointResponse"
+      "output": "DescribeInvocationMetricDataPointResponse",
+      "status": "online"
     },
     "DescribeInvocationMetricScatterPlot": {
       "document": "查询调用指标数据散点图",
       "input": "DescribeInvocationMetricScatterPlotRequest",
       "name": "查询调用指标数据散点图",
-      "output": "DescribeInvocationMetricScatterPlotResponse"
+      "output": "DescribeInvocationMetricScatterPlotResponse",
+      "status": "online"
     },
     "DescribeJvmMonitor": {
       "document": "查询java实例jvm监控数据,返回数据可选",
       "input": "DescribeJvmMonitorRequest",
       "name": "查询java实例jvm监控数据",
-      "output": "DescribeJvmMonitorResponse"
+      "output": "DescribeJvmMonitorResponse",
+      "status": "online"
     },
     "DescribeLaneRules": {
       "document": "查询泳道规则列表",
       "input": "DescribeLaneRulesRequest",
       "name": "查询泳道规则列表",
-      "output": "DescribeLaneRulesResponse"
+      "output": "DescribeLaneRulesResponse",
+      "status": "online"
     },
     "DescribeLanes": {
       "document": "查询泳道列表",
       "input": "DescribeLanesRequest",
       "name": "查询泳道列表",
-      "output": "DescribeLanesResponse"
+      "output": "DescribeLanesResponse",
+      "status": "online"
     },
     "DescribeMicroservice": {
       "document": "查询微服务详情",
       "input": "DescribeMicroserviceRequest",
       "name": "查询微服务详情",
-      "output": "DescribeMicroserviceResponse"
+      "output": "DescribeMicroserviceResponse",
+      "status": "online"
     },
     "DescribeMicroservices": {
       "document": "获取微服务列表",
       "input": "DescribeMicroservicesRequest",
       "name": "获取微服务列表",
-      "output": "DescribeMicroservicesResponse"
+      "output": "DescribeMicroservicesResponse",
+      "status": "online"
     },
     "DescribeMsApiList": {
       "document": "查询服务API列表",
       "input": "DescribeMsApiListRequest",
       "name": "查询服务API列表",
-      "output": "DescribeMsApiListResponse"
+      "output": "DescribeMsApiListResponse",
+      "status": "online"
     },
     "DescribeOverviewInvocation": {
       "document": "服务调用监控统计概览",
       "input": "DescribeOverviewInvocationRequest",
       "name": "服务调用监控统计概览",
-      "output": "DescribeOverviewInvocationResponse"
+      "output": "DescribeOverviewInvocationResponse",
+      "status": "online"
     },
     "DescribePathRewrite": {
       "document": "查询路径重写",
       "input": "DescribePathRewriteRequest",
       "name": "查询路径重写",
-      "output": "DescribePathRewriteResponse"
+      "output": "DescribePathRewriteResponse",
+      "status": "online"
     },
     "DescribePathRewrites": {
       "document": "查询路径重写列表",
       "input": "DescribePathRewritesRequest",
       "name": "查询路径重写列表",
-      "output": "DescribePathRewritesResponse"
+      "output": "DescribePathRewritesResponse",
+      "status": "online"
     },
     "DescribePkgs": {
       "document": "无",
       "input": "DescribePkgsRequest",
       "name": "获取某个应用的程序包信息列表",
-      "output": "DescribePkgsResponse"
+      "output": "DescribePkgsResponse",
+      "status": "online"
     },
     "DescribePluginInstances": {
       "document": "分页查询网关分组/API绑定（或未绑定）的插件列表",
       "input": "DescribePluginInstancesRequest",
       "name": "查询网关分组或API绑定（或未绑定）的插件列表",
-      "output": "DescribePluginInstancesResponse"
+      "output": "DescribePluginInstancesResponse",
+      "status": "online"
     },
     "DescribePodInstances": {
       "document": "获取部署组实例列表",
       "input": "DescribePodInstancesRequest",
       "name": "获取部署组实例列表",
-      "output": "DescribePodInstancesResponse"
+      "output": "DescribePodInstancesResponse",
+      "status": "online"
     },
     "DescribePrograms": {
       "document": "查询数据集列表",
       "input": "DescribeProgramsRequest",
       "name": "查询数据集列表",
-      "output": "DescribeProgramsResponse"
+      "output": "DescribeProgramsResponse",
+      "status": "online"
     },
     "DescribePublicConfig": {
       "document": "查询公共配置（单条）",
       "input": "DescribePublicConfigRequest",
       "name": "查询公共配置（单条）",
-      "output": "DescribePublicConfigResponse"
+      "output": "DescribePublicConfigResponse",
+      "status": "online"
     },
     "DescribePublicConfigReleaseLogs": {
       "document": "查询公共配置发布历史",
       "input": "DescribePublicConfigReleaseLogsRequest",
       "name": "查询公共配置发布历史",
-      "output": "DescribePublicConfigReleaseLogsResponse"
+      "output": "DescribePublicConfigReleaseLogsResponse",
+      "status": "online"
     },
     "DescribePublicConfigReleases": {
       "document": "查询公共配置发布信息",
       "input": "DescribePublicConfigReleasesRequest",
       "name": "查询公共配置发布信息",
-      "output": "DescribePublicConfigReleasesResponse"
+      "output": "DescribePublicConfigReleasesResponse",
+      "status": "online"
     },
     "DescribePublicConfigSummary": {
       "document": "查询公共配置汇总列表",
       "input": "DescribePublicConfigSummaryRequest",
       "name": "查询公共配置汇总列表",
-      "output": "DescribePublicConfigSummaryResponse"
+      "output": "DescribePublicConfigSummaryResponse",
+      "status": "online"
     },
     "DescribePublicConfigs": {
       "document": "查询公共配置项列表",
       "input": "DescribePublicConfigsRequest",
       "name": "查询公共配置项列表",
-      "output": "DescribePublicConfigsResponse"
+      "output": "DescribePublicConfigsResponse",
+      "status": "online"
     },
     "DescribeReleasedConfig": {
       "document": "查询group发布的配置",
       "input": "DescribeReleasedConfigRequest",
       "name": "查询group发布的配置",
-      "output": "DescribeReleasedConfigResponse"
+      "output": "DescribeReleasedConfigResponse",
+      "status": "online"
     },
     "DescribeRepositories": {
       "document": "查询仓库列表",
       "input": "DescribeRepositoriesRequest",
       "name": "查询仓库列表",
-      "output": "DescribeRepositoriesResponse"
+      "output": "DescribeRepositoriesResponse",
+      "status": "online"
     },
     "DescribeRepository": {
       "document": "查询仓库信息",
       "input": "DescribeRepositoryRequest",
       "name": "查询仓库信息",
-      "output": "DescribeRepositoryResponse"
+      "output": "DescribeRepositoryResponse",
+      "status": "online"
     },
     "DescribeSimpleApplications": {
       "document": "查询简单应用列表",
       "input": "DescribeSimpleApplicationsRequest",
       "name": "查询简单应用列表",
-      "output": "DescribeSimpleApplicationsResponse"
+      "output": "DescribeSimpleApplicationsResponse",
+      "status": "online"
     },
     "DescribeSimpleClusters": {
       "document": "查询简单集群列表",
       "input": "DescribeSimpleClustersRequest",
       "name": "查询简单集群列表",
-      "output": "DescribeSimpleClustersResponse"
+      "output": "DescribeSimpleClustersResponse",
+      "status": "online"
     },
     "DescribeSimpleGroups": {
       "document": "查询简单部署组列表",
       "input": "DescribeSimpleGroupsRequest",
       "name": "查询简单部署组列表",
-      "output": "DescribeSimpleGroupsResponse"
+      "output": "DescribeSimpleGroupsResponse",
+      "status": "online"
     },
     "DescribeSimpleNamespaces": {
       "document": "查询简单命名空间列表 ",
       "input": "DescribeSimpleNamespacesRequest",
       "name": "查询简单命名空间列表",
-      "output": "DescribeSimpleNamespacesResponse"
+      "output": "DescribeSimpleNamespacesResponse",
+      "status": "online"
     },
     "DescribeStatistics": {
       "document": "服务统计页面：接口和服务维度",
       "input": "DescribeStatisticsRequest",
       "name": "服务统计",
-      "output": "DescribeStatisticsResponse"
+      "output": "DescribeStatisticsResponse",
+      "status": "online"
     },
     "DescribeTaskDetail": {
       "document": "查询任务详情",
       "input": "DescribeTaskDetailRequest",
       "name": "查询任务详情",
-      "output": "DescribeTaskDetailResponse"
+      "output": "DescribeTaskDetailResponse",
+      "status": "online"
     },
     "DescribeTaskLastStatus": {
       "document": "查询任务最近一次执行状态",
       "input": "DescribeTaskLastStatusRequest",
       "name": "查看任务最近执行批次状态",
-      "output": "DescribeTaskLastStatusResponse"
+      "output": "DescribeTaskLastStatusResponse",
+      "status": "online"
     },
     "DescribeTaskRecords": {
       "document": "翻页查询任务列表",
       "input": "DescribeTaskRecordsRequest",
       "name": "查询任务列表",
-      "output": "DescribeTaskRecordsResponse"
+      "output": "DescribeTaskRecordsResponse",
+      "status": "online"
     },
     "DescribeUnitApiUseDetail": {
       "document": "查询网关API监控明细数据（仅单元化网关），非单元化网关使用DescribeApiUseDetail",
       "input": "DescribeUnitApiUseDetailRequest",
       "name": "查询单元化网关API监控明细数据",
-      "output": "DescribeUnitApiUseDetailResponse"
+      "output": "DescribeUnitApiUseDetailResponse",
+      "status": "online"
     },
     "DescribeUnitNamespaces": {
       "document": "查询单元化命名空间列表",
       "input": "DescribeUnitNamespacesRequest",
       "name": "查询单元化命名空间列表",
-      "output": "DescribeUnitNamespacesResponse"
+      "output": "DescribeUnitNamespacesResponse",
+      "status": "online"
     },
     "DescribeUnitRule": {
       "document": "查询单元化规则详情",
       "input": "DescribeUnitRuleRequest",
       "name": "查询单元化规则详情",
-      "output": "DescribeUnitRuleResponse"
+      "output": "DescribeUnitRuleResponse",
+      "status": "online"
     },
     "DescribeUnitRules": {
       "document": "查询单元化规则列表",
       "input": "DescribeUnitRulesRequest",
       "name": "查询单元化规则列表",
-      "output": "DescribeUnitRulesResponse"
+      "output": "DescribeUnitRulesResponse",
+      "status": "online"
     },
     "DescribeUploadInfo": {
       "document": "TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436",
       "input": "DescribeUploadInfoRequest",
       "name": "获取上传程序包信息",
-      "output": "DescribeUploadInfoResponse"
+      "output": "DescribeUploadInfoResponse",
+      "status": "online"
     },
     "DescribeUsableUnitNamespaces": {
       "document": "查询可用于被导入的命名空间列表",
       "input": "DescribeUsableUnitNamespacesRequest",
       "name": "查询可用于被导入的命名空间列表",
-      "output": "DescribeUsableUnitNamespacesResponse"
+      "output": "DescribeUsableUnitNamespacesResponse",
+      "status": "online"
     },
     "DisableTask": {
       "document": "停用任务",
       "input": "DisableTaskRequest",
       "name": "停用任务",
-      "output": "DisableTaskResponse"
+      "output": "DisableTaskResponse",
+      "status": "online"
     },
     "DisableTaskFlow": {
       "document": "停用工作流",
       "input": "DisableTaskFlowRequest",
       "name": "停用工作流",
-      "output": "DisableTaskFlowResponse"
+      "output": "DisableTaskFlowResponse",
+      "status": "online"
     },
     "DisableUnitRoute": {
       "document": "禁用单元化路由",
       "input": "DisableUnitRouteRequest",
       "name": "禁用单元化路由",
-      "output": "DisableUnitRouteResponse"
+      "output": "DisableUnitRouteResponse",
+      "status": "online"
     },
     "DisableUnitRule": {
       "document": "禁用单元化规则",
       "input": "DisableUnitRuleRequest",
       "name": "禁用单元化规则",
-      "output": "DisableUnitRuleResponse"
+      "output": "DisableUnitRuleResponse",
+      "status": "online"
     },
     "DisassociateBusinessLogConfig": {
       "document": "取消关联业务日志配置项和应用",
       "input": "DisassociateBusinessLogConfigRequest",
       "name": "取消关联业务日志配置项和应用",
-      "output": "DisassociateBusinessLogConfigResponse"
+      "output": "DisassociateBusinessLogConfigResponse",
+      "status": "online"
     },
     "DisassociateKafkaConfig": {
       "document": "取消关联投递信息和部署组",
       "input": "DisassociateKafkaConfigRequest",
       "name": "取消关联投递信息和部署组",
-      "output": "DisassociateKafkaConfigResponse"
+      "output": "DisassociateKafkaConfigResponse",
+      "status": "online"
     },
     "DraftApiGroup": {
       "document": "下线Api分组",
       "input": "DraftApiGroupRequest",
       "name": "下线Api分组",
-      "output": "DraftApiGroupResponse"
+      "output": "DraftApiGroupResponse",
+      "status": "online"
     },
     "EnableTask": {
       "document": "启用任务",
       "input": "EnableTaskRequest",
       "name": "启用任务",
-      "output": "EnableTaskResponse"
+      "output": "EnableTaskResponse",
+      "status": "online"
     },
     "EnableTaskFlow": {
       "document": "启用工作流",
       "input": "EnableTaskFlowRequest",
       "name": "启用工作流",
-      "output": "EnableTaskFlowResponse"
+      "output": "EnableTaskFlowResponse",
+      "status": "online"
     },
     "EnableUnitRoute": {
       "document": "启用单元化路由",
       "input": "EnableUnitRouteRequest",
       "name": "启用单元化路由",
-      "output": "EnableUnitRouteResponse"
+      "output": "EnableUnitRouteResponse",
+      "status": "online"
     },
     "EnableUnitRule": {
       "document": "启用单元化规则",
       "input": "EnableUnitRuleRequest",
       "name": "启用单元化规则",
-      "output": "EnableUnitRuleResponse"
+      "output": "EnableUnitRuleResponse",
+      "status": "online"
     },
     "ExecuteTask": {
       "document": "手动执行一次任务。",
       "input": "ExecuteTaskRequest",
       "name": "手动执行一次任务。",
-      "output": "ExecuteTaskResponse"
+      "output": "ExecuteTaskResponse",
+      "status": "online"
     },
     "ExecuteTaskFlow": {
       "document": "执行一次工作流",
       "input": "ExecuteTaskFlowRequest",
       "name": "执行一次工作流",
-      "output": "ExecuteTaskFlowResponse"
+      "output": "ExecuteTaskFlowResponse",
+      "status": "online"
     },
     "ExpandGroup": {
       "document": "虚拟机部署组添加实例",
       "input": "ExpandGroupRequest",
       "name": "虚拟机部署组添加实例",
-      "output": "ExpandGroupResponse"
+      "output": "ExpandGroupResponse",
+      "status": "online"
     },
     "ModifyApplication": {
       "document": "修改应用",
       "input": "ModifyApplicationRequest",
       "name": "修改应用",
-      "output": "ModifyApplicationResponse"
+      "output": "ModifyApplicationResponse",
+      "status": "online"
     },
     "ModifyCluster": {
       "document": "修改集群信息",
       "input": "ModifyClusterRequest",
       "name": "修改集群信息",
-      "output": "ModifyClusterResponse"
+      "output": "ModifyClusterResponse",
+      "status": "online"
     },
     "ModifyContainerGroup": {
       "document": "修改容器部署组",
       "input": "ModifyContainerGroupRequest",
       "name": "修改容器部署组",
-      "output": "ModifyContainerGroupResponse"
+      "output": "ModifyContainerGroupResponse",
+      "status": "online"
     },
     "ModifyContainerReplicas": {
       "document": "修改容器部署组实例数",
       "input": "ModifyContainerReplicasRequest",
       "name": "修改容器部署组实例数",
-      "output": "ModifyContainerReplicasResponse"
+      "output": "ModifyContainerReplicasResponse",
+      "status": "online"
     },
     "ModifyGroup": {
       "document": "更新部署组信息",
       "input": "ModifyGroupRequest",
       "name": "更新分组信息",
-      "output": "ModifyGroupResponse"
+      "output": "ModifyGroupResponse",
+      "status": "online"
     },
     "ModifyLane": {
       "document": "更新泳道信息",
       "input": "ModifyLaneRequest",
       "name": "更新泳道信息",
-      "output": "ModifyLaneResponse"
+      "output": "ModifyLaneResponse",
+      "status": "online"
     },
     "ModifyLaneRule": {
       "document": "更新泳道规则",
       "input": "ModifyLaneRuleRequest",
       "name": "更新泳道规则",
-      "output": "ModifyLaneRuleResponse"
+      "output": "ModifyLaneRuleResponse",
+      "status": "online"
     },
     "ModifyMicroservice": {
       "document": "修改微服务详情",
       "input": "ModifyMicroserviceRequest",
       "name": "修改微服务详情",
-      "output": "ModifyMicroserviceResponse"
+      "output": "ModifyMicroserviceResponse",
+      "status": "online"
     },
     "ModifyNamespace": {
       "document": "修改命名空间",
       "input": "ModifyNamespaceRequest",
       "name": "修改命名空间",
-      "output": "ModifyNamespaceResponse"
+      "output": "ModifyNamespaceResponse",
+      "status": "online"
     },
     "ModifyPathRewrite": {
       "document": "修改路径重写",
       "input": "ModifyPathRewriteRequest",
       "name": "修改路径重写",
-      "output": "ModifyPathRewriteResponse"
+      "output": "ModifyPathRewriteResponse",
+      "status": "online"
     },
     "ModifyTask": {
       "document": "修改任务",
       "input": "ModifyTaskRequest",
       "name": "修改任务",
-      "output": "ModifyTaskResponse"
+      "output": "ModifyTaskResponse",
+      "status": "online"
     },
     "ModifyUploadInfo": {
       "document": "调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。\n调用此接口完成后，才标志上传包流程结束。",
       "input": "ModifyUploadInfoRequest",
       "name": "更新上传程序包信息",
-      "output": "ModifyUploadInfoResponse"
+      "output": "ModifyUploadInfoResponse",
+      "status": "online"
     },
     "OperateApplicationTcrBinding": {
       "document": "绑定解绑tcr仓库",
       "input": "OperateApplicationTcrBindingRequest",
       "name": "绑定解绑tcr仓库",
-      "output": "OperateApplicationTcrBindingResponse"
+      "output": "OperateApplicationTcrBindingResponse",
+      "status": "online"
     },
     "ReassociateBusinessLogConfig": {
       "document": "重关联业务日志配置",
       "input": "ReassociateBusinessLogConfigRequest",
       "name": "重关联业务日志配置",
-      "output": "ReassociateBusinessLogConfigResponse"
+      "output": "ReassociateBusinessLogConfigResponse",
+      "status": "online"
     },
     "RedoTask": {
       "document": "重新执行任务",
       "input": "RedoTaskRequest",
       "name": "重新执行任务",
-      "output": "RedoTaskResponse"
+      "output": "RedoTaskResponse",
+      "status": "online"
     },
     "RedoTaskBatch": {
       "document": "重新执行任务批次",
       "input": "RedoTaskBatchRequest",
       "name": "重新执行任务批次",
-      "output": "RedoTaskBatchResponse"
+      "output": "RedoTaskBatchResponse",
+      "status": "online"
     },
     "RedoTaskExecute": {
       "document": "重新执行在某个节点上执行任务。",
       "input": "RedoTaskExecuteRequest",
       "name": "重新执行任务的一次执行",
-      "output": "RedoTaskExecuteResponse"
+      "output": "RedoTaskExecuteResponse",
+      "status": "online"
     },
     "RedoTaskFlowBatch": {
       "document": "重新执行工作流批次",
       "input": "RedoTaskFlowBatchRequest",
       "name": "重新执行工作流批次",
-      "output": "RedoTaskFlowBatchResponse"
+      "output": "RedoTaskFlowBatchResponse",
+      "status": "online"
     },
     "ReleaseApiGroup": {
       "document": "发布Api分组",
       "input": "ReleaseApiGroupRequest",
       "name": "发布Api分组",
-      "output": "ReleaseApiGroupResponse"
+      "output": "ReleaseApiGroupResponse",
+      "status": "online"
     },
     "ReleaseConfig": {
       "document": "发布配置",
       "input": "ReleaseConfigRequest",
       "name": "发布配置",
-      "output": "ReleaseConfigResponse"
+      "output": "ReleaseConfigResponse",
+      "status": "online"
     },
     "ReleaseFileConfig": {
       "document": "发布文件配置",
       "input": "ReleaseFileConfigRequest",
       "name": "发布文件配置",
-      "output": "ReleaseFileConfigResponse"
+      "output": "ReleaseFileConfigResponse",
+      "status": "online"
     },
     "ReleasePublicConfig": {
       "document": "发布公共配置",
       "input": "ReleasePublicConfigRequest",
       "name": "发布公共配置",
-      "output": "ReleasePublicConfigResponse"
+      "output": "ReleasePublicConfigResponse",
+      "status": "online"
     },
     "RemoveInstances": {
       "document": "从 TSF 集群中批量移除云主机节点",
       "input": "RemoveInstancesRequest",
       "name": "移除云主机",
-      "output": "RemoveInstancesResponse"
+      "output": "RemoveInstancesResponse",
+      "status": "online"
     },
     "RevocationConfig": {
       "document": "撤回已发布的配置",
       "input": "RevocationConfigRequest",
       "name": "撤回已发布的配置",
-      "output": "RevocationConfigResponse"
+      "output": "RevocationConfigResponse",
+      "status": "online"
     },
     "RevocationPublicConfig": {
       "document": "撤回已发布的公共配置",
       "input": "RevocationPublicConfigRequest",
       "name": "撤回已发布的公共配置",
-      "output": "RevocationPublicConfigResponse"
+      "output": "RevocationPublicConfigResponse",
+      "status": "online"
     },
     "RevokeFileConfig": {
       "document": "撤回已发布的文件配置",
       "input": "RevokeFileConfigRequest",
       "name": "撤回已发布的文件配置",
-      "output": "RevokeFileConfigResponse"
+      "output": "RevokeFileConfigResponse",
+      "status": "online"
     },
     "RollbackConfig": {
       "document": "回滚配置",
       "input": "RollbackConfigRequest",
       "name": "回滚配置",
-      "output": "RollbackConfigResponse"
+      "output": "RollbackConfigResponse",
+      "status": "online"
     },
     "SearchBusinessLog": {
       "document": "业务日志搜索",
       "input": "SearchBusinessLogRequest",
       "name": "业务日志搜索",
-      "output": "SearchBusinessLogResponse"
+      "output": "SearchBusinessLogResponse",
+      "status": "online"
     },
     "SearchStdoutLog": {
       "document": "标准输出日志搜索",
       "input": "SearchStdoutLogRequest",
       "name": "标准输出日志搜索",
-      "output": "SearchStdoutLogResponse"
+      "output": "SearchStdoutLogResponse",
+      "status": "online"
     },
     "ShrinkGroup": {
       "document": "下线部署组所有机器实例",
       "input": "ShrinkGroupRequest",
       "name": "缩容虚拟机部署组",
-      "output": "ShrinkGroupResponse"
+      "output": "ShrinkGroupResponse",
+      "status": "online"
     },
     "ShrinkInstances": {
       "document": "虚拟机部署组下线实例",
       "input": "ShrinkInstancesRequest",
       "name": "虚拟机部署组下线实例",
-      "output": "ShrinkInstancesResponse"
+      "output": "ShrinkInstancesResponse",
+      "status": "online"
     },
     "StartContainerGroup": {
       "document": "启动容器部署组",
       "input": "StartContainerGroupRequest",
       "name": "启动容器部署组",
-      "output": "StartContainerGroupResponse"
+      "output": "StartContainerGroupResponse",
+      "status": "online"
     },
     "StartGroup": {
       "document": "启动分组",
       "input": "StartGroupRequest",
       "name": "启动虚拟机部署组",
-      "output": "StartGroupResponse"
+      "output": "StartGroupResponse",
+      "status": "online"
     },
     "StopContainerGroup": {
       "document": "停止容器部署组",
       "input": "StopContainerGroupRequest",
       "name": "停止容器部署组",
-      "output": "StopContainerGroupResponse"
+      "output": "StopContainerGroupResponse",
+      "status": "online"
     },
     "StopGroup": {
       "document": "停止虚拟机部署组",
       "input": "StopGroupRequest",
       "name": "停止虚拟机部署组",
-      "output": "StopGroupResponse"
+      "output": "StopGroupResponse",
+      "status": "online"
     },
     "StopTaskBatch": {
       "document": "停止执行中的任务批次， 非运行中的任务不可调用。",
       "input": "StopTaskBatchRequest",
       "name": "停止执行中的任务批次",
-      "output": "StopTaskBatchResponse"
+      "output": "StopTaskBatchResponse",
+      "status": "online"
     },
     "StopTaskExecute": {
       "document": "停止正在某个节点上执行的任务",
       "input": "StopTaskExecuteRequest",
       "name": "停止正在执行的任务",
-      "output": "StopTaskExecuteResponse"
+      "output": "StopTaskExecuteResponse",
+      "status": "online"
     },
     "TerminateTaskFlowBatch": {
       "document": "停止一个工作流批次",
       "input": "TerminateTaskFlowBatchRequest",
       "name": "停止一个工作流批次",
-      "output": "TerminateTaskFlowBatchResponse"
+      "output": "TerminateTaskFlowBatchResponse",
+      "status": "online"
     },
     "UnbindApiGroup": {
       "document": "API分组批量与网关解绑",
       "input": "UnbindApiGroupRequest",
       "name": "API分组批量与网关解绑",
-      "output": "UnbindApiGroupResponse"
+      "output": "UnbindApiGroupResponse",
+      "status": "online"
     },
     "UpdateApiGroup": {
       "document": "更新Api分组",
       "input": "UpdateApiGroupRequest",
       "name": "更新Api分组",
-      "output": "UpdateApiGroupResponse"
+      "output": "UpdateApiGroupResponse",
+      "status": "online"
     },
     "UpdateApiRateLimitRule": {
       "document": "更新API限流规则",
       "input": "UpdateApiRateLimitRuleRequest",
       "name": "更新API限流规则",
-      "output": "UpdateApiRateLimitRuleResponse"
+      "output": "UpdateApiRateLimitRuleResponse",
+      "status": "online"
     },
     "UpdateApiRateLimitRules": {
       "document": "批量更新API限流规则",
       "input": "UpdateApiRateLimitRulesRequest",
       "name": "批量更新API限流规则",
-      "output": "UpdateApiRateLimitRulesResponse"
+      "output": "UpdateApiRateLimitRulesResponse",
+      "status": "online"
     },
     "UpdateApiTimeouts": {
       "document": "批量更新API超时",
       "input": "UpdateApiTimeoutsRequest",
       "name": "更新API超时",
-      "output": "UpdateApiTimeoutsResponse"
+      "output": "UpdateApiTimeoutsResponse",
+      "status": "online"
     },
     "UpdateConfigTemplate": {
       "document": "更新参数模板",
       "input": "UpdateConfigTemplateRequest",
       "name": "更新参数模板",
-      "output": "UpdateConfigTemplateResponse"
+      "output": "UpdateConfigTemplateResponse",
+      "status": "online"
     },
     "UpdateGatewayApi": {
       "document": "更新API",
       "input": "UpdateGatewayApiRequest",
       "name": "更新API",
-      "output": "UpdateGatewayApiResponse"
+      "output": "UpdateGatewayApiResponse",
+      "status": "online"
     },
     "UpdateHealthCheckSettings": {
       "document": "更新健康检查配置",
       "input": "UpdateHealthCheckSettingsRequest",
       "name": "更新健康检查配置",
-      "output": "UpdateHealthCheckSettingsResponse"
+      "output": "UpdateHealthCheckSettingsResponse",
+      "status": "online"
     },
     "UpdateRepository": {
       "document": "更新仓库信息",
       "input": "UpdateRepositoryRequest",
       "name": "更新仓库信息",
-      "output": "UpdateRepositoryResponse"
+      "output": "UpdateRepositoryResponse",
+      "status": "online"
     },
     "UpdateUnitRule": {
       "document": "更新单元化规则",
       "input": "UpdateUnitRuleRequest",
       "name": "更新单元化规则",
-      "output": "UpdateUnitRuleResponse"
+      "output": "UpdateUnitRuleResponse",
+      "status": "online"
     }
   },
   "metadata": {

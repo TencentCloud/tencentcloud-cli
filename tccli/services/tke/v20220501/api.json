@@ -4,13 +4,15 @@
       "document": "创建TKE集群巡检任务",
       "input": "CreateInstantInspectJobRequest",
       "name": "创建TKE集群巡检任务",
-      "output": "CreateInstantInspectJobResponse"
+      "output": "CreateInstantInspectJobResponse",
+      "status": "online"
     },
     "DescribeInstantInspectTask": {
       "document": "查询TKE集群巡检任务结果",
       "input": "DescribeInstantInspectTaskRequest",
       "name": "查询TKE集群巡检任务结果",
-      "output": "DescribeInstantInspectTaskResponse"
+      "output": "DescribeInstantInspectTaskResponse",
+      "status": "online"
     }
   },
   "metadata": {

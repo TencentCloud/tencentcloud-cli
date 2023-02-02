@@ -4,139 +4,162 @@
       "document": "创建IngressGateway",
       "input": "CreateIngressGatewayRequest",
       "name": "创建IngressGateway",
-      "output": "CreateIngressGatewayResponse"
+      "output": "CreateIngressGatewayResponse",
+      "status": "online"
     },
     "CreateIstioResource": {
       "document": "在网格中创建Istio资源",
       "input": "CreateIstioResourceRequest",
       "name": "创建Istio资源",
-      "output": "CreateIstioResourceResponse"
+      "output": "CreateIstioResourceResponse",
+      "status": "online"
     },
     "CreateMesh": {
       "document": "创建网格",
       "input": "CreateMeshRequest",
       "name": "创建网格",
-      "output": "CreateMeshResponse"
+      "output": "CreateMeshResponse",
+      "status": "online"
     },
     "DeleteIngressGateway": {
       "document": "删除IngressGateway",
       "input": "DeleteIngressGatewayRequest",
       "name": "删除IngressGateway",
-      "output": "DeleteIngressGatewayResponse"
+      "output": "DeleteIngressGatewayResponse",
+      "status": "online"
     },
     "DeleteIstioResource": {
       "document": "删除网格中的Istio资源",
       "input": "DeleteIstioResourceRequest",
       "name": "删除Istio资源",
-      "output": "DeleteIstioResourceResponse"
+      "output": "DeleteIstioResourceResponse",
+      "status": "online"
     },
     "DeleteMesh": {
       "document": "删除网格",
       "input": "DeleteMeshRequest",
       "name": "删除网格",
-      "output": "DeleteMeshResponse"
+      "output": "DeleteMeshResponse",
+      "status": "online"
     },
     "DescribeAccessLogConfig": {
       "document": "获取AccessLog配置",
       "input": "DescribeAccessLogConfigRequest",
       "name": "获取AccessLog配置",
-      "output": "DescribeAccessLogConfigResponse"
+      "output": "DescribeAccessLogConfigResponse",
+      "status": "online"
     },
     "DescribeIngressGatewayList": {
       "document": "查询 IngressGateway 列表",
       "input": "DescribeIngressGatewayListRequest",
       "name": "查询IngressGateway列表",
-      "output": "DescribeIngressGatewayListResponse"
+      "output": "DescribeIngressGatewayListResponse",
+      "status": "online"
     },
     "DescribeIstioResource": {
       "document": "获取网格中生效的Istio资源",
       "input": "DescribeIstioResourceRequest",
       "name": "获取Istio资源",
-      "output": "DescribeIstioResourceResponse"
+      "output": "DescribeIstioResourceResponse",
+      "status": "online"
     },
     "DescribeMesh": {
       "document": "查询网格详情",
       "input": "DescribeMeshRequest",
       "name": "查询网格详情",
-      "output": "DescribeMeshResponse"
+      "output": "DescribeMeshResponse",
+      "status": "online"
     },
     "DescribeMeshList": {
       "document": "查询网格列表",
       "input": "DescribeMeshListRequest",
       "name": "查询网格列表",
-      "output": "DescribeMeshListResponse"
+      "output": "DescribeMeshListResponse",
+      "status": "online"
     },
     "LinkClusterList": {
       "document": "关联集群",
       "input": "LinkClusterListRequest",
       "name": "关联集群",
-      "output": "LinkClusterListResponse"
+      "output": "LinkClusterListResponse",
+      "status": "online"
     },
     "LinkNamespaceList": {
       "document": "关联 Namespace",
       "input": "LinkNamespaceListRequest",
       "name": "关联 Namespace",
-      "output": "LinkNamespaceListResponse"
+      "output": "LinkNamespaceListResponse",
+      "status": "online"
     },
     "LinkPrometheus": {
       "document": "关联Prometheus",
       "input": "LinkPrometheusRequest",
       "name": "关联Prometheus",
-      "output": "LinkPrometheusResponse"
+      "output": "LinkPrometheusResponse",
+      "status": "online"
     },
     "ModifyAccessLogConfig": {
       "document": "修改访问日志配置",
       "input": "ModifyAccessLogConfigRequest",
       "name": "修改访问日志配置",
-      "output": "ModifyAccessLogConfigResponse"
+      "output": "ModifyAccessLogConfigResponse",
+      "status": "online"
     },
     "ModifyIngressGateway": {
       "document": "修改IngressGateway",
       "input": "ModifyIngressGatewayRequest",
       "name": "修改IngressGateway",
-      "output": "ModifyIngressGatewayResponse"
+      "output": "ModifyIngressGatewayResponse",
+      "status": "online"
     },
     "ModifyIstioResource": {
       "document": "修改网格中的Istio资源",
       "input": "ModifyIstioResourceRequest",
       "name": "修改Istio资源",
-      "output": "ModifyIstioResourceResponse"
+      "output": "ModifyIstioResourceResponse",
+      "status": "online"
     },
     "ModifyMesh": {
       "document": "修改网格",
       "input": "ModifyMeshRequest",
       "name": "修改网格",
-      "output": "ModifyMeshResponse"
+      "output": "ModifyMeshResponse",
+      "status": "online"
     },
     "ModifyTracingConfig": {
       "document": "修改 Tracing 配置",
       "input": "ModifyTracingConfigRequest",
       "name": "修改 Tracing 配置",
-      "output": "ModifyTracingConfigResponse"
+      "output": "ModifyTracingConfigResponse",
+      "status": "online"
     },
     "RelinkCluster": {
       "document": "重新关联集群",
       "input": "RelinkClusterRequest",
       "name": "重新关联集群",
-      "output": "RelinkClusterResponse"
+      "output": "RelinkClusterResponse",
+      "status": "online"
     },
     "UnlinkCluster": {
       "document": "解关联集群",
       "input": "UnlinkClusterRequest",
       "name": "解关联集群",
-      "output": "UnlinkClusterResponse"
+      "output": "UnlinkClusterResponse",
+      "status": "online"
     },
     "UnlinkNamespaceList": {
       "document": "解关联 Namespace",
       "input": "UnlinkNamespaceListRequest",
       "name": "解关联 Namespace",
-      "output": "UnlinkNamespaceListResponse"
+      "output": "UnlinkNamespaceListResponse",
+      "status": "online"
     },
     "UnlinkPrometheus": {
       "document": "解除关联Prometheus",
       "input": "UnlinkPrometheusRequest",
       "name": "解除关联Prometheus",
-      "output": "UnlinkPrometheusResponse"
+      "output": "UnlinkPrometheusResponse",
+      "status": "online"
     }
   },
   "metadata": {

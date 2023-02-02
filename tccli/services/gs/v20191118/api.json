@@ -4,49 +4,57 @@
       "document": "创建会话",
       "input": "CreateSessionRequest",
       "name": "创建会话",
-      "output": "CreateSessionResponse"
+      "output": "CreateSessionResponse",
+      "status": "online"
     },
     "DescribeInstancesCount": {
       "document": "获取并发总数和运行数",
       "input": "DescribeInstancesCountRequest",
       "name": "获取并发总数和运行数",
-      "output": "DescribeInstancesCountResponse"
+      "output": "DescribeInstancesCountResponse",
+      "status": "online"
     },
     "SaveGameArchive": {
       "document": "保存游戏存档",
       "input": "SaveGameArchiveRequest",
       "name": "保存游戏存档",
-      "output": "SaveGameArchiveResponse"
+      "output": "SaveGameArchiveResponse",
+      "status": "online"
     },
     "StartPublishStream": {
       "document": "开始云端推流",
       "input": "StartPublishStreamRequest",
       "name": "开始云端推流",
-      "output": "StartPublishStreamResponse"
+      "output": "StartPublishStreamResponse",
+      "status": "online"
     },
     "StopGame": {
       "document": "强制退出游戏",
       "input": "StopGameRequest",
       "name": "强制退出游戏",
-      "output": "StopGameResponse"
+      "output": "StopGameResponse",
+      "status": "online"
     },
     "StopPublishStream": {
       "document": "停止云端推流",
       "input": "StopPublishStreamRequest",
       "name": "停止云端推流",
-      "output": "StopPublishStreamResponse"
+      "output": "StopPublishStreamResponse",
+      "status": "online"
     },
     "SwitchGameArchive": {
       "document": "切换游戏存档",
       "input": "SwitchGameArchiveRequest",
       "name": "切换游戏存档",
-      "output": "SwitchGameArchiveResponse"
+      "output": "SwitchGameArchiveResponse",
+      "status": "online"
     },
     "TrylockWorker": {
       "document": "尝试锁定机器",
       "input": "TrylockWorkerRequest",
       "name": "尝试锁定机器",
-      "output": "TrylockWorkerResponse"
+      "output": "TrylockWorkerResponse",
+      "status": "online"
     }
   },
   "metadata": {

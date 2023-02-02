@@ -1,6 +1,6 @@
 **Example 1: 示例**
 
-
+查询云托管版本详情
 
 Input: 
 
@@ -15,39 +15,47 @@ Output:
 ```
 {
     "Response": {
-        "Branch": "",
-        "BuildDir": "",
-        "ContainerPort": 80,
-        "CpuSize": 1,
-        "CreatedTime": "2020-11-04 16:44:54",
-        "CustomLogs": "/var/logs/data.log",
-        "DockerfilePath": "",
-        "EnvParams": "{}",
-        "ImageUrl": "ccr.ccs.tencentyun.com/cloudbase-apolo-env-test-146d5/hello-world:v2",
-        "InitialDelaySeconds": 2,
-        "IsPublic": true,
-        "MaxNum": 50,
-        "MemSize": 1,
+        "VersionName": "xx",
+        "Remark": "xx",
+        "DockerfilePath": "xx",
+        "BuildDir": "xx",
         "MinNum": 0,
-        "PackageName": "",
-        "PackageVersion": "",
-        "PolicyThreshold": 60,
-        "PolicyType": "cpu",
-        "Remark": "",
-        "Repo": "",
-        "RepoType": "",
-        "RequestId": "5620b49e-a25a-4007-84ef-03c9035c584d",
-        "ServerName": "test",
-        "Status": "normal",
+        "MaxNum": 0,
+        "PolicyType": "xx",
+        "PolicyThreshold": 0,
+        "EnvParams": "xx",
+        "CreatedTime": "xx",
+        "UpdatedTime": "xx",
+        "VersionIP": "xx",
+        "VersionPort": 0,
+        "Status": "xx",
+        "PackageName": "xx",
+        "PackageVersion": "xx",
+        "UploadType": "xx",
+        "RepoType": "xx",
+        "Repo": "xx",
+        "Branch": "xx",
+        "ServerName": "xx",
+        "IsPublic": true,
+        "VpcId": "xx",
         "SubnetIds": [
-            "subnet-6yny6j0d"
+            "xx"
         ],
-        "UpdatedTime": "2020-11-04 19:55:22",
-        "UploadType": "image",
-        "VersionIP": "10.0.192.3",
-        "VersionName": "test-010",
-        "VersionPort": 80,
-        "VpcId": "vpc-rtyzm94a"
+        "CustomLogs": "xx",
+        "ContainerPort": 0,
+        "InitialDelaySeconds": 0,
+        "ImageUrl": "xx",
+        "CpuSize": 0,
+        "MemSize": 0,
+        "PolicyDetail": [
+            {
+                "PolicyType": "xx",
+                "PolicyThreshold": 0
+            }
+        ],
+        "Cpu": 0,
+        "Mem": 0,
+        "RequestId": "xx"
     }
 }
 ```

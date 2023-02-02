@@ -4,25 +4,29 @@
       "document": "提供域名相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
       "input": "DescribeDomainInfoRequest",
       "name": "查询域名信誉",
-      "output": "DescribeDomainInfoResponse"
+      "output": "DescribeDomainInfoResponse",
+      "status": "online"
     },
     "DescribeFileInfo": {
       "document": "提供文件相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
       "input": "DescribeFileInfoRequest",
       "name": "查询文件信誉",
-      "output": "DescribeFileInfoResponse"
+      "output": "DescribeFileInfoResponse",
+      "status": "online"
     },
     "DescribeIpInfo": {
       "document": "提供IP相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
       "input": "DescribeIpInfoRequest",
       "name": "查询IP信誉",
-      "output": "DescribeIpInfoResponse"
+      "output": "DescribeIpInfoResponse",
+      "status": "online"
     },
     "DescribeThreatInfo": {
       "document": "提供IP和域名相关威胁情报信息查询，这些信息可以辅助检测失陷主机、帮助SIEM/SOC等系统做研判决策、帮助运营团队对设备报警的编排处理。",
       "input": "DescribeThreatInfoRequest",
       "name": "查询威胁情报",
-      "output": "DescribeThreatInfoResponse"
+      "output": "DescribeThreatInfoResponse",
+      "status": "online"
     }
   },
   "metadata": {

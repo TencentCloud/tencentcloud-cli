@@ -4,91 +4,106 @@
       "document": "查询安全验证码应用APPId信息",
       "input": "DescribeCaptchaAppIdInfoRequest",
       "name": "查询安全验证码应用APPId信息",
-      "output": "DescribeCaptchaAppIdInfoResponse"
+      "output": "DescribeCaptchaAppIdInfoResponse",
+      "status": "online"
     },
     "DescribeCaptchaData": {
       "document": "安全验证码分类查询数据接口，请求量type=0、通过量type=1、验证量type=2、拦截量type=3  分钟级查询",
       "input": "DescribeCaptchaDataRequest",
       "name": "安全验证码分类查询数据接口",
-      "output": "DescribeCaptchaDataResponse"
+      "output": "DescribeCaptchaDataResponse",
+      "status": "online"
     },
     "DescribeCaptchaDataSum": {
       "document": "安全验证码查询请求数据概况，例如：按照时间段查询数据  昨日请求量、昨日恶意比例、昨日验证量、昨日通过量、昨日恶意拦截量……",
       "input": "DescribeCaptchaDataSumRequest",
       "name": "安全验证码查询请求数据概况",
-      "output": "DescribeCaptchaDataSumResponse"
+      "output": "DescribeCaptchaDataSumResponse",
+      "status": "online"
     },
     "DescribeCaptchaMiniData": {
       "document": "安全验证码小程序插件分类查询数据接口，请求量type=0、通过量type=1、验证量type=2、拦截量type=3 小时级查询（五小时左右延迟）",
       "input": "DescribeCaptchaMiniDataRequest",
       "name": "安全验证码小程序插件分类查询数据接口",
-      "output": "DescribeCaptchaMiniDataResponse"
+      "output": "DescribeCaptchaMiniDataResponse",
+      "status": "online"
     },
     "DescribeCaptchaMiniDataSum": {
       "document": "安全验证码小程序插件查询请求数据概况",
       "input": "DescribeCaptchaMiniDataSumRequest",
       "name": "安全验证码小程序插件查询请求数据概况",
-      "output": "DescribeCaptchaMiniDataSumResponse"
+      "output": "DescribeCaptchaMiniDataSumResponse",
+      "status": "online"
     },
     "DescribeCaptchaMiniOperData": {
       "document": "安全验证码小程序插件用户操作数据查询",
       "input": "DescribeCaptchaMiniOperDataRequest",
       "name": "安全验证码小程序插件用户操作数据查询",
-      "output": "DescribeCaptchaMiniOperDataResponse"
+      "output": "DescribeCaptchaMiniOperDataResponse",
+      "status": "online"
     },
     "DescribeCaptchaMiniResult": {
       "document": "核查验证码票据结果(小程序插件) ",
       "input": "DescribeCaptchaMiniResultRequest",
       "name": "核查验证码票据结果(小程序插件)",
-      "output": "DescribeCaptchaMiniResultResponse"
+      "output": "DescribeCaptchaMiniResultResponse",
+      "status": "online"
     },
     "DescribeCaptchaMiniRiskResult": {
       "document": "核查验证码小程序插件票据接入风控结果(已停用)",
       "input": "DescribeCaptchaMiniRiskResultRequest",
       "name": "核查验证码小程序插件票据接入风控结果(已停用)",
-      "output": "DescribeCaptchaMiniRiskResultResponse"
+      "output": "DescribeCaptchaMiniRiskResultResponse",
+      "status": "online"
     },
     "DescribeCaptchaOperData": {
       "document": "安全验证码用户操作数据查询，验证码加载耗时type = 1 、拦截情况type = 2、 一周通过平均尝试次数 type = 3、尝试次数分布 type = 4",
       "input": "DescribeCaptchaOperDataRequest",
       "name": "安全验证码用户操作数据查询",
-      "output": "DescribeCaptchaOperDataResponse"
+      "output": "DescribeCaptchaOperDataResponse",
+      "status": "online"
     },
     "DescribeCaptchaResult": {
       "document": "核查验证码票据结果(Web及APP)",
       "input": "DescribeCaptchaResultRequest",
       "name": "核查验证码票据结果(Web及APP)",
-      "output": "DescribeCaptchaResultResponse"
+      "output": "DescribeCaptchaResultResponse",
+      "status": "online"
     },
     "DescribeCaptchaTicketData": {
       "document": "安全验证码用户操作票据数据查询",
       "input": "DescribeCaptchaTicketDataRequest",
       "name": "安全验证码用户操作票据数据查询",
-      "output": "DescribeCaptchaTicketDataResponse"
+      "output": "DescribeCaptchaTicketDataResponse",
+      "status": "online"
     },
     "DescribeCaptchaUserAllAppId": {
       "document": "安全验证码获取用户注册所有APPId和应用名称",
       "input": "DescribeCaptchaUserAllAppIdRequest",
       "name": "安全验证码获取用户注册所有APPId和应用名称",
-      "output": "DescribeCaptchaUserAllAppIdResponse"
+      "output": "DescribeCaptchaUserAllAppIdResponse",
+      "status": "online"
     },
     "GetTicketStatistics": {
       "document": "查询单个CaptchaAppID票据校验数据，包括：票据校验量、票据校验通过量、票据校验拦截量。",
       "input": "GetTicketStatisticsRequest",
       "name": "查询单个CaptchaAppID票据校验数据",
-      "output": "GetTicketStatisticsResponse"
+      "output": "GetTicketStatisticsResponse",
+      "status": "online"
     },
     "GetTotalTicketStatistics": {
       "document": "查询全部票据校验的统计数据，包括：总票据校验量、总票据校验通过量、总票据校验拦截量。",
       "input": "GetTotalTicketStatisticsRequest",
       "name": "查询全部票据校验统计数据",
-      "output": "GetTotalTicketStatisticsResponse"
+      "output": "GetTotalTicketStatisticsResponse",
+      "status": "online"
     },
     "UpdateCaptchaAppIdInfo": {
       "document": "更新验证码应用APPId信息",
       "input": "UpdateCaptchaAppIdInfoRequest",
       "name": "更新验证码应用APPId信息",
-      "output": "UpdateCaptchaAppIdInfoResponse"
+      "output": "UpdateCaptchaAppIdInfoResponse",
+      "status": "online"
     }
   },
   "metadata": {

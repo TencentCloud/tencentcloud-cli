@@ -42,7 +42,7 @@
     ],
     "DeleteRoomMember": [
       {
-        "document": "",
+        "document": "剔除房间内某两个用户",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoomMember\n<公共请求参数>\n\n{\n    \"DeleteType\": \"2\",\n    \"RoomId\": \"100\",\n    \"BizId\": \"140014556\",\n    \"Uids\": [\n        \"2\",\n        \"1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfe39c29-ce97-44df-ba79-7d947d465694\",\n        \"DeleteResult\": {\n            \"Code\": 0,\n            \"ErrorMsg\": \"\"\n        }\n    }\n}",
         "title": "剔除房间内某两个用户"
@@ -98,15 +98,15 @@
     ],
     "DescribeRoomInfo": [
       {
-        "document": "",
+        "document": "获取房间内用户信息,RoomIds和StrRoomIds填一个即可,若都存在,则优先查询StrRoomIds。",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomInfo\n<公共请求参数>\n\n{\n    \"RoomIds\": [\n        \"88888\"\n    ],\n    \"StrRoomIds\": [\n        \"aaaaa\"\n    ],\n    \"SdkAppId\": \"1400000000\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"RoomUsers\": [\n            {\n                \"RoomId\": 88888,\n                \"Uins\": [\n                    1234,\n                    5678\n                ]\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": 1,\n        \"RoomUsers\": [\n            {\n                \"RoomId\": 0,\n                \"Uins\": [\n                    1111\n                ],\n                \"StrRoomId\": \"aaaaa\",\n                \"StrUins\": [\n                    \"\"\n                ]\n            }\n        ],\n        \"RequestId\": \"50d01794-367f-4993-b4e3-cac5a4c1aaaa\"\n    }\n}",
         "title": "获取房间内用户信息"
       },
       {
-        "document": "",
+        "document": "获取房间内用户信息1",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomInfo\n<公共请求参数>\n\n{\n    \"RoomIds\": [\n        \"11\"\n    ],\n    \"SdkAppId\": \"1400405451\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"50d01794-367f-4993-b4e3-cac5a4c1aaaa\",\n        \"Result\": 0,\n        \"RoomUsers\": [\n            {\n                \"RoomId\": 11,\n                \"StrRoomId\": \"\",\n                \"Uins\": []\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": 1,\n        \"RoomUsers\": [\n            {\n                \"RoomId\": 11,\n                \"Uins\": [\n                    1111\n                ],\n                \"StrRoomId\": \"\",\n                \"StrUins\": [\n                    \"\"\n                ]\n            }\n        ],\n        \"RequestId\": \"50d01794-367f-4993-b4e3-cac5a4c1aaaa\"\n    }\n}",
         "title": "获取房间内用户信息1"
       }
     ],
@@ -160,9 +160,9 @@
     ],
     "ModifyUserMicStatus": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserMicStatus\n<公共请求参数>\n\n{\n    \"RoomId\": \"xx\",\n    \"BizId\": 0,\n    \"Users\": [\n        {\n            \"Uid\": 0,\n            \"EnableMic\": 0\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"ErrMsg\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "修改用户麦克风属性",
+        "input": "{\n  \"BizId\": 1400000000,\n  \"RoomId\": \"300\",\n  \"Users\": [\n    {\n      \"Uid\": 1111,\n      \"EnableMic\": 1,\n      \"StrUid\": \"\"\n    }\n  ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"ErrMsg\": \"\",\n        \"RequestId\": \"f2c37dfd-56c9-400e-9fbc-705db7a74af8\"\n    }\n}",
         "title": "修改用户麦克风属性"
       }
     ],

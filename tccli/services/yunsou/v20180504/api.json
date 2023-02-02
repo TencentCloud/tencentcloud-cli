@@ -4,13 +4,15 @@
       "document": "上传云搜数据的API接口",
       "input": "DataManipulationRequest",
       "name": "云搜数据上传",
-      "output": "DataManipulationResponse"
+      "output": "DataManipulationResponse",
+      "status": "online"
     },
     "DataSearch": {
       "document": "用于检索云搜中的数据",
       "input": "DataSearchRequest",
       "name": "数据检索接口",
-      "output": "DataSearchResponse"
+      "output": "DataSearchResponse",
+      "status": "online"
     }
   },
   "metadata": {

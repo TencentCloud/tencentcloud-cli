@@ -4,103 +4,120 @@
       "document": "清除queue中的所有消息",
       "input": "ClearQueueRequest",
       "name": "清空消息队列中的消息",
-      "output": "ClearQueueResponse"
+      "output": "ClearQueueResponse",
+      "status": "online"
     },
     "ClearSubscriptionFilterTags": {
       "document": "清空订阅者消息标签",
       "input": "ClearSubscriptionFilterTagsRequest",
       "name": "清空订阅者消息标签",
-      "output": "ClearSubscriptionFilterTagsResponse"
+      "output": "ClearSubscriptionFilterTagsResponse",
+      "status": "online"
     },
     "CreateQueue": {
       "document": "创建队列接口\n",
       "input": "CreateQueueRequest",
       "name": "创建队列接口",
-      "output": "CreateQueueResponse"
+      "output": "CreateQueueResponse",
+      "status": "online"
     },
     "CreateSubscribe": {
       "document": "创建订阅接口",
       "input": "CreateSubscribeRequest",
       "name": "创建订阅接口",
-      "output": "CreateSubscribeResponse"
+      "output": "CreateSubscribeResponse",
+      "status": "online"
     },
     "CreateTopic": {
       "document": "创建主题",
       "input": "CreateTopicRequest",
       "name": "创建主题",
-      "output": "CreateTopicResponse"
+      "output": "CreateTopicResponse",
+      "status": "online"
     },
     "DeleteQueue": {
       "document": "DeleteQueue",
       "input": "DeleteQueueRequest",
       "name": "删除队列",
-      "output": "DeleteQueueResponse"
+      "output": "DeleteQueueResponse",
+      "status": "online"
     },
     "DeleteSubscribe": {
       "document": "删除订阅",
       "input": "DeleteSubscribeRequest",
       "name": "删除订阅",
-      "output": "DeleteSubscribeResponse"
+      "output": "DeleteSubscribeResponse",
+      "status": "online"
     },
     "DeleteTopic": {
       "document": "删除主题",
       "input": "DeleteTopicRequest",
       "name": "删除主题",
-      "output": "DeleteTopicResponse"
+      "output": "DeleteTopicResponse",
+      "status": "online"
     },
     "DescribeDeadLetterSourceQueues": {
       "document": "枚举死信队列源队列",
       "input": "DescribeDeadLetterSourceQueuesRequest",
       "name": "枚举死信队列源队列",
-      "output": "DescribeDeadLetterSourceQueuesResponse"
+      "output": "DescribeDeadLetterSourceQueuesResponse",
+      "status": "online"
     },
     "DescribeQueueDetail": {
       "document": "枚举队列",
       "input": "DescribeQueueDetailRequest",
       "name": "枚举队列",
-      "output": "DescribeQueueDetailResponse"
+      "output": "DescribeQueueDetailResponse",
+      "status": "online"
     },
     "DescribeSubscriptionDetail": {
       "document": "查询订阅详情",
       "input": "DescribeSubscriptionDetailRequest",
       "name": "查询订阅详情",
-      "output": "DescribeSubscriptionDetailResponse"
+      "output": "DescribeSubscriptionDetailResponse",
+      "status": "online"
     },
     "DescribeTopicDetail": {
       "document": "查询主题详情 ",
       "input": "DescribeTopicDetailRequest",
       "name": "查询主题详情",
-      "output": "DescribeTopicDetailResponse"
+      "output": "DescribeTopicDetailResponse",
+      "status": "online"
     },
     "ModifyQueueAttribute": {
       "document": "修改队列属性",
       "input": "ModifyQueueAttributeRequest",
       "name": "修改队列属性",
-      "output": "ModifyQueueAttributeResponse"
+      "output": "ModifyQueueAttributeResponse",
+      "status": "online"
     },
     "ModifySubscriptionAttribute": {
       "document": "修改订阅属性",
       "input": "ModifySubscriptionAttributeRequest",
       "name": "修改订阅属性",
-      "output": "ModifySubscriptionAttributeResponse"
+      "output": "ModifySubscriptionAttributeResponse",
+      "status": "online"
     },
     "ModifyTopicAttribute": {
       "document": "修改主题属性",
       "input": "ModifyTopicAttributeRequest",
       "name": "修改主题属性",
-      "output": "ModifyTopicAttributeResponse"
+      "output": "ModifyTopicAttributeResponse",
+      "status": "online"
     },
     "RewindQueue": {
       "document": "回溯队列",
       "input": "RewindQueueRequest",
       "name": "回溯队列",
-      "output": "RewindQueueResponse"
+      "output": "RewindQueueResponse",
+      "status": "online"
     },
     "UnbindDeadLetter": {
       "document": "解绑死信队列",
       "input": "UnbindDeadLetterRequest",
       "name": "解绑死信队列",
-      "output": "UnbindDeadLetterResponse"
+      "output": "UnbindDeadLetterResponse",
+      "status": "online"
     }
   },
   "metadata": {

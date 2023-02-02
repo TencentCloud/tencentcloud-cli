@@ -4,19 +4,22 @@
       "document": "获取连接器配置参数",
       "input": "DescribeEisConnectorConfigRequest",
       "name": "获取连接器配置参数",
-      "output": "DescribeEisConnectorConfigResponse"
+      "output": "DescribeEisConnectorConfigResponse",
+      "status": "online"
     },
     "ListEisConnectorOperations": {
       "document": "获取连接器操作列表",
       "input": "ListEisConnectorOperationsRequest",
       "name": "获取连接器操作列表",
-      "output": "ListEisConnectorOperationsResponse"
+      "output": "ListEisConnectorOperationsResponse",
+      "status": "online"
     },
     "ListEisConnectors": {
       "document": "连接器列表",
       "input": "ListEisConnectorsRequest",
       "name": "获取连接器列表",
-      "output": "ListEisConnectorsResponse"
+      "output": "ListEisConnectorsResponse",
+      "status": "online"
     }
   },
   "metadata": {

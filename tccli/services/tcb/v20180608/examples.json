@@ -286,9 +286,9 @@
     ],
     "DescribeCloudBaseRunVersion": [
       {
-        "document": "",
+        "document": "查询云托管版本详情",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunVersion\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&VersionName=adb\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Branch\": \"\",\n        \"BuildDir\": \"\",\n        \"ContainerPort\": 80,\n        \"CpuSize\": 1,\n        \"CreatedTime\": \"2020-11-04 16:44:54\",\n        \"CustomLogs\": \"/var/logs/data.log\",\n        \"DockerfilePath\": \"\",\n        \"EnvParams\": \"{}\",\n        \"ImageUrl\": \"ccr.ccs.tencentyun.com/cloudbase-apolo-env-test-146d5/hello-world:v2\",\n        \"InitialDelaySeconds\": 2,\n        \"IsPublic\": true,\n        \"MaxNum\": 50,\n        \"MemSize\": 1,\n        \"MinNum\": 0,\n        \"PackageName\": \"\",\n        \"PackageVersion\": \"\",\n        \"PolicyThreshold\": 60,\n        \"PolicyType\": \"cpu\",\n        \"Remark\": \"\",\n        \"Repo\": \"\",\n        \"RepoType\": \"\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\",\n        \"ServerName\": \"test\",\n        \"Status\": \"normal\",\n        \"SubnetIds\": [\n            \"subnet-6yny6j0d\"\n        ],\n        \"UpdatedTime\": \"2020-11-04 19:55:22\",\n        \"UploadType\": \"image\",\n        \"VersionIP\": \"10.0.192.3\",\n        \"VersionName\": \"test-010\",\n        \"VersionPort\": 80,\n        \"VpcId\": \"vpc-rtyzm94a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VersionName\": \"xx\",\n        \"Remark\": \"xx\",\n        \"DockerfilePath\": \"xx\",\n        \"BuildDir\": \"xx\",\n        \"MinNum\": 0,\n        \"MaxNum\": 0,\n        \"PolicyType\": \"xx\",\n        \"PolicyThreshold\": 0,\n        \"EnvParams\": \"xx\",\n        \"CreatedTime\": \"xx\",\n        \"UpdatedTime\": \"xx\",\n        \"VersionIP\": \"xx\",\n        \"VersionPort\": 0,\n        \"Status\": \"xx\",\n        \"PackageName\": \"xx\",\n        \"PackageVersion\": \"xx\",\n        \"UploadType\": \"xx\",\n        \"RepoType\": \"xx\",\n        \"Repo\": \"xx\",\n        \"Branch\": \"xx\",\n        \"ServerName\": \"xx\",\n        \"IsPublic\": true,\n        \"VpcId\": \"xx\",\n        \"SubnetIds\": [\n            \"xx\"\n        ],\n        \"CustomLogs\": \"xx\",\n        \"ContainerPort\": 0,\n        \"InitialDelaySeconds\": 0,\n        \"ImageUrl\": \"xx\",\n        \"CpuSize\": 0,\n        \"MemSize\": 0,\n        \"PolicyDetail\": [\n            {\n                \"PolicyType\": \"xx\",\n                \"PolicyThreshold\": 0\n            }\n        ],\n        \"Cpu\": 0,\n        \"Mem\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -526,9 +526,9 @@
     ],
     "EstablishCloudBaseRunServer": [
       {
-        "document": "",
+        "document": "创建云应用服务",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EstablishCloudBaseRunServer\n<公共请求参数>\n\n{\n    \"Remark\": \"xx\",\n    \"EnvId\": \"xx\",\n    \"IsPublic\": true,\n    \"EsInfo\": {\n        \"Index\": \"xx\",\n        \"Account\": \"xx\",\n        \"Ip\": \"xx\",\n        \"Id\": 0,\n        \"SecretName\": \"xx\",\n        \"Password\": \"xx\",\n        \"Port\": 0\n    },\n    \"ServiceName\": \"xx\",\n    \"ImageRepo\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建云应用服务"
       }
     ],

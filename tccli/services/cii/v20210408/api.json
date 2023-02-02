@@ -4,79 +4,92 @@
       "document": "如果主任务下的报告不满足需求，可以基于主任务批量添加子任务",
       "input": "AddSubStructureTasksRequest",
       "name": "结构化增量子任务",
-      "output": "AddSubStructureTasksResponse"
+      "output": "AddSubStructureTasksResponse",
+      "status": "online"
     },
     "CreateAutoClassifyStructureTask": {
       "document": "本接口(CreateAutoClassifyStructureTask)基于提供的客户及保单信息，创建并启动结构化识别任务。",
       "input": "CreateAutoClassifyStructureTaskRequest",
       "name": "新建自动分类结构化任务",
-      "output": "CreateAutoClassifyStructureTaskResponse"
+      "output": "CreateAutoClassifyStructureTaskResponse",
+      "status": "online"
     },
     "CreateStructureTask": {
       "document": "本接口(CreateStructureTask)基于提供的客户及保单信息，创建并启动结构化识别任务。",
       "input": "CreateStructureTaskRequest",
       "name": "新建结构化任务",
-      "output": "CreateStructureTaskResponse"
+      "output": "CreateStructureTaskResponse",
+      "status": "online"
     },
     "CreateUnderwriteTaskById": {
       "document": "本接口(CreateUnderwriteTaskById)用于根据结构化任务ID创建核保任务",
       "input": "CreateUnderwriteTaskByIdRequest",
       "name": "根据结构化任务ID创建核保任务",
-      "output": "CreateUnderwriteTaskByIdResponse"
+      "output": "CreateUnderwriteTaskByIdResponse",
+      "status": "online"
     },
     "DescribeMachineUnderwrite": {
       "document": "本接口(DescribeMachineUnderwrite)用于查询机器核保任务数据",
       "input": "DescribeMachineUnderwriteRequest",
       "name": "查询机器核保任务数据",
-      "output": "DescribeMachineUnderwriteResponse"
+      "output": "DescribeMachineUnderwriteResponse",
+      "status": "online"
     },
     "DescribeQualityScore": {
       "document": "获取图片质量分",
       "input": "DescribeQualityScoreRequest",
       "name": "获取图片质量分",
-      "output": "DescribeQualityScoreResponse"
+      "output": "DescribeQualityScoreResponse",
+      "status": "online"
     },
     "DescribeReportClassify": {
       "document": "辅助用户对批量报告自动分类",
       "input": "DescribeReportClassifyRequest",
       "name": "报告自动分类",
-      "output": "DescribeReportClassifyResponse"
+      "output": "DescribeReportClassifyResponse",
+      "status": "online"
     },
     "DescribeStructCompareData": {
       "document": "结构化对比查询接口，对比结构化复核前后数据差异，查询识别正确率，召回率。",
       "input": "DescribeStructCompareDataRequest",
       "name": "结构化对比查询",
-      "output": "DescribeStructCompareDataResponse"
+      "output": "DescribeStructCompareDataResponse",
+      "status": "online"
     },
     "DescribeStructureDifference": {
       "document": "结构化复核差异查询接口，对比结构化复核前后数据差异，返回差异的部分。",
       "input": "DescribeStructureDifferenceRequest",
       "name": "结构化复核差异查询",
-      "output": "DescribeStructureDifferenceResponse"
+      "output": "DescribeStructureDifferenceResponse",
+      "status": "online"
     },
     "DescribeStructureResult": {
       "document": "本接口(DescribeStructureResult)用于查询结构化结果接口",
       "input": "DescribeStructureResultRequest",
       "name": "查询结构化结果接口",
-      "output": "DescribeStructureResultResponse"
+      "output": "DescribeStructureResultResponse",
+      "status": "online"
     },
     "DescribeStructureTaskResult": {
       "document": "依据任务ID获取结构化结果接口。",
       "input": "DescribeStructureTaskResultRequest",
       "name": "获取结构化结果接口",
-      "output": "DescribeStructureTaskResultResponse"
+      "output": "DescribeStructureTaskResultResponse",
+      "status": "online"
     },
     "DescribeUnderwriteTask": {
       "document": "本接口(DescribeUnderwriteTask)用于查询核保任务结果",
       "input": "DescribeUnderwriteTaskRequest",
       "name": "查询核保任务数据",
-      "output": "DescribeUnderwriteTaskResponse"
+      "output": "DescribeUnderwriteTaskResponse",
+      "status": "online"
     },
     "UploadMedicalFile": {
       "document": "上传医疗影像文件，可以用来做结构化。",
       "input": "UploadMedicalFileRequest",
       "name": "上传医疗影像文件",
-      "output": "UploadMedicalFileResponse"
+      "output": "UploadMedicalFileResponse",
+      "status": "online"
     }
   },
   "metadata": {

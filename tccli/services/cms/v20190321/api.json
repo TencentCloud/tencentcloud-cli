@@ -4,103 +4,120 @@
       "document": "渠道产品用户接入内容安全一键开通服务生成策略",
       "input": "ActivateServiceRequest",
       "name": "渠道产品接入一键开通",
-      "output": "ActivateServiceResponse"
+      "output": "ActivateServiceResponse",
+      "status": "online"
     },
     "CreateImageLibImage": {
       "document": "图库 添加图片",
       "input": "CreateImageLibImageRequest",
       "name": "图库添加图片",
-      "output": "CreateImageLibImageResponse"
+      "output": "CreateImageLibImageResponse",
+      "status": "online"
     },
     "CreateKeywordsLib": {
       "document": "创建关键词库",
       "input": "CreateKeywordsLibRequest",
       "name": "创建关键词库",
-      "output": "CreateKeywordsLibResponse"
+      "output": "CreateKeywordsLibResponse",
+      "status": "online"
     },
     "CreateKeywordsSamples": {
       "document": "创建关键词接口",
       "input": "CreateKeywordsSamplesRequest",
       "name": "创建关键词接口",
-      "output": "CreateKeywordsSamplesResponse"
+      "output": "CreateKeywordsSamplesResponse",
+      "status": "online"
     },
     "DeleteImageLibImage": {
       "document": "图库 删除图片",
       "input": "DeleteImageLibImageRequest",
       "name": "图库删除图片",
-      "output": "DeleteImageLibImageResponse"
+      "output": "DeleteImageLibImageResponse",
+      "status": "online"
     },
     "DeleteKeywordsLib": {
       "document": "删除词库,只能删除未和策略关联的词库，若有关联，则返回错误",
       "input": "DeleteKeywordsLibRequest",
       "name": "删除词库",
-      "output": "DeleteKeywordsLibResponse"
+      "output": "DeleteKeywordsLibResponse",
+      "status": "online"
     },
     "DeleteLibSamples": {
       "document": "删除关键词接口",
       "input": "DeleteLibSamplesRequest",
       "name": "删除关键词接口",
-      "output": "DeleteLibSamplesResponse"
+      "output": "DeleteLibSamplesResponse",
+      "status": "online"
     },
     "DescribeGroupTag": {
       "document": "标签组分类数据查询接口，用作策略配置的标签组选择页面的数据展示。",
       "input": "DescribeGroupTagRequest",
       "name": "获取标签组分类数据",
-      "output": "DescribeGroupTagResponse"
+      "output": "DescribeGroupTagResponse",
+      "status": "online"
     },
     "DescribeImageLibImage": {
       "document": "查询图库的图片",
       "input": "DescribeImageLibImageRequest",
       "name": "查询图库图片",
-      "output": "DescribeImageLibImageResponse"
+      "output": "DescribeImageLibImageResponse",
+      "status": "online"
     },
     "DescribeKeywordsLibs": {
       "document": "获取用户词库列表",
       "input": "DescribeKeywordsLibsRequest",
       "name": "获取词库列表",
-      "output": "DescribeKeywordsLibsResponse"
+      "output": "DescribeKeywordsLibsResponse",
+      "status": "online"
     },
     "DescribeLevelTag": {
       "document": "分级获取内容安全标签数据，其中一级标签获取父标签传空即可。",
       "input": "DescribeLevelTagRequest",
       "name": "获取分级标签",
-      "output": "DescribeLevelTagResponse"
+      "output": "DescribeLevelTagResponse",
+      "status": "online"
     },
     "DescribeLibSamples": {
       "document": "获取关键词接口",
       "input": "DescribeLibSamplesRequest",
       "name": "获取关键词接口",
-      "output": "DescribeLibSamplesResponse"
+      "output": "DescribeLibSamplesResponse",
+      "status": "online"
     },
     "DescribeMediaStat": {
       "document": "获取音视频(点播音频/点播视频/直播视频/直播音频)数据统计",
       "input": "DescribeMediaStatRequest",
       "name": "获取音视频识别统计数据",
-      "output": "DescribeMediaStatResponse"
+      "output": "DescribeMediaStatResponse",
+      "status": "online"
     },
     "DescribeModerationDetailsPlatform": {
       "document": "根据日期，渠道和服务类型等条件查询内容安全识别（包括文件，图片，音频，视频等类型内容）的时段统计结果明细数据。",
       "input": "DescribeModerationDetailsPlatformRequest",
       "name": "识别结果明细数据平台",
-      "output": "DescribeModerationDetailsPlatformResponse"
+      "output": "DescribeModerationDetailsPlatformResponse",
+      "status": "online"
     },
     "ImageModeration": {
       "document": "图片内容检测服务（Image Moderation, IM）能自动扫描图片，识别涉黄、涉恐、涉政、涉毒等有害内容，同时支持用户配置图片黑名单，打击自定义的违规图片。",
       "input": "ImageModerationRequest",
       "name": "图片内容检测",
-      "output": "ImageModerationResponse"
+      "output": "ImageModerationResponse",
+      "status": "online"
     },
     "ModifyKeywordsLib": {
       "document": "更新词库",
       "input": "ModifyKeywordsLibRequest",
       "name": "更新词库",
-      "output": "ModifyKeywordsLibResponse"
+      "output": "ModifyKeywordsLibResponse",
+      "status": "online"
     },
     "TextModeration": {
       "document": "文本内容检测（Text Moderation）服务使用了深度学习技术，识别涉黄、涉政、涉恐等有害内容，同时支持用户配置词库，打击自定义的违规文本。",
       "input": "TextModerationRequest",
       "name": "文本内容检测",
-      "output": "TextModerationResponse"
+      "output": "TextModerationResponse",
+      "status": "online"
     }
   },
   "metadata": {

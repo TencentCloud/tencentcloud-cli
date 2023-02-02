@@ -4,25 +4,29 @@
       "document": "https://ecc.tencentcloudapi.com/?Action=CorrectMultiImage\n多图像识别批改接口",
       "input": "CorrectMultiImageRequest",
       "name": "多图像识别批改",
-      "output": "CorrectMultiImageResponse"
+      "output": "CorrectMultiImageResponse",
+      "status": "online"
     },
     "DescribeTask": {
       "document": "异步任务结果查询接口",
       "input": "DescribeTaskRequest",
       "name": "查询异步任务结果",
-      "output": "DescribeTaskResponse"
+      "output": "DescribeTaskResponse",
+      "status": "online"
     },
     "ECC": {
       "document": "接口请求域名： ecc.tencentcloudapi.com \n纯文本英语作文批改",
       "input": "ECCRequest",
       "name": "纯文本英语作文批改",
-      "output": "ECCResponse"
+      "output": "ECCResponse",
+      "status": "online"
     },
     "EHOCR": {
       "document": "https://ecc.tencentcloudapi.com/?Action=EHOCR\n图像识别批改接口",
       "input": "EHOCRRequest",
       "name": "图像识别批改",
-      "output": "EHOCRResponse"
+      "output": "EHOCRResponse",
+      "status": "online"
     }
   },
   "metadata": {

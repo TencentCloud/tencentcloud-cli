@@ -4,295 +4,344 @@
       "document": "绑定黑石服务器到四层监听器。服务器包括物理服务器、虚拟机以及半托管机器。",
       "input": "BindL4BackendsRequest",
       "name": "绑定黑石服务器到四层监听器",
-      "output": "BindL4BackendsResponse"
+      "output": "BindL4BackendsResponse",
+      "status": "online"
     },
     "BindL7Backends": {
       "document": "绑定黑石物理服务器或半托管服务器到七层转发路径。",
       "input": "BindL7BackendsRequest",
       "name": "绑定黑石物理服务器或半托管服务器到七层转发路径",
-      "output": "BindL7BackendsResponse"
+      "output": "BindL7BackendsResponse",
+      "status": "online"
     },
     "BindTrafficMirrorListeners": {
       "document": "绑定黑石服务器七层监听器到流量镜像实例。",
       "input": "BindTrafficMirrorListenersRequest",
       "name": "绑定黑石服务器七层监听器到流量镜像实例",
-      "output": "BindTrafficMirrorListenersResponse"
+      "output": "BindTrafficMirrorListenersResponse",
+      "status": "online"
     },
     "BindTrafficMirrorReceivers": {
       "document": "绑定黑石物理服务器成为流量镜像接收机。",
       "input": "BindTrafficMirrorReceiversRequest",
       "name": "绑定黑石物理服务器成为流量镜像接收机",
-      "output": "BindTrafficMirrorReceiversResponse"
+      "output": "BindTrafficMirrorReceiversResponse",
+      "status": "online"
     },
     "CreateL4Listeners": {
       "document": "创建黑石四层负载均衡监听器功能。黑石负载均衡四层监听器提供了转发用户请求的具体规则，包括端口、协议、会话保持、健康检查等参数。",
       "input": "CreateL4ListenersRequest",
       "name": "创建黑石四层负载均衡监听器",
-      "output": "CreateL4ListenersResponse"
+      "output": "CreateL4ListenersResponse",
+      "status": "online"
     },
     "CreateL7Listeners": {
       "document": "创建黑石负载均衡七层监听器功能。负载均衡七层监听器提供了转发用户请求的具体规则，包括端口、协议等参数。",
       "input": "CreateL7ListenersRequest",
       "name": "创建黑石负载均衡七层监听器",
-      "output": "CreateL7ListenersResponse"
+      "output": "CreateL7ListenersResponse",
+      "status": "online"
     },
     "CreateL7Rules": {
       "document": "创建黑石负载均衡七层转发规则。",
       "input": "CreateL7RulesRequest",
       "name": "创建黑石负载均衡七层转发规则",
-      "output": "CreateL7RulesResponse"
+      "output": "CreateL7RulesResponse",
+      "status": "online"
     },
     "CreateLoadBalancers": {
       "document": "用来创建黑石负载均衡。为了使用黑石负载均衡服务，您必须要创建一个或者多个负载均衡实例。通过成功调用该接口，会返回负载均衡实例的唯一ID。用户可以购买的黑石负载均衡实例类型分为：公网类型、内网类型。公网类型负载均衡对应一个BGP VIP，可用于快速访问公网负载均衡绑定的物理服务器；内网类型负载均衡对应一个腾讯云内部的VIP，不能通过Internet访问，可快速访问内网负载均衡绑定的物理服务器。",
       "input": "CreateLoadBalancersRequest",
       "name": "创建黑石负载均衡实例",
-      "output": "CreateLoadBalancersResponse"
+      "output": "CreateLoadBalancersResponse",
+      "status": "online"
     },
     "CreateTrafficMirror": {
       "document": "创建流量镜像实例。",
       "input": "CreateTrafficMirrorRequest",
       "name": "创建流量镜像实例",
-      "output": "CreateTrafficMirrorResponse"
+      "output": "CreateTrafficMirrorResponse",
+      "status": "online"
     },
     "DeleteL7Domains": {
       "document": "删除黑石负载均衡七层转发域名。",
       "input": "DeleteL7DomainsRequest",
       "name": "删除黑石负载均衡七层转发域名",
-      "output": "DeleteL7DomainsResponse"
+      "output": "DeleteL7DomainsResponse",
+      "status": "online"
     },
     "DeleteL7Rules": {
       "document": "删除黑石负载均衡七层转发规则。",
       "input": "DeleteL7RulesRequest",
       "name": "删除黑石负载均衡七层转发规则",
-      "output": "DeleteL7RulesResponse"
+      "output": "DeleteL7RulesResponse",
+      "status": "online"
     },
     "DeleteListeners": {
       "document": "删除黑石负载均衡监听器。",
       "input": "DeleteListenersRequest",
       "name": "删除黑石负载均衡监听器",
-      "output": "DeleteListenersResponse"
+      "output": "DeleteListenersResponse",
+      "status": "online"
     },
     "DeleteLoadBalancer": {
       "document": "删除用户指定的黑石负载均衡实例。",
       "input": "DeleteLoadBalancerRequest",
       "name": "删除用户指定的黑石负载均衡实例",
-      "output": "DeleteLoadBalancerResponse"
+      "output": "DeleteLoadBalancerResponse",
+      "status": "online"
     },
     "DeleteTrafficMirror": {
       "document": "删除已创建的黑石流量镜像实例，删除过程是异步执行的，因此需要使用查询任务接口获取删除的结果。",
       "input": "DeleteTrafficMirrorRequest",
       "name": "删除流量镜像实例",
-      "output": "DeleteTrafficMirrorResponse"
+      "output": "DeleteTrafficMirrorResponse",
+      "status": "online"
     },
     "DescribeCertDetail": {
       "document": "获取黑石负载均衡证书详情。",
       "input": "DescribeCertDetailRequest",
       "name": "获取黑石负载均衡证书详情",
-      "output": "DescribeCertDetailResponse"
+      "output": "DescribeCertDetailResponse",
+      "status": "online"
     },
     "DescribeDevicesBindInfo": {
       "document": "查询黑石物理机和虚机以及托管服务器绑定的黑石负载均衡详情。",
       "input": "DescribeDevicesBindInfoRequest",
       "name": "查询黑石物理机和虚机以及托管服务器绑定的黑石负载均衡详情",
-      "output": "DescribeDevicesBindInfoResponse"
+      "output": "DescribeDevicesBindInfoResponse",
+      "status": "online"
     },
     "DescribeL4Backends": {
       "document": "获取黑石负载均衡四层监听器绑定的主机列表。",
       "input": "DescribeL4BackendsRequest",
       "name": "获取黑石负载均衡四层监听器绑定的主机列表",
-      "output": "DescribeL4BackendsResponse"
+      "output": "DescribeL4BackendsResponse",
+      "status": "online"
     },
     "DescribeL4ListenerInfo": {
       "document": "查找绑定了某主机或者指定监听器名称的黑石负载均衡四层监听器。",
       "input": "DescribeL4ListenerInfoRequest",
       "name": "查找绑定了某主机或者指定监听器名称的黑石负载均衡四层监听器",
-      "output": "DescribeL4ListenerInfoResponse"
+      "output": "DescribeL4ListenerInfoResponse",
+      "status": "online"
     },
     "DescribeL4Listeners": {
       "document": "获取黑石负载均衡四层监听器。",
       "input": "DescribeL4ListenersRequest",
       "name": "获取黑石负载均衡四层监听器",
-      "output": "DescribeL4ListenersResponse"
+      "output": "DescribeL4ListenersResponse",
+      "status": "online"
     },
     "DescribeL7Backends": {
       "document": "获取黑石负载均衡七层监听器绑定的主机列表",
       "input": "DescribeL7BackendsRequest",
       "name": "获取黑石负载均衡七层转发路径绑定的主机列表",
-      "output": "DescribeL7BackendsResponse"
+      "output": "DescribeL7BackendsResponse",
+      "status": "online"
     },
     "DescribeL7ListenerInfo": {
       "document": "查找绑定了某主机或者有某转发域名黑石负载均衡七层监听器。",
       "input": "DescribeL7ListenerInfoRequest",
       "name": "查找绑定了某主机或者有某转发域名黑石负载均衡七层监听器",
-      "output": "DescribeL7ListenerInfoResponse"
+      "output": "DescribeL7ListenerInfoResponse",
+      "status": "online"
     },
     "DescribeL7Listeners": {
       "document": "获取黑石负载均衡七层监听器列表信息。",
       "input": "DescribeL7ListenersRequest",
       "name": "获取黑石负载均衡七层监听器列表信息",
-      "output": "DescribeL7ListenersResponse"
+      "output": "DescribeL7ListenersResponse",
+      "status": "online"
     },
     "DescribeL7ListenersEx": {
       "document": "获取指定VPC下的7层监听器(支持模糊匹配)。",
       "input": "DescribeL7ListenersExRequest",
       "name": "获取指定VPC下的7层监听器",
-      "output": "DescribeL7ListenersExResponse"
+      "output": "DescribeL7ListenersExResponse",
+      "status": "online"
     },
     "DescribeL7Rules": {
       "document": "获取黑石负载均衡七层转发规则。",
       "input": "DescribeL7RulesRequest",
       "name": "获取黑石负载均衡七层转发规则",
-      "output": "DescribeL7RulesResponse"
+      "output": "DescribeL7RulesResponse",
+      "status": "online"
     },
     "DescribeLoadBalancerPortInfo": {
       "document": "获取黑石负载均衡端口相关信息。",
       "input": "DescribeLoadBalancerPortInfoRequest",
       "name": "获取黑石负载均衡端口相关信息",
-      "output": "DescribeLoadBalancerPortInfoResponse"
+      "output": "DescribeLoadBalancerPortInfoResponse",
+      "status": "online"
     },
     "DescribeLoadBalancerTaskResult": {
       "document": "查询负载均衡实例异步任务的执行情况。",
       "input": "DescribeLoadBalancerTaskResultRequest",
       "name": "查询负载均衡实例异步任务的执行情况",
-      "output": "DescribeLoadBalancerTaskResultResponse"
+      "output": "DescribeLoadBalancerTaskResultResponse",
+      "status": "online"
     },
     "DescribeLoadBalancers": {
       "document": "获取黑石负载均衡实例列表",
       "input": "DescribeLoadBalancersRequest",
       "name": "获取黑石负载均衡实例列表",
-      "output": "DescribeLoadBalancersResponse"
+      "output": "DescribeLoadBalancersResponse",
+      "status": "online"
     },
     "DescribeTrafficMirrorListeners": {
       "document": "获取流量镜像的监听器列表信息。",
       "input": "DescribeTrafficMirrorListenersRequest",
       "name": "获取流量镜像的监听器列表信息",
-      "output": "DescribeTrafficMirrorListenersResponse"
+      "output": "DescribeTrafficMirrorListenersResponse",
+      "status": "online"
     },
     "DescribeTrafficMirrorReceiverHealthStatus": {
       "document": "获取流量镜像接收机健康状态。",
       "input": "DescribeTrafficMirrorReceiverHealthStatusRequest",
       "name": "获取流量镜像接收机健康状态",
-      "output": "DescribeTrafficMirrorReceiverHealthStatusResponse"
+      "output": "DescribeTrafficMirrorReceiverHealthStatusResponse",
+      "status": "online"
     },
     "DescribeTrafficMirrorReceivers": {
       "document": "获取指定流量镜像实例的接收机信息。",
       "input": "DescribeTrafficMirrorReceiversRequest",
       "name": "获取指定流量镜像实例的接收机信息",
-      "output": "DescribeTrafficMirrorReceiversResponse"
+      "output": "DescribeTrafficMirrorReceiversResponse",
+      "status": "online"
     },
     "DescribeTrafficMirrors": {
       "document": "获取流量镜像实例的列表信息。",
       "input": "DescribeTrafficMirrorsRequest",
       "name": "获取流量镜像实例的列表信息",
-      "output": "DescribeTrafficMirrorsResponse"
+      "output": "DescribeTrafficMirrorsResponse",
+      "status": "online"
     },
     "ModifyL4BackendPort": {
       "document": "修改黑石负载均衡四层监听器后端实例端口。",
       "input": "ModifyL4BackendPortRequest",
       "name": "修改黑石负载均衡四层监听器后端实例端口",
-      "output": "ModifyL4BackendPortResponse"
+      "output": "ModifyL4BackendPortResponse",
+      "status": "online"
     },
     "ModifyL4BackendProbePort": {
       "document": "修改黑石负载均衡四层监听器后端探测端口。",
       "input": "ModifyL4BackendProbePortRequest",
       "name": "修改黑石负载均衡四层监听器后端探测端口",
-      "output": "ModifyL4BackendProbePortResponse"
+      "output": "ModifyL4BackendProbePortResponse",
+      "status": "online"
     },
     "ModifyL4BackendWeight": {
       "document": "修改黑石负载均衡四层监听器后端实例权重功能。",
       "input": "ModifyL4BackendWeightRequest",
       "name": "修改黑石负载均衡四层监听器后端实例权重",
-      "output": "ModifyL4BackendWeightResponse"
+      "output": "ModifyL4BackendWeightResponse",
+      "status": "online"
     },
     "ModifyL4Listener": {
       "document": "修改黑石负载均衡四层监听器。",
       "input": "ModifyL4ListenerRequest",
       "name": "修改黑石负载均衡四层监听器",
-      "output": "ModifyL4ListenerResponse"
+      "output": "ModifyL4ListenerResponse",
+      "status": "online"
     },
     "ModifyL7BackendPort": {
       "document": "修改黑石负载均衡七层转发路径后端实例端口。",
       "input": "ModifyL7BackendPortRequest",
       "name": "修改黑石负载均衡七层转发路径后端实例端口",
-      "output": "ModifyL7BackendPortResponse"
+      "output": "ModifyL7BackendPortResponse",
+      "status": "online"
     },
     "ModifyL7BackendWeight": {
       "document": "修改黑石负载均衡七层转发路径后端实例权重。",
       "input": "ModifyL7BackendWeightRequest",
       "name": "修改黑石负载均衡七层转发路径后端实例权重",
-      "output": "ModifyL7BackendWeightResponse"
+      "output": "ModifyL7BackendWeightResponse",
+      "status": "online"
     },
     "ModifyL7Listener": {
       "document": "修改黑石负载均衡七层监听器。",
       "input": "ModifyL7ListenerRequest",
       "name": "修改黑石负载均衡七层监听器",
-      "output": "ModifyL7ListenerResponse"
+      "output": "ModifyL7ListenerResponse",
+      "status": "online"
     },
     "ModifyL7Locations": {
       "document": "修改黑石负载均衡七层转发路径。",
       "input": "ModifyL7LocationsRequest",
       "name": "修改黑石负载均衡七层转发路径",
-      "output": "ModifyL7LocationsResponse"
+      "output": "ModifyL7LocationsResponse",
+      "status": "online"
     },
     "ModifyLoadBalancer": {
       "document": "根据输入参数来修改黑石负载均衡实例的基本配置信息。可能的信息包括负载均衡实例的名称，域名前缀。",
       "input": "ModifyLoadBalancerRequest",
       "name": "修改黑石负载均衡实例的基本配置信息",
-      "output": "ModifyLoadBalancerResponse"
+      "output": "ModifyLoadBalancerResponse",
+      "status": "online"
     },
     "ModifyLoadBalancerChargeMode": {
       "document": "更改黑石负载均衡的计费方式",
       "input": "ModifyLoadBalancerChargeModeRequest",
       "name": "更改黑石负载均衡的计费方式",
-      "output": "ModifyLoadBalancerChargeModeResponse"
+      "output": "ModifyLoadBalancerChargeModeResponse",
+      "status": "online"
     },
     "ReplaceCert": {
       "document": "更新黑石负载均衡证书。",
       "input": "ReplaceCertRequest",
       "name": "更新黑石负载均衡证书",
-      "output": "ReplaceCertResponse"
+      "output": "ReplaceCertResponse",
+      "status": "online"
     },
     "SetTrafficMirrorAlias": {
       "document": "设置流量镜像的别名。",
       "input": "SetTrafficMirrorAliasRequest",
       "name": "设置流量镜像的别名",
-      "output": "SetTrafficMirrorAliasResponse"
+      "output": "SetTrafficMirrorAliasResponse",
+      "status": "online"
     },
     "SetTrafficMirrorHealthSwitch": {
       "document": "设置流量镜像的健康检查参数。",
       "input": "SetTrafficMirrorHealthSwitchRequest",
       "name": "设置流量镜像的健康检查参数",
-      "output": "SetTrafficMirrorHealthSwitchResponse"
+      "output": "SetTrafficMirrorHealthSwitchResponse",
+      "status": "online"
     },
     "UnbindL4Backends": {
       "document": "解绑黑石负载均衡四层监听器物理服务器。",
       "input": "UnbindL4BackendsRequest",
       "name": "解绑黑石负载均衡四层监听器物理服务器",
-      "output": "UnbindL4BackendsResponse"
+      "output": "UnbindL4BackendsResponse",
+      "status": "online"
     },
     "UnbindL7Backends": {
       "document": "解绑黑石物理服务器或者托管服务器到七层转发路径功能。",
       "input": "UnbindL7BackendsRequest",
       "name": "解绑黑石物理服务器或者托管服务器到七层转发路径",
-      "output": "UnbindL7BackendsResponse"
+      "output": "UnbindL7BackendsResponse",
+      "status": "online"
     },
     "UnbindTrafficMirrorListeners": {
       "document": "解绑流量镜像监听器。",
       "input": "UnbindTrafficMirrorListenersRequest",
       "name": "解绑流量镜像监听器",
-      "output": "UnbindTrafficMirrorListenersResponse"
+      "output": "UnbindTrafficMirrorListenersResponse",
+      "status": "online"
     },
     "UnbindTrafficMirrorReceivers": {
       "document": "从流量镜像实例上解绑流量镜像接收机。",
       "input": "UnbindTrafficMirrorReceiversRequest",
       "name": "解绑流量镜像接收机",
-      "output": "UnbindTrafficMirrorReceiversResponse"
+      "output": "UnbindTrafficMirrorReceiversResponse",
+      "status": "online"
     },
     "UploadCert": {
       "document": "创建黑石负载均衡证书。",
       "input": "UploadCertRequest",
       "name": "创建黑石负载均衡证书",
-      "output": "UploadCertResponse"
+      "output": "UploadCertResponse",
+      "status": "online"
     }
   },
   "metadata": {

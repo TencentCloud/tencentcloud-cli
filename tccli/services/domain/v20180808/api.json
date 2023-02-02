@@ -4,157 +4,183 @@
       "document": "本接口 ( BatchModifyDomainInfo ) 用于批量域名信息修改 。",
       "input": "BatchModifyDomainInfoRequest",
       "name": "批量域名信息修改",
-      "output": "BatchModifyDomainInfoResponse"
+      "output": "BatchModifyDomainInfoResponse",
+      "status": "online"
     },
     "CheckBatchStatus": {
       "document": "本接口 ( CheckBatchStatus ) 用于查询批量操作日志状态 。",
       "input": "CheckBatchStatusRequest",
       "name": "批量操作日志状态",
-      "output": "CheckBatchStatusResponse"
+      "output": "CheckBatchStatusResponse",
+      "status": "online"
     },
     "CheckDomain": {
       "document": "检查域名是否可以注册。",
       "input": "CheckDomainRequest",
       "name": "域名注册查询",
-      "output": "CheckDomainResponse"
+      "output": "CheckDomainResponse",
+      "status": "online"
     },
     "CreateDomainBatch": {
       "document": "本接口 ( CreateDomainBatch ) 用于批量域名注册 。",
       "input": "CreateDomainBatchRequest",
       "name": "批量域名注册",
-      "output": "CreateDomainBatchResponse"
+      "output": "CreateDomainBatchResponse",
+      "status": "online"
     },
     "CreatePhoneEmail": {
       "document": "此接口用于创建有效的手机、邮箱",
       "input": "CreatePhoneEmailRequest",
       "name": "验证手机邮箱",
-      "output": "CreatePhoneEmailResponse"
+      "output": "CreatePhoneEmailResponse",
+      "status": "online"
     },
     "CreateTemplate": {
       "document": "本接口 ( CreateTemplate ) 用于添加域名信息模板 。",
       "input": "CreateTemplateRequest",
       "name": "添加域名信息模板",
-      "output": "CreateTemplateResponse"
+      "output": "CreateTemplateResponse",
+      "status": "online"
     },
     "DeletePhoneEmail": {
       "document": "此接口用于删除已验证的手机邮箱",
       "input": "DeletePhoneEmailRequest",
       "name": "删除手机邮箱",
-      "output": "DeletePhoneEmailResponse"
+      "output": "DeletePhoneEmailResponse",
+      "status": "online"
     },
     "DeleteTemplate": {
       "document": "本接口 ( DeleteTemplate ) 用于删除信息模板。",
       "input": "DeleteTemplateRequest",
       "name": "删除信息模板",
-      "output": "DeleteTemplateResponse"
+      "output": "DeleteTemplateResponse",
+      "status": "online"
     },
     "DescribeBatchOperationLogDetails": {
       "document": "本接口 ( DescribeBatchOperationLogDetails ) 用于获取批量操作日志详情。",
       "input": "DescribeBatchOperationLogDetailsRequest",
       "name": "批量操作日志详情",
-      "output": "DescribeBatchOperationLogDetailsResponse"
+      "output": "DescribeBatchOperationLogDetailsResponse",
+      "status": "online"
     },
     "DescribeBatchOperationLogs": {
       "document": "本接口 ( DescribeBatchOperationLogs ) 用于获取批量操作日志 。",
       "input": "DescribeBatchOperationLogsRequest",
       "name": "批量操作日志列表",
-      "output": "DescribeBatchOperationLogsResponse"
+      "output": "DescribeBatchOperationLogsResponse",
+      "status": "online"
     },
     "DescribeDomainBaseInfo": {
       "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基本信息。\n",
       "input": "DescribeDomainBaseInfoRequest",
       "name": "域名基本信息",
-      "output": "DescribeDomainBaseInfoResponse"
+      "output": "DescribeDomainBaseInfoResponse",
+      "status": "online"
     },
     "DescribeDomainNameList": {
       "document": "本接口 (  DescribeDomainNameList ) 我的域名列表。\n",
       "input": "DescribeDomainNameListRequest",
       "name": "我的域名列表",
-      "output": "DescribeDomainNameListResponse"
+      "output": "DescribeDomainNameListResponse",
+      "status": "online"
     },
     "DescribeDomainPriceList": {
       "document": "按照域名后缀获取对应的价格列表",
       "input": "DescribeDomainPriceListRequest",
       "name": "域名价格列表",
-      "output": "DescribeDomainPriceListResponse"
+      "output": "DescribeDomainPriceListResponse",
+      "status": "online"
     },
     "DescribeDomainSimpleInfo": {
       "document": "获取域名实名信息详情",
       "input": "DescribeDomainSimpleInfoRequest",
       "name": "获取域名实名信息",
-      "output": "DescribeDomainSimpleInfoResponse"
+      "output": "DescribeDomainSimpleInfoResponse",
+      "status": "online"
     },
     "DescribePhoneEmailList": {
       "document": "本接口用于获取已验证的手机邮箱列表",
       "input": "DescribePhoneEmailListRequest",
       "name": "已验证手机邮箱列表",
-      "output": "DescribePhoneEmailListResponse"
+      "output": "DescribePhoneEmailListResponse",
+      "status": "online"
     },
     "DescribeTemplate": {
       "document": "本接口 (DescribeTemplate) 用于获取模板信息。",
       "input": "DescribeTemplateRequest",
       "name": "获取模板信息",
-      "output": "DescribeTemplateResponse"
+      "output": "DescribeTemplateResponse",
+      "status": "online"
     },
     "DescribeTemplateList": {
       "document": "本接口 (DescribeTemplateList) 用于获取信息模板列表。\n",
       "input": "DescribeTemplateListRequest",
       "name": "信息模板列表",
-      "output": "DescribeTemplateListResponse"
+      "output": "DescribeTemplateListResponse",
+      "status": "online"
     },
     "ModifyDomainDNSBatch": {
       "document": "本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。",
       "input": "ModifyDomainDNSBatchRequest",
       "name": "批量域名 DNS 修改",
-      "output": "ModifyDomainDNSBatchResponse"
+      "output": "ModifyDomainDNSBatchResponse",
+      "status": "online"
     },
     "ModifyDomainOwnerBatch": {
       "document": "本接口 ( ModifyDomainOwnerBatch) 用于域名批量账号间转移 。",
       "input": "ModifyDomainOwnerBatchRequest",
       "name": "批量账号间转移",
-      "output": "ModifyDomainOwnerBatchResponse"
+      "output": "ModifyDomainOwnerBatchResponse",
+      "status": "online"
     },
     "RenewDomainBatch": {
       "document": "本接口 ( RenewDomainBatch ) 用于批量续费域名 。\n",
       "input": "RenewDomainBatchRequest",
       "name": "批量域名续费",
-      "output": "RenewDomainBatchResponse"
+      "output": "RenewDomainBatchResponse",
+      "status": "online"
     },
     "SendPhoneEmailCode": {
       "document": "此接口用于发送手机邮箱验证码。",
       "input": "SendPhoneEmailCodeRequest",
       "name": "发送手机邮箱验证码",
-      "output": "SendPhoneEmailCodeResponse"
+      "output": "SendPhoneEmailCodeResponse",
+      "status": "online"
     },
     "SetDomainAutoRenew": {
       "document": "本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。",
       "input": "SetDomainAutoRenewRequest",
       "name": "域名自动续费",
-      "output": "SetDomainAutoRenewResponse"
+      "output": "SetDomainAutoRenewResponse",
+      "status": "online"
     },
     "TransferInDomainBatch": {
       "document": "本接口 ( TransferInDomainBatch ) 用于批量转入域名 。",
       "input": "TransferInDomainBatchRequest",
       "name": "批量域名转入",
-      "output": "TransferInDomainBatchResponse"
+      "output": "TransferInDomainBatchResponse",
+      "status": "online"
     },
     "TransferProhibitionBatch": {
       "document": "本接口 ( TransferProhibitionBatch ) 用于批量禁止域名转移 。",
       "input": "TransferProhibitionBatchRequest",
       "name": "批量禁止转移锁",
-      "output": "TransferProhibitionBatchResponse"
+      "output": "TransferProhibitionBatchResponse",
+      "status": "online"
     },
     "UpdateProhibitionBatch": {
       "document": "本接口 ( UpdateProhibitionBatch ) 用于批量禁止更新锁。",
       "input": "UpdateProhibitionBatchRequest",
       "name": "批量禁止更新锁",
-      "output": "UpdateProhibitionBatchResponse"
+      "output": "UpdateProhibitionBatchResponse",
+      "status": "online"
     },
     "UploadImage": {
       "document": "本接口 ( UploadImage ) 用于证件图片上传 。",
       "input": "UploadImageRequest",
       "name": "证件图片上传",
-      "output": "UploadImageResponse"
+      "output": "UploadImageResponse",
+      "status": "online"
     }
   },
   "metadata": {

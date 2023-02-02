@@ -4,25 +4,29 @@
       "document": "图片分类",
       "input": "ImageToClassRequest",
       "name": "图片分类接口",
-      "output": "ImageToClassResponse"
+      "output": "ImageToClassResponse",
+      "status": "online"
     },
     "ImageToObject": {
       "document": "图片转结构化对象",
       "input": "ImageToObjectRequest",
       "name": "图片结构化接口",
-      "output": "ImageToObjectResponse"
+      "output": "ImageToObjectResponse",
+      "status": "online"
     },
     "TextToClass": {
       "document": "文本分类",
       "input": "TextToClassRequest",
       "name": "文本分类接口",
-      "output": "TextToClassResponse"
+      "output": "TextToClassResponse",
+      "status": "online"
     },
     "TextToObject": {
       "document": "文本转结构化对象",
       "input": "TextToObjectRequest",
       "name": "文本结构化接口",
-      "output": "TextToObjectResponse"
+      "output": "TextToObjectResponse",
+      "status": "online"
     }
   },
   "metadata": {

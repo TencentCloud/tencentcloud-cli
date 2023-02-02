@@ -4,133 +4,155 @@
       "document": "代理商支付订单接口，支持自付/代付",
       "input": "AgentPayDealsRequest",
       "name": "支付订单（合作伙伴使用）",
-      "output": "AgentPayDealsResponse"
+      "output": "AgentPayDealsResponse",
+      "status": "online"
     },
     "AgentTransferMoney": {
       "document": "为合作伙伴提供转账给客户能力。仅支持合作伙伴为自己名下客户转账。",
       "input": "AgentTransferMoneyRequest",
       "name": "给客户转账",
-      "output": "AgentTransferMoneyResponse"
+      "output": "AgentTransferMoneyResponse",
+      "status": "online"
     },
     "AuditApplyClient": {
       "document": "代理商可以审核其名下申请中代客",
       "input": "AuditApplyClientRequest",
       "name": "审核客户",
-      "output": "AuditApplyClientResponse"
+      "output": "AuditApplyClientResponse",
+      "status": "online"
     },
     "CreatePayRelationForClient": {
       "document": "合作伙伴为客户创建强代付关系",
       "input": "CreatePayRelationForClientRequest",
       "name": "合作伙伴为客户创建强代付关系",
-      "output": "CreatePayRelationForClientResponse"
+      "output": "CreatePayRelationForClientResponse",
+      "status": "online"
     },
     "DescribeAgentAuditedClients": {
       "document": "查询已审核客户列表",
       "input": "DescribeAgentAuditedClientsRequest",
       "name": "查询已审核客户列表",
-      "output": "DescribeAgentAuditedClientsResponse"
+      "output": "DescribeAgentAuditedClientsResponse",
+      "status": "online"
     },
     "DescribeAgentBills": {
       "document": "代理商可查询自己及名下代客所有业务明细",
       "input": "DescribeAgentBillsRequest",
       "name": "查询业务明细",
-      "output": "DescribeAgentBillsResponse"
+      "output": "DescribeAgentBillsResponse",
+      "status": "online"
     },
     "DescribeAgentClientGrade": {
       "document": "传入代客uin，查客户级别，客户审核状态，客户实名认证状态",
       "input": "DescribeAgentClientGradeRequest",
       "name": "查询客户级别",
-      "output": "DescribeAgentClientGradeResponse"
+      "output": "DescribeAgentClientGradeResponse",
+      "status": "online"
     },
     "DescribeAgentClients": {
       "document": "代理商可查询自己名下待审核客户列表",
       "input": "DescribeAgentClientsRequest",
       "name": "查询待审核客户列表",
-      "output": "DescribeAgentClientsResponse"
+      "output": "DescribeAgentClientsResponse",
+      "status": "online"
     },
     "DescribeAgentDealsByCache": {
       "document": "供代理商拉取缓存的全量预付费客户订单",
       "input": "DescribeAgentDealsByCacheRequest",
       "name": "代理商缓存订单查询接口（预付费）",
-      "output": "DescribeAgentDealsByCacheResponse"
+      "output": "DescribeAgentDealsByCacheResponse",
+      "status": "online"
     },
     "DescribeAgentDealsCache": {
       "document": "【该接口已下线，请使用升级版本DescribeAgentDealsByCache】代理商拉取缓存的全量客户订单",
       "input": "DescribeAgentDealsCacheRequest",
       "name": "代理商缓存订单查询接口（禁止接入）",
-      "output": "DescribeAgentDealsCacheResponse"
+      "output": "DescribeAgentDealsCacheResponse",
+      "status": "online"
     },
     "DescribeAgentPayDeals": {
       "document": "【该接口已下线，请切换使用升级版本DescribeAgentPayDealsV2】可以查询代理商代付的所有订单",
       "input": "DescribeAgentPayDealsRequest",
       "name": "代理商代付订单查询接口（禁止接入）",
-      "output": "DescribeAgentPayDealsResponse"
+      "output": "DescribeAgentPayDealsResponse",
+      "status": "online"
     },
     "DescribeAgentPayDealsV2": {
       "document": "可以查询代理商代付的预付费订单",
       "input": "DescribeAgentPayDealsV2Request",
       "name": "代理商代付订单查询接口（预付费）",
-      "output": "DescribeAgentPayDealsV2Response"
+      "output": "DescribeAgentPayDealsV2Response",
+      "status": "online"
     },
     "DescribeAgentSelfPayDeals": {
       "document": "【该接口已下线，请切换使用升级版本DescribeAgentSelfPayDealsV2】可以查询代理商下指定客户的自付订单",
       "input": "DescribeAgentSelfPayDealsRequest",
       "name": "代理商自付订单查询接口（禁止接入）",
-      "output": "DescribeAgentSelfPayDealsResponse"
+      "output": "DescribeAgentSelfPayDealsResponse",
+      "status": "online"
     },
     "DescribeAgentSelfPayDealsV2": {
       "document": "查询代理商名下指定代客的自付订单（预付费）",
       "input": "DescribeAgentSelfPayDealsV2Request",
       "name": "代理商自付订单查询接口（预付费）",
-      "output": "DescribeAgentSelfPayDealsV2Response"
+      "output": "DescribeAgentSelfPayDealsV2Response",
+      "status": "online"
     },
     "DescribeClientBalance": {
       "document": "【该接口将逐步下线，请切换使用升级版本DescribeClientBalanceNew】为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额.",
       "input": "DescribeClientBalanceRequest",
       "name": "查询客户余额",
-      "output": "DescribeClientBalanceResponse"
+      "output": "DescribeClientBalanceResponse",
+      "status": "online"
     },
     "DescribeClientBalanceNew": {
       "document": "为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额",
       "input": "DescribeClientBalanceNewRequest",
       "name": "查询客户余额（新）",
-      "output": "DescribeClientBalanceNewResponse"
+      "output": "DescribeClientBalanceNewResponse",
+      "status": "online"
     },
     "DescribeRebateInfos": {
       "document": "【该接口已下线，请切换使用升级版本DescribeRebateInfosNew】代理商可查询自己名下全部返佣信息",
       "input": "DescribeRebateInfosRequest",
       "name": "查询代理商返佣信息（禁止接入）",
-      "output": "DescribeRebateInfosResponse"
+      "output": "DescribeRebateInfosResponse",
+      "status": "online"
     },
     "DescribeRebateInfosNew": {
       "document": "代理商可查询自己名下全部返佣信息",
       "input": "DescribeRebateInfosNewRequest",
       "name": "查询代理商返佣信息V2",
-      "output": "DescribeRebateInfosNewResponse"
+      "output": "DescribeRebateInfosNewResponse",
+      "status": "online"
     },
     "DescribeSalesmans": {
       "document": "代理商查询名下业务员列表信息",
       "input": "DescribeSalesmansRequest",
       "name": "代理商业务员查询接口",
-      "output": "DescribeSalesmansResponse"
+      "output": "DescribeSalesmansResponse",
+      "status": "online"
     },
     "DescribeUnbindClientList": {
       "document": "代理商名下客户解绑记录查询接口",
       "input": "DescribeUnbindClientListRequest",
       "name": "代理商名下客户解绑记录查询接口",
-      "output": "DescribeUnbindClientListResponse"
+      "output": "DescribeUnbindClientListResponse",
+      "status": "online"
     },
     "ModifyClientRemark": {
       "document": "代理商可以对名下客户添加备注、修改备注",
       "input": "ModifyClientRemarkRequest",
       "name": "修改客户备注",
-      "output": "ModifyClientRemarkResponse"
+      "output": "ModifyClientRemarkResponse",
+      "status": "online"
     },
     "RemovePayRelationForClient": {
       "document": "合作伙伴为客户消除强代付关系",
       "input": "RemovePayRelationForClientRequest",
       "name": "合作伙伴为客户消除强代付关系",
-      "output": "RemovePayRelationForClientResponse"
+      "output": "RemovePayRelationForClientResponse",
+      "status": "online"
     }
   },
   "metadata": {

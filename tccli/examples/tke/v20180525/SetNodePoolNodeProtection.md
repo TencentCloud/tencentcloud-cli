@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tke SetNodePoolNodeProtection --cli-unfold-argument  \
+    --ProtectedFromScaleIn true \
     --ClusterId cls-xxx \
-    --NodePoolId np-xxx \
     --InstanceIds ins-xxx \
-    --ProtectedFromScaleIn true
+    --NodePoolId np-xxx
 ```
 
 Output: 
