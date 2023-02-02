@@ -1,6 +1,6 @@
 **Example 1: 创建关键词**
 
-
+创建关键词
 
 Input: 
 
@@ -19,18 +19,20 @@ Output:
 ```
 {
     "Response": {
+        "SampleIDs": [
+            "xx"
+        ],
         "DupInfos": [
             {
-                "Content": "测试关键字",
-                "ID": "1234",
-                "CreateTime": "2020-12-10 13:00:00",
-                "Label": "Sexy"
+                "ID": "xx",
+                "Content": "xx",
+                "Label": "xx",
+                "CreateTime": "xx",
+                "Remark": "xx",
+                "WordType": "xx"
             }
         ],
-        "SampleIDs": [
-            "125"
-        ],
-        "RequestId": "123144214414"
+        "RequestId": "xx"
     }
 }
 ```

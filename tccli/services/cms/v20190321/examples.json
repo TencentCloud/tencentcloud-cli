@@ -2,7 +2,7 @@
   "actions": {
     "ActivateService": [
       {
-        "document": "",
+        "document": "一键开通",
         "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateService\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"Status\": true,\n    \"SDKAppID\": \"xx\",\n    \"UserSubUin\": \"xx\",\n    \"SDKAppName\": \"xx\",\n    \"UserUin\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"SceneInfos\": [\n            {\n                \"SceneID\": \"xx\",\n                \"BizInfos\": [\n                    {\n                        \"BizType\": \"xx\",\n                        \"Status\": true,\n                        \"StrategyType\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "一键开通服务示例"
@@ -18,13 +18,13 @@
     ],
     "CreateKeywordsLib": [
       {
-        "document": "",
+        "document": "创建关键词词库",
         "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKeywordsLib\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"LibName\": \"xx\",\n    \"UserSubUin\": \"xx\",\n    \"Describe\": \"xx\",\n    \"Suggestion\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"MatchType\": \"xx\",\n    \"Type\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123123213\",\n        \"ID\": \"1\"\n    }\n}",
         "title": "创建关键词词库"
       },
       {
-        "document": "",
+        "document": "正常创建词库示例",
         "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKeywordsLib\n<公共请求参数>\n\n{\n    \"UserAppID\": \"123\",\n    \"LibName\": \"测试词库2\",\n    \"UserSubUin\": \"123\",\n    \"Describe\": \"测试词库描述\",\n    \"Suggestion\": \"Review\",\n    \"UserUin\": \"123\",\n    \"MatchType\": \"FuzzyMatch\",\n    \"Type\": \"Text\"\n}",
         "output": "{\n    \"Response\": {\n        \"ID\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\",\n        \"RequestId\": \"a479e517-eced-426c-9568-fdd10fdc9e24\"\n    }\n}",
         "title": "正常创建词库示例"
@@ -32,9 +32,9 @@
     ],
     "CreateKeywordsSamples": [
       {
-        "document": "",
+        "document": "创建关键词",
         "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateKeywordsSamples\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserSubUin\": \"xx\",\n    \"UserKeywords\": [\n        {\n            \"Content\": \"xx\",\n            \"Label\": \"xx\"\n        }\n    ],\n    \"LibID\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"Type\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DupInfos\": [\n            {\n                \"Content\": \"测试关键字\",\n                \"ID\": \"1234\",\n                \"CreateTime\": \"2020-12-10 13:00:00\",\n                \"Label\": \"Sexy\"\n            }\n        ],\n        \"SampleIDs\": [\n            \"125\"\n        ],\n        \"RequestId\": \"123144214414\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SampleIDs\": [\n            \"xx\"\n        ],\n        \"DupInfos\": [\n            {\n                \"ID\": \"xx\",\n                \"Content\": \"xx\",\n                \"Label\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"Remark\": \"xx\",\n                \"WordType\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建关键词"
       }
     ],

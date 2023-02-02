@@ -764,7 +764,6 @@
       "document": "新套餐套餐详情",
       "members": [
         {
-          "default": "",
           "document": "DAU产品套餐ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "personal_calculation",
           "member": "string",
@@ -775,7 +774,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "DAU套餐中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "个人版-计算型",
           "member": "string",
@@ -786,7 +784,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "套餐分组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "calculation",
           "member": "string",
@@ -797,7 +794,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "套餐分组中文名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "计算型",
           "member": "string",
@@ -808,7 +804,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "json格式化计费标签，例如：\n{\"pid\":2, \"cids\":{\"create\": 2, \"renew\": 2, \"modify\": 2}, \"productCode\":\"p_tcb_mp\", \"subProductCode\":\"sp_tcb_mp_cloudbase_dau\"}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -819,7 +814,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "json格式化用户资源限制，例如：\n{\"Qps\":1000,\"InvokeNum\":{\"TimeUnit\":\"m\", \"Unit\":\"万次\", \"MaxSize\": 100},\"Capacity\":{\"TimeUnit\":\"m\", \"Unit\":\"GB\", \"MaxSize\": 100}, \"Cdn\":{\"Flux\":{\"TimeUnit\":\"m\", \"Unit\":\"GB\", \"MaxSize\": 100}, \"BackFlux\":{\"TimeUnit\":\"m\", \"Unit\":\"GB\", \"MaxSize\": 100}},\"Scf\":{\"Concurrency\":1000,\"OutFlux\":{\"TimeUnit\":\"m\", \"Unit\":\"GB\", \"MaxSize\": 100},\"MemoryUse\":{\"TimeUnit\":\"m\", \"Unit\":\"WGBS\", \"MaxSize\": 100000}}}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "参考接口示例",
           "member": "string",
@@ -830,7 +824,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "json格式化高级限制，例如：\n{\"CMSEnable\":false,\"ProvisionedConcurrencyMem\":512000, \"PictureProcessing\":false, \"SecurityAudit\":false, \"RealTimePush\":false, \"TemplateMessageBatchPush\":false, \"Payment\":false}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "参考接口示例",
           "member": "string",
@@ -841,7 +834,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "套餐描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "适合商家小程序",
           "member": "string",
@@ -852,7 +844,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否对外展示\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -861,6 +852,46 @@
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "后台套餐主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "后台掩码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PackageMask",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "套餐类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "PackageType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "单位原价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "39.9",
+          "member": "string",
+          "name": "UnitPrice",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -6434,20 +6465,22 @@
       "document": "DescribeDatabaseACL请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
+          "example": "env-xxxx",
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "集合名称",
+          "example": "abccccc",
           "member": "string",
           "name": "CollectionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6457,10 +6490,21 @@
       "members": [
         {
           "document": "权限标签。包含以下取值：\n<li> READONLY：所有用户可读，仅创建者和管理员可写</li>\n<li> PRIVATE：仅创建者及管理员可读写</li>\n<li> ADMINWRITE：所有用户可读，仅管理员可写</li>\n<li> ADMINONLY：仅管理员可读写</li>",
+          "example": "无",
           "member": "string",
           "name": "AclTag",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "安全规则",
+          "example": "无",
+          "member": "string",
+          "name": "Rule",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7011,31 +7055,31 @@
       "document": "DescribeEnvs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID，如果传了这个参数则只返回该环境的相关信息",
           "example": "yourenvid-2fb346",
           "member": "string",
           "name": "EnvId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]",
           "example": "true",
           "member": "bool",
           "name": "IsVisible",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "渠道列表，代表可见或不可见渠道由IsVisible参数指定",
           "example": "[ide,qc_console]",
           "member": "string",
           "name": "Channels",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7048,9 +7092,18 @@
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvList",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "环境个数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

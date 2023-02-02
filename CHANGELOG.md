@@ -1,3 +1,76 @@
+# Release 3.0.696.1
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 26 次发布
+
+发布时间：2023-02-03 01:30:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTimeShiftRecordDetail](http://document.tencentcloudapi.woa.com/document/product/267/77009)
+* [DescribeTimeShiftStreamList](http://document.tencentcloudapi.woa.com/document/product/267/77008)
+
+新增数据结构：
+
+* [TimeShiftRecord](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftRecord)
+* [TimeShiftStreamInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftStreamInfo)
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 4 次发布
+
+发布时间：2023-02-03 01:31:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDataSourceList](http://document.tencentcloudapi.woa.com/document/product/1599/75491)
+
+	* 新增入参：ChannelList
+
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 27 次发布
+
+发布时间：2023-02-03 01:42:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDatabaseACL](http://document.tencentcloudapi.woa.com/document/product/876/34821)
+
+	* 新增出参：Rule
+
+* [DescribeEnvs](http://document.tencentcloudapi.woa.com/document/product/876/34820)
+
+	* 新增出参：Total
+
+
+修改数据结构：
+
+* [BaasPackageInfo](http://document.tencentcloudapi.woa.com/document/product/876/34822#BaasPackageInfo)
+
+	* 新增成员：Id, PackageMask, PackageType, UnitPrice
+
+
+
+
 # Release 3.0.695.1
 
 ## 消息队列 CKafka(ckafka) 版本：2019-08-19

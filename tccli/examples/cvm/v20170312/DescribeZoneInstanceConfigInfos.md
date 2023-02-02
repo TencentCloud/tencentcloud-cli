@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cvm DescribeZoneInstanceConfigInfos --cli-unfold-argument  \
-    --Filters.0.Name zone \
-    --Filters.0.Values ap-guangzhou-2 \
-    --Filters.1.Name instance-charge-type \
-    --Filters.1.Values POSTPAID_BY_HOUR
+    --Filters.0.Values POSTPAID_BY_HOUR \
+    --Filters.0.Name instance-charge-type \
+    --Filters.1.Values ap-guangzhou-2 \
+    --Filters.1.Name zone
 ```
 
 Output: 
@@ -38,7 +38,7 @@ Output:
                     "UnitPriceDiscount": 0.0,
                     "DiscountPriceFiveYear": 0.0,
                     "OriginalPriceOneYear": 708.0,
-                    "ChargeUnit": "xx",
+                    "ChargeUnit": "HOUR",
                     "DiscountPriceThreeYear": 0.0,
                     "DiscountPriceOneYear": 587.64
                 },
@@ -56,8 +56,10 @@ Output:
                 "InstancePps": 20,
                 "InstanceBandwidth": 1.5,
                 "Gpu": 0,
+                "GpuCount": 0.0,
                 "Fpga": 0,
-                "Remark": ""
+                "Remark": "",
+                "Frequency": "2.4GHz"
             }
         ],
         "RequestId": "c28559ca-d3cf-40f0-9664-2ab303484efa"

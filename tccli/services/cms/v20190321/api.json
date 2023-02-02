@@ -131,7 +131,6 @@
       "document": "ActivateService请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "一级业务id(应用id)",
           "example": "12345",
           "member": "string",
@@ -141,7 +140,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "用户appid",
           "example": "12345",
           "member": "string",
@@ -151,7 +149,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "用户uin",
           "example": "12345",
           "member": "string",
@@ -161,7 +158,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "子账户uin",
           "example": "12345",
           "member": "string",
@@ -171,7 +167,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "应用名称",
           "example": "xxx",
           "member": "string",
@@ -181,7 +176,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "应用开通状态",
           "example": "true",
           "member": "bool",
@@ -191,7 +185,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "场景策略配置信息",
           "example": "无",
           "member": "SceneDetail",
@@ -211,7 +204,6 @@
           "example": "无",
           "member": "SceneDetail",
           "name": "SceneInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -492,7 +484,6 @@
       "document": "CreateKeywordsLib请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "取值范围为：\"text\",\"image\",\"audio\",\"video\"，标识词库所依赖的服务是文本服务还是图片服务",
           "example": "\"text\",\"image\",\"audio\",\"video\"",
           "member": "string",
@@ -502,7 +493,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义库名称",
           "example": "1",
           "member": "string",
@@ -512,7 +502,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "描述",
           "example": "2",
           "member": "string",
@@ -522,7 +511,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "调用方客户 appid",
           "example": "208153098",
           "member": "string",
@@ -532,7 +520,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "调用方客户 uin",
           "example": "10000124312",
           "member": "string",
@@ -542,7 +529,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "调用方客户 subUin",
           "example": "10000123333",
           "member": "string",
@@ -552,7 +538,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "审核建议(Review/Block)",
           "example": "Review",
           "member": "string",
@@ -562,7 +547,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "匹配模式(ExactMatch/FuzzyMatch)",
           "example": "FuzzyMatch",
           "member": "string",
@@ -582,7 +566,6 @@
           "example": "1234asdf",
           "member": "string",
           "name": "ID",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -600,58 +583,58 @@
       "document": "CreateKeywordsSamples请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Service Type(可选项：Text/Image/Audio/Video)",
           "example": "\"text\",\"image\",\"audio\",\"video\"",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "关键词库信息",
           "example": "\"x\"",
           "member": "UserKeyword",
           "name": "UserKeywords",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "调用方客户 appid",
           "example": "208153098",
           "member": "string",
           "name": "UserAppID",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "调用方客户 uin",
           "example": "10000124312",
           "member": "string",
           "name": "UserUin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "调用方客户 subUin",
           "example": "10000123333",
           "member": "string",
           "name": "UserSubUin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义库ID，不传默认为操作预设库",
           "example": "\"1\"",
           "member": "string",
           "name": "LibID",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -664,18 +647,18 @@
           "example": "1",
           "member": "string",
           "name": "SampleIDs",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "重复关键词列表",
           "example": "无",
           "member": "UserKeywordInfo",
           "name": "DupInfos",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -871,58 +854,58 @@
       "document": "DeleteLibSamples请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "关键词ID",
           "example": "2",
           "member": "string",
           "name": "SampleIDs",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "终端用户的AppID，如无，则默认为腾讯云客户",
           "example": "12345",
           "member": "string",
           "name": "UserAppID",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "终端用户的Uin，如无，则默认为腾讯云客户",
           "example": "10000124312",
           "member": "string",
           "name": "UserUin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "终端用户的SubUin，如无，则默认为腾讯云客户",
           "example": "10000124312",
           "member": "string",
           "name": "UserSubUin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "词库ID，如无，则操作预设库",
           "example": "1",
           "member": "string",
           "name": "LibID",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "词库类型，只能为Text/Image/Audio/Video之一，如无LibID,此处不能为空",
           "example": "Text",
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -935,18 +918,18 @@
           "example": "1",
           "member": "int64",
           "name": "Count",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "每个关键词删除的结果",
           "example": "无",
           "member": "DeleteSampleDetails",
           "name": "Details",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3426,7 +3409,6 @@
       "document": "场景明细",
       "members": [
         {
-          "default": "",
           "document": "场景ID",
           "example": "xxxx",
           "member": "string",
@@ -3437,7 +3419,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "策略信息",
           "example": "无",
           "member": "BizInfo",
@@ -3448,7 +3429,7 @@
           "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ServiceEntry": {
       "document": "内容安全服务类型对应的统计信息",
@@ -3852,27 +3833,27 @@
       "document": "内容安全识别结果统计数据",
       "members": [
         {
-          "default": "",
           "document": "该次条件查询结果记录总数",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "该次条件查询结果记录明细\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "ServiceEntry",
           "name": "Data",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "User": {
       "document": "用户相关信息",

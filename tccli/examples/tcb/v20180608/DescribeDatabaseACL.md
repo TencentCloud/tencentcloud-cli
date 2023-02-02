@@ -1,21 +1,18 @@
-**Example 1: 示例**
+**Example 1: 查询数据库ACL**
 
-
+查询数据库集合的ACL
 
 Input: 
 
 ```
-tccli tcb DescribeDatabaseACL --cli-unfold-argument  \
-    --EnvId test-23 \
-    --CollectionName testCollection
-```
+tccli tcb DescribeDatabaseACL --cli-unfold-argument ```
 
 Output: 
 ```
 {
     "Response": {
-        "AclTag": "READONLY",
-        "RequestId": "2bced453-09e4-4e87-9317-c3bc21c4ee22"
+        "AclTag": "xx",
+        "RequestId": "xx"
     }
 }
 ```

@@ -1303,121 +1303,130 @@
       "document": "DescribeDataSourceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "每页条数",
           "example": "无",
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "页码",
           "example": "无",
           "member": "int64",
           "name": "PageIndex",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "环境 id",
           "example": "无",
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "应用id数组",
           "example": "无",
           "member": "string",
           "name": "Appids",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源id数组",
           "example": "无",
           "member": "string",
           "name": "DataSourceIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源名称数组",
           "example": "无",
           "member": "string",
           "name": "DataSourceNames",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源类型 database-自建数据源；cloud-integration-自定义数据源",
           "example": "无",
           "member": "string",
           "name": "DataSourceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源模糊查询参数",
           "example": "无",
           "member": "DataSourceQueryOption",
           "name": "QueryOption",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源视图Id数组",
           "example": "无",
           "member": "string",
           "name": "ViewIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "查询未关联应用的数据源，0:未关联，该参数配合 AppIds 参数一块使用",
           "example": "无",
           "member": "int64",
           "name": "AppLinkStatus",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "查询应用绑定数据源: 0: 否,1: 是",
           "example": "无",
           "member": "int64",
           "name": "QueryBindToApp",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "查询连接器 0 数据模型 1 连接器 2 自定义连接器",
           "example": "无",
           "member": "int64",
           "name": "QueryConnector",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "查询数据源黑名单机制，比如不想要系统数据源[\"system\"]",
           "example": "[\"system\"]",
           "member": "string",
           "name": "NotQuerySubTypeList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "查询channelList",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1430,9 +1439,9 @@
           "example": "无",
           "member": "DataSourceDetailItems",
           "name": "Data",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
