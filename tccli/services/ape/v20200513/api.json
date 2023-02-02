@@ -4,49 +4,57 @@
       "document": "批量获取授权书下载地址",
       "input": "BatchDescribeOrderCertificateRequest",
       "name": "批量获取授权书下载地址",
-      "output": "BatchDescribeOrderCertificateResponse"
+      "output": "BatchDescribeOrderCertificateResponse",
+      "status": "online"
     },
     "BatchDescribeOrderImage": {
       "document": "批量获取图片下载地址",
       "input": "BatchDescribeOrderImageRequest",
       "name": "批量获取图片下载地址",
-      "output": "BatchDescribeOrderImageResponse"
+      "output": "BatchDescribeOrderImageResponse",
+      "status": "online"
     },
     "CreateOrderAndDownloads": {
       "document": "核销图片，获取原图URL地址",
       "input": "CreateOrderAndDownloadsRequest",
       "name": "获取图片下载地址",
-      "output": "CreateOrderAndDownloadsResponse"
+      "output": "CreateOrderAndDownloadsResponse",
+      "status": "online"
     },
     "CreateOrderAndPay": {
       "document": "购买一张图片并且支付",
       "input": "CreateOrderAndPayRequest",
       "name": "创建订单并支付",
-      "output": "CreateOrderAndPayResponse"
+      "output": "CreateOrderAndPayResponse",
+      "status": "online"
     },
     "DescribeAuthUsers": {
       "document": "分页查询授权人列表",
       "input": "DescribeAuthUsersRequest",
       "name": "查询授权人列表",
-      "output": "DescribeAuthUsersResponse"
+      "output": "DescribeAuthUsersResponse",
+      "status": "online"
     },
     "DescribeDownloadInfos": {
       "document": "获取用户图片下载记录",
       "input": "DescribeDownloadInfosRequest",
       "name": "获取图片下载记录",
-      "output": "DescribeDownloadInfosResponse"
+      "output": "DescribeDownloadInfosResponse",
+      "status": "online"
     },
     "DescribeImage": {
       "document": "根据ID查询一张图片的详细信息",
       "input": "DescribeImageRequest",
       "name": "查询图片详情",
-      "output": "DescribeImageResponse"
+      "output": "DescribeImageResponse",
+      "status": "online"
     },
     "DescribeImages": {
       "document": "根据关键字搜索图片列表",
       "input": "DescribeImagesRequest",
       "name": "查询图片列表",
-      "output": "DescribeImagesResponse"
+      "output": "DescribeImagesResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,103 +4,120 @@
       "document": "添加企业组织节点",
       "input": "AddOrganizationNodeRequest",
       "name": "添加企业组织节点",
-      "output": "AddOrganizationNodeResponse"
+      "output": "AddOrganizationNodeResponse",
+      "status": "online"
     },
     "BindOrganizationMemberAuthAccount": {
       "document": "绑定组织成员和组织管理员子账号的授权关系",
       "input": "BindOrganizationMemberAuthAccountRequest",
       "name": "绑定组织成员和组织管理员子账号的授权关系",
-      "output": "BindOrganizationMemberAuthAccountResponse"
+      "output": "BindOrganizationMemberAuthAccountResponse",
+      "status": "online"
     },
     "CancelOrganizationMemberAuthAccount": {
       "document": "取消组织成员和组织管理员子账号的授权关系\n",
       "input": "CancelOrganizationMemberAuthAccountRequest",
       "name": "取消组织成员和组织管理员子账号的授权关系",
-      "output": "CancelOrganizationMemberAuthAccountResponse"
+      "output": "CancelOrganizationMemberAuthAccountResponse",
+      "status": "online"
     },
     "CreateOrganizationMember": {
       "document": "创建组织成员",
       "input": "CreateOrganizationMemberRequest",
       "name": "创建组织成员",
-      "output": "CreateOrganizationMemberResponse"
+      "output": "CreateOrganizationMemberResponse",
+      "status": "online"
     },
     "CreateOrganizationMemberPolicy": {
       "document": "创建组织成员访问授权策略",
       "input": "CreateOrganizationMemberPolicyRequest",
       "name": "创建组织成员访问授权策略",
-      "output": "CreateOrganizationMemberPolicyResponse"
+      "output": "CreateOrganizationMemberPolicyResponse",
+      "status": "online"
     },
     "DeleteOrganizationMembers": {
       "document": "批量删除企业组织成员",
       "input": "DeleteOrganizationMembersRequest",
       "name": "批量删除企业组织成员",
-      "output": "DeleteOrganizationMembersResponse"
+      "output": "DeleteOrganizationMembersResponse",
+      "status": "online"
     },
     "DeleteOrganizationNodes": {
       "document": "批量删除企业组织节点",
       "input": "DeleteOrganizationNodesRequest",
       "name": "批量删除企业组织节点",
-      "output": "DeleteOrganizationNodesResponse"
+      "output": "DeleteOrganizationNodesResponse",
+      "status": "online"
     },
     "DescribeOrganization": {
       "document": "获取企业组织信息",
       "input": "DescribeOrganizationRequest",
       "name": "获取企业组织信息",
-      "output": "DescribeOrganizationResponse"
+      "output": "DescribeOrganizationResponse",
+      "status": "online"
     },
     "DescribeOrganizationAuthNode": {
       "document": "获取可创建组织成员的认证主体关系列表",
       "input": "DescribeOrganizationAuthNodeRequest",
       "name": "获取可创建组织成员的认证主体关系列表",
-      "output": "DescribeOrganizationAuthNodeResponse"
+      "output": "DescribeOrganizationAuthNodeResponse",
+      "status": "online"
     },
     "DescribeOrganizationMemberAuthAccounts": {
       "document": "获取组织成员被绑定授权关系的子账号列表",
       "input": "DescribeOrganizationMemberAuthAccountsRequest",
       "name": "获取组织成员被绑定授权关系的子账号列表",
-      "output": "DescribeOrganizationMemberAuthAccountsResponse"
+      "output": "DescribeOrganizationMemberAuthAccountsResponse",
+      "status": "online"
     },
     "DescribeOrganizationMemberAuthIdentities": {
       "document": "获取组织成员可被管理的身份列表",
       "input": "DescribeOrganizationMemberAuthIdentitiesRequest",
       "name": "获取组织成员可被管理的身份列表",
-      "output": "DescribeOrganizationMemberAuthIdentitiesResponse"
+      "output": "DescribeOrganizationMemberAuthIdentitiesResponse",
+      "status": "online"
     },
     "DescribeOrganizationMemberPolicies": {
       "document": "获取组织成员的授权策略列表",
       "input": "DescribeOrganizationMemberPoliciesRequest",
       "name": "获取组织成员的授权策略列表",
-      "output": "DescribeOrganizationMemberPoliciesResponse"
+      "output": "DescribeOrganizationMemberPoliciesResponse",
+      "status": "online"
     },
     "DescribeOrganizationMembers": {
       "document": "获取企业组织成员列表",
       "input": "DescribeOrganizationMembersRequest",
       "name": "获取企业组织成员列表",
-      "output": "DescribeOrganizationMembersResponse"
+      "output": "DescribeOrganizationMembersResponse",
+      "status": "online"
     },
     "DescribeOrganizationNodes": {
       "document": "获取组织节点列表",
       "input": "DescribeOrganizationNodesRequest",
       "name": "获取组织节点列表",
-      "output": "DescribeOrganizationNodesResponse"
+      "output": "DescribeOrganizationNodesResponse",
+      "status": "online"
     },
     "ListOrganizationIdentity": {
       "document": "获取组织成员访问身份列表",
       "input": "ListOrganizationIdentityRequest",
       "name": "获取组织成员访问身份列表",
-      "output": "ListOrganizationIdentityResponse"
+      "output": "ListOrganizationIdentityResponse",
+      "status": "online"
     },
     "MoveOrganizationNodeMembers": {
       "document": "移动成员到指定企业组织节点",
       "input": "MoveOrganizationNodeMembersRequest",
       "name": "移动成员到指定企业组织节点",
-      "output": "MoveOrganizationNodeMembersResponse"
+      "output": "MoveOrganizationNodeMembersResponse",
+      "status": "online"
     },
     "UpdateOrganizationNode": {
       "document": "更新企业组织节点",
       "input": "UpdateOrganizationNodeRequest",
       "name": "更新企业组织节点",
-      "output": "UpdateOrganizationNodeResponse"
+      "output": "UpdateOrganizationNodeResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,121 +4,141 @@
       "document": "此接口用于为某个 EIP 关联 ACL。",
       "input": "BindEipAclsRequest",
       "name": "绑定弹性公网IP ACL",
-      "output": "BindEipAclsResponse"
+      "output": "BindEipAclsResponse",
+      "status": "online"
     },
     "BindHosted": {
       "document": "BindHosted接口用于绑定黑石弹性公网IP到黑石托管机器上",
       "input": "BindHostedRequest",
       "name": "黑石托管机器绑定EIP",
-      "output": "BindHostedResponse"
+      "output": "BindHostedResponse",
+      "status": "online"
     },
     "BindRs": {
       "document": "绑定黑石EIP",
       "input": "BindRsRequest",
       "name": "绑定黑石EIP",
-      "output": "BindRsResponse"
+      "output": "BindRsResponse",
+      "status": "online"
     },
     "BindVpcIp": {
       "document": "黑石EIP绑定VPCIP",
       "input": "BindVpcIpRequest",
       "name": "黑石EIP绑定VPCIP",
-      "output": "BindVpcIpResponse"
+      "output": "BindVpcIpResponse",
+      "status": "online"
     },
     "CreateEip": {
       "document": "创建黑石弹性公网IP",
       "input": "CreateEipRequest",
       "name": "创建黑石EIP",
-      "output": "CreateEipResponse"
+      "output": "CreateEipResponse",
+      "status": "online"
     },
     "CreateEipAcl": {
       "document": "创建黑石弹性公网 EIPACL",
       "input": "CreateEipAclRequest",
       "name": "创建黑石弹性公网 EIPACL",
-      "output": "CreateEipAclResponse"
+      "output": "CreateEipAclResponse",
+      "status": "online"
     },
     "DeleteEip": {
       "document": "释放黑石弹性公网IP",
       "input": "DeleteEipRequest",
       "name": "释放黑石弹性公网IP",
-      "output": "DeleteEipResponse"
+      "output": "DeleteEipResponse",
+      "status": "online"
     },
     "DeleteEipAcl": {
       "document": "删除弹性公网IP ACL",
       "input": "DeleteEipAclRequest",
       "name": "删除弹性公网IP ACL",
-      "output": "DeleteEipAclResponse"
+      "output": "DeleteEipAclResponse",
+      "status": "online"
     },
     "DescribeEipAcls": {
       "document": "查询弹性公网IP ACL",
       "input": "DescribeEipAclsRequest",
       "name": "查询弹性公网IP ACL",
-      "output": "DescribeEipAclsResponse"
+      "output": "DescribeEipAclsResponse",
+      "status": "online"
     },
     "DescribeEipQuota": {
       "document": "查询黑石EIP 限额",
       "input": "DescribeEipQuotaRequest",
       "name": "查询黑石EIP 限额",
-      "output": "DescribeEipQuotaResponse"
+      "output": "DescribeEipQuotaResponse",
+      "status": "online"
     },
     "DescribeEipTask": {
       "document": "黑石EIP查询任务状态",
       "input": "DescribeEipTaskRequest",
       "name": "黑石EIP查询任务状态",
-      "output": "DescribeEipTaskResponse"
+      "output": "DescribeEipTaskResponse",
+      "status": "online"
     },
     "DescribeEips": {
       "document": "黑石EIP查询接口",
       "input": "DescribeEipsRequest",
       "name": "黑石EIP查询接口",
-      "output": "DescribeEipsResponse"
+      "output": "DescribeEipsResponse",
+      "status": "online"
     },
     "ModifyEipAcl": {
       "document": "修改弹性公网IP ACL",
       "input": "ModifyEipAclRequest",
       "name": "修改弹性公网IP ACL",
-      "output": "ModifyEipAclResponse"
+      "output": "ModifyEipAclResponse",
+      "status": "online"
     },
     "ModifyEipCharge": {
       "document": "黑石EIP修改计费方式",
       "input": "ModifyEipChargeRequest",
       "name": "黑石EIP修改计费方式",
-      "output": "ModifyEipChargeResponse"
+      "output": "ModifyEipChargeResponse",
+      "status": "online"
     },
     "ModifyEipName": {
       "document": "更新黑石EIP名称",
       "input": "ModifyEipNameRequest",
       "name": "更新黑石EIP名称",
-      "output": "ModifyEipNameResponse"
+      "output": "ModifyEipNameResponse",
+      "status": "online"
     },
     "UnbindEipAcls": {
       "document": "解绑弹性公网IP ACL",
       "input": "UnbindEipAclsRequest",
       "name": "解绑弹性公网IP ACL",
-      "output": "UnbindEipAclsResponse"
+      "output": "UnbindEipAclsResponse",
+      "status": "online"
     },
     "UnbindHosted": {
       "document": "UnbindHosted接口用于解绑托管机器上的EIP",
       "input": "UnbindHostedRequest",
       "name": "黑石托管机器解绑EIP",
-      "output": "UnbindHostedResponse"
+      "output": "UnbindHostedResponse",
+      "status": "online"
     },
     "UnbindRs": {
       "document": "解绑黑石EIP",
       "input": "UnbindRsRequest",
       "name": "解绑黑石EIP",
-      "output": "UnbindRsResponse"
+      "output": "UnbindRsResponse",
+      "status": "online"
     },
     "UnbindRsList": {
       "document": "批量解绑物理机弹性公网IP接口",
       "input": "UnbindRsListRequest",
       "name": "批量解绑物理机弹性公网IP",
-      "output": "UnbindRsListResponse"
+      "output": "UnbindRsListResponse",
+      "status": "online"
     },
     "UnbindVpcIp": {
       "document": "黑石EIP解绑VPCIP",
       "input": "UnbindVpcIpRequest",
       "name": "黑石EIP解绑VPCIP",
-      "output": "UnbindVpcIpResponse"
+      "output": "UnbindVpcIpResponse",
+      "status": "online"
     }
   },
   "metadata": {

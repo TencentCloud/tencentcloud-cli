@@ -4,187 +4,218 @@
       "document": "根据 Id 列表查询歌曲的详细信息，包含基础信息及播放信息。",
       "input": "BatchDescribeKTVMusicDetailsRequest",
       "name": "批量获取直播互动曲目详情",
-      "output": "BatchDescribeKTVMusicDetailsResponse"
+      "output": "BatchDescribeKTVMusicDetailsResponse",
+      "status": "online"
     },
     "CreateKTVRobot": {
       "document": "创建机器人，支持进入 RTC 房间，播放直播互动曲库歌曲。",
       "input": "CreateKTVRobotRequest",
       "name": "创建直播互动机器人",
-      "output": "CreateKTVRobotResponse"
+      "output": "CreateKTVRobotResponse",
+      "status": "online"
     },
     "DescribeAuthInfo": {
       "document": "获取授权项目信息列表",
       "input": "DescribeAuthInfoRequest",
       "name": "获取授权项目列表",
-      "output": "DescribeAuthInfoResponse"
+      "output": "DescribeAuthInfoResponse",
+      "status": "online"
     },
     "DescribeCloudMusic": {
       "document": "获取云音乐播放信息接口",
       "input": "DescribeCloudMusicRequest",
       "name": "获取云音乐播放信息",
-      "output": "DescribeCloudMusicResponse"
+      "output": "DescribeCloudMusicResponse",
+      "status": "online"
     },
     "DescribeCloudMusicPurchased": {
       "document": "获取授权项目下已购云音乐列表",
       "input": "DescribeCloudMusicPurchasedRequest",
       "name": "获取授权项目已购云音乐列表",
-      "output": "DescribeCloudMusicPurchasedResponse"
+      "output": "DescribeCloudMusicPurchasedResponse",
+      "status": "online"
     },
     "DescribeItemById": {
       "document": "根据歌曲ID查询歌曲信息",
       "input": "DescribeItemByIdRequest",
       "name": "根据歌曲ID查询歌曲信息",
-      "output": "DescribeItemByIdResponse"
+      "output": "DescribeItemByIdResponse",
+      "status": "online"
     },
     "DescribeItems": {
       "document": "该服务后续会停用，不再建议使用",
       "input": "DescribeItemsRequest",
       "name": "获取分类内容下歌曲列表",
-      "output": "DescribeItemsResponse"
+      "output": "DescribeItemsResponse",
+      "status": "online"
     },
     "DescribeKTVMusicDetail": {
       "document": "根据 Id 查询歌曲的详细信息，包含基础信息及播放信息。",
       "input": "DescribeKTVMusicDetailRequest",
       "name": "获取直播互动曲目详情",
-      "output": "DescribeKTVMusicDetailResponse"
+      "output": "DescribeKTVMusicDetailResponse",
+      "status": "online"
     },
     "DescribeKTVMusicTags": {
       "document": "获取直播互动曲库标签分组信息和标签信息",
       "input": "DescribeKTVMusicTagsRequest",
       "name": "获取直播互动曲库标签信息",
-      "output": "DescribeKTVMusicTagsResponse"
+      "output": "DescribeKTVMusicTagsResponse",
+      "status": "online"
     },
     "DescribeKTVPlaylistDetail": {
       "document": "根据歌单 Id 获取歌单详情，包括歌单的基础信息以及歌曲列表。",
       "input": "DescribeKTVPlaylistDetailRequest",
       "name": "获取直播互动曲库推荐歌单详情",
-      "output": "DescribeKTVPlaylistDetailResponse"
+      "output": "DescribeKTVPlaylistDetailResponse",
+      "status": "online"
     },
     "DescribeKTVPlaylists": {
       "document": "获取直播互动曲库推荐歌单列表。",
       "input": "DescribeKTVPlaylistsRequest",
       "name": "获取直播互动曲库推荐歌单列表",
-      "output": "DescribeKTVPlaylistsResponse"
+      "output": "DescribeKTVPlaylistsResponse",
+      "status": "online"
     },
     "DescribeKTVRobots": {
       "document": "获取机器人列表，支持 Id、状态等过滤条件。",
       "input": "DescribeKTVRobotsRequest",
       "name": "获取直播互动机器人信息",
-      "output": "DescribeKTVRobotsResponse"
+      "output": "DescribeKTVRobotsResponse",
+      "status": "online"
     },
     "DescribeKTVSingerCategories": {
       "document": "获取直播互动曲库歌手分类信息",
       "input": "DescribeKTVSingerCategoriesRequest",
       "name": "获取直播互动曲库歌手分类信息",
-      "output": "DescribeKTVSingerCategoriesResponse"
+      "output": "DescribeKTVSingerCategoriesResponse",
+      "status": "online"
     },
     "DescribeKTVSingerMusics": {
       "document": "根据歌手id，返回该歌手下歌曲列表。\n\n\n",
       "input": "DescribeKTVSingerMusicsRequest",
       "name": "获取歌手下歌曲列表",
-      "output": "DescribeKTVSingerMusicsResponse"
+      "output": "DescribeKTVSingerMusicsResponse",
+      "status": "online"
     },
     "DescribeKTVSingers": {
       "document": "根据过滤条件，返回匹配的歌手列表。",
       "input": "DescribeKTVSingersRequest",
       "name": "获取直播互动曲库歌手",
-      "output": "DescribeKTVSingersResponse"
+      "output": "DescribeKTVSingersResponse",
+      "status": "online"
     },
     "DescribeKTVSuggestions": {
       "document": "获取直播互动曲库联想词",
       "input": "DescribeKTVSuggestionsRequest",
       "name": "获取直播互动曲库联想词",
-      "output": "DescribeKTVSuggestionsResponse"
+      "output": "DescribeKTVSuggestionsResponse",
+      "status": "online"
     },
     "DescribeKTVTopList": {
       "document": "获取直播互动曲库歌曲的周榜和月榜",
       "input": "DescribeKTVTopListRequest",
       "name": "获取直播互动曲库歌曲排行榜",
-      "output": "DescribeKTVTopListResponse"
+      "output": "DescribeKTVTopListResponse",
+      "status": "online"
     },
     "DescribeLyric": {
       "document": "根据接口的模式及歌曲ID来取得歌词信息或者波形图信息。",
       "input": "DescribeLyricRequest",
       "name": "获取歌词信息",
-      "output": "DescribeLyricResponse"
+      "output": "DescribeLyricResponse",
+      "status": "online"
     },
     "DescribeMusic": {
       "document": "获取曲库包歌曲播放信息接口",
       "input": "DescribeMusicRequest",
       "name": "获取曲库包歌曲播放信息",
-      "output": "DescribeMusicResponse"
+      "output": "DescribeMusicResponse",
+      "status": "online"
     },
     "DescribeMusicSaleStatus": {
       "document": "根据音乐信息查询音乐是否在售",
       "input": "DescribeMusicSaleStatusRequest",
       "name": "查询歌曲在售状态",
-      "output": "DescribeMusicSaleStatusResponse"
+      "output": "DescribeMusicSaleStatusResponse",
+      "status": "online"
     },
     "DescribePackageItems": {
       "document": "获取曲库包下已核销歌曲列表接口",
       "input": "DescribePackageItemsRequest",
       "name": "获取曲库包已核销歌曲列表",
-      "output": "DescribePackageItemsResponse"
+      "output": "DescribePackageItemsResponse",
+      "status": "online"
     },
     "DescribePackages": {
       "document": "获取已购曲库包列表接口",
       "input": "DescribePackagesRequest",
       "name": "获取已购曲库包列表",
-      "output": "DescribePackagesResponse"
+      "output": "DescribePackagesResponse",
+      "status": "online"
     },
     "DescribePkgOfflineMusic": {
       "document": "根据购买曲库包用户可查询已回退的歌曲信息",
       "input": "DescribePkgOfflineMusicRequest",
       "name": "曲库包获取已核销歌曲回退数据",
-      "output": "DescribePkgOfflineMusicResponse"
+      "output": "DescribePkgOfflineMusicResponse",
+      "status": "online"
     },
     "DescribeStations": {
       "document": "该服务后续会停用，不再建议使用",
       "input": "DescribeStationsRequest",
       "name": "获取分类内容（Station）列表",
-      "output": "DescribeStationsResponse"
+      "output": "DescribeStationsResponse",
+      "status": "online"
     },
     "DestroyKTVRobot": {
       "document": "销毁机器人，机器人退出 RTC 房间。",
       "input": "DestroyKTVRobotRequest",
       "name": "销毁直播互动机器人",
-      "output": "DestroyKTVRobotResponse"
+      "output": "DestroyKTVRobotResponse",
+      "status": "online"
     },
     "ModifyMusicOnShelves": {
       "document": "根据资源方，需要变更的参数，请求该接口进行变更，为空的参数默认为无变更",
       "input": "ModifyMusicOnShelvesRequest",
       "name": "变更歌曲参数",
-      "output": "ModifyMusicOnShelvesResponse"
+      "output": "ModifyMusicOnShelvesResponse",
+      "status": "online"
     },
     "PutMusicOnTheShelves": {
       "document": "根据资源方所传歌曲信息，进行歌曲上架，多个歌曲同时请求时，需构造复合结构进行请求",
       "input": "PutMusicOnTheShelvesRequest",
       "name": "上架歌曲",
-      "output": "PutMusicOnTheShelvesResponse"
+      "output": "PutMusicOnTheShelvesResponse",
+      "status": "online"
     },
     "ReportData": {
       "document": "客户上报用户数据功能，为了更好地为用户提供优质服务",
       "input": "ReportDataRequest",
       "name": "上报歌曲播放数据",
-      "output": "ReportDataResponse"
+      "output": "ReportDataResponse",
+      "status": "online"
     },
     "SearchKTVMusics": {
       "document": "根据搜索条件，返回匹配的歌曲列表。",
       "input": "SearchKTVMusicsRequest",
       "name": "搜索直播互动曲库歌曲",
-      "output": "SearchKTVMusicsResponse"
+      "output": "SearchKTVMusicsResponse",
+      "status": "online"
     },
     "SyncKTVRobotCommand": {
       "document": "下发操作机器人指令，支持播放、暂停、恢复、歌单设置等操作指令，实现对机器人行为的控制。",
       "input": "SyncKTVRobotCommandRequest",
       "name": "同步直播互动机器人指令",
-      "output": "SyncKTVRobotCommandResponse"
+      "output": "SyncKTVRobotCommandResponse",
+      "status": "online"
     },
     "TakeMusicOffShelves": {
       "document": "根据资源方所传MusicId进行将歌曲进行下架，多个MusicId使用逗号隔开",
       "input": "TakeMusicOffShelvesRequest",
       "name": "下架歌曲",
-      "output": "TakeMusicOffShelvesResponse"
+      "output": "TakeMusicOffShelvesResponse",
+      "status": "online"
     }
   },
   "metadata": {

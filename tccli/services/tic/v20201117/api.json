@@ -4,79 +4,92 @@
       "document": "本接口（ApplyStack）用于触发资源栈下某个版本的Apply事件。\n\n- 当版本处于PLAN_IN_PROGRESS或APPLY_IN_PROGRESS状态时，将无法再执行本操作\n- 当版本处于APPLY_COMPLETED状态时，本操作无法执行",
       "input": "ApplyStackRequest",
       "name": "执行Apply事件",
-      "output": "ApplyStackResponse"
+      "output": "ApplyStackResponse",
+      "status": "online"
     },
     "CreateStack": {
       "document": "本接口（CreateStack）用于通过传递一个COS的terraform zip模版URL来创建一个资源栈。创建资源栈后仍需要用户调用对应的plan, apply, destory执行对应的事件。",
       "input": "CreateStackRequest",
       "name": "创建资源栈",
-      "output": "CreateStackResponse"
+      "output": "CreateStackResponse",
+      "status": "online"
     },
     "CreateStackVersion": {
       "document": "本接口（CreateStackVersion）用于给资源栈新增一个HCL模版版本，仅限COS链接，且为zip格式。",
       "input": "CreateStackVersionRequest",
       "name": "给资源栈新增一个版本",
-      "output": "CreateStackVersionResponse"
+      "output": "CreateStackVersionResponse",
+      "status": "online"
     },
     "DeleteStack": {
       "document": "本接口（DeleteStack）用于删除一个资源栈（配置、版本、事件信息）。但不会销毁资源管理的云资源。如果需要销毁资源栈管理的云资源，请调用 DestoryStack 接口销毁云资源。",
       "input": "DeleteStackRequest",
       "name": "删除资源栈",
-      "output": "DeleteStackResponse"
+      "output": "DeleteStackResponse",
+      "status": "online"
     },
     "DeleteStackVersion": {
       "document": "本接口（DeleteStackVersion）用于删除一个版本，处于PLAN_IN_PROGRESS和APPLY_IN_PROGRESS状态中的版本无法删除。",
       "input": "DeleteStackVersionRequest",
       "name": "删除一个版本",
-      "output": "DeleteStackVersionResponse"
+      "output": "DeleteStackVersionResponse",
+      "status": "online"
     },
     "DescribeStackEvent": {
       "document": "本接口（DescribeStackEvent）用于获取单个事件详情，尤其是可以得到事件的详细控制台输出文本。",
       "input": "DescribeStackEventRequest",
       "name": "获取单个事件详情",
-      "output": "DescribeStackEventResponse"
+      "output": "DescribeStackEventResponse",
+      "status": "online"
     },
     "DescribeStackEvents": {
       "document": "本接口（DescribeStackEvents）用于查看一个或多个事件详细信息。\n\n- 可以根据事件ID过滤感兴趣的事件\n- 也可以根据版本ID，资源栈ID，事件类型，事件状态过滤事件，过滤信息详细请见过滤器Filter\n- 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的事件",
       "input": "DescribeStackEventsRequest",
       "name": "查询事件列表",
-      "output": "DescribeStackEventsResponse"
+      "output": "DescribeStackEventsResponse",
+      "status": "online"
     },
     "DescribeStackVersions": {
       "document": "本接口（DescribeStackVersions）用于查询一个或多个版本的详细信息。\n\n- 可以根据版本ID查询感兴趣的版本\n- 可以根据版本名字和状态来过滤版本，详见过滤器Filter\n- 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的版本",
       "input": "DescribeStackVersionsRequest",
       "name": "查询版本列表",
-      "output": "DescribeStackVersionsResponse"
+      "output": "DescribeStackVersionsResponse",
+      "status": "online"
     },
     "DescribeStacks": {
       "document": "本接口（DescribeStacks）用于查询一个或多个资源栈的详细信息。\n\n- 可以根据资源栈ID来查询感兴趣的资源栈信息\n- 若参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的资源栈",
       "input": "DescribeStacksRequest",
       "name": "查询资源栈列表",
-      "output": "DescribeStacksResponse"
+      "output": "DescribeStacksResponse",
+      "status": "online"
     },
     "DestroyStack": {
       "document": "本接口（DestroyStack）用于删除资源栈下的某个版本所创建的资源。",
       "input": "DestroyStackRequest",
       "name": "执行Destroy事件",
-      "output": "DestroyStackResponse"
+      "output": "DestroyStackResponse",
+      "status": "online"
     },
     "PlanStack": {
       "document": "本接口（PlanStack）用于触发资源栈下某个版本的PLAN事件。\n\n- 当版本处于PLAN_IN_PROGRESS或APPLY_IN_PROGRESS状态时，将无法再执行本操作\n- 当版本处于APPLY_COMPLETED状态时，本操作无法执行",
       "input": "PlanStackRequest",
       "name": "执行Plan事件",
-      "output": "PlanStackResponse"
+      "output": "PlanStackResponse",
+      "status": "online"
     },
     "UpdateStack": {
       "document": "本接口（UpdateStack）用于更新资源栈的名称和描述。",
       "input": "UpdateStackRequest",
       "name": "更新资源栈",
-      "output": "UpdateStackResponse"
+      "output": "UpdateStackResponse",
+      "status": "online"
     },
     "UpdateStackVersion": {
       "document": "本接口（UpdateStackVersion）用于更新一个版本的模版内容，名称或描述，模版仅限COS URL，且为zip格式。",
       "input": "UpdateStackVersionRequest",
       "name": "更新资源栈版本的内容",
-      "output": "UpdateStackVersionResponse"
+      "output": "UpdateStackVersionResponse",
+      "status": "online"
     }
   },
   "metadata": {

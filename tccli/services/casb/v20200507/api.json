@@ -4,7 +4,8 @@
       "document": "同region下 根据用户输入的CasbId,MetaDataId 复制策略到DstCasbId,MetaDataId中。\n场景1：\n相同CasbId，不同MetadataId 下策略复制\n场景2：\n不同Casbid,不同MetaDataId 下策略复制\n场景3:\n相同CasbId,相同MetaDataId 且 DatabaseName不同 策略复制\n",
       "input": "CopyCryptoColumnPolicyRequest",
       "name": "复制字段策略",
-      "output": "CopyCryptoColumnPolicyResponse"
+      "output": "CopyCryptoColumnPolicyResponse",
+      "status": "online"
     }
   },
   "metadata": {

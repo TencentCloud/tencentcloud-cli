@@ -4,19 +4,22 @@
       "document": "此接口用于查询风险评估结果",
       "input": "DescribeRiskAssessmentRequest",
       "name": "查询风险评估结果",
-      "output": "DescribeRiskAssessmentResponse"
+      "output": "DescribeRiskAssessmentResponse",
+      "status": "online"
     },
     "DescribeRiskTrends": {
       "document": "以图表形式展示三种请求状态的趋势变化",
       "input": "DescribeRiskTrendsRequest",
       "name": "风险趋势统计",
-      "output": "DescribeRiskTrendsResponse"
+      "output": "DescribeRiskTrendsResponse",
+      "status": "online"
     },
     "ManageMarketingRisk": {
       "document": "全栈式风控引擎（RiskControlEngine，RCE）是基于人工智能技术和腾讯20年风控实战沉淀，依托腾讯海量业务构建的风控引擎，以轻量级的 SaaS 服务方式接入，帮助您快速解决注册、登录、营销活动等关键场景遇到的欺诈问题，实时防御黑灰产作恶。",
       "input": "ManageMarketingRiskRequest",
       "name": "全栈式风控引擎",
-      "output": "ManageMarketingRiskResponse"
+      "output": "ManageMarketingRiskResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,7 +4,8 @@
       "document": "用户风险质量接口",
       "input": "EvaluateUserRiskRequest",
       "name": "用户风险质量接口",
-      "output": "EvaluateUserRiskResponse"
+      "output": "EvaluateUserRiskResponse",
+      "status": "online"
     }
   },
   "metadata": {

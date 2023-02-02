@@ -4,43 +4,50 @@
       "document": "查询画像洞察任务详情",
       "input": "GetTaskDetailRequest",
       "name": "查询画像洞察任务详情",
-      "output": "GetTaskDetailResponse"
+      "output": "GetTaskDetailResponse",
+      "status": "online"
     },
     "GetTaskList": {
       "document": "查询当前账号AppID下的画像洞察任务列表",
       "input": "GetTaskListRequest",
       "name": "查询画像洞察任务列表",
-      "output": "GetTaskListResponse"
+      "output": "GetTaskListResponse",
+      "status": "online"
     },
     "PredictRating": {
       "document": "根据传入的设备号（IMEI、IDFA、手机号、手机号MD5），返回意向评级结果",
       "input": "PredictRatingRequest",
       "name": "购车意向评级接口",
-      "output": "PredictRatingResponse"
+      "output": "PredictRatingResponse",
+      "status": "online"
     },
     "QueryCallDetails": {
       "document": "查询调用明细",
       "input": "QueryCallDetailsRequest",
       "name": "查询调用明细",
-      "output": "QueryCallDetailsResponse"
+      "output": "QueryCallDetailsResponse",
+      "status": "online"
     },
     "QueryCallStat": {
       "document": "按时间维度获取调用量统计",
       "input": "QueryCallStatRequest",
       "name": "获取调用量统计",
-      "output": "QueryCallStatResponse"
+      "output": "QueryCallStatResponse",
+      "status": "online"
     },
     "QueryGeneralStat": {
       "document": "获取日/月/周/总调用量统计数据",
       "input": "QueryGeneralStatRequest",
       "name": "总统计数据",
-      "output": "QueryGeneralStatResponse"
+      "output": "QueryGeneralStatResponse",
+      "status": "online"
     },
     "UploadId": {
       "document": "上传群体画像的ID列表（支持的ID类型：0:imei 7:IDFA 8:MD5(imei)），后台返回生成的画像分析任务ID",
       "input": "UploadIdRequest",
       "name": "上传群体画像的ID列表",
-      "output": "UploadIdResponse"
+      "output": "UploadIdResponse",
+      "status": "online"
     }
   },
   "metadata": {

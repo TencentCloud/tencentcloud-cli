@@ -4,373 +4,435 @@
       "document": "用于添加机器组信息",
       "input": "AddMachineGroupInfoRequest",
       "name": "添加机器组信息",
-      "output": "AddMachineGroupInfoResponse"
+      "output": "AddMachineGroupInfoResponse",
+      "status": "online"
     },
     "ApplyConfigToMachineGroup": {
       "document": "应用采集配置到指定机器组",
       "input": "ApplyConfigToMachineGroupRequest",
       "name": "应用采集配置到指定机器组",
-      "output": "ApplyConfigToMachineGroupResponse"
+      "output": "ApplyConfigToMachineGroupResponse",
+      "status": "online"
     },
     "CloseKafkaConsumer": {
       "document": "关闭Kafka协议消费",
       "input": "CloseKafkaConsumerRequest",
       "name": "关闭Kafka协议消费",
-      "output": "CloseKafkaConsumerResponse"
+      "output": "CloseKafkaConsumerResponse",
+      "status": "online"
     },
     "CreateAlarm": {
       "document": "本接口用于创建告警策略。",
       "input": "CreateAlarmRequest",
       "name": "创建告警策略",
-      "output": "CreateAlarmResponse"
+      "output": "CreateAlarmResponse",
+      "status": "online"
     },
     "CreateAlarmNotice": {
       "document": "该接口用于创建通知渠道组。",
       "input": "CreateAlarmNoticeRequest",
       "name": "创建通知渠道组",
-      "output": "CreateAlarmNoticeResponse"
+      "output": "CreateAlarmNoticeResponse",
+      "status": "online"
     },
     "CreateConfig": {
       "document": "创建采集规则配置",
       "input": "CreateConfigRequest",
       "name": "创建采集规则配置",
-      "output": "CreateConfigResponse"
+      "output": "CreateConfigResponse",
+      "status": "online"
     },
     "CreateConfigExtra": {
       "document": "本接口用于创建特殊采集配置任务，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "CreateConfigExtraRequest",
       "name": "创建特殊采集配置任务",
-      "output": "CreateConfigExtraResponse"
+      "output": "CreateConfigExtraResponse",
+      "status": "online"
     },
     "CreateConsumer": {
       "document": "本接口用于创建投递任务",
       "input": "CreateConsumerRequest",
       "name": "创建投递任务",
-      "output": "CreateConsumerResponse"
+      "output": "CreateConsumerResponse",
+      "status": "online"
     },
     "CreateExport": {
       "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449",
       "input": "CreateExportRequest",
       "name": "创建日志下载任务",
-      "output": "CreateExportResponse"
+      "output": "CreateExportResponse",
+      "status": "online"
     },
     "CreateIndex": {
       "document": "本接口用于创建索引",
       "input": "CreateIndexRequest",
       "name": "创建索引",
-      "output": "CreateIndexResponse"
+      "output": "CreateIndexResponse",
+      "status": "online"
     },
     "CreateLogset": {
       "document": "本接口用于创建日志集，返回新创建的日志集的 ID。",
       "input": "CreateLogsetRequest",
       "name": "创建日志集",
-      "output": "CreateLogsetResponse"
+      "output": "CreateLogsetResponse",
+      "status": "online"
     },
     "CreateMachineGroup": {
       "document": "创建机器组",
       "input": "CreateMachineGroupRequest",
       "name": "创建机器组",
-      "output": "CreateMachineGroupResponse"
+      "output": "CreateMachineGroupResponse",
+      "status": "online"
     },
     "CreateShipper": {
       "document": "创建新的投递规则，【！！！注意】使用此接口，需要检查是否配置了投递COS的角色和权限。如果没有配置，请参考文档投递权限查看和配置https://cloud.tencent.com/document/product/614/71623。",
       "input": "CreateShipperRequest",
       "name": "创建投递规则",
-      "output": "CreateShipperResponse"
+      "output": "CreateShipperResponse",
+      "status": "online"
     },
     "CreateTopic": {
       "document": "本接口用于创建日志主题。",
       "input": "CreateTopicRequest",
       "name": "创建日志主题",
-      "output": "CreateTopicResponse"
+      "output": "CreateTopicResponse",
+      "status": "online"
     },
     "DeleteAlarm": {
       "document": "本接口用于删除告警策略。",
       "input": "DeleteAlarmRequest",
       "name": "删除告警策略",
-      "output": "DeleteAlarmResponse"
+      "output": "DeleteAlarmResponse",
+      "status": "online"
     },
     "DeleteAlarmNotice": {
       "document": "该接口用于删除通知渠道组",
       "input": "DeleteAlarmNoticeRequest",
       "name": "删除通知渠道组",
-      "output": "DeleteAlarmNoticeResponse"
+      "output": "DeleteAlarmNoticeResponse",
+      "status": "online"
     },
     "DeleteConfig": {
       "document": "删除采集规则配置",
       "input": "DeleteConfigRequest",
       "name": "删除采集规则配置",
-      "output": "DeleteConfigResponse"
+      "output": "DeleteConfigResponse",
+      "status": "online"
     },
     "DeleteConfigExtra": {
       "document": "本接口用于删除特殊采集规则配置，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "DeleteConfigExtraRequest",
       "name": "删除特殊采集规则配置",
-      "output": "DeleteConfigExtraResponse"
+      "output": "DeleteConfigExtraResponse",
+      "status": "online"
     },
     "DeleteConfigFromMachineGroup": {
       "document": "删除应用到机器组的采集配置",
       "input": "DeleteConfigFromMachineGroupRequest",
       "name": "删除应用到机器组的采集配置",
-      "output": "DeleteConfigFromMachineGroupResponse"
+      "output": "DeleteConfigFromMachineGroupResponse",
+      "status": "online"
     },
     "DeleteConsumer": {
       "document": "本接口用于删除投递配置",
       "input": "DeleteConsumerRequest",
       "name": "删除投递配置",
-      "output": "DeleteConsumerResponse"
+      "output": "DeleteConsumerResponse",
+      "status": "online"
     },
     "DeleteExport": {
       "document": "本接口用于删除日志下载任务",
       "input": "DeleteExportRequest",
       "name": "删除日志下载任务",
-      "output": "DeleteExportResponse"
+      "output": "DeleteExportResponse",
+      "status": "online"
     },
     "DeleteIndex": {
       "document": "本接口用于删除日志主题的索引配置，删除索引配置后将无法检索和查询采集到的日志。",
       "input": "DeleteIndexRequest",
       "name": "删除索引配置",
-      "output": "DeleteIndexResponse"
+      "output": "DeleteIndexResponse",
+      "status": "online"
     },
     "DeleteLogset": {
       "document": "本接口用于删除日志集。",
       "input": "DeleteLogsetRequest",
       "name": "删除日志集",
-      "output": "DeleteLogsetResponse"
+      "output": "DeleteLogsetResponse",
+      "status": "online"
     },
     "DeleteMachineGroup": {
       "document": "删除机器组",
       "input": "DeleteMachineGroupRequest",
       "name": "删除机器组",
-      "output": "DeleteMachineGroupResponse"
+      "output": "DeleteMachineGroupResponse",
+      "status": "online"
     },
     "DeleteMachineGroupInfo": {
       "document": "用于删除机器组信息",
       "input": "DeleteMachineGroupInfoRequest",
       "name": "删除机器组信息",
-      "output": "DeleteMachineGroupInfoResponse"
+      "output": "DeleteMachineGroupInfoResponse",
+      "status": "online"
     },
     "DeleteShipper": {
       "document": "删除投递规则",
       "input": "DeleteShipperRequest",
       "name": "删除投递规则",
-      "output": "DeleteShipperResponse"
+      "output": "DeleteShipperResponse",
+      "status": "online"
     },
     "DeleteTopic": {
       "document": "本接口用于删除日志主题。",
       "input": "DeleteTopicRequest",
       "name": "删除日志主题",
-      "output": "DeleteTopicResponse"
+      "output": "DeleteTopicResponse",
+      "status": "online"
     },
     "DescribeAlarmNotices": {
       "document": "该接口用于获取通知渠道组列表",
       "input": "DescribeAlarmNoticesRequest",
       "name": "获取通知渠道组列表",
-      "output": "DescribeAlarmNoticesResponse"
+      "output": "DescribeAlarmNoticesResponse",
+      "status": "online"
     },
     "DescribeAlarms": {
       "document": "本接口用于获取告警策略列表。",
       "input": "DescribeAlarmsRequest",
       "name": "获取告警策略列表",
-      "output": "DescribeAlarmsResponse"
+      "output": "DescribeAlarmsResponse",
+      "status": "online"
     },
     "DescribeConfigExtras": {
       "document": "本接口用于获取特殊采集配置，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "DescribeConfigExtrasRequest",
       "name": "获取特殊采集配置",
-      "output": "DescribeConfigExtrasResponse"
+      "output": "DescribeConfigExtrasResponse",
+      "status": "online"
     },
     "DescribeConfigMachineGroups": {
       "document": "获取采集规则配置所绑定的机器组",
       "input": "DescribeConfigMachineGroupsRequest",
       "name": "获取采集规则配置所绑定的机器组",
-      "output": "DescribeConfigMachineGroupsResponse"
+      "output": "DescribeConfigMachineGroupsResponse",
+      "status": "online"
     },
     "DescribeConfigs": {
       "document": "获取采集规则配置",
       "input": "DescribeConfigsRequest",
       "name": "获取采集规则配置",
-      "output": "DescribeConfigsResponse"
+      "output": "DescribeConfigsResponse",
+      "status": "online"
     },
     "DescribeConsumer": {
       "document": "本接口用于获取投递配置",
       "input": "DescribeConsumerRequest",
       "name": "获取投递配置",
-      "output": "DescribeConsumerResponse"
+      "output": "DescribeConsumerResponse",
+      "status": "online"
     },
     "DescribeExports": {
       "document": "本接口用于获取日志下载任务列表",
       "input": "DescribeExportsRequest",
       "name": "获取日志下载任务列表",
-      "output": "DescribeExportsResponse"
+      "output": "DescribeExportsResponse",
+      "status": "online"
     },
     "DescribeIndex": {
       "document": "本接口用于获取索引配置信息",
       "input": "DescribeIndexRequest",
       "name": "获取索引配置信息",
-      "output": "DescribeIndexResponse"
+      "output": "DescribeIndexResponse",
+      "status": "online"
     },
     "DescribeLogContext": {
       "document": "本接口用于搜索日志上下文附近的内容",
       "input": "DescribeLogContextRequest",
       "name": "上下文检索",
-      "output": "DescribeLogContextResponse"
+      "output": "DescribeLogContextResponse",
+      "status": "online"
     },
     "DescribeLogHistogram": {
       "document": "本接口用于构建日志数量直方图",
       "input": "DescribeLogHistogramRequest",
       "name": "获取日志数量直方图",
-      "output": "DescribeLogHistogramResponse"
+      "output": "DescribeLogHistogramResponse",
+      "status": "online"
     },
     "DescribeLogsets": {
       "document": "本接口用于获取日志集信息列表。",
       "input": "DescribeLogsetsRequest",
       "name": "获取日志集列表",
-      "output": "DescribeLogsetsResponse"
+      "output": "DescribeLogsetsResponse",
+      "status": "online"
     },
     "DescribeMachineGroupConfigs": {
       "document": "获取机器组绑定的采集规则配置",
       "input": "DescribeMachineGroupConfigsRequest",
       "name": "获取机器组绑定的采集规则配置",
-      "output": "DescribeMachineGroupConfigsResponse"
+      "output": "DescribeMachineGroupConfigsResponse",
+      "status": "online"
     },
     "DescribeMachineGroups": {
       "document": "获取机器组信息列表",
       "input": "DescribeMachineGroupsRequest",
       "name": "获取机器组列表",
-      "output": "DescribeMachineGroupsResponse"
+      "output": "DescribeMachineGroupsResponse",
+      "status": "online"
     },
     "DescribeMachines": {
       "document": "获取制定机器组下的机器状态",
       "input": "DescribeMachinesRequest",
       "name": "获取机器状态",
-      "output": "DescribeMachinesResponse"
+      "output": "DescribeMachinesResponse",
+      "status": "online"
     },
     "DescribePartitions": {
       "document": "本接口用于获取主题分区列表。",
       "input": "DescribePartitionsRequest",
       "name": "获取分区列表",
-      "output": "DescribePartitionsResponse"
+      "output": "DescribePartitionsResponse",
+      "status": "online"
     },
     "DescribeShipperTasks": {
       "document": "获取投递任务列表",
       "input": "DescribeShipperTasksRequest",
       "name": "获取投递任务列表",
-      "output": "DescribeShipperTasksResponse"
+      "output": "DescribeShipperTasksResponse",
+      "status": "online"
     },
     "DescribeShippers": {
       "document": "获取投递规则信息列表",
       "input": "DescribeShippersRequest",
       "name": "获取投递规则",
-      "output": "DescribeShippersResponse"
+      "output": "DescribeShippersResponse",
+      "status": "online"
     },
     "DescribeTopics": {
       "document": " 本接口用于获取日志主题列表，支持分页",
       "input": "DescribeTopicsRequest",
       "name": "获取日志主题列表",
-      "output": "DescribeTopicsResponse"
+      "output": "DescribeTopicsResponse",
+      "status": "online"
     },
     "GetAlarmLog": {
       "document": "本接口用于获取告警任务历史",
       "input": "GetAlarmLogRequest",
       "name": "获取告警任务历史记录",
-      "output": "GetAlarmLogResponse"
+      "output": "GetAlarmLogResponse",
+      "status": "online"
     },
     "MergePartition": {
       "document": "本接口用于合并一个读写态的主题分区，合并时指定一个主题分区 ID，日志服务会自动合并范围右相邻的分区。",
       "input": "MergePartitionRequest",
       "name": "合并分区",
-      "output": "MergePartitionResponse"
+      "output": "MergePartitionResponse",
+      "status": "online"
     },
     "ModifyAlarm": {
       "document": "本接口用于修改告警策略。需要至少修改一项有效内容。",
       "input": "ModifyAlarmRequest",
       "name": "修改告警策略",
-      "output": "ModifyAlarmResponse"
+      "output": "ModifyAlarmResponse",
+      "status": "online"
     },
     "ModifyAlarmNotice": {
       "document": "该接口用于修改通知渠道组",
       "input": "ModifyAlarmNoticeRequest",
       "name": "修改通知渠道组",
-      "output": "ModifyAlarmNoticeResponse"
+      "output": "ModifyAlarmNoticeResponse",
+      "status": "online"
     },
     "ModifyConfig": {
       "document": "修改采集规则配置",
       "input": "ModifyConfigRequest",
       "name": "修改采集规则配置",
-      "output": "ModifyConfigResponse"
+      "output": "ModifyConfigResponse",
+      "status": "online"
     },
     "ModifyConfigExtra": {
       "document": "本接口用于修改特殊采集配置任务，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "ModifyConfigExtraRequest",
       "name": "修改特殊采集配置任务",
-      "output": "ModifyConfigExtraResponse"
+      "output": "ModifyConfigExtraResponse",
+      "status": "online"
     },
     "ModifyConsumer": {
       "document": "本接口用于修改投递任务",
       "input": "ModifyConsumerRequest",
       "name": "修改投递任务",
-      "output": "ModifyConsumerResponse"
+      "output": "ModifyConsumerResponse",
+      "status": "online"
     },
     "ModifyIndex": {
       "document": "本接口用于修改索引配置，该接口除受默认接口请求频率限制外，针对单个日志主题，并发数不能超过1，即同一时间同一个日志主题只能有一个正在执行的索引配置修改操作。\n",
       "input": "ModifyIndexRequest",
       "name": "修改索引",
-      "output": "ModifyIndexResponse"
+      "output": "ModifyIndexResponse",
+      "status": "online"
     },
     "ModifyLogset": {
       "document": "本接口用于修改日志集信息",
       "input": "ModifyLogsetRequest",
       "name": "修改日志集",
-      "output": "ModifyLogsetResponse"
+      "output": "ModifyLogsetResponse",
+      "status": "online"
     },
     "ModifyMachineGroup": {
       "document": "修改机器组",
       "input": "ModifyMachineGroupRequest",
       "name": "修改机器组",
-      "output": "ModifyMachineGroupResponse"
+      "output": "ModifyMachineGroupResponse",
+      "status": "online"
     },
     "ModifyShipper": {
       "document": "修改现有的投递规则，客户如果使用此接口，需要自行处理CLS对指定bucket的写权限。",
       "input": "ModifyShipperRequest",
       "name": "修改投递规则",
-      "output": "ModifyShipperResponse"
+      "output": "ModifyShipperResponse",
+      "status": "online"
     },
     "ModifyTopic": {
       "document": "本接口用于修改日志主题。",
       "input": "ModifyTopicRequest",
       "name": "修改日志主题",
-      "output": "ModifyTopicResponse"
+      "output": "ModifyTopicResponse",
+      "status": "online"
     },
     "OpenKafkaConsumer": {
       "document": "打开Kafka协议消费功能",
       "input": "OpenKafkaConsumerRequest",
       "name": "打开Kafka协议消费",
-      "output": "OpenKafkaConsumerResponse"
+      "output": "OpenKafkaConsumerResponse",
+      "status": "online"
     },
     "RetryShipperTask": {
       "document": "重试失败的投递任务",
       "input": "RetryShipperTaskRequest",
       "name": "重试失败的投递任务",
-      "output": "RetryShipperTaskResponse"
+      "output": "RetryShipperTaskResponse",
+      "status": "online"
     },
     "SearchLog": {
       "document": "本接口用于检索分析日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。",
       "input": "SearchLogRequest",
       "name": "检索分析日志",
-      "output": "SearchLogResponse"
+      "output": "SearchLogResponse",
+      "status": "online"
     },
     "SplitPartition": {
       "document": "本接口用于分裂主题分区",
       "input": "SplitPartitionRequest",
       "name": "分裂主题分区",
-      "output": "SplitPartitionResponse"
+      "output": "SplitPartitionResponse",
+      "status": "online"
     },
     "UploadLog": {
       "document": "## 提示\n为了保障您日志数据的可靠性以及更高效地使用日志服务，建议您使用CLS优化后的接口[上传结构化日志](https://cloud.tencent.com/document/product/614/16873)上传日志。\n\n同时我们给此接口专门优化定制了多个语言版本的SDK供您选择，SDK提供统一的异步发送、资源控制、自动重试、优雅关闭、感知上报等功能，使上报日志功能更完善，详情请参考[SDK采集](https://cloud.tencent.com/document/product/614/67157)。\n\n同时云API上传日志接口也支持同步上传日志数据，如果您选继续使用此接口请参考下文。\n\n## 功能描述\n\n本接口用于将日志写入到指定的日志主题。\n\n日志服务提供以下两种模式：\n\n#### 负载均衡模式\n\n系统根据当前日志主题下所有可读写的分区，遵循负载均衡原则自动分配写入的目标分区。该模式适合消费不保序的场景。\n\n#### 哈希路由模式\n\n系统根据携带的哈希值（X-CLS-HashKey）将数据写入到符合范围要求的目标分区。例如，可以将某个日志源端通过 hashkey 与某个主题分区强绑定，这样可以保证数据在该分区上写入和消费是严格保序的。\n\n                 \n\n#### 输入参数(pb二进制流，位于body中)\n\n| 字段名       | 类型    | 位置 | 必须 | 含义                                                         |\n| ------------ | ------- | ---- | ---- | ------------------------------------------------------------ |\n| logGroupList | message | pb   | 是   | logGroup 列表，封装好的日志组列表内容，建议 logGroup 数量不要超过5个 |\n\nLogGroup 说明：\n\n| 字段名      | 是否必选 | 含义                                                         |\n| ----------- | -------- | ------------------------------------------------------------ |\n| logs        | 是       | 日志数组，表示有多个 Log 组成的集合，一个 Log 表示一条日志，一个 LogGroup 中 Log 个数不能超过10000 |\n| contextFlow | 否       | LogGroup 的唯一ID，需要使用上下文功能时传入。格式：\"{上下文ID}-{LogGroupID}\"。<br>上下文ID：唯一标识一个上下文（连续滚动的一系列日志文件，或者是需要保序的一系列日志），16进制64位整型字符串。<br>LogGroupID：连续递增的一串整型，16进制64位整型字符串。样例：\"102700A66102516A-59F59\"。                        |\n| filename    | 否       | 日志文件名                                                   |\n| source      | 否       | 日志来源，一般使用机器 IP 作为标识                           |\n| logTags     | 否       | 日志的标签列表                                               |\n\nLog 说明：\n\n| 字段名   | 是否必选 | 含义                                                         |\n| -------- | -------- | ------------------------------------------------------------ |\n| time     | 是       | 日志时间（Unix 格式时间戳），支持秒、毫秒，建议采用毫秒      |\n| contents | 否       | key-value 格式的日志内容，表示一条日志里的多个 key-value 组合 |\n\nContent 说明：\n\n| 字段名 | 是否必选 | 含义                                                         |\n| ------ | -------- | ------------------------------------------------------------ |\n| key    | 是       | 单条日志里某个字段组的 key 值，不能以`_`开头                 |\n| value  | 是       | 单条日志某个字段组的 value 值，单条日志 value 不能超过1MB，LogGroup 中所有 value 总和不能超过5MB |\n\nLogTag 说明：\n\n| 字段名 | 是否必选 | 含义                             |\n| ------ | -------- | -------------------------------- |\n| key    | 是       | 自定义的标签 key                 |\n| value  | 是       | 自定义的标签 key 对应的 value 值 |\n\n## PB 编译示例\n\n本示例将说明如何使用官方 protoc 编译工具将 PB 描述文件 编译生成为 C++ 语言可调用的上传日志接口。\n\n> ?目前 protoc 官方支持 Java、C++、Python 等语言的编译，详情请参见 [protoc](https://github.com/protocolbuffers/protobuf)。\n\n#### 1. 安装 Protocol Buffer\n\n下载 [Protocol Buffer](https://main.qcloudimg.com/raw/d7810aaf8b3073fbbc9d4049c21532aa/protobuf-2.6.1.tar.gz) ，解压并安装。示例版本为 protobuf 2.6.1，环境为 Centos 7.3 系统。 解压`protobuf-2.6.1.tar.gz`压缩包至`/usr/local`目录并进入该目录，执行命令如下：\n\n```\ntar -zxvf protobuf-2.6.1.tar.gz -C /usr/local/ && cd /usr/local/protobuf-2.6.1\n```\n\n开始编译和安装，配置环境变量，执行命令如下：\n\n```\n[root@VM_0_8_centos protobuf-2.6.1]# ./configure \n[root@VM_0_8_centos protobuf-2.6.1]# make && make install\n[root@VM_0_8_centos protobuf-2.6.1]# export PATH=$PATH:/usr/local/protobuf-2.6.1/bin\n```\n\n编译成功后，您可以使用以下命令查看版本：\n\n```\n[root@VM_0_8_centos protobuf-2.6.1]# protoc --version\nliprotoc 2.6.1\n```\n\n#### 2. 创建 PB 描述文件\n\nPB 描述文件是通信双方约定的数据交换格式，上传日志时须将规定的协议格式编译成对应语言版本的调用接口，然后添加到工程代码里，详情请参见 [protoc](https://github.com/protocolbuffers/protobuf) 。\n\n以日志服务所规定的 PB 数据格式内容为准， 在本地创建 PB 消息描述文件 cls.proto。\n\n> !PB 描述文件内容不可更改，且文件名须以`.proto`结尾。\n\ncls.proto 内容（PB 描述文件）如下：\n\n```\npackage cls;\n\nmessage Log\n{\n    message Content\n    {\n        required string key   = 1; // 每组字段的 key\n        required string value = 2; // 每组字段的 value\n    }\n    required int64   time     = 1; // 时间戳，UNIX时间格式\n    repeated Content contents = 2; // 一条日志里的多个kv组合\n}\n\nmessage LogTag\n{\n    required string key       = 1;\n    required string value     = 2;\n}\n\nmessage LogGroup\n{\n    repeated Log    logs        = 1; // 多条日志合成的日志数组\n    optional string contextFlow = 2; // 目前暂无效用\n    optional string filename    = 3; // 日志文件名\n    optional string source      = 4; // 日志来源，一般使用机器IP\n    repeated LogTag logTags     = 5;\n}\n\nmessage LogGroupList\n{\n    repeated LogGroup logGroupList = 1; // 日志组列表\n}\n```\n\n#### 3. 编译生成\n\n此例中，使用 proto 编译器生成 C++ 语言的文件，在 cls.proto 文件的同一目录下，执行如下编译命令：\n\n```\nprotoc --cpp_out=./ ./cls.proto \n```\n\n> ?`--cpp_out=./`表示编译成 cpp 格式并输出当前目录下，`./cls.proto`表示位于当前目录下的 cls.proto 描述文件。\n\n编译成功后，会输出对应语言的代码文件。此例会生成 cls.pb.h 头文件和 [cls.pb.cc](http://cls.pb.cc) 代码实现文件，如下所示：\n\n```\n[root@VM_0_8_centos protobuf-2.6.1]# protoc --cpp_out=./ ./cls.proto\n[root@VM_0_8_centos protobuf-2.6.1]# ls\ncls.pb.cc cls.pb.h cls.proto\n```\n\n#### 4. 调用\n\n将生成的 cls.pb.h 头文件引入代码中，调用接口进行数据格式封装。",
       "input": "UploadLogRequest",
       "name": "上传日志",
-      "output": "UploadLogResponse"
+      "output": "UploadLogResponse",
+      "status": "online"
     }
   },
   "metadata": {

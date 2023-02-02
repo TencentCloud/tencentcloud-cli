@@ -4,211 +4,246 @@
       "document": "本接口(AssignProject)用于指定云数据库实例的所属项目。\n",
       "input": "AssignProjectRequest",
       "name": "指定云数据库实例的所属项目",
-      "output": "AssignProjectResponse"
+      "output": "AssignProjectResponse",
+      "status": "online"
     },
     "CreateAccountUser": {
       "document": "本接口(CreateAccountUser)用于创建mongodb实例账号。",
       "input": "CreateAccountUserRequest",
       "name": "创建账号",
-      "output": "CreateAccountUserResponse"
+      "output": "CreateAccountUserResponse",
+      "status": "online"
     },
     "CreateBackupDBInstance": {
       "document": "备份实例接口",
       "input": "CreateBackupDBInstanceRequest",
       "name": "备份实例接口",
-      "output": "CreateBackupDBInstanceResponse"
+      "output": "CreateBackupDBInstanceResponse",
+      "status": "online"
     },
     "CreateBackupDownloadTask": {
       "document": "本接口用来创建某个备份文件的下载任务",
       "input": "CreateBackupDownloadTaskRequest",
       "name": "创建备份下载任务",
-      "output": "CreateBackupDownloadTaskResponse"
+      "output": "CreateBackupDownloadTaskResponse",
+      "status": "online"
     },
     "CreateDBInstance": {
       "document": "本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。",
       "input": "CreateDBInstanceRequest",
       "name": "创建云数据库实例（包年包月）",
-      "output": "CreateDBInstanceResponse"
+      "output": "CreateDBInstanceResponse",
+      "status": "online"
     },
     "CreateDBInstanceHour": {
       "document": "本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例。",
       "input": "CreateDBInstanceHourRequest",
       "name": "创建云数据库实例（按量计费）",
-      "output": "CreateDBInstanceHourResponse"
+      "output": "CreateDBInstanceHourResponse",
+      "status": "online"
     },
     "DescribeAccountUsers": {
       "document": "本接口(DescribeAccountUsers)用于获取当前实例的全部账号。",
       "input": "DescribeAccountUsersRequest",
       "name": "全部账号列表",
-      "output": "DescribeAccountUsersResponse"
+      "output": "DescribeAccountUsersResponse",
+      "status": "online"
     },
     "DescribeAsyncRequestInfo": {
       "document": "查询异步任务状态接口",
       "input": "DescribeAsyncRequestInfoRequest",
       "name": "查询异步任务状态接口",
-      "output": "DescribeAsyncRequestInfoResponse"
+      "output": "DescribeAsyncRequestInfoResponse",
+      "status": "online"
     },
     "DescribeBackupDownloadTask": {
       "document": "查询备份下载任务信息",
       "input": "DescribeBackupDownloadTaskRequest",
       "name": "查询备份下载任务信息",
-      "output": "DescribeBackupDownloadTaskResponse"
+      "output": "DescribeBackupDownloadTaskResponse",
+      "status": "online"
     },
     "DescribeClientConnections": {
       "document": "本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。",
       "input": "DescribeClientConnectionsRequest",
       "name": "查询实例客户端连接信息",
-      "output": "DescribeClientConnectionsResponse"
+      "output": "DescribeClientConnectionsResponse",
+      "status": "online"
     },
     "DescribeCurrentOp": {
       "document": "本接口(DescribeCurrentOp)用于查询MongoDB云数据库实例的当前正在执行的操作。",
       "input": "DescribeCurrentOpRequest",
       "name": "查询数据库实例当前正在执行的操作",
-      "output": "DescribeCurrentOpResponse"
+      "output": "DescribeCurrentOpResponse",
+      "status": "online"
     },
     "DescribeDBBackups": {
       "document": "本接口（DescribeDBBackups）用于查询实例备份列表，目前只支持查询7天内的备份记录。",
       "input": "DescribeDBBackupsRequest",
       "name": "查询实例备份列表",
-      "output": "DescribeDBBackupsResponse"
+      "output": "DescribeDBBackupsResponse",
+      "status": "online"
     },
     "DescribeDBInstanceDeal": {
       "document": "本接口（DescribeDBInstanceDeal）用于获取MongoDB购买、续费及变配订单详细。",
       "input": "DescribeDBInstanceDealRequest",
       "name": "获取数据库实例订单详情",
-      "output": "DescribeDBInstanceDealResponse"
+      "output": "DescribeDBInstanceDealResponse",
+      "status": "online"
     },
     "DescribeDBInstanceNodeProperty": {
       "document": "本接口用于查询节点的属性，包括节点所在可用区、节点名称、地址、角色、状态、主从延迟、优先级、投票权、标签等属性。",
       "input": "DescribeDBInstanceNodePropertyRequest",
       "name": "查询节点属性",
-      "output": "DescribeDBInstanceNodePropertyResponse"
+      "output": "DescribeDBInstanceNodePropertyResponse",
+      "status": "online"
     },
     "DescribeDBInstances": {
       "document": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。",
       "input": "DescribeDBInstancesRequest",
       "name": "查询云数据库实例列表",
-      "output": "DescribeDBInstancesResponse"
+      "output": "DescribeDBInstancesResponse",
+      "status": "online"
     },
     "DescribeInstanceParams": {
       "document": "本接口(DescribeInstanceParams)用于查询当前实例可修改的参数列表。",
       "input": "DescribeInstanceParamsRequest",
       "name": "获取当前实例可修改的参数列表",
-      "output": "DescribeInstanceParamsResponse"
+      "output": "DescribeInstanceParamsResponse",
+      "status": "online"
     },
     "DescribeSecurityGroup": {
       "document": "查询实例绑定的安全组",
       "input": "DescribeSecurityGroupRequest",
       "name": "查询实例绑定的安全组",
-      "output": "DescribeSecurityGroupResponse"
+      "output": "DescribeSecurityGroupResponse",
+      "status": "online"
     },
     "DescribeSlowLogPatterns": {
       "document": "本接口（DescribeSlowLogPatterns）用于获取数据库实例慢日志的统计信息。",
       "input": "DescribeSlowLogPatternsRequest",
       "name": "获取慢日志统计信息",
-      "output": "DescribeSlowLogPatternsResponse"
+      "output": "DescribeSlowLogPatternsResponse",
+      "status": "online"
     },
     "DescribeSlowLogs": {
       "document": "本接口（DescribeSlowLogs）用于获取云数据库慢日志信息。接口只支持查询最近7天内慢日志。",
       "input": "DescribeSlowLogsRequest",
       "name": "获取慢日志信息",
-      "output": "DescribeSlowLogsResponse"
+      "output": "DescribeSlowLogsResponse",
+      "status": "online"
     },
     "DescribeSpecInfo": {
       "document": "本接口(DescribeSpecInfo)用于查询实例的售卖规格。",
       "input": "DescribeSpecInfoRequest",
       "name": "查询云数据库的售卖规格",
-      "output": "DescribeSpecInfoResponse"
+      "output": "DescribeSpecInfoResponse",
+      "status": "online"
     },
     "FlushInstanceRouterConfig": {
       "document": "在所有mongos上执行FlushRouterConfig命令",
       "input": "FlushInstanceRouterConfigRequest",
       "name": "刷新路由配置",
-      "output": "FlushInstanceRouterConfigResponse"
+      "output": "FlushInstanceRouterConfigResponse",
+      "status": "online"
     },
     "InquirePriceCreateDBInstances": {
       "document": "本接口（InquirePriceCreateDBInstances）用于创建数据库实例询价。本接口参数中必须传入region参数，否则无法通过校验。本接口仅允许针对购买限制范围内的实例配置进行询价。",
       "input": "InquirePriceCreateDBInstancesRequest",
       "name": "创建实例询价",
-      "output": "InquirePriceCreateDBInstancesResponse"
+      "output": "InquirePriceCreateDBInstancesResponse",
+      "status": "online"
     },
     "InquirePriceModifyDBInstanceSpec": {
       "document": "本接口 (InquirePriceModifyDBInstanceSpec) 用于调整实例的配置询价。",
       "input": "InquirePriceModifyDBInstanceSpecRequest",
       "name": "变更配置询价",
-      "output": "InquirePriceModifyDBInstanceSpecResponse"
+      "output": "InquirePriceModifyDBInstanceSpecResponse",
+      "status": "online"
     },
     "InquirePriceRenewDBInstances": {
       "document": "本接口 (InquiryPriceRenewDBInstances) 用于续费包年包月实例询价。",
       "input": "InquirePriceRenewDBInstancesRequest",
       "name": "续费实例询价",
-      "output": "InquirePriceRenewDBInstancesResponse"
+      "output": "InquirePriceRenewDBInstancesResponse",
+      "status": "online"
     },
     "IsolateDBInstance": {
       "document": "本接口(IsolateDBInstance)用于隔离MongoDB云数据库按量计费实例。隔离后实例保留在回收站中，不能再写入数据。隔离一定时间后，实例会彻底删除，回收站保存时间请参考按量计费的服务条款。在隔离中的按量计费实例无法恢复，请谨慎操作。",
       "input": "IsolateDBInstanceRequest",
       "name": "隔离云数据库实例",
-      "output": "IsolateDBInstanceResponse"
+      "output": "IsolateDBInstanceResponse",
+      "status": "online"
     },
     "KillOps": {
       "document": "本接口(KillOps)用于终止MongoDB云数据库实例上执行的特定操作。",
       "input": "KillOpsRequest",
       "name": "终止数据库实例特定操作",
-      "output": "KillOpsResponse"
+      "output": "KillOpsResponse",
+      "status": "online"
     },
     "ModifyDBInstanceNetworkAddress": {
       "document": "本接口(ModifyDBInstanceNetworkAddress)用于修改云数据库实例的网络信息，可进行基础网络转VPC网络和VPC网络之间的变换。",
       "input": "ModifyDBInstanceNetworkAddressRequest",
       "name": "修改云数据库实例网络信息",
-      "output": "ModifyDBInstanceNetworkAddressResponse"
+      "output": "ModifyDBInstanceNetworkAddressResponse",
+      "status": "online"
     },
     "ModifyDBInstanceSecurityGroup": {
       "document": "修改实例绑定的安全组",
       "input": "ModifyDBInstanceSecurityGroupRequest",
       "name": "修改实例安全组",
-      "output": "ModifyDBInstanceSecurityGroupResponse"
+      "output": "ModifyDBInstanceSecurityGroupResponse",
+      "status": "online"
     },
     "ModifyDBInstanceSpec": {
       "document": "本接口(ModifyDBInstanceSpec)用于调整MongoDB云数据库实例配置。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。",
       "input": "ModifyDBInstanceSpecRequest",
       "name": "调整云数据库实例配置",
-      "output": "ModifyDBInstanceSpecResponse"
+      "output": "ModifyDBInstanceSpecResponse",
+      "status": "online"
     },
     "OfflineIsolatedDBInstance": {
       "document": "本接口(OfflineIsolatedDBInstance)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态。",
       "input": "OfflineIsolatedDBInstanceRequest",
       "name": "下线隔离状态的云数据库实例",
-      "output": "OfflineIsolatedDBInstanceResponse"
+      "output": "OfflineIsolatedDBInstanceResponse",
+      "status": "online"
     },
     "RenameInstance": {
       "document": "本接口(RenameInstance)用于修改云数据库实例的名称。",
       "input": "RenameInstanceRequest",
       "name": "修改实例名称",
-      "output": "RenameInstanceResponse"
+      "output": "RenameInstanceResponse",
+      "status": "online"
     },
     "RenewDBInstances": {
       "document": "本接口(RenewDBInstance)用于续费云数据库实例，仅支持付费模式为包年包月的实例。按量计费实例不需要续费。",
       "input": "RenewDBInstancesRequest",
       "name": "续费云数据库实例",
-      "output": "RenewDBInstancesResponse"
+      "output": "RenewDBInstancesResponse",
+      "status": "online"
     },
     "ResetDBInstancePassword": {
       "document": "修改实例用户的密码",
       "input": "ResetDBInstancePasswordRequest",
       "name": "修改实例用户的密码",
-      "output": "ResetDBInstancePasswordResponse"
+      "output": "ResetDBInstancePasswordResponse",
+      "status": "online"
     },
     "SetAccountUserPrivilege": {
       "document": "本接口(SetAccountUserPrivilege)用于设置mongodb实例的账号权限。",
       "input": "SetAccountUserPrivilegeRequest",
       "name": "设置账户权限",
-      "output": "SetAccountUserPrivilegeResponse"
+      "output": "SetAccountUserPrivilegeResponse",
+      "status": "online"
     },
     "TerminateDBInstances": {
       "document": "本接口（TerminateDBInstances）可将包年包月实例退还隔离。",
       "input": "TerminateDBInstancesRequest",
       "name": "包年包月隔离接口",
-      "output": "TerminateDBInstancesResponse"
+      "output": "TerminateDBInstancesResponse",
+      "status": "online"
     }
   },
   "metadata": {

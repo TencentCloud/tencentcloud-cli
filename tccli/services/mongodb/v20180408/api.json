@@ -4,79 +4,92 @@
       "document": "本接口(AssignProject)用于指定云数据库实例的所属项目。\n\n",
       "input": "AssignProjectRequest",
       "name": "指定云数据库实例的所属项目",
-      "output": "AssignProjectResponse"
+      "output": "AssignProjectResponse",
+      "status": "online"
     },
     "CreateDBInstance": {
       "document": "本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。",
       "input": "CreateDBInstanceRequest",
       "name": "创建云数据库实例（包年包月）",
-      "output": "CreateDBInstanceResponse"
+      "output": "CreateDBInstanceResponse",
+      "status": "online"
     },
     "CreateDBInstanceHour": {
       "document": "本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、实例类型、MongoDB版本、购买时长和数量等信息创建云数据库实例。",
       "input": "CreateDBInstanceHourRequest",
       "name": "创建云数据库实例（按量计费）",
-      "output": "CreateDBInstanceHourResponse"
+      "output": "CreateDBInstanceHourResponse",
+      "status": "online"
     },
     "DescribeClientConnections": {
       "document": "本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。目前只支持3.2版本的MongoDB实例。",
       "input": "DescribeClientConnectionsRequest",
       "name": "查询实例客户端连接信息",
-      "output": "DescribeClientConnectionsResponse"
+      "output": "DescribeClientConnectionsResponse",
+      "status": "online"
     },
     "DescribeDBInstances": {
       "document": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。",
       "input": "DescribeDBInstancesRequest",
       "name": "查询实例列表",
-      "output": "DescribeDBInstancesResponse"
+      "output": "DescribeDBInstancesResponse",
+      "status": "online"
     },
     "DescribeSlowLog": {
       "document": "本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。",
       "input": "DescribeSlowLogRequest",
       "name": "查询实例慢日志",
-      "output": "DescribeSlowLogResponse"
+      "output": "DescribeSlowLogResponse",
+      "status": "online"
     },
     "DescribeSpecInfo": {
       "document": "本接口(DescribeSpecInfo)用于查询实例的售卖规格。",
       "input": "DescribeSpecInfoRequest",
       "name": "查询云数据库的售卖规格",
-      "output": "DescribeSpecInfoResponse"
+      "output": "DescribeSpecInfoResponse",
+      "status": "online"
     },
     "RenameInstance": {
       "document": "本接口(RenameInstance)用于修改云数据库实例的名称。",
       "input": "RenameInstanceRequest",
       "name": "修改实例名称",
-      "output": "RenameInstanceResponse"
+      "output": "RenameInstanceResponse",
+      "status": "online"
     },
     "SetAutoRenew": {
       "document": "本接口(SetAutoRenew)用于设置包年包月云数据库实例的续费选项。",
       "input": "SetAutoRenewRequest",
       "name": "设置云数据库实例的续费选项",
-      "output": "SetAutoRenewResponse"
+      "output": "SetAutoRenewResponse",
+      "status": "online"
     },
     "SetPassword": {
       "document": "本接口(SetPassword)用于设置云数据库账户的密码。\n\n",
       "input": "SetPasswordRequest",
       "name": "修改云数据库实例的账户密码",
-      "output": "SetPasswordResponse"
+      "output": "SetPasswordResponse",
+      "status": "online"
     },
     "TerminateDBInstance": {
       "document": "本接口(TerminateDBInstance)用于销毁按量计费的MongoDB云数据库实例",
       "input": "TerminateDBInstanceRequest",
       "name": "销毁云数据库实例（按量计费）",
-      "output": "TerminateDBInstanceResponse"
+      "output": "TerminateDBInstanceResponse",
+      "status": "online"
     },
     "UpgradeDBInstance": {
       "document": "本接口(UpgradeDBInstance)用于升级包年包月的MongoDB云数据库实例，可以扩容内存、存储以及Oplog",
       "input": "UpgradeDBInstanceRequest",
       "name": "升级云数据库实例（包年包月）",
-      "output": "UpgradeDBInstanceResponse"
+      "output": "UpgradeDBInstanceResponse",
+      "status": "online"
     },
     "UpgradeDBInstanceHour": {
       "document": "本接口(UpgradeDBInstanceHour)用于升级按量计费的MongoDB云数据库实例，可以扩容内存、存储以及oplog",
       "input": "UpgradeDBInstanceHourRequest",
       "name": "升级云数据库实例（按量计费）",
-      "output": "UpgradeDBInstanceHourResponse"
+      "output": "UpgradeDBInstanceHourResponse",
+      "status": "online"
     }
   },
   "metadata": {

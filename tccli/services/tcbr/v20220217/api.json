@@ -4,61 +4,71 @@
       "document": "创建云托管环境，并开通资源。\t",
       "input": "CreateCloudRunEnvRequest",
       "name": "创建环境",
-      "output": "CreateCloudRunEnvResponse"
+      "output": "CreateCloudRunEnvResponse",
+      "status": "online"
     },
     "CreateCloudRunServer": {
       "document": "创建云托管服务接口",
       "input": "CreateCloudRunServerRequest",
       "name": "创建云托管服务",
-      "output": "CreateCloudRunServerResponse"
+      "output": "CreateCloudRunServerResponse",
+      "status": "online"
     },
     "DescribeCloudRunEnvs": {
       "document": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数",
       "input": "DescribeCloudRunEnvsRequest",
       "name": "查询环境列表",
-      "output": "DescribeCloudRunEnvsResponse"
+      "output": "DescribeCloudRunEnvsResponse",
+      "status": "online"
     },
     "DescribeCloudRunServerDetail": {
       "document": "查询云托管服务详情",
       "input": "DescribeCloudRunServerDetailRequest",
       "name": "查询云托管服务详情",
-      "output": "DescribeCloudRunServerDetailResponse"
+      "output": "DescribeCloudRunServerDetailResponse",
+      "status": "online"
     },
     "DescribeCloudRunServers": {
       "document": "查询云托管服务列表接口",
       "input": "DescribeCloudRunServersRequest",
       "name": "查询云托管服务列表",
-      "output": "DescribeCloudRunServersResponse"
+      "output": "DescribeCloudRunServersResponse",
+      "status": "online"
     },
     "DescribeEnvBaseInfo": {
       "document": "查询环境基础信息",
       "input": "DescribeEnvBaseInfoRequest",
       "name": "查询环境基础信息",
-      "output": "DescribeEnvBaseInfoResponse"
+      "output": "DescribeEnvBaseInfoResponse",
+      "status": "online"
     },
     "DescribeServerManageTask": {
       "document": "查询服务管理任务信息",
       "input": "DescribeServerManageTaskRequest",
       "name": "查询服务管理任务信息",
-      "output": "DescribeServerManageTaskResponse"
+      "output": "DescribeServerManageTaskResponse",
+      "status": "online"
     },
     "OperateServerManage": {
       "document": "操作发布单",
       "input": "OperateServerManageRequest",
       "name": "操作发布单",
-      "output": "OperateServerManageResponse"
+      "output": "OperateServerManageResponse",
+      "status": "online"
     },
     "ReleaseGray": {
       "document": "灰度发布",
       "input": "ReleaseGrayRequest",
       "name": "灰度发布",
-      "output": "ReleaseGrayResponse"
+      "output": "ReleaseGrayResponse",
+      "status": "online"
     },
     "UpdateCloudRunServer": {
       "document": "更新云托管服务",
       "input": "UpdateCloudRunServerRequest",
       "name": "更新云托管服务",
-      "output": "UpdateCloudRunServerResponse"
+      "output": "UpdateCloudRunServerResponse",
+      "status": "online"
     }
   },
   "metadata": {

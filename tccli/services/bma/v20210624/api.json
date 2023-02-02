@@ -4,175 +4,204 @@
       "document": "添加仿冒链接（举报）",
       "input": "CreateBPFakeURLRequest",
       "name": "添加仿冒链接（举报）",
-      "output": "CreateBPFakeURLResponse"
+      "output": "CreateBPFakeURLResponse",
+      "status": "online"
     },
     "CreateBPFalseTicket": {
       "document": "添加误报工单",
       "input": "CreateBPFalseTicketRequest",
       "name": "添加误报工单",
-      "output": "CreateBPFalseTicketResponse"
+      "output": "CreateBPFalseTicketResponse",
+      "status": "online"
     },
     "CreateBPOfflineAttachment": {
       "document": "添加下线材料",
       "input": "CreateBPOfflineAttachmentRequest",
       "name": "添加下线材料",
-      "output": "CreateBPOfflineAttachmentResponse"
+      "output": "CreateBPOfflineAttachmentResponse",
+      "status": "online"
     },
     "CreateBPOfflineTicket": {
       "document": "添加下线工单",
       "input": "CreateBPOfflineTicketRequest",
       "name": "添加下线工单",
-      "output": "CreateBPOfflineTicketResponse"
+      "output": "CreateBPOfflineTicketResponse",
+      "status": "online"
     },
     "CreateBPProtectURLs": {
       "document": "添加保护网站",
       "input": "CreateBPProtectURLsRequest",
       "name": "添加保护网站",
-      "output": "CreateBPProtectURLsResponse"
+      "output": "CreateBPProtectURLsResponse",
+      "status": "online"
     },
     "CreateCRBlock": {
       "document": "新建协查处置\n",
       "input": "CreateCRBlockRequest",
       "name": "新建协查处置",
-      "output": "CreateCRBlockResponse"
+      "output": "CreateCRBlockResponse",
+      "status": "online"
     },
     "CreateCRCompanyVerify": {
       "document": "本接口用于企业认证，新接入用户必须认证后才可以进行后续操作（个人认证和企业认证二选一），只需认证一次即可",
       "input": "CreateCRCompanyVerifyRequest",
       "name": "企业认证",
-      "output": "CreateCRCompanyVerifyResponse"
+      "output": "CreateCRCompanyVerifyResponse",
+      "status": "online"
     },
     "CreateCRDesktopCode": {
       "document": "新建过程取证码",
       "input": "CreateCRDesktopCodeRequest",
       "name": "新建过程取证码",
-      "output": "CreateCRDesktopCodeResponse"
+      "output": "CreateCRDesktopCodeResponse",
+      "status": "online"
     },
     "CreateCRObtain": {
       "document": "版权保护-新建取证接口",
       "input": "CreateCRObtainRequest",
       "name": "新建取证",
-      "output": "CreateCRObtainResponse"
+      "output": "CreateCRObtainResponse",
+      "status": "online"
     },
     "CreateCRRight": {
       "document": "版权保护-新建发函接口",
       "input": "CreateCRRightRequest",
       "name": "新建发函",
-      "output": "CreateCRRightResponse"
+      "output": "CreateCRRightResponse",
+      "status": "online"
     },
     "CreateCRRightFile": {
       "document": "权属文件添加",
       "input": "CreateCRRightFileRequest",
       "name": "权属文件添加",
-      "output": "CreateCRRightFileResponse"
+      "output": "CreateCRRightFileResponse",
+      "status": "online"
     },
     "CreateCRTort": {
       "document": "举报侵权链接",
       "input": "CreateCRTortRequest",
       "name": "举报侵权链接",
-      "output": "CreateCRTortResponse"
+      "output": "CreateCRTortResponse",
+      "status": "online"
     },
     "CreateCRUserVerify": {
       "document": "本接口用于个人认证，新接入用户必须认证后才可以进行后续操作（个人认证和企业认证二选一），只需认证一次即可",
       "input": "CreateCRUserVerifyRequest",
       "name": "个人认证",
-      "output": "CreateCRUserVerifyResponse"
+      "output": "CreateCRUserVerifyResponse",
+      "status": "online"
     },
     "CreateCRWork": {
       "document": "新建作品",
       "input": "CreateCRWorkRequest",
       "name": "新建作品",
-      "output": "CreateCRWorkResponse"
+      "output": "CreateCRWorkResponse",
+      "status": "online"
     },
     "DescribeBPCompanyInfo": {
       "document": "查询企业信息",
       "input": "DescribeBPCompanyInfoRequest",
       "name": "查询企业信息",
-      "output": "DescribeBPCompanyInfoResponse"
+      "output": "DescribeBPCompanyInfoResponse",
+      "status": "online"
     },
     "DescribeBPFakeURLs": {
       "document": "查询仿冒链接",
       "input": "DescribeBPFakeURLsRequest",
       "name": "查询仿冒链接",
-      "output": "DescribeBPFakeURLsResponse"
+      "output": "DescribeBPFakeURLsResponse",
+      "status": "online"
     },
     "DescribeBPProtectURLs": {
       "document": "查询保护网站",
       "input": "DescribeBPProtectURLsRequest",
       "name": "查询保护网站",
-      "output": "DescribeBPProtectURLsResponse"
+      "output": "DescribeBPProtectURLsResponse",
+      "status": "online"
     },
     "DescribeBPReportFakeURLs": {
       "document": "查询举报列表",
       "input": "DescribeBPReportFakeURLsRequest",
       "name": "查询举报列表",
-      "output": "DescribeBPReportFakeURLsResponse"
+      "output": "DescribeBPReportFakeURLsResponse",
+      "status": "online"
     },
     "DescribeCRMonitorDetail": {
       "document": "版权保护-查询作品监测详情接口",
       "input": "DescribeCRMonitorDetailRequest",
       "name": "查询作品监测详情",
-      "output": "DescribeCRMonitorDetailResponse"
+      "output": "DescribeCRMonitorDetailResponse",
+      "status": "online"
     },
     "DescribeCRMonitors": {
       "document": "版权保护-查询监测列表接口",
       "input": "DescribeCRMonitorsRequest",
       "name": "查询监测列表",
-      "output": "DescribeCRMonitorsResponse"
+      "output": "DescribeCRMonitorsResponse",
+      "status": "online"
     },
     "DescribeCRObtainDetail": {
       "document": "查询取证详情",
       "input": "DescribeCRObtainDetailRequest",
       "name": "查询取证详情",
-      "output": "DescribeCRObtainDetailResponse"
+      "output": "DescribeCRObtainDetailResponse",
+      "status": "online"
     },
     "DescribeCRWorkInfo": {
       "document": "查询作品基本信息",
       "input": "DescribeCRWorkInfoRequest",
       "name": "查询作品基本信息",
-      "output": "DescribeCRWorkInfoResponse"
+      "output": "DescribeCRWorkInfoResponse",
+      "status": "online"
     },
     "ModifyBPOfflineAttachment": {
       "document": "修改下线材料",
       "input": "ModifyBPOfflineAttachmentRequest",
       "name": "修改下线材料",
-      "output": "ModifyBPOfflineAttachmentResponse"
+      "output": "ModifyBPOfflineAttachmentResponse",
+      "status": "online"
     },
     "ModifyCRBlockStatus": {
       "document": "协查处置申请",
       "input": "ModifyCRBlockStatusRequest",
       "name": "协查处置申请",
-      "output": "ModifyCRBlockStatusResponse"
+      "output": "ModifyCRBlockStatusResponse",
+      "status": "online"
     },
     "ModifyCRMonitor": {
       "document": "开启/关闭监测",
       "input": "ModifyCRMonitorRequest",
       "name": "开启或关闭监测",
-      "output": "ModifyCRMonitorResponse"
+      "output": "ModifyCRMonitorResponse",
+      "status": "online"
     },
     "ModifyCRObtainStatus": {
       "document": "取证申请",
       "input": "ModifyCRObtainStatusRequest",
       "name": "取证申请",
-      "output": "ModifyCRObtainStatusResponse"
+      "output": "ModifyCRObtainStatusResponse",
+      "status": "online"
     },
     "ModifyCRRightStatus": {
       "document": "发函申请",
       "input": "ModifyCRRightStatusRequest",
       "name": "发函申请",
-      "output": "ModifyCRRightStatusResponse"
+      "output": "ModifyCRRightStatusResponse",
+      "status": "online"
     },
     "ModifyCRWhiteList": {
       "document": "修改白名单列表",
       "input": "ModifyCRWhiteListRequest",
       "name": "修改白名单列表",
-      "output": "ModifyCRWhiteListResponse"
+      "output": "ModifyCRWhiteListResponse",
+      "status": "online"
     },
     "UpdateCRWork": {
       "document": "更新作品",
       "input": "UpdateCRWorkRequest",
       "name": "更新作品",
-      "output": "UpdateCRWorkResponse"
+      "output": "UpdateCRWorkResponse",
+      "status": "online"
     }
   },
   "metadata": {

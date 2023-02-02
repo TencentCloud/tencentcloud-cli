@@ -4,61 +4,71 @@
       "document": "创建 PaaS 服务媒体库",
       "input": "CreateLibraryRequest",
       "name": "创建媒体库",
-      "output": "CreateLibraryResponse"
+      "output": "CreateLibraryResponse",
+      "status": "online"
     },
     "DeleteLibrary": {
       "document": "删除 PaaS 服务媒体库",
       "input": "DeleteLibraryRequest",
       "name": "删除媒体库",
-      "output": "DeleteLibraryResponse"
+      "output": "DeleteLibraryResponse",
+      "status": "online"
     },
     "DescribeLibraries": {
       "document": "查询 PaaS 服务媒体库列表",
       "input": "DescribeLibrariesRequest",
       "name": "查询媒体库",
-      "output": "DescribeLibrariesResponse"
+      "output": "DescribeLibrariesResponse",
+      "status": "online"
     },
     "DescribeLibrarySecret": {
       "document": "查询 PaaS 服务媒体库密钥",
       "input": "DescribeLibrarySecretRequest",
       "name": "查询媒体库密钥",
-      "output": "DescribeLibrarySecretResponse"
+      "output": "DescribeLibrarySecretResponse",
+      "status": "online"
     },
     "DescribeOfficialInstances": {
       "document": "查询官方云盘实例",
       "input": "DescribeOfficialInstancesRequest",
       "name": "查询官方实例",
-      "output": "DescribeOfficialInstancesResponse"
+      "output": "DescribeOfficialInstancesResponse",
+      "status": "online"
     },
     "DescribeOfficialOverview": {
       "document": "查询官方云盘实例概览数据",
       "input": "DescribeOfficialOverviewRequest",
       "name": "查询官方实例概览数据",
-      "output": "DescribeOfficialOverviewResponse"
+      "output": "DescribeOfficialOverviewResponse",
+      "status": "online"
     },
     "DescribeTrafficPackages": {
       "document": "查询流量资源包",
       "input": "DescribeTrafficPackagesRequest",
       "name": "查询流量包",
-      "output": "DescribeTrafficPackagesResponse"
+      "output": "DescribeTrafficPackagesResponse",
+      "status": "online"
     },
     "ModifyLibrary": {
       "document": "修改 PaaS 服务媒体库配置项",
       "input": "ModifyLibraryRequest",
       "name": "修改媒体库配置项",
-      "output": "ModifyLibraryResponse"
+      "output": "ModifyLibraryResponse",
+      "status": "online"
     },
     "SendSmsCode": {
       "document": "发送用于换绑官方云盘实例的超级管理员账号的短信验证码",
       "input": "SendSmsCodeRequest",
       "name": "发送短信验证码",
-      "output": "SendSmsCodeResponse"
+      "output": "SendSmsCodeResponse",
+      "status": "online"
     },
     "VerifySmsCode": {
       "document": "验证短信验证码以换绑官方云盘实例的超级管理员账号",
       "input": "VerifySmsCodeRequest",
       "name": "验证短信验证码",
-      "output": "VerifySmsCodeResponse"
+      "output": "VerifySmsCodeResponse",
+      "status": "online"
     }
   },
   "metadata": {

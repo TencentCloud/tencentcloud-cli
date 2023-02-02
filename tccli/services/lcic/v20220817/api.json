@@ -1,94 +1,123 @@
 {
   "actions": {
+    "BatchRegister": {
+      "document": "如果批量注册的用户已存在，则会被覆盖。一次最多注册1000个用户。默认请求频率限制：10次/秒",
+      "input": "BatchRegisterRequest",
+      "name": "用户批量注册",
+      "output": "BatchRegisterResponse",
+      "status": "online"
+    },
     "BindDocumentToRoom": {
       "document": "绑定文档到房间",
       "input": "BindDocumentToRoomRequest",
       "name": "绑定文档到房间",
-      "output": "BindDocumentToRoomResponse"
+      "output": "BindDocumentToRoomResponse",
+      "status": "online"
     },
     "CreateDocument": {
       "document": "创建房间内可以使用的文档。",
       "input": "CreateDocumentRequest",
       "name": "创建文档",
-      "output": "CreateDocumentResponse"
+      "output": "CreateDocumentResponse",
+      "status": "online"
     },
     "CreateRoom": {
       "document": "创建房间",
       "input": "CreateRoomRequest",
       "name": "创建房间",
-      "output": "CreateRoomResponse"
+      "output": "CreateRoomResponse",
+      "status": "online"
     },
     "CreateSupervisor": {
       "document": "创建巡课",
       "input": "CreateSupervisorRequest",
       "name": "创建巡课",
-      "output": "CreateSupervisorResponse"
+      "output": "CreateSupervisorResponse",
+      "status": "online"
     },
     "DeleteRoom": {
       "document": "删除房间",
       "input": "DeleteRoomRequest",
       "name": "删除房间",
-      "output": "DeleteRoomResponse"
+      "output": "DeleteRoomResponse",
+      "status": "online"
     },
     "DescribeAppDetail": {
       "document": "获取应用详情",
       "input": "DescribeAppDetailRequest",
       "name": "获取应用详情",
-      "output": "DescribeAppDetailResponse"
+      "output": "DescribeAppDetailResponse",
+      "status": "online"
     },
     "DescribeRoom": {
       "document": "获取房间信息",
       "input": "DescribeRoomRequest",
       "name": "获取房间信息",
-      "output": "DescribeRoomResponse"
+      "output": "DescribeRoomResponse",
+      "status": "online"
     },
     "DescribeRoomStatistics": {
       "document": "获取房间统计信息，仅可在房间结束后调用。",
       "input": "DescribeRoomStatisticsRequest",
       "name": "获取房间统计信息",
-      "output": "DescribeRoomStatisticsResponse"
+      "output": "DescribeRoomStatisticsResponse",
+      "status": "online"
     },
     "DescribeUser": {
       "document": "获取用户信息",
       "input": "DescribeUserRequest",
       "name": "获取用户信息",
-      "output": "DescribeUserResponse"
+      "output": "DescribeUserResponse",
+      "status": "online"
     },
     "LoginOriginId": {
       "document": "使用源账号登录，源账号为注册时填入的originId",
       "input": "LoginOriginIdRequest",
       "name": "源账号登录",
-      "output": "LoginOriginIdResponse"
+      "output": "LoginOriginIdResponse",
+      "status": "online"
     },
     "LoginUser": {
       "document": "登录",
       "input": "LoginUserRequest",
       "name": "登录",
-      "output": "LoginUserResponse"
+      "output": "LoginUserResponse",
+      "status": "online"
     },
     "ModifyApp": {
       "document": "修改应用",
       "input": "ModifyAppRequest",
       "name": "修改应用",
-      "output": "ModifyAppResponse"
+      "output": "ModifyAppResponse",
+      "status": "online"
+    },
+    "ModifyRoom": {
+      "document": "修改房间",
+      "input": "ModifyRoomRequest",
+      "name": "修改房间",
+      "output": "ModifyRoomResponse",
+      "status": "online"
     },
     "RegisterUser": {
       "document": "注册用户",
       "input": "RegisterUserRequest",
       "name": "注册用户",
-      "output": "RegisterUserResponse"
+      "output": "RegisterUserResponse",
+      "status": "online"
     },
     "SetAppCustomContent": {
       "document": "设置应用的自定义内容，包括应用图标，自定义的代码等。如果已存在，则为更新。更新js、css内容后，要生效也需要调用该接口",
       "input": "SetAppCustomContentRequest",
       "name": "设置应用自定义内容",
-      "output": "SetAppCustomContentResponse"
+      "output": "SetAppCustomContentResponse",
+      "status": "online"
     },
     "UnbindDocumentFromRoom": {
       "document": "文档从房间解绑",
       "input": "UnbindDocumentFromRoomRequest",
       "name": "文档从房间解绑",
-      "output": "UnbindDocumentFromRoomResponse"
+      "output": "UnbindDocumentFromRoomResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -155,6 +184,115 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "BatchRegisterRequest": {
+      "document": "BatchRegister请求参数结构体",
+      "members": [
+        {
+          "document": "批量注册用户信息列表",
+          "example": "无",
+          "member": "BatchUserRequest",
+          "name": "Users",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchRegisterResponse": {
+      "document": "BatchRegister返回参数结构体",
+      "members": [
+        {
+          "document": "注册成功的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BatchUserInfo",
+          "name": "Users",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchUserInfo": {
+      "document": "批量注册用户信息",
+      "members": [
+        {
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchUserRequest": {
+      "document": "用户注册请求信息",
+      "members": [
+        {
+          "document": "低代码互动课堂的SdkAppId。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户名称。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户在客户系统的Id，需要在同一应用下唯一。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户头像。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Avatar",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -363,7 +501,7 @@
           "type": "string"
         },
         {
-          "document": "老师ID。通过[注册用户]接口获取的UserId。",
+          "document": "老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
           "name": "TeacherId",
@@ -395,7 +533,7 @@
           "type": "int"
         },
         {
-          "document": "助教Id列表。通过[注册用户]接口获取的UserId。",
+          "document": "助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。",
           "example": "无",
           "member": "string",
           "name": "Assistants",
@@ -577,7 +715,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "老师ID。",
+          "document": "老师的UserId。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
           "name": "TeacherId",
@@ -641,7 +779,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "助教Id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "助教UserId列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Assistants",
@@ -1056,6 +1194,128 @@
     },
     "ModifyAppResponse": {
       "document": "ModifyApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoomRequest": {
+      "document": "ModifyRoom请求参数结构体",
+      "members": [
+        {
+          "document": "房间ID。",
+          "example": "312345678",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "低代码互动课堂的SdkAppId",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "预定的房间开始时间，unix时间戳。直播开始后不允许修改。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "预定的房间结束时间，unix时间戳。直播开始后不允许修改。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "老师ID。直播开始后不允许修改。",
+          "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "房间名称。",
+          "example": "房间名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Resolution",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "最大连麦人数（不包括老师）。取值范围[0, 17)\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxMicNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoMic",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioQuality",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\ncoteaching 双师\n直播开始后不允许修改。",
+          "example": "video",
+          "member": "string",
+          "name": "SubType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制\n直播开始后不允许修改。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisableRecord",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "助教Id列表。直播开始后不允许修改。",
+          "example": "无",
+          "member": "string",
+          "name": "Assistants",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoomResponse": {
+      "document": "ModifyRoom返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

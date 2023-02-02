@@ -1,6 +1,6 @@
 **Example 1: 查询节点池详情**
 
-
+查询节点池详情
 
 Input: 
 
@@ -15,34 +15,57 @@ Output:
 {
     "Response": {
         "NodePool": {
-            "AutoscalingGroupId": "asg-xxx",
-            "AutoscalingGroupStatus": "enabled",
-            "ClusterInstanceId": "cls-xxx",
-            "DesiredNodesNum": 0,
-            "Labels": [],
-            "LaunchConfigurationId": "asc-xxx",
-            "LifeState": "normal",
-            "MaxNodesNum": 1,
-            "MinNodesNum": 0,
-            "Name": "test",
+            "NodePoolId": "xx",
+            "Name": "xx",
+            "ClusterInstanceId": "xx",
+            "LifeState": "xx",
+            "LaunchConfigurationId": "xx",
+            "AutoscalingGroupId": "xx",
+            "Labels": [
+                {
+                    "Name": "xx",
+                    "Value": "xx"
+                }
+            ],
+            "Taints": [
+                {
+                    "Key": "xx",
+                    "Value": "xx",
+                    "Effect": "xx"
+                }
+            ],
             "NodeCountSummary": {
-                "AutoscalingAdded": {
-                    "Initializing": 0,
+                "ManuallyAdded": {
                     "Joining": 0,
+                    "Initializing": 0,
                     "Normal": 0,
                     "Total": 0
                 },
-                "ManuallyAdded": {
-                    "Initializing": 0,
+                "AutoscalingAdded": {
                     "Joining": 0,
-                    "Normal": 1,
-                    "Total": 1
+                    "Initializing": 0,
+                    "Normal": 0,
+                    "Total": 0
                 }
             },
-            "NodePoolId": "np-xxxxx",
-            "Taints": []
+            "AutoscalingGroupStatus": "xx",
+            "MaxNodesNum": 0,
+            "MinNodesNum": 0,
+            "DesiredNodesNum": 0,
+            "NodePoolOs": "xx",
+            "OsCustomizeType": "xx",
+            "ImageId": "xx",
+            "DesiredPodNum": 0,
+            "UserScript": "xx",
+            "Tags": [
+                {
+                    "Key": "xx",
+                    "Value": "xx"
+                }
+            ],
+            "DeletionProtection": true
         },
-        "RequestId": "xxx"
+        "RequestId": "xx"
     }
 }
 ```

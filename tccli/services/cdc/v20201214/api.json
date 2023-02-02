@@ -4,121 +4,141 @@
       "document": "创建专用集群",
       "input": "CreateDedicatedClusterRequest",
       "name": "创建专用集群",
-      "output": "CreateDedicatedClusterResponse"
+      "output": "CreateDedicatedClusterResponse",
+      "status": "online"
     },
     "CreateDedicatedClusterOrder": {
       "document": "创建专用集群订单",
       "input": "CreateDedicatedClusterOrderRequest",
       "name": "创建专用集群订单",
-      "output": "CreateDedicatedClusterOrderResponse"
+      "output": "CreateDedicatedClusterOrderResponse",
+      "status": "online"
     },
     "CreateSite": {
       "document": "创建站点",
       "input": "CreateSiteRequest",
       "name": "创建站点",
-      "output": "CreateSiteResponse"
+      "output": "CreateSiteResponse",
+      "status": "online"
     },
     "DeleteDedicatedClusters": {
       "document": "删除专用集群",
       "input": "DeleteDedicatedClustersRequest",
       "name": "删除专用集群",
-      "output": "DeleteDedicatedClustersResponse"
+      "output": "DeleteDedicatedClustersResponse",
+      "status": "online"
     },
     "DeleteSites": {
       "document": "删除站点",
       "input": "DeleteSitesRequest",
       "name": "删除站点",
-      "output": "DeleteSitesResponse"
+      "output": "DeleteSitesResponse",
+      "status": "online"
     },
     "DescribeDedicatedClusterCosCapacity": {
       "document": "查询专用集群内cos的容量信息",
       "input": "DescribeDedicatedClusterCosCapacityRequest",
       "name": "查询专用集群内cos的容量信息",
-      "output": "DescribeDedicatedClusterCosCapacityResponse"
+      "output": "DescribeDedicatedClusterCosCapacityResponse",
+      "status": "online"
     },
     "DescribeDedicatedClusterHostStatistics": {
       "document": "查询专用集群内宿主机的统计信息",
       "input": "DescribeDedicatedClusterHostStatisticsRequest",
       "name": "查询专用集群内宿主机的统计信息",
-      "output": "DescribeDedicatedClusterHostStatisticsResponse"
+      "output": "DescribeDedicatedClusterHostStatisticsResponse",
+      "status": "online"
     },
     "DescribeDedicatedClusterHosts": {
       "document": "专用集群宿主机信息",
       "input": "DescribeDedicatedClusterHostsRequest",
       "name": "专用集群宿主机信息",
-      "output": "DescribeDedicatedClusterHostsResponse"
+      "output": "DescribeDedicatedClusterHostsResponse",
+      "status": "online"
     },
     "DescribeDedicatedClusterInstanceTypes": {
       "document": "查询专用集群支持的实例规格列表",
       "input": "DescribeDedicatedClusterInstanceTypesRequest",
       "name": "查询专用集群支持的实例规格列表",
-      "output": "DescribeDedicatedClusterInstanceTypesResponse"
+      "output": "DescribeDedicatedClusterInstanceTypesResponse",
+      "status": "online"
     },
     "DescribeDedicatedClusterOrders": {
       "document": "查询专用集群订单列表",
       "input": "DescribeDedicatedClusterOrdersRequest",
       "name": "查询专用集群订单列表",
-      "output": "DescribeDedicatedClusterOrdersResponse"
+      "output": "DescribeDedicatedClusterOrdersResponse",
+      "status": "online"
     },
     "DescribeDedicatedClusterOverview": {
       "document": "专用集群概览信息",
       "input": "DescribeDedicatedClusterOverviewRequest",
       "name": "专用集群概览信息",
-      "output": "DescribeDedicatedClusterOverviewResponse"
+      "output": "DescribeDedicatedClusterOverviewResponse",
+      "status": "online"
     },
     "DescribeDedicatedClusterTypes": {
       "document": "查询专有集群配置列表",
       "input": "DescribeDedicatedClusterTypesRequest",
       "name": "查询专有集群配置列表",
-      "output": "DescribeDedicatedClusterTypesResponse"
+      "output": "DescribeDedicatedClusterTypesResponse",
+      "status": "online"
     },
     "DescribeDedicatedClusters": {
       "document": "查询专用集群列表",
       "input": "DescribeDedicatedClustersRequest",
       "name": "查询专用集群列表",
-      "output": "DescribeDedicatedClustersResponse"
+      "output": "DescribeDedicatedClustersResponse",
+      "status": "online"
     },
     "DescribeDedicatedSupportedZones": {
       "document": "查询专用集群支持的可用区列表",
       "input": "DescribeDedicatedSupportedZonesRequest",
       "name": "查询专用集群支持的可用区列表",
-      "output": "DescribeDedicatedSupportedZonesResponse"
+      "output": "DescribeDedicatedSupportedZonesResponse",
+      "status": "online"
     },
     "DescribeSites": {
       "document": "查询站点列表",
       "input": "DescribeSitesRequest",
       "name": "查询站点列表",
-      "output": "DescribeSitesResponse"
+      "output": "DescribeSitesResponse",
+      "status": "online"
     },
     "DescribeSitesDetail": {
       "document": "查询站点详情",
       "input": "DescribeSitesDetailRequest",
       "name": "查询站点详情",
-      "output": "DescribeSitesDetailResponse"
+      "output": "DescribeSitesDetailResponse",
+      "status": "online"
     },
     "ModifyDedicatedClusterInfo": {
       "document": "修改本地专用集群信息",
       "input": "ModifyDedicatedClusterInfoRequest",
       "name": "修改本地专用集群信息",
-      "output": "ModifyDedicatedClusterInfoResponse"
+      "output": "ModifyDedicatedClusterInfoResponse",
+      "status": "online"
     },
     "ModifyOrderStatus": {
       "document": "修改大订单、小订单的状态",
       "input": "ModifyOrderStatusRequest",
       "name": "修改订单状态",
-      "output": "ModifyOrderStatusResponse"
+      "output": "ModifyOrderStatusResponse",
+      "status": "online"
     },
     "ModifySiteDeviceInfo": {
       "document": "修改机房设备信息",
       "input": "ModifySiteDeviceInfoRequest",
       "name": "修改机房设备信息",
-      "output": "ModifySiteDeviceInfoResponse"
+      "output": "ModifySiteDeviceInfoResponse",
+      "status": "online"
     },
     "ModifySiteInfo": {
       "document": "修改机房信息",
       "input": "ModifySiteInfoRequest",
       "name": "修改机房信息",
-      "output": "ModifySiteInfoResponse"
+      "output": "ModifySiteInfoResponse",
+      "status": "online"
     }
   },
   "metadata": {

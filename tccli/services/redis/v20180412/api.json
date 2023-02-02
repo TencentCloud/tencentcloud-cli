@@ -4,517 +4,603 @@
       "document": "添加复制组成员",
       "input": "AddReplicationInstanceRequest",
       "name": "添加复制组成员",
-      "output": "AddReplicationInstanceResponse"
+      "output": "AddReplicationInstanceResponse",
+      "status": "online"
     },
     "AllocateWanAddress": {
       "document": "开通外网",
       "input": "AllocateWanAddressRequest",
       "name": "开通外网接口",
-      "output": "AllocateWanAddressResponse"
+      "output": "AllocateWanAddressResponse",
+      "status": "online"
     },
     "ApplyParamsTemplate": {
       "document": "应用参数模板到实例",
       "input": "ApplyParamsTemplateRequest",
       "name": "应用参数模板",
-      "output": "ApplyParamsTemplateResponse"
+      "output": "ApplyParamsTemplateResponse",
+      "status": "online"
     },
     "AssociateSecurityGroups": {
       "document": "本接口 (AssociateSecurityGroups) 用于安全组批量绑定多个指定实例。",
       "input": "AssociateSecurityGroupsRequest",
       "name": "绑定安全组",
-      "output": "AssociateSecurityGroupsResponse"
+      "output": "AssociateSecurityGroupsResponse",
+      "status": "online"
     },
     "ChangeInstanceRole": {
       "document": "复制组实例更换角色",
       "input": "ChangeInstanceRoleRequest",
       "name": "复制组实例更换角色",
-      "output": "ChangeInstanceRoleResponse"
+      "output": "ChangeInstanceRoleResponse",
+      "status": "online"
     },
     "ChangeMasterInstance": {
       "document": "复制组实例切主",
       "input": "ChangeMasterInstanceRequest",
       "name": "复制组实例切主",
-      "output": "ChangeMasterInstanceResponse"
+      "output": "ChangeMasterInstanceResponse",
+      "status": "online"
     },
     "ChangeReplicaToMaster": {
       "document": "该接口仅支持多AZ实例副本组提主和单AZ副本提主",
       "input": "ChangeReplicaToMasterRequest",
       "name": "副本组提主",
-      "output": "ChangeReplicaToMasterResponse"
+      "output": "ChangeReplicaToMasterResponse",
+      "status": "online"
     },
     "CleanUpInstance": {
       "document": "回收站实例立即下线",
       "input": "CleanUpInstanceRequest",
       "name": "回收站实例立即下线",
-      "output": "CleanUpInstanceResponse"
+      "output": "CleanUpInstanceResponse",
+      "status": "online"
     },
     "ClearInstance": {
       "document": "清空Redis实例的实例数据。",
       "input": "ClearInstanceRequest",
       "name": "清空Redis实例",
-      "output": "ClearInstanceResponse"
+      "output": "ClearInstanceResponse",
+      "status": "online"
     },
     "CloseSSL": {
       "document": "关闭SSL",
       "input": "CloseSSLRequest",
       "name": "关闭SSL",
-      "output": "CloseSSLResponse"
+      "output": "CloseSSLResponse",
+      "status": "online"
     },
     "CreateInstanceAccount": {
       "document": "创建实例子账号",
       "input": "CreateInstanceAccountRequest",
       "name": "创建实例子账号",
-      "output": "CreateInstanceAccountResponse"
+      "output": "CreateInstanceAccountResponse",
+      "status": "online"
     },
     "CreateInstances": {
       "document": "本接口(CreateInstances)用于创建redis实例。",
       "input": "CreateInstancesRequest",
       "name": "创建Redis实例",
-      "output": "CreateInstancesResponse"
+      "output": "CreateInstancesResponse",
+      "status": "online"
     },
     "CreateParamTemplate": {
       "document": "创建参数模板。",
       "input": "CreateParamTemplateRequest",
       "name": "创建参数模板",
-      "output": "CreateParamTemplateResponse"
+      "output": "CreateParamTemplateResponse",
+      "status": "online"
     },
     "CreateReplicationGroup": {
       "document": "创建复制组",
       "input": "CreateReplicationGroupRequest",
       "name": "创建复制组接口",
-      "output": "CreateReplicationGroupResponse"
+      "output": "CreateReplicationGroupResponse",
+      "status": "online"
     },
     "DeleteInstanceAccount": {
       "document": "删除实例子账号",
       "input": "DeleteInstanceAccountRequest",
       "name": "删除实例子账号",
-      "output": "DeleteInstanceAccountResponse"
+      "output": "DeleteInstanceAccountResponse",
+      "status": "online"
     },
     "DeleteParamTemplate": {
       "document": "删除参数模板",
       "input": "DeleteParamTemplateRequest",
       "name": "删除参数模板",
-      "output": "DeleteParamTemplateResponse"
+      "output": "DeleteParamTemplateResponse",
+      "status": "online"
     },
     "DeleteReplicationInstance": {
       "document": "移除复制组成员 注：接口下线中，请使用 RemoveReplicationInstance",
       "input": "DeleteReplicationInstanceRequest",
       "name": "删除复制组成员",
-      "output": "DeleteReplicationInstanceResponse"
+      "output": "DeleteReplicationInstanceResponse",
+      "status": "online"
     },
     "DescribeAutoBackupConfig": {
       "document": "获取备份配置",
       "input": "DescribeAutoBackupConfigRequest",
       "name": "获取自动备份配置",
-      "output": "DescribeAutoBackupConfigResponse"
+      "output": "DescribeAutoBackupConfigResponse",
+      "status": "online"
     },
     "DescribeBackupUrl": {
       "document": "本接口（DescribeBackupUrl）用于查询备份 Rdb 文件的下载地址。",
       "input": "DescribeBackupUrlRequest",
       "name": "查询备份Rdb下载地址",
-      "output": "DescribeBackupUrlResponse"
+      "output": "DescribeBackupUrlResponse",
+      "status": "online"
     },
     "DescribeCommonDBInstances": {
       "document": "查询Redis实例列表信息。该接口已废弃。",
       "input": "DescribeCommonDBInstancesRequest",
       "name": "查询Redis实例列表信息",
-      "output": "DescribeCommonDBInstancesResponse"
+      "output": "DescribeCommonDBInstancesResponse",
+      "status": "online"
     },
     "DescribeDBSecurityGroups": {
       "document": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。",
       "input": "DescribeDBSecurityGroupsRequest",
       "name": "查询实例安全组详情",
-      "output": "DescribeDBSecurityGroupsResponse"
+      "output": "DescribeDBSecurityGroupsResponse",
+      "status": "online"
     },
     "DescribeInstanceAccount": {
       "document": "查看实例子账号信息",
       "input": "DescribeInstanceAccountRequest",
       "name": "查看实例子账号信息",
-      "output": "DescribeInstanceAccountResponse"
+      "output": "DescribeInstanceAccountResponse",
+      "status": "online"
     },
     "DescribeInstanceBackups": {
       "document": "查询 CRS 实例备份列表",
       "input": "DescribeInstanceBackupsRequest",
       "name": "查询Redis实例备份列表",
-      "output": "DescribeInstanceBackupsResponse"
+      "output": "DescribeInstanceBackupsResponse",
+      "status": "online"
     },
     "DescribeInstanceDTSInfo": {
       "document": "查询实例DTS信息",
       "input": "DescribeInstanceDTSInfoRequest",
       "name": "查询实例DTS信息",
-      "output": "DescribeInstanceDTSInfoResponse"
+      "output": "DescribeInstanceDTSInfoResponse",
+      "status": "online"
     },
     "DescribeInstanceDealDetail": {
       "document": "查询订单信息",
       "input": "DescribeInstanceDealDetailRequest",
       "name": "查询订单信息",
-      "output": "DescribeInstanceDealDetailResponse"
+      "output": "DescribeInstanceDealDetailResponse",
+      "status": "online"
     },
     "DescribeInstanceMonitorBigKey": {
       "document": "查询实例大Key",
       "input": "DescribeInstanceMonitorBigKeyRequest",
       "name": "查询实例大Key",
-      "output": "DescribeInstanceMonitorBigKeyResponse"
+      "output": "DescribeInstanceMonitorBigKeyResponse",
+      "status": "online"
     },
     "DescribeInstanceMonitorBigKeySizeDist": {
       "document": "查询实例大Key大小分布",
       "input": "DescribeInstanceMonitorBigKeySizeDistRequest",
       "name": "查询实例大Key大小分布",
-      "output": "DescribeInstanceMonitorBigKeySizeDistResponse"
+      "output": "DescribeInstanceMonitorBigKeySizeDistResponse",
+      "status": "online"
     },
     "DescribeInstanceMonitorBigKeyTypeDist": {
       "document": "查询实例大Key类型分布",
       "input": "DescribeInstanceMonitorBigKeyTypeDistRequest",
       "name": "查询实例大Key类型分布",
-      "output": "DescribeInstanceMonitorBigKeyTypeDistResponse"
+      "output": "DescribeInstanceMonitorBigKeyTypeDistResponse",
+      "status": "online"
     },
     "DescribeInstanceMonitorHotKey": {
       "document": "查询实例热Key",
       "input": "DescribeInstanceMonitorHotKeyRequest",
       "name": "查询实例热Key",
-      "output": "DescribeInstanceMonitorHotKeyResponse"
+      "output": "DescribeInstanceMonitorHotKeyResponse",
+      "status": "online"
     },
     "DescribeInstanceMonitorSIP": {
       "document": "查询实例访问来源信息",
       "input": "DescribeInstanceMonitorSIPRequest",
       "name": "查询实例访问来源信息",
-      "output": "DescribeInstanceMonitorSIPResponse"
+      "output": "DescribeInstanceMonitorSIPResponse",
+      "status": "online"
     },
     "DescribeInstanceMonitorTookDist": {
       "document": "查询实例访问的耗时分布",
       "input": "DescribeInstanceMonitorTookDistRequest",
       "name": "查询实例访问的耗时分布",
-      "output": "DescribeInstanceMonitorTookDistResponse"
+      "output": "DescribeInstanceMonitorTookDistResponse",
+      "status": "online"
     },
     "DescribeInstanceMonitorTopNCmd": {
       "document": "查询实例访问命令",
       "input": "DescribeInstanceMonitorTopNCmdRequest",
       "name": "查询实例访问命令",
-      "output": "DescribeInstanceMonitorTopNCmdResponse"
+      "output": "DescribeInstanceMonitorTopNCmdResponse",
+      "status": "online"
     },
     "DescribeInstanceMonitorTopNCmdTook": {
       "document": "查询实例CPU耗时",
       "input": "DescribeInstanceMonitorTopNCmdTookRequest",
       "name": "查询实例CPU耗时",
-      "output": "DescribeInstanceMonitorTopNCmdTookResponse"
+      "output": "DescribeInstanceMonitorTopNCmdTookResponse",
+      "status": "online"
     },
     "DescribeInstanceNodeInfo": {
       "document": "查询实例节点信息",
       "input": "DescribeInstanceNodeInfoRequest",
       "name": "查询实例节点信息",
-      "output": "DescribeInstanceNodeInfoResponse"
+      "output": "DescribeInstanceNodeInfoResponse",
+      "status": "online"
     },
     "DescribeInstanceParamRecords": {
       "document": "查询参数修改历史列表",
       "input": "DescribeInstanceParamRecordsRequest",
       "name": "查询参数修改历史列表",
-      "output": "DescribeInstanceParamRecordsResponse"
+      "output": "DescribeInstanceParamRecordsResponse",
+      "status": "online"
     },
     "DescribeInstanceParams": {
       "document": "查询实例参数列表",
       "input": "DescribeInstanceParamsRequest",
       "name": "查询实例的参数列表",
-      "output": "DescribeInstanceParamsResponse"
+      "output": "DescribeInstanceParamsResponse",
+      "status": "online"
     },
     "DescribeInstanceSecurityGroup": {
       "document": "查询实例安全组信息",
       "input": "DescribeInstanceSecurityGroupRequest",
       "name": "查询实例安全组信息",
-      "output": "DescribeInstanceSecurityGroupResponse"
+      "output": "DescribeInstanceSecurityGroupResponse",
+      "status": "online"
     },
     "DescribeInstanceShards": {
       "document": "获取集群版实例分片信息",
       "input": "DescribeInstanceShardsRequest",
       "name": "获取集群版实例分片信息",
-      "output": "DescribeInstanceShardsResponse"
+      "output": "DescribeInstanceShardsResponse",
+      "status": "online"
     },
     "DescribeInstanceZoneInfo": {
       "document": "查询Redis节点详细信息",
       "input": "DescribeInstanceZoneInfoRequest",
       "name": "查询Redis节点详细信息",
-      "output": "DescribeInstanceZoneInfoResponse"
+      "output": "DescribeInstanceZoneInfoResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "查询Redis实例列表",
       "input": "DescribeInstancesRequest",
       "name": "查询Redis实例列表",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeMaintenanceWindow": {
       "document": "查询实例维护时间窗，在实例需要进行版本升级或者架构升级的时候，会在维护时间窗时间内进行切换",
       "input": "DescribeMaintenanceWindowRequest",
       "name": "查询实例维护时间窗",
-      "output": "DescribeMaintenanceWindowResponse"
+      "output": "DescribeMaintenanceWindowResponse",
+      "status": "online"
     },
     "DescribeParamTemplateInfo": {
       "document": "查询参数模板详情。",
       "input": "DescribeParamTemplateInfoRequest",
       "name": "查询参数模板详情",
-      "output": "DescribeParamTemplateInfoResponse"
+      "output": "DescribeParamTemplateInfoResponse",
+      "status": "online"
     },
     "DescribeParamTemplates": {
       "document": "查询参数模板列表",
       "input": "DescribeParamTemplatesRequest",
       "name": "查询参数模板列表",
-      "output": "DescribeParamTemplatesResponse"
+      "output": "DescribeParamTemplatesResponse",
+      "status": "online"
     },
     "DescribeProductInfo": {
       "document": "本接口（DescribeProductInfo）用于查询全地域 Redis 的售卖规格。",
       "input": "DescribeProductInfoRequest",
       "name": "查询产品售卖规格",
-      "output": "DescribeProductInfoResponse"
+      "output": "DescribeProductInfoResponse",
+      "status": "online"
     },
     "DescribeProjectSecurityGroup": {
       "document": "查询项目安全组信息",
       "input": "DescribeProjectSecurityGroupRequest",
       "name": "查询项目安全组信息",
-      "output": "DescribeProjectSecurityGroupResponse"
+      "output": "DescribeProjectSecurityGroupResponse",
+      "status": "online"
     },
     "DescribeProjectSecurityGroups": {
       "document": "本接口(DescribeProjectSecurityGroups)用于查询项目的安全组详情。",
       "input": "DescribeProjectSecurityGroupsRequest",
       "name": "查询项目安全组详情",
-      "output": "DescribeProjectSecurityGroupsResponse"
+      "output": "DescribeProjectSecurityGroupsResponse",
+      "status": "online"
     },
     "DescribeProxySlowLog": {
       "document": "本接口（DescribeProxySlowLog）用于查询代理慢查询。",
       "input": "DescribeProxySlowLogRequest",
       "name": "查询代理慢查询",
-      "output": "DescribeProxySlowLogResponse"
+      "output": "DescribeProxySlowLogResponse",
+      "status": "online"
     },
     "DescribeReplicationGroup": {
       "document": "本接口（DescribeReplicationGroup）查询复制组。",
       "input": "DescribeReplicationGroupRequest",
       "name": "查询复制组",
-      "output": "DescribeReplicationGroupResponse"
+      "output": "DescribeReplicationGroupResponse",
+      "status": "online"
     },
     "DescribeSlowLog": {
       "document": "本接口（DescribeSlowLog）查询实例慢查询记录。",
       "input": "DescribeSlowLogRequest",
       "name": "查询实例慢查询记录",
-      "output": "DescribeSlowLogResponse"
+      "output": "DescribeSlowLogResponse",
+      "status": "online"
     },
     "DescribeTaskInfo": {
       "document": "用于查询任务结果",
       "input": "DescribeTaskInfoRequest",
       "name": "Redis查询任务结果",
-      "output": "DescribeTaskInfoResponse"
+      "output": "DescribeTaskInfoResponse",
+      "status": "online"
     },
     "DescribeTaskList": {
       "document": "查询任务列表信息",
       "input": "DescribeTaskListRequest",
       "name": "查询任务列表信息",
-      "output": "DescribeTaskListResponse"
+      "output": "DescribeTaskListResponse",
+      "status": "online"
     },
     "DescribeTendisSlowLog": {
       "document": "查询Tendis慢查询",
       "input": "DescribeTendisSlowLogRequest",
       "name": "查询Tendis慢查询",
-      "output": "DescribeTendisSlowLogResponse"
+      "output": "DescribeTendisSlowLogResponse",
+      "status": "online"
     },
     "DestroyPostpaidInstance": {
       "document": "按量计费实例销毁",
       "input": "DestroyPostpaidInstanceRequest",
       "name": "按量计费实例销毁",
-      "output": "DestroyPostpaidInstanceResponse"
+      "output": "DestroyPostpaidInstanceResponse",
+      "status": "online"
     },
     "DestroyPrepaidInstance": {
       "document": "包年包月实例退还",
       "input": "DestroyPrepaidInstanceRequest",
       "name": "包年包月实例退还",
-      "output": "DestroyPrepaidInstanceResponse"
+      "output": "DestroyPrepaidInstanceResponse",
+      "status": "online"
     },
     "DisableReplicaReadonly": {
       "document": "禁用读写分离",
       "input": "DisableReplicaReadonlyRequest",
       "name": "禁用读写分离",
-      "output": "DisableReplicaReadonlyResponse"
+      "output": "DisableReplicaReadonlyResponse",
+      "status": "online"
     },
     "DisassociateSecurityGroups": {
       "document": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。",
       "input": "DisassociateSecurityGroupsRequest",
       "name": "安全组批量解绑云资源",
-      "output": "DisassociateSecurityGroupsResponse"
+      "output": "DisassociateSecurityGroupsResponse",
+      "status": "online"
     },
     "EnableReplicaReadonly": {
       "document": "启用读写分离",
       "input": "EnableReplicaReadonlyRequest",
       "name": "启用读写分离",
-      "output": "EnableReplicaReadonlyResponse"
+      "output": "EnableReplicaReadonlyResponse",
+      "status": "online"
     },
     "InquiryPriceCreateInstance": {
       "document": "查询新购实例价格",
       "input": "InquiryPriceCreateInstanceRequest",
       "name": "查询新购实例价格",
-      "output": "InquiryPriceCreateInstanceResponse"
+      "output": "InquiryPriceCreateInstanceResponse",
+      "status": "online"
     },
     "InquiryPriceRenewInstance": {
       "document": "查询实例续费价格（包年包月）",
       "input": "InquiryPriceRenewInstanceRequest",
       "name": "查询实例续费价格（包年包月）",
-      "output": "InquiryPriceRenewInstanceResponse"
+      "output": "InquiryPriceRenewInstanceResponse",
+      "status": "online"
     },
     "InquiryPriceUpgradeInstance": {
       "document": "查询实例扩容价格",
       "input": "InquiryPriceUpgradeInstanceRequest",
       "name": "查询实例扩容价格",
-      "output": "InquiryPriceUpgradeInstanceResponse"
+      "output": "InquiryPriceUpgradeInstanceResponse",
+      "status": "online"
     },
     "KillMasterGroup": {
       "document": "模拟故障",
       "input": "KillMasterGroupRequest",
       "name": "模拟故障接口",
-      "output": "KillMasterGroupResponse"
+      "output": "KillMasterGroupResponse",
+      "status": "online"
     },
     "ManualBackupInstance": {
       "document": "手动备份Redis实例",
       "input": "ManualBackupInstanceRequest",
       "name": "手动备份Redis实例",
-      "output": "ManualBackupInstanceResponse"
+      "output": "ManualBackupInstanceResponse",
+      "status": "online"
     },
     "ModfiyInstancePassword": {
       "document": "修改redis密码",
       "input": "ModfiyInstancePasswordRequest",
       "name": "修改Redis密码",
-      "output": "ModfiyInstancePasswordResponse"
+      "output": "ModfiyInstancePasswordResponse",
+      "status": "online"
     },
     "ModifyAutoBackupConfig": {
       "document": "设置自动备份配置",
       "input": "ModifyAutoBackupConfigRequest",
       "name": "设置自动备份配置",
-      "output": "ModifyAutoBackupConfigResponse"
+      "output": "ModifyAutoBackupConfigResponse",
+      "status": "online"
     },
     "ModifyConnectionConfig": {
       "document": "修改实例的连接配置，包括带宽和最大连接数。",
       "input": "ModifyConnectionConfigRequest",
       "name": "修改实例连接配置",
-      "output": "ModifyConnectionConfigResponse"
+      "output": "ModifyConnectionConfigResponse",
+      "status": "online"
     },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
       "name": "修改云数据库安全组",
-      "output": "ModifyDBInstanceSecurityGroupsResponse"
+      "output": "ModifyDBInstanceSecurityGroupsResponse",
+      "status": "online"
     },
     "ModifyInstance": {
       "document": "修改实例相关信息",
       "input": "ModifyInstanceRequest",
       "name": "修改实例相关信息",
-      "output": "ModifyInstanceResponse"
+      "output": "ModifyInstanceResponse",
+      "status": "online"
     },
     "ModifyInstanceAccount": {
       "document": "修改实例子账号",
       "input": "ModifyInstanceAccountRequest",
       "name": "修改实例子账号",
-      "output": "ModifyInstanceAccountResponse"
+      "output": "ModifyInstanceAccountResponse",
+      "status": "online"
     },
     "ModifyInstanceParams": {
       "document": "本接口(ModifyInstanceParams)用于修改Redis实例的参数配置。",
       "input": "ModifyInstanceParamsRequest",
       "name": "修改实例参数",
-      "output": "ModifyInstanceParamsResponse"
+      "output": "ModifyInstanceParamsResponse",
+      "status": "online"
     },
     "ModifyInstanceReadOnly": {
       "document": "设置实例输入模式",
       "input": "ModifyInstanceReadOnlyRequest",
       "name": "设置实例输入模式",
-      "output": "ModifyInstanceReadOnlyResponse"
+      "output": "ModifyInstanceReadOnlyResponse",
+      "status": "online"
     },
     "ModifyMaintenanceWindow": {
       "document": "修改实例维护时间窗时间，需要进行版本升级或者架构升级的实例，会在维护时间窗内进行时间切换。注意：已经发起版本升级或者架构升级的实例，无法修改维护时间窗。",
       "input": "ModifyMaintenanceWindowRequest",
       "name": "修改实例维护时间窗时间",
-      "output": "ModifyMaintenanceWindowResponse"
+      "output": "ModifyMaintenanceWindowResponse",
+      "status": "online"
     },
     "ModifyNetworkConfig": {
       "document": "修改实例网络配置",
       "input": "ModifyNetworkConfigRequest",
       "name": "修改实例网络配置",
-      "output": "ModifyNetworkConfigResponse"
+      "output": "ModifyNetworkConfigResponse",
+      "status": "online"
     },
     "ModifyParamTemplate": {
       "document": "修改参数模板",
       "input": "ModifyParamTemplateRequest",
       "name": "修改参数模板",
-      "output": "ModifyParamTemplateResponse"
+      "output": "ModifyParamTemplateResponse",
+      "status": "online"
     },
     "OpenSSL": {
       "document": "开启SSL",
       "input": "OpenSSLRequest",
       "name": "开启SSL",
-      "output": "OpenSSLResponse"
+      "output": "OpenSSLResponse",
+      "status": "online"
     },
     "ReleaseWanAddress": {
       "document": "关闭外网",
       "input": "ReleaseWanAddressRequest",
       "name": "关闭外网接口",
-      "output": "ReleaseWanAddressResponse"
+      "output": "ReleaseWanAddressResponse",
+      "status": "online"
     },
     "RenewInstance": {
       "document": "本接口（RenewInstance）可用于为实例续费。",
       "input": "RenewInstanceRequest",
       "name": "续费实例",
-      "output": "RenewInstanceResponse"
+      "output": "RenewInstanceResponse",
+      "status": "online"
     },
     "ResetPassword": {
       "document": "重置密码",
       "input": "ResetPasswordRequest",
       "name": "重置密码",
-      "output": "ResetPasswordResponse"
+      "output": "ResetPasswordResponse",
+      "status": "online"
     },
     "RestoreInstance": {
       "document": "恢复 CRS 实例",
       "input": "RestoreInstanceRequest",
       "name": "恢复 CRS 实例",
-      "output": "RestoreInstanceResponse"
+      "output": "RestoreInstanceResponse",
+      "status": "online"
     },
     "StartupInstance": {
       "document": "实例解隔离",
       "input": "StartupInstanceRequest",
       "name": "实例解隔离",
-      "output": "StartupInstanceResponse"
+      "output": "StartupInstanceResponse",
+      "status": "online"
     },
     "SwitchInstanceVip": {
       "document": "在通过DTS支持跨可用区灾备的场景中，通过该接口交换实例VIP完成实例灾备切换。交换VIP后目标实例可写，源和目标实例VIP互换，同时源与目标实例间DTS同步任务断开",
       "input": "SwitchInstanceVipRequest",
       "name": "交换实例VIP",
-      "output": "SwitchInstanceVipResponse"
+      "output": "SwitchInstanceVipResponse",
+      "status": "online"
     },
     "SwitchProxy": {
       "document": "Proxy模拟故障接口",
       "input": "SwitchProxyRequest",
       "name": "Proxy模拟故障接口",
-      "output": "SwitchProxyResponse"
+      "output": "SwitchProxyResponse",
+      "status": "online"
     },
     "UpgradeInstance": {
       "document": "变更实例配置",
       "input": "UpgradeInstanceRequest",
       "name": "变更实例配置",
-      "output": "UpgradeInstanceResponse"
+      "output": "UpgradeInstanceResponse",
+      "status": "online"
     },
     "UpgradeInstanceVersion": {
       "document": "将原本实例升级到高版本实例，或者将主从版实例升级到集群版实例",
       "input": "UpgradeInstanceVersionRequest",
       "name": "升级实例版本或者结构",
-      "output": "UpgradeInstanceVersionResponse"
+      "output": "UpgradeInstanceVersionResponse",
+      "status": "online"
     },
     "UpgradeProxyVersion": {
       "document": "实例proxy版本升级",
       "input": "UpgradeProxyVersionRequest",
       "name": "实例proxy版本升级接口",
-      "output": "UpgradeProxyVersionResponse"
+      "output": "UpgradeProxyVersionResponse",
+      "status": "online"
     },
     "UpgradeSmallVersion": {
       "document": "实例小版本升级",
       "input": "UpgradeSmallVersionRequest",
       "name": "实例小版本升级接口",
-      "output": "UpgradeSmallVersionResponse"
+      "output": "UpgradeSmallVersionResponse",
+      "status": "online"
     },
     "UpgradeVersionToMultiAvailabilityZones": {
       "document": "升级实例支持多AZ",
       "input": "UpgradeVersionToMultiAvailabilityZonesRequest",
       "name": "升级实例支持多AZ",
-      "output": "UpgradeVersionToMultiAvailabilityZonesResponse"
+      "output": "UpgradeVersionToMultiAvailabilityZonesResponse",
+      "status": "online"
     }
   },
   "metadata": {

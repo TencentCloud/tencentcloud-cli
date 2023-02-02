@@ -4,139 +4,162 @@
       "document": "用于创建年龄语音识别任务的接口，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。\n</br>\n<h4><b>接口功能说明：</b></h4>\n<li>支持对语音文件进行检测，判断是否为未成年人。</li>\n<li>支持批量提交检测子任务。检测子任务列表最多支持100个。</li>\n</br>\n<h4><b>音频文件限制说明：</b></h4>\n<li>音频文件大小限制：10 M</li>\n<li>音频文件时长限制：3分钟</li>\n<li>音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg</li>\n</br>",
       "input": "CreateAgeDetectTaskRequest",
       "name": "提交年龄语音识别任务",
-      "output": "CreateAgeDetectTaskResponse"
+      "output": "CreateAgeDetectTaskResponse",
+      "status": "online"
     },
     "CreateApp": {
       "document": "本接口(CreateApp)用于创建一个GME应用。",
       "input": "CreateAppRequest",
       "name": "创建GME应用",
-      "output": "CreateAppResponse"
+      "output": "CreateAppResponse",
+      "status": "online"
     },
     "CreateCustomization": {
       "document": "用户使用该接口可以创建语音消息转文本热句模型，以供识别调用",
       "input": "CreateCustomizationRequest",
       "name": "创建语音消息转文本热句模型",
-      "output": "CreateCustomizationResponse"
+      "output": "CreateCustomizationResponse",
+      "status": "online"
     },
     "CreateScanUser": {
       "document": "新增自定义送检用户",
       "input": "CreateScanUserRequest",
       "name": "新增自定义送检用户",
-      "output": "CreateScanUserResponse"
+      "output": "CreateScanUserResponse",
+      "status": "online"
     },
     "DeleteCustomization": {
       "document": "用户通过该接口可以删除语音消息转文本热句模型",
       "input": "DeleteCustomizationRequest",
       "name": "删除语音消息转文本热句模型",
-      "output": "DeleteCustomizationResponse"
+      "output": "DeleteCustomizationResponse",
+      "status": "online"
     },
     "DeleteRoomMember": {
       "document": "本接口(DeleteRoomMember)用户删除房间或者剔除房间内用户",
       "input": "DeleteRoomMemberRequest",
       "name": "剔除房间或房间成员",
-      "output": "DeleteRoomMemberResponse"
+      "output": "DeleteRoomMemberResponse",
+      "status": "online"
     },
     "DeleteScanUser": {
       "document": "删除自定义送检用户",
       "input": "DeleteScanUserRequest",
       "name": "删除自定义送检用户",
-      "output": "DeleteScanUserResponse"
+      "output": "DeleteScanUserResponse",
+      "status": "online"
     },
     "DescribeAgeDetectTask": {
       "document": "查询年龄语音识别任务结果，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。",
       "input": "DescribeAgeDetectTaskRequest",
       "name": "查询年龄语音识别任务结果",
-      "output": "DescribeAgeDetectTaskResponse"
+      "output": "DescribeAgeDetectTaskResponse",
+      "status": "online"
     },
     "DescribeAppStatistics": {
       "document": "本接口(DescribeAppStatistics)用于获取某个GME应用的用量数据。包括实时语音，语音消息及转文本，语音分析等。最长查询周期为最近60天。",
       "input": "DescribeAppStatisticsRequest",
       "name": "获取应用用量统计数据",
-      "output": "DescribeAppStatisticsResponse"
+      "output": "DescribeAppStatisticsResponse",
+      "status": "online"
     },
     "DescribeApplicationData": {
       "document": "本接口(DescribeApplicationData)用于获取数据详情信息，最多可拉取最近90天的数据。",
       "input": "DescribeApplicationDataRequest",
       "name": "获取数据详情",
-      "output": "DescribeApplicationDataResponse"
+      "output": "DescribeApplicationDataResponse",
+      "status": "online"
     },
     "DescribeApplicationList": {
       "document": "本接口(DescribeApplicationList)用于查询自己账号下的应用列表",
       "input": "DescribeApplicationListRequest",
       "name": "查询某账号下的应用列表",
-      "output": "DescribeApplicationListResponse"
+      "output": "DescribeApplicationListResponse",
+      "status": "online"
     },
     "DescribeRealtimeScanConfig": {
       "document": "获取用户自定义送检信息",
       "input": "DescribeRealtimeScanConfigRequest",
       "name": "获取用户自定义送检信息",
-      "output": "DescribeRealtimeScanConfigResponse"
+      "output": "DescribeRealtimeScanConfigResponse",
+      "status": "online"
     },
     "DescribeRoomInfo": {
       "document": "获取房间内用户信息",
       "input": "DescribeRoomInfoRequest",
       "name": "获取房间内用户信息",
-      "output": "DescribeRoomInfoResponse"
+      "output": "DescribeRoomInfoResponse",
+      "status": "online"
     },
     "DescribeScanResultList": {
       "document": "本接口(DescribeScanResultList)用于查询语音检测结果，查询任务列表最多支持100个。\n<p style=\"color:red\">如果在提交语音检测任务时未设置 Callback 字段，则需要通过本接口获取检测结果</p>",
       "input": "DescribeScanResultListRequest",
       "name": "查询语音检测结果",
-      "output": "DescribeScanResultListResponse"
+      "output": "DescribeScanResultListResponse",
+      "status": "online"
     },
     "DescribeUserInAndOutTime": {
       "document": "拉取用户在房间得进出时间",
       "input": "DescribeUserInAndOutTimeRequest",
       "name": "拉取用户在房间得进出时间",
-      "output": "DescribeUserInAndOutTimeResponse"
+      "output": "DescribeUserInAndOutTimeResponse",
+      "status": "online"
     },
     "GetCustomizationList": {
       "document": "查询语音消息转文本热句模型列表",
       "input": "GetCustomizationListRequest",
       "name": "查询语音消息转文本热句模型列表",
-      "output": "GetCustomizationListResponse"
+      "output": "GetCustomizationListResponse",
+      "status": "online"
     },
     "ModifyAppStatus": {
       "document": "本接口(ModifyAppStatus)用于修改应用总开关状态。",
       "input": "ModifyAppStatusRequest",
       "name": "修改应用开关状态",
-      "output": "ModifyAppStatusResponse"
+      "output": "ModifyAppStatusResponse",
+      "status": "online"
     },
     "ModifyCustomization": {
       "document": "用户通过该接口可以更新语音消息转文本热句模型。",
       "input": "ModifyCustomizationRequest",
       "name": "更新语音消息转文本热句模型",
-      "output": "ModifyCustomizationResponse"
+      "output": "ModifyCustomizationResponse",
+      "status": "online"
     },
     "ModifyCustomizationState": {
       "document": "通过该接口，用户可以修改语音消息转文本热句模型状态，上下线热句模型",
       "input": "ModifyCustomizationStateRequest",
       "name": "修改语音消息转文本热句模型状态",
-      "output": "ModifyCustomizationStateResponse"
+      "output": "ModifyCustomizationStateResponse",
+      "status": "online"
     },
     "ModifyUserMicStatus": {
       "document": "**接口作用**：此接口用于修改房间用户的麦克风状态，例如房间内用户麦克风为打开状态，可调用此接口将该用户麦克风进行关闭，关闭后即使该用户使用客户端接口 EnableMic 打开麦克风，依然无法与房间内成员通话，属于被禁言状态。该状态持续到此用户退房后失效，或者调用该接口重新打开此用户麦克风状态。\n**接口应用场景**：此接口多用于游戏业务中台或者风控后台，对一些发表不当言论的玩家进行禁言处理。\n**接口使用前提**：目前 ModifyUserMicStatus 接口通过白名单开放，如需使用，需要 [提交工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。",
       "input": "ModifyUserMicStatusRequest",
       "name": "修改用户麦克风状态",
-      "output": "ModifyUserMicStatusResponse"
+      "output": "ModifyUserMicStatusResponse",
+      "status": "online"
     },
     "ScanVoice": {
       "document": "本接口(ScanVoice)用于提交语音检测任务，检测任务列表最多支持100个。使用前请您登录[控制台 - 服务配置](https://console.cloud.tencent.com/gamegme/conf)开启语音内容安全服务。\n</br></br>\n\n<h4><b>功能试用说明：</b></h4>\n<li>打开前往<a href=\"https://console.cloud.tencent.com/gamegme/tryout\">控制台 - 产品试用</a>免费试用语音内容安全服务。</li>\n</br>\n\n<h4><b>接口功能说明：</b></h4>\n<li>支持对语音流或语音文件进行检测，判断其中是否包含违规内容。</li>\n<li>支持设置回调地址 Callback 获取检测结果，同时支持通过接口(查询语音检测结果)主动轮询获取检测结果。</li>\n<li>支持场景输入，包括：谩骂、色情等场景</li>\n<li>支持批量提交检测任务。检测任务列表最多支持100个。</li>\n</br>\n<h4><b>音频文件限制说明：</b></h4>\n<li>音频文件大小限制：100 M</li>\n<li>音频文件时长限制：30分钟</li>\n<li>音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg</li>\n</br>\n<h4><b>语音流限制说明：</b></h4>\n<li>语音流格式支持的类型：.m3u8、.flv</li>\n<li>语音流支持的传输协议：RTMP、HTTP、HTTPS</li>\n<li>语音流时长限制：4小时</li>\n<li>支持音视频流分离并对音频流进行分析</li>\n</br>\n<h4 id=\"Label_Value\"><b>Scenes 与 Label 参数说明：</b></h4>\n<p>提交语音检测任务时，需要指定 Scenes 场景参数，<font color=\"red\">目前要求您设置 Scenes 参数值为：[\"default\"]</font>；而在检测结果中，则包含请求时指定的场景，以及对应类型的检测结果。</p>\n<table>\n<thread>\n<tr>\n<th>场景</th>\n<th>描述</th>\n<th>Label</th>\n</tr>\n</thread>\n<tbody>\n<tr>\n<td>语音检测</td>\n<td>语音检测的检测类型</td>\n<td>\n<p>normal:正常文本</p>\n<p>porn:色情</p>\n<p>abuse:谩骂</p>\n<p>ad :广告</p>\n<p>illegal :违法</p>\n<p>moan :呻吟</p>\n<p>customized:自定义词库</p>\n</td>\n</tr>\n</tbody>\n</table>\n</br>\n<h4 id=\"Callback_Declare\"><b>回调相关说明：</b></h4>\n<li>如果在请求参数中指定了回调地址参数 Callback，即一个 HTTP(S) 协议接口的 URL，则需要支持 POST 方法，传输数据编码采用 UTF-8。</li>\n<li>在推送回调数据后，接收到的 HTTP 状态码为 200 时，表示推送成功。</li>\n<li>HTTP 请求参数（query）说明：</li>\n<table>\n<thread>\n<tr>\n<th>名称</th>\n<th>类型</th>\n<th>是否必需</th>\n<th>描述</th>\n</tr>\n</thread>\n<tbody>\n<tr>\n<td>Signatue</td>\n<td>string</td>\n<td>是</td>\n<td>签名，具体见<a href=\"#Callback_Signatue\">签名生成说明</a></td>\n</tr>\n</tbody>\n</table>\n<ul  id=\"Callback_Signatue\">\n\t<li>签名生成说明：</li>\n\t<ul>\n\t\t<li>使用 HMAC-SH1 算法, 最终结果做 BASE64 编码;</li>\n\t\t<li>签名原文串为 POST+body 的整个json内容(长度以 Content-Length 为准);</li>\n\t\t<li>签名key为应用的 SecretKey，可以通过控制台查看。</li>\n\t</ul>\n</ul>\n\n<li>回调示例如下<font color=\"red\">（详细字段说明见结构：\n<a href=\"https://cloud.tencent.com/document/api/607/35375#DescribeScanResult\" target=\"_blank\">DescribeScanResult</a>）</font>：</li>\n<pre><code>{\n\t\"Code\": 0,\n\t\"DataId\": \"1400000000_test_data_id\",\n\t\"ScanFinishTime\": 1566720906,\n\t\"HitFlag\": true,\n\t\"Live\": false,\n\t\"Msg\": \"\",\n\t\"ScanPiece\": [{\n\t\t\"DumpUrl\": \"\",\n\t\t\"HitFlag\": true,\n\t\t\"MainType\": \"abuse\",\n\t\t\"RoomId\": \"123\",\n\t\t\"OpenId\": \"111\",\n\t\t\"Info\":\"\",\n\t\t\"Offset\": 0,\n\t\t\"Duration\": 3400,\n\t\t\"PieceStartTime\":1574684231,\n\t\t\"ScanDetail\": [{\n\t\t\t\"EndTime\": 1110,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 1110\n\t\t}, {\n\t\t\t\"EndTime\": 1380,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 930\n\t\t}, {\n\t\t\t\"EndTime\": 1560,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 930\n\t\t}, {\n\t\t\t\"EndTime\": 2820,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 2490\n\t\t}]\n\t}],\n\t\"ScanStartTime\": 1566720905,\n\t\"Scenes\": [\n\t\t\"default\"\n\t],\n\t\"Status\": \"Success\",\n\t\"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\",\n\t\"Url\": \"https://xxx/xxx.m4a\"\n}\n</code></pre>",
       "input": "ScanVoiceRequest",
       "name": "提交语音检测任务",
-      "output": "ScanVoiceResponse"
+      "output": "ScanVoiceResponse",
+      "status": "online"
     },
     "UpdateScanRooms": {
       "document": "更新自定义送检房间号",
       "input": "UpdateScanRoomsRequest",
       "name": "更新送检房间号",
-      "output": "UpdateScanRoomsResponse"
+      "output": "UpdateScanRoomsResponse",
+      "status": "online"
     },
     "UpdateScanUsers": {
       "document": "更新自定义送检用户号",
       "input": "UpdateScanUsersRequest",
       "name": "更新送检用户号",
-      "output": "UpdateScanUsersResponse"
+      "output": "UpdateScanUsersResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -976,7 +999,6 @@
       "document": "DeleteRoomMember请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要操作的房间id",
           "example": "100",
           "member": "string",
@@ -985,16 +1007,6 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "要剔除的用户列表",
-          "example": "[\"1\\r\\n\",\"2\\r\\n\"]",
-          "member": "string",
-          "name": "Uids",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "剔除类型 1-删除房间 2-剔除用户",
           "example": "2",
           "member": "uint64",
@@ -1003,13 +1015,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "应用id",
           "example": "140014556",
           "member": "uint64",
           "name": "BizId",
           "required": true,
           "type": "int"
+        },
+        {
+          "document": "要剔除的用户列表",
+          "example": "[\"1\\r\\n\",\"2\\r\\n\"]",
+          "member": "string",
+          "name": "Uids",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1022,7 +1041,6 @@
           "example": "无",
           "member": "DeleteResult",
           "name": "DeleteResult",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1423,7 +1441,6 @@
       "document": "DescribeRoomInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
           "example": "123456",
           "member": "uint64",
@@ -1432,7 +1449,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）",
           "example": "[1234, 2345]",
           "member": "uint64",
@@ -1441,7 +1457,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）",
           "example": "[\"1234\", \"2345\"]",
           "member": "string",
@@ -1460,7 +1475,6 @@
           "example": "0",
           "member": "uint64",
           "name": "Result",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1469,7 +1483,6 @@
           "example": "无",
           "member": "RoomUser",
           "name": "RoomUsers",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2015,7 +2028,6 @@
       "document": "ModifyUserMicStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [语音服务开通指引](https://cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。",
           "example": "0",
           "member": "int64",
@@ -2024,7 +2036,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实时语音房间号。",
           "example": "11",
           "member": "string",
@@ -2033,7 +2044,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要操作的房间内用户以及该用户的目标麦克风状态。",
           "example": "无",
           "member": "UserMicStatus",
@@ -2052,7 +2062,6 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2061,7 +2070,6 @@
           "example": "123",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2778,16 +2786,6 @@
       "members": [
         {
           "default": "",
-          "document": "客户端用于标识用户的Openid。",
-          "example": "0",
-          "member": "int64",
-          "name": "Uid",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "开麦状态。1表示关闭麦克风，2表示打开麦克风。",
           "example": "1",
           "member": "int64",
@@ -2795,6 +2793,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端用于标识用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）",
+          "example": "9798",
+          "member": "int64",
+          "name": "Uid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端用于标识字符串型用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jelly",
+          "member": "string",
+          "name": "StrUid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

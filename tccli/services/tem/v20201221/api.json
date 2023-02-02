@@ -4,103 +4,120 @@
       "document": "生成Cos临时秘钥",
       "input": "CreateCosTokenRequest",
       "name": "生成Cos临时秘钥",
-      "output": "CreateCosTokenResponse"
+      "output": "CreateCosTokenResponse",
+      "status": "online"
     },
     "CreateCosTokenV2": {
       "document": "生成Cos临时秘钥",
       "input": "CreateCosTokenV2Request",
       "name": "生成Cos临时秘钥V2",
-      "output": "CreateCosTokenV2Response"
+      "output": "CreateCosTokenV2Response",
+      "status": "online"
     },
     "CreateNamespace": {
       "document": "创建环境",
       "input": "CreateNamespaceRequest",
       "name": "创建命名空间",
-      "output": "CreateNamespaceResponse"
+      "output": "CreateNamespaceResponse",
+      "status": "online"
     },
     "CreateResource": {
       "document": "绑定云资源",
       "input": "CreateResourceRequest",
       "name": "绑定云资源",
-      "output": "CreateResourceResponse"
+      "output": "CreateResourceResponse",
+      "status": "online"
     },
     "CreateServiceV2": {
       "document": "创建服务",
       "input": "CreateServiceV2Request",
       "name": "创建服务",
-      "output": "CreateServiceV2Response"
+      "output": "CreateServiceV2Response",
+      "status": "online"
     },
     "DeleteIngress": {
       "document": "删除 Ingress 规则",
       "input": "DeleteIngressRequest",
       "name": "删除 Ingress 规则",
-      "output": "DeleteIngressResponse"
+      "output": "DeleteIngressResponse",
+      "status": "online"
     },
     "DeployServiceV2": {
       "document": "服务部署",
       "input": "DeployServiceV2Request",
       "name": "服务部署",
-      "output": "DeployServiceV2Response"
+      "output": "DeployServiceV2Response",
+      "status": "online"
     },
     "DescribeIngress": {
       "document": "查询 Ingress 规则",
       "input": "DescribeIngressRequest",
       "name": "查询 Ingress 规则",
-      "output": "DescribeIngressResponse"
+      "output": "DescribeIngressResponse",
+      "status": "online"
     },
     "DescribeIngresses": {
       "document": "查询 Ingress 规则列表",
       "input": "DescribeIngressesRequest",
       "name": "查询 Ingress 规则列表",
-      "output": "DescribeIngressesResponse"
+      "output": "DescribeIngressesResponse",
+      "status": "online"
     },
     "DescribeNamespaces": {
       "document": "获取租户环境列表",
       "input": "DescribeNamespacesRequest",
       "name": "获取租户命名空间列表",
-      "output": "DescribeNamespacesResponse"
+      "output": "DescribeNamespacesResponse",
+      "status": "online"
     },
     "DescribeRelatedIngresses": {
       "document": "查询服务关联的 Ingress 规则列表",
       "input": "DescribeRelatedIngressesRequest",
       "name": "查询服务关联的 Ingress 规则列表",
-      "output": "DescribeRelatedIngressesResponse"
+      "output": "DescribeRelatedIngressesResponse",
+      "status": "online"
     },
     "DescribeServiceRunPodListV2": {
       "document": "获取服务下面运行pod列表",
       "input": "DescribeServiceRunPodListV2Request",
       "name": "获取服务下面运行pod列表",
-      "output": "DescribeServiceRunPodListV2Response"
+      "output": "DescribeServiceRunPodListV2Response",
+      "status": "online"
     },
     "GenerateDownloadUrl": {
       "document": "生成包预签名下载链接",
       "input": "GenerateDownloadUrlRequest",
       "name": "生成包预签名下载链接",
-      "output": "GenerateDownloadUrlResponse"
+      "output": "GenerateDownloadUrlResponse",
+      "status": "online"
     },
     "ModifyIngress": {
       "document": "创建或者更新 Ingress 规则",
       "input": "ModifyIngressRequest",
       "name": "创建或者更新 Ingress 规则",
-      "output": "ModifyIngressResponse"
+      "output": "ModifyIngressResponse",
+      "status": "online"
     },
     "ModifyNamespace": {
       "document": "编辑环境",
       "input": "ModifyNamespaceRequest",
       "name": "编辑命名空间",
-      "output": "ModifyNamespaceResponse"
+      "output": "ModifyNamespaceResponse",
+      "status": "online"
     },
     "ModifyServiceInfo": {
       "document": "修改服务基本信息",
       "input": "ModifyServiceInfoRequest",
       "name": "修改服务基本信息",
-      "output": "ModifyServiceInfoResponse"
+      "output": "ModifyServiceInfoResponse",
+      "status": "online"
     },
     "RestartServiceRunPod": {
       "document": "重启实例",
       "input": "RestartServiceRunPodRequest",
       "name": "重启实例",
-      "output": "RestartServiceRunPodResponse"
+      "output": "RestartServiceRunPodResponse",
+      "status": "online"
     }
   },
   "metadata": {

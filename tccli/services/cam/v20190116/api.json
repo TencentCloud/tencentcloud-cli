@@ -4,517 +4,603 @@
       "document": "创建子用户",
       "input": "AddUserRequest",
       "name": "创建子用户",
-      "output": "AddUserResponse"
+      "output": "AddUserResponse",
+      "status": "online"
     },
     "AddUserToGroup": {
       "document": "用户加入到用户组",
       "input": "AddUserToGroupRequest",
       "name": "用户加入到用户组",
-      "output": "AddUserToGroupResponse"
+      "output": "AddUserToGroupResponse",
+      "status": "online"
     },
     "AttachGroupPolicy": {
       "document": "本接口（AttachGroupPolicy）可用于绑定策略到用户组。",
       "input": "AttachGroupPolicyRequest",
       "name": "绑定策略到用户组",
-      "output": "AttachGroupPolicyResponse"
+      "output": "AttachGroupPolicyResponse",
+      "status": "online"
     },
     "AttachRolePolicy": {
       "document": "本接口（AttachRolePolicy）用于绑定策略到角色。",
       "input": "AttachRolePolicyRequest",
       "name": "绑定权限策略到角色",
-      "output": "AttachRolePolicyResponse"
+      "output": "AttachRolePolicyResponse",
+      "status": "online"
     },
     "AttachUserPolicy": {
       "document": "本接口（AttachUserPolicy）可用于绑定到用户的策略。",
       "input": "AttachUserPolicyRequest",
       "name": "绑定策略到用户",
-      "output": "AttachUserPolicyResponse"
+      "output": "AttachUserPolicyResponse",
+      "status": "online"
     },
     "ConsumeCustomMFAToken": {
       "document": "验证自定义多因子Token",
       "input": "ConsumeCustomMFATokenRequest",
       "name": "验证自定义多因子Token",
-      "output": "ConsumeCustomMFATokenResponse"
+      "output": "ConsumeCustomMFATokenResponse",
+      "status": "online"
     },
     "CreateAccessKey": {
       "document": "为CAM用户创建访问密钥",
       "input": "CreateAccessKeyRequest",
       "name": "创建访问密钥",
-      "output": "CreateAccessKeyResponse"
+      "output": "CreateAccessKeyResponse",
+      "status": "online"
     },
     "CreateGroup": {
       "document": "创建用户组",
       "input": "CreateGroupRequest",
       "name": "创建用户组",
-      "output": "CreateGroupResponse"
+      "output": "CreateGroupResponse",
+      "status": "online"
     },
     "CreateOIDCConfig": {
       "document": "创建角色OIDC配置",
       "input": "CreateOIDCConfigRequest",
       "name": "创建角色OIDC配置",
-      "output": "CreateOIDCConfigResponse"
+      "output": "CreateOIDCConfigResponse",
+      "status": "online"
     },
     "CreatePolicy": {
       "document": "本接口（CreatePolicy）可用于创建策略。",
       "input": "CreatePolicyRequest",
       "name": "创建策略",
-      "output": "CreatePolicyResponse"
+      "output": "CreatePolicyResponse",
+      "status": "online"
     },
     "CreatePolicyVersion": {
       "document": "该接口（CreatePolicyVersion）用于新增策略版本，用户创建了一个策略版本之后可以方便的通过变更策略版本的方式来变更策略。",
       "input": "CreatePolicyVersionRequest",
       "name": "新增策略版本接口",
-      "output": "CreatePolicyVersionResponse"
+      "output": "CreatePolicyVersionResponse",
+      "status": "online"
     },
     "CreateRole": {
       "document": "本接口（CreateRole）用于创建角色。",
       "input": "CreateRoleRequest",
       "name": "创建角色",
-      "output": "CreateRoleResponse"
+      "output": "CreateRoleResponse",
+      "status": "online"
     },
     "CreateSAMLProvider": {
       "document": "创建SAML身份提供商",
       "input": "CreateSAMLProviderRequest",
       "name": "创建SAML身份提供商",
-      "output": "CreateSAMLProviderResponse"
+      "output": "CreateSAMLProviderResponse",
+      "status": "online"
     },
     "CreateServiceLinkedRole": {
       "document": "创建服务相关角色",
       "input": "CreateServiceLinkedRoleRequest",
       "name": "创建服务相关角色",
-      "output": "CreateServiceLinkedRoleResponse"
+      "output": "CreateServiceLinkedRoleResponse",
+      "status": "online"
     },
     "CreateUserOIDCConfig": {
       "document": "创建用户OIDC配置。只能创建一个用户OIDC身份提供商，并且创建用户OIDC配置之后会自动关闭用户SAML SSO身份提供商。",
       "input": "CreateUserOIDCConfigRequest",
       "name": "创建用户OIDC配置",
-      "output": "CreateUserOIDCConfigResponse"
+      "output": "CreateUserOIDCConfigResponse",
+      "status": "online"
     },
     "CreateUserSAMLConfig": {
       "document": "创建用户SAML配置",
       "input": "CreateUserSAMLConfigRequest",
       "name": "创建用户SAML配置",
-      "output": "CreateUserSAMLConfigResponse"
+      "output": "CreateUserSAMLConfigResponse",
+      "status": "online"
     },
     "DeleteAccessKey": {
       "document": "为CAM用户删除访问密钥。\n此接口属于高风险操作，删除密钥后不可恢复，腾讯云将永久拒绝此密钥的所有请求，请谨慎使用。",
       "input": "DeleteAccessKeyRequest",
       "name": "删除访问密钥",
-      "output": "DeleteAccessKeyResponse"
+      "output": "DeleteAccessKeyResponse",
+      "status": "online"
     },
     "DeleteGroup": {
       "document": "删除用户组",
       "input": "DeleteGroupRequest",
       "name": "删除用户组",
-      "output": "DeleteGroupResponse"
+      "output": "DeleteGroupResponse",
+      "status": "online"
     },
     "DeleteOIDCConfig": {
       "document": "删除OIDC身份提供商",
       "input": "DeleteOIDCConfigRequest",
       "name": "删除OIDC身份提供商",
-      "output": "DeleteOIDCConfigResponse"
+      "output": "DeleteOIDCConfigResponse",
+      "status": "online"
     },
     "DeletePolicy": {
       "document": "本接口（DeletePolicy）可用于删除策略。",
       "input": "DeletePolicyRequest",
       "name": "删除策略",
-      "output": "DeletePolicyResponse"
+      "output": "DeletePolicyResponse",
+      "status": "online"
     },
     "DeletePolicyVersion": {
       "document": "本接口（DeletePolicyVersion）可用于删除一个策略的策略版本。",
       "input": "DeletePolicyVersionRequest",
       "name": "删除策略的策略版本",
-      "output": "DeletePolicyVersionResponse"
+      "output": "DeletePolicyVersionResponse",
+      "status": "online"
     },
     "DeleteRole": {
       "document": "本接口（DeleteRole）用于删除指定角色。",
       "input": "DeleteRoleRequest",
       "name": "删除角色",
-      "output": "DeleteRoleResponse"
+      "output": "DeleteRoleResponse",
+      "status": "online"
     },
     "DeleteRolePermissionsBoundary": {
       "document": "删除角色权限边界",
       "input": "DeleteRolePermissionsBoundaryRequest",
       "name": "删除角色权限边界",
-      "output": "DeleteRolePermissionsBoundaryResponse"
+      "output": "DeleteRolePermissionsBoundaryResponse",
+      "status": "online"
     },
     "DeleteSAMLProvider": {
       "document": "删除SAML身份提供商",
       "input": "DeleteSAMLProviderRequest",
       "name": "删除SAML身份提供商",
-      "output": "DeleteSAMLProviderResponse"
+      "output": "DeleteSAMLProviderResponse",
+      "status": "online"
     },
     "DeleteServiceLinkedRole": {
       "document": "删除服务相关角色",
       "input": "DeleteServiceLinkedRoleRequest",
       "name": "删除服务相关角色",
-      "output": "DeleteServiceLinkedRoleResponse"
+      "output": "DeleteServiceLinkedRoleResponse",
+      "status": "online"
     },
     "DeleteUser": {
       "document": "删除子用户",
       "input": "DeleteUserRequest",
       "name": "删除子用户",
-      "output": "DeleteUserResponse"
+      "output": "DeleteUserResponse",
+      "status": "online"
     },
     "DeleteUserPermissionsBoundary": {
       "document": "删除用户权限边界",
       "input": "DeleteUserPermissionsBoundaryRequest",
       "name": "删除用户权限边界",
-      "output": "DeleteUserPermissionsBoundaryResponse"
+      "output": "DeleteUserPermissionsBoundaryResponse",
+      "status": "online"
     },
     "DescribeOIDCConfig": {
       "document": "查询角色OIDC配置",
       "input": "DescribeOIDCConfigRequest",
       "name": "查询角色OIDC配置",
-      "output": "DescribeOIDCConfigResponse"
+      "output": "DescribeOIDCConfigResponse",
+      "status": "online"
     },
     "DescribeRoleList": {
       "document": "本接口（DescribeRoleList）用于获取账号下的角色列表。",
       "input": "DescribeRoleListRequest",
       "name": "获取角色列表",
-      "output": "DescribeRoleListResponse"
+      "output": "DescribeRoleListResponse",
+      "status": "online"
     },
     "DescribeSafeAuthFlag": {
       "document": "查询用户安全设置",
       "input": "DescribeSafeAuthFlagRequest",
       "name": "查询用户安全设置",
-      "output": "DescribeSafeAuthFlagResponse"
+      "output": "DescribeSafeAuthFlagResponse",
+      "status": "online"
     },
     "DescribeSafeAuthFlagColl": {
       "document": "查询安全设置",
       "input": "DescribeSafeAuthFlagCollRequest",
       "name": "查询安全设置",
-      "output": "DescribeSafeAuthFlagCollResponse"
+      "output": "DescribeSafeAuthFlagCollResponse",
+      "status": "online"
     },
     "DescribeSafeAuthFlagIntl": {
       "document": "查询安全设置(国际站)",
       "input": "DescribeSafeAuthFlagIntlRequest",
       "name": "查询安全设置(国际站)",
-      "output": "DescribeSafeAuthFlagIntlResponse"
+      "output": "DescribeSafeAuthFlagIntlResponse",
+      "status": "online"
     },
     "DescribeSubAccounts": {
       "document": "通过子用户UIN列表查询子用户",
       "input": "DescribeSubAccountsRequest",
       "name": "通过子用户UIN列表查询子用户",
-      "output": "DescribeSubAccountsResponse"
+      "output": "DescribeSubAccountsResponse",
+      "status": "online"
     },
     "DescribeUserOIDCConfig": {
       "document": "查询用户OIDC配置",
       "input": "DescribeUserOIDCConfigRequest",
       "name": "查询用户OIDC配置",
-      "output": "DescribeUserOIDCConfigResponse"
+      "output": "DescribeUserOIDCConfigResponse",
+      "status": "online"
     },
     "DescribeUserSAMLConfig": {
       "document": "查询用户SAML配置",
       "input": "DescribeUserSAMLConfigRequest",
       "name": "查询用户SAML配置",
-      "output": "DescribeUserSAMLConfigResponse"
+      "output": "DescribeUserSAMLConfigResponse",
+      "status": "online"
     },
     "DetachGroupPolicy": {
       "document": "本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。",
       "input": "DetachGroupPolicyRequest",
       "name": "解除绑定到用户组的策略",
-      "output": "DetachGroupPolicyResponse"
+      "output": "DetachGroupPolicyResponse",
+      "status": "online"
     },
     "DetachRolePolicy": {
       "document": "本接口（DetachRolePolicy）用于解除绑定角色的策略。",
       "input": "DetachRolePolicyRequest",
       "name": "解绑角色的策略",
-      "output": "DetachRolePolicyResponse"
+      "output": "DetachRolePolicyResponse",
+      "status": "online"
     },
     "DetachUserPolicy": {
       "document": "本接口（DetachUserPolicy）可用于解除绑定到用户的策略。",
       "input": "DetachUserPolicyRequest",
       "name": "解除绑定到用户的策略",
-      "output": "DetachUserPolicyResponse"
+      "output": "DetachUserPolicyResponse",
+      "status": "online"
     },
     "DisableUserSSO": {
       "document": "禁用用户SSO",
       "input": "DisableUserSSORequest",
       "name": "禁用用户SSO",
-      "output": "DisableUserSSOResponse"
+      "output": "DisableUserSSOResponse",
+      "status": "online"
     },
     "GetAccountSummary": {
       "document": "查询账户摘要 ",
       "input": "GetAccountSummaryRequest",
       "name": "查询账户摘要",
-      "output": "GetAccountSummaryResponse"
+      "output": "GetAccountSummaryResponse",
+      "status": "online"
     },
     "GetCustomMFATokenInfo": {
       "document": "获取自定义多因子Token关联信息",
       "input": "GetCustomMFATokenInfoRequest",
       "name": "获取自定义多因子Token关联信息",
-      "output": "GetCustomMFATokenInfoResponse"
+      "output": "GetCustomMFATokenInfoResponse",
+      "status": "online"
     },
     "GetGroup": {
       "document": "查询用户组详情",
       "input": "GetGroupRequest",
       "name": "查询用户组详情",
-      "output": "GetGroupResponse"
+      "output": "GetGroupResponse",
+      "status": "online"
     },
     "GetPolicy": {
       "document": "本接口（GetPolicy）可用于查询查看策略详情。",
       "input": "GetPolicyRequest",
       "name": "查看策略详情",
-      "output": "GetPolicyResponse"
+      "output": "GetPolicyResponse",
+      "status": "online"
     },
     "GetPolicyVersion": {
       "document": "该接口（GetPolicyVersion）用于查询策略版本详情",
       "input": "GetPolicyVersionRequest",
       "name": "查询策略版本详情",
-      "output": "GetPolicyVersionResponse"
+      "output": "GetPolicyVersionResponse",
+      "status": "online"
     },
     "GetRole": {
       "document": "本接口（GetRole）用于获取指定角色的详细信息。",
       "input": "GetRoleRequest",
       "name": "获取角色详情",
-      "output": "GetRoleResponse"
+      "output": "GetRoleResponse",
+      "status": "online"
     },
     "GetRolePermissionBoundary": {
       "document": "获取角色权限边界",
       "input": "GetRolePermissionBoundaryRequest",
       "name": "获取角色权限边界",
-      "output": "GetRolePermissionBoundaryResponse"
+      "output": "GetRolePermissionBoundaryResponse",
+      "status": "online"
     },
     "GetSAMLProvider": {
       "document": "查询SAML身份提供商详情",
       "input": "GetSAMLProviderRequest",
       "name": "查询SAML身份提供商详情",
-      "output": "GetSAMLProviderResponse"
+      "output": "GetSAMLProviderResponse",
+      "status": "online"
     },
     "GetSecurityLastUsed": {
       "document": "获取密钥最近使用情况",
       "input": "GetSecurityLastUsedRequest",
       "name": "获取密钥最近使用情况",
-      "output": "GetSecurityLastUsedResponse"
+      "output": "GetSecurityLastUsedResponse",
+      "status": "online"
     },
     "GetServiceLinkedRoleDeletionStatus": {
       "document": "根据删除TaskId获取服务相关角色删除状态",
       "input": "GetServiceLinkedRoleDeletionStatusRequest",
       "name": "获取服务相关角色删除状态",
-      "output": "GetServiceLinkedRoleDeletionStatusResponse"
+      "output": "GetServiceLinkedRoleDeletionStatusResponse",
+      "status": "online"
     },
     "GetUser": {
       "document": "查询子用户",
       "input": "GetUserRequest",
       "name": "查询子用户",
-      "output": "GetUserResponse"
+      "output": "GetUserResponse",
+      "status": "online"
     },
     "GetUserAppId": {
       "document": "获取用户AppId",
       "input": "GetUserAppIdRequest",
       "name": "获取用户AppId",
-      "output": "GetUserAppIdResponse"
+      "output": "GetUserAppIdResponse",
+      "status": "online"
     },
     "GetUserPermissionBoundary": {
       "document": "获取用户权限边界",
       "input": "GetUserPermissionBoundaryRequest",
       "name": "获取用户权限边界",
-      "output": "GetUserPermissionBoundaryResponse"
+      "output": "GetUserPermissionBoundaryResponse",
+      "status": "online"
     },
     "ListAccessKeys": {
       "document": "列出指定CAM用户的访问密钥",
       "input": "ListAccessKeysRequest",
       "name": "列出访问密钥",
-      "output": "ListAccessKeysResponse"
+      "output": "ListAccessKeysResponse",
+      "status": "online"
     },
     "ListAttachedGroupPolicies": {
       "document": "本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。",
       "input": "ListAttachedGroupPoliciesRequest",
       "name": "查询用户组关联的策略列表",
-      "output": "ListAttachedGroupPoliciesResponse"
+      "output": "ListAttachedGroupPoliciesResponse",
+      "status": "online"
     },
     "ListAttachedRolePolicies": {
       "document": "本接口（ListAttachedRolePolicies）用于获取角色绑定的策略列表。",
       "input": "ListAttachedRolePoliciesRequest",
       "name": "获取角色绑定的策略列表",
-      "output": "ListAttachedRolePoliciesResponse"
+      "output": "ListAttachedRolePoliciesResponse",
+      "status": "online"
     },
     "ListAttachedUserAllPolicies": {
       "document": "列出用户关联的策略（包括随组关联）",
       "input": "ListAttachedUserAllPoliciesRequest",
       "name": "列出用户关联的策略（包括随组关联）",
-      "output": "ListAttachedUserAllPoliciesResponse"
+      "output": "ListAttachedUserAllPoliciesResponse",
+      "status": "online"
     },
     "ListAttachedUserPolicies": {
       "document": "本接口（ListAttachedUserPolicies）可用于查询子账号关联的策略列表。",
       "input": "ListAttachedUserPoliciesRequest",
       "name": "查询子账号关联的策略列表",
-      "output": "ListAttachedUserPoliciesResponse"
+      "output": "ListAttachedUserPoliciesResponse",
+      "status": "online"
     },
     "ListCollaborators": {
       "document": "获取协作者列表",
       "input": "ListCollaboratorsRequest",
       "name": "获取协作者列表",
-      "output": "ListCollaboratorsResponse"
+      "output": "ListCollaboratorsResponse",
+      "status": "online"
     },
     "ListEntitiesForPolicy": {
       "document": "本接口（ListEntitiesForPolicy）可用于查询策略关联的实体列表。",
       "input": "ListEntitiesForPolicyRequest",
       "name": "查询策略关联的实体列表",
-      "output": "ListEntitiesForPolicyResponse"
+      "output": "ListEntitiesForPolicyResponse",
+      "status": "online"
     },
     "ListGroups": {
       "document": "查询用户组列表",
       "input": "ListGroupsRequest",
       "name": "查询用户组列表",
-      "output": "ListGroupsResponse"
+      "output": "ListGroupsResponse",
+      "status": "online"
     },
     "ListGroupsForUser": {
       "document": "列出用户关联的用户组",
       "input": "ListGroupsForUserRequest",
       "name": "列出用户关联的用户组",
-      "output": "ListGroupsForUserResponse"
+      "output": "ListGroupsForUserResponse",
+      "status": "online"
     },
     "ListPolicies": {
       "document": "本接口（ListPolicies）可用于查询策略列表。",
       "input": "ListPoliciesRequest",
       "name": "查询策略列表",
-      "output": "ListPoliciesResponse"
+      "output": "ListPoliciesResponse",
+      "status": "online"
     },
     "ListPoliciesGrantingServiceAccess": {
       "document": "获取所有已授权服务",
       "input": "ListPoliciesGrantingServiceAccessRequest",
       "name": "获取所有已授权服务",
-      "output": "ListPoliciesGrantingServiceAccessResponse"
+      "output": "ListPoliciesGrantingServiceAccessResponse",
+      "status": "online"
     },
     "ListPolicyVersions": {
       "document": "该接口（ListPolicyVersions）用于获取策略版本列表",
       "input": "ListPolicyVersionsRequest",
       "name": "获取策略版本列表",
-      "output": "ListPolicyVersionsResponse"
+      "output": "ListPolicyVersionsResponse",
+      "status": "online"
     },
     "ListSAMLProviders": {
       "document": "查询SAML身份提供商列表",
       "input": "ListSAMLProvidersRequest",
       "name": "查询SAML身份提供商列表",
-      "output": "ListSAMLProvidersResponse"
+      "output": "ListSAMLProvidersResponse",
+      "status": "online"
     },
     "ListUsers": {
       "document": "拉取子用户",
       "input": "ListUsersRequest",
       "name": "拉取子用户",
-      "output": "ListUsersResponse"
+      "output": "ListUsersResponse",
+      "status": "online"
     },
     "ListUsersForGroup": {
       "document": "查询用户组关联的用户列表",
       "input": "ListUsersForGroupRequest",
       "name": "查询用户组关联的用户列表",
-      "output": "ListUsersForGroupResponse"
+      "output": "ListUsersForGroupResponse",
+      "status": "online"
     },
     "ListWeChatWorkSubAccounts": {
       "document": "获取企业微信子用户列表",
       "input": "ListWeChatWorkSubAccountsRequest",
       "name": "获取企业微信子用户列表",
-      "output": "ListWeChatWorkSubAccountsResponse"
+      "output": "ListWeChatWorkSubAccountsResponse",
+      "status": "online"
     },
     "PutRolePermissionsBoundary": {
       "document": "设置角色权限边界",
       "input": "PutRolePermissionsBoundaryRequest",
       "name": "设置角色权限边界",
-      "output": "PutRolePermissionsBoundaryResponse"
+      "output": "PutRolePermissionsBoundaryResponse",
+      "status": "online"
     },
     "PutUserPermissionsBoundary": {
       "document": "设置用户权限边界",
       "input": "PutUserPermissionsBoundaryRequest",
       "name": "设置用户权限边界",
-      "output": "PutUserPermissionsBoundaryResponse"
+      "output": "PutUserPermissionsBoundaryResponse",
+      "status": "online"
     },
     "RemoveUserFromGroup": {
       "document": "从用户组删除用户",
       "input": "RemoveUserFromGroupRequest",
       "name": "从用户组删除用户",
-      "output": "RemoveUserFromGroupResponse"
+      "output": "RemoveUserFromGroupResponse",
+      "status": "online"
     },
     "SetDefaultPolicyVersion": {
       "document": "本接口（SetDefaultPolicyVersion）可用于设置生效的策略版本。",
       "input": "SetDefaultPolicyVersionRequest",
       "name": "设置生效的策略版本",
-      "output": "SetDefaultPolicyVersionResponse"
+      "output": "SetDefaultPolicyVersionResponse",
+      "status": "online"
     },
     "SetMfaFlag": {
       "document": "设置子用户的登录保护和敏感操作校验方式",
       "input": "SetMfaFlagRequest",
       "name": "设置子用户的登录保护和敏感操作校验方式",
-      "output": "SetMfaFlagResponse"
+      "output": "SetMfaFlagResponse",
+      "status": "online"
     },
     "TagRole": {
       "document": "角色绑定标签",
       "input": "TagRoleRequest",
       "name": "角色绑定标签",
-      "output": "TagRoleResponse"
+      "output": "TagRoleResponse",
+      "status": "online"
     },
     "UntagRole": {
       "document": "角色解绑标签。",
       "input": "UntagRoleRequest",
       "name": "角色解绑标签",
-      "output": "UntagRoleResponse"
+      "output": "UntagRoleResponse",
+      "status": "online"
     },
     "UpdateAccessKey": {
       "document": "为CAM用户更新访问密钥",
       "input": "UpdateAccessKeyRequest",
       "name": "更新访问密钥",
-      "output": "UpdateAccessKeyResponse"
+      "output": "UpdateAccessKeyResponse",
+      "status": "online"
     },
     "UpdateAssumeRolePolicy": {
       "document": "本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。",
       "input": "UpdateAssumeRolePolicyRequest",
       "name": "修改角色信任策略",
-      "output": "UpdateAssumeRolePolicyResponse"
+      "output": "UpdateAssumeRolePolicyResponse",
+      "status": "online"
     },
     "UpdateGroup": {
       "document": "更新用户组",
       "input": "UpdateGroupRequest",
       "name": "更新用户组",
-      "output": "UpdateGroupResponse"
+      "output": "UpdateGroupResponse",
+      "status": "online"
     },
     "UpdateOIDCConfig": {
       "document": "修改角色OIDC配置",
       "input": "UpdateOIDCConfigRequest",
       "name": "修改角色OIDC配置",
-      "output": "UpdateOIDCConfigResponse"
+      "output": "UpdateOIDCConfigResponse",
+      "status": "online"
     },
     "UpdatePolicy": {
       "document": "本接口（UpdatePolicy ）可用于更新策略。\n如果已存在策略版本，本接口会直接更新策略的默认版本，不会创建新版本，如果不存在任何策略版本，则直接创建一个默认版本。",
       "input": "UpdatePolicyRequest",
       "name": "更新策略信息",
-      "output": "UpdatePolicyResponse"
+      "output": "UpdatePolicyResponse",
+      "status": "online"
     },
     "UpdateRoleConsoleLogin": {
       "document": "本接口（UpdateRoleConsoleLogin）用于修改角色是否可登录。",
       "input": "UpdateRoleConsoleLoginRequest",
       "name": "修改角色是否可登录",
-      "output": "UpdateRoleConsoleLoginResponse"
+      "output": "UpdateRoleConsoleLoginResponse",
+      "status": "online"
     },
     "UpdateRoleDescription": {
       "document": "本接口（UpdateRoleDescription）用于修改角色的描述信息。",
       "input": "UpdateRoleDescriptionRequest",
       "name": "修改角色描述信息",
-      "output": "UpdateRoleDescriptionResponse"
+      "output": "UpdateRoleDescriptionResponse",
+      "status": "online"
     },
     "UpdateSAMLProvider": {
       "document": "更新SAML身份提供商信息",
       "input": "UpdateSAMLProviderRequest",
       "name": "更新SAML身份提供商信息",
-      "output": "UpdateSAMLProviderResponse"
+      "output": "UpdateSAMLProviderResponse",
+      "status": "online"
     },
     "UpdateUser": {
       "document": "更新子用户",
       "input": "UpdateUserRequest",
       "name": "更新子用户",
-      "output": "UpdateUserResponse"
+      "output": "UpdateUserResponse",
+      "status": "online"
     },
     "UpdateUserOIDCConfig": {
       "document": "修改用户OIDC配置",
       "input": "UpdateUserOIDCConfigRequest",
       "name": "修改用户OIDC配置",
-      "output": "UpdateUserOIDCConfigResponse"
+      "output": "UpdateUserOIDCConfigResponse",
+      "status": "online"
     },
     "UpdateUserSAMLConfig": {
       "document": "修改用户SAML配置",
       "input": "UpdateUserSAMLConfigRequest",
       "name": "修改用户SAML配置",
-      "output": "UpdateUserSAMLConfigResponse"
+      "output": "UpdateUserSAMLConfigResponse",
+      "status": "online"
     }
   },
   "metadata": {

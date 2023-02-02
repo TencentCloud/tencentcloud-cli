@@ -4,13 +4,15 @@
       "document": "计量商品用量提醒，用于服务商调用云服务，云服务向客户发送提醒信息",
       "input": "FlowProductRemindRequest",
       "name": "计量商品用量提醒",
-      "output": "FlowProductRemindResponse"
+      "output": "FlowProductRemindResponse",
+      "status": "online"
     },
     "GetUsagePlanUsageAmount": {
       "document": "该接口可以根据InstanceId查询实例的api的使用情况。\n",
       "input": "GetUsagePlanUsageAmountRequest",
       "name": "查询使用计划使用量",
-      "output": "GetUsagePlanUsageAmountResponse"
+      "output": "GetUsagePlanUsageAmountResponse",
+      "status": "online"
     }
   },
   "metadata": {

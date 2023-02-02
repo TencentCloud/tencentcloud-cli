@@ -4,61 +4,71 @@
       "document": "从经验库创建演练",
       "input": "CreateTaskFromTemplateRequest",
       "name": "从经验库创建演练",
-      "output": "CreateTaskFromTemplateResponse"
+      "output": "CreateTaskFromTemplateResponse",
+      "status": "online"
     },
     "DeleteTask": {
       "document": "删除任务",
       "input": "DeleteTaskRequest",
       "name": "删除任务",
-      "output": "DeleteTaskResponse"
+      "output": "DeleteTaskResponse",
+      "status": "online"
     },
     "DescribeTask": {
       "document": "查询任务",
       "input": "DescribeTaskRequest",
       "name": "查询任务",
-      "output": "DescribeTaskResponse"
+      "output": "DescribeTaskResponse",
+      "status": "online"
     },
     "DescribeTaskExecuteLogs": {
       "document": "获取演练过程中的所有日志",
       "input": "DescribeTaskExecuteLogsRequest",
       "name": "获取演练过程日志",
-      "output": "DescribeTaskExecuteLogsResponse"
+      "output": "DescribeTaskExecuteLogsResponse",
+      "status": "online"
     },
     "DescribeTaskList": {
       "document": "查询任务列表",
       "input": "DescribeTaskListRequest",
       "name": "查询任务列表",
-      "output": "DescribeTaskListResponse"
+      "output": "DescribeTaskListResponse",
+      "status": "online"
     },
     "DescribeTemplate": {
       "document": "查询经验库",
       "input": "DescribeTemplateRequest",
       "name": "查询经验库",
-      "output": "DescribeTemplateResponse"
+      "output": "DescribeTemplateResponse",
+      "status": "online"
     },
     "DescribeTemplateList": {
       "document": "查询经验库列表",
       "input": "DescribeTemplateListRequest",
       "name": "查询经验库列表",
-      "output": "DescribeTemplateListResponse"
+      "output": "DescribeTemplateListResponse",
+      "status": "online"
     },
     "ExecuteTask": {
       "document": "执行任务",
       "input": "ExecuteTaskRequest",
       "name": "执行任务",
-      "output": "ExecuteTaskResponse"
+      "output": "ExecuteTaskResponse",
+      "status": "online"
     },
     "ExecuteTaskInstance": {
       "document": "触发混沌演练任务的动作，对于实例进行演练操作",
       "input": "ExecuteTaskInstanceRequest",
       "name": "执行任务动作实例",
-      "output": "ExecuteTaskInstanceResponse"
+      "output": "ExecuteTaskInstanceResponse",
+      "status": "online"
     },
     "ModifyTaskRunStatus": {
       "document": "修改任务运行状态",
       "input": "ModifyTaskRunStatusRequest",
       "name": "修改任务运行状态",
-      "output": "ModifyTaskRunStatusResponse"
+      "output": "ModifyTaskRunStatusResponse",
+      "status": "online"
     }
   },
   "metadata": {

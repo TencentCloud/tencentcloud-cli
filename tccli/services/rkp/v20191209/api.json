@@ -4,19 +4,22 @@
       "document": "根据DevicceToken查询OpenID。",
       "input": "GetOpenIdRequest",
       "name": "RPopenID查询",
-      "output": "GetOpenIdResponse"
+      "output": "GetOpenIdResponse",
+      "status": "online"
     },
     "GetToken": {
       "document": "获取token接口。",
       "input": "GetTokenRequest",
       "name": "获取token",
-      "output": "GetTokenResponse"
+      "output": "GetTokenResponse",
+      "status": "online"
     },
     "QueryDevAndRisk": {
       "document": "腾讯天御设备风险查询接口，输入由客户应用自主采集的设备信息， 通过腾讯大数据风控能力，可以准确根据输入设备信息，还原设备库中的设备ID，并且识别设备的风险，解决客户业务过程中的设备风险，降低企业损失。",
       "input": "QueryDevAndRiskRequest",
       "name": "Devid及风险查询",
-      "output": "QueryDevAndRiskResponse"
+      "output": "QueryDevAndRiskResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,187 +4,218 @@
       "document": "创建项目",
       "input": "AddProjectRequest",
       "name": "创建项目",
-      "output": "AddProjectResponse"
+      "output": "AddProjectResponse",
+      "status": "online"
     },
     "AddResourceTag": {
       "document": "本接口用于给标签关联资源",
       "input": "AddResourceTagRequest",
       "name": "标签关联资源",
-      "output": "AddResourceTagResponse"
+      "output": "AddResourceTagResponse",
+      "status": "online"
     },
     "AttachResourcesTag": {
       "document": "给多个资源关联某个标签",
       "input": "AttachResourcesTagRequest",
       "name": "标签关联批量资源",
-      "output": "AttachResourcesTagResponse"
+      "output": "AttachResourcesTagResponse",
+      "status": "online"
     },
     "CreateTag": {
       "document": "本接口用于创建一对标签键和标签值",
       "input": "CreateTagRequest",
       "name": "创建标签",
-      "output": "CreateTagResponse"
+      "output": "CreateTagResponse",
+      "status": "online"
     },
     "CreateTags": {
       "document": "本接口用于创建多对标签键和标签值",
       "input": "CreateTagsRequest",
       "name": "批量创建标签",
-      "output": "CreateTagsResponse"
+      "output": "CreateTagsResponse",
+      "status": "online"
     },
     "DeleteResourceTag": {
       "document": "本接口用于解除标签和资源的关联关系",
       "input": "DeleteResourceTagRequest",
       "name": "标签解绑资源",
-      "output": "DeleteResourceTagResponse"
+      "output": "DeleteResourceTagResponse",
+      "status": "online"
     },
     "DeleteTag": {
       "document": "本接口用于删除一对标签键和标签值",
       "input": "DeleteTagRequest",
       "name": "删除标签",
-      "output": "DeleteTagResponse"
+      "output": "DeleteTagResponse",
+      "status": "online"
     },
     "DeleteTags": {
       "document": "本接口用于批量删除标签键和标签值。",
       "input": "DeleteTagsRequest",
       "name": "批量删除标签",
-      "output": "DeleteTagsResponse"
+      "output": "DeleteTagsResponse",
+      "status": "online"
     },
     "DescribeProjects": {
       "document": "获取项目列表",
       "input": "DescribeProjectsRequest",
       "name": "获取项目列表",
-      "output": "DescribeProjectsResponse"
+      "output": "DescribeProjectsResponse",
+      "status": "online"
     },
     "DescribeResourceTags": {
       "document": "查询资源关联标签",
       "input": "DescribeResourceTagsRequest",
       "name": "查询资源关联标签",
-      "output": "DescribeResourceTagsResponse"
+      "output": "DescribeResourceTagsResponse",
+      "status": "online"
     },
     "DescribeResourceTagsByResourceIds": {
       "document": "用于批量查询已有资源关联的标签键值对",
       "input": "DescribeResourceTagsByResourceIdsRequest",
       "name": "批量查看资源关联的标签",
-      "output": "DescribeResourceTagsByResourceIdsResponse"
+      "output": "DescribeResourceTagsByResourceIdsResponse",
+      "status": "online"
     },
     "DescribeResourceTagsByResourceIdsSeq": {
       "document": "按顺序查看资源关联的标签",
       "input": "DescribeResourceTagsByResourceIdsSeqRequest",
       "name": "按顺序查看资源关联的标签",
-      "output": "DescribeResourceTagsByResourceIdsSeqResponse"
+      "output": "DescribeResourceTagsByResourceIdsSeqResponse",
+      "status": "online"
     },
     "DescribeResourceTagsByTagKeys": {
       "document": "根据标签键获取资源标签",
       "input": "DescribeResourceTagsByTagKeysRequest",
       "name": "根据标签键获取资源标签",
-      "output": "DescribeResourceTagsByTagKeysResponse"
+      "output": "DescribeResourceTagsByTagKeysResponse",
+      "status": "online"
     },
     "DescribeResourcesByTags": {
       "document": "通过标签查询资源列表",
       "input": "DescribeResourcesByTagsRequest",
       "name": "通过标签查询资源列表",
-      "output": "DescribeResourcesByTagsResponse"
+      "output": "DescribeResourcesByTagsResponse",
+      "status": "online"
     },
     "DescribeResourcesByTagsUnion": {
       "document": "通过标签查询资源列表并集",
       "input": "DescribeResourcesByTagsUnionRequest",
       "name": "通过标签查询资源列表并集",
-      "output": "DescribeResourcesByTagsUnionResponse"
+      "output": "DescribeResourcesByTagsUnionResponse",
+      "status": "online"
     },
     "DescribeTagKeys": {
       "document": "用于查询已建立的标签列表中的标签键。\n",
       "input": "DescribeTagKeysRequest",
       "name": "查询标签键",
-      "output": "DescribeTagKeysResponse"
+      "output": "DescribeTagKeysResponse",
+      "status": "online"
     },
     "DescribeTagValues": {
       "document": "用于查询已建立的标签列表中的标签值。",
       "input": "DescribeTagValuesRequest",
       "name": "查询标签值",
-      "output": "DescribeTagValuesResponse"
+      "output": "DescribeTagValuesResponse",
+      "status": "online"
     },
     "DescribeTagValuesSeq": {
       "document": "用于查询已建立的标签列表中的标签值。",
       "input": "DescribeTagValuesSeqRequest",
       "name": "按顺序查询标签值",
-      "output": "DescribeTagValuesSeqResponse"
+      "output": "DescribeTagValuesSeqResponse",
+      "status": "online"
     },
     "DescribeTags": {
       "document": "用于查询已建立的标签列表。\n",
       "input": "DescribeTagsRequest",
       "name": "查询标签列表",
-      "output": "DescribeTagsResponse"
+      "output": "DescribeTagsResponse",
+      "status": "online"
     },
     "DescribeTagsSeq": {
       "document": "用于查询已建立的标签列表。\n",
       "input": "DescribeTagsSeqRequest",
       "name": "按顺序查询标签列表",
-      "output": "DescribeTagsSeqResponse"
+      "output": "DescribeTagsSeqResponse",
+      "status": "online"
     },
     "DetachResourcesTag": {
       "document": "解绑多个资源关联的某个标签",
       "input": "DetachResourcesTagRequest",
       "name": "标签解绑批量资源",
-      "output": "DetachResourcesTagResponse"
+      "output": "DetachResourcesTagResponse",
+      "status": "online"
     },
     "GetResources": {
       "document": "查询绑定了标签的资源列表。",
       "input": "GetResourcesRequest",
       "name": "查询资源标签列表",
-      "output": "GetResourcesResponse"
+      "output": "GetResourcesResponse",
+      "status": "online"
     },
     "GetTagKeys": {
       "document": "查询标签键列表。",
       "input": "GetTagKeysRequest",
       "name": "查询标签键列表",
-      "output": "GetTagKeysResponse"
+      "output": "GetTagKeysResponse",
+      "status": "online"
     },
     "GetTagValues": {
       "document": "用于查询已建立的标签列表中的标签值。",
       "input": "GetTagValuesRequest",
       "name": "查询标签值列表",
-      "output": "GetTagValuesResponse"
+      "output": "GetTagValuesResponse",
+      "status": "online"
     },
     "GetTags": {
       "document": "用于获取已建立的标签列表。",
       "input": "GetTagsRequest",
       "name": "获取标签列表",
-      "output": "GetTagsResponse"
+      "output": "GetTagsResponse",
+      "status": "online"
     },
     "ModifyResourceTags": {
       "document": "本接口用于修改资源关联的所有标签",
       "input": "ModifyResourceTagsRequest",
       "name": "批量修改资源关联的标签",
-      "output": "ModifyResourceTagsResponse"
+      "output": "ModifyResourceTagsResponse",
+      "status": "online"
     },
     "ModifyResourcesTagValue": {
       "document": "修改多个资源关联的某个标签键对应的标签值",
       "input": "ModifyResourcesTagValueRequest",
       "name": "修改批量资源关联的标签值",
-      "output": "ModifyResourcesTagValueResponse"
+      "output": "ModifyResourcesTagValueResponse",
+      "status": "online"
     },
     "TagResources": {
       "document": "为指定的多个云产品的多个云资源统一创建并绑定标签。",
       "input": "TagResourcesRequest",
       "name": "为资源绑定标签",
-      "output": "TagResourcesResponse"
+      "output": "TagResourcesResponse",
+      "status": "online"
     },
     "UnTagResources": {
       "document": "指定的多个云产品的多个云资源统一解绑标签。",
       "input": "UnTagResourcesRequest",
       "name": "为资源解绑标签",
-      "output": "UnTagResourcesResponse"
+      "output": "UnTagResourcesResponse",
+      "status": "online"
     },
     "UpdateProject": {
       "document": "修改项目",
       "input": "UpdateProjectRequest",
       "name": "修改项目",
-      "output": "UpdateProjectResponse"
+      "output": "UpdateProjectResponse",
+      "status": "online"
     },
     "UpdateResourceTagValue": {
       "document": "本接口用于修改资源已关联的标签值（标签键不变）",
       "input": "UpdateResourceTagValueRequest",
       "name": "修改资源标签值",
-      "output": "UpdateResourceTagValueResponse"
+      "output": "UpdateResourceTagValueResponse",
+      "status": "online"
     }
   },
   "metadata": {

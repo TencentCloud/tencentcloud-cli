@@ -4,7 +4,8 @@
       "document": "使用SDK将数据上报到DIP",
       "input": "SendMessageRequest",
       "name": "数据上报",
-      "output": "SendMessageResponse"
+      "output": "SendMessageResponse",
+      "status": "online"
     }
   },
   "metadata": {

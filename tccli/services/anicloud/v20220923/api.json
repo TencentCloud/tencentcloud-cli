@@ -4,19 +4,22 @@
       "document": "查看appid是否存在",
       "input": "CheckAppidExistRequest",
       "name": "查看appid是否存在",
-      "output": "CheckAppidExistResponse"
+      "output": "CheckAppidExistResponse",
+      "status": "online"
     },
     "QueryResource": {
       "document": "查询购买资源",
       "input": "QueryResourceRequest",
       "name": "查询购买资源",
-      "output": "QueryResourceResponse"
+      "output": "QueryResourceResponse",
+      "status": "online"
     },
     "QueryResourceInfo": {
       "document": "查询资源信息",
       "input": "QueryResourceInfoRequest",
       "name": "查询资源信息",
-      "output": "QueryResourceInfoResponse"
+      "output": "QueryResourceInfoResponse",
+      "status": "online"
     }
   },
   "metadata": {

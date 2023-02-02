@@ -4,607 +4,708 @@
       "document": "根据提供的 MessageID 确认指定 topic 中的消息",
       "input": "AcknowledgeMessageRequest",
       "name": "确认消息",
-      "output": "AcknowledgeMessageResponse"
+      "output": "AcknowledgeMessageResponse",
+      "status": "online"
     },
     "ClearCmqQueue": {
       "document": "清空cmq消息队列中的消息",
       "input": "ClearCmqQueueRequest",
       "name": "清空cmq消息队列中的消息",
-      "output": "ClearCmqQueueResponse"
+      "output": "ClearCmqQueueResponse",
+      "status": "online"
     },
     "ClearCmqSubscriptionFilterTags": {
       "document": "清空订阅者消息标签",
       "input": "ClearCmqSubscriptionFilterTagsRequest",
       "name": "清空cmq订阅者消息标签",
-      "output": "ClearCmqSubscriptionFilterTagsResponse"
+      "output": "ClearCmqSubscriptionFilterTagsResponse",
+      "status": "online"
     },
     "CreateAMQPCluster": {
       "document": "创建AMQP集群",
       "input": "CreateAMQPClusterRequest",
       "name": "创建AMQP集群",
-      "output": "CreateAMQPClusterResponse"
+      "output": "CreateAMQPClusterResponse",
+      "status": "online"
     },
     "CreateAMQPExchange": {
       "document": "创建AMQP Exchange",
       "input": "CreateAMQPExchangeRequest",
       "name": "创建AMQP Exchange",
-      "output": "CreateAMQPExchangeResponse"
+      "output": "CreateAMQPExchangeResponse",
+      "status": "online"
     },
     "CreateAMQPQueue": {
       "document": "创建AMQP队列",
       "input": "CreateAMQPQueueRequest",
       "name": "创建AMQP队列",
-      "output": "CreateAMQPQueueResponse"
+      "output": "CreateAMQPQueueResponse",
+      "status": "online"
     },
     "CreateAMQPRouteRelation": {
       "document": "创建AMQP路由关系",
       "input": "CreateAMQPRouteRelationRequest",
       "name": "创建AMQP路由关系",
-      "output": "CreateAMQPRouteRelationResponse"
+      "output": "CreateAMQPRouteRelationResponse",
+      "status": "online"
     },
     "CreateAMQPVHost": {
       "document": "创建Amqp Vhost",
       "input": "CreateAMQPVHostRequest",
       "name": "创建Amqp Vhost",
-      "output": "CreateAMQPVHostResponse"
+      "output": "CreateAMQPVHostResponse",
+      "status": "online"
     },
     "CreateCluster": {
       "document": "创建用户的集群",
       "input": "CreateClusterRequest",
       "name": "创建集群",
-      "output": "CreateClusterResponse"
+      "output": "CreateClusterResponse",
+      "status": "online"
     },
     "CreateCmqQueue": {
       "document": "创建cmq队列接口",
       "input": "CreateCmqQueueRequest",
       "name": "创建cmq队列接口",
-      "output": "CreateCmqQueueResponse"
+      "output": "CreateCmqQueueResponse",
+      "status": "online"
     },
     "CreateCmqSubscribe": {
       "document": "创建cmq订阅接口",
       "input": "CreateCmqSubscribeRequest",
       "name": "创建cmq订阅接口",
-      "output": "CreateCmqSubscribeResponse"
+      "output": "CreateCmqSubscribeResponse",
+      "status": "online"
     },
     "CreateCmqTopic": {
       "document": "创建cmq主题",
       "input": "CreateCmqTopicRequest",
       "name": "创建cmq主题",
-      "output": "CreateCmqTopicResponse"
+      "output": "CreateCmqTopicResponse",
+      "status": "online"
     },
     "CreateEnvironment": {
       "document": "用于在用户账户下创建消息队列 Tdmq 命名空间",
       "input": "CreateEnvironmentRequest",
       "name": "创建命名空间",
-      "output": "CreateEnvironmentResponse"
+      "output": "CreateEnvironmentResponse",
+      "status": "online"
     },
     "CreateEnvironmentRole": {
       "document": "创建环境角色授权",
       "input": "CreateEnvironmentRoleRequest",
       "name": "创建环境角色授权",
-      "output": "CreateEnvironmentRoleResponse"
+      "output": "CreateEnvironmentRoleResponse",
+      "status": "online"
     },
     "CreateRocketMQCluster": {
       "document": "此接口用于创建一个RocketMQ集群",
       "input": "CreateRocketMQClusterRequest",
       "name": "创建RocketMQ集群",
-      "output": "CreateRocketMQClusterResponse"
+      "output": "CreateRocketMQClusterResponse",
+      "status": "online"
     },
     "CreateRocketMQGroup": {
       "document": "创建RocketMQ消费组",
       "input": "CreateRocketMQGroupRequest",
       "name": "创建RocketMQ消费组",
-      "output": "CreateRocketMQGroupResponse"
+      "output": "CreateRocketMQGroupResponse",
+      "status": "online"
     },
     "CreateRocketMQNamespace": {
       "document": "创建RocketMQ命名空间",
       "input": "CreateRocketMQNamespaceRequest",
       "name": "创建RocketMQ命名空间",
-      "output": "CreateRocketMQNamespaceResponse"
+      "output": "CreateRocketMQNamespaceResponse",
+      "status": "online"
     },
     "CreateRocketMQTopic": {
       "document": "创建RocketMQ主题",
       "input": "CreateRocketMQTopicRequest",
       "name": "创建RocketMQ主题",
-      "output": "CreateRocketMQTopicResponse"
+      "output": "CreateRocketMQTopicResponse",
+      "status": "online"
     },
     "CreateRole": {
       "document": "创建角色",
       "input": "CreateRoleRequest",
       "name": "创建角色",
-      "output": "CreateRoleResponse"
+      "output": "CreateRoleResponse",
+      "status": "online"
     },
     "CreateSubscription": {
       "document": "创建一个主题的订阅关系",
       "input": "CreateSubscriptionRequest",
       "name": "创建订阅关系",
-      "output": "CreateSubscriptionResponse"
+      "output": "CreateSubscriptionResponse",
+      "status": "online"
     },
     "CreateTopic": {
       "document": "新增指定分区、类型的消息主题",
       "input": "CreateTopicRequest",
       "name": "新增主题",
-      "output": "CreateTopicResponse"
+      "output": "CreateTopicResponse",
+      "status": "online"
     },
     "DeleteAMQPCluster": {
       "document": "删除AMQP集群",
       "input": "DeleteAMQPClusterRequest",
       "name": "删除AMQP集群",
-      "output": "DeleteAMQPClusterResponse"
+      "output": "DeleteAMQPClusterResponse",
+      "status": "online"
     },
     "DeleteAMQPExchange": {
       "document": "删除Amqp交换机",
       "input": "DeleteAMQPExchangeRequest",
       "name": "删除Amqp交换机",
-      "output": "DeleteAMQPExchangeResponse"
+      "output": "DeleteAMQPExchangeResponse",
+      "status": "online"
     },
     "DeleteAMQPQueue": {
       "document": "删除Amqp队列",
       "input": "DeleteAMQPQueueRequest",
       "name": "删除Amqp队列",
-      "output": "DeleteAMQPQueueResponse"
+      "output": "DeleteAMQPQueueResponse",
+      "status": "online"
     },
     "DeleteAMQPRouteRelation": {
       "document": "删除Amqp路由关系",
       "input": "DeleteAMQPRouteRelationRequest",
       "name": "删除Amqp路由关系",
-      "output": "DeleteAMQPRouteRelationResponse"
+      "output": "DeleteAMQPRouteRelationResponse",
+      "status": "online"
     },
     "DeleteAMQPVHost": {
       "document": "删除Vhost",
       "input": "DeleteAMQPVHostRequest",
       "name": "删除Vhost",
-      "output": "DeleteAMQPVHostResponse"
+      "output": "DeleteAMQPVHostResponse",
+      "status": "online"
     },
     "DeleteCluster": {
       "document": "删除集群",
       "input": "DeleteClusterRequest",
       "name": "删除集群",
-      "output": "DeleteClusterResponse"
+      "output": "DeleteClusterResponse",
+      "status": "online"
     },
     "DeleteCmqQueue": {
       "document": "删除cmq队列",
       "input": "DeleteCmqQueueRequest",
       "name": "删除cmq队列",
-      "output": "DeleteCmqQueueResponse"
+      "output": "DeleteCmqQueueResponse",
+      "status": "online"
     },
     "DeleteCmqSubscribe": {
       "document": "删除cmq订阅",
       "input": "DeleteCmqSubscribeRequest",
       "name": "删除cmq订阅",
-      "output": "DeleteCmqSubscribeResponse"
+      "output": "DeleteCmqSubscribeResponse",
+      "status": "online"
     },
     "DeleteCmqTopic": {
       "document": "删除cmq主题",
       "input": "DeleteCmqTopicRequest",
       "name": "删除cmq主题",
-      "output": "DeleteCmqTopicResponse"
+      "output": "DeleteCmqTopicResponse",
+      "status": "online"
     },
     "DeleteEnvironmentRoles": {
       "document": "删除环境角色授权。",
       "input": "DeleteEnvironmentRolesRequest",
       "name": "删除环境角色授权",
-      "output": "DeleteEnvironmentRolesResponse"
+      "output": "DeleteEnvironmentRolesResponse",
+      "status": "online"
     },
     "DeleteEnvironments": {
       "document": "批量删除租户下的命名空间",
       "input": "DeleteEnvironmentsRequest",
       "name": "删除命名空间",
-      "output": "DeleteEnvironmentsResponse"
+      "output": "DeleteEnvironmentsResponse",
+      "status": "online"
     },
     "DeleteRocketMQCluster": {
       "document": "删除RocketMQ集群",
       "input": "DeleteRocketMQClusterRequest",
       "name": "删除RocketMQ集群",
-      "output": "DeleteRocketMQClusterResponse"
+      "output": "DeleteRocketMQClusterResponse",
+      "status": "online"
     },
     "DeleteRocketMQGroup": {
       "document": "删除RocketMQ消费组",
       "input": "DeleteRocketMQGroupRequest",
       "name": "删除RocketMQ消费组",
-      "output": "DeleteRocketMQGroupResponse"
+      "output": "DeleteRocketMQGroupResponse",
+      "status": "online"
     },
     "DeleteRocketMQNamespace": {
       "document": "删除RocketMQ命名空间",
       "input": "DeleteRocketMQNamespaceRequest",
       "name": "删除RocketMQ命名空间",
-      "output": "DeleteRocketMQNamespaceResponse"
+      "output": "DeleteRocketMQNamespaceResponse",
+      "status": "online"
     },
     "DeleteRocketMQTopic": {
       "document": "删除RocketMQ主题",
       "input": "DeleteRocketMQTopicRequest",
       "name": "删除RocketMQ主题",
-      "output": "DeleteRocketMQTopicResponse"
+      "output": "DeleteRocketMQTopicResponse",
+      "status": "online"
     },
     "DeleteRoles": {
       "document": "删除角色，支持批量。",
       "input": "DeleteRolesRequest",
       "name": "删除角色",
-      "output": "DeleteRolesResponse"
+      "output": "DeleteRolesResponse",
+      "status": "online"
     },
     "DeleteSubscriptions": {
       "document": "删除订阅关系",
       "input": "DeleteSubscriptionsRequest",
       "name": "删除订阅关系",
-      "output": "DeleteSubscriptionsResponse"
+      "output": "DeleteSubscriptionsResponse",
+      "status": "online"
     },
     "DeleteTopics": {
       "document": "批量删除topics",
       "input": "DeleteTopicsRequest",
       "name": "删除主题",
-      "output": "DeleteTopicsResponse"
+      "output": "DeleteTopicsResponse",
+      "status": "online"
     },
     "DescribeAMQPCluster": {
       "document": "获取单个Amqp集群信息",
       "input": "DescribeAMQPClusterRequest",
       "name": "获取单个Amqp集群信息",
-      "output": "DescribeAMQPClusterResponse"
+      "output": "DescribeAMQPClusterResponse",
+      "status": "online"
     },
     "DescribeAMQPClusters": {
       "document": "获取amqp集群列表",
       "input": "DescribeAMQPClustersRequest",
       "name": "获取amqp集群列表",
-      "output": "DescribeAMQPClustersResponse"
+      "output": "DescribeAMQPClustersResponse",
+      "status": "online"
     },
     "DescribeAMQPCreateQuota": {
       "document": "获取用户的配额，如Queue容量，Exchange容量，Vhost容量，单Vhost Tps数,剩余可创建集群数",
       "input": "DescribeAMQPCreateQuotaRequest",
       "name": "获取用户配额",
-      "output": "DescribeAMQPCreateQuotaResponse"
+      "output": "DescribeAMQPCreateQuotaResponse",
+      "status": "online"
     },
     "DescribeAMQPExchanges": {
       "document": "获取AMQP Exchange列表",
       "input": "DescribeAMQPExchangesRequest",
       "name": "获取AMQP Exchange列表",
-      "output": "DescribeAMQPExchangesResponse"
+      "output": "DescribeAMQPExchangesResponse",
+      "status": "online"
     },
     "DescribeAMQPQueues": {
       "document": "获取Amqp队列列表",
       "input": "DescribeAMQPQueuesRequest",
       "name": "获取Amqp队列列表",
-      "output": "DescribeAMQPQueuesResponse"
+      "output": "DescribeAMQPQueuesResponse",
+      "status": "online"
     },
     "DescribeAMQPRouteRelations": {
       "document": "获取Amqp路由关系列表",
       "input": "DescribeAMQPRouteRelationsRequest",
       "name": "获取Amqp路由关系列表",
-      "output": "DescribeAMQPRouteRelationsResponse"
+      "output": "DescribeAMQPRouteRelationsResponse",
+      "status": "online"
     },
     "DescribeAMQPVHosts": {
       "document": "获取Amqp Vhost 列表",
       "input": "DescribeAMQPVHostsRequest",
       "name": "获取Amqp Vhost列表",
-      "output": "DescribeAMQPVHostsResponse"
+      "output": "DescribeAMQPVHostsResponse",
+      "status": "online"
     },
     "DescribeAllTenants": {
       "document": "获取某个租户的虚拟集群列表",
       "input": "DescribeAllTenantsRequest",
       "name": "获取某个租户的虚拟集群列表",
-      "output": "DescribeAllTenantsResponse"
+      "output": "DescribeAllTenantsResponse",
+      "status": "online"
     },
     "DescribeBindClusters": {
       "document": "获取用户绑定的专享集群列表",
       "input": "DescribeBindClustersRequest",
       "name": "获取专享集群列表",
-      "output": "DescribeBindClustersResponse"
+      "output": "DescribeBindClustersResponse",
+      "status": "online"
     },
     "DescribeBindVpcs": {
       "document": "获取租户VPC绑定关系",
       "input": "DescribeBindVpcsRequest",
       "name": "获取租户VPC绑定关系",
-      "output": "DescribeBindVpcsResponse"
+      "output": "DescribeBindVpcsResponse",
+      "status": "online"
     },
     "DescribeClusterDetail": {
       "document": "获取集群的详细信息",
       "input": "DescribeClusterDetailRequest",
       "name": "获取集群详情",
-      "output": "DescribeClusterDetailResponse"
+      "output": "DescribeClusterDetailResponse",
+      "status": "online"
     },
     "DescribeClusters": {
       "document": "获取集群列表",
       "input": "DescribeClustersRequest",
       "name": "获取集群列表",
-      "output": "DescribeClustersResponse"
+      "output": "DescribeClustersResponse",
+      "status": "online"
     },
     "DescribeCmqDeadLetterSourceQueues": {
       "document": "枚举cmq死信队列源队列",
       "input": "DescribeCmqDeadLetterSourceQueuesRequest",
       "name": "枚举cmq死信队列源队列",
-      "output": "DescribeCmqDeadLetterSourceQueuesResponse"
+      "output": "DescribeCmqDeadLetterSourceQueuesResponse",
+      "status": "online"
     },
     "DescribeCmqQueueDetail": {
       "document": "查询cmq队列详情",
       "input": "DescribeCmqQueueDetailRequest",
       "name": "查询cmq队列详情",
-      "output": "DescribeCmqQueueDetailResponse"
+      "output": "DescribeCmqQueueDetailResponse",
+      "status": "online"
     },
     "DescribeCmqQueues": {
       "document": "查询cmq全量队列",
       "input": "DescribeCmqQueuesRequest",
       "name": "查询cmq全量队列",
-      "output": "DescribeCmqQueuesResponse"
+      "output": "DescribeCmqQueuesResponse",
+      "status": "online"
     },
     "DescribeCmqSubscriptionDetail": {
       "document": "查询cmq订阅详情",
       "input": "DescribeCmqSubscriptionDetailRequest",
       "name": "查询cmq订阅详情",
-      "output": "DescribeCmqSubscriptionDetailResponse"
+      "output": "DescribeCmqSubscriptionDetailResponse",
+      "status": "online"
     },
     "DescribeCmqTopicDetail": {
       "document": "查询cmq主题详情",
       "input": "DescribeCmqTopicDetailRequest",
       "name": "查询cmq主题详情",
-      "output": "DescribeCmqTopicDetailResponse"
+      "output": "DescribeCmqTopicDetailResponse",
+      "status": "online"
     },
     "DescribeCmqTopics": {
       "document": "枚举cmq全量主题",
       "input": "DescribeCmqTopicsRequest",
       "name": "枚举cmq全量主题",
-      "output": "DescribeCmqTopicsResponse"
+      "output": "DescribeCmqTopicsResponse",
+      "status": "online"
     },
     "DescribeEnvironmentAttributes": {
       "document": "获取指定命名空间的属性",
       "input": "DescribeEnvironmentAttributesRequest",
       "name": "获取命名空间属性",
-      "output": "DescribeEnvironmentAttributesResponse"
+      "output": "DescribeEnvironmentAttributesResponse",
+      "status": "online"
     },
     "DescribeEnvironmentRoles": {
       "document": "获取命名空间角色列表",
       "input": "DescribeEnvironmentRolesRequest",
       "name": "获取命名空间角色列表",
-      "output": "DescribeEnvironmentRolesResponse"
+      "output": "DescribeEnvironmentRolesResponse",
+      "status": "online"
     },
     "DescribeEnvironments": {
       "document": "获取租户下命名空间列表",
       "input": "DescribeEnvironmentsRequest",
       "name": "获取命名空间列表",
-      "output": "DescribeEnvironmentsResponse"
+      "output": "DescribeEnvironmentsResponse",
+      "status": "online"
     },
     "DescribeNamespaceBundlesOpt": {
       "document": "运营端获取命名空间bundle列表",
       "input": "DescribeNamespaceBundlesOptRequest",
       "name": "运营端获取命名空间bundle列表",
-      "output": "DescribeNamespaceBundlesOptResponse"
+      "output": "DescribeNamespaceBundlesOptResponse",
+      "status": "online"
     },
     "DescribeNodeHealthOpt": {
       "document": "运营端获节点健康状态",
       "input": "DescribeNodeHealthOptRequest",
       "name": "运营端获节点健康状态",
-      "output": "DescribeNodeHealthOptResponse"
+      "output": "DescribeNodeHealthOptResponse",
+      "status": "online"
     },
     "DescribePublisherSummary": {
       "document": "获取消息生产概览信息",
       "input": "DescribePublisherSummaryRequest",
       "name": "获取消息生产概览",
-      "output": "DescribePublisherSummaryResponse"
+      "output": "DescribePublisherSummaryResponse",
+      "status": "online"
     },
     "DescribePublishers": {
       "document": "获取生产者信息列表",
       "input": "DescribePublishersRequest",
       "name": "获取生产者信息",
-      "output": "DescribePublishersResponse"
+      "output": "DescribePublishersResponse",
+      "status": "online"
     },
     "DescribeRabbitMQNodeList": {
       "document": "RabbitMQ专享版查询节点列表",
       "input": "DescribeRabbitMQNodeListRequest",
       "name": "RabbitMQ专享版查询节点列表",
-      "output": "DescribeRabbitMQNodeListResponse"
+      "output": "DescribeRabbitMQNodeListResponse",
+      "status": "online"
     },
     "DescribeRabbitMQVipInstances": {
       "document": "查询用户已购的RabbitMQ专享实例列表",
       "input": "DescribeRabbitMQVipInstancesRequest",
       "name": "查询RabbitMQ专享实例列表",
-      "output": "DescribeRabbitMQVipInstancesResponse"
+      "output": "DescribeRabbitMQVipInstancesResponse",
+      "status": "online"
     },
     "DescribeRocketMQCluster": {
       "document": "获取单个RocketMQ集群信息",
       "input": "DescribeRocketMQClusterRequest",
       "name": "获取单个RocketMQ集群信息",
-      "output": "DescribeRocketMQClusterResponse"
+      "output": "DescribeRocketMQClusterResponse",
+      "status": "online"
     },
     "DescribeRocketMQClusters": {
       "document": "获取RocketMQ集群列表",
       "input": "DescribeRocketMQClustersRequest",
       "name": "获取RocketMQ集群列表",
-      "output": "DescribeRocketMQClustersResponse"
+      "output": "DescribeRocketMQClustersResponse",
+      "status": "online"
     },
     "DescribeRocketMQGroups": {
       "document": "获取RocketMQ消费组列表",
       "input": "DescribeRocketMQGroupsRequest",
       "name": "获取RocketMQ消费组列表",
-      "output": "DescribeRocketMQGroupsResponse"
+      "output": "DescribeRocketMQGroupsResponse",
+      "status": "online"
     },
     "DescribeRocketMQNamespaces": {
       "document": "获取RocketMQ命名空间列表",
       "input": "DescribeRocketMQNamespacesRequest",
       "name": "获取RocketMQ命名空间列表",
-      "output": "DescribeRocketMQNamespacesResponse"
+      "output": "DescribeRocketMQNamespacesResponse",
+      "status": "online"
     },
     "DescribeRocketMQTopics": {
       "document": "获取RocketMQ主题列表",
       "input": "DescribeRocketMQTopicsRequest",
       "name": "获取RocketMQ主题列表",
-      "output": "DescribeRocketMQTopicsResponse"
+      "output": "DescribeRocketMQTopicsResponse",
+      "status": "online"
     },
     "DescribeRocketMQVipInstances": {
       "document": "查询用户已购的RocketMQ专享实例列表",
       "input": "DescribeRocketMQVipInstancesRequest",
       "name": "查询RocketMQ专享实例列表",
-      "output": "DescribeRocketMQVipInstancesResponse"
+      "output": "DescribeRocketMQVipInstancesResponse",
+      "status": "online"
     },
     "DescribeRoles": {
       "document": "获取角色列表",
       "input": "DescribeRolesRequest",
       "name": "获取角色列表",
-      "output": "DescribeRolesResponse"
+      "output": "DescribeRolesResponse",
+      "status": "online"
     },
     "DescribeSubscriptions": {
       "document": "查询指定环境和主题下的订阅者列表",
       "input": "DescribeSubscriptionsRequest",
       "name": "获取消费订阅列表",
-      "output": "DescribeSubscriptionsResponse"
+      "output": "DescribeSubscriptionsResponse",
+      "status": "online"
     },
     "DescribeTopics": {
       "document": "获取环境下主题列表",
       "input": "DescribeTopicsRequest",
       "name": "查询主题列表",
-      "output": "DescribeTopicsResponse"
+      "output": "DescribeTopicsResponse",
+      "status": "online"
     },
     "ModifyAMQPCluster": {
       "document": "更新Amqp集群信息",
       "input": "ModifyAMQPClusterRequest",
       "name": "更新Amqp集群信息",
-      "output": "ModifyAMQPClusterResponse"
+      "output": "ModifyAMQPClusterResponse",
+      "status": "online"
     },
     "ModifyAMQPExchange": {
       "document": "更新Amqp交换机",
       "input": "ModifyAMQPExchangeRequest",
       "name": "更新Amqp交换机",
-      "output": "ModifyAMQPExchangeResponse"
+      "output": "ModifyAMQPExchangeResponse",
+      "status": "online"
     },
     "ModifyAMQPQueue": {
       "document": "更新Amqp队列",
       "input": "ModifyAMQPQueueRequest",
       "name": "更新Amqp队列",
-      "output": "ModifyAMQPQueueResponse"
+      "output": "ModifyAMQPQueueResponse",
+      "status": "online"
     },
     "ModifyAMQPVHost": {
       "document": "更新Vhost",
       "input": "ModifyAMQPVHostRequest",
       "name": "更新Vhost",
-      "output": "ModifyAMQPVHostResponse"
+      "output": "ModifyAMQPVHostResponse",
+      "status": "online"
     },
     "ModifyCluster": {
       "document": "更新集群信息",
       "input": "ModifyClusterRequest",
       "name": "更新集群信息",
-      "output": "ModifyClusterResponse"
+      "output": "ModifyClusterResponse",
+      "status": "online"
     },
     "ModifyCmqQueueAttribute": {
       "document": "修改cmq队列属性",
       "input": "ModifyCmqQueueAttributeRequest",
       "name": "修改cmq队列属性",
-      "output": "ModifyCmqQueueAttributeResponse"
+      "output": "ModifyCmqQueueAttributeResponse",
+      "status": "online"
     },
     "ModifyCmqSubscriptionAttribute": {
       "document": "修改cmq订阅属性",
       "input": "ModifyCmqSubscriptionAttributeRequest",
       "name": "修改cmq订阅属性",
-      "output": "ModifyCmqSubscriptionAttributeResponse"
+      "output": "ModifyCmqSubscriptionAttributeResponse",
+      "status": "online"
     },
     "ModifyCmqTopicAttribute": {
       "document": "修改cmq主题属性",
       "input": "ModifyCmqTopicAttributeRequest",
       "name": "修改cmq主题属性",
-      "output": "ModifyCmqTopicAttributeResponse"
+      "output": "ModifyCmqTopicAttributeResponse",
+      "status": "online"
     },
     "ModifyEnvironmentAttributes": {
       "document": "修改指定命名空间的属性值",
       "input": "ModifyEnvironmentAttributesRequest",
       "name": "修改命名空间属性",
-      "output": "ModifyEnvironmentAttributesResponse"
+      "output": "ModifyEnvironmentAttributesResponse",
+      "status": "online"
     },
     "ModifyEnvironmentRole": {
       "document": "修改环境角色授权。",
       "input": "ModifyEnvironmentRoleRequest",
       "name": "修改环境角色授权",
-      "output": "ModifyEnvironmentRoleResponse"
+      "output": "ModifyEnvironmentRoleResponse",
+      "status": "online"
     },
     "ModifyRocketMQCluster": {
       "document": "更新RocketMQ集群信息",
       "input": "ModifyRocketMQClusterRequest",
       "name": "更新RocketMQ集群信息",
-      "output": "ModifyRocketMQClusterResponse"
+      "output": "ModifyRocketMQClusterResponse",
+      "status": "online"
     },
     "ModifyRocketMQGroup": {
       "document": "更新RocketMQ消费组信息",
       "input": "ModifyRocketMQGroupRequest",
       "name": "更新RocketMQ消费组信息",
-      "output": "ModifyRocketMQGroupResponse"
+      "output": "ModifyRocketMQGroupResponse",
+      "status": "online"
     },
     "ModifyRocketMQNamespace": {
       "document": "更新RocketMQ命名空间",
       "input": "ModifyRocketMQNamespaceRequest",
       "name": "更新RocketMQ命名空间",
-      "output": "ModifyRocketMQNamespaceResponse"
+      "output": "ModifyRocketMQNamespaceResponse",
+      "status": "online"
     },
     "ModifyRocketMQTopic": {
       "document": "更新RocketMQ主题信息",
       "input": "ModifyRocketMQTopicRequest",
       "name": "更新RocketMQ主题信息",
-      "output": "ModifyRocketMQTopicResponse"
+      "output": "ModifyRocketMQTopicResponse",
+      "status": "online"
     },
     "ModifyRole": {
       "document": "角色修改",
       "input": "ModifyRoleRequest",
       "name": "角色修改",
-      "output": "ModifyRoleResponse"
+      "output": "ModifyRoleResponse",
+      "status": "online"
     },
     "ModifyTopic": {
       "document": "修改主题备注和分区数",
       "input": "ModifyTopicRequest",
       "name": "修改主题",
-      "output": "ModifyTopicResponse"
+      "output": "ModifyTopicResponse",
+      "status": "online"
     },
     "PublishCmqMsg": {
       "document": "发送cmq主题消息",
       "input": "PublishCmqMsgRequest",
       "name": "发送cmq主题消息",
-      "output": "PublishCmqMsgResponse"
+      "output": "PublishCmqMsgResponse",
+      "status": "online"
     },
     "ReceiveMessage": {
       "document": "当前 ReceiveMessage 接口只支持 Partitioned 类型的 Topic。该接口用于接收发送到指定 Partitioned Topic 中的消息，当 Partitioned Topic 中没有消息但还去尝试调用该接口时，会抛出 ReceiveTimeout 的异常。\n\n如何使用 BatchReceivePolicy：\n\nBatchReceive 接口提供了如下三个参数：\n\n● MaxNumMessages: 即每次使用 BatchReceive 的时候，最多一次Receive接口返回多少条消息。\n● MaxNumBytes：即每次使用 BatchReceive 的时候，最多一次Receive接口返回多大内容的消息，单位是：bytes。\n● Timeout：即每次使用 BatchReceive 的时候，最多一次 Receive 接口的超时时间是多久，单位是：MS。\n\n默认如果上述三个参数都不指定，即关闭 BatchReceive 的特性。如果三个参数中的任意一个参数指定的数值大于 0，即开启 BatchReceive。BatchReceive 的结束条件为到达上述三个参数中任意一个指定的阈值。\n\n注意：MaxNumMessages 和 MaxNumBytes 每一次接收的最大消息同时受限于 ReceiveQueueSize 的大小，如果 ReceiveQueueSize 的大小设置为 5，MaxNumMessages 设置为10，那么一次 BatchReceive 接收的最多的消息是 5条，而不是10条。\n\n\n\nBatchReceivePolicy 的接口会一次性返回多条消息：\n\n1. 多条消息的内容之间使用特殊字符 '###' 来进行分割，业务侧接收到消息之后，可以利用不同语言提供的 Split 工具分割不同的消息。\n2. 多条消息的 MessageID 之间使用特殊字符 '###' 来进行分割，业务侧接收到消息之后，可以利用不同语言提供的 Split 工具分割不同的消息。（用于在调用 AcknowledgeMessage 接口中填入所需要的 MessageID 字段信息）\n",
       "input": "ReceiveMessageRequest",
       "name": "接收消息",
-      "output": "ReceiveMessageResponse"
+      "output": "ReceiveMessageResponse",
+      "status": "online"
     },
     "ResetMsgSubOffsetByTimestamp": {
       "document": "根据时间戳进行消息回溯，精确到毫秒",
       "input": "ResetMsgSubOffsetByTimestampRequest",
       "name": "消息回溯",
-      "output": "ResetMsgSubOffsetByTimestampResponse"
+      "output": "ResetMsgSubOffsetByTimestampResponse",
+      "status": "online"
     },
     "ResetRocketMQConsumerOffSet": {
       "document": "重置指定Group的消费位点到指定时间戳",
       "input": "ResetRocketMQConsumerOffSetRequest",
       "name": "重置RocketMQ消费位点",
-      "output": "ResetRocketMQConsumerOffSetResponse"
+      "output": "ResetRocketMQConsumerOffSetResponse",
+      "status": "online"
     },
     "RewindCmqQueue": {
       "document": "回溯cmq队列",
       "input": "RewindCmqQueueRequest",
       "name": "回溯cmq队列",
-      "output": "RewindCmqQueueResponse"
+      "output": "RewindCmqQueueResponse",
+      "status": "online"
     },
     "SendBatchMessages": {
       "document": "批量发送消息\n\n注意：TDMQ 批量发送消息的接口是在 TDMQ-HTTP 的服务侧将消息打包为一个 Batch，然后将该 Batch 在服务内部当作一次 TCP 请求发送出去。所以在使用过程中，用户还是按照单条消息发送的逻辑，每一条消息是一个独立的 HTTP 的请求，在 TDMQ-HTTP 的服务内部，会将多个 HTTP 的请求聚合为一个 Batch 发送到服务端。即，批量发送消息在使用上与发送单条消息是一致的，batch 的聚合是在 TDMQ-HTTP 的服务内部完成的。",
       "input": "SendBatchMessagesRequest",
       "name": "批量发送消息",
-      "output": "SendBatchMessagesResponse"
+      "output": "SendBatchMessagesResponse",
+      "status": "online"
     },
     "SendCmqMsg": {
       "document": "发送cmq消息",
       "input": "SendCmqMsgRequest",
       "name": "发送cmq消息",
-      "output": "SendCmqMsgResponse"
+      "output": "SendCmqMsgResponse",
+      "status": "online"
     },
     "SendMessages": {
       "document": "发送单条消息",
       "input": "SendMessagesRequest",
       "name": "发送单条消息",
-      "output": "SendMessagesResponse"
+      "output": "SendMessagesResponse",
+      "status": "online"
     },
     "SendMsg": {
       "document": "此接口仅用于测试发生消息，不能作为现网正式生产使用",
       "input": "SendMsgRequest",
       "name": "发送消息",
-      "output": "SendMsgResponse"
+      "output": "SendMsgResponse",
+      "status": "online"
     },
     "UnbindCmqDeadLetter": {
       "document": "解绑cmq死信队列",
       "input": "UnbindCmqDeadLetterRequest",
       "name": "解绑cmq死信队列",
-      "output": "UnbindCmqDeadLetterResponse"
+      "output": "UnbindCmqDeadLetterResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,481 +4,561 @@
       "document": "绑定另外一个环境下的网关，callContainer请求可以访问到该网关",
       "input": "BindEnvGatewayRequest",
       "name": "绑定环境网关",
-      "output": "BindEnvGatewayResponse"
+      "output": "BindEnvGatewayResponse",
+      "status": "online"
     },
     "CheckTcbService": {
       "document": "检查是否开通Tcb服务",
       "input": "CheckTcbServiceRequest",
       "name": "检查是否开通Tcb服务",
-      "output": "CheckTcbServiceResponse"
+      "output": "CheckTcbServiceResponse",
+      "status": "online"
     },
     "CommonServiceAPI": {
       "document": "TCB云API统一入口",
       "input": "CommonServiceAPIRequest",
       "name": "TCB云API统一入口",
-      "output": "CommonServiceAPIResponse"
+      "output": "CommonServiceAPIResponse",
+      "status": "online"
     },
     "CreateAndDeployCloudBaseProject": {
       "document": "创建云开发项目",
       "input": "CreateAndDeployCloudBaseProjectRequest",
       "name": "创建云开发项目",
-      "output": "CreateAndDeployCloudBaseProjectResponse"
+      "output": "CreateAndDeployCloudBaseProjectResponse",
+      "status": "online"
     },
     "CreateAuthDomain": {
       "document": "增加安全域名",
       "input": "CreateAuthDomainRequest",
       "name": "增加安全域名",
-      "output": "CreateAuthDomainResponse"
+      "output": "CreateAuthDomainResponse",
+      "status": "online"
     },
     "CreateCloudBaseRunResource": {
       "document": "开通容器托管的资源，包括集群创建，VPC配置，异步任务创建，镜像托管，Coding等，查看创建结果需要根据DescribeCloudBaseRunResource接口来查看",
       "input": "CreateCloudBaseRunResourceRequest",
       "name": "开通容器托管的资源",
-      "output": "CreateCloudBaseRunResourceResponse"
+      "output": "CreateCloudBaseRunResourceResponse",
+      "status": "online"
     },
     "CreateCloudBaseRunServerVersion": {
       "document": "创建服务版本",
       "input": "CreateCloudBaseRunServerVersionRequest",
       "name": "创建服务版本",
-      "output": "CreateCloudBaseRunServerVersionResponse"
+      "output": "CreateCloudBaseRunServerVersionResponse",
+      "status": "online"
     },
     "CreateHostingDomain": {
       "document": "创建托管域名",
       "input": "CreateHostingDomainRequest",
       "name": "创建托管域名",
-      "output": "CreateHostingDomainResponse"
+      "output": "CreateHostingDomainResponse",
+      "status": "online"
     },
     "CreatePostpayPackage": {
       "document": "开通后付费资源",
       "input": "CreatePostpayPackageRequest",
       "name": "开通后付费资源",
-      "output": "CreatePostpayPackageResponse"
+      "output": "CreatePostpayPackageResponse",
+      "status": "online"
     },
     "CreateStandaloneGateway": {
       "document": "本接口（CreateStandaloneGateway）用于创建独立网关。",
       "input": "CreateStandaloneGatewayRequest",
       "name": "创建独立网关",
-      "output": "CreateStandaloneGatewayResponse"
+      "output": "CreateStandaloneGatewayResponse",
+      "status": "online"
     },
     "CreateStaticStore": {
       "document": "创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看",
       "input": "CreateStaticStoreRequest",
       "name": "创建静态托管资源",
-      "output": "CreateStaticStoreResponse"
+      "output": "CreateStaticStoreResponse",
+      "status": "online"
     },
     "CreateWxCloudBaseRunEnv": {
       "document": "创建微信云托管",
       "input": "CreateWxCloudBaseRunEnvRequest",
       "name": "创建微信云托管",
-      "output": "CreateWxCloudBaseRunEnvResponse"
+      "output": "CreateWxCloudBaseRunEnvResponse",
+      "status": "online"
     },
     "CreateWxCloudBaseRunServerDBCluster": {
       "document": "开通微信云托管MySQL数据库服务",
       "input": "CreateWxCloudBaseRunServerDBClusterRequest",
       "name": "开通微信云托管MySQL数据库服务",
-      "output": "CreateWxCloudBaseRunServerDBClusterResponse"
+      "output": "CreateWxCloudBaseRunServerDBClusterResponse",
+      "status": "online"
     },
     "DeleteCloudBaseProjectLatestVersion": {
       "document": "删除云项目",
       "input": "DeleteCloudBaseProjectLatestVersionRequest",
       "name": "删除云项目",
-      "output": "DeleteCloudBaseProjectLatestVersionResponse"
+      "output": "DeleteCloudBaseProjectLatestVersionResponse",
+      "status": "online"
     },
     "DeleteCloudBaseRunServerVersion": {
       "document": "删除服务版本",
       "input": "DeleteCloudBaseRunServerVersionRequest",
       "name": "删除服务版本",
-      "output": "DeleteCloudBaseRunServerVersionResponse"
+      "output": "DeleteCloudBaseRunServerVersionResponse",
+      "status": "online"
     },
     "DeleteEndUser": {
       "document": "删除终端用户",
       "input": "DeleteEndUserRequest",
       "name": "删除终端用户",
-      "output": "DeleteEndUserResponse"
+      "output": "DeleteEndUserResponse",
+      "status": "online"
     },
     "DeleteWxGatewayRoute": {
       "document": "删除安全网关路由",
       "input": "DeleteWxGatewayRouteRequest",
       "name": "删除安全网关路由",
-      "output": "DeleteWxGatewayRouteResponse"
+      "output": "DeleteWxGatewayRouteResponse",
+      "status": "online"
     },
     "DescribeActivityInfo": {
       "document": "查询活动信息",
       "input": "DescribeActivityInfoRequest",
       "name": "查询活动信息",
-      "output": "DescribeActivityInfoResponse"
+      "output": "DescribeActivityInfoResponse",
+      "status": "online"
     },
     "DescribeActivityRecord": {
       "document": "查询活动记录信息",
       "input": "DescribeActivityRecordRequest",
       "name": "查询活动记录信息",
-      "output": "DescribeActivityRecordResponse"
+      "output": "DescribeActivityRecordResponse",
+      "status": "online"
     },
     "DescribeAuthDomains": {
       "document": "获取安全域名列表",
       "input": "DescribeAuthDomainsRequest",
       "name": "获取安全域名列表",
-      "output": "DescribeAuthDomainsResponse"
+      "output": "DescribeAuthDomainsResponse",
+      "status": "online"
     },
     "DescribeBaasPackageList": {
       "document": "获取新套餐列表，含详情，如果传了PackageId，则只获取指定套餐详情",
       "input": "DescribeBaasPackageListRequest",
       "name": "获取新套餐",
-      "output": "DescribeBaasPackageListResponse"
+      "output": "DescribeBaasPackageListResponse",
+      "status": "online"
     },
     "DescribeCloudBaseBuildService": {
       "document": "获取云托管代码上传url",
       "input": "DescribeCloudBaseBuildServiceRequest",
       "name": "获取云托管代码上传和下载url",
-      "output": "DescribeCloudBaseBuildServiceResponse"
+      "output": "DescribeCloudBaseBuildServiceResponse",
+      "status": "online"
     },
     "DescribeCloudBaseProjectLatestVersionList": {
       "document": "获取云开发项目列表",
       "input": "DescribeCloudBaseProjectLatestVersionListRequest",
       "name": "获取云开发项目列表",
-      "output": "DescribeCloudBaseProjectLatestVersionListResponse"
+      "output": "DescribeCloudBaseProjectLatestVersionListResponse",
+      "status": "online"
     },
     "DescribeCloudBaseProjectVersionList": {
       "document": "云项目部署列表",
       "input": "DescribeCloudBaseProjectVersionListRequest",
       "name": "云项目部署版本列表",
-      "output": "DescribeCloudBaseProjectVersionListResponse"
+      "output": "DescribeCloudBaseProjectVersionListResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunAllVpcs": {
       "document": "查询环境下所有的vpc列表",
       "input": "DescribeCloudBaseRunAllVpcsRequest",
       "name": "查看环境下的所有vpc",
-      "output": "DescribeCloudBaseRunAllVpcsResponse"
+      "output": "DescribeCloudBaseRunAllVpcsResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunConfForGateWay": {
       "document": "独立网关中拉取云托管服务对应的配置信息",
       "input": "DescribeCloudBaseRunConfForGateWayRequest",
       "name": "独立网关云托管服务配置",
-      "output": "DescribeCloudBaseRunConfForGateWayResponse"
+      "output": "DescribeCloudBaseRunConfForGateWayResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunOneClickTaskExternal": {
       "document": "查询一键部署任务 （特定接口：外部查询使用）",
       "input": "DescribeCloudBaseRunOneClickTaskExternalRequest",
       "name": "查询一键部署任务",
-      "output": "DescribeCloudBaseRunOneClickTaskExternalResponse"
+      "output": "DescribeCloudBaseRunOneClickTaskExternalResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunOperationTypes": {
       "document": "查询服务、版本和操作类型",
       "input": "DescribeCloudBaseRunOperationTypesRequest",
       "name": "查询操作类型接口",
-      "output": "DescribeCloudBaseRunOperationTypesResponse"
+      "output": "DescribeCloudBaseRunOperationTypesResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunPodList": {
       "document": "查询云应用服务版本容器列表",
       "input": "DescribeCloudBaseRunPodListRequest",
       "name": "查询云应用服务版本容器列表",
-      "output": "DescribeCloudBaseRunPodListResponse"
+      "output": "DescribeCloudBaseRunPodListResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunResource": {
       "document": "查看容器托管的集群状态",
       "input": "DescribeCloudBaseRunResourceRequest",
       "name": "查看容器托管的资源状态",
-      "output": "DescribeCloudBaseRunResourceResponse"
+      "output": "DescribeCloudBaseRunResourceResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunResourceForExtend": {
       "document": "查看容器托管的集群状态扩展使用",
       "input": "DescribeCloudBaseRunResourceForExtendRequest",
       "name": "查看容器托管的资源状态扩展使用",
-      "output": "DescribeCloudBaseRunResourceForExtendResponse"
+      "output": "DescribeCloudBaseRunResourceForExtendResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunServer": {
       "document": "查询单个服务的详情，版本以及详情",
       "input": "DescribeCloudBaseRunServerRequest",
       "name": "查询单个服务的详情",
-      "output": "DescribeCloudBaseRunServerResponse"
+      "output": "DescribeCloudBaseRunServerResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunServerDomainName": {
       "document": "查询微信云托管服务域名",
       "input": "DescribeCloudBaseRunServerDomainNameRequest",
       "name": "查询微信云托管服务域名",
-      "output": "DescribeCloudBaseRunServerDomainNameResponse"
+      "output": "DescribeCloudBaseRunServerDomainNameResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunServerVersion": {
       "document": "查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize",
       "input": "DescribeCloudBaseRunServerVersionRequest",
       "name": "查询服务版本的详情",
-      "output": "DescribeCloudBaseRunServerVersionResponse"
+      "output": "DescribeCloudBaseRunServerVersionResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunVersion": {
       "document": "查询服务版本详情(新)",
       "input": "DescribeCloudBaseRunVersionRequest",
       "name": "查询服务版本详情",
-      "output": "DescribeCloudBaseRunVersionResponse"
+      "output": "DescribeCloudBaseRunVersionResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunVersionRsByCondition": {
       "document": "DescribeCloudBaseRunVersionRsByCondition 获取云托管详情",
       "input": "DescribeCloudBaseRunVersionRsByConditionRequest",
       "name": "获取云托管详情",
-      "output": "DescribeCloudBaseRunVersionRsByConditionResponse"
+      "output": "DescribeCloudBaseRunVersionRsByConditionResponse",
+      "status": "online"
     },
     "DescribeCloudBaseRunVersionSnapshot": {
       "document": "查询版本历史",
       "input": "DescribeCloudBaseRunVersionSnapshotRequest",
       "name": "查询版本历史",
-      "output": "DescribeCloudBaseRunVersionSnapshotResponse"
+      "output": "DescribeCloudBaseRunVersionSnapshotResponse",
+      "status": "online"
     },
     "DescribeCurveData": {
       "document": "根据用户传入的指标, 拉取一段时间内的监控数据。",
       "input": "DescribeCurveDataRequest",
       "name": "查询环境的监控曲线数据",
-      "output": "DescribeCurveDataResponse"
+      "output": "DescribeCurveDataResponse",
+      "status": "online"
     },
     "DescribeDatabaseACL": {
       "document": "获取数据库权限",
       "input": "DescribeDatabaseACLRequest",
       "name": "获取数据库权限",
-      "output": "DescribeDatabaseACLResponse"
+      "output": "DescribeDatabaseACLResponse",
+      "status": "online"
     },
     "DescribeDownloadFile": {
       "document": "获取下载文件信息",
       "input": "DescribeDownloadFileRequest",
       "name": "获取下载文件信息",
-      "output": "DescribeDownloadFileResponse"
+      "output": "DescribeDownloadFileResponse",
+      "status": "online"
     },
     "DescribeEndUserLoginStatistic": {
       "document": "获取环境终端用户新增与登录信息",
       "input": "DescribeEndUserLoginStatisticRequest",
       "name": "获取终端用户新增与登录信息",
-      "output": "DescribeEndUserLoginStatisticResponse"
+      "output": "DescribeEndUserLoginStatisticResponse",
+      "status": "online"
     },
     "DescribeEndUserStatistic": {
       "document": "获取终端用户总量与平台分布情况",
       "input": "DescribeEndUserStatisticRequest",
       "name": "获取终端用户分布",
-      "output": "DescribeEndUserStatisticResponse"
+      "output": "DescribeEndUserStatisticResponse",
+      "status": "online"
     },
     "DescribeEndUsers": {
       "document": "获取终端用户列表",
       "input": "DescribeEndUsersRequest",
       "name": "获取终端用户列表",
-      "output": "DescribeEndUsersResponse"
+      "output": "DescribeEndUsersResponse",
+      "status": "online"
     },
     "DescribeEnvDealRegion": {
       "document": "获取环境下单地域",
       "input": "DescribeEnvDealRegionRequest",
       "name": "获取环境下单地域",
-      "output": "DescribeEnvDealRegionResponse"
+      "output": "DescribeEnvDealRegionResponse",
+      "status": "online"
     },
     "DescribeEnvFreeQuota": {
       "document": "查询后付费免费配额信息",
       "input": "DescribeEnvFreeQuotaRequest",
       "name": "查询后付费免费配额信息",
-      "output": "DescribeEnvFreeQuotaResponse"
+      "output": "DescribeEnvFreeQuotaResponse",
+      "status": "online"
     },
     "DescribeEnvLimit": {
       "document": "查询环境个数上限",
       "input": "DescribeEnvLimitRequest",
       "name": "查询环境个数上限接口",
-      "output": "DescribeEnvLimitResponse"
+      "output": "DescribeEnvLimitResponse",
+      "status": "online"
     },
     "DescribeEnvPostpaidDeduct": {
       "document": "查询环境后付费计费详情",
       "input": "DescribeEnvPostpaidDeductRequest",
       "name": "查询环境后付费计费详情",
-      "output": "DescribeEnvPostpaidDeductResponse"
+      "output": "DescribeEnvPostpaidDeductResponse",
+      "status": "online"
     },
     "DescribeEnvs": {
       "document": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数",
       "input": "DescribeEnvsRequest",
       "name": "获取环境列表",
-      "output": "DescribeEnvsResponse"
+      "output": "DescribeEnvsResponse",
+      "status": "online"
     },
     "DescribeExtensionUploadInfo": {
       "document": "描述扩展上传文件信息",
       "input": "DescribeExtensionUploadInfoRequest",
       "name": "描述扩展上传文件信息",
-      "output": "DescribeExtensionUploadInfoResponse"
+      "output": "DescribeExtensionUploadInfoResponse",
+      "status": "online"
     },
     "DescribeExtraPkgBillingInfo": {
       "document": "获取增值包计费相关信息",
       "input": "DescribeExtraPkgBillingInfoRequest",
       "name": "获取增值包计费相关信息",
-      "output": "DescribeExtraPkgBillingInfoResponse"
+      "output": "DescribeExtraPkgBillingInfoResponse",
+      "status": "online"
     },
     "DescribeHostingDomainTask": {
       "document": "查询静态托管域名任务状态",
       "input": "DescribeHostingDomainTaskRequest",
       "name": "查询静态托管域名任务状态",
-      "output": "DescribeHostingDomainTaskResponse"
+      "output": "DescribeHostingDomainTaskResponse",
+      "status": "online"
     },
     "DescribePostpayFreeQuotas": {
       "document": "查询后付费资源免费量",
       "input": "DescribePostpayFreeQuotasRequest",
       "name": "查询后付费资源免费量",
-      "output": "DescribePostpayFreeQuotasResponse"
+      "output": "DescribePostpayFreeQuotasResponse",
+      "status": "online"
     },
     "DescribePostpayPackageFreeQuotas": {
       "document": "获取后付费免费额度",
       "input": "DescribePostpayPackageFreeQuotasRequest",
       "name": "获取后付费免费额度",
-      "output": "DescribePostpayPackageFreeQuotasResponse"
+      "output": "DescribePostpayPackageFreeQuotasResponse",
+      "status": "online"
     },
     "DescribeQuotaData": {
       "document": "查询指定指标的配额使用量",
       "input": "DescribeQuotaDataRequest",
       "name": "查询环境的配额使用量",
-      "output": "DescribeQuotaDataResponse"
+      "output": "DescribeQuotaDataResponse",
+      "status": "online"
     },
     "DescribeSmsQuotas": {
       "document": "查询后付费短信资源量\n1 有免费包的返回SmsFreeQuota结构所有字段\n2 没有免费包，有付费包，付费返回复用SmsFreeQuota结构，其中只有 TodayUsedQuota 字段有效\n3 都没有返回为空数组",
       "input": "DescribeSmsQuotasRequest",
       "name": "查询后付费短信资源量",
-      "output": "DescribeSmsQuotasResponse"
+      "output": "DescribeSmsQuotasResponse",
+      "status": "online"
     },
     "DescribeSpecialCostItems": {
       "document": "查询环境1分钱抵扣信息",
       "input": "DescribeSpecialCostItemsRequest",
       "name": "查询环境1分钱抵扣信息",
-      "output": "DescribeSpecialCostItemsResponse"
+      "output": "DescribeSpecialCostItemsResponse",
+      "status": "online"
     },
     "DescribeStandaloneGateway": {
       "document": "本接口（DescribeStandaloneGateway）查询小租户网关套餐信息。",
       "input": "DescribeStandaloneGatewayRequest",
       "name": "查询小租户网关信息",
-      "output": "DescribeStandaloneGatewayResponse"
+      "output": "DescribeStandaloneGatewayResponse",
+      "status": "online"
     },
     "DescribeStandaloneGatewayPackage": {
       "document": "本接口（DescribeStandaloneGatewayPackage）用于查询小租户网关套餐信息。",
       "input": "DescribeStandaloneGatewayPackageRequest",
       "name": "查询小租户网关套餐信息",
-      "output": "DescribeStandaloneGatewayPackageResponse"
+      "output": "DescribeStandaloneGatewayPackageResponse",
+      "status": "online"
     },
     "DescribeUserActivityInfo": {
       "document": "查询用户活动信息",
       "input": "DescribeUserActivityInfoRequest",
       "name": "查询用户活动信息",
-      "output": "DescribeUserActivityInfoResponse"
+      "output": "DescribeUserActivityInfoResponse",
+      "status": "online"
     },
     "DescribeWxCloudBaseRunEnvs": {
       "document": "查询微信云托管环境信息",
       "input": "DescribeWxCloudBaseRunEnvsRequest",
       "name": "查询微信云托管环境信息",
-      "output": "DescribeWxCloudBaseRunEnvsResponse"
+      "output": "DescribeWxCloudBaseRunEnvsResponse",
+      "status": "online"
     },
     "DescribeWxCloudBaseRunSubNets": {
       "document": "查询微信云托管子网",
       "input": "DescribeWxCloudBaseRunSubNetsRequest",
       "name": "查询微信云托管子网",
-      "output": "DescribeWxCloudBaseRunSubNetsResponse"
+      "output": "DescribeWxCloudBaseRunSubNetsResponse",
+      "status": "online"
     },
     "DestroyEnv": {
       "document": "销毁环境",
       "input": "DestroyEnvRequest",
       "name": "销毁环境",
-      "output": "DestroyEnvResponse"
+      "output": "DestroyEnvResponse",
+      "status": "online"
     },
     "DestroyStandaloneGateway": {
       "document": "本接口（DestroyStandaloneGateway）用于销毁小租户网关。",
       "input": "DestroyStandaloneGatewayRequest",
       "name": "销毁小租户网关",
-      "output": "DestroyStandaloneGatewayResponse"
+      "output": "DestroyStandaloneGatewayResponse",
+      "status": "online"
     },
     "DestroyStaticStore": {
       "document": "销毁静态托管资源，该接口创建异步销毁任务，资源最终状态可从DestroyStaticStore接口查看",
       "input": "DestroyStaticStoreRequest",
       "name": "销毁静态资源",
-      "output": "DestroyStaticStoreResponse"
+      "output": "DestroyStaticStoreResponse",
+      "status": "online"
     },
     "EstablishCloudBaseRunServer": {
       "document": "创建云应用服务",
       "input": "EstablishCloudBaseRunServerRequest",
       "name": "创建云应用服务",
-      "output": "EstablishCloudBaseRunServerResponse"
+      "output": "EstablishCloudBaseRunServerResponse",
+      "status": "online"
     },
     "EstablishWxGatewayRoute": {
       "document": "创建或修改安全网关路由",
       "input": "EstablishWxGatewayRouteRequest",
       "name": "创建或修改安全网关路由",
-      "output": "EstablishWxGatewayRouteResponse"
+      "output": "EstablishWxGatewayRouteResponse",
+      "status": "online"
     },
     "FreezeCloudBaseRunServers": {
       "document": "批量冻结",
       "input": "FreezeCloudBaseRunServersRequest",
       "name": "批量冻结",
-      "output": "FreezeCloudBaseRunServersResponse"
+      "output": "FreezeCloudBaseRunServersResponse",
+      "status": "online"
     },
     "ModifyCloudBaseRunServerFlowConf": {
       "document": "修改容器内的版本流量配置",
       "input": "ModifyCloudBaseRunServerFlowConfRequest",
       "name": "修改容器内的版本流量配置",
-      "output": "ModifyCloudBaseRunServerFlowConfResponse"
+      "output": "ModifyCloudBaseRunServerFlowConfResponse",
+      "status": "online"
     },
     "ModifyCloudBaseRunServerVersion": {
       "document": "修改服务版本的副本数，环境变量",
       "input": "ModifyCloudBaseRunServerVersionRequest",
       "name": "修改服务版本信息",
-      "output": "ModifyCloudBaseRunServerVersionResponse"
+      "output": "ModifyCloudBaseRunServerVersionResponse",
+      "status": "online"
     },
     "ModifyClsTopic": {
       "document": "修改日志主题",
       "input": "ModifyClsTopicRequest",
       "name": "修改日志主题",
-      "output": "ModifyClsTopicResponse"
+      "output": "ModifyClsTopicResponse",
+      "status": "online"
     },
     "ModifyDatabaseACL": {
       "document": "修改数据库权限",
       "input": "ModifyDatabaseACLRequest",
       "name": "修改数据库权限",
-      "output": "ModifyDatabaseACLResponse"
+      "output": "ModifyDatabaseACLResponse",
+      "status": "online"
     },
     "ModifyEndUser": {
       "document": "管理终端用户",
       "input": "ModifyEndUserRequest",
       "name": "管理终端用户",
-      "output": "ModifyEndUserResponse"
+      "output": "ModifyEndUserResponse",
+      "status": "online"
     },
     "ModifyEnv": {
       "document": "更新环境信息",
       "input": "ModifyEnvRequest",
       "name": "更新环境信息",
-      "output": "ModifyEnvResponse"
+      "output": "ModifyEnvResponse",
+      "status": "online"
     },
     "ReinstateEnv": {
       "document": "针对已隔离的免费环境，可以通过本接口将其恢复访问。",
       "input": "ReinstateEnvRequest",
       "name": "恢复环境，解除隔离状态",
-      "output": "ReinstateEnvResponse"
+      "output": "ReinstateEnvResponse",
+      "status": "online"
     },
     "ReplaceActivityRecord": {
       "document": "更新活动详情",
       "input": "ReplaceActivityRecordRequest",
       "name": "更新活动详情",
-      "output": "ReplaceActivityRecordResponse"
+      "output": "ReplaceActivityRecordResponse",
+      "status": "online"
     },
     "RollUpdateCloudBaseRunServerVersion": {
       "document": "针对特定的版本，进行滚动更新",
       "input": "RollUpdateCloudBaseRunServerVersionRequest",
       "name": "滚动更新服务版本",
-      "output": "RollUpdateCloudBaseRunServerVersionResponse"
+      "output": "RollUpdateCloudBaseRunServerVersionResponse",
+      "status": "online"
     },
     "SearchClsLog": {
       "document": "搜索CLS日志，TCB角色秘钥访问",
       "input": "SearchClsLogRequest",
       "name": "搜索CLS日志",
-      "output": "SearchClsLogResponse"
+      "output": "SearchClsLogResponse",
+      "status": "online"
     },
     "TurnOffStandaloneGateway": {
       "document": "本接口（TurnOffStandaloneGateway）用于关闭小租户网关。",
       "input": "TurnOffStandaloneGatewayRequest",
       "name": "关闭小租户网关",
-      "output": "TurnOffStandaloneGatewayResponse"
+      "output": "TurnOffStandaloneGatewayResponse",
+      "status": "online"
     },
     "TurnOnStandaloneGateway": {
       "document": "本接口（TurnOnStandaloneGateway）用于开启小租户网关。",
       "input": "TurnOnStandaloneGatewayRequest",
       "name": "开启小租户网关",
-      "output": "TurnOnStandaloneGatewayResponse"
+      "output": "TurnOnStandaloneGatewayResponse",
+      "status": "online"
     },
     "UnfreezeCloudBaseRunServers": {
       "document": "批量解冻服务",
       "input": "UnfreezeCloudBaseRunServersRequest",
       "name": "批量解冻服务",
-      "output": "UnfreezeCloudBaseRunServersResponse"
+      "output": "UnfreezeCloudBaseRunServersResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -1582,7 +1662,6 @@
       "document": "版本的列表",
       "members": [
         {
-          "default": "",
           "document": "版本名称",
           "example": "test-001",
           "member": "string",
@@ -1592,7 +1671,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
           "member": "string",
@@ -1602,7 +1680,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "流量占比",
           "example": "1",
           "member": "int64",
@@ -1612,7 +1689,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-01-01 12:00:00",
           "member": "string",
@@ -1622,7 +1698,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-01-01 12:00:00",
           "member": "string",
@@ -1632,7 +1707,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "构建ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345",
           "member": "int64",
@@ -1642,7 +1716,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "构建方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Image",
           "member": "string",
@@ -1652,7 +1725,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -1662,7 +1734,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "url中的参数路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "ObjectKV",
@@ -1672,7 +1743,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "优先级（数值越小，优先级越高）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1682,7 +1752,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否是默认兜底版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
@@ -1692,7 +1761,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "KV Params\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "CloudBaseRunKVPriority",
@@ -1702,7 +1770,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最小副本数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1712,7 +1779,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大副本数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -1722,7 +1788,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "操作记录id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aa123",
           "member": "string",
@@ -1732,7 +1797,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "进度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
@@ -1742,7 +1806,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前副本数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1752,7 +1815,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Monolithic，Microservice\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -5679,7 +5741,6 @@
       "document": "DescribeCloudBaseRunVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
           "example": "env-98772234",
           "member": "string",
@@ -5688,7 +5749,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务名称",
           "example": "sv",
           "member": "string",
@@ -5697,7 +5757,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本名称",
           "example": "sv-001",
           "member": "string",
@@ -5716,7 +5775,6 @@
           "example": "sv-001",
           "member": "string",
           "name": "VersionName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5725,7 +5783,6 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5734,7 +5791,6 @@
           "example": "Dockefile",
           "member": "string",
           "name": "DockerfilePath",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5743,7 +5799,6 @@
           "example": ".",
           "member": "string",
           "name": "BuildDir",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5752,7 +5807,6 @@
           "example": "1",
           "member": "int64",
           "name": "MinNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5761,7 +5815,6 @@
           "example": "50",
           "member": "int64",
           "name": "MaxNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5770,7 +5823,6 @@
           "example": "Dockefile",
           "member": "string",
           "name": "PolicyType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5779,7 +5831,6 @@
           "example": "无",
           "member": "float",
           "name": "PolicyThreshold",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5788,7 +5839,6 @@
           "example": "无",
           "member": "string",
           "name": "EnvParams",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5797,7 +5847,6 @@
           "example": "无",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5806,7 +5855,6 @@
           "example": "无",
           "member": "string",
           "name": "UpdatedTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5815,7 +5863,6 @@
           "example": "无",
           "member": "string",
           "name": "VersionIP",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5824,7 +5871,6 @@
           "example": "无",
           "member": "int64",
           "name": "VersionPort",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5833,7 +5879,6 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5842,7 +5887,6 @@
           "example": "无",
           "member": "string",
           "name": "PackageName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5851,7 +5895,6 @@
           "example": "无",
           "member": "string",
           "name": "PackageVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5860,7 +5903,6 @@
           "example": "无",
           "member": "string",
           "name": "UploadType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5869,7 +5911,6 @@
           "example": "无",
           "member": "string",
           "name": "RepoType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5878,7 +5919,6 @@
           "example": "无",
           "member": "string",
           "name": "Repo",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5887,7 +5927,6 @@
           "example": "无",
           "member": "string",
           "name": "Branch",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5896,7 +5935,6 @@
           "example": "无",
           "member": "string",
           "name": "ServerName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5905,7 +5943,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsPublic",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5914,7 +5951,6 @@
           "example": "无",
           "member": "string",
           "name": "VpcId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5923,7 +5959,6 @@
           "example": "无",
           "member": "string",
           "name": "SubnetIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5932,7 +5967,6 @@
           "example": "无",
           "member": "string",
           "name": "CustomLogs",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5941,7 +5975,6 @@
           "example": "无",
           "member": "int64",
           "name": "ContainerPort",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5950,7 +5983,6 @@
           "example": "无",
           "member": "int64",
           "name": "InitialDelaySeconds",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5959,7 +5991,6 @@
           "example": "无",
           "member": "string",
           "name": "ImageUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5968,7 +5999,6 @@
           "example": "无",
           "member": "float",
           "name": "CpuSize",
-          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -5977,7 +6007,30 @@
           "example": "无",
           "member": "float",
           "name": "MemSize",
-          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扩缩容策略详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HpaPolicy",
+          "name": "PolicyDetail",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Cpu的Request值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Cpu",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Mem的Request值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.0",
+          "member": "float",
+          "name": "Mem",
           "type": "float",
           "value_allowed_null": true
         },
@@ -8145,7 +8198,6 @@
       "document": "EstablishCloudBaseRunServer请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境id",
           "example": "无",
           "member": "string",
@@ -8154,7 +8206,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务名称",
           "example": "无",
           "member": "string",
@@ -8163,7 +8214,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开通外网访问",
           "example": "无",
           "member": "bool",
@@ -8172,7 +8222,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "镜像仓库",
           "example": "无",
           "member": "string",
@@ -8181,7 +8230,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务描述",
           "example": "无",
           "member": "string",
@@ -8190,7 +8238,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "es信息",
           "example": "无",
           "member": "CloudBaseEsInfo",
@@ -8199,7 +8246,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "日志类型; es/cls",
           "example": "无",
           "member": "string",
@@ -8208,7 +8254,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作备注",
           "example": "无",
           "member": "string",
@@ -8217,7 +8262,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源方（默认值：qcloud，微信侧来源miniapp)",
           "example": "无",
           "member": "string",
@@ -8226,7 +8270,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "vpc信息",
           "example": "无",
           "member": "CloudBaseRunVpcInfo",
@@ -8235,7 +8278,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "0/1=允许公网访问;2=关闭公网访问",
           "example": "无",
           "member": "int64",
@@ -8244,7 +8286,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "OA PUBLIC MINIAPP VPC",
           "example": "无",
           "member": "string",
@@ -8253,7 +8294,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否创建Path 0未传默认创建 1创建 2不创建",
           "example": "无",
           "member": "int64",
@@ -8262,7 +8302,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "指定创建路径（如不存在，则创建。存在，则忽略）",
           "example": "无",
           "member": "string",
@@ -8276,6 +8315,14 @@
     "EstablishCloudBaseRunServerResponse": {
       "document": "EstablishCloudBaseRunServer返回参数结构体",
       "members": [
+        {
+          "document": "创建服务是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succ",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

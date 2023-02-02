@@ -4,19 +4,22 @@
       "document": "基于提供的客户及保单信息，启动结构化识别任务。",
       "input": "CreateStructureTaskRequest",
       "name": "新建结构化任务",
-      "output": "CreateStructureTaskResponse"
+      "output": "CreateStructureTaskResponse",
+      "status": "online"
     },
     "DescribeStructCompareData": {
       "document": "结构化对比查询接口，对比结构化复核前后数据差异，查询识别正确率，召回率。",
       "input": "DescribeStructCompareDataRequest",
       "name": "结构化对比查询",
-      "output": "DescribeStructCompareDataResponse"
+      "output": "DescribeStructCompareDataResponse",
+      "status": "online"
     },
     "DescribeStructureTaskResult": {
       "document": "依据任务ID获取结构化结果接口。",
       "input": "DescribeStructureTaskResultRequest",
       "name": "获取结构化结果接口",
-      "output": "DescribeStructureTaskResultResponse"
+      "output": "DescribeStructureTaskResultResponse",
+      "status": "online"
     }
   },
   "metadata": {

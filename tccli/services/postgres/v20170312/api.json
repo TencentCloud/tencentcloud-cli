@@ -4,427 +4,498 @@
       "document": "本接口（AddDBInstanceToReadOnlyGroup）用于添加只读实例到只读组",
       "input": "AddDBInstanceToReadOnlyGroupRequest",
       "name": "添加只读实例到只读组",
-      "output": "AddDBInstanceToReadOnlyGroupResponse"
+      "output": "AddDBInstanceToReadOnlyGroupResponse",
+      "status": "online"
     },
     "CloneDBInstance": {
       "document": "用于克隆实例，支持指定备份集、指定时间点进行克隆。",
       "input": "CloneDBInstanceRequest",
       "name": "克隆实例",
-      "output": "CloneDBInstanceResponse"
+      "output": "CloneDBInstanceResponse",
+      "status": "online"
     },
     "CloseDBExtranetAccess": {
       "document": "本接口（CloseDBExtranetAccess）用于关闭实例外网链接。",
       "input": "CloseDBExtranetAccessRequest",
       "name": "关闭实例外网链接",
-      "output": "CloseDBExtranetAccessResponse"
+      "output": "CloseDBExtranetAccessResponse",
+      "status": "online"
     },
     "CloseServerlessDBExtranetAccess": {
       "document": "关闭serverlessDB实例外网",
       "input": "CloseServerlessDBExtranetAccessRequest",
       "name": "关闭serverlessDB实例外网",
-      "output": "CloseServerlessDBExtranetAccessResponse"
+      "output": "CloseServerlessDBExtranetAccessResponse",
+      "status": "online"
     },
     "CreateDBInstanceNetworkAccess": {
       "document": "可对实例进行网络的添加操作。",
       "input": "CreateDBInstanceNetworkAccessRequest",
       "name": "添加实例网络",
-      "output": "CreateDBInstanceNetworkAccessResponse"
+      "output": "CreateDBInstanceNetworkAccessResponse",
+      "status": "online"
     },
     "CreateDBInstances": {
       "document": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例,仅发货实例不会进行初始化。",
       "input": "CreateDBInstancesRequest",
       "name": "创建实例(旧)",
-      "output": "CreateDBInstancesResponse"
+      "output": "CreateDBInstancesResponse",
+      "status": "online"
     },
     "CreateInstances": {
       "document": "本接口 (CreateInstances) 用于创建一个或者多个PostgreSQL实例，通过此接口创建的实例无需进行初始化，可直接使用。",
       "input": "CreateInstancesRequest",
       "name": "创建实例(新)",
-      "output": "CreateInstancesResponse"
+      "output": "CreateInstancesResponse",
+      "status": "online"
     },
     "CreateParameterTemplate": {
       "document": "本接口 (CreateParameterTemplate) 用于创建参数模板。",
       "input": "CreateParameterTemplateRequest",
       "name": "创建参数模板",
-      "output": "CreateParameterTemplateResponse"
+      "output": "CreateParameterTemplateResponse",
+      "status": "online"
     },
     "CreateReadOnlyDBInstance": {
       "document": "本接口(CreateReadOnlyDBInstance)用于创建只读实例",
       "input": "CreateReadOnlyDBInstanceRequest",
       "name": "创建只读实例",
-      "output": "CreateReadOnlyDBInstanceResponse"
+      "output": "CreateReadOnlyDBInstanceResponse",
+      "status": "online"
     },
     "CreateReadOnlyGroup": {
       "document": "本接口（CreateReadOnlyGroup）用于创建只读组",
       "input": "CreateReadOnlyGroupRequest",
       "name": "创建只读组",
-      "output": "CreateReadOnlyGroupResponse"
+      "output": "CreateReadOnlyGroupResponse",
+      "status": "online"
     },
     "CreateReadOnlyGroupNetworkAccess": {
       "document": "可对RO组进行网络的添加操作。",
       "input": "CreateReadOnlyGroupNetworkAccessRequest",
       "name": "添加RO组网络",
-      "output": "CreateReadOnlyGroupNetworkAccessResponse"
+      "output": "CreateReadOnlyGroupNetworkAccessResponse",
+      "status": "online"
     },
     "CreateServerlessDBInstance": {
       "document": "本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。",
       "input": "CreateServerlessDBInstanceRequest",
       "name": "创建ServerlessDB实例",
-      "output": "CreateServerlessDBInstanceResponse"
+      "output": "CreateServerlessDBInstanceResponse",
+      "status": "online"
     },
     "DeleteDBInstanceNetworkAccess": {
       "document": "可对实例进行网络的删除操作。",
       "input": "DeleteDBInstanceNetworkAccessRequest",
       "name": "删除实例网络",
-      "output": "DeleteDBInstanceNetworkAccessResponse"
+      "output": "DeleteDBInstanceNetworkAccessResponse",
+      "status": "online"
     },
     "DeleteParameterTemplate": {
       "document": "本接口（DeleteParameterTemplate）主要用于删除某个参数模板。",
       "input": "DeleteParameterTemplateRequest",
       "name": "删除参数模板",
-      "output": "DeleteParameterTemplateResponse"
+      "output": "DeleteParameterTemplateResponse",
+      "status": "online"
     },
     "DeleteReadOnlyGroup": {
       "document": "本接口(DeleteReadOnlyGroup)用于删除指定的只读组",
       "input": "DeleteReadOnlyGroupRequest",
       "name": "删除只读组",
-      "output": "DeleteReadOnlyGroupResponse"
+      "output": "DeleteReadOnlyGroupResponse",
+      "status": "online"
     },
     "DeleteReadOnlyGroupNetworkAccess": {
       "document": "可对RO组进行网络的删除操作。",
       "input": "DeleteReadOnlyGroupNetworkAccessRequest",
       "name": "删除RO组网络",
-      "output": "DeleteReadOnlyGroupNetworkAccessResponse"
+      "output": "DeleteReadOnlyGroupNetworkAccessResponse",
+      "status": "online"
     },
     "DeleteServerlessDBInstance": {
       "document": "本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。",
       "input": "DeleteServerlessDBInstanceRequest",
       "name": "删除ServerlessDB实例",
-      "output": "DeleteServerlessDBInstanceResponse"
+      "output": "DeleteServerlessDBInstanceResponse",
+      "status": "online"
     },
     "DescribeAccounts": {
       "document": "本接口（DescribeAccounts）用于获取实例用户列表。",
       "input": "DescribeAccountsRequest",
       "name": "获取实例用户列表",
-      "output": "DescribeAccountsResponse"
+      "output": "DescribeAccountsResponse",
+      "status": "online"
     },
     "DescribeAvailableRecoveryTime": {
       "document": "本接口（DescribeAvailableRecoveryTime）用于查询实例可恢复的时间范围。",
       "input": "DescribeAvailableRecoveryTimeRequest",
       "name": "查询实例可恢复的时间范围",
-      "output": "DescribeAvailableRecoveryTimeResponse"
+      "output": "DescribeAvailableRecoveryTimeResponse",
+      "status": "online"
     },
     "DescribeBackupPlans": {
       "document": "本接口 (DescribeBackupPlans) 用于实例所有的备份计划查询",
       "input": "DescribeBackupPlansRequest",
       "name": "查询备份计划",
-      "output": "DescribeBackupPlansResponse"
+      "output": "DescribeBackupPlansResponse",
+      "status": "online"
     },
     "DescribeCloneDBInstanceSpec": {
       "document": "本接口（DescribeCloneDBInstanceSpec）用于查询克隆实例可选择的最小规格，包括SpecCode和磁盘。",
       "input": "DescribeCloneDBInstanceSpecRequest",
       "name": "查询克隆实例购买规格",
-      "output": "DescribeCloneDBInstanceSpecResponse"
+      "output": "DescribeCloneDBInstanceSpecResponse",
+      "status": "online"
     },
     "DescribeDBBackups": {
       "document": "本接口（DescribeDBBackups）用于查询实例备份列表。",
       "input": "DescribeDBBackupsRequest",
       "name": "查询实例备份列表",
-      "output": "DescribeDBBackupsResponse"
+      "output": "DescribeDBBackupsResponse",
+      "status": "online"
     },
     "DescribeDBErrlogs": {
       "document": "本接口（DescribeDBErrlogs）用于获取错误日志。",
       "input": "DescribeDBErrlogsRequest",
       "name": "获取错误日志",
-      "output": "DescribeDBErrlogsResponse"
+      "output": "DescribeDBErrlogsResponse",
+      "status": "online"
     },
     "DescribeDBInstanceAttribute": {
       "document": "本接口 (DescribeDBInstanceAttribute) 用于查询某个实例的详情信息。",
       "input": "DescribeDBInstanceAttributeRequest",
       "name": "查询实例详情",
-      "output": "DescribeDBInstanceAttributeResponse"
+      "output": "DescribeDBInstanceAttributeResponse",
+      "status": "online"
     },
     "DescribeDBInstanceParameters": {
       "document": "获取实例可修改参数列表",
       "input": "DescribeDBInstanceParametersRequest",
       "name": "获取实例可修改参数列表",
-      "output": "DescribeDBInstanceParametersResponse"
+      "output": "DescribeDBInstanceParametersResponse",
+      "status": "online"
     },
     "DescribeDBInstanceSecurityGroups": {
       "document": "本接口（DescribeDBInstanceSecurityGroups）用于查询实例安全组信息。",
       "input": "DescribeDBInstanceSecurityGroupsRequest",
       "name": "查询实例安全组信息",
-      "output": "DescribeDBInstanceSecurityGroupsResponse"
+      "output": "DescribeDBInstanceSecurityGroupsResponse",
+      "status": "online"
     },
     "DescribeDBInstances": {
       "document": "本接口 (DescribeDBInstances) 用于查询一个或多个实例的详细信息。",
       "input": "DescribeDBInstancesRequest",
       "name": "查询实例列表",
-      "output": "DescribeDBInstancesResponse"
+      "output": "DescribeDBInstancesResponse",
+      "status": "online"
     },
     "DescribeDBSlowlogs": {
       "document": "本接口（DescribeDBSlowlogs）用于获取慢查询日志。已于2021.09.01日正式废弃，后续此接口将不再返回任何数据，新接口为DescribeSlowQueryList，详细请查看：https://cloud.tencent.com/document/product/409/60540",
       "input": "DescribeDBSlowlogsRequest",
       "name": "获取慢查询日志 （废弃）",
-      "output": "DescribeDBSlowlogsResponse"
+      "output": "DescribeDBSlowlogsResponse",
+      "status": "online"
     },
     "DescribeDBXlogs": {
       "document": "本接口（DescribeDBXlogs）用于获取实例Xlog列表。",
       "input": "DescribeDBXlogsRequest",
       "name": "获取实例Xlog列表",
-      "output": "DescribeDBXlogsResponse"
+      "output": "DescribeDBXlogsResponse",
+      "status": "online"
     },
     "DescribeDatabases": {
       "document": "接口（DescribeDatabases）用来拉取数据库列表",
       "input": "DescribeDatabasesRequest",
       "name": "拉取数据库列表",
-      "output": "DescribeDatabasesResponse"
+      "output": "DescribeDatabasesResponse",
+      "status": "online"
     },
     "DescribeDefaultParameters": {
       "document": "本接口（DescribeDefaultParameters）主要用于查询某个数据库版本和引擎支持的所有参数。",
       "input": "DescribeDefaultParametersRequest",
       "name": "查询默认参数列表",
-      "output": "DescribeDefaultParametersResponse"
+      "output": "DescribeDefaultParametersResponse",
+      "status": "online"
     },
     "DescribeEncryptionKeys": {
       "document": "获取实例的密钥信息列表。",
       "input": "DescribeEncryptionKeysRequest",
       "name": "实例密钥信息列表",
-      "output": "DescribeEncryptionKeysResponse"
+      "output": "DescribeEncryptionKeysResponse",
+      "status": "online"
     },
     "DescribeOrders": {
       "document": "本接口（DescribeOrders）用于获取订单信息。",
       "input": "DescribeOrdersRequest",
       "name": "获取订单信息",
-      "output": "DescribeOrdersResponse"
+      "output": "DescribeOrdersResponse",
+      "status": "online"
     },
     "DescribeParameterTemplateAttributes": {
       "document": "本接口（DescribeParameterTemplateAttributes）用于查询某个参数模板的具体内容，包括基本信息和参数信息。",
       "input": "DescribeParameterTemplateAttributesRequest",
       "name": "查询参数模板详情",
-      "output": "DescribeParameterTemplateAttributesResponse"
+      "output": "DescribeParameterTemplateAttributesResponse",
+      "status": "online"
     },
     "DescribeParameterTemplates": {
       "document": "本接口 (DescribeParameterTemplates) 用于查询参数模板列表。",
       "input": "DescribeParameterTemplatesRequest",
       "name": "查询参数模板列表",
-      "output": "DescribeParameterTemplatesResponse"
+      "output": "DescribeParameterTemplatesResponse",
+      "status": "online"
     },
     "DescribeParamsEvent": {
       "document": "获取参数修改事件详情",
       "input": "DescribeParamsEventRequest",
       "name": "获取参数修改事件详情",
-      "output": "DescribeParamsEventResponse"
+      "output": "DescribeParamsEventResponse",
+      "status": "online"
     },
     "DescribeProductConfig": {
       "document": "本接口 (DescribeProductConfig) 用于查询售卖规格配置。",
       "input": "DescribeProductConfigRequest",
       "name": "查询售卖规格配置",
-      "output": "DescribeProductConfigResponse"
+      "output": "DescribeProductConfigResponse",
+      "status": "online"
     },
     "DescribeReadOnlyGroups": {
       "document": "本接口(DescribeReadOnlyGroups)用于查询用户输入指定实例的只读组",
       "input": "DescribeReadOnlyGroupsRequest",
       "name": "查询只读组信息",
-      "output": "DescribeReadOnlyGroupsResponse"
+      "output": "DescribeReadOnlyGroupsResponse",
+      "status": "online"
     },
     "DescribeRegions": {
       "document": "本接口 (DescribeRegions) 用于查询售卖地域信息。",
       "input": "DescribeRegionsRequest",
       "name": "查询售卖地域",
-      "output": "DescribeRegionsResponse"
+      "output": "DescribeRegionsResponse",
+      "status": "online"
     },
     "DescribeServerlessDBInstances": {
       "document": "用于查询一个或多个serverlessDB实例的详细信息",
       "input": "DescribeServerlessDBInstancesRequest",
       "name": "查询ServerlessDB实例列表",
-      "output": "DescribeServerlessDBInstancesResponse"
+      "output": "DescribeServerlessDBInstancesResponse",
+      "status": "online"
     },
     "DescribeSlowQueryAnalysis": {
       "document": "此接口（DescribeSlowQueryAnalysis）用于统计指定时间范围内的所有慢查询，根据SQL语句抽象参数后，进行聚合分析，并返回同类SQL列表。",
       "input": "DescribeSlowQueryAnalysisRequest",
       "name": "获取慢查询统计分析列表",
-      "output": "DescribeSlowQueryAnalysisResponse"
+      "output": "DescribeSlowQueryAnalysisResponse",
+      "status": "online"
     },
     "DescribeSlowQueryList": {
       "document": "此接口（DescribeSlowQueryList）用于查询指定时间范围内的所有慢查询。",
       "input": "DescribeSlowQueryListRequest",
       "name": "获取慢查询列表",
-      "output": "DescribeSlowQueryListResponse"
+      "output": "DescribeSlowQueryListResponse",
+      "status": "online"
     },
     "DescribeZones": {
       "document": "本接口 (DescribeZones) 用于查询支持的可用区信息。",
       "input": "DescribeZonesRequest",
       "name": "查询售卖可用区",
-      "output": "DescribeZonesResponse"
+      "output": "DescribeZonesResponse",
+      "status": "online"
     },
     "DestroyDBInstance": {
       "document": "本接口 (DestroyDBInstance) 用于彻底销毁指定DBInstanceId对应的实例，销毁后实例数据将彻底删除，无法找回，只能销毁隔离中的实例。",
       "input": "DestroyDBInstanceRequest",
       "name": "销毁实例",
-      "output": "DestroyDBInstanceResponse"
+      "output": "DestroyDBInstanceResponse",
+      "status": "online"
     },
     "DisIsolateDBInstances": {
       "document": "本接口（DisIsolateDBInstances）用于解隔离实例",
       "input": "DisIsolateDBInstancesRequest",
       "name": "解隔离实例",
-      "output": "DisIsolateDBInstancesResponse"
+      "output": "DisIsolateDBInstancesResponse",
+      "status": "online"
     },
     "InitDBInstances": {
       "document": "本接口 (InitDBInstances) 用于初始化云数据库PostgreSQL实例。",
       "input": "InitDBInstancesRequest",
       "name": "初始化实例",
-      "output": "InitDBInstancesResponse"
+      "output": "InitDBInstancesResponse",
+      "status": "online"
     },
     "InquiryPriceCreateDBInstances": {
       "document": "本接口 (InquiryPriceCreateDBInstances) 用于查询购买一个或多个实例的价格信息。",
       "input": "InquiryPriceCreateDBInstancesRequest",
       "name": "查询售卖价格",
-      "output": "InquiryPriceCreateDBInstancesResponse"
+      "output": "InquiryPriceCreateDBInstancesResponse",
+      "status": "online"
     },
     "InquiryPriceRenewDBInstance": {
       "document": "本接口（InquiryPriceRenewDBInstance）用于查询续费实例的价格。",
       "input": "InquiryPriceRenewDBInstanceRequest",
       "name": "查询实例续费价格",
-      "output": "InquiryPriceRenewDBInstanceResponse"
+      "output": "InquiryPriceRenewDBInstanceResponse",
+      "status": "online"
     },
     "InquiryPriceUpgradeDBInstance": {
       "document": "本接口（InquiryPriceUpgradeDBInstance）用于查询升级实例的价格。只支持按量计费实例。",
       "input": "InquiryPriceUpgradeDBInstanceRequest",
       "name": "查询升级实例价格",
-      "output": "InquiryPriceUpgradeDBInstanceResponse"
+      "output": "InquiryPriceUpgradeDBInstanceResponse",
+      "status": "online"
     },
     "IsolateDBInstances": {
       "document": "本接口（IsolateDBInstances）用于隔离实例",
       "input": "IsolateDBInstancesRequest",
       "name": "隔离实例",
-      "output": "IsolateDBInstancesResponse"
+      "output": "IsolateDBInstancesResponse",
+      "status": "online"
     },
     "ModifyAccountRemark": {
       "document": "本接口（ModifyAccountRemark）用于修改帐号备注。",
       "input": "ModifyAccountRemarkRequest",
       "name": "修改帐号备注",
-      "output": "ModifyAccountRemarkResponse"
+      "output": "ModifyAccountRemarkResponse",
+      "status": "online"
     },
     "ModifyBackupPlan": {
       "document": "本接口 (ModifyBackupPlan) 用于实例备份计划的修改，默认是在每天的凌晨开始全量备份，备份保留时长是7天。可以根据此接口指定时间进行实例的备份。",
       "input": "ModifyBackupPlanRequest",
       "name": "修改备份计划",
-      "output": "ModifyBackupPlanResponse"
+      "output": "ModifyBackupPlanResponse",
+      "status": "online"
     },
     "ModifyDBInstanceDeployment": {
       "document": "本接口（ModifyDBInstanceDeployment）用于修改节点可用区部署方式，仅支持主实例。",
       "input": "ModifyDBInstanceDeploymentRequest",
       "name": "修改实例部署方式",
-      "output": "ModifyDBInstanceDeploymentResponse"
+      "output": "ModifyDBInstanceDeploymentResponse",
+      "status": "online"
     },
     "ModifyDBInstanceName": {
       "document": "本接口（ModifyDBInstanceName）用于修改postgresql实例名字。",
       "input": "ModifyDBInstanceNameRequest",
       "name": "修改实例名字",
-      "output": "ModifyDBInstanceNameResponse"
+      "output": "ModifyDBInstanceNameResponse",
+      "status": "online"
     },
     "ModifyDBInstanceParameters": {
       "document": "批量修改参数",
       "input": "ModifyDBInstanceParametersRequest",
       "name": "批量修改参数",
-      "output": "ModifyDBInstanceParametersResponse"
+      "output": "ModifyDBInstanceParametersResponse",
+      "status": "online"
     },
     "ModifyDBInstanceReadOnlyGroup": {
       "document": "本接口（ModifyDBInstanceReadOnlyGroup）用于修改实例所属的只读组",
       "input": "ModifyDBInstanceReadOnlyGroupRequest",
       "name": "修改实例所属的只读组",
-      "output": "ModifyDBInstanceReadOnlyGroupResponse"
+      "output": "ModifyDBInstanceReadOnlyGroupResponse",
+      "status": "online"
     },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口（ModifyDBInstanceSecurityGroups）用于修改实例安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
       "name": "修改实例的安全组",
-      "output": "ModifyDBInstanceSecurityGroupsResponse"
+      "output": "ModifyDBInstanceSecurityGroupsResponse",
+      "status": "online"
     },
     "ModifyDBInstanceSpec": {
       "document": "本接口（ModifyDBInstanceSpec）用于调整实例规格，包括内存、磁盘。",
       "input": "ModifyDBInstanceSpecRequest",
       "name": "调整实例规格（新）",
-      "output": "ModifyDBInstanceSpecResponse"
+      "output": "ModifyDBInstanceSpecResponse",
+      "status": "online"
     },
     "ModifyDBInstancesProject": {
       "document": "本接口（ModifyDBInstancesProject）用于将实例转至其他项目。",
       "input": "ModifyDBInstancesProjectRequest",
       "name": "将实例转至其他项目",
-      "output": "ModifyDBInstancesProjectResponse"
+      "output": "ModifyDBInstancesProjectResponse",
+      "status": "online"
     },
     "ModifyParameterTemplate": {
       "document": "本接口（ModifyParameterTemplate）主要用于修改参数模板名称，描述，修改，添加和删除参数模板参数。",
       "input": "ModifyParameterTemplateRequest",
       "name": "修改参数模板信息",
-      "output": "ModifyParameterTemplateResponse"
+      "output": "ModifyParameterTemplateResponse",
+      "status": "online"
     },
     "ModifyReadOnlyGroupConfig": {
       "document": "本接口(ModifyReadOnlyGroupConfig)用于更新只读组配置信息",
       "input": "ModifyReadOnlyGroupConfigRequest",
       "name": "修改只读组配置",
-      "output": "ModifyReadOnlyGroupConfigResponse"
+      "output": "ModifyReadOnlyGroupConfigResponse",
+      "status": "online"
     },
     "ModifySwitchTimePeriod": {
       "document": "当升级完成后，对处于等待切换状态下的实例，强制实例立即切换。",
       "input": "ModifySwitchTimePeriodRequest",
       "name": "修改变更配置切换时间",
-      "output": "ModifySwitchTimePeriodResponse"
+      "output": "ModifySwitchTimePeriodResponse",
+      "status": "online"
     },
     "OpenDBExtranetAccess": {
       "document": "本接口（OpenDBExtranetAccess）用于开通外网。",
       "input": "OpenDBExtranetAccessRequest",
       "name": "开通外网",
-      "output": "OpenDBExtranetAccessResponse"
+      "output": "OpenDBExtranetAccessResponse",
+      "status": "online"
     },
     "OpenServerlessDBExtranetAccess": {
       "document": "开通serverlessDB实例外网",
       "input": "OpenServerlessDBExtranetAccessRequest",
       "name": "开通serverlessDB实例外网",
-      "output": "OpenServerlessDBExtranetAccessResponse"
+      "output": "OpenServerlessDBExtranetAccessResponse",
+      "status": "online"
     },
     "RebalanceReadOnlyGroup": {
       "document": "本接口(RebalanceReadOnlyGroup)用于重新均衡 RO 组内实例的负载。注意，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库，谨慎操作。",
       "input": "RebalanceReadOnlyGroupRequest",
       "name": "均衡只读组内实例的负载",
-      "output": "RebalanceReadOnlyGroupResponse"
+      "output": "RebalanceReadOnlyGroupResponse",
+      "status": "online"
     },
     "RemoveDBInstanceFromReadOnlyGroup": {
       "document": "本接口（RemoveDBInstanceFromReadOnlyGroup）用户将只读实例从只读组中移除",
       "input": "RemoveDBInstanceFromReadOnlyGroupRequest",
       "name": "将只读实例从只读组中移除",
-      "output": "RemoveDBInstanceFromReadOnlyGroupResponse"
+      "output": "RemoveDBInstanceFromReadOnlyGroupResponse",
+      "status": "online"
     },
     "RenewInstance": {
       "document": "本接口（RenewInstance）用于续费实例。",
       "input": "RenewInstanceRequest",
       "name": "续费实例",
-      "output": "RenewInstanceResponse"
+      "output": "RenewInstanceResponse",
+      "status": "online"
     },
     "ResetAccountPassword": {
       "document": "本接口（ResetAccountPassword）用于重置实例的账户密码。",
       "input": "ResetAccountPasswordRequest",
       "name": "重置账户密码",
-      "output": "ResetAccountPasswordResponse"
+      "output": "ResetAccountPasswordResponse",
+      "status": "online"
     },
     "RestartDBInstance": {
       "document": "本接口（RestartDBInstance）用于重启实例。",
       "input": "RestartDBInstanceRequest",
       "name": "重启实例",
-      "output": "RestartDBInstanceResponse"
+      "output": "RestartDBInstanceResponse",
+      "status": "online"
     },
     "SetAutoRenewFlag": {
       "document": "本接口（SetAutoRenewFlag）用于设置自动续费。",
       "input": "SetAutoRenewFlagRequest",
       "name": "设置自动续费",
-      "output": "SetAutoRenewFlagResponse"
+      "output": "SetAutoRenewFlagResponse",
+      "status": "online"
     },
     "UpgradeDBInstance": {
       "document": "本接口（UpgradeDBInstance）用于升级实例配置。",
       "input": "UpgradeDBInstanceRequest",
       "name": "升级实例配置（废弃）",
-      "output": "UpgradeDBInstanceResponse"
+      "output": "UpgradeDBInstanceResponse",
+      "status": "online"
     }
   },
   "metadata": {

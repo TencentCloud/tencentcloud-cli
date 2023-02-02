@@ -4,73 +4,85 @@
       "document": "新建设备记录",
       "input": "AddDeviceRequest",
       "name": "新建设备",
-      "output": "AddDeviceResponse"
+      "output": "AddDeviceResponse",
+      "status": "online"
     },
     "CreateEncryptedKey": {
       "document": "通过此接口设置和更新预置密钥",
       "input": "CreateEncryptedKeyRequest",
       "name": "设置或更新密钥",
-      "output": "CreateEncryptedKeyResponse"
+      "output": "CreateEncryptedKeyResponse",
+      "status": "online"
     },
     "CreateQos": {
       "document": "移动网络发起Qos加速过程",
       "input": "CreateQosRequest",
       "name": "发起Qos加速过程",
-      "output": "CreateQosResponse"
+      "output": "CreateQosResponse",
+      "status": "online"
     },
     "DeleteDevice": {
       "document": "删除设备信息",
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
-      "output": "DeleteDeviceResponse"
+      "output": "DeleteDeviceResponse",
+      "status": "online"
     },
     "DeleteQos": {
       "document": "移动网络停止Qos加速过程",
       "input": "DeleteQosRequest",
       "name": "停止Qos加速过程",
-      "output": "DeleteQosResponse"
+      "output": "DeleteQosResponse",
+      "status": "online"
     },
     "DescribeQos": {
       "document": "获取Qos加速状态",
       "input": "DescribeQosRequest",
       "name": "获取Qos加速状态",
-      "output": "DescribeQosResponse"
+      "output": "DescribeQosResponse",
+      "status": "online"
     },
     "GetDevice": {
       "document": "通过指定设备的ID查找设备详细信息",
       "input": "GetDeviceRequest",
       "name": "获取设备详细信息",
-      "output": "GetDeviceResponse"
+      "output": "GetDeviceResponse",
+      "status": "online"
     },
     "GetDevices": {
       "document": "获取设备信息列表",
       "input": "GetDevicesRequest",
       "name": "设备信息列表",
-      "output": "GetDevicesResponse"
+      "output": "GetDevicesResponse",
+      "status": "online"
     },
     "GetFlowStatistic": {
       "document": "获取指定设备Id，指定时间点数据流量使用情况",
       "input": "GetFlowStatisticRequest",
       "name": "获取数据流量统计数据",
-      "output": "GetFlowStatisticResponse"
+      "output": "GetFlowStatisticResponse",
+      "status": "online"
     },
     "GetPublicKey": {
       "document": "获取公钥用于验签",
       "input": "GetPublicKeyRequest",
       "name": "获取公钥",
-      "output": "GetPublicKeyResponse"
+      "output": "GetPublicKeyResponse",
+      "status": "online"
     },
     "GetStatisticData": {
       "document": "在用量统计页面下载流量数据",
       "input": "GetStatisticDataRequest",
       "name": "下载用量统计数据",
-      "output": "GetStatisticDataResponse"
+      "output": "GetStatisticDataResponse",
+      "status": "online"
     },
     "UpdateDevice": {
       "document": "更新设备信息",
       "input": "UpdateDeviceRequest",
       "name": "更新设备",
-      "output": "UpdateDeviceResponse"
+      "output": "UpdateDeviceResponse",
+      "status": "online"
     }
   },
   "metadata": {

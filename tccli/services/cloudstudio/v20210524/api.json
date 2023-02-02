@@ -4,121 +4,141 @@
       "document": "添加自定义模板",
       "input": "CreateCustomizeTemplatesRequest",
       "name": "添加自定义模板",
-      "output": "CreateCustomizeTemplatesResponse"
+      "output": "CreateCustomizeTemplatesResponse",
+      "status": "online"
     },
     "CreateWorkspaceByAgent": {
       "document": "云服务器方式创建工作空间",
       "input": "CreateWorkspaceByAgentRequest",
       "name": "云服务器方式创建工作空间",
-      "output": "CreateWorkspaceByAgentResponse"
+      "output": "CreateWorkspaceByAgentResponse",
+      "status": "online"
     },
     "CreateWorkspaceByTemplate": {
       "document": "快速开始, 基于模板创建工作空间",
       "input": "CreateWorkspaceByTemplateRequest",
       "name": "基于模板创建工作空间",
-      "output": "CreateWorkspaceByTemplateResponse"
+      "output": "CreateWorkspaceByTemplateResponse",
+      "status": "online"
     },
     "CreateWorkspaceByVersionControl": {
       "document": "根据模板创建工作空间",
       "input": "CreateWorkspaceByVersionControlRequest",
       "name": "根据模板创建工作空间",
-      "output": "CreateWorkspaceByVersionControlResponse"
+      "output": "CreateWorkspaceByVersionControlResponse",
+      "status": "online"
     },
     "DeleteCustomizeTemplatesById": {
       "document": "删除自定义模板",
       "input": "DeleteCustomizeTemplatesByIdRequest",
       "name": "删除自定义模板",
-      "output": "DeleteCustomizeTemplatesByIdResponse"
+      "output": "DeleteCustomizeTemplatesByIdResponse",
+      "status": "online"
     },
     "DescribeCustomizeTemplates": {
       "document": "获取所有模板列表",
       "input": "DescribeCustomizeTemplatesRequest",
       "name": "获取所有模板列表",
-      "output": "DescribeCustomizeTemplatesResponse"
+      "output": "DescribeCustomizeTemplatesResponse",
+      "status": "online"
     },
     "DescribeCustomizeTemplatesById": {
       "document": "获取特定模板信息",
       "input": "DescribeCustomizeTemplatesByIdRequest",
       "name": "获取特定模板信息",
-      "output": "DescribeCustomizeTemplatesByIdResponse"
+      "output": "DescribeCustomizeTemplatesByIdResponse",
+      "status": "online"
     },
     "DescribeCustomizeTemplatesPresets": {
       "document": "获取创建模板的预置参数",
       "input": "DescribeCustomizeTemplatesPresetsRequest",
       "name": "获取创建模板的预置参数",
-      "output": "DescribeCustomizeTemplatesPresetsResponse"
+      "output": "DescribeCustomizeTemplatesPresetsResponse",
+      "status": "online"
     },
     "DescribeWorkspaceEnvList": {
       "document": "环境列表接口返回信息",
       "input": "DescribeWorkspaceEnvListRequest",
       "name": "环境列表接口",
-      "output": "DescribeWorkspaceEnvListResponse"
+      "output": "DescribeWorkspaceEnvListResponse",
+      "status": "online"
     },
     "DescribeWorkspaceNameExist": {
       "document": "检查工作空间是否存在",
       "input": "DescribeWorkspaceNameExistRequest",
       "name": "检查工作空间是否存在",
-      "output": "DescribeWorkspaceNameExistResponse"
+      "output": "DescribeWorkspaceNameExistResponse",
+      "status": "online"
     },
     "DescribeWorkspaceStatus": {
       "document": "获取工作空间元信息",
       "input": "DescribeWorkspaceStatusRequest",
       "name": "获取工作空间元信息",
-      "output": "DescribeWorkspaceStatusResponse"
+      "output": "DescribeWorkspaceStatusResponse",
+      "status": "online"
     },
     "DescribeWorkspaceStatusList": {
       "document": "获取用户工作空间列表",
       "input": "DescribeWorkspaceStatusListRequest",
       "name": "获取用户工作空间列表",
-      "output": "DescribeWorkspaceStatusListResponse"
+      "output": "DescribeWorkspaceStatusListResponse",
+      "status": "online"
     },
     "ModifyCustomizeTemplateVersionControl": {
       "document": "修改模板默认代码仓库",
       "input": "ModifyCustomizeTemplateVersionControlRequest",
       "name": "修改模板默认代码仓库",
-      "output": "ModifyCustomizeTemplateVersionControlResponse"
+      "output": "ModifyCustomizeTemplateVersionControlResponse",
+      "status": "online"
     },
     "ModifyCustomizeTemplatesFullById": {
       "document": "全量修改自定义模板，不忽略空",
       "input": "ModifyCustomizeTemplatesFullByIdRequest",
       "name": "全量修改自定义模板，不忽略空",
-      "output": "ModifyCustomizeTemplatesFullByIdResponse"
+      "output": "ModifyCustomizeTemplatesFullByIdResponse",
+      "status": "online"
     },
     "ModifyCustomizeTemplatesPartById": {
       "document": "全量修改自定义模板，忽略空",
       "input": "ModifyCustomizeTemplatesPartByIdRequest",
       "name": "全量修改自定义模板，忽略空",
-      "output": "ModifyCustomizeTemplatesPartByIdResponse"
+      "output": "ModifyCustomizeTemplatesPartByIdResponse",
+      "status": "online"
     },
     "ModifyWorkspaceAttributes": {
       "document": "修改工作空间的名称和描述",
       "input": "ModifyWorkspaceAttributesRequest",
       "name": "修改工作空间的名称和描述",
-      "output": "ModifyWorkspaceAttributesResponse"
+      "output": "ModifyWorkspaceAttributesResponse",
+      "status": "online"
     },
     "RecoverWorkspace": {
       "document": "恢复工作空间\n",
       "input": "RecoverWorkspaceRequest",
       "name": "恢复工作空间",
-      "output": "RecoverWorkspaceResponse"
+      "output": "RecoverWorkspaceResponse",
+      "status": "online"
     },
     "RemoveWorkspace": {
       "document": "删除工作空间",
       "input": "RemoveWorkspaceRequest",
       "name": "删除工作空间",
-      "output": "RemoveWorkspaceResponse"
+      "output": "RemoveWorkspaceResponse",
+      "status": "online"
     },
     "RunWorkspace": {
       "document": "运行空间",
       "input": "RunWorkspaceRequest",
       "name": "运行空间",
-      "output": "RunWorkspaceResponse"
+      "output": "RunWorkspaceResponse",
+      "status": "online"
     },
     "StopWorkspace": {
       "document": "停止运行空间",
       "input": "StopWorkspaceRequest",
       "name": "停止运行空间",
-      "output": "StopWorkspaceResponse"
+      "output": "StopWorkspaceResponse",
+      "status": "online"
     }
   },
   "metadata": {

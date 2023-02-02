@@ -4,61 +4,71 @@
       "document": "创建引擎实例",
       "input": "CreateEngineRequest",
       "name": "创建引擎实例",
-      "output": "CreateEngineResponse"
+      "output": "CreateEngineResponse",
+      "status": "online"
     },
     "DeleteEngine": {
       "document": "删除引擎实例",
       "input": "DeleteEngineRequest",
       "name": "删除引擎实例",
-      "output": "DeleteEngineResponse"
+      "output": "DeleteEngineResponse",
+      "status": "online"
     },
     "DescribeCloudNativeAPIGatewayNodes": {
       "document": "获取云原生网关节点列表",
       "input": "DescribeCloudNativeAPIGatewayNodesRequest",
       "name": "获取云原生网关节点列表",
-      "output": "DescribeCloudNativeAPIGatewayNodesResponse"
+      "output": "DescribeCloudNativeAPIGatewayNodesResponse",
+      "status": "online"
     },
     "DescribeNacosReplicas": {
       "document": "查询Nacos类型引擎实例副本信息",
       "input": "DescribeNacosReplicasRequest",
       "name": "查询Nacos类型引擎实例副本信息",
-      "output": "DescribeNacosReplicasResponse"
+      "output": "DescribeNacosReplicasResponse",
+      "status": "online"
     },
     "DescribeNacosServerInterfaces": {
       "document": "查询nacos服务接口列表",
       "input": "DescribeNacosServerInterfacesRequest",
       "name": "查询nacos服务接口列表",
-      "output": "DescribeNacosServerInterfacesResponse"
+      "output": "DescribeNacosServerInterfacesResponse",
+      "status": "online"
     },
     "DescribeSREInstanceAccessAddress": {
       "document": "查询引擎实例访问地址",
       "input": "DescribeSREInstanceAccessAddressRequest",
       "name": "查询引擎实例访问地址",
-      "output": "DescribeSREInstanceAccessAddressResponse"
+      "output": "DescribeSREInstanceAccessAddressResponse",
+      "status": "online"
     },
     "DescribeSREInstances": {
       "document": "用于查询引擎实例列表",
       "input": "DescribeSREInstancesRequest",
       "name": "查询引擎实例列表",
-      "output": "DescribeSREInstancesResponse"
+      "output": "DescribeSREInstancesResponse",
+      "status": "online"
     },
     "DescribeZookeeperReplicas": {
       "document": "查询Zookeeper类型注册引擎实例副本信息",
       "input": "DescribeZookeeperReplicasRequest",
       "name": "查询Zookeeper类型注册引擎实例副本信息",
-      "output": "DescribeZookeeperReplicasResponse"
+      "output": "DescribeZookeeperReplicasResponse",
+      "status": "online"
     },
     "DescribeZookeeperServerInterfaces": {
       "document": "查询zookeeper服务接口列表",
       "input": "DescribeZookeeperServerInterfacesRequest",
       "name": "查询zookeeper服务接口列表",
-      "output": "DescribeZookeeperServerInterfacesResponse"
+      "output": "DescribeZookeeperServerInterfacesResponse",
+      "status": "online"
     },
     "UpdateEngineInternetAccess": {
       "document": "修改引擎公网访问配置",
       "input": "UpdateEngineInternetAccessRequest",
       "name": "修改引擎公网访问配置",
-      "output": "UpdateEngineInternetAccessResponse"
+      "output": "UpdateEngineInternetAccessResponse",
+      "status": "online"
     }
   },
   "metadata": {

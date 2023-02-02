@@ -4,493 +4,575 @@
       "document": "将未绑定套餐的站点绑定到已有套餐",
       "input": "BindZoneToPlanRequest",
       "name": "为站点绑定套餐",
-      "output": "BindZoneToPlanResponse"
+      "output": "BindZoneToPlanResponse",
+      "status": "online"
     },
     "CheckCertificate": {
       "document": "校验证书",
       "input": "CheckCertificateRequest",
       "name": "校验证书",
-      "output": "CheckCertificateResponse"
+      "output": "CheckCertificateResponse",
+      "status": "online"
     },
     "CreateAliasDomain": {
       "document": "创建别称域名。",
       "input": "CreateAliasDomainRequest",
       "name": "创建别称域名",
-      "output": "CreateAliasDomainResponse"
+      "output": "CreateAliasDomainResponse",
+      "status": "online"
     },
     "CreateApplicationProxy": {
       "document": "创建应用代理",
       "input": "CreateApplicationProxyRequest",
       "name": "创建应用代理",
-      "output": "CreateApplicationProxyResponse"
+      "output": "CreateApplicationProxyResponse",
+      "status": "online"
     },
     "CreateApplicationProxyRule": {
       "document": "创建应用代理规则",
       "input": "CreateApplicationProxyRuleRequest",
       "name": "创建应用代理规则",
-      "output": "CreateApplicationProxyRuleResponse"
+      "output": "CreateApplicationProxyRuleResponse",
+      "status": "online"
     },
     "CreateCredential": {
       "document": "用于创建COS回源私有凭证",
       "input": "CreateCredentialRequest",
       "name": "创建凭证",
-      "output": "CreateCredentialResponse"
+      "output": "CreateCredentialResponse",
+      "status": "online"
     },
     "CreateOriginGroup": {
       "document": "创建源站组",
       "input": "CreateOriginGroupRequest",
       "name": "创建源站组",
-      "output": "CreateOriginGroupResponse"
+      "output": "CreateOriginGroupResponse",
+      "status": "online"
     },
     "CreatePlanForZone": {
       "document": "为未购买套餐的站点购买套餐",
       "input": "CreatePlanForZoneRequest",
       "name": "为未购买套餐的站点购买套餐",
-      "output": "CreatePlanForZoneResponse"
+      "output": "CreatePlanForZoneResponse",
+      "status": "online"
     },
     "CreatePrefetchTask": {
       "document": "创建预热任务",
       "input": "CreatePrefetchTaskRequest",
       "name": "创建预热任务",
-      "output": "CreatePrefetchTaskResponse"
+      "output": "CreatePrefetchTaskResponse",
+      "status": "online"
     },
     "CreatePurgeTask": {
       "document": "创建清除缓存任务",
       "input": "CreatePurgeTaskRequest",
       "name": "创建清除缓存任务",
-      "output": "CreatePurgeTaskResponse"
+      "output": "CreatePurgeTaskResponse",
+      "status": "online"
     },
     "CreateReplayTask": {
       "document": "创建刷新/预热重放任务",
       "input": "CreateReplayTaskRequest",
       "name": "创建重放任务",
-      "output": "CreateReplayTaskResponse"
+      "output": "CreateReplayTaskResponse",
+      "status": "online"
     },
     "CreateRule": {
       "document": "规则引擎创建规则。",
       "input": "CreateRuleRequest",
       "name": "创建规则引擎规则",
-      "output": "CreateRuleResponse"
+      "output": "CreateRuleResponse",
+      "status": "online"
     },
     "CreateSpeedTesting": {
       "document": "对用户指定的域名进行一次站点拨测",
       "input": "CreateSpeedTestingRequest",
       "name": "创建站点拨测任务",
-      "output": "CreateSpeedTestingResponse"
+      "output": "CreateSpeedTestingResponse",
+      "status": "online"
     },
     "CreateZone": {
       "document": "用于用户接入新的站点。",
       "input": "CreateZoneRequest",
       "name": "创建站点",
-      "output": "CreateZoneResponse"
+      "output": "CreateZoneResponse",
+      "status": "online"
     },
     "DeleteAliasDomain": {
       "document": "删除别称域名。",
       "input": "DeleteAliasDomainRequest",
       "name": "删除别称域名",
-      "output": "DeleteAliasDomainResponse"
+      "output": "DeleteAliasDomainResponse",
+      "status": "online"
     },
     "DeleteApplicationProxy": {
       "document": "删除应用代理",
       "input": "DeleteApplicationProxyRequest",
       "name": "删除应用代理",
-      "output": "DeleteApplicationProxyResponse"
+      "output": "DeleteApplicationProxyResponse",
+      "status": "online"
     },
     "DeleteApplicationProxyRule": {
       "document": "删除应用代理规则",
       "input": "DeleteApplicationProxyRuleRequest",
       "name": "删除应用代理规则",
-      "output": "DeleteApplicationProxyRuleResponse"
+      "output": "DeleteApplicationProxyRuleResponse",
+      "status": "online"
     },
     "DeleteOriginGroup": {
       "document": "删除源站组",
       "input": "DeleteOriginGroupRequest",
       "name": "删除源站组",
-      "output": "DeleteOriginGroupResponse"
+      "output": "DeleteOriginGroupResponse",
+      "status": "online"
     },
     "DeleteRules": {
       "document": "批量删除规则引擎规则。",
       "input": "DeleteRulesRequest",
       "name": "批量删除规则引擎规则",
-      "output": "DeleteRulesResponse"
+      "output": "DeleteRulesResponse",
+      "status": "online"
     },
     "DeleteZone": {
       "document": "删除站点。",
       "input": "DeleteZoneRequest",
       "name": "删除站点",
-      "output": "DeleteZoneResponse"
+      "output": "DeleteZoneResponse",
+      "status": "online"
     },
     "DescribeAddableEntityList": {
       "document": "本接口（DescribeAddableEntityList）用于查询剩余可添加的日志推送实体列表。",
       "input": "DescribeAddableEntityListRequest",
       "name": "查询剩余可添加的日志推送实体列表",
-      "output": "DescribeAddableEntityListResponse"
+      "output": "DescribeAddableEntityListResponse",
+      "status": "online"
     },
     "DescribeAliasDomains": {
       "document": "查询别称域名信息列表。",
       "input": "DescribeAliasDomainsRequest",
       "name": "查询别称域名信息列表",
-      "output": "DescribeAliasDomainsResponse"
+      "output": "DescribeAliasDomainsResponse",
+      "status": "online"
     },
     "DescribeApplicationProxies": {
       "document": "查询应用代理列表。",
       "input": "DescribeApplicationProxiesRequest",
       "name": "查询应用代理列表",
-      "output": "DescribeApplicationProxiesResponse"
+      "output": "DescribeApplicationProxiesResponse",
+      "status": "online"
     },
     "DescribeAvailablePlans": {
       "document": "查询当前账户可用套餐信息列表",
       "input": "DescribeAvailablePlansRequest",
       "name": "查询当前账户可购买套餐信息列表",
-      "output": "DescribeAvailablePlansResponse"
+      "output": "DescribeAvailablePlansResponse",
+      "status": "online"
     },
     "DescribeClientRuleList": {
       "document": "本接口（DescribeClientRuleList）用于查询封禁客户端信息列表。",
       "input": "DescribeClientRuleListRequest",
       "name": "查询封禁客户端信息列表",
-      "output": "DescribeClientRuleListResponse"
+      "output": "DescribeClientRuleListResponse",
+      "status": "online"
     },
     "DescribeContentQuota": {
       "document": "查询内容管理接口配额",
       "input": "DescribeContentQuotaRequest",
       "name": "查询内容管理接口配额",
-      "output": "DescribeContentQuotaResponse"
+      "output": "DescribeContentQuotaResponse",
+      "status": "online"
     },
     "DescribeDDoSAttackData": {
       "document": "本接口（DescribeDDoSAttackData）用于查询DDoS攻击时序数据。",
       "input": "DescribeDDoSAttackDataRequest",
       "name": "查询DDoS攻击时序数据",
-      "output": "DescribeDDoSAttackDataResponse"
+      "output": "DescribeDDoSAttackDataResponse",
+      "status": "online"
     },
     "DescribeDDoSAttackTopData": {
       "document": "本接口（DescribeDDoSAttackTopData）用于查询DDoS攻击Top数据。",
       "input": "DescribeDDoSAttackTopDataRequest",
       "name": "查询DDoS攻击Top数据",
-      "output": "DescribeDDoSAttackTopDataResponse"
+      "output": "DescribeDDoSAttackTopDataResponse",
+      "status": "online"
     },
     "DescribeDefaultCertificates": {
       "document": "查询默认证书列表",
       "input": "DescribeDefaultCertificatesRequest",
       "name": "查询默认证书列表",
-      "output": "DescribeDefaultCertificatesResponse"
+      "output": "DescribeDefaultCertificatesResponse",
+      "status": "online"
     },
     "DescribeDnsData": {
       "document": "获取DNS请求数统计曲线",
       "input": "DescribeDnsDataRequest",
       "name": "获取DNS请求数统计曲线",
-      "output": "DescribeDnsDataResponse"
+      "output": "DescribeDnsDataResponse",
+      "status": "online"
     },
     "DescribeHostsSetting": {
       "document": "用于查询域名配置信息",
       "input": "DescribeHostsSettingRequest",
       "name": "查询域名详细配置",
-      "output": "DescribeHostsSettingResponse"
+      "output": "DescribeHostsSettingResponse",
+      "status": "online"
     },
     "DescribeIdentifications": {
       "document": "查询站点的验证信息。",
       "input": "DescribeIdentificationsRequest",
       "name": "查询站点的验证信息",
-      "output": "DescribeIdentificationsResponse"
+      "output": "DescribeIdentificationsResponse",
+      "status": "online"
     },
     "DescribeLogSets": {
       "document": "本接口（DescribeLogSets）用于获取日志集列表。",
       "input": "DescribeLogSetsRequest",
       "name": "获取日志集列表",
-      "output": "DescribeLogSetsResponse"
+      "output": "DescribeLogSetsResponse",
+      "status": "online"
     },
     "DescribeLogTopicTasks": {
       "document": "本接口（DescribeLogTopicTasks）用于获取日志推送任务列表。",
       "input": "DescribeLogTopicTasksRequest",
       "name": "获取推送任务列表",
-      "output": "DescribeLogTopicTasksResponse"
+      "output": "DescribeLogTopicTasksResponse",
+      "status": "online"
     },
     "DescribeOriginGroup": {
       "document": "获取源站组列表",
       "input": "DescribeOriginGroupRequest",
       "name": "获取源站组列表",
-      "output": "DescribeOriginGroupResponse"
+      "output": "DescribeOriginGroupResponse",
+      "status": "online"
     },
     "DescribeOriginProtection": {
       "document": "查询源站防护信息",
       "input": "DescribeOriginProtectionRequest",
       "name": "查询源站防护信息",
-      "output": "DescribeOriginProtectionResponse"
+      "output": "DescribeOriginProtectionResponse",
+      "status": "online"
     },
     "DescribeOverviewL7Data": {
       "document": "本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。",
       "input": "DescribeOverviewL7DataRequest",
       "name": "查询监控流量时序数据",
-      "output": "DescribeOverviewL7DataResponse"
+      "output": "DescribeOverviewL7DataResponse",
+      "status": "online"
     },
     "DescribePrefetchTasks": {
       "document": "查询预热任务状态",
       "input": "DescribePrefetchTasksRequest",
       "name": "查询预热任务状态",
-      "output": "DescribePrefetchTasksResponse"
+      "output": "DescribePrefetchTasksResponse",
+      "status": "online"
     },
     "DescribePurgeTasks": {
       "document": "查询清除缓存历史记录",
       "input": "DescribePurgeTasksRequest",
       "name": "查询清除缓存历史记录",
-      "output": "DescribePurgeTasksResponse"
+      "output": "DescribePurgeTasksResponse",
+      "status": "online"
     },
     "DescribeRules": {
       "document": "查询规则引擎规则。",
       "input": "DescribeRulesRequest",
       "name": "查询规则引擎规则",
-      "output": "DescribeRulesResponse"
+      "output": "DescribeRulesResponse",
+      "status": "online"
     },
     "DescribeRulesSetting": {
       "document": "返回规则引擎可应用匹配请求的设置列表及其详细建议配置信息",
       "input": "DescribeRulesSettingRequest",
       "name": "查询规则引擎的设置参数",
-      "output": "DescribeRulesSettingResponse"
+      "output": "DescribeRulesSettingResponse",
+      "status": "online"
     },
     "DescribeSingleL7AnalysisData": {
       "document": "本接口（DescribeSingleL7AnalysisData）用于查询七层流量数据分析单值数据列表，单值数据表示：指标在查询时间范围内的单个统计数据，通常表现为接口仅返回一个统计数值。",
       "input": "DescribeSingleL7AnalysisDataRequest",
       "name": "查询流量分析单值数据",
-      "output": "DescribeSingleL7AnalysisDataResponse"
+      "output": "DescribeSingleL7AnalysisDataResponse",
+      "status": "online"
     },
     "DescribeSpeedTestingDetails": {
       "document": "用于查询拨测分地区数据",
       "input": "DescribeSpeedTestingDetailsRequest",
       "name": "查询拨测分地区数据",
-      "output": "DescribeSpeedTestingDetailsResponse"
+      "output": "DescribeSpeedTestingDetailsResponse",
+      "status": "online"
     },
     "DescribeSpeedTestingMetricData": {
       "document": "查询站点拨测结果",
       "input": "DescribeSpeedTestingMetricDataRequest",
       "name": "查询站点拨测结果",
-      "output": "DescribeSpeedTestingMetricDataResponse"
+      "output": "DescribeSpeedTestingMetricDataResponse",
+      "status": "online"
     },
     "DescribeSpeedTestingQuota": {
       "document": "查询站点拨测配额",
       "input": "DescribeSpeedTestingQuotaRequest",
       "name": "查询站点拨测配额",
-      "output": "DescribeSpeedTestingQuotaResponse"
+      "output": "DescribeSpeedTestingQuotaResponse",
+      "status": "online"
     },
     "DescribeTimingL4Data": {
       "document": "本接口（DescribeTimingL4Data）用于查询四层时序流量数据列表。",
       "input": "DescribeTimingL4DataRequest",
       "name": "查询四层流量时序数据",
-      "output": "DescribeTimingL4DataResponse"
+      "output": "DescribeTimingL4DataResponse",
+      "status": "online"
     },
     "DescribeTimingL7AnalysisData": {
       "document": "本接口（DescribeTimingL7AnalysisData）查询七层数据分析类时序数据。",
       "input": "DescribeTimingL7AnalysisDataRequest",
       "name": "查询流量分析时序数据",
-      "output": "DescribeTimingL7AnalysisDataResponse"
+      "output": "DescribeTimingL7AnalysisDataResponse",
+      "status": "online"
     },
     "DescribeTimingL7CacheData": {
       "document": "本接口（DescribeTimingL7CacheData）用于查询七层缓存分析时序类流量数据。",
       "input": "DescribeTimingL7CacheDataRequest",
       "name": "查询缓存分析时序数据",
-      "output": "DescribeTimingL7CacheDataResponse"
+      "output": "DescribeTimingL7CacheDataResponse",
+      "status": "online"
     },
     "DescribeTimingL7SourceData": {
       "document": "本接口（DescribeTimingL7SourceData）查询七层回源分析时序数据。",
       "input": "DescribeTimingL7SourceDataRequest",
       "name": "查询回源分析时序数据",
-      "output": "DescribeTimingL7SourceDataResponse"
+      "output": "DescribeTimingL7SourceDataResponse",
+      "status": "online"
     },
     "DescribeTopL7AnalysisData": {
       "document": "本接口（DescribeTopL7AnalysisData）用于查询七层流量前topN的数据。",
       "input": "DescribeTopL7AnalysisDataRequest",
       "name": "查询流量分析Top数据",
-      "output": "DescribeTopL7AnalysisDataResponse"
+      "output": "DescribeTopL7AnalysisDataResponse",
+      "status": "online"
     },
     "DescribeTopL7CacheData": {
       "document": "本接口（DescribeTopL7CacheData）用于查询七层缓存分析topN流量数据。",
       "input": "DescribeTopL7CacheDataRequest",
       "name": "查询缓存分析Top数据",
-      "output": "DescribeTopL7CacheDataResponse"
+      "output": "DescribeTopL7CacheDataResponse",
+      "status": "online"
     },
     "DescribeWebManagedRulesData": {
       "document": "本接口（DescribeWebManagedRulesData）用于查询WAF攻击的时序数据。",
       "input": "DescribeWebManagedRulesDataRequest",
       "name": "查询WAF攻击时序数据",
-      "output": "DescribeWebManagedRulesDataResponse"
+      "output": "DescribeWebManagedRulesDataResponse",
+      "status": "online"
     },
     "DescribeWebManagedRulesHitRuleDetail": {
       "document": "本接口（DescribeWebManagedRulesHitRuleDetail）用于查询WAF攻击命中规则详情。",
       "input": "DescribeWebManagedRulesHitRuleDetailRequest",
       "name": "查询Web攻击命中规则详情",
-      "output": "DescribeWebManagedRulesHitRuleDetailResponse"
+      "output": "DescribeWebManagedRulesHitRuleDetailResponse",
+      "status": "online"
     },
     "DescribeWebManagedRulesLog": {
       "document": "本接口（DescribeWebManagedRulesLog）用于查询Web攻击日志。",
       "input": "DescribeWebManagedRulesLogRequest",
       "name": "查询Web攻击日志",
-      "output": "DescribeWebManagedRulesLogResponse"
+      "output": "DescribeWebManagedRulesLogResponse",
+      "status": "online"
     },
     "DescribeWebProtectionClientIpList": {
       "document": "本接口（DescribeWebProtectionClientIpList）用于查询CC防护客户端（攻击源）IP信息。",
       "input": "DescribeWebProtectionClientIpListRequest",
       "name": "查询CC防护攻击源IP信息列表",
-      "output": "DescribeWebProtectionClientIpListResponse"
+      "output": "DescribeWebProtectionClientIpListResponse",
+      "status": "online"
     },
     "DescribeWebProtectionData": {
       "document": "本接口（DescribeWebProtectionData）用于查询CC防护时序数据。",
       "input": "DescribeWebProtectionDataRequest",
       "name": "查询CC防护时序数据列表",
-      "output": "DescribeWebProtectionDataResponse"
+      "output": "DescribeWebProtectionDataResponse",
+      "status": "online"
     },
     "DescribeWebProtectionHitRuleDetail": {
       "document": "本接口（DescribeWebProtectionHitRuleDetail）用于查询CC防护命中规则详情列表。",
       "input": "DescribeWebProtectionHitRuleDetailRequest",
       "name": "查询CC防护命中规则详情列表",
-      "output": "DescribeWebProtectionHitRuleDetailResponse"
+      "output": "DescribeWebProtectionHitRuleDetailResponse",
+      "status": "online"
     },
     "DescribeWebProtectionTopData": {
       "document": "本接口（DescribeWebProtectionTopData）用于查询CC防护的Top数据。",
       "input": "DescribeWebProtectionTopDataRequest",
       "name": "查询CC防护Top数据",
-      "output": "DescribeWebProtectionTopDataResponse"
+      "output": "DescribeWebProtectionTopDataResponse",
+      "status": "online"
     },
     "DescribeZoneSetting": {
       "document": "用于查询站点的所有配置信息。",
       "input": "DescribeZoneSettingRequest",
       "name": "查询站点配置",
-      "output": "DescribeZoneSettingResponse"
+      "output": "DescribeZoneSettingResponse",
+      "status": "online"
     },
     "DescribeZones": {
       "document": "用户查询用户站点信息列表，支持分页。",
       "input": "DescribeZonesRequest",
       "name": "查询用户站点信息列表",
-      "output": "DescribeZonesResponse"
+      "output": "DescribeZonesResponse",
+      "status": "online"
     },
     "DownloadL4Logs": {
       "document": "本接口（DownloadL4Logs）用于下载四层离线日志。",
       "input": "DownloadL4LogsRequest",
       "name": "下载四层离线日志",
-      "output": "DownloadL4LogsResponse"
+      "output": "DownloadL4LogsResponse",
+      "status": "online"
     },
     "DownloadL7Logs": {
       "document": "本接口（DownloadL7Logs）下载七层离线日志。",
       "input": "DownloadL7LogsRequest",
       "name": "下载七层离线日志",
-      "output": "DownloadL7LogsResponse"
+      "output": "DownloadL7LogsResponse",
+      "status": "online"
     },
     "IdentifyZone": {
       "document": "用于验证站点所有权。",
       "input": "IdentifyZoneRequest",
       "name": "认证站点",
-      "output": "IdentifyZoneResponse"
+      "output": "IdentifyZoneResponse",
+      "status": "online"
     },
     "ModifyAliasDomain": {
       "document": "修改别称域名。",
       "input": "ModifyAliasDomainRequest",
       "name": "修改别称域名",
-      "output": "ModifyAliasDomainResponse"
+      "output": "ModifyAliasDomainResponse",
+      "status": "online"
     },
     "ModifyAliasDomainStatus": {
       "document": "修改别称域名状态。",
       "input": "ModifyAliasDomainStatusRequest",
       "name": "修改别称域名状态",
-      "output": "ModifyAliasDomainStatusResponse"
+      "output": "ModifyAliasDomainStatusResponse",
+      "status": "online"
     },
     "ModifyApplicationProxy": {
       "document": "修改应用代理",
       "input": "ModifyApplicationProxyRequest",
       "name": "修改应用代理",
-      "output": "ModifyApplicationProxyResponse"
+      "output": "ModifyApplicationProxyResponse",
+      "status": "online"
     },
     "ModifyApplicationProxyRule": {
       "document": "修改应用代理规则",
       "input": "ModifyApplicationProxyRuleRequest",
       "name": "修改应用代理规则",
-      "output": "ModifyApplicationProxyRuleResponse"
+      "output": "ModifyApplicationProxyRuleResponse",
+      "status": "online"
     },
     "ModifyApplicationProxyRuleStatus": {
       "document": "修改应用代理规则的状态",
       "input": "ModifyApplicationProxyRuleStatusRequest",
       "name": "修改应用代理规则的状态",
-      "output": "ModifyApplicationProxyRuleStatusResponse"
+      "output": "ModifyApplicationProxyRuleStatusResponse",
+      "status": "online"
     },
     "ModifyApplicationProxyStatus": {
       "document": "修改应用代理的状态",
       "input": "ModifyApplicationProxyStatusRequest",
       "name": "修改应用代理的状态",
-      "output": "ModifyApplicationProxyStatusResponse"
+      "output": "ModifyApplicationProxyStatusResponse",
+      "status": "online"
     },
     "ModifyDefaultCertificate": {
       "document": "修改默认证书状态",
       "input": "ModifyDefaultCertificateRequest",
       "name": "修改默认证书状态",
-      "output": "ModifyDefaultCertificateResponse"
+      "output": "ModifyDefaultCertificateResponse",
+      "status": "online"
     },
     "ModifyHostsCertificate": {
       "document": "用于修改域名证书",
       "input": "ModifyHostsCertificateRequest",
       "name": "修改域名证书",
-      "output": "ModifyHostsCertificateResponse"
+      "output": "ModifyHostsCertificateResponse",
+      "status": "online"
     },
     "ModifyOriginGroup": {
       "document": "修改源站组",
       "input": "ModifyOriginGroupRequest",
       "name": "修改源站组",
-      "output": "ModifyOriginGroupResponse"
+      "output": "ModifyOriginGroupResponse",
+      "status": "online"
     },
     "ModifyRule": {
       "document": "修改规则引擎规则。",
       "input": "ModifyRuleRequest",
       "name": "修改规则引擎规则",
-      "output": "ModifyRuleResponse"
+      "output": "ModifyRuleResponse",
+      "status": "online"
     },
     "ModifyRulePriority": {
       "document": "修改规则引擎规则优先级",
       "input": "ModifyRulePriorityRequest",
       "name": "修改规则引擎规则优先级",
-      "output": "ModifyRulePriorityResponse"
+      "output": "ModifyRulePriorityResponse",
+      "status": "online"
     },
     "ModifySecurityPolicy": {
       "document": "修改Web&Bot安全配置。",
       "input": "ModifySecurityPolicyRequest",
       "name": "修改Web&Bot安全配置",
-      "output": "ModifySecurityPolicyResponse"
+      "output": "ModifySecurityPolicyResponse",
+      "status": "online"
     },
     "ModifySecurityWafGroupPolicy": {
       "document": "修改安全配置托管规则",
       "input": "ModifySecurityWafGroupPolicyRequest",
       "name": "修改安全配置托管规则",
-      "output": "ModifySecurityWafGroupPolicyResponse"
+      "output": "ModifySecurityWafGroupPolicyResponse",
+      "status": "online"
     },
     "ModifyZone": {
       "document": "修改站点信息。",
       "input": "ModifyZoneRequest",
       "name": "修改站点",
-      "output": "ModifyZoneResponse"
+      "output": "ModifyZoneResponse",
+      "status": "online"
     },
     "ModifyZoneSetting": {
       "document": "用于修改站点配置",
       "input": "ModifyZoneSettingRequest",
       "name": "修改站点配置",
-      "output": "ModifyZoneSettingResponse"
+      "output": "ModifyZoneSettingResponse",
+      "status": "online"
     },
     "ModifyZoneStatus": {
       "document": "用于开启，关闭站点。",
       "input": "ModifyZoneStatusRequest",
       "name": "切换站点状态",
-      "output": "ModifyZoneStatusResponse"
+      "output": "ModifyZoneStatusResponse",
+      "status": "online"
     },
     "ReclaimAliasDomain": {
       "document": "当客户取回站定的同时会取回此站点下关联的别称域名，此时入参为ZoneId；当客户接入站点发现已被别称域名接入时通过验证之后可取回域名，此时入参为ZoneName。",
       "input": "ReclaimAliasDomainRequest",
       "name": "取回别称域名",
-      "output": "ReclaimAliasDomainResponse"
+      "output": "ReclaimAliasDomainResponse",
+      "status": "online"
     },
     "ReclaimZone": {
       "document": "站点被其他用户接入后，验证了站点所有权之后，可以找回该站点。",
       "input": "ReclaimZoneRequest",
       "name": "找回站点",
-      "output": "ReclaimZoneResponse"
+      "output": "ReclaimZoneResponse",
+      "status": "online"
     },
     "UpdateOriginProtectionIPWhitelist": {
       "document": "更新源站防护IP白名单",
       "input": "UpdateOriginProtectionIPWhitelistRequest",
       "name": "更新源站防护IP白名单",
-      "output": "UpdateOriginProtectionIPWhitelistResponse"
+      "output": "UpdateOriginProtectionIPWhitelistResponse",
+      "status": "online"
     }
   },
   "metadata": {

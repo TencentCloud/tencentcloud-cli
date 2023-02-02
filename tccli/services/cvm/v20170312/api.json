@@ -4,553 +4,645 @@
       "document": "本接口 (AllocateHosts) 用于创建一个或多个指定配置的CDH实例。\n* 当HostChargeType为PREPAID时，必须指定HostChargePrepaid参数。",
       "input": "AllocateHostsRequest",
       "name": "创建CDH实例",
-      "output": "AllocateHostsResponse"
+      "output": "AllocateHostsResponse",
+      "status": "online"
     },
     "AssociateInstancesKeyPairs": {
       "document": "本接口 (AssociateInstancesKeyPairs) 用于将密钥绑定到实例上。\n\n* 将密钥的公钥写入到实例的`SSH`配置当中，用户就可以通过该密钥的私钥来登录实例。\n* 如果实例原来绑定过密钥，那么原来的密钥将失效。\n* 如果实例原来是通过密码登录，绑定密钥后无法使用密码登录。\n* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。",
       "input": "AssociateInstancesKeyPairsRequest",
       "name": "绑定密钥对",
-      "output": "AssociateInstancesKeyPairsResponse"
+      "output": "AssociateInstancesKeyPairsResponse",
+      "status": "online"
     },
     "AssociateSecurityGroups": {
       "document": "本接口 (AssociateSecurityGroups) 用于绑定安全组到指定实例。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "AssociateSecurityGroupsRequest",
       "name": "绑定安全组",
-      "output": "AssociateSecurityGroupsResponse"
+      "output": "AssociateSecurityGroupsResponse",
+      "status": "online"
     },
     "ConfigureChcAssistVpc": {
       "document": "配置CHC物理服务器的带外和部署网络。传入带外网络和部署网络信息",
       "input": "ConfigureChcAssistVpcRequest",
       "name": "配置CHC物理服务器的带外和部署网络",
-      "output": "ConfigureChcAssistVpcResponse"
+      "output": "ConfigureChcAssistVpcResponse",
+      "status": "online"
     },
     "ConfigureChcDeployVpc": {
       "document": "配置CHC物理服务器部署网络",
       "input": "ConfigureChcDeployVpcRequest",
       "name": "配置CHC物理服务器部署网络",
-      "output": "ConfigureChcDeployVpcResponse"
+      "output": "ConfigureChcDeployVpcResponse",
+      "status": "online"
     },
     "CreateDisasterRecoverGroup": {
       "document": "本接口 (CreateDisasterRecoverGroup)用于创建[分散置放群组](https://cloud.tencent.com/document/product/213/15486)。创建好的置放群组，可在[创建实例](https://cloud.tencent.com/document/api/213/15730)时指定。",
       "input": "CreateDisasterRecoverGroupRequest",
       "name": "创建分散置放群组",
-      "output": "CreateDisasterRecoverGroupResponse"
+      "output": "CreateDisasterRecoverGroupResponse",
+      "status": "online"
     },
     "CreateHpcCluster": {
       "document": "创建高性能计算集群",
       "input": "CreateHpcClusterRequest",
       "name": "创建高性能计算集群",
-      "output": "CreateHpcClusterResponse"
+      "output": "CreateHpcClusterResponse",
+      "status": "online"
     },
     "CreateImage": {
       "document": "本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。",
       "input": "CreateImageRequest",
       "name": "创建镜像",
-      "output": "CreateImageResponse"
+      "output": "CreateImageResponse",
+      "status": "online"
     },
     "CreateKeyPair": {
       "document": "本接口 (CreateKeyPair) 用于创建一个 `OpenSSH RSA` 密钥对，可以用于登录 `Linux` 实例。\n\n* 开发者只需指定密钥对名称，即可由系统自动创建密钥对，并返回所生成的密钥对的 `ID` 及其公钥、私钥的内容。\n* 密钥对名称不能和已经存在的密钥对的名称重复。\n* 私钥的内容可以保存到文件中作为 `SSH` 的一种认证方式。\n* 腾讯云不会保存用户的私钥，请妥善保管。",
       "input": "CreateKeyPairRequest",
       "name": "创建密钥对",
-      "output": "CreateKeyPairResponse"
+      "output": "CreateKeyPairResponse",
+      "status": "online"
     },
     "CreateLaunchTemplate": {
       "document": "本接口（CreateLaunchTemplate）用于创建实例启动模板。\n\n实例启动模板是一种配置数据并可用于创建实例，其内容包含创建实例所需的配置，比如实例类型，数据盘和系统盘的类型和大小，以及安全组等信息。\n\n初次创建实例模板后，其模板版本为默认版本1，新版本的创建可使用CreateLaunchTemplateVersion创建，版本号递增。默认情况下，在RunInstances中指定实例启动模板，若不指定模板版本号，则使用默认版本。",
       "input": "CreateLaunchTemplateRequest",
       "name": "创建实例启动模板",
-      "output": "CreateLaunchTemplateResponse"
+      "output": "CreateLaunchTemplateResponse",
+      "status": "online"
     },
     "CreateLaunchTemplateVersion": {
       "document": "本接口（CreateLaunchTemplateVersion）根据指定的实例模板ID以及对应的模板版本号创建新的实例启动模板，若未指定模板版本号则使用默认版本号。每个实例启动模板最多创建30个版本。",
       "input": "CreateLaunchTemplateVersionRequest",
       "name": "创建实例启动模板新版本",
-      "output": "CreateLaunchTemplateVersionResponse"
+      "output": "CreateLaunchTemplateVersionResponse",
+      "status": "online"
     },
     "DeleteDisasterRecoverGroups": {
       "document": "本接口 (DeleteDisasterRecoverGroups)用于删除[分散置放群组](https://cloud.tencent.com/document/product/213/15486)。只有空的置放群组才能被删除，非空的群组需要先销毁组内所有云服务器，才能执行删除操作，不然会产生删除置放群组失败的错误。",
       "input": "DeleteDisasterRecoverGroupsRequest",
       "name": "删除分散置放群组",
-      "output": "DeleteDisasterRecoverGroupsResponse"
+      "output": "DeleteDisasterRecoverGroupsResponse",
+      "status": "online"
     },
     "DeleteHpcClusters": {
       "document": "当高性能计算集群为空, 即集群内没有任何设备时候, 可以删除该集群。",
       "input": "DeleteHpcClustersRequest",
       "name": "删除高性能计算集群",
-      "output": "DeleteHpcClustersResponse"
+      "output": "DeleteHpcClustersResponse",
+      "status": "online"
     },
     "DeleteImages": {
       "document": "本接口（DeleteImages）用于删除一个或多个镜像。\n\n* 当[镜像状态](https://cloud.tencent.com/document/product/213/15753#Image)为`创建中`和`使用中`时, 不允许删除。镜像状态可以通过[DescribeImages](https://cloud.tencent.com/document/api/213/9418)获取。\n* 每个地域最多只支持创建10个自定义镜像，删除镜像可以释放账户的配额。\n* 当镜像正在被其它账户分享时，不允许删除。",
       "input": "DeleteImagesRequest",
       "name": "删除镜像",
-      "output": "DeleteImagesResponse"
+      "output": "DeleteImagesResponse",
+      "status": "online"
     },
     "DeleteKeyPairs": {
       "document": "本接口 (DeleteKeyPairs) 用于删除已在腾讯云托管的密钥对。\n\n* 可以同时删除多个密钥对。\n* 不能删除已被实例或镜像引用的密钥对，所以需要独立判断是否所有密钥对都被成功删除。",
       "input": "DeleteKeyPairsRequest",
       "name": "删除密钥对",
-      "output": "DeleteKeyPairsResponse"
+      "output": "DeleteKeyPairsResponse",
+      "status": "online"
     },
     "DeleteLaunchTemplate": {
       "document": "本接口（DeleteLaunchTemplate）用于删除一个实例启动模板。",
       "input": "DeleteLaunchTemplateRequest",
       "name": "删除实例启动模板",
-      "output": "DeleteLaunchTemplateResponse"
+      "output": "DeleteLaunchTemplateResponse",
+      "status": "online"
     },
     "DeleteLaunchTemplateVersions": {
       "document": "本接口（DeleteLaunchTemplateVersions）用于删除一个或者多个实例启动模板版本。",
       "input": "DeleteLaunchTemplateVersionsRequest",
       "name": "删除实例启动模板版本",
-      "output": "DeleteLaunchTemplateVersionsResponse"
+      "output": "DeleteLaunchTemplateVersionsResponse",
+      "status": "online"
     },
     "DescribeAccountQuota": {
       "document": "本接口(DescribeAccountQuota)用于查询用户配额详情。",
       "input": "DescribeAccountQuotaRequest",
       "name": "查询用户配额详情",
-      "output": "DescribeAccountQuotaResponse"
+      "output": "DescribeAccountQuotaResponse",
+      "status": "online"
     },
     "DescribeChcDeniedActions": {
       "document": "查询CHC物理服务器禁止做的操作，返回给用户",
       "input": "DescribeChcDeniedActionsRequest",
       "name": "查询CHC物理服务器禁止做的操作",
-      "output": "DescribeChcDeniedActionsResponse"
+      "output": "DescribeChcDeniedActionsResponse",
+      "status": "online"
     },
     "DescribeChcHosts": {
       "document": "本接口 (DescribeChcHosts) 用于查询一个或多个CHC物理服务器详细信息。\n\n* 可以根据实例`ID`、实例名称或者设备类型等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。",
       "input": "DescribeChcHostsRequest",
       "name": "查询CHC物理服务器",
-      "output": "DescribeChcHostsResponse"
+      "output": "DescribeChcHostsResponse",
+      "status": "online"
     },
     "DescribeDisasterRecoverGroupQuota": {
       "document": "本接口 (DescribeDisasterRecoverGroupQuota)用于查询[分散置放群组](https://cloud.tencent.com/document/product/213/15486)配额。",
       "input": "DescribeDisasterRecoverGroupQuotaRequest",
       "name": "查询置放群组配额",
-      "output": "DescribeDisasterRecoverGroupQuotaResponse"
+      "output": "DescribeDisasterRecoverGroupQuotaResponse",
+      "status": "online"
     },
     "DescribeDisasterRecoverGroups": {
       "document": "本接口 (DescribeDisasterRecoverGroups)用于查询[分散置放群组](https://cloud.tencent.com/document/product/213/15486)信息。",
       "input": "DescribeDisasterRecoverGroupsRequest",
       "name": "查询分散置放群组信息",
-      "output": "DescribeDisasterRecoverGroupsResponse"
+      "output": "DescribeDisasterRecoverGroupsResponse",
+      "status": "online"
     },
     "DescribeHosts": {
       "document": "本接口 (DescribeHosts) 用于获取一个或多个CDH实例的详细信息。",
       "input": "DescribeHostsRequest",
       "name": "查看CDH实例列表",
-      "output": "DescribeHostsResponse"
+      "output": "DescribeHostsResponse",
+      "status": "online"
     },
     "DescribeHpcClusters": {
       "document": "查询高性能集群信息",
       "input": "DescribeHpcClustersRequest",
       "name": "查询高性能集群信息",
-      "output": "DescribeHpcClustersResponse"
+      "output": "DescribeHpcClustersResponse",
+      "status": "online"
     },
     "DescribeImageQuota": {
       "document": "本接口(DescribeImageQuota)用于查询用户帐号的镜像配额。",
       "input": "DescribeImageQuotaRequest",
       "name": "查询镜像配额上限",
-      "output": "DescribeImageQuotaResponse"
+      "output": "DescribeImageQuotaResponse",
+      "status": "online"
     },
     "DescribeImageSharePermission": {
       "document": "本接口（DescribeImageSharePermission）用于查询镜像分享信息。",
       "input": "DescribeImageSharePermissionRequest",
       "name": "查看镜像分享信息",
-      "output": "DescribeImageSharePermissionResponse"
+      "output": "DescribeImageSharePermissionResponse",
+      "status": "online"
     },
     "DescribeImages": {
       "document": "本接口(DescribeImages) 用于查看镜像列表。\n\n* 可以通过指定镜像ID来查询指定镜像的详细信息，或通过设定过滤器来查询满足过滤条件的镜像的详细信息。\n* 指定偏移(Offset)和限制(Limit)来选择结果中的一部分，默认返回满足条件的前20个镜像信息。",
       "input": "DescribeImagesRequest",
       "name": "查看镜像列表",
-      "output": "DescribeImagesResponse"
+      "output": "DescribeImagesResponse",
+      "status": "online"
     },
     "DescribeImportImageOs": {
       "document": "查看可以导入的镜像操作系统信息。",
       "input": "DescribeImportImageOsRequest",
       "name": "查询外部导入镜像支持的OS列表",
-      "output": "DescribeImportImageOsResponse"
+      "output": "DescribeImportImageOsResponse",
+      "status": "online"
     },
     "DescribeInstanceFamilyConfigs": {
       "document": "本接口（DescribeInstanceFamilyConfigs）查询当前用户和地域所支持的机型族列表信息。",
       "input": "DescribeInstanceFamilyConfigsRequest",
       "name": "查询所支持的实例机型族信息",
-      "output": "DescribeInstanceFamilyConfigsResponse"
+      "output": "DescribeInstanceFamilyConfigsResponse",
+      "status": "online"
     },
     "DescribeInstanceInternetBandwidthConfigs": {
       "document": "本接口 (DescribeInstanceInternetBandwidthConfigs) 用于查询实例带宽配置。\n\n* 只支持查询`BANDWIDTH_PREPAID`（ 预付费按带宽结算 ）计费模式的带宽配置。\n* 接口返回实例的所有带宽配置信息（包含历史的带宽配置信息）。",
       "input": "DescribeInstanceInternetBandwidthConfigsRequest",
       "name": "查询实例带宽配置",
-      "output": "DescribeInstanceInternetBandwidthConfigsResponse"
+      "output": "DescribeInstanceInternetBandwidthConfigsResponse",
+      "status": "online"
     },
     "DescribeInstanceTypeConfigs": {
       "document": "本接口 (DescribeInstanceTypeConfigs) 用于查询实例机型配置。\n\n* 可以根据`zone`、`instance-family`来查询实例机型配置。过滤条件详见过滤器[`Filter`](https://cloud.tencent.com/document/api/213/15753#Filter)。\n* 如果参数为空，返回指定地域的所有实例机型配置。",
       "input": "DescribeInstanceTypeConfigsRequest",
       "name": "查询实例机型列表",
-      "output": "DescribeInstanceTypeConfigsResponse"
+      "output": "DescribeInstanceTypeConfigsResponse",
+      "status": "online"
     },
     "DescribeInstanceVncUrl": {
       "document": "本接口 ( DescribeInstanceVncUrl ) 用于查询实例管理终端地址，获取的地址可用于实例的 VNC 登录。\n\n* 处于 `STOPPED` 状态的机器无法使用此功能。\n* 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。\n* 管理终端地址一旦被访问，将自动失效，您需要重新查询。\n* 如果连接断开，每分钟内重新连接的次数不能超过 30 次。\n获取到 `InstanceVncUrl` 后，您需要在链接 `https://img.qcloud.com/qcloud/app/active_vnc/index.html?` 末尾加上参数 `InstanceVncUrl=xxxx`。\n\n  - 参数 `InstanceVncUrl` ：调用接口成功后会返回的 `InstanceVncUrl` 的值。\n\n    最后组成的 URL 格式如下：\n\n```\nhttps://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9\n```\n",
       "input": "DescribeInstanceVncUrlRequest",
       "name": "查询实例管理终端地址",
-      "output": "DescribeInstanceVncUrlResponse"
+      "output": "DescribeInstanceVncUrlResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "本接口 (DescribeInstances) 用于查询一个或多个实例的详细信息。\n\n* 可以根据实例`ID`、实例名称或者实例计费模式等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。\n* 支持查询实例的最新操作（LatestOperation）以及最新操作状态(LatestOperationState)。",
       "input": "DescribeInstancesRequest",
       "name": "查看实例列表",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeInstancesModification": {
       "document": "本接口 (DescribeInstancesModification) 用于查询指定实例支持调整的机型配置。",
       "input": "DescribeInstancesModificationRequest",
       "name": "查询实例可调整配置",
-      "output": "DescribeInstancesModificationResponse"
+      "output": "DescribeInstancesModificationResponse",
+      "status": "online"
     },
     "DescribeInstancesOperationLimit": {
       "document": "本接口（DescribeInstancesOperationLimit）用于查询实例操作限制。\n\n* 目前支持调整配置操作限制次数查询。",
       "input": "DescribeInstancesOperationLimitRequest",
       "name": "查询实例操作限制",
-      "output": "DescribeInstancesOperationLimitResponse"
+      "output": "DescribeInstancesOperationLimitResponse",
+      "status": "online"
     },
     "DescribeInstancesStatus": {
       "document": "本接口 (DescribeInstancesStatus) 用于查询一个或多个实例的状态。\n\n* 可以根据实例`ID`来查询实例的状态。\n* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的实例状态。",
       "input": "DescribeInstancesStatusRequest",
       "name": "查看实例状态列表",
-      "output": "DescribeInstancesStatusResponse"
+      "output": "DescribeInstancesStatusResponse",
+      "status": "online"
     },
     "DescribeInternetChargeTypeConfigs": {
       "document": "本接口（DescribeInternetChargeTypeConfigs）用于查询网络的计费类型。",
       "input": "DescribeInternetChargeTypeConfigsRequest",
       "name": "查询网络计费类型",
-      "output": "DescribeInternetChargeTypeConfigsResponse"
+      "output": "DescribeInternetChargeTypeConfigsResponse",
+      "status": "online"
     },
     "DescribeKeyPairs": {
       "document": "本接口 (DescribeKeyPairs) 用于查询密钥对信息。\n\n* 密钥对是通过一种算法生成的一对密钥，在生成的密钥对中，一个向外界公开，称为公钥；另一个用户自己保留，称为私钥。密钥对的公钥内容可以通过这个接口查询，但私钥内容系统不保留。",
       "input": "DescribeKeyPairsRequest",
       "name": "查询密钥对列表",
-      "output": "DescribeKeyPairsResponse"
+      "output": "DescribeKeyPairsResponse",
+      "status": "online"
     },
     "DescribeLaunchTemplateVersions": {
       "document": "本接口（DescribeLaunchTemplateVersions）用于查询实例模板版本信息。",
       "input": "DescribeLaunchTemplateVersionsRequest",
       "name": "查询实例模板版本信息",
-      "output": "DescribeLaunchTemplateVersionsResponse"
+      "output": "DescribeLaunchTemplateVersionsResponse",
+      "status": "online"
     },
     "DescribeLaunchTemplates": {
       "document": "本接口（DescribeLaunchTemplates）用于查询一个或者多个实例启动模板。",
       "input": "DescribeLaunchTemplatesRequest",
       "name": "查询实例启动模板",
-      "output": "DescribeLaunchTemplatesResponse"
+      "output": "DescribeLaunchTemplatesResponse",
+      "status": "online"
     },
     "DescribeRegions": {
       "document": "本接口(DescribeRegions)用于查询地域信息。因平台策略原因，该接口暂时停止更新，为确保您正常调用，可切换至新链接：https://cloud.tencent.com/document/product/1596/77929。",
       "input": "DescribeRegionsRequest",
       "name": "查询地域列表",
-      "output": "DescribeRegionsResponse"
+      "output": "DescribeRegionsResponse",
+      "status": "online"
     },
     "DescribeReservedInstances": {
       "document": "本接口(DescribeReservedInstances)可提供列出用户已购买的预留实例",
       "input": "DescribeReservedInstancesRequest",
       "name": "列出已购买的预留实例",
-      "output": "DescribeReservedInstancesResponse"
+      "output": "DescribeReservedInstancesResponse",
+      "status": "online"
     },
     "DescribeReservedInstancesConfigInfos": {
       "document": "本接口(DescribeReservedInstancesConfigInfos)供用户列出可购买预留实例机型配置。预留实例当前只针对国际站白名单用户开放。",
       "input": "DescribeReservedInstancesConfigInfosRequest",
       "name": "查询预留实例机型配置",
-      "output": "DescribeReservedInstancesConfigInfosResponse"
+      "output": "DescribeReservedInstancesConfigInfosResponse",
+      "status": "online"
     },
     "DescribeReservedInstancesOfferings": {
       "document": "本接口(DescribeReservedInstancesOfferings)供用户列出可购买的预留实例配置",
       "input": "DescribeReservedInstancesOfferingsRequest",
       "name": "列出可购买的预留实例配置",
-      "output": "DescribeReservedInstancesOfferingsResponse"
+      "output": "DescribeReservedInstancesOfferingsResponse",
+      "status": "online"
     },
     "DescribeZoneInstanceConfigInfos": {
       "document": "本接口(DescribeZoneInstanceConfigInfos) 获取可用区的机型信息。",
       "input": "DescribeZoneInstanceConfigInfosRequest",
       "name": "获取可用区机型配置信息",
-      "output": "DescribeZoneInstanceConfigInfosResponse"
+      "output": "DescribeZoneInstanceConfigInfosResponse",
+      "status": "online"
     },
     "DescribeZones": {
       "document": "本接口(DescribeZones)用于查询可用区信息。",
       "input": "DescribeZonesRequest",
       "name": "查询可用区列表",
-      "output": "DescribeZonesResponse"
+      "output": "DescribeZonesResponse",
+      "status": "online"
     },
     "DisassociateInstancesKeyPairs": {
       "document": "本接口 (DisassociateInstancesKeyPairs) 用于解除实例的密钥绑定关系。\n\n* 只支持[`STOPPED`](https://cloud.tencent.com/document/product/213/15753#InstanceStatus)状态的`Linux`操作系统的实例。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 `SSH` 登录。可以调用 [ResetInstancesPassword](https://cloud.tencent.com/document/api/213/15736) 接口来设置登录密码。\n* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。",
       "input": "DisassociateInstancesKeyPairsRequest",
       "name": "解绑密钥对",
-      "output": "DisassociateInstancesKeyPairsResponse"
+      "output": "DisassociateInstancesKeyPairsResponse",
+      "status": "online"
     },
     "DisassociateSecurityGroups": {
       "document": "本接口 (DisassociateSecurityGroups) 用于解绑实例的指定安全组。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "DisassociateSecurityGroupsRequest",
       "name": "解绑安全组",
-      "output": "DisassociateSecurityGroupsResponse"
+      "output": "DisassociateSecurityGroupsResponse",
+      "status": "online"
     },
     "ExportImages": {
       "document": "提供导出自定义镜像到指定COS存储桶的能力",
       "input": "ExportImagesRequest",
       "name": "导出自定义镜像",
-      "output": "ExportImagesResponse"
+      "output": "ExportImagesResponse",
+      "status": "online"
     },
     "ImportImage": {
       "document": "本接口(ImportImage)用于导入镜像，导入后的镜像可用于创建实例。目前支持 RAW、VHD、QCOW2、VMDK 镜像格式。",
       "input": "ImportImageRequest",
       "name": "外部镜像导入",
-      "output": "ImportImageResponse"
+      "output": "ImportImageResponse",
+      "status": "online"
     },
     "ImportKeyPair": {
       "document": "本接口 (ImportKeyPair) 用于导入密钥对。\n\n* 本接口的功能是将密钥对导入到用户账户，并不会自动绑定到实例。如需绑定可以使用[AssociasteInstancesKeyPair](https://cloud.tencent.com/document/api/213/9404)接口。\n* 需指定密钥对名称以及该密钥对的公钥文本。\n* 如果用户只有私钥，可以通过 `SSL` 工具将私钥转换成公钥后再导入。",
       "input": "ImportKeyPairRequest",
       "name": "导入密钥对",
-      "output": "ImportKeyPairResponse"
+      "output": "ImportKeyPairResponse",
+      "status": "online"
     },
     "InquirePricePurchaseReservedInstancesOffering": {
       "document": "本接口(InquirePricePurchaseReservedInstancesOffering)用于创建预留实例询价。本接口仅允许针对购买限制范围内的预留实例配置进行询价。预留实例当前只针对国际站白名单用户开放。",
       "input": "InquirePricePurchaseReservedInstancesOfferingRequest",
       "name": "创建预留实例询价",
-      "output": "InquirePricePurchaseReservedInstancesOfferingResponse"
+      "output": "InquirePricePurchaseReservedInstancesOfferingResponse",
+      "status": "online"
     },
     "InquiryPriceModifyInstancesChargeType": {
       "document": "本接口 (InquiryPriceModifyInstancesChargeType) 用于切换实例的计费模式询价。\n\n* 只支持从 `POSTPAID_BY_HOUR` 计费模式切换为`PREPAID`计费模式。\n* 关机不收费的实例、`BC1`和`BS1`机型族的实例、设置定时销毁的实例、竞价实例不支持该操作。",
       "input": "InquiryPriceModifyInstancesChargeTypeRequest",
       "name": "修改实例计费模式询价",
-      "output": "InquiryPriceModifyInstancesChargeTypeResponse"
+      "output": "InquiryPriceModifyInstancesChargeTypeResponse",
+      "status": "online"
     },
     "InquiryPriceRenewHosts": {
       "document": "本接口 (InquiryPriceRenewHosts) 用于续费包年包月`CDH`实例询价。\n* 只支持查询包年包月`CDH`实例的续费价格。",
       "input": "InquiryPriceRenewHostsRequest",
       "name": "续费CDH实例询价",
-      "output": "InquiryPriceRenewHostsResponse"
+      "output": "InquiryPriceRenewHostsResponse",
+      "status": "online"
     },
     "InquiryPriceRenewInstances": {
       "document": "本接口 (InquiryPriceRenewInstances) 用于续费包年包月实例询价。\n\n* 只支持查询包年包月实例的续费价格。",
       "input": "InquiryPriceRenewInstancesRequest",
       "name": "续费实例询价",
-      "output": "InquiryPriceRenewInstancesResponse"
+      "output": "InquiryPriceRenewInstancesResponse",
+      "status": "online"
     },
     "InquiryPriceResetInstance": {
       "document": "本接口 (InquiryPriceResetInstance) 用于重装实例询价。\n\n* 如果指定了`ImageId`参数，则使用指定的镜像进行重装询价；否则按照当前实例使用的镜像进行重装询价。\n* 目前只支持[系统盘类型](https://cloud.tencent.com/document/api/213/15753#SystemDisk)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口实现`Linux`和`Windows`操作系统切换的重装询价。\n* 目前不支持境外地域的实例使用该接口实现`Linux`和`Windows`操作系统切换的重装询价。",
       "input": "InquiryPriceResetInstanceRequest",
       "name": "重装实例询价",
-      "output": "InquiryPriceResetInstanceResponse"
+      "output": "InquiryPriceResetInstanceResponse",
+      "status": "online"
     },
     "InquiryPriceResetInstancesInternetMaxBandwidth": {
       "document": "本接口 (InquiryPriceResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限询价。\n\n* 不同机型带宽上限范围不一致，具体限制详见[公网带宽上限](https://cloud.tencent.com/document/product/213/12523)。\n* 对于`BANDWIDTH_PREPAID`计费方式的带宽，目前不支持调小带宽，且需要输入参数`StartTime`和`EndTime`，指定调整后的带宽的生效时间段。在这种场景下会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR`、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整`BANDWIDTH_POSTPAID_BY_MONTH`计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整`TRAFFIC_POSTPAID_BY_HOUR`和`BANDWIDTH_PACKAGE`计费方式的带宽。",
       "input": "InquiryPriceResetInstancesInternetMaxBandwidthRequest",
       "name": "调整实例带宽上限询价",
-      "output": "InquiryPriceResetInstancesInternetMaxBandwidthResponse"
+      "output": "InquiryPriceResetInstancesInternetMaxBandwidthResponse",
+      "status": "online"
     },
     "InquiryPriceResetInstancesType": {
       "document": "本接口 (InquiryPriceResetInstancesType) 用于调整实例的机型询价。\n\n* 目前只支持[系统盘类型](https://cloud.tencent.com/document/product/213/15753#SystemDisk)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口进行调整机型询价。\n* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口调整机型询价。",
       "input": "InquiryPriceResetInstancesTypeRequest",
       "name": "调整实例配置询价",
-      "output": "InquiryPriceResetInstancesTypeResponse"
+      "output": "InquiryPriceResetInstancesTypeResponse",
+      "status": "online"
     },
     "InquiryPriceResizeInstanceDisks": {
       "document": "本接口 (InquiryPriceResizeInstanceDisks) 用于扩容实例的数据盘询价。\n\n* 目前只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）询价，且[数据盘类型](https://cloud.tencent.com/document/product/213/15753#DataDisk)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`。\n* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口扩容数据盘询价。* 仅支持包年包月实例随机器购买的数据盘。* 目前只支持扩容一块数据盘询价。",
       "input": "InquiryPriceResizeInstanceDisksRequest",
       "name": "扩容实例磁盘询价",
-      "output": "InquiryPriceResizeInstanceDisksResponse"
+      "output": "InquiryPriceResizeInstanceDisksResponse",
+      "status": "online"
     },
     "InquiryPriceRunInstances": {
       "document": "本接口(InquiryPriceRunInstances)用于创建实例询价。本接口仅允许针对购买限制范围内的实例配置进行询价, 详见：[创建实例](https://cloud.tencent.com/document/api/213/15730)。",
       "input": "InquiryPriceRunInstancesRequest",
       "name": "创建实例询价",
-      "output": "InquiryPriceRunInstancesResponse"
+      "output": "InquiryPriceRunInstancesResponse",
+      "status": "online"
     },
     "InquiryPriceTerminateInstances": {
       "document": "本接口 (InquiryPriceTerminateInstances) 用于退还实例询价。\n\n* 查询退还实例可以返还的费用。\n* 支持批量操作，每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。",
       "input": "InquiryPriceTerminateInstancesRequest",
       "name": "退还实例询价",
-      "output": "InquiryPriceTerminateInstancesResponse"
+      "output": "InquiryPriceTerminateInstancesResponse",
+      "status": "online"
     },
     "ModifyChcAttribute": {
       "document": "修改CHC物理服务器的属性",
       "input": "ModifyChcAttributeRequest",
       "name": "修改CHC物理服务器的属性",
-      "output": "ModifyChcAttributeResponse"
+      "output": "ModifyChcAttributeResponse",
+      "status": "online"
     },
     "ModifyDisasterRecoverGroupAttribute": {
       "document": "本接口 (ModifyDisasterRecoverGroupAttribute)用于修改[分散置放群组](https://cloud.tencent.com/document/product/213/15486)属性。",
       "input": "ModifyDisasterRecoverGroupAttributeRequest",
       "name": "修改分散置放群组属性",
-      "output": "ModifyDisasterRecoverGroupAttributeResponse"
+      "output": "ModifyDisasterRecoverGroupAttributeResponse",
+      "status": "online"
     },
     "ModifyHostsAttribute": {
       "document": "本接口（ModifyHostsAttribute）用于修改CDH实例的属性，如实例名称和续费标记等。参数HostName和RenewFlag必须设置其中一个，但不能同时设置。",
       "input": "ModifyHostsAttributeRequest",
       "name": "修改CDH实例的属性",
-      "output": "ModifyHostsAttributeResponse"
+      "output": "ModifyHostsAttributeResponse",
+      "status": "online"
     },
     "ModifyHpcClusterAttribute": {
       "document": "修改高性能计算集群属性。",
       "input": "ModifyHpcClusterAttributeRequest",
       "name": "修改高性能计算集群属性",
-      "output": "ModifyHpcClusterAttributeResponse"
+      "output": "ModifyHpcClusterAttributeResponse",
+      "status": "online"
     },
     "ModifyImageAttribute": {
       "document": "本接口（ModifyImageAttribute）用于修改镜像属性。\n\n* 已分享的镜像无法修改属性。",
       "input": "ModifyImageAttributeRequest",
       "name": "修改镜像属性",
-      "output": "ModifyImageAttributeResponse"
+      "output": "ModifyImageAttributeResponse",
+      "status": "online"
     },
     "ModifyImageSharePermission": {
       "document": "本接口（ModifyImageSharePermission）用于修改镜像分享信息。\n\n* 分享镜像后，被分享账户可以通过该镜像创建实例。\n* 每个自定义镜像最多可共享给50个账户。\n* 分享镜像无法更改名称，描述，仅可用于创建实例。\n* 只支持分享到对方账户相同地域。\n",
       "input": "ModifyImageSharePermissionRequest",
       "name": "修改镜像分享信息",
-      "output": "ModifyImageSharePermissionResponse"
+      "output": "ModifyImageSharePermissionResponse",
+      "status": "online"
     },
     "ModifyInstanceDiskType": {
       "document": "本接口 (ModifyInstanceDiskType) 用于修改实例硬盘介质类型。\n\n* 只支持实例的本地系统盘、本地数据盘转化成指定云硬盘介质。\n* 只支持实例在关机状态下转换成指定云硬盘介质。\n* 不支持竞价实例类型。\n* 若实例同时存在本地系统盘和本地数据盘，需同时调整系统盘和数据盘的介质类型，不支持单独针对本地系统盘或本地数据盘修改介质类型。\n* 修改前请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。",
       "input": "ModifyInstanceDiskTypeRequest",
       "name": "修改实例的硬盘介质",
-      "output": "ModifyInstanceDiskTypeResponse"
+      "output": "ModifyInstanceDiskTypeResponse",
+      "status": "online"
     },
     "ModifyInstancesAttribute": {
       "document": "本接口 (ModifyInstancesAttribute) 用于修改实例的属性（目前只支持修改实例的名称和关联的安全组）。\n\n* 每次请求必须指定实例的一种属性用于修改。\n* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为在线支持或是进行实例管理操作的依据。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 修改关联安全组时，子机原来关联的安全组会被解绑。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesAttributeRequest",
       "name": "修改实例的属性",
-      "output": "ModifyInstancesAttributeResponse"
+      "output": "ModifyInstancesAttributeResponse",
+      "status": "online"
     },
     "ModifyInstancesChargeType": {
       "document": "本接口 (ModifyInstancesChargeType) 用于切换实例的计费模式。\n\n* 关机不收费的实例、`BC1`和`BS1`机型族的实例、设置定时销毁的实例不支持该操作。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesChargeTypeRequest",
       "name": "修改实例计费模式",
-      "output": "ModifyInstancesChargeTypeResponse"
+      "output": "ModifyInstancesChargeTypeResponse",
+      "status": "online"
     },
     "ModifyInstancesProject": {
       "document": "本接口 (ModifyInstancesProject) 用于修改实例所属项目。\n\n* 项目为一个虚拟概念，用户可以在一个账户下面建立多个项目，每个项目中管理不同的资源；将多个不同实例分属到不同项目中，后续使用 [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口查询实例，项目ID可用于过滤结果。\n* 绑定负载均衡的实例不支持修改实例所属项目，请先使用[`DeregisterInstancesFromLoadBalancer`](https://cloud.tencent.com/document/api/214/1258)接口解绑负载均衡。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesProjectRequest",
       "name": "修改实例所属项目",
-      "output": "ModifyInstancesProjectResponse"
+      "output": "ModifyInstancesProjectResponse",
+      "status": "online"
     },
     "ModifyInstancesRenewFlag": {
       "document": "本接口 (ModifyInstancesRenewFlag) 用于修改包年包月实例续费标识。\n\n* 实例被标识为自动续费后，每次在实例到期时，会自动续费一个月。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesRenewFlagRequest",
       "name": "修改实例续费标识",
-      "output": "ModifyInstancesRenewFlagResponse"
+      "output": "ModifyInstancesRenewFlagResponse",
+      "status": "online"
     },
     "ModifyInstancesVpcAttribute": {
       "document": "本接口(ModifyInstancesVpcAttribute)用于修改实例vpc属性，如私有网络IP。\n* 此操作默认会关闭实例，完成后再启动。\n* 当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。执行此操作前请确保指定的实例上没有绑定[弹性网卡](https://cloud.tencent.com/document/product/576)和[负载均衡](https://cloud.tencent.com/document/product/214)。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesVpcAttributeRequest",
       "name": "修改实例vpc属性",
-      "output": "ModifyInstancesVpcAttributeResponse"
+      "output": "ModifyInstancesVpcAttributeResponse",
+      "status": "online"
     },
     "ModifyKeyPairAttribute": {
       "document": "本接口 (ModifyKeyPairAttribute) 用于修改密钥对属性。\n\n* 修改密钥对ID所指定的密钥对的名称和描述信息。\n* 密钥对名称不能和已经存在的密钥对的名称重复。\n* 密钥对ID是密钥对的唯一标识，不可修改。",
       "input": "ModifyKeyPairAttributeRequest",
       "name": "修改密钥对属性",
-      "output": "ModifyKeyPairAttributeResponse"
+      "output": "ModifyKeyPairAttributeResponse",
+      "status": "online"
     },
     "ModifyLaunchTemplateDefaultVersion": {
       "document": "本接口（ModifyLaunchTemplateDefaultVersion）用于修改实例启动模板默认版本。",
       "input": "ModifyLaunchTemplateDefaultVersionRequest",
       "name": "修改实例启动模板默认版本",
-      "output": "ModifyLaunchTemplateDefaultVersionResponse"
+      "output": "ModifyLaunchTemplateDefaultVersionResponse",
+      "status": "online"
     },
     "ProgramFpgaImage": {
       "document": "本接口(ProgramFpgaImage)用于在线烧录由客户提供的FPGA镜像文件到指定实例的指定FPGA卡上。\n* 只支持对单个实例发起在线烧录FPGA镜像的操作。\n* 支持对单个实例的多块FPGA卡同时烧录FPGA镜像，DBDFs参数为空时，默认对指定实例的所有FPGA卡进行烧录。",
       "input": "ProgramFpgaImageRequest",
       "name": "在线烧录FPGA镜像",
-      "output": "ProgramFpgaImageResponse"
+      "output": "ProgramFpgaImageResponse",
+      "status": "online"
     },
     "PurchaseReservedInstancesOffering": {
       "document": "本接口(PurchaseReservedInstancesOffering)用于用户购买一个或者多个指定配置的预留实例",
       "input": "PurchaseReservedInstancesOfferingRequest",
       "name": "购买预留实例",
-      "output": "PurchaseReservedInstancesOfferingResponse"
+      "output": "PurchaseReservedInstancesOfferingResponse",
+      "status": "online"
     },
     "RebootInstances": {
       "document": "本接口 (RebootInstances) 用于重启实例。\n\n* 只有状态为`RUNNING`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`REBOOTING`状态；重启实例成功时，实例会进入`RUNNING`状态。\n* 支持强制重启。强制重启的效果等同于关闭物理计算机的电源开关再重新启动。强制重启可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常重启时使用。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "RebootInstancesRequest",
       "name": "重启实例",
-      "output": "RebootInstancesResponse"
+      "output": "RebootInstancesResponse",
+      "status": "online"
     },
     "RemoveChcAssistVpc": {
       "document": "清理CHC物理服务器的带外网络和部署网络",
       "input": "RemoveChcAssistVpcRequest",
       "name": "清理CHC物理服务器的带外网络和部署网络",
-      "output": "RemoveChcAssistVpcResponse"
+      "output": "RemoveChcAssistVpcResponse",
+      "status": "online"
     },
     "RemoveChcDeployVpc": {
       "document": "清理CHC物理服务器的部署网络",
       "input": "RemoveChcDeployVpcRequest",
       "name": "清理CHC物理服务器的部署网络",
-      "output": "RemoveChcDeployVpcResponse"
+      "output": "RemoveChcDeployVpcResponse",
+      "status": "online"
     },
     "RenewHosts": {
       "document": "本接口 (RenewHosts) 用于续费包年包月CDH实例。\n\n* 只支持操作包年包月实例，否则操作会以特定[错误码](#6.-.E9.94.99.E8.AF.AF.E7.A0.81)返回。\n* 续费时请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。",
       "input": "RenewHostsRequest",
       "name": "续费CDH实例",
-      "output": "RenewHostsResponse"
+      "output": "RenewHostsResponse",
+      "status": "online"
     },
     "RenewInstances": {
       "document": "本接口 (RenewInstances) 用于续费包年包月实例。\n\n* 只支持操作包年包月实例。\n* 续费时请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "RenewInstancesRequest",
       "name": "续费实例",
-      "output": "RenewInstancesResponse"
+      "output": "RenewInstancesResponse",
+      "status": "online"
     },
     "ResetInstance": {
       "document": "本接口 (ResetInstance) 用于重装指定实例上的操作系统。\n\n* 如果指定了`ImageId`参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* `Linux`和`Windows`系统互相切换时，该实例系统盘`ID`将发生变化，系统盘关联快照将无法回滚、恢复数据。\n* 密码不指定将会通过站内信下发随机密码。\n* 目前只支持[系统盘类型](https://cloud.tencent.com/document/api/213/9452#SystemDisk)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口实现`Linux`和`Windows`操作系统切换。\n* 目前不支持境外地域的实例使用该接口实现`Linux`和`Windows`操作系统切换。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ResetInstanceRequest",
       "name": "重装实例",
-      "output": "ResetInstanceResponse"
+      "output": "ResetInstanceResponse",
+      "status": "online"
     },
     "ResetInstancesInternetMaxBandwidth": {
       "document": "本接口 (ResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限。\n\n* 不同机型带宽上限范围不一致，具体限制详见[公网带宽上限](https://cloud.tencent.com/document/product/213/12523)。\n* 对于 `BANDWIDTH_PREPAID` 计费方式的带宽，需要输入参数 `StartTime` 和 `EndTime` ，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过 [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253) 接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR` 、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整 `BANDWIDTH_POSTPAID_BY_MONTH` 计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整 `TRAFFIC_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ResetInstancesInternetMaxBandwidthRequest",
       "name": "调整实例带宽上限",
-      "output": "ResetInstancesInternetMaxBandwidthResponse"
+      "output": "ResetInstancesInternetMaxBandwidthResponse",
+      "status": "online"
     },
     "ResetInstancesPassword": {
       "document": "本接口 (ResetInstancesPassword) 用于将实例操作系统的密码重置为用户指定的密码。\n\n*如果是修改系统管理云密码：实例的操作系统不同，管理员帐号也会不一样(`Windows`为`Administrator`，`Ubuntu`为`ubuntu`，其它系统为`root`)。\n* 重置处于运行中状态的实例密码，需要设置关机参数`ForceStop`为`TRUE`。如果没有显式指定强制关机参数，则只有处于关机状态的实例才允许执行重置密码操作。\n* 支持批量操作。将多个实例操作系统的密码重置为相同的密码。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ResetInstancesPasswordRequest",
       "name": "重置实例密码",
-      "output": "ResetInstancesPasswordResponse"
+      "output": "ResetInstancesPasswordResponse",
+      "status": "online"
     },
     "ResetInstancesType": {
       "document": "本接口 (ResetInstancesType) 用于调整实例的机型。\n\n* 目前只支持[系统盘类型](/document/api/213/9452#block_device)是CLOUD_BASIC、CLOUD_PREMIUM、CLOUD_SSD类型的实例使用该接口进行机型调整。\n* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口调整机型。对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 本接口为异步接口，调整实例配置请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表调整实例配置操作成功。",
       "input": "ResetInstancesTypeRequest",
       "name": "调整实例配置",
-      "output": "ResetInstancesTypeResponse"
+      "output": "ResetInstancesTypeResponse",
+      "status": "online"
     },
     "ResizeInstanceDisks": {
       "document": "本接口 (ResizeInstanceDisks) 用于扩容实例的数据盘。\n\n* 目前只支持扩容非弹性盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性），且[数据盘类型](https://cloud.tencent.com/document/api/213/15753#DataDisk)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`和[CDH](https://cloud.tencent.com/document/product/416)实例的`LOCAL_BASIC`、`LOCAL_SSD`类型数据盘。\n* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 目前只支持扩容一块数据盘。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 如果是系统盘，目前只支持扩容，不支持缩容。",
       "input": "ResizeInstanceDisksRequest",
       "name": "扩容实例磁盘",
-      "output": "ResizeInstanceDisksResponse"
+      "output": "ResizeInstanceDisksResponse",
+      "status": "online"
     },
     "RunInstances": {
       "document": "本接口 (RunInstances) 用于创建一个或多个指定配置的实例。\n\n* 实例创建成功后将自动开机启动，[实例状态](https://cloud.tencent.com/document/product/213/15753#InstanceStatus)变为“运行中”。\n* 预付费实例的购买会预先扣除本次实例购买所需金额，按小时后付费实例购买会预先冻结本次实例购买一小时内所需金额，在调用本接口前请确保账户余额充足。\n* 调用本接口创建实例，支持代金券自动抵扣（注意，代金券不可用于抵扣后付费冻结金额），详情请参考[代金券选用规则](https://cloud.tencent.com/document/product/555/7428)。\n* 本接口允许购买的实例数量遵循[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)，所创建的实例和官网入口创建的实例共用配额。\n* 本接口为异步接口，当创建实例请求下发成功后会返回一个实例`ID`列表和一个`RequestId`，此时创建实例操作并未立即完成。在此期间实例的状态将会处于“PENDING”，实例创建结果可以通过调用 [DescribeInstancesStatus](https://cloud.tencent.com/document/product/213/15738)  接口查询，如果实例状态(InstanceState)由“PENDING(创建中)”变为“RUNNING(运行中)”，则代表实例创建成功，“LAUNCH_FAILED”代表实例创建失败。",
       "input": "RunInstancesRequest",
       "name": "创建实例",
-      "output": "RunInstancesResponse"
+      "output": "RunInstancesResponse",
+      "status": "online"
     },
     "StartInstances": {
       "document": "本接口 (StartInstances) 用于启动一个或多个实例。\n\n* 只有状态为`STOPPED`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`STARTING`状态；启动实例成功时，实例会进入`RUNNING`状态。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 本接口为异步接口，启动实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表启动实例操作成功。",
       "input": "StartInstancesRequest",
       "name": "启动实例",
-      "output": "StartInstancesResponse"
+      "output": "StartInstancesResponse",
+      "status": "online"
     },
     "StopInstances": {
       "document": "本接口 (StopInstances) 用于关闭一个或多个实例。\n\n* 只有状态为`RUNNING`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`STOPPING`状态；关闭实例成功时，实例会进入`STOPPED`状态。\n* 支持强制关闭。强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 本接口为异步接口，关闭实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表关闭实例操作成功。",
       "input": "StopInstancesRequest",
       "name": "关闭实例",
-      "output": "StopInstancesResponse"
+      "output": "StopInstancesResponse",
+      "status": "online"
     },
     "SyncImages": {
       "document": "本接口（SyncImages）用于将自定义镜像同步到其它地区。\n\n* 该接口每次调用只支持同步一个镜像。\n* 该接口支持多个同步地域。\n* 单个帐号在每个地域最多支持存在10个自定义镜像。",
       "input": "SyncImagesRequest",
       "name": "同步镜像",
-      "output": "SyncImagesResponse"
+      "output": "SyncImagesResponse",
+      "status": "online"
     },
     "TerminateInstances": {
       "document": "本接口 (TerminateInstances) 用于主动退还实例。\n\n* 不再使用的实例，可通过本接口主动退还。\n* 按量计费的实例通过本接口可直接退还；包年包月实例如符合[退还规则](https://cloud.tencent.com/document/product/213/9711)，也可通过本接口主动退还。\n* 包年包月实例首次调用本接口，实例将被移至回收站，再次调用本接口，实例将被销毁，且不可恢复。按量计费实例调用本接口将被直接销毁。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 批量操作时，所有实例的付费类型必须一致。",
       "input": "TerminateInstancesRequest",
       "name": "退还实例",
-      "output": "TerminateInstancesResponse"
+      "output": "TerminateInstancesResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -5754,7 +5846,6 @@
       "document": "描述实例的信息",
       "members": [
         {
-          "default": "",
           "document": "实例所在的位置。",
           "example": "无",
           "member": "Placement",
@@ -5764,7 +5855,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例`ID`。",
           "example": "ins-9bxebleo",
           "member": "string",
@@ -5774,7 +5864,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例机型。",
           "example": "S1.SMALL1",
           "member": "string",
@@ -5784,7 +5873,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例的CPU核数，单位：核。",
           "example": "1",
           "member": "int64",
@@ -5794,7 +5882,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例内存容量，单位：`GB`。",
           "example": "1",
           "member": "int64",
@@ -5804,7 +5891,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例<br><li>EXPIRED：表示过期的实例<br><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。",
           "example": "NORMAL",
           "member": "string",
@@ -5814,7 +5900,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名称。",
           "example": "测试实例",
           "member": "string",
@@ -5824,7 +5909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。",
           "example": "PREPAID",
           "member": "string",
@@ -5834,7 +5918,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例系统盘信息。",
           "example": "无",
           "member": "SystemDisk",
@@ -5844,7 +5927,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例数据盘信息。",
           "example": "无",
           "member": "DataDisk",
@@ -5854,7 +5936,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例主网卡的内网`IP`列表。",
           "example": "[\"172.16.32.78\"]",
           "member": "string",
@@ -5864,7 +5945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例主网卡的公网`IP`列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"123.207.11.190\"]",
           "member": "string",
@@ -5874,7 +5954,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例带宽信息。",
           "example": "无",
           "member": "InternetAccessible",
@@ -5884,7 +5963,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所属虚拟私有网络信息。",
           "example": "无",
           "member": "VirtualPrivateCloud",
@@ -5894,7 +5972,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生产实例所使用的镜像`ID`。",
           "example": "img-9qabwvbn",
           "member": "string",
@@ -5904,7 +5981,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。\n<br><li>注意：后付费模式本项为null",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
@@ -5914,7 +5990,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
           "example": "2020-03-10T02:43:51Z",
           "member": "datetime_iso",
@@ -5924,7 +5999,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。注意：后付费模式本项为null",
           "example": "2020-04-10T02:47:36Z",
           "member": "datetime_iso",
@@ -5934,7 +6008,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作系统名称。",
           "example": "CentOS 7.6 64bit",
           "member": "string",
@@ -5944,7 +6017,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。",
           "example": "[\"sg-p1ezv4wz\"]",
           "member": "string",
@@ -5954,7 +6026,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例登录设置。目前只返回实例所关联的密钥。",
           "example": "无",
           "member": "LoginSettings",
@@ -5964,7 +6035,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>RUNNING：表示运行中<br></li><li>STOPPED：表示关机<br></li><li>STARTING：表示开机中<br></li><li>STOPPING：表示关机中<br></li><li>REBOOTING：表示重启中<br></li><li>SHUTDOWN：表示停止待销毁<br></li><li>TERMINATING：表示销毁中。<br></li>",
           "example": "RUNNING",
           "member": "string",
@@ -5974,7 +6044,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例关联的标签列表。",
           "example": "无",
           "member": "Tag",
@@ -5984,7 +6053,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例的关机计费模式。\n取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件<br>",
           "example": "NOT_APPLICABLE",
           "member": "string",
@@ -5994,7 +6062,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例全局唯一ID",
           "example": "68b510db-b4c1-4630-a62b-73d0c7c970f9",
           "member": "string",
@@ -6004,7 +6071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例的最新操作。例：StopInstances、ResetInstance。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RenewInstances",
           "member": "string",
@@ -6014,7 +6080,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功<br><li>OPERATING：表示操作执行中<br><li>FAILED：表示操作失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUCCESS",
           "member": "string",
@@ -6024,7 +6089,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例最新操作的唯一请求 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3554eb5b-1cfa-471a-ae76-dc436c9d43e8",
           "member": "string",
@@ -6034,7 +6098,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "分散置放群组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -6044,7 +6107,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例的IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -6054,7 +6116,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "CAM角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -6064,7 +6125,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高性能计算集群`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -6074,7 +6134,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高性能计算集群`IP`列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -6084,7 +6143,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NOTISOLATED",
           "member": "string",
@@ -6094,7 +6152,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GPUInfo",
@@ -6104,7 +6161,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例的操作系统许可类型，默认为TencentCloud",
           "example": "TencentCloud",
           "member": "string",
@@ -6114,7 +6170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。",
           "example": "false",
           "member": "bool",
@@ -6124,7 +6179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "默认登录用户。",
           "example": "root",
           "member": "string",
@@ -6134,7 +6188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "默认登录端口。",
           "example": "22",
           "member": "int64",
@@ -6144,7 +6197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例的最新操作错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "None",
           "member": "string",
@@ -10343,8 +10395,8 @@
       "document": "标签键值对",
       "members": [
         {
-          "default": "",
           "document": "标签键",
+          "example": "无",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -10352,8 +10404,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签值",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -10361,7 +10413,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TagSpecification": {
       "document": "创建资源实例时同时绑定的标签对说明",

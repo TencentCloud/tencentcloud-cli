@@ -4,163 +4,190 @@
       "document": "添加邮件接收联系人的姓名， 邮件地址，返回值为添加成功的联系人id。Region统一选择广州。",
       "input": "AddUserContactRequest",
       "name": "添加联系人信息",
-      "output": "AddUserContactResponse"
+      "output": "AddUserContactResponse",
+      "status": "online"
     },
     "CreateDBDiagReportTask": {
       "document": "创建健康报告，并可以选择是否发送邮件。",
       "input": "CreateDBDiagReportTaskRequest",
       "name": "创建健康报告生成任务",
-      "output": "CreateDBDiagReportTaskResponse"
+      "output": "CreateDBDiagReportTaskResponse",
+      "status": "online"
     },
     "CreateDBDiagReportUrl": {
       "document": "创建健康报告的浏览地址。",
       "input": "CreateDBDiagReportUrlRequest",
       "name": "创建健康报告浏览地址",
-      "output": "CreateDBDiagReportUrlResponse"
+      "output": "CreateDBDiagReportUrlResponse",
+      "status": "online"
     },
     "CreateMailProfile": {
       "document": "创建邮件配置。其中入参ProfileType表示所创建配置的类型，ProfileType 取值包括：dbScan_mail_configuration（数据库巡检邮件配置）、scheduler_mail_configuration（定期生成健康报告的邮件发送配置）。Region统一选择广州，和实例所属地域无关。",
       "input": "CreateMailProfileRequest",
       "name": "创建邮件配置",
-      "output": "CreateMailProfileResponse"
+      "output": "CreateMailProfileResponse",
+      "status": "online"
     },
     "CreateSchedulerMailProfile": {
       "document": "该接口用于创建定期生成健康报告并邮件发送的配置，将健康报告的定期生成时间作为参数传入（周一至周日），用于设置健康报告的定期生成时间，同时保存相应的定期邮件发送的配置。",
       "input": "CreateSchedulerMailProfileRequest",
       "name": "创建定期生成的邮件发送配置",
-      "output": "CreateSchedulerMailProfileResponse"
+      "output": "CreateSchedulerMailProfileResponse",
+      "status": "online"
     },
     "CreateSecurityAuditLogExportTask": {
       "document": "创建安全审计日志导出任务。",
       "input": "CreateSecurityAuditLogExportTaskRequest",
       "name": "创建安全审计日志导出任务",
-      "output": "CreateSecurityAuditLogExportTaskResponse"
+      "output": "CreateSecurityAuditLogExportTaskResponse",
+      "status": "online"
     },
     "DeleteSecurityAuditLogExportTasks": {
       "document": "删除安全审计日志导出任务。",
       "input": "DeleteSecurityAuditLogExportTasksRequest",
       "name": "删除安全审计日志导出任务",
-      "output": "DeleteSecurityAuditLogExportTasksResponse"
+      "output": "DeleteSecurityAuditLogExportTasksResponse",
+      "status": "online"
     },
     "DescribeAllUserContact": {
       "document": "获取邮件发送中联系人的相关信息。",
       "input": "DescribeAllUserContactRequest",
       "name": "获取邮件发送中联系人信息",
-      "output": "DescribeAllUserContactResponse"
+      "output": "DescribeAllUserContactResponse",
+      "status": "online"
     },
     "DescribeAllUserGroup": {
       "document": "获取邮件发送联系组的相关信息。",
       "input": "DescribeAllUserGroupRequest",
       "name": "获取邮件发送中联系组信息",
-      "output": "DescribeAllUserGroupResponse"
+      "output": "DescribeAllUserGroupResponse",
+      "status": "online"
     },
     "DescribeDBDiagEvent": {
       "document": "获取实例异常诊断事件的详情信息。",
       "input": "DescribeDBDiagEventRequest",
       "name": "获取诊断事件详情",
-      "output": "DescribeDBDiagEventResponse"
+      "output": "DescribeDBDiagEventResponse",
+      "status": "online"
     },
     "DescribeDBDiagHistory": {
       "document": "获取实例诊断事件的列表。",
       "input": "DescribeDBDiagHistoryRequest",
       "name": "获取实例诊断历史",
-      "output": "DescribeDBDiagHistoryResponse"
+      "output": "DescribeDBDiagHistoryResponse",
+      "status": "online"
     },
     "DescribeDBDiagReportTasks": {
       "document": "查询健康报告生成任务列表。",
       "input": "DescribeDBDiagReportTasksRequest",
       "name": "查询健康报告生成任务列表",
-      "output": "DescribeDBDiagReportTasksResponse"
+      "output": "DescribeDBDiagReportTasksResponse",
+      "status": "online"
     },
     "DescribeDBSpaceStatus": {
       "document": "获取指定时间段内的实例空间使用概览，包括磁盘增长量(MB)、磁盘剩余(MB)、磁盘总量(MB)及预计可用天数。",
       "input": "DescribeDBSpaceStatusRequest",
       "name": "获取指定时间段内的实例空间使用概览",
-      "output": "DescribeDBSpaceStatusResponse"
+      "output": "DescribeDBSpaceStatusResponse",
+      "status": "online"
     },
     "DescribeDiagDBInstances": {
       "document": "获取实例信息列表。Region统一选择广州。",
       "input": "DescribeDiagDBInstancesRequest",
       "name": "获取实例信息列表",
-      "output": "DescribeDiagDBInstancesResponse"
+      "output": "DescribeDiagDBInstancesResponse",
+      "status": "online"
     },
     "DescribeHealthScore": {
       "document": "根据实例ID获取指定时间段（30分钟）的健康得分，以及异常扣分项。",
       "input": "DescribeHealthScoreRequest",
       "name": "获取健康得分",
-      "output": "DescribeHealthScoreResponse"
+      "output": "DescribeHealthScoreResponse",
+      "status": "online"
     },
     "DescribeMailProfile": {
       "document": "获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。Region统一选择广州。",
       "input": "DescribeMailProfileRequest",
       "name": "获取邮件配置",
-      "output": "DescribeMailProfileResponse"
+      "output": "DescribeMailProfileResponse",
+      "status": "online"
     },
     "DescribeSecurityAuditLogDownloadUrls": {
       "document": "查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。",
       "input": "DescribeSecurityAuditLogDownloadUrlsRequest",
       "name": "查询安全审计日志导出文件下载链接",
-      "output": "DescribeSecurityAuditLogDownloadUrlsResponse"
+      "output": "DescribeSecurityAuditLogDownloadUrlsResponse",
+      "status": "online"
     },
     "DescribeSecurityAuditLogExportTasks": {
       "document": "查询安全审计日志导出任务列表。",
       "input": "DescribeSecurityAuditLogExportTasksRequest",
       "name": "查询安全审计日志导出任务列表",
-      "output": "DescribeSecurityAuditLogExportTasksResponse"
+      "output": "DescribeSecurityAuditLogExportTasksResponse",
+      "status": "online"
     },
     "DescribeSlowLogTimeSeriesStats": {
       "document": "获取慢日志统计柱状图。",
       "input": "DescribeSlowLogTimeSeriesStatsRequest",
       "name": "获取慢日志统计柱状图",
-      "output": "DescribeSlowLogTimeSeriesStatsResponse"
+      "output": "DescribeSlowLogTimeSeriesStatsResponse",
+      "status": "online"
     },
     "DescribeSlowLogTopSqls": {
       "document": "按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。",
       "input": "DescribeSlowLogTopSqlsRequest",
       "name": "按照Sql模板查询指定时间段内的慢日志统计结果",
-      "output": "DescribeSlowLogTopSqlsResponse"
+      "output": "DescribeSlowLogTopSqlsResponse",
+      "status": "online"
     },
     "DescribeSlowLogUserHostStats": {
       "document": "获取慢日志来源地址统计分布图。",
       "input": "DescribeSlowLogUserHostStatsRequest",
       "name": "获取慢日志来源地址统计分布图",
-      "output": "DescribeSlowLogUserHostStatsResponse"
+      "output": "DescribeSlowLogUserHostStatsResponse",
+      "status": "online"
     },
     "DescribeTopSpaceSchemaTimeSeries": {
       "document": "获取实例占用空间最大的前几个库在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。",
       "input": "DescribeTopSpaceSchemaTimeSeriesRequest",
       "name": "获取Top库在指定时间段内的每日空间统计信息",
-      "output": "DescribeTopSpaceSchemaTimeSeriesResponse"
+      "output": "DescribeTopSpaceSchemaTimeSeriesResponse",
+      "status": "online"
     },
     "DescribeTopSpaceSchemas": {
       "document": "获取实例Top库的实时空间统计信息，默认返回按大小排序。",
       "input": "DescribeTopSpaceSchemasRequest",
       "name": "获取Top库的空间统计信息",
-      "output": "DescribeTopSpaceSchemasResponse"
+      "output": "DescribeTopSpaceSchemasResponse",
+      "status": "online"
     },
     "DescribeTopSpaceTableTimeSeries": {
       "document": "获取实例占用空间最大的前几张表在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。",
       "input": "DescribeTopSpaceTableTimeSeriesRequest",
       "name": "获取Top表在指定时间段内的每日空间统计信息",
-      "output": "DescribeTopSpaceTableTimeSeriesResponse"
+      "output": "DescribeTopSpaceTableTimeSeriesResponse",
+      "status": "online"
     },
     "DescribeTopSpaceTables": {
       "document": "获取实例Top表的实时空间统计信息，默认返回按大小排序。",
       "input": "DescribeTopSpaceTablesRequest",
       "name": "获取Top表的空间统计信息",
-      "output": "DescribeTopSpaceTablesResponse"
+      "output": "DescribeTopSpaceTablesResponse",
+      "status": "online"
     },
     "DescribeUserSqlAdvice": {
       "document": "获取SQL优化建议。",
       "input": "DescribeUserSqlAdviceRequest",
       "name": "获取SQL优化建议",
-      "output": "DescribeUserSqlAdviceResponse"
+      "output": "DescribeUserSqlAdviceResponse",
+      "status": "online"
     },
     "ModifyDiagDBInstanceConf": {
       "document": "修改实例巡检开关。",
       "input": "ModifyDiagDBInstanceConfRequest",
       "name": "修改实例巡检开关状态",
-      "output": "ModifyDiagDBInstanceConfResponse"
+      "output": "ModifyDiagDBInstanceConfResponse",
+      "status": "online"
     }
   },
   "metadata": {

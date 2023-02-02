@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BatchRegister": [
+      {
+        "document": "批量注册用户",
+        "input": "{\n  \"Users\": [\n    {\n      \"SdkAppId\": 1,\n      \"Name\": \"xx\",\n      \"OriginId\": \"xx\",\n      \"Avatar\": \"xx\"\n    }\n  ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Users\": [\n            {\n                \"SdkAppId\": 1,\n                \"UserId\": \"xx\",\n                \"OriginId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "BindDocumentToRoom": [
       {
         "document": "",
@@ -94,6 +102,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234657,\n    \"Callback\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改应用"
+      }
+    ],
+    "ModifyRoom": [
+      {
+        "document": "修改房间参数示例",
+        "input": "{\n  \"RoomId\": 1,\n  \"SdkAppId\":1234567,\n  \"StartTime\": 1,\n  \"EndTime\": 1,\n  \"TeacherId\": \"xx\",\n  \"Name\": \"xx\",\n  \"AudienceType\": 1,\n  \"Resolution\": 1,\n  \"MaxMicNumber\": 1,\n  \"AutoMic\": 1,\n  \"TurnOffMic\": 1,\n  \"AudioQuality\": 1,\n  \"SubType\": \"xx\",\n  \"DisableRecord\": 1,\n  \"Assistants\": [\n    \"xx\"\n  ],\n  \"RTCAudienceNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改房间"
       }
     ],
     "RegisterUser": [

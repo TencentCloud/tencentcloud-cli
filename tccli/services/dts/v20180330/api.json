@@ -4,139 +4,162 @@
       "document": "本接口用于配置数据订阅，只有在未配置状态的订阅实例才能调用此接口。",
       "input": "ActivateSubscribeRequest",
       "name": "配置数据订阅通道",
-      "output": "ActivateSubscribeResponse"
+      "output": "ActivateSubscribeResponse",
+      "status": "online"
     },
     "CompleteMigrateJob": {
       "document": "本接口（CompleteMigrateJob）用于完成数据迁移任务。\n选择采用增量迁移方式的任务, 需要在迁移进度进入准备完成阶段后, 调用本接口, 停止迁移增量数据。\n通过DescribeMigrateJobs接口查询到任务的状态为准备完成（status=8）时，此时可以调用本接口完成迁移任务。\n",
       "input": "CompleteMigrateJobRequest",
       "name": "完成数据迁移任务",
-      "output": "CompleteMigrateJobResponse"
+      "output": "CompleteMigrateJobResponse",
+      "status": "online"
     },
     "CreateMigrateCheckJob": {
       "document": "创建校验迁移任务\n在开始迁移前, 必须调用本接口创建校验, 且校验成功后才能开始迁移. 校验的结果可以通过DescribeMigrateCheckJob查看.\n校验成功后,迁移任务若有修改, 则必须重新创建校验并通过后, 才能开始迁移.\n\n如果是金融区链路, 请使用域名: https://dts.ap-shenzhen-fsi.tencentcloudapi.com",
       "input": "CreateMigrateCheckJobRequest",
       "name": "创建校验迁移任务",
-      "output": "CreateMigrateCheckJobResponse"
+      "output": "CreateMigrateCheckJobResponse",
+      "status": "online"
     },
     "CreateMigrateJob": {
       "document": "本接口（CreateMigrateJob）用于创建数据迁移任务。\n\n如果是金融区链路, 请使用域名: dts.ap-shenzhen-fsi.tencentcloudapi.com",
       "input": "CreateMigrateJobRequest",
       "name": "创建数据迁移任务",
-      "output": "CreateMigrateJobResponse"
+      "output": "CreateMigrateJobResponse",
+      "status": "online"
     },
     "CreateSubscribe": {
       "document": "本接口(CreateSubscribe)用于创建一个数据订阅实例。",
       "input": "CreateSubscribeRequest",
       "name": "创建订阅对象",
-      "output": "CreateSubscribeResponse"
+      "output": "CreateSubscribeResponse",
+      "status": "online"
     },
     "DeleteMigrateJob": {
       "document": "本接口（DeleteMigrationJob）用于删除数据迁移任务。当通过DescribeMigrateJobs接口查询到任务的状态为：检验中（status=3）、运行中（status=7）、准备完成（status=8）、撤销中（status=11）或者完成中（status=12）时，不允许删除任务。",
       "input": "DeleteMigrateJobRequest",
       "name": "删除数据迁移任务",
-      "output": "DeleteMigrateJobResponse"
+      "output": "DeleteMigrateJobResponse",
+      "status": "online"
     },
     "DescribeAsyncRequestInfo": {
       "document": "本接口（DescribeAsyncRequestInfo）用于查询任务执行结果",
       "input": "DescribeAsyncRequestInfoRequest",
       "name": "查询任务执行结果",
-      "output": "DescribeAsyncRequestInfoResponse"
+      "output": "DescribeAsyncRequestInfoResponse",
+      "status": "online"
     },
     "DescribeMigrateCheckJob": {
       "document": "本接口用于创建校验后,获取校验的结果. 能查询到当前校验的状态和进度. \n若通过校验, 则可调用'StartMigrateJob' 开始迁移.\n若未通过校验, 则能查询到校验失败的原因. 请按照报错, 通过'ModifyMigrateJob'修改迁移配置或是调整源/目标实例的相关参数.",
       "input": "DescribeMigrateCheckJobRequest",
       "name": "获取迁移校验结果",
-      "output": "DescribeMigrateCheckJobResponse"
+      "output": "DescribeMigrateCheckJobResponse",
+      "status": "online"
     },
     "DescribeMigrateJobs": {
       "document": "查询数据迁移任务.\n如果是金融区链路, 请使用域名: https://dts.ap-shenzhen-fsi.tencentcloudapi.com",
       "input": "DescribeMigrateJobsRequest",
       "name": "查询数据迁移任务",
-      "output": "DescribeMigrateJobsResponse"
+      "output": "DescribeMigrateJobsResponse",
+      "status": "online"
     },
     "DescribeRegionConf": {
       "document": "本接口（DescribeRegionConf）用于查询可售卖订阅实例的地域",
       "input": "DescribeRegionConfRequest",
       "name": "查询可售卖订阅地域",
-      "output": "DescribeRegionConfResponse"
+      "output": "DescribeRegionConfResponse",
+      "status": "online"
     },
     "DescribeSubscribeConf": {
       "document": "本接口（DescribeSubscribeConf）用于查询订阅实例配置",
       "input": "DescribeSubscribeConfRequest",
       "name": "查询订阅实例配置",
-      "output": "DescribeSubscribeConfResponse"
+      "output": "DescribeSubscribeConfResponse",
+      "status": "online"
     },
     "DescribeSubscribes": {
       "document": "本接口(DescribeSubscribes)获取数据订阅实例信息列表，默认分页，每次返回20条",
       "input": "DescribeSubscribesRequest",
       "name": "获取数据订阅实例列表",
-      "output": "DescribeSubscribesResponse"
+      "output": "DescribeSubscribesResponse",
+      "status": "online"
     },
     "IsolateSubscribe": {
       "document": "本接口（IsolateSubscribe）用于隔离小时计费的订阅实例。调用后，订阅实例将不能使用，同时停止计费。",
       "input": "IsolateSubscribeRequest",
       "name": "隔离订阅实例",
-      "output": "IsolateSubscribeResponse"
+      "output": "IsolateSubscribeResponse",
+      "status": "online"
     },
     "ModifyMigrateJob": {
       "document": "本接口（ModifyMigrateJob）用于修改数据迁移任务。\n当迁移任务处于下述状态时，允许调用本接口修改迁移任务：迁移创建中（status=1）、 校验成功(status=4)、校验失败(status=5)、迁移失败(status=10)。但源实例、目标实例类型和目标实例地域不允许修改。\n\n如果是金融区链路, 请使用域名: dts.ap-shenzhen-fsi.tencentcloudapi.com",
       "input": "ModifyMigrateJobRequest",
       "name": "修改数据迁移任务",
-      "output": "ModifyMigrateJobResponse"
+      "output": "ModifyMigrateJobResponse",
+      "status": "online"
     },
     "ModifySubscribeAutoRenewFlag": {
       "document": "修改订阅实例自动续费标识",
       "input": "ModifySubscribeAutoRenewFlagRequest",
       "name": "修改订阅实例自动续费标识",
-      "output": "ModifySubscribeAutoRenewFlagResponse"
+      "output": "ModifySubscribeAutoRenewFlagResponse",
+      "status": "online"
     },
     "ModifySubscribeConsumeTime": {
       "document": "本接口(ModifySubscribeConsumeTime)用于修改数据订阅通道的消费时间点",
       "input": "ModifySubscribeConsumeTimeRequest",
       "name": "修改数据订阅实例通道的消费时间点",
-      "output": "ModifySubscribeConsumeTimeResponse"
+      "output": "ModifySubscribeConsumeTimeResponse",
+      "status": "online"
     },
     "ModifySubscribeName": {
       "document": "本接口(ModifySubscribeName)用于修改数据订阅实例的名称",
       "input": "ModifySubscribeNameRequest",
       "name": "修改数据订阅实例的名称",
-      "output": "ModifySubscribeNameResponse"
+      "output": "ModifySubscribeNameResponse",
+      "status": "online"
     },
     "ModifySubscribeObjects": {
       "document": "本接口(ModifySubscribeObjects)用于修改数据订阅通道的订阅规则",
       "input": "ModifySubscribeObjectsRequest",
       "name": "修改数据订阅通道的订阅规则",
-      "output": "ModifySubscribeObjectsResponse"
+      "output": "ModifySubscribeObjectsResponse",
+      "status": "online"
     },
     "ModifySubscribeVipVport": {
       "document": "本接口(ModifySubscribeVipVport)用于修改数据订阅实例的IP和端口号",
       "input": "ModifySubscribeVipVportRequest",
       "name": "修改数据订阅实例的IP和端口号",
-      "output": "ModifySubscribeVipVportResponse"
+      "output": "ModifySubscribeVipVportResponse",
+      "status": "online"
     },
     "OfflineIsolatedSubscribe": {
       "document": "本接口（OfflineIsolatedSubscribe）用于下线已隔离的数据订阅实例",
       "input": "OfflineIsolatedSubscribeRequest",
       "name": "下线已隔离的数据订阅实例",
-      "output": "OfflineIsolatedSubscribeResponse"
+      "output": "OfflineIsolatedSubscribeResponse",
+      "status": "online"
     },
     "ResetSubscribe": {
       "document": "本接口(ResetSubscribe)用于重置数据订阅实例，已经激活的数据订阅实例，重置后可以使用ActivateSubscribe接口绑定其他的数据库实例",
       "input": "ResetSubscribeRequest",
       "name": "重置数据订阅实例",
-      "output": "ResetSubscribeResponse"
+      "output": "ResetSubscribeResponse",
+      "status": "online"
     },
     "StartMigrateJob": {
       "document": "本接口（StartMigrationJob）用于启动迁移任务。非定时迁移任务会在调用后立即开始迁移，定时任务则会开始倒计时。\n调用此接口前，请务必先使用CreateMigrateCheckJob校验数据迁移任务，并通过DescribeMigrateJobs接口查询到任务状态为校验通过（status=4）时，才能启动数据迁移任务。",
       "input": "StartMigrateJobRequest",
       "name": "启动数据迁移任务",
-      "output": "StartMigrateJobResponse"
+      "output": "StartMigrateJobResponse",
+      "status": "online"
     },
     "StopMigrateJob": {
       "document": "本接口（StopMigrateJob）用于撤销数据迁移任务。\n在迁移过程中允许调用该接口撤销迁移, 撤销迁移的任务会失败。通过DescribeMigrateJobs接口查询到任务状态为运行中（status=7）或准备完成（status=8）时，才能撤销数据迁移任务。",
       "input": "StopMigrateJobRequest",
       "name": "撤销数据迁移任务",
-      "output": "StopMigrateJobResponse"
+      "output": "StopMigrateJobResponse",
+      "status": "online"
     }
   },
   "metadata": {

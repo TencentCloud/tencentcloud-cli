@@ -4,211 +4,246 @@
       "document": "文件系统绑定快照策略，可以同时绑定多个fs，一个fs 只能跟一个策略绑定",
       "input": "BindAutoSnapshotPolicyRequest",
       "name": "文件系统绑定快照策略",
-      "output": "BindAutoSnapshotPolicyResponse"
+      "output": "BindAutoSnapshotPolicyResponse",
+      "status": "online"
     },
     "CreateAutoSnapshotPolicy": {
       "document": "创建定期快照策略",
       "input": "CreateAutoSnapshotPolicyRequest",
       "name": "创建定期快照策略",
-      "output": "CreateAutoSnapshotPolicyResponse"
+      "output": "CreateAutoSnapshotPolicyResponse",
+      "status": "online"
     },
     "CreateCfsFileSystem": {
       "document": "用于添加新文件系统",
       "input": "CreateCfsFileSystemRequest",
       "name": "创建文件系统",
-      "output": "CreateCfsFileSystemResponse"
+      "output": "CreateCfsFileSystemResponse",
+      "status": "online"
     },
     "CreateCfsPGroup": {
       "document": "本接口（CreateCfsPGroup）用于创建权限组",
       "input": "CreateCfsPGroupRequest",
       "name": "创建权限组",
-      "output": "CreateCfsPGroupResponse"
+      "output": "CreateCfsPGroupResponse",
+      "status": "online"
     },
     "CreateCfsRule": {
       "document": "本接口（CreateCfsRule）用于创建权限组规则。",
       "input": "CreateCfsRuleRequest",
       "name": "创建权限组规则",
-      "output": "CreateCfsRuleResponse"
+      "output": "CreateCfsRuleResponse",
+      "status": "online"
     },
     "CreateCfsSnapshot": {
       "document": "创建文件系统快照",
       "input": "CreateCfsSnapshotRequest",
       "name": "创建文件系统快照",
-      "output": "CreateCfsSnapshotResponse"
+      "output": "CreateCfsSnapshotResponse",
+      "status": "online"
     },
     "DeleteAutoSnapshotPolicy": {
       "document": "删除快照定期策略",
       "input": "DeleteAutoSnapshotPolicyRequest",
       "name": "删除快照策略",
-      "output": "DeleteAutoSnapshotPolicyResponse"
+      "output": "DeleteAutoSnapshotPolicyResponse",
+      "status": "online"
     },
     "DeleteCfsFileSystem": {
       "document": "用于删除文件系统",
       "input": "DeleteCfsFileSystemRequest",
       "name": "删除文件系统",
-      "output": "DeleteCfsFileSystemResponse"
+      "output": "DeleteCfsFileSystemResponse",
+      "status": "online"
     },
     "DeleteCfsPGroup": {
       "document": "本接口（DeleteCfsPGroup）用于删除权限组。",
       "input": "DeleteCfsPGroupRequest",
       "name": "删除权限组",
-      "output": "DeleteCfsPGroupResponse"
+      "output": "DeleteCfsPGroupResponse",
+      "status": "online"
     },
     "DeleteCfsRule": {
       "document": "本接口（DeleteCfsRule）用于删除权限组规则。",
       "input": "DeleteCfsRuleRequest",
       "name": "删除权限组规则",
-      "output": "DeleteCfsRuleResponse"
+      "output": "DeleteCfsRuleResponse",
+      "status": "online"
     },
     "DeleteCfsSnapshot": {
       "document": "删除文件系统快照",
       "input": "DeleteCfsSnapshotRequest",
       "name": "删除文件系统快照",
-      "output": "DeleteCfsSnapshotResponse"
+      "output": "DeleteCfsSnapshotResponse",
+      "status": "online"
     },
     "DeleteMountTarget": {
       "document": "本接口（DeleteMountTarget）用于删除挂载点",
       "input": "DeleteMountTargetRequest",
       "name": "删除挂载点",
-      "output": "DeleteMountTargetResponse"
+      "output": "DeleteMountTargetResponse",
+      "status": "online"
     },
     "DeleteUserQuota": {
       "document": "指定条件删除文件系统配额",
       "input": "DeleteUserQuotaRequest",
       "name": "删除文件系统配额",
-      "output": "DeleteUserQuotaResponse"
+      "output": "DeleteUserQuotaResponse",
+      "status": "online"
     },
     "DescribeAutoSnapshotPolicies": {
       "document": "查询文件系统快照定期策略列表信息",
       "input": "DescribeAutoSnapshotPoliciesRequest",
       "name": "查询文件系统快照策略列表信息",
-      "output": "DescribeAutoSnapshotPoliciesResponse"
+      "output": "DescribeAutoSnapshotPoliciesResponse",
+      "status": "online"
     },
     "DescribeAvailableZoneInfo": {
       "document": "本接口（DescribeAvailableZoneInfo）用于查询区域的可用情况。",
       "input": "DescribeAvailableZoneInfoRequest",
       "name": "查询区域可用情况",
-      "output": "DescribeAvailableZoneInfoResponse"
+      "output": "DescribeAvailableZoneInfoResponse",
+      "status": "online"
     },
     "DescribeCfsFileSystemClients": {
       "document": "查询挂载该文件系统的客户端。此功能需要客户端安装CFS监控插件。",
       "input": "DescribeCfsFileSystemClientsRequest",
       "name": "查询文件系统客户端",
-      "output": "DescribeCfsFileSystemClientsResponse"
+      "output": "DescribeCfsFileSystemClientsResponse",
+      "status": "online"
     },
     "DescribeCfsFileSystems": {
       "document": "本接口（DescribeCfsFileSystems）用于查询文件系统",
       "input": "DescribeCfsFileSystemsRequest",
       "name": "查询文件系统",
-      "output": "DescribeCfsFileSystemsResponse"
+      "output": "DescribeCfsFileSystemsResponse",
+      "status": "online"
     },
     "DescribeCfsPGroups": {
       "document": "本接口（DescribeCfsPGroups）用于查询权限组列表。",
       "input": "DescribeCfsPGroupsRequest",
       "name": "查询权限组列表",
-      "output": "DescribeCfsPGroupsResponse"
+      "output": "DescribeCfsPGroupsResponse",
+      "status": "online"
     },
     "DescribeCfsRules": {
       "document": "本接口（DescribeCfsRules）用于查询权限组规则列表。",
       "input": "DescribeCfsRulesRequest",
       "name": "查询权限组规则",
-      "output": "DescribeCfsRulesResponse"
+      "output": "DescribeCfsRulesResponse",
+      "status": "online"
     },
     "DescribeCfsServiceStatus": {
       "document": "本接口（DescribeCfsServiceStatus）用于查询用户使用CFS的服务状态。",
       "input": "DescribeCfsServiceStatusRequest",
       "name": "查询CFS服务状态",
-      "output": "DescribeCfsServiceStatusResponse"
+      "output": "DescribeCfsServiceStatusResponse",
+      "status": "online"
     },
     "DescribeCfsSnapshotOverview": {
       "document": "文件系统快照概览",
       "input": "DescribeCfsSnapshotOverviewRequest",
       "name": "文件系统快照概览",
-      "output": "DescribeCfsSnapshotOverviewResponse"
+      "output": "DescribeCfsSnapshotOverviewResponse",
+      "status": "online"
     },
     "DescribeCfsSnapshots": {
       "document": "查询文件系统快照列表",
       "input": "DescribeCfsSnapshotsRequest",
       "name": "查询快照列表",
-      "output": "DescribeCfsSnapshotsResponse"
+      "output": "DescribeCfsSnapshotsResponse",
+      "status": "online"
     },
     "DescribeMountTargets": {
       "document": "本接口（DescribeMountTargets）用于查询文件系统挂载点信息",
       "input": "DescribeMountTargetsRequest",
       "name": "查询文件系统挂载点",
-      "output": "DescribeMountTargetsResponse"
+      "output": "DescribeMountTargetsResponse",
+      "status": "online"
     },
     "DescribeSnapshotOperationLogs": {
       "document": "查询快照操作日志",
       "input": "DescribeSnapshotOperationLogsRequest",
       "name": "查询快照操作日志",
-      "output": "DescribeSnapshotOperationLogsResponse"
+      "output": "DescribeSnapshotOperationLogsResponse",
+      "status": "online"
     },
     "DescribeUserQuota": {
       "document": "查询文件系统配额",
       "input": "DescribeUserQuotaRequest",
       "name": "查询文件系统配额",
-      "output": "DescribeUserQuotaResponse"
+      "output": "DescribeUserQuotaResponse",
+      "status": "online"
     },
     "SetUserQuota": {
       "document": "设置文件系统配额，提供UID/GID的配额设置的接口",
       "input": "SetUserQuotaRequest",
       "name": "设置文件系统配额",
-      "output": "SetUserQuotaResponse"
+      "output": "SetUserQuotaResponse",
+      "status": "online"
     },
     "SignUpCfsService": {
       "document": "本接口（SignUpCfsService）用于开通CFS服务。",
       "input": "SignUpCfsServiceRequest",
       "name": "开通CFS服务",
-      "output": "SignUpCfsServiceResponse"
+      "output": "SignUpCfsServiceResponse",
+      "status": "online"
     },
     "UnbindAutoSnapshotPolicy": {
       "document": "解除文件系统绑定的快照策略",
       "input": "UnbindAutoSnapshotPolicyRequest",
       "name": "解绑快照策略",
-      "output": "UnbindAutoSnapshotPolicyResponse"
+      "output": "UnbindAutoSnapshotPolicyResponse",
+      "status": "online"
     },
     "UpdateAutoSnapshotPolicy": {
       "document": "更新定期自动快照策略",
       "input": "UpdateAutoSnapshotPolicyRequest",
       "name": "更新定期快照策略",
-      "output": "UpdateAutoSnapshotPolicyResponse"
+      "output": "UpdateAutoSnapshotPolicyResponse",
+      "status": "online"
     },
     "UpdateCfsFileSystemName": {
       "document": "本接口（UpdateCfsFileSystemName）用于更新文件系统名",
       "input": "UpdateCfsFileSystemNameRequest",
       "name": "更新文件系统名",
-      "output": "UpdateCfsFileSystemNameResponse"
+      "output": "UpdateCfsFileSystemNameResponse",
+      "status": "online"
     },
     "UpdateCfsFileSystemPGroup": {
       "document": "本接口（UpdateCfsFileSystemPGroup）用于更新文件系统所使用的权限组",
       "input": "UpdateCfsFileSystemPGroupRequest",
       "name": "更新文件系统的权限组",
-      "output": "UpdateCfsFileSystemPGroupResponse"
+      "output": "UpdateCfsFileSystemPGroupResponse",
+      "status": "online"
     },
     "UpdateCfsFileSystemSizeLimit": {
       "document": "本接口（UpdateCfsFileSystemSizeLimit）用于更新文件系统存储容量限制。",
       "input": "UpdateCfsFileSystemSizeLimitRequest",
       "name": "更新文件系统存储容量限制",
-      "output": "UpdateCfsFileSystemSizeLimitResponse"
+      "output": "UpdateCfsFileSystemSizeLimitResponse",
+      "status": "online"
     },
     "UpdateCfsPGroup": {
       "document": "本接口（UpdateCfsPGroup）更新权限组信息。",
       "input": "UpdateCfsPGroupRequest",
       "name": "更新权限组信息",
-      "output": "UpdateCfsPGroupResponse"
+      "output": "UpdateCfsPGroupResponse",
+      "status": "online"
     },
     "UpdateCfsRule": {
       "document": "本接口（UpdateCfsRule）用于更新权限规则。",
       "input": "UpdateCfsRuleRequest",
       "name": "更新权限组规则",
-      "output": "UpdateCfsRuleResponse"
+      "output": "UpdateCfsRuleResponse",
+      "status": "online"
     },
     "UpdateCfsSnapshotAttribute": {
       "document": "更新文件系统快照名称及保留时长",
       "input": "UpdateCfsSnapshotAttributeRequest",
       "name": "更新文件系统快照信息",
-      "output": "UpdateCfsSnapshotAttributeResponse"
+      "output": "UpdateCfsSnapshotAttributeResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,43 +4,50 @@
       "document": "此接口无法使用，游戏联机对战引擎MGOBE已于6.1正式下架，感谢您的支持\n\n修改房间玩家自定义属性",
       "input": "ChangeRoomPlayerProfileRequest",
       "name": "修改房间玩家自定义属性",
-      "output": "ChangeRoomPlayerProfileResponse"
+      "output": "ChangeRoomPlayerProfileResponse",
+      "status": "deprecated"
     },
     "ChangeRoomPlayerStatus": {
       "document": "此接口无法使用，游戏联机对战引擎MGOBE已于6.1正式下架，感谢您的支持\n\n修改玩家自定义状态",
       "input": "ChangeRoomPlayerStatusRequest",
       "name": "修改玩家自定义状态",
-      "output": "ChangeRoomPlayerStatusResponse"
+      "output": "ChangeRoomPlayerStatusResponse",
+      "status": "deprecated"
     },
     "DescribePlayer": {
       "document": "此接口无法使用，游戏联机对战引擎MGOBE已于6.1正式下架，感谢您的支持\n\n该接口用于查询玩家信息。支持两种用法，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。",
       "input": "DescribePlayerRequest",
       "name": "查询玩家信息",
-      "output": "DescribePlayerResponse"
+      "output": "DescribePlayerResponse",
+      "status": "deprecated"
     },
     "DescribeRoom": {
       "document": "此接口无法使用，游戏联机对战引擎MGOBE已于6.1正式下架，感谢您的支持\n\n该接口用于查询房间信息。支持两种用法，当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，玩家Id可不传，按照房间Id查询房间信息。",
       "input": "DescribeRoomRequest",
       "name": "查询房间信息",
-      "output": "DescribeRoomResponse"
+      "output": "DescribeRoomResponse",
+      "status": "deprecated"
     },
     "DismissRoom": {
       "document": "此接口无法使用，游戏联机对战引擎MGOBE已于6.1正式下架，感谢您的支持\n\n通过game_id、room_id解散房间",
       "input": "DismissRoomRequest",
       "name": "解散房间",
-      "output": "DismissRoomResponse"
+      "output": "DismissRoomResponse",
+      "status": "deprecated"
     },
     "ModifyRoom": {
       "document": "此接口无法使用，游戏联机对战引擎MGOBE已于6.1正式下架，感谢您的支持\n\n修改房间",
       "input": "ModifyRoomRequest",
       "name": "修改房间",
-      "output": "ModifyRoomResponse"
+      "output": "ModifyRoomResponse",
+      "status": "deprecated"
     },
     "RemoveRoomPlayer": {
       "document": "此接口无法使用，游戏联机对战引擎MGOBE已于6.1正式下架，感谢您的支持\n\n踢出房间玩家",
       "input": "RemoveRoomPlayerRequest",
       "name": "踢出房间玩家",
-      "output": "RemoveRoomPlayerResponse"
+      "output": "RemoveRoomPlayerResponse",
+      "status": "deprecated"
     }
   },
   "metadata": {

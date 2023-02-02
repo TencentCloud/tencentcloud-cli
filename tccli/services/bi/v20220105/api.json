@@ -4,13 +4,15 @@
       "document": "申请延长Token可用时间接口-强鉴权",
       "input": "ApplyEmbedIntervalRequest",
       "name": "申请延长Token可用时间接口",
-      "output": "ApplyEmbedIntervalResponse"
+      "output": "ApplyEmbedIntervalResponse",
+      "status": "online"
     },
     "CreateEmbedToken": {
       "document": "创建嵌出报表-强鉴权",
       "input": "CreateEmbedTokenRequest",
       "name": "创建嵌出报表Token",
-      "output": "CreateEmbedTokenResponse"
+      "output": "CreateEmbedTokenResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,67 +4,78 @@
       "document": "批量创建拨测任务",
       "input": "CreateProbeTasksRequest",
       "name": "批量创建拨测任务",
-      "output": "CreateProbeTasksResponse"
+      "output": "CreateProbeTasksResponse",
+      "status": "online"
     },
     "DeleteProbeTask": {
       "document": "删除拨测任务",
       "input": "DeleteProbeTaskRequest",
       "name": "删除拨测任务",
-      "output": "DeleteProbeTaskResponse"
+      "output": "DeleteProbeTaskResponse",
+      "status": "online"
     },
     "DescribeDetailedSingleProbeData": {
       "document": "根据时间范围、任务ID、运营商等条件查询单次拨测详情数据",
       "input": "DescribeDetailedSingleProbeDataRequest",
       "name": "列出单次拨测详情数据",
-      "output": "DescribeDetailedSingleProbeDataResponse"
+      "output": "DescribeDetailedSingleProbeDataResponse",
+      "status": "online"
     },
     "DescribeNodes": {
       "document": "获取拨测节点",
       "input": "DescribeNodesRequest",
       "name": "获取拨测节点",
-      "output": "DescribeNodesResponse"
+      "output": "DescribeNodesResponse",
+      "status": "online"
     },
     "DescribeProbeMetricData": {
       "document": "查询云拨测指标数据，指标支持使用sum,avg,max,min聚合函数进行指标数据查询",
       "input": "DescribeProbeMetricDataRequest",
       "name": "列出云拨测指标详细数据",
-      "output": "DescribeProbeMetricDataResponse"
+      "output": "DescribeProbeMetricDataResponse",
+      "status": "online"
     },
     "DescribeProbeNodes": {
       "document": "查询拨测节点",
       "input": "DescribeProbeNodesRequest",
       "name": "查询拨测节点",
-      "output": "DescribeProbeNodesResponse"
+      "output": "DescribeProbeNodesResponse",
+      "status": "online"
     },
     "DescribeProbeTasks": {
       "document": "查询拨测任务列表",
       "input": "DescribeProbeTasksRequest",
       "name": "分页查询拨测任务列表",
-      "output": "DescribeProbeTasksResponse"
+      "output": "DescribeProbeTasksResponse",
+      "status": "online"
     },
     "ResumeProbeTask": {
       "document": "恢复拨测任务",
       "input": "ResumeProbeTaskRequest",
       "name": "恢复拨测任务",
-      "output": "ResumeProbeTaskResponse"
+      "output": "ResumeProbeTaskResponse",
+      "status": "online"
     },
     "SuspendProbeTask": {
       "document": "暂停拨测任务",
       "input": "SuspendProbeTaskRequest",
       "name": "暂停拨测任务",
-      "output": "SuspendProbeTaskResponse"
+      "output": "SuspendProbeTaskResponse",
+      "status": "online"
     },
     "UpdateProbeTaskAttributes": {
       "document": "更新探测任务属性",
       "input": "UpdateProbeTaskAttributesRequest",
       "name": "更新探测任务属性",
-      "output": "UpdateProbeTaskAttributesResponse"
+      "output": "UpdateProbeTaskAttributesResponse",
+      "status": "online"
     },
     "UpdateProbeTaskConfigurationList": {
       "document": "批量更新拨测任务配置",
       "input": "UpdateProbeTaskConfigurationListRequest",
       "name": "批量更新拨测任务配置",
-      "output": "UpdateProbeTaskConfigurationListResponse"
+      "output": "UpdateProbeTaskConfigurationListResponse",
+      "status": "online"
     }
   },
   "metadata": {

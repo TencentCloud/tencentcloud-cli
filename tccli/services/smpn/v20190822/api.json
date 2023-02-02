@@ -4,31 +4,36 @@
       "document": "企业号码认证",
       "input": "CreateSmpnEpaRequest",
       "name": "企业号码认证",
-      "output": "CreateSmpnEpaResponse"
+      "output": "CreateSmpnEpaResponse",
+      "status": "online"
     },
     "DescribeSmpnChp": {
       "document": "查询号码的标记和标记次数",
       "input": "DescribeSmpnChpRequest",
       "name": "终端骚扰保护",
-      "output": "DescribeSmpnChpResponse"
+      "output": "DescribeSmpnChpResponse",
+      "status": "online"
     },
     "DescribeSmpnFnr": {
       "document": "虚假号码识别",
       "input": "DescribeSmpnFnrRequest",
       "name": "虚假号码识别",
-      "output": "DescribeSmpnFnrResponse"
+      "output": "DescribeSmpnFnrResponse",
+      "status": "online"
     },
     "DescribeSmpnMhm": {
       "document": "号码营销监控",
       "input": "DescribeSmpnMhmRequest",
       "name": "号码营销监控",
-      "output": "DescribeSmpnMhmResponse"
+      "output": "DescribeSmpnMhmResponse",
+      "status": "online"
     },
     "DescribeSmpnMrl": {
       "document": "查询号码恶意标记等级",
       "input": "DescribeSmpnMrlRequest",
       "name": "恶意标记等级",
-      "output": "DescribeSmpnMrlResponse"
+      "output": "DescribeSmpnMrlResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,151 +4,176 @@
       "document": "检查快照是否可用",
       "input": "CheckSavepointRequest",
       "name": "检查快照是否可用",
-      "output": "CheckSavepointResponse"
+      "output": "CheckSavepointResponse",
+      "status": "online"
     },
     "CopyJobs": {
       "document": "单条和批量复制作业",
       "input": "CopyJobsRequest",
       "name": "复制作业",
-      "output": "CopyJobsResponse"
+      "output": "CopyJobsResponse",
+      "status": "online"
     },
     "CreateFolder": {
       "document": "作业列表页面新建文件夹请求",
       "input": "CreateFolderRequest",
       "name": "创建文件夹",
-      "output": "CreateFolderResponse"
+      "output": "CreateFolderResponse",
+      "status": "online"
     },
     "CreateJob": {
       "document": "新建作业接口，一个 AppId 最多允许创建1000个作业",
       "input": "CreateJobRequest",
       "name": "新建作业",
-      "output": "CreateJobResponse"
+      "output": "CreateJobResponse",
+      "status": "online"
     },
     "CreateJobConfig": {
       "document": "创建作业配置，一个作业最多有100个配置版本",
       "input": "CreateJobConfigRequest",
       "name": "创建作业配置",
-      "output": "CreateJobConfigResponse"
+      "output": "CreateJobConfigResponse",
+      "status": "online"
     },
     "CreateResource": {
       "document": "创建资源接口",
       "input": "CreateResourceRequest",
       "name": "创建资源接口",
-      "output": "CreateResourceResponse"
+      "output": "CreateResourceResponse",
+      "status": "online"
     },
     "CreateResourceConfig": {
       "document": "创建资源配置接口",
       "input": "CreateResourceConfigRequest",
       "name": "创建资源配置接口",
-      "output": "CreateResourceConfigResponse"
+      "output": "CreateResourceConfigResponse",
+      "status": "online"
     },
     "DeleteJobs": {
       "document": "批量删除作业接口，批量操作数量上限20",
       "input": "DeleteJobsRequest",
       "name": "删除作业",
-      "output": "DeleteJobsResponse"
+      "output": "DeleteJobsResponse",
+      "status": "online"
     },
     "DeleteResourceConfigs": {
       "document": "删除资源版本",
       "input": "DeleteResourceConfigsRequest",
       "name": "删除资源版本",
-      "output": "DeleteResourceConfigsResponse"
+      "output": "DeleteResourceConfigsResponse",
+      "status": "online"
     },
     "DeleteResources": {
       "document": "删除资源接口",
       "input": "DeleteResourcesRequest",
       "name": "删除资源接口",
-      "output": "DeleteResourcesResponse"
+      "output": "DeleteResourcesResponse",
+      "status": "online"
     },
     "DeleteTableConfig": {
       "document": "删除作业表配置",
       "input": "DeleteTableConfigRequest",
       "name": "删除作业表配置",
-      "output": "DeleteTableConfigResponse"
+      "output": "DeleteTableConfigResponse",
+      "status": "online"
     },
     "DescribeClusters": {
       "document": "查询集群",
       "input": "DescribeClustersRequest",
       "name": "查询集群",
-      "output": "DescribeClustersResponse"
+      "output": "DescribeClustersResponse",
+      "status": "online"
     },
     "DescribeJobConfigs": {
       "document": "查询作业配置列表，一次最多查询100个",
       "input": "DescribeJobConfigsRequest",
       "name": "查询作业配置",
-      "output": "DescribeJobConfigsResponse"
+      "output": "DescribeJobConfigsResponse",
+      "status": "online"
     },
     "DescribeJobSavepoint": {
       "document": "查找Savepoint列表",
       "input": "DescribeJobSavepointRequest",
       "name": "查找Savepoint列表",
-      "output": "DescribeJobSavepointResponse"
+      "output": "DescribeJobSavepointResponse",
+      "status": "online"
     },
     "DescribeJobs": {
       "document": "查询作业",
       "input": "DescribeJobsRequest",
       "name": "查询作业",
-      "output": "DescribeJobsResponse"
+      "output": "DescribeJobsResponse",
+      "status": "online"
     },
     "DescribeResourceConfigs": {
       "document": "描述资源配置接口",
       "input": "DescribeResourceConfigsRequest",
       "name": "描述资源配置接口",
-      "output": "DescribeResourceConfigsResponse"
+      "output": "DescribeResourceConfigsResponse",
+      "status": "online"
     },
     "DescribeResourceRelatedJobs": {
       "document": "获取资源关联作业信息",
       "input": "DescribeResourceRelatedJobsRequest",
       "name": "获取资源关联作业信息",
-      "output": "DescribeResourceRelatedJobsResponse"
+      "output": "DescribeResourceRelatedJobsResponse",
+      "status": "online"
     },
     "DescribeResources": {
       "document": "描述资源接口",
       "input": "DescribeResourcesRequest",
       "name": "描述资源接口",
-      "output": "DescribeResourcesResponse"
+      "output": "DescribeResourcesResponse",
+      "status": "online"
     },
     "DescribeSystemResources": {
       "document": "描述系统资源接口",
       "input": "DescribeSystemResourcesRequest",
       "name": "描述系统资源接口",
-      "output": "DescribeSystemResourcesResponse"
+      "output": "DescribeSystemResourcesResponse",
+      "status": "online"
     },
     "DescribeTreeJobs": {
       "document": "生成树状作业显示结构",
       "input": "DescribeTreeJobsRequest",
       "name": "自定义树状结构",
-      "output": "DescribeTreeJobsResponse"
+      "output": "DescribeTreeJobsResponse",
+      "status": "online"
     },
     "DescribeTreeResources": {
       "document": "查询树状结构资源列表",
       "input": "DescribeTreeResourcesRequest",
       "name": "查询树状结构资源列表",
-      "output": "DescribeTreeResourcesResponse"
+      "output": "DescribeTreeResourcesResponse",
+      "status": "online"
     },
     "ModifyJob": {
       "document": "更新作业属性，仅允许以下3种操作，不支持组合操作：\n(1)\t更新作业名称\n(2)\t更新作业备注 \n(3)\t更新作业最大并行度\n变更前提：WorkerCuNum<=MaxParallelism\n如果MaxParallelism变小，不重启作业，待下一次重启生效\n如果MaxParallelism变大，则要求入参RestartAllowed必须为True\n假设作业运行状态，则先停止作业，再启动作业，中间状态丢失\n假设作业暂停状态，则将作业更改为停止状态，中间状态丢失\n\n",
       "input": "ModifyJobRequest",
       "name": "更新作业",
-      "output": "ModifyJobResponse"
+      "output": "ModifyJobResponse",
+      "status": "online"
     },
     "RunJobs": {
       "document": "批量启动或者恢复作业，批量操作数量上限20",
       "input": "RunJobsRequest",
       "name": "运行作业",
-      "output": "RunJobsResponse"
+      "output": "RunJobsResponse",
+      "status": "online"
     },
     "StopJobs": {
       "document": "批量停止作业，批量操作数量上限为20",
       "input": "StopJobsRequest",
       "name": "停止作业",
-      "output": "StopJobsResponse"
+      "output": "StopJobsResponse",
+      "status": "online"
     },
     "TriggerJobSavepoint": {
       "document": "触发Savepoint",
       "input": "TriggerJobSavepointRequest",
       "name": "触发Savepoint",
-      "output": "TriggerJobSavepointResponse"
+      "output": "TriggerJobSavepointResponse",
+      "status": "online"
     }
   },
   "metadata": {

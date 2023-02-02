@@ -4,805 +4,1044 @@
       "document": "绑定 Grafana 可视化服务实例",
       "input": "BindPrometheusManagedGrafanaRequest",
       "name": "绑定 Grafana 可视化服务实例",
-      "output": "BindPrometheusManagedGrafanaResponse"
+      "output": "BindPrometheusManagedGrafanaResponse",
+      "status": "online"
     },
     "BindingPolicyObject": {
       "document": "将告警策略绑定到特定对象",
       "input": "BindingPolicyObjectRequest",
       "name": "绑定策略对象",
-      "output": "BindingPolicyObjectResponse"
+      "output": "BindingPolicyObjectResponse",
+      "status": "online"
     },
     "BindingPolicyTag": {
       "document": "策略绑定标签",
       "input": "BindingPolicyTagRequest",
       "name": "策略绑定标签",
-      "output": "BindingPolicyTagResponse"
+      "output": "BindingPolicyTagResponse",
+      "status": "online"
     },
     "CheckIsPrometheusNewUser": {
       "document": "判断用户是否为云原生监控新用户，即在任何地域下均未创建过监控实例的用户",
       "input": "CheckIsPrometheusNewUserRequest",
       "name": "判断用户是否为云原生监控新用户",
-      "output": "CheckIsPrometheusNewUserResponse"
+      "output": "CheckIsPrometheusNewUserResponse",
+      "status": "online"
     },
     "CleanGrafanaInstance": {
       "document": "强制销毁 Grafana 实例",
       "input": "CleanGrafanaInstanceRequest",
       "name": "强制销毁 Grafana 实例",
-      "output": "CleanGrafanaInstanceResponse"
+      "output": "CleanGrafanaInstanceResponse",
+      "status": "online"
     },
     "CreateAlarmNotice": {
       "document": "创建通知模板",
       "input": "CreateAlarmNoticeRequest",
       "name": "创建通知模板",
-      "output": "CreateAlarmNoticeResponse"
+      "output": "CreateAlarmNoticeResponse",
+      "status": "online"
     },
     "CreateAlarmPolicy": {
       "document": "创建云监控告警策略",
       "input": "CreateAlarmPolicyRequest",
       "name": "创建云监控告警策略",
-      "output": "CreateAlarmPolicyResponse"
+      "output": "CreateAlarmPolicyResponse",
+      "status": "online"
     },
     "CreateAlertRule": {
       "document": "创建 Prometheus 告警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
       "input": "CreateAlertRuleRequest",
       "name": "创建告警规则",
-      "output": "CreateAlertRuleResponse"
+      "output": "CreateAlertRuleResponse",
+      "status": "online"
     },
     "CreateExporterIntegration": {
       "document": "创建 exporter 集成",
       "input": "CreateExporterIntegrationRequest",
       "name": "创建 exporter 集成",
-      "output": "CreateExporterIntegrationResponse"
+      "output": "CreateExporterIntegrationResponse",
+      "status": "online"
     },
     "CreateGrafanaInstance": {
       "document": "创建 Grafana 实例",
       "input": "CreateGrafanaInstanceRequest",
       "name": "创建 Grafana 实例",
-      "output": "CreateGrafanaInstanceResponse"
+      "output": "CreateGrafanaInstanceResponse",
+      "status": "online"
     },
     "CreateGrafanaIntegration": {
       "document": "创建 Grafana 集成配置",
       "input": "CreateGrafanaIntegrationRequest",
       "name": "创建 Grafana 集成配置",
-      "output": "CreateGrafanaIntegrationResponse"
+      "output": "CreateGrafanaIntegrationResponse",
+      "status": "online"
     },
     "CreateGrafanaNotificationChannel": {
       "document": "创建 Grafana 告警通道",
       "input": "CreateGrafanaNotificationChannelRequest",
       "name": "创建 Grafana 告警通道",
-      "output": "CreateGrafanaNotificationChannelResponse"
+      "output": "CreateGrafanaNotificationChannelResponse",
+      "status": "online"
     },
     "CreatePolicyGroup": {
       "document": "增加策略组",
       "input": "CreatePolicyGroupRequest",
       "name": "增加策略组",
-      "output": "CreatePolicyGroupResponse"
+      "output": "CreatePolicyGroupResponse",
+      "status": "online"
     },
     "CreatePrometheusAgent": {
       "document": "创建 Prometheus CVM Agent",
       "input": "CreatePrometheusAgentRequest",
       "name": "创建 Prometheus CVM Agent",
-      "output": "CreatePrometheusAgentResponse"
+      "output": "CreatePrometheusAgentResponse",
+      "status": "online"
+    },
+    "CreatePrometheusAlertPolicy": {
+      "document": "创建告警策略",
+      "input": "CreatePrometheusAlertPolicyRequest",
+      "name": "创建告警策略",
+      "output": "CreatePrometheusAlertPolicyResponse",
+      "status": "online"
+    },
+    "CreatePrometheusClusterAgent": {
+      "document": "与云监控融合的2.0实例关联集群",
+      "input": "CreatePrometheusClusterAgentRequest",
+      "name": "2.0实例关联集群",
+      "output": "CreatePrometheusClusterAgentResponse",
+      "status": "online"
+    },
+    "CreatePrometheusConfig": {
+      "document": "创建prometheus配置",
+      "input": "CreatePrometheusConfigRequest",
+      "name": "创建prometheus配置",
+      "output": "CreatePrometheusConfigResponse",
+      "status": "online"
+    },
+    "CreatePrometheusGlobalNotification": {
+      "document": "创建全局告警通知渠道",
+      "input": "CreatePrometheusGlobalNotificationRequest",
+      "name": "创建全局告警通知渠道",
+      "output": "CreatePrometheusGlobalNotificationResponse",
+      "status": "online"
     },
     "CreatePrometheusMultiTenantInstancePostPayMode": {
       "document": "创建按量 Prometheus 实例，根据用量收费实例",
       "input": "CreatePrometheusMultiTenantInstancePostPayModeRequest",
       "name": "创建按量 Prometheus 实例",
-      "output": "CreatePrometheusMultiTenantInstancePostPayModeResponse"
+      "output": "CreatePrometheusMultiTenantInstancePostPayModeResponse",
+      "status": "online"
     },
     "CreatePrometheusRecordRuleYaml": {
       "document": "以Yaml的方式创建聚合规则",
       "input": "CreatePrometheusRecordRuleYamlRequest",
       "name": "以Yaml的方式创建聚合规则",
-      "output": "CreatePrometheusRecordRuleYamlResponse"
+      "output": "CreatePrometheusRecordRuleYamlResponse",
+      "status": "online"
     },
     "CreatePrometheusScrapeJob": {
       "document": "创建 Prometheus 抓取任务",
       "input": "CreatePrometheusScrapeJobRequest",
       "name": "创建 Prometheus 抓取任务",
-      "output": "CreatePrometheusScrapeJobResponse"
+      "output": "CreatePrometheusScrapeJobResponse",
+      "status": "online"
     },
     "CreatePrometheusTemp": {
       "document": "创建一个云原生Prometheus模板",
       "input": "CreatePrometheusTempRequest",
       "name": "新建模板",
-      "output": "CreatePrometheusTempResponse"
+      "output": "CreatePrometheusTempResponse",
+      "status": "online"
     },
     "CreateRecordingRule": {
       "document": "创建 Prometheus 的预聚合规则",
       "input": "CreateRecordingRuleRequest",
       "name": "创建预聚合规则",
-      "output": "CreateRecordingRuleResponse"
+      "output": "CreateRecordingRuleResponse",
+      "status": "online"
     },
     "CreateSSOAccount": {
       "document": "Grafana实例授权其他腾讯云用户",
       "input": "CreateSSOAccountRequest",
       "name": "授权腾讯云用户",
-      "output": "CreateSSOAccountResponse"
+      "output": "CreateSSOAccountResponse",
+      "status": "online"
     },
     "CreateServiceDiscovery": {
       "document": "在腾讯云容器服务下创建 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
       "input": "CreateServiceDiscoveryRequest",
       "name": "创建服务发现",
-      "output": "CreateServiceDiscoveryResponse"
+      "output": "CreateServiceDiscoveryResponse",
+      "status": "online"
     },
     "DeleteAlarmNotices": {
       "document": "云监控告警删除告警通知模板",
       "input": "DeleteAlarmNoticesRequest",
       "name": "删除告警通知模板（批量）",
-      "output": "DeleteAlarmNoticesResponse"
+      "output": "DeleteAlarmNoticesResponse",
+      "status": "online"
     },
     "DeleteAlarmPolicy": {
       "document": "删除告警策略",
       "input": "DeleteAlarmPolicyRequest",
       "name": "删除告警策略",
-      "output": "DeleteAlarmPolicyResponse"
+      "output": "DeleteAlarmPolicyResponse",
+      "status": "online"
     },
     "DeleteAlertRules": {
       "document": "批量删除 Prometheus 报警规则",
       "input": "DeleteAlertRulesRequest",
       "name": "删除报警规则",
-      "output": "DeleteAlertRulesResponse"
+      "output": "DeleteAlertRulesResponse",
+      "status": "online"
     },
     "DeleteExporterIntegration": {
       "document": "删除 exporter 集成",
       "input": "DeleteExporterIntegrationRequest",
       "name": "删除 exporter 集成",
-      "output": "DeleteExporterIntegrationResponse"
+      "output": "DeleteExporterIntegrationResponse",
+      "status": "online"
     },
     "DeleteGrafanaInstance": {
       "document": "删除 Grafana 实例",
       "input": "DeleteGrafanaInstanceRequest",
       "name": "删除 Grafana 实例",
-      "output": "DeleteGrafanaInstanceResponse"
+      "output": "DeleteGrafanaInstanceResponse",
+      "status": "online"
     },
     "DeleteGrafanaIntegration": {
       "document": "删除 Grafana 集成配置",
       "input": "DeleteGrafanaIntegrationRequest",
       "name": "删除 Grafana 集成配置",
-      "output": "DeleteGrafanaIntegrationResponse"
+      "output": "DeleteGrafanaIntegrationResponse",
+      "status": "online"
     },
     "DeleteGrafanaNotificationChannel": {
       "document": "删除 Grafana 告警通道",
       "input": "DeleteGrafanaNotificationChannelRequest",
       "name": "删除 Grafana 告警通道",
-      "output": "DeleteGrafanaNotificationChannelResponse"
+      "output": "DeleteGrafanaNotificationChannelResponse",
+      "status": "online"
     },
     "DeletePolicyGroup": {
       "document": "删除告警策略组",
       "input": "DeletePolicyGroupRequest",
       "name": "删除告警策略组",
-      "output": "DeletePolicyGroupResponse"
+      "output": "DeletePolicyGroupResponse",
+      "status": "online"
+    },
+    "DeletePrometheusAlertPolicy": {
+      "document": "删除2.0实例告警策略",
+      "input": "DeletePrometheusAlertPolicyRequest",
+      "name": "删除2.0实例告警策略",
+      "output": "DeletePrometheusAlertPolicyResponse",
+      "status": "online"
+    },
+    "DeletePrometheusClusterAgent": {
+      "document": "解除TMP实例的集群关联",
+      "input": "DeletePrometheusClusterAgentRequest",
+      "name": "解除TMP实例的集群关联",
+      "output": "DeletePrometheusClusterAgentResponse",
+      "status": "online"
+    },
+    "DeletePrometheusConfig": {
+      "document": "删除Prometheus配置，如果目标不存在，将返回成功",
+      "input": "DeletePrometheusConfigRequest",
+      "name": "删除Prometheus配置",
+      "output": "DeletePrometheusConfigResponse",
+      "status": "online"
     },
     "DeletePrometheusRecordRuleYaml": {
       "document": "删除聚合实例",
       "input": "DeletePrometheusRecordRuleYamlRequest",
       "name": "删除聚合实例",
-      "output": "DeletePrometheusRecordRuleYamlResponse"
+      "output": "DeletePrometheusRecordRuleYamlResponse",
+      "status": "online"
     },
     "DeletePrometheusScrapeJobs": {
       "document": "删除 Prometheus 抓取任务",
       "input": "DeletePrometheusScrapeJobsRequest",
       "name": "删除 Prometheus 抓取任务",
-      "output": "DeletePrometheusScrapeJobsResponse"
+      "output": "DeletePrometheusScrapeJobsResponse",
+      "status": "online"
     },
     "DeletePrometheusTemp": {
       "document": "删除一个云原生Prometheus配置模板",
       "input": "DeletePrometheusTempRequest",
       "name": "删除模板实例",
-      "output": "DeletePrometheusTempResponse"
+      "output": "DeletePrometheusTempResponse",
+      "status": "online"
     },
     "DeletePrometheusTempSync": {
       "document": "解除模板同步，这将会删除目标中该模板所生产的配置，针对V2版本实例",
       "input": "DeletePrometheusTempSyncRequest",
       "name": "解除模板同步",
-      "output": "DeletePrometheusTempSyncResponse"
+      "output": "DeletePrometheusTempSyncResponse",
+      "status": "online"
     },
     "DeleteRecordingRules": {
       "document": "批量删除 Prometheus 预聚合规则",
       "input": "DeleteRecordingRulesRequest",
       "name": "删除预聚合规则",
-      "output": "DeleteRecordingRulesResponse"
+      "output": "DeleteRecordingRulesResponse",
+      "status": "online"
     },
     "DeleteSSOAccount": {
       "document": "Grafana可视化服务 删除授权用户",
       "input": "DeleteSSOAccountRequest",
       "name": "删除授权用户",
-      "output": "DeleteSSOAccountResponse"
+      "output": "DeleteSSOAccountResponse",
+      "status": "online"
     },
     "DeleteServiceDiscovery": {
       "document": "删除在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
       "input": "DeleteServiceDiscoveryRequest",
       "name": "删除服务发现",
-      "output": "DeleteServiceDiscoveryResponse"
+      "output": "DeleteServiceDiscoveryResponse",
+      "status": "online"
     },
     "DescribeAccidentEventList": {
       "document": "获取平台事件列表",
       "input": "DescribeAccidentEventListRequest",
       "name": "获取平台事件列表",
-      "output": "DescribeAccidentEventListResponse"
+      "output": "DescribeAccidentEventListResponse",
+      "status": "online"
     },
     "DescribeAlarmEvents": {
       "document": "查询告警事件列表",
       "input": "DescribeAlarmEventsRequest",
       "name": "查询告警事件列表",
-      "output": "DescribeAlarmEventsResponse"
+      "output": "DescribeAlarmEventsResponse",
+      "status": "online"
     },
     "DescribeAlarmHistories": {
       "document": "查询告警历史\n\n请注意，**如果使用子用户进行告警历史的查询，只能查询到被授权项目下的告警历史**，或不区分项目的产品的告警历史。如何对子账户授予项目的权限，请参考 [访问管理-项目与标签](https://cloud.tencent.com/document/product/598/32738)。",
       "input": "DescribeAlarmHistoriesRequest",
       "name": "查询告警历史",
-      "output": "DescribeAlarmHistoriesResponse"
+      "output": "DescribeAlarmHistoriesResponse",
+      "status": "online"
     },
     "DescribeAlarmMetrics": {
       "document": "查询告警指标列表",
       "input": "DescribeAlarmMetricsRequest",
       "name": "查询告警指标列表",
-      "output": "DescribeAlarmMetricsResponse"
+      "output": "DescribeAlarmMetricsResponse",
+      "status": "online"
     },
     "DescribeAlarmNotice": {
       "document": "查询单个通知模板的详情",
       "input": "DescribeAlarmNoticeRequest",
       "name": "查询单个通知模板的详情",
-      "output": "DescribeAlarmNoticeResponse"
+      "output": "DescribeAlarmNoticeResponse",
+      "status": "online"
     },
     "DescribeAlarmNoticeCallbacks": {
       "document": "云监控告警获取告警通知模板所有回调URL",
       "input": "DescribeAlarmNoticeCallbacksRequest",
       "name": "查询账号下所有回调URL列表",
-      "output": "DescribeAlarmNoticeCallbacksResponse"
+      "output": "DescribeAlarmNoticeCallbacksResponse",
+      "status": "online"
     },
     "DescribeAlarmNotices": {
       "document": "查询通知模板列表",
       "input": "DescribeAlarmNoticesRequest",
       "name": "查询通知模板列表",
-      "output": "DescribeAlarmNoticesResponse"
+      "output": "DescribeAlarmNoticesResponse",
+      "status": "online"
     },
     "DescribeAlarmPolicies": {
       "document": "查询告警策略列表",
       "input": "DescribeAlarmPoliciesRequest",
       "name": "查询告警策略列表（支持按实例等条件筛选）",
-      "output": "DescribeAlarmPoliciesResponse"
+      "output": "DescribeAlarmPoliciesResponse",
+      "status": "online"
     },
     "DescribeAlarmPolicy": {
       "document": "获取单个告警策略详情",
       "input": "DescribeAlarmPolicyRequest",
       "name": "获取单个告警策略详情",
-      "output": "DescribeAlarmPolicyResponse"
+      "output": "DescribeAlarmPolicyResponse",
+      "status": "online"
     },
     "DescribeAlertRules": {
       "document": "Prometheus 报警规则查询接口",
       "input": "DescribeAlertRulesRequest",
       "name": "报警规则查询",
-      "output": "DescribeAlertRulesResponse"
+      "output": "DescribeAlertRulesResponse",
+      "status": "online"
     },
     "DescribeAllNamespaces": {
       "document": "查询所有名字空间",
       "input": "DescribeAllNamespacesRequest",
       "name": "查询所有名字空间",
-      "output": "DescribeAllNamespacesResponse"
+      "output": "DescribeAllNamespacesResponse",
+      "status": "online"
     },
     "DescribeBaseMetrics": {
       "document": "获取基础指标属性",
       "input": "DescribeBaseMetricsRequest",
       "name": "获取基础指标属性",
-      "output": "DescribeBaseMetricsResponse"
+      "output": "DescribeBaseMetricsResponse",
+      "status": "online"
     },
     "DescribeBasicAlarmList": {
       "document": "获取基础告警列表",
       "input": "DescribeBasicAlarmListRequest",
       "name": "获取基础告警列表",
-      "output": "DescribeBasicAlarmListResponse"
+      "output": "DescribeBasicAlarmListResponse",
+      "status": "online"
     },
     "DescribeBindingPolicyObjectList": {
       "document": "获取已绑定对象列表",
       "input": "DescribeBindingPolicyObjectListRequest",
       "name": "获取已绑定对象列表",
-      "output": "DescribeBindingPolicyObjectListResponse"
+      "output": "DescribeBindingPolicyObjectListResponse",
+      "status": "online"
     },
     "DescribeConditionsTemplateList": {
       "document": "获取条件模板列表",
       "input": "DescribeConditionsTemplateListRequest",
       "name": "获取条件模板列表",
-      "output": "DescribeConditionsTemplateListResponse"
+      "output": "DescribeConditionsTemplateListResponse",
+      "status": "online"
     },
     "DescribeDNSConfig": {
       "document": "列出 Grafana DNS 配置",
       "input": "DescribeDNSConfigRequest",
       "name": "列出 Grafana DNS 配置",
-      "output": "DescribeDNSConfigResponse"
+      "output": "DescribeDNSConfigResponse",
+      "status": "online"
     },
     "DescribeExporterIntegrations": {
       "document": "查询 exporter 集成列表",
       "input": "DescribeExporterIntegrationsRequest",
       "name": "查询 exporter 集成列表",
-      "output": "DescribeExporterIntegrationsResponse"
+      "output": "DescribeExporterIntegrationsResponse",
+      "status": "online"
     },
     "DescribeGrafanaChannels": {
       "document": "列出 Grafana 所有告警通道",
       "input": "DescribeGrafanaChannelsRequest",
       "name": "列出 Grafana 所有告警通道",
-      "output": "DescribeGrafanaChannelsResponse"
+      "output": "DescribeGrafanaChannelsResponse",
+      "status": "online"
     },
     "DescribeGrafanaConfig": {
       "document": "列出 Grafana 的设置，即 grafana.ini 文件内容",
       "input": "DescribeGrafanaConfigRequest",
       "name": "列出 Grafana 的设置",
-      "output": "DescribeGrafanaConfigResponse"
+      "output": "DescribeGrafanaConfigResponse",
+      "status": "online"
     },
     "DescribeGrafanaEnvironments": {
       "document": "列出 Grafana 环境变量",
       "input": "DescribeGrafanaEnvironmentsRequest",
       "name": "列出 Grafana 环境变量",
-      "output": "DescribeGrafanaEnvironmentsResponse"
+      "output": "DescribeGrafanaEnvironmentsResponse",
+      "status": "online"
     },
     "DescribeGrafanaInstances": {
       "document": "列出用户所有的 Grafana 服务",
       "input": "DescribeGrafanaInstancesRequest",
       "name": "列出用户所有的 Grafana 服务",
-      "output": "DescribeGrafanaInstancesResponse"
+      "output": "DescribeGrafanaInstancesResponse",
+      "status": "online"
     },
     "DescribeGrafanaIntegrations": {
       "document": "列出 Grafana 已安装的集成",
       "input": "DescribeGrafanaIntegrationsRequest",
       "name": "列出 Grafana 已安装的集成",
-      "output": "DescribeGrafanaIntegrationsResponse"
+      "output": "DescribeGrafanaIntegrationsResponse",
+      "status": "online"
     },
     "DescribeGrafanaNotificationChannels": {
       "document": "列出 Grafana 告警通道",
       "input": "DescribeGrafanaNotificationChannelsRequest",
       "name": "列出 Grafana 告警通道",
-      "output": "DescribeGrafanaNotificationChannelsResponse"
+      "output": "DescribeGrafanaNotificationChannelsResponse",
+      "status": "online"
     },
     "DescribeGrafanaWhiteList": {
       "document": "列出 Grafana 白名单",
       "input": "DescribeGrafanaWhiteListRequest",
       "name": "列出 Grafana 白名单",
-      "output": "DescribeGrafanaWhiteListResponse"
+      "output": "DescribeGrafanaWhiteListResponse",
+      "status": "online"
     },
     "DescribeInstalledPlugins": {
       "document": "列出实例已安装的插件",
       "input": "DescribeInstalledPluginsRequest",
       "name": "列出实例已安装的插件",
-      "output": "DescribeInstalledPluginsResponse"
+      "output": "DescribeInstalledPluginsResponse",
+      "status": "online"
     },
     "DescribeMonitorTypes": {
       "document": "云监控支持多种类型的监控，此接口列出支持的所有类型",
       "input": "DescribeMonitorTypesRequest",
       "name": "查询监控类型",
-      "output": "DescribeMonitorTypesResponse"
+      "output": "DescribeMonitorTypesResponse",
+      "status": "online"
     },
     "DescribePluginOverviews": {
       "document": "列出可安装的所有 Grafana 插件",
       "input": "DescribePluginOverviewsRequest",
       "name": "列出所有 Grafana 插件",
-      "output": "DescribePluginOverviewsResponse"
+      "output": "DescribePluginOverviewsResponse",
+      "status": "online"
     },
     "DescribePolicyConditionList": {
       "document": "获取基础告警策略条件",
       "input": "DescribePolicyConditionListRequest",
       "name": "获取基础告警策略条件",
-      "output": "DescribePolicyConditionListResponse"
+      "output": "DescribePolicyConditionListResponse",
+      "status": "online"
     },
     "DescribePolicyGroupInfo": {
       "document": "获取基础策略组详情",
       "input": "DescribePolicyGroupInfoRequest",
       "name": "获取基础策略组详情",
-      "output": "DescribePolicyGroupInfoResponse"
+      "output": "DescribePolicyGroupInfoResponse",
+      "status": "online"
     },
     "DescribePolicyGroupList": {
       "document": "获取基础策略告警组列表",
       "input": "DescribePolicyGroupListRequest",
       "name": "获取基础策略告警组列表",
-      "output": "DescribePolicyGroupListResponse"
+      "output": "DescribePolicyGroupListResponse",
+      "status": "online"
     },
     "DescribeProductEventList": {
       "document": "分页获取产品事件的列表",
       "input": "DescribeProductEventListRequest",
       "name": "获取产品事件列表",
-      "output": "DescribeProductEventListResponse"
+      "output": "DescribeProductEventListResponse",
+      "status": "online"
     },
     "DescribeProductList": {
       "document": "查询云监控产品列表，支持云服务器CVM、云数据库、云消息队列、负载均衡、容器服务、专线等云产品。",
       "input": "DescribeProductListRequest",
       "name": "查询云监控产品列表",
-      "output": "DescribeProductListResponse"
+      "output": "DescribeProductListResponse",
+      "status": "online"
     },
     "DescribePrometheusAgentInstances": {
       "document": "获取关联目标集群的实例列表",
       "input": "DescribePrometheusAgentInstancesRequest",
       "name": "获取关联目标集群的实例列表",
-      "output": "DescribePrometheusAgentInstancesResponse"
+      "output": "DescribePrometheusAgentInstancesResponse",
+      "status": "online"
     },
     "DescribePrometheusAgents": {
       "document": "列出 Prometheus CVM Agent",
       "input": "DescribePrometheusAgentsRequest",
       "name": "列出 Prometheus CVM Agent",
-      "output": "DescribePrometheusAgentsResponse"
+      "output": "DescribePrometheusAgentsResponse",
+      "status": "online"
     },
     "DescribePrometheusAlertPolicy": {
       "document": "获取2.0实例告警策略列表",
       "input": "DescribePrometheusAlertPolicyRequest",
       "name": "获取2.0实例告警策略列表",
-      "output": "DescribePrometheusAlertPolicyResponse"
+      "output": "DescribePrometheusAlertPolicyResponse",
+      "status": "online"
+    },
+    "DescribePrometheusClusterAgents": {
+      "document": "获取TMP实例关联集群列表",
+      "input": "DescribePrometheusClusterAgentsRequest",
+      "name": "获取TMP实例关联集群列表",
+      "output": "DescribePrometheusClusterAgentsResponse",
+      "status": "online"
     },
     "DescribePrometheusConfig": {
       "document": "拉取Prometheus配置",
       "input": "DescribePrometheusConfigRequest",
       "name": "拉取Prometheus配置",
-      "output": "DescribePrometheusConfigResponse"
+      "output": "DescribePrometheusConfigResponse",
+      "status": "online"
+    },
+    "DescribePrometheusGlobalConfig": {
+      "document": "获得实例级别抓取配置",
+      "input": "DescribePrometheusGlobalConfigRequest",
+      "name": "获得实例级别抓取配置",
+      "output": "DescribePrometheusGlobalConfigResponse",
+      "status": "online"
+    },
+    "DescribePrometheusGlobalNotification": {
+      "document": "查询全局告警通知渠道",
+      "input": "DescribePrometheusGlobalNotificationRequest",
+      "name": "查询全局告警通知渠道",
+      "output": "DescribePrometheusGlobalNotificationResponse",
+      "status": "online"
     },
     "DescribePrometheusInstanceDetail": {
       "document": "获取TMP实例详情",
       "input": "DescribePrometheusInstanceDetailRequest",
       "name": "获取TMP实例详情",
-      "output": "DescribePrometheusInstanceDetailResponse"
+      "output": "DescribePrometheusInstanceDetailResponse",
+      "status": "online"
     },
     "DescribePrometheusInstanceInitStatus": {
       "document": "获取2.0实例初始化任务状态",
       "input": "DescribePrometheusInstanceInitStatusRequest",
       "name": "获取2.0实例初始化任务状态",
-      "output": "DescribePrometheusInstanceInitStatusResponse"
+      "output": "DescribePrometheusInstanceInitStatusResponse",
+      "status": "online"
     },
     "DescribePrometheusInstanceUsage": {
       "document": " 查询Prometheus按量实例用量",
       "input": "DescribePrometheusInstanceUsageRequest",
       "name": "查询Prometheus按量实例用量",
-      "output": "DescribePrometheusInstanceUsageResponse"
+      "output": "DescribePrometheusInstanceUsageResponse",
+      "status": "online"
     },
     "DescribePrometheusInstances": {
       "document": "本接口 (DescribePrometheusInstances) 用于查询一个或多个实例的详细信息。\n<ul>\n<li>可以根据实例ID、实例名称或者实例状态等信息来查询实例的详细信息</li>\n<li>如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的实例。</li>\n</ul>",
       "input": "DescribePrometheusInstancesRequest",
       "name": "查看 Prometheus 实例列表",
-      "output": "DescribePrometheusInstancesResponse"
+      "output": "DescribePrometheusInstancesResponse",
+      "status": "online"
     },
     "DescribePrometheusInstancesOverview": {
       "document": "获取与云监控融合实例列表",
       "input": "DescribePrometheusInstancesOverviewRequest",
       "name": "获取2.0实例列表",
-      "output": "DescribePrometheusInstancesOverviewResponse"
+      "output": "DescribePrometheusInstancesOverviewResponse",
+      "status": "online"
     },
     "DescribePrometheusRecordRuleYaml": {
       "document": "拉取Prometheus聚合规则yaml列表",
       "input": "DescribePrometheusRecordRuleYamlRequest",
       "name": "拉取Prometheus聚合规则yaml列表",
-      "output": "DescribePrometheusRecordRuleYamlResponse"
+      "output": "DescribePrometheusRecordRuleYamlResponse",
+      "status": "online"
     },
     "DescribePrometheusRecordRules": {
       "document": "获取聚合规则列表，包含关联集群内crd资源创建的record rule",
       "input": "DescribePrometheusRecordRulesRequest",
       "name": "获取聚合规则列表，包含关联集群内的资源",
-      "output": "DescribePrometheusRecordRulesResponse"
+      "output": "DescribePrometheusRecordRulesResponse",
+      "status": "online"
     },
     "DescribePrometheusScrapeJobs": {
       "document": "列出 Prometheus 抓取任务",
       "input": "DescribePrometheusScrapeJobsRequest",
       "name": "列出 Prometheus 抓取任务",
-      "output": "DescribePrometheusScrapeJobsResponse"
+      "output": "DescribePrometheusScrapeJobsResponse",
+      "status": "online"
+    },
+    "DescribePrometheusTargetsTMP": {
+      "document": "获取targets信息",
+      "input": "DescribePrometheusTargetsTMPRequest",
+      "name": "获取targets信息",
+      "output": "DescribePrometheusTargetsTMPResponse",
+      "status": "online"
     },
     "DescribePrometheusTemp": {
       "document": "拉取模板列表，默认模板将总是在最前面",
       "input": "DescribePrometheusTempRequest",
       "name": "拉取模板列表",
-      "output": "DescribePrometheusTempResponse"
+      "output": "DescribePrometheusTempResponse",
+      "status": "online"
     },
     "DescribePrometheusTempSync": {
       "document": "获取模板关联实例信息，针对V2版本实例",
       "input": "DescribePrometheusTempSyncRequest",
       "name": "获取模板关联实例信息",
-      "output": "DescribePrometheusTempSyncResponse"
+      "output": "DescribePrometheusTempSyncResponse",
+      "status": "online"
     },
     "DescribePrometheusZones": {
       "document": "列出 Prometheus 服务可用区",
       "input": "DescribePrometheusZonesRequest",
       "name": "列出 Prometheus 服务可用区",
-      "output": "DescribePrometheusZonesResponse"
+      "output": "DescribePrometheusZonesResponse",
+      "status": "online"
     },
     "DescribeRecordingRules": {
       "document": "根据条件查询 Prometheus 预聚合规则",
       "input": "DescribeRecordingRulesRequest",
       "name": "查询预聚合规则",
-      "output": "DescribeRecordingRulesResponse"
+      "output": "DescribeRecordingRulesResponse",
+      "status": "online"
     },
     "DescribeSSOAccount": {
       "document": "列出当前grafana实例的所有授权账号",
       "input": "DescribeSSOAccountRequest",
       "name": "列出授权账号",
-      "output": "DescribeSSOAccountResponse"
+      "output": "DescribeSSOAccountResponse",
+      "status": "online"
     },
     "DescribeServiceDiscovery": {
       "document": "列出在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
       "input": "DescribeServiceDiscoveryRequest",
       "name": "列出服务发现列表",
-      "output": "DescribeServiceDiscoveryResponse"
+      "output": "DescribeServiceDiscoveryResponse",
+      "status": "online"
     },
     "DescribeStatisticData": {
       "document": "根据维度条件查询监控数据",
       "input": "DescribeStatisticDataRequest",
       "name": "根据维度条件查询监控数据",
-      "output": "DescribeStatisticDataResponse"
+      "output": "DescribeStatisticDataResponse",
+      "status": "online"
     },
     "DestroyPrometheusInstance": {
       "document": "彻底删除 Prometheus 实例相关数据，给定的实例必须先被 Terminate",
       "input": "DestroyPrometheusInstanceRequest",
       "name": "强制释放 Prometheus 实例",
-      "output": "DestroyPrometheusInstanceResponse"
+      "output": "DestroyPrometheusInstanceResponse",
+      "status": "online"
     },
     "EnableGrafanaInternet": {
       "document": "设置 Grafana 公网访问",
       "input": "EnableGrafanaInternetRequest",
       "name": "设置 Grafana 公网访问",
-      "output": "EnableGrafanaInternetResponse"
+      "output": "EnableGrafanaInternetResponse",
+      "status": "online"
     },
     "EnableGrafanaSSO": {
       "document": "设置 Grafana 单点登录，使用腾讯云账号",
       "input": "EnableGrafanaSSORequest",
       "name": "设置 Grafana 单点登录",
-      "output": "EnableGrafanaSSOResponse"
+      "output": "EnableGrafanaSSOResponse",
+      "status": "online"
     },
     "EnableSSOCamCheck": {
       "document": "SSO单点登录时，设置是否cam鉴权",
       "input": "EnableSSOCamCheckRequest",
       "name": "设置SSO登录是否鉴权",
-      "output": "EnableSSOCamCheckResponse"
+      "output": "EnableSSOCamCheckResponse",
+      "status": "online"
     },
     "GetMonitorData": {
       "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n\n>?\n>- 2022年9月1日起，云监控开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
       "input": "GetMonitorDataRequest",
       "name": "拉取指标监控数据",
-      "output": "GetMonitorDataResponse"
+      "output": "GetMonitorDataResponse",
+      "status": "online"
     },
     "GetPrometheusAgentManagementCommand": {
       "document": "获取 Prometheus Agent 管理相关的命令行",
       "input": "GetPrometheusAgentManagementCommandRequest",
       "name": "获取 Prometheus Agent 管理相关的命令行",
-      "output": "GetPrometheusAgentManagementCommandResponse"
+      "output": "GetPrometheusAgentManagementCommandResponse",
+      "status": "online"
     },
     "InstallPlugins": {
       "document": "安装 Grafana Plugin",
       "input": "InstallPluginsRequest",
       "name": "安装 Grafana Plugin",
-      "output": "InstallPluginsResponse"
+      "output": "InstallPluginsResponse",
+      "status": "online"
     },
     "ModifyAlarmNotice": {
       "document": "云监控告警编辑告警通知模板",
       "input": "ModifyAlarmNoticeRequest",
       "name": "修改通知模板",
-      "output": "ModifyAlarmNoticeResponse"
+      "output": "ModifyAlarmNoticeResponse",
+      "status": "online"
     },
     "ModifyAlarmPolicyCondition": {
       "document": "修改告警策略触发条件",
       "input": "ModifyAlarmPolicyConditionRequest",
       "name": "修改告警策略触发条件",
-      "output": "ModifyAlarmPolicyConditionResponse"
+      "output": "ModifyAlarmPolicyConditionResponse",
+      "status": "online"
     },
     "ModifyAlarmPolicyInfo": {
       "document": "告警2.0编辑告警策略基本信息，包括策略名、备注",
       "input": "ModifyAlarmPolicyInfoRequest",
       "name": "修改告警策略基本信息",
-      "output": "ModifyAlarmPolicyInfoResponse"
+      "output": "ModifyAlarmPolicyInfoResponse",
+      "status": "online"
     },
     "ModifyAlarmPolicyNotice": {
       "document": "云监控告警修改告警策略绑定的告警通知模板",
       "input": "ModifyAlarmPolicyNoticeRequest",
       "name": "修改告警策略绑定的告警通知模板",
-      "output": "ModifyAlarmPolicyNoticeResponse"
+      "output": "ModifyAlarmPolicyNoticeResponse",
+      "status": "online"
     },
     "ModifyAlarmPolicyStatus": {
       "document": "启停告警策略",
       "input": "ModifyAlarmPolicyStatusRequest",
       "name": "启停告警策略",
-      "output": "ModifyAlarmPolicyStatusResponse"
+      "output": "ModifyAlarmPolicyStatusResponse",
+      "status": "online"
     },
     "ModifyAlarmPolicyTasks": {
       "document": "云监控告警修改告警策略的触发任务，TriggerTasks字段放触发任务列表，TriggerTasks传空数组时，代表解绑该策略的所有触发任务。",
       "input": "ModifyAlarmPolicyTasksRequest",
       "name": "修改告警策略的触发任务",
-      "output": "ModifyAlarmPolicyTasksResponse"
+      "output": "ModifyAlarmPolicyTasksResponse",
+      "status": "online"
     },
     "ModifyAlarmReceivers": {
       "document": "修改告警接收人",
       "input": "ModifyAlarmReceiversRequest",
       "name": "修改告警接收人",
-      "output": "ModifyAlarmReceiversResponse"
+      "output": "ModifyAlarmReceiversResponse",
+      "status": "online"
     },
     "ModifyGrafanaInstance": {
       "document": "修改 Grafana 实例属性",
       "input": "ModifyGrafanaInstanceRequest",
       "name": "修改 Grafana 实例属性",
-      "output": "ModifyGrafanaInstanceResponse"
+      "output": "ModifyGrafanaInstanceResponse",
+      "status": "online"
     },
     "ModifyPolicyGroup": {
       "document": "更新策略组",
       "input": "ModifyPolicyGroupRequest",
       "name": "更新策略组",
-      "output": "ModifyPolicyGroupResponse"
+      "output": "ModifyPolicyGroupResponse",
+      "status": "online"
+    },
+    "ModifyPrometheusAgentExternalLabels": {
+      "document": "修改被关联集群的external labels",
+      "input": "ModifyPrometheusAgentExternalLabelsRequest",
+      "name": "修改被关联集群的external labels",
+      "output": "ModifyPrometheusAgentExternalLabelsResponse",
+      "status": "online"
+    },
+    "ModifyPrometheusAlertPolicy": {
+      "document": "修改2.0实例告警策略",
+      "input": "ModifyPrometheusAlertPolicyRequest",
+      "name": "修改2.0实例告警策略",
+      "output": "ModifyPrometheusAlertPolicyResponse",
+      "status": "online"
+    },
+    "ModifyPrometheusConfig": {
+      "document": "修改prometheus配置，如果配置项不存在，则会新增",
+      "input": "ModifyPrometheusConfigRequest",
+      "name": "修改prometheus配置",
+      "output": "ModifyPrometheusConfigResponse",
+      "status": "online"
+    },
+    "ModifyPrometheusGlobalNotification": {
+      "document": "修改全局告警通知渠道",
+      "input": "ModifyPrometheusGlobalNotificationRequest",
+      "name": "修改全局告警通知渠道",
+      "output": "ModifyPrometheusGlobalNotificationResponse",
+      "status": "online"
     },
     "ModifyPrometheusInstanceAttributes": {
       "document": "修改 Prometheus 实例相关属性",
       "input": "ModifyPrometheusInstanceAttributesRequest",
       "name": "修改 Prometheus 实例相关属性",
-      "output": "ModifyPrometheusInstanceAttributesResponse"
+      "output": "ModifyPrometheusInstanceAttributesResponse",
+      "status": "online"
     },
     "ModifyPrometheusRecordRuleYaml": {
       "document": "通过yaml的方式修改Prometheus聚合实例",
       "input": "ModifyPrometheusRecordRuleYamlRequest",
       "name": "通过yaml的方式修改Prometheus聚合实例",
-      "output": "ModifyPrometheusRecordRuleYamlResponse"
+      "output": "ModifyPrometheusRecordRuleYamlResponse",
+      "status": "online"
     },
     "ModifyPrometheusTemp": {
       "document": "修改模板内容",
       "input": "ModifyPrometheusTempRequest",
       "name": "修改模板实例",
-      "output": "ModifyPrometheusTempResponse"
+      "output": "ModifyPrometheusTempResponse",
+      "status": "online"
     },
     "PutMonitorData": {
       "document": "默认接口请求频率限制：50次/秒。\n默认单租户指标上限：100个。\n单次上报最多 30 个指标/值对，请求返回错误时，请求中所有的指标/值均不会被保存。\n\n上报的时间戳为期望保存的时间戳，建议构造整数分钟时刻的时间戳。\n时间戳时间范围必须为当前时间到 300 秒前之间。\n同一 IP 指标对的数据需按分钟先后顺序上报。",
       "input": "PutMonitorDataRequest",
       "name": "自定义监控上报数据",
-      "output": "PutMonitorDataResponse"
+      "output": "PutMonitorDataResponse",
+      "status": "online"
     },
     "ResumeGrafanaInstance": {
       "document": "恢复 Grafana 实例",
       "input": "ResumeGrafanaInstanceRequest",
       "name": "恢复 Grafana 实例",
-      "output": "ResumeGrafanaInstanceResponse"
+      "output": "ResumeGrafanaInstanceResponse",
+      "status": "online"
     },
     "RunPrometheusInstance": {
       "document": "初始化TMP实例，开启集成中心时调用",
       "input": "RunPrometheusInstanceRequest",
       "name": "初始化TMP实例",
-      "output": "RunPrometheusInstanceResponse"
+      "output": "RunPrometheusInstanceResponse",
+      "status": "online"
     },
     "SendCustomAlarmMsg": {
       "document": "发送自定义消息告警",
       "input": "SendCustomAlarmMsgRequest",
       "name": "发送自定义消息告警",
-      "output": "SendCustomAlarmMsgResponse"
+      "output": "SendCustomAlarmMsgResponse",
+      "status": "online"
     },
     "SetDefaultAlarmPolicy": {
       "document": "设置一个策略为该告警策略类型、该项目的默认告警策略。\n同一项目下相同的告警策略类型，就会被设置为非默认。",
       "input": "SetDefaultAlarmPolicyRequest",
       "name": "设为默认告警策略",
-      "output": "SetDefaultAlarmPolicyResponse"
+      "output": "SetDefaultAlarmPolicyResponse",
+      "status": "online"
     },
     "SyncPrometheusTemp": {
       "document": "同步模板到实例或者集群，针对V2版本实例",
       "input": "SyncPrometheusTempRequest",
       "name": "同步模板",
-      "output": "SyncPrometheusTempResponse"
+      "output": "SyncPrometheusTempResponse",
+      "status": "online"
     },
     "TerminatePrometheusInstances": {
       "document": "销毁按量 Prometheus 实例",
       "input": "TerminatePrometheusInstancesRequest",
       "name": "销毁按量 Prometheus 实例",
-      "output": "TerminatePrometheusInstancesResponse"
+      "output": "TerminatePrometheusInstancesResponse",
+      "status": "online"
     },
     "UnBindingAllPolicyObject": {
       "document": "删除全部的关联对象",
       "input": "UnBindingAllPolicyObjectRequest",
       "name": "删除全部的关联对象",
-      "output": "UnBindingAllPolicyObjectResponse"
+      "output": "UnBindingAllPolicyObjectResponse",
+      "status": "online"
     },
     "UnBindingPolicyObject": {
       "document": "删除策略的关联对象",
       "input": "UnBindingPolicyObjectRequest",
       "name": "删除策略的关联对象",
-      "output": "UnBindingPolicyObjectResponse"
+      "output": "UnBindingPolicyObjectResponse",
+      "status": "online"
     },
     "UnbindPrometheusManagedGrafana": {
       "document": "解除实例绑定的 Grafana 可视化实例",
       "input": "UnbindPrometheusManagedGrafanaRequest",
       "name": "解除实例绑定的 Grafana 可视化实例",
-      "output": "UnbindPrometheusManagedGrafanaResponse"
+      "output": "UnbindPrometheusManagedGrafanaResponse",
+      "status": "online"
     },
     "UninstallGrafanaDashboard": {
       "document": "删除 Grafana Dashboard",
       "input": "UninstallGrafanaDashboardRequest",
       "name": "删除 Grafana Dashboard",
-      "output": "UninstallGrafanaDashboardResponse"
+      "output": "UninstallGrafanaDashboardResponse",
+      "status": "online"
     },
     "UninstallGrafanaPlugins": {
       "document": "删除已安装的插件",
       "input": "UninstallGrafanaPluginsRequest",
       "name": "删除已安装的插件",
-      "output": "UninstallGrafanaPluginsResponse"
+      "output": "UninstallGrafanaPluginsResponse",
+      "status": "online"
     },
     "UpdateAlertRule": {
       "document": "更新 Prometheus 的报警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
       "input": "UpdateAlertRuleRequest",
       "name": "更新报警规则",
-      "output": "UpdateAlertRuleResponse"
+      "output": "UpdateAlertRuleResponse",
+      "status": "online"
     },
     "UpdateAlertRuleState": {
       "document": "更新 Prometheus 报警策略状态",
       "input": "UpdateAlertRuleStateRequest",
       "name": "更新报警策略状态",
-      "output": "UpdateAlertRuleStateResponse"
+      "output": "UpdateAlertRuleStateResponse",
+      "status": "online"
     },
     "UpdateDNSConfig": {
       "document": "更新 Grafana 的 DNS 配置",
       "input": "UpdateDNSConfigRequest",
       "name": "更新 Grafana 的 DNS 配置",
-      "output": "UpdateDNSConfigResponse"
+      "output": "UpdateDNSConfigResponse",
+      "status": "online"
     },
     "UpdateExporterIntegration": {
       "document": "更新 exporter 集成配置",
       "input": "UpdateExporterIntegrationRequest",
       "name": "更新 exporter 集成配置",
-      "output": "UpdateExporterIntegrationResponse"
+      "output": "UpdateExporterIntegrationResponse",
+      "status": "online"
     },
     "UpdateGrafanaConfig": {
       "document": "更新 Grafana 配置",
       "input": "UpdateGrafanaConfigRequest",
       "name": "更新 Grafana 配置",
-      "output": "UpdateGrafanaConfigResponse"
+      "output": "UpdateGrafanaConfigResponse",
+      "status": "online"
     },
     "UpdateGrafanaEnvironments": {
       "document": "更新 Grafana 环境变量",
       "input": "UpdateGrafanaEnvironmentsRequest",
       "name": "更新 Grafana 环境变量",
-      "output": "UpdateGrafanaEnvironmentsResponse"
+      "output": "UpdateGrafanaEnvironmentsResponse",
+      "status": "online"
     },
     "UpdateGrafanaIntegration": {
       "document": "更新 Grafana 集成配置",
       "input": "UpdateGrafanaIntegrationRequest",
       "name": "更新 Grafana 集成配置",
-      "output": "UpdateGrafanaIntegrationResponse"
+      "output": "UpdateGrafanaIntegrationResponse",
+      "status": "online"
     },
     "UpdateGrafanaNotificationChannel": {
       "document": "更新 Grafana 告警通道",
       "input": "UpdateGrafanaNotificationChannelRequest",
       "name": "更新 Grafana 告警通道",
-      "output": "UpdateGrafanaNotificationChannelResponse"
+      "output": "UpdateGrafanaNotificationChannelResponse",
+      "status": "online"
     },
     "UpdateGrafanaWhiteList": {
       "document": "更新 Grafana 白名单",
       "input": "UpdateGrafanaWhiteListRequest",
       "name": "更新 Grafana 白名单",
-      "output": "UpdateGrafanaWhiteListResponse"
+      "output": "UpdateGrafanaWhiteListResponse",
+      "status": "online"
     },
     "UpdatePrometheusAgentStatus": {
       "document": "更新 Prometheus CVM Agent 状态",
       "input": "UpdatePrometheusAgentStatusRequest",
       "name": "更新 Prometheus CVM Agent 状态",
-      "output": "UpdatePrometheusAgentStatusResponse"
+      "output": "UpdatePrometheusAgentStatusResponse",
+      "status": "online"
     },
     "UpdatePrometheusScrapeJob": {
       "document": "更新 Prometheus 抓取任务",
       "input": "UpdatePrometheusScrapeJobRequest",
       "name": "更新 Prometheus 抓取任务",
-      "output": "UpdatePrometheusScrapeJobResponse"
+      "output": "UpdatePrometheusScrapeJobResponse",
+      "status": "online"
     },
     "UpdateRecordingRule": {
       "document": "更新 Prometheus 的预聚合规则",
       "input": "UpdateRecordingRuleRequest",
       "name": "更新预聚合规则",
-      "output": "UpdateRecordingRuleResponse"
+      "output": "UpdateRecordingRuleResponse",
+      "status": "online"
     },
     "UpdateSSOAccount": {
       "document": "更新已授权账号的备注、权限信息，会直接覆盖原有的信息，不传则不会更新。",
       "input": "UpdateSSOAccountRequest",
       "name": "更新账号信息",
-      "output": "UpdateSSOAccountResponse"
+      "output": "UpdateSSOAccountResponse",
+      "status": "online"
     },
     "UpdateServiceDiscovery": {
       "document": "在腾讯云容器服务下更新 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
       "input": "UpdateServiceDiscoveryRequest",
       "name": "更新服务发现",
-      "output": "UpdateServiceDiscoveryResponse"
+      "output": "UpdateServiceDiscoveryResponse",
+      "status": "online"
     },
     "UpgradeGrafanaDashboard": {
       "document": "升级 Grafana Dashboard",
       "input": "UpgradeGrafanaDashboardRequest",
       "name": "升级 Grafana Dashboard",
-      "output": "UpgradeGrafanaDashboardResponse"
+      "output": "UpgradeGrafanaDashboardResponse",
+      "status": "online"
     },
     "UpgradeGrafanaInstance": {
       "document": "升级 Grafana 实例",
       "input": "UpgradeGrafanaInstanceRequest",
       "name": "升级 Grafana 实例",
-      "output": "UpgradeGrafanaInstanceResponse"
+      "output": "UpgradeGrafanaInstanceResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -3587,6 +3826,190 @@
       ],
       "type": "object"
     },
+    "CreatePrometheusAlertPolicyRequest": {
+      "document": "CreatePrometheusAlertPolicy请求参数结构体",
+      "members": [
+        {
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "告警配置",
+          "example": "参考复杂类型",
+          "member": "PrometheusAlertPolicyItem",
+          "name": "AlertRule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusAlertPolicyResponse": {
+      "document": "CreatePrometheusAlertPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "告警id",
+          "example": "alert-xx",
+          "member": "string",
+          "name": "Id",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusClusterAgentRequest": {
+      "document": "CreatePrometheusClusterAgent请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "agent列表",
+          "example": "无",
+          "member": "PrometheusClusterAgentBasic",
+          "name": "Agents",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusClusterAgentResponse": {
+      "document": "CreatePrometheusClusterAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusConfigRequest": {
+      "document": "CreatePrometheusConfig请求参数结构体",
+      "members": [
+        {
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群id",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "ServiceMonitors配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "PodMonitors配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "prometheus原生Job配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusConfigResponse": {
+      "document": "CreatePrometheusConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusGlobalNotificationRequest": {
+      "document": "CreatePrometheusGlobalNotification请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "告警通知渠道",
+          "example": "无",
+          "member": "PrometheusNotificationItem",
+          "name": "Notification",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusGlobalNotificationResponse": {
+      "document": "CreatePrometheusGlobalNotification返回参数结构体",
+      "members": [
+        {
+          "document": "全局告警通知渠道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "global",
+          "member": "string",
+          "name": "Id",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusMultiTenantInstancePostPayModeRequest": {
       "document": "CreatePrometheusMultiTenantInstancePostPayMode请求参数结构体",
       "members": [
@@ -4326,6 +4749,148 @@
     },
     "DeletePolicyGroupResponse": {
       "document": "DeletePolicyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusAlertPolicyRequest": {
+      "document": "DeletePrometheusAlertPolicy请求参数结构体",
+      "members": [
+        {
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "告警策略id列表",
+          "example": "[\"alert-xx\"]",
+          "member": "string",
+          "name": "AlertIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "告警策略名称",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusAlertPolicyResponse": {
+      "document": "DeletePrometheusAlertPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusClusterAgentRequest": {
+      "document": "DeletePrometheusClusterAgent请求参数结构体",
+      "members": [
+        {
+          "document": "agent列表",
+          "example": "无",
+          "member": "PrometheusAgentInfo",
+          "name": "Agents",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "实例id",
+          "example": "prome-xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusClusterAgentResponse": {
+      "document": "DeletePrometheusClusterAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusConfigRequest": {
+      "document": "DeletePrometheusConfig请求参数结构体",
+      "members": [
+        {
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群id",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "要删除的ServiceMonitor名字列表",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "要删除的PodMonitor名字列表",
+          "example": "xxx",
+          "member": "string",
+          "name": "PodMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "要删除的RawJobs名字列表",
+          "example": "xxx",
+          "member": "string",
+          "name": "RawJobs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusConfigResponse": {
+      "document": "DeletePrometheusConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9556,6 +10121,64 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusClusterAgentsRequest": {
+      "document": "DescribePrometheusClusterAgents请求参数结构体",
+      "members": [
+        {
+          "document": "实例id",
+          "example": "prom-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用于分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "用于分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusClusterAgentsResponse": {
+      "document": "DescribePrometheusClusterAgents返回参数结构体",
+      "members": [
+        {
+          "document": "被关联集群信息",
+          "example": "无",
+          "member": "PrometheusAgentOverview",
+          "name": "Agents",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "被关联集群总量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusConfigRequest": {
       "document": "DescribePrometheusConfig请求参数结构体",
       "members": [
@@ -9589,6 +10212,106 @@
     "DescribePrometheusConfigResponse": {
       "document": "DescribePrometheusConfig返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusGlobalConfigRequest": {
+      "document": "DescribePrometheusGlobalConfig请求参数结构体",
+      "members": [
+        {
+          "document": "实例级别抓取配置",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "是否禁用统计",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableStatistics",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusGlobalConfigResponse": {
+      "document": "DescribePrometheusGlobalConfig返回参数结构体",
+      "members": [
+        {
+          "document": "配置内容",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Config",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ServiceMonitors列表以及对应targets信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "PodMonitors列表以及对应targets信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "RawJobs列表以及对应targets信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusGlobalNotificationRequest": {
+      "document": "DescribePrometheusGlobalNotification请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusGlobalNotificationResponse": {
+      "document": "DescribePrometheusGlobalNotification返回参数结构体",
+      "members": [
+        {
+          "document": "全局告警通知渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusNotificationItem",
+          "name": "Notification",
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10192,6 +10915,64 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTargetsTMPRequest": {
+      "document": "DescribePrometheusTargetsTMP请求参数结构体",
+      "members": [
+        {
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群id",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "过滤条件，当前支持\nName=state\nValue=up, down, unknown",
+          "example": "Name=xxx",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTargetsTMPResponse": {
+      "document": "DescribePrometheusTargetsTMP返回参数结构体",
+      "members": [
+        {
+          "document": "所有Job的targets信息",
+          "example": "{                 \"Targets\": [                     {                         \"LastScrape\": \"xx\",                         \"ScrapeDuration\": 0.0,                         \"Url\": \"xx\",                         \"Labels\": [                             {                                 \"Name\": \"xx\",                                 \"Value\": \"xx\"                             }                         ],                         \"State\": \"xx\",                         \"Error\": \"xx\"                     }                 ],                 \"Total\": 1,                 \"Up\": 1,                 \"JobName\": \"xx\"             }",
+          "member": "PrometheusJobTargets",
+          "name": "Jobs",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -13141,6 +13922,182 @@
       ],
       "type": "object"
     },
+    "ModifyPrometheusAgentExternalLabelsRequest": {
+      "document": "ModifyPrometheusAgentExternalLabels请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "新的external_labels",
+          "example": "Name=xx, Value=xxx",
+          "member": "Label",
+          "name": "ExternalLabels",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusAgentExternalLabelsResponse": {
+      "document": "ModifyPrometheusAgentExternalLabels返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusAlertPolicyRequest": {
+      "document": "ModifyPrometheusAlertPolicy请求参数结构体",
+      "members": [
+        {
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "告警配置",
+          "example": "无",
+          "member": "PrometheusAlertPolicyItem",
+          "name": "AlertRule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusAlertPolicyResponse": {
+      "document": "ModifyPrometheusAlertPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusConfigRequest": {
+      "document": "ModifyPrometheusConfig请求参数结构体",
+      "members": [
+        {
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群id",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "ServiceMonitors配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "PodMonitors配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "prometheus原生Job配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusConfigResponse": {
+      "document": "ModifyPrometheusConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusGlobalNotificationRequest": {
+      "document": "ModifyPrometheusGlobalNotification请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "告警通知渠道",
+          "example": "无",
+          "member": "PrometheusNotificationItem",
+          "name": "Notification",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusGlobalNotificationResponse": {
+      "document": "ModifyPrometheusGlobalNotification返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPrometheusInstanceAttributesRequest": {
       "document": "ModifyPrometheusInstanceAttributes请求参数结构体",
       "members": [
@@ -13830,6 +14787,89 @@
       ],
       "usage": "out"
     },
+    "PrometheusAgentInfo": {
+      "document": "托管Prometheus agent信息",
+      "members": [],
+      "usage": "in"
+    },
+    "PrometheusAgentOverview": {
+      "document": "托管prometheus agent概览",
+      "members": [
+        {
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群id",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "agent状态\nnormal = 正常\nabnormal = 异常",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群名称",
+          "example": "tke集群",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "额外labels\n本集群的所有指标都会带上这几个label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Name=cluster_name,Value=x",
+          "member": "Label",
+          "name": "ExternalLabels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群所在VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "记录关联等操作的失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FailedReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PrometheusAlertManagerConfig": {
       "document": "告警渠道使用自建alertmanager的配置",
       "members": [
@@ -14009,6 +15049,117 @@
         }
       ],
       "usage": "both"
+    },
+    "PrometheusClusterAgentBasic": {
+      "document": "与云监控融合托管prometheus实例，关联集群基础信息",
+      "members": [
+        {
+          "document": "集群ID",
+          "example": "xx-xxx",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启公网CLB",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableExternal",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群内部署组件的pod配置",
+          "example": "pod配置",
+          "member": "PrometheusClusterAgentPodConfig",
+          "name": "InClusterPodConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该集群采集的所有指标都会带上这些labels",
+          "example": "额外的labels",
+          "member": "Label",
+          "name": "ExternalLabels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否安装默认采集配置",
+          "example": "无",
+          "member": "bool",
+          "name": "NotInstallBasicScrape",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否采集指标，true代表drop所有指标，false代表采集默认指标",
+          "example": "无",
+          "member": "bool",
+          "name": "NotScrape",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PrometheusClusterAgentPodConfig": {
+      "document": "关联集群时在集群内部署组件的pod额外配置",
+      "members": [
+        {
+          "document": "是否使用HostNetWork",
+          "example": "true",
+          "member": "bool",
+          "name": "HostNet",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "指定pod运行节点",
+          "example": "无",
+          "member": "Label",
+          "name": "NodeSelector",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "容忍污点",
+          "example": "无",
+          "member": "Toleration",
+          "name": "Tolerations",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "PrometheusConfigItem": {
       "document": "prometheus配置",
@@ -14613,6 +15764,11 @@
           "value_allowed_null": false
         }
       ],
+      "usage": "out"
+    },
+    "PrometheusJobTargets": {
+      "document": "prometheus一个job的targets",
+      "members": [],
       "usage": "out"
     },
     "PrometheusNotificationItem": {
@@ -16152,6 +17308,39 @@
         }
       ],
       "type": "object"
+    },
+    "Toleration": {
+      "document": "kubernetes Taint",
+      "members": [
+        {
+          "document": "容忍应用到的 taint key",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "键与值的关系",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "要匹配的污点效果",
+          "example": "无",
+          "member": "string",
+          "name": "Effect",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "URLNotice": {
       "document": "云监控告警通知模板 - 回调通知详情",

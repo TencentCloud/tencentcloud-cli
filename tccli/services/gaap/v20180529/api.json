@@ -4,613 +4,715 @@
       "document": "添加源站(服务器)信息，支持IP或域名",
       "input": "AddRealServersRequest",
       "name": "添加源站",
-      "output": "AddRealServersResponse"
+      "output": "AddRealServersResponse",
+      "status": "online"
     },
     "BanAndRecoverProxy": {
       "document": "本接口（BanAndRecoverProxy）用于联通封禁解封GAAP跨境通道实例，支持按照客户UIN维度下发请求。被封禁的实例带宽上限将会被限制到0Mbps，无法正常处理客户端和源站之间的请求。",
       "input": "BanAndRecoverProxyRequest",
       "name": "封禁解封跨境通道实例",
-      "output": "BanAndRecoverProxyResponse"
+      "output": "BanAndRecoverProxyResponse",
+      "status": "online"
     },
     "BindListenerRealServers": {
       "document": "本接口（BindListenerRealServers）用于TCP/UDP监听器绑定解绑源站。\n注意：本接口会解绑之前绑定的源站，绑定本次调用所选择的源站。例如：原来绑定的源站为A，B，C，本次调用的选择绑定的源站为C，D，E，那么调用后所绑定的源站为C，D，E。",
       "input": "BindListenerRealServersRequest",
       "name": "监听器绑定源站",
-      "output": "BindListenerRealServersResponse"
+      "output": "BindListenerRealServersResponse",
+      "status": "online"
     },
     "BindRuleRealServers": {
       "document": "该接口用于7层监听器的转发规则绑定源站。注意：本接口会解绑之前绑定的源站，绑定本次调用所选择的源站。",
       "input": "BindRuleRealServersRequest",
       "name": "转发规则绑定源站",
-      "output": "BindRuleRealServersResponse"
+      "output": "BindRuleRealServersResponse",
+      "status": "online"
     },
     "CheckProxyCreate": {
       "document": "本接口(CheckProxyCreate)用于查询能否创建指定配置的加速通道。",
       "input": "CheckProxyCreateRequest",
       "name": "查询通道是否可以创建",
-      "output": "CheckProxyCreateResponse"
+      "output": "CheckProxyCreateResponse",
+      "status": "online"
     },
     "CloseProxies": {
       "document": "本接口（CloseProxies）用于关闭通道。通道关闭后，不再产生流量，但每天仍然收取通道基础配置费用。",
       "input": "CloseProxiesRequest",
       "name": "关闭通道",
-      "output": "CloseProxiesResponse"
+      "output": "CloseProxiesResponse",
+      "status": "online"
     },
     "CloseProxyGroup": {
       "document": "本接口（CloseProxyGroup）用于关闭通道组。通道组关闭后，不再产生流量，但每天仍然收取通道基础配置费用。",
       "input": "CloseProxyGroupRequest",
       "name": "关闭通道组",
-      "output": "CloseProxyGroupResponse"
+      "output": "CloseProxyGroupResponse",
+      "status": "online"
     },
     "CloseSecurityPolicy": {
       "document": "关闭安全策略",
       "input": "CloseSecurityPolicyRequest",
       "name": "关闭安全策略",
-      "output": "CloseSecurityPolicyResponse"
+      "output": "CloseSecurityPolicyResponse",
+      "status": "online"
     },
     "CreateCertificate": {
       "document": "本接口（CreateCertificate）用于创建Gaap相关证书和配置文件，包括基础认证配置文件，客户端CA证书，服务器SSL证书，Gaap SSL证书以及源站CA证书。",
       "input": "CreateCertificateRequest",
       "name": "创建证书",
-      "output": "CreateCertificateResponse"
+      "output": "CreateCertificateResponse",
+      "status": "online"
     },
     "CreateCustomHeader": {
       "document": "本接口（CreateCustomHeader）用于创建HTTP/HTTPS监听器的自定义header，客户端请求通过访问该监听器时，会将监听器中配置的header信息发送到源站。",
       "input": "CreateCustomHeaderRequest",
       "name": "创建自定义header",
-      "output": "CreateCustomHeaderResponse"
+      "output": "CreateCustomHeaderResponse",
+      "status": "online"
     },
     "CreateDomain": {
       "document": "本接口（CreateDomain）用于创建HTTP/HTTPS监听器的访问域名，客户端请求通过访问该域名来请求后端业务。\n该接口仅支持version3.0的通道。",
       "input": "CreateDomainRequest",
       "name": "创建HTTPS监听器的访问域名",
-      "output": "CreateDomainResponse"
+      "output": "CreateDomainResponse",
+      "status": "online"
     },
     "CreateDomainErrorPageInfo": {
       "document": "定制域名指定错误码的错误响应",
       "input": "CreateDomainErrorPageInfoRequest",
       "name": "定制域名指定错误码的错误响应",
-      "output": "CreateDomainErrorPageInfoResponse"
+      "output": "CreateDomainErrorPageInfoResponse",
+      "status": "online"
     },
     "CreateFirstLinkSession": {
       "document": "本接口（CreateFirstLinkSession）用于创建接入段加速会话，创建有可能成功，也可能失败，需要通过返回码来进行判断。",
       "input": "CreateFirstLinkSessionRequest",
       "name": "创建接入段加速会话",
-      "output": "CreateFirstLinkSessionResponse"
+      "output": "CreateFirstLinkSessionResponse",
+      "status": "online"
     },
     "CreateGlobalDomain": {
       "document": "用来创建统一域名",
       "input": "CreateGlobalDomainRequest",
       "name": "创建域名",
-      "output": "CreateGlobalDomainResponse"
+      "output": "CreateGlobalDomainResponse",
+      "status": "online"
     },
     "CreateGlobalDomainDns": {
       "document": "创建域名解析记录",
       "input": "CreateGlobalDomainDnsRequest",
       "name": "创建域名解析记录",
-      "output": "CreateGlobalDomainDnsResponse"
+      "output": "CreateGlobalDomainDnsResponse",
+      "status": "online"
     },
     "CreateHTTPListener": {
       "document": "该接口（CreateHTTPListener）用于在通道实例下创建HTTP协议类型的监听器。",
       "input": "CreateHTTPListenerRequest",
       "name": "创建HTTP监听器",
-      "output": "CreateHTTPListenerResponse"
+      "output": "CreateHTTPListenerResponse",
+      "status": "online"
     },
     "CreateHTTPSListener": {
       "document": "该接口（CreateHTTPSListener）用于在通道实例下创建HTTPS协议类型的监听器。",
       "input": "CreateHTTPSListenerRequest",
       "name": "创建HTTPS监听器",
-      "output": "CreateHTTPSListenerResponse"
+      "output": "CreateHTTPSListenerResponse",
+      "status": "online"
     },
     "CreateProxy": {
       "document": "本接口（CreateProxy）用于创建/复制一个指定配置的加速通道。当复制通道时，需要设置新通道的基本配置参数，并设置ClonedProxyId来指定被复制的通道。",
       "input": "CreateProxyRequest",
       "name": "创建通道",
-      "output": "CreateProxyResponse"
+      "output": "CreateProxyResponse",
+      "status": "online"
     },
     "CreateProxyGroup": {
       "document": "本接口（CreateProxyGroup）用于创建通道组。",
       "input": "CreateProxyGroupRequest",
       "name": "创建通道组",
-      "output": "CreateProxyGroupResponse"
+      "output": "CreateProxyGroupResponse",
+      "status": "online"
     },
     "CreateProxyGroupDomain": {
       "document": "本接口（CreateProxyGroupDomain）用于创建通道组域名，并开启域名解析。",
       "input": "CreateProxyGroupDomainRequest",
       "name": "开通通道组域名（废弃）",
-      "output": "CreateProxyGroupDomainResponse"
+      "output": "CreateProxyGroupDomainResponse",
+      "status": "online"
     },
     "CreateRule": {
       "document": "该接口（CreateRule）用于创建HTTP/HTTPS监听器转发规则。",
       "input": "CreateRuleRequest",
       "name": "创建监听器转发规则",
-      "output": "CreateRuleResponse"
+      "output": "CreateRuleResponse",
+      "status": "online"
     },
     "CreateSecurityPolicy": {
       "document": "创建安全策略",
       "input": "CreateSecurityPolicyRequest",
       "name": "创建安全策略",
-      "output": "CreateSecurityPolicyResponse"
+      "output": "CreateSecurityPolicyResponse",
+      "status": "online"
     },
     "CreateSecurityRules": {
       "document": "添加安全策略规则",
       "input": "CreateSecurityRulesRequest",
       "name": "添加安全策略规则",
-      "output": "CreateSecurityRulesResponse"
+      "output": "CreateSecurityRulesResponse",
+      "status": "online"
     },
     "CreateTCPListeners": {
       "document": "该接口（CreateTCPListeners）用于批量创建单通道或者通道组的TCP协议类型的监听器。",
       "input": "CreateTCPListenersRequest",
       "name": "创建TCP监听器",
-      "output": "CreateTCPListenersResponse"
+      "output": "CreateTCPListenersResponse",
+      "status": "online"
     },
     "CreateUDPListeners": {
       "document": "该接口（CreateUDPListeners）用于批量创建单通道或者通道组的UDP协议类型的监听器。",
       "input": "CreateUDPListenersRequest",
       "name": "创建UDP监听器",
-      "output": "CreateUDPListenersResponse"
+      "output": "CreateUDPListenersResponse",
+      "status": "online"
     },
     "DeleteCertificate": {
       "document": "本接口（DeleteCertificate）用于删除证书。",
       "input": "DeleteCertificateRequest",
       "name": "删除证书",
-      "output": "DeleteCertificateResponse"
+      "output": "DeleteCertificateResponse",
+      "status": "online"
     },
     "DeleteDomain": {
       "document": "本接口（DeleteDomain）仅适用于7层监听器，用于删除该监听器下对应域名及域名下的所有规则，所有已绑定源站的规则将自动解绑。",
       "input": "DeleteDomainRequest",
       "name": "根据域名删除转发规则",
-      "output": "DeleteDomainResponse"
+      "output": "DeleteDomainResponse",
+      "status": "online"
     },
     "DeleteDomainErrorPageInfo": {
       "document": "删除域名的定制错误",
       "input": "DeleteDomainErrorPageInfoRequest",
       "name": "删除域名的定制错误",
-      "output": "DeleteDomainErrorPageInfoResponse"
+      "output": "DeleteDomainErrorPageInfoResponse",
+      "status": "online"
     },
     "DeleteFirstLinkSession": {
       "document": "本接口（DeleteFirstLinkSession）用于删除接入段加速会话，删除加速会话后会停止加速。",
       "input": "DeleteFirstLinkSessionRequest",
       "name": "删除接入段加速会话",
-      "output": "DeleteFirstLinkSessionResponse"
+      "output": "DeleteFirstLinkSessionResponse",
+      "status": "online"
     },
     "DeleteGlobalDomain": {
       "document": "删除统一域名",
       "input": "DeleteGlobalDomainRequest",
       "name": "删除域名",
-      "output": "DeleteGlobalDomainResponse"
+      "output": "DeleteGlobalDomainResponse",
+      "status": "online"
     },
     "DeleteGlobalDomainDns": {
       "document": "删除域名的某条解析记录",
       "input": "DeleteGlobalDomainDnsRequest",
       "name": "删除域名解析记录",
-      "output": "DeleteGlobalDomainDnsResponse"
+      "output": "DeleteGlobalDomainDnsResponse",
+      "status": "online"
     },
     "DeleteListeners": {
       "document": "该接口（DeleteListeners）用于批量删除通道或通道组的监听器，包括4/7层监听器。",
       "input": "DeleteListenersRequest",
       "name": "删除通道监听器",
-      "output": "DeleteListenersResponse"
+      "output": "DeleteListenersResponse",
+      "status": "online"
     },
     "DeleteProxyGroup": {
       "document": "本接口（DeleteProxyGroup）用于删除通道组。",
       "input": "DeleteProxyGroupRequest",
       "name": "删除通道组",
-      "output": "DeleteProxyGroupResponse"
+      "output": "DeleteProxyGroupResponse",
+      "status": "online"
     },
     "DeleteRule": {
       "document": "该接口（DeleteRule）用于删除HTTP/HTTPS监听器的转发规则。",
       "input": "DeleteRuleRequest",
       "name": "删除7层监听器转发规则",
-      "output": "DeleteRuleResponse"
+      "output": "DeleteRuleResponse",
+      "status": "online"
     },
     "DeleteSecurityPolicy": {
       "document": "删除安全策略",
       "input": "DeleteSecurityPolicyRequest",
       "name": "删除安全策略",
-      "output": "DeleteSecurityPolicyResponse"
+      "output": "DeleteSecurityPolicyResponse",
+      "status": "online"
     },
     "DeleteSecurityRules": {
       "document": "删除安全策略规则",
       "input": "DeleteSecurityRulesRequest",
       "name": "删除安全策略规则",
-      "output": "DeleteSecurityRulesResponse"
+      "output": "DeleteSecurityRulesResponse",
+      "status": "online"
     },
     "DescribeAccessRegions": {
       "document": "本接口（DescribeAccessRegions）用于查询加速区域，即客户端接入区域。",
       "input": "DescribeAccessRegionsRequest",
       "name": "查询加速区域",
-      "output": "DescribeAccessRegionsResponse"
+      "output": "DescribeAccessRegionsResponse",
+      "status": "online"
     },
     "DescribeAccessRegionsByDestRegion": {
       "document": "本接口（DescribeAccessRegionsByDestRegion）根据源站区域查询可用的加速区域列表。",
       "input": "DescribeAccessRegionsByDestRegionRequest",
       "name": "根据源站区域查询可用加速区域",
-      "output": "DescribeAccessRegionsByDestRegionResponse"
+      "output": "DescribeAccessRegionsByDestRegionResponse",
+      "status": "online"
     },
     "DescribeBlackHeader": {
       "document": "本接口（DescribeBlackHeader）用于查询禁用的自定义header 名称",
       "input": "DescribeBlackHeaderRequest",
       "name": "查询禁用自定义header 名称列表",
-      "output": "DescribeBlackHeaderResponse"
+      "output": "DescribeBlackHeaderResponse",
+      "status": "online"
     },
     "DescribeCertificateDetail": {
       "document": "本接口（DescribeCertificateDetail）用于查询证书详情，包括证书ID，证书名字，证书类型，证书内容以及密钥等信息。",
       "input": "DescribeCertificateDetailRequest",
       "name": "查询证书详情",
-      "output": "DescribeCertificateDetailResponse"
+      "output": "DescribeCertificateDetailResponse",
+      "status": "online"
     },
     "DescribeCertificates": {
       "document": "本接口（DescribeCertificates）用来查询可以使用的证书列表。",
       "input": "DescribeCertificatesRequest",
       "name": "查询服务器证书列表",
-      "output": "DescribeCertificatesResponse"
+      "output": "DescribeCertificatesResponse",
+      "status": "online"
     },
     "DescribeCountryAreaMapping": {
       "document": "本接口（DescribeCountryAreaMapping）用于获取国家地区编码映射表。",
       "input": "DescribeCountryAreaMappingRequest",
       "name": "获取国家地区编码映射表",
-      "output": "DescribeCountryAreaMappingResponse"
+      "output": "DescribeCountryAreaMappingResponse",
+      "status": "online"
     },
     "DescribeCrossBorderProxies": {
       "document": "本接口（DescribeCrossBorderProxies）用于查询跨境通道实例列表。",
       "input": "DescribeCrossBorderProxiesRequest",
       "name": "查询跨境通道实例列表",
-      "output": "DescribeCrossBorderProxiesResponse"
+      "output": "DescribeCrossBorderProxiesResponse",
+      "status": "online"
     },
     "DescribeCustomHeader": {
       "document": "本接口（DescribeCustomHeader）用于自定义header列表",
       "input": "DescribeCustomHeaderRequest",
       "name": "查询自定义header列表",
-      "output": "DescribeCustomHeaderResponse"
+      "output": "DescribeCustomHeaderResponse",
+      "status": "online"
     },
     "DescribeDestRegions": {
       "document": "本接口（DescribeDestRegions）用于查询源站区域，即源站服务器所在区域。",
       "input": "DescribeDestRegionsRequest",
       "name": "查询源站区域",
-      "output": "DescribeDestRegionsResponse"
+      "output": "DescribeDestRegionsResponse",
+      "status": "online"
     },
     "DescribeDomainErrorPageInfo": {
       "document": "查询目前定制域名的错误响应",
       "input": "DescribeDomainErrorPageInfoRequest",
       "name": "查询目前定制域名的错误响应",
-      "output": "DescribeDomainErrorPageInfoResponse"
+      "output": "DescribeDomainErrorPageInfoResponse",
+      "status": "online"
     },
     "DescribeDomainErrorPageInfoByIds": {
       "document": "根据定制错误ID查询错误响应",
       "input": "DescribeDomainErrorPageInfoByIdsRequest",
       "name": "根据定制错误ID查询错误响应",
-      "output": "DescribeDomainErrorPageInfoByIdsResponse"
+      "output": "DescribeDomainErrorPageInfoByIdsResponse",
+      "status": "online"
     },
     "DescribeFirstLinkSession": {
       "document": "本接口（DescribeFirstLinkSession）用于查询接入段加速会话状态，包括会话状态，生效时长，加速套餐等信息。",
       "input": "DescribeFirstLinkSessionRequest",
       "name": "查询接入段加速会话信息",
-      "output": "DescribeFirstLinkSessionResponse"
+      "output": "DescribeFirstLinkSessionResponse",
+      "status": "online"
     },
     "DescribeGlobalDomainDns": {
       "document": "查询域名解析列表",
       "input": "DescribeGlobalDomainDnsRequest",
       "name": "查询域名解析列表",
-      "output": "DescribeGlobalDomainDnsResponse"
+      "output": "DescribeGlobalDomainDnsResponse",
+      "status": "online"
     },
     "DescribeGlobalDomains": {
       "document": "查询域名列表",
       "input": "DescribeGlobalDomainsRequest",
       "name": "查询域名列表",
-      "output": "DescribeGlobalDomainsResponse"
+      "output": "DescribeGlobalDomainsResponse",
+      "status": "online"
     },
     "DescribeGroupAndStatisticsProxy": {
       "document": "该接口为内部接口，用于查询可以获取统计数据的通道组和通道信息",
       "input": "DescribeGroupAndStatisticsProxyRequest",
       "name": "查询统计通道组和通道信息",
-      "output": "DescribeGroupAndStatisticsProxyResponse"
+      "output": "DescribeGroupAndStatisticsProxyResponse",
+      "status": "online"
     },
     "DescribeGroupDomainConfig": {
       "document": "本接口（DescribeGroupDomainConfig）用于获取通道组域名解析配置详情。",
       "input": "DescribeGroupDomainConfigRequest",
       "name": "获取通道组域名解析配置详情（废弃）",
-      "output": "DescribeGroupDomainConfigResponse"
+      "output": "DescribeGroupDomainConfigResponse",
+      "status": "online"
     },
     "DescribeHTTPListeners": {
       "document": "该接口（DescribeHTTPListeners）用来查询HTTP监听器信息。",
       "input": "DescribeHTTPListenersRequest",
       "name": "查询HTTP监听器信息",
-      "output": "DescribeHTTPListenersResponse"
+      "output": "DescribeHTTPListenersResponse",
+      "status": "online"
     },
     "DescribeHTTPSListeners": {
       "document": "本接口（DescribeHTTPSListeners）用来查询HTTPS监听器信息。",
       "input": "DescribeHTTPSListenersRequest",
       "name": "查询HTTPS监听器信息",
-      "output": "DescribeHTTPSListenersResponse"
+      "output": "DescribeHTTPSListenersResponse",
+      "status": "online"
     },
     "DescribeListenerRealServers": {
       "document": "该接口（DescribeListenerRealServers）用于查询TCP/UDP监听器源站列表，包括该监听器已经绑定的源站列表以及可以绑定的源站列表。",
       "input": "DescribeListenerRealServersRequest",
       "name": "查询监听器源站列表",
-      "output": "DescribeListenerRealServersResponse"
+      "output": "DescribeListenerRealServersResponse",
+      "status": "online"
     },
     "DescribeListenerStatistics": {
       "document": "该接口用于查询监听器统计数据，包括出入带宽，出入包量，并发数据。支持300秒, 3600秒和86400秒的细粒度，取值为细粒度范围内最大值。",
       "input": "DescribeListenerStatisticsRequest",
       "name": "查询监听器统计数据",
-      "output": "DescribeListenerStatisticsResponse"
+      "output": "DescribeListenerStatisticsResponse",
+      "status": "online"
     },
     "DescribeProxies": {
       "document": "本接口（DescribeProxies）用于查询通道实例列表。",
       "input": "DescribeProxiesRequest",
       "name": "查询通道实例列表",
-      "output": "DescribeProxiesResponse"
+      "output": "DescribeProxiesResponse",
+      "status": "online"
     },
     "DescribeProxiesStatus": {
       "document": "本接口（DescribeProxiesStatus）用于查询通道状态列表。",
       "input": "DescribeProxiesStatusRequest",
       "name": "查询通道状态列表",
-      "output": "DescribeProxiesStatusResponse"
+      "output": "DescribeProxiesStatusResponse",
+      "status": "online"
     },
     "DescribeProxyAndStatisticsListeners": {
       "document": "该接口为内部接口，用于查询可以获取统计数据的通道和监听器信息",
       "input": "DescribeProxyAndStatisticsListenersRequest",
       "name": "查询统计通道和监听器信息",
-      "output": "DescribeProxyAndStatisticsListenersResponse"
+      "output": "DescribeProxyAndStatisticsListenersResponse",
+      "status": "online"
     },
     "DescribeProxyDetail": {
       "document": "本接口（DescribeProxyDetail）用于查询通道详情。",
       "input": "DescribeProxyDetailRequest",
       "name": "查询通道详情",
-      "output": "DescribeProxyDetailResponse"
+      "output": "DescribeProxyDetailResponse",
+      "status": "online"
     },
     "DescribeProxyGroupDetails": {
       "document": "本接口（DescribeProxyGroupDetails）用于查询通道组详情。",
       "input": "DescribeProxyGroupDetailsRequest",
       "name": "查询通道组详情",
-      "output": "DescribeProxyGroupDetailsResponse"
+      "output": "DescribeProxyGroupDetailsResponse",
+      "status": "online"
     },
     "DescribeProxyGroupList": {
       "document": "本接口（DescribeProxyGroupList）用于拉取通道组列表及各通道组基本信息。",
       "input": "DescribeProxyGroupListRequest",
       "name": "拉取通道组列表",
-      "output": "DescribeProxyGroupListResponse"
+      "output": "DescribeProxyGroupListResponse",
+      "status": "online"
     },
     "DescribeProxyGroupStatistics": {
       "document": "该接口用于查询监听器统计数据，包括出入带宽，出入包量，并发数据。支持300, 3600和86400的细粒度，取值为细粒度范围内最大值。",
       "input": "DescribeProxyGroupStatisticsRequest",
       "name": "查询通道组统计数据",
-      "output": "DescribeProxyGroupStatisticsResponse"
+      "output": "DescribeProxyGroupStatisticsResponse",
+      "status": "online"
     },
     "DescribeProxyStatistics": {
       "document": "该接口用于查询监听器统计数据，包括出入带宽，出入包量，并发，丢包和时延数据。支持300, 3600和86400的细粒度，取值为细粒度范围内最大值。",
       "input": "DescribeProxyStatisticsRequest",
       "name": "查询通道统计数据",
-      "output": "DescribeProxyStatisticsResponse"
+      "output": "DescribeProxyStatisticsResponse",
+      "status": "online"
     },
     "DescribeRealServerStatistics": {
       "document": "该接口（DescribeRealServerStatistics）用于查询源站健康检查结果的统计数据。源站状态展示位为1：正常或者0：异常。查询的源站需要在监听器或者规则上进行了绑定，查询时需指定绑定的监听器或者规则ID。该接口支持1分钟细粒度的源站状态统计数据展示。",
       "input": "DescribeRealServerStatisticsRequest",
       "name": "查询已绑定源站健康检查统计数据(废弃)",
-      "output": "DescribeRealServerStatisticsResponse"
+      "output": "DescribeRealServerStatisticsResponse",
+      "status": "online"
     },
     "DescribeRealServers": {
       "document": "本接口（DescribeRealServers）用于查询源站信息，可以根据项目名查询所有的源站信息，此外支持指定IP或者域名的源站模糊查询。",
       "input": "DescribeRealServersRequest",
       "name": "查询源站信息",
-      "output": "DescribeRealServersResponse"
+      "output": "DescribeRealServersResponse",
+      "status": "online"
     },
     "DescribeRealServersStatus": {
       "document": "本接口（DescribeRealServersStatus）用于查询源站是否已被规则或者监听器绑定",
       "input": "DescribeRealServersStatusRequest",
       "name": "查询源站绑定状态",
-      "output": "DescribeRealServersStatusResponse"
+      "output": "DescribeRealServersStatusResponse",
+      "status": "online"
     },
     "DescribeRegionAndPrice": {
       "document": "该接口（DescribeRegionAndPrice）用于获取源站区域和带宽梯度价格",
       "input": "DescribeRegionAndPriceRequest",
       "name": "获取源站区域和带宽梯度价格",
-      "output": "DescribeRegionAndPriceResponse"
+      "output": "DescribeRegionAndPriceResponse",
+      "status": "online"
     },
     "DescribeResourcesByTag": {
       "document": "本接口（DescribeResourcesByTag）用于根据标签来查询对应的资源信息，包括通道，通道组和源站。",
       "input": "DescribeResourcesByTagRequest",
       "name": "根据标签拉取资源列表",
-      "output": "DescribeResourcesByTagResponse"
+      "output": "DescribeResourcesByTagResponse",
+      "status": "online"
     },
     "DescribeRuleRealServers": {
       "document": "本接口（DescribeRuleRealServers）用于查询转发规则相关的源站信息， 包括该规则可绑定的源站信息和已绑定的源站信息。",
       "input": "DescribeRuleRealServersRequest",
       "name": "查询转发规则相关源站信息",
-      "output": "DescribeRuleRealServersResponse"
+      "output": "DescribeRuleRealServersResponse",
+      "status": "online"
     },
     "DescribeRules": {
       "document": "本接口（DescribeRules）用于查询监听器下的所有规则信息，包括规则域名，路径以及该规则下所绑定的源站列表。当通道版本为3.0时，该接口会返回该域名对应的高级认证配置信息。",
       "input": "DescribeRulesRequest",
       "name": "查询转发规则信息",
-      "output": "DescribeRulesResponse"
+      "output": "DescribeRulesResponse",
+      "status": "online"
     },
     "DescribeRulesByRuleIds": {
       "document": "本接口（DescribeRulesByRuleIds）用于根据规则ID拉取规则信息列表。支持一个或者多个规则信息的拉取。一次最多支持10个规则信息的拉取。",
       "input": "DescribeRulesByRuleIdsRequest",
       "name": "根据规则ID拉取规则信息列表",
-      "output": "DescribeRulesByRuleIdsResponse"
+      "output": "DescribeRulesByRuleIdsResponse",
+      "status": "online"
     },
     "DescribeSecurityPolicyDetail": {
       "document": "获取安全策略详情",
       "input": "DescribeSecurityPolicyDetailRequest",
       "name": "获取安全策略详情",
-      "output": "DescribeSecurityPolicyDetailResponse"
+      "output": "DescribeSecurityPolicyDetailResponse",
+      "status": "online"
     },
     "DescribeSecurityRules": {
       "document": "本接口（DescribeSecurityRules）用于根据安全规则ID查询安全规则详情列表。支持一个或多个安全规则的查询。一次最多支持20个安全规则的查询。",
       "input": "DescribeSecurityRulesRequest",
       "name": "根据安全规则ID查询安全规则详情列表",
-      "output": "DescribeSecurityRulesResponse"
+      "output": "DescribeSecurityRulesResponse",
+      "status": "online"
     },
     "DescribeTCPListeners": {
       "document": "该接口（DescribeTCPListeners）用于查询单通道或者通道组下的TCP监听器信息。",
       "input": "DescribeTCPListenersRequest",
       "name": "查询TCP监听器列表",
-      "output": "DescribeTCPListenersResponse"
+      "output": "DescribeTCPListenersResponse",
+      "status": "online"
     },
     "DescribeUDPListeners": {
       "document": "该接口（DescribeUDPListeners）用于查询单通道或者通道组下的UDP监听器信息",
       "input": "DescribeUDPListenersRequest",
       "name": "查询UDP监听器列表",
-      "output": "DescribeUDPListenersResponse"
+      "output": "DescribeUDPListenersResponse",
+      "status": "online"
     },
     "DestroyProxies": {
       "document": "本接口（DestroyProxies）用于销毁。通道销毁后，不再产生任何费用。",
       "input": "DestroyProxiesRequest",
       "name": "销毁通道",
-      "output": "DestroyProxiesResponse"
+      "output": "DestroyProxiesResponse",
+      "status": "online"
     },
     "DisableGlobalDomain": {
       "document": "暂停域名解析",
       "input": "DisableGlobalDomainRequest",
       "name": "暂停域名解析",
-      "output": "DisableGlobalDomainResponse"
+      "output": "DisableGlobalDomainResponse",
+      "status": "online"
     },
     "EnableGlobalDomain": {
       "document": "开启域名解析",
       "input": "EnableGlobalDomainRequest",
       "name": "开启域名解析",
-      "output": "EnableGlobalDomainResponse"
+      "output": "EnableGlobalDomainResponse",
+      "status": "online"
     },
     "InquiryPriceCreateProxy": {
       "document": "本接口（InquiryPriceCreateProxy）用于创建加速通道询价。",
       "input": "InquiryPriceCreateProxyRequest",
       "name": "创建加速通道询价",
-      "output": "InquiryPriceCreateProxyResponse"
+      "output": "InquiryPriceCreateProxyResponse",
+      "status": "online"
     },
     "ModifyCertificate": {
       "document": "本接口（ModifyCertificate）用于修改监听器下的域名对应的证书。该接口仅适用于version3.0的通道。",
       "input": "ModifyCertificateRequest",
       "name": "修改域名对应的证书",
-      "output": "ModifyCertificateResponse"
+      "output": "ModifyCertificateResponse",
+      "status": "online"
     },
     "ModifyCertificateAttributes": {
       "document": "本接口（ModifyCertificateAttributes）用于修改证书，包括证书名字以及证书内容。",
       "input": "ModifyCertificateAttributesRequest",
       "name": "修改证书属性",
-      "output": "ModifyCertificateAttributesResponse"
+      "output": "ModifyCertificateAttributesResponse",
+      "status": "online"
     },
     "ModifyDomain": {
       "document": "本接口（ModifyDomain）用于监听器下的域名。当通道版本为3.0时，支持对该域名所对应的证书修改。",
       "input": "ModifyDomainRequest",
       "name": "更新监听器转发规则域名",
-      "output": "ModifyDomainResponse"
+      "output": "ModifyDomainResponse",
+      "status": "online"
     },
     "ModifyGlobalDomainAttribute": {
       "document": "修改域名属性",
       "input": "ModifyGlobalDomainAttributeRequest",
       "name": "修改域名属性",
-      "output": "ModifyGlobalDomainAttributeResponse"
+      "output": "ModifyGlobalDomainAttributeResponse",
+      "status": "online"
     },
     "ModifyGlobalDomainDns": {
       "document": "修改域名解析记录",
       "input": "ModifyGlobalDomainDnsRequest",
       "name": "修改域名解析记录",
-      "output": "ModifyGlobalDomainDnsResponse"
+      "output": "ModifyGlobalDomainDnsResponse",
+      "status": "online"
     },
     "ModifyGroupDomainConfig": {
       "document": "本接口（ModifyGroupDomainConfig）用于配置通道组就近接入域名。",
       "input": "ModifyGroupDomainConfigRequest",
       "name": "配置通道组就近接入域名（废弃）",
-      "output": "ModifyGroupDomainConfigResponse"
+      "output": "ModifyGroupDomainConfigResponse",
+      "status": "online"
     },
     "ModifyHTTPListenerAttribute": {
       "document": "该接口（ModifyHTTPListenerAttribute）用于修改通道的HTTP监听器配置信息，目前仅支持修改监听器的名称。\n注意：通道组通道暂时不支持HTTP/HTTPS监听器。",
       "input": "ModifyHTTPListenerAttributeRequest",
       "name": "修改HTTP监听器配置",
-      "output": "ModifyHTTPListenerAttributeResponse"
+      "output": "ModifyHTTPListenerAttributeResponse",
+      "status": "online"
     },
     "ModifyHTTPSListenerAttribute": {
       "document": "该接口（ModifyHTTPSListenerAttribute）用于修改HTTPS监听器配置，当前不支持通道组和v1版本通道。",
       "input": "ModifyHTTPSListenerAttributeRequest",
       "name": "修改HTTPS监听器配置",
-      "output": "ModifyHTTPSListenerAttributeResponse"
+      "output": "ModifyHTTPSListenerAttributeResponse",
+      "status": "online"
     },
     "ModifyProxiesAttribute": {
       "document": "本接口（ModifyProxiesAttribute）用于修改实例的属性（目前只支持修改通道的名称）。",
       "input": "ModifyProxiesAttributeRequest",
       "name": "修改通道的属性",
-      "output": "ModifyProxiesAttributeResponse"
+      "output": "ModifyProxiesAttributeResponse",
+      "status": "online"
     },
     "ModifyProxiesProject": {
       "document": "本接口（ModifyProxiesProject）用于修改通道所属项目。",
       "input": "ModifyProxiesProjectRequest",
       "name": "修改通道所属项目",
-      "output": "ModifyProxiesProjectResponse"
+      "output": "ModifyProxiesProjectResponse",
+      "status": "online"
     },
     "ModifyProxyConfiguration": {
       "document": "本接口（ModifyProxyConfiguration）用于修改通道的配置。根据当前业务的容量需求，扩容或缩容相关通道的配置。仅支持Scalarable为1的通道,Scalarable可通过接口DescribeProxies获取。",
       "input": "ModifyProxyConfigurationRequest",
       "name": "修改通道配置",
-      "output": "ModifyProxyConfigurationResponse"
+      "output": "ModifyProxyConfigurationResponse",
+      "status": "online"
     },
     "ModifyProxyGroupAttribute": {
       "document": "本接口（ModifyProxyGroupAttribute）用于修改通道组属性，目前仅支持修改通道组名称。",
       "input": "ModifyProxyGroupAttributeRequest",
       "name": "修改通道组属性",
-      "output": "ModifyProxyGroupAttributeResponse"
+      "output": "ModifyProxyGroupAttributeResponse",
+      "status": "online"
     },
     "ModifyRealServerName": {
       "document": "本接口（ModifyRealServerName）用于修改源站的名称",
       "input": "ModifyRealServerNameRequest",
       "name": "修改源站名称",
-      "output": "ModifyRealServerNameResponse"
+      "output": "ModifyRealServerNameResponse",
+      "status": "online"
     },
     "ModifyRuleAttribute": {
       "document": "本接口（ModifyRuleAttribute）用于修改转发规则的信息，包括健康检查的配置以及转发策略。",
       "input": "ModifyRuleAttributeRequest",
       "name": "修改转发规则信息",
-      "output": "ModifyRuleAttributeResponse"
+      "output": "ModifyRuleAttributeResponse",
+      "status": "online"
     },
     "ModifySecurityRule": {
       "document": "修改安全策略规则名",
       "input": "ModifySecurityRuleRequest",
       "name": "修改安全策略规则名",
-      "output": "ModifySecurityRuleResponse"
+      "output": "ModifySecurityRuleResponse",
+      "status": "online"
     },
     "ModifyTCPListenerAttribute": {
       "document": "本接口（ModifyTCPListenerAttribute）用于修改通道实例下TCP监听器配置，包括健康检查的配置，调度策略。",
       "input": "ModifyTCPListenerAttributeRequest",
       "name": "修改TCP监听器配置",
-      "output": "ModifyTCPListenerAttributeResponse"
+      "output": "ModifyTCPListenerAttributeResponse",
+      "status": "online"
     },
     "ModifyUDPListenerAttribute": {
       "document": "本接口（ModifyUDPListenerAttribute）用于修改通道实例下UDP监听器配置，包括监听器名称和调度策略的修改。",
       "input": "ModifyUDPListenerAttributeRequest",
       "name": "修改UDP监听器配置",
-      "output": "ModifyUDPListenerAttributeResponse"
+      "output": "ModifyUDPListenerAttributeResponse",
+      "status": "online"
     },
     "OpenProxies": {
       "document": "该接口（OpenProxies）用于开启一条或者多条通道。",
       "input": "OpenProxiesRequest",
       "name": "开启通道",
-      "output": "OpenProxiesResponse"
+      "output": "OpenProxiesResponse",
+      "status": "online"
     },
     "OpenProxyGroup": {
       "document": "该接口（OpenProxyGroup）用于开启一条通道组中的所有通道",
       "input": "OpenProxyGroupRequest",
       "name": "开启通道组",
-      "output": "OpenProxyGroupResponse"
+      "output": "OpenProxyGroupResponse",
+      "status": "online"
     },
     "OpenSecurityPolicy": {
       "document": "开启安全策略",
       "input": "OpenSecurityPolicyRequest",
       "name": "开启安全策略",
-      "output": "OpenSecurityPolicyResponse"
+      "output": "OpenSecurityPolicyResponse",
+      "status": "online"
     },
     "RemoveRealServers": {
       "document": "删除已添加的源站(服务器)IP或域名",
       "input": "RemoveRealServersRequest",
       "name": "删除源站",
-      "output": "RemoveRealServersResponse"
+      "output": "RemoveRealServersResponse",
+      "status": "online"
     },
     "SetAuthentication": {
       "document": "本接口（SetAuthentication）用于通道的高级认证配置，包括认证方式选择，以及各种认证方式对应的证书选择。仅支持Version3.0的通道。",
       "input": "SetAuthenticationRequest",
       "name": "认证高级配置",
-      "output": "SetAuthenticationResponse"
+      "output": "SetAuthenticationResponse",
+      "status": "online"
     }
   },
   "metadata": {

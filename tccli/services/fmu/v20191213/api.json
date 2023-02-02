@@ -4,61 +4,71 @@
       "document": "用户上传一张人脸图片，精准定位五官，实现美肤、亮肤、祛痘等美颜功能。",
       "input": "BeautifyPicRequest",
       "name": "人脸美颜",
-      "output": "BeautifyPicResponse"
+      "output": "BeautifyPicResponse",
+      "status": "online"
     },
     "BeautifyVideo": {
       "document": "视频美颜",
       "input": "BeautifyVideoRequest",
       "name": "视频美颜",
-      "output": "BeautifyVideoResponse"
+      "output": "BeautifyVideoResponse",
+      "status": "online"
     },
     "CancelBeautifyVideoJob": {
       "document": "撤销视频美颜任务请求",
       "input": "CancelBeautifyVideoJobRequest",
       "name": "撤销视频美颜任务",
-      "output": "CancelBeautifyVideoJobResponse"
+      "output": "CancelBeautifyVideoJobResponse",
+      "status": "online"
     },
     "CreateModel": {
       "document": "在使用LUT素材的modelid实现试唇色前，您需要先上传 LUT 格式的cube文件注册唇色ID。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。\n\n注：您也可以直接使用 [试唇色接口](https://cloud.tencent.com/document/product/1172/40706)，通过输入RGBA模型数值的方式指定唇色，更简单易用。\n",
       "input": "CreateModelRequest",
       "name": "上传唇色素材",
-      "output": "CreateModelResponse"
+      "output": "CreateModelResponse",
+      "status": "online"
     },
     "DeleteModel": {
       "document": "删除已注册的唇色素材。",
       "input": "DeleteModelRequest",
       "name": "删除唇色素材",
-      "output": "DeleteModelResponse"
+      "output": "DeleteModelResponse",
+      "status": "online"
     },
     "GetModelList": {
       "document": "查询已注册的唇色素材。",
       "input": "GetModelListRequest",
       "name": "查询唇色素材",
-      "output": "GetModelListResponse"
+      "output": "GetModelListResponse",
+      "status": "online"
     },
     "QueryBeautifyVideoJob": {
       "document": "查询视频美颜处理进度",
       "input": "QueryBeautifyVideoJobRequest",
       "name": "查询视频美颜任务",
-      "output": "QueryBeautifyVideoJobResponse"
+      "output": "QueryBeautifyVideoJobResponse",
+      "status": "online"
     },
     "StyleImage": {
       "document": "上传一张照片，输出滤镜处理后的图片。",
       "input": "StyleImageRequest",
       "name": "图片滤镜",
-      "output": "StyleImageResponse"
+      "output": "StyleImageResponse",
+      "status": "online"
     },
     "StyleImagePro": {
       "document": "上传一张照片，输出滤镜处理后的图片。",
       "input": "StyleImageProRequest",
       "name": "图片滤镜（高级版）",
-      "output": "StyleImageProResponse"
+      "output": "StyleImageProResponse",
+      "status": "online"
     },
     "TryLipstickPic": {
       "document": "对图片中的人脸嘴唇进行着色，最多支持同时对一张图中的3张人脸进行试唇色。\n\n您可以通过事先注册在腾讯云的唇色素材（LUT文件）改变图片中的人脸唇色，也可以输入RGBA模型数值。\n\n为了更好的效果，建议您使用事先注册在腾讯云的唇色素材（LUT文件）。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "TryLipstickPicRequest",
       "name": "试唇色",
-      "output": "TryLipstickPicResponse"
+      "output": "TryLipstickPicResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -74,6 +84,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "string",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -82,6 +93,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。 \nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -90,6 +102,7 @@
         {
           "default": "",
           "document": "美白程度，取值范围[0,100]。0不美白，100代表最高程度。默认值30。",
+          "example": "1",
           "member": "uint64",
           "name": "Whitening",
           "required": false,
@@ -98,6 +111,7 @@
         {
           "default": "",
           "document": "磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值10。",
+          "example": "1",
           "member": "uint64",
           "name": "Smoothing",
           "required": false,
@@ -106,6 +120,7 @@
         {
           "default": "",
           "document": "瘦脸程度，取值范围[0,100]。0不瘦脸，100代表最高程度。默认值70。",
+          "example": "1",
           "member": "uint64",
           "name": "FaceLifting",
           "required": false,
@@ -114,6 +129,7 @@
         {
           "default": "",
           "document": "大眼程度，取值范围[0,100]。0不大眼，100代表最高程度。默认值70。",
+          "example": "1",
           "member": "uint64",
           "name": "EyeEnlarging",
           "required": false,
@@ -122,6 +138,7 @@
         {
           "default": "",
           "document": "返回图像方式（base64 或 url ) ，二选一。url有效期为1天。",
+          "example": "string",
           "member": "string",
           "name": "RspImgType",
           "required": false,
@@ -134,18 +151,22 @@
       "document": "BeautifyPic返回参数结构体",
       "members": [
         {
-          "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64",
+          "document": "RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
           "member": "string",
           "name": "ResultImage",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。",
+          "document": "RspImgType 为 url 时，返回处理后的图片 url 数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
           "member": "string",
           "name": "ResultUrl",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

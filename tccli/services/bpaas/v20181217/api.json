@@ -4,13 +4,15 @@
       "document": "查看审批详情",
       "input": "GetBpaasApproveDetailRequest",
       "name": "查看审批详情",
-      "output": "GetBpaasApproveDetailResponse"
+      "output": "GetBpaasApproveDetailResponse",
+      "status": "online"
     },
     "OutApproveBpaasApplication": {
       "document": "外部审批申请单",
       "input": "OutApproveBpaasApplicationRequest",
       "name": "外部审批申请单",
-      "output": "OutApproveBpaasApplicationResponse"
+      "output": "OutApproveBpaasApplicationResponse",
+      "status": "online"
     }
   },
   "metadata": {

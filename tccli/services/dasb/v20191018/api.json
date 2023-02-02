@@ -4,145 +4,169 @@
       "document": "添加资产组成员",
       "input": "AddDeviceGroupMembersRequest",
       "name": "添加资产组成员",
-      "output": "AddDeviceGroupMembersResponse"
+      "output": "AddDeviceGroupMembersResponse",
+      "status": "online"
     },
     "AddUserGroupMembers": {
       "document": "添加用户组成员",
       "input": "AddUserGroupMembersRequest",
       "name": "添加用户组成员",
-      "output": "AddUserGroupMembersResponse"
+      "output": "AddUserGroupMembersResponse",
+      "status": "online"
     },
     "BindDeviceResource": {
       "document": "修改资产绑定的堡垒机服务",
       "input": "BindDeviceResourceRequest",
       "name": "修改资产绑定的堡垒机服务",
-      "output": "BindDeviceResourceResponse"
+      "output": "BindDeviceResourceResponse",
+      "status": "online"
     },
     "CreateAcl": {
       "document": "新建访问权限",
       "input": "CreateAclRequest",
       "name": "新建访问权限",
-      "output": "CreateAclResponse"
+      "output": "CreateAclResponse",
+      "status": "online"
     },
     "CreateDeviceGroup": {
       "document": "新建资产组",
       "input": "CreateDeviceGroupRequest",
       "name": "新建资产组",
-      "output": "CreateDeviceGroupResponse"
+      "output": "CreateDeviceGroupResponse",
+      "status": "online"
     },
     "CreateUser": {
       "document": "新建用户",
       "input": "CreateUserRequest",
       "name": "新建用户",
-      "output": "CreateUserResponse"
+      "output": "CreateUserResponse",
+      "status": "online"
     },
     "CreateUserGroup": {
       "document": "新建用户组",
       "input": "CreateUserGroupRequest",
       "name": "新建用户组",
-      "output": "CreateUserGroupResponse"
+      "output": "CreateUserGroupResponse",
+      "status": "online"
     },
     "DeleteAcls": {
       "document": "删除访问权限",
       "input": "DeleteAclsRequest",
       "name": "删除访问权限",
-      "output": "DeleteAclsResponse"
+      "output": "DeleteAclsResponse",
+      "status": "online"
     },
     "DeleteDeviceGroupMembers": {
       "document": "删除资产组成员",
       "input": "DeleteDeviceGroupMembersRequest",
       "name": "删除资产组成员",
-      "output": "DeleteDeviceGroupMembersResponse"
+      "output": "DeleteDeviceGroupMembersResponse",
+      "status": "online"
     },
     "DeleteDeviceGroups": {
       "document": "删除资产组",
       "input": "DeleteDeviceGroupsRequest",
       "name": "删除资产组",
-      "output": "DeleteDeviceGroupsResponse"
+      "output": "DeleteDeviceGroupsResponse",
+      "status": "online"
     },
     "DeleteUserGroupMembers": {
       "document": "删除用户组成员",
       "input": "DeleteUserGroupMembersRequest",
       "name": "删除用户组成员",
-      "output": "DeleteUserGroupMembersResponse"
+      "output": "DeleteUserGroupMembersResponse",
+      "status": "online"
     },
     "DeleteUserGroups": {
       "document": "删除用户组",
       "input": "DeleteUserGroupsRequest",
       "name": "删除用户组",
-      "output": "DeleteUserGroupsResponse"
+      "output": "DeleteUserGroupsResponse",
+      "status": "online"
     },
     "DeleteUsers": {
       "document": "删除用户",
       "input": "DeleteUsersRequest",
       "name": "删除用户",
-      "output": "DeleteUsersResponse"
+      "output": "DeleteUsersResponse",
+      "status": "online"
     },
     "DescribeAcls": {
       "document": "查询访问权限列表",
       "input": "DescribeAclsRequest",
       "name": "查询访问权限列表",
-      "output": "DescribeAclsResponse"
+      "output": "DescribeAclsResponse",
+      "status": "online"
     },
     "DescribeDasbImageIds": {
       "document": "获取镜像列表",
       "input": "DescribeDasbImageIdsRequest",
       "name": "数盾-DASB-获取镜像列表",
-      "output": "DescribeDasbImageIdsResponse"
+      "output": "DescribeDasbImageIdsResponse",
+      "status": "online"
     },
     "DescribeDeviceGroupMembers": {
       "document": "查询资产组成员列表",
       "input": "DescribeDeviceGroupMembersRequest",
       "name": "查询资产组成员列表",
-      "output": "DescribeDeviceGroupMembersResponse"
+      "output": "DescribeDeviceGroupMembersResponse",
+      "status": "online"
     },
     "DescribeDeviceGroups": {
       "document": "查询资产组列表",
       "input": "DescribeDeviceGroupsRequest",
       "name": "查询资产组列表",
-      "output": "DescribeDeviceGroupsResponse"
+      "output": "DescribeDeviceGroupsResponse",
+      "status": "online"
     },
     "DescribeDevices": {
       "document": "查询资产列表",
       "input": "DescribeDevicesRequest",
       "name": "查询资产列表",
-      "output": "DescribeDevicesResponse"
+      "output": "DescribeDevicesResponse",
+      "status": "online"
     },
     "DescribeResources": {
       "document": "查询用户购买的堡垒机服务信息，包括资源ID、授权点数、VPC、过期时间等。",
       "input": "DescribeResourcesRequest",
       "name": "查询堡垒机服务信息",
-      "output": "DescribeResourcesResponse"
+      "output": "DescribeResourcesResponse",
+      "status": "online"
     },
     "DescribeUserGroupMembers": {
       "document": "查询用户组成员列表",
       "input": "DescribeUserGroupMembersRequest",
       "name": "查询用户组成员列表",
-      "output": "DescribeUserGroupMembersResponse"
+      "output": "DescribeUserGroupMembersResponse",
+      "status": "online"
     },
     "DescribeUserGroups": {
       "document": "查询用户组列表",
       "input": "DescribeUserGroupsRequest",
       "name": "查询用户组列表",
-      "output": "DescribeUserGroupsResponse"
+      "output": "DescribeUserGroupsResponse",
+      "status": "online"
     },
     "DescribeUsers": {
       "document": "查询用户列表",
       "input": "DescribeUsersRequest",
       "name": "查询用户列表",
-      "output": "DescribeUsersResponse"
+      "output": "DescribeUsersResponse",
+      "status": "online"
     },
     "ModifyAcl": {
       "document": "修改访问权限",
       "input": "ModifyAclRequest",
       "name": "修改访问权限",
-      "output": "ModifyAclResponse"
+      "output": "ModifyAclResponse",
+      "status": "online"
     },
     "ModifyUser": {
       "document": "修改用户信息",
       "input": "ModifyUserRequest",
       "name": "修改用户信息",
-      "output": "ModifyUserResponse"
+      "output": "ModifyUserResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,223 +4,260 @@
       "document": "创建索引",
       "input": "CreateIndexRequest",
       "name": "创建索引",
-      "output": "CreateIndexResponse"
+      "output": "CreateIndexResponse",
+      "status": "online"
     },
     "CreateInstance": {
       "document": "创建指定规格的ES集群实例",
       "input": "CreateInstanceRequest",
       "name": "创建ES集群实例",
-      "output": "CreateInstanceResponse"
+      "output": "CreateInstanceResponse",
+      "status": "online"
     },
     "CreateLogstashInstance": {
       "document": "用于创建Logstash实例",
       "input": "CreateLogstashInstanceRequest",
       "name": "创建Logstash实例",
-      "output": "CreateLogstashInstanceResponse"
+      "output": "CreateLogstashInstanceResponse",
+      "status": "online"
     },
     "DeleteIndex": {
       "document": "删除索引",
       "input": "DeleteIndexRequest",
       "name": "删除索引",
-      "output": "DeleteIndexResponse"
+      "output": "DeleteIndexResponse",
+      "status": "online"
     },
     "DeleteInstance": {
       "document": "销毁集群实例 ",
       "input": "DeleteInstanceRequest",
       "name": "销毁ES集群实例",
-      "output": "DeleteInstanceResponse"
+      "output": "DeleteInstanceResponse",
+      "status": "online"
     },
     "DeleteLogstashInstance": {
       "document": "用于删除Logstash实例",
       "input": "DeleteLogstashInstanceRequest",
       "name": "删除Logstash实例",
-      "output": "DeleteLogstashInstanceResponse"
+      "output": "DeleteLogstashInstanceResponse",
+      "status": "online"
     },
     "DeleteLogstashPipelines": {
       "document": "用于批量删除Logstash管道",
       "input": "DeleteLogstashPipelinesRequest",
       "name": "删除Logstash管道",
-      "output": "DeleteLogstashPipelinesResponse"
+      "output": "DeleteLogstashPipelinesResponse",
+      "status": "online"
     },
     "DescribeIndexList": {
       "document": "获取索引列表",
       "input": "DescribeIndexListRequest",
       "name": "获取索引列表",
-      "output": "DescribeIndexListResponse"
+      "output": "DescribeIndexListResponse",
+      "status": "online"
     },
     "DescribeIndexMeta": {
       "document": "获取索引元数据",
       "input": "DescribeIndexMetaRequest",
       "name": "获取索引元数据",
-      "output": "DescribeIndexMetaResponse"
+      "output": "DescribeIndexMetaResponse",
+      "status": "online"
     },
     "DescribeInstanceLogs": {
       "document": "查询用户该地域下符合条件的ES集群的日志",
       "input": "DescribeInstanceLogsRequest",
       "name": "查询ES集群日志",
-      "output": "DescribeInstanceLogsResponse"
+      "output": "DescribeInstanceLogsResponse",
+      "status": "online"
     },
     "DescribeInstanceOperations": {
       "document": "查询实例指定条件下的操作记录",
       "input": "DescribeInstanceOperationsRequest",
       "name": "查询实例操作记录",
-      "output": "DescribeInstanceOperationsResponse"
+      "output": "DescribeInstanceOperationsResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "查询用户该地域下符合条件的所有实例",
       "input": "DescribeInstancesRequest",
       "name": "查询ES集群实例",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeLogstashInstanceLogs": {
       "document": "查询用户该地域下符合条件的Logstash实例的日志",
       "input": "DescribeLogstashInstanceLogsRequest",
       "name": "查询Logstash实例日志",
-      "output": "DescribeLogstashInstanceLogsResponse"
+      "output": "DescribeLogstashInstanceLogsResponse",
+      "status": "online"
     },
     "DescribeLogstashInstanceOperations": {
       "document": "查询实例指定条件下的操作记录",
       "input": "DescribeLogstashInstanceOperationsRequest",
       "name": "查询Logstash实例操作记录",
-      "output": "DescribeLogstashInstanceOperationsResponse"
+      "output": "DescribeLogstashInstanceOperationsResponse",
+      "status": "online"
     },
     "DescribeLogstashInstances": {
       "document": "查询用户该地域下符合条件的所有Logstash实例",
       "input": "DescribeLogstashInstancesRequest",
       "name": "获取Logstash实例列表",
-      "output": "DescribeLogstashInstancesResponse"
+      "output": "DescribeLogstashInstancesResponse",
+      "status": "online"
     },
     "DescribeLogstashPipelines": {
       "document": "用于获取Logstash实例管道列表",
       "input": "DescribeLogstashPipelinesRequest",
       "name": "获取Logstash实例管道列表",
-      "output": "DescribeLogstashPipelinesResponse"
+      "output": "DescribeLogstashPipelinesResponse",
+      "status": "online"
     },
     "DescribeViews": {
       "document": "查询集群各视图数据，包括集群维度、节点维度、Kibana维度",
       "input": "DescribeViewsRequest",
       "name": "查询集群视图",
-      "output": "DescribeViewsResponse"
+      "output": "DescribeViewsResponse",
+      "status": "online"
     },
     "DiagnoseInstance": {
       "document": "智能运维诊断集群",
       "input": "DiagnoseInstanceRequest",
       "name": "智能运维诊断集群",
-      "output": "DiagnoseInstanceResponse"
+      "output": "DiagnoseInstanceResponse",
+      "status": "online"
     },
     "GetRequestTargetNodeTypes": {
       "document": "获取接收客户端请求的节点类型",
       "input": "GetRequestTargetNodeTypesRequest",
       "name": "获取接收客户端请求的节点类型",
-      "output": "GetRequestTargetNodeTypesResponse"
+      "output": "GetRequestTargetNodeTypesResponse",
+      "status": "online"
     },
     "RestartInstance": {
       "document": "重启ES集群实例(用于系统版本更新等操作) ",
       "input": "RestartInstanceRequest",
       "name": "重启ES集群实例",
-      "output": "RestartInstanceResponse"
+      "output": "RestartInstanceResponse",
+      "status": "online"
     },
     "RestartKibana": {
       "document": "重启Kibana ",
       "input": "RestartKibanaRequest",
       "name": "重启Kibana",
-      "output": "RestartKibanaResponse"
+      "output": "RestartKibanaResponse",
+      "status": "online"
     },
     "RestartLogstashInstance": {
       "document": "用于重启Logstash实例",
       "input": "RestartLogstashInstanceRequest",
       "name": "重启Logstash实例",
-      "output": "RestartLogstashInstanceResponse"
+      "output": "RestartLogstashInstanceResponse",
+      "status": "online"
     },
     "RestartNodes": {
       "document": "用于重启集群节点",
       "input": "RestartNodesRequest",
       "name": "重启集群节点",
-      "output": "RestartNodesResponse"
+      "output": "RestartNodesResponse",
+      "status": "online"
     },
     "SaveAndDeployLogstashPipeline": {
       "document": "用于下发并且部署管道",
       "input": "SaveAndDeployLogstashPipelineRequest",
       "name": "保存并部署管道",
-      "output": "SaveAndDeployLogstashPipelineResponse"
+      "output": "SaveAndDeployLogstashPipelineResponse",
+      "status": "online"
     },
     "StartLogstashPipelines": {
       "document": "用于启动Logstash管道",
       "input": "StartLogstashPipelinesRequest",
       "name": "启动Logstash管道",
-      "output": "StartLogstashPipelinesResponse"
+      "output": "StartLogstashPipelinesResponse",
+      "status": "online"
     },
     "StopLogstashPipelines": {
       "document": "用于批量停止Logstash管道",
       "input": "StopLogstashPipelinesRequest",
       "name": "停止Logstash管道",
-      "output": "StopLogstashPipelinesResponse"
+      "output": "StopLogstashPipelinesResponse",
+      "status": "online"
     },
     "UpdateDiagnoseSettings": {
       "document": "更新智能运维配置",
       "input": "UpdateDiagnoseSettingsRequest",
       "name": "更新智能运维配置",
-      "output": "UpdateDiagnoseSettingsResponse"
+      "output": "UpdateDiagnoseSettingsResponse",
+      "status": "online"
     },
     "UpdateDictionaries": {
       "document": "更新ES集群词典",
       "input": "UpdateDictionariesRequest",
       "name": "更新ES集群词典",
-      "output": "UpdateDictionariesResponse"
+      "output": "UpdateDictionariesResponse",
+      "status": "online"
     },
     "UpdateIndex": {
       "document": "更新索引",
       "input": "UpdateIndexRequest",
       "name": "更新索引",
-      "output": "UpdateIndexResponse"
+      "output": "UpdateIndexResponse",
+      "status": "online"
     },
     "UpdateInstance": {
       "document": "对集群进行节点规格变更，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：\n- InstanceName：修改实例名称(仅用于标识实例)\n- NodeInfoList: 修改节点配置（节点横向扩缩容，纵向扩缩容，增加主节点，增加冷节点等）\n- EsConfig：修改集群配置\n- Password：修改默认用户elastic的密码\n- EsAcl：修改访问控制列表\n- CosBackUp: 设置集群COS自动备份信息\n以上参数组合只能传递一种，多传或少传均会导致请求失败",
       "input": "UpdateInstanceRequest",
       "name": "更新ES集群实例",
-      "output": "UpdateInstanceResponse"
+      "output": "UpdateInstanceResponse",
+      "status": "online"
     },
     "UpdateJdk": {
       "document": "更新实例Jdk配置",
       "input": "UpdateJdkRequest",
       "name": "更新实例Jdk配置",
-      "output": "UpdateJdkResponse"
+      "output": "UpdateJdkResponse",
+      "status": "online"
     },
     "UpdateLogstashInstance": {
       "document": "对集群进行节点规格变更，修改实例名称，修改配置，等操作。参数中InstanceId为必传参数，参数传递组合及含义如下：\n- InstanceName：修改实例名称(仅用于标识实例)\n- NodeNum: 修改实例节点数量（节点横向扩缩容，纵向扩缩容等）\n- YMLConfig: 修改实例YML配置\n- BindedES：修改绑定的ES集群配置\n以上参数组合只能传递一种，多传或少传均会导致请求失败",
       "input": "UpdateLogstashInstanceRequest",
       "name": "更新Logstash实例",
-      "output": "UpdateLogstashInstanceResponse"
+      "output": "UpdateLogstashInstanceResponse",
+      "status": "online"
     },
     "UpdateLogstashPipelineDesc": {
       "document": "用于更新管道描述信息",
       "input": "UpdateLogstashPipelineDescRequest",
       "name": "更新管道描述",
-      "output": "UpdateLogstashPipelineDescResponse"
+      "output": "UpdateLogstashPipelineDescResponse",
+      "status": "online"
     },
     "UpdatePlugins": {
       "document": "变更插件列表",
       "input": "UpdatePluginsRequest",
       "name": "变更插件列表",
-      "output": "UpdatePluginsResponse"
+      "output": "UpdatePluginsResponse",
+      "status": "online"
     },
     "UpdateRequestTargetNodeTypes": {
       "document": "更新接收客户端请求的节点类型",
       "input": "UpdateRequestTargetNodeTypesRequest",
       "name": "更新接收客户端请求的节点类型",
-      "output": "UpdateRequestTargetNodeTypesResponse"
+      "output": "UpdateRequestTargetNodeTypesResponse",
+      "status": "online"
     },
     "UpgradeInstance": {
       "document": "升级ES集群版本",
       "input": "UpgradeInstanceRequest",
       "name": "升级ES集群版本",
-      "output": "UpgradeInstanceResponse"
+      "output": "UpgradeInstanceResponse",
+      "status": "online"
     },
     "UpgradeLicense": {
       "document": "升级ES商业特性",
       "input": "UpgradeLicenseRequest",
       "name": "升级ES商业特性",
-      "output": "UpgradeLicenseResponse"
+      "output": "UpgradeLicenseResponse",
+      "status": "online"
     }
   },
   "metadata": {

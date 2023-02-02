@@ -4,409 +4,477 @@
       "document": "给实例授权token",
       "input": "AuthorizeTokenRequest",
       "name": "实例授权token",
-      "output": "AuthorizeTokenResponse"
+      "output": "AuthorizeTokenResponse",
+      "status": "online"
     },
     "BatchCreateAcl": {
       "document": "批量添加ACL策略",
       "input": "BatchCreateAclRequest",
       "name": "批量添加 ACL 策略",
-      "output": "BatchCreateAclResponse"
+      "output": "BatchCreateAclResponse",
+      "status": "online"
     },
     "BatchModifyGroupOffsets": {
       "document": "批量修改消费组offset",
       "input": "BatchModifyGroupOffsetsRequest",
       "name": "批量修改消费组offset",
-      "output": "BatchModifyGroupOffsetsResponse"
+      "output": "BatchModifyGroupOffsetsResponse",
+      "status": "online"
     },
     "BatchModifyTopicAttributes": {
       "document": "批量设置主题属性",
       "input": "BatchModifyTopicAttributesRequest",
       "name": "批量设置主题属性",
-      "output": "BatchModifyTopicAttributesResponse"
+      "output": "BatchModifyTopicAttributesResponse",
+      "status": "online"
     },
     "CancelAuthorizationToken": {
       "document": "取消授权token",
       "input": "CancelAuthorizationTokenRequest",
       "name": "取消授权token",
-      "output": "CancelAuthorizationTokenResponse"
+      "output": "CancelAuthorizationTokenResponse",
+      "status": "online"
     },
     "CheckCdcCluster": {
       "document": "用于查询cdc-ckafka任务状态",
       "input": "CheckCdcClusterRequest",
       "name": "查询cdc任务接口",
-      "output": "CheckCdcClusterResponse"
+      "output": "CheckCdcClusterResponse",
+      "status": "online"
     },
     "CreateAcl": {
       "document": "添加 ACL 策略",
       "input": "CreateAclRequest",
       "name": "添加 ACL 策略",
-      "output": "CreateAclResponse"
+      "output": "CreateAclResponse",
+      "status": "online"
     },
     "CreateCdcCluster": {
       "document": "用于cdc的专用ckafka集群",
       "input": "CreateCdcClusterRequest",
       "name": "创建cdc-ckafka集群",
-      "output": "CreateCdcClusterResponse"
+      "output": "CreateCdcClusterResponse",
+      "status": "online"
     },
     "CreateConnectResource": {
       "document": "创建Datahub连接源",
       "input": "CreateConnectResourceRequest",
       "name": "创建Datahub连接源",
-      "output": "CreateConnectResourceResponse"
+      "output": "CreateConnectResourceResponse",
+      "status": "online"
     },
     "CreateConsumer": {
       "document": "创建消费者组",
       "input": "CreateConsumerRequest",
       "name": "创建消费者组",
-      "output": "CreateConsumerResponse"
+      "output": "CreateConsumerResponse",
+      "status": "online"
     },
     "CreateDatahubTask": {
       "document": "创建DIP转储任务",
       "input": "CreateDatahubTaskRequest",
       "name": "创建DIP转储任务",
-      "output": "CreateDatahubTaskResponse"
+      "output": "CreateDatahubTaskResponse",
+      "status": "online"
     },
     "CreateInstancePost": {
       "document": "创建按量计费实例",
       "input": "CreateInstancePostRequest",
       "name": "创建按量计费实例",
-      "output": "CreateInstancePostResponse"
+      "output": "CreateInstancePostResponse",
+      "status": "online"
     },
     "CreateInstancePre": {
       "document": "创建实例(预付费包年包月)",
       "input": "CreateInstancePreRequest",
       "name": "创建实例(预付费包年包月)",
-      "output": "CreateInstancePreResponse"
+      "output": "CreateInstancePreResponse",
+      "status": "online"
     },
     "CreatePartition": {
       "document": "本接口用于增加主题中的分区",
       "input": "CreatePartitionRequest",
       "name": "增加主题分区",
-      "output": "CreatePartitionResponse"
+      "output": "CreatePartitionResponse",
+      "status": "online"
     },
     "CreateRoute": {
       "document": "添加实例路由",
       "input": "CreateRouteRequest",
       "name": "添加实例路由",
-      "output": "CreateRouteResponse"
+      "output": "CreateRouteResponse",
+      "status": "online"
     },
     "CreateToken": {
       "document": "创建最高权限的token",
       "input": "CreateTokenRequest",
       "name": "创建token",
-      "output": "CreateTokenResponse"
+      "output": "CreateTokenResponse",
+      "status": "online"
     },
     "CreateTopic": {
       "document": "创建ckafka主题",
       "input": "CreateTopicRequest",
       "name": "创建主题",
-      "output": "CreateTopicResponse"
+      "output": "CreateTopicResponse",
+      "status": "online"
     },
     "CreateTopicIpWhiteList": {
       "document": "创建主题ip白名单",
       "input": "CreateTopicIpWhiteListRequest",
       "name": "创建主题IP白名单",
-      "output": "CreateTopicIpWhiteListResponse"
+      "output": "CreateTopicIpWhiteListResponse",
+      "status": "online"
     },
     "CreateUser": {
       "document": "添加用户",
       "input": "CreateUserRequest",
       "name": "添加用户",
-      "output": "CreateUserResponse"
+      "output": "CreateUserResponse",
+      "status": "online"
     },
     "DeleteAcl": {
       "document": "删除ACL",
       "input": "DeleteAclRequest",
       "name": "删除ACL",
-      "output": "DeleteAclResponse"
+      "output": "DeleteAclResponse",
+      "status": "online"
     },
     "DeleteAclRule": {
       "document": "删除ACL规则",
       "input": "DeleteAclRuleRequest",
       "name": "删除ACL规则",
-      "output": "DeleteAclRuleResponse"
+      "output": "DeleteAclRuleResponse",
+      "status": "online"
     },
     "DeleteConnectResource": {
       "document": "删除Datahub连接源",
       "input": "DeleteConnectResourceRequest",
       "name": "删除Datahub连接源",
-      "output": "DeleteConnectResourceResponse"
+      "output": "DeleteConnectResourceResponse",
+      "status": "online"
     },
     "DeleteDatahubTask": {
       "document": "删除Datahub任务",
       "input": "DeleteDatahubTaskRequest",
       "name": "删除Datahub任务",
-      "output": "DeleteDatahubTaskResponse"
+      "output": "DeleteDatahubTaskResponse",
+      "status": "online"
     },
     "DeleteDatahubTopic": {
       "document": "删除Datahub主题",
       "input": "DeleteDatahubTopicRequest",
       "name": "删除Datahub主题",
-      "output": "DeleteDatahubTopicResponse"
+      "output": "DeleteDatahubTopicResponse",
+      "status": "online"
     },
     "DeleteGroup": {
       "document": "删除消费组",
       "input": "DeleteGroupRequest",
       "name": "删除消费组",
-      "output": "DeleteGroupResponse"
+      "output": "DeleteGroupResponse",
+      "status": "online"
     },
     "DeleteInstancePre": {
       "document": "删除预付费实例",
       "input": "DeleteInstancePreRequest",
       "name": "删除预付费实例",
-      "output": "DeleteInstancePreResponse"
+      "output": "DeleteInstancePreResponse",
+      "status": "online"
     },
     "DeleteRoute": {
       "document": "删除路由",
       "input": "DeleteRouteRequest",
       "name": "删除路由",
-      "output": "DeleteRouteResponse"
+      "output": "DeleteRouteResponse",
+      "status": "online"
     },
     "DeleteRouteTriggerTime": {
       "document": "修改删除路由延迟触发时间",
       "input": "DeleteRouteTriggerTimeRequest",
       "name": "修改路由触发时间",
-      "output": "DeleteRouteTriggerTimeResponse"
+      "output": "DeleteRouteTriggerTimeResponse",
+      "status": "online"
     },
     "DeleteTopic": {
       "document": "删除ckafka主题",
       "input": "DeleteTopicRequest",
       "name": "删除主题",
-      "output": "DeleteTopicResponse"
+      "output": "DeleteTopicResponse",
+      "status": "online"
     },
     "DeleteTopicIpWhiteList": {
       "document": "删除主题IP白名单",
       "input": "DeleteTopicIpWhiteListRequest",
       "name": "删除主题IP白名单",
-      "output": "DeleteTopicIpWhiteListResponse"
+      "output": "DeleteTopicIpWhiteListResponse",
+      "status": "online"
     },
     "DeleteUser": {
       "document": "删除用户",
       "input": "DeleteUserRequest",
       "name": "删除用户",
-      "output": "DeleteUserResponse"
+      "output": "DeleteUserResponse",
+      "status": "online"
     },
     "DescribeACL": {
       "document": "枚举ACL",
       "input": "DescribeACLRequest",
       "name": "枚举ACL",
-      "output": "DescribeACLResponse"
+      "output": "DescribeACLResponse",
+      "status": "online"
     },
     "DescribeAppInfo": {
       "document": "查询用户列表",
       "input": "DescribeAppInfoRequest",
       "name": "查询用户列表",
-      "output": "DescribeAppInfoResponse"
+      "output": "DescribeAppInfoResponse",
+      "status": "online"
     },
     "DescribeCkafkaZone": {
       "document": "用于查看ckafka的可用区列表",
       "input": "DescribeCkafkaZoneRequest",
       "name": "查看可用区列表",
-      "output": "DescribeCkafkaZoneResponse"
+      "output": "DescribeCkafkaZoneResponse",
+      "status": "online"
     },
     "DescribeConnectResource": {
       "document": "查询Datahub连接源",
       "input": "DescribeConnectResourceRequest",
       "name": "查询Datahub连接源",
-      "output": "DescribeConnectResourceResponse"
+      "output": "DescribeConnectResourceResponse",
+      "status": "online"
     },
     "DescribeConnectResources": {
       "document": "查询Datahub连接源列表",
       "input": "DescribeConnectResourcesRequest",
       "name": "查询Datahub连接源列表",
-      "output": "DescribeConnectResourcesResponse"
+      "output": "DescribeConnectResourcesResponse",
+      "status": "online"
     },
     "DescribeConsumerGroup": {
       "document": "查询消费分组信息",
       "input": "DescribeConsumerGroupRequest",
       "name": "查询消费分组信息",
-      "output": "DescribeConsumerGroupResponse"
+      "output": "DescribeConsumerGroupResponse",
+      "status": "online"
     },
     "DescribeDatahubGroupOffsets": {
       "document": "获取Datahub消费分组offset",
       "input": "DescribeDatahubGroupOffsetsRequest",
       "name": "获取Datahub消费分组offset",
-      "output": "DescribeDatahubGroupOffsetsResponse"
+      "output": "DescribeDatahubGroupOffsetsResponse",
+      "status": "online"
     },
     "DescribeDatahubTask": {
       "document": "查询Datahub任务信息",
       "input": "DescribeDatahubTaskRequest",
       "name": "查询Datahub任务信息",
-      "output": "DescribeDatahubTaskResponse"
+      "output": "DescribeDatahubTaskResponse",
+      "status": "online"
     },
     "DescribeDatahubTasks": {
       "document": "查询Datahub任务列表 ",
       "input": "DescribeDatahubTasksRequest",
       "name": "查询Datahub任务列表",
-      "output": "DescribeDatahubTasksResponse"
+      "output": "DescribeDatahubTasksResponse",
+      "status": "online"
     },
     "DescribeGroup": {
       "document": "枚举消费分组(精简版)",
       "input": "DescribeGroupRequest",
       "name": "枚举消费分组(精简版)",
-      "output": "DescribeGroupResponse"
+      "output": "DescribeGroupResponse",
+      "status": "online"
     },
     "DescribeGroupInfo": {
       "document": "获取消费分组信息",
       "input": "DescribeGroupInfoRequest",
       "name": "获取消费分组信息",
-      "output": "DescribeGroupInfoResponse"
+      "output": "DescribeGroupInfoResponse",
+      "status": "online"
     },
     "DescribeGroupOffsets": {
       "document": "获取消费分组offset",
       "input": "DescribeGroupOffsetsRequest",
       "name": "获取消费分组offset",
-      "output": "DescribeGroupOffsetsResponse"
+      "output": "DescribeGroupOffsetsResponse",
+      "status": "online"
     },
     "DescribeInstanceAttributes": {
       "document": "获取实例属性 ",
       "input": "DescribeInstanceAttributesRequest",
       "name": "获取实例属性",
-      "output": "DescribeInstanceAttributesResponse"
+      "output": "DescribeInstanceAttributesResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "本接口（DescribeInstance）用于在用户账户下获取消息队列 CKafka 实例列表",
       "input": "DescribeInstancesRequest",
       "name": "获取实例列表信息",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeInstancesDetail": {
       "document": "用户账户下获取实例列表详情",
       "input": "DescribeInstancesDetailRequest",
       "name": "获取实例列表详情",
-      "output": "DescribeInstancesDetailResponse"
+      "output": "DescribeInstancesDetailResponse",
+      "status": "online"
     },
     "DescribeRegion": {
       "document": "枚举地域,只支持广州地域",
       "input": "DescribeRegionRequest",
       "name": "枚举地域",
-      "output": "DescribeRegionResponse"
+      "output": "DescribeRegionResponse",
+      "status": "online"
     },
     "DescribeRoute": {
       "document": "查看路由信息",
       "input": "DescribeRouteRequest",
       "name": "查看路由信息",
-      "output": "DescribeRouteResponse"
+      "output": "DescribeRouteResponse",
+      "status": "online"
     },
     "DescribeTopic": {
       "document": "接口请求域名：https://ckafka.tencentcloudapi.com\n本接口（DescribeTopic）用于在用户获取消息队列 CKafka 实例的主题列表",
       "input": "DescribeTopicRequest",
       "name": "获取主题列表",
-      "output": "DescribeTopicResponse"
+      "output": "DescribeTopicResponse",
+      "status": "online"
     },
     "DescribeTopicAttributes": {
       "document": "获取主题属性\n",
       "input": "DescribeTopicAttributesRequest",
       "name": "获取主题属性",
-      "output": "DescribeTopicAttributesResponse"
+      "output": "DescribeTopicAttributesResponse",
+      "status": "online"
     },
     "DescribeTopicDetail": {
       "document": "获取主题列表详情（仅控制台调用）",
       "input": "DescribeTopicDetailRequest",
       "name": "获取主题列表详情",
-      "output": "DescribeTopicDetailResponse"
+      "output": "DescribeTopicDetailResponse",
+      "status": "online"
     },
     "DescribeTopicProduceConnection": {
       "document": "查询topic 生产端连接信息",
       "input": "DescribeTopicProduceConnectionRequest",
       "name": "查询topic生产端连接信息",
-      "output": "DescribeTopicProduceConnectionResponse"
+      "output": "DescribeTopicProduceConnectionResponse",
+      "status": "online"
     },
     "DescribeTopicSubscribeGroup": {
       "document": "查询订阅某主题消息分组信息",
       "input": "DescribeTopicSubscribeGroupRequest",
       "name": "查询订阅某主题消息分组信息",
-      "output": "DescribeTopicSubscribeGroupResponse"
+      "output": "DescribeTopicSubscribeGroupResponse",
+      "status": "online"
     },
     "DescribeTopicSyncReplica": {
       "document": "获取Topic 副本详情信息",
       "input": "DescribeTopicSyncReplicaRequest",
       "name": "获取Topic 同步副本信息",
-      "output": "DescribeTopicSyncReplicaResponse"
+      "output": "DescribeTopicSyncReplicaResponse",
+      "status": "online"
     },
     "DescribeUser": {
       "document": "查询用户信息",
       "input": "DescribeUserRequest",
       "name": "查询用户信息",
-      "output": "DescribeUserResponse"
+      "output": "DescribeUserResponse",
+      "status": "online"
     },
     "FetchDatahubMessageByOffset": {
       "document": "根据指定offset位置的消息",
       "input": "FetchDatahubMessageByOffsetRequest",
       "name": "查询Datahub Topic消息",
-      "output": "FetchDatahubMessageByOffsetResponse"
+      "output": "FetchDatahubMessageByOffsetResponse",
+      "status": "online"
     },
     "FetchLatestDatahubMessageList": {
       "document": "查询最新消息列表",
       "input": "FetchLatestDatahubMessageListRequest",
       "name": "查询Datahub Topic最新消息列表",
-      "output": "FetchLatestDatahubMessageListResponse"
+      "output": "FetchLatestDatahubMessageListResponse",
+      "status": "online"
     },
     "FetchMessageByOffset": {
       "document": "根据指定offset位置的消息",
       "input": "FetchMessageByOffsetRequest",
       "name": "查询消息",
-      "output": "FetchMessageByOffsetResponse"
+      "output": "FetchMessageByOffsetResponse",
+      "status": "online"
     },
     "FetchMessageListByOffset": {
       "document": "根据位点查询消息列表",
       "input": "FetchMessageListByOffsetRequest",
       "name": "根据位点查询消息列表",
-      "output": "FetchMessageListByOffsetResponse"
+      "output": "FetchMessageListByOffsetResponse",
+      "status": "online"
     },
     "InquireCkafkaPrice": {
       "document": "Ckafka实例购买/续费询价",
       "input": "InquireCkafkaPriceRequest",
       "name": "Ckafka询价",
-      "output": "InquireCkafkaPriceResponse"
+      "output": "InquireCkafkaPriceResponse",
+      "status": "online"
     },
     "ModifyConnectResource": {
       "document": "编辑Datahub连接源",
       "input": "ModifyConnectResourceRequest",
       "name": "编辑Datahub连接源",
-      "output": "ModifyConnectResourceResponse"
+      "output": "ModifyConnectResourceResponse",
+      "status": "online"
     },
     "ModifyDatahubTask": {
       "document": "修改Datahub任务",
       "input": "ModifyDatahubTaskRequest",
       "name": "修改Datahub任务",
-      "output": "ModifyDatahubTaskResponse"
+      "output": "ModifyDatahubTaskResponse",
+      "status": "online"
     },
     "ModifyGroupOffsets": {
       "document": "设置Groups 消费分组offset",
       "input": "ModifyGroupOffsetsRequest",
       "name": "设置Groups 消费分组offset",
-      "output": "ModifyGroupOffsetsResponse"
+      "output": "ModifyGroupOffsetsResponse",
+      "status": "online"
     },
     "ModifyInstanceAttributes": {
       "document": "设置实例属性",
       "input": "ModifyInstanceAttributesRequest",
       "name": "设置实例属性",
-      "output": "ModifyInstanceAttributesResponse"
+      "output": "ModifyInstanceAttributesResponse",
+      "status": "online"
     },
     "ModifyInstancePre": {
       "document": "预付费实例变配接口，调整磁盘，带宽",
       "input": "ModifyInstancePreRequest",
       "name": "预付费实例变配接口",
-      "output": "ModifyInstancePreResponse"
+      "output": "ModifyInstancePreResponse",
+      "status": "online"
     },
     "ModifyPassword": {
       "document": "修改密码",
       "input": "ModifyPasswordRequest",
       "name": "修改密码",
-      "output": "ModifyPasswordResponse"
+      "output": "ModifyPasswordResponse",
+      "status": "online"
     },
     "ModifyTopicAttributes": {
       "document": "本接口用于修改主题属性。",
       "input": "ModifyTopicAttributesRequest",
       "name": "设置主题属性",
-      "output": "ModifyTopicAttributesResponse"
+      "output": "ModifyTopicAttributesResponse",
+      "status": "online"
     },
     "SendMessage": {
       "document": "通过HTTP接入层发送消息",
       "input": "SendMessageRequest",
       "name": "HTTP发送消息",
-      "output": "SendMessageResponse"
+      "output": "SendMessageResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -8480,8 +8548,8 @@
       "document": "DescribeGroup的返回",
       "members": [
         {
-          "default": "",
           "document": "计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "TotalCount",
           "required": true,
@@ -8489,12 +8557,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "GroupList\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeGroup",
           "name": "GroupList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "消费分组配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupCountQuota",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

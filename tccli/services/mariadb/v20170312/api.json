@@ -4,403 +4,470 @@
       "document": "解隔离后付费实例",
       "input": "ActivateHourDBInstanceRequest",
       "name": "解隔离后付费实例",
-      "output": "ActivateHourDBInstanceResponse"
+      "output": "ActivateHourDBInstanceResponse",
+      "status": "online"
     },
     "AssociateSecurityGroups": {
       "document": "本接口 (AssociateSecurityGroups) 用于安全组批量绑定云资源。",
       "input": "AssociateSecurityGroupsRequest",
       "name": "安全组批量绑定云资源",
-      "output": "AssociateSecurityGroupsResponse"
+      "output": "AssociateSecurityGroupsResponse",
+      "status": "online"
     },
     "CancelDcnJob": {
       "document": "取消DCN同步",
       "input": "CancelDcnJobRequest",
       "name": "取消DCN同步",
-      "output": "CancelDcnJobResponse"
+      "output": "CancelDcnJobResponse",
+      "status": "online"
     },
     "CloneAccount": {
       "document": "本接口（CloneAccount）用于克隆实例账户。",
       "input": "CloneAccountRequest",
       "name": "克隆实例账户",
-      "output": "CloneAccountResponse"
+      "output": "CloneAccountResponse",
+      "status": "online"
     },
     "CloseDBExtranetAccess": {
       "document": "本接口(CloseDBExtranetAccess)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问，查询实例列表接口将不返回对应实例的外网域名和端口信息。",
       "input": "CloseDBExtranetAccessRequest",
       "name": "关闭外网访问",
-      "output": "CloseDBExtranetAccessResponse"
+      "output": "CloseDBExtranetAccessResponse",
+      "status": "online"
     },
     "CopyAccountPrivileges": {
       "document": "本接口（CopyAccountPrivileges）用于复制云数据库账号的权限。\n注意：相同用户名，不同Host是不同的账号，Readonly属性相同的账号之间才能复制权限。",
       "input": "CopyAccountPrivilegesRequest",
       "name": "复制账号权限",
-      "output": "CopyAccountPrivilegesResponse"
+      "output": "CopyAccountPrivilegesResponse",
+      "status": "online"
     },
     "CreateAccount": {
       "document": "本接口（CreateAccount）用于创建云数据库账号。一个实例可以创建多个不同的账号，相同的用户名+不同的host是不同的账号。",
       "input": "CreateAccountRequest",
       "name": "创建账号",
-      "output": "CreateAccountResponse"
+      "output": "CreateAccountResponse",
+      "status": "online"
     },
     "CreateDBInstance": {
       "document": "本接口（CreateDBInstance）用于创建包年包月的云数据库实例，可通过传入实例规格、数据库版本号、购买时长和数量等信息创建云数据库实例。",
       "input": "CreateDBInstanceRequest",
       "name": "创建实例（包年包月）",
-      "output": "CreateDBInstanceResponse"
+      "output": "CreateDBInstanceResponse",
+      "status": "online"
     },
     "CreateDedicatedClusterDBInstance": {
       "document": "创建独享集群Mariadb实例",
       "input": "CreateDedicatedClusterDBInstanceRequest",
       "name": "创建独享集群Mariadb实例",
-      "output": "CreateDedicatedClusterDBInstanceResponse"
+      "output": "CreateDedicatedClusterDBInstanceResponse",
+      "status": "online"
     },
     "CreateHourDBInstance": {
       "document": "创建后付费实例",
       "input": "CreateHourDBInstanceRequest",
       "name": "创建后付费实例",
-      "output": "CreateHourDBInstanceResponse"
+      "output": "CreateHourDBInstanceResponse",
+      "status": "online"
     },
     "CreateTmpInstances": {
       "document": "本接口（CreateTmpInstances）用于创建临时实例。",
       "input": "CreateTmpInstancesRequest",
       "name": "创建临时实例",
-      "output": "CreateTmpInstancesResponse"
+      "output": "CreateTmpInstancesResponse",
+      "status": "online"
     },
     "DeleteAccount": {
       "document": "本接口（DeleteAccount）用于删除云数据库账号。用户名+host唯一确定一个账号。",
       "input": "DeleteAccountRequest",
       "name": "删除账号",
-      "output": "DeleteAccountResponse"
+      "output": "DeleteAccountResponse",
+      "status": "online"
     },
     "DescribeAccountPrivileges": {
       "document": "本接口（DescribeAccountPrivileges）用于查询云数据库账号权限。\n注意：注意：相同用户名，不同Host是不同的账号。",
       "input": "DescribeAccountPrivilegesRequest",
       "name": "查询账号权限",
-      "output": "DescribeAccountPrivilegesResponse"
+      "output": "DescribeAccountPrivilegesResponse",
+      "status": "online"
     },
     "DescribeAccounts": {
       "document": "本接口（DescribeAccounts）用于查询指定云数据库实例的账号列表。",
       "input": "DescribeAccountsRequest",
       "name": "查询账号列表",
-      "output": "DescribeAccountsResponse"
+      "output": "DescribeAccountsResponse",
+      "status": "online"
     },
     "DescribeBackupTime": {
       "document": "本接口（DescribeBackupTime）用于获取云数据库的备份时间。后台系统将根据此配置定期进行实例备份。",
       "input": "DescribeBackupTimeRequest",
       "name": "查询备份时间",
-      "output": "DescribeBackupTimeResponse"
+      "output": "DescribeBackupTimeResponse",
+      "status": "online"
     },
     "DescribeDBEncryptAttributes": {
       "document": "本接口(DescribeDBEncryptAttributes)用于查询实例数据加密状态。",
       "input": "DescribeDBEncryptAttributesRequest",
       "name": "查询实例数据加密状态",
-      "output": "DescribeDBEncryptAttributesResponse"
+      "output": "DescribeDBEncryptAttributesResponse",
+      "status": "online"
     },
     "DescribeDBInstanceSpecs": {
       "document": "本接口(DescribeDBInstanceSpecs)用于查询可创建的云数据库可售卖的规格配置。",
       "input": "DescribeDBInstanceSpecsRequest",
       "name": "查询云数据库可售卖规格",
-      "output": "DescribeDBInstanceSpecsResponse"
+      "output": "DescribeDBInstanceSpecsResponse",
+      "status": "online"
     },
     "DescribeDBInstances": {
       "document": "本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目ID、实例ID、内网地址、实例名称等来筛选实例。\n如果不指定任何筛选条件，则默认返回20条实例记录，单次请求最多支持返回100条实例记录。",
       "input": "DescribeDBInstancesRequest",
       "name": "查询实例列表",
-      "output": "DescribeDBInstancesResponse"
+      "output": "DescribeDBInstancesResponse",
+      "status": "online"
     },
     "DescribeDBLogFiles": {
       "document": "本接口(DescribeDBLogFiles)用于获取数据库的各种日志列表，包括冷备、binlog、errlog和slowlog。",
       "input": "DescribeDBLogFilesRequest",
       "name": "获取日志列表",
-      "output": "DescribeDBLogFilesResponse"
+      "output": "DescribeDBLogFilesResponse",
+      "status": "online"
     },
     "DescribeDBParameters": {
       "document": "本接口(DescribeDBParameters)用于获取数据库的当前参数设置。",
       "input": "DescribeDBParametersRequest",
       "name": "查看数据库参数",
-      "output": "DescribeDBParametersResponse"
+      "output": "DescribeDBParametersResponse",
+      "status": "online"
     },
     "DescribeDBSecurityGroups": {
       "document": "本接口（DescribeDBSecurityGroups）用于查询实例安全组信息",
       "input": "DescribeDBSecurityGroupsRequest",
       "name": "查询实例安全组信息",
-      "output": "DescribeDBSecurityGroupsResponse"
+      "output": "DescribeDBSecurityGroupsResponse",
+      "status": "online"
     },
     "DescribeDBSlowLogs": {
       "document": "本接口(DescribeDBSlowLogs)用于查询慢查询日志列表。",
       "input": "DescribeDBSlowLogsRequest",
       "name": "查询慢查询日志列表",
-      "output": "DescribeDBSlowLogsResponse"
+      "output": "DescribeDBSlowLogsResponse",
+      "status": "online"
     },
     "DescribeDatabaseObjects": {
       "document": "本接口（DescribeDatabaseObjects）用于查询云数据库实例的数据库中的对象列表，包含表、存储过程、视图和函数。",
       "input": "DescribeDatabaseObjectsRequest",
       "name": "查询数据库对象列表",
-      "output": "DescribeDatabaseObjectsResponse"
+      "output": "DescribeDatabaseObjectsResponse",
+      "status": "online"
     },
     "DescribeDatabaseTable": {
       "document": "本接口（DescribeDatabaseTable）用于查询云数据库实例的表信息。",
       "input": "DescribeDatabaseTableRequest",
       "name": "查询数据库表信息",
-      "output": "DescribeDatabaseTableResponse"
+      "output": "DescribeDatabaseTableResponse",
+      "status": "online"
     },
     "DescribeDatabases": {
       "document": "本接口（DescribeDatabases）用于查询云数据库实例的数据库列表。",
       "input": "DescribeDatabasesRequest",
       "name": "查询数据库列表",
-      "output": "DescribeDatabasesResponse"
+      "output": "DescribeDatabasesResponse",
+      "status": "online"
     },
     "DescribeDcnDetail": {
       "document": "获取实例灾备详情",
       "input": "DescribeDcnDetailRequest",
       "name": "获取实例灾备详情",
-      "output": "DescribeDcnDetailResponse"
+      "output": "DescribeDcnDetailResponse",
+      "status": "online"
     },
     "DescribeFileDownloadUrl": {
       "document": "本接口(DescribeFileDownloadUrl)用于获取数据库指定备份或日志文件的下载连接。",
       "input": "DescribeFileDownloadUrlRequest",
       "name": "获取备份或日志的下载连接",
-      "output": "DescribeFileDownloadUrlResponse"
+      "output": "DescribeFileDownloadUrlResponse",
+      "status": "online"
     },
     "DescribeFlow": {
       "document": "本接口（DescribeFlow）用于查询流程状态。",
       "input": "DescribeFlowRequest",
       "name": "查询流程状态",
-      "output": "DescribeFlowResponse"
+      "output": "DescribeFlowResponse",
+      "status": "online"
     },
     "DescribeInstanceNodeInfo": {
       "document": "本接口（DescribeInstanceNodeInfo）用于获取数据库实例主备节点信息",
       "input": "DescribeInstanceNodeInfoRequest",
       "name": "获取实例节点信息",
-      "output": "DescribeInstanceNodeInfoResponse"
+      "output": "DescribeInstanceNodeInfoResponse",
+      "status": "online"
     },
     "DescribeLogFileRetentionPeriod": {
       "document": "本接口(DescribeLogFileRetentionPeriod)用于查看数据库备份日志的备份天数的设置情况。",
       "input": "DescribeLogFileRetentionPeriodRequest",
       "name": "查看备份日志备份天数",
-      "output": "DescribeLogFileRetentionPeriodResponse"
+      "output": "DescribeLogFileRetentionPeriodResponse",
+      "status": "online"
     },
     "DescribeOrders": {
       "document": "本接口（DescribeOrders）用于查询云数据库订单信息。传入订单ID来查询订单关联的云数据库实例，和对应的任务流程ID。",
       "input": "DescribeOrdersRequest",
       "name": "查询订单信息",
-      "output": "DescribeOrdersResponse"
+      "output": "DescribeOrdersResponse",
+      "status": "online"
     },
     "DescribePrice": {
       "document": "本接口（DescribePrice）用于在购买实例前，查询实例的价格。",
       "input": "DescribePriceRequest",
       "name": "新购实例询价",
-      "output": "DescribePriceResponse"
+      "output": "DescribePriceResponse",
+      "status": "online"
     },
     "DescribeProjectSecurityGroups": {
       "document": "本接口（DescribeProjectSecurityGroups）用于查询项目安全组信息",
       "input": "DescribeProjectSecurityGroupsRequest",
       "name": "查询项目安全组信息",
-      "output": "DescribeProjectSecurityGroupsResponse"
+      "output": "DescribeProjectSecurityGroupsResponse",
+      "status": "online"
     },
     "DescribeRenewalPrice": {
       "document": "本接口（DescribeRenewalPrice）用于在续费云数据库实例时，查询续费的价格。",
       "input": "DescribeRenewalPriceRequest",
       "name": "续费实例询价",
-      "output": "DescribeRenewalPriceResponse"
+      "output": "DescribeRenewalPriceResponse",
+      "status": "online"
     },
     "DescribeSaleInfo": {
       "document": "本接口(DescribeSaleInfo)用于查询云数据库可售卖的地域和可用区信息。",
       "input": "DescribeSaleInfoRequest",
       "name": "查询云数据库可售卖地域和可用区信息",
-      "output": "DescribeSaleInfoResponse"
+      "output": "DescribeSaleInfoResponse",
+      "status": "online"
     },
     "DescribeUpgradePrice": {
       "document": "本接口（DescribeUpgradePrice）用于在扩容云数据库实例时，查询变配的价格。",
       "input": "DescribeUpgradePriceRequest",
       "name": "变配实例询价",
-      "output": "DescribeUpgradePriceResponse"
+      "output": "DescribeUpgradePriceResponse",
+      "status": "online"
     },
     "DestroyDBInstance": {
       "document": "本接口(DestroyDBInstance)用于销毁已隔离的包年包月实例。",
       "input": "DestroyDBInstanceRequest",
       "name": "销毁已隔离的包年包月实例",
-      "output": "DestroyDBInstanceResponse"
+      "output": "DestroyDBInstanceResponse",
+      "status": "online"
     },
     "DestroyHourDBInstance": {
       "document": "本接口（DestroyHourDBInstance）用于销毁按量计费实例。",
       "input": "DestroyHourDBInstanceRequest",
       "name": "销毁按量计费实例",
-      "output": "DestroyHourDBInstanceResponse"
+      "output": "DestroyHourDBInstanceResponse",
+      "status": "online"
     },
     "DisassociateSecurityGroups": {
       "document": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。",
       "input": "DisassociateSecurityGroupsRequest",
       "name": "安全组批量解绑云资源",
-      "output": "DisassociateSecurityGroupsResponse"
+      "output": "DisassociateSecurityGroupsResponse",
+      "status": "online"
     },
     "FlushBinlog": {
       "document": "相当于在mysqld中执行flush logs，完成切分的binlog将展示在实例控制台binlog列表里。",
       "input": "FlushBinlogRequest",
       "name": "切分Binlog",
-      "output": "FlushBinlogResponse"
+      "output": "FlushBinlogResponse",
+      "status": "online"
     },
     "GrantAccountPrivileges": {
       "document": "本接口（GrantAccountPrivileges）用于给云数据库账号赋权。\n注意：相同用户名，不同Host是不同的账号。",
       "input": "GrantAccountPrivilegesRequest",
       "name": "设置账号权限",
-      "output": "GrantAccountPrivilegesResponse"
+      "output": "GrantAccountPrivilegesResponse",
+      "status": "online"
     },
     "InitDBInstances": {
       "document": "本接口(InitDBInstances)用于初始化云数据库实例，包括设置默认字符集、表名大小写敏感等。",
       "input": "InitDBInstancesRequest",
       "name": "初始化实例",
-      "output": "InitDBInstancesResponse"
+      "output": "InitDBInstancesResponse",
+      "status": "online"
     },
     "IsolateDBInstance": {
       "document": "本接口(IsolateDBInstance)用于隔离云数据库实例（包年包月），隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。",
       "input": "IsolateDBInstanceRequest",
       "name": "隔离云数据库实例（包年包月）",
-      "output": "IsolateDBInstanceResponse"
+      "output": "IsolateDBInstanceResponse",
+      "status": "online"
     },
     "IsolateDedicatedDBInstance": {
       "document": "本接口（IsolateDedicatedDBInstance）用于隔离独享云数据库实例。",
       "input": "IsolateDedicatedDBInstanceRequest",
       "name": "隔离独享云数据库实例",
-      "output": "IsolateDedicatedDBInstanceResponse"
+      "output": "IsolateDedicatedDBInstanceResponse",
+      "status": "online"
     },
     "IsolateHourDBInstance": {
       "document": "隔离后付费实例",
       "input": "IsolateHourDBInstanceRequest",
       "name": "隔离后付费实例",
-      "output": "IsolateHourDBInstanceResponse"
+      "output": "IsolateHourDBInstanceResponse",
+      "status": "online"
     },
     "KillSession": {
       "document": "本接口（KillSession）用于杀死指定会话。",
       "input": "KillSessionRequest",
       "name": "杀死指定会话",
-      "output": "KillSessionResponse"
+      "output": "KillSessionResponse",
+      "status": "online"
     },
     "ModifyAccountDescription": {
       "document": "本接口（ModifyAccountDescription）用于修改云数据库账号备注。\n注意：相同用户名，不同Host是不同的账号。",
       "input": "ModifyAccountDescriptionRequest",
       "name": "修改数据库账号备注",
-      "output": "ModifyAccountDescriptionResponse"
+      "output": "ModifyAccountDescriptionResponse",
+      "status": "online"
     },
     "ModifyAccountPrivileges": {
       "document": "本接口(ModifyAccountPrivileges)用于修改云数据库的账户的权限信息。\n\n**注意**\n- 系统保留库：\"mysql\"，只开放[\"SELECT\"]权限\n- 只读账号授予读写权限会报错\n- 不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组",
       "input": "ModifyAccountPrivilegesRequest",
       "name": "修改云数据库实例账号的权限信息",
-      "output": "ModifyAccountPrivilegesResponse"
+      "output": "ModifyAccountPrivilegesResponse",
+      "status": "online"
     },
     "ModifyBackupTime": {
       "document": "本接口（ModifyBackupTime）用于设置云数据库实例的备份时间。后台系统将根据此配置定期进行实例备份。",
       "input": "ModifyBackupTimeRequest",
       "name": "修改备份时间",
-      "output": "ModifyBackupTimeResponse"
+      "output": "ModifyBackupTimeResponse",
+      "status": "online"
     },
     "ModifyDBInstanceName": {
       "document": "本接口（ModifyDBInstanceName）用于修改云数据库实例的名称。",
       "input": "ModifyDBInstanceNameRequest",
       "name": "修改实例名称",
-      "output": "ModifyDBInstanceNameResponse"
+      "output": "ModifyDBInstanceNameResponse",
+      "status": "online"
     },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口（ModifyDBInstanceSecurityGroups）用于修改云数据库安全组",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
       "name": "修改云数据库安全组",
-      "output": "ModifyDBInstanceSecurityGroupsResponse"
+      "output": "ModifyDBInstanceSecurityGroupsResponse",
+      "status": "online"
     },
     "ModifyDBInstancesProject": {
       "document": "本接口（ModifyDBInstancesProject）用于修改云数据库实例所属项目。",
       "input": "ModifyDBInstancesProjectRequest",
       "name": "修改实例所属项目",
-      "output": "ModifyDBInstancesProjectResponse"
+      "output": "ModifyDBInstancesProjectResponse",
+      "status": "online"
     },
     "ModifyDBParameters": {
       "document": "本接口(ModifyDBParameters)用于修改数据库参数。",
       "input": "ModifyDBParametersRequest",
       "name": "修改数据库参数",
-      "output": "ModifyDBParametersResponse"
+      "output": "ModifyDBParametersResponse",
+      "status": "online"
     },
     "ModifyDBSyncMode": {
       "document": "本接口（ModifyDBSyncMode）用于修改云数据库实例的同步模式。",
       "input": "ModifyDBSyncModeRequest",
       "name": "修改同步模式",
-      "output": "ModifyDBSyncModeResponse"
+      "output": "ModifyDBSyncModeResponse",
+      "status": "online"
     },
     "ModifyInstanceNetwork": {
       "document": "本接口（ModifyInstanceNetwork）用于修改实例所属网络",
       "input": "ModifyInstanceNetworkRequest",
       "name": "修改实例所属网络",
-      "output": "ModifyInstanceNetworkResponse"
+      "output": "ModifyInstanceNetworkResponse",
+      "status": "online"
     },
     "ModifyInstanceVip": {
       "document": "本接口（ModifyInstanceVip）用于修改实例VIP",
       "input": "ModifyInstanceVipRequest",
       "name": "修改实例VIP",
-      "output": "ModifyInstanceVipResponse"
+      "output": "ModifyInstanceVipResponse",
+      "status": "online"
     },
     "ModifyInstanceVport": {
       "document": "本接口（ModifyInstanceVport）用于修改实例VPORT",
       "input": "ModifyInstanceVportRequest",
       "name": "修改实例VPORT",
-      "output": "ModifyInstanceVportResponse"
+      "output": "ModifyInstanceVportResponse",
+      "status": "online"
     },
     "ModifyLogFileRetentionPeriod": {
       "document": "本接口(ModifyLogFileRetentionPeriod)用于修改数据库备份日志保存天数。",
       "input": "ModifyLogFileRetentionPeriodRequest",
       "name": "修改备份日志保存天数",
-      "output": "ModifyLogFileRetentionPeriodResponse"
+      "output": "ModifyLogFileRetentionPeriodResponse",
+      "status": "online"
     },
     "ModifyRealServerAccessStrategy": {
       "document": "本接口(ModifyRealServerAccessStrategy)用于修改云数据库的VPCGW到RS的访问策略。\n\n**注意**\n- 修改策略后只对新建立的连接生效，老连接不受影响\n- 就近访问只针对实例是跨可用区部署有用，单可用区部署实例就近与否并无作用\n- DB每个Node对应一个proxy，如果开启就近访问，将会把连接集中到对应可用区的proxy上，可能造成热点问题，这种情况下如果是线上业务，请务必根据自己的业务请求量测试符合预期后再进行就近策略变更",
       "input": "ModifyRealServerAccessStrategyRequest",
       "name": "修改RS的访问策略",
-      "output": "ModifyRealServerAccessStrategyResponse"
+      "output": "ModifyRealServerAccessStrategyResponse",
+      "status": "online"
     },
     "ModifySyncTaskAttribute": {
       "document": "本接口 (ModifySyncTaskAttribute) 用于修改同步任务的属性（目前只支持修改任务名称）",
       "input": "ModifySyncTaskAttributeRequest",
       "name": "修改同步任务的属性",
-      "output": "ModifySyncTaskAttributeResponse"
+      "output": "ModifySyncTaskAttributeResponse",
+      "status": "online"
     },
     "OpenDBExtranetAccess": {
       "document": "本接口（OpenDBExtranetAccess）用于开通云数据库实例的外网访问。开通外网访问后，您可通过外网域名和端口访问实例，可使用查询实例列表接口获取外网域名和端口信息。",
       "input": "OpenDBExtranetAccessRequest",
       "name": "开通外网访问",
-      "output": "OpenDBExtranetAccessResponse"
+      "output": "OpenDBExtranetAccessResponse",
+      "status": "online"
     },
     "RenewDBInstance": {
       "document": "本接口（RenewDBInstance）用于续费云数据库实例。",
       "input": "RenewDBInstanceRequest",
       "name": "续费实例",
-      "output": "RenewDBInstanceResponse"
+      "output": "RenewDBInstanceResponse",
+      "status": "online"
     },
     "ResetAccountPassword": {
       "document": "本接口（ResetAccountPassword）用于重置云数据库账号的密码。\n注意：相同用户名，不同Host是不同的账号。",
       "input": "ResetAccountPasswordRequest",
       "name": "重置账号密码",
-      "output": "ResetAccountPasswordResponse"
+      "output": "ResetAccountPasswordResponse",
+      "status": "online"
     },
     "RestartDBInstances": {
       "document": "本接口（RestartDBInstances）用于重启数据库实例",
       "input": "RestartDBInstancesRequest",
       "name": "重启实例",
-      "output": "RestartDBInstancesResponse"
+      "output": "RestartDBInstancesResponse",
+      "status": "online"
     },
     "SwitchDBInstanceHA": {
       "document": "本接口（SwitchDBInstanceHA）用于发起实例主备切换。",
       "input": "SwitchDBInstanceHARequest",
       "name": "实例主备切换",
-      "output": "SwitchDBInstanceHAResponse"
+      "output": "SwitchDBInstanceHAResponse",
+      "status": "online"
     },
     "TerminateDedicatedDBInstance": {
       "document": "本接口（TerminateDedicatedDBInstance）用于销毁已隔离的独享云数据库实例。",
       "input": "TerminateDedicatedDBInstanceRequest",
       "name": "销毁独享云数据库实例",
-      "output": "TerminateDedicatedDBInstanceResponse"
+      "output": "TerminateDedicatedDBInstanceResponse",
+      "status": "online"
     },
     "UpgradeDBInstance": {
       "document": "本接口(UpgradeDBInstance)用于扩容云数据库实例。本接口完成下单和支付两个动作，如果发生支付失败的错误，调用用户账户相关接口中的支付订单接口（PayDeals）重新支付即可。",
       "input": "UpgradeDBInstanceRequest",
       "name": "扩容实例",
-      "output": "UpgradeDBInstanceResponse"
+      "output": "UpgradeDBInstanceResponse",
+      "status": "online"
     }
   },
   "metadata": {

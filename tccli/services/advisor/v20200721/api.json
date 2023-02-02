@@ -4,13 +4,15 @@
       "document": "用于查询评估项的信息",
       "input": "DescribeStrategiesRequest",
       "name": "查询评估项信息",
-      "output": "DescribeStrategiesResponse"
+      "output": "DescribeStrategiesResponse",
+      "status": "online"
     },
     "DescribeTaskStrategyRisks": {
       "document": "查询评估项风险实例列表",
       "input": "DescribeTaskStrategyRisksRequest",
       "name": "查询评估项风险实例列表",
-      "output": "DescribeTaskStrategyRisksResponse"
+      "output": "DescribeTaskStrategyRisksResponse",
+      "status": "online"
     }
   },
   "metadata": {

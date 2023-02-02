@@ -4,7 +4,8 @@
       "document": "获取成员列表接口",
       "input": "GetIndustryV1HomeMembersRequest",
       "name": "获取成员列表",
-      "output": "GetIndustryV1HomeMembersResponse"
+      "output": "GetIndustryV1HomeMembersResponse",
+      "status": "online"
     }
   },
   "metadata": {

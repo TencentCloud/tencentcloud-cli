@@ -4,7 +4,8 @@
       "document": "获取数据源详情列表",
       "input": "DescribeDataSourceListRequest",
       "name": "获取数据源详情列表",
-      "output": "DescribeDataSourceListResponse"
+      "output": "DescribeDataSourceListResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,133 +4,155 @@
       "document": "资产安全页资产详情",
       "input": "DescribeAssetDetailRequest",
       "name": "资产安全页资产详情",
-      "output": "DescribeAssetDetailResponse"
+      "output": "DescribeAssetDetailResponse",
+      "status": "online"
     },
     "DescribeAssetDetailList": {
       "document": "资产条件查询",
       "input": "DescribeAssetDetailListRequest",
       "name": "获取资产列表",
-      "output": "DescribeAssetDetailListResponse"
+      "output": "DescribeAssetDetailListResponse",
+      "status": "online"
     },
     "DescribeAssetList": {
       "document": "资产安全资产列表",
       "input": "DescribeAssetListRequest",
       "name": "资产安全资产列表",
-      "output": "DescribeAssetListResponse"
+      "output": "DescribeAssetListResponse",
+      "status": "online"
     },
     "DescribeAssetsMappingList": {
       "document": "资产测绘-测绘列表",
       "input": "DescribeAssetsMappingListRequest",
       "name": "资产测绘-测绘列表",
-      "output": "DescribeAssetsMappingListResponse"
+      "output": "DescribeAssetsMappingListResponse",
+      "status": "online"
     },
     "DescribeCheckConfigAssetList": {
       "document": "云安全配置管理资产组列表",
       "input": "DescribeCheckConfigAssetListRequest",
       "name": "云安全配置管理资产组列表",
-      "output": "DescribeCheckConfigAssetListResponse"
+      "output": "DescribeCheckConfigAssetListResponse",
+      "status": "online"
     },
     "DescribeCheckConfigDetail": {
       "document": "云安全配置检查项详情",
       "input": "DescribeCheckConfigDetailRequest",
       "name": "云安全配置检查项详情",
-      "output": "DescribeCheckConfigDetailResponse"
+      "output": "DescribeCheckConfigDetailResponse",
+      "status": "online"
     },
     "DescribeComplianceAssetList": {
       "document": "合规管理-资产列表",
       "input": "DescribeComplianceAssetListRequest",
       "name": "合规管理-资产列表",
-      "output": "DescribeComplianceAssetListResponse"
+      "output": "DescribeComplianceAssetListResponse",
+      "status": "online"
     },
     "DescribeComplianceDetail": {
       "document": "合规管理检查项详情",
       "input": "DescribeComplianceDetailRequest",
       "name": "合规管理检查项详情",
-      "output": "DescribeComplianceDetailResponse"
+      "output": "DescribeComplianceDetailResponse",
+      "status": "online"
     },
     "DescribeComplianceList": {
       "document": "合规管理总览页检查项列表",
       "input": "DescribeComplianceListRequest",
       "name": "合规管理总览页检查项列表",
-      "output": "DescribeComplianceListResponse"
+      "output": "DescribeComplianceListResponse",
+      "status": "online"
     },
     "DescribeConfigList": {
       "document": "云配置检查项总览页检查项列表",
       "input": "DescribeConfigListRequest",
       "name": "云配置检查项总览页检查项列表",
-      "output": "DescribeConfigListResponse"
+      "output": "DescribeConfigListResponse",
+      "status": "online"
     },
     "DescribeEventDetail": {
       "document": "获取安全事件详情",
       "input": "DescribeEventDetailRequest",
       "name": "获取安全事件详情",
-      "output": "DescribeEventDetailResponse"
+      "output": "DescribeEventDetailResponse",
+      "status": "online"
     },
     "DescribeLeakDetectionList": {
       "document": "获取泄露列表",
       "input": "DescribeLeakDetectionListRequest",
       "name": "获取泄露列表",
-      "output": "DescribeLeakDetectionListResponse"
+      "output": "DescribeLeakDetectionListResponse",
+      "status": "online"
     },
     "DescribeMappingResults": {
       "document": "获取测绘列表",
       "input": "DescribeMappingResultsRequest",
       "name": "获取测绘列表",
-      "output": "DescribeMappingResultsResponse"
+      "output": "DescribeMappingResultsResponse",
+      "status": "online"
     },
     "DescribeSafetyEventList": {
       "document": "获取安全事件列表",
       "input": "DescribeSafetyEventListRequest",
       "name": "获取安全事件列表",
-      "output": "DescribeSafetyEventListResponse"
+      "output": "DescribeSafetyEventListResponse",
+      "status": "online"
     },
     "DescribeSocAlertDetails": {
       "document": "返回告警详情",
       "input": "DescribeSocAlertDetailsRequest",
       "name": "告警详情",
-      "output": "DescribeSocAlertDetailsResponse"
+      "output": "DescribeSocAlertDetailsResponse",
+      "status": "online"
     },
     "DescribeSocAlertList": {
       "document": "拉取告警列表",
       "input": "DescribeSocAlertListRequest",
       "name": "告警列表",
-      "output": "DescribeSocAlertListResponse"
+      "output": "DescribeSocAlertListResponse",
+      "status": "online"
     },
     "DescribeSocCheckItemList": {
       "document": "云安全配置检查项列表",
       "input": "DescribeSocCheckItemListRequest",
       "name": "云安全配置检查项列表",
-      "output": "DescribeSocCheckItemListResponse"
+      "output": "DescribeSocCheckItemListResponse",
+      "status": "online"
     },
     "DescribeSocCheckResultList": {
       "document": "云安全配置检查项结果列表",
       "input": "DescribeSocCheckResultListRequest",
       "name": "云安全配置检查项结果列表",
-      "output": "DescribeSocCheckResultListResponse"
+      "output": "DescribeSocCheckResultListResponse",
+      "status": "online"
     },
     "DescribeSocCspmCompliance": {
       "document": "合规详情项",
       "input": "DescribeSocCspmComplianceRequest",
       "name": "合规详情",
-      "output": "DescribeSocCspmComplianceResponse"
+      "output": "DescribeSocCspmComplianceResponse",
+      "status": "online"
     },
     "DescribeVulDetail": {
       "document": "漏洞列表页，获取漏洞详情信息",
       "input": "DescribeVulDetailRequest",
       "name": "漏洞列表-漏洞详情",
-      "output": "DescribeVulDetailResponse"
+      "output": "DescribeVulDetailResponse",
+      "status": "online"
     },
     "DescribeVulList": {
       "document": "漏洞管理页，获取漏洞列表",
       "input": "DescribeVulListRequest",
       "name": "漏洞管理-漏洞列表",
-      "output": "DescribeVulListResponse"
+      "output": "DescribeVulListResponse",
+      "status": "online"
     },
     "SaDivulgeDataQueryPub": {
       "document": "查询【通用字段】【泄露监测数据列表】",
       "input": "SaDivulgeDataQueryPubRequest",
       "name": "查询【通用字段】【泄露监测数据列表】",
-      "output": "SaDivulgeDataQueryPubResponse"
+      "output": "SaDivulgeDataQueryPubResponse",
+      "status": "online"
     }
   },
   "metadata": {

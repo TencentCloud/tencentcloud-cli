@@ -1,24 +1,19 @@
 **Example 1: 修改用户麦克风属性**
 
-
+修改用户麦克风属性
 
 Input: 
 
 ```
-tccli gme ModifyUserMicStatus --cli-unfold-argument  \
-    --RoomId xx \
-    --BizId 0 \
-    --Users.0.Uid 0 \
-    --Users.0.EnableMic 0
-```
+tccli gme ModifyUserMicStatus --cli-unfold-argument ```
 
 Output: 
 ```
 {
     "Response": {
         "Result": 0,
-        "ErrMsg": "xx",
-        "RequestId": "xx"
+        "ErrMsg": "",
+        "RequestId": "f2c37dfd-56c9-400e-9fbc-705db7a74af8"
     }
 }
 ```

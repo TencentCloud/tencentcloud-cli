@@ -4,7 +4,8 @@
       "document": "通过game_id、room_id解散房间",
       "input": "DismissRoomRequest",
       "name": "解散房间",
-      "output": "DismissRoomResponse"
+      "output": "DismissRoomResponse",
+      "status": "online"
     }
   },
   "metadata": {

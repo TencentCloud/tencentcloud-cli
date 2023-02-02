@@ -4,673 +4,785 @@
       "document": "设置基础防护的DDoS告警阈值，只支持基础防护产品",
       "input": "CreateBasicDDoSAlarmThresholdRequest",
       "name": "设置基础防护的DDoS告警阈值",
-      "output": "CreateBasicDDoSAlarmThresholdResponse"
+      "output": "CreateBasicDDoSAlarmThresholdResponse",
+      "status": "online"
     },
     "CreateBoundIP": {
       "document": "绑定IP到高防包实例，支持独享包、共享包；需要注意的是此接口绑定或解绑IP是异步接口，当处于绑定或解绑中时，则不允许再进行绑定或解绑，需要等待当前绑定或解绑完成。",
       "input": "CreateBoundIPRequest",
       "name": "绑定IP到高防包实例",
-      "output": "CreateBoundIPResponse"
+      "output": "CreateBoundIPResponse",
+      "status": "online"
     },
     "CreateCCFrequencyRules": {
       "document": "添加CC防护的访问频率控制规则",
       "input": "CreateCCFrequencyRulesRequest",
       "name": "添加CC防护的访问频率控制规则",
-      "output": "CreateCCFrequencyRulesResponse"
+      "output": "CreateCCFrequencyRulesResponse",
+      "status": "online"
     },
     "CreateCCSelfDefinePolicy": {
       "document": "创建CC自定义策略",
       "input": "CreateCCSelfDefinePolicyRequest",
       "name": "创建CC自定义策略",
-      "output": "CreateCCSelfDefinePolicyResponse"
+      "output": "CreateCCSelfDefinePolicyResponse",
+      "status": "online"
     },
     "CreateDDoSPolicy": {
       "document": "添加DDoS高级策略",
       "input": "CreateDDoSPolicyRequest",
       "name": "添加DDoS高级策略",
-      "output": "CreateDDoSPolicyResponse"
+      "output": "CreateDDoSPolicyResponse",
+      "status": "online"
     },
     "CreateDDoSPolicyCase": {
       "document": "添加策略场景",
       "input": "CreateDDoSPolicyCaseRequest",
       "name": "添加策略场景",
-      "output": "CreateDDoSPolicyCaseResponse"
+      "output": "CreateDDoSPolicyCaseResponse",
+      "status": "online"
     },
     "CreateInstanceName": {
       "document": "资源实例重命名，支持独享包、共享包、高防IP、高防IP专业版；",
       "input": "CreateInstanceNameRequest",
       "name": "资源实例重命名",
-      "output": "CreateInstanceNameResponse"
+      "output": "CreateInstanceNameResponse",
+      "status": "online"
     },
     "CreateL4HealthConfig": {
       "document": "上传四层健康检查配置",
       "input": "CreateL4HealthConfigRequest",
       "name": "上传四层健康检查配置",
-      "output": "CreateL4HealthConfigResponse"
+      "output": "CreateL4HealthConfigResponse",
+      "status": "online"
     },
     "CreateL4Rules": {
       "document": "添加L4转发规则",
       "input": "CreateL4RulesRequest",
       "name": "添加L4转发规则",
-      "output": "CreateL4RulesResponse"
+      "output": "CreateL4RulesResponse",
+      "status": "online"
     },
     "CreateL7CCRule": {
       "document": "此接口是7层CC的访问频控自定义规则（IP+Host维度，不支持具体的URI），此接口已弃用，请调用新接口CreateCCFrequencyRules，新接口同时支持IP+Host维度以及具体的URI；",
       "input": "CreateL7CCRuleRequest",
       "name": "创建7层CC自定义规则",
-      "output": "CreateL7CCRuleResponse"
+      "output": "CreateL7CCRuleResponse",
+      "status": "online"
     },
     "CreateL7HealthConfig": {
       "document": "上传七层健康检查配置",
       "input": "CreateL7HealthConfigRequest",
       "name": "上传七层健康检查配置",
-      "output": "CreateL7HealthConfigResponse"
+      "output": "CreateL7HealthConfigResponse",
+      "status": "online"
     },
     "CreateL7RuleCert": {
       "document": "配置7层转发规则的证书",
       "input": "CreateL7RuleCertRequest",
       "name": "配置L7转发规则的证书",
-      "output": "CreateL7RuleCertResponse"
+      "output": "CreateL7RuleCertResponse",
+      "status": "online"
     },
     "CreateL7Rules": {
       "document": "添加7层(网站)转发规则",
       "input": "CreateL7RulesRequest",
       "name": "添加L7转发规则",
-      "output": "CreateL7RulesResponse"
+      "output": "CreateL7RulesResponse",
+      "status": "online"
     },
     "CreateL7RulesUpload": {
       "document": "批量上传7层转发规则",
       "input": "CreateL7RulesUploadRequest",
       "name": "批量上传L7转发规则",
-      "output": "CreateL7RulesUploadResponse"
+      "output": "CreateL7RulesUploadResponse",
+      "status": "online"
     },
     "CreateNetReturn": {
       "document": "高防IP专业版一键切回源站",
       "input": "CreateNetReturnRequest",
       "name": "一键切回",
-      "output": "CreateNetReturnResponse"
+      "output": "CreateNetReturnResponse",
+      "status": "online"
     },
     "CreateNewL4Rules": {
       "document": "添加L4转发规则",
       "input": "CreateNewL4RulesRequest",
       "name": "添加四层转发规则",
-      "output": "CreateNewL4RulesResponse"
+      "output": "CreateNewL4RulesResponse",
+      "status": "online"
     },
     "CreateNewL7Rules": {
       "document": "添加7层转发规则",
       "input": "CreateNewL7RulesRequest",
       "name": "添加7层转发规则",
-      "output": "CreateNewL7RulesResponse"
+      "output": "CreateNewL7RulesResponse",
+      "status": "online"
     },
     "CreateNewL7RulesUpload": {
       "document": "批量上传7层转发规则",
       "input": "CreateNewL7RulesUploadRequest",
       "name": "批量上传7层转发规则",
-      "output": "CreateNewL7RulesUploadResponse"
+      "output": "CreateNewL7RulesUploadResponse",
+      "status": "online"
     },
     "CreateUnblockIp": {
       "document": "IP解封操作",
       "input": "CreateUnblockIpRequest",
       "name": "IP解封操作",
-      "output": "CreateUnblockIpResponse"
+      "output": "CreateUnblockIpResponse",
+      "status": "online"
     },
     "DeleteCCFrequencyRules": {
       "document": "删除CC防护的访问频率控制规则",
       "input": "DeleteCCFrequencyRulesRequest",
       "name": "删除CC防护的访问频率控制规则",
-      "output": "DeleteCCFrequencyRulesResponse"
+      "output": "DeleteCCFrequencyRulesResponse",
+      "status": "online"
     },
     "DeleteCCSelfDefinePolicy": {
       "document": "删除CC自定义策略",
       "input": "DeleteCCSelfDefinePolicyRequest",
       "name": "删除CC自定义策略",
-      "output": "DeleteCCSelfDefinePolicyResponse"
+      "output": "DeleteCCSelfDefinePolicyResponse",
+      "status": "online"
     },
     "DeleteDDoSPolicy": {
       "document": "删除DDoS高级策略",
       "input": "DeleteDDoSPolicyRequest",
       "name": "删除DDoS高级策略",
-      "output": "DeleteDDoSPolicyResponse"
+      "output": "DeleteDDoSPolicyResponse",
+      "status": "online"
     },
     "DeleteDDoSPolicyCase": {
       "document": "删除策略场景",
       "input": "DeleteDDoSPolicyCaseRequest",
       "name": "删除策略场景",
-      "output": "DeleteDDoSPolicyCaseResponse"
+      "output": "DeleteDDoSPolicyCaseResponse",
+      "status": "online"
     },
     "DeleteL4Rules": {
       "document": "删除四层转发规则",
       "input": "DeleteL4RulesRequest",
       "name": "删除L4转发规则",
-      "output": "DeleteL4RulesResponse"
+      "output": "DeleteL4RulesResponse",
+      "status": "online"
     },
     "DeleteL7Rules": {
       "document": "删除七层转发规则",
       "input": "DeleteL7RulesRequest",
       "name": "删除L7转发规则",
-      "output": "DeleteL7RulesResponse"
+      "output": "DeleteL7RulesResponse",
+      "status": "online"
     },
     "DeleteNewL4Rules": {
       "document": "删除L4转发规则",
       "input": "DeleteNewL4RulesRequest",
       "name": "删除四层转发规则",
-      "output": "DeleteNewL4RulesResponse"
+      "output": "DeleteNewL4RulesResponse",
+      "status": "online"
     },
     "DeleteNewL7Rules": {
       "document": "删除L7转发规则",
       "input": "DeleteNewL7RulesRequest",
       "name": "删除七层转发规则",
-      "output": "DeleteNewL7RulesResponse"
+      "output": "DeleteNewL7RulesResponse",
+      "status": "online"
     },
     "DescribeActionLog": {
       "document": "获取操作日志",
       "input": "DescribeActionLogRequest",
       "name": "获取操作日志",
-      "output": "DescribeActionLogResponse"
+      "output": "DescribeActionLogResponse",
+      "status": "online"
     },
     "DescribeBGPIPL7RuleMaxCnt": {
       "document": "获取高防IP可添加的最多7层规则数量\n",
       "input": "DescribeBGPIPL7RuleMaxCntRequest",
       "name": "获取高防IP可添加的最多7层规则数量",
-      "output": "DescribeBGPIPL7RuleMaxCntResponse"
+      "output": "DescribeBGPIPL7RuleMaxCntResponse",
+      "status": "online"
     },
     "DescribeBaradData": {
       "document": "为大禹子产品提供业务转发指标数据的接口",
       "input": "DescribeBaradDataRequest",
       "name": "获取转发报表数据",
-      "output": "DescribeBaradDataResponse"
+      "output": "DescribeBaradDataResponse",
+      "status": "online"
     },
     "DescribeBasicCCThreshold": {
       "document": "获取基础防护CC防护阈值",
       "input": "DescribeBasicCCThresholdRequest",
       "name": "获取基础防护CC防护阈值",
-      "output": "DescribeBasicCCThresholdResponse"
+      "output": "DescribeBasicCCThresholdResponse",
+      "status": "online"
     },
     "DescribeBasicDeviceThreshold": {
       "document": "获取基础防护黑洞阈值",
       "input": "DescribeBasicDeviceThresholdRequest",
       "name": "获取基础防护黑洞阈值",
-      "output": "DescribeBasicDeviceThresholdResponse"
+      "output": "DescribeBasicDeviceThresholdResponse",
+      "status": "online"
     },
     "DescribeBizHttpStatus": {
       "document": "获取业务流量状态码统计",
       "input": "DescribeBizHttpStatusRequest",
       "name": "获取业务流量状态码统计",
-      "output": "DescribeBizHttpStatusResponse"
+      "output": "DescribeBizHttpStatusResponse",
+      "status": "online"
     },
     "DescribeBizTrend": {
       "document": "获取业务流量曲线",
       "input": "DescribeBizTrendRequest",
       "name": "获取业务流量曲线",
-      "output": "DescribeBizTrendResponse"
+      "output": "DescribeBizTrendResponse",
+      "status": "online"
     },
     "DescribeCCAlarmThreshold": {
       "document": "获取高防包、高防IP、高防IP专业版、棋牌盾产品设置CC攻击的告警通知阈值",
       "input": "DescribeCCAlarmThresholdRequest",
       "name": "获取CC告警通知阈值",
-      "output": "DescribeCCAlarmThresholdResponse"
+      "output": "DescribeCCAlarmThresholdResponse",
+      "status": "online"
     },
     "DescribeCCEvList": {
       "document": "获取CC攻击事件列表",
       "input": "DescribeCCEvListRequest",
       "name": "获取CC攻击事件列表",
-      "output": "DescribeCCEvListResponse"
+      "output": "DescribeCCEvListResponse",
+      "status": "online"
     },
     "DescribeCCFrequencyRules": {
       "document": "获取CC防护的访问频率控制规则",
       "input": "DescribeCCFrequencyRulesRequest",
       "name": "获取CC防护的访问频率控制规则",
-      "output": "DescribeCCFrequencyRulesResponse"
+      "output": "DescribeCCFrequencyRulesResponse",
+      "status": "online"
     },
     "DescribeCCIpAllowDeny": {
       "document": "获取CC的IP黑白名单",
       "input": "DescribeCCIpAllowDenyRequest",
       "name": "获取CC的IP黑白名单",
-      "output": "DescribeCCIpAllowDenyResponse"
+      "output": "DescribeCCIpAllowDenyResponse",
+      "status": "online"
     },
     "DescribeCCSelfDefinePolicy": {
       "document": "获取CC自定义策略",
       "input": "DescribeCCSelfDefinePolicyRequest",
       "name": "获取CC自定义策略",
-      "output": "DescribeCCSelfDefinePolicyResponse"
+      "output": "DescribeCCSelfDefinePolicyResponse",
+      "status": "online"
     },
     "DescribeCCTrend": {
       "document": "获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)",
       "input": "DescribeCCTrendRequest",
       "name": "获取CC攻击指标数据",
-      "output": "DescribeCCTrendResponse"
+      "output": "DescribeCCTrendResponse",
+      "status": "online"
     },
     "DescribeCCUrlAllow": {
       "document": "获取CC的Url白名单",
       "input": "DescribeCCUrlAllowRequest",
       "name": "获取CC的Url白名单",
-      "output": "DescribeCCUrlAllowResponse"
+      "output": "DescribeCCUrlAllowResponse",
+      "status": "online"
     },
     "DescribeDDoSAlarmThreshold": {
       "document": "获取高防包、高防IP、高防IP专业版、棋牌盾产品设置DDoS攻击的告警通知阈值",
       "input": "DescribeDDoSAlarmThresholdRequest",
       "name": "获取DDoS告警通知阈值",
-      "output": "DescribeDDoSAlarmThresholdResponse"
+      "output": "DescribeDDoSAlarmThresholdResponse",
+      "status": "online"
     },
     "DescribeDDoSAttackIPRegionMap": {
       "document": "获取DDoS攻击源IP地域分布图，支持全球攻击分布和国内省份攻击分布；",
       "input": "DescribeDDoSAttackIPRegionMapRequest",
       "name": "DDoS攻击源IP地域分布图",
-      "output": "DescribeDDoSAttackIPRegionMapResponse"
+      "output": "DescribeDDoSAttackIPRegionMapResponse",
+      "status": "online"
     },
     "DescribeDDoSAttackSource": {
       "document": "获取DDoS攻击源列表",
       "input": "DescribeDDoSAttackSourceRequest",
       "name": "获取DDoS攻击源列表",
-      "output": "DescribeDDoSAttackSourceResponse"
+      "output": "DescribeDDoSAttackSourceResponse",
+      "status": "online"
     },
     "DescribeDDoSCount": {
       "document": "获取DDoS攻击占比分析",
       "input": "DescribeDDoSCountRequest",
       "name": "获取DDoS攻击占比分析",
-      "output": "DescribeDDoSCountResponse"
+      "output": "DescribeDDoSCountResponse",
+      "status": "online"
     },
     "DescribeDDoSDefendStatus": {
       "document": "获取DDoS防护状态（临时关闭状态），支持产品：基础防护，独享包，共享包，高防IP，高防IP专业版；调用此接口是获取当前是否有设置临时关闭DDoS防护状态，如果有设置会返回临时关闭的时长等参数。",
       "input": "DescribeDDoSDefendStatusRequest",
       "name": "获取DDoS防护状态",
-      "output": "DescribeDDoSDefendStatusResponse"
+      "output": "DescribeDDoSDefendStatusResponse",
+      "status": "online"
     },
     "DescribeDDoSEvInfo": {
       "document": "获取DDoS攻击事件详情",
       "input": "DescribeDDoSEvInfoRequest",
       "name": "获取DDoS攻击事件详情",
-      "output": "DescribeDDoSEvInfoResponse"
+      "output": "DescribeDDoSEvInfoResponse",
+      "status": "online"
     },
     "DescribeDDoSEvList": {
       "document": "获取DDoS攻击事件列表",
       "input": "DescribeDDoSEvListRequest",
       "name": "获取DDoS攻击事件列表",
-      "output": "DescribeDDoSEvListResponse"
+      "output": "DescribeDDoSEvListResponse",
+      "status": "online"
     },
     "DescribeDDoSIpLog": {
       "document": "获取DDoSIP攻击日志",
       "input": "DescribeDDoSIpLogRequest",
       "name": "获取DDoSIP攻击日志",
-      "output": "DescribeDDoSIpLogResponse"
+      "output": "DescribeDDoSIpLogResponse",
+      "status": "online"
     },
     "DescribeDDoSNetCount": {
       "document": "获取高防IP专业版资源的DDoS攻击占比分析",
       "input": "DescribeDDoSNetCountRequest",
       "name": "获取高防IP专业版资源的DDoS攻击占比分析",
-      "output": "DescribeDDoSNetCountResponse"
+      "output": "DescribeDDoSNetCountResponse",
+      "status": "online"
     },
     "DescribeDDoSNetEvInfo": {
       "document": "获取高防IP专业版资源的DDoS攻击事件详情",
       "input": "DescribeDDoSNetEvInfoRequest",
       "name": "获取高防IP专业版资源的DDoS攻击事件详情",
-      "output": "DescribeDDoSNetEvInfoResponse"
+      "output": "DescribeDDoSNetEvInfoResponse",
+      "status": "online"
     },
     "DescribeDDoSNetEvList": {
       "document": "获取高防IP专业版资源的DDoS攻击事件列表",
       "input": "DescribeDDoSNetEvListRequest",
       "name": "获取高防IP专业版资源的DDoS攻击事件列表",
-      "output": "DescribeDDoSNetEvListResponse"
+      "output": "DescribeDDoSNetEvListResponse",
+      "status": "online"
     },
     "DescribeDDoSNetIpLog": {
       "document": "获取高防IP专业版资源的DDoSIP攻击日志",
       "input": "DescribeDDoSNetIpLogRequest",
       "name": "获取高防IP专业版资源的DDoSIP攻击日志",
-      "output": "DescribeDDoSNetIpLogResponse"
+      "output": "DescribeDDoSNetIpLogResponse",
+      "status": "online"
     },
     "DescribeDDoSNetTrend": {
       "document": "获取高防IP专业版资源的DDoS攻击指标数据",
       "input": "DescribeDDoSNetTrendRequest",
       "name": "获取高防IP专业版资源的DDoS攻击指标数据",
-      "output": "DescribeDDoSNetTrendResponse"
+      "output": "DescribeDDoSNetTrendResponse",
+      "status": "online"
     },
     "DescribeDDoSPolicy": {
       "document": "获取DDoS高级策略",
       "input": "DescribeDDoSPolicyRequest",
       "name": "获取DDoS高级策略",
-      "output": "DescribeDDoSPolicyResponse"
+      "output": "DescribeDDoSPolicyResponse",
+      "status": "online"
     },
     "DescribeDDoSTrend": {
       "document": "获取DDoS攻击流量带宽和攻击包速率数据",
       "input": "DescribeDDoSTrendRequest",
       "name": "获取DDoS攻击指标数据",
-      "output": "DescribeDDoSTrendResponse"
+      "output": "DescribeDDoSTrendResponse",
+      "status": "online"
     },
     "DescribeDDoSUsedStatis": {
       "document": "统计用户的高防资源的使用天数和DDoS攻击防护次数",
       "input": "DescribeDDoSUsedStatisRequest",
       "name": "获取DDoS防护使用统计",
-      "output": "DescribeDDoSUsedStatisResponse"
+      "output": "DescribeDDoSUsedStatisResponse",
+      "status": "online"
     },
     "DescribeIPProductInfo": {
       "document": "获取独享包或共享包IP对应的云资产信息，只支持独享包和共享包的IP",
       "input": "DescribeIPProductInfoRequest",
       "name": "获取独享包或共享包IP对应的云资产信息",
-      "output": "DescribeIPProductInfoResponse"
+      "output": "DescribeIPProductInfoResponse",
+      "status": "online"
     },
     "DescribeInsurePacks": {
       "document": "获取保险包套餐列表",
       "input": "DescribeInsurePacksRequest",
       "name": "获取保险包套餐列表",
-      "output": "DescribeInsurePacksResponse"
+      "output": "DescribeInsurePacksResponse",
+      "status": "online"
     },
     "DescribeIpBlockList": {
       "document": "获取IP封堵列表",
       "input": "DescribeIpBlockListRequest",
       "name": "获取IP封堵列表",
-      "output": "DescribeIpBlockListResponse"
+      "output": "DescribeIpBlockListResponse",
+      "status": "online"
     },
     "DescribeIpUnBlockList": {
       "document": "获取IP解封记录",
       "input": "DescribeIpUnBlockListRequest",
       "name": "获取IP解封记录",
-      "output": "DescribeIpUnBlockListResponse"
+      "output": "DescribeIpUnBlockListResponse",
+      "status": "online"
     },
     "DescribeL4HealthConfig": {
       "document": "导出四层健康检查配置",
       "input": "DescribeL4HealthConfigRequest",
       "name": "导出四层健康检查配置",
-      "output": "DescribeL4HealthConfigResponse"
+      "output": "DescribeL4HealthConfigResponse",
+      "status": "online"
     },
     "DescribeL4RulesErrHealth": {
       "document": "获取L4转发规则健康检查异常结果",
       "input": "DescribeL4RulesErrHealthRequest",
       "name": "获取L4转发规则健康检查异常结果",
-      "output": "DescribeL4RulesErrHealthResponse"
+      "output": "DescribeL4RulesErrHealthResponse",
+      "status": "online"
     },
     "DescribeL7HealthConfig": {
       "document": "导出七层健康检查配置",
       "input": "DescribeL7HealthConfigRequest",
       "name": "导出七层健康检查配置",
-      "output": "DescribeL7HealthConfigResponse"
+      "output": "DescribeL7HealthConfigResponse",
+      "status": "online"
     },
     "DescribeNewL4Rules": {
       "document": "获取L4转发规则",
       "input": "DescribeNewL4RulesRequest",
       "name": "获取四层转发规则",
-      "output": "DescribeNewL4RulesResponse"
+      "output": "DescribeNewL4RulesResponse",
+      "status": "online"
     },
     "DescribeNewL4RulesErrHealth": {
       "document": "获取L4转发规则健康检查异常结果",
       "input": "DescribeNewL4RulesErrHealthRequest",
       "name": "获取四层转发规则健康检查异常结果",
-      "output": "DescribeNewL4RulesErrHealthResponse"
+      "output": "DescribeNewL4RulesErrHealthResponse",
+      "status": "online"
     },
     "DescribeNewL7RulesErrHealth": {
       "document": "获取L7转发规则健康检查异常结果",
       "input": "DescribeNewL7RulesErrHealthRequest",
       "name": "获取L7转发规则健康检查异常结果",
-      "output": "DescribeNewL7RulesErrHealthResponse"
+      "output": "DescribeNewL7RulesErrHealthResponse",
+      "status": "online"
     },
     "DescribePackIndex": {
       "document": "获取产品总览统计，支持高防包、高防IP、高防IP专业版；",
       "input": "DescribePackIndexRequest",
       "name": "获取产品总览",
-      "output": "DescribePackIndexResponse"
+      "output": "DescribePackIndexResponse",
+      "status": "online"
     },
     "DescribePcap": {
       "document": "下载攻击事件的pcap包",
       "input": "DescribePcapRequest",
       "name": "下载攻击事件的pcap包",
-      "output": "DescribePcapResponse"
+      "output": "DescribePcapResponse",
+      "status": "online"
     },
     "DescribePolicyCase": {
       "document": "获取策略场景",
       "input": "DescribePolicyCaseRequest",
       "name": "获取策略场景",
-      "output": "DescribePolicyCaseResponse"
+      "output": "DescribePolicyCaseResponse",
+      "status": "online"
     },
     "DescribeResIpList": {
       "document": "获取资源的IP列表",
       "input": "DescribeResIpListRequest",
       "name": "获取资源的IP列表",
-      "output": "DescribeResIpListResponse"
+      "output": "DescribeResIpListResponse",
+      "status": "online"
     },
     "DescribeResourceList": {
       "document": "获取资源列表",
       "input": "DescribeResourceListRequest",
       "name": "获取资源列表",
-      "output": "DescribeResourceListResponse"
+      "output": "DescribeResourceListResponse",
+      "status": "online"
     },
     "DescribeRuleSets": {
       "document": "获取资源的规则数",
       "input": "DescribeRuleSetsRequest",
       "name": "获取资源的规则数",
-      "output": "DescribeRuleSetsResponse"
+      "output": "DescribeRuleSetsResponse",
+      "status": "online"
     },
     "DescribeSchedulingDomainList": {
       "document": "获取调度域名列表",
       "input": "DescribeSchedulingDomainListRequest",
       "name": "获取调度域名列表",
-      "output": "DescribeSchedulingDomainListResponse"
+      "output": "DescribeSchedulingDomainListResponse",
+      "status": "online"
     },
     "DescribeSecIndex": {
       "document": "获取本月安全统计",
       "input": "DescribeSecIndexRequest",
       "name": "获取安全统计",
-      "output": "DescribeSecIndexResponse"
+      "output": "DescribeSecIndexResponse",
+      "status": "online"
     },
     "DescribeSourceIpSegment": {
       "document": "获取回源IP段，支持的产品：高防IP，高防IP专业版；",
       "input": "DescribeSourceIpSegmentRequest",
       "name": "获取回源IP段",
-      "output": "DescribeSourceIpSegmentResponse"
+      "output": "DescribeSourceIpSegmentResponse",
+      "status": "online"
     },
     "DescribeTransmitStatis": {
       "document": "获取业务转发统计数据，支持转发流量和转发包速率",
       "input": "DescribeTransmitStatisRequest",
       "name": "获取业务转发统计数据",
-      "output": "DescribeTransmitStatisResponse"
+      "output": "DescribeTransmitStatisResponse",
+      "status": "online"
     },
     "DescribeUnBlockStatis": {
       "document": "获取黑洞解封次数",
       "input": "DescribeUnBlockStatisRequest",
       "name": "获取黑洞解封次数",
-      "output": "DescribeUnBlockStatisResponse"
+      "output": "DescribeUnBlockStatisResponse",
+      "status": "online"
     },
     "DescribleL4Rules": {
       "document": "获取四层转发规则",
       "input": "DescribleL4RulesRequest",
       "name": "获取L4转发规则",
-      "output": "DescribleL4RulesResponse"
+      "output": "DescribleL4RulesResponse",
+      "status": "online"
     },
     "DescribleL7Rules": {
       "document": "获取七层转发规则",
       "input": "DescribleL7RulesRequest",
       "name": "获取L7转发规则",
-      "output": "DescribleL7RulesResponse"
+      "output": "DescribleL7RulesResponse",
+      "status": "online"
     },
     "DescribleNewL7Rules": {
       "document": "获取7层规则",
       "input": "DescribleNewL7RulesRequest",
       "name": "获取7层规则",
-      "output": "DescribleNewL7RulesResponse"
+      "output": "DescribleNewL7RulesResponse",
+      "status": "online"
     },
     "DescribleRegionCount": {
       "document": "获取地域的资源实例数",
       "input": "DescribleRegionCountRequest",
       "name": "获取地域的资源实例数",
-      "output": "DescribleRegionCountResponse"
+      "output": "DescribleRegionCountResponse",
+      "status": "online"
     },
     "ModifyCCAlarmThreshold": {
       "document": "为高防包、高防IP、高防IP专业版、棋牌盾产品设置CC攻击的告警通知阈值",
       "input": "ModifyCCAlarmThresholdRequest",
       "name": "设置CC告警通知阈值",
-      "output": "ModifyCCAlarmThresholdResponse"
+      "output": "ModifyCCAlarmThresholdResponse",
+      "status": "online"
     },
     "ModifyCCFrequencyRules": {
       "document": "修改CC防护的访问频率控制规则",
       "input": "ModifyCCFrequencyRulesRequest",
       "name": "修改CC防护的访问频率控制规则",
-      "output": "ModifyCCFrequencyRulesResponse"
+      "output": "ModifyCCFrequencyRulesResponse",
+      "status": "online"
     },
     "ModifyCCFrequencyRulesStatus": {
       "document": "开启或关闭CC防护的访问频率控制规则",
       "input": "ModifyCCFrequencyRulesStatusRequest",
       "name": "开启或关闭CC防护的访问频率控制规则",
-      "output": "ModifyCCFrequencyRulesStatusResponse"
+      "output": "ModifyCCFrequencyRulesStatusResponse",
+      "status": "online"
     },
     "ModifyCCHostProtection": {
       "document": "开启或关闭CC域名防护",
       "input": "ModifyCCHostProtectionRequest",
       "name": "开启或关闭CC域名防护",
-      "output": "ModifyCCHostProtectionResponse"
+      "output": "ModifyCCHostProtectionResponse",
+      "status": "online"
     },
     "ModifyCCIpAllowDeny": {
       "document": "添加或删除CC的IP黑白名单",
       "input": "ModifyCCIpAllowDenyRequest",
       "name": "添加或删除CC的IP黑白名单",
-      "output": "ModifyCCIpAllowDenyResponse"
+      "output": "ModifyCCIpAllowDenyResponse",
+      "status": "online"
     },
     "ModifyCCLevel": {
       "document": "修改CC防护等级",
       "input": "ModifyCCLevelRequest",
       "name": "修改CC防护等级",
-      "output": "ModifyCCLevelResponse"
+      "output": "ModifyCCLevelResponse",
+      "status": "online"
     },
     "ModifyCCPolicySwitch": {
       "document": "修改CC自定义策略开关",
       "input": "ModifyCCPolicySwitchRequest",
       "name": "修改CC自定义策略开关",
-      "output": "ModifyCCPolicySwitchResponse"
+      "output": "ModifyCCPolicySwitchResponse",
+      "status": "online"
     },
     "ModifyCCSelfDefinePolicy": {
       "document": "修改CC自定义策略",
       "input": "ModifyCCSelfDefinePolicyRequest",
       "name": "修改CC自定义策略",
-      "output": "ModifyCCSelfDefinePolicyResponse"
+      "output": "ModifyCCSelfDefinePolicyResponse",
+      "status": "online"
     },
     "ModifyCCThreshold": {
       "document": "修改CC的防护阈值",
       "input": "ModifyCCThresholdRequest",
       "name": "修改CC的防护阈值",
-      "output": "ModifyCCThresholdResponse"
+      "output": "ModifyCCThresholdResponse",
+      "status": "online"
     },
     "ModifyCCUrlAllow": {
       "document": "添加或删除CC的URL白名单",
       "input": "ModifyCCUrlAllowRequest",
       "name": "添加或删除CC的URL白名单",
-      "output": "ModifyCCUrlAllowResponse"
+      "output": "ModifyCCUrlAllowResponse",
+      "status": "online"
     },
     "ModifyDDoSAIStatus": {
       "document": "读取或修改DDoS的AI防护状态",
       "input": "ModifyDDoSAIStatusRequest",
       "name": "修改DDoS的AI防护状态",
-      "output": "ModifyDDoSAIStatusResponse"
+      "output": "ModifyDDoSAIStatusResponse",
+      "status": "online"
     },
     "ModifyDDoSAlarmThreshold": {
       "document": "为高防包、高防IP、高防IP专业版、棋牌盾等产品设置DDoS攻击的告警通知阈值",
       "input": "ModifyDDoSAlarmThresholdRequest",
       "name": "设置DDoS告警通知阈值",
-      "output": "ModifyDDoSAlarmThresholdResponse"
+      "output": "ModifyDDoSAlarmThresholdResponse",
+      "status": "online"
     },
     "ModifyDDoSDefendStatus": {
       "document": "开启或关闭DDoS防护状态，调用此接口允许临时关闭DDoS防护一段时间，等时间到了会自动开启DDoS防护；",
       "input": "ModifyDDoSDefendStatusRequest",
       "name": "修改DDoS防护状态",
-      "output": "ModifyDDoSDefendStatusResponse"
+      "output": "ModifyDDoSDefendStatusResponse",
+      "status": "online"
     },
     "ModifyDDoSLevel": {
       "document": "读取或修改DDoS的防护等级",
       "input": "ModifyDDoSLevelRequest",
       "name": "修改DDoSIP防护等级",
-      "output": "ModifyDDoSLevelResponse"
+      "output": "ModifyDDoSLevelResponse",
+      "status": "online"
     },
     "ModifyDDoSPolicy": {
       "document": "修改DDoS高级策略",
       "input": "ModifyDDoSPolicyRequest",
       "name": "修改DDoS高级策略",
-      "output": "ModifyDDoSPolicyResponse"
+      "output": "ModifyDDoSPolicyResponse",
+      "status": "online"
     },
     "ModifyDDoSPolicyCase": {
       "document": "修改策略场景",
       "input": "ModifyDDoSPolicyCaseRequest",
       "name": "修改策略场景",
-      "output": "ModifyDDoSPolicyCaseResponse"
+      "output": "ModifyDDoSPolicyCaseResponse",
+      "status": "online"
     },
     "ModifyDDoSPolicyName": {
       "document": "修改DDoS高级策略名称",
       "input": "ModifyDDoSPolicyNameRequest",
       "name": "修改DDoS高级策略名称",
-      "output": "ModifyDDoSPolicyNameResponse"
+      "output": "ModifyDDoSPolicyNameResponse",
+      "status": "online"
     },
     "ModifyDDoSSwitch": {
       "document": "开启或关闭DDoS防护，只支持基础防护产品；",
       "input": "ModifyDDoSSwitchRequest",
       "name": "开启或关闭DDoS防护",
-      "output": "ModifyDDoSSwitchResponse"
+      "output": "ModifyDDoSSwitchResponse",
+      "status": "online"
     },
     "ModifyDDoSThreshold": {
       "document": "修改DDoS清洗阈值",
       "input": "ModifyDDoSThresholdRequest",
       "name": "修改DDoS清洗阈值",
-      "output": "ModifyDDoSThresholdResponse"
+      "output": "ModifyDDoSThresholdResponse",
+      "status": "online"
     },
     "ModifyDDoSWaterKey": {
       "document": "支持水印密钥的添加，删除，开启，关闭",
       "input": "ModifyDDoSWaterKeyRequest",
       "name": "修改水印密钥",
-      "output": "ModifyDDoSWaterKeyResponse"
+      "output": "ModifyDDoSWaterKeyResponse",
+      "status": "online"
     },
     "ModifyElasticLimit": {
       "document": "修改弹性防护阈值",
       "input": "ModifyElasticLimitRequest",
       "name": "修改弹性防护阈值",
-      "output": "ModifyElasticLimitResponse"
+      "output": "ModifyElasticLimitResponse",
+      "status": "online"
     },
     "ModifyL4Health": {
       "document": "修改L4转发规则健康检查参数，支持的子产品：高防IP、高防IP专业版",
       "input": "ModifyL4HealthRequest",
       "name": "修改L4转发规则健康检查参数",
-      "output": "ModifyL4HealthResponse"
+      "output": "ModifyL4HealthResponse",
+      "status": "online"
     },
     "ModifyL4KeepTime": {
       "document": "修改L4转发规则的会话保持，支持的子产品：高防IP、高防IP专业版",
       "input": "ModifyL4KeepTimeRequest",
       "name": "修改L4转发规则的会话保持",
-      "output": "ModifyL4KeepTimeResponse"
+      "output": "ModifyL4KeepTimeResponse",
+      "status": "online"
     },
     "ModifyL4Rules": {
       "document": "修改L4转发规则",
       "input": "ModifyL4RulesRequest",
       "name": "修改L4转发规则",
-      "output": "ModifyL4RulesResponse"
+      "output": "ModifyL4RulesResponse",
+      "status": "online"
     },
     "ModifyL7Rules": {
       "document": "修改L7转发规则",
       "input": "ModifyL7RulesRequest",
       "name": "修改L7转发规则",
-      "output": "ModifyL7RulesResponse"
+      "output": "ModifyL7RulesResponse",
+      "status": "online"
     },
     "ModifyNetReturnSwitch": {
       "document": "在客户收攻击或者被封堵时，切回到源站，并设置回切的时长",
       "input": "ModifyNetReturnSwitchRequest",
       "name": "设置自动切回",
-      "output": "ModifyNetReturnSwitchResponse"
+      "output": "ModifyNetReturnSwitchResponse",
+      "status": "online"
     },
     "ModifyNewDomainRules": {
       "document": "修改7层转发规则",
       "input": "ModifyNewDomainRulesRequest",
       "name": "修改7层转发规则",
-      "output": "ModifyNewDomainRulesResponse"
+      "output": "ModifyNewDomainRulesResponse",
+      "status": "online"
     },
     "ModifyNewL4Rule": {
       "document": "修改4层转发规则",
       "input": "ModifyNewL4RuleRequest",
       "name": "修改4层转发规则",
-      "output": "ModifyNewL4RuleResponse"
+      "output": "ModifyNewL4RuleResponse",
+      "status": "online"
     },
     "ModifyResBindDDoSPolicy": {
       "document": "资源实例绑定DDoS高级策略",
       "input": "ModifyResBindDDoSPolicyRequest",
       "name": "资源绑定DDoS高级策略",
-      "output": "ModifyResBindDDoSPolicyResponse"
+      "output": "ModifyResBindDDoSPolicyResponse",
+      "status": "online"
     },
     "ModifyResourceRenewFlag": {
       "document": "修改资源自动续费标记",
       "input": "ModifyResourceRenewFlagRequest",
       "name": "修改资源自动续费标记",
-      "output": "ModifyResourceRenewFlagResponse"
+      "output": "ModifyResourceRenewFlagResponse",
+      "status": "online"
     }
   },
   "metadata": {

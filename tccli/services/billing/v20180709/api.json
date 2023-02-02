@@ -4,121 +4,141 @@
       "document": "获取云账户余额信息。",
       "input": "DescribeAccountBalanceRequest",
       "name": "获取账户余额",
-      "output": "DescribeAccountBalanceResponse"
+      "output": "DescribeAccountBalanceResponse",
+      "status": "online"
     },
     "DescribeBillDetail": {
       "document": "查询账单明细数据",
       "input": "DescribeBillDetailRequest",
       "name": "查询账单明细数据",
-      "output": "DescribeBillDetailResponse"
+      "output": "DescribeBillDetailResponse",
+      "status": "online"
     },
     "DescribeBillList": {
       "document": "获取收支明细列表，支持翻页和参数过滤",
       "input": "DescribeBillListRequest",
       "name": "获取收支明细列表",
-      "output": "DescribeBillListResponse"
+      "output": "DescribeBillListResponse",
+      "status": "online"
     },
     "DescribeBillResourceSummary": {
       "document": "查询账单资源汇总数据 ",
       "input": "DescribeBillResourceSummaryRequest",
       "name": "查询账单资源汇总数据",
-      "output": "DescribeBillResourceSummaryResponse"
+      "output": "DescribeBillResourceSummaryResponse",
+      "status": "online"
     },
     "DescribeBillSummaryByPayMode": {
       "document": "获取按付费模式汇总费用分布",
       "input": "DescribeBillSummaryByPayModeRequest",
       "name": "获取按付费模式汇总费用分布",
-      "output": "DescribeBillSummaryByPayModeResponse"
+      "output": "DescribeBillSummaryByPayModeResponse",
+      "status": "online"
     },
     "DescribeBillSummaryByProduct": {
       "document": "获取产品汇总费用分布",
       "input": "DescribeBillSummaryByProductRequest",
       "name": "获取产品汇总费用分布",
-      "output": "DescribeBillSummaryByProductResponse"
+      "output": "DescribeBillSummaryByProductResponse",
+      "status": "online"
     },
     "DescribeBillSummaryByProject": {
       "document": "获取按项目汇总费用分布",
       "input": "DescribeBillSummaryByProjectRequest",
       "name": "获取按项目汇总费用分布",
-      "output": "DescribeBillSummaryByProjectResponse"
+      "output": "DescribeBillSummaryByProjectResponse",
+      "status": "online"
     },
     "DescribeBillSummaryByRegion": {
       "document": "获取按地域汇总费用分布",
       "input": "DescribeBillSummaryByRegionRequest",
       "name": "获取按地域汇总费用分布",
-      "output": "DescribeBillSummaryByRegionResponse"
+      "output": "DescribeBillSummaryByRegionResponse",
+      "status": "online"
     },
     "DescribeBillSummaryByTag": {
       "document": "获取按标签汇总费用分布",
       "input": "DescribeBillSummaryByTagRequest",
       "name": "获取按标签汇总费用分布",
-      "output": "DescribeBillSummaryByTagResponse"
+      "output": "DescribeBillSummaryByTagResponse",
+      "status": "online"
     },
     "DescribeCostDetail": {
       "document": "查询消耗明细",
       "input": "DescribeCostDetailRequest",
       "name": "查询消耗明细",
-      "output": "DescribeCostDetailResponse"
+      "output": "DescribeCostDetailResponse",
+      "status": "online"
     },
     "DescribeCostSummaryByProduct": {
       "document": "获取按产品汇总消耗详情",
       "input": "DescribeCostSummaryByProductRequest",
       "name": "获取按产品汇总消耗详情",
-      "output": "DescribeCostSummaryByProductResponse"
+      "output": "DescribeCostSummaryByProductResponse",
+      "status": "online"
     },
     "DescribeCostSummaryByProject": {
       "document": "获取按项目汇总消耗详情",
       "input": "DescribeCostSummaryByProjectRequest",
       "name": "获取按项目汇总消耗详情",
-      "output": "DescribeCostSummaryByProjectResponse"
+      "output": "DescribeCostSummaryByProjectResponse",
+      "status": "online"
     },
     "DescribeCostSummaryByRegion": {
       "document": "获取按地域汇总消耗详情",
       "input": "DescribeCostSummaryByRegionRequest",
       "name": "获取按地域汇总消耗详情",
-      "output": "DescribeCostSummaryByRegionResponse"
+      "output": "DescribeCostSummaryByRegionResponse",
+      "status": "online"
     },
     "DescribeCostSummaryByResource": {
       "document": "获取按资源汇总消耗详情",
       "input": "DescribeCostSummaryByResourceRequest",
       "name": "获取按资源汇总消耗详情",
-      "output": "DescribeCostSummaryByResourceResponse"
+      "output": "DescribeCostSummaryByResourceResponse",
+      "status": "online"
     },
     "DescribeDealsByCond": {
       "document": "查询订单",
       "input": "DescribeDealsByCondRequest",
       "name": "查询订单数据",
-      "output": "DescribeDealsByCondResponse"
+      "output": "DescribeDealsByCondResponse",
+      "status": "online"
     },
     "DescribeDosageCosDetailByDate": {
       "document": "获取COS产品用量明细",
       "input": "DescribeDosageCosDetailByDateRequest",
       "name": "获取COS产品用量明细",
-      "output": "DescribeDosageCosDetailByDateResponse"
+      "output": "DescribeDosageCosDetailByDateResponse",
+      "status": "online"
     },
     "DescribeDosageDetailByDate": {
       "document": "按日期获取产品用量明细",
       "input": "DescribeDosageDetailByDateRequest",
       "name": "按日期获取产品用量明细",
-      "output": "DescribeDosageDetailByDateResponse"
+      "output": "DescribeDosageDetailByDateResponse",
+      "status": "online"
     },
     "DescribeVoucherInfo": {
       "document": "获取代金券相关信息",
       "input": "DescribeVoucherInfoRequest",
       "name": "获取代金券相关信息",
-      "output": "DescribeVoucherInfoResponse"
+      "output": "DescribeVoucherInfoResponse",
+      "status": "online"
     },
     "DescribeVoucherUsageDetails": {
       "document": "获取代金券使用记录",
       "input": "DescribeVoucherUsageDetailsRequest",
       "name": "获取代金券使用记录",
-      "output": "DescribeVoucherUsageDetailsResponse"
+      "output": "DescribeVoucherUsageDetailsResponse",
+      "status": "online"
     },
     "PayDeals": {
       "document": "支付订单",
       "input": "PayDealsRequest",
       "name": "支付订单",
-      "output": "PayDealsResponse"
+      "output": "PayDealsResponse",
+      "status": "online"
     }
   },
   "metadata": {

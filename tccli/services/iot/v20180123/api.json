@@ -4,271 +4,316 @@
       "document": "启用规则",
       "input": "ActivateRuleRequest",
       "name": "启用规则",
-      "output": "ActivateRuleResponse"
+      "output": "ActivateRuleResponse",
+      "status": "online"
     },
     "AddDevice": {
       "document": "提供在指定的产品Id下创建一个设备的能力，生成设备名称与设备秘钥。",
       "input": "AddDeviceRequest",
       "name": "新增设备",
-      "output": "AddDeviceResponse"
+      "output": "AddDeviceResponse",
+      "status": "online"
     },
     "AddProduct": {
       "document": "本接口(AddProduct)用于创建、定义某款硬件产品。",
       "input": "AddProductRequest",
       "name": "新增产品",
-      "output": "AddProductResponse"
+      "output": "AddProductResponse",
+      "status": "online"
     },
     "AddRule": {
       "document": "新增规则",
       "input": "AddRuleRequest",
       "name": "新增规则",
-      "output": "AddRuleResponse"
+      "output": "AddRuleResponse",
+      "status": "online"
     },
     "AddTopic": {
       "document": "新增Topic，用于设备或应用发布消息至该Topic或订阅该Topic的消息。",
       "input": "AddTopicRequest",
       "name": "新增Topic",
-      "output": "AddTopicResponse"
+      "output": "AddTopicResponse",
+      "status": "online"
     },
     "AppAddUser": {
       "document": "为APP提供用户注册功能",
       "input": "AppAddUserRequest",
       "name": "用户注册",
-      "output": "AppAddUserResponse"
+      "output": "AppAddUserResponse",
+      "status": "online"
     },
     "AppDeleteDevice": {
       "document": "用户解除与设备的关联关系，解除后APP用户无法控制设备，获取设备数据",
       "input": "AppDeleteDeviceRequest",
       "name": "用户解绑设备",
-      "output": "AppDeleteDeviceResponse"
+      "output": "AppDeleteDeviceResponse",
+      "status": "online"
     },
     "AppGetDevice": {
       "document": "获取绑定设备的基本信息与数据模板定义",
       "input": "AppGetDeviceRequest",
       "name": "获取绑定设备信息",
-      "output": "AppGetDeviceResponse"
+      "output": "AppGetDeviceResponse",
+      "status": "online"
     },
     "AppGetDeviceData": {
       "document": "获取绑定设备数据，用于实时展示设备的最新数据",
       "input": "AppGetDeviceDataRequest",
       "name": "获取绑定设备数据",
-      "output": "AppGetDeviceDataResponse"
+      "output": "AppGetDeviceDataResponse",
+      "status": "online"
     },
     "AppGetDeviceStatuses": {
       "document": "获取绑定设备的上下线状态",
       "input": "AppGetDeviceStatusesRequest",
       "name": "获取绑定设备状态",
-      "output": "AppGetDeviceStatusesResponse"
+      "output": "AppGetDeviceStatusesResponse",
+      "status": "online"
     },
     "AppGetDevices": {
       "document": "获取用户的绑定设备列表",
       "input": "AppGetDevicesRequest",
       "name": "获取绑定设备列表",
-      "output": "AppGetDevicesResponse"
+      "output": "AppGetDevicesResponse",
+      "status": "online"
     },
     "AppGetToken": {
       "document": "获取用户token",
       "input": "AppGetTokenRequest",
       "name": "获取用户token",
-      "output": "AppGetTokenResponse"
+      "output": "AppGetTokenResponse",
+      "status": "online"
     },
     "AppGetUser": {
       "document": "获取用户信息",
       "input": "AppGetUserRequest",
       "name": "获取用户信息",
-      "output": "AppGetUserResponse"
+      "output": "AppGetUserResponse",
+      "status": "online"
     },
     "AppIssueDeviceControl": {
       "document": "用户通过APP控制设备",
       "input": "AppIssueDeviceControlRequest",
       "name": "用户控制设备",
-      "output": "AppIssueDeviceControlResponse"
+      "output": "AppIssueDeviceControlResponse",
+      "status": "online"
     },
     "AppResetPassword": {
       "document": "重置APP用户密码",
       "input": "AppResetPasswordRequest",
       "name": "重置用户密码",
-      "output": "AppResetPasswordResponse"
+      "output": "AppResetPasswordResponse",
+      "status": "online"
     },
     "AppSecureAddDevice": {
       "document": "用户绑定设备，绑定后可以在APP端进行控制。绑定设备前需调用“获取设备绑定签名”接口",
       "input": "AppSecureAddDeviceRequest",
       "name": "用户绑定设备",
-      "output": "AppSecureAddDeviceResponse"
+      "output": "AppSecureAddDeviceResponse",
+      "status": "online"
     },
     "AppUpdateDevice": {
       "document": "修改设备别名，便于用户个性化定义设备的名称",
       "input": "AppUpdateDeviceRequest",
       "name": "修改设备别名",
-      "output": "AppUpdateDeviceResponse"
+      "output": "AppUpdateDeviceResponse",
+      "status": "online"
     },
     "AppUpdateUser": {
       "document": "修改用户信息",
       "input": "AppUpdateUserRequest",
       "name": "用户信息修改",
-      "output": "AppUpdateUserResponse"
+      "output": "AppUpdateUserResponse",
+      "status": "online"
     },
     "AssociateSubDeviceToGatewayProduct": {
       "document": "关联子设备产品和网关产品",
       "input": "AssociateSubDeviceToGatewayProductRequest",
       "name": "关联子设备产品和网关产品",
-      "output": "AssociateSubDeviceToGatewayProductResponse"
+      "output": "AssociateSubDeviceToGatewayProductResponse",
+      "status": "online"
     },
     "DeactivateRule": {
       "document": "禁用规则",
       "input": "DeactivateRuleRequest",
       "name": "禁用规则",
-      "output": "DeactivateRuleResponse"
+      "output": "DeactivateRuleResponse",
+      "status": "online"
     },
     "DeleteDevice": {
       "document": "提供在指定的产品Id下删除一个设备的能力。",
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
-      "output": "DeleteDeviceResponse"
+      "output": "DeleteDeviceResponse",
+      "status": "online"
     },
     "DeleteProduct": {
       "document": "删除用户指定的产品Id对应的信息。",
       "input": "DeleteProductRequest",
       "name": "删除产品",
-      "output": "DeleteProductResponse"
+      "output": "DeleteProductResponse",
+      "status": "online"
     },
     "DeleteRule": {
       "document": "删除规则",
       "input": "DeleteRuleRequest",
       "name": "删除规则",
-      "output": "DeleteRuleResponse"
+      "output": "DeleteRuleResponse",
+      "status": "online"
     },
     "DeleteTopic": {
       "document": "删除Topic",
       "input": "DeleteTopicRequest",
       "name": "删除Topic",
-      "output": "DeleteTopicResponse"
+      "output": "DeleteTopicResponse",
+      "status": "online"
     },
     "GetDataHistory": {
       "document": "批量获取设备某一段时间范围的设备上报数据。该接口适用于使用高级版类型的产品",
       "input": "GetDataHistoryRequest",
       "name": "获取设备历史数据",
-      "output": "GetDataHistoryResponse"
+      "output": "GetDataHistoryResponse",
+      "status": "online"
     },
     "GetDebugLog": {
       "document": "获取设备的调试日志，用于定位问题",
       "input": "GetDebugLogRequest",
       "name": "获取调试日志",
-      "output": "GetDebugLogResponse"
+      "output": "GetDebugLogResponse",
+      "status": "online"
     },
     "GetDevice": {
       "document": "提供查询某个设备详细信息的能力。",
       "input": "GetDeviceRequest",
       "name": "获取设备信息",
-      "output": "GetDeviceResponse"
+      "output": "GetDeviceResponse",
+      "status": "online"
     },
     "GetDeviceData": {
       "document": "获取某个设备当前上报到云端的数据，该接口适用于使用数据模板协议的产品。",
       "input": "GetDeviceDataRequest",
       "name": "获取设备数据",
-      "output": "GetDeviceDataResponse"
+      "output": "GetDeviceDataResponse",
+      "status": "online"
     },
     "GetDeviceLog": {
       "document": "批量获取设备与云端的详细通信日志，该接口适用于使用高级版类型的产品。",
       "input": "GetDeviceLogRequest",
       "name": "获取设备日志",
-      "output": "GetDeviceLogResponse"
+      "output": "GetDeviceLogResponse",
+      "status": "online"
     },
     "GetDeviceSignatures": {
       "document": "获取设备绑定签名，用于用户绑定某个设备的应用场景",
       "input": "GetDeviceSignaturesRequest",
       "name": "获取设备绑定签名",
-      "output": "GetDeviceSignaturesResponse"
+      "output": "GetDeviceSignaturesResponse",
+      "status": "online"
     },
     "GetDeviceStatistics": {
       "document": "查询某段时间范围内产品的在线、激活设备数",
       "input": "GetDeviceStatisticsRequest",
       "name": "获取设备统计指标",
-      "output": "GetDeviceStatisticsResponse"
+      "output": "GetDeviceStatisticsResponse",
+      "status": "online"
     },
     "GetDeviceStatuses": {
       "document": "批量获取设备的当前状态，状态包括在线、离线或未激活状态。",
       "input": "GetDeviceStatusesRequest",
       "name": "批量获取设备状态",
-      "output": "GetDeviceStatusesResponse"
+      "output": "GetDeviceStatusesResponse",
+      "status": "online"
     },
     "GetDevices": {
       "document": "提供分页查询某个产品Id下设备信息的能力。",
       "input": "GetDevicesRequest",
       "name": "获取设备列表",
-      "output": "GetDevicesResponse"
+      "output": "GetDevicesResponse",
+      "status": "online"
     },
     "GetProduct": {
       "document": "获取产品定义的详细信息，包括产品名称、产品描述，鉴权模式等信息。",
       "input": "GetProductRequest",
       "name": "获取产品信息",
-      "output": "GetProductResponse"
+      "output": "GetProductResponse",
+      "status": "online"
     },
     "GetProducts": {
       "document": "获取用户在物联网套件所创建的所有产品信息。",
       "input": "GetProductsRequest",
       "name": "获取产品列表",
-      "output": "GetProductsResponse"
+      "output": "GetProductsResponse",
+      "status": "online"
     },
     "GetRule": {
       "document": "获取转发规则信息",
       "input": "GetRuleRequest",
       "name": "获取转发规则信息",
-      "output": "GetRuleResponse"
+      "output": "GetRuleResponse",
+      "status": "online"
     },
     "GetRules": {
       "document": "获取转发规则列表",
       "input": "GetRulesRequest",
       "name": "获取转发规则列表",
-      "output": "GetRulesResponse"
+      "output": "GetRulesResponse",
+      "status": "online"
     },
     "GetTopic": {
       "document": "获取Topic信息",
       "input": "GetTopicRequest",
       "name": "获取Topic信息",
-      "output": "GetTopicResponse"
+      "output": "GetTopicResponse",
+      "status": "online"
     },
     "GetTopics": {
       "document": "获取Topic列表",
       "input": "GetTopicsRequest",
       "name": "获取Topic列表",
-      "output": "GetTopicsResponse"
+      "output": "GetTopicsResponse",
+      "status": "online"
     },
     "IssueDeviceControl": {
       "document": "提供下发控制指令到指定设备的能力，该接口适用于使用高级版类型的产品。",
       "input": "IssueDeviceControlRequest",
       "name": "下发设备控制指令",
-      "output": "IssueDeviceControlResponse"
+      "output": "IssueDeviceControlResponse",
+      "status": "online"
     },
     "PublishMsg": {
       "document": "提供向指定的Topic发布消息的能力，常用于向设备下发控制指令。该接口只适用于产品版本为“基础版”类型的产品，使用高级版的产品需使用“下发设备控制指令”接口",
       "input": "PublishMsgRequest",
       "name": "向Topic发布消息",
-      "output": "PublishMsgResponse"
+      "output": "PublishMsgResponse",
+      "status": "online"
     },
     "ResetDevice": {
       "document": "重置设备操作，将会为设备生成新的证书及清空最新数据，需谨慎操作。",
       "input": "ResetDeviceRequest",
       "name": "重置设备",
-      "output": "ResetDeviceResponse"
+      "output": "ResetDeviceResponse",
+      "status": "online"
     },
     "UnassociateSubDeviceFromGatewayProduct": {
       "document": "取消子设备产品与网关设备产品的关联",
       "input": "UnassociateSubDeviceFromGatewayProductRequest",
       "name": "取消子设备产品与网关设备产品的关联",
-      "output": "UnassociateSubDeviceFromGatewayProductResponse"
+      "output": "UnassociateSubDeviceFromGatewayProductResponse",
+      "status": "online"
     },
     "UpdateProduct": {
       "document": "提供修改产品信息及数据模板的能力。",
       "input": "UpdateProductRequest",
       "name": "更新产品信息",
-      "output": "UpdateProductResponse"
+      "output": "UpdateProductResponse",
+      "status": "online"
     },
     "UpdateRule": {
       "document": "更新规则",
       "input": "UpdateRuleRequest",
       "name": "更新规则",
-      "output": "UpdateRuleResponse"
+      "output": "UpdateRuleResponse",
+      "status": "online"
     }
   },
   "metadata": {

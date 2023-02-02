@@ -4,37 +4,43 @@
       "document": "本接口用于查询独享集群内的DB实例列表",
       "input": "DescribeDBInstancesRequest",
       "name": "查询独享集群内的DB实例列表",
-      "output": "DescribeDBInstancesResponse"
+      "output": "DescribeDBInstancesResponse",
+      "status": "online"
     },
     "DescribeHostList": {
       "document": "本接口用于查询主机列表",
       "input": "DescribeHostListRequest",
       "name": "查询主机列表",
-      "output": "DescribeHostListResponse"
+      "output": "DescribeHostListResponse",
+      "status": "online"
     },
     "DescribeInstanceDetail": {
       "document": "本接口用于查询独享集群详情",
       "input": "DescribeInstanceDetailRequest",
       "name": "查询独享集群详情",
-      "output": "DescribeInstanceDetailResponse"
+      "output": "DescribeInstanceDetailResponse",
+      "status": "online"
     },
     "DescribeInstanceList": {
       "document": "本接口用于查询独享集群实例列表",
       "input": "DescribeInstanceListRequest",
       "name": "查询独享集群实例列表",
-      "output": "DescribeInstanceListResponse"
+      "output": "DescribeInstanceListResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "根据不同地域不同用户，获取集群列表信息",
       "input": "DescribeInstancesRequest",
       "name": "查询独享集群列表",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "ModifyInstanceName": {
       "document": "本接口用于修改集群名称",
       "input": "ModifyInstanceNameRequest",
       "name": "修改独享集群名称",
-      "output": "ModifyInstanceNameResponse"
+      "output": "ModifyInstanceNameResponse",
+      "status": "online"
     }
   },
   "metadata": {

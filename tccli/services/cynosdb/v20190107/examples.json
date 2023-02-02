@@ -528,6 +528,14 @@
         "title": "重置数据库账号密码"
       }
     ],
+    "RestartInstance": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=RestartInstance\n&InstanceId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "重启实例"
+      }
+    ],
     "ResumeServerless": [
       {
         "document": "",

@@ -4,25 +4,29 @@
       "document": "查询设备风险",
       "input": "DescribeFraudBaseRequest",
       "name": "查询设备风险",
-      "output": "DescribeFraudBaseResponse"
+      "output": "DescribeFraudBaseResponse",
+      "status": "online"
     },
     "DescribeFraudPremium": {
       "document": "查询设备标识及风险",
       "input": "DescribeFraudPremiumRequest",
       "name": "查询设备标识及风险",
-      "output": "DescribeFraudPremiumResponse"
+      "output": "DescribeFraudPremiumResponse",
+      "status": "online"
     },
     "DescribeFraudUltimate": {
       "document": "查询设备标识及风险（旗舰版）",
       "input": "DescribeFraudUltimateRequest",
       "name": "查询设备标识及风险（旗舰版）",
-      "output": "DescribeFraudUltimateResponse"
+      "output": "DescribeFraudUltimateResponse",
+      "status": "online"
     },
     "DescribeTrustedID": {
       "document": "查询设备标识",
       "input": "DescribeTrustedIDRequest",
       "name": "查询设备标识",
-      "output": "DescribeTrustedIDResponse"
+      "output": "DescribeTrustedIDResponse",
+      "status": "online"
     }
   },
   "metadata": {

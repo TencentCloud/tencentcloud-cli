@@ -4,91 +4,106 @@
       "document": "创建小程序隐私合规诊断任务",
       "input": "CreateAppScanTaskRequest",
       "name": "创建小程序隐私合规诊断任务",
-      "output": "CreateAppScanTaskResponse"
+      "output": "CreateAppScanTaskResponse",
+      "status": "online"
     },
     "CreateAppScanTaskRepeat": {
       "document": "小程序隐私合规诊断重试任务",
       "input": "CreateAppScanTaskRepeatRequest",
       "name": "隐私合规诊断重试任务",
-      "output": "CreateAppScanTaskRepeatResponse"
+      "output": "CreateAppScanTaskRepeatResponse",
+      "status": "online"
     },
     "CreateFlySecMiniAppProfessionalScanTask": {
       "document": "创建小程序安全深度诊断任务",
       "input": "CreateFlySecMiniAppProfessionalScanTaskRequest",
       "name": "提交深度诊断任务",
-      "output": "CreateFlySecMiniAppProfessionalScanTaskResponse"
+      "output": "CreateFlySecMiniAppProfessionalScanTaskResponse",
+      "status": "online"
     },
     "CreateFlySecMiniAppScanTask": {
       "document": "创建小程序翼扬安全的基础或深度诊断任务",
       "input": "CreateFlySecMiniAppScanTaskRequest",
       "name": "创建小程序翼扬安全诊断任务",
-      "output": "CreateFlySecMiniAppScanTaskResponse"
+      "output": "CreateFlySecMiniAppScanTaskResponse",
+      "status": "online"
     },
     "CreateFlySecMiniAppScanTaskRepeat": {
       "document": "重新提交基础诊断任务",
       "input": "CreateFlySecMiniAppScanTaskRepeatRequest",
       "name": "重新提交诊断任务",
-      "output": "CreateFlySecMiniAppScanTaskRepeatResponse"
+      "output": "CreateFlySecMiniAppScanTaskRepeatResponse",
+      "status": "online"
     },
     "DescribeBasicDiagnosisResourceUsageInfo": {
       "document": "查询翼扬安全基础诊断资源使用情况",
       "input": "DescribeBasicDiagnosisResourceUsageInfoRequest",
       "name": "查询基础诊断资源使用情况",
-      "output": "DescribeBasicDiagnosisResourceUsageInfoResponse"
+      "output": "DescribeBasicDiagnosisResourceUsageInfoResponse",
+      "status": "online"
     },
     "DescribeFlySecMiniAppReportUrl": {
       "document": "获取翼扬诊断任务报告链接地址",
       "input": "DescribeFlySecMiniAppReportUrlRequest",
       "name": "获取诊断任务报告链接",
-      "output": "DescribeFlySecMiniAppReportUrlResponse"
+      "output": "DescribeFlySecMiniAppReportUrlResponse",
+      "status": "online"
     },
     "DescribeFlySecMiniAppScanReportList": {
       "document": "查询指定小程序版本的翼扬诊断安全得分",
       "input": "DescribeFlySecMiniAppScanReportListRequest",
       "name": "查询指定小程序版本的安全得分",
-      "output": "DescribeFlySecMiniAppScanReportListResponse"
+      "output": "DescribeFlySecMiniAppScanReportListResponse",
+      "status": "online"
     },
     "DescribeFlySecMiniAppScanTaskList": {
       "document": "获取翼扬安全诊断任务列表",
       "input": "DescribeFlySecMiniAppScanTaskListRequest",
       "name": "获取诊断任务列表",
-      "output": "DescribeFlySecMiniAppScanTaskListResponse"
+      "output": "DescribeFlySecMiniAppScanTaskListResponse",
+      "status": "online"
     },
     "DescribeFlySecMiniAppScanTaskParam": {
       "document": "获取用户提交的基础诊断任务参数信息",
       "input": "DescribeFlySecMiniAppScanTaskParamRequest",
       "name": "获取诊断任务参数信息",
-      "output": "DescribeFlySecMiniAppScanTaskParamResponse"
+      "output": "DescribeFlySecMiniAppScanTaskParamResponse",
+      "status": "online"
     },
     "DescribeFlySecMiniAppScanTaskStatus": {
       "document": "查询翼扬安全诊断任务状态",
       "input": "DescribeFlySecMiniAppScanTaskStatusRequest",
       "name": "查询诊断任务状态",
-      "output": "DescribeFlySecMiniAppScanTaskStatusResponse"
+      "output": "DescribeFlySecMiniAppScanTaskStatusResponse",
+      "status": "online"
     },
     "DescribeResourceUsageInfo": {
       "document": "查询翼扬安全资源使用情况",
       "input": "DescribeResourceUsageInfoRequest",
       "name": "查询安全资源使用情况",
-      "output": "DescribeResourceUsageInfoResponse"
+      "output": "DescribeResourceUsageInfoResponse",
+      "status": "online"
     },
     "DescribeScanTaskList": {
       "document": "获取小程序隐私合规诊断任务列表",
       "input": "DescribeScanTaskListRequest",
       "name": "获取隐私合规诊断任务列表",
-      "output": "DescribeScanTaskListResponse"
+      "output": "DescribeScanTaskListResponse",
+      "status": "online"
     },
     "DescribeScanTaskReportUrl": {
       "document": "获取小程序合规诊断任务报告url",
       "input": "DescribeScanTaskReportUrlRequest",
       "name": "获取合规诊断任务报告url",
-      "output": "DescribeScanTaskReportUrlResponse"
+      "output": "DescribeScanTaskReportUrlResponse",
+      "status": "online"
     },
     "DescribeScanTaskStatus": {
       "document": "查询小程序隐私合规诊断任务状态",
       "input": "DescribeScanTaskStatusRequest",
       "name": "查询隐私合规诊断任务状态",
-      "output": "DescribeScanTaskStatusResponse"
+      "output": "DescribeScanTaskStatusResponse",
+      "status": "online"
     }
   },
   "metadata": {

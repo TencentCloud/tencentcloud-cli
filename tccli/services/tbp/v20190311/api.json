@@ -4,25 +4,29 @@
       "document": "创建机器人",
       "input": "CreateBotRequest",
       "name": "创建机器人",
-      "output": "CreateBotResponse"
+      "output": "CreateBotResponse",
+      "status": "online"
     },
     "Reset": {
       "document": "对当前机器人的会话状态进行复位",
       "input": "ResetRequest",
       "name": "复位",
-      "output": "ResetResponse"
+      "output": "ResetResponse",
+      "status": "online"
     },
     "TextProcess": {
       "document": "接收调用侧的文本输入，返回应答文本。已废弃，推荐使用最新版TextProcess接口。",
       "input": "TextProcessRequest",
       "name": "文本处理",
-      "output": "TextProcessResponse"
+      "output": "TextProcessResponse",
+      "status": "online"
     },
     "TextReset": {
       "document": "会话重置接口。已废弃，推荐使用最新版TextReset接口。",
       "input": "TextResetRequest",
       "name": "会话重置",
-      "output": "TextResetResponse"
+      "output": "TextResetResponse",
+      "status": "online"
     }
   },
   "metadata": {

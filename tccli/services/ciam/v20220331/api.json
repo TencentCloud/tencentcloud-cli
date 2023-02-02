@@ -4,91 +4,106 @@
       "document": "新建接口导入用户任务",
       "input": "CreateApiImportUserJobRequest",
       "name": "新建接口导入用户任务",
-      "output": "CreateApiImportUserJobResponse"
+      "output": "CreateApiImportUserJobResponse",
+      "status": "online"
     },
     "CreateFileExportUserJob": {
       "document": "新建文件导出用户任务",
       "input": "CreateFileExportUserJobRequest",
       "name": "新建文件导出用户任务",
-      "output": "CreateFileExportUserJobResponse"
+      "output": "CreateFileExportUserJobResponse",
+      "status": "online"
     },
     "CreateUser": {
       "document": "创建用户",
       "input": "CreateUserRequest",
       "name": "创建用户",
-      "output": "CreateUserResponse"
+      "output": "CreateUserResponse",
+      "status": "online"
     },
     "DeleteUsers": {
       "document": "批量删除用户",
       "input": "DeleteUsersRequest",
       "name": "批量删除用户",
-      "output": "DeleteUsersResponse"
+      "output": "DeleteUsersResponse",
+      "status": "online"
     },
     "DescribeUser": {
       "document": "多条件查询用户信息",
       "input": "DescribeUserRequest",
       "name": "查询用户信息",
-      "output": "DescribeUserResponse"
+      "output": "DescribeUserResponse",
+      "status": "online"
     },
     "DescribeUserById": {
       "document": "根据ID查询用户信息",
       "input": "DescribeUserByIdRequest",
       "name": "根据ID查询用户信息",
-      "output": "DescribeUserByIdResponse"
+      "output": "DescribeUserByIdResponse",
+      "status": "online"
     },
     "LinkAccount": {
       "document": "账号融合",
       "input": "LinkAccountRequest",
       "name": "账号融合",
-      "output": "LinkAccountResponse"
+      "output": "LinkAccountResponse",
+      "status": "online"
     },
     "ListJobs": {
       "document": "查询任务详情",
       "input": "ListJobsRequest",
       "name": "查询任务详情",
-      "output": "ListJobsResponse"
+      "output": "ListJobsResponse",
+      "status": "online"
     },
     "ListLogMessageByCondition": {
       "document": "查询日志信息",
       "input": "ListLogMessageByConditionRequest",
       "name": "查询日志信息",
-      "output": "ListLogMessageByConditionResponse"
+      "output": "ListLogMessageByConditionResponse",
+      "status": "online"
     },
     "ListUser": {
       "document": "查询用户列表",
       "input": "ListUserRequest",
       "name": "查询用户列表",
-      "output": "ListUserResponse"
+      "output": "ListUserResponse",
+      "status": "online"
     },
     "ListUserByProperty": {
       "document": "根据属性查询用户列表",
       "input": "ListUserByPropertyRequest",
       "name": "根据属性查询用户列表",
-      "output": "ListUserByPropertyResponse"
+      "output": "ListUserByPropertyResponse",
+      "status": "online"
     },
     "ResetPassword": {
       "document": "重置用户密码",
       "input": "ResetPasswordRequest",
       "name": "重置用户密码",
-      "output": "ResetPasswordResponse"
+      "output": "ResetPasswordResponse",
+      "status": "online"
     },
     "SetPassword": {
       "document": "设置用户密码",
       "input": "SetPasswordRequest",
       "name": "设置用户密码",
-      "output": "SetPasswordResponse"
+      "output": "SetPasswordResponse",
+      "status": "online"
     },
     "UpdateUser": {
       "document": "更新用户",
       "input": "UpdateUserRequest",
       "name": "更新用户",
-      "output": "UpdateUserResponse"
+      "output": "UpdateUserResponse",
+      "status": "online"
     },
     "UpdateUserStatus": {
       "document": "更新用户状态",
       "input": "UpdateUserStatusRequest",
       "name": "更新用户状态",
-      "output": "UpdateUserStatusResponse"
+      "output": "UpdateUserStatusResponse",
+      "status": "online"
     }
   },
   "metadata": {

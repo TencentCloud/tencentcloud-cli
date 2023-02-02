@@ -4,25 +4,29 @@
       "document": "获取推荐结果",
       "input": "RecommendContentRequest",
       "name": "获取推荐结果",
-      "output": "RecommendContentResponse"
+      "output": "RecommendContentResponse",
+      "status": "online"
     },
     "ReportAction": {
       "document": "上报行为",
       "input": "ReportActionRequest",
       "name": "上报行为",
-      "output": "ReportActionResponse"
+      "output": "ReportActionResponse",
+      "status": "online"
     },
     "ReportMaterial": {
       "document": "上报物料",
       "input": "ReportMaterialRequest",
       "name": "上报物料",
-      "output": "ReportMaterialResponse"
+      "output": "ReportMaterialResponse",
+      "status": "online"
     },
     "ReportPortrait": {
       "document": "上报用户画像",
       "input": "ReportPortraitRequest",
       "name": "上报用户画像",
-      "output": "ReportPortraitResponse"
+      "output": "ReportPortraitResponse",
+      "status": "online"
     }
   },
   "metadata": {

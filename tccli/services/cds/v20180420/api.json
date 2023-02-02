@@ -4,37 +4,43 @@
       "document": "获取镜像列表",
       "input": "DescribeDasbImageIdsRequest",
       "name": "数盾-DASB-获取镜像列表",
-      "output": "DescribeDasbImageIdsResponse"
+      "output": "DescribeDasbImageIdsResponse",
+      "status": "online"
     },
     "DescribeDbauditInstanceType": {
       "document": "本接口 (DescribeDbauditInstanceType) 用于查询可售卖的产品规格列表。",
       "input": "DescribeDbauditInstanceTypeRequest",
       "name": "获取产品规格信息列表",
-      "output": "DescribeDbauditInstanceTypeResponse"
+      "output": "DescribeDbauditInstanceTypeResponse",
+      "status": "online"
     },
     "DescribeDbauditInstances": {
       "document": "本接口 (DescribeDbauditInstances) 用于查询数据安全审计实例列表",
       "input": "DescribeDbauditInstancesRequest",
       "name": "获取数据安全审计实例列表",
-      "output": "DescribeDbauditInstancesResponse"
+      "output": "DescribeDbauditInstancesResponse",
+      "status": "online"
     },
     "DescribeDbauditUsedRegions": {
       "document": "本接口 (DescribeDbauditUsedRegions) 用于查询可售卖地域列表。",
       "input": "DescribeDbauditUsedRegionsRequest",
       "name": "查询可售卖地域列表",
-      "output": "DescribeDbauditUsedRegionsResponse"
+      "output": "DescribeDbauditUsedRegionsResponse",
+      "status": "online"
     },
     "InquiryPriceDbauditInstance": {
       "document": "用于查询数据安全审计产品实例价格",
       "input": "InquiryPriceDbauditInstanceRequest",
       "name": "数据安全审计产品实例询价",
-      "output": "InquiryPriceDbauditInstanceResponse"
+      "output": "InquiryPriceDbauditInstanceResponse",
+      "status": "online"
     },
     "ModifyDbauditInstancesRenewFlag": {
       "document": "本接口 (ModifyDbauditInstancesRenewFlag) 用于修改数据安全审计产品实例续费标识",
       "input": "ModifyDbauditInstancesRenewFlagRequest",
       "name": "修改实例续费标识",
-      "output": "ModifyDbauditInstancesRenewFlagResponse"
+      "output": "ModifyDbauditInstancesRenewFlagResponse",
+      "status": "online"
     }
   },
   "metadata": {

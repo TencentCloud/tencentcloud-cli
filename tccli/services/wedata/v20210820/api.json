@@ -4,1171 +4,1366 @@
       "document": "批量创建任务告警规则",
       "input": "BatchCreateIntegrationTaskAlarmsRequest",
       "name": "批量创建任务告警规则",
-      "output": "BatchCreateIntegrationTaskAlarmsResponse"
+      "output": "BatchCreateIntegrationTaskAlarmsResponse",
+      "status": "online"
     },
     "BatchDeleteIntegrationTasks": {
       "document": "批量删除集成任务",
       "input": "BatchDeleteIntegrationTasksRequest",
       "name": "批量删除集成任务",
-      "output": "BatchDeleteIntegrationTasksResponse"
+      "output": "BatchDeleteIntegrationTasksResponse",
+      "status": "online"
     },
     "BatchDeleteTasksNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n批量删除任务，仅对任务状态为”已停止“有效；\n",
       "input": "BatchDeleteTasksNewRequest",
       "name": "批量删除任务【Beta版本】",
-      "output": "BatchDeleteTasksNewResponse"
+      "output": "BatchDeleteTasksNewResponse",
+      "status": "online"
     },
     "BatchForceSuccessIntegrationTaskInstances": {
       "document": "批量置成功集成任务实例",
       "input": "BatchForceSuccessIntegrationTaskInstancesRequest",
       "name": "批量置成功集成任务实例",
-      "output": "BatchForceSuccessIntegrationTaskInstancesResponse"
+      "output": "BatchForceSuccessIntegrationTaskInstancesResponse",
+      "status": "online"
     },
     "BatchKillIntegrationTaskInstances": {
       "document": "批量终止集成任务实例",
       "input": "BatchKillIntegrationTaskInstancesRequest",
       "name": "批量终止集成任务实例",
-      "output": "BatchKillIntegrationTaskInstancesResponse"
+      "output": "BatchKillIntegrationTaskInstancesResponse",
+      "status": "online"
     },
     "BatchMakeUpIntegrationTasks": {
       "document": "对集成离线任务执行批量补数据操作",
       "input": "BatchMakeUpIntegrationTasksRequest",
       "name": "批量补数据",
-      "output": "BatchMakeUpIntegrationTasksResponse"
+      "output": "BatchMakeUpIntegrationTasksResponse",
+      "status": "online"
     },
     "BatchModifyOwnersNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n批量修改任务责任人",
       "input": "BatchModifyOwnersNewRequest",
       "name": "批量修改任务责任人【Beta版本】",
-      "output": "BatchModifyOwnersNewResponse"
+      "output": "BatchModifyOwnersNewResponse",
+      "status": "online"
     },
     "BatchRerunIntegrationTaskInstances": {
       "document": "批量重跑集成任务实例",
       "input": "BatchRerunIntegrationTaskInstancesRequest",
       "name": "批量重跑集成任务实例",
-      "output": "BatchRerunIntegrationTaskInstancesResponse"
+      "output": "BatchRerunIntegrationTaskInstancesResponse",
+      "status": "online"
     },
     "BatchResumeIntegrationTasks": {
       "document": "批量继续执行集成实时任务",
       "input": "BatchResumeIntegrationTasksRequest",
       "name": "批量继续执行集成任务",
-      "output": "BatchResumeIntegrationTasksResponse"
+      "output": "BatchResumeIntegrationTasksResponse",
+      "status": "online"
     },
     "BatchStartIntegrationTasks": {
       "document": "批量运行集成任务",
       "input": "BatchStartIntegrationTasksRequest",
       "name": "批量运行集成任务",
-      "output": "BatchStartIntegrationTasksResponse"
+      "output": "BatchStartIntegrationTasksResponse",
+      "status": "online"
     },
     "BatchStopIntegrationTasks": {
       "document": "批量停止集成任务",
       "input": "BatchStopIntegrationTasksRequest",
       "name": "批量停止集成任务",
-      "output": "BatchStopIntegrationTasksResponse"
+      "output": "BatchStopIntegrationTasksResponse",
+      "status": "online"
     },
     "BatchStopTasksNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n仅对任务状态为”调度中“和”已暂停“有效，对所选任务的任务实例进行终止，并停止调度",
       "input": "BatchStopTasksNewRequest",
       "name": "批量停止任务【Beta版本】",
-      "output": "BatchStopTasksNewResponse"
+      "output": "BatchStopTasksNewResponse",
+      "status": "online"
     },
     "BatchSuspendIntegrationTasks": {
       "document": "批量暂停集成任务",
       "input": "BatchSuspendIntegrationTasksRequest",
       "name": "批量暂停集成任务",
-      "output": "BatchSuspendIntegrationTasksResponse"
+      "output": "BatchSuspendIntegrationTasksResponse",
+      "status": "online"
     },
     "BatchUpdateIntegrationTasks": {
       "document": "批量更新集成任务（暂时仅支持批量更新责任人）",
       "input": "BatchUpdateIntegrationTasksRequest",
       "name": "批量更新集成任务",
-      "output": "BatchUpdateIntegrationTasksResponse"
+      "output": "BatchUpdateIntegrationTasksResponse",
+      "status": "online"
     },
     "CheckAlarmRegularNameExist": {
       "document": "判断告警规则重名",
       "input": "CheckAlarmRegularNameExistRequest",
       "name": "判断告警规则重名",
-      "output": "CheckAlarmRegularNameExistResponse"
+      "output": "CheckAlarmRegularNameExistResponse",
+      "status": "online"
     },
     "CheckDuplicateRuleName": {
       "document": "检查规则名称是否重复",
       "input": "CheckDuplicateRuleNameRequest",
       "name": "检查规则名称是否重复",
-      "output": "CheckDuplicateRuleNameResponse"
+      "output": "CheckDuplicateRuleNameResponse",
+      "status": "online"
     },
     "CheckDuplicateTemplateName": {
       "document": "检查规则模板名称是否重复",
       "input": "CheckDuplicateTemplateNameRequest",
       "name": "检查规则模板名称是否重复",
-      "output": "CheckDuplicateTemplateNameResponse"
+      "output": "CheckDuplicateTemplateNameResponse",
+      "status": "online"
     },
     "CheckIntegrationNodeNameExists": {
       "document": "判断集成节点名称是否存在",
       "input": "CheckIntegrationNodeNameExistsRequest",
       "name": "判断集成节点名称是否存在",
-      "output": "CheckIntegrationNodeNameExistsResponse"
+      "output": "CheckIntegrationNodeNameExistsResponse",
+      "status": "online"
     },
     "CheckIntegrationTaskNameExists": {
       "document": "判断集成任务名称是否存在",
       "input": "CheckIntegrationTaskNameExistsRequest",
       "name": "判断集成任务名称是否存在",
-      "output": "CheckIntegrationTaskNameExistsResponse"
+      "output": "CheckIntegrationTaskNameExistsResponse",
+      "status": "online"
     },
     "CheckTaskNameExist": {
       "document": "离线任务重名校验",
       "input": "CheckTaskNameExistRequest",
       "name": "离线任务重名校验",
-      "output": "CheckTaskNameExistResponse"
+      "output": "CheckTaskNameExistResponse",
+      "status": "online"
     },
     "CommitExportTask": {
       "document": "提交数据导出任务",
       "input": "CommitExportTaskRequest",
       "name": "提交数据导出任务",
-      "output": "CommitExportTaskResponse"
+      "output": "CommitExportTaskResponse",
+      "status": "online"
     },
     "CommitIntegrationTask": {
       "document": "提交集成任务",
       "input": "CommitIntegrationTaskRequest",
       "name": "提交集成任务",
-      "output": "CommitIntegrationTaskResponse"
+      "output": "CommitIntegrationTaskResponse",
+      "status": "online"
     },
     "CommitRuleGroupExecResult": {
       "document": "Runner 规则检测结果上报",
       "input": "CommitRuleGroupExecResultRequest",
       "name": "规则检测结果上报",
-      "output": "CommitRuleGroupExecResultResponse"
+      "output": "CommitRuleGroupExecResultResponse",
+      "status": "online"
     },
     "CommitRuleGroupTask": {
       "document": "提交规则组运行任务接口",
       "input": "CommitRuleGroupTaskRequest",
       "name": "提交规则组运行任务接口",
-      "output": "CommitRuleGroupTaskResponse"
+      "output": "CommitRuleGroupTaskResponse",
+      "status": "online"
     },
     "CreateCustomFunction": {
       "document": " 创建用户自定义函数",
       "input": "CreateCustomFunctionRequest",
       "name": "创建用户自定义函数",
-      "output": "CreateCustomFunctionResponse"
+      "output": "CreateCustomFunctionResponse",
+      "status": "online"
     },
     "CreateDataSource": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n创建数据源",
       "input": "CreateDataSourceRequest",
       "name": "数据源管理-创建数据源【Beta版本】",
-      "output": "CreateDataSourceResponse"
+      "output": "CreateDataSourceResponse",
+      "status": "online"
     },
     "CreateFolder": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n创建文件夹",
       "input": "CreateFolderRequest",
       "name": "创建文件夹【Beta版本】",
-      "output": "CreateFolderResponse"
+      "output": "CreateFolderResponse",
+      "status": "online"
     },
     "CreateHiveTable": {
       "document": "建hive表",
       "input": "CreateHiveTableRequest",
       "name": "建hive表",
-      "output": "CreateHiveTableResponse"
+      "output": "CreateHiveTableResponse",
+      "status": "online"
     },
     "CreateHiveTableByDDL": {
       "document": "创建hive表，返回表名称",
       "input": "CreateHiveTableByDDLRequest",
       "name": "创建hive表",
-      "output": "CreateHiveTableByDDLResponse"
+      "output": "CreateHiveTableByDDLResponse",
+      "status": "online"
     },
     "CreateInLongAgent": {
       "document": "注册采集器",
       "input": "CreateInLongAgentRequest",
       "name": "注册采集器",
-      "output": "CreateInLongAgentResponse"
+      "output": "CreateInLongAgentResponse",
+      "status": "online"
     },
     "CreateIntegrationNode": {
       "document": "创建集成节点",
       "input": "CreateIntegrationNodeRequest",
       "name": "创建集成节点",
-      "output": "CreateIntegrationNodeResponse"
+      "output": "CreateIntegrationNodeResponse",
+      "status": "online"
     },
     "CreateIntegrationTask": {
       "document": "创建集成任务",
       "input": "CreateIntegrationTaskRequest",
       "name": "创建集成任务",
-      "output": "CreateIntegrationTaskResponse"
+      "output": "CreateIntegrationTaskResponse",
+      "status": "online"
     },
     "CreateOfflineTask": {
       "document": "创建离线任务",
       "input": "CreateOfflineTaskRequest",
       "name": "创建离线任务",
-      "output": "CreateOfflineTaskResponse"
+      "output": "CreateOfflineTaskResponse",
+      "status": "online"
     },
     "CreateOrUpdateResource": {
       "document": "资源管理需要先将资源上传到cos中，然后调用该接口，将cos资源绑定到wedata",
       "input": "CreateOrUpdateResourceRequest",
       "name": "资源管理将cos资源绑定到wedata",
-      "output": "CreateOrUpdateResourceResponse"
+      "output": "CreateOrUpdateResourceResponse",
+      "status": "online"
     },
     "CreateResourcePath": {
       "document": "文件路径的根目录为 /datastudio/resource，如果要在根目录下创建 aaa 文件夹，FilePath的值应该为 /datastudio/resource，如果根目录下已经创建了 aaa 文件夹，要在 aaa 下创建  bbb 文件夹，FilePath的值应该为 /datastudio/resource/aaa",
       "input": "CreateResourcePathRequest",
       "name": "资源管理创建文件路径",
-      "output": "CreateResourcePathResponse"
+      "output": "CreateResourcePathResponse",
+      "status": "online"
     },
     "CreateRule": {
       "document": "创建质量规则接口",
       "input": "CreateRuleRequest",
       "name": "创建质量规则接口",
-      "output": "CreateRuleResponse"
+      "output": "CreateRuleResponse",
+      "status": "online"
     },
     "CreateRuleTemplate": {
       "document": "创建规则模版",
       "input": "CreateRuleTemplateRequest",
       "name": "创建规则模版",
-      "output": "CreateRuleTemplateResponse"
+      "output": "CreateRuleTemplateResponse",
+      "status": "online"
     },
     "CreateTask": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n创建任务",
       "input": "CreateTaskRequest",
       "name": "创建任务【Beta版本】",
-      "output": "CreateTaskResponse"
+      "output": "CreateTaskResponse",
+      "status": "online"
     },
     "CreateTaskAlarmRegular": {
       "document": "创建任务告警规则",
       "input": "CreateTaskAlarmRegularRequest",
       "name": "创建任务告警规则",
-      "output": "CreateTaskAlarmRegularResponse"
+      "output": "CreateTaskAlarmRegularResponse",
+      "status": "online"
     },
     "CreateWorkflow": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n创建工作流",
       "input": "CreateWorkflowRequest",
       "name": "创建工作流【Beta版本】",
-      "output": "CreateWorkflowResponse"
+      "output": "CreateWorkflowResponse",
+      "status": "online"
     },
     "DeleteCustomFunction": {
       "document": "删除用户自定义函数",
       "input": "DeleteCustomFunctionRequest",
       "name": "删除用户自定义函数",
-      "output": "DeleteCustomFunctionResponse"
+      "output": "DeleteCustomFunctionResponse",
+      "status": "online"
     },
     "DeleteDataSources": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n删除数据源",
       "input": "DeleteDataSourcesRequest",
       "name": "数据源管理-删除数据源【Beta版本】",
-      "output": "DeleteDataSourcesResponse"
+      "output": "DeleteDataSourcesResponse",
+      "status": "online"
     },
     "DeleteFolder": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n删除文件夹",
       "input": "DeleteFolderRequest",
       "name": "删除文件夹【Beta版本】",
-      "output": "DeleteFolderResponse"
+      "output": "DeleteFolderResponse",
+      "status": "online"
     },
     "DeleteInLongAgent": {
       "document": "删除采集器",
       "input": "DeleteInLongAgentRequest",
       "name": "删除采集器",
-      "output": "DeleteInLongAgentResponse"
+      "output": "DeleteInLongAgentResponse",
+      "status": "online"
     },
     "DeleteIntegrationNode": {
       "document": "删除集成节点",
       "input": "DeleteIntegrationNodeRequest",
       "name": "删除集成节点",
-      "output": "DeleteIntegrationNodeResponse"
+      "output": "DeleteIntegrationNodeResponse",
+      "status": "online"
     },
     "DeleteIntegrationTask": {
       "document": "删除集成任务",
       "input": "DeleteIntegrationTaskRequest",
       "name": "删除集成任务",
-      "output": "DeleteIntegrationTaskResponse"
+      "output": "DeleteIntegrationTaskResponse",
+      "status": "online"
     },
     "DeleteOfflineTask": {
       "document": "删除任务",
       "input": "DeleteOfflineTaskRequest",
       "name": "删除任务",
-      "output": "DeleteOfflineTaskResponse"
+      "output": "DeleteOfflineTaskResponse",
+      "status": "online"
     },
     "DeleteResource": {
       "document": "资源管理删除资源",
       "input": "DeleteResourceRequest",
       "name": "删除资源",
-      "output": "DeleteResourceResponse"
+      "output": "DeleteResourceResponse",
+      "status": "online"
     },
     "DeleteRule": {
       "document": "删除质量规则接口",
       "input": "DeleteRuleRequest",
       "name": "删除质量规则接口",
-      "output": "DeleteRuleResponse"
+      "output": "DeleteRuleResponse",
+      "status": "online"
     },
     "DeleteRuleTemplate": {
       "document": "删除规则模版",
       "input": "DeleteRuleTemplateRequest",
       "name": "删除规则模版",
-      "output": "DeleteRuleTemplateResponse"
+      "output": "DeleteRuleTemplateResponse",
+      "status": "online"
     },
     "DeleteTaskAlarmRegular": {
       "document": "删除任务告警规则",
       "input": "DeleteTaskAlarmRegularRequest",
       "name": "删除任务告警规则",
-      "output": "DeleteTaskAlarmRegularResponse"
+      "output": "DeleteTaskAlarmRegularResponse",
+      "status": "online"
     },
     "DeleteWorkflowNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n删除工作流",
       "input": "DeleteWorkflowNewRequest",
       "name": "删除工作流【Beta版本】",
-      "output": "DeleteWorkflowNewResponse"
+      "output": "DeleteWorkflowNewResponse",
+      "status": "online"
     },
     "DescribeAlarmEvents": {
       "document": "告警事件列表",
       "input": "DescribeAlarmEventsRequest",
       "name": "告警事件列表",
-      "output": "DescribeAlarmEventsResponse"
+      "output": "DescribeAlarmEventsResponse",
+      "status": "online"
     },
     "DescribeAlarmReceiver": {
       "document": "告警接收人详情",
       "input": "DescribeAlarmReceiverRequest",
       "name": "告警接收人详情",
-      "output": "DescribeAlarmReceiverResponse"
+      "output": "DescribeAlarmReceiverResponse",
+      "status": "online"
     },
     "DescribeClusterNamespaceList": {
       "document": "获取集群命名空间列表",
       "input": "DescribeClusterNamespaceListRequest",
       "name": "获取集群命名空间列表",
-      "output": "DescribeClusterNamespaceListResponse"
+      "output": "DescribeClusterNamespaceListResponse",
+      "status": "online"
     },
     "DescribeDataBases": {
       "document": "查询数据来源列表",
       "input": "DescribeDataBasesRequest",
       "name": "查询数据来源列表",
-      "output": "DescribeDataBasesResponse"
+      "output": "DescribeDataBasesResponse",
+      "status": "online"
     },
     "DescribeDataCheckStat": {
       "document": "数据质量的概览页面数据监测情况接口",
       "input": "DescribeDataCheckStatRequest",
       "name": "数据质量数据监测情况接口",
-      "output": "DescribeDataCheckStatResponse"
+      "output": "DescribeDataCheckStatResponse",
+      "status": "online"
     },
     "DescribeDataObjects": {
       "document": "查询规则组数据对象列表",
       "input": "DescribeDataObjectsRequest",
       "name": "查询规则组数据对象列表",
-      "output": "DescribeDataObjectsResponse"
+      "output": "DescribeDataObjectsResponse",
+      "status": "online"
     },
     "DescribeDataSourceInfoList": {
       "document": "获取数据源信息-数据源分页列表",
       "input": "DescribeDataSourceInfoListRequest",
       "name": "获取数据源信息",
-      "output": "DescribeDataSourceInfoListResponse"
+      "output": "DescribeDataSourceInfoListResponse",
+      "status": "online"
     },
     "DescribeDataSourceList": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n数据源详情",
       "input": "DescribeDataSourceListRequest",
       "name": "数据源管理-查询数据源分页列表【Beta版本】",
-      "output": "DescribeDataSourceListResponse"
+      "output": "DescribeDataSourceListResponse",
+      "status": "online"
     },
     "DescribeDataSourceWithoutInfo": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n数据源列表",
       "input": "DescribeDataSourceWithoutInfoRequest",
       "name": "查看数据源列表不带额外信息【Beta版本】",
-      "output": "DescribeDataSourceWithoutInfoResponse"
+      "output": "DescribeDataSourceWithoutInfoResponse",
+      "status": "online"
     },
     "DescribeDataTypes": {
       "document": "获取字段类型列表",
       "input": "DescribeDataTypesRequest",
       "name": "获取字段类型列表",
-      "output": "DescribeDataTypesResponse"
+      "output": "DescribeDataTypesResponse",
+      "status": "online"
     },
     "DescribeDatabaseInfoList": {
       "document": "获取数据库信息",
       "input": "DescribeDatabaseInfoListRequest",
       "name": "获取数据库信息",
-      "output": "DescribeDatabaseInfoListResponse"
+      "output": "DescribeDatabaseInfoListResponse",
+      "status": "online"
     },
     "DescribeDatasource": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n数据源详情",
       "input": "DescribeDatasourceRequest",
       "name": "数据源管理-数据源详情【Beta版本】",
-      "output": "DescribeDatasourceResponse"
+      "output": "DescribeDatasourceResponse",
+      "status": "online"
     },
     "DescribeDependTasksNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n根据层级查找上/下游任务节点",
       "input": "DescribeDependTasksNewRequest",
       "name": "任务运维-根据层级查找上-下游任务节点【Beta版本】",
-      "output": "DescribeDependTasksNewResponse"
+      "output": "DescribeDependTasksNewResponse",
+      "status": "online"
     },
     "DescribeDimensionScore": {
       "document": "质量报告-查询质量评分",
       "input": "DescribeDimensionScoreRequest",
       "name": "查询维度评分",
-      "output": "DescribeDimensionScoreResponse"
+      "output": "DescribeDimensionScoreResponse",
+      "status": "online"
     },
     "DescribeExecStrategy": {
       "document": "查询规则组执行策略",
       "input": "DescribeExecStrategyRequest",
       "name": "查询规则组执行策略",
-      "output": "DescribeExecStrategyResponse"
+      "output": "DescribeExecStrategyResponse",
+      "status": "online"
     },
     "DescribeFolderList": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n拉取文件夹目录",
       "input": "DescribeFolderListRequest",
       "name": "拉取文件夹目录【Beta版本】",
-      "output": "DescribeFolderListResponse"
+      "output": "DescribeFolderListResponse",
+      "status": "online"
     },
     "DescribeFolderWorkflowList": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n拉取文件夹下的工作流",
       "input": "DescribeFolderWorkflowListRequest",
       "name": "拉取文件夹下的工作流【Beta版本】",
-      "output": "DescribeFolderWorkflowListResponse"
+      "output": "DescribeFolderWorkflowListResponse",
+      "status": "online"
     },
     "DescribeFunctionKinds": {
       "document": "查询函数分类",
       "input": "DescribeFunctionKindsRequest",
       "name": "查询函数分类",
-      "output": "DescribeFunctionKindsResponse"
+      "output": "DescribeFunctionKindsResponse",
+      "status": "online"
     },
     "DescribeFunctionTypes": {
       "document": "查询函数类型",
       "input": "DescribeFunctionTypesRequest",
       "name": "查询函数类型",
-      "output": "DescribeFunctionTypesResponse"
+      "output": "DescribeFunctionTypesResponse",
+      "status": "online"
     },
     "DescribeInLongAgentList": {
       "document": "获取采集器列表",
       "input": "DescribeInLongAgentListRequest",
       "name": "获取采集器列表",
-      "output": "DescribeInLongAgentListResponse"
+      "output": "DescribeInLongAgentListResponse",
+      "status": "online"
     },
     "DescribeInLongAgentTaskList": {
       "document": "查询采集器关联的任务列表",
       "input": "DescribeInLongAgentTaskListRequest",
       "name": "查询采集器关联的任务列表",
-      "output": "DescribeInLongAgentTaskListResponse"
+      "output": "DescribeInLongAgentTaskListResponse",
+      "status": "online"
     },
     "DescribeInLongAgentVpcList": {
       "document": "获取采集器所在集群的VPC列表",
       "input": "DescribeInLongAgentVpcListRequest",
       "name": "获取采集器所在集群的VPC列表",
-      "output": "DescribeInLongAgentVpcListResponse"
+      "output": "DescribeInLongAgentVpcListResponse",
+      "status": "online"
     },
     "DescribeInLongTkeClusterList": {
       "document": "获取TKE集群列表",
       "input": "DescribeInLongTkeClusterListRequest",
       "name": "获取TKE集群列表",
-      "output": "DescribeInLongTkeClusterListResponse"
+      "output": "DescribeInLongTkeClusterListResponse",
+      "status": "online"
     },
     "DescribeInstanceLastLog": {
       "document": "日志获取详情页面",
       "input": "DescribeInstanceLastLogRequest",
       "name": "日志获取详情页面",
-      "output": "DescribeInstanceLastLogResponse"
+      "output": "DescribeInstanceLastLogResponse",
+      "status": "online"
     },
     "DescribeInstanceList": {
       "document": "获取实例列表",
       "input": "DescribeInstanceListRequest",
       "name": "获取实例列表",
-      "output": "DescribeInstanceListResponse"
+      "output": "DescribeInstanceListResponse",
+      "status": "online"
     },
     "DescribeInstanceLog": {
       "document": "获取实例运行日志",
       "input": "DescribeInstanceLogRequest",
       "name": "获取实例运行日志",
-      "output": "DescribeInstanceLogResponse"
+      "output": "DescribeInstanceLogResponse",
+      "status": "online"
     },
     "DescribeInstanceLogList": {
       "document": "离线任务实例运行日志列表",
       "input": "DescribeInstanceLogListRequest",
       "name": "获取离线任务实例运行日志列表",
-      "output": "DescribeInstanceLogListResponse"
+      "output": "DescribeInstanceLogListResponse",
+      "status": "online"
     },
     "DescribeInstanceLogs": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n获取实例日志列表",
       "input": "DescribeInstanceLogsRequest",
       "name": "获取实例日志列表【Beta版本】",
-      "output": "DescribeInstanceLogsResponse"
+      "output": "DescribeInstanceLogsResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "数据质量，查询调度任务的实例列表",
       "input": "DescribeInstancesRequest",
       "name": "数据质量-查询实例列表",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeIntegrationNode": {
       "document": "查询集成节点",
       "input": "DescribeIntegrationNodeRequest",
       "name": "查询集成节点",
-      "output": "DescribeIntegrationNodeResponse"
+      "output": "DescribeIntegrationNodeResponse",
+      "status": "online"
     },
     "DescribeIntegrationStatistics": {
       "document": "数据集成大屏概览",
       "input": "DescribeIntegrationStatisticsRequest",
       "name": "数据集成大屏概览",
-      "output": "DescribeIntegrationStatisticsResponse"
+      "output": "DescribeIntegrationStatisticsResponse",
+      "status": "online"
     },
     "DescribeIntegrationStatisticsAgentStatus": {
       "document": "数据集成大屏采集器状态分布统计",
       "input": "DescribeIntegrationStatisticsAgentStatusRequest",
       "name": "数据集成大屏采集器状态分布统计",
-      "output": "DescribeIntegrationStatisticsAgentStatusResponse"
+      "output": "DescribeIntegrationStatisticsAgentStatusResponse",
+      "status": "online"
     },
     "DescribeIntegrationStatisticsInstanceTrend": {
       "document": "数据集成大屏实例状态统计趋势",
       "input": "DescribeIntegrationStatisticsInstanceTrendRequest",
       "name": "数据集成大屏实例状态统计趋势",
-      "output": "DescribeIntegrationStatisticsInstanceTrendResponse"
+      "output": "DescribeIntegrationStatisticsInstanceTrendResponse",
+      "status": "online"
     },
     "DescribeIntegrationStatisticsRecordsTrend": {
       "document": "数据集成大屏同步条数统计趋势",
       "input": "DescribeIntegrationStatisticsRecordsTrendRequest",
       "name": "数据集成大屏同步条数统计趋势",
-      "output": "DescribeIntegrationStatisticsRecordsTrendResponse"
+      "output": "DescribeIntegrationStatisticsRecordsTrendResponse",
+      "status": "online"
     },
     "DescribeIntegrationStatisticsTaskStatus": {
       "document": "数据集成大屏任务状态分布统计",
       "input": "DescribeIntegrationStatisticsTaskStatusRequest",
       "name": "数据集成大屏任务状态分布统计",
-      "output": "DescribeIntegrationStatisticsTaskStatusResponse"
+      "output": "DescribeIntegrationStatisticsTaskStatusResponse",
+      "status": "online"
     },
     "DescribeIntegrationStatisticsTaskStatusTrend": {
       "document": "数据集成大屏任务状态统计趋势",
       "input": "DescribeIntegrationStatisticsTaskStatusTrendRequest",
       "name": "数据集成大屏任务状态统计趋势",
-      "output": "DescribeIntegrationStatisticsTaskStatusTrendResponse"
+      "output": "DescribeIntegrationStatisticsTaskStatusTrendResponse",
+      "status": "online"
     },
     "DescribeIntegrationTask": {
       "document": "查询集成任务",
       "input": "DescribeIntegrationTaskRequest",
       "name": "查询集成任务",
-      "output": "DescribeIntegrationTaskResponse"
+      "output": "DescribeIntegrationTaskResponse",
+      "status": "online"
     },
     "DescribeIntegrationTasks": {
       "document": "查询集成任务列表",
       "input": "DescribeIntegrationTasksRequest",
       "name": "查询集成任务列表",
-      "output": "DescribeIntegrationTasksResponse"
+      "output": "DescribeIntegrationTasksResponse",
+      "status": "online"
     },
     "DescribeIntegrationVersionNodesInfo": {
       "document": "查询集成任务版本节点信息",
       "input": "DescribeIntegrationVersionNodesInfoRequest",
       "name": "查询集成任务版本节点信息",
-      "output": "DescribeIntegrationVersionNodesInfoResponse"
+      "output": "DescribeIntegrationVersionNodesInfoResponse",
+      "status": "online"
     },
     "DescribeKafkaTopicInfo": {
       "document": "获取kafka的topic信息",
       "input": "DescribeKafkaTopicInfoRequest",
       "name": "获取kafka的topic信息",
-      "output": "DescribeKafkaTopicInfoResponse"
+      "output": "DescribeKafkaTopicInfoResponse",
+      "status": "online"
     },
     "DescribeMonitorsByPage": {
       "document": "分页查询质量监控组",
       "input": "DescribeMonitorsByPageRequest",
       "name": "分页查询质量监控组",
-      "output": "DescribeMonitorsByPageResponse"
+      "output": "DescribeMonitorsByPageResponse",
+      "status": "online"
     },
     "DescribeOfflineTaskToken": {
       "document": "获取离线任务长连接Token",
       "input": "DescribeOfflineTaskTokenRequest",
       "name": "获取离线任务长连接Token",
-      "output": "DescribeOfflineTaskTokenResponse"
+      "output": "DescribeOfflineTaskTokenResponse",
+      "status": "online"
     },
     "DescribeOrganizationalFunctions": {
       "document": "查询全量函数",
       "input": "DescribeOrganizationalFunctionsRequest",
       "name": "查询全量函数（层级化）接口",
-      "output": "DescribeOrganizationalFunctionsResponse"
+      "output": "DescribeOrganizationalFunctionsResponse",
+      "status": "online"
     },
     "DescribeProdTasks": {
       "document": "数据质量获取生产调度任务列表",
       "input": "DescribeProdTasksRequest",
       "name": "获取生产调度任务列表",
-      "output": "DescribeProdTasksResponse"
+      "output": "DescribeProdTasksResponse",
+      "status": "online"
     },
     "DescribeProject": {
       "document": "获取项目信息",
       "input": "DescribeProjectRequest",
       "name": "获取项目信息",
-      "output": "DescribeProjectResponse"
+      "output": "DescribeProjectResponse",
+      "status": "online"
     },
     "DescribeQualityScore": {
       "document": "质量报告-质量评分",
       "input": "DescribeQualityScoreRequest",
       "name": "查询质量评分",
-      "output": "DescribeQualityScoreResponse"
+      "output": "DescribeQualityScoreResponse",
+      "status": "online"
     },
     "DescribeQualityScoreTrend": {
       "document": "质量报告-质量分周期趋势",
       "input": "DescribeQualityScoreTrendRequest",
       "name": "查询质量分趋势",
-      "output": "DescribeQualityScoreTrendResponse"
+      "output": "DescribeQualityScoreTrendResponse",
+      "status": "online"
     },
     "DescribeRealTimeTaskInstanceNodeInfo": {
       "document": "查询实时任务实例节点信息",
       "input": "DescribeRealTimeTaskInstanceNodeInfoRequest",
       "name": "查询实时任务实例节点信息",
-      "output": "DescribeRealTimeTaskInstanceNodeInfoResponse"
+      "output": "DescribeRealTimeTaskInstanceNodeInfoResponse",
+      "status": "online"
     },
     "DescribeRealTimeTaskMetricOverview": {
       "document": "实时任务运行指标概览",
       "input": "DescribeRealTimeTaskMetricOverviewRequest",
       "name": "实时任务运行指标概览",
-      "output": "DescribeRealTimeTaskMetricOverviewResponse"
+      "output": "DescribeRealTimeTaskMetricOverviewResponse",
+      "status": "online"
     },
     "DescribeRealTimeTaskSpeed": {
       "document": "实时任务同步速度趋势",
       "input": "DescribeRealTimeTaskSpeedRequest",
       "name": "实时任务同步速度趋势",
-      "output": "DescribeRealTimeTaskSpeedResponse"
+      "output": "DescribeRealTimeTaskSpeedResponse",
+      "status": "online"
     },
     "DescribeRelatedInstances": {
       "document": "查询任务实例的关联实例列表",
       "input": "DescribeRelatedInstancesRequest",
       "name": "查询任务实例的关联实例列表",
-      "output": "DescribeRelatedInstancesResponse"
+      "output": "DescribeRelatedInstancesResponse",
+      "status": "online"
     },
     "DescribeResourceManagePathTrees": {
       "document": "获取资源管理目录树",
       "input": "DescribeResourceManagePathTreesRequest",
       "name": "获取资源管理目录树",
-      "output": "DescribeResourceManagePathTreesResponse"
+      "output": "DescribeResourceManagePathTreesResponse",
+      "status": "online"
     },
     "DescribeRule": {
       "document": "查询规则详情",
       "input": "DescribeRuleRequest",
       "name": "查询规则详情",
-      "output": "DescribeRuleResponse"
+      "output": "DescribeRuleResponse",
+      "status": "online"
     },
     "DescribeRuleDataSources": {
       "document": "查询质量规则数据源",
       "input": "DescribeRuleDataSourcesRequest",
       "name": "查询质量规则数据源",
-      "output": "DescribeRuleDataSourcesResponse"
+      "output": "DescribeRuleDataSourcesResponse",
+      "status": "online"
     },
     "DescribeRuleDimStat": {
       "document": "数据质量概览页面触发维度分布统计接口",
       "input": "DescribeRuleDimStatRequest",
       "name": "数据质量触发维度分布统计接口",
-      "output": "DescribeRuleDimStatResponse"
+      "output": "DescribeRuleDimStatResponse",
+      "status": "online"
     },
     "DescribeRuleExecDetail": {
       "document": "查询规则执行结果详情",
       "input": "DescribeRuleExecDetailRequest",
       "name": "查询规则执行结果详情",
-      "output": "DescribeRuleExecDetailResponse"
+      "output": "DescribeRuleExecDetailResponse",
+      "status": "online"
     },
     "DescribeRuleExecExportResult": {
       "document": "查询规则执行导出结果",
       "input": "DescribeRuleExecExportResultRequest",
       "name": "查询规则执行导出结果",
-      "output": "DescribeRuleExecExportResultResponse"
+      "output": "DescribeRuleExecExportResultResponse",
+      "status": "online"
     },
     "DescribeRuleExecHistory": {
       "document": "查询规则执行历史， 最近30条",
       "input": "DescribeRuleExecHistoryRequest",
       "name": "查询规则执行历史， 最近30条",
-      "output": "DescribeRuleExecHistoryResponse"
+      "output": "DescribeRuleExecHistoryResponse",
+      "status": "online"
     },
     "DescribeRuleExecLog": {
       "document": "规则执行日志查询",
       "input": "DescribeRuleExecLogRequest",
       "name": "规则执行日志查询",
-      "output": "DescribeRuleExecLogResponse"
+      "output": "DescribeRuleExecLogResponse",
+      "status": "online"
     },
     "DescribeRuleExecResults": {
       "document": "规则执行结果列表查询",
       "input": "DescribeRuleExecResultsRequest",
       "name": "规则执行结果列表查询",
-      "output": "DescribeRuleExecResultsResponse"
+      "output": "DescribeRuleExecResultsResponse",
+      "status": "online"
     },
     "DescribeRuleExecResultsByPage": {
       "document": "分页查询规则执行结果列表",
       "input": "DescribeRuleExecResultsByPageRequest",
       "name": "分页查询规则执行结果列表",
-      "output": "DescribeRuleExecResultsByPageResponse"
+      "output": "DescribeRuleExecResultsByPageResponse",
+      "status": "online"
     },
     "DescribeRuleExecStat": {
       "document": "数据质量概览页面规则运行情况接口",
       "input": "DescribeRuleExecStatRequest",
       "name": "数据质量规则运行情况接口",
-      "output": "DescribeRuleExecStatResponse"
+      "output": "DescribeRuleExecStatResponse",
+      "status": "online"
     },
     "DescribeRuleGroup": {
       "document": "查询规则组详情接口",
       "input": "DescribeRuleGroupRequest",
       "name": "查询规则组详情接口",
-      "output": "DescribeRuleGroupResponse"
+      "output": "DescribeRuleGroupResponse",
+      "status": "online"
     },
     "DescribeRuleGroupExecResultsByPage": {
       "document": "规则组执行结果分页查询接口",
       "input": "DescribeRuleGroupExecResultsByPageRequest",
       "name": "规则组执行结果分页查询接口",
-      "output": "DescribeRuleGroupExecResultsByPageResponse"
+      "output": "DescribeRuleGroupExecResultsByPageResponse",
+      "status": "online"
     },
     "DescribeRuleGroupExecResultsByPageWithoutAuth": {
       "document": "规则组执行结果分页查询接口不带鉴权",
       "input": "DescribeRuleGroupExecResultsByPageWithoutAuthRequest",
       "name": "规则组执行结果分页查询接口不带鉴权",
-      "output": "DescribeRuleGroupExecResultsByPageWithoutAuthResponse"
+      "output": "DescribeRuleGroupExecResultsByPageWithoutAuthResponse",
+      "status": "online"
     },
     "DescribeRuleGroupSubscription": {
       "document": "查询规则组订阅信息",
       "input": "DescribeRuleGroupSubscriptionRequest",
       "name": "查询规则组订阅信息",
-      "output": "DescribeRuleGroupSubscriptionResponse"
+      "output": "DescribeRuleGroupSubscriptionResponse",
+      "status": "online"
     },
     "DescribeRuleGroupTable": {
       "document": "查询表绑定执行规则组信息",
       "input": "DescribeRuleGroupTableRequest",
       "name": "查询表绑定执行规则组信息",
-      "output": "DescribeRuleGroupTableResponse"
+      "output": "DescribeRuleGroupTableResponse",
+      "status": "online"
     },
     "DescribeRuleGroupsByPage": {
       "document": "【过滤条件】\n{表名称TableName,支持模糊匹配}       {表负责人TableOwnerName,支持模糊匹配}      {监控方式MonitorTypes，1.未配置 2.关联生产调度 3.离线周期检测,支持多选}  {订阅人ReceiverUin}\n【必要字段】\n{数据来源DatasourceId}",
       "input": "DescribeRuleGroupsByPageRequest",
       "name": "分页查询规则组接口",
-      "output": "DescribeRuleGroupsByPageResponse"
+      "output": "DescribeRuleGroupsByPageResponse",
+      "status": "online"
     },
     "DescribeRuleHistoryByPage": {
       "document": "过滤条件【必要字段】{ruleId}",
       "input": "DescribeRuleHistoryByPageRequest",
       "name": "分页查询规则操作记录接口",
-      "output": "DescribeRuleHistoryByPageResponse"
+      "output": "DescribeRuleHistoryByPageResponse",
+      "status": "online"
     },
     "DescribeRuleTablesByPage": {
       "document": "获取表列表",
       "input": "DescribeRuleTablesByPageRequest",
       "name": "获取表列表",
-      "output": "DescribeRuleTablesByPageResponse"
+      "output": "DescribeRuleTablesByPageResponse",
+      "status": "online"
     },
     "DescribeRuleTemplate": {
       "document": "查询模板详情",
       "input": "DescribeRuleTemplateRequest",
       "name": "查询模板详情",
-      "output": "DescribeRuleTemplateResponse"
+      "output": "DescribeRuleTemplateResponse",
+      "status": "online"
     },
     "DescribeRuleTemplates": {
       "document": "查询规则模版列表",
       "input": "DescribeRuleTemplatesRequest",
       "name": "查询规则模版列表",
-      "output": "DescribeRuleTemplatesResponse"
+      "output": "DescribeRuleTemplatesResponse",
+      "status": "online"
     },
     "DescribeRuleTemplatesByPage": {
       "document": "过滤条件】 {模版名称Name,支持模糊匹配} {模版类型type，1.系统模版 2.自定义模版} {质量检测维度QualityDims, 1.准确性 2.唯一性 3.完整性 4.一致性 5.及时性 6.有效性} 【排序字段】 { 引用数排序类型CitationOrderType，根据引用数量排序 ASC DESC}",
       "input": "DescribeRuleTemplatesByPageRequest",
       "name": "规则模版查询接口",
-      "output": "DescribeRuleTemplatesByPageResponse"
+      "output": "DescribeRuleTemplatesByPageResponse",
+      "status": "online"
     },
     "DescribeRules": {
       "document": "查询质量规则列表",
       "input": "DescribeRulesRequest",
       "name": "查询质量规则列表",
-      "output": "DescribeRulesResponse"
+      "output": "DescribeRulesResponse",
+      "status": "online"
     },
     "DescribeRulesByPage": {
       "document": "分页查询质量规则",
       "input": "DescribeRulesByPageRequest",
       "name": "分页查询质量规则",
-      "output": "DescribeRulesByPageResponse"
+      "output": "DescribeRulesByPageResponse",
+      "status": "online"
     },
     "DescribeStandardRuleDetailInfoList": {
       "document": "获取数据标准规则详情",
       "input": "DescribeStandardRuleDetailInfoListRequest",
       "name": "获取数据标准规则详情",
-      "output": "DescribeStandardRuleDetailInfoListResponse"
+      "output": "DescribeStandardRuleDetailInfoListResponse",
+      "status": "online"
     },
     "DescribeStreamTaskLogList": {
       "document": "查询实时任务日志列表",
       "input": "DescribeStreamTaskLogListRequest",
       "name": "查询实时任务日志列表",
-      "output": "DescribeStreamTaskLogListResponse"
+      "output": "DescribeStreamTaskLogListResponse",
+      "status": "online"
     },
     "DescribeTableInfoList": {
       "document": "获取数据表信息",
       "input": "DescribeTableInfoListRequest",
       "name": "获取数据表信息",
-      "output": "DescribeTableInfoListResponse"
+      "output": "DescribeTableInfoListResponse",
+      "status": "online"
     },
     "DescribeTableQualityDetails": {
       "document": "质量报告-查询表质量详情",
       "input": "DescribeTableQualityDetailsRequest",
       "name": "查询表质量详情",
-      "output": "DescribeTableQualityDetailsResponse"
+      "output": "DescribeTableQualityDetailsResponse",
+      "status": "online"
     },
     "DescribeTableSchemaInfo": {
       "document": "获取表schema信息",
       "input": "DescribeTableSchemaInfoRequest",
       "name": "获取表schema信息",
-      "output": "DescribeTableSchemaInfoResponse"
+      "output": "DescribeTableSchemaInfoResponse",
+      "status": "online"
     },
     "DescribeTableScoreTrend": {
       "document": "查询表得分趋势",
       "input": "DescribeTableScoreTrendRequest",
       "name": "查询表得分趋势",
-      "output": "DescribeTableScoreTrendResponse"
+      "output": "DescribeTableScoreTrendResponse",
+      "status": "online"
     },
     "DescribeTaskAlarmRegulations": {
       "document": "查询任务告警规则列表",
       "input": "DescribeTaskAlarmRegulationsRequest",
       "name": "查询任务告警规则列表",
-      "output": "DescribeTaskAlarmRegulationsResponse"
+      "output": "DescribeTaskAlarmRegulationsResponse",
+      "status": "online"
     },
     "DescribeTaskDetail": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n查询任务具体详情",
       "input": "DescribeTaskDetailRequest",
       "name": "查询任务具体详情【Beta版本】",
-      "output": "DescribeTaskDetailResponse"
+      "output": "DescribeTaskDetailResponse",
+      "status": "online"
     },
     "DescribeTaskInstance": {
       "document": "离线任务实例详情",
       "input": "DescribeTaskInstanceRequest",
       "name": "离线任务实例详情",
-      "output": "DescribeTaskInstanceResponse"
+      "output": "DescribeTaskInstanceResponse",
+      "status": "online"
     },
     "DescribeTaskInstanceReportDetail": {
       "document": "离线任务实例统计明细",
       "input": "DescribeTaskInstanceReportDetailRequest",
       "name": "离线任务实例统计明细",
-      "output": "DescribeTaskInstanceReportDetailResponse"
+      "output": "DescribeTaskInstanceReportDetailResponse",
+      "status": "online"
     },
     "DescribeTaskInstances": {
       "document": "查询任务实例列表",
       "input": "DescribeTaskInstancesRequest",
       "name": "查询任务实例列表",
-      "output": "DescribeTaskInstancesResponse"
+      "output": "DescribeTaskInstancesResponse",
+      "status": "online"
     },
     "DescribeTaskLockStatus": {
       "document": "查看任务锁状态信息",
       "input": "DescribeTaskLockStatusRequest",
       "name": "查看任务锁状态信息",
-      "output": "DescribeTaskLockStatusResponse"
+      "output": "DescribeTaskLockStatusResponse",
+      "status": "online"
     },
     "DescribeTaskReport": {
       "document": "按起止日期统计离线任务的所有实例的运行指标总和",
       "input": "DescribeTaskReportRequest",
       "name": "离线任务周期统计总览",
-      "output": "DescribeTaskReportResponse"
+      "output": "DescribeTaskReportResponse",
+      "status": "online"
     },
     "DescribeTaskReportDetailList": {
       "document": "离线任务周期统计明细",
       "input": "DescribeTaskReportDetailListRequest",
       "name": "离线任务周期统计明细",
-      "output": "DescribeTaskReportDetailListResponse"
+      "output": "DescribeTaskReportDetailListResponse",
+      "status": "online"
     },
     "DescribeTaskScript": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n查询任务脚本",
       "input": "DescribeTaskScriptRequest",
       "name": "查询任务脚本【Beta版本】",
-      "output": "DescribeTaskScriptResponse"
+      "output": "DescribeTaskScriptResponse",
+      "status": "online"
     },
     "DescribeTasksByPage": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n根据工作流分页查询任务",
       "input": "DescribeTasksByPageRequest",
       "name": "根据工作流分页查询任务【Beta版本】",
-      "output": "DescribeTasksByPageResponse"
+      "output": "DescribeTasksByPageResponse",
+      "status": "online"
     },
     "DescribeTemplateDimCount": {
       "document": "查询规则模版维度分布情况",
       "input": "DescribeTemplateDimCountRequest",
       "name": "查询规则模版维度分布情况",
-      "output": "DescribeTemplateDimCountResponse"
+      "output": "DescribeTemplateDimCountResponse",
+      "status": "online"
     },
     "DescribeTemplateHistory": {
       "document": "查询规则模版操作记录",
       "input": "DescribeTemplateHistoryRequest",
       "name": "查询规则模版操作记录",
-      "output": "DescribeTemplateHistoryResponse"
+      "output": "DescribeTemplateHistoryResponse",
+      "status": "online"
     },
     "DescribeTopTableStat": {
       "document": "数据质量概览页面表排行接口",
       "input": "DescribeTopTableStatRequest",
       "name": "数据质量表排行接口",
-      "output": "DescribeTopTableStatResponse"
+      "output": "DescribeTopTableStatResponse",
+      "status": "online"
     },
     "DescribeTrendStat": {
       "document": "数据质量概览页面趋势变化接口",
       "input": "DescribeTrendStatRequest",
       "name": "数据质量概览页面趋势接口",
-      "output": "DescribeTrendStatResponse"
+      "output": "DescribeTrendStatResponse",
+      "status": "online"
     },
     "DryRunDIOfflineTask": {
       "document": "调试运行集成任务",
       "input": "DryRunDIOfflineTaskRequest",
       "name": "调试运行集成任务",
-      "output": "DryRunDIOfflineTaskResponse"
+      "output": "DryRunDIOfflineTaskResponse",
+      "status": "online"
     },
     "ForceSucInstances": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n实例批量置成功",
       "input": "ForceSucInstancesRequest",
       "name": "实例批量置成功【Beta版本】",
-      "output": "ForceSucInstancesResponse"
+      "output": "ForceSucInstancesResponse",
+      "status": "online"
     },
     "FreezeTasks": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n批量冻结任务",
       "input": "FreezeTasksRequest",
       "name": "批量冻结任务【Beta版本】",
-      "output": "FreezeTasksResponse"
+      "output": "FreezeTasksResponse",
+      "status": "online"
     },
     "FreezeTasksByMultiWorkflow": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n基于多个工作流进行批量冻结任务操作",
       "input": "FreezeTasksByMultiWorkflowRequest",
       "name": "基于多个工作流进行批量冻结任务操作【Beta版本】",
-      "output": "FreezeTasksByMultiWorkflowResponse"
+      "output": "FreezeTasksByMultiWorkflowResponse",
+      "status": "online"
     },
     "GenHiveTableDDLSql": {
       "document": "生成建hive表的sql",
       "input": "GenHiveTableDDLSqlRequest",
       "name": "生成建hive表的sql",
-      "output": "GenHiveTableDDLSqlResponse"
+      "output": "GenHiveTableDDLSqlResponse",
+      "status": "online"
     },
     "GetIntegrationNodeColumnSchema": {
       "document": "提取数据集成节点字段Schema",
       "input": "GetIntegrationNodeColumnSchemaRequest",
       "name": "提取数据集成节点字段Schema",
-      "output": "GetIntegrationNodeColumnSchemaResponse"
+      "output": "GetIntegrationNodeColumnSchemaResponse",
+      "status": "online"
     },
     "GetOfflineDIInstanceList": {
       "document": "获取离线任务实例列表(新)",
       "input": "GetOfflineDIInstanceListRequest",
       "name": "获取离线任务实例列表(新)",
-      "output": "GetOfflineDIInstanceListResponse"
+      "output": "GetOfflineDIInstanceListResponse",
+      "status": "online"
     },
     "GetOfflineInstanceList": {
       "document": "获取离线任务实例",
       "input": "GetOfflineInstanceListRequest",
       "name": "获取离线任务实例",
-      "output": "GetOfflineInstanceListResponse"
+      "output": "GetOfflineInstanceListResponse",
+      "status": "online"
     },
     "KillInstances": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n实例批量终止操作",
       "input": "KillInstancesRequest",
       "name": "实例批量终止操作【Beta版本】",
-      "output": "KillInstancesResponse"
+      "output": "KillInstancesResponse",
+      "status": "online"
     },
     "LockIntegrationTask": {
       "document": "锁定集成任务",
       "input": "LockIntegrationTaskRequest",
       "name": "锁定集成任务",
-      "output": "LockIntegrationTaskResponse"
+      "output": "LockIntegrationTaskResponse",
+      "status": "online"
     },
     "MakeUpTasksNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n任务批量补录，调度状态任务才可以补录；\n\n\n",
       "input": "MakeUpTasksNewRequest",
       "name": "批量补录任务【Beta版本】",
-      "output": "MakeUpTasksNewResponse"
+      "output": "MakeUpTasksNewResponse",
+      "status": "online"
     },
     "MakeUpWorkflowNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n工作流下所有任务的补录",
       "input": "MakeUpWorkflowNewRequest",
       "name": "工作流任务补录【Beta版本】",
-      "output": "MakeUpWorkflowNewResponse"
+      "output": "MakeUpWorkflowNewResponse",
+      "status": "online"
     },
     "ModifyDataSource": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n修改数据源",
       "input": "ModifyDataSourceRequest",
       "name": "数据源管理-修改数据源【Beta版本】",
-      "output": "ModifyDataSourceResponse"
+      "output": "ModifyDataSourceResponse",
+      "status": "online"
     },
     "ModifyDimensionWeight": {
       "document": "质量报告-修改维度权限",
       "input": "ModifyDimensionWeightRequest",
       "name": "修改维度权重",
-      "output": "ModifyDimensionWeightResponse"
+      "output": "ModifyDimensionWeightResponse",
+      "status": "online"
     },
     "ModifyExecStrategy": {
       "document": "更新规则组执行策略",
       "input": "ModifyExecStrategyRequest",
       "name": "更新规则组执行策略",
-      "output": "ModifyExecStrategyResponse"
+      "output": "ModifyExecStrategyResponse",
+      "status": "online"
     },
     "ModifyFolder": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n文件夹更新",
       "input": "ModifyFolderRequest",
       "name": "文件夹更新【Beta版本】",
-      "output": "ModifyFolderResponse"
+      "output": "ModifyFolderResponse",
+      "status": "online"
     },
     "ModifyIntegrationNode": {
       "document": "更新集成节点",
       "input": "ModifyIntegrationNodeRequest",
       "name": "更新集成节点",
-      "output": "ModifyIntegrationNodeResponse"
+      "output": "ModifyIntegrationNodeResponse",
+      "status": "online"
     },
     "ModifyIntegrationTask": {
       "document": "更新集成任务",
       "input": "ModifyIntegrationTaskRequest",
       "name": "更新集成任务",
-      "output": "ModifyIntegrationTaskResponse"
+      "output": "ModifyIntegrationTaskResponse",
+      "status": "online"
     },
     "ModifyMonitorStatus": {
       "document": "更新监控状态",
       "input": "ModifyMonitorStatusRequest",
       "name": "更新监控状态",
-      "output": "ModifyMonitorStatusResponse"
+      "output": "ModifyMonitorStatusResponse",
+      "status": "online"
     },
     "ModifyRule": {
       "document": "更新质量规则接口",
       "input": "ModifyRuleRequest",
       "name": "更新质量规则接口",
-      "output": "ModifyRuleResponse"
+      "output": "ModifyRuleResponse",
+      "status": "online"
     },
     "ModifyRuleGroupSubscription": {
       "document": "更新规则组订阅信息",
       "input": "ModifyRuleGroupSubscriptionRequest",
       "name": "更新规则组订阅信息",
-      "output": "ModifyRuleGroupSubscriptionResponse"
+      "output": "ModifyRuleGroupSubscriptionResponse",
+      "status": "online"
     },
     "ModifyRuleTemplate": {
       "document": "编辑规则模版",
       "input": "ModifyRuleTemplateRequest",
       "name": "编辑规则模版",
-      "output": "ModifyRuleTemplateResponse"
+      "output": "ModifyRuleTemplateResponse",
+      "status": "online"
     },
     "ModifyTaskAlarmRegular": {
       "document": "修改任务告警规则",
       "input": "ModifyTaskAlarmRegularRequest",
       "name": "修改任务告警规则",
-      "output": "ModifyTaskAlarmRegularResponse"
+      "output": "ModifyTaskAlarmRegularResponse",
+      "status": "online"
     },
     "ModifyTaskInfo": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n更新任务",
       "input": "ModifyTaskInfoRequest",
       "name": "更新任务【Beta版本】",
-      "output": "ModifyTaskInfoResponse"
+      "output": "ModifyTaskInfoResponse",
+      "status": "online"
     },
     "ModifyTaskLinks": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n添加父任务依赖",
       "input": "ModifyTaskLinksRequest",
       "name": "添加父任务依赖【Beta版本】",
-      "output": "ModifyTaskLinksResponse"
+      "output": "ModifyTaskLinksResponse",
+      "status": "online"
     },
     "ModifyTaskName": {
       "document": "重命名任务（任务编辑）",
       "input": "ModifyTaskNameRequest",
       "name": "重命名任务（任务编辑）",
-      "output": "ModifyTaskNameResponse"
+      "output": "ModifyTaskNameResponse",
+      "status": "online"
     },
     "ModifyTaskScript": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n修改任务脚本",
       "input": "ModifyTaskScriptRequest",
       "name": "修改任务脚本【Beta版本】",
-      "output": "ModifyTaskScriptResponse"
+      "output": "ModifyTaskScriptResponse",
+      "status": "online"
     },
     "ModifyWorkflowInfo": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n更新工作流",
       "input": "ModifyWorkflowInfoRequest",
       "name": "更新工作流【Beta版本】",
-      "output": "ModifyWorkflowInfoResponse"
+      "output": "ModifyWorkflowInfoResponse",
+      "status": "online"
     },
     "ModifyWorkflowSchedule": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n更新工作流调度",
       "input": "ModifyWorkflowScheduleRequest",
       "name": "更新工作流调度【Beta版本】",
-      "output": "ModifyWorkflowScheduleResponse"
+      "output": "ModifyWorkflowScheduleResponse",
+      "status": "online"
     },
     "RegisterEvent": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n注册事件",
       "input": "RegisterEventRequest",
       "name": "注册事件【Beta版本】",
-      "output": "RegisterEventResponse"
+      "output": "RegisterEventResponse",
+      "status": "online"
     },
     "RegisterEventListener": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n注册事件监听器",
       "input": "RegisterEventListenerRequest",
       "name": "注册事件监听器【Beta版本】",
-      "output": "RegisterEventListenerResponse"
+      "output": "RegisterEventListenerResponse",
+      "status": "online"
     },
     "RerunInstances": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n实例批量重跑",
       "input": "RerunInstancesRequest",
       "name": "实例批量重跑【Beta版本】",
-      "output": "RerunInstancesResponse"
+      "output": "RerunInstancesResponse",
+      "status": "online"
     },
     "RestartInLongAgent": {
       "document": "重启采集器",
       "input": "RestartInLongAgentRequest",
       "name": "重启采集器",
-      "output": "RestartInLongAgentResponse"
+      "output": "RestartInLongAgentResponse",
+      "status": "online"
     },
     "ResumeIntegrationTask": {
       "document": "继续集成任务",
       "input": "ResumeIntegrationTaskRequest",
       "name": "继续集成任务",
-      "output": "ResumeIntegrationTaskResponse"
+      "output": "ResumeIntegrationTaskResponse",
+      "status": "online"
     },
     "RobAndLockIntegrationTask": {
       "document": "抢占锁定集成任务",
       "input": "RobAndLockIntegrationTaskRequest",
       "name": "抢占锁定集成任务",
-      "output": "RobAndLockIntegrationTaskResponse"
+      "output": "RobAndLockIntegrationTaskResponse",
+      "status": "online"
     },
     "RunTask": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n运行任务",
       "input": "RunTaskRequest",
       "name": "运行任务【Beta版本】",
-      "output": "RunTaskResponse"
+      "output": "RunTaskResponse",
+      "status": "online"
     },
     "SaveCustomFunction": {
       "document": "保存用户自定义函数",
       "input": "SaveCustomFunctionRequest",
       "name": "保存用户自定义函数",
-      "output": "SaveCustomFunctionResponse"
+      "output": "SaveCustomFunctionResponse",
+      "status": "online"
     },
     "SetTaskAlarmNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n设置任务告警，新建/更新告警信息（最新）",
       "input": "SetTaskAlarmNewRequest",
       "name": "设置任务告警【Beta版本】",
-      "output": "SetTaskAlarmNewResponse"
+      "output": "SetTaskAlarmNewResponse",
+      "status": "online"
     },
     "StartIntegrationTask": {
       "document": "启动集成任务",
       "input": "StartIntegrationTaskRequest",
       "name": "启动集成任务",
-      "output": "StartIntegrationTaskResponse"
+      "output": "StartIntegrationTaskResponse",
+      "status": "online"
     },
     "StopIntegrationTask": {
       "document": "停止集成任务",
       "input": "StopIntegrationTaskRequest",
       "name": "停止集成任务",
-      "output": "StopIntegrationTaskResponse"
+      "output": "StopIntegrationTaskResponse",
+      "status": "online"
     },
     "SubmitCustomFunction": {
       "document": "提交自定义函数",
       "input": "SubmitCustomFunctionRequest",
       "name": "提交自定义函数",
-      "output": "SubmitCustomFunctionResponse"
+      "output": "SubmitCustomFunctionResponse",
+      "status": "online"
     },
     "SubmitTask": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n提交任务",
       "input": "SubmitTaskRequest",
       "name": "提交任务【Beta版本】",
-      "output": "SubmitTaskResponse"
+      "output": "SubmitTaskResponse",
+      "status": "online"
     },
     "SubmitWorkflow": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n提交工作流",
       "input": "SubmitWorkflowRequest",
       "name": "提交工作流【Beta版本】",
-      "output": "SubmitWorkflowResponse"
+      "output": "SubmitWorkflowResponse",
+      "status": "online"
     },
     "SuspendIntegrationTask": {
       "document": "暂停集成任务",
       "input": "SuspendIntegrationTaskRequest",
       "name": "暂停集成任务",
-      "output": "SuspendIntegrationTaskResponse"
+      "output": "SuspendIntegrationTaskResponse",
+      "status": "online"
     },
     "TaskLog": {
       "document": "查询Inlong manager日志",
       "input": "TaskLogRequest",
       "name": "管控日志接口",
-      "output": "TaskLogResponse"
+      "output": "TaskLogResponse",
+      "status": "online"
     },
     "TriggerEvent": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n触发事件",
       "input": "TriggerEventRequest",
       "name": "触发事件【Beta版本】",
-      "output": "TriggerEventResponse"
+      "output": "TriggerEventResponse",
+      "status": "online"
     },
     "UnlockIntegrationTask": {
       "document": "解锁集成任务",
       "input": "UnlockIntegrationTaskRequest",
       "name": "解锁集成任务",
-      "output": "UnlockIntegrationTaskResponse"
+      "output": "UnlockIntegrationTaskResponse",
+      "status": "online"
     },
     "UpdateInLongAgent": {
       "document": "更新采集器",
       "input": "UpdateInLongAgentRequest",
       "name": "更新采集器",
-      "output": "UpdateInLongAgentResponse"
+      "output": "UpdateInLongAgentResponse",
+      "status": "online"
     }
   },
   "metadata": {

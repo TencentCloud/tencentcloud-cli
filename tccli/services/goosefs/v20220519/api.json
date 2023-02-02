@@ -4,7 +4,8 @@
       "document": "创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。",
       "input": "CreateDataRepositoryTaskRequest",
       "name": "创建数据流通任务",
-      "output": "CreateDataRepositoryTaskResponse"
+      "output": "CreateDataRepositoryTaskResponse",
+      "status": "online"
     }
   },
   "metadata": {

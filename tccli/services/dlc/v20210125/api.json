@@ -4,379 +4,442 @@
       "document": "DMS元数据新增分区",
       "input": "AddDMSPartitionsRequest",
       "name": "DMS元数据新增分区",
-      "output": "AddDMSPartitionsResponse"
+      "output": "AddDMSPartitionsResponse",
+      "status": "online"
     },
     "AddUsersToWorkGroup": {
       "document": "添加用户到工作组",
       "input": "AddUsersToWorkGroupRequest",
       "name": "添加用户到工作组",
-      "output": "AddUsersToWorkGroupResponse"
+      "output": "AddUsersToWorkGroupResponse",
+      "status": "online"
     },
     "AlterDMSDatabase": {
       "document": "DMS元数据更新库",
       "input": "AlterDMSDatabaseRequest",
       "name": "DMS元数据更新库",
-      "output": "AlterDMSDatabaseResponse"
+      "output": "AlterDMSDatabaseResponse",
+      "status": "online"
     },
     "AlterDMSPartition": {
       "document": "DMS元数据更新分区",
       "input": "AlterDMSPartitionRequest",
       "name": "DMS元数据更新分区",
-      "output": "AlterDMSPartitionResponse"
+      "output": "AlterDMSPartitionResponse",
+      "status": "online"
     },
     "AlterDMSTable": {
       "document": "DMS元数据更新表",
       "input": "AlterDMSTableRequest",
       "name": "DMS元数据更新表",
-      "output": "AlterDMSTableResponse"
+      "output": "AlterDMSTableResponse",
+      "status": "online"
     },
     "AttachUserPolicy": {
       "document": "绑定鉴权策略到用户",
       "input": "AttachUserPolicyRequest",
       "name": "绑定鉴权策略到用户",
-      "output": "AttachUserPolicyResponse"
+      "output": "AttachUserPolicyResponse",
+      "status": "online"
     },
     "AttachWorkGroupPolicy": {
       "document": "绑定鉴权策略到工作组",
       "input": "AttachWorkGroupPolicyRequest",
       "name": "绑定鉴权策略到工作组",
-      "output": "AttachWorkGroupPolicyResponse"
+      "output": "AttachWorkGroupPolicyResponse",
+      "status": "online"
     },
     "BindWorkGroupsToUser": {
       "document": "绑定工作组到用户",
       "input": "BindWorkGroupsToUserRequest",
       "name": "绑定工作组到用户",
-      "output": "BindWorkGroupsToUserResponse"
+      "output": "BindWorkGroupsToUserResponse",
+      "status": "online"
     },
     "CancelTask": {
       "document": "本接口（CancelTask），用于取消任务执行",
       "input": "CancelTaskRequest",
       "name": "取消任务执行",
-      "output": "CancelTaskResponse"
+      "output": "CancelTaskResponse",
+      "status": "online"
     },
     "CheckLockMetaData": {
       "document": "元数据锁检查",
       "input": "CheckLockMetaDataRequest",
       "name": "元数据锁检查",
-      "output": "CheckLockMetaDataResponse"
+      "output": "CheckLockMetaDataResponse",
+      "status": "online"
     },
     "CreateDMSDatabase": {
       "document": "DMS元数据创建库",
       "input": "CreateDMSDatabaseRequest",
       "name": "DMS元数据创建库",
-      "output": "CreateDMSDatabaseResponse"
+      "output": "CreateDMSDatabaseResponse",
+      "status": "online"
     },
     "CreateDMSTable": {
       "document": "DMS元数据创建表",
       "input": "CreateDMSTableRequest",
       "name": "DMS元数据创建表",
-      "output": "CreateDMSTableResponse"
+      "output": "CreateDMSTableResponse",
+      "status": "online"
     },
     "CreateDatabase": {
       "document": "本接口（CreateDatabase）用于生成建库SQL语句。",
       "input": "CreateDatabaseRequest",
       "name": "生成建库SQL语句",
-      "output": "CreateDatabaseResponse"
+      "output": "CreateDatabaseResponse",
+      "status": "online"
     },
     "CreateExportTask": {
       "document": "该接口（CreateExportTask）用于创建导出任务",
       "input": "CreateExportTaskRequest",
       "name": "创建导出任务",
-      "output": "CreateExportTaskResponse"
+      "output": "CreateExportTaskResponse",
+      "status": "online"
     },
     "CreateImportTask": {
       "document": "该接口（CreateImportTask）用于创建导入任务",
       "input": "CreateImportTaskRequest",
       "name": "创建导入任务",
-      "output": "CreateImportTaskResponse"
+      "output": "CreateImportTaskResponse",
+      "status": "online"
     },
     "CreateResultDownload": {
       "document": "创建查询结果下载任务",
       "input": "CreateResultDownloadRequest",
       "name": "创建查询结果下载任务",
-      "output": "CreateResultDownloadResponse"
+      "output": "CreateResultDownloadResponse",
+      "status": "online"
     },
     "CreateScript": {
       "document": "该接口（CreateScript）用于创建sql脚本。",
       "input": "CreateScriptRequest",
       "name": "创建sql脚本",
-      "output": "CreateScriptResponse"
+      "output": "CreateScriptResponse",
+      "status": "online"
     },
     "CreateSparkApp": {
       "document": "创建spark应用",
       "input": "CreateSparkAppRequest",
       "name": "创建spark应用",
-      "output": "CreateSparkAppResponse"
+      "output": "CreateSparkAppResponse",
+      "status": "online"
     },
     "CreateSparkAppTask": {
       "document": "创建spark任务",
       "input": "CreateSparkAppTaskRequest",
       "name": "创建spark任务",
-      "output": "CreateSparkAppTaskResponse"
+      "output": "CreateSparkAppTaskResponse",
+      "status": "online"
     },
     "CreateStoreLocation": {
       "document": "该接口（CreateStoreLocation）新增或覆盖计算结果存储位置。",
       "input": "CreateStoreLocationRequest",
       "name": "修改结果存储位置",
-      "output": "CreateStoreLocationResponse"
+      "output": "CreateStoreLocationResponse",
+      "status": "online"
     },
     "CreateTable": {
       "document": "本接口（CreateTable）用于生成建表SQL。",
       "input": "CreateTableRequest",
       "name": "生成建表SQL",
-      "output": "CreateTableResponse"
+      "output": "CreateTableResponse",
+      "status": "online"
     },
     "CreateTask": {
       "document": "本接口（CreateTask）用于创建sql查询任务。（推荐使用CreateTasks接口）",
       "input": "CreateTaskRequest",
       "name": "任务创建",
-      "output": "CreateTaskResponse"
+      "output": "CreateTaskResponse",
+      "status": "online"
     },
     "CreateTasks": {
       "document": "本接口（CreateTasks），用于批量创建任务",
       "input": "CreateTasksRequest",
       "name": "批量创建任务",
-      "output": "CreateTasksResponse"
+      "output": "CreateTasksResponse",
+      "status": "online"
     },
     "CreateTasksInOrder": {
       "document": "按顺序创建任务（已经废弃，后期不再维护，请使用接口CreateTasks）",
       "input": "CreateTasksInOrderRequest",
       "name": "按顺序创建任务",
-      "output": "CreateTasksInOrderResponse"
+      "output": "CreateTasksInOrderResponse",
+      "status": "online"
     },
     "CreateUser": {
       "document": "创建用户",
       "input": "CreateUserRequest",
       "name": "创建用户",
-      "output": "CreateUserResponse"
+      "output": "CreateUserResponse",
+      "status": "online"
     },
     "CreateWorkGroup": {
       "document": "创建工作组",
       "input": "CreateWorkGroupRequest",
       "name": "创建工作组",
-      "output": "CreateWorkGroupResponse"
+      "output": "CreateWorkGroupResponse",
+      "status": "online"
     },
     "DeleteScript": {
       "document": "该接口（DeleteScript）用于删除sql脚本。",
       "input": "DeleteScriptRequest",
       "name": "删除sql脚本",
-      "output": "DeleteScriptResponse"
+      "output": "DeleteScriptResponse",
+      "status": "online"
     },
     "DeleteSparkApp": {
       "document": "删除spark应用",
       "input": "DeleteSparkAppRequest",
       "name": "删除spark应用",
-      "output": "DeleteSparkAppResponse"
+      "output": "DeleteSparkAppResponse",
+      "status": "online"
     },
     "DeleteUser": {
       "document": "删除用户",
       "input": "DeleteUserRequest",
       "name": "删除用户",
-      "output": "DeleteUserResponse"
+      "output": "DeleteUserResponse",
+      "status": "online"
     },
     "DeleteUsersFromWorkGroup": {
       "document": "从工作组中删除用户",
       "input": "DeleteUsersFromWorkGroupRequest",
       "name": "从工作组中删除用户",
-      "output": "DeleteUsersFromWorkGroupResponse"
+      "output": "DeleteUsersFromWorkGroupResponse",
+      "status": "online"
     },
     "DeleteWorkGroup": {
       "document": "删除工作组",
       "input": "DeleteWorkGroupRequest",
       "name": "删除工作组",
-      "output": "DeleteWorkGroupResponse"
+      "output": "DeleteWorkGroupResponse",
+      "status": "online"
     },
     "DescribeDMSDatabase": {
       "document": "DMS元数据获取库",
       "input": "DescribeDMSDatabaseRequest",
       "name": "DMS元数据获取库",
-      "output": "DescribeDMSDatabaseResponse"
+      "output": "DescribeDMSDatabaseResponse",
+      "status": "online"
     },
     "DescribeDMSPartitions": {
       "document": "DMS元数据获取分区",
       "input": "DescribeDMSPartitionsRequest",
       "name": "DMS元数据获取分区",
-      "output": "DescribeDMSPartitionsResponse"
+      "output": "DescribeDMSPartitionsResponse",
+      "status": "online"
     },
     "DescribeDMSTable": {
       "document": "DMS元数据获取表",
       "input": "DescribeDMSTableRequest",
       "name": "DMS元数据获取表",
-      "output": "DescribeDMSTableResponse"
+      "output": "DescribeDMSTableResponse",
+      "status": "online"
     },
     "DescribeDMSTables": {
       "document": "DMS元数据获取表列表",
       "input": "DescribeDMSTablesRequest",
       "name": "DMS元数据获取表列表",
-      "output": "DescribeDMSTablesResponse"
+      "output": "DescribeDMSTablesResponse",
+      "status": "online"
     },
     "DescribeDatabases": {
       "document": "本接口（DescribeDatabases）用于查询数据库列表。",
       "input": "DescribeDatabasesRequest",
       "name": "查询数据库列表",
-      "output": "DescribeDatabasesResponse"
+      "output": "DescribeDatabasesResponse",
+      "status": "online"
     },
     "DescribeResultDownload": {
       "document": "查询结果下载任务",
       "input": "DescribeResultDownloadRequest",
       "name": "查询结果下载任务",
-      "output": "DescribeResultDownloadResponse"
+      "output": "DescribeResultDownloadResponse",
+      "status": "online"
     },
     "DescribeScripts": {
       "document": "该接口（DescribeScripts）用于获取所有SQL查询。",
       "input": "DescribeScriptsRequest",
       "name": "查询script列表",
-      "output": "DescribeScriptsResponse"
+      "output": "DescribeScriptsResponse",
+      "status": "online"
     },
     "DescribeSparkAppJob": {
       "document": "查询具体的spark应用",
       "input": "DescribeSparkAppJobRequest",
       "name": "查询具体的spark应用",
-      "output": "DescribeSparkAppJobResponse"
+      "output": "DescribeSparkAppJobResponse",
+      "status": "online"
     },
     "DescribeSparkAppJobs": {
       "document": "获取spark应用列表",
       "input": "DescribeSparkAppJobsRequest",
       "name": "获取spark应用列表",
-      "output": "DescribeSparkAppJobsResponse"
+      "output": "DescribeSparkAppJobsResponse",
+      "status": "online"
     },
     "DescribeSparkAppTasks": {
       "document": "查询spark应用的运行任务实例列表",
       "input": "DescribeSparkAppTasksRequest",
       "name": "查询spark应用的运行任务实例列表",
-      "output": "DescribeSparkAppTasksResponse"
+      "output": "DescribeSparkAppTasksResponse",
+      "status": "online"
     },
     "DescribeStoreLocation": {
       "document": "查询计算结果存储位置。",
       "input": "DescribeStoreLocationRequest",
       "name": "查询结果存储位置",
-      "output": "DescribeStoreLocationResponse"
+      "output": "DescribeStoreLocationResponse",
+      "status": "online"
     },
     "DescribeTable": {
       "document": "本接口（DescribeTable），用于查询单个表的详细信息。",
       "input": "DescribeTableRequest",
       "name": "查询表详情",
-      "output": "DescribeTableResponse"
+      "output": "DescribeTableResponse",
+      "status": "online"
     },
     "DescribeTables": {
       "document": "本接口（DescribeTables）用于查询数据表列表。",
       "input": "DescribeTablesRequest",
       "name": "查询数据表列表",
-      "output": "DescribeTablesResponse"
+      "output": "DescribeTablesResponse",
+      "status": "online"
     },
     "DescribeTaskResult": {
       "document": "查询任务结果",
       "input": "DescribeTaskResultRequest",
       "name": "查询任务结果",
-      "output": "DescribeTaskResultResponse"
+      "output": "DescribeTaskResultResponse",
+      "status": "online"
     },
     "DescribeTasks": {
       "document": "该接口（DescribleTasks）用于查询任务列表",
       "input": "DescribeTasksRequest",
       "name": "查询任务列表",
-      "output": "DescribeTasksResponse"
+      "output": "DescribeTasksResponse",
+      "status": "online"
     },
     "DescribeUsers": {
       "document": "获取用户列表信息",
       "input": "DescribeUsersRequest",
       "name": "获取用户列表信息",
-      "output": "DescribeUsersResponse"
+      "output": "DescribeUsersResponse",
+      "status": "online"
     },
     "DescribeViews": {
       "document": "本接口（DescribeViews）用于查询数据视图列表。",
       "input": "DescribeViewsRequest",
       "name": "查询视图列表",
-      "output": "DescribeViewsResponse"
+      "output": "DescribeViewsResponse",
+      "status": "online"
     },
     "DescribeWorkGroups": {
       "document": "获取工作组列表",
       "input": "DescribeWorkGroupsRequest",
       "name": "获取工作组列表",
-      "output": "DescribeWorkGroupsResponse"
+      "output": "DescribeWorkGroupsResponse",
+      "status": "online"
     },
     "DetachUserPolicy": {
       "document": "解绑用户鉴权策略",
       "input": "DetachUserPolicyRequest",
       "name": "解绑用户鉴权策略",
-      "output": "DetachUserPolicyResponse"
+      "output": "DetachUserPolicyResponse",
+      "status": "online"
     },
     "DetachWorkGroupPolicy": {
       "document": "解绑工作组鉴权策略",
       "input": "DetachWorkGroupPolicyRequest",
       "name": "解绑工作组鉴权策略",
-      "output": "DetachWorkGroupPolicyResponse"
+      "output": "DetachWorkGroupPolicyResponse",
+      "status": "online"
     },
     "DropDMSDatabase": {
       "document": "DMS元数据删除库",
       "input": "DropDMSDatabaseRequest",
       "name": "DMS元数据删除库",
-      "output": "DropDMSDatabaseResponse"
+      "output": "DropDMSDatabaseResponse",
+      "status": "online"
     },
     "DropDMSPartitions": {
       "document": "DMS元数据删除分区",
       "input": "DropDMSPartitionsRequest",
       "name": "DMS元数据删除分区",
-      "output": "DropDMSPartitionsResponse"
+      "output": "DropDMSPartitionsResponse",
+      "status": "online"
     },
     "DropDMSTable": {
       "document": "DMS元数据删除表",
       "input": "DropDMSTableRequest",
       "name": "DMS元数据删除表",
-      "output": "DropDMSTableResponse"
+      "output": "DropDMSTableResponse",
+      "status": "online"
     },
     "ListTaskJobLogDetail": {
       "document": "本接口（ListTaskJobLogDetail）用于获取spark-jar日志列表",
       "input": "ListTaskJobLogDetailRequest",
       "name": "日志列表",
-      "output": "ListTaskJobLogDetailResponse"
+      "output": "ListTaskJobLogDetailResponse",
+      "status": "online"
     },
     "LockMetaData": {
       "document": "元数据锁",
       "input": "LockMetaDataRequest",
       "name": "元数据锁",
-      "output": "LockMetaDataResponse"
+      "output": "LockMetaDataResponse",
+      "status": "online"
     },
     "ModifySparkApp": {
       "document": "更新spark应用",
       "input": "ModifySparkAppRequest",
       "name": "更新spark应用",
-      "output": "ModifySparkAppResponse"
+      "output": "ModifySparkAppResponse",
+      "status": "online"
     },
     "ModifyUser": {
       "document": "修改用户信息",
       "input": "ModifyUserRequest",
       "name": "修改用户信息",
-      "output": "ModifyUserResponse"
+      "output": "ModifyUserResponse",
+      "status": "online"
     },
     "ModifyWorkGroup": {
       "document": "修改工作组信息",
       "input": "ModifyWorkGroupRequest",
       "name": "修改工作组信息",
-      "output": "ModifyWorkGroupResponse"
+      "output": "ModifyWorkGroupResponse",
+      "status": "online"
     },
     "ReportHeartbeatMetaData": {
       "document": "上报元数据心跳",
       "input": "ReportHeartbeatMetaDataRequest",
       "name": "上报元数据心跳",
-      "output": "ReportHeartbeatMetaDataResponse"
+      "output": "ReportHeartbeatMetaDataResponse",
+      "status": "online"
     },
     "SuspendResumeDataEngine": {
       "document": "本接口用于控制暂停或恢复数据引擎",
       "input": "SuspendResumeDataEngineRequest",
       "name": "暂停或恢复数据引擎",
-      "output": "SuspendResumeDataEngineResponse"
+      "output": "SuspendResumeDataEngineResponse",
+      "status": "online"
     },
     "UnbindWorkGroupsFromUser": {
       "document": "解绑用户上的用户组",
       "input": "UnbindWorkGroupsFromUserRequest",
       "name": "解绑用户上的用户组",
-      "output": "UnbindWorkGroupsFromUserResponse"
+      "output": "UnbindWorkGroupsFromUserResponse",
+      "status": "online"
     },
     "UnlockMetaData": {
       "document": "元数据解锁",
       "input": "UnlockMetaDataRequest",
       "name": "元数据解锁",
-      "output": "UnlockMetaDataResponse"
+      "output": "UnlockMetaDataResponse",
+      "status": "online"
     }
   },
   "metadata": {

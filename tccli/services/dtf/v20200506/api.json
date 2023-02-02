@@ -4,7 +4,8 @@
       "document": "查询主事务列表",
       "input": "DescribeTransactionsRequest",
       "name": "查询主事务列表",
-      "output": "DescribeTransactionsResponse"
+      "output": "DescribeTransactionsResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,19 +4,22 @@
       "document": "创建渠道备案小程序二维码",
       "input": "CreateWeappQRUrlRequest",
       "name": "创建渠道备案小程序二维码",
-      "output": "CreateWeappQRUrlResponse"
+      "output": "CreateWeappQRUrlResponse",
+      "status": "online"
     },
     "DescribeGetAuthInfo": {
       "document": "获取实名认证信息",
       "input": "DescribeGetAuthInfoRequest",
       "name": "获取实名认证信息",
-      "output": "DescribeGetAuthInfoResponse"
+      "output": "DescribeGetAuthInfoResponse",
+      "status": "online"
     },
     "SyncIcpOrderWebInfo": {
       "document": "将备案ICP订单下的一个网站信息 同步给订单下其他网站，需要被同步的网站被检查通过(isCheck:true)；\n只有指定的网站信息字段能被同步",
       "input": "SyncIcpOrderWebInfoRequest",
       "name": "同步备案ICP订单网站信息",
-      "output": "SyncIcpOrderWebInfoResponse"
+      "output": "SyncIcpOrderWebInfoResponse",
+      "status": "online"
     }
   },
   "metadata": {

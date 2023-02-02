@@ -4,19 +4,22 @@
       "document": "流量反欺诈-流量验准定制版",
       "input": "RecognizeCustomizedAudienceRequest",
       "name": "流量反欺诈-流量验准定制版",
-      "output": "RecognizeCustomizedAudienceResponse"
+      "output": "RecognizeCustomizedAudienceResponse",
+      "status": "online"
     },
     "RecognizePreciseTargetAudience": {
       "document": "流量反欺诈-流量验准高级版",
       "input": "RecognizePreciseTargetAudienceRequest",
       "name": "流量反欺诈-流量验准高级版",
-      "output": "RecognizePreciseTargetAudienceResponse"
+      "output": "RecognizePreciseTargetAudienceResponse",
+      "status": "online"
     },
     "RecognizeTargetAudience": {
       "document": "流量反欺诈-流量验准",
       "input": "RecognizeTargetAudienceRequest",
       "name": "流量反欺诈-流量验准",
-      "output": "RecognizeTargetAudienceResponse"
+      "output": "RecognizeTargetAudienceResponse",
+      "status": "online"
     }
   },
   "metadata": {

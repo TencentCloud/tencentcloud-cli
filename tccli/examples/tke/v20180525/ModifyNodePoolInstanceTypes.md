@@ -7,8 +7,8 @@ Input:
 ```
 tccli tke ModifyNodePoolInstanceTypes --cli-unfold-argument  \
     --ClusterId cls-xxx \
-    --NodePoolId np-xxx \
-    --InstanceTypes ins-xxx
+    --InstanceTypes ins-xxx \
+    --NodePoolId np-xxx
 ```
 
 Output: 

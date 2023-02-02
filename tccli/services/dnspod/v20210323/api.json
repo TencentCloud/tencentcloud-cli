@@ -4,355 +4,414 @@
       "document": "回滚前检查单条记录",
       "input": "CheckRecordSnapshotRollbackRequest",
       "name": "回滚前检查单条记录",
-      "output": "CheckRecordSnapshotRollbackResponse"
+      "output": "CheckRecordSnapshotRollbackResponse",
+      "status": "online"
     },
     "CheckSnapshotRollback": {
       "document": "快照回滚前检查",
       "input": "CheckSnapshotRollbackRequest",
       "name": "快照回滚前检查",
-      "output": "CheckSnapshotRollbackResponse"
+      "output": "CheckSnapshotRollbackResponse",
+      "status": "online"
     },
     "CreateDeal": {
       "document": "DNSPod商品下单",
       "input": "CreateDealRequest",
       "name": "商品下单",
-      "output": "CreateDealResponse"
+      "output": "CreateDealResponse",
+      "status": "online"
     },
     "CreateDomain": {
       "document": "添加域名",
       "input": "CreateDomainRequest",
       "name": "添加域名",
-      "output": "CreateDomainResponse"
+      "output": "CreateDomainResponse",
+      "status": "online"
     },
     "CreateDomainAlias": {
       "document": "创建域名别名",
       "input": "CreateDomainAliasRequest",
       "name": "创建域名别名",
-      "output": "CreateDomainAliasResponse"
+      "output": "CreateDomainAliasResponse",
+      "status": "online"
     },
     "CreateDomainBatch": {
       "document": "批量添加域名",
       "input": "CreateDomainBatchRequest",
       "name": "批量添加域名",
-      "output": "CreateDomainBatchResponse"
+      "output": "CreateDomainBatchResponse",
+      "status": "online"
     },
     "CreateDomainGroup": {
       "document": "创建域名分组",
       "input": "CreateDomainGroupRequest",
       "name": "创建域名分组",
-      "output": "CreateDomainGroupResponse"
+      "output": "CreateDomainGroupResponse",
+      "status": "online"
     },
     "CreateRecord": {
       "document": "添加记录",
       "input": "CreateRecordRequest",
       "name": "添加记录",
-      "output": "CreateRecordResponse"
+      "output": "CreateRecordResponse",
+      "status": "online"
     },
     "CreateRecordBatch": {
       "document": "批量添加记录",
       "input": "CreateRecordBatchRequest",
       "name": "批量添加记录",
-      "output": "CreateRecordBatchResponse"
+      "output": "CreateRecordBatchResponse",
+      "status": "online"
     },
     "CreateRecordGroup": {
       "document": "添加记录分组",
       "input": "CreateRecordGroupRequest",
       "name": "添加记录分组",
-      "output": "CreateRecordGroupResponse"
+      "output": "CreateRecordGroupResponse",
+      "status": "online"
     },
     "CreateSnapshot": {
       "document": "创建快照",
       "input": "CreateSnapshotRequest",
       "name": "创建快照",
-      "output": "CreateSnapshotResponse"
+      "output": "CreateSnapshotResponse",
+      "status": "online"
     },
     "DeleteDomain": {
       "document": "删除域名",
       "input": "DeleteDomainRequest",
       "name": "删除域名",
-      "output": "DeleteDomainResponse"
+      "output": "DeleteDomainResponse",
+      "status": "online"
     },
     "DeleteDomainAlias": {
       "document": "删除域名别名",
       "input": "DeleteDomainAliasRequest",
       "name": "删除域名别名",
-      "output": "DeleteDomainAliasResponse"
+      "output": "DeleteDomainAliasResponse",
+      "status": "online"
     },
     "DeleteRecord": {
       "document": "删除记录",
       "input": "DeleteRecordRequest",
       "name": "删除记录",
-      "output": "DeleteRecordResponse"
+      "output": "DeleteRecordResponse",
+      "status": "online"
     },
     "DeleteRecordGroup": {
       "document": "删除记录分组",
       "input": "DeleteRecordGroupRequest",
       "name": "删除记录分组",
-      "output": "DeleteRecordGroupResponse"
+      "output": "DeleteRecordGroupResponse",
+      "status": "online"
     },
     "DeleteShareDomain": {
       "document": "删除域名共享",
       "input": "DeleteShareDomainRequest",
       "name": "删除域名共享",
-      "output": "DeleteShareDomainResponse"
+      "output": "DeleteShareDomainResponse",
+      "status": "online"
     },
     "DeleteSnapshot": {
       "document": "删除快照",
       "input": "DeleteSnapshotRequest",
       "name": "删除快照",
-      "output": "DeleteSnapshotResponse"
+      "output": "DeleteSnapshotResponse",
+      "status": "online"
     },
     "DescribeBatchTask": {
       "document": "获取任务详情",
       "input": "DescribeBatchTaskRequest",
       "name": "获取任务详情",
-      "output": "DescribeBatchTaskResponse"
+      "output": "DescribeBatchTaskResponse",
+      "status": "online"
     },
     "DescribeDomain": {
       "document": "获取域名信息",
       "input": "DescribeDomainRequest",
       "name": "获取域名信息",
-      "output": "DescribeDomainResponse"
+      "output": "DescribeDomainResponse",
+      "status": "online"
     },
     "DescribeDomainAliasList": {
       "document": "获取域名别名列表",
       "input": "DescribeDomainAliasListRequest",
       "name": "获取域名别名列表",
-      "output": "DescribeDomainAliasListResponse"
+      "output": "DescribeDomainAliasListResponse",
+      "status": "online"
     },
     "DescribeDomainAnalytics": {
       "document": "统计各个域名的解析量，帮助您了解流量情况、时间段分布。支持查看近 3 个月内的统计情况",
       "input": "DescribeDomainAnalyticsRequest",
       "name": "域名解析量统计",
-      "output": "DescribeDomainAnalyticsResponse"
+      "output": "DescribeDomainAnalyticsResponse",
+      "status": "online"
     },
     "DescribeDomainGroupList": {
       "document": "获取域名分组列表",
       "input": "DescribeDomainGroupListRequest",
       "name": "获取域名分组列表",
-      "output": "DescribeDomainGroupListResponse"
+      "output": "DescribeDomainGroupListResponse",
+      "status": "online"
     },
     "DescribeDomainList": {
       "document": "获取域名列表",
       "input": "DescribeDomainListRequest",
       "name": "获取域名列表",
-      "output": "DescribeDomainListResponse"
+      "output": "DescribeDomainListResponse",
+      "status": "online"
     },
     "DescribeDomainLogList": {
       "document": "获取域名日志",
       "input": "DescribeDomainLogListRequest",
       "name": "获取域名日志",
-      "output": "DescribeDomainLogListResponse"
+      "output": "DescribeDomainLogListResponse",
+      "status": "online"
     },
     "DescribeDomainPurview": {
       "document": "获取域名权限",
       "input": "DescribeDomainPurviewRequest",
       "name": "获取域名权限",
-      "output": "DescribeDomainPurviewResponse"
+      "output": "DescribeDomainPurviewResponse",
+      "status": "online"
     },
     "DescribeDomainShareInfo": {
       "document": "获取域名共享信息",
       "input": "DescribeDomainShareInfoRequest",
       "name": "获取域名共享信息",
-      "output": "DescribeDomainShareInfoResponse"
+      "output": "DescribeDomainShareInfoResponse",
+      "status": "online"
     },
     "DescribeRecord": {
       "document": "获取记录信息",
       "input": "DescribeRecordRequest",
       "name": "获取记录信息",
-      "output": "DescribeRecordResponse"
+      "output": "DescribeRecordResponse",
+      "status": "online"
     },
     "DescribeRecordGroupList": {
       "document": "查询解析记录分组列表",
       "input": "DescribeRecordGroupListRequest",
       "name": "查询解析记录分组列表",
-      "output": "DescribeRecordGroupListResponse"
+      "output": "DescribeRecordGroupListResponse",
+      "status": "online"
     },
     "DescribeRecordLineList": {
       "document": "获取等级允许的线路",
       "input": "DescribeRecordLineListRequest",
       "name": "获取等级允许的线路",
-      "output": "DescribeRecordLineListResponse"
+      "output": "DescribeRecordLineListResponse",
+      "status": "online"
     },
     "DescribeRecordList": {
       "document": "获取某个域名下的解析记录列表",
       "input": "DescribeRecordListRequest",
       "name": "获取域名的解析记录列表",
-      "output": "DescribeRecordListResponse"
+      "output": "DescribeRecordListResponse",
+      "status": "online"
     },
     "DescribeRecordSnapshotRollbackResult": {
       "document": "查询解析记录重新回滚的结果",
       "input": "DescribeRecordSnapshotRollbackResultRequest",
       "name": "查询解析记录重新回滚的结果",
-      "output": "DescribeRecordSnapshotRollbackResultResponse"
+      "output": "DescribeRecordSnapshotRollbackResultResponse",
+      "status": "online"
     },
     "DescribeRecordType": {
       "document": "获取等级允许的记录类型",
       "input": "DescribeRecordTypeRequest",
       "name": "获取等级允许的记录类型",
-      "output": "DescribeRecordTypeResponse"
+      "output": "DescribeRecordTypeResponse",
+      "status": "online"
     },
     "DescribeSnapshotConfig": {
       "document": "查询解析快照配置",
       "input": "DescribeSnapshotConfigRequest",
       "name": "查询解析快照配置",
-      "output": "DescribeSnapshotConfigResponse"
+      "output": "DescribeSnapshotConfigResponse",
+      "status": "online"
     },
     "DescribeSnapshotList": {
       "document": "查询快照列表",
       "input": "DescribeSnapshotListRequest",
       "name": "查询快照列表",
-      "output": "DescribeSnapshotListResponse"
+      "output": "DescribeSnapshotListResponse",
+      "status": "online"
     },
     "DescribeSnapshotRollbackResult": {
       "document": "查询快照回滚结果",
       "input": "DescribeSnapshotRollbackResultRequest",
       "name": "查询快照回滚结果",
-      "output": "DescribeSnapshotRollbackResultResponse"
+      "output": "DescribeSnapshotRollbackResultResponse",
+      "status": "online"
     },
     "DescribeSnapshotRollbackTask": {
       "document": "查询最近一次回滚",
       "input": "DescribeSnapshotRollbackTaskRequest",
       "name": "查询最近一次回滚",
-      "output": "DescribeSnapshotRollbackTaskResponse"
+      "output": "DescribeSnapshotRollbackTaskResponse",
+      "status": "online"
     },
     "DescribeSubdomainAnalytics": {
       "document": "统计子域名的解析量，帮助您了解流量情况、时间段分布。支持查看近 3 个月内的统计情况。仅付费套餐域名可用。",
       "input": "DescribeSubdomainAnalyticsRequest",
       "name": "子域名解析量统计",
-      "output": "DescribeSubdomainAnalyticsResponse"
+      "output": "DescribeSubdomainAnalyticsResponse",
+      "status": "online"
     },
     "DescribeUserDetail": {
       "document": "获取帐户信息",
       "input": "DescribeUserDetailRequest",
       "name": "获取帐户信息",
-      "output": "DescribeUserDetailResponse"
+      "output": "DescribeUserDetailResponse",
+      "status": "online"
     },
     "DownloadSnapshot": {
       "document": "下载快照",
       "input": "DownloadSnapshotRequest",
       "name": "下载快照",
-      "output": "DownloadSnapshotResponse"
+      "output": "DownloadSnapshotResponse",
+      "status": "online"
     },
     "ModifyDomainLock": {
       "document": "锁定域名",
       "input": "ModifyDomainLockRequest",
       "name": "锁定域名",
-      "output": "ModifyDomainLockResponse"
+      "output": "ModifyDomainLockResponse",
+      "status": "online"
     },
     "ModifyDomainOwner": {
       "document": "域名过户",
       "input": "ModifyDomainOwnerRequest",
       "name": "域名过户",
-      "output": "ModifyDomainOwnerResponse"
+      "output": "ModifyDomainOwnerResponse",
+      "status": "online"
     },
     "ModifyDomainRemark": {
       "document": "设置域名备注",
       "input": "ModifyDomainRemarkRequest",
       "name": "设置域名备注",
-      "output": "ModifyDomainRemarkResponse"
+      "output": "ModifyDomainRemarkResponse",
+      "status": "online"
     },
     "ModifyDomainStatus": {
       "document": "修改域名状态",
       "input": "ModifyDomainStatusRequest",
       "name": "修改域名状态",
-      "output": "ModifyDomainStatusResponse"
+      "output": "ModifyDomainStatusResponse",
+      "status": "online"
     },
     "ModifyDomainUnlock": {
       "document": "域名锁定解锁",
       "input": "ModifyDomainUnlockRequest",
       "name": "域名锁定解锁",
-      "output": "ModifyDomainUnlockResponse"
+      "output": "ModifyDomainUnlockResponse",
+      "status": "online"
     },
     "ModifyDynamicDNS": {
       "document": "更新动态 DNS 记录",
       "input": "ModifyDynamicDNSRequest",
       "name": "更新动态 DNS 记录",
-      "output": "ModifyDynamicDNSResponse"
+      "output": "ModifyDynamicDNSResponse",
+      "status": "online"
     },
     "ModifyPackageAutoRenew": {
       "document": "DNS 解析套餐自动续费设置",
       "input": "ModifyPackageAutoRenewRequest",
       "name": "DNS 解析套餐自动续费设置",
-      "output": "ModifyPackageAutoRenewResponse"
+      "output": "ModifyPackageAutoRenewResponse",
+      "status": "online"
     },
     "ModifyRecord": {
       "document": "修改记录",
       "input": "ModifyRecordRequest",
       "name": "修改记录",
-      "output": "ModifyRecordResponse"
+      "output": "ModifyRecordResponse",
+      "status": "online"
     },
     "ModifyRecordBatch": {
       "document": "批量修改记录",
       "input": "ModifyRecordBatchRequest",
       "name": "批量修改记录",
-      "output": "ModifyRecordBatchResponse"
+      "output": "ModifyRecordBatchResponse",
+      "status": "online"
     },
     "ModifyRecordFields": {
       "document": "修改记录可选字段",
       "input": "ModifyRecordFieldsRequest",
       "name": "修改记录可选字段",
-      "output": "ModifyRecordFieldsResponse"
+      "output": "ModifyRecordFieldsResponse",
+      "status": "online"
     },
     "ModifyRecordGroup": {
       "document": "修改记录分组",
       "input": "ModifyRecordGroupRequest",
       "name": "修改记录分组",
-      "output": "ModifyRecordGroupResponse"
+      "output": "ModifyRecordGroupResponse",
+      "status": "online"
     },
     "ModifyRecordRemark": {
       "document": "设置记录备注",
       "input": "ModifyRecordRemarkRequest",
       "name": "设置记录备注",
-      "output": "ModifyRecordRemarkResponse"
+      "output": "ModifyRecordRemarkResponse",
+      "status": "online"
     },
     "ModifyRecordStatus": {
       "document": "修改解析记录的状态",
       "input": "ModifyRecordStatusRequest",
       "name": "设置记录状态",
-      "output": "ModifyRecordStatusResponse"
+      "output": "ModifyRecordStatusResponse",
+      "status": "online"
     },
     "ModifyRecordToGroup": {
       "document": "将记录添加到分组",
       "input": "ModifyRecordToGroupRequest",
       "name": "将记录添加到分组",
-      "output": "ModifyRecordToGroupResponse"
+      "output": "ModifyRecordToGroupResponse",
+      "status": "online"
     },
     "ModifySnapshotConfig": {
       "document": "修改快照配置",
       "input": "ModifySnapshotConfigRequest",
       "name": "修改快照配置",
-      "output": "ModifySnapshotConfigResponse"
+      "output": "ModifySnapshotConfigResponse",
+      "status": "online"
     },
     "ModifySubdomainStatus": {
       "document": "暂停子域名的解析记录",
       "input": "ModifySubdomainStatusRequest",
       "name": "暂停子域名的解析记录",
-      "output": "ModifySubdomainStatusResponse"
+      "output": "ModifySubdomainStatusResponse",
+      "status": "online"
     },
     "ModifyVasAutoRenewStatus": {
       "document": "增值服务自动续费设置",
       "input": "ModifyVasAutoRenewStatusRequest",
       "name": "增值服务自动续费设置",
-      "output": "ModifyVasAutoRenewStatusResponse"
+      "output": "ModifyVasAutoRenewStatusResponse",
+      "status": "online"
     },
     "PayOrderWithBalance": {
       "document": "DNSPod商品余额支付",
       "input": "PayOrderWithBalanceRequest",
       "name": "DNSPod商品余额支付",
-      "output": "PayOrderWithBalanceResponse"
+      "output": "PayOrderWithBalanceResponse",
+      "status": "online"
     },
     "RollbackRecordSnapshot": {
       "document": "重新回滚指定解析记录快照",
       "input": "RollbackRecordSnapshotRequest",
       "name": "重新回滚指定解析记录快照",
-      "output": "RollbackRecordSnapshotResponse"
+      "output": "RollbackRecordSnapshotResponse",
+      "status": "online"
     },
     "RollbackSnapshot": {
       "document": "回滚快照",
       "input": "RollbackSnapshotRequest",
       "name": "回滚快照",
-      "output": "RollbackSnapshotResponse"
+      "output": "RollbackSnapshotResponse",
+      "status": "online"
     }
   },
   "metadata": {

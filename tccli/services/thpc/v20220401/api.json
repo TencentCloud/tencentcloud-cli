@@ -4,73 +4,85 @@
       "document": "本接口（AddClusterStorageOption）用于添加集群存储选项信息。",
       "input": "AddClusterStorageOptionRequest",
       "name": "添加集群存储选项",
-      "output": "AddClusterStorageOptionResponse"
+      "output": "AddClusterStorageOptionResponse",
+      "status": "online"
     },
     "AddNodes": {
       "document": "本接口(AddNodes)用于添加一个或者多个计算节点或者登录节点到指定集群。",
       "input": "AddNodesRequest",
       "name": "添加节点",
-      "output": "AddNodesResponse"
+      "output": "AddNodesResponse",
+      "status": "online"
     },
     "BindAutoScalingGroup": {
       "document": "本接口(BindAutoScalingGroup)用于为集群队列绑定弹性伸缩组",
       "input": "BindAutoScalingGroupRequest",
       "name": "绑定弹性伸缩组",
-      "output": "BindAutoScalingGroupResponse"
+      "output": "BindAutoScalingGroupResponse",
+      "status": "online"
     },
     "CreateCluster": {
       "document": "本接口 (CreateCluster) 用于创建并启动集群。",
       "input": "CreateClusterRequest",
       "name": "创建集群",
-      "output": "CreateClusterResponse"
+      "output": "CreateClusterResponse",
+      "status": "online"
     },
     "DeleteCluster": {
       "document": "本接口（DeleteCluster）用于删除一个指定的集群。",
       "input": "DeleteClusterRequest",
       "name": "删除集群",
-      "output": "DeleteClusterResponse"
+      "output": "DeleteClusterResponse",
+      "status": "online"
     },
     "DeleteClusterStorageOption": {
       "document": "本接口 (DeleteClusterStorageOption) 用于删除集群存储选项信息。",
       "input": "DeleteClusterStorageOptionRequest",
       "name": "删除集群存储选项",
-      "output": "DeleteClusterStorageOptionResponse"
+      "output": "DeleteClusterStorageOptionResponse",
+      "status": "online"
     },
     "DeleteNodes": {
       "document": "本接口(DeleteNodes)用于删除指定集群中一个或者多个计算节点或者登录节点。",
       "input": "DeleteNodesRequest",
       "name": "删除节点",
-      "output": "DeleteNodesResponse"
+      "output": "DeleteNodesResponse",
+      "status": "online"
     },
     "DescribeAutoScalingConfiguration": {
       "document": "本接口(DescribeAutoScalingConfiguration)用于查询集群弹性伸缩配置信息。本接口仅适用于弹性伸缩类型为THPC_AS的集群。",
       "input": "DescribeAutoScalingConfigurationRequest",
       "name": "查询弹性伸缩配置信息",
-      "output": "DescribeAutoScalingConfigurationResponse"
+      "output": "DescribeAutoScalingConfigurationResponse",
+      "status": "online"
     },
     "DescribeClusterActivities": {
       "document": "本接口（DescribeClusterActivities）用于查询集群活动历史记录列表。",
       "input": "DescribeClusterActivitiesRequest",
       "name": "查询集群活动历史记录",
-      "output": "DescribeClusterActivitiesResponse"
+      "output": "DescribeClusterActivitiesResponse",
+      "status": "online"
     },
     "DescribeClusterStorageOption": {
       "document": "本接口 (DescribeClusterStorageOption) 用于查询集群存储选项信息。",
       "input": "DescribeClusterStorageOptionRequest",
       "name": "查询集群存储选项",
-      "output": "DescribeClusterStorageOptionResponse"
+      "output": "DescribeClusterStorageOptionResponse",
+      "status": "online"
     },
     "DescribeClusters": {
       "document": "本接口（DescribeClusters）用于查询集群列表。",
       "input": "DescribeClustersRequest",
       "name": "查询集群列表",
-      "output": "DescribeClustersResponse"
+      "output": "DescribeClustersResponse",
+      "status": "online"
     },
     "SetAutoScalingConfiguration": {
       "document": "本接口(SetAutoScalingConfiguration)用于为集群设置集群弹性伸缩配置信息。",
       "input": "SetAutoScalingConfigurationRequest",
       "name": "设置弹性伸缩配置信息",
-      "output": "SetAutoScalingConfigurationResponse"
+      "output": "SetAutoScalingConfigurationResponse",
+      "status": "online"
     }
   },
   "metadata": {

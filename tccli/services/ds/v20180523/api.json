@@ -4,73 +4,85 @@
       "document": "检测验证码接口。此接口用于企业电子合同平台通过给用户发送短信验证码，以短信授权方式签署合同。此接口配合发送验证码接口使用。\n\n用户在企业电子合同平台输入收到的验证码后，由企业电子合同平台调用该接口向腾讯云提交确认受托签署合同验证码命令。验证码验证正确时，本次合同签署的授权成功。",
       "input": "CheckVcodeRequest",
       "name": "检测验证码",
-      "output": "CheckVcodeResponse"
+      "output": "CheckVcodeResponse",
+      "status": "online"
     },
     "CreateContractByUpload": {
       "document": "此接口适用于：客户平台通过上传PDF文件作为合同，以备未来进行签署。接口返回任务号，可调用DescribeTaskStatus接口查看任务执行结果。",
       "input": "CreateContractByUploadRequest",
       "name": "通过上传创建合同",
-      "output": "CreateContractByUploadResponse"
+      "output": "CreateContractByUploadResponse",
+      "status": "online"
     },
     "CreateEnterpriseAccount": {
       "document": "为企业电子合同平台的最终企业用户进行开户。在企业电子合同平台进行操作的企业用户，企业电子合同平台向腾讯云发送企业用户的信息，提交开户命令。腾讯云接到请求后，自动为企业电子合同平台的企业用户生成一张数字证书。",
       "input": "CreateEnterpriseAccountRequest",
       "name": "企业开户",
-      "output": "CreateEnterpriseAccountResponse"
+      "output": "CreateEnterpriseAccountResponse",
+      "status": "online"
     },
     "CreatePersonalAccount": {
       "document": "为企业电子合同平台的最终个人用户进行开户。在企业电子合同平台进行操作的个人用户，企业电子合同平台向腾讯云发送个人用户的信息，提交开户命令。腾讯云接到请求后，自动为企业电子合同平台的个人用户生成一张数字证书。",
       "input": "CreatePersonalAccountRequest",
       "name": "个人开户",
-      "output": "CreatePersonalAccountResponse"
+      "output": "CreatePersonalAccountResponse",
+      "status": "online"
     },
     "CreateSeal": {
       "document": "此接口用于客户电子合同平台增加某用户的印章图片。客户平台可以调用此接口增加某用户的印章图片。",
       "input": "CreateSealRequest",
       "name": "新增签章",
-      "output": "CreateSealResponse"
+      "output": "CreateSealResponse",
+      "status": "online"
     },
     "DeleteAccount": {
       "document": "删除企业电子合同平台的最终用户。调用该接口后，腾讯云将删除该用户账号。删除账号后，已经签名的合同不受影响。",
       "input": "DeleteAccountRequest",
       "name": "删除帐号",
-      "output": "DeleteAccountResponse"
+      "output": "DeleteAccountResponse",
+      "status": "online"
     },
     "DeleteSeal": {
       "document": "删除印章接口，删除指定账号的某个印章",
       "input": "DeleteSealRequest",
       "name": "删除签章",
-      "output": "DeleteSealResponse"
+      "output": "DeleteSealResponse",
+      "status": "online"
     },
     "DescribeTaskStatus": {
       "document": "接口使用于：客户平台可使用该接口查询任务执行状态或者执行结果",
       "input": "DescribeTaskStatusRequest",
       "name": "获取任务状态",
-      "output": "DescribeTaskStatusResponse"
+      "output": "DescribeTaskStatusResponse",
+      "status": "online"
     },
     "DownloadContract": {
       "document": "下载合同接口。调用该接口可以下载签署中和签署完成的合同。接口返回任务号，可调用DescribeTaskStatus接口查看任务执行结果。",
       "input": "DownloadContractRequest",
       "name": "下载合同",
-      "output": "DownloadContractResponse"
+      "output": "DownloadContractResponse",
+      "status": "online"
     },
     "SendVcode": {
       "document": "发送验证码接口。此接口用于：企业电子合同平台需要腾讯云发送验证码对其用户进行验证时调用，腾讯云将向其用户联系手机(企业电子合同平台为用户开户时通过接口传入)发送验证码，以验证码授权方式签署合同。用户验证工作由企业电子合同平台自身完成。",
       "input": "SendVcodeRequest",
       "name": "发送验证码",
-      "output": "SendVcodeResponse"
+      "output": "SendVcodeResponse",
+      "status": "online"
     },
     "SignContractByCoordinate": {
       "document": "此接口适用于：客户平台在创建好合同后，由合同签署方对创建的合同内容进行确认，无误后再进行签署。客户平台使用该接口提供详细的PDF文档签名坐标进行签署。",
       "input": "SignContractByCoordinateRequest",
       "name": "按坐标签署合同",
-      "output": "SignContractByCoordinateResponse"
+      "output": "SignContractByCoordinateResponse",
+      "status": "online"
     },
     "SignContractByKeyword": {
       "document": "此接口适用于：客户平台在创建好合同后，由合同签署方对创建的合同内容进行确认，无误后再进行签署。客户平台使用该接口对PDF合同文档按照关键字和坐标进行签署。",
       "input": "SignContractByKeywordRequest",
       "name": "按关键字签署合同",
-      "output": "SignContractByKeywordResponse"
+      "output": "SignContractByKeywordResponse",
+      "status": "online"
     }
   },
   "metadata": {

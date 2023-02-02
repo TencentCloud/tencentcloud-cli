@@ -4,199 +4,232 @@
       "document": "本接口用于校验姓名和银行卡号的真实性和一致性。",
       "input": "BankCard2EVerificationRequest",
       "name": "银行卡二要素核验",
-      "output": "BankCard2EVerificationResponse"
+      "output": "BankCard2EVerificationResponse",
+      "status": "online"
     },
     "BankCard4EVerification": {
       "document": "本接口用于输入银行卡号、姓名、开户证件号、开户手机号，校验信息的真实性和一致性。",
       "input": "BankCard4EVerificationRequest",
       "name": "银行卡四要素核验",
-      "output": "BankCard4EVerificationResponse"
+      "output": "BankCard4EVerificationResponse",
+      "status": "online"
     },
     "BankCardVerification": {
       "document": "本接口用于银行卡号、姓名、开户证件号信息的真实性和一致性。",
       "input": "BankCardVerificationRequest",
       "name": "银行卡三要素核验",
-      "output": "BankCardVerificationResponse"
+      "output": "BankCardVerificationResponse",
+      "status": "online"
     },
     "CheckBankCardInformation": {
       "document": "银行卡基础信息查询",
       "input": "CheckBankCardInformationRequest",
       "name": "银行卡基础信息查询",
-      "output": "CheckBankCardInformationResponse"
+      "output": "CheckBankCardInformationResponse",
+      "status": "online"
     },
     "CheckEidTokenStatus": {
       "document": "用于轮询E证通H5场景EidToken验证状态。",
       "input": "CheckEidTokenStatusRequest",
       "name": "获取E证通Token状态",
-      "output": "CheckEidTokenStatusResponse"
+      "output": "CheckEidTokenStatusResponse",
+      "status": "online"
     },
     "CheckIdCardInformation": {
       "document": "传入身份证人像面照片，识别身份证照片上的信息，并将姓名、身份证号、身份证人像照片与权威库的证件照进行比对，是否属于同一个人，从而验证身份证信息的真实性。",
       "input": "CheckIdCardInformationRequest",
       "name": "身份证人像照片验真",
-      "output": "CheckIdCardInformationResponse"
+      "output": "CheckIdCardInformationResponse",
+      "status": "online"
     },
     "CheckIdNameDate": {
       "document": "本接口用于校验姓名、身份证号、身份证有效期的真实性和一致性。",
       "input": "CheckIdNameDateRequest",
       "name": "身份信息及有效期核验",
-      "output": "CheckIdNameDateResponse"
+      "output": "CheckIdNameDateResponse",
+      "status": "online"
     },
     "CheckPhoneAndName": {
       "document": "手机号二要素核验接口用于校验手机号和姓名的真实性和一致性，支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。\n",
       "input": "CheckPhoneAndNameRequest",
       "name": "手机号二要素核验",
-      "output": "CheckPhoneAndNameResponse"
+      "output": "CheckPhoneAndNameResponse",
+      "status": "online"
     },
     "DetectAuth": {
       "document": "每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。",
       "input": "DetectAuthRequest",
       "name": "实名核身鉴权",
-      "output": "DetectAuthResponse"
+      "output": "DetectAuthResponse",
+      "status": "online"
     },
     "EncryptedPhoneVerification": {
       "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性，入参支持明文、MD5和SHA256加密传输。",
       "input": "EncryptedPhoneVerificationRequest",
       "name": "运营商三要素核验（加密）",
-      "output": "EncryptedPhoneVerificationResponse"
+      "output": "EncryptedPhoneVerificationResponse",
+      "status": "online"
     },
     "GetActionSequence": {
       "document": "使用动作活体检测模式前，需调用本接口获取动作顺序。",
       "input": "GetActionSequenceRequest",
       "name": "获取动作顺序",
-      "output": "GetActionSequenceResponse"
+      "output": "GetActionSequenceResponse",
+      "status": "online"
     },
     "GetDetectInfo": {
       "document": "完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
       "input": "GetDetectInfoRequest",
       "name": "获取实名核身结果信息",
-      "output": "GetDetectInfoResponse"
+      "output": "GetDetectInfoResponse",
+      "status": "online"
     },
     "GetDetectInfoEnhanced": {
       "document": "完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
       "input": "GetDetectInfoEnhancedRequest",
       "name": "获取实名核身结果信息增强版",
-      "output": "GetDetectInfoEnhancedResponse"
+      "output": "GetDetectInfoEnhancedResponse",
+      "status": "online"
     },
     "GetEidResult": {
       "document": "完成验证后，用EidToken调用本接口获取结果信息，EidToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
       "input": "GetEidResultRequest",
       "name": "获取E证通结果信息",
-      "output": "GetEidResultResponse"
+      "output": "GetEidResultResponse",
+      "status": "online"
     },
     "GetEidToken": {
       "document": "每次调用E证通服务前，需先调用本接口获取EidToken，用来串联E证通流程，在验证完成后，用于获取E证通结果信息。",
       "input": "GetEidTokenRequest",
       "name": "获取E证通Token",
-      "output": "GetEidTokenResponse"
+      "output": "GetEidTokenResponse",
+      "status": "online"
     },
     "GetFaceIdResult": {
       "document": "完成验证后，用FaceIdToken调用本接口获取结果信息，FaceIdToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
       "input": "GetFaceIdResultRequest",
       "name": "获取SDK核验结果",
-      "output": "GetFaceIdResultResponse"
+      "output": "GetFaceIdResultResponse",
+      "status": "online"
     },
     "GetFaceIdToken": {
       "document": "每次调用人脸核身SDK服务前，需先调用本接口获取SDKToken，用来串联核身流程，在验证完成后，用于获取验证结果信息，该token仅能核身一次。",
       "input": "GetFaceIdTokenRequest",
       "name": "获取SDKToken",
-      "output": "GetFaceIdTokenResponse"
+      "output": "GetFaceIdTokenResponse",
+      "status": "online"
     },
     "GetLiveCode": {
       "document": "使用数字活体检测模式前，需调用本接口获取数字验证码。",
       "input": "GetLiveCodeRequest",
       "name": "获取数字验证码",
-      "output": "GetLiveCodeResponse"
+      "output": "GetLiveCodeResponse",
+      "status": "online"
     },
     "GetWeChatBillDetails": {
       "document": "查询微信渠道服务（微信小程序、微信原生H5、微信普通H5）的账单明细及计费状态。",
       "input": "GetWeChatBillDetailsRequest",
       "name": "查询账单明细（微信渠道）",
-      "output": "GetWeChatBillDetailsResponse"
+      "output": "GetWeChatBillDetailsResponse",
+      "status": "online"
     },
     "IdCardOCRVerification": {
       "document": "本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。",
       "input": "IdCardOCRVerificationRequest",
       "name": "身份证识别及信息核验",
-      "output": "IdCardOCRVerificationResponse"
+      "output": "IdCardOCRVerificationResponse",
+      "status": "online"
     },
     "IdCardVerification": {
       "document": "传入姓名和身份证号，校验两者的真实性和一致性。",
       "input": "IdCardVerificationRequest",
       "name": "身份信息认证",
-      "output": "IdCardVerificationResponse"
+      "output": "IdCardVerificationResponse",
+      "status": "online"
     },
     "ImageRecognition": {
       "document": "传入照片和身份信息，判断该照片与权威库的证件照是否属于同一个人。",
       "input": "ImageRecognitionRequest",
       "name": "照片人脸核身",
-      "output": "ImageRecognitionResponse"
+      "output": "ImageRecognitionResponse",
+      "status": "online"
     },
     "Liveness": {
       "document": "活体检测",
       "input": "LivenessRequest",
       "name": "活体检测",
-      "output": "LivenessResponse"
+      "output": "LivenessResponse",
+      "status": "online"
     },
     "LivenessCompare": {
       "document": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。",
       "input": "LivenessCompareRequest",
       "name": "活体人脸比对",
-      "output": "LivenessCompareResponse"
+      "output": "LivenessCompareResponse",
+      "status": "online"
     },
     "LivenessRecognition": {
       "document": "传入视频和身份信息，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与权威库的证件照是否属于同一个人。",
       "input": "LivenessRecognitionRequest",
       "name": "活体人脸核身",
-      "output": "LivenessRecognitionResponse"
+      "output": "LivenessRecognitionResponse",
+      "status": "online"
     },
     "MinorsVerification": {
       "document": "通过传入手机号或姓名和身份证号，结合权威数据源和腾讯健康守护可信模型，判断该信息是否真实且年满18周岁。腾讯健康守护可信模型覆盖了上十亿手机库源，覆盖率高、准确率高，如果不在库中的手机号，还可以通过姓名+身份证进行兜底验证。",
       "input": "MinorsVerificationRequest",
       "name": "手机号实名查询",
-      "output": "MinorsVerificationResponse"
+      "output": "MinorsVerificationResponse",
+      "status": "online"
     },
     "MobileNetworkTimeVerification": {
       "document": "本接口用于查询手机号在网时长，输入手机号进行查询。",
       "input": "MobileNetworkTimeVerificationRequest",
       "name": "手机号在网时长核验",
-      "output": "MobileNetworkTimeVerificationResponse"
+      "output": "MobileNetworkTimeVerificationResponse",
+      "status": "online"
     },
     "MobileStatus": {
       "document": "本接口用于验证手机号的状态，您可以输入手机号进行查询。",
       "input": "MobileStatusRequest",
       "name": "手机号状态查询",
-      "output": "MobileStatusResponse"
+      "output": "MobileStatusResponse",
+      "status": "online"
     },
     "ParseNfcData": {
       "document": "解析SDK获取到的证件NFC数据，接口传入SDK返回的ReqId，返回证件信息（个别字段为特定证件类型特有）。SDK生成的ReqId五分钟内有效，重复查询仅收一次费。支持身份证类证件（二代身份证、港澳居住证、台湾居住证、外国人永居证）以及旅行类证件（港澳通行证、台湾通行证、台胞证、回乡证）的NFC识别及核验。",
       "input": "ParseNfcDataRequest",
       "name": "获取证件NFC结果",
-      "output": "ParseNfcDataResponse"
+      "output": "ParseNfcDataResponse",
+      "status": "online"
     },
     "PhoneVerification": {
       "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性。支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
       "input": "PhoneVerificationRequest",
       "name": "手机号三要素核验",
-      "output": "PhoneVerificationResponse"
+      "output": "PhoneVerificationResponse",
+      "status": "online"
     },
     "PhoneVerificationCMCC": {
       "document": "本接口用于校验中国移动手机号、姓名和身份证号的真实性和一致性。中国移动支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
       "input": "PhoneVerificationCMCCRequest",
       "name": "手机号三要素核验（移动）",
-      "output": "PhoneVerificationCMCCResponse"
+      "output": "PhoneVerificationCMCCResponse",
+      "status": "online"
     },
     "PhoneVerificationCTCC": {
       "document": "本接口用于校验中国电信手机号、姓名和身份证号的真实性和一致性。中国电信支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
       "input": "PhoneVerificationCTCCRequest",
       "name": "手机号三要素核验（电信）",
-      "output": "PhoneVerificationCTCCResponse"
+      "output": "PhoneVerificationCTCCResponse",
+      "status": "online"
     },
     "PhoneVerificationCUCC": {
       "document": "本接口用于校验中国联通手机号、姓名和身份证号的真实性和一致性。中国联通支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
       "input": "PhoneVerificationCUCCRequest",
       "name": "手机号三要素核验（联通）",
-      "output": "PhoneVerificationCUCCResponse"
+      "output": "PhoneVerificationCUCCResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,25 +4,29 @@
       "document": "举报恶意账号",
       "input": "AccountTipoffAccessRequest",
       "name": "账号举报接口",
-      "output": "AccountTipoffAccessResponse"
+      "output": "AccountTipoffAccessResponse",
+      "status": "online"
     },
     "DescribeTextLib": {
       "document": "控制台获取用户词库列表",
       "input": "DescribeTextLibRequest",
       "name": "获取用户词库列表",
-      "output": "DescribeTextLibResponse"
+      "output": "DescribeTextLibResponse",
+      "status": "online"
     },
     "DescribeTextStat": {
       "document": "控制台识别统计",
       "input": "DescribeTextStatRequest",
       "name": "识别统计",
-      "output": "DescribeTextStatResponse"
+      "output": "DescribeTextStatResponse",
+      "status": "online"
     },
     "TextModeration": {
       "document": "文本内容检测（Text Moderation）服务使用了深度学习技术，识别可能令人反感、不安全或不适宜的文本内容，同时支持用户配置词库黑白名单，打击自定义识别类型的图片。",
       "input": "TextModerationRequest",
       "name": "文本内容安全",
-      "output": "TextModerationResponse"
+      "output": "TextModerationResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,19 +4,22 @@
       "document": "获取告警对象-组件告警",
       "input": "DescribeComponentAlertObjectRequest",
       "name": "获取告警对象-组件告警",
-      "output": "DescribeComponentAlertObjectResponse"
+      "output": "DescribeComponentAlertObjectResponse",
+      "status": "online"
     },
     "DescribeServiceAlertObject": {
       "document": "获取告警对象-服务告警表",
       "input": "DescribeServiceAlertObjectRequest",
       "name": "获取告警对象-服务告警表",
-      "output": "DescribeServiceAlertObjectResponse"
+      "output": "DescribeServiceAlertObjectResponse",
+      "status": "online"
     },
     "DescribeToken": {
       "document": "查询token",
       "input": "DescribeTokenRequest",
       "name": "查询token",
-      "output": "DescribeTokenResponse"
+      "output": "DescribeTokenResponse",
+      "status": "online"
     }
   },
   "metadata": {

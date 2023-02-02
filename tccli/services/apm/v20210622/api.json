@@ -4,37 +4,43 @@
       "document": "业务购买APM实例，调用该接口创建",
       "input": "CreateApmInstanceRequest",
       "name": "创建Apm实例",
-      "output": "CreateApmInstanceResponse"
+      "output": "CreateApmInstanceResponse",
+      "status": "online"
     },
     "DescribeApmAgent": {
       "document": "获取Apm Agent信息",
       "input": "DescribeApmAgentRequest",
       "name": "获取Apm Agent信息",
-      "output": "DescribeApmAgentResponse"
+      "output": "DescribeApmAgentResponse",
+      "status": "online"
     },
     "DescribeApmInstances": {
       "document": "APM实例列表拉取",
       "input": "DescribeApmInstancesRequest",
       "name": "拉取APM实例列表",
-      "output": "DescribeApmInstancesResponse"
+      "output": "DescribeApmInstancesResponse",
+      "status": "online"
     },
     "DescribeGeneralMetricData": {
       "document": "获取指标数据通用接口。用户根据需要上送请求参数，返回对应的指标数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求的数据点数限制为1440个。",
       "input": "DescribeGeneralMetricDataRequest",
       "name": "获取指标数据通用接口",
-      "output": "DescribeGeneralMetricDataResponse"
+      "output": "DescribeGeneralMetricDataResponse",
+      "status": "online"
     },
     "DescribeMetricRecords": {
       "document": "拉取通用指标列表",
       "input": "DescribeMetricRecordsRequest",
       "name": "通用指标列表接口",
-      "output": "DescribeMetricRecordsResponse"
+      "output": "DescribeMetricRecordsResponse",
+      "status": "online"
     },
     "DescribeServiceOverview": {
       "document": "服务概览数据拉取",
       "input": "DescribeServiceOverviewRequest",
       "name": "获取服务概览数据",
-      "output": "DescribeServiceOverviewResponse"
+      "output": "DescribeServiceOverviewResponse",
+      "status": "online"
     }
   },
   "metadata": {

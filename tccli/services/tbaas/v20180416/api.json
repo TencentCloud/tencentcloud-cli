@@ -4,205 +4,239 @@
       "document": "批量申请长安链用户签名证书",
       "input": "ApplyChainMakerBatchUserCertRequest",
       "name": "批量申请长安链用户签名证书",
-      "output": "ApplyChainMakerBatchUserCertResponse"
+      "output": "ApplyChainMakerBatchUserCertResponse",
+      "status": "online"
     },
     "ApplyUserCert": {
       "document": "申请用户证书",
       "input": "ApplyUserCertRequest",
       "name": "申请用户证书",
-      "output": "ApplyUserCertResponse"
+      "output": "ApplyUserCertResponse",
+      "status": "online"
     },
     "CreateChaincodeAndInstallForUser": {
       "document": "创建并安装合约",
       "input": "CreateChaincodeAndInstallForUserRequest",
       "name": "创建并安装合约",
-      "output": "CreateChaincodeAndInstallForUserResponse"
+      "output": "CreateChaincodeAndInstallForUserResponse",
+      "status": "online"
     },
     "DeployDynamicBcosContract": {
       "document": "动态部署并发布Bcos合约",
       "input": "DeployDynamicBcosContractRequest",
       "name": "动态部署并发布Bcos合约",
-      "output": "DeployDynamicBcosContractResponse"
+      "output": "DeployDynamicBcosContractResponse",
+      "status": "online"
     },
     "DownloadUserCert": {
       "document": "下载用户证书",
       "input": "DownloadUserCertRequest",
       "name": "下载用户证书",
-      "output": "DownloadUserCertResponse"
+      "output": "DownloadUserCertResponse",
+      "status": "online"
     },
     "GetBcosBlockByNumber": {
       "document": "使用块高查询Bcos区块信息",
       "input": "GetBcosBlockByNumberRequest",
       "name": "使用块高查询区块信息",
-      "output": "GetBcosBlockByNumberResponse"
+      "output": "GetBcosBlockByNumberResponse",
+      "status": "online"
     },
     "GetBcosBlockList": {
       "document": "Bcos分页查询当前群组下的区块列表",
       "input": "GetBcosBlockListRequest",
       "name": "分页查询Bcos区块列表",
-      "output": "GetBcosBlockListResponse"
+      "output": "GetBcosBlockListResponse",
+      "status": "online"
     },
     "GetBcosTransByHash": {
       "document": "Bcos根据交易哈希查看交易详细信息",
       "input": "GetBcosTransByHashRequest",
       "name": "使用交易哈希查询Bcos交易信息",
-      "output": "GetBcosTransByHashResponse"
+      "output": "GetBcosTransByHashResponse",
+      "status": "online"
     },
     "GetBcosTransList": {
       "document": "Bcos分页查询当前群组的交易信息列表",
       "input": "GetBcosTransListRequest",
       "name": "分页查询Bcos交易列表",
-      "output": "GetBcosTransListResponse"
+      "output": "GetBcosTransListResponse",
+      "status": "online"
     },
     "GetBlockList": {
       "document": "查看当前网络下的所有区块列表，分页展示",
       "input": "GetBlockListRequest",
       "name": "查询区块列表",
-      "output": "GetBlockListResponse"
+      "output": "GetBlockListResponse",
+      "status": "online"
     },
     "GetBlockTransactionListForUser": {
       "document": "获取区块内的交易列表",
       "input": "GetBlockTransactionListForUserRequest",
       "name": "获取区块内的交易列表",
-      "output": "GetBlockTransactionListForUserResponse"
+      "output": "GetBlockTransactionListForUserResponse",
+      "status": "online"
     },
     "GetChaincodeCompileLogForUser": {
       "document": "获取合约编译日志",
       "input": "GetChaincodeCompileLogForUserRequest",
       "name": "获取合约编译日志",
-      "output": "GetChaincodeCompileLogForUserResponse"
+      "output": "GetChaincodeCompileLogForUserResponse",
+      "status": "online"
     },
     "GetChaincodeInitializeResultForUser": {
       "document": "实例化结果查询",
       "input": "GetChaincodeInitializeResultForUserRequest",
       "name": "实例化结果查询",
-      "output": "GetChaincodeInitializeResultForUserResponse"
+      "output": "GetChaincodeInitializeResultForUserResponse",
+      "status": "online"
     },
     "GetChaincodeLogForUser": {
       "document": "获取合约容器日志",
       "input": "GetChaincodeLogForUserRequest",
       "name": "获取合约容器日志",
-      "output": "GetChaincodeLogForUserResponse"
+      "output": "GetChaincodeLogForUserResponse",
+      "status": "online"
     },
     "GetChannelListForUser": {
       "document": "获取通道列表",
       "input": "GetChannelListForUserRequest",
       "name": "获取通道列表",
-      "output": "GetChannelListForUserResponse"
+      "output": "GetChannelListForUserResponse",
+      "status": "online"
     },
     "GetClusterListForUser": {
       "document": "获取该用户的网络列表。网络信息中包含组织信息，但仅包含该用户所在组织的信息。",
       "input": "GetClusterListForUserRequest",
       "name": "获取网络列表",
-      "output": "GetClusterListForUserResponse"
+      "output": "GetClusterListForUserResponse",
+      "status": "online"
     },
     "GetClusterSummary": {
       "document": "获取区块链网络概要",
       "input": "GetClusterSummaryRequest",
       "name": "获取区块链网络概要",
-      "output": "GetClusterSummaryResponse"
+      "output": "GetClusterSummaryResponse",
+      "status": "online"
     },
     "GetInvokeTx": {
       "document": "Invoke异步调用结果查询",
       "input": "GetInvokeTxRequest",
       "name": "Invoke异步调用结果查询",
-      "output": "GetInvokeTxResponse"
+      "output": "GetInvokeTxResponse",
+      "status": "online"
     },
     "GetLatesdTransactionList": {
       "document": "获取最新交易列表",
       "input": "GetLatesdTransactionListRequest",
       "name": "获取最新交易列表",
-      "output": "GetLatesdTransactionListResponse"
+      "output": "GetLatesdTransactionListResponse",
+      "status": "online"
     },
     "GetPeerLogForUser": {
       "document": "获取节点日志",
       "input": "GetPeerLogForUserRequest",
       "name": "获取节点日志",
-      "output": "GetPeerLogForUserResponse"
+      "output": "GetPeerLogForUserResponse",
+      "status": "online"
     },
     "GetTransactionDetailForUser": {
       "document": "获取交易详情",
       "input": "GetTransactionDetailForUserRequest",
       "name": "获取交易详情",
-      "output": "GetTransactionDetailForUserResponse"
+      "output": "GetTransactionDetailForUserResponse",
+      "status": "online"
     },
     "InitializeChaincodeForUser": {
       "document": "实例化合约",
       "input": "InitializeChaincodeForUserRequest",
       "name": "实例化合约",
-      "output": "InitializeChaincodeForUserResponse"
+      "output": "InitializeChaincodeForUserResponse",
+      "status": "online"
     },
     "Invoke": {
       "document": "新增交易",
       "input": "InvokeRequest",
       "name": "新增交易",
-      "output": "InvokeResponse"
+      "output": "InvokeResponse",
+      "status": "online"
     },
     "InvokeBcosTrans": {
       "document": "执行Bcos交易，支持动态部署的合约",
       "input": "InvokeBcosTransRequest",
       "name": "执行Bcos交易",
-      "output": "InvokeBcosTransResponse"
+      "output": "InvokeBcosTransResponse",
+      "status": "online"
     },
     "InvokeChainMakerContract": {
       "document": "调用长安链合约执行交易",
       "input": "InvokeChainMakerContractRequest",
       "name": "调用长安链合约执行交易",
-      "output": "InvokeChainMakerContractResponse"
+      "output": "InvokeChainMakerContractResponse",
+      "status": "online"
     },
     "InvokeChainMakerDemoContract": {
       "document": "调用长安链体验网络合约执行交易",
       "input": "InvokeChainMakerDemoContractRequest",
       "name": "调用长安链体验网络合约执行交易",
-      "output": "InvokeChainMakerDemoContractResponse"
+      "output": "InvokeChainMakerDemoContractResponse",
+      "status": "online"
     },
     "Query": {
       "document": "查询交易",
       "input": "QueryRequest",
       "name": "查询交易",
-      "output": "QueryResponse"
+      "output": "QueryResponse",
+      "status": "online"
     },
     "QueryChainMakerBlockTransaction": {
       "document": "查询长安链指定高度区块的交易",
       "input": "QueryChainMakerBlockTransactionRequest",
       "name": "查询长安链指定高度区块的交易",
-      "output": "QueryChainMakerBlockTransactionResponse"
+      "output": "QueryChainMakerBlockTransactionResponse",
+      "status": "online"
     },
     "QueryChainMakerContract": {
       "document": "调用长安链合约查询",
       "input": "QueryChainMakerContractRequest",
       "name": "调用长安链合约查询",
-      "output": "QueryChainMakerContractResponse"
+      "output": "QueryChainMakerContractResponse",
+      "status": "online"
     },
     "QueryChainMakerDemoBlockTransaction": {
       "document": "查询长安链体验网络指定高度区块的交易",
       "input": "QueryChainMakerDemoBlockTransactionRequest",
       "name": "查询长安链体验网络指定高度区块的交易",
-      "output": "QueryChainMakerDemoBlockTransactionResponse"
+      "output": "QueryChainMakerDemoBlockTransactionResponse",
+      "status": "online"
     },
     "QueryChainMakerDemoContract": {
       "document": "调用长安链体验网络合约查询",
       "input": "QueryChainMakerDemoContractRequest",
       "name": "调用长安链体验网络合约查询",
-      "output": "QueryChainMakerDemoContractResponse"
+      "output": "QueryChainMakerDemoContractResponse",
+      "status": "online"
     },
     "QueryChainMakerDemoTransaction": {
       "document": "通过交易ID查询长安链体验网络交易",
       "input": "QueryChainMakerDemoTransactionRequest",
       "name": "通过交易ID查询长安链体验网络交易",
-      "output": "QueryChainMakerDemoTransactionResponse"
+      "output": "QueryChainMakerDemoTransactionResponse",
+      "status": "online"
     },
     "QueryChainMakerTransaction": {
       "document": "通过交易ID查询长安链交易",
       "input": "QueryChainMakerTransactionRequest",
       "name": "通过交易ID查询长安链交易",
-      "output": "QueryChainMakerTransactionResponse"
+      "output": "QueryChainMakerTransactionResponse",
+      "status": "online"
     },
     "SrvInvoke": {
       "document": "trustsql服务统一接口",
       "input": "SrvInvokeRequest",
       "name": "trustsql服务统一接口",
-      "output": "SrvInvokeResponse"
+      "output": "SrvInvokeResponse",
+      "status": "online"
     }
   },
   "metadata": {

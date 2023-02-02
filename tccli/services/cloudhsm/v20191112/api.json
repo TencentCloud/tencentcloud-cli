@@ -4,67 +4,78 @@
       "document": "通过SubnetId获取Hsm资源数",
       "input": "DescribeHSMBySubnetIdRequest",
       "name": "通过SubnetId获取Hsm资源数",
-      "output": "DescribeHSMBySubnetIdResponse"
+      "output": "DescribeHSMBySubnetIdResponse",
+      "status": "online"
     },
     "DescribeHSMByVpcId": {
       "document": "通过VpcId获取Hsm资源数",
       "input": "DescribeHSMByVpcIdRequest",
       "name": "通过VpcId获取Hsm资源数",
-      "output": "DescribeHSMByVpcIdResponse"
+      "output": "DescribeHSMByVpcIdResponse",
+      "status": "online"
     },
     "DescribeSubnet": {
       "document": "查询子网列表",
       "input": "DescribeSubnetRequest",
       "name": "查询子网列表",
-      "output": "DescribeSubnetResponse"
+      "output": "DescribeSubnetResponse",
+      "status": "online"
     },
     "DescribeSupportedHsm": {
       "document": "获取当前地域所支持的设备列表",
       "input": "DescribeSupportedHsmRequest",
       "name": "获取当前地域所支持的设备列表",
-      "output": "DescribeSupportedHsmResponse"
+      "output": "DescribeSupportedHsmResponse",
+      "status": "online"
     },
     "DescribeUsg": {
       "document": "根据用户的AppId获取用户安全组列表",
       "input": "DescribeUsgRequest",
       "name": "获取用户安全组列表",
-      "output": "DescribeUsgResponse"
+      "output": "DescribeUsgResponse",
+      "status": "online"
     },
     "DescribeUsgRule": {
       "document": "获取安全组详情",
       "input": "DescribeUsgRuleRequest",
       "name": "获取安全组详情",
-      "output": "DescribeUsgRuleResponse"
+      "output": "DescribeUsgRuleResponse",
+      "status": "online"
     },
     "DescribeVpc": {
       "document": "查询用户的私有网络列表",
       "input": "DescribeVpcRequest",
       "name": "查询私有网络列表",
-      "output": "DescribeVpcResponse"
+      "output": "DescribeVpcResponse",
+      "status": "online"
     },
     "DescribeVsmAttributes": {
       "document": "获取VSM属性",
       "input": "DescribeVsmAttributesRequest",
       "name": "获取VSM属性",
-      "output": "DescribeVsmAttributesResponse"
+      "output": "DescribeVsmAttributesResponse",
+      "status": "online"
     },
     "DescribeVsms": {
       "document": "获取用户VSM列表",
       "input": "DescribeVsmsRequest",
       "name": "获取用户VSM列表",
-      "output": "DescribeVsmsResponse"
+      "output": "DescribeVsmsResponse",
+      "status": "online"
     },
     "InquiryPriceBuyVsm": {
       "document": "购买询价接口",
       "input": "InquiryPriceBuyVsmRequest",
       "name": "询价",
-      "output": "InquiryPriceBuyVsmResponse"
+      "output": "InquiryPriceBuyVsmResponse",
+      "status": "online"
     },
     "ModifyVsmAttributes": {
       "document": "修改VSM属性",
       "input": "ModifyVsmAttributesRequest",
       "name": "修改VSM属性",
-      "output": "ModifyVsmAttributesResponse"
+      "output": "ModifyVsmAttributesResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,49 +4,57 @@
       "document": "创建应用合规隐私诊断任务",
       "input": "CreateAppScanTaskRequest",
       "name": "创建应用合规隐私诊断任务",
-      "output": "CreateAppScanTaskResponse"
+      "output": "CreateAppScanTaskResponse",
+      "status": "online"
     },
     "CreateAppScanTaskRepeat": {
       "document": "App应用合规隐私诊断重试任务",
       "input": "CreateAppScanTaskRepeatRequest",
       "name": "应用合规隐私诊断重试任务",
-      "output": "CreateAppScanTaskRepeatResponse"
+      "output": "CreateAppScanTaskRepeatResponse",
+      "status": "online"
     },
     "DescribeChannelTaskReportUrl": {
       "document": "获取子渠道的App合规诊断任务报告url",
       "input": "DescribeChannelTaskReportUrlRequest",
       "name": "获取子渠道应用合规隐私诊断任务报告url",
-      "output": "DescribeChannelTaskReportUrlResponse"
+      "output": "DescribeChannelTaskReportUrlResponse",
+      "status": "online"
     },
     "DescribeFileTicket": {
       "document": "获取应用合规文件上传凭证，用于上传诊断文件",
       "input": "DescribeFileTicketRequest",
       "name": "获取应用合规文件上传凭证接口",
-      "output": "DescribeFileTicketResponse"
+      "output": "DescribeFileTicketResponse",
+      "status": "online"
     },
     "DescribeResourceUsageInfo": {
       "document": "查询应用合规平台用户资源的使用情况",
       "input": "DescribeResourceUsageInfoRequest",
       "name": "查询应用合规资源使用情况",
-      "output": "DescribeResourceUsageInfoResponse"
+      "output": "DescribeResourceUsageInfoResponse",
+      "status": "online"
     },
     "DescribeScanTaskList": {
       "document": "获取App隐私合规诊断任务列表",
       "input": "DescribeScanTaskListRequest",
       "name": "获取应用合规隐私诊断任务列表",
-      "output": "DescribeScanTaskListResponse"
+      "output": "DescribeScanTaskListResponse",
+      "status": "online"
     },
     "DescribeScanTaskReportUrl": {
       "document": "获取App合规诊断任务报告url",
       "input": "DescribeScanTaskReportUrlRequest",
       "name": "获取应用合规隐私诊断任务报告url",
-      "output": "DescribeScanTaskReportUrlResponse"
+      "output": "DescribeScanTaskReportUrlResponse",
+      "status": "online"
     },
     "DescribeScanTaskStatus": {
       "document": "查询App隐私合规诊断任务状态",
       "input": "DescribeScanTaskStatusRequest",
       "name": "查询应用合规隐私诊断任务状态",
-      "output": "DescribeScanTaskStatusResponse"
+      "output": "DescribeScanTaskStatusResponse",
+      "status": "online"
     }
   },
   "metadata": {

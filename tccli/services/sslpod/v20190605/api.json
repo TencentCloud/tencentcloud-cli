@@ -4,61 +4,71 @@
       "document": "通过域名端口添加监控",
       "input": "CreateDomainRequest",
       "name": "添加域名",
-      "output": "CreateDomainResponse"
+      "output": "CreateDomainResponse",
+      "status": "online"
     },
     "DeleteDomain": {
       "document": "通过域名ID删除监控的域名",
       "input": "DeleteDomainRequest",
       "name": "删除域名",
-      "output": "DeleteDomainResponse"
+      "output": "DeleteDomainResponse",
+      "status": "online"
     },
     "DescribeDashboard": {
       "document": "获取仪表盘数据",
       "input": "DescribeDashboardRequest",
       "name": "仪表盘数据",
-      "output": "DescribeDashboardResponse"
+      "output": "DescribeDashboardResponse",
+      "status": "online"
     },
     "DescribeDomainCerts": {
       "document": "获取域名关联证书",
       "input": "DescribeDomainCertsRequest",
       "name": "获取域名证书",
-      "output": "DescribeDomainCertsResponse"
+      "output": "DescribeDomainCertsResponse",
+      "status": "online"
     },
     "DescribeDomainTags": {
       "document": "获取账号下所有tag",
       "input": "DescribeDomainTagsRequest",
       "name": "获取账号的tags",
-      "output": "DescribeDomainTagsResponse"
+      "output": "DescribeDomainTagsResponse",
+      "status": "online"
     },
     "DescribeDomains": {
       "document": "通过searchType搜索已经添加的域名",
       "input": "DescribeDomainsRequest",
       "name": "搜索域名",
-      "output": "DescribeDomainsResponse"
+      "output": "DescribeDomainsResponse",
+      "status": "online"
     },
     "DescribeNoticeInfo": {
       "document": "获取通知额度信息",
       "input": "DescribeNoticeInfoRequest",
       "name": "通知额度信息",
-      "output": "DescribeNoticeInfoResponse"
+      "output": "DescribeNoticeInfoResponse",
+      "status": "online"
     },
     "ModifyDomainTags": {
       "document": "修改域名tag",
       "input": "ModifyDomainTagsRequest",
       "name": "修改域名tag",
-      "output": "ModifyDomainTagsResponse"
+      "output": "ModifyDomainTagsResponse",
+      "status": "online"
     },
     "RefreshDomain": {
       "document": "强制重新检测域名",
       "input": "RefreshDomainRequest",
       "name": "重新检测域名",
-      "output": "RefreshDomainResponse"
+      "output": "RefreshDomainResponse",
+      "status": "online"
     },
     "ResolveDomain": {
       "document": "解析域名获得多个IP地址",
       "input": "ResolveDomainRequest",
       "name": "域名解析",
-      "output": "ResolveDomainResponse"
+      "output": "ResolveDomainResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,577 +4,673 @@
       "document": "校验证书",
       "input": "CheckCertificateRequest",
       "name": "校验证书",
-      "output": "CheckCertificateResponse"
+      "output": "CheckCertificateResponse",
+      "status": "online"
     },
     "CreateApplicationProxy": {
       "document": "创建应用代理",
       "input": "CreateApplicationProxyRequest",
       "name": "创建应用代理",
-      "output": "CreateApplicationProxyResponse"
+      "output": "CreateApplicationProxyResponse",
+      "status": "online"
     },
     "CreateApplicationProxyRule": {
       "document": "创建应用代理规则",
       "input": "CreateApplicationProxyRuleRequest",
       "name": "创建应用代理规则",
-      "output": "CreateApplicationProxyRuleResponse"
+      "output": "CreateApplicationProxyRuleResponse",
+      "status": "online"
     },
     "CreateApplicationProxyRules": {
       "document": "批量创建应用代理规则",
       "input": "CreateApplicationProxyRulesRequest",
       "name": "批量创建应用代理规则",
-      "output": "CreateApplicationProxyRulesResponse"
+      "output": "CreateApplicationProxyRulesResponse",
+      "status": "online"
     },
     "CreateCustomErrorPage": {
       "document": "创建自定义规则的自定义页",
       "input": "CreateCustomErrorPageRequest",
       "name": "创建自定义页",
-      "output": "CreateCustomErrorPageResponse"
+      "output": "CreateCustomErrorPageResponse",
+      "status": "online"
     },
     "CreateDnsRecord": {
       "document": "创建 DNS 记录",
       "input": "CreateDnsRecordRequest",
       "name": "创建 DNS 记录",
-      "output": "CreateDnsRecordResponse"
+      "output": "CreateDnsRecordResponse",
+      "status": "online"
     },
     "CreateLoadBalancing": {
       "document": "创建负载均衡",
       "input": "CreateLoadBalancingRequest",
       "name": "创建负载均衡",
-      "output": "CreateLoadBalancingResponse"
+      "output": "CreateLoadBalancingResponse",
+      "status": "online"
     },
     "CreateOriginGroup": {
       "document": "源站组创建",
       "input": "CreateOriginGroupRequest",
       "name": "源站组创建",
-      "output": "CreateOriginGroupResponse"
+      "output": "CreateOriginGroupResponse",
+      "status": "online"
     },
     "CreatePlanForZone": {
       "document": "为未购买套餐的站点购买套餐",
       "input": "CreatePlanForZoneRequest",
       "name": "为未购买套餐的站点购买套餐",
-      "output": "CreatePlanForZoneResponse"
+      "output": "CreatePlanForZoneResponse",
+      "status": "online"
     },
     "CreatePrefetchTask": {
       "document": "创建预热任务",
       "input": "CreatePrefetchTaskRequest",
       "name": "创建预热任务",
-      "output": "CreatePrefetchTaskResponse"
+      "output": "CreatePrefetchTaskResponse",
+      "status": "online"
     },
     "CreatePurgeTask": {
       "document": "创建清除缓存任务",
       "input": "CreatePurgeTaskRequest",
       "name": "创建清除缓存任务",
-      "output": "CreatePurgeTaskResponse"
+      "output": "CreatePurgeTaskResponse",
+      "status": "online"
     },
     "CreateRule": {
       "document": "规则引擎创建规则。",
       "input": "CreateRuleRequest",
       "name": "创建规则引擎规则",
-      "output": "CreateRuleResponse"
+      "output": "CreateRuleResponse",
+      "status": "online"
     },
     "CreateZone": {
       "document": "用于用户接入新的站点",
       "input": "CreateZoneRequest",
       "name": "创建站点",
-      "output": "CreateZoneResponse"
+      "output": "CreateZoneResponse",
+      "status": "online"
     },
     "DeleteApplicationProxy": {
       "document": "删除应用代理",
       "input": "DeleteApplicationProxyRequest",
       "name": "删除应用代理",
-      "output": "DeleteApplicationProxyResponse"
+      "output": "DeleteApplicationProxyResponse",
+      "status": "online"
     },
     "DeleteApplicationProxyRule": {
       "document": "删除应用代理规则",
       "input": "DeleteApplicationProxyRuleRequest",
       "name": "删除应用代理规则",
-      "output": "DeleteApplicationProxyRuleResponse"
+      "output": "DeleteApplicationProxyRuleResponse",
+      "status": "online"
     },
     "DeleteDnsRecords": {
       "document": "批量删除 DNS 记录",
       "input": "DeleteDnsRecordsRequest",
       "name": "批量删除 DNS 记录",
-      "output": "DeleteDnsRecordsResponse"
+      "output": "DeleteDnsRecordsResponse",
+      "status": "online"
     },
     "DeleteLoadBalancing": {
       "document": "删除负载均衡",
       "input": "DeleteLoadBalancingRequest",
       "name": "删除负载均衡",
-      "output": "DeleteLoadBalancingResponse"
+      "output": "DeleteLoadBalancingResponse",
+      "status": "online"
     },
     "DeleteOriginGroup": {
       "document": "源站组删除",
       "input": "DeleteOriginGroupRequest",
       "name": "源站组删除",
-      "output": "DeleteOriginGroupResponse"
+      "output": "DeleteOriginGroupResponse",
+      "status": "online"
     },
     "DeleteRules": {
       "document": "批量删除规则引擎规则。",
       "input": "DeleteRulesRequest",
       "name": "批量删除规则引擎规则",
-      "output": "DeleteRulesResponse"
+      "output": "DeleteRulesResponse",
+      "status": "online"
     },
     "DeleteZone": {
       "document": "删除站点",
       "input": "DeleteZoneRequest",
       "name": "删除站点",
-      "output": "DeleteZoneResponse"
+      "output": "DeleteZoneResponse",
+      "status": "online"
     },
     "DescribeApplicationProxy": {
       "document": "获取应用代理列表",
       "input": "DescribeApplicationProxyRequest",
       "name": "获取应用代理列表",
-      "output": "DescribeApplicationProxyResponse"
+      "output": "DescribeApplicationProxyResponse",
+      "status": "online"
     },
     "DescribeApplicationProxyDetail": {
       "document": "获取应用代理详细信息",
       "input": "DescribeApplicationProxyDetailRequest",
       "name": "获取应用代理详细信息",
-      "output": "DescribeApplicationProxyDetailResponse"
+      "output": "DescribeApplicationProxyDetailResponse",
+      "status": "online"
     },
     "DescribeAvailablePlans": {
       "document": "查询当前账户可用套餐信息列表",
       "input": "DescribeAvailablePlansRequest",
       "name": "查询当前账户可购买套餐信息列表",
-      "output": "DescribeAvailablePlansResponse"
+      "output": "DescribeAvailablePlansResponse",
+      "status": "online"
     },
     "DescribeBotLog": {
       "document": "查询Bot攻击日志",
       "input": "DescribeBotLogRequest",
       "name": "查询Bot攻击日志",
-      "output": "DescribeBotLogResponse"
+      "output": "DescribeBotLogResponse",
+      "status": "online"
     },
     "DescribeBotManagedRules": {
       "document": "分页查询Bot托管规则",
       "input": "DescribeBotManagedRulesRequest",
       "name": "分页查询Bot托管规则",
-      "output": "DescribeBotManagedRulesResponse"
+      "output": "DescribeBotManagedRulesResponse",
+      "status": "online"
     },
     "DescribeCnameStatus": {
       "document": "查询域名 CNAME 状态",
       "input": "DescribeCnameStatusRequest",
       "name": "查询域名 CNAME 状态",
-      "output": "DescribeCnameStatusResponse"
+      "output": "DescribeCnameStatusResponse",
+      "status": "online"
     },
     "DescribeDDoSPolicy": {
       "document": "查询DDoS防护配置详情",
       "input": "DescribeDDoSPolicyRequest",
       "name": "查询DDoS防护配置详情",
-      "output": "DescribeDDoSPolicyResponse"
+      "output": "DescribeDDoSPolicyResponse",
+      "status": "online"
     },
     "DescribeDDosAttackData": {
       "document": "查询DDos攻击时序数据",
       "input": "DescribeDDosAttackDataRequest",
       "name": "查询DDos攻击时序数据",
-      "output": "DescribeDDosAttackDataResponse"
+      "output": "DescribeDDosAttackDataResponse",
+      "status": "online"
     },
     "DescribeDDosAttackEvent": {
       "document": "查询DDos攻击事件",
       "input": "DescribeDDosAttackEventRequest",
       "name": "查询DDos攻击事件",
-      "output": "DescribeDDosAttackEventResponse"
+      "output": "DescribeDDosAttackEventResponse",
+      "status": "online"
     },
     "DescribeDDosAttackEventDetail": {
       "document": "查询DDos攻击事件详情",
       "input": "DescribeDDosAttackEventDetailRequest",
       "name": "查询DDos攻击事件详情",
-      "output": "DescribeDDosAttackEventDetailResponse"
+      "output": "DescribeDDosAttackEventDetailResponse",
+      "status": "online"
     },
     "DescribeDDosAttackSourceEvent": {
       "document": "查询DDos攻击源信息",
       "input": "DescribeDDosAttackSourceEventRequest",
       "name": "查询DDos攻击源信息",
-      "output": "DescribeDDosAttackSourceEventResponse"
+      "output": "DescribeDDosAttackSourceEventResponse",
+      "status": "online"
     },
     "DescribeDDosAttackTopData": {
       "document": "查询DDos攻击Top数据",
       "input": "DescribeDDosAttackTopDataRequest",
       "name": "查询DDos攻击Top数据",
-      "output": "DescribeDDosAttackTopDataResponse"
+      "output": "DescribeDDosAttackTopDataResponse",
+      "status": "online"
     },
     "DescribeDDosMajorAttackEvent": {
       "document": "查询DDos主攻击事件",
       "input": "DescribeDDosMajorAttackEventRequest",
       "name": "查询DDos主攻击事件",
-      "output": "DescribeDDosMajorAttackEventResponse"
+      "output": "DescribeDDosMajorAttackEventResponse",
+      "status": "online"
     },
     "DescribeDefaultCertificates": {
       "document": "查询默认证书列表",
       "input": "DescribeDefaultCertificatesRequest",
       "name": "查询默认证书列表",
-      "output": "DescribeDefaultCertificatesResponse"
+      "output": "DescribeDefaultCertificatesResponse",
+      "status": "online"
     },
     "DescribeDnsData": {
       "document": "获取DNS请求数统计曲线",
       "input": "DescribeDnsDataRequest",
       "name": "获取DNS请求数统计曲线",
-      "output": "DescribeDnsDataResponse"
+      "output": "DescribeDnsDataResponse",
+      "status": "online"
     },
     "DescribeDnsRecords": {
       "document": "查询 DNS 记录列表，支持搜索、分页、排序、过滤。",
       "input": "DescribeDnsRecordsRequest",
       "name": "查询 DNS 记录列表",
-      "output": "DescribeDnsRecordsResponse"
+      "output": "DescribeDnsRecordsResponse",
+      "status": "online"
     },
     "DescribeDnssec": {
       "document": "用于查询 DNSSEC 相关信息",
       "input": "DescribeDnssecRequest",
       "name": "查询 DNSSEC 信息",
-      "output": "DescribeDnssecResponse"
+      "output": "DescribeDnssecResponse",
+      "status": "online"
     },
     "DescribeHostsCertificate": {
       "document": "查询域名证书列表，支持搜索、分页、排序、过滤。",
       "input": "DescribeHostsCertificateRequest",
       "name": "查询域名证书列表",
-      "output": "DescribeHostsCertificateResponse"
+      "output": "DescribeHostsCertificateResponse",
+      "status": "online"
     },
     "DescribeHostsSetting": {
       "document": "用于查询域名配置信息",
       "input": "DescribeHostsSettingRequest",
       "name": "查询域名详细配置",
-      "output": "DescribeHostsSettingResponse"
+      "output": "DescribeHostsSettingResponse",
+      "status": "online"
     },
     "DescribeIdentification": {
       "document": "查询验证结果",
       "input": "DescribeIdentificationRequest",
       "name": "查询站点的验证状态",
-      "output": "DescribeIdentificationResponse"
+      "output": "DescribeIdentificationResponse",
+      "status": "online"
     },
     "DescribeLoadBalancing": {
       "document": "获取负载均衡列表",
       "input": "DescribeLoadBalancingRequest",
       "name": "获取负载均衡列表",
-      "output": "DescribeLoadBalancingResponse"
+      "output": "DescribeLoadBalancingResponse",
+      "status": "online"
     },
     "DescribeLoadBalancingDetail": {
       "document": "获取负载均衡详细信息",
       "input": "DescribeLoadBalancingDetailRequest",
       "name": "获取负载均衡详细信息",
-      "output": "DescribeLoadBalancingDetailResponse"
+      "output": "DescribeLoadBalancingDetailResponse",
+      "status": "online"
     },
     "DescribeOriginGroup": {
       "document": "获取源站组信息列表",
       "input": "DescribeOriginGroupRequest",
       "name": "获取源站组信息列表",
-      "output": "DescribeOriginGroupResponse"
+      "output": "DescribeOriginGroupResponse",
+      "status": "online"
     },
     "DescribeOriginGroupDetail": {
       "document": "获取源站组详细信息",
       "input": "DescribeOriginGroupDetailRequest",
       "name": "获取源站组详细信息",
-      "output": "DescribeOriginGroupDetailResponse"
+      "output": "DescribeOriginGroupDetailResponse",
+      "status": "online"
     },
     "DescribeOverviewL7Data": {
       "document": "本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。",
       "input": "DescribeOverviewL7DataRequest",
       "name": "查询七层监控类时序流量数据",
-      "output": "DescribeOverviewL7DataResponse"
+      "output": "DescribeOverviewL7DataResponse",
+      "status": "online"
     },
     "DescribePrefetchTasks": {
       "document": "查询预热任务状态",
       "input": "DescribePrefetchTasksRequest",
       "name": "查询预热任务状态",
-      "output": "DescribePrefetchTasksResponse"
+      "output": "DescribePrefetchTasksResponse",
+      "status": "online"
     },
     "DescribePurgeTasks": {
       "document": "查询清除缓存历史记录",
       "input": "DescribePurgeTasksRequest",
       "name": "查询清除缓存历史记录",
-      "output": "DescribePurgeTasksResponse"
+      "output": "DescribePurgeTasksResponse",
+      "status": "online"
     },
     "DescribeRules": {
       "document": "查询规则引擎规则。",
       "input": "DescribeRulesRequest",
       "name": "查询规则引擎规则",
-      "output": "DescribeRulesResponse"
+      "output": "DescribeRulesResponse",
+      "status": "online"
     },
     "DescribeRulesSetting": {
       "document": "返回规则引擎可应用匹配请求的设置列表及其详细建议配置信息",
       "input": "DescribeRulesSettingRequest",
       "name": "查询规则引擎的设置参数",
-      "output": "DescribeRulesSettingResponse"
+      "output": "DescribeRulesSettingResponse",
+      "status": "online"
     },
     "DescribeSecurityPolicy": {
       "document": "查询安全防护配置详情",
       "input": "DescribeSecurityPolicyRequest",
       "name": "查询安全防护配置详情",
-      "output": "DescribeSecurityPolicyResponse"
+      "output": "DescribeSecurityPolicyResponse",
+      "status": "online"
     },
     "DescribeSecurityPolicyList": {
       "document": "查询全部安全实例",
       "input": "DescribeSecurityPolicyListRequest",
       "name": "查询全部安全实例",
-      "output": "DescribeSecurityPolicyListResponse"
+      "output": "DescribeSecurityPolicyListResponse",
+      "status": "online"
     },
     "DescribeSecurityPolicyManagedRules": {
       "document": "分页查询门神规则",
       "input": "DescribeSecurityPolicyManagedRulesRequest",
       "name": "分页查询门神规则",
-      "output": "DescribeSecurityPolicyManagedRulesResponse"
+      "output": "DescribeSecurityPolicyManagedRulesResponse",
+      "status": "online"
     },
     "DescribeSecurityPolicyManagedRulesId": {
       "document": "规则id查询门神规则详情",
       "input": "DescribeSecurityPolicyManagedRulesIdRequest",
       "name": "规则id查询门神规则详情",
-      "output": "DescribeSecurityPolicyManagedRulesIdResponse"
+      "output": "DescribeSecurityPolicyManagedRulesIdResponse",
+      "status": "online"
     },
     "DescribeSecurityPolicyRegions": {
       "document": "查询所有地域信息",
       "input": "DescribeSecurityPolicyRegionsRequest",
       "name": "查询所有地域信息",
-      "output": "DescribeSecurityPolicyRegionsResponse"
+      "output": "DescribeSecurityPolicyRegionsResponse",
+      "status": "online"
     },
     "DescribeSecurityPortraitRules": {
       "document": "查询Bot用户画像规则",
       "input": "DescribeSecurityPortraitRulesRequest",
       "name": "查询Bot用户画像规则",
-      "output": "DescribeSecurityPortraitRulesResponse"
+      "output": "DescribeSecurityPortraitRulesResponse",
+      "status": "online"
     },
     "DescribeTimingL4Data": {
       "document": "四层时序流量数据查询",
       "input": "DescribeTimingL4DataRequest",
       "name": "四层时序流量数据查询接口",
-      "output": "DescribeTimingL4DataResponse"
+      "output": "DescribeTimingL4DataResponse",
+      "status": "online"
     },
     "DescribeTimingL7AnalysisData": {
       "document": "查询七层数据分析类时序流量数据",
       "input": "DescribeTimingL7AnalysisDataRequest",
       "name": "查询七层数据分析类时序流量数据",
-      "output": "DescribeTimingL7AnalysisDataResponse"
+      "output": "DescribeTimingL7AnalysisDataResponse",
+      "status": "online"
     },
     "DescribeTimingL7CacheData": {
       "document": "七层查询缓存分析时序类流量数据",
       "input": "DescribeTimingL7CacheDataRequest",
       "name": "七层缓存分析类时序流量数据接口",
-      "output": "DescribeTimingL7CacheDataResponse"
+      "output": "DescribeTimingL7CacheDataResponse",
+      "status": "online"
     },
     "DescribeTopL7AnalysisData": {
       "document": "查询top类流量数据",
       "input": "DescribeTopL7AnalysisDataRequest",
       "name": "七层数据分析类top流量数据接口",
-      "output": "DescribeTopL7AnalysisDataResponse"
+      "output": "DescribeTopL7AnalysisDataResponse",
+      "status": "online"
     },
     "DescribeTopL7CacheData": {
       "document": "七层查询缓存分析top类流量数据",
       "input": "DescribeTopL7CacheDataRequest",
       "name": "七层缓存分析类top流量数据接口",
-      "output": "DescribeTopL7CacheDataResponse"
+      "output": "DescribeTopL7CacheDataResponse",
+      "status": "online"
     },
     "DescribeWebManagedRulesAttackEvents": {
       "document": "查询Web托管攻击事件",
       "input": "DescribeWebManagedRulesAttackEventsRequest",
       "name": "查询Web托管攻击事件",
-      "output": "DescribeWebManagedRulesAttackEventsResponse"
+      "output": "DescribeWebManagedRulesAttackEventsResponse",
+      "status": "online"
     },
     "DescribeWebManagedRulesData": {
       "document": "查询waf攻击时序数据",
       "input": "DescribeWebManagedRulesDataRequest",
       "name": "查询waf攻击时序数据",
-      "output": "DescribeWebManagedRulesDataResponse"
+      "output": "DescribeWebManagedRulesDataResponse",
+      "status": "online"
     },
     "DescribeWebManagedRulesLog": {
       "document": "查询waf攻击日志",
       "input": "DescribeWebManagedRulesLogRequest",
       "name": "查询waf攻击日志",
-      "output": "DescribeWebManagedRulesLogResponse"
+      "output": "DescribeWebManagedRulesLogResponse",
+      "status": "online"
     },
     "DescribeWebManagedRulesTopData": {
       "document": "查询waf攻击top数据",
       "input": "DescribeWebManagedRulesTopDataRequest",
       "name": "查询waf攻击top数据",
-      "output": "DescribeWebManagedRulesTopDataResponse"
+      "output": "DescribeWebManagedRulesTopDataResponse",
+      "status": "online"
     },
     "DescribeWebProtectionAttackEvents": {
       "document": "查询web防护攻击事件",
       "input": "DescribeWebProtectionAttackEventsRequest",
       "name": "查询web防护攻击事件",
-      "output": "DescribeWebProtectionAttackEventsResponse"
+      "output": "DescribeWebProtectionAttackEventsResponse",
+      "status": "online"
     },
     "DescribeWebProtectionData": {
       "document": "查询CC防护时序数据",
       "input": "DescribeWebProtectionDataRequest",
       "name": "查询CC防护时序数据",
-      "output": "DescribeWebProtectionDataResponse"
+      "output": "DescribeWebProtectionDataResponse",
+      "status": "online"
     },
     "DescribeWebProtectionLog": {
       "document": "查询CC防护日志",
       "input": "DescribeWebProtectionLogRequest",
       "name": "查询CC防护日志",
-      "output": "DescribeWebProtectionLogResponse"
+      "output": "DescribeWebProtectionLogResponse",
+      "status": "online"
     },
     "DescribeZoneDDoSPolicy": {
       "document": "查询所有DDoS防护分区",
       "input": "DescribeZoneDDoSPolicyRequest",
       "name": "查询所有DDoS防护分区",
-      "output": "DescribeZoneDDoSPolicyResponse"
+      "output": "DescribeZoneDDoSPolicyResponse",
+      "status": "online"
     },
     "DescribeZoneDetails": {
       "document": "根据站点 ID 查询站点的详细信息",
       "input": "DescribeZoneDetailsRequest",
       "name": "查询某个站点的详细信息",
-      "output": "DescribeZoneDetailsResponse"
+      "output": "DescribeZoneDetailsResponse",
+      "status": "online"
     },
     "DescribeZoneSetting": {
       "document": "用于查询站点的所有配置信息。",
       "input": "DescribeZoneSettingRequest",
       "name": "查询站点配置",
-      "output": "DescribeZoneSettingResponse"
+      "output": "DescribeZoneSettingResponse",
+      "status": "online"
     },
     "DescribeZones": {
       "document": "用户查询用户站点信息列表，支持分页",
       "input": "DescribeZonesRequest",
       "name": "查询用户站点信息列表",
-      "output": "DescribeZonesResponse"
+      "output": "DescribeZonesResponse",
+      "status": "online"
     },
     "DownloadL7Logs": {
       "document": "查询七层离线日志",
       "input": "DownloadL7LogsRequest",
       "name": "七层离线日志下载",
-      "output": "DownloadL7LogsResponse"
+      "output": "DownloadL7LogsResponse",
+      "status": "online"
     },
     "IdentifyZone": {
       "document": "用于验证站点所有权",
       "input": "IdentifyZoneRequest",
       "name": "认证站点",
-      "output": "IdentifyZoneResponse"
+      "output": "IdentifyZoneResponse",
+      "status": "online"
     },
     "ImportDnsRecords": {
       "document": "导入 DNS 记录",
       "input": "ImportDnsRecordsRequest",
       "name": "导入 DNS 记录",
-      "output": "ImportDnsRecordsResponse"
+      "output": "ImportDnsRecordsResponse",
+      "status": "online"
     },
     "ModifyApplicationProxy": {
       "document": "修改应用代理",
       "input": "ModifyApplicationProxyRequest",
       "name": "修改应用代理",
-      "output": "ModifyApplicationProxyResponse"
+      "output": "ModifyApplicationProxyResponse",
+      "status": "online"
     },
     "ModifyApplicationProxyRule": {
       "document": "修改应用代理规则",
       "input": "ModifyApplicationProxyRuleRequest",
       "name": "修改应用代理规则",
-      "output": "ModifyApplicationProxyRuleResponse"
+      "output": "ModifyApplicationProxyRuleResponse",
+      "status": "online"
     },
     "ModifyApplicationProxyRuleStatus": {
       "document": "修改应用代理规则的状态",
       "input": "ModifyApplicationProxyRuleStatusRequest",
       "name": "修改应用代理规则的状态",
-      "output": "ModifyApplicationProxyRuleStatusResponse"
+      "output": "ModifyApplicationProxyRuleStatusResponse",
+      "status": "online"
     },
     "ModifyApplicationProxyStatus": {
       "document": "修改应用代理的状态",
       "input": "ModifyApplicationProxyStatusRequest",
       "name": "修改应用代理的状态",
-      "output": "ModifyApplicationProxyStatusResponse"
+      "output": "ModifyApplicationProxyStatusResponse",
+      "status": "online"
     },
     "ModifyDDoSPolicy": {
       "document": "修改DDoS防护分区配置",
       "input": "ModifyDDoSPolicyRequest",
       "name": "修改DDoS防护分区配置",
-      "output": "ModifyDDoSPolicyResponse"
+      "output": "ModifyDDoSPolicyResponse",
+      "status": "online"
     },
     "ModifyDDoSPolicyHost": {
       "document": "域名DDoS高可用开关",
       "input": "ModifyDDoSPolicyHostRequest",
       "name": "域名DDoS高可用开关",
-      "output": "ModifyDDoSPolicyHostResponse"
+      "output": "ModifyDDoSPolicyHostResponse",
+      "status": "online"
     },
     "ModifyDefaultCertificate": {
       "document": "修改默认证书状态",
       "input": "ModifyDefaultCertificateRequest",
       "name": "修改默认证书状态",
-      "output": "ModifyDefaultCertificateResponse"
+      "output": "ModifyDefaultCertificateResponse",
+      "status": "online"
     },
     "ModifyDnsRecord": {
       "document": "修改 DNS 记录",
       "input": "ModifyDnsRecordRequest",
       "name": "修改 DNS 记录",
-      "output": "ModifyDnsRecordResponse"
+      "output": "ModifyDnsRecordResponse",
+      "status": "online"
     },
     "ModifyDnssec": {
       "document": "修改 DNSSEC 状态",
       "input": "ModifyDnssecRequest",
       "name": "修改 DNSSEC",
-      "output": "ModifyDnssecResponse"
+      "output": "ModifyDnssecResponse",
+      "status": "online"
     },
     "ModifyHostsCertificate": {
       "document": "用于修改域名证书",
       "input": "ModifyHostsCertificateRequest",
       "name": "修改域名证书",
-      "output": "ModifyHostsCertificateResponse"
+      "output": "ModifyHostsCertificateResponse",
+      "status": "online"
     },
     "ModifyLoadBalancing": {
       "document": "修改负载均衡",
       "input": "ModifyLoadBalancingRequest",
       "name": "修改负载均衡",
-      "output": "ModifyLoadBalancingResponse"
+      "output": "ModifyLoadBalancingResponse",
+      "status": "online"
     },
     "ModifyLoadBalancingStatus": {
       "document": "修改负载均衡状态",
       "input": "ModifyLoadBalancingStatusRequest",
       "name": "修改负载均衡状态",
-      "output": "ModifyLoadBalancingStatusResponse"
+      "output": "ModifyLoadBalancingStatusResponse",
+      "status": "online"
     },
     "ModifyOriginGroup": {
       "document": "源站组修改",
       "input": "ModifyOriginGroupRequest",
       "name": "源站组修改",
-      "output": "ModifyOriginGroupResponse"
+      "output": "ModifyOriginGroupResponse",
+      "status": "online"
     },
     "ModifyRule": {
       "document": "修改规则引擎规则。",
       "input": "ModifyRuleRequest",
       "name": "修改规则引擎规则",
-      "output": "ModifyRuleResponse"
+      "output": "ModifyRuleResponse",
+      "status": "online"
     },
     "ModifyRulePriority": {
       "document": "修改规则引擎规则优先级",
       "input": "ModifyRulePriorityRequest",
       "name": "修改规则引擎规则优先级",
-      "output": "ModifyRulePriorityResponse"
+      "output": "ModifyRulePriorityResponse",
+      "status": "online"
     },
     "ModifySecurityPolicy": {
       "document": "修改Web&Bot安全配置",
       "input": "ModifySecurityPolicyRequest",
       "name": "修改Web&Bot安全配置",
-      "output": "ModifySecurityPolicyResponse"
+      "output": "ModifySecurityPolicyResponse",
+      "status": "online"
     },
     "ModifyZone": {
       "document": "用该站点信息",
       "input": "ModifyZoneRequest",
       "name": "修改站点",
-      "output": "ModifyZoneResponse"
+      "output": "ModifyZoneResponse",
+      "status": "online"
     },
     "ModifyZoneCnameSpeedUp": {
       "document": "开启，关闭 CNAME 加速",
       "input": "ModifyZoneCnameSpeedUpRequest",
       "name": "修改 CNAME 加速状态",
-      "output": "ModifyZoneCnameSpeedUpResponse"
+      "output": "ModifyZoneCnameSpeedUpResponse",
+      "status": "online"
     },
     "ModifyZoneSetting": {
       "document": "用于修改站点配置",
       "input": "ModifyZoneSettingRequest",
       "name": "修改站点配置",
-      "output": "ModifyZoneSettingResponse"
+      "output": "ModifyZoneSettingResponse",
+      "status": "online"
     },
     "ModifyZoneStatus": {
       "document": "用于开启，关闭站点",
       "input": "ModifyZoneStatusRequest",
       "name": "切换站点状态",
-      "output": "ModifyZoneStatusResponse"
+      "output": "ModifyZoneStatusResponse",
+      "status": "online"
     },
     "ReclaimZone": {
       "document": "站点被其他用户接入后，验证了站点所有权之后，可以找回该站点",
       "input": "ReclaimZoneRequest",
       "name": "找回站点",
-      "output": "ReclaimZoneResponse"
+      "output": "ReclaimZoneResponse",
+      "status": "online"
     },
     "ScanDnsRecords": {
       "document": "扫描站点历史解析记录",
       "input": "ScanDnsRecordsRequest",
       "name": "扫描站点历史解析记录",
-      "output": "ScanDnsRecordsResponse"
+      "output": "ScanDnsRecordsResponse",
+      "status": "online"
     }
   },
   "metadata": {

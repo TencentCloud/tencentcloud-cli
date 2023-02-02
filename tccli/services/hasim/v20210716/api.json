@@ -4,133 +4,155 @@
       "document": "创建自动化规则",
       "input": "CreateRuleRequest",
       "name": "创建自动化规则",
-      "output": "CreateRuleResponse"
+      "output": "CreateRuleResponse",
+      "status": "online"
     },
     "CreateTactic": {
       "document": "创建云兔切换策略",
       "input": "CreateTacticRequest",
       "name": "创建云兔切换策略",
-      "output": "CreateTacticResponse"
+      "output": "CreateTacticResponse",
+      "status": "online"
     },
     "CreateTag": {
       "document": "创建标签",
       "input": "CreateTagRequest",
       "name": "创建标签",
-      "output": "CreateTagResponse"
+      "output": "CreateTagResponse",
+      "status": "online"
     },
     "DeleteRule": {
       "document": "删除自动化规则",
       "input": "DeleteRuleRequest",
       "name": "删除自动化规则",
-      "output": "DeleteRuleResponse"
+      "output": "DeleteRuleResponse",
+      "status": "online"
     },
     "DeleteTactic": {
       "document": "删除策略",
       "input": "DeleteTacticRequest",
       "name": "删除策略",
-      "output": "DeleteTacticResponse"
+      "output": "DeleteTacticResponse",
+      "status": "online"
     },
     "DeleteTag": {
       "document": "删除标签",
       "input": "DeleteTagRequest",
       "name": "删除标签",
-      "output": "DeleteTagResponse"
+      "output": "DeleteTagResponse",
+      "status": "online"
     },
     "DescribeLink": {
       "document": "查询云兔连接详细信息",
       "input": "DescribeLinkRequest",
       "name": "查询云兔连接详细信息",
-      "output": "DescribeLinkResponse"
+      "output": "DescribeLinkResponse",
+      "status": "online"
     },
     "DescribeLinks": {
       "document": "查询云兔连接列表",
       "input": "DescribeLinksRequest",
       "name": "查询云兔连接列表",
-      "output": "DescribeLinksResponse"
+      "output": "DescribeLinksResponse",
+      "status": "online"
     },
     "DescribeOrders": {
       "document": "查询订单列表",
       "input": "DescribeOrdersRequest",
       "name": "查询订单列表",
-      "output": "DescribeOrdersResponse"
+      "output": "DescribeOrdersResponse",
+      "status": "online"
     },
     "DescribeRule": {
       "document": "查询自动化规则",
       "input": "DescribeRuleRequest",
       "name": "查询自动化规则",
-      "output": "DescribeRuleResponse"
+      "output": "DescribeRuleResponse",
+      "status": "online"
     },
     "DescribeRules": {
       "document": "查询自动化规则列表",
       "input": "DescribeRulesRequest",
       "name": "查询自动化规则列表",
-      "output": "DescribeRulesResponse"
+      "output": "DescribeRulesResponse",
+      "status": "online"
     },
     "DescribeTactic": {
       "document": "查询云兔切换策略信息",
       "input": "DescribeTacticRequest",
       "name": "查询云兔切换策略信息",
-      "output": "DescribeTacticResponse"
+      "output": "DescribeTacticResponse",
+      "status": "online"
     },
     "DescribeTactics": {
       "document": "查询云兔切换策略列表",
       "input": "DescribeTacticsRequest",
       "name": "查询云兔切换策略列表",
-      "output": "DescribeTacticsResponse"
+      "output": "DescribeTacticsResponse",
+      "status": "online"
     },
     "DescribeTags": {
       "document": "查询标签列表",
       "input": "DescribeTagsRequest",
       "name": "查询标签列表",
-      "output": "DescribeTagsResponse"
+      "output": "DescribeTagsResponse",
+      "status": "online"
     },
     "ModifyLinkAdvancedLog": {
       "document": "编辑云兔高级日志状态",
       "input": "ModifyLinkAdvancedLogRequest",
       "name": "编辑云兔高级日志状态",
-      "output": "ModifyLinkAdvancedLogResponse"
+      "output": "ModifyLinkAdvancedLogResponse",
+      "status": "online"
     },
     "ModifyLinkTactic": {
       "document": "编辑云兔策略",
       "input": "ModifyLinkTacticRequest",
       "name": "编辑云兔策略",
-      "output": "ModifyLinkTacticResponse"
+      "output": "ModifyLinkTacticResponse",
+      "status": "online"
     },
     "ModifyLinkTele": {
       "document": "修改云兔运营商",
       "input": "ModifyLinkTeleRequest",
       "name": "修改云兔运营商",
-      "output": "ModifyLinkTeleResponse"
+      "output": "ModifyLinkTeleResponse",
+      "status": "online"
     },
     "ModifyRule": {
       "document": "编辑自动化规则",
       "input": "ModifyRuleRequest",
       "name": "编辑自动化规则",
-      "output": "ModifyRuleResponse"
+      "output": "ModifyRuleResponse",
+      "status": "online"
     },
     "ModifyRuleStatus": {
       "document": "编辑自动化规则状态",
       "input": "ModifyRuleStatusRequest",
       "name": "编辑自动化规则状态",
-      "output": "ModifyRuleStatusResponse"
+      "output": "ModifyRuleStatusResponse",
+      "status": "online"
     },
     "ModifyTactic": {
       "document": "修改云兔切换策略",
       "input": "ModifyTacticRequest",
       "name": "修改策略",
-      "output": "ModifyTacticResponse"
+      "output": "ModifyTacticResponse",
+      "status": "online"
     },
     "ModifyTag": {
       "document": "编辑标签",
       "input": "ModifyTagRequest",
       "name": "编辑标签",
-      "output": "ModifyTagResponse"
+      "output": "ModifyTagResponse",
+      "status": "online"
     },
     "RenewLinkInfo": {
       "document": "刷新云兔连接信息同步",
       "input": "RenewLinkInfoRequest",
       "name": "刷新云兔连接信息同步",
-      "output": "RenewLinkInfoResponse"
+      "output": "RenewLinkInfoResponse",
+      "status": "online"
     }
   },
   "metadata": {

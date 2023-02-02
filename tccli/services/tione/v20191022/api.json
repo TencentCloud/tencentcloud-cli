@@ -4,139 +4,162 @@
       "document": "创建存储库",
       "input": "CreateCodeRepositoryRequest",
       "name": "创建存储库",
-      "output": "CreateCodeRepositoryResponse"
+      "output": "CreateCodeRepositoryResponse",
+      "status": "online"
     },
     "CreateNotebookInstance": {
       "document": "创建Notebook实例",
       "input": "CreateNotebookInstanceRequest",
       "name": "创建Notebook实例",
-      "output": "CreateNotebookInstanceResponse"
+      "output": "CreateNotebookInstanceResponse",
+      "status": "online"
     },
     "CreateNotebookLifecycleScript": {
       "document": "创建Notebook生命周期脚本",
       "input": "CreateNotebookLifecycleScriptRequest",
       "name": "创建Notebook生命周期脚本",
-      "output": "CreateNotebookLifecycleScriptResponse"
+      "output": "CreateNotebookLifecycleScriptResponse",
+      "status": "online"
     },
     "CreatePresignedNotebookInstanceUrl": {
       "document": "创建Notebook授权Url",
       "input": "CreatePresignedNotebookInstanceUrlRequest",
       "name": "创建Notebook授权Url",
-      "output": "CreatePresignedNotebookInstanceUrlResponse"
+      "output": "CreatePresignedNotebookInstanceUrlResponse",
+      "status": "online"
     },
     "CreateTrainingJob": {
       "document": "创建训练任务",
       "input": "CreateTrainingJobRequest",
       "name": "创建训练任务",
-      "output": "CreateTrainingJobResponse"
+      "output": "CreateTrainingJobResponse",
+      "status": "online"
     },
     "DeleteCodeRepository": {
       "document": "删除存储库",
       "input": "DeleteCodeRepositoryRequest",
       "name": "删除存储库",
-      "output": "DeleteCodeRepositoryResponse"
+      "output": "DeleteCodeRepositoryResponse",
+      "status": "online"
     },
     "DeleteNotebookInstance": {
       "document": "删除notebook实例",
       "input": "DeleteNotebookInstanceRequest",
       "name": "删除Notebook实例",
-      "output": "DeleteNotebookInstanceResponse"
+      "output": "DeleteNotebookInstanceResponse",
+      "status": "online"
     },
     "DeleteNotebookLifecycleScript": {
       "document": "删除Notebook生命周期脚本",
       "input": "DeleteNotebookLifecycleScriptRequest",
       "name": "删除Notebook生命周期脚本",
-      "output": "DeleteNotebookLifecycleScriptResponse"
+      "output": "DeleteNotebookLifecycleScriptResponse",
+      "status": "online"
     },
     "DescribeCodeRepositories": {
       "document": "查询存储库列表",
       "input": "DescribeCodeRepositoriesRequest",
       "name": "查询存储库列表",
-      "output": "DescribeCodeRepositoriesResponse"
+      "output": "DescribeCodeRepositoriesResponse",
+      "status": "online"
     },
     "DescribeCodeRepository": {
       "document": "查询存储库详情",
       "input": "DescribeCodeRepositoryRequest",
       "name": "查询存储库详情",
-      "output": "DescribeCodeRepositoryResponse"
+      "output": "DescribeCodeRepositoryResponse",
+      "status": "online"
     },
     "DescribeNotebookInstance": {
       "document": "查询Notebook实例详情",
       "input": "DescribeNotebookInstanceRequest",
       "name": "查询Notebook实例",
-      "output": "DescribeNotebookInstanceResponse"
+      "output": "DescribeNotebookInstanceResponse",
+      "status": "online"
     },
     "DescribeNotebookInstances": {
       "document": "查询Notebook实例列表",
       "input": "DescribeNotebookInstancesRequest",
       "name": "查询Notebook实例列表",
-      "output": "DescribeNotebookInstancesResponse"
+      "output": "DescribeNotebookInstancesResponse",
+      "status": "online"
     },
     "DescribeNotebookLifecycleScript": {
       "document": "查看notebook生命周期脚本详情",
       "input": "DescribeNotebookLifecycleScriptRequest",
       "name": "查看notebook生命周期脚本详情",
-      "output": "DescribeNotebookLifecycleScriptResponse"
+      "output": "DescribeNotebookLifecycleScriptResponse",
+      "status": "online"
     },
     "DescribeNotebookLifecycleScripts": {
       "document": "查看notebook生命周期脚本列表",
       "input": "DescribeNotebookLifecycleScriptsRequest",
       "name": "查看notebook生命周期脚本列表",
-      "output": "DescribeNotebookLifecycleScriptsResponse"
+      "output": "DescribeNotebookLifecycleScriptsResponse",
+      "status": "online"
     },
     "DescribeNotebookSummary": {
       "document": "查询Notebook概览数据",
       "input": "DescribeNotebookSummaryRequest",
       "name": "查询Notebook概览",
-      "output": "DescribeNotebookSummaryResponse"
+      "output": "DescribeNotebookSummaryResponse",
+      "status": "online"
     },
     "DescribeTrainingJob": {
       "document": "查询训练任务",
       "input": "DescribeTrainingJobRequest",
       "name": "查询训练任务",
-      "output": "DescribeTrainingJobResponse"
+      "output": "DescribeTrainingJobResponse",
+      "status": "online"
     },
     "DescribeTrainingJobs": {
       "document": "查询训练任务列表",
       "input": "DescribeTrainingJobsRequest",
       "name": "查询训练任务列表",
-      "output": "DescribeTrainingJobsResponse"
+      "output": "DescribeTrainingJobsResponse",
+      "status": "online"
     },
     "StartNotebookInstance": {
       "document": "启动Notebook实例",
       "input": "StartNotebookInstanceRequest",
       "name": "启动Notebook实例",
-      "output": "StartNotebookInstanceResponse"
+      "output": "StartNotebookInstanceResponse",
+      "status": "online"
     },
     "StopNotebookInstance": {
       "document": "停止Notebook实例",
       "input": "StopNotebookInstanceRequest",
       "name": "停止Notebook实例",
-      "output": "StopNotebookInstanceResponse"
+      "output": "StopNotebookInstanceResponse",
+      "status": "online"
     },
     "StopTrainingJob": {
       "document": "停止训练任务",
       "input": "StopTrainingJobRequest",
       "name": "停止训练任务",
-      "output": "StopTrainingJobResponse"
+      "output": "StopTrainingJobResponse",
+      "status": "online"
     },
     "UpdateCodeRepository": {
       "document": "更新存储库",
       "input": "UpdateCodeRepositoryRequest",
       "name": "更新存储库",
-      "output": "UpdateCodeRepositoryResponse"
+      "output": "UpdateCodeRepositoryResponse",
+      "status": "online"
     },
     "UpdateNotebookInstance": {
       "document": "更新Notebook实例",
       "input": "UpdateNotebookInstanceRequest",
       "name": "更新Notebook实例",
-      "output": "UpdateNotebookInstanceResponse"
+      "output": "UpdateNotebookInstanceResponse",
+      "status": "online"
     },
     "UpdateNotebookLifecycleScript": {
       "document": "更新notebook生命周期脚本",
       "input": "UpdateNotebookLifecycleScriptRequest",
       "name": "更新notebook生命周期脚本",
-      "output": "UpdateNotebookLifecycleScriptResponse"
+      "output": "UpdateNotebookLifecycleScriptResponse",
+      "status": "online"
     }
   },
   "metadata": {

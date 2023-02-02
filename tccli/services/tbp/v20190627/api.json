@@ -4,13 +4,15 @@
       "document": "接收调用侧的文本输入，返回应答文本。",
       "input": "TextProcessRequest",
       "name": "文本处理",
-      "output": "TextProcessResponse"
+      "output": "TextProcessResponse",
+      "status": "online"
     },
     "TextReset": {
       "document": "会话重置接口。",
       "input": "TextResetRequest",
       "name": "会话重置",
-      "output": "TextResetResponse"
+      "output": "TextResetResponse",
+      "status": "online"
     }
   },
   "metadata": {

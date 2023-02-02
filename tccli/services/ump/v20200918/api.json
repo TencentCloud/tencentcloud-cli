@@ -4,103 +4,120 @@
       "document": "上报相机移动、遮挡等告警信息\n\n",
       "input": "CreateCameraAlertsRequest",
       "name": "上报相机告警信息",
-      "output": "CreateCameraAlertsResponse"
+      "output": "CreateCameraAlertsResponse",
+      "status": "online"
     },
     "CreateCameraState": {
       "document": "上报当前场内所有相机的当前状态",
       "input": "CreateCameraStateRequest",
       "name": "相机状态上报接口",
-      "output": "CreateCameraStateResponse"
+      "output": "CreateCameraStateResponse",
+      "status": "online"
     },
     "CreateCapture": {
       "document": "场内抓拍上报接口",
       "input": "CreateCaptureRequest",
       "name": "抓拍上报接口",
-      "output": "CreateCaptureResponse"
+      "output": "CreateCaptureResponse",
+      "status": "online"
     },
     "CreateMultiBizAlert": {
       "document": "集团广场的多经点位告警",
       "input": "CreateMultiBizAlertRequest",
       "name": "多经点位告警",
-      "output": "CreateMultiBizAlertResponse"
+      "output": "CreateMultiBizAlertResponse",
+      "status": "online"
     },
     "CreateProgramState": {
       "document": "上报所有进程监控信息",
       "input": "CreateProgramStateRequest",
       "name": "进程监控信息上报",
-      "output": "CreateProgramStateResponse"
+      "output": "CreateProgramStateResponse",
+      "status": "online"
     },
     "CreateServerState": {
       "document": "上报所有服务器硬件监控信息",
       "input": "CreateServerStateRequest",
       "name": "服务器监控信息上报",
-      "output": "CreateServerStateResponse"
+      "output": "CreateServerStateResponse",
+      "status": "online"
     },
     "DeleteMultiBizAlert": {
       "document": "集团广场的多经点位消警",
       "input": "DeleteMultiBizAlertRequest",
       "name": "多经点位消警",
-      "output": "DeleteMultiBizAlertResponse"
+      "output": "DeleteMultiBizAlertResponse",
+      "status": "online"
     },
     "DeleteTask": {
       "document": "删除集团广场对应的任务",
       "input": "DeleteTaskRequest",
       "name": "删除任务",
-      "output": "DeleteTaskResponse"
+      "output": "DeleteTaskResponse",
+      "status": "online"
     },
     "DescribeCameras": {
       "document": "获取集团广场对应的摄像头列表",
       "input": "DescribeCamerasRequest",
       "name": "获取摄像头状态列表",
-      "output": "DescribeCamerasResponse"
+      "output": "DescribeCamerasResponse",
+      "status": "online"
     },
     "DescribeConfig": {
       "document": "获取摄像头配置信息\nmac不为空返回指定相机配置\nmac为空返回对应GroupCode和MallId全量配置",
       "input": "DescribeConfigRequest",
       "name": "获取摄像头配置信息",
-      "output": "DescribeConfigResponse"
+      "output": "DescribeConfigResponse",
+      "status": "online"
     },
     "DescribeImage": {
       "document": "实时获取底图接口",
       "input": "DescribeImageRequest",
       "name": "获取底图",
-      "output": "DescribeImageResponse"
+      "output": "DescribeImageResponse",
+      "status": "online"
     },
     "DescribeMultiBizBaseImage": {
       "document": "获取多经点位底图",
       "input": "DescribeMultiBizBaseImageRequest",
       "name": "获取多经点位底图",
-      "output": "DescribeMultiBizBaseImageResponse"
+      "output": "DescribeMultiBizBaseImageResponse",
+      "status": "online"
     },
     "DescribeTasks": {
       "document": "查询集团广场对应的任务列表",
       "input": "DescribeTasksRequest",
       "name": "查询任务列表",
-      "output": "DescribeTasksResponse"
+      "output": "DescribeTasksResponse",
+      "status": "online"
     },
     "DescribeZones": {
       "document": "获取集团广场的点位列表",
       "input": "DescribeZonesRequest",
       "name": "获取点位列表",
-      "output": "DescribeZonesResponse"
+      "output": "DescribeZonesResponse",
+      "status": "online"
     },
     "ModifyMultiBizConfig": {
       "document": "集团广场的多经点位配置更新",
       "input": "ModifyMultiBizConfigRequest",
       "name": "多经点位配置更新",
-      "output": "ModifyMultiBizConfigResponse"
+      "output": "ModifyMultiBizConfigResponse",
+      "status": "online"
     },
     "ReportServiceRegister": {
       "document": "上报服务注册自身的服务地址作为回调地址, 用于信息回传。",
       "input": "ReportServiceRegisterRequest",
       "name": "上报服务注册",
-      "output": "ReportServiceRegisterResponse"
+      "output": "ReportServiceRegisterResponse",
+      "status": "online"
     },
     "SearchImage": {
       "document": "以图搜图",
       "input": "SearchImageRequest",
       "name": "以图搜图",
-      "output": "SearchImageResponse"
+      "output": "SearchImageResponse",
+      "status": "online"
     }
   },
   "metadata": {

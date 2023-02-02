@@ -4,151 +4,176 @@
       "document": "使用指定时间点的备份克隆一个新的集群",
       "input": "CloneClusterToPointInTimeRequest",
       "name": "克隆集群",
-      "output": "CloneClusterToPointInTimeResponse"
+      "output": "CloneClusterToPointInTimeResponse",
+      "status": "online"
     },
     "CreateCluster": {
       "document": "创建集群",
       "input": "CreateClusterRequest",
       "name": "创建集群",
-      "output": "CreateClusterResponse"
+      "output": "CreateClusterResponse",
+      "status": "online"
     },
     "CreateClusterInstances": {
       "document": "在集群中新建实例",
       "input": "CreateClusterInstancesRequest",
       "name": "创建实例",
-      "output": "CreateClusterInstancesResponse"
+      "output": "CreateClusterInstancesResponse",
+      "status": "online"
     },
     "DeleteCluster": {
       "document": "删除集群，集群中的实例和数据都将被删除，且无法恢复。只有当集群状态处于isolated(已隔离)时才生效。",
       "input": "DeleteClusterRequest",
       "name": "删除集群",
-      "output": "DeleteClusterResponse"
+      "output": "DeleteClusterResponse",
+      "status": "online"
     },
     "DeleteClusterInstances": {
       "document": "删除实例。只有当实例状态处于isolated(已隔离)时才生效。",
       "input": "DeleteClusterInstancesRequest",
       "name": "删除实例",
-      "output": "DeleteClusterInstancesResponse"
+      "output": "DeleteClusterInstancesResponse",
+      "status": "online"
     },
     "DescribeAccounts": {
       "document": "查询数据库账号信息",
       "input": "DescribeAccountsRequest",
       "name": "查询数据库账号信息",
-      "output": "DescribeAccountsResponse"
+      "output": "DescribeAccountsResponse",
+      "status": "online"
     },
     "DescribeClusterBackups": {
       "document": "查询集群的备份集",
       "input": "DescribeClusterBackupsRequest",
       "name": "查询集群的备份集",
-      "output": "DescribeClusterBackupsResponse"
+      "output": "DescribeClusterBackupsResponse",
+      "status": "online"
     },
     "DescribeClusterEndpoints": {
       "document": "查询集群接入点信息",
       "input": "DescribeClusterEndpointsRequest",
       "name": "查询集群接入点",
-      "output": "DescribeClusterEndpointsResponse"
+      "output": "DescribeClusterEndpointsResponse",
+      "status": "online"
     },
     "DescribeClusterInstances": {
       "document": "查询实例",
       "input": "DescribeClusterInstancesRequest",
       "name": "查询实例",
-      "output": "DescribeClusterInstancesResponse"
+      "output": "DescribeClusterInstancesResponse",
+      "status": "online"
     },
     "DescribeClusterRecoveryTimeRange": {
       "document": "查询集群可回档时间范围",
       "input": "DescribeClusterRecoveryTimeRangeRequest",
       "name": "查询集群可回档时间范围",
-      "output": "DescribeClusterRecoveryTimeRangeResponse"
+      "output": "DescribeClusterRecoveryTimeRangeResponse",
+      "status": "online"
     },
     "DescribeClusters": {
       "document": "查询集群",
       "input": "DescribeClustersRequest",
       "name": "查询集群",
-      "output": "DescribeClustersResponse"
+      "output": "DescribeClustersResponse",
+      "status": "online"
     },
     "DescribeResourcesByDealName": {
       "document": "根据订单号获取资源信息",
       "input": "DescribeResourcesByDealNameRequest",
       "name": "根据订单号获取资源信息",
-      "output": "DescribeResourcesByDealNameResponse"
+      "output": "DescribeResourcesByDealNameResponse",
+      "status": "online"
     },
     "IsolateCluster": {
       "document": "隔离集群，集群的接入点网络将会断掉无法连接使用数据库。只有当集群状态处于running(运行中)时才生效。",
       "input": "IsolateClusterRequest",
       "name": "隔离集群",
-      "output": "IsolateClusterResponse"
+      "output": "IsolateClusterResponse",
+      "status": "online"
     },
     "IsolateClusterInstances": {
       "document": "隔离实例。此接口只针对状态为running的实例生效，使用场景包括：\n - 批量隔离集群内所有的实例\n - 在读写实例为running(运行中)时，单个/批量隔离只读实例\n - 集群内所有只读实例为isolated(已隔离)时，单独隔离读写实例",
       "input": "IsolateClusterInstancesRequest",
       "name": "隔离实例",
-      "output": "IsolateClusterInstancesResponse"
+      "output": "IsolateClusterInstancesResponse",
+      "status": "online"
     },
     "ModifyAccountDescription": {
       "document": "修改数据库账号描述",
       "input": "ModifyAccountDescriptionRequest",
       "name": "修改数据库账号描述",
-      "output": "ModifyAccountDescriptionResponse"
+      "output": "ModifyAccountDescriptionResponse",
+      "status": "online"
     },
     "ModifyClusterEndpointWanStatus": {
       "document": "开启或者关闭接入点外网",
       "input": "ModifyClusterEndpointWanStatusRequest",
       "name": "修改接入点外网状态",
-      "output": "ModifyClusterEndpointWanStatusResponse"
+      "output": "ModifyClusterEndpointWanStatusResponse",
+      "status": "online"
     },
     "ModifyClusterInstancesSpec": {
       "document": "修改实例规格，此接口只针对状态为running(运行中)的实例生效",
       "input": "ModifyClusterInstancesSpecRequest",
       "name": "修改实例规格",
-      "output": "ModifyClusterInstancesSpecResponse"
+      "output": "ModifyClusterInstancesSpecResponse",
+      "status": "online"
     },
     "ModifyClusterName": {
       "document": "修改集群名字",
       "input": "ModifyClusterNameRequest",
       "name": "修改集群名字",
-      "output": "ModifyClusterNameResponse"
+      "output": "ModifyClusterNameResponse",
+      "status": "online"
     },
     "ModifyClustersAutoRenewFlag": {
       "document": "修改集群自动续费，只对预付费集群生效。",
       "input": "ModifyClustersAutoRenewFlagRequest",
       "name": "修改集群自动续费",
-      "output": "ModifyClustersAutoRenewFlagResponse"
+      "output": "ModifyClustersAutoRenewFlagResponse",
+      "status": "online"
     },
     "RecoverCluster": {
       "document": "恢复集群，恢复集群的接入点网络，恢复后继续连接使用数据库。只有当集群状态处于isolated(已隔离)时才生效。",
       "input": "RecoverClusterRequest",
       "name": "恢复集群",
-      "output": "RecoverClusterResponse"
+      "output": "RecoverClusterResponse",
+      "status": "online"
     },
     "RecoverClusterInstances": {
       "document": "恢复实例。此接口的使用场景包括：\n - 读写实例状态为running(运行中)时，批量恢复状态为isolated(已隔离)的只读实例\n - 读写实例状态为isolated(已隔离)时，恢复读写实例\n - 读写实例状态为isolated(已隔离)时，批量恢复读写实例以及状态为isolated(已隔离)的只读实例",
       "input": "RecoverClusterInstancesRequest",
       "name": "恢复实例",
-      "output": "RecoverClusterInstancesResponse"
+      "output": "RecoverClusterInstancesResponse",
+      "status": "online"
     },
     "RenewCluster": {
       "document": "续费集群",
       "input": "RenewClusterRequest",
       "name": "续费集群",
-      "output": "RenewClusterResponse"
+      "output": "RenewClusterResponse",
+      "status": "online"
     },
     "ResetAccountPassword": {
       "document": "重置数据库账号密码",
       "input": "ResetAccountPasswordRequest",
       "name": "重置数据库账号密码",
-      "output": "ResetAccountPasswordResponse"
+      "output": "ResetAccountPasswordResponse",
+      "status": "online"
     },
     "RestartClusterInstances": {
       "document": "重启实例，此接口只针对状态为running(运行中)的实例生效。",
       "input": "RestartClusterInstancesRequest",
       "name": "重启实例",
-      "output": "RestartClusterInstancesResponse"
+      "output": "RestartClusterInstancesResponse",
+      "status": "online"
     },
     "TransformClusterPayMode": {
       "document": "转换集群付费模式，目前只支持从 后付费 转换成 与预付费。",
       "input": "TransformClusterPayModeRequest",
       "name": "转换集群付费模式",
-      "output": "TransformClusterPayModeResponse"
+      "output": "TransformClusterPayModeResponse",
+      "status": "online"
     }
   },
   "metadata": {

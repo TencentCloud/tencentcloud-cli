@@ -4,133 +4,155 @@
       "document": "新增渠道活码接口",
       "input": "CreateChannelCodeRequest",
       "name": "新增渠道活码接口",
-      "output": "CreateChannelCodeResponse"
+      "output": "CreateChannelCodeResponse",
+      "status": "online"
     },
     "CreateCorpTag": {
       "document": "该接口用户设置标签库, 每个企业最多可配置3000个企业标签。",
       "input": "CreateCorpTagRequest",
       "name": "新增标签库接口",
-      "output": "CreateCorpTagResponse"
+      "output": "CreateCorpTagResponse",
+      "status": "online"
     },
     "CreateLead": {
       "document": "线索回收接口",
       "input": "CreateLeadRequest",
       "name": "线索回收接口",
-      "output": "CreateLeadResponse"
+      "output": "CreateLeadResponse",
+      "status": "online"
     },
     "QueryActivityJoinList": {
       "document": "根据游标拉取活动参与列表信息",
       "input": "QueryActivityJoinListRequest",
       "name": "查询活动参与明细列表接口",
-      "output": "QueryActivityJoinListResponse"
+      "output": "QueryActivityJoinListResponse",
+      "status": "online"
     },
     "QueryActivityList": {
       "document": "根据游标拉取活动列表信息",
       "input": "QueryActivityListRequest",
       "name": "查询活动列表接口",
-      "output": "QueryActivityListResponse"
+      "output": "QueryActivityListResponse",
+      "status": "online"
     },
     "QueryActivityLiveCodeList": {
       "document": "根据游标拉取活动活码列表信息",
       "input": "QueryActivityLiveCodeListRequest",
       "name": "查询活动活码列表接口",
-      "output": "QueryActivityLiveCodeListResponse"
+      "output": "QueryActivityLiveCodeListResponse",
+      "status": "online"
     },
     "QueryChannelCodeList": {
       "document": "根据游标拉取渠道活码列表信息",
       "input": "QueryChannelCodeListRequest",
       "name": "查询渠道活码列表接口",
-      "output": "QueryChannelCodeListResponse"
+      "output": "QueryChannelCodeListResponse",
+      "status": "online"
     },
     "QueryChatArchivingList": {
       "document": "根据游标拉取会话存档列表信息",
       "input": "QueryChatArchivingListRequest",
       "name": "查询会话存档列表接口",
-      "output": "QueryChatArchivingListResponse"
+      "output": "QueryChatArchivingListResponse",
+      "status": "online"
     },
     "QueryClueInfoList": {
       "document": "企业可通过此接口获取线索列表。",
       "input": "QueryClueInfoListRequest",
       "name": "查询线索列表接口",
-      "output": "QueryClueInfoListResponse"
+      "output": "QueryClueInfoListResponse",
+      "status": "online"
     },
     "QueryCrmStatistics": {
       "document": "通过接口拉取租户/指定成员/部门在指定日期范围内的CRM跟进统计数据",
       "input": "QueryCrmStatisticsRequest",
       "name": "查询CRM统计数据接口",
-      "output": "QueryCrmStatisticsResponse"
+      "output": "QueryCrmStatisticsResponse",
+      "status": "online"
     },
     "QueryCustomerEventDetailStatistics": {
       "document": "通过接口拉取SaaS内C端外部联系人在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。",
       "input": "QueryCustomerEventDetailStatisticsRequest",
       "name": "查询外部联系人SaaS使用明细数据接口",
-      "output": "QueryCustomerEventDetailStatisticsResponse"
+      "output": "QueryCustomerEventDetailStatisticsResponse",
+      "status": "online"
     },
     "QueryDealerInfoList": {
       "document": "企业可通过此接口获取录入在企微SaaS平台上的经销商信息。",
       "input": "QueryDealerInfoListRequest",
       "name": "查询经销商信息列表接口",
-      "output": "QueryDealerInfoListResponse"
+      "output": "QueryDealerInfoListResponse",
+      "status": "online"
     },
     "QueryExternalContactDetail": {
       "document": "企业可通过此接口，根据外部联系人的userid，拉取外部联系人详情",
       "input": "QueryExternalContactDetailRequest",
       "name": "查询外部联系人详情接口",
-      "output": "QueryExternalContactDetailResponse"
+      "output": "QueryExternalContactDetailResponse",
+      "status": "online"
     },
     "QueryExternalContactList": {
       "document": "企业可通过此接口基于外部联系人获取指定成员添加的客户列表。客户是指配置了客户联系功能的成员所添加的外部联系人。没有配置客户联系功能的成员，所添加的外部联系人将不会作为客户返回。",
       "input": "QueryExternalContactListRequest",
       "name": "查询外部联系人列表接口",
-      "output": "QueryExternalContactListResponse"
+      "output": "QueryExternalContactListResponse",
+      "status": "online"
     },
     "QueryExternalUserEventList": {
       "document": "通过接口拉取租户在指定时间范围内的外部联系人添加/删除明细，此接口提供的数据以天为维度，查询的时间范围为[StarTime, EndTime]，即前后均为闭区间，支持的最大查询跨度为365天；",
       "input": "QueryExternalUserEventListRequest",
       "name": "查询外部联系人事件明细列表接口",
-      "output": "QueryExternalUserEventListResponse"
+      "output": "QueryExternalUserEventListResponse",
+      "status": "online"
     },
     "QueryExternalUserMappingInfo": {
       "document": "企业可通过此接口将企业主体对应的外部联系人id转换为乐销车应用主体对应的外部联系人。",
       "input": "QueryExternalUserMappingInfoRequest",
       "name": "外部联系人转换接口",
-      "output": "QueryExternalUserMappingInfoResponse"
+      "output": "QueryExternalUserMappingInfoResponse",
+      "status": "online"
     },
     "QueryLicenseInfo": {
       "document": "该接口获取license对应的详细信息",
       "input": "QueryLicenseInfoRequest",
       "name": "查询license信息接口",
-      "output": "QueryLicenseInfoResponse"
+      "output": "QueryLicenseInfoResponse",
+      "status": "online"
     },
     "QueryMaterialList": {
       "document": "通过接口按类型拉取租户当前的素材列表及关键信息",
       "input": "QueryMaterialListRequest",
       "name": "获取企业素材列表接口",
-      "output": "QueryMaterialListResponse"
+      "output": "QueryMaterialListResponse",
+      "status": "online"
     },
     "QueryMiniAppCodeList": {
       "document": "查询小程序码列表接口",
       "input": "QueryMiniAppCodeListRequest",
       "name": "查询小程序码列表接口",
-      "output": "QueryMiniAppCodeListResponse"
+      "output": "QueryMiniAppCodeListResponse",
+      "status": "online"
     },
     "QueryStaffEventDetailStatistics": {
       "document": "通过接口拉取SaaS内企业成员在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。",
       "input": "QueryStaffEventDetailStatisticsRequest",
       "name": "企业成员SaaS使用明细数据接口",
-      "output": "QueryStaffEventDetailStatisticsResponse"
+      "output": "QueryStaffEventDetailStatisticsResponse",
+      "status": "online"
     },
     "QueryUserInfoList": {
       "document": "查询企业成员信息列表接口",
       "input": "QueryUserInfoListRequest",
       "name": "查询企业成员信息列表接口",
-      "output": "QueryUserInfoListResponse"
+      "output": "QueryUserInfoListResponse",
+      "status": "online"
     },
     "QueryVehicleInfoList": {
       "document": "企业可通过此接口获取企微SaaS平台上的车系车型信息。",
       "input": "QueryVehicleInfoListRequest",
       "name": "查询车系车型信息列表接口",
-      "output": "QueryVehicleInfoListResponse"
+      "output": "QueryVehicleInfoListResponse",
+      "status": "online"
     }
   },
   "metadata": {

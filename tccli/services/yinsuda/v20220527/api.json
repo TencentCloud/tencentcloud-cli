@@ -4,79 +4,92 @@
       "document": "申请合唱相关信息，用于标记用户的演唱是在合唱场景下。",
       "input": "ApplyChorusRequest",
       "name": "申请合唱",
-      "output": "ApplyChorusResponse"
+      "output": "ApplyChorusResponse",
+      "status": "online"
     },
     "BatchDescribeKTVMusicDetails": {
       "document": "批量获取歌曲详细信息，包括：歌词下载链接、播放凭证、音高数据下载链接信息等。",
       "input": "BatchDescribeKTVMusicDetailsRequest",
       "name": "批量获取歌曲详情",
-      "output": "BatchDescribeKTVMusicDetailsResponse"
+      "output": "BatchDescribeKTVMusicDetailsResponse",
+      "status": "online"
     },
     "CreateKTVRobot": {
       "document": "创建机器人，支持进入 RTC 房间，播放曲库歌曲。",
       "input": "CreateKTVRobotRequest",
       "name": "创建机器人",
-      "output": "CreateKTVRobotResponse"
+      "output": "CreateKTVRobotResponse",
+      "status": "online"
     },
     "DescribeKTVMatchMusics": {
       "document": "根据输入的规则匹配曲库中的歌曲。",
       "input": "DescribeKTVMatchMusicsRequest",
       "name": "匹配歌曲",
-      "output": "DescribeKTVMatchMusicsResponse"
+      "output": "DescribeKTVMatchMusicsResponse",
+      "status": "online"
     },
     "DescribeKTVMusicsByTag": {
       "document": "通过标签过滤歌曲列表。",
       "input": "DescribeKTVMusicsByTagRequest",
       "name": "获取标签歌曲",
-      "output": "DescribeKTVMusicsByTagResponse"
+      "output": "DescribeKTVMusicsByTagResponse",
+      "status": "online"
     },
     "DescribeKTVPlaylistDetail": {
       "document": "根据歌单 Id 获取歌单详情。",
       "input": "DescribeKTVPlaylistDetailRequest",
       "name": "获取歌单详情",
-      "output": "DescribeKTVPlaylistDetailResponse"
+      "output": "DescribeKTVPlaylistDetailResponse",
+      "status": "online"
     },
     "DescribeKTVPlaylists": {
       "document": "获取歌单列表。",
       "input": "DescribeKTVPlaylistsRequest",
       "name": "获取推荐歌单列表",
-      "output": "DescribeKTVPlaylistsResponse"
+      "output": "DescribeKTVPlaylistsResponse",
+      "status": "online"
     },
     "DescribeKTVRobots": {
       "document": "获取机器人列表，支持 Id、状态等过滤条件。",
       "input": "DescribeKTVRobotsRequest",
       "name": "获取机器人信息",
-      "output": "DescribeKTVRobotsResponse"
+      "output": "DescribeKTVRobotsResponse",
+      "status": "online"
     },
     "DescribeKTVSuggestions": {
       "document": "根据关键词获取联想词列表。",
       "input": "DescribeKTVSuggestionsRequest",
       "name": "获取联想词",
-      "output": "DescribeKTVSuggestionsResponse"
+      "output": "DescribeKTVSuggestionsResponse",
+      "status": "online"
     },
     "DescribeKTVTags": {
       "document": "获取标签分组及分组下的标签列表信息。",
       "input": "DescribeKTVTagsRequest",
       "name": "获取标签列表",
-      "output": "DescribeKTVTagsResponse"
+      "output": "DescribeKTVTagsResponse",
+      "status": "online"
     },
     "DestroyKTVRobot": {
       "document": "销毁机器人，机器人退出 RTC 房间。",
       "input": "DestroyKTVRobotRequest",
       "name": "销毁机器人",
-      "output": "DestroyKTVRobotResponse"
+      "output": "DestroyKTVRobotResponse",
+      "status": "online"
     },
     "SearchKTVMusics": {
       "document": "根据关键词搜索歌曲，返回相关歌曲列表。",
       "input": "SearchKTVMusicsRequest",
       "name": "搜索歌曲",
-      "output": "SearchKTVMusicsResponse"
+      "output": "SearchKTVMusicsResponse",
+      "status": "online"
     },
     "SyncKTVRobotCommand": {
       "document": "下发操作机器人指令，支持播放、暂停、恢复、歌单设置等操作指令，实现对机器人行为的控制。",
       "input": "SyncKTVRobotCommandRequest",
       "name": "同步机器人指令",
-      "output": "SyncKTVRobotCommandResponse"
+      "output": "SyncKTVRobotCommandResponse",
+      "status": "online"
     }
   },
   "metadata": {

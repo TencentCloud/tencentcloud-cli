@@ -4,499 +4,582 @@
       "document": "创建用户自定义内容分析模板，数量上限：50。",
       "input": "CreateAIAnalysisTemplateRequest",
       "name": "创建内容分析模板",
-      "output": "CreateAIAnalysisTemplateResponse"
+      "output": "CreateAIAnalysisTemplateResponse",
+      "status": "online"
     },
     "CreateAIRecognitionTemplate": {
       "document": "创建用户自定义内容识别模板，数量上限：50。",
       "input": "CreateAIRecognitionTemplateRequest",
       "name": "创建内容识别模板",
-      "output": "CreateAIRecognitionTemplateResponse"
+      "output": "CreateAIRecognitionTemplateResponse",
+      "status": "online"
     },
     "CreateAdaptiveDynamicStreamingTemplate": {
       "document": "创建转自适应码流模板，数量上限：100。",
       "input": "CreateAdaptiveDynamicStreamingTemplateRequest",
       "name": "创建转自适应码流模板",
-      "output": "CreateAdaptiveDynamicStreamingTemplateResponse"
+      "output": "CreateAdaptiveDynamicStreamingTemplateResponse",
+      "status": "online"
     },
     "CreateAnimatedGraphicsTemplate": {
       "document": "创建用户自定义转动图模板，数量上限：16。",
       "input": "CreateAnimatedGraphicsTemplateRequest",
       "name": "创建转动图模板",
-      "output": "CreateAnimatedGraphicsTemplateResponse"
+      "output": "CreateAnimatedGraphicsTemplateResponse",
+      "status": "online"
     },
     "CreateContentReviewTemplate": {
       "document": "创建用户自定义内容审核模板，数量上限：50。",
       "input": "CreateContentReviewTemplateRequest",
       "name": "创建内容审核模板",
-      "output": "CreateContentReviewTemplateResponse"
+      "output": "CreateContentReviewTemplateResponse",
+      "status": "online"
     },
     "CreateImageSpriteTemplate": {
       "document": "创建用户自定义雪碧图模板，数量上限：16。",
       "input": "CreateImageSpriteTemplateRequest",
       "name": "创建雪碧图模板",
-      "output": "CreateImageSpriteTemplateResponse"
+      "output": "CreateImageSpriteTemplateResponse",
+      "status": "online"
     },
     "CreatePersonSample": {
       "document": "该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、内容不适宜等视频处理。",
       "input": "CreatePersonSampleRequest",
       "name": "创建素材样本",
-      "output": "CreatePersonSampleResponse"
+      "output": "CreatePersonSampleResponse",
+      "status": "online"
     },
     "CreateSampleSnapshotTemplate": {
       "document": "创建用户自定义采样截图模板，数量上限：16。",
       "input": "CreateSampleSnapshotTemplateRequest",
       "name": "创建采样截图模板",
-      "output": "CreateSampleSnapshotTemplateResponse"
+      "output": "CreateSampleSnapshotTemplateResponse",
+      "status": "online"
     },
     "CreateSnapshotByTimeOffsetTemplate": {
       "document": "创建用户自定义指定时间点截图模板，数量上限：16。",
       "input": "CreateSnapshotByTimeOffsetTemplateRequest",
       "name": "创建指定时间点截图模板",
-      "output": "CreateSnapshotByTimeOffsetTemplateResponse"
+      "output": "CreateSnapshotByTimeOffsetTemplateResponse",
+      "status": "online"
     },
     "CreateStreamLinkFlow": {
       "document": "创建媒体传输的传输流配置。",
       "input": "CreateStreamLinkFlowRequest",
       "name": "创建媒体传输流",
-      "output": "CreateStreamLinkFlowResponse"
+      "output": "CreateStreamLinkFlowResponse",
+      "status": "online"
     },
     "CreateStreamLinkOutputInfo": {
       "document": "创建媒体传输流的输出信息。",
       "input": "CreateStreamLinkOutputInfoRequest",
       "name": "创建媒体传输的输出信息",
-      "output": "CreateStreamLinkOutputInfoResponse"
+      "output": "CreateStreamLinkOutputInfoResponse",
+      "status": "online"
     },
     "CreateTranscodeTemplate": {
       "document": "创建用户自定义转码模板，数量上限：1000。",
       "input": "CreateTranscodeTemplateRequest",
       "name": "创建转码模板",
-      "output": "CreateTranscodeTemplateResponse"
+      "output": "CreateTranscodeTemplateResponse",
+      "status": "online"
     },
     "CreateWatermarkTemplate": {
       "document": "创建用户自定义水印模板，数量上限：1000。",
       "input": "CreateWatermarkTemplateRequest",
       "name": "创建水印模板",
-      "output": "CreateWatermarkTemplateResponse"
+      "output": "CreateWatermarkTemplateResponse",
+      "status": "online"
     },
     "CreateWordSamples": {
       "document": "该接口用于批量创建关键词样本，样本用于通过OCR、ASR技术，进行不适宜内容识别、内容识别等视频处理。",
       "input": "CreateWordSamplesRequest",
       "name": "创建关键词样本",
-      "output": "CreateWordSamplesResponse"
+      "output": "CreateWordSamplesResponse",
+      "status": "online"
     },
     "CreateWorkflow": {
       "document": "对 COS 中指定 Bucket 的目录下上传的媒体文件，设置处理规则，包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。\n\n注意：创建工作流成功后是禁用状态，需要手动启用。",
       "input": "CreateWorkflowRequest",
       "name": "创建工作流",
-      "output": "CreateWorkflowResponse"
+      "output": "CreateWorkflowResponse",
+      "status": "online"
     },
     "DeleteAIAnalysisTemplate": {
       "document": "删除用户自定义内容分析模板。\n\n注意：模板 ID 为 10000 以下的为系统预置模板，不允许删除。",
       "input": "DeleteAIAnalysisTemplateRequest",
       "name": "删除内容分析模板",
-      "output": "DeleteAIAnalysisTemplateResponse"
+      "output": "DeleteAIAnalysisTemplateResponse",
+      "status": "online"
     },
     "DeleteAIRecognitionTemplate": {
       "document": "删除用户自定义内容识别模板。",
       "input": "DeleteAIRecognitionTemplateRequest",
       "name": "删除内容识别模板",
-      "output": "DeleteAIRecognitionTemplateResponse"
+      "output": "DeleteAIRecognitionTemplateResponse",
+      "status": "online"
     },
     "DeleteAdaptiveDynamicStreamingTemplate": {
       "document": "删除转自适应码流模板",
       "input": "DeleteAdaptiveDynamicStreamingTemplateRequest",
       "name": "删除转自适应码流模板",
-      "output": "DeleteAdaptiveDynamicStreamingTemplateResponse"
+      "output": "DeleteAdaptiveDynamicStreamingTemplateResponse",
+      "status": "online"
     },
     "DeleteAnimatedGraphicsTemplate": {
       "document": "删除用户自定义转动图模板。",
       "input": "DeleteAnimatedGraphicsTemplateRequest",
       "name": "删除转动图模板",
-      "output": "DeleteAnimatedGraphicsTemplateResponse"
+      "output": "DeleteAnimatedGraphicsTemplateResponse",
+      "status": "online"
     },
     "DeleteContentReviewTemplate": {
       "document": "删除用户自定义内容审核模板。",
       "input": "DeleteContentReviewTemplateRequest",
       "name": "删除内容审核模板",
-      "output": "DeleteContentReviewTemplateResponse"
+      "output": "DeleteContentReviewTemplateResponse",
+      "status": "online"
     },
     "DeleteImageSpriteTemplate": {
       "document": "删除雪碧图模板。",
       "input": "DeleteImageSpriteTemplateRequest",
       "name": "删除雪碧图模板",
-      "output": "DeleteImageSpriteTemplateResponse"
+      "output": "DeleteImageSpriteTemplateResponse",
+      "status": "online"
     },
     "DeletePersonSample": {
       "document": "该接口用于根据素材 ID，删除素材样本。",
       "input": "DeletePersonSampleRequest",
       "name": "删除素材样本",
-      "output": "DeletePersonSampleResponse"
+      "output": "DeletePersonSampleResponse",
+      "status": "online"
     },
     "DeleteSampleSnapshotTemplate": {
       "document": "删除用户自定义采样截图模板。",
       "input": "DeleteSampleSnapshotTemplateRequest",
       "name": "删除采样截图模板",
-      "output": "DeleteSampleSnapshotTemplateResponse"
+      "output": "DeleteSampleSnapshotTemplateResponse",
+      "status": "online"
     },
     "DeleteSnapshotByTimeOffsetTemplate": {
       "document": "删除用户自定义指定时间点截图模板。",
       "input": "DeleteSnapshotByTimeOffsetTemplateRequest",
       "name": "删除指定时间点截图模板",
-      "output": "DeleteSnapshotByTimeOffsetTemplateResponse"
+      "output": "DeleteSnapshotByTimeOffsetTemplateResponse",
+      "status": "online"
     },
     "DeleteStreamLinkFlow": {
       "document": "删除媒体传输的传输流配置。",
       "input": "DeleteStreamLinkFlowRequest",
       "name": "删除媒体传输流",
-      "output": "DeleteStreamLinkFlowResponse"
+      "output": "DeleteStreamLinkFlowResponse",
+      "status": "online"
     },
     "DeleteStreamLinkOutput": {
       "document": "删除媒体传输流的输出配置。",
       "input": "DeleteStreamLinkOutputRequest",
       "name": "删除媒体传输输出",
-      "output": "DeleteStreamLinkOutputResponse"
+      "output": "DeleteStreamLinkOutputResponse",
+      "status": "online"
     },
     "DeleteTranscodeTemplate": {
       "document": "删除用户自定义转码模板。",
       "input": "DeleteTranscodeTemplateRequest",
       "name": "删除转码模板",
-      "output": "DeleteTranscodeTemplateResponse"
+      "output": "DeleteTranscodeTemplateResponse",
+      "status": "online"
     },
     "DeleteWatermarkTemplate": {
       "document": "删除用户自定义水印模板。",
       "input": "DeleteWatermarkTemplateRequest",
       "name": "删除水印模板",
-      "output": "DeleteWatermarkTemplateResponse"
+      "output": "DeleteWatermarkTemplateResponse",
+      "status": "online"
     },
     "DeleteWordSamples": {
       "document": "该接口用于批量删除关键词样本。",
       "input": "DeleteWordSamplesRequest",
       "name": "删除关键词样本",
-      "output": "DeleteWordSamplesResponse"
+      "output": "DeleteWordSamplesResponse",
+      "status": "online"
     },
     "DeleteWorkflow": {
       "document": "删除工作流。对于已启用的工作流，需要禁用后才能删除。",
       "input": "DeleteWorkflowRequest",
       "name": "删除工作流",
-      "output": "DeleteWorkflowResponse"
+      "output": "DeleteWorkflowResponse",
+      "status": "online"
     },
     "DescribeAIAnalysisTemplates": {
       "document": "根据内容分析模板唯一标识，获取内容分析模板详情列表。返回结果包含符合条件的所有用户自定义内容分析模板及系统预置视频内容分析模板",
       "input": "DescribeAIAnalysisTemplatesRequest",
       "name": "获取内容分析模板列表",
-      "output": "DescribeAIAnalysisTemplatesResponse"
+      "output": "DescribeAIAnalysisTemplatesResponse",
+      "status": "online"
     },
     "DescribeAIRecognitionTemplates": {
       "document": "根据内容识别模板唯一标识，获取内容识别模板详情列表。返回结果包含符合条件的所有用户自定义内容识别模板及系统预置视频内容识别模板",
       "input": "DescribeAIRecognitionTemplatesRequest",
       "name": "获取内容识别模板列表",
-      "output": "DescribeAIRecognitionTemplatesResponse"
+      "output": "DescribeAIRecognitionTemplatesResponse",
+      "status": "online"
     },
     "DescribeAdaptiveDynamicStreamingTemplates": {
       "document": "查询转自适应码流模板，支持根据条件，分页查询。",
       "input": "DescribeAdaptiveDynamicStreamingTemplatesRequest",
       "name": "获取转自适应码流模板列表",
-      "output": "DescribeAdaptiveDynamicStreamingTemplatesResponse"
+      "output": "DescribeAdaptiveDynamicStreamingTemplatesResponse",
+      "status": "online"
     },
     "DescribeAnimatedGraphicsTemplates": {
       "document": "查询转动图模板列表，支持根据条件，分页查询。",
       "input": "DescribeAnimatedGraphicsTemplatesRequest",
       "name": "获取转动图模板列表",
-      "output": "DescribeAnimatedGraphicsTemplatesResponse"
+      "output": "DescribeAnimatedGraphicsTemplatesResponse",
+      "status": "online"
     },
     "DescribeContentReviewTemplates": {
       "document": "根据智能审核模板唯一标识，获取智能审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及系统预置智能审核模板。",
       "input": "DescribeContentReviewTemplatesRequest",
       "name": "获取智能审核模板列表",
-      "output": "DescribeContentReviewTemplatesResponse"
+      "output": "DescribeContentReviewTemplatesResponse",
+      "status": "online"
     },
     "DescribeImageSpriteTemplates": {
       "document": "查询雪碧图模板，支持根据条件，分页查询。",
       "input": "DescribeImageSpriteTemplatesRequest",
       "name": "获取雪碧图模板列表",
-      "output": "DescribeImageSpriteTemplatesResponse"
+      "output": "DescribeImageSpriteTemplatesResponse",
+      "status": "online"
     },
     "DescribeMediaMetaData": {
       "document": "获取媒体的元信息，包括视频画面宽、高、编码格式、时长、帧率等。",
       "input": "DescribeMediaMetaDataRequest",
       "name": "获取媒体元信息",
-      "output": "DescribeMediaMetaDataResponse"
+      "output": "DescribeMediaMetaDataResponse",
+      "status": "online"
     },
     "DescribePersonSamples": {
       "document": "该接口用于查询素材样本信息，支持根据素材 ID、名称、标签，分页查询。",
       "input": "DescribePersonSamplesRequest",
       "name": "获取素材样本列表",
-      "output": "DescribePersonSamplesResponse"
+      "output": "DescribePersonSamplesResponse",
+      "status": "online"
     },
     "DescribeSampleSnapshotTemplates": {
       "document": "查询采样截图模板，支持根据条件，分页查询。",
       "input": "DescribeSampleSnapshotTemplatesRequest",
       "name": "获取采样截图模板列表",
-      "output": "DescribeSampleSnapshotTemplatesResponse"
+      "output": "DescribeSampleSnapshotTemplatesResponse",
+      "status": "online"
     },
     "DescribeSnapshotByTimeOffsetTemplates": {
       "document": "查询指定时间点截图模板，支持根据条件，分页查询。",
       "input": "DescribeSnapshotByTimeOffsetTemplatesRequest",
       "name": "获取指定时间点截图模板列表",
-      "output": "DescribeSnapshotByTimeOffsetTemplatesResponse"
+      "output": "DescribeSnapshotByTimeOffsetTemplatesResponse",
+      "status": "online"
     },
     "DescribeStreamLinkActivateState": {
       "document": "查询媒体传输开通状态。",
       "input": "DescribeStreamLinkActivateStateRequest",
       "name": "查询媒体传输开通状态",
-      "output": "DescribeStreamLinkActivateStateResponse"
+      "output": "DescribeStreamLinkActivateStateResponse",
+      "status": "online"
     },
     "DescribeStreamLinkFlow": {
       "document": "查询媒体输入流的配置信息。",
       "input": "DescribeStreamLinkFlowRequest",
       "name": "查询媒体输入流",
-      "output": "DescribeStreamLinkFlowResponse"
+      "output": "DescribeStreamLinkFlowResponse",
+      "status": "online"
     },
     "DescribeStreamLinkFlowLogs": {
       "document": "查询媒体传输流的日志信息。",
       "input": "DescribeStreamLinkFlowLogsRequest",
       "name": "查询传输流的日志",
-      "output": "DescribeStreamLinkFlowLogsResponse"
+      "output": "DescribeStreamLinkFlowLogsResponse",
+      "status": "online"
     },
     "DescribeStreamLinkFlowMediaStatistics": {
       "document": "查询媒体传输流的媒体质量数据。\n",
       "input": "DescribeStreamLinkFlowMediaStatisticsRequest",
       "name": "查询媒体质量数据",
-      "output": "DescribeStreamLinkFlowMediaStatisticsResponse"
+      "output": "DescribeStreamLinkFlowMediaStatisticsResponse",
+      "status": "online"
     },
     "DescribeStreamLinkFlowRealtimeStatus": {
       "document": "实时查询流的当前状态",
       "input": "DescribeStreamLinkFlowRealtimeStatusRequest",
       "name": "查询流实时状态接口",
-      "output": "DescribeStreamLinkFlowRealtimeStatusResponse"
+      "output": "DescribeStreamLinkFlowRealtimeStatusResponse",
+      "status": "online"
     },
     "DescribeStreamLinkFlowSRTStatistics": {
       "document": "查询媒体传输流的SRT质量数据。",
       "input": "DescribeStreamLinkFlowSRTStatisticsRequest",
       "name": "查询SRT数据信息",
-      "output": "DescribeStreamLinkFlowSRTStatisticsResponse"
+      "output": "DescribeStreamLinkFlowSRTStatisticsResponse",
+      "status": "online"
     },
     "DescribeStreamLinkFlowStatistics": {
       "document": "查询媒体传输流的媒体质量数据。\n",
       "input": "DescribeStreamLinkFlowStatisticsRequest",
       "name": "查询流的媒体质量数据",
-      "output": "DescribeStreamLinkFlowStatisticsResponse"
+      "output": "DescribeStreamLinkFlowStatisticsResponse",
+      "status": "online"
     },
     "DescribeStreamLinkFlows": {
       "document": "批量查询媒体输入流的配置信息。",
       "input": "DescribeStreamLinkFlowsRequest",
       "name": "批量查询媒体输入流",
-      "output": "DescribeStreamLinkFlowsResponse"
+      "output": "DescribeStreamLinkFlowsResponse",
+      "status": "online"
     },
     "DescribeStreamLinkRegions": {
       "document": "查询媒体传输所有地区。",
       "input": "DescribeStreamLinkRegionsRequest",
       "name": "查询媒体传输地区",
-      "output": "DescribeStreamLinkRegionsResponse"
+      "output": "DescribeStreamLinkRegionsResponse",
+      "status": "online"
     },
     "DescribeTaskDetail": {
       "document": "通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。",
       "input": "DescribeTaskDetailRequest",
       "name": "查询任务详情",
-      "output": "DescribeTaskDetailResponse"
+      "output": "DescribeTaskDetailResponse",
+      "status": "online"
     },
     "DescribeTasks": {
       "document": "* 该接口用于查询任务列表；\n* 当列表数据比较多时，单次接口调用无法拉取整个列表，可通过 ScrollToken 参数，分批拉取；\n* 只能查询到最近七天（168小时）内的任务。",
       "input": "DescribeTasksRequest",
       "name": "获取任务列表",
-      "output": "DescribeTasksResponse"
+      "output": "DescribeTasksResponse",
+      "status": "online"
     },
     "DescribeTranscodeTemplates": {
       "document": "根据转码模板唯一标识，获取转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置转码模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。",
       "input": "DescribeTranscodeTemplatesRequest",
       "name": "获取转码模板列表",
-      "output": "DescribeTranscodeTemplatesResponse"
+      "output": "DescribeTranscodeTemplatesResponse",
+      "status": "online"
     },
     "DescribeWatermarkTemplates": {
       "document": "查询用户自定义水印模板，支持根据条件，分页查询。",
       "input": "DescribeWatermarkTemplatesRequest",
       "name": "获取水印模板列表",
-      "output": "DescribeWatermarkTemplatesResponse"
+      "output": "DescribeWatermarkTemplatesResponse",
+      "status": "online"
     },
     "DescribeWordSamples": {
       "document": "该接口用于根据应用场景、关键词、标签，分页查询关键词样本信息。",
       "input": "DescribeWordSamplesRequest",
       "name": "获取关键词样本列表",
-      "output": "DescribeWordSamplesResponse"
+      "output": "DescribeWordSamplesResponse",
+      "status": "online"
     },
     "DescribeWorkflows": {
       "document": "根据工作流 ID，获取工作流详情列表。",
       "input": "DescribeWorkflowsRequest",
       "name": "获取工作流列表",
-      "output": "DescribeWorkflowsResponse"
+      "output": "DescribeWorkflowsResponse",
+      "status": "online"
     },
     "DisableWorkflow": {
       "document": "禁用工作流。",
       "input": "DisableWorkflowRequest",
       "name": "禁用工作流",
-      "output": "DisableWorkflowResponse"
+      "output": "DisableWorkflowResponse",
+      "status": "online"
     },
     "EditMedia": {
       "document": "对视频进行编辑（剪辑、拼接等），生成一个新的点播视频。编辑的功能包括：\n\n1. 对一个文件进行剪辑，生成一个新的视频；\n2. 对多个文件进行拼接，生成一个新的视频；\n3. 对多个文件进行剪辑，然后再拼接，生成一个新的视频。",
       "input": "EditMediaRequest",
       "name": "编辑视频",
-      "output": "EditMediaResponse"
+      "output": "EditMediaResponse",
+      "status": "online"
     },
     "EnableWorkflow": {
       "document": "启用工作流。",
       "input": "EnableWorkflowRequest",
       "name": "启用工作流",
-      "output": "EnableWorkflowResponse"
+      "output": "EnableWorkflowResponse",
+      "status": "online"
     },
     "ExecuteFunction": {
       "document": "本接口仅用于定制开发的特殊场景，除非云媒体处理客服人员主动告知您需要使用本接口，其它情况请勿调用。",
       "input": "ExecuteFunctionRequest",
       "name": "执行定制 API",
-      "output": "ExecuteFunctionResponse"
+      "output": "ExecuteFunctionResponse",
+      "status": "online"
     },
     "ManageTask": {
       "document": "对已发起的任务进行管理。",
       "input": "ManageTaskRequest",
       "name": "任务管理",
-      "output": "ManageTaskResponse"
+      "output": "ManageTaskResponse",
+      "status": "online"
     },
     "ModifyAIAnalysisTemplate": {
       "document": "修改用户自定义内容分析模板。\n\n注意：模板 ID 10000 以下的为系统预置模板，不允许修改。",
       "input": "ModifyAIAnalysisTemplateRequest",
       "name": "修改内容分析模板",
-      "output": "ModifyAIAnalysisTemplateResponse"
+      "output": "ModifyAIAnalysisTemplateResponse",
+      "status": "online"
     },
     "ModifyAIRecognitionTemplate": {
       "document": "修改用户自定义内容识别模板。",
       "input": "ModifyAIRecognitionTemplateRequest",
       "name": "修改内容识别模板",
-      "output": "ModifyAIRecognitionTemplateResponse"
+      "output": "ModifyAIRecognitionTemplateResponse",
+      "status": "online"
     },
     "ModifyAdaptiveDynamicStreamingTemplate": {
       "document": "修改转自适应码流模板",
       "input": "ModifyAdaptiveDynamicStreamingTemplateRequest",
       "name": "修改转自适应码流模板",
-      "output": "ModifyAdaptiveDynamicStreamingTemplateResponse"
+      "output": "ModifyAdaptiveDynamicStreamingTemplateResponse",
+      "status": "online"
     },
     "ModifyAnimatedGraphicsTemplate": {
       "document": "修改用户自定义转动图模板。",
       "input": "ModifyAnimatedGraphicsTemplateRequest",
       "name": "修改转动图模板",
-      "output": "ModifyAnimatedGraphicsTemplateResponse"
+      "output": "ModifyAnimatedGraphicsTemplateResponse",
+      "status": "online"
     },
     "ModifyContentReviewTemplate": {
       "document": "修改用户自定义内容审核模板。",
       "input": "ModifyContentReviewTemplateRequest",
       "name": "修改内容审核模板",
-      "output": "ModifyContentReviewTemplateResponse"
+      "output": "ModifyContentReviewTemplateResponse",
+      "status": "online"
     },
     "ModifyImageSpriteTemplate": {
       "document": "修改用户自定义雪碧图模板。",
       "input": "ModifyImageSpriteTemplateRequest",
       "name": "修改雪碧图模板",
-      "output": "ModifyImageSpriteTemplateResponse"
+      "output": "ModifyImageSpriteTemplateResponse",
+      "status": "online"
     },
     "ModifyPersonSample": {
       "document": "该接口用于根据素材 ID，修改素材样本信息，包括名称、描述的修改，以及五官、标签的添加、删除、重置操作。五官删除操作需保证至少剩余 1 张图片，否则，请使用重置操作。",
       "input": "ModifyPersonSampleRequest",
       "name": "修改素材样本",
-      "output": "ModifyPersonSampleResponse"
+      "output": "ModifyPersonSampleResponse",
+      "status": "online"
     },
     "ModifySampleSnapshotTemplate": {
       "document": "修改用户自定义采样截图模板。",
       "input": "ModifySampleSnapshotTemplateRequest",
       "name": "修改采样截图模板",
-      "output": "ModifySampleSnapshotTemplateResponse"
+      "output": "ModifySampleSnapshotTemplateResponse",
+      "status": "online"
     },
     "ModifySnapshotByTimeOffsetTemplate": {
       "document": "修改用户自定义指定时间点截图模板。",
       "input": "ModifySnapshotByTimeOffsetTemplateRequest",
       "name": "修改指定时间点截图模板",
-      "output": "ModifySnapshotByTimeOffsetTemplateResponse"
+      "output": "ModifySnapshotByTimeOffsetTemplateResponse",
+      "status": "online"
     },
     "ModifyStreamLinkFlow": {
       "document": "修改媒体传输的传输流配置信息。",
       "input": "ModifyStreamLinkFlowRequest",
       "name": "修改媒体传输流",
-      "output": "ModifyStreamLinkFlowResponse"
+      "output": "ModifyStreamLinkFlowResponse",
+      "status": "online"
     },
     "ModifyStreamLinkInput": {
       "document": "修改媒体传输流的输入信息。",
       "input": "ModifyStreamLinkInputRequest",
       "name": "修改媒体传输输入",
-      "output": "ModifyStreamLinkInputResponse"
+      "output": "ModifyStreamLinkInputResponse",
+      "status": "online"
     },
     "ModifyStreamLinkOutputInfo": {
       "document": "修改媒体传输流的输出配置。",
       "input": "ModifyStreamLinkOutputInfoRequest",
       "name": "修改媒体传输的输出信息",
-      "output": "ModifyStreamLinkOutputInfoResponse"
+      "output": "ModifyStreamLinkOutputInfoResponse",
+      "status": "online"
     },
     "ModifyTranscodeTemplate": {
       "document": "修改用户自定义转码模板信息。",
       "input": "ModifyTranscodeTemplateRequest",
       "name": "修改转码模板",
-      "output": "ModifyTranscodeTemplateResponse"
+      "output": "ModifyTranscodeTemplateResponse",
+      "status": "online"
     },
     "ModifyWatermarkTemplate": {
       "document": "修改用户自定义水印模板，水印类型不允许修改。",
       "input": "ModifyWatermarkTemplateRequest",
       "name": "修改水印模板",
-      "output": "ModifyWatermarkTemplateResponse"
+      "output": "ModifyWatermarkTemplateResponse",
+      "status": "online"
     },
     "ModifyWordSample": {
       "document": "该接口用于修改关键词的应用场景、标签，关键词本身不可修改，如需修改，可删除重建。",
       "input": "ModifyWordSampleRequest",
       "name": "修改关键词样本",
-      "output": "ModifyWordSampleResponse"
+      "output": "ModifyWordSampleResponse",
+      "status": "online"
     },
     "ParseLiveStreamProcessNotification": {
       "document": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 直播流处理事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。",
       "input": "ParseLiveStreamProcessNotificationRequest",
       "name": "解析直播流处理结果",
-      "output": "ParseLiveStreamProcessNotificationResponse"
+      "output": "ParseLiveStreamProcessNotificationResponse",
+      "status": "online"
     },
     "ParseNotification": {
       "document": "从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 事件通知的内容。\n该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。",
       "input": "ParseNotificationRequest",
       "name": "解析事件通知",
-      "output": "ParseNotificationResponse"
+      "output": "ParseNotificationResponse",
+      "status": "online"
     },
     "ProcessLiveStream": {
       "document": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、敏感信息检测、声音鉴黄）；\n* 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音实时翻译）。\n\n直播流处理事件通知实时写入用户指定的消息队列 CMQ 中，用户需要从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。",
       "input": "ProcessLiveStreamRequest",
       "name": "对直播流发起处理",
-      "output": "ProcessLiveStreamResponse"
+      "output": "ProcessLiveStreamResponse",
+      "status": "online"
     },
     "ProcessMedia": {
       "document": "对 URL视频链接 或 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（普通转码、极速高清转码、音视频增强）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签、拆条、集锦、片头片尾）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）。",
       "input": "ProcessMediaRequest",
       "name": "发起媒体处理",
-      "output": "ProcessMediaResponse"
+      "output": "ProcessMediaResponse",
+      "status": "online"
     },
     "RecognizeMediaForZhiXue": {
       "document": "智能媒体识别，包含表情和动作识别。仅用于智学，其他调用无效。",
       "input": "RecognizeMediaForZhiXueRequest",
       "name": "智学智能媒体识别",
-      "output": "RecognizeMediaForZhiXueResponse"
+      "output": "RecognizeMediaForZhiXueResponse",
+      "status": "online"
     },
     "ResetWorkflow": {
       "document": "重新设置一个已经存在且处于禁用状态的工作流。",
       "input": "ResetWorkflowRequest",
       "name": "重设工作流",
-      "output": "ResetWorkflowResponse"
+      "output": "ResetWorkflowResponse",
+      "status": "online"
     },
     "StartStreamLinkFlow": {
       "document": "启动媒体传输流。",
       "input": "StartStreamLinkFlowRequest",
       "name": "开启媒体传输流",
-      "output": "StartStreamLinkFlowResponse"
+      "output": "StartStreamLinkFlowResponse",
+      "status": "online"
     },
     "StopStreamLinkFlow": {
       "document": "停止媒体传输流。",
       "input": "StopStreamLinkFlowRequest",
       "name": "停止媒体传输流",
-      "output": "StopStreamLinkFlowResponse"
+      "output": "StopStreamLinkFlowResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -6529,8 +6612,17 @@
           "example": "无",
           "member": "CreateInput",
           "name": "InputGroup",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。",
+          "example": "eventid",
+          "member": "string",
+          "name": "EventId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7810,6 +7902,26 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该Flow关联的媒体传输事件EventId。",
+          "example": "eventid",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体传输输入流所属的区域，取值和InputRegion相同。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

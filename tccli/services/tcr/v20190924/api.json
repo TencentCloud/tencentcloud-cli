@@ -4,643 +4,750 @@
       "document": "用于在个人版镜像仓库中批量删除Tag",
       "input": "BatchDeleteImagePersonalRequest",
       "name": "个人版镜像仓库批量删除Tag",
-      "output": "BatchDeleteImagePersonalResponse"
+      "output": "BatchDeleteImagePersonalResponse",
+      "status": "online"
     },
     "BatchDeleteRepositoryPersonal": {
       "document": "用于个人版镜像仓库中批量删除镜像仓库",
       "input": "BatchDeleteRepositoryPersonalRequest",
       "name": "批量删除个人版仓库",
-      "output": "BatchDeleteRepositoryPersonalResponse"
+      "output": "BatchDeleteRepositoryPersonalResponse",
+      "status": "online"
     },
     "CheckInstance": {
       "document": "用于校验企业版实例信息",
       "input": "CheckInstanceRequest",
       "name": "校验实例信息",
-      "output": "CheckInstanceResponse"
+      "output": "CheckInstanceResponse",
+      "status": "online"
     },
     "CheckInstanceName": {
       "document": "检查待创建的实例名称是否符合规范",
       "input": "CheckInstanceNameRequest",
       "name": "检查待创建的实例名称是否符合规范",
-      "output": "CheckInstanceNameResponse"
+      "output": "CheckInstanceNameResponse",
+      "status": "online"
     },
     "CreateApplicationTriggerPersonal": {
       "document": "用于创建应用更新触发器",
       "input": "CreateApplicationTriggerPersonalRequest",
       "name": "创建应用更新触发器",
-      "output": "CreateApplicationTriggerPersonalResponse"
+      "output": "CreateApplicationTriggerPersonalResponse",
+      "status": "online"
     },
     "CreateImageAccelerationService": {
       "document": "创建镜像加速服务",
       "input": "CreateImageAccelerationServiceRequest",
       "name": "创建镜像加速服务",
-      "output": "CreateImageAccelerationServiceResponse"
+      "output": "CreateImageAccelerationServiceResponse",
+      "status": "online"
     },
     "CreateImageLifecyclePersonal": {
       "document": "用于在个人版中创建清理策略",
       "input": "CreateImageLifecyclePersonalRequest",
       "name": "创建个人版镜像版本清理策略",
-      "output": "CreateImageLifecyclePersonalResponse"
+      "output": "CreateImageLifecyclePersonalResponse",
+      "status": "online"
     },
     "CreateImmutableTagRules": {
       "document": "创建镜像不可变规则",
       "input": "CreateImmutableTagRulesRequest",
       "name": "创建镜像不可变规则",
-      "output": "CreateImmutableTagRulesResponse"
+      "output": "CreateImmutableTagRulesResponse",
+      "status": "online"
     },
     "CreateInstance": {
       "document": "创建实例",
       "input": "CreateInstanceRequest",
       "name": "创建实例",
-      "output": "CreateInstanceResponse"
+      "output": "CreateInstanceResponse",
+      "status": "online"
     },
     "CreateInstanceCustomizedDomain": {
       "document": "创建自定义域名",
       "input": "CreateInstanceCustomizedDomainRequest",
       "name": "创建自定义域名",
-      "output": "CreateInstanceCustomizedDomainResponse"
+      "output": "CreateInstanceCustomizedDomainResponse",
+      "status": "online"
     },
     "CreateInstanceToken": {
       "document": "创建实例的临时或长期访问凭证",
       "input": "CreateInstanceTokenRequest",
       "name": "创建实例访问凭证",
-      "output": "CreateInstanceTokenResponse"
+      "output": "CreateInstanceTokenResponse",
+      "status": "online"
     },
     "CreateInternalEndpointDns": {
       "document": "创建tcr内网私有域名解析",
       "input": "CreateInternalEndpointDnsRequest",
       "name": "创建私有域名解析",
-      "output": "CreateInternalEndpointDnsResponse"
+      "output": "CreateInternalEndpointDnsResponse",
+      "status": "online"
     },
     "CreateMultipleSecurityPolicy": {
       "document": "用于在TCR实例中，创建多个白名单策略",
       "input": "CreateMultipleSecurityPolicyRequest",
       "name": "创建实例公网访问多白名单策略",
-      "output": "CreateMultipleSecurityPolicyResponse"
+      "output": "CreateMultipleSecurityPolicyResponse",
+      "status": "online"
     },
     "CreateNamespace": {
       "document": "用于在企业版中创建命名空间",
       "input": "CreateNamespaceRequest",
       "name": "创建命名空间",
-      "output": "CreateNamespaceResponse"
+      "output": "CreateNamespaceResponse",
+      "status": "online"
     },
     "CreateNamespacePersonal": {
       "document": "创建个人版镜像仓库命名空间，此命名空间全局唯一",
       "input": "CreateNamespacePersonalRequest",
       "name": "创建个人版命名空间",
-      "output": "CreateNamespacePersonalResponse"
+      "output": "CreateNamespacePersonalResponse",
+      "status": "online"
     },
     "CreateReplicationInstance": {
       "document": "创建从实例",
       "input": "CreateReplicationInstanceRequest",
       "name": "创建从实例",
-      "output": "CreateReplicationInstanceResponse"
+      "output": "CreateReplicationInstanceResponse",
+      "status": "online"
     },
     "CreateRepository": {
       "document": "用于企业版创建镜像仓库",
       "input": "CreateRepositoryRequest",
       "name": "创建镜像仓库",
-      "output": "CreateRepositoryResponse"
+      "output": "CreateRepositoryResponse",
+      "status": "online"
     },
     "CreateRepositoryPersonal": {
       "document": "用于在个人版仓库中创建镜像仓库",
       "input": "CreateRepositoryPersonalRequest",
       "name": "创建个人版镜像仓库",
-      "output": "CreateRepositoryPersonalResponse"
+      "output": "CreateRepositoryPersonalResponse",
+      "status": "online"
     },
     "CreateSecurityPolicy": {
       "document": "创建实例公网访问白名单策略",
       "input": "CreateSecurityPolicyRequest",
       "name": "创建实例公网访问白名单策略",
-      "output": "CreateSecurityPolicyResponse"
+      "output": "CreateSecurityPolicyResponse",
+      "status": "online"
     },
     "CreateSignature": {
       "document": "为一个镜像版本创建签名",
       "input": "CreateSignatureRequest",
       "name": "创建镜像签名",
-      "output": "CreateSignatureResponse"
+      "output": "CreateSignatureResponse",
+      "status": "online"
     },
     "CreateSignaturePolicy": {
       "document": "创建镜像签名策略",
       "input": "CreateSignaturePolicyRequest",
       "name": "创建签名策略",
-      "output": "CreateSignaturePolicyResponse"
+      "output": "CreateSignaturePolicyResponse",
+      "status": "online"
     },
     "CreateTagRetentionExecution": {
       "document": "手动执行版本保留",
       "input": "CreateTagRetentionExecutionRequest",
       "name": "手动执行版本保留",
-      "output": "CreateTagRetentionExecutionResponse"
+      "output": "CreateTagRetentionExecutionResponse",
+      "status": "online"
     },
     "CreateTagRetentionRule": {
       "document": "创建版本保留规则",
       "input": "CreateTagRetentionRuleRequest",
       "name": "创建版本保留规则",
-      "output": "CreateTagRetentionRuleResponse"
+      "output": "CreateTagRetentionRuleResponse",
+      "status": "online"
     },
     "CreateUserPersonal": {
       "document": "创建个人用户",
       "input": "CreateUserPersonalRequest",
       "name": "创建个人用户",
-      "output": "CreateUserPersonalResponse"
+      "output": "CreateUserPersonalResponse",
+      "status": "online"
     },
     "CreateWebhookTrigger": {
       "document": "创建触发器",
       "input": "CreateWebhookTriggerRequest",
       "name": "创建触发器",
-      "output": "CreateWebhookTriggerResponse"
+      "output": "CreateWebhookTriggerResponse",
+      "status": "online"
     },
     "DeleteApplicationTriggerPersonal": {
       "document": "用于删除应用更新触发器",
       "input": "DeleteApplicationTriggerPersonalRequest",
       "name": "删除应用更新触发器",
-      "output": "DeleteApplicationTriggerPersonalResponse"
+      "output": "DeleteApplicationTriggerPersonalResponse",
+      "status": "online"
     },
     "DeleteImage": {
       "document": "删除指定镜像",
       "input": "DeleteImageRequest",
       "name": "删除指定镜像",
-      "output": "DeleteImageResponse"
+      "output": "DeleteImageResponse",
+      "status": "online"
     },
     "DeleteImageAccelerateService": {
       "document": "删除镜像加速服务",
       "input": "DeleteImageAccelerateServiceRequest",
       "name": "删除镜像加速服务",
-      "output": "DeleteImageAccelerateServiceResponse"
+      "output": "DeleteImageAccelerateServiceResponse",
+      "status": "online"
     },
     "DeleteImageLifecycleGlobalPersonal": {
       "document": "用于删除个人版全局镜像版本自动清理策略",
       "input": "DeleteImageLifecycleGlobalPersonalRequest",
       "name": "删除个人版全局镜像版本自动清理策略",
-      "output": "DeleteImageLifecycleGlobalPersonalResponse"
+      "output": "DeleteImageLifecycleGlobalPersonalResponse",
+      "status": "online"
     },
     "DeleteImageLifecyclePersonal": {
       "document": "用于在个人版镜像仓库中删除仓库Tag自动清理策略",
       "input": "DeleteImageLifecyclePersonalRequest",
       "name": "删除个人版镜像仓库Tag自动清理策略",
-      "output": "DeleteImageLifecyclePersonalResponse"
+      "output": "DeleteImageLifecyclePersonalResponse",
+      "status": "online"
     },
     "DeleteImagePersonal": {
       "document": "用于在个人版中删除tag",
       "input": "DeleteImagePersonalRequest",
       "name": "删除个人版仓库tag",
-      "output": "DeleteImagePersonalResponse"
+      "output": "DeleteImagePersonalResponse",
+      "status": "online"
     },
     "DeleteImmutableTagRules": {
       "document": " 删除镜像不可变规则",
       "input": "DeleteImmutableTagRulesRequest",
       "name": "删除镜像不可变规则",
-      "output": "DeleteImmutableTagRulesResponse"
+      "output": "DeleteImmutableTagRulesResponse",
+      "status": "online"
     },
     "DeleteInstance": {
       "document": "删除镜像仓库企业版实例",
       "input": "DeleteInstanceRequest",
       "name": "删除实例",
-      "output": "DeleteInstanceResponse"
+      "output": "DeleteInstanceResponse",
+      "status": "online"
     },
     "DeleteInstanceCustomizedDomain": {
       "document": "删除自定义域名",
       "input": "DeleteInstanceCustomizedDomainRequest",
       "name": "删除自定义域名",
-      "output": "DeleteInstanceCustomizedDomainResponse"
+      "output": "DeleteInstanceCustomizedDomainResponse",
+      "status": "online"
     },
     "DeleteInstanceToken": {
       "document": "删除长期访问凭证",
       "input": "DeleteInstanceTokenRequest",
       "name": "删除长期访问凭证",
-      "output": "DeleteInstanceTokenResponse"
+      "output": "DeleteInstanceTokenResponse",
+      "status": "online"
     },
     "DeleteInternalEndpointDns": {
       "document": "删除tcr内网私有域名解析",
       "input": "DeleteInternalEndpointDnsRequest",
       "name": "删除私有域名解析",
-      "output": "DeleteInternalEndpointDnsResponse"
+      "output": "DeleteInternalEndpointDnsResponse",
+      "status": "online"
     },
     "DeleteMultipleSecurityPolicy": {
       "document": "用于删除实例多个公网访问白名单策略",
       "input": "DeleteMultipleSecurityPolicyRequest",
       "name": "删除实例公网访问多白名单策略",
-      "output": "DeleteMultipleSecurityPolicyResponse"
+      "output": "DeleteMultipleSecurityPolicyResponse",
+      "status": "online"
     },
     "DeleteNamespace": {
       "document": "删除命名空间",
       "input": "DeleteNamespaceRequest",
       "name": "删除命名空间",
-      "output": "DeleteNamespaceResponse"
+      "output": "DeleteNamespaceResponse",
+      "status": "online"
     },
     "DeleteNamespacePersonal": {
       "document": "删除共享版命名空间",
       "input": "DeleteNamespacePersonalRequest",
       "name": "删除个人版命名空间",
-      "output": "DeleteNamespacePersonalResponse"
+      "output": "DeleteNamespacePersonalResponse",
+      "status": "online"
     },
     "DeleteReplicationInstance": {
       "document": "删除从实例",
       "input": "DeleteReplicationInstanceRequest",
       "name": "删除从实例",
-      "output": "DeleteReplicationInstanceResponse"
+      "output": "DeleteReplicationInstanceResponse",
+      "status": "online"
     },
     "DeleteRepository": {
       "document": "删除镜像仓库",
       "input": "DeleteRepositoryRequest",
       "name": "删除镜像仓库",
-      "output": "DeleteRepositoryResponse"
+      "output": "DeleteRepositoryResponse",
+      "status": "online"
     },
     "DeleteRepositoryPersonal": {
       "document": "用于个人版镜像仓库中删除",
       "input": "DeleteRepositoryPersonalRequest",
       "name": "删除个人版镜像仓库",
-      "output": "DeleteRepositoryPersonalResponse"
+      "output": "DeleteRepositoryPersonalResponse",
+      "status": "online"
     },
     "DeleteRepositoryTags": {
       "document": "用于企业版批量删除Repository Tag",
       "input": "DeleteRepositoryTagsRequest",
       "name": "批量删除Repository Tag",
-      "output": "DeleteRepositoryTagsResponse"
+      "output": "DeleteRepositoryTagsResponse",
+      "status": "online"
     },
     "DeleteSecurityPolicy": {
       "document": "删除实例公网访问白名单策略",
       "input": "DeleteSecurityPolicyRequest",
       "name": "删除实例公网访问白名单策略",
-      "output": "DeleteSecurityPolicyResponse"
+      "output": "DeleteSecurityPolicyResponse",
+      "status": "online"
     },
     "DeleteSignaturePolicy": {
       "document": "删除命名空间加签策略",
       "input": "DeleteSignaturePolicyRequest",
       "name": "删除命名空间加签策略",
-      "output": "DeleteSignaturePolicyResponse"
+      "output": "DeleteSignaturePolicyResponse",
+      "status": "online"
     },
     "DeleteTagRetentionRule": {
       "document": "删除版本保留规则",
       "input": "DeleteTagRetentionRuleRequest",
       "name": "删除版本保留规则",
-      "output": "DeleteTagRetentionRuleResponse"
+      "output": "DeleteTagRetentionRuleResponse",
+      "status": "online"
     },
     "DeleteWebhookTrigger": {
       "document": "删除触发器",
       "input": "DeleteWebhookTriggerRequest",
       "name": "删除触发器",
-      "output": "DeleteWebhookTriggerResponse"
+      "output": "DeleteWebhookTriggerResponse",
+      "status": "online"
     },
     "DescribeApplicationTriggerLogPersonal": {
       "document": "用于查询应用更新触发器触发日志",
       "input": "DescribeApplicationTriggerLogPersonalRequest",
       "name": "查询应用更新触发器触发日志",
-      "output": "DescribeApplicationTriggerLogPersonalResponse"
+      "output": "DescribeApplicationTriggerLogPersonalResponse",
+      "status": "online"
     },
     "DescribeApplicationTriggerPersonal": {
       "document": "用于查询应用更新触发器",
       "input": "DescribeApplicationTriggerPersonalRequest",
       "name": "查询应用更新触发器",
-      "output": "DescribeApplicationTriggerPersonalResponse"
+      "output": "DescribeApplicationTriggerPersonalResponse",
+      "status": "online"
     },
     "DescribeChartDownloadInfo": {
       "document": "用于在企业版中返回Chart的下载信息",
       "input": "DescribeChartDownloadInfoRequest",
       "name": "查询Chart包下载信息",
-      "output": "DescribeChartDownloadInfoResponse"
+      "output": "DescribeChartDownloadInfoResponse",
+      "status": "online"
     },
     "DescribeExternalEndpointStatus": {
       "document": "查询实例公网访问入口状态",
       "input": "DescribeExternalEndpointStatusRequest",
       "name": "查询实例公网访问入口状态",
-      "output": "DescribeExternalEndpointStatusResponse"
+      "output": "DescribeExternalEndpointStatusResponse",
+      "status": "online"
     },
     "DescribeFavorRepositoryPersonal": {
       "document": "查询个人收藏仓库",
       "input": "DescribeFavorRepositoryPersonalRequest",
       "name": "查询个人收藏仓库",
-      "output": "DescribeFavorRepositoryPersonalResponse"
+      "output": "DescribeFavorRepositoryPersonalResponse",
+      "status": "online"
     },
     "DescribeGCJobs": {
       "document": "GC 最近10条历史",
       "input": "DescribeGCJobsRequest",
       "name": "GC 历史",
-      "output": "DescribeGCJobsResponse"
+      "output": "DescribeGCJobsResponse",
+      "status": "online"
     },
     "DescribeImageAccelerateService": {
       "document": "查询镜像加速服务状态",
       "input": "DescribeImageAccelerateServiceRequest",
       "name": "查询镜像加速服务状态",
-      "output": "DescribeImageAccelerateServiceResponse"
+      "output": "DescribeImageAccelerateServiceResponse",
+      "status": "online"
     },
     "DescribeImageFilterPersonal": {
       "document": "用于在个人版中查询与指定tag镜像内容相同的tag列表",
       "input": "DescribeImageFilterPersonalRequest",
       "name": "查询个人版中与指定tag镜像内容相同的tag列表",
-      "output": "DescribeImageFilterPersonalResponse"
+      "output": "DescribeImageFilterPersonalResponse",
+      "status": "online"
     },
     "DescribeImageLifecycleGlobalPersonal": {
       "document": "用于获取个人版全局镜像版本自动清理策略",
       "input": "DescribeImageLifecycleGlobalPersonalRequest",
       "name": "获取个人版全局镜像版本自动清理策略",
-      "output": "DescribeImageLifecycleGlobalPersonalResponse"
+      "output": "DescribeImageLifecycleGlobalPersonalResponse",
+      "status": "online"
     },
     "DescribeImageLifecyclePersonal": {
       "document": "用于获取个人版仓库中自动清理策略",
       "input": "DescribeImageLifecyclePersonalRequest",
       "name": "获取个人版仓库自动清理策略",
-      "output": "DescribeImageLifecyclePersonalResponse"
+      "output": "DescribeImageLifecyclePersonalResponse",
+      "status": "online"
     },
     "DescribeImageManifests": {
       "document": "查询容器镜像Manifest信息",
       "input": "DescribeImageManifestsRequest",
       "name": "查询容器镜像Manifest信息",
-      "output": "DescribeImageManifestsResponse"
+      "output": "DescribeImageManifestsResponse",
+      "status": "online"
     },
     "DescribeImagePersonal": {
       "document": "用于获取个人版镜像仓库tag列表",
       "input": "DescribeImagePersonalRequest",
       "name": "获取个人版镜像仓库tag列表",
-      "output": "DescribeImagePersonalResponse"
+      "output": "DescribeImagePersonalResponse",
+      "status": "online"
     },
     "DescribeImages": {
       "document": "查询镜像版本列表或指定容器镜像信息",
       "input": "DescribeImagesRequest",
       "name": "查询容器镜像信息",
-      "output": "DescribeImagesResponse"
+      "output": "DescribeImagesResponse",
+      "status": "online"
     },
     "DescribeImmutableTagRules": {
       "document": "列出镜像不可变规则",
       "input": "DescribeImmutableTagRulesRequest",
       "name": "列出镜像不可变规则",
-      "output": "DescribeImmutableTagRulesResponse"
+      "output": "DescribeImmutableTagRulesResponse",
+      "status": "online"
     },
     "DescribeInstanceAll": {
       "document": "查询全部实例信息",
       "input": "DescribeInstanceAllRequest",
       "name": "查询全部实例信息",
-      "output": "DescribeInstanceAllResponse"
+      "output": "DescribeInstanceAllResponse",
+      "status": "online"
     },
     "DescribeInstanceAllNamespaces": {
       "document": "查询所有实例命名空间列表",
       "input": "DescribeInstanceAllNamespacesRequest",
       "name": "查询所有实例命名空间",
-      "output": "DescribeInstanceAllNamespacesResponse"
+      "output": "DescribeInstanceAllNamespacesResponse",
+      "status": "online"
     },
     "DescribeInstanceCustomizedDomain": {
       "document": "查询实例自定义域名列表",
       "input": "DescribeInstanceCustomizedDomainRequest",
       "name": "查询实例自定义域名列表",
-      "output": "DescribeInstanceCustomizedDomainResponse"
+      "output": "DescribeInstanceCustomizedDomainResponse",
+      "status": "online"
     },
     "DescribeInstanceStatus": {
       "document": "查询实例当前状态以及过程信息",
       "input": "DescribeInstanceStatusRequest",
       "name": "查询实例状态",
-      "output": "DescribeInstanceStatusResponse"
+      "output": "DescribeInstanceStatusResponse",
+      "status": "online"
     },
     "DescribeInstanceToken": {
       "document": "查询长期访问凭证信息",
       "input": "DescribeInstanceTokenRequest",
       "name": "查询长期访问凭证信息",
-      "output": "DescribeInstanceTokenResponse"
+      "output": "DescribeInstanceTokenResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "查询实例信息",
       "input": "DescribeInstancesRequest",
       "name": "查询实例信息",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeInternalEndpointDnsStatus": {
       "document": "批量查询vpc是否已经添加私有域名解析",
       "input": "DescribeInternalEndpointDnsStatusRequest",
       "name": "查询私有域名解析状态",
-      "output": "DescribeInternalEndpointDnsStatusResponse"
+      "output": "DescribeInternalEndpointDnsStatusResponse",
+      "status": "online"
     },
     "DescribeInternalEndpoints": {
       "document": "查询实例内网访问VPC链接",
       "input": "DescribeInternalEndpointsRequest",
       "name": "查询实例内网访问VPC链接",
-      "output": "DescribeInternalEndpointsResponse"
+      "output": "DescribeInternalEndpointsResponse",
+      "status": "online"
     },
     "DescribeNamespacePersonal": {
       "document": "查询个人版命名空间信息",
       "input": "DescribeNamespacePersonalRequest",
       "name": "查询个人版命名空间信息",
-      "output": "DescribeNamespacePersonalResponse"
+      "output": "DescribeNamespacePersonalResponse",
+      "status": "online"
     },
     "DescribeNamespaces": {
       "document": "查询命名空间列表或指定命名空间信息",
       "input": "DescribeNamespacesRequest",
       "name": "查询命名空间信息",
-      "output": "DescribeNamespacesResponse"
+      "output": "DescribeNamespacesResponse",
+      "status": "online"
     },
     "DescribeRegions": {
       "document": "用于在TCR中获取可用区域",
       "input": "DescribeRegionsRequest",
       "name": "列出TCR可用区域",
-      "output": "DescribeRegionsResponse"
+      "output": "DescribeRegionsResponse",
+      "status": "online"
     },
     "DescribeReplicationInstanceCreateTasks": {
       "document": "查询创建从实例任务状态",
       "input": "DescribeReplicationInstanceCreateTasksRequest",
       "name": "查询创建从实例任务状态",
-      "output": "DescribeReplicationInstanceCreateTasksResponse"
+      "output": "DescribeReplicationInstanceCreateTasksResponse",
+      "status": "online"
     },
     "DescribeReplicationInstanceSyncStatus": {
       "document": "查询从实例同步状态",
       "input": "DescribeReplicationInstanceSyncStatusRequest",
       "name": "查询从实例同步状态",
-      "output": "DescribeReplicationInstanceSyncStatusResponse"
+      "output": "DescribeReplicationInstanceSyncStatusResponse",
+      "status": "online"
     },
     "DescribeReplicationInstances": {
       "document": "查询从实例列表",
       "input": "DescribeReplicationInstancesRequest",
       "name": "查询从实例列表",
-      "output": "DescribeReplicationInstancesResponse"
+      "output": "DescribeReplicationInstancesResponse",
+      "status": "online"
     },
     "DescribeRepositories": {
       "document": "查询镜像仓库列表或指定镜像仓库信息",
       "input": "DescribeRepositoriesRequest",
       "name": "查询镜像仓库信息",
-      "output": "DescribeRepositoriesResponse"
+      "output": "DescribeRepositoriesResponse",
+      "status": "online"
     },
     "DescribeRepositoryFilterPersonal": {
       "document": "用于在个人版镜像仓库中，获取满足输入搜索条件的用户镜像仓库",
       "input": "DescribeRepositoryFilterPersonalRequest",
       "name": "获取满足输入搜索条件的个人版镜像仓库",
-      "output": "DescribeRepositoryFilterPersonalResponse"
+      "output": "DescribeRepositoryFilterPersonalResponse",
+      "status": "online"
     },
     "DescribeRepositoryOwnerPersonal": {
       "document": "用于在个人版中获取用户全部的镜像仓库列表",
       "input": "DescribeRepositoryOwnerPersonalRequest",
       "name": "查询个人版所有仓库",
-      "output": "DescribeRepositoryOwnerPersonalResponse"
+      "output": "DescribeRepositoryOwnerPersonalResponse",
+      "status": "online"
     },
     "DescribeRepositoryPersonal": {
       "document": "查询个人版仓库信息",
       "input": "DescribeRepositoryPersonalRequest",
       "name": "查询个人版仓库信息",
-      "output": "DescribeRepositoryPersonalResponse"
+      "output": "DescribeRepositoryPersonalResponse",
+      "status": "online"
     },
     "DescribeSecurityPolicies": {
       "document": "查询实例公网访问白名单策略",
       "input": "DescribeSecurityPoliciesRequest",
       "name": "查询实例公网访问白名单策略",
-      "output": "DescribeSecurityPoliciesResponse"
+      "output": "DescribeSecurityPoliciesResponse",
+      "status": "online"
     },
     "DescribeTagRetentionExecution": {
       "document": "查询版本保留执行记录",
       "input": "DescribeTagRetentionExecutionRequest",
       "name": "查询版本保留执行记录",
-      "output": "DescribeTagRetentionExecutionResponse"
+      "output": "DescribeTagRetentionExecutionResponse",
+      "status": "online"
     },
     "DescribeTagRetentionExecutionTask": {
       "document": "查询版本保留执行任务",
       "input": "DescribeTagRetentionExecutionTaskRequest",
       "name": "查询版本保留执行任务",
-      "output": "DescribeTagRetentionExecutionTaskResponse"
+      "output": "DescribeTagRetentionExecutionTaskResponse",
+      "status": "online"
     },
     "DescribeTagRetentionRules": {
       "document": "查询版本保留规则",
       "input": "DescribeTagRetentionRulesRequest",
       "name": "查询版本保留规则",
-      "output": "DescribeTagRetentionRulesResponse"
+      "output": "DescribeTagRetentionRulesResponse",
+      "status": "online"
     },
     "DescribeUserQuotaPersonal": {
       "document": "查询个人用户配额",
       "input": "DescribeUserQuotaPersonalRequest",
       "name": "查询个人用户配额",
-      "output": "DescribeUserQuotaPersonalResponse"
+      "output": "DescribeUserQuotaPersonalResponse",
+      "status": "online"
     },
     "DescribeWebhookTrigger": {
       "document": "查询触发器",
       "input": "DescribeWebhookTriggerRequest",
       "name": "查询触发器",
-      "output": "DescribeWebhookTriggerResponse"
+      "output": "DescribeWebhookTriggerResponse",
+      "status": "online"
     },
     "DescribeWebhookTriggerLog": {
       "document": "获取触发器日志",
       "input": "DescribeWebhookTriggerLogRequest",
       "name": "获取触发器日志",
-      "output": "DescribeWebhookTriggerLogResponse"
+      "output": "DescribeWebhookTriggerLogResponse",
+      "status": "online"
     },
     "DownloadHelmChart": {
       "document": "用于在TCR中下载helm chart",
       "input": "DownloadHelmChartRequest",
       "name": "下载Helm Chart",
-      "output": "DownloadHelmChartResponse"
+      "output": "DownloadHelmChartResponse",
+      "status": "online"
     },
     "DuplicateImagePersonal": {
       "document": "用于在个人版镜像仓库中复制镜像版本",
       "input": "DuplicateImagePersonalRequest",
       "name": "复制个人版仓库镜像版本",
-      "output": "DuplicateImagePersonalResponse"
+      "output": "DuplicateImagePersonalResponse",
+      "status": "online"
     },
     "ManageExternalEndpoint": {
       "document": "管理实例公网访问",
       "input": "ManageExternalEndpointRequest",
       "name": "管理实例公网访问",
-      "output": "ManageExternalEndpointResponse"
+      "output": "ManageExternalEndpointResponse",
+      "status": "online"
     },
     "ManageImageLifecycleGlobalPersonal": {
       "document": "用于设置个人版全局镜像版本自动清理策略",
       "input": "ManageImageLifecycleGlobalPersonalRequest",
       "name": "设置个人版全局镜像版本自动清理策略",
-      "output": "ManageImageLifecycleGlobalPersonalResponse"
+      "output": "ManageImageLifecycleGlobalPersonalResponse",
+      "status": "online"
     },
     "ManageInternalEndpoint": {
       "document": "管理实例内网访问VPC链接",
       "input": "ManageInternalEndpointRequest",
       "name": "管理实例内网访问VPC链接",
-      "output": "ManageInternalEndpointResponse"
+      "output": "ManageInternalEndpointResponse",
+      "status": "online"
     },
     "ManageReplication": {
       "document": "管理实例同步",
       "input": "ManageReplicationRequest",
       "name": "管理实例同步",
-      "output": "ManageReplicationResponse"
+      "output": "ManageReplicationResponse",
+      "status": "online"
     },
     "ModifyApplicationTriggerPersonal": {
       "document": "用于修改应用更新触发器",
       "input": "ModifyApplicationTriggerPersonalRequest",
       "name": "修改应用更新触发器",
-      "output": "ModifyApplicationTriggerPersonalResponse"
+      "output": "ModifyApplicationTriggerPersonalResponse",
+      "status": "online"
     },
     "ModifyImmutableTagRules": {
       "document": "更新镜像不可变规则",
       "input": "ModifyImmutableTagRulesRequest",
       "name": "更新镜像不可变规则",
-      "output": "ModifyImmutableTagRulesResponse"
+      "output": "ModifyImmutableTagRulesResponse",
+      "status": "online"
     },
     "ModifyInstance": {
       "document": "更新实例信息",
       "input": "ModifyInstanceRequest",
       "name": "更新实例信息",
-      "output": "ModifyInstanceResponse"
+      "output": "ModifyInstanceResponse",
+      "status": "online"
     },
     "ModifyInstanceToken": {
       "document": "更新实例内指定长期访问凭证的启用状态",
       "input": "ModifyInstanceTokenRequest",
       "name": "更新实例长期访问凭证",
-      "output": "ModifyInstanceTokenResponse"
+      "output": "ModifyInstanceTokenResponse",
+      "status": "online"
     },
     "ModifyNamespace": {
       "document": "更新命名空间信息，当前仅支持修改命名空间访问级别",
       "input": "ModifyNamespaceRequest",
       "name": "更新命名空间信息",
-      "output": "ModifyNamespaceResponse"
+      "output": "ModifyNamespaceResponse",
+      "status": "online"
     },
     "ModifyRepository": {
       "document": "更新镜像仓库信息，可修改仓库描述信息",
       "input": "ModifyRepositoryRequest",
       "name": "更新镜像仓库信息",
-      "output": "ModifyRepositoryResponse"
+      "output": "ModifyRepositoryResponse",
+      "status": "online"
     },
     "ModifyRepositoryAccessPersonal": {
       "document": "用于更新个人版镜像仓库的访问属性",
       "input": "ModifyRepositoryAccessPersonalRequest",
       "name": "更新个人版仓库访问属性",
-      "output": "ModifyRepositoryAccessPersonalResponse"
+      "output": "ModifyRepositoryAccessPersonalResponse",
+      "status": "online"
     },
     "ModifyRepositoryInfoPersonal": {
       "document": "用于在个人版镜像仓库中更新容器镜像描述",
       "input": "ModifyRepositoryInfoPersonalRequest",
       "name": "更新个人版镜像仓库描述",
-      "output": "ModifyRepositoryInfoPersonalResponse"
+      "output": "ModifyRepositoryInfoPersonalResponse",
+      "status": "online"
     },
     "ModifySecurityPolicy": {
       "document": "更新实例公网访问白名单",
       "input": "ModifySecurityPolicyRequest",
       "name": "更新实例公网访问白名单",
-      "output": "ModifySecurityPolicyResponse"
+      "output": "ModifySecurityPolicyResponse",
+      "status": "online"
     },
     "ModifyTagRetentionRule": {
       "document": "更新版本保留规则",
       "input": "ModifyTagRetentionRuleRequest",
       "name": "更新版本保留规则",
-      "output": "ModifyTagRetentionRuleResponse"
+      "output": "ModifyTagRetentionRuleResponse",
+      "status": "online"
     },
     "ModifyUserPasswordPersonal": {
       "document": "修改个人用户登录密码",
       "input": "ModifyUserPasswordPersonalRequest",
       "name": "修改个人用户登录密码",
-      "output": "ModifyUserPasswordPersonalResponse"
+      "output": "ModifyUserPasswordPersonalResponse",
+      "status": "online"
     },
     "ModifyWebhookTrigger": {
       "document": "更新触发器",
       "input": "ModifyWebhookTriggerRequest",
       "name": "更新触发器",
-      "output": "ModifyWebhookTriggerResponse"
+      "output": "ModifyWebhookTriggerResponse",
+      "status": "online"
     },
     "RenewInstance": {
       "document": "预付费实例续费，同时支持按量计费转包年包月",
       "input": "RenewInstanceRequest",
       "name": "续费实例",
-      "output": "RenewInstanceResponse"
+      "output": "RenewInstanceResponse",
+      "status": "online"
     },
     "ValidateNamespaceExistPersonal": {
       "document": "查询个人版用户命名空间是否存在",
       "input": "ValidateNamespaceExistPersonalRequest",
       "name": "验证个人版命名空间是否存在",
-      "output": "ValidateNamespaceExistPersonalResponse"
+      "output": "ValidateNamespaceExistPersonalResponse",
+      "status": "online"
     },
     "ValidateRepositoryExistPersonal": {
       "document": "用于判断个人版仓库是否存在",
       "input": "ValidateRepositoryExistPersonalRequest",
       "name": "验证个人版仓库是否存在",
-      "output": "ValidateRepositoryExistPersonalResponse"
+      "output": "ValidateRepositoryExistPersonalResponse",
+      "status": "online"
     }
   },
   "metadata": {

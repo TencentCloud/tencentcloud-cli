@@ -4,25 +4,29 @@
       "document": "本接口(BindAutoScalingGroup)用于为集群队列绑定弹性伸缩组",
       "input": "BindAutoScalingGroupRequest",
       "name": "绑定弹性伸缩组",
-      "output": "BindAutoScalingGroupResponse"
+      "output": "BindAutoScalingGroupResponse",
+      "status": "online"
     },
     "CreateCluster": {
       "document": "本接口 (CreateCluster) 用于创建并启动集群。",
       "input": "CreateClusterRequest",
       "name": "创建集群",
-      "output": "CreateClusterResponse"
+      "output": "CreateClusterResponse",
+      "status": "online"
     },
     "DeleteCluster": {
       "document": "本接口（DeleteCluster）用于删除一个指定的集群。",
       "input": "DeleteClusterRequest",
       "name": "删除集群",
-      "output": "DeleteClusterResponse"
+      "output": "DeleteClusterResponse",
+      "status": "online"
     },
     "DescribeClusters": {
       "document": "本接口（DescribeClusters）用于查询集群列表。",
       "input": "DescribeClustersRequest",
       "name": "查询集群列表",
-      "output": "DescribeClustersResponse"
+      "output": "DescribeClustersResponse",
+      "status": "online"
     }
   },
   "metadata": {

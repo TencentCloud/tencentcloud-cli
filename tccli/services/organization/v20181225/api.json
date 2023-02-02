@@ -4,121 +4,141 @@
       "document": "接受加入企业组织邀请",
       "input": "AcceptOrganizationInvitationRequest",
       "name": "接受加入企业组织邀请",
-      "output": "AcceptOrganizationInvitationResponse"
+      "output": "AcceptOrganizationInvitationResponse",
+      "status": "online"
     },
     "AddOrganizationNode": {
       "document": "添加企业组织单元",
       "input": "AddOrganizationNodeRequest",
       "name": "添加企业组织单元",
-      "output": "AddOrganizationNodeResponse"
+      "output": "AddOrganizationNodeResponse",
+      "status": "online"
     },
     "CancelOrganizationInvitation": {
       "document": "取消企业组织邀请",
       "input": "CancelOrganizationInvitationRequest",
       "name": "取消企业组织邀请",
-      "output": "CancelOrganizationInvitationResponse"
+      "output": "CancelOrganizationInvitationResponse",
+      "status": "online"
     },
     "CreateOrganization": {
       "document": "创建企业组织",
       "input": "CreateOrganizationRequest",
       "name": "创建企业组织",
-      "output": "CreateOrganizationResponse"
+      "output": "CreateOrganizationResponse",
+      "status": "online"
     },
     "DeleteOrganization": {
       "document": "删除企业组织",
       "input": "DeleteOrganizationRequest",
       "name": "删除企业组织",
-      "output": "DeleteOrganizationResponse"
+      "output": "DeleteOrganizationResponse",
+      "status": "online"
     },
     "DeleteOrganizationMemberFromNode": {
       "document": "删除企业组织成员",
       "input": "DeleteOrganizationMemberFromNodeRequest",
       "name": "删除企业组织成员",
-      "output": "DeleteOrganizationMemberFromNodeResponse"
+      "output": "DeleteOrganizationMemberFromNodeResponse",
+      "status": "online"
     },
     "DeleteOrganizationMembers": {
       "document": "批量删除企业组织成员",
       "input": "DeleteOrganizationMembersRequest",
       "name": "批量删除企业组织成员",
-      "output": "DeleteOrganizationMembersResponse"
+      "output": "DeleteOrganizationMembersResponse",
+      "status": "online"
     },
     "DeleteOrganizationNodes": {
       "document": "批量删除企业组织单元",
       "input": "DeleteOrganizationNodesRequest",
       "name": "批量删除企业组织单元",
-      "output": "DeleteOrganizationNodesResponse"
+      "output": "DeleteOrganizationNodesResponse",
+      "status": "online"
     },
     "DenyOrganizationInvitation": {
       "document": "拒绝企业组织邀请",
       "input": "DenyOrganizationInvitationRequest",
       "name": "拒绝企业组织邀请",
-      "output": "DenyOrganizationInvitationResponse"
+      "output": "DenyOrganizationInvitationResponse",
+      "status": "online"
     },
     "GetOrganization": {
       "document": "获取企业组织信息",
       "input": "GetOrganizationRequest",
       "name": "获取企业组织信息",
-      "output": "GetOrganizationResponse"
+      "output": "GetOrganizationResponse",
+      "status": "online"
     },
     "GetOrganizationMember": {
       "document": "获取企业组织成员",
       "input": "GetOrganizationMemberRequest",
       "name": "获取企业组织成员",
-      "output": "GetOrganizationMemberResponse"
+      "output": "GetOrganizationMemberResponse",
+      "status": "online"
     },
     "ListOrganizationInvitations": {
       "document": "获取邀请信息列表",
       "input": "ListOrganizationInvitationsRequest",
       "name": "获取邀请信息列表",
-      "output": "ListOrganizationInvitationsResponse"
+      "output": "ListOrganizationInvitationsResponse",
+      "status": "online"
     },
     "ListOrganizationMembers": {
       "document": "获取企业组织成员列表",
       "input": "ListOrganizationMembersRequest",
       "name": "获取企业组织成员列表",
-      "output": "ListOrganizationMembersResponse"
+      "output": "ListOrganizationMembersResponse",
+      "status": "online"
     },
     "ListOrganizationNodeMembers": {
       "document": "获取企业组织单元成员列表",
       "input": "ListOrganizationNodeMembersRequest",
       "name": "获取企业组织单元成员列表",
-      "output": "ListOrganizationNodeMembersResponse"
+      "output": "ListOrganizationNodeMembersResponse",
+      "status": "online"
     },
     "ListOrganizationNodes": {
       "document": "获取企业组织单元列表",
       "input": "ListOrganizationNodesRequest",
       "name": "获取企业组织单元列表",
-      "output": "ListOrganizationNodesResponse"
+      "output": "ListOrganizationNodesResponse",
+      "status": "online"
     },
     "MoveOrganizationMembersToNode": {
       "document": "移动成员到指定企业组织单元",
       "input": "MoveOrganizationMembersToNodeRequest",
       "name": "移动成员到指定企业组织单元",
-      "output": "MoveOrganizationMembersToNodeResponse"
+      "output": "MoveOrganizationMembersToNodeResponse",
+      "status": "online"
     },
     "QuitOrganization": {
       "document": "退出企业组织",
       "input": "QuitOrganizationRequest",
       "name": "退出企业组织",
-      "output": "QuitOrganizationResponse"
+      "output": "QuitOrganizationResponse",
+      "status": "online"
     },
     "SendOrganizationInvitation": {
       "document": "发送企业组织邀请",
       "input": "SendOrganizationInvitationRequest",
       "name": "发送企业组织邀请",
-      "output": "SendOrganizationInvitationResponse"
+      "output": "SendOrganizationInvitationResponse",
+      "status": "online"
     },
     "UpdateOrganizationMember": {
       "document": "更新企业成员信息",
       "input": "UpdateOrganizationMemberRequest",
       "name": "更新企业成员信息",
-      "output": "UpdateOrganizationMemberResponse"
+      "output": "UpdateOrganizationMemberResponse",
+      "status": "online"
     },
     "UpdateOrganizationNode": {
       "document": "更新企业组织单元",
       "input": "UpdateOrganizationNodeRequest",
       "name": "更新企业组织单元",
-      "output": "UpdateOrganizationNodeResponse"
+      "output": "UpdateOrganizationNodeResponse",
+      "status": "online"
     }
   },
   "metadata": {

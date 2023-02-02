@@ -4,265 +4,309 @@
       "document": "复制一个函数，您可以选择将复制出的新函数放置在特定的Region和Namespace。\n注：本接口**不会**复制函数的以下对象或属性：\n1. 函数的触发器\n2. 除了$LATEST以外的其它版本\n3. 函数配置的日志投递到的CLS目标。\n\n如有需要，您可以在复制后手动配置新函数。",
       "input": "CopyFunctionRequest",
       "name": "复制函数",
-      "output": "CopyFunctionResponse"
+      "output": "CopyFunctionResponse",
+      "status": "online"
     },
     "CreateAlias": {
       "document": "为某个函数版本创建一个别名，您可以使用别名来标记特定的函数版本，如DEV/RELEASE版本，也可以随时修改别名指向的版本。\n一个别名必须指向一个主版本，此外还可以同时指向一个附加版本。调用函数时指定特定的别名，则请求会被发送到别名指向的版本上，您可以配置请求发送到主版本和附加版本的比例。",
       "input": "CreateAliasRequest",
       "name": "创建函数版本别名",
-      "output": "CreateAliasResponse"
+      "output": "CreateAliasResponse",
+      "status": "online"
     },
     "CreateFunction": {
       "document": "该接口根据传入参数创建新的函数。",
       "input": "CreateFunctionRequest",
       "name": "创建函数",
-      "output": "CreateFunctionResponse"
+      "output": "CreateFunctionResponse",
+      "status": "online"
     },
     "CreateNamespace": {
       "document": "该接口根据传入的参数创建命名空间。",
       "input": "CreateNamespaceRequest",
       "name": "创建命名空间",
-      "output": "CreateNamespaceResponse"
+      "output": "CreateNamespaceResponse",
+      "status": "online"
     },
     "CreateTrigger": {
       "document": "该接口根据参数输入设置新的触发方式。",
       "input": "CreateTriggerRequest",
       "name": "设置函数触发方式",
-      "output": "CreateTriggerResponse"
+      "output": "CreateTriggerResponse",
+      "status": "online"
     },
     "DeleteAlias": {
       "document": "删除一个函数版本的别名",
       "input": "DeleteAliasRequest",
       "name": "删除别名",
-      "output": "DeleteAliasResponse"
+      "output": "DeleteAliasResponse",
+      "status": "online"
     },
     "DeleteFunction": {
       "document": "该接口根据传入参数删除函数。",
       "input": "DeleteFunctionRequest",
       "name": "删除函数",
-      "output": "DeleteFunctionResponse"
+      "output": "DeleteFunctionResponse",
+      "status": "online"
     },
     "DeleteLayerVersion": {
       "document": "删除指定层的指定版本，被删除的版本无法再关联到函数上，但不会影响正在引用这个层的函数。",
       "input": "DeleteLayerVersionRequest",
       "name": "删除层版本",
-      "output": "DeleteLayerVersionResponse"
+      "output": "DeleteLayerVersionResponse",
+      "status": "online"
     },
     "DeleteNamespace": {
       "document": "该接口根据传入的参数删除命名空间。",
       "input": "DeleteNamespaceRequest",
       "name": "删除命名空间",
-      "output": "DeleteNamespaceResponse"
+      "output": "DeleteNamespaceResponse",
+      "status": "online"
     },
     "DeleteProvisionedConcurrencyConfig": {
       "document": "删除函数版本的预置并发配置。",
       "input": "DeleteProvisionedConcurrencyConfigRequest",
       "name": "删除预置并发",
-      "output": "DeleteProvisionedConcurrencyConfigResponse"
+      "output": "DeleteProvisionedConcurrencyConfigResponse",
+      "status": "online"
     },
     "DeleteReservedConcurrencyConfig": {
       "document": "删除函数的最大独占配额配置。",
       "input": "DeleteReservedConcurrencyConfigRequest",
       "name": "删除函数最大独占配额",
-      "output": "DeleteReservedConcurrencyConfigResponse"
+      "output": "DeleteReservedConcurrencyConfigResponse",
+      "status": "online"
     },
     "DeleteTrigger": {
       "document": "该接口根据参数传入删除已有的触发方式。",
       "input": "DeleteTriggerRequest",
       "name": "删除触发器",
-      "output": "DeleteTriggerResponse"
+      "output": "DeleteTriggerResponse",
+      "status": "online"
     },
     "GetAccount": {
       "document": "获取账户信息",
       "input": "GetAccountRequest",
       "name": "获取账户信息",
-      "output": "GetAccountResponse"
+      "output": "GetAccountResponse",
+      "status": "online"
     },
     "GetAlias": {
       "document": "获取别名的详细信息，包括名称、描述、版本、路由信息等。",
       "input": "GetAliasRequest",
       "name": "获取别名详细信息",
-      "output": "GetAliasResponse"
+      "output": "GetAliasResponse",
+      "status": "online"
     },
     "GetAsyncEventStatus": {
       "document": "获取函数异步执行事件状态，事件状态保留 3 * 24 小时（从事件完成开始计时）。",
       "input": "GetAsyncEventStatusRequest",
       "name": "获取函数异步事件状态",
-      "output": "GetAsyncEventStatusResponse"
+      "output": "GetAsyncEventStatusResponse",
+      "status": "online"
     },
     "GetFunction": {
       "document": "该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。",
       "input": "GetFunctionRequest",
       "name": "获取函数详细信息",
-      "output": "GetFunctionResponse"
+      "output": "GetFunctionResponse",
+      "status": "online"
     },
     "GetFunctionAddress": {
       "document": "该接口用于获取函数代码包的下载地址。",
       "input": "GetFunctionAddressRequest",
       "name": "获取函数代码下载地址",
-      "output": "GetFunctionAddressResponse"
+      "output": "GetFunctionAddressResponse",
+      "status": "online"
     },
     "GetFunctionEventInvokeConfig": {
       "document": "获取函数异步重试配置，包括重试次数和消息保留时间",
       "input": "GetFunctionEventInvokeConfigRequest",
       "name": "获取函数异步重试配置",
-      "output": "GetFunctionEventInvokeConfigResponse"
+      "output": "GetFunctionEventInvokeConfigResponse",
+      "status": "online"
     },
     "GetFunctionLogs": {
       "document": "该接口根据指定的日志查询条件返回函数运行日志。该接口已下线，查询函数请求运行的返回信息，请使用 [GetRequestStatus](https://cloud.tencent.com/document/product/583/65348)。查询函数运行日志，请参考[日志检索教程](https://cloud.tencent.com/document/product/583/52637)。",
       "input": "GetFunctionLogsRequest",
       "name": "获取函数运行日志",
-      "output": "GetFunctionLogsResponse"
+      "output": "GetFunctionLogsResponse",
+      "status": "online"
     },
     "GetLayerVersion": {
       "document": "获取层版本详细信息，包括用于下载层中文件的链接。",
       "input": "GetLayerVersionRequest",
       "name": "获取层版本详细信息",
-      "output": "GetLayerVersionResponse"
+      "output": "GetLayerVersionResponse",
+      "status": "online"
     },
     "GetProvisionedConcurrencyConfig": {
       "document": "获取函数或函数某一版本的预置并发详情。",
       "input": "GetProvisionedConcurrencyConfigRequest",
       "name": "获取函数预置并发详情",
-      "output": "GetProvisionedConcurrencyConfigResponse"
+      "output": "GetProvisionedConcurrencyConfigResponse",
+      "status": "online"
     },
     "GetRequestStatus": {
       "document": "该接口根据指定的查询条件返回函数单个请求运行状态。",
       "input": "GetRequestStatusRequest",
       "name": "获取函数单个请求运行状态",
-      "output": "GetRequestStatusResponse"
+      "output": "GetRequestStatusResponse",
+      "status": "online"
     },
     "GetReservedConcurrencyConfig": {
       "document": "获取函数的最大独占配额详情。",
       "input": "GetReservedConcurrencyConfigRequest",
       "name": "获取函数最大独占配额详情",
-      "output": "GetReservedConcurrencyConfigResponse"
+      "output": "GetReservedConcurrencyConfigResponse",
+      "status": "online"
     },
     "Invoke": {
       "document": "该接口用于运行函数。",
       "input": "InvokeRequest",
       "name": "运行函数",
-      "output": "InvokeResponse"
+      "output": "InvokeResponse",
+      "status": "online"
     },
     "InvokeFunction": {
       "document": " SCF同步调用函数接口",
       "input": "InvokeFunctionRequest",
       "name": "同步Invoke调用接口",
-      "output": "InvokeFunctionResponse"
+      "output": "InvokeFunctionResponse",
+      "status": "online"
     },
     "ListAliases": {
       "document": "返回一个函数下的全部别名，可以根据特定函数版本过滤。",
       "input": "ListAliasesRequest",
       "name": "获取别名列表",
-      "output": "ListAliasesResponse"
+      "output": "ListAliasesResponse",
+      "status": "online"
     },
     "ListAsyncEvents": {
       "document": "拉取函数异步事件列表",
       "input": "ListAsyncEventsRequest",
       "name": "拉取函数异步事件列表",
-      "output": "ListAsyncEventsResponse"
+      "output": "ListAsyncEventsResponse",
+      "status": "online"
     },
     "ListFunctions": {
       "document": "该接口根据传入的查询参数返回相关函数信息。",
       "input": "ListFunctionsRequest",
       "name": "获取函数列表",
-      "output": "ListFunctionsResponse"
+      "output": "ListFunctionsResponse",
+      "status": "online"
     },
     "ListLayerVersions": {
       "document": "返回指定层的全部版本的信息",
       "input": "ListLayerVersionsRequest",
       "name": "获取层版本列表",
-      "output": "ListLayerVersionsResponse"
+      "output": "ListLayerVersionsResponse",
+      "status": "online"
     },
     "ListLayers": {
       "document": "返回全部层的列表，其中包含了每个层最新版本的信息，可以通过适配运行时进行过滤。",
       "input": "ListLayersRequest",
       "name": "返回层列表",
-      "output": "ListLayersResponse"
+      "output": "ListLayersResponse",
+      "status": "online"
     },
     "ListNamespaces": {
       "document": "列出命名空间列表",
       "input": "ListNamespacesRequest",
       "name": "列出命名空间列表",
-      "output": "ListNamespacesResponse"
+      "output": "ListNamespacesResponse",
+      "status": "online"
     },
     "ListTriggers": {
       "document": "获取函数触发器列表",
       "input": "ListTriggersRequest",
       "name": "获取函数触发器列表",
-      "output": "ListTriggersResponse"
+      "output": "ListTriggersResponse",
+      "status": "online"
     },
     "ListVersionByFunction": {
       "document": "该接口根据传入的参数查询函数的版本。",
       "input": "ListVersionByFunctionRequest",
       "name": "查询函数版本",
-      "output": "ListVersionByFunctionResponse"
+      "output": "ListVersionByFunctionResponse",
+      "status": "online"
     },
     "PublishLayerVersion": {
       "document": "使用给定的zip文件或cos对象创建一个层的新版本，每次使用相同的层的名称调用本接口，都会生成一个新版本。",
       "input": "PublishLayerVersionRequest",
       "name": "发布层版本",
-      "output": "PublishLayerVersionResponse"
+      "output": "PublishLayerVersionResponse",
+      "status": "online"
     },
     "PublishVersion": {
       "document": "该接口用于用户发布新版本函数。",
       "input": "PublishVersionRequest",
       "name": "发布新版本",
-      "output": "PublishVersionResponse"
+      "output": "PublishVersionResponse",
+      "status": "online"
     },
     "PutProvisionedConcurrencyConfig": {
       "document": "设置函数某一非$LATEST版本的预置并发。",
       "input": "PutProvisionedConcurrencyConfigRequest",
       "name": "设置预置并发",
-      "output": "PutProvisionedConcurrencyConfigResponse"
+      "output": "PutProvisionedConcurrencyConfigResponse",
+      "status": "online"
     },
     "PutReservedConcurrencyConfig": {
       "document": "设置函数最大独占配额",
       "input": "PutReservedConcurrencyConfigRequest",
       "name": "设置最大独占配额",
-      "output": "PutReservedConcurrencyConfigResponse"
+      "output": "PutReservedConcurrencyConfigResponse",
+      "status": "online"
     },
     "PutTotalConcurrencyConfig": {
       "document": "修改账号并发限制配额",
       "input": "PutTotalConcurrencyConfigRequest",
       "name": "修改账号并发限制配额",
-      "output": "PutTotalConcurrencyConfigResponse"
+      "output": "PutTotalConcurrencyConfigResponse",
+      "status": "online"
     },
     "TerminateAsyncEvent": {
       "document": "终止正在运行中的函数异步事件",
       "input": "TerminateAsyncEventRequest",
       "name": "终止函数异步事件",
-      "output": "TerminateAsyncEventResponse"
+      "output": "TerminateAsyncEventResponse",
+      "status": "online"
     },
     "UpdateAlias": {
       "document": "更新别名的配置",
       "input": "UpdateAliasRequest",
       "name": "更新别名的配置",
-      "output": "UpdateAliasResponse"
+      "output": "UpdateAliasResponse",
+      "status": "online"
     },
     "UpdateFunctionCode": {
       "document": "该接口根据传入参数更新函数代码。",
       "input": "UpdateFunctionCodeRequest",
       "name": "更新函数代码",
-      "output": "UpdateFunctionCodeResponse"
+      "output": "UpdateFunctionCodeResponse",
+      "status": "online"
     },
     "UpdateFunctionConfiguration": {
       "document": "该接口根据传入参数更新函数配置。",
       "input": "UpdateFunctionConfigurationRequest",
       "name": "更新函数配置",
-      "output": "UpdateFunctionConfigurationResponse"
+      "output": "UpdateFunctionConfigurationResponse",
+      "status": "online"
     },
     "UpdateFunctionEventInvokeConfig": {
       "document": "更新函数的异步重试配置，包括重试次数和消息保留时间",
       "input": "UpdateFunctionEventInvokeConfigRequest",
       "name": "更新函数异步重试配置",
-      "output": "UpdateFunctionEventInvokeConfigResponse"
+      "output": "UpdateFunctionEventInvokeConfigResponse",
+      "status": "online"
     },
     "UpdateNamespace": {
       "document": "更新命名空间",
       "input": "UpdateNamespaceRequest",
       "name": "更新命名空间",
-      "output": "UpdateNamespaceResponse"
+      "output": "UpdateNamespaceResponse",
+      "status": "online"
     }
   },
   "metadata": {

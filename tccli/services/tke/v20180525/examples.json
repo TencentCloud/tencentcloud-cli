@@ -339,7 +339,7 @@
     "DeleteClusterNodePool": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterNodePool\n&ClusterId=cls-xxxxxx\n&NodePoolIds.0=np-xxxxxxxx\n&KeepInstance=true\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxx\",\n    \"KeepInstance\": \"true\",\n    \"NodePoolIds\": [\n        \"np-xxxxxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
         "title": "删除节点池"
       }
@@ -618,17 +618,17 @@
     ],
     "DescribeClusterNodePoolDetail": [
       {
-        "document": "",
+        "document": "查询节点池详情",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterNodePoolDetail\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NodePool\": {\n            \"AutoscalingGroupId\": \"asg-xxx\",\n            \"AutoscalingGroupStatus\": \"enabled\",\n            \"ClusterInstanceId\": \"cls-xxx\",\n            \"DesiredNodesNum\": 0,\n            \"Labels\": [],\n            \"LaunchConfigurationId\": \"asc-xxx\",\n            \"LifeState\": \"normal\",\n            \"MaxNodesNum\": 1,\n            \"MinNodesNum\": 0,\n            \"Name\": \"test\",\n            \"NodeCountSummary\": {\n                \"AutoscalingAdded\": {\n                    \"Initializing\": 0,\n                    \"Joining\": 0,\n                    \"Normal\": 0,\n                    \"Total\": 0\n                },\n                \"ManuallyAdded\": {\n                    \"Initializing\": 0,\n                    \"Joining\": 0,\n                    \"Normal\": 1,\n                    \"Total\": 1\n                }\n            },\n            \"NodePoolId\": \"np-xxxxx\",\n            \"Taints\": []\n        },\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NodePool\": {\n            \"NodePoolId\": \"xx\",\n            \"Name\": \"xx\",\n            \"ClusterInstanceId\": \"xx\",\n            \"LifeState\": \"xx\",\n            \"LaunchConfigurationId\": \"xx\",\n            \"AutoscalingGroupId\": \"xx\",\n            \"Labels\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"Taints\": [\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": \"xx\",\n                    \"Effect\": \"xx\"\n                }\n            ],\n            \"NodeCountSummary\": {\n                \"ManuallyAdded\": {\n                    \"Joining\": 0,\n                    \"Initializing\": 0,\n                    \"Normal\": 0,\n                    \"Total\": 0\n                },\n                \"AutoscalingAdded\": {\n                    \"Joining\": 0,\n                    \"Initializing\": 0,\n                    \"Normal\": 0,\n                    \"Total\": 0\n                }\n            },\n            \"AutoscalingGroupStatus\": \"xx\",\n            \"MaxNodesNum\": 0,\n            \"MinNodesNum\": 0,\n            \"DesiredNodesNum\": 0,\n            \"NodePoolOs\": \"xx\",\n            \"OsCustomizeType\": \"xx\",\n            \"ImageId\": \"xx\",\n            \"DesiredPodNum\": 0,\n            \"UserScript\": \"xx\",\n            \"Tags\": [\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"DeletionProtection\": true\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询节点池详情"
       }
     ],
     "DescribeClusterNodePools": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterNodePools\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NodePoolSet\": [\n            {\n                \"AutoscalingGroupId\": \"asg-xxxxx\",\n                \"AutoscalingGroupStatus\": \"enabled\",\n                \"ClusterInstanceId\": \"cls-xxxxx\",\n                \"DesiredNodesNum\": 1,\n                \"Labels\": [],\n                \"LaunchConfigurationId\": \"asc-xxxxx\",\n                \"LifeState\": \"normal\",\n                \"MaxNodesNum\": 1,\n                \"MinNodesNum\": 0,\n                \"Name\": \"test2\",\n                \"NodeCountSummary\": {\n                    \"AutoscalingAdded\": {\n                        \"Initializing\": 0,\n                        \"Joining\": 0,\n                        \"Normal\": 1,\n                        \"Total\": 1\n                    },\n                    \"ManuallyAdded\": {\n                        \"Initializing\": 0,\n                        \"Joining\": 0,\n                        \"Normal\": 0,\n                        \"Total\": 0\n                    }\n                },\n                \"NodePoolId\": \"np-xxxx\",\n                \"Taints\": []\n            }\n        ],\n        \"RequestId\": \"xxxxxx\",\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterNodePools\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodePoolSet\": [\n            {\n                \"AutoscalingGroupId\": \"\",\n                \"AutoscalingGroupStatus\": \"\",\n                \"ClusterInstanceId\": \"cls-69hshd30\",\n                \"DeletionProtection\": false,\n                \"DesiredNodesNum\": 1,\n                \"DesiredPodNum\": 0,\n                \"ImageId\": \"\",\n                \"Labels\": [],\n                \"LaunchConfigurationId\": \"\",\n                \"LifeState\": \"normal\",\n                \"MaxNodesNum\": 1,\n                \"MinNodesNum\": 0,\n                \"Name\": \"test\",\n                \"NodeCountSummary\": {\n                    \"AutoscalingAdded\": {\n                        \"Initializing\": 0,\n                        \"Joining\": 0,\n                        \"Normal\": 0,\n                        \"Total\": 0\n                    },\n                    \"ManuallyAdded\": {\n                        \"Initializing\": 0,\n                        \"Joining\": 0,\n                        \"Normal\": 0,\n                        \"Total\": 1\n                    }\n                },\n                \"NodePoolId\": \"np-5tx2l4de\",\n                \"NodePoolOs\": \"\",\n                \"OsCustomizeType\": \"\",\n                \"Tags\": null,\n                \"Taints\": [],\n                \"UserScript\": \"\"\n            }\n        ],\n        \"RequestId\": \"efb810cb-d5a2-4147-88ec-cd1e28c5202e\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询节点池列表"
       }
     ],
@@ -1296,8 +1296,8 @@
     ],
     "ModifyNodePoolDesiredCapacityAboutAsg": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=ModifyNodePoolDesiredCapacityAboutAsg\n&ClusterId=cls-xxx\n&NodePoolId=np-xxx\n&DesiredCapacity=6\n&<公共请求参数>",
+        "document": "修改节点池关联伸缩组的期望实例数示例",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePoolDesiredCapacityAboutAsg\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxx\",\n    \"DesiredCapacity\": \"6\",\n    \"NodePoolId\": \"np-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
         "title": "修改节点池关联伸缩组的期望实例数示例"
       }
@@ -1305,7 +1305,7 @@
     "ModifyNodePoolInstanceTypes": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=ModifyNodePoolInstanceTypes\n&ClusterId=cls-xxx\n&NodePoolId=np-xxx\n&InstanceTypes.0=ins-xxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePoolInstanceTypes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxx\",\n    \"InstanceTypes\": [\n        \"ins-xxx\"\n    ],\n    \"NodePoolId\": \"np-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
         "title": "修改节点池机型"
       }
@@ -1425,7 +1425,7 @@
     "SetNodePoolNodeProtection": [
       {
         "document": "当触发缩容时（包括手动和自动），节点不会被伸缩组从集群中移除",
-        "input": "https://tke.tencentcloudapi.com/?Action=SetNodePoolNodeProtection\n&ClusterId=cls-xxx\n&NodePoolId=np-xxx\n&InstanceIds.0=ins-xxx\n&ProtectedFromScaleIn=true\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNodePoolNodeProtection\n<公共请求参数>\n\n{\n    \"ProtectedFromScaleIn\": \"true\",\n    \"ClusterId\": \"cls-xxx\",\n    \"InstanceIds\": [\n        \"ins-xxx\"\n    ],\n    \"NodePoolId\": \"np-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"SucceedInstanceIds\": [\n            \"ins-xxx\"\n        ],\n        \"FailedInstanceIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "给节点池中的节点设置移出保护"
       }

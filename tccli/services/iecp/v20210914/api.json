@@ -4,613 +4,715 @@
       "document": "从组件市场选中组件并添加到应用模板列表",
       "input": "ApplyMarketComponentRequest",
       "name": "使用组件市场中的组件",
-      "output": "ApplyMarketComponentResponse"
+      "output": "ApplyMarketComponentResponse",
+      "status": "online"
     },
     "BuildMessageRoute": {
       "document": "建立消息路由",
       "input": "BuildMessageRouteRequest",
       "name": "建立消息路由",
-      "output": "BuildMessageRouteResponse"
+      "output": "BuildMessageRouteResponse",
+      "status": "online"
     },
     "CreateApplicationVisualization": {
       "document": "创建可视化创建应用模板",
       "input": "CreateApplicationVisualizationRequest",
       "name": "创建可视化创建应用模板",
-      "output": "CreateApplicationVisualizationResponse"
+      "output": "CreateApplicationVisualizationResponse",
+      "status": "online"
     },
     "CreateConfigMap": {
       "document": "创建ConfigMap",
       "input": "CreateConfigMapRequest",
       "name": "创建ConfigMap",
-      "output": "CreateConfigMapResponse"
+      "output": "CreateConfigMapResponse",
+      "status": "online"
     },
     "CreateEdgeNode": {
       "document": "创建边缘节点",
       "input": "CreateEdgeNodeRequest",
       "name": "创建边缘节点",
-      "output": "CreateEdgeNodeResponse"
+      "output": "CreateEdgeNodeResponse",
+      "status": "online"
     },
     "CreateEdgeNodeBatch": {
       "document": "批量预注册节点",
       "input": "CreateEdgeNodeBatchRequest",
       "name": "批量预注册节点",
-      "output": "CreateEdgeNodeBatchResponse"
+      "output": "CreateEdgeNodeBatchResponse",
+      "status": "online"
     },
     "CreateEdgeNodeGroup": {
       "document": "创建边缘单元NodeGroup",
       "input": "CreateEdgeNodeGroupRequest",
       "name": "创建边缘单元NodeGroup",
-      "output": "CreateEdgeNodeGroupResponse"
+      "output": "CreateEdgeNodeGroupResponse",
+      "status": "online"
     },
     "CreateEdgeNodeUnitTemplate": {
       "document": "创建边缘单元NodeUnit模板",
       "input": "CreateEdgeNodeUnitTemplateRequest",
       "name": "创建边缘单元NodeUnit模板",
-      "output": "CreateEdgeNodeUnitTemplateResponse"
+      "output": "CreateEdgeNodeUnitTemplateResponse",
+      "status": "online"
     },
     "CreateEdgeUnitApplicationVisualization": {
       "document": "可视化创建应用",
       "input": "CreateEdgeUnitApplicationVisualizationRequest",
       "name": "可视化创建应用",
-      "output": "CreateEdgeUnitApplicationVisualizationResponse"
+      "output": "CreateEdgeUnitApplicationVisualizationResponse",
+      "status": "online"
     },
     "CreateEdgeUnitApplicationYaml": {
       "document": "yaml方式创建应用",
       "input": "CreateEdgeUnitApplicationYamlRequest",
       "name": "yaml方式创建应用",
-      "output": "CreateEdgeUnitApplicationYamlResponse"
+      "output": "CreateEdgeUnitApplicationYamlResponse",
+      "status": "online"
     },
     "CreateEdgeUnitCloud": {
       "document": "创建边缘单元",
       "input": "CreateEdgeUnitCloudRequest",
       "name": "创建边缘单元",
-      "output": "CreateEdgeUnitCloudResponse"
+      "output": "CreateEdgeUnitCloudResponse",
+      "status": "online"
     },
     "CreateEdgeUnitDevices": {
       "document": "批量绑定设备到单元",
       "input": "CreateEdgeUnitDevicesRequest",
       "name": "批量绑定设备到单元",
-      "output": "CreateEdgeUnitDevicesResponse"
+      "output": "CreateEdgeUnitDevicesResponse",
+      "status": "online"
     },
     "CreateIotDevice": {
       "document": "创建子设备",
       "input": "CreateIotDeviceRequest",
       "name": "创建子设备",
-      "output": "CreateIotDeviceResponse"
+      "output": "CreateIotDeviceResponse",
+      "status": "online"
     },
     "CreateMessageRoute": {
       "document": "创建消息路由",
       "input": "CreateMessageRouteRequest",
       "name": "创建消息路由",
-      "output": "CreateMessageRouteResponse"
+      "output": "CreateMessageRouteResponse",
+      "status": "online"
     },
     "CreateNamespace": {
       "document": "创建命名空间",
       "input": "CreateNamespaceRequest",
       "name": "创建命名空间",
-      "output": "CreateNamespaceResponse"
+      "output": "CreateNamespaceResponse",
+      "status": "online"
     },
     "CreateSecret": {
       "document": "创建Secret",
       "input": "CreateSecretRequest",
       "name": "创建Secret",
-      "output": "CreateSecretResponse"
+      "output": "CreateSecretResponse",
+      "status": "online"
     },
     "CreateUpdateNodeUnit": {
       "document": "创建或更新边缘单元NodeUnit",
       "input": "CreateUpdateNodeUnitRequest",
       "name": "创建或更新边缘单元NodeUnit",
-      "output": "CreateUpdateNodeUnitResponse"
+      "output": "CreateUpdateNodeUnitResponse",
+      "status": "online"
     },
     "CreateUserToken": {
       "document": "创建token",
       "input": "CreateUserTokenRequest",
       "name": "创建token",
-      "output": "CreateUserTokenResponse"
+      "output": "CreateUserTokenResponse",
+      "status": "online"
     },
     "DeleteApplications": {
       "document": "删除应用模板",
       "input": "DeleteApplicationsRequest",
       "name": "删除应用模板",
-      "output": "DeleteApplicationsResponse"
+      "output": "DeleteApplicationsResponse",
+      "status": "online"
     },
     "DeleteConfigMap": {
       "document": "删除ConfigMap",
       "input": "DeleteConfigMapRequest",
       "name": "删除ConfigMap",
-      "output": "DeleteConfigMapResponse"
+      "output": "DeleteConfigMapResponse",
+      "status": "online"
     },
     "DeleteEdgeNodeGroup": {
       "document": "删除边缘单元NodeGroup",
       "input": "DeleteEdgeNodeGroupRequest",
       "name": "删除边缘单元NodeGroup",
-      "output": "DeleteEdgeNodeGroupResponse"
+      "output": "DeleteEdgeNodeGroupResponse",
+      "status": "online"
     },
     "DeleteEdgeNodeUnitTemplates": {
       "document": "删除边缘单元NodeUnit模板",
       "input": "DeleteEdgeNodeUnitTemplatesRequest",
       "name": "删除边缘单元NodeUnit模板",
-      "output": "DeleteEdgeNodeUnitTemplatesResponse"
+      "output": "DeleteEdgeNodeUnitTemplatesResponse",
+      "status": "online"
     },
     "DeleteEdgeNodes": {
       "document": "批量删除边缘节点",
       "input": "DeleteEdgeNodesRequest",
       "name": "批量删除边缘节点",
-      "output": "DeleteEdgeNodesResponse"
+      "output": "DeleteEdgeNodesResponse",
+      "status": "online"
     },
     "DeleteEdgeUnitApplications": {
       "document": "删除应用列表",
       "input": "DeleteEdgeUnitApplicationsRequest",
       "name": "删除应用列表",
-      "output": "DeleteEdgeUnitApplicationsResponse"
+      "output": "DeleteEdgeUnitApplicationsResponse",
+      "status": "online"
     },
     "DeleteEdgeUnitCloud": {
       "document": "删除边缘单元",
       "input": "DeleteEdgeUnitCloudRequest",
       "name": "删除边缘单元",
-      "output": "DeleteEdgeUnitCloudResponse"
+      "output": "DeleteEdgeUnitCloudResponse",
+      "status": "online"
     },
     "DeleteEdgeUnitDeployGridItem": {
       "document": "重新部署边缘单元指定Grid下应用",
       "input": "DeleteEdgeUnitDeployGridItemRequest",
       "name": "重新部署边缘单元指定Grid下应用",
-      "output": "DeleteEdgeUnitDeployGridItemResponse"
+      "output": "DeleteEdgeUnitDeployGridItemResponse",
+      "status": "online"
     },
     "DeleteEdgeUnitDevices": {
       "document": "批量解绑单元设备",
       "input": "DeleteEdgeUnitDevicesRequest",
       "name": "批量解绑单元设备",
-      "output": "DeleteEdgeUnitDevicesResponse"
+      "output": "DeleteEdgeUnitDevicesResponse",
+      "status": "online"
     },
     "DeleteEdgeUnitPod": {
       "document": "删除指定pod",
       "input": "DeleteEdgeUnitPodRequest",
       "name": "删除指定pod",
-      "output": "DeleteEdgeUnitPodResponse"
+      "output": "DeleteEdgeUnitPodResponse",
+      "status": "online"
     },
     "DeleteIotDevice": {
       "document": "删除设备",
       "input": "DeleteIotDeviceRequest",
       "name": "删除设备",
-      "output": "DeleteIotDeviceResponse"
+      "output": "DeleteIotDeviceResponse",
+      "status": "online"
     },
     "DeleteIotDeviceBatch": {
       "document": "批量删除设备",
       "input": "DeleteIotDeviceBatchRequest",
       "name": "批量删除设备",
-      "output": "DeleteIotDeviceBatchResponse"
+      "output": "DeleteIotDeviceBatchResponse",
+      "status": "online"
     },
     "DeleteMessageRoute": {
       "document": "删除消息路由",
       "input": "DeleteMessageRouteRequest",
       "name": "删除消息路由",
-      "output": "DeleteMessageRouteResponse"
+      "output": "DeleteMessageRouteResponse",
+      "status": "online"
     },
     "DeleteNamespace": {
       "document": "删除命名空间",
       "input": "DeleteNamespaceRequest",
       "name": "删除命名空间",
-      "output": "DeleteNamespaceResponse"
+      "output": "DeleteNamespaceResponse",
+      "status": "online"
     },
     "DeleteNodeUnit": {
       "document": "删除边缘单元NodeUnit",
       "input": "DeleteNodeUnitRequest",
       "name": "删除边缘单元NodeUnit",
-      "output": "DeleteNodeUnitResponse"
+      "output": "DeleteNodeUnitResponse",
+      "status": "online"
     },
     "DeleteSecret": {
       "document": "删除Secret",
       "input": "DeleteSecretRequest",
       "name": "删除Secret",
-      "output": "DeleteSecretResponse"
+      "output": "DeleteSecretResponse",
+      "status": "online"
     },
     "DescribeApplicationVisualization": {
       "document": "获取应用模板可视化配置信息",
       "input": "DescribeApplicationVisualizationRequest",
       "name": "获取应用模板可视化配置信息",
-      "output": "DescribeApplicationVisualizationResponse"
+      "output": "DescribeApplicationVisualizationResponse",
+      "status": "online"
     },
     "DescribeApplicationYaml": {
       "document": "查询应用模板Yaml",
       "input": "DescribeApplicationYamlRequest",
       "name": "查询应用模板Yaml",
-      "output": "DescribeApplicationYamlResponse"
+      "output": "DescribeApplicationYamlResponse",
+      "status": "online"
     },
     "DescribeApplicationYamlError": {
       "document": "检查应用模板的Yaml配置",
       "input": "DescribeApplicationYamlErrorRequest",
       "name": "检查应用模板的Yaml配置",
-      "output": "DescribeApplicationYamlErrorResponse"
+      "output": "DescribeApplicationYamlErrorResponse",
+      "status": "online"
     },
     "DescribeApplications": {
       "document": "获取应用模板列表",
       "input": "DescribeApplicationsRequest",
       "name": "获取应用模板列表",
-      "output": "DescribeApplicationsResponse"
+      "output": "DescribeApplicationsResponse",
+      "status": "online"
     },
     "DescribeConfigMap": {
       "document": "获取ConfigMap详情",
       "input": "DescribeConfigMapRequest",
       "name": "获取ConfigMap详情",
-      "output": "DescribeConfigMapResponse"
+      "output": "DescribeConfigMapResponse",
+      "status": "online"
     },
     "DescribeConfigMapYamlError": {
       "document": "校验ConfigMap的Yaml语法",
       "input": "DescribeConfigMapYamlErrorRequest",
       "name": "校验ConfigMap的Yaml语法",
-      "output": "DescribeConfigMapYamlErrorResponse"
+      "output": "DescribeConfigMapYamlErrorResponse",
+      "status": "online"
     },
     "DescribeConfigMaps": {
       "document": "获取ConfigMap列表",
       "input": "DescribeConfigMapsRequest",
       "name": "获取ConfigMap列表",
-      "output": "DescribeConfigMapsResponse"
+      "output": "DescribeConfigMapsResponse",
+      "status": "online"
     },
     "DescribeDracoEdgeNodeInstaller": {
       "document": "自动获取Draco设备的安装包",
       "input": "DescribeDracoEdgeNodeInstallerRequest",
       "name": "自动获取Draco设备的安装包",
-      "output": "DescribeDracoEdgeNodeInstallerResponse"
+      "output": "DescribeDracoEdgeNodeInstallerResponse",
+      "status": "online"
     },
     "DescribeEdgeAgentNodeInstaller": {
       "document": "获取节点安装信息",
       "input": "DescribeEdgeAgentNodeInstallerRequest",
       "name": "获取节点安装信息",
-      "output": "DescribeEdgeAgentNodeInstallerResponse"
+      "output": "DescribeEdgeAgentNodeInstallerResponse",
+      "status": "online"
     },
     "DescribeEdgeDefaultVpc": {
       "document": "获取边缘集群默认VPC信息",
       "input": "DescribeEdgeDefaultVpcRequest",
       "name": "获取边缘集群默认VPC信息",
-      "output": "DescribeEdgeDefaultVpcResponse"
+      "output": "DescribeEdgeDefaultVpcResponse",
+      "status": "online"
     },
     "DescribeEdgeNode": {
       "document": "获取边缘节点信息",
       "input": "DescribeEdgeNodeRequest",
       "name": "获取边缘节点信息",
-      "output": "DescribeEdgeNodeResponse"
+      "output": "DescribeEdgeNodeResponse",
+      "status": "online"
     },
     "DescribeEdgeNodePodContainers": {
       "document": "查询节点Pod内的容器列表",
       "input": "DescribeEdgeNodePodContainersRequest",
       "name": "查询节点Pod内的容器列表",
-      "output": "DescribeEdgeNodePodContainersResponse"
+      "output": "DescribeEdgeNodePodContainersResponse",
+      "status": "online"
     },
     "DescribeEdgeNodePods": {
       "document": "查询节点Pod列表",
       "input": "DescribeEdgeNodePodsRequest",
       "name": "查询节点Pod列表",
-      "output": "DescribeEdgeNodePodsResponse"
+      "output": "DescribeEdgeNodePodsResponse",
+      "status": "online"
     },
     "DescribeEdgeNodeRemarkList": {
       "document": "获取节点备注信息列表",
       "input": "DescribeEdgeNodeRemarkListRequest",
       "name": "获取节点备注信息列表",
-      "output": "DescribeEdgeNodeRemarkListResponse"
+      "output": "DescribeEdgeNodeRemarkListResponse",
+      "status": "online"
     },
     "DescribeEdgeNodes": {
       "document": "查询边缘节点列表",
       "input": "DescribeEdgeNodesRequest",
       "name": "查询边缘节点列表",
-      "output": "DescribeEdgeNodesResponse"
+      "output": "DescribeEdgeNodesResponse",
+      "status": "online"
     },
     "DescribeEdgeOperationLogs": {
       "document": "查询边缘操作日志",
       "input": "DescribeEdgeOperationLogsRequest",
       "name": "查询边缘操作日志",
-      "output": "DescribeEdgeOperationLogsResponse"
+      "output": "DescribeEdgeOperationLogsResponse",
+      "status": "online"
     },
     "DescribeEdgePod": {
       "document": "查询边缘单元Pod",
       "input": "DescribeEdgePodRequest",
       "name": "查询边缘单元Pod",
-      "output": "DescribeEdgePodResponse"
+      "output": "DescribeEdgePodResponse",
+      "status": "online"
     },
     "DescribeEdgeSnNodes": {
       "document": "查询预注册节点列表",
       "input": "DescribeEdgeSnNodesRequest",
       "name": "查询预注册节点列表",
-      "output": "DescribeEdgeSnNodesResponse"
+      "output": "DescribeEdgeSnNodesResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitApplicationEvents": {
       "document": "获取应用事件列表",
       "input": "DescribeEdgeUnitApplicationEventsRequest",
       "name": "获取应用事件列表",
-      "output": "DescribeEdgeUnitApplicationEventsResponse"
+      "output": "DescribeEdgeUnitApplicationEventsResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitApplicationLogs": {
       "document": "获取应用日志",
       "input": "DescribeEdgeUnitApplicationLogsRequest",
       "name": "获取应用日志",
-      "output": "DescribeEdgeUnitApplicationLogsResponse"
+      "output": "DescribeEdgeUnitApplicationLogsResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitApplicationPodContainers": {
       "document": "获取应用容器状态",
       "input": "DescribeEdgeUnitApplicationPodContainersRequest",
       "name": "获取应用容器状态",
-      "output": "DescribeEdgeUnitApplicationPodContainersResponse"
+      "output": "DescribeEdgeUnitApplicationPodContainersResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitApplicationPods": {
       "document": "获取应用下Pod状态",
       "input": "DescribeEdgeUnitApplicationPodsRequest",
       "name": "获取应用下Pod状态",
-      "output": "DescribeEdgeUnitApplicationPodsResponse"
+      "output": "DescribeEdgeUnitApplicationPodsResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitApplicationVisualization": {
       "document": "获取单元可视化配置信息",
       "input": "DescribeEdgeUnitApplicationVisualizationRequest",
       "name": "获取单元可视化配置信息",
-      "output": "DescribeEdgeUnitApplicationVisualizationResponse"
+      "output": "DescribeEdgeUnitApplicationVisualizationResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitApplicationYaml": {
       "document": "获取应用的Yaml配置",
       "input": "DescribeEdgeUnitApplicationYamlRequest",
       "name": "获取应用的Yaml配置",
-      "output": "DescribeEdgeUnitApplicationYamlResponse"
+      "output": "DescribeEdgeUnitApplicationYamlResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitApplicationYamlError": {
       "document": "检查单元应用的Yaml配置",
       "input": "DescribeEdgeUnitApplicationYamlErrorRequest",
       "name": "检查单元应用的Yaml配置",
-      "output": "DescribeEdgeUnitApplicationYamlErrorResponse"
+      "output": "DescribeEdgeUnitApplicationYamlErrorResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitApplications": {
       "document": "获取单元下应用列表",
       "input": "DescribeEdgeUnitApplicationsRequest",
       "name": "获取单元下应用列表",
-      "output": "DescribeEdgeUnitApplicationsResponse"
+      "output": "DescribeEdgeUnitApplicationsResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitCloud": {
       "document": "查询边缘集群详情",
       "input": "DescribeEdgeUnitCloudRequest",
       "name": "查询边缘集群详情",
-      "output": "DescribeEdgeUnitCloudResponse"
+      "output": "DescribeEdgeUnitCloudResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitDeployGrid": {
       "document": "查询边缘单元Grid列表",
       "input": "DescribeEdgeUnitDeployGridRequest",
       "name": "查询边缘单元Grid列表",
-      "output": "DescribeEdgeUnitDeployGridResponse"
+      "output": "DescribeEdgeUnitDeployGridResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitDeployGridItem": {
       "document": "查询边缘单元指定Grid下的部署应用列表",
       "input": "DescribeEdgeUnitDeployGridItemRequest",
       "name": "查询边缘单元指定Grid下的部署应用列表",
-      "output": "DescribeEdgeUnitDeployGridItemResponse"
+      "output": "DescribeEdgeUnitDeployGridItemResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitDeployGridItemYaml": {
       "document": "查询指定Grid下应用的Yaml",
       "input": "DescribeEdgeUnitDeployGridItemYamlRequest",
       "name": "查询指定Grid下应用的Yaml",
-      "output": "DescribeEdgeUnitDeployGridItemYamlResponse"
+      "output": "DescribeEdgeUnitDeployGridItemYamlResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitExtra": {
       "document": "查询边缘单元额外信息",
       "input": "DescribeEdgeUnitExtraRequest",
       "name": "查询边缘单元额外信息",
-      "output": "DescribeEdgeUnitExtraResponse"
+      "output": "DescribeEdgeUnitExtraResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitGridEvents": {
       "document": "查询边缘单元Grid事件列表",
       "input": "DescribeEdgeUnitGridEventsRequest",
       "name": "查询边缘单元Grid事件列表",
-      "output": "DescribeEdgeUnitGridEventsResponse"
+      "output": "DescribeEdgeUnitGridEventsResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitGridPods": {
       "document": "查询边缘单元Grid的Pod列表",
       "input": "DescribeEdgeUnitGridPodsRequest",
       "name": "查询边缘单元Grid的Pod列表",
-      "output": "DescribeEdgeUnitGridPodsResponse"
+      "output": "DescribeEdgeUnitGridPodsResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitMonitorStatus": {
       "document": "查询边缘集群监控状态",
       "input": "DescribeEdgeUnitMonitorStatusRequest",
       "name": "查询边缘集群监控状态",
-      "output": "DescribeEdgeUnitMonitorStatusResponse"
+      "output": "DescribeEdgeUnitMonitorStatusResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitNodeGroup": {
       "document": "查询边缘集群NodeGroup",
       "input": "DescribeEdgeUnitNodeGroupRequest",
       "name": "查询边缘单元NodeGroup列表",
-      "output": "DescribeEdgeUnitNodeGroupResponse"
+      "output": "DescribeEdgeUnitNodeGroupResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitNodeUnitTemplates": {
       "document": "查询边缘单元EdgeUnit模板列表",
       "input": "DescribeEdgeUnitNodeUnitTemplatesRequest",
       "name": "查询边缘单元EdgeUnit模板列表",
-      "output": "DescribeEdgeUnitNodeUnitTemplatesResponse"
+      "output": "DescribeEdgeUnitNodeUnitTemplatesResponse",
+      "status": "online"
     },
     "DescribeEdgeUnitsCloud": {
       "document": "查询边缘单元列表",
       "input": "DescribeEdgeUnitsCloudRequest",
       "name": "查询边缘单元列表",
-      "output": "DescribeEdgeUnitsCloudResponse"
+      "output": "DescribeEdgeUnitsCloudResponse",
+      "status": "online"
     },
     "DescribeIotDevice": {
       "document": "获取设备信息",
       "input": "DescribeIotDeviceRequest",
       "name": "获取设备信息",
-      "output": "DescribeIotDeviceResponse"
+      "output": "DescribeIotDeviceResponse",
+      "status": "online"
     },
     "DescribeIotDevices": {
       "document": "获取设备列表信息",
       "input": "DescribeIotDevicesRequest",
       "name": "获取设备列表信息",
-      "output": "DescribeIotDevicesResponse"
+      "output": "DescribeIotDevicesResponse",
+      "status": "online"
     },
     "DescribeMessageRouteList": {
       "document": "获取消息路由列表",
       "input": "DescribeMessageRouteListRequest",
       "name": "获取消息路由列表",
-      "output": "DescribeMessageRouteListResponse"
+      "output": "DescribeMessageRouteListResponse",
+      "status": "online"
     },
     "DescribeMonitorMetrics": {
       "document": "查询边缘单元监控数据",
       "input": "DescribeMonitorMetricsRequest",
       "name": "查询边缘单元监控数据",
-      "output": "DescribeMonitorMetricsResponse"
+      "output": "DescribeMonitorMetricsResponse",
+      "status": "online"
     },
     "DescribeNamespace": {
       "document": "获取命名空间",
       "input": "DescribeNamespaceRequest",
       "name": "获取命名空间",
-      "output": "DescribeNamespaceResponse"
+      "output": "DescribeNamespaceResponse",
+      "status": "online"
     },
     "DescribeNamespaceResources": {
       "document": "获取命名空间下的资源信息",
       "input": "DescribeNamespaceResourcesRequest",
       "name": "获取命名空间下的资源信息",
-      "output": "DescribeNamespaceResourcesResponse"
+      "output": "DescribeNamespaceResourcesResponse",
+      "status": "online"
     },
     "DescribeNamespaces": {
       "document": "获取命名空间列表信息",
       "input": "DescribeNamespacesRequest",
       "name": "获取命名空间列表信息",
-      "output": "DescribeNamespacesResponse"
+      "output": "DescribeNamespacesResponse",
+      "status": "online"
     },
     "DescribeNodeUnit": {
       "document": "查询边缘单元NodeUnit列表",
       "input": "DescribeNodeUnitRequest",
       "name": "查询边缘单元NodeUnit列表",
-      "output": "DescribeNodeUnitResponse"
+      "output": "DescribeNodeUnitResponse",
+      "status": "online"
     },
     "DescribeNodeUnitTemplateOnNodeGroup": {
       "document": "查询指定NodeGroup下NodeUnit模板列表",
       "input": "DescribeNodeUnitTemplateOnNodeGroupRequest",
       "name": "查询指定NodeGroup下NodeUnit模板列表",
-      "output": "DescribeNodeUnitTemplateOnNodeGroupResponse"
+      "output": "DescribeNodeUnitTemplateOnNodeGroupResponse",
+      "status": "online"
     },
     "DescribeSecret": {
       "document": "获取Secret详情",
       "input": "DescribeSecretRequest",
       "name": "获取Secret详情",
-      "output": "DescribeSecretResponse"
+      "output": "DescribeSecretResponse",
+      "status": "online"
     },
     "DescribeSecretYamlError": {
       "document": "校验Secret的Yaml语法",
       "input": "DescribeSecretYamlErrorRequest",
       "name": "校验Secret的Yaml语法",
-      "output": "DescribeSecretYamlErrorResponse"
+      "output": "DescribeSecretYamlErrorResponse",
+      "status": "online"
     },
     "DescribeSecrets": {
       "document": "获取Secrets列表",
       "input": "DescribeSecretsRequest",
       "name": "获取Secrets列表",
-      "output": "DescribeSecretsResponse"
+      "output": "DescribeSecretsResponse",
+      "status": "online"
     },
     "DescribeYeheResourceLimit": {
       "document": "查询用户的资源限制",
       "input": "DescribeYeheResourceLimitRequest",
       "name": "查询用户的资源限制",
-      "output": "DescribeYeheResourceLimitResponse"
+      "output": "DescribeYeheResourceLimitResponse",
+      "status": "online"
     },
     "GetMarketComponent": {
       "document": "获取组件市场的组件信息",
       "input": "GetMarketComponentRequest",
       "name": "获取组件市场的组件信息",
-      "output": "GetMarketComponentResponse"
+      "output": "GetMarketComponentResponse",
+      "status": "online"
     },
     "GetMarketComponentList": {
       "document": "获取组件市场组件列表",
       "input": "GetMarketComponentListRequest",
       "name": "获取组件市场组件列表",
-      "output": "GetMarketComponentListResponse"
+      "output": "GetMarketComponentListResponse",
+      "status": "online"
     },
     "ModifyApplicationBasicInfo": {
       "document": "修改应用模板基本信息",
       "input": "ModifyApplicationBasicInfoRequest",
       "name": "修改应用模板基本信息",
-      "output": "ModifyApplicationBasicInfoResponse"
+      "output": "ModifyApplicationBasicInfoResponse",
+      "status": "online"
     },
     "ModifyApplicationVisualization": {
       "document": "修改应用模板配置",
       "input": "ModifyApplicationVisualizationRequest",
       "name": "修改应用模板配置",
-      "output": "ModifyApplicationVisualizationResponse"
+      "output": "ModifyApplicationVisualizationResponse",
+      "status": "online"
     },
     "ModifyConfigMap": {
       "document": "修改ConfigMap",
       "input": "ModifyConfigMapRequest",
       "name": "修改ConfigMap",
-      "output": "ModifyConfigMapResponse"
+      "output": "ModifyConfigMapResponse",
+      "status": "online"
     },
     "ModifyEdgeDracoNode": {
       "document": "编辑draco设备信息",
       "input": "ModifyEdgeDracoNodeRequest",
       "name": "编辑draco设备信息",
-      "output": "ModifyEdgeDracoNodeResponse"
+      "output": "ModifyEdgeDracoNodeResponse",
+      "status": "online"
     },
     "ModifyEdgeNodeLabels": {
       "document": "编辑边缘节点标签",
       "input": "ModifyEdgeNodeLabelsRequest",
       "name": "编辑边缘节点标签",
-      "output": "ModifyEdgeNodeLabelsResponse"
+      "output": "ModifyEdgeNodeLabelsResponse",
+      "status": "online"
     },
     "ModifyEdgeUnit": {
       "document": "修改边缘集群",
       "input": "ModifyEdgeUnitRequest",
       "name": "修改边缘集群",
-      "output": "ModifyEdgeUnitResponse"
+      "output": "ModifyEdgeUnitResponse",
+      "status": "online"
     },
     "ModifyEdgeUnitApplicationBasicInfo": {
       "document": "修改单元应用基本信息",
       "input": "ModifyEdgeUnitApplicationBasicInfoRequest",
       "name": "修改单元应用基本信息",
-      "output": "ModifyEdgeUnitApplicationBasicInfoResponse"
+      "output": "ModifyEdgeUnitApplicationBasicInfoResponse",
+      "status": "online"
     },
     "ModifyEdgeUnitApplicationVisualization": {
       "document": "可视化修改应用配置",
       "input": "ModifyEdgeUnitApplicationVisualizationRequest",
       "name": "可视化修改应用配置",
-      "output": "ModifyEdgeUnitApplicationVisualizationResponse"
+      "output": "ModifyEdgeUnitApplicationVisualizationResponse",
+      "status": "online"
     },
     "ModifyEdgeUnitApplicationYaml": {
       "document": "Yaml方式修改应用配置",
       "input": "ModifyEdgeUnitApplicationYamlRequest",
       "name": "Yaml方式修改应用配置",
-      "output": "ModifyEdgeUnitApplicationYamlResponse"
+      "output": "ModifyEdgeUnitApplicationYamlResponse",
+      "status": "online"
     },
     "ModifyEdgeUnitCloudApi": {
       "document": "更新边缘单元信息",
       "input": "ModifyEdgeUnitCloudApiRequest",
       "name": "更新边缘单元信息",
-      "output": "ModifyEdgeUnitCloudApiResponse"
+      "output": "ModifyEdgeUnitCloudApiResponse",
+      "status": "online"
     },
     "ModifyEdgeUnitDeployGridItem": {
       "document": "修改边缘单元Grid部署应用副本数",
       "input": "ModifyEdgeUnitDeployGridItemRequest",
       "name": "修改边缘单元Grid部署应用副本数",
-      "output": "ModifyEdgeUnitDeployGridItemResponse"
+      "output": "ModifyEdgeUnitDeployGridItemResponse",
+      "status": "online"
     },
     "ModifyIotDevice": {
       "document": "修改设备信息",
       "input": "ModifyIotDeviceRequest",
       "name": "修改设备信息",
-      "output": "ModifyIotDeviceResponse"
+      "output": "ModifyIotDeviceResponse",
+      "status": "online"
     },
     "ModifyNodeUnitTemplate": {
       "document": "修改边缘单元NodeUnit模板",
       "input": "ModifyNodeUnitTemplateRequest",
       "name": "修改边缘单元NodeUnit模板",
-      "output": "ModifyNodeUnitTemplateResponse"
+      "output": "ModifyNodeUnitTemplateResponse",
+      "status": "online"
     },
     "ModifySecret": {
       "document": "修改Secret",
       "input": "ModifySecretRequest",
       "name": "修改Secret",
-      "output": "ModifySecretResponse"
+      "output": "ModifySecretResponse",
+      "status": "online"
     },
     "RedeployEdgeUnitApplication": {
       "document": "单元应用重部署",
       "input": "RedeployEdgeUnitApplicationRequest",
       "name": "单元应用重部署",
-      "output": "RedeployEdgeUnitApplicationResponse"
+      "output": "RedeployEdgeUnitApplicationResponse",
+      "status": "online"
     },
     "SetRouteOnOff": {
       "document": "开关消息路由",
       "input": "SetRouteOnOffRequest",
       "name": "开关消息路由",
-      "output": "SetRouteOnOffResponse"
+      "output": "SetRouteOnOffResponse",
+      "status": "online"
     }
   },
   "metadata": {

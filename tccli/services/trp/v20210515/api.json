@@ -4,265 +4,309 @@
       "document": "新增批次",
       "input": "CreateCodeBatchRequest",
       "name": "新增批次",
-      "output": "CreateCodeBatchResponse"
+      "output": "CreateCodeBatchResponse",
+      "status": "online"
     },
     "CreateCodePack": {
       "document": "生成普通码包",
       "input": "CreateCodePackRequest",
       "name": "生成普通码包",
-      "output": "CreateCodePackResponse"
+      "output": "CreateCodePackResponse",
+      "status": "online"
     },
     "CreateCorporationOrder": {
       "document": "以订单方式新建企业信息/配额信息",
       "input": "CreateCorporationOrderRequest",
       "name": "以订单方式新建企业",
-      "output": "CreateCorporationOrderResponse"
+      "output": "CreateCorporationOrderResponse",
+      "status": "online"
     },
     "CreateCustomPack": {
       "document": "生成自定义码包",
       "input": "CreateCustomPackRequest",
       "name": "生成自定义码包",
-      "output": "CreateCustomPackResponse"
+      "output": "CreateCustomPackResponse",
+      "status": "online"
     },
     "CreateCustomRule": {
       "document": "新建自定义码规则",
       "input": "CreateCustomRuleRequest",
       "name": "新建自定义码规则",
-      "output": "CreateCustomRuleResponse"
+      "output": "CreateCustomRuleResponse",
+      "status": "online"
     },
     "CreateMerchant": {
       "document": "新建商户",
       "input": "CreateMerchantRequest",
       "name": "新建商户",
-      "output": "CreateMerchantResponse"
+      "output": "CreateMerchantResponse",
+      "status": "online"
     },
     "CreateProduct": {
       "document": "新建商品",
       "input": "CreateProductRequest",
       "name": "新建商品",
-      "output": "CreateProductResponse"
+      "output": "CreateProductResponse",
+      "status": "online"
     },
     "CreateTraceChain": {
       "document": "上链溯源信息",
       "input": "CreateTraceChainRequest",
       "name": "上链溯源信息",
-      "output": "CreateTraceChainResponse"
+      "output": "CreateTraceChainResponse",
+      "status": "online"
     },
     "CreateTraceCodes": {
       "document": "批量导入二维码，只支持平台发的码",
       "input": "CreateTraceCodesRequest",
       "name": "批量导入二维码",
-      "output": "CreateTraceCodesResponse"
+      "output": "CreateTraceCodesResponse",
+      "status": "online"
     },
     "CreateTraceCodesAsync": {
       "document": "异步导入激活码包，如果是第三方码包，需要域名跟配置的匹配",
       "input": "CreateTraceCodesAsyncRequest",
       "name": "异步导入激活码包",
-      "output": "CreateTraceCodesAsyncResponse"
+      "output": "CreateTraceCodesAsyncResponse",
+      "status": "online"
     },
     "CreateTraceData": {
       "document": "新增溯源信息",
       "input": "CreateTraceDataRequest",
       "name": "新增溯源信息",
-      "output": "CreateTraceDataResponse"
+      "output": "CreateTraceDataResponse",
+      "status": "online"
     },
     "DeleteCodeBatch": {
       "document": "删除批次",
       "input": "DeleteCodeBatchRequest",
       "name": "删除批次",
-      "output": "DeleteCodeBatchResponse"
+      "output": "DeleteCodeBatchResponse",
+      "status": "online"
     },
     "DeleteMerchant": {
       "document": "删除商户",
       "input": "DeleteMerchantRequest",
       "name": "删除商户",
-      "output": "DeleteMerchantResponse"
+      "output": "DeleteMerchantResponse",
+      "status": "online"
     },
     "DeleteProduct": {
       "document": "删除商品，如果商品被使用，则不可删除",
       "input": "DeleteProductRequest",
       "name": "删除商品",
-      "output": "DeleteProductResponse"
+      "output": "DeleteProductResponse",
+      "status": "online"
     },
     "DeleteTraceData": {
       "document": "删除溯源信息，如果已经上链则不可删除",
       "input": "DeleteTraceDataRequest",
       "name": "删除溯源信息",
-      "output": "DeleteTraceDataResponse"
+      "output": "DeleteTraceDataResponse",
+      "status": "online"
     },
     "DescribeCodeBatchById": {
       "document": "查询批次信息",
       "input": "DescribeCodeBatchByIdRequest",
       "name": "查询批次信息",
-      "output": "DescribeCodeBatchByIdResponse"
+      "output": "DescribeCodeBatchByIdResponse",
+      "status": "online"
     },
     "DescribeCodeBatchs": {
       "document": "查询批次列表",
       "input": "DescribeCodeBatchsRequest",
       "name": "查询批次列表",
-      "output": "DescribeCodeBatchsResponse"
+      "output": "DescribeCodeBatchsResponse",
+      "status": "online"
     },
     "DescribeCodePackStatus": {
       "document": "查询码包状态",
       "input": "DescribeCodePackStatusRequest",
       "name": "查询码包状态",
-      "output": "DescribeCodePackStatusResponse"
+      "output": "DescribeCodePackStatusResponse",
+      "status": "online"
     },
     "DescribeCodePackUrl": {
       "document": "查询码包地址",
       "input": "DescribeCodePackUrlRequest",
       "name": "查询码包地址",
-      "output": "DescribeCodePackUrlResponse"
+      "output": "DescribeCodePackUrlResponse",
+      "status": "online"
     },
     "DescribeCodePacks": {
       "document": "查询码包列表",
       "input": "DescribeCodePacksRequest",
       "name": "查询码包列表",
-      "output": "DescribeCodePacksResponse"
+      "output": "DescribeCodePacksResponse",
+      "status": "online"
     },
     "DescribeCodesByPack": {
       "document": "查询码包的二维码列表，上限 3 万",
       "input": "DescribeCodesByPackRequest",
       "name": "查询码包的二维码列表",
-      "output": "DescribeCodesByPackResponse"
+      "output": "DescribeCodesByPackResponse",
+      "status": "online"
     },
     "DescribeCorpQuotas": {
       "document": "查询渠道商下属企业额度使用情况",
       "input": "DescribeCorpQuotasRequest",
       "name": "查询渠道商下属企业额度使用情况",
-      "output": "DescribeCorpQuotasResponse"
+      "output": "DescribeCorpQuotasResponse",
+      "status": "online"
     },
     "DescribeCustomRuleById": {
       "document": "查自定义码规则",
       "input": "DescribeCustomRuleByIdRequest",
       "name": "查自定义码规则",
-      "output": "DescribeCustomRuleByIdResponse"
+      "output": "DescribeCustomRuleByIdResponse",
+      "status": "online"
     },
     "DescribeCustomRules": {
       "document": "查自定义码规则列表",
       "input": "DescribeCustomRulesRequest",
       "name": "查自定义码规则列表",
-      "output": "DescribeCustomRulesResponse"
+      "output": "DescribeCustomRulesResponse",
+      "status": "online"
     },
     "DescribeJobFileUrl": {
       "document": "获取异步任务的输出地址",
       "input": "DescribeJobFileUrlRequest",
       "name": "获取异步任务的输出地址",
-      "output": "DescribeJobFileUrlResponse"
+      "output": "DescribeJobFileUrlResponse",
+      "status": "online"
     },
     "DescribeMerchantById": {
       "document": "查询商户信息",
       "input": "DescribeMerchantByIdRequest",
       "name": "查询商户信息",
-      "output": "DescribeMerchantByIdResponse"
+      "output": "DescribeMerchantByIdResponse",
+      "status": "online"
     },
     "DescribeMerchants": {
       "document": "查询商户列表",
       "input": "DescribeMerchantsRequest",
       "name": "查询商户列表",
-      "output": "DescribeMerchantsResponse"
+      "output": "DescribeMerchantsResponse",
+      "status": "online"
     },
     "DescribeProductById": {
       "document": "查询商品信息",
       "input": "DescribeProductByIdRequest",
       "name": "查询商品信息",
-      "output": "DescribeProductByIdResponse"
+      "output": "DescribeProductByIdResponse",
+      "status": "online"
     },
     "DescribeProducts": {
       "document": "查询商品列表",
       "input": "DescribeProductsRequest",
       "name": "查询商品列表",
-      "output": "DescribeProductsResponse"
+      "output": "DescribeProductsResponse",
+      "status": "online"
     },
     "DescribeScanLogs": {
       "document": "查询扫码日志明细",
       "input": "DescribeScanLogsRequest",
       "name": "查询扫码日志明细",
-      "output": "DescribeScanLogsResponse"
+      "output": "DescribeScanLogsResponse",
+      "status": "online"
     },
     "DescribeScanStats": {
       "document": "查询某个批次被扫码的统计列表，没有被扫过的不会返回",
       "input": "DescribeScanStatsRequest",
       "name": "查询扫码统计列表",
-      "output": "DescribeScanStatsResponse"
+      "output": "DescribeScanStatsResponse",
+      "status": "online"
     },
     "DescribeTmpToken": {
       "document": "查询临时Token，主要用于上传接口",
       "input": "DescribeTmpTokenRequest",
       "name": "查询临时Token",
-      "output": "DescribeTmpTokenResponse"
+      "output": "DescribeTmpTokenResponse",
+      "status": "online"
     },
     "DescribeTraceCodeById": {
       "document": "查询二维码信息",
       "input": "DescribeTraceCodeByIdRequest",
       "name": "查询二维码信息",
-      "output": "DescribeTraceCodeByIdResponse"
+      "output": "DescribeTraceCodeByIdResponse",
+      "status": "online"
     },
     "DescribeTraceCodes": {
       "document": "查询二维码列表",
       "input": "DescribeTraceCodesRequest",
       "name": "查询二维码列表",
-      "output": "DescribeTraceCodesResponse"
+      "output": "DescribeTraceCodesResponse",
+      "status": "online"
     },
     "DescribeTraceDataList": {
       "document": "查询溯源信息，通常溯源信息跟生产批次绑定，即一个批次的所有溯源信息都是一样的",
       "input": "DescribeTraceDataListRequest",
       "name": "查询溯源信息",
-      "output": "DescribeTraceDataListResponse"
+      "output": "DescribeTraceDataListResponse",
+      "status": "online"
     },
     "ModifyCodeBatch": {
       "document": "修改批次",
       "input": "ModifyCodeBatchRequest",
       "name": "修改批次",
-      "output": "ModifyCodeBatchResponse"
+      "output": "ModifyCodeBatchResponse",
+      "status": "online"
     },
     "ModifyCustomRule": {
       "document": "修改自定义码规则",
       "input": "ModifyCustomRuleRequest",
       "name": "修改自定义码规则",
-      "output": "ModifyCustomRuleResponse"
+      "output": "ModifyCustomRuleResponse",
+      "status": "online"
     },
     "ModifyCustomRuleStatus": {
       "document": "更新自定义码规则状态",
       "input": "ModifyCustomRuleStatusRequest",
       "name": "更新自定义码规则状态",
-      "output": "ModifyCustomRuleStatusResponse"
+      "output": "ModifyCustomRuleStatusResponse",
+      "status": "online"
     },
     "ModifyMerchant": {
       "document": "编辑商户",
       "input": "ModifyMerchantRequest",
       "name": "编辑商户",
-      "output": "ModifyMerchantResponse"
+      "output": "ModifyMerchantResponse",
+      "status": "online"
     },
     "ModifyProduct": {
       "document": "编辑商品",
       "input": "ModifyProductRequest",
       "name": "编辑商品",
-      "output": "ModifyProductResponse"
+      "output": "ModifyProductResponse",
+      "status": "online"
     },
     "ModifyTraceCode": {
       "document": "冻结或者激活二维码，所属的批次的冻结状态优先级大于单个二维码的状态，即如果批次是冻结的，那么该批次下二维码的状态都是冻结的",
       "input": "ModifyTraceCodeRequest",
       "name": "修改二维码的状态",
-      "output": "ModifyTraceCodeResponse"
+      "output": "ModifyTraceCodeResponse",
+      "status": "online"
     },
     "ModifyTraceCodeUnlink": {
       "document": "解绑溯源码和批次的关系，让溯源码重置为未关联的状态，以便关联其他批次\n注意：溯源码必须属于指定的批次才会解绑",
       "input": "ModifyTraceCodeUnlinkRequest",
       "name": "解绑溯源码和批次的关系",
-      "output": "ModifyTraceCodeUnlinkResponse"
+      "output": "ModifyTraceCodeUnlinkResponse",
+      "status": "online"
     },
     "ModifyTraceData": {
       "document": "修改溯源信息",
       "input": "ModifyTraceDataRequest",
       "name": "修改溯源信息",
-      "output": "ModifyTraceDataResponse"
+      "output": "ModifyTraceDataResponse",
+      "status": "online"
     },
     "ModifyTraceDataRanks": {
       "document": "修改溯源信息的排序",
       "input": "ModifyTraceDataRanksRequest",
       "name": "修改溯源信息的排序",
-      "output": "ModifyTraceDataRanksResponse"
+      "output": "ModifyTraceDataRanksResponse",
+      "status": "online"
     }
   },
   "metadata": {

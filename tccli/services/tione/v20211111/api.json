@@ -4,331 +4,386 @@
       "document": "批量创建模型加速任务",
       "input": "CreateBatchModelAccTasksRequest",
       "name": "批量创建模型加速任务",
-      "output": "CreateBatchModelAccTasksResponse"
+      "output": "CreateBatchModelAccTasksResponse",
+      "status": "online"
     },
     "CreateBatchTask": {
       "document": "创建跑批任务",
       "input": "CreateBatchTaskRequest",
       "name": "创建跑批任务",
-      "output": "CreateBatchTaskResponse"
+      "output": "CreateBatchTaskResponse",
+      "status": "online"
     },
     "CreateDataset": {
       "document": "创建数据集",
       "input": "CreateDatasetRequest",
       "name": "创建数据集",
-      "output": "CreateDatasetResponse"
+      "output": "CreateDatasetResponse",
+      "status": "online"
     },
     "CreateModelService": {
       "document": "用于创建、发布一个新的模型服务",
       "input": "CreateModelServiceRequest",
       "name": "创建模型服务",
-      "output": "CreateModelServiceResponse"
+      "output": "CreateModelServiceResponse",
+      "status": "online"
     },
     "CreateOptimizedModel": {
       "document": "保存优化模型",
       "input": "CreateOptimizedModelRequest",
       "name": "保存优化模型",
-      "output": "CreateOptimizedModelResponse"
+      "output": "CreateOptimizedModelResponse",
+      "status": "online"
     },
     "CreateTrainingModel": {
       "document": "导入模型",
       "input": "CreateTrainingModelRequest",
       "name": "导入模型",
-      "output": "CreateTrainingModelResponse"
+      "output": "CreateTrainingModelResponse",
+      "status": "online"
     },
     "CreateTrainingTask": {
       "document": "创建模型训练任务",
       "input": "CreateTrainingTaskRequest",
       "name": "创建模型训练任务",
-      "output": "CreateTrainingTaskResponse"
+      "output": "CreateTrainingTaskResponse",
+      "status": "online"
     },
     "DeleteBatchTask": {
       "document": "删除跑批任务",
       "input": "DeleteBatchTaskRequest",
       "name": "删除跑批任务",
-      "output": "DeleteBatchTaskResponse"
+      "output": "DeleteBatchTaskResponse",
+      "status": "online"
     },
     "DeleteDataset": {
       "document": "删除数据集",
       "input": "DeleteDatasetRequest",
       "name": "删除数据集",
-      "output": "DeleteDatasetResponse"
+      "output": "DeleteDatasetResponse",
+      "status": "online"
     },
     "DeleteModelAccelerateTask": {
       "document": "删除模型加速任务",
       "input": "DeleteModelAccelerateTaskRequest",
       "name": "删除模型加速任务",
-      "output": "DeleteModelAccelerateTaskResponse"
+      "output": "DeleteModelAccelerateTaskResponse",
+      "status": "online"
     },
     "DeleteModelService": {
       "document": "根据服务id删除模型服务",
       "input": "DeleteModelServiceRequest",
       "name": "删除模型服务",
-      "output": "DeleteModelServiceResponse"
+      "output": "DeleteModelServiceResponse",
+      "status": "online"
     },
     "DeleteModelServiceGroup": {
       "document": "根据服务组id删除服务组下所有模型服务",
       "input": "DeleteModelServiceGroupRequest",
       "name": "删除模型服务组",
-      "output": "DeleteModelServiceGroupResponse"
+      "output": "DeleteModelServiceGroupResponse",
+      "status": "online"
     },
     "DeleteTrainingModel": {
       "document": "删除模型",
       "input": "DeleteTrainingModelRequest",
       "name": "删除模型",
-      "output": "DeleteTrainingModelResponse"
+      "output": "DeleteTrainingModelResponse",
+      "status": "online"
     },
     "DeleteTrainingModelVersion": {
       "document": "删除模型版本",
       "input": "DeleteTrainingModelVersionRequest",
       "name": "删除模型版本",
-      "output": "DeleteTrainingModelVersionResponse"
+      "output": "DeleteTrainingModelVersionResponse",
+      "status": "online"
     },
     "DeleteTrainingTask": {
       "document": "删除训练任务",
       "input": "DeleteTrainingTaskRequest",
       "name": "删除训练任务",
-      "output": "DeleteTrainingTaskResponse"
+      "output": "DeleteTrainingTaskResponse",
+      "status": "online"
     },
     "DescribeAPIConfigs": {
       "document": "列举API",
       "input": "DescribeAPIConfigsRequest",
       "name": "列举API",
-      "output": "DescribeAPIConfigsResponse"
+      "output": "DescribeAPIConfigsResponse",
+      "status": "online"
     },
     "DescribeBatchTask": {
       "document": "查询跑批任务",
       "input": "DescribeBatchTaskRequest",
       "name": "查询跑批任务",
-      "output": "DescribeBatchTaskResponse"
+      "output": "DescribeBatchTaskResponse",
+      "status": "online"
     },
     "DescribeBatchTaskInstances": {
       "document": "查询跑批实例列表",
       "input": "DescribeBatchTaskInstancesRequest",
       "name": "跑批实例列表",
-      "output": "DescribeBatchTaskInstancesResponse"
+      "output": "DescribeBatchTaskInstancesResponse",
+      "status": "online"
     },
     "DescribeBatchTasks": {
       "document": "批量预测任务列表信息",
       "input": "DescribeBatchTasksRequest",
       "name": "跑批任务列表",
-      "output": "DescribeBatchTasksResponse"
+      "output": "DescribeBatchTasksResponse",
+      "status": "online"
     },
     "DescribeBillingResourceGroups": {
       "document": "查询资源组详情",
       "input": "DescribeBillingResourceGroupsRequest",
       "name": "查询资源组详情",
-      "output": "DescribeBillingResourceGroupsResponse"
+      "output": "DescribeBillingResourceGroupsResponse",
+      "status": "online"
     },
     "DescribeBillingSpecs": {
       "document": "本接口(DescribeBillingSpecs)用于查询计费项列表",
       "input": "DescribeBillingSpecsRequest",
       "name": "查询计费项列表",
-      "output": "DescribeBillingSpecsResponse"
+      "output": "DescribeBillingSpecsResponse",
+      "status": "online"
     },
     "DescribeBillingSpecsPrice": {
       "document": "本接口(DescribeBillingSpecsPrice)用于查询计费项价格。",
       "input": "DescribeBillingSpecsPriceRequest",
       "name": "查询计费项价格",
-      "output": "DescribeBillingSpecsPriceResponse"
+      "output": "DescribeBillingSpecsPriceResponse",
+      "status": "online"
     },
     "DescribeDatasetDetailStructured": {
       "document": "查询结构化数据集详情",
       "input": "DescribeDatasetDetailStructuredRequest",
       "name": "查询结构化数据集详情",
-      "output": "DescribeDatasetDetailStructuredResponse"
+      "output": "DescribeDatasetDetailStructuredResponse",
+      "status": "online"
     },
     "DescribeDatasetDetailUnstructured": {
       "document": "查询非结构化数据集详情",
       "input": "DescribeDatasetDetailUnstructuredRequest",
       "name": "查询非结构化数据集详情",
-      "output": "DescribeDatasetDetailUnstructuredResponse"
+      "output": "DescribeDatasetDetailUnstructuredResponse",
+      "status": "online"
     },
     "DescribeDatasets": {
       "document": "查询数据集列表",
       "input": "DescribeDatasetsRequest",
       "name": "查询数据集列表",
-      "output": "DescribeDatasetsResponse"
+      "output": "DescribeDatasetsResponse",
+      "status": "online"
     },
     "DescribeInferTemplates": {
       "document": "查询推理镜像模板",
       "input": "DescribeInferTemplatesRequest",
       "name": "查询推理镜像模板",
-      "output": "DescribeInferTemplatesResponse"
+      "output": "DescribeInferTemplatesResponse",
+      "status": "online"
     },
     "DescribeLatestTrainingMetrics": {
       "document": "查询最近上报的训练自定义指标",
       "input": "DescribeLatestTrainingMetricsRequest",
       "name": "查询最近上报的训练自定义指标",
-      "output": "DescribeLatestTrainingMetricsResponse"
+      "output": "DescribeLatestTrainingMetricsResponse",
+      "status": "online"
     },
     "DescribeLogs": {
       "document": "获取训练、推理、Notebook服务的日志",
       "input": "DescribeLogsRequest",
       "name": "获取日志",
-      "output": "DescribeLogsResponse"
+      "output": "DescribeLogsResponse",
+      "status": "online"
     },
     "DescribeModelAccEngineVersions": {
       "document": "查询模型加速引擎版本列表",
       "input": "DescribeModelAccEngineVersionsRequest",
       "name": "查询模型加速引擎版本列表",
-      "output": "DescribeModelAccEngineVersionsResponse"
+      "output": "DescribeModelAccEngineVersionsResponse",
+      "status": "online"
     },
     "DescribeModelAccelerateTask": {
       "document": "查询模型优化任务详情",
       "input": "DescribeModelAccelerateTaskRequest",
       "name": "查询模型优化任务详情",
-      "output": "DescribeModelAccelerateTaskResponse"
+      "output": "DescribeModelAccelerateTaskResponse",
+      "status": "online"
     },
     "DescribeModelAccelerateTasks": {
       "document": "查询模型加速任务列表",
       "input": "DescribeModelAccelerateTasksRequest",
       "name": "查询模型加速任务列表",
-      "output": "DescribeModelAccelerateTasksResponse"
+      "output": "DescribeModelAccelerateTasksResponse",
+      "status": "online"
     },
     "DescribeModelService": {
       "document": "查询单个服务",
       "input": "DescribeModelServiceRequest",
       "name": "查询单个服务",
-      "output": "DescribeModelServiceResponse"
+      "output": "DescribeModelServiceResponse",
+      "status": "online"
     },
     "DescribeModelServiceCallInfo": {
       "document": "展示服务的调用信息",
       "input": "DescribeModelServiceCallInfoRequest",
       "name": "展示服务的调用信息",
-      "output": "DescribeModelServiceCallInfoResponse"
+      "output": "DescribeModelServiceCallInfoResponse",
+      "status": "online"
     },
     "DescribeModelServiceGroup": {
       "document": "查询单个服务组",
       "input": "DescribeModelServiceGroupRequest",
       "name": "查询单个服务组",
-      "output": "DescribeModelServiceGroupResponse"
+      "output": "DescribeModelServiceGroupResponse",
+      "status": "online"
     },
     "DescribeModelServiceGroups": {
       "document": "列举在线推理服务组",
       "input": "DescribeModelServiceGroupsRequest",
       "name": "列举在线推理服务组",
-      "output": "DescribeModelServiceGroupsResponse"
+      "output": "DescribeModelServiceGroupsResponse",
+      "status": "online"
     },
     "DescribeModelServiceHistory": {
       "document": "展示服务的历史版本",
       "input": "DescribeModelServiceHistoryRequest",
       "name": "展示服务的历史版本",
-      "output": "DescribeModelServiceHistoryResponse"
+      "output": "DescribeModelServiceHistoryResponse",
+      "status": "online"
     },
     "DescribeModelServiceHotUpdated": {
       "document": "用于查询模型服务能否开启热更新",
       "input": "DescribeModelServiceHotUpdatedRequest",
       "name": "查询模型服务能否开启热更新",
-      "output": "DescribeModelServiceHotUpdatedResponse"
+      "output": "DescribeModelServiceHotUpdatedResponse",
+      "status": "online"
     },
     "DescribeModelServices": {
       "document": "查询多个服务",
       "input": "DescribeModelServicesRequest",
       "name": "查询多个服务",
-      "output": "DescribeModelServicesResponse"
+      "output": "DescribeModelServicesResponse",
+      "status": "online"
     },
     "DescribeTrainingFrameworks": {
       "document": "训练框架列表",
       "input": "DescribeTrainingFrameworksRequest",
       "name": "训练框架列表",
-      "output": "DescribeTrainingFrameworksResponse"
+      "output": "DescribeTrainingFrameworksResponse",
+      "status": "online"
     },
     "DescribeTrainingMetrics": {
       "document": "查询训练自定义指标",
       "input": "DescribeTrainingMetricsRequest",
       "name": "查询训练自定义指标",
-      "output": "DescribeTrainingMetricsResponse"
+      "output": "DescribeTrainingMetricsResponse",
+      "status": "online"
     },
     "DescribeTrainingModelVersion": {
       "document": "查询模型版本",
       "input": "DescribeTrainingModelVersionRequest",
       "name": "查询模型版本",
-      "output": "DescribeTrainingModelVersionResponse"
+      "output": "DescribeTrainingModelVersionResponse",
+      "status": "online"
     },
     "DescribeTrainingModelVersions": {
       "document": "模型版本列表",
       "input": "DescribeTrainingModelVersionsRequest",
       "name": "模型版本列表",
-      "output": "DescribeTrainingModelVersionsResponse"
+      "output": "DescribeTrainingModelVersionsResponse",
+      "status": "online"
     },
     "DescribeTrainingModels": {
       "document": "模型列表",
       "input": "DescribeTrainingModelsRequest",
       "name": "模型列表",
-      "output": "DescribeTrainingModelsResponse"
+      "output": "DescribeTrainingModelsResponse",
+      "status": "online"
     },
     "DescribeTrainingTask": {
       "document": "训练任务详情",
       "input": "DescribeTrainingTaskRequest",
       "name": "训练任务详情",
-      "output": "DescribeTrainingTaskResponse"
+      "output": "DescribeTrainingTaskResponse",
+      "status": "online"
     },
     "DescribeTrainingTaskPods": {
       "document": "训练任务pod列表",
       "input": "DescribeTrainingTaskPodsRequest",
       "name": "训练任务pod列表",
-      "output": "DescribeTrainingTaskPodsResponse"
+      "output": "DescribeTrainingTaskPodsResponse",
+      "status": "online"
     },
     "DescribeTrainingTasks": {
       "document": "训练任务列表",
       "input": "DescribeTrainingTasksRequest",
       "name": "模型训练任务列表",
-      "output": "DescribeTrainingTasksResponse"
+      "output": "DescribeTrainingTasksResponse",
+      "status": "online"
     },
     "ModifyModelService": {
       "document": "用于更新模型服务",
       "input": "ModifyModelServiceRequest",
       "name": "更新模型服务",
-      "output": "ModifyModelServiceResponse"
+      "output": "ModifyModelServiceResponse",
+      "status": "online"
     },
     "ModifyModelServicePartialConfig": {
       "document": "增量更新在线推理服务的部分配置，不更新的配置项不需要传入",
       "input": "ModifyModelServicePartialConfigRequest",
       "name": "增量修改模型服务",
-      "output": "ModifyModelServicePartialConfigResponse"
+      "output": "ModifyModelServicePartialConfigResponse",
+      "status": "online"
     },
     "ModifyServiceGroupWeights": {
       "document": "更新推理服务组流量分配",
       "input": "ModifyServiceGroupWeightsRequest",
       "name": "更新推理服务组流量分配",
-      "output": "ModifyServiceGroupWeightsResponse"
+      "output": "ModifyServiceGroupWeightsResponse",
+      "status": "online"
     },
     "PushTrainingMetrics": {
       "document": "上报训练自定义指标",
       "input": "PushTrainingMetricsRequest",
       "name": "上报训练自定义指标",
-      "output": "PushTrainingMetricsResponse"
+      "output": "PushTrainingMetricsResponse",
+      "status": "online"
     },
     "RestartModelAccelerateTask": {
       "document": "重启模型加速任务",
       "input": "RestartModelAccelerateTaskRequest",
       "name": "重启模型加速任务",
-      "output": "RestartModelAccelerateTaskResponse"
+      "output": "RestartModelAccelerateTaskResponse",
+      "status": "online"
     },
     "StartTrainingTask": {
       "document": "启动模型训练任务",
       "input": "StartTrainingTaskRequest",
       "name": "启动模型训练任务",
-      "output": "StartTrainingTaskResponse"
+      "output": "StartTrainingTaskResponse",
+      "status": "online"
     },
     "StopBatchTask": {
       "document": "停止跑批任务",
       "input": "StopBatchTaskRequest",
       "name": "停止跑批任务",
-      "output": "StopBatchTaskResponse"
+      "output": "StopBatchTaskResponse",
+      "status": "online"
     },
     "StopModelAccelerateTask": {
       "document": "停止模型加速任务",
       "input": "StopModelAccelerateTaskRequest",
       "name": "停止模型加速任务",
-      "output": "StopModelAccelerateTaskResponse"
+      "output": "StopModelAccelerateTaskResponse",
+      "status": "online"
     },
     "StopTrainingTask": {
       "document": "停止模型训练任务",
       "input": "StopTrainingTaskRequest",
       "name": "停止模型训练任务",
-      "output": "StopTrainingTaskResponse"
+      "output": "StopTrainingTaskResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -15,35 +15,42 @@ Output:
     "Response": {
         "NodePoolSet": [
             {
-                "AutoscalingGroupId": "asg-xxxxx",
-                "AutoscalingGroupStatus": "enabled",
-                "ClusterInstanceId": "cls-xxxxx",
+                "AutoscalingGroupId": "",
+                "AutoscalingGroupStatus": "",
+                "ClusterInstanceId": "cls-69hshd30",
+                "DeletionProtection": false,
                 "DesiredNodesNum": 1,
+                "DesiredPodNum": 0,
+                "ImageId": "",
                 "Labels": [],
-                "LaunchConfigurationId": "asc-xxxxx",
+                "LaunchConfigurationId": "",
                 "LifeState": "normal",
                 "MaxNodesNum": 1,
                 "MinNodesNum": 0,
-                "Name": "test2",
+                "Name": "test",
                 "NodeCountSummary": {
                     "AutoscalingAdded": {
                         "Initializing": 0,
                         "Joining": 0,
-                        "Normal": 1,
-                        "Total": 1
+                        "Normal": 0,
+                        "Total": 0
                     },
                     "ManuallyAdded": {
                         "Initializing": 0,
                         "Joining": 0,
                         "Normal": 0,
-                        "Total": 0
+                        "Total": 1
                     }
                 },
-                "NodePoolId": "np-xxxx",
-                "Taints": []
+                "NodePoolId": "np-5tx2l4de",
+                "NodePoolOs": "",
+                "OsCustomizeType": "",
+                "Tags": null,
+                "Taints": [],
+                "UserScript": ""
             }
         ],
-        "RequestId": "xxxxxx",
+        "RequestId": "efb810cb-d5a2-4147-88ec-cd1e28c5202e",
         "TotalCount": 1
     }
 }

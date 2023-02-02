@@ -4,1981 +4,2311 @@
       "document": "容器网络创建网络策略添加并发布任务",
       "input": "AddAndPublishNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略添加并发布任务",
-      "output": "AddAndPublishNetworkFirewallPolicyDetailResponse"
+      "output": "AddAndPublishNetworkFirewallPolicyDetailResponse",
+      "status": "online"
     },
     "AddAndPublishNetworkFirewallPolicyYamlDetail": {
       "document": "容器网络创建Yaml网络策略并发布任务",
       "input": "AddAndPublishNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络创建Yaml网络策略并发布任务",
-      "output": "AddAndPublishNetworkFirewallPolicyYamlDetailResponse"
+      "output": "AddAndPublishNetworkFirewallPolicyYamlDetailResponse",
+      "status": "online"
     },
     "AddAssetImageRegistryRegistryDetail": {
       "document": "新增单个镜像仓库详细信息",
       "input": "AddAssetImageRegistryRegistryDetailRequest",
       "name": "新增单个镜像仓库详细信息",
-      "output": "AddAssetImageRegistryRegistryDetailResponse"
+      "output": "AddAssetImageRegistryRegistryDetailResponse",
+      "status": "online"
     },
     "AddComplianceAssetPolicySetToWhitelist": {
       "document": "新增安全合规忽略(资产+检测项列表)列表，不显示指定的检查项包含的资产内容\n参考的AddCompliancePolicyItemToWhitelist，除输入字段外，其它应该是一致的，如果有不同可能是定义的不对",
       "input": "AddComplianceAssetPolicySetToWhitelistRequest",
       "name": "安全合规忽略资产+检测项列表",
-      "output": "AddComplianceAssetPolicySetToWhitelistResponse"
+      "output": "AddComplianceAssetPolicySetToWhitelistResponse",
+      "status": "online"
     },
     "AddCompliancePolicyAssetSetToWhitelist": {
       "document": "新增安全合规忽略(检测项+资产)列表，不显示指定的检查项包含的资产内容\n参考的AddCompliancePolicyItemToWhitelist，除输入字段外，其它应该是一致的，如果有不同可能是定义的不对",
       "input": "AddCompliancePolicyAssetSetToWhitelistRequest",
       "name": "安全合规忽略检测项+资产列表",
-      "output": "AddCompliancePolicyAssetSetToWhitelistResponse"
+      "output": "AddCompliancePolicyAssetSetToWhitelistResponse",
+      "status": "online"
     },
     "AddCompliancePolicyItemToWhitelist": {
       "document": "将指定的检测项添加到白名单中，不显示未通过结果。",
       "input": "AddCompliancePolicyItemToWhitelistRequest",
       "name": "安全合规忽略检测项列表",
-      "output": "AddCompliancePolicyItemToWhitelistResponse"
+      "output": "AddCompliancePolicyItemToWhitelistResponse",
+      "status": "online"
     },
     "AddEditAbnormalProcessRule": {
       "document": "添加编辑运行时异常进程策略",
       "input": "AddEditAbnormalProcessRuleRequest",
       "name": "添加编辑异常进程策略",
-      "output": "AddEditAbnormalProcessRuleResponse"
+      "output": "AddEditAbnormalProcessRuleResponse",
+      "status": "online"
     },
     "AddEditAccessControlRule": {
       "document": "添加编辑运行时访问控制策略",
       "input": "AddEditAccessControlRuleRequest",
       "name": "添加编辑运行访问控制策略",
-      "output": "AddEditAccessControlRuleResponse"
+      "output": "AddEditAccessControlRuleResponse",
+      "status": "online"
     },
     "AddEditImageAutoAuthorizedRule": {
       "document": "新增或编辑本地镜像自动授权规则",
       "input": "AddEditImageAutoAuthorizedRuleRequest",
       "name": "新增或编辑本地镜像自动授权规则",
-      "output": "AddEditImageAutoAuthorizedRuleResponse"
+      "output": "AddEditImageAutoAuthorizedRuleResponse",
+      "status": "online"
     },
     "AddEditReverseShellWhiteList": {
       "document": "添加编辑运行时反弹shell白名单",
       "input": "AddEditReverseShellWhiteListRequest",
       "name": "添加编辑反弹shell白名单",
-      "output": "AddEditReverseShellWhiteListResponse"
+      "output": "AddEditReverseShellWhiteListResponse",
+      "status": "online"
     },
     "AddEditRiskSyscallWhiteList": {
       "document": "添加编辑运行时高危系统调用白名单",
       "input": "AddEditRiskSyscallWhiteListRequest",
       "name": "添加编辑高危系统调用白名单",
-      "output": "AddEditRiskSyscallWhiteListResponse"
+      "output": "AddEditRiskSyscallWhiteListResponse",
+      "status": "online"
     },
     "AddEditWarningRules": {
       "document": "添加编辑告警策略",
       "input": "AddEditWarningRulesRequest",
       "name": "添加编辑告警策略",
-      "output": "AddEditWarningRulesResponse"
+      "output": "AddEditWarningRulesResponse",
+      "status": "online"
     },
     "AddEscapeWhiteList": {
       "document": "新增逃逸白名单",
       "input": "AddEscapeWhiteListRequest",
       "name": "新增逃逸白名单",
-      "output": "AddEscapeWhiteListResponse"
+      "output": "AddEscapeWhiteListResponse",
+      "status": "online"
     },
     "AddIgnoreVul": {
       "document": "新增漏洞扫描忽略漏洞",
       "input": "AddIgnoreVulRequest",
       "name": "新增漏洞扫描忽略漏洞",
-      "output": "AddIgnoreVulResponse"
+      "output": "AddIgnoreVulResponse",
+      "status": "online"
     },
     "AddNetworkFirewallPolicyDetail": {
       "document": "容器网络创建网络策略添加任务",
       "input": "AddNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略添加任务",
-      "output": "AddNetworkFirewallPolicyDetailResponse"
+      "output": "AddNetworkFirewallPolicyDetailResponse",
+      "status": "online"
     },
     "AddNetworkFirewallPolicyYamlDetail": {
       "document": "容器网络创建Yaml网络策略添加任务",
       "input": "AddNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络创建Yaml网络策略添加任务",
-      "output": "AddNetworkFirewallPolicyYamlDetailResponse"
+      "output": "AddNetworkFirewallPolicyYamlDetailResponse",
+      "status": "online"
     },
     "CheckNetworkFirewallPolicyYaml": {
       "document": "容器网络创建检查Yaml网络策略任务",
       "input": "CheckNetworkFirewallPolicyYamlRequest",
       "name": "容器网络创建检查Yaml网络策略任务",
-      "output": "CheckNetworkFirewallPolicyYamlResponse"
+      "output": "CheckNetworkFirewallPolicyYamlResponse",
+      "status": "online"
     },
     "CheckRepeatAssetImageRegistry": {
       "document": "检查单个镜像仓库名是否重复",
       "input": "CheckRepeatAssetImageRegistryRequest",
       "name": "检查单个镜像仓库名是否重复",
-      "output": "CheckRepeatAssetImageRegistryResponse"
+      "output": "CheckRepeatAssetImageRegistryResponse",
+      "status": "online"
     },
     "ConfirmNetworkFirewallPolicy": {
       "document": "容器网络创建网络策略确认任务",
       "input": "ConfirmNetworkFirewallPolicyRequest",
       "name": "容器网络创建网络策略确认任务",
-      "output": "ConfirmNetworkFirewallPolicyResponse"
+      "output": "ConfirmNetworkFirewallPolicyResponse",
+      "status": "online"
     },
     "CreateAbnormalProcessRulesExportJob": {
       "document": "创建异常进程规则导出任务",
       "input": "CreateAbnormalProcessRulesExportJobRequest",
       "name": "创建异常进程规则导出任务",
-      "output": "CreateAbnormalProcessRulesExportJobResponse"
+      "output": "CreateAbnormalProcessRulesExportJobResponse",
+      "status": "online"
     },
     "CreateAccessControlsRuleExportJob": {
       "document": "创建文件篡改规则导出任务",
       "input": "CreateAccessControlsRuleExportJobRequest",
       "name": "创建文件篡改规则导出任务",
-      "output": "CreateAccessControlsRuleExportJobResponse"
+      "output": "CreateAccessControlsRuleExportJobResponse",
+      "status": "online"
     },
     "CreateAssetImageRegistryScanTask": {
       "document": "镜像仓库创建镜像扫描任务",
       "input": "CreateAssetImageRegistryScanTaskRequest",
       "name": "镜像仓库创建镜像扫描任务",
-      "output": "CreateAssetImageRegistryScanTaskResponse"
+      "output": "CreateAssetImageRegistryScanTaskResponse",
+      "status": "online"
     },
     "CreateAssetImageRegistryScanTaskOneKey": {
       "document": "镜像仓库创建镜像一键扫描任务",
       "input": "CreateAssetImageRegistryScanTaskOneKeyRequest",
       "name": "镜像仓库创建镜像一键扫描任务",
-      "output": "CreateAssetImageRegistryScanTaskOneKeyResponse"
+      "output": "CreateAssetImageRegistryScanTaskOneKeyResponse",
+      "status": "online"
     },
     "CreateAssetImageScanSetting": {
       "document": "添加容器安全镜像扫描设置",
       "input": "CreateAssetImageScanSettingRequest",
       "name": "添加容器安全镜像扫描设置",
-      "output": "CreateAssetImageScanSettingResponse"
+      "output": "CreateAssetImageScanSettingResponse",
+      "status": "online"
     },
     "CreateAssetImageScanTask": {
       "document": "容器安全创建镜像扫描任务",
       "input": "CreateAssetImageScanTaskRequest",
       "name": "创建镜像扫描任务",
-      "output": "CreateAssetImageScanTaskResponse"
+      "output": "CreateAssetImageScanTaskResponse",
+      "status": "online"
     },
     "CreateAssetImageVirusExportJob": {
       "document": "创建本地镜像木马列表导出任务",
       "input": "CreateAssetImageVirusExportJobRequest",
       "name": "创建本地镜像木马列表导出任务",
-      "output": "CreateAssetImageVirusExportJobResponse"
+      "output": "CreateAssetImageVirusExportJobResponse",
+      "status": "online"
     },
     "CreateCheckComponent": {
       "document": "安装检查组件，创建防护容器",
       "input": "CreateCheckComponentRequest",
       "name": "安装检查组件",
-      "output": "CreateCheckComponentResponse"
+      "output": "CreateCheckComponentResponse",
+      "status": "online"
     },
     "CreateClusterCheckTask": {
       "document": "创建集群检查任务，用户检查用户的集群相关风险项",
       "input": "CreateClusterCheckTaskRequest",
       "name": "创建集群检查任务",
-      "output": "CreateClusterCheckTaskResponse"
+      "output": "CreateClusterCheckTaskResponse",
+      "status": "online"
     },
     "CreateComplianceTask": {
       "document": "创建合规检查任务，在资产级别触发重新检测时使用。",
       "input": "CreateComplianceTaskRequest",
       "name": "安全合规创建合规检查任务",
-      "output": "CreateComplianceTaskResponse"
+      "output": "CreateComplianceTaskResponse",
+      "status": "online"
     },
     "CreateComponentExportJob": {
       "document": "查询本地镜像组件列表导出",
       "input": "CreateComponentExportJobRequest",
       "name": "查询本地镜像组件列表导出",
-      "output": "CreateComponentExportJobResponse"
+      "output": "CreateComponentExportJobResponse",
+      "status": "online"
     },
     "CreateDefenceVulExportJob": {
       "document": "创建支持防御的漏洞导出任务",
       "input": "CreateDefenceVulExportJobRequest",
       "name": "创建支持防御的漏洞导出任务",
-      "output": "CreateDefenceVulExportJobResponse"
+      "output": "CreateDefenceVulExportJobResponse",
+      "status": "online"
     },
     "CreateEmergencyVulExportJob": {
       "document": "创建应急漏洞导出任务",
       "input": "CreateEmergencyVulExportJobRequest",
       "name": "创建应急漏洞导出任务",
-      "output": "CreateEmergencyVulExportJobResponse"
+      "output": "CreateEmergencyVulExportJobResponse",
+      "status": "online"
     },
     "CreateEscapeEventsExportJob": {
       "document": "创建逃逸事件导出异步任务",
       "input": "CreateEscapeEventsExportJobRequest",
       "name": "创建逃逸事件导出异步任务",
-      "output": "CreateEscapeEventsExportJobResponse"
+      "output": "CreateEscapeEventsExportJobResponse",
+      "status": "online"
     },
     "CreateEscapeWhiteListExportJob": {
       "document": "创建逃逸白名单导出任务",
       "input": "CreateEscapeWhiteListExportJobRequest",
       "name": "创建逃逸白名单导出任务",
-      "output": "CreateEscapeWhiteListExportJobResponse"
+      "output": "CreateEscapeWhiteListExportJobResponse",
+      "status": "online"
     },
     "CreateExportComplianceStatusListJob": {
       "document": "创建一个导出安全合规信息的任务",
       "input": "CreateExportComplianceStatusListJobRequest",
       "name": "创建一个导出安全合规信息的任务",
-      "output": "CreateExportComplianceStatusListJobResponse"
+      "output": "CreateExportComplianceStatusListJobResponse",
+      "status": "online"
     },
     "CreateHostExportJob": {
       "document": "创建主机列表导出任务",
       "input": "CreateHostExportJobRequest",
       "name": "创建主机列表导出任务",
-      "output": "CreateHostExportJobResponse"
+      "output": "CreateHostExportJobResponse",
+      "status": "online"
     },
     "CreateImageExportJob": {
       "document": "创建镜像导出任务",
       "input": "CreateImageExportJobRequest",
       "name": "创建镜像导出任务",
-      "output": "CreateImageExportJobResponse"
+      "output": "CreateImageExportJobResponse",
+      "status": "online"
     },
     "CreateK8sApiAbnormalEventExportJob": {
       "document": "创建k8s api异常事件导出任务",
       "input": "CreateK8sApiAbnormalEventExportJobRequest",
       "name": "创建k8s api异常事件导出任务",
-      "output": "CreateK8sApiAbnormalEventExportJobResponse"
+      "output": "CreateK8sApiAbnormalEventExportJobResponse",
+      "status": "online"
     },
     "CreateK8sApiAbnormalRuleExportJob": {
       "document": "创建k8sApi异常规则导出任务",
       "input": "CreateK8sApiAbnormalRuleExportJobRequest",
       "name": "创建k8sApi异常规则导出任务",
-      "output": "CreateK8sApiAbnormalRuleExportJobResponse"
+      "output": "CreateK8sApiAbnormalRuleExportJobResponse",
+      "status": "online"
     },
     "CreateK8sApiAbnormalRuleInfo": {
       "document": "创建k8sapi异常事件规则",
       "input": "CreateK8sApiAbnormalRuleInfoRequest",
       "name": "创建k8sapi异常事件规则",
-      "output": "CreateK8sApiAbnormalRuleInfoResponse"
+      "output": "CreateK8sApiAbnormalRuleInfoResponse",
+      "status": "online"
     },
     "CreateNetworkFirewallClusterRefresh": {
       "document": "容器网络集群下发刷新任务",
       "input": "CreateNetworkFirewallClusterRefreshRequest",
       "name": "容器网络集群下发刷新任务",
-      "output": "CreateNetworkFirewallClusterRefreshResponse"
+      "output": "CreateNetworkFirewallClusterRefreshResponse",
+      "status": "online"
     },
     "CreateNetworkFirewallPolicyDiscover": {
       "document": "容器网络集群网络策略创建自动发现任务",
       "input": "CreateNetworkFirewallPolicyDiscoverRequest",
       "name": "容器网络集群网络策略创建自动发现任务",
-      "output": "CreateNetworkFirewallPolicyDiscoverResponse"
+      "output": "CreateNetworkFirewallPolicyDiscoverResponse",
+      "status": "online"
     },
     "CreateNetworkFirewallPublish": {
       "document": "容器网络创建网络策略发布任务",
       "input": "CreateNetworkFirewallPublishRequest",
       "name": "容器网络创建网络策略发布任务",
-      "output": "CreateNetworkFirewallPublishResponse"
+      "output": "CreateNetworkFirewallPublishResponse",
+      "status": "online"
     },
     "CreateNetworkFirewallUndoPublish": {
       "document": "容器网络创建网络策略撤销任务",
       "input": "CreateNetworkFirewallUndoPublishRequest",
       "name": "容器网络创建网络策略撤销任务",
-      "output": "CreateNetworkFirewallUndoPublishResponse"
+      "output": "CreateNetworkFirewallUndoPublishResponse",
+      "status": "online"
     },
     "CreateOrModifyPostPayCores": {
       "document": "CreateOrModifyPostPayCores  创建或者编辑弹性计费上限",
       "input": "CreateOrModifyPostPayCoresRequest",
       "name": "创建或者编辑弹性计费上限",
-      "output": "CreateOrModifyPostPayCoresResponse"
+      "output": "CreateOrModifyPostPayCoresResponse",
+      "status": "online"
     },
     "CreateProcessEventsExportJob": {
       "document": "创建异常进程事件导出异步任务",
       "input": "CreateProcessEventsExportJobRequest",
       "name": "创建异常进程事件导出异步任务",
-      "output": "CreateProcessEventsExportJobResponse"
+      "output": "CreateProcessEventsExportJobResponse",
+      "status": "online"
     },
     "CreateRefreshTask": {
       "document": "下发刷新任务，会刷新资产信息",
       "input": "CreateRefreshTaskRequest",
       "name": "下发刷新任务",
-      "output": "CreateRefreshTaskResponse"
+      "output": "CreateRefreshTaskResponse",
+      "status": "online"
     },
     "CreateRiskDnsEventExportJob": {
       "document": "创建恶意请求事件导出任务",
       "input": "CreateRiskDnsEventExportJobRequest",
       "name": "创建恶意请求事件导出任务",
-      "output": "CreateRiskDnsEventExportJobResponse"
+      "output": "CreateRiskDnsEventExportJobResponse",
+      "status": "online"
     },
     "CreateSearchTemplate": {
       "document": "添加检索模板",
       "input": "CreateSearchTemplateRequest",
       "name": "添加检索模板",
-      "output": "CreateSearchTemplateResponse"
+      "output": "CreateSearchTemplateResponse",
+      "status": "online"
     },
     "CreateSystemVulExportJob": {
       "document": "创建系统漏洞导出任务",
       "input": "CreateSystemVulExportJobRequest",
       "name": "创建系统漏洞导出任务",
-      "output": "CreateSystemVulExportJobResponse"
+      "output": "CreateSystemVulExportJobResponse",
+      "status": "online"
     },
     "CreateVirusScanAgain": {
       "document": "运行时文件查杀重新检测",
       "input": "CreateVirusScanAgainRequest",
       "name": "运行时文件查杀重新检测",
-      "output": "CreateVirusScanAgainResponse"
+      "output": "CreateVirusScanAgainResponse",
+      "status": "online"
     },
     "CreateVirusScanTask": {
       "document": "运行时文件查杀一键扫描",
       "input": "CreateVirusScanTaskRequest",
       "name": "运行时文件查杀一键扫描",
-      "output": "CreateVirusScanTaskResponse"
+      "output": "CreateVirusScanTaskResponse",
+      "status": "online"
     },
     "CreateVulContainerExportJob": {
       "document": "创建受漏洞影响的容器导出任务",
       "input": "CreateVulContainerExportJobRequest",
       "name": "创建受漏洞影响的容器导出任务",
-      "output": "CreateVulContainerExportJobResponse"
+      "output": "CreateVulContainerExportJobResponse",
+      "status": "online"
     },
     "CreateVulDefenceEventExportJob": {
       "document": "创建漏洞防御导出任务",
       "input": "CreateVulDefenceEventExportJobRequest",
       "name": "创建漏洞防御导出任务",
-      "output": "CreateVulDefenceEventExportJobResponse"
+      "output": "CreateVulDefenceEventExportJobResponse",
+      "status": "online"
     },
     "CreateVulDefenceHostExportJob": {
       "document": "创建漏洞防御主机导出任务",
       "input": "CreateVulDefenceHostExportJobRequest",
       "name": "创建漏洞防御主机导出任务",
-      "output": "CreateVulDefenceHostExportJobResponse"
+      "output": "CreateVulDefenceHostExportJobResponse",
+      "status": "online"
     },
     "CreateVulExportJob": {
       "document": "查询本地镜像漏洞列表导出",
       "input": "CreateVulExportJobRequest",
       "name": "查询本地镜像漏洞列表导出",
-      "output": "CreateVulExportJobResponse"
+      "output": "CreateVulExportJobResponse",
+      "status": "online"
     },
     "CreateVulImageExportJob": {
       "document": "创建受漏洞影响的镜像导出任务",
       "input": "CreateVulImageExportJobRequest",
       "name": "创建导出受漏洞影响的镜像任务",
-      "output": "CreateVulImageExportJobResponse"
+      "output": "CreateVulImageExportJobResponse",
+      "status": "online"
     },
     "CreateVulScanTask": {
       "document": "创建漏洞扫描任务",
       "input": "CreateVulScanTaskRequest",
       "name": "创建漏洞扫描任务",
-      "output": "CreateVulScanTaskResponse"
+      "output": "CreateVulScanTaskResponse",
+      "status": "online"
     },
     "CreateWebVulExportJob": {
       "document": "创建web漏洞导出任务",
       "input": "CreateWebVulExportJobRequest",
       "name": "创建web漏洞导出任务",
-      "output": "CreateWebVulExportJobResponse"
+      "output": "CreateWebVulExportJobResponse",
+      "status": "online"
     },
     "DeleteAbnormalProcessRules": {
       "document": "删除运行异常进程策略",
       "input": "DeleteAbnormalProcessRulesRequest",
       "name": "删除运行时异常进程策略",
-      "output": "DeleteAbnormalProcessRulesResponse"
+      "output": "DeleteAbnormalProcessRulesResponse",
+      "status": "online"
     },
     "DeleteAccessControlRules": {
       "document": "删除运行访问控制策略",
       "input": "DeleteAccessControlRulesRequest",
       "name": "删除运行时访问控制策略",
-      "output": "DeleteAccessControlRulesResponse"
+      "output": "DeleteAccessControlRulesResponse",
+      "status": "online"
     },
     "DeleteComplianceAssetPolicySetFromWhitelist": {
       "document": "移除安全合规忽略(资产+检测项)列表，不显示指定的检查项包含的资产内容\n参考的AddCompliancePolicyAssetSetToWhitelist，除输入字段外，其它应该是一致的，如果有不同可能是定义的不对",
       "input": "DeleteComplianceAssetPolicySetFromWhitelistRequest",
       "name": "删除安全合规忽略项， 资产+检测项列表",
-      "output": "DeleteComplianceAssetPolicySetFromWhitelistResponse"
+      "output": "DeleteComplianceAssetPolicySetFromWhitelistResponse",
+      "status": "online"
     },
     "DeleteCompliancePolicyAssetSetFromWhitelist": {
       "document": "新增安全合规忽略(检测项+资产)列表，不显示指定的检查项包含的资产内容",
       "input": "DeleteCompliancePolicyAssetSetFromWhitelistRequest",
       "name": "删除检测项+资产列表的白名单策略",
-      "output": "DeleteCompliancePolicyAssetSetFromWhitelistResponse"
+      "output": "DeleteCompliancePolicyAssetSetFromWhitelistResponse",
+      "status": "online"
     },
     "DeleteCompliancePolicyItemFromWhitelist": {
       "document": "从白名单中删除将指定的检测项。",
       "input": "DeleteCompliancePolicyItemFromWhitelistRequest",
       "name": "安全合规取消忽略检测项列表",
-      "output": "DeleteCompliancePolicyItemFromWhitelistResponse"
+      "output": "DeleteCompliancePolicyItemFromWhitelistResponse",
+      "status": "online"
     },
     "DeleteEscapeWhiteList": {
       "document": "删除逃逸白名单",
       "input": "DeleteEscapeWhiteListRequest",
       "name": "删除逃逸白名单",
-      "output": "DeleteEscapeWhiteListResponse"
+      "output": "DeleteEscapeWhiteListResponse",
+      "status": "online"
     },
     "DeleteIgnoreVul": {
       "document": "取消漏洞扫描忽略漏洞",
       "input": "DeleteIgnoreVulRequest",
       "name": "取消漏洞扫描忽略漏洞",
-      "output": "DeleteIgnoreVulResponse"
+      "output": "DeleteIgnoreVulResponse",
+      "status": "online"
     },
     "DeleteK8sApiAbnormalRule": {
       "document": "删除k8sapi异常事件规则",
       "input": "DeleteK8sApiAbnormalRuleRequest",
       "name": "删除k8sapi异常事件规则",
-      "output": "DeleteK8sApiAbnormalRuleResponse"
+      "output": "DeleteK8sApiAbnormalRuleResponse",
+      "status": "online"
     },
     "DeleteMachine": {
       "document": "卸载Agent客户端",
       "input": "DeleteMachineRequest",
       "name": "卸载Agent客户端",
-      "output": "DeleteMachineResponse"
+      "output": "DeleteMachineResponse",
+      "status": "online"
     },
     "DeleteNetworkFirewallPolicyDetail": {
       "document": "容器网络创建网络策略删除任务",
       "input": "DeleteNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略删除任务",
-      "output": "DeleteNetworkFirewallPolicyDetailResponse"
+      "output": "DeleteNetworkFirewallPolicyDetailResponse",
+      "status": "online"
     },
     "DeleteReverseShellEvents": {
       "document": "删除运行时反弹shell事件",
       "input": "DeleteReverseShellEventsRequest",
       "name": "删除运行时反弹shell事件",
-      "output": "DeleteReverseShellEventsResponse"
+      "output": "DeleteReverseShellEventsResponse",
+      "status": "online"
     },
     "DeleteReverseShellWhiteLists": {
       "document": "删除运行时反弹shell白名单",
       "input": "DeleteReverseShellWhiteListsRequest",
       "name": "删除运行时反弹shell白名单",
-      "output": "DeleteReverseShellWhiteListsResponse"
+      "output": "DeleteReverseShellWhiteListsResponse",
+      "status": "online"
     },
     "DeleteRiskSyscallEvents": {
       "document": "删除运行时高危系统调用事件",
       "input": "DeleteRiskSyscallEventsRequest",
       "name": "删除运行时高危系统调用事件",
-      "output": "DeleteRiskSyscallEventsResponse"
+      "output": "DeleteRiskSyscallEventsResponse",
+      "status": "online"
     },
     "DeleteRiskSyscallWhiteLists": {
       "document": "删除运行时高危系统调用白名单",
       "input": "DeleteRiskSyscallWhiteListsRequest",
       "name": "删除运行时高危系统调用白名单",
-      "output": "DeleteRiskSyscallWhiteListsResponse"
+      "output": "DeleteRiskSyscallWhiteListsResponse",
+      "status": "online"
     },
     "DeleteSearchTemplate": {
       "document": "删除检索模板",
       "input": "DeleteSearchTemplateRequest",
       "name": "删除检索模板",
-      "output": "DeleteSearchTemplateResponse"
+      "output": "DeleteSearchTemplateResponse",
+      "status": "online"
     },
     "DescribeABTestConfig": {
       "document": "获取用户当前灰度配置",
       "input": "DescribeABTestConfigRequest",
       "name": "获取用户当前灰度配置",
-      "output": "DescribeABTestConfigResponse"
+      "output": "DescribeABTestConfigResponse",
+      "status": "online"
     },
     "DescribeAbnormalProcessDetail": {
       "document": "查询运行时异常进程事件详细信息",
       "input": "DescribeAbnormalProcessDetailRequest",
       "name": "运行时异常进程事件详细信息",
-      "output": "DescribeAbnormalProcessDetailResponse"
+      "output": "DescribeAbnormalProcessDetailResponse",
+      "status": "online"
     },
     "DescribeAbnormalProcessEventTendency": {
       "document": "查询待处理异常进程事件趋势",
       "input": "DescribeAbnormalProcessEventTendencyRequest",
       "name": "查询待处理异常进程事件趋势",
-      "output": "DescribeAbnormalProcessEventTendencyResponse"
+      "output": "DescribeAbnormalProcessEventTendencyResponse",
+      "status": "online"
     },
     "DescribeAbnormalProcessEvents": {
       "document": "查询运行时异常进程事件列表信息",
       "input": "DescribeAbnormalProcessEventsRequest",
       "name": "运行时异常进程列表",
-      "output": "DescribeAbnormalProcessEventsResponse"
+      "output": "DescribeAbnormalProcessEventsResponse",
+      "status": "online"
     },
     "DescribeAbnormalProcessEventsExport": {
       "document": "查询运行时异常进程事件列表信息导出",
       "input": "DescribeAbnormalProcessEventsExportRequest",
       "name": "运行时异常进程列表导出",
-      "output": "DescribeAbnormalProcessEventsExportResponse"
+      "output": "DescribeAbnormalProcessEventsExportResponse",
+      "status": "online"
     },
     "DescribeAbnormalProcessLevelSummary": {
       "document": "统计异常进程各威胁等级待处理事件数",
       "input": "DescribeAbnormalProcessLevelSummaryRequest",
       "name": "统计异常进程各威胁等级待处理事件数",
-      "output": "DescribeAbnormalProcessLevelSummaryResponse"
+      "output": "DescribeAbnormalProcessLevelSummaryResponse",
+      "status": "online"
     },
     "DescribeAbnormalProcessRuleDetail": {
       "document": "查询运行时异常策略详细信息",
       "input": "DescribeAbnormalProcessRuleDetailRequest",
       "name": "查询运行时异常进程策略详细信息",
-      "output": "DescribeAbnormalProcessRuleDetailResponse"
+      "output": "DescribeAbnormalProcessRuleDetailResponse",
+      "status": "online"
     },
     "DescribeAbnormalProcessRules": {
       "document": "查询运行时异常进程策略列表信息",
       "input": "DescribeAbnormalProcessRulesRequest",
       "name": "运行时异常进程策略列表",
-      "output": "DescribeAbnormalProcessRulesResponse"
+      "output": "DescribeAbnormalProcessRulesResponse",
+      "status": "online"
     },
     "DescribeAbnormalProcessRulesExport": {
       "document": "查询运行时异常进程策略列表信息导出",
       "input": "DescribeAbnormalProcessRulesExportRequest",
       "name": "运行时异常进程策略列表导出",
-      "output": "DescribeAbnormalProcessRulesExportResponse"
+      "output": "DescribeAbnormalProcessRulesExportResponse",
+      "status": "online"
     },
     "DescribeAccessControlDetail": {
       "document": "查询运行时访问控制事件的详细信息",
       "input": "DescribeAccessControlDetailRequest",
       "name": "运行时访问控制事件详细信息",
-      "output": "DescribeAccessControlDetailResponse"
+      "output": "DescribeAccessControlDetailResponse",
+      "status": "online"
     },
     "DescribeAccessControlEvents": {
       "document": "查询运行时访问控制事件列表",
       "input": "DescribeAccessControlEventsRequest",
       "name": "运行时访问控制事件列表",
-      "output": "DescribeAccessControlEventsResponse"
+      "output": "DescribeAccessControlEventsResponse",
+      "status": "online"
     },
     "DescribeAccessControlEventsExport": {
       "document": "查询运行时访问控制事件列表导出",
       "input": "DescribeAccessControlEventsExportRequest",
       "name": "运行时访问控制事件列表导出",
-      "output": "DescribeAccessControlEventsExportResponse"
+      "output": "DescribeAccessControlEventsExportResponse",
+      "status": "online"
     },
     "DescribeAccessControlRuleDetail": {
       "document": "查询运行时访问控制策略详细信息",
       "input": "DescribeAccessControlRuleDetailRequest",
       "name": "查询运行时访问控制策略详细信息",
-      "output": "DescribeAccessControlRuleDetailResponse"
+      "output": "DescribeAccessControlRuleDetailResponse",
+      "status": "online"
     },
     "DescribeAccessControlRules": {
       "document": "查询运行访问控制策略列表信息",
       "input": "DescribeAccessControlRulesRequest",
       "name": "运行时访问控制策略列表",
-      "output": "DescribeAccessControlRulesResponse"
+      "output": "DescribeAccessControlRulesResponse",
+      "status": "online"
     },
     "DescribeAccessControlRulesExport": {
       "document": "查询运行时访问控制策略列表导出",
       "input": "DescribeAccessControlRulesExportRequest",
       "name": "运行时访问控制策略列表导出",
-      "output": "DescribeAccessControlRulesExportResponse"
+      "output": "DescribeAccessControlRulesExportResponse",
+      "status": "online"
     },
     "DescribeAffectedClusterCount": {
       "document": "获取受影响的集群数量，返回数量",
       "input": "DescribeAffectedClusterCountRequest",
       "name": "获取受影响的集群数量",
-      "output": "DescribeAffectedClusterCountResponse"
+      "output": "DescribeAffectedClusterCountResponse",
+      "status": "online"
     },
     "DescribeAffectedNodeList": {
       "document": "查询节点类型的影响范围，返回节点列表",
       "input": "DescribeAffectedNodeListRequest",
       "name": "查询节点类型的影响范围",
-      "output": "DescribeAffectedNodeListResponse"
+      "output": "DescribeAffectedNodeListResponse",
+      "status": "online"
     },
     "DescribeAffectedWorkloadList": {
       "document": "查询workload类型的影响范围，返回workload列表",
       "input": "DescribeAffectedWorkloadListRequest",
       "name": "查询workload类型的影响范围",
-      "output": "DescribeAffectedWorkloadListResponse"
+      "output": "DescribeAffectedWorkloadListResponse",
+      "status": "online"
     },
     "DescribeAgentDaemonSetCmd": {
       "document": "查询平行容器安装命令",
       "input": "DescribeAgentDaemonSetCmdRequest",
       "name": "查询平行容器安装命令",
-      "output": "DescribeAgentDaemonSetCmdResponse"
+      "output": "DescribeAgentDaemonSetCmdResponse",
+      "status": "online"
     },
     "DescribeAgentInstallCommand": {
       "document": "查询agent安装命令",
       "input": "DescribeAgentInstallCommandRequest",
       "name": "查询agent安装命令",
-      "output": "DescribeAgentInstallCommandResponse"
+      "output": "DescribeAgentInstallCommandResponse",
+      "status": "online"
     },
     "DescribeAssetAppServiceList": {
       "document": "容器安全查询app服务列表",
       "input": "DescribeAssetAppServiceListRequest",
       "name": "查询app服务列表",
-      "output": "DescribeAssetAppServiceListResponse"
+      "output": "DescribeAssetAppServiceListResponse",
+      "status": "online"
     },
     "DescribeAssetClusterList": {
       "document": "查询集群列表",
       "input": "DescribeAssetClusterListRequest",
       "name": "查询集群列表",
-      "output": "DescribeAssetClusterListResponse"
+      "output": "DescribeAssetClusterListResponse",
+      "status": "online"
     },
     "DescribeAssetComponentList": {
       "document": "容器安全搜索查询容器组件列表",
       "input": "DescribeAssetComponentListRequest",
       "name": "查询容器组件列表",
-      "output": "DescribeAssetComponentListResponse"
+      "output": "DescribeAssetComponentListResponse",
+      "status": "online"
     },
     "DescribeAssetContainerDetail": {
       "document": "查询容器详细信息",
       "input": "DescribeAssetContainerDetailRequest",
       "name": "查询容器信息",
-      "output": "DescribeAssetContainerDetailResponse"
+      "output": "DescribeAssetContainerDetailResponse",
+      "status": "online"
     },
     "DescribeAssetContainerList": {
       "document": "搜索查询容器列表",
       "input": "DescribeAssetContainerListRequest",
       "name": "查询容器列表",
-      "output": "DescribeAssetContainerListResponse"
+      "output": "DescribeAssetContainerListResponse",
+      "status": "online"
     },
     "DescribeAssetDBServiceList": {
       "document": "容器安全查询db服务列表",
       "input": "DescribeAssetDBServiceListRequest",
       "name": "查询db服务列表",
-      "output": "DescribeAssetDBServiceListResponse"
+      "output": "DescribeAssetDBServiceListResponse",
+      "status": "online"
     },
     "DescribeAssetHostDetail": {
       "document": "查询主机详细信息",
       "input": "DescribeAssetHostDetailRequest",
       "name": "查询主机信息",
-      "output": "DescribeAssetHostDetailResponse"
+      "output": "DescribeAssetHostDetailResponse",
+      "status": "online"
     },
     "DescribeAssetHostList": {
       "document": "容器安全搜索查询主机列表",
       "input": "DescribeAssetHostListRequest",
       "name": "查询主机列表",
-      "output": "DescribeAssetHostListResponse"
+      "output": "DescribeAssetHostListResponse",
+      "status": "online"
     },
     "DescribeAssetImageBindRuleInfo": {
       "document": "镜像绑定规则列表信息，包含运行时访问控制和异常进程公用",
       "input": "DescribeAssetImageBindRuleInfoRequest",
       "name": "镜像绑定规则列表",
-      "output": "DescribeAssetImageBindRuleInfoResponse"
+      "output": "DescribeAssetImageBindRuleInfoResponse",
+      "status": "online"
     },
     "DescribeAssetImageDetail": {
       "document": "查询镜像详细信息",
       "input": "DescribeAssetImageDetailRequest",
       "name": "查询镜像信息",
-      "output": "DescribeAssetImageDetailResponse"
+      "output": "DescribeAssetImageDetailResponse",
+      "status": "online"
     },
     "DescribeAssetImageHostList": {
       "document": "容器安全查询镜像关联主机",
       "input": "DescribeAssetImageHostListRequest",
       "name": "查询镜像关联主机",
-      "output": "DescribeAssetImageHostListResponse"
+      "output": "DescribeAssetImageHostListResponse",
+      "status": "online"
     },
     "DescribeAssetImageList": {
       "document": "容器安全搜索查询镜像列表",
       "input": "DescribeAssetImageListRequest",
       "name": "查询镜像列表",
-      "output": "DescribeAssetImageListResponse"
+      "output": "DescribeAssetImageListResponse",
+      "status": "online"
     },
     "DescribeAssetImageListExport": {
       "document": "容器安全搜索查询镜像列表导出",
       "input": "DescribeAssetImageListExportRequest",
       "name": "查询镜像列表导出",
-      "output": "DescribeAssetImageListExportResponse"
+      "output": "DescribeAssetImageListExportResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryAssetStatus": {
       "document": "查看镜像仓库资产更新进度状态",
       "input": "DescribeAssetImageRegistryAssetStatusRequest",
       "name": "查看镜像仓库资产更新进度状态",
-      "output": "DescribeAssetImageRegistryAssetStatusResponse"
+      "output": "DescribeAssetImageRegistryAssetStatusResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryDetail": {
       "document": "镜像仓库镜像仓库列表详情",
       "input": "DescribeAssetImageRegistryDetailRequest",
       "name": "镜像仓库查询镜像仓库详情",
-      "output": "DescribeAssetImageRegistryDetailResponse"
+      "output": "DescribeAssetImageRegistryDetailResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryList": {
       "document": "镜像仓库镜像仓库列表",
       "input": "DescribeAssetImageRegistryListRequest",
       "name": "镜像仓库查询镜像仓库列表",
-      "output": "DescribeAssetImageRegistryListResponse"
+      "output": "DescribeAssetImageRegistryListResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryListExport": {
       "document": "镜像仓库镜像列表导出",
       "input": "DescribeAssetImageRegistryListExportRequest",
       "name": "镜像仓库镜像列表导出",
-      "output": "DescribeAssetImageRegistryListExportResponse"
+      "output": "DescribeAssetImageRegistryListExportResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryRegistryDetail": {
       "document": "查看单个镜像仓库详细信息",
       "input": "DescribeAssetImageRegistryRegistryDetailRequest",
       "name": "查看单个镜像仓库详细信息",
-      "output": "DescribeAssetImageRegistryRegistryDetailResponse"
+      "output": "DescribeAssetImageRegistryRegistryDetailResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryRegistryList": {
       "document": "镜像仓库仓库列表",
       "input": "DescribeAssetImageRegistryRegistryListRequest",
       "name": "镜像仓库仓库列表",
-      "output": "DescribeAssetImageRegistryRegistryListResponse"
+      "output": "DescribeAssetImageRegistryRegistryListResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryRiskInfoList": {
       "document": "镜像仓库查询镜像高危行为列表",
       "input": "DescribeAssetImageRegistryRiskInfoListRequest",
       "name": "镜像仓库查询镜像高危行为列表",
-      "output": "DescribeAssetImageRegistryRiskInfoListResponse"
+      "output": "DescribeAssetImageRegistryRiskInfoListResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryRiskListExport": {
       "document": "镜像仓库敏感信息列表导出",
       "input": "DescribeAssetImageRegistryRiskListExportRequest",
       "name": "镜像仓库敏感信息列表导出",
-      "output": "DescribeAssetImageRegistryRiskListExportResponse"
+      "output": "DescribeAssetImageRegistryRiskListExportResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryScanStatusOneKey": {
       "document": "镜像仓库查询一键镜像扫描状态",
       "input": "DescribeAssetImageRegistryScanStatusOneKeyRequest",
       "name": "镜像仓库查询一键镜像扫描状态",
-      "output": "DescribeAssetImageRegistryScanStatusOneKeyResponse"
+      "output": "DescribeAssetImageRegistryScanStatusOneKeyResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistrySummary": {
       "document": "镜像仓库查询镜像统计信息",
       "input": "DescribeAssetImageRegistrySummaryRequest",
       "name": "镜像仓库查询镜像统计信息",
-      "output": "DescribeAssetImageRegistrySummaryResponse"
+      "output": "DescribeAssetImageRegistrySummaryResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryVirusList": {
       "document": "镜像仓库查询木马病毒列表",
       "input": "DescribeAssetImageRegistryVirusListRequest",
       "name": "镜像仓库查询木马病毒列表",
-      "output": "DescribeAssetImageRegistryVirusListResponse"
+      "output": "DescribeAssetImageRegistryVirusListResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryVirusListExport": {
       "document": "镜像仓库木马信息列表导出",
       "input": "DescribeAssetImageRegistryVirusListExportRequest",
       "name": "镜像仓库木马信息列表导出",
-      "output": "DescribeAssetImageRegistryVirusListExportResponse"
+      "output": "DescribeAssetImageRegistryVirusListExportResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryVulList": {
       "document": "镜像仓库查询镜像漏洞列表",
       "input": "DescribeAssetImageRegistryVulListRequest",
       "name": "镜像仓库查询镜像漏洞列表",
-      "output": "DescribeAssetImageRegistryVulListResponse"
+      "output": "DescribeAssetImageRegistryVulListResponse",
+      "status": "online"
     },
     "DescribeAssetImageRegistryVulListExport": {
       "document": "镜像仓库漏洞列表导出",
       "input": "DescribeAssetImageRegistryVulListExportRequest",
       "name": "镜像仓库漏洞列表导出",
-      "output": "DescribeAssetImageRegistryVulListExportResponse"
+      "output": "DescribeAssetImageRegistryVulListExportResponse",
+      "status": "online"
     },
     "DescribeAssetImageRiskList": {
       "document": "容器安全查询镜像风险列表",
       "input": "DescribeAssetImageRiskListRequest",
       "name": "查询镜像风险列表",
-      "output": "DescribeAssetImageRiskListResponse"
+      "output": "DescribeAssetImageRiskListResponse",
+      "status": "online"
     },
     "DescribeAssetImageRiskListExport": {
       "document": "容器安全搜索查询镜像风险列表导出",
       "input": "DescribeAssetImageRiskListExportRequest",
       "name": "镜像风险列表导出",
-      "output": "DescribeAssetImageRiskListExportResponse"
+      "output": "DescribeAssetImageRiskListExportResponse",
+      "status": "online"
     },
     "DescribeAssetImageScanSetting": {
       "document": "获取镜像扫描设置信息",
       "input": "DescribeAssetImageScanSettingRequest",
       "name": "获取镜像扫描设置信息",
-      "output": "DescribeAssetImageScanSettingResponse"
+      "output": "DescribeAssetImageScanSettingResponse",
+      "status": "online"
     },
     "DescribeAssetImageScanStatus": {
       "document": "容器安全查询镜像扫描状态",
       "input": "DescribeAssetImageScanStatusRequest",
       "name": "查询镜像扫描状态",
-      "output": "DescribeAssetImageScanStatusResponse"
+      "output": "DescribeAssetImageScanStatusResponse",
+      "status": "online"
     },
     "DescribeAssetImageScanTask": {
       "document": "查询正在一键扫描的镜像扫描taskid",
       "input": "DescribeAssetImageScanTaskRequest",
       "name": "查询正在一键扫描的镜像扫描taskid",
-      "output": "DescribeAssetImageScanTaskResponse"
+      "output": "DescribeAssetImageScanTaskResponse",
+      "status": "online"
     },
     "DescribeAssetImageSimpleList": {
       "document": "容器安全搜索查询镜像简略信息列表",
       "input": "DescribeAssetImageSimpleListRequest",
       "name": "查询镜像简略信息列表",
-      "output": "DescribeAssetImageSimpleListResponse"
+      "output": "DescribeAssetImageSimpleListResponse",
+      "status": "online"
     },
     "DescribeAssetImageVirusList": {
       "document": "容器安全查询镜像病毒列表",
       "input": "DescribeAssetImageVirusListRequest",
       "name": "查询镜像病毒列表",
-      "output": "DescribeAssetImageVirusListResponse"
+      "output": "DescribeAssetImageVirusListResponse",
+      "status": "online"
     },
     "DescribeAssetImageVirusListExport": {
       "document": "容器安全搜索查询镜像木马列表导出",
       "input": "DescribeAssetImageVirusListExportRequest",
       "name": "镜像木马列表导出",
-      "output": "DescribeAssetImageVirusListExportResponse"
+      "output": "DescribeAssetImageVirusListExportResponse",
+      "status": "online"
     },
     "DescribeAssetImageVulList": {
       "document": "容器安全查询镜像漏洞列表",
       "input": "DescribeAssetImageVulListRequest",
       "name": "查询镜像漏洞列表",
-      "output": "DescribeAssetImageVulListResponse"
+      "output": "DescribeAssetImageVulListResponse",
+      "status": "online"
     },
     "DescribeAssetImageVulListExport": {
       "document": "容器安全搜索查询镜像漏洞列表导出",
       "input": "DescribeAssetImageVulListExportRequest",
       "name": "镜像漏洞列表导出",
-      "output": "DescribeAssetImageVulListExportResponse"
+      "output": "DescribeAssetImageVulListExportResponse",
+      "status": "online"
     },
     "DescribeAssetPortList": {
       "document": "容器安全搜索查询端口占用列表",
       "input": "DescribeAssetPortListRequest",
       "name": "查询端口占用列表",
-      "output": "DescribeAssetPortListResponse"
+      "output": "DescribeAssetPortListResponse",
+      "status": "online"
     },
     "DescribeAssetProcessList": {
       "document": "容器安全搜索查询进程列表",
       "input": "DescribeAssetProcessListRequest",
       "name": "查询进程列表",
-      "output": "DescribeAssetProcessListResponse"
+      "output": "DescribeAssetProcessListResponse",
+      "status": "online"
     },
     "DescribeAssetSummary": {
       "document": "查询账户容器、镜像等统计信息",
       "input": "DescribeAssetSummaryRequest",
       "name": "查询账户容器、镜像等统计信息",
-      "output": "DescribeAssetSummaryResponse"
+      "output": "DescribeAssetSummaryResponse",
+      "status": "online"
     },
     "DescribeAssetSyncLastTime": {
       "document": "查询资产同步最近时间",
       "input": "DescribeAssetSyncLastTimeRequest",
       "name": "查询资产同步最近时间",
-      "output": "DescribeAssetSyncLastTimeResponse"
+      "output": "DescribeAssetSyncLastTimeResponse",
+      "status": "online"
     },
     "DescribeAssetWebServiceList": {
       "document": "容器安全查询web服务列表",
       "input": "DescribeAssetWebServiceListRequest",
       "name": "查询web服务列表",
-      "output": "DescribeAssetWebServiceListResponse"
+      "output": "DescribeAssetWebServiceListResponse",
+      "status": "online"
     },
     "DescribeAutoAuthorizedRuleHost": {
       "document": "查询自动授权规则授权范围主机信息",
       "input": "DescribeAutoAuthorizedRuleHostRequest",
       "name": "查询自动授权规则授权范围主机信息",
-      "output": "DescribeAutoAuthorizedRuleHostResponse"
+      "output": "DescribeAutoAuthorizedRuleHostResponse",
+      "status": "online"
     },
     "DescribeCheckItemList": {
       "document": "查询所有检查项接口，返回总数和检查项列表",
       "input": "DescribeCheckItemListRequest",
       "name": "查询所有检查项接口",
-      "output": "DescribeCheckItemListResponse"
+      "output": "DescribeCheckItemListResponse",
+      "status": "online"
     },
     "DescribeClusterDetail": {
       "document": "查询单个集群的详细信息",
       "input": "DescribeClusterDetailRequest",
       "name": "查询单个集群的详细信息",
-      "output": "DescribeClusterDetailResponse"
+      "output": "DescribeClusterDetailResponse",
+      "status": "online"
     },
     "DescribeClusterSummary": {
       "document": "查询用户集群资产总览",
       "input": "DescribeClusterSummaryRequest",
       "name": "查询用户集群资产总览",
-      "output": "DescribeClusterSummaryResponse"
+      "output": "DescribeClusterSummaryResponse",
+      "status": "online"
     },
     "DescribeComplianceAssetDetailInfo": {
       "document": "查询某个资产的详情",
       "input": "DescribeComplianceAssetDetailInfoRequest",
       "name": "安全合规查询某个资产的详情",
-      "output": "DescribeComplianceAssetDetailInfoResponse"
+      "output": "DescribeComplianceAssetDetailInfoResponse",
+      "status": "online"
     },
     "DescribeComplianceAssetList": {
       "document": "查询某类资产的列表",
       "input": "DescribeComplianceAssetListRequest",
       "name": "安全合规查询某类资产的列表",
-      "output": "DescribeComplianceAssetListResponse"
+      "output": "DescribeComplianceAssetListResponse",
+      "status": "online"
     },
     "DescribeComplianceAssetPolicyItemList": {
       "document": "查询某资产下的检测项列表",
       "input": "DescribeComplianceAssetPolicyItemListRequest",
       "name": "安全合规查询某资产下的检测项列表",
-      "output": "DescribeComplianceAssetPolicyItemListResponse"
+      "output": "DescribeComplianceAssetPolicyItemListResponse",
+      "status": "online"
     },
     "DescribeCompliancePeriodTaskList": {
       "document": "查询合规检测的定时任务列表",
       "input": "DescribeCompliancePeriodTaskListRequest",
       "name": "安全合规查询定时任务列表",
-      "output": "DescribeCompliancePeriodTaskListResponse"
+      "output": "DescribeCompliancePeriodTaskListResponse",
+      "status": "online"
     },
     "DescribeCompliancePolicyItemAffectedAssetList": {
       "document": "按照 检测项 → 资产 的两级层次展开的第二层级：资产层级。",
       "input": "DescribeCompliancePolicyItemAffectedAssetListRequest",
       "name": "安全合规查询检测项影响的资产列表",
-      "output": "DescribeCompliancePolicyItemAffectedAssetListResponse"
+      "output": "DescribeCompliancePolicyItemAffectedAssetListResponse",
+      "status": "online"
     },
     "DescribeCompliancePolicyItemAffectedSummary": {
       "document": "按照 检测项 → 资产 的两级层次展开的第一层级：检测项层级。",
       "input": "DescribeCompliancePolicyItemAffectedSummaryRequest",
       "name": "安全合规查询某检测项影响的信息",
-      "output": "DescribeCompliancePolicyItemAffectedSummaryResponse"
+      "output": "DescribeCompliancePolicyItemAffectedSummaryResponse",
+      "status": "online"
     },
     "DescribeComplianceScanFailedAssetList": {
       "document": "按照 资产 → 检测项 二层结构展示的信息。这里查询第一层 资产的通过率汇总信息。",
       "input": "DescribeComplianceScanFailedAssetListRequest",
       "name": "安全合规查询上次检测失败的资产的列表",
-      "output": "DescribeComplianceScanFailedAssetListResponse"
+      "output": "DescribeComplianceScanFailedAssetListResponse",
+      "status": "online"
     },
     "DescribeComplianceTaskAssetSummary": {
       "document": "查询上次任务的资产通过率汇总信息",
       "input": "DescribeComplianceTaskAssetSummaryRequest",
       "name": "安全合规查询上次任务的资产通过率汇总信息",
-      "output": "DescribeComplianceTaskAssetSummaryResponse"
+      "output": "DescribeComplianceTaskAssetSummaryResponse",
+      "status": "online"
     },
     "DescribeComplianceTaskPolicyItemSummaryList": {
       "document": "查询最近一次任务发现的检测项的汇总信息列表，按照 检测项 → 资产 的两级层次展开。",
       "input": "DescribeComplianceTaskPolicyItemSummaryListRequest",
       "name": "安全合规查询上次任务的检测项的汇总信息列表",
-      "output": "DescribeComplianceTaskPolicyItemSummaryListResponse"
+      "output": "DescribeComplianceTaskPolicyItemSummaryListResponse",
+      "status": "online"
     },
     "DescribeComplianceWhitelistItemList": {
       "document": "查询白名单列表",
       "input": "DescribeComplianceWhitelistItemListRequest",
       "name": "安全合规查询白名单列表",
-      "output": "DescribeComplianceWhitelistItemListResponse"
+      "output": "DescribeComplianceWhitelistItemListResponse",
+      "status": "online"
     },
     "DescribeContainerAssetSummary": {
       "document": "查询容器资产概览信息",
       "input": "DescribeContainerAssetSummaryRequest",
       "name": "查询容器安全资产概览",
-      "output": "DescribeContainerAssetSummaryResponse"
+      "output": "DescribeContainerAssetSummaryResponse",
+      "status": "online"
     },
     "DescribeContainerSecEventSummary": {
       "document": "查询容器安全未处理事件信息",
       "input": "DescribeContainerSecEventSummaryRequest",
       "name": "查询容器安全未处理事件概览",
-      "output": "DescribeContainerSecEventSummaryResponse"
+      "output": "DescribeContainerSecEventSummaryResponse",
+      "status": "online"
     },
     "DescribeESAggregations": {
       "document": "获取ES字段聚合结果",
       "input": "DescribeESAggregationsRequest",
       "name": "获取ES字段聚合结果",
-      "output": "DescribeESAggregationsResponse"
+      "output": "DescribeESAggregationsResponse",
+      "status": "online"
     },
     "DescribeESHits": {
       "document": "获取ES查询文档列表",
       "input": "DescribeESHitsRequest",
       "name": "获取ES查询文档列表",
-      "output": "DescribeESHitsResponse"
+      "output": "DescribeESHitsResponse",
+      "status": "online"
     },
     "DescribeEmergencyVulList": {
       "document": "查询应急漏洞列表",
       "input": "DescribeEmergencyVulListRequest",
       "name": "查询应急漏洞列表",
-      "output": "DescribeEmergencyVulListResponse"
+      "output": "DescribeEmergencyVulListResponse",
+      "status": "online"
     },
     "DescribeEscapeEventDetail": {
       "document": "DescribeEscapeEventDetail  查询容器逃逸事件详情",
       "input": "DescribeEscapeEventDetailRequest",
       "name": "查询容器逃逸事件详情",
-      "output": "DescribeEscapeEventDetailResponse"
+      "output": "DescribeEscapeEventDetailResponse",
+      "status": "online"
     },
     "DescribeEscapeEventInfo": {
       "document": "DescribeEscapeEventInfo 查询容器逃逸事件列表",
       "input": "DescribeEscapeEventInfoRequest",
       "name": "查询容器逃逸事件列表",
-      "output": "DescribeEscapeEventInfoResponse"
+      "output": "DescribeEscapeEventInfoResponse",
+      "status": "online"
     },
     "DescribeEscapeEventTendency": {
       "document": "查询待处理逃逸事件趋势",
       "input": "DescribeEscapeEventTendencyRequest",
       "name": "查询待处理逃逸事件趋势",
-      "output": "DescribeEscapeEventTendencyResponse"
+      "output": "DescribeEscapeEventTendencyResponse",
+      "status": "online"
     },
     "DescribeEscapeEventTypeSummary": {
       "document": "统计容器逃逸各事件类型和待处理事件数",
       "input": "DescribeEscapeEventTypeSummaryRequest",
       "name": "统计容器逃逸各事件类型和待处理事件数",
-      "output": "DescribeEscapeEventTypeSummaryResponse"
+      "output": "DescribeEscapeEventTypeSummaryResponse",
+      "status": "online"
     },
     "DescribeEscapeEventsExport": {
       "document": "DescribeEscapeEventsExport  查询容器逃逸事件列表导出",
       "input": "DescribeEscapeEventsExportRequest",
       "name": "查询容器逃逸事件列表导出",
-      "output": "DescribeEscapeEventsExportResponse"
+      "output": "DescribeEscapeEventsExportResponse",
+      "status": "online"
     },
     "DescribeEscapeRuleInfo": {
       "document": "DescribeEscapeRuleInfo 查询容器逃逸扫描规则信息",
       "input": "DescribeEscapeRuleInfoRequest",
       "name": "查询容器逃逸扫描规则信息",
-      "output": "DescribeEscapeRuleInfoResponse"
+      "output": "DescribeEscapeRuleInfoResponse",
+      "status": "online"
     },
     "DescribeEscapeSafeState": {
       "document": "DescribeEscapeSafeState 查询容器逃逸安全状态",
       "input": "DescribeEscapeSafeStateRequest",
       "name": "查询容器逃逸安全状态",
-      "output": "DescribeEscapeSafeStateResponse"
+      "output": "DescribeEscapeSafeStateResponse",
+      "status": "online"
     },
     "DescribeEscapeWhiteList": {
       "document": "查询逃逸白名单",
       "input": "DescribeEscapeWhiteListRequest",
       "name": "查询逃逸白名单",
-      "output": "DescribeEscapeWhiteListResponse"
+      "output": "DescribeEscapeWhiteListResponse",
+      "status": "online"
     },
     "DescribeExportJobDownloadURL": {
       "document": "查询导出任务下载URL",
       "input": "DescribeExportJobDownloadURLRequest",
       "name": "查询导出任务下载URL",
-      "output": "DescribeExportJobDownloadURLResponse"
+      "output": "DescribeExportJobDownloadURLResponse",
+      "status": "online"
     },
     "DescribeExportJobManageList": {
       "document": "查询导出任务管理列表",
       "input": "DescribeExportJobManageListRequest",
       "name": "查询导出任务管理列表",
-      "output": "DescribeExportJobManageListResponse"
+      "output": "DescribeExportJobManageListResponse",
+      "status": "online"
     },
     "DescribeExportJobResult": {
       "document": "查询导出任务的结果",
       "input": "DescribeExportJobResultRequest",
       "name": "查询导出任务的结果",
-      "output": "DescribeExportJobResultResponse"
+      "output": "DescribeExportJobResultResponse",
+      "status": "online"
     },
     "DescribeImageAuthorizedInfo": {
       "document": "DescribeImageAuthorizedInfo  查询镜像授权信息",
       "input": "DescribeImageAuthorizedInfoRequest",
       "name": "查询镜像授权信息",
-      "output": "DescribeImageAuthorizedInfoResponse"
+      "output": "DescribeImageAuthorizedInfoResponse",
+      "status": "online"
     },
     "DescribeImageAutoAuthorizedLogList": {
       "document": "查询镜像自动授权结果列表",
       "input": "DescribeImageAutoAuthorizedLogListRequest",
       "name": "查询镜像自动授权结果列表",
-      "output": "DescribeImageAutoAuthorizedLogListResponse"
+      "output": "DescribeImageAutoAuthorizedLogListResponse",
+      "status": "online"
     },
     "DescribeImageAutoAuthorizedRule": {
       "document": "查询本地镜像自动授权规则",
       "input": "DescribeImageAutoAuthorizedRuleRequest",
       "name": "查询本地镜像自动授权规则",
-      "output": "DescribeImageAutoAuthorizedRuleResponse"
+      "output": "DescribeImageAutoAuthorizedRuleResponse",
+      "status": "online"
     },
     "DescribeImageAutoAuthorizedTaskList": {
       "document": "查询镜像自动授权任务列表",
       "input": "DescribeImageAutoAuthorizedTaskListRequest",
       "name": "查询镜像自动授权任务列表",
-      "output": "DescribeImageAutoAuthorizedTaskListResponse"
+      "output": "DescribeImageAutoAuthorizedTaskListResponse",
+      "status": "online"
     },
     "DescribeImageComponentList": {
       "document": "查询本地镜像组件列表",
       "input": "DescribeImageComponentListRequest",
       "name": "查询本地镜像组件列表",
-      "output": "DescribeImageComponentListResponse"
+      "output": "DescribeImageComponentListResponse",
+      "status": "online"
     },
     "DescribeImageRegistryNamespaceList": {
       "document": "查询用户镜像仓库下的项目名称列表",
       "input": "DescribeImageRegistryNamespaceListRequest",
       "name": "查询用户镜像仓库下的项目名称列表",
-      "output": "DescribeImageRegistryNamespaceListResponse"
+      "output": "DescribeImageRegistryNamespaceListResponse",
+      "status": "online"
     },
     "DescribeImageRegistryTimingScanTask": {
       "document": "镜像仓库查看定时任务",
       "input": "DescribeImageRegistryTimingScanTaskRequest",
       "name": "镜像仓库查看定时任务",
-      "output": "DescribeImageRegistryTimingScanTaskResponse"
+      "output": "DescribeImageRegistryTimingScanTaskResponse",
+      "status": "online"
     },
     "DescribeImageRiskSummary": {
       "document": "查询本地镜像风险概览",
       "input": "DescribeImageRiskSummaryRequest",
       "name": "查询本地镜像风险概览",
-      "output": "DescribeImageRiskSummaryResponse"
+      "output": "DescribeImageRiskSummaryResponse",
+      "status": "online"
     },
     "DescribeImageRiskTendency": {
       "document": "查询容器安全本地镜像风险趋势",
       "input": "DescribeImageRiskTendencyRequest",
       "name": "查询容器安全本地镜像风险趋势",
-      "output": "DescribeImageRiskTendencyResponse"
+      "output": "DescribeImageRiskTendencyResponse",
+      "status": "online"
     },
     "DescribeImageSimpleList": {
       "document": "DescribeImageSimpleList 查询全部镜像列表",
       "input": "DescribeImageSimpleListRequest",
       "name": "查询全部镜像列表",
-      "output": "DescribeImageSimpleListResponse"
+      "output": "DescribeImageSimpleListResponse",
+      "status": "online"
     },
     "DescribeIndexList": {
       "document": "获取索引列表",
       "input": "DescribeIndexListRequest",
       "name": "获取索引列表",
-      "output": "DescribeIndexListResponse"
+      "output": "DescribeIndexListResponse",
+      "status": "online"
     },
     "DescribeInspectionReport": {
       "document": "查询检查报告",
       "input": "DescribeInspectionReportRequest",
       "name": "查询检查报告",
-      "output": "DescribeInspectionReportResponse"
+      "output": "DescribeInspectionReportResponse",
+      "status": "online"
     },
     "DescribeK8sApiAbnormalEventInfo": {
       "document": "查询k8s api 异常事件详情",
       "input": "DescribeK8sApiAbnormalEventInfoRequest",
       "name": "查询k8s api 异常事件详情",
-      "output": "DescribeK8sApiAbnormalEventInfoResponse"
+      "output": "DescribeK8sApiAbnormalEventInfoResponse",
+      "status": "online"
     },
     "DescribeK8sApiAbnormalEventList": {
       "document": "查询k8s api异常事件列表",
       "input": "DescribeK8sApiAbnormalEventListRequest",
       "name": "查询k8s api异常事件列表",
-      "output": "DescribeK8sApiAbnormalEventListResponse"
+      "output": "DescribeK8sApiAbnormalEventListResponse",
+      "status": "online"
     },
     "DescribeK8sApiAbnormalRuleInfo": {
       "document": "查询k8sapi异常请求规则详情",
       "input": "DescribeK8sApiAbnormalRuleInfoRequest",
       "name": "查询k8sapi异常请求规则详情",
-      "output": "DescribeK8sApiAbnormalRuleInfoResponse"
+      "output": "DescribeK8sApiAbnormalRuleInfoResponse",
+      "status": "online"
     },
     "DescribeK8sApiAbnormalRuleList": {
       "document": "查询k8sapi异常请求规则列表",
       "input": "DescribeK8sApiAbnormalRuleListRequest",
       "name": "查询k8sapi异常请求规则列表",
-      "output": "DescribeK8sApiAbnormalRuleListResponse"
+      "output": "DescribeK8sApiAbnormalRuleListResponse",
+      "status": "online"
     },
     "DescribeK8sApiAbnormalRuleScopeList": {
       "document": "查询k8sapi 异常规则中范围列表",
       "input": "DescribeK8sApiAbnormalRuleScopeListRequest",
       "name": "查询k8sapi 异常规则中范围列表",
-      "output": "DescribeK8sApiAbnormalRuleScopeListResponse"
+      "output": "DescribeK8sApiAbnormalRuleScopeListResponse",
+      "status": "online"
     },
     "DescribeK8sApiAbnormalSummary": {
       "document": "查询k8sapi异常事件统计",
       "input": "DescribeK8sApiAbnormalSummaryRequest",
       "name": "查询k8sapi异常事件统计",
-      "output": "DescribeK8sApiAbnormalSummaryResponse"
+      "output": "DescribeK8sApiAbnormalSummaryResponse",
+      "status": "online"
     },
     "DescribeK8sApiAbnormalTendency": {
       "document": "查询k8sapi异常事件趋势",
       "input": "DescribeK8sApiAbnormalTendencyRequest",
       "name": "查询k8sapi异常事件趋势",
-      "output": "DescribeK8sApiAbnormalTendencyResponse"
+      "output": "DescribeK8sApiAbnormalTendencyResponse",
+      "status": "online"
     },
     "DescribeLogStorageStatistic": {
       "document": "获取日志检索容量使用统计",
       "input": "DescribeLogStorageStatisticRequest",
       "name": "获取日志检索容量使用统计",
-      "output": "DescribeLogStorageStatisticResponse"
+      "output": "DescribeLogStorageStatisticResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallAuditRecord": {
       "document": "查询集群策略审计列表",
       "input": "DescribeNetworkFirewallAuditRecordRequest",
       "name": "查询集群策略审计列表",
-      "output": "DescribeNetworkFirewallAuditRecordResponse"
+      "output": "DescribeNetworkFirewallAuditRecordResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallClusterList": {
       "document": "查询集群策略列表",
       "input": "DescribeNetworkFirewallClusterListRequest",
       "name": "查询集群策略列表",
-      "output": "DescribeNetworkFirewallClusterListResponse"
+      "output": "DescribeNetworkFirewallClusterListResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallClusterRefreshStatus": {
       "document": "容器网络查询资产任务进度",
       "input": "DescribeNetworkFirewallClusterRefreshStatusRequest",
       "name": "容器网络查询资产任务进度",
-      "output": "DescribeNetworkFirewallClusterRefreshStatusResponse"
+      "output": "DescribeNetworkFirewallClusterRefreshStatusResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallNamespaceLabelList": {
       "document": "查询集群网络空间标签列表",
       "input": "DescribeNetworkFirewallNamespaceLabelListRequest",
       "name": "查询集群网络空间标签列表",
-      "output": "DescribeNetworkFirewallNamespaceLabelListResponse"
+      "output": "DescribeNetworkFirewallNamespaceLabelListResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallNamespaceList": {
       "document": "查询集群网络空间列表",
       "input": "DescribeNetworkFirewallNamespaceListRequest",
       "name": "查询集群网络空间列表",
-      "output": "DescribeNetworkFirewallNamespaceListResponse"
+      "output": "DescribeNetworkFirewallNamespaceListResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallPodLabelsList": {
       "document": "查询集群网络pod标签",
       "input": "DescribeNetworkFirewallPodLabelsListRequest",
       "name": "查询集群网络pod标签",
-      "output": "DescribeNetworkFirewallPodLabelsListResponse"
+      "output": "DescribeNetworkFirewallPodLabelsListResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallPolicyDetail": {
       "document": "容器网络集群查看策略详情",
       "input": "DescribeNetworkFirewallPolicyDetailRequest",
       "name": "容器网络集群查看策略详情",
-      "output": "DescribeNetworkFirewallPolicyDetailResponse"
+      "output": "DescribeNetworkFirewallPolicyDetailResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallPolicyDiscover": {
       "document": "容器网络查询网络策略自动发现任务进度",
       "input": "DescribeNetworkFirewallPolicyDiscoverRequest",
       "name": "容器网络查询网络策略自动发现任务进度",
-      "output": "DescribeNetworkFirewallPolicyDiscoverResponse"
+      "output": "DescribeNetworkFirewallPolicyDiscoverResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallPolicyList": {
       "document": "查询集群网络策略列表",
       "input": "DescribeNetworkFirewallPolicyListRequest",
       "name": "查询集群网络策略列表",
-      "output": "DescribeNetworkFirewallPolicyListResponse"
+      "output": "DescribeNetworkFirewallPolicyListResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallPolicyStatus": {
       "document": "容器网络查询网络策略策略执行状态",
       "input": "DescribeNetworkFirewallPolicyStatusRequest",
       "name": "容器网络查询网络策略策略执行状态",
-      "output": "DescribeNetworkFirewallPolicyStatusResponse"
+      "output": "DescribeNetworkFirewallPolicyStatusResponse",
+      "status": "online"
     },
     "DescribeNetworkFirewallPolicyYamlDetail": {
       "document": "容器网络集群查看Yaml网络策略详情",
       "input": "DescribeNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络集群查看Yaml网络策略详情",
-      "output": "DescribeNetworkFirewallPolicyYamlDetailResponse"
+      "output": "DescribeNetworkFirewallPolicyYamlDetailResponse",
+      "status": "online"
     },
     "DescribeNewestVul": {
       "document": "查询最新披露漏洞列表",
       "input": "DescribeNewestVulRequest",
       "name": "查询最新披露漏洞列表",
-      "output": "DescribeNewestVulResponse"
+      "output": "DescribeNewestVulResponse",
+      "status": "online"
     },
     "DescribePostPayDetail": {
       "document": "DescribePostPayDetail  查询后付费详情",
       "input": "DescribePostPayDetailRequest",
       "name": "查询后付费详情",
-      "output": "DescribePostPayDetailResponse"
+      "output": "DescribePostPayDetailResponse",
+      "status": "online"
     },
     "DescribeProVersionInfo": {
       "document": "DescribeProVersionInfo  查询专业版需购买信息",
       "input": "DescribeProVersionInfoRequest",
       "name": "查询专业版需购买信息",
-      "output": "DescribeProVersionInfoResponse"
+      "output": "DescribeProVersionInfoResponse",
+      "status": "online"
     },
     "DescribePromotionActivity": {
       "document": "查询促销活动",
       "input": "DescribePromotionActivityRequest",
       "name": "查询促销活动",
-      "output": "DescribePromotionActivityResponse"
+      "output": "DescribePromotionActivityResponse",
+      "status": "online"
     },
     "DescribePublicKey": {
       "document": "获取公钥",
       "input": "DescribePublicKeyRequest",
       "name": "获取公钥",
-      "output": "DescribePublicKeyResponse"
+      "output": "DescribePublicKeyResponse",
+      "status": "online"
     },
     "DescribePurchaseStateInfo": {
       "document": "DescribePurchaseStateInfo 查询容器安全服务已购买信息",
       "input": "DescribePurchaseStateInfoRequest",
       "name": "查询容器安全服务已购买信息",
-      "output": "DescribePurchaseStateInfoResponse"
+      "output": "DescribePurchaseStateInfoResponse",
+      "status": "online"
     },
     "DescribeRefreshTask": {
       "document": "查询刷新任务",
       "input": "DescribeRefreshTaskRequest",
       "name": "查询刷新任务",
-      "output": "DescribeRefreshTaskResponse"
+      "output": "DescribeRefreshTaskResponse",
+      "status": "online"
     },
     "DescribeReverseShellDetail": {
       "document": "查询运行时反弹shell事件详细信息",
       "input": "DescribeReverseShellDetailRequest",
       "name": "运行时反弹shell事件详细信息",
-      "output": "DescribeReverseShellDetailResponse"
+      "output": "DescribeReverseShellDetailResponse",
+      "status": "online"
     },
     "DescribeReverseShellEvents": {
       "document": "查询运行时反弹shell事件列表信息",
       "input": "DescribeReverseShellEventsRequest",
       "name": "运行时反弹shell列表",
-      "output": "DescribeReverseShellEventsResponse"
+      "output": "DescribeReverseShellEventsResponse",
+      "status": "online"
     },
     "DescribeReverseShellEventsExport": {
       "document": "查询运行时反弹shell事件列表信息导出",
       "input": "DescribeReverseShellEventsExportRequest",
       "name": "运行时反弹shell列表导出",
-      "output": "DescribeReverseShellEventsExportResponse"
+      "output": "DescribeReverseShellEventsExportResponse",
+      "status": "online"
     },
     "DescribeReverseShellWhiteListDetail": {
       "document": "查询运行时反弹shell白名单详细信息",
       "input": "DescribeReverseShellWhiteListDetailRequest",
       "name": "运行时反弹shell白名单详细信息",
-      "output": "DescribeReverseShellWhiteListDetailResponse"
+      "output": "DescribeReverseShellWhiteListDetailResponse",
+      "status": "online"
     },
     "DescribeReverseShellWhiteLists": {
       "document": "查询运行时运行时反弹shell白名单列表信息",
       "input": "DescribeReverseShellWhiteListsRequest",
       "name": "运行时反弹shell白名单列表",
-      "output": "DescribeReverseShellWhiteListsResponse"
+      "output": "DescribeReverseShellWhiteListsResponse",
+      "status": "online"
     },
     "DescribeRiskList": {
       "document": "查询最近一次任务发现的风险项的信息列表，支持根据特殊字段进行过滤",
       "input": "DescribeRiskListRequest",
       "name": "查询集群风险项列表",
-      "output": "DescribeRiskListResponse"
+      "output": "DescribeRiskListResponse",
+      "status": "online"
     },
     "DescribeRiskSyscallDetail": {
       "document": "查询高危系统调用事件详细信息",
       "input": "DescribeRiskSyscallDetailRequest",
       "name": "运行时高危系统调用事件详细信息",
-      "output": "DescribeRiskSyscallDetailResponse"
+      "output": "DescribeRiskSyscallDetailResponse",
+      "status": "online"
     },
     "DescribeRiskSyscallEvents": {
       "document": "查询运行时运行时高危系统调用列表信息",
       "input": "DescribeRiskSyscallEventsRequest",
       "name": "运行时高危系统调用列表",
-      "output": "DescribeRiskSyscallEventsResponse"
+      "output": "DescribeRiskSyscallEventsResponse",
+      "status": "online"
     },
     "DescribeRiskSyscallEventsExport": {
       "document": "运行时高危系统调用列表导出",
       "input": "DescribeRiskSyscallEventsExportRequest",
       "name": "运行时高危系统调用列表导出",
-      "output": "DescribeRiskSyscallEventsExportResponse"
+      "output": "DescribeRiskSyscallEventsExportResponse",
+      "status": "online"
     },
     "DescribeRiskSyscallNames": {
       "document": "查询运行时高危系统调用系统名称列表",
       "input": "DescribeRiskSyscallNamesRequest",
       "name": "运行时高危系统调用系统名称列表",
-      "output": "DescribeRiskSyscallNamesResponse"
+      "output": "DescribeRiskSyscallNamesResponse",
+      "status": "online"
     },
     "DescribeRiskSyscallWhiteListDetail": {
       "document": "查询运行时高危系统调用白名单详细信息",
       "input": "DescribeRiskSyscallWhiteListDetailRequest",
       "name": "运行时高危系统调用白名单详细信息",
-      "output": "DescribeRiskSyscallWhiteListDetailResponse"
+      "output": "DescribeRiskSyscallWhiteListDetailResponse",
+      "status": "online"
     },
     "DescribeRiskSyscallWhiteLists": {
       "document": "查询运行时高危系统调用白名单列表信息",
       "input": "DescribeRiskSyscallWhiteListsRequest",
       "name": "运行时高危系统调用白名单列表",
-      "output": "DescribeRiskSyscallWhiteListsResponse"
+      "output": "DescribeRiskSyscallWhiteListsResponse",
+      "status": "online"
     },
     "DescribeScanIgnoreVulList": {
       "document": "查询扫描忽略的漏洞列表",
       "input": "DescribeScanIgnoreVulListRequest",
       "name": "查询扫描忽略的漏洞列表",
-      "output": "DescribeScanIgnoreVulListResponse"
+      "output": "DescribeScanIgnoreVulListResponse",
+      "status": "online"
     },
     "DescribeSearchExportList": {
       "document": "导出ES查询文档列表",
       "input": "DescribeSearchExportListRequest",
       "name": "导出ES查询文档列表",
-      "output": "DescribeSearchExportListResponse"
+      "output": "DescribeSearchExportListResponse",
+      "status": "online"
     },
     "DescribeSearchLogs": {
       "document": "获取历史搜索记录",
       "input": "DescribeSearchLogsRequest",
       "name": "获取历史搜索记录",
-      "output": "DescribeSearchLogsResponse"
+      "output": "DescribeSearchLogsResponse",
+      "status": "online"
     },
     "DescribeSearchTemplates": {
       "document": "获取快速检索列表",
       "input": "DescribeSearchTemplatesRequest",
       "name": "获取快速检索列表",
-      "output": "DescribeSearchTemplatesResponse"
+      "output": "DescribeSearchTemplatesResponse",
+      "status": "online"
     },
     "DescribeSecEventsTendency": {
       "document": "查询容器运行时安全事件趋势",
       "input": "DescribeSecEventsTendencyRequest",
       "name": "查询容器运行时安全时间趋势",
-      "output": "DescribeSecEventsTendencyResponse"
+      "output": "DescribeSecEventsTendencyResponse",
+      "status": "online"
     },
     "DescribeSecLogAlertMsg": {
       "document": "查询安全日志告警信息",
       "input": "DescribeSecLogAlertMsgRequest",
       "name": "查询安全日志告警信息",
-      "output": "DescribeSecLogAlertMsgResponse"
+      "output": "DescribeSecLogAlertMsgResponse",
+      "status": "online"
     },
     "DescribeSecLogCleanSettingInfo": {
       "document": "查询安全日志清理设置详情",
       "input": "DescribeSecLogCleanSettingInfoRequest",
       "name": "查询安全日志清理设置详情",
-      "output": "DescribeSecLogCleanSettingInfoResponse"
+      "output": "DescribeSecLogCleanSettingInfoResponse",
+      "status": "online"
     },
     "DescribeSecLogDeliveryClsOptions": {
       "document": "查询安全日志投递cls可选项",
       "input": "DescribeSecLogDeliveryClsOptionsRequest",
       "name": "查询安全日志投递cls可选项",
-      "output": "DescribeSecLogDeliveryClsOptionsResponse"
+      "output": "DescribeSecLogDeliveryClsOptionsResponse",
+      "status": "online"
     },
     "DescribeSecLogDeliveryClsSetting": {
       "document": "查询安全日志投递Cls配置",
       "input": "DescribeSecLogDeliveryClsSettingRequest",
       "name": "查询安全日志投递Cls配置",
-      "output": "DescribeSecLogDeliveryClsSettingResponse"
+      "output": "DescribeSecLogDeliveryClsSettingResponse",
+      "status": "online"
     },
     "DescribeSecLogDeliveryKafkaOptions": {
       "document": "查询安全日志投递kafka可选项",
       "input": "DescribeSecLogDeliveryKafkaOptionsRequest",
       "name": "查询安全日志投递kafka可选项",
-      "output": "DescribeSecLogDeliveryKafkaOptionsResponse"
+      "output": "DescribeSecLogDeliveryKafkaOptionsResponse",
+      "status": "online"
     },
     "DescribeSecLogDeliveryKafkaSetting": {
       "document": "查询安全日志投递kafka配置",
       "input": "DescribeSecLogDeliveryKafkaSettingRequest",
       "name": "查询安全日志投递kafka配置",
-      "output": "DescribeSecLogDeliveryKafkaSettingResponse"
+      "output": "DescribeSecLogDeliveryKafkaSettingResponse",
+      "status": "online"
     },
     "DescribeSecLogJoinObjectList": {
       "document": "查询安全日志接入对象列表",
       "input": "DescribeSecLogJoinObjectListRequest",
       "name": "查询安全日志接入对象列表",
-      "output": "DescribeSecLogJoinObjectListResponse"
+      "output": "DescribeSecLogJoinObjectListResponse",
+      "status": "online"
     },
     "DescribeSecLogJoinTypeList": {
       "document": "查询安全日志接入列表",
       "input": "DescribeSecLogJoinTypeListRequest",
       "name": "查询安全日志接入列表",
-      "output": "DescribeSecLogJoinTypeListResponse"
+      "output": "DescribeSecLogJoinTypeListResponse",
+      "status": "online"
     },
     "DescribeSecLogKafkaUIN": {
       "document": "查询安全日志KafkaUIN",
       "input": "DescribeSecLogKafkaUINRequest",
       "name": "查询安全日志KafkaUIN",
-      "output": "DescribeSecLogKafkaUINResponse"
+      "output": "DescribeSecLogKafkaUINResponse",
+      "status": "online"
     },
     "DescribeSecLogVasInfo": {
       "document": "查询安全日志商品信息",
       "input": "DescribeSecLogVasInfoRequest",
       "name": "查询安全日志商品信息",
-      "output": "DescribeSecLogVasInfoResponse"
+      "output": "DescribeSecLogVasInfoResponse",
+      "status": "online"
     },
     "DescribeSupportDefenceVul": {
       "document": "查询支持防御的漏洞列表",
       "input": "DescribeSupportDefenceVulRequest",
       "name": "查询支持防御的漏洞列表",
-      "output": "DescribeSupportDefenceVulResponse"
+      "output": "DescribeSupportDefenceVulResponse",
+      "status": "online"
     },
     "DescribeSystemVulList": {
       "document": "查询系统漏洞列表",
       "input": "DescribeSystemVulListRequest",
       "name": "查询系统漏洞列表",
-      "output": "DescribeSystemVulListResponse"
+      "output": "DescribeSystemVulListResponse",
+      "status": "online"
     },
     "DescribeTaskResultSummary": {
       "document": "查询检查结果总览，返回受影响的节点数量，返回7天的数据，总共7个",
       "input": "DescribeTaskResultSummaryRequest",
       "name": "查询检查结果总览",
-      "output": "DescribeTaskResultSummaryResponse"
+      "output": "DescribeTaskResultSummaryResponse",
+      "status": "online"
     },
     "DescribeTcssSummary": {
       "document": "查询容器安全概览信息",
       "input": "DescribeTcssSummaryRequest",
       "name": "查询容器安全概览信息",
-      "output": "DescribeTcssSummaryResponse"
+      "output": "DescribeTcssSummaryResponse",
+      "status": "online"
     },
     "DescribeUnauthorizedCoresTendency": {
       "document": "查询当天未授权核数趋势",
       "input": "DescribeUnauthorizedCoresTendencyRequest",
       "name": "查询当天未授权核数趋势",
-      "output": "DescribeUnauthorizedCoresTendencyResponse"
+      "output": "DescribeUnauthorizedCoresTendencyResponse",
+      "status": "online"
     },
     "DescribeUnfinishRefreshTask": {
       "document": "查询未完成的刷新资产任务信息",
       "input": "DescribeUnfinishRefreshTaskRequest",
       "name": "查询未完成的刷新资产任务信息",
-      "output": "DescribeUnfinishRefreshTaskResponse"
+      "output": "DescribeUnfinishRefreshTaskResponse",
+      "status": "online"
     },
     "DescribeUserCluster": {
       "document": "安全概览和集群安全页进入调用该接口，查询用户集群相关信息。",
       "input": "DescribeUserClusterRequest",
       "name": "用户集群资产查询",
-      "output": "DescribeUserClusterResponse"
+      "output": "DescribeUserClusterResponse",
+      "status": "online"
     },
     "DescribeValueAddedSrvInfo": {
       "document": "DescribeValueAddedSrvInfo查询增值服务需购买信息",
       "input": "DescribeValueAddedSrvInfoRequest",
       "name": "查询增值服务需购买信息",
-      "output": "DescribeValueAddedSrvInfoResponse"
+      "output": "DescribeValueAddedSrvInfoResponse",
+      "status": "online"
     },
     "DescribeVirusAutoIsolateSampleDetail": {
       "document": "查询木马自动隔离样本详情",
       "input": "DescribeVirusAutoIsolateSampleDetailRequest",
       "name": "查询木马自动隔离样本详情",
-      "output": "DescribeVirusAutoIsolateSampleDetailResponse"
+      "output": "DescribeVirusAutoIsolateSampleDetailResponse",
+      "status": "online"
     },
     "DescribeVirusAutoIsolateSampleDownloadURL": {
       "document": "查询木马自动隔离样本下载链接",
       "input": "DescribeVirusAutoIsolateSampleDownloadURLRequest",
       "name": "查询木马自动隔离样本下载链接",
-      "output": "DescribeVirusAutoIsolateSampleDownloadURLResponse"
+      "output": "DescribeVirusAutoIsolateSampleDownloadURLResponse",
+      "status": "online"
     },
     "DescribeVirusAutoIsolateSampleList": {
       "document": "查询木马自动隔离样本列表",
       "input": "DescribeVirusAutoIsolateSampleListRequest",
       "name": "查询木马自动隔离样本列表",
-      "output": "DescribeVirusAutoIsolateSampleListResponse"
+      "output": "DescribeVirusAutoIsolateSampleListResponse",
+      "status": "online"
     },
     "DescribeVirusAutoIsolateSetting": {
       "document": "查询木马自动隔离设置",
       "input": "DescribeVirusAutoIsolateSettingRequest",
       "name": "查询木马自动隔离设置",
-      "output": "DescribeVirusAutoIsolateSettingResponse"
+      "output": "DescribeVirusAutoIsolateSettingResponse",
+      "status": "online"
     },
     "DescribeVirusDetail": {
       "document": "运行时查询木马文件信息",
       "input": "DescribeVirusDetailRequest",
       "name": "运行时查询木马文件信息",
-      "output": "DescribeVirusDetailResponse"
+      "output": "DescribeVirusDetailResponse",
+      "status": "online"
     },
     "DescribeVirusEventTendency": {
       "document": "查询木马事件趋势",
       "input": "DescribeVirusEventTendencyRequest",
       "name": "查询木马事件趋势",
-      "output": "DescribeVirusEventTendencyResponse"
+      "output": "DescribeVirusEventTendencyResponse",
+      "status": "online"
     },
     "DescribeVirusList": {
       "document": "查询运行时文件查杀事件列表",
       "input": "DescribeVirusListRequest",
       "name": "查询运行时文件查杀事件列表",
-      "output": "DescribeVirusListResponse"
+      "output": "DescribeVirusListResponse",
+      "status": "online"
     },
     "DescribeVirusManualScanEstimateTimeout": {
       "document": "查询木马一键检测预估超时时间",
       "input": "DescribeVirusManualScanEstimateTimeoutRequest",
       "name": "查询木马一键检测预估超时时间",
-      "output": "DescribeVirusManualScanEstimateTimeoutResponse"
+      "output": "DescribeVirusManualScanEstimateTimeoutResponse",
+      "status": "online"
     },
     "DescribeVirusMonitorSetting": {
       "document": "运行时查询文件查杀实时监控设置",
       "input": "DescribeVirusMonitorSettingRequest",
       "name": "运行时查询文件查杀实时监控设置",
-      "output": "DescribeVirusMonitorSettingResponse"
+      "output": "DescribeVirusMonitorSettingResponse",
+      "status": "online"
     },
     "DescribeVirusSampleDownloadUrl": {
       "document": "查询木马样本下载url",
       "input": "DescribeVirusSampleDownloadUrlRequest",
       "name": "查询木马样本下载url",
-      "output": "DescribeVirusSampleDownloadUrlResponse"
+      "output": "DescribeVirusSampleDownloadUrlResponse",
+      "status": "online"
     },
     "DescribeVirusScanSetting": {
       "document": "运行时查询文件查杀设置",
       "input": "DescribeVirusScanSettingRequest",
       "name": "运行时查询文件查杀设置",
-      "output": "DescribeVirusScanSettingResponse"
+      "output": "DescribeVirusScanSettingResponse",
+      "status": "online"
     },
     "DescribeVirusScanTaskStatus": {
       "document": "运行时查询文件查杀任务状态",
       "input": "DescribeVirusScanTaskStatusRequest",
       "name": "运行时查询文件查杀任务状态",
-      "output": "DescribeVirusScanTaskStatusResponse"
+      "output": "DescribeVirusScanTaskStatusResponse",
+      "status": "online"
     },
     "DescribeVirusScanTimeoutSetting": {
       "document": "运行时文件扫描超时设置查询",
       "input": "DescribeVirusScanTimeoutSettingRequest",
       "name": "运行时文件扫描超时设置查询",
-      "output": "DescribeVirusScanTimeoutSettingResponse"
+      "output": "DescribeVirusScanTimeoutSettingResponse",
+      "status": "online"
     },
     "DescribeVirusSummary": {
       "document": "运行时查询木马概览信息",
       "input": "DescribeVirusSummaryRequest",
       "name": "运行时查询木马概览信息",
-      "output": "DescribeVirusSummaryResponse"
+      "output": "DescribeVirusSummaryResponse",
+      "status": "online"
     },
     "DescribeVirusTaskList": {
       "document": "运行时查询文件查杀任务列表",
       "input": "DescribeVirusTaskListRequest",
       "name": "运行时查询文件查杀任务列表",
-      "output": "DescribeVirusTaskListResponse"
+      "output": "DescribeVirusTaskListResponse",
+      "status": "online"
     },
     "DescribeVulContainerList": {
       "document": "查询受漏洞的容器列表",
       "input": "DescribeVulContainerListRequest",
       "name": "查询受漏洞的容器列表",
-      "output": "DescribeVulContainerListResponse"
+      "output": "DescribeVulContainerListResponse",
+      "status": "online"
     },
     "DescribeVulDefenceEvent": {
       "document": "查询漏洞防御事件列表",
       "input": "DescribeVulDefenceEventRequest",
       "name": "查询漏洞防御事件列表",
-      "output": "DescribeVulDefenceEventResponse"
+      "output": "DescribeVulDefenceEventResponse",
+      "status": "online"
     },
     "DescribeVulDefenceEventDetail": {
       "document": "查询漏洞防御事件详情",
       "input": "DescribeVulDefenceEventDetailRequest",
       "name": "查询漏洞防御事件详情",
-      "output": "DescribeVulDefenceEventDetailResponse"
+      "output": "DescribeVulDefenceEventDetailResponse",
+      "status": "online"
     },
     "DescribeVulDefenceEventTendency": {
       "document": "查询漏洞防御攻击事件趋势",
       "input": "DescribeVulDefenceEventTendencyRequest",
       "name": "查询漏洞防御攻击事件趋势",
-      "output": "DescribeVulDefenceEventTendencyResponse"
+      "output": "DescribeVulDefenceEventTendencyResponse",
+      "status": "online"
     },
     "DescribeVulDefenceHost": {
       "document": "查询漏洞防御的主机列表",
       "input": "DescribeVulDefenceHostRequest",
       "name": "查询漏洞防御的主机列表",
-      "output": "DescribeVulDefenceHostResponse"
+      "output": "DescribeVulDefenceHostResponse",
+      "status": "online"
     },
     "DescribeVulDefencePlugin": {
       "document": "查询漏洞防御插件列表",
       "input": "DescribeVulDefencePluginRequest",
       "name": "查询漏洞防御插件列表",
-      "output": "DescribeVulDefencePluginResponse"
+      "output": "DescribeVulDefencePluginResponse",
+      "status": "online"
     },
     "DescribeVulDefenceSetting": {
       "document": "查询漏洞防御设置信息",
       "input": "DescribeVulDefenceSettingRequest",
       "name": "查询漏洞防御设置信息",
-      "output": "DescribeVulDefenceSettingResponse"
+      "output": "DescribeVulDefenceSettingResponse",
+      "status": "online"
     },
     "DescribeVulDetail": {
       "document": "查询漏洞详情",
       "input": "DescribeVulDetailRequest",
       "name": "查询漏洞详情",
-      "output": "DescribeVulDetailResponse"
+      "output": "DescribeVulDetailResponse",
+      "status": "online"
     },
     "DescribeVulIgnoreLocalImageList": {
       "document": "查询漏洞扫描忽略的本地镜像列表",
       "input": "DescribeVulIgnoreLocalImageListRequest",
       "name": "查询漏洞扫描忽略的本地镜像列表",
-      "output": "DescribeVulIgnoreLocalImageListResponse"
+      "output": "DescribeVulIgnoreLocalImageListResponse",
+      "status": "online"
     },
     "DescribeVulIgnoreRegistryImageList": {
       "document": "查询漏洞扫描忽略的仓库镜像列表",
       "input": "DescribeVulIgnoreRegistryImageListRequest",
       "name": "查询漏洞扫描忽略的仓库镜像列表",
-      "output": "DescribeVulIgnoreRegistryImageListResponse"
+      "output": "DescribeVulIgnoreRegistryImageListResponse",
+      "status": "online"
     },
     "DescribeVulImageList": {
       "document": "查询漏洞影响的镜像列表",
       "input": "DescribeVulImageListRequest",
       "name": "查询漏洞影响的镜像列表",
-      "output": "DescribeVulImageListResponse"
+      "output": "DescribeVulImageListResponse",
+      "status": "online"
     },
     "DescribeVulImageSummary": {
       "document": "查询漏洞镜像统计",
       "input": "DescribeVulImageSummaryRequest",
       "name": "查询漏洞镜像统计",
-      "output": "DescribeVulImageSummaryResponse"
+      "output": "DescribeVulImageSummaryResponse",
+      "status": "online"
     },
     "DescribeVulLevelImageSummary": {
       "document": "查询应急漏洞各威胁等级统计镜像数",
       "input": "DescribeVulLevelImageSummaryRequest",
       "name": "查询应急漏洞各威胁等级统计镜像数",
-      "output": "DescribeVulLevelImageSummaryResponse"
+      "output": "DescribeVulLevelImageSummaryResponse",
+      "status": "online"
     },
     "DescribeVulLevelSummary": {
       "document": "查询漏洞各威胁等级统计数",
       "input": "DescribeVulLevelSummaryRequest",
       "name": "查询漏洞各威胁等级统计数",
-      "output": "DescribeVulLevelSummaryResponse"
+      "output": "DescribeVulLevelSummaryResponse",
+      "status": "online"
     },
     "DescribeVulScanAuthorizedImageSummary": {
       "document": "统计漏洞扫描页已授权和未扫描镜像数",
       "input": "DescribeVulScanAuthorizedImageSummaryRequest",
       "name": "统计漏洞扫描页已授权和未扫描镜像数",
-      "output": "DescribeVulScanAuthorizedImageSummaryResponse"
+      "output": "DescribeVulScanAuthorizedImageSummaryResponse",
+      "status": "online"
     },
     "DescribeVulScanInfo": {
       "document": "查询漏洞扫描任务信息",
       "input": "DescribeVulScanInfoRequest",
       "name": "查询漏洞扫描任务信息",
-      "output": "DescribeVulScanInfoResponse"
+      "output": "DescribeVulScanInfoResponse",
+      "status": "online"
     },
     "DescribeVulScanLocalImageList": {
       "document": "查询漏洞扫描任务的本地镜像列表",
       "input": "DescribeVulScanLocalImageListRequest",
       "name": "查询漏洞扫描任务的本地镜像列表",
-      "output": "DescribeVulScanLocalImageListResponse"
+      "output": "DescribeVulScanLocalImageListResponse",
+      "status": "online"
     },
     "DescribeVulSummary": {
       "document": "查询漏洞风险统计概览",
       "input": "DescribeVulSummaryRequest",
       "name": "查询漏洞风险统计概览",
-      "output": "DescribeVulSummaryResponse"
+      "output": "DescribeVulSummaryResponse",
+      "status": "online"
     },
     "DescribeVulTendency": {
       "document": "查询本地镜像、仓库镜像中严重&高危的漏洞趋势",
       "input": "DescribeVulTendencyRequest",
       "name": "查询漏洞风险趋势",
-      "output": "DescribeVulTendencyResponse"
+      "output": "DescribeVulTendencyResponse",
+      "status": "online"
     },
     "DescribeVulTopRanking": {
       "document": "查询漏洞Top排名列表",
       "input": "DescribeVulTopRankingRequest",
       "name": "查询漏洞Top排名列表",
-      "output": "DescribeVulTopRankingResponse"
+      "output": "DescribeVulTopRankingResponse",
+      "status": "online"
     },
     "DescribeWarningRules": {
       "document": "获取告警策略列表",
       "input": "DescribeWarningRulesRequest",
       "name": "获取告警策略列表",
-      "output": "DescribeWarningRulesResponse"
+      "output": "DescribeWarningRulesResponse",
+      "status": "online"
     },
     "DescribeWebVulList": {
       "document": "查询web应用漏洞列表",
       "input": "DescribeWebVulListRequest",
       "name": "查询web应用漏洞列表",
-      "output": "DescribeWebVulListResponse"
+      "output": "DescribeWebVulListResponse",
+      "status": "online"
     },
     "ExportVirusList": {
       "document": "运行时文件查杀事件列表导出",
       "input": "ExportVirusListRequest",
       "name": "运行时文件查杀事件列表导出",
-      "output": "ExportVirusListResponse"
+      "output": "ExportVirusListResponse",
+      "status": "online"
     },
     "InitializeUserComplianceEnvironment": {
       "document": "为客户初始化合规基线的使用环境，创建必要的数据和选项。",
       "input": "InitializeUserComplianceEnvironmentRequest",
       "name": "安全合规初始化用户的合规基线检测环境",
-      "output": "InitializeUserComplianceEnvironmentResponse"
+      "output": "InitializeUserComplianceEnvironmentResponse",
+      "status": "online"
     },
     "ModifyAbnormalProcessRuleStatus": {
       "document": "修改运行时异常进程策略的开启关闭状态",
       "input": "ModifyAbnormalProcessRuleStatusRequest",
       "name": "修改运行时异常进程策略状态",
-      "output": "ModifyAbnormalProcessRuleStatusResponse"
+      "output": "ModifyAbnormalProcessRuleStatusResponse",
+      "status": "online"
     },
     "ModifyAbnormalProcessStatus": {
       "document": "修改异常进程事件的状态信息",
       "input": "ModifyAbnormalProcessStatusRequest",
       "name": "修改异常进程事件状态",
-      "output": "ModifyAbnormalProcessStatusResponse"
+      "output": "ModifyAbnormalProcessStatusResponse",
+      "status": "online"
     },
     "ModifyAccessControlRuleStatus": {
       "document": "修改运行时访问控制策略的状态，启用或者禁用",
       "input": "ModifyAccessControlRuleStatusRequest",
       "name": "修改运行时访问控制策略状态",
-      "output": "ModifyAccessControlRuleStatusResponse"
+      "output": "ModifyAccessControlRuleStatusResponse",
+      "status": "online"
     },
     "ModifyAccessControlStatus": {
       "document": "修改运行时访问控制事件状态信息",
       "input": "ModifyAccessControlStatusRequest",
       "name": "修改运行时访问控制事件状态",
-      "output": "ModifyAccessControlStatusResponse"
+      "output": "ModifyAccessControlStatusResponse",
+      "status": "online"
     },
     "ModifyAsset": {
       "document": "容器安全主机资产刷新",
       "input": "ModifyAssetRequest",
       "name": "主机资产刷新",
-      "output": "ModifyAssetResponse"
+      "output": "ModifyAssetResponse",
+      "status": "online"
     },
     "ModifyAssetImageRegistryScanStop": {
       "document": "镜像仓库停止镜像扫描任务",
       "input": "ModifyAssetImageRegistryScanStopRequest",
       "name": "镜像仓库停止镜像扫描任务",
-      "output": "ModifyAssetImageRegistryScanStopResponse"
+      "output": "ModifyAssetImageRegistryScanStopResponse",
+      "status": "online"
     },
     "ModifyAssetImageRegistryScanStopOneKey": {
       "document": "镜像仓库停止镜像一键扫描任务",
       "input": "ModifyAssetImageRegistryScanStopOneKeyRequest",
       "name": "镜像仓库停止镜像一键扫描任务",
-      "output": "ModifyAssetImageRegistryScanStopOneKeyResponse"
+      "output": "ModifyAssetImageRegistryScanStopOneKeyResponse",
+      "status": "online"
     },
     "ModifyAssetImageScanStop": {
       "document": "容器安全停止镜像扫描",
       "input": "ModifyAssetImageScanStopRequest",
       "name": "停止镜像扫描",
-      "output": "ModifyAssetImageScanStopResponse"
+      "output": "ModifyAssetImageScanStopResponse",
+      "status": "online"
     },
     "ModifyCompliancePeriodTask": {
       "document": "修改定时任务的设置，包括检测周期、开启/禁用合规基准。",
       "input": "ModifyCompliancePeriodTaskRequest",
       "name": "安全合规编辑定时任务",
-      "output": "ModifyCompliancePeriodTaskResponse"
+      "output": "ModifyCompliancePeriodTaskResponse",
+      "status": "online"
     },
     "ModifyContainerNetStatus": {
       "document": "隔离容器网络状态",
       "input": "ModifyContainerNetStatusRequest",
       "name": "隔离容器网络状态",
-      "output": "ModifyContainerNetStatusResponse"
+      "output": "ModifyContainerNetStatusResponse",
+      "status": "online"
     },
     "ModifyEscapeEventStatus": {
       "document": "ModifyEscapeEventStatus  修改容器逃逸扫描事件状态",
       "input": "ModifyEscapeEventStatusRequest",
       "name": "修改容器逃逸扫描事件状态",
-      "output": "ModifyEscapeEventStatusResponse"
+      "output": "ModifyEscapeEventStatusResponse",
+      "status": "online"
     },
     "ModifyEscapeRule": {
       "document": "ModifyEscapeRule  修改容器逃逸扫描规则信息",
       "input": "ModifyEscapeRuleRequest",
       "name": "修改容器逃逸扫描规则信息",
-      "output": "ModifyEscapeRuleResponse"
+      "output": "ModifyEscapeRuleResponse",
+      "status": "online"
     },
     "ModifyEscapeWhiteList": {
       "document": "修改逃逸白名单",
       "input": "ModifyEscapeWhiteListRequest",
       "name": "修改逃逸白名单",
-      "output": "ModifyEscapeWhiteListResponse"
+      "output": "ModifyEscapeWhiteListResponse",
+      "status": "online"
     },
     "ModifyImageAuthorized": {
       "document": "批量授权镜像扫描V2.0",
       "input": "ModifyImageAuthorizedRequest",
       "name": "批量授权镜像扫描V2.0",
-      "output": "ModifyImageAuthorizedResponse"
+      "output": "ModifyImageAuthorizedResponse",
+      "status": "online"
     },
     "ModifyK8sApiAbnormalEventStatus": {
       "document": "修改k8sapi异常事件状态",
       "input": "ModifyK8sApiAbnormalEventStatusRequest",
       "name": "修改k8sapi异常事件状态",
-      "output": "ModifyK8sApiAbnormalEventStatusResponse"
+      "output": "ModifyK8sApiAbnormalEventStatusResponse",
+      "status": "online"
     },
     "ModifyK8sApiAbnormalRuleInfo": {
       "document": "修改k8sapi异常规则信息",
       "input": "ModifyK8sApiAbnormalRuleInfoRequest",
       "name": "修改k8sapi异常规则信息",
-      "output": "ModifyK8sApiAbnormalRuleInfoResponse"
+      "output": "ModifyK8sApiAbnormalRuleInfoResponse",
+      "status": "online"
     },
     "ModifyK8sApiAbnormalRuleStatus": {
       "document": "修改k8sapi异常事件规则状态",
       "input": "ModifyK8sApiAbnormalRuleStatusRequest",
       "name": "修改k8sapi异常事件规则状态",
-      "output": "ModifyK8sApiAbnormalRuleStatusResponse"
+      "output": "ModifyK8sApiAbnormalRuleStatusResponse",
+      "status": "online"
     },
     "ModifyReverseShellStatus": {
       "document": "修改反弹shell事件的状态信息",
       "input": "ModifyReverseShellStatusRequest",
       "name": "修改反弹shell事件状态",
-      "output": "ModifyReverseShellStatusResponse"
+      "output": "ModifyReverseShellStatusResponse",
+      "status": "online"
     },
     "ModifyRiskSyscallStatus": {
       "document": "修改高危系统调用事件的状态信息",
       "input": "ModifyRiskSyscallStatusRequest",
       "name": "修改高危系统调用事件状态",
-      "output": "ModifyRiskSyscallStatusResponse"
+      "output": "ModifyRiskSyscallStatusResponse",
+      "status": "online"
     },
     "ModifySecLogCleanSettingInfo": {
       "document": "修改安全日志清理设置信息",
       "input": "ModifySecLogCleanSettingInfoRequest",
       "name": "修改安全日志清理设置信息",
-      "output": "ModifySecLogCleanSettingInfoResponse"
+      "output": "ModifySecLogCleanSettingInfoResponse",
+      "status": "online"
     },
     "ModifySecLogDeliveryClsSetting": {
       "document": "更新安全日志-日志投递cls配置",
       "input": "ModifySecLogDeliveryClsSettingRequest",
       "name": "更新安全日志-日志投递cls配置",
-      "output": "ModifySecLogDeliveryClsSettingResponse"
+      "output": "ModifySecLogDeliveryClsSettingResponse",
+      "status": "online"
     },
     "ModifySecLogDeliveryKafkaSetting": {
       "document": "更新安全日志投递kafka设置",
       "input": "ModifySecLogDeliveryKafkaSettingRequest",
       "name": "更新安全日志投递kafka设置",
-      "output": "ModifySecLogDeliveryKafkaSettingResponse"
+      "output": "ModifySecLogDeliveryKafkaSettingResponse",
+      "status": "online"
     },
     "ModifySecLogJoinObjects": {
       "document": "修改安全日志接入对象",
       "input": "ModifySecLogJoinObjectsRequest",
       "name": "修改安全日志接入对象",
-      "output": "ModifySecLogJoinObjectsResponse"
+      "output": "ModifySecLogJoinObjectsResponse",
+      "status": "online"
     },
     "ModifySecLogJoinState": {
       "document": "修改安全日志接入状态",
       "input": "ModifySecLogJoinStateRequest",
       "name": "修改安全日志接入状态",
-      "output": "ModifySecLogJoinStateResponse"
+      "output": "ModifySecLogJoinStateResponse",
+      "status": "online"
     },
     "ModifySecLogKafkaUIN": {
       "document": "修改安全日志kafkaUIN",
       "input": "ModifySecLogKafkaUINRequest",
       "name": "修改安全日志kafkaUIN",
-      "output": "ModifySecLogKafkaUINResponse"
+      "output": "ModifySecLogKafkaUINResponse",
+      "status": "online"
     },
     "ModifyVirusAutoIsolateExampleSwitch": {
       "document": "修改木马自动隔离样本开关",
       "input": "ModifyVirusAutoIsolateExampleSwitchRequest",
       "name": "修改木马自动隔离样本开关",
-      "output": "ModifyVirusAutoIsolateExampleSwitchResponse"
+      "output": "ModifyVirusAutoIsolateExampleSwitchResponse",
+      "status": "online"
     },
     "ModifyVirusAutoIsolateSetting": {
       "document": "修改木马自动隔离设置",
       "input": "ModifyVirusAutoIsolateSettingRequest",
       "name": "修改木马自动隔离设置",
-      "output": "ModifyVirusAutoIsolateSettingResponse"
+      "output": "ModifyVirusAutoIsolateSettingResponse",
+      "status": "online"
     },
     "ModifyVirusFileStatus": {
       "document": "运行时更新木马文件事件状态",
       "input": "ModifyVirusFileStatusRequest",
       "name": "运行时更新木马文件事件状态",
-      "output": "ModifyVirusFileStatusResponse"
+      "output": "ModifyVirusFileStatusResponse",
+      "status": "online"
     },
     "ModifyVirusMonitorSetting": {
       "document": "运行时更新文件查杀实时监控设置",
       "input": "ModifyVirusMonitorSettingRequest",
       "name": "运行时更新文件查杀实时监控设置",
-      "output": "ModifyVirusMonitorSettingResponse"
+      "output": "ModifyVirusMonitorSettingResponse",
+      "status": "online"
     },
     "ModifyVirusScanSetting": {
       "document": "运行时更新文件查杀设置",
       "input": "ModifyVirusScanSettingRequest",
       "name": "运行时更新文件查杀设置",
-      "output": "ModifyVirusScanSettingResponse"
+      "output": "ModifyVirusScanSettingResponse",
+      "status": "online"
     },
     "ModifyVirusScanTimeoutSetting": {
       "document": "运行时文件扫描超时设置",
       "input": "ModifyVirusScanTimeoutSettingRequest",
       "name": "运行时文件扫描超时设置",
-      "output": "ModifyVirusScanTimeoutSettingResponse"
+      "output": "ModifyVirusScanTimeoutSettingResponse",
+      "status": "online"
     },
     "ModifyVulDefenceEventStatus": {
       "document": "修改漏洞防御事件状态",
       "input": "ModifyVulDefenceEventStatusRequest",
       "name": "修改漏洞防御事件状态",
-      "output": "ModifyVulDefenceEventStatusResponse"
+      "output": "ModifyVulDefenceEventStatusResponse",
+      "status": "online"
     },
     "ModifyVulDefenceSetting": {
       "document": "编辑漏洞防御设置",
       "input": "ModifyVulDefenceSettingRequest",
       "name": "编辑漏洞防御设置",
-      "output": "ModifyVulDefenceSettingResponse"
+      "output": "ModifyVulDefenceSettingResponse",
+      "status": "online"
     },
     "OpenTcssTrial": {
       "document": "开通容器安全服务试用",
       "input": "OpenTcssTrialRequest",
       "name": "开通容器安全服务试用",
-      "output": "OpenTcssTrialResponse"
+      "output": "OpenTcssTrialResponse",
+      "status": "online"
     },
     "RemoveAssetImageRegistryRegistryDetail": {
       "document": "删除单个镜像仓库详细信息",
       "input": "RemoveAssetImageRegistryRegistryDetailRequest",
       "name": "删除单个镜像仓库详细信息",
-      "output": "RemoveAssetImageRegistryRegistryDetailResponse"
+      "output": "RemoveAssetImageRegistryRegistryDetailResponse",
+      "status": "online"
     },
     "RenewImageAuthorizeState": {
       "document": "RenewImageAuthorizeState   授权镜像扫描",
       "input": "RenewImageAuthorizeStateRequest",
       "name": "授权镜像扫描",
-      "output": "RenewImageAuthorizeStateResponse"
+      "output": "RenewImageAuthorizeStateResponse",
+      "status": "online"
     },
     "ResetSecLogTopicConfig": {
       "document": "重置安全日志主题设置",
       "input": "ResetSecLogTopicConfigRequest",
       "name": "重置安全日志主题设置",
-      "output": "ResetSecLogTopicConfigResponse"
+      "output": "ResetSecLogTopicConfigResponse",
+      "status": "online"
     },
     "ScanComplianceAssets": {
       "document": "重新检测选定的资产",
       "input": "ScanComplianceAssetsRequest",
       "name": "安全合规重新检测选定的资产",
-      "output": "ScanComplianceAssetsResponse"
+      "output": "ScanComplianceAssetsResponse",
+      "status": "online"
     },
     "ScanComplianceAssetsByPolicyItem": {
       "document": "用指定的检测项重新检测选定的资产，返回创建的合规检查任务的ID。",
       "input": "ScanComplianceAssetsByPolicyItemRequest",
       "name": "安全合规用指定的检测项重新检测选定的资产",
-      "output": "ScanComplianceAssetsByPolicyItemResponse"
+      "output": "ScanComplianceAssetsByPolicyItemResponse",
+      "status": "online"
     },
     "ScanCompliancePolicyItems": {
       "document": "重新检测选的检测项下的所有资产，返回创建的合规检查任务的ID。",
       "input": "ScanCompliancePolicyItemsRequest",
       "name": "安全合规重新检测选定的检测项",
-      "output": "ScanCompliancePolicyItemsResponse"
+      "output": "ScanCompliancePolicyItemsResponse",
+      "status": "online"
     },
     "ScanComplianceScanFailedAssets": {
       "document": "重新检测选定的检测失败的资产下的所有失败的检测项，返回创建的合规检查任务的ID。",
       "input": "ScanComplianceScanFailedAssetsRequest",
       "name": "安全合规重新检测上次检测失败的资产",
-      "output": "ScanComplianceScanFailedAssetsResponse"
+      "output": "ScanComplianceScanFailedAssetsResponse",
+      "status": "online"
     },
     "SetCheckMode": {
       "document": "设置检测模式和自动检查",
       "input": "SetCheckModeRequest",
       "name": "设置检测模式和自动检查",
-      "output": "SetCheckModeResponse"
+      "output": "SetCheckModeResponse",
+      "status": "online"
     },
     "StopVirusScanTask": {
       "document": "运行时停止木马查杀任务",
       "input": "StopVirusScanTaskRequest",
       "name": "运行时停止木马查杀任务",
-      "output": "StopVirusScanTaskResponse"
+      "output": "StopVirusScanTaskResponse",
+      "status": "online"
     },
     "StopVulScanTask": {
       "document": "停止漏洞扫描任务",
       "input": "StopVulScanTaskRequest",
       "name": "停止漏洞扫描任务",
-      "output": "StopVulScanTaskResponse"
+      "output": "StopVulScanTaskResponse",
+      "status": "online"
     },
     "SwitchImageAutoAuthorizedRule": {
       "document": "编辑本地镜像自动授权开关",
       "input": "SwitchImageAutoAuthorizedRuleRequest",
       "name": "编辑本地镜像自动授权开关",
-      "output": "SwitchImageAutoAuthorizedRuleResponse"
+      "output": "SwitchImageAutoAuthorizedRuleResponse",
+      "status": "online"
     },
     "SyncAssetImageRegistryAsset": {
       "document": "镜像仓库资产刷新",
       "input": "SyncAssetImageRegistryAssetRequest",
       "name": "镜像仓库资产刷新",
-      "output": "SyncAssetImageRegistryAssetResponse"
+      "output": "SyncAssetImageRegistryAssetResponse",
+      "status": "online"
     },
     "UpdateAndPublishNetworkFirewallPolicyDetail": {
       "document": "容器网络创建网络策略更新并发布任务",
       "input": "UpdateAndPublishNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略更新并发布任务",
-      "output": "UpdateAndPublishNetworkFirewallPolicyDetailResponse"
+      "output": "UpdateAndPublishNetworkFirewallPolicyDetailResponse",
+      "status": "online"
     },
     "UpdateAndPublishNetworkFirewallPolicyYamlDetail": {
       "document": "容器网络更新Yaml网络策略并发布任务",
       "input": "UpdateAndPublishNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络更新Yaml网络策略并发布任务",
-      "output": "UpdateAndPublishNetworkFirewallPolicyYamlDetailResponse"
+      "output": "UpdateAndPublishNetworkFirewallPolicyYamlDetailResponse",
+      "status": "online"
     },
     "UpdateAssetImageRegistryRegistryDetail": {
       "document": "更新单个镜像仓库详细信息",
       "input": "UpdateAssetImageRegistryRegistryDetailRequest",
       "name": "更新单个镜像仓库详细信息",
-      "output": "UpdateAssetImageRegistryRegistryDetailResponse"
+      "output": "UpdateAssetImageRegistryRegistryDetailResponse",
+      "status": "online"
     },
     "UpdateImageRegistryTimingScanTask": {
       "document": "镜像仓库更新定时任务",
       "input": "UpdateImageRegistryTimingScanTaskRequest",
       "name": "镜像仓库更新定时任务",
-      "output": "UpdateImageRegistryTimingScanTaskResponse"
+      "output": "UpdateImageRegistryTimingScanTaskResponse",
+      "status": "online"
     },
     "UpdateNetworkFirewallPolicyDetail": {
       "document": "容器网络创建网络策略更新任务",
       "input": "UpdateNetworkFirewallPolicyDetailRequest",
       "name": "容器网络创建网络策略更新任务",
-      "output": "UpdateNetworkFirewallPolicyDetailResponse"
+      "output": "UpdateNetworkFirewallPolicyDetailResponse",
+      "status": "online"
     },
     "UpdateNetworkFirewallPolicyYamlDetail": {
       "document": "容器网络更新Yaml网络策略任务",
       "input": "UpdateNetworkFirewallPolicyYamlDetailRequest",
       "name": "容器网络更新Yaml网络策略任务",
-      "output": "UpdateNetworkFirewallPolicyYamlDetailResponse"
+      "output": "UpdateNetworkFirewallPolicyYamlDetailResponse",
+      "status": "online"
     }
   },
   "metadata": {

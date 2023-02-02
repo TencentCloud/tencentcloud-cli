@@ -4,7 +4,8 @@
       "document": "推送节点数据",
       "input": "CreateBlockNodeRecordsRequest",
       "name": "推送节点数据",
-      "output": "CreateBlockNodeRecordsResponse"
+      "output": "CreateBlockNodeRecordsResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,349 +4,407 @@
       "document": "接口请求域名： rum.tencentcloudapi.com 。\n\n本接口用于创建日志下载任务\n\n默认接口请求频率限制：20次/秒。",
       "input": "CreateLogExportRequest",
       "name": "创建日志下载任务",
-      "output": "CreateLogExportResponse"
+      "output": "CreateLogExportResponse",
+      "status": "online"
     },
     "CreateOfflineLogConfig": {
       "document": "创建离线日志监听，对应用户的离线日志将上报",
       "input": "CreateOfflineLogConfigRequest",
       "name": "创建离线日志监听",
-      "output": "CreateOfflineLogConfigResponse"
+      "output": "CreateOfflineLogConfigResponse",
+      "status": "online"
     },
     "CreateProject": {
       "document": "创建 RUM 应用（归属于某个团队）",
       "input": "CreateProjectRequest",
       "name": "创建 RUM 应用",
-      "output": "CreateProjectResponse"
+      "output": "CreateProjectResponse",
+      "status": "online"
     },
     "CreateReleaseFile": {
       "document": "创建对应项目的文件记录",
       "input": "CreateReleaseFileRequest",
       "name": "创建发布文件记录",
-      "output": "CreateReleaseFileResponse"
+      "output": "CreateReleaseFileResponse",
+      "status": "online"
     },
     "CreateStarProject": {
       "document": "个人用户添加星标项目",
       "input": "CreateStarProjectRequest",
       "name": "添加星标应用",
-      "output": "CreateStarProjectResponse"
+      "output": "CreateStarProjectResponse",
+      "status": "online"
     },
     "CreateTawInstance": {
       "document": "创建 RUM 业务系统",
       "input": "CreateTawInstanceRequest",
       "name": "创建 RUM 业务系统",
-      "output": "CreateTawInstanceResponse"
+      "output": "CreateTawInstanceResponse",
+      "status": "online"
     },
     "CreateWhitelist": {
       "document": "创建白名单",
       "input": "CreateWhitelistRequest",
       "name": "创建白名单",
-      "output": "CreateWhitelistResponse"
+      "output": "CreateWhitelistResponse",
+      "status": "online"
     },
     "DeleteInstance": {
       "document": "删除实例，谨慎操作，不可恢复",
       "input": "DeleteInstanceRequest",
       "name": "删除 RUM 业务系统",
-      "output": "DeleteInstanceResponse"
+      "output": "DeleteInstanceResponse",
+      "status": "online"
     },
     "DeleteLogExport": {
       "document": "接口请求域名： rum.tencentcloudapi.com 。\n\n本接口用于删除日志下载任务\n\n默认接口请求频率限制：20次/秒。",
       "input": "DeleteLogExportRequest",
       "name": "删除日志下载任务",
-      "output": "DeleteLogExportResponse"
+      "output": "DeleteLogExportResponse",
+      "status": "online"
     },
     "DeleteOfflineLogConfig": {
       "document": "删除 rum 离线日志监听 - 对应用户的离线日志将不会上报",
       "input": "DeleteOfflineLogConfigRequest",
       "name": "删除 rum 离线日志监听",
-      "output": "DeleteOfflineLogConfigResponse"
+      "output": "DeleteOfflineLogConfigResponse",
+      "status": "online"
     },
     "DeleteOfflineLogRecord": {
       "document": "删除对应的离线日志记录",
       "input": "DeleteOfflineLogRecordRequest",
       "name": "删除离线日志记录",
-      "output": "DeleteOfflineLogRecordResponse"
+      "output": "DeleteOfflineLogRecordResponse",
+      "status": "online"
     },
     "DeleteProject": {
       "document": "删除给定的 rum 的项目",
       "input": "DeleteProjectRequest",
       "name": "删除 RUM 应用",
-      "output": "DeleteProjectResponse"
+      "output": "DeleteProjectResponse",
+      "status": "online"
     },
     "DeleteReleaseFile": {
       "document": "将对应 sourcemap 文件删除",
       "input": "DeleteReleaseFileRequest",
       "name": "删除发布文件",
-      "output": "DeleteReleaseFileResponse"
+      "output": "DeleteReleaseFileResponse",
+      "status": "online"
     },
     "DeleteStarProject": {
       "document": "删除用户名下的星标项目",
       "input": "DeleteStarProjectRequest",
       "name": "删除星标应用",
-      "output": "DeleteStarProjectResponse"
+      "output": "DeleteStarProjectResponse",
+      "status": "online"
     },
     "DeleteWhitelist": {
       "document": "删除白名单",
       "input": "DeleteWhitelistRequest",
       "name": "删除白名单",
-      "output": "DeleteWhitelistResponse"
+      "output": "DeleteWhitelistResponse",
+      "status": "online"
     },
     "DescribeData": {
       "document": "转发monitor查询",
       "input": "DescribeDataRequest",
       "name": "获取QueryData",
-      "output": "DescribeDataResponse"
+      "output": "DescribeDataResponse",
+      "status": "online"
     },
     "DescribeDataCustomUrl": {
       "document": "获取DescribeDataCustomUrl信息",
       "input": "DescribeDataCustomUrlRequest",
       "name": "获取DescribeDataCustomUrl信息",
-      "output": "DescribeDataCustomUrlResponse"
+      "output": "DescribeDataCustomUrlResponse",
+      "status": "online"
     },
     "DescribeDataEventUrl": {
       "document": "获取DescribeDataEventUrl信息",
       "input": "DescribeDataEventUrlRequest",
       "name": "获取DescribeDataEventUrl信息",
-      "output": "DescribeDataEventUrlResponse"
+      "output": "DescribeDataEventUrlResponse",
+      "status": "online"
     },
     "DescribeDataFetchProject": {
       "document": "获取DescribeDataFetchProject信息。已下线，请使用DescribeDataFetchUrl",
       "input": "DescribeDataFetchProjectRequest",
       "name": "获取DescribeDataFetchProject信息（已下线，请使用DescribeDataFetchUrl）",
-      "output": "DescribeDataFetchProjectResponse"
+      "output": "DescribeDataFetchProjectResponse",
+      "status": "online"
     },
     "DescribeDataFetchUrl": {
       "document": "获取DescribeDataFetchUrl信息",
       "input": "DescribeDataFetchUrlRequest",
       "name": "获取DescribeDataFetchUrl信息",
-      "output": "DescribeDataFetchUrlResponse"
+      "output": "DescribeDataFetchUrlResponse",
+      "status": "online"
     },
     "DescribeDataFetchUrlInfo": {
       "document": "获取DescribeDataFetchUrlInfo信息",
       "input": "DescribeDataFetchUrlInfoRequest",
       "name": "获取DescribeDataFetchUrlInfo信息",
-      "output": "DescribeDataFetchUrlInfoResponse"
+      "output": "DescribeDataFetchUrlInfoResponse",
+      "status": "online"
     },
     "DescribeDataLogUrlInfo": {
       "document": "获取loginfo信息",
       "input": "DescribeDataLogUrlInfoRequest",
       "name": "获取dataloginfo信息",
-      "output": "DescribeDataLogUrlInfoResponse"
+      "output": "DescribeDataLogUrlInfoResponse",
+      "status": "online"
     },
     "DescribeDataLogUrlStatistics": {
       "document": "获取LogUrlStatistics信息",
       "input": "DescribeDataLogUrlStatisticsRequest",
       "name": "获取LogUrlStatistics信息",
-      "output": "DescribeDataLogUrlStatisticsResponse"
+      "output": "DescribeDataLogUrlStatisticsResponse",
+      "status": "online"
     },
     "DescribeDataPerformancePage": {
       "document": "获取PerformancePage信息",
       "input": "DescribeDataPerformancePageRequest",
       "name": "获取PerformancePage信息",
-      "output": "DescribeDataPerformancePageResponse"
+      "output": "DescribeDataPerformancePageResponse",
+      "status": "online"
     },
     "DescribeDataPerformanceProject": {
       "document": "获取PerformanceProject信息",
       "input": "DescribeDataPerformanceProjectRequest",
       "name": "获取PerformanceProject信息（已停用，请使用DescribeDataPerformancePage）",
-      "output": "DescribeDataPerformanceProjectResponse"
+      "output": "DescribeDataPerformanceProjectResponse",
+      "status": "online"
     },
     "DescribeDataPvUrlInfo": {
       "document": "获取PvUrlInfo信息",
       "input": "DescribeDataPvUrlInfoRequest",
       "name": "获取PvUrlInfo信息",
-      "output": "DescribeDataPvUrlInfoResponse"
+      "output": "DescribeDataPvUrlInfoResponse",
+      "status": "online"
     },
     "DescribeDataPvUrlStatistics": {
       "document": "获取DescribeDataPvUrlStatistics信息",
       "input": "DescribeDataPvUrlStatisticsRequest",
       "name": "获取DescribeDataPvUrlStatistics信息",
-      "output": "DescribeDataPvUrlStatisticsResponse"
+      "output": "DescribeDataPvUrlStatisticsResponse",
+      "status": "online"
     },
     "DescribeDataReportCount": {
       "document": "获取项目上报量",
       "input": "DescribeDataReportCountRequest",
       "name": "获取上报量",
-      "output": "DescribeDataReportCountResponse"
+      "output": "DescribeDataReportCountResponse",
+      "status": "online"
     },
     "DescribeDataSetUrlStatistics": {
       "document": "获取DescribeDataSetUrlStatistics信息",
       "input": "DescribeDataSetUrlStatisticsRequest",
       "name": "获取DescribeDataSetUrlStatistics信息",
-      "output": "DescribeDataSetUrlStatisticsResponse"
+      "output": "DescribeDataSetUrlStatisticsResponse",
+      "status": "online"
     },
     "DescribeDataStaticProject": {
       "document": "获取DescribeDataStaticProject信息",
       "input": "DescribeDataStaticProjectRequest",
       "name": "获取DescribeDataStaticProject信息",
-      "output": "DescribeDataStaticProjectResponse"
+      "output": "DescribeDataStaticProjectResponse",
+      "status": "online"
     },
     "DescribeDataStaticResource": {
       "document": "获取DescribeDataStaticResource信息",
       "input": "DescribeDataStaticResourceRequest",
       "name": "获取DescribeDataStaticResource信息",
-      "output": "DescribeDataStaticResourceResponse"
+      "output": "DescribeDataStaticResourceResponse",
+      "status": "online"
     },
     "DescribeDataStaticUrl": {
       "document": "获取DescribeDataStaticUrl信息",
       "input": "DescribeDataStaticUrlRequest",
       "name": "获取DescribeDataStaticUrl信息",
-      "output": "DescribeDataStaticUrlResponse"
+      "output": "DescribeDataStaticUrlResponse",
+      "status": "online"
     },
     "DescribeDataWebVitalsPage": {
       "document": "获取DescribeDataWebVitalsPage信息，用户核心活动信息\n页面加载性能之Web Vitals。性能关键点",
       "input": "DescribeDataWebVitalsPageRequest",
       "name": "获取DescribeDataWebVitalsPage信息",
-      "output": "DescribeDataWebVitalsPageResponse"
+      "output": "DescribeDataWebVitalsPageResponse",
+      "status": "online"
     },
     "DescribeError": {
       "document": "获取首页错误信息",
       "input": "DescribeErrorRequest",
       "name": "获取首页错误信息",
-      "output": "DescribeErrorResponse"
+      "output": "DescribeErrorResponse",
+      "status": "online"
     },
     "DescribeLogExports": {
       "document": "接口请求域名： rum.tencentcloudapi.com 。\n\n本接口用于获取日志下载任务列表\n\n默认接口请求频率限制：20次/秒",
       "input": "DescribeLogExportsRequest",
       "name": "获取日志下载任务列表",
-      "output": "DescribeLogExportsResponse"
+      "output": "DescribeLogExportsResponse",
+      "status": "online"
     },
     "DescribeLogList": {
       "document": "(已下线，请用DescribeRumLogList)",
       "input": "DescribeLogListRequest",
       "name": "获取日志列表(已下线，请用DescribeRumLogList)",
-      "output": "DescribeLogListResponse"
+      "output": "DescribeLogListResponse",
+      "status": "online"
     },
     "DescribeOfflineLogConfigs": {
       "document": "获取设置的离线日志监听配置 - 返回设置的用户唯一标识",
       "input": "DescribeOfflineLogConfigsRequest",
       "name": "获取设置的离线日志监听配置",
-      "output": "DescribeOfflineLogConfigsResponse"
+      "output": "DescribeOfflineLogConfigsResponse",
+      "status": "online"
     },
     "DescribeOfflineLogRecords": {
       "document": "获取所有离线日志记录(最多100条)",
       "input": "DescribeOfflineLogRecordsRequest",
       "name": "获取所有离线日志记录(最多100条)",
-      "output": "DescribeOfflineLogRecordsResponse"
+      "output": "DescribeOfflineLogRecordsResponse",
+      "status": "online"
     },
     "DescribeOfflineLogs": {
       "document": "获取对应离线日志",
       "input": "DescribeOfflineLogsRequest",
       "name": "获取对应离线日志",
-      "output": "DescribeOfflineLogsResponse"
+      "output": "DescribeOfflineLogsResponse",
+      "status": "online"
     },
     "DescribeProjectLimits": {
       "document": "获取应用上报抽样信息",
       "input": "DescribeProjectLimitsRequest",
       "name": "获取应用上报抽样信息",
-      "output": "DescribeProjectLimitsResponse"
+      "output": "DescribeProjectLimitsResponse",
+      "status": "online"
     },
     "DescribeProjects": {
       "document": "获取项目列表（实例创建的团队下的项目列表）",
       "input": "DescribeProjectsRequest",
       "name": "获取 RUM 应用列表",
-      "output": "DescribeProjectsResponse"
+      "output": "DescribeProjectsResponse",
+      "status": "online"
     },
     "DescribePvList": {
       "document": "获取项目下的PV列表",
       "input": "DescribePvListRequest",
       "name": "获取PV列表",
-      "output": "DescribePvListResponse"
+      "output": "DescribePvListResponse",
+      "status": "online"
     },
     "DescribeReleaseFileSign": {
       "document": "获取上传文件存储的临时密钥",
       "input": "DescribeReleaseFileSignRequest",
       "name": "获取存储临时密钥",
-      "output": "DescribeReleaseFileSignResponse"
+      "output": "DescribeReleaseFileSignResponse",
+      "status": "online"
     },
     "DescribeReleaseFiles": {
       "document": "获取应用对应sourcemap文件列表",
       "input": "DescribeReleaseFilesRequest",
       "name": "获取应用对应sourcemap文件列表",
-      "output": "DescribeReleaseFilesResponse"
+      "output": "DescribeReleaseFilesResponse",
+      "status": "online"
     },
     "DescribeRumGroupLog": {
       "document": "获取项目下的日志聚合信息",
       "input": "DescribeRumGroupLogRequest",
       "name": "获取Rum日志聚合信息",
-      "output": "DescribeRumGroupLogResponse"
+      "output": "DescribeRumGroupLogResponse",
+      "status": "online"
     },
     "DescribeRumLogList": {
       "document": "获取项目下的日志列表（实例创建的项目下的日志列表）",
       "input": "DescribeRumLogListRequest",
       "name": "获取Rum日志列表",
-      "output": "DescribeRumLogListResponse"
+      "output": "DescribeRumLogListResponse",
+      "status": "online"
     },
     "DescribeRumStatsLogList": {
       "document": "获取项目下的日志列表，分钟级",
       "input": "DescribeRumStatsLogListRequest",
       "name": "获取Rum分钟级日志列表",
-      "output": "DescribeRumStatsLogListResponse"
+      "output": "DescribeRumStatsLogListResponse",
+      "status": "online"
     },
     "DescribeScores": {
       "document": "获取首页分数列表",
       "input": "DescribeScoresRequest",
       "name": "获取首页分数列表",
-      "output": "DescribeScoresResponse"
+      "output": "DescribeScoresResponse",
+      "status": "online"
     },
     "DescribeTawAreas": {
       "document": "查询片区信息",
       "input": "DescribeTawAreasRequest",
       "name": "查询片区信息",
-      "output": "DescribeTawAreasResponse"
+      "output": "DescribeTawAreasResponse",
+      "status": "online"
     },
     "DescribeTawInstances": {
       "document": "查询实例信息",
       "input": "DescribeTawInstancesRequest",
       "name": "查询 RUM 业务系统信息",
-      "output": "DescribeTawInstancesResponse"
+      "output": "DescribeTawInstancesResponse",
+      "status": "online"
     },
     "DescribeUvList": {
       "document": "获取项目下的UV列表",
       "input": "DescribeUvListRequest",
       "name": "获取UV列表",
-      "output": "DescribeUvListResponse"
+      "output": "DescribeUvListResponse",
+      "status": "online"
     },
     "DescribeWhitelists": {
       "document": "获取白名单列表",
       "input": "DescribeWhitelistsRequest",
       "name": "获取白名单列表",
-      "output": "DescribeWhitelistsResponse"
+      "output": "DescribeWhitelistsResponse",
+      "status": "online"
     },
     "ModifyInstance": {
       "document": "修改 RUM 业务系统",
       "input": "ModifyInstanceRequest",
       "name": "修改 RUM 业务系统",
-      "output": "ModifyInstanceResponse"
+      "output": "ModifyInstanceResponse",
+      "status": "online"
     },
     "ModifyProject": {
       "document": "修改 RUM 应用信息",
       "input": "ModifyProjectRequest",
       "name": "修改 RUM 应用信息",
-      "output": "ModifyProjectResponse"
+      "output": "ModifyProjectResponse",
+      "status": "online"
     },
     "ModifyProjectLimit": {
       "document": "新增修改限流",
       "input": "ModifyProjectLimitRequest",
       "name": "新增修改限流",
-      "output": "ModifyProjectLimitResponse"
+      "output": "ModifyProjectLimitResponse",
+      "status": "online"
     },
     "ResumeInstance": {
       "document": "恢复 RUM 业务系统，恢复后，用户可以正常使用和上报数据",
       "input": "ResumeInstanceRequest",
       "name": "恢复 RUM 业务系统",
-      "output": "ResumeInstanceResponse"
+      "output": "ResumeInstanceResponse",
+      "status": "online"
     },
     "StopInstance": {
       "document": "停止实例",
       "input": "StopInstanceRequest",
       "name": "停止RUM业务系统",
-      "output": "StopInstanceResponse"
+      "output": "StopInstanceResponse",
+      "status": "online"
     },
     "StopProject": {
       "document": "停止项目使用与上报数据",
       "input": "StopProjectRequest",
       "name": "停止应用上报",
-      "output": "StopProjectResponse"
+      "output": "StopProjectResponse",
+      "status": "online"
     }
   },
   "metadata": {

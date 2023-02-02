@@ -4,19 +4,22 @@
       "document": "申请并发",
       "input": "ApplyConcurrentRequest",
       "name": "申请并发",
-      "output": "ApplyConcurrentResponse"
+      "output": "ApplyConcurrentResponse",
+      "status": "online"
     },
     "CreateSession": {
       "document": "创建会话",
       "input": "CreateSessionRequest",
       "name": "创建会话",
-      "output": "CreateSessionResponse"
+      "output": "CreateSessionResponse",
+      "status": "online"
     },
     "DestroySession": {
       "document": "销毁会话",
       "input": "DestroySessionRequest",
       "name": "销毁会话",
-      "output": "DestroySessionResponse"
+      "output": "DestroySessionResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,1393 +4,1625 @@
       "document": "取消漏洞忽略",
       "input": "CancelIgnoreVulRequest",
       "name": "取消漏洞忽略",
-      "output": "CancelIgnoreVulResponse"
+      "output": "CancelIgnoreVulResponse",
+      "status": "online"
     },
     "ChangeRuleEventsIgnoreStatus": {
       "document": "根据检测项id或事件id批量忽略事件或取消忽略",
       "input": "ChangeRuleEventsIgnoreStatusRequest",
       "name": "修改事件忽略状态",
-      "output": "ChangeRuleEventsIgnoreStatusResponse"
+      "output": "ChangeRuleEventsIgnoreStatusResponse",
+      "status": "online"
     },
     "CheckBashRuleParams": {
       "document": "校验高危命令用户规则新增和编辑时的参数。",
       "input": "CheckBashRuleParamsRequest",
       "name": "校验高危命新增用户规则参数",
-      "output": "CheckBashRuleParamsResponse"
+      "output": "CheckBashRuleParamsResponse",
+      "status": "online"
     },
     "CreateBaselineStrategy": {
       "document": "根据策略信息创建基线策略",
       "input": "CreateBaselineStrategyRequest",
       "name": "创建基线策略",
-      "output": "CreateBaselineStrategyResponse"
+      "output": "CreateBaselineStrategyResponse",
+      "status": "online"
     },
     "CreateEmergencyVulScan": {
       "document": "创建应急漏洞扫描任务",
       "input": "CreateEmergencyVulScanRequest",
       "name": "应急漏洞扫描",
-      "output": "CreateEmergencyVulScanResponse"
+      "output": "CreateEmergencyVulScanResponse",
+      "status": "online"
     },
     "CreateLicenseOrder": {
       "document": "CreateLicenseOrder 该接口可以创建专业版/旗舰版订单\n支持预付费后付费创建\n后付费订单直接创建成功\n预付费订单仅下单不支付,需要调用计费支付接口进行支付",
       "input": "CreateLicenseOrderRequest",
       "name": "创建授权订单",
-      "output": "CreateLicenseOrderResponse"
+      "output": "CreateLicenseOrderResponse",
+      "status": "online"
     },
     "CreateProtectServer": {
       "document": "添加网站防护服务器",
       "input": "CreateProtectServerRequest",
       "name": "添加网站防护服务器",
-      "output": "CreateProtectServerResponse"
+      "output": "CreateProtectServerResponse",
+      "status": "online"
     },
     "CreateScanMalwareSetting": {
       "document": "该接口可以对入侵检测-文件查杀扫描检测",
       "input": "CreateScanMalwareSettingRequest",
       "name": "文件查杀检测",
-      "output": "CreateScanMalwareSettingResponse"
+      "output": "CreateScanMalwareSettingResponse",
+      "status": "online"
     },
     "CreateSearchLog": {
       "document": "添加历史搜索记录",
       "input": "CreateSearchLogRequest",
       "name": "添加历史搜索记录",
-      "output": "CreateSearchLogResponse"
+      "output": "CreateSearchLogResponse",
+      "status": "online"
     },
     "CreateSearchTemplate": {
       "document": "添加检索模板",
       "input": "CreateSearchTemplateRequest",
       "name": "添加检索模板",
-      "output": "CreateSearchTemplateResponse"
+      "output": "CreateSearchTemplateResponse",
+      "status": "online"
     },
     "DeleteAttackLogs": {
       "document": "删除网络攻击日志",
       "input": "DeleteAttackLogsRequest",
       "name": "删除网络攻击日志",
-      "output": "DeleteAttackLogsResponse"
+      "output": "DeleteAttackLogsResponse",
+      "status": "online"
     },
     "DeleteBaselinePolicy": {
       "document": "删除基线策略配置",
       "input": "DeleteBaselinePolicyRequest",
       "name": "删除基线策略配置",
-      "output": "DeleteBaselinePolicyResponse"
+      "output": "DeleteBaselinePolicyResponse",
+      "status": "online"
     },
     "DeleteBaselineStrategy": {
       "document": "根据基线策略id删除策略",
       "input": "DeleteBaselineStrategyRequest",
       "name": "删除基线策略",
-      "output": "DeleteBaselineStrategyResponse"
+      "output": "DeleteBaselineStrategyResponse",
+      "status": "online"
     },
     "DeleteBashEvents": {
       "document": "根据Ids删除高危命令事件",
       "input": "DeleteBashEventsRequest",
       "name": "删除高危命令事件",
-      "output": "DeleteBashEventsResponse"
+      "output": "DeleteBashEventsResponse",
+      "status": "online"
     },
     "DeleteBashRules": {
       "document": "删除高危命令规则",
       "input": "DeleteBashRulesRequest",
       "name": "删除高危命令规则",
-      "output": "DeleteBashRulesResponse"
+      "output": "DeleteBashRulesResponse",
+      "status": "online"
     },
     "DeleteBruteAttacks": {
       "document": "本接口 (DeleteBruteAttacks) 用于删除暴力破解记录。",
       "input": "DeleteBruteAttacksRequest",
       "name": "删除暴力破解记录",
-      "output": "DeleteBruteAttacksResponse"
+      "output": "DeleteBruteAttacksResponse",
+      "status": "online"
     },
     "DeleteLicenseRecord": {
       "document": "对授权管理-订单列表内已过期的订单进行删除.(删除后的订单不在统计范畴内)",
       "input": "DeleteLicenseRecordRequest",
       "name": "删除授权记录",
-      "output": "DeleteLicenseRecordResponse"
+      "output": "DeleteLicenseRecordResponse",
+      "status": "online"
     },
     "DeleteLoginWhiteList": {
       "document": "本接口用于删除异地登录白名单规则。",
       "input": "DeleteLoginWhiteListRequest",
       "name": "删除异地登录白名单规则",
-      "output": "DeleteLoginWhiteListResponse"
+      "output": "DeleteLoginWhiteListResponse",
+      "status": "online"
     },
     "DeleteMachine": {
       "document": "本接口（DeleteMachine）用于卸载云镜客户端。",
       "input": "DeleteMachineRequest",
       "name": "卸载云镜客户端",
-      "output": "DeleteMachineResponse"
+      "output": "DeleteMachineResponse",
+      "status": "online"
     },
     "DeleteMachineTag": {
       "document": "删除服务器关联的标签",
       "input": "DeleteMachineTagRequest",
       "name": "删除服务器关联的标签",
-      "output": "DeleteMachineTagResponse"
+      "output": "DeleteMachineTagResponse",
+      "status": "online"
     },
     "DeleteMaliciousRequests": {
       "document": "本接口 (DeleteMaliciousRequests) 用于删除恶意请求记录。",
       "input": "DeleteMaliciousRequestsRequest",
       "name": "删除恶意请求记录",
-      "output": "DeleteMaliciousRequestsResponse"
+      "output": "DeleteMaliciousRequestsResponse",
+      "status": "online"
     },
     "DeleteMalwareScanTask": {
       "document": "入侵管理-终止扫描任务",
       "input": "DeleteMalwareScanTaskRequest",
       "name": "入侵管理-终止扫描任务",
-      "output": "DeleteMalwareScanTaskResponse"
+      "output": "DeleteMalwareScanTaskResponse",
+      "status": "online"
     },
     "DeleteMalwares": {
       "document": "本接口 (DeleteMalwares) 用于删除木马记录。",
       "input": "DeleteMalwaresRequest",
       "name": "删除木马记录",
-      "output": "DeleteMalwaresResponse"
+      "output": "DeleteMalwaresResponse",
+      "status": "online"
     },
     "DeleteNonlocalLoginPlaces": {
       "document": "本接口 (DeleteNonlocalLoginPlaces) 用于删除异地登录记录。",
       "input": "DeleteNonlocalLoginPlacesRequest",
       "name": "删除异地登录记录",
-      "output": "DeleteNonlocalLoginPlacesResponse"
+      "output": "DeleteNonlocalLoginPlacesResponse",
+      "status": "online"
     },
     "DeletePrivilegeEvents": {
       "document": "根据Ids删除本地提权",
       "input": "DeletePrivilegeEventsRequest",
       "name": "删除本地提权事件",
-      "output": "DeletePrivilegeEventsResponse"
+      "output": "DeletePrivilegeEventsResponse",
+      "status": "online"
     },
     "DeletePrivilegeRules": {
       "document": "删除本地提权规则",
       "input": "DeletePrivilegeRulesRequest",
       "name": "删除本地提权规则",
-      "output": "DeletePrivilegeRulesResponse"
+      "output": "DeletePrivilegeRulesResponse",
+      "status": "online"
     },
     "DeleteProtectDir": {
       "document": "删除防护网站",
       "input": "DeleteProtectDirRequest",
       "name": "删除防护网站",
-      "output": "DeleteProtectDirResponse"
+      "output": "DeleteProtectDirResponse",
+      "status": "online"
     },
     "DeleteReverseShellEvents": {
       "document": "根据Ids删除反弹Shell事件",
       "input": "DeleteReverseShellEventsRequest",
       "name": "删除反弹Shell事件",
-      "output": "DeleteReverseShellEventsResponse"
+      "output": "DeleteReverseShellEventsResponse",
+      "status": "online"
     },
     "DeleteReverseShellRules": {
       "document": "删除反弹Shell规则",
       "input": "DeleteReverseShellRulesRequest",
       "name": "删除反弹Shell规则",
-      "output": "DeleteReverseShellRulesResponse"
+      "output": "DeleteReverseShellRulesResponse",
+      "status": "online"
     },
     "DeleteScanTask": {
       "document": "DeleteScanTask 该接口可以对指定类型的扫描任务进行停止扫描;",
       "input": "DeleteScanTaskRequest",
       "name": "停止扫描任务",
-      "output": "DeleteScanTaskResponse"
+      "output": "DeleteScanTaskResponse",
+      "status": "online"
     },
     "DeleteSearchTemplate": {
       "document": "删除检索模板",
       "input": "DeleteSearchTemplateRequest",
       "name": "删除检索模板",
-      "output": "DeleteSearchTemplateResponse"
+      "output": "DeleteSearchTemplateResponse",
+      "status": "online"
     },
     "DeleteTags": {
       "document": "删除标签",
       "input": "DeleteTagsRequest",
       "name": "删除标签",
-      "output": "DeleteTagsResponse"
+      "output": "DeleteTagsResponse",
+      "status": "online"
     },
     "DeleteWebPageEventLog": {
       "document": "网站防篡改-删除事件记录",
       "input": "DeleteWebPageEventLogRequest",
       "name": "删除事件记录",
-      "output": "DeleteWebPageEventLogResponse"
+      "output": "DeleteWebPageEventLogResponse",
+      "status": "online"
     },
     "DescribeAccountStatistics": {
       "document": "本接口 (DescribeAccountStatistics) 用于获取帐号统计列表数据。",
       "input": "DescribeAccountStatisticsRequest",
       "name": "获取帐号统计列表数据",
-      "output": "DescribeAccountStatisticsResponse"
+      "output": "DescribeAccountStatisticsResponse",
+      "status": "online"
     },
     "DescribeAssetAppList": {
       "document": "查询应用列表",
       "input": "DescribeAssetAppListRequest",
       "name": "查询应用列表",
-      "output": "DescribeAssetAppListResponse"
+      "output": "DescribeAssetAppListResponse",
+      "status": "online"
     },
     "DescribeAssetAppProcessList": {
       "document": "获取软件关联进程列表",
       "input": "DescribeAssetAppProcessListRequest",
       "name": "获取软件关联进程列表",
-      "output": "DescribeAssetAppProcessListResponse"
+      "output": "DescribeAssetAppProcessListResponse",
+      "status": "online"
     },
     "DescribeAssetCoreModuleInfo": {
       "document": "获取内核模块详情",
       "input": "DescribeAssetCoreModuleInfoRequest",
       "name": "获取内核模块详情",
-      "output": "DescribeAssetCoreModuleInfoResponse"
+      "output": "DescribeAssetCoreModuleInfoResponse",
+      "status": "online"
     },
     "DescribeAssetCoreModuleList": {
       "document": "查询资产管理内核模块列表",
       "input": "DescribeAssetCoreModuleListRequest",
       "name": "查询资产管理内核模块列表",
-      "output": "DescribeAssetCoreModuleListResponse"
+      "output": "DescribeAssetCoreModuleListResponse",
+      "status": "online"
     },
     "DescribeAssetDatabaseInfo": {
       "document": "获取资产管理数据库详情",
       "input": "DescribeAssetDatabaseInfoRequest",
       "name": "获取资产管理数据库详情",
-      "output": "DescribeAssetDatabaseInfoResponse"
+      "output": "DescribeAssetDatabaseInfoResponse",
+      "status": "online"
     },
     "DescribeAssetDatabaseList": {
       "document": "查询资产管理数据库列表",
       "input": "DescribeAssetDatabaseListRequest",
       "name": "查询资产管理数据库列表",
-      "output": "DescribeAssetDatabaseListResponse"
+      "output": "DescribeAssetDatabaseListResponse",
+      "status": "online"
     },
     "DescribeAssetEnvList": {
       "document": "查询资产管理环境变量列表",
       "input": "DescribeAssetEnvListRequest",
       "name": "查询资产管理环境变量列表",
-      "output": "DescribeAssetEnvListResponse"
+      "output": "DescribeAssetEnvListResponse",
+      "status": "online"
     },
     "DescribeAssetHostTotalCount": {
       "document": "获取主机所有资源数量",
       "input": "DescribeAssetHostTotalCountRequest",
       "name": "获取主机所有资源数量",
-      "output": "DescribeAssetHostTotalCountResponse"
+      "output": "DescribeAssetHostTotalCountResponse",
+      "status": "online"
     },
     "DescribeAssetInfo": {
       "document": "获取资产数量： 主机数、账号数、端口数、进程数、软件数、数据库数、Web应用数、Web框架数、Web服务数、Web站点数",
       "input": "DescribeAssetInfoRequest",
       "name": "获取资产数量概况",
-      "output": "DescribeAssetInfoResponse"
+      "output": "DescribeAssetInfoResponse",
+      "status": "online"
     },
     "DescribeAssetInitServiceList": {
       "document": "查询资产管理启动服务列表",
       "input": "DescribeAssetInitServiceListRequest",
       "name": "查询资产管理启动服务列表",
-      "output": "DescribeAssetInitServiceListResponse"
+      "output": "DescribeAssetInitServiceListResponse",
+      "status": "online"
     },
     "DescribeAssetJarInfo": {
       "document": "获取Jar包详情",
       "input": "DescribeAssetJarInfoRequest",
       "name": "获取Jar包详情",
-      "output": "DescribeAssetJarInfoResponse"
+      "output": "DescribeAssetJarInfoResponse",
+      "status": "online"
     },
     "DescribeAssetJarList": {
       "document": "查询Jar包列表",
       "input": "DescribeAssetJarListRequest",
       "name": "查询Jar包列表",
-      "output": "DescribeAssetJarListResponse"
+      "output": "DescribeAssetJarListResponse",
+      "status": "online"
     },
     "DescribeAssetMachineDetail": {
       "document": "获取资产管理主机资源详细信息",
       "input": "DescribeAssetMachineDetailRequest",
       "name": "获取资产管理主机资源详细信息",
-      "output": "DescribeAssetMachineDetailResponse"
+      "output": "DescribeAssetMachineDetailResponse",
+      "status": "online"
     },
     "DescribeAssetMachineList": {
       "document": "获取资产指纹页面的资源监控列表",
       "input": "DescribeAssetMachineListRequest",
       "name": "获取资源监控列表",
-      "output": "DescribeAssetMachineListResponse"
+      "output": "DescribeAssetMachineListResponse",
+      "status": "online"
     },
     "DescribeAssetPlanTaskList": {
       "document": "查询资产管理计划任务列表",
       "input": "DescribeAssetPlanTaskListRequest",
       "name": "查询资产管理计划任务列表",
-      "output": "DescribeAssetPlanTaskListResponse"
+      "output": "DescribeAssetPlanTaskListResponse",
+      "status": "online"
     },
     "DescribeAssetPortInfoList": {
       "document": "获取资产管理端口列表",
       "input": "DescribeAssetPortInfoListRequest",
       "name": "获取资产管理端口列表",
-      "output": "DescribeAssetPortInfoListResponse"
+      "output": "DescribeAssetPortInfoListResponse",
+      "status": "online"
     },
     "DescribeAssetProcessInfoList": {
       "document": "获取资产管理进程列表",
       "input": "DescribeAssetProcessInfoListRequest",
       "name": "获取资产管理进程列表",
-      "output": "DescribeAssetProcessInfoListResponse"
+      "output": "DescribeAssetProcessInfoListResponse",
+      "status": "online"
     },
     "DescribeAssetRecentMachineInfo": {
       "document": "获取主机最近趋势情况",
       "input": "DescribeAssetRecentMachineInfoRequest",
       "name": "获取主机概况趋势",
-      "output": "DescribeAssetRecentMachineInfoResponse"
+      "output": "DescribeAssetRecentMachineInfoResponse",
+      "status": "online"
     },
     "DescribeAssetSystemPackageList": {
       "document": "获取资产管理系统安装包列表",
       "input": "DescribeAssetSystemPackageListRequest",
       "name": "获取资产管理系统安装包列表",
-      "output": "DescribeAssetSystemPackageListResponse"
+      "output": "DescribeAssetSystemPackageListResponse",
+      "status": "online"
     },
     "DescribeAssetUserInfo": {
       "document": "获取主机账号详情",
       "input": "DescribeAssetUserInfoRequest",
       "name": "获取主机账号详情",
-      "output": "DescribeAssetUserInfoResponse"
+      "output": "DescribeAssetUserInfoResponse",
+      "status": "online"
     },
     "DescribeAssetUserList": {
       "document": "获取账号列表",
       "input": "DescribeAssetUserListRequest",
       "name": "获取账号列表",
-      "output": "DescribeAssetUserListResponse"
+      "output": "DescribeAssetUserListResponse",
+      "status": "online"
     },
     "DescribeAssetWebAppList": {
       "document": "获取资产管理Web应用列表",
       "input": "DescribeAssetWebAppListRequest",
       "name": "获取资产管理Web应用列表",
-      "output": "DescribeAssetWebAppListResponse"
+      "output": "DescribeAssetWebAppListResponse",
+      "status": "online"
     },
     "DescribeAssetWebAppPluginList": {
       "document": "获取资产管理Web应用插件列表",
       "input": "DescribeAssetWebAppPluginListRequest",
       "name": "获取资产管理Web应用插件列表",
-      "output": "DescribeAssetWebAppPluginListResponse"
+      "output": "DescribeAssetWebAppPluginListResponse",
+      "status": "online"
     },
     "DescribeAssetWebFrameList": {
       "document": "获取资产管理Web框架列表",
       "input": "DescribeAssetWebFrameListRequest",
       "name": "获取资产管理Web框架列表",
-      "output": "DescribeAssetWebFrameListResponse"
+      "output": "DescribeAssetWebFrameListResponse",
+      "status": "online"
     },
     "DescribeAssetWebLocationInfo": {
       "document": "获取Web站点详情",
       "input": "DescribeAssetWebLocationInfoRequest",
       "name": "获取Web站点详情",
-      "output": "DescribeAssetWebLocationInfoResponse"
+      "output": "DescribeAssetWebLocationInfoResponse",
+      "status": "online"
     },
     "DescribeAssetWebLocationList": {
       "document": "获取Web站点列表",
       "input": "DescribeAssetWebLocationListRequest",
       "name": "获取Web站点列表",
-      "output": "DescribeAssetWebLocationListResponse"
+      "output": "DescribeAssetWebLocationListResponse",
+      "status": "online"
     },
     "DescribeAssetWebServiceInfoList": {
       "document": "查询资产管理Web服务列表",
       "input": "DescribeAssetWebServiceInfoListRequest",
       "name": "查询资产管理Web服务列表",
-      "output": "DescribeAssetWebServiceInfoListResponse"
+      "output": "DescribeAssetWebServiceInfoListResponse",
+      "status": "online"
     },
     "DescribeAssetWebServiceProcessList": {
       "document": "获取Web服务关联进程列表",
       "input": "DescribeAssetWebServiceProcessListRequest",
       "name": "获取Web服务关联进程列表",
-      "output": "DescribeAssetWebServiceProcessListResponse"
+      "output": "DescribeAssetWebServiceProcessListResponse",
+      "status": "online"
     },
     "DescribeAttackLogInfo": {
       "document": "网络攻击日志详情",
       "input": "DescribeAttackLogInfoRequest",
       "name": "网络攻击日志详情",
-      "output": "DescribeAttackLogInfoResponse"
+      "output": "DescribeAttackLogInfoResponse",
+      "status": "online"
     },
     "DescribeAttackLogs": {
       "document": "按分页形式展示网络攻击日志列表",
       "input": "DescribeAttackLogsRequest",
       "name": "网络攻击日志列表",
-      "output": "DescribeAttackLogsResponse"
+      "output": "DescribeAttackLogsResponse",
+      "status": "online"
     },
     "DescribeAttackVulTypeList": {
       "document": "获取网络攻击威胁类型列表",
       "input": "DescribeAttackVulTypeListRequest",
       "name": "获取网络攻击威胁类型列表",
-      "output": "DescribeAttackVulTypeListResponse"
+      "output": "DescribeAttackVulTypeListResponse",
+      "status": "online"
     },
     "DescribeAvailableExpertServiceDetail": {
       "document": "专家服务-可用订单详情",
       "input": "DescribeAvailableExpertServiceDetailRequest",
       "name": "可用订单详情",
-      "output": "DescribeAvailableExpertServiceDetailResponse"
+      "output": "DescribeAvailableExpertServiceDetailResponse",
+      "status": "online"
     },
     "DescribeBanMode": {
       "document": "获取爆破阻断模式",
       "input": "DescribeBanModeRequest",
       "name": "获取爆破阻断模式",
-      "output": "DescribeBanModeResponse"
+      "output": "DescribeBanModeResponse",
+      "status": "online"
     },
     "DescribeBanRegions": {
       "document": "获取阻断地域",
       "input": "DescribeBanRegionsRequest",
       "name": "获取阻断地域",
-      "output": "DescribeBanRegionsResponse"
+      "output": "DescribeBanRegionsResponse",
+      "status": "online"
     },
     "DescribeBanStatus": {
       "document": "获取阻断按钮状态",
       "input": "DescribeBanStatusRequest",
       "name": "获取阻断按钮状态",
-      "output": "DescribeBanStatusResponse"
+      "output": "DescribeBanStatusResponse",
+      "status": "online"
     },
     "DescribeBanWhiteList": {
       "document": "获取阻断白名单列表",
       "input": "DescribeBanWhiteListRequest",
       "name": "获取阻断白名单列表",
-      "output": "DescribeBanWhiteListResponse"
+      "output": "DescribeBanWhiteListResponse",
+      "status": "online"
     },
     "DescribeBaselineAnalysisData": {
       "document": "根据基线策略id查询基线策略数据概览统计",
       "input": "DescribeBaselineAnalysisDataRequest",
       "name": "基线策略概览统计数据查询",
-      "output": "DescribeBaselineAnalysisDataResponse"
+      "output": "DescribeBaselineAnalysisDataResponse",
+      "status": "online"
     },
     "DescribeBaselineBasicInfo": {
       "document": "查询基线基础信息列表",
       "input": "DescribeBaselineBasicInfoRequest",
       "name": "查询基线基础信息",
-      "output": "DescribeBaselineBasicInfoResponse"
+      "output": "DescribeBaselineBasicInfoResponse",
+      "status": "online"
     },
     "DescribeBaselineDetail": {
       "document": "根据基线id查询基线详情接口",
       "input": "DescribeBaselineDetailRequest",
       "name": "查询基线详情",
-      "output": "DescribeBaselineDetailResponse"
+      "output": "DescribeBaselineDetailResponse",
+      "status": "online"
     },
     "DescribeBaselineEffectHostList": {
       "document": "根据基线id查询基线影响主机列表",
       "input": "DescribeBaselineEffectHostListRequest",
       "name": "基线影响主机列表",
-      "output": "DescribeBaselineEffectHostListResponse"
+      "output": "DescribeBaselineEffectHostListResponse",
+      "status": "online"
     },
     "DescribeBaselineHostDetectList": {
       "document": "获取基线检测主机列表",
       "input": "DescribeBaselineHostDetectListRequest",
       "name": "获取基线检测主机列表",
-      "output": "DescribeBaselineHostDetectListResponse"
+      "output": "DescribeBaselineHostDetectListResponse",
+      "status": "online"
     },
     "DescribeBaselineHostTop": {
       "document": "接口返回TopN的风险服务器",
       "input": "DescribeBaselineHostTopRequest",
       "name": "服务器风险top接口",
-      "output": "DescribeBaselineHostTopResponse"
+      "output": "DescribeBaselineHostTopResponse",
+      "status": "online"
     },
     "DescribeBaselineItemDetectList": {
       "document": "获取基线检测项的列表",
       "input": "DescribeBaselineItemDetectListRequest",
       "name": "获取基线检测项的列表",
-      "output": "DescribeBaselineItemDetectListResponse"
+      "output": "DescribeBaselineItemDetectListResponse",
+      "status": "online"
     },
     "DescribeBaselineItemList": {
       "document": "获取基线项检测结果列表",
       "input": "DescribeBaselineItemListRequest",
       "name": "获取基线项检测结果列表",
-      "output": "DescribeBaselineItemListResponse"
+      "output": "DescribeBaselineItemListResponse",
+      "status": "online"
     },
     "DescribeBaselineList": {
       "document": "查询基线列表信息",
       "input": "DescribeBaselineListRequest",
       "name": "查询基线列表",
-      "output": "DescribeBaselineListResponse"
+      "output": "DescribeBaselineListResponse",
+      "status": "online"
     },
     "DescribeBaselinePolicyList": {
       "document": "获取基线策略列表",
       "input": "DescribeBaselinePolicyListRequest",
       "name": "获取基线策略列表",
-      "output": "DescribeBaselinePolicyListResponse"
+      "output": "DescribeBaselinePolicyListResponse",
+      "status": "online"
     },
     "DescribeBaselineRule": {
       "document": "根据基线id查询下属检测项信息",
       "input": "DescribeBaselineRuleRequest",
       "name": "查询基线检测项信息",
-      "output": "DescribeBaselineRuleResponse"
+      "output": "DescribeBaselineRuleResponse",
+      "status": "online"
     },
     "DescribeBaselineScanSchedule": {
       "document": "根据任务id查询基线检测进度",
       "input": "DescribeBaselineScanScheduleRequest",
       "name": "基线检测进度查询",
-      "output": "DescribeBaselineScanScheduleResponse"
+      "output": "DescribeBaselineScanScheduleResponse",
+      "status": "online"
     },
     "DescribeBaselineStrategyDetail": {
       "document": "根据基线策略id查询策略详情",
       "input": "DescribeBaselineStrategyDetailRequest",
       "name": "查询基线策略详情",
-      "output": "DescribeBaselineStrategyDetailResponse"
+      "output": "DescribeBaselineStrategyDetailResponse",
+      "status": "online"
     },
     "DescribeBaselineStrategyList": {
       "document": "查询一个用户下的基线策略信息",
       "input": "DescribeBaselineStrategyListRequest",
       "name": "用户基线策略列表查询",
-      "output": "DescribeBaselineStrategyListResponse"
+      "output": "DescribeBaselineStrategyListResponse",
+      "status": "online"
     },
     "DescribeBaselineTop": {
       "document": "根据策略id查询基线检测项TOP",
       "input": "DescribeBaselineTopRequest",
       "name": "基线检测项TOP",
-      "output": "DescribeBaselineTopResponse"
+      "output": "DescribeBaselineTopResponse",
+      "status": "online"
     },
     "DescribeBashEvents": {
       "document": "获取高危命令列表",
       "input": "DescribeBashEventsRequest",
       "name": "获取高危命令列表",
-      "output": "DescribeBashEventsResponse"
+      "output": "DescribeBashEventsResponse",
+      "status": "online"
     },
     "DescribeBashEventsNew": {
       "document": "获取高危命令列表(新)",
       "input": "DescribeBashEventsNewRequest",
       "name": "获取高危命令列表(新)",
-      "output": "DescribeBashEventsNewResponse"
+      "output": "DescribeBashEventsNewResponse",
+      "status": "online"
     },
     "DescribeBashRules": {
       "document": "获取高危命令规则列表",
       "input": "DescribeBashRulesRequest",
       "name": "获取高危命令规则列表",
-      "output": "DescribeBashRulesResponse"
+      "output": "DescribeBashRulesResponse",
+      "status": "online"
     },
     "DescribeBruteAttackList": {
       "document": "获取密码破解列表",
       "input": "DescribeBruteAttackListRequest",
       "name": "获取密码破解列表",
-      "output": "DescribeBruteAttackListResponse"
+      "output": "DescribeBruteAttackListResponse",
+      "status": "online"
     },
     "DescribeBruteAttackRules": {
       "document": "获取爆破破解规则",
       "input": "DescribeBruteAttackRulesRequest",
       "name": "获取爆破破解规则",
-      "output": "DescribeBruteAttackRulesResponse"
+      "output": "DescribeBruteAttackRulesResponse",
+      "status": "online"
     },
     "DescribeClientException": {
       "document": "获取客户端异常事件",
       "input": "DescribeClientExceptionRequest",
       "name": "获取客户端异常事件",
-      "output": "DescribeClientExceptionResponse"
+      "output": "DescribeClientExceptionResponse",
+      "status": "online"
     },
     "DescribeComponentStatistics": {
       "document": "本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。",
       "input": "DescribeComponentStatisticsRequest",
       "name": "获取组件统计列表",
-      "output": "DescribeComponentStatisticsResponse"
+      "output": "DescribeComponentStatisticsResponse",
+      "status": "online"
     },
     "DescribeESAggregations": {
       "document": "获取ES字段聚合结果",
       "input": "DescribeESAggregationsRequest",
       "name": "获取ES字段聚合结果",
-      "output": "DescribeESAggregationsResponse"
+      "output": "DescribeESAggregationsResponse",
+      "status": "online"
     },
     "DescribeEmergencyResponseList": {
       "document": "专家服务-应急响应列表",
       "input": "DescribeEmergencyResponseListRequest",
       "name": "应急响应列表",
-      "output": "DescribeEmergencyResponseListResponse"
+      "output": "DescribeEmergencyResponseListResponse",
+      "status": "online"
     },
     "DescribeEmergencyVulList": {
       "document": "获取应急漏洞列表",
       "input": "DescribeEmergencyVulListRequest",
       "name": "应急漏洞列表",
-      "output": "DescribeEmergencyVulListResponse"
+      "output": "DescribeEmergencyVulListResponse",
+      "status": "online"
     },
     "DescribeExpertServiceList": {
       "document": "专家服务-安全管家列表",
       "input": "DescribeExpertServiceListRequest",
       "name": "安全管家列表",
-      "output": "DescribeExpertServiceListResponse"
+      "output": "DescribeExpertServiceListResponse",
+      "status": "online"
     },
     "DescribeExpertServiceOrderList": {
       "document": "专家服务-专家服务订单列表",
       "input": "DescribeExpertServiceOrderListRequest",
       "name": "专家服务订单列表",
-      "output": "DescribeExpertServiceOrderListResponse"
+      "output": "DescribeExpertServiceOrderListResponse",
+      "status": "online"
     },
     "DescribeExportMachines": {
       "document": "本接口 (DescribeExportMachines) 用于导出区域主机列表。",
       "input": "DescribeExportMachinesRequest",
       "name": "导出区域主机列表",
-      "output": "DescribeExportMachinesResponse"
+      "output": "DescribeExportMachinesResponse",
+      "status": "online"
     },
     "DescribeGeneralStat": {
       "document": "获取主机相关统计",
       "input": "DescribeGeneralStatRequest",
       "name": "获取主机相关统计",
-      "output": "DescribeGeneralStatResponse"
+      "output": "DescribeGeneralStatResponse",
+      "status": "online"
     },
     "DescribeHistoryAccounts": {
       "document": "本接口 (DescribeHistoryAccounts) 用于获取帐号变更历史列表数据。",
       "input": "DescribeHistoryAccountsRequest",
       "name": "获取帐号变更历史列表",
-      "output": "DescribeHistoryAccountsResponse"
+      "output": "DescribeHistoryAccountsResponse",
+      "status": "online"
     },
     "DescribeHistoryService": {
       "document": "查询日志检索服务信息",
       "input": "DescribeHistoryServiceRequest",
       "name": "查询日志检索服务信息",
-      "output": "DescribeHistoryServiceResponse"
+      "output": "DescribeHistoryServiceResponse",
+      "status": "online"
     },
     "DescribeHostLoginList": {
       "document": "获取登录审计列表",
       "input": "DescribeHostLoginListRequest",
       "name": "获取登录审计列表",
-      "output": "DescribeHostLoginListResponse"
+      "output": "DescribeHostLoginListResponse",
+      "status": "online"
     },
     "DescribeIgnoreBaselineRule": {
       "document": "查询已经忽略的检测项信息",
       "input": "DescribeIgnoreBaselineRuleRequest",
       "name": "查询忽略检测项信息",
-      "output": "DescribeIgnoreBaselineRuleResponse"
+      "output": "DescribeIgnoreBaselineRuleResponse",
+      "status": "online"
     },
     "DescribeIgnoreRuleEffectHostList": {
       "document": "根据检测项id与筛选条件查询忽略检测项影响主机列表信息",
       "input": "DescribeIgnoreRuleEffectHostListRequest",
       "name": "查询忽略检测项影响主机列表",
-      "output": "DescribeIgnoreRuleEffectHostListResponse"
+      "output": "DescribeIgnoreRuleEffectHostListResponse",
+      "status": "online"
     },
     "DescribeImportMachineInfo": {
       "document": "查询批量导入机器信息",
       "input": "DescribeImportMachineInfoRequest",
       "name": "查询批量导入机器信息",
-      "output": "DescribeImportMachineInfoResponse"
+      "output": "DescribeImportMachineInfoResponse",
+      "status": "online"
     },
     "DescribeIndexList": {
       "document": "获取索引列表",
       "input": "DescribeIndexListRequest",
       "name": "获取索引列表",
-      "output": "DescribeIndexListResponse"
+      "output": "DescribeIndexListResponse",
+      "status": "online"
     },
     "DescribeJavaMemShellList": {
       "document": "查询java内存马事件列表",
       "input": "DescribeJavaMemShellListRequest",
       "name": "查询java内存马事件列表",
-      "output": "DescribeJavaMemShellListResponse"
+      "output": "DescribeJavaMemShellListResponse",
+      "status": "online"
     },
     "DescribeLicenseBindList": {
       "document": "该接口可以获取设置中心-授权管理,某个授权下已绑定的授权机器列表",
       "input": "DescribeLicenseBindListRequest",
       "name": "查看授权绑定列表",
-      "output": "DescribeLicenseBindListResponse"
+      "output": "DescribeLicenseBindListResponse",
+      "status": "online"
     },
     "DescribeLicenseBindSchedule": {
       "document": "查询授权绑定任务的进度",
       "input": "DescribeLicenseBindScheduleRequest",
       "name": "查询授权绑定进度",
-      "output": "DescribeLicenseBindScheduleResponse"
+      "output": "DescribeLicenseBindScheduleResponse",
+      "status": "online"
     },
     "DescribeLicenseGeneral": {
       "document": "授权管理-授权概览信息",
       "input": "DescribeLicenseGeneralRequest",
       "name": "授权概览信息",
-      "output": "DescribeLicenseGeneralResponse"
+      "output": "DescribeLicenseGeneralResponse",
+      "status": "online"
     },
     "DescribeLicenseList": {
       "document": "获取用户所有授权订单信息",
       "input": "DescribeLicenseListRequest",
       "name": "获取授权订单列表",
-      "output": "DescribeLicenseListResponse"
+      "output": "DescribeLicenseListResponse",
+      "status": "online"
     },
     "DescribeLogStorageStatistic": {
       "document": "获取日志检索容量使用统计",
       "input": "DescribeLogStorageStatisticRequest",
       "name": "获取日志检索容量使用统计",
-      "output": "DescribeLogStorageStatisticResponse"
+      "output": "DescribeLogStorageStatisticResponse",
+      "status": "online"
     },
     "DescribeLoginWhiteCombinedList": {
       "document": "获取异地登录白名单合并后列表",
       "input": "DescribeLoginWhiteCombinedListRequest",
       "name": "获取异地登录白名单合并后列表",
-      "output": "DescribeLoginWhiteCombinedListResponse"
+      "output": "DescribeLoginWhiteCombinedListResponse",
+      "status": "online"
     },
     "DescribeLoginWhiteList": {
       "document": "获取异地登录白名单列表",
       "input": "DescribeLoginWhiteListRequest",
       "name": "获取异地登录白名单列表",
-      "output": "DescribeLoginWhiteListResponse"
+      "output": "DescribeLoginWhiteListResponse",
+      "status": "online"
     },
     "DescribeMachineInfo": {
       "document": "本接口（DescribeMachineInfo）用于获取机器详细信息。",
       "input": "DescribeMachineInfoRequest",
       "name": "获取机器详情",
-      "output": "DescribeMachineInfoResponse"
+      "output": "DescribeMachineInfoResponse",
+      "status": "online"
     },
     "DescribeMachineList": {
       "document": "用于网页防篡改获取区域主机列表。",
       "input": "DescribeMachineListRequest",
       "name": "网页防篡改获取区域主机列表",
-      "output": "DescribeMachineListResponse"
+      "output": "DescribeMachineListResponse",
+      "status": "online"
     },
     "DescribeMachineOsList": {
       "document": "查询可筛选操作系统列表.",
       "input": "DescribeMachineOsListRequest",
       "name": "查询机器操作系统列表",
-      "output": "DescribeMachineOsListResponse"
+      "output": "DescribeMachineOsListResponse",
+      "status": "online"
     },
     "DescribeMachineRegions": {
       "document": "获取机器地域列表",
       "input": "DescribeMachineRegionsRequest",
       "name": "获取机器地域列表",
-      "output": "DescribeMachineRegionsResponse"
+      "output": "DescribeMachineRegionsResponse",
+      "status": "online"
     },
     "DescribeMachines": {
       "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",
       "input": "DescribeMachinesRequest",
       "name": "获取区域主机列表",
-      "output": "DescribeMachinesResponse"
+      "output": "DescribeMachinesResponse",
+      "status": "online"
     },
     "DescribeMalWareList": {
       "document": "入侵检测获取木马列表",
       "input": "DescribeMalWareListRequest",
       "name": "获取木马列表",
-      "output": "DescribeMalWareListResponse"
+      "output": "DescribeMalWareListResponse",
+      "status": "online"
     },
     "DescribeMaliciousRequestWhiteList": {
       "document": "查询恶意请求白名单列表",
       "input": "DescribeMaliciousRequestWhiteListRequest",
       "name": "查询恶意请求白名单列表",
-      "output": "DescribeMaliciousRequestWhiteListResponse"
+      "output": "DescribeMaliciousRequestWhiteListResponse",
+      "status": "online"
     },
     "DescribeMalwareFile": {
       "document": "获取木马文件下载地址",
       "input": "DescribeMalwareFileRequest",
       "name": "获取木马文件下载地址",
-      "output": "DescribeMalwareFileResponse"
+      "output": "DescribeMalwareFileResponse",
+      "status": "online"
     },
     "DescribeMalwareInfo": {
       "document": "查看恶意文件详情",
       "input": "DescribeMalwareInfoRequest",
       "name": "查看恶意文件详情",
-      "output": "DescribeMalwareInfoResponse"
+      "output": "DescribeMalwareInfoResponse",
+      "status": "online"
     },
     "DescribeMalwareRiskWarning": {
       "document": "打开入侵检测-恶意文件检测,弹出风险预警内容",
       "input": "DescribeMalwareRiskWarningRequest",
       "name": "风险预警提示",
-      "output": "DescribeMalwareRiskWarningResponse"
+      "output": "DescribeMalwareRiskWarningResponse",
+      "status": "online"
     },
     "DescribeMalwareTimingScanSetting": {
       "document": "查询定时扫描配置",
       "input": "DescribeMalwareTimingScanSettingRequest",
       "name": "查询定时扫描配置",
-      "output": "DescribeMalwareTimingScanSettingResponse"
+      "output": "DescribeMalwareTimingScanSettingResponse",
+      "status": "online"
     },
     "DescribeMonthInspectionReport": {
       "document": "专家服务-安全管家月巡检报告下载",
       "input": "DescribeMonthInspectionReportRequest",
       "name": "安全管家月巡检报告下载",
-      "output": "DescribeMonthInspectionReportResponse"
+      "output": "DescribeMonthInspectionReportResponse",
+      "status": "online"
     },
     "DescribeOpenPortStatistics": {
       "document": "本接口 (DescribeOpenPortStatistics) 用于获取端口统计列表。",
       "input": "DescribeOpenPortStatisticsRequest",
       "name": "获取端口统计列表",
-      "output": "DescribeOpenPortStatisticsResponse"
+      "output": "DescribeOpenPortStatisticsResponse",
+      "status": "online"
     },
     "DescribeOverviewStatistics": {
       "document": "获取概览统计数据。",
       "input": "DescribeOverviewStatisticsRequest",
       "name": "获取概览统计数据",
-      "output": "DescribeOverviewStatisticsResponse"
+      "output": "DescribeOverviewStatisticsResponse",
+      "status": "online"
     },
     "DescribePrivilegeEvents": {
       "document": "获取本地提权事件列表",
       "input": "DescribePrivilegeEventsRequest",
       "name": "获取本地提权事件列表",
-      "output": "DescribePrivilegeEventsResponse"
+      "output": "DescribePrivilegeEventsResponse",
+      "status": "online"
     },
     "DescribePrivilegeRules": {
       "document": "获取本地提权规则列表",
       "input": "DescribePrivilegeRulesRequest",
       "name": "获取本地提权规则列表",
-      "output": "DescribePrivilegeRulesResponse"
+      "output": "DescribePrivilegeRulesResponse",
+      "status": "online"
     },
     "DescribeProVersionInfo": {
       "document": "用于获取专业版概览信息。",
       "input": "DescribeProVersionInfoRequest",
       "name": "获取专业版概览信息",
-      "output": "DescribeProVersionInfoResponse"
+      "output": "DescribeProVersionInfoResponse",
+      "status": "online"
     },
     "DescribeProVersionStatus": {
       "document": "用于获取单台主机或所有主机是否开通专业版状态。",
       "input": "DescribeProVersionStatusRequest",
       "name": "获取专业版状态",
-      "output": "DescribeProVersionStatusResponse"
+      "output": "DescribeProVersionStatusResponse",
+      "status": "online"
     },
     "DescribeProcessStatistics": {
       "document": "本接口 (DescribeProcessStatistics) 用于获取进程统计列表数据。",
       "input": "DescribeProcessStatisticsRequest",
       "name": "获取进程统计列表",
-      "output": "DescribeProcessStatisticsResponse"
+      "output": "DescribeProcessStatisticsResponse",
+      "status": "online"
     },
     "DescribeProtectDirList": {
       "document": "网页防篡改防护目录列表",
       "input": "DescribeProtectDirListRequest",
       "name": "防护目录列表",
-      "output": "DescribeProtectDirListResponse"
+      "output": "DescribeProtectDirListResponse",
+      "status": "online"
     },
     "DescribeProtectDirRelatedServer": {
       "document": "查询防护目录关联服务器列表信息",
       "input": "DescribeProtectDirRelatedServerRequest",
       "name": "查询防护目录关联服务器",
-      "output": "DescribeProtectDirRelatedServerResponse"
+      "output": "DescribeProtectDirRelatedServerResponse",
+      "status": "online"
     },
     "DescribeProtectNetList": {
       "document": "专家服务-旗舰重保列表",
       "input": "DescribeProtectNetListRequest",
       "name": "旗舰重保列表",
-      "output": "DescribeProtectNetListResponse"
+      "output": "DescribeProtectNetListResponse",
+      "status": "online"
     },
     "DescribeReverseShellEvents": {
       "document": "获取反弹Shell列表",
       "input": "DescribeReverseShellEventsRequest",
       "name": "获取反弹Shell列表",
-      "output": "DescribeReverseShellEventsResponse"
+      "output": "DescribeReverseShellEventsResponse",
+      "status": "online"
     },
     "DescribeReverseShellRules": {
       "document": "获取反弹Shell规则列表",
       "input": "DescribeReverseShellRulesRequest",
       "name": "获取反弹Shell规则列表",
-      "output": "DescribeReverseShellRulesResponse"
+      "output": "DescribeReverseShellRulesResponse",
+      "status": "online"
     },
     "DescribeRiskDnsList": {
       "document": "入侵检测，获取恶意请求列表",
       "input": "DescribeRiskDnsListRequest",
       "name": "获取恶意请求列表",
-      "output": "DescribeRiskDnsListResponse"
+      "output": "DescribeRiskDnsListResponse",
+      "status": "online"
     },
     "DescribeSaveOrUpdateWarnings": {
       "document": "更新或者插入用户告警设置(该接口废弃,请调用 ModifyWarningSetting )",
       "input": "DescribeSaveOrUpdateWarningsRequest",
       "name": "更新用户告警设置",
-      "output": "DescribeSaveOrUpdateWarningsResponse"
+      "output": "DescribeSaveOrUpdateWarningsResponse",
+      "status": "online"
     },
     "DescribeScanMalwareSchedule": {
       "document": "查询木马扫描进度",
       "input": "DescribeScanMalwareScheduleRequest",
       "name": "查询木马扫描进度",
-      "output": "DescribeScanMalwareScheduleResponse"
+      "output": "DescribeScanMalwareScheduleResponse",
+      "status": "online"
     },
     "DescribeScanSchedule": {
       "document": "根据taskid查询检测进度",
       "input": "DescribeScanScheduleRequest",
       "name": "查询检测进度",
-      "output": "DescribeScanScheduleResponse"
+      "output": "DescribeScanScheduleResponse",
+      "status": "online"
     },
     "DescribeScanState": {
       "document": "DescribeScanState 该接口能查询对应模块正在进行的扫描任务状态",
       "input": "DescribeScanStateRequest",
       "name": "查询扫描状态",
-      "output": "DescribeScanStateResponse"
+      "output": "DescribeScanStateResponse",
+      "status": "online"
     },
     "DescribeScanTaskDetails": {
       "document": "DescribeScanTaskDetails 查询扫描任务详情 , 可以查询扫描进度信息/异常;",
       "input": "DescribeScanTaskDetailsRequest",
       "name": "查询扫描任务详情",
-      "output": "DescribeScanTaskDetailsResponse"
+      "output": "DescribeScanTaskDetailsResponse",
+      "status": "online"
     },
     "DescribeScanTaskStatus": {
       "document": "DescribeScanTaskStatus 查询机器扫描状态列表用于过滤筛选",
       "input": "DescribeScanTaskStatusRequest",
       "name": "查询机器扫描状态列表",
-      "output": "DescribeScanTaskStatusResponse"
+      "output": "DescribeScanTaskStatusResponse",
+      "status": "online"
     },
     "DescribeScanVulSetting": {
       "document": "查询定期检测的配置",
       "input": "DescribeScanVulSettingRequest",
       "name": "定期检测配置查询",
-      "output": "DescribeScanVulSettingResponse"
+      "output": "DescribeScanVulSettingResponse",
+      "status": "online"
     },
     "DescribeSearchExportList": {
       "document": "导出ES查询文档列表",
       "input": "DescribeSearchExportListRequest",
       "name": "导出ES查询文档列表",
-      "output": "DescribeSearchExportListResponse"
+      "output": "DescribeSearchExportListResponse",
+      "status": "online"
     },
     "DescribeSearchLogs": {
       "document": "获取历史搜索记录",
       "input": "DescribeSearchLogsRequest",
       "name": "获取历史搜索记录",
-      "output": "DescribeSearchLogsResponse"
+      "output": "DescribeSearchLogsResponse",
+      "status": "online"
     },
     "DescribeSearchTemplates": {
       "document": "获取快速检索列表",
       "input": "DescribeSearchTemplatesRequest",
       "name": "获取快速检索列表",
-      "output": "DescribeSearchTemplatesResponse"
+      "output": "DescribeSearchTemplatesResponse",
+      "status": "online"
     },
     "DescribeSecurityDynamics": {
       "document": "本接口 (DescribeSecurityDynamics) 用于获取安全事件动态消息数据。",
       "input": "DescribeSecurityDynamicsRequest",
       "name": "获取安全事件动态消息",
-      "output": "DescribeSecurityDynamicsResponse"
+      "output": "DescribeSecurityDynamicsResponse",
+      "status": "online"
     },
     "DescribeSecurityEventStat": {
       "document": "获取安全事件统计",
       "input": "DescribeSecurityEventStatRequest",
       "name": "获取安全事件统计",
-      "output": "DescribeSecurityEventStatResponse"
+      "output": "DescribeSecurityEventStatResponse",
+      "status": "online"
     },
     "DescribeSecurityEventsCnt": {
       "document": "获取安全概览相关事件统计数据接口",
       "input": "DescribeSecurityEventsCntRequest",
       "name": "获取安全事件数统计数据",
-      "output": "DescribeSecurityEventsCntResponse"
+      "output": "DescribeSecurityEventsCntResponse",
+      "status": "online"
     },
     "DescribeSecurityTrends": {
       "document": "本接口 (DescribeSecurityTrends) 用于获取安全事件统计数据。",
       "input": "DescribeSecurityTrendsRequest",
       "name": "获取安全事件统计数据",
-      "output": "DescribeSecurityTrendsResponse"
+      "output": "DescribeSecurityTrendsResponse",
+      "status": "online"
     },
     "DescribeServerRelatedDirInfo": {
       "document": "查询服务区关联目录详情",
       "input": "DescribeServerRelatedDirInfoRequest",
       "name": "查询服务器关联目录详情",
-      "output": "DescribeServerRelatedDirInfoResponse"
+      "output": "DescribeServerRelatedDirInfoResponse",
+      "status": "online"
     },
     "DescribeServersAndRiskAndFirstInfo": {
       "document": "获取待处理风险文件数+影响服务器数+是否试用检测+最近检测时间",
       "input": "DescribeServersAndRiskAndFirstInfoRequest",
       "name": "获文件查杀概览信息",
-      "output": "DescribeServersAndRiskAndFirstInfoResponse"
+      "output": "DescribeServersAndRiskAndFirstInfoResponse",
+      "status": "online"
     },
     "DescribeStrategyExist": {
       "document": "根据策略名查询策略是否存在",
       "input": "DescribeStrategyExistRequest",
       "name": "根据策略名查询策略是否存在",
-      "output": "DescribeStrategyExistResponse"
+      "output": "DescribeStrategyExistResponse",
+      "status": "online"
     },
     "DescribeTagMachines": {
       "document": "获取指定标签关联的服务器信息",
       "input": "DescribeTagMachinesRequest",
       "name": "获取指定标签关联的服务器信息",
-      "output": "DescribeTagMachinesResponse"
+      "output": "DescribeTagMachinesResponse",
+      "status": "online"
     },
     "DescribeTags": {
       "document": "获取所有主机标签",
       "input": "DescribeTagsRequest",
       "name": "获取所有主机标签",
-      "output": "DescribeTagsResponse"
+      "output": "DescribeTagsResponse",
+      "status": "online"
     },
     "DescribeUndoVulCounts": {
       "document": "获取漏洞管理模块指定类型的待处理漏洞数、主机数和非专业版主机数量",
       "input": "DescribeUndoVulCountsRequest",
       "name": "获取指定漏洞分类统计数",
-      "output": "DescribeUndoVulCountsResponse"
+      "output": "DescribeUndoVulCountsResponse",
+      "status": "online"
     },
     "DescribeUsualLoginPlaces": {
       "document": "此接口（DescribeUsualLoginPlaces）用于查询常用登录地。",
       "input": "DescribeUsualLoginPlacesRequest",
       "name": "查询常用登录地",
-      "output": "DescribeUsualLoginPlacesResponse"
+      "output": "DescribeUsualLoginPlacesResponse",
+      "status": "online"
     },
     "DescribeVersionStatistics": {
       "document": "用于统计专业版和基础版机器数。",
       "input": "DescribeVersionStatisticsRequest",
       "name": "获取专业版和基础版机器数",
-      "output": "DescribeVersionStatisticsResponse"
+      "output": "DescribeVersionStatisticsResponse",
+      "status": "online"
     },
     "DescribeVulCountByDates": {
       "document": "漏洞管理模块，获取近日指定类型的漏洞数量和主机数量",
       "input": "DescribeVulCountByDatesRequest",
       "name": "获取近日指定类型的漏洞数量和主机数量",
-      "output": "DescribeVulCountByDatesResponse"
+      "output": "DescribeVulCountByDatesResponse",
+      "status": "online"
     },
     "DescribeVulEffectHostList": {
       "document": "漏洞影响主机列表",
       "input": "DescribeVulEffectHostListRequest",
       "name": "漏洞影响主机列表",
-      "output": "DescribeVulEffectHostListResponse"
+      "output": "DescribeVulEffectHostListResponse",
+      "status": "online"
     },
     "DescribeVulHostCountScanTime": {
       "document": "获取待处理漏洞数+影响主机数",
       "input": "DescribeVulHostCountScanTimeRequest",
       "name": "获取待处理漏洞数+影响主机数",
-      "output": "DescribeVulHostCountScanTimeResponse"
+      "output": "DescribeVulHostCountScanTimeResponse",
+      "status": "online"
     },
     "DescribeVulHostTop": {
       "document": "获取服务器风险top列表",
       "input": "DescribeVulHostTopRequest",
       "name": "获取服务器风险top列表",
-      "output": "DescribeVulHostTopResponse"
+      "output": "DescribeVulHostTopResponse",
+      "status": "online"
     },
     "DescribeVulInfoCvss": {
       "document": "漏洞详情，带CVSS版本",
       "input": "DescribeVulInfoCvssRequest",
       "name": "漏洞详情",
-      "output": "DescribeVulInfoCvssResponse"
+      "output": "DescribeVulInfoCvssResponse",
+      "status": "online"
     },
     "DescribeVulLevelCount": {
       "document": "漏洞数量等级分布统计",
       "input": "DescribeVulLevelCountRequest",
       "name": "查询漏洞数量等级分布统计",
-      "output": "DescribeVulLevelCountResponse"
+      "output": "DescribeVulLevelCountResponse",
+      "status": "online"
     },
     "DescribeVulList": {
       "document": "获取漏洞列表数据",
       "input": "DescribeVulListRequest",
       "name": "漏洞列表",
-      "output": "DescribeVulListResponse"
+      "output": "DescribeVulListResponse",
+      "status": "online"
     },
     "DescribeVulTop": {
       "document": "漏洞top统计",
       "input": "DescribeVulTopRequest",
       "name": "获取漏洞top统计",
-      "output": "DescribeVulTopResponse"
+      "output": "DescribeVulTopResponse",
+      "status": "online"
     },
     "DescribeWarningList": {
       "document": "获取当前用户告警列表",
       "input": "DescribeWarningListRequest",
       "name": "获取当前用户告警列表",
-      "output": "DescribeWarningListResponse"
+      "output": "DescribeWarningListResponse",
+      "status": "online"
     },
     "DescribeWebPageEventList": {
       "document": "查询篡改事件列表",
       "input": "DescribeWebPageEventListRequest",
       "name": "查询篡改事件列表",
-      "output": "DescribeWebPageEventListResponse"
+      "output": "DescribeWebPageEventListResponse",
+      "status": "online"
     },
     "DescribeWebPageGeneralize": {
       "document": "查询网站防篡改概览信息",
       "input": "DescribeWebPageGeneralizeRequest",
       "name": "查询网页防篡改概览信息",
-      "output": "DescribeWebPageGeneralizeResponse"
+      "output": "DescribeWebPageGeneralizeResponse",
+      "status": "online"
     },
     "DescribeWebPageProtectStat": {
       "document": "网站防篡改-查询动态防护信息",
       "input": "DescribeWebPageProtectStatRequest",
       "name": "查询网页防篡改防护统计",
-      "output": "DescribeWebPageProtectStatResponse"
+      "output": "DescribeWebPageProtectStatResponse",
+      "status": "online"
     },
     "DescribeWebPageServiceInfo": {
       "document": "网站防篡改-查询网页防篡改服务器购买信息及服务器信息",
       "input": "DescribeWebPageServiceInfoRequest",
       "name": "查询网站防篡改服务信息",
-      "output": "DescribeWebPageServiceInfoResponse"
+      "output": "DescribeWebPageServiceInfoResponse",
+      "status": "online"
     },
     "DestroyOrder": {
       "document": "DestroyOrder  该接口可以对资源销毁.",
       "input": "DestroyOrderRequest",
       "name": "销毁订单",
-      "output": "DestroyOrderResponse"
+      "output": "DestroyOrderResponse",
+      "status": "online"
     },
     "EditBashRules": {
       "document": "新增或修改高危命令规则",
       "input": "EditBashRulesRequest",
       "name": "新增或修改高危命令规则（支持多服务器选择）",
-      "output": "EditBashRulesResponse"
+      "output": "EditBashRulesResponse",
+      "status": "online"
     },
     "EditTags": {
       "document": "新增或编辑标签",
       "input": "EditTagsRequest",
       "name": "新增或编辑标签",
-      "output": "EditTagsResponse"
+      "output": "EditTagsResponse",
+      "status": "online"
     },
     "ExportAssetCoreModuleList": {
       "document": "导出资产管理内核模块列表",
       "input": "ExportAssetCoreModuleListRequest",
       "name": "导出资产管理内核模块列表",
-      "output": "ExportAssetCoreModuleListResponse"
+      "output": "ExportAssetCoreModuleListResponse",
+      "status": "online"
     },
     "ExportAssetWebServiceInfoList": {
       "document": "导出资产管理Web服务列表",
       "input": "ExportAssetWebServiceInfoListRequest",
       "name": "导出资产管理Web服务列表",
-      "output": "ExportAssetWebServiceInfoListResponse"
+      "output": "ExportAssetWebServiceInfoListResponse",
+      "status": "online"
     },
     "ExportAttackLogs": {
       "document": "导出网络攻击日志",
       "input": "ExportAttackLogsRequest",
       "name": "导出网络攻击日志",
-      "output": "ExportAttackLogsResponse"
+      "output": "ExportAttackLogsResponse",
+      "status": "online"
     },
     "ExportBaselineEffectHostList": {
       "document": "导出基线影响主机列表",
       "input": "ExportBaselineEffectHostListRequest",
       "name": "基线影响主机列表导出",
-      "output": "ExportBaselineEffectHostListResponse"
+      "output": "ExportBaselineEffectHostListResponse",
+      "status": "online"
     },
     "ExportBaselineList": {
       "document": "导出基线列表",
       "input": "ExportBaselineListRequest",
       "name": "导出基线列表",
-      "output": "ExportBaselineListResponse"
+      "output": "ExportBaselineListResponse",
+      "status": "online"
     },
     "ExportBashEvents": {
       "document": "导出高危命令事件",
       "input": "ExportBashEventsRequest",
       "name": "导出高危命令事件",
-      "output": "ExportBashEventsResponse"
+      "output": "ExportBashEventsResponse",
+      "status": "online"
     },
     "ExportBruteAttacks": {
       "document": "本接口 (ExportBruteAttacks) 用于导出密码破解记录成CSV文件。",
       "input": "ExportBruteAttacksRequest",
       "name": "导出密码破解记录",
-      "output": "ExportBruteAttacksResponse"
+      "output": "ExportBruteAttacksResponse",
+      "status": "online"
     },
     "ExportIgnoreBaselineRule": {
       "document": "导出已忽略基线检测项信息",
       "input": "ExportIgnoreBaselineRuleRequest",
       "name": "已忽略基线检测项导出",
-      "output": "ExportIgnoreBaselineRuleResponse"
+      "output": "ExportIgnoreBaselineRuleResponse",
+      "status": "online"
     },
     "ExportIgnoreRuleEffectHostList": {
       "document": "根据检测项id导出忽略检测项影响主机列表",
       "input": "ExportIgnoreRuleEffectHostListRequest",
       "name": "忽略检测项影响主机列表导出",
-      "output": "ExportIgnoreRuleEffectHostListResponse"
+      "output": "ExportIgnoreRuleEffectHostListResponse",
+      "status": "online"
     },
     "ExportLicenseDetail": {
       "document": "导出授权列表对应的绑定信息",
       "input": "ExportLicenseDetailRequest",
       "name": "导出授权详情",
-      "output": "ExportLicenseDetailResponse"
+      "output": "ExportLicenseDetailResponse",
+      "status": "online"
     },
     "ExportMaliciousRequests": {
       "document": "本接口 (ExportMaliciousRequests) 用于导出下载恶意请求文件。",
       "input": "ExportMaliciousRequestsRequest",
       "name": "导出下载恶意请求文件",
-      "output": "ExportMaliciousRequestsResponse"
+      "output": "ExportMaliciousRequestsResponse",
+      "status": "online"
     },
     "ExportMalwares": {
       "document": "本接口 (ExportMalwares) 用于导出木马记录CSV文件。",
       "input": "ExportMalwaresRequest",
       "name": "导出木马记录",
-      "output": "ExportMalwaresResponse"
+      "output": "ExportMalwaresResponse",
+      "status": "online"
     },
     "ExportNonlocalLoginPlaces": {
       "document": "本接口 (ExportNonlocalLoginPlaces) 用于导出异地登录事件记录CSV文件。",
       "input": "ExportNonlocalLoginPlacesRequest",
       "name": "导出异地登录记录",
-      "output": "ExportNonlocalLoginPlacesResponse"
+      "output": "ExportNonlocalLoginPlacesResponse",
+      "status": "online"
     },
     "ExportPrivilegeEvents": {
       "document": "导出本地提权事件",
       "input": "ExportPrivilegeEventsRequest",
       "name": "导出本地提权事件",
-      "output": "ExportPrivilegeEventsResponse"
+      "output": "ExportPrivilegeEventsResponse",
+      "status": "online"
     },
     "ExportProtectDirList": {
       "document": "导出网页防篡改防护目录列表",
       "input": "ExportProtectDirListRequest",
       "name": "导出防护目录列表",
-      "output": "ExportProtectDirListResponse"
+      "output": "ExportProtectDirListResponse",
+      "status": "online"
     },
     "ExportReverseShellEvents": {
       "document": "导出反弹Shell事件",
       "input": "ExportReverseShellEventsRequest",
       "name": "导出反弹Shell事件",
-      "output": "ExportReverseShellEventsResponse"
+      "output": "ExportReverseShellEventsResponse",
+      "status": "online"
     },
     "ExportScanTaskDetails": {
       "document": "根据任务id导出指定扫描任务详情 ",
       "input": "ExportScanTaskDetailsRequest",
       "name": "导出扫描任务详情",
-      "output": "ExportScanTaskDetailsResponse"
+      "output": "ExportScanTaskDetailsResponse",
+      "status": "online"
     },
     "ExportSecurityTrends": {
       "document": "导出风险趋势",
       "input": "ExportSecurityTrendsRequest",
       "name": "导出风险趋势",
-      "output": "ExportSecurityTrendsResponse"
+      "output": "ExportSecurityTrendsResponse",
+      "status": "online"
     },
     "ExportTasks": {
       "document": "用于异步导出数据量大的日志文件",
       "input": "ExportTasksRequest",
       "name": "异步导出任务",
-      "output": "ExportTasksResponse"
+      "output": "ExportTasksResponse",
+      "status": "online"
     },
     "ExportVulDetectionExcel": {
       "document": "导出本次漏洞检测Excel",
       "input": "ExportVulDetectionExcelRequest",
       "name": "导出本次漏洞检测Excel",
-      "output": "ExportVulDetectionExcelResponse"
+      "output": "ExportVulDetectionExcelResponse",
+      "status": "online"
     },
     "ExportVulDetectionReport": {
       "document": "导出漏洞检测报告。",
       "input": "ExportVulDetectionReportRequest",
       "name": "导出漏洞检测报告",
-      "output": "ExportVulDetectionReportResponse"
+      "output": "ExportVulDetectionReportResponse",
+      "status": "online"
     },
     "ExportVulEffectHostList": {
       "document": "导出漏洞影响主机列表",
       "input": "ExportVulEffectHostListRequest",
       "name": "导出漏洞影响主机列表",
-      "output": "ExportVulEffectHostListResponse"
+      "output": "ExportVulEffectHostListResponse",
+      "status": "online"
     },
     "ExportVulList": {
       "document": "漏洞管理-导出漏洞列表",
       "input": "ExportVulListRequest",
       "name": "漏洞管理-导出漏洞列表",
-      "output": "ExportVulListResponse"
+      "output": "ExportVulListResponse",
+      "status": "online"
     },
     "ExportWebPageEventList": {
       "document": "导出篡改事件列表",
       "input": "ExportWebPageEventListRequest",
       "name": "导出篡改事件列表",
-      "output": "ExportWebPageEventListResponse"
+      "output": "ExportWebPageEventListResponse",
+      "status": "online"
     },
     "IgnoreImpactedHosts": {
       "document": "本接口 (IgnoreImpactedHosts) 用于忽略漏洞。",
       "input": "IgnoreImpactedHostsRequest",
       "name": "忽略漏洞",
-      "output": "IgnoreImpactedHostsResponse"
+      "output": "IgnoreImpactedHostsResponse",
+      "status": "online"
     },
     "ModifyAutoOpenProVersionConfig": {
       "document": " 用于设置新增主机自动开通专业防护配置。",
       "input": "ModifyAutoOpenProVersionConfigRequest",
       "name": "设置自动开通配置",
-      "output": "ModifyAutoOpenProVersionConfigResponse"
+      "output": "ModifyAutoOpenProVersionConfigResponse",
+      "status": "online"
     },
     "ModifyBanMode": {
       "document": "修改爆破阻断模式",
       "input": "ModifyBanModeRequest",
       "name": "修改爆破阻断模式",
-      "output": "ModifyBanModeResponse"
+      "output": "ModifyBanModeResponse",
+      "status": "online"
     },
     "ModifyBanStatus": {
       "document": "设置阻断开关状态",
       "input": "ModifyBanStatusRequest",
       "name": "设置阻断开关状态",
-      "output": "ModifyBanStatusResponse"
+      "output": "ModifyBanStatusResponse",
+      "status": "online"
     },
     "ModifyBaselinePolicy": {
       "document": "更改基线策略设置",
       "input": "ModifyBaselinePolicyRequest",
       "name": "更改基线策略设置",
-      "output": "ModifyBaselinePolicyResponse"
+      "output": "ModifyBaselinePolicyResponse",
+      "status": "online"
     },
     "ModifyBruteAttackRules": {
       "document": "修改暴力破解规则",
       "input": "ModifyBruteAttackRulesRequest",
       "name": "修改暴力破解规则",
-      "output": "ModifyBruteAttackRulesResponse"
+      "output": "ModifyBruteAttackRulesResponse",
+      "status": "online"
     },
     "ModifyLicenseBinds": {
       "document": "设置中心-授权管理 对某个授权批量绑定机器",
       "input": "ModifyLicenseBindsRequest",
       "name": "授权批量绑定",
-      "output": "ModifyLicenseBindsResponse"
+      "output": "ModifyLicenseBindsResponse",
+      "status": "online"
     },
     "ModifyLicenseUnBinds": {
       "document": "设置中心-授权管理 对某个授权批量解绑机器",
       "input": "ModifyLicenseUnBindsRequest",
       "name": "授权批量解绑",
-      "output": "ModifyLicenseUnBindsResponse"
+      "output": "ModifyLicenseUnBindsResponse",
+      "status": "online"
     },
     "ModifyMalwareTimingScanSettings": {
       "document": "定时扫描设置",
       "input": "ModifyMalwareTimingScanSettingsRequest",
       "name": "定时扫描设置",
-      "output": "ModifyMalwareTimingScanSettingsResponse"
+      "output": "ModifyMalwareTimingScanSettingsResponse",
+      "status": "online"
     },
     "ModifyOrderAttribute": {
       "document": "对订单属性编辑",
       "input": "ModifyOrderAttributeRequest",
       "name": "编辑订单属性",
-      "output": "ModifyOrderAttributeResponse"
+      "output": "ModifyOrderAttributeResponse",
+      "status": "online"
     },
     "ModifyWarningSetting": {
       "document": "修改告警设置",
       "input": "ModifyWarningSettingRequest",
       "name": "修改告警设置",
-      "output": "ModifyWarningSettingResponse"
+      "output": "ModifyWarningSettingResponse",
+      "status": "online"
     },
     "ModifyWebPageProtectDir": {
       "document": "创建/修改网站防护目录",
       "input": "ModifyWebPageProtectDirRequest",
       "name": "创建网站防护目录",
-      "output": "ModifyWebPageProtectDirResponse"
+      "output": "ModifyWebPageProtectDirResponse",
+      "status": "online"
     },
     "ModifyWebPageProtectSetting": {
       "document": "修改网站防护设置",
       "input": "ModifyWebPageProtectSettingRequest",
       "name": "修改网站防护设置",
-      "output": "ModifyWebPageProtectSettingResponse"
+      "output": "ModifyWebPageProtectSettingResponse",
+      "status": "online"
     },
     "ModifyWebPageProtectSwitch": {
       "document": "网站防篡改防护设置开关",
       "input": "ModifyWebPageProtectSwitchRequest",
       "name": "网站防护设置开关",
-      "output": "ModifyWebPageProtectSwitchResponse"
+      "output": "ModifyWebPageProtectSwitchResponse",
+      "status": "online"
     },
     "RecoverMalwares": {
       "document": "本接口（RecoverMalwares）用于批量恢复已经被隔离的木马文件。",
       "input": "RecoverMalwaresRequest",
       "name": "恢复木马文件",
-      "output": "RecoverMalwaresResponse"
+      "output": "RecoverMalwaresResponse",
+      "status": "online"
     },
     "ScanAsset": {
       "document": "资产指纹启动扫描",
       "input": "ScanAssetRequest",
       "name": "资产指纹启动扫描",
-      "output": "ScanAssetResponse"
+      "output": "ScanAssetResponse",
+      "status": "online"
     },
     "ScanVul": {
       "document": " 一键检测",
       "input": "ScanVulRequest",
       "name": "一键检测",
-      "output": "ScanVulResponse"
+      "output": "ScanVulResponse",
+      "status": "online"
     },
     "ScanVulAgain": {
       "document": "漏洞管理-重新检测接口",
       "input": "ScanVulAgainRequest",
       "name": "漏洞管理-重新检测接口",
-      "output": "ScanVulAgainResponse"
+      "output": "ScanVulAgainResponse",
+      "status": "online"
     },
     "ScanVulSetting": {
       "document": "定期扫描漏洞设置",
       "input": "ScanVulSettingRequest",
       "name": "定期扫描漏洞设置",
-      "output": "ScanVulSettingResponse"
+      "output": "ScanVulSettingResponse",
+      "status": "online"
     },
     "SeparateMalwares": {
       "document": "本接口（SeparateMalwares）用于隔离木马。",
       "input": "SeparateMalwaresRequest",
       "name": "隔离木马",
-      "output": "SeparateMalwaresResponse"
+      "output": "SeparateMalwaresResponse",
+      "status": "online"
     },
     "SetBashEventsStatus": {
       "document": "设置高危命令事件状态",
       "input": "SetBashEventsStatusRequest",
       "name": "设置高危命令事件状态",
-      "output": "SetBashEventsStatusResponse"
+      "output": "SetBashEventsStatusResponse",
+      "status": "online"
     },
     "StartBaselineDetect": {
       "document": "检测基线",
       "input": "StartBaselineDetectRequest",
       "name": "检测基线",
-      "output": "StartBaselineDetectResponse"
+      "output": "StartBaselineDetectResponse",
+      "status": "online"
     },
     "StopBaselineDetect": {
       "document": "停止基线检测",
       "input": "StopBaselineDetectRequest",
       "name": "停止基线检测",
-      "output": "StopBaselineDetectResponse"
+      "output": "StopBaselineDetectResponse",
+      "status": "online"
     },
     "StopNoticeBanTips": {
       "document": "不再提醒爆破阻断提示弹窗",
       "input": "StopNoticeBanTipsRequest",
       "name": "不再提醒爆破阻断提示弹窗",
-      "output": "StopNoticeBanTipsResponse"
+      "output": "StopNoticeBanTipsResponse",
+      "status": "online"
     },
     "SwitchBashRules": {
       "document": "切换高危命令规则状态",
       "input": "SwitchBashRulesRequest",
       "name": "切换高危命令规则状态",
-      "output": "SwitchBashRulesResponse"
+      "output": "SwitchBashRulesResponse",
+      "status": "online"
     },
     "SyncAssetScan": {
       "document": "同步资产扫描信息",
       "input": "SyncAssetScanRequest",
       "name": "同步资产扫描信息",
-      "output": "SyncAssetScanResponse"
+      "output": "SyncAssetScanResponse",
+      "status": "online"
     },
     "SyncBaselineDetectSummary": {
       "document": "同步基线检测进度概要",
       "input": "SyncBaselineDetectSummaryRequest",
       "name": "同步基线检测进度概要",
-      "output": "SyncBaselineDetectSummaryResponse"
+      "output": "SyncBaselineDetectSummaryResponse",
+      "status": "online"
     },
     "TrustMalwares": {
       "document": "本接口(TrustMalwares)将被识别木马文件设为信任。",
       "input": "TrustMalwaresRequest",
       "name": "信任木马文件",
-      "output": "TrustMalwaresResponse"
+      "output": "TrustMalwaresResponse",
+      "status": "online"
     },
     "UntrustMalwares": {
       "document": "本接口（UntrustMalwares）用于取消信任木马文件。",
       "input": "UntrustMalwaresRequest",
       "name": "取消信任木马",
-      "output": "UntrustMalwaresResponse"
+      "output": "UntrustMalwaresResponse",
+      "status": "online"
     },
     "UpdateBaselineStrategy": {
       "document": "根据基线策略id更新策略信息",
       "input": "UpdateBaselineStrategyRequest",
       "name": "更新基线策略信息",
-      "output": "UpdateBaselineStrategyResponse"
+      "output": "UpdateBaselineStrategyResponse",
+      "status": "online"
     },
     "UpdateMachineTags": {
       "document": "关联机器标签列表",
       "input": "UpdateMachineTagsRequest",
       "name": "关联机器标签列表",
-      "output": "UpdateMachineTagsResponse"
+      "output": "UpdateMachineTagsResponse",
+      "status": "online"
     }
   },
   "metadata": {

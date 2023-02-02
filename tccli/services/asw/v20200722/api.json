@@ -4,55 +4,64 @@
       "document": "该接口用于生成状态机服务",
       "input": "CreateFlowServiceRequest",
       "name": "创建状态机",
-      "output": "CreateFlowServiceResponse"
+      "output": "CreateFlowServiceResponse",
+      "status": "online"
     },
     "DescribeExecution": {
       "document": "查询执行详细信息",
       "input": "DescribeExecutionRequest",
       "name": "查询执行详细信息",
-      "output": "DescribeExecutionResponse"
+      "output": "DescribeExecutionResponse",
+      "status": "online"
     },
     "DescribeExecutionHistory": {
       "document": "一次执行会有很多步骤，经过很多节点，这个接口描述某一次执行的事件的历史",
       "input": "DescribeExecutionHistoryRequest",
       "name": "查询执行的事件历史",
-      "output": "DescribeExecutionHistoryResponse"
+      "output": "DescribeExecutionHistoryResponse",
+      "status": "online"
     },
     "DescribeExecutions": {
       "document": "对状态机的执行历史进行描述.",
       "input": "DescribeExecutionsRequest",
       "name": "查询状态机执行列表",
-      "output": "DescribeExecutionsResponse"
+      "output": "DescribeExecutionsResponse",
+      "status": "online"
     },
     "DescribeFlowServiceDetail": {
       "document": "查询该用户指定状态机下的详情数据。",
       "input": "DescribeFlowServiceDetailRequest",
       "name": "查询状态机详情",
-      "output": "DescribeFlowServiceDetailResponse"
+      "output": "DescribeFlowServiceDetailResponse",
+      "status": "online"
     },
     "DescribeFlowServices": {
       "document": "查询指定用户下所有状态机，以列表形式返回",
       "input": "DescribeFlowServicesRequest",
       "name": "查询状态机列表",
-      "output": "DescribeFlowServicesResponse"
+      "output": "DescribeFlowServicesResponse",
+      "status": "online"
     },
     "ModifyFlowService": {
       "document": "该接口用于修改状态机",
       "input": "ModifyFlowServiceRequest",
       "name": "修改状态机",
-      "output": "ModifyFlowServiceResponse"
+      "output": "ModifyFlowServiceResponse",
+      "status": "online"
     },
     "StartExecution": {
       "document": "为指定的状态机启动一次执行",
       "input": "StartExecutionRequest",
       "name": "启动执行",
-      "output": "StartExecutionResponse"
+      "output": "StartExecutionResponse",
+      "status": "online"
     },
     "StopExecution": {
       "document": "终止某个状态机",
       "input": "StopExecutionRequest",
       "name": "停止状态机",
-      "output": "StopExecutionResponse"
+      "output": "StopExecutionResponse",
+      "status": "online"
     }
   },
   "metadata": {

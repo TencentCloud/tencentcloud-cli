@@ -4,157 +4,183 @@
       "document": "检验规则",
       "input": "CheckRuleRequest",
       "name": "检验规则",
-      "output": "CheckRuleResponse"
+      "output": "CheckRuleResponse",
+      "status": "online"
     },
     "CheckTransformation": {
       "document": "用于在ETL配置页面, 测试规则和数据.",
       "input": "CheckTransformationRequest",
       "name": "检查转换器",
-      "output": "CheckTransformationResponse"
+      "output": "CheckTransformationResponse",
+      "status": "online"
     },
     "CreateConnection": {
       "document": "创建事件连接器",
       "input": "CreateConnectionRequest",
       "name": "创建事件连接器",
-      "output": "CreateConnectionResponse"
+      "output": "CreateConnectionResponse",
+      "status": "online"
     },
     "CreateEventBus": {
       "document": "用于创建事件集",
       "input": "CreateEventBusRequest",
       "name": "创建事件集",
-      "output": "CreateEventBusResponse"
+      "output": "CreateEventBusResponse",
+      "status": "online"
     },
     "CreateRule": {
       "document": "创建事件规则",
       "input": "CreateRuleRequest",
       "name": "创建事件规则",
-      "output": "CreateRuleResponse"
+      "output": "CreateRuleResponse",
+      "status": "online"
     },
     "CreateTarget": {
       "document": "创建事件目标",
       "input": "CreateTargetRequest",
       "name": "创建事件目标",
-      "output": "CreateTargetResponse"
+      "output": "CreateTargetResponse",
+      "status": "online"
     },
     "CreateTransformation": {
       "document": "用于创建转换器",
       "input": "CreateTransformationRequest",
       "name": "创建转换器",
-      "output": "CreateTransformationResponse"
+      "output": "CreateTransformationResponse",
+      "status": "online"
     },
     "DeleteConnection": {
       "document": "删除事件连接器",
       "input": "DeleteConnectionRequest",
       "name": "删除事件连接器",
-      "output": "DeleteConnectionResponse"
+      "output": "DeleteConnectionResponse",
+      "status": "online"
     },
     "DeleteEventBus": {
       "document": "删除事件集",
       "input": "DeleteEventBusRequest",
       "name": "删除事件集",
-      "output": "DeleteEventBusResponse"
+      "output": "DeleteEventBusResponse",
+      "status": "online"
     },
     "DeleteRule": {
       "document": "删除事件规则",
       "input": "DeleteRuleRequest",
       "name": "删除事件规则",
-      "output": "DeleteRuleResponse"
+      "output": "DeleteRuleResponse",
+      "status": "online"
     },
     "DeleteTarget": {
       "document": "删除事件目标",
       "input": "DeleteTargetRequest",
       "name": "删除事件目标",
-      "output": "DeleteTargetResponse"
+      "output": "DeleteTargetResponse",
+      "status": "online"
     },
     "DeleteTransformation": {
       "document": "用于删除转换器",
       "input": "DeleteTransformationRequest",
       "name": "删除转换器",
-      "output": "DeleteTransformationResponse"
+      "output": "DeleteTransformationResponse",
+      "status": "online"
     },
     "GetEventBus": {
       "document": "获取事件集详情",
       "input": "GetEventBusRequest",
       "name": "获取事件集详情",
-      "output": "GetEventBusResponse"
+      "output": "GetEventBusResponse",
+      "status": "online"
     },
     "GetRule": {
       "document": "获取事件规则详情",
       "input": "GetRuleRequest",
       "name": "获取事件规则详情",
-      "output": "GetRuleResponse"
+      "output": "GetRuleResponse",
+      "status": "online"
     },
     "GetTransformation": {
       "document": "用于获取转换器详情",
       "input": "GetTransformationRequest",
       "name": "获取转换器详情",
-      "output": "GetTransformationResponse"
+      "output": "GetTransformationResponse",
+      "status": "online"
     },
     "ListConnections": {
       "document": "获取事件连接器列表",
       "input": "ListConnectionsRequest",
       "name": "获取事件连接器列表",
-      "output": "ListConnectionsResponse"
+      "output": "ListConnectionsResponse",
+      "status": "online"
     },
     "ListEventBuses": {
       "document": "获取事件集列表",
       "input": "ListEventBusesRequest",
       "name": "获取事件集列表",
-      "output": "ListEventBusesResponse"
+      "output": "ListEventBusesResponse",
+      "status": "online"
     },
     "ListRules": {
       "document": "获取事件规则列表",
       "input": "ListRulesRequest",
       "name": "获取事件规则列表",
-      "output": "ListRulesResponse"
+      "output": "ListRulesResponse",
+      "status": "online"
     },
     "ListTargets": {
       "document": "获取事件目标列表",
       "input": "ListTargetsRequest",
       "name": "获取事件目标列表",
-      "output": "ListTargetsResponse"
+      "output": "ListTargetsResponse",
+      "status": "online"
     },
     "PublishEvent": {
       "document": "（已废弃）用于Event事件投递",
       "input": "PublishEventRequest",
       "name": "Event事件投递",
-      "output": "PublishEventResponse"
+      "output": "PublishEventResponse",
+      "status": "online"
     },
     "PutEvents": {
       "document": "用于Event事件投递",
       "input": "PutEventsRequest",
       "name": "事件投递",
-      "output": "PutEventsResponse"
+      "output": "PutEventsResponse",
+      "status": "online"
     },
     "UpdateConnection": {
       "document": "更新事件连接器",
       "input": "UpdateConnectionRequest",
       "name": "更新事件连接器",
-      "output": "UpdateConnectionResponse"
+      "output": "UpdateConnectionResponse",
+      "status": "online"
     },
     "UpdateEventBus": {
       "document": "更新事件集",
       "input": "UpdateEventBusRequest",
       "name": "更新事件集",
-      "output": "UpdateEventBusResponse"
+      "output": "UpdateEventBusResponse",
+      "status": "online"
     },
     "UpdateRule": {
       "document": "更新事件规则",
       "input": "UpdateRuleRequest",
       "name": "更新事件规则",
-      "output": "UpdateRuleResponse"
+      "output": "UpdateRuleResponse",
+      "status": "online"
     },
     "UpdateTarget": {
       "document": "更新事件目标",
       "input": "UpdateTargetRequest",
       "name": "更新事件目标",
-      "output": "UpdateTargetResponse"
+      "output": "UpdateTargetResponse",
+      "status": "online"
     },
     "UpdateTransformation": {
       "document": "用于更新转换器",
       "input": "UpdateTransformationRequest",
       "name": "更新转换器",
-      "output": "UpdateTransformationResponse"
+      "output": "UpdateTransformationResponse",
+      "status": "online"
     }
   },
   "metadata": {

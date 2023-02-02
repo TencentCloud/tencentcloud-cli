@@ -4,1129 +4,1317 @@
       "document": "通过此接口，可以获取集群的tke:admin的ClusterRole，即管理员角色，可以用于CAM侧高权限的用户，通过CAM策略给予子账户此接口权限，进而可以通过此接口直接获取到kubernetes集群内的管理员角色。",
       "input": "AcquireClusterAdminRoleRequest",
       "name": "获取集群RBAC管理员角色",
-      "output": "AcquireClusterAdminRoleResponse"
+      "output": "AcquireClusterAdminRoleResponse",
+      "status": "online"
     },
     "AddClusterCIDR": {
       "document": "给GR集群增加可用的ClusterCIDR",
       "input": "AddClusterCIDRRequest",
       "name": "给集群增加ClusterCIDR",
-      "output": "AddClusterCIDRResponse"
+      "output": "AddClusterCIDRResponse",
+      "status": "online"
     },
     "AddExistedInstances": {
       "document": "添加已经存在的实例到集群",
       "input": "AddExistedInstancesRequest",
       "name": "添加已经存在的实例到集群",
-      "output": "AddExistedInstancesResponse"
+      "output": "AddExistedInstancesResponse",
+      "status": "online"
     },
     "AddNodeToNodePool": {
       "document": "将集群内节点移入节点池",
       "input": "AddNodeToNodePoolRequest",
       "name": "将集群内节点移入节点池",
-      "output": "AddNodeToNodePoolResponse"
+      "output": "AddNodeToNodePoolResponse",
+      "status": "online"
     },
     "AddVpcCniSubnets": {
       "document": "针对VPC-CNI模式的集群，增加集群容器网络可使用的子网",
       "input": "AddVpcCniSubnetsRequest",
       "name": "增加集群子网",
-      "output": "AddVpcCniSubnetsResponse"
+      "output": "AddVpcCniSubnetsResponse",
+      "status": "online"
     },
     "CancelClusterRelease": {
       "document": "在应用市场中取消安装失败的应用",
       "input": "CancelClusterReleaseRequest",
       "name": "集群取消安装应用",
-      "output": "CancelClusterReleaseResponse"
+      "output": "CancelClusterReleaseResponse",
+      "status": "online"
     },
     "CheckEdgeClusterCIDR": {
       "document": "检查边缘计算集群的CIDR是否冲突",
       "input": "CheckEdgeClusterCIDRRequest",
       "name": "检查边缘计算集群的CIDR是否冲突",
-      "output": "CheckEdgeClusterCIDRResponse"
+      "output": "CheckEdgeClusterCIDRResponse",
+      "status": "online"
     },
     "CheckInstancesUpgradeAble": {
       "document": "检查给定节点列表中哪些是可升级的 ",
       "input": "CheckInstancesUpgradeAbleRequest",
       "name": "节点是否可升级",
-      "output": "CheckInstancesUpgradeAbleResponse"
+      "output": "CheckInstancesUpgradeAbleResponse",
+      "status": "online"
     },
     "CreateCluster": {
       "document": "创建集群",
       "input": "CreateClusterRequest",
       "name": "创建集群",
-      "output": "CreateClusterResponse"
+      "output": "CreateClusterResponse",
+      "status": "online"
     },
     "CreateClusterEndpoint": {
       "document": "创建集群访问端口",
       "input": "CreateClusterEndpointRequest",
       "name": "创建集群访问端口",
-      "output": "CreateClusterEndpointResponse"
+      "output": "CreateClusterEndpointResponse",
+      "status": "online"
     },
     "CreateClusterEndpointVip": {
       "document": "创建托管集群外网访问端口（老的方式，仅支持托管集群外网端口）",
       "input": "CreateClusterEndpointVipRequest",
       "name": "创建托管集群外网访问端口",
-      "output": "CreateClusterEndpointVipResponse"
+      "output": "CreateClusterEndpointVipResponse",
+      "status": "online"
     },
     "CreateClusterInstances": {
       "document": "扩展(新建)集群节点",
       "input": "CreateClusterInstancesRequest",
       "name": "扩展集群节点",
-      "output": "CreateClusterInstancesResponse"
+      "output": "CreateClusterInstancesResponse",
+      "status": "online"
     },
     "CreateClusterNodePool": {
       "document": "创建节点池",
       "input": "CreateClusterNodePoolRequest",
       "name": "创建节点池",
-      "output": "CreateClusterNodePoolResponse"
+      "output": "CreateClusterNodePoolResponse",
+      "status": "online"
     },
     "CreateClusterRelease": {
       "document": "在应用市场中给集群创建应用",
       "input": "CreateClusterReleaseRequest",
       "name": "集群安装应用",
-      "output": "CreateClusterReleaseResponse"
+      "output": "CreateClusterReleaseResponse",
+      "status": "online"
     },
     "CreateClusterRoute": {
       "document": "创建集群路由",
       "input": "CreateClusterRouteRequest",
       "name": "创建集群路由",
-      "output": "CreateClusterRouteResponse"
+      "output": "CreateClusterRouteResponse",
+      "status": "online"
     },
     "CreateClusterRouteTable": {
       "document": "创建集群路由表",
       "input": "CreateClusterRouteTableRequest",
       "name": "创建集群路由表",
-      "output": "CreateClusterRouteTableResponse"
+      "output": "CreateClusterRouteTableResponse",
+      "status": "online"
     },
     "CreateClusterVirtualNode": {
       "document": "创建虚拟节点",
       "input": "CreateClusterVirtualNodeRequest",
       "name": "创建虚拟节点",
-      "output": "CreateClusterVirtualNodeResponse"
+      "output": "CreateClusterVirtualNodeResponse",
+      "status": "online"
     },
     "CreateClusterVirtualNodePool": {
       "document": "创建虚拟节点池",
       "input": "CreateClusterVirtualNodePoolRequest",
       "name": "创建虚拟节点池",
-      "output": "CreateClusterVirtualNodePoolResponse"
+      "output": "CreateClusterVirtualNodePoolResponse",
+      "status": "online"
     },
     "CreateECMInstances": {
       "document": "创建边缘计算ECM机器",
       "input": "CreateECMInstancesRequest",
       "name": "创建边缘计算ECM机器",
-      "output": "CreateECMInstancesResponse"
+      "output": "CreateECMInstancesResponse",
+      "status": "online"
     },
     "CreateEKSCluster": {
       "document": "创建弹性集群",
       "input": "CreateEKSClusterRequest",
       "name": "创建弹性集群",
-      "output": "CreateEKSClusterResponse"
+      "output": "CreateEKSClusterResponse",
+      "status": "online"
     },
     "CreateEKSContainerInstances": {
       "document": "创建容器实例",
       "input": "CreateEKSContainerInstancesRequest",
       "name": "创建容器实例",
-      "output": "CreateEKSContainerInstancesResponse"
+      "output": "CreateEKSContainerInstancesResponse",
+      "status": "online"
     },
     "CreateEdgeCVMInstances": {
       "document": "创建边缘容器CVM机器",
       "input": "CreateEdgeCVMInstancesRequest",
       "name": "创建边缘容器CVM机器",
-      "output": "CreateEdgeCVMInstancesResponse"
+      "output": "CreateEdgeCVMInstancesResponse",
+      "status": "online"
     },
     "CreateEdgeLogConfig": {
       "document": "创建边缘集群日志采集配置",
       "input": "CreateEdgeLogConfigRequest",
       "name": "创建边缘集群日志采集配置",
-      "output": "CreateEdgeLogConfigResponse"
+      "output": "CreateEdgeLogConfigResponse",
+      "status": "online"
     },
     "CreateImageCache": {
       "document": "创建镜像缓存的接口。创建过程中，请勿删除EKSCI实例和云盘，否则镜像缓存将创建失败。",
       "input": "CreateImageCacheRequest",
       "name": "创建镜像缓存",
-      "output": "CreateImageCacheResponse"
+      "output": "CreateImageCacheResponse",
+      "status": "online"
     },
     "CreatePrometheusAlertPolicy": {
       "document": "创建告警策略",
       "input": "CreatePrometheusAlertPolicyRequest",
       "name": "创建告警策略",
-      "output": "CreatePrometheusAlertPolicyResponse"
+      "output": "CreatePrometheusAlertPolicyResponse",
+      "status": "online"
     },
     "CreatePrometheusAlertRule": {
       "document": "创建告警规则",
       "input": "CreatePrometheusAlertRuleRequest",
       "name": "创建告警规则",
-      "output": "CreatePrometheusAlertRuleResponse"
+      "output": "CreatePrometheusAlertRuleResponse",
+      "status": "online"
     },
     "CreatePrometheusClusterAgent": {
       "document": "与云监控融合的2.0实例关联集群",
       "input": "CreatePrometheusClusterAgentRequest",
       "name": "2.0实例关联集群",
-      "output": "CreatePrometheusClusterAgentResponse"
+      "output": "CreatePrometheusClusterAgentResponse",
+      "status": "online"
     },
     "CreatePrometheusConfig": {
       "document": "创建prometheus配置",
       "input": "CreatePrometheusConfigRequest",
       "name": "创建prometheus配置",
-      "output": "CreatePrometheusConfigResponse"
+      "output": "CreatePrometheusConfigResponse",
+      "status": "online"
     },
     "CreatePrometheusDashboard": {
       "document": "创建grafana监控面板",
       "input": "CreatePrometheusDashboardRequest",
       "name": "创建grafana监控面板",
-      "output": "CreatePrometheusDashboardResponse"
+      "output": "CreatePrometheusDashboardResponse",
+      "status": "online"
     },
     "CreatePrometheusGlobalNotification": {
       "document": "创建全局告警通知渠道",
       "input": "CreatePrometheusGlobalNotificationRequest",
       "name": "创建全局告警通知渠道",
-      "output": "CreatePrometheusGlobalNotificationResponse"
+      "output": "CreatePrometheusGlobalNotificationResponse",
+      "status": "online"
     },
     "CreatePrometheusRecordRuleYaml": {
       "document": "以Yaml的方式创建聚合规则",
       "input": "CreatePrometheusRecordRuleYamlRequest",
       "name": "以Yaml的方式创建聚合规则",
-      "output": "CreatePrometheusRecordRuleYamlResponse"
+      "output": "CreatePrometheusRecordRuleYamlResponse",
+      "status": "online"
     },
     "CreatePrometheusTemp": {
       "document": "创建一个云原生Prometheus模板",
       "input": "CreatePrometheusTempRequest",
       "name": "新建模板",
-      "output": "CreatePrometheusTempResponse"
+      "output": "CreatePrometheusTempResponse",
+      "status": "online"
     },
     "CreatePrometheusTemplate": {
       "document": "创建一个云原生Prometheus模板实例",
       "input": "CreatePrometheusTemplateRequest",
       "name": "创建模板",
-      "output": "CreatePrometheusTemplateResponse"
+      "output": "CreatePrometheusTemplateResponse",
+      "status": "online"
     },
     "CreateTKEEdgeCluster": {
       "document": "创建边缘计算集群",
       "input": "CreateTKEEdgeClusterRequest",
       "name": "创建边缘计算集群",
-      "output": "CreateTKEEdgeClusterResponse"
+      "output": "CreateTKEEdgeClusterResponse",
+      "status": "online"
     },
     "DeleteCluster": {
       "document": "删除集群(YUNAPI V3版本)",
       "input": "DeleteClusterRequest",
       "name": "删除集群",
-      "output": "DeleteClusterResponse"
+      "output": "DeleteClusterResponse",
+      "status": "online"
     },
     "DeleteClusterAsGroups": {
       "document": "删除集群伸缩组",
       "input": "DeleteClusterAsGroupsRequest",
       "name": "删除集群伸缩组",
-      "output": "DeleteClusterAsGroupsResponse"
+      "output": "DeleteClusterAsGroupsResponse",
+      "status": "online"
     },
     "DeleteClusterEndpoint": {
       "document": "删除集群访问端口",
       "input": "DeleteClusterEndpointRequest",
       "name": "删除集群访问端口",
-      "output": "DeleteClusterEndpointResponse"
+      "output": "DeleteClusterEndpointResponse",
+      "status": "online"
     },
     "DeleteClusterEndpointVip": {
       "document": "删除托管集群外网访问端口（老的方式，仅支持托管集群外网端口）",
       "input": "DeleteClusterEndpointVipRequest",
       "name": "删除托管集群外网访问端口",
-      "output": "DeleteClusterEndpointVipResponse"
+      "output": "DeleteClusterEndpointVipResponse",
+      "status": "online"
     },
     "DeleteClusterInstances": {
       "document": "删除集群中的实例",
       "input": "DeleteClusterInstancesRequest",
       "name": "删除集群中的节点",
-      "output": "DeleteClusterInstancesResponse"
+      "output": "DeleteClusterInstancesResponse",
+      "status": "online"
     },
     "DeleteClusterNodePool": {
       "document": "删除节点池",
       "input": "DeleteClusterNodePoolRequest",
       "name": "删除节点池",
-      "output": "DeleteClusterNodePoolResponse"
+      "output": "DeleteClusterNodePoolResponse",
+      "status": "online"
     },
     "DeleteClusterRoute": {
       "document": "删除集群路由",
       "input": "DeleteClusterRouteRequest",
       "name": "删除集群路由",
-      "output": "DeleteClusterRouteResponse"
+      "output": "DeleteClusterRouteResponse",
+      "status": "online"
     },
     "DeleteClusterRouteTable": {
       "document": "删除集群路由表",
       "input": "DeleteClusterRouteTableRequest",
       "name": "删除集群路由表",
-      "output": "DeleteClusterRouteTableResponse"
+      "output": "DeleteClusterRouteTableResponse",
+      "status": "online"
     },
     "DeleteClusterVirtualNode": {
       "document": "删除虚拟节点",
       "input": "DeleteClusterVirtualNodeRequest",
       "name": "删除虚拟节点",
-      "output": "DeleteClusterVirtualNodeResponse"
+      "output": "DeleteClusterVirtualNodeResponse",
+      "status": "online"
     },
     "DeleteClusterVirtualNodePool": {
       "document": "删除虚拟节点池",
       "input": "DeleteClusterVirtualNodePoolRequest",
       "name": "删除虚拟节点池",
-      "output": "DeleteClusterVirtualNodePoolResponse"
+      "output": "DeleteClusterVirtualNodePoolResponse",
+      "status": "online"
     },
     "DeleteECMInstances": {
       "document": "删除ECM实例",
       "input": "DeleteECMInstancesRequest",
       "name": "删除ECM实例",
-      "output": "DeleteECMInstancesResponse"
+      "output": "DeleteECMInstancesResponse",
+      "status": "online"
     },
     "DeleteEKSCluster": {
       "document": "删除弹性集群(yunapiv3)",
       "input": "DeleteEKSClusterRequest",
       "name": "删除弹性集群",
-      "output": "DeleteEKSClusterResponse"
+      "output": "DeleteEKSClusterResponse",
+      "status": "online"
     },
     "DeleteEKSContainerInstances": {
       "document": "删除容器实例，可批量删除",
       "input": "DeleteEKSContainerInstancesRequest",
       "name": "删除容器实例",
-      "output": "DeleteEKSContainerInstancesResponse"
+      "output": "DeleteEKSContainerInstancesResponse",
+      "status": "online"
     },
     "DeleteEdgeCVMInstances": {
       "document": "删除边缘容器CVM实例",
       "input": "DeleteEdgeCVMInstancesRequest",
       "name": "删除边缘容器CVM实例",
-      "output": "DeleteEdgeCVMInstancesResponse"
+      "output": "DeleteEdgeCVMInstancesResponse",
+      "status": "online"
     },
     "DeleteEdgeClusterInstances": {
       "document": "删除边缘计算实例",
       "input": "DeleteEdgeClusterInstancesRequest",
       "name": "删除边缘计算实例",
-      "output": "DeleteEdgeClusterInstancesResponse"
+      "output": "DeleteEdgeClusterInstancesResponse",
+      "status": "online"
     },
     "DeleteImageCaches": {
       "document": "批量删除镜像缓存",
       "input": "DeleteImageCachesRequest",
       "name": "删除镜像缓存",
-      "output": "DeleteImageCachesResponse"
+      "output": "DeleteImageCachesResponse",
+      "status": "online"
     },
     "DeletePrometheusAlertPolicy": {
       "document": "删除2.0实例告警策略",
       "input": "DeletePrometheusAlertPolicyRequest",
       "name": "删除2.0实例告警策略",
-      "output": "DeletePrometheusAlertPolicyResponse"
+      "output": "DeletePrometheusAlertPolicyResponse",
+      "status": "online"
     },
     "DeletePrometheusAlertRule": {
       "document": "删除告警规则",
       "input": "DeletePrometheusAlertRuleRequest",
       "name": "删除告警规则",
-      "output": "DeletePrometheusAlertRuleResponse"
+      "output": "DeletePrometheusAlertRuleResponse",
+      "status": "online"
     },
     "DeletePrometheusClusterAgent": {
       "document": "解除TMP实例的集群关联",
       "input": "DeletePrometheusClusterAgentRequest",
       "name": "解除TMP实例的集群关联",
-      "output": "DeletePrometheusClusterAgentResponse"
+      "output": "DeletePrometheusClusterAgentResponse",
+      "status": "online"
     },
     "DeletePrometheusConfig": {
       "document": "删除Prometheus配置，如果目标不存在，将返回成功",
       "input": "DeletePrometheusConfigRequest",
       "name": "删除Prometheus配置",
-      "output": "DeletePrometheusConfigResponse"
+      "output": "DeletePrometheusConfigResponse",
+      "status": "online"
     },
     "DeletePrometheusRecordRuleYaml": {
       "document": "删除聚合实例",
       "input": "DeletePrometheusRecordRuleYamlRequest",
       "name": "删除聚合实例",
-      "output": "DeletePrometheusRecordRuleYamlResponse"
+      "output": "DeletePrometheusRecordRuleYamlResponse",
+      "status": "online"
     },
     "DeletePrometheusTemp": {
       "document": "删除一个云原生Prometheus配置模板",
       "input": "DeletePrometheusTempRequest",
       "name": "删除模板实例",
-      "output": "DeletePrometheusTempResponse"
+      "output": "DeletePrometheusTempResponse",
+      "status": "online"
     },
     "DeletePrometheusTempSync": {
       "document": "解除模板同步，这将会删除目标中该模板所生产的配置，针对V2版本实例",
       "input": "DeletePrometheusTempSyncRequest",
       "name": "解除模板同步",
-      "output": "DeletePrometheusTempSyncResponse"
+      "output": "DeletePrometheusTempSyncResponse",
+      "status": "online"
     },
     "DeletePrometheusTemplate": {
       "document": "删除一个云原生Prometheus配置模板",
       "input": "DeletePrometheusTemplateRequest",
       "name": "删除模板",
-      "output": "DeletePrometheusTemplateResponse"
+      "output": "DeletePrometheusTemplateResponse",
+      "status": "online"
     },
     "DeletePrometheusTemplateSync": {
       "document": "取消模板同步，这将会删除目标中该模板所生产的配置",
       "input": "DeletePrometheusTemplateSyncRequest",
       "name": "取消模板同步",
-      "output": "DeletePrometheusTemplateSyncResponse"
+      "output": "DeletePrometheusTemplateSyncResponse",
+      "status": "online"
     },
     "DeleteTKEEdgeCluster": {
       "document": "删除边缘计算集群",
       "input": "DeleteTKEEdgeClusterRequest",
       "name": "删除边缘计算集群",
-      "output": "DeleteTKEEdgeClusterResponse"
+      "output": "DeleteTKEEdgeClusterResponse",
+      "status": "online"
     },
     "DescribeAvailableClusterVersion": {
       "document": "获取集群可以升级的所有版本",
       "input": "DescribeAvailableClusterVersionRequest",
       "name": "获取集群可以升级的所有版本",
-      "output": "DescribeAvailableClusterVersionResponse"
+      "output": "DescribeAvailableClusterVersionResponse",
+      "status": "online"
     },
     "DescribeAvailableTKEEdgeVersion": {
       "document": "边缘计算支持版本和k8s版本",
       "input": "DescribeAvailableTKEEdgeVersionRequest",
       "name": "边缘计算支持的k8s版本",
-      "output": "DescribeAvailableTKEEdgeVersionResponse"
+      "output": "DescribeAvailableTKEEdgeVersionResponse",
+      "status": "online"
     },
     "DescribeClusterAsGroupOption": {
       "document": "集群弹性伸缩配置",
       "input": "DescribeClusterAsGroupOptionRequest",
       "name": "集群弹性伸缩配置",
-      "output": "DescribeClusterAsGroupOptionResponse"
+      "output": "DescribeClusterAsGroupOptionResponse",
+      "status": "online"
     },
     "DescribeClusterAsGroups": {
       "document": "集群关联的伸缩组列表",
       "input": "DescribeClusterAsGroupsRequest",
       "name": "集群关联的伸缩组列表",
-      "output": "DescribeClusterAsGroupsResponse"
+      "output": "DescribeClusterAsGroupsResponse",
+      "status": "online"
     },
     "DescribeClusterAuthenticationOptions": {
       "document": "查看集群认证配置",
       "input": "DescribeClusterAuthenticationOptionsRequest",
       "name": "查看集群认证配置",
-      "output": "DescribeClusterAuthenticationOptionsResponse"
+      "output": "DescribeClusterAuthenticationOptionsResponse",
+      "status": "online"
     },
     "DescribeClusterCommonNames": {
       "document": "获取指定子账户在RBAC授权模式中对应kube-apiserver客户端证书的CommonName字段，如果没有客户端证书，将会签发一个，此接口有最大传入子账户数量上限，当前为50",
       "input": "DescribeClusterCommonNamesRequest",
       "name": "获取集群子账户CommonName映射关系",
-      "output": "DescribeClusterCommonNamesResponse"
+      "output": "DescribeClusterCommonNamesResponse",
+      "status": "online"
     },
     "DescribeClusterControllers": {
       "document": "用于查询Kubernetes的各个原生控制器是否开启",
       "input": "DescribeClusterControllersRequest",
       "name": "查询Kubernetes控制器状态",
-      "output": "DescribeClusterControllersResponse"
+      "output": "DescribeClusterControllersResponse",
+      "status": "online"
     },
     "DescribeClusterEndpointStatus": {
       "document": "查询集群访问端口状态(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
       "input": "DescribeClusterEndpointStatusRequest",
       "name": "查询集群访问端口状态",
-      "output": "DescribeClusterEndpointStatusResponse"
+      "output": "DescribeClusterEndpointStatusResponse",
+      "status": "online"
     },
     "DescribeClusterEndpointVipStatus": {
       "document": "查询集群开启端口流程状态(仅支持托管集群外网端口)",
       "input": "DescribeClusterEndpointVipStatusRequest",
       "name": "查询托管集群开启外网端口流程状态",
-      "output": "DescribeClusterEndpointVipStatusResponse"
+      "output": "DescribeClusterEndpointVipStatusResponse",
+      "status": "online"
     },
     "DescribeClusterEndpoints": {
       "document": "获取集群的访问地址，包括内网地址，外网地址，外网域名，外网访问安全策略",
       "input": "DescribeClusterEndpointsRequest",
       "name": "获取集群访问地址",
-      "output": "DescribeClusterEndpointsResponse"
+      "output": "DescribeClusterEndpointsResponse",
+      "status": "online"
     },
     "DescribeClusterInstances": {
       "document": " 查询集群下节点实例信息 ",
       "input": "DescribeClusterInstancesRequest",
       "name": "查询集群节点信息",
-      "output": "DescribeClusterInstancesResponse"
+      "output": "DescribeClusterInstancesResponse",
+      "status": "online"
     },
     "DescribeClusterKubeconfig": {
       "document": "获取集群的kubeconfig文件，不同子账户获取自己的kubeconfig文件，该文件中有每个子账户自己的kube-apiserver的客户端证书，默认首次调此接口时候创建客户端证书，时效20年，未授予任何权限，如果是集群所有者或者主账户，则默认是cluster-admin权限。",
       "input": "DescribeClusterKubeconfigRequest",
       "name": "获取集群kubeconfig文件",
-      "output": "DescribeClusterKubeconfigResponse"
+      "output": "DescribeClusterKubeconfigResponse",
+      "status": "online"
     },
     "DescribeClusterLevelAttribute": {
       "document": "获取集群规模",
       "input": "DescribeClusterLevelAttributeRequest",
       "name": "获取集群规模",
-      "output": "DescribeClusterLevelAttributeResponse"
+      "output": "DescribeClusterLevelAttributeResponse",
+      "status": "online"
     },
     "DescribeClusterLevelChangeRecords": {
       "document": "查询集群变配记录",
       "input": "DescribeClusterLevelChangeRecordsRequest",
       "name": "查询集群变配记录",
-      "output": "DescribeClusterLevelChangeRecordsResponse"
+      "output": "DescribeClusterLevelChangeRecordsResponse",
+      "status": "online"
     },
     "DescribeClusterNodePoolDetail": {
       "document": "查询节点池详情",
       "input": "DescribeClusterNodePoolDetailRequest",
       "name": "查询节点池详情",
-      "output": "DescribeClusterNodePoolDetailResponse"
+      "output": "DescribeClusterNodePoolDetailResponse",
+      "status": "online"
     },
     "DescribeClusterNodePools": {
       "document": "查询节点池列表",
       "input": "DescribeClusterNodePoolsRequest",
       "name": "查询节点池列表",
-      "output": "DescribeClusterNodePoolsResponse"
+      "output": "DescribeClusterNodePoolsResponse",
+      "status": "online"
     },
     "DescribeClusterPendingReleases": {
       "document": "在应用市场中查询正在安装中的应用列表",
       "input": "DescribeClusterPendingReleasesRequest",
       "name": "查询集群安装中的应用列表",
-      "output": "DescribeClusterPendingReleasesResponse"
+      "output": "DescribeClusterPendingReleasesResponse",
+      "status": "online"
     },
     "DescribeClusterReleaseDetails": {
       "document": "查询通过应用市场安装的某个应用详情",
       "input": "DescribeClusterReleaseDetailsRequest",
       "name": "查询集群已安装应用详情",
-      "output": "DescribeClusterReleaseDetailsResponse"
+      "output": "DescribeClusterReleaseDetailsResponse",
+      "status": "online"
     },
     "DescribeClusterReleaseHistory": {
       "document": "查询集群在应用市场中某个已安装应用的版本历史",
       "input": "DescribeClusterReleaseHistoryRequest",
       "name": "查询集群已安装应用版本历史",
-      "output": "DescribeClusterReleaseHistoryResponse"
+      "output": "DescribeClusterReleaseHistoryResponse",
+      "status": "online"
     },
     "DescribeClusterReleases": {
       "document": "查询集群在应用市场中已安装应用列表",
       "input": "DescribeClusterReleasesRequest",
       "name": "查询集群已安装应用列表",
-      "output": "DescribeClusterReleasesResponse"
+      "output": "DescribeClusterReleasesResponse",
+      "status": "online"
     },
     "DescribeClusterRouteTables": {
       "document": "查询集群路由表",
       "input": "DescribeClusterRouteTablesRequest",
       "name": "查询集群路由表",
-      "output": "DescribeClusterRouteTablesResponse"
+      "output": "DescribeClusterRouteTablesResponse",
+      "status": "online"
     },
     "DescribeClusterRoutes": {
       "document": "查询集群路由",
       "input": "DescribeClusterRoutesRequest",
       "name": "查询集群路由",
-      "output": "DescribeClusterRoutesResponse"
+      "output": "DescribeClusterRoutesResponse",
+      "status": "online"
     },
     "DescribeClusterSecurity": {
       "document": "集群的密钥信息",
       "input": "DescribeClusterSecurityRequest",
       "name": "集群的密钥信息",
-      "output": "DescribeClusterSecurityResponse"
+      "output": "DescribeClusterSecurityResponse",
+      "status": "online"
     },
     "DescribeClusterStatus": {
       "document": "查看集群状态列表",
       "input": "DescribeClusterStatusRequest",
       "name": "查看集群状态列表",
-      "output": "DescribeClusterStatusResponse"
+      "output": "DescribeClusterStatusResponse",
+      "status": "online"
     },
     "DescribeClusterVirtualNode": {
       "document": "查看虚拟节点列表",
       "input": "DescribeClusterVirtualNodeRequest",
       "name": "查看虚拟节点列表",
-      "output": "DescribeClusterVirtualNodeResponse"
+      "output": "DescribeClusterVirtualNodeResponse",
+      "status": "online"
     },
     "DescribeClusterVirtualNodePools": {
       "document": "查看虚拟节点池列表",
       "input": "DescribeClusterVirtualNodePoolsRequest",
       "name": "查看虚拟节点池列表",
-      "output": "DescribeClusterVirtualNodePoolsResponse"
+      "output": "DescribeClusterVirtualNodePoolsResponse",
+      "status": "online"
     },
     "DescribeClusters": {
       "document": "查询集群列表",
       "input": "DescribeClustersRequest",
       "name": "查询集群列表",
-      "output": "DescribeClustersResponse"
+      "output": "DescribeClustersResponse",
+      "status": "online"
     },
     "DescribeECMInstances": {
       "document": "获取ECM实例相关信息",
       "input": "DescribeECMInstancesRequest",
       "name": "获取ECM实例相关信息",
-      "output": "DescribeECMInstancesResponse"
+      "output": "DescribeECMInstancesResponse",
+      "status": "online"
     },
     "DescribeEKSClusterCredential": {
       "document": "获取弹性容器集群的接入认证信息",
       "input": "DescribeEKSClusterCredentialRequest",
       "name": "获取弹性容器集群的认证信息",
-      "output": "DescribeEKSClusterCredentialResponse"
+      "output": "DescribeEKSClusterCredentialResponse",
+      "status": "online"
     },
     "DescribeEKSClusters": {
       "document": "查询弹性集群列表",
       "input": "DescribeEKSClustersRequest",
       "name": "查询弹性集群列表",
-      "output": "DescribeEKSClustersResponse"
+      "output": "DescribeEKSClustersResponse",
+      "status": "online"
     },
     "DescribeEKSContainerInstanceEvent": {
       "document": "查询容器实例的事件",
       "input": "DescribeEKSContainerInstanceEventRequest",
       "name": "查询容器实例的事件",
-      "output": "DescribeEKSContainerInstanceEventResponse"
+      "output": "DescribeEKSContainerInstanceEventResponse",
+      "status": "online"
     },
     "DescribeEKSContainerInstanceRegions": {
       "document": "查询容器实例支持的地域",
       "input": "DescribeEKSContainerInstanceRegionsRequest",
       "name": "查询容器实例支持的地域",
-      "output": "DescribeEKSContainerInstanceRegionsResponse"
+      "output": "DescribeEKSContainerInstanceRegionsResponse",
+      "status": "online"
     },
     "DescribeEKSContainerInstances": {
       "document": "查询容器实例",
       "input": "DescribeEKSContainerInstancesRequest",
       "name": "查询容器实例",
-      "output": "DescribeEKSContainerInstancesResponse"
+      "output": "DescribeEKSContainerInstancesResponse",
+      "status": "online"
     },
     "DescribeEdgeAvailableExtraArgs": {
       "document": "查询边缘容器集群可用的自定义参数",
       "input": "DescribeEdgeAvailableExtraArgsRequest",
       "name": "查询边缘容器集群可用的自定义参数",
-      "output": "DescribeEdgeAvailableExtraArgsResponse"
+      "output": "DescribeEdgeAvailableExtraArgsResponse",
+      "status": "online"
     },
     "DescribeEdgeCVMInstances": {
       "document": "获取边缘容器CVM实例相关信息",
       "input": "DescribeEdgeCVMInstancesRequest",
       "name": "获取边缘容器CVM实例相关信息",
-      "output": "DescribeEdgeCVMInstancesResponse"
+      "output": "DescribeEdgeCVMInstancesResponse",
+      "status": "online"
     },
     "DescribeEdgeClusterExtraArgs": {
       "document": "查询边缘集群自定义参数",
       "input": "DescribeEdgeClusterExtraArgsRequest",
       "name": "查询边缘集群自定义参数",
-      "output": "DescribeEdgeClusterExtraArgsResponse"
+      "output": "DescribeEdgeClusterExtraArgsResponse",
+      "status": "online"
     },
     "DescribeEdgeClusterInstances": {
       "document": "查询边缘计算集群的节点信息",
       "input": "DescribeEdgeClusterInstancesRequest",
       "name": "查询边缘计算集群的节点信息",
-      "output": "DescribeEdgeClusterInstancesResponse"
+      "output": "DescribeEdgeClusterInstancesResponse",
+      "status": "online"
     },
     "DescribeEdgeClusterUpgradeInfo": {
       "document": "可以查询边缘集群升级信息，包含可以升级的组件，当前升级状态和升级错误信息",
       "input": "DescribeEdgeClusterUpgradeInfoRequest",
       "name": "查询边缘集群升级信息",
-      "output": "DescribeEdgeClusterUpgradeInfoResponse"
+      "output": "DescribeEdgeClusterUpgradeInfoResponse",
+      "status": "online"
     },
     "DescribeEdgeLogSwitches": {
       "document": "获取事件、审计和日志的状态接口",
       "input": "DescribeEdgeLogSwitchesRequest",
       "name": "查询边缘集群日志开关列表",
-      "output": "DescribeEdgeLogSwitchesResponse"
+      "output": "DescribeEdgeLogSwitchesResponse",
+      "status": "online"
     },
     "DescribeEksContainerInstanceLog": {
       "document": "查询容器实例中容器日志",
       "input": "DescribeEksContainerInstanceLogRequest",
       "name": "查询容器实例日志",
-      "output": "DescribeEksContainerInstanceLogResponse"
+      "output": "DescribeEksContainerInstanceLogResponse",
+      "status": "online"
     },
     "DescribeEnableVpcCniProgress": {
       "document": "本接口用于查询开启vpc-cni模式的任务进度",
       "input": "DescribeEnableVpcCniProgressRequest",
       "name": "查询开启vpc-cni异步任务的进度",
-      "output": "DescribeEnableVpcCniProgressResponse"
+      "output": "DescribeEnableVpcCniProgressResponse",
+      "status": "online"
     },
     "DescribeExistedInstances": {
       "document": "查询已经存在的节点，判断是否可以加入集群",
       "input": "DescribeExistedInstancesRequest",
       "name": "查询已经存在的节点",
-      "output": "DescribeExistedInstancesResponse"
+      "output": "DescribeExistedInstancesResponse",
+      "status": "online"
     },
     "DescribeExternalClusterSpec": {
       "document": "获取导入第三方集群YAML定义",
       "input": "DescribeExternalClusterSpecRequest",
       "name": "获取导入第三方集群YAML定义",
-      "output": "DescribeExternalClusterSpecResponse"
+      "output": "DescribeExternalClusterSpecResponse",
+      "status": "online"
     },
     "DescribeImageCaches": {
       "document": "查询镜像缓存信息接口",
       "input": "DescribeImageCachesRequest",
       "name": "查询镜像缓存信息",
-      "output": "DescribeImageCachesResponse"
+      "output": "DescribeImageCachesResponse",
+      "status": "online"
     },
     "DescribeImages": {
       "document": "获取镜像信息",
       "input": "DescribeImagesRequest",
       "name": "获取镜像信息",
-      "output": "DescribeImagesResponse"
+      "output": "DescribeImagesResponse",
+      "status": "online"
     },
     "DescribePrometheusAgentInstances": {
       "document": "获取关联目标集群的实例列表",
       "input": "DescribePrometheusAgentInstancesRequest",
       "name": "获取关联目标集群的实例列表",
-      "output": "DescribePrometheusAgentInstancesResponse"
+      "output": "DescribePrometheusAgentInstancesResponse",
+      "status": "online"
     },
     "DescribePrometheusAgents": {
       "document": "获取被关联集群列表",
       "input": "DescribePrometheusAgentsRequest",
       "name": "获取被关联集群列表",
-      "output": "DescribePrometheusAgentsResponse"
+      "output": "DescribePrometheusAgentsResponse",
+      "status": "online"
     },
     "DescribePrometheusAlertHistory": {
       "document": "获取告警历史",
       "input": "DescribePrometheusAlertHistoryRequest",
       "name": "获取告警历史",
-      "output": "DescribePrometheusAlertHistoryResponse"
+      "output": "DescribePrometheusAlertHistoryResponse",
+      "status": "online"
     },
     "DescribePrometheusAlertPolicy": {
       "document": "获取2.0实例告警策略列表",
       "input": "DescribePrometheusAlertPolicyRequest",
       "name": "获取2.0实例告警策略列表",
-      "output": "DescribePrometheusAlertPolicyResponse"
+      "output": "DescribePrometheusAlertPolicyResponse",
+      "status": "online"
     },
     "DescribePrometheusAlertRule": {
       "document": "获取告警规则列表",
       "input": "DescribePrometheusAlertRuleRequest",
       "name": "获取告警规则列表",
-      "output": "DescribePrometheusAlertRuleResponse"
+      "output": "DescribePrometheusAlertRuleResponse",
+      "status": "online"
     },
     "DescribePrometheusClusterAgents": {
       "document": "获取TMP实例关联集群列表",
       "input": "DescribePrometheusClusterAgentsRequest",
       "name": "获取TMP实例关联集群列表",
-      "output": "DescribePrometheusClusterAgentsResponse"
+      "output": "DescribePrometheusClusterAgentsResponse",
+      "status": "online"
     },
     "DescribePrometheusConfig": {
       "document": "拉取Prometheus配置",
       "input": "DescribePrometheusConfigRequest",
       "name": "拉取Prometheus配置",
-      "output": "DescribePrometheusConfigResponse"
+      "output": "DescribePrometheusConfigResponse",
+      "status": "online"
     },
     "DescribePrometheusGlobalConfig": {
       "document": "获得实例级别抓取配置",
       "input": "DescribePrometheusGlobalConfigRequest",
       "name": "获得实例级别抓取配置",
-      "output": "DescribePrometheusGlobalConfigResponse"
+      "output": "DescribePrometheusGlobalConfigResponse",
+      "status": "online"
     },
     "DescribePrometheusGlobalNotification": {
       "document": "查询全局告警通知渠道",
       "input": "DescribePrometheusGlobalNotificationRequest",
       "name": "查询全局告警通知渠道",
-      "output": "DescribePrometheusGlobalNotificationResponse"
+      "output": "DescribePrometheusGlobalNotificationResponse",
+      "status": "online"
     },
     "DescribePrometheusInstance": {
       "document": "获取实例详细信息",
       "input": "DescribePrometheusInstanceRequest",
       "name": "获取实例详细信息",
-      "output": "DescribePrometheusInstanceResponse"
+      "output": "DescribePrometheusInstanceResponse",
+      "status": "online"
     },
     "DescribePrometheusInstanceInitStatus": {
       "document": "获取2.0实例初始化任务状态",
       "input": "DescribePrometheusInstanceInitStatusRequest",
       "name": "获取2.0实例初始化任务状态",
-      "output": "DescribePrometheusInstanceInitStatusResponse"
+      "output": "DescribePrometheusInstanceInitStatusResponse",
+      "status": "online"
     },
     "DescribePrometheusInstancesOverview": {
       "document": "获取与云监控融合实例列表",
       "input": "DescribePrometheusInstancesOverviewRequest",
       "name": "获取2.0实例列表",
-      "output": "DescribePrometheusInstancesOverviewResponse"
+      "output": "DescribePrometheusInstancesOverviewResponse",
+      "status": "online"
     },
     "DescribePrometheusOverviews": {
       "document": "获取实例列表",
       "input": "DescribePrometheusOverviewsRequest",
       "name": "获取实例列表",
-      "output": "DescribePrometheusOverviewsResponse"
+      "output": "DescribePrometheusOverviewsResponse",
+      "status": "online"
     },
     "DescribePrometheusRecordRules": {
       "document": "获取聚合规则列表，包含关联集群内crd资源创建的record rule",
       "input": "DescribePrometheusRecordRulesRequest",
       "name": "获取聚合规则列表，包含关联集群内的资源",
-      "output": "DescribePrometheusRecordRulesResponse"
+      "output": "DescribePrometheusRecordRulesResponse",
+      "status": "online"
     },
     "DescribePrometheusTargets": {
       "document": "获取targets信息",
       "input": "DescribePrometheusTargetsRequest",
       "name": "获取targets信息",
-      "output": "DescribePrometheusTargetsResponse"
+      "output": "DescribePrometheusTargetsResponse",
+      "status": "online"
     },
     "DescribePrometheusTemp": {
       "document": "拉取模板列表，默认模板将总是在最前面",
       "input": "DescribePrometheusTempRequest",
       "name": "拉取模板列表",
-      "output": "DescribePrometheusTempResponse"
+      "output": "DescribePrometheusTempResponse",
+      "status": "online"
     },
     "DescribePrometheusTempSync": {
       "document": "获取模板关联实例信息，针对V2版本实例",
       "input": "DescribePrometheusTempSyncRequest",
       "name": "获取模板关联实例信息",
-      "output": "DescribePrometheusTempSyncResponse"
+      "output": "DescribePrometheusTempSyncResponse",
+      "status": "online"
     },
     "DescribePrometheusTemplateSync": {
       "document": "获取模板同步信息",
       "input": "DescribePrometheusTemplateSyncRequest",
       "name": "获取模板同步信息",
-      "output": "DescribePrometheusTemplateSyncResponse"
+      "output": "DescribePrometheusTemplateSyncResponse",
+      "status": "online"
     },
     "DescribePrometheusTemplates": {
       "document": "拉取模板列表，默认模板将总是在最前面",
       "input": "DescribePrometheusTemplatesRequest",
       "name": "模板列表",
-      "output": "DescribePrometheusTemplatesResponse"
+      "output": "DescribePrometheusTemplatesResponse",
+      "status": "online"
     },
     "DescribeRegions": {
       "document": "获取容器服务支持的所有地域",
       "input": "DescribeRegionsRequest",
       "name": "查询地域列表",
-      "output": "DescribeRegionsResponse"
+      "output": "DescribeRegionsResponse",
+      "status": "online"
     },
     "DescribeResourceUsage": {
       "document": "获取集群资源使用量",
       "input": "DescribeResourceUsageRequest",
       "name": "获取集群资源使用量",
-      "output": "DescribeResourceUsageResponse"
+      "output": "DescribeResourceUsageResponse",
+      "status": "online"
     },
     "DescribeRouteTableConflicts": {
       "document": "查询路由表冲突列表",
       "input": "DescribeRouteTableConflictsRequest",
       "name": "查询路由表冲突列表",
-      "output": "DescribeRouteTableConflictsResponse"
+      "output": "DescribeRouteTableConflictsResponse",
+      "status": "online"
     },
     "DescribeTKEEdgeClusterCredential": {
       "document": "获取边缘计算集群的认证信息",
       "input": "DescribeTKEEdgeClusterCredentialRequest",
       "name": "获取边缘计算集群的认证信息",
-      "output": "DescribeTKEEdgeClusterCredentialResponse"
+      "output": "DescribeTKEEdgeClusterCredentialResponse",
+      "status": "online"
     },
     "DescribeTKEEdgeClusterStatus": {
       "document": "获取边缘计算集群的当前状态以及过程信息",
       "input": "DescribeTKEEdgeClusterStatusRequest",
       "name": "查询边缘计算集群状态",
-      "output": "DescribeTKEEdgeClusterStatusResponse"
+      "output": "DescribeTKEEdgeClusterStatusResponse",
+      "status": "online"
     },
     "DescribeTKEEdgeClusters": {
       "document": "查询边缘集群列表",
       "input": "DescribeTKEEdgeClustersRequest",
       "name": "查询边缘集群列表",
-      "output": "DescribeTKEEdgeClustersResponse"
+      "output": "DescribeTKEEdgeClustersResponse",
+      "status": "online"
     },
     "DescribeTKEEdgeExternalKubeconfig": {
       "document": "获取边缘计算外部访问的kubeconfig",
       "input": "DescribeTKEEdgeExternalKubeconfigRequest",
       "name": "获取边缘计算外部访问的kubeconfig",
-      "output": "DescribeTKEEdgeExternalKubeconfigResponse"
+      "output": "DescribeTKEEdgeExternalKubeconfigResponse",
+      "status": "online"
     },
     "DescribeTKEEdgeScript": {
       "document": "获取边缘脚本链接，此接口用于添加第三方节点，通过下载脚本从而将节点添加到边缘集群。",
       "input": "DescribeTKEEdgeScriptRequest",
       "name": "获取边缘脚本链接",
-      "output": "DescribeTKEEdgeScriptResponse"
+      "output": "DescribeTKEEdgeScriptResponse",
+      "status": "online"
     },
     "DescribeVersions": {
       "document": "获取集群版本信息",
       "input": "DescribeVersionsRequest",
       "name": "集群版本信息",
-      "output": "DescribeVersionsResponse"
+      "output": "DescribeVersionsResponse",
+      "status": "online"
     },
     "DescribeVpcCniPodLimits": {
       "document": "本接口查询当前用户和地域在指定可用区下的机型可支持的最大 TKE VPC-CNI 网络模式的 Pod 数量",
       "input": "DescribeVpcCniPodLimitsRequest",
       "name": "查询机型可支持的最大VPC-CNI模式Pod数量",
-      "output": "DescribeVpcCniPodLimitsResponse"
+      "output": "DescribeVpcCniPodLimitsResponse",
+      "status": "online"
     },
     "DisableClusterAudit": {
       "document": "关闭集群审计",
       "input": "DisableClusterAuditRequest",
       "name": "关闭集群审计",
-      "output": "DisableClusterAuditResponse"
+      "output": "DisableClusterAuditResponse",
+      "status": "online"
     },
     "DisableClusterDeletionProtection": {
       "document": "关闭集群删除保护",
       "input": "DisableClusterDeletionProtectionRequest",
       "name": "关闭集群删除保护",
-      "output": "DisableClusterDeletionProtectionResponse"
+      "output": "DisableClusterDeletionProtectionResponse",
+      "status": "online"
     },
     "DisableEventPersistence": {
       "document": "关闭事件持久化功能",
       "input": "DisableEventPersistenceRequest",
       "name": "关闭事件持久化功能",
-      "output": "DisableEventPersistenceResponse"
+      "output": "DisableEventPersistenceResponse",
+      "status": "online"
     },
     "DisableVpcCniNetworkType": {
       "document": "提供给附加了VPC-CNI能力的Global-Route集群关闭VPC-CNI",
       "input": "DisableVpcCniNetworkTypeRequest",
       "name": "关闭附加的VPC-CNI网络能力",
-      "output": "DisableVpcCniNetworkTypeResponse"
+      "output": "DisableVpcCniNetworkTypeResponse",
+      "status": "online"
     },
     "DrainClusterVirtualNode": {
       "document": "驱逐虚拟节点",
       "input": "DrainClusterVirtualNodeRequest",
       "name": "驱逐虚拟节点",
-      "output": "DrainClusterVirtualNodeResponse"
+      "output": "DrainClusterVirtualNodeResponse",
+      "status": "online"
     },
     "EnableClusterAudit": {
       "document": "开启集群审计",
       "input": "EnableClusterAuditRequest",
       "name": "开启集群审计",
-      "output": "EnableClusterAuditResponse"
+      "output": "EnableClusterAuditResponse",
+      "status": "online"
     },
     "EnableClusterDeletionProtection": {
       "document": "启用集群删除保护",
       "input": "EnableClusterDeletionProtectionRequest",
       "name": "启用集群删除保护",
-      "output": "EnableClusterDeletionProtectionResponse"
+      "output": "EnableClusterDeletionProtectionResponse",
+      "status": "online"
     },
     "EnableEventPersistence": {
       "document": "开启事件持久化功能",
       "input": "EnableEventPersistenceRequest",
       "name": "开启事件持久化功能",
-      "output": "EnableEventPersistenceResponse"
+      "output": "EnableEventPersistenceResponse",
+      "status": "online"
     },
     "EnableVpcCniNetworkType": {
       "document": "GR集群可以通过本接口附加vpc-cni容器网络插件，开启vpc-cni容器网络能力",
       "input": "EnableVpcCniNetworkTypeRequest",
       "name": "开启vpc-cni容器网络能力",
-      "output": "EnableVpcCniNetworkTypeResponse"
+      "output": "EnableVpcCniNetworkTypeResponse",
+      "status": "online"
     },
     "ForwardApplicationRequestV3": {
       "document": "操作TKE集群的addon",
       "input": "ForwardApplicationRequestV3Request",
       "name": "操作TKE集群的addon",
-      "output": "ForwardApplicationRequestV3Response"
+      "output": "ForwardApplicationRequestV3Response",
+      "status": "online"
     },
     "ForwardTKEEdgeApplicationRequestV3": {
       "document": "操作TKEEdge集群的addon",
       "input": "ForwardTKEEdgeApplicationRequestV3Request",
       "name": "操作TKEEdge集群的addon",
-      "output": "ForwardTKEEdgeApplicationRequestV3Response"
+      "output": "ForwardTKEEdgeApplicationRequestV3Response",
+      "status": "online"
     },
     "GetClusterLevelPrice": {
       "document": "获取集群规模价格",
       "input": "GetClusterLevelPriceRequest",
       "name": "获取集群规模价格",
-      "output": "GetClusterLevelPriceResponse"
+      "output": "GetClusterLevelPriceResponse",
+      "status": "online"
     },
     "GetMostSuitableImageCache": {
       "document": "根据镜像列表，查询匹配的镜像缓存",
       "input": "GetMostSuitableImageCacheRequest",
       "name": "查询匹配的镜像缓存",
-      "output": "GetMostSuitableImageCacheResponse"
+      "output": "GetMostSuitableImageCacheResponse",
+      "status": "online"
     },
     "GetTkeAppChartList": {
       "document": "获取TKE支持的App列表",
       "input": "GetTkeAppChartListRequest",
       "name": "获取TKE支持的App列表",
-      "output": "GetTkeAppChartListResponse"
+      "output": "GetTkeAppChartListResponse",
+      "status": "online"
     },
     "GetUpgradeInstanceProgress": {
       "document": "获得节点升级当前的进度 ",
       "input": "GetUpgradeInstanceProgressRequest",
       "name": "获得节点升级当前的进度",
-      "output": "GetUpgradeInstanceProgressResponse"
+      "output": "GetUpgradeInstanceProgressResponse",
+      "status": "online"
     },
     "InstallEdgeLogAgent": {
       "document": "在tke@edge集群的边缘节点上安装日志采集组件",
       "input": "InstallEdgeLogAgentRequest",
       "name": "安装边缘日志采集组件",
-      "output": "InstallEdgeLogAgentResponse"
+      "output": "InstallEdgeLogAgentResponse",
+      "status": "online"
     },
     "InstallLogAgent": {
       "document": "在TKE集群中安装CLS日志采集组件",
       "input": "InstallLogAgentRequest",
       "name": "安装日志采集组件",
-      "output": "InstallLogAgentResponse"
+      "output": "InstallLogAgentResponse",
+      "status": "online"
     },
     "ModifyClusterAsGroupAttribute": {
       "document": "修改集群伸缩组属性",
       "input": "ModifyClusterAsGroupAttributeRequest",
       "name": "修改集群伸缩组属性",
-      "output": "ModifyClusterAsGroupAttributeResponse"
+      "output": "ModifyClusterAsGroupAttributeResponse",
+      "status": "online"
     },
     "ModifyClusterAsGroupOptionAttribute": {
       "document": "修改集群弹性伸缩属性",
       "input": "ModifyClusterAsGroupOptionAttributeRequest",
       "name": "修改集群弹性伸缩属性",
-      "output": "ModifyClusterAsGroupOptionAttributeResponse"
+      "output": "ModifyClusterAsGroupOptionAttributeResponse",
+      "status": "online"
     },
     "ModifyClusterAttribute": {
       "document": "修改集群属性",
       "input": "ModifyClusterAttributeRequest",
       "name": "修改集群属性",
-      "output": "ModifyClusterAttributeResponse"
+      "output": "ModifyClusterAttributeResponse",
+      "status": "online"
     },
     "ModifyClusterAuthenticationOptions": {
       "document": "修改集群认证配置",
       "input": "ModifyClusterAuthenticationOptionsRequest",
       "name": "修改集群认证配置",
-      "output": "ModifyClusterAuthenticationOptionsResponse"
+      "output": "ModifyClusterAuthenticationOptionsResponse",
+      "status": "online"
     },
     "ModifyClusterEndpointSP": {
       "document": "修改托管集群外网端口的安全策略（老的方式，仅支持托管集群外网端口）",
       "input": "ModifyClusterEndpointSPRequest",
       "name": "修改托管集群外网端口的安全策略",
-      "output": "ModifyClusterEndpointSPResponse"
+      "output": "ModifyClusterEndpointSPResponse",
+      "status": "online"
     },
     "ModifyClusterNodePool": {
       "document": "编辑节点池",
       "input": "ModifyClusterNodePoolRequest",
       "name": "编辑节点池",
-      "output": "ModifyClusterNodePoolResponse"
+      "output": "ModifyClusterNodePoolResponse",
+      "status": "online"
     },
     "ModifyClusterVirtualNodePool": {
       "document": "修改虚拟节点池",
       "input": "ModifyClusterVirtualNodePoolRequest",
       "name": "修改虚拟节点池",
-      "output": "ModifyClusterVirtualNodePoolResponse"
+      "output": "ModifyClusterVirtualNodePoolResponse",
+      "status": "online"
     },
     "ModifyNodePoolDesiredCapacityAboutAsg": {
       "document": "修改节点池关联伸缩组的期望实例数",
       "input": "ModifyNodePoolDesiredCapacityAboutAsgRequest",
       "name": "修改节点池关联伸缩组的期望实例数",
-      "output": "ModifyNodePoolDesiredCapacityAboutAsgResponse"
+      "output": "ModifyNodePoolDesiredCapacityAboutAsgResponse",
+      "status": "online"
     },
     "ModifyNodePoolInstanceTypes": {
       "document": "修改节点池的机型配置",
       "input": "ModifyNodePoolInstanceTypesRequest",
       "name": "修改节点池的机型配置",
-      "output": "ModifyNodePoolInstanceTypesResponse"
+      "output": "ModifyNodePoolInstanceTypesResponse",
+      "status": "online"
     },
     "ModifyPrometheusAgentExternalLabels": {
       "document": "修改被关联集群的external labels",
       "input": "ModifyPrometheusAgentExternalLabelsRequest",
       "name": "修改被关联集群的external labels",
-      "output": "ModifyPrometheusAgentExternalLabelsResponse"
+      "output": "ModifyPrometheusAgentExternalLabelsResponse",
+      "status": "online"
     },
     "ModifyPrometheusAlertPolicy": {
       "document": "修改2.0实例告警策略",
       "input": "ModifyPrometheusAlertPolicyRequest",
       "name": "修改2.0实例告警策略",
-      "output": "ModifyPrometheusAlertPolicyResponse"
+      "output": "ModifyPrometheusAlertPolicyResponse",
+      "status": "online"
     },
     "ModifyPrometheusAlertRule": {
       "document": "修改告警规则 ",
       "input": "ModifyPrometheusAlertRuleRequest",
       "name": "修改告警规则",
-      "output": "ModifyPrometheusAlertRuleResponse"
+      "output": "ModifyPrometheusAlertRuleResponse",
+      "status": "online"
     },
     "ModifyPrometheusConfig": {
       "document": "修改prometheus配置，如果配置项不存在，则会新增",
       "input": "ModifyPrometheusConfigRequest",
       "name": "修改prometheus配置",
-      "output": "ModifyPrometheusConfigResponse"
+      "output": "ModifyPrometheusConfigResponse",
+      "status": "online"
     },
     "ModifyPrometheusGlobalNotification": {
       "document": "修改全局告警通知渠道",
       "input": "ModifyPrometheusGlobalNotificationRequest",
       "name": "修改全局告警通知渠道",
-      "output": "ModifyPrometheusGlobalNotificationResponse"
+      "output": "ModifyPrometheusGlobalNotificationResponse",
+      "status": "online"
     },
     "ModifyPrometheusRecordRuleYaml": {
       "document": "通过yaml的方式修改Prometheus聚合实例",
       "input": "ModifyPrometheusRecordRuleYamlRequest",
       "name": "通过yaml的方式修改Prometheus聚合实例",
-      "output": "ModifyPrometheusRecordRuleYamlResponse"
+      "output": "ModifyPrometheusRecordRuleYamlResponse",
+      "status": "online"
     },
     "ModifyPrometheusTemp": {
       "document": "修改模板内容",
       "input": "ModifyPrometheusTempRequest",
       "name": "修改模板实例",
-      "output": "ModifyPrometheusTempResponse"
+      "output": "ModifyPrometheusTempResponse",
+      "status": "online"
     },
     "ModifyPrometheusTemplate": {
       "document": "修改模板内容",
       "input": "ModifyPrometheusTemplateRequest",
       "name": "修改模板",
-      "output": "ModifyPrometheusTemplateResponse"
+      "output": "ModifyPrometheusTemplateResponse",
+      "status": "online"
     },
     "RemoveNodeFromNodePool": {
       "document": "移出节点池节点，但保留在集群内",
       "input": "RemoveNodeFromNodePoolRequest",
       "name": "移出节点池节点",
-      "output": "RemoveNodeFromNodePoolResponse"
+      "output": "RemoveNodeFromNodePoolResponse",
+      "status": "online"
     },
     "RestartEKSContainerInstances": {
       "document": "重启弹性容器实例，支持批量操作",
       "input": "RestartEKSContainerInstancesRequest",
       "name": "重启容器实例",
-      "output": "RestartEKSContainerInstancesResponse"
+      "output": "RestartEKSContainerInstancesResponse",
+      "status": "online"
     },
     "RollbackClusterRelease": {
       "document": "在应用市场中集群回滚应用至某个历史版本",
       "input": "RollbackClusterReleaseRequest",
       "name": "集群回滚应用版本",
-      "output": "RollbackClusterReleaseResponse"
+      "output": "RollbackClusterReleaseResponse",
+      "status": "online"
     },
     "RunPrometheusInstance": {
       "document": "初始化TMP实例，开启集成中心时调用",
       "input": "RunPrometheusInstanceRequest",
       "name": "初始化TMP实例",
-      "output": "RunPrometheusInstanceResponse"
+      "output": "RunPrometheusInstanceResponse",
+      "status": "online"
     },
     "ScaleInClusterMaster": {
       "document": "缩容独立集群master节点",
       "input": "ScaleInClusterMasterRequest",
       "name": "缩容独立集群master节点",
-      "output": "ScaleInClusterMasterResponse"
+      "output": "ScaleInClusterMasterResponse",
+      "status": "online"
     },
     "ScaleOutClusterMaster": {
       "document": "扩容独立集群master节点",
       "input": "ScaleOutClusterMasterRequest",
       "name": "扩容独立集群master节点",
-      "output": "ScaleOutClusterMasterResponse"
+      "output": "ScaleOutClusterMasterResponse",
+      "status": "online"
     },
     "SetNodePoolNodeProtection": {
       "document": "仅能设置节点池中处于伸缩组的节点",
       "input": "SetNodePoolNodeProtectionRequest",
       "name": "节点池节点设置移出保护",
-      "output": "SetNodePoolNodeProtectionResponse"
+      "output": "SetNodePoolNodeProtectionResponse",
+      "status": "online"
     },
     "SyncPrometheusTemp": {
       "document": "同步模板到实例或者集群，针对V2版本实例",
       "input": "SyncPrometheusTempRequest",
       "name": "同步模板",
-      "output": "SyncPrometheusTempResponse"
+      "output": "SyncPrometheusTempResponse",
+      "status": "online"
     },
     "SyncPrometheusTemplate": {
       "document": "同步模板到实例或者集群",
       "input": "SyncPrometheusTemplateRequest",
       "name": "同步模板到实例或者集群",
-      "output": "SyncPrometheusTemplateResponse"
+      "output": "SyncPrometheusTemplateResponse",
+      "status": "online"
     },
     "UninstallClusterRelease": {
       "document": "在应用市场中集群删除某个应用",
       "input": "UninstallClusterReleaseRequest",
       "name": "集群删除应用",
-      "output": "UninstallClusterReleaseResponse"
+      "output": "UninstallClusterReleaseResponse",
+      "status": "online"
     },
     "UninstallEdgeLogAgent": {
       "document": "从tke@edge集群边缘节点上卸载日志采集组件",
       "input": "UninstallEdgeLogAgentRequest",
       "name": "卸载边缘日志采集组件",
-      "output": "UninstallEdgeLogAgentResponse"
+      "output": "UninstallEdgeLogAgentResponse",
+      "status": "online"
     },
     "UninstallLogAgent": {
       "document": "从TKE集群中卸载CLS日志采集组件",
       "input": "UninstallLogAgentRequest",
       "name": "卸载日志采集组件",
-      "output": "UninstallLogAgentResponse"
+      "output": "UninstallLogAgentResponse",
+      "status": "online"
     },
     "UpdateClusterVersion": {
       "document": "升级集群 Master 组件到指定版本",
       "input": "UpdateClusterVersionRequest",
       "name": "升级集群",
-      "output": "UpdateClusterVersionResponse"
+      "output": "UpdateClusterVersionResponse",
+      "status": "online"
     },
     "UpdateEKSCluster": {
       "document": "修改弹性集群名称等属性 ",
       "input": "UpdateEKSClusterRequest",
       "name": "修改弹性集群EKS",
-      "output": "UpdateEKSClusterResponse"
+      "output": "UpdateEKSClusterResponse",
+      "status": "online"
     },
     "UpdateEKSContainerInstance": {
       "document": "更新容器实例",
       "input": "UpdateEKSContainerInstanceRequest",
       "name": "更新容器实例",
-      "output": "UpdateEKSContainerInstanceResponse"
+      "output": "UpdateEKSContainerInstanceResponse",
+      "status": "online"
     },
     "UpdateEdgeClusterVersion": {
       "document": "升级边缘集群组件到指定版本，此版本为TKEEdge专用版本。",
       "input": "UpdateEdgeClusterVersionRequest",
       "name": "升级边缘集群",
-      "output": "UpdateEdgeClusterVersionResponse"
+      "output": "UpdateEdgeClusterVersionResponse",
+      "status": "online"
     },
     "UpdateImageCache": {
       "document": "更新镜像缓存接口",
       "input": "UpdateImageCacheRequest",
       "name": "更新镜像缓存",
-      "output": "UpdateImageCacheResponse"
+      "output": "UpdateImageCacheResponse",
+      "status": "online"
     },
     "UpdateTKEEdgeCluster": {
       "document": "修改边缘计算集群名称等属性 ",
       "input": "UpdateTKEEdgeClusterRequest",
       "name": "修改边缘计算的集群",
-      "output": "UpdateTKEEdgeClusterResponse"
+      "output": "UpdateTKEEdgeClusterResponse",
+      "status": "online"
     },
     "UpgradeClusterInstances": {
       "document": "给集群的一批work节点进行升级",
       "input": "UpgradeClusterInstancesRequest",
       "name": "集群节点升级",
-      "output": "UpgradeClusterInstancesResponse"
+      "output": "UpgradeClusterInstancesResponse",
+      "status": "online"
     },
     "UpgradeClusterRelease": {
       "document": "升级集群中已安装的应用",
       "input": "UpgradeClusterReleaseRequest",
       "name": "集群升级应用",
-      "output": "UpgradeClusterReleaseResponse"
+      "output": "UpgradeClusterReleaseResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -6119,6 +6307,7 @@
         {
           "default": "",
           "document": "节点池对应的 ClusterId",
+          "example": "cls-xxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6127,6 +6316,7 @@
         {
           "default": "",
           "document": "需要删除的节点池 Id 列表",
+          "example": "[\"np-xxxxxxxx\\n\"]",
           "member": "string",
           "name": "NodePoolIds",
           "required": true,
@@ -6135,6 +6325,7 @@
         {
           "default": "",
           "document": "删除节点池时是否保留节点池内节点(节点仍然会被移出集群，但对应的实例不会被销毁)",
+          "example": "true",
           "member": "bool",
           "name": "KeepInstance",
           "required": true,
@@ -7707,16 +7898,16 @@
       "document": "DescribeClusterNodePoolDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群id",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "节点池id",
+          "example": "np-xxxxxxxx",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
@@ -7730,6 +7921,7 @@
       "members": [
         {
           "document": "节点池详情",
+          "example": "无",
           "member": "NodePool",
           "name": "NodePool",
           "type": "object",
@@ -15136,24 +15328,24 @@
       "document": "ModifyNodePoolDesiredCapacityAboutAsg请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群id",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "节点池id",
+          "example": "np-xxxxxxxx",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "节点池所关联的伸缩组的期望实例数",
+          "example": "1",
           "member": "int64",
           "name": "DesiredCapacity",
           "required": true,
@@ -15624,7 +15816,6 @@
       "document": "节点池描述",
       "members": [
         {
-          "default": "",
           "document": "NodePoolId 资源池id",
           "example": "np-xxx",
           "member": "string",
@@ -15634,7 +15825,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Name 资源池名称",
           "example": "xxx",
           "member": "string",
@@ -15644,7 +15834,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "ClusterInstanceId 集群实例id",
           "example": "cls-xxx",
           "member": "string",
@@ -15654,7 +15843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "LifeState 状态，当前节点池生命周期状态包括：creating，normal，updating，deleting，deleted",
           "example": "normal",
           "member": "string",
@@ -15664,7 +15852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "LaunchConfigurationId 配置",
           "example": "asc-xxx",
           "member": "string",
@@ -15674,7 +15861,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "AutoscalingGroupId 分组id",
           "example": "asg-xxx",
           "member": "string",
@@ -15684,7 +15870,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Labels 标签",
           "example": "无",
           "member": "Label",
@@ -15694,7 +15879,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Taints 污点标记",
           "example": "无",
           "member": "Taint",
@@ -15704,7 +15888,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "NodeCountSummary 节点列表",
           "example": "{\"AutoscalingAdded\":{\"Initializing\":0,\"Joining\":0,\"Normal\":1,\"Sh",
           "member": "NodeCountSummary",
@@ -15714,7 +15897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "enabled",
           "member": "string",
@@ -15724,7 +15906,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
@@ -15734,7 +15915,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最小节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -15744,7 +15924,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "期望的节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "int64",
@@ -15754,7 +15933,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "节点池osName\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tlinux2.4x86_64",
           "member": "string",
@@ -15764,7 +15942,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "容器的镜像版本，\"DOCKER_CUSTOMIZE\"(容器定制版),\"GENERAL\"(普通版本，默认值)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GENERAL",
           "member": "string",
@@ -15774,7 +15951,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "img-xxx",
           "member": "string",
@@ -15784,7 +15960,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群属于节点podCIDR大小自定义模式时，节点池需要带上pod数量属性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "16",
           "member": "int64",
@@ -15794,7 +15969,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户自定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -15804,7 +15978,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -15814,7 +15987,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "删除保护开关\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -19240,8 +19412,8 @@
       "document": "kubernetes Taint",
       "members": [
         {
-          "default": "",
           "document": "Key",
+          "example": "无",
           "member": "string",
           "name": "Key",
           "required": false,
@@ -19249,8 +19421,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Value",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": false,
@@ -19258,8 +19430,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Effect",
+          "example": "无",
           "member": "string",
           "name": "Effect",
           "required": false,
@@ -19267,7 +19439,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TaskStepInfo": {
       "document": "任务步骤信息",

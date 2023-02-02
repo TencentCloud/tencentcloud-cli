@@ -4,7 +4,8 @@
       "document": "获取Cmem实例列表",
       "input": "DescribeInstancesRequest",
       "name": "获取Cmem实例列表",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     }
   },
   "metadata": {

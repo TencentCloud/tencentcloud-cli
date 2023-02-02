@@ -4,115 +4,134 @@
       "document": "参数要求：\n1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。\n2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。\n3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。\n4、如果IsEnableKmsEncry的值是1的话，KmsRegion和KeyId属于必填项",
       "input": "CreateAuditRequest",
       "name": "创建跟踪集",
-      "output": "CreateAuditResponse"
+      "output": "CreateAuditResponse",
+      "status": "online"
     },
     "CreateAuditTrack": {
       "document": "创建跟踪集",
       "input": "CreateAuditTrackRequest",
       "name": "创建云审计跟踪集",
-      "output": "CreateAuditTrackResponse"
+      "output": "CreateAuditTrackResponse",
+      "status": "online"
     },
     "DeleteAudit": {
       "document": "删除跟踪集",
       "input": "DeleteAuditRequest",
       "name": "删除跟踪集",
-      "output": "DeleteAuditResponse"
+      "output": "DeleteAuditResponse",
+      "status": "online"
     },
     "DeleteAuditTrack": {
       "document": "删除云审计跟踪集",
       "input": "DeleteAuditTrackRequest",
       "name": "删除云审计跟踪集",
-      "output": "DeleteAuditTrackResponse"
+      "output": "DeleteAuditTrackResponse",
+      "status": "online"
     },
     "DescribeAudit": {
       "document": "查询跟踪集详情",
       "input": "DescribeAuditRequest",
       "name": "查询跟踪集详情",
-      "output": "DescribeAuditResponse"
+      "output": "DescribeAuditResponse",
+      "status": "online"
     },
     "DescribeAuditTrack": {
       "document": "查询云审计跟踪集详情",
       "input": "DescribeAuditTrackRequest",
       "name": "查询云审计跟踪集详情",
-      "output": "DescribeAuditTrackResponse"
+      "output": "DescribeAuditTrackResponse",
+      "status": "online"
     },
     "DescribeAuditTracks": {
       "document": "查询云审计跟踪集列表",
       "input": "DescribeAuditTracksRequest",
       "name": "查询云审计跟踪集列表",
-      "output": "DescribeAuditTracksResponse"
+      "output": "DescribeAuditTracksResponse",
+      "status": "online"
     },
     "DescribeEvents": {
       "document": "查询云审计日志",
       "input": "DescribeEventsRequest",
       "name": "查询云审计日志",
-      "output": "DescribeEventsResponse"
+      "output": "DescribeEventsResponse",
+      "status": "online"
     },
     "GetAttributeKey": {
       "document": "查询AttributeKey的有效取值范围",
       "input": "GetAttributeKeyRequest",
       "name": "查询AttributeKey的有效取值范围",
-      "output": "GetAttributeKeyResponse"
+      "output": "GetAttributeKeyResponse",
+      "status": "online"
     },
     "InquireAuditCredit": {
       "document": "查询用户可创建跟踪集的数量",
       "input": "InquireAuditCreditRequest",
       "name": "查询用户可创建跟踪集的数量",
-      "output": "InquireAuditCreditResponse"
+      "output": "InquireAuditCreditResponse",
+      "status": "online"
     },
     "ListAudits": {
       "document": "查询跟踪集概要",
       "input": "ListAuditsRequest",
       "name": "查询跟踪集概要",
-      "output": "ListAuditsResponse"
+      "output": "ListAuditsResponse",
+      "status": "online"
     },
     "ListCmqEnableRegion": {
       "document": "查询云审计支持的cmq的可用区",
       "input": "ListCmqEnableRegionRequest",
       "name": "查询云审计支持的cmq的可用区",
-      "output": "ListCmqEnableRegionResponse"
+      "output": "ListCmqEnableRegionResponse",
+      "status": "online"
     },
     "ListCosEnableRegion": {
       "document": "查询云审计支持的cos可用区",
       "input": "ListCosEnableRegionRequest",
       "name": "查询云审计支持的cos可用区",
-      "output": "ListCosEnableRegionResponse"
+      "output": "ListCosEnableRegionResponse",
+      "status": "online"
     },
     "ListKeyAliasByRegion": {
       "document": "根据地域获取KMS密钥别名",
       "input": "ListKeyAliasByRegionRequest",
       "name": "根据地域获取KMS密钥别名",
-      "output": "ListKeyAliasByRegionResponse"
+      "output": "ListKeyAliasByRegionResponse",
+      "status": "online"
     },
     "LookUpEvents": {
       "document": "用于对操作日志进行检索，便于用户进行查询相关的操作信息。",
       "input": "LookUpEventsRequest",
       "name": "检索日志",
-      "output": "LookUpEventsResponse"
+      "output": "LookUpEventsResponse",
+      "status": "online"
     },
     "ModifyAuditTrack": {
       "document": "修改云审计跟踪",
       "input": "ModifyAuditTrackRequest",
       "name": "修改云审计跟踪",
-      "output": "ModifyAuditTrackResponse"
+      "output": "ModifyAuditTrackResponse",
+      "status": "online"
     },
     "StartLogging": {
       "document": "开启跟踪集",
       "input": "StartLoggingRequest",
       "name": "开启跟踪集",
-      "output": "StartLoggingResponse"
+      "output": "StartLoggingResponse",
+      "status": "online"
     },
     "StopLogging": {
       "document": "关闭跟踪集",
       "input": "StopLoggingRequest",
       "name": "关闭跟踪集",
-      "output": "StopLoggingResponse"
+      "output": "StopLoggingResponse",
+      "status": "online"
     },
     "UpdateAudit": {
       "document": "参数要求：\n1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。\n2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。\n3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。\n4、如果IsEnableKmsEncry的值是1的话，KmsRegion和KeyId属于必填项",
       "input": "UpdateAuditRequest",
       "name": "更新跟踪集",
-      "output": "UpdateAuditResponse"
+      "output": "UpdateAuditResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,727 +4,848 @@
       "document": "针对大型活动直播，通过对直播流设置延时来控制现场与观众播放画面的时间间隔，避免突发状况造成影响。\n\n注意：如果在推流前设置延播，需要提前5分钟设置，目前该接口只支持流粒度。",
       "input": "AddDelayLiveStreamRequest",
       "name": "设置延时直播",
-      "output": "AddDelayLiveStreamResponse"
+      "output": "AddDelayLiveStreamResponse",
+      "status": "online"
     },
     "AddLiveDomain": {
       "document": "添加域名，一次只能提交一个域名。域名必须已备案。",
       "input": "AddLiveDomainRequest",
       "name": "添加域名",
-      "output": "AddLiveDomainResponse"
+      "output": "AddLiveDomainResponse",
+      "status": "online"
     },
     "AddLiveWatermark": {
       "document": "添加水印，成功返回水印 ID 后，需要调用[CreateLiveWatermarkRule](/document/product/267/32629)接口将水印 ID 绑定到流使用。\n水印数量上限 100，超过后需要先删除，再添加。",
       "input": "AddLiveWatermarkRequest",
       "name": "添加水印",
-      "output": "AddLiveWatermarkResponse"
+      "output": "AddLiveWatermarkResponse",
+      "status": "online"
     },
     "AuthenticateDomainOwner": {
       "document": "验证用户是否拥有特定直播域名。",
       "input": "AuthenticateDomainOwnerRequest",
       "name": "验证直播域名所有权",
-      "output": "AuthenticateDomainOwnerResponse"
+      "output": "AuthenticateDomainOwnerResponse",
+      "status": "online"
     },
     "CancelCommonMixStream": {
       "document": "该接口用来取消混流。用法与 mix_streamv2.cancel_mix_stream 基本一致。",
       "input": "CancelCommonMixStreamRequest",
       "name": "取消通用混流",
-      "output": "CancelCommonMixStreamResponse"
+      "output": "CancelCommonMixStreamResponse",
+      "status": "online"
     },
     "CreateCommonMixStream": {
       "document": "该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。\n注意：当前最多支持16路混流。\n最佳实践：https://cloud.tencent.com/document/product/267/45566",
       "input": "CreateCommonMixStreamRequest",
       "name": "创建通用混流",
-      "output": "CreateCommonMixStreamResponse"
+      "output": "CreateCommonMixStreamResponse",
+      "status": "online"
     },
     "CreateLiveCallbackRule": {
       "document": "创建回调规则，需要先调用[CreateLiveCallbackTemplate](/document/product/267/32637)接口创建回调模板，将返回的模板id绑定到域名/路径进行使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。",
       "input": "CreateLiveCallbackRuleRequest",
       "name": "创建回调规则",
-      "output": "CreateLiveCallbackRuleResponse"
+      "output": "CreateLiveCallbackRuleResponse",
+      "status": "online"
     },
     "CreateLiveCallbackTemplate": {
       "document": "创建回调模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板 ID 绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。\n注意：至少填写一个回调 URL。",
       "input": "CreateLiveCallbackTemplateRequest",
       "name": "创建回调模板",
-      "output": "CreateLiveCallbackTemplateResponse"
+      "output": "CreateLiveCallbackTemplateResponse",
+      "status": "online"
     },
     "CreateLivePullStreamTask": {
       "document": "创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到指定的目标地址。\n注意：\n1. 默认支持任务数上限20个，如有特殊需求，可通过提单到售后进行评估增加上限。\n2. 源流视频编码目前只支持: H264, H265。其他编码格式建议先进行转码处理。\n3. 源流音频编码目前只支持: AAC。其他编码格式建议先进行转码处理。\n4. 可在控制台开启过期自动清理，避免过期任务占用任务数额度。\n5. 拉流转推功能为计费增值服务，计费规则详情可参见[计费文档](https://cloud.tencent.com/document/product/267/53308)。\n6. 拉流转推功能仅提供内容拉取与推送服务，请确保内容已获得授权并符合内容传播相关的法律法规。若内容有侵权或违规相关问题，云直播会停止相关的功能服务并保留追究法律责任的权利。",
       "input": "CreateLivePullStreamTaskRequest",
       "name": "创建直播拉流任务",
-      "output": "CreateLivePullStreamTaskResponse"
+      "output": "CreateLivePullStreamTaskResponse",
+      "status": "online"
     },
     "CreateLiveRecord": {
       "document": "- 使用前提\n  1. 录制文件存放于点播平台，所以用户如需使用录制功能，需首先自行开通点播服务。\n  2. 录制文件存放后相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，具体请参考 [对应文档](https://cloud.tencent.com/document/product/266/2838)。\n\n- 模式说明\n  该接口支持两种录制模式：\n  1. 定时录制模式【默认模式】。\n    需要传入开始时间与结束时间，录制任务根据起止时间自动开始与结束。在所设置结束时间过期之前（且未调用StopLiveRecord提前终止任务），录制任务都是有效的，期间多次断流然后重推都会启动录制任务。\n  2. 实时视频录制模式。\n    忽略传入的开始时间，在录制任务创建后立即开始录制，录制时长支持最大为30分钟，如果传入的结束时间与当前时间差大于30分钟，则按30分钟计算，实时视频录制主要用于录制精彩视频场景，时长建议控制在5分钟以内。\n\n- 注意事项\n  1. 调用接口超时设置应大于3秒，小于3秒重试以及按不同起止时间调用都有可能产生重复录制任务，进而导致额外录制费用。\n  2. 受限于音视频文件格式（FLV/MP4/HLS）对编码类型的支持，视频编码类型支持 H.264，音频编码类型支持 AAC。\n  3. 为避免恶意或非主观的频繁 API 请求，对定时录制模式最大创建任务数做了限制：其中，当天可以创建的最大任务数不超过4000（不含已删除的任务）；当前时刻并发运行的任务数不超过400。有超出此限制的需要提工单申请。\n  4. 此调用方式暂时不支持海外推流录制。",
       "input": "CreateLiveRecordRequest",
       "name": "创建录制任务(已废弃,请使用新接口)",
-      "output": "CreateLiveRecordResponse"
+      "output": "CreateLiveRecordResponse",
+      "status": "online"
     },
     "CreateLiveRecordRule": {
       "document": "创建录制规则，需要先调用[CreateLiveRecordTemplate](/document/product/267/32614)接口创建录制模板，将返回的模板id绑定到流使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。",
       "input": "CreateLiveRecordRuleRequest",
       "name": "创建录制规则",
-      "output": "CreateLiveRecordRuleResponse"
+      "output": "CreateLiveRecordRuleResponse",
+      "status": "online"
     },
     "CreateLiveRecordTemplate": {
       "document": "创建录制模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。",
       "input": "CreateLiveRecordTemplateRequest",
       "name": "直播创建录制模板",
-      "output": "CreateLiveRecordTemplateResponse"
+      "output": "CreateLiveRecordTemplateResponse",
+      "status": "online"
     },
     "CreateLiveSnapshotRule": {
       "document": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板 ID 绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。\n注意：单个域名仅支持关联一个截图模板。",
       "input": "CreateLiveSnapshotRuleRequest",
       "name": "创建截图规则",
-      "output": "CreateLiveSnapshotRuleResponse"
+      "output": "CreateLiveSnapshotRuleResponse",
+      "status": "online"
     },
     "CreateLiveSnapshotTemplate": {
       "document": "创建截图模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveSnapshotRule](/document/product/267/32625)接口，将模板id绑定到流使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。",
       "input": "CreateLiveSnapshotTemplateRequest",
       "name": "创建截图模板",
-      "output": "CreateLiveSnapshotTemplateResponse"
+      "output": "CreateLiveSnapshotTemplateResponse",
+      "status": "online"
     },
     "CreateLiveTranscodeRule": {
       "document": "创建转码规则，需要先调用[CreateLiveTranscodeTemplate](/document/product/267/32646)接口创建转码模板，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。",
       "input": "CreateLiveTranscodeRuleRequest",
       "name": "创建转码规则",
-      "output": "CreateLiveTranscodeRuleResponse"
+      "output": "CreateLiveTranscodeRuleResponse",
+      "status": "online"
     },
     "CreateLiveTranscodeTemplate": {
       "document": "创建转码模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveTranscodeRule](/document/product/267/32647)接口，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。",
       "input": "CreateLiveTranscodeTemplateRequest",
       "name": "创建转码模板",
-      "output": "CreateLiveTranscodeTemplateResponse"
+      "output": "CreateLiveTranscodeTemplateResponse",
+      "status": "online"
     },
     "CreateLiveWatermarkRule": {
       "document": "创建水印规则，需要先调用[AddLiveWatermark](/document/product/267/30154)接口添加水印，将返回的水印id绑定到流使用。",
       "input": "CreateLiveWatermarkRuleRequest",
       "name": "创建水印规则",
-      "output": "CreateLiveWatermarkRuleResponse"
+      "output": "CreateLiveWatermarkRuleResponse",
+      "status": "online"
     },
     "CreatePullStreamConfig": {
       "document": "创建临时拉流转推任务，目前限制添加10条任务。\n该接口已下线,请使用新接口 CreateLivePullStreamTask。\n\n注意：该接口用于创建临时拉流转推任务，\n拉流源地址即 FromUrl 可以是腾讯或非腾讯数据源，\n但转推目标地址即 ToUrl 目前限制为已注册的腾讯直播域名。",
       "input": "CreatePullStreamConfigRequest",
       "name": "添加拉流配置(该接口已下线,请使用新接口 CreateLivePullStreamTask)",
-      "output": "CreatePullStreamConfigResponse"
+      "output": "CreatePullStreamConfigResponse",
+      "status": "online"
     },
     "CreateRecordTask": {
       "document": "创建一个在指定时间启动、结束的录制任务，并使用指定录制模板ID对应的配置进行录制。\n- 使用前提\n1. 录制文件存放于点播平台，所以用户如需使用录制功能，需首先自行开通点播服务。\n2. 录制文件存放后相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，具体请参考 [对应文档](https://cloud.tencent.com/document/product/266/2837)。\n- 注意事项\n1. 断流会结束当前录制并生成录制文件。在结束时间到达之前任务仍然有效，期间只要正常推流都会正常录制，与是否多次推、断流无关。\n2. 使用上避免创建时间段相互重叠的录制任务。若同一条流当前存在多个时段重叠的任务，为避免重复录制系统将启动最多3个录制任务。\n3. 创建的录制任务记录在平台侧只保留3个月。\n4. 当前录制任务管理API（[CreateRecordTask](https://cloud.tencent.com/document/product/267/45983)/[StopRecordTask](https://cloud.tencent.com/document/product/267/45981)/[DeleteRecordTask](https://cloud.tencent.com/document/product/267/45982)）与旧API（CreateLiveRecord/StopLiveRecord/DeleteLiveRecord）不兼容，两套接口不能混用。\n5. 避免 创建录制任务 与 推流 操作同时进行，可能导致因录制任务未生效而引起任务延迟启动问题，两者操作间隔建议大于3秒。",
       "input": "CreateRecordTaskRequest",
       "name": "创建录制任务（新）",
-      "output": "CreateRecordTaskResponse"
+      "output": "CreateRecordTaskResponse",
+      "status": "online"
     },
     "CreateScreenshotTask": {
       "document": "创建一个在指定时间启动、结束的截图任务，并使用指定截图模板ID对应的配置进行截图。\n- 注意事项\n1. 断流会结束当前截图。在结束时间到达之前任务仍然有效，期间只要正常推流都会正常截图，与是否多次推、断流无关。\n2. 使用上避免创建时间段相互重叠的截图任务。若同一条流当前存在多个时段重叠的任务，为避免重复系统将启动最多3个截图任务。\n3. 创建的截图任务记录在平台侧只保留3个月。\n4. 当前截图任务管理API（CreateScreenshotTask/StopScreenshotTask/DeleteScreenshotTask）与旧API（CreateLiveInstantSnapshot/StopLiveInstantSnapshot）不兼容，两套接口不能混用。\n5. 避免 创建截图任务 与 推流 操作同时进行，可能导致因截图任务未生效而引起任务延迟启动问题，两者操作间隔建议大于3秒。",
       "input": "CreateScreenshotTaskRequest",
       "name": "创建截图任务",
-      "output": "CreateScreenshotTaskResponse"
+      "output": "CreateScreenshotTaskResponse",
+      "status": "online"
     },
     "DeleteLiveCallbackRule": {
       "document": "删除回调规则。",
       "input": "DeleteLiveCallbackRuleRequest",
       "name": "删除回调规则",
-      "output": "DeleteLiveCallbackRuleResponse"
+      "output": "DeleteLiveCallbackRuleResponse",
+      "status": "online"
     },
     "DeleteLiveCallbackTemplate": {
       "document": "删除回调模板。",
       "input": "DeleteLiveCallbackTemplateRequest",
       "name": "删除回调模板",
-      "output": "DeleteLiveCallbackTemplateResponse"
+      "output": "DeleteLiveCallbackTemplateResponse",
+      "status": "online"
     },
     "DeleteLiveDomain": {
       "document": "删除已添加的直播域名",
       "input": "DeleteLiveDomainRequest",
       "name": "删除域名",
-      "output": "DeleteLiveDomainResponse"
+      "output": "DeleteLiveDomainResponse",
+      "status": "online"
     },
     "DeleteLivePullStreamTask": {
       "document": "删除接口 CreateLivePullStreamTask 创建的拉流任务。\n注意：\n1. 入参中的 TaskId 为 CreateLivePullStreamTask 接口创建时返回的TaskId。\n2. 也可通过 DescribeLivePullStreamTasks 进行查询创建的任务。",
       "input": "DeleteLivePullStreamTaskRequest",
       "name": "删除直播拉流任务",
-      "output": "DeleteLivePullStreamTaskResponse"
+      "output": "DeleteLivePullStreamTaskResponse",
+      "status": "online"
     },
     "DeleteLiveRecord": {
       "document": "注：DeleteLiveRecord 接口仅用于删除录制任务记录，不具备停止录制的功能，也不能删除正在进行中的录制。如果需要停止录制任务，请使用终止录制[StopLiveRecord](/document/product/267/30146) 接口。",
       "input": "DeleteLiveRecordRequest",
       "name": "删除录制任务(已废弃,请使用新接口)",
-      "output": "DeleteLiveRecordResponse"
+      "output": "DeleteLiveRecordResponse",
+      "status": "online"
     },
     "DeleteLiveRecordRule": {
       "document": "删除录制规则。",
       "input": "DeleteLiveRecordRuleRequest",
       "name": "删除录制规则",
-      "output": "DeleteLiveRecordRuleResponse"
+      "output": "DeleteLiveRecordRuleResponse",
+      "status": "online"
     },
     "DeleteLiveRecordTemplate": {
       "document": "删除录制模板。",
       "input": "DeleteLiveRecordTemplateRequest",
       "name": "删除录制模板",
-      "output": "DeleteLiveRecordTemplateResponse"
+      "output": "DeleteLiveRecordTemplateResponse",
+      "status": "online"
     },
     "DeleteLiveSnapshotRule": {
       "document": "删除截图规则。",
       "input": "DeleteLiveSnapshotRuleRequest",
       "name": "删除截图规则",
-      "output": "DeleteLiveSnapshotRuleResponse"
+      "output": "DeleteLiveSnapshotRuleResponse",
+      "status": "online"
     },
     "DeleteLiveSnapshotTemplate": {
       "document": "删除截图模板",
       "input": "DeleteLiveSnapshotTemplateRequest",
       "name": "删除截图模板",
-      "output": "DeleteLiveSnapshotTemplateResponse"
+      "output": "DeleteLiveSnapshotTemplateResponse",
+      "status": "online"
     },
     "DeleteLiveTranscodeRule": {
       "document": "删除转码规则。\nDomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需删除需要强匹配。其中TemplateId必填，其余参数为空时也需要传空字符串进行强匹配。",
       "input": "DeleteLiveTranscodeRuleRequest",
       "name": "删除转码规则",
-      "output": "DeleteLiveTranscodeRuleResponse"
+      "output": "DeleteLiveTranscodeRuleResponse",
+      "status": "online"
     },
     "DeleteLiveTranscodeTemplate": {
       "document": "删除转码模板。",
       "input": "DeleteLiveTranscodeTemplateRequest",
       "name": "删除转码模板",
-      "output": "DeleteLiveTranscodeTemplateResponse"
+      "output": "DeleteLiveTranscodeTemplateResponse",
+      "status": "online"
     },
     "DeleteLiveWatermark": {
       "document": "删除水印。",
       "input": "DeleteLiveWatermarkRequest",
       "name": "删除水印",
-      "output": "DeleteLiveWatermarkResponse"
+      "output": "DeleteLiveWatermarkResponse",
+      "status": "online"
     },
     "DeleteLiveWatermarkRule": {
       "document": "删除水印规则",
       "input": "DeleteLiveWatermarkRuleRequest",
       "name": "删除水印规则",
-      "output": "DeleteLiveWatermarkRuleResponse"
+      "output": "DeleteLiveWatermarkRuleResponse",
+      "status": "online"
     },
     "DeletePullStreamConfig": {
       "document": "删除直播拉流配置。该接口已下线,请使用新接口 DeleteLivePullStreamTask。",
       "input": "DeletePullStreamConfigRequest",
       "name": "删除拉流配置(该接口已下线,请使用新接口 DeleteLivePullStreamTask)",
-      "output": "DeletePullStreamConfigResponse"
+      "output": "DeletePullStreamConfigResponse",
+      "status": "online"
     },
     "DeleteRecordTask": {
       "document": "删除录制任务配置。删除操作不影响正在运行当中的任务，仅对删除之后新的推流有效。",
       "input": "DeleteRecordTaskRequest",
       "name": "删除录制任务（新）",
-      "output": "DeleteRecordTaskResponse"
+      "output": "DeleteRecordTaskResponse",
+      "status": "online"
     },
     "DeleteScreenshotTask": {
       "document": "删除截图任务配置。删除操作不影响正在运行当中的任务，仅对删除之后新的推流有效。",
       "input": "DeleteScreenshotTaskRequest",
       "name": "删除截图任务",
-      "output": "DeleteScreenshotTaskResponse"
+      "output": "DeleteScreenshotTaskResponse",
+      "status": "online"
     },
     "DescribeAllStreamPlayInfoList": {
       "document": "输入某个时间点（1分钟维度），查询该时间点所有流的下行信息。",
       "input": "DescribeAllStreamPlayInfoListRequest",
       "name": "查询某个时间点所有流的下行播放数据",
-      "output": "DescribeAllStreamPlayInfoListResponse"
+      "output": "DescribeAllStreamPlayInfoListResponse",
+      "status": "online"
     },
     "DescribeAreaBillBandwidthAndFluxList": {
       "document": "海外分区直播播放带宽和流量数据查询。",
       "input": "DescribeAreaBillBandwidthAndFluxListRequest",
       "name": "海外分区直播播放带宽和流量数据查询",
-      "output": "DescribeAreaBillBandwidthAndFluxListResponse"
+      "output": "DescribeAreaBillBandwidthAndFluxListResponse",
+      "status": "online"
     },
     "DescribeBillBandwidthAndFluxList": {
       "document": "直播播放带宽和流量数据查询。",
       "input": "DescribeBillBandwidthAndFluxListRequest",
       "name": "直播播放带宽和流量数据查询",
-      "output": "DescribeBillBandwidthAndFluxListResponse"
+      "output": "DescribeBillBandwidthAndFluxListResponse",
+      "status": "online"
     },
     "DescribeCallbackRecordsList": {
       "document": "用于查询回调事件。",
       "input": "DescribeCallbackRecordsListRequest",
       "name": "回调事件查询",
-      "output": "DescribeCallbackRecordsListResponse"
+      "output": "DescribeCallbackRecordsListResponse",
+      "status": "online"
     },
     "DescribeConcurrentRecordStreamNum": {
       "document": "查询并发录制路数，对慢直播和普通直播适用。",
       "input": "DescribeConcurrentRecordStreamNumRequest",
       "name": "查询并发录制路数",
-      "output": "DescribeConcurrentRecordStreamNumResponse"
+      "output": "DescribeConcurrentRecordStreamNumResponse",
+      "status": "online"
     },
     "DescribeDeliverBandwidthList": {
       "document": "查询直播转推计费带宽，查询时间范围最大支持3个月内的数据，时间跨度最长31天。",
       "input": "DescribeDeliverBandwidthListRequest",
       "name": "查询直播转推计费带宽",
-      "output": "DescribeDeliverBandwidthListResponse"
+      "output": "DescribeDeliverBandwidthListResponse",
+      "status": "online"
     },
     "DescribeGroupProIspPlayInfoList": {
       "document": "查询按省份和运营商分组的下行播放数据。",
       "input": "DescribeGroupProIspPlayInfoListRequest",
       "name": "查询按省份和运营商分组的播放数据",
-      "output": "DescribeGroupProIspPlayInfoListResponse"
+      "output": "DescribeGroupProIspPlayInfoListResponse",
+      "status": "online"
     },
     "DescribeHttpStatusInfoList": {
       "document": "查询某段时间内5分钟粒度的各播放http状态码的个数。\n备注：数据延迟1小时，如10:00-10:59点的数据12点才能查到。",
       "input": "DescribeHttpStatusInfoListRequest",
       "name": "查询播放http状态码明细数据",
-      "output": "DescribeHttpStatusInfoListResponse"
+      "output": "DescribeHttpStatusInfoListResponse",
+      "status": "online"
     },
     "DescribeLiveCallbackRules": {
       "document": "获取回调规则列表",
       "input": "DescribeLiveCallbackRulesRequest",
       "name": "获取回调规则列表",
-      "output": "DescribeLiveCallbackRulesResponse"
+      "output": "DescribeLiveCallbackRulesResponse",
+      "status": "online"
     },
     "DescribeLiveCallbackTemplate": {
       "document": "获取单个回调模板。",
       "input": "DescribeLiveCallbackTemplateRequest",
       "name": "获取单个回调模板",
-      "output": "DescribeLiveCallbackTemplateResponse"
+      "output": "DescribeLiveCallbackTemplateResponse",
+      "status": "online"
     },
     "DescribeLiveCallbackTemplates": {
       "document": "获取回调模板列表",
       "input": "DescribeLiveCallbackTemplatesRequest",
       "name": "获取回调模板列表",
-      "output": "DescribeLiveCallbackTemplatesResponse"
+      "output": "DescribeLiveCallbackTemplatesResponse",
+      "status": "online"
     },
     "DescribeLiveCert": {
       "document": "获取证书信息",
       "input": "DescribeLiveCertRequest",
       "name": "获取证书信息",
-      "output": "DescribeLiveCertResponse"
+      "output": "DescribeLiveCertResponse",
+      "status": "online"
     },
     "DescribeLiveCerts": {
       "document": "获取证书信息列表",
       "input": "DescribeLiveCertsRequest",
       "name": "获取证书信息列表",
-      "output": "DescribeLiveCertsResponse"
+      "output": "DescribeLiveCertsResponse",
+      "status": "online"
     },
     "DescribeLiveDelayInfoList": {
       "document": "获取直播延播列表。",
       "input": "DescribeLiveDelayInfoListRequest",
       "name": "获取直播延播列表",
-      "output": "DescribeLiveDelayInfoListResponse"
+      "output": "DescribeLiveDelayInfoListResponse",
+      "status": "online"
     },
     "DescribeLiveDomain": {
       "document": "查询直播域名信息。",
       "input": "DescribeLiveDomainRequest",
       "name": "查询域名信息",
-      "output": "DescribeLiveDomainResponse"
+      "output": "DescribeLiveDomainResponse",
+      "status": "online"
     },
     "DescribeLiveDomainCert": {
       "document": "获取域名证书信息。",
       "input": "DescribeLiveDomainCertRequest",
       "name": "获取域名证书信息",
-      "output": "DescribeLiveDomainCertResponse"
+      "output": "DescribeLiveDomainCertResponse",
+      "status": "online"
     },
     "DescribeLiveDomainCertBindings": {
       "document": "查询绑定证书的域名列表。",
       "input": "DescribeLiveDomainCertBindingsRequest",
       "name": "查询绑定证书的域名列表",
-      "output": "DescribeLiveDomainCertBindingsResponse"
+      "output": "DescribeLiveDomainCertBindingsResponse",
+      "status": "online"
     },
     "DescribeLiveDomainPlayInfoList": {
       "document": "查询实时的域名维度下行播放数据，由于数据处理有耗时，接口默认查询4分钟前的准实时数据。",
       "input": "DescribeLiveDomainPlayInfoListRequest",
       "name": "查询实时的域名维度下行播放数据",
-      "output": "DescribeLiveDomainPlayInfoListResponse"
+      "output": "DescribeLiveDomainPlayInfoListResponse",
+      "status": "online"
     },
     "DescribeLiveDomainReferer": {
       "document": "查询直播域名 Referer 黑白名单配置。\n由于 Referer 信息包含在 http 协议中，在开启配置后，播放协议为 rtmp 或 WebRTC 不会校验 Referer 配置，仍可正常播放。如需配置 Referer 鉴权建议使用 http-flv 或 http-hls 协议播放。",
       "input": "DescribeLiveDomainRefererRequest",
       "name": "查询直播域名 Referer 黑白名单配置",
-      "output": "DescribeLiveDomainRefererResponse"
+      "output": "DescribeLiveDomainRefererResponse",
+      "status": "online"
     },
     "DescribeLiveDomains": {
       "document": "根据域名状态、类型等信息查询用户的域名信息。",
       "input": "DescribeLiveDomainsRequest",
       "name": "查询域名列表",
-      "output": "DescribeLiveDomainsResponse"
+      "output": "DescribeLiveDomainsResponse",
+      "status": "online"
     },
     "DescribeLiveForbidStreamList": {
       "document": "获取禁推流列表。\n\n注意：该接口仅作为直播辅助查询接口，重要业务场景不可强依赖该接口。",
       "input": "DescribeLiveForbidStreamListRequest",
       "name": "获取禁推流列表",
-      "output": "DescribeLiveForbidStreamListResponse"
+      "output": "DescribeLiveForbidStreamListResponse",
+      "status": "online"
     },
     "DescribeLivePackageInfo": {
       "document": "查询用户套餐包总量、使用量、剩余量、包状态、购买时间和过期时间等。",
       "input": "DescribeLivePackageInfoRequest",
       "name": "查询直播套餐包信息",
-      "output": "DescribeLivePackageInfoResponse"
+      "output": "DescribeLivePackageInfoResponse",
+      "status": "online"
     },
     "DescribeLivePlayAuthKey": {
       "document": "查询播放鉴权key。",
       "input": "DescribeLivePlayAuthKeyRequest",
       "name": "查询播放鉴权key",
-      "output": "DescribeLivePlayAuthKeyResponse"
+      "output": "DescribeLivePlayAuthKeyResponse",
+      "status": "online"
     },
     "DescribeLivePullStreamTasks": {
       "document": "查询使用 CreateLivePullStreamTask 接口创建的直播拉流任务。\n排序方式：默认按更新时间 倒序排列。",
       "input": "DescribeLivePullStreamTasksRequest",
       "name": "查询直播拉流任务",
-      "output": "DescribeLivePullStreamTasksResponse"
+      "output": "DescribeLivePullStreamTasksResponse",
+      "status": "online"
     },
     "DescribeLivePushAuthKey": {
       "document": "查询直播推流鉴权key",
       "input": "DescribeLivePushAuthKeyRequest",
       "name": "查询推流鉴权key",
-      "output": "DescribeLivePushAuthKeyResponse"
+      "output": "DescribeLivePushAuthKeyResponse",
+      "status": "online"
     },
     "DescribeLiveRecordRules": {
       "document": "获取录制规则列表",
       "input": "DescribeLiveRecordRulesRequest",
       "name": "获取录制规则列表",
-      "output": "DescribeLiveRecordRulesResponse"
+      "output": "DescribeLiveRecordRulesResponse",
+      "status": "online"
     },
     "DescribeLiveRecordTemplate": {
       "document": "获取单个录制模板。",
       "input": "DescribeLiveRecordTemplateRequest",
       "name": "获取单个录制模板",
-      "output": "DescribeLiveRecordTemplateResponse"
+      "output": "DescribeLiveRecordTemplateResponse",
+      "status": "online"
     },
     "DescribeLiveRecordTemplates": {
       "document": "获取录制模板列表。",
       "input": "DescribeLiveRecordTemplatesRequest",
       "name": "获取录制模板列表",
-      "output": "DescribeLiveRecordTemplatesResponse"
+      "output": "DescribeLiveRecordTemplatesResponse",
+      "status": "online"
     },
     "DescribeLiveSnapshotRules": {
       "document": "获取截图规则列表",
       "input": "DescribeLiveSnapshotRulesRequest",
       "name": "获取截图规则列表",
-      "output": "DescribeLiveSnapshotRulesResponse"
+      "output": "DescribeLiveSnapshotRulesResponse",
+      "status": "online"
     },
     "DescribeLiveSnapshotTemplate": {
       "document": "获取单个截图模板。",
       "input": "DescribeLiveSnapshotTemplateRequest",
       "name": "获取单个截图模板",
-      "output": "DescribeLiveSnapshotTemplateResponse"
+      "output": "DescribeLiveSnapshotTemplateResponse",
+      "status": "online"
     },
     "DescribeLiveSnapshotTemplates": {
       "document": "获取截图模板列表。",
       "input": "DescribeLiveSnapshotTemplatesRequest",
       "name": "获取截图模板列表",
-      "output": "DescribeLiveSnapshotTemplatesResponse"
+      "output": "DescribeLiveSnapshotTemplatesResponse",
+      "status": "online"
     },
     "DescribeLiveStreamEventList": {
       "document": "用于查询推断流事件。<br>\n\n注意：\n1. 该接口提供离线推断流记录查询功能，不可作为重要业务场景强依赖接口。\n2. 该接口可通过使用IsFilter进行过滤，返回推流历史记录。",
       "input": "DescribeLiveStreamEventListRequest",
       "name": "查询推断流事件",
-      "output": "DescribeLiveStreamEventListResponse"
+      "output": "DescribeLiveStreamEventListResponse",
+      "status": "online"
     },
     "DescribeLiveStreamOnlineList": {
       "document": "返回正在直播中的流列表。适用于推流成功后查询在线流信息。\n\n注意：\n1. 该接口仅提供辅助查询在线流列表功能，业务重要场景不可强依赖该接口。\n2. 该接口仅适用于流数少于2万路的情况，对于流数较大用户请联系售后。\n",
       "input": "DescribeLiveStreamOnlineListRequest",
       "name": "查询直播中的流",
-      "output": "DescribeLiveStreamOnlineListResponse"
+      "output": "DescribeLiveStreamOnlineListResponse",
+      "status": "online"
     },
     "DescribeLiveStreamPublishedList": {
       "document": "返回已经推过流的流列表。<br>\n注意：分页最多支持查询1万条记录，可通过调整查询时间范围来获取更多数据。",
       "input": "DescribeLiveStreamPublishedListRequest",
       "name": "查询历史流列表",
-      "output": "DescribeLiveStreamPublishedListResponse"
+      "output": "DescribeLiveStreamPublishedListResponse",
+      "status": "online"
     },
     "DescribeLiveStreamPushInfoList": {
       "document": "查询所有实时流的推流信息，包括客户端IP，服务端IP，帧率，码率，域名，开始推流时间。",
       "input": "DescribeLiveStreamPushInfoListRequest",
       "name": "获取在线流的推流数据",
-      "output": "DescribeLiveStreamPushInfoListResponse"
+      "output": "DescribeLiveStreamPushInfoListResponse",
+      "status": "online"
     },
     "DescribeLiveStreamState": {
       "document": "返回直播中、无推流或者禁播等状态。\n\n使用建议：\n该接口提供实时流状态查询功能，鉴于网络抖动等一些不可抗因素，使用该接口作为判断主播是否开播等重要业务场景时，请参考以下使用建议。\n1. 优先使用业务自身的房间开关播逻辑，判断主播是否在线，譬如客户端开播信令和主播在线心跳等。\n2. 对于没有房间管理的直播场景，可以结合以下方案综合判断。\n2.1 根据[推断流事件通知](/document/product/267/20388) 判断主播在线状态。\n2.2 通过定时（间隔>1min）查询[直播中的流接口](/document/api/267/20472)，判断主播是否在线。\n2.3 通过 本接口 查询直播流状态，判断主播是否在线。\n2.4 以上任一方式判断为在线，都认为主播开播中，并且接口查询超时或解析异常时，也默认为在线，减少对业务的影响。",
       "input": "DescribeLiveStreamStateRequest",
       "name": "查询流状态",
-      "output": "DescribeLiveStreamStateResponse"
+      "output": "DescribeLiveStreamStateResponse",
+      "status": "online"
     },
     "DescribeLiveTimeShiftBillInfoList": {
       "document": "提供给客户对账，按天统计，维度：推流域名、时移文件时长（累加）、配置天数（不累加）、时移总时长（累加）。",
       "input": "DescribeLiveTimeShiftBillInfoListRequest",
       "name": "直播时移计费信息查询",
-      "output": "DescribeLiveTimeShiftBillInfoListResponse"
+      "output": "DescribeLiveTimeShiftBillInfoListResponse",
+      "status": "online"
     },
     "DescribeLiveTranscodeDetailInfo": {
       "document": "支持查询某天或某段时间的转码详细信息。由于转码数据量较大，如果查询时间跨度太长可能会拉不到数据，可以尝试将查询时间范围缩小些再重试。",
       "input": "DescribeLiveTranscodeDetailInfoRequest",
       "name": "查询直播转码统计信息",
-      "output": "DescribeLiveTranscodeDetailInfoResponse"
+      "output": "DescribeLiveTranscodeDetailInfoResponse",
+      "status": "online"
     },
     "DescribeLiveTranscodeRules": {
       "document": "获取转码规则列表",
       "input": "DescribeLiveTranscodeRulesRequest",
       "name": "获取转码规则列表",
-      "output": "DescribeLiveTranscodeRulesResponse"
+      "output": "DescribeLiveTranscodeRulesResponse",
+      "status": "online"
     },
     "DescribeLiveTranscodeTemplate": {
       "document": "获取单个转码模板。",
       "input": "DescribeLiveTranscodeTemplateRequest",
       "name": "获取单个转码模板",
-      "output": "DescribeLiveTranscodeTemplateResponse"
+      "output": "DescribeLiveTranscodeTemplateResponse",
+      "status": "online"
     },
     "DescribeLiveTranscodeTemplates": {
       "document": "获取转码模板列表。",
       "input": "DescribeLiveTranscodeTemplatesRequest",
       "name": "获取转码模板列表",
-      "output": "DescribeLiveTranscodeTemplatesResponse"
+      "output": "DescribeLiveTranscodeTemplatesResponse",
+      "status": "online"
     },
     "DescribeLiveTranscodeTotalInfo": {
       "document": "查询转码总量数据，可查询近三个月内的数据。\n注意：\n如果是查询某一天内，则返回5分钟粒度数据；\n如果是查询跨天或指定域名， 则返回1小时粒度数据。",
       "input": "DescribeLiveTranscodeTotalInfoRequest",
       "name": "查询转码总量数据",
-      "output": "DescribeLiveTranscodeTotalInfoResponse"
+      "output": "DescribeLiveTranscodeTotalInfoResponse",
+      "status": "online"
     },
     "DescribeLiveWatermark": {
       "document": "获取单个水印信息。",
       "input": "DescribeLiveWatermarkRequest",
       "name": "获取单个水印",
-      "output": "DescribeLiveWatermarkResponse"
+      "output": "DescribeLiveWatermarkResponse",
+      "status": "online"
     },
     "DescribeLiveWatermarkRules": {
       "document": "获取水印规则列表。",
       "input": "DescribeLiveWatermarkRulesRequest",
       "name": "获取水印规则列表",
-      "output": "DescribeLiveWatermarkRulesResponse"
+      "output": "DescribeLiveWatermarkRulesResponse",
+      "status": "online"
     },
     "DescribeLiveWatermarks": {
       "document": "查询水印列表。",
       "input": "DescribeLiveWatermarksRequest",
       "name": "查询水印列表",
-      "output": "DescribeLiveWatermarksResponse"
+      "output": "DescribeLiveWatermarksResponse",
+      "status": "online"
     },
     "DescribeLogDownloadList": {
       "document": "批量获取日志URL。",
       "input": "DescribeLogDownloadListRequest",
       "name": "批量获取日志URL",
-      "output": "DescribeLogDownloadListResponse"
+      "output": "DescribeLogDownloadListResponse",
+      "status": "online"
     },
     "DescribePlayErrorCodeDetailInfoList": {
       "document": "查询下行播放错误码信息，某段时间内1分钟粒度的各http错误码出现的次数，包括4xx，5xx。\n\n",
       "input": "DescribePlayErrorCodeDetailInfoListRequest",
       "name": "查询播放http错误码实时数据",
-      "output": "DescribePlayErrorCodeDetailInfoListResponse"
+      "output": "DescribePlayErrorCodeDetailInfoListResponse",
+      "status": "online"
     },
     "DescribePlayErrorCodeSumInfoList": {
       "document": "查询下行播放错误码信息。",
       "input": "DescribePlayErrorCodeSumInfoListRequest",
       "name": "查询播放http错误码汇总数据",
-      "output": "DescribePlayErrorCodeSumInfoListResponse"
+      "output": "DescribePlayErrorCodeSumInfoListResponse",
+      "status": "online"
     },
     "DescribeProIspPlaySumInfoList": {
       "document": "查询某段时间内每个国家地区每个省份每个运营商的平均每秒流量，总流量，总请求数信息。",
       "input": "DescribeProIspPlaySumInfoListRequest",
       "name": "查询分省份分运营商播放汇总数据",
-      "output": "DescribeProIspPlaySumInfoListResponse"
+      "output": "DescribeProIspPlaySumInfoListResponse",
+      "status": "online"
     },
     "DescribeProvinceIspPlayInfoList": {
       "document": "查询某省份某运营商下行播放数据，包括带宽，流量，请求数，并发连接数信息。",
       "input": "DescribeProvinceIspPlayInfoListRequest",
       "name": "按省份运营商查询播放信息",
-      "output": "DescribeProvinceIspPlayInfoListResponse"
+      "output": "DescribeProvinceIspPlayInfoListResponse",
+      "status": "online"
     },
     "DescribePullStreamConfigs": {
       "document": "查询直播拉流配置。该接口已下线,请使用新接口 DescribeLivePullStreamTasks。",
       "input": "DescribePullStreamConfigsRequest",
       "name": "查询拉流配置(该接口已下线,请使用新接口 DescribeLivePullStreamTasks)",
-      "output": "DescribePullStreamConfigsResponse"
+      "output": "DescribePullStreamConfigsResponse",
+      "status": "online"
     },
     "DescribePushBandwidthAndFluxList": {
       "document": "直播推流带宽和流量数据查询。\n推流计费会先取全球推流用量和全球播放用量进行比较，满足计费条件后再按各地区用量出账。详情参见[计费文档](https://cloud.tencent.com/document/product/267/34175)。",
       "input": "DescribePushBandwidthAndFluxListRequest",
       "name": "直播推流带宽和流量数据查询",
-      "output": "DescribePushBandwidthAndFluxListResponse"
+      "output": "DescribePushBandwidthAndFluxListResponse",
+      "status": "online"
     },
     "DescribeRecordTask": {
       "document": "查询指定时间段范围内启动和结束的录制任务列表。\n- 使用前提\n1. 仅用于查询由 CreateRecordTask 接口创建的录制任务。\n2. 不能查询被 DeleteRecordTask 接口删除以及已过期（平台侧保留3个月）的录制任务。\n",
       "input": "DescribeRecordTaskRequest",
       "name": "查询录制任务列表（新）",
-      "output": "DescribeRecordTaskResponse"
+      "output": "DescribeRecordTaskResponse",
+      "status": "online"
     },
     "DescribeScreenShotSheetNumList": {
       "document": "接口用来查询直播增值业务--截图的张数",
       "input": "DescribeScreenShotSheetNumListRequest",
       "name": "查询截图张数",
-      "output": "DescribeScreenShotSheetNumListResponse"
+      "output": "DescribeScreenShotSheetNumListResponse",
+      "status": "online"
     },
     "DescribeScreenshotTask": {
       "document": "查询指定时间段范围内启动和结束的截图任务列表。\n- 使用前提\n1. 仅用于查询由 CreateScreenshotTask接口创建的截图任务。\n2. 不能查询被 DeleteScreenshotTask接口删除以及已过期（平台侧保留3个月）的截图任务。",
       "input": "DescribeScreenshotTaskRequest",
       "name": "查询截图任务列表",
-      "output": "DescribeScreenshotTaskResponse"
+      "output": "DescribeScreenshotTaskResponse",
+      "status": "online"
     },
     "DescribeStreamDayPlayInfoList": {
       "document": "查询天维度每条流的播放数据，包括总流量等。",
       "input": "DescribeStreamDayPlayInfoListRequest",
       "name": "查询所有流的流量数据",
-      "output": "DescribeStreamDayPlayInfoListResponse"
+      "output": "DescribeStreamDayPlayInfoListResponse",
+      "status": "online"
     },
     "DescribeStreamPlayInfoList": {
       "document": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据，数据延迟4分钟左右。\n注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。",
       "input": "DescribeStreamPlayInfoListRequest",
       "name": "查询流的播放信息列表",
-      "output": "DescribeStreamPlayInfoListResponse"
+      "output": "DescribeStreamPlayInfoListResponse",
+      "status": "online"
     },
     "DescribeStreamPushInfoList": {
       "document": "查询流id的上行推流质量数据，包括音视频的帧率，码率，流逝时间，编码格式等。",
       "input": "DescribeStreamPushInfoListRequest",
       "name": "查询某条流上行推流质量数据",
-      "output": "DescribeStreamPushInfoListResponse"
+      "output": "DescribeStreamPushInfoListResponse",
+      "status": "online"
     },
     "DescribeTopClientIpSumInfoList": {
       "document": "查询某段时间top n客户端ip汇总信息（暂支持top 1000）",
       "input": "DescribeTopClientIpSumInfoListRequest",
       "name": "查询某段时间top n客户端ip汇总信息",
-      "output": "DescribeTopClientIpSumInfoListResponse"
+      "output": "DescribeTopClientIpSumInfoListResponse",
+      "status": "online"
     },
     "DescribeTranscodeTaskNum": {
       "document": "查询转码任务数。",
       "input": "DescribeTranscodeTaskNumRequest",
       "name": "查询转码任务数。",
-      "output": "DescribeTranscodeTaskNumResponse"
+      "output": "DescribeTranscodeTaskNumResponse",
+      "status": "online"
     },
     "DescribeUploadStreamNums": {
       "document": "直播上行路数查询",
       "input": "DescribeUploadStreamNumsRequest",
       "name": "直播上行路数查询",
-      "output": "DescribeUploadStreamNumsResponse"
+      "output": "DescribeUploadStreamNumsResponse",
+      "status": "online"
     },
     "DescribeVisitTopSumInfoList": {
       "document": "查询某时间段top n的域名或流id信息（暂支持top 1000）。",
       "input": "DescribeVisitTopSumInfoListRequest",
       "name": "查询某时间段top n的域名或流id信息",
-      "output": "DescribeVisitTopSumInfoListResponse"
+      "output": "DescribeVisitTopSumInfoListResponse",
+      "status": "online"
     },
     "DropLiveStream": {
       "document": "断开推流连接，但可以重新推流。\n注：对已经不活跃的流，调用该断流接口时，接口返回成功。",
       "input": "DropLiveStreamRequest",
       "name": "断开直播推流",
-      "output": "DropLiveStreamResponse"
+      "output": "DropLiveStreamResponse",
+      "status": "online"
     },
     "EnableLiveDomain": {
       "document": "启用状态为停用的直播域名。",
       "input": "EnableLiveDomainRequest",
       "name": "启用域名",
-      "output": "EnableLiveDomainResponse"
+      "output": "EnableLiveDomainResponse",
+      "status": "online"
     },
     "ForbidLiveDomain": {
       "document": "停止使用某个直播域名。",
       "input": "ForbidLiveDomainRequest",
       "name": "禁用域名",
-      "output": "ForbidLiveDomainResponse"
+      "output": "ForbidLiveDomainResponse",
+      "status": "online"
     },
     "ForbidLiveStream": {
       "document": "禁止某条流的推送，可以预设某个时刻将流恢复。",
       "input": "ForbidLiveStreamRequest",
       "name": "禁推直播流",
-      "output": "ForbidLiveStreamResponse"
+      "output": "ForbidLiveStreamResponse",
+      "status": "online"
     },
     "ModifyLiveCallbackTemplate": {
       "document": "修改回调模板。",
       "input": "ModifyLiveCallbackTemplateRequest",
       "name": "修改回调模板",
-      "output": "ModifyLiveCallbackTemplateResponse"
+      "output": "ModifyLiveCallbackTemplateResponse",
+      "status": "online"
     },
     "ModifyLiveDomainCertBindings": {
       "document": "批量绑定证书对应的播放域名，并更新启用状态。\n新建自有证书将自动上传至腾讯云ssl。",
       "input": "ModifyLiveDomainCertBindingsRequest",
       "name": "批量绑定证书对应的播放域名",
-      "output": "ModifyLiveDomainCertBindingsResponse"
+      "output": "ModifyLiveDomainCertBindingsResponse",
+      "status": "online"
     },
     "ModifyLiveDomainReferer": {
       "document": "设置直播域名 Referer 黑白名单。\n由于 Referer 信息包含在 http 协议中，在开启配置后，播放协议为 rtmp 或 WebRTC 不会校验 Referer 配置，仍可正常播放。如需配置 Referer 鉴权建议使用 http-flv 或 http-hls 协议播放。",
       "input": "ModifyLiveDomainRefererRequest",
       "name": "设置直播域名 Referer 黑白名单",
-      "output": "ModifyLiveDomainRefererResponse"
+      "output": "ModifyLiveDomainRefererResponse",
+      "status": "online"
     },
     "ModifyLivePlayAuthKey": {
       "document": "修改播放鉴权key",
       "input": "ModifyLivePlayAuthKeyRequest",
       "name": "修改播放鉴权key",
-      "output": "ModifyLivePlayAuthKeyResponse"
+      "output": "ModifyLivePlayAuthKeyResponse",
+      "status": "online"
     },
     "ModifyLivePlayDomain": {
       "document": "修改播放域名信息。",
       "input": "ModifyLivePlayDomainRequest",
       "name": "修改播放域名信息",
-      "output": "ModifyLivePlayDomainResponse"
+      "output": "ModifyLivePlayDomainResponse",
+      "status": "online"
     },
     "ModifyLivePullStreamTask": {
       "document": "更新直播拉流任务。 \n1. 不支持修改目标地址，如需推到新地址，请创建新任务。\n2. 不支持修改拉流源类型，如需更换，请创建新任务。",
       "input": "ModifyLivePullStreamTaskRequest",
       "name": "更新直播拉流任务",
-      "output": "ModifyLivePullStreamTaskResponse"
+      "output": "ModifyLivePullStreamTaskResponse",
+      "status": "online"
     },
     "ModifyLivePushAuthKey": {
       "document": "修改直播推流鉴权key",
       "input": "ModifyLivePushAuthKeyRequest",
       "name": "修改推流鉴权key",
-      "output": "ModifyLivePushAuthKeyResponse"
+      "output": "ModifyLivePushAuthKeyResponse",
+      "status": "online"
     },
     "ModifyLiveRecordTemplate": {
       "document": "修改录制模板配置。",
       "input": "ModifyLiveRecordTemplateRequest",
       "name": "直播修改录制模板配置",
-      "output": "ModifyLiveRecordTemplateResponse"
+      "output": "ModifyLiveRecordTemplateResponse",
+      "status": "online"
     },
     "ModifyLiveSnapshotTemplate": {
       "document": "修改截图模板配置。",
       "input": "ModifyLiveSnapshotTemplateRequest",
       "name": "修改截图模板",
-      "output": "ModifyLiveSnapshotTemplateResponse"
+      "output": "ModifyLiveSnapshotTemplateResponse",
+      "status": "online"
     },
     "ModifyLiveTranscodeTemplate": {
       "document": "修改转码模板配置。",
       "input": "ModifyLiveTranscodeTemplateRequest",
       "name": "修改转码模板配置",
-      "output": "ModifyLiveTranscodeTemplateResponse"
+      "output": "ModifyLiveTranscodeTemplateResponse",
+      "status": "online"
     },
     "ModifyPullStreamConfig": {
       "document": "更新拉流配置。该接口为已下线接口，请使用新接口 ModifyLivePullStreamTask。 ",
       "input": "ModifyPullStreamConfigRequest",
       "name": "更新拉流配置(该接口已下线,请使用新接口 ModifyLivePullStreamTask)",
-      "output": "ModifyPullStreamConfigResponse"
+      "output": "ModifyPullStreamConfigResponse",
+      "status": "online"
     },
     "ModifyPullStreamStatus": {
       "document": "修改直播拉流配置的状态。该接口已下线,请使用新接口 ModifyLivePullStreamTask。",
       "input": "ModifyPullStreamStatusRequest",
       "name": "修改拉流配置状态(该接口已下线,请使用新接口 ModifyLivePullStreamTask)",
-      "output": "ModifyPullStreamStatusResponse"
+      "output": "ModifyPullStreamStatusResponse",
+      "status": "online"
     },
     "ResumeDelayLiveStream": {
       "document": "取消直播流设置的延时配置，恢复实时直播画面。",
       "input": "ResumeDelayLiveStreamRequest",
       "name": "取消直播延时",
-      "output": "ResumeDelayLiveStreamResponse"
+      "output": "ResumeDelayLiveStreamResponse",
+      "status": "online"
     },
     "ResumeLiveStream": {
       "document": "恢复某条流的推流。",
       "input": "ResumeLiveStreamRequest",
       "name": "恢复直播推流",
-      "output": "ResumeLiveStreamResponse"
+      "output": "ResumeLiveStreamResponse",
+      "status": "online"
     },
     "StopLiveRecord": {
       "document": "说明：录制后的文件存放于点播平台。用户如需使用录制功能，需首先自行开通点播账号并确保账号可用。录制文件存放后，相关费用（含存储以及下行播放流量）按照点播平台计费方式收取，请参考对应文档。",
       "input": "StopLiveRecordRequest",
       "name": "终止录制任务(已废弃,请使用新接口)",
-      "output": "StopLiveRecordResponse"
+      "output": "StopLiveRecordResponse",
+      "status": "online"
     },
     "StopRecordTask": {
       "document": "提前结束录制，中止运行中的录制任务并生成录制文件。任务被成功终止后，本次任务将不再启动。",
       "input": "StopRecordTaskRequest",
       "name": "终止录制任务（新）",
-      "output": "StopRecordTaskResponse"
+      "output": "StopRecordTaskResponse",
+      "status": "online"
     },
     "StopScreenshotTask": {
       "document": "提前结束截图，中止运行中的截图任务。任务被成功终止后，本次任务将不再启动。",
       "input": "StopScreenshotTaskRequest",
       "name": "终止截图任务",
-      "output": "StopScreenshotTaskResponse"
+      "output": "StopScreenshotTaskResponse",
+      "status": "online"
     },
     "UnBindLiveDomainCert": {
       "document": "解绑域名证书",
       "input": "UnBindLiveDomainCertRequest",
       "name": "解绑域名证书",
-      "output": "UnBindLiveDomainCertResponse"
+      "output": "UnBindLiveDomainCertResponse",
+      "status": "online"
     },
     "UpdateLiveWatermark": {
       "document": "更新水印。",
       "input": "UpdateLiveWatermarkRequest",
       "name": "更新水印",
-      "output": "UpdateLiveWatermarkResponse"
+      "output": "UpdateLiveWatermarkResponse",
+      "status": "online"
     }
   },
   "metadata": {

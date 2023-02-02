@@ -4,61 +4,71 @@
       "document": "新增和修改用户接口",
       "input": "ActionAlterCkUserRequest",
       "name": "新增、修改ck用户接口",
-      "output": "ActionAlterCkUserResponse"
+      "output": "ActionAlterCkUserResponse",
+      "status": "online"
     },
     "CreateBackUpSchedule": {
       "document": "创建或者修改备份策略",
       "input": "CreateBackUpScheduleRequest",
       "name": "创建或者修改备份策略",
-      "output": "CreateBackUpScheduleResponse"
+      "output": "CreateBackUpScheduleResponse",
+      "status": "online"
     },
     "CreateInstanceNew": {
       "document": "创建集群",
       "input": "CreateInstanceNewRequest",
       "name": "创建集群openApi",
-      "output": "CreateInstanceNewResponse"
+      "output": "CreateInstanceNewResponse",
+      "status": "online"
     },
     "DescribeCkSqlApis": {
       "document": "查询集群用户、集群表，数据库等相关信息",
       "input": "DescribeCkSqlApisRequest",
       "name": "查询集群用户相关信息",
-      "output": "DescribeCkSqlApisResponse"
+      "output": "DescribeCkSqlApisResponse",
+      "status": "online"
     },
     "DescribeInstance": {
       "document": "根据实例ID查询某个实例的具体信息",
       "input": "DescribeInstanceRequest",
       "name": "描述实例信息",
-      "output": "DescribeInstanceResponse"
+      "output": "DescribeInstanceResponse",
+      "status": "online"
     },
     "DescribeInstanceShards": {
       "document": "获取实例shard信息列表",
       "input": "DescribeInstanceShardsRequest",
       "name": "获取实例shard信息列表",
-      "output": "DescribeInstanceShardsResponse"
+      "output": "DescribeInstanceShardsResponse",
+      "status": "online"
     },
     "DescribeSpec": {
       "document": "购买页拉取集群的数据节点和zookeeper节点的规格列表",
       "input": "DescribeSpecRequest",
       "name": "获取集群规格",
-      "output": "DescribeSpecResponse"
+      "output": "DescribeSpecResponse",
+      "status": "online"
     },
     "ModifyClusterConfigs": {
       "document": "在集群配置页面修改集群配置文件接口，xml模式",
       "input": "ModifyClusterConfigsRequest",
       "name": "修改集群配置文件接口",
-      "output": "ModifyClusterConfigsResponse"
+      "output": "ModifyClusterConfigsResponse",
+      "status": "online"
     },
     "ModifyUserNewPrivilege": {
       "document": "针对ck账号的权限做管控（新版）",
       "input": "ModifyUserNewPrivilegeRequest",
       "name": "新增、修改ck账号cluster权限（新版）",
-      "output": "ModifyUserNewPrivilegeResponse"
+      "output": "ModifyUserNewPrivilegeResponse",
+      "status": "online"
     },
     "OpenBackUp": {
       "document": "开启或者关闭策略",
       "input": "OpenBackUpRequest",
       "name": "开启或者关闭策略",
-      "output": "OpenBackUpResponse"
+      "output": "OpenBackUpResponse",
+      "status": "online"
     }
   },
   "metadata": {

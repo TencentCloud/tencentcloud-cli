@@ -4,451 +4,533 @@
       "document": "本接口(ActivateInstance)用于恢复已隔离的实例访问。",
       "input": "ActivateInstanceRequest",
       "name": "恢复实例访问",
-      "output": "ActivateInstanceResponse"
+      "output": "ActivateInstanceResponse",
+      "status": "online"
     },
     "AddClusterSlaveZone": {
       "document": "增加从可用区",
       "input": "AddClusterSlaveZoneRequest",
       "name": "增加从可用区",
-      "output": "AddClusterSlaveZoneResponse"
+      "output": "AddClusterSlaveZoneResponse",
+      "status": "online"
     },
     "AddInstances": {
       "document": "本接口（AddInstances）用于集群添加实例",
       "input": "AddInstancesRequest",
       "name": "集群添加实例",
-      "output": "AddInstancesResponse"
+      "output": "AddInstancesResponse",
+      "status": "online"
     },
     "AssociateSecurityGroups": {
       "document": "安全组批量绑定云资源",
       "input": "AssociateSecurityGroupsRequest",
       "name": "安全组批量绑定云资源",
-      "output": "AssociateSecurityGroupsResponse"
+      "output": "AssociateSecurityGroupsResponse",
+      "status": "online"
     },
     "CloseAuditService": {
       "document": "TDSQL-C for MySQL实例关闭审计服务",
       "input": "CloseAuditServiceRequest",
       "name": "实例关闭审计服务",
-      "output": "CloseAuditServiceResponse"
+      "output": "CloseAuditServiceResponse",
+      "status": "online"
     },
     "CreateAccounts": {
       "document": "创建账号",
       "input": "CreateAccountsRequest",
       "name": "创建账号",
-      "output": "CreateAccountsResponse"
+      "output": "CreateAccountsResponse",
+      "status": "online"
     },
     "CreateAuditLogFile": {
       "document": "本接口(CreateAuditLogFile)用于创建云数据库实例的审计日志文件。",
       "input": "CreateAuditLogFileRequest",
       "name": "创建审计日志文件",
-      "output": "CreateAuditLogFileResponse"
+      "output": "CreateAuditLogFileResponse",
+      "status": "online"
     },
     "CreateAuditRuleTemplate": {
       "document": "创建审计规则模版",
       "input": "CreateAuditRuleTemplateRequest",
       "name": "创建审计规则模版",
-      "output": "CreateAuditRuleTemplateResponse"
+      "output": "CreateAuditRuleTemplateResponse",
+      "status": "online"
     },
     "CreateBackup": {
       "document": "为集群创建手动备份",
       "input": "CreateBackupRequest",
       "name": "创建手动备份",
-      "output": "CreateBackupResponse"
+      "output": "CreateBackupResponse",
+      "status": "online"
     },
     "CreateClusters": {
       "document": "创建集群",
       "input": "CreateClustersRequest",
       "name": "创建集群",
-      "output": "CreateClustersResponse"
+      "output": "CreateClustersResponse",
+      "status": "online"
     },
     "DeleteAuditLogFile": {
       "document": "本接口(DeleteAuditLogFile)用于删除云数据库实例的审计日志文件。",
       "input": "DeleteAuditLogFileRequest",
       "name": "删除审计日志文件",
-      "output": "DeleteAuditLogFileResponse"
+      "output": "DeleteAuditLogFileResponse",
+      "status": "online"
     },
     "DeleteAuditRuleTemplates": {
       "document": "删除审计规则模版",
       "input": "DeleteAuditRuleTemplatesRequest",
       "name": "删除审计规则模版",
-      "output": "DeleteAuditRuleTemplatesResponse"
+      "output": "DeleteAuditRuleTemplatesResponse",
+      "status": "online"
     },
     "DeleteBackup": {
       "document": "为集群删除手动备份，无法删除自动备份",
       "input": "DeleteBackupRequest",
       "name": "删除手动备份",
-      "output": "DeleteBackupResponse"
+      "output": "DeleteBackupResponse",
+      "status": "online"
     },
     "DescribeAccountAllGrantPrivileges": {
       "document": "账号所有权限",
       "input": "DescribeAccountAllGrantPrivilegesRequest",
       "name": "账号所有权限",
-      "output": "DescribeAccountAllGrantPrivilegesResponse"
+      "output": "DescribeAccountAllGrantPrivilegesResponse",
+      "status": "online"
     },
     "DescribeAccounts": {
       "document": "本接口(DescribeAccounts)用于查询数据库管理账号。",
       "input": "DescribeAccountsRequest",
       "name": "查询数据库管理账号",
-      "output": "DescribeAccountsResponse"
+      "output": "DescribeAccountsResponse",
+      "status": "online"
     },
     "DescribeAuditLogFiles": {
       "document": "本接口(DescribeAuditLogFiles)用于查询云数据库实例的审计日志文件。",
       "input": "DescribeAuditLogFilesRequest",
       "name": "查询审计日志文件",
-      "output": "DescribeAuditLogFilesResponse"
+      "output": "DescribeAuditLogFilesResponse",
+      "status": "online"
     },
     "DescribeAuditLogs": {
       "document": "本接口(DescribeAuditLogs)用于查询数据库审计日志。",
       "input": "DescribeAuditLogsRequest",
       "name": "查询数据库审计日志",
-      "output": "DescribeAuditLogsResponse"
+      "output": "DescribeAuditLogsResponse",
+      "status": "online"
     },
     "DescribeAuditRuleTemplates": {
       "document": "查询审计规则模版信息",
       "input": "DescribeAuditRuleTemplatesRequest",
       "name": "查询审计规则模版",
-      "output": "DescribeAuditRuleTemplatesResponse"
+      "output": "DescribeAuditRuleTemplatesResponse",
+      "status": "online"
     },
     "DescribeAuditRuleWithInstanceIds": {
       "document": "获取实例的审计规则",
       "input": "DescribeAuditRuleWithInstanceIdsRequest",
       "name": "获取实例的审计规则",
-      "output": "DescribeAuditRuleWithInstanceIdsResponse"
+      "output": "DescribeAuditRuleWithInstanceIdsResponse",
+      "status": "online"
     },
     "DescribeBackupConfig": {
       "document": "获取指定集群的备份配置信息，包括全量备份时间段，备份文件保留时间",
       "input": "DescribeBackupConfigRequest",
       "name": "查询备份配置信息",
-      "output": "DescribeBackupConfigResponse"
+      "output": "DescribeBackupConfigResponse",
+      "status": "online"
     },
     "DescribeBackupDownloadUrl": {
       "document": "此接口（DescribeBackupDownloadUrl）用于查询集群备份文件下载地址。",
       "input": "DescribeBackupDownloadUrlRequest",
       "name": "查询备份下载地址",
-      "output": "DescribeBackupDownloadUrlResponse"
+      "output": "DescribeBackupDownloadUrlResponse",
+      "status": "online"
     },
     "DescribeBackupList": {
       "document": "查询备份文件列表",
       "input": "DescribeBackupListRequest",
       "name": "查询备份文件列表",
-      "output": "DescribeBackupListResponse"
+      "output": "DescribeBackupListResponse",
+      "status": "online"
     },
     "DescribeBinlogDownloadUrl": {
       "document": "此接口（DescribeBinlogDownloadUrl）用于查询Binlog的下载地址。",
       "input": "DescribeBinlogDownloadUrlRequest",
       "name": "查询Binlog下载地址",
-      "output": "DescribeBinlogDownloadUrlResponse"
+      "output": "DescribeBinlogDownloadUrlResponse",
+      "status": "online"
     },
     "DescribeBinlogSaveDays": {
       "document": "此接口（DescribeBinlogSaveDays）用于查询集群的Binlog保留天数。",
       "input": "DescribeBinlogSaveDaysRequest",
       "name": "查询Binlog保留天数",
-      "output": "DescribeBinlogSaveDaysResponse"
+      "output": "DescribeBinlogSaveDaysResponse",
+      "status": "online"
     },
     "DescribeBinlogs": {
       "document": "此接口（DescribeBinlogs）用来查询集群Binlog日志列表。",
       "input": "DescribeBinlogsRequest",
       "name": "查询Binlog列表",
-      "output": "DescribeBinlogsResponse"
+      "output": "DescribeBinlogsResponse",
+      "status": "online"
     },
     "DescribeClusterDetail": {
       "document": "该接口（DescribeClusterDetail）显示集群详情",
       "input": "DescribeClusterDetailRequest",
       "name": "集群详情",
-      "output": "DescribeClusterDetailResponse"
+      "output": "DescribeClusterDetailResponse",
+      "status": "online"
     },
     "DescribeClusterInstanceGrps": {
       "document": "本接口（DescribeClusterInstanceGrps）用于查询实例组信息。",
       "input": "DescribeClusterInstanceGrpsRequest",
       "name": "查询实例组",
-      "output": "DescribeClusterInstanceGrpsResponse"
+      "output": "DescribeClusterInstanceGrpsResponse",
+      "status": "online"
     },
     "DescribeClusterParamLogs": {
       "document": "本接口（DescribeClusterParamLogs）查询参数修改日志",
       "input": "DescribeClusterParamLogsRequest",
       "name": "查询参数修改日志",
-      "output": "DescribeClusterParamLogsResponse"
+      "output": "DescribeClusterParamLogsResponse",
+      "status": "online"
     },
     "DescribeClusterParams": {
       "document": "本接口（DescribeClusterParams）用于查询集群参数",
       "input": "DescribeClusterParamsRequest",
       "name": "查询集群参数",
-      "output": "DescribeClusterParamsResponse"
+      "output": "DescribeClusterParamsResponse",
+      "status": "online"
     },
     "DescribeClusters": {
       "document": "查询集群列表",
       "input": "DescribeClustersRequest",
       "name": "查询集群列表",
-      "output": "DescribeClustersResponse"
+      "output": "DescribeClustersResponse",
+      "status": "online"
     },
     "DescribeDBSecurityGroups": {
       "document": "查询实例安全组信息",
       "input": "DescribeDBSecurityGroupsRequest",
       "name": "查询实例安全组信息",
-      "output": "DescribeDBSecurityGroupsResponse"
+      "output": "DescribeDBSecurityGroupsResponse",
+      "status": "online"
     },
     "DescribeInstanceDetail": {
       "document": "本接口(DescribeInstanceDetail)用于查询实例详情。",
       "input": "DescribeInstanceDetailRequest",
       "name": "查询实例详情",
-      "output": "DescribeInstanceDetailResponse"
+      "output": "DescribeInstanceDetailResponse",
+      "status": "online"
     },
     "DescribeInstanceSlowQueries": {
       "document": "此接口（DescribeInstanceSlowQueries）用于查询实例慢查询日志。",
       "input": "DescribeInstanceSlowQueriesRequest",
       "name": "查询实例慢查询日志",
-      "output": "DescribeInstanceSlowQueriesResponse"
+      "output": "DescribeInstanceSlowQueriesResponse",
+      "status": "online"
     },
     "DescribeInstanceSpecs": {
       "document": "本接口（DescribeInstanceSpecs）用于查询实例规格",
       "input": "DescribeInstanceSpecsRequest",
       "name": "查询实例规格",
-      "output": "DescribeInstanceSpecsResponse"
+      "output": "DescribeInstanceSpecsResponse",
+      "status": "online"
     },
     "DescribeInstances": {
       "document": "本接口(DescribeInstances)用于查询实例列表。",
       "input": "DescribeInstancesRequest",
       "name": "查询实例的列表",
-      "output": "DescribeInstancesResponse"
+      "output": "DescribeInstancesResponse",
+      "status": "online"
     },
     "DescribeMaintainPeriod": {
       "document": "查询实例维护时间窗",
       "input": "DescribeMaintainPeriodRequest",
       "name": "查询实例维护时间窗",
-      "output": "DescribeMaintainPeriodResponse"
+      "output": "DescribeMaintainPeriodResponse",
+      "status": "online"
     },
     "DescribeParamTemplates": {
       "document": "查询用户指定产品下的所有参数模板信息",
       "input": "DescribeParamTemplatesRequest",
       "name": "查询参数模板信息",
-      "output": "DescribeParamTemplatesResponse"
+      "output": "DescribeParamTemplatesResponse",
+      "status": "online"
     },
     "DescribeProjectSecurityGroups": {
       "document": "查询项目安全组信息",
       "input": "DescribeProjectSecurityGroupsRequest",
       "name": "查询项目安全组信息",
-      "output": "DescribeProjectSecurityGroupsResponse"
+      "output": "DescribeProjectSecurityGroupsResponse",
+      "status": "online"
     },
     "DescribeResourcesByDealName": {
       "document": "根据计费订单id查询资源列表",
       "input": "DescribeResourcesByDealNameRequest",
       "name": "根据订单id查询资源信息",
-      "output": "DescribeResourcesByDealNameResponse"
+      "output": "DescribeResourcesByDealNameResponse",
+      "status": "online"
     },
     "DescribeRollbackTimeRange": {
       "document": "查询指定集群有效回滚时间范围",
       "input": "DescribeRollbackTimeRangeRequest",
       "name": "查询有效回滚时间范围",
-      "output": "DescribeRollbackTimeRangeResponse"
+      "output": "DescribeRollbackTimeRangeResponse",
+      "status": "online"
     },
     "DescribeRollbackTimeValidity": {
       "document": "指定时间和集群查询是否可回滚",
       "input": "DescribeRollbackTimeValidityRequest",
       "name": "查询指定时间是否可回滚",
-      "output": "DescribeRollbackTimeValidityResponse"
+      "output": "DescribeRollbackTimeValidityResponse",
+      "status": "online"
     },
     "DisassociateSecurityGroups": {
       "document": "安全组批量解绑云资源",
       "input": "DisassociateSecurityGroupsRequest",
       "name": "安全组批量解绑云资源",
-      "output": "DisassociateSecurityGroupsResponse"
+      "output": "DisassociateSecurityGroupsResponse",
+      "status": "online"
     },
     "ExportInstanceSlowQueries": {
       "document": "此接口（ExportInstanceSlowQueries）用于导出实例慢日志。",
       "input": "ExportInstanceSlowQueriesRequest",
       "name": "导出实例慢日志",
-      "output": "ExportInstanceSlowQueriesResponse"
+      "output": "ExportInstanceSlowQueriesResponse",
+      "status": "online"
     },
     "GrantAccountPrivileges": {
       "document": "批量授权账号权限",
       "input": "GrantAccountPrivilegesRequest",
       "name": "批量授权账号权限",
-      "output": "GrantAccountPrivilegesResponse"
+      "output": "GrantAccountPrivilegesResponse",
+      "status": "online"
     },
     "InquirePriceCreate": {
       "document": "查询新购集群价格",
       "input": "InquirePriceCreateRequest",
       "name": "新购集群询价",
-      "output": "InquirePriceCreateResponse"
+      "output": "InquirePriceCreateResponse",
+      "status": "online"
     },
     "InquirePriceRenew": {
       "document": "查询续费集群价格",
       "input": "InquirePriceRenewRequest",
       "name": "续费集群询价",
-      "output": "InquirePriceRenewResponse"
+      "output": "InquirePriceRenewResponse",
+      "status": "online"
     },
     "IsolateCluster": {
       "document": "隔离集群",
       "input": "IsolateClusterRequest",
       "name": "隔离集群",
-      "output": "IsolateClusterResponse"
+      "output": "IsolateClusterResponse",
+      "status": "online"
     },
     "IsolateInstance": {
       "document": "本接口(IsolateInstance)用于隔离实例。",
       "input": "IsolateInstanceRequest",
       "name": "隔离实例",
-      "output": "IsolateInstanceResponse"
+      "output": "IsolateInstanceResponse",
+      "status": "online"
     },
     "ModifyAccountParams": {
       "document": "修改账号参数",
       "input": "ModifyAccountParamsRequest",
       "name": "修改账号参数",
-      "output": "ModifyAccountParamsResponse"
+      "output": "ModifyAccountParamsResponse",
+      "status": "online"
     },
     "ModifyAuditRuleTemplates": {
       "document": "修改审计规则模版",
       "input": "ModifyAuditRuleTemplatesRequest",
       "name": "修改审计规则模版",
-      "output": "ModifyAuditRuleTemplatesResponse"
+      "output": "ModifyAuditRuleTemplatesResponse",
+      "status": "online"
     },
     "ModifyAuditService": {
       "document": "本接口(ModifyAuditService)用于修改云数据库审计日志保存时长、审计规则等服务配置。",
       "input": "ModifyAuditServiceRequest",
       "name": "实例修改审计服务",
-      "output": "ModifyAuditServiceResponse"
+      "output": "ModifyAuditServiceResponse",
+      "status": "online"
     },
     "ModifyBackupConfig": {
       "document": "修改指定集群的备份配置",
       "input": "ModifyBackupConfigRequest",
       "name": "修改备份配置",
-      "output": "ModifyBackupConfigResponse"
+      "output": "ModifyBackupConfigResponse",
+      "status": "online"
     },
     "ModifyBackupName": {
       "document": "此接口（ModifyBackupName）用于修改备份文件备注名。",
       "input": "ModifyBackupNameRequest",
       "name": "修改备份文件备注名",
-      "output": "ModifyBackupNameResponse"
+      "output": "ModifyBackupNameResponse",
+      "status": "online"
     },
     "ModifyClusterName": {
       "document": "修改集群名称",
       "input": "ModifyClusterNameRequest",
       "name": "修改集群名称",
-      "output": "ModifyClusterNameResponse"
+      "output": "ModifyClusterNameResponse",
+      "status": "online"
     },
     "ModifyClusterParam": {
       "document": "修改集群参数",
       "input": "ModifyClusterParamRequest",
       "name": "修改集群参数",
-      "output": "ModifyClusterParamResponse"
+      "output": "ModifyClusterParamResponse",
+      "status": "online"
     },
     "ModifyClusterSlaveZone": {
       "document": "修改从可用区",
       "input": "ModifyClusterSlaveZoneRequest",
       "name": "修改从可用区",
-      "output": "ModifyClusterSlaveZoneResponse"
+      "output": "ModifyClusterSlaveZoneResponse",
+      "status": "online"
     },
     "ModifyClusterStorage": {
       "document": "升级预付费存储",
       "input": "ModifyClusterStorageRequest",
       "name": "升级预付费存储",
-      "output": "ModifyClusterStorageResponse"
+      "output": "ModifyClusterStorageResponse",
+      "status": "online"
     },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
       "name": "修改云数据库安全组",
-      "output": "ModifyDBInstanceSecurityGroupsResponse"
+      "output": "ModifyDBInstanceSecurityGroupsResponse",
+      "status": "online"
     },
     "ModifyInstanceName": {
       "document": "本接口(ModifyInstanceName)用于修改实例名称。",
       "input": "ModifyInstanceNameRequest",
       "name": "修改实例名称",
-      "output": "ModifyInstanceNameResponse"
+      "output": "ModifyInstanceNameResponse",
+      "status": "online"
     },
     "ModifyMaintainPeriodConfig": {
       "document": "修改维护时间配置",
       "input": "ModifyMaintainPeriodConfigRequest",
       "name": "修改维护时间配置",
-      "output": "ModifyMaintainPeriodConfigResponse"
+      "output": "ModifyMaintainPeriodConfigResponse",
+      "status": "online"
     },
     "OfflineCluster": {
       "document": "下线集群",
       "input": "OfflineClusterRequest",
       "name": "下线集群",
-      "output": "OfflineClusterResponse"
+      "output": "OfflineClusterResponse",
+      "status": "online"
     },
     "OfflineInstance": {
       "document": "下线实例",
       "input": "OfflineInstanceRequest",
       "name": "下线实例",
-      "output": "OfflineInstanceResponse"
+      "output": "OfflineInstanceResponse",
+      "status": "online"
     },
     "OpenAuditService": {
       "document": "TDSQL-C for MySQL实例开通审计服务",
       "input": "OpenAuditServiceRequest",
       "name": "实例开通审计服务",
-      "output": "OpenAuditServiceResponse"
+      "output": "OpenAuditServiceResponse",
+      "status": "online"
     },
     "PauseServerless": {
       "document": "暂停serverless集群",
       "input": "PauseServerlessRequest",
       "name": "暂停serverless集群",
-      "output": "PauseServerlessResponse"
+      "output": "PauseServerlessResponse",
+      "status": "online"
     },
     "RemoveClusterSlaveZone": {
       "document": "删除从可用区",
       "input": "RemoveClusterSlaveZoneRequest",
       "name": "删除从可用区",
-      "output": "RemoveClusterSlaveZoneResponse"
+      "output": "RemoveClusterSlaveZoneResponse",
+      "status": "online"
     },
     "ResetAccountPassword": {
       "document": "本接口(ResetAccountPassword)用于重置实例的数据库账号密码。",
       "input": "ResetAccountPasswordRequest",
       "name": "重置数据库账号密码",
-      "output": "ResetAccountPasswordResponse"
+      "output": "ResetAccountPasswordResponse",
+      "status": "online"
+    },
+    "RestartInstance": {
+      "document": "重启实例",
+      "input": "RestartInstanceRequest",
+      "name": "重启实例",
+      "output": "RestartInstanceResponse",
+      "status": "online"
     },
     "ResumeServerless": {
       "document": "恢复serverless集群",
       "input": "ResumeServerlessRequest",
       "name": "恢复serverless集群",
-      "output": "ResumeServerlessResponse"
+      "output": "ResumeServerlessResponse",
+      "status": "online"
     },
     "RevokeAccountPrivileges": {
       "document": "批量回收账号权限",
       "input": "RevokeAccountPrivilegesRequest",
       "name": "批量回收账号权限",
-      "output": "RevokeAccountPrivilegesResponse"
+      "output": "RevokeAccountPrivilegesResponse",
+      "status": "online"
     },
     "RollBackCluster": {
       "document": "本接口（RollBackCluster）用于回档集群",
       "input": "RollBackClusterRequest",
       "name": "回档集群",
-      "output": "RollBackClusterResponse"
+      "output": "RollBackClusterResponse",
+      "status": "online"
     },
     "SearchClusterDatabases": {
       "document": "本接口(SearchClusterDatabases)搜索集群database列表",
       "input": "SearchClusterDatabasesRequest",
       "name": "搜索集群database列表",
-      "output": "SearchClusterDatabasesResponse"
+      "output": "SearchClusterDatabasesResponse",
+      "status": "online"
     },
     "SearchClusterTables": {
       "document": "本接口(SearchClusterTables)搜索集群数据表列表",
       "input": "SearchClusterTablesRequest",
       "name": "搜索集群数据表列表",
-      "output": "SearchClusterTablesResponse"
+      "output": "SearchClusterTablesResponse",
+      "status": "online"
     },
     "SetRenewFlag": {
       "document": "SetRenewFlag设置实例的自动续费功能",
       "input": "SetRenewFlagRequest",
       "name": "设置自动续费",
-      "output": "SetRenewFlagResponse"
+      "output": "SetRenewFlagResponse",
+      "status": "online"
     },
     "SwitchClusterZone": {
       "document": "切换到从可用区",
       "input": "SwitchClusterZoneRequest",
       "name": "切换到从可用区",
-      "output": "SwitchClusterZoneResponse"
+      "output": "SwitchClusterZoneResponse",
+      "status": "online"
     },
     "SwitchProxyVpc": {
       "document": "本接口(SwitchProxyVpc)更换数据库代理vpc",
       "input": "SwitchProxyVpcRequest",
       "name": "更换数据库代理vpc",
-      "output": "SwitchProxyVpcResponse"
+      "output": "SwitchProxyVpcResponse",
+      "status": "online"
     },
     "UpgradeInstance": {
       "document": "升级实例",
       "input": "UpgradeInstanceRequest",
       "name": "升级实例",
-      "output": "UpgradeInstanceResponse"
+      "output": "UpgradeInstanceResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -8894,6 +8976,42 @@
     "ResetAccountPasswordResponse": {
       "document": "ResetAccountPassword返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartInstanceRequest": {
+      "document": "RestartInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartInstanceResponse": {
+      "document": "RestartInstance返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务id",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

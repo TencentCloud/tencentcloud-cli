@@ -4,37 +4,43 @@
       "document": "申请扮演角色",
       "input": "AssumeRoleRequest",
       "name": "申请扮演角色",
-      "output": "AssumeRoleResponse"
+      "output": "AssumeRoleResponse",
+      "status": "online"
     },
     "AssumeRoleWithSAML": {
       "document": "本接口（AssumeRoleWithSAML）用于根据 SAML 断言申请角色临时凭证。",
       "input": "AssumeRoleWithSAMLRequest",
       "name": "根据 SAML 断言申请角色临时凭证",
-      "output": "AssumeRoleWithSAMLResponse"
+      "output": "AssumeRoleWithSAMLResponse",
+      "status": "online"
     },
     "AssumeRoleWithWebIdentity": {
       "document": "申请OIDC角色临时密钥",
       "input": "AssumeRoleWithWebIdentityRequest",
       "name": "申请OIDC角色临时密钥",
-      "output": "AssumeRoleWithWebIdentityResponse"
+      "output": "AssumeRoleWithWebIdentityResponse",
+      "status": "online"
     },
     "GetCallerIdentity": {
       "document": "获取当前调用者的身份信息。\n接口支持主账号，子账号长期密钥以及AssumeRole，GetFederationToken生成的临时凭据的身份获取。",
       "input": "GetCallerIdentityRequest",
       "name": "获取当前调用者的身份信息",
-      "output": "GetCallerIdentityResponse"
+      "output": "GetCallerIdentityResponse",
+      "status": "online"
     },
     "GetFederationToken": {
       "document": "获取联合身份临时访问凭证",
       "input": "GetFederationTokenRequest",
       "name": "获取联合身份临时访问凭证",
-      "output": "GetFederationTokenResponse"
+      "output": "GetFederationTokenResponse",
+      "status": "online"
     },
     "QueryApiKey": {
       "document": "拉取API密钥列表",
       "input": "QueryApiKeyRequest",
       "name": "拉取API密钥列表",
-      "output": "QueryApiKeyResponse"
+      "output": "QueryApiKeyResponse",
+      "status": "online"
     }
   },
   "metadata": {

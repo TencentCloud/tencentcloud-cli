@@ -4,259 +4,302 @@
       "document": "停止定时任务",
       "input": "AbortCronJobsRequest",
       "name": "停止定时任务",
-      "output": "AbortCronJobsResponse"
+      "output": "AbortCronJobsResponse",
+      "status": "online"
     },
     "AbortJob": {
       "document": "停止任务",
       "input": "AbortJobRequest",
       "name": "停止任务",
-      "output": "AbortJobResponse"
+      "output": "AbortJobResponse",
+      "status": "online"
     },
     "AdjustJobSpeed": {
       "document": "调整任务的目标RPS",
       "input": "AdjustJobSpeedRequest",
       "name": "调整任务目标RPS",
-      "output": "AdjustJobSpeedResponse"
+      "output": "AdjustJobSpeedResponse",
+      "status": "online"
     },
     "CopyScenario": {
       "document": "复制场景",
       "input": "CopyScenarioRequest",
       "name": "复制场景",
-      "output": "CopyScenarioResponse"
+      "output": "CopyScenarioResponse",
+      "status": "online"
     },
     "CreateAlertChannel": {
       "document": "创建告警通知接收组",
       "input": "CreateAlertChannelRequest",
       "name": "创建告警通知接收组",
-      "output": "CreateAlertChannelResponse"
+      "output": "CreateAlertChannelResponse",
+      "status": "online"
     },
     "CreateCronJob": {
       "document": "创建定时任务",
       "input": "CreateCronJobRequest",
       "name": "创建定时任务",
-      "output": "CreateCronJobResponse"
+      "output": "CreateCronJobResponse",
+      "status": "online"
     },
     "CreateFile": {
       "document": "创建文件",
       "input": "CreateFileRequest",
       "name": "创建文件",
-      "output": "CreateFileResponse"
+      "output": "CreateFileResponse",
+      "status": "online"
     },
     "CreateProject": {
       "document": "创建项目",
       "input": "CreateProjectRequest",
       "name": "创建项目",
-      "output": "CreateProjectResponse"
+      "output": "CreateProjectResponse",
+      "status": "online"
     },
     "CreateScenario": {
       "document": "创建场景",
       "input": "CreateScenarioRequest",
       "name": "创建场景",
-      "output": "CreateScenarioResponse"
+      "output": "CreateScenarioResponse",
+      "status": "online"
     },
     "DeleteAlertChannel": {
       "document": "删除告警通知接收组",
       "input": "DeleteAlertChannelRequest",
       "name": "删除告警通知接收组",
-      "output": "DeleteAlertChannelResponse"
+      "output": "DeleteAlertChannelResponse",
+      "status": "online"
     },
     "DeleteCronJobs": {
       "document": "删除定时任务",
       "input": "DeleteCronJobsRequest",
       "name": "删除定时任务",
-      "output": "DeleteCronJobsResponse"
+      "output": "DeleteCronJobsResponse",
+      "status": "online"
     },
     "DeleteFiles": {
       "document": "删除文件",
       "input": "DeleteFilesRequest",
       "name": "删除文件",
-      "output": "DeleteFilesResponse"
+      "output": "DeleteFilesResponse",
+      "status": "online"
     },
     "DeleteJobs": {
       "document": "删除任务",
       "input": "DeleteJobsRequest",
       "name": "删除任务",
-      "output": "DeleteJobsResponse"
+      "output": "DeleteJobsResponse",
+      "status": "online"
     },
     "DeleteProjects": {
       "document": "删除项目",
       "input": "DeleteProjectsRequest",
       "name": "删除项目",
-      "output": "DeleteProjectsResponse"
+      "output": "DeleteProjectsResponse",
+      "status": "online"
     },
     "DeleteScenarios": {
       "document": "删除场景",
       "input": "DeleteScenariosRequest",
       "name": "删除场景",
-      "output": "DeleteScenariosResponse"
+      "output": "DeleteScenariosResponse",
+      "status": "online"
     },
     "DescribeAlertChannels": {
       "document": "查询告警通知接收组",
       "input": "DescribeAlertChannelsRequest",
       "name": "查询告警通知接收组",
-      "output": "DescribeAlertChannelsResponse"
+      "output": "DescribeAlertChannelsResponse",
+      "status": "online"
     },
     "DescribeAlertRecords": {
       "document": "返回告警历史项的列表",
       "input": "DescribeAlertRecordsRequest",
       "name": "查询告警历史",
-      "output": "DescribeAlertRecordsResponse"
+      "output": "DescribeAlertRecordsResponse",
+      "status": "online"
     },
     "DescribeAvailableMetrics": {
       "document": "查询系统支持的指标",
       "input": "DescribeAvailableMetricsRequest",
       "name": "查询系统支持的指标",
-      "output": "DescribeAvailableMetricsResponse"
+      "output": "DescribeAvailableMetricsResponse",
+      "status": "online"
     },
     "DescribeCheckSummary": {
       "document": "查询检查点汇总信息",
       "input": "DescribeCheckSummaryRequest",
       "name": "查询检查点汇总信息",
-      "output": "DescribeCheckSummaryResponse"
+      "output": "DescribeCheckSummaryResponse",
+      "status": "online"
     },
     "DescribeCronJobs": {
       "document": "列出定时任务，非必填数组为空就默认全选",
       "input": "DescribeCronJobsRequest",
       "name": "列出定时任务",
-      "output": "DescribeCronJobsResponse"
+      "output": "DescribeCronJobsResponse",
+      "status": "online"
     },
     "DescribeFiles": {
       "document": "查询文件列表",
       "input": "DescribeFilesRequest",
       "name": "查询文件列表",
-      "output": "DescribeFilesResponse"
+      "output": "DescribeFilesResponse",
+      "status": "online"
     },
     "DescribeJobs": {
       "document": "查询任务列表",
       "input": "DescribeJobsRequest",
       "name": "查询任务列表",
-      "output": "DescribeJobsResponse"
+      "output": "DescribeJobsResponse",
+      "status": "online"
     },
     "DescribeLabelValues": {
       "document": "查询标签内容",
       "input": "DescribeLabelValuesRequest",
       "name": "查询标签值",
-      "output": "DescribeLabelValuesResponse"
+      "output": "DescribeLabelValuesResponse",
+      "status": "online"
     },
     "DescribeMetricLabelWithValues": {
       "document": "查询指标所有的label及values值",
       "input": "DescribeMetricLabelWithValuesRequest",
       "name": "查询指标所有的label及values值",
-      "output": "DescribeMetricLabelWithValuesResponse"
+      "output": "DescribeMetricLabelWithValuesResponse",
+      "status": "online"
     },
     "DescribeNormalLogs": {
       "document": "压测过程日志日志包括引擎输出日志及用户输出日志",
       "input": "DescribeNormalLogsRequest",
       "name": "查询压测过程日志",
-      "output": "DescribeNormalLogsResponse"
+      "output": "DescribeNormalLogsResponse",
+      "status": "online"
     },
     "DescribeProjects": {
       "document": "查询项目列表",
       "input": "DescribeProjectsRequest",
       "name": "查询项目列表",
-      "output": "DescribeProjectsResponse"
+      "output": "DescribeProjectsResponse",
+      "status": "online"
     },
     "DescribeRegions": {
       "document": "查询地域列表",
       "input": "DescribeRegionsRequest",
       "name": "查询地域列表",
-      "output": "DescribeRegionsResponse"
+      "output": "DescribeRegionsResponse",
+      "status": "online"
     },
     "DescribeRequestSummary": {
       "document": "查询请求汇总信息",
       "input": "DescribeRequestSummaryRequest",
       "name": "查询请求汇总信息",
-      "output": "DescribeRequestSummaryResponse"
+      "output": "DescribeRequestSummaryResponse",
+      "status": "online"
     },
     "DescribeSampleBatchQuery": {
       "document": "批量查询指标，返回固定时间点指标内容",
       "input": "DescribeSampleBatchQueryRequest",
       "name": "批量查询指标",
-      "output": "DescribeSampleBatchQueryResponse"
+      "output": "DescribeSampleBatchQueryResponse",
+      "status": "online"
     },
     "DescribeSampleLogs": {
       "document": "查询采样日志",
       "input": "DescribeSampleLogsRequest",
       "name": "查询采样日志",
-      "output": "DescribeSampleLogsResponse"
+      "output": "DescribeSampleLogsResponse",
+      "status": "online"
     },
     "DescribeSampleMatrixBatchQuery": {
       "document": "批量查询指标矩阵",
       "input": "DescribeSampleMatrixBatchQueryRequest",
       "name": "批量查询指标矩阵",
-      "output": "DescribeSampleMatrixBatchQueryResponse"
+      "output": "DescribeSampleMatrixBatchQueryResponse",
+      "status": "online"
     },
     "DescribeSampleMatrixQuery": {
       "document": "查询指标矩阵",
       "input": "DescribeSampleMatrixQueryRequest",
       "name": "查询指标矩阵",
-      "output": "DescribeSampleMatrixQueryResponse"
+      "output": "DescribeSampleMatrixQueryResponse",
+      "status": "online"
     },
     "DescribeSampleQuery": {
       "document": "查询指标，返回固定时间点指标内容",
       "input": "DescribeSampleQueryRequest",
       "name": "查询指标",
-      "output": "DescribeSampleQueryResponse"
+      "output": "DescribeSampleQueryResponse",
+      "status": "online"
     },
     "DescribeScenarioWithJobs": {
       "document": "查询场景配置并附带已经执行的任务内容",
       "input": "DescribeScenarioWithJobsRequest",
       "name": "查询场景及对应的任务",
-      "output": "DescribeScenarioWithJobsResponse"
+      "output": "DescribeScenarioWithJobsResponse",
+      "status": "online"
     },
     "DescribeScenarios": {
       "document": "查询场景列表",
       "input": "DescribeScenariosRequest",
       "name": "查询场景列表",
-      "output": "DescribeScenariosResponse"
+      "output": "DescribeScenariosResponse",
+      "status": "online"
     },
     "GenerateTmpKey": {
       "document": "生成临时COS凭证",
       "input": "GenerateTmpKeyRequest",
       "name": "生成临时COS凭证",
-      "output": "GenerateTmpKeyResponse"
+      "output": "GenerateTmpKeyResponse",
+      "status": "online"
     },
     "RestartCronJobs": {
       "document": "重启状态为已中止的定时任务",
       "input": "RestartCronJobsRequest",
       "name": "重启定时任务",
-      "output": "RestartCronJobsResponse"
+      "output": "RestartCronJobsResponse",
+      "status": "online"
     },
     "StartJob": {
       "document": "创建并启动任务",
       "input": "StartJobRequest",
       "name": "创建并启动任务",
-      "output": "StartJobResponse"
+      "output": "StartJobResponse",
+      "status": "online"
     },
     "UpdateCronJob": {
       "document": "更新定时任务",
       "input": "UpdateCronJobRequest",
       "name": "更新定时任务",
-      "output": "UpdateCronJobResponse"
+      "output": "UpdateCronJobResponse",
+      "status": "online"
     },
     "UpdateFileScenarioRelation": {
       "document": "更新关联文件场景",
       "input": "UpdateFileScenarioRelationRequest",
       "name": "更新关联文件场景",
-      "output": "UpdateFileScenarioRelationResponse"
+      "output": "UpdateFileScenarioRelationResponse",
+      "status": "online"
     },
     "UpdateJob": {
       "document": "更新任务",
       "input": "UpdateJobRequest",
       "name": "更新任务",
-      "output": "UpdateJobResponse"
+      "output": "UpdateJobResponse",
+      "status": "online"
     },
     "UpdateProject": {
       "document": "更新项目",
       "input": "UpdateProjectRequest",
       "name": "更新项目",
-      "output": "UpdateProjectResponse"
+      "output": "UpdateProjectResponse",
+      "status": "online"
     },
     "UpdateScenario": {
       "document": "更新场景",
       "input": "UpdateScenarioRequest",
       "name": "更新场景",
-      "output": "UpdateScenarioResponse"
+      "output": "UpdateScenarioResponse",
+      "status": "online"
     }
   },
   "metadata": {

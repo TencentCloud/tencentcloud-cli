@@ -4,301 +4,351 @@
       "document": "根据给定的表信息，清除表数据。",
       "input": "ClearTablesRequest",
       "name": "清除表数据",
-      "output": "ClearTablesResponse"
+      "output": "ClearTablesResponse",
+      "status": "online"
     },
     "CompareIdlFiles": {
       "document": "选中目标表格，上传并校验改表文件，返回是否允许修改表格结构的结果。",
       "input": "CompareIdlFilesRequest",
       "name": "上传并校验改表文件",
-      "output": "CompareIdlFilesResponse"
+      "output": "CompareIdlFilesResponse",
+      "status": "online"
     },
     "CreateBackup": {
       "document": "用户创建备份任务",
       "input": "CreateBackupRequest",
       "name": "创建备份",
-      "output": "CreateBackupResponse"
+      "output": "CreateBackupResponse",
+      "status": "online"
     },
     "CreateCluster": {
       "document": "本接口用于创建TcaplusDB集群",
       "input": "CreateClusterRequest",
       "name": "创建集群",
-      "output": "CreateClusterResponse"
+      "output": "CreateClusterResponse",
+      "status": "online"
     },
     "CreateSnapshots": {
       "document": "构造表格过去时间点的快照",
       "input": "CreateSnapshotsRequest",
       "name": "创建表格快照",
-      "output": "CreateSnapshotsResponse"
+      "output": "CreateSnapshotsResponse",
+      "status": "online"
     },
     "CreateTableGroup": {
       "document": "在TcaplusDB集群下创建表格组",
       "input": "CreateTableGroupRequest",
       "name": "新建表格组",
-      "output": "CreateTableGroupResponse"
+      "output": "CreateTableGroupResponse",
+      "status": "online"
     },
     "CreateTables": {
       "document": "根据选择的IDL文件列表，批量创建表格",
       "input": "CreateTablesRequest",
       "name": "批量创建表",
-      "output": "CreateTablesResponse"
+      "output": "CreateTablesResponse",
+      "status": "online"
     },
     "DeleteCluster": {
       "document": "删除TcaplusDB集群，必须在集群所属所有资源（包括表格组，表）都已经释放的情况下才会成功。",
       "input": "DeleteClusterRequest",
       "name": "删除集群",
-      "output": "DeleteClusterResponse"
+      "output": "DeleteClusterResponse",
+      "status": "online"
     },
     "DeleteIdlFiles": {
       "document": "指定集群ID和待删除IDL文件的信息，删除目标文件，如果文件正在被表关联则删除失败。",
       "input": "DeleteIdlFilesRequest",
       "name": "删除IDL描述文件",
-      "output": "DeleteIdlFilesResponse"
+      "output": "DeleteIdlFilesResponse",
+      "status": "online"
     },
     "DeleteSnapshots": {
       "document": "删除表格的快照",
       "input": "DeleteSnapshotsRequest",
       "name": "删除表格快照",
-      "output": "DeleteSnapshotsResponse"
+      "output": "DeleteSnapshotsResponse",
+      "status": "online"
     },
     "DeleteTableDataFlow": {
       "document": "删除表格的数据订阅",
       "input": "DeleteTableDataFlowRequest",
       "name": "删除表格的数据订阅",
-      "output": "DeleteTableDataFlowResponse"
+      "output": "DeleteTableDataFlowResponse",
+      "status": "online"
     },
     "DeleteTableGroup": {
       "document": "删除表格组",
       "input": "DeleteTableGroupRequest",
       "name": "删除表格组",
-      "output": "DeleteTableGroupResponse"
+      "output": "DeleteTableGroupResponse",
+      "status": "online"
     },
     "DeleteTableIndex": {
       "document": "删除表格的分布式索引",
       "input": "DeleteTableIndexRequest",
       "name": "删除表格的分布式索引",
-      "output": "DeleteTableIndexResponse"
+      "output": "DeleteTableIndexResponse",
+      "status": "online"
     },
     "DeleteTables": {
       "document": "删除指定的表,第一次调用此接口代表将表移动至回收站，再次调用代表将此表格从回收站中彻底删除。",
       "input": "DeleteTablesRequest",
       "name": "删除表",
-      "output": "DeleteTablesResponse"
+      "output": "DeleteTablesResponse",
+      "status": "online"
     },
     "DescribeApplications": {
       "document": "获取审批管理的申请单",
       "input": "DescribeApplicationsRequest",
       "name": "获取审批管理的申请单",
-      "output": "DescribeApplicationsResponse"
+      "output": "DescribeApplicationsResponse",
+      "status": "online"
     },
     "DescribeClusterTags": {
       "document": "获取集群关联的标签列表",
       "input": "DescribeClusterTagsRequest",
       "name": "获取集群关联的标签列表",
-      "output": "DescribeClusterTagsResponse"
+      "output": "DescribeClusterTagsResponse",
+      "status": "online"
     },
     "DescribeClusters": {
       "document": "查询TcaplusDB集群列表，包含集群详细信息。",
       "input": "DescribeClustersRequest",
       "name": "查询集群信息列表",
-      "output": "DescribeClustersResponse"
+      "output": "DescribeClustersResponse",
+      "status": "online"
     },
     "DescribeIdlFileInfos": {
       "document": "查询表描述文件详情",
       "input": "DescribeIdlFileInfosRequest",
       "name": "查询表描述文件详情",
-      "output": "DescribeIdlFileInfosResponse"
+      "output": "DescribeIdlFileInfosResponse",
+      "status": "online"
     },
     "DescribeMachine": {
       "document": "查询独占集群可以申请的剩余机器",
       "input": "DescribeMachineRequest",
       "name": "查询独占集群剩余机器",
-      "output": "DescribeMachineResponse"
+      "output": "DescribeMachineResponse",
+      "status": "online"
     },
     "DescribeRegions": {
       "document": "查询TcaplusDB服务支持的地域列表",
       "input": "DescribeRegionsRequest",
       "name": "查询地域列表",
-      "output": "DescribeRegionsResponse"
+      "output": "DescribeRegionsResponse",
+      "status": "online"
     },
     "DescribeSnapshots": {
       "document": "查询快照列表",
       "input": "DescribeSnapshotsRequest",
       "name": "查询快照列表",
-      "output": "DescribeSnapshotsResponse"
+      "output": "DescribeSnapshotsResponse",
+      "status": "online"
     },
     "DescribeTableGroupTags": {
       "document": "获取表格组关联的标签列表",
       "input": "DescribeTableGroupTagsRequest",
       "name": "获取表格组关联的标签列表",
-      "output": "DescribeTableGroupTagsResponse"
+      "output": "DescribeTableGroupTagsResponse",
+      "status": "online"
     },
     "DescribeTableGroups": {
       "document": "查询表格组列表",
       "input": "DescribeTableGroupsRequest",
       "name": "查询表格组列表",
-      "output": "DescribeTableGroupsResponse"
+      "output": "DescribeTableGroupsResponse",
+      "status": "online"
     },
     "DescribeTableTags": {
       "document": "获取表格标签",
       "input": "DescribeTableTagsRequest",
       "name": "获取表格标签",
-      "output": "DescribeTableTagsResponse"
+      "output": "DescribeTableTagsResponse",
+      "status": "online"
     },
     "DescribeTables": {
       "document": "查询表详情",
       "input": "DescribeTablesRequest",
       "name": "查询表详情",
-      "output": "DescribeTablesResponse"
+      "output": "DescribeTablesResponse",
+      "status": "online"
     },
     "DescribeTablesInRecycle": {
       "document": "查询回收站中的表详情",
       "input": "DescribeTablesInRecycleRequest",
       "name": "查询回收站中的表详情",
-      "output": "DescribeTablesInRecycleResponse"
+      "output": "DescribeTablesInRecycleResponse",
+      "status": "online"
     },
     "DescribeTasks": {
       "document": "查询任务列表",
       "input": "DescribeTasksRequest",
       "name": "查询任务列表",
-      "output": "DescribeTasksResponse"
+      "output": "DescribeTasksResponse",
+      "status": "online"
     },
     "DescribeUinInWhitelist": {
       "document": "查询本用户是否在白名单中，控制是否能创建TDR类型的APP或表",
       "input": "DescribeUinInWhitelistRequest",
       "name": "查询本用户是否在白名单中",
-      "output": "DescribeUinInWhitelistResponse"
+      "output": "DescribeUinInWhitelistResponse",
+      "status": "online"
     },
     "DisableRestProxy": {
       "document": "当restful api为关闭状态时，可以通过此接口关闭restful api",
       "input": "DisableRestProxyRequest",
       "name": "关闭restful api",
-      "output": "DisableRestProxyResponse"
+      "output": "DisableRestProxyResponse",
+      "status": "online"
     },
     "EnableRestProxy": {
       "document": "当restful api为关闭状态时，可以通过此接口开启restful apu",
       "input": "EnableRestProxyRequest",
       "name": "开启restful api",
-      "output": "EnableRestProxyResponse"
+      "output": "EnableRestProxyResponse",
+      "status": "online"
     },
     "ImportSnapshots": {
       "document": "将快照数据导入到新表或当前表",
       "input": "ImportSnapshotsRequest",
       "name": "导入快照数据",
-      "output": "ImportSnapshotsResponse"
+      "output": "ImportSnapshotsResponse",
+      "status": "online"
     },
     "MergeTablesData": {
       "document": "合并指定表格",
       "input": "MergeTablesDataRequest",
       "name": "合服",
-      "output": "MergeTablesDataResponse"
+      "output": "MergeTablesDataResponse",
+      "status": "online"
     },
     "ModifyCensorship": {
       "document": "修改集群审批状态",
       "input": "ModifyCensorshipRequest",
       "name": "修改集群审批状态",
-      "output": "ModifyCensorshipResponse"
+      "output": "ModifyCensorshipResponse",
+      "status": "online"
     },
     "ModifyClusterMachine": {
       "document": "修改独占集群机器",
       "input": "ModifyClusterMachineRequest",
       "name": "修改独占集群机器",
-      "output": "ModifyClusterMachineResponse"
+      "output": "ModifyClusterMachineResponse",
+      "status": "online"
     },
     "ModifyClusterName": {
       "document": "修改指定的集群名称",
       "input": "ModifyClusterNameRequest",
       "name": "修改集群名称",
-      "output": "ModifyClusterNameResponse"
+      "output": "ModifyClusterNameResponse",
+      "status": "online"
     },
     "ModifyClusterPassword": {
       "document": "修改指定集群的密码，后台将在旧密码失效之前同时支持TcaplusDB SDK使用旧密码和新密码访问数据库。在旧密码失效之前不能提交新的密码修改请求，在旧密码失效之后不能提交修改旧密码过期时间的请求。",
       "input": "ModifyClusterPasswordRequest",
       "name": "修改集群密码",
-      "output": "ModifyClusterPasswordResponse"
+      "output": "ModifyClusterPasswordResponse",
+      "status": "online"
     },
     "ModifyClusterTags": {
       "document": "修改集群标签",
       "input": "ModifyClusterTagsRequest",
       "name": "修改集群标签",
-      "output": "ModifyClusterTagsResponse"
+      "output": "ModifyClusterTagsResponse",
+      "status": "online"
     },
     "ModifySnapshots": {
       "document": "修改表格快照的过期时间",
       "input": "ModifySnapshotsRequest",
       "name": "修改表格快照",
-      "output": "ModifySnapshotsResponse"
+      "output": "ModifySnapshotsResponse",
+      "status": "online"
     },
     "ModifyTableGroupName": {
       "document": "修改TcaplusDB表格组名称",
       "input": "ModifyTableGroupNameRequest",
       "name": "修改表格组名称",
-      "output": "ModifyTableGroupNameResponse"
+      "output": "ModifyTableGroupNameResponse",
+      "status": "online"
     },
     "ModifyTableGroupTags": {
       "document": "修改表格组标签",
       "input": "ModifyTableGroupTagsRequest",
       "name": "修改表格组标签",
-      "output": "ModifyTableGroupTagsResponse"
+      "output": "ModifyTableGroupTagsResponse",
+      "status": "online"
     },
     "ModifyTableMemos": {
       "document": "修改表备注信息",
       "input": "ModifyTableMemosRequest",
       "name": "修改表备注信息",
-      "output": "ModifyTableMemosResponse"
+      "output": "ModifyTableMemosResponse",
+      "status": "online"
     },
     "ModifyTableQuotas": {
       "document": "表格扩缩容",
       "input": "ModifyTableQuotasRequest",
       "name": "表扩缩容",
-      "output": "ModifyTableQuotasResponse"
+      "output": "ModifyTableQuotasResponse",
+      "status": "online"
     },
     "ModifyTableTags": {
       "document": "修改表格标签",
       "input": "ModifyTableTagsRequest",
       "name": "修改表格标签",
-      "output": "ModifyTableTagsResponse"
+      "output": "ModifyTableTagsResponse",
+      "status": "online"
     },
     "ModifyTables": {
       "document": "根据用户选定的表定义IDL文件，批量修改指定的表",
       "input": "ModifyTablesRequest",
       "name": "批量修改表结构",
-      "output": "ModifyTablesResponse"
+      "output": "ModifyTablesResponse",
+      "status": "online"
     },
     "RecoverRecycleTables": {
       "document": "恢复回收站中，用户自行删除的表。对欠费待释放的表无效。",
       "input": "RecoverRecycleTablesRequest",
       "name": "恢复回收站中的表",
-      "output": "RecoverRecycleTablesResponse"
+      "output": "RecoverRecycleTablesResponse",
+      "status": "online"
     },
     "RollbackTables": {
       "document": "表格数据回档",
       "input": "RollbackTablesRequest",
       "name": "表格数据回档",
-      "output": "RollbackTablesResponse"
+      "output": "RollbackTablesResponse",
+      "status": "online"
     },
     "SetTableDataFlow": {
       "document": "新增、修改表格数据订阅",
       "input": "SetTableDataFlowRequest",
       "name": "新增、修改表格数据订阅",
-      "output": "SetTableDataFlowResponse"
+      "output": "SetTableDataFlowResponse",
+      "status": "online"
     },
     "SetTableIndex": {
       "document": "设置表格分布式索引",
       "input": "SetTableIndexRequest",
       "name": "设置表格分布式索引",
-      "output": "SetTableIndexResponse"
+      "output": "SetTableIndexResponse",
+      "status": "online"
     },
     "UpdateApply": {
       "document": "更新申请单状态",
       "input": "UpdateApplyRequest",
       "name": "更新申请单状态",
-      "output": "UpdateApplyResponse"
+      "output": "UpdateApplyResponse",
+      "status": "online"
     },
     "VerifyIdlFiles": {
       "document": "上传并校验创建表格文件，返回校验合法的表格定义",
       "input": "VerifyIdlFilesRequest",
       "name": "上传并校验创建表格文件",
-      "output": "VerifyIdlFilesResponse"
+      "output": "VerifyIdlFilesResponse",
+      "status": "online"
     }
   },
   "metadata": {

@@ -4,43 +4,50 @@
       "document": "取消注册迁移任务",
       "input": "DeregisterMigrationTaskRequest",
       "name": "取消注册迁移任务",
-      "output": "DeregisterMigrationTaskResponse"
+      "output": "DeregisterMigrationTaskResponse",
+      "status": "online"
     },
     "DescribeMigrationTask": {
       "document": "获取指定迁移任务详情",
       "input": "DescribeMigrationTaskRequest",
       "name": "获取指定迁移任务详情",
-      "output": "DescribeMigrationTaskResponse"
+      "output": "DescribeMigrationTaskResponse",
+      "status": "online"
     },
     "ListMigrationProject": {
       "document": "获取迁移项目名称列表",
       "input": "ListMigrationProjectRequest",
       "name": "获取迁移项目名称列表",
-      "output": "ListMigrationProjectResponse"
+      "output": "ListMigrationProjectResponse",
+      "status": "online"
     },
     "ListMigrationTask": {
       "document": "获取迁移任务列表",
       "input": "ListMigrationTaskRequest",
       "name": "获取迁移任务列表",
-      "output": "ListMigrationTaskResponse"
+      "output": "ListMigrationTaskResponse",
+      "status": "online"
     },
     "ModifyMigrationTaskBelongToProject": {
       "document": "更改迁移任务所属项目",
       "input": "ModifyMigrationTaskBelongToProjectRequest",
       "name": "更改迁移任务所属项目",
-      "output": "ModifyMigrationTaskBelongToProjectResponse"
+      "output": "ModifyMigrationTaskBelongToProjectResponse",
+      "status": "online"
     },
     "ModifyMigrationTaskStatus": {
       "document": "更新迁移任务状态",
       "input": "ModifyMigrationTaskStatusRequest",
       "name": "更新迁移任务状态",
-      "output": "ModifyMigrationTaskStatusResponse"
+      "output": "ModifyMigrationTaskStatusResponse",
+      "status": "online"
     },
     "RegisterMigrationTask": {
       "document": "注册迁移任务",
       "input": "RegisterMigrationTaskRequest",
       "name": "注册迁移任务",
-      "output": "RegisterMigrationTaskResponse"
+      "output": "RegisterMigrationTaskResponse",
+      "status": "online"
     }
   },
   "metadata": {
