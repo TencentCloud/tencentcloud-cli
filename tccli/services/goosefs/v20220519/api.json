@@ -6,6 +6,13 @@
       "name": "创建数据流通任务",
       "output": "CreateDataRepositoryTaskResponse",
       "status": "online"
+    },
+    "DescribeDataRepositoryTaskStatus": {
+      "document": "获取数据流通任务实时状态，用作客户端控制",
+      "input": "DescribeDataRepositoryTaskStatusRequest",
+      "name": "获取数据流通任务实时状态",
+      "output": "DescribeDataRepositoryTaskStatusResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -19,8 +26,7 @@
       "document": "CreateDataRepositoryTask请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者Bucket到文件系统(COS_TO_FS)",
+          "document": "数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)",
           "example": "FS_TO_BUCKET",
           "member": "string",
           "name": "TaskType",
@@ -28,8 +34,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "bucket名",
+          "document": "COS存储桶名",
           "example": "mybucket-1250000",
           "member": "string",
           "name": "Bucket",
@@ -37,7 +42,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统ID",
           "example": "x_c60_r3c4fa1f",
           "member": "string",
@@ -46,8 +50,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置位空, 则表示全部数据",
+          "document": "对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据",
           "example": "aaa/bbb",
           "member": "string",
           "name": "TaskPath",
@@ -55,12 +58,27 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称",
           "example": "mydownload",
           "member": "string",
           "name": "TaskName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "document": "数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载",
+          "example": "MSP_AFM",
+          "member": "string",
+          "name": "RepositoryType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "文件列表下载地址，以http开头",
+          "example": "https://location.com/list.txt",
+          "member": "string",
+          "name": "TextLocation",
+          "required": false,
           "type": "string"
         }
       ],
@@ -74,8 +92,57 @@
           "example": "c1a2b3f4",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataRepositoryTaskStatusRequest": {
+      "document": "DescribeDataRepositoryTaskStatus请求参数结构体",
+      "members": [
+        {
+          "document": "task id",
+          "example": "x_task_r3c4fa1f",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "file system id",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataRepositoryTaskStatusResponse": {
+      "document": "DescribeDataRepositoryTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "任务id",
+          "example": "x_task_r3c4fa1f",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务状态 0(初始化中), 1(运行中), 2(已完成), 3(任务失败)",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
           "value_allowed_null": false
         },
         {

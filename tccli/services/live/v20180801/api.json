@@ -658,6 +658,20 @@
       "output": "DescribeStreamPushInfoListResponse",
       "status": "online"
     },
+    "DescribeTimeShiftRecordDetail": {
+      "document": "前提调用 DescribeTimeShiftStreamList 获得请求必要参数。查询指定范围内的时移流录制详情，最大支持24小时范围查询。",
+      "input": "DescribeTimeShiftRecordDetailRequest",
+      "name": "查询时移流录制详情",
+      "output": "DescribeTimeShiftRecordDetailResponse",
+      "status": "online"
+    },
+    "DescribeTimeShiftStreamList": {
+      "document": "查询某个时间范围内所有时移流列表。最大支持查询24小时内的数据。",
+      "input": "DescribeTimeShiftStreamListRequest",
+      "name": "查询时移流列表",
+      "output": "DescribeTimeShiftStreamListResponse",
+      "status": "online"
+    },
     "DescribeTopClientIpSumInfoList": {
       "document": "查询某段时间top n客户端ip汇总信息（暂支持top 1000）",
       "input": "DescribeTopClientIpSumInfoListRequest",
@@ -8229,6 +8243,178 @@
       ],
       "type": "object"
     },
+    "DescribeTimeShiftRecordDetailRequest": {
+      "document": "DescribeTimeShiftRecordDetail请求参数结构体",
+      "members": [
+        {
+          "document": "推流域名。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "推流路径。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "流名称。",
+          "example": "无",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "查询范围起始时间，Unix 时间戳。",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "查询范围终止时间，Unix 时间戳。 ",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "推流域名所属组，没有域名组或者域名组为空字符串可不填。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "转码模板ID，转码模板ID为0可不填。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TransCodeId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimeShiftRecordDetailResponse": {
+      "document": "DescribeTimeShiftRecordDetail返回参数结构体",
+      "members": [
+        {
+          "document": "时移录制会话数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimeShiftRecord",
+          "name": "RecordList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimeShiftStreamListRequest": {
+      "document": "DescribeTimeShiftStreamList请求参数结构体",
+      "members": [
+        {
+          "document": "查询范围起始时间，Unix 时间戳。",
+          "example": "1669032313",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "查询范围结束时间，Unix 时间戳。",
+          "example": "1669035913",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "流名称。",
+          "example": "无",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "推流域名。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "推流域名所属域名组。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "用户指定要返回的最大结果数，取值范围[0,100]，不指定或者指定为0时，API \n默认值为100。指定超过100时，API 强制使用100。指定值为负数时，接口返回错误。",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "指定拉取的页码，不传时默认为1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimeShiftStreamListResponse": {
+      "document": "DescribeTimeShiftStreamList返回参数结构体",
+      "members": [
+        {
+          "document": "时间段内所有的数据量。",
+          "example": "500",
+          "member": "int64",
+          "name": "TotalSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimeShiftStreamInfo",
+          "name": "StreamList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopClientIpSumInfoListRequest": {
       "document": "DescribeTopClientIpSumInfoList请求参数结构体",
       "members": [
@@ -13260,6 +13446,126 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TimeShiftRecord": {
+      "document": "时移录制段。",
+      "members": [
+        {
+          "document": "时移录制会话标识。",
+          "example": "无",
+          "member": "string",
+          "name": "Sid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "录制会话开始时间，Unix 时间戳。",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "录制会话结束时间，Unix 时间戳。",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TimeShiftStreamInfo": {
+      "document": "时移流。",
+      "members": [
+        {
+          "document": "推流域名所属组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainGroup",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "推流域名。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "推流路径。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流名称。",
+          "example": "无",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流起始时间，Unix 时间戳。",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "截止查询时流结束时间，Unix 时间戳。",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "转码模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TransCodeId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "流类型，取值0为原始流，1为水印流，2为转码流。",
+          "example": "无",
+          "member": "int64",
+          "name": "StreamType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "时移数据存储时长，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Duration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

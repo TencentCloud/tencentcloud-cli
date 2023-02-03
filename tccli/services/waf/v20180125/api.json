@@ -106,7 +106,7 @@
       "status": "online"
     },
     "DescribeDomainWhiteRules": {
-      "document": "获取域名的规则白名单\n\n",
+      "document": "获取域名的规则白名单",
       "input": "DescribeDomainWhiteRulesRequest",
       "name": "获取域名的规则白名单",
       "output": "DescribeDomainWhiteRulesResponse",
@@ -628,7 +628,7 @@
           "type": "string"
         },
         {
-          "document": "动作类型",
+          "document": "动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向",
           "example": "无",
           "member": "string",
           "name": "ActionType",
@@ -2029,7 +2029,6 @@
       "document": "DescribeDomainWhiteRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要查询的域名",
           "example": "test.qcloudwaf.com",
           "member": "string",
@@ -2038,7 +2037,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "请求的白名单匹配路径",
           "example": "/test",
           "member": "string",
@@ -2047,7 +2045,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "翻到多少页",
           "example": "0",
           "member": "uint64",
@@ -2056,7 +2053,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "每页展示的条数",
           "example": "10",
           "member": "uint64",
@@ -2065,8 +2061,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "排序方式",
+          "document": "排序方式,desc表示降序，asc表示升序",
           "example": "desc",
           "member": "string",
           "name": "Sort",
@@ -2074,7 +2069,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则ID",
           "example": "16",
           "member": "string",
@@ -2093,7 +2087,6 @@
           "example": "无",
           "member": "RuleList",
           "name": "RuleList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2102,7 +2095,6 @@
           "example": "20",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4337,7 +4329,6 @@
       "document": "ModifyWafAutoDenyRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "test.qcloudwaf.com",
           "member": "string",
@@ -4346,8 +4337,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "攻击次数阈值",
+          "document": "触发IP封禁的攻击次数阈值，范围为2~100次",
           "example": "100",
           "member": "int64",
           "name": "AttackThreshold",
@@ -4355,8 +4345,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "攻击时间阈值",
+          "document": "IP封禁统计时间，范围为1-60分钟",
           "example": "60",
           "member": "int64",
           "name": "TimeThreshold",
@@ -4364,8 +4353,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "自动封禁时间",
+          "document": "触发IP封禁后的封禁时间，范围为5~360分钟",
           "example": "120",
           "member": "int64",
           "name": "DenyTimeThreshold",
@@ -4373,7 +4361,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "自动封禁状态",
           "example": "1",
           "member": "int64",
@@ -4392,7 +4379,6 @@
           "example": "无",
           "member": "ResponseCode",
           "name": "Success",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4744,7 +4730,6 @@
       "document": "SearchAccessLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
           "member": "string",
@@ -4753,7 +4738,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
           "example": "1625395948532",
           "member": "int64",
@@ -4762,7 +4746,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
           "example": "1626000748532",
           "member": "int64",
@@ -4771,7 +4754,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询语句，语句长度最大为4096",
           "example": "\"schema: http\"",
           "member": "string",
@@ -4780,7 +4762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "单次查询返回的日志条数，最大值为100",
           "example": "100",
           "member": "int64",
@@ -4789,7 +4770,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容",
           "example": "\"Y29udGV4dC1mMTE4NWE2My1mZTBmLTQ2YTctOTQzOS0zMzFlNGU2Y2EzYTAxNjI",
           "member": "string",
@@ -4798,7 +4778,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
           "example": "\"desc\"",
           "member": "string",
@@ -4817,25 +4796,22 @@
           "example": "\"Y29udGV4dC04ZWEyOGZlNi0zOTc1LTRmMGUtYTQzNy02OWU4MWQ5NzJkODkxNj\"",
           "member": "string",
           "name": "Context",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "日志查询结果是否全部返回",
+          "document": "日志查询结果是否全部返回，其中，“true”表示结果返回，“false”表示结果为返回",
           "example": "false",
           "member": "bool",
           "name": "ListOver",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "document": "返回的是否为分析结果",
+          "document": "返回的是否为分析结果，其中，“true”表示返回分析结果，“false”表示未返回分析结果",
           "example": "false",
           "member": "bool",
           "name": "Analysis",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4844,7 +4820,6 @@
           "example": "[]",
           "member": "string",
           "name": "ColNames",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4853,7 +4828,6 @@
           "example": "[]",
           "member": "AccessLogInfo",
           "name": "Results",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4862,7 +4836,6 @@
           "example": "[]",
           "member": "AccessLogItems",
           "name": "AnalysisResults",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

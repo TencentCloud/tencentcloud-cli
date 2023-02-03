@@ -10,7 +10,8 @@ tccli goosefs CreateDataRepositoryTask --cli-unfold-argument  \
     --FileSystemId x_c60_r3c4fa1f \
     --Bucket mybucket-1250000 \
     --TaskPath aaa/bbb \
-    --TaskType FS_TO_BUCKET
+    --TaskType FS_TO_BUCKET \
+    --RepositoryType MSP_AFM
 ```
 
 Output: 

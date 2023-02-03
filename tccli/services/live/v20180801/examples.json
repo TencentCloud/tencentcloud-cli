@@ -776,6 +776,22 @@
         "title": "请求示例"
       }
     ],
+    "DescribeTimeShiftRecordDetail": [
+      {
+        "document": "查询时移流录制详情",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimeShiftRecordDetail\n<公共请求参数>\n\n{\n    \"Domain\": \"5000.live.push.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"livetest\",\n    \"StartTime\": 1668064484,\n    \"EndTime\": 1668064584,\n    \"DomainGroup\": \"\",\n    \"TransCodeId\": 330587\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"RecordList\": [\n            {\n                \"Sid\": \"xxx\",\n                \"StartTime\": 1668064484,\n                \"EndTime\": 1668064584\n            }\n        ]\n    }\n}",
+        "title": "DescribeTimeShiftRecordDetail"
+      }
+    ],
+    "DescribeTimeShiftStreamList": [
+      {
+        "document": "查询时移流列表",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimeShiftStreamList\n<公共请求参数>\n\n{\n    \"StartTime\": 1668064484,\n    \"EndTime\": 1668074484\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"TotalSize\": 100,\n        \"StreamList\": [\n            {\n                \"DomainGroup\": \"\",\n                \"Domain\": \"5000.live.push.com\",\n                \"AppName\": \"live\",\n                \"StreamName\": \"livetest\",\n                \"StartTime\": 1668064484,\n                \"EndTime\": 1668064584,\n                \"Duration\": 604800,\n                \"TransCodeId\": 330587,\n                \"StreamType\": 2\n            }\n        ]\n    }\n}",
+        "title": "DescribeTimeShiftStreamList"
+      }
+    ],
     "DescribeTopClientIpSumInfoList": [
       {
         "document": "",

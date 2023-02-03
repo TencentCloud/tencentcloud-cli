@@ -318,10 +318,10 @@
     ],
     "DescribeDatabaseACL": [
       {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeDatabaseACL\n&EnvId=test-23\n&CollectionName=testCollection\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AclTag\": \"READONLY\",\n        \"RequestId\": \"2bced453-09e4-4e87-9317-c3bc21c4ee22\"\n    }\n}",
-        "title": "示例"
+        "document": "查询数据库集合的ACL",
+        "input": "{\n  \"EnvId\": \"xx\",\n  \"CollectionName\": \"xx\",\n  \"WxAppId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AclTag\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询数据库ACL"
       }
     ],
     "DescribeDownloadFile": [
@@ -390,9 +390,9 @@
     ],
     "DescribeEnvs": [
       {
-        "document": "",
+        "document": "查询环境信息 ",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvs\n&EnvId=yourenvid-2fb346\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"EnvId\": \"yourenvid-2fb346\",\n                \"Source\": \"miniapp\",\n                \"Alias\": \"默认环境\",\n                \"Status\": \"NORMAL\",\n                \"PayMode\": \"postpaid\",\n                \"Tags\": [],\n                \"PackageName\": \"free\",\n                \"IsAutoDegrade\": true,\n                \"EnvChannel\": \"xx\",\n                \"Region\": \"xx\",\n                \"IsDefault\": true,\n                \"PackageId\": \"free\",\n                \"CreateTime\": \"2018-08-13 10:52:09\",\n                \"UpdateTime\": \"2018-08-13 10:52:40\",\n                \"LogServices\": [],\n                \"StaticStorages\": [],\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"default\",\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": \"RUNNING\"\n                    }\n                ],\n                \"CustomLogServices\": [\n                    {\n                        \"ClsTopicId\": \"xx\",\n                        \"ClsRegion\": \"xx\",\n                        \"ClsLogsetId\": \"xx\",\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Bucket\": \"yourenvid-2fb346-12532284\",\n                        \"CdnDomain\": \"yourenvid-2fb346.tcb.qcloud.la\",\n                        \"AppId\": \"xx\"\n                    }\n                ],\n                \"Functions\": [\n                    {\n                        \"Namespace\": \"yourenvid-2fb346\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"75ec26f6-b624-40f1-a3f4-e724843f483e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvList\": [],\n        \"Total\": 0,\n        \"RequestId\": \"75ec26f6-b624-40f1-a3f4-e724843f483e\"\n    }\n}",
         "title": "查询环境信息"
       }
     ],
