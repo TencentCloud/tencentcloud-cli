@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云直播CSS(live) 版本：2018-08-01
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 26 次发布
+### 第 34 次发布
 
-发布时间：2023-02-03 01:30:04
+发布时间：2023-02-06 01:30:59
 
 本次发布包含了以下内容：
 
@@ -12,62 +12,74 @@
 
 新增接口：
 
-* [DescribeTimeShiftRecordDetail](http://document.tencentcloudapi.woa.com/document/product/267/77009)
-* [DescribeTimeShiftStreamList](http://document.tencentcloudapi.woa.com/document/product/267/77008)
+* [CreateNotebookSession](http://document.tencentcloudapi.woa.com/document/product/1342/77011)
+* [DescribeNotebookSession](http://document.tencentcloudapi.woa.com/document/product/1342/77010)
 
 新增数据结构：
 
-* [TimeShiftRecord](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftRecord)
-* [TimeShiftStreamInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftStreamInfo)
-
-
-
-## 云开发低码(lowcode) 版本：2021-01-08
-
-### 第 4 次发布
-
-发布时间：2023-02-03 01:31:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDataSourceList](http://document.tencentcloudapi.woa.com/document/product/1599/75491)
-
-	* 新增入参：ChannelList
-
+* [NotebookSessionInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionInfo)
 
 
 
 ## 云开发 CloudBase(tcb) 版本：2018-06-08
 
-### 第 27 次发布
+### 第 28 次发布
 
-发布时间：2023-02-03 01:42:25
+发布时间：2023-02-06 01:57:58
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribeDatabaseACL](http://document.tencentcloudapi.woa.com/document/product/876/34821)
+* [ReportUsageData](http://document.tencentcloudapi.woa.com/document/product/876/77013)
 
-	* 新增出参：Rule
+新增数据结构：
 
-* [DescribeEnvs](http://document.tencentcloudapi.woa.com/document/product/876/34820)
+* [UsageData](http://document.tencentcloudapi.woa.com/document/product/876/34822#UsageData)
+* [UsageDataPart](http://document.tencentcloudapi.woa.com/document/product/876/34822#UsageDataPart)
 
-	* 新增出参：Total
 
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 61 次发布
+
+发布时间：2023-02-06 02:13:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [BaasPackageInfo](http://document.tencentcloudapi.woa.com/document/product/876/34822#BaasPackageInfo)
+* [VpngwCcnRoutes](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpngwCcnRoutes)
 
-	* 新增成员：Id, PackageMask, PackageType, UnitPrice
+	* 新增成员：DestinationCidrBlock
 
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 26 次发布
+
+发布时间：2023-02-06 02:17:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyAreaBanStatus](http://document.tencentcloudapi.woa.com/document/product/627/77017)
+* [SearchAttackLog](http://document.tencentcloudapi.woa.com/document/product/627/77014)
+* [SwitchDomainRules](http://document.tencentcloudapi.woa.com/document/product/627/77016)
+
+新增数据结构：
+
+* [AttackLogInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#AttackLogInfo)
 
 
 
@@ -18238,6 +18250,23 @@
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 34 次发布
+
+发布时间：2023-02-06 01:30:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateNotebookSession](http://document.tencentcloudapi.woa.com/document/product/1342/77011)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeNotebookSession](http://document.tencentcloudapi.woa.com/document/product/1342/77010)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[NotebookSessionInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionInfo)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[NotebookSessionInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionInfo))
+
 ### 第 33 次发布
 
 发布时间：2023-01-10 01:20:14
@@ -27520,13 +27549,13 @@
 
 新增接口：
 
-* [[DescribeTimeShiftRecordDetail](http://document.tencentcloudapi.woa.com/document/product/267/77009)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeTimeShiftStreamList](http://document.tencentcloudapi.woa.com/document/product/267/77008)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTimeShiftRecordDetail](http://document.tencentcloudapi.woa.com/document/product/267/77009)
+* [DescribeTimeShiftStreamList](http://document.tencentcloudapi.woa.com/document/product/267/77008)
 
 新增数据结构：
 
-* [[TimeShiftRecord](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftRecord)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[TimeShiftRecord](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftRecord))
-* [[TimeShiftStreamInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftStreamInfo)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[TimeShiftStreamInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftStreamInfo))
+* [TimeShiftRecord](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftRecord)
+* [TimeShiftStreamInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftStreamInfo)
 
 ### 第 25 次发布
 
@@ -39050,6 +39079,23 @@
 
 ## 云开发 CloudBase(tcb) 版本：2018-06-08
 
+### 第 28 次发布
+
+发布时间：2023-02-06 01:57:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ReportUsageData](http://document.tencentcloudapi.woa.com/document/product/876/77013)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[UsageData](http://document.tencentcloudapi.woa.com/document/product/876/34822#UsageData)](http://document.tencentcloudapi.woa.com/document/product/876/34822#[UsageData](http://document.tencentcloudapi.woa.com/document/product/876/34822#UsageData))
+* [[UsageDataPart](http://document.tencentcloudapi.woa.com/document/product/876/34822#UsageDataPart)](http://document.tencentcloudapi.woa.com/document/product/876/34822#[UsageDataPart](http://document.tencentcloudapi.woa.com/document/product/876/34822#UsageDataPart))
+
 ### 第 27 次发布
 
 发布时间：2023-02-03 01:42:25
@@ -48877,6 +48923,21 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 61 次发布
+
+发布时间：2023-02-06 02:13:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VpngwCcnRoutes](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpngwCcnRoutes)
+
+	* 新增成员：DestinationCidrBlock
+
+
 ### 第 60 次发布
 
 发布时间：2023-02-01 01:49:39
@@ -50805,6 +50866,24 @@
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 26 次发布
+
+发布时间：2023-02-06 02:17:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyAreaBanStatus](http://document.tencentcloudapi.woa.com/document/product/627/77017)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SearchAttackLog](http://document.tencentcloudapi.woa.com/document/product/627/77014)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SwitchDomainRules](http://document.tencentcloudapi.woa.com/document/product/627/77016)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AttackLogInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#AttackLogInfo)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[AttackLogInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#AttackLogInfo))
 
 ### 第 25 次发布
 

@@ -525,6 +525,13 @@
       "output": "ReplaceActivityRecordResponse",
       "status": "online"
     },
+    "ReportUsageData": {
+      "document": "后付费推量",
+      "input": "ReportUsageDataRequest",
+      "name": "后付费推量",
+      "output": "ReportUsageDataResponse",
+      "status": "online"
+    },
     "RollUpdateCloudBaseRunServerVersion": {
       "document": "针对特定的版本，进行滚动更新",
       "input": "RollUpdateCloudBaseRunServerVersionRequest",
@@ -10009,6 +10016,42 @@
       ],
       "type": "object"
     },
+    "ReportUsageDataRequest": {
+      "document": "ReportUsageData请求参数结构体",
+      "members": [
+        {
+          "document": "资源类型",
+          "example": "SCF/COS/FLEXDB/CDN",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "用量list",
+          "example": "无",
+          "member": "UsageData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ReportUsageDataResponse": {
+      "document": "ReportUsageData返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RollUpdateCloudBaseRunServerVersionRequest": {
       "document": "RollUpdateCloudBaseRunServerVersion请求参数结构体",
       "members": [
@@ -11069,6 +11112,168 @@
         }
       ],
       "type": "object"
+    },
+    "UsageData": {
+      "document": "后付费用量",
+      "members": [
+        {
+          "document": "uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100001",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11111",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "region\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "用量起始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "用量截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "status状态，区分补推or正常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "详细用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsageDataPart",
+          "name": "Parts",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "eks集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "eks ns\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "云托管kind\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Kind",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "云托管KindName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KindName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "云托管Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
+    "UsageDataPart": {
+      "document": "用量数值",
+      "members": [
+        {
+          "document": "用量名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Flux",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "具体用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "Value",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

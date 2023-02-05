@@ -1,3 +1,88 @@
+# Release 3.0.697.1
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 34 次发布
+
+发布时间：2023-02-06 01:30:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateNotebookSession](http://document.tencentcloudapi.woa.com/document/product/1342/77011)
+* [DescribeNotebookSession](http://document.tencentcloudapi.woa.com/document/product/1342/77010)
+
+新增数据结构：
+
+* [NotebookSessionInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionInfo)
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 28 次发布
+
+发布时间：2023-02-06 01:57:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ReportUsageData](http://document.tencentcloudapi.woa.com/document/product/876/77013)
+
+新增数据结构：
+
+* [UsageData](http://document.tencentcloudapi.woa.com/document/product/876/34822#UsageData)
+* [UsageDataPart](http://document.tencentcloudapi.woa.com/document/product/876/34822#UsageDataPart)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 61 次发布
+
+发布时间：2023-02-06 02:13:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VpngwCcnRoutes](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpngwCcnRoutes)
+
+	* 新增成员：DestinationCidrBlock
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 26 次发布
+
+发布时间：2023-02-06 02:17:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyAreaBanStatus](http://document.tencentcloudapi.woa.com/document/product/627/77017)
+* [SearchAttackLog](http://document.tencentcloudapi.woa.com/document/product/627/77014)
+* [SwitchDomainRules](http://document.tencentcloudapi.woa.com/document/product/627/77016)
+
+新增数据结构：
+
+* [AttackLogInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#AttackLogInfo)
+
+
+
 # Release 3.0.696.1
 
 ## 云直播CSS(live) 版本：2018-08-01

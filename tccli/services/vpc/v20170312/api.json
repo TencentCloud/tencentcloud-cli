@@ -55070,20 +55070,35 @@
         {
           "default": "",
           "document": "路由信息ID",
+          "example": "xxx",
           "member": "string",
           "name": "RouteId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "路由信息是否启用\nENABLE：启用该路由\nDISABLE：不启用该路由",
+          "example": "ENABLE",
           "member": "string",
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "路由CIDR",
+          "example": "10.0.0.0/16",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
