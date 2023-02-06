@@ -1740,7 +1740,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpnGatewayCcnRoutes\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-12345678\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": \"xxx-xxxxxx\",\n                \"Status\": \"ENABLE\"\n            },\n            {\n                \"RouteId\": \"xxx-xxxxxx\",\n                \"Status\": \"ENABLE\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": \"xxx-xxxxxx\",\n                \"DestinationCidrBlock\": \"10.33.0.0/24\",\n                \"Status\": \"ENABLE\"\n            },\n            {\n                \"RouteId\": \"xxx-xxxxxx\",\n                \"DestinationCidrBlock\": \"192.168.0.0/24\",\n                \"Status\": \"ENABLE\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
         "title": "查询VPN网关云联网路由"
       }
     ],

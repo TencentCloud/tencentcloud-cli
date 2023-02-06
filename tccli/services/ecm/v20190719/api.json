@@ -2200,7 +2200,6 @@
       "document": "CreateKeyPair请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。",
           "example": "xxx",
           "member": "string",
@@ -2219,7 +2218,6 @@
           "example": "无",
           "member": "KeyPair",
           "name": "KeyPair",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

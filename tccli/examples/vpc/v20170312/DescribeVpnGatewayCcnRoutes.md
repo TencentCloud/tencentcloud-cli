@@ -17,10 +17,12 @@ Output:
         "RouteSet": [
             {
                 "RouteId": "xxx-xxxxxx",
+                "DestinationCidrBlock": "10.33.0.0/24",
                 "Status": "ENABLE"
             },
             {
                 "RouteId": "xxx-xxxxxx",
+                "DestinationCidrBlock": "192.168.0.0/24",
                 "Status": "ENABLE"
             }
         ],

@@ -105,6 +105,13 @@
       "output": "CreateImportTaskResponse",
       "status": "online"
     },
+    "CreateNotebookSession": {
+      "document": "本接口（CreateNotebookSession）用于创建notebook livy session",
+      "input": "CreateNotebookSessionRequest",
+      "name": "创建notebook livy session",
+      "output": "CreateNotebookSessionResponse",
+      "status": "online"
+    },
     "CreateResultDownload": {
       "document": "创建查询结果下载任务",
       "input": "CreateResultDownloadRequest",
@@ -250,6 +257,13 @@
       "input": "DescribeDatabasesRequest",
       "name": "查询数据库列表",
       "output": "DescribeDatabasesResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSession": {
+      "document": "本接口（DescribeNotebookSession）用于获取notebook livy session详情信息",
+      "input": "DescribeNotebookSessionRequest",
+      "name": "获取notebook livy session详情信息",
+      "output": "DescribeNotebookSessionResponse",
       "status": "online"
     },
     "DescribeResultDownload": {
@@ -1716,6 +1730,160 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookSessionRequest": {
+      "document": "CreateNotebookSession请求参数结构体",
+      "members": [
+        {
+          "document": "Session名称",
+          "example": "session1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "类型，当前支持：spark、pyspark、sparkr、sql",
+          "example": "spark",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "DLC Spark作业引擎名称",
+          "example": "data_engine_1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "session文件地址，当前支持：cosn://和lakefs://两种路径",
+          "example": "[cosn://xxx]",
+          "member": "string",
+          "name": "ProgramDependentFiles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "依赖的jar程序地址，当前支持：cosn://和lakefs://两种路径",
+          "example": "[cosn://xxx]",
+          "member": "string",
+          "name": "ProgramDependentJars",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "依赖的python程序地址，当前支持：cosn://和lakefs://两种路径",
+          "example": "[cosn://xxx]",
+          "member": "string",
+          "name": "ProgramDependentPython",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "依赖的pyspark虚拟环境地址，当前支持：cosn://和lakefs://两种路径",
+          "example": "[cosn://xxx]",
+          "member": "string",
+          "name": "ProgramArchives",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
+          "example": "small",
+          "member": "string",
+          "name": "DriverSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
+          "example": "small",
+          "member": "string",
+          "name": "ExecutorSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "指定的Executor数量，默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorNumbers",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "Session相关配置，当前支持：dlc.eni、dlc.role.arn、dlc.sql.set.config以及用户指定的配置，注：roleArn必填；",
+          "example": "[\"eni\":\"test_eni\"]",
+          "member": "KVPair",
+          "name": "Arguments",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "代理用户，默认为root",
+          "example": "root",
+          "member": "string",
+          "name": "ProxyUser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "指定的Session超时时间，单位秒，默认3600秒",
+          "example": "3600",
+          "member": "int64",
+          "name": "TimeoutInSecond",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于ExecutorNumbers",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorMaxNumbers",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookSessionResponse": {
+      "document": "CreateNotebookSession返回参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Spark任务返回的AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spark-4ke6a46618d24e9c7yh2b62f0ddebdks",
+          "member": "string",
+          "name": "SparkAppId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）",
+          "example": "not_started",
+          "member": "string",
+          "name": "State",
           "type": "string",
           "value_allowed_null": false
         },
@@ -4175,6 +4343,40 @@
       ],
       "type": "object"
     },
+    "DescribeNotebookSessionRequest": {
+      "document": "DescribeNotebookSession请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionResponse": {
+      "document": "DescribeNotebookSession返回参数结构体",
+      "members": [
+        {
+          "document": "Session详情信息",
+          "example": "复杂类型",
+          "member": "NotebookSessionInfo",
+          "name": "Session",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResultDownloadRequest": {
       "document": "DescribeResultDownload请求参数结构体",
       "members": [
@@ -5625,7 +5827,6 @@
       "document": "配置格式",
       "members": [
         {
-          "default": "",
           "document": "配置的key值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5635,7 +5836,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "配置的value值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5645,7 +5845,7 @@
           "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ListTaskJobLogDetailRequest": {
       "document": "ListTaskJobLogDetail请求参数结构体",
@@ -6227,6 +6427,192 @@
         }
       ],
       "type": "object"
+    },
+    "NotebookSessionInfo": {
+      "document": "Notebook Session详细信息。",
+      "members": [
+        {
+          "document": "Session名称",
+          "example": "session1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "类型，当前支持：spark、pyspark、sparkr、sql",
+          "example": "spark",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DLC Spark作业引擎名称",
+          "example": "data_engine_1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Session相关配置，当前支持：eni、roleArn以及用户指定的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"eni\":\"test_eni\"]",
+          "member": "KVPair",
+          "name": "Arguments",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运行程序地址，当前支持：cosn://和lakefs://两种路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[cosn://xxx]",
+          "member": "string",
+          "name": "ProgramDependentFiles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "依赖的jar程序地址，当前支持：cosn://和lakefs://两种路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[cosn://xxx]",
+          "member": "string",
+          "name": "ProgramDependentJars",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "依赖的python程序地址，当前支持：cosn://和lakefs://两种路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[cosn://xxx]",
+          "member": "string",
+          "name": "ProgramDependentPython",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "依赖的pyspark虚拟环境地址，当前支持：cosn://和lakefs://两种路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[cosn://xxx]",
+          "member": "string",
+          "name": "ProgramArchives",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "small",
+          "member": "string",
+          "name": "DriverSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "small",
+          "member": "string",
+          "name": "ExecutorSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指定的Executor数量，默认为1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorNumbers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "代理用户，默认为root\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "ProxyUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指定的Session超时时间，单位秒，默认3600秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "int64",
+          "name": "TimeoutInSecond",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Spark任务返回的AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spark-4ke6a46618d24e9c7yh2b62f0ddebdks",
+          "member": "string",
+          "name": "SparkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）",
+          "example": "not_started",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Session创建时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "其它信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sparkUiUrl\":\"xxx\"]",
+          "member": "KVPair",
+          "name": "AppInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Spark ui地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "SparkUiUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于ExecutorNumbers\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorMaxNumbers",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Other": {
       "document": "数据格式其它类型。",

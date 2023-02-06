@@ -120,6 +120,14 @@
         "title": "创建数据导入任务"
       }
     ],
+    "CreateNotebookSession": [
+      {
+        "document": "创建notebook session",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotebookSession\n<公共请求参数>\n\n{\n    \"Kind\": \"spark\",\n    \"Name\": \"session1\",\n    \"ProxyUser\": \"root\",\n    \"ProgramDependentPython\": [\n        \"cosn://xxx\"\n    ],\n    \"ProgramDependentFiles\": [\n        \"cosn://xxx\"\n    ],\n    \"ExecutorSize\": \"small\",\n    \"ExecutorNumbers\": 1,\n    \"ExecutorMaxNumbers\": 1,\n    \"DataEngineName\": \"data_engine_1\",\n    \"ProgramDependentJars\": [\n        \"cosn://xxx\"\n    ],\n    \"Arguments\": [\n        {\n            \"Value\": \"eni\",\n            \"Key\": \"test_eni\"\n        }\n    ],\n    \"TimeoutInSecond\": 3600,\n    \"ProgramArchives\": [\n        \"cosn://xxx\"\n    ],\n    \"DriverSize\": \"small\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SparkAppId\": \"xx\",\n        \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n        \"State\": \"not_started\",\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "创建notebook livy session"
+      }
+    ],
     "CreateResultDownload": [
       {
         "document": "",
@@ -286,6 +294,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"DatasourceConnectionName\": \"DataLakeCatalog\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1068a137-ed80-4cbd-a7e6-1cd0341db332\",\n        \"TotalCount\": 1,\n        \"DatabaseList\": [\n            {\n                \"DatabaseName\": \"testdb\",\n                \"Comment\": \"create by nick\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"1630486408000\",\n                \"ModifiedTime\": \"1630486408000\",\n                \"UserAlias\": \"testUser\",\n                \"UserSubUin\": \"100019878767\",\n                \"Location\": \"\"\n            }\n        ]\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "DescribeNotebookSession": [
+      {
+        "document": "查询Session详情。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"DriverSize\": \"small\",\n            \"Kind\": \"spark\",\n            \"Name\": \"session1\",\n            \"SparkUiUrl\": \"xx\",\n            \"ProxyUser\": \"root\",\n            \"CreateTime\": \"2006-01-02 15:04:05\",\n            \"ProgramDependentPython\": [\n                \"cosn://xxx\"\n            ],\n            \"ProgramDependentFiles\": [\n                \"cosn://xxx\"\n            ],\n            \"ExecutorSize\": \"small\",\n            \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n            \"ExecutorNumbers\": 1,\n            \"ExecutorMaxNumbers\": 1,\n            \"DataEngineName\": \"data_engine_1\",\n            \"ProgramDependentJars\": [\n                \"cosn://xxx\"\n            ],\n            \"SparkAppId\": \"spark-4ke6a46618d24e9c7yh2b62f0ddebdks\",\n            \"TimeoutInSecond\": 3600,\n            \"AppInfo\": [\n                {\n                    \"Value\": \"\",\n                    \"Key\": \"\"\n                }\n            ],\n            \"State\": \"not_started\",\n            \"ProgramArchives\": [\n                \"cosn://xxx\"\n            ],\n            \"Arguments\": [\n                {\n                    \"Value\": \"eni\",\n                    \"Key\": \"test_eni\"\n                }\n            ]\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "DescribeNotebookSession"
       }
     ],
     "DescribeResultDownload": [

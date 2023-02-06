@@ -196,6 +196,13 @@
       "output": "ModifyAccessPeriodResponse",
       "status": "online"
     },
+    "ModifyAreaBanStatus": {
+      "document": "修改防护域名的地域封禁状态",
+      "input": "ModifyAreaBanStatusRequest",
+      "name": "修改地域封禁状态",
+      "output": "ModifyAreaBanStatusResponse",
+      "status": "online"
+    },
     "ModifyCustomRuleStatus": {
       "document": "开启或禁用访问控制（自定义策略）",
       "input": "ModifyCustomRuleStatusRequest",
@@ -243,6 +250,20 @@
       "input": "SearchAccessLogRequest",
       "name": "搜索访问日志",
       "output": "SearchAccessLogResponse",
+      "status": "online"
+    },
+    "SearchAttackLog": {
+      "document": "新版本CLS接口存在参数变化，query改成了query_string支持lucence语法接口搜索查询。",
+      "input": "SearchAttackLogRequest",
+      "name": "搜索CLS新版本攻击日志",
+      "output": "SearchAttackLogResponse",
+      "status": "online"
+    },
+    "SwitchDomainRules": {
+      "document": "切换域名的规则开关",
+      "input": "SwitchDomainRulesRequest",
+      "name": "切换域名的规则开关",
+      "output": "SwitchDomainRulesResponse",
       "status": "online"
     },
     "UpsertIpAccessControl": {
@@ -1050,6 +1071,48 @@
         }
       ],
       "type": "object"
+    },
+    "AttackLogInfo": {
+      "document": "攻击日志详情",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击日志的详情内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CLS返回内容",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CLS返回内容",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CLS返回内容",
+          "member": "datetime",
+          "name": "TimeStamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AutoDenyDetail": {
       "document": "Waf 攻击自动封禁详情",
@@ -4201,6 +4264,40 @@
       ],
       "type": "object"
     },
+    "ModifyAreaBanStatusRequest": {
+      "document": "ModifyAreaBanStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "修要修改的域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态值，0表示关闭，1表示开启",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAreaBanStatusResponse": {
+      "document": "ModifyAreaBanStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCustomRuleStatusRequest": {
       "document": "ModifyCustomRuleStatus请求参数结构体",
       "members": [
@@ -4848,6 +4945,115 @@
       ],
       "type": "object"
     },
+    "SearchAttackLogRequest": {
+      "document": "SearchAttackLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的域名，所有域名使用all",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的游标。第一次请求使用空字符串即可，后续请求使用上一次请求返回的最后一条记录的context的值即可。",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Lucene语法",
+          "member": "string",
+          "name": "QueryString",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的数量，默认10条，最多100条",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认为desc，可以取值desc和asc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchAttackLogResponse": {
+      "document": "SearchAttackLog返回参数结构体",
+      "members": [
+        {
+          "document": "当前返回的攻击日志条数",
+          "member": "uint64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "翻页游标，如果没有下一页了，这个参数为空\"\"",
+          "member": "string",
+          "name": "Context",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "攻击日志数组条目内容",
+          "member": "AttackLogInfo",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CLS接口返回内容",
+          "member": "bool",
+          "name": "ListOver",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CLS接口返回内容，标志是否启动新版本索引",
+          "member": "bool",
+          "name": "SqlFlag",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Strategy": {
       "document": "自定义规则的匹配条件结构体",
       "members": [
@@ -4889,6 +5095,60 @@
         }
       ],
       "usage": "in"
+    },
+    "SwitchDomainRulesRequest": {
+      "document": "SwitchDomainRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则列表",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "开关状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设置为观察模式原因",
+          "example": "0",
+          "member": "uint64",
+          "name": "Reason",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDomainRulesResponse": {
+      "document": "SwitchDomainRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpsertIpAccessControlRequest": {
       "document": "UpsertIpAccessControl请求参数结构体",

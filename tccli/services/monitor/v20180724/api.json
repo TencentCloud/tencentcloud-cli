@@ -15267,7 +15267,6 @@
       "document": "Prometheus用量信息",
       "members": [
         {
-          "default": "",
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "prom-xxxx",
           "member": "string",
@@ -15277,7 +15276,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "计费周期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20210101",
           "member": "string",
@@ -15287,7 +15285,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "总用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1",
           "member": "float",
@@ -15297,7 +15294,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "基础指标用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1",
           "member": "float",
@@ -15307,7 +15303,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "付费指标用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1",
           "member": "float",
@@ -16432,8 +16427,8 @@
       "document": "PrometheusZoneItem 响应结构体内的地域信息",
       "members": [
         {
-          "default": "",
           "document": "可用区",
+          "example": "无",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -16441,8 +16436,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区 ID",
+          "example": "无",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
@@ -16450,8 +16445,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区状态( 0: 不可用；1: 可用)",
+          "example": "无",
           "member": "int64",
           "name": "ZoneState",
           "required": true,
@@ -16459,8 +16454,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地域 ID",
+          "example": "无",
           "member": "int64",
           "name": "RegionId",
           "required": true,
@@ -16468,8 +16463,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区名（目前为中文）",
+          "example": "无",
           "member": "string",
           "name": "ZoneName",
           "required": true,

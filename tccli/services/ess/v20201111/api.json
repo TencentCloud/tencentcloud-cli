@@ -161,6 +161,20 @@
       "output": "DescribeIntegrationEmployeesResponse",
       "status": "online"
     },
+    "DescribeIntegrationMainOrganizationUser": {
+      "document": "通过子企业影子账号查询主企业员工账号",
+      "input": "DescribeIntegrationMainOrganizationUserRequest",
+      "name": "查询集成版主企业员工账号",
+      "output": "DescribeIntegrationMainOrganizationUserResponse",
+      "status": "online"
+    },
+    "DescribeOrganizationGroupOrganizations": {
+      "document": "此API接口用户查询加入集团的成员企业",
+      "input": "DescribeOrganizationGroupOrganizationsRequest",
+      "name": "查询集团企业列表",
+      "output": "DescribeOrganizationGroupOrganizationsResponse",
+      "status": "online"
+    },
     "DescribeOrganizationSeals": {
       "document": "查询企业印章的列表，需要操作者具有查询印章权限\n客户指定需要获取的印章数量和偏移量，数量最多100，超过100按100处理；入参InfoType控制印章是否携带授权人信息，为1则携带，为0则返回的授权人信息为空数组。接口调用成功返回印章的信息列表还有企业印章的总数。",
       "input": "DescribeOrganizationSealsRequest",
@@ -211,6 +225,30 @@
     "serviceShortName": "ess"
   },
   "objects": {
+    "Admin": {
+      "document": "企业超管信息",
+      "members": [
+        {
+          "document": "超管名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "超管手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Agent": {
       "document": "应用相关信息",
       "members": [],
@@ -1448,7 +1486,7 @@
         },
         {
           "default": "",
-          "document": "需要执行撤回的签署流程id数组，最多100个",
+          "document": "需要执行催办的签署流程id数组，最多100个",
           "example": "无",
           "member": "string",
           "name": "FlowIds",
@@ -2515,7 +2553,6 @@
       "document": "DescribeFlowInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要查询的流程ID列表，限制最大100个",
           "example": "无",
           "member": "string",
@@ -2524,11 +2561,18 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "调用方用户信息",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "应用信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
           "required": false,
           "type": "object"
         }
@@ -2543,7 +2587,6 @@
           "example": "无",
           "member": "FlowDetailInfo",
           "name": "FlowDetailInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2762,6 +2805,154 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntegrationMainOrganizationUserRequest": {
+      "document": "DescribeIntegrationMainOrganizationUser请求参数结构体",
+      "members": [
+        {
+          "document": "操作人信息，userId必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntegrationMainOrganizationUserResponse": {
+      "document": "DescribeIntegrationMainOrganizationUser返回参数结构体",
+      "members": [
+        {
+          "document": "主企业员工账号信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntegrationMainOrganizationUser",
+          "name": "IntegrationMainOrganizationUser",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationGroupOrganizationsRequest": {
+      "document": "DescribeOrganizationGroupOrganizations请求参数结构体",
+      "members": [
+        {
+          "document": "操作人信息，userId必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "单次查询成员企业最大返回数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "页面偏移量",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "查询成员企业的企业名，模糊匹配",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "是否到处当前成员企业数据",
+          "example": "无",
+          "member": "bool",
+          "name": "Export",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "成员企业id",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationGroupOrganizationsResponse": {
+      "document": "DescribeOrganizationGroupOrganizations返回参数结构体",
+      "members": [
+        {
+          "document": "查询到的符合条件的成员企业总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已授权待激活的企业数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "JoinedTotal",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已加入的企业数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ActivedTotal",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "导出文件的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExportUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "成员企业信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GroupOrganization",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3734,6 +3925,153 @@
         }
       ],
       "type": "object"
+    },
+    "GroupOrganization": {
+      "document": "成员企业信息",
+      "members": [
+        {
+          "document": "成员企业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "成员企业别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "成员企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "成员企业状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否为集团主企业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsMainOrganization",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "企业社会信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "企业超管信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Admin",
+          "name": "AdminInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "企业许可证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "License",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "企业许可证过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "LicenseExpireTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "成员企业加入集团时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "JoinTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否可以使用审批流引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "FlowEngineEnable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "IntegrationMainOrganizationUser": {
+      "document": "主企业员工账号信息",
+      "members": [
+        {
+          "document": "主企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MainOrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "主企业员工UserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MainUserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "主企业员工名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OccupiedSeal": {
       "document": "持有的电子印章信息",
