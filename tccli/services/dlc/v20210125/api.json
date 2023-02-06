@@ -413,6 +413,13 @@
       "output": "LockMetaDataResponse",
       "status": "online"
     },
+    "ModifyGovernEventRule": {
+      "document": "修改数据治理事件阈值",
+      "input": "ModifyGovernEventRuleRequest",
+      "name": "修改数据治理事件阈值",
+      "output": "ModifyGovernEventRuleResponse",
+      "status": "online"
+    },
     "ModifySparkApp": {
       "document": "更新spark应用",
       "input": "ModifySparkAppRequest",
@@ -2113,7 +2120,6 @@
       "document": "CreateSparkApp请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "spark应用名",
           "example": "app-test",
           "member": "string",
@@ -2123,7 +2129,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "1代表spark jar应用，2代表spark streaming应用",
           "example": "1,2",
           "member": "int64",
@@ -2133,7 +2138,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "执行spark作业的数据引擎",
           "example": "spark-engine",
           "member": "string",
@@ -2143,7 +2147,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark应用的执行入口",
           "example": "test.jar",
           "member": "string",
@@ -2153,7 +2156,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "执行spark作业的角色ID",
           "example": "12",
           "member": "int64",
@@ -2163,7 +2165,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业driver资源规格大小, 可取small,medium,large,xlarge",
           "example": "small",
           "member": "string",
@@ -2173,7 +2174,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业executor资源规格大小, 可取small,medium,large,xlarge",
           "example": "small",
           "member": "string",
@@ -2183,7 +2183,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业executor个数",
           "example": "1",
           "member": "int64",
@@ -2193,7 +2192,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该字段已下线，请使用字段Datasource",
           "example": "kafka-datasource",
           "member": "string",
@@ -2203,7 +2201,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否本地上传，可去cos,lakefs",
           "example": "cos",
           "member": "string",
@@ -2213,7 +2210,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark jar作业时的主类",
           "example": "org.test.WordCount",
           "member": "string",
@@ -2223,7 +2219,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark配置，以换行符分隔",
           "example": "spark.default.parallelism=2000",
           "member": "string",
@@ -2233,7 +2228,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否本地上传，包含cos,lakefs",
           "example": "cos",
           "member": "string",
@@ -2243,7 +2237,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark jar作业依赖jars，以逗号分隔",
           "example": "com.test.jar",
           "member": "string",
@@ -2253,7 +2246,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否本地上传，包含cos,lakefs",
           "example": "cos",
           "member": "string",
@@ -2263,7 +2255,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业依赖资源，以逗号分隔",
           "example": "spark-default.properties",
           "member": "string",
@@ -2273,7 +2264,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业命令行参数",
           "example": "10",
           "member": "string",
@@ -2283,7 +2273,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "只对spark流任务生效",
           "example": "1",
           "member": "int64",
@@ -2293,7 +2282,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源名",
           "example": "kafka-datasource",
           "member": "string",
@@ -2303,7 +2291,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
@@ -2313,7 +2300,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔",
           "example": "test.py",
           "member": "string",
@@ -2323,7 +2309,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
@@ -2333,13 +2318,39 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "archives：依赖资源",
           "example": "file1.tar.gz#abc",
           "member": "string",
           "name": "AppArchives",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "Spark Image 版本",
+          "example": "1.0",
+          "member": "string",
+          "name": "SparkImage",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "Spark Image 版本名称",
+          "example": "spark:3.2.1-java ",
+          "member": "string",
+          "name": "SparkImageVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于AppExecutorNums",
+          "example": "1",
+          "member": "int64",
+          "name": "AppExecutorMaxNumbers",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -2348,6 +2359,15 @@
     "CreateSparkAppResponse": {
       "document": "CreateSparkApp返回参数结构体",
       "members": [
+        {
+          "document": "App唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "04529f7b-2e3a-70d7-72b4-a0d288ba300c",
+          "member": "string",
+          "name": "SparkAppId",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2619,7 +2639,8 @@
           "member": "string",
           "name": "DatabaseName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2628,7 +2649,8 @@
           "member": "TasksInfo",
           "name": "Tasks",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2637,7 +2659,8 @@
           "member": "string",
           "name": "DatasourceConnectionName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2646,7 +2669,8 @@
           "member": "string",
           "name": "DataEngineName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2661,7 +2685,8 @@
           "name": "BatchId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "任务Id集合，按照执行顺序排列",
@@ -2670,7 +2695,8 @@
           "name": "TaskIdSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5423,7 +5449,6 @@
       "document": "DescribeSparkAppJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "spark作业Id，与JobName同时存在时，JobName无效",
           "example": "batch_133e005d-6486-4517-8ea7-b6b97b183a6b",
           "member": "string",
@@ -5433,7 +5458,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业名",
           "example": "spark_app",
           "member": "string",
@@ -5453,7 +5477,6 @@
           "example": "无",
           "member": "SparkJobInfo",
           "name": "Job",
-          "required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -5463,7 +5486,6 @@
           "example": "true",
           "member": "bool",
           "name": "IsExists",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -5481,7 +5503,6 @@
       "document": "DescribeSparkAppJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回结果按照该字段排序",
           "example": "create-time",
           "member": "string",
@@ -5491,7 +5512,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "正序或者倒序，例如：desc",
           "example": "desc",
           "member": "string",
@@ -5501,7 +5521,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "按照该参数过滤,支持spark-job-name",
           "example": "无",
           "member": "Filter",
@@ -5511,7 +5530,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "更新时间起始点",
           "example": "2022-01-01 00:00:00",
           "member": "string",
@@ -5521,7 +5539,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "更新时间截止点",
           "example": "2022-01-02 00:00:00",
           "member": "string",
@@ -5531,7 +5548,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "查询列表偏移量",
           "example": "0",
           "member": "int64",
@@ -5541,7 +5557,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "查询列表限制数量",
           "example": "10",
           "member": "int64",
@@ -5561,7 +5576,6 @@
           "example": "无",
           "member": "SparkJobInfo",
           "name": "SparkAppJobs",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5571,7 +5585,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -7195,11 +7208,48 @@
       "members": [],
       "usage": "both"
     },
+    "ModifyGovernEventRuleRequest": {
+      "document": "ModifyGovernEventRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据治理事件阈值名称",
+          "example": "DataLakeCatalog.test_db",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "数据治理事件阈值",
+          "example": "无",
+          "member": "RuleThreshold",
+          "name": "Rule",
+          "required": true,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGovernEventRuleResponse": {
+      "document": "ModifyGovernEventRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySparkAppRequest": {
       "document": "ModifySparkApp请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "spark应用名",
           "example": "app-test",
           "member": "string",
@@ -7209,7 +7259,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "1代表spark jar应用，2代表spark streaming应用",
           "example": "1,2",
           "member": "int64",
@@ -7219,7 +7268,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "执行spark作业的数据引擎",
           "example": "spark-engine",
           "member": "string",
@@ -7229,7 +7277,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark应用的执行入口",
           "example": "test.jar",
           "member": "string",
@@ -7239,7 +7286,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "执行spark作业的角色ID",
           "example": "12",
           "member": "int64",
@@ -7249,7 +7295,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业driver资源规格大小, 可取small,medium,large,xlarge",
           "example": "small",
           "member": "string",
@@ -7259,7 +7304,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业executor资源规格大小, 可取small,medium,large,xlarge",
           "example": "small",
           "member": "string",
@@ -7269,7 +7313,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业executor个数",
           "example": "1",
           "member": "int64",
@@ -7279,7 +7322,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark应用Id",
           "example": "batch_ssta",
           "member": "string",
@@ -7289,7 +7331,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该字段已下线，请使用字段Datasource",
           "example": "kafka-datasource",
           "member": "string",
@@ -7299,7 +7340,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否本地上传，可取cos,lakefs",
           "example": "cos",
           "member": "string",
@@ -7309,7 +7349,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark jar作业时的主类",
           "example": "org.test.WordCount",
           "member": "string",
@@ -7319,7 +7358,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark配置，以换行符分隔",
           "example": "spark.default.parallelism=2000",
           "member": "string",
@@ -7329,7 +7367,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
@@ -7339,7 +7376,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark jar作业依赖jars，以逗号分隔",
           "example": "com.test.jar",
           "member": "string",
@@ -7349,7 +7385,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
@@ -7359,7 +7394,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业依赖资源，以逗号分隔",
           "example": "spark-default.properties",
           "member": "string",
@@ -7369,7 +7403,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
@@ -7379,7 +7412,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔",
           "example": "test.py",
           "member": "string",
@@ -7389,7 +7421,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业命令行参数",
           "example": "10",
           "member": "string",
@@ -7399,7 +7430,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "只对spark流任务生效",
           "example": "1",
           "member": "int64",
@@ -7409,7 +7439,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源名",
           "example": "kafka-datasource",
           "member": "string",
@@ -7419,7 +7448,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
@@ -7429,13 +7457,39 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "archives：依赖资源",
           "example": "file1.tar.gz#abc",
           "member": "string",
           "name": "AppArchives",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "Spark Image 版本",
+          "example": "1.0",
+          "member": "string",
+          "name": "SparkImage",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "Spark Image 版本名称",
+          "example": "spark:3.2.1-java ",
+          "member": "string",
+          "name": "SparkImageVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于AppExecutorNums",
+          "example": "1",
+          "member": "int64",
+          "name": "AppExecutorMaxNumbers",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -8336,6 +8390,56 @@
       ],
       "usage": "both"
     },
+    "RuleThreshold": {
+      "document": "数据治理事件规则阈值定义",
+      "members": [
+        {
+          "default": "",
+          "document": "增加的文件数量阈值, 超过值将触发小文件合并",
+          "example": "1000",
+          "member": "int64",
+          "name": "AddDataFiles",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "增加的Equality delete数量阈值, 超过值将触发小文件合并",
+          "example": "100",
+          "member": "int64",
+          "name": "AddEqualityDeletes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "增加的Position delete数量阈值, 超过值将触发小文件合并",
+          "example": "200",
+          "member": "int64",
+          "name": "AddPositionDeletes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "增加的delete file数量阈值，过期快照的AddDataFiles + AddDeleteFiles的总和大于阈值AddDataFiles + AddDeleteFiles将从该快照处删除快照",
+          "example": "1000",
+          "member": "int64",
+          "name": "AddDeleteFiles",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
     "SQLTask": {
       "document": " SQL查询任务",
       "members": [
@@ -8429,10 +8533,9 @@
       "usage": "out"
     },
     "SparkJobInfo": {
-      "document": "spark作业详情",
+      "document": "spark作业详情。",
       "members": [
         {
-          "default": "",
           "document": "spark作业ID",
           "example": "4a7cad6bb86211ec9c616e6f30623d72",
           "member": "string",
@@ -8443,7 +8546,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业名",
           "example": "test-app",
           "member": "string",
@@ -8454,7 +8556,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业",
           "example": "1",
           "member": "int64",
@@ -8465,7 +8566,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "引擎名",
           "example": "spark-engine",
           "member": "string",
@@ -8476,7 +8576,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该字段已下线，请使用字段Datasource",
           "example": "kafka",
           "member": "string",
@@ -8487,7 +8586,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "程序包是否本地上传，cos或者lakefs",
           "example": "cos",
           "member": "string",
@@ -8498,7 +8596,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "程序包路径",
           "example": "cosn://bucket/example.jar",
           "member": "string",
@@ -8509,7 +8606,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "角色ID",
           "example": "1",
           "member": "int64",
@@ -8520,7 +8616,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业运行主类",
           "example": "org.tencent.Example",
           "member": "string",
@@ -8531,7 +8626,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "命令行参数，spark作业命令行参数，空格分隔",
           "example": "1 2",
           "member": "string",
@@ -8542,7 +8636,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark原生配置，换行符分隔",
           "example": "spark.network.timeout=120s",
           "member": "string",
@@ -8553,7 +8646,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "依赖jars是否本地上传，cos或者lakefs",
           "example": "cos",
           "member": "string",
@@ -8564,7 +8656,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业依赖jars，逗号分隔",
           "example": "example.jar",
           "member": "string",
@@ -8575,7 +8666,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "依赖文件是否本地上传，cos或者lakefs",
           "example": "cos",
           "member": "string",
@@ -8586,7 +8676,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业依赖文件，逗号分隔",
           "example": "cos",
           "member": "string",
@@ -8597,7 +8686,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业driver资源大小",
           "example": "small",
           "member": "string",
@@ -8608,7 +8696,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业executor资源大小",
           "example": "small",
           "member": "string",
@@ -8619,7 +8706,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业executor个数",
           "example": "1",
           "member": "int64",
@@ -8630,7 +8716,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark流任务最大重试次数",
           "example": "3",
           "member": "int64",
@@ -8641,7 +8726,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业创建者",
           "example": "test",
           "member": "string",
@@ -8652,7 +8736,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业创建时间",
           "example": "1",
           "member": "int64",
@@ -8663,7 +8746,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业更新时间",
           "example": "1",
           "member": "uint64",
@@ -8674,7 +8756,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业最近任务ID",
           "example": "4a7cad6bb86211ec9c616e6f30623d72",
           "member": "string",
@@ -8685,7 +8766,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark作业最近运行状态",
           "example": "0",
           "member": "int64",
@@ -8696,7 +8776,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "spark流作业统计\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StreamingStatistics",
@@ -8707,7 +8786,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kafka-datasource",
           "member": "string",
@@ -8718,7 +8796,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cos",
           "member": "string",
@@ -8729,7 +8806,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "注：该返回值已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.py",
           "member": "string",
@@ -8740,7 +8816,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cos",
           "member": "string",
@@ -8751,7 +8826,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "archives：依赖资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "file1.tar.gz#abc",
           "member": "string",
@@ -8762,7 +8836,16 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "document": "Spark Image 版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "string",
+          "name": "SparkImage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.py",
           "member": "string",
@@ -8773,7 +8856,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "当前job正在运行或准备运行的任务个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
@@ -8784,12 +8866,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DataEngineStatus",
           "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JobExecutorMaxNumbers",
+          "required": false,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1

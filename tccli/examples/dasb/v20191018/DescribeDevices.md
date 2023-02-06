@@ -25,6 +25,7 @@ Output:
                             "Id": "xx",
                             "Name": "xx"
                         },
+                        "Count": 1,
                         "Id": 1,
                         "Name": "xx"
                     }
@@ -113,7 +114,8 @@ Output:
                 "GroupSet": [
                     {
                         "Id": 1,
-                        "Name": "xx"
+                        "Name": "xx",
+                        "Count": 0
                     }
                 ],
                 "Resource": {

@@ -1081,7 +1081,6 @@
       "document": "CreateEnvironment请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境名称",
           "example": "namespace-a",
           "member": "string",
@@ -1091,27 +1090,6 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "私有网络名称",
-          "example": "vpc-1n5javez",
-          "member": "string",
-          "name": "Vpc",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "子网列表",
-          "example": "{",
-          "member": "string",
-          "name": "SubnetIds",
-          "required": true,
-          "type": "list",
-          "visibility": 1
-        },
-        {
-          "default": "",
           "document": "环境描述",
           "example": "命名空间名",
           "member": "string",
@@ -1121,7 +1099,24 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "document": "私有网络名称",
+          "example": "vpc-1n5javez",
+          "member": "string",
+          "name": "Vpc",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "子网列表",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
           "document": "K8s version",
           "example": "1.16.9",
           "member": "string",
@@ -1131,7 +1126,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -1141,7 +1135,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启tsw服务",
           "example": "true",
           "member": "bool",
@@ -1151,7 +1144,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签",
           "example": "1",
           "member": "Tag",
@@ -1161,7 +1153,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "环境类型：test、pre、prod",
           "example": "test",
           "member": "string",
@@ -1171,11 +1162,46 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建环境的region",
           "example": "ap-shanghai",
           "member": "string",
           "name": "CreateRegion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "是否创建私有网络",
+          "example": "false",
+          "member": "bool",
+          "name": "SetupVpc",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "是否创建 Prometheus 实例",
+          "example": "false",
+          "member": "bool",
+          "name": "SetupPrometheus",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "prometheus 实例 id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "PrometheusId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "apm id",
+          "example": "apm-xxx",
+          "member": "string",
+          "name": "ApmId",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -1191,7 +1217,6 @@
           "example": "namespace-36pm4p8r",
           "member": "string",
           "name": "Result",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1347,7 +1372,6 @@
       "document": "CreateResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境 Id",
           "example": "env-xxx",
           "member": "string",
@@ -1357,7 +1381,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE",
           "example": "CLS",
           "member": "string",
@@ -1367,17 +1390,15 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源 Id",
           "example": "cls-xxx",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "required": false,
           "type": "string",
           "visibility": 1
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -1387,7 +1408,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源来源，目前支持：existing，已有资源；creating，自动创建",
           "example": "existing",
           "member": "string",
@@ -1397,7 +1417,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "设置 resource 的额外配置",
           "example": "{}",
           "member": "string",
@@ -1417,7 +1436,6 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1

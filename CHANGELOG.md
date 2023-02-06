@@ -1,3 +1,197 @@
+# Release 3.0.698.1
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 30 次发布
+
+发布时间：2023-02-07 01:19:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeFlow](http://document.tencentcloudapi.woa.com/document/product/1003/77018)
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 5 次发布
+
+发布时间：2023-02-07 01:20:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDevices](http://document.tencentcloudapi.woa.com/document/product/1492/74779)
+
+	* 新增入参：Filters
+
+
+新增数据结构：
+
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Filter)
+
+修改数据结构：
+
+* [Group](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Group)
+
+	* 新增成员：Count
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 35 次发布
+
+发布时间：2023-02-07 01:22:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyGovernEventRule](http://document.tencentcloudapi.woa.com/document/product/1342/77019)
+
+修改接口：
+
+* [CreateSparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74538)
+
+	* 新增入参：SparkImage, SparkImageVersion, AppExecutorMaxNumbers
+
+	* 新增出参：SparkAppId
+
+* [ModifySparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74532)
+
+	* 新增入参：SparkImage, SparkImageVersion, AppExecutorMaxNumbers
+
+
+新增数据结构：
+
+* [RuleThreshold](http://document.tencentcloudapi.woa.com/document/product/1342/53778#RuleThreshold)
+
+修改数据结构：
+
+* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
+
+	* 新增成员：SparkImage, JobExecutorMaxNumbers
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 6 次发布
+
+发布时间：2023-02-07 01:31:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TransferCloudStorage](http://document.tencentcloudapi.woa.com/document/product/1131/75362)
+
+	* 新增入参：ToProductId
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 27 次发布
+
+发布时间：2023-02-07 01:33:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateLiveTimeShiftRule](http://document.tencentcloudapi.woa.com/document/product/267/77026)
+* [CreateLiveTimeShiftTemplate](http://document.tencentcloudapi.woa.com/document/product/267/77025)
+* [DeleteLiveTimeShiftRule](http://document.tencentcloudapi.woa.com/document/product/267/77024)
+* [DeleteLiveTimeShiftTemplate](http://document.tencentcloudapi.woa.com/document/product/267/77023)
+* [DescribeLiveTimeShiftRules](http://document.tencentcloudapi.woa.com/document/product/267/77022)
+* [DescribeLiveTimeShiftTemplates](http://document.tencentcloudapi.woa.com/document/product/267/77021)
+* [ModifyLiveTimeShiftTemplate](http://document.tencentcloudapi.woa.com/document/product/267/77020)
+
+新增数据结构：
+
+* [TimeShiftTemplate](http://document.tencentcloudapi.woa.com/document/product/267/20474#TimeShiftTemplate)
+
+
+
+## 弹性微服务 TEM(tem) 版本：2021-07-01
+
+### 第 29 次发布
+
+发布时间：2023-02-07 01:51:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1371/60150)
+
+	* 新增入参：SetupVpc, SetupPrometheus, PrometheusId, ApmId
+
+	* <font color="#dd0000">**修改入参**：</font>Vpc, SubnetIds
+
+* [CreateResource](http://document.tencentcloudapi.woa.com/document/product/1371/60146)
+
+	* <font color="#dd0000">**修改入参**：</font>ResourceId
+
+
+
+
+## 弹性微服务 TEM(tem) 版本：2020-12-21
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 47 次发布
+
+发布时间：2023-02-07 01:57:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateRoundPlay](http://document.tencentcloudapi.woa.com/document/product/266/77031)
+* [DeleteRoundPlay](http://document.tencentcloudapi.woa.com/document/product/266/77030)
+* [DescribeRoundPlays](http://document.tencentcloudapi.woa.com/document/product/266/77029)
+* [ModifyRoundPlay](http://document.tencentcloudapi.woa.com/document/product/266/77028)
+
+新增数据结构：
+
+* [RoundPlayInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RoundPlayInfo)
+* [RoundPlayListItemInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RoundPlayListItemInfo)
+
+
+
 # Release 3.0.697.1
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
