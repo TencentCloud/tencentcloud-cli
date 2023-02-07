@@ -1,3 +1,213 @@
+# Release 3.0.699.1
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 47 次发布
+
+发布时间：2023-02-08 01:12:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SendMessageByTopic](http://document.tencentcloudapi.woa.com/document/product/597/77032)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 29 次发布
+
+发布时间：2023-02-08 01:13:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RuleTargets](http://document.tencentcloudapi.woa.com/document/product/214/30694#RuleTargets)
+
+	* 新增成员：FunctionTargets
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 36 次发布
+
+发布时间：2023-02-08 01:22:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateInternalTable](http://document.tencentcloudapi.woa.com/document/product/1342/77033)
+
+新增数据结构：
+
+* [TColumn](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TColumn)
+* [TPartition](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TPartition)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 39 次发布
+
+发布时间：2023-02-08 01:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreateSealPolicy](http://document.tencentcloudapi.woa.com/document/product/1595/77035)
+* [ChannelDeleteSealPolicies](http://document.tencentcloudapi.woa.com/document/product/1595/77034)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 地域管理系统(region) 版本：2022-06-27
+
+### 第 2 次发布
+
+发布时间：2023-02-08 01:41:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCluster](http://document.tencentcloudapi.woa.com/document/product/1605/77036)
+
+新增数据结构：
+
+* [ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1605/76897#ClusterInfo)
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 22 次发布
+
+发布时间：2023-02-08 01:42:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/583/18586)
+
+	* 新增入参：IntranetConfig
+
+* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
+
+	* 新增出参：IntranetConfig
+
+* [UpdateFunctionConfiguration](http://document.tencentcloudapi.woa.com/document/product/583/18580)
+
+	* 新增入参：IntranetConfig
+
+
+新增数据结构：
+
+* [IntranetConfigIn](http://document.tencentcloudapi.woa.com/document/product/583/17244#IntranetConfigIn)
+* [IntranetConfigOut](http://document.tencentcloudapi.woa.com/document/product/583/17244#IntranetConfigOut)
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 29 次发布
+
+发布时间：2023-02-08 01:45:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCurveData](http://document.tencentcloudapi.woa.com/document/product/876/59512)
+
+	* 新增出参：NewValues
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 30 次发布
+
+发布时间：2023-02-08 01:47:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRabbitMQNodeList](http://document.tencentcloudapi.woa.com/document/product/1179/76487)
+
+	* 新增入参：NodeName, Filters, SortElement, SortOrder
+
+
+修改数据结构：
+
+* [RabbitMQPrivateNode](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQPrivateNode)
+
+	* 新增成员：NodeStatus, CPUUsage, Memory, DiskUsage, ProcessNumber
+
+* [RabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVipInstance)
+
+	* 新增成员：ExceptionInformation
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 62 次发布
+
+发布时间：2023-02-08 01:59:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeVpcTaskResult](http://document.tencentcloudapi.woa.com/document/product/215/59037)
+
+	* 新增出参：Result
+
+
+新增数据结构：
+
+* [VpcTaskResultDetailInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcTaskResultDetailInfo)
+
+修改数据结构：
+
+* [NetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkInterface)
+
+	* 新增成员：Region, FlushSubEniHavipFlag
+
+
+
+
 # Release 3.0.698.1
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb ModifyAutoRenewFlag --cli-unfold-argument  \
-    --InstanceIds cdb-f35wr6wj \
-    --AutoRenew 1
+    --AutoRenew 1 \
+    --InstanceIds cdb-f35wr6wj
 ```
 
 Output: 

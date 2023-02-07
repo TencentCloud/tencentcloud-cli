@@ -979,7 +979,6 @@
       "document": "CreateFunction请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "创建的函数名称，函数名称支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度2-60",
           "example": "helloworld",
           "member": "string",
@@ -989,7 +988,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数代码. 注意：不能同时指定Cos、ZipFile或 DemoId。",
           "example": "无",
           "member": "Code",
@@ -999,7 +997,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数处理方法名称，名称格式支持 \"文件名称.方法名称\" 形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求是 2-60 个字符",
           "example": "index.main_handler",
           "member": "string",
@@ -1009,7 +1006,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数描述,最大支持 1000 个英文字母、数字、空格、逗号、换行符和英文句号，支持中文",
           "example": "hello world!",
           "member": "string",
@@ -1019,7 +1015,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数运行时内存大小，默认为 128M，可选范围 64、128MB-3072MB，并且以 128MB 为阶梯",
           "example": "128",
           "member": "int64",
@@ -1029,7 +1024,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数最长执行时间，单位为秒，可选值范围 1-900 秒，默认为 3 秒",
           "example": "3",
           "member": "int64",
@@ -1039,7 +1033,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数的环境变量",
           "example": "无",
           "member": "Environment",
@@ -1049,7 +1042,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， Php5， Php7，Go1，Java8 和 CustomRuntime，默认Python2.7",
           "example": "Python3.6",
           "member": "string",
@@ -1059,7 +1051,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数的私有网络配置",
           "example": "无",
           "member": "VpcConfig",
@@ -1069,7 +1060,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数所属命名空间",
           "example": "default",
           "member": "string",
@@ -1079,7 +1069,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数绑定的角色",
           "example": "SCF_ExecuteRole",
           "member": "string",
@@ -1089,7 +1078,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "[在线依赖安装](https://cloud.tencent.com/document/product/583/37920)，TRUE 表示安装，默认值为 FALSE。仅支持 Node.js 函数。",
           "example": "FALSE",
           "member": "string",
@@ -1099,7 +1087,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数日志投递到的CLS LogsetID",
           "example": "xxxxx",
           "member": "string",
@@ -1109,7 +1096,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数日志投递到的CLS TopicID",
           "example": "xxxxx",
           "member": "string",
@@ -1119,7 +1105,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP",
           "example": "Event",
           "member": "string",
@@ -1129,7 +1114,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "CodeSource 代码来源，支持ZipFile, Cos, Demo 其中之一",
           "example": "xxxxx",
           "member": "string",
@@ -1139,7 +1123,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数要关联的Layer版本列表，Layer会按照在列表中顺序依次覆盖。",
           "example": "无",
           "member": "LayerVersionSimple",
@@ -1149,7 +1132,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "死信队列参数",
           "example": "无",
           "member": "DeadLetterConfig",
@@ -1159,7 +1141,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "公网访问配置",
           "example": "无",
           "member": "PublicNetConfigIn",
@@ -1169,7 +1150,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "文件系统配置参数，用于云函数挂载文件系统",
           "example": "无",
           "member": "CfsConfig",
@@ -1179,7 +1159,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数初始化超时时间，默认 65s，镜像部署函数默认 90s。",
           "example": "3",
           "member": "int64",
@@ -1189,7 +1168,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数 Tag 参数，以键值对数组形式传入",
           "example": "无",
           "member": "Tag",
@@ -1199,7 +1177,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启异步属性，TRUE 为开启，FALSE为关闭",
           "example": "FALSE",
           "member": "string",
@@ -1209,7 +1186,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启事件追踪，TRUE 为开启，FALSE为关闭",
           "example": "FALSE",
           "member": "string",
@@ -1219,7 +1195,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS",
           "example": "WS",
           "member": "string",
@@ -1229,7 +1204,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTP函数配置ProtocolType访问协议，当前协议可配置的参数",
           "example": "无",
           "member": "ProtocolParams",
@@ -1239,7 +1213,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "单实例多并发配置。只支持Web函数。",
           "example": "无",
           "member": "InstanceConcurrencyConfig",
@@ -1247,6 +1220,15 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "document": "内网访问配置",
+          "example": "无",
+          "member": "IntranetConfigIn",
+          "name": "IntranetConfig",
+          "required": false,
+          "type": "object",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -1413,34 +1395,37 @@
       "document": "死信队列参数",
       "members": [
         {
-          "default": "",
           "document": "死信队列模式",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "死信队列名称",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "死信队列主题模式的标签形式",
+          "example": "无",
           "member": "string",
           "name": "FilterType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DeleteAliasRequest": {
       "document": "DeleteAlias请求参数结构体",
@@ -1819,16 +1804,17 @@
       "document": "函数的环境变量参数",
       "members": [
         {
-          "default": "",
           "document": "环境变量数组",
+          "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
@@ -2723,7 +2709,6 @@
       "document": "GetFunction请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要获取详情的函数名称",
           "example": "<FunctionName>",
           "member": "string",
@@ -2733,7 +2718,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数的版本号\n默认值: $LATEST",
           "example": "$LATEST",
           "member": "string",
@@ -2743,7 +2727,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数所属命名空间\n默认值: default",
           "example": "default",
           "member": "string",
@@ -2753,7 +2736,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否显示代码, TRUE表示显示代码，FALSE表示不显示代码,大于1M的入口文件不会显示",
           "example": "TRUE",
           "member": "string",
@@ -2773,7 +2755,6 @@
           "example": "2018-06-07 09:52:23",
           "member": "datetime",
           "name": "ModTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2783,7 +2764,6 @@
           "example": "无",
           "member": "string",
           "name": "CodeInfo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2793,7 +2773,6 @@
           "example": "这是一个云函数",
           "member": "string",
           "name": "Description",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2803,7 +2782,6 @@
           "example": "无",
           "member": "Trigger",
           "name": "Triggers",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2813,7 +2791,6 @@
           "example": "scfredis.main_handler",
           "member": "string",
           "name": "Handler",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2823,7 +2800,6 @@
           "example": "0",
           "member": "int64",
           "name": "CodeSize",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2833,7 +2809,6 @@
           "example": "3",
           "member": "int64",
           "name": "Timeout",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2843,7 +2818,6 @@
           "example": "$LATEST",
           "member": "string",
           "name": "FunctionVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2853,7 +2827,6 @@
           "example": "128",
           "member": "int64",
           "name": "MemorySize",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2863,7 +2836,6 @@
           "example": "Python2.7",
           "member": "string",
           "name": "Runtime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2873,7 +2845,6 @@
           "example": "ledDummyAPITest",
           "member": "string",
           "name": "FunctionName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2883,7 +2854,6 @@
           "example": "无",
           "member": "VpcConfig",
           "name": "VpcConfig",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -2893,7 +2863,6 @@
           "example": "FALSE",
           "member": "string",
           "name": "UseGpu",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2903,7 +2872,6 @@
           "example": "无",
           "member": "Environment",
           "name": "Environment",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -2913,7 +2881,6 @@
           "example": "failed",
           "member": "string",
           "name": "CodeResult",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2923,7 +2890,6 @@
           "example": "无",
           "member": "string",
           "name": "CodeError",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2933,7 +2899,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrNo",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2943,7 +2908,6 @@
           "example": "default",
           "member": "string",
           "name": "Namespace",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2953,7 +2917,6 @@
           "example": "无",
           "member": "string",
           "name": "Role",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2963,7 +2926,6 @@
           "example": "FALSE",
           "member": "string",
           "name": "InstallDependency",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2973,7 +2935,6 @@
           "example": "Active",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2983,7 +2944,6 @@
           "example": "无",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2993,7 +2953,6 @@
           "example": "5354061a-dcaa-46be-8359-fe5gt56075c0",
           "member": "string",
           "name": "ClsLogsetId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3003,7 +2962,6 @@
           "example": "5354061a-dcaa-46be-jydw-fe51e56075c0",
           "member": "string",
           "name": "ClsTopicId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3013,7 +2971,6 @@
           "example": "lam-bcrxav2w",
           "member": "string",
           "name": "FunctionId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3023,7 +2980,6 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -3033,7 +2989,6 @@
           "example": "无",
           "member": "EipOutConfig",
           "name": "EipConfig",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -3043,7 +2998,6 @@
           "example": "无",
           "member": "AccessInfo",
           "name": "AccessInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -3053,7 +3007,6 @@
           "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3063,7 +3016,6 @@
           "example": "无",
           "member": "string",
           "name": "L5Enable",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3073,7 +3025,6 @@
           "example": "无",
           "member": "LayerVersionInfo",
           "name": "Layers",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -3083,7 +3034,6 @@
           "example": "无",
           "member": "DeadLetterConfig",
           "name": "DeadLetterConfig",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -3093,7 +3043,6 @@
           "example": "无",
           "member": "datetime",
           "name": "AddTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3103,7 +3052,6 @@
           "example": "无",
           "member": "PublicNetConfigOut",
           "name": "PublicNetConfig",
-          "required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3113,7 +3061,6 @@
           "example": "无",
           "member": "string",
           "name": "OnsEnable",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3123,7 +3070,6 @@
           "example": "无",
           "member": "CfsConfig",
           "name": "CfsConfig",
-          "required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3133,7 +3079,6 @@
           "example": "Available",
           "member": "string",
           "name": "AvailableStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3143,7 +3088,6 @@
           "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3153,7 +3097,6 @@
           "example": "无",
           "member": "int64",
           "name": "InitTimeout",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3163,7 +3106,6 @@
           "example": "无",
           "member": "StatusReason",
           "name": "StatusReasons",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3173,7 +3115,6 @@
           "example": "无",
           "member": "string",
           "name": "AsyncRunEnable",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3183,7 +3124,6 @@
           "example": "无",
           "member": "string",
           "name": "TraceEnable",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3193,7 +3133,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "ProtocolType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3203,10 +3142,18 @@
           "example": "无",
           "member": "ProtocolParams",
           "name": "ProtocolParams",
-          "required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "内网访问配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntranetConfigOut",
+          "name": "IntranetConfig",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3679,6 +3626,58 @@
         }
       ],
       "usage": "both"
+    },
+    "IntranetConfigIn": {
+      "document": "内网配置",
+      "members": [
+        {
+          "document": "是否开启固定内网IP\nENABLE 为开启\nDISABLE 为不开启\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "IpFixed",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "当开启固定IP时有效\n当该值为空时，将优先自动复用vpc已有的固定IP，若无固定IP，则新建\n当该值为非空时，将复用指定IP，该IP必须是由ListIntranetAddress返回的\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "IpAddress",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
+    "IntranetConfigOut": {
+      "document": "内网配置",
+      "members": [
+        {
+          "document": "是否启用固定内网IP\nENABLE 为启用\nDISABLE 为不启用",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "IpFixed",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "若已启用固定内网IP，则该字段返回使用的IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IpAddress",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "InvokeAsyncEventCallBackRequest": {
       "document": "InvokeAsyncEventCallBack请求参数结构体",
@@ -6658,7 +6657,6 @@
       "document": "UpdateFunctionConfiguration请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要修改的函数名称",
           "example": "<FunctionName>",
           "member": "string",
@@ -6668,7 +6666,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数描述。最大支持 1000 个英文字母、数字、空格、逗号和英文句号，支持中文",
           "example": "<Description>",
           "member": "string",
@@ -6678,7 +6675,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数运行时内存大小，默认为 128 M，可选范64M、128 M-3072 M，以 128MB 为阶梯。",
           "example": "128",
           "member": "int64",
@@ -6688,7 +6684,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数最长执行时间，单位为秒，可选值范 1-900 秒，默认为 3 秒",
           "example": "3",
           "member": "int64",
@@ -6698,7 +6693,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime",
           "example": "Python3.6",
           "member": "string",
@@ -6708,7 +6702,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数的环境变量",
           "example": "无",
           "member": "Environment",
@@ -6718,7 +6711,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数所属命名空间\n默认值: default",
           "example": "default",
           "member": "string",
@@ -6728,7 +6720,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数的私有网络配置",
           "example": "无",
           "member": "VpcConfig",
@@ -6738,7 +6729,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数绑定的角色",
           "example": "SCF_ExecuteRole",
           "member": "string",
@@ -6748,7 +6738,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "[在线依赖安装](https://cloud.tencent.com/document/product/583/37920)，TRUE 表示安装，默认值为 FALSE。仅支持 Node.js 函数。",
           "example": "FALSE",
           "member": "string",
@@ -6758,7 +6747,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志投递到的cls日志集ID",
           "example": "xxxx",
           "member": "string",
@@ -6768,7 +6756,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志投递到的cls Topic ID",
           "example": "xxxx",
           "member": "string",
@@ -6778,7 +6765,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "在更新时是否同步发布新版本，默认为：FALSE，不发布新版本",
           "example": "FALSE",
           "member": "string",
@@ -6788,7 +6774,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启L5访问能力，TRUE 为开启，FALSE为关闭",
           "example": "FALSE",
           "member": "string",
@@ -6798,7 +6783,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。",
           "example": "无",
           "member": "LayerVersionSimple",
@@ -6808,7 +6792,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数关联的死信队列信息",
           "example": "无",
           "member": "DeadLetterConfig",
@@ -6818,7 +6801,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "公网访问配置",
           "example": "无",
           "member": "PublicNetConfigIn",
@@ -6828,7 +6810,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "文件系统配置入参，用于云函数绑定CFS文件系统",
           "example": "无",
           "member": "CfsConfig",
@@ -6838,7 +6819,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "函数初始化执行超时时间",
           "example": "15",
           "member": "int64",
@@ -6848,7 +6828,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTP函数配置ProtocolType访问协议，当前协议可配置的参数",
           "example": "无",
           "member": "ProtocolParams",
@@ -6858,7 +6837,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "单实例多并发配置。只支持Web函数。",
           "example": "无",
           "member": "InstanceConcurrencyConfig",
@@ -6866,6 +6844,15 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "document": "内网访问配置",
+          "example": "无",
+          "member": "IntranetConfigIn",
+          "name": "IntranetConfig",
+          "required": false,
+          "type": "object",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -7176,25 +7163,27 @@
       "document": "私有网络参数配置",
       "members": [
         {
-          "default": "",
           "document": "私有网络 的 Id",
+          "example": "无",
           "member": "string",
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "子网的 Id",
+          "example": "无",
           "member": "string",
           "name": "SubnetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "WSParams": {
       "document": "HTTP函数通过WebSockets协议访问时的参数",

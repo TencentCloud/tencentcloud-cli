@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeCluster": {
+      "document": "查询可用区的cuf信息列表",
+      "input": "DescribeClusterRequest",
+      "name": "查询可用区的cuf信息列表",
+      "output": "DescribeClusterResponse",
+      "status": "online"
+    },
     "DescribeProducts": {
       "document": "本接口(DescribeProducts)用于查询各个支持地域列表查询的产品信息。",
       "input": "DescribeProductsRequest",
@@ -36,6 +43,105 @@
     "serviceShortName": "region"
   },
   "objects": {
+    "ClusterInfo": {
+      "document": "cuf的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "cuf的id",
+          "example": "1",
+          "member": "int64",
+          "name": "ClusterId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "cuf的name",
+          "example": "广州-华新园-C1",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhouap-11",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可用区名称",
+          "example": "广州一区",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "优先级数字从小到大，1表示最优先",
+          "example": "优先级",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeClusterRequest": {
+      "document": "DescribeCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区，Zone为空时，是取自某个地域的全量cuf",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterResponse": {
+      "document": "DescribeCluster返回参数结构体",
+      "members": [
+        {
+          "document": "cuf信息",
+          "example": "无",
+          "member": "ClusterInfo",
+          "name": "ResourceClusterSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductsRequest": {
       "document": "DescribeProducts请求参数结构体",
       "members": [

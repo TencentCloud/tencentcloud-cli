@@ -15,6 +15,12 @@ Output:
     "Response": {
         "Status": "SUCCESS",
         "Output": "SUCCESS",
+        "Result": [
+            {
+                "ResourceId": "eni-olifj433",
+                "Status": "SUCCESS"
+            }
+        ],
         "RequestId": "20569756-56ba-4a13-b545-e1528d5cb239"
     }
 }

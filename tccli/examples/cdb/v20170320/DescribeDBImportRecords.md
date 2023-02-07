@@ -7,8 +7,8 @@ Input:
 ```
 tccli cdb DescribeDBImportRecords --cli-unfold-argument  \
     --InstanceId cdb-7r8h0h61 \
-    --StartTime '2016-01-01 00:00:01' \
-    --EndTime '2017-08-24 15:03:01'
+    --EndTime 2017-08-24 15:03:01 \
+    --StartTime 2016-01-01 00:00:01
 ```
 
 Output: 

@@ -7,8 +7,8 @@ Input:
 ```
 tccli cdb DescribeBackupTables --cli-unfold-argument  \
     --InstanceId cdb-c1nl9rpv \
-    --StartTime '2017-07-12 10:29:20' \
-    --DatabaseName mysql
+    --DatabaseName mysql \
+    --StartTime 2017-07-12 10:29:20
 ```
 
 Output: 

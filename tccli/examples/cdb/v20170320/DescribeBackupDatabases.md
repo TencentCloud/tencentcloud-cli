@@ -7,7 +7,7 @@ Input:
 ```
 tccli cdb DescribeBackupDatabases --cli-unfold-argument  \
     --InstanceId cdb-c1nl9rpv \
-    --StartTime '2017-07-12 10:29:20'
+    --StartTime 2017-07-12 10:29:20
 ```
 
 Output: 

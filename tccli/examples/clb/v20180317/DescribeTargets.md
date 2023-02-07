@@ -37,7 +37,8 @@ Output:
                                 "InstanceId": "ins-19425y2y",
                                 "RegisteredTime": "2019-07-12 16:22:02"
                             }
-                        ]
+                        ],
+                        "FunctionTargets": []
                     }
                 ],
                 "Targets": null

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "DescribeCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: region.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCluster\n<公共请求参数>\n\n{\n    \"Zone\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceClusterSet\": [\n            {\n                \"ClusterName\": \"xx\",\n                \"Priority\": 0,\n                \"ClusterId\": 0,\n                \"Zone\": \"xx\",\n                \"ZoneName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例一"
+      }
+    ],
     "DescribeProducts": [
       {
         "document": "",

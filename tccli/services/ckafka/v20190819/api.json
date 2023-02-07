@@ -482,6 +482,13 @@
       "name": "HTTP发送消息",
       "output": "SendMessageResponse",
       "status": "online"
+    },
+    "SendMessageByTopic": {
+      "document": "发送消息",
+      "input": "SendMessageByTopicRequest",
+      "name": "发送消息",
+      "output": "SendMessageByTopicResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -14012,6 +14019,78 @@
         }
       ],
       "usage": "both"
+    },
+    "SendMessageByTopicRequest": {
+      "document": "SendMessageByTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "topic名称",
+          "example": "topic-xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息内容",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定key发送",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定分区发送",
+          "example": "\"\"",
+          "member": "int64",
+          "name": "Partition",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMessageByTopicResponse": {
+      "document": "SendMessageByTopic返回参数结构体",
+      "members": [
+        {
+          "document": "发送消息结果",
+          "example": "data",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SendMessageRequest": {
       "document": "SendMessage请求参数结构体",

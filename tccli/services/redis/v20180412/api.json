@@ -5856,49 +5856,54 @@
       "document": "代理慢查询详情",
       "members": [
         {
-          "default": "",
-          "document": "慢查询耗时",
+          "document": "慢查询耗时（单位：毫秒）。",
+          "example": "无",
           "member": "int64",
           "name": "Duration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "客户端地址",
+          "document": "客户端地址。",
+          "example": "无",
           "member": "string",
           "name": "Client",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "命令",
+          "document": "命令。",
+          "example": "无",
           "member": "string",
           "name": "Command",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "详细命令行信息",
+          "document": "详细命令行信息。",
+          "example": "无",
           "member": "string",
           "name": "CommandLine",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "执行时间",
+          "document": "执行时间。",
+          "example": "无",
           "member": "string",
           "name": "ExecuteTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
