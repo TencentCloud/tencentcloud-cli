@@ -1,6 +1,6 @@
 **Example 1: 创建spark应用**
 
-
+本接口用于创建spark应用。
 
 Input: 
 
@@ -21,13 +21,15 @@ tccli dlc CreateSparkApp --cli-unfold-argument  \
     --AppFiles spark-default.properties \
     --AppDriverSize small \
     --AppExecutorSize small \
-    --AppExecutorNums 1
+    --AppExecutorNums 1 \
+    --AppExecutorMaxNumbers 1
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "SparkAppId": "2aedsa7a-9f72-44aa-9fd4-65cb739d6301",
         "RequestId": "2ae4707a-9f72-44aa-9fd4-65cb739d6301"
     }
 }

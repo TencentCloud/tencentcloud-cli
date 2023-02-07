@@ -146,9 +146,9 @@
     ],
     "CreateSparkApp": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSparkApp\n<公共请求参数>\n\n{\n    \"AppName\": \"spark-test\",\n    \"AppType\": 1,\n    \"DataEngine\": \"spark-engine\",\n    \"Eni\": \"kafka-eni\",\n    \"IsLocal\": \"cos\",\n    \"AppFile\": \"test.jar\",\n    \"RoleArn\": 12,\n    \"MainClass\": \"com.test.WordCount\",\n    \"AppConf\": \"spark-default.properties\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"com.test2.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"spark-default.properties\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
+        "document": "本接口用于创建spark应用。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSparkApp\n<公共请求参数>\n\n{\n    \"AppName\": \"spark-test\",\n    \"AppType\": 1,\n    \"DataEngine\": \"spark-engine\",\n    \"Eni\": \"kafka-eni\",\n    \"IsLocal\": \"cos\",\n    \"AppFile\": \"test.jar\",\n    \"RoleArn\": 12,\n    \"MainClass\": \"com.test.WordCount\",\n    \"AppConf\": \"spark-default.properties\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"com.test2.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"spark-default.properties\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1,\n    \"AppExecutorMaxNumbers\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"SparkAppId\": \"2aedsa7a-9f72-44aa-9fd4-65cb739d6301\",\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
         "title": "创建spark应用"
       }
     ],
@@ -322,15 +322,15 @@
     ],
     "DescribeSparkAppJob": [
       {
-        "document": "",
+        "document": "本接口用于查询具体的spark应用。",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeSparkAppJob\n<公共请求参数>\n\n{\n    \"JobId\": \"batch_133e005d-6486-4517-8ea7-b6b97b183a6b\",\n    \"JobName\": \"spark_app\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\",\n        \"Job\": {\n            \"JobId\": \"batch_e6c5ae75-fb02-4831-a5b8-88999d09003c\",\n            \"JobType\": 1,\n            \"CmdArgs\": \"\",\n            \"CurrentTaskId\": \"\",\n            \"DataEngine\": \"testjar3\",\n            \"Eni\": \"testeni2\",\n            \"IsLocal\": \"cos\",\n            \"IsLocalFiles\": \"lakefs\",\n            \"IsLocalJars\": \"lakefs\",\n            \"JobConf\": \"\",\n            \"JobCreateTime\": 1652442914350,\n            \"JobCreator\": \"100019868890\",\n            \"JobDriverSize\": \"small\",\n            \"JobExecutorNums\": 1,\n            \"JobExecutorSize\": \"small\",\n            \"JobFile\": \"cosn://danierwei-test-1305424723/sparkjar/spark-ckafka-1.0-SNAPSHOT.jar\",\n            \"JobFiles\": \"\",\n            \"JobJars\": \"lakefs://4000002928ef2638d7ab6aabb088bd51b7db914729a5c43b13a998ffa9750511f511d0ab@dlcda57-100018379117-1636704841-100017307912-1304028854/1305424723/.system/sparkAppJar/20220513/dd3c6ad3-a746-40d8-806c-fa8b15b5e9f9/spark-examples_2.12-3.1.2.jar\",\n            \"JobMaxAttempts\": 1,\n            \"JobName\": \"andy_test\",\n            \"JobUpdateTime\": 1652769991248,\n            \"MainClass\": \"org.apache.spark.examples.SparkPi\",\n            \"RoleArn\": 3\n        },\n        \"IsExists\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\",\n        \"Job\": {\n            \"JobId\": \"batch_e6c5ae75-fb02-4831-a5b8-88999d09003c\",\n            \"JobType\": 1,\n            \"CmdArgs\": \"\",\n            \"CurrentTaskId\": \"\",\n            \"DataEngine\": \"testjar3\",\n            \"Eni\": \"testeni2\",\n            \"IsLocal\": \"cos\",\n            \"IsLocalFiles\": \"lakefs\",\n            \"IsLocalJars\": \"lakefs\",\n            \"JobConf\": \"\",\n            \"JobCreateTime\": 1652442914350,\n            \"JobCreator\": \"100019868890\",\n            \"JobDriverSize\": \"small\",\n            \"JobExecutorNums\": 1,\n            \"JobExecutorMaxNumbers\": 1,\n            \"JobExecutorSize\": \"small\",\n            \"JobFile\": \"cosn://danierwei-test-1305424723/sparkjar/spark-ckafka-1.0-SNAPSHOT.jar\",\n            \"JobFiles\": \"\",\n            \"JobJars\": \"lakefs://4000002928ef2638d7ab6aabb088bd51b7db914729a5c43b13a998ffa9750511f511d0ab@dlcda57-100018379117-1636704841-100017307912-1304028854/1305424723/.system/sparkAppJar/20220513/dd3c6ad3-a746-40d8-806c-fa8b15b5e9f9/spark-examples_2.12-3.1.2.jar\",\n            \"JobMaxAttempts\": 1,\n            \"JobName\": \"andy_test\",\n            \"JobUpdateTime\": 1652769991248,\n            \"MainClass\": \"org.apache.spark.examples.SparkPi\",\n            \"RoleArn\": 3\n        },\n        \"IsExists\": true\n    }\n}",
         "title": "查询具体的spark应用"
       }
     ],
     "DescribeSparkAppJobs": [
       {
-        "document": "",
+        "document": "本接口用于获取spark应用列表。",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeSparkAppJobs\n<公共请求参数>\n\n{\n    \"Sorting\": \"desc\",\n    \"SortBy\": \"create-time\",\n    \"StartTime\": \"2022-01-01 00:00:00\",\n    \"EndTime\": \"2022-01-01 00:00:00\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\",\n        \"SparkAppJobs\": [],\n        \"TotalCount\": 0\n    }\n}",
         "title": "获取spark应用列表"
@@ -464,10 +464,18 @@
         "title": "元数据加锁"
       }
     ],
-    "ModifySparkApp": [
+    "ModifyGovernEventRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySparkApp\n<公共请求参数>\n\n{\n    \"SparkAppId\": \"batch_sadfafd\",\n    \"AppName\": \"spark-test\",\n    \"AppType\": 1,\n    \"DataEngine\": \"spark-engine\",\n    \"Eni\": \"kafka-eni\",\n    \"IsLocal\": \"cos\",\n    \"AppFile\": \"test.jar\",\n    \"RoleArn\": 12,\n    \"MainClass\": \"com.test.WordCount\",\n    \"AppConf\": \"spark-default.properties\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"com.test2.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"spark-default.properties\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGovernEventRule\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例一"
+      }
+    ],
+    "ModifySparkApp": [
+      {
+        "document": "本接口用于创建spark应用。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySparkApp\n<公共请求参数>\n\n{\n    \"SparkAppId\": \"batch_sadfafd\",\n    \"AppName\": \"spark-test\",\n    \"AppType\": 1,\n    \"DataEngine\": \"spark-engine\",\n    \"Eni\": \"kafka-eni\",\n    \"IsLocal\": \"cos\",\n    \"AppFile\": \"test.jar\",\n    \"RoleArn\": 12,\n    \"MainClass\": \"com.test.WordCount\",\n    \"AppConf\": \"spark-default.properties\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"com.test2.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"spark-default.properties\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1,\n    \"AppExecutorMaxNumbers\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
         "title": "创建spark应用"
       }

@@ -248,6 +248,14 @@
         "title": "查询实例安全组信息"
       }
     ],
+    "DescribeFlow": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeFlow\n&FlowId=123\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"186253\"\n    }\n}",
+        "title": "查询任务流信息"
+      }
+    ],
     "DescribeInstanceDetail": [
       {
         "document": "",

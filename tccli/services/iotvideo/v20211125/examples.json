@@ -722,7 +722,7 @@
     ],
     "TransferCloudStorage": [
       {
-        "document": "",
+        "document": "用于转移云存服务到新设备",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferCloudStorage\n<公共请求参数>\n\n{\n    \"ToDeviceName\": \"event_36502632_2\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ProductId\": \"H541SOP191\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "转移云存服务"

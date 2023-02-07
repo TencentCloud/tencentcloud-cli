@@ -1481,6 +1481,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

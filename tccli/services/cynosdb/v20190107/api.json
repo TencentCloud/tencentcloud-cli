@@ -217,6 +217,13 @@
       "output": "DescribeDBSecurityGroupsResponse",
       "status": "online"
     },
+    "DescribeFlow": {
+      "document": "本接口（DescribeFlow）用于查询任务流信息",
+      "input": "DescribeFlowRequest",
+      "name": "查询任务流信息",
+      "output": "DescribeFlowResponse",
+      "status": "online"
+    },
     "DescribeInstanceDetail": {
       "document": "本接口(DescribeInstanceDetail)用于查询实例详情。",
       "input": "DescribeInstanceDetailRequest",
@@ -5859,6 +5866,42 @@
           "name": "Groups",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowRequest": {
+      "document": "DescribeFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务流ID",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowResponse": {
+      "document": "DescribeFlow返回参数结构体",
+      "members": [
+        {
+          "document": "任务流状态。0-成功，1-失败，2-处理中",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

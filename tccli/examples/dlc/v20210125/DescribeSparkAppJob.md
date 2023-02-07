@@ -1,6 +1,6 @@
 **Example 1: 查询具体的spark应用**
 
-
+本接口用于查询具体的spark应用。
 
 Input: 
 
@@ -30,6 +30,7 @@ Output:
             "JobCreator": "100019868890",
             "JobDriverSize": "small",
             "JobExecutorNums": 1,
+            "JobExecutorMaxNumbers": 1,
             "JobExecutorSize": "small",
             "JobFile": "cosn://danierwei-test-1305424723/sparkjar/spark-ckafka-1.0-SNAPSHOT.jar",
             "JobFiles": "",

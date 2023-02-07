@@ -7706,7 +7706,6 @@
       "document": "ModifyListener请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "负载均衡实例ID。",
           "example": "lb-cuxw****",
           "member": "string",
@@ -7715,7 +7714,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "负载均衡监听器ID。",
           "example": "lbl-d1ub****",
           "member": "string",
@@ -7724,7 +7722,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "新的监听器名称。",
           "example": "newlis",
           "member": "string",
@@ -7733,7 +7730,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。",
           "example": "120",
           "member": "int64",
@@ -7742,7 +7738,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL监听器。",
           "example": "无",
           "member": "HealthCheck",
@@ -7751,7 +7746,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。",
           "example": "无",
           "member": "CertificateInput",
@@ -7760,7 +7754,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "监听器转发的方式。可选值：WRR、LEAST_CONN\n分别表示按权重轮询、最小连接数， 默认为 WRR。",
           "example": "LEAST_CONN",
           "member": "string",
@@ -7769,7 +7762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。",
           "example": "0",
           "member": "int64",
@@ -7778,7 +7770,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。",
           "example": "NODE",
           "member": "string",
@@ -7787,7 +7778,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。",
           "example": "0",
           "member": "int64",
@@ -7796,7 +7786,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。",
           "example": "False",
           "member": "bool",
@@ -7805,7 +7794,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。",
           "example": "NORMAL",
           "member": "string",
@@ -7814,7 +7802,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。",
           "example": "无",
           "member": "MultiCertInfo",
@@ -7823,8 +7810,7 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "监听器最大连接数，只有TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。",
+          "document": "监听器粒度并发连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格并发连接上限，其中-1表示关闭监听器粒度并发连接数限速。",
           "example": "-1",
           "member": "int64",
           "name": "MaxConn",
@@ -7832,8 +7818,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "监听器最大连接数，只有TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。",
+          "document": "监听器粒度新建连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格新建连接上限，其中-1表示关闭监听器粒度新建连接数限速。",
           "example": "-1",
           "member": "int64",
           "name": "MaxCps",

@@ -136,6 +136,22 @@
         "title": "请求示例"
       }
     ],
+    "CreateLiveTimeShiftRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTimeShiftRule\n<公共请求参数>\n\n{\n    \"TemplateId\": \"1000\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"stream1\",\n    \"DomainName\": \"5000.livepush.myqcloud.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateLiveTimeShiftTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTimeShiftTemplate\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"TranscodeTemplateIds\": [\n        0\n    ],\n    \"RemoveWatermark\": true,\n    \"TemplateName\": \"xx\",\n    \"ItemDuration\": 1,\n    \"Duration\": 1,\n    \"Area\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateLiveTranscodeRule": [
       {
         "document": "",
@@ -252,6 +268,22 @@
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveSnapshotTemplate\n&TemplateId=1000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteLiveTimeShiftRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveTimeShiftRule\n<公共请求参数>\n\n{\n    \"DomainName\": \"xx\",\n    \"StreamName\": \"xx\",\n    \"AppName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteLiveTimeShiftTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveTimeShiftTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"1000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -499,8 +531,8 @@
     "DescribeLivePullStreamTasks": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLivePullStreamTasks\n&TaskId=123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskInfos\": [\n            {\n                \"AppName\": \"live\",\n                \"Region\": \"ap-beijing\",\n                \"CallbackInfo\": \"\",\n                \"CallbackEvents\": [\n                    \"TaskStart\",\n                    \"TaskExit\"\n                ],\n                \"CallbackUrl\": \"\",\n                \"CreateBy\": \"yourname\",\n                \"DomainName\": \"yourdomain.com\",\n                \"EndTime\": \"2020-04-25T00:30:00Z\",\n                \"ErrorInfo\": \"\",\n                \"PushArgs\": \"txsecret=7cbb8f382a21e8d2f6cd8098100d3b8e&txtime=5ea0450d\",\n                \"SourceType\": \"PullLivePushLive\",\n                \"SourceUrls\": [\n                    \"http://yourdomain/live/test.flv\"\n                ],\n                \"StartTime\": \"2020-04-20T00:30:00Z\",\n                \"Status\": \"enable\",\n                \"StreamName\": \"teststream\",\n                \"Comment\": \"xx\",\n                \"TaskId\": \"10054\",\n                \"UpdateBy\": \"\",\n                \"UpdateTime\": \"2020-04-23T05:07:43Z\",\n                \"CreateTime\": \"2020-04-20T05:07:43Z\",\n                \"VodLoopTimes\": -1,\n                \"VodRefreshType\": \"ImmediateNewSource\",\n                \"RecentPullInfo\": {\n                    \"FileUrl\": \"http://yourdomain/live/test.flv\",\n                    \"OffsetTime\": 95,\n                    \"LoopedTimes\": 0,\n                    \"ReportTime\": \"2020-04-23T08:20:39Z\"\n                }\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"LimitTaskNum\": 20,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLivePullStreamTasks\n<公共请求参数>\n\n{\n    \"TaskId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskInfos\": [\n            {\n                \"AppName\": \"live\",\n                \"Region\": \"ap-beijing\",\n                \"CallbackInfo\": \"\",\n                \"CallbackEvents\": [\n                    \"TaskStart\",\n                    \"TaskExit\"\n                ],\n                \"CallbackUrl\": \"\",\n                \"CreateBy\": \"yourname\",\n                \"DomainName\": \"yourdomain.com\",\n                \"EndTime\": \"2020-04-25T00:30:00Z\",\n                \"ErrorInfo\": \"\",\n                \"PushArgs\": \"txsecret=7cbb8f382a21e8d2f6cd8098100d3b8e&txtime=5ea0450d\",\n                \"SourceType\": \"PullLivePushLive\",\n                \"SourceUrls\": [\n                    \"http://yourdomain/live/test.flv\"\n                ],\n                \"StartTime\": \"2020-04-20T00:30:00Z\",\n                \"Status\": \"enable\",\n                \"StreamName\": \"teststream\",\n                \"Comment\": \"xx\",\n                \"TaskId\": \"10054\",\n                \"UpdateBy\": \"\",\n                \"UpdateTime\": \"2020-04-23T05:07:43Z\",\n                \"CreateTime\": \"2020-04-20T05:07:43Z\",\n                \"VodLoopTimes\": -1,\n                \"VodRefreshType\": \"ImmediateNewSource\",\n                \"VodLocalMode\": 0,\n                \"BackupSourceType\": \"\",\n                \"BackupSourceUrl\": \"\",\n                \"WatermarkList\": [],\n                \"RecentPullInfo\": {\n                    \"FileUrl\": \"http://yourdomain/live/test.flv\",\n                    \"OffsetTime\": 95,\n                    \"LoopedTimes\": 0,\n                    \"ReportTime\": \"2020-04-23T08:20:39Z\"\n                }\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"LimitTaskNum\": 20,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -605,6 +637,22 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTimeShiftBillInfoList\n<公共请求参数>\n\n{\n    \"PushDomains\": [\n        \"start-push.elliotxing.com\"\n    ],\n    \"StartTime\": \"2022-05-06T00:30:00Z\",\n    \"EndTime\": \"2022-05-06T12:30:00Z\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Domain\": \"x.com\",\n                \"Duration\": 1,\n                \"StoragePeriod\": 1,\n                \"Time\": \"2022-05-06T10:30:00Z\"\n            },\n            {\n                \"Domain\": \"x.com\",\n                \"Duration\": 1,\n                \"StoragePeriod\": 1,\n                \"Time\": \"2022-05-06T10:35:00Z\"\n            }\n        ],\n        \"RequestId\": \"ca0bb85f-6b95-4b9f-b85f-fdsafasds\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLiveTimeShiftRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTimeShiftRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"AppName\": \"xx\",\n                \"DomainName\": \"xx\",\n                \"StreamName\": \"xx\",\n                \"TemplateId\": 1000,\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLiveTimeShiftTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTimeShiftTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"Description\": \"xx\",\n                \"TranscodeTemplateIds\": [\n                    1\n                ],\n                \"RemoveWatermark\": true,\n                \"Area\": 1,\n                \"ItemDuration\": 1,\n                \"TemplateId\": 1,\n                \"Duration\": 1,\n                \"TemplateName\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -924,6 +972,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveSnapshotTemplate\n<公共请求参数>\n\n{\n    \"CosRegion\": \"beijing\",\n    \"Description\": \"testDesc\",\n    \"SnapshotInterval\": \"10\",\n    \"PornFlag\": \"0\",\n    \"CosBucket\": \"bucket\",\n    \"TemplateName\": \"testName\",\n    \"Height\": \"250\",\n    \"CosAppId\": \"123\",\n    \"Width\": \"250\",\n    \"TemplateId\": \"1000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyLiveTimeShiftTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveTimeShiftTemplate\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"TranscodeTemplateIds\": [\n        0\n    ],\n    \"RemoveWatermark\": true,\n    \"TemplateName\": \"xx\",\n    \"ItemDuration\": 1,\n    \"TemplateId\": 1,\n    \"Duration\": 1,\n    \"Area\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

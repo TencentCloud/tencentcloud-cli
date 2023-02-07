@@ -98,6 +98,20 @@
       "output": "CreateLiveSnapshotTemplateResponse",
       "status": "online"
     },
+    "CreateLiveTimeShiftRule": {
+      "document": "创建直播时移规则，需要先调用[CreateLiveTimeShiftTemplate](/document/product/267/84589)接口创建录制模板，将返回的模板id绑定到流使用。\n<br>直播时移相关文档：[直播时移](/document/product/267/86134)。",
+      "input": "CreateLiveTimeShiftRuleRequest",
+      "name": "创建直播时移规则",
+      "output": "CreateLiveTimeShiftRuleResponse",
+      "status": "online"
+    },
+    "CreateLiveTimeShiftTemplate": {
+      "document": "创建直播垫片模板。",
+      "input": "CreateLiveTimeShiftTemplateRequest",
+      "name": "创建直播时移模板",
+      "output": "CreateLiveTimeShiftTemplateResponse",
+      "status": "online"
+    },
     "CreateLiveTranscodeRule": {
       "document": "创建转码规则，需要先调用[CreateLiveTranscodeTemplate](/document/product/267/32646)接口创建转码模板，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。",
       "input": "CreateLiveTranscodeRuleRequest",
@@ -201,6 +215,20 @@
       "input": "DeleteLiveSnapshotTemplateRequest",
       "name": "删除截图模板",
       "output": "DeleteLiveSnapshotTemplateResponse",
+      "status": "online"
+    },
+    "DeleteLiveTimeShiftRule": {
+      "document": "删除直播时移规则。",
+      "input": "DeleteLiveTimeShiftRuleRequest",
+      "name": "删除直播时移规则",
+      "output": "DeleteLiveTimeShiftRuleResponse",
+      "status": "online"
+    },
+    "DeleteLiveTimeShiftTemplate": {
+      "document": "删除直播时移模板。",
+      "input": "DeleteLiveTimeShiftTemplateRequest",
+      "name": "删除直播时移模板",
+      "output": "DeleteLiveTimeShiftTemplateResponse",
       "status": "online"
     },
     "DeleteLiveTranscodeRule": {
@@ -511,6 +539,20 @@
       "output": "DescribeLiveTimeShiftBillInfoListResponse",
       "status": "online"
     },
+    "DescribeLiveTimeShiftRules": {
+      "document": "获取直播时移规则列表。",
+      "input": "DescribeLiveTimeShiftRulesRequest",
+      "name": "获取直播时移规则列表",
+      "output": "DescribeLiveTimeShiftRulesResponse",
+      "status": "online"
+    },
+    "DescribeLiveTimeShiftTemplates": {
+      "document": "获取直播时移模板。",
+      "input": "DescribeLiveTimeShiftTemplatesRequest",
+      "name": "获取直播时移模板",
+      "output": "DescribeLiveTimeShiftTemplatesResponse",
+      "status": "online"
+    },
     "DescribeLiveTranscodeDetailInfo": {
       "document": "支持查询某天或某段时间的转码详细信息。由于转码数据量较大，如果查询时间跨度太长可能会拉不到数据，可以尝试将查询时间范围缩小些再重试。",
       "input": "DescribeLiveTranscodeDetailInfoRequest",
@@ -789,6 +831,13 @@
       "input": "ModifyLiveSnapshotTemplateRequest",
       "name": "修改截图模板",
       "output": "ModifyLiveSnapshotTemplateResponse",
+      "status": "online"
+    },
+    "ModifyLiveTimeShiftTemplate": {
+      "document": "修改直播垫片模板。",
+      "input": "ModifyLiveTimeShiftTemplateRequest",
+      "name": "修改直播时移模板",
+      "output": "ModifyLiveTimeShiftTemplateResponse",
       "status": "online"
     },
     "ModifyLiveTranscodeTemplate": {
@@ -2957,6 +3006,150 @@
       ],
       "type": "object"
     },
+    "CreateLiveTimeShiftRuleRequest": {
+      "document": "CreateLiveTimeShiftRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "推流域名。",
+          "example": "xxx.xx.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流名称。\n注：如果本参数设置为非空字符串，规则将只对此推流起作用。",
+          "example": "s",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板 ID。",
+          "example": "123",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveTimeShiftRuleResponse": {
+      "document": "CreateLiveTimeShiftRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveTimeShiftTemplateRequest": {
+      "document": "CreateLiveTimeShiftTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "example": "testName",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时移时长。\n单位：s。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "描述信息。\n仅支持中文、英文、数字、_、-。",
+          "example": "testDesc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域。\nMainland：中国大陆。\nOverseas：海外及港澳台地区。\n默认值：Mainland。",
+          "example": "Mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分片时长。\n可取3-10。\n单位：s。\n默认值：5。",
+          "example": "5",
+          "member": "uint64",
+          "name": "ItemDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否去除水印。\n传true则将录制原始流。\n默认值：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "RemoveWatermark",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "转码流id列表。\n此参数仅在 RemoveWatermark为false时生效。",
+          "example": "[1]",
+          "member": "int64",
+          "name": "TranscodeTemplateIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveTimeShiftTemplateResponse": {
+      "document": "CreateLiveTimeShiftTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "模板Id。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLiveTranscodeRuleRequest": {
       "document": "CreateLiveTranscodeRule请求参数结构体",
       "members": [
@@ -3987,6 +4180,78 @@
     },
     "DeleteLiveSnapshotTemplateResponse": {
       "document": "DeleteLiveSnapshotTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveTimeShiftRuleRequest": {
+      "document": "DeleteLiveTimeShiftRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "推流域名。\n域名+AppName+StreamName唯一标识单个时移规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。",
+          "example": "yourdomain.test.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。\n域名+AppName+StreamName唯一标识单个时移规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流名称。\n域名+AppName+StreamName唯一标识单个时移规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。",
+          "example": "stream",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveTimeShiftRuleResponse": {
+      "document": "DeleteLiveTimeShiftRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveTimeShiftTemplateRequest": {
+      "document": "DeleteLiveTimeShiftTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板 ID。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveTimeShiftTemplateResponse": {
+      "document": "DeleteLiveTimeShiftTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6518,6 +6783,58 @@
           "example": "无",
           "member": "TimeShiftBillData",
           "name": "DataInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveTimeShiftRulesRequest": {
+      "document": "DescribeLiveTimeShiftRules请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLiveTimeShiftRulesResponse": {
+      "document": "DescribeLiveTimeShiftRules返回参数结构体",
+      "members": [
+        {
+          "document": "规则信息列表。",
+          "example": "无",
+          "member": "RuleInfo",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveTimeShiftTemplatesRequest": {
+      "document": "DescribeLiveTimeShiftTemplates请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLiveTimeShiftTemplatesResponse": {
+      "document": "DescribeLiveTimeShiftTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "直播时移模板信息。",
+          "example": "无",
+          "member": "TimeShiftTemplate",
+          "name": "Templates",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10536,6 +10853,96 @@
       ],
       "type": "object"
     },
+    "ModifyLiveTimeShiftTemplateRequest": {
+      "document": "ModifyLiveTimeShiftTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "时移模板id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模板名称。\n仅支持中文、英文、数字、_、-。",
+          "example": "testName",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
+          "example": "testDesc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时移时长。\n单位：s。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分片时长。\n可取3-10。\n单位：s。\n默认值：5。",
+          "example": "5",
+          "member": "uint64",
+          "name": "ItemDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否去除水印。\n传true则将录制原始流。\n默认值：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "RemoveWatermark",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "转码流id列表。\n此参数仅在 RemoveWatermark为false时生效。",
+          "example": "[1]",
+          "member": "int64",
+          "name": "TranscodeTemplateIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "地域。\nMainland：中国大陆。\nOverseas：海外及港澳台地区。\n默认值：Mainland。",
+          "example": "Mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveTimeShiftTemplateResponse": {
+      "document": "ModifyLiveTimeShiftTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLiveTranscodeTemplateRequest": {
       "document": "ModifyLiveTranscodeTemplate请求参数结构体",
       "members": [
@@ -13569,6 +13976,92 @@
         }
       ],
       "usage": "out"
+    },
+    "TimeShiftTemplate": {
+      "document": "直播时移模板配置",
+      "members": [
+        {
+          "default": "",
+          "document": "模板名称。",
+          "example": "test",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时移时长。\n单位：秒。",
+          "example": "6000",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片时长。\n可取3-10。\n单位：s。\n默认值：5。",
+          "example": "5",
+          "member": "uint64",
+          "name": "ItemDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板描述。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域：\nMainland：中国大陆；\nOverseas：海外及港澳台地区；\n默认值：Mainland。",
+          "example": "Mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除水印。\n为true则将录制原始流。\n默认值：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "RemoveWatermark",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转码流id列表。\n此参数仅在 RemoveWatermark为false时生效。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "TranscodeTemplateIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TimeValue": {
       "document": "某个时间点的指标的数值是多少。",

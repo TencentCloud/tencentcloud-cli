@@ -820,8 +820,7 @@
       "document": "规则引擎功能项操作，对于一种功能只对应下面三种类型的其中一种，RuleAction 数组中的每一项只能是其中一个类型，更多功能项的填写规范可调用接口 [查询规则引擎的设置参数](https://tcloud4api.woa.com/document/product/1657/79433?!preview&!document=1) 查看。",
       "members": [
         {
-          "default": "",
-          "document": "常规功能操作，选择该类型的功能项有：\n<li> 访问URL 重写（AccessUrlRedirect）；</li>\n<li> 回源 URL 重写 （UpstreamUrlRedirect）；</li>\n<li> QUIC（QUIC）；</li>\n<li> WebSocket （WebSocket）；</li>\n<li> 视频拖拽（VideoSeek）；</li>\n<li> Token 鉴权（Authentication）；</li>\n<li> 自定义CacheKey（CacheKey）；</li>\n<li> 节点缓存 TTL （Cache）；</li>\n<li> 浏览器缓存 TTL（MaxAge）；</li>\n<li> 离线缓存（OfflineCache）；</li>\n<li> 智能加速（SmartRouting）；</li>\n<li> 分片回源（RangeOriginPull）；</li>\n<li> HTTP/2 回源（UpstreamHttp2）；</li>\n<li> Host Header 重写（HostHeader）；</li>\n<li> 强制 HTTPS（ForceRedirect）；</li>\n<li> 回源 HTTPS（OriginPullProtocol）；</li>\n<li> 缓存预刷新（CachePrefresh）；</li>\n<li> 智能压缩（Compression）；</li>\n<li> Hsts；</li>\n<li> ClientIpHeader；</li>\n<li> TlsVersion；</li>\n<li> OcspStapling；</li>\n<li> HTTP/2 访问（Http2）；</li>\n<li> 回源跟随重定向(UpstreamFollowRedirect)。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "常规功能操作，选择该类型的功能项有：\n<li> 访问URL 重写（AccessUrlRedirect）；</li>\n<li> 回源 URL 重写 （UpstreamUrlRedirect）；</li>\n<li> QUIC（QUIC）；</li>\n<li> WebSocket （WebSocket）；</li>\n<li> 视频拖拽（VideoSeek）；</li>\n<li> Token 鉴权（Authentication）；</li>\n<li> 自定义CacheKey（CacheKey）；</li>\n<li> 节点缓存 TTL （Cache）；</li>\n<li> 浏览器缓存 TTL（MaxAge）；</li>\n<li> 离线缓存（OfflineCache）；</li>\n<li> 智能加速（SmartRouting）；</li>\n<li> 分片回源（RangeOriginPull）；</li>\n<li> HTTP/2 回源（UpstreamHttp2）；</li>\n<li> Host Header 重写（HostHeader）；</li>\n<li> 强制 HTTPS（ForceRedirect）；</li>\n<li> 回源 HTTPS（OriginPullProtocol）；</li>\n<li> 缓存预刷新（CachePrefresh）；</li>\n<li> 智能压缩（Compression）；</li>\n<li> Hsts；</li>\n<li> ClientIpHeader；</li>\n<li> TlsVersion；</li>\n<li> OcspStapling；</li>\n<li> HTTP/2 访问（Http2）；</li>\n<li> 回源跟随重定向(UpstreamFollowRedirect)；</li>\n<li> 修改源站(Origin)。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NormalAction",
           "name": "NormalAction",
@@ -830,7 +829,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "带有请求头/响应头的功能操作，选择该类型的功能项有：\n<li> 修改 HTTP 请求头（RequestHeader）；</li>\n<li> 修改HTTP响应头（ResponseHeader）。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RewriteAction",
@@ -840,7 +838,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "带有状态码的功能操作，选择该类型的功能项有：\n<li> 自定义错误页面（ErrorPage）；</li>\n<li> 状态码缓存 TTL（StatusCodeCache）。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CodeAction",
@@ -9305,92 +9302,83 @@
       "document": "源站组信息",
       "members": [
         {
-          "default": "",
           "document": "站点ID。",
           "example": "zone-xxx",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点名称。",
           "example": "123.com",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源站组ID。",
           "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
           "member": "string",
           "name": "OriginGroupId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源站类型，取值有：\n<li>self：自有源站；</li>\n<li>third_party：第三方源站；</li>\n<li>cos：腾讯云COS源站。</li>",
           "example": "self",
           "member": "string",
           "name": "OriginType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源站组名称。",
-          "example": "name",
+          "example": "Name",
           "member": "string",
           "name": "OriginGroupName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源站配置类型，当OriginType=self时，取值有：\n<li>area：按区域配置；</li>\n<li>weight： 按权重配置。</li>\n<li>proto： 按HTTP协议配置。</li>当OriginType=third_party/cos时放空。",
           "example": "area",
           "member": "string",
           "name": "ConfigurationType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源站记录信息。",
           "example": "[]",
           "member": "OriginRecord",
           "name": "OriginRecords",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源站组更新时间。",
           "example": "2014-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当OriginType=self时，表示回源Host。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.tencent.com",
           "member": "string",
           "name": "HostHeader",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }

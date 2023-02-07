@@ -1034,7 +1034,6 @@
       "document": "CreateEnvironment请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境名称",
           "example": "namespace-a",
           "member": "string",
@@ -1043,25 +1042,6 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "私有网络名称",
-          "example": "vpc-1n5javez",
-          "member": "string",
-          "name": "Vpc",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "子网列表",
-          "example": "{",
-          "member": "string",
-          "name": "SubnetIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "环境描述",
           "example": "命名空间名",
           "member": "string",
@@ -1070,7 +1050,22 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "私有网络名称",
+          "example": "vpc-1n5javez",
+          "member": "string",
+          "name": "Vpc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "子网列表",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
           "document": "K8s version",
           "example": "1.16.9",
           "member": "string",
@@ -1079,7 +1074,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -1088,7 +1082,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否开启tsw服务",
           "example": "true",
           "member": "bool",
@@ -1097,7 +1090,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "标签",
           "example": "1",
           "member": "Tag",
@@ -1106,7 +1098,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "环境类型：test、pre、prod",
           "example": "test",
           "member": "string",
@@ -1115,11 +1106,42 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "创建环境的region",
           "example": "ap-shanghai",
           "member": "string",
           "name": "CreateRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "是否创建私有网络",
+          "example": "false",
+          "member": "bool",
+          "name": "SetupVpc",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "是否创建 Prometheus 实例",
+          "example": "false",
+          "member": "bool",
+          "name": "SetupPrometheus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "prometheus 实例 id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "PrometheusId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "apm id",
+          "example": "apm-xxx",
+          "member": "string",
+          "name": "ApmId",
           "required": false,
           "type": "string"
         }
@@ -1134,7 +1156,6 @@
           "example": "namespace-36pm4p8r",
           "member": "string",
           "name": "Result",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1277,7 +1298,6 @@
       "document": "CreateResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境 Id",
           "example": "env-xxx",
           "member": "string",
@@ -1286,7 +1306,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE",
           "example": "CLS",
           "member": "string",
@@ -1295,16 +1314,14 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源 Id",
           "example": "cls-xxx",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -1313,7 +1330,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "资源来源，目前支持：existing，已有资源；creating，自动创建",
           "example": "existing",
           "member": "string",
@@ -1322,7 +1338,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设置 resource 的额外配置",
           "example": "{}",
           "member": "string",
@@ -1341,7 +1356,6 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },

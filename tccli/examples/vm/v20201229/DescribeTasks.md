@@ -38,6 +38,11 @@ Output:
                 "MediaInfo": {
                     "Duration": 36
                 },
+                "InputInfo": {
+                    "Type": "URL",
+                    "Url": "https://cms.myqcloud.com/video/test.mp3",
+                    "BucketInfo": null
+                },
                 "CreatedAt": "2020-07-13T11:47:01.925Z",
                 "UpdatedAt": "2020-07-13T11:47:25.840Z"
             }

@@ -42,6 +42,10 @@ Output:
                 "CreateTime": "2020-04-20T05:07:43Z",
                 "VodLoopTimes": -1,
                 "VodRefreshType": "ImmediateNewSource",
+                "VodLocalMode": 0,
+                "BackupSourceType": "",
+                "BackupSourceUrl": "",
+                "WatermarkList": [],
                 "RecentPullInfo": {
                     "FileUrl": "http://yourdomain/live/test.flv",
                     "OffsetTime": 95,

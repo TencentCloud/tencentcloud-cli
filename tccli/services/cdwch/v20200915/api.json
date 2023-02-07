@@ -21,6 +21,13 @@
       "output": "CreateInstanceNewResponse",
       "status": "online"
     },
+    "DescribeBackUpSchedule": {
+      "document": "查询备份策略信息",
+      "input": "DescribeBackUpScheduleRequest",
+      "name": "查询备份策略信息",
+      "output": "DescribeBackUpScheduleResponse",
+      "status": "online"
+    },
     "DescribeCkSqlApis": {
       "document": "查询集群用户、集群表，数据库等相关信息",
       "input": "DescribeCkSqlApisRequest",
@@ -28,11 +35,25 @@
       "output": "DescribeCkSqlApisResponse",
       "status": "online"
     },
+    "DescribeClusterConfigs": {
+      "document": "获取集群的最新的几个配置文件（config.xml、metrika.xml、user.xml）的内容，显示给用户",
+      "input": "DescribeClusterConfigsRequest",
+      "name": "获取集群配置文件内容",
+      "output": "DescribeClusterConfigsResponse",
+      "status": "online"
+    },
     "DescribeInstance": {
       "document": "根据实例ID查询某个实例的具体信息",
       "input": "DescribeInstanceRequest",
       "name": "描述实例信息",
       "output": "DescribeInstanceResponse",
+      "status": "online"
+    },
+    "DescribeInstanceKeyValConfigs": {
+      "document": "在集群详情页面获取所有参数列表",
+      "input": "DescribeInstanceKeyValConfigsRequest",
+      "name": "获取参数列表",
+      "output": "DescribeInstanceKeyValConfigsResponse",
       "status": "online"
     },
     "DescribeInstanceShards": {
@@ -56,6 +77,13 @@
       "output": "ModifyClusterConfigsResponse",
       "status": "online"
     },
+    "ModifyInstanceKeyValConfigs": {
+      "document": "KV模式修改配置接口",
+      "input": "ModifyInstanceKeyValConfigsRequest",
+      "name": "KV模式修改配置接口",
+      "output": "ModifyInstanceKeyValConfigsResponse",
+      "status": "online"
+    },
     "ModifyUserNewPrivilege": {
       "document": "针对ck账号的权限做管控（新版）",
       "input": "ModifyUserNewPrivilegeRequest",
@@ -68,6 +96,27 @@
       "input": "OpenBackUpRequest",
       "name": "开启或者关闭策略",
       "output": "OpenBackUpResponse",
+      "status": "online"
+    },
+    "ResizeDisk": {
+      "document": "扩容磁盘，包含扩容数据节点，zk节点",
+      "input": "ResizeDiskRequest",
+      "name": "扩容磁盘容量",
+      "output": "ResizeDiskResponse",
+      "status": "online"
+    },
+    "ScaleOutInstance": {
+      "document": "调整clickhouse节点数量",
+      "input": "ScaleOutInstanceRequest",
+      "name": "水平调整实例节点",
+      "output": "ScaleOutInstanceResponse",
+      "status": "online"
+    },
+    "ScaleUpInstance": {
+      "document": "垂直扩缩容节点规格，修改节点cvm的规格cpu，内存。 规格变化阶段，服务不可用。",
+      "input": "ScaleUpInstanceRequest",
+      "name": "垂直扩缩容节点规格",
+      "output": "ScaleUpInstanceResponse",
       "status": "online"
     }
   },
@@ -260,6 +309,72 @@
         }
       ],
       "usage": "in"
+    },
+    "ClusterConfigsInfoFromEMR": {
+      "document": "用于返回XML格式的配置文件和内容以及其他配置文件有关的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "配置文件名称",
+          "example": "config.xml",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置文件对应的相关属性信息",
+          "example": "{\"editable\":true,\"display\":true,\"type\":\"Customize\",\"fileOwner\":\"",
+          "member": "string",
+          "name": "FileConf",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置文件对应的其他属性信息",
+          "example": "{\"customKey\":{\"name\":\"customKey\",\"type\":\"string\",\"description\":\"",
+          "member": "string",
+          "name": "KeyConf",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置文件的内容，base64编码",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHlhbmRleD4K",
+          "member": "string",
+          "name": "OriParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于表示当前配置文件是不是有过修改后没有重启，提醒用户需要重启",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedRestart",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保存配置文件的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/etc/clickhouse-server",
+          "member": "string",
+          "name": "FilePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ConfigSubmitContext": {
       "document": "配置文件修改信息",
@@ -532,6 +647,78 @@
       ],
       "type": "object"
     },
+    "DescribeBackUpScheduleRequest": {
+      "document": "DescribeBackUpSchedule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "\"cdwch-xxxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackUpScheduleResponse": {
+      "document": "DescribeBackUpSchedule返回参数结构体",
+      "members": [
+        {
+          "document": "备份是否开启",
+          "example": "true",
+          "member": "bool",
+          "name": "BackUpOpened",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "元数据备份策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScheduleStrategy",
+          "name": "MetaStrategy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "表数据备份策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScheduleStrategy",
+          "name": "DataStrategy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "备份表列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupTableContent",
+          "name": "BackUpContents",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "备份的状态",
+          "example": "0",
+          "member": "int64",
+          "name": "BackUpStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCkSqlApisRequest": {
       "document": "DescribeCkSqlApis请求参数结构体",
       "members": [
@@ -582,6 +769,114 @@
           "example": "-",
           "member": "string",
           "name": "ReturnData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterConfigsRequest": {
+      "document": "DescribeClusterConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID",
+          "example": "cdwch-f625kxu6",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterConfigsResponse": {
+      "document": "DescribeClusterConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "返回实例的配置文件相关的信息",
+          "example": "无",
+          "member": "ClusterConfigsInfoFromEMR",
+          "name": "ClusterConfList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceKeyValConfigsRequest": {
+      "document": "DescribeInstanceKeyValConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID",
+          "example": "cdwch-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索的配置项名称",
+          "example": "max_connections",
+          "member": "string",
+          "name": "SearchConfigName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceKeyValConfigsResponse": {
+      "document": "DescribeInstanceKeyValConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "参数列表",
+          "example": "--",
+          "member": "InstanceConfigInfo",
+          "name": "ConfigItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "未配置的参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "InstanceConfigInfo",
+          "name": "UnConfigItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "配置的多层级参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "MapConfigItem",
+          "name": "MapConfigItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ErrorMsg",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -794,6 +1089,148 @@
         }
       ],
       "usage": "out"
+    },
+    "InstanceConfigInfo": {
+      "document": "集群配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项名称",
+          "example": "max_connections",
+          "member": "string",
+          "name": "ConfKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置项内容",
+          "example": "100",
+          "member": "string",
+          "name": "ConfValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认值",
+          "example": "100",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要重启",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedRestart",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可编辑",
+          "example": "true",
+          "member": "bool",
+          "name": "Editable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置项解释",
+          "example": "The maximum number of inbound connections.",
+          "member": "string",
+          "name": "ConfDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名称",
+          "example": "config.xml",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则名称类型",
+          "example": "number",
+          "member": "string",
+          "name": "ModifyRuleType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则名称内容",
+          "example": "bigint",
+          "member": "string",
+          "name": "ModifyRuleValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改人的uin",
+          "example": "1234567890",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2021-01-01 11:11:11",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceConfigItem": {
+      "document": "KV配置",
+      "members": [
+        {
+          "default": "",
+          "document": "key",
+          "example": "x",
+          "member": "string",
+          "name": "ConfKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "value",
+          "example": "x",
+          "member": "string",
+          "name": "ConfValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "InstanceInfo": {
       "document": "实例描述信息",
@@ -1101,6 +1538,32 @@
       ],
       "usage": "out"
     },
+    "MapConfigItem": {
+      "document": "kv配置，多层级item",
+      "members": [
+        {
+          "default": "",
+          "document": "key",
+          "example": "xxx",
+          "member": "string",
+          "name": "ConfKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列表",
+          "example": "[]",
+          "member": "InstanceConfigInfo",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyClusterConfigsRequest": {
       "document": "ModifyClusterConfigs请求参数结构体",
       "members": [
@@ -1153,6 +1616,96 @@
           "name": "ErrorMsg",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceKeyValConfigsRequest": {
+      "document": "ModifyInstanceKeyValConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新增配置列表",
+          "example": "[]",
+          "member": "InstanceConfigItem",
+          "name": "AddItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "更新配置列表",
+          "example": "[]",
+          "member": "InstanceConfigItem",
+          "name": "UpdateItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "删除配置列表",
+          "example": "[]",
+          "member": "InstanceConfigItem",
+          "name": "DeleteItems",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "删除配置列表",
+          "example": "[]",
+          "member": "InstanceConfigItem",
+          "name": "DelItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceKeyValConfigsResponse": {
+      "document": "ModifyInstanceKeyValConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "ID",
+          "example": "11",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1331,6 +1884,78 @@
       ],
       "type": "object"
     },
+    "ResizeDiskRequest": {
+      "document": "ResizeDisk请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例唯一ID",
+          "example": "cdwch-sdf34dsf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点",
+          "example": "DATA",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "磁盘扩容后容量，不能小于原有用量。clickhouse最小200，且为100的整数倍。 zk最小100，且为10的整数倍；",
+          "example": "300",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeDiskResponse": {
+      "document": "ResizeDisk返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdwch-xxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResourceSpec": {
       "document": "资源规格描述信息",
       "members": [
@@ -1443,6 +2068,233 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScaleOutInstanceRequest": {
+      "document": "ScaleOutInstance请求参数结构体",
+      "members": [
+        {
+          "document": "实例唯一ID",
+          "example": "cdwch-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点",
+          "example": "DATA",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "调整clickhouse节点数量",
+          "example": "4",
+          "member": "int64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "v_cluster分组，\t\n新增扩容节点将加入到已选择的v_cluster分组中，提交同步VIP生效.",
+          "example": "default_cluster",
+          "member": "string",
+          "name": "ScaleOutCluster",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "子网剩余ip数量，用于判断当前实例子网剩余ip数是否能扩容。需要根据实际填写",
+          "example": "22",
+          "member": "int64",
+          "name": "UserSubnetIPNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "节点同步ip",
+          "example": "ip",
+          "member": "string",
+          "name": "ScaleOutNodeIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstanceResponse": {
+      "document": "ScaleOutInstance返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "FlowId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdwch-xxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ErrorMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleUpInstanceRequest": {
+      "document": "ScaleUpInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例唯一ID",
+          "example": "cdwch-sdf34dsf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点",
+          "example": "DATA",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "clickhouse节点规格。",
+          "example": "SCH4",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否滚动重启，false为不滚动重启，true为滚动重启",
+          "example": "false",
+          "member": "bool",
+          "name": "ScaleUpEnableRolling",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleUpInstanceResponse": {
+      "document": "ScaleUpInstance返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdwch-xxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScheduleStrategy": {
+      "document": "策略详情",
+      "members": [
+        {
+          "default": "",
+          "document": "备份桶列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"cos-bucket\"",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备份保留天数",
+          "example": "7",
+          "member": "int64",
+          "name": "RetainDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份的天",
+          "example": "\"1,2\"",
+          "member": "string",
+          "name": "WeekDays",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份小时",
+          "example": "3",
+          "member": "int64",
+          "name": "ExecuteHour",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略id",
+          "example": "1",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

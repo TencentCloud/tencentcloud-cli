@@ -119,6 +119,13 @@
       "output": "CreateReviewTemplateResponse",
       "status": "online"
     },
+    "CreateRoundPlay": {
+      "document": "该接口用于创建轮播播单，数量上限：100。\n轮播播单的每个文件可以指定源文件，也可以指定某个转码文件。\n指定的文件必须是hls格式，所有的播单文件最好保持相同的码率和分辨率。",
+      "input": "CreateRoundPlayRequest",
+      "name": "创建轮播播单",
+      "output": "CreateRoundPlayResponse",
+      "status": "online"
+    },
     "CreateSampleSnapshotTemplate": {
       "document": "创建用户自定义采样截图模板，数量上限：16。",
       "input": "CreateSampleSnapshotTemplateRequest",
@@ -271,6 +278,13 @@
       "input": "DeleteReviewTemplateRequest",
       "name": "删除审核模板",
       "output": "DeleteReviewTemplateResponse",
+      "status": "online"
+    },
+    "DeleteRoundPlay": {
+      "document": "该接口用于删除轮播播单。",
+      "input": "DeleteRoundPlayRequest",
+      "name": "删除轮播播单",
+      "output": "DeleteRoundPlayResponse",
       "status": "online"
     },
     "DeleteSampleSnapshotTemplate": {
@@ -539,6 +553,13 @@
       "output": "DescribeReviewTemplatesResponse",
       "status": "online"
     },
+    "DescribeRoundPlays": {
+      "document": "该接口用于获取轮播播单列表。",
+      "input": "DescribeRoundPlaysRequest",
+      "name": "获取轮播播单列表",
+      "output": "DescribeRoundPlaysResponse",
+      "status": "online"
+    },
     "DescribeSampleSnapshotTemplates": {
       "document": "查询采样截图模板，支持根据条件，分页查询。",
       "input": "DescribeSampleSnapshotTemplatesRequest",
@@ -768,6 +789,13 @@
       "input": "ModifyReviewTemplateRequest",
       "name": "修改审核模板",
       "output": "ModifyReviewTemplateResponse",
+      "status": "online"
+    },
+    "ModifyRoundPlay": {
+      "document": "该接口用于修改轮播播单。\n修改后只有新的播放请求会生效，已经在播放中的用户在七天之内还可以播放修改前的播单。",
+      "input": "ModifyRoundPlayRequest",
+      "name": "修改轮播播单",
+      "output": "ModifyRoundPlayResponse",
       "status": "online"
     },
     "ModifySampleSnapshotTemplate": {
@@ -8765,6 +8793,80 @@
       ],
       "type": "object"
     },
+    "CreateRoundPlayRequest": {
+      "document": "CreateRoundPlay请求参数结构体",
+      "members": [
+        {
+          "document": "启播时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "example": "2018-12-01T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "轮播列表。\n<li>数组长度限制：100。</li>",
+          "example": "无",
+          "member": "RoundPlayListItemInfo",
+          "name": "RoundPlaylist",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "轮播播单名称，长度限制：64 个字符。",
+          "example": "MyRound",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "轮播播单描述信息，长度限制：256 个字符。",
+          "example": "my first round",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoundPlayResponse": {
+      "document": "CreateRoundPlay返回参数结构体",
+      "members": [
+        {
+          "document": "轮播播单唯一标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RoundPlayId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "轮播播放地址。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSampleSnapshotTemplateRequest": {
       "document": "CreateSampleSnapshotTemplate请求参数结构体",
       "members": [
@@ -10026,6 +10128,40 @@
     },
     "DeleteReviewTemplateResponse": {
       "document": "DeleteReviewTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoundPlayRequest": {
+      "document": "DeleteRoundPlay请求参数结构体",
+      "members": [
+        {
+          "document": "轮播播单唯一标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RoundPlayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoundPlayResponse": {
+      "document": "DeleteRoundPlay返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12510,6 +12646,72 @@
           "example": "无",
           "member": "ReviewTemplate",
           "name": "ReviewTemplateSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoundPlaysRequest": {
+      "document": "DescribeRoundPlays请求参数结构体",
+      "members": [
+        {
+          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "轮播播单标识过滤条件，数组长度限制：100。",
+          "example": "无",
+          "member": "string",
+          "name": "RoundPlayIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoundPlaysResponse": {
+      "document": "DescribeRoundPlays返回参数结构体",
+      "members": [
+        {
+          "document": "符合过滤条件的轮播播单总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "轮播播单详情列表。",
+          "example": "无",
+          "member": "RoundPlayInfo",
+          "name": "RoundPlaySet",
           "type": "list",
           "value_allowed_null": false
         },
@@ -20550,6 +20752,72 @@
       ],
       "type": "object"
     },
+    "ModifyRoundPlayRequest": {
+      "document": "ModifyRoundPlay请求参数结构体",
+      "members": [
+        {
+          "document": "轮播播单唯一标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RoundPlayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "启播时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "example": "2018-12-01T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "轮播列表。\n<li>数组长度限制：100。</li>",
+          "example": "无",
+          "member": "RoundPlayListItemInfo",
+          "name": "RoundPlaylist",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "轮播播单名称，长度限制：64 个字符。",
+          "example": "MyRound",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "轮播播单描述信息，长度限制：256 个字符。",
+          "example": "my first round",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoundPlayResponse": {
+      "document": "ModifyRoundPlay返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySampleSnapshotTemplateRequest": {
       "document": "ModifySampleSnapshotTemplate请求参数结构体",
       "members": [
@@ -25541,6 +25809,90 @@
         }
       ],
       "usage": "out"
+    },
+    "RoundPlayInfo": {
+      "document": "轮播任务信息",
+      "members": [
+        {
+          "document": "轮播播单标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RoundPlayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "启播时间，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "example": "2018-12-01T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "轮播列表。",
+          "example": "无",
+          "member": "RoundPlayListItemInfo",
+          "name": "RoundPlaylist",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "轮播播单名称，长度限制：64 个字符。",
+          "example": "Shift",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "轮播播单描述信息，长度限制：256 个字符。",
+          "example": "roundplay",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RoundPlayListItemInfo": {
+      "document": "加权轮播媒体文件信息",
+      "members": [
+        {
+          "document": "媒体文件标识。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "播放的音视频类型，可选值：\n<li>Transcode：转码输出；转码输出会有多个模版，必须指定 Definition 字段</li>\n<li>Original：原始音视频。</li>\nType 对应的格式必须为 HLS 格式。",
+          "example": "Transcode",
+          "member": "string",
+          "name": "AudioVideoType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "指定播放的转码模版，当 AudioVideoType 为 Transcode 时必须指定。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SDMCDrmKeyProviderInfo": {
       "document": "华曦达（SDMC）相关的 DRM 密钥提供商信息。",

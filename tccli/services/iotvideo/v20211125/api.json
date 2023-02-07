@@ -8320,7 +8320,6 @@
       "document": "TransferCloudStorage请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "example": "H541SOP191",
           "member": "string",
@@ -8329,7 +8328,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "已开通云存的设备名称",
           "example": "event_36502632_1",
           "member": "string",
@@ -8338,12 +8336,19 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "未开通云存的设备名称",
           "example": "event_36502632_2",
           "member": "string",
           "name": "ToDeviceName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "document": "未开通云存的设备产品ID",
+          "example": "T6YxxxxS8F",
+          "member": "string",
+          "name": "ToProductId",
+          "required": false,
           "type": "string"
         }
       ],
