@@ -1703,8 +1703,8 @@
     "DescribeVpcTaskResult": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcTaskResult\n&TaskId=481e9b6e-81d1-4859-b8cf-a673e010b388\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCESS\",\n        \"Output\": \"SUCCESS\",\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"481e9b6e-81d1-4859-b8cf-a673e010b388\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCESS\",\n        \"Output\": \"SUCCESS\",\n        \"Result\": [\n            {\n                \"ResourceId\": \"eni-olifj433\",\n                \"Status\": \"SUCCESS\"\n            }\n        ],\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "查询异步任务执行结果"
       }
     ],

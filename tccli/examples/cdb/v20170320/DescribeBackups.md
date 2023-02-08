@@ -35,7 +35,8 @@ Output:
                 "Method": "full",
                 "CosStorageType": 0,
                 "Size": 653226,
-                "InstanceId": "cdb-xxx"
+                "InstanceId": "cdb-xxx",
+                "EncryptionFlag": "off"
             },
             {
                 "Status": "SUCCESS",
@@ -56,7 +57,8 @@ Output:
                 "Method": "full",
                 "CosStorageType": 0,
                 "Size": 653226,
-                "InstanceId": "cdb-xxx"
+                "InstanceId": "cdb-xxx",
+                "EncryptionFlag": "on"
             }
         ]
     }

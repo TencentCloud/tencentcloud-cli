@@ -7,9 +7,9 @@ Input:
 ```
 tccli cdb ModifyAccountHost --cli-unfold-argument  \
     --InstanceId cdb-f35wr6wj \
+    --Host 127.0.0.1 \
     --User ajnnw \
-    --NewHost % \
-    --Host 127.0.0.1
+    --NewHost %
 ```
 
 Output: 

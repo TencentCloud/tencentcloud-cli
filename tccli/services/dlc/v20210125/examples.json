@@ -120,6 +120,14 @@
         "title": "创建数据导入任务"
       }
     ],
+    "CreateInternalTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInternalTable\n<公共请求参数>\n\n{\n    \"Columns\": [\n        {\n            \"Comment\": \"xx\",\n            \"Default\": \"xx\",\n            \"Type\": \"xx\",\n            \"Name\": \"xx\",\n            \"NotNull\": true\n        }\n    ],\n    \"TableBaseInfo\": {\n        \"TableName\": \"xx\",\n        \"DatasourceConnectionName\": \"xx\",\n        \"DatabaseName\": \"xx\",\n        \"TableComment\": \"xx\"\n    },\n    \"Partitions\": [\n        {\n            \"Comment\": \"xx\",\n            \"PartitionDot\": 0,\n            \"Name\": \"xx\",\n            \"PartitionFormat\": \"xx\",\n            \"Type\": \"xx\",\n            \"PartitionType\": \"xx\",\n            \"Transform\": \"xx\",\n            \"TransformArgs\": []\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Execution\": \"<create sql>\",\n        \"RequestId\": \"RequestId\"\n    }\n}",
+        "title": "创建托管存储内表"
+      }
+    ],
     "CreateNotebookSession": [
       {
         "document": "创建notebook session",

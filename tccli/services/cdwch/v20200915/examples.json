@@ -80,6 +80,14 @@
         "title": "获取集群规格"
       }
     ],
+    "DestroyInstance": [
+      {
+        "document": "test",
+        "input": "{\n  \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowID\": \"xx\",\n        \"InstanceID\": \"xx\",\n        \"ErrorMsg\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "ModifyClusterConfigs": [
       {
         "document": "在集群配置页面修改集群配置文件接口，xml模式",

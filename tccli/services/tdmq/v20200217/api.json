@@ -6776,7 +6776,6 @@
       "document": "DescribeRabbitMQNodeList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "rabbitmq集群ID",
           "example": "amqp-xxx",
           "member": "string",
@@ -6785,7 +6784,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "1",
           "member": "uint64",
@@ -6794,13 +6792,44 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "一页限制",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "模糊搜索节点名字",
+          "example": "node-xxx",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "过滤参数的名字和数值\n现在只有一个nodeStatus\nrunning/down\n数组类型，兼容后续添加过滤参数\n",
+          "example": "nodeStatus running/down",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "按指定元素排序，现在只有2个\ncpuUsage/diskUsage",
+          "example": "cpuUsage/diskUsage",
+          "member": "string",
+          "name": "SortElement",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "升序/降序\nascend/descend",
+          "example": "ascend/descend",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6813,7 +6842,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6822,7 +6850,6 @@
           "example": "无",
           "member": "RabbitMQPrivateNode",
           "name": "NodeList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9542,13 +9569,57 @@
       "document": "RabbitMQ节点信息",
       "members": [
         {
-          "default": "",
           "document": "节点名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "node-xx",
           "member": "string",
           "name": "NodeName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running/down",
+          "member": "string",
+          "name": "NodeStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CPU使用率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10%",
+          "member": "string",
+          "name": "CPUUsage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "内存使用情况，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "Memory",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "磁盘使用率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20%",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Rabbitmq的Erlang进程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "ProcessNumber",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -9558,7 +9629,6 @@
       "document": "RabbitMQ专享实例信息",
       "members": [
         {
-          "default": "",
           "document": "实例id",
           "example": "amqp-xxxx",
           "member": "string",
@@ -9568,7 +9638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名称",
           "example": "abc",
           "member": "string",
@@ -9578,7 +9647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4.9.3",
           "member": "string",
@@ -9588,7 +9656,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败",
           "example": "0",
           "member": "uint64",
@@ -9598,7 +9665,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点数量",
           "example": "5",
           "member": "uint64",
@@ -9608,7 +9674,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例配置规格名称",
           "example": "基础型",
           "member": "string",
@@ -9618,7 +9683,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "峰值TPS",
           "example": "10000",
           "member": "uint64",
@@ -9628,7 +9692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "峰值带宽，Mbps为单位",
           "example": "1200",
           "member": "uint64",
@@ -9638,7 +9701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "存储容量，GB为单位",
           "example": "100",
           "member": "uint64",
@@ -9648,7 +9710,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例到期时间，毫秒为单位",
           "example": "100000",
           "member": "uint64",
@@ -9658,7 +9719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
           "example": "0",
           "member": "uint64",
@@ -9668,7 +9728,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "0-后付费，1-预付费",
           "example": "0",
           "member": "uint64",
@@ -9678,7 +9737,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -9688,7 +9746,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例配置ID",
           "example": "vip-basic-1",
           "member": "string",
@@ -9696,6 +9753,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "集群异常。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "异常信息",
+          "member": "string",
+          "name": "ExceptionInformation",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

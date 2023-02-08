@@ -19,6 +19,7 @@ Output:
                 "RoGroupName": "ro_group_172023",
                 "RoMaxDelayTime": 1,
                 "RoOfflineDelay": 0,
+                "RoGroupMode": "alone",
                 "RoInstances": [
                     {
                         "Zone": "ap-guangzhou-3",

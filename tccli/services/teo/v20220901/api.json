@@ -2655,7 +2655,6 @@
       "document": "CreateRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "站点 ID。",
           "example": "zone-27q0p0bali16",
           "member": "string",
@@ -2664,7 +2663,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则名称，名称字符串长度 1～255。",
           "example": "rule test",
           "member": "string",
@@ -2673,7 +2671,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则状态，取值有：\n<li> enable: 启用； </li>\n<li> disable: 未启用。</li>",
           "example": "enable",
           "member": "string",
@@ -2682,7 +2679,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则内容。",
           "example": "无",
           "member": "Rule",
@@ -2691,7 +2687,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "规则标签。",
           "example": "[]",
           "member": "string",
@@ -2710,7 +2705,6 @@
           "example": "rule-qbjifysd",
           "member": "string",
           "name": "RuleId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5759,7 +5753,7 @@
         },
         {
           "default": "",
-          "document": "筛选条件，key可选的值有：\n<li>attackType：攻击类型；</li>\n<li>riskLevel：风险等级；</li>\n<li>action：执行动作（处置方式）；</li>\n<li>ruleId：规则id；</li>\n<li>sipCountryCode：ip所在国家；</li>\n<li>attackIp：攻击ip；</li>\n<li>oriDomain：被攻击的子域名；</li>\n<li>eventId：事件id；</li>\n<li>ua：用户代理；</li>\n<li>requestMethod：请求方法；</li>\n<li>uri：统一资源标识符。</li>",
+          "document": "筛选条件，key可选的值有：\n<li>attackType：攻击类型；</li>\n<li>riskLevel：风险等级；</li>\n<li>action：执行动作（处置方式）；</li>\n<li>ruleId：规则id；</li>\n<li>sipCountryCode：ip所在国家；</li>\n<li>attackIp：攻击ip；</li>\n<li>realClientIp：真实客户端ip；</li>\n<li>oriDomain：被攻击的子域名；</li>\n<li>eventId：事件id；</li>\n<li>ua：用户代理；</li>\n<li>requestMethod：请求方法；</li>\n<li>uri：统一资源标识符。</li>",
           "example": "[{\"Key\":\"test key\",\"Operator\":\"equal\",\"Value\":[\"123\",\"33\"]}]",
           "member": "QueryCondition",
           "name": "QueryCondition",
@@ -8639,7 +8633,6 @@
       "document": "ModifyRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "站点 ID。",
           "example": "zone-djuqmq",
           "member": "string",
@@ -8648,7 +8641,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则名称，字符串名称长度 1~255。",
           "example": "rule test",
           "member": "string",
@@ -8657,7 +8649,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则内容。",
           "example": "无",
           "member": "Rule",
@@ -8666,7 +8657,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "规则 ID。",
           "example": "rule-duxamq",
           "member": "string",
@@ -8675,7 +8665,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则状态，取值有：\n<li> enable: 启用； </li>\n<li> disable: 未启用。</li>",
           "example": "enable",
           "member": "string",
@@ -8684,7 +8673,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则标签。",
           "example": "[]",
           "member": "string",
@@ -8703,7 +8691,6 @@
           "example": "rule-duxamq",
           "member": "string",
           "name": "RuleId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12757,10 +12744,10 @@
         },
         {
           "default": "",
-          "document": "攻击源（客户端）Ip。",
-          "example": "\"127.0.0.1\"",
+          "document": "http 日志内容。",
+          "example": "\"\"",
           "member": "string",
-          "name": "AttackIp",
+          "name": "HttpLog",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12777,10 +12764,10 @@
         },
         {
           "default": "",
-          "document": "http 日志内容。",
-          "example": "\"\"",
+          "document": "攻击源（客户端）Ip。",
+          "example": "\"127.0.0.1\"",
           "member": "string",
-          "name": "HttpLog",
+          "name": "AttackIp",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12792,6 +12779,26 @@
           "member": "string",
           "name": "SipCountryCode",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "真实客户端Ip。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "RealClientIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "真实客户端Ip所在国家iso-3166中alpha-2编码。",
+          "example": "CN",
+          "member": "string",
+          "name": "RealClientIpCountryCode",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12817,10 +12824,10 @@
         },
         {
           "default": "",
-          "document": "攻击内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"Attack Content\"",
+          "document": "请求类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET",
           "member": "string",
-          "name": "AttackContent",
+          "name": "ReqMethod",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -12837,10 +12844,10 @@
         },
         {
           "default": "",
-          "document": "请求类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "GET",
+          "document": "攻击内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Attack Content\"",
           "member": "string",
-          "name": "ReqMethod",
+          "name": "AttackContent",
           "required": true,
           "type": "string",
           "value_allowed_null": true

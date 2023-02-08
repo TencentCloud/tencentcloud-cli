@@ -18,7 +18,7 @@
     ],
     "CreateFunction": [
       {
-        "document": "",
+        "document": "创建函数",
         "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFunction\n<公共请求参数>\n\n{\n    \"Code\": {\n        \"CosBucketName\": \"<CosBucketName>\",\n        \"CosObjectName\": \"<CosObjectName>\"\n    },\n    \"Handler\": \"<function.handler>\",\n    \"FunctionName\": \"<FunctionName>\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建函数"
@@ -336,7 +336,7 @@
     ],
     "UpdateFunctionConfiguration": [
       {
-        "document": "",
+        "document": "更新函数配置",
         "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionConfiguration\n<公共请求参数>\n\n{\n    \"FunctionName\": \"<FunctionName>\",\n    \"Description\": \"<Description>\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新函数配置"

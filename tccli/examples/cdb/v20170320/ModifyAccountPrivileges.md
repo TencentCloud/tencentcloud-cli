@@ -7,9 +7,9 @@ Input:
 ```
 tccli cdb ModifyAccountPrivileges --cli-unfold-argument  \
     --InstanceId cdb-f35wr6wj \
+    --Accounts.0.Host 127.0.0.1 \
     --Accounts.0.User ajnnw \
-    --GlobalPrivileges SELECT \
-    --Accounts.0.Host 127.0.0.1
+    --GlobalPrivileges SELECT
 ```
 
 Output: 

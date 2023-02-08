@@ -7,8 +7,8 @@ Input:
 ```
 tccli cdb InquiryPriceUpgradeInstances --cli-unfold-argument  \
     --InstanceId cdb-6si6qy6p \
-    --Memory 1000 \
-    --Volume 50
+    --Volume 50 \
+    --Memory 1000
 ```
 
 Output: 

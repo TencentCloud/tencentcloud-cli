@@ -7,9 +7,9 @@ Input:
 ```
 tccli cdb ModifyAccountMaxUserConnections --cli-unfold-argument  \
     --InstanceId cdb-f35wr6wj \
-    --Accounts.0.User ajnnw \
+    --MaxUserConnections 100 \
     --Accounts.0.Host 127.0.0.1 \
-    --MaxUserConnections 100
+    --Accounts.0.User ajnnw
 ```
 
 Output: 

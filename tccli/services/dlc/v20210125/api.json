@@ -105,6 +105,13 @@
       "output": "CreateImportTaskResponse",
       "status": "online"
     },
+    "CreateInternalTable": {
+      "document": "创建托管存储内表",
+      "input": "CreateInternalTableRequest",
+      "name": "创建托管存储内表",
+      "output": "CreateInternalTableResponse",
+      "status": "online"
+    },
     "CreateNotebookSession": {
       "document": "本接口（CreateNotebookSession）用于创建notebook livy session",
       "input": "CreateNotebookSessionRequest",
@@ -1736,6 +1743,69 @@
           "example": "24343434",
           "member": "string",
           "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInternalTableRequest": {
+      "document": "CreateInternalTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表基本信息",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "表字段信息",
+          "example": "无",
+          "member": "TColumn",
+          "name": "Columns",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "表分区信息",
+          "example": "无",
+          "member": "TPartition",
+          "name": "Partitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "表属性信息",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInternalTableResponse": {
+      "document": "CreateInternalTable返回参数结构体",
+      "members": [
+        {
+          "document": "创建托管存储内表sql语句描述",
+          "example": "无",
+          "member": "string",
+          "name": "Execution",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7526,6 +7596,148 @@
         }
       ],
       "type": "object"
+    },
+    "TColumn": {
+      "document": "表字段描述信息",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段描述",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段默认值",
+          "example": "无",
+          "member": "string",
+          "name": "Default",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段是否是非空",
+          "example": "无",
+          "member": "bool",
+          "name": "NotNull",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TPartition": {
+      "document": "表分区字段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段描述",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区类型",
+          "example": "无",
+          "member": "string",
+          "name": "PartitionType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区格式",
+          "example": "无",
+          "member": "string",
+          "name": "PartitionFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区分隔数",
+          "example": "无",
+          "member": "int64",
+          "name": "PartitionDot",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区转换策略",
+          "example": "无",
+          "member": "string",
+          "name": "Transform",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略参数",
+          "example": "无",
+          "member": "string",
+          "name": "TransformArgs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "TableBaseInfo": {
       "document": "数据表配置信息",

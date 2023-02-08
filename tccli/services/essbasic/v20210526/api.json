@@ -91,6 +91,20 @@
       "output": "ChannelCreateReleaseFlowResponse",
       "status": "online"
     },
+    "ChannelCreateSealPolicy": {
+      "document": "将指定印章授权给企业下的某些员工",
+      "input": "ChannelCreateSealPolicyRequest",
+      "name": "创建印章授权",
+      "output": "ChannelCreateSealPolicyResponse",
+      "status": "online"
+    },
+    "ChannelDeleteSealPolicies": {
+      "document": "删除指定印章下多个授权信息",
+      "input": "ChannelDeleteSealPoliciesRequest",
+      "name": "删除印章授权",
+      "output": "ChannelDeleteSealPoliciesResponse",
+      "status": "online"
+    },
     "ChannelDescribeEmployees": {
       "document": "查询企业员工列表",
       "input": "ChannelDescribeEmployeesRequest",
@@ -1446,6 +1460,130 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateSealPolicyRequest": {
+      "document": "ChannelCreateSealPolicy请求参数结构体",
+      "members": [
+        {
+          "document": "用户渠道信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "指定印章",
+          "example": "无",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "指定待授权的用户ID数组",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "企业机构信息",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "操作人（用户）信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateSealPolicyResponse": {
+      "document": "ChannelCreateSealPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "最终授权成功的用户ID数组。其他的跳过的是已经授权了的",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDeleteSealPoliciesRequest": {
+      "document": "ChannelDeleteSealPolicies请求参数结构体",
+      "members": [
+        {
+          "document": "渠道信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "指定印章ID",
+          "example": "无",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "指定用户ID数组",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "操作人（用户）信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "组织机构信息",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDeleteSealPoliciesResponse": {
+      "document": "ChannelDeleteSealPolicies返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

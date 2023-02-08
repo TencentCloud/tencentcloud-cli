@@ -9362,8 +9362,8 @@
       "document": "HTTP/HTTPS监听器下的转发规则绑定的后端服务信息",
       "members": [
         {
-          "default": "",
           "document": "转发规则的 ID",
+          "example": "无",
           "member": "string",
           "name": "LocationId",
           "required": true,
@@ -9371,8 +9371,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发规则的域名",
+          "example": "无",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -9380,8 +9380,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发规则的路径。",
+          "example": "无",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -9389,10 +9389,19 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "后端服务的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Backend",
           "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "后端云函数的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FunctionTarget",
+          "name": "FunctionTargets",
           "required": true,
           "type": "list",
           "value_allowed_null": true

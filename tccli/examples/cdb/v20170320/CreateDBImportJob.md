@@ -7,8 +7,8 @@ Input:
 ```
 tccli cdb CreateDBImportJob --cli-unfold-argument  \
     --InstanceId cdb-ids6j1b3 \
-    --User xxxxx \
     --Password xxxxxxxxxx \
+    --User xxxxx \
     --FileName test.sql
 ```
 
@@ -31,9 +31,9 @@ Input:
 ```
 tccli cdb CreateDBImportJob --cli-unfold-argument  \
     --InstanceId cdb-ids6j1b3 \
-    --User xxxxx \
+    --CosUrl https://test-bulk-XXXXX.cos.ap-chengdu.myqcloud.com/myFile/create_db.sql \
     --Password xxxxxxxxxx \
-    --CosUrl https://test-bulk-XXXXX.cos.ap-chengdu.myqcloud.com/myFile/create_db.sql
+    --User xxxxx
 ```
 
 Output: 

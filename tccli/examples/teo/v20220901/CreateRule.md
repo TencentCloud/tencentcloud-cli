@@ -1,6 +1,6 @@
 **Example 1: CreateRule**
 
-
+创建一个规则引擎
 
 Input: 
 
@@ -14,6 +14,15 @@ tccli teo CreateRule --cli-unfold-argument  \
     --Rules.0.Actions.1.CodeAction.Parameters.0.Name CacheTime \
     --Rules.0.Actions.1.CodeAction.Parameters.0.StatusCode 200 \
     --Rules.0.Actions.1.CodeAction.Parameters.0.Values 20 \
+    --Rules.0.Actions.2.RewriteAction.Action ResponseHeader \
+    --Rules.0.Actions.2.RewriteAction.Parameters.0.Action set \
+    --Rules.0.Actions.2.RewriteAction.Parameters.0.Name Foo \
+    --Rules.0.Actions.2.RewriteAction.Parameters.0.Values Bar \
+    --Rules.0.Actions.2.RewriteAction.Parameters.1.Action add \
+    --Rules.0.Actions.2.RewriteAction.Parameters.1.Name Hello \
+    --Rules.0.Actions.2.RewriteAction.Parameters.1.Values World \
+    --Rules.0.Actions.2.RewriteAction.Parameters.2.Action del \
+    --Rules.0.Actions.2.RewriteAction.Parameters.2.Name Foo2 \
     --Rules.0.Conditions.0.Conditions.0.Operator equal \
     --Rules.0.Conditions.0.Conditions.0.Target host \
     --Rules.0.Conditions.0.Conditions.0.Values test.vernayang.com \
@@ -33,7 +42,7 @@ Output:
 
 **Example 2: 参数为 OBJECT 类型的创建**
 
-
+参数为 OBJECT 类型的创建
 
 Input: 
 

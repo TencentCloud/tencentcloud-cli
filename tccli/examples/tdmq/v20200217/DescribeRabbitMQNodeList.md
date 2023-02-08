@@ -1,6 +1,6 @@
 **Example 1: RabbitMQ专享版查询节点列表**
 
-
+RabbitMQ专享版查询节点列表 在查询节点的时候使用。
 
 Input: 
 

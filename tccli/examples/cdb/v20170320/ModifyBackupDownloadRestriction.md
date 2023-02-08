@@ -8,10 +8,10 @@ Input:
 tccli cdb ModifyBackupDownloadRestriction --cli-unfold-argument  \
     --LimitType Customize \
     --VpcComparisonSymbol In \
-    --IpComparisonSymbol NotIn \
-    --LimitIp 1.2.3.4 192.168.10.0/24 \
     --LimitVpc.0.Region ap-guangzhou \
-    --LimitVpc.0.VpcList vpc-aa3ximox vpc-64elqxc9
+    --LimitVpc.0.VpcList vpc-64elqxc9 vpc-aa3ximox \
+    --IpComparisonSymbol NotIn \
+    --LimitIp 192.168.10.0/24 1.2.3.4
 ```
 
 Output: 

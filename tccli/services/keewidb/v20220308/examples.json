@@ -1,0 +1,293 @@
+{
+  "actions": {
+    "AssociateSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateSecurityGroups\n<公共请求参数>\n\n{\n    \"Product\": \"keewidb\",\n    \"SecurityGroupId\": \"sg-fkkzqw25\",\n    \"InstanceIds\": [\n        \"kee-9clkb977\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7a0d7f6-87b8-467f-8e2a-bcde8f834268\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ChangeInstanceMaster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeInstanceMaster\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\",\n    \"NodeId\": \"5ddd5a5aa3d4448553fe94d0c0741236f144b9f5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88fc013c-dbc4-4ce7-9da3-f0be348c7f92\",\n        \"TaskId\": 1634784477\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "CleanUpInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CleanUpInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-g0jmitf7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3329c145-ece6-445a-a1f1-738f591ddbdd\",\n        \"TaskId\": 1634784476\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ClearInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ClearInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\",\n    \"Password\": \"Lcv8WcJ1****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"55b3c220-6d63-438f-bd38-1b76df5c4a14\",\n        \"TaskId\": 1634784480\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "CreateBackupManually": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupManually\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-lagg27el\",\n    \"StorageDays\": \"14\",\n    \"Remark\": \"备份test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9275a3b1-565a-4a0d-90c4-4cd39421160f\",\n        \"TaskId\": 1655902385\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "CreateInstances": [
+      {
+        "document": "创建实例",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"ShardNum\": \"3\",\n    \"TypeId\": \"14\",\n    \"GoodsNum\": \"1\",\n    \"UniqVpcId\": \"vpc-qicyv9mz\",\n    \"MachineMemory\": \"2\",\n    \"Period\": \"1\",\n    \"ZoneId\": \"100002\",\n    \"ReplicasNum\": \"1\",\n    \"UniqSubnetId\": \"subnet-4rohwntq\",\n    \"DiskSize\": \"100\",\n    \"MemSize\": \"8\",\n    \"MachineCpu\": \"1\",\n    \"Password\": \"Test123456\",\n    \"InstanceName\": \"测试实例2\",\n    \"BillingMode\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealId\": \"229126199\",\n        \"InstanceIds\": [\n            \"kee-emg6bltn\"\n        ],\n        \"RequestId\": \"365b3029-06d5-4016-8054-518994bba781\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeAutoBackupConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoBackupConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9vrt****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupStorageDays\": 7,\n        \"BinlogStorageDays\": 3,\n        \"RequestId\": \"5d5449dc-e36f-47d8-ae50-5988f69991ad\",\n        \"TimePeriod\": \"03:00-04:00\",\n        \"WeekDays\": [\n            \"Monday\",\n            \"Tuesday\",\n            \"Wednesday\",\n            \"Thursday\",\n            \"Friday\",\n            \"Saturday\",\n            \"Sunday\"\n        ]\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeDBSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\",\n    \"Product\": \"keewidb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"CreateTime\": \"2021-10-30 16:11:08\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"10.0.0.0/8\",\n                        \"Desc\": \"\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"7777\",\n                        \"ServiceModule\": \"\"\n                    }\n                ],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-iqxw****\",\n                \"SecurityGroupName\": \"安全组4\",\n                \"SecurityGroupRemark\": \"自定义\"\n            }\n        ],\n        \"RequestId\": \"6bb17fcf-dd09-440b-806b-198261cff9a1\",\n        \"VIP\": \"10.0.16.44\",\n        \"VPort\": \"6379\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeInstanceBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceBackups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-i0krexg9\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupRecord\": [\n            {\n                \"BackupId\": \"\",\n                \"BackupType\": \"1\",\n                \"Locked\": 0,\n                \"Remark\": \"\",\n                \"StartTime\": \"2022-08-28 16:00:07\",\n                \"Status\": 2\n            },\n            {\n                \"BackupId\": \"\",\n                \"BackupType\": \"1\",\n                \"Locked\": 0,\n                \"Remark\": \"\",\n                \"StartTime\": \"2022-08-27 16:00:57\",\n                \"Status\": 2\n            },\n            {\n                \"BackupId\": \"\",\n                \"BackupType\": \"1\",\n                \"Locked\": 0,\n                \"Remark\": \"\",\n                \"StartTime\": \"2022-08-26 16:00:43\",\n                \"Status\": 2\n            }\n        ],\n        \"BackupSet\": [],\n        \"RequestId\": \"1bb3c529-3db5-4bca-9f2b-4c04f919adf5\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeInstanceBinlogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceBinlogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-lagg27el\",\n    \"Limit\": \"5\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupSet\": [\n            {\n                \"BackupId\": \"211331\",\n                \"EndTime\": \"2022-06-29 20:48:28\",\n                \"FileSize\": 606208,\n                \"Filename\": \"pmedis_backup_binlog.1-1655902375-shard-1-thread-2.tgz\",\n                \"StartTime\": \"2022-06-29 20:48:28\"\n            },\n            {\n                \"BackupId\": \"211321\",\n                \"EndTime\": \"2022-06-29 20:48:28\",\n                \"FileSize\": 606208,\n                \"Filename\": \"pmedis_backup_binlog.1-1655902375-shard-0-thread-3.tgz\",\n                \"StartTime\": \"2022-06-29 20:48:28\"\n            },\n            {\n                \"BackupId\": \"211320\",\n                \"EndTime\": \"2022-06-29 20:48:12\",\n                \"FileSize\": 606208,\n                \"Filename\": \"pmedis_backup_binlog.1-1655902375-shard-3-thread-0.tgz\",\n                \"StartTime\": \"2022-06-29 20:48:12\"\n            },\n            {\n                \"BackupId\": \"211319\",\n                \"EndTime\": \"2022-06-29 20:48:28\",\n                \"FileSize\": 606208,\n                \"Filename\": \"pmedis_backup_binlog.1-1655902375-shard-0-thread-2.tgz\",\n                \"StartTime\": \"2022-06-29 20:48:28\"\n            },\n            {\n                \"BackupId\": \"211318\",\n                \"EndTime\": \"2022-06-29 20:48:12\",\n                \"FileSize\": 606208,\n                \"Filename\": \"pmedis_backup_binlog.1-1655902375-shard-5-thread-3.tgz\",\n                \"StartTime\": \"2022-06-29 20:48:12\"\n            }\n        ],\n        \"RequestId\": \"342e23c5-fbfe-407f-9acf-8bb890fca8b2\",\n        \"TotalCount\": 24\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeInstanceNodeInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodeInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\",\n    \"Limit\": \"100\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KeeWiDB\": [\n            {\n                \"NodeId\": \"af40204e08f25e7848aaaf344cb05c2fb6fd63c6\",\n                \"NodeRole\": \"slave\"\n            },\n            {\n                \"NodeId\": \"2c0dd8607c8187c45ec6943337fb43e60e3d6add\",\n                \"NodeRole\": \"slave\"\n            },\n            {\n                \"NodeId\": \"5ddd5a5aa3d4448553fe94d0c0741236f144b9f5\",\n                \"NodeRole\": \"master\"\n            },\n            {\n                \"NodeId\": \"d05b99e5e07b7d3d29a4c6f65d410aada0849797\",\n                \"NodeRole\": \"master\"\n            },\n            {\n                \"NodeId\": \"be2aba737c920f17e9151266a9ee59a08ca3727e\",\n                \"NodeRole\": \"master\"\n            },\n            {\n                \"NodeId\": \"fc9d0d4d3f33570320cd2034d75c34521ef1c3ef\",\n                \"NodeRole\": \"slave\"\n            }\n        ],\n        \"KeeWiDBCount\": 6,\n        \"Proxy\": [\n            {\n                \"NodeId\": \"3ceae5cc95d9334641447bd315ee46ea8ba39884\"\n            },\n            {\n                \"NodeId\": \"cda74b83783be31cbad762d48dd2f5847f866e25\"\n            },\n            {\n                \"NodeId\": \"402953672af8b451d9f4b4a55cf4e0c2ad5592f3\"\n            },\n            {\n                \"NodeId\": \"f54afc9a2c07b867efa7214eb8da65d2d9e06f34\"\n            },\n            {\n                \"NodeId\": \"7fc296b1e7f7e818a9a773f49ba2376ccf2453c0\"\n            },\n            {\n                \"NodeId\": \"4cc3cd90864ce50069a05dc02473fb531ac16be6\"\n            },\n            {\n                \"NodeId\": \"f43aabbd573d6e2fb36286f5787d81ce89211c80\"\n            },\n            {\n                \"NodeId\": \"f09af44dde734efd69e47825483ff4f48de103b0\"\n            }\n        ],\n        \"ProxyCount\": 8,\n        \"Redis\": [],\n        \"RedisCount\": 0,\n        \"RequestId\": \"80c6320a-01a3-4fe3-af2a-797e72573732\",\n        \"Tendis\": [],\n        \"TendisCount\": 0\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeInstanceParamRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceParamRecords\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\",\n    \"Limit\": \"100\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceParamHistory\": [\n            {\n                \"ModifyTime\": \"2022-03-10 12:41:24\",\n                \"NewValue\": \"no\",\n                \"ParamName\": \"auto-failback\",\n                \"PreValue\": \"yes\",\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"10b66e77-e729-4708-84a4-2f542677b604\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeInstanceParams": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceEnumParam\": [\n            {\n                \"CurrentValue\": \"yes\",\n                \"DefaultValue\": \"yes\",\n                \"EnumValue\": [\n                    \"yes\",\n                    \"no\"\n                ],\n                \"NeedRestart\": \"false\",\n                \"ParamName\": \"auto-failback\",\n                \"Status\": 2,\n                \"Tips\": \"After the failure recovery, the master node is automatically switched back to the master zone (Standard) or the master node group (cluster)\",\n                \"ValueType\": \"enum\"\n            }\n        ],\n        \"InstanceIntegerParam\": [\n            {\n                \"CurrentValue\": \"15000\",\n                \"DefaultValue\": \"15000\",\n                \"Max\": \"120000\",\n                \"Min\": \"15000\",\n                \"NeedRestart\": \"false\",\n                \"ParamName\": \"cluster-node-timeout\",\n                \"Status\": 2,\n                \"Tips\": \"Cluster node timeout is the amount of milliseconds a node must be unreachable for it to be considered in failure state\",\n                \"Unit\": \"ms\",\n                \"ValueType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"100\",\n                \"DefaultValue\": \"100\",\n                \"Max\": \"10000\",\n                \"Min\": \"10\",\n                \"NeedRestart\": \"false\",\n                \"ParamName\": \"proxy-slowlog-log-slower-than\",\n                \"Status\": 2,\n                \"Tips\": \"the command will be record over this time in proxy\",\n                \"Unit\": \"ms\",\n                \"ValueType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"100\",\n                \"DefaultValue\": \"100\",\n                \"Max\": \"10000\",\n                \"Min\": \"10\",\n                \"NeedRestart\": \"false\",\n                \"ParamName\": \"slowlog-log-slower-than\",\n                \"Status\": 2,\n                \"Tips\": \"Over this time the command is recorded in us.a negative number disables the slow log,a value of zero forces the logging of every command\",\n                \"Unit\": \"ms\",\n                \"ValueType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"128\",\n                \"DefaultValue\": \"128\",\n                \"Max\": \"1024\",\n                \"Min\": \"0\",\n                \"NeedRestart\": \"false\",\n                \"ParamName\": \"slowlog-max-len\",\n                \"Status\": 2,\n                \"Tips\": \"When a new command is logged and the slow log is already at its maximum length, the oldest one is removed from the queue of logged commands in order to make space\",\n                \"Unit\": \"\",\n                \"ValueType\": \"integer\"\n            }\n        ],\n        \"InstanceMultiParam\": [\n            {\n                \"CurrentValue\": \"\\\"\\\"\",\n                \"DefaultValue\": \"\\\"\\\"\",\n                \"EnumValue\": [\n                    \"flushall\",\n                    \"flushdb\",\n                    \"keys\",\n                    \"hgetall\",\n                    \"eval\",\n                    \"evalsha\",\n                    \"script\"\n                ],\n                \"NeedRestart\": \"false\",\n                \"ParamName\": \"disable-command-list\",\n                \"Status\": 2,\n                \"Tips\": \"commands in such config will not be allowed to run in this instance,you can config multi commands like this 'flushdb,keys'\",\n                \"ValueType\": \"multi\"\n            }\n        ],\n        \"InstanceTextParam\": [\n            {\n                \"CurrentValue\": \"\\\"\\\"\",\n                \"DefaultValue\": \"\\\"\\\"\",\n                \"NeedRestart\": \"false\",\n                \"ParamName\": \"notify-keyspace-events\",\n                \"Status\": 2,\n                \"TextValue\": [\n                    \"K\",\n                    \"E\",\n                    \"g\",\n                    \"$\",\n                    \"l\",\n                    \"s\",\n                    \"h\",\n                    \"z\",\n                    \"x\",\n                    \"e\",\n                    \"A\"\n                ],\n                \"Tips\": \"Changes in key space notification to registered clients\",\n                \"ValueType\": \"text\"\n            }\n        ],\n        \"RequestId\": \"5585ef91-0749-478a-aa81-ecc7ee584143\",\n        \"TotalCount\": 7\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeInstanceReplicas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceReplicas\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReplicaGroups\": [\n            {\n                \"GroupId\": 1081,\n                \"GroupName\": \"ng-00\",\n                \"KeeWiDBNodes\": [\n                    {\n                        \"NodeId\": \"fc9d0d4d3f33570320cd2034d75c34521ef1c3ef\",\n                        \"Role\": \"master\",\n                        \"Status\": \"Normal\"\n                    },\n                    {\n                        \"NodeId\": \"d05b99e5e07b7d3d29a4c6f65d410aada0849797\",\n                        \"Role\": \"master\",\n                        \"Status\": \"Normal\"\n                    },\n                    {\n                        \"NodeId\": \"be2aba737c920f17e9151266a9ee59a08ca3727e\",\n                        \"Role\": \"master\",\n                        \"Status\": \"Normal\"\n                    }\n                ],\n                \"Role\": \"master\",\n                \"ZoneId\": \"ap-guangzhou-2\"\n            },\n            {\n                \"GroupId\": 1082,\n                \"GroupName\": \"ng-01\",\n                \"KeeWiDBNodes\": [\n                    {\n                        \"NodeId\": \"af40204e08f25e7848aaaf344cb05c2fb6fd63c6\",\n                        \"Role\": \"replica\",\n                        \"Status\": \"Normal\"\n                    },\n                    {\n                        \"NodeId\": \"2c0dd8607c8187c45ec6943337fb43e60e3d6add\",\n                        \"Role\": \"replica\",\n                        \"Status\": \"Normal\"\n                    },\n                    {\n                        \"NodeId\": \"5ddd5a5aa3d4448553fe94d0c0741236f144b9f5\",\n                        \"Role\": \"replica\",\n                        \"Status\": \"Normal\"\n                    }\n                ],\n                \"Role\": \"replica\",\n                \"ZoneId\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"RequestId\": \"a9575963-23f6-48d7-a1a8-bc31ee861f31\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"Status\": [\n        \"0\",\n        \"1\",\n        \"2\"\n    ],\n    \"Limit\": \"100\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"RedisShardSize\": 16384,\n                \"RedisShardNum\": 1,\n                \"MonitorVersion\": \"xx\",\n                \"AutoRenewFlag\": 0,\n                \"InstanceTitle\": \"xx\",\n                \"ProductType\": \"xx\",\n                \"PriceId\": 1006984,\n                \"Type\": 13,\n                \"Status\": 2,\n                \"Vip6\": \"xx\",\n                \"VpcId\": 16770892,\n                \"ClientLimit\": 0,\n                \"Tags\": [\n                    \"xx\"\n                ],\n                \"InstanceId\": \"xx\",\n                \"ClientLimitMax\": 40000,\n                \"RegionId\": 1,\n                \"SubStatus\": 19,\n                \"SlaveReadWeight\": 0,\n                \"OfflineTime\": \"xx\",\n                \"SubnetId\": 2061142,\n                \"NodeSet\": [\n                    {\n                        \"ZoneName\": \"xx\",\n                        \"NodeType\": 0,\n                        \"NodeId\": 0,\n                        \"ZoneId\": 1\n                    }\n                ],\n                \"Engine\": \"xx\",\n                \"InstanceTags\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"Region\": \"xx\",\n                \"DeadlineTime\": \"xx\",\n                \"CloseTime\": \"xx\",\n                \"ZoneId\": 100002,\n                \"PasswordFree\": 0,\n                \"DiskSize\": 50000,\n                \"NoAuth\": false,\n                \"Appid\": 251200002,\n                \"WanIp\": \"xx\",\n                \"NetLimit\": 0,\n                \"InstanceName\": \"xx\",\n                \"Createtime\": \"xx\",\n                \"UniqVpcId\": \"xx\",\n                \"DtsStatus\": 0,\n                \"ProjectName\": \"xx\",\n                \"BillingMode\": 1,\n                \"RemainBandwidthDuration\": \"xx\",\n                \"ReadOnly\": 0,\n                \"UniqSubnetId\": \"xx\",\n                \"ClientLimitMin\": 10000,\n                \"RedisReplicasNum\": 1,\n                \"Port\": 6379,\n                \"Size\": 0.0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeMaintenanceWindow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaintenanceWindow\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-4nmvrpnj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"04:00\",\n        \"RequestId\": \"3ed4fd8c-4f1c-4b8f-9b97-670ff55638a6\",\n        \"StartTime\": \"03:00\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeProductInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"Area\": \"华南地区\",\n                \"RegionId\": \"ap-guangzhou\",\n                \"RegionName\": \"广州\",\n                \"RegionShortName\": \"GZ\",\n                \"ZoneSet\": [\n                    {\n                        \"NetWorkType\": [\n                            \"vpcnet\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"66756b8c-3f59-4a2e-9ee2-04333000bbc5\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeProjectSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjectSecurityGroups\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"Product\": \"keewidb\",\n    \"Limit\": \"100\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"CreateTime\": \"2021-10-30 16:11:08\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"10.0.0.0/8\",\n                        \"Desc\": \"\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"7777\",\n                        \"ServiceModule\": \"\"\n                    }\n                ],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-iqxwbwkp\",\n                \"SecurityGroupName\": \"安全组4\",\n                \"SecurityGroupRemark\": \"自定义\"\n            },\n            {\n                \"CreateTime\": \"2021-10-30 16:10:23\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"10.0.0.0/8\",\n                        \"Desc\": \"\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"2456\",\n                        \"ServiceModule\": \"\"\n                    }\n                ],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-dutt0kpv\",\n                \"SecurityGroupName\": \"安全组3\",\n                \"SecurityGroupRemark\": \"自定义\"\n            },\n            {\n                \"CreateTime\": \"2021-10-30 16:09:33\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"10.0.0.0/8\",\n                        \"Desc\": \"\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"9091\",\n                        \"ServiceModule\": \"\"\n                    }\n                ],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-eudoq1bd\",\n                \"SecurityGroupName\": \"安全组2\",\n                \"SecurityGroupRemark\": \"自定义\"\n            },\n            {\n                \"CreateTime\": \"2021-10-30 16:08:29\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Desc\": \"放通Web服务HTTP（80），如 Apache、Nginx\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Desc\": \"支持Ping服务\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"icmp\",\n                        \"PortRange\": \"ALL\",\n                        \"ServiceModule\": \"\"\n                    }\n                ],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-fsot7c33\",\n                \"SecurityGroupName\": \"安全组1\",\n                \"SecurityGroupRemark\": \"自定义\"\n            },\n            {\n                \"CreateTime\": \"2021-07-15 11:51:07\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Desc\": \"放通Windows远程登录\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"::/0\",\n                        \"Desc\": \"放通Windows远程登录\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Desc\": \"放通Linux SSH登录\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"::/0\",\n                        \"Desc\": \"放通Linux SSH登录\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Desc\": \"放通Web服务端口\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80,443\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"::/0\",\n                        \"Desc\": \"放通Web服务端口\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80,443\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Desc\": \"放通Ping服务\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"icmp\",\n                        \"PortRange\": \"ALL\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"::/0\",\n                        \"Desc\": \"放通Ping服务\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"icmpv6\",\n                        \"PortRange\": \"ALL\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"10.0.0.0/8\",\n                        \"Desc\": \"放通内网\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"172.16.0.0/12\",\n                        \"Desc\": \"放通内网\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"192.168.0.0/16\",\n                        \"Desc\": \"放通内网\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\",\n                        \"ServiceModule\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Desc\": \"\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\",\n                        \"ServiceModule\": \"\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"\",\n                        \"Desc\": \"\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\",\n                        \"ServiceModule\": \"\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-fkkzqw25\",\n                \"SecurityGroupName\": \"放通22，80，443，3389端口和ICMP协议-2021071511491886714\",\n                \"SecurityGroupRemark\": \"公网放通云主机常用登录及web服务端口，内网全放通。\"\n            }\n        ],\n        \"RequestId\": \"f82bd0dc-48c2-4986-8b64-d330688bed80\",\n        \"Total\": 5\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeProxySlowLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxySlowLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\",\n    \"Offset\": \"0\",\n    \"Limit\": \"100\",\n    \"BeginTime\": \"2022-03-10 13:22:03\",\n    \"MinQueryTime\": \"500\",\n    \"EndTime\": \"2022-03-10 14:22:03\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceProxySlowLogDetail\": [],\n        \"RequestId\": \"1bf55864-c4f1-48de-a6fd-b43f756e32f4\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeTaskInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskInfo\n<公共请求参数>\n\n{\n    \"TaskId\": \"1634784500\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"kee-97ww****\",\n        \"RequestId\": \"52fa67f2-4b65-423d-b78b-9d37baf5e313\",\n        \"StartTime\": \"2022-03-16 22:17:54\",\n        \"Status\": \"succeed\",\n        \"TaskMessage\": \"\",\n        \"TaskType\": \"\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-4nmv****\",\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e6445f9-95d6-48b0-825f-2764d228ada3\",\n        \"Tasks\": [\n            {\n                \"EndTime\": \"2022-03-10 11:44:17\",\n                \"InstanceId\": \"kee-4nmv****\",\n                \"InstanceName\": \"多az测试\",\n                \"Progress\": 1,\n                \"ProjectId\": 0,\n                \"Result\": 2,\n                \"StartTime\": \"2022-03-10 11:44:15\",\n                \"TaskId\": 1634784472,\n                \"TaskType\": \"007\"\n            },\n            {\n                \"EndTime\": \"2022-03-03 15:47:34\",\n                \"InstanceId\": \"kee-4nmv****\",\n                \"InstanceName\": \"多az测试\",\n                \"Progress\": 1,\n                \"ProjectId\": 0,\n                \"Result\": 2,\n                \"StartTime\": \"2022-03-03 15:46:58\",\n                \"TaskId\": 1634784470,\n                \"TaskType\": \"049\"\n            }\n        ],\n        \"TotalCount\": 9\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeTendisSlowLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTendisSlowLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clkb977\",\n    \"Offset\": \"0\",\n    \"Limit\": \"100\",\n    \"BeginTime\": \"2022-03-10 13:22:03\",\n    \"MinQueryTime\": \"10\",\n    \"EndTime\": \"2022-03-10 14:22:03\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7018395-c189-4b73-9d3c-eec3c3b2b9e6\",\n        \"TendisSlowLogDetail\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DestroyPostpaidInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPostpaidInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-8kxz****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6bec27a-a847-4fde-ab59-d271c84dd49e\",\n        \"TaskId\": 1635780218\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DestroyPrepaidInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPrepaidInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-ldmm****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealId\": \"229125413\",\n        \"RequestId\": \"6094d5ee-84ae-4bd3-8b76-ead8bdd2986d\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DisassociateSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateSecurityGroups\n<公共请求参数>\n\n{\n    \"Product\": \"keewidb\",\n    \"SecurityGroupId\": \"sg-dutt****\",\n    \"InstanceIds\": [\n        \"kee-9clk****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7297527-0e7c-43ad-bdb1-b90fc222d43d\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ModifyAutoBackupConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoBackupConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9vrt****\",\n    \"TimePeriod\": \"13:00-14:00\",\n    \"WeekDays\": [\n        \"Monday\",\n        \"Tuesday\",\n        \"Wednesday\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupStorageDays\": 7,\n        \"BinlogStorageDays\": 3,\n        \"RequestId\": \"f0ad3a24-4a40-44a4-a4a5-f7a6239095ec\",\n        \"TimePeriod\": \"13:00-14:00\",\n        \"WeekDays\": [\n            \"Monday\",\n            \"Tuesday\",\n            \"Wednesday\"\n        ]\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ModifyConnectionConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConnectionConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clkb977\",\n    \"ClientLimit\": \"11000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9009938d-8fe2-4383-90c8-3497d83022a3\",\n        \"TaskId\": 1634784478\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ModifyDBInstanceSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\",\n    \"Product\": \"keewidb\",\n    \"SecurityGroupIds\": [\n        \"sg-iqxw****\",\n        \"sg-dutt****\",\n        \"sg-eudo****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3a86195-eee7-4e17-8405-e1fc5810c55b\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ModifyInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"Operation\": \"rename\",\n    \"InstanceIds\": [\n        \"kee-4nmv****\",\n        \"kee-9clkb977\"\n    ],\n    \"InstanceNames\": [\n        \"重命名1\",\n        \"重命名2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f62b5c24-8d4a-4c00-97f5-3810fa5f76c6\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ModifyInstanceParams": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\",\n    \"InstanceParams\": [\n        {\n            \"Key\": \"auto-failback\",\n            \"Value\": \"no\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Changed\": false,\n        \"RequestId\": \"8acefa7e-22c9-4332-ab9c-175681e95a31\",\n        \"TaskId\": 1634784474\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ModifyMaintenanceWindow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMaintenanceWindow\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clkb977\",\n    \"EndTime\": \"16:00\",\n    \"StartTime\": \"15:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36efebf7-c3ac-4e52-8f2a-8ce0cab3a51d\",\n        \"Status\": \"success\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "ModifyNetworkConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\",\n    \"Operation\": \"changeVip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"929c9b9f-e451-4413-af27-045e4ad8a0d7\",\n        \"Status\": true,\n        \"SubnetId\": \"subnet-lknn****\",\n        \"Vip\": \"10.0.16.44\",\n        \"VpcId\": \"vpc-hqy2****\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "RenewInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewInstance\n<公共请求参数>\n\n{\n    \"Period\": 1,\n    \"InstanceId\": \"kee-lagg****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealId\": \"1655902381\",\n        \"RequestId\": \"12eb8b4f-8aab-43df-aea4-7cae92b134a5\"\n    }\n}",
+        "title": "实例1"
+      }
+    ],
+    "ResetPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-4nmv****\",\n    \"Password\": \"Test123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67e5a18a-ca6f-4330-919f-d45d4355e3d6\",\n        \"TaskId\": 1634784472\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "StartUpInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartUpInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-8kxz****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6bec27a-a847-4fde-ab59-c106a37cc38a\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "UpgradeInstance": [
+      {
+        "document": "扩容实例内存容量、分片数量以及磁盘容量。",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"ShardNum\": \"6\",\n    \"InstanceId\": \"kee-lagg****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealId\": \"1655902380\",\n        \"RequestId\": \"12eb8b4f-8aab-43df-aea4-d4192e18eac7\"\n    }\n}",
+        "title": "扩分片数示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

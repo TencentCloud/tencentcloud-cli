@@ -14043,6 +14043,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "异步任务详细结果。只用于特殊场景，如批量删除弹性网卡时查询成功的网卡列表和失败的列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcTaskResultDetailInfo",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -25231,6 +25240,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcTaskResultDetailInfo": {
+      "document": "Vpc任务结果详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eni-olifj433",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

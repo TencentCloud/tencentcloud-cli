@@ -5722,8 +5722,8 @@
       "document": "代理慢查询详情",
       "members": [
         {
-          "default": "",
-          "document": "慢查询耗时",
+          "document": "慢查询耗时（单位：毫秒）。",
+          "example": "无",
           "member": "int64",
           "name": "Duration",
           "required": true,
@@ -5731,8 +5731,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "客户端地址",
+          "document": "客户端地址。",
+          "example": "无",
           "member": "string",
           "name": "Client",
           "required": true,
@@ -5740,8 +5740,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "命令",
+          "document": "命令。",
+          "example": "无",
           "member": "string",
           "name": "Command",
           "required": true,
@@ -5749,8 +5749,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "详细命令行信息",
+          "document": "详细命令行信息。",
+          "example": "无",
           "member": "string",
           "name": "CommandLine",
           "required": true,
@@ -5758,8 +5758,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "执行时间",
+          "document": "执行时间。",
+          "example": "无",
           "member": "string",
           "name": "ExecuteTime",
           "required": true,

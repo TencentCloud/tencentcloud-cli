@@ -269,6 +269,8 @@ include tccli/services/irp/v20220324/api.json
 include tccli/services/irp/v20220324/examples.json
 include tccli/services/ivld/v20210903/api.json
 include tccli/services/ivld/v20210903/examples.json
+include tccli/services/keewidb/v20220308/api.json
+include tccli/services/keewidb/v20220308/examples.json
 include tccli/services/kms/v20190118/api.json
 include tccli/services/kms/v20190118/examples.json
 include tccli/services/lcic/v20220817/api.json

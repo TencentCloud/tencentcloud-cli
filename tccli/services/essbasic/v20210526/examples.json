@@ -116,6 +116,22 @@
         "title": "发起解除协议（使用本企业的签署人，替换用原流程中本企业的签署人）"
       }
     ],
+    "ChannelCreateSealPolicy": [
+      {
+        "document": "给指定用户下发印章授权",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateSealPolicy\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"d2b****b66f954d7cc\",\n        \"ProxyOrganizationOpenId\": \"yDxAyUyK****cb7u0jQn0Zh7f7\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"732aaef****541b89c49e0cc\"\n        },\n        \"AppId\": \"ed68bc6***********0214e4e\"\n    },\n    \"SealId\": \"yDRTZxxxxxJNR\",\n    \"UserIds\": [\n        \"yDdzlxxxxxopk\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"UserIds\": []\n    }\n}",
+        "title": "创建印章授权"
+      }
+    ],
+    "ChannelDeleteSealPolicies": [
+      {
+        "document": "删除指定印章下多个授权信息",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDeleteSealPolicies\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"d2b****b66f954d7cc\",\n        \"ProxyOrganizationOpenId\": \"yDxAyUyK****cb7u0jQn0Zh7f7\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"732aaef****541b89c49e0cc\"\n        },\n        \"AppId\": \"ed68bc6***********0214e4e\"\n    },\n    \"SealId\": \"yDRTZxxxxxJNR\",\n    \"UserIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除指定印章下多个授权信息"
+      }
+    ],
     "ChannelDescribeEmployees": [
       {
         "document": "",

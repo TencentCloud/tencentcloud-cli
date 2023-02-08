@@ -70,6 +70,13 @@
       "output": "DescribeSpecResponse",
       "status": "online"
     },
+    "DestroyInstance": {
+      "document": "销毁集群 open api",
+      "input": "DestroyInstanceRequest",
+      "name": "销毁集群api",
+      "output": "DestroyInstanceResponse",
+      "status": "online"
+    },
     "ModifyClusterConfigs": {
       "document": "在集群配置页面修改集群配置文件接口，xml模式",
       "input": "ModifyClusterConfigsRequest",
@@ -1024,6 +1031,56 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyInstanceRequest": {
+      "document": "DestroyInstance请求参数结构体",
+      "members": [
+        {
+          "document": "集群id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyInstanceResponse": {
+      "document": "DestroyInstance返回参数结构体",
+      "members": [
+        {
+          "document": "作业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowID",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2116,12 +2173,20 @@
           "type": "int"
         },
         {
-          "document": "节点同步ip",
-          "example": "ip",
+          "document": "同步元数据节点IP （uip）",
+          "example": "10.0.20.163",
           "member": "string",
           "name": "ScaleOutNodeIp",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔",
+          "example": "ha集群:[\"10.0.20.163,10.0.20.163\"],非ha集群:[\"10.0.20.163\"]",
+          "member": "string",
+          "name": "ReduceShardInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

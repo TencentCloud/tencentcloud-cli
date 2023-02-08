@@ -146,12 +146,28 @@
         "title": "获取小程序跳转链接"
       }
     ],
+    "CreateSealPolicy": [
+      {
+        "document": "给指定人员下发印章授权",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealPolicy\n<公共请求参数>\n\n{\n    \"SealId\": \"33eb007cda138df0dc0f8b65f75905bd\",\n    \"Policy\": \"\",\n    \"Operator\": {\n        \"UserId\": \"65fb0c591044be8a1f60aa382cc5ed0e\",\n        \"ClientIp\": \"192.6.5.45\",\n        \"Channel\": \"string\",\n        \"OpenId\": \"string\",\n        \"ProxyIp\": \"192.6.5.45\"\n    },\n    \"Expired\": 123,\n    \"Users\": [\n        {\n            \"OpenId\": \"xx\",\n            \"ClientIp\": \"xx\",\n            \"UserId\": \"xx\",\n            \"Channel\": \"xx\",\n            \"ProxyIp\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"UserIds\": []\n    }\n}",
+        "title": "印章授权申请下发"
+      }
+    ],
     "DeleteIntegrationEmployees": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"DeleteEmployeeResult\": {\n            \"FailedEmployeeData\": [\n                {\n                    \"OpenId\": \"xx\",\n                    \"Reason\": \"xx\",\n                    \"UserId\": \"xx\"\n                }\n            ],\n            \"SuccessEmployeeData\": [\n                {\n                    \"Mobile\": \"xx\",\n                    \"UserId\": \"xx\",\n                    \"DisplayName\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除员工"
+      }
+    ],
+    "DeleteSealPolicies": [
+      {
+        "document": "撤销指定印章授权",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSealPolicies\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"Channel\": \"string\",\n        \"ClientIp\": \"1.1.1.1\",\n        \"OpenId\": \"321654\",\n        \"ProxyIp\": \"2.2.2.2\",\n        \"UserId\": \"11234567890123456789012345678901\"\n    },\n    \"PolicyIds\": [\n        \"string\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "撤销印章授权"
       }
     ],
     "DescribeFileUrls": [
