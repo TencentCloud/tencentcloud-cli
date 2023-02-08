@@ -1,26 +1,36 @@
 # 本版本更新包含以下内容：
 
-## 消息队列 CKafka(ckafka) 版本：2019-08-19
+## 语音识别(asr) 版本：2019-06-14
 
-### 第 47 次发布
+### 第 9 次发布
 
-发布时间：2023-02-08 01:12:57
+发布时间：2023-02-09 01:03:43
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [SendMessageByTopic](http://document.tencentcloudapi.woa.com/document/product/597/77032)
+* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
+
+	* 新增入参：EmotionRecognition
+
+
+修改数据结构：
+
+* [SentenceDetail](http://document.tencentcloudapi.woa.com/document/product/1093/37824#SentenceDetail)
+
+	* 新增成员：EmotionType
 
 
 
-## 负载均衡(clb) 版本：2018-03-17
 
-### 第 29 次发布
+## 云硬盘(cbs) 版本：2017-03-12
 
-发布时间：2023-02-08 01:13:37
+### 第 20 次发布
+
+发布时间：2023-02-09 01:07:12
 
 本次发布包含了以下内容：
 
@@ -28,39 +38,47 @@
 
 修改数据结构：
 
-* [RuleTargets](http://document.tencentcloudapi.woa.com/document/product/214/30694#RuleTargets)
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
 
-	* 新增成员：FunctionTargets
+	* 新增成员：DiskBackupQuota
+
+
+
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 26 次发布
+
+发布时间：2023-02-09 01:07:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BindNumberCallOutSkillGroup](http://document.tencentcloudapi.woa.com/document/product/679/77039)
+* [DescribeNumbers](http://document.tencentcloudapi.woa.com/document/product/679/77038)
+* [UnbindNumberCallOutSkillGroup](http://document.tencentcloudapi.woa.com/document/product/679/77037)
+
+新增数据结构：
+
+* [NumberInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#NumberInfo)
+
+修改数据结构：
+
+* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
+
+	* 新增成员：VoicemailRecordURL
 
 
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 36 次发布
+### 第 37 次发布
 
-发布时间：2023-02-08 01:22:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateInternalTable](http://document.tencentcloudapi.woa.com/document/product/1342/77033)
-
-新增数据结构：
-
-* [TColumn](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TColumn)
-* [TPartition](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TPartition)
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 39 次发布
-
-发布时间：2023-02-08 01:26:38
+发布时间：2023-02-09 01:21:34
 
 本次发布包含了以下内容：
 
@@ -68,40 +86,32 @@
 
 新增接口：
 
-* [ChannelCreateSealPolicy](http://document.tencentcloudapi.woa.com/document/product/1595/77035)
-* [ChannelDeleteSealPolicies](http://document.tencentcloudapi.woa.com/document/product/1595/77034)
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 地域管理系统(region) 版本：2022-06-27
-
-### 第 2 次发布
-
-发布时间：2023-02-08 01:41:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeCluster](http://document.tencentcloudapi.woa.com/document/product/1605/77036)
+* [CancelNotebookSessionStatement](http://document.tencentcloudapi.woa.com/document/product/1342/77050)
+* [CancelNotebookSessionStatementBatch](http://document.tencentcloudapi.woa.com/document/product/1342/77049)
+* [CreateNotebookSessionStatement](http://document.tencentcloudapi.woa.com/document/product/1342/77048)
+* [CreateNotebookSessionStatementSupportBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77047)
+* [DeleteNotebookSession](http://document.tencentcloudapi.woa.com/document/product/1342/77046)
+* [DescribeNotebookSessionLog](http://document.tencentcloudapi.woa.com/document/product/1342/77045)
+* [DescribeNotebookSessionStatement](http://document.tencentcloudapi.woa.com/document/product/1342/77044)
+* [DescribeNotebookSessionStatementSqlResult](http://document.tencentcloudapi.woa.com/document/product/1342/77041)
+* [DescribeNotebookSessionStatements](http://document.tencentcloudapi.woa.com/document/product/1342/77043)
+* [DescribeNotebookSessions](http://document.tencentcloudapi.woa.com/document/product/1342/77042)
+* [GenerateCreateMangedTableSql](http://document.tencentcloudapi.woa.com/document/product/1342/77040)
 
 新增数据结构：
 
-* [ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1605/76897#ClusterInfo)
+* [NotebookSessionStatementBatchInformation](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionStatementBatchInformation)
+* [NotebookSessionStatementInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionStatementInfo)
+* [NotebookSessions](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessions)
+* [StatementOutput](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StatementOutput)
 
 
 
-## 云函数(scf) 版本：2018-04-16
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
-### 第 22 次发布
+### 第 15 次发布
 
-发布时间：2023-02-08 01:42:06
+发布时间：2023-02-09 01:41:33
 
 本次发布包含了以下内容：
 
@@ -109,101 +119,40 @@
 
 修改接口：
 
-* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/583/18586)
+* [ModifyBackupMigration](http://document.tencentcloudapi.woa.com/document/product/238/53183)
 
-	* 新增入参：IntranetConfig
-
-* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
-
-	* 新增出参：IntranetConfig
-
-* [UpdateFunctionConfiguration](http://document.tencentcloudapi.woa.com/document/product/583/18580)
-
-	* 新增入参：IntranetConfig
+	* 新增入参：DBRename
 
 
 新增数据结构：
 
-* [IntranetConfigIn](http://document.tencentcloudapi.woa.com/document/product/583/17244#IntranetConfigIn)
-* [IntranetConfigOut](http://document.tencentcloudapi.woa.com/document/product/583/17244#IntranetConfigOut)
-
-
-
-## 云开发 CloudBase(tcb) 版本：2018-06-08
-
-### 第 29 次发布
-
-发布时间：2023-02-08 01:45:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeCurveData](http://document.tencentcloudapi.woa.com/document/product/876/59512)
-
-	* 新增出参：NewValues
-
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 30 次发布
-
-发布时间：2023-02-08 01:47:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeRabbitMQNodeList](http://document.tencentcloudapi.woa.com/document/product/1179/76487)
-
-	* 新增入参：NodeName, Filters, SortElement, SortOrder
-
+* [DBRenameRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#DBRenameRes)
 
 修改数据结构：
 
-* [RabbitMQPrivateNode](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQPrivateNode)
+* [AccountCreateInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountCreateInfo)
 
-	* 新增成员：NodeStatus, CPUUsage, Memory, DiskUsage, ProcessNumber
+	* 新增成员：AccountType
 
-* [RabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVipInstance)
+* [AccountDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountDetail)
 
-	* 新增成员：ExceptionInformation
+	* 新增成员：AccountType
 
+* [AccountPrivilege](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountPrivilege)
 
+	* 新增成员：AccountType
 
+* [AccountPrivilegeModifyInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountPrivilegeModifyInfo)
 
-## 私有网络(vpc) 版本：2017-03-12
+	* 新增成员：AccountType
 
-### 第 62 次发布
+* [DbNormalDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#DbNormalDetail)
 
-发布时间：2023-02-08 01:59:42
+	* 新增成员：CreateTime
 
-本次发布包含了以下内容：
+* [Migration](http://document.tencentcloudapi.woa.com/document/product/238/19976#Migration)
 
-改善已有的文档。
-
-修改接口：
-
-* [DescribeVpcTaskResult](http://document.tencentcloudapi.woa.com/document/product/215/59037)
-
-	* 新增出参：Result
-
-
-新增数据结构：
-
-* [VpcTaskResultDetailInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcTaskResultDetailInfo)
-
-修改数据结构：
-
-* [NetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkInterface)
-
-	* 新增成员：Region, FlushSubEniHavipFlag
+	* 新增成员：DBRename
 
 
 
@@ -3107,6 +3056,28 @@
 
 ## 语音识别(asr) 版本：2019-06-14
 
+### 第 9 次发布
+
+发布时间：2023-02-09 01:03:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
+
+	* 新增入参：EmotionRecognition
+
+
+修改数据结构：
+
+* [SentenceDetail](http://document.tencentcloudapi.woa.com/document/product/1093/37824#SentenceDetail)
+
+	* 新增成员：EmotionType
+
+
 ### 第 8 次发布
 
 发布时间：2022-12-28 01:06:43
@@ -5293,6 +5264,21 @@
 
 ## 云硬盘(cbs) 版本：2017-03-12
 
+### 第 20 次发布
+
+发布时间：2023-02-09 01:07:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
+
+	* 新增成员：DiskBackupQuota
+
+
 ### 第 19 次发布
 
 发布时间：2022-12-28 01:07:20
@@ -5679,6 +5665,31 @@
 
 
 ## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 26 次发布
+
+发布时间：2023-02-09 01:07:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[BindNumberCallOutSkillGroup](http://document.tencentcloudapi.woa.com/document/product/679/77039)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeNumbers](http://document.tencentcloudapi.woa.com/document/product/679/77038)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UnbindNumberCallOutSkillGroup](http://document.tencentcloudapi.woa.com/document/product/679/77037)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[NumberInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#NumberInfo)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[NumberInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#NumberInfo))
+
+修改数据结构：
+
+* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
+
+	* 新增成员：VoicemailRecordURL
+
 
 ### 第 25 次发布
 
@@ -9349,7 +9360,7 @@
 
 新增接口：
 
-* [[SendMessageByTopic](http://document.tencentcloudapi.woa.com/document/product/597/77032)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [SendMessageByTopic](http://document.tencentcloudapi.woa.com/document/product/597/77032)
 
 ### 第 46 次发布
 
@@ -18440,6 +18451,35 @@
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 37 次发布
+
+发布时间：2023-02-09 01:21:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CancelNotebookSessionStatement](http://document.tencentcloudapi.woa.com/document/product/1342/77050)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CancelNotebookSessionStatementBatch](http://document.tencentcloudapi.woa.com/document/product/1342/77049)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateNotebookSessionStatement](http://document.tencentcloudapi.woa.com/document/product/1342/77048)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateNotebookSessionStatementSupportBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77047)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteNotebookSession](http://document.tencentcloudapi.woa.com/document/product/1342/77046)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeNotebookSessionLog](http://document.tencentcloudapi.woa.com/document/product/1342/77045)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeNotebookSessionStatement](http://document.tencentcloudapi.woa.com/document/product/1342/77044)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeNotebookSessionStatementSqlResult](http://document.tencentcloudapi.woa.com/document/product/1342/77041)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeNotebookSessionStatements](http://document.tencentcloudapi.woa.com/document/product/1342/77043)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeNotebookSessions](http://document.tencentcloudapi.woa.com/document/product/1342/77042)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GenerateCreateMangedTableSql](http://document.tencentcloudapi.woa.com/document/product/1342/77040)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[NotebookSessionStatementBatchInformation](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionStatementBatchInformation)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[NotebookSessionStatementBatchInformation](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionStatementBatchInformation))
+* [[NotebookSessionStatementInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionStatementInfo)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[NotebookSessionStatementInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionStatementInfo))
+* [[NotebookSessions](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessions)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[NotebookSessions](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessions))
+* [[StatementOutput](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StatementOutput)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[StatementOutput](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StatementOutput))
+
 ### 第 36 次发布
 
 发布时间：2023-02-08 01:22:27
@@ -18450,12 +18490,12 @@
 
 新增接口：
 
-* [[CreateInternalTable](http://document.tencentcloudapi.woa.com/document/product/1342/77033)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateInternalTable](http://document.tencentcloudapi.woa.com/document/product/1342/77033)
 
 新增数据结构：
 
-* [[TColumn](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TColumn)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[TColumn](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TColumn))
-* [[TPartition](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TPartition)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[TPartition](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TPartition))
+* [TColumn](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TColumn)
+* [TPartition](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TPartition)
 
 ### 第 35 次发布
 
@@ -22231,8 +22271,8 @@
 
 新增接口：
 
-* [[ChannelCreateSealPolicy](http://document.tencentcloudapi.woa.com/document/product/1595/77035)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ChannelDeleteSealPolicies](http://document.tencentcloudapi.woa.com/document/product/1595/77034)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ChannelCreateSealPolicy](http://document.tencentcloudapi.woa.com/document/product/1595/77035)
+* [ChannelDeleteSealPolicies](http://document.tencentcloudapi.woa.com/document/product/1595/77034)
 
 ### 第 38 次发布
 
@@ -35741,11 +35781,11 @@
 
 新增接口：
 
-* [[DescribeCluster](http://document.tencentcloudapi.woa.com/document/product/1605/77036)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeCluster](http://document.tencentcloudapi.woa.com/document/product/1605/77036)
 
 新增数据结构：
 
-* [[ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1605/76897#ClusterInfo)](http://document.tencentcloudapi.woa.com/document/product/1605/76897#[ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1605/76897#ClusterInfo))
+* [ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1605/76897#ClusterInfo)
 
 ### 第 1 次发布
 
@@ -36216,8 +36256,8 @@
 
 新增数据结构：
 
-* [[IntranetConfigIn](http://document.tencentcloudapi.woa.com/document/product/583/17244#IntranetConfigIn)](http://document.tencentcloudapi.woa.com/document/product/583/17244#[IntranetConfigIn](http://document.tencentcloudapi.woa.com/document/product/583/17244#IntranetConfigIn))
-* [[IntranetConfigOut](http://document.tencentcloudapi.woa.com/document/product/583/17244#IntranetConfigOut)](http://document.tencentcloudapi.woa.com/document/product/583/17244#[IntranetConfigOut](http://document.tencentcloudapi.woa.com/document/product/583/17244#IntranetConfigOut))
+* [IntranetConfigIn](http://document.tencentcloudapi.woa.com/document/product/583/17244#IntranetConfigIn)
+* [IntranetConfigOut](http://document.tencentcloudapi.woa.com/document/product/583/17244#IntranetConfigOut)
 
 ### 第 21 次发布
 
@@ -37247,6 +37287,52 @@
 
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 15 次发布
+
+发布时间：2023-02-09 01:41:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyBackupMigration](http://document.tencentcloudapi.woa.com/document/product/238/53183)
+
+	* 新增入参：DBRename
+
+
+新增数据结构：
+
+* [[DBRenameRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#DBRenameRes)](http://document.tencentcloudapi.woa.com/document/product/238/19976#[DBRenameRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#DBRenameRes))
+
+修改数据结构：
+
+* [AccountCreateInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountCreateInfo)
+
+	* 新增成员：AccountType
+
+* [AccountDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountDetail)
+
+	* 新增成员：AccountType
+
+* [AccountPrivilege](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountPrivilege)
+
+	* 新增成员：AccountType
+
+* [AccountPrivilegeModifyInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountPrivilegeModifyInfo)
+
+	* 新增成员：AccountType
+
+* [DbNormalDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#DbNormalDetail)
+
+	* 新增成员：CreateTime
+
+* [Migration](http://document.tencentcloudapi.woa.com/document/product/238/19976#Migration)
+
+	* 新增成员：DBRename
+
 
 ### 第 14 次发布
 
@@ -49359,7 +49445,7 @@
 
 新增数据结构：
 
-* [[VpcTaskResultDetailInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcTaskResultDetailInfo)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[VpcTaskResultDetailInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcTaskResultDetailInfo))
+* [VpcTaskResultDetailInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcTaskResultDetailInfo)
 
 修改数据结构：
 

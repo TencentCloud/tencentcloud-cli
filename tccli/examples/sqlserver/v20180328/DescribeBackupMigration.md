@@ -7,16 +7,16 @@ Input:
 ```
 tccli sqlserver DescribeBackupMigration --cli-unfold-argument  \
     --BackupMigrationId mssql-backup-migration-kpl74n9l \
-    --MigrationName 字符串 \
-    --BackupFileName db1 \
-    --RecoveryType FULL \
-    --UploadType COS_UPLOAD \
-    --Limit 100 \
-    --Offset 0 \
     --OrderBy createTime \
-    --OrderByType desc \
+    --MigrationName 字符串 \
+    --UploadType COS_UPLOAD \
+    --Offset 0 \
     --StatusSet 2 \
-    --InstanceId mssql-rdc0gajn
+    --InstanceId mssql-rdc0gajn \
+    --Limit 100 \
+    --OrderByType desc \
+    --BackupFileName db1 \
+    --RecoveryType FULL
 ```
 
 Output: 
@@ -63,6 +63,12 @@ Output:
                 "Region": "ap-guangzhou",
                 "StartTime": "0000-00-00 00:00:00",
                 "Status": 2,
+                "DBRename": [
+                    {
+                        "NewName": "newdb",
+                        "OldName": "olddb"
+                    }
+                ],
                 "UploadType": "COS_UPLOAD"
             }
         ],

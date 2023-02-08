@@ -1,3 +1,162 @@
+# Release 3.0.700.1
+
+## 语音识别(asr) 版本：2019-06-14
+
+### 第 9 次发布
+
+发布时间：2023-02-09 01:03:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
+
+	* 新增入参：EmotionRecognition
+
+
+修改数据结构：
+
+* [SentenceDetail](http://document.tencentcloudapi.woa.com/document/product/1093/37824#SentenceDetail)
+
+	* 新增成员：EmotionType
+
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 20 次发布
+
+发布时间：2023-02-09 01:07:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
+
+	* 新增成员：DiskBackupQuota
+
+
+
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 26 次发布
+
+发布时间：2023-02-09 01:07:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BindNumberCallOutSkillGroup](http://document.tencentcloudapi.woa.com/document/product/679/77039)
+* [DescribeNumbers](http://document.tencentcloudapi.woa.com/document/product/679/77038)
+* [UnbindNumberCallOutSkillGroup](http://document.tencentcloudapi.woa.com/document/product/679/77037)
+
+新增数据结构：
+
+* [NumberInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#NumberInfo)
+
+修改数据结构：
+
+* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
+
+	* 新增成员：VoicemailRecordURL
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 37 次发布
+
+发布时间：2023-02-09 01:21:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CancelNotebookSessionStatement](http://document.tencentcloudapi.woa.com/document/product/1342/77050)
+* [CancelNotebookSessionStatementBatch](http://document.tencentcloudapi.woa.com/document/product/1342/77049)
+* [CreateNotebookSessionStatement](http://document.tencentcloudapi.woa.com/document/product/1342/77048)
+* [CreateNotebookSessionStatementSupportBatchSQL](http://document.tencentcloudapi.woa.com/document/product/1342/77047)
+* [DeleteNotebookSession](http://document.tencentcloudapi.woa.com/document/product/1342/77046)
+* [DescribeNotebookSessionLog](http://document.tencentcloudapi.woa.com/document/product/1342/77045)
+* [DescribeNotebookSessionStatement](http://document.tencentcloudapi.woa.com/document/product/1342/77044)
+* [DescribeNotebookSessionStatementSqlResult](http://document.tencentcloudapi.woa.com/document/product/1342/77041)
+* [DescribeNotebookSessionStatements](http://document.tencentcloudapi.woa.com/document/product/1342/77043)
+* [DescribeNotebookSessions](http://document.tencentcloudapi.woa.com/document/product/1342/77042)
+* [GenerateCreateMangedTableSql](http://document.tencentcloudapi.woa.com/document/product/1342/77040)
+
+新增数据结构：
+
+* [NotebookSessionStatementBatchInformation](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionStatementBatchInformation)
+* [NotebookSessionStatementInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionStatementInfo)
+* [NotebookSessions](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessions)
+* [StatementOutput](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StatementOutput)
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 15 次发布
+
+发布时间：2023-02-09 01:41:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyBackupMigration](http://document.tencentcloudapi.woa.com/document/product/238/53183)
+
+	* 新增入参：DBRename
+
+
+新增数据结构：
+
+* [DBRenameRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#DBRenameRes)
+
+修改数据结构：
+
+* [AccountCreateInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountCreateInfo)
+
+	* 新增成员：AccountType
+
+* [AccountDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountDetail)
+
+	* 新增成员：AccountType
+
+* [AccountPrivilege](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountPrivilege)
+
+	* 新增成员：AccountType
+
+* [AccountPrivilegeModifyInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountPrivilegeModifyInfo)
+
+	* 新增成员：AccountType
+
+* [DbNormalDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#DbNormalDetail)
+
+	* 新增成员：CreateTime
+
+* [Migration](http://document.tencentcloudapi.woa.com/document/product/238/19976#Migration)
+
+	* 新增成员：DBRename
+
+
+
+
 # Release 3.0.699.1
 
 ## 消息队列 CKafka(ckafka) 版本：2019-08-19

@@ -56,6 +56,20 @@
       "output": "BindWorkGroupsToUserResponse",
       "status": "online"
     },
+    "CancelNotebookSessionStatement": {
+      "document": "本接口（CancelNotebookSessionStatement）用于取消session statement",
+      "input": "CancelNotebookSessionStatementRequest",
+      "name": "取消session statement",
+      "output": "CancelNotebookSessionStatementResponse",
+      "status": "online"
+    },
+    "CancelNotebookSessionStatementBatch": {
+      "document": "本接口（CancelNotebookSessionStatementBatch）用于按批取消Session statement。",
+      "input": "CancelNotebookSessionStatementBatchRequest",
+      "name": "按批取消Session statement.",
+      "output": "CancelNotebookSessionStatementBatchResponse",
+      "status": "online"
+    },
     "CancelTask": {
       "document": "本接口（CancelTask），用于取消任务执行",
       "input": "CancelTaskRequest",
@@ -106,7 +120,7 @@
       "status": "online"
     },
     "CreateInternalTable": {
-      "document": "创建托管存储内表",
+      "document": "创建托管存储内表（该接口已废弃）",
       "input": "CreateInternalTableRequest",
       "name": "创建托管存储内表",
       "output": "CreateInternalTableResponse",
@@ -117,6 +131,20 @@
       "input": "CreateNotebookSessionRequest",
       "name": "创建notebook livy session",
       "output": "CreateNotebookSessionResponse",
+      "status": "online"
+    },
+    "CreateNotebookSessionStatement": {
+      "document": "本接口（CreateNotebookSessionStatement）用于创建session statement",
+      "input": "CreateNotebookSessionStatementRequest",
+      "name": "创建session statement",
+      "output": "CreateNotebookSessionStatementResponse",
+      "status": "online"
+    },
+    "CreateNotebookSessionStatementSupportBatchSQL": {
+      "document": "本接口（CreateNotebookSessionStatementSupportBatchSQL）用于创建Statement批量运行SQL任务。",
+      "input": "CreateNotebookSessionStatementSupportBatchSQLRequest",
+      "name": "创建Statement批量运行SQL任务",
+      "output": "CreateNotebookSessionStatementSupportBatchSQLResponse",
       "status": "online"
     },
     "CreateResultDownload": {
@@ -194,6 +222,13 @@
       "input": "CreateWorkGroupRequest",
       "name": "创建工作组",
       "output": "CreateWorkGroupResponse",
+      "status": "online"
+    },
+    "DeleteNotebookSession": {
+      "document": "本接口（DeleteNotebookSession）用于删除notebook livy session",
+      "input": "DeleteNotebookSessionRequest",
+      "name": "删除notebook livy session",
+      "output": "DeleteNotebookSessionResponse",
       "status": "online"
     },
     "DeleteScript": {
@@ -278,6 +313,41 @@
       "input": "DescribeNotebookSessionRequest",
       "name": "获取notebook livy session详情信息",
       "output": "DescribeNotebookSessionResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSessionLog": {
+      "document": "本接口（DescribeNotebookSessionLog）用于获取notebook livy session日志",
+      "input": "DescribeNotebookSessionLogRequest",
+      "name": "获取notebook livy session日志",
+      "output": "DescribeNotebookSessionLogResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSessionStatement": {
+      "document": "本接口（DescribeNotebookSessionStatement）用于获取session statement信息",
+      "input": "DescribeNotebookSessionStatementRequest",
+      "name": "获取session statement信息",
+      "output": "DescribeNotebookSessionStatementResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSessionStatementSqlResult": {
+      "document": "本接口（DescribeNotebookSessionStatementSqlResult）用于获取statement运行结果。",
+      "input": "DescribeNotebookSessionStatementSqlResultRequest",
+      "name": "获取statement运行结果。",
+      "output": "DescribeNotebookSessionStatementSqlResultResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSessionStatements": {
+      "document": "本接口（DescribeNotebookSessionStatements）用于获取Session Statement列表。",
+      "input": "DescribeNotebookSessionStatementsRequest",
+      "name": "获取Session Statement列表",
+      "output": "DescribeNotebookSessionStatementsResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSessions": {
+      "document": "本接口（DescribeNotebookSessions）用于获取notebook livy session列表",
+      "input": "DescribeNotebookSessionsRequest",
+      "name": "获取notebook livy session列表",
+      "output": "DescribeNotebookSessionsResponse",
       "status": "online"
     },
     "DescribeResultDownload": {
@@ -404,6 +474,13 @@
       "input": "DropDMSTableRequest",
       "name": "DMS元数据删除表",
       "output": "DropDMSTableResponse",
+      "status": "online"
+    },
+    "GenerateCreateMangedTableSql": {
+      "document": "生成创建托管表语句",
+      "input": "GenerateCreateMangedTableSqlRequest",
+      "name": "生成创建托管表语句",
+      "output": "GenerateCreateMangedTableSqlResponse",
       "status": "online"
     },
     "ListTaskJobLogDetail": {
@@ -1217,6 +1294,80 @@
         }
       ],
       "usage": "in"
+    },
+    "CancelNotebookSessionStatementBatchRequest": {
+      "document": "CancelNotebookSessionStatementBatch请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "批任务唯一标识",
+          "example": "dses8ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CancelNotebookSessionStatementBatchResponse": {
+      "document": "CancelNotebookSessionStatementBatch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelNotebookSessionStatementRequest": {
+      "document": "CancelNotebookSessionStatement请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Session Statement唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "StatementId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CancelNotebookSessionStatementResponse": {
+      "document": "CancelNotebookSessionStatement返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CancelTaskRequest": {
       "document": "CancelTask请求参数结构体",
@@ -2067,6 +2218,123 @@
           "member": "string",
           "name": "State",
           "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookSessionStatementRequest": {
+      "document": "CreateNotebookSessionStatement请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "执行的代码",
+          "example": "select 1",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "类型，当前支持：spark、pyspark、sparkr、sql",
+          "example": "sql",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookSessionStatementResponse": {
+      "document": "CreateNotebookSessionStatement返回参数结构体",
+      "members": [
+        {
+          "document": "Session Statement详情",
+          "example": "复杂类型",
+          "member": "NotebookSessionStatementInfo",
+          "name": "NotebookSessionStatement",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookSessionStatementSupportBatchSQLRequest": {
+      "document": "CreateNotebookSessionStatementSupportBatchSQL请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "执行的代码",
+          "example": "select 1;",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "类型，当前支持：spark、pyspark、sparkr、sql",
+          "example": "sql",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "是否保存运行结果",
+          "example": "true",
+          "member": "bool",
+          "name": "SaveResult",
+          "required": true,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookSessionStatementSupportBatchSQLResponse": {
+      "document": "CreateNotebookSessionStatementSupportBatchSQL返回参数结构体",
+      "members": [
+        {
+          "document": "Session Statement详情",
+          "example": "复杂类型",
+          "member": "NotebookSessionStatementBatchInformation",
+          "name": "NotebookSessionStatementBatches",
+          "type": "object",
           "value_allowed_null": false,
           "visibility": 1
         },
@@ -4236,6 +4504,34 @@
       ],
       "usage": "out"
     },
+    "DeleteNotebookSessionRequest": {
+      "document": "DeleteNotebookSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotebookSessionResponse": {
+      "document": "DeleteNotebookSession返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteScriptRequest": {
       "document": "DeleteScript请求参数结构体",
       "members": [
@@ -5308,6 +5604,84 @@
       ],
       "type": "object"
     },
+    "DescribeNotebookSessionLogRequest": {
+      "document": "DescribeNotebookSessionLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页参数，默认200",
+          "example": "200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页参数，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionLogResponse": {
+      "document": "DescribeNotebookSessionLog返回参数结构体",
+      "members": [
+        {
+          "document": "日志信息，默认获取最新的200条",
+          "example": "[\"log\"]",
+          "member": "string",
+          "name": "Logs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "分页参数，默认200",
+          "example": "200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "分页参数，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNotebookSessionRequest": {
       "document": "DescribeNotebookSession请求参数结构体",
       "members": [
@@ -5332,6 +5706,314 @@
           "member": "NotebookSessionInfo",
           "name": "Session",
           "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementRequest": {
+      "document": "DescribeNotebookSessionStatement请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "Session Statement唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "StatementId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementResponse": {
+      "document": "DescribeNotebookSessionStatement返回参数结构体",
+      "members": [
+        {
+          "document": "Session Statement详情",
+          "example": "复杂类型",
+          "member": "NotebookSessionStatementInfo",
+          "name": "NotebookSessionStatement",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementSqlResultRequest": {
+      "document": "DescribeNotebookSessionStatementSqlResult请求参数结构体",
+      "members": [
+        {
+          "document": "任务唯一ID",
+          "example": "fdd9c5fa21ca11eca6fb5254006c64af",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "返回结果的最大行数，范围0~1000，默认为1000.",
+          "example": "1000",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "上一次请求响应返回的分页信息。第一次可以不带，从头开始返回数据，每次返回MaxResults字段设置的数据量。",
+          "example": "nextMarker=\\u0026nextKey=test/DLCQueryResults/2021/10/15/2c60388",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementSqlResultResponse": {
+      "document": "DescribeNotebookSessionStatementSqlResult返回参数结构体",
+      "members": [
+        {
+          "document": "任务Id",
+          "example": "20210521195919442157",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "结果数据",
+          "example": "[         [             \"allen\",             \"27\"         ],    ",
+          "member": "string",
+          "name": "ResultSet",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "schema",
+          "example": "{\"query_id\":\"q202108191952hzb9d11f040173825\",\"columns\":[{\"c_cust",
+          "member": "Column",
+          "name": "ResultSchema",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "objectListMarker={marker}&lastReadFile={filename}&lastReadOffset",
+          "member": "string",
+          "name": "NextToken",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "存储结果地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://xxx",
+          "member": "string",
+          "name": "OutputPath",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementsRequest": {
+      "document": "DescribeNotebookSessionStatements请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "批任务id",
+          "example": "dks18ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementsResponse": {
+      "document": "DescribeNotebookSessionStatements返回参数结构体",
+      "members": [
+        {
+          "document": "Session Statement详情",
+          "example": "复杂类型",
+          "member": "NotebookSessionStatementBatchInformation",
+          "name": "NotebookSessionStatements",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionsRequest": {
+      "document": "DescribeNotebookSessions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "DLC Spark作业引擎名称",
+          "example": "data_engine_1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）",
+          "example": "[“not_started”]",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序字段（默认按创建时间）",
+          "example": "[\"createTime\"]",
+          "member": "string",
+          "name": "SortFields",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序字段：true：升序、false：降序（默认）",
+          "example": "true",
+          "member": "bool",
+          "name": "Asc",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页字段",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页字段",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionsResponse": {
+      "document": "DescribeNotebookSessions返回参数结构体",
+      "members": [
+        {
+          "document": "session总数量",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalElements",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "总页数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalPages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "当前页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "当前页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "session列表信息",
+          "example": "复杂类型",
+          "member": "NotebookSessions",
+          "name": "Sessions",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false,
           "visibility": 1
         },
@@ -6917,6 +7599,74 @@
       ],
       "usage": "in"
     },
+    "GenerateCreateMangedTableSqlRequest": {
+      "document": "GenerateCreateMangedTableSql请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表基本信息",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "表字段信息",
+          "example": "无",
+          "member": "TColumn",
+          "name": "Columns",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "表分区信息",
+          "example": "无",
+          "member": "TPartition",
+          "name": "Partitions",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "表属性信息",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateCreateMangedTableSqlResponse": {
+      "document": "GenerateCreateMangedTableSql返回参数结构体",
+      "members": [
+        {
+          "document": "创建托管存储内表sql语句描述",
+          "example": "无",
+          "member": "Execution",
+          "name": "Execution",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "JobLogResult": {
       "document": "日志详情",
       "members": [
@@ -8064,6 +8814,275 @@
       ],
       "usage": "out"
     },
+    "NotebookSessionStatementBatchInformation": {
+      "document": "按批提交Statement运行SQL任务。",
+      "members": [
+        {
+          "document": "任务详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂类型",
+          "member": "NotebookSessionStatementInfo",
+          "name": "NotebookSessionStatementBatch",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "当前批任务是否运行完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAvailable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "Session唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "Batch唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "skdelad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "NotebookSessionStatementInfo": {
+      "document": "NotebookSessionStatement详情。",
+      "members": [
+        {
+          "document": "完成时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1662635695652",
+          "member": "int64",
+          "name": "Completed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "开始时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1662635695652",
+          "member": "int64",
+          "name": "Started",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "完成进度，百分制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "Progress",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "Session Statement唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "StatementId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "Session Statement状态，包含：waiting（排队中）、running（运行中）、available（正常）、error（异常）、cancelling（取消中）、cancelled（已取消）",
+          "example": "running",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "Statement输出信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂类型",
+          "member": "StatementOutput",
+          "name": "OutPut",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "批任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dks18ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "运行语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select 1;",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dks18ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "NotebookSessions": {
+      "document": "notebook session列表信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "类型，当前支持：spark、pyspark、sparkr、sql",
+          "example": "spark",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "代理用户，默认为root\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "ProxyUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）",
+          "example": "not_started",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Spark任务返回的AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spark-4ke6a46618d24e9c7yh2b62f0ddebdks",
+          "member": "string",
+          "name": "SparkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Session名称",
+          "example": "session1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Session创建时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "引擎名称",
+          "example": "data_engine_1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "最新的运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "LastRunningTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建者",
+          "example": "test",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "spark ui地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "SparkUiUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "Other": {
       "document": "数据格式其它类型。",
       "members": [
@@ -8957,6 +9976,82 @@
           "name": "JobExecutorMaxNumbers",
           "required": false,
           "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "StatementOutput": {
+      "document": "notebook session statement输出信息。",
+      "members": [
+        {
+          "document": "执行总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutionCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "Statement数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key\":\"testKey\",\"value\":\"testValue\"]",
+          "member": "KVPair",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "Statement状态:ok,error\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "错误名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "compute fail",
+          "member": "string",
+          "name": "ErrorName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "错误类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InternalError",
+          "member": "string",
+          "name": "ErrorValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "错误堆栈信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"internal Error\"]",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "SQL类型任务结果返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{                 \"application/json\":{                     \"schema\":{                         \"type\":\"struct\",                         \"fields\":[                             {                                 \"name\":\"1\",                                 \"type\":\"integer\",                                 \"nullable\":false,                                 \"metadata\":{                                  }                             }                         ]                     }                 }             }",
+          "member": "string",
+          "name": "SQLResult",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
