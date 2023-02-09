@@ -3461,16 +3461,18 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备。",
+          "document": "目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备，snapshot - 快照备份。基础版实例仅支持快照备份。",
           "example": "\"\"",
           "member": "string",
           "name": "BackupMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3479,7 +3481,8 @@
           "member": "BackupItem",
           "name": "BackupDBTableList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3488,7 +3491,8 @@
           "member": "string",
           "name": "ManualBackupName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3503,7 +3507,8 @@
           "name": "BackupId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

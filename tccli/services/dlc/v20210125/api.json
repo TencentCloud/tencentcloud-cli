@@ -7610,7 +7610,7 @@
           "name": "TableBaseInfo",
           "required": true,
           "type": "object",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -7620,7 +7620,7 @@
           "name": "Columns",
           "required": true,
           "type": "list",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -7630,7 +7630,7 @@
           "name": "Partitions",
           "required": false,
           "type": "list",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -7640,7 +7640,7 @@
           "name": "Properties",
           "required": false,
           "type": "list",
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7656,7 +7656,7 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

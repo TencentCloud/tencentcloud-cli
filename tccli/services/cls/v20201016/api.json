@@ -2788,7 +2788,6 @@
       "document": "CreateShipper请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "创建的投递规则所属的日志主题ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -2798,7 +2797,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建的投递规则投递的bucket",
           "example": "bucketName-appid",
           "member": "string",
@@ -2808,7 +2806,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建的投递规则投递目录的前缀",
           "example": "无",
           "member": "string",
@@ -2818,7 +2815,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递规则的名字",
           "example": "testShipper",
           "member": "string",
@@ -2828,7 +2824,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递的时间间隔，单位 秒，默认300，范围 300-900",
           "example": "60",
           "member": "uint64",
@@ -2838,7 +2833,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递的文件的最大值，单位 MB，默认256，范围 100-256",
           "example": "256",
           "member": "uint64",
@@ -2848,7 +2842,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的过滤规则，匹配的日志进行投递，各rule之间是and关系，最多5个，数组为空则表示不过滤而全部投递",
           "example": "无",
           "member": "FilterRuleInfo",
@@ -2858,7 +2851,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的分区规则，支持strftime的时间格式表示",
           "example": "%Y%m%d",
           "member": "string",
@@ -2868,7 +2860,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的压缩配置",
           "example": "无",
           "member": "CompressInfo",
@@ -2878,7 +2869,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的内容格式配置",
           "example": "无",
           "member": "ContentInfo",
@@ -2888,7 +2878,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
           "example": "0",
           "member": "uint64",
@@ -2908,7 +2897,6 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "ShipperId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7082,7 +7070,6 @@
       "document": "ModifyShipper请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "投递规则ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -7092,7 +7079,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递规则投递的新的bucket",
           "example": "bucketName-appid",
           "member": "string",
@@ -7102,7 +7088,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递规则投递的新的目录前缀",
           "example": "无",
           "member": "string",
@@ -7112,7 +7097,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递规则的开关状态",
           "example": "true",
           "member": "bool",
@@ -7122,7 +7106,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递规则的名字",
           "example": "testShipper",
           "member": "string",
@@ -7132,7 +7115,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递的时间间隔，单位 秒，默认300，范围 300-900",
           "example": "300",
           "member": "uint64",
@@ -7142,7 +7124,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递的文件的最大值，单位 MB，默认256，范围 100-256",
           "example": "256",
           "member": "uint64",
@@ -7152,7 +7133,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的过滤规则，匹配的日志进行投递，各rule之间是and关系，最多5个，数组为空则表示不过滤而全部投递",
           "example": "无",
           "member": "FilterRuleInfo",
@@ -7162,7 +7142,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的分区规则，支持strftime的时间格式表示",
           "example": "%Y%m%d",
           "member": "string",
@@ -7172,7 +7151,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的压缩配置",
           "example": "无",
           "member": "CompressInfo",
@@ -7182,7 +7160,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的内容格式配置",
           "example": "无",
           "member": "ContentInfo",
@@ -7192,7 +7169,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
           "example": "0",
           "member": "uint64",
@@ -8050,7 +8026,6 @@
       "document": "投递规则",
       "members": [
         {
-          "default": "",
           "document": "投递规则ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -8061,7 +8036,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志主题ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -8072,7 +8046,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递的bucket地址",
           "example": "无",
           "member": "string",
@@ -8083,7 +8056,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递的前缀目录",
           "example": "无",
           "member": "string",
@@ -8094,7 +8066,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递规则的名字",
           "example": "testShipper",
           "member": "string",
@@ -8105,7 +8076,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递的时间间隔，单位 秒",
           "example": "300",
           "member": "uint64",
@@ -8116,7 +8086,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递的文件的最大值，单位 MB",
           "example": "256",
           "member": "uint64",
@@ -8127,7 +8096,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否生效",
           "example": "true",
           "member": "bool",
@@ -8138,7 +8106,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的过滤规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FilterRuleInfo",
@@ -8149,7 +8116,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的分区规则，支持strftime的时间格式表示",
           "example": "无",
           "member": "string",
@@ -8160,7 +8126,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的压缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CompressInfo",
@@ -8171,7 +8136,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的内容格式配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ContentInfo",
@@ -8182,7 +8146,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递日志的创建时间",
           "example": "无",
           "member": "string",
@@ -8193,7 +8156,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",

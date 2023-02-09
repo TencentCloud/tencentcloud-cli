@@ -1,6 +1,6 @@
 **Example 1: 查询引擎实例访问地址**
 
-
+查询引擎实例CLB服务访问地址
 
 Input: 
 
@@ -29,6 +29,7 @@ Output:
         ],
         "ConsoleIntranetAddress": "xx",
         "ClientIntranetAddress": "xx",
+        "EnableClientIntranet": true,
         "RequestId": "xx"
     }
 }

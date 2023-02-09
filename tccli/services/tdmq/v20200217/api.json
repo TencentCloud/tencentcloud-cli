@@ -8410,7 +8410,8 @@
           "name": "TenantId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8420,7 +8421,8 @@
           "name": "TenantName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8430,7 +8432,8 @@
           "name": "CustomerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8440,7 +8443,8 @@
           "name": "CustomerAppId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8450,7 +8454,8 @@
           "name": "ClusterName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8460,7 +8465,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8470,7 +8476,8 @@
           "name": "MaxNamespaces",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8480,7 +8487,8 @@
           "name": "UsedNamespaces",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8490,7 +8498,8 @@
           "name": "MaxTopics",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8500,7 +8509,8 @@
           "name": "UsedTopics",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8510,7 +8520,8 @@
           "name": "MaxPartitions",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8520,7 +8531,8 @@
           "name": "UsedPartitions",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8530,7 +8542,8 @@
           "name": "MaxMsgBacklogSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8540,7 +8553,8 @@
           "name": "MaxPublishTps",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8550,7 +8564,8 @@
           "name": "MaxRetention",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8560,7 +8575,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8570,7 +8586,8 @@
           "name": "UpdateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8580,7 +8597,8 @@
           "name": "MaxDispatchTps",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8590,7 +8608,8 @@
           "name": "MaxDispatchRateInBytes",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8600,7 +8619,8 @@
           "name": "MaxPublishRateInBytes",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8610,7 +8630,19 @@
           "name": "MaxRetentionSizeInMB",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "public Access Enabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "PublicAccessEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -10658,94 +10690,104 @@
       "document": "RocketMQ集群配置",
       "members": [
         {
-          "default": "",
           "document": "单命名空间TPS上线",
           "example": "8000",
           "member": "uint64",
           "name": "MaxTpsPerNamespace",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "最大命名空间数量",
           "example": "10",
           "member": "uint64",
           "name": "MaxNamespaceNum",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "已使用命名空间数量",
           "example": "3",
           "member": "uint64",
           "name": "UsedNamespaceNum",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "最大Topic数量",
           "example": "1000",
           "member": "uint64",
           "name": "MaxTopicNum",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "已使用Topic数量",
           "example": "8",
           "member": "uint64",
           "name": "UsedTopicNum",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "最大Group数量",
           "example": "10000",
           "member": "uint64",
           "name": "MaxGroupNum",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "已使用Group数量",
           "example": "10",
           "member": "uint64",
           "name": "UsedGroupNum",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "消息最大保留时间，以毫秒为单位",
           "example": "100000",
           "member": "uint64",
           "name": "MaxRetentionTime",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "消息最长延时，以毫秒为单位",
           "example": "100000",
           "member": "uint64",
           "name": "MaxLatencyTime",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "单个主题最大队列数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "uint64",
+          "name": "MaxQueuesPerTopic",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -11297,7 +11339,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11307,7 +11350,8 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11317,17 +11361,19 @@
           "name": "InstanceVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常",
+          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败",
           "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11337,7 +11383,8 @@
           "name": "NodeCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11347,7 +11394,8 @@
           "name": "ConfigDisplay",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11357,7 +11405,8 @@
           "name": "MaxTps",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11367,7 +11416,8 @@
           "name": "MaxBandWidth",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11377,7 +11427,8 @@
           "name": "MaxStorage",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11387,7 +11438,8 @@
           "name": "ExpireTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11397,7 +11449,8 @@
           "name": "AutoRenewFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11407,7 +11460,8 @@
           "name": "PayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11417,7 +11471,8 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11427,7 +11482,8 @@
           "name": "SpecName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

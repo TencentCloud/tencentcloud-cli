@@ -408,6 +408,34 @@
         "title": "2312"
       }
     ],
+    "DescribeRumLogExport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExport\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"Fields\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"xx\",\n    \"Query\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"ID\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取日志列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExport\n<公共请求参数>\n\n{\n    \"Query\": \"id:1\",\n    \"EndTime\": \"1\",\n    \"Name\": \"\",\n    \"StartTime\": \"1665994920000\",\n    \"ID\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"763188d1-9f99-45e8-8bbf-bcdffa8f58f0\",\n        \"Result\": \"\"\n    }\n}",
+        "title": "1212"
+      }
+    ],
+    "DescribeRumLogExports": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExports\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"ID\": \"10\",\n    \"PageNum\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取日志列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExports\n<公共请求参数>\n\n{\n    \"PageNum\": \"1\",\n    \"ID\": \"1\",\n    \"PageSize\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"641faf00-efc4-46b5-b3ce-03383133dc08\",\n        \"Result\": \"\"\n    }\n}",
+        "title": "xc"
+      }
+    ],
     "DescribeRumLogList": [
       {
         "document": "",
@@ -512,6 +540,14 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rum-abcd1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c56dbc9-2b99-437a-9a5e-51ed6dcba7e5\"\n    }\n}",
         "title": "恢复实例"
+      }
+    ],
+    "ResumeProject": [
+      {
+        "document": "恢复 RUM 应用",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c56dbc9-2b99-437a-9a5e-51ed6dcba7e5\"\n    }\n}",
+        "title": "恢复 RUM 应用"
       }
     ],
     "StopInstance": [

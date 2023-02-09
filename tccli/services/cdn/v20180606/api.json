@@ -2824,154 +2824,154 @@
       "document": "域名基础配置信息，含 CNAME、状态、业务类型、加速区域、创建时间、更新时间、源站配置等。",
       "members": [
         {
-          "default": "",
           "document": "域名 ID",
           "example": "cdn-123",
           "member": "string",
           "name": "ResourceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "腾讯云账号 ID",
           "example": "1234567",
           "member": "int64",
           "name": "AppId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "加速域名",
           "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "域名对应的 CNAME 地址",
           "example": "www.test.com.cdn.dnsv1.com",
           "member": "string",
           "name": "Cname",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "加速服务状态\nrejected：域名审核未通过，域名备案过期/被注销导致\nprocessing：部署中\nonline：已启动\noffline：已关闭",
+          "document": "加速服务状态\nrejected：域名审核未通过，域名备案过期/被注销导致\nprocessing：部署中\nclosing：关闭中\nonline：已启动\noffline：已关闭",
           "example": "online",
           "member": "string",
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "项目 ID，可前往腾讯云项目管理页面查看",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "域名业务类型\nweb：静态加速\ndownload：下载加速\nmedia：流媒体点播加速",
           "example": "web",
           "member": "string",
           "name": "ServiceType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "域名创建时间",
           "example": "2021-04-01 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "域名更新时间",
           "example": "2021-04-01 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "源站配置详情",
           "example": "8.8.8.8",
           "member": "Origin",
           "name": "Origin",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "域名封禁状态\nnormal：正常状态\noverdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务\nmalicious：域名出现恶意行为，强制关闭加速服务\nddos：域名被大规模 DDoS 攻击，关闭加速服务\nidle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务\nunlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务\ncapping：触发配置的带宽阈值上限\nreadonly：域名存在特殊配置，被锁定",
           "example": "normal",
           "member": "string",
           "name": "Disable",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "加速区域\nmainland：中国境内加速\noverseas：中国境外加速\nglobal：全球加速",
           "example": "mainland",
           "member": "string",
           "name": "Area",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "域名锁定状态\nnormal：未锁定\nmainland：中国境内锁定\noverseas：中国境外锁定\nglobal：全球锁定",
           "example": "normal",
           "member": "string",
           "name": "Readonly",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "域名所属产品，cdn/ecdn",
           "example": "cdn",
           "member": "string",
           "name": "Product",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "主域名",
           "example": "cdn-123",
           "member": "string",
           "name": "ParentHost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -7697,7 +7697,6 @@
       "document": "加速域名全量配置信息",
       "members": [
         {
-          "default": "",
           "document": "域名 ID",
           "example": "cdn-00001x",
           "member": "string",
@@ -7708,7 +7707,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "腾讯云账号ID",
           "example": "123456789",
           "member": "int64",
@@ -7719,7 +7717,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "加速域名",
           "example": "www.test.com",
           "member": "string",
@@ -7730,7 +7727,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名对应的 CNAME 地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.test.com.cdn.dnsv1.com",
           "member": "string",
@@ -7741,8 +7737,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "加速服务状态\nrejected：域名审核未通过，域名备案过期/被注销导致\nprocessing：部署中\nonline：已启动\noffline：已关闭",
+          "document": "加速服务状态\nrejected：域名审核未通过，域名备案过期/被注销导致\nprocessing：部署中\nclosing：关闭中\nonline：已启动\noffline：已关闭",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -7752,7 +7747,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目 ID，可前往腾讯云项目管理页面查看",
           "example": "0",
           "member": "int64",
@@ -7763,7 +7757,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "加速域名业务类型\nweb：网页小文件\ndownload：下载大文件\nmedia：音视频点播\nhybrid:  动静加速\ndynamic:  动态加速",
           "example": "web",
           "member": "string",
@@ -7774,7 +7767,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名创建时间",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
@@ -7785,7 +7777,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名更新时间",
           "example": "2021-01-01 00:00:00",
           "member": "datetime",
@@ -7796,7 +7787,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "源站配置",
           "example": "无",
           "member": "Origin",
@@ -7807,7 +7797,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "IP 黑白名单配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IpFilter",
@@ -7818,7 +7807,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "IP 访问限频配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IpFreqLimit",
@@ -7829,7 +7817,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "状态码缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StatusCodeCache",
@@ -7840,7 +7827,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "智能压缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Compression",
@@ -7851,7 +7837,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽封顶配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BandwidthAlert",
@@ -7862,7 +7847,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Range 回源配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RangeOriginPull",
@@ -7873,7 +7857,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "301/302 回源自动跟随配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FollowRedirect",
@@ -7884,7 +7867,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义错误页面配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ErrorPage",
@@ -7895,7 +7877,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义请求头部配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RequestHeader",
@@ -7906,7 +7887,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义响应头部配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResponseHeader",
@@ -7917,7 +7897,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "单链接下行限速配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DownstreamCapping",
@@ -7928,7 +7907,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "带参/不带参缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CacheKey",
@@ -7939,7 +7917,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "源站头部缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResponseHeaderCache",
@@ -7950,7 +7927,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频拖拽配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VideoSeek",
@@ -7961,7 +7937,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "节点缓存过期规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Cache",
@@ -7972,7 +7947,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "跨国链路优化配置（功能灰度中，敬请期待）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OriginPullOptimization",
@@ -7983,7 +7957,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Https 加速相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Https",
@@ -7994,7 +7967,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "时间戳防盗链配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Authentication",
@@ -8005,7 +7977,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "SEO 优化配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Seo",
@@ -8016,7 +7987,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名封禁状态\nnormal：正常状态\noverdue：账号欠费导致域名关闭，充值完成后可自行启动加速服务\nmalicious：域名出现恶意行为，强制关闭加速服务\nddos：域名被大规模 DDoS 攻击，关闭加速服务\nidle：域名超过 90 天内无任何操作、数据产生，判定为不活跃域名自动关闭加速服务，可自行启动加速服务\nunlicensed：域名未备案/备案注销，自动关闭加速服务，备案完成后可自行启动加速服务\ncapping：触发配置的带宽阈值上限\nreadonly：域名存在特殊配置，被锁定\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
           "member": "string",
@@ -8027,7 +7997,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "访问协议强制跳转配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ForceRedirect",
@@ -8038,7 +8007,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Referer 防盗链配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Referer",
@@ -8049,7 +8017,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "浏览器缓存过期规则配置（功能灰度中，敬请期待）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MaxAge",
@@ -8060,7 +8027,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Ipv6 回源配置（功能灰度中，敬请期待）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Ipv6",
@@ -8071,7 +8037,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否兼容旧版本配置（内部兼容性字段）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Compatibility",
@@ -8082,7 +8047,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "区域特殊配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SpecificConfig",
@@ -8093,7 +8057,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "加速区域\nmainland：中国境内加速\noverseas：中国境外加速\nglobal：全球加速\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mainland",
           "member": "string",
@@ -8104,7 +8067,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名锁定状态\nnormal：未锁定\nmainland：中国境内锁定\noverseas：中国境外锁定\nglobal：全球锁定\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
           "member": "string",
@@ -8115,7 +8077,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "回源超时配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OriginPullTimeout",
@@ -8126,7 +8087,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "回源S3鉴权配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AwsPrivateAccess",
@@ -8137,7 +8097,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Scdn配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SecurityConfig",
@@ -8148,7 +8107,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "ImageOptimization配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageOptimization",
@@ -8159,7 +8117,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "UA黑白名单配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserAgentFilter",
@@ -8170,7 +8127,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "访问控制\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AccessControl",
@@ -8181,7 +8137,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否支持高级配置项\non：支持\noff：不支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
@@ -8192,7 +8147,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "URL重定向配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UrlRedirect",
@@ -8203,7 +8157,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "访问端口配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[80,8080,443]",
           "member": "int64",
@@ -8214,7 +8167,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -8225,7 +8177,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "时间戳防盗链高级配置，白名单功能\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdvancedAuthentication",
@@ -8236,7 +8187,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "回源鉴权高级配置，白名单功能\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OriginAuthentication",
@@ -8247,7 +8197,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Ipv6访问配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Ipv6Access",
@@ -8258,7 +8207,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "高级配置集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdvanceConfig",
@@ -8269,7 +8217,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "离线缓存（功能灰度中，尚未全量，请等待后续全量发布）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OfflineCache",
@@ -8280,7 +8227,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "合并回源（白名单功能）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OriginCombine",
@@ -8291,7 +8237,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "POST上传配置项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PostSize",
@@ -8302,7 +8247,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Quic配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Quic",
@@ -8313,7 +8257,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "回源OSS私有鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OssPrivateAccess",
@@ -8324,7 +8267,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "WebSocket配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WebSocket",
@@ -8335,7 +8277,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "远程鉴权配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RemoteAuthentication",
@@ -8346,7 +8287,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "共享CNAME配置（白名单功能）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ShareCname",
@@ -8357,7 +8297,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "规则引擎\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RuleEngine",
@@ -8368,7 +8307,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "主域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -8379,7 +8317,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "华为云对象存储回源鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HwPrivateAccess",
@@ -8390,7 +8327,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "七牛云对象存储回源鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QnPrivateAccess",
@@ -8401,7 +8337,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS服务，缺省时默认开启\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HttpsBilling",

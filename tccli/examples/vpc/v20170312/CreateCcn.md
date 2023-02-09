@@ -1,6 +1,6 @@
 **Example 1: 创建一个CCN**
 
-
+创建一个云联网CCN实例
 
 Input: 
 
@@ -24,7 +24,7 @@ Output:
             "CcnDescription": "test description",
             "InstanceCount": 0,
             "QosLevel": "PT",
-            "State": 1,
+            "State": "AVAILABLE",
             "InstanceChargeType": "POSTPAID",
             "BandwidthLimitType": "OUTER_REGION_LIMIT",
             "CreateTime": "2020-09-22 00:00:00",

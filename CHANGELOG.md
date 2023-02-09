@@ -1,3 +1,143 @@
+# Release 3.0.701.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 40 次发布
+
+发布时间：2023-02-10 01:06:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Layer7Rule](http://document.tencentcloudapi.woa.com/document/product/1021/57582#Layer7Rule)
+
+	* 新增成员：Protocol, Vport
+
+* [SourceServer](http://document.tencentcloudapi.woa.com/document/product/1021/57582#SourceServer)
+
+	* 新增成员：Port
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 20 次发布
+
+发布时间：2023-02-10 01:42:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRumLogExport](http://document.tencentcloudapi.woa.com/document/product/1464/77060)
+* [DescribeRumLogExports](http://document.tencentcloudapi.woa.com/document/product/1464/77059)
+* [ResumeProject](http://document.tencentcloudapi.woa.com/document/product/1464/77061)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 31 次发布
+
+发布时间：2023-02-10 01:48:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InternalTenant](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InternalTenant)
+
+	* 新增成员：PublicAccessEnabled
+
+* [RocketMQClusterConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterConfig)
+
+	* 新增成员：MaxQueuesPerTopic
+
+	* <font color="#dd0000">**修改成员**：</font>MaxTpsPerNamespace, MaxNamespaceNum, UsedNamespaceNum, MaxTopicNum, UsedTopicNum, MaxGroupNum, UsedGroupNum, MaxRetentionTime, MaxLatencyTime
+
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 20 次发布
+
+发布时间：2023-02-10 01:53:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeEngineClbAccessAddress](http://document.tencentcloudapi.woa.com/document/product/1364/76714)
+
+	* 新增出参：EnableClientIntranet
+
+
+修改数据结构：
+
+* [ApolloEnvParam](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ApolloEnvParam)
+
+	* 新增成员：EnvDesc
+
+* [EnvAddressInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EnvAddressInfo)
+
+	* 新增成员：EnableConfigIntranet
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 28 次发布
+
+发布时间：2023-02-10 01:53:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteFileConfig](http://document.tencentcloudapi.woa.com/document/product/649/77062)
+
+修改数据结构：
+
+* [ContainerGroupDetail](http://document.tencentcloudapi.woa.com/document/product/649/36099#ContainerGroupDetail)
+
+	* 新增成员：AllowPlainYamlDeploy, IsNotEqualServiceConfig, RepoName, Alias
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 63 次发布
+
+发布时间：2023-02-10 01:56:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+	* 新增成员：IsSecurityLock
+
+
+
+
 # Release 3.0.700.1
 
 ## 语音识别(asr) 版本：2019-06-14
