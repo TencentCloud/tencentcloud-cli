@@ -99,7 +99,7 @@
       "status": "online"
     },
     "CreateLiveTimeShiftRule": {
-      "document": "创建直播时移规则，需要先调用[CreateLiveTimeShiftTemplate](/document/product/267/84589)接口创建录制模板，将返回的模板id绑定到流使用。\n<br>直播时移相关文档：[直播时移](/document/product/267/86134)。",
+      "document": "创建直播时移规则，需要先调用[CreateLiveTimeShiftTemplate](/document/product/267/86169)接口创建直播时移模板，将返回的模板id绑定到流使用。\n<br>直播时移相关文档：[直播时移](/document/product/267/86134)。",
       "input": "CreateLiveTimeShiftRuleRequest",
       "name": "创建直播时移规则",
       "output": "CreateLiveTimeShiftRuleResponse",
@@ -2005,8 +2005,8 @@
       "document": "通用混流输出参数。",
       "members": [
         {
-          "default": "",
           "document": "输出流名称。",
+          "example": "无",
           "member": "string",
           "name": "OutputStreamName",
           "required": true,
@@ -2014,8 +2014,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输出流类型，取值范围[0,1]。\n不填默认为0。\n当输出流为输入流 list 中的一条时，填写0。\n当期望生成的混流结果成为一条新流时，该值填为1。\n该值为1时，output_stream_id 不能出现在 input_stram_list 中，且直播后台中，不能存在相同 ID 的流。",
+          "example": "无",
           "member": "int64",
           "name": "OutputStreamType",
           "required": false,
@@ -2023,8 +2023,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "输出流比特率。取值范围[1，50000]。\n不填的情况下，系统会自动判断。",
+          "document": "输出流比特率。取值范围[1，10000]。\n不填的情况下，系统会自动判断。",
+          "example": "无",
           "member": "int64",
           "name": "OutputStreamBitRate",
           "required": false,
@@ -2032,8 +2032,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输出流GOP大小。取值范围[1,10]。\n不填的情况下，系统会自动判断。",
+          "example": "无",
           "member": "int64",
           "name": "OutputStreamGop",
           "required": false,
@@ -2041,8 +2041,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输出流帧率大小。取值范围[1,60]。\n不填的情况下，系统会自动判断。",
+          "example": "无",
           "member": "int64",
           "name": "OutputStreamFrameRate",
           "required": false,
@@ -2050,8 +2050,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输出流音频比特率。取值范围[1,500]\n不填的情况下，系统会自动判断。",
+          "example": "无",
           "member": "int64",
           "name": "OutputAudioBitRate",
           "required": false,
@@ -2059,8 +2059,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输出流音频采样率。取值范围[96000, 88200, 64000, 48000, 44100, 32000,24000, 22050, 16000, 12000, 11025, 8000]。\n不填的情况下，系统会自动判断。",
+          "example": "无",
           "member": "int64",
           "name": "OutputAudioSampleRate",
           "required": false,
@@ -2068,8 +2068,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输出流音频声道数。取值范围[1,2]。\n不填的情况下，系统会自动判断。",
+          "example": "无",
           "member": "int64",
           "name": "OutputAudioChannels",
           "required": false,
@@ -2077,8 +2077,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输出流中的sei信息。如果无特殊需要，不填。",
+          "example": "无",
           "member": "string",
           "name": "MixSei",
           "required": false,

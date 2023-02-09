@@ -19,6 +19,7 @@ Output:
             {
                 "Status": 2,
                 "Remark": "--",
+                "AccountType": "L0",
                 "Host": "127.0.0.1",
                 "Name": "xiaowei",
                 "IsAdmin": true,

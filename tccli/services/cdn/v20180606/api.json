@@ -11720,7 +11720,6 @@
       "document": "源站配置复杂类型，支持以下配置：\n+ 源站指定为单个域名\n+ 源站指定为多个 IP，可配置端口（1~65535），可配置权重（1~100），格式为 IP:端口:权重\n+ 回源域名配置\n+ 对象存储（COS）作为源站\n+ 热备源站指定为单个域名\n+ 热备源站指定为多个 IP，可配置端口（1~65535），暂不支持权重配置\n+ 热备源站回源域名配置",
       "members": [
         {
-          "default": "",
           "document": "主源站列表\n修改源站时，需要同时填充对应的 OriginType\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
@@ -11730,7 +11729,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主源站类型\n入参支持以下几种类型：\ndomain：域名类型\ndomainv6：域名解析V6类型\ncos：对象存储源站\nip：IP 列表作为源站\nipv6：源站列表为一个单独的 IPv6 地址\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nip_domain: 支持IP和域名形式源站混填（白名单功能）\nip_domainv6：源站列表为多个 IPv4 地址以及域名解析v6地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nipv6_domainv6：源站列表为多个 IPv6 地址以及域名解析v6地址\ndomain_domainv6：源站列表为多个域名解析v4 地址以及域名解析v6地址\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\nip_ipv6_domainv6：源站列表为多个 IPv4 地址IPv6 地址以及域名解析v6地址\nip_domain_domainv6：源站列表为多个 IPv4 地址域名解析v4 地址以及域名解析v6地址\nipv6_domain_domainv6：源站列表为多个 域名解析v4 地址IPv6 地址以及域名解析v6地址\nip_ipv6_domain_domainv6：源站列表为多个 IPv4 地址IPv6 地址 域名解析v4 地址以及域名解析v6地址\n出参增加以下几种类型：\nimage：数据万象源站\nftp：历史 FTP 托管源源站，现已不维护\n修改 Origins 时需要同时填充对应的 OriginType\nIPv6 功能目前尚未全量，需要先申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip",
           "member": "string",
@@ -11740,7 +11738,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当源站类型为cos或者第三方存储加速时,ServerName字段必填\n回主源站时 Host 头部，不填充则默认为加速域名\n若接入的是泛域名，则回源 Host 默认为访问时的子域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.test.com",
           "member": "string",
@@ -11750,7 +11747,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "OriginType 为对象存储（COS）时，可以指定是否允许访问私有 bucket\n注意：需要先授权 CDN 访问该私有 Bucket 的权限后，才可开启此配置。取值范围: on/off\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
           "member": "string",
@@ -11760,7 +11756,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "回源协议配置\nhttp：强制 http 回源\nfollow：协议跟随回源\nhttps：强制 https 回源，https 回源时仅支持源站 443 端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http",
           "member": "string",
@@ -11770,7 +11765,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备源站列表\n修改备源站时，需要同时填充对应的 BackupOriginType\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"2.2.2.2\"]",
           "member": "string",
@@ -11780,7 +11774,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备源站类型，支持以下类型：\ndomain：域名类型\nip：IP 列表作为源站\n修改 BackupOrigins 时需要同时填充对应的 BackupOriginType\n以下备源源站类型尚未全量支持，需要申请试用：\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip",
           "member": "string",
@@ -11790,7 +11783,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "回备源站时 Host 头部，不填充则默认为主源站的 ServerName\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.test2.com",
           "member": "string",
@@ -11800,7 +11792,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "回源路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/",
           "member": "string",
@@ -11810,7 +11801,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "回源路径重写规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "PathRule",
@@ -11820,7 +11810,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "分路径回源配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "PathBasedOriginRule",
@@ -11830,7 +11819,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "HTTPS回源高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "AdvanceHttps",
@@ -11840,7 +11828,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "对象存储回源厂商\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hw-oss",
           "member": "string",

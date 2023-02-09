@@ -1,5 +1,12 @@
 {
   "actions": {
+    "BindNumberCallOutSkillGroup": {
+      "document": "绑定号码外呼技能组",
+      "input": "BindNumberCallOutSkillGroupRequest",
+      "name": "绑定号码外呼技能组",
+      "output": "BindNumberCallOutSkillGroupResponse",
+      "status": "online"
+    },
     "BindStaffSkillGroupList": {
       "document": "绑定坐席所属技能组",
       "input": "BindStaffSkillGroupListRequest",
@@ -147,6 +154,13 @@
       "output": "DescribeIMCdrsResponse",
       "status": "online"
     },
+    "DescribeNumbers": {
+      "document": "查询号码列表",
+      "input": "DescribeNumbersRequest",
+      "name": "查询号码列表",
+      "output": "DescribeNumbersResponse",
+      "status": "online"
+    },
     "DescribePSTNActiveSessionList": {
       "document": "获取当前正在通话的会话列表",
       "input": "DescribePSTNActiveSessionListRequest",
@@ -243,6 +257,13 @@
       "input": "StopAutoCalloutTaskRequest",
       "name": "停止自动外呼任务",
       "output": "StopAutoCalloutTaskResponse",
+      "status": "online"
+    },
+    "UnbindNumberCallOutSkillGroup": {
+      "document": "解绑号码外呼技能组",
+      "input": "UnbindNumberCallOutSkillGroupRequest",
+      "name": "解绑号码外呼技能组",
+      "output": "UnbindNumberCallOutSkillGroupResponse",
       "status": "online"
     },
     "UnbindStaffSkillGroupList": {
@@ -423,6 +444,48 @@
         }
       ],
       "usage": "out"
+    },
+    "BindNumberCallOutSkillGroupRequest": {
+      "document": "BindNumberCallOutSkillGroup请求参数结构体",
+      "members": [
+        {
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "待绑定的号码",
+          "example": "\"0086075512345678\"",
+          "member": "string",
+          "name": "Number",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "待绑定的技能组Id列表",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "SkillGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindNumberCallOutSkillGroupResponse": {
+      "document": "BindNumberCallOutSkillGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BindStaffSkillGroupListRequest": {
       "document": "BindStaffSkillGroupList请求参数结构体",
@@ -2157,6 +2220,64 @@
       ],
       "type": "object"
     },
+    "DescribeNumbersRequest": {
+      "document": "DescribeNumbers请求参数结构体",
+      "members": [
+        {
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "页数，从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "分页大小，默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNumbersResponse": {
+      "document": "DescribeNumbers返回参数结构体",
+      "members": [
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "号码列表",
+          "example": "无",
+          "member": "NumberInfo",
+          "name": "Numbers",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePSTNActiveSessionListRequest": {
       "document": "DescribePSTNActiveSessionList请求参数结构体",
       "members": [
@@ -3403,6 +3524,30 @@
         }
       ],
       "type": "object"
+    },
+    "NumberInfo": {
+      "document": "号码信息",
+      "members": [
+        {
+          "document": "号码",
+          "example": "0086075512345678",
+          "member": "string",
+          "name": "Number",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "绑定的外呼技能组",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "CallOutSkillGroupIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PSTNSession": {
       "document": "PSTN 会话类型。",
@@ -4915,9 +5060,60 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "通话中语音留言录音URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"https://xxxxx\"]",
+          "member": "string",
+          "name": "VoicemailRecordURL",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "UnbindNumberCallOutSkillGroupRequest": {
+      "document": "UnbindNumberCallOutSkillGroup请求参数结构体",
+      "members": [
+        {
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "待解绑的号码",
+          "example": "\"0086075512345678\"",
+          "member": "string",
+          "name": "Number",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "待解绑的技能组Id列表",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "SkillGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindNumberCallOutSkillGroupResponse": {
+      "document": "UnbindNumberCallOutSkillGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UnbindStaffSkillGroupListRequest": {
       "document": "UnbindStaffSkillGroupList请求参数结构体",

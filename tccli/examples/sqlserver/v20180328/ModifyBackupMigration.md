@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli sqlserver ModifyBackupMigration --cli-unfold-argument  \
-    --InstanceId mssql-rdc0gajn \
     --BackupMigrationId mssql-backup-migration-kpl74n9l \
-    --MigrationName 字符串 \
-    --RecoveryType FULL \
+    --InstanceId mssql-rdc0gajn \
     --UploadType COS_UPLOAD \
-    --BackupFiles db1.bak
+    --BackupFiles db1.bak \
+    --MigrationName 字符串 \
+    --RecoveryType FULL
 ```
 
 Output: 

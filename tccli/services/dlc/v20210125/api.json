@@ -56,6 +56,20 @@
       "output": "BindWorkGroupsToUserResponse",
       "status": "online"
     },
+    "CancelNotebookSessionStatement": {
+      "document": "本接口（CancelNotebookSessionStatement）用于取消session statement",
+      "input": "CancelNotebookSessionStatementRequest",
+      "name": "取消session statement",
+      "output": "CancelNotebookSessionStatementResponse",
+      "status": "online"
+    },
+    "CancelNotebookSessionStatementBatch": {
+      "document": "本接口（CancelNotebookSessionStatementBatch）用于按批取消Session statement。",
+      "input": "CancelNotebookSessionStatementBatchRequest",
+      "name": "按批取消Session statement.",
+      "output": "CancelNotebookSessionStatementBatchResponse",
+      "status": "online"
+    },
     "CancelTask": {
       "document": "本接口（CancelTask），用于取消任务执行",
       "input": "CancelTaskRequest",
@@ -106,7 +120,7 @@
       "status": "online"
     },
     "CreateInternalTable": {
-      "document": "创建托管存储内表",
+      "document": "创建托管存储内表（该接口已废弃）",
       "input": "CreateInternalTableRequest",
       "name": "创建托管存储内表",
       "output": "CreateInternalTableResponse",
@@ -117,6 +131,20 @@
       "input": "CreateNotebookSessionRequest",
       "name": "创建notebook livy session",
       "output": "CreateNotebookSessionResponse",
+      "status": "online"
+    },
+    "CreateNotebookSessionStatement": {
+      "document": "本接口（CreateNotebookSessionStatement）用于创建session statement",
+      "input": "CreateNotebookSessionStatementRequest",
+      "name": "创建session statement",
+      "output": "CreateNotebookSessionStatementResponse",
+      "status": "online"
+    },
+    "CreateNotebookSessionStatementSupportBatchSQL": {
+      "document": "本接口（CreateNotebookSessionStatementSupportBatchSQL）用于创建Statement批量运行SQL任务。",
+      "input": "CreateNotebookSessionStatementSupportBatchSQLRequest",
+      "name": "创建Statement批量运行SQL任务",
+      "output": "CreateNotebookSessionStatementSupportBatchSQLResponse",
       "status": "online"
     },
     "CreateResultDownload": {
@@ -196,6 +224,13 @@
       "output": "CreateWorkGroupResponse",
       "status": "online"
     },
+    "DeleteNotebookSession": {
+      "document": "本接口（DeleteNotebookSession）用于删除notebook livy session",
+      "input": "DeleteNotebookSessionRequest",
+      "name": "删除notebook livy session",
+      "output": "DeleteNotebookSessionResponse",
+      "status": "online"
+    },
     "DeleteScript": {
       "document": "该接口（DeleteScript）用于删除sql脚本。",
       "input": "DeleteScriptRequest",
@@ -259,6 +294,13 @@
       "output": "DescribeDMSTablesResponse",
       "status": "online"
     },
+    "DescribeDataEngines": {
+      "document": "本接口（DescribeDataEngines）用于获取DataEngines信息列表",
+      "input": "DescribeDataEnginesRequest",
+      "name": "获取DataEngines列表",
+      "output": "DescribeDataEnginesResponse",
+      "status": "online"
+    },
     "DescribeDatabases": {
       "document": "本接口（DescribeDatabases）用于查询数据库列表。",
       "input": "DescribeDatabasesRequest",
@@ -271,6 +313,41 @@
       "input": "DescribeNotebookSessionRequest",
       "name": "获取notebook livy session详情信息",
       "output": "DescribeNotebookSessionResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSessionLog": {
+      "document": "本接口（DescribeNotebookSessionLog）用于获取notebook livy session日志",
+      "input": "DescribeNotebookSessionLogRequest",
+      "name": "获取notebook livy session日志",
+      "output": "DescribeNotebookSessionLogResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSessionStatement": {
+      "document": "本接口（DescribeNotebookSessionStatement）用于获取session statement信息",
+      "input": "DescribeNotebookSessionStatementRequest",
+      "name": "获取session statement信息",
+      "output": "DescribeNotebookSessionStatementResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSessionStatementSqlResult": {
+      "document": "本接口（DescribeNotebookSessionStatementSqlResult）用于获取statement运行结果。",
+      "input": "DescribeNotebookSessionStatementSqlResultRequest",
+      "name": "获取statement运行结果。",
+      "output": "DescribeNotebookSessionStatementSqlResultResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSessionStatements": {
+      "document": "本接口（DescribeNotebookSessionStatements）用于获取Session Statement列表。",
+      "input": "DescribeNotebookSessionStatementsRequest",
+      "name": "获取Session Statement列表",
+      "output": "DescribeNotebookSessionStatementsResponse",
+      "status": "online"
+    },
+    "DescribeNotebookSessions": {
+      "document": "本接口（DescribeNotebookSessions）用于获取notebook livy session列表",
+      "input": "DescribeNotebookSessionsRequest",
+      "name": "获取notebook livy session列表",
+      "output": "DescribeNotebookSessionsResponse",
       "status": "online"
     },
     "DescribeResultDownload": {
@@ -397,6 +474,13 @@
       "input": "DropDMSTableRequest",
       "name": "DMS元数据删除表",
       "output": "DropDMSTableResponse",
+      "status": "online"
+    },
+    "GenerateCreateMangedTableSql": {
+      "document": "生成创建托管表语句",
+      "input": "GenerateCreateMangedTableSqlRequest",
+      "name": "生成创建托管表语句",
+      "output": "GenerateCreateMangedTableSqlResponse",
       "status": "online"
     },
     "ListTaskJobLogDetail": {
@@ -1163,6 +1247,76 @@
         }
       ],
       "usage": "in"
+    },
+    "CancelNotebookSessionStatementBatchRequest": {
+      "document": "CancelNotebookSessionStatementBatch请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "批任务唯一标识",
+          "example": "dses8ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelNotebookSessionStatementBatchResponse": {
+      "document": "CancelNotebookSessionStatementBatch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelNotebookSessionStatementRequest": {
+      "document": "CancelNotebookSessionStatement请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Session Statement唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "StatementId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelNotebookSessionStatementResponse": {
+      "document": "CancelNotebookSessionStatement返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CancelTaskRequest": {
       "document": "CancelTask请求参数结构体",
@@ -1973,6 +2127,114 @@
       ],
       "type": "object"
     },
+    "CreateNotebookSessionStatementRequest": {
+      "document": "CreateNotebookSessionStatement请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "执行的代码",
+          "example": "select 1",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "类型，当前支持：spark、pyspark、sparkr、sql",
+          "example": "sql",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookSessionStatementResponse": {
+      "document": "CreateNotebookSessionStatement返回参数结构体",
+      "members": [
+        {
+          "document": "Session Statement详情",
+          "example": "复杂类型",
+          "member": "NotebookSessionStatementInfo",
+          "name": "NotebookSessionStatement",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookSessionStatementSupportBatchSQLRequest": {
+      "document": "CreateNotebookSessionStatementSupportBatchSQL请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "执行的代码",
+          "example": "select 1;",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "类型，当前支持：spark、pyspark、sparkr、sql",
+          "example": "sql",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "是否保存运行结果",
+          "example": "true",
+          "member": "bool",
+          "name": "SaveResult",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookSessionStatementSupportBatchSQLResponse": {
+      "document": "CreateNotebookSessionStatementSupportBatchSQL返回参数结构体",
+      "members": [
+        {
+          "document": "Session Statement详情",
+          "example": "复杂类型",
+          "member": "NotebookSessionStatementBatchInformation",
+          "name": "NotebookSessionStatementBatches",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateResultDownloadRequest": {
       "document": "CreateResultDownload请求参数结构体",
       "members": [
@@ -2765,6 +3027,42 @@
       ],
       "type": "object"
     },
+    "CrontabResumeSuspendStrategy": {
+      "document": "定时启停策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "定时拉起时间：如：周一8点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000000-08:00:00",
+          "member": "string",
+          "name": "ResumeTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时挂起时间：如：周一20点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000000-20:00:00",
+          "member": "string",
+          "name": "SuspendTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SuspendStrategy",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DMSColumn": {
       "document": "迁移列对象",
       "members": [
@@ -3351,6 +3649,332 @@
       ],
       "usage": "out"
     },
+    "DataEngineInfo": {
+      "document": "DataEngine详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DataEngine名称",
+          "example": "shared_presto",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引擎类型 spark/presto",
+          "example": "presto",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群资源类型 spark_private/presto_private/presto_cu/spark_cu",
+          "example": "presto_private",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引用ID",
+          "example": "****",
+          "member": "string",
+          "name": "QuotaId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据引擎状态  -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "1635320563",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "1635320563",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "int64",
+          "name": "Size",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费模式 0共享模式 1按量计费 2包年包月",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小集群数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MinClusters",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大集群数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxClusters",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自动恢复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoResume",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动恢复时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SpendAfter",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.255.252.0/22",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为默认引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultDataEngine",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试资源",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎id",
+          "example": "02345495-cfe0-461c-8c3d-5715d03feda4",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者",
+          "example": "****",
+          "member": "string",
+          "name": "SubAccountUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "example": "2022-03-16 10:41:03",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "隔离时间",
+          "example": "2022-03-16 10:41:03",
+          "member": "string",
+          "name": "IsolatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "冲正时间",
+          "example": "2022-03-16 10:41:03",
+          "member": "string",
+          "name": "ReversalTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testname",
+          "member": "string",
+          "name": "UserAlias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签对集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"TagKey\":\"mark002\"}]",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎拥有的权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[USE]",
+          "member": "string",
+          "name": "Permissions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自定挂起集群：false（默认）：不自动挂起、true：自动挂起\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoSuspend",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时启停集群策略：0（默认）：关闭定时策略、1：开启定时策略（注：定时启停策略与自动挂起策略互斥）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CrontabResumeSuspend",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时启停策略，复杂类型：包含启停时间、挂起集群策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CrontabResumeSuspendStrategy",
+          "name": "CrontabResumeSuspendStrategy",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎执行任务类型，有效值：SQL/BATCH\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EngineExecType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动续费标志，0，初始状态，默认不自动续费，若用户有预付费不停服特权，自动续费。1：自动续费。2：明确不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群自动挂起时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "AutoSuspendTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络连接配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetworkConnection",
+          "name": "NetworkConnectionSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ui的跳转地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dlc-xxx.com",
+          "member": "string",
+          "name": "UiURL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DataFormat": {
       "document": "数据表数据格式。",
       "members": [
@@ -3573,6 +4197,33 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteNotebookSessionRequest": {
+      "document": "DeleteNotebookSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotebookSessionResponse": {
+      "document": "DeleteNotebookSession返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteScriptRequest": {
       "document": "DeleteScript请求参数结构体",
@@ -4339,6 +4990,141 @@
       ],
       "type": "object"
     },
+    "DescribeDataEnginesRequest": {
+      "document": "DescribeDataEngines请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "滤类型，传参Name应为以下其中一个,\ndata-engine-name - String \nengine-type - String\nstate - String \nmode - String \ncreate-time - String \nmessage - String",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持如下字段类型，create-time",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，desc表示正序，asc表示反序， 默认为asc。",
+          "example": "desc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "已废弃，请使用DatasourceConnectionNameSet",
+          "example": "数据目录名称",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否不返回共享引擎，true不返回共享引擎，false可以返回共享引擎",
+          "example": "false",
+          "member": "bool",
+          "name": "ExcludePublicEngine",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "参数应该为引擎权限类型，有效类型：\"USE\", \"MODIFY\", \"OPERATE\", \"MONITOR\", \"DELETE\"",
+          "example": "[USE]",
+          "member": "string",
+          "name": "AccessTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "引擎执行任务类型，有效值：SQL/BATCH",
+          "example": "SQL",
+          "member": "string",
+          "name": "EngineExecType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "引擎类型，有效值：spark/presto",
+          "example": "spark",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络配置列表，若传入该参数，则返回网络配置关联的计算引擎",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionNameSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEnginesResponse": {
+      "document": "DescribeDataEngines返回参数结构体",
+      "members": [
+        {
+          "document": "数据引擎列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataEngineInfo",
+          "name": "DataEngines",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDatabasesRequest": {
       "document": "DescribeDatabases请求参数结构体",
       "members": [
@@ -4429,6 +5215,78 @@
       ],
       "type": "object"
     },
+    "DescribeNotebookSessionLogRequest": {
+      "document": "DescribeNotebookSessionLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数，默认200",
+          "example": "200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionLogResponse": {
+      "document": "DescribeNotebookSessionLog返回参数结构体",
+      "members": [
+        {
+          "document": "日志信息，默认获取最新的200条",
+          "example": "[\"log\"]",
+          "member": "string",
+          "name": "Logs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分页参数，默认200",
+          "example": "200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分页参数，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNotebookSessionRequest": {
       "document": "DescribeNotebookSession请求参数结构体",
       "members": [
@@ -4452,6 +5310,289 @@
           "member": "NotebookSessionInfo",
           "name": "Session",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementRequest": {
+      "document": "DescribeNotebookSessionStatement请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "Session Statement唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "StatementId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementResponse": {
+      "document": "DescribeNotebookSessionStatement返回参数结构体",
+      "members": [
+        {
+          "document": "Session Statement详情",
+          "example": "复杂类型",
+          "member": "NotebookSessionStatementInfo",
+          "name": "NotebookSessionStatement",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementSqlResultRequest": {
+      "document": "DescribeNotebookSessionStatementSqlResult请求参数结构体",
+      "members": [
+        {
+          "document": "任务唯一ID",
+          "example": "fdd9c5fa21ca11eca6fb5254006c64af",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "返回结果的最大行数，范围0~1000，默认为1000.",
+          "example": "1000",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "上一次请求响应返回的分页信息。第一次可以不带，从头开始返回数据，每次返回MaxResults字段设置的数据量。",
+          "example": "nextMarker=\\u0026nextKey=test/DLCQueryResults/2021/10/15/2c60388",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementSqlResultResponse": {
+      "document": "DescribeNotebookSessionStatementSqlResult返回参数结构体",
+      "members": [
+        {
+          "document": "任务Id",
+          "example": "20210521195919442157",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果数据",
+          "example": "[         [             \"allen\",             \"27\"         ],    ",
+          "member": "string",
+          "name": "ResultSet",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "schema",
+          "example": "{\"query_id\":\"q202108191952hzb9d11f040173825\",\"columns\":[{\"c_cust",
+          "member": "Column",
+          "name": "ResultSchema",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "objectListMarker={marker}&lastReadFile={filename}&lastReadOffset",
+          "member": "string",
+          "name": "NextToken",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "存储结果地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://xxx",
+          "member": "string",
+          "name": "OutputPath",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementsRequest": {
+      "document": "DescribeNotebookSessionStatements请求参数结构体",
+      "members": [
+        {
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "批任务id",
+          "example": "dks18ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionStatementsResponse": {
+      "document": "DescribeNotebookSessionStatements返回参数结构体",
+      "members": [
+        {
+          "document": "Session Statement详情",
+          "example": "复杂类型",
+          "member": "NotebookSessionStatementBatchInformation",
+          "name": "NotebookSessionStatements",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionsRequest": {
+      "document": "DescribeNotebookSessions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "DLC Spark作业引擎名称",
+          "example": "data_engine_1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）",
+          "example": "[“not_started”]",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段（默认按创建时间）",
+          "example": "[\"createTime\"]",
+          "member": "string",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段：true：升序、false：降序（默认）",
+          "example": "true",
+          "member": "bool",
+          "name": "Asc",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "分页字段",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页字段",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookSessionsResponse": {
+      "document": "DescribeNotebookSessions返回参数结构体",
+      "members": [
+        {
+          "document": "session总数量",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalElements",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总页数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalPages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "session列表信息",
+          "example": "复杂类型",
+          "member": "NotebookSessions",
+          "name": "Sessions",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5850,6 +6991,23 @@
       ],
       "usage": "in"
     },
+    "GenerateCreateMangedTableSqlRequest": {
+      "document": "GenerateCreateMangedTableSql请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GenerateCreateMangedTableSqlResponse": {
+      "document": "GenerateCreateMangedTableSql返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "JobLogResult": {
       "document": "日志详情",
       "members": [
@@ -6518,6 +7676,192 @@
       ],
       "type": "object"
     },
+    "NetworkConnection": {
+      "document": "网络配置",
+      "members": [
+        {
+          "default": "",
+          "document": "网络配置id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "89876",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络配置唯一标志符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssociateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计算引擎id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HouseId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源id(已废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络配置状态（0-初始化，1-正常）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "State",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建用户Appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Appid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计算引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HouseName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络配置类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "NetworkConnectionType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建用户SubAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubAccountUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络配置描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkConnectionDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源vpcid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源SubnetId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionSubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源SubnetId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionCidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源SubnetCidrBlock\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionSubnetCidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "NotebookSessionInfo": {
       "document": "Notebook Session详细信息。",
       "members": [
@@ -6699,6 +8043,251 @@
           "name": "ExecutorMaxNumbers",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NotebookSessionStatementBatchInformation": {
+      "document": "按批提交Statement运行SQL任务。",
+      "members": [
+        {
+          "document": "任务详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂类型",
+          "member": "NotebookSessionStatementInfo",
+          "name": "NotebookSessionStatementBatch",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前批任务是否运行完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAvailable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Session唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Batch唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "skdelad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NotebookSessionStatementInfo": {
+      "document": "NotebookSessionStatement详情。",
+      "members": [
+        {
+          "document": "完成时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1662635695652",
+          "member": "int64",
+          "name": "Completed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "开始时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1662635695652",
+          "member": "int64",
+          "name": "Started",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "完成进度，百分制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "Progress",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Session Statement唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "StatementId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Session Statement状态，包含：waiting（排队中）、running（运行中）、available（正常）、error（异常）、cancelling（取消中）、cancelled（已取消）",
+          "example": "running",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Statement输出信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂类型",
+          "member": "StatementOutput",
+          "name": "OutPut",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "批任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dks18ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运行语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select 1;",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dks18ad4-9a7e-4f64-a3dj-f38507c697dj",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NotebookSessions": {
+      "document": "notebook session列表信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "类型，当前支持：spark、pyspark、sparkr、sql",
+          "example": "spark",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Session唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代理用户，默认为root\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "ProxyUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）",
+          "example": "not_started",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Spark任务返回的AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spark-4ke6a46618d24e9c7yh2b62f0ddebdks",
+          "member": "string",
+          "name": "SparkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Session名称",
+          "example": "session1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Session创建时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引擎名称",
+          "example": "data_engine_1",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最新的运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "LastRunningTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者",
+          "example": "test",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark ui地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "SparkUiUrl",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -7436,6 +9025,75 @@
       ],
       "usage": "out"
     },
+    "StatementOutput": {
+      "document": "notebook session statement输出信息。",
+      "members": [
+        {
+          "document": "执行总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutionCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Statement数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key\":\"testKey\",\"value\":\"testValue\"]",
+          "member": "KVPair",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Statement状态:ok,error\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "compute fail",
+          "member": "string",
+          "name": "ErrorName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InternalError",
+          "member": "string",
+          "name": "ErrorValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误堆栈信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"internal Error\"]",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "SQL类型任务结果返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{                 \"application/json\":{                     \"schema\":{                         \"type\":\"struct\",                         \"fields\":[                             {                                 \"name\":\"1\",                                 \"type\":\"integer\",                                 \"nullable\":false,                                 \"metadata\":{                                  }                             }                         ]                     }                 }             }",
+          "member": "string",
+          "name": "SQLResult",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StreamingStatistics": {
       "document": "spark流任务统计信息",
       "members": [
@@ -7996,6 +9654,32 @@
         }
       ],
       "usage": "out"
+    },
+    "TagInfo": {
+      "document": "标签对信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tagKey1",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tagValue1",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Task": {
       "document": "任务类型，任务如SQL查询等。",

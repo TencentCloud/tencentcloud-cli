@@ -1,5 +1,21 @@
 {
   "actions": {
+    "BatchCreateRoom": [
+      {
+        "document": "批量创建课堂",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"RoomInfos\": [\n        {\n            \"AutoMic\": 1,\n            \"Name\": \"xx\",\n            \"AudioQuality\": 1,\n            \"TurnOffMic\": 1,\n            \"MaxMicNumber\": 1,\n            \"SubType\": \"xx\",\n            \"StartTime\": 1,\n            \"TeacherId\": \"xx\",\n            \"EndTime\": 1,\n            \"Resolution\": 1,\n            \"DisableRecord\": 1,\n            \"Assistants\": []\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RoomIds\": [\n            301234567\n        ],\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "批量创建课堂"
+      }
+    ],
+    "BatchDeleteRecord": [
+      {
+        "document": "批量删除",
+        "input": "{\n  \"RoomIds\": [\n    0\n  ],\n  \"SdkAppId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RoomIds\": [\n            0\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "BatchRegister": [
       {
         "document": "批量注册用户",
@@ -40,6 +56,22 @@
         "title": "创建巡课"
       }
     ],
+    "DeleteDocument": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "删除文档"
+      }
+    ],
+    "DeleteRecord": [
+      {
+        "document": "删除指定房间的录制文件",
+        "input": "{\n  \"RoomId\": 0,\n  \"SdkAppId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteRoom": [
       {
         "document": "",
@@ -54,6 +86,22 @@
         "input": "{\n    \"ApplicationId\": \"3028839\",\n    \"DeveloperId\": \"db5bb499-8691-463f-ac64-1a48f80d968a\"\n}",
         "output": "{\n    \"Response\": {\n        \"AppConfig\": {},\n        \"RequestId\": \"9dfae8e8a8c5e4b27b7abf37caa2e5bf\",\n        \"SceneConfig\": [\n            {}\n        ],\n        \"SdkAppId\": \"1400315010\"\n    }\n}",
         "title": "获取应用配置"
+      }
+    ],
+    "DescribeDocument": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UpdateTime\": 1,\n        \"DocumentUrl\": \"xx\",\n        \"TranscodeState\": 1,\n        \"Permission\": 1,\n        \"TranscodeType\": 1,\n        \"DocumentName\": \"xx\",\n        \"TranscodeInfo\": \"xx\",\n        \"DocumentSize\": 1,\n        \"TranscodeResult\": \"xx\",\n        \"SdkAppId\": 1,\n        \"DocumentType\": \"xx\",\n        \"Owner\": \"xx\",\n        \"TranscodeProgress\": 1,\n        \"DocumentId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取文档信息"
+      }
+    ],
+    "DescribeDocumentsByRoom": [
+      {
+        "document": "获取指定课堂文档",
+        "input": "{\n  \"RoomId\": 1,\n  \"SdkAppId\":1234567\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Documents\": [\n            {\n                \"DocumentId\": \"xx\",\n                \"DocumentUrl\": \"xx\",\n                \"DocumentName\": \"xx\",\n                \"Owner\": \"xx\",\n                \"SdkAppId\": 1,\n                \"Permission\": 1,\n                \"TranscodeResult\": \"xx\",\n                \"TranscodeType\": 1,\n                \"TranscodeProgress\": 1,\n                \"TranscodeState\": 1,\n                \"TranscodeInfo\": \"xx\",\n                \"DocumentType\": \"xx\",\n                \"DocumentSize\": 1,\n                \"UpdateTime\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取指定课堂文档"
       }
     ],
     "DescribeRoom": [
@@ -72,12 +120,28 @@
         "title": "获取房间统计信息"
       }
     ],
+    "DescribeSdkAppIdUsers": [
+      {
+        "document": "获取应用下用户列表",
+        "input": "{\n  \"SdkAppId\": 123456\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Users\": [\n            {\n                \"Name\": \"xx\",\n                \"UserId\": \"xx\",\n                \"Avatar\": \"xx\",\n                \"SdkAppId\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取应用下用户列表"
+      }
+    ],
     "DescribeUser": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUser\n<公共请求参数>\n\n{\n    \"UserId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"xx\",\n        \"UserId\": \"xx\",\n        \"Avatar\": \"xx\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取用户信息"
+      }
+    ],
+    "GetWatermark": [
+      {
+        "document": "获取水印配置",
+        "input": "{\n  \"SdkAppId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TeacherLogo\": {\n            \"Url\": \"xx\",\n            \"Width\": 0,\n            \"Height\": 0,\n            \"LocationX\": 0,\n            \"LocationY\": 0\n        },\n        \"BoardLogo\": {\n            \"Url\": \"xx\",\n            \"Width\": 0,\n            \"Height\": 0,\n            \"LocationX\": 0,\n            \"LocationY\": 0\n        },\n        \"BackgroundPicture\": {\n            \"Url\": \"xx\"\n        },\n        \"Text\": {\n            \"Text\": \"xx\",\n            \"Color\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "LoginOriginId": [
@@ -112,6 +176,14 @@
         "title": "修改房间"
       }
     ],
+    "ModifyUserProfile": [
+      {
+        "document": "修改用户配置示例",
+        "input": "{\n    \"UserId\": \"xxx\",\n    \"Nickname\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改用户配置"
+      }
+    ],
     "RegisterUser": [
       {
         "document": "",
@@ -126,6 +198,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAppCustomContent\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123,\n    \"CustomContent\": [\n        {\n            \"Scene\": \"default\",\n            \"LogoUrl\": \"https://yourdomain.com/logo.png\",\n            \"HomeUrl\": \"https://yourdomain.com/login\",\n            \"JsUrl\": \"https://yourdomain.com/default.js\",\n            \"CssUrl\": \"https://yourdomain.com/default.css\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "设置应用自定义内容"
+      }
+    ],
+    "SetWatermark": [
+      {
+        "document": "设置水印",
+        "input": "{\n  \"SdkAppId\": 1,\n  \"TeacherUrl\": \"xx\",\n  \"BoardUrl\": \"xx\",\n  \"VideoUrl\": \"xx\",\n  \"BoardW\": 0,\n  \"BoardH\": 0,\n  \"BoardX\": 0,\n  \"BoardY\": 0,\n  \"TeacherW\": 0,\n  \"TeacherH\": 0,\n  \"TeacherX\": 0,\n  \"TeacherY\": 0,\n  \"Text\": \"xx\",\n  \"TextColor\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "UnbindDocumentFromRoom": [

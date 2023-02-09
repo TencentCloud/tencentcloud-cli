@@ -64,6 +64,22 @@
         "title": "绑定工作组到用户"
       }
     ],
+    "CancelNotebookSessionStatement": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelNotebookSessionStatement\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"StatementId\": \"d3018ad4-9a7e-4f64-a3dj-f38507c697dj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "取消session statement"
+      }
+    ],
+    "CancelNotebookSessionStatementBatch": [
+      {
+        "document": "本接口用于按批取消session statement。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelNotebookSessionStatementBatch\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"BatchId\": \"kdsesad4-9a7e-4f64-a3dj-f38507c697dj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "按批取消session statement"
+      }
+    ],
     "CancelTask": [
       {
         "document": "",
@@ -134,6 +150,22 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotebookSession\n<公共请求参数>\n\n{\n    \"Kind\": \"spark\",\n    \"Name\": \"session1\",\n    \"ProxyUser\": \"root\",\n    \"ProgramDependentPython\": [\n        \"cosn://xxx\"\n    ],\n    \"ProgramDependentFiles\": [\n        \"cosn://xxx\"\n    ],\n    \"ExecutorSize\": \"small\",\n    \"ExecutorNumbers\": 1,\n    \"ExecutorMaxNumbers\": 1,\n    \"DataEngineName\": \"data_engine_1\",\n    \"ProgramDependentJars\": [\n        \"cosn://xxx\"\n    ],\n    \"Arguments\": [\n        {\n            \"Value\": \"eni\",\n            \"Key\": \"test_eni\"\n        }\n    ],\n    \"TimeoutInSecond\": 3600,\n    \"ProgramArchives\": [\n        \"cosn://xxx\"\n    ],\n    \"DriverSize\": \"small\"\n}",
         "output": "{\n    \"Response\": {\n        \"SparkAppId\": \"xx\",\n        \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n        \"State\": \"not_started\",\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
         "title": "创建notebook livy session"
+      }
+    ],
+    "CreateNotebookSessionStatement": [
+      {
+        "document": "本接口用于创建session statement。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotebookSessionStatement\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"Code\": \"select 1\",\n    \"Kind\": \"sql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NotebookSessionStatement\": {\n            \"Started\": 1662635695652,\n            \"Completed\": 1662635695652,\n            \"State\": \"running\",\n            \"StatementId\": \"d3018ad4-9a7e-4f64-a3dj-f38507c697dj\",\n            \"TaskId\": \"d301fsdd4-9a7e-4f64-a3dj-f38507c697dj\",\n            \"Progress\": 100,\n            \"OutPut\": {\n                \"ExecutionCount\": 1,\n                \"Data\": [\n                    {\n                        \"Value\": \"value\",\n                        \"Key\": \"key\"\n                    }\n                ],\n                \"Status\": \"ok\",\n                \"ErrorName\": \"testErr\",\n                \"ErrorValue\": \"Error\",\n                \"ErrorMessage\": [\n                    \"Error\"\n                ],\n                \"SQLResult\": \"result\"\n            }\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "创建session statement"
+      }
+    ],
+    "CreateNotebookSessionStatementSupportBatchSQL": [
+      {
+        "document": "本接口用于创建Session Statement批量运行SQL。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotebookSessionStatementSupportBatchSQL\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"Code\": \"select 1;\",\n    \"Kind\": \"sql\",\n    \"SaveResult\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"NotebookSessionStatementBatches\": {\n            \"NotebookSessionStatementBatch\": [\n                {\n                    \"Completed\": 0,\n                    \"Started\": 0,\n                    \"Progress\": 0,\n                    \"StatementId\": \"ksiked7-ekd4-4e5e-993e-e5db64fa21c1\",\n                    \"TaskId\": \"d301fsdd4-9a7e-4f64-a3dj-f38507c697dj\",\n                    \"State\": \"available\",\n                    \"OutPut\": {\n                        \"ExecutionCount\": 0,\n                        \"Data\": [\n                            {\n                                \"Key\": \"testKey\",\n                                \"Value\": \"testValue\"\n                            }\n                        ],\n                        \"Status\": \"available\",\n                        \"ErrorName\": \"testErrorName\",\n                        \"ErrorValue\": \"testErrorValue\",\n                        \"ErrorMessage\": [\n                            \"testErrorMessage\"\n                        ],\n                        \"SQLResult\": \"result\"\n                    }\n                }\n            ],\n            \"IsAvailable\": true,\n            \"SessionId\": \"ksjeldd7-ekd4-4e5e-993e-e5db64fa21c1\",\n            \"BatchId\": \"eiosldd7-ekd4-4e5e-993e-e5db64fa21c1\"\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "创建Session Statement批量运行SQL"
       }
     ],
     "CreateResultDownload": [
@@ -224,6 +256,14 @@
         "title": "创建工作组"
       }
     ],
+    "DeleteNotebookSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNotebookSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "删除notebook livy session"
+      }
+    ],
     "DeleteScript": [
       {
         "document": "",
@@ -296,6 +336,14 @@
         "title": "DMS查询表列表"
       }
     ],
+    "DescribeDataEngines": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEngines\n<公共请求参数>\n\n{\n    \"Sorting\": \"desc\",\n    \"Limit\": 10,\n    \"SortBy\": \"create-time\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"engine-type\"\n            ],\n            \"Name\": \"presto\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataEngines\": [\n            {\n                \"MaxClusters\": 10,\n                \"DefaultDataEngine\": true,\n                \"UpdateTime\": 1635320563,\n                \"SpendAfter\": 10,\n                \"DataEngineId\": \"****\",\n                \"CidrBlock\": \"10.255.252.0/22\",\n                \"SubAccountUin\": \"****\",\n                \"AutoResume\": true,\n                \"ClusterType\": \"presto_private\",\n                \"QuotaId\": \"****\",\n                \"State\": 0,\n                \"DataEngineName\": \"shared_presto\",\n                \"Mode\": 0,\n                \"Message\": \"测试资源\",\n                \"CreateTime\": 1635320563,\n                \"EngineType\": \"presto\",\n                \"MinClusters\": 0,\n                \"Size\": 64\n            }\n        ],\n        \"RequestId\": \"2f67771a-a384-4b4e-86a5-146d8829ae2d\"\n    }\n}",
+        "title": "获取DataEngines信息列表"
+      }
+    ],
     "DescribeDatabases": [
       {
         "document": "查询数据库列表",
@@ -310,6 +358,46 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n}",
         "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"DriverSize\": \"small\",\n            \"Kind\": \"spark\",\n            \"Name\": \"session1\",\n            \"SparkUiUrl\": \"xx\",\n            \"ProxyUser\": \"root\",\n            \"CreateTime\": \"2006-01-02 15:04:05\",\n            \"ProgramDependentPython\": [\n                \"cosn://xxx\"\n            ],\n            \"ProgramDependentFiles\": [\n                \"cosn://xxx\"\n            ],\n            \"ExecutorSize\": \"small\",\n            \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n            \"ExecutorNumbers\": 1,\n            \"ExecutorMaxNumbers\": 1,\n            \"DataEngineName\": \"data_engine_1\",\n            \"ProgramDependentJars\": [\n                \"cosn://xxx\"\n            ],\n            \"SparkAppId\": \"spark-4ke6a46618d24e9c7yh2b62f0ddebdks\",\n            \"TimeoutInSecond\": 3600,\n            \"AppInfo\": [\n                {\n                    \"Value\": \"\",\n                    \"Key\": \"\"\n                }\n            ],\n            \"State\": \"not_started\",\n            \"ProgramArchives\": [\n                \"cosn://xxx\"\n            ],\n            \"Arguments\": [\n                {\n                    \"Value\": \"eni\",\n                    \"Key\": \"test_eni\"\n                }\n            ]\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
         "title": "DescribeNotebookSession"
+      }
+    ],
+    "DescribeNotebookSessionLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSessionLog\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"Limit\": 200,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Logs\": [\n            \"log\"\n        ],\n        \"Limit\": 200,\n        \"Offset\": 0,\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "获取notebook livy session日志"
+      }
+    ],
+    "DescribeNotebookSessionStatement": [
+      {
+        "document": "本接口用于获取session statement详情；",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSessionStatement\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"StatementId\": \"d3018ad4-9a7e-4f64-a3dj-f38507c697dj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NotebookSessionStatement\": {\n            \"Completed\": 1662635695652,\n            \"Started\": 1662635695652,\n            \"Progress\": 100,\n            \"StatementId\": \"d3018ad4-9a7e-4f64-a3dj-f38507c697dj\",\n            \"TaskId\": \"d301fsdd4-9a7e-4f64-a3dj-f38507c697dj\",\n            \"State\": \"running\",\n            \"OutPut\": {\n                \"ExecutionCount\": 1,\n                \"Data\": [\n                    {\n                        \"Key\": \"key\",\n                        \"Value\": \"value\"\n                    }\n                ],\n                \"Status\": \"ok\",\n                \"ErrorName\": \"testErr\",\n                \"ErrorValue\": \"Error\",\n                \"ErrorMessage\": [\n                    \"Error\"\n                ],\n                \"SQLResult\": \"result\"\n            },\n            \"BatchId\": \"bdsad7dd7-ekd4-4e5e-993e-e5db64fa21c1\",\n            \"Code\": \"selelct 1;\"\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "获取session statement信息"
+      }
+    ],
+    "DescribeNotebookSessionStatementSqlResult": [
+      {
+        "document": "本接口用于获取statement运行结果。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSessionStatementSqlResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"20210521195919442157\",\n    \"MaxResults\": 100,\n    \"NextToken\": \"objectListMarker={marker}&lastReadFile={filename}&lastReadOffset\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultSchema\": [\n            {\n                \"Comment\": \"xx\",\n                \"Scale\": 0,\n                \"Name\": \"xx\",\n                \"Nullable\": \"xx\",\n                \"Precision\": 0,\n                \"Type\": \"xx\"\n            }\n        ],\n        \"NextToken\": \"xx\",\n        \"ResultSet\": \"xx\",\n        \"OutputPath\": \"cosn:xx\",\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "获取statement运行结果"
+      }
+    ],
+    "DescribeNotebookSessionStatements": [
+      {
+        "document": "本接口用于获取Session Statement详情列表。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSessionStatements\n<公共请求参数>\n\n{\n    \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n    \"BatchId\": \"eiosldd7-ekd4-4e5e-993e-e5db64fa21c1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NotebookSessionStatements\": {\n            \"NotebookSessionStatementBatch\": [\n                {\n                    \"Completed\": 0,\n                    \"Started\": 0,\n                    \"Progress\": 0,\n                    \"StatementId\": \"ksiked7-ekd4-4e5e-993e-e5db64fa21c1\",\n                    \"TaskId\": \"d301fsdd4-9a7e-4f64-a3dj-f38507c697dj\",\n                    \"State\": \"available\",\n                    \"OutPut\": {\n                        \"ExecutionCount\": 0,\n                        \"Data\": [\n                            {\n                                \"Key\": \"testKey\",\n                                \"Value\": \"testValue\"\n                            }\n                        ],\n                        \"Status\": \"available\",\n                        \"ErrorName\": \"testErrorName\",\n                        \"ErrorValue\": \"testErrorValue\",\n                        \"ErrorMessage\": [\n                            \"testErrorMessage\"\n                        ],\n                        \"SQLResult\": \"result\"\n                    },\n                    \"BatchId\": \"eiosldd7-ekd4-4e5e-993e-e5db64fa21c1\"\n                }\n            ],\n            \"IsAvailable\": true,\n            \"SessionId\": \"ksjeldd7-ekd4-4e5e-993e-e5db64fa21c1\"\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "获取Session Statement详情列表"
+      }
+    ],
+    "DescribeNotebookSessions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookSessions\n<公共请求参数>\n\n{\n    \"SortFields\": [\n        \"createTime\"\n    ],\n    \"Asc\": true,\n    \"State\": [\n        \"not_started\"\n    ],\n    \"Limit\": 10,\n    \"DataEngineName\": \"xx\",\n    \"Offset\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Sessions\": [\n            {\n                \"Kind\": \"spark\",\n                \"Name\": \"session1\",\n                \"ProxyUser\": \"root\",\n                \"State\": \"not_started\",\n                \"SessionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n                \"SparkAppId\": \"spark-4ke6a46618d24e9c7yh2b62f0ddebdks\",\n                \"CreateTime\": \"2006-01-02 15:04:05\",\n                \"DataEngineName\": \"data_engin_1\",\n                \"LastRunningTime\": \"2006-01-02 15:04:05\",\n                \"SparkUiUrl\": \"http://xx\",\n                \"Creator\": \"232132443\"\n            }\n        ],\n        \"TotalPages\": 2,\n        \"TotalElements\": 20,\n        \"Page\": 1,\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\",\n        \"Size\": 10\n    }\n}",
+        "title": "获取notebook livy session列表"
       }
     ],
     "DescribeResultDownload": [
@@ -454,6 +542,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DropDMSTable\n<公共请求参数>\n\n{\n    \"DbName\": \"db1\",\n    \"Name\": \"table1\",\n    \"DeleteData\": false,\n    \"EnvProps\": {\n        \"Value\": \"xx\",\n        \"Key\": \"xx\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
         "title": "DMS元数据删除表"
+      }
+    ],
+    "GenerateCreateMangedTableSql": [
+      {
+        "document": "创建托管存储内表",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateCreateMangedTableSql\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"RequestId\"\n    }\n}",
+        "title": "创建托管存储内表"
       }
     ],
     "ListTaskJobLogDetail": [

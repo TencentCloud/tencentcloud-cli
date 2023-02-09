@@ -12089,6 +12089,7 @@
         {
           "default": "",
           "document": "实例 ID 数组，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "[\"cdb-f35wr6wj\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -12097,6 +12098,7 @@
         {
           "default": "",
           "document": "项目的 ID。",
+          "example": "12",
           "member": "int64",
           "name": "NewProjectId",
           "required": false,

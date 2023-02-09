@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BindNumberCallOutSkillGroup": [
+      {
+        "document": "绑定号码和技能组",
+        "input": "{\n\"Number\":\"0086075512345678\",\n\"SkillGroupIds\": [1,2,3],\n\"SdkAppId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "绑定号码和技能组"
+      }
+    ],
     "BindStaffSkillGroupList": [
       {
         "document": "",
@@ -168,6 +176,14 @@
         "title": "查询在线客服记录示例"
       }
     ],
+    "DescribeNumbers": [
+      {
+        "document": "查询号码列表",
+        "input": "{\n  \"SdkAppId\": 1400000000,\n  \"PageNumber\": 0,\n  \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Numbers\": [\n            {\n                \"Number\": \"0086075512345678\",\n                \"CallOutSkillGroupIds\": [\n                    1\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询号码列表"
+      }
+    ],
     "DescribePSTNActiveSessionList": [
       {
         "document": "",
@@ -278,6 +294,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"TaskId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "停止任务"
+      }
+    ],
+    "UnbindNumberCallOutSkillGroup": [
+      {
+        "document": "解绑号码外呼技能组",
+        "input": "{\n\"Number\":\"0086075512345678\",\n\"SkillGroupIds\": [1,2,3],\n\"SdkAppId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "解绑号码外呼技能组"
       }
     ],
     "UnbindStaffSkillGroupList": [

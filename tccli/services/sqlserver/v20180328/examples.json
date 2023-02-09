@@ -43,7 +43,7 @@
     "CreateAccount": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=CreateAccount\n&InstanceId=mssql-njj2mtpl\n&Accounts.0.UserName=testuser\n&Accounts.0.Password=testpassword\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-njj2mtpl\",\n    \"Accounts\": [\n        {\n            \"UserName\": \"testuser\",\n            \"Password\": \"testpassword\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"FlowId\": \"30321\"\n    }\n}",
         "title": "创建实例账号"
       }
@@ -204,7 +204,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-j8kv137v\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"mssql-632eyp63\",\n        \"TotalCount\": 1,\n        \"Accounts\": [\n            {\n                \"Status\": 2,\n                \"Remark\": \"--\",\n                \"Host\": \"127.0.0.1\",\n                \"Name\": \"xiaowei\",\n                \"IsAdmin\": true,\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"InternalStatus\": \"enable\",\n                \"Authentication\": \"win-windows\",\n                \"PassTime\": \"2020-09-22 00:00:00\",\n                \"Dbs\": [\n                    {\n                        \"Privilege\": \"ReadOnly\",\n                        \"DBName\": \"test\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"5729760c-db94-4c71-a1ee-ebd43adae189\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"mssql-632eyp63\",\n        \"TotalCount\": 1,\n        \"Accounts\": [\n            {\n                \"Status\": 2,\n                \"Remark\": \"--\",\n                \"AccountType\": \"L0\",\n                \"Host\": \"127.0.0.1\",\n                \"Name\": \"xiaowei\",\n                \"IsAdmin\": true,\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"InternalStatus\": \"enable\",\n                \"Authentication\": \"win-windows\",\n                \"PassTime\": \"2020-09-22 00:00:00\",\n                \"Dbs\": [\n                    {\n                        \"Privilege\": \"ReadOnly\",\n                        \"DBName\": \"test\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"5729760c-db94-4c71-a1ee-ebd43adae189\"\n    }\n}",
         "title": "拉取实例账户列表"
       }
     ],
@@ -253,8 +253,8 @@
     "DescribeBackupMigration": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupMigration\n&BackupMigrationId=mssql-backup-migration-kpl74n9l\n&MigrationName=字符串\n&BackupFileName=db1\n&RecoveryType=FULL\n&UploadType=COS_UPLOAD\n&Limit=100\n&Offset=0\n&OrderBy=createTime\n&OrderByType=desc\n&StatusSet.0=2\n&InstanceId=mssql-rdc0gajn\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BackupMigrationSet\": [\n            {\n                \"Action\": {\n                    \"AllAction\": [\n                        \"start\",\n                        \"delete\",\n                        \"incremental\",\n                        \"modify\",\n                        \"view\",\n                        \"upload\"\n                    ],\n                    \"AllowedAction\": [\n                        \"view\",\n                        \"modify\",\n                        \"delete\",\n                        \"upload\",\n                        \"start\"\n                    ]\n                },\n                \"AppId\": 251006279,\n                \"BackupFiles\": [\n                    \"db1.bak\"\n                ],\n                \"CreateTime\": \"2020-09-27 16:23:47\",\n                \"Detail\": {\n                    \"Progress\": 0,\n                    \"StepAll\": 0,\n                    \"StepInfo\": [],\n                    \"StepNow\": 0\n                },\n                \"EndTime\": \"0000-00-00 00:00:00\",\n                \"InstanceId\": \"mssql-rdc0gajn\",\n                \"IsRecovery\": \"\",\n                \"Message\": \"\",\n                \"MigrationId\": \"mssql-backup-migration-kpl74n9l\",\n                \"MigrationName\": \"字符串\",\n                \"RecoveryType\": \"FULL\",\n                \"Region\": \"ap-guangzhou\",\n                \"StartTime\": \"0000-00-00 00:00:00\",\n                \"Status\": 2,\n                \"UploadType\": \"COS_UPLOAD\"\n            }\n        ],\n        \"RequestId\": \"cf4b1509-8029-4daf-b7b1-e504ff82cbba\",\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupMigration\n<公共请求参数>\n\n{\n    \"BackupMigrationId\": \"mssql-backup-migration-kpl74n9l\",\n    \"OrderBy\": \"createTime\",\n    \"MigrationName\": \"字符串\",\n    \"UploadType\": \"COS_UPLOAD\",\n    \"Offset\": \"0\",\n    \"StatusSet\": [\n        \"2\"\n    ],\n    \"InstanceId\": \"mssql-rdc0gajn\",\n    \"Limit\": \"100\",\n    \"OrderByType\": \"desc\",\n    \"BackupFileName\": \"db1\",\n    \"RecoveryType\": \"FULL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupMigrationSet\": [\n            {\n                \"Action\": {\n                    \"AllAction\": [\n                        \"start\",\n                        \"delete\",\n                        \"incremental\",\n                        \"modify\",\n                        \"view\",\n                        \"upload\"\n                    ],\n                    \"AllowedAction\": [\n                        \"view\",\n                        \"modify\",\n                        \"delete\",\n                        \"upload\",\n                        \"start\"\n                    ]\n                },\n                \"AppId\": 251006279,\n                \"BackupFiles\": [\n                    \"db1.bak\"\n                ],\n                \"CreateTime\": \"2020-09-27 16:23:47\",\n                \"Detail\": {\n                    \"Progress\": 0,\n                    \"StepAll\": 0,\n                    \"StepInfo\": [],\n                    \"StepNow\": 0\n                },\n                \"EndTime\": \"0000-00-00 00:00:00\",\n                \"InstanceId\": \"mssql-rdc0gajn\",\n                \"IsRecovery\": \"\",\n                \"Message\": \"\",\n                \"MigrationId\": \"mssql-backup-migration-kpl74n9l\",\n                \"MigrationName\": \"字符串\",\n                \"RecoveryType\": \"FULL\",\n                \"Region\": \"ap-guangzhou\",\n                \"StartTime\": \"0000-00-00 00:00:00\",\n                \"Status\": 2,\n                \"DBRename\": [\n                    {\n                        \"NewName\": \"newdb\",\n                        \"OldName\": \"olddb\"\n                    }\n                ],\n                \"UploadType\": \"COS_UPLOAD\"\n            }\n        ],\n        \"RequestId\": \"cf4b1509-8029-4daf-b7b1-e504ff82cbba\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询全量备份导入任务"
       }
     ],
@@ -338,7 +338,7 @@
     ],
     "DescribeDBsNormal": [
       {
-        "document": "",
+        "document": "查询数据库详细配置信息",
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeDBsNormal\n&InstanceId=mssql-njj2mtpl\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DBList\": [\n            {\n                \"IsFulltextEnabled\": \"0\",\n                \"UserAccessDesc\": \"MULTI_USER\",\n                \"IsMirroring\": \"1\",\n                \"CollationName\": \"Chinese_PRC_CI_AS\",\n                \"RecoveryModelDesc\": \"FULL\",\n                \"IsSubscribed\": \"1\",\n                \"StateDesc\": \"ONLINE\",\n                \"IsCdcEnabled\": \"1\",\n                \"MirroringState\": \"SYNCHRONIZED\",\n                \"IsPublished\": \"1\",\n                \"RetentionPeriod\": \"20\",\n                \"IsDbChainingOn\": \"1\",\n                \"IsEncrypted\": \"0\",\n                \"IsTrustworthyOn\": \"1\",\n                \"IsReadCommittedSnapshotOn\": \"0\",\n                \"IsBrokerEnabled\": \"1\",\n                \"IsAutoCleanupOn\": \"1\",\n                \"Name\": \"db_test\"\n            }\n        ],\n        \"RequestId\": \"9607d890-db08-11eb-9f54-a9df121c01af\"\n    }\n}",
         "title": "查询数据库详细配置信息"
@@ -547,7 +547,7 @@
     "ModifyAccountPrivilege": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyAccountPrivilege\n&InstanceId=mssql-njj2mtpl\n&Accounts.0.UserName=testuser\n&Accounts.0.DBPrivileges.0.DBName=testdb\n&Accounts.0.DBPrivileges.0.Privilege=ReadOnly\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountPrivilege\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-njj2mtpl\",\n    \"Accounts\": [\n        {\n            \"UserName\": \"testuser\",\n            \"DBPrivileges\": [\n                {\n                    \"Privilege\": \"ReadOnly\",\n                    \"DBName\": \"testdb\"\n                }\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"FlowId\": \"30321\"\n    }\n}",
         "title": "修改实例账户权限"
       }
@@ -563,7 +563,7 @@
     "ModifyBackupMigration": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyBackupMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-kpl74n9l\n&MigrationName=字符串\n&RecoveryType=FULL\n&UploadType=COS_UPLOAD\n&BackupFiles.0=db1.bak\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupMigration\n<公共请求参数>\n\n{\n    \"BackupMigrationId\": \"mssql-backup-migration-kpl74n9l\",\n    \"InstanceId\": \"mssql-rdc0gajn\",\n    \"UploadType\": \"COS_UPLOAD\",\n    \"BackupFiles\": [\n        \"db1.bak\"\n    ],\n    \"MigrationName\": \"字符串\",\n    \"RecoveryType\": \"FULL\"\n}",
         "output": "{\n    \"Response\": {\n        \"BackupMigrationId\": \"mssql-backup-migration-kpl74n9l\",\n        \"RequestId\": \"836a10d3-cd1f-4ac1-96a9-f2e642333f0b\"\n    }\n}",
         "title": "修改全量备份导入任务"
       }

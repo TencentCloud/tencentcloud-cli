@@ -1,5 +1,19 @@
 {
   "actions": {
+    "BatchCreateRoom": {
+      "document": "批量创建房间接口",
+      "input": "BatchCreateRoomRequest",
+      "name": "批量创建房间",
+      "output": "BatchCreateRoomResponse",
+      "status": "online"
+    },
+    "BatchDeleteRecord": {
+      "document": "批量删除多个房间的录制文件",
+      "input": "BatchDeleteRecordRequest",
+      "name": "批量删除多个房间的录制文件",
+      "output": "BatchDeleteRecordResponse",
+      "status": "online"
+    },
     "BatchRegister": {
       "document": "如果批量注册的用户已存在，则会被覆盖。一次最多注册1000个用户。默认请求频率限制：10次/秒",
       "input": "BatchRegisterRequest",
@@ -35,6 +49,20 @@
       "output": "CreateSupervisorResponse",
       "status": "online"
     },
+    "DeleteDocument": {
+      "document": "删除文档",
+      "input": "DeleteDocumentRequest",
+      "name": "删除文档",
+      "output": "DeleteDocumentResponse",
+      "status": "online"
+    },
+    "DeleteRecord": {
+      "document": "删除指定房间的录制文件",
+      "input": "DeleteRecordRequest",
+      "name": "删除指定房间的录制文件",
+      "output": "DeleteRecordResponse",
+      "status": "online"
+    },
     "DeleteRoom": {
       "document": "删除房间",
       "input": "DeleteRoomRequest",
@@ -47,6 +75,20 @@
       "input": "DescribeAppDetailRequest",
       "name": "获取应用详情",
       "output": "DescribeAppDetailResponse",
+      "status": "online"
+    },
+    "DescribeDocument": {
+      "document": "获取文档信息",
+      "input": "DescribeDocumentRequest",
+      "name": "获取文档信息",
+      "output": "DescribeDocumentResponse",
+      "status": "online"
+    },
+    "DescribeDocumentsByRoom": {
+      "document": "此接口获取指定房间下课件列表",
+      "input": "DescribeDocumentsByRoomRequest",
+      "name": "获取指定房间下文档",
+      "output": "DescribeDocumentsByRoomResponse",
       "status": "online"
     },
     "DescribeRoom": {
@@ -63,11 +105,25 @@
       "output": "DescribeRoomStatisticsResponse",
       "status": "online"
     },
+    "DescribeSdkAppIdUsers": {
+      "document": "此接口用于获取指定应用ID下用户列表",
+      "input": "DescribeSdkAppIdUsersRequest",
+      "name": "获取应用ID下用户列表",
+      "output": "DescribeSdkAppIdUsersResponse",
+      "status": "online"
+    },
     "DescribeUser": {
       "document": "获取用户信息",
       "input": "DescribeUserRequest",
       "name": "获取用户信息",
       "output": "DescribeUserResponse",
+      "status": "online"
+    },
+    "GetWatermark": {
+      "document": "获取水印设置",
+      "input": "GetWatermarkRequest",
+      "name": "获取水印设置",
+      "output": "GetWatermarkResponse",
       "status": "online"
     },
     "LoginOriginId": {
@@ -98,6 +154,13 @@
       "output": "ModifyRoomResponse",
       "status": "online"
     },
+    "ModifyUserProfile": {
+      "document": "此接口用于修改用户配置，如头像，昵称/用户名等。",
+      "input": "ModifyUserProfileRequest",
+      "name": "修改用户配置",
+      "output": "ModifyUserProfileResponse",
+      "status": "online"
+    },
     "RegisterUser": {
       "document": "注册用户",
       "input": "RegisterUserRequest",
@@ -110,6 +173,13 @@
       "input": "SetAppCustomContentRequest",
       "name": "设置应用自定义内容",
       "output": "SetAppCustomContentResponse",
+      "status": "online"
+    },
+    "SetWatermark": {
+      "document": "设置水印",
+      "input": "SetWatermarkRequest",
+      "name": "设置水印",
+      "output": "SetWatermarkResponse",
       "status": "online"
     },
     "UnbindDocumentFromRoom": {
@@ -187,6 +257,105 @@
         }
       ],
       "usage": "in"
+    },
+    "BackgroundPictureConfig": {
+      "document": "背景图片配置",
+      "members": [
+        {
+          "document": "背景图片的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "url",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchCreateRoomRequest": {
+      "document": "BatchCreateRoom请求参数结构体",
+      "members": [
+        {
+          "document": "低代码平台的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "创建房间ID列表",
+          "example": "无",
+          "member": "RoomInfo",
+          "name": "RoomInfos",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCreateRoomResponse": {
+      "document": "BatchCreateRoom返回参数结构体",
+      "members": [
+        {
+          "document": "创建成功课堂ID，与传入课堂信息顺序一致",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteRecordRequest": {
+      "document": "BatchDeleteRecord请求参数结构体",
+      "members": [
+        {
+          "document": "房间ID列表",
+          "example": "无",
+          "member": "int64",
+          "name": "RoomIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteRecordResponse": {
+      "document": "BatchDeleteRecord返回参数结构体",
+      "members": [
+        {
+          "document": "本次操作删除成功的房间ID列表。如果入参列表中某个房间ID的录制文件已经删除，则出参列表中无对应的房间ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RoomIds",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BatchRegisterRequest": {
       "document": "BatchRegister请求参数结构体",
@@ -588,6 +757,67 @@
       ],
       "type": "object"
     },
+    "DeleteDocumentRequest": {
+      "document": "DeleteDocument请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文档ID。",
+          "example": "xx",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDocumentResponse": {
+      "document": "DeleteDocument返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordRequest": {
+      "document": "DeleteRecord请求参数结构体",
+      "members": [
+        {
+          "document": "房间Id。",
+          "example": "无",
+          "member": "int64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "无",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordResponse": {
+      "document": "DeleteRecord返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRoomRequest": {
       "document": "DeleteRoom请求参数结构体",
       "members": [
@@ -662,6 +892,241 @@
           "member": "SceneItem",
           "name": "SceneConfig",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentRequest": {
+      "document": "DescribeDocument请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文档Id（唯一id）",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentResponse": {
+      "document": "DescribeDocument返回参数结构体",
+      "members": [
+        {
+          "document": "文档Id",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文档原址url",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文档名称",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文档所有者UserId",
+          "example": "abc",
+          "member": "string",
+          "name": "Owner",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用Id",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文档权限",
+          "example": "1",
+          "member": "uint64",
+          "name": "Permission",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "转码结果，无需转码为空，转码成功为结果url，转码失败为错误码",
+          "example": "xx",
+          "member": "string",
+          "name": "TranscodeResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "转码类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "转码进度， 0 - 100 表示（0% - 100%）",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "转码失败后的错误信息",
+          "example": "abc",
+          "member": "string",
+          "name": "TranscodeInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文档类型",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文档大小，单位：字节",
+          "example": "1",
+          "member": "uint64",
+          "name": "DocumentSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新的UNIX时间戳",
+          "example": "1",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentsByRoomRequest": {
+      "document": "DescribeDocumentsByRoom请求参数结构体",
+      "members": [
+        {
+          "document": "房间ID。",
+          "example": "312345678",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "低代码互动课堂的SdkAppId",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "分页查询当前页数，从1开始递增，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "每页数据量，最大1000，默认值为100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "课件权限。\n[0]：获取owner的私有课件；\n[1]：获取owner的公开课件;\n[0,1]：则获取owner的私有课件和公开课件；\n[2]：获取owner的私有课件和所有人(包括owner)的公开课件。\n默认值为[2]",
+          "example": "[2]",
+          "member": "uint64",
+          "name": "Permission",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "文档所有者的user_id，不填默认获取SdkAppId下所有课件",
+          "example": "abc",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentsByRoomResponse": {
+      "document": "DescribeDocumentsByRoom返回参数结构体",
+      "members": [
+        {
+          "document": "文档信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocumentInfo",
+          "name": "Documents",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "符合查询条件文档总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -884,6 +1349,64 @@
       ],
       "type": "object"
     },
+    "DescribeSdkAppIdUsersRequest": {
+      "document": "DescribeSdkAppIdUsers请求参数结构体",
+      "members": [
+        {
+          "document": "应用ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "分页，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "分页数据限制，默认值为20",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSdkAppIdUsersResponse": {
+      "document": "DescribeSdkAppIdUsers返回参数结构体",
+      "members": [
+        {
+          "document": "用户总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前获取用户信息数组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Users",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserRequest": {
       "document": "DescribeUser请求参数结构体",
       "members": [
@@ -937,6 +1460,196 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DocumentInfo": {
+      "document": "文档信息",
+      "members": [
+        {
+          "document": "文档Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文档原址url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文档所有者UserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文档权限，0：私有课件 1：公共课件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Permission",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "转码结果，无需转码为空，转码成功为结果url，转码失败为错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "TranscodeResult",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "转码类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "转码进度， 0 - 100 表示（0% - 100%）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeProgress",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TranscodeState",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "转码失败后的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "TranscodeInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文档类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "DocumentType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文档大小，单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DocumentSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "更新的UNIX时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetWatermarkRequest": {
+      "document": "GetWatermark请求参数结构体",
+      "members": [
+        {
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "无",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetWatermarkResponse": {
+      "document": "GetWatermark返回参数结构体",
+      "members": [
+        {
+          "document": "老师视频区域的水印参数配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WatermarkConfig",
+          "name": "TeacherLogo",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "白板区域的水印参数配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WatermarkConfig",
+          "name": "BoardLogo",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "背景图片配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackgroundPictureConfig",
+          "name": "BackgroundPicture",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文字水印配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextMarkConfig",
+          "name": "Text",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1326,6 +2039,48 @@
       ],
       "type": "object"
     },
+    "ModifyUserProfileRequest": {
+      "document": "ModifyUserProfile请求参数结构体",
+      "members": [
+        {
+          "document": "待修改用户ID",
+          "example": "abc",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "待修改的用户名",
+          "example": "abc",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "待修改头像url",
+          "example": "abc",
+          "member": "string",
+          "name": "Avatar",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserProfileResponse": {
+      "document": "ModifyUserProfile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RegisterUserRequest": {
       "document": "RegisterUser请求参数结构体",
       "members": [
@@ -1398,6 +2153,147 @@
       ],
       "type": "object"
     },
+    "RoomInfo": {
+      "document": "批量创建房间的房间信息",
+      "members": [
+        {
+          "document": "房间名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "房间名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "预定的房间开始时间，unix时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "预定的房间结束时间，unix时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分辨率。可以有如下取值： 1 标清 2 高清 3 全高清\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Resolution",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最大连麦人数（不包括老师）。取值范围[0, 16]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxMicNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频 coteaching 双师\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "coteaching",
+          "member": "string",
+          "name": "SubType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "老师ID。通过[注册用户]接口获取的UserId。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "进入课堂时是否自动连麦。可以有以下取值： 0 不自动连麦（需要手动申请上麦，默认值） 1 自动连麦\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoMic",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "释放音视频权限后是否自动取消连麦。可以有以下取值： 0 自动取消连麦（默认值） 1 保持连麦状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TurnOffMic",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高音质模式。可以有以下取值： 0 不开启高音质（默认值） 1 开启高音质\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioQuality",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "上课后是否禁止自动录制。可以有以下取值： 0 不禁止录制（自动开启录制，默认值） 1 禁止录制 注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisableRecord",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "助教Id列表。通过[注册用户]接口获取的UserId。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Assistants",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "rtc人数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RTCAudienceNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "观看类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudienceType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "录制布局。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordLayout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "SceneItem": {
       "document": "场景配置",
       "members": [],
@@ -1439,6 +2335,160 @@
       ],
       "type": "object"
     },
+    "SetWatermarkRequest": {
+      "document": "SetWatermark请求参数结构体",
+      "members": [
+        {
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "12333",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "老师视频区域的水印参数地址，设置为空字符串表示删除",
+          "example": "url",
+          "member": "string",
+          "name": "TeacherUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "白板视频区域的水印参数地址，设置为空字符串表示删除",
+          "example": "无",
+          "member": "string",
+          "name": "BoardUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "视频默认图片（在没有视频流的时候显示），设置为空字符串表示删除",
+          "example": "无",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "白板区域水印的宽度，取值:0-100，默认为0，表示区域X方向的百分比",
+          "example": "无",
+          "member": "float",
+          "name": "BoardW",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "白板区域水印的高度，取值:0-100，默认为0, 表示区域Y方向的百分比",
+          "example": "无",
+          "member": "float",
+          "name": "BoardH",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "白板区域水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
+          "example": "无",
+          "member": "float",
+          "name": "BoardX",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "白板区域水印Y偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
+          "example": "无",
+          "member": "float",
+          "name": "BoardY",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "老师视频区域水印的宽度，取值:0-100，默认为0，表示区域X方向的百分比",
+          "example": "无",
+          "member": "float",
+          "name": "TeacherW",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "老师视频区域水印的高度，取值:0-100，默认为0, 表示区域Y方向的百分比",
+          "example": "无",
+          "member": "float",
+          "name": "TeacherH",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "老师视频区域水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
+          "example": "无",
+          "member": "float",
+          "name": "TeacherX",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "老师视频区域水印Y偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间",
+          "example": "无",
+          "member": "float",
+          "name": "TeacherY",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "文字水印内容，设置为空字符串表示删除",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "文字水印颜色",
+          "example": "无",
+          "member": "string",
+          "name": "TextColor",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetWatermarkResponse": {
+      "document": "SetWatermark返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextMarkConfig": {
+      "document": "文字水印配置",
+      "members": [
+        {
+          "document": "文字水印内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文字水印颜色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Color",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "UnbindDocumentFromRoomRequest": {
       "document": "UnbindDocumentFromRoom请求参数结构体",
       "members": [
@@ -1474,6 +2524,99 @@
         }
       ],
       "type": "object"
+    },
+    "UserInfo": {
+      "document": "用户信息结构体",
+      "members": [
+        {
+          "document": "应用Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户昵称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户头像Url。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Avatar",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WatermarkConfig": {
+      "document": "水印配置",
+      "members": [
+        {
+          "document": "水印图片的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "url",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "水印宽。为比例值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Width",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "水印高。为比例值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Height",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "LocationX",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "水印Y偏移, 取值:0-100, 表示区域Y方向的百分比。比如50，则表示位于Y轴中间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "LocationY",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

@@ -16,6 +16,14 @@
         "title": "证书校验"
       }
     ],
+    "CreateAccelerationDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"DomainName\": \"qq.com\",\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"OriginInfo\": {\n        \"OriginType\": \"ip_domain\",\n        \"Origin\": \"qq.com\",\n        \"BackupOrigin\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
+        "title": "创建加速域名"
+      }
+    ],
     "CreateAliasDomain": [
       {
         "document": "",
@@ -160,6 +168,14 @@
         "title": "创建站点"
       }
     ],
+    "DeleteAccelerationDomains": [
+      {
+        "document": "删除指定ID加速域名。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccelerationDomains\n<公共请求参数>\n\n{\n    \"DomainNames\": [\n        \"qq.com\"\n    ],\n    \"ZoneId\": \"zone-225qgrnvbi9w\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
+        "title": "批量删除加速域名"
+      }
+    ],
     "DeleteAliasDomain": [
       {
         "document": "",
@@ -206,6 +222,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteZone\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac50bka-7dc5-4fq4-96ce-89825d53jkl1\"\n    }\n}",
         "title": "删除站点"
+      }
+    ],
+    "DescribeAccelerationDomains": [
+      {
+        "document": "查询指定domain-id的加速域名信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccelerationDomains\n<公共请求参数>\n\n{\n    \"Direction\": \"desc\",\n    \"ZoneId\": \"zone-20hyebgyfsko\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"domain-3d5dg39c\"\n            ],\n            \"Name\": \"domain-id\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Order\": \"created_on\",\n    \"Match\": \"all\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"AccelerationDomains\": [\n            {\n                \"DomainName\": \"example.qq.com\",\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"DomainStatus\": \"online\",\n                \"ZoneId\": \"zone-20hyebgyfsko\",\n                \"Cname\": \"example.qq.com.cname.com\",\n                \"OriginDetail\": {\n                    \"Origin\": \"qq.com\",\n                    \"OriginType\": \"ip_domain\",\n                    \"BackupOrigin\": \"\"\n                }\n            }\n        ]\n    }\n}",
+        "title": "acceleration_domains"
       }
     ],
     "DescribeAddableEntityList": [
@@ -688,6 +712,22 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IdentifyZone\n<公共请求参数>\n\n{\n    \"ZoneName\": \"example.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"Ascription\": {\n            \"Subdomain\": \"edgeonereclaim\",\n            \"RecordType\": \"TXT\",\n            \"RecordValue\": \"reclaim-a24aba2420cf4ce8b7bff7c8be6d337f\"\n        },\n        \"FileAscription\": {\n            \"IdentifyPath\": \"/.well-known/teo-verification/vd4ewuqa9n.txt\",\n            \"IdentifyContent\": \"88v24mnnljwbhaohrpfx80f63duhdnjx\"\n        },\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
         "title": "认证站点"
+      }
+    ],
+    "ModifyAccelerationDomain": [
+      {
+        "document": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccelerationDomains\n<公共请求参数>\n\n{\n    \"DomainName\":\"qq.com\",\n    \"ZoneId\":\"zone-225qgrnvbi9w\",\n    \"OriginInfo\":{\n        \"OriginType\":\"ip_domain\",\n        \"Origin\":\"qq.com\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccelerationDomain\n<公共请求参数>\n\n{\n    \"DomainName\": \"example.com\",\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"OriginInfo\": {\n        \"OriginType\": \"ip_domain\",\n        \"Origin\": \"qq.com\",\n        \"BackupOrigin\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
+        "title": "修改加速域名信息"
+      }
+    ],
+    "ModifyAccelerationDomainStatuses": [
+      {
+        "document": "停用指定DomainId的加速域名。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccelerationDomainStatuses\n<公共请求参数>\n\n{\n    \"DomainNames\": [\n        \"example.com\"\n    ],\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Status\": \"offline\",\n    \"Force\": \"false\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
+        "title": "批量修改加速域名状态"
       }
     ],
     "ModifyAliasDomain": [

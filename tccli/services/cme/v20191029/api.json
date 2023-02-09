@@ -7579,22 +7579,22 @@
       "document": "时间范围",
       "members": [
         {
-          "default": "",
-          "document": "开始时间，使用 ISO 日期格式。",
+          "document": "开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "结束时间，使用 ISO 日期格式。",
+          "document": "结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

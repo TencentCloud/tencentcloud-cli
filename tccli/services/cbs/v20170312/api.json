@@ -2107,7 +2107,6 @@
       "document": "描述了云硬盘的详细信息",
       "members": [
         {
-          "default": "",
           "document": "云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。<br><li>false：销毁实例时不销毁云盘。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -2117,7 +2116,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
@@ -2127,7 +2125,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_BSSD：表示通用型SSD云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
           "example": "CLOUD_SSD",
           "member": "string",
@@ -2137,7 +2134,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云盘状态。取值范围：<br><li>UNATTACHED：未挂载<br><li>ATTACHING：挂载中<br><li>ATTACHED：已挂载<br><li>DETACHING：解挂中<br><li>EXPANDING：扩容中<br><li>ROLLBACKING：回滚中<br><li>TORECYCLE：待回收<br><li>DUMPING：拷贝硬盘中。",
           "example": "UNATTACHED",
           "member": "string",
@@ -2147,7 +2143,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云盘拥有的快照总数。",
           "example": "0",
           "member": "int64",
@@ -2157,7 +2152,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置<br><li>false：云盘自动续费标识正常。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -2167,7 +2161,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态<br><li>true:表示处于快照回滚状态。",
           "example": "false",
           "member": "bool",
@@ -2177,7 +2170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对于非共享型云盘，该参数为空数组。对于共享型云盘，则表示该云盘当前被挂载到的CVM实例InstanceId",
           "example": "[]",
           "member": "string",
@@ -2187,7 +2179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。",
           "example": "false",
           "member": "bool",
@@ -2197,7 +2188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云硬盘名称。",
           "example": "unname",
           "member": "string",
@@ -2207,7 +2197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云硬盘因欠费销毁或者到期销毁时， 是否使用快照备份数据的标识。true表示销毁时创建快照进行数据备份。false表示直接销毁，不进行数据备份。",
           "example": "true",
           "member": "bool",
@@ -2217,7 +2206,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "与云盘绑定的标签，云盘未绑定标签则取值为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "Tag",
@@ -2227,7 +2215,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云硬盘挂载的云主机ID。",
           "example": "ins-xxxxxxx",
           "member": "string",
@@ -2237,7 +2224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云盘的挂载类型。取值范围：<br><li>PF: PF挂载<br><li>VF: VF挂载\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PF",
           "member": "string",
@@ -2247,7 +2233,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云盘关联的定期快照ID。只有在调用DescribeDisks接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -2257,7 +2242,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云硬盘额外性能值，单位MB/s。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -2267,7 +2251,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中<br><li>true:表示云盘已发起类型变更，正处于迁移中。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -2277,7 +2260,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云硬盘ID。",
           "example": "disk-xxxxxxxx",
           "member": "string",
@@ -2287,7 +2269,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云盘拥有的快照总容量，单位为MB。",
           "example": "0",
           "member": "uint64",
@@ -2297,7 +2278,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云硬盘所在的位置。",
           "example": "{\"Zone\":\"ap-guangzhou-2\",\"ProjectId\":0}",
           "member": "Placement",
@@ -2307,7 +2287,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还<br><li>false:不支持主动退还。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -2317,7 +2296,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云硬盘的到期时间。",
           "example": "2021-02-01 12:00:00",
           "member": "datetime",
@@ -2327,7 +2305,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载<br><li>true:表示已挂载。",
           "example": "false",
           "member": "bool",
@@ -2337,7 +2314,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云硬盘大小，单位GB。",
           "example": "50",
           "member": "uint64",
@@ -2347,7 +2323,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云盘类型变更的迁移进度，取值0到100。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -2357,7 +2332,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。",
           "example": "SYSTEM_DISK",
           "member": "string",
@@ -2367,7 +2341,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：后付费，即按量计费。",
           "example": "PREPAID",
           "member": "string",
@@ -2377,7 +2350,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为弹性云盘，false表示非弹性云盘，true表示弹性云盘。",
           "example": "true",
           "member": "bool",
@@ -2387,7 +2359,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备<br><li>true表示具备。",
           "example": "true",
           "member": "bool",
@@ -2397,7 +2368,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。<br><li>false：云盘到期时间晚于实例。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -2407,7 +2377,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云盘快照回滚的进度。",
           "example": "0",
           "member": "uint64",
@@ -2417,7 +2386,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当前时间距离盘到期的天数（仅对预付费盘有意义）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
@@ -2427,7 +2395,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还<br><li>2：云硬盘已过期<br><li>3：云盘不支持退还<br><li>8：超过可退还数量的限制。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -2437,7 +2404,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云盘是否为共享型云盘。",
           "example": "false",
           "member": "bool",
@@ -2447,7 +2413,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云硬盘的创建时间。",
           "example": "2021-01-01 12:00:00",
           "member": "datetime",
@@ -2457,7 +2422,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。",
           "example": "0",
           "member": "int64",
@@ -2467,7 +2431,15 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "document": "云硬盘备份点配额。表示最大可以保留的备份点数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DiskBackupQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "云硬盘备份点已使用的数量。",
           "example": "0",
           "member": "uint64",
@@ -2477,7 +2449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS",
           "example": "CVM",
           "member": "string",

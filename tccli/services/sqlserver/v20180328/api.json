@@ -781,7 +781,7 @@
         },
         {
           "default": "",
-          "document": "是否为管理员账户，默认为否",
+          "document": "是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3",
           "example": "false",
           "member": "bool",
           "name": "IsAdmin",
@@ -795,6 +795,16 @@
           "example": "sql",
           "member": "string",
           "name": "Authentication",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号类型，IsAdmin的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3",
+          "example": "L0",
+          "member": "string",
+          "name": "AccountType",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -914,6 +924,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号类型。L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限",
+          "example": "L0",
+          "member": "string",
+          "name": "AccountType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -946,8 +966,8 @@
       "document": "数据库账号权限信息。创建数据库时设置",
       "members": [
         {
-          "default": "",
           "document": "数据库用户名",
+          "example": "db_test",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -955,11 +975,20 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "数据库权限。ReadWrite表示可读写，ReadOnly表示只读",
+          "document": "数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者",
+          "example": "ReadOnly",
           "member": "string",
           "name": "Privilege",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限",
+          "example": "L0",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -991,12 +1020,22 @@
         },
         {
           "default": "",
-          "document": "是否为管理员账户",
+          "document": "是否为管理员账户,当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false时，表示删除管理员权限，默认false",
           "example": "true",
           "member": "bool",
           "name": "IsAdmin",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号类型，IsAdmin字段的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3",
+          "example": "L0",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3696,6 +3735,7 @@
         {
           "default": "",
           "document": "数据库名",
+          "example": "db_test",
           "member": "string",
           "name": "DBName",
           "required": true,
@@ -3704,7 +3744,8 @@
         },
         {
           "default": "",
-          "document": "数据库权限，ReadWrite表示可读写，ReadOnly表示只读",
+          "document": "数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者",
+          "example": "ReadOnly",
           "member": "string",
           "name": "Privilege",
           "required": true,
@@ -3720,6 +3761,7 @@
         {
           "default": "",
           "document": "数据库名",
+          "example": "db_test",
           "member": "string",
           "name": "DBName",
           "required": true,
@@ -3728,7 +3770,8 @@
         },
         {
           "default": "",
-          "document": "权限变更信息。ReadWrite表示可读写，ReadOnly表示只读，Delete表示删除账号对该DB的权限",
+          "document": "权限变更信息。ReadWrite表示可读写，ReadOnly表示只读，Delete表示删除账号对该DB的权限，DBOwner所有者",
+          "example": "ReadWrite",
           "member": "string",
           "name": "Privilege",
           "required": true,
@@ -3761,6 +3804,32 @@
         }
       ],
       "usage": "in"
+    },
+    "DBRenameRes": {
+      "document": "数据库重命名返回参数",
+      "members": [
+        {
+          "default": "",
+          "document": "新数据库名称",
+          "example": "new_db",
+          "member": "string",
+          "name": "NewName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "老数据库名称",
+          "example": "old_db",
+          "member": "string",
+          "name": "OldName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DatabaseTuple": {
       "document": "该数据结构表示具有发布订阅关系的两个数据库。",
@@ -3832,7 +3901,6 @@
       "document": "数据库配置信息",
       "members": [
         {
-          "default": "",
           "document": "是否已订阅 0：否 1：是",
           "example": "0",
           "member": "string",
@@ -3842,7 +3910,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据库排序规则",
           "example": "Chinese_PRC_CI_AS",
           "member": "string",
@@ -3852,7 +3919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "开启CT之后是否自动清理 0：否 1：是",
           "example": "\"\"",
           "member": "string",
@@ -3862,7 +3928,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否已启用代理  0：否 1：是",
           "example": "0",
           "member": "string",
@@ -3872,7 +3937,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否已开启/关闭CDC 0：关闭 1：开启",
           "example": "0",
           "member": "string",
@@ -3882,7 +3946,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否已启用/ 禁用CT 0：禁用 1：启用",
           "example": "0",
           "member": "string",
@@ -3892,7 +3955,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否加密 0：否 1：是",
           "example": "0",
           "member": "string",
@@ -3902,7 +3964,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否全文启用 0：否 1：是",
           "example": "0",
           "member": "string",
@@ -3912,7 +3973,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否是镜像 0：否 1：是",
           "example": "0",
           "member": "string",
@@ -3922,7 +3982,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否已发布 0：否 1：是",
           "example": "0",
           "member": "string",
@@ -3932,7 +3991,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启快照 0：否 1：是",
           "example": "0",
           "member": "string",
@@ -3942,7 +4000,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否可信任 0：否 1：是",
           "example": "0",
           "member": "string",
@@ -3952,7 +4009,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "镜像状态",
           "example": "SYNCHRONIZED",
           "member": "string",
@@ -3962,7 +4018,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据库名称",
           "example": "mirror_test37",
           "member": "string",
@@ -3972,7 +4027,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "恢复模式",
           "example": "FULL",
           "member": "string",
@@ -3982,7 +4036,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "保留天数",
           "example": "\"\"",
           "member": "string",
@@ -3992,7 +4045,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据库状态",
           "example": "ONLINE",
           "member": "string",
@@ -4002,12 +4054,20 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户类型",
           "example": "MULTI_USER",
           "member": "string",
           "name": "UserAccessDesc",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库创建时间",
+          "example": "2023-01-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5650,7 +5710,6 @@
       "document": "DescribeDBsNormal请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID，形如mssql-7vfv3rk3",
           "example": "mssql-7vfv3rk3",
           "member": "string",
@@ -5669,7 +5728,6 @@
           "example": "77",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5678,7 +5736,6 @@
           "example": "无",
           "member": "DbNormalDetail",
           "name": "DBList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7737,6 +7794,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7746,6 +7804,7 @@
         {
           "default": "",
           "document": "数据库信息列表",
+          "example": "无",
           "member": "DBDetail",
           "name": "DBDetails",
           "required": true,
@@ -8374,6 +8433,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重命名的数据库名称集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "DBRenameRes",
+          "name": "DBRename",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8621,6 +8690,15 @@
           "example": "[\"db1.bak\\n\"]",
           "member": "string",
           "name": "BackupFiles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要重命名的数据库名称集合",
+          "example": "[{\"OldName\":\"test1\",\"NewName\":\"test2\"}]",
+          "member": "RenameRestoreDatabase",
+          "name": "DBRename",
           "required": false,
           "type": "list"
         }
@@ -10674,7 +10752,7 @@
       "type": "object"
     },
     "RenameRestoreDatabase": {
-      "document": "用于RestoreInstance，RollbackInstance，CreateMigration、CloneDB 等接口；对恢复的库进行重命名，且支持选择要恢复的库。",
+      "document": "用于RestoreInstance，RollbackInstance，CreateMigration、CloneDB、ModifyBackupMigration 等接口；对恢复的库进行重命名，且支持选择要恢复的库。",
       "members": [
         {
           "default": "",
