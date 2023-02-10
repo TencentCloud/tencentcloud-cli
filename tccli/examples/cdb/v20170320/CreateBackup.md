@@ -7,9 +7,9 @@ Input:
 ```
 tccli cdb CreateBackup --cli-unfold-argument  \
     --InstanceId cdb-c1nl9rpv \
-    --BackupMethod logical \
+    --BackupDBTableList.0.Table tb1 \
     --BackupDBTableList.0.Db db1 \
-    --BackupDBTableList.0.Table tb1
+    --BackupMethod logical
 ```
 
 Output: 

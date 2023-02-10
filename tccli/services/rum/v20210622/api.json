@@ -315,6 +315,20 @@
       "output": "DescribeRumGroupLogResponse",
       "status": "online"
     },
+    "DescribeRumLogExport": {
+      "document": "获取项目下的日志列表（实例创建的项目下的日志列表）",
+      "input": "DescribeRumLogExportRequest",
+      "name": "导出Rum日志列表",
+      "output": "DescribeRumLogExportResponse",
+      "status": "online"
+    },
+    "DescribeRumLogExports": {
+      "document": "获取项目下的日志导出列表",
+      "input": "DescribeRumLogExportsRequest",
+      "name": "获取Rum日志导出列表",
+      "output": "DescribeRumLogExportsResponse",
+      "status": "online"
+    },
     "DescribeRumLogList": {
       "document": "获取项目下的日志列表（实例创建的项目下的日志列表）",
       "input": "DescribeRumLogListRequest",
@@ -390,6 +404,13 @@
       "input": "ResumeInstanceRequest",
       "name": "恢复 RUM 业务系统",
       "output": "ResumeInstanceResponse",
+      "status": "online"
+    },
+    "ResumeProject": {
+      "document": "恢复应用使用与上报数据",
+      "input": "ResumeProjectRequest",
+      "name": "恢复 RUM 应用",
+      "output": "ResumeProjectResponse",
       "status": "online"
     },
     "StopInstance": {
@@ -5622,6 +5643,141 @@
       ],
       "type": "object"
     },
+    "DescribeRumLogExportRequest": {
+      "document": "DescribeRumLogExport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导出标识name",
+          "example": "标识",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间（必填）",
+          "example": "1665993060000",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询语句，参考控制台请求参数，语句长度最大为4096（必填）",
+          "example": "id:100",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间（必填）",
+          "example": "1665996660000",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID（必填）",
+          "example": "100",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "field条件",
+          "example": "无",
+          "member": "string",
+          "name": "Fields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRumLogExportResponse": {
+      "document": "DescribeRumLogExport返回参数结构体",
+      "members": [
+        {
+          "document": "返回字符串",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRumLogExportsRequest": {
+      "document": "DescribeRumLogExports请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页面大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页数，第几页",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID（必填）",
+          "example": "100",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRumLogExportsResponse": {
+      "document": "DescribeRumLogExports返回参数结构体",
+      "members": [
+        {
+          "document": "返回字符串",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRumLogListRequest": {
       "document": "DescribeRumLogList请求参数结构体",
       "members": [
@@ -6637,6 +6793,32 @@
     },
     "ResumeInstanceResponse": {
       "document": "ResumeInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeProjectRequest": {
+      "document": "ResumeProject请求参数结构体",
+      "members": [
+        {
+          "document": "项目 id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeProjectResponse": {
+      "document": "ResumeProject返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

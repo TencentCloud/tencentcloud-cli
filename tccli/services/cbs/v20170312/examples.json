@@ -10,7 +10,7 @@
     ],
     "ApplySnapshot": [
       {
-        "document": "",
+        "document": "回滚云盘某个快照节点",
         "input": "https://cbs.tencentcloudapi.com/?Action=ApplySnapshot\n&DiskId=disk-lzrg2pwi\n&SnapshotId=snap-gybrif0z\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cc96242e-566c-ae6a-b74a-5a1f823683b2\"\n    }\n}",
         "title": "回滚快照"
@@ -326,15 +326,15 @@
     ],
     "ModifyDisksRenewFlag": [
       {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDisksRenewFlag\r\n&DiskIds.0=disk-5w50lrms\r\n&RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&<公共请求参数>",
+        "document": "将云盘disk-5w50lrms设置为自动续费",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyDisksRenewFlag\r\n&DiskIds.0=disk-5w50lrms\r\n&RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f01171e-6a0f-4208-bb04-d342d97d42c8\"\n    }\n}",
-        "title": "将云盘设置为自动续费"
+        "title": "修改云盘自动续费属性"
       }
     ],
     "ModifySnapshotAttribute": [
       {
-        "document": "",
+        "document": "修改某个快照的名称",
         "input": "https://cbs.tencentcloudapi.com/?Action=ModifySnapshotAttribute\n&SnapshotId=snap-gybrif0z\n&SnapshotName=snap_201711301143\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\"\n    }\n}",
         "title": "修改快照的名称"
@@ -372,7 +372,7 @@
     ],
     "TerminateDisks": [
       {
-        "document": "",
+        "document": "销毁两块云硬盘",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"disk-g27hqeo2\",\n        \"disk-lzrg2pwi\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"52c965d2-5deb-459a-8b5a-b3b9a1376544\"\n    }\n}",
         "title": "批量退还云硬盘"

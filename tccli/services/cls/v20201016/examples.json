@@ -98,7 +98,7 @@
     ],
     "CreateShipper": [
       {
-        "document": "",
+        "document": "用于创建cos投递任务规则",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateShipper\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n    \"Bucket\": \"test-1250000001\",\n    \"Prefix\": \"test\",\n    \"ShipperName\": \"myname\",\n    \"Interval\": 300,\n    \"MaxSize\": 256,\n    \"Partition\": \"%Y%m%d\",\n    \"Compress\": {\n        \"Format\": \"none\"\n    },\n    \"FilterRules\": [\n        {\n            \"Key\": \"\",\n            \"Regex\": \"\",\n            \"Value\": \"\"\n        }\n    ],\n    \"FilenameMode\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"ShipperId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建投递规则"
@@ -442,7 +442,7 @@
     ],
     "ModifyShipper": [
       {
-        "document": "",
+        "document": "修改cos投递规则",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyShipper\n<公共请求参数>\n\n{\n    \"ShipperId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n    \"Bucket\": \"test-1250000001\",\n    \"Prefix\": \"test\",\n    \"ShipperName\": \"myname\",\n    \"Interval\": 300,\n    \"MaxSize\": 256,\n    \"Partition\": \"%Y%m%d\",\n    \"Compress\": {\n        \"Format\": \"none\"\n    },\n    \"FilterRules\": [\n        {\n            \"Key\": \"\",\n            \"Regex\": \"\",\n            \"Value\": \"\"\n        }\n    ],\n    \"FilenameMode\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改投递规则"

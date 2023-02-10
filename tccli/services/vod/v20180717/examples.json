@@ -612,10 +612,10 @@
     ],
     "DescribeDailyMostPlayedStat": [
       {
-        "document": "",
+        "document": "查询2021-01-01 播放次数 Top100 的播放统计数据",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeDailyMostPlayedStat\n&Date=2021-01-01T00:00:00+08:00\n&Metric=PlayTimes\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DailyPlayStatInfoSet\": [\n            {\n                \"Date\": \"2021-01-01T00:00:00+08:00\",\n                \"PlayTimes\": 1,\n                \"Traffic\": 1234,\n                \"FileId\": \"5285485487985271487\"\n            }\n        ],\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
-        "title": "查询20201-01-01 播放次数 Top100 的播放统计数据"
+        "title": "查询2021-01-01 播放次数 Top100 的播放统计数据"
       }
     ],
     "DescribeDailyPlayStatFileList": [

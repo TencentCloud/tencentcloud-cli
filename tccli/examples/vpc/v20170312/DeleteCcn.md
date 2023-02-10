@@ -1,6 +1,6 @@
 **Example 1: 删除一个CCN实例**
 
-
+删除一个云联网CCN实例
 
 Input: 
 

@@ -57,9 +57,9 @@
       "status": "online"
     },
     "ChannelCreateFlowReminds": {
-      "document": "指定需要批量催办的签署流程Id，批量催办合同，最多100个；接口失败后返回错误信息\n注意:\n该接口需要开白后使用",
+      "document": "指定需要批量催办的签署流程Id，批量催办合同，最多100个；接口失败后返回错误信息\n注意:\n该接口不可直接调用，请联系电子签运营开通后方可调用。",
       "input": "ChannelCreateFlowRemindsRequest",
-      "name": "电子签渠道版-合同催办接口",
+      "name": "合同催办",
       "output": "ChannelCreateFlowRemindsResponse",
       "status": "online"
     },
@@ -1077,7 +1077,6 @@
       "document": "ChannelCreateFlowReminds请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
@@ -1086,7 +1085,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "签署流程Id数组，最多100个，超过100不处理",
           "example": "无",
           "member": "string",
@@ -1105,7 +1103,6 @@
           "example": "无",
           "member": "RemindFlowRecords",
           "name": "RemindFlowRecords",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

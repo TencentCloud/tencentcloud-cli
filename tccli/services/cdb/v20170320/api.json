@@ -3359,7 +3359,7 @@
         },
         {
           "default": "",
-          "document": "目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备。",
+          "document": "目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备，snapshot - 快照备份。基础版实例仅支持快照备份。",
           "example": "\"\"",
           "member": "string",
           "name": "BackupMethod",

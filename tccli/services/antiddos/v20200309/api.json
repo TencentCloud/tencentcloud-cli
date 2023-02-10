@@ -8830,7 +8830,6 @@
       "document": "7层转发规则",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "www.baidu.com",
           "member": "string",
@@ -8840,7 +8839,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发类型列表",
           "example": "1",
           "member": "ProxyTypeInfo",
@@ -8850,7 +8848,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源站列表",
           "example": "1.1.1.1",
           "member": "SourceServer",
@@ -8860,7 +8857,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源实例",
           "example": "xxx",
           "member": "InstanceRelation",
@@ -8870,13 +8866,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则所属的资源实例",
           "example": "xxx",
           "member": "RuleInstanceRelation",
           "name": "InstanceDetailRule",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "协议",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "端口号",
+          "example": "无",
+          "member": "int64",
+          "name": "Vport",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -10882,8 +10895,8 @@
       "document": "源站信息",
       "members": [
         {
-          "default": "",
           "document": "源站的地址（IP或者域名）",
+          "example": "无",
           "member": "string",
           "name": "RealServer",
           "required": true,
@@ -10891,8 +10904,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源站的地址类型，取值[\n1(域名地址)\n2(IP地址)\n]",
+          "example": "无",
           "member": "int64",
           "name": "RsType",
           "required": true,
@@ -10900,11 +10913,20 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源站的回源权重，取值1~100",
+          "example": "无",
           "member": "int64",
           "name": "Weight",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "端口号：0~65535",
+          "example": "无",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }

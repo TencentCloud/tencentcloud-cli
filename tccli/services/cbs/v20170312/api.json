@@ -349,7 +349,6 @@
       "document": "ApplySnapshot请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。",
           "example": "snap-3xvkxxmp",
           "member": "string",
@@ -358,7 +357,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "快照原云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。",
           "example": "disk-ouxaxxt2",
           "member": "string",
@@ -367,7 +365,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "回滚前是否执行自动关机",
           "example": "False",
           "member": "bool",
@@ -376,7 +373,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "回滚完成后是否自动开机",
           "example": "False",
           "member": "bool",
@@ -3458,16 +3454,16 @@
       "document": "ModifyDisksRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "一个或多个待操作的云硬盘ID。",
+          "example": "[\"disk-1esd341d\"]",
           "member": "string",
           "name": "DiskIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "document": "云盘的续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": true,
@@ -3492,32 +3488,32 @@
       "document": "ModifySnapshotAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。",
+          "example": "snap-gybrif0z",
           "member": "string",
           "name": "SnapshotId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "新的快照名称。最长为60个字符。",
-          "member": "string",
-          "name": "SnapshotName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。",
+          "example": "true",
           "member": "bool",
           "name": "IsPermanent",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "",
+          "document": "新的快照名称。最长为60个字符。",
+          "example": "snap_201711301143",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        },
+        {
           "document": "快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。",
+          "example": "2021-06-28 00:00:00",
           "member": "datetime_iso",
           "name": "Deadline",
           "required": false,
@@ -4308,7 +4304,6 @@
       "document": "TerminateDisks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需退还的云盘ID列表。",
           "example": "[\"disk-l7mxexxc\"]",
           "member": "string",
@@ -4317,7 +4312,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。",
           "example": "0",
           "member": "int64",

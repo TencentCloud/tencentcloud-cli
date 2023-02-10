@@ -93,8 +93,8 @@
         },
         {
           "default": "",
-          "document": "环境内引擎的节点规格 ID",
-          "example": "spec-xxxxxx",
+          "document": "环境内引擎的节点规格 ID\n-1C2G\n-2C4G\n兼容原spec-xxxxxx形式的规格ID",
+          "example": "1C2G",
           "member": "string",
           "name": "EngineResourceSpec",
           "required": true,
@@ -138,6 +138,16 @@
           "member": "string",
           "name": "SubnetId",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境描述",
+          "example": "test",
+          "member": "string",
+          "name": "EnvDesc",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -210,7 +220,6 @@
       "document": "CreateEngine请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "引擎类型。参考值：\n- zookeeper\n- nacos\n- consul\n- apollo\n- eureka\n- polaris",
           "example": "zookeeper",
           "member": "string",
@@ -219,7 +228,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "引擎的开源版本。每种引擎支持的开源版本不同，请参考产品文档或者控制台购买页",
           "example": "3.4.14",
           "member": "string",
@@ -228,8 +236,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "引擎的产品版本。参考值：\n- STANDARD： 标准版\n\n引擎各版本及可选择的规格、节点数说明：\napollo - STANDARD版本\n规格列表：spec-qcr53kf1t（1C2G）,spec-qdr53kf2w（2C4G）\n节点数：1，2，3，4，5\n\neureka - STANDARD版本\n规格列表：spec-qvj6k7t4q（1C2G）,spec-qcr53kfjt（2C4G）,spec-qvj6k7t4m（4G8G）,spec-qcr54kfjt（8C16G）,spec-qcr55kfjt（16C32G）\n节点数：3，4，5",
+          "document": "引擎的产品版本。参考值：\n- STANDARD： 标准版\n\n引擎各版本及可选择的规格、节点数说明：\napollo - STANDARD版本\n规格列表：1C2G、2C4G、4C8G、8C16G、16C32G\n节点数：1，2，3，4，5\n\neureka - STANDARD版本\n规格列表：1C2G、2C4G、4C8G、8C16G、16C32G\n节点数：3，4，5\n\npolarismesh - STANDARD版本\n规格列表：NUM50、NUM100、NUM200、NUM500、NUM1000、NUM5000、NUM10000、NUM50000\n\n兼容原spec-xxxxxx形式的规格ID",
           "example": "STANDARD",
           "member": "string",
           "name": "EngineProductVersion",
@@ -237,7 +244,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "引擎所在地域。参考值说明：\n中国区 参考值：\n- ap-guangzhou：广州\n- ap-beijing：北京\n- ap-chengdu：成都\n- ap-chongqing：重庆\n- ap-nanjing：南京\n- ap-shanghai：上海\n- ap-hongkong：香港\n- ap-taipei：台北\n亚太区 参考值：\n- ap-jakarta：雅加达\n- ap-singapore：新加坡\n北美区 参考值\n- na-toronto：多伦多\n金融专区 参考值\n- ap-beijing-fsi：北京金融\n- ap-shanghai-fsi：上海金融\n- ap-shenzhen-fsi：深圳金融",
           "example": "ap-beijing",
           "member": "string",
@@ -246,7 +252,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "引擎名称。参考值：\n- eurek-test",
           "example": "qzone-photo-prod",
           "member": "string",
@@ -255,8 +260,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "付费类型。参考值：\n- 0：后付费\n- 1：预付费",
+          "document": "付费类型。参考值：\n- 0：后付费\n- 1：预付费（接口暂不支持创建预付费实例）",
           "example": "0",
           "member": "int64",
           "name": "TradeType",
@@ -264,16 +268,14 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "引擎的节点规格 ID。参见EngineProductVersion字段说明",
-          "example": "spec-xxxxxx",
+          "example": "1C2G",
           "member": "string",
           "name": "EngineResourceSpec",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "引擎的节点数量。参见EngineProductVersion字段说明",
           "example": "3",
           "member": "int64",
@@ -282,7 +284,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "VPC ID。在 VPC 的子网内分配一个 IP 作为引擎的访问地址。参考值：\n- vpc-conz6aix",
           "example": "vpc-xxxxxx",
           "member": "string",
@@ -291,7 +292,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "子网 ID。在 VPC 的子网内分配一个 IP 作为引擎的访问地址。参考值：\n- subnet-ahde9me9",
           "example": "subnet-xxxxxx",
           "member": "string",
@@ -300,7 +300,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Apollo 环境配置参数列表。参数说明：\n如果创建Apollo类型，此参数为必填的环境信息列表，最多可选4个环境。环境信息参数说明：\n- Name：环境名。参考值：prod, dev, fat, uat\n- EngineResourceSpec：环境内引擎的节点规格ID。参见EngineProductVersion参数说明\n- EngineNodeNum：环境内引擎的节点数量。参见EngineProductVersion参数说明，其中prod环境支持的节点数为2，3，4，5\n- StorageCapacity：配置存储空间大小，以GB为单位，步长为5.参考值：35\n- VpcId：VPC ID。参考值：vpc-conz6aix\n- SubnetId：子网 ID。参考值：subnet-ahde9me9",
           "example": "[{\"EnvName\":\"pro\",\"StorageCapacity\":50,\"Status\":\"running\",\"Admin",
           "member": "ApolloEnvParam",
@@ -309,7 +308,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "引擎的标签列表。用户自定义的key/value形式，无参考值",
           "example": "[{\"key\":\"value\"}]",
           "member": "InstanceTagInfo",
@@ -318,7 +316,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "引擎的初始帐号信息。可设置参数：\n- Name：控制台初始用户名\n- Password：控制台初始密码\n- Token：引擎接口的管理员 Token",
           "example": "{\"Name\":\"nacos\",\"Password\":\"xxxxxx\",\"Token\":\"xxxxxx\"}",
           "member": "EngineAdmin",
@@ -327,7 +324,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "预付费时长，以月为单位",
           "example": "1",
           "member": "int64",
@@ -336,7 +332,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "自动续费标记，仅预付费使用。参考值：\n- 0：不自动续费\n- 1：自动续费",
           "example": "0",
           "member": "int64",
@@ -355,7 +350,6 @@
           "example": "ins-12345678",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1048,7 +1042,6 @@
       "document": "多环境网络信息",
       "members": [
         {
-          "default": "",
           "document": "环境名",
           "example": "dev",
           "member": "string",
@@ -1058,7 +1051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启config公网",
           "example": "true",
           "member": "bool",
@@ -1068,7 +1060,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "config公网ip",
           "example": "10.0.0.1",
           "member": "string",
@@ -1078,13 +1069,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "config内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.1:8080",
           "member": "string",
           "name": "ConfigIntranetAddress",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否开启config内网clb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableConfigIntranet",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

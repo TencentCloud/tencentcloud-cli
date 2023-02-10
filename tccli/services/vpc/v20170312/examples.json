@@ -310,9 +310,9 @@
     ],
     "CreateCcn": [
       {
-        "document": "",
+        "document": "创建一个云联网CCN实例",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCcn\n<公共请求参数>\n\n{\n    \"CcnDescription\": \"test+description\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"CcnName\": \"test+name\",\n    \"QosLevel\": \"PT\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Ccn\": {\n            \"CcnId\": \"ccn-gjug0kul\",\n            \"CcnName\": \"test name\",\n            \"RoutePriorityFlag\": false,\n            \"CcnDescription\": \"test description\",\n            \"InstanceCount\": 0,\n            \"QosLevel\": \"PT\",\n            \"State\": 1,\n            \"InstanceChargeType\": \"POSTPAID\",\n            \"BandwidthLimitType\": \"OUTER_REGION_LIMIT\",\n            \"CreateTime\": \"2020-09-22 00:00:00\",\n            \"RouteTableFlag\": null,\n            \"RouteTableCount\": null,\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Ccn\": {\n            \"CcnId\": \"ccn-gjug0kul\",\n            \"CcnName\": \"test name\",\n            \"RoutePriorityFlag\": false,\n            \"CcnDescription\": \"test description\",\n            \"InstanceCount\": 0,\n            \"QosLevel\": \"PT\",\n            \"State\": \"AVAILABLE\",\n            \"InstanceChargeType\": \"POSTPAID\",\n            \"BandwidthLimitType\": \"OUTER_REGION_LIMIT\",\n            \"CreateTime\": \"2020-09-22 00:00:00\",\n            \"RouteTableFlag\": null,\n            \"RouteTableCount\": null,\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
         "title": "创建一个CCN"
       }
     ],
@@ -676,8 +676,8 @@
     ],
     "DeleteCcn": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteCcn\n&CcnId=ccn-8j0phqix\n&<公共请求参数>",
+        "document": "删除一个云联网CCN实例",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCcn\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-8j0phqix\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "删除一个CCN实例"
       }
@@ -1092,7 +1092,7 @@
     ],
     "DescribeCcnRoutes": [
       {
-        "document": "",
+        "document": "查询云联网路由列表",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeCcnRoutes\n&CcnId=ccn-gree226l\n&Filters.0.Name=route-id\n&Filters.0.Values.0=ccnr-bvipc87w\n&Filters.0.Values.1=ccnr-oc61so0o\n&Filters.1.Name=instance-type\n&Filters.1.Values.0=VPC\n&Filters.1.Values.1=DIRECTCONNECT\n&Filters.2.Name=instance-region\n&Filters.2.Values.0=ap-guangzhou\n&Filters.2.Values.1=ap-beijing\n&Filters.2.Values.2=ap-shanghai\n&Filters.2.Values.3=eu-frankfurt\n&Filters.3.Name=instance-id\n&Filters.3.Values.0=vpc-r1ckkpid\n&Filters.3.Values.1=dcg-98qosdc3\n&Filters.4.Name=cidr-block\n&Filters.4.Values.0=10.33.0.0/16\n&Filters.4.Values.1=192.168.0.0/24\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"RouteSet\": [\n            {\n                \"DestinationCidrBlock\": \"10.33.0.0/16\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"RoutePriority\": 1,\n                \"InstanceId\": \"vpc-r1ckkpid\",\n                \"InstanceUin\": \"234532345\",\n                \"Enabled\": true,\n                \"InstanceExtraName\": \"test\",\n                \"IsBgp\": true,\n                \"InstanceRegion\": \"ap-guangzhou\",\n                \"ExtraState\": \"Running\",\n                \"RouteId\": \"ccnr-bvipc87w\",\n                \"InstanceName\": \"test\",\n                \"InstanceType\": \"VPC\"\n            },\n            {\n                \"DestinationCidrBlock\": \"192.168.0.0/24\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"RoutePriority\": 1,\n                \"InstanceId\": \"vpc-r1ckkpid\",\n                \"InstanceName\": \"test\",\n                \"Enabled\": true,\n                \"InstanceExtraName\": \"test\",\n                \"IsBgp\": true,\n                \"InstanceRegion\": \"ap-guangzhou\",\n                \"ExtraState\": \"Running\",\n                \"RouteId\": \"ccnr-oc61so0o\",\n                \"InstanceUin\": \"234532345\",\n                \"InstanceType\": \"VPC\"\n            }\n        ]\n    }\n}",
         "title": "查询云联网路由列表"
@@ -1100,13 +1100,13 @@
     ],
     "DescribeCcns": [
       {
-        "document": "",
+        "document": "按ID过滤查询CCN列表",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcns\n<公共请求参数>\n\n{\n    \"CcnIds\": [\n        \"ccn-8j0phqix\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"73159790-39b3-48e8-9d61-29e11eed1acd\",\n        \"CcnSet\": [\n            {\n                \"InstanceCount\": 1,\n                \"TagSet\": [\n                    {\n                        \"Value\": \"env\",\n                        \"Key\": \"test\"\n                    }\n                ],\n                \"RoutePriorityFlag\": true,\n                \"CcnId\": \"ccn-8j0phqix\",\n                \"CcnDescription\": \"test\",\n                \"State\": \"AVAILABLE\",\n                \"InstanceChargeType\": \"POSTPAID\",\n                \"CcnName\": \"test\",\n                \"QosLevel\": \"AU\",\n                \"BandwidthLimitType\": \"INTER_REGION_LIMIT\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"RouteTableFlag\": null,\n                \"RouteTableCount\": null\n            }\n        ]\n    }\n}",
         "title": "按ID过滤查询CCN列表"
       },
       {
-        "document": "",
+        "document": "按名称过滤查询CCN列表",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcns\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"test\"\n            ],\n            \"Name\": \"ccn-name\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"73159790-39b3-48e8-9d61-29e11eed1acd\",\n        \"CcnSet\": [\n            {\n                \"InstanceCount\": 1,\n                \"TagSet\": [\n                    {\n                        \"Value\": \"env\",\n                        \"Key\": \"test\"\n                    }\n                ],\n                \"RoutePriorityFlag\": true,\n                \"CcnId\": \"ccn-8j0phqix\",\n                \"CcnDescription\": \"test\",\n                \"State\": \"AVAILABLE\",\n                \"InstanceChargeType\": \"POSTPAID\",\n                \"CcnName\": \"test\",\n                \"QosLevel\": \"AU\",\n                \"BandwidthLimitType\": \"INTER_REGION_LIMIT\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"RouteTableFlag\": null,\n                \"RouteTableCount\": null\n            }\n        ]\n    }\n}",
         "title": "按名称过滤查询CCN列表"
@@ -1810,7 +1810,7 @@
     ],
     "DisableCcnRoutes": [
       {
-        "document": "",
+        "document": "禁用多条路由策略",
         "input": "https://vpc.tencentcloudapi.com/?Action=DisableCcnRoutes\n&CcnId=ccn-gree226l\n&RouteIds.0=ccnr-bvipc87w\n&RouteIds.1=ccnr-oc61so0o\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "禁用多条路由策略"

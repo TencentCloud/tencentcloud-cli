@@ -512,7 +512,7 @@
       "status": "online"
     },
     "DeleteCcn": {
-      "document": "本接口（DeleteCcn）用于删除云联网。\n* 删除后，云联网关联的所有实例间路由将被删除，网络将会中断，请务必确认\n* 删除云联网是不可逆的操作，请谨慎处理。\n",
+      "document": "本接口（DeleteCcn）用于删除云联网。\n* 删除后，云联网关联的所有实例间路由将被删除，网络将会中断，请务必确认\n* 删除云联网是不可逆的操作，请谨慎处理。",
       "input": "DeleteCcnRequest",
       "name": "删除CCN",
       "output": "DeleteCcnResponse",
@@ -834,7 +834,7 @@
       "status": "online"
     },
     "DescribeCcnRoutes": {
-      "document": "本接口（DescribeCcnRoutes）用于查询已加入云联网（CCN）的路由",
+      "document": "本接口（DescribeCcnRoutes）用于查询已加入云联网（CCN）的路由。",
       "input": "DescribeCcnRoutesRequest",
       "name": "查询云联网路由策略",
       "output": "DescribeCcnRoutesResponse",
@@ -1331,7 +1331,7 @@
       "status": "online"
     },
     "DisableCcnRoutes": {
-      "document": "本接口（DisableCcnRoutes）用于禁用已经启用的云联网（CCN）路由",
+      "document": "本接口（DisableCcnRoutes）用于禁用已经启用的云联网（CCN）路由。",
       "input": "DisableCcnRoutesRequest",
       "name": "禁用云联网路由",
       "output": "DisableCcnRoutesResponse",
@@ -4032,7 +4032,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "限速类型，INTER_REGION_LIMIT为地域间限速；OUTER_REGION_LIMIT为地域出口限速。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "INTER_REGION_LIMIT",
           "member": "string",
           "name": "BandwidthLimitType",
@@ -4050,7 +4050,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "是否支持云联网路由优先级的功能。False：不支持，True：支持。",
+          "document": "是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。",
           "example": "True",
           "member": "bool",
           "name": "RoutePriorityFlag",
@@ -4068,10 +4068,19 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否开启云联网多路由表特性。False：未开启，True：开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启云联网多路由表特性。`False`：未开启，`True`：开启。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "True",
           "member": "bool",
           "name": "RouteTableFlag",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "`true`：实例已被封禁，流量不通，`false`:解封禁。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsSecurityLock",
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -5289,7 +5298,6 @@
       "document": "CreateCcn请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "CCN名称，最大长度不能超过60个字节。",
           "example": "test+name",
           "member": "string",
@@ -5298,7 +5306,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CCN描述信息，最大长度不能超过100个字节。",
           "example": "test+description",
           "member": "string",
@@ -5307,8 +5314,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "CCN服务质量，'PT'：白金，'AU'：金，'AG'：银，默认为‘AU’。",
+          "document": "CCN服务质量，`PT`：白金，`AU`：金，`AG`：银，默认为`AU`。",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -5316,8 +5322,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "计费模式，PREPAID：表示预付费，即包年包月，POSTPAID：表示后付费，即按量计费。默认：POSTPAID。",
+          "document": "计费模式，`PREPAID`：表示预付费，即包年包月，`POSTPAID`：表示后付费，即按量计费。默认：`POSTPAID`。",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -5325,8 +5330,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "限速类型，OUTER_REGION_LIMIT表示地域出口限速，INTER_REGION_LIMIT为地域间限速，默认为OUTER_REGION_LIMIT。预付费模式仅支持地域间限速，后付费模式支持地域间限速和地域出口限速。",
+          "document": "限速类型，`OUTER_REGION_LIMIT`表示地域出口限速，`INTER_REGION_LIMIT`为地域间限速，默认为`OUTER_REGION_LIMIT`。预付费模式仅支持地域间限速，后付费模式支持地域间限速和地域出口限速。",
           "example": "OUTER_REGION_LIMIT",
           "member": "string",
           "name": "BandwidthLimitType",
@@ -5334,7 +5338,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
           "example": "无",
           "member": "Tag",
@@ -5353,7 +5356,6 @@
           "example": "无",
           "member": "CCN",
           "name": "Ccn",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8128,8 +8130,7 @@
       "document": "跨境带宽监控数据",
       "members": [
         {
-          "default": "",
-          "document": "入带宽",
+          "document": "入带宽，单位：`bps`。",
           "example": "无",
           "member": "int64",
           "name": "InBandwidth",
@@ -8138,8 +8139,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "出带宽",
+          "document": "出带宽，单位：`bps`。",
           "example": "无",
           "member": "int64",
           "name": "OutBandwidth",
@@ -8148,8 +8148,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "入包",
+          "document": "入包，单位：`pps`。",
           "example": "无",
           "member": "int64",
           "name": "InPkg",
@@ -8158,8 +8157,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "出包",
+          "document": "出包，单位：`pps`。",
           "example": "无",
           "member": "int64",
           "name": "OutPkg",
@@ -8495,7 +8493,6 @@
       "document": "DeleteCcn请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
           "example": "ccn-8j0phqix",
           "member": "string",
@@ -10185,8 +10182,7 @@
       "document": "DescribeCcnRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "CCN实例ID，形如：ccn-gree226l。",
+          "document": "CCN实例ID，形如：`ccn-gree226l`。",
           "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
@@ -10194,8 +10190,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。",
+          "document": "CCN路由策略唯一ID，形如：`ccnr-f49l6u0z`。",
           "example": "-",
           "member": "string",
           "name": "RouteIds",
@@ -10203,7 +10198,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "过滤条件，参数不支持同时指定RouteIds和Filters。\n<li>route-id - String -（过滤条件）路由策略ID。</li>\n<li>cidr-block - String -（过滤条件）目的端。</li>\n<li>instance-type - String -（过滤条件）下一跳类型。</li>\n<li>instance-region - String -（过滤条件）下一跳所属地域。</li>\n<li>instance-id - String -（过滤条件）下一跳实例ID。</li>\n<li>route-table-id - String -（过滤条件）路由表ID列表，形如ccntr-1234edfr，可以根据路由表ID 过滤。</li>",
           "example": "无",
           "member": "Filter",
@@ -10212,7 +10206,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "-",
           "member": "uint64",
@@ -10221,7 +10214,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量",
           "example": "-",
           "member": "uint64",
@@ -10240,7 +10232,6 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10249,7 +10240,6 @@
           "example": "无",
           "member": "CcnRoute",
           "name": "RouteSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10266,7 +10256,6 @@
       "document": "DescribeCcns请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定CcnIds和Filters。",
           "example": "ccn-f49l6u0z",
           "member": "string",
@@ -10275,8 +10264,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "过滤条件，参数不支持同时指定CcnIds和Filters。\n<li>ccn-id - String - （过滤条件）CCN唯一ID，形如：vpc-f49l6u0z。</li>\n<li>ccn-name - String - （过滤条件）CCN名称。</li>\n<li>ccn-description - String - （过滤条件）CCN描述。</li>\n<li>state - String - （过滤条件）实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例：查询绑定了标签的CCN列表。</li>",
+          "document": "过滤条件，参数不支持同时指定CcnIds和Filters。\n<li>ccn-id - String - （过滤条件）CCN唯一ID，形如：`ccn-f49l6u0z`。</li>\n<li>ccn-name - String - （过滤条件）CCN名称。</li>\n<li>ccn-description - String - （过滤条件）CCN描述。</li>\n<li>state - String - （过滤条件）实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例：查询绑定了标签的CCN列表。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -10284,7 +10272,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -10293,7 +10280,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量",
           "example": "20",
           "member": "uint64",
@@ -10302,7 +10288,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "排序字段。支持：`CcnId` `CcnName` `CreateTime` `State` `QosLevel`",
           "example": "CcnName",
           "member": "string",
@@ -10311,7 +10296,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序方法。升序：`ASC`，倒序：`DESC`。",
           "example": "ASC",
           "member": "string",
@@ -10330,7 +10314,6 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10339,7 +10322,6 @@
           "example": "无",
           "member": "CCN",
           "name": "CcnSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15153,7 +15135,6 @@
       "document": "DisableCcnRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
           "example": "ccn-gree226l",
           "member": "string",
@@ -15162,7 +15143,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。",
           "example": "[\"ccnr-bvipc87w\\r\\n\"]",
           "member": "string",

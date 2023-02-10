@@ -1,6 +1,6 @@
-**Example 1: 将云盘设置为自动续费**
+**Example 1: 修改云盘自动续费属性**
 
-
+将云盘disk-5w50lrms设置为自动续费
 
 Input: 
 

@@ -6993,12 +6993,58 @@
     },
     "GenerateCreateMangedTableSqlRequest": {
       "document": "GenerateCreateMangedTableSql请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "表基本信息",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "表字段信息",
+          "example": "无",
+          "member": "TColumn",
+          "name": "Columns",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "表分区信息",
+          "example": "无",
+          "member": "TPartition",
+          "name": "Partitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "表属性信息",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "GenerateCreateMangedTableSqlResponse": {
       "document": "GenerateCreateMangedTableSql返回参数结构体",
       "members": [
+        {
+          "document": "创建托管存储内表sql语句描述",
+          "example": "无",
+          "member": "Execution",
+          "name": "Execution",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

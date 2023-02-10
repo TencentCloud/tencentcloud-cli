@@ -6998,8 +6998,8 @@
       "document": "DescribePostpayFreeQuotas请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
+          "example": "无",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -7013,6 +7013,7 @@
       "members": [
         {
           "document": "免费量资源信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FreequotaInfo",
           "name": "FreequotaInfoList",
           "type": "list",
@@ -7031,16 +7032,16 @@
       "document": "DescribePostpayPackageFreeQuotas请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
+          "example": "无",
           "member": "string",
           "name": "EnvId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "免费额度类型标识",
+          "example": "无",
           "member": "string",
           "name": "FreeQuotaType",
           "required": false,
@@ -7054,6 +7055,7 @@
       "members": [
         {
           "document": "免费量资源信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PackageFreeQuotaInfo",
           "name": "PackageFreeQuotaInfos",
           "type": "list",
@@ -7135,7 +7137,6 @@
       "document": "DescribeSmsQuotas请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
           "example": "env-xxxxxxxx",
           "member": "string",
