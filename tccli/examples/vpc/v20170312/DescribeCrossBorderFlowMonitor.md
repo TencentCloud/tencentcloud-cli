@@ -1,12 +1,12 @@
 **Example 1: 查询跨境带宽监控数据**
 
-
+查询跨境带宽监控数据
 
 Input: 
 
 ```
 tccli vpc DescribeCrossBorderFlowMonitor --cli-unfold-argument  \
-    --CcnId 1246 \
+    --CcnId ccn-gree226l \
     --CcnUin 251223380 \
     --SourceRegion ap-guangzhou \
     --DestinationRegion ap-shanghai \

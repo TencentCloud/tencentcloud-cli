@@ -17,21 +17,6 @@ Output:
     "Response": {
         "NamespaceList": [
             {
-                "NamespaceId": 2,
-                "TagSpecification": {
-                    "ResourceType": "namespace",
-                    "Tags": [
-                        {
-                            "Value": "tag-value",
-                            "Key": "tag-key"
-                        }
-                    ]
-                },
-                "CreationTime": "2020-09-22T00:00:00+00:00",
-                "Public": true,
-                "Name": "ns"
-            },
-            {
                 "Public": true,
                 "Name": "ns1",
                 "CreationTime": "2020-09-22T00:00:00+00:00",
@@ -44,7 +29,21 @@ Output:
                             "Key": "tag-key"
                         }
                     ]
-                }
+                },
+                "Metadata": [
+                    {
+                        "Key": "prevent_vul",
+                        "Value": "false"
+                    }
+                ],
+                "CVEWhitelistItems": [
+                    {
+                        "CVEID": "1"
+                    }
+                ],
+                "AutoScan": true,
+                "PreventVUL": true,
+                "Severity": "low"
             }
         ],
         "TotalCount": 2,

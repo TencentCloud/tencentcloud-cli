@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DeleteAttackLogs --cli-unfold-argument  \
-    --Ids 1 2
+    --Ids 2 1
 ```
 
 Output: 

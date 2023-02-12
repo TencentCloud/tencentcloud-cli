@@ -687,7 +687,7 @@
       "status": "online"
     },
     "ModifyNamespace": {
-      "document": "更新命名空间信息，当前仅支持修改命名空间访问级别",
+      "document": "更新命名空间信息",
       "input": "ModifyNamespaceRequest",
       "name": "更新命名空间信息",
       "output": "ModifyNamespaceResponse",
@@ -957,6 +957,22 @@
         }
       ],
       "type": "object"
+    },
+    "CVEWhitelistItem": {
+      "document": "命名空间漏洞白名单列表",
+      "members": [
+        {
+          "document": "漏洞白名单 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CVEID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "ChartInfo": {
       "document": "Chart信息",
@@ -1766,7 +1782,6 @@
       "document": "CreateNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID",
           "example": "tcr-okmj78",
           "member": "string",
@@ -1776,7 +1791,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "命名空间的名称（长度2-30个字符，只能包含小写字母、数字及分隔符(\".\"、\"_\"、\"-\")，且不能以分隔符开头、结尾或连续）",
           "example": "mytest",
           "member": "string",
@@ -1786,7 +1800,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否公开，true为公开，fale为私有",
           "example": "true",
           "member": "bool",
@@ -1796,13 +1809,48 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云标签描述",
           "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
           "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "自动扫描级别，true为自动，false为手动",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAutoScan",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "安全阻断级别，true为自动，false为手动",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPreventVUL",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "阻断漏洞等级，目前仅支持low、medium、high",
+          "example": "low",
+          "member": "string",
+          "name": "Severity",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "漏洞白名单列表",
+          "example": "无",
+          "member": "CVEWhitelistItem",
+          "name": "CVEWhitelistItems",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],
@@ -4652,7 +4700,6 @@
       "document": "DescribeNamespaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例Id",
           "example": "tcr-f7g1ir99",
           "member": "string",
@@ -4662,7 +4709,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指定命名空间，不填写默认查询所有命名空间",
           "example": "project1",
           "member": "string",
@@ -4672,7 +4718,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "每页个数",
           "example": "20",
           "member": "int64",
@@ -4682,7 +4727,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "页面偏移（第几页）",
           "example": "0",
           "member": "int64",
@@ -4692,7 +4736,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "列出所有命名空间",
           "example": "0",
           "member": "bool",
@@ -4702,7 +4745,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件",
           "example": "无",
           "member": "Filter",
@@ -4712,7 +4754,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "仅查询启用了 KMS 镜像签名的空间",
           "example": "false",
           "member": "bool",
@@ -4732,7 +4773,6 @@
           "example": "无",
           "member": "TcrNamespaceInfo",
           "name": "NamespaceList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -4742,7 +4782,6 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6843,28 +6882,67 @@
       "document": "ModifyNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例Id",
+          "example": "tcr-xxx",
           "member": "string",
           "name": "RegistryId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "命名空间名称",
+          "example": "nginx",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "访问级别，True为公开，False为私有",
+          "example": "false",
           "member": "bool",
           "name": "IsPublic",
-          "required": true,
-          "type": "bool"
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "扫描级别，True为自动，False为手动",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAutoScan",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "阻断开关，True为开放，False为关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPreventVUL",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "阻断漏洞等级，目前仅支持 low、medium、high",
+          "example": "high",
+          "member": "string",
+          "name": "Severity",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "漏洞白名单列表",
+          "example": "无",
+          "member": "CVEWhitelistItem",
+          "name": "CVEWhitelistItems",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8928,7 +9006,6 @@
       "document": "Tcr 命名空间的描述",
       "members": [
         {
-          "default": "",
           "document": "命名空间名称",
           "example": "ns1",
           "member": "string",
@@ -8939,7 +9016,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2022-07-06 14:20:38",
           "member": "datetime_iso",
@@ -8950,7 +9026,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "访问级别",
           "example": "true",
           "member": "bool",
@@ -8961,7 +9036,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "命名空间的Id",
           "example": "1",
           "member": "int64",
@@ -8972,7 +9046,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例云标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TagSpecification",
@@ -8983,7 +9056,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "命名空间元数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KeyValueString",
@@ -8991,6 +9063,46 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "漏洞白名单列表",
+          "example": "无",
+          "member": "CVEWhitelistItem",
+          "name": "CVEWhitelistItems",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "扫描级别，true为自动，false为手动",
+          "example": "无",
+          "member": "bool",
+          "name": "AutoScan",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "安全阻断级别，true为开启，false为关闭",
+          "example": "无",
+          "member": "bool",
+          "name": "PreventVUL",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "阻断漏洞等级，目前仅支持low、medium、high, 为\"\"时表示没有设置",
+          "example": "low",
+          "member": "string",
+          "name": "Severity",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
           "visibility": 1
         }
       ],

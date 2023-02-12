@@ -4022,7 +4022,8 @@
           "name": "LogsetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "健康检查日志集的 ID。",
@@ -4031,7 +4032,8 @@
           "name": "HealthLogsetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4709,7 +4711,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4718,7 +4721,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4727,7 +4731,8 @@
           "member": "string",
           "name": "Fields",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4736,7 +4741,8 @@
           "member": "string",
           "name": "TargetType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4745,7 +4751,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4760,7 +4767,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "负载均衡详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4769,7 +4777,8 @@
           "name": "LoadBalancerDetailSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5106,31 +5115,31 @@
       "document": "DescribeRewrite请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "负载均衡实例ID。",
           "example": "lb-qc2i****",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "负载均衡监听器ID数组。",
           "example": "[\"lbl-j36caqde\\r\\n\"]",
           "member": "string",
           "name": "SourceListenerIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "负载均衡转发规则的ID数组。",
           "example": "[\"loc-5t7526km\\r\\n\"]",
           "member": "string",
           "name": "SourceLocationIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5143,9 +5152,9 @@
           "example": "无",
           "member": "RuleOutput",
           "name": "RewriteSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5160,31 +5169,31 @@
       "document": "DescribeTargetGroupInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "显示数量限制，默认20。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "显示的偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5197,27 +5206,27 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "绑定的服务器信息。",
           "example": "无",
           "member": "TargetGroupBackend",
           "name": "TargetGroupInstanceSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实际统计数量，不受Limit、Offset、CAM的影响。",
           "example": "2",
           "member": "uint64",
           "name": "RealCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5232,40 +5241,40 @@
       "document": "DescribeTargetGroupList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "目标组ID数组。",
           "example": "无",
           "member": "string",
           "name": "TargetGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "显示的偏移起始量。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "显示条数限制，默认为20。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5278,18 +5287,18 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "显示的目标组信息集合。",
           "example": "无",
           "member": "TargetGroupInfo",
           "name": "TargetGroupSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5304,40 +5313,40 @@
       "document": "DescribeTargetGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "目标组ID，与Filters互斥。",
           "example": "[\"lbtg-5xunivs0\\r\\n\"]",
           "member": "string",
           "name": "TargetGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "显示条数限制，默认为20。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "显示的偏移起始量。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5350,18 +5359,18 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "显示的目标组信息集合。",
           "example": "无",
           "member": "TargetGroupInfo",
           "name": "TargetGroupSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5382,7 +5391,8 @@
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5397,7 +5407,8 @@
           "name": "LoadBalancers",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10325,67 +10336,74 @@
       "document": "目标组信息",
       "members": [
         {
-          "default": "",
           "document": "目标组ID",
+          "example": "lbtg-xxxxxxxx",
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "目标组的vpcid",
+          "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "目标组的名字",
+          "example": "Name",
           "member": "string",
           "name": "TargetGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "目标组的默认端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
           "member": "uint64",
           "name": "Port",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "目标组的创建时间",
+          "example": "2022-03-23 10:37:16",
           "member": "datetime",
           "name": "CreatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "目标组的修改时间",
+          "example": "2022-03-23 10:37:16",
           "member": "datetime",
           "name": "UpdatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "关联到的规则数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AssociationItem",
           "name": "AssociatedRule",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

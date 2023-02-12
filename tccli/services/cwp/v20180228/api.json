@@ -9481,8 +9481,19 @@
           "example": "[]",
           "member": "uint64",
           "name": "Ids",
-          "required": true,
-          "type": "list"
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否全部删除",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAll",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"

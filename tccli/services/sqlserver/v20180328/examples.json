@@ -306,10 +306,10 @@
     ],
     "DescribeDBInstanceInter": [
       {
-        "document": "",
+        "document": "查询实例在互通组中的状态，内网互通ip用于在SSIS服务中使用。",
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceInter\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"InstanceId\": \"mssqlbi-q1atet3b\"\n}",
         "output": "{\n    \"Response\": {\n        \"InterInstanceSet\": [\n            {\n                \"InstanceId\": \"mssql-30vft2ix\",\n                \"InterPort\": 1028,\n                \"InterVip\": \"192.168.0.1\",\n                \"Name\": \"xxx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 1,\n                \"Version\": \"2012SP3\",\n                \"VersionName\": \"SQL Server 2012 Enterprise\",\n                \"Vip\": \"192.168.0.2\",\n                \"Vport\": 1433,\n                \"Zone\": \"ap-guangzhou-3\"\n            },\n            {\n                \"InstanceId\": \"mssql-iqnuxv3j\",\n                \"InterPort\": 1026,\n                \"InterVip\": \"192.168.0.1\",\n                \"Name\": \"xxxx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 1,\n                \"Version\": \"2017\",\n                \"VersionName\": \"SQL Server 2017 Enterprise\",\n                \"Vip\": \"192.168.0.2\",\n                \"Vport\": 1433,\n                \"Zone\": \"ap-guangzhou-3\"\n            },\n            {\n                \"InstanceId\": \"mssql-ngc6786l\",\n                \"InterPort\": 1029,\n                \"InterVip\": \"192.168.0.1\",\n                \"Name\": \"xxxx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 1,\n                \"Version\": \"2008R2\",\n                \"VersionName\": \"SQL Server 2008 Enterprise\",\n                \"Vip\": \"192.168.0.2\",\n                \"Vport\": 1433,\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"RequestId\": \"ff9c5a56-1d33-4707-b656-a715240635ad\",\n        \"TotalCount\": 3\n    }\n}",
-        "title": "查询实例再互通组中的状态"
+        "title": "查询实例在互通组中的状态"
       }
     ],
     "DescribeDBInstances": [

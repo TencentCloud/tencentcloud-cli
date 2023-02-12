@@ -1,3 +1,169 @@
+# Release 3.0.702.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 44 次发布
+
+发布时间：2023-02-13 01:24:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteAttackLogs](http://document.tencentcloudapi.woa.com/document/product/296/39575)
+
+	* 新增入参：IsAll
+
+	* <font color="#dd0000">**修改入参**：</font>Ids
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 7 次发布
+
+发布时间：2023-02-13 01:29:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#TemplateInfo)
+
+	* 新增成员：IsBlack
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 40 次发布
+
+发布时间：2023-02-13 01:32:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelDescribeOrganizationSeals](http://document.tencentcloudapi.woa.com/document/product/1595/76535)
+
+	* 新增入参：SealTypes
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 42 次发布
+
+发布时间：2023-02-13 01:41:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePrometheusZones](http://document.tencentcloudapi.woa.com/document/product/248/76756)
+
+	* 新增入参：RegionName
+
+	* <font color="#dd0000">**修改入参**：</font>RegionId
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 16 次发布
+
+发布时间：2023-02-13 01:52:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNamespace](http://document.tencentcloudapi.woa.com/document/product/1141/42729)
+
+	* 新增入参：IsAutoScan, IsPreventVUL, Severity, CVEWhitelistItems
+
+* [ModifyNamespace](http://document.tencentcloudapi.woa.com/document/product/1141/42727)
+
+	* 新增入参：IsAutoScan, IsPreventVUL, Severity, CVEWhitelistItems
+
+	* <font color="#dd0000">**修改入参**：</font>IsPublic
+
+
+新增数据结构：
+
+* [CVEWhitelistItem](http://document.tencentcloudapi.woa.com/document/product/1141/41603#CVEWhitelistItem)
+
+修改数据结构：
+
+* [TcrNamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1141/41603#TcrNamespaceInfo)
+
+	* 新增成员：CVEWhitelistItems, AutoScan, PreventVUL, Severity
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 29 次发布
+
+发布时间：2023-02-13 01:58:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ApiDetailInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#ApiDetailInfo)
+
+	* 新增成员：RpcExt, GatewayDeployGroupId, Md5, RpcType
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 64 次发布
+
+发布时间：2023-02-13 02:01:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTenantCcns](http://document.tencentcloudapi.woa.com/document/product/215/71324)
+
+	* 新增入参：Filters, Offset, Limit
+
+	* 新增出参：CcnSet, TotalCount
+
+
+新增数据结构：
+
+* [CcnInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnInstanceInfo)
+
+
+
 # Release 3.0.701.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

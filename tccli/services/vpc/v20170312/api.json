@@ -1184,7 +1184,7 @@
       "status": "online"
     },
     "DescribeCcnRegionBandwidthLimits": {
-      "document": "本接口（DescribeCcnRegionBandwidthLimits）用于查询云联网各地域出带宽上限，该接口只返回已关联网络实例包含的地域",
+      "document": "本接口（DescribeCcnRegionBandwidthLimits）用于查询云联网各地域出带宽上限，该接口只返回已关联网络实例包含的地域。",
       "input": "DescribeCcnRegionBandwidthLimitsRequest",
       "name": "查询云联网各地域出带宽上限",
       "output": "DescribeCcnRegionBandwidthLimitsResponse",
@@ -1226,7 +1226,7 @@
       "status": "online"
     },
     "DescribeCrossBorderFlowMonitor": {
-      "document": "查询跨境带宽监控数据，该接口特提供给联通使用",
+      "document": "本接口（DescribeCrossBorderFlowMonitor）用于查询跨境带宽监控数据，该接口目前只提供给服务商联通使用。",
       "input": "DescribeCrossBorderFlowMonitorRequest",
       "name": "查询跨境带宽监控数据",
       "output": "DescribeCrossBorderFlowMonitorResponse",
@@ -6134,6 +6134,11 @@
         }
       ],
       "usage": "both"
+    },
+    "CcnInstanceInfo": {
+      "document": "云联网实例对象，该对象特用于运营端使用，不建议给租户的接口中提供该复杂类型。",
+      "members": [],
+      "usage": "out"
     },
     "CcnRegionBandwidthLimit": {
       "document": "云联网（CCN）地域出带宽上限",
@@ -13859,12 +13864,13 @@
       "document": "DescribeCcnRegionBandwidthLimits请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "document": "CCN实例ID，形如：ccn-f49l6u0z。",
+          "example": "ccn-f49l6u0z",
           "member": "string",
           "name": "CcnId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13874,10 +13880,12 @@
       "members": [
         {
           "document": "云联网（CCN）各地域出带宽上限",
+          "example": "无",
           "member": "CcnRegionBandwidthLimit",
           "name": "CcnRegionBandwidthLimitSet",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14341,9 +14349,8 @@
       "document": "DescribeCrossBorderFlowMonitor请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "源地域",
-          "example": "无",
+          "document": "源地域。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "SourceRegion",
           "required": true,
@@ -14351,9 +14358,8 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "目的地域",
-          "example": "无",
+          "document": "目的地域。",
+          "example": "na-siliconvalley",
           "member": "string",
           "name": "DestinationRegion",
           "required": true,
@@ -14361,9 +14367,8 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "云联网Id",
-          "example": "无",
+          "document": "云联网ID。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -14371,9 +14376,8 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "云联网所属账号",
-          "example": "无",
+          "document": "云联网所属账号。",
+          "example": "251223380",
           "member": "string",
           "name": "CcnUin",
           "required": true,
@@ -14381,9 +14385,8 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "时间粒度",
-          "example": "无",
+          "document": "时间粒度。",
+          "example": "60",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -14391,9 +14394,8 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "开始时间",
-          "example": "无",
+          "document": "开始时间。",
+          "example": "2022-08-20 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -14401,9 +14403,8 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "结束时间",
-          "example": "无",
+          "document": "结束时间。",
+          "example": "2022-08-20 00:10:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -14421,7 +14422,6 @@
           "example": "无",
           "member": "CrossBorderFlowMonitorData",
           "name": "CrossBorderFlowMonitorData",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -21164,12 +21164,58 @@
     },
     "DescribeTenantCcnsRequest": {
       "document": "DescribeTenantCcns请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "过滤条件，目前`value`值个数只支持一个，允许可支持的字段有：\n<li>`ccn-ids` 云联网ID数组，值形如：`[\"ccn-12345678\"]`</li> \n<li>`user-account-id` 用户账号ID，值形如：`[\"12345678\"]`</li><li>`is-security-lock` 是否锁定，值形如：`[\"true\"]`</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "偏移量，默认0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "单页返回数据量，可选值0到100之间的整数，默认20。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "DescribeTenantCcnsResponse": {
       "document": "DescribeTenantCcns返回参数结构体",
       "members": [
+        {
+          "document": "云联网（CCN）对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CcnInstanceInfo",
+          "name": "CcnSet",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "符合条件的对象总数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -36654,31 +36700,31 @@
       "document": "SetCcnRegionBandwidthLimits请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "document": "CCN实例ID，形如：ccn-f49l6u0z。",
           "example": "ccn-f49l6u0z",
           "member": "string",
           "name": "CcnId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "云联网（CCN）各地域出带宽上限。",
           "example": "无",
           "member": "CcnRegionBandwidthLimit",
           "name": "CcnRegionBandwidthLimits",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否恢复云联网地域出口/地域间带宽限速为默认值（1Gbps）。false表示不恢复；true表示恢复。恢复默认值后，限速实例将不在控制台展示。该参数默认为 false，不恢复。",
           "example": "true",
           "member": "bool",
           "name": "SetDefaultLimitFlag",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
