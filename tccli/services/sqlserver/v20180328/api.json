@@ -5404,7 +5404,6 @@
       "document": "DescribeDBInstanceInter请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分页，页大小，范围是1-100",
           "example": "10",
           "member": "int64",
@@ -5413,7 +5412,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "按照实例ID筛选",
           "example": "mssql-dj5i29c5n",
           "member": "string",
@@ -5422,8 +5420,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "按照状态筛选 1-互通ip prot打开中；2-互通ip prot已经打开；3-加入到互通组中；4-已加入到互通组；5-互通ip prot回收中；6-互通ip prot已回收；7-从互通组移除中；8-已从互通组中移除",
+          "document": "按照状态筛选 1-互通IP打开中；2-互通IP已经打开；3-加入到互通组中；4-已加入到互通组；5-互通IP回收中；6-互通IP已回收；7-从互通组移除中；8-已从互通组中移除",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -5431,7 +5428,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例版本代号列表",
           "example": "无",
           "member": "string",
@@ -5440,7 +5436,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例所在可用区，格式如：ap-guangzhou-2",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -5449,7 +5444,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页，页数，默认是0",
           "example": "0",
           "member": "int64",
@@ -5468,7 +5462,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5477,7 +5470,6 @@
           "example": "无",
           "member": "InterInstance",
           "name": "InterInstanceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -11080,13 +11080,20 @@
       "document": "DescribePrometheusZones请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "地域 ID",
+          "document": "地域 ID（RegionId 和 RegionName 只需要填一个）",
           "example": "1234",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "required": false,
           "type": "int"
+        },
+        {
+          "document": "地域名（RegionId 和 RegionName 只需要填一个）",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11099,7 +11106,6 @@
           "example": "无",
           "member": "PrometheusZoneItem",
           "name": "ZoneSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

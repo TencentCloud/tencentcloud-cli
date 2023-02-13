@@ -1084,8 +1084,8 @@
     ],
     "DescribeCcnRegionBandwidthLimits": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeCcnRegionBandwidthLimits\r\n&<公共请求参数>\r\n&CcnId=ccn-gree226l",
+        "document": "查询一个CCN各地域出带宽上限",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnRegionBandwidthLimits\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-gree226l\"\n}",
         "output": "{\n    \"Response\": {\n        \"CcnRegionBandwidthLimitSet\": [\n            {\n                \"BandwidthLimit\": 50,\n                \"Region\": \"ap-guangzhou\"\n            },\n            {\n                \"BandwidthLimit\": 10000,\n                \"Region\": \"ap-beijing\"\n            },\n            {\n                \"BandwidthLimit\": 2000,\n                \"Region\": \"ap-shanghai\"\n            }\n        ],\n        \"RequestId\": \"9c53ff69-1bb6-4c89-adbb-812233a85acc\"\n    }\n}",
         "title": "查询一个CCN各地域出带宽上限"
       }
@@ -1156,8 +1156,8 @@
     ],
     "DescribeCrossBorderFlowMonitor": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderFlowMonitor\n<公共请求参数>\n\n{\n    \"CcnId\": 1246,\n    \"CcnUin\": \"251223380\",\n    \"SourceRegion\": \"ap-guangzhou\",\n    \"DestinationRegion\": \"ap-shanghai\",\n    \"Period\": 60,\n    \"StartTime\": \"2022-08-20 00:00:00\",\n    \"EndTime\": \"2022-08-20 00:10:00\"\n}",
+        "document": "查询跨境带宽监控数据",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderFlowMonitor\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-gree226l\",\n    \"CcnUin\": \"251223380\",\n    \"SourceRegion\": \"ap-guangzhou\",\n    \"DestinationRegion\": \"ap-shanghai\",\n    \"Period\": 60,\n    \"StartTime\": \"2022-08-20 00:00:00\",\n    \"EndTime\": \"2022-08-20 00:10:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"CrossBorderFlowMonitorData\": [\n            {\n                \"InBandwidth\": [\n                    1,\n                    1\n                ],\n                \"InPkg\": [\n                    1,\n                    2\n                ],\n                \"OutBandwidth\": [\n                    1,\n                    3\n                ],\n                \"OutPkg\": [\n                    1,\n                    4\n                ]\n            }\n        ],\n        \"RequestId\": \"ff8a76ff-8900-4169-b126-ff59fdb39b6c\"\n    }\n}",
         "title": "查询跨境带宽监控数据"
       }
@@ -1604,21 +1604,21 @@
     ],
     "DescribeTenantCcns": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff8a76ff-8900-4169-b126-ff59fdb39b6c\"\n    }\n}",
+        "document": "根据ccn-ids过滤查询",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"ccn-gyt67ffz\"\n            ],\n            \"Name\": \"ccn-ids\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CcnSet\": [\n            {}\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"ff8a76ff-8900-4169-b126-ff59fdb39b6c\"\n    }\n}",
         "title": "根据ccn-ids过滤查询"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c72d2a1-b60c-464e-b782-ca6efe7c1dd6\"\n    }\n}",
+        "document": "根据user-account-id过滤查询",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1742152960\"\n            ],\n            \"Name\": \"user-account-id\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CcnSet\": [\n            {},\n            {},\n            {}\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"6c72d2a1-b60c-464e-b782-ca6efe7c1dd6\"\n    }\n}",
         "title": "根据user-account-id过滤查询"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"495efea0-0073-451c-a577-77a23626432c\"\n    }\n}",
+        "document": "根据is-security-lock过滤查询",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"false\"\n            ],\n            \"Name\": \"is-security-lock\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CcnSet\": [\n            {},\n            {},\n            {},\n            {}\n        ],\n        \"TotalCount\": 5,\n        \"RequestId\": \"495efea0-0073-451c-a577-77a23626432c\"\n    }\n}",
         "title": "根据is-security-lock过滤查询"
       }
     ],

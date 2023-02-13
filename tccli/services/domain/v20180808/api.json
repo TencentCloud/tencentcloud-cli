@@ -2263,8 +2263,8 @@
       "document": "Template数据",
       "members": [
         {
-          "default": "",
           "document": "模板ID",
+          "example": "无",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -2272,8 +2272,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject",
+          "example": "无",
           "member": "string",
           "name": "AuditStatus",
           "required": true,
@@ -2281,8 +2281,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
+          "example": "无",
           "member": "string",
           "name": "CreatedOn",
           "required": true,
@@ -2290,8 +2290,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "更新时间",
+          "example": "无",
           "member": "string",
           "name": "UpdatedOn",
           "required": true,
@@ -2299,8 +2299,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户UIN",
+          "example": "无",
           "member": "string",
           "name": "UserUin",
           "required": true,
@@ -2308,8 +2308,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否是默认模板: 是:yes，否:no",
+          "example": "无",
           "member": "string",
           "name": "IsDefault",
           "required": true,
@@ -2317,8 +2317,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "认证失败原因",
+          "example": "无",
           "member": "string",
           "name": "AuditReason",
           "required": true,
@@ -2326,8 +2326,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "认证信息",
+          "example": "无",
           "member": "CertificateInfo",
           "name": "CertificateInfo",
           "required": true,
@@ -2335,8 +2335,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "联系人信息",
+          "example": "无",
           "member": "ContactInfo",
           "name": "ContactInfo",
           "required": true,
@@ -2344,8 +2344,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板是否符合规范， 1是 0 否",
+          "example": "无",
           "member": "int64",
           "name": "IsValidTemplate",
           "required": true,
@@ -2353,12 +2353,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "不符合规范原因",
+          "example": "无",
           "member": "string",
           "name": "InvalidReason",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是包含黑名单手机或邮箱",
+          "example": "true",
+          "member": "bool",
+          "name": "IsBlack",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

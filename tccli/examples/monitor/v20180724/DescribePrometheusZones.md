@@ -1,6 +1,6 @@
 **Example 1: 列出 Prometheus 服务可用区**
 
-
+列出 Prometheus 服务可用区
 
 Input: 
 

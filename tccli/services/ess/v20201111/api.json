@@ -677,8 +677,7 @@
       "document": "模板控件信息",
       "members": [
         {
-          "default": "",
-          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件，输入文本字符串；\nMULTI_LINE_TEXT - 多行文本控件，输入文本字符串；\nCHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；\nFILL_IMAGE - 图片控件，ComponentValue 填写图片的资源 ID；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件,ComponentValue 填写福建图片的资源 ID列表，以逗号分割；\nSELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；\nDISTRICT - 省市区行政区划控件，ComponentValue填写省市区行政区划字符串内容；\n\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\nSIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认\n\n表单域的控件不能作为印章和签名控件",
+          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件，输入文本字符串；\nMULTI_LINE_TEXT - 多行文本控件，输入文本字符串；\nCHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；\nFILL_IMAGE - 图片控件，ComponentValue 填写图片的资源 ID；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件,ComponentValue 填写福建图片的资源 ID列表，以逗号分割；\nSELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；\nDISTRICT - 省市区行政区划控件，ComponentValue填写省市区行政区划字符串内容；\n\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\nSIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；\nSIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。\n\n表单域的控件不能作为印章和签名控件",
           "example": "无",
           "member": "string",
           "name": "ComponentType",
@@ -687,7 +686,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）",
           "example": "无",
           "member": "int64",
@@ -697,7 +695,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参数控件高度，单位pt",
           "example": "无",
           "member": "float",
@@ -707,7 +704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参数控件宽度，单位pt",
           "example": "无",
           "member": "float",
@@ -717,7 +713,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参数控件所在页码，取值为：1-N",
           "example": "无",
           "member": "int64",
@@ -727,7 +722,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参数控件X位置，单位pt",
           "example": "无",
           "member": "float",
@@ -737,7 +731,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参数控件Y位置，单位pt",
           "example": "无",
           "member": "float",
@@ -747,7 +740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "GenerateMode==KEYWORD 指定关键字",
           "example": "无",
           "member": "string",
@@ -757,7 +749,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "GenerateMode==FIELD 指定表单域名称",
           "example": "无",
           "member": "string",
@@ -767,7 +758,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否必选，默认为false",
           "example": "无",
           "member": "bool",
@@ -777,7 +767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "控件关联的签署人ID",
           "example": "无",
           "member": "string",
@@ -787,7 +776,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nBORDERLESS_ESIGN – 自动生成无边框腾讯体\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\n如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}",
           "example": "无",
           "member": "string",
@@ -797,7 +785,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否是表单域类型，默认不存在",
           "example": "无",
           "member": "bool",
@@ -807,7 +794,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo\nDATE - 默认是格式化为xxxx年xx月xx日\nSIGN_SEAL - 印章ID，于控制台查询获取\nSIGN_PAGING_SEAL - 可以指定印章ID，于控制台查询获取\n\n控件值约束说明：\n企业全称控件：\n  约束：企业名称中文字符中文括号\n  检查正则表达式：/^[\\u3400-\\u4dbf\\u4e00-\\u9fa5（）]+$/\n\n统一社会信用代码控件：\n  检查正则表达式：/^[A-Z0-9]{1,18}$/\n\n法人名称控件：\n  约束：最大50个字符，2到25个汉字或者1到50个字母\n  检查正则表达式：/^([\\u3400-\\u4dbf\\u4e00-\\u9fa5.·]{2,25}|[a-zA-Z·,\\s-]{1,50})$/\n\n签署意见控件：\n  约束：签署意见最大长度为50字符\n\n签署人手机号控件：\n  约束：国内手机号 13,14,15,16,17,18,19号段长度11位\n\n签署人身份证控件：\n  约束：合法的身份证号码检查\n\n控件名称：\n  约束：控件名称最大长度为20字符\n\n单行文本控件：\n  约束：只允许输入中文，英文，数字，中英文标点符号\n\n多行文本控件：\n  约束：只允许输入中文，英文，数字，中英文标点符号\n\n勾选框控件：\n  约束：选择填字符串true，不选填字符串false\n\n选择器控件：\n  约束：同单行文本控件约束，填写选择值中的字符串\n\n数字控件：\n  约束：请输入有效的数字(可带小数点) \n  检查正则表达式：/^(-|\\+)?\\d+(\\.\\d+)?$/\n\n日期控件：\n  约束：格式：yyyy年mm月dd日\n\n附件控件：\n  约束：JPG或PNG图片，上传数量限制，1到6个，最大6个附件\n\n图片控件：\n  约束：JPG或PNG图片，填写上传的图片资源ID\n\n邮箱控件：\n  约束：请输入有效的邮箱地址, w3c标准\n  检查正则表达式：/^([A-Za-z0-9_\\-.!#$%&])+@([A-Za-z0-9_\\-.])+\\.([A-Za-z]{2,4})$/\n  参考：https://emailregex.com/\n\n地址控件：\n  同单行文本控件约束\n\n省市区控件：\n  同单行文本控件约束\n\n性别控件：\n  同单行文本控件约束，填写选择值中的字符串\n\n学历控件：\n  同单行文本控件约束，填写选择值中的字符串",
           "example": "无",
           "member": "string",
@@ -817,7 +803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "NORMAL 正常模式，使用坐标制定签署控件位置\nFIELD 表单域，需使用ComponentName指定表单域名称\nKEYWORD 关键字，使用ComponentId指定关键字",
           "example": "无",
           "member": "string",
@@ -827,7 +812,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日期签署控件的字号，默认为 12",
           "example": "无",
           "member": "int64",
@@ -837,7 +821,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "渠道版控件 id 标识",
           "example": "无",
           "member": "string",
@@ -847,7 +830,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "指定关键字时横坐标偏移量，单位pt",
           "example": "无",
           "member": "float",
@@ -857,7 +839,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "指定关键字时纵坐标偏移量，单位pt",
           "example": "无",
           "member": "float",
@@ -867,7 +848,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "//渠道子客控件来源。0-渠道指定；1-用户自定义",
           "example": "无",
           "member": "uint64",
@@ -877,7 +857,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。\n传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。",
           "example": "Positive\\Reverse",
           "member": "string",
@@ -887,7 +866,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来",
           "example": "无",
           "member": "int64",
@@ -897,7 +875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方",
           "example": "无",
           "member": "string",
@@ -907,7 +884,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。",
           "example": "无",
           "member": "int64",
@@ -3118,7 +3094,6 @@
       "document": "DescribeOrganizationSeals请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "调用方用户信息，userId 必填",
           "example": "无",
           "member": "UserInfo",
@@ -3127,7 +3102,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "返回最大数量，最大为100",
           "example": "10",
           "member": "int64",
@@ -3136,7 +3110,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0，最大为20000",
           "example": "0",
           "member": "int64",
@@ -3145,7 +3118,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询信息类型，为0时不返回授权用户，为1时返回",
           "example": "1",
           "member": "int64",
@@ -3154,13 +3126,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "印章id（没有输入返回所有）",
           "example": "无",
           "member": "string",
           "name": "SealId",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "印章类型列表（都是组织机构印章）。\n为空时查询所有类型的印章。\n目前支持以下类型：\nOFFICIAL：企业公章；\nCONTRACT：合同专用章；\nORGANIZATION_SEAL：企业印章(图片上传创建)；\nLEGAL_PERSON_SEAL：法定代表人章",
+          "example": "无",
+          "member": "string",
+          "name": "SealTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3173,7 +3152,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3182,7 +3160,6 @@
           "example": "无",
           "member": "OccupiedSeal",
           "name": "Seals",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4344,8 +4321,8 @@
       "document": "机构信息",
       "members": [
         {
-          "default": "",
           "document": "机构在平台的编号",
+          "example": "无",
           "member": "string",
           "name": "OrganizationId",
           "required": false,
@@ -4353,8 +4330,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户渠道",
+          "example": "无",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -4362,8 +4339,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户在渠道的机构编号",
+          "example": "无",
           "member": "string",
           "name": "OrganizationOpenId",
           "required": false,
@@ -4371,8 +4348,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户真实的IP",
+          "example": "无",
           "member": "string",
           "name": "ClientIp",
           "required": false,
@@ -4380,8 +4357,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机构的代理IP",
+          "example": "无",
           "member": "string",
           "name": "ProxyIp",
           "required": false,

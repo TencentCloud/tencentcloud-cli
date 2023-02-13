@@ -4945,7 +4945,6 @@
       "document": "DescribeRewrite请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "负载均衡实例ID。",
           "example": "lb-qc2i****",
           "member": "string",
@@ -4954,7 +4953,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "负载均衡监听器ID数组。",
           "example": "[\"lbl-j36caqde\\r\\n\"]",
           "member": "string",
@@ -4963,7 +4961,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "负载均衡转发规则的ID数组。",
           "example": "[\"loc-5t7526km\\r\\n\"]",
           "member": "string",
@@ -4982,7 +4979,6 @@
           "example": "无",
           "member": "RuleOutput",
           "name": "RewriteSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4999,7 +4995,6 @@
       "document": "DescribeTargetGroupInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。",
           "example": "无",
           "member": "Filter",
@@ -5008,7 +5003,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "显示数量限制，默认20。",
           "example": "20",
           "member": "uint64",
@@ -5017,7 +5011,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "显示的偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -5036,7 +5029,6 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5045,7 +5037,6 @@
           "example": "无",
           "member": "TargetGroupBackend",
           "name": "TargetGroupInstanceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5054,7 +5045,6 @@
           "example": "2",
           "member": "uint64",
           "name": "RealCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5071,7 +5061,6 @@
       "document": "DescribeTargetGroupList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "目标组ID数组。",
           "example": "无",
           "member": "string",
@@ -5080,7 +5069,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "过滤条件数组，支持TargetGroupVpcId和TargetGroupName。与TargetGroupIds互斥，优先使用目标组ID。",
           "example": "无",
           "member": "Filter",
@@ -5089,7 +5077,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "显示的偏移起始量。",
           "example": "1",
           "member": "uint64",
@@ -5098,7 +5085,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "显示条数限制，默认为20。",
           "example": "20",
           "member": "uint64",
@@ -5117,7 +5103,6 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5126,7 +5111,6 @@
           "example": "无",
           "member": "TargetGroupInfo",
           "name": "TargetGroupSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5143,7 +5127,6 @@
       "document": "DescribeTargetGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "目标组ID，与Filters互斥。",
           "example": "[\"lbtg-5xunivs0\\r\\n\"]",
           "member": "string",
@@ -5152,7 +5135,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "显示条数限制，默认为20。",
           "example": "20",
           "member": "uint64",
@@ -5161,7 +5143,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "显示的偏移起始量。",
           "example": "1",
           "member": "uint64",
@@ -5170,7 +5151,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。",
           "example": "无",
           "member": "Filter",
@@ -5189,7 +5169,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5198,7 +5177,6 @@
           "example": "无",
           "member": "TargetGroupInfo",
           "name": "TargetGroupSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9936,8 +9914,8 @@
       "document": "目标组信息",
       "members": [
         {
-          "default": "",
           "document": "目标组ID",
+          "example": "lbtg-xxxxxxxx",
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
@@ -9945,8 +9923,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标组的vpcid",
+          "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -9954,8 +9932,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标组的名字",
+          "example": "Name",
           "member": "string",
           "name": "TargetGroupName",
           "required": true,
@@ -9963,8 +9941,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标组的默认端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
           "member": "uint64",
           "name": "Port",
           "required": true,
@@ -9972,8 +9950,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标组的创建时间",
+          "example": "2022-03-23 10:37:16",
           "member": "datetime",
           "name": "CreatedTime",
           "required": true,
@@ -9981,8 +9959,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标组的修改时间",
+          "example": "2022-03-23 10:37:16",
           "member": "datetime",
           "name": "UpdatedTime",
           "required": true,
@@ -9990,8 +9968,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关联到的规则数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AssociationItem",
           "name": "AssociatedRule",
           "required": true,

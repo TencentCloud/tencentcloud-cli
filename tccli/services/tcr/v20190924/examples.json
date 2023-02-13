@@ -112,8 +112,8 @@
     ],
     "CreateNamespace": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNamespace\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"mytest\",\n    \"IsPublic\": \"true\",\n    \"RegistryId\": \"tcr-okmj78\"\n}",
+        "document": "在企业版中创建命名空间",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNamespace\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"mytest\",\n    \"IsPublic\": \"true\",\n    \"IsAutoScan\": \"true\",\n    \"IsPreventVUL\": \"true\",\n    \"Severity\": \"low\",\n    \"RegistryId\": \"tcr-okmj78\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
         "title": "创建命名空间"
       }
@@ -570,7 +570,7 @@
       {
         "document": "查询实例内所有的命名空间信息",
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespaces\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"RegistryId\": \"tcr-f7g1ir99\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"NamespaceList\": [\n            {\n                \"NamespaceId\": 2,\n                \"TagSpecification\": {\n                    \"ResourceType\": \"namespace\",\n                    \"Tags\": [\n                        {\n                            \"Value\": \"tag-value\",\n                            \"Key\": \"tag-key\"\n                        }\n                    ]\n                },\n                \"CreationTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Public\": true,\n                \"Name\": \"ns\"\n            },\n            {\n                \"Public\": true,\n                \"Name\": \"ns1\",\n                \"CreationTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NamespaceId\": 1,\n                \"TagSpecification\": {\n                    \"ResourceType\": \"namespace\",\n                    \"Tags\": [\n                        {\n                            \"Value\": \"tag-value\",\n                            \"Key\": \"tag-key\"\n                        }\n                    ]\n                }\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"866bda78-ed75-4b10-8876-e82de555f69b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NamespaceList\": [\n            {\n                \"Public\": true,\n                \"Name\": \"ns1\",\n                \"CreationTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NamespaceId\": 1,\n                \"TagSpecification\": {\n                    \"ResourceType\": \"namespace\",\n                    \"Tags\": [\n                        {\n                            \"Value\": \"tag-value\",\n                            \"Key\": \"tag-key\"\n                        }\n                    ]\n                },\n                \"Metadata\": [\n                    {\n                        \"Key\": \"prevent_vul\",\n                        \"Value\": \"false\"\n                    }\n                ],\n                \"CVEWhitelistItems\": [\n                    {\n                        \"CVEID\": \"1\"\n                    }\n                ],\n                \"AutoScan\": true,\n                \"PreventVUL\": true,\n                \"Severity\": \"low\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"866bda78-ed75-4b10-8876-e82de555f69b\"\n    }\n}",
         "title": "查询命名空间信息"
       }
     ],
@@ -794,7 +794,7 @@
     ],
     "ModifyNamespace": [
       {
-        "document": "",
+        "document": "用于更新命名空间信息",
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifyNamespace\r\n&RegistryId=tcr-okmj78\r\n&NamespaceName=mytest\r\n&IsPublic=true\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
         "title": "更新命名空间信息"
