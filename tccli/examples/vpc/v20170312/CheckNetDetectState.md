@@ -1,15 +1,15 @@
 **Example 1: 根据网络探测ID验证探测参数**
 
-
+根据网络探测ID验证探测参数
 
 Input: 
 
 ```
 tccli vpc CheckNetDetectState --cli-unfold-argument  \
     --NetDetectId netd-12345678 \
-    --DetectDestinationIp 10.0.0.2 10.0.0.3 \
     --NextHopType NORMAL_CVM \
-    --NextHopDestination 10.0.0.4
+    --NextHopDestination 10.0.0.4 \
+    --DetectDestinationIp 10.0.0.3 10.0.0.2
 ```
 
 Output: 

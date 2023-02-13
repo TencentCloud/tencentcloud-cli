@@ -1,3 +1,143 @@
+# Release 3.0.703.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 42 次发布
+
+发布时间：2023-02-14 01:08:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77064)
+* [ModifyBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77063)
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* UpgradeCDBProxy
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 16 次发布
+
+发布时间：2023-02-14 01:22:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RecordListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordListItem)
+
+	* 新增成员：DefaultNS
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 20 次发布
+
+发布时间：2023-02-14 01:25:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClusterInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ClusterInstancesInfo)
+
+	* 新增成员：IsCvmReplace
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 16 次发布
+
+发布时间：2023-02-14 01:48:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#EngineVersion)
+
+	* 新增成员：IsSupportIntEightQuantization
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 30 次发布
+
+发布时间：2023-02-14 01:51:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ImageRepository](http://document.tencentcloudapi.woa.com/document/product/649/36099#ImageRepository)
+
+	* 新增成员：Public
+
+* [KafkaDeliveryConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#KafkaDeliveryConfig)
+
+	* 新增成员：KafkaAddress
+
+* [ScalableRule](http://document.tencentcloudapi.woa.com/document/product/649/36099#ScalableRule)
+
+	* 新增成员：DisableMetricAS, EnableCronAS
+
+	* <font color="#dd0000">**修改成员**：</font>RuleId, Name, ExpandVmCountLimit, ShrinkVmCountLimit, GroupCount, Desc, Description
+
+* [UnitNamespace](http://document.tencentcloudapi.woa.com/document/product/649/36099#UnitNamespace)
+
+	* 新增成员：GatewayInstanceId, CreatedTime, UpdatedTime
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 65 次发布
+
+发布时间：2023-02-14 01:54:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CheckNetDetectState](http://document.tencentcloudapi.woa.com/document/product/215/38700)
+
+	* <font color="#dd0000">**修改入参**：</font>NextHopType, NextHopDestination
+
+* [DescribeVpcIpv6Addresses](http://document.tencentcloudapi.woa.com/document/product/215/34465)
+
+	* 新增入参：SubnetId
+
+
+
+
 # Release 3.0.702.1
 
 ## 主机安全(cwp) 版本：2018-02-28

@@ -17241,164 +17241,174 @@
       "document": "镜像仓库",
       "members": [
         {
-          "default": "",
           "document": "仓库名,含命名空间,如tsf/nginx\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Reponame",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Repotype",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像版本数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "TagCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否公共,1:公有,0:私有\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "IsPublic",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否被用户收藏。true：是，false：否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsUserFavor",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否是腾讯云官方仓库。 是否是腾讯云官方仓库。true：是，false：否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsQcloudOfficial",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "被所有用户收藏次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "FavorCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "拉取次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "PullCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "描述内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CreationTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "TcrRepoInfo值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TcrRepoInfo",
           "name": "TcrRepoInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "TcrBindingId值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "TcrBindingId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "applicationid值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "ApplicationName值（废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScalableRule",
           "name": "ApplicationName",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "ApplicationName值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApplicationNameReal",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "是否公共,1:公有,0:私有\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Public",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -18493,134 +18503,144 @@
       "document": "投递kafka配置项",
       "members": [
         {
-          "default": "",
           "document": "配置项id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ConfigId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ConfigName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CollectPath",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "kafka vip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "KafkaVIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "kafka vport\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "KafkaVPort",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "kafka topic\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Topic",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "换行规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LineRule",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否需要认证\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "EnableAuth",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Username",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Password",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "投递的topic和path\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeliveryKafkaInfo",
           "name": "KafkaInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否应用单行规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "EnableGlobalLineRule",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义分行规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CustomRule",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "KafkaAddress\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KafkaAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -22420,74 +22440,94 @@
       "document": "ScalableRule值",
       "members": [
         {
-          "default": "",
           "document": "RuleId值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "Name值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "ExpandVmCountLimit值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "ExpandVmCountLimit",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "ShrinkVmCountLimit值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "ShrinkVmCountLimit",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "GroupCount值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "GroupCount",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Desc",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DisableMetricAS",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableCronAS",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -25062,6 +25102,7 @@
         {
           "default": "",
           "document": "记录总数",
+          "example": "无",
           "member": "int64",
           "name": "TotalCount",
           "required": true,
@@ -25071,6 +25112,7 @@
         {
           "default": "",
           "document": "记录实体列表",
+          "example": "无",
           "member": "UnitNamespace",
           "name": "Content",
           "required": true,
@@ -25165,31 +25207,64 @@
       "document": "微服务网关单元化命名空间",
       "members": [
         {
-          "default": "",
           "document": "命名空间ID",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "命名空间Name",
+          "example": "无",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "单元化命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Id",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "网关实体ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

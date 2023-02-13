@@ -1,6 +1,6 @@
 **Example 1: 获取日志主题列表**
 
-
+获取日志主题列表
 
 Input: 
 
@@ -17,28 +17,29 @@ Output:
         "TotalCount": 1,
         "Topics": [
             {
+                "Index": true,
+                "PartitionCount": 1,
+                "Describes": "x1",
                 "Status": true,
-                "TopicId": "xx",
                 "Tags": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Value": "x10",
+                        "Key": "x11"
                     }
                 ],
-                "StorageType": "xx",
-                "PartitionCount": 1,
+                "AssumerName": "x12",
+                "SubAssumerName": "x13",
                 "MaxSplitPartitions": 0,
+                "LogsetId": "x15",
+                "TopicId": "x16",
+                "StorageType": "x17",
                 "Period": 0,
                 "AutoSplit": true,
-                "TopicName": "xx",
-                "AssumerName": "xx",
-                "SubAssumerName": "xx",
-                "Index": true,
-                "CreateTime": "xx",
-                "LogsetId": "xx"
+                "CreateTime": "x18",
+                "TopicName": "x19"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "x20"
     }
 }
 ```

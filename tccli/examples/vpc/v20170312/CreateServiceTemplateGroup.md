@@ -1,12 +1,11 @@
 **Example 1: 创建协议端口模板集合**
 
-
+创建协议端口模板集合
 
 Input: 
 
 ```
 tccli vpc CreateServiceTemplateGroup --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --ServiceTemplateGroupName TestName \
     --ServiceTemplateIds ppm-529nwwj8 ppm-4dw6agho
 ```

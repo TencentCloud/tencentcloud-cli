@@ -10398,7 +10398,7 @@
         },
         {
           "document": "当任务进度为Failed时，对任务状态的进一步描述，例如IPAMD组件安装失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xxx\"",
+          "example": "\"ipamd has not been installed yet\"",
           "member": "string",
           "name": "ErrorMessage",
           "required": true,
@@ -12055,7 +12055,8 @@
           "member": "string",
           "name": "RouteTableCidrBlock",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12064,7 +12065,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12079,7 +12081,8 @@
           "name": "HasConflict",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "路由表冲突列表。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -12088,7 +12091,8 @@
           "name": "RouteTableConflictSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

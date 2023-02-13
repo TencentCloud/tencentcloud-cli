@@ -1,12 +1,11 @@
 **Example 1: 查看协议端口模板集合**
 
-
+查看协议端口模板集合
 
 Input: 
 
 ```
 tccli vpc DescribeServiceTemplateGroups --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --Filters.0.Name service-template-group-name \
     --Filters.0.Values TestName \
     --Limit 2

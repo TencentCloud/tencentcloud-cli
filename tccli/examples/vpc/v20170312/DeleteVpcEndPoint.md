@@ -1,6 +1,6 @@
 **Example 1: DeleteVpcEndPoint**
 
-
+删除终端节点
 
 Input: 
 

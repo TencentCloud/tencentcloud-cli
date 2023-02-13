@@ -1,6 +1,6 @@
 **Example 1: 分配指定IPv6地址**
 
-
+分配指定IPv6地址
 
 Input: 
 
@@ -44,7 +44,7 @@ Output:
 
 **Example 2: 按个数自动分配IPv6地址**
 
-
+按个数自动分配IPv6地址
 
 Input: 
 

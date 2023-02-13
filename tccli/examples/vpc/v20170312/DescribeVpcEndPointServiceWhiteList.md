@@ -1,6 +1,6 @@
-**Example 1: DescribeVpcEndPointServiceWhiteList**
+**Example 1: 查询终端节点服务的服务白名单列表**
 
-
+查询终端节点服务的服务白名单列表
 
 Input: 
 

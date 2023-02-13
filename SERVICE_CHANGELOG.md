@@ -1,130 +1,92 @@
 # 本版本更新包含以下内容：
 
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 44 次发布
-
-发布时间：2023-02-13 01:24:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DeleteAttackLogs](http://document.tencentcloudapi.woa.com/document/product/296/39575)
-
-	* 新增入参：IsAll
-
-	* <font color="#dd0000">**修改入参**：</font>Ids
-
-
-
-
-## 域名注册(domain) 版本：2018-08-08
-
-### 第 7 次发布
-
-发布时间：2023-02-13 01:29:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#TemplateInfo)
-
-	* 新增成员：IsBlack
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 40 次发布
-
-发布时间：2023-02-13 01:32:33
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ChannelDescribeOrganizationSeals](http://document.tencentcloudapi.woa.com/document/product/1595/76535)
-
-	* 新增入参：SealTypes
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 云监控(monitor) 版本：2018-07-24
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
 ### 第 42 次发布
 
-发布时间：2023-02-13 01:41:15
+发布时间：2023-02-14 01:08:27
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribePrometheusZones](http://document.tencentcloudapi.woa.com/document/product/248/76756)
+* [DescribeBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77064)
+* [ModifyBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77063)
 
-	* 新增入参：RegionName
+<font color="#dd0000">**预下线接口**：</font>
 
-	* <font color="#dd0000">**修改入参**：</font>RegionId
-
-
+* UpgradeCDBProxy
 
 
-## 容器镜像服务(tcr) 版本：2019-09-24
+
+## DNSPod(dnspod) 版本：2021-03-23
 
 ### 第 16 次发布
 
-发布时间：2023-02-13 01:52:31
+发布时间：2023-02-14 01:22:06
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [CreateNamespace](http://document.tencentcloudapi.woa.com/document/product/1141/42729)
+* [RecordListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordListItem)
 
-	* 新增入参：IsAutoScan, IsPreventVUL, Severity, CVEWhitelistItems
-
-* [ModifyNamespace](http://document.tencentcloudapi.woa.com/document/product/1141/42727)
-
-	* 新增入参：IsAutoScan, IsPreventVUL, Severity, CVEWhitelistItems
-
-	* <font color="#dd0000">**修改入参**：</font>IsPublic
+	* 新增成员：DefaultNS
 
 
-新增数据结构：
 
-* [CVEWhitelistItem](http://document.tencentcloudapi.woa.com/document/product/1141/41603#CVEWhitelistItem)
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 20 次发布
+
+发布时间：2023-02-14 01:25:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [TcrNamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1141/41603#TcrNamespaceInfo)
+* [ClusterInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ClusterInstancesInfo)
 
-	* 新增成员：CVEWhitelistItems, AutoScan, PreventVUL, Severity
+	* 新增成员：IsCvmReplace
 
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 16 次发布
+
+发布时间：2023-02-14 01:48:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#EngineVersion)
+
+	* 新增成员：IsSupportIntEightQuantization
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
 
 
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
 
-### 第 29 次发布
+### 第 30 次发布
 
-发布时间：2023-02-13 01:58:02
+发布时间：2023-02-14 01:51:04
 
 本次发布包含了以下内容：
 
@@ -132,18 +94,32 @@
 
 修改数据结构：
 
-* [ApiDetailInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#ApiDetailInfo)
+* [ImageRepository](http://document.tencentcloudapi.woa.com/document/product/649/36099#ImageRepository)
 
-	* 新增成员：RpcExt, GatewayDeployGroupId, Md5, RpcType
+	* 新增成员：Public
+
+* [KafkaDeliveryConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#KafkaDeliveryConfig)
+
+	* 新增成员：KafkaAddress
+
+* [ScalableRule](http://document.tencentcloudapi.woa.com/document/product/649/36099#ScalableRule)
+
+	* 新增成员：DisableMetricAS, EnableCronAS
+
+	* <font color="#dd0000">**修改成员**：</font>RuleId, Name, ExpandVmCountLimit, ShrinkVmCountLimit, GroupCount, Desc, Description
+
+* [UnitNamespace](http://document.tencentcloudapi.woa.com/document/product/649/36099#UnitNamespace)
+
+	* 新增成员：GatewayInstanceId, CreatedTime, UpdatedTime
 
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 64 次发布
+### 第 65 次发布
 
-发布时间：2023-02-13 02:01:52
+发布时间：2023-02-14 01:54:20
 
 本次发布包含了以下内容：
 
@@ -151,16 +127,14 @@
 
 修改接口：
 
-* [DescribeTenantCcns](http://document.tencentcloudapi.woa.com/document/product/215/71324)
+* [CheckNetDetectState](http://document.tencentcloudapi.woa.com/document/product/215/38700)
 
-	* 新增入参：Filters, Offset, Limit
+	* <font color="#dd0000">**修改入参**：</font>NextHopType, NextHopDestination
 
-	* 新增出参：CcnSet, TotalCount
+* [DescribeVpcIpv6Addresses](http://document.tencentcloudapi.woa.com/document/product/215/34465)
 
+	* 新增入参：SubnetId
 
-新增数据结构：
-
-* [CcnInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnInstanceInfo)
 
 
 
@@ -6205,6 +6179,23 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 42 次发布
+
+发布时间：2023-02-14 01:08:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77064)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77063)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* UpgradeCDBProxy
 
 ### 第 41 次发布
 
@@ -19415,6 +19406,21 @@
 
 ## DNSPod(dnspod) 版本：2021-03-23
 
+### 第 16 次发布
+
+发布时间：2023-02-14 01:22:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RecordListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordListItem)
+
+	* 新增成员：DefaultNS
+
+
 ### 第 15 次发布
 
 发布时间：2022-11-25 06:25:15
@@ -21137,6 +21143,21 @@
 
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 20 次发布
+
+发布时间：2023-02-14 01:25:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClusterInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ClusterInstancesInfo)
+
+	* 新增成员：IsCvmReplace
+
 
 ### 第 19 次发布
 
@@ -40654,7 +40675,7 @@
 
 新增数据结构：
 
-* [[CVEWhitelistItem](http://document.tencentcloudapi.woa.com/document/product/1141/41603#CVEWhitelistItem)](http://document.tencentcloudapi.woa.com/document/product/1141/41603#[CVEWhitelistItem](http://document.tencentcloudapi.woa.com/document/product/1141/41603#CVEWhitelistItem))
+* [CVEWhitelistItem](http://document.tencentcloudapi.woa.com/document/product/1141/41603#CVEWhitelistItem)
 
 修改数据结构：
 
@@ -43328,6 +43349,21 @@
 
 
 ## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 16 次发布
+
+发布时间：2023-02-14 01:48:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#EngineVersion)
+
+	* 新增成员：IsSupportIntEightQuantization
+
 
 ### 第 15 次发布
 
@@ -46480,6 +46516,35 @@
 
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 30 次发布
+
+发布时间：2023-02-14 01:51:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ImageRepository](http://document.tencentcloudapi.woa.com/document/product/649/36099#ImageRepository)
+
+	* 新增成员：Public
+
+* [KafkaDeliveryConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#KafkaDeliveryConfig)
+
+	* 新增成员：KafkaAddress
+
+* [ScalableRule](http://document.tencentcloudapi.woa.com/document/product/649/36099#ScalableRule)
+
+	* 新增成员：DisableMetricAS, EnableCronAS
+
+	* <font color="#dd0000">**修改成员**：</font>RuleId, Name, ExpandVmCountLimit, ShrinkVmCountLimit, GroupCount, Desc, Description
+
+* [UnitNamespace](http://document.tencentcloudapi.woa.com/document/product/649/36099#UnitNamespace)
+
+	* 新增成员：GatewayInstanceId, CreatedTime, UpdatedTime
+
 
 ### 第 29 次发布
 
@@ -49645,6 +49710,25 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 65 次发布
+
+发布时间：2023-02-14 01:54:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CheckNetDetectState](http://document.tencentcloudapi.woa.com/document/product/215/38700)
+
+	* <font color="#dd0000">**修改入参**：</font>NextHopType, NextHopDestination
+
+* [DescribeVpcIpv6Addresses](http://document.tencentcloudapi.woa.com/document/product/215/34465)
+
+	* 新增入参：SubnetId
+
+
 ### 第 64 次发布
 
 发布时间：2023-02-13 02:01:52
@@ -49664,7 +49748,7 @@
 
 新增数据结构：
 
-* [[CcnInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnInstanceInfo)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[CcnInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnInstanceInfo))
+* [CcnInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnInstanceInfo)
 
 ### 第 63 次发布
 
