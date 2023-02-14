@@ -1189,74 +1189,84 @@
       "document": "运营活动资源包信息",
       "members": [
         {
-          "default": "",
           "document": "资源包ID",
           "example": "1001",
           "member": "uint64",
           "name": "BonusId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "用户ID",
           "example": "90968674",
           "member": "string",
           "name": "UserId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "资源包配置ID",
           "example": "device-bonus-1y10w",
           "member": "string",
           "name": "PackageId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "资源总数",
           "example": "100000",
           "member": "uint64",
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "资源消耗总数",
           "example": "200",
           "member": "uint64",
           "name": "Used",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "资源包过期时间",
           "example": "1634698286",
           "member": "int64",
           "name": "ExpireTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "资源包创建时间",
           "example": "1634695286",
           "member": "int64",
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "资源包状态 0.未使用 1.使用中 2.已退款 3.已过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

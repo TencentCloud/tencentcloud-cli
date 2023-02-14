@@ -170,9 +170,9 @@
     ],
     "DescribeBillingSpecsPrice": [
       {
-        "document": "",
+        "document": "查询计费项价格",
         "input": "https://tione.tencentcloudapi.com/?Action=DescribeBillingSpecsPrice\n&SpecsParam.0.SpecName=TI.S.MEDIUM.POST\n&SpecsParam.0.SpecCount=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SpecsPrice\": [\n            {\n                \"SpecName\": \"TI.S.MEDIUM.POST\",\n                \"TotalCost\": 70,\n                \"RealTotalCost\": 70\n            }\n        ],\n        \"RequestId\": \"b7d048fe-e335-8b6e-a8d2-d68esk\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SpecsPrice\": [\n            {\n                \"SpecName\": \"TI.S.MEDIUM.POST\",\n                \"SpecCount\": 1,\n                \"TotalCost\": 70,\n                \"RealTotalCost\": 70\n            }\n        ],\n        \"RequestId\": \"b7d048fe-e335-8b6e-a8d2-d68esk\"\n    }\n}",
         "title": "查询计费项价格 示例"
       }
     ],

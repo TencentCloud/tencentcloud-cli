@@ -42,10 +42,10 @@
     ],
     "CreateEipAcl": [
       {
-        "document": "",
+        "document": "创建黑石弹性公网 EIP ACL",
         "input": "https://bmeip.tencentcloudapi.com/?Action=CreateEipAcl\n&AclName=acltest\n&Status=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AclId\": \"bmeipacl-s1hf4voq\",\n        \"Status\": 0,\n        \"AclName\": \"acltest\",\n        \"CreatedAt\": \"2018-10-26 14:42:09\",\n        \"RequestId\": \"471aa00a-04c7-43e2-afb0-33ddb2702ca2\"\n    }\n}",
-        "title": "创建黑石弹性公网 EIPACL"
+        "title": "创建黑石弹性公网 EIP ACL"
       }
     ],
     "DeleteEip": [

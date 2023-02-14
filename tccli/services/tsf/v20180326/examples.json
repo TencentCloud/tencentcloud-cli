@@ -1334,9 +1334,9 @@
     ],
     "ModifyNamespace": [
       {
-        "document": "",
+        "document": "修改命名空间示例",
         "input": "https://tsf.tencentcloudapi.com/?Action=ModifyNamespace\n&NamespaceId=namespace-by8nrgyk\n&NamespaceDesc=desc\n&<公共请求参数>",
-        "output": "{}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改命名空间示例"
       }
     ],

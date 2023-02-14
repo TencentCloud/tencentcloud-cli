@@ -1,10 +1,33 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 42 次发布
+### 第 45 次发布
 
-发布时间：2023-02-14 01:08:27
+发布时间：2023-02-15 01:21:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WarningInfoObj](http://document.tencentcloudapi.woa.com/document/product/296/19867#WarningInfoObj)
+
+	* 新增成员：HostRange, Count
+
+* [WarningObject](http://document.tencentcloudapi.woa.com/document/product/296/19867#WarningObject)
+
+	* 新增成员：HostRange
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 31 次发布
+
+发布时间：2023-02-15 01:23:19
 
 本次发布包含了以下内容：
 
@@ -12,20 +35,52 @@
 
 新增接口：
 
-* [DescribeBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77064)
-* [ModifyBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77063)
+* [DescribeZones](http://document.tencentcloudapi.woa.com/document/product/1003/77065)
 
-<font color="#dd0000">**预下线接口**：</font>
+新增数据结构：
 
-* UpgradeCDBProxy
+* [Module](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Module)
+* [SaleRegion](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SaleRegion)
+* [SaleZone](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SaleZone)
 
 
 
 ## DNSPod(dnspod) 版本：2021-03-23
 
-### 第 16 次发布
+### 第 17 次发布
 
-发布时间：2023-02-14 01:22:06
+发布时间：2023-02-15 01:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteDomainBatch](http://document.tencentcloudapi.woa.com/document/product/1427/77067)
+* [DescribeDomainPreview](http://document.tencentcloudapi.woa.com/document/product/1427/77071)
+* [DescribeDomainWhois](http://document.tencentcloudapi.woa.com/document/product/1427/77070)
+* [DescribePackageDetail](http://document.tencentcloudapi.woa.com/document/product/1427/77069)
+* [DescribeRecordExistExceptDefaultNS](http://document.tencentcloudapi.woa.com/document/product/1427/77066)
+* [DescribeVASStatistic](http://document.tencentcloudapi.woa.com/document/product/1427/77068)
+
+新增数据结构：
+
+* [DeleteDomainBatchDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DeleteDomainBatchDetail)
+* [PackageDetailItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#PackageDetailItem)
+* [PreviewDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#PreviewDetail)
+* [VASStatisticItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#VASStatisticItem)
+* [WhoisContact](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisContact)
+* [WhoisContactAddress](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisContactAddress)
+* [WhoisInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisInfo)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 7 次发布
+
+发布时间：2023-02-15 01:34:48
 
 本次发布包含了以下内容：
 
@@ -33,37 +88,26 @@
 
 修改数据结构：
 
-* [RecordListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordListItem)
+* [BonusInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#BonusInfo)
 
-	* 新增成员：DefaultNS
-
-
+	* 新增成员：Status
 
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
 
-### 第 20 次发布
 
-发布时间：2023-02-14 01:25:12
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
 
-本次发布包含了以下内容：
 
-改善已有的文档。
 
-修改数据结构：
-
-* [ClusterInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ClusterInstancesInfo)
-
-	* 新增成员：IsCvmReplace
-
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
 
 
 
 ## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
 
-### 第 16 次发布
+### 第 17 次发布
 
-发布时间：2023-02-14 01:48:09
+发布时间：2023-02-15 01:53:48
 
 本次发布包含了以下内容：
 
@@ -71,9 +115,17 @@
 
 修改数据结构：
 
-* [EngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#EngineVersion)
+* [DatasetGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#DatasetGroup)
 
-	* 新增成员：IsSupportIntEightQuantization
+	* 新增成员：OcrScene, AnnotationKeyStatus, ContentType
+
+* [DatasetInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#DatasetInfo)
+
+	* 新增成员：OcrScene, AnnotationKeyStatus
+
+* [SpecPrice](http://document.tencentcloudapi.woa.com/document/product/851/74915#SpecPrice)
+
+	* 新增成员：SpecCount
 
 
 
@@ -84,42 +136,9 @@
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
 
-### 第 30 次发布
+### 第 31 次发布
 
-发布时间：2023-02-14 01:51:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ImageRepository](http://document.tencentcloudapi.woa.com/document/product/649/36099#ImageRepository)
-
-	* 新增成员：Public
-
-* [KafkaDeliveryConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#KafkaDeliveryConfig)
-
-	* 新增成员：KafkaAddress
-
-* [ScalableRule](http://document.tencentcloudapi.woa.com/document/product/649/36099#ScalableRule)
-
-	* 新增成员：DisableMetricAS, EnableCronAS
-
-	* <font color="#dd0000">**修改成员**：</font>RuleId, Name, ExpandVmCountLimit, ShrinkVmCountLimit, GroupCount, Desc, Description
-
-* [UnitNamespace](http://document.tencentcloudapi.woa.com/document/product/649/36099#UnitNamespace)
-
-	* 新增成员：GatewayInstanceId, CreatedTime, UpdatedTime
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 65 次发布
-
-发布时间：2023-02-14 01:54:20
+发布时间：2023-02-15 01:57:11
 
 本次发布包含了以下内容：
 
@@ -127,13 +146,16 @@
 
 修改接口：
 
-* [CheckNetDetectState](http://document.tencentcloudapi.woa.com/document/product/215/38700)
+* [ModifyNamespace](http://document.tencentcloudapi.woa.com/document/product/649/76971)
 
-	* <font color="#dd0000">**修改入参**：</font>NextHopType, NextHopDestination
+	* 新增出参：Result
 
-* [DescribeVpcIpv6Addresses](http://document.tencentcloudapi.woa.com/document/product/215/34465)
 
-	* 新增入参：SubnetId
+修改数据结构：
+
+* [VmGroupOther](http://document.tencentcloudapi.woa.com/document/product/649/36099#VmGroupOther)
+
+	* 新增成员：HealthCheckSettings
 
 
 
@@ -6190,8 +6212,8 @@
 
 新增接口：
 
-* [[DescribeBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77064)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77063)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77064)
+* [ModifyBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77063)
 
 <font color="#dd0000">**预下线接口**：</font>
 
@@ -14926,6 +14948,25 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 45 次发布
+
+发布时间：2023-02-15 01:21:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WarningInfoObj](http://document.tencentcloudapi.woa.com/document/product/296/19867#WarningInfoObj)
+
+	* 新增成员：HostRange, Count
+
+* [WarningObject](http://document.tencentcloudapi.woa.com/document/product/296/19867#WarningObject)
+
+	* 新增成员：HostRange
+
+
 ### 第 44 次发布
 
 发布时间：2023-02-13 01:24:00
@@ -16450,6 +16491,24 @@
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 31 次发布
+
+发布时间：2023-02-15 01:23:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeZones](http://document.tencentcloudapi.woa.com/document/product/1003/77065)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[Module](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Module)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[Module](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Module))
+* [[SaleRegion](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SaleRegion)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[SaleRegion](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SaleRegion))
+* [[SaleZone](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SaleZone)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[SaleZone](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SaleZone))
 
 ### 第 30 次发布
 
@@ -19405,6 +19464,33 @@
 
 
 ## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 17 次发布
+
+发布时间：2023-02-15 01:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeleteDomainBatch](http://document.tencentcloudapi.woa.com/document/product/1427/77067)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDomainPreview](http://document.tencentcloudapi.woa.com/document/product/1427/77071)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDomainWhois](http://document.tencentcloudapi.woa.com/document/product/1427/77070)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribePackageDetail](http://document.tencentcloudapi.woa.com/document/product/1427/77069)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRecordExistExceptDefaultNS](http://document.tencentcloudapi.woa.com/document/product/1427/77066)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeVASStatistic](http://document.tencentcloudapi.woa.com/document/product/1427/77068)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DeleteDomainBatchDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DeleteDomainBatchDetail)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[DeleteDomainBatchDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DeleteDomainBatchDetail))
+* [[PackageDetailItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#PackageDetailItem)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[PackageDetailItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#PackageDetailItem))
+* [[PreviewDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#PreviewDetail)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[PreviewDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#PreviewDetail))
+* [[VASStatisticItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#VASStatisticItem)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[VASStatisticItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#VASStatisticItem))
+* [[WhoisContact](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisContact)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[WhoisContact](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisContact))
+* [[WhoisContactAddress](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisContactAddress)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[WhoisContactAddress](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisContactAddress))
+* [[WhoisInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisInfo)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[WhoisInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisInfo))
 
 ### 第 16 次发布
 
@@ -26763,6 +26849,21 @@
 
 
 ## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 7 次发布
+
+发布时间：2023-02-15 01:34:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BonusInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#BonusInfo)
+
+	* 新增成员：Status
+
 
 ### 第 6 次发布
 
@@ -43350,6 +43451,29 @@
 
 ## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
 
+### 第 17 次发布
+
+发布时间：2023-02-15 01:53:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatasetGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#DatasetGroup)
+
+	* 新增成员：OcrScene, AnnotationKeyStatus, ContentType
+
+* [DatasetInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#DatasetInfo)
+
+	* 新增成员：OcrScene, AnnotationKeyStatus
+
+* [SpecPrice](http://document.tencentcloudapi.woa.com/document/product/851/74915#SpecPrice)
+
+	* 新增成员：SpecCount
+
+
 ### 第 16 次发布
 
 发布时间：2023-02-14 01:48:09
@@ -46516,6 +46640,28 @@
 
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 31 次发布
+
+发布时间：2023-02-15 01:57:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyNamespace](http://document.tencentcloudapi.woa.com/document/product/649/76971)
+
+	* 新增出参：Result
+
+
+修改数据结构：
+
+* [VmGroupOther](http://document.tencentcloudapi.woa.com/document/product/649/36099#VmGroupOther)
+
+	* 新增成员：HealthCheckSettings
+
 
 ### 第 30 次发布
 

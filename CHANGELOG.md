@@ -1,3 +1,165 @@
+# Release 3.0.704.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 45 次发布
+
+发布时间：2023-02-15 01:21:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WarningInfoObj](http://document.tencentcloudapi.woa.com/document/product/296/19867#WarningInfoObj)
+
+	* 新增成员：HostRange, Count
+
+* [WarningObject](http://document.tencentcloudapi.woa.com/document/product/296/19867#WarningObject)
+
+	* 新增成员：HostRange
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 31 次发布
+
+发布时间：2023-02-15 01:23:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeZones](http://document.tencentcloudapi.woa.com/document/product/1003/77065)
+
+新增数据结构：
+
+* [Module](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Module)
+* [SaleRegion](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SaleRegion)
+* [SaleZone](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SaleZone)
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 17 次发布
+
+发布时间：2023-02-15 01:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteDomainBatch](http://document.tencentcloudapi.woa.com/document/product/1427/77067)
+* [DescribeDomainPreview](http://document.tencentcloudapi.woa.com/document/product/1427/77071)
+* [DescribeDomainWhois](http://document.tencentcloudapi.woa.com/document/product/1427/77070)
+* [DescribePackageDetail](http://document.tencentcloudapi.woa.com/document/product/1427/77069)
+* [DescribeRecordExistExceptDefaultNS](http://document.tencentcloudapi.woa.com/document/product/1427/77066)
+* [DescribeVASStatistic](http://document.tencentcloudapi.woa.com/document/product/1427/77068)
+
+新增数据结构：
+
+* [DeleteDomainBatchDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DeleteDomainBatchDetail)
+* [PackageDetailItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#PackageDetailItem)
+* [PreviewDetail](http://document.tencentcloudapi.woa.com/document/product/1427/56185#PreviewDetail)
+* [VASStatisticItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#VASStatisticItem)
+* [WhoisContact](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisContact)
+* [WhoisContactAddress](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisContactAddress)
+* [WhoisInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisInfo)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 7 次发布
+
+发布时间：2023-02-15 01:34:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BonusInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#BonusInfo)
+
+	* 新增成员：Status
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 17 次发布
+
+发布时间：2023-02-15 01:53:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatasetGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#DatasetGroup)
+
+	* 新增成员：OcrScene, AnnotationKeyStatus, ContentType
+
+* [DatasetInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#DatasetInfo)
+
+	* 新增成员：OcrScene, AnnotationKeyStatus
+
+* [SpecPrice](http://document.tencentcloudapi.woa.com/document/product/851/74915#SpecPrice)
+
+	* 新增成员：SpecCount
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 31 次发布
+
+发布时间：2023-02-15 01:57:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyNamespace](http://document.tencentcloudapi.woa.com/document/product/649/76971)
+
+	* 新增出参：Result
+
+
+修改数据结构：
+
+* [VmGroupOther](http://document.tencentcloudapi.woa.com/document/product/649/36099#VmGroupOther)
+
+	* 新增成员：HealthCheckSettings
+
+
+
+
 # Release 3.0.703.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

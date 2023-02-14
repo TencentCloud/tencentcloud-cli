@@ -4220,7 +4220,6 @@
       "document": "DescribeSlowLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例Id。",
           "example": "crs-asdasdas",
           "member": "string",
@@ -4230,7 +4229,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开始时间。",
           "example": "2019-09-08 12:12:41",
           "member": "string",
@@ -4240,7 +4238,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "结束时间。",
           "example": "2019-09-09 12:12:41",
           "member": "string",
@@ -4250,8 +4247,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "慢查询平均执行时间阈值（单位：微秒）。",
+          "document": "慢查询平均执行时间阈值（单位：毫秒）。",
           "example": "100",
           "member": "int64",
           "name": "MinQueryTime",
@@ -4260,7 +4256,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "每个页面展示的慢查询条数，默认值为20。",
           "example": "20",
           "member": "int64",
@@ -4270,7 +4265,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "慢查询条数的偏移量，取Limit整数倍。",
           "example": "0",
           "member": "int64",
@@ -4280,7 +4274,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>",
           "example": "master",
           "member": "string",
@@ -4300,7 +4293,6 @@
           "example": "30",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4310,7 +4302,6 @@
           "example": "无",
           "member": "InstanceSlowlogDetail",
           "name": "InstanceSlowlogDetail",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1

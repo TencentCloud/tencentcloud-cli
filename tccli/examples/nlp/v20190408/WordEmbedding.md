@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli nlp WordEmbedding --cli-unfold-argument  \
-    --Text "自然语言处理"
+    --Text 自然语言处理
 ```
 
 Output: 

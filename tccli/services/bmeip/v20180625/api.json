@@ -22,9 +22,9 @@
       "status": "online"
     },
     "BindVpcIp": {
-      "document": "黑石EIP绑定VPCIP",
+      "document": "黑石EIP绑定VPC IP",
       "input": "BindVpcIpRequest",
-      "name": "黑石EIP绑定VPCIP",
+      "name": "黑石EIP绑定VPC IP",
       "output": "BindVpcIpResponse",
       "status": "online"
     },
@@ -36,9 +36,9 @@
       "status": "online"
     },
     "CreateEipAcl": {
-      "document": "创建黑石弹性公网 EIPACL",
+      "document": "创建黑石弹性公网 EIP ACL",
       "input": "CreateEipAclRequest",
-      "name": "创建黑石弹性公网 EIPACL",
+      "name": "创建黑石弹性公网 EIP ACL",
       "output": "CreateEipAclResponse",
       "status": "online"
     },
@@ -136,7 +136,7 @@
     "UnbindVpcIp": {
       "document": "黑石EIP解绑VPCIP",
       "input": "UnbindVpcIpRequest",
-      "name": "黑石EIP解绑VPCIP",
+      "name": "黑石EIP解绑VPC IP",
       "output": "UnbindVpcIpResponse",
       "status": "online"
     }
@@ -265,28 +265,31 @@
       "document": "BindVpcIp请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Eip实例ID",
+          "example": "eip-t6j1t2x1",
           "member": "string",
           "name": "EipId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "EIP归属VpcId，例如vpc-k7j1t2x1",
+          "example": "vpc-k7j1t2x1",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "绑定的VPC内IP地址",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "VpcIp",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -296,10 +299,12 @@
       "members": [
         {
           "document": "EIP绑定VPC网络IP异步任务ID，可以通过查询EIP任务状态查询任务状态",
+          "example": "10000",
           "member": "int64",
           "name": "TaskId",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -314,22 +319,22 @@
       "document": "CreateEipAcl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "ACL 名称",
           "example": "acltest",
           "member": "string",
           "name": "AclName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "ACL 状态 0：无状态，1：有状态",
           "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -342,36 +347,36 @@
           "example": "bmeipacl-s1hf4voq",
           "member": "string",
           "name": "AclId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "ACL 实例状态",
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "ACL 实例名称",
           "example": "acltest",
           "member": "string",
           "name": "AclName",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "ACL 实例创建时间",
           "example": "2018-10-26 14:42:09",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1636,31 +1641,31 @@
       "document": "UnbindVpcIp请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Eip实例ID",
           "example": "eip-fz3yvdzi",
           "member": "string",
           "name": "EipId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "EIP归属VpcId，例如vpc-k7j1t2x1",
           "example": "vpc-bjh0qd20",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "绑定的VPC内IP地址",
           "example": "10.1.0.11",
           "member": "string",
           "name": "VpcIp",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1673,9 +1678,9 @@
           "example": "2488352",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
