@@ -1,12 +1,11 @@
 **Example 1: 删除协议端口模板集合**
 
-
+删除协议端口模板集合
 
 Input: 
 
 ```
 tccli vpc DeleteServiceTemplateGroup --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --ServiceTemplateGroupId ppmg-ei8hfd9a
 ```
 

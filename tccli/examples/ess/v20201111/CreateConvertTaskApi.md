@@ -8,6 +8,7 @@ Input:
 tccli ess CreateConvertTaskApi --cli-unfold-argument  \
     --ResourceType doc \
     --ResourceId y***********************************l \
+    --Agent.AppId  \
     --Organization.OrganizationOpenId  \
     --Organization.OrganizationId  \
     --Organization.ClientIp  \

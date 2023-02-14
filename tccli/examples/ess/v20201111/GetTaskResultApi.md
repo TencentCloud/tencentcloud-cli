@@ -16,6 +16,7 @@ tccli ess GetTaskResultApi --cli-unfold-argument  \
     --Organization.ClientIp  \
     --Organization.ProxyIp  \
     --Organization.Channel  \
+    --Agent.AppId  \
     --TaskId 20220726183047992850
 ```
 

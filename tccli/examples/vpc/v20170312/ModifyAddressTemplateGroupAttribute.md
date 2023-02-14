@@ -1,12 +1,11 @@
 **Example 1: 修改IP地址模板集合**
 
-
+修改IP地址模板集合
 
 Input: 
 
 ```
 tccli vpc ModifyAddressTemplateGroupAttribute --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --AddressTemplateGroupId ipmg-2uw6ujo6 \
     --AddressTemplateGroupName TestName
 ```

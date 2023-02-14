@@ -27,7 +27,7 @@
     "CreateConvertTaskApi": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConvertTaskApi\n<公共请求参数>\n\n{\n    \"ResourceType\": \"doc\",\n    \"ResourceId\": \"y***********************************l\",\n    \"Agent\": {},\n    \"Organization\": {\n        \"OrganizationOpenId\": \"\",\n        \"OrganizationId\": \"\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"y***********************************p\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\"\n    },\n    \"ResourceName\": \"hello.docx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConvertTaskApi\n<公共请求参数>\n\n{\n    \"ResourceType\": \"doc\",\n    \"ResourceId\": \"y***********************************l\",\n    \"Agent\": {\n        \"AppId\": \"\"\n    },\n    \"Organization\": {\n        \"OrganizationOpenId\": \"\",\n        \"OrganizationId\": \"\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"y***********************************p\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\"\n    },\n    \"ResourceName\": \"hello.docx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2eae803-fe6e-4b1c-8901-c61cfaf19a21\",\n        \"TaskId\": \"20220726175923011294\"\n    }\n}",
         "title": "调用示例"
       },
@@ -49,7 +49,7 @@
     "CreateFlow": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlow\n<公共请求参数>\n\n{\n    \"RelatedFlowId\": \"xxx\",\n    \"UserData\": \"字符串\",\n    \"FlowName\": \"字符串\",\n    \"FlowDescription\": \"字符串\",\n    \"Agent\": {},\n    \"FlowType\": \"字符串\",\n    \"Approvers\": [\n        {\n            \"OrganizationName\": \"字符串\",\n            \"ApproverType\": \"1\",\n            \"IsFullText\": \"false\",\n            \"VerifyChannel\": [\n                \"WEIXIN\"\n            ],\n            \"Required\": \"true\",\n            \"UserId\": \"\",\n            \"RecipientId\": \"\",\n            \"NotifyType\": \"SMS\",\n            \"ApproverMobile\": \"135****6345\",\n            \"ApproverName\": \"史国富\",\n            \"PreReadTime\": \"5\"\n        }\n    ],\n    \"DeadLine\": \"1652931170\",\n    \"ClientToken\": \"字符串\",\n    \"Operator\": {\n        \"ProxyIp\": \"字符串\",\n        \"ClientIp\": \"字符串\",\n        \"UserId\": \"yDxMkUy*****E8VI2JmKxPkk\",\n        \"Channel\": \"YUFU\",\n        \"OpenId\": \"us-6c4f2****bafe176c2b1cb86a\"\n    },\n    \"Unordered\": \"true\",\n    \"CallbackUrl\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlow\n<公共请求参数>\n\n{\n    \"RelatedFlowId\": \"xxx\",\n    \"UserData\": \"字符串\",\n    \"FlowName\": \"字符串\",\n    \"FlowDescription\": \"字符串\",\n    \"Agent\": {\n        \"AppId\": \"9d2b7f3*****56dcadf3b553\"\n    },\n    \"FlowType\": \"字符串\",\n    \"Approvers\": [\n        {\n            \"OrganizationName\": \"字符串\",\n            \"ApproverType\": \"1\",\n            \"IsFullText\": \"false\",\n            \"VerifyChannel\": [\n                \"WEIXIN\"\n            ],\n            \"Required\": \"true\",\n            \"UserId\": \"\",\n            \"RecipientId\": \"\",\n            \"NotifyType\": \"SMS\",\n            \"ApproverMobile\": \"135****6345\",\n            \"ApproverName\": \"史国富\",\n            \"PreReadTime\": \"5\"\n        }\n    ],\n    \"DeadLine\": \"1652931170\",\n    \"ClientToken\": \"字符串\",\n    \"Operator\": {\n        \"ProxyIp\": \"字符串\",\n        \"ClientIp\": \"字符串\",\n        \"UserId\": \"yDxMkUy*****E8VI2JmKxPkk\",\n        \"Channel\": \"YUFU\",\n        \"OpenId\": \"us-6c4f2****bafe176c2b1cb86a\"\n    },\n    \"Unordered\": \"true\",\n    \"CallbackUrl\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDR8YUUg****O4zjEuwxLMnR24\",\n        \"RequestId\": \"2846e98d-53bd-4d1f-807f-d2632a7fceef\"\n    }\n}",
         "title": "测试"
       },
@@ -172,22 +172,22 @@
     ],
     "DescribeFileUrls": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxM6UyK********QDV8dJUuO4zjEu\"\n    },\n    \"FileType\": \"PDF\",\n    \"BusinessType\": \"DOCUMENT\",\n    \"FileName\": \"合同\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"BusinessIds\": [\n        \"11114444\",\n        \"11114444555\",\n        \"12315215515\",\n        \"12415251512\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FileUrls\": [\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/xxxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxx.PDF?key=abc\",\n                \"Option\": \"\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"XXXX\"\n    }\n}",
-        "title": "获取下载文件链接"
-      },
-      {
-        "document": "",
+        "document": "下载文件压缩包",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"f2d8********f56b7\"\n    },\n    \"FileType\": \"ZIP\",\n    \"BusinessType\": \"DOCUMENT\",\n    \"FileName\": \"合同\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"BusinessIds\": [\n        \"e1a5****dfabfdbec6\",\n        \"670d****590d4dcd\",\n        \"dc3df****07f8323\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FileUrls\": [\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/files/DOCUMENT/xxxx.ZIP?key=key********1234\",\n                \"Option\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"XXXX\"\n    }\n}",
         "title": "获取下载文件链接 --- 压缩多文件"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRtRUUgygqa2mtyUuO4zjEyckqC592v\"\n    },\n    \"BusinessType\": \"FLOW\",\n    \"BusinessIds\": [\n        \"yDR0dUUgygqih0oeUuO4zjEvWe1SbE7r\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FileUrls\": [\n            {\n                \"Option\": \"[\\\"595.00,841.00\\\",\\\"-1\\\"]\",\n                \"Url\": \"https://file.test.ess.tencent.cn/file/FLOW/yDR0dUUgygqih0oeUuO4zjEvWe1SbE7r/0/0.PDF?hkey=c80b3f135787e86cbd1841a17211ca7f86c7cf8e40059df26bb6b554ffa8b93d603ac6e1ff343bd1addcf442cc41c5f7a4588fe828bb561819896ab91e04f0780907adeb70e3005cc2e466afd14599c6f04521e619fb6fa0ad002ad82345c777\"\n            }\n        ],\n        \"RequestId\": \"1e1da501-8c68-4ce4-a982-5d570ab151c9\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "a"
+        "document": "下载单个合同文件",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRtRUUgxxxxxx4zjEyckqC592v\"\n    },\n    \"BusinessType\": \"FLOW\",\n    \"BusinessIds\": [\n        \"yDR0dUUgxxxxxxjEvWe1SbE7r\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FileUrls\": [\n            {\n                \"Option\": \"[\\\"595.00,841.00\\\",\\\"-1\\\"]\",\n                \"Url\": \"https://file.test.ess.tencent.cn/file/FLOW/yDR0dUxxxxxxxxWe1SbE7r/0/0.PDF?hkey=c80b3f1357821exxxxxxxxxxx2ad82345c777\"\n            }\n        ],\n        \"RequestId\": \"1e1da50xxxxxx5d570ab151c9\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取下载文件链接 --- 单个文件"
+      },
+      {
+        "document": "下载多个合同文件",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxM6UyK********QDV8dJUuO4zjEu\"\n    },\n    \"FileType\": \"PDF\",\n    \"BusinessType\": \"DOCUMENT\",\n    \"FileName\": \"合同\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"BusinessIds\": [\n        \"11114444\",\n        \"11114444555\",\n        \"12315215515\",\n        \"12415251512\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FileUrls\": [\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/xxxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxx.PDF?key=abc\",\n                \"Option\": \"\"\n            },\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/file/DOCUMENT/xxx.PDF?key=abc\",\n                \"Option\": \"\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"XXXX\"\n    }\n}",
+        "title": "获取下载文件链接 --- 多个文件"
       }
     ],
     "DescribeFlowBriefs": [
@@ -271,7 +271,7 @@
     "GetTaskResultApi": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTaskResultApi\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"yDxoQUUgydjfn4yaUuO4zjEyd1h2hnnR\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\"\n    },\n    \"Organization\": {\n        \"OrganizationOpenId\": \"\",\n        \"OrganizationId\": \"682c1d5bdce884ad3df5ba5fabb6fcf1\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"Agent\": {},\n    \"TaskId\": \"20220726183047992850\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTaskResultApi\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"yDxoQUUgydjfn4yaUuO4zjEyd1h2hnnR\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\"\n    },\n    \"Organization\": {\n        \"OrganizationOpenId\": \"\",\n        \"OrganizationId\": \"682c1d5bdce884ad3df5ba5fabb6fcf1\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"Agent\": {\n        \"AppId\": \"\"\n    },\n    \"TaskId\": \"20220726183047992850\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2255ca9d-d831-4c9d-ab76-6192fc301053\",\n        \"ResourceId\": \"yDRtsUUgygq7jtzwUuO4zjEyx4jZM3A7\",\n        \"TaskId\": \"20220726183047992850\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8\n    }\n}",
         "title": "test示例"
       }

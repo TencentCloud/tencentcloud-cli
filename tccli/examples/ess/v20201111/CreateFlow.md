@@ -10,6 +10,7 @@ tccli ess CreateFlow --cli-unfold-argument  \
     --UserData 字符串 \
     --FlowName 字符串 \
     --FlowDescription 字符串 \
+    --Agent.AppId 9d2b7f3*****56dcadf3b553 \
     --FlowType 字符串 \
     --Approvers.0.OrganizationName 字符串 \
     --Approvers.0.ApproverType 1 \

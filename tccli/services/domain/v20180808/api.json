@@ -350,7 +350,6 @@
       "document": "CheckDomain请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "所查询域名名称",
           "example": "domain.com",
           "member": "string",
@@ -359,7 +358,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "年限。该参数为空时无法查询溢价词域名",
           "example": "1",
           "member": "string",
@@ -378,7 +376,6 @@
           "example": "domain.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -387,7 +384,6 @@
           "example": "1",
           "member": "bool",
           "name": "Available",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -396,7 +392,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "Reason",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -405,7 +400,6 @@
           "example": "false",
           "member": "bool",
           "name": "Premium",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -414,7 +408,6 @@
           "example": "35",
           "member": "uint64",
           "name": "Price",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -423,7 +416,6 @@
           "example": "false",
           "member": "bool",
           "name": "BlackWord",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -432,7 +424,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "Describe",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -441,7 +432,6 @@
           "example": "1",
           "member": "uint64",
           "name": "FeeRenew",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -450,7 +440,6 @@
           "example": "10",
           "member": "uint64",
           "name": "RealPrice",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -459,7 +448,6 @@
           "example": "0",
           "member": "uint64",
           "name": "FeeTransfer",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -468,7 +456,6 @@
           "example": "0",
           "member": "uint64",
           "name": "FeeRestore",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -477,7 +464,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Period",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -486,7 +472,6 @@
           "example": "true",
           "member": "bool",
           "name": "RecordSupport",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1121,7 +1106,6 @@
       "document": "DescribeDomainPriceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "查询价格的后缀列表。默认则为全部后缀",
           "example": "[\".com\"]",
           "member": "string",
@@ -1130,7 +1114,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "查询购买的年份，默认会列出所有年份的价格",
           "example": "1",
           "member": "int64",
@@ -1139,7 +1122,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入",
           "example": "new",
           "member": "string",
@@ -1158,7 +1140,6 @@
           "example": "无",
           "member": "PriceInfo",
           "name": "PriceList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

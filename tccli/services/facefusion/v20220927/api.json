@@ -325,27 +325,25 @@
       "document": "人脸信息",
       "members": [
         {
-          "default": "",
           "document": "人脸序号",
           "example": "string",
           "member": "string",
           "name": "FaceId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "人脸框信息",
           "example": "{}",
           "member": "FaceInfo",
           "name": "FaceInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "MergeInfo": {
       "document": "人脸图片和待被融合的素材模板图的人脸位置信息。",

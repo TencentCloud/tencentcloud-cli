@@ -245,6 +245,13 @@
       "output": "DescribeBackupDownloadRestrictionResponse",
       "status": "online"
     },
+    "DescribeBackupEncryptionStatus": {
+      "document": "本接口(DescribeBackupEncryptionStatus)用于查询实例默认备份加密状态。",
+      "input": "DescribeBackupEncryptionStatusRequest",
+      "name": "查询实例默认备份加密状态",
+      "output": "DescribeBackupEncryptionStatusResponse",
+      "status": "online"
+    },
     "DescribeBackupOverview": {
       "document": "本接口(DescribeBackupOverview)用于查询用户的备份概览。返回用户当前备份总个数、备份总的占用容量、赠送的免费容量、计费容量（容量单位为字节）。",
       "input": "DescribeBackupOverviewRequest",
@@ -672,6 +679,13 @@
       "output": "ModifyBackupDownloadRestrictionResponse",
       "status": "online"
     },
+    "ModifyBackupEncryptionStatus": {
+      "document": "本接口(ModifyBackupEncryptionStatus)用于设置实例备份文件是否加密。 ",
+      "input": "ModifyBackupEncryptionStatusRequest",
+      "name": "设置实例备份文件是否加密",
+      "output": "ModifyBackupEncryptionStatusResponse",
+      "status": "online"
+    },
     "ModifyCDBProxyConnectionPool": {
       "document": "请求该接口配置数据库连接池；支持的连接池配置请求DescribeProxyConnectionPoolConf接口获取。",
       "input": "ModifyCDBProxyConnectionPoolRequest",
@@ -918,11 +932,11 @@
       "status": "online"
     },
     "UpgradeCDBProxy": {
-      "document": "调整数据库代理配置",
+      "document": "接口已经废弃，请使用AdjustCdbProxy进行数据库代理的配置\n\n调整数据库代理配置",
       "input": "UpgradeCDBProxyRequest",
       "name": "升级数据库代理配置（接口已经废弃，请使用AdjustCdbProxy进行数据库代理的配置）",
       "output": "UpgradeCDBProxyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpgradeCDBProxyVersion": {
       "document": "升级数据库代理版本",
@@ -6005,6 +6019,42 @@
           "name": "LimitIp",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupEncryptionStatusRequest": {
+      "document": "DescribeBackupEncryptionStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-XXXX",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupEncryptionStatusResponse": {
+      "document": "DescribeBackupEncryptionStatus返回参数结构体",
+      "members": [
+        {
+          "document": "实例是否开启了物理备份加密。可能的值有 on, off 。",
+          "example": "on",
+          "member": "string",
+          "name": "EncryptionStatus",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -11857,6 +11907,42 @@
     },
     "ModifyBackupDownloadRestrictionResponse": {
       "document": "ModifyBackupDownloadRestriction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupEncryptionStatusRequest": {
+      "document": "ModifyBackupEncryptionStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-XXXX",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设置实例新增的自动物理备份文件默认加密状态。可选值为 on或者off。",
+          "example": "on",
+          "member": "string",
+          "name": "EncryptionStatus",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupEncryptionStatusResponse": {
+      "document": "ModifyBackupEncryptionStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

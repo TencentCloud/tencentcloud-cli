@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tke EnableVpcCniNetworkType --cli-unfold-argument  \
-    --ClusterId xx \
+    --ClusterId cls-abcdefgh \
     --EnableStaticIp False \
     --VpcCniType tke-route-eni \
-    --Subnets xxx yyy
+    --Subnets subnet-abcdefg1 subnet-abcdefg2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "defc0237-d413-4079-9faa-7f3ff928d224"
     }
 }
 ```

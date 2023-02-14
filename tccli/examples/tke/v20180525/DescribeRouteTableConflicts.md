@@ -7,7 +7,7 @@ Input:
 ```
 tccli tke DescribeRouteTableConflicts --cli-unfold-argument  \
     --RouteTableCidrBlock 10.4.0.0/16 \
-    --VpcId vpc-xxx
+    --VpcId vpc-abcdefgh
 ```
 
 Output: 
@@ -19,8 +19,8 @@ Output:
             {
                 "RouteTableType": "CcsCluster",
                 "RouteTableCidrBlock": "172.20.0.0/16",
-                "RouteTableName": "xxxx",
-                "RouteTableId": "xxxx"
+                "RouteTableName": "tke-test",
+                "RouteTableId": "cls-abcdefgh"
             }
         ],
         "RequestId": "74883e1b-5901-46de-ae1e-d6e2cf591c5b"

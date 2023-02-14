@@ -108,16 +108,22 @@
       {
         "document": "获取课堂房间信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"xx\",\n        \"Name\": \"xx\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"xx\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"xx\",\n        \"StartTime\": 1,\n        \"TeacherId\": \"xx\",\n        \"Assistants\": [\n            \"xx\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"xx\",\n        \"Name\": \"xx\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"xx\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"xx\",\n        \"StartTime\": 1,\n        \"TeacherId\": \"xx\",\n        \"Assistants\": [\n            \"xx\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0\n    }\n}",
         "title": "房间信息"
       }
     ],
     "DescribeRoomStatistics": [
       {
-        "document": "",
+        "document": "房间结束后获取房间相关的统计信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomStatistics\n<公共请求参数>\n\n{\n    \"RoomId\": 123,\n    \"Page\": 1,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"MemberNumber\": 1,\n        \"Total\": 1,\n        \"PeakMemberNumber\": 1,\n        \"RequestId\": \"xx\",\n        \"MemberRecords\": [\n            {\n                \"UserName\": \"xx\",\n                \"Mic\": 1,\n                \"UserId\": \"xx\",\n                \"Rewords\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"Camera\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"PresentTime\": 1,\n                \"Silence\": 1\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MemberNumber\": 1,\n        \"Total\": 1,\n        \"PeakMemberNumber\": 1,\n        \"RequestId\": \"xx\",\n        \"RealStartTime\": 1675677337,\n        \"RealEndTime\": 1675677337,\n        \"MemberRecords\": [\n            {\n                \"UserName\": \"xx\",\n                \"Mic\": 1,\n                \"UserId\": \"xx\",\n                \"Rewords\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"Camera\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"PresentTime\": 1,\n                \"Silence\": 1\n            }\n        ]\n    }\n}",
         "title": "获取房间统计信息"
+      },
+      {
+        "document": "获取房间统计信息",
+        "input": "{\n  \"RoomId\": 1,\n  \"Page\": 1,\n  \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"PeakMemberNumber\": 1,\n        \"MemberNumber\": 1,\n        \"Total\": 1,\n        \"MemberRecords\": [\n            {\n                \"UserId\": \"xx\",\n                \"UserName\": \"xx\",\n                \"PresentTime\": 1,\n                \"Camera\": 1,\n                \"Mic\": 1,\n                \"Silence\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"Rewords\": 1\n            }\n        ],\n        \"RealStartTime\": 1,\n        \"RealEndTime\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeSdkAppIdUsers": [

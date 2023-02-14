@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tke DisableVpcCniNetworkType --cli-unfold-argument  \
-    --ClusterId xx
+    --ClusterId cls-abcdefgh
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "defc0237-d413-4079-9faa-7f3ff928d224"
     }
 }
 ```

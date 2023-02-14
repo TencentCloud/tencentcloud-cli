@@ -264,8 +264,45 @@
       "usage": "out"
     },
     "Agent": {
-      "document": "应用相关信息",
-      "members": [],
+      "document": "主企业代子企业操作 或 渠道子客应用相关信息",
+      "members": [
+        {
+          "document": "应用编号,32位字符串",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主组织的应用号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyAppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "主组织在平台的机构编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "主组织的操作人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOperator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "in"
     },
     "ApproverInfo": {
@@ -2437,7 +2474,6 @@
       "document": "DescribeFileUrls请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "调用方用户信息，UserId 必填",
           "example": "无",
           "member": "UserInfo",
@@ -2446,7 +2482,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "文件对应的业务类型，目前支持：\n- 流程 \"FLOW\"，如需下载合同文件请选择此项\n- 模板 \"TEMPLATE\"\n- 文档 \"DOCUMENT\"\n- 印章  “SEAL”",
           "example": "DOCUMENT",
           "member": "string",
@@ -2455,7 +2490,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId\n最大支持20个资源",
           "example": "[\"11114444\",\"11114444555\",\"12315215515\",\"12415251512\"]",
           "member": "string",
@@ -2464,7 +2498,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "下载后的文件命名，只有FileType为zip的时候生效",
           "example": "西安合同",
           "member": "string",
@@ -2473,7 +2506,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件类型，\"JPG\", \"PDF\",\"ZIP\"等",
           "example": "PDF",
           "member": "string",
@@ -2482,7 +2514,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定资源起始偏移量，默认0",
           "example": "0",
           "member": "int64",
@@ -2491,7 +2522,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "指定资源数量，查询全部资源则传入-1",
           "example": "0",
           "member": "int64",
@@ -2500,7 +2530,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)",
           "example": "0",
           "member": "int64",
@@ -2509,7 +2538,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "暂不开放",
           "example": "无",
           "member": "string",
@@ -2518,7 +2546,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "暂不开放",
           "example": "无",
           "member": "string",
@@ -2527,7 +2554,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "应用相关信息",
           "example": "无",
           "member": "Agent",
@@ -2546,7 +2572,6 @@
           "example": "无",
           "member": "FileUrl",
           "name": "FileUrls",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2555,7 +2580,6 @@
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3140,6 +3164,14 @@
           "name": "SealTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "主企业代子企业操作 或 渠道子客应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

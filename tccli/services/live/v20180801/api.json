@@ -764,7 +764,7 @@
       "status": "online"
     },
     "ForbidLiveStream": {
-      "document": "禁止某条流的推送，可以预设某个时刻将流恢复。",
+      "document": "禁止某条流的推送，可以预设某个时刻将流恢复。\n注意：\n1. 默认只要流名称正确，禁推就会生效。\n2. 如需要推流域名+推流路径+流名称 强匹配生效禁推，需提单联系售后开启配置。\n3. 如果配置了域名分组，需填写准确推流域名，才可断掉当前推流。",
       "input": "ForbidLiveStreamRequest",
       "name": "禁推直播流",
       "output": "ForbidLiveStreamResponse",
@@ -9550,7 +9550,6 @@
       "document": "ForbidLiveStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
           "example": "live",
           "member": "string",
@@ -9559,7 +9558,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "您的推流域名。",
           "example": "5000.livepush.myqcloud.com",
           "member": "string",
@@ -9568,7 +9566,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "流名称。",
           "example": "stream1",
           "member": "string",
@@ -9577,7 +9574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 默认禁推7天，且最长支持禁推90天。\n2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2018-11-24T12:00:00Z",
           "member": "string",
@@ -9586,7 +9582,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "禁推原因。\n注明：请务必填写禁推原因，防止误操作。\n长度限制：2048字节。",
           "example": "forbid reason",
           "member": "string",

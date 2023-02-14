@@ -5818,7 +5818,6 @@
       "document": "记录列表元素",
       "members": [
         {
-          "default": "",
           "document": "记录Id",
           "example": "1",
           "member": "uint64",
@@ -5828,7 +5827,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录值",
           "example": "1.1.1.1",
           "member": "string",
@@ -5838,7 +5836,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录状态，启用：ENABLE，暂停：DISABLE",
           "example": "ENABLE",
           "member": "string",
@@ -5848,7 +5845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "更新时间",
           "example": "2021-03-28 11:27:09",
           "member": "datetime",
@@ -5858,7 +5854,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名",
           "example": "www",
           "member": "string",
@@ -5868,7 +5863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录线路",
           "example": "默认",
           "member": "string",
@@ -5878,7 +5872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "线路Id",
           "example": "0",
           "member": "string",
@@ -5888,7 +5881,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录类型",
           "example": "A",
           "member": "string",
@@ -5898,7 +5890,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录权重，用于负载均衡记录\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "uint64",
@@ -5908,7 +5899,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "记录监控状态，正常：OK，告警：WARN，宕机：DOWN，未设置监控或监控暂停则为空",
           "example": "OK",
           "member": "string",
@@ -5918,7 +5908,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录备注说明",
           "example": "用于api",
           "member": "string",
@@ -5928,7 +5917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录缓存时间",
           "example": "600",
           "member": "uint64",
@@ -5938,7 +5926,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "MX值，只有MX记录有\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
@@ -5946,6 +5933,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "是否是默认的ns记录",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultNS",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

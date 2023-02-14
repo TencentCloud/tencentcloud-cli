@@ -11,8 +11,8 @@
     "AddClusterCIDR": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddClusterCIDR\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"ClusterCIDRs\": [\n        \"10.0.0.0/14\",\n        \"192.168.0.0/16\"\n    ],\n    \"IgnoreClusterCIDRConflict\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddClusterCIDR\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcdefgh\",\n    \"ClusterCIDRs\": [\n        \"10.0.0.0/14\",\n        \"192.168.0.0/16\"\n    ],\n    \"IgnoreClusterCIDRConflict\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"defc0237-d413-4079-9faa-7f3ff928d224\"\n    }\n}",
         "title": "给集群增加ClusterCIDR"
       }
     ],
@@ -826,10 +826,10 @@
     ],
     "DescribeEnableVpcCniProgress": [
       {
-        "document": "用户调用EnableVpcCniNetworkType给GR集群附加vpc-cni网络能力，会创建一个异步任务。本接口用于查询该异步任务的进度",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnableVpcCniProgress\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"ErrorMessage\": \"xxxx\",\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "查看开启vpc-cni的任务进度"
+        "document": "用户调用EnableVpcCniNetworkType给GR集群附加vpc-cni网络能力，会创建一个异步任务。本接口用于查询该异步任务的进度，查询到任务进度失败。",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnableVpcCniProgress\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcdefgh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"Failed\",\n        \"ErrorMessage\": \"ipamd has not been installed yet\",\n        \"RequestId\": \"defc0237-d413-4079-9faa-7f3ff928d224\"\n    }\n}",
+        "title": "查看开启vpc-cni的任务进度，查询到任务失败"
       }
     ],
     "DescribeExistedInstances": [
@@ -1041,8 +1041,8 @@
     "DescribeRouteTableConflicts": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeRouteTableConflicts\n&RouteTableCidrBlock=10.4.0.0/16\n&VpcId=vpc-xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"HasConflict\": false,\n        \"RouteTableConflictSet\": [\n            {\n                \"RouteTableType\": \"CcsCluster\",\n                \"RouteTableCidrBlock\": \"172.20.0.0/16\",\n                \"RouteTableName\": \"xxxx\",\n                \"RouteTableId\": \"xxxx\"\n            }\n        ],\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRouteTableConflicts\n<公共请求参数>\n\n{\n    \"RouteTableCidrBlock\": \"10.4.0.0/16\",\n    \"VpcId\": \"vpc-abcdefgh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HasConflict\": false,\n        \"RouteTableConflictSet\": [\n            {\n                \"RouteTableType\": \"CcsCluster\",\n                \"RouteTableCidrBlock\": \"172.20.0.0/16\",\n                \"RouteTableName\": \"tke-test\",\n                \"RouteTableId\": \"cls-abcdefgh\"\n            }\n        ],\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询路由表冲突列表"
       }
     ],
@@ -1129,8 +1129,8 @@
     "DisableVpcCniNetworkType": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableVpcCniNetworkType\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableVpcCniNetworkType\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcdefgh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"defc0237-d413-4079-9faa-7f3ff928d224\"\n    }\n}",
         "title": "关闭vpc-cni网络"
       }
     ],
@@ -1169,8 +1169,8 @@
     "EnableVpcCniNetworkType": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableVpcCniNetworkType\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"EnableStaticIp\": false,\n    \"VpcCniType\": \"tke-route-eni\",\n    \"Subnets\": [\n        \"xxx\",\n        \"yyy\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableVpcCniNetworkType\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcdefgh\",\n    \"EnableStaticIp\": false,\n    \"VpcCniType\": \"tke-route-eni\",\n    \"Subnets\": [\n        \"subnet-abcdefg1\",\n        \"subnet-abcdefg2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"defc0237-d413-4079-9faa-7f3ff928d224\"\n    }\n}",
         "title": "启用vpc-cni网络"
       }
     ],
