@@ -2742,7 +2742,6 @@
       "document": "数据集组",
       "members": [
         {
-          "default": "",
           "document": "数据集ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Voc2017",
           "member": "string",
@@ -2752,7 +2751,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2762,7 +2760,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2772,7 +2769,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2782,7 +2778,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2792,7 +2787,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "Tag",
@@ -2802,7 +2796,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集标注任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2812,7 +2805,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集标注任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2822,7 +2814,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "处理进度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "uint64",
@@ -2832,7 +2823,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2842,7 +2832,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2852,7 +2841,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2862,7 +2850,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2872,7 +2859,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外部关联TASKType\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2882,7 +2868,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2892,7 +2877,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集数据量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "uint64",
@@ -2902,7 +2886,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集源COS路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "CosPathInfo",
@@ -2912,7 +2895,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集标签存储路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "CosPathInfo",
@@ -2922,7 +2904,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集版本聚合详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "DatasetInfo",
@@ -2932,7 +2913,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集标注状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2942,7 +2922,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2952,7 +2931,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集标注格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -2962,12 +2940,38 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据集范围\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SCOPE_DATASET_PRIVATE",
           "member": "string",
           "name": "DatasetScope",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据集OCR子场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IDENTITY",
+          "member": "string",
+          "name": "OcrScene",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据集字典修改状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STATUS_SUCCESS",
+          "member": "string",
+          "name": "AnnotationKeyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文本数据集导入方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TYPE_TEXT_LINE",
+          "member": "string",
+          "name": "ContentType",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3193,6 +3197,26 @@
           "example": "SCOPE_DATASET_PRIVATE",
           "member": "string",
           "name": "DatasetScope",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据集OCR子场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IDENTITY",
+          "member": "string",
+          "name": "OcrScene",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据集字典修改状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STATUS_SUCCESS",
+          "member": "string",
+          "name": "AnnotationKeyStatus",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3807,7 +3831,6 @@
       "document": "DescribeBillingSpecsPrice请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "询价参数，支持批量询价",
           "example": "无",
           "member": "SpecUnit",
@@ -3826,7 +3849,6 @@
           "example": "无",
           "member": "SpecPrice",
           "name": "SpecsPrice",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8701,7 +8723,6 @@
       "document": "计费项询价结果",
       "members": [
         {
-          "default": "",
           "document": "计费项名称",
           "example": "TI.S.MEDIUM.POST",
           "member": "string",
@@ -8711,7 +8732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "原价，单位：分。最大值42亿，超过则返回0",
           "example": "70",
           "member": "uint64",
@@ -8721,12 +8741,20 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "优惠后的价格，单位：分",
           "example": "70",
           "member": "uint64",
           "name": "RealTotalCost",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "计费项数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "SpecCount",
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }

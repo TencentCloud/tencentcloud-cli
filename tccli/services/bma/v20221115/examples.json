@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "CreateBPFakeAPP": [
+      {
+        "document": "仿冒应用举报",
+        "input": "{\n  \"CompanyId\": 123,\n  \"FakeAPPName\": \"仿冒应用名称\",\n  \"APPChan\": \"仿冒来源\",\n  \"FakeAPPPackageName\": \"仿冒应用包名\",\n  \"FakeAPPCert\": \"仿冒应用证书\",\n  \"FakeAPPSize\": \"仿冒应用大小\",\n  \"FakeAPPSnapshots\": [\n    \"仿冒截图\"\n  ],\n  \"Note\": \"备注\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "仿冒应用举报"
+      }
+    ],
+    "CreateBPFakeAPPList": [
+      {
+        "document": "批量仿冒应用举报",
+        "input": "{\n  \"FakeAPPs\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "批量仿冒应用举报"
+      }
+    ],
+    "CreateBPFakeURL": [
+      {
+        "document": "仿冒网址举报",
+        "input": "{\n  \"CompanyId\": 123,\n  \"FakeURL\": \"举报网址\",\n  \"FakeURLSnapshots\": [\n    \"仿冒截图\"\n  ],\n  \"Note\": \"备注\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "仿冒网址举报"
+      }
+    ],
+    "CreateBPFakeURLs": [
+      {
+        "document": "批量仿冒网址举报",
+        "input": "{\n  \"FakeURLs\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "批量仿冒网址举报"
+      }
+    ]
+  },
+  "version": "1.0"
+}

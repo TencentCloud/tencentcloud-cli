@@ -19416,32 +19416,32 @@
       "document": "ModifyNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "命名空间ID",
+          "example": "x",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "命名空间名称",
+          "example": "x",
           "member": "string",
           "name": "NamespaceName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "命名空间备注",
+          "example": "x",
           "member": "string",
           "name": "NamespaceDesc",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启高可用",
+          "example": "x",
           "member": "string",
           "name": "IsHaEnable",
           "required": false,
@@ -19453,6 +19453,14 @@
     "ModifyNamespaceResponse": {
       "document": "ModifyNamespace返回参数结构体",
       "members": [
+        {
+          "document": "Result\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -25897,6 +25905,15 @@
           "name": "IsNotEqualServiceConfig",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "HealthCheckSettings\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HealthCheckSettings",
+          "name": "HealthCheckSettings",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

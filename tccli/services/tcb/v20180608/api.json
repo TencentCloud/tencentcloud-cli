@@ -1335,7 +1335,6 @@
       "document": "独立网关云托管服务配置信息",
       "members": [
         {
-          "default": "",
           "document": "是否缩容到0",
           "example": "false",
           "member": "bool",
@@ -1345,7 +1344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "按百分比灰度的权重",
           "example": "100",
           "member": "int64",
@@ -1355,7 +1353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "按请求/header参数的灰度Key",
           "example": "value",
           "member": "string",
@@ -1365,7 +1362,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "按请求/header参数的灰度Value",
           "example": "key",
           "member": "string",
@@ -1375,7 +1371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为默认版本(按请求/header参数)",
           "example": "false",
           "member": "bool",
@@ -1385,7 +1380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "访问权限，对应二进制分多段，vpc内网｜公网｜oa",
           "example": "2",
           "member": "int64",
@@ -1395,7 +1389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "访问的URL（域名＋路径）列表",
           "example": "[\"xxxxx\"]",
           "member": "string",
@@ -1405,7 +1398,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "环境ID",
           "example": "env_xxxx",
           "member": "string",
@@ -1415,7 +1407,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务名称",
           "example": "mapportal",
           "member": "string",
@@ -1425,7 +1416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "版本名称",
           "example": "mapportal-001",
           "member": "string",
@@ -1435,7 +1425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "灰度类型：FLOW(权重), URL_PARAMS/HEAD_PARAMS",
           "example": "Weigth",
           "member": "string",
@@ -1445,7 +1434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "CLB的IP:Port",
           "example": "9.34.54.12:8090",
           "member": "string",
@@ -1455,7 +1443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "0:http访问服务配置信息, 1: 服务域名",
           "example": "0/1",
           "member": "int64",
@@ -1465,7 +1452,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CloudBaseRunImageInfo": {
       "document": "CloudBaseRun 镜像信息",

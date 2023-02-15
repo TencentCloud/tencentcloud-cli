@@ -953,7 +953,7 @@
       "status": "online"
     },
     "ReviewAudioVideo": {
-      "document": "对点播中的音视频媒体发起审核任务，智能检测视频画面、画面中的文字、语音中的文字、声音出现的违规内容。\n\n如使用事件通知，事件通知的类型为 [音视频审核完成](https://cloud.tencent.com/document/product/266/81258)。\n",
+      "document": "对点播中的音视频媒体发起审核任务，智能检测视频画面、画面中的文字、语音中的文字、声音出现的违规内容。\n\n如使用事件通知，事件通知的类型为 [音视频审核完成](https://cloud.tencent.com/document/product/266/81258)。",
       "input": "ReviewAudioVideoRequest",
       "name": "音视频审核",
       "output": "ReviewAudioVideoResponse",
@@ -8739,7 +8739,7 @@
       "document": "CreateReviewTemplate请求参数结构体",
       "members": [
         {
-          "document": "需要返回的违规标签列表，可选值为：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂；</li>\n<li>Ad：广告；</li>\n<li>Moan：娇喘。</li>",
+          "document": "需要返回的违规标签列表，可选值为：\n<li>Porn：色情；</li>\n<li>Terror：暴力；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Illegal：违法；</li>\n<li>Abuse：谩骂；</li>\n<li>Ad：广告；</li>\n<li>Moan：娇喘。</li>",
           "example": "无",
           "member": "string",
           "name": "Labels",
@@ -20725,7 +20725,7 @@
           "type": "string"
         },
         {
-          "document": "需要返回的违规标签列表，可选值为：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂；</li>\n<li>Ad：广告；</li>\n<li>Moan：娇喘。</li>\n\n注意：不填表示不更新。",
+          "document": "需要返回的违规标签列表，可选值为：\n<li>Porn：色情；</li>\n<li>Terror：暴力；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Illegal：违法；</li>\n<li>Abuse：谩骂；</li>\n<li>Ad：广告；</li>\n<li>Moan：娇喘。</li>\n\n注意：不填表示不更新。",
           "example": "无",
           "member": "string",
           "name": "Labels",
@@ -25075,7 +25075,6 @@
       "document": "ReviewAudioVideo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。",
           "example": "无",
           "member": "string",
@@ -25084,7 +25083,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -25093,7 +25091,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "审核的内容，可选值有：\n<li>Media：原始音视频；</li>\n<li>Cover：封面。</li>\n不填或填空数组时，默认为审核 Media。",
           "example": "无",
           "member": "string",
@@ -25102,8 +25099,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "审核模板 ID，默认值为 10。取值范围：\n<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>",
+          "document": "审核模板 ID，默认值为 10。取值范围：\n<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴力（Terror）和不适宜的信息（Polity）。</li>",
           "example": "无",
           "member": "uint64",
           "name": "Definition",
@@ -25111,7 +25107,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
           "example": "无",
           "member": "int64",
@@ -25120,7 +25115,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "来源上下文，用于透传用户请求信息，音视频审核完成回调将返回该字段值，最长 1000 个字符。",
           "example": "无",
           "member": "string",
@@ -25129,7 +25123,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
           "example": "无",
           "member": "string",
@@ -25138,7 +25131,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "保留字段，特殊用途时使用。",
           "example": "无",
           "member": "string",
@@ -25157,7 +25149,6 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25174,7 +25165,6 @@
       "document": "音视频审核片段。",
       "members": [
         {
-          "default": "",
           "document": "嫌疑片段起始的偏移时间，单位：秒。",
           "example": "无",
           "member": "float",
@@ -25184,7 +25174,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "嫌疑片段结束的偏移时间，单位：秒。",
           "example": "无",
           "member": "float",
@@ -25194,7 +25183,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "嫌疑片段涉及令人反感的信息的分数。",
           "example": "无",
           "member": "float",
@@ -25204,7 +25192,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "嫌疑片段鉴别涉及违规信息的结果建议，取值范围：\n<li>review：疑似违规，建议复审；</li>\n<li>block：确认违规，建议封禁。</li>",
           "example": "无",
           "member": "string",
@@ -25214,8 +25201,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "嫌疑片段最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂；</li>\n<li>Moan：娇喘。</li>",
+          "document": "嫌疑片段最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴力；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Abuse：谩骂；</li>\n<li>Moan：娇喘。</li>",
           "example": "无",
           "member": "string",
           "name": "Label",
@@ -25224,7 +25210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "违规子标签。",
           "example": "无",
           "member": "string",
@@ -25234,7 +25219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "嫌疑片段违禁的形式，取值范围：\n<li>Image：画面上的人物或图标；</li>\n<li>OCR：画面上的文字；</li>\n<li>ASR：语音中的文字；</li>\n<li>Voice：声音。</li>",
           "example": "无",
           "member": "string",
@@ -25244,7 +25228,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当 Form 为 Image 或 OCR 时有效，表示嫌疑人物、图标或文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
           "example": "无",
           "member": "int64",
@@ -25254,7 +25237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当 Form 为 OCR 或 ASR 时有效，表示识别出来的 OCR 或 ASR 文本内容。",
           "example": "无",
           "member": "string",
@@ -25264,7 +25246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当 Form 为 OCR 或 ASR 时有效，表示嫌疑片段命中的违规关键词列表。",
           "example": "无",
           "member": "string",
@@ -25274,7 +25255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "嫌疑图片 URL （图片不会永久存储，到达\n PicUrlExpireTime 时间点后图片将被删除）。",
           "example": "无",
           "member": "string",
@@ -25284,7 +25264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "无",
           "member": "string",
@@ -25419,7 +25398,6 @@
       "document": "音视频审核任务的输出。",
       "members": [
         {
-          "default": "",
           "document": "音视频内容审核的结果建议，取值范围：\n<li>pass：建议通过；</li>\n<li>review：建议复审；</li>\n<li>block：建议封禁。</li>",
           "example": "无",
           "member": "string",
@@ -25429,8 +25407,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "当 Suggestion 为 review 或 block 时有效，表示音视频最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂；</li>\n<li>Moan：娇喘。</li>",
+          "document": "当 Suggestion 为 review 或 block 时有效，表示音视频最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴力；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Abuse：谩骂；</li>\n<li>Moan：娇喘。</li>",
           "example": "无",
           "member": "string",
           "name": "Label",
@@ -25439,7 +25416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当 Suggestion 为 review 或 block 时有效，表示音视频最可能的违禁的形式，取值范围：\n<li>Image：画面上的人物或图标；</li>\n<li>OCR：画面上的文字；</li>\n<li>ASR：语音中的文字；</li>\n<li>Voice：声音。</li>",
           "example": "无",
           "member": "string",
@@ -25449,7 +25425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "有违规信息的嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 10个 元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
           "example": "无",
           "member": "ReviewAudioVideoSegmentItem",
@@ -25459,7 +25434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "涉及违规信息的嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
           "example": "无",
           "member": "string",
@@ -25469,7 +25443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "涉及违规信息的嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "无",
           "member": "string",
@@ -25479,7 +25452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "封面审核结果。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ReviewImageResult",
@@ -25503,7 +25475,7 @@
           "type": "string"
         },
         {
-          "document": "图片审核模板 ID，取值范围：\n<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>",
+          "document": "图片审核模板 ID，取值范围：\n<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴力（Terror）和不适宜的信息（Polity）。</li>",
           "example": "无",
           "member": "uint64",
           "name": "Definition",
@@ -25562,7 +25534,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "当 Suggestion 为 review 或 block 时有效，表示最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂。</li>",
+          "document": "当 Suggestion 为 review 或 block 时有效，表示最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴力；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Abuse：谩骂。</li>",
           "example": "无",
           "member": "string",
           "name": "Label",
@@ -25631,7 +25603,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "嫌疑片段最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂。</li>",
+          "document": "嫌疑片段最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴力；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Abuse：谩骂。</li>",
           "example": "无",
           "member": "string",
           "name": "Label",
@@ -25709,7 +25681,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "审核类型，当 Suggestion 为 review 或 block 时有效，格式为：Form.Label。\nForm 表示违禁的形式，取值范围：\n<li>Image：画面上的人物或图标；</li>\n<li>OCR：画面上的文字；</li>\n<li>ASR：语音中的文字；</li>\n<li>Voice：声音。</li>\nLabel 表示违禁的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂；</li>\n<li>Moan：娇喘。</li>",
+          "document": "审核类型，当 Suggestion 为 review 或 block 时有效，格式为：Form.Label。\nForm 表示违禁的形式，取值范围：\n<li>Image：画面上的人物或图标；</li>\n<li>OCR：画面上的文字；</li>\n<li>ASR：语音中的文字；</li>\n<li>Voice：声音。</li>\nLabel 表示违禁的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴力；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Abuse：谩骂；</li>\n<li>Moan：娇喘。</li>",
           "example": "无",
           "member": "string",
           "name": "TypeSet",

@@ -13790,6 +13790,96 @@
           "name": "SourceFieldInfoList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分区字段",
+          "example": "pt",
+          "member": "Partition",
+          "name": "Partitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "建表属性",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "建表模式，0:向导模式，1:ddl",
+          "example": "0",
+          "member": "int64",
+          "name": "TableMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "DLC表版本，v1/v2",
+          "example": "v1",
+          "member": "string",
+          "name": "TableVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否upsert写入",
+          "example": "true",
+          "member": "bool",
+          "name": "UpsertFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "表描述信息",
+          "example": "hghe",
+          "member": "string",
+          "name": "TableComment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增加的文件数量阈值, 超过值将触发小文件合并",
+          "example": "1000",
+          "member": "int64",
+          "name": "AddDataFiles",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "增加的Equality delete数量阈值, 超过值将触发小文件合并",
+          "example": "1000",
+          "member": "int64",
+          "name": "AddEqualityDeletes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "增加的Position delete数量阈值, 超过值将触发小文件合并",
+          "example": "1000",
+          "member": "int64",
+          "name": "AddPositionDeletes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "增加的delete file数量阈值",
+          "example": "1000",
+          "member": "int64",
+          "name": "AddDeleteFiles",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -18436,6 +18526,42 @@
       ],
       "usage": "both"
     },
+    "Partition": {
+      "document": "分区参数",
+      "members": [
+        {
+          "default": "",
+          "document": "分区转换策略",
+          "example": "10",
+          "member": "string",
+          "name": "Transform",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区字段名",
+          "example": "aa",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略参数",
+          "example": "无",
+          "member": "string",
+          "name": "TransformArgs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ProdSchedulerTask": {
       "document": "数据质量生产调度任务业务实体",
       "members": [
@@ -18471,6 +18597,32 @@
         }
       ],
       "usage": "both"
+    },
+    "Property": {
+      "document": "dlc建表属性",
+      "members": [
+        {
+          "default": "",
+          "document": "key值",
+          "example": "aa",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "value值",
+          "example": "bb",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "QualityScore": {
       "document": "质量评分",
@@ -22108,7 +22260,6 @@
       "document": "上游节点字段信息",
       "members": [
         {
-          "default": "",
           "document": "字段名称",
           "example": "123",
           "member": "string",
@@ -22118,7 +22269,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "字段类型",
           "example": "int",
           "member": "string",
@@ -22128,7 +22278,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "字段别名",
           "example": "123",
           "member": "string",
@@ -22138,7 +22287,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SourceObject": {
       "document": "数据质量数据对象",

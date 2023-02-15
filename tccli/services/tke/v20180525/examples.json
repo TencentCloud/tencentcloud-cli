@@ -220,9 +220,9 @@
     ],
     "CreatePrometheusAlertRule": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusAlertRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AlertRule\": {\n        \"TemplateId\": \"xx\",\n        \"Name\": \"xx\",\n        \"Rules\": [\n            {\n                \"Describe\": \"xx\",\n                \"Name\": \"xx\",\n                \"For\": \"xx\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Rule\": \"xx\",\n                \"Template\": \"xx\",\n                \"Annotations\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Notification\": {\n            \"WebHook\": \"xx\",\n            \"RepeatInterval\": \"xx\",\n            \"TimeRangeStart\": \"xx\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 0,\n            \"PhoneCircleInterval\": 0,\n            \"NotifyWay\": [\n                \"xx\"\n            ],\n            \"ReceiverGroups\": [\n                1\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 0,\n            \"Type\": \"xx\",\n            \"TimeRangeEnd\": \"xx\"\n        },\n        \"Interval\": \"xx\",\n        \"UpdatedAt\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "新增告警，并选择使用模板",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusAlertRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-test\",\n    \"AlertRule\": {\n        \"TemplateId\": \"temp-test\",\n        \"Name\": \"test\",\n        \"Rules\": [\n            {\n                \"Describe\": \"pod处于NotReady状态超过15分钟\",\n                \"Name\": \"KubePodNotReady\",\n                \"For\": \"\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"severity\",\n                        \"Value\": \"warning\"\n                    }\n                ],\n                \"Rule\": \"sum by (cluster,namespace, pod) (\\n  max by(cluster,namespace, pod) (\\n    kube_pod_status_phase{job=\\\"kube-state-metrics\\\", phase=~\\\"Pending|Unknown\\\"}\\n  ) * on(cluster,namespace, pod) group_left(owner_kind) topk by(cluster,namespace, pod) (\\n    1, max by(cluster,namespace, pod, owner_kind) (kube_pod_owner{owner_kind!=\\\"Job\\\"})\\n  )\\n) > 0\\n\",\n                \"Template\": \"集群 {{ $labels.cluster }}/namespace {{ $labels.namespace }}/Pod {{ $labels.pod }}处于NotReady状态超过15分钟\",\n                \"Annotations\": [\n                    {\n                        \"Name\": \"content\",\n                        \"Value\": \"pod crash\"\n                    }\n                ]\n            }\n        ],\n        \"Notification\": {\n            \"RepeatInterval\": \"5h\",\n            \"TimeRangeStart\": \"00:00:00\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 0,\n            \"PhoneCircleInterval\": 0,\n            \"NotifyWay\": [\n                \"SMS\"\n            ],\n            \"ReceiverGroups\": [\n                1\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 0,\n            \"Type\": \"amp\",\n            \"TimeRangeEnd\": \"23:59:59\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"alert-123\",\n        \"RequestId\": \"85438a95-6e0d-422e-a099-123456789\"\n    }\n}",
         "title": "新增告警"
       }
     ],
@@ -523,8 +523,8 @@
     "DescribeClusterAsGroupOption": [
       {
         "document": "集群弹性伸缩配置",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterAsGroupOption\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClusterAsGroupOption\": {\n            \"ScaleDownUnreadyTime\": 0,\n            \"ScaleDownDelay\": 0,\n            \"ScaleDownUtilizationThreshold\": 0,\n            \"MaxTotalUnreadyPercentage\": 0,\n            \"IsScaleDownEnabled\": true,\n            \"OkTotalUnreadyCount\": 0,\n            \"SkipNodesWithSystemPods\": true,\n            \"MaxEmptyBulkDelete\": 0,\n            \"UnregisteredNodeRemovalTime\": 0,\n            \"SkipNodesWithLocalStorage\": true,\n            \"IgnoreDaemonSetsUtilization\": true,\n            \"Expander\": \"xxx\",\n            \"ScaleDownUnneededTime\": 0\n        },\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterAsGroupOption\n&ClusterId=cls-hca1bmif\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterAsGroupOption\": {\n            \"ScaleDownUnreadyTime\": 0,\n            \"ScaleDownDelay\": 0,\n            \"ScaleDownUtilizationThreshold\": 0,\n            \"MaxTotalUnreadyPercentage\": 0,\n            \"IsScaleDownEnabled\": true,\n            \"OkTotalUnreadyCount\": 0,\n            \"SkipNodesWithSystemPods\": true,\n            \"MaxEmptyBulkDelete\": 0,\n            \"UnregisteredNodeRemovalTime\": 0,\n            \"SkipNodesWithLocalStorage\": true,\n            \"IgnoreDaemonSetsUtilization\": true,\n            \"Expander\": \"random\",\n            \"ScaleDownUnneededTime\": 0\n        },\n        \"RequestId\": \"1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed\"\n    }\n}",
         "title": "集群弹性伸缩配置"
       }
     ],
@@ -874,17 +874,17 @@
     ],
     "DescribePrometheusAgents": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAgents\n&InstanceId=prom-xxxxxx\n&Offset=0\n&Limit=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Agents\": [\n            {\n                \"Status\": \"xx\",\n                \"ClusterName\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"ClusterType\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "拉取agent信息",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAgents\n&InstanceId=prom-dsgfjhv\n&Offset=0\n&Limit=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Agents\": [\n            {\n                \"Status\": \"running\",\n                \"ClusterName\": \"北京测试集群\",\n                \"ClusterId\": \"cls-dhsjffg\",\n                \"ClusterType\": \"tke\",\n                \"ExternalLabels\": [\n                    {\n                        \"Name\": \"cluster\",\n                        \"Value\": \"cls-dhsjffg\"\n                    }\n                ],\n                \"Region\": \"ap-beijing\",\n                \"VpcId\": \"vpc-dsahjggf\",\n                \"FailedReason\": \"\"\n            }\n        ],\n        \"RequestId\": \"f1de3153-88df-45c2-9f39-cddjkiiug234897h\"\n    }\n}",
         "title": "拉取agent信息"
       }
     ],
     "DescribePrometheusAlertHistory": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAlertHistory\n&InstanceId=prom-xxx\n&RuleName=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Content\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"RuleName\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "查询告警历史",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAlertHistory\n&InstanceId=prom-adsdfdsf\n&RuleName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Content\": \"pod发生重启\",\n                \"StartTime\": \"2021-02-19 16:51:44\",\n                \"RuleName\": \"test\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"7ef8496c-b966-4c23-b160-dsadahsjf12ehjh\"\n    }\n}",
         "title": "查询告警历史"
       }
     ],
@@ -898,9 +898,9 @@
     ],
     "DescribePrometheusAlertRule": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAlertRule\n&InstanceId=prom-xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AlertRules\": [\n            {\n                \"Name\": \"xx\",\n                \"Rules\": [\n                    {\n                        \"Describe\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"For\": \"xx\",\n                        \"Labels\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"Rule\": \"xx\",\n                        \"Template\": \"xx\"\n                    }\n                ],\n                \"Notification\": {\n                    \"WebHook\": \"xx\",\n                    \"RepeatInterval\": \"xx\",\n                    \"TimeRangeStart\": \"xx\",\n                    \"Enabled\": true,\n                    \"PhoneNotifyOrder\": [\n                        1\n                    ],\n                    \"PhoneInnerInterval\": 0,\n                    \"PhoneCircleInterval\": 0,\n                    \"NotifyWay\": [\n                        \"xx\"\n                    ],\n                    \"ReceiverGroups\": [\n                        1\n                    ],\n                    \"PhoneArriveNotice\": true,\n                    \"PhoneCircleTimes\": 0,\n                    \"Type\": \"xx\",\n                    \"TimeRangeEnd\": \"xx\"\n                },\n                \"UpdatedAt\": \"xx\",\n                \"TemplateId\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "告警列表",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAlertRule\n&InstanceId=prom-dsjfhjgf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AlertRules\": [\n            {\n                \"Name\": \"test\",\n                \"Rules\": [\n                    {\n                        \"Describe\": \"pod处于NotReady状态超过15分钟\",\n                        \"Name\": \"KubePodNotReady\",\n                        \"For\": \"15m\",\n                        \"Labels\": [\n                            {\n                                \"Name\": \"severity\",\n                                \"Value\": \"warning\"\n                            }\n                        ],\n                        \"Rule\": \"sum by (cluster,namespace, pod) (\\n  max by(cluster,namespace, pod) (\\n    kube_pod_status_phase{job=\\\"kube-state-metrics\\\", phase=~\\\"Pending|Unknown\\\"}\\n  ) * on(cluster,namespace, pod) group_left(owner_kind) topk by(cluster,namespace, pod) (\\n    1, max by(cluster,namespace, pod, owner_kind) (kube_pod_owner{owner_kind!=\\\"Job\\\"})\\n  )\\n) > 0\\n\",\n                        \"Template\": \"集群 {{ $labels.cluster }}/namespace {{ $labels.namespace }}/Pod {{ $labels.pod }}处于NotReady状态超过15分钟\"\n                    }\n                ],\n                \"Notification\": {\n                    \"RepeatInterval\": \"5h\",\n                    \"TimeRangeStart\": \"00:00:00\",\n                    \"Enabled\": true,\n                    \"PhoneNotifyOrder\": [\n                        1\n                    ],\n                    \"PhoneInnerInterval\": 0,\n                    \"PhoneCircleInterval\": 0,\n                    \"NotifyWay\": [\n                        \"CALL\"\n                    ],\n                    \"ReceiverGroups\": [\n                        1\n                    ],\n                    \"PhoneArriveNotice\": true,\n                    \"PhoneCircleTimes\": 0,\n                    \"Type\": \"amp\",\n                    \"TimeRangeEnd\": \"23:59:59\"\n                },\n                \"TemplateId\": \"\",\n                \"Id\": \"alert-dsdgjsfj\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"9446798b-df61-46df-91b7-dshjfdhjkasf\"\n    }\n}",
         "title": "告警列表"
       }
     ],
@@ -938,9 +938,9 @@
     ],
     "DescribePrometheusInstance": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusInstance\n&InstanceId=prom-xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"QueryAddress\": \"xx\",\n        \"VpcId\": \"xx\",\n        \"Name\": \"xx\",\n        \"InstanceId\": \"xx\",\n        \"COSBucket\": \"xx\",\n        \"AlertManagerUrl\": \"xx\",\n        \"Grafana\": {\n            \"Domain\": \"xx\",\n            \"Internet\": \"xx\",\n            \"Enabled\": true,\n            \"AdminUser\": \"xx\",\n            \"Address\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"SubnetId\": \"xx\"\n    }\n}",
+        "document": "查看托管prometheus实例详情",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusInstance\n&InstanceId=prom-abc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"QueryAddress\": \"http://10.0.0.1:9090\",\n        \"VpcId\": \"vpc-abcdfgfg\",\n        \"Name\": \"tps-test\",\n        \"InstanceId\": \"prom-abcdefg\",\n        \"COSBucket\": \"prometheus-prom-abcdefg-data-1234567895\",\n        \"AlertManagerUrl\": \"\",\n        \"Grafana\": {\n            \"Domain\": \"\",\n            \"Internet\": \"close\",\n            \"Enabled\": true,\n            \"AdminUser\": \"admin\",\n            \"Address\": \"http://10.0.0.2\"\n        },\n        \"RequestId\": \"55054791-f4ff-4c33-afd2-dsahdjahdahada\",\n        \"SubnetId\": \"subnet-dsadsada\"\n    }\n}",
         "title": "查看托管prometheus实例详情"
       }
     ],
@@ -968,9 +968,9 @@
     ],
     "DescribePrometheusOverviews": [
       {
-        "document": "",
+        "document": "拉取实例列表",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusOverviews\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"Status\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"Name\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"COSBucket\": \"xx\",\n                \"SubnetId\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"Status\": \"running\",\n                \"VpcId\": \"vpc-dsajgfksj\",\n                \"Name\": \"测试实例\",\n                \"InstanceId\": \"prom-sdsahfuf\",\n                \"COSBucket\": \"prometheus-prom-xdfsfffwed-data-1234567898\",\n                \"SubnetId\": \"subnet-hjkghjgjk\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"0e5873a3-8525-41c1-9ba9-dshjahdfkjfhg\"\n    }\n}",
         "title": "拉取实例列表"
       }
     ],
@@ -1008,17 +1008,17 @@
     ],
     "DescribePrometheusTemplateSync": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTemplateSync\n&TemplateId=\"temp-xxx\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Targets\": [\n            {\n                \"Region\": \"ap-shanghai\",\n                \"InstanceId\": \"prom-xxx\",\n                \"ClusterId\": \"xxx\",\n                \"SyncTime\": \"2020-02-2\"\n            }\n        ]\n    }\n}",
+        "document": "拉取同步目标",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTemplateSync\n&TemplateId=\"temp-dsffgg\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Targets\": [\n            {\n                \"Region\": \"ap-shanghai\",\n                \"InstanceId\": \"prom-dsdfaf\",\n                \"ClusterId\": \"cls-dfdfga\",\n                \"SyncTime\": \"2020-02-2\"\n            }\n        ]\n    }\n}",
         "title": "拉取同步目标"
       }
     ],
     "DescribePrometheusTemplates": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTemplates\n&Filters.0.Name=Type\n&Filters.0.Values.0=ServiceMonitor\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"RecordRules\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Version\": \"xx\",\n                \"Name\": \"xx\",\n                \"Level\": \"xx\",\n                \"Describe\": \"xx\",\n                \"RawJobs\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"AlertRules\": [\n                    {\n                        \"Template\": \"xx\",\n                        \"Labels\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"For\": \"xx\",\n                        \"Rule\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"PodMonitors\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"TemplateId\": \"xx\",\n                \"IsDefault\": true,\n                \"ServiceMonitors\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "拉取模板列表",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTemplates\n&Filters.0.Name=Level\n&Filters.0.Values.0= instance\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"UpdateTime\": \"2022-08-11T06:27:47Z\",\n                \"RecordRules\": [\n                    {\n                        \"Config\": \"apiVersion: monitoring.coreos.com/v1\\nkind: PrometheusRule\\nmetadata:\\n  name: example-record\\nspec:\\n  groups:\\n    - name: test-limit\\n      rules:\\n        - expr: sum(metrics_test)\\n          labels:\\n            verb: read\\n          record: 'apiserver_request:burnrate1d'\\n        - expr: sum(metrics_test)\\n          labels:\\n            verb: read\\n          record: 'apiserver_request:burnrate1d'\\n\",\n                        \"Name\": \"test\"\n                    }\n                ],\n                \"Version\": \"v3\",\n                \"Name\": \"test\",\n                \"Level\": \"instance\",\n                \"Describe\": \"测试\",\n                \"TemplateId\": \"temp-dsfjgg\",\n                \"IsDefault\": true\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"a103e3cc-d0a9-4ff4-9e3b-dsjkalfdjlaf\"\n    }\n}",
         "title": "拉取模板列表"
       }
     ],
@@ -1328,10 +1328,10 @@
     ],
     "ModifyPrometheusAlertRule": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusAlertRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AlertRule\": {\n        \"TemplateId\": \"xx\",\n        \"Name\": \"xx\",\n        \"Rules\": [\n            {\n                \"Describe\": \"xx\",\n                \"Name\": \"xx\",\n                \"For\": \"xx\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Rule\": \"xx\",\n                \"Template\": \"xx\",\n                \"Annotations\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Notification\": {\n            \"WebHook\": \"xx\",\n            \"RepeatInterval\": \"xx\",\n            \"TimeRangeStart\": \"xx\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 0,\n            \"PhoneCircleInterval\": 0,\n            \"NotifyWay\": [\n                \"xx\"\n            ],\n            \"ReceiverGroups\": [\n                1\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 0,\n            \"Type\": \"xx\",\n            \"TimeRangeEnd\": \"xx\"\n        },\n        \"Interval\": \"xx\",\n        \"UpdatedAt\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "document": "修改告警",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusAlertRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-sdgfsdhg\",\n    \"AlertRule\": {\n        \"TemplateId\": \"\",\n        \"Name\": \"test\",\n        \"Rules\": [\n            {\n                \"Describe\": \"pod处于NotReady状态超过15分钟\",\n                \"Name\": \"KubePodNotReady\",\n                \"For\": \"15m\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"severity\",\n                        \"Value\": \"warning\"\n                    }\n                ],\n                \"Rule\": \"sum by (cluster,namespace, pod) (\\n  max by(cluster,namespace, pod) (\\n    kube_pod_status_phase{job=\\\"kube-state-metrics\\\", phase=~\\\"Pending|Unknown\\\"}\\n  ) * on(cluster,namespace, pod) group_left(owner_kind) topk by(cluster,namespace, pod) (\\n    1, max by(cluster,namespace, pod, owner_kind) (kube_pod_owner{owner_kind!=\\\"Job\\\"})\\n  )\\n) > 0\\n\",\n                \"Template\": \"\",\n                \"Annotations\": [\n                    {\n                        \"Name\": \"content\",\n                        \"Value\": \"pod not ready\"\n                    }\n                ]\n            }\n        ],\n        \"Notification\": {\n            \"RepeatInterval\": \"5h\",\n            \"TimeRangeStart\": \"00:00:00\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 180,\n            \"PhoneCircleInterval\": 180,\n            \"NotifyWay\": [\n                \"CALL\"\n            ],\n            \"ReceiverGroups\": [\n                1\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 3,\n            \"Type\": \"amp\",\n            \"TimeRangeEnd\": \"23:59:59\"\n        },\n        \"Id\": \"alert-dsdafg\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "新增告警"
+        "title": "修改告警"
       }
     ],
     "ModifyPrometheusConfig": [
@@ -1376,9 +1376,9 @@
     ],
     "RemoveNodeFromNodePool": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=RemoveNodeFromNodePool\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxxxxxxx\n&InstanceIds.0=ins-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\"\n    }\n}",
+        "document": "移出节点池节点",
+        "input": "https://tke.tencentcloudapi.com/?Action=RemoveNodeFromNodePool\n&ClusterId=cls-hca1bmif\n&NodePoolId=np-5tx2jmn9\n&InstanceIds.0=ins-74mbca66\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed\"\n    }\n}",
         "title": "移出节点池节点"
       }
     ],

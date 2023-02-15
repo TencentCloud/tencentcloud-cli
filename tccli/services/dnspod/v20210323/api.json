@@ -91,6 +91,13 @@
       "output": "DeleteDomainAliasResponse",
       "status": "online"
     },
+    "DeleteDomainBatch": {
+      "document": "批量删除域名",
+      "input": "DeleteDomainBatchRequest",
+      "name": "批量删除域名",
+      "output": "DeleteDomainBatchResponse",
+      "status": "online"
+    },
     "DeleteRecord": {
       "document": "删除记录",
       "input": "DeleteRecordRequest",
@@ -168,6 +175,13 @@
       "output": "DescribeDomainLogListResponse",
       "status": "online"
     },
+    "DescribeDomainPreview": {
+      "document": "获取域名概览信息",
+      "input": "DescribeDomainPreviewRequest",
+      "name": "获取域名概览信息",
+      "output": "DescribeDomainPreviewResponse",
+      "status": "online"
+    },
     "DescribeDomainPurview": {
       "document": "获取域名权限",
       "input": "DescribeDomainPurviewRequest",
@@ -182,11 +196,32 @@
       "output": "DescribeDomainShareInfoResponse",
       "status": "online"
     },
+    "DescribeDomainWhois": {
+      "document": "获取域名Whois信息",
+      "input": "DescribeDomainWhoisRequest",
+      "name": "获取域名Whois信息",
+      "output": "DescribeDomainWhoisResponse",
+      "status": "online"
+    },
+    "DescribePackageDetail": {
+      "document": "获取各套餐配置详情",
+      "input": "DescribePackageDetailRequest",
+      "name": "获取各套餐配置详情",
+      "output": "DescribePackageDetailResponse",
+      "status": "online"
+    },
     "DescribeRecord": {
       "document": "获取记录信息",
       "input": "DescribeRecordRequest",
       "name": "获取记录信息",
       "output": "DescribeRecordResponse",
+      "status": "online"
+    },
+    "DescribeRecordExistExceptDefaultNS": {
+      "document": "判断是否有除系统默认的@-NS记录之外的记录存在",
+      "input": "DescribeRecordExistExceptDefaultNSRequest",
+      "name": "判断是否有除系统默认的@-NS记录之外的记录存在",
+      "output": "DescribeRecordExistExceptDefaultNSResponse",
       "status": "online"
     },
     "DescribeRecordGroupList": {
@@ -264,6 +299,13 @@
       "input": "DescribeUserDetailRequest",
       "name": "获取帐户信息",
       "output": "DescribeUserDetailResponse",
+      "status": "online"
+    },
+    "DescribeVASStatistic": {
+      "document": "获取域名增值服务用量",
+      "input": "DescribeVASStatisticRequest",
+      "name": "获取域名增值服务用量",
+      "output": "DescribeVASStatisticResponse",
       "status": "online"
     },
     "DownloadSnapshot": {
@@ -1771,6 +1813,104 @@
       ],
       "type": "object"
     },
+    "DeleteDomainBatchDetail": {
+      "document": "批量删除域名详情",
+      "members": [
+        {
+          "default": "",
+          "document": "域名 ID",
+          "example": "12124",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "domain.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "error",
+          "member": "string",
+          "name": "Error",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除状态",
+          "example": "waiting",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作",
+          "example": "remove",
+          "member": "string",
+          "name": "Operation",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteDomainBatchRequest": {
+      "document": "DeleteDomainBatch请求参数结构体",
+      "members": [
+        {
+          "document": "域名数组",
+          "example": "[\"domain.com\"]",
+          "member": "string",
+          "name": "DomainList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDomainBatchResponse": {
+      "document": "DeleteDomainBatch返回参数结构体",
+      "members": [
+        {
+          "document": "任务 ID",
+          "example": "213",
+          "member": "uint64",
+          "name": "JobId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务详情数组",
+          "example": "无",
+          "member": "DeleteDomainBatchDetail",
+          "name": "DetailList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDomainRequest": {
       "document": "DeleteDomain请求参数结构体",
       "members": [
@@ -2430,6 +2570,48 @@
       ],
       "type": "object"
     },
+    "DescribeDomainPreviewRequest": {
+      "document": "DescribeDomainPreview请求参数结构体",
+      "members": [
+        {
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "example": "61",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainPreviewResponse": {
+      "document": "DescribeDomainPreview返回参数结构体",
+      "members": [
+        {
+          "document": "域名概览信息",
+          "example": "无",
+          "member": "PreviewDetail",
+          "name": "Domain",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainPurviewRequest": {
       "document": "DescribeDomainPurview请求参数结构体",
       "members": [
@@ -2553,6 +2735,120 @@
           "member": "string",
           "name": "Owner",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainWhoisRequest": {
+      "document": "DescribeDomainWhois请求参数结构体",
+      "members": [
+        {
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainWhoisResponse": {
+      "document": "DescribeDomainWhois返回参数结构体",
+      "members": [
+        {
+          "document": "域名Whois信息",
+          "example": "无",
+          "member": "WhoisInfo",
+          "name": "Info",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackageDetailRequest": {
+      "document": "DescribePackageDetail请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePackageDetailResponse": {
+      "document": "DescribePackageDetail返回参数结构体",
+      "members": [
+        {
+          "document": "套餐配置详情",
+          "example": "无",
+          "member": "PackageDetailItem",
+          "name": "Info",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "套餐代码列表",
+          "example": "无",
+          "member": "string",
+          "name": "LevelMap",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordExistExceptDefaultNSRequest": {
+      "document": "DescribeRecordExistExceptDefaultNS请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "example": "1923",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordExistExceptDefaultNSResponse": {
+      "document": "DescribeRecordExistExceptDefaultNS返回参数结构体",
+      "members": [
+        {
+          "document": "true 是 false 否",
+          "example": "true",
+          "member": "bool",
+          "name": "Exist",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -3425,6 +3721,42 @@
           "name": "UserInfo",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVASStatisticRequest": {
+      "document": "DescribeVASStatistic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "54863243",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVASStatisticResponse": {
+      "document": "DescribeVASStatistic返回参数结构体",
+      "members": [
+        {
+          "document": "增值服务用量列表",
+          "example": "无",
+          "member": "VASStatisticItem",
+          "name": "VASList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5512,6 +5844,122 @@
       ],
       "type": "object"
     },
+    "PackageDetailItem": {
+      "document": "套餐配置明细",
+      "members": [
+        {
+          "default": "",
+          "document": "套餐原价",
+          "example": "188",
+          "member": "uint64",
+          "name": "RealPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可更换域名次数",
+          "example": "10",
+          "member": "uint64",
+          "name": "ChangedTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许设置的最小 TTL 值",
+          "example": "120",
+          "member": "uint64",
+          "name": "MinTtl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡数量",
+          "example": "4",
+          "member": "uint64",
+          "name": "RecordRoll",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子域名级数",
+          "example": "3",
+          "member": "uint64",
+          "name": "SubDomainLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "泛解析级数",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxWildcard",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DNS 服务集群个数",
+          "example": "8 个",
+          "member": "string",
+          "name": "DnsServerRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐名称",
+          "example": "免费版",
+          "member": "string",
+          "name": "DomainGradeCn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐代号",
+          "example": "1",
+          "member": "uint64",
+          "name": "GradeLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐对应的 NS",
+          "example": "[s4g2m.dnspod.net\",\"g8y9f.dnspod.net\"]",
+          "member": "string",
+          "name": "Ns",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐代码",
+          "example": "DP_Free",
+          "member": "string",
+          "name": "DomainGrade",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PayOrderWithBalanceRequest": {
       "document": "PayOrderWithBalance请求参数结构体",
       "members": [
@@ -5569,6 +6017,122 @@
         }
       ],
       "type": "object"
+    },
+    "PreviewDetail": {
+      "document": "域名概览明细",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "zhaodapian.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名套餐代码",
+          "example": "DP_Expert",
+          "member": "string",
+          "name": "Grade",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名套餐名称",
+          "example": "企业版",
+          "member": "string",
+          "name": "GradeTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名记录数",
+          "example": "108",
+          "member": "uint64",
+          "name": "Records",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名停靠状态。0 未开启 1 已开启 2 已暂停",
+          "example": "0",
+          "member": "uint64",
+          "name": "DomainParkingStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义线路数量",
+          "example": "12",
+          "member": "uint64",
+          "name": "LineCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义线路分组数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "LineGroupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名别名数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "AliasCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许添加的最大域名别名数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "MaxAliasCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "昨天的解析量",
+          "example": "5439",
+          "member": "uint64",
+          "name": "ResolveCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "增值服务数量",
+          "example": "15",
+          "member": "uint64",
+          "name": "VASCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PurviewInfo": {
       "document": "域名权限项",
@@ -6510,6 +7074,326 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VASStatisticItem": {
+      "document": "域名增值服务用量",
+      "members": [
+        {
+          "document": "增值服务名称",
+          "example": "域名别名",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "增值服务标识",
+          "example": "Name",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "增值服务最大用量",
+          "example": "999",
+          "member": "uint64",
+          "name": "LimitCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "增值服务已使用的用量",
+          "example": "2",
+          "member": "uint64",
+          "name": "UseCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WhoisContact": {
+      "document": "Whois联系信息",
+      "members": [
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WhoisContactAddress",
+          "name": "Admin",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WhoisContactAddress",
+          "name": "Billing",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WhoisContactAddress",
+          "name": "Registrant",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WhoisContactAddress",
+          "name": "Tech",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WhoisContactAddress": {
+      "document": "Whois联系信息地址",
+      "members": [
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Fax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FaxExt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Handle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Organization",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PostalCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Street",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WhoisInfo": {
+      "document": "Whois信息",
+      "members": [
+        {
+          "default": "",
+          "document": "联系信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WhoisContact",
+          "name": "Contacts",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名注册时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-07 14:42:55",
+          "member": "string",
+          "name": "CreationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-11-07 14:42:55",
+          "member": "string",
+          "name": "ExpirationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是在腾讯云注册的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsQcloud",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否当前操作帐号注册的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsQcloudOwner",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名配置的NS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Whois原始信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Raw",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名注册商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Registrar",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-17 14:42:55",
+          "member": "string",
+          "name": "UpdatedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

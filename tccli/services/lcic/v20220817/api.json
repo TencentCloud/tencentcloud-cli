@@ -77,6 +77,13 @@
       "output": "DescribeAppDetailResponse",
       "status": "online"
     },
+    "DescribeCurrentMemberList": {
+      "document": "获取当前房间的成员列表，房间结束或过期后无法使用。",
+      "input": "DescribeCurrentMemberListRequest",
+      "name": "获取当前房间的成员列表",
+      "output": "DescribeCurrentMemberListResponse",
+      "status": "online"
+    },
     "DescribeDocument": {
       "document": "获取文档信息",
       "input": "DescribeDocumentRequest",
@@ -891,6 +898,64 @@
           "example": "无",
           "member": "SceneItem",
           "name": "SceneConfig",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCurrentMemberListRequest": {
+      "document": "DescribeCurrentMemberList请求参数结构体",
+      "members": [
+        {
+          "document": "房间Id。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "分页查询当前页数，从1开始递增。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "每页数据量，最大1000。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCurrentMemberListResponse": {
+      "document": "DescribeCurrentMemberList返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数。当前房间的总人数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "成员记录列表。",
+          "example": "无",
+          "member": "MemberRecord",
+          "name": "MemberRecords",
           "type": "list",
           "value_allowed_null": false
         },

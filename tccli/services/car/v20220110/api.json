@@ -96,7 +96,6 @@
       "document": "CreateSession请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "cg_user",
           "member": "string",
@@ -105,7 +104,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户IP，用户客户端的公网IP，用于就近调度",
           "example": "125.127.178.228",
           "member": "string",
@@ -114,7 +112,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户端session信息，从SDK请求中获得",
           "example": "eyJhYmMiOjEyM30=",
           "member": "string",
@@ -123,7 +120,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云端运行模式。\nRunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运行\n默认值（空）：要求必须有客户端连接才会保持云端 App 运行。",
           "example": "RunWithoutClient",
           "member": "string",
@@ -142,7 +138,6 @@
           "example": "eyJhYmMiOjEyM30=",
           "member": "string",
           "name": "ServerSession",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -294,6 +294,13 @@
       "output": "DescribeRollbackTimeValidityResponse",
       "status": "online"
     },
+    "DescribeZones": {
+      "document": "本接口(DescribeZones)用于查询可售卖地域可用区信息。",
+      "input": "DescribeZonesRequest",
+      "name": "查询可售卖地域可用区信息。",
+      "output": "DescribeZonesResponse",
+      "status": "online"
+    },
     "DisassociateSecurityGroups": {
       "document": "安全组批量解绑云资源",
       "input": "DisassociateSecurityGroupsRequest",
@@ -6658,6 +6665,48 @@
       ],
       "type": "object"
     },
+    "DescribeZonesRequest": {
+      "document": "DescribeZones请求参数结构体",
+      "members": [
+        {
+          "document": "是否包含虚拟区",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeVirtualZones",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "是否展示地域下所有可用区，并显示用户每个可用区权限",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowPermission",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZonesResponse": {
+      "document": "DescribeZones返回参数结构体",
+      "members": [
+        {
+          "document": "地域信息",
+          "example": "无",
+          "member": "SaleRegion",
+          "name": "RegionSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisassociateSecurityGroupsRequest": {
       "document": "DisassociateSecurityGroups请求参数结构体",
       "members": [
@@ -8099,6 +8148,32 @@
       ],
       "usage": "both"
     },
+    "Module": {
+      "document": "系统支持的模块",
+      "members": [
+        {
+          "default": "",
+          "document": "是否支持，可选值:yes,no",
+          "example": "yes",
+          "member": "string",
+          "name": "IsDisable",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模块名",
+          "example": "Wan",
+          "member": "string",
+          "name": "ModuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "NetAddr": {
       "document": "网络信息",
       "members": [
@@ -9392,6 +9467,158 @@
         }
       ],
       "usage": "both"
+    },
+    "SaleRegion": {
+      "document": "售卖地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "地域英文名",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域数字ID",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域中文名",
+          "example": "上海",
+          "member": "string",
+          "name": "RegionZh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可售卖可用区列表",
+          "example": "无",
+          "member": "SaleZone",
+          "name": "ZoneSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引擎类型",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域模块支持情况",
+          "example": "无",
+          "member": "Module",
+          "name": "Modules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SaleZone": {
+      "document": "售卖可用区信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区英文名",
+          "example": "ap-shanghai-4",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区数字ID",
+          "example": "200004",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区中文名",
+          "example": "上海四区",
+          "member": "string",
+          "name": "ZoneZh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持serverless集群<br>\n0:不支持<br>\n1:支持",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSupportServerless",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持普通集群<br>\n0:不支持<br>\n1:支持",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSupportNormal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "PhysicalZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户是否有可用区权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "HasPermission",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为全链路RDMA可用区",
+          "example": "无",
+          "member": "string",
+          "name": "IsWholeRdmaZone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SearchClusterDatabasesRequest": {
       "document": "SearchClusterDatabases请求参数结构体",

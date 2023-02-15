@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeClusterAsGroupOption --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx
+    --ClusterId cls-hca1bmif
 ```
 
 Output: 
@@ -25,10 +25,10 @@ Output:
             "UnregisteredNodeRemovalTime": 0,
             "SkipNodesWithLocalStorage": true,
             "IgnoreDaemonSetsUtilization": true,
-            "Expander": "xxx",
+            "Expander": "random",
             "ScaleDownUnneededTime": 0
         },
-        "RequestId": "xxx"
+        "RequestId": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
     }
 }
 ```

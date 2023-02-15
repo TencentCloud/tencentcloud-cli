@@ -573,7 +573,6 @@
       "document": "CheckBankCardInformation请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "银行卡号。",
           "example": "xxxxxxxxxx",
           "member": "string",
@@ -582,7 +581,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "敏感数据加密信息。对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
           "member": "Encryption",
@@ -597,11 +595,10 @@
       "document": "CheckBankCardInformation返回参数结构体",
       "members": [
         {
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 查询成功\n-1: 未查到信息\n不收费结果码\n-2：验证中心服务繁忙\n-3：银行卡不存在",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 查询成功\n-1: 未查到信息\n不收费结果码：\n-2：验证中心服务繁忙\n-3：银行卡不存在",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -610,7 +607,6 @@
           "example": "查询成功",
           "member": "string",
           "name": "Description",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -619,7 +615,6 @@
           "example": "中国工商银行",
           "member": "string",
           "name": "AccountBank",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -628,7 +623,6 @@
           "example": "1",
           "member": "int64",
           "name": "AccountType",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

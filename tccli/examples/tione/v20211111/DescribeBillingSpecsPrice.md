@@ -1,6 +1,6 @@
 **Example 1: 查询计费项价格 示例**
 
-
+查询计费项价格
 
 Input: 
 
@@ -17,6 +17,7 @@ Output:
         "SpecsPrice": [
             {
                 "SpecName": "TI.S.MEDIUM.POST",
+                "SpecCount": 1,
                 "TotalCost": 70,
                 "RealTotalCost": 70
             }

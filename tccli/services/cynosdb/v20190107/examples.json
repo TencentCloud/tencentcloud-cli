@@ -336,6 +336,14 @@
         "title": "查询指定时间点是否看回档"
       }
     ],
+    "DescribeZones": [
+      {
+        "document": "仅查看用户有权限的可用区",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"DbType\": \"xx\",\n                \"Region\": \"xx\",\n                \"RegionId\": 1,\n                \"Modules\": [\n                    {\n                        \"ModuleName\": \"xx\",\n                        \"IsDisable\": \"xx\"\n                    }\n                ],\n                \"RegionZh\": \"xx\",\n                \"ZoneSet\": [\n                    {\n                        \"PhysicalZone\": \"xx\",\n                        \"Zone\": \"xx\",\n                        \"IsSupportServerless\": 0,\n                        \"ZoneId\": 100003,\n                        \"IsSupportNormal\": 0,\n                        \"ZoneZh\": \"xx\"\n                    },\n                    {\n                        \"PhysicalZone\": \"xx\",\n                        \"Zone\": \"xx\",\n                        \"IsSupportServerless\": 0,\n                        \"ZoneId\": 100003,\n                        \"IsSupportNormal\": 0,\n                        \"ZoneZh\": \"xx\"\n                    },\n                    {\n                        \"PhysicalZone\": \"xx\",\n                        \"Zone\": \"xx\",\n                        \"IsSupportServerless\": 0,\n                        \"ZoneId\": 100004,\n                        \"IsSupportNormal\": 0,\n                        \"ZoneZh\": \"xx\"\n                    }\n                ]\n            },\n            {\n                \"DbType\": \"xx\",\n                \"Region\": \"xx\",\n                \"RegionId\": 8,\n                \"Modules\": [\n                    {\n                        \"ModuleName\": \"xx\",\n                        \"IsDisable\": \"xx\"\n                    }\n                ],\n                \"RegionZh\": \"xx\",\n                \"ZoneSet\": [\n                    {\n                        \"PhysicalZone\": \"xx\",\n                        \"Zone\": \"xx\",\n                        \"IsSupportServerless\": 0,\n                        \"ZoneId\": 800001,\n                        \"IsSupportNormal\": 0,\n                        \"ZoneZh\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询可售卖地域可用区信息"
+      }
+    ],
     "DisassociateSecurityGroups": [
       {
         "document": "",

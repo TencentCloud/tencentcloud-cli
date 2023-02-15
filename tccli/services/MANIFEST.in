@@ -51,6 +51,8 @@ include tccli/services/bizlive/v20190313/api.json
 include tccli/services/bizlive/v20190313/examples.json
 include tccli/services/bm/v20180423/api.json
 include tccli/services/bm/v20180423/examples.json
+include tccli/services/bma/v20221115/api.json
+include tccli/services/bma/v20221115/examples.json
 include tccli/services/bma/v20210624/api.json
 include tccli/services/bma/v20210624/examples.json
 include tccli/services/bmeip/v20180625/api.json

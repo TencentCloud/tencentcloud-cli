@@ -1,0 +1,225 @@
+{
+  "actions": {
+    "CreateBPFakeAPP": {
+      "document": "仿冒应用举报",
+      "input": "CreateBPFakeAPPRequest",
+      "name": "仿冒应用举报",
+      "output": "CreateBPFakeAPPResponse",
+      "status": "online"
+    },
+    "CreateBPFakeAPPList": {
+      "document": "批量仿冒应用举报",
+      "input": "CreateBPFakeAPPListRequest",
+      "name": "批量仿冒应用举报",
+      "output": "CreateBPFakeAPPListResponse",
+      "status": "online"
+    },
+    "CreateBPFakeURL": {
+      "document": "仿冒网址举报",
+      "input": "CreateBPFakeURLRequest",
+      "name": "仿冒网址举报",
+      "output": "CreateBPFakeURLResponse",
+      "status": "online"
+    },
+    "CreateBPFakeURLs": {
+      "document": "批量仿冒网址举报",
+      "input": "CreateBPFakeURLsRequest",
+      "name": "批量仿冒网址举报",
+      "output": "CreateBPFakeURLsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-11-15",
+    "api_brief": "        ",
+    "serviceNameCN": "品牌经营管家",
+    "serviceShortName": "bma"
+  },
+  "objects": {
+    "CreateBPFakeAPPListRequest": {
+      "document": "CreateBPFakeAPPList请求参数结构体",
+      "members": [
+        {
+          "document": "仿冒应用下载链接。请严格按照模版进行填写：https://bma-privacy-detection-1251316161.cosgz.myqcloud.com/20221206/f8c7521fbd84f4c4e7c2a25ac233857e/批量仿冒应用举报模板.xlsx",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPs",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeAPPListResponse": {
+      "document": "CreateBPFakeAPPList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeAPPRequest": {
+      "document": "CreateBPFakeAPP请求参数结构体",
+      "members": [
+        {
+          "document": "企业id",
+          "example": "无",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "仿冒应用名称",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "仿冒来源",
+          "example": "无",
+          "member": "string",
+          "name": "APPChan",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "仿冒应用包名",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPPackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "仿冒应用证书",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "仿冒应用大小",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "仿冒截图",
+          "example": "无",
+          "member": "string",
+          "name": "FakeAPPSnapshots",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeAPPResponse": {
+      "document": "CreateBPFakeAPP返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeURLRequest": {
+      "document": "CreateBPFakeURL请求参数结构体",
+      "members": [
+        {
+          "document": "企业id",
+          "example": "无",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "仿冒网址",
+          "example": "无",
+          "member": "string",
+          "name": "FakeURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "仿冒网址截图",
+          "example": "无",
+          "member": "string",
+          "name": "FakeURLSnapshots",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeURLResponse": {
+      "document": "CreateBPFakeURL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeURLsRequest": {
+      "document": "CreateBPFakeURLs请求参数结构体",
+      "members": [
+        {
+          "document": "仿冒网址下载链接：请严格按照模版要求填写，https://bma-privacy-detection-1251316161.cosgz.myqcloud.com/20221124/ff3273b24104d03fa3a8d0629a7f71a9/批量仿冒网址举报模板.xlsx",
+          "example": "无",
+          "member": "string",
+          "name": "FakeURLs",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeURLsResponse": {
+      "document": "CreateBPFakeURLs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

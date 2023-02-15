@@ -1135,7 +1135,7 @@
       "status": "online"
     },
     "ModifyPrometheusAlertRule": {
-      "document": "修改告警规则 ",
+      "document": "修改告警规则",
       "input": "ModifyPrometheusAlertRuleRequest",
       "name": "修改告警规则",
       "output": "ModifyPrometheusAlertRuleResponse",
@@ -5488,16 +5488,14 @@
       "document": "CreatePrometheusAlertRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例id",
-          "example": "prom-xxx",
+          "example": "prom-abc",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警配置",
           "example": "参考复杂类型",
           "member": "PrometheusAlertRuleDetail",
@@ -5513,10 +5511,9 @@
       "members": [
         {
           "document": "告警id",
-          "example": "alert-xx",
+          "example": "alert-def",
           "member": "string",
           "name": "Id",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7205,8 +7202,8 @@
       "document": "DescribeClusterAsGroupOption请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
+          "example": "cls-hca1bmif",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7220,6 +7217,7 @@
       "members": [
         {
           "document": "集群弹性伸缩属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
           "member": "ClusterAsGroupOption",
           "name": "ClusterAsGroupOption",
           "type": "object",
@@ -9865,24 +9863,24 @@
       "document": "DescribePrometheusAgents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例id",
+          "example": "prom-dshjagdy",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于分页",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "用于分页",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -9896,6 +9894,7 @@
       "members": [
         {
           "document": "被关联集群信息",
+          "example": "无",
           "member": "PrometheusAgentOverview",
           "name": "Agents",
           "type": "list",
@@ -9903,6 +9902,7 @@
         },
         {
           "document": "被关联集群总量",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
           "type": "int",
@@ -9921,25 +9921,22 @@
       "document": "DescribePrometheusAlertHistory请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例id",
-          "example": "prom-xxx",
+          "example": "prom-abcdfas",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警名称",
-          "example": "xxx",
+          "example": "test",
           "member": "string",
           "name": "RuleName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "开始时间",
           "example": "2021-02-19 16:51:44",
           "member": "string",
@@ -9948,7 +9945,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束时间",
           "example": "2021-02-19 16:51:44",
           "member": "string",
@@ -9957,16 +9953,14 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "label集合",
-          "example": "a",
+          "example": "无",
           "member": "string",
           "name": "Labels",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "分片",
           "example": "0",
           "member": "uint64",
@@ -9975,7 +9969,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分片",
           "example": "1",
           "member": "uint64",
@@ -9994,7 +9987,6 @@
           "example": "无",
           "member": "PrometheusAlertHistoryItem",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10003,7 +9995,6 @@
           "example": "0",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10092,16 +10083,14 @@
       "document": "DescribePrometheusAlertRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例id",
-          "example": "prom-xxx",
+          "example": "prom-dshjhjga",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页",
           "example": "0",
           "member": "uint64",
@@ -10110,7 +10099,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页",
           "example": "100",
           "member": "uint64",
@@ -10119,7 +10107,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤\n支持ID，Name",
           "example": "无",
           "member": "Filter",
@@ -10138,7 +10125,6 @@
           "example": "无",
           "member": "PrometheusAlertRuleDetail",
           "name": "AlertRules",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10147,7 +10133,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10459,9 +10444,8 @@
       "document": "DescribePrometheusInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例id",
-          "example": "prom-xxx",
+          "example": "prom-adcvdd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10478,7 +10462,6 @@
           "example": "prom-test",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10487,43 +10470,38 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "私有网络id",
-          "example": "vpcId-xx",
+          "example": "vpcId-sdasda",
           "member": "string",
           "name": "VpcId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "子网id",
-          "example": "sub-xx",
+          "example": "sub-dsdadad",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "cos桶名称",
-          "example": "xxx",
+          "example": "dsdsadada",
           "member": "string",
           "name": "COSBucket",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "数据查询地址",
-          "example": "xxx",
+          "example": "http://10.0.0.1:9090",
           "member": "string",
           "name": "QueryAddress",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10532,7 +10510,6 @@
           "example": "无",
           "member": "PrometheusGrafanaInfo",
           "name": "Grafana",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10541,7 +10518,6 @@
           "example": "http://1.1.1.1",
           "member": "string",
           "name": "AlertManagerUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10621,24 +10597,24 @@
       "document": "DescribePrometheusOverviews请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "用于分页",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "用于分页",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤实例，目前支持：\nID: 通过实例ID来过滤 \nName: 通过实例名称来过滤",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10652,6 +10628,7 @@
       "members": [
         {
           "document": "实例列表",
+          "example": "无",
           "member": "PrometheusInstanceOverview",
           "name": "Instances",
           "type": "list",
@@ -10659,6 +10636,7 @@
         },
         {
           "document": "实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
           "type": "int",
@@ -10905,8 +10883,8 @@
       "document": "DescribePrometheusTemplateSync请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模板ID",
+          "example": "temp-dhjgjkfg",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -10920,6 +10898,7 @@
       "members": [
         {
           "document": "同步目标详情",
+          "example": "无",
           "member": "PrometheusTemplateSyncTarget",
           "name": "Targets",
           "type": "list",
@@ -10938,24 +10917,24 @@
       "document": "DescribePrometheusTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模糊过滤条件，支持\nLevel 按模板级别过滤\nName 按名称过滤\nDescribe 按描述过滤\nID 按templateId过滤",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页偏移",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "总数限制",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10969,6 +10948,7 @@
       "members": [
         {
           "document": "模板列表",
+          "example": "无",
           "member": "PrometheusTemplate",
           "name": "Templates",
           "type": "list",
@@ -10976,6 +10956,7 @@
         },
         {
           "document": "总数",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
           "type": "int",
@@ -15496,16 +15477,14 @@
       "document": "ModifyPrometheusAlertRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例id",
-          "example": "prom-xxx",
+          "example": "prom-abdcjdh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警配置",
           "example": "无",
           "member": "PrometheusAlertRuleDetail",
@@ -18527,27 +18506,24 @@
       "document": "RemoveNodeFromNodePool请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群id",
-          "example": "cls-xxxxxx",
+          "example": "cls-hca1bmif",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "节点池id",
-          "example": "np-xxxxxxxx",
+          "example": "np-5tx2jmn9",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "节点id列表，一次最多支持100台",
-          "example": "[\"ins-xxxxxxxx\\n\"]",
+          "example": "[\"ins-74mbca66\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,

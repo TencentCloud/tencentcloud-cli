@@ -1235,7 +1235,7 @@
     "GenHiveTableDDLSql": [
       {
         "document": "生成建hive表的sql",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenHiveTableDDLSql\n<公共请求参数>\n\n{\n    \"SourceDatabase\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"TableName\": \"xx\",\n    \"SinkDatabase\": \"xx\",\n    \"DatasourceId\": \"xx\",\n    \"MsType\": \"xx\",\n    \"Id\": \"xx\",\n    \"SinkType\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenHiveTableDDLSql\n<公共请求参数>\n\n{\n    \"TableVersion\": \"xx\",\n    \"SourceDatabase\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"SourceFieldInfoList\": [\n        {\n            \"Alias\": \"xx\",\n            \"FieldName\": \"xx\",\n            \"FieldType\": \"xx\"\n        }\n    ],\n    \"TableName\": \"xx\",\n    \"UpsertFlag\": true,\n    \"SinkDatabase\": \"xx\",\n    \"Properties\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"SinkType\": \"xx\",\n    \"DatasourceId\": \"xx\",\n    \"SchemaName\": \"xx\",\n    \"TableMode\": 0,\n    \"MsType\": \"xx\",\n    \"Id\": \"xx\",\n    \"TableComment\": \"xx\",\n    \"AddDataFiles\": 1000,\n    \"AddEqualityDeletes\": 1000,\n    \"AddPositionDeletes\": 1000,\n    \"AddDeleteFiles\": 1000,\n    \"Partitions\": [\n        {\n            \"Transform\": \"xx\",\n            \"TransformArgs\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DDLSql\": \"xx\"\n    }\n}",
         "title": "GenHiveTableDDLSql"
       }

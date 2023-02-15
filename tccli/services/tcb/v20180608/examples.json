@@ -27,8 +27,8 @@
     "CreateAndDeployCloudBaseProject": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndDeployCloudBaseProject\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"Name\": \"xx\",\n    \"Parameters\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"Tags\": [\n        \"xx\"\n    ],\n    \"RcJson\": \"xx\",\n    \"FreeQuota\": \"xx\",\n    \"NetworkConfig\": \"xx\",\n    \"Source\": {\n        \"CodingPackageVersion\": \"xx\",\n        \"WorkDir\": \"xx\",\n        \"Name\": \"xx\",\n        \"Url\": \"xx\",\n        \"RawCode\": \"xx\",\n        \"Type\": \"xx\",\n        \"CodingPackageName\": \"xx\"\n    },\n    \"AddonConfig\": \"xx\",\n    \"EnvAlias\": \"xx\",\n    \"Type\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EnvId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndDeployCloudBaseProject\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"Name\": \"xx\",\n    \"Parameters\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"Tags\": [\n        null\n    ],\n    \"RcJson\": \"xx\",\n    \"FreeQuota\": \"xx\",\n    \"NetworkConfig\": \"xx\",\n    \"RepoUrl\": \"xx\",\n    \"Source\": {\n        \"CodingPackageVersion\": \"xx\",\n        \"WorkDir\": \"xx\",\n        \"Name\": \"xx\",\n        \"Url\": \"xx\",\n        \"ProjectId\": 0,\n        \"RawCode\": \"xx\",\n        \"Branch\": \"xx\",\n        \"ProjectName\": \"xx\",\n        \"Type\": \"xx\",\n        \"CodingPackageName\": \"xx\"\n    },\n    \"AddonConfig\": \"xx\",\n    \"AutoDeployOnCodeChange\": true,\n    \"EnvAlias\": \"xx\",\n    \"Type\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"lowcode-7ggmm27y1d0633a9\",\n        \"RequestId\": \"00b9517e-7ba6-4b41-b0c3-4d50c64cef62\"\n    }\n}",
         "title": "创建云开发项目"
       }
     ],

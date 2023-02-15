@@ -1,12 +1,12 @@
 **Example 1: 拉取同步目标**
 
-
+拉取同步目标
 
 Input: 
 
 ```
 tccli tke DescribePrometheusTemplateSync --cli-unfold-argument  \
-    --TemplateId "temp-xxx"
+    --TemplateId "temp-dsffgg"
 ```
 
 Output: 
@@ -17,8 +17,8 @@ Output:
         "Targets": [
             {
                 "Region": "ap-shanghai",
-                "InstanceId": "prom-xxx",
-                "ClusterId": "xxx",
+                "InstanceId": "prom-dsdfaf",
+                "ClusterId": "cls-dfdfga",
                 "SyncTime": "2020-02-2"
             }
         ]

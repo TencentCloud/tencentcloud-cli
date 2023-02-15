@@ -1623,6 +1623,7 @@
         {
           "default": "",
           "document": "是否是溢价域名：\nture 是    \nfalse 不是",
+          "example": "1",
           "member": "bool",
           "name": "IsPremium",
           "required": true,
@@ -1632,6 +1633,7 @@
         {
           "default": "",
           "document": "域名资源ID。",
+          "example": "'domain-acnsd121q'",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -1641,6 +1643,7 @@
         {
           "default": "",
           "document": "域名名称。",
+          "example": "xxxx.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -1649,7 +1652,8 @@
         },
         {
           "default": "",
-          "document": "是否已设置自动续费 。\n0：未设置 \n1：已设置",
+          "document": "是否已设置自动续费 。\n0：未设置 \n1：已设置\n2：设置后，关闭",
+          "example": "1",
           "member": "uint64",
           "name": "AutoRenew",
           "required": true,
@@ -1659,6 +1663,7 @@
         {
           "default": "",
           "document": "注册时间。",
+          "example": "xxxx",
           "member": "string",
           "name": "CreationDate",
           "required": true,
@@ -1668,6 +1673,7 @@
         {
           "default": "",
           "document": "到期时间。",
+          "example": "xxxx",
           "member": "string",
           "name": "ExpirationDate",
           "required": true,
@@ -1677,6 +1683,7 @@
         {
           "default": "",
           "document": "域名后缀",
+          "example": ".com",
           "member": "string",
           "name": "Tld",
           "required": true,
@@ -1686,6 +1693,7 @@
         {
           "default": "",
           "document": "编码后的后缀（中文会进行编码）",
+          "example": ".com",
           "member": "string",
           "name": "CodeTld",
           "required": true,
@@ -1695,6 +1703,7 @@
         {
           "default": "",
           "document": "域名购买状态。\nok：正常\nAboutToExpire: 即将到期\nRegisterPending：注册中\nRegisterDoing：注册中\nRegisterFailed：注册失败\nRenewPending：续费期\nRenewDoing：续费中\nRedemptionPending：赎回期\nRedemptionDoing：赎回中\nTransferPending：转入中\nTransferTransing：转入中\nTransferFailed：转入失败",
+          "example": "ok",
           "member": "string",
           "name": "BuyStatus",
           "required": true,
