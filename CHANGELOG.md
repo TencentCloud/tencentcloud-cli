@@ -1,3 +1,281 @@
+# Release 3.0.705.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 43 次发布
+
+发布时间：2023-02-16 01:11:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [OpenDBInstanceEncryption](http://document.tencentcloudapi.woa.com/document/product/236/77072)
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 48 次发布
+
+发布时间：2023-02-16 01:14:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ConsumerRecord](http://document.tencentcloudapi.woa.com/document/product/597/40861#ConsumerRecord)
+
+	* 新增成员：Headers
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 30 次发布
+
+发布时间：2023-02-16 01:15:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyFunctionTargets](http://document.tencentcloudapi.woa.com/document/product/214/77073)
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 46 次发布
+
+发布时间：2023-02-16 01:19:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyMachineRemark](http://document.tencentcloudapi.woa.com/document/product/296/77074)
+
+修改数据结构：
+
+* [Machine](http://document.tencentcloudapi.woa.com/document/product/296/19867#Machine)
+
+	* 新增成员：Remark
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 38 次发布
+
+发布时间：2023-02-16 01:23:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+
+	* 新增成员：ResourceType, ImageVersionId, ChildImageVersionId, ImageVersionName
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 41 次发布
+
+发布时间：2023-02-16 01:27:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelUpdateSealStatus](http://document.tencentcloudapi.woa.com/document/product/1595/77075)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 30 次发布
+
+发布时间：2023-02-16 01:49:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateWxCloudBaseRunEnv](http://document.tencentcloudapi.woa.com/document/product/876/55054)
+
+	* 新增入参：Source, Channel
+
+
+
+
+## 弹性微服务 TEM(tem) 版本：2021-07-01
+
+### 第 30 次发布
+
+发布时间：2023-02-16 01:52:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LogConfigExtractRule](http://document.tencentcloudapi.woa.com/document/product/1371/60171#LogConfigExtractRule)
+
+	* 新增成员：Backtracking, Delimiter
+
+* [ServiceVersionBrief](http://document.tencentcloudapi.woa.com/document/product/1371/60171#ServiceVersionBrief)
+
+	* 新增成员：RegionId
+
+* [TemEnvironmentStartingStatus](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemEnvironmentStartingStatus)
+
+	* 新增成员：StartFailedApplicationNum
+
+* [TemEnvironmentStoppingStatus](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemEnvironmentStoppingStatus)
+
+	* 新增成员：StopFailedApplicationNum
+
+* [TemServiceVersionInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemServiceVersionInfo)
+
+	* 新增成员：PreStopEncoded, PostStartEncoded
+
+
+
+
+## 弹性微服务 TEM(tem) 版本：2020-12-21
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 56 次发布
+
+发布时间：2023-02-16 01:53:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [EnableClusterAudit](http://document.tencentcloudapi.woa.com/document/product/457/73900)
+
+	* 新增入参：TopicRegion
+
+* [EnableEventPersistence](http://document.tencentcloudapi.woa.com/document/product/457/73904)
+
+	* 新增入参：TopicRegion
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 32 次发布
+
+发布时间：2023-02-16 01:55:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddInstances](http://document.tencentcloudapi.woa.com/document/product/649/36050)
+
+	* 新增入参：SecurityGroupIds
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 48 次发布
+
+发布时间：2023-02-16 01:57:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ArtifactRepairInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#ArtifactRepairInfo)
+* [AudioDenoiseInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#AudioDenoiseInfo)
+* [ColorEnhanceInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#ColorEnhanceInfo)
+* [FaceEnhanceInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#FaceEnhanceInfo)
+* [HDRInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#HDRInfo)
+* [LowLightEnhanceInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#LowLightEnhanceInfo)
+* [RebuildMediaTargetAudioStream](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTargetAudioStream)
+* [RebuildMediaTargetInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTargetInfo)
+* [RebuildMediaTargetVideoStream](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTargetVideoStream)
+* [RebuildMediaTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTask)
+* [RebuildMediaTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTaskInput)
+* [RebuildMediaTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTaskOutput)
+* [RepairInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RepairInfo)
+* [ScratchRepairInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#ScratchRepairInfo)
+* [SharpEnhanceInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#SharpEnhanceInfo)
+* [SuperResolutionInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#SuperResolutionInfo)
+* [VideoDenoiseInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#VideoDenoiseInfo)
+* [VideoFrameInterpolationInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#VideoFrameInterpolationInfo)
+
+修改数据结构：
+
+* [EventContent](http://document.tencentcloudapi.woa.com/document/product/266/31773#EventContent)
+
+	* 新增成员：RebuildMediaCompleteEvent
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 66 次发布
+
+发布时间：2023-02-16 01:59:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBandwidthPackage](http://document.tencentcloudapi.woa.com/document/product/215/19212)
+
+	* 新增入参：TimeSpan
+
+
+
+
 # Release 3.0.704.1
 
 ## 主机安全(cwp) 版本：2018-02-28

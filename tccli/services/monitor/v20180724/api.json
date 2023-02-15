@@ -2631,7 +2631,6 @@
       "document": "CleanGrafanaInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-grafana",
           "member": "string",
@@ -3663,7 +3662,6 @@
       "document": "CreateGrafanaNotificationChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
@@ -3673,7 +3671,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "告警通道名称，例如：test",
           "example": "my-channel",
           "member": "string",
@@ -3683,7 +3680,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "默认为1，已废弃，请使用 OrganizationIds",
           "example": "1",
           "member": "int64",
@@ -3693,7 +3689,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "接受告警通道 ID 数组",
           "example": "[]",
           "member": "string",
@@ -3703,7 +3698,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "额外组织 ID 数组，已废弃，请使用 OrganizationIds",
           "example": "[]",
           "member": "string",
@@ -3713,7 +3707,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "生效的所有组织 ID 数组，默认为 [\"1\"]",
           "example": "[\"1\"]",
           "member": "string",
@@ -3733,7 +3726,6 @@
           "example": "channel-xxxxxxxx",
           "member": "string",
           "name": "ChannelId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -4955,7 +4947,6 @@
       "document": "DeleteGrafanaNotificationChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "通道 ID 数组。例如：nchannel-abcd1234",
           "example": "[]",
           "member": "string",
@@ -4965,7 +4956,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
@@ -7568,7 +7558,6 @@
       "document": "DescribeDNSConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
@@ -7588,7 +7577,6 @@
           "example": "[]",
           "member": "string",
           "name": "NameServers",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -8022,7 +8010,6 @@
       "document": "DescribeGrafanaNotificationChannels请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
@@ -8032,7 +8019,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "int64",
@@ -8042,7 +8028,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "查询数量",
           "example": "10",
           "member": "int64",
@@ -8052,7 +8037,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "告警通道名称，例如：test",
           "example": "my-channel",
           "member": "string",
@@ -8062,7 +8046,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "告警通道 ID，例如：nchannel-abcd1234",
           "example": "[\"crule-123\"]",
           "member": "string",
@@ -8072,7 +8055,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "告警通道状态",
           "example": "1",
           "member": "int64",
@@ -8092,7 +8074,6 @@
           "example": "[]",
           "member": "GrafanaNotificationChannel",
           "name": "NotificationChannelSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -8102,7 +8083,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 2
@@ -8120,7 +8100,6 @@
       "document": "DescribeGrafanaWhiteList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
@@ -8140,7 +8119,6 @@
           "example": "[]",
           "member": "string",
           "name": "WhiteList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -17815,7 +17793,6 @@
       "document": "ResumeGrafanaInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
@@ -18913,7 +18890,6 @@
       "document": "UpdateDNSConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
@@ -18923,7 +18899,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "DNS 数组",
           "example": "[\"114.114.114.114\"]",
           "member": "string",
@@ -19057,7 +19032,6 @@
       "document": "UpdateGrafanaEnvironments请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
@@ -19067,7 +19041,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "环境变量字符串",
           "example": "{}",
           "member": "string",
@@ -19153,7 +19126,6 @@
       "document": "UpdateGrafanaNotificationChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "通道 ID，例如：nchannel-abcd1234",
           "example": "channel-id",
           "member": "string",
@@ -19163,7 +19135,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
@@ -19173,7 +19144,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "告警通道名称，例如：test",
           "example": "channel-name",
           "member": "string",
@@ -19183,7 +19153,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "接受告警通道 ID 数组",
           "example": "[]",
           "member": "string",
@@ -19193,7 +19162,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "已废弃，请使用 OrganizationIds",
           "example": "[]",
           "member": "string",
@@ -19203,7 +19171,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "生效的组织 ID 数组",
           "example": "[\"1\", \"2\"]",
           "member": "string",
@@ -19231,7 +19198,6 @@
       "document": "UpdateGrafanaWhiteList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
@@ -19241,7 +19207,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "白名单数组，输入公网域名 IP ，例如：127.0.0.1，可通过接口 DescribeGrafanaWhiteList 查看",
           "example": "[\"\"]",
           "member": "string",
@@ -19614,7 +19579,6 @@
       "document": "UpgradeGrafanaInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
@@ -19624,7 +19588,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "版本别名，例如：v7.4.2",
           "example": "my-instance",
           "member": "string",

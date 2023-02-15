@@ -42,7 +42,7 @@
     ],
     "CreateCloudBaseRunResource": [
       {
-        "document": "",
+        "document": "开通容器托管的资源",
         "input": "https://tcb.tencentcloudapi.com/?Action=CreateCloudBaseRunResource\n&EnvId=lotestapi100004\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"succ\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "开通容器托管的资源"
@@ -90,7 +90,7 @@
     ],
     "CreateWxCloudBaseRunEnv": [
       {
-        "document": "",
+        "document": "创建云托管环境",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWxCloudBaseRunEnv\n<公共请求参数>\n\n{\n    \"WxAppId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvId\": \"xx\",\n        \"TranId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "CreateWxCloudBaseRunEnv"
@@ -214,7 +214,7 @@
     ],
     "DescribeCloudBaseRunConfForGateWay": [
       {
-        "document": "",
+        "document": "拉取独立网关云托管的配置信息",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudBaseRunConfForGateWay\n<公共请求参数>\n\n{\n    \"EnvID\": \"xx\",\n    \"VpcID\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"EnvId\": \"xx\",\n                \"GrayKey\": \"xx\",\n                \"Weight\": 100,\n                \"ServerName\": \"xx\",\n                \"AccessType\": 2,\n                \"LbAddr\": \"xx\",\n                \"IsZero\": false,\n                \"GrayType\": \"xx\",\n                \"VersionName\": \"xx\",\n                \"URLs\": [\n                    \"xx\"\n                ],\n                \"IsDefault\": false,\n                \"GrayValue\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"LastUpTime\": \"xx\"\n    }\n}",
         "title": "示例"
@@ -358,7 +358,7 @@
     ],
     "DescribeEnvDealRegion": [
       {
-        "document": "",
+        "document": "续费环境查询下单地域 ",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvDealRegion\n&EnvId=test-12323\n&DealType=ENV_POSTPAY\n&DealAction=RENEW\n&DealRegion=ap-shanghai\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e22b381-93a3-44c4-85b7-456679a7b8cd\",\n        \"Region\": \"ap-shanghai\",\n        \"Zone\": \"ap-shanghai-1\",\n        \"RegionId\": 4,\n        \"ZoneId\": 200001\n    }\n}",
         "title": "续费环境查询下单地域"
@@ -486,15 +486,15 @@
     ],
     "DescribeWxCloudBaseRunEnvs": [
       {
-        "document": "",
+        "document": "查询环境列表",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxCloudBaseRunEnvs\n<公共请求参数>\n\n{\n    \"WxAppId\": \"xx\",\n    \"AllRegions\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"Status\": \"xx\",\n                \"PayMode\": \"xx\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"EnvId\": \"xx\",\n                \"EnvType\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CustomLogServices\": [\n                    {\n                        \"ClsTopicId\": \"xx\",\n                        \"ClsRegion\": \"xx\",\n                        \"ClsLogsetId\": \"xx\",\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"PackageName\": \"xx\",\n                \"IsAutoDegrade\": true,\n                \"Functions\": [\n                    {\n                        \"Region\": \"xx\",\n                        \"Namespace\": \"xx\"\n                    }\n                ],\n                \"EnvChannel\": \"xx\",\n                \"Source\": \"xx\",\n                \"Alias\": \"xx\",\n                \"Region\": \"xx\",\n                \"IsDefault\": true,\n                \"PackageId\": \"xx\",\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"Status\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"CdnDomain\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"Bucket\": \"xx\",\n                        \"AppId\": \"xx\"\n                    }\n                ],\n                \"LogServices\": [\n                    {\n                        \"TopicId\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"TopicName\": \"xx\",\n                        \"LogsetName\": \"xx\",\n                        \"LogsetId\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"StaticStorages\": [\n                    {\n                        \"Status\": \"xx\",\n                        \"StaticDomain\": \"xx\",\n                        \"DefaultDirName\": \"xx\",\n                        \"Bucket\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"Functions\": [\n                    {\n                        \"Region\": \"xx\",\n                        \"Namespace\": \"xx\"\n                    }\n                ],\n                \"IsAutoDegrade\": true,\n                \"PackageName\": \"xx\",\n                \"EnvChannel\": \"xx\",\n                \"Source\": \"xx\",\n                \"Storages\": [\n                    {\n                        \"CdnDomain\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"Bucket\": \"xx\",\n                        \"AppId\": \"xx\"\n                    }\n                ],\n                \"Status\": \"xx\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CustomLogServices\": [\n                    {\n                        \"ClsTopicId\": \"xx\",\n                        \"ClsRegion\": \"xx\",\n                        \"ClsLogsetId\": \"xx\",\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"StaticStorages\": [\n                    {\n                        \"Status\": \"xx\",\n                        \"StaticDomain\": \"xx\",\n                        \"DefaultDirName\": \"xx\",\n                        \"Bucket\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ],\n                \"PackageId\": \"xx\",\n                \"EnvId\": \"xx\",\n                \"Region\": \"xx\",\n                \"PayMode\": \"xx\",\n                \"Alias\": \"xx\",\n                \"PackageType\": \"xx\",\n                \"IsDauPackage\": true,\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"Status\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"UpdateTime\": \"2020-09-22T00:00:00+00:00\"\n                    }\n                ],\n                \"IsDefault\": true,\n                \"LogServices\": [\n                    {\n                        \"TopicId\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"Period\": 0,\n                        \"TopicName\": \"xx\",\n                        \"LogsetName\": \"xx\",\n                        \"LogsetId\": \"xx\"\n                    }\n                ],\n                \"EnvType\": \"xx\",\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "DescribeWxCloudBaseRunEnvs"
       }
     ],
     "DescribeWxCloudBaseRunSubNets": [
       {
-        "document": "",
+        "document": "查询子网",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxCloudBaseRunSubNets\n<公共请求参数>\n\n{\n    \"VpcId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"SubNetIds\": [\n            \"aa\",\n            \"bb\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "DescribeWxCloudBaseRunSubNets"

@@ -156,6 +156,14 @@
         "title": "test示例"
       }
     ],
+    "ChannelUpdateSealStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelUpdateSealStatus\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"d2b****b66f954d7cc\",\n        \"ProxyOrganizationOpenId\": \"yDxAyUyK****cb7u0jQn0Zh7f7\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"732aaef****541b89c49e0cc\"\n        },\n        \"AppId\": \"ed68bc6***********0214e4e\"\n    },\n    \"SealId\": \"yDRTZxxxxxJNR\",\n    \"Status\": \"DISABLE\",\n    \"Reason\": \"变更原因-停用\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "渠道版-停用印章"
+      }
+    ],
     "ChannelVerifyPdf": [
       {
         "document": "",

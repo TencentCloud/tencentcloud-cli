@@ -1,13 +1,13 @@
 **Example 1: 创建共享带宽包**
 
-
+创建共享带宽包
 
 Input: 
 
 ```
 tccli vpc CreateBandwidthPackage --cli-unfold-argument  \
-    --ChargeType TOP5_POSTPAID_BY_MONTH \
-    --NetworkType BGP
+    --NetworkType BGP \
+    --ChargeType TOP5_POSTPAID_BY_MONTH
 ```
 
 Output: 

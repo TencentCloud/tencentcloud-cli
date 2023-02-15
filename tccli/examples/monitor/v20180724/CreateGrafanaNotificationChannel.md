@@ -1,6 +1,6 @@
 **Example 1: 创建 Grafana 告警通道**
 
-
+创建 Grafana 告警通道
 
 Input: 
 

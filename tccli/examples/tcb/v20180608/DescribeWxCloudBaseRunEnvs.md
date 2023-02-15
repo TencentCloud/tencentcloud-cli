@@ -1,6 +1,6 @@
 **Example 1: DescribeWxCloudBaseRunEnvs**
 
-
+查询环境列表
 
 Input: 
 
@@ -16,11 +16,26 @@ Output:
     "Response": {
         "EnvList": [
             {
+                "Functions": [
+                    {
+                        "Region": "xx",
+                        "Namespace": "xx"
+                    }
+                ],
+                "IsAutoDegrade": true,
+                "PackageName": "xx",
+                "EnvChannel": "xx",
+                "Source": "xx",
+                "Storages": [
+                    {
+                        "CdnDomain": "xx",
+                        "Region": "xx",
+                        "Bucket": "xx",
+                        "AppId": "xx"
+                    }
+                ],
                 "Status": "xx",
-                "PayMode": "xx",
                 "UpdateTime": "2020-09-22 00:00:00",
-                "EnvId": "xx",
-                "EnvType": "xx",
                 "Tags": [
                     {
                         "Value": "xx",
@@ -35,45 +50,6 @@ Output:
                         "CreateTime": "2020-09-22 00:00:00"
                     }
                 ],
-                "PackageName": "xx",
-                "IsAutoDegrade": true,
-                "Functions": [
-                    {
-                        "Region": "xx",
-                        "Namespace": "xx"
-                    }
-                ],
-                "EnvChannel": "xx",
-                "Source": "xx",
-                "Alias": "xx",
-                "Region": "xx",
-                "IsDefault": true,
-                "PackageId": "xx",
-                "Databases": [
-                    {
-                        "InstanceId": "xx",
-                        "Status": "xx",
-                        "Region": "xx"
-                    }
-                ],
-                "Storages": [
-                    {
-                        "CdnDomain": "xx",
-                        "Region": "xx",
-                        "Bucket": "xx",
-                        "AppId": "xx"
-                    }
-                ],
-                "LogServices": [
-                    {
-                        "TopicId": "xx",
-                        "Region": "xx",
-                        "TopicName": "xx",
-                        "LogsetName": "xx",
-                        "LogsetId": "xx"
-                    }
-                ],
-                "CreateTime": "2020-09-22 00:00:00",
                 "StaticStorages": [
                     {
                         "Status": "xx",
@@ -82,7 +58,35 @@ Output:
                         "Bucket": "xx",
                         "Region": "xx"
                     }
-                ]
+                ],
+                "PackageId": "xx",
+                "EnvId": "xx",
+                "Region": "xx",
+                "PayMode": "xx",
+                "Alias": "xx",
+                "PackageType": "xx",
+                "IsDauPackage": true,
+                "Databases": [
+                    {
+                        "InstanceId": "xx",
+                        "Status": "xx",
+                        "Region": "xx",
+                        "UpdateTime": "2020-09-22T00:00:00+00:00"
+                    }
+                ],
+                "IsDefault": true,
+                "LogServices": [
+                    {
+                        "TopicId": "xx",
+                        "Region": "xx",
+                        "Period": 0,
+                        "TopicName": "xx",
+                        "LogsetName": "xx",
+                        "LogsetId": "xx"
+                    }
+                ],
+                "EnvType": "xx",
+                "CreateTime": "2020-09-22 00:00:00"
             }
         ],
         "RequestId": "xx"

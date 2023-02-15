@@ -3857,7 +3857,6 @@
       "document": "DataEngine详细信息",
       "members": [
         {
-          "default": "",
           "document": "DataEngine名称",
           "example": "shared_presto",
           "member": "string",
@@ -3868,7 +3867,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "引擎类型 spark/presto",
           "example": "presto",
           "member": "string",
@@ -3879,7 +3877,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群资源类型 spark_private/presto_private/presto_cu/spark_cu",
           "example": "presto_private",
           "member": "string",
@@ -3890,7 +3887,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "引用ID",
           "example": "****",
           "member": "string",
@@ -3901,7 +3897,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据引擎状态  -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中",
           "example": "1",
           "member": "int64",
@@ -3912,7 +3907,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "1635320563",
           "member": "int64",
@@ -3923,7 +3917,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "更新时间",
           "example": "1635320563",
           "member": "int64",
@@ -3934,7 +3927,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "64",
           "member": "int64",
@@ -3945,7 +3937,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "计费模式 0共享模式 1按量计费 2包年包月",
           "example": "0",
           "member": "int64",
@@ -3956,7 +3947,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最小集群数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3967,7 +3957,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最大集群数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -3978,7 +3967,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否自动恢复\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -3989,7 +3977,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自动恢复时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -4000,7 +3987,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群网段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.255.252.0/22",
           "member": "string",
@@ -4011,7 +3997,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否为默认引擎\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -4022,7 +4007,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试资源",
           "member": "string",
@@ -4033,7 +4017,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "引擎id",
           "example": "02345495-cfe0-461c-8c3d-5715d03feda4",
           "member": "string",
@@ -4044,7 +4027,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "操作者",
           "example": "****",
           "member": "string",
@@ -4055,7 +4037,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "到期时间",
           "example": "2022-03-16 10:41:03",
           "member": "string",
@@ -4066,7 +4047,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "隔离时间",
           "example": "2022-03-16 10:41:03",
           "member": "string",
@@ -4077,7 +4057,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "冲正时间",
           "example": "2022-03-16 10:41:03",
           "member": "string",
@@ -4088,7 +4067,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testname",
           "member": "string",
@@ -4099,7 +4077,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签对集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"TagKey\":\"mark002\"}]",
           "member": "TagInfo",
@@ -4110,7 +4087,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "引擎拥有的权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[USE]",
           "member": "string",
@@ -4121,7 +4097,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否自定挂起集群：false（默认）：不自动挂起、true：自动挂起\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -4132,7 +4107,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "定时启停集群策略：0（默认）：关闭定时策略、1：开启定时策略（注：定时启停策略与自动挂起策略互斥）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -4143,7 +4117,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "定时启停策略，复杂类型：包含启停时间、挂起集群策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CrontabResumeSuspendStrategy",
@@ -4154,7 +4127,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "引擎执行任务类型，有效值：SQL/BATCH\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4165,7 +4137,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自动续费标志，0，初始状态，默认不自动续费，若用户有预付费不停服特权，自动续费。1：自动续费。2：明确不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4176,7 +4147,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群自动挂起时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -4187,7 +4157,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网络连接配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NetworkConnection",
@@ -4198,11 +4167,50 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "ui的跳转地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dlc-xxx.com",
           "member": "string",
           "name": "UiURL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "引擎的资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Standard_CU",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "集群镜像版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ImageVersionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "集群镜像小版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ChildImageVersionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "集群镜像版本名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ImageVersionName",
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -5362,7 +5370,6 @@
       "document": "DescribeDataEngines请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "1",
           "member": "int64",
@@ -5372,7 +5379,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "滤类型，传参Name应为以下其中一个,\ndata-engine-name - String \nengine-type - String\nstate - String \nmode - String \ncreate-time - String \nmessage - String",
           "example": "无",
           "member": "Filter",
@@ -5382,7 +5388,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序字段，支持如下字段类型，create-time",
           "example": "create-time",
           "member": "string",
@@ -5392,7 +5397,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序方式，desc表示正序，asc表示反序， 默认为asc。",
           "example": "desc",
           "member": "string",
@@ -5402,7 +5406,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "example": "10",
           "member": "int64",
@@ -5412,7 +5415,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "已废弃，请使用DatasourceConnectionNameSet",
           "example": "数据目录名称",
           "member": "string",
@@ -5422,7 +5424,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否不返回共享引擎，true不返回共享引擎，false可以返回共享引擎",
           "example": "false",
           "member": "bool",
@@ -5432,7 +5433,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数应该为引擎权限类型，有效类型：\"USE\", \"MODIFY\", \"OPERATE\", \"MONITOR\", \"DELETE\"",
           "example": "[USE]",
           "member": "string",
@@ -5442,7 +5442,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "引擎执行任务类型，有效值：SQL/BATCH",
           "example": "SQL",
           "member": "string",
@@ -5452,7 +5451,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "引擎类型，有效值：spark/presto",
           "example": "spark",
           "member": "string",
@@ -5462,7 +5460,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网络配置列表，若传入该参数，则返回网络配置关联的计算引擎",
           "example": "无",
           "member": "string",
@@ -5482,7 +5479,6 @@
           "example": "无",
           "member": "DataEngineInfo",
           "name": "DataEngines",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -5492,7 +5488,6 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1

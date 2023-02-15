@@ -11,7 +11,7 @@
     "AddInstances": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=AddInstances\r\n&InstanceIdList.0=ins-xxxxxxx\r\n&InstanceIdList.1=ins-xxxxxxx\r\n&ClusterId=cluster-xxxxxxx\r\n&InstanceImportMode=R\r\n&ImageId=img-xxxxxxx\r\n&Password=xxxxxxx\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=AddInstances\n&InstanceIdList.0=ins-xxxxxxx\n&InstanceIdList.1=ins-xxxxxxx\n&ClusterId=cluster-xxxxxxx\n&InstanceImportMode=R\n&ImageId=img-xxxxxxx\n&Password=xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b141f81-e708-46f0-a8d3-4e5259c82890\",\n        \"Result\": true\n    }\n}",
         "title": "添加云主机节点"
       }
@@ -267,7 +267,7 @@
     "DeleteConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteConfig\r\n&ConfigId=dcfg-gvkgdjyo\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteConfig\n&ConfigId=dcfg-gvkgdjyo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa19a76d-340f-4ed3-a8d7-b4c12a62ee3e\",\n        \"Result\": true\n    }\n}",
         "title": "删除配置项"
       }
@@ -283,7 +283,7 @@
     "DeleteContainerGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteContainerGroup\r\n&GroupId=group-xxxxxxx\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteContainerGroup\n&GroupId=group-xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1c10fa2-8e82-4c62-a3b6-3102dfd4dfbe\",\n        \"Result\": true\n    }\n}",
         "title": "删除容器部署组"
       }
@@ -339,7 +339,7 @@
     "DeleteNamespace": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteNamespace\r\n&NamespaceId=namespace-xxxxxxx\r\n&ClusterId=cluster-xxxxxxx\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteNamespace\n&NamespaceId=namespace-xxxxxxx\n&ClusterId=cluster-xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f8ba3919-a33e-49c2-afdb-c2d9a4162130\",\n        \"Result\": true\n    }\n}",
         "title": "删除命名空间示例"
       }
@@ -363,7 +363,7 @@
     "DeletePublicConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeletePublicConfig\r\n&ConfigId=dcfg-p-zvwgl6y8\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DeletePublicConfig\n&ConfigId=dcfg-p-zvwgl6y8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"839449d1-9ea3-45a8-94b9-4f9beecb8a45\",\n        \"Result\": true\n    }\n}",
         "title": "删除公共配置项"
       }
@@ -495,7 +495,7 @@
     "DescribeApplicationAttribute": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApplicationAttribute\r\n&ApplicationId=application-xxxxxxx\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApplicationAttribute\n&ApplicationId=application-xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e852beb1-edb2-4e69-8c64-003f9aafd6ea\",\n        \"Result\": {\n            \"GroupCount\": 1,\n            \"InstanceCount\": 1,\n            \"RunInstanceCount\": 1\n        }\n    }\n}",
         "title": "获取应用列表-其它字段【前端并发调用】"
       }
@@ -1295,7 +1295,7 @@
     "ModifyContainerReplicas": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ModifyContainerReplicas\r\n&GroupId=group-xxxxxxx\r\n&InstanceNum=1\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ModifyContainerReplicas\n&GroupId=group-xxxxxxx\n&InstanceNum=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b435457b-9a52-484c-bbbd-fc31dcd0d021\",\n        \"Result\": true\n    }\n}",
         "title": "修改容器部署组实例数"
       }
@@ -1423,7 +1423,7 @@
     "ReleaseConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ReleaseConfig\r\n&ConfigId=dcfg-zvw6kxa8\r\n&GroupId=group-nalqbgvq\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ReleaseConfig\n&ConfigId=dcfg-zvw6kxa8\n&GroupId=group-nalqbgvq\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"36ccafba-c8ab-4d15-a4f1-4cfd2070d1d3\",\n        \"Result\": true\n    }\n}",
         "title": "发布配置"
       }
@@ -1439,7 +1439,7 @@
     "ReleasePublicConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ReleasePublicConfig\r\n&ConfigId=dcfg-p-4y46okga\r\n&NamespaceId=namespace-ov6l235v\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ReleasePublicConfig\n&ConfigId=dcfg-p-4y46okga\n&NamespaceId=namespace-ov6l235v\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a20177f-0949-4e38-8c71-d77159586c04\",\n        \"Result\": true\n    }\n}",
         "title": "发布公共配置"
       }
@@ -1479,7 +1479,7 @@
     "RollbackConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=RollbackConfig\r\n&ConfigReleaseLogId=11111\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=RollbackConfig\n&ConfigReleaseLogId=11111\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8007ea57-6d26-43db-aa75-ad72cb3669ca\",\n        \"Result\": true\n    }\n}",
         "title": "回滚配置"
       }
@@ -1511,7 +1511,7 @@
     "ShrinkInstances": [
       {
         "document": "虚拟机部署组下线实例",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ShrinkInstances\r\n&GroupId=group-xxxxxxx\r\n&InstanceIdList.0=ins-xxxxxxx\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ShrinkInstances\n&GroupId=group-xxxxxxx\n&InstanceIdList.0=ins-xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0833008a-119d-4158-a4b6-94d0f4d0f07d\",\n        \"Result\": {\n            \"TaskId\": \"task-xxxxxxx\"\n        }\n    }\n}",
         "title": "虚拟机部署组下线实例"
       }
@@ -1519,7 +1519,7 @@
     "StartContainerGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=StartContainerGroup\r\n&GroupId=group-xxxxxxx\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=StartContainerGroup\n&GroupId=group-xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d96c11f8-26b7-49cb-a4dd-5dc1ea059c0b\",\n        \"Result\": true\n    }\n}",
         "title": "启动容器部署组"
       }
@@ -1535,7 +1535,7 @@
     "StopContainerGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=StopContainerGroup\r\n&GroupId=group-xxxxxxx\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=StopContainerGroup\n&GroupId=group-xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e17c464-cfc7-4209-8314-78b848e28640\",\n        \"Result\": true\n    }\n}",
         "title": "停止容器部署组"
       }

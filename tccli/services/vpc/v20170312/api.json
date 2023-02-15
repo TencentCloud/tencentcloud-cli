@@ -7152,67 +7152,76 @@
       "document": "CreateBandwidthPackage请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "带宽包类型, 默认值: BGP, 可选值:\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:\n<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>\n<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>",
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包名称。",
           "example": "test",
           "member": "string",
           "name": "BandwidthPackageName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。",
           "example": "1",
           "member": "uint64",
           "name": "BandwidthPackageCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。",
           "example": "1",
           "member": "int64",
           "name": "InternetMaxBandwidth",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "需要关联的标签列表。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包协议类型。当前支持'ipv4'和'ipv6'协议带宽包，默认值是'ipv4'。",
           "example": "IPV4",
           "member": "string",
           "name": "Protocol",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7225,18 +7234,18 @@
           "example": "bwp-8rolc8ec",
           "member": "string",
           "name": "BandwidthPackageId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "带宽包唯一ID列表(申请数量大于1时有效)。",
           "example": "[\"bwp-8rolc8ec\"]",
           "member": "string",
           "name": "BandwidthPackageIds",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

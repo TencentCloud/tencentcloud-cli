@@ -1,6 +1,6 @@
 **Example 1: 升级 Grafana 实例**
 
-
+升级 Grafana 实例
 
 Input: 
 
