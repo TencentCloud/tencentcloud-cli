@@ -958,6 +958,14 @@
         "title": "开通实例审计服务"
       }
     ],
+    "OpenDBInstanceEncryption": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenDBInstanceEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-qwer1234\",\n    \"KeyId\": \"testkey\",\n    \"KeyRegion\": \"ap-guangzou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac120c8-744a-4c15-be4e-4431511c0233\"\n    }\n}",
+        "title": "开通加密服务"
+      }
+    ],
     "OpenDBInstanceGTID": [
       {
         "document": "",

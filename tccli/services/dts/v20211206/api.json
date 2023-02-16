@@ -978,7 +978,6 @@
       "document": "ConfigureSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23",
           "example": "sync-werwfs23",
           "member": "string",
@@ -987,8 +986,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、noProxy,注意具体可选值依赖当前链路",
+          "document": "源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云),注意具体可选值依赖当前链路",
           "example": "cdb",
           "member": "string",
           "name": "SrcAccessType",
@@ -996,8 +994,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、noProxy,注意具体可选值依赖当前链路",
+          "document": "目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、ckafka(CKafka实例),注意具体可选值依赖当前链路",
           "example": "extranet",
           "member": "string",
           "name": "DstAccessType",
@@ -1005,7 +1002,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "同步任务选项",
           "example": "无",
           "member": "Options",
@@ -1014,7 +1010,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "同步库表对象信息",
           "example": "无",
           "member": "Objects",
@@ -1023,7 +1018,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "同步任务名称",
           "example": "test",
           "member": "string",
@@ -1032,7 +1026,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "枚举值是 liteMode 和 fullMode ，分别对应精简模式或正常模式",
           "example": "fullMode",
           "member": "string",
@@ -1041,7 +1034,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "运行模式，取值如：Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)",
           "example": "Immediate",
           "member": "string",
@@ -1050,7 +1042,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "期待启动时间，当RunMode取值为Timed时，此值必填，形如：\"2006-01-02 15:04:05\"",
           "example": "2022-12-06 00:00:00",
           "member": "string",
@@ -1059,8 +1050,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "源端信息，单节点数据库使用",
+          "document": "源端信息，单节点数据库使用，且SrcNodeType传single",
           "example": "无",
           "member": "Endpoint",
           "name": "SrcInfo",
@@ -1068,7 +1058,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "目标端信息，单节点数据库使用",
           "example": "无",
           "member": "Endpoint",
@@ -1077,7 +1066,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "自动重试的时间段、可设置5至720分钟、0表示不重试",
           "example": "5",
           "member": "int64",
@@ -3185,7 +3173,6 @@
       "document": "DescribeSyncJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "同步任务id，如sync-werwfs23",
           "example": "无",
           "member": "string",
@@ -3194,7 +3181,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "同步任务名",
           "example": "无",
           "member": "string",
@@ -3203,7 +3189,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序字段，可以取值为CreateTime",
           "example": "CreateTime",
           "member": "string",
@@ -3212,7 +3197,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序方式，升序为ASC，降序为DESC，默认为CreateTime降序",
           "example": "DESC",
           "member": "string",
@@ -3221,7 +3205,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0",
           "example": "0",
           "member": "uint64",
@@ -3230,7 +3213,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回同步任务实例数量，默认20，有效区间[1,100]",
           "example": "2",
           "member": "uint64",
@@ -3239,7 +3221,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "状态集合，如Initialized,CheckPass,Running,ResumableErr,Stopped",
           "example": "无",
           "member": "string",
@@ -3248,7 +3229,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "运行模式，如Immediate:立即运行，Timed:定时运行",
           "example": "无",
           "member": "string",
@@ -3257,7 +3237,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务类型，如mysql2mysql：msyql同步到mysql",
           "example": "无",
           "member": "string",
@@ -3266,7 +3245,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "付费类型，PrePay：预付费，PostPay：后付费",
           "example": "无",
           "member": "string",
@@ -3275,7 +3253,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "tag",
           "example": "无",
           "member": "TagFilter",
@@ -3294,7 +3271,6 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3303,7 +3279,6 @@
           "example": "无",
           "member": "SyncJobInfo",
           "name": "JobList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3592,7 +3567,6 @@
       "document": "数据同步中的描述源端和目的端的信息",
       "members": [
         {
-          "default": "",
           "document": "地域英文名，如：ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -3602,7 +3576,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "tdsql mysql版的节点类型，枚举值为proxy、set\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "proxy",
           "member": "string",
@@ -3612,7 +3585,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mariadb",
           "member": "string",
@@ -3622,7 +3594,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据库实例ID，格式如：cdb-powiqx8q\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdb-wew23ed",
           "member": "string",
@@ -3632,7 +3603,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例的IP地址，接入类型为非cdb时此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.1.12",
           "member": "string",
@@ -3642,7 +3612,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例端口，接入类型为非cdb时此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3306",
           "member": "uint64",
@@ -3652,7 +3621,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户名，对于访问需要用户名密码认证的实例必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user",
           "member": "string",
@@ -3662,7 +3630,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "密码，对于访问需要用户名密码认证的实例必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1234",
           "member": "string",
@@ -3672,7 +3639,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据库名，数据库为cdwpg时，需要提供\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "postgress",
           "member": "string",
@@ -3682,7 +3648,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "私有网络ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：vpc-92jblxto\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-23rwfdg",
           "member": "string",
@@ -3692,7 +3657,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "私有网络下的子网ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：subnet-3paxmkdz\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-tke9sfg",
           "member": "string",
@@ -3702,7 +3666,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-9emwf2d",
           "member": "string",
@@ -3712,7 +3675,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "专线网关ID，对于专线接入类型此项必填，格式如：dcg-0rxtqqxb\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dcg-9sdfksk",
           "member": "string",
@@ -3722,7 +3684,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "VPN网关ID，对于vpn接入类型此项必填，格式如：vpngw-9ghexg7q\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpngw-3dsfwf2",
           "member": "string",
@@ -3732,7 +3693,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云联网ID，对于云联网接入类型此项必填，如：ccn-afp6kltc\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ccn-afp6kltc",
           "member": "string",
@@ -3742,7 +3702,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云厂商类型，当实例为RDS实例时，填写为aliyun, 其他情况均填写others，默认为others\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aliyun",
           "member": "string",
@@ -3752,7 +3711,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据库版本，当实例为RDS实例时才有效，其他实例忽略，格式如：5.6或者5.7，默认为5.6\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5.6",
           "member": "string",
@@ -3762,7 +3720,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例所属账号，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3772,7 +3729,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "other",
           "member": "string",
@@ -3782,7 +3738,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "跨账号同步时的角色，只允许[a-zA-Z0-9\\-\\_]+，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dts test_role",
           "member": "string",
@@ -3792,7 +3747,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外部角色id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3802,7 +3756,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "临时密钥Id，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3812,7 +3765,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "临时密钥Key，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3822,7 +3774,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "临时Token，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3832,11 +3783,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UnEncrypted",
           "member": "string",
           "name": "EncryptConn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TencentVPC",
+          "member": "string",
+          "name": "DatabaseNetEnv",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4729,7 +4688,6 @@
       "document": "数据同步中的选项",
       "members": [
         {
-          "default": "",
           "document": "同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4739,7 +4697,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、InitializeAfterDelete(删除并重新初始化)、ExecuteAfterIgnore(忽略并继续执行)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4749,7 +4706,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4759,7 +4715,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否添加附加列\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
@@ -4769,7 +4724,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， 不填（不选），PartialDDL(自定义,和DdlOptions一起起作用 )\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4779,7 +4733,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "冲突处理的详细选项，如条件覆盖中的条件行和条件操作\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ConflictHandleOption",
@@ -4789,7 +4742,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "DDL同步选项，具体描述要同步那些DDL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DdlOption",
@@ -5704,7 +5656,6 @@
       "document": "同步任务的步骤信息",
       "members": [
         {
-          "default": "",
           "document": "总步骤数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -5714,7 +5665,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前步骤\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -5724,7 +5674,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "总体进度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -5734,7 +5683,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前步骤进度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -5744,7 +5692,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "同步两端数据量差距\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -5754,7 +5701,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "同步两端时间差距\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -5764,7 +5710,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "总体描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5774,13 +5719,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "详细步骤信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StepInfo",
           "name": "StepInfos",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "不能发起一致性校验的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CauseOfCompareDisable",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5790,7 +5743,6 @@
       "document": "同步任务信息",
       "members": [
         {
-          "default": "",
           "document": "同步任务id，如：sync-btso140\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5800,7 +5752,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "同步任务名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5810,7 +5761,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "付款方式，PostPay(按量付费)、PrePay(包年包月)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5820,7 +5770,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5830,7 +5779,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "期待运行时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5840,7 +5788,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "支持的所有操作\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5850,7 +5797,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前状态能进行的操作\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5860,7 +5806,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "同步选项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Options",
@@ -5870,7 +5815,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "同步库表对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Objects",
@@ -5880,7 +5824,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5890,7 +5833,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "过期时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5900,7 +5842,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源端地域，如：ap-guangzhou等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5910,7 +5851,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5920,7 +5860,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5930,7 +5869,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源端信息，单节点数据库使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Endpoint",
@@ -5940,7 +5878,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标端地域，如：ap-guangzhou等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5950,7 +5887,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5960,7 +5896,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5970,7 +5905,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标端信息，单节点数据库使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Endpoint",
@@ -5980,7 +5914,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5990,7 +5923,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "开始时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6000,7 +5932,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6010,7 +5941,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "结束时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6020,7 +5950,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TagItem",
@@ -6030,7 +5959,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "同步任务运行步骤信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SyncDetailInfo",
@@ -6040,7 +5968,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
@@ -6050,7 +5977,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "同步链路规格，如micro,small,medium,large\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "medium",
           "member": "string",
@@ -6060,7 +5986,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -6070,7 +5995,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "下线时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6080,7 +6004,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动重试时间段设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",

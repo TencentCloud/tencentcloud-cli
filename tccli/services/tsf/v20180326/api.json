@@ -1686,6 +1686,14 @@
           "name": "InstanceImportMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组id",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10867,7 +10875,7 @@
           "type": "string"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量",
           "member": "int64",
           "name": "Offset",
@@ -10875,7 +10883,7 @@
           "type": "int"
         },
         {
-          "default": "20",
+          "default": "",
           "document": "每页条数",
           "member": "int64",
           "name": "Limit",

@@ -1684,6 +1684,14 @@
         "title": "示例"
       }
     ],
+    "ModifyMachineRemark": [
+      {
+        "document": "修改主机备注信息",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMachineRemark\n<公共请求参数>\n\n{\n    \"Remark\": \"xx\",\n    \"Quuid\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改主机备注信息"
+      }
+    ],
     "ModifyMalwareTimingScanSettings": [
       {
         "document": "",

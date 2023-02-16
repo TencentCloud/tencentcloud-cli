@@ -1463,6 +1463,13 @@
       "output": "ModifyLicenseUnBindsResponse",
       "status": "online"
     },
+    "ModifyMachineRemark": {
+      "document": "修改主机备注信息",
+      "input": "ModifyMachineRemarkRequest",
+      "name": "修改主机备注信息",
+      "output": "ModifyMachineRemarkResponse",
+      "status": "online"
+    },
     "ModifyMalwareTimingScanSettings": {
       "document": "定时扫描设置",
       "input": "ModifyMalwareTimingScanSettingsRequest",
@@ -23495,6 +23502,7 @@
       "document": "主机列表",
       "members": [
         {
+          "default": "",
           "document": "主机名称。",
           "example": "test",
           "member": "string",
@@ -23504,6 +23512,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "主机系统。",
           "example": "centos",
           "member": "string",
@@ -23513,6 +23522,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "主机状态。\n<li>OFFLINE: 离线  </li>\n<li>ONLINE: 在线</li>\n<li>SHUTDOWN: 已关机</li>\n<li>UNINSTALLED: 未防护</li>",
           "example": "ONLINE",
           "member": "string",
@@ -23522,6 +23532,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。",
           "example": "xx",
           "member": "string",
@@ -23531,6 +23542,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "CVM或BM机器唯一Uuid。",
           "example": "xx",
           "member": "string",
@@ -23540,6 +23552,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "漏洞数。",
           "example": "2",
           "member": "int64",
@@ -23549,6 +23562,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "主机IP。",
           "example": "10.0.0.2",
           "member": "string",
@@ -23558,6 +23572,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "是否是专业版。\n<li>true： 是</li>\n<li>false：否</li>",
           "example": "false",
           "member": "bool",
@@ -23567,6 +23582,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "主机外网IP。",
           "example": "114.11.12.13",
           "member": "string",
@@ -23576,6 +23592,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "主机状态。\n<li>POSTPAY: 表示后付费，即按量计费  </li>\n<li>PREPAY: 表示预付费，即包年包月</li>",
           "example": "PREPAY",
           "member": "string",
@@ -23585,6 +23602,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "木马数。",
           "example": "1",
           "member": "int64",
@@ -23594,6 +23612,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "标签信息",
           "example": "[]",
           "member": "MachineTag",
@@ -23603,6 +23622,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "基线风险数。",
           "example": "2",
           "member": "int64",
@@ -23612,6 +23632,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "网络风险数。",
           "example": "2",
           "member": "int64",
@@ -23621,6 +23642,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "风险状态。\n<li>SAFE：安全</li>\n<li>RISK：风险</li>\n<li>UNKNOWN：未知</li>",
           "example": "RISK",
           "member": "string",
@@ -23630,6 +23652,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "入侵事件数",
           "example": "1",
           "member": "int64",
@@ -23639,6 +23662,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "地域信息",
           "example": "{}",
           "member": "RegionInfo",
@@ -23648,6 +23672,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "实例状态 TERMINATED_PRO_VERSION 已销毁",
           "example": "TERMINATED_PRO_VERSION",
           "member": "string",
@@ -23657,6 +23682,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "防篡改 授权状态 1 授权 0 未授权",
           "example": "1",
           "member": "uint64",
@@ -23666,6 +23692,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "项目ID",
           "example": "1",
           "member": "int64",
@@ -23675,6 +23702,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "是否有资产扫描接口，0无，1有",
           "example": "1",
           "member": "uint64",
@@ -23684,6 +23712,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区",
           "example": "CVM",
           "member": "string",
@@ -23693,6 +23722,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "内核版本",
           "example": "3.10.0-1127.19.1.el7.x86_64",
           "member": "string",
@@ -23702,6 +23732,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版",
           "example": "BASIC_VERSION",
           "member": "string",
@@ -23711,6 +23742,7 @@
           "value_allowed_null": false
         },
         {
+          "default": "",
           "document": "云标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Tags",
@@ -23720,6 +23752,7 @@
           "value_allowed_null": true
         },
         {
+          "default": "",
           "document": "是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -23729,6 +23762,7 @@
           "value_allowed_null": true
         },
         {
+          "default": "",
           "document": "主机ip列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1,2.2.2.2",
           "member": "string",
@@ -23738,6 +23772,7 @@
           "value_allowed_null": true
         },
         {
+          "default": "",
           "document": "所属网络\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -23747,6 +23782,7 @@
           "value_allowed_null": true
         },
         {
+          "default": "",
           "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MachineExtraInfo",
@@ -23756,6 +23792,7 @@
           "value_allowed_null": true
         },
         {
+          "default": "",
           "document": "实例ID",
           "example": "无",
           "member": "string",
@@ -23763,6 +23800,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -24708,6 +24755,42 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMachineRemarkRequest": {
+      "document": "ModifyMachineRemark请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1234-123412-123412-1234",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注信息",
+          "example": "测试机",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMachineRemarkResponse": {
+      "document": "ModifyMachineRemark返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

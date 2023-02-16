@@ -26,16 +26,10 @@
     ],
     "CreateEventBus": [
       {
-        "document": "",
+        "document": "创建事件集",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEventBus\n<公共请求参数>\n\n{\n    \"EventBusName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"EventBusId\": \"eb-xxxxxxxx\",\n        \"RequestId\": \"e3d43926-c2cd-49f2-97f0-53db21e6fcea\"\n    }\n}",
         "title": "创建事件集"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEventBus\n<公共请求参数>\n\n{\n    \"EventBusName\": \"test\",\n    \"Description\": \"test-desc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EventBusId\": \"eb-l65vlc2u\",\n        \"RequestId\": \"b3103b8d-77a6-4b55-b42f-a25e2dc453a9\"\n    }\n}",
-        "title": "创建事件集1"
       }
     ],
     "CreateRule": [
@@ -190,7 +184,7 @@
     ],
     "UpdateEventBus": [
       {
-        "document": "",
+        "document": "更新事件集",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEventBus\n<公共请求参数>\n\n{\n    \"EventBusName\": \"test111\",\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"18484e4f-f6f1-4b87-8827-27422b30c8c4\"\n    }\n}",
         "title": "更新事件集"

@@ -126,6 +126,13 @@
       "output": "ChannelGetTaskResultApiResponse",
       "status": "online"
     },
+    "ChannelUpdateSealStatus": {
+      "document": "本接口（ChannelUpdateSealStatus）由于渠道版更新印章状态",
+      "input": "ChannelUpdateSealStatusRequest",
+      "name": "渠道版更新印章状态",
+      "output": "ChannelUpdateSealStatusResponse",
+      "status": "online"
+    },
     "ChannelVerifyPdf": {
       "document": "合同文件验签",
       "input": "ChannelVerifyPdfRequest",
@@ -1861,6 +1868,69 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelUpdateSealStatusRequest": {
+      "document": "ChannelUpdateSealStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作的印章状态，DISABLE-停用印章",
+          "example": "DISABLE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "印章ID",
+          "example": "无",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "更新印章状态原因说明",
+          "example": "更新原因-停用印章",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelUpdateSealStatusResponse": {
+      "document": "ChannelUpdateSealStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

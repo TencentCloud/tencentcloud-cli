@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli bma CreateBPFakeAPPList --cli-unfold-argument ```
+tccli bma CreateBPFakeAPPList --cli-unfold-argument  \
+    --FakeAPPs xxx
+```
 
 Output: 
 ```

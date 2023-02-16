@@ -2157,6 +2157,7 @@
         {
           "default": "",
           "document": "主题名",
+          "example": "topic1",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -2166,6 +2167,7 @@
         {
           "default": "",
           "document": "分区id",
+          "example": "0",
           "member": "int64",
           "name": "Partition",
           "required": true,
@@ -2175,6 +2177,7 @@
         {
           "default": "",
           "document": "位点",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -2184,6 +2187,7 @@
         {
           "default": "",
           "document": "消息key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -2193,6 +2197,7 @@
         {
           "default": "",
           "document": "消息value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -2202,10 +2207,21 @@
         {
           "default": "",
           "document": "消息时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1657542315",
           "member": "int64",
           "name": "Timestamp",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息headers\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Headers",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

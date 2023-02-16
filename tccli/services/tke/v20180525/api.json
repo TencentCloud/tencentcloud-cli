@@ -12706,9 +12706,18 @@
         {
           "default": "",
           "document": "CLS日志主题ID",
-          "example": "xxx-xxx-xxx",
+          "example": "11305b73-15f1-42fe-9256-5b1495e40zx121",
           "member": "string",
           "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "topic所在region，默认为集群当前region",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "TopicRegion",
           "required": false,
           "type": "string"
         }
@@ -12759,7 +12768,7 @@
         {
           "default": "",
           "document": "集群ID",
-          "example": "xxx",
+          "example": "cls-cluster",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -12768,7 +12777,7 @@
         {
           "default": "",
           "document": "cls服务的logsetID",
-          "example": "xxx",
+          "example": "cddc14ab-947c-4326-87b9-7b226f371xxxx",
           "member": "string",
           "name": "LogsetId",
           "required": false,
@@ -12777,9 +12786,18 @@
         {
           "default": "",
           "document": "cls服务的topicID",
-          "example": "xxx",
+          "example": "11305b73-15f1-42fe-9256-5b1495e4xxzzx",
           "member": "string",
           "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "topic所在地域，默认为集群所在地域",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "TopicRegion",
           "required": false,
           "type": "string"
         }

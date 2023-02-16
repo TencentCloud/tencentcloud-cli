@@ -4664,7 +4664,6 @@
       "document": "日志采集的导出规则配置",
       "members": [
         {
-          "default": "",
           "document": "首行正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "*",
           "member": "string",
@@ -4674,7 +4673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "提取结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"k1\", \"k2\"]",
           "member": "string",
@@ -4684,7 +4682,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "过滤键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"k1\"]",
           "member": "string",
@@ -4694,7 +4691,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"v1*\"]",
           "member": "string",
@@ -4704,7 +4700,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "*",
           "member": "string",
@@ -4714,7 +4709,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "时间字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "time",
           "member": "string",
@@ -4724,7 +4718,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "时间格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "%Y-%m-%d %H:%M:%S",
           "member": "string",
@@ -4734,7 +4727,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否上传解析失败日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "string",
@@ -4744,11 +4736,28 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "解析失败日志的键名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "LogParseFailure",
           "member": "string",
           "name": "UnMatchedKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "tracking\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Backtracking",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分隔符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Delimiter",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6566,7 +6575,6 @@
       "document": "服务版本信息列表",
       "members": [
         {
-          "default": "",
           "document": "版本名称",
           "example": "1",
           "member": "string",
@@ -6576,7 +6584,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态",
           "example": "1",
           "member": "string",
@@ -6586,7 +6593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否启动弹性 -- 已废弃",
           "example": "1",
           "member": "int64",
@@ -6596,7 +6602,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当前实例",
           "example": "10",
           "member": "int64",
@@ -6606,7 +6611,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "version的id",
           "example": "10",
           "member": "string",
@@ -6616,7 +6620,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志输出配置 -- 已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "LogOutputConf",
@@ -6626,7 +6629,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "期望实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -6636,7 +6638,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -6646,7 +6647,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "建构任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -6656,7 +6656,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -6666,7 +6665,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "环境name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -6676,7 +6674,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -6686,7 +6683,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -6696,7 +6692,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否正在发布中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -6706,7 +6701,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "分批次部署状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -6716,7 +6710,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -6726,7 +6719,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "NodeInfo",
@@ -6736,7 +6728,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "DescribeRunPodPage",
@@ -6746,7 +6737,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "WorkloadInfo",
@@ -6756,12 +6746,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "CreateDate",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "地域id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "string",
+          "name": "RegionId",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7086,7 +7084,6 @@
       "document": "环境启动进程（只统计由环境启动操作触发的应用数量）",
       "members": [
         {
-          "default": "",
           "document": "需要启动的应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -7096,11 +7093,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "已经启动的应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "StartedApplicationNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "启动失败的应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StartFailedApplicationNum",
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -7112,7 +7117,6 @@
       "document": "环境停止进程（只统计由环境停止操作触发的应用数量）",
       "members": [
         {
-          "default": "",
           "document": "需要停止的应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -7122,11 +7126,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "已经停止的应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "StoppedApplicationNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "停止失败的应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StopFailedApplicationNum",
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -7580,7 +7592,6 @@
       "document": "版本信息",
       "members": [
         {
-          "default": "",
           "document": "主键",
           "example": "1",
           "member": "string",
@@ -7590,7 +7601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务id",
           "example": "1",
           "member": "string",
@@ -7600,7 +7610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "部署方式",
           "example": "1",
           "member": "string",
@@ -7610,7 +7619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "jdk版本",
           "example": "1",
           "member": "string",
@@ -7620,7 +7628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "描述",
           "example": "1",
           "member": "string",
@@ -7630,7 +7637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "部署版本",
           "example": "1",
           "member": "string",
@@ -7640,7 +7646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发布方式",
           "example": "1",
           "member": "string",
@@ -7650,7 +7655,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "启动参数",
           "example": "1",
           "member": "string",
@@ -7660,7 +7664,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "初始实例",
           "example": "1",
           "member": "int64",
@@ -7670,7 +7673,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cpu规格",
           "example": "1",
           "member": "float",
@@ -7680,7 +7682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内存规格",
           "example": "1",
           "member": "float",
@@ -7690,7 +7691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "镜像路径",
           "example": "1",
           "member": "string",
@@ -7700,7 +7700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "镜像名称",
           "example": "1",
           "member": "string",
@@ -7710,7 +7709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "镜像版本",
           "example": "1",
           "member": "string",
@@ -7720,7 +7718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "弹性配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "EsInfo",
@@ -7730,7 +7727,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "环境配置",
           "example": "1",
           "member": "Pair",
@@ -7740,7 +7736,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "存储配置",
           "example": "1",
           "member": "StorageConf",
@@ -7750,7 +7745,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "运行状态",
           "example": "1",
           "member": "string",
@@ -7760,7 +7754,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "私有网络",
           "example": "1",
           "member": "string",
@@ -7770,7 +7763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网网络",
           "example": "1",
           "member": "string",
@@ -7780,7 +7772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "1",
           "member": "string",
@@ -7790,7 +7781,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "修改时间",
           "example": "1",
           "member": "string",
@@ -7800,7 +7790,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "挂载配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StorageMountConf",
@@ -7810,7 +7799,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7820,7 +7808,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志输出配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "LogOutputConf",
@@ -7830,7 +7817,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7840,7 +7826,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7850,7 +7835,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "环境名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7860,7 +7844,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7870,7 +7853,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "公网地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7880,7 +7862,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开通公网访问\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -7890,7 +7871,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "现有的实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -7900,7 +7880,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "期望的实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -7910,7 +7889,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "编程语言\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7920,7 +7898,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "程序包名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7930,7 +7907,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否启用弹性伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -7940,7 +7916,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "弹性策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -7950,7 +7925,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像tag\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7960,7 +7934,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否启用log\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -7970,7 +7943,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最小实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7980,7 +7952,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "安全组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7990,7 +7961,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像命令\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ls",
           "member": "string",
@@ -8000,7 +7970,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像命令参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"-c\", \"100\"]",
           "member": "string",
@@ -8010,7 +7979,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否使用默认注册中心配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
@@ -8020,7 +7988,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "eks 访问设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "EksService",
@@ -8030,7 +7997,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "挂载配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "MountedSettingConf",
@@ -8040,7 +8006,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "log path数组信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8050,7 +8015,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "启动后立即执行的脚本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8060,7 +8024,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "停止前执行的脚本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8070,7 +8033,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "存活探针配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "HealthCheckConfig",
@@ -8080,7 +8042,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "就绪探针配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "HealthCheckConfig",
@@ -8090,7 +8051,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "弹性策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "HorizontalAutoscaler",
@@ -8100,7 +8060,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "定时弹性策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "CronHorizontalAutoscaler",
@@ -8110,7 +8069,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用实际可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8120,7 +8078,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最新部署时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8130,7 +8087,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最新部署成功时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8140,7 +8096,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用所在node信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "NodeInfo",
@@ -8150,7 +8105,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "image类型 -0 为demo -1为正常image\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -8160,7 +8114,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否启用调用链组件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -8170,7 +8123,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -8180,7 +8132,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像类型：0-个人镜像、1-企业镜像、2-公有镜像\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
@@ -8190,7 +8141,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "分批发布子状态：batch_updating、batch_updating_waiting_confirm\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "batch_updating",
           "member": "string",
@@ -8200,7 +8150,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "APM 资源 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "apm-xxx",
           "member": "string",
@@ -8210,7 +8159,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "WorkloadInfo",
@@ -8220,7 +8168,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否启用应用加速\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -8230,7 +8177,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "启动检测探针配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "HealthCheckConfig",
@@ -8240,7 +8186,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "操作系统版本，可选参数：\n- ALPINE\n- CENTOS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8250,7 +8195,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像仓库server\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8260,7 +8204,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否正在发布中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -8270,7 +8213,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "监控业务指标监控\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "EnablePrometheusConf",
@@ -8280,7 +8222,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否为手动停止\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
@@ -8290,7 +8231,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "tcr实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8300,7 +8240,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "1：开始自动metrics采集（open-telemetry）；\n0：关闭metrics采集；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -8310,7 +8249,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8320,7 +8258,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户SubAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8330,7 +8267,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8340,7 +8276,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8350,7 +8285,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8360,7 +8294,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否启用注册中心\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -8370,7 +8303,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "弹性伸缩数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "Autoscaler",
@@ -8380,7 +8312,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "修改人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8390,7 +8321,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8400,7 +8330,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "DeployStrategyConf",
@@ -8410,7 +8339,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "DescribeRunPodPage",
@@ -8420,7 +8348,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "发布时配置是否有修改\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
@@ -8430,13 +8357,30 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PreStopEncoded",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PostStartEncoded",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

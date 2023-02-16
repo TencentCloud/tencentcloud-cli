@@ -2899,24 +2899,24 @@
       "document": "CreateCloudBaseRunResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
+          "example": "env-xxxxxx",
           "member": "string",
           "name": "EnvId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "vpc的ID",
+          "example": "vpc-xxxxx",
           "member": "string",
           "name": "VpcId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "子网ID列表，当VpcId不为空，SubnetIds也不能为空",
+          "example": "[\"subnet-xxx\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -2930,6 +2930,7 @@
       "members": [
         {
           "document": "返回集群创建是否成功 succ为成功。并且中间无err\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succ",
           "member": "string",
           "name": "Result",
           "type": "string",
@@ -3673,7 +3674,6 @@
       "document": "CreateWxCloudBaseRunEnv请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "wx应用Id",
           "example": "wxappid",
           "member": "string",
@@ -3682,7 +3682,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符",
           "example": "env-alias",
           "member": "string",
@@ -3691,7 +3690,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。",
           "example": "无",
           "member": "string",
@@ -3700,7 +3698,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "订单标记。建议使用方统一转大小写之后再判断。\nQuickStart：快速启动来源\nActivity：活动来源",
           "example": "无",
           "member": "string",
@@ -3709,7 +3706,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "私有网络Id",
           "example": "无",
           "member": "string",
@@ -3718,7 +3714,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "子网列表",
           "example": "无",
           "member": "string",
@@ -3727,13 +3722,28 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否打开云调用",
           "example": "true",
           "member": "bool",
           "name": "IsOpenCloudInvoke",
           "required": false,
           "type": "bool"
+        },
+        {
+          "document": "创建来源：wechat | cloud",
+          "example": "wechat",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "渠道：wechat | cloud",
+          "example": "wechat",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3746,7 +3756,6 @@
           "example": "无",
           "member": "string",
           "name": "EnvId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3755,7 +3764,6 @@
           "example": "无",
           "member": "string",
           "name": "TranId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4677,7 +4685,6 @@
       "document": "DescribeCloudBaseRunConfForGateWay请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
           "example": "env_xxxx",
           "member": "string",
@@ -4686,7 +4693,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "vpc信息",
           "example": "vpc-xxxxx",
           "member": "string",
@@ -4705,7 +4711,6 @@
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "LastUpTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4714,7 +4719,6 @@
           "example": "无",
           "member": "CloudBaseRunForGatewayConf",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6478,7 +6482,6 @@
       "document": "DescribeEnvDealRegion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
           "example": "test-12323",
           "member": "string",
@@ -6487,7 +6490,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "订单类型：\nENV_PREPAY_MINIAPP= 预付费环境(微信小程序)\nENV_PREPAY_CLOUD= 预付费环境(腾讯云)\nENV_POSTPAY = 后付费环境\nHOSTING_PREPAY = 预付费静态托管\nPACKAGE=套餐包",
           "example": "ENV_PREPAY",
           "member": "string",
@@ -6496,7 +6498,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "下单类型：\nCREATE = 新购\nRENEW = 续费\nMODIFY = 套餐调整(升级/降级)\nREFUND = 退费",
           "example": "RENEW",
           "member": "string",
@@ -6505,7 +6506,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "下单地域：\nap-guangzhou = 广州地域\nap-shanghai = 上海地域\nap-beijing = 北京地域",
           "example": "ap-shanghai",
           "member": "string",
@@ -6524,7 +6524,6 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6533,7 +6532,6 @@
           "example": "ap-shanghai-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6542,7 +6540,6 @@
           "example": "4",
           "member": "uint64",
           "name": "RegionId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6551,7 +6548,6 @@
           "example": "200001",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7428,7 +7424,6 @@
       "document": "DescribeWxCloudBaseRunEnvs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "wx应用Id",
           "example": "wx-app-id",
           "member": "string",
@@ -7437,7 +7432,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否查询全地域",
           "example": "true",
           "member": "bool",
@@ -7456,7 +7450,6 @@
           "example": "[{},{}]",
           "member": "EnvInfo",
           "name": "EnvList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7473,7 +7466,6 @@
       "document": "DescribeWxCloudBaseRunSubNets请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPC id",
           "example": "vpc-id",
           "member": "string",
@@ -7482,7 +7474,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询个数限制，不填或小于等于0，等于不限制",
           "example": "无",
           "member": "int64",
@@ -7501,7 +7492,6 @@
           "example": "无",
           "member": "string",
           "name": "SubNetIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

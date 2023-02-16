@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tke EnableEventPersistence --cli-unfold-argument  \
+    --TopicId xxx \
     --ClusterId xxx \
-    --LogsetId xxx \
-    --TopicId xxx
+    --LogsetId xxx
 ```
 
 Output: 

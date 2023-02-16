@@ -1,6 +1,6 @@
 **Example 1: 列出 Grafana 告警通道**
 
-
+列出 Grafana 告警通道
 
 Input: 
 
@@ -20,19 +20,23 @@ Output:
     "Response": {
         "NotificationChannelSet": [
             {
-                "ExtraOrgIds": [
-                    "xx"
-                ],
-                "OrgIds": "xx",
+                "ChannelId": "xx",
+                "ChannelName": "xx",
                 "Receivers": [
                     "xx"
                 ],
-                "ChannelId": "nchannel-abcd1234",
-                "OrganizationIds": "xx",
+                "CreatedAt": "2020-09-22T00:00:00+00:00",
+                "UpdatedAt": "2020-09-22T00:00:00+00:00",
                 "OrgId": "xx",
-                "UpdatedAt": "2020-09-22",
-                "ChannelName": "xx",
-                "CreatedAt": "2020-09-22T00:00:00+00:00"
+                "ExtraOrgIds": [
+                    "xx"
+                ],
+                "OrgIds": [
+                    "xx"
+                ],
+                "OrganizationIds": [
+                    "xx"
+                ]
             }
         ],
         "RequestId": "xx"

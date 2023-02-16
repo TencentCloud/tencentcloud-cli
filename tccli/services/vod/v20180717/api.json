@@ -6124,6 +6124,30 @@
       ],
       "type": "object"
     },
+    "ArtifactRepairInfo": {
+      "document": "去伪影（毛刺）控制信息",
+      "members": [
+        {
+          "document": "去伪影（毛刺）控制开关，可选值：\n<li>ON：开启去伪影（毛刺）；</li>\n<li>OFF：关闭去伪影（毛刺）。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "去伪影（毛刺）类型，仅当去伪影（毛刺）控制开关为 ON 时有效，可选值：\n<li>weak：轻去伪影（毛刺）；</li>\n<li>strong：强去伪影（毛刺）。</li>\n默认值：weak。",
+          "example": "weak",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AsrFullTextConfigureInfo": {
       "document": "语音全文识别任务控制参数",
       "members": [
@@ -6306,6 +6330,32 @@
         }
       ],
       "type": "object"
+    },
+    "AudioDenoiseInfo": {
+      "document": "音频降噪控制信息",
+      "members": [
+        {
+          "default": "",
+          "document": "音频降噪控制开关，可选值：\n<li>ON：开启音频降噪；</li>\n<li>OFF：关闭音频降噪。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：\n<li>weak：轻音频降噪；</li>\n<li>normal：正常音频降噪；</li>\n<li>strong：强音频降噪。</li>\n默认值：weak。",
+          "example": "weak",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AudioTemplateInfo": {
       "document": "音频流配置参数",
@@ -6705,6 +6755,30 @@
         }
       ],
       "usage": "out"
+    },
+    "ColorEnhanceInfo": {
+      "document": "色彩增强控制参数",
+      "members": [
+        {
+          "document": "色彩增强控制开关，可选值：\n<li>ON：开启综合增强；</li>\n<li>OFF：关闭综合增强。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "色彩增强类型，仅当色彩增强控制开关为 ON 时有效，可选值：\n<li>weak：轻色彩增强；</li>\n<li>normal：正常色彩增强；</li>\n<li>strong：强色彩增强。</li>\n默认值：weak。",
+          "example": "weak",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CommitUploadRequest": {
       "document": "CommitUpload请求参数结构体",
@@ -14664,7 +14738,6 @@
       "document": "事件通知内容，其中，TranscodeCompleteEvent、ConcatCompleteEvent、ClipCompleteEvent、CreateImageSpriteCompleteEvent、SnapshotByTimeOffsetCompleteEvent 为兼容 2017 版接口发起任务的事件通知。",
       "members": [
         {
-          "default": "",
           "document": "事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。",
           "example": "123",
           "member": "string",
@@ -14674,8 +14747,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>WechatPublishComplete：微信发布完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>FastClipMediaComplete：快速剪辑完成；</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -14684,7 +14756,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频上传完成事件，当事件类型为 NewFileUpload 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "FileUploadTask",
@@ -14694,7 +14765,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ProcedureTask",
@@ -14704,7 +14774,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "文件删除事件，当事件类型为 FileDeleted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "FileDeleteTask",
@@ -14714,7 +14783,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频转拉完成事件，当事件类型为 PullComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "PullUploadTask",
@@ -14724,7 +14792,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "EditMediaTask",
@@ -14734,8 +14801,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "视频拆条完成事件，当事件类型为 SplitMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "SplitMediaTask",
           "name": "SplitMediaCompleteEvent",
@@ -14744,7 +14810,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ComposeMediaTask",
@@ -14754,7 +14819,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频剪辑完成事件，当事件类型为 ClipComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ClipTask2017",
@@ -14764,7 +14828,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频转码完成事件，当事件类型为 TranscodeComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "TranscodeTask2017",
@@ -14774,7 +14837,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "CreateImageSpriteTask2017",
@@ -14784,7 +14846,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频拼接完成事件，当事件类型为 ConcatComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ConcatTask2017",
@@ -14794,7 +14855,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "SnapshotByTimeOffsetTask2017",
@@ -14804,7 +14864,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "WechatPublishTask",
@@ -14814,7 +14873,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "WechatMiniProgramPublishTask",
@@ -14824,8 +14882,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "智能去除水印任务完成事件，当事件类型为 RemoveWatermark 有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "RemoveWatermarkTask",
           "name": "RemoveWatermarkCompleteEvent",
@@ -14834,8 +14891,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "RestoreMediaTask",
           "name": "RestoreMediaCompleteEvent",
@@ -14844,8 +14900,16 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "溯源水印提取完成事件，当事件类型为ExtractTraceWatermarkComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "RebuildMediaTask",
+          "name": "RebuildMediaCompleteEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ExtractTraceWatermarkTask",
           "name": "ExtractTraceWatermarkCompleteEvent",
@@ -14854,7 +14918,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ReviewAudioVideoTask",
@@ -14864,7 +14927,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "该字段已无效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ReduceMediaBitrateTask",
@@ -14874,7 +14936,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "DescribeFileAttributesTask",
@@ -15307,6 +15368,32 @@
       ],
       "usage": "in"
     },
+    "FaceEnhanceInfo": {
+      "document": "人脸增强控制",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸增强控制开关，可选值：\n<li>ON：开启人脸增强；</li>\n<li>OFF：关闭人脸增强。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸增强强度，仅当人脸增强控制开关为 ON 时有效，取值范围：0.0~1.0。\n默认：0.0。",
+          "example": "0",
+          "member": "float",
+          "name": "Intensity",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FileDeleteResultItem": {
       "document": "文件删除结果信息",
       "members": [
@@ -15535,6 +15622,30 @@
         }
       ],
       "usage": "in"
+    },
+    "HDRInfo": {
+      "document": "高动态范围类型控制参数。",
+      "members": [
+        {
+          "document": "高动态范围类型控制开关，可选值：\n<li>ON：开启高动态范围类型转换；</li>\n<li>OFF：关闭高动态范围类型转换。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高动态范围类型，可选值：\n<li>hdr10：表示 hdr10 标准；</li>\n<li>hlg：表示 hlg 标准。</li>\n\n注意：\n<li> 仅当高动态范围类型控制开关为 ON 时有效；</li>\n<li>当画质重生目标参数中指定视频输出参数的视频流编码格式 Codec 为 libx265 时有效。</li>",
+          "example": "hlg",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "HeadTailConfigureInfo": {
       "document": "视频片头片尾识别任务控制参数",
@@ -16577,6 +16688,30 @@
         }
       ],
       "usage": "in"
+    },
+    "LowLightEnhanceInfo": {
+      "document": "低光照增强控制",
+      "members": [
+        {
+          "document": "低光照增强控制开关，可选值：\n<li>ON：开启低光照增强；</li>\n<li>OFF：关闭低光照增强。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "低光照增强类型，仅当低光照增强控制开关为 ON 时有效，可选值：\n<li>normal：正常低光照增强；</li>\n默认值：normal。",
+          "example": "normal",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ManageTaskRequest": {
       "document": "ManageTask请求参数结构体",
@@ -24216,6 +24351,541 @@
       ],
       "type": "object"
     },
+    "RebuildMediaTargetAudioStream": {
+      "document": "画质重生输出的音频信息",
+      "members": [
+        {
+          "default": "",
+          "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac。</li>",
+          "example": "libfdk_aac",
+          "member": "string",
+          "name": "Codec",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。\n当取值为 0，表示音频码率和原始音频保持一致。",
+          "example": "128",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频流的采样率，可选值：\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n\n单位：Hz。",
+          "example": "44100",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。\n默认值：2。",
+          "example": "2",
+          "member": "int64",
+          "name": "AudioChannel",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RebuildMediaTargetInfo": {
+      "document": "画质重生目标参数",
+      "members": [
+        {
+          "default": "",
+          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "name",
+          "member": "string",
+          "name": "MediaName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述信息，最长 128 个字符。缺省描述信息为空。",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ClassId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出文件封装格式，可选值：mp4、flv、hls。默认mp4。",
+          "example": "flv",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的视频信息。",
+          "example": "无",
+          "member": "RebuildMediaTargetVideoStream",
+          "name": "VideoStream",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的音频信息。",
+          "example": "无",
+          "member": "RebuildMediaTargetAudioStream",
+          "name": "AudioStream",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n\n默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n\n默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RebuildMediaTargetVideoStream": {
+      "document": "画质重生输出的视频信息",
+      "members": [
+        {
+          "document": "视频流的编码格式，可选值：\n<li>libx264：H.264 编码；</li>\n<li>libx265：H.265 编码；</li>\n<li>av1：AOMedia Video 1 编码。</li>\n默认视频流的编码格式为 H.264 编码。",
+          "example": "libx264",
+          "member": "string",
+          "name": "Codec",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频帧率，取值范围：[0, 100]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。",
+          "example": "25",
+          "member": "int64",
+          "name": "Fps",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n\n默认值：open。",
+          "example": "open",
+          "member": "string",
+          "name": "ResolutionAdaptive",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 8192]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n\n默认值：0。",
+          "example": "128",
+          "member": "int64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 8192]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n\n默认值：0。",
+          "example": "128",
+          "member": "int64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li>stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n\n默认值：stretch 。",
+          "example": "black",
+          "member": "string",
+          "name": "FillType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。\n当填 0 或不填时，系统将自动设置 gop 长度。",
+          "example": "125",
+          "member": "int64",
+          "name": "Gop",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RebuildMediaTask": {
+      "document": "音画质重生任务",
+      "members": [
+        {
+          "document": "任务 ID。",
+          "example": "123-xxx-xx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误码，0 表示成功，其他值表示失败：\n<li>40000：输入参数不合法，请检查输入参数；</li>\n<li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>\n<li>70000：内部服务错误，建议重试。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "音画质重生任务进度，取值范围 [0-100] 。",
+          "example": "0",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "音画质重生任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RebuildMediaTaskInput",
+          "name": "Input",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音画质重生任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RebuildMediaTaskOutput",
+          "name": "Output",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音画质重生输出视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "123",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "123",
+          "member": "string",
+          "name": "SessionContext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RebuildMediaTaskInput": {
+      "document": "音画质重生任务的输入。",
+      "members": [
+        {
+          "document": "媒体文件 ID。",
+          "example": "123",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "起始偏移时间，单位：秒，不填表示从视频开始截取。",
+          "example": "0",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结束偏移时间，单位：秒，不填表示截取到视频末尾。",
+          "example": "0",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "画质修复控制参数。",
+          "example": "无",
+          "member": "RepairInfo",
+          "name": "RepairInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "智能插帧控制参数。",
+          "example": "无",
+          "member": "VideoFrameInterpolationInfo",
+          "name": "VideoFrameInterpolationInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "画面超分控制参数。",
+          "example": "无",
+          "member": "SuperResolutionInfo",
+          "name": "SuperResolutionInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高动态范围类型控制参数。",
+          "example": "无",
+          "member": "HDRInfo",
+          "name": "HDRInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频降噪控制参数。",
+          "example": "无",
+          "member": "VideoDenoiseInfo",
+          "name": "VideoDenoiseInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "音频降噪控制参数。",
+          "example": "无",
+          "member": "AudioDenoiseInfo",
+          "name": "AudioDenoiseInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "色彩增强控制参数。",
+          "example": "无",
+          "member": "ColorEnhanceInfo",
+          "name": "ColorInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "细节增强控制参数。",
+          "example": "无",
+          "member": "SharpEnhanceInfo",
+          "name": "SharpInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "人脸增强控制参数。",
+          "example": "无",
+          "member": "FaceEnhanceInfo",
+          "name": "FaceInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "低光照控制参数。",
+          "example": "无",
+          "member": "LowLightEnhanceInfo",
+          "name": "LowLightInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "去划痕控制参数。",
+          "example": "无",
+          "member": "ScratchRepairInfo",
+          "name": "ScratchRepairInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "去伪影（毛刺）控制参数。",
+          "example": "无",
+          "member": "ArtifactRepairInfo",
+          "name": "ArtifactRepairInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "音画质重生输出目标参数。",
+          "example": "无",
+          "member": "RebuildMediaTargetInfo",
+          "name": "TargetInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RebuildMediaTaskOutput": {
+      "document": "音画质重生任务输出",
+      "members": [
+        {
+          "document": "文件类型，例如 mp4、flv 等。",
+          "example": "mp4",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "媒体文件播放地址。",
+          "example": "http://125.xxx.mp4",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "媒体文件 ID。",
+          "example": "123",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "mediaName",
+          "member": "string",
+          "name": "MediaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ClassId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "9999-12-31T23:59:59Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ReduceMediaBitrateAdaptiveDynamicStreamingResult": {
       "document": "降码率任务转自适应码流结果类型",
       "members": [
@@ -24810,6 +25480,32 @@
         }
       ],
       "usage": "out"
+    },
+    "RepairInfo": {
+      "document": "画质修复控制参数",
+      "members": [
+        {
+          "default": "",
+          "document": "画质修复控制开关，可选值：\n<li>ON：开启画质修复；</li>\n<li>OFF：关闭画质修复。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "画质修复类型，仅当画质修复控制开关为 ON 时有效，可选值：\n<li>weak：轻画质修复；</li>\n<li>normal：正常画质修复；</li>\n<li>strong：强画质修复。</li>\n默认值：weak。",
+          "example": "weak",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ResetProcedureTemplateRequest": {
       "document": "ResetProcedureTemplate请求参数结构体",
@@ -26067,6 +26763,39 @@
       ],
       "usage": "out"
     },
+    "ScratchRepairInfo": {
+      "document": "去划痕控制信息",
+      "members": [
+        {
+          "document": "去划痕控制开关，可选值：\n<li>ON：开启去划痕；</li>\n<li>OFF：关闭去划痕。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "去划痕强度，仅当去划痕控制开关为 ON 时有效，取值范围：0.0~1.0。\n默认：0.0。",
+          "example": "0",
+          "member": "float",
+          "name": "Intensity",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "去划痕类型，仅当去划痕控制开关为 ON 时有效，可选值：\n<li>normal：正常去划痕；</li>\n默认值：normal。",
+          "example": "normal",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SearchMediaRequest": {
       "document": "SearchMedia请求参数结构体",
       "members": [
@@ -26411,6 +27140,32 @@
         }
       ],
       "type": "object"
+    },
+    "SharpEnhanceInfo": {
+      "document": "细节增强控制",
+      "members": [
+        {
+          "default": "",
+          "document": "细节增强控制开关，可选值：\n<li>ON：开启细节增强；</li>\n<li>OFF：关闭细节增强。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "细节增强强度，仅当细节增强控制开关为 ON 时有效，取值范围：0.0~1.0。\n默认：0.0。",
+          "example": "0",
+          "member": "float",
+          "name": "Intensity",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SimpleAesEdkPair": {
       "document": "简单加密加解密密钥对。",
@@ -27543,6 +28298,42 @@
         }
       ],
       "usage": "in"
+    },
+    "SuperResolutionInfo": {
+      "document": "画面超分控制参数",
+      "members": [
+        {
+          "default": "",
+          "document": "画面超分控制开关，可选值：\n<li>ON：开启画面超分；</li>\n<li>OFF：关闭画面超分。</li>\n当开启画面超分时，默认2倍超分。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "画面超分类型，仅当画面超分控制开关为 ON 时有效，可选值：\n<li>lq：针对低清晰度有较多噪声视频的超分；</li>\n<li>hq：针对高清晰度视频超分。</li>\n默认值：lq。",
+          "example": "lq",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超分倍数，可选值：2。\n默认值：2。",
+          "example": "2",
+          "member": "int64",
+          "name": "Size",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SvgWatermarkInput": {
       "document": "SVG水印模板输入参数",
@@ -29078,6 +29869,58 @@
         }
       ],
       "usage": "in"
+    },
+    "VideoDenoiseInfo": {
+      "document": "视频降噪控制参数",
+      "members": [
+        {
+          "default": "",
+          "document": "视频降噪控制开关，可选值：\n<li>ON：开启视频降噪；</li>\n<li>OFF：关闭视频降噪。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频降噪类型，仅当视频降噪控制开关为 ON 时有效，可选值：\n<li>weak：轻视频降噪；</li>\n<li>strong：强视频降噪。</li>\n默认值：weak。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VideoFrameInterpolationInfo": {
+      "document": "智能插帧控制参数",
+      "members": [
+        {
+          "default": "",
+          "document": "智能插帧控制开关，可选值：\n<li>ON：开启智能插帧；</li>\n<li>OFF：关闭智能插帧。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能插帧帧率，帧率范围为 (0, 60]，仅当智能插帧控制开关为 ON 时有效。默认跟源文件帧率一致。",
+          "example": "25",
+          "member": "int64",
+          "name": "Fps",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VideoTemplateInfo": {
       "document": "视频流配置参数",

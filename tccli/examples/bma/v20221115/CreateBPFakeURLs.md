@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli bma CreateBPFakeURLs --cli-unfold-argument ```
+tccli bma CreateBPFakeURLs --cli-unfold-argument  \
+    --FakeURLs xxx
+```
 
 Output: 
 ```

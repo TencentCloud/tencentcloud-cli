@@ -34,7 +34,7 @@
     ],
     "CleanGrafanaInstance": [
       {
-        "document": "",
+        "document": "强制销毁 Grafana 实例",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CleanGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "强制销毁 Grafana 实例"
@@ -90,7 +90,7 @@
     ],
     "CreateGrafanaNotificationChannel": [
       {
-        "document": "",
+        "document": "创建 Grafana 告警通道",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"ChannelName\": \"test\",\n    \"OrgId\": 0,\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ChannelId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建 Grafana 告警通道"
@@ -262,7 +262,7 @@
     ],
     "DeleteGrafanaNotificationChannel": [
       {
-        "document": "",
+        "document": "删除 Grafana 告警通道",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"ChannelIDs\": [\n        \"nchannel-abcd1234\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除 Grafana 告警通道"
@@ -552,9 +552,9 @@
     ],
     "DescribeGrafanaNotificationChannels": [
       {
-        "document": "",
+        "document": "列出 Grafana 告警通道",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaNotificationChannels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"ChannelState\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"ChannelName\": \"test\",\n    \"ChannelIDs\": [\n        \"nchannel-abcd1234\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"ExtraOrgIds\": [\n                    \"xx\"\n                ],\n                \"OrgIds\": \"xx\",\n                \"Receivers\": [\n                    \"xx\"\n                ],\n                \"ChannelId\": \"nchannel-abcd1234\",\n                \"OrganizationIds\": \"xx\",\n                \"OrgId\": \"xx\",\n                \"UpdatedAt\": \"2020-09-22\",\n                \"ChannelName\": \"xx\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"ChannelId\": \"xx\",\n                \"ChannelName\": \"xx\",\n                \"Receivers\": [\n                    \"xx\"\n                ],\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"OrgId\": \"xx\",\n                \"ExtraOrgIds\": [\n                    \"xx\"\n                ],\n                \"OrgIds\": [\n                    \"xx\"\n                ],\n                \"OrganizationIds\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "列出 Grafana 告警通道"
       }
     ],
@@ -1026,7 +1026,7 @@
     ],
     "ResumeGrafanaInstance": [
       {
-        "document": "",
+        "document": "恢复 Grafana 实例",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
         "title": "恢复 Grafana 实例"
@@ -1154,7 +1154,7 @@
     ],
     "UpdateGrafanaEnvironments": [
       {
-        "document": "",
+        "document": "更新 Grafana 环境变量",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaEnvironments\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"Envs\": \"{}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "更新 Grafana 环境变量"
@@ -1170,7 +1170,7 @@
     ],
     "UpdateGrafanaNotificationChannel": [
       {
-        "document": "",
+        "document": "更新 Grafana 告警通道",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"ChannelId\": \"nchannel-abcd1234\",\n    \"ChannelName\": \"test\",\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "更新 Grafana 告警通道"
@@ -1234,7 +1234,7 @@
     ],
     "UpgradeGrafanaInstance": [
       {
-        "document": "",
+        "document": "升级 Grafana 实例",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"Alias\": \"v7.4.2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "升级 Grafana 实例"

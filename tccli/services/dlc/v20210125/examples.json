@@ -338,7 +338,7 @@
     ],
     "DescribeDataEngines": [
       {
-        "document": "",
+        "document": "获取DataEngines信息列表",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEngines\n<公共请求参数>\n\n{\n    \"Sorting\": \"desc\",\n    \"Limit\": 10,\n    \"SortBy\": \"create-time\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"engine-type\"\n            ],\n            \"Name\": \"presto\"\n        }\n    ],\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataEngines\": [\n            {\n                \"MaxClusters\": 10,\n                \"DefaultDataEngine\": true,\n                \"UpdateTime\": 1635320563,\n                \"SpendAfter\": 10,\n                \"DataEngineId\": \"****\",\n                \"CidrBlock\": \"10.255.252.0/22\",\n                \"SubAccountUin\": \"****\",\n                \"AutoResume\": true,\n                \"ClusterType\": \"presto_private\",\n                \"QuotaId\": \"****\",\n                \"State\": 0,\n                \"DataEngineName\": \"shared_presto\",\n                \"Mode\": 0,\n                \"Message\": \"测试资源\",\n                \"CreateTime\": 1635320563,\n                \"EngineType\": \"presto\",\n                \"MinClusters\": 0,\n                \"Size\": 64\n            }\n        ],\n        \"RequestId\": \"2f67771a-a384-4b4e-86a5-146d8829ae2d\"\n    }\n}",
         "title": "获取DataEngines信息列表"

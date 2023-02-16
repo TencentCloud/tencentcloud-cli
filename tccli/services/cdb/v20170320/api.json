@@ -812,6 +812,13 @@
       "output": "OpenAuditServiceResponse",
       "status": "online"
     },
+    "OpenDBInstanceEncryption": {
+      "document": "本接口(OpenDBInstanceEncryption)用于启用实例数据存储加密功能，支持用户指定自定义密钥。\n\n注意，启用实例数据存储加密之前，需要进行以下操作：\n\n1、进行 [实例初始化](https://cloud.tencent.com/document/api/236/15873) 操作；\n\n2、开启 [KMS服务](https://console.cloud.tencent.com/kms2)；\n\n3、对云数据库(MySQL)[授予访问KMS密钥的权限](https://console.cloud.tencent.com/cam/role)，角色名为MySQL_QCSRole，预设策略名为QcloudAccessForMySQLRole；\n\n该 API 耗时可能到10s，客户端可能超时，如果调用 API 返回 InternalError ，请您调用DescribeDBInstanceInfo 确认后端加密是否开通成功。",
+      "input": "OpenDBInstanceEncryptionRequest",
+      "name": "启用数据存储加密",
+      "output": "OpenDBInstanceEncryptionResponse",
+      "status": "online"
+    },
     "OpenDBInstanceGTID": {
       "document": "本接口(OpenDBInstanceGTID)用于开启云数据库实例的 GTID，只支持版本为 5.6 以及以上的实例。",
       "input": "OpenDBInstanceGTIDRequest",
@@ -12897,6 +12904,51 @@
     },
     "OpenAuditServiceResponse": {
       "document": "OpenAuditService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenDBInstanceEncryptionRequest": {
+      "document": "OpenDBInstanceEncryption请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云数据库实例 ID。",
+          "example": "cdb-qwer1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义密钥ID，CMK唯一标识符。该值为空时，将使用腾讯云自动生成的密钥KMS-CDB。",
+          "example": "testkey",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId不为空时，该参数必填。",
+          "example": "ap-guangzou",
+          "member": "string",
+          "name": "KeyRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenDBInstanceEncryptionResponse": {
+      "document": "OpenDBInstanceEncryption返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -568,6 +568,14 @@
         "title": "修改七层监听器下域名的相关属性"
       }
     ],
+    "ModifyFunctionTargets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunctionTargets\n<公共请求参数>\n\n{\n    \"LocationId\": \"loc-xxxxxxxx\",\n    \"ListenerId\": \"lbl-xxxxxxxx\",\n    \"FunctionTargets\": [\n        {\n            \"Function\": {\n                \"FunctionNamespace\": \"ns_test\",\n                \"FunctionName\": \"name_test\",\n                \"FunctionQualifier\": \"version_test\"\n            },\n            \"Weight\": \"66\"\n        }\n    ],\n    \"LoadBalancerId\": \"lb-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85c7b3e8-7fd8-4c62-8b3b-7ba52d7a1dca\"\n    }\n}",
+        "title": "修改负载均衡转发规则上所绑定的云函数。"
+      }
+    ],
     "ModifyListener": [
       {
         "document": "修改TCP监听器的名称、健康检查参数及转发策略",
