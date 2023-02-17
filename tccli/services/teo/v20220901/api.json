@@ -13042,7 +13042,6 @@
       "document": "自定义 nameservers",
       "members": [
         {
-          "default": "",
           "document": "自定义 ns 开关，取值有：\n<li> on：开启；</li>\n<li> off：关闭。</li>",
           "example": "on",
           "member": "string",
@@ -13052,7 +13051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自定义 ns 列表。",
           "example": "[\"ns1.test.com\",\"ns2.test.com\"]",
           "member": "string",
@@ -13062,7 +13060,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "VanityNameServersIps": {
       "document": "自定义名字服务器 IP 信息",
@@ -13587,6 +13585,16 @@
           "name": "AliasZoneName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否伪站点，取值有：\n<li> 0：非伪站点；</li>\n<li> 1：伪站点。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFake",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

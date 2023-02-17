@@ -600,6 +600,14 @@
         "title": "设置自动续费标志"
       }
     ],
+    "SwitchClusterVpc": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=SwitchClusterVpc\n&ClusterId=xxx\n&UniqVpcId=xx\n&UniqSubnetId=xx\n&OldIpReserveHours=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "转换网络"
+      }
+    ],
     "SwitchClusterZone": [
       {
         "document": "",

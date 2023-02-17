@@ -2625,7 +2625,6 @@
       "document": "分页的应用描述信息字段",
       "members": [
         {
-          "default": "",
           "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2635,7 +2634,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2645,7 +2643,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2655,7 +2652,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2665,7 +2661,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "微服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2675,7 +2670,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "编程语言\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2685,7 +2679,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2695,7 +2688,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2705,7 +2697,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2715,7 +2706,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用runtime类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2725,7 +2715,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Apigateway的serviceId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2735,7 +2724,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用备注名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2745,13 +2733,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务配置信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceConfig",
           "name": "ServiceConfigList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "IgnoreCreateImageRepository\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IgnoreCreateImageRepository",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -4380,7 +4376,6 @@
       "document": "部署组列表（应用下钻界面的）",
       "members": [
         {
-          "default": "",
           "document": "部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4390,7 +4385,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4400,7 +4394,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4410,7 +4403,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像server\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4420,7 +4412,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像名，如/tsf/nginx\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4430,7 +4421,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4440,7 +4430,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4450,7 +4439,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4460,7 +4448,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4470,7 +4457,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4480,7 +4466,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "初始分配的 CPU 核数，对应 K8S request\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4490,7 +4475,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大分配的 CPU 核数，对应 K8S limit\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4500,7 +4484,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "初始分配的内存 MiB 数，对应 K8S request\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4510,7 +4493,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大分配的内存 MiB 数，对应 K8S limit\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4520,7 +4502,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4530,13 +4511,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "KubeInjectEnable值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "KubeInjectEnable",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -8384,8 +8373,8 @@
       "document": "描述投递配置项绑定的部署组",
       "members": [
         {
-          "default": "",
           "document": "配置id",
+          "example": "无",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -8393,8 +8382,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "配置名",
+          "example": "无",
           "member": "string",
           "name": "ConfigName",
           "required": true,
@@ -8402,8 +8391,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CollectPath",
           "required": true,
@@ -8411,8 +8400,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关联部署组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "GroupInfo",
           "name": "Groups",
           "required": true,
@@ -8420,12 +8409,111 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "KafkaVIp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KafkaVIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "KafkaAddress\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KafkaAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "KafkaVPort\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KafkaVPort",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Topic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "LineRule\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LineRule",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CustomRule\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomRule",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "EnableGlobalLineRule\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableGlobalLineRule",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "EnableAuth\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAuth",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Username\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Password\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "KafkaInfos\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeliveryKafkaInfo",
+          "name": "KafkaInfos",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -24709,8 +24797,8 @@
       "document": "微服务网关单元化规则",
       "members": [
         {
-          "default": "",
           "document": "规则名称",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -24718,8 +24806,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -24727,8 +24815,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "网关实体ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GatewayInstanceId",
           "required": false,
@@ -24736,8 +24824,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -24745,8 +24833,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "使用状态：enabled/disabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -24754,12 +24842,30 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UnitRuleItem",
           "name": "UnitRuleItemList",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CreatedTime\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "UpdatedTime\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

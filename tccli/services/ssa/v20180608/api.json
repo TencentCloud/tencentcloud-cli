@@ -153,6 +153,13 @@
       "name": "查询【通用字段】【泄露监测数据列表】",
       "output": "SaDivulgeDataQueryPubResponse",
       "status": "online"
+    },
+    "SaEventPub": {
+      "document": "安全事件通用字段",
+      "input": "SaEventPubRequest",
+      "name": "【安全事件】【通用字段信息】",
+      "output": "SaEventPubResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -4137,6 +4144,111 @@
       ],
       "usage": "in"
     },
+    "ListDataSaEventPub": {
+      "document": "DataSaEventPub",
+      "members": [
+        {
+          "default": "",
+          "document": "受影响资产",
+          "member": "datetime",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全事件名称",
+          "member": "int64",
+          "name": "EventType1",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全事件1级分类",
+          "member": "int64",
+          "name": "EventType2",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全事件2级分类",
+          "member": "string",
+          "name": "EventName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险等级",
+          "member": "int64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全事件状态",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击源ip",
+          "member": "string",
+          "name": "SrcIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击目标ip",
+          "member": "string",
+          "name": "DstIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击目标端口",
+          "member": "int64",
+          "name": "DstPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "受影响资产",
+          "member": "string",
+          "name": "Asset",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有字段和公有字段映射的原始采集数据唯一标识的MD5值",
+          "member": "string",
+          "name": "OldIdMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MappingResult": {
       "document": "测绘记录",
       "members": [
@@ -4319,6 +4431,30 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ObjDataSaEventPub": {
+      "document": "DataSaEventPub",
+      "members": [
+        {
+          "default": "",
+          "document": "Count",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "List",
+          "member": "ListDataSaEventPub",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4746,6 +4882,119 @@
           "member": "SaDivulgeDataQueryPubList",
           "name": "Data",
           "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaEventPubRequest": {
+      "document": "SaEventPub请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "受影响资产",
+          "member": "string",
+          "name": "Asset",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全事件名称",
+          "member": "string",
+          "name": "EventName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全事件1级分类，-1:未知 0:全部 1:攻击事件 2:侦查事件 3:僵木蠕毒 4:违规策略",
+          "member": "int64",
+          "name": "EventType1",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "安全事件2级分类，-1:未知 0:全部 1:DDOS事件 2:Web攻击 3:木马 4:异地登录 5:密码破解",
+          "member": "int64",
+          "name": "EventType2",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "风险等级，-1:未知 0:全部 1:低危 2:中危 3:高危 4:严重，可多选，如：1,2",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全事件状态，-1:未知 0:全部 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始地址",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询个数",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有字段和公有字段映射的原始采集数据唯一标识的MD5值",
+          "member": "string",
+          "name": "OldIdMd5",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaEventPubResponse": {
+      "document": "SaEventPub返回参数结构体",
+      "members": [
+        {
+          "document": "DataSaEventPub",
+          "member": "ObjDataSaEventPub",
+          "name": "DataSaEventPub",
           "type": "object",
           "value_allowed_null": false
         },

@@ -176,21 +176,21 @@
       "status": "online"
     },
     "DescribeInstanceMonitorBigKey": {
-      "document": "查询实例大Key",
+      "document": "腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见[查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。",
       "input": "DescribeInstanceMonitorBigKeyRequest",
       "name": "查询实例大Key",
       "output": "DescribeInstanceMonitorBigKeyResponse",
       "status": "online"
     },
     "DescribeInstanceMonitorBigKeySizeDist": {
-      "document": "查询实例大Key大小分布",
+      "document": "腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见 [查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。",
       "input": "DescribeInstanceMonitorBigKeySizeDistRequest",
       "name": "查询实例大Key大小分布",
       "output": "DescribeInstanceMonitorBigKeySizeDistResponse",
       "status": "online"
     },
     "DescribeInstanceMonitorBigKeyTypeDist": {
-      "document": "查询实例大Key类型分布",
+      "document": "腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见 [查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。",
       "input": "DescribeInstanceMonitorBigKeyTypeDistRequest",
       "name": "查询实例大Key类型分布",
       "output": "DescribeInstanceMonitorBigKeyTypeDistResponse",
@@ -2642,6 +2642,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2650,6 +2651,7 @@
         {
           "default": "",
           "document": "请求类型：1——string类型，2——所有类型",
+          "example": "1",
           "member": "int64",
           "name": "ReqType",
           "required": true,
@@ -2658,6 +2660,7 @@
         {
           "default": "",
           "document": "时间；例如：\"20190219\"",
+          "example": "20191101",
           "member": "string",
           "name": "Date",
           "required": true,
@@ -2671,8 +2674,10 @@
       "members": [
         {
           "document": "大Key详细信息",
+          "example": "无",
           "member": "BigKeyInfo",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2689,16 +2694,16 @@
       "document": "DescribeInstanceMonitorBigKeySizeDist请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例Id",
+          "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "时间；例如：\"20190219\"",
+          "example": "2019-11-07",
           "member": "string",
           "name": "Date",
           "required": true,
@@ -2712,6 +2717,7 @@
       "members": [
         {
           "document": "大Key大小分布详情",
+          "example": "无",
           "member": "DelayDistribution",
           "name": "Data",
           "type": "list",
@@ -2732,6 +2738,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "crs-r34wkc1d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2740,6 +2747,7 @@
         {
           "default": "",
           "document": "时间；例如：\"20190219\"",
+          "example": "2019-11-07",
           "member": "string",
           "name": "Date",
           "required": true,
@@ -2753,8 +2761,10 @@
       "members": [
         {
           "document": "大Key类型分布详细信息",
+          "example": "无",
           "member": "BigKeyTypeInfo",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

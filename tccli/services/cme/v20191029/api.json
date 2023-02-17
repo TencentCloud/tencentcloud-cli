@@ -3013,7 +3013,6 @@
       "document": "ExportVideoByEditorTrackData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
@@ -3022,7 +3021,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
           "example": "10",
           "member": "uint64",
@@ -3031,7 +3029,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：多媒体创建引擎，即导出到多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>",
           "example": "VOD",
           "member": "string",
@@ -3040,8 +3037,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "在线编辑轨道数据。轨道数据相关介绍，请查看 [视频合成协议](https://cloud.tencent.com/document/product/1156/51225)。",
+          "document": "轨道数据，用于描述待导出视频的内容。关于轨道数据的格式请查看 [视频合成协议](https://cloud.tencent.com/document/product/1156/51225)。文档中也描述了如何在页面上查看一个剪辑项目的轨道数据，该能力可以帮助开发者更方便地构造自己的轨道数据。",
           "example": "无",
           "member": "string",
           "name": "TrackData",
@@ -3049,7 +3045,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "轨道数据对应的画布宽高比，配合预设配置中的视频短边尺寸，可决定导出画面的尺寸。例：\n<li>如果 AspectRatio 取值 16:9，预设配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>\n<li>如果 AspectRatio 取值 9:16，预设配置选为11（短边720），则导出尺寸为 720 *1280。</li>",
           "example": "16:9",
           "member": "string",
@@ -3058,7 +3053,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。",
           "example": "无",
           "member": "string",
@@ -3067,7 +3061,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "导出的多媒体创作引擎媒体信息。当导出目标为 CME 时必填。",
           "example": "无",
           "member": "CMEExportInfo",
@@ -3076,7 +3069,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "导出的云点播媒资信息。当导出目标为 VOD 时必填。",
           "example": "无",
           "member": "VODExportInfo",
@@ -3085,7 +3077,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使的媒资该操作者需要拥有使用权限。",
           "example": "b64e98ad",
           "member": "string",
@@ -3104,7 +3095,6 @@
           "example": "125009388839-tfusion-0a54392053f84053942f9308c49404d7",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

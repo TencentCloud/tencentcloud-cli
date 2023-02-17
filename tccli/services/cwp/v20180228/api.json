@@ -26853,7 +26853,7 @@
         },
         {
           "default": "",
-          "document": "主机在线状态 OFFLINE  ONLINE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OFFLINE",
           "member": "string",
           "name": "MachineStatus",

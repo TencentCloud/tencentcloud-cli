@@ -16,6 +16,14 @@
         "title": "给客户转账"
       }
     ],
+    "AssignClientsToSales": [
+      {
+        "document": "成功分派一批代客给业务员",
+        "input": "{\n         \"ClientUins\":[12345,12346],\n            \"SalesUin\":\"100000110779\",\n            \"AssignClientStatus\":\"normal\",\n            \"AssignActionType\":\"assign\"\n    }",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da71d659-c1f7-4cc6-9f8d-3ef36b867ffe\",\n        \"FailedUins\": [\n            12346\n        ],\n        \"SucceedUins\": [\n            12345\n        ]\n    }\n}",
+        "title": "成功分派一批代客给业务员"
+      }
+    ],
     "AuditApplyClient": [
       {
         "document": "对待审核某客户，给予审核通过操作",
@@ -80,7 +88,7 @@
     ],
     "DescribeAgentDealsCache": [
       {
-        "document": "",
+        "document": "获取某代理商缓存订单",
         "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentDealsCache\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"78b52639-8471-41c1-a05a-1ea787a605e0\",\n        \"AgentDealSet\": [\n            {\n                \"DealId\": \"3775889\",\n                \"DealName\": \"20170316123135\",\n                \"BigDealId\": \"20170316123136\",\n                \"GoodsCategoryId\": \"75\",\n                \"OwnerUin\": \"12512\",\n                \"AppId\": \"1201\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": 5500,\n                    \"OriginalTotalCost\": 0\n                },\n                \"Creater\": \"12512\",\n                \"CreatTime\": \"2017-03-16 16:00:06\",\n                \"Payer\": \"12512\",\n                \"BillId\": \"20170316030000047100683218060026\",\n                \"PayEndTime\": \"2017-03-16 16:00:45\",\n                \"Status\": \"4\",\n                \"VoucherDecline\": null,\n                \"PayerMode\": \"0\",\n                \"GoodsName\": \"购买域名\",\n                \"ClientRemark\": \"\",\n                \"ClientType\": \"\",\n                \"ProjectType\": \"\",\n                \"SalesUin\": \"\",\n                \"DealStatus\": \"分配完成\",\n                \"ActionType\": \"purchase\",\n                \"ActivityId\": \"\",\n                \"OverdueTime\": \"2017-03-31 16:00:06\",\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-01-01 00:00:00\",\n                \"PaymentMethod\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取某代理商缓存订单"
@@ -88,7 +96,7 @@
     ],
     "DescribeAgentPayDeals": [
       {
-        "document": "",
+        "document": "获取某代理商代付订单",
         "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentPayDeals\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"78b52639-8471-41c1-a05a-1ea787a605e0\",\n        \"AgentPayDealSet\": [\n            {\n                \"DealId\": \"3775889\",\n                \"DealName\": \"20170316123135\",\n                \"BigDealId\": \"20170316123136\",\n                \"GoodsCategoryId\": \"75\",\n                \"OwnerUin\": \"12512\",\n                \"AppId\": \"1201\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": 5500,\n                    \"OriginalTotalCost\": 0\n                },\n                \"Creater\": \"12512\",\n                \"CreatTime\": \"2017-03-16 16:00:06\",\n                \"Payer\": \"12512\",\n                \"BillId\": \"20170316030000047100683218060026\",\n                \"PayEndTime\": \"2017-03-16 16:00:45\",\n                \"Status\": \"4\",\n                \"VoucherDecline\": null,\n                \"PayerMode\": \"0\",\n                \"GoodsName\": \"购买域名\",\n                \"ClientRemark\": \"\",\n                \"ClientType\": \"\",\n                \"ProjectType\": \"\",\n                \"SalesUin\": \"\",\n                \"DealStatus\": \"分配完成\",\n                \"ActionType\": \"purchase\",\n                \"ActivityId\": \"\",\n                \"OverdueTime\": \"2017-03-31 16:00:06\",\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-01-01 00:00:00\",\n                \"PaymentMethod\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取某代理商代付订单"
@@ -104,7 +112,7 @@
     ],
     "DescribeAgentSelfPayDeals": [
       {
-        "document": "",
+        "document": "获取某代理商自付订单",
         "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentSelfPayDeals\n<公共请求参数>\n\n{\n    \"OwnerUin\": \"123456\",\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"78b52639-8471-41c1-a05a-1ea787a605e0\",\n        \"AgentPayDealSet\": [\n            {\n                \"DealId\": \"3775889\",\n                \"DealName\": \"20170316123135\",\n                \"BigDealId\": \"20170316123136\",\n                \"GoodsCategoryId\": \"75\",\n                \"OwnerUin\": \"12512\",\n                \"AppId\": \"1201\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": 5500,\n                    \"OriginalTotalCost\": 0\n                },\n                \"Creater\": \"12512\",\n                \"CreatTime\": \"2017-03-16 16:00:06\",\n                \"Payer\": \"12512\",\n                \"BillId\": \"20170316030000047100683218060026\",\n                \"PayEndTime\": \"2017-03-16 16:00:45\",\n                \"Status\": \"4\",\n                \"VoucherDecline\": null,\n                \"PayerMode\": \"0\",\n                \"GoodsName\": \"购买域名\",\n                \"ClientRemark\": \"\",\n                \"ClientType\": \"\",\n                \"ProjectType\": \"\",\n                \"SalesUin\": \"\",\n                \"DealStatus\": \"分配完成\",\n                \"ActionType\": \"purchase\",\n                \"ActivityId\": \"\",\n                \"OverdueTime\": \"2017-03-31 16:00:06\",\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-01-01 00:00:00\",\n                \"PaymentMethod\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取某代理商自付订单"

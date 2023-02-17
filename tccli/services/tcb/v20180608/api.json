@@ -4015,16 +4015,16 @@
       "document": "DeleteEndUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
+          "example": "test-23",
           "member": "string",
           "name": "EnvId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户列表，每一项都是uuid",
+          "example": "[\"00000000963b4a85a9b34e2d1fe0c685\\n\"]",
           "member": "string",
           "name": "UserList",
           "required": true,
@@ -6418,32 +6418,32 @@
       "document": "DescribeEndUsers请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "开发者的环境ID",
+          "example": "envid",
           "member": "string",
           "name": "EnvId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "可选参数，偏移量，默认 0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "可选参数，拉取数量，默认 20",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "按照 uuid 列表过滤，最大个数为100",
+          "example": "[\"00000000963b4a85a9b34e2d1fe0c685\\n\"]",
           "member": "string",
           "name": "UUIds",
           "required": false,
@@ -6457,6 +6457,7 @@
       "members": [
         {
           "document": "用户总数",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
           "type": "int",
@@ -6464,6 +6465,7 @@
         },
         {
           "document": "用户列表",
+          "example": "无",
           "member": "EndUserInfo",
           "name": "Users",
           "type": "list",
@@ -7645,8 +7647,8 @@
       "document": "终端用户信息",
       "members": [
         {
-          "default": "",
           "document": "用户唯一ID",
+          "example": "无",
           "member": "string",
           "name": "UUId",
           "required": true,
@@ -7654,8 +7656,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "微信ID",
+          "example": "无",
           "member": "string",
           "name": "WXOpenId",
           "required": true,
@@ -7663,8 +7665,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "qq ID",
+          "example": "无",
           "member": "string",
           "name": "QQOpenId",
           "required": true,
@@ -7672,8 +7674,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "手机号",
+          "example": "无",
           "member": "string",
           "name": "Phone",
           "required": true,
@@ -7681,8 +7683,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "邮箱",
+          "example": "无",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -7690,8 +7692,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "昵称",
+          "example": "无",
           "member": "string",
           "name": "NickName",
           "required": true,
@@ -7699,8 +7701,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "性别",
+          "example": "无",
           "member": "string",
           "name": "Gender",
           "required": true,
@@ -7708,8 +7710,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "头像地址",
+          "example": "无",
           "member": "string",
           "name": "AvatarUrl",
           "required": true,
@@ -7717,8 +7719,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "更新时间",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -7726,8 +7728,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -7735,8 +7737,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为匿名用户",
+          "example": "无",
           "member": "bool",
           "name": "IsAnonymous",
           "required": true,
@@ -7744,8 +7746,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否禁用账户",
+          "example": "无",
           "member": "bool",
           "name": "IsDisabled",
           "required": true,
@@ -7753,8 +7755,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否设置过密码",
+          "example": "无",
           "member": "bool",
           "name": "HasPassword",
           "required": true,
@@ -7762,8 +7764,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户名",
+          "example": "无",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -9112,7 +9114,6 @@
       "document": "ModifyEndUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
           "example": "YourEnvId",
           "member": "string",
@@ -9121,7 +9122,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "C端用户端的唯一ID",
           "example": "8db291f521064c36943482cbd59ecd93",
           "member": "string",
@@ -9130,7 +9130,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "帐号的状态\n<li>ENABLE</li>\n<li>DISABLE</li>",
           "example": "ENABLE",
           "member": "string",

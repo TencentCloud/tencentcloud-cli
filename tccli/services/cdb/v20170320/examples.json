@@ -515,7 +515,7 @@
     "DescribeErrorLogData": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeErrorLogData\n&InstanceId=cdb-c1nl9rpv\n&StartTime=1585142640\n&EndTime=1585142640\n&KeyWords.0=keywords0\n&Limit=400\n&Offset=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeErrorLogData\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"Limit\": \"400\",\n    \"StartTime\": \"1585142640\",\n    \"Offset\": \"0\",\n    \"KeyWords\": [\n        \"keywords0\"\n    ],\n    \"EndTime\": \"1585142640\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Content\": \"show master status\",\n                \"Timestamp\": 1585142640\n            }\n        ]\n    }\n}",
         "title": "查询实例错误日志"
       }
@@ -1100,14 +1100,6 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=SwitchForUpgrade\n&InstanceId=cdb-eb2w7dto\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "切换访问新实例"
-      }
-    ],
-    "UpgradeCDBProxy": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeCDBProxy\n<公共请求参数>\n\n{\n    \"UpgradeTime\": \"nowTime\",\n    \"ProxyGroupId\": \"proxy-test\",\n    \"InstanceId\": \"cdb-test\",\n    \"Mem\": 4000,\n    \"ReloadBalance\": \"true\",\n    \"Cpu\": 2,\n    \"ProxyCount\": 4\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"8155d27a-079a2580-19593e48-f1af5042\",\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
-        "title": "升级数据库代理配置"
       }
     ],
     "UpgradeCDBProxyVersion": [

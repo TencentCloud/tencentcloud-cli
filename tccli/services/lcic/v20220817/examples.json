@@ -1,11 +1,43 @@
 {
   "actions": {
+    "AddGroupMember": [
+      {
+        "document": "增加成员列表到群组",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddGroupMember\n<公共请求参数>\n\n{\n    \"GroupId\": \"abcdfdfg\",\n    \"SdkAppId\": 12345678,\n    \"MemberIds\": [\n        \"dfgdfg\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "增加成员到群组"
+      }
+    ],
+    "BatchAddGroupMember": [
+      {
+        "document": "批量增加成员列表到群组",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchAddGroupMember\n<公共请求参数>\n\n{\n    \"GroupIds\": [\n        \"abcdfdfg\",\n        \"dfgsdgsdg\"\n    ],\n    \"SdkAppId\": 12345678,\n    \"MemberIds\": [\n        \"dfgdfg\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "批量增加成员到群组"
+      }
+    ],
+    "BatchCreateGroupWithMembers": [
+      {
+        "document": "批量创建群组",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateGroupWithMembers\n<公共请求参数>\n\n{\n    \"SdkAppId\": 12345678,\n    \"GroupBaseInfos\": [\n        {\n            \"GroupName\": \"test1\",\n            \"TeacherId\": \"abc\"\n        },\n        {\n            \"GroupName\": \"test2\"\n        }\n    ],\n    \"MemberIds\": [\n        \"abc\",\n        \"bcd\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupIds\": [\n            \"2CvDgjRNjylAsBZB4iZc0F6koXe\",\n            \"abcddredrtertet\"\n        ],\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "批量创建群组"
+      }
+    ],
     "BatchCreateRoom": [
       {
         "document": "批量创建课堂",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"RoomInfos\": [\n        {\n            \"AutoMic\": 1,\n            \"Name\": \"xx\",\n            \"AudioQuality\": 1,\n            \"TurnOffMic\": 1,\n            \"MaxMicNumber\": 1,\n            \"SubType\": \"xx\",\n            \"StartTime\": 1,\n            \"TeacherId\": \"xx\",\n            \"EndTime\": 1,\n            \"Resolution\": 1,\n            \"DisableRecord\": 1,\n            \"Assistants\": []\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RoomIds\": [\n            301234567\n        ],\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "批量创建课堂"
+      }
+    ],
+    "BatchDeleteGroupMember": [
+      {
+        "document": "批量删除成员从群组列表",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteGroupMember\n<公共请求参数>\n\n{\n    \"GroupIds\": [\n        \"abcdfdfg\",\n        \"dfgsdgsdg\"\n    ],\n    \"SdkAppId\": 12345678,\n    \"MemberIds\": [\n        \"dfgdfg\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "批量删除成员从群组列表"
       }
     ],
     "BatchDeleteRecord": [
@@ -40,6 +72,22 @@
         "title": "创建文档"
       }
     ],
+    "CreateGroupWithMembers": [
+      {
+        "document": "根据成员列表创建群组",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroupWithMembers\n<公共请求参数>\n\n{\n    \"GroupName\": \"test\",\n    \"SdkAppId\": 12345678,\n    \"MemberIds\": [\n        \"abc\",\n        \"bcd\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"2CvDgjRNjylAsBZB4iZc0F6koXe\",\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "创建群组"
+      }
+    ],
+    "CreateGroupWithSubGroup": [
+      {
+        "document": "聚合子群组创建联合群组",
+        "input": "{\n    \"GroupName\": \"test\",\n   \"SdkAppId\": 12345678,\n   \"TeacherId\": \"dfgdfg\",\n   \"SubGroupIds\":[\"abc\", \"bcd\"]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"2CvDgjRNjylAsBZB4iZc0F6koXe\",\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "聚合子群组创建联合群组"
+      }
+    ],
     "CreateRoom": [
       {
         "document": "创建上课房间",
@@ -62,6 +110,22 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "删除文档"
+      }
+    ],
+    "DeleteGroup": [
+      {
+        "document": "删除群组",
+        "input": "{\n    \"GroupIds\": [\"abcdfdfg\"],\n   \"SdkAppId\": 12345678\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "删除群组"
+      }
+    ],
+    "DeleteGroupMember": [
+      {
+        "document": "删除指定群组成员",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroupMember\n<公共请求参数>\n\n{\n    \"GroupId\": \"abcdfdfg\",\n    \"SdkAppId\": 12345678,\n    \"MemberIds\": [\n        \"dfgdfg\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "删除指定群组成员"
       }
     ],
     "DeleteRecord": [
@@ -112,11 +176,35 @@
         "title": "获取指定课堂文档"
       }
     ],
+    "DescribeGroup": [
+      {
+        "document": "获取群组详情",
+        "input": "{\n    \"GroupId\": \"abcdfdfg\",\n   \"SdkAppId\": 12345678\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"xx\",\n        \"GroupName\": \"xx\",\n        \"TeacherId\": \"xx\",\n        \"GroupType\": 1,\n        \"SubGroupIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取群组详情"
+      }
+    ],
+    "DescribeGroupList": [
+      {
+        "document": "获取群组列表",
+        "input": "{\n    \"SdkAppId\": 12345678\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Total\": 1,\n        \"GroupInfos\": [\n            {\n                \"GroupId\": \"adfgdfg\",\n                \"GroupName\": \"test\",\n                \"GroupType\": 0\n            }\n        ]\n    }\n}",
+        "title": "获取群组列表"
+      }
+    ],
+    "DescribeGroupMemberList": [
+      {
+        "document": "获取群组成员列表",
+        "input": "{\n    \"GroupId\": \"abcdfdfg\",\n    \"SdkAppId\": 12345678\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\",\n        \"Total\": 2,\n        \"MemberIds\": [\n            \"dfgdfgd\",\n            \"dfgsdfg\"\n        ]\n    }\n}",
+        "title": "获取群组成员列表"
+      }
+    ],
     "DescribeRoom": [
       {
         "document": "获取课堂房间信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"xx\",\n        \"Name\": \"xx\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"xx\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"xx\",\n        \"StartTime\": 1,\n        \"TeacherId\": \"xx\",\n        \"Assistants\": [\n            \"xx\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"xx\",\n        \"Name\": \"xx\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"xx\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"xx\",\n        \"StartTime\": 1,\n        \"TeacherId\": \"xx\",\n        \"Assistants\": [\n            \"xx\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0,\n        \"GroupId\": \"afdg\"\n    }\n}",
         "title": "房间信息"
       }
     ],
@@ -180,6 +268,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234657,\n    \"Callback\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改应用"
+      }
+    ],
+    "ModifyGroup": [
+      {
+        "document": "根据成员列表创建群组",
+        "input": "{\n    \"GroupId\": \"test\",\n   \"SdkAppId\": 12345678,\n   \"GroupName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "修改群组"
       }
     ],
     "ModifyRoom": [

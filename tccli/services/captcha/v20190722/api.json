@@ -84,11 +84,25 @@
       "output": "DescribeCaptchaUserAllAppIdResponse",
       "status": "online"
     },
+    "GetRequestStatistics": {
+      "document": "查询单个CaptchaAppID验证的统计数据，包括：请求量、验证量、验证通过量、验证拦截量。",
+      "input": "GetRequestStatisticsRequest",
+      "name": "查询单个CaptchaAppID验证数据",
+      "output": "GetRequestStatisticsResponse",
+      "status": "online"
+    },
     "GetTicketStatistics": {
       "document": "查询单个CaptchaAppID票据校验数据，包括：票据校验量、票据校验通过量、票据校验拦截量。",
       "input": "GetTicketStatisticsRequest",
       "name": "查询单个CaptchaAppID票据校验数据",
       "output": "GetTicketStatisticsResponse",
+      "status": "online"
+    },
+    "GetTotalRequestStatistics": {
+      "document": "查询全部验证的统计数据，包括：总请求量、总验证量、总验证通过量、总验证拦截量等数据。",
+      "input": "GetTotalRequestStatisticsRequest",
+      "name": "查询全部验证统计数据",
+      "output": "GetTotalRequestStatisticsResponse",
       "status": "online"
     },
     "GetTotalTicketStatistics": {
@@ -1692,6 +1706,23 @@
       ],
       "type": "object"
     },
+    "GetRequestStatisticsRequest": {
+      "document": "GetRequestStatistics请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetRequestStatisticsResponse": {
+      "document": "GetRequestStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetTicketStatisticsRequest": {
       "document": "GetTicketStatistics请求参数结构体",
       "members": [
@@ -1764,6 +1795,23 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTotalRequestStatisticsRequest": {
+      "document": "GetTotalRequestStatistics请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetTotalRequestStatisticsResponse": {
+      "document": "GetTotalRequestStatistics返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

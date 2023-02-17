@@ -29,7 +29,8 @@ Output:
         "EndTime": 1,
         "Resolution": 1,
         "DisableRecord": 1,
-        "Status": 0
+        "Status": 0,
+        "GroupId": "afdg"
     }
 }
 ```

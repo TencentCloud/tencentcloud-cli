@@ -364,13 +364,13 @@
         "title": "使用视频编辑轨道数据导出视频到云点播并发布到企鹅号"
       },
       {
-        "document": "",
+        "document": "使用视频编辑轨道数据导出视频到多媒体创作引擎媒资库。",
         "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\n&Platform=test\n&AspectRatio=16:9\n&TrackData=track_data_xxx\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Owner.Type=PERSON\n&CMEExportInfo.Owner.Id=ed3fa411-73e6-4fd0-abe2-498bf5f9e7f0\n&CMEExportInfo.Name=新建项目\n&CMEExportInfo.ClassPath=/成片\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e86c730b-97c8-4e7d-b4a1-f5b28291e2b3\",\n        \"TaskId\": \"181xxxxxx01-FusionCME-c85bf7f3b9b4c594fbd558800a6fecb5t\"\n    }\n}",
         "title": "使用视频编辑轨道数据导出视频到多媒体创作引擎媒资库"
       },
       {
-        "document": "",
+        "document": "使用视频编辑轨道数据导出视频到多媒体创作引擎媒资库并发布到企鹅号。",
         "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\n&Platform=test\n&AspectRatio=16:9\n&TrackData=track_data_xxxx\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Owner.Type=PERSON\n&CMEExportInfo.Owner.Id=ed3fa411-73e6-4fd0-abe2-498bf5f9e7f0\n&CMEExportInfo.Name=新建项目\n&CMEExportInfo.ClassPath=/成片\n&CMEExportInfo.ThirdPartyPublishInfos.0.ChannelMaterialId=5fd8ad3d628dc30001bd0895\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Title=企鹅视频\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Description=新闻\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Tags.0=娱乐\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Category=100\n&Operator=user_id_9394392053f8405394299d8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e86c730b-97c8-4e7d-b4a1-f5b28291e2b3\",\n        \"TaskId\": \"181xxxxxx01-FusionCME-c82bf7f3b9b4c594fbd558800a6fe7c5t\"\n    }\n}",
         "title": "使用视频编辑轨道数据导出视频到多媒体创作引擎媒资库并发布到企鹅号"

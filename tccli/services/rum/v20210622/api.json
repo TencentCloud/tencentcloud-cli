@@ -5782,7 +5782,6 @@
       "document": "DescribeRumLogList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "排序方式  desc  asc（必填）",
           "example": "asc",
           "member": "string",
@@ -5791,8 +5790,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "开始时间（必填）",
+          "document": "开始时间（必填）格式为时间戳 毫秒",
           "example": "1665993060000",
           "member": "string",
           "name": "StartTime",
@@ -5800,7 +5798,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "单次查询返回的原始日志条数，最大值为100（必填）",
           "example": "无",
           "member": "int64",
@@ -5809,7 +5806,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页数，第几页",
           "example": "无",
           "member": "int64",
@@ -5818,7 +5814,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询语句，参考控制台请求参数，语句长度最大为4096（必填）",
           "example": "id:100",
           "member": "string",
@@ -5827,8 +5822,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "结束时间（必填）",
+          "document": "结束时间（必填）格式为时间戳 毫秒",
           "example": "1665996660000",
           "member": "string",
           "name": "EndTime",
@@ -5836,9 +5830,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "项目ID（必填）",
-          "example": "100",
+          "example": "120000",
           "member": "int64",
           "name": "ID",
           "required": true,
@@ -5855,7 +5848,6 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

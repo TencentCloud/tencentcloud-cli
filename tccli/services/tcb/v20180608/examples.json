@@ -134,7 +134,7 @@
     ],
     "DeleteEndUser": [
       {
-        "document": "",
+        "document": "删除终端用户",
         "input": "https://tcb.tencentcloudapi.com/?Action=DeleteEndUser\n&EnvId=test-23\n&UserList.0=00000000963b4a85a9b34e2d1fe0c685\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "删除终端用户"
@@ -350,9 +350,9 @@
     ],
     "DescribeEndUsers": [
       {
-        "document": "",
+        "document": "获取终端用户列表",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEndUsers\n&EnvId=envid\n&UUIds.0=00000000963b4a85a9b34e2d1fe0c685\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dee235ec-b92e-4ca7-a3e7-77d2410ab776\",\n        \"Total\": 1,\n        \"Users\": [\n            {\n                \"UUId\": \"00000000963b4a85a9b34e2d1fe0c685\",\n                \"WXOpenId\": \"\",\n                \"QQOpenId\": \"\",\n                \"Phone\": \"\",\n                \"Email\": \"\",\n                \"NickName\": \"\",\n                \"Gender\": \"\",\n                \"AvatarUrl\": \"\",\n                \"UpdateTime\": \"\",\n                \"CreateTime\": \"2020-03-04 18:08:13\",\n                \"IsAnonymous\": true,\n                \"IsDisabled\": false\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Users\": [\n            {\n                \"UserName\": \"xx\",\n                \"QQOpenId\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"UUId\": \"xx\",\n                \"AvatarUrl\": \"xx\",\n                \"Gender\": \"xx\",\n                \"IsDisabled\": false,\n                \"IsAnonymous\": true,\n                \"CreateTime\": \"xx\",\n                \"HasPassword\": true,\n                \"Phone\": \"xx\",\n                \"WXOpenId\": \"xx\",\n                \"NickName\": \"xx\",\n                \"Email\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取终端用户列表"
       }
     ],
@@ -582,7 +582,7 @@
     ],
     "ModifyEndUser": [
       {
-        "document": "",
+        "document": "示例一",
         "input": "https://tcb.tencentcloudapi.com/?Action=ModifyEndUser\n&EnvId=YourEnvId\n&UUId=8db291f521064c36943482cbd59ecd93\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cea0caaf-d9d9-4c85-910a-3898c1845a38\"\n    }\n}",
         "title": "示例一"

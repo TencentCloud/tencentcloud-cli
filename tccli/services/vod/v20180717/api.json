@@ -924,6 +924,13 @@
       "output": "PushUrlCacheResponse",
       "status": "online"
     },
+    "RebuildMedia": {
+      "document": "发起音画质重生",
+      "input": "RebuildMediaRequest",
+      "name": "发起音画质重生",
+      "output": "RebuildMediaResponse",
+      "status": "online"
+    },
     "RefreshUrlCache": {
       "document": "1. 刷新指定的 URL 列表。\n2. URL 的域名必须已在云点播中注册。\n3. 单次请求最多指定20个 URL。\n4. 默认刷新配额为每天100000个 URL。",
       "input": "RefreshUrlCacheRequest",
@@ -6361,8 +6368,7 @@
       "document": "音频流配置参数",
       "members": [
         {
-          "default": "",
-          "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac。</li>\n当外层参数 Format 为 HLS 或 MPEG-DASH 时，可选值为：\n<li>libfdk_aac。</li>",
+          "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac。</li>\n当外层参数 Format 为 HLS 或 MPEG-DASH 时，可选值为：\n<li>libfdk_aac。</li>\n当外层参数 Container 为 wav 时，可选值为：\n<li>pcm16。</li>",
           "example": "无",
           "member": "string",
           "name": "Codec",
@@ -6371,7 +6377,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。\n当取值为 0，表示音频码率和原始音频保持一致。",
           "example": "无",
           "member": "uint64",
@@ -6381,8 +6386,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "音频流的采样率，可选值：\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。",
+          "document": "音频流的采样率，可选值：\n<li>16000，仅当 Codec 为 pcm16 时可选。</li>\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。",
           "example": "无",
           "member": "uint64",
           "name": "SampleRate",
@@ -6391,7 +6395,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。\n默认值：2。",
           "example": "无",
           "member": "int64",
@@ -6407,8 +6410,7 @@
       "document": "音频流配置参数",
       "members": [
         {
-          "default": "",
-          "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac。</li>\n当外层参数 Format 为 HLS 或 MPEG-DASH 时，可选值为：\n<li>libfdk_aac。</li>",
+          "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac。</li>\n当外层参数 Format 为 HLS 或 MPEG-DASH 时，可选值为：\n<li>libfdk_aac。</li>\n当外层参数 Container 为 wav 时，可选值为：\n<li>pcm16。</li>",
           "example": "无",
           "member": "string",
           "name": "Codec",
@@ -6417,7 +6419,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示音频码率和原始音频保持一致。",
           "example": "无",
           "member": "uint64",
@@ -6427,8 +6428,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "音频流的采样率，可选值：\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。",
+          "document": "音频流的采样率，可选值：\n<li>16000，仅当 Codec 为 pcm16 时可选。</li>\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。",
           "example": "无",
           "member": "uint64",
           "name": "SampleRate",
@@ -6437,7 +6437,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。",
           "example": "无",
           "member": "int64",
@@ -9364,8 +9363,7 @@
       "document": "CreateTranscodeTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
+          "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。",
           "example": "mp4",
           "member": "string",
           "name": "Container",
@@ -9373,7 +9371,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "0",
           "member": "uint64",
@@ -9382,7 +9379,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "转码模板名称，长度限制：64 个字符。",
           "example": "转码模板1",
           "member": "string",
@@ -9391,7 +9387,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
           "example": "自定义模板1",
           "member": "string",
@@ -9400,7 +9395,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。",
           "example": "0",
           "member": "int64",
@@ -9409,7 +9403,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。",
           "example": "0",
           "member": "int64",
@@ -9418,7 +9411,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "视频流配置参数，当 RemoveVideo 为 0，该字段必填。",
           "example": "无",
           "member": "VideoTemplateInfo",
@@ -9427,7 +9419,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "音频流配置参数，当 RemoveAudio 为 0，该字段必填。",
           "example": "无",
           "member": "AudioTemplateInfo",
@@ -9436,7 +9427,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "极速高清转码参数。",
           "example": "无",
           "member": "TEHDConfig",
@@ -9445,7 +9435,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "切片类型，当 Container 为 hls 时有效，可选值：\n<li>ts：ts 切片；</li>\n<li>fmp4：fmp4 切片。</li>\n默认值：ts。",
           "example": "无",
           "member": "string",
@@ -9464,7 +9453,6 @@
           "example": "1008",
           "member": "int64",
           "name": "Definition",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13319,7 +13307,6 @@
       "document": "DescribeTaskDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "视频处理任务的任务 ID。",
           "example": "无",
           "member": "string",
@@ -13328,7 +13315,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -13343,11 +13329,10 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li> ReviewAudioVideo：音视频审核任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务；</li>\n<li>ReviewAudioVideo：音视频审核任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13356,7 +13341,6 @@
           "example": "FINISH",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13365,7 +13349,6 @@
           "example": "2019-02-21T08:27:42Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13374,7 +13357,6 @@
           "example": "2019-02-21T08:27:43Z",
           "member": "string",
           "name": "BeginProcessTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13383,7 +13365,6 @@
           "example": "2019-02-21T08:27:44Z",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13392,7 +13373,6 @@
           "example": "无",
           "member": "ProcedureTask",
           "name": "ProcedureTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13401,7 +13381,6 @@
           "example": "无",
           "member": "EditMediaTask",
           "name": "EditMediaTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13410,7 +13389,6 @@
           "example": "无",
           "member": "WechatPublishTask",
           "name": "WechatPublishTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13419,7 +13397,6 @@
           "example": "无",
           "member": "ComposeMediaTask",
           "name": "ComposeMediaTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13428,7 +13405,6 @@
           "example": "无",
           "member": "SplitMediaTask",
           "name": "SplitMediaTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13437,7 +13413,6 @@
           "example": "无",
           "member": "WechatMiniProgramPublishTask",
           "name": "WechatMiniProgramPublishTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13446,7 +13421,6 @@
           "example": "无",
           "member": "PullUploadTask",
           "name": "PullUploadTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13455,7 +13429,6 @@
           "example": "无",
           "member": "TranscodeTask2017",
           "name": "TranscodeTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13464,7 +13437,6 @@
           "example": "无",
           "member": "ConcatTask2017",
           "name": "ConcatTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13473,7 +13445,6 @@
           "example": "无",
           "member": "ClipTask2017",
           "name": "ClipTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13482,7 +13453,6 @@
           "example": "无",
           "member": "CreateImageSpriteTask2017",
           "name": "CreateImageSpriteTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13491,7 +13461,6 @@
           "example": "无",
           "member": "SnapshotByTimeOffsetTask2017",
           "name": "SnapshotByTimeOffsetTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13500,7 +13469,14 @@
           "example": "无",
           "member": "RemoveWatermarkTask",
           "name": "RemoveWatermarkTask",
-          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RebuildMediaTask",
+          "name": "RebuildMediaTask",
           "type": "object",
           "value_allowed_null": true
         },
@@ -13509,7 +13485,6 @@
           "example": "无",
           "member": "ExtractTraceWatermarkTask",
           "name": "ExtractTraceWatermarkTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13518,7 +13493,6 @@
           "example": "无",
           "member": "ReviewAudioVideoTask",
           "name": "ReviewAudioVideoTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13527,7 +13501,6 @@
           "example": "无",
           "member": "ReduceMediaBitrateTask",
           "name": "ReduceMediaBitrateTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13536,7 +13509,6 @@
           "example": "无",
           "member": "DescribeFileAttributesTask",
           "name": "DescribeFileAttributesTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21375,7 +21347,6 @@
       "document": "ModifyTranscodeTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "转码模板唯一标识。",
           "example": "1008",
           "member": "int64",
@@ -21384,7 +21355,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "0",
           "member": "uint64",
@@ -21393,8 +21363,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
+          "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。",
           "example": "mp4",
           "member": "string",
           "name": "Container",
@@ -21402,7 +21371,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "转码模板名称，长度限制：64 个字符。",
           "example": "转码模板1",
           "member": "string",
@@ -21411,7 +21379,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
           "example": "自定义模板1",
           "member": "string",
@@ -21420,7 +21387,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>",
           "example": "0",
           "member": "int64",
@@ -21429,7 +21395,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>",
           "example": "0",
           "member": "int64",
@@ -21438,7 +21403,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "视频流配置参数。",
           "example": "无",
           "member": "VideoTemplateInfoForUpdate",
@@ -21447,7 +21411,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "音频流配置参数。",
           "example": "无",
           "member": "AudioTemplateInfoForUpdate",
@@ -21456,7 +21419,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "极速高清转码参数。",
           "example": "无",
           "member": "TEHDConfigForUpdate",
@@ -21465,7 +21427,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "切片类型，当 Container 为 hls 时有效，可选值：\n<li>ts：ts 切片；</li>\n<li>fmp4：fmp4 切片。</li>",
           "example": "无",
           "member": "string",
@@ -24342,6 +24303,200 @@
     "PushUrlCacheResponse": {
       "document": "PushUrlCache返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebuildMediaRequest": {
+      "document": "RebuildMedia请求参数结构体",
+      "members": [
+        {
+          "document": "媒体文件 ID。",
+          "example": "123abc",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "起始偏移时间，单位：秒，不填表示从视频开始截取。",
+          "example": "1",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "结束偏移时间，单位：秒，不填表示截取到视频末尾。",
+          "example": "2",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "画质修复控制参数。",
+          "example": "无",
+          "member": "RepairInfo",
+          "name": "RepairInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "智能插帧控制参数。",
+          "example": "无",
+          "member": "VideoFrameInterpolationInfo",
+          "name": "VideoFrameInterpolationInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "画面超分控制参数。",
+          "example": "无",
+          "member": "SuperResolutionInfo",
+          "name": "SuperResolutionInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "高动态范围类型控制参数。",
+          "example": "无",
+          "member": "HDRInfo",
+          "name": "HDRInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "视频降噪控制参数。",
+          "example": "无",
+          "member": "VideoDenoiseInfo",
+          "name": "VideoDenoiseInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "音频降噪控制参数。",
+          "example": "无",
+          "member": "AudioDenoiseInfo",
+          "name": "AudioDenoiseInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "色彩增强控制参数。",
+          "example": "无",
+          "member": "ColorEnhanceInfo",
+          "name": "ColorInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "细节增强控制参数。",
+          "example": "无",
+          "member": "SharpEnhanceInfo",
+          "name": "SharpInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "人脸增强控制参数。",
+          "example": "无",
+          "member": "FaceEnhanceInfo",
+          "name": "FaceInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "低光照控制参数。",
+          "example": "无",
+          "member": "LowLightEnhanceInfo",
+          "name": "LowLightInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "去划痕控制参数。",
+          "example": "无",
+          "member": "ScratchRepairInfo",
+          "name": "ScratchRepairInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "去伪影（毛刺）控制参数。",
+          "example": "无",
+          "member": "ArtifactRepairInfo",
+          "name": "ArtifactRepairInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "音画质重生输出目标参数。",
+          "example": "无",
+          "member": "RebuildMediaTargetInfo",
+          "name": "TargetInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "1",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "1",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "1",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "保留字段，特殊用途时使用。",
+          "example": "1",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebuildMediaResponse": {
+      "document": "RebuildMedia返回参数结构体",
+      "members": [
+        {
+          "document": "音画质重生的任务 ID，可以通过该 ID 查询音画质重生任务的状态。",
+          "example": "123-xxx-xx",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

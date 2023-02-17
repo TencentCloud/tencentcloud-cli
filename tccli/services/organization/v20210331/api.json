@@ -57,9 +57,9 @@
       "status": "online"
     },
     "DescribeOrganizationAuthNode": {
-      "document": "获取可创建组织成员的认证主体关系列表",
+      "document": "获取已设置管理员的互信主体关系列表",
       "input": "DescribeOrganizationAuthNodeRequest",
-      "name": "获取可创建组织成员的认证主体关系列表",
+      "name": "获取已设置管理员的互信主体关系列表",
       "output": "DescribeOrganizationAuthNodeResponse",
       "status": "online"
     },
@@ -182,11 +182,11 @@
       "type": "object"
     },
     "AuthNode": {
-      "document": "认证主体主要信息",
+      "document": "互信主体主要信息",
       "members": [
         {
           "default": "",
-          "document": "主体关系ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "互信主体关系ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RelationId",
@@ -196,12 +196,22 @@
         },
         {
           "default": "",
-          "document": "主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "互信主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "腾讯云",
           "member": "string",
           "name": "AuthName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主体管理员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MemberMainInfo",
+          "name": "Manager",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -535,7 +545,6 @@
       "document": "DescribeOrganizationAuthNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量。",
           "example": "1",
           "member": "uint64",
@@ -544,13 +553,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "限制数目。最大50",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
           "type": "int"
+        },
+        {
+          "document": "互信主体名称。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AuthName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -563,7 +579,6 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -572,7 +587,6 @@
           "example": "无",
           "member": "AuthNode",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1233,6 +1247,32 @@
           "example": "test",
           "member": "string",
           "name": "IdentityAliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MemberMainInfo": {
+      "document": "成员主要信息",
+      "members": [
+        {
+          "default": "",
+          "document": "成员uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000006533",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "成员名称j\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testa",
+          "member": "string",
+          "name": "MemberName",
           "required": true,
           "type": "string",
           "value_allowed_null": true

@@ -525,6 +525,13 @@
       "output": "SetRenewFlagResponse",
       "status": "online"
     },
+    "SwitchClusterVpc": {
+      "document": "更换集群vpc",
+      "input": "SwitchClusterVpcRequest",
+      "name": "更换集群vpc",
+      "output": "SwitchClusterVpcResponse",
+      "status": "online"
+    },
     "SwitchClusterZone": {
       "document": "切换到从可用区",
       "input": "SwitchClusterZoneRequest",
@@ -9966,6 +9973,69 @@
         }
       ],
       "usage": "out"
+    },
+    "SwitchClusterVpcRequest": {
+      "document": "SwitchClusterVpc请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "字符串vpc id",
+          "example": "xx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "字符串子网id",
+          "example": "xx",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "旧地址回收时间",
+          "example": "xx",
+          "member": "int64",
+          "name": "OldIpReserveHours",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchClusterVpcResponse": {
+      "document": "SwitchClusterVpc返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务id。",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SwitchClusterZoneRequest": {
       "document": "SwitchClusterZone请求参数结构体",
