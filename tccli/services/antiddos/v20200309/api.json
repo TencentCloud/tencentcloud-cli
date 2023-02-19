@@ -283,7 +283,7 @@
     "DescribeBizTrend": {
       "document": "获取业务流量曲线",
       "input": "DescribeBizTrendRequest",
-      "name": "获取业务流量曲线",
+      "name": "获取高防IP业务流量曲线",
       "output": "DescribeBizTrendResponse",
       "status": "online"
     },
@@ -4680,7 +4680,6 @@
       "document": "DescribeBizTrend请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "统计方式，可取值max, min, avg, sum, 如统计纬度是流量速率或包量速率，仅可取值max",
           "example": "xx",
           "member": "string",
@@ -4690,7 +4689,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "example": "xx",
           "member": "string",
@@ -4700,7 +4698,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "统计周期，可取值60，300，1800，3600，21600，86400，单位秒",
           "example": "1",
           "member": "uint64",
@@ -4710,7 +4707,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "统计开始时间。 例：“2020-09-22 00:00:00”",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
@@ -4720,7 +4716,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "统计结束时间。 例：“2020-09-22 00:00:00”",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
@@ -4730,7 +4725,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源实例ID",
           "example": "xx",
           "member": "string",
@@ -4740,7 +4734,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "统计纬度，可取值connum, new_conn, inactive_conn, intraffic, outtraffic, inpkg, outpkg, qps",
           "example": "xx",
           "member": "string",
@@ -4750,7 +4743,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "统计纬度为qps时，可选特定域名查询",
           "example": "xx",
           "member": "string",
@@ -4760,7 +4752,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效",
           "example": "无",
           "member": "ProtocolPort",
@@ -4780,7 +4771,6 @@
           "example": "无",
           "member": "float",
           "name": "DataList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -4790,7 +4780,6 @@
           "example": "intraffic",
           "member": "string",
           "name": "MetricName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

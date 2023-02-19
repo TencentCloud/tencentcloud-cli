@@ -7,8 +7,8 @@ Input:
 ```
 tccli redis DescribeInstanceMonitorBigKey --cli-unfold-argument  \
     --InstanceId crs-5a4py64p \
-    --ReqType 1 \
-    --Date 20191101
+    --Date 20191101 \
+    --ReqType 1
 ```
 
 Output: 
@@ -17,63 +17,63 @@ Output:
     "Response": {
         "Data": [
             {
+                "Type": "xx",
+                "Updatetime": 1572577196,
                 "DB": 0,
-                "Key": "&lth1>",
-                "Size": 56,
-                "Type": "string",
-                "Updatetime": 1572577196
+                "Key": "xx",
+                "Size": 56
             },
             {
                 "DB": 0,
-                "Key": "new",
-                "Size": 56,
-                "Type": "string",
-                "Updatetime": 1572577196
+                "Updatetime": 1572577196,
+                "Type": "xx",
+                "Key": "xx",
+                "Size": 56
             },
             {
                 "DB": 0,
-                "Key": "newb",
-                "Size": 56,
-                "Type": "string",
-                "Updatetime": 1572577196
+                "Updatetime": 1572577196,
+                "Type": "xx",
+                "Key": "xx",
+                "Size": 56
             },
             {
                 "DB": 0,
-                "Key": "cloud1",
-                "Size": 64,
-                "Type": "string",
-                "Updatetime": 1572577196
+                "Updatetime": 1572577196,
+                "Type": "xx",
+                "Key": "xx",
+                "Size": 64
             },
             {
                 "DB": 0,
-                "Key": "tencent",
-                "Size": 64,
-                "Type": "string",
-                "Updatetime": 1572577196
+                "Updatetime": 1572577196,
+                "Type": "xx",
+                "Key": "xx",
+                "Size": 64
             },
             {
                 "DB": 0,
-                "Key": "what",
-                "Size": 64,
-                "Type": "string",
-                "Updatetime": 1572577196
+                "Updatetime": 1572577196,
+                "Type": "xx",
+                "Key": "xx",
+                "Size": 64
             },
             {
                 "DB": 1,
-                "Key": "db1",
-                "Size": 64,
-                "Type": "string",
-                "Updatetime": 1572577196
+                "Updatetime": 1572577196,
+                "Type": "xx",
+                "Key": "xx",
+                "Size": 64
             },
             {
                 "DB": 0,
-                "Key": "ThisIsALongKeyThatIWantToSet",
-                "Size": 88,
-                "Type": "string",
-                "Updatetime": 1572577196
+                "Updatetime": 1572577196,
+                "Type": "xx",
+                "Key": "xx",
+                "Size": 88
             }
         ],
-        "RequestId": "cf968443-4875-4290-bc6a-ada9c5693190"
+        "RequestId": "xx"
     }
 }
 ```

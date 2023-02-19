@@ -938,13 +938,6 @@
       "output": "SwitchForUpgradeResponse",
       "status": "online"
     },
-    "UpgradeCDBProxy": {
-      "document": "接口已经废弃，请使用AdjustCdbProxy进行数据库代理的配置\n\n调整数据库代理配置",
-      "input": "UpgradeCDBProxyRequest",
-      "name": "升级数据库代理配置（接口已经废弃，请使用AdjustCdbProxy进行数据库代理的配置）",
-      "output": "UpgradeCDBProxyResponse",
-      "status": "deprecated"
-    },
     "UpgradeCDBProxyVersion": {
       "document": "升级数据库代理版本",
       "input": "UpgradeCDBProxyVersionRequest",
@@ -8687,25 +8680,28 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "开始时间戳。",
+          "document": "开始时间戳。例如 1585142640 。",
           "example": "1585142640",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "结束时间戳。",
+          "document": "结束时间戳。例如 1585142640 。",
           "example": "1585142640",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8714,7 +8710,8 @@
           "member": "string",
           "name": "KeyWords",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8723,7 +8720,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8732,7 +8730,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8741,7 +8740,8 @@
           "member": "string",
           "name": "InstType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8756,7 +8756,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回的记录。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -8765,7 +8766,8 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8849,7 +8851,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8864,7 +8867,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "参数详情。",
@@ -8873,7 +8877,8 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9581,7 +9586,7 @@
         },
         {
           "default": "",
-          "document": "开始时间戳。",
+          "document": "开始时间戳。例如 1585142640 。",
           "example": "1585142640",
           "member": "uint64",
           "name": "StartTime",
@@ -9591,7 +9596,7 @@
         },
         {
           "default": "",
-          "document": "结束时间戳。",
+          "document": "结束时间戳。例如 1585142640 。",
           "example": "1585142640",
           "member": "uint64",
           "name": "EndTime",
@@ -16658,104 +16663,6 @@
         }
       ],
       "usage": "out"
-    },
-    "UpgradeCDBProxyRequest": {
-      "document": "UpgradeCDBProxy请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实例ID",
-          "example": "cdb-pr1rb3j1",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "数据库代理ID",
-          "example": "proxy-p11rb3j",
-          "member": "string",
-          "name": "ProxyGroupId",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "代理节点个数",
-          "example": "2",
-          "member": "int64",
-          "name": "ProxyCount",
-          "required": true,
-          "type": "int",
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "代理节点核数",
-          "example": "4",
-          "member": "int64",
-          "name": "Cpu",
-          "required": true,
-          "type": "int",
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "代理节点内存大小",
-          "example": "8000",
-          "member": "int64",
-          "name": "Mem",
-          "required": true,
-          "type": "int",
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "重新负载均衡：auto（自动），manual（手动）",
-          "example": "auto",
-          "member": "string",
-          "name": "ReloadBalance",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "升级时间 nowTime（升级完成时）timeWindow（实例维护时间）",
-          "example": "nowTime",
-          "member": "string",
-          "name": "UpgradeTime",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        }
-      ],
-      "type": "object"
-    },
-    "UpgradeCDBProxyResponse": {
-      "document": "UpgradeCDBProxy返回参数结构体",
-      "members": [
-        {
-          "document": "异步处理ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "3689c0eb-a92d-77ce-0ee2-17d99f604e64",
-          "member": "string",
-          "name": "AsyncRequestId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "UpgradeCDBProxyVersionRequest": {
       "document": "UpgradeCDBProxyVersion请求参数结构体",

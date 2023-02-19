@@ -322,10 +322,10 @@
     ],
     "DescribeBizTrend": [
       {
-        "document": "",
+        "document": "获取高防IP业务流量曲线",
         "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBizTrend\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"Statistics\": \"avg\",\n    \"Business\": \"bgpip\",\n    \"ProtoInfo\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"Port\": 1\n        }\n    ],\n    \"Period\": 1,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"bgpip-00000001\",\n    \"MetricName\": \"qps\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataList\": [\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236\n        ],\n        \"MetricName\": \"intraffic\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "获取业务流量曲线"
+        "title": "获取高防IP业务流量曲线"
       }
     ],
     "DescribeBlackWhiteIpList": [

@@ -14,6 +14,13 @@
       "output": "AgentTransferMoneyResponse",
       "status": "online"
     },
+    "AssignClientsToSales": {
+      "document": "为代客or申请中代客分派跟进人（业务员），入参可从以下API获取\n- 代客列表获取API： [DescribeAgentAuditedClients](https://cloud.tencent.com/document/product/563/19184)\n- 申请中代客列表获取API：[DescribeAgentClients](https://cloud.tencent.com/document/product/563/16046)\n- 业务员列表获取API：[DescribeSalesmans](https://cloud.tencent.com/document/product/563/35196) <br><br>",
+      "input": "AssignClientsToSalesRequest",
+      "name": "为代客（or申请中代客）分派业务员",
+      "output": "AssignClientsToSalesResponse",
+      "status": "online"
+    },
     "AuditApplyClient": {
       "document": "代理商可以审核其名下申请中代客",
       "input": "AuditApplyClientRequest",
@@ -66,14 +73,14 @@
     "DescribeAgentDealsCache": {
       "document": "【该接口已下线，请使用升级版本DescribeAgentDealsByCache】代理商拉取缓存的全量客户订单",
       "input": "DescribeAgentDealsCacheRequest",
-      "name": "代理商缓存订单查询接口（禁止接入）",
+      "name": "【已切换至DescribeAgentDealsByCache】代理商缓存订单查询接口",
       "output": "DescribeAgentDealsCacheResponse",
       "status": "online"
     },
     "DescribeAgentPayDeals": {
       "document": "【该接口已下线，请切换使用升级版本DescribeAgentPayDealsV2】可以查询代理商代付的所有订单",
       "input": "DescribeAgentPayDealsRequest",
-      "name": "代理商代付订单查询接口（禁止接入）",
+      "name": "【已切换至DescribeAgentPayDealsV2】代理商代付订单查询接口",
       "output": "DescribeAgentPayDealsResponse",
       "status": "online"
     },
@@ -87,7 +94,7 @@
     "DescribeAgentSelfPayDeals": {
       "document": "【该接口已下线，请切换使用升级版本DescribeAgentSelfPayDealsV2】可以查询代理商下指定客户的自付订单",
       "input": "DescribeAgentSelfPayDealsRequest",
-      "name": "代理商自付订单查询接口（禁止接入）",
+      "name": "【已切换至DescribeAgentSelfPayDealsV2】代理商自付订单查询接口",
       "output": "DescribeAgentSelfPayDealsResponse",
       "status": "online"
     },
@@ -115,7 +122,7 @@
     "DescribeRebateInfos": {
       "document": "【该接口已下线，请切换使用升级版本DescribeRebateInfosNew】代理商可查询自己名下全部返佣信息",
       "input": "DescribeRebateInfosRequest",
-      "name": "查询代理商返佣信息（禁止接入）",
+      "name": "【已切换至DescribeRebateInfosNew】查询代理商返佣信息",
       "output": "DescribeRebateInfosResponse",
       "status": "online"
     },
@@ -1319,6 +1326,78 @@
       ],
       "type": "object"
     },
+    "AssignClientsToSalesRequest": {
+      "document": "AssignClientsToSales请求参数结构体",
+      "members": [
+        {
+          "document": "代客/申请中代客uin列表，最大50条",
+          "example": "[\"12345\",\"12346\"]",
+          "member": "string",
+          "name": "ClientUins",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "业务员uin",
+          "example": "12347",
+          "member": "string",
+          "name": "SalesUin",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "代客类型:normal-代客 apply-申请中代客",
+          "example": "normal",
+          "member": "string",
+          "name": "AssignClientStatus",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "操作类型:assign-执行分派 cancel-取消分派",
+          "example": "assign",
+          "member": "string",
+          "name": "AssignActionType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "AssignClientsToSalesResponse": {
+      "document": "AssignClientsToSales返回参数结构体",
+      "members": [
+        {
+          "document": "处理成功的代客uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"12345\"]",
+          "member": "string",
+          "name": "SucceedUins",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "处理失败的代客uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"12346\"]",
+          "member": "string",
+          "name": "FailedUins",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AuditApplyClientRequest": {
       "document": "AuditApplyClient请求参数结构体",
       "members": [
@@ -2066,7 +2145,6 @@
       "document": "DescribeAgentDealsCache请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -2076,7 +2154,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "限制数目 最大200",
           "example": "1",
           "member": "uint64",
@@ -2086,7 +2163,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "下单时间范围起始点【请保持时间范围最大90天】",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
@@ -2096,7 +2172,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "下单时间范围终止点【请保持时间范围最大90天】",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
@@ -2106,7 +2181,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "0:下单时间降序；其他：下单时间升序",
           "example": "0",
           "member": "uint64",
@@ -2116,7 +2190,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
           "example": "1",
           "member": "uint64",
@@ -2126,7 +2199,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "下单人账号ID列表",
           "example": "['100000']",
           "member": "string",
@@ -2136,7 +2208,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "订单号列表",
           "example": "['202001010000000000']",
           "member": "string",
@@ -2146,7 +2217,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "支付方式，0：自付；1：代付",
           "example": "1",
           "member": "uint64",
@@ -2166,7 +2236,6 @@
           "example": "无",
           "member": "AgentDealElem",
           "name": "AgentDealSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2176,7 +2245,6 @@
           "example": "401321",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2194,7 +2262,6 @@
       "document": "DescribeAgentPayDeals请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -2204,7 +2271,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "限制数目 最大100",
           "example": "1",
           "member": "uint64",
@@ -2214,7 +2280,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
@@ -2224,7 +2289,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "下单时间范围终止点",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
@@ -2234,7 +2298,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "0:下单时间降序；其他：下单时间升序",
           "example": "0",
           "member": "uint64",
@@ -2244,7 +2307,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
           "example": "2",
           "member": "uint64",
@@ -2254,7 +2316,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "下单人账号ID列表",
           "example": "['1000001', '1000002']",
           "member": "string",
@@ -2264,7 +2325,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "订单号列表",
           "example": "['12456789', '223456789']",
           "member": "string",
@@ -2284,7 +2344,6 @@
           "example": "无",
           "member": "AgentDealElem",
           "name": "AgentPayDealSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2294,7 +2353,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2440,7 +2498,6 @@
       "document": "DescribeAgentSelfPayDeals请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "下单人账号ID",
           "example": "123456",
           "member": "string",
@@ -2450,7 +2507,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -2460,7 +2516,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "限制数目 最大100",
           "example": "1",
           "member": "uint64",
@@ -2470,7 +2525,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
@@ -2480,7 +2534,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "下单时间范围终止点",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
@@ -2490,7 +2543,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "0:下单时间降序；其他：下单时间升序",
           "example": "0",
           "member": "uint64",
@@ -2500,7 +2552,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
           "example": "2",
           "member": "uint64",
@@ -2510,7 +2561,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "订单号列表",
           "example": "['12345879', '223456789']",
           "member": "string",
@@ -2530,7 +2580,6 @@
           "example": "无",
           "member": "AgentDealElem",
           "name": "AgentPayDealSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2540,7 +2589,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2847,7 +2895,6 @@
       "document": "DescribeRebateInfos请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返佣月份，如2018-02",
           "example": "2018-02",
           "member": "string",
@@ -2857,7 +2904,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -2867,7 +2913,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "限制数目",
           "example": "1",
           "member": "uint64",
@@ -2887,7 +2932,6 @@
           "example": "无",
           "member": "RebateInfoElem",
           "name": "RebateInfoSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2897,7 +2941,6 @@
           "example": "8",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1

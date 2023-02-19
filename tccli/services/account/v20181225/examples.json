@@ -24,6 +24,14 @@
         "title": "获取备选校验方式"
       }
     ],
+    "GetSiteProperties": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSiteProperties\n<公共请求参数>\n\n{\n    \"OpUin\": 100000546547\n}",
+        "output": "{\n    \"Response\": {\n        \"IsIntlAccount\": 0,\n        \"RequestId\": \"ffccca38-aef0-4487-9ead-c1f675f8d98d\"\n    }\n}",
+        "title": "获取账号站点属性"
+      }
+    ],
     "GetUinByAppId": [
       {
         "document": "",

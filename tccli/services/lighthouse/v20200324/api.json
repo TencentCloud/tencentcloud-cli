@@ -773,7 +773,6 @@
       "document": "描述了镜像信息。",
       "members": [
         {
-          "default": "",
           "document": "镜像 ID  ，是 Blueprint 的唯一标识。",
           "example": "lhbp-5exe07sc",
           "member": "string",
@@ -784,7 +783,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像对外展示标题。",
           "example": "Discuz! Q",
           "member": "string",
@@ -795,7 +793,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像对外展示版本。",
           "example": "1.0.0",
           "member": "string",
@@ -806,7 +803,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像描述信息。",
           "example": "discuzq",
           "member": "string",
@@ -817,7 +813,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "操作系统名称。",
           "example": "CentOS 7.6 64bit",
           "member": "string",
@@ -828,7 +823,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "操作系统平台。",
           "example": "CENTOS",
           "member": "string",
@@ -839,7 +833,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "操作系统平台类型，如 LINUX_UNIX、WINDOWS。",
           "example": "LINUX_UNIX",
           "member": "string",
@@ -850,7 +843,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像类型，如 APP_OS、PURE_OS、PRIVATE。",
           "example": "APP_OS",
           "member": "string",
@@ -861,7 +853,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像图片 URL。",
           "example": "无",
           "member": "string",
@@ -872,7 +863,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像所需系统盘大小，单位 GB。",
           "example": "20",
           "member": "int64",
@@ -883,7 +873,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像状态。",
           "example": "NORMAL",
           "member": "string",
@@ -894,7 +883,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-02T09:16:16Z",
           "member": "datetime_iso",
@@ -905,7 +893,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像名称。",
           "example": "discuzq",
           "member": "string",
@@ -916,7 +903,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像是否支持自动化助手。",
           "example": "true",
           "member": "bool",
@@ -927,7 +913,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像所需内存大小, 单位: GB",
           "example": "1",
           "member": "int64",
@@ -938,7 +923,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "img-cs2rrmp0",
           "member": "string",
@@ -949,7 +933,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "官方网站Url。",
           "example": "\"\"",
           "member": "string",
@@ -960,7 +943,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指导文章Url。",
           "example": "\"\"",
           "member": "string",
@@ -971,13 +953,22 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像关联使用场景Id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"lhsc-123456\"]",
           "member": "string",
           "name": "SceneIdSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "Docker版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20.10.5",
+          "member": "string",
+          "name": "DockerVersion",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }

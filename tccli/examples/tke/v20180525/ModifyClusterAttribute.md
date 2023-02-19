@@ -7,11 +7,11 @@ Input:
 ```
 tccli tke ModifyClusterAttribute --cli-unfold-argument  \
     --AutoUpgradeClusterLevel.IsAutoUpgrade True \
-    --ClusterName xx \
+    --ClusterName tke-test \
     --ProjectId 0 \
-    --ClusterDesc xx \
-    --ClusterId xx \
-    --ClusterLevel xx
+    --ClusterDesc 测试 \
+    --ClusterId cls-7ph3twqe \
+    --ClusterLevel L5
 ```
 
 Output: 
@@ -21,12 +21,12 @@ Output:
         "AutoUpgradeClusterLevel": {
             "IsAutoUpgrade": true
         },
-        "ClusterName": "xx",
+        "ClusterName": "tke-test",
         "ProjectId": 0,
-        "ClusterDesc": "xx",
+        "ClusterDesc": "测试",
         "QGPUShareEnable": true,
-        "RequestId": "xx",
-        "ClusterLevel": "xx"
+        "RequestId": "24564577-a642-4164-8752-4668d4ca8886",
+        "ClusterLevel": "L5"
     }
 }
 ```

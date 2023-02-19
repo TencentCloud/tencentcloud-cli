@@ -148,6 +148,14 @@
         "title": "DescribeBlockByIpTimesList"
       }
     ],
+    "DescribeBlockIgnoreList": [
+      {
+        "document": "查询蜜罐服务列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlockIgnoreList\n<公共请求参数>\n\n{\n    \"Direction\": \"xx\",\n    \"SearchValue\": \"xx\",\n    \"RuleType\": 1,\n    \"By\": \"xx\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnMsg\": \"xx\",\n        \"ReturnCode\": 0,\n        \"Data\": [\n            {\n                \"Domain\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"UniqueId\": \"xx\",\n                \"Level\": \"xx\",\n                \"Country\": \"xx\",\n                \"Direction\": 0,\n                \"EventName\": \"xx\",\n                \"Source\": \"xx\",\n                \"MatchTimes\": 0,\n                \"StartTime\": \"xx\",\n                \"Address\": \"xx\",\n                \"Action\": 0,\n                \"EndTime\": \"xx\",\n                \"Ioc\": \"xx\",\n                \"IgnoreReason\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询蜜罐服务列表"
+      }
+    ],
     "DescribeBlockStaticList": [
       {
         "document": "",

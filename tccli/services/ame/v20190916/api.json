@@ -3520,44 +3520,54 @@
       "document": "设置播放列表指令参数",
       "members": [
         {
-          "default": "",
           "document": "变更类型，取值有：\n<li>Add：添加</li>\n<li>Delete：删除</li>\n<li>ClearList：清空歌曲列表</li>\n<li>Move：移动歌曲</li>",
           "example": "Add",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "歌单索引位置，\n当 Type 取 Add 时，-1表示添加在列表最后位置，大于-1表示要添加的位置；\n当 Type 取 Delete 时，表示待删除歌曲的位置；\n当 Type 取 Move 时，表示待调整歌曲的位置。",
           "example": "1",
           "member": "int64",
           "name": "Index",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "当 Type 取 Move 时，必填，表示移动歌曲的目标位置。",
           "example": "2",
           "member": "int64",
           "name": "ChangedIndex",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "歌曲 ID 列表，当 Type 取 Add 时，必填。",
+          "document": "歌曲 ID 列表，当 Type 取 Add 时，与MusicURLs必填其中一项。",
           "example": "xxxxxx",
           "member": "string",
           "name": "MusicIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "歌曲 URL 列表，当 Type 取 Add 时，与MusicIds必填其中一项。\n注：URL必须以.mp3结尾且必须是mp3编码文件。",
+          "example": "http://demo.mp3",
+          "member": "string",
+          "name": "MusicURLs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -3863,44 +3873,64 @@
       "document": "TRTC推流进房信息",
       "members": [
         {
-          "default": "",
           "document": "签名。",
           "example": "xxxxxxx",
           "member": "string",
           "name": "Sign",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "房间号。",
           "example": "12345",
           "member": "string",
           "name": "RoomId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "推流应用ID。",
           "example": "140000001",
           "member": "string",
           "name": "SdkAppId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "用户唯一标识。",
           "example": "tom",
           "member": "string",
           "name": "UserId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "进房钥匙，若需要权限控制请携带该参数。\n [privateMapKey 权限设置](/document/product/647/32240) ",
+          "example": "xxxxxxx",
+          "member": "string",
+          "name": "PrivateMapKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "用户角色，目前支持两种角色：\n<li>anchor：主播</li>\n<li>audience：观众</li>",
+          "example": "anchor",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

@@ -1,12 +1,12 @@
 **Example 1: 关闭事件持久化功能示例**
 
-
+关闭事件持久化功能
 
 Input: 
 
 ```
 tccli tke DisableEventPersistence --cli-unfold-argument  \
-    --ClusterId xxx
+    --ClusterId cls-7ph3twqe
 ```
 
 Output: 

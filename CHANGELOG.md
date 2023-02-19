@@ -1,3 +1,204 @@
+# Release 3.0.706.1
+
+## 正版曲库直通车(ame) 版本：2019-09-16
+
+### 第 16 次发布
+
+发布时间：2023-02-20 01:01:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SetPlaylistCommandInput](http://document.tencentcloudapi.woa.com/document/product/1155/40113#SetPlaylistCommandInput)
+
+	* 新增成员：MusicURLs
+
+* [TRTCJoinRoomInput](http://document.tencentcloudapi.woa.com/document/product/1155/40113#TRTCJoinRoomInput)
+
+	* 新增成员：PrivateMapKey, Role
+
+
+
+
+## 验证码(captcha) 版本：2019-07-22
+
+### 第 8 次发布
+
+发布时间：2023-02-20 01:07:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetRequestStatistics](http://document.tencentcloudapi.woa.com/document/product/1110/77078)
+
+	* 新增入参：CaptchaAppId, StartTimeStr, EndTimeStr, Dimension
+
+	* 新增出参：Data, CaptchaCode, CaptchaMsg
+
+* [GetTotalRequestStatistics](http://document.tencentcloudapi.woa.com/document/product/1110/77077)
+
+	* 新增入参：StartTimeStr, EndTimeStr, Dimension
+
+	* 新增出参：Data, CaptchaCode, CaptchaMsg
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 17 次发布
+
+发布时间：2023-02-20 01:09:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBlockIgnoreList](http://document.tencentcloudapi.woa.com/document/product/1132/77082)
+
+新增数据结构：
+
+* [BlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BlockIgnoreRule)
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 27 次发布
+
+发布时间：2023-02-20 01:29:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/237/77083)
+
+
+
+## 自动化助手(tat) 版本：2020-10-28
+
+### 第 7 次发布
+
+发布时间：2023-02-20 01:38:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AutomationAgentInfo](http://document.tencentcloudapi.woa.com/document/product/1340/52687#AutomationAgentInfo)
+
+	* 新增成员：SupportFeatures
+
+* [CommandDocument](http://document.tencentcloudapi.woa.com/document/product/1340/52687#CommandDocument)
+
+	* 新增成员：OutputCOSBucketUrl, OutputCOSKeyPrefix
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 67 次发布
+
+发布时间：2023-02-20 01:47:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeFlowLogs](http://document.tencentcloudapi.woa.com/document/product/215/35012)
+
+	* 新增入参：Regions
+
+	* 新增出参：RegionStatistics
+
+* [DescribeNetworkInterfaces](http://document.tencentcloudapi.woa.com/document/product/215/15817)
+
+	* 新增入参：Regions
+
+	* 新增出参：RegionStatistics
+
+* [DescribeRouteTables](http://document.tencentcloudapi.woa.com/document/product/215/15763)
+
+	* 新增入参：Regions
+
+	* 新增出参：RegionStatistics
+
+* [DescribeSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/215/15808)
+
+	* 新增入参：Regions
+
+	* 新增出参：RegionStatistics
+
+* [DescribeSubnets](http://document.tencentcloudapi.woa.com/document/product/215/15784)
+
+	* 新增入参：Regions
+
+	* 新增出参：RegionStatistics
+
+* [DescribeVpcEndPoint](http://document.tencentcloudapi.woa.com/document/product/215/54679)
+
+	* 新增入参：Regions
+
+	* 新增出参：RegionStatistics
+
+* [DescribeVpcEndPointService](http://document.tencentcloudapi.woa.com/document/product/215/54678)
+
+	* 新增入参：Regions
+
+	* 新增出参：RegionStatistics
+
+* [DescribeVpcs](http://document.tencentcloudapi.woa.com/document/product/215/15778)
+
+	* 新增出参：RegionStatistics
+
+
+新增数据结构：
+
+* [RegionStatistics](http://document.tencentcloudapi.woa.com/document/product/215/15824#RegionStatistics)
+* [ResourceStatistics](http://document.tencentcloudapi.woa.com/document/product/215/15824#ResourceStatistics)
+* [ResourceStatisticsItem](http://document.tencentcloudapi.woa.com/document/product/215/15824#ResourceStatisticsItem)
+
+修改数据结构：
+
+* [EndPoint](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPoint)
+
+	* 新增成员：Region
+
+* [EndPointService](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPointService)
+
+	* 新增成员：Region
+
+* [FlowLog](http://document.tencentcloudapi.woa.com/document/product/215/15824#FlowLog)
+
+	* 新增成员：Region
+
+* [RouteTable](http://document.tencentcloudapi.woa.com/document/product/215/15824#RouteTable)
+
+	* 新增成员：Region
+
+* [SecurityGroup](http://document.tencentcloudapi.woa.com/document/product/215/15824#SecurityGroup)
+
+	* 新增成员：Region
+
+
+
+
 # Release 3.0.705.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

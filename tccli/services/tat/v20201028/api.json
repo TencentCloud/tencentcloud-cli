@@ -145,54 +145,64 @@
       "document": "自动化助手客户端信息",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "Agent 版本号。",
           "example": "无",
           "member": "string",
           "name": "Version",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "上次心跳时间",
           "example": "无",
           "member": "datetime_iso",
           "name": "LastHeartbeatTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "Agent状态，取值范围：\n<li> Online：在线\n<li> Offline：离线",
           "example": "无",
           "member": "string",
           "name": "AgentStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "Agent运行环境，取值范围：\n<li> Linux：Linux实例\n<li> Windows：Windows实例",
           "example": "无",
           "member": "string",
           "name": "Environment",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "Agent 支持的功能列表。",
+          "example": "[\"NEW_FEATURE\"]",
+          "member": "string",
+          "name": "SupportFeatures",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -413,54 +423,74 @@
       "document": "命令执行详情。",
       "members": [
         {
-          "default": "",
           "document": "Base64 编码后的执行命令。",
           "example": "无",
           "member": "string",
           "name": "Content",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "命令类型。",
           "example": "SHELL",
           "member": "string",
           "name": "CommandType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "超时时间。",
           "example": "60",
           "member": "uint64",
           "name": "Timeout",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "执行路径。",
           "example": "/root",
           "member": "string",
           "name": "WorkingDirectory",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "执行用户。",
           "example": "root",
           "member": "string",
           "name": "Username",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "保存输出的 COS Bucket 链接。",
+          "example": "https://<名称>-<AppId>.cos.ap-beijing.myqcloud.com",
+          "member": "string",
+          "name": "OutputCOSBucketUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "保存输出的文件名称前缀。",
+          "example": "agent",
+          "member": "string",
+          "name": "OutputCOSKeyPrefix",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

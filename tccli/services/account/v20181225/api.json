@@ -28,6 +28,13 @@
       "output": "GetBackUpValidateResponse",
       "status": "online"
     },
+    "GetSiteProperties": {
+      "document": "获取账号站点属性",
+      "input": "GetSitePropertiesRequest",
+      "name": "获取账号站点属性",
+      "output": "GetSitePropertiesResponse",
+      "status": "online"
+    },
     "GetUinByAppId": {
       "document": "根据appid获取uin",
       "input": "GetUinByAppIdRequest",
@@ -339,6 +346,44 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSitePropertiesRequest": {
+      "document": "GetSiteProperties请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号uin",
+          "example": "123",
+          "member": "int64",
+          "name": "OpUin",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetSitePropertiesResponse": {
+      "document": "GetSiteProperties返回参数结构体",
+      "members": [
+        {
+          "document": "1：国际站；0：非国际站",
+          "example": "是否是国际站账号",
+          "member": "int64",
+          "name": "IsIntlAccount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

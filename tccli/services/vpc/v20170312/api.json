@@ -1373,7 +1373,7 @@
       "status": "online"
     },
     "DescribeFlowLogs": {
-      "document": "本接口（DescribeFlowLogs）用于查询获取流日志集合",
+      "document": "本接口（DescribeFlowLogs）用于查询获取流日志集合。",
       "input": "DescribeFlowLogsRequest",
       "name": "查询流日志集合",
       "output": "DescribeFlowLogsResponse",
@@ -1634,7 +1634,7 @@
     "DescribeRouteTables": {
       "document": " 本接口（DescribeRouteTables）用于查询路由表。",
       "input": "DescribeRouteTablesRequest",
-      "name": "查询路由列表",
+      "name": "查询路由表",
       "output": "DescribeRouteTablesResponse",
       "status": "online"
     },
@@ -1898,7 +1898,7 @@
       "status": "online"
     },
     "DescribeVpcEndPoint": {
-      "document": "查询终端节点列表。",
+      "document": "本接口（DescribeVpcEndPoint）用于查询终端节点列表。",
       "input": "DescribeVpcEndPointRequest",
       "name": "查询终端节点列表",
       "output": "DescribeVpcEndPointResponse",
@@ -3718,27 +3718,27 @@
       "document": "IP地址模板",
       "members": [
         {
-          "default": "",
           "document": "IP地址ID，例如：ipm-2uw6ujo6。",
           "example": "ipm-2uw6ujo6",
           "member": "string",
           "name": "AddressId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "IP地址组ID，例如：ipmg-2uw6ujo6。",
           "example": "ipmg-2uw6ujo6",
           "member": "string",
           "name": "AddressGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "AdjustPublicAddressRequest": {
       "document": "AdjustPublicAddress请求参数结构体",
@@ -9108,7 +9108,6 @@
       "document": "CreateSecurityGroupPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
           "example": "sg-33ocnj9n",
           "member": "string",
@@ -9118,7 +9117,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组规则集合。",
           "example": "无",
           "member": "SecurityGroupPolicySet",
@@ -9214,36 +9212,40 @@
       "document": "CreateSecurityGroupWithPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "安全组名称，可任意命名，但不得超过60个字符。",
+          "example": "TEST",
           "member": "string",
           "name": "GroupName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组备注，最多100个字符。",
+          "example": "TEST 20230214",
           "member": "string",
           "name": "GroupDescription",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID，默认0。可在qcloud控制台项目管理页面查询到。",
+          "example": "1",
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组规则集合。",
+          "example": "{\"Version\": \"124\", \"Egress\": [], \"Ingress\": []}",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9253,10 +9255,12 @@
       "members": [
         {
           "document": "安全组对象。",
+          "example": "sg-2quou3gv",
           "member": "SecurityGroup",
           "name": "SecurityGroup",
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12464,20 +12468,22 @@
       "document": "DeleteSecurityGroupPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组规则集合。一个请求中只能删除单个方向的一条或多条规则。支持指定索引（PolicyIndex） 匹配删除和安全组规则匹配删除两种方式，一个请求中只能使用一种匹配方式。",
+          "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -16331,8 +16337,7 @@
       "document": "DescribeFlowLogs请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "私用网络ID或者统一ID，建议使用统一ID",
+          "document": "私用网络ID或者统一ID，建议使用统一ID。",
           "example": "vpc-7zayowkt",
           "member": "string",
           "name": "VpcId",
@@ -16341,8 +16346,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "流日志唯一ID",
+          "document": "流日志唯一ID。",
           "example": "fl-hdtpam45",
           "member": "string",
           "name": "FlowLogId",
@@ -16351,8 +16355,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "流日志实例名字",
+          "document": "流日志实例名字。",
           "example": "test_name",
           "member": "string",
           "name": "FlowLogName",
@@ -16361,8 +16364,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE",
+          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。",
           "example": "VPC",
           "member": "string",
           "name": "ResourceType",
@@ -16371,8 +16373,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "资源唯一ID",
+          "document": "资源唯一ID。",
           "example": "vpc-7zayowkt",
           "member": "string",
           "name": "ResourceId",
@@ -16381,8 +16382,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "流日志采集类型，ACCEPT|REJECT|ALL",
+          "document": "流日志采集类型，ACCEPT|REJECT|ALL。",
           "example": "ACCEPT",
           "member": "string",
           "name": "TrafficType",
@@ -16391,8 +16391,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "流日志存储ID",
+          "document": "流日志存储ID。",
           "example": "10acf9c5-ac0a-45ea-8aeb-bd00312aeebb",
           "member": "string",
           "name": "CloudLogId",
@@ -16401,8 +16400,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "流日志存储ID状态",
+          "document": "流日志存储ID状态。",
           "example": "SUCCESS",
           "member": "string",
           "name": "CloudLogState",
@@ -16411,8 +16409,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "按某个字段排序,支持字段：flowLogName,createTime，默认按createTime",
+          "document": "按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。",
           "example": "createTime",
           "member": "string",
           "name": "OrderField",
@@ -16421,8 +16418,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "升序（asc）还是降序（desc）,默认：desc",
+          "document": "升序（asc）还是降序（desc）,默认：desc。",
           "example": "desc",
           "member": "string",
           "name": "OrderDirection",
@@ -16431,7 +16427,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -16441,8 +16436,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "每页行数，默认为10",
+          "document": "每页行数，默认为10。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -16451,7 +16445,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件，参数不支持同时指定FlowLogIds和Filters。\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>",
           "example": "无",
           "member": "Filter",
@@ -16461,14 +16454,22 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "流日志存储ID对应的地域信息",
+          "document": "流日志存储ID对应的地域信息。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudLogRegion",
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "document": "资源统计地域。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -16477,24 +16478,31 @@
       "document": "DescribeFlowLogs返回参数结构体",
       "members": [
         {
-          "document": "流日志实例集合",
+          "document": "流日志实例集合。",
           "example": "无",
           "member": "FlowLog",
           "name": "FlowLog",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "document": "流日志总数目",
+          "document": "流日志总数目。",
           "example": "2",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "地域资源统计对象。",
+          "example": "无",
+          "member": "ResourceStatistics",
+          "name": "RegionStatistics",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -18790,7 +18798,6 @@
       "document": "DescribeNetworkInterfaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。",
           "example": "-",
           "member": "string",
@@ -18800,8 +18807,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。“AG”-服务质量云铜，“AU”-服务质量为银</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>",
+          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。“AG”-服务质量为云铜，“AU”-服务质量为云银。</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -18810,7 +18816,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -18820,7 +18825,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
           "member": "uint64",
@@ -18830,8 +18834,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "排序字段。支持：VpcId，EniId，SubnetId，Name，CreateTime，UpdateTime",
+          "document": "排序字段。支持：VpcId，EniId，SubnetId，Name，CreateTime，UpdateTime。",
           "example": "CreateTime",
           "member": "string",
           "name": "OrderField",
@@ -18840,13 +18843,21 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "排序方法。顺序：ASC，倒序：DESC。",
           "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
           "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "资源统计地域。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list",
           "visibility": 2
         }
       ],
@@ -18860,7 +18871,6 @@
           "example": "无",
           "member": "NetworkInterface",
           "name": "NetworkInterfaceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -18870,10 +18880,18 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "地域资源统计对象。",
+          "example": "无",
+          "member": "RegionStatistics",
+          "name": "RegionStatistics",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -19248,12 +19266,13 @@
       "members": [
         {
           "default": "",
-          "document": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>route-table-id - String - （过滤条件）路由表实例ID。</li>\n<li>route-table-name - String - （过滤条件）路由表名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>association.main - String - （过滤条件）是否主路由表。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>",
+          "document": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\n<li>route-table-id - String - （过滤条件）路由表实例ID。</li>\n<li>route-table-name - String - （过滤条件）路由表名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>association.main - String - （过滤条件）是否主路由表。</li>\n<li>tag-key - String -是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>next-hop-type - String - 是否必填：否 - （过滤条件）按下一跳类型进行过滤。使用next-hop-type进行过滤时，必须同时携带route-table-id与vpc-id。\n目前我们支持的类型有：\nLOCAL: 本地路由\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nHAVIP：高可用虚拟IP；\nNAT：NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nCCN：云联网；\nLOCAL_GATEWAY：本地网关。\n</li>",
           "example": "[{\"Name\":\"route-table-id\", \"Values\": [\"rtb-3yuu2t62\"]},{\"Name\":\"",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19262,7 +19281,8 @@
           "member": "string",
           "name": "RouteTableIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19271,7 +19291,8 @@
           "member": "string",
           "name": "Offset",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19280,7 +19301,18 @@
           "member": "string",
           "name": "Limit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "资源统计地域。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -19295,7 +19327,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "路由表对象。",
@@ -19304,7 +19337,18 @@
           "name": "RouteTableSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "地域资源统计对象。",
+          "example": "无",
+          "member": "ResourceStatistics",
+          "name": "RegionStatistics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -19574,7 +19618,8 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19583,7 +19628,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19592,7 +19638,8 @@
           "member": "string",
           "name": "Offset",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19601,7 +19648,18 @@
           "member": "string",
           "name": "Limit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "资源统计地域。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -19616,7 +19674,8 @@
           "name": "SecurityGroupSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "符合条件的实例数量。",
@@ -19625,7 +19684,18 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "地域资源统计对象。",
+          "example": "无",
+          "member": "RegionStatistics",
+          "name": "RegionStatistics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -21012,40 +21082,49 @@
       "document": "DescribeSubnets请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。",
           "example": "subnet-pxir56ns",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>cdc-id - String - 是否必填：否 - （过滤条件）按照cdc信息进行过滤。过滤出来制定cdc下的子网。</li>\n<li>is-cdc-subnet - String - 是否必填：否 - （过滤条件）按照是否是cdc子网进行过滤。取值：“0”-非cdc子网，“1”--cdc子网</li>",
+          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>cdc-id - String - 是否必填：否 - （过滤条件）按照cdc信息进行过滤。过滤出来制定cdc下的子网。</li>\n<li>is-cdc-subnet - String - 是否必填：否 - （过滤条件）按照是否是cdc子网进行过滤。取值：“0”-非cdc子网，“1”--cdc子网</li>\n<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>\n<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 。</li>",
           "example": "vpc-pxir56ns",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "string",
           "name": "Offset",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "string",
           "name": "Limit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "资源统计地域。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -21058,18 +21137,27 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "子网对象。",
           "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "地域资源统计对象。",
+          "example": "无",
+          "member": "RegionStatistics",
+          "name": "RegionStatistics",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -22433,40 +22521,49 @@
       "document": "DescribeVpcEndPoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤条件。\n<li> end-point-service-id- String - （过滤条件）终端节点服务ID。</li>\n<li>end-point-name - String - （过滤条件）终端节点实例名称。</li>\n<li> end-point-id- String - （过滤条件）终端节点实例ID。</li>\n<li> vpc-id- String - （过滤条件）VPC实例ID。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "单页返回数量，默认为20，最大值为100。",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点ID列表。",
           "example": "无",
           "member": "string",
           "name": "EndPointId",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "资源统计地域。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -22479,18 +22576,27 @@
           "example": "无",
           "member": "EndPoint",
           "name": "EndPointSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "符合查询条件的终端节点个数。",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "地域资源统计对象。",
+          "example": "无",
+          "member": "RegionStatistics",
+          "name": "RegionStatistics",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -22505,8 +22611,7 @@
       "document": "DescribeVpcEndPointService请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "过滤条件。\n<li> service-id- String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>",
+          "document": "过滤条件。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -22515,7 +22620,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "无",
           "member": "uint64",
@@ -22525,7 +22629,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "单页返回数量，默认为20，最大值为100。",
           "example": "无",
           "member": "uint64",
@@ -22535,7 +22638,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点服务ID。",
           "example": "无",
           "member": "string",
@@ -22543,6 +22645,15 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "document": "资源统计地域。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -22555,7 +22666,6 @@
           "example": "无",
           "member": "EndPointService",
           "name": "EndPointServiceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -22565,10 +22675,18 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "地域资源统计对象。",
+          "example": "无",
+          "member": "RegionStatistics",
+          "name": "RegionStatistics",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -23236,7 +23354,6 @@
       "document": "DescribeVpcs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。",
           "example": "-",
           "member": "string",
@@ -23246,8 +23363,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "过滤条件，不支持同时指定VpcIds和Filters参数。\n支持的过滤条件如下：\n<li>vpc-name：VPC实例名称，支持模糊查询。</li>\n<li>is-default ：是否默认VPC。</li>\n<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>\n<li>cidr-block：VPC的CIDR。</li>\n<li>tag-key ：按照标签键进行过滤，非必填参数。</li>\n<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>\n  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。",
+          "document": "过滤条件，不支持同时指定VpcIds和Filters参数。\n支持的过滤条件如下：\n<li>vpc-name：VPC实例名称，支持模糊查询。</li>\n<li>is-default ：是否默认VPC。</li>\n<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>\n<li>cidr-block：VPC的CIDR。</li>\n<li>tag-key ：按照标签键进行过滤，非必填参数。</li>\n<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>\n  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。\n<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>\n<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -23256,7 +23372,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "string",
@@ -23266,7 +23381,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
           "example": "2",
           "member": "string",
@@ -23286,7 +23400,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -23296,10 +23409,18 @@
           "example": "无",
           "member": "Vpc",
           "name": "VpcSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "地域资源统计对象。",
+          "example": "无",
+          "member": "RegionStatistics",
+          "name": "RegionStatistics",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -27869,7 +27990,6 @@
       "document": "终端节点详情。",
       "members": [
         {
-          "default": "",
           "document": "终端节点ID。",
           "example": "无",
           "member": "string",
@@ -27880,7 +28000,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "VPCID。",
           "example": "无",
           "member": "string",
@@ -27891,7 +28010,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网ID。",
           "example": "无",
           "member": "string",
@@ -27902,7 +28020,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "APPID。",
           "example": "无",
           "member": "string",
@@ -27913,7 +28030,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点名称。",
           "example": "无",
           "member": "string",
@@ -27924,7 +28040,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点服务的VPCID。",
           "example": "无",
           "member": "string",
@@ -27935,7 +28050,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点服务的VIP。",
           "example": "无",
           "member": "string",
@@ -27946,7 +28060,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点服务的ID。",
           "example": "无",
           "member": "string",
@@ -27957,7 +28070,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点的VIP。",
           "example": "无",
           "member": "string",
@@ -27968,7 +28080,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点状态，ACTIVE：可用，PENDING：待接受，ACCEPTING：接受中，REJECTED：已拒绝，FAILED：失败。",
           "example": "无",
           "member": "string",
@@ -27979,7 +28090,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间。",
           "example": "无",
           "member": "string",
@@ -27990,7 +28100,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点绑定的安全组实例ID列表。",
           "example": "无",
           "member": "string",
@@ -28001,7 +28110,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点服务名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -28010,6 +28118,16 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -28018,7 +28136,6 @@
       "document": "终端节点服务对象。",
       "members": [
         {
-          "default": "",
           "document": "终端节点服务ID",
           "example": "无",
           "member": "string",
@@ -28029,7 +28146,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "VPCID。",
           "example": "vpc-gjui0b5t",
           "member": "string",
@@ -28040,7 +28156,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "APPID。",
           "example": "251007979",
           "member": "string",
@@ -28051,7 +28166,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点服务名称。",
           "example": "无",
           "member": "string",
@@ -28062,7 +28176,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "后端服务的VIP。",
           "example": "10.1.1.1",
           "member": "string",
@@ -28073,7 +28186,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "后端服务的ID，比如lb-xxx。",
           "example": "lb-xxx",
           "member": "string",
@@ -28084,7 +28196,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否自动接受。",
           "example": "True",
           "member": "bool",
@@ -28095,7 +28206,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "关联的终端节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -28106,7 +28216,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "终端节点对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EndPoint",
@@ -28117,7 +28226,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间。",
           "example": "无",
           "member": "string",
@@ -28128,7 +28236,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "挂载的PAAS服务类型，CLB,CDB,CRS",
           "example": "CLB,CDB,CRS",
           "member": "string",
@@ -28137,6 +28244,16 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -28193,7 +28310,6 @@
       "document": "流日志",
       "members": [
         {
-          "default": "",
           "document": "私用网络ID或者统一ID，建议使用统一ID。",
           "example": "vpc-12345678",
           "member": "string",
@@ -28204,7 +28320,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "流日志唯一ID。",
           "example": "fl-12345678",
           "member": "string",
@@ -28215,7 +28330,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "流日志实例名字。",
           "example": "test-flowlog",
           "member": "string",
@@ -28226,7 +28340,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。",
           "example": "NETWORKINTERFACE",
           "member": "string",
@@ -28237,7 +28350,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源唯一ID。",
           "example": "eni-12345678",
           "member": "string",
@@ -28248,7 +28360,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "流日志采集类型，ACCEPT|REJECT|ALL。",
           "example": "ACCEPT",
           "member": "string",
@@ -28259,7 +28370,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "流日志存储ID。",
           "example": "99991111-2222-4444-9999-222266663333",
           "member": "string",
@@ -28270,7 +28380,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "流日志存储ID状态。",
           "example": "空",
           "member": "string",
@@ -28281,7 +28390,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "流日志描述信息。",
           "example": "test",
           "member": "string",
@@ -28292,7 +28400,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "流日志创建时间。",
           "example": "2020-01-30 00:00:00",
           "member": "string",
@@ -28303,7 +28410,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
           "example": "无",
           "member": "Tag",
@@ -28314,7 +28420,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否启用，true-启用，false-停用。",
           "example": "true",
           "member": "bool",
@@ -28325,7 +28430,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "消费端类型：cls、ckafka。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls",
           "member": "string",
@@ -28336,8 +28440,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "消费端信息，当消费端类型为ckafka时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消费端信息，当消费端类型为ckafka时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FlowLogStorage",
           "name": "FlowLogStorage",
@@ -28347,8 +28450,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "流日志存储ID对应的地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流日志存储ID对应的地域信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudLogRegion",
@@ -28356,6 +28458,16 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -31220,7 +31332,6 @@
       "document": "ModifyNetworkAclEntries请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "网络ACL实例ID。例如：acl-12345678。",
           "example": "acl-12345678",
           "member": "string",
@@ -31230,7 +31341,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。",
           "example": "无",
           "member": "NetworkAclEntrySet",
@@ -31240,7 +31350,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。",
           "example": "无",
           "member": "NetworkAclQuintupleEntries",
@@ -31545,31 +31654,31 @@
       "document": "ModifySecurityGroupPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组规则集合。 SecurityGroupPolicySet对象必须同时指定新的出（Egress）入（Ingress）站规则。 SecurityGroupPolicy对象不支持自定义索引（PolicyIndex）。",
           "example": "ppm-f5n1f8da",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "排序安全组标识，默认值为False。当SortPolicys为False时，不改变安全组规则排序；当SortPolicys为True时，系统将严格按照SecurityGroupPolicySet参数传入的安全组规则及顺序进行重置，考虑到人为输入参数可能存在遗漏风险，建议通过控制台对安全组规则进行排序。",
           "example": "False",
           "member": "bool",
           "name": "SortPolicys",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -34065,6 +34174,34 @@
       ],
       "usage": "out"
     },
+    "RegionStatistics": {
+      "document": "按照地域统计资源数量",
+      "members": [
+        {
+          "default": "",
+          "document": "资源总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "RejectAttachCcnInstancesRequest": {
       "document": "RejectAttachCcnInstances请求参数结构体",
       "members": [
@@ -34453,31 +34590,31 @@
       "document": "ReplaceSecurityGroupPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组规则集合对象。",
           "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "旧的安全组规则集合对象，可选，日志记录用。",
           "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "OriginalSecurityGroupPolicySet",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -35147,6 +35284,81 @@
       ],
       "usage": "out"
     },
+    "ResourceStatistics": {
+      "document": "资源统计信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Vpc实例ID，例如：vpc-f1xjkw1b。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网实例ID，例如：subnet-bthucmmy。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前已使用的IP总数。",
+          "member": "uint64",
+          "name": "Ip",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源统计信息。",
+          "member": "ResourceStatisticsItem",
+          "name": "ResourceStatisticsItemSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceStatisticsItem": {
+      "document": "资源统计项。",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型。比如，CVM，ENI等。",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称。",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源个数。",
+          "member": "uint64",
+          "name": "ResourceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResumeSnapshotInstanceRequest": {
       "document": "ResumeSnapshotInstance请求参数结构体",
       "members": [
@@ -35655,7 +35867,8 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35665,7 +35878,8 @@
           "name": "RouteTableId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35675,7 +35889,8 @@
           "name": "RouteTableName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35685,7 +35900,8 @@
           "name": "AssociationSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35695,7 +35911,8 @@
           "name": "RouteSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35705,7 +35922,8 @@
           "name": "Main",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35715,7 +35933,8 @@
           "name": "CreatedTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35725,7 +35944,8 @@
           "name": "TagSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35735,7 +35955,19 @@
           "name": "LocalCidrForCcn",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -35773,7 +36005,8 @@
           "name": "SecurityGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35783,7 +36016,8 @@
           "name": "SecurityGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35793,7 +36027,8 @@
           "name": "SecurityGroupDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35803,7 +36038,8 @@
           "name": "ProjectId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35813,7 +36049,8 @@
           "name": "IsDefault",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35823,7 +36060,8 @@
           "name": "CreatedTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35833,7 +36071,8 @@
           "name": "TagSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -35843,7 +36082,19 @@
           "name": "UpdateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "地域。",
+          "example": "\"ap-guangtzhou\"",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "both"
@@ -35981,114 +36232,114 @@
       "document": "安全组规则对象",
       "members": [
         {
-          "default": "",
           "document": "安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。",
           "example": "0",
           "member": "int64",
           "name": "PolicyIndex",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "端口(all, 离散port,  range)。\n说明：如果Protocol设置为ALL，则Port也需要设置为all。",
           "example": "22",
           "member": "string",
           "name": "Port",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。",
           "example": "无",
           "member": "ServiceTemplateSpecification",
           "name": "ServiceTemplate",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "网段或IP(互斥)。",
           "example": "0.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "网段或IPv6(互斥)。",
           "example": "::/0",
           "member": "string",
           "name": "Ipv6CidrBlock",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组实例ID，例如：sg-ohuuioma。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "IP地址ID或者ID地址组ID。",
+          "document": "IP地址ID或者IP地址组ID。",
           "example": "无",
           "member": "AddressTemplateSpecification",
           "name": "AddressTemplate",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "ACCEPT 或 DROP。",
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组规则描述。",
-          "example": "desc",
+          "example": "Desc",
           "member": "string",
           "name": "PolicyDescription",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全组最近修改时间。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "ModifyTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -36658,27 +36909,27 @@
       "document": "协议端口模板",
       "members": [
         {
-          "default": "",
           "document": "协议端口ID，例如：ppm-f5n1f8da。",
           "example": "ppm-f5n1f8da",
           "member": "string",
           "name": "ServiceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "协议端口组ID，例如：ppmg-f5n1f8da。",
           "example": "ppmg-f5n1f8da",
           "member": "string",
           "name": "ServiceGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ServicesInfo": {
       "document": "协议端口模板信息",

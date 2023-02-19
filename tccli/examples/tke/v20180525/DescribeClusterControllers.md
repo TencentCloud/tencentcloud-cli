@@ -1,12 +1,12 @@
 **Example 1: 查看集群中K8S控制器是否开启**
 
-
+查看集群中K8S控制器是否开启
 
 Input: 
 
 ```
 tccli tke DescribeClusterControllers --cli-unfold-argument  \
-    --ClusterId cls-xx
+    --ClusterId cls-7ph3twqe
 ```
 
 Output: 
@@ -23,7 +23,7 @@ Output:
                 "Enabled": true
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "f12a6e20-f950-4af9-8f8b-b6329a4961c2"
     }
 }
 ```
