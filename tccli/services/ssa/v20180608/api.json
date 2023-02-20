@@ -4155,103 +4155,114 @@
       "document": "DataSaEventPub",
       "members": [
         {
-          "default": "",
-          "document": "受影响资产",
+          "document": "时间",
+          "example": "无",
           "member": "datetime",
           "name": "Time",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "安全事件名称",
+          "document": "安全事件1级分类",
+          "example": "无",
           "member": "int64",
           "name": "EventType1",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "安全事件1级分类",
+          "document": "安全事件2级分类",
+          "example": "无",
           "member": "int64",
           "name": "EventType2",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "安全事件2级分类",
+          "document": "安全事件名称",
+          "example": "无",
           "member": "string",
           "name": "EventName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "风险等级",
+          "example": "无",
           "member": "int64",
           "name": "Level",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全事件状态",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "攻击源ip",
+          "example": "无",
           "member": "string",
           "name": "SrcIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "攻击目标ip",
+          "example": "无",
           "member": "string",
           "name": "DstIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "攻击目标端口",
+          "example": "无",
           "member": "int64",
           "name": "DstPort",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "受影响资产",
+          "example": "无",
           "member": "string",
           "name": "Asset",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "私有字段和公有字段映射的原始采集数据唯一标识的MD5值",
+          "example": "无",
           "member": "string",
           "name": "OldIdMd5",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

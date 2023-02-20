@@ -13,24 +13,24 @@ Input:
 
 ```
 tccli trtc StartMCUMixTranscode --cli-unfold-argument  \
-    --SdkAppId 1400188366 \
-    --RoomId 3560 \
-    --OutputParams.StreamId 1400188366_3560_mix \
-    --OutputParams.PureAudioStream 0 \
-    --OutputParams.RecordId 1400188366_3560_mix_file \
-    --OutputParams.RecordAudioOnly 0 \
-    --EncodeParams.VideoWidth 1280 \
-    --EncodeParams.VideoHeight 720 \
-    --EncodeParams.VideoBitrate 1560 \
+    --LayoutParams.MainVideoUserId main_pc \
+    --LayoutParams.Template 2 \
+    --LayoutParams.MainVideoStreamType 1 \
     --EncodeParams.VideoFramerate 15 \
     --EncodeParams.VideoGop 2 \
-    --EncodeParams.BackgroundColor 0 \
-    --EncodeParams.AudioSampleRate 48000 \
     --EncodeParams.AudioBitrate 64 \
+    --EncodeParams.VideoBitrate 1560 \
+    --EncodeParams.AudioSampleRate 48000 \
     --EncodeParams.AudioChannels 2 \
-    --LayoutParams.Template 2 \
-    --LayoutParams.MainVideoUserId main_pc \
-    --LayoutParams.MainVideoStreamType 1
+    --EncodeParams.BackgroundColor 0 \
+    --EncodeParams.VideoWidth 1280 \
+    --EncodeParams.VideoHeight 720 \
+    --RoomId 3560 \
+    --OutputParams.RecordId 1400188366_3560_mix_file \
+    --OutputParams.PureAudioStream 0 \
+    --OutputParams.RecordAudioOnly 0 \
+    --OutputParams.StreamId 1400188366_3560_mix \
+    --SdkAppId 1400188366
 ```
 
 Output: 

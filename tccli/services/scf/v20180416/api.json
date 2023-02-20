@@ -6242,101 +6242,134 @@
         {
           "default": "",
           "document": "Cos触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Cos",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "Timer触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Timer",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "Cmq触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Cmq",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "触发器总数",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "Ckafka触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Ckafka",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "Apigw触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Apigw",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "Cls触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Cls",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "Clb触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Clb",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "Mps触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Mps",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "Cm触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Cm",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "Vod触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Vod",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Eb触发器数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Eb",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

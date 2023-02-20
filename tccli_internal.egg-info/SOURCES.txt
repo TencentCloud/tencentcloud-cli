@@ -308,6 +308,10 @@ tccli/services/dts/__init__.py
 tccli/services/dts/dts_client.py
 tccli/services/dts/v20180330/api.json
 tccli/services/dts/v20180330/examples.json
+tccli/services/eb/__init__.py
+tccli/services/eb/eb_client.py
+tccli/services/eb/v20210416/api.json
+tccli/services/eb/v20210416/examples.json
 tccli/services/ecc/__init__.py
 tccli/services/ecc/ecc_client.py
 tccli/services/ecc/v20181213/api.json

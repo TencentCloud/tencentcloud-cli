@@ -1,6 +1,6 @@
 **Example 1: 查询智慧表单任务状态**
 
-
+查询智慧表单任务状态
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "TaskState": 1,
-        "RequestId": "xx"
+        "RequestId": "a857a857-cb70-4oo4-12hv-909967tbc2bc"
     }
 }
 ```

@@ -235,7 +235,7 @@
     "StartMCUMixTranscode": [
       {
         "document": "启动指定房间（房间号为3560）的云端混流，同时指定各路画面按屏幕分享模板排布。\n\n设置云端混流参数如下：\n- CDN直播流ID：1400188366_3560_mix。\n- 录制文件名：1400188366_3560_mix_file。\n- CDN直播流视频参数：视频宽为1280、高为720，视频码率为1560kbps，视频帧率为15，gop为2秒。\n- CDN直播流音频参数：音频采样率为48kHz，音频码率为64kbps，音频声道数为双声道。\n- 各路画面按屏幕分享模板排布，占据屏幕左侧大画面的视频流为用户(main_pc)的屏幕分享。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode\n&SdkAppId=1400188366\n&RoomId=3560\n&OutputParams.StreamId=1400188366_3560_mix\n&OutputParams.PureAudioStream=0\n&OutputParams.RecordId=1400188366_3560_mix_file\n&OutputParams.RecordAudioOnly=0\n&EncodeParams.VideoWidth=1280\n&EncodeParams.VideoHeight=720\n&EncodeParams.VideoBitrate=1560\n&EncodeParams.VideoFramerate=15\n&EncodeParams.VideoGop=2\n&EncodeParams.BackgroundColor=0\n&EncodeParams.AudioSampleRate=48000\n&EncodeParams.AudioBitrate=64\n&EncodeParams.AudioChannels=2\n&LayoutParams.Template=2\n&LayoutParams.MainVideoUserId=main_pc\n&LayoutParams.MainVideoStreamType=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartMCUMixTranscode\n<公共请求参数>\n\n{\n    \"LayoutParams\": {\n        \"MainVideoUserId\": \"main_pc\",\n        \"Template\": \"2\",\n        \"MainVideoStreamType\": \"1\"\n    },\n    \"EncodeParams\": {\n        \"VideoFramerate\": \"15\",\n        \"VideoGop\": \"2\",\n        \"AudioBitrate\": \"64\",\n        \"VideoBitrate\": \"1560\",\n        \"AudioSampleRate\": \"48000\",\n        \"AudioChannels\": \"2\",\n        \"BackgroundColor\": \"0\",\n        \"VideoWidth\": \"1280\",\n        \"VideoHeight\": \"720\"\n    },\n    \"RoomId\": \"3560\",\n    \"OutputParams\": {\n        \"RecordId\": \"1400188366_3560_mix_file\",\n        \"PureAudioStream\": \"0\",\n        \"RecordAudioOnly\": \"0\",\n        \"StreamId\": \"1400188366_3560_mix\"\n    },\n    \"SdkAppId\": \"1400188366\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "启动云端混流"
       }
@@ -283,7 +283,7 @@
     "StopMCUMixTranscode": [
       {
         "document": "结束房间号为3560的云端混流。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=StopMCUMixTranscode\n&SdkAppId=1400188366\n&RoomId=3560\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopMCUMixTranscode\n<公共请求参数>\n\n{\n    \"RoomId\": \"3560\",\n    \"SdkAppId\": \"1400188366\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "结束云端混流"
       }

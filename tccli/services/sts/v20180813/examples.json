@@ -52,6 +52,14 @@
         "title": "获取临时证书"
       }
     ],
+    "GetServiceTokenForInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetServiceTokenForInternal\n<公共请求参数>\n\n{\n    \"TargetUin\": \"100000000001\",\n    \"TargetOwnerUin\": \"10000000001\",\n    \"TargetAction\": [\n        \"DescribeInstances\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"Token\": \"da1e9d2ee9dda83506832d5ecb903b790132dfe340001\",\n            \"TmpSecretId\": \"AKID65zyIP0mpXtaI******WIQVMn1umNH58\",\n            \"TmpSecretKey\": \"q95K84wrzuEGoc*******52boxvp71yoh\"\n        },\n        \"ExpiredTime\": 1543914376,\n        \"Expiration\": \"2018-12-04T09:06:16Z\",\n        \"RequestId\": \"4daec797-9cd2-4f09-9e7a-7d4c43b2a74c\"\n    }\n}",
+        "title": "获取全程票据"
+      }
+    ],
     "QueryApiKey": [
       {
         "document": "",

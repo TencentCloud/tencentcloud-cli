@@ -1,3 +1,227 @@
+# Release 3.0.707.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 13 次发布
+
+发布时间：2023-02-21 01:08:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [OperateResourcesInner](http://document.tencentcloudapi.woa.com/document/product/555/77089)
+
+新增数据结构：
+
+* [FactoryResources](http://document.tencentcloudapi.woa.com/document/product/555/19183#FactoryResources)
+* [InnerFactoryFailedResources](http://document.tencentcloudapi.woa.com/document/product/555/19183#InnerFactoryFailedResources)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 33 次发布
+
+发布时间：2023-02-21 01:22:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyVipVport](http://document.tencentcloudapi.woa.com/document/product/1003/77090)
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 43 次发布
+
+发布时间：2023-02-21 01:34:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AlarmPolicyCondition](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicyCondition)
+
+	* 新增成员：ComplexExpression
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 21 次发布
+
+发布时间：2023-02-21 01:36:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTreeResources](http://document.tencentcloudapi.woa.com/document/product/849/75701)
+
+	* 新增出参：ParentId, Id, Name, Items, Children, TotalCount
+
+
+新增数据结构：
+
+* [DescribeTreeResourcesRsp](http://document.tencentcloudapi.woa.com/document/product/849/52010#DescribeTreeResourcesRsp)
+* [TreeResourceItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#TreeResourceItem)
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 41 次发布
+
+发布时间：2023-02-21 01:36:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAIFormTask](http://document.tencentcloudapi.woa.com/document/product/866/77092)
+* [RecognizeTableAccurateOCR](http://document.tencentcloudapi.woa.com/document/product/866/77091)
+
+修改接口：
+
+* [RecognizeThaiIDCardOCR](http://document.tencentcloudapi.woa.com/document/product/866/48475)
+
+	* 新增入参：CropPortrait
+
+	* 新增出参：PortraitImage
+
+
+新增数据结构：
+
+* [SmartFormFileUrl](http://document.tencentcloudapi.woa.com/document/product/866/33527#SmartFormFileUrl)
+* [TableCellInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#TableCellInfo)
+* [TableInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#TableInfo)
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 23 次发布
+
+发布时间：2023-02-21 01:39:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TriggerCount](http://document.tencentcloudapi.woa.com/document/product/583/17244#TriggerCount)
+
+	* 新增成员：Eb
+
+
+
+
+## 安全凭证服务(sts) 版本：2018-08-13
+
+### 第 6 次发布
+
+发布时间：2023-02-21 01:41:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetServiceTokenForInternal](http://document.tencentcloudapi.woa.com/document/product/1312/77093)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 32 次发布
+
+发布时间：2023-02-21 01:44:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRocketMQVipInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1179/77094)
+
+新增数据结构：
+
+* [InstanceNodeDistribution](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InstanceNodeDistribution)
+* [RocketMQInstanceConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQInstanceConfig)
+* [RocketMQTopicDistribution](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQTopicDistribution)
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 57 次发布
+
+发布时间：2023-02-21 01:46:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CheckInstancesUpgradeAble](http://document.tencentcloudapi.woa.com/document/product/457/50366)
+
+	* 新增出参：UnavailableVersionReason
+
+
+新增数据结构：
+
+* [UnavailableReason](http://document.tencentcloudapi.woa.com/document/product/457/31866#UnavailableReason)
+
+修改数据结构：
+
+* [UpgradeAbleInstancesItem](http://document.tencentcloudapi.woa.com/document/product/457/31866#UpgradeAbleInstancesItem)
+
+	* 新增成员：RuntimeVersion, RuntimeLatestVersion
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 21 次发布
+
+发布时间：2023-02-21 01:47:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RecordParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#RecordParams)
+
+	* 新增成员：MediaId
+
+
+
+
 # Release 3.0.706.1
 
 ## 正版曲库直通车(ame) 版本：2019-09-16

@@ -35,6 +35,13 @@
       "output": "GetFederationTokenResponse",
       "status": "online"
     },
+    "GetServiceTokenForInternal": {
+      "document": "内网服务票据（只允许内网发起调用）",
+      "input": "GetServiceTokenForInternalRequest",
+      "name": "内网服务票据（内部）",
+      "output": "GetServiceTokenForInternalResponse",
+      "status": "online"
+    },
     "QueryApiKey": {
       "document": "拉取API密钥列表",
       "input": "QueryApiKeyRequest",
@@ -516,6 +523,114 @@
           "name": "Expiration",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetServiceTokenForInternalRequest": {
+      "document": "GetServiceTokenForInternal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要操作的用户ownerUin。",
+          "example": "10000000001",
+          "member": "uint64",
+          "name": "TargetOwnerUin",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要操作的用户的Uin。",
+          "example": "100000000001",
+          "member": "uint64",
+          "name": "TargetUin",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "申请的接口权限，单次最多10个。\n接口需要属于TargetProduct。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetAction",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要申请的接口所属产品。\n未传此参数，默认取接入时的产品名。",
+          "example": "cam",
+          "member": "string",
+          "name": "TargetProduct",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "临时密钥有效期，单位秒。默认1800秒，最长7200秒。",
+          "example": "1800",
+          "member": "uint64",
+          "name": "DurationSeconds",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "临时密钥Token或CamContext中q-token。",
+          "example": "aabc",
+          "member": "string",
+          "name": "CamContextToken",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetServiceTokenForInternalResponse": {
+      "document": "GetServiceTokenForInternal返回参数结构体",
+      "members": [
+        {
+          "document": "临时证书。",
+          "example": "无",
+          "member": "Credentials",
+          "name": "Credentials",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "临时证书有效的时间，返回 Unix 时间戳，精确到秒。",
+          "example": "1543914376",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "证书有效的时间，以 iso8601 格式的 UTC 时间表示。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-12-04T09:06:16Z",
+          "member": "string",
+          "name": "Expiration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

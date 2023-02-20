@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxx",
+        "RequestId": "24564577-a642-4164-8752-4668d4ca8886",
         "ServiceAccounts": {
             "JWKSURI": "https://cls-7ph3twqe.ccs.tencent-cloud.com/openid/v1/jwks",
             "Issuer": "https://cls-7ph3twqe.ccs.tencent-cloud.com"
