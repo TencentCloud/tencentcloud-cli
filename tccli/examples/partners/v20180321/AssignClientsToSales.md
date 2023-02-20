@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli partners AssignClientsToSales --cli-unfold-argument ```
+tccli partners AssignClientsToSales --cli-unfold-argument  \
+    --ClientUins 12345 12346 \
+    --SalesUin 12347 \
+    --AssignClientStatus normal \
+    --AssignActionType assign
+```
 
 Output: 
 ```

@@ -1,13 +1,13 @@
 **Example 1: 查询流日志集合**
 
-
+查询流日志集合
 
 Input: 
 
 ```
 tccli vpc DescribeFlowLogs --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 10
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -16,7 +16,8 @@ Output:
     "Response": {
         "FlowLog": [
             {
-                "CloudLogId": "219d5186-eab0-4510-905b-84925d8ec35e",
+                "CloudLogId": "dfb8f1a2-8522-47c1-8571-67905167ab3f",
+                "CloudLogRegion": "ap-guangzhou",
                 "CloudLogState": "SUCCESS",
                 "CreatedTime": "2019-05-07 18:00:26",
                 "FlowLogDescription": "",
@@ -36,6 +37,7 @@ Output:
             },
             {
                 "CloudLogId": "dfb8f1a2-8522-47c1-8571-67905167ab3f",
+                "CloudLogRegion": "ap-guangzhou",
                 "CloudLogState": "SUCCESS",
                 "CreatedTime": "2019-05-08 10:48:26",
                 "FlowLogDescription": "",
@@ -62,7 +64,7 @@ Output:
 
 **Example 2: 获取流日志信息**
 
-
+获取流日志信息
 
 Input: 
 

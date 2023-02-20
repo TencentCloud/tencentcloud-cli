@@ -15,9 +15,9 @@
       "status": "online"
     },
     "AssignClientsToSales": {
-      "document": "为代客or申请中代客分派跟进人（业务员）\n- 代客列表获取API： [DescribeAgentAuditedClients](https://cloud.tencent.com/document/product/563/19184)\n- 申请中代客列表获取API：[DescribeAgentClients](https://cloud.tencent.com/document/product/563/16046)\n- 业务员列表获取API：[DescribeSalesmans](https://cloud.tencent.com/document/product/563/35196)",
+      "document": "为代客or申请中代客分派跟进人（业务员），入参可从以下API获取\n- 代客列表获取API： [DescribeAgentAuditedClients](https://cloud.tencent.com/document/product/563/19184)\n- 申请中代客列表获取API：[DescribeAgentClients](https://cloud.tencent.com/document/product/563/16046)\n- 业务员列表获取API：[DescribeSalesmans](https://cloud.tencent.com/document/product/563/35196) <br><br>",
       "input": "AssignClientsToSalesRequest",
-      "name": "为代客/申请中代客分派业务员",
+      "name": "为代客（or申请中代客）分派业务员",
       "output": "AssignClientsToSalesResponse",
       "status": "online"
     },

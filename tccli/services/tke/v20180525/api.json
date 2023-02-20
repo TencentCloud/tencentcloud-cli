@@ -1037,7 +1037,7 @@
       "status": "online"
     },
     "GetUpgradeInstanceProgress": {
-      "document": "获得节点升级当前的进度 ",
+      "document": "获得节点升级当前的进度",
       "input": "GetUpgradeInstanceProgressRequest",
       "name": "获得节点升级当前的进度",
       "output": "GetUpgradeInstanceProgressResponse",
@@ -1328,8 +1328,8 @@
       "document": "AcquireClusterAdminRole请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6221,7 +6221,6 @@
       "document": "DeleteClusterInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-xxxxxx",
           "member": "string",
@@ -6230,7 +6229,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主机InstanceId列表",
           "example": "[\"ins-xxxxx\\r\\n\"]",
           "member": "string",
@@ -6239,7 +6237,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）",
           "example": "terminate",
           "member": "string",
@@ -6248,7 +6245,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否强制删除(当节点在初始化时，可以指定参数为TRUE)",
           "example": "false",
           "member": "bool",
@@ -6267,7 +6263,6 @@
           "example": " [\"xxx\"]",
           "member": "string",
           "name": "SuccInstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6276,7 +6271,6 @@
           "example": " [\"xxx\"]",
           "member": "string",
           "name": "FailedInstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6285,7 +6279,6 @@
           "example": " [\"xxx\"]",
           "member": "string",
           "name": "NotFoundInstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7308,7 +7301,6 @@
       "document": "DescribeClusterAuthenticationOptions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-xxxxxxxx",
           "member": "string",
@@ -7327,7 +7319,6 @@
           "example": "无",
           "member": "ServiceAccountAuthenticationOptions",
           "name": "ServiceAccounts",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7336,7 +7327,6 @@
           "example": "Updating",
           "member": "string",
           "name": "LatestOperationState",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7345,7 +7335,6 @@
           "example": "无",
           "member": "OIDCConfigAuthenticationOptions",
           "name": "OIDCConfig",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7416,7 +7405,6 @@
       "document": "DescribeClusterControllers请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-xxx",
           "member": "string",
@@ -7435,7 +7423,6 @@
           "example": "[{\"route-controller\",true}]",
           "member": "ControllerStatus",
           "name": "ControllerStatusSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7452,7 +7439,6 @@
       "document": "DescribeClusterEndpointStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-xxxxxxxx",
           "member": "string",
@@ -7461,7 +7447,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）",
           "example": "true",
           "member": "bool",
@@ -7480,7 +7465,6 @@
           "example": "Created",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7489,7 +7473,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9804,7 +9787,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9813,7 +9795,6 @@
           "example": "无",
           "member": "ImageInstance",
           "name": "ImageInstanceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11627,7 +11608,6 @@
       "document": "DisableEventPersistence请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "xxx",
           "member": "string",
@@ -11636,7 +11616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除",
           "example": "true",
           "member": "bool",
@@ -12766,7 +12745,6 @@
       "document": "EnableEventPersistence请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-cluster",
           "member": "string",
@@ -12775,7 +12753,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "cls服务的logsetID",
           "example": "cddc14ab-947c-4326-87b9-7b226f371xxxx",
           "member": "string",
@@ -12784,7 +12761,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "cls服务的topicID",
           "example": "11305b73-15f1-42fe-9256-5b1495e4xxzzx",
           "member": "string",
@@ -12793,7 +12769,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "topic所在地域，默认为集群所在地域",
           "example": "ap-chengdu",
           "member": "string",
@@ -13664,7 +13639,6 @@
       "document": "GetTkeAppChartList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "app类型，取值log,scheduler,network,storage,monitor,dns,image,other,invisible",
           "example": "无",
           "member": "string",
@@ -13673,7 +13647,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "app支持的操作系统，取值arm32、arm64、amd64",
           "example": "无",
           "member": "string",
@@ -13682,7 +13655,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "集群类型，取值tke、eks",
           "example": "无",
           "member": "string",
@@ -13701,7 +13673,6 @@
           "example": "无",
           "member": "AppChart",
           "name": "AppCharts",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13718,24 +13689,24 @@
       "document": "GetUpgradeInstanceProgress请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "最多获取多少个节点的进度",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "从第几个节点开始获取进度",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -13749,6 +13720,7 @@
       "members": [
         {
           "document": "升级节点总数",
+          "example": "3",
           "member": "int64",
           "name": "Total",
           "type": "int",
@@ -13756,6 +13728,7 @@
         },
         {
           "document": "已升级节点总数",
+          "example": "3",
           "member": "int64",
           "name": "Done",
           "type": "int",
@@ -13763,6 +13736,7 @@
         },
         {
           "document": "升级任务生命周期\nprocess 运行中\npaused 已停止\npauing 正在停止\ndone  已完成\ntimeout 已超时\naborted 已取消",
+          "example": "done",
           "member": "string",
           "name": "LifeState",
           "type": "string",
@@ -13770,6 +13744,7 @@
         },
         {
           "document": "各节点升级进度详情",
+          "example": "{}",
           "member": "InstanceUpgradeProgressItem",
           "name": "Instances",
           "type": "list",
@@ -13777,6 +13752,7 @@
         },
         {
           "document": "集群当前状态",
+          "example": "{}",
           "member": "InstanceUpgradeClusterStatus",
           "name": "ClusterStatus",
           "type": "object",
@@ -14985,7 +14961,6 @@
       "document": "ModifyClusterAuthenticationOptions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-xxxxxxxx",
           "member": "string",
@@ -14994,7 +14969,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "ServiceAccount认证配置",
           "example": "无",
           "member": "ServiceAccountAuthenticationOptions",
@@ -15003,7 +14977,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "OIDC认证配置",
           "example": "无",
           "member": "OIDCConfigAuthenticationOptions",

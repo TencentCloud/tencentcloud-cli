@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke DeleteClusterInstances --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx \
-    --InstanceIds ins-xxxxx \
+    --ClusterId cls-7ph3twqe \
+    --InstanceIds ins-1w67yfj8 \
     --InstanceDeleteMode terminate
 ```
 
@@ -16,13 +16,13 @@ Output:
 {
     "Response": {
         "SuccInstanceIds": [
-            "xxx"
+            "ins-1w67yfj8"
         ],
         "FailedInstanceIds": [
-            "xxx"
+            "ins-1w67yfj9"
         ],
         "NotFoundInstanceIds": [
-            "xxx"
+            "ins-1w67yfj0"
         ],
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }

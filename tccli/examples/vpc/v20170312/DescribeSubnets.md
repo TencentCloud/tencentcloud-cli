@@ -1,21 +1,21 @@
 **Example 1: 查询子网列表**
 
-
+查询子网列表
 
 Input: 
 
 ```
 tccli vpc DescribeSubnets --cli-unfold-argument  \
-    --Filters.0.Name subnet-name \
-    --Filters.0.Values 默认广州二区子网 \
-    --Filters.1.Name vpc-id \
-    --Filters.1.Values vpc-2at5y1pn \
-    --Filters.2.Name subnet-id \
-    --Filters.2.Values subnet-otu92seu \
-    --Filters.3.Name cidr-block \
-    --Filters.3.Values 172.16.16.0 \
-    --Filters.4.Name is-default \
-    --Filters.4.Values true
+    --Filters.0.Values vpc-2at5y1pn \
+    --Filters.0.Name vpc-id \
+    --Filters.1.Values 默认广州二区子网 \
+    --Filters.1.Name subnet-name \
+    --Filters.2.Values 172.16.16.0 \
+    --Filters.2.Name cidr-block \
+    --Filters.3.Values subnet-otu92seu \
+    --Filters.3.Name subnet-id \
+    --Filters.4.Values true \
+    --Filters.4.Name is-default
 ```
 
 Output: 
@@ -56,14 +56,14 @@ Output:
 
 **Example 2: 查询绑定了标签的子网列表**
 
-
+查询绑定了标签的子网列表
 
 Input: 
 
 ```
 tccli vpc DescribeSubnets --cli-unfold-argument  \
-    --Filters.0.Name tag:city \
-    --Filters.0.Values shanghai
+    --Filters.0.Values shanghai \
+    --Filters.0.Name tag:city
 ```
 
 Output: 

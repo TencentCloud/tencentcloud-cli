@@ -1708,12 +1708,69 @@
     },
     "GetRequestStatisticsRequest": {
       "document": "GetRequestStatistics请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "验证码AppId",
+          "example": "\"19901111\"",
+          "member": "string",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "开始时间字符串",
+          "example": "\"2022-05-14 01:00\"",
+          "member": "string",
+          "name": "StartTimeStr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "结束时间字符串",
+          "example": "\"2022-06-15 20:00\"",
+          "member": "string",
+          "name": "EndTimeStr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "查询粒度",
+          "example": "\"3\"",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetRequestStatisticsResponse": {
       "document": "GetRequestStatistics返回参数结构体",
       "members": [
+        {
+          "document": "查询后数据块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{             \"ActionTotal\": 155,             \"VerifyTotal\": 32,",
+          "member": "CaptchaStatisticObj",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "验证码返回码",
+          "example": "11000",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证码返回信息",
+          "example": "\"success\"",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1806,12 +1863,61 @@
     },
     "GetTotalRequestStatisticsRequest": {
       "document": "GetTotalRequestStatistics请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "开始时间字符串",
+          "example": "\"2022-05-14 01:00\"",
+          "member": "string",
+          "name": "StartTimeStr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "结束时间字符串",
+          "example": "\"2022-06-15 20:00\"",
+          "member": "string",
+          "name": "EndTimeStr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "查询粒度",
+          "example": "\"3\"",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetTotalRequestStatisticsResponse": {
       "document": "GetTotalRequestStatistics返回参数结构体",
       "members": [
+        {
+          "document": "查询后数据块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{             \"ActionTotal\": 155,             \"VerifyTotal\": 32,",
+          "member": "CaptchaStatisticObj",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "验证码返回码",
+          "example": "11000",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证码返回信息",
+          "example": "\"success\"",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

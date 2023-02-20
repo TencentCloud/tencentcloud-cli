@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tke AcquireClusterAdminRole --cli-unfold-argument  \
-    --ClusterId cls-xxxx
+    --ClusterId cls-7ph3twqe
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxx"
+        "RequestId": "24564577-a642-4164-8752-4668d4ca8886"
     }
 }
 ```

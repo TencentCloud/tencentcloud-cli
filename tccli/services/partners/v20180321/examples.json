@@ -19,7 +19,7 @@
     "AssignClientsToSales": [
       {
         "document": "成功分派一批代客给业务员",
-        "input": "{\n         \"ClientUins\":[12345,12346],\n            \"SalesUin\":\"100000110779\",\n            \"AssignClientStatus\":\"normal\",\n            \"AssignActionType\":\"assign\"\n    }",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignClientsToSales\n<公共请求参数>\n\n{\n    \"ClientUins\": [\n        12345,\n        12346\n    ],\n    \"SalesUin\": \"12347\",\n    \"AssignClientStatus\": \"normal\",\n    \"AssignActionType\": \"assign\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"da71d659-c1f7-4cc6-9f8d-3ef36b867ffe\",\n        \"FailedUins\": [\n            12346\n        ],\n        \"SucceedUins\": [\n            12345\n        ]\n    }\n}",
         "title": "成功分派一批代客给业务员"
       }

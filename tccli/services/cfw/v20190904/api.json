@@ -119,6 +119,13 @@
       "output": "DescribeBlockByIpTimesListResponse",
       "status": "online"
     },
+    "DescribeBlockIgnoreList": {
+      "document": "查询入侵防御放通封禁列表",
+      "input": "DescribeBlockIgnoreListRequest",
+      "name": "查询入侵防御放通封禁列表",
+      "output": "DescribeBlockIgnoreListResponse",
+      "status": "online"
+    },
     "DescribeBlockStaticList": {
       "document": "DescribeBlockStaticList 告警中心柱形图\n",
       "input": "DescribeBlockStaticListRequest",
@@ -867,6 +874,162 @@
         }
       ],
       "usage": "both"
+    },
+    "BlockIgnoreRule": {
+      "document": "入侵防御放通封禁规则",
+      "members": [
+        {
+          "default": "",
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ioc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "危险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "未知",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "来源事件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "封禁列表命中",
+          "member": "string",
+          "name": "EventName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "方向：1入站，0出站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地理位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中国广东省广州",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则类型：1封禁，2放通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Action",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则生效开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-21 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则生效结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3000-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "忽略原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "IgnoreReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全事件来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "手动添加",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UniqueId",
+          "member": "string",
+          "name": "UniqueId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则命中次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MatchTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中国",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CfwNatDnatRule": {
       "document": "NAT防火墙Dnat规则",
@@ -2165,6 +2328,123 @@
           "name": "Data",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockIgnoreListRequest": {
+      "document": "DescribeBlockIgnoreList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "单页数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "方向：1互联网入站，0互联网出站，3内网，空 全部方向",
+          "example": "in",
+          "member": "string",
+          "name": "Direction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则类型：1封禁，2放通",
+          "example": "block",
+          "member": "uint64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数",
+          "example": "EndTime",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型：desc降序，asc正序",
+          "example": "desc",
+          "member": "string",
+          "name": "By",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索参数，json格式字符串，空则传\"{}\"，域名：domain，危险等级：level，放通原因：ignore_reason，安全事件来源：rule_source，地理位置：address，模糊搜索：common",
+          "example": "{\\\"service_type\\\":\"1\",\\\"service_name\\\":\\\"\\\"}",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockIgnoreListResponse": {
+      "document": "DescribeBlockIgnoreList返回参数结构体",
+      "members": [
+        {
+          "document": "列表数据",
+          "example": "无",
+          "member": "BlockIgnoreRule",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询结果总数，用于分页",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态值，0：查询成功，非0：查询失败",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态信息，success：查询成功，fail：查询失败",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

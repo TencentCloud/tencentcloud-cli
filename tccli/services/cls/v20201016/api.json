@@ -4739,34 +4739,30 @@
       "document": "GetAlarmLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
-          "example": "1608894763000",
+          "example": "1676614187496",
           "member": "int64",
           "name": "From",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
-          "example": "1608894763",
+          "example": "1676617787496",
           "member": "int64",
           "name": "To",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询语句，语句长度最大为1024",
-          "example": "ddddddddd",
+          "example": "alert_id:notice-c0960eb3-6454-4eef-xxxx-8feb766a9fbd",
           "member": "string",
           "name": "Query",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "单次查询返回的日志条数，最大值为1000",
           "example": "100",
           "member": "int64",
@@ -4775,7 +4771,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容",
           "example": "context",
           "member": "string",
@@ -4784,7 +4779,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
           "example": "asc",
           "member": "string",
@@ -4793,7 +4787,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效",
           "example": "false",
           "member": "bool",
@@ -4812,7 +4805,6 @@
           "example": "xx",
           "member": "string",
           "name": "Context",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4821,7 +4813,6 @@
           "example": "false",
           "member": "bool",
           "name": "ListOver",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4830,7 +4821,6 @@
           "example": "1",
           "member": "bool",
           "name": "Analysis",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4839,7 +4829,6 @@
           "example": "[\"time\",\"pv\",\"uv\"]",
           "member": "string",
           "name": "ColNames",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4848,7 +4837,6 @@
           "example": "无",
           "member": "LogInfo",
           "name": "Results",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4857,7 +4845,6 @@
           "example": "无",
           "member": "LogItems",
           "name": "AnalysisResults",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4866,7 +4853,6 @@
           "example": "[\"xxx\",\"yy\"]",
           "member": "string",
           "name": "AnalysisRecords",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4875,7 +4861,6 @@
           "example": "无",
           "member": "Column",
           "name": "Columns",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

@@ -1,6 +1,6 @@
 **Example 1: 查询终端节点服务列表**
 
-
+查询终端节点服务列表
 
 Input: 
 
@@ -15,21 +15,40 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "EndPointServiceSet": [
             {
-                "VpcId": "vpc-hj3he929",
-                "EndPointSet": {},
-                "AutoAcceptFlag": "False",
-                "ServiceInstanceId": "lb-nswq8wkq",
-                "ServiceName": "test_002",
                 "EndPointServiceId": "vpcsvc-pnpcflil",
-                "ServiceVip": "10.101.1.11",
-                "CreateTime": "2021-04-12 19:22:43",
+                "VpcId": "vpc-hj3he929",
                 "ServiceOwner": "1254277469",
-                "EndPointCount": 0
+                "ServiceName": "test_002",
+                "ServiceVip": "10.101.1.11",
+                "ServiceInstanceId": "lb-nswq8wkq",
+                "AutoAcceptFlag": true,
+                "EndPointCount": 1,
+                "EndPointSet": [
+                    {
+                        "ServiceVpcId": "vpc-hj3he929",
+                        "GroupSet": [
+                            "sg-tyhgrwet"
+                        ],
+                        "ServiceName": "测试",
+                        "State": "PENDING",
+                        "ServiceVip": "10.101.1.11",
+                        "EndPointName": "节点",
+                        "VpcId": "vpc-hj3he929",
+                        "EndPointOwner": "1302384414",
+                        "EndPointId": "vpce-h0fk8lfc",
+                        "SubnetId": "subnet-4t7fr3fi",
+                        "CreateTime": "0000-00-00 00:00:00",
+                        "EndPointServiceId": "vpcsvc-kngiybxl",
+                        "EndPointVip": "10.101.1.11"
+                    }
+                ],
+                "CreateTime": "xx",
+                "ServiceType": "xx"
             }
         ],
+        "TotalCount": 1,
         "RequestId": "452e8b38-10a1-4d8a-8a31-a64b89c8f565"
     }
 }

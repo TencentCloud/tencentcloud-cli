@@ -106,7 +106,7 @@
       "status": "online"
     },
     "CreateLiveTimeShiftTemplate": {
-      "document": "创建直播垫片模板。",
+      "document": "创建直播时移模板。",
       "input": "CreateLiveTimeShiftTemplateRequest",
       "name": "创建直播时移模板",
       "output": "CreateLiveTimeShiftTemplateResponse",
@@ -834,7 +834,7 @@
       "status": "online"
     },
     "ModifyLiveTimeShiftTemplate": {
-      "document": "修改直播垫片模板。",
+      "document": "修改直播时移模板。",
       "input": "ModifyLiveTimeShiftTemplateRequest",
       "name": "修改直播时移模板",
       "output": "ModifyLiveTimeShiftTemplateResponse",

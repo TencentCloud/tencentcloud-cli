@@ -2044,7 +2044,6 @@
       "document": "需要同步的库表对象",
       "members": [
         {
-          "default": "",
           "document": "需要迁移或同步的库名，当ObjectMode为Partial时，此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2054,7 +2053,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "迁移或同步后的库名，默认与源库相同\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2064,8 +2062,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "DB选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当Mode为Partial时，此项必填。注意，高级对象的同步不依赖此值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DB选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当Mode为Partial时，此项必填。注意，高级对象的同步不依赖此值，如果整库同步此处应该为All。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "DbMode",
@@ -2074,7 +2071,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "迁移或同步的 schema\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2084,7 +2080,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "迁移或同步后的 schema name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2094,8 +2089,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "表选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当DBMode为Partial时此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当DBMode为Partial时此项必填，如果整库同步此处应该为All。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TableMode",
@@ -2104,7 +2098,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "表图对象集合，当 TableMode 为 Partial 时，此项需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Table",
@@ -2114,8 +2107,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "视图选择模式: All 为当前对象下的所有视图对象,Partial 为部分视图对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视图选择模式: All 为当前对象下的所有视图对象,Partial 为部分视图对象，如果整库同步此处应该为All。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ViewMode",
@@ -2124,7 +2116,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视图对象集合，当 ViewMode 为 Partial 时， 此项需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "View",
@@ -2134,8 +2125,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "选择要同步的模式，Partial为部分，all为整选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "FunctionMode",
@@ -2144,7 +2134,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "FunctionMode取值为Partial时需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2154,8 +2143,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "选择要同步的模式，Partial为部分，All为整选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ProcedureMode",
@@ -2164,7 +2152,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "ProcedureMode取值为Partial时需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2174,8 +2161,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "触发器迁移模式，all(为当前对象下的所有对象)，partial(部分对象)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "触发器迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "partial",
           "member": "string",
           "name": "TriggerMode",
@@ -2184,7 +2170,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当TriggerMode为partial，指定要迁移的触发器名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2194,8 +2179,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "事件迁移模式，all(为当前对象下的所有对象)，partial(部分对象)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "partial",
           "member": "string",
           "name": "EventMode",
@@ -2204,7 +2188,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当EventMode为partial，指定要迁移的事件名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
