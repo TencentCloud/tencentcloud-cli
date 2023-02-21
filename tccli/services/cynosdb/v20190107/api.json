@@ -434,6 +434,13 @@
       "output": "ModifyMaintainPeriodConfigResponse",
       "status": "online"
     },
+    "ModifyVipVport": {
+      "document": "修改实例组ip，端口",
+      "input": "ModifyVipVportRequest",
+      "name": "修改实例组ip，端口",
+      "output": "ModifyVipVportResponse",
+      "status": "online"
+    },
     "OfflineCluster": {
       "document": "下线集群",
       "input": "OfflineClusterRequest",
@@ -8154,6 +8161,87 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyVipVportRequest": {
+      "document": "ModifyVipVport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例组id",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceGrpId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要修改的目的ip",
+          "example": "xx.xx.xx.xx",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要修改的目的端口",
+          "example": "5432",
+          "member": "int64",
+          "name": "Vport",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "旧ip回收前的保留时间，单位小时，0表示立即回收",
+          "example": "0",
+          "member": "int64",
+          "name": "OldIpReserveHours",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVipVportResponse": {
+      "document": "ModifyVipVport返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务id",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Module": {
       "document": "系统支持的模块",

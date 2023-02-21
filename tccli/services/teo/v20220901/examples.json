@@ -235,7 +235,7 @@
     "DescribeAddableEntityList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddableEntityList\n<公共请求参数>\n\n{\n    \"EntityType\": \"domain\",\n    \"ZoneId\": \"zone-28v4ag8bprrm\"\n}",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddableEntityList\n<公共请求参数>\n\n{\n    \"EntityType\": \"domain\",\n    \"ZoneId\": \"zone-28v4ag8bprrm\",\n    \"Area\": \"mainland\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EntityList\": [\n            \"sub.example.com\"\n        ],\n        \"RequestId\": \"8fbf8770-6bc2-48e1-a544-bf06eb8481e6\"\n    }\n}",
         "title": "查询剩余可添加的四层代理列表"
       }

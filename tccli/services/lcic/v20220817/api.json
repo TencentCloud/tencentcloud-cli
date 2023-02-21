@@ -1045,7 +1045,7 @@
           "type": "int"
         },
         {
-          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\ncoteaching 双师",
+          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
           "example": "abc",
           "member": "string",
           "name": "SubType",
@@ -1967,7 +1967,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\ncoteaching 双师",
+          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
           "example": "video",
           "member": "string",
           "name": "SubType",
@@ -3115,8 +3115,8 @@
           "value_allowed_null": true
         },
         {
-          "document": "房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频 coteaching 双师\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "coteaching",
+          "document": "房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "videodoc",
           "member": "string",
           "name": "SubType",
           "required": true,

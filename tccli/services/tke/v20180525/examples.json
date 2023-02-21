@@ -58,9 +58,9 @@
     ],
     "CheckInstancesUpgradeAble": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CheckInstancesUpgradeAble\n&ClusterId=cls-xxxxxx\n&InstanceIds.0=ins-q40fqbso\n&InstanceIds.1=ins-hvldgo6w\n&InstanceIds.2=ins-hrtaxazg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClusterVersion\": \"1.14.3-tk8s-v1.1-1\",\n        \"LatestVersion\": \"1.14.3-tk8s-v1.1-1\",\n        \"Total\": 3,\n        \"RequestId\": \"123\",\n        \"UpgradeAbleInstances\": [\n            {\n                \"InstanceId\": \"ins-q40fqbso\",\n                \"LatestVersion\": \"xx\",\n                \"Version\": \"1.14.3-tk8s-v1.0\"\n            },\n            {\n                \"InstanceId\": \"ins-hvldgo6w\",\n                \"LatestVersion\": \"xx\",\n                \"Version\": \"1.14.3-tk8s-v1.0\"\n            },\n            {\n                \"InstanceId\": \"ins-hrtaxazg\",\n                \"LatestVersion\": \"xx\",\n                \"Version\": \"1.14.3-tk8s-v1.0\"\n            }\n        ]\n    }\n}",
+        "document": "检查节点是否可升级",
+        "input": "https://tke.tencentcloudapi.com/?Action=CheckInstancesUpgradeAble\n&ClusterId=cls-7ph3twqe\n&InstanceIds.0=ins-q40fqbso\n&InstanceIds.1=ins-hvldgo6w\n&InstanceIds.2=ins-hrtaxazg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterVersion\": \"1.22.5\",\n        \"LatestVersion\": \"1.22.5\",\n        \"Total\": 3,\n        \"RequestId\": \"123\",\n        \"UnavailableVersionReason\": {\n            \"InstanceId\": \"ins-mq0fqbso\",\n            \"Reason\": \"instance already the master latest version\"\n        },\n        \"UpgradeAbleInstances\": [\n            {\n                \"InstanceId\": \"ins-q40fqbso\",\n                \"LatestVersion\": \"1.22.5\",\n                \"Version\": \"1.20.6\"\n            },\n            {\n                \"InstanceId\": \"ins-hvldgo6w\",\n                \"LatestVersion\": \"1.22.5\",\n                \"Version\": \"1.20.6\"\n            },\n            {\n                \"InstanceId\": \"ins-hrtaxazg\",\n                \"LatestVersion\": \"1.22.5\",\n                \"Version\": \"1.20.6\"\n            }\n        ]\n    }\n}",
         "title": "检查节点是否可升级"
       }
     ],
@@ -506,9 +506,9 @@
     ],
     "DescribeAvailableClusterVersion": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeAvailableClusterVersion\n&ClusterId=cls-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ClusterId\": \"xx\",\n                \"Versions\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Versions\": [\n            \"1.8.13\"\n        ]\n    }\n}",
+        "document": "获取集群可以升级的版本",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeAvailableClusterVersion\n&ClusterId=cls-7ph3twqe\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ClusterId\": \"cls-7ph3twqe\",\n                \"Versions\": [\n                    \"1.22.5\"\n                ]\n            }\n        ],\n        \"RequestId\": \"d367ff5c-3871-4f1b-b8f1-4d51ea689e29\",\n        \"Versions\": [\n            \"1.22.5\"\n        ]\n    }\n}",
         "title": "获取集群可以升级的版本"
       }
     ],
@@ -540,7 +540,7 @@
       {
         "document": "查看集群认证配置",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAuthenticationOptions\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-7ph3twqe\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"ServiceAccounts\": {\n            \"JWKSURI\": \"https://cls-7ph3twqe.ccs.tencent-cloud.com/openid/v1/jwks\",\n            \"Issuer\": \"https://cls-7ph3twqe.ccs.tencent-cloud.com\"\n        },\n        \"OIDCConfig\": {\n            \"AutoCreateOIDCConfig\": true,\n            \"AutoInstallPodIdentityWebhookAddon\": true,\n            \"AutoCreateClientId\": [\n                \"84ec9912f0be4066be862afaff9d3c48\"\n            ]\n        },\n        \"LatestOperationState\": \"Updating\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"24564577-a642-4164-8752-4668d4ca8886\",\n        \"ServiceAccounts\": {\n            \"JWKSURI\": \"https://cls-7ph3twqe.ccs.tencent-cloud.com/openid/v1/jwks\",\n            \"Issuer\": \"https://cls-7ph3twqe.ccs.tencent-cloud.com\"\n        },\n        \"OIDCConfig\": {\n            \"AutoCreateOIDCConfig\": true,\n            \"AutoInstallPodIdentityWebhookAddon\": true,\n            \"AutoCreateClientId\": [\n                \"84ec9912f0be4066be862afaff9d3c48\"\n            ]\n        },\n        \"LatestOperationState\": \"Updating\"\n    }\n}",
         "title": "查看集群认证配置"
       }
     ],
@@ -587,8 +587,8 @@
     "DescribeClusterInstances": [
       {
         "document": "查询集群实例信息",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterInstances\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceAdvancedSettings\": {\n                    \"DockerGraphPath\": \"xx\",\n                    \"Labels\": [\n                        {\n                            \"Name\": \"xx\",\n                            \"Value\": \"xx\"\n                        }\n                    ],\n                    \"ExtraArgs\": {\n                        \"Kubelet\": [\n                            \"xx\"\n                        ]\n                    },\n                    \"Unschedulable\": 0,\n                    \"UserScript\": \"xx\",\n                    \"MountTarget\": \"xx\",\n                    \"DataDisks\": [\n                        {\n                            \"DiskPartition\": \"xx\",\n                            \"DiskType\": \"xx\",\n                            \"DiskSize\": 0,\n                            \"FileSystem\": \"xx\",\n                            \"AutoFormatAndMount\": true,\n                            \"MountTarget\": \"xx\"\n                        }\n                    ]\n                },\n                \"InstanceId\": \"xx\",\n                \"InstanceRole\": \"xx\",\n                \"LanIP\": \"xx\",\n                \"DrainStatus\": \"xx\",\n                \"AutoscalingGroupId\": \"xx\",\n                \"InstanceState\": \"xx\",\n                \"CreatedTime\": \"xx\",\n                \"NodePoolId\": \"xx\",\n                \"FailedReason\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterInstances\n&ClusterId=cls-7ph3twqe\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceAdvancedSettings\": {\n                    \"DockerGraphPath\": \"/data/docker\",\n                    \"Labels\": [\n                        {\n                            \"Name\": \"key\",\n                            \"Value\": \"value\"\n                        }\n                    ],\n                    \"ExtraArgs\": {\n                        \"Kubelet\": [\n                            \"--register-node=true\"\n                        ]\n                    },\n                    \"Unschedulable\": 0,\n                    \"UserScript\": \"ZWNobyAiMTAuMTA3LjEwMy41N\",\n                    \"MountTarget\": \"/var/lib/docker\",\n                    \"DataDisks\": [\n                        {\n                            \"DiskPartition\": \"\",\n                            \"DiskType\": \"CLOUD_PREMIUM\",\n                            \"DiskSize\": 0,\n                            \"FileSystem\": \"ext4\",\n                            \"AutoFormatAndMount\": true,\n                            \"MountTarget\": \"/var/lib/docker\"\n                        }\n                    ]\n                },\n                \"InstanceId\": \"ins-wggphft5\",\n                \"InstanceRole\": \"WORKER\",\n                \"LanIP\": \"10.0.39.19\",\n                \"DrainStatus\": \"drained\",\n                \"AutoscalingGroupId\": \"asg-ewqsfgrt\",\n                \"InstanceState\": \"running\",\n                \"CreatedTime\": \"2021-02-22T07:14:11Z\",\n                \"NodePoolId\": \"np-3j4elm0k\",\n                \"FailedReason\": \"=Ready:True\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "查询集群实例信息"
       }
     ],
@@ -610,9 +610,9 @@
     ],
     "DescribeClusterLevelChangeRecords": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterLevelChangeRecords\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"ClusterID\": \"xx\",\n    \"EndAt\": \"xx\",\n    \"StartAt\": \"xx\",\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Items\": [\n            {\n                \"Status\": \"xx\",\n                \"EndedAt\": \"xx\",\n                \"ClusterID\": \"xx\",\n                \"TriggerType\": \"xx\",\n                \"NewLevel\": \"xx\",\n                \"OldLevel\": \"xx\",\n                \"StartedAt\": \"xx\",\n                \"Message\": \"xx\",\n                \"ID\": \"xx\"\n            }\n        ]\n    }\n}",
+        "document": "查询集群变配记录",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterLevelChangeRecords\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"ClusterID\": \"cls-7t1eo183\",\n    \"EndAt\": \"2022-07-11 17:45:02\",\n    \"StartAt\": \"2022-07-11 16:45:02\",\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ClusterID\": \"cls-7t1eo183\",\n                \"EndedAt\": \"2022-07-11 17:45:02\",\n                \"ID\": \"548\",\n                \"Message\": \"\",\n                \"NewLevel\": \"L20\",\n                \"OldLevel\": \"L5\",\n                \"StartedAt\": \"2022-07-11 17:40:22\",\n                \"Status\": \"success\",\n                \"TriggerType\": \"manual\"\n            }\n        ],\n        \"RequestId\": \"24564577-a642-4164-8752-4668d4ca8886\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询集群变配记录"
       }
     ],
@@ -1025,8 +1025,8 @@
     "DescribeRegions": [
       {
         "document": "获取地域列表",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeRegions\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RegionInstanceSet\": [\n            {\n                \"Status\": \"xx\",\n                \"Remark\": \"xx\",\n                \"RegionId\": 0,\n                \"FeatureGates\": \"xx\",\n                \"Alias\": \"xx\",\n                \"RegionName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RegionInstanceSet\": [\n            {\n                \"RegionName\": \"ap-guangzhou\",\n                \"RegionId\": 1,\n                \"Status\": \"\",\n                \"FeatureGates\": \"\",\n                \"Alias\": \"gz\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"RequestId\": \"d367ff5c-3871-4f1b-b8f1-4d51ea689e29\"\n    }\n}",
         "title": "获取地域列表"
       }
     ],

@@ -50,7 +50,7 @@
       "status": "online"
     },
     "CheckInstancesUpgradeAble": {
-      "document": "检查给定节点列表中哪些是可升级的 ",
+      "document": "检查给定节点列表中哪些是可升级的",
       "input": "CheckInstancesUpgradeAbleRequest",
       "name": "节点是否可升级",
       "output": "CheckInstancesUpgradeAbleResponse",
@@ -491,7 +491,7 @@
       "status": "online"
     },
     "DescribeClusterInstances": {
-      "document": " 查询集群下节点实例信息 ",
+      "document": "查询集群下节点实例信息",
       "input": "DescribeClusterInstancesRequest",
       "name": "查询集群节点信息",
       "output": "DescribeClusterInstancesResponse",
@@ -1972,48 +1972,48 @@
       "document": "CheckInstancesUpgradeAble请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "节点列表，空为全部节点",
+          "example": "[\"ins-q40fqbso\",\"ins-hvldgo6w\",\"ins-hrtaxazg\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "document": "升级类型",
+          "example": "\"\"",
           "member": "string",
           "name": "UpgradeType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页Offset",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页Limit",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤",
+          "example": "无",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -2027,6 +2027,7 @@
       "members": [
         {
           "document": "集群master当前小版本",
+          "example": "1.20.6",
           "member": "string",
           "name": "ClusterVersion",
           "type": "string",
@@ -2034,6 +2035,7 @@
         },
         {
           "document": "集群master对应的大版本目前最新小版本",
+          "example": "1.22.5",
           "member": "string",
           "name": "LatestVersion",
           "type": "string",
@@ -2041,6 +2043,7 @@
         },
         {
           "document": "可升级节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UpgradeAbleInstancesItem",
           "name": "UpgradeAbleInstances",
           "type": "list",
@@ -2048,9 +2051,18 @@
         },
         {
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "int64",
           "name": "Total",
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "不可升级原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UnavailableReason",
+          "name": "UnavailableVersionReason",
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -7093,16 +7105,16 @@
       "document": "DescribeAvailableClusterVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群 Id",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "集群 Id 列表",
+          "example": "[\"cls-7ph3twqe\"]",
           "member": "string",
           "name": "ClusterIds",
           "required": false,
@@ -7116,6 +7128,7 @@
       "members": [
         {
           "document": "可升级的集群版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1.22.5\"]",
           "member": "string",
           "name": "Versions",
           "type": "list",
@@ -7123,6 +7136,7 @@
         },
         {
           "document": "集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ClusterVersion",
           "name": "Clusters",
           "type": "list",
@@ -7302,7 +7316,7 @@
       "members": [
         {
           "document": "集群ID",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7406,7 +7420,7 @@
       "members": [
         {
           "document": "集群ID",
-          "example": "cls-xxx",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7628,48 +7642,48 @@
       "document": "DescribeClusterInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。",
+          "example": "[]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "document": "节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。",
+          "example": "WORKER",
           "member": "string",
           "name": "InstanceRole",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "过滤条件列表；Name的可选值为nodepool-id、nodepool-instance-type；Name为nodepool-id表示根据节点池id过滤机器，Value的值为具体的节点池id，Name为nodepool-instance-type表示节点加入节点池的方式，Value的值为MANUALLY_ADDED（手动加入节点池）、AUTOSCALING_ADDED（伸缩组扩容方式加入节点池）、ALL（手动加入节点池 和 伸缩组扩容方式加入节点池）",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -7683,6 +7697,7 @@
       "members": [
         {
           "document": "集群中实例总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -7690,6 +7705,7 @@
         },
         {
           "document": "集群中实例列表",
+          "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
           "type": "list",
@@ -7798,7 +7814,6 @@
       "document": "DescribeClusterLevelChangeRecords请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-xxxxxx",
           "member": "string",
@@ -7807,7 +7822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "开始时间",
           "example": "2022-02-01 00:00:00",
           "member": "string",
@@ -7816,7 +7830,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束时间",
           "example": "2022-02-01 23:00:00",
           "member": "string",
@@ -7825,7 +7838,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量,默认0",
           "example": "1",
           "member": "uint64",
@@ -7834,7 +7846,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "最大输出条数，默认20",
           "example": "20",
           "member": "uint64",
@@ -7853,7 +7864,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7862,7 +7872,6 @@
           "example": "无",
           "member": "ClusterLevelChangeRecord",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10965,7 +10974,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10974,7 +10982,6 @@
           "example": "无",
           "member": "RegionInstance",
           "name": "RegionInstanceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14268,77 +14275,6 @@
       "document": "描述了k8s集群相关配置与信息。",
       "members": [
         {
-          "default": "",
-          "document": "数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。\n注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/tmp",
-          "member": "string",
-          "name": "MountTarget",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "dockerd --graph 指定值, 默认为 /var/lib/docker\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/var/lib/docker",
-          "member": "string",
-          "name": "DockerGraphPath",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "#!/bin/sh echo \"hello world\"",
-          "member": "string",
-          "name": "UserScript",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.",
-          "example": "false",
-          "member": "int64",
-          "name": "Unschedulable",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "节点Label数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Label",
-          "name": "Labels",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DataDisk",
-          "name": "DataDisks",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "节点相关的自定义参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "InstanceExtraArgs",
-          "name": "ExtraArgs",
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "document": "该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "16",
           "member": "int64",
@@ -14348,7 +14284,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "GPU驱动相关参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GPUArgs",
@@ -14358,7 +14293,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "#!/bin/sh echo \"hello world\"",
           "member": "string",
@@ -14368,7 +14302,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "节点污点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Taint",
@@ -14376,9 +14309,72 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。\n注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/tmp",
+          "member": "string",
+          "name": "MountTarget",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "dockerd --graph 指定值, 默认为 /var/lib/docker\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/lib/docker",
+          "member": "string",
+          "name": "DockerGraphPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "#!/bin/sh echo \"hello world\"",
+          "member": "string",
+          "name": "UserScript",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.",
+          "example": "false",
+          "member": "int64",
+          "name": "Unschedulable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点Label数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点相关的自定义参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceExtraArgs",
+          "name": "ExtraArgs",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "InstanceDataDiskMountSetting": {
       "document": "CVM实例数据盘挂载配置",
@@ -14962,7 +14958,7 @@
       "members": [
         {
           "document": "集群ID",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -18086,7 +18082,6 @@
       "document": "地域属性信息",
       "members": [
         {
-          "default": "",
           "document": "地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -18096,7 +18091,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -18106,7 +18100,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地域状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL",
           "member": "string",
@@ -18116,7 +18109,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地域特性开关(按照JSON的形式返回所有属性)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL  ",
           "member": "string",
@@ -18126,7 +18118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地域简称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz ",
           "member": "string",
@@ -18136,7 +18127,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地域白名单\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州地域 ",
           "member": "string",
@@ -19516,6 +19506,30 @@
       ],
       "usage": "in"
     },
+    "UnavailableReason": {
+      "document": "不可用原因",
+      "members": [
+        {
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-q40fqbso",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "instance already the master latest version",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "UninstallClusterReleaseRequest": {
       "document": "UninstallClusterRelease请求参数结构体",
       "members": [
@@ -20185,8 +20199,8 @@
       "document": "可升级节点信息",
       "members": [
         {
-          "default": "",
           "document": "节点Id",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -20194,8 +20208,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点的当前版本",
+          "example": "无",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -20203,13 +20217,31 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当前版本的最新小版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LatestVersion",
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "RuntimeVersion",
+          "example": "无",
+          "member": "string",
+          "name": "RuntimeVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "RuntimeLatestVersion",
+          "example": "无",
+          "member": "string",
+          "name": "RuntimeLatestVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

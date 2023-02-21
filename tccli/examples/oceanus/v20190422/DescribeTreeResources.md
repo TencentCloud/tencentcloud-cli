@@ -11,6 +11,64 @@ Output:
 ```
 {
     "Response": {
+        "ParentId": "xx",
+        "Id": "xx",
+        "Name": "xx",
+        "Items": [
+            {
+                "ResourceId": "xx",
+                "Name": "xx",
+                "ResourceType": 0,
+                "Remark": "xx",
+                "FileName": "xx",
+                "FolderId": "xx"
+            }
+        ],
+        "Children": [
+            {
+                "ParentId": "xx",
+                "Id": "xx",
+                "Name": "xx",
+                "Items": [
+                    {
+                        "ResourceId": "xx",
+                        "Name": "xx",
+                        "ResourceType": 0,
+                        "Remark": "xx",
+                        "FileName": "xx",
+                        "FolderId": "xx"
+                    }
+                ],
+                "Children": [
+                    {
+                        "ParentId": "xx",
+                        "Id": "xx",
+                        "Name": "xx",
+                        "Items": [
+                            {
+                                "ResourceId": "xx",
+                                "Name": "xx",
+                                "ResourceType": 0,
+                                "Remark": "xx",
+                                "FileName": "xx",
+                                "FolderId": "xx"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "ParentId": "xx",
+                                "Id": "xx",
+                                "Name": "xx",
+                                "TotalCount": 0
+                            }
+                        ],
+                        "TotalCount": 0
+                    }
+                ],
+                "TotalCount": 0
+            }
+        ],
+        "TotalCount": 0,
         "RequestId": "xx"
     }
 }

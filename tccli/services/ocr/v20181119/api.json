@@ -63,6 +63,13 @@
       "output": "ClassifyDetectOCRResponse",
       "status": "online"
     },
+    "CreateAIFormTask": {
+      "document": "本接口可创建智能表单录入任务，支持多个识别图片和PDF的URL上传，返回含有识别内容的操作页面URL。\n\n智能表单录入产品提供高准确率的表单识别技术和人工核对工具，支持自定义字段，将识别结果自动填入到自定义条目中，并提供人工操作工具，完成整个表单识别过程。适用性强，可对票据、合同、货单等文件的识别，适用于金融、货代、保险、档案等领域。本产品免费公测中，您可以点击demo（超连接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。",
+      "input": "CreateAIFormTaskRequest",
+      "name": "创建智慧表单文件识别任务",
+      "output": "CreateAIFormTaskResponse",
+      "status": "online"
+    },
     "DriverLicenseOCR": {
       "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍和PS告警功能。同时支持识别交管12123APP发放的电子驾驶证正页。\n\n电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。\n\n默认接口请求频率限制：10次/秒。",
       "input": "DriverLicenseOCRRequest",
@@ -166,6 +173,13 @@
       "input": "GeneralHandwritingOCRRequest",
       "name": "通用手写体识别",
       "output": "GeneralHandwritingOCRResponse",
+      "status": "online"
+    },
+    "GetTaskState": {
+      "document": "支持查询智能表单录入任务的状态。本产品免费公测中，您可以点击demo（超连接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。",
+      "input": "GetTaskStateRequest",
+      "name": "查询智慧表单任务状态",
+      "output": "GetTaskStateResponse",
       "status": "online"
     },
     "HKIDCardOCR": {
@@ -357,6 +371,13 @@
       "output": "RecognizePhilippinesVoteIDOCRResponse",
       "status": "online"
     },
+    "RecognizeTableAccurateOCR": {
+      "document": "本接口支持中英文图片/PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。识别效果比表格识别V2更好，覆盖场景更加广泛，对表格难例场景，如无线表格、嵌套表格（有线表格中包含无线表格）的识别效果均优于表格识别V2。\n\n默认接口请求频率限制：2次/秒。",
+      "input": "RecognizeTableAccurateOCRRequest",
+      "name": "表格识别（高精度版)",
+      "output": "RecognizeTableAccurateOCRResponse",
+      "status": "online"
+    },
     "RecognizeTableOCR": {
       "document": "本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。",
       "input": "RecognizeTableOCRRequest",
@@ -365,7 +386,7 @@
       "status": "online"
     },
     "RecognizeThaiIDCardOCR": {
-      "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)\n",
+      "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)",
       "input": "RecognizeThaiIDCardOCRRequest",
       "name": "泰国身份证识别",
       "output": "RecognizeThaiIDCardOCRResponse",
@@ -1659,6 +1680,64 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAIFormTaskRequest": {
+      "document": "CreateAIFormTask请求参数结构体",
+      "members": [
+        {
+          "document": "多个文件的URL列表",
+          "example": "无",
+          "member": "SmartFormFileUrl",
+          "name": "FileList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "备注信息1",
+          "example": "无",
+          "member": "string",
+          "name": "FirstNotes",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "备注信息2",
+          "example": "无",
+          "member": "string",
+          "name": "SecondNotes",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAIFormTaskResponse": {
+      "document": "CreateAIFormTask返回参数结构体",
+      "members": [
+        {
+          "document": "本次识别任务的唯一身份ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"209fef6e-117c-11ed-9368-525400e51a47\"",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本次识别任务的操作URL，有效期自生成之时起共24小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"https://ocr.smartform.cloud.tencent.com?taskId=209fef6e-117c-1\"",
+          "member": "string",
+          "name": "OperateUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Detail": {
       "document": "企业四要素核验结果",
@@ -3088,6 +3167,40 @@
           "name": "Angel",
           "required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTaskStateRequest": {
+      "document": "GetTaskState请求参数结构体",
+      "members": [
+        {
+          "document": "智慧表单任务唯一身份ID",
+          "example": "\"209fef6e-117c-11ed-9368-525400e51a47\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTaskStateResponse": {
+      "document": "GetTaskState返回参数结构体",
+      "members": [
+        {
+          "document": "1:任务识别完成，还未提交\n2:任务已手动关闭\n3:任务已提交\n4:任务识别中\n5:超时：任务超过了可操作的24H时限\n6:任务识别失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskState",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -6752,6 +6865,80 @@
       ],
       "type": "object"
     },
+    "RecognizeTableAccurateOCRRequest": {
+      "document": "RecognizeTableAccurateOCR请求参数结构体",
+      "members": [
+        {
+          "document": "图片/PDF的 Base64 值。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "图片/PDF的 Url 地址。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeTableAccurateOCRResponse": {
+      "document": "RecognizeTableAccurateOCR返回参数结构体",
+      "members": [
+        {
+          "document": "检测到的文本信息，具体内容请点击左侧链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableInfo",
+          "name": "TableDetections",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Base64 编码后的 Excel 数据。",
+          "example": "8HAABnHAAAFAAAAAAAAAAAAAAAAADMJAAAeGwvc2hhcmVkU3RyaW5ncy54bWxQSwECFAAUAAAACAAAAAAAcxSJldcBAAD9BQAADQAAAAAAAAAAAAAAAACtLAAAeGwvc3R5bGVzLnhtbFBLAQIUABQAAAAIAAAAAAC8TIYcSAYAAP4kAAATAAAAAAAAAAAAAAAAAK8uAAB4bC90aGVtZS90aGVtZTEueG1sUEsBAhQAFAAAAAgAAAAAANG5P9oECwAAUU0AABgAAAAAAAAAAAAAAAAAKDUAAHhsL3dvcmtzaGVldHMvc2hlZXQyLnhtbFBLAQIUABQAAAAIAAAAAADjsY7PqAMAAE8PAAAYAAAAAAAAAAAAAAAAAGJAAAB4bC93b3Jrc2hlZXRzL3NoZWV0MS54bWxQSwUGAAAAAAwADAALAwAAQEQAAAAA",
+          "member": "string",
+          "name": "Data",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片为PDF时，返回PDF的总页数，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageSize",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "图片旋转角度（角度制），文本的水平方向为0°，统一以逆时针方向旋转，逆时针为负，角度范围为-360°至0°。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Angle",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RecognizeTableOCRRequest": {
       "document": "RecognizeTableOCR请求参数结构体",
       "members": [
@@ -6855,20 +7042,28 @@
       "document": "RecognizeThaiIDCardOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "图片开关。默认为false，不返回泰国身份证头像照片的base64编码。\n设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码",
+          "example": "false",
+          "member": "bool",
+          "name": "CropPortrait",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6878,6 +7073,7 @@
       "members": [
         {
           "document": "身份证号码",
+          "example": "3102001968756",
           "member": "string",
           "name": "ID",
           "type": "string",
@@ -6885,6 +7081,7 @@
         },
         {
           "document": "泰文姓名",
+          "example": "นาย ธนกฤต  บุญโญปกรุณ์",
           "member": "string",
           "name": "ThaiName",
           "type": "string",
@@ -6892,6 +7089,7 @@
         },
         {
           "document": "英文姓名",
+          "example": "Mr. Thanakit",
           "member": "string",
           "name": "EnFirstName",
           "type": "string",
@@ -6899,6 +7097,7 @@
         },
         {
           "document": "地址",
+          "example": "ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง",
           "member": "string",
           "name": "Address",
           "type": "string",
@@ -6906,6 +7105,7 @@
         },
         {
           "document": "出生日期",
+          "example": "14ธ.ค.2509",
           "member": "string",
           "name": "Birthday",
           "type": "string",
@@ -6913,6 +7113,7 @@
         },
         {
           "document": "首次领用日期",
+          "example": "9ธ.ค.2559",
           "member": "string",
           "name": "IssueDate",
           "type": "string",
@@ -6920,6 +7121,7 @@
         },
         {
           "document": "签发日期",
+          "example": "13ธ.ค.2567",
           "member": "string",
           "name": "ExpirationDate",
           "type": "string",
@@ -6927,8 +7129,17 @@
         },
         {
           "document": "英文姓名",
+          "example": "Boonyopakron",
           "member": "string",
           "name": "EnLastName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证件人像照片抠取",
+          "example": "无",
+          "member": "string",
+          "name": "PortraitImage",
           "type": "string",
           "value_allowed_null": false
         },
@@ -7765,6 +7976,11 @@
       ],
       "usage": "out"
     },
+    "SmartFormFileUrl": {
+      "document": "智慧表单上传文件信息",
+      "members": [],
+      "usage": "in"
+    },
     "SmartStructuralOCRRequest": {
       "document": "SmartStructuralOCR请求参数结构体",
       "members": [
@@ -8007,6 +8223,84 @@
       ],
       "usage": "out"
     },
+    "TableCellInfo": {
+      "document": "单元格数据",
+      "members": [
+        {
+          "document": "单元格左上角的列索引",
+          "example": "无",
+          "member": "int64",
+          "name": "ColTl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单元格左上角的行索引",
+          "example": "无",
+          "member": "int64",
+          "name": "RowTl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单元格右下角的列索引",
+          "example": "无",
+          "member": "int64",
+          "name": "ColBr",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单元格右下角的行索引",
+          "example": "无",
+          "member": "int64",
+          "name": "RowBr",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单元格内识别出的字符串文本，若文本存在多行，以换行符\"\\n\"隔开",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单元格类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单元格置信度",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单元格在图像中的四点坐标",
+          "example": "无",
+          "member": "Coord",
+          "name": "Polygon",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TableDetectInfo": {
       "document": "表格内容检测",
       "members": [
@@ -8040,6 +8334,39 @@
         {
           "default": "",
           "document": "表格主体四个顶点坐标（依次为左上角，\n右上角，右下角，左下角）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Coord",
+          "name": "TableCoordPoint",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableInfo": {
+      "document": "表格内容检测",
+      "members": [
+        {
+          "document": "单元格内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableCellInfo",
+          "name": "Cells",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "图像中的文本块类型，0 为非表格文本，\n1 为有线表格，2 为无线表格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "表格主体四个顶点坐标（依次为左上角，\n右上角，右下角，左下角）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Coord",
           "name": "TableCoordPoint",
           "required": true,

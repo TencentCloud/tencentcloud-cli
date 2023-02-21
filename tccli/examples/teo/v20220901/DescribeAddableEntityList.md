@@ -7,7 +7,8 @@ Input:
 ```
 tccli teo DescribeAddableEntityList --cli-unfold-argument  \
     --EntityType domain \
-    --ZoneId zone-28v4ag8bprrm
+    --ZoneId zone-28v4ag8bprrm \
+    --Area mainland
 ```
 
 Output: 

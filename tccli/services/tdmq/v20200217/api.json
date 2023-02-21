@@ -497,6 +497,13 @@
       "output": "DescribeRocketMQTopicsResponse",
       "status": "online"
     },
+    "DescribeRocketMQVipInstanceDetail": {
+      "document": "获取单个RocketMQ专享集群信息",
+      "input": "DescribeRocketMQVipInstanceDetailRequest",
+      "name": "获取单个RocketMQ专享集群信息",
+      "output": "DescribeRocketMQVipInstanceDetailResponse",
+      "status": "online"
+    },
     "DescribeRocketMQVipInstances": {
       "document": "查询用户已购的RocketMQ专享实例列表",
       "input": "DescribeRocketMQVipInstancesRequest",
@@ -7354,6 +7361,51 @@
       ],
       "type": "object"
     },
+    "DescribeRocketMQVipInstanceDetailRequest": {
+      "document": "DescribeRocketMQVipInstanceDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQVipInstanceDetailResponse": {
+      "document": "DescribeRocketMQVipInstanceDetail返回参数结构体",
+      "members": [
+        {
+          "document": "集群信息",
+          "example": "无",
+          "member": "RocketMQClusterInfo",
+          "name": "ClusterInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群配置",
+          "example": "无",
+          "member": "RocketMQInstanceConfig",
+          "name": "InstanceConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQVipInstancesRequest": {
       "document": "DescribeRocketMQVipInstances请求参数结构体",
       "members": [
@@ -7932,6 +7984,42 @@
         }
       ],
       "usage": "in"
+    },
+    "InstanceNodeDistribution": {
+      "document": "实例节点分布信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区id",
+          "example": "100001",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点数",
+          "example": "2",
+          "member": "uint64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InternalTenant": {
       "document": "面向运营端的虚拟集群信息",
@@ -10586,6 +10674,122 @@
       ],
       "usage": "out"
     },
+    "RocketMQInstanceConfig": {
+      "document": "RocketMQ专享集群实例配置",
+      "members": [
+        {
+          "default": "",
+          "document": "单命名空间TPS上线",
+          "example": "8000",
+          "member": "uint64",
+          "name": "MaxTpsPerNamespace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大命名空间数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxNamespaceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用命名空间数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "UsedNamespaceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大Topic数量",
+          "example": "1000",
+          "member": "uint64",
+          "name": "MaxTopicNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用Topic数量",
+          "example": "8",
+          "member": "uint64",
+          "name": "UsedTopicNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大Group数量",
+          "example": "10000",
+          "member": "uint64",
+          "name": "MaxGroupNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用Group数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "UsedGroupNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "example": "标准版",
+          "member": "string",
+          "name": "ConfigDisplay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群节点数",
+          "example": "2",
+          "member": "uint64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点分布情况",
+          "example": "无",
+          "member": "InstanceNodeDistribution",
+          "name": "NodeDistribution",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "topic分布情况",
+          "example": "无",
+          "member": "RocketMQTopicDistribution",
+          "name": "TopicDistribution",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RocketMQNamespace": {
       "document": "RocketMQ命名空间信息",
       "members": [
@@ -10714,6 +10918,32 @@
           "example": "100000",
           "member": "uint64",
           "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RocketMQTopicDistribution": {
+      "document": "RocketMQtopic分布情况",
+      "members": [
+        {
+          "default": "",
+          "document": "topic类型",
+          "example": "Normal",
+          "member": "string",
+          "name": "TopicType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "topic数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
           "required": true,
           "type": "int",
           "value_allowed_null": false

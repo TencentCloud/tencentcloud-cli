@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli trtc StopMCUMixTranscode --cli-unfold-argument  \
-    --SdkAppId 1400188366 \
-    --RoomId 3560
+    --RoomId 3560 \
+    --SdkAppId 1400188366
 ```
 
 Output: 

@@ -211,9 +211,9 @@
       "status": "online"
     },
     "DescribeSafeAuthFlagColl": {
-      "document": "查询安全设置",
+      "document": "获取子账号安全设置",
       "input": "DescribeSafeAuthFlagCollRequest",
-      "name": "查询安全设置",
+      "name": "获取子账号安全设置",
       "output": "DescribeSafeAuthFlagCollResponse",
       "status": "online"
     },
@@ -2435,7 +2435,6 @@
       "document": "DescribeSafeAuthFlagColl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子账号",
           "example": "1234567",
           "member": "uint64",
@@ -2454,7 +2453,6 @@
           "example": "无",
           "member": "LoginActionFlag",
           "name": "LoginFlag",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2463,7 +2461,6 @@
           "example": "无",
           "member": "LoginActionFlag",
           "name": "ActionFlag",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2472,7 +2469,6 @@
           "example": "无",
           "member": "OffsiteFlag",
           "name": "OffsiteFlag",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

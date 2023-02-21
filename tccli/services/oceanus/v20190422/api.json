@@ -2214,7 +2214,6 @@
       "document": "DescribeTreeResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "工作空间 SerialId",
           "example": "space-xxx",
           "member": "string",
@@ -2229,6 +2228,54 @@
       "document": "DescribeTreeResources返回参数结构体",
       "members": [
         {
+          "document": "父节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "ParentId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件夹ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "folder-id",
+          "member": "string",
+          "name": "Id",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件夹名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "folder-xxx",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TreeResourceItem",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子目录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeTreeResourcesRsp",
+          "name": "Children",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2236,6 +2283,66 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeTreeResourcesRsp": {
+      "document": "树状结构资源列表对象",
+      "members": [
+        {
+          "document": "父节点ID",
+          "example": "folder-xxxx",
+          "member": "string",
+          "name": "ParentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件夹ID",
+          "example": "folder-xxxx",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件夹名称",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件夹下资源数字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TreeResourceItem",
+          "name": "Items",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "DescribeTreeResourcesRsp",
+          "name": "Children",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "查询作业列表时的过滤器",
@@ -3690,6 +3797,72 @@
         }
       ],
       "usage": "both"
+    },
+    "TreeResourceItem": {
+      "document": "树状结构资源对象",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "resource-××",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "××",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源类型",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "××",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a.txt",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "目录ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "folder-xxxx",
+          "member": "string",
+          "name": "FolderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TriggerJobSavepointRequest": {
       "document": "TriggerJobSavepoint请求参数结构体",

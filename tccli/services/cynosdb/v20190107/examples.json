@@ -496,6 +496,14 @@
         "title": "修改实例维护时间窗"
       }
     ],
+    "ModifyVipVport": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyVipVport\n&ClusterId=xxx\n&InstanceGrpId=xxx\n&Vip=xx.xx.xx.xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "修改ip端口"
+      }
+    ],
     "OfflineCluster": [
       {
         "document": "",

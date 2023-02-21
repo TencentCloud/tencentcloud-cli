@@ -14,15 +14,15 @@ Output:
         "TotalCount": 1,
         "RegionInstanceSet": [
             {
-                "Status": "xx",
-                "Remark": "xx",
-                "RegionId": 0,
-                "FeatureGates": "xx",
-                "Alias": "xx",
-                "RegionName": "xx"
+                "RegionName": "ap-guangzhou",
+                "RegionId": 1,
+                "Status": "",
+                "FeatureGates": "",
+                "Alias": "gz",
+                "Remark": ""
             }
         ],
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459398"
+        "RequestId": "d367ff5c-3871-4f1b-b8f1-4d51ea689e29"
     }
 }
 ```

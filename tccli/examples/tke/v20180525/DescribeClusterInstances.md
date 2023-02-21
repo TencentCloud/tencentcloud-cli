@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeClusterInstances --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx
+    --ClusterId cls-7ph3twqe
 ```
 
 Output: 
@@ -16,45 +16,45 @@ Output:
         "InstanceSet": [
             {
                 "InstanceAdvancedSettings": {
-                    "DockerGraphPath": "xx",
+                    "DockerGraphPath": "/data/docker",
                     "Labels": [
                         {
-                            "Name": "xx",
-                            "Value": "xx"
+                            "Name": "key",
+                            "Value": "value"
                         }
                     ],
                     "ExtraArgs": {
                         "Kubelet": [
-                            "xx"
+                            "--register-node=true"
                         ]
                     },
                     "Unschedulable": 0,
-                    "UserScript": "xx",
-                    "MountTarget": "xx",
+                    "UserScript": "ZWNobyAiMTAuMTA3LjEwMy41N",
+                    "MountTarget": "/var/lib/docker",
                     "DataDisks": [
                         {
-                            "DiskPartition": "xx",
-                            "DiskType": "xx",
+                            "DiskPartition": "",
+                            "DiskType": "CLOUD_PREMIUM",
                             "DiskSize": 0,
-                            "FileSystem": "xx",
+                            "FileSystem": "ext4",
                             "AutoFormatAndMount": true,
-                            "MountTarget": "xx"
+                            "MountTarget": "/var/lib/docker"
                         }
                     ]
                 },
-                "InstanceId": "xx",
-                "InstanceRole": "xx",
-                "LanIP": "xx",
-                "DrainStatus": "xx",
-                "AutoscalingGroupId": "xx",
-                "InstanceState": "xx",
-                "CreatedTime": "xx",
-                "NodePoolId": "xx",
-                "FailedReason": "xx"
+                "InstanceId": "ins-wggphft5",
+                "InstanceRole": "WORKER",
+                "LanIP": "10.0.39.19",
+                "DrainStatus": "drained",
+                "AutoscalingGroupId": "asg-ewqsfgrt",
+                "InstanceState": "running",
+                "CreatedTime": "2021-02-22T07:14:11Z",
+                "NodePoolId": "np-3j4elm0k",
+                "FailedReason": "=Ready:True"
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "f12a6e20-f950-4af9-8f8b-b6329a4961c2"
     }
 }
 ```

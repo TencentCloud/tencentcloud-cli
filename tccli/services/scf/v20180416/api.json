@@ -5572,6 +5572,7 @@
         {
           "default": "",
           "document": "Cos触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Cos",
           "required": true,
@@ -5581,6 +5582,7 @@
         {
           "default": "",
           "document": "Timer触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Timer",
           "required": true,
@@ -5590,6 +5592,7 @@
         {
           "default": "",
           "document": "Cmq触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Cmq",
           "required": true,
@@ -5599,6 +5602,7 @@
         {
           "default": "",
           "document": "触发器总数",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "required": true,
@@ -5608,6 +5612,7 @@
         {
           "default": "",
           "document": "Ckafka触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Ckafka",
           "required": true,
@@ -5617,6 +5622,7 @@
         {
           "default": "",
           "document": "Apigw触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Apigw",
           "required": true,
@@ -5626,6 +5632,7 @@
         {
           "default": "",
           "document": "Cls触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Cls",
           "required": true,
@@ -5635,6 +5642,7 @@
         {
           "default": "",
           "document": "Clb触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Clb",
           "required": true,
@@ -5644,6 +5652,7 @@
         {
           "default": "",
           "document": "Mps触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Mps",
           "required": true,
@@ -5653,6 +5662,7 @@
         {
           "default": "",
           "document": "Cm触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Cm",
           "required": true,
@@ -5662,11 +5672,22 @@
         {
           "default": "",
           "document": "Vod触发器数量",
+          "example": "0",
           "member": "int64",
           "name": "Vod",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Eb触发器数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Eb",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
