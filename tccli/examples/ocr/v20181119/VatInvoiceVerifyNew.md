@@ -1,117 +1,100 @@
 **Example 1: 增值税发票核验示例代码**
 
-
+增值税发票核验示例代码
 
 Input: 
 
 ```
 tccli ocr VatInvoiceVerifyNew --cli-unfold-argument  \
-    --InvoiceNo 04000000 \
-    --Amount 88.50 \
-    --InvoiceCode 1300000000 \
-    --InvoiceDate 2019-12-11
+    --InvoiceCode 144002288010 \
+    --InvoiceNo 04138864 \
+    --InvoiceDate 2022-11-16 \
+    --Amount 498.90 \
+    --CheckCode 00000000005672311400 \
+    --RegionCode 4400 \
+    --SellerTaxCode 44078819091887401X \
+    --EnableCommonElectronic True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "PassInvoiceInfoList": [
-            {
-                "PassDateEnd": "xx",
-                "Type": "xx",
-                "TaxClassifyCode": "xx",
-                "NumberPlate": "xx",
-                "PassDateBegin": "xx"
-            }
-        ],
-        "UsedVehicleInvoiceInfo": {
-            "BuyerTel": "xx",
-            "MarketBankAccount": "xx",
-            "BuyerNo": "xx",
-            "ManagementOffice": "xx",
-            "Seller": "xx",
-            "MarketAddress": "xx",
-            "SellerNo": "xx",
-            "BuyerAddress": "xx",
-            "Buyer": "xx",
-            "AuctioneerTel": "xx",
-            "AuctioneerAddress": "xx",
-            "MarketTaxpayerNum": "xx",
-            "VehicleIdentifyNo": "xx",
-            "VehicleLicenseNo": "xx",
-            "AuctioneerTaxpayerNum": "xx",
-            "MarketTel": "xx",
-            "AuctioneerBankAccount": "xx",
-            "Auctioneer": "xx",
-            "VehicleTotalPrice": "xx",
-            "RegisterNo": "xx",
-            "SellerAddress": "xx",
-            "TaxBureau": "xx",
-            "SellerTel": "xx",
-            "Market": "xx"
-        },
-        "RequestId": "xx",
         "Invoice": {
-            "TaxAmount": "xx",
-            "BuyerAddressPhone": "xx",
-            "SellerListTax": "xx",
-            "SellerName": "xx",
-            "SellerListTitle": "xx",
-            "SellerAddressPhone": "xx",
-            "BuyerBankAccount": "xx",
-            "Type": "xx",
-            "SellerBankAccount": "xx",
-            "CheckCode": "xx",
-            "TrafficFreeFlag": "xx",
-            "Date": "xx",
-            "Remark": "xx",
-            "HasSellerList": "xx",
-            "MachineNo": "xx",
-            "Items": [
-                {
-                    "TaxRate": "xx",
-                    "Name": "xx",
-                    "AmountWithoutTax": "xx",
-                    "TaxAmount": "xx",
-                    "TaxClassifyCode": "xx",
-                    "LineNo": "xx",
-                    "UnitPrice": "xx",
-                    "Spec": "xx",
-                    "Unit": "xx",
-                    "Quantity": "xx"
-                }
-            ],
-            "BuyerTaxCode": "xx",
-            "IsAbandoned": "xx",
-            "Code": "xx",
-            "SellerTaxCode": "xx",
-            "AmountWithTax": "xx",
-            "AmountWithoutTax": "xx",
-            "Number": "xx",
-            "BuyerName": "xx",
-            "TaxBureau": "xx"
+            "AmountWithTax": "498.90",
+            "AmountWithoutTax": "0.00",
+            "BuyerAddressPhone": "",
+            "BuyerBankAccount": "",
+            "BuyerName": "",
+            "BuyerTaxCode": "",
+            "CheckCode": "",
+            "Code": "144002288010",
+            "Date": "",
+            "HasSellerList": "",
+            "IsAbandoned": "N",
+            "Items": [],
+            "MachineNo": "",
+            "Number": "04138864",
+            "Remark": "",
+            "SellerAddressPhone": "",
+            "SellerBankAccount": "",
+            "SellerListTax": "",
+            "SellerListTitle": "",
+            "SellerName": "广州市天河区员美丽美食店",
+            "SellerTaxCode": "",
+            "TaxAmount": "0.00",
+            "TaxBureau": "",
+            "TrafficFreeFlag": "N",
+            "Type": "102"
+        },
+        "PassInvoiceInfoList": [],
+        "RequestId": "f3cd280c-6d3a-41c5-8493-4ed98f8b2755",
+        "UsedVehicleInvoiceInfo": {
+            "Auctioneer": "",
+            "AuctioneerAddress": "",
+            "AuctioneerBankAccount": "",
+            "AuctioneerTaxpayerNum": "",
+            "AuctioneerTel": "",
+            "Buyer": "",
+            "BuyerAddress": "",
+            "BuyerNo": "",
+            "BuyerTel": "",
+            "ManagementOffice": "",
+            "Market": "",
+            "MarketAddress": "",
+            "MarketBankAccount": "",
+            "MarketTaxpayerNum": "",
+            "MarketTel": "",
+            "RegisterNo": "",
+            "Seller": "",
+            "SellerAddress": "",
+            "SellerNo": "",
+            "SellerTel": "",
+            "TaxBureau": "",
+            "VehicleIdentifyNo": "",
+            "VehicleLicenseNo": "",
+            "VehicleTotalPrice": ""
         },
         "VehicleInvoiceInfo": {
-            "MotorBankAccount": "xx",
-            "VinNo": "xx",
-            "MotorBankName": "xx",
-            "BizCheckFormNo": "xx",
-            "PlateModel": "xx",
-            "CarType": "xx",
-            "TaxtationOrgName": "xx",
-            "TaxtationOrgCode": "xx",
-            "EngineNo": "xx",
-            "PayTaxesNo": "xx",
-            "BuyerNo": "xx",
-            "Tonnage": "xx",
-            "MotorTaxRate": "xx",
-            "CertificateNo": "xx",
-            "ProduceAddress": "xx",
-            "LimitCount": "xx",
-            "SellerTel": "xx",
-            "ImportNo": "xx",
-            "SellerAddress": "xx"
+            "BizCheckFormNo": "",
+            "BuyerNo": "",
+            "CarType": "",
+            "CertificateNo": "",
+            "EngineNo": "",
+            "ImportNo": "",
+            "LimitCount": "",
+            "MotorBankAccount": "",
+            "MotorBankName": "",
+            "MotorTaxRate": "",
+            "PayTaxesNo": "",
+            "PlateModel": "",
+            "ProduceAddress": "",
+            "SellerAddress": "",
+            "SellerTel": "",
+            "TaxtationOrgCode": "",
+            "TaxtationOrgName": "",
+            "Tonnage": "",
+            "VinNo": ""
         }
     }
 }

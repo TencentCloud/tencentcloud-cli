@@ -1,662 +1,215 @@
 **Example 1: 算式识别示例代码**
 
-
+算式识别示例代码
 
 Input: 
 
 ```
 tccli ocr ArithmeticOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/ArithmeticOCR/ArithmeticOCR1.jpg \
+    --SupportHorizontalImage True
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "Angle": 0,
+        "RequestId": "c69aa49a-b6e2-40f7-a37f-b1802188165f",
         "TextDetections": [
             {
-                "AdvancedInfo": "xx",
+                "AdvancedInfo": "",
+                "Answer": "",
+                "Confidence": 0,
+                "DetectedText": "40*40=1600",
+                "ExpressionType": "1",
+                "ItemCoord": {
+                    "Height": 23,
+                    "Width": 117,
+                    "X": 290,
+                    "Y": 244
+                },
                 "Polygon": [
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     }
                 ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 146,
-                    "X": 92,
-                    "Height": 38,
-                    "Width": 201
-                },
-                "Answer": "xx",
                 "Result": true
             },
             {
-                "AdvancedInfo": "xx",
+                "AdvancedInfo": "",
+                "Answer": "",
+                "Confidence": 0,
+                "DetectedText": "40*50=2000",
+                "ExpressionType": "1",
+                "ItemCoord": {
+                    "Height": 22,
+                    "Width": 116,
+                    "X": 291,
+                    "Y": 283
+                },
                 "Polygon": [
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     }
                 ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 147,
-                    "X": 374,
-                    "Width": 195,
-                    "Height": 37
-                },
-                "Answer": "xx",
                 "Result": true
             },
             {
-                "AdvancedInfo": "xx",
+                "AdvancedInfo": "",
+                "Answer": "55*66=3630",
+                "Confidence": 0,
+                "DetectedText": "55*66=121",
+                "ExpressionType": "1",
+                "ItemCoord": {
+                    "Height": 24,
+                    "Width": 106,
+                    "X": 291,
+                    "Y": 322
+                },
                 "Polygon": [
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     }
                 ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 214,
-                    "X": 102,
-                    "Width": 172,
-                    "Height": 38
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 216,
-                    "X": 366,
-                    "Width": 212,
-                    "Height": 38
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 282,
-                    "X": 383,
-                    "Width": 193,
-                    "Height": 44
-                },
-                "Answer": "xx",
                 "Result": false
             },
             {
-                "AdvancedInfo": "xx",
+                "AdvancedInfo": "",
+                "Answer": "",
+                "Confidence": 0,
+                "DetectedText": "128*5=640",
+                "ExpressionType": "1",
+                "ItemCoord": {
+                    "Height": 24,
+                    "Width": 106,
+                    "X": 292,
+                    "Y": 360
+                },
                 "Polygon": [
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     }
                 ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 284,
-                    "X": 107,
-                    "Width": 174,
-                    "Height": 40
-                },
-                "Answer": "xx",
                 "Result": true
             },
             {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
+                "AdvancedInfo": "",
+                "Answer": "",
                 "Confidence": 0,
-                "DetectedText": "xx",
+                "DetectedText": "500-(100+20)=380",
+                "ExpressionType": "1",
                 "ItemCoord": {
-                    "Y": 353,
-                    "X": 105,
-                    "Width": 172,
-                    "Height": 36
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 351,
-                    "X": 380,
-                    "Width": 210,
-                    "Height": 40
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 421,
-                    "X": 112,
-                    "Width": 160,
-                    "Height": 46
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 420,
-                    "X": 379,
-                    "Width": 206,
-                    "Height": 43
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 491,
-                    "X": 107,
-                    "Width": 177,
-                    "Height": 41
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 492,
-                    "X": 385,
-                    "Width": 206,
-                    "Height": 38
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 561,
-                    "X": 387,
-                    "Width": 213,
-                    "Height": 40
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 567,
-                    "X": 115,
+                    "Height": 22,
                     "Width": 156,
-                    "Height": 38
+                    "X": 291,
+                    "Y": 403
                 },
-                "Answer": "xx",
-                "Result": false
-            },
-            {
-                "AdvancedInfo": "xx",
                 "Polygon": [
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     }
                 ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 634,
-                    "X": 121,
-                    "Width": 136,
-                    "Height": 40
-                },
-                "Answer": "xx",
                 "Result": true
             },
             {
-                "AdvancedInfo": "xx",
+                "AdvancedInfo": "",
+                "Answer": "",
+                "Confidence": 0,
+                "DetectedText": "48-(10+20)=18",
+                "ExpressionType": "1",
+                "ItemCoord": {
+                    "Height": 23,
+                    "Width": 123,
+                    "X": 295,
+                    "Y": 441
+                },
                 "Polygon": [
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     },
                     {
-                        "Y": 0,
-                        "X": 0
+                        "X": -1,
+                        "Y": -1
                     }
                 ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 631,
-                    "X": 382,
-                    "Width": 217,
-                    "Height": 38
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 699,
-                    "X": 382,
-                    "Width": 222,
-                    "Height": 37
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 707,
-                    "X": 125,
-                    "Width": 157,
-                    "Height": 41
-                },
-                "Answer": "xx",
-                "Result": true
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 769,
-                    "X": 375,
-                    "Width": 235,
-                    "Height": 40
-                },
-                "Answer": "xx",
-                "Result": false
-            },
-            {
-                "AdvancedInfo": "xx",
-                "Polygon": [
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    },
-                    {
-                        "Y": 0,
-                        "X": 0
-                    }
-                ],
-                "ExpressionType": "xx",
-                "Confidence": 0,
-                "DetectedText": "xx",
-                "ItemCoord": {
-                    "Y": 779,
-                    "X": 124,
-                    "Width": 158,
-                    "Height": 41
-                },
-                "Answer": "xx",
                 "Result": true
             }
-        ],
-        "Angle": 0.0,
-        "RequestId": "xx"
+        ]
     }
 }
 ```

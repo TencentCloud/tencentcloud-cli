@@ -621,7 +621,6 @@
       "document": "设备详细信息",
       "members": [
         {
-          "default": "",
           "document": "设备基本信息",
           "example": "无",
           "member": "DeviceBaseInfo",
@@ -632,13 +631,42 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "设备网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeviceNetInfo",
           "name": "DeviceNetInfo",
           "required": true,
           "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "聚合服务器地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
+          "member": "string",
+          "name": "GatewaySite",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "业务下行速率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "float",
+          "name": "BusinessDownRate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "业务上行速率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "float",
+          "name": "BusinessUpRate",
+          "required": false,
+          "type": "float",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -705,7 +733,6 @@
       "document": "设备网络状态信息",
       "members": [
         {
-          "default": "",
           "document": "网络类型：\n0:数据\n1:Wi-Fi\n2:有线\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -716,7 +743,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "启用/禁用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -727,7 +753,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "上行限速\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "string",
@@ -738,7 +763,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "下行限速\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "string",
@@ -749,7 +773,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "接收实时速率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -760,7 +783,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "发送实时速率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -771,7 +793,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "运营商类型：\n1: 中国移动；\n2: 中国电信; \n3: 中国联通\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -782,7 +803,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "连接状态：\n0:无连接\n1:连接中\n2:已连接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -793,7 +813,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xxx.xxx.xxx.xx\"",
           "member": "string",
@@ -804,7 +823,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "信号强度/单位：dbm\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-85",
           "member": "int64",
@@ -815,7 +833,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据网络类型：\n-1 ：无效值   \n2：2G \n3：3G \n4：4G \n5：5G\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
@@ -826,13 +843,32 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网卡名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xxx\"",
           "member": "string",
           "name": "NetInfoName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "下行实时速率（浮点数类型代替上一版本DataRx的整型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12.3",
+          "member": "float",
+          "name": "DownRate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "上行实时速率（浮点数类型代替上一版本TxRate的整型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.23",
+          "member": "float",
+          "name": "UpRate",
+          "required": false,
+          "type": "float",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -879,7 +915,6 @@
       "document": "GetDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "搜索指定设备的id",
           "example": "\"mna-xxx\"",
           "member": "string",
@@ -899,7 +934,6 @@
           "example": "无",
           "member": "DeviceDetails",
           "name": "DeviceDetails",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -995,8 +1029,7 @@
       "document": "GetFlowStatistic请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "设备ID，ID=\"-1\"时默认查找所有设备",
+          "document": "设备ID",
           "example": "245aee95-f37e-55d0-5258-19520bdf4b53",
           "member": "string",
           "name": "DeviceId",
@@ -1005,7 +1038,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开始查找时间",
           "example": "1659514436",
           "member": "int64",
@@ -1015,7 +1047,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "截止时间",
           "example": "1659515436",
           "member": "int64",
@@ -1025,7 +1056,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "流量种类（1：上行流量，2：下行流量）",
           "example": "1",
           "member": "int64",
@@ -1035,7 +1065,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "时间粒度（1：按小时统计，2：按天统计）",
           "example": "1",
           "member": "int64",
@@ -1055,7 +1084,6 @@
           "example": "无",
           "member": "NetDetails",
           "name": "NetDetails",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -1065,7 +1093,6 @@
           "example": "216516",
           "member": "float",
           "name": "MaxValue",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -1075,7 +1102,6 @@
           "example": "25151",
           "member": "float",
           "name": "AvgValue",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -1085,7 +1111,6 @@
           "example": "35465464",
           "member": "float",
           "name": "TotalValue",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -1130,8 +1155,7 @@
       "document": "GetStatisticData请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "设备ID，设备ID=\"-1\"获取所有设备流量统计",
+          "document": "设备ID",
           "example": "\"mna-xxx\"",
           "member": "string",
           "name": "DeviceId",
@@ -1140,7 +1164,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "统计开始时间，单位：s",
           "example": "1661212800",
           "member": "int64",
@@ -1150,7 +1173,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "统计结束时间，单位：s",
           "example": "1661587200",
           "member": "int64",
@@ -1160,7 +1182,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "聚合粒度：\n1:按小时统计\n2:按天统计",
           "example": "1",
           "member": "int64",
@@ -1180,7 +1201,6 @@
           "example": "\"http://xxxx\"",
           "member": "string",
           "name": "FilePath",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1199,23 +1219,23 @@
       "members": [
         {
           "default": "",
-          "document": "时间点，单位：s",
-          "example": "1662622200",
-          "member": "string",
-          "name": "Time",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
           "document": "流量值（bit）",
           "example": "98",
           "member": "float",
           "name": "Current",
           "required": true,
           "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "时间点，单位：s",
+          "example": "1690424186",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }

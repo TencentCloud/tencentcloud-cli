@@ -24,7 +24,7 @@ Output:
 {
     "Response": {
         "RequestId": "39bb8e88-1ccd-4204-9f9e-56804c980a31",
-        "Result": "group-xxxxxxx"
+        "Result": "group-xxxxxxx（已废弃，请使用 CreateGroup 和 DeployContainerGroup 创建和部署容器部署组）"
     }
 }
 ```

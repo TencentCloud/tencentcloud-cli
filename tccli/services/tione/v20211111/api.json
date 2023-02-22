@@ -1360,34 +1360,34 @@
       "document": "cos的路径信息",
       "members": [
         {
-          "default": "",
           "document": "存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "encent-cloud-product-release-66666",
           "member": "string",
           "name": "Bucket",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "路径列表，目前只支持单个\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"path/\"]",
           "member": "string",
           "name": "Paths",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -6834,24 +6834,24 @@
       "document": "日志配置",
       "members": [
         {
-          "default": "",
           "document": "日志需要投递到cls的日志集\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-eeee",
           "member": "string",
           "name": "LogsetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "日志需要投递到cls的主题\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-topic-ccccc",
           "member": "string",
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -7951,7 +7951,7 @@
           "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "PointInfo": {
       "document": "点信息描述",
@@ -9442,7 +9442,7 @@
           "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ServiceLimit": {
       "document": "服务的限流限速等配置",

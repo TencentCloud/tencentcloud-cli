@@ -246,7 +246,7 @@
     ],
     "SyncKTVRobotCommand": [
       {
-        "document": "",
+        "document": "播放列表添加歌曲",
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SetPlaylist\",\n    \"SetPlaylistCommandInput\": {\n        \"Type\": \"Add\",\n        \"MusicIds\": [\n            \"xxxxxxx\"\n        ],\n        \"Index\": -1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "播放列表添加歌曲"
@@ -264,13 +264,13 @@
         "title": "变更歌曲音频参数"
       },
       {
-        "document": "",
+        "document": "切换下一首歌曲",
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SwitchNext\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "切换下一首歌曲"
       },
       {
-        "document": "",
+        "document": "发送自定义消息",
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SendMessage\",\n    \"SendMessageCommandInput\": {\n        \"Message\": \"{\\\"Field1\\\":\\\"Value1\\\"}\",\n        \"Repeat\": 2\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "发送自定义消息"
@@ -288,10 +288,10 @@
         "title": "设置销毁模式"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SetDestroyMode\",\n    \"SetVolumeCommandInput\": {\n        \"Volume\": 50\n    }\n}",
+        "document": "设置真实音量",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SetRealVolume\",\n    \"SetRealVolumeCommandInput\": {\n        \"RealVolume\": 50\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "设置音量"
+        "title": "设置真实音量"
       }
     ],
     "TakeMusicOffShelves": [

@@ -1,12 +1,12 @@
 **Example 1: 表格识别示例代码**
 
-
+表格识别示例代码
 
 Input: 
 
 ```
 tccli ocr RecognizeTableOCR --cli-unfold-argument  \
-    --ImageUrl xxx \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/TableOCR/TableOCR2.jpg \
     --IsPdf false
 ```
 

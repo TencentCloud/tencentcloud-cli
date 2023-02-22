@@ -106,7 +106,7 @@
       "status": "online"
     },
     "CreateContainGroup": {
-      "document": "创建容器部署组",
+      "document": "（已废弃，请使用 CreateGroup 和 DeployContainerGroup 创建和部署容器部署组）创建容器部署组",
       "input": "CreateContainGroupRequest",
       "name": "创建容器部署组",
       "output": "CreateContainGroupResponse",
@@ -6496,194 +6496,242 @@
         {
           "default": "",
           "document": "分组所属应用ID",
+          "example": "application-xxxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "分组所属命名空间ID",
+          "example": "namespace-xxxxxxx",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "分组名称字段，长度1~60，字母或下划线开头，可包含字母数字下划线",
+          "example": "consumer",
           "member": "string",
           "name": "GroupName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "实例数量",
+          "example": "1",
           "member": "int64",
           "name": "InstanceNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "0:公网 1:集群内访问 2：NodePort",
+          "example": "2",
           "member": "int64",
           "name": "AccessType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "数组对象，见下方定义",
+          "example": "无",
           "member": "ProtocolPort",
           "name": "ProtocolPorts",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "最大分配 CPU 核数，对应 K8S limit",
+          "example": "无",
           "member": "string",
           "name": "CpuLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "最大分配内存 MiB 数，对应 K8S limit",
+          "example": "无",
           "member": "string",
           "name": "MemLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "分组备注字段，长度应不大于200字符",
+          "example": "无",
           "member": "string",
           "name": "GroupComment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "更新方式：0:快速更新 1:滚动更新",
+          "example": "无",
           "member": "int64",
           "name": "UpdateType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "滚动更新必填，更新间隔",
+          "example": "无",
           "member": "int64",
           "name": "UpdateIvl",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "初始分配的 CPU 核数，对应 K8S request",
+          "example": "0.25",
           "member": "string",
           "name": "CpuRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "初始分配的内存 MiB 数，对应 K8S request",
+          "example": "128",
           "member": "string",
           "name": "MemRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "部署组资源类型",
+          "example": "无",
           "member": "string",
           "name": "GroupResourceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子网ID",
+          "example": "无",
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "agent 容器分配的 CPU 核数，对应 K8S 的 request",
+          "example": "无",
           "member": "string",
           "name": "AgentCpuRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "agent 容器最大的 CPU 核数，对应 K8S 的 limit",
+          "example": "无",
           "member": "string",
           "name": "AgentCpuLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "agent 容器分配的内存 MiB 数，对应 K8S 的 request",
+          "example": "无",
           "member": "string",
           "name": "AgentMemRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "agent 容器最大的内存 MiB 数，对应 K8S 的 limit",
+          "example": "无",
           "member": "string",
           "name": "AgentMemLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "istioproxy 容器分配的 CPU 核数，对应 K8S 的 request",
+          "example": "无",
           "member": "string",
           "name": "IstioCpuRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "istioproxy 容器最大的 CPU 核数，对应 K8S 的 limit",
+          "example": "无",
           "member": "string",
           "name": "IstioCpuLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "istioproxy 容器分配的内存 MiB 数，对应 K8S 的 request",
+          "example": "无",
           "member": "string",
           "name": "IstioMemRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "istioproxy 容器最大的内存 MiB 数，对应 K8S 的 limit",
+          "example": "无",
           "member": "string",
           "name": "IstioMemLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6693,10 +6741,13 @@
       "members": [
         {
           "document": "返回创建成功的部署组ID，返回null表示失败",
+          "example": "group-xxxxxxx",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12699,67 +12750,67 @@
       "document": "DescribeInvocationMetricDataDimension请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "开始时间",
           "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "结束时间",
           "example": "无",
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "开始index",
           "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "分页大小",
           "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "聚合维度",
           "example": "无",
           "member": "string",
           "name": "DimensionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "搜索关键字",
           "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "维度",
           "example": "无",
           "member": "MetricDimensionValue",
           "name": "MetricDimensionValues",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12772,9 +12823,9 @@
           "example": "无",
           "member": "TsfPageDimension",
           "name": "Result",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
