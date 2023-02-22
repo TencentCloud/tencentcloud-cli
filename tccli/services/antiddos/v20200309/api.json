@@ -1463,6 +1463,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "赠送的业务带宽",
+          "example": "50",
+          "member": "int64",
+          "name": "GiftServiceBandWidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

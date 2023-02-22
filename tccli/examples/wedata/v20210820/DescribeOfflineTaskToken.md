@@ -1,6 +1,6 @@
 **Example 1: 获取离线任务长连接Token**
 
-
+获取离线任务长连接Token
 
 Input: 
 
@@ -12,6 +12,7 @@ Output:
 {
     "Response": {
         "Token": "xx",
+        "Data": "xx",
         "RequestId": "xx"
     }
 }

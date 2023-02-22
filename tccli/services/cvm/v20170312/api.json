@@ -2554,7 +2554,6 @@
       "document": "DescribeChcHosts请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "CHC物理服务器实例ID。每次请求的实例的上限为100。参数不支持同时指定`ChcIds`和`Filters`。",
           "example": "['chc-1a2b3c4d']",
           "member": "string",
@@ -2563,7 +2562,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-state</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例状态</strong>】进行过滤。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>device-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>设备类型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>vpc-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>私有网络唯一ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>subnet-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>私有子网唯一ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>",
           "example": "NA",
           "member": "Filter",
@@ -2572,7 +2570,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "1",
           "member": "int64",
@@ -2581,7 +2578,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "10",
           "member": "int64",
@@ -2600,7 +2596,6 @@
           "example": "5",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2609,7 +2604,6 @@
           "example": "NA",
           "member": "ChcHost",
           "name": "ChcHostSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

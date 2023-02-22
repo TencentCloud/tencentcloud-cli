@@ -38,6 +38,7 @@ Output:
 {
     "Response": {
         "RequestId": "xx",
+        "Data": "xx",
         "DDLSql": "xx"
     }
 }

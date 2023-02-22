@@ -1556,7 +1556,6 @@
       "document": "实例信息",
       "members": [
         {
-          "default": "",
           "document": "实例所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1566,7 +1565,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdb",
           "member": "string",
@@ -1576,7 +1574,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例数据库类型，如：mysql,redis,mongodb,postgresql,mariadb,percona 等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mysql",
           "member": "string",
@@ -1586,7 +1583,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "节点类型，为空或者\"simple\":表示普通节点，\"cluster\": 集群节点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "simple",
           "member": "string",
@@ -1596,7 +1592,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DBInfo",
@@ -1606,7 +1601,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例服务提供商，如:\"aliyun\",\"others\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "others",
           "member": "string",
@@ -1616,13 +1610,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MongoDB可定义如下的参数: \t['AuthDatabase':'admin', \n'AuthFlag': \"1\",\t'AuthMechanism':\"SCRAM-SHA-1\"]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KeyValuePairOption",
           "name": "ExtraAttr",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TencentVPC",
+          "member": "string",
+          "name": "DatabaseNetEnv",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -4614,8 +4616,8 @@
       "document": "同步的数据库对对象描述",
       "members": [
         {
-          "document": "迁移对象类型 Partial(部分对象)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "迁移对象类型 Partial(部分对象)，默认为Partial\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Partial",
           "member": "string",
           "name": "Mode",
           "required": false,

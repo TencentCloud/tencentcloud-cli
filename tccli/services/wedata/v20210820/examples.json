@@ -746,9 +746,9 @@
     ],
     "DescribeOfflineTaskToken": [
       {
-        "document": "",
+        "document": "获取离线任务长连接Token",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOfflineTaskToken\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Token\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"xx\",\n        \"Data\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取离线任务长连接Token"
       }
     ],
@@ -824,7 +824,7 @@
       {
         "document": "实时任务同步速度趋势",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealTimeTaskSpeed\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"EndTime\": 1,\n    \"StartTime\": 1,\n    \"TaskId\": \"xx\",\n    \"Granularity\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"BytesSpeedList\": [\n            {\n                \"Values\": [\n                    {\n                        \"Speed\": 0.0,\n                        \"Time\": 1\n                    }\n                ],\n                \"NodeType\": \"xx\",\n                \"NodeName\": \"xx\"\n            }\n        ],\n        \"RecordsSpeedList\": [\n            {\n                \"Values\": [\n                    {\n                        \"Speed\": 0.0,\n                        \"Time\": 1\n                    }\n                ],\n                \"NodeType\": \"xx\",\n                \"NodeName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BytesSpeedList\": [\n            {\n                \"Values\": [\n                    {\n                        \"Speed\": 0.0,\n                        \"Time\": 1\n                    }\n                ],\n                \"NodeType\": \"xx\",\n                \"NodeName\": \"xx\"\n            }\n        ],\n        \"RecordsSpeedList\": [\n            {\n                \"Values\": [\n                    {\n                        \"Speed\": 0.0,\n                        \"Time\": 1\n                    }\n                ],\n                \"NodeType\": \"xx\",\n                \"NodeName\": \"xx\"\n            }\n        ],\n        \"Data\": {\n            \"BytesSpeedList\": [\n                {\n                    \"Values\": [\n                        {\n                            \"Speed\": 0.0,\n                            \"Time\": 1\n                        }\n                    ],\n                    \"NodeType\": \"xx\",\n                    \"NodeName\": \"xx\"\n                }\n            ],\n            \"RecordsSpeedList\": [\n                {\n                    \"NodeType\": \"xx\",\n                    \"NodeName\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "实时任务同步速度趋势"
       }
     ],
@@ -1100,9 +1100,9 @@
     ],
     "DescribeTaskInstance": [
       {
-        "document": "",
+        "document": "离线任务实例详情",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskInstance\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"202205058668886\",\n    \"CurRunDate\": \"2020-05-05 12:00:00\",\n    \"IssueDate\": \"2020-05-05 12:04:18\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskInstanceDetail\": {\n            \"BrokerIp\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"OwnerUin\": 1,\n            \"TaskRunId\": \"xx\",\n            \"TaskRunType\": 1,\n            \"CurRunDate\": \"xx\",\n            \"CreateUin\": 1,\n            \"ProjectId\": \"xx\",\n            \"InlongTaskId\": \"xx\",\n            \"State\": 1,\n            \"PodName\": \"xx\",\n            \"OperatorUin\": 1,\n            \"StartTime\": \"xx\",\n            \"AppId\": 1,\n            \"TaskId\": \"xx\",\n            \"TaskName\": \"xx\",\n            \"EndTime\": \"xx\",\n            \"IssueDate\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"ExecutorGroupId\": \"xx\",\n            \"NextRunDate\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskInstanceDetail\": {\n            \"BrokerIp\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"OwnerUin\": 1,\n            \"TaskRunId\": \"xx\",\n            \"TaskRunType\": 1,\n            \"CurRunDate\": \"xx\",\n            \"CreateUin\": 1,\n            \"ProjectId\": \"xx\",\n            \"InlongTaskId\": \"xx\",\n            \"State\": 1,\n            \"PodName\": \"xx\",\n            \"OperatorUin\": 1,\n            \"StartTime\": \"xx\",\n            \"AppId\": 1,\n            \"TaskId\": \"xx\",\n            \"TaskName\": \"xx\",\n            \"EndTime\": \"xx\",\n            \"IssueDate\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"ExecutorGroupId\": \"xx\",\n            \"NextRunDate\": \"xx\"\n        },\n        \"Data\": {\n            \"BrokerIp\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"OwnerUin\": 1,\n            \"TaskRunId\": \"xx\",\n            \"TaskRunType\": 1,\n            \"CurRunDate\": \"xx\",\n            \"CreateUin\": 1,\n            \"ProjectId\": \"xx\",\n            \"InlongTaskId\": \"xx\",\n            \"State\": 1,\n            \"PodName\": \"xx\",\n            \"OperatorUin\": 1,\n            \"StartTime\": \"xx\",\n            \"AppId\": 1,\n            \"TaskId\": \"xx\",\n            \"TaskName\": \"xx\",\n            \"EndTime\": \"xx\",\n            \"IssueDate\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"ExecutorGroupId\": \"xx\",\n            \"NextRunDate\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "离线任务实例详情"
       }
     ],
@@ -1236,7 +1236,7 @@
       {
         "document": "生成建hive表的sql",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenHiveTableDDLSql\n<公共请求参数>\n\n{\n    \"TableVersion\": \"xx\",\n    \"SourceDatabase\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"SourceFieldInfoList\": [\n        {\n            \"Alias\": \"xx\",\n            \"FieldName\": \"xx\",\n            \"FieldType\": \"xx\"\n        }\n    ],\n    \"TableName\": \"xx\",\n    \"UpsertFlag\": true,\n    \"SinkDatabase\": \"xx\",\n    \"Properties\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"SinkType\": \"xx\",\n    \"DatasourceId\": \"xx\",\n    \"SchemaName\": \"xx\",\n    \"TableMode\": 0,\n    \"MsType\": \"xx\",\n    \"Id\": \"xx\",\n    \"TableComment\": \"xx\",\n    \"AddDataFiles\": 1000,\n    \"AddEqualityDeletes\": 1000,\n    \"AddPositionDeletes\": 1000,\n    \"AddDeleteFiles\": 1000,\n    \"Partitions\": [\n        {\n            \"Transform\": \"xx\",\n            \"TransformArgs\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DDLSql\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": \"xx\",\n        \"DDLSql\": \"xx\"\n    }\n}",
         "title": "GenHiveTableDDLSql"
       }
     ],

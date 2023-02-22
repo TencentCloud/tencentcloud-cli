@@ -309,6 +309,52 @@
     "serviceShortName": "cbs"
   },
   "objects": {
+    "AdvancedRetentionPolicy": {
+      "document": "定期快照高级保留策略，四个参数都为必选参数",
+      "members": [
+        {
+          "default": "",
+          "document": "保留最新快照Days天内的每天最新的一个快照，取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "uint64",
+          "name": "Days",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "保留最新快照Weeks周内的每周最新的一个快照，取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "uint64",
+          "name": "Weeks",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "保留最新快照Months月内的每月最新的一个快照， 取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "Months",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "保留最新快照Years年内的每年最新的一个快照，取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Years",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ApplyDiskBackupRequest": {
       "document": "ApplyDiskBackup请求参数结构体",
       "members": [
@@ -525,7 +571,6 @@
       "document": "描述了定期快照策略的详细信息",
       "members": [
         {
-          "default": "",
           "document": "已绑定当前定期快照策略的云盘ID列表。",
           "example": "[\"disk-pe1vkgim\"]",
           "member": "string",
@@ -535,7 +580,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "定期快照策略是否激活。",
           "example": "true",
           "member": "bool",
@@ -545,7 +589,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。",
           "example": "NORMAL",
           "member": "string",
@@ -555,7 +598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否是跨账号复制快照快照, 1：是, 0: 不是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -565,7 +607,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "使用该定期快照策略创建出来的快照是否永久保留。",
           "example": "false",
           "member": "bool",
@@ -575,7 +616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "定期快照下次触发的时间。",
           "example": "2022-05-31 11:00:00",
           "member": "datetime",
@@ -585,7 +625,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "定期快照策略名称。",
           "example": "test",
           "member": "string",
@@ -595,7 +634,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "定期快照策略ID。",
           "example": "asp-nz3ytdwj",
           "member": "string",
@@ -605,7 +643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "定期快照的执行策略。",
           "example": "无",
           "member": "Policy",
@@ -615,7 +652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "定期快照策略的创建时间。",
           "example": "2022-01-11 10:45:51",
           "member": "datetime",
@@ -625,7 +661,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "使用该定期快照策略创建出来的快照保留天数。",
           "example": "1",
           "member": "uint64",
@@ -635,7 +670,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "复制的目标账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -645,13 +679,39 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "已绑定当前定期快照策略的实例ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ins-og3j7lue\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "该定期快照创建的快照可以保留的月数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RetentionMonths",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "该定期快照创建的快照最大保留数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "RetentionAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "定期快照高级保留策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvancedRetentionPolicy",
+          "name": "AdvancedRetentionPolicy",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -3643,10 +3703,9 @@
       "usage": "both"
     },
     "Policy": {
-      "document": "描述了定期快照的执行策略。可理解为在DayOfWeek/DayOfMonth指定的几天中，或者是IntervalDays设定的间隔的几天，在Hour指定的小时执行该条定期快照策略。注：DayOfWeek/DayOfMonth/IntervalDays为互斥规则，仅可设置其中一条策略规则。",
+      "document": "描述了定期快照的执行策略。可理解为在DayOfWeek/DayOfMonth指定的几天中，或者是IntervalDays设定的间隔的几天，在Hour指定的时刻点执行该条定期快照策。注：DayOfWeek/DayOfMonth/IntervalDays为互斥规则，仅可设置其中一条策略规则。",
       "members": [
         {
-          "default": "",
           "document": "指定定期快照策略的触发时间。单位为小时，取值范围：[0, 23]。00:00 ~ 23:00 共 24 个时间点可选，1表示 01:00，依此类推。",
           "example": "[11,12,13]",
           "member": "uint64",
@@ -3656,13 +3715,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。",
           "example": "[0,1,2]",
           "member": "uint64",
           "name": "DayOfWeek",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "指定每月从月初到月底需要触发定期快照的日期,取值范围：[1, 31]，1-31分别表示每月的具体日期，比如5表示每月的5号。注：若设置29、30、31等部分月份不存在的日期，则对应不存在日期的月份会跳过不打定期快照。",
+          "example": "[2, 3, 4]",
+          "member": "uint64",
+          "name": "DayOfMonth",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "指定创建定期快照的间隔天数，取值范围：[1, 365]，例如设置为5，则间隔5天即触发定期快照创建。注：当选择按天备份时，理论上第一次备份的时间为备份策略创建当天。如果当天备份策略创建的时间已经晚于设置的备份时间，那么将会等到第二个备份周期再进行第一次备份。",
+          "example": "50",
+          "member": "uint64",
+          "name": "IntervalDays",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

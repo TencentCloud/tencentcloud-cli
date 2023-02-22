@@ -2920,8 +2920,8 @@
       "document": "实例详情",
       "members": [
         {
-          "default": "",
-          "document": "实例ID",
+          "document": "实例ID。",
+          "example": "cmgo-7pjedvz7",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2929,8 +2929,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例名称",
+          "document": "实例名称。",
+          "example": "test-instance",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -2938,8 +2938,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "付费类型，可能的返回值：1-包年包月；0-按量计费",
+          "example": "1",
           "member": "uint64",
           "name": "PayMode",
           "required": true,
@@ -2947,8 +2947,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "项目ID",
+          "document": "项目ID。",
+          "example": "无",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -2956,8 +2956,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "集群类型，可能的返回值：0-副本集实例，1-分片实例，",
+          "document": "集群类型，可能的返回值：0-副本集实例，1-分片实例。",
+          "example": "1",
           "member": "uint64",
           "name": "ClusterType",
           "required": true,
@@ -2965,8 +2965,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "地域信息",
+          "document": "地域信息。",
+          "example": "无",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -2974,8 +2974,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "可用区信息",
+          "document": "可用区信息。",
+          "example": "无",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -2983,8 +2983,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "网络类型，可能的返回值：0-基础网络，1-私有网络",
+          "example": "1",
           "member": "uint64",
           "name": "NetType",
           "required": true,
@@ -2992,8 +2992,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "私有网络的ID",
+          "document": "私有网络的ID。",
+          "example": "vpc-0vjmgwtn",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -3001,8 +3001,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "私有网络的子网ID",
+          "document": "私有网络的子网ID。",
+          "example": "subnet-emtfpj2o",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -3010,8 +3010,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期",
+          "document": "实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期。",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -3019,8 +3019,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例IP",
+          "document": "实例IP。",
+          "example": "10.100.0.0",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -3028,8 +3028,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "端口号",
+          "document": "端口号。",
+          "example": "27017",
           "member": "uint64",
           "name": "Vport",
           "required": true,
@@ -3037,8 +3037,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例创建时间",
+          "document": "实例创建时间。",
+          "example": "2010-07-25 18:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -3046,8 +3046,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例到期时间",
+          "document": "实例到期时间。",
+          "example": "2010-07-25 20:00:00",
           "member": "datetime",
           "name": "DeadLine",
           "required": true,
@@ -3055,8 +3055,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例版本信息",
+          "document": "实例版本信息。",
+          "example": "MONGO_42_WT",
           "member": "string",
           "name": "MongoVersion",
           "required": true,
@@ -3064,8 +3064,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例内存规格，单位为MB",
+          "document": "实例内存规格，单位为MB。",
+          "example": "4",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -3073,8 +3073,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例磁盘规格，单位为MB",
+          "document": "实例磁盘规格，单位为MB。",
+          "example": "120",
           "member": "uint64",
           "name": "Volume",
           "required": true,
@@ -3082,8 +3082,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例CPU核心数",
+          "document": "实例CPU核心数。",
+          "example": "2",
           "member": "uint64",
           "name": "CpuNum",
           "required": true,
@@ -3091,8 +3091,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例机器类型",
+          "document": "实例机器类型。",
+          "example": "HIO10G",
           "member": "string",
           "name": "MachineType",
           "required": true,
@@ -3100,8 +3100,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例从节点数",
+          "document": "实例从节点数。",
+          "example": "2",
           "member": "uint64",
           "name": "SecondaryNum",
           "required": true,
@@ -3109,8 +3109,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例分片数",
+          "document": "实例分片数。",
+          "example": "3",
           "member": "uint64",
           "name": "ReplicationSetNum",
           "required": true,
@@ -3118,8 +3118,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费",
+          "document": "实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。",
+          "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": true,
@@ -3127,8 +3127,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "已用容量，单位MB",
+          "document": "已用容量，单位MB。",
+          "example": "100",
           "member": "uint64",
           "name": "UsedVolume",
           "required": true,
@@ -3136,8 +3136,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "维护窗口起始时间",
+          "document": "维护窗口起始时间。",
+          "example": "04:00:00",
           "member": "string",
           "name": "MaintenanceStart",
           "required": true,
@@ -3145,8 +3145,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "维护窗口结束时间",
+          "document": "维护窗口结束时间。",
+          "example": "05:00:00",
           "member": "string",
           "name": "MaintenanceEnd",
           "required": true,
@@ -3154,8 +3154,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "分片信息",
+          "document": "分片信息。",
+          "example": "无",
           "member": "ShardInfo",
           "name": "ReplicaSets",
           "required": true,
@@ -3163,8 +3163,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "只读实例信息",
+          "document": "只读实例信息。",
+          "example": "无",
           "member": "DBInstanceInfo",
           "name": "ReadonlyInstances",
           "required": true,
@@ -3172,8 +3172,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "灾备实例信息",
+          "document": "灾备实例信息。",
+          "example": "无",
           "member": "DBInstanceInfo",
           "name": "StandbyInstances",
           "required": true,
@@ -3181,8 +3181,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "临时实例信息",
+          "document": "临时实例信息。",
+          "example": "无",
           "member": "DBInstanceInfo",
           "name": "CloneInstances",
           "required": true,
@@ -3190,8 +3190,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息",
+          "document": "关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息。",
+          "example": "无",
           "member": "DBInstanceInfo",
           "name": "RelatedInstance",
           "required": true,
@@ -3199,8 +3199,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例标签信息集合",
+          "document": "实例标签信息集合。",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "required": true,
@@ -3208,8 +3208,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例版本标记",
+          "document": "实例版本标记。",
+          "example": "4",
           "member": "uint64",
           "name": "InstanceVer",
           "required": true,
@@ -3217,8 +3217,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例版本标记",
+          "document": "实例版本标记。",
+          "example": "1",
           "member": "uint64",
           "name": "ClusterVer",
           "required": true,
@@ -3226,8 +3226,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "协议信息，可能的返回值：1-mongodb，2-dynamodb",
+          "document": "协议信息，可能的返回值：1-mongodb，2-dynamodb。",
+          "example": "0",
           "member": "uint64",
           "name": "Protocol",
           "required": true,
@@ -3235,8 +3235,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例类型，可能的返回值，1-正式实例，2-临时实例，3-只读实例，4-灾备实例",
+          "example": "1",
           "member": "uint64",
           "name": "InstanceType",
           "required": true,
@@ -3244,8 +3244,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例状态描述",
+          "example": "运行中",
           "member": "string",
           "name": "InstanceStatusDesc",
           "required": true,
@@ -3253,13 +3253,85 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取",
+          "example": "cmgo-8go1o9xl",
           "member": "string",
           "name": "RealInstanceId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "mongos节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "MongosNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "mongos节点内存。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "MongosMemory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "mongos节点CPU核数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MongosCpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Config Server节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "ConfigServerNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Config Server节点内存。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ConfigServerMemory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Config Server节点磁盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "ConfigServerVolume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Config Server节点CPU核数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ConfigServerCpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "readonly节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "ReadonlyNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4884,8 +4956,8 @@
       "document": "实例标签信息",
       "members": [
         {
-          "default": "",
           "document": "标签键",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -4893,8 +4965,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签值",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -4902,7 +4974,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TerminateDBInstancesRequest": {
       "document": "TerminateDBInstances请求参数结构体",

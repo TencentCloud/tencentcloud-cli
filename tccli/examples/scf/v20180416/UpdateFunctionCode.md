@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli scf UpdateFunctionCode --cli-unfold-argument  \
-    --FunctionName test \
+    --CosObjectName <CosObjectName> \
     --Handler index.main \
     --CosBucketName <CosBucketName> \
-    --CosObjectName <CosObjectName>
+    --FunctionName test
 ```
 
 Output: 

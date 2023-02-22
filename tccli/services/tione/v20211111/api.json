@@ -619,7 +619,6 @@
       "document": "跑批任务详情",
       "members": [
         {
-          "default": "",
           "document": "跑批任务ID",
           "example": "123123",
           "member": "string",
@@ -629,7 +628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "跑批任务名称",
           "example": "test",
           "member": "string",
@@ -639,7 +637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主账号uin",
           "example": "1000000001",
           "member": "string",
@@ -649,7 +646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子账号uin",
           "example": "1000000002",
           "member": "string",
@@ -659,7 +655,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -669,7 +664,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "计费模式",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
@@ -679,7 +673,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "预付费专用资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -689,7 +682,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "预付费专用资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resource_group",
           "member": "string",
@@ -699,7 +691,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源配置",
           "example": "无",
           "member": "ResourceConfigInfo",
@@ -709,7 +700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -719,7 +709,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务对应的模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModelInfo",
@@ -729,7 +718,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自定义镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageInfo",
@@ -739,7 +727,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "代码包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CosPathInfo",
@@ -749,7 +736,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "启动命令\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sh start.sh",
           "member": "string",
@@ -759,7 +745,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "输入数据配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataConfig",
@@ -769,7 +754,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "输出数据配置",
           "example": "无",
           "member": "DataConfig",
@@ -779,7 +763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否上报日志",
           "example": "false",
           "member": "bool",
@@ -789,7 +772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogConfig",
@@ -799,7 +781,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-fgb3u1kx",
           "member": "string",
@@ -809,7 +790,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-jhzi2m3j",
           "member": "string",
@@ -819,7 +799,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务状态",
           "example": "STOPPING",
           "member": "string",
@@ -829,7 +808,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -839,7 +817,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2022-01-01 00:00:00",
           "member": "string",
@@ -849,7 +826,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "更新时间",
           "example": "2022-01-01 00:00:00",
           "member": "string",
@@ -859,7 +835,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-01-01 00:00:00",
           "member": "string",
@@ -869,7 +844,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-01-01 00:00:00",
           "member": "string",
@@ -879,7 +853,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中",
           "example": "BILLING",
           "member": "string",
@@ -889,7 +862,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最近一次实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123123",
           "member": "string",
@@ -899,7 +871,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -909,7 +880,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -919,13 +889,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "计费金额信息，eg：2.00元/小时 (for后付费)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.00元/小时",
           "member": "string",
           "name": "BillingInfo",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运行中的Pod的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"batch-5idelmcnd3b4-5idelqlj5d6o-worker-0\"]",
+          "member": "string",
+          "name": "PodList",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -1208,6 +1186,99 @@
         }
       ],
       "usage": "both"
+    },
+    "Container": {
+      "document": "容器信息",
+      "members": [
+        {
+          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "main",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "989e5db6-af8c-4ea0-816a-a97369b36152",
+          "member": "string",
+          "name": "ContainerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccr.ccs.tencentyun.com/test-ccr/hellotest:grpc-test",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "容器状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContainerStatus",
+          "name": "Status",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ContainerStatus": {
+      "document": "容器状态",
+      "members": [
+        {
+          "document": "重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RestartCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "waiting",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否就绪\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Ready",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ContainerCreating",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "容器的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Error",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CosPathInfo": {
       "document": "cos的路径信息",
@@ -2634,67 +2705,61 @@
       "document": "数据配置",
       "members": [
         {
-          "default": "",
           "document": "映射路径",
           "example": "无",
           "member": "string",
           "name": "MappingPath",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "DATASET、COS、CFS、HDFS、WEDATA_HDFS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DATASET",
           "member": "string",
           "name": "DataSourceType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "来自数据集的数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataSetConfig",
           "name": "DataSetSource",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "来自cos的数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CosPathInfo",
           "name": "COSSource",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "来自CFS的数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CFSConfig",
           "name": "CFSSource",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "来自HDFS的数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HDFSConfig",
           "name": "HDFSSource",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DataPoint": {
       "document": "数据点",
@@ -3224,6 +3289,21 @@
       ],
       "usage": "out"
     },
+    "DefaultNginxGatewayCallInfo": {
+      "document": "默认Nginx网关结构",
+      "members": [
+        {
+          "document": "host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.tione.tencents.com",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteBatchTaskRequest": {
       "document": "DeleteBatchTask请求参数结构体",
       "members": [
@@ -3606,7 +3686,6 @@
       "document": "DescribeBatchTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "跑批任务ID",
           "example": "123123",
           "member": "string",
@@ -3625,7 +3704,6 @@
           "example": "无",
           "member": "BatchTaskDetail",
           "name": "BatchTaskDetail",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4597,7 +4675,6 @@
       "document": "DescribeModelServiceCallInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务组id",
           "example": "ms-xy123",
           "member": "string",
@@ -4616,7 +4693,6 @@
           "example": "无",
           "member": "ServiceCallInfo",
           "name": "ServiceCallInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4625,7 +4701,14 @@
           "example": "无",
           "member": "InferGatewayCallInfo",
           "name": "InferGatewayCallInfo",
-          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "默认nginx网关的调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DefaultNginxGatewayCallInfo",
+          "name": "DefaultNginxGatewayCallInfo",
           "type": "object",
           "value_allowed_null": true
         },
@@ -7245,6 +7328,75 @@
       ],
       "usage": "both"
     },
+    "Pod": {
+      "document": "Pod信息展示",
+      "members": [
+        {
+          "document": "pod名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms-24xzphkz-1-55cc4779cc-9j6tb",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "pod的唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "989e5db6-af8c-4ea0-816a-a97369b36152",
+          "member": "string",
+          "name": "Uid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务付费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "pod的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Pending",
+          "member": "string",
+          "name": "Phase",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "pod的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "pod的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Container",
+          "name": "Containers",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PointInfo": {
       "document": "点信息描述",
       "members": [
@@ -8455,7 +8607,6 @@
       "document": "推理服务在集群中的信息",
       "members": [
         {
-          "default": "",
           "document": "期望运行的Pod数量，停止状态是0\n不同计费模式和调节模式下对应关系如下\nPREPAID 和 POSTPAID_BY_HOUR:\n手动调节模式下对应 实例数量\n自动调节模式下对应 基于时间的默认策略的实例数量\nHYBRID_PAID:\n后付费实例手动调节模式下对应 实例数量\n后付费实例自动调节模式下对应 时间策略的默认策略的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -8465,7 +8616,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ImageInfo",
@@ -8475,7 +8625,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{name: \"k\", value: \"v\"}",
           "member": "EnvVar",
@@ -8485,7 +8634,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ResourceInfo",
@@ -8495,7 +8643,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "后付费实例对应的机型规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TI.S.MEDIUM.POS",
           "member": "string",
@@ -8505,7 +8652,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ModelInfo",
@@ -8515,7 +8661,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否启用日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -8525,7 +8670,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "LogConfig",
@@ -8535,7 +8679,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -8545,7 +8688,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "hpa配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "HorizontalPodAutoscaler",
@@ -8555,7 +8697,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务的状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "WorkloadStatus",
@@ -8565,7 +8706,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -8575,7 +8715,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sss",
           "member": "string",
@@ -8585,7 +8724,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源总量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ResourceInfo",
@@ -8595,7 +8733,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "历史实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -8605,7 +8742,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -8615,7 +8751,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "历史 HYBRID_PAID 时的实例数，用户恢复服务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -8625,13 +8760,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启模型的热更新。默认不开启\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "ModelHotUpdateEnable",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Pod列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Pod",
+          "name": "Pods",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -9414,7 +9557,6 @@
       "document": "模型版本列表",
       "members": [
         {
-          "default": "",
           "document": "模型id",
           "example": "a1",
           "member": "string",
@@ -9424,7 +9566,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型版本id",
           "example": "a1",
           "member": "string",
@@ -9434,7 +9575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型版本",
           "example": "a1",
           "member": "string",
@@ -9444,7 +9584,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型来源",
           "example": "a1",
           "member": "string",
@@ -9454,7 +9593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "a1",
           "member": "string",
@@ -9464,7 +9602,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建人uin",
           "example": "a1",
           "member": "string",
@@ -9474,7 +9611,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "算法框架",
           "example": "a1",
           "member": "string",
@@ -9484,7 +9620,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "推理环境",
           "example": "a1",
           "member": "string",
@@ -9494,7 +9629,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "推理环境来源",
           "example": "a1",
           "member": "string",
@@ -9504,7 +9638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型指标",
           "example": "a1",
           "member": "string",
@@ -9514,7 +9647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "训练任务名称",
           "example": "a1",
           "member": "string",
@@ -9524,7 +9656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型cos路径",
           "example": "无",
           "member": "CosPathInfo",
@@ -9534,7 +9665,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型名称",
           "example": "a1",
           "member": "string",
@@ -9544,7 +9674,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "训练任务id",
           "example": "a1",
           "member": "string",
@@ -9554,7 +9683,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自定义推理环境",
           "example": "无",
           "member": "ImageInfo",
@@ -9564,7 +9692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型版本创建时间",
           "example": "2021-12-18T12:30:14Z",
           "member": "string",
@@ -9574,7 +9701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型处理状态\nSTATUS_SUCCESS：导入成功，STATUS_FAILED：导入失败 ，STATUS_RUNNING：导入中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "STATUS_SUCCESS",
           "member": "string",
@@ -9584,7 +9710,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型处理进度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -9594,7 +9719,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -9604,7 +9728,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SAVED_MODEL",
           "member": "string",
@@ -9614,7 +9737,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型版本类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NORMAL",
           "member": "string",
@@ -9624,7 +9746,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "GPU类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "T4",
           "member": "string",
@@ -9634,7 +9755,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型自动清理开关\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "string",
@@ -9644,7 +9764,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型清理周期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -9654,7 +9773,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型数量保留上限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "24",
           "member": "uint64",
@@ -9664,13 +9782,57 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型热更新目录\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CosPathInfo",
           "name": "ModelHotUpdatePath",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "推理环境id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReasoningEnvironmentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "训练任务版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TrainingJobVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "训练偏好\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TrainingPreference",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "自动学习任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AutoMLTaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否QAT模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsQAT",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

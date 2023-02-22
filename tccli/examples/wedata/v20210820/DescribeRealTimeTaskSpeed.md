@@ -41,6 +41,26 @@ Output:
                 "NodeName": "xx"
             }
         ],
+        "Data": {
+            "BytesSpeedList": [
+                {
+                    "Values": [
+                        {
+                            "Speed": 0.0,
+                            "Time": 1
+                        }
+                    ],
+                    "NodeType": "xx",
+                    "NodeName": "xx"
+                }
+            ],
+            "RecordsSpeedList": [
+                {
+                    "NodeType": "xx",
+                    "NodeName": "xx"
+                }
+            ]
+        },
         "RequestId": "xx"
     }
 }

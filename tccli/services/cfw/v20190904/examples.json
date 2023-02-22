@@ -480,6 +480,14 @@
         "title": "修改规则执行顺序"
       }
     ],
+    "ModifyStorageSetting": [
+      {
+        "document": "用于修改日志存储天数，或者清空日志；\n修改日志存储天数StorageAction需要传入storagetime，StorageDay只能是特定的几个值，详情参考控制台下拉框；\n清空日志StorageAction需要传入storagecount，StorageDay不传；",
+        "input": "{\n  \"StorageDay\": 90,\n  \"StorageAction\": \"storagetime\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f5b034d5-da48-47a6-9d7c-5fb4a3cb7ea1\"\n    }\n}",
+        "title": "ModifyStorageSetting"
+      }
+    ],
     "ModifyTableStatus": [
       {
         "document": "",

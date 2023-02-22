@@ -1811,7 +1811,6 @@
       "document": "DriverLicenseOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -1820,7 +1819,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -1829,7 +1827,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "FRONT 为驾驶证主页正面（有红色印章的一面），\nBACK 为驾驶证副页正面（有档案编号的一面）。\n默认值为：FRONT。",
           "example": "FRONT",
           "member": "string",
@@ -1848,7 +1845,6 @@
           "example": "李明",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1857,7 +1853,6 @@
           "example": "男",
           "member": "string",
           "name": "Sex",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1866,7 +1861,6 @@
           "example": "中国",
           "member": "string",
           "name": "Nationality",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1875,7 +1869,6 @@
           "example": "上海市徐汇区田林路397号腾云大厦6F",
           "member": "string",
           "name": "Address",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1884,7 +1877,6 @@
           "example": "1987-01-01",
           "member": "string",
           "name": "DateOfBirth",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1893,7 +1885,6 @@
           "example": "2011-10-01",
           "member": "string",
           "name": "DateOfFirstIssue",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1902,7 +1893,6 @@
           "example": "C1",
           "member": "string",
           "name": "Class",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1911,7 +1901,6 @@
           "example": "2011-10-01",
           "member": "string",
           "name": "StartDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1920,7 +1909,6 @@
           "example": "2017-10-01",
           "member": "string",
           "name": "EndDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1929,7 +1917,6 @@
           "example": "440524198701010014",
           "member": "string",
           "name": "CardCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1938,7 +1925,6 @@
           "example": "无",
           "member": "string",
           "name": "ArchivesCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1947,7 +1933,6 @@
           "example": "无",
           "member": "string",
           "name": "Record",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1956,7 +1941,6 @@
           "example": "[-9106]",
           "member": "int64",
           "name": "RecognizeWarnCode",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1965,7 +1949,6 @@
           "example": "[\"WARN_DRIVER_LICENSE_PS_CARD\"]",
           "member": "string",
           "name": "RecognizeWarnMsg",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1974,7 +1957,6 @@
           "example": "上海市公安局交通警察总队",
           "member": "string",
           "name": "IssuingAuthority",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1983,7 +1965,6 @@
           "example": "无",
           "member": "string",
           "name": "State",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1992,7 +1973,6 @@
           "example": "无",
           "member": "string",
           "name": "CumulativeScore",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2750,7 +2730,6 @@
       "document": "GeneralAccurateOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -2759,7 +2738,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -2768,7 +2746,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否返回单字信息，默认关",
           "example": "false",
           "member": "bool",
@@ -2777,7 +2754,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关",
           "example": "false",
           "member": "bool",
@@ -2786,7 +2762,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -2795,7 +2770,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "1",
           "member": "uint64",
@@ -2814,7 +2788,6 @@
           "example": "无",
           "member": "TextDetection",
           "name": "TextDetections",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2823,7 +2796,6 @@
           "example": "0",
           "member": "float",
           "name": "Angel",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2840,7 +2812,6 @@
       "document": "GeneralBasicOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片/PDF的 Base64 值。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -2849,7 +2820,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片/PDF的 Url 地址。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -2858,7 +2828,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "保留字段。",
           "example": "无",
           "member": "string",
@@ -2867,7 +2836,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "识别语言类型。\n支持自动识别语言类型，同时支持自选语言种类，默认中英文混合(zh)，各种语言均支持与英文混合的文字识别。\n可选值：\nzh：中英混合\nzh_rare：支持英文、数字、中文生僻字、繁体字，特殊符号等\nauto：自动\nmix：混合语种\njap：日语\nkor：韩语\nspa：西班牙语\nfre：法语\nger：德语\npor：葡萄牙语\nvie：越语\nmay：马来语\nrus：俄语\nita：意大利语\nhol：荷兰语\nswe：瑞典语\nfin：芬兰语\ndan：丹麦语\nnor：挪威语\nhun：匈牙利语\ntha：泰语\nhi：印地语\nara：阿拉伯语",
           "example": "无",
           "member": "string",
@@ -2876,7 +2844,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
           "example": "无",
           "member": "bool",
@@ -2885,7 +2852,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "无",
           "member": "uint64",
@@ -2894,7 +2860,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否返回单字信息，默认关",
           "example": "无",
           "member": "bool",
@@ -2913,7 +2878,6 @@
           "example": "无",
           "member": "TextDetection",
           "name": "TextDetections",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2922,7 +2886,6 @@
           "example": "zh",
           "member": "string",
           "name": "Language",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2931,7 +2894,6 @@
           "example": "6.5",
           "member": "float",
           "name": "Angel",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2940,7 +2902,6 @@
           "example": "0",
           "member": "int64",
           "name": "PdfPageSize",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3657,7 +3618,6 @@
       "document": "ImageEnhancement请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "image",
           "member": "string",
@@ -3666,7 +3626,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -3675,7 +3634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "默认为空，ReturnImage的取值以及含义如下：\n“preprocess”: 返回预处理后的图片数据\n“origin”：返回原图片数据\n\" \":不返回图片数据",
           "example": "preprocess",
           "member": "string",
@@ -3684,7 +3642,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "默认值为1，指定图像增强方法：\n1：切边增强\n2：弯曲矫正\n202：黑白模式\n204：提亮模式\n205：灰度模式\n207：省墨模式\n208：文字锐化（适合非彩色图片）\n300:自动增强（自动从301～304选择任务类型）\n301：去摩尔纹\n302：去除阴影\n303：去除模糊 \n304：去除过曝",
           "example": "无",
           "member": "int64",
@@ -3703,7 +3660,6 @@
           "example": "无",
           "member": "string",
           "name": "ImageTag",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3712,7 +3668,6 @@
           "example": "无",
           "member": "string",
           "name": "Image",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3729,7 +3684,6 @@
       "document": "InstitutionOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -3738,7 +3692,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
           "member": "string",
@@ -3757,7 +3710,6 @@
           "example": "100XXX",
           "member": "string",
           "name": "RegId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3766,7 +3718,6 @@
           "example": "自xxxx年xx月xx日至20xx年xx月xx日",
           "member": "string",
           "name": "ValidDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3775,7 +3726,6 @@
           "example": "武汉市武昌区雄楚路xxx号",
           "member": "string",
           "name": "Location",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3784,7 +3734,6 @@
           "example": "长江",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3793,7 +3742,6 @@
           "example": "xx",
           "member": "string",
           "name": "LegalPerson",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4121,7 +4069,6 @@
       "document": "LicensePlateOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -4130,7 +4077,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -4149,7 +4095,6 @@
           "example": "京N0L9U8",
           "member": "string",
           "name": "Number",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4158,7 +4103,6 @@
           "example": "99",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4167,7 +4111,6 @@
           "example": "无",
           "member": "Rect",
           "name": "Rect",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4176,7 +4119,6 @@
           "example": "红",
           "member": "string",
           "name": "Color",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4185,7 +4127,6 @@
           "example": "无",
           "member": "LicensePlateInfo",
           "name": "LicensePlateInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6104,7 +6045,6 @@
       "document": "RecognizeHealthCodeOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -6113,7 +6053,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -6122,7 +6061,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要识别的健康码类型列表，为空或不填表示默认为自动识别。\n0:自动识别",
           "example": "0",
           "member": "int64",
@@ -6141,7 +6079,6 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6150,7 +6087,6 @@
           "example": "无",
           "member": "string",
           "name": "IDNumber",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6159,7 +6095,6 @@
           "example": "无",
           "member": "string",
           "name": "Time",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6168,7 +6103,6 @@
           "example": "无",
           "member": "string",
           "name": "Color",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6177,7 +6111,6 @@
           "example": "无",
           "member": "string",
           "name": "TestingInterval",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6186,7 +6119,6 @@
           "example": "无",
           "member": "string",
           "name": "TestingResult",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6195,7 +6127,6 @@
           "example": "无",
           "member": "string",
           "name": "TestingTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6204,7 +6135,6 @@
           "example": "无",
           "member": "string",
           "name": "Vaccination",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6213,7 +6143,6 @@
           "example": "无",
           "member": "string",
           "name": "SpotName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6222,7 +6151,6 @@
           "example": "无",
           "member": "string",
           "name": "VaccinationTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7156,7 +7084,6 @@
       "document": "RecognizeTravelCardOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -7165,7 +7092,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -7184,7 +7110,6 @@
           "example": "无",
           "member": "string",
           "name": "Time",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7193,7 +7118,6 @@
           "example": "无",
           "member": "string",
           "name": "Color",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7202,7 +7126,6 @@
           "example": "无",
           "member": "string",
           "name": "ReachedCity",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7211,7 +7134,6 @@
           "example": "无",
           "member": "string",
           "name": "RiskArea",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7220,7 +7142,6 @@
           "example": "无",
           "member": "string",
           "name": "Telephone",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7279,7 +7200,6 @@
       "document": "ResidenceBookletOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -7288,7 +7208,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -7307,7 +7226,6 @@
           "example": "000006498",
           "member": "string",
           "name": "HouseholdNumber",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7316,7 +7234,6 @@
           "example": "喻玺",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7325,7 +7242,6 @@
           "example": "男",
           "member": "string",
           "name": "Sex",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7334,7 +7250,6 @@
           "example": "四川省合江县",
           "member": "string",
           "name": "BirthPlace",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7343,7 +7258,6 @@
           "example": "汉族",
           "member": "string",
           "name": "Nation",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7352,7 +7266,6 @@
           "example": "四川省合江县",
           "member": "string",
           "name": "NativePlace",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7361,7 +7274,6 @@
           "example": "1980年1月11日",
           "member": "string",
           "name": "BirthDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7370,7 +7282,6 @@
           "example": "510522198001110255",
           "member": "string",
           "name": "IdCardNumber",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7379,7 +7290,6 @@
           "example": "高中毕业",
           "member": "string",
           "name": "EducationDegree",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7388,7 +7298,6 @@
           "example": "合江镇",
           "member": "string",
           "name": "ServicePlace",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7397,7 +7306,6 @@
           "example": "家庭户",
           "member": "string",
           "name": "Household",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7406,7 +7314,6 @@
           "example": "上海市徐汇区田林路397号腾云大厦",
           "member": "string",
           "name": "Address",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7415,7 +7322,6 @@
           "example": "无",
           "member": "string",
           "name": "Signature",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7424,7 +7330,6 @@
           "example": "无",
           "member": "string",
           "name": "IssueDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7433,7 +7338,6 @@
           "example": "无",
           "member": "string",
           "name": "HomePageNumber",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7442,7 +7346,6 @@
           "example": "无",
           "member": "string",
           "name": "HouseholderName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7451,7 +7354,6 @@
           "example": "无",
           "member": "string",
           "name": "Relationship",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7460,7 +7362,6 @@
           "example": "无",
           "member": "string",
           "name": "OtherAddresses",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7469,7 +7370,6 @@
           "example": "无",
           "member": "string",
           "name": "ReligiousBelief",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7478,7 +7378,6 @@
           "example": "无",
           "member": "string",
           "name": "Height",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7487,7 +7386,6 @@
           "example": "无",
           "member": "string",
           "name": "BloodType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7496,7 +7394,6 @@
           "example": "无",
           "member": "string",
           "name": "MaritalStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7505,7 +7402,6 @@
           "example": "无",
           "member": "string",
           "name": "VeteranStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7514,7 +7410,6 @@
           "example": "无",
           "member": "string",
           "name": "Profession",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7523,7 +7418,6 @@
           "example": "无",
           "member": "string",
           "name": "MoveToCityInformation",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7532,7 +7426,6 @@
           "example": "无",
           "member": "string",
           "name": "MoveToSiteInformation",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7541,7 +7434,6 @@
           "example": "无",
           "member": "string",
           "name": "RegistrationDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7550,7 +7442,6 @@
           "example": "无",
           "member": "string",
           "name": "FormerName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

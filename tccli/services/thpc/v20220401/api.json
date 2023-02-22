@@ -252,7 +252,7 @@
           "type": "string"
         },
         {
-          "document": "队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>\n<li>SGE默认队列为：all.q。<br>\n",
+          "document": "队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。\n",
           "example": "无",
           "member": "string",
           "name": "QueueName",
@@ -260,7 +260,7 @@
           "type": "string"
         },
         {
-          "document": "添加节点类型。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。",
+          "document": "添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。",
           "example": "无",
           "member": "string",
           "name": "NodeRole",
@@ -274,6 +274,14 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "document": "添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

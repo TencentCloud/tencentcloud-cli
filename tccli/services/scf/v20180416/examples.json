@@ -329,7 +329,7 @@
     "UpdateFunctionCode": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=UpdateFunctionCode\n&FunctionName=test\n&Handler=index.main\n&CosBucketName=<CosBucketName>\n&CosObjectName=<CosObjectName>\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionCode\n<公共请求参数>\n\n{\n    \"CosObjectName\": \"<CosObjectName>\",\n    \"Handler\": \"index.main\",\n    \"CosBucketName\": \"<CosBucketName>\",\n    \"FunctionName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新函数代码"
       }

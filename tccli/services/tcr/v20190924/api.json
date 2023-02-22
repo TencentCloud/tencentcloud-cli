@@ -428,11 +428,11 @@
       "status": "online"
     },
     "DescribeInstanceAll": {
-      "document": "查询全部实例信息",
+      "document": "内部替换接口+DescribeInstanceAllForCoding\n\n查询全部实例信息",
       "input": "DescribeInstanceAllRequest",
       "name": "查询全部实例信息",
       "output": "DescribeInstanceAllResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeInstanceAllNamespaces": {
       "document": "查询所有实例命名空间列表",

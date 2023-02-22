@@ -9367,6 +9367,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "长连接临时token。与Token相同含义，优先取Data，Data为空时，取Token。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -9940,6 +9949,15 @@
           "name": "BytesSpeedList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "同步速度，包括了RecordsSpeedList和BytesSpeedList",
+          "example": "无",
+          "member": "RealTimeTaskSpeed",
+          "name": "Data",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -12085,7 +12103,6 @@
       "document": "DescribeTaskInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "WeData项目ID",
           "example": "1",
           "member": "string",
@@ -12094,7 +12111,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID",
           "example": "202205058668886",
           "member": "string",
@@ -12103,7 +12119,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务实例数据时间",
           "example": "2020-05-05 12:00:00",
           "member": "string",
@@ -12112,7 +12127,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务实例运行时间",
           "example": "2020-05-05 12:04:18",
           "member": "string",
@@ -12131,9 +12145,16 @@
           "example": "无",
           "member": "TaskInstanceDetail",
           "name": "TaskInstanceDetail",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "任务实例详情。与TaskInstanceDetail相同含义，优先取Data，Data为空时，取TaskInstanceDetail\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskInstanceDetail",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13895,6 +13916,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "生成的ddl语句。与DDLSql相同含义，优先取Data，如果Data为空，则取DDLSql。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -18718,6 +18748,32 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RealTimeTaskSpeed": {
+      "document": "实时任务同步速度趋势",
+      "members": [
+        {
+          "default": "",
+          "document": "同步速度条/s列表",
+          "example": "无",
+          "member": "RecordsSpeed",
+          "name": "RecordsSpeedList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同步速度字节/s列表",
+          "example": "无",
+          "member": "BytesSpeed",
+          "name": "BytesSpeedList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

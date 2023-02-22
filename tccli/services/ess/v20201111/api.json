@@ -210,6 +210,13 @@
       "output": "GetTaskResultApiResponse",
       "status": "online"
     },
+    "ModifyApplicationCallbackInfo": {
+      "document": "新增/删除应用callbackinfo\ncallbackinfo包含： 回调地址和签名key\n操作：新增/删除",
+      "input": "ModifyApplicationCallbackInfoRequest",
+      "name": "修改应用callbackinfo",
+      "output": "ModifyApplicationCallbackInfoResponse",
+      "status": "online"
+    },
     "StartFlow": {
       "document": "此接口用于发起流程\n适用场景：见创建签署流程接口。\n注：该接口是“创建电子文档”接口的后置接口，用于激活包含完整合同信息（模板及内容信息）的流程。激活后的流程就是一份待签署的电子合同。",
       "input": "StartFlowRequest",
@@ -4232,6 +4239,23 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyApplicationCallbackInfoRequest": {
+      "document": "ModifyApplicationCallbackInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyApplicationCallbackInfoResponse": {
+      "document": "ModifyApplicationCallbackInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "OccupiedSeal": {
       "document": "持有的电子印章信息",
