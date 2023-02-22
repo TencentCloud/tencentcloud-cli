@@ -659,7 +659,8 @@
           "member": "string",
           "name": "TemplateId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -668,7 +669,8 @@
           "member": "int64",
           "name": "Period",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -677,7 +679,8 @@
           "member": "string",
           "name": "Domains",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -686,7 +689,8 @@
           "member": "int64",
           "name": "PayMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -695,7 +699,8 @@
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -704,7 +709,8 @@
           "member": "string",
           "name": "PackageResourceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -713,7 +719,8 @@
           "member": "int64",
           "name": "UpdateProhibition",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -722,7 +729,38 @@
           "member": "int64",
           "name": "TransferProhibition",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道来源，pc/miniprogram/h5等",
+          "example": "pc",
+          "member": "string",
+          "name": "ChannelFrom",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "订单来源，common正常/dianshi_active点石活动等",
+          "example": "common",
+          "member": "string",
+          "name": "OrderFrom",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "活动id",
+          "example": "11059",
+          "member": "string",
+          "name": "ActivityId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -737,7 +775,8 @@
           "name": "LogId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2171,7 +2210,8 @@
           "member": "int64",
           "name": "Period",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2180,16 +2220,18 @@
           "member": "string",
           "name": "Domains",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "付费模式 0手动在线付费，1使用余额付费。",
+          "document": "付费模式 0手动在线付费，1使用余额付费，2使用特惠包。",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2198,7 +2240,48 @@
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "特惠包ID",
+          "example": "XXX",
+          "member": "string",
+          "name": "PackageResourceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道来源，pc/miniprogram/h5等",
+          "example": "pc",
+          "member": "string",
+          "name": "ChannelFrom",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "订单来源，common正常/dianshi_active点石活动等",
+          "example": "common",
+          "member": "string",
+          "name": "OrderFrom",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "活动id",
+          "example": "11059",
+          "member": "string",
+          "name": "ActivityId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2213,7 +2296,8 @@
           "name": "LogId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2434,7 +2518,8 @@
           "member": "string",
           "name": "Domains",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2443,7 +2528,8 @@
           "member": "string",
           "name": "PassWords",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2452,7 +2538,8 @@
           "member": "string",
           "name": "TemplateId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2461,7 +2548,8 @@
           "member": "int64",
           "name": "PayMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2470,7 +2558,8 @@
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2479,7 +2568,8 @@
           "member": "bool",
           "name": "LockTransfer",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2488,7 +2578,8 @@
           "member": "int64",
           "name": "UpdateProhibition",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2497,7 +2588,38 @@
           "member": "int64",
           "name": "TransferProhibition",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道来源，pc/miniprogram/h5等",
+          "example": "pc",
+          "member": "string",
+          "name": "ChannelFrom",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "订单来源，common正常/dianshi_active点石活动等",
+          "example": "common",
+          "member": "string",
+          "name": "OrderFrom",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "活动id",
+          "example": "11059",
+          "member": "string",
+          "name": "ActivityId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2512,7 +2634,8 @@
           "name": "LogId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

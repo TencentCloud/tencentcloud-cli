@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeImages": {
+      "document": "镜像搜索接口",
+      "input": "DescribeImagesRequest",
+      "name": "镜像搜索接口",
+      "output": "DescribeImagesResponse",
+      "status": "online"
+    },
     "FlowProductRemind": {
       "document": "计量商品用量提醒，用于服务商调用云服务，云服务向客户发送提醒信息",
       "input": "FlowProductRemindRequest",
@@ -29,6 +36,395 @@
     "serviceShortName": "market"
   },
   "objects": {
+    "CVMImageElement": {
+      "document": "对CVM输出的镜像的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像所属商品名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像操作系统具体名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OSName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像操作系统家族：例如 Ubuntu",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OSVendor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像操作系统架构",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OSArch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像版本",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像集成软件",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Software",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像使用次数",
+          "example": "0",
+          "member": "uint64",
+          "name": "UsageTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "CVM发布后镜像ID",
+          "example": "\"\"",
+          "member": "string",
+          "name": "UnImgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像云市场内部ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ItemId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "云市场商品ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "服务商信息",
+          "example": "无",
+          "member": "IsvBasicInfo",
+          "name": "IsvInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像价格信息",
+          "example": "无",
+          "member": "PriceInfo",
+          "name": "PriceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像要求磁盘空间（单位：GB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SpaceRequire",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "操作系统类型（0:unknown；1:linux；2:window）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "OSType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "产品摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Summary",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "CVM原始镜像ID",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RawUnImgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "云市场商品所属服务商UIN",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像所属商品名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否支持cloudinit",
+          "example": "true",
+          "member": "bool",
+          "name": "CloudFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "操作系统key",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OsKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像上架时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "InsertTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeImagesRequest": {
+      "document": "DescribeImages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询结果列表分页每页数据量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结果列表偏移量，等价于数据库查询里的 offset，如offset为10，则从第10条记录开始取",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "镜像商品所属分类ID",
+          "member": "uint64",
+          "name": "CategoryId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云市场内部镜像ID",
+          "member": "uint64",
+          "name": "ItemId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "镜像ID",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索关键词",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像操作系统家族",
+          "member": "string",
+          "name": "OSVendor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像操作系统架构",
+          "member": "string",
+          "name": "OSArch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像要求的磁盘空间上限（单位：GB）",
+          "member": "uint64",
+          "name": "SpaceRequire",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "镜像支持地域",
+          "member": "string",
+          "name": "SupportRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费类型，prepay：预付费，postpay：后付费",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CPU核数",
+          "member": "uint64",
+          "name": "CpuType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "内存大小",
+          "member": "uint64",
+          "name": "MemType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "OS类型",
+          "member": "uint64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务商信息：取值CVM",
+          "member": "string",
+          "name": "IsvInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesResponse": {
+      "document": "DescribeImages返回参数结构体",
+      "members": [
+        {
+          "document": "查询结果总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "镜像结果数组",
+          "member": "CVMImageElement",
+          "name": "ImageSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FlowProductRemindRequest": {
       "document": "FlowProductRemind请求参数结构体",
       "members": [
@@ -262,6 +658,81 @@
         }
       ],
       "type": "object"
+    },
+    "IsvBasicInfo": {
+      "document": "服务商基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "服务商名称",
+          "member": "string",
+          "name": "IsvName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务商名称",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务商UIN",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PriceInfo": {
+      "document": "价格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "按月价格",
+          "member": "uint64",
+          "name": "MonthPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按月折扣价格",
+          "member": "uint64",
+          "name": "MonthDisprice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按小时价格",
+          "member": "uint64",
+          "name": "HourPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按小时折扣价格",
+          "member": "uint64",
+          "name": "HourDisprice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "YunDingOrder": {
       "document": "云鼎订单信息",

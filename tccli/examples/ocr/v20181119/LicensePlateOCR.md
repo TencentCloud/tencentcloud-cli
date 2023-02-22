@@ -1,6 +1,6 @@
 **Example 1: 车牌识别示例代码**
 
-
+车牌识别
 
 Input: 
 
@@ -13,29 +13,29 @@ Output:
 ```
 {
     "Response": {
-        "Number": "京N0L9U8",
-        "Confidence": 99,
-        "Rect": {
-            "X": 217,
-            "Y": 233,
-            "Width": 170,
-            "Height": 21
-        },
         "Color": "蓝",
+        "Confidence": 99,
         "LicensePlateInfos": [
             {
-                "Color": "xx",
-                "Confidence": 0,
-                "Number": "xx",
+                "Color": "蓝",
+                "Confidence": 99,
+                "Number": "京AF0236",
                 "Rect": {
-                    "Y": 0,
-                    "X": 0,
-                    "Height": 0,
-                    "Width": 0
+                    "Height": 66,
+                    "Width": 135,
+                    "X": 426,
+                    "Y": 423
                 }
             }
         ],
-        "RequestId": "210103d3-db06-4691-abe0-c0853aae606b"
+        "Number": "京AF0236",
+        "Rect": {
+            "Height": 66,
+            "Width": 135,
+            "X": 426,
+            "Y": 423
+        },
+        "RequestId": "5141467c-0a67-4f7c-b1c5-8147d84681a1"
     }
 }
 ```

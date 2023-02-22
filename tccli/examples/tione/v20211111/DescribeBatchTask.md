@@ -1,6 +1,6 @@
 **Example 1: 查询跑批任务**
 
-
+查看单个离线批处理任务详情
 
 Input: 
 
@@ -51,6 +51,9 @@ Output:
                     },
                     "MappingPath": "xx"
                 }
+            ],
+            "PodList": [
+                "batch-xxx-xxx-worker-0"
             ],
             "CodePackagePath": {
                 "Paths": [

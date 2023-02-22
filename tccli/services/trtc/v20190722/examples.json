@@ -232,6 +232,22 @@
         "title": "移出用户"
       }
     ],
+    "SetUserBlocked": [
+      {
+        "document": "",
+        "input": "https://trtc.tencentcloudapi.com/?Action=SetUserBlocked\n&SdkAppId=1400188366\n&RoomId=10006\n&UserId=29376\n&IsMute=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"44e494f6-8010-4bb2-9a9d-ba5fd191353a\"\n    }\n}",
+        "title": "设置音视频状态"
+      }
+    ],
+    "SetUserBlockedByStrRoomId": [
+      {
+        "document": "",
+        "input": "https://trtc.tencentcloudapi.com/?Action=SetUserBlockedByStrRoomId\n&SdkAppId=1400188366\n&StrRoomId=”10006“\n&UserId=“29376”\n&IsMute=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"44e494f6-8010-4bb2-9a9d-ba5fd191353a\"\n    }\n}",
+        "title": "设置字符串房间音视频状态"
+      }
+    ],
     "StartMCUMixTranscode": [
       {
         "document": "启动指定房间（房间号为3560）的云端混流，同时指定各路画面按屏幕分享模板排布。\n\n设置云端混流参数如下：\n- CDN直播流ID：1400188366_3560_mix。\n- 录制文件名：1400188366_3560_mix_file。\n- CDN直播流视频参数：视频宽为1280、高为720，视频码率为1560kbps，视频帧率为15，gop为2秒。\n- CDN直播流音频参数：音频采样率为48kHz，音频码率为64kbps，音频声道数为双声道。\n- 各路画面按屏幕分享模板排布，占据屏幕左侧大画面的视频流为用户(main_pc)的屏幕分享。",

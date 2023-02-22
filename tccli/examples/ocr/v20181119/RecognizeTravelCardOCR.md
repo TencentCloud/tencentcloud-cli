@@ -1,6 +1,6 @@
 **Example 1: 通信行程卡识别示例代码**
 
-
+通信行程卡识别
 
 Input: 
 
@@ -13,16 +13,14 @@ Output:
 ```
 {
     "Response": {
-        "RiskArea": [
-            "xx"
-        ],
+        "Color": "绿色",
         "ReachedCity": [
-            "xx"
+            "上海市"
         ],
-        "Color": "xx",
-        "Telephone": "xx",
-        "RequestId": "xx",
-        "Time": "XXXX - XX - XX XX: XX: XX"
+        "RequestId": "49050856-4804-406b-821b-b3d750de3692",
+        "RiskArea": [],
+        "Telephone": "150****3634",
+        "Time": "2022.07.08 11:11:39"
     }
 }
 ```

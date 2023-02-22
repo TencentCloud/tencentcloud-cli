@@ -1,24 +1,24 @@
 **Example 1: 事业单位法人证书识别示例代码**
 
-
+事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等
 
 Input: 
 
 ```
 tccli ocr InstitutionOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://xx/a.jpg 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RegId": "100XXX",
-        "ValidDate": "自xxxx年xx月xx日至20xx年xx月xx日",
-        "Location": "武汉市武昌区雄楚路xxx号",
-        "Name": "长江",
-        "LegalPerson": "xx",
-        "RequestId": "d60bba4c-9000-4387-8834-bef92e80142f"
+        "LegalPerson": "李明",
+        "Location": "武汉市武昌区雄楚路123号",
+        "Name": "长江交通职业技术学院",
+        "RegId": "",
+        "RequestId": "3824099f-bf5b-40a2-af13-11dfca689f55",
+        "ValidDate": "自2015年03月30日至2020年03月30日"
     }
 }
 ```

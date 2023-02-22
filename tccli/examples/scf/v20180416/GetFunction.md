@@ -74,6 +74,7 @@ Output:
             }
         ],
         "ClsLogsetId": "xx",
+        "LogType": "xx",
         "FunctionId": "xx",
         "FunctionVersion": "xx",
         "FunctionName": "xx",
@@ -96,6 +97,7 @@ Output:
         "ClsTopicId": "xx",
         "AddTime": "2020-09-22 00:00:00",
         "MemorySize": 128,
+        "DeployMode": "xx",
         "CfsConfig": {
             "CfsInsList": [
                 {
@@ -114,6 +116,14 @@ Output:
         "Timeout": 3,
         "StatusDesc": "xx",
         "TraceEnable": "xx",
+        "ImageConfig": {
+            "RegistryId": "xx",
+            "Args": "xx",
+            "ImageUri": "xx",
+            "EntryPoint": "xx",
+            "Command": "xx",
+            "ImageType": "xx"
+        },
         "CodeInfo": "xx",
         "AsyncRunEnable": "xx",
         "VpcConfig": {

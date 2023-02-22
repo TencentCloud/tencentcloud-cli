@@ -421,6 +421,32 @@
       ],
       "usage": "both"
     },
+    "ApmConfig": {
+      "document": "APM配置",
+      "members": [
+        {
+          "default": "",
+          "document": "APM实例所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "APM实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AsyncEvent": {
       "document": "异步事件",
       "members": [
@@ -1069,6 +1095,24 @@
           "visibility": 1
         },
         {
+          "document": "是否使用GPU进行计算",
+          "example": "FALSE",
+          "member": "string",
+          "name": "UseGpu",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "用于小程序，GPU集群， 不对外",
+          "example": "default",
+          "member": "string",
+          "name": "Stamp",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
           "document": "函数绑定的角色",
           "example": "SCF_ExecuteRole",
           "member": "string",
@@ -1103,6 +1147,15 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "document": "EipConfig固定ip配置",
+          "example": "无",
+          "member": "EipConfig",
+          "name": "EipConfig",
+          "required": false,
+          "type": "object",
+          "visibility": 2
         },
         {
           "document": "函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP",
@@ -1195,6 +1248,42 @@
           "visibility": 1
         },
         {
+          "document": "是否自动创建cls索引，TRUE 为开启，FALSE为关闭",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AutoDeployClsTopicIndex",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "是否自动创建cls主题，TRUE 为开启，FALSE为关闭",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AutoCreateClsTopic",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "函数部署模式，代码部署或者镜像部署",
+          "example": "code",
+          "member": "string",
+          "name": "DeployMode",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "函数日志格式，default为全量格式，simplified为精简格式，默认值为default",
+          "example": "default",
+          "member": "string",
+          "name": "LogFormat",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
           "document": "HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS",
           "example": "WS",
           "member": "string",
@@ -1213,6 +1302,33 @@
           "visibility": 1
         },
         {
+          "document": "APM配置",
+          "example": "无",
+          "member": "ApmConfig",
+          "name": "ApmConfig",
+          "required": false,
+          "type": "object",
+          "visibility": 2
+        },
+        {
+          "document": "资源类型，枚举值CPU、GPU",
+          "example": "\"\"",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "资源规格，当NodeType为GPU时，必填",
+          "example": "\"\"",
+          "member": "string",
+          "name": "NodeSpec",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
           "document": "单实例多并发配置。只支持Web函数。",
           "example": "无",
           "member": "InstanceConcurrencyConfig",
@@ -1220,6 +1336,24 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "document": "是否开启Dns缓存能力。只支持EVENT函数。默认为FALSE，TRUE 为开启，FALSE为关闭",
+          "example": "FALSE",
+          "member": "string",
+          "name": "DnsCache",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "函数超频相关配置",
+          "example": "无",
+          "member": "OverClockConfig",
+          "name": "OverClockConfig",
+          "required": false,
+          "type": "object",
+          "visibility": 2
         },
         {
           "document": "内网访问配置",
@@ -1736,6 +1870,21 @@
         }
       ],
       "type": "object"
+    },
+    "EipConfig": {
+      "document": "EipConfig",
+      "members": [
+        {
+          "default": "",
+          "document": "是否固定IP，[\"TRUE\",\"FALSE\"]",
+          "member": "string",
+          "name": "EipFixed",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "EipConfigIn": {
       "document": "公网访问固定ip配置",
@@ -3129,6 +3278,42 @@
           "visibility": 1
         },
         {
+          "document": "日志类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogType",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "部署模式，代码部署或镜像部署\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "code",
+          "member": "string",
+          "name": "DeployMode",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "镜像配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageConfig",
+          "name": "ImageConfig",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "函数日志格式，default为全量格式，simplified为精简格式",
+          "example": "default",
+          "member": "string",
+          "name": "LogFormat",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
           "document": "HTTP函数支持的访问协议。当前支持WebSockets协议。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -3145,6 +3330,60 @@
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "APM配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApmConfig",
+          "name": "ApmConfig",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "资源类型，枚举值CPU、GPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "资源规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeSpec",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "单实例多并发配置。只支持Web函数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceConcurrencyConfig",
+          "name": "InstanceConcurrencyConfig",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "函数超频相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OverClockConfig",
+          "name": "OverClockConfig",
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "是否开启DNS缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DnsCache",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         },
         {
           "document": "内网访问配置\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5276,6 +5515,23 @@
       ],
       "usage": "out"
     },
+    "OverClockConfig": {
+      "document": "函数超频属性配置",
+      "members": [
+        {
+          "default": "",
+          "document": "超频缓存时长",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeOut",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "ProtocolParams": {
       "document": "HTTP函数支持其他访问协议的参数",
       "members": [
@@ -6570,7 +6826,8 @@
           "member": "string",
           "name": "FunctionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6579,7 +6836,8 @@
           "member": "string",
           "name": "Handler",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6588,7 +6846,8 @@
           "member": "string",
           "name": "CosBucketName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6597,7 +6856,8 @@
           "member": "string",
           "name": "CosObjectName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6606,7 +6866,8 @@
           "member": "string",
           "name": "ZipFile",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6615,7 +6876,8 @@
           "member": "string",
           "name": "Namespace",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6624,7 +6886,18 @@
           "member": "string",
           "name": "CosBucketRegion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "TempCos中的对象名称",
+          "example": "<TempCos中的对象名称>",
+          "member": "string",
+          "name": "TempCosObjectName",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         },
         {
           "default": "",
@@ -6633,7 +6906,8 @@
           "member": "string",
           "name": "InstallDependency",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6642,7 +6916,8 @@
           "member": "string",
           "name": "EnvId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6651,7 +6926,8 @@
           "member": "string",
           "name": "Publish",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6660,7 +6936,8 @@
           "member": "Code",
           "name": "Code",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6669,7 +6946,8 @@
           "member": "string",
           "name": "CodeSource",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

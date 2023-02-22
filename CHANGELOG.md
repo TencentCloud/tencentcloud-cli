@@ -1,3 +1,360 @@
+# Release 3.0.708.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 41 次发布
+
+发布时间：2023-02-22 01:01:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BGPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstance)
+
+	* 新增成员：GiftServiceBandWidth
+
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 21 次发布
+
+发布时间：2023-02-22 01:05:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AdvancedRetentionPolicy](http://document.tencentcloudapi.woa.com/document/product/362/15669#AdvancedRetentionPolicy)
+
+修改数据结构：
+
+* [AutoSnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/362/15669#AutoSnapshotPolicy)
+
+	* 新增成员：RetentionMonths, RetentionAmount, AdvancedRetentionPolicy
+
+* [Policy](http://document.tencentcloudapi.woa.com/document/product/362/15669#Policy)
+
+	* 新增成员：DayOfMonth, IntervalDays
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 18 次发布
+
+发布时间：2023-02-22 01:07:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyStorageSetting](http://document.tencentcloudapi.woa.com/document/product/1132/77095)
+
+修改数据结构：
+
+* [NatInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NatInstanceInfo)
+
+	* 新增成员：RuleUsed, RuleMax
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 34 次发布
+
+发布时间：2023-02-22 01:12:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyBackupConfig](http://document.tencentcloudapi.woa.com/document/product/1003/48090)
+
+	* <font color="#dd0000">**修改入参**：</font>BackupTimeBeg, BackupTimeEnd
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 8 次发布
+
+发布时间：2023-02-22 01:13:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDomainBatch](http://document.tencentcloudapi.woa.com/document/product/242/48942)
+
+	* 新增入参：ChannelFrom, OrderFrom, ActivityId
+
+* [RenewDomainBatch](http://document.tencentcloudapi.woa.com/document/product/242/49210)
+
+	* 新增入参：PackageResourceId, ChannelFrom, OrderFrom, ActivityId
+
+* [TransferInDomainBatch](http://document.tencentcloudapi.woa.com/document/product/242/49195)
+
+	* 新增入参：ChannelFrom, OrderFrom, ActivityId
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 25 次发布
+
+发布时间：2023-02-22 01:14:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApplyLivenessToken](http://document.tencentcloudapi.woa.com/document/product/1007/76410)
+* [ApplySdkVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76415)
+* [ApplyWebVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76414)
+* [CreateUploadUrl](http://document.tencentcloudapi.woa.com/document/product/1007/76409)
+* [DetectReflectLivenessAndCompare](http://document.tencentcloudapi.woa.com/document/product/1007/66076)
+* [GenerateReflectSequence](http://document.tencentcloudapi.woa.com/document/product/1007/76417)
+* [GetLivenessResult](http://document.tencentcloudapi.woa.com/document/product/1007/76413)
+* [GetSdkVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/76412)
+* [GetWebVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/76411)
+* [VideoLivenessCompare](http://document.tencentcloudapi.woa.com/document/product/1007/76416)
+
+新增数据结构：
+
+* [CardVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardVerifyResult)
+* [CompareResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CompareResult)
+* [FileInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#FileInfo)
+* [VerificationDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#VerificationDetail)
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 16 次发布
+
+发布时间：2023-02-22 01:15:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRecordInfo](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTaskInfo](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyRecordInfo](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [StartRecord](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [StopRecord](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [RecordInfo](http://document.tencentcloudapi.woa.com/document/product/607/35375#RecordInfo)
+* [SubscribeRecordUserIds](http://document.tencentcloudapi.woa.com/document/product/607/35375#SubscribeRecordUserIds)
+
+
+
+## 云市场(market) 版本：2019-10-10
+
+### 第 3 次发布
+
+发布时间：2023-02-22 01:21:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeImages](http://document.tencentcloudapi.woa.com/document/product/306/77096)
+
+新增数据结构：
+
+* [CVMImageElement](http://document.tencentcloudapi.woa.com/document/product/306/59175#CVMImageElement)
+* [IsvBasicInfo](http://document.tencentcloudapi.woa.com/document/product/306/59175#IsvBasicInfo)
+* [PriceInfo](http://document.tencentcloudapi.woa.com/document/product/306/59175#PriceInfo)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 16 次发布
+
+发布时间：2023-02-22 01:21:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceDetail](http://document.tencentcloudapi.woa.com/document/product/240/38576#InstanceDetail)
+
+	* 新增成员：InstanceTaskDesc, MongosNodeNum, MongosMemory, MongosCpuNum, ConfigServerNodeNum, ConfigServerMemory, ConfigServerVolume, ConfigServerCpuNum, ReadonlyNodeNum
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 44 次发布
+
+发布时间：2023-02-22 01:21:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DescribePolicyConditionListResponseDeprecatingInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#DescribePolicyConditionListResponseDeprecatingInfo)
+
+修改数据结构：
+
+* [DescribePolicyConditionListCondition](http://document.tencentcloudapi.woa.com/document/product/248/30354#DescribePolicyConditionListCondition)
+
+	* 新增成员：DeprecatingInfo
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 24 次发布
+
+发布时间：2023-02-22 01:28:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/583/18586)
+
+	* 新增入参：UseGpu, Stamp, EipConfig, AutoDeployClsTopicIndex, AutoCreateClsTopic, DeployMode, LogFormat, ApmConfig, NodeType, NodeSpec, DnsCache, OverClockConfig
+
+* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
+
+	* 新增出参：LogType, DeployMode, ImageConfig, LogFormat, ApmConfig, NodeType, NodeSpec, InstanceConcurrencyConfig, OverClockConfig, DnsCache
+
+* [UpdateFunctionCode](http://document.tencentcloudapi.woa.com/document/product/583/18581)
+
+	* 新增入参：TempCosObjectName
+
+
+新增数据结构：
+
+* [ApmConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#ApmConfig)
+* [EipConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#EipConfig)
+* [OverClockConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#OverClockConfig)
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 17 次发布
+
+发布时间：2023-02-22 01:32:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeInstanceAll
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 18 次发布
+
+发布时间：2023-02-22 01:34:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeModelServiceCallInfo](http://document.tencentcloudapi.woa.com/document/product/851/76495)
+
+	* 新增出参：DefaultNginxGatewayCallInfo
+
+
+新增数据结构：
+
+* [Container](http://document.tencentcloudapi.woa.com/document/product/851/74915#Container)
+* [ContainerStatus](http://document.tencentcloudapi.woa.com/document/product/851/74915#ContainerStatus)
+* [DefaultNginxGatewayCallInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#DefaultNginxGatewayCallInfo)
+* [Pod](http://document.tencentcloudapi.woa.com/document/product/851/74915#Pod)
+
+修改数据结构：
+
+* [BatchTaskDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#BatchTaskDetail)
+
+	* 新增成员：PodList
+
+* [DataConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#DataConfig)
+
+	* <font color="#dd0000">**修改成员**：</font>MappingPath, DataSourceType, DataSetSource, COSSource, CFSSource, HDFSSource
+
+* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
+
+	* 新增成员：Pods
+
+* [TrainingModelVersionDTO](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingModelVersionDTO)
+
+	* 新增成员：ReasoningEnvironmentId, TrainingJobVersion, TrainingPreference, AutoMLTaskId, IsQAT
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 22 次发布
+
+发布时间：2023-02-22 01:36:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SetUserBlocked](http://document.tencentcloudapi.woa.com/document/product/647/77098)
+* [SetUserBlockedByStrRoomId](http://document.tencentcloudapi.woa.com/document/product/647/77097)
+
+
+
 # Release 3.0.707.1
 
 ## 费用中心(billing) 版本：2018-07-09

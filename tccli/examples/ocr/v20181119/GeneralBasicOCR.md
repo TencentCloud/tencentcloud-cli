@@ -1,6 +1,6 @@
 **Example 1: 通用印刷体识别示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralBasicOCR)**
 
-
+识别多场景、任意版面下整图文字的识别
 
 Input: 
 
@@ -13,192 +13,229 @@ Output:
 ```
 {
     "Response": {
-        "Angel": 6.5,
+        "Angel": 359.989990234375,
+        "Language": "zh",
+        "PdfPageSize": 0,
+        "RequestId": "f50122de-c766-4fdc-90e5-73a984a259cb",
         "TextDetections": [
             {
-                "AdvancedInfo": "xx",
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}",
+                "Confidence": 100,
+                "DetectedText": "Sun",
+                "ItemPolygon": {
+                    "Height": 35,
+                    "Width": 74,
+                    "X": 464,
+                    "Y": 100
+                },
                 "Polygon": [
                     {
-                        "Y": 211,
-                        "X": 450
+                        "X": 464,
+                        "Y": 100
                     },
                     {
-                        "Y": 223,
-                        "X": 560
+                        "X": 538,
+                        "Y": 100
                     },
                     {
-                        "Y": 244,
-                        "X": 558
+                        "X": 538,
+                        "Y": 135
                     },
                     {
-                        "Y": 232,
-                        "X": 448
+                        "X": 464,
+                        "Y": 135
                     }
                 ],
-                "Confidence": 99,
-                "ItemPolygon": {
-                    "Y": 273,
-                    "X": 473,
-                    "Height": 22,
-                    "Width": 112
-                },
-                "WordCoordPoint": [
-                    {
-                        "WordCoordinate": [
-                            {
-                                "Y": 0,
-                                "X": 0
-                            }
-                        ]
-                    }
-                ],
-                "DetectedText": "xx",
-                "Words": [
-                    {
-                        "Confidence": 0,
-                        "Character": "xx"
-                    }
-                ]
+                "WordCoordPoint": [],
+                "Words": []
             },
             {
-                "AdvancedInfo": "xx",
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":2}}",
+                "Confidence": 100,
+                "DetectedText": "1月8日",
+                "ItemPolygon": {
+                    "Height": 18,
+                    "Width": 52,
+                    "X": 476,
+                    "Y": 141
+                },
                 "Polygon": [
                     {
-                        "Y": 233,
-                        "X": 370
+                        "X": 476,
+                        "Y": 141
                     },
                     {
-                        "Y": 265,
-                        "X": 649
+                        "X": 528,
+                        "Y": 141
                     },
                     {
-                        "Y": 331,
-                        "X": 642
+                        "X": 528,
+                        "Y": 159
                     },
                     {
-                        "Y": 299,
-                        "X": 362
+                        "X": 476,
+                        "Y": 159
                     }
                 ],
-                "Confidence": 99,
-                "ItemPolygon": {
-                    "Y": 304,
-                    "X": 396,
-                    "Width": 282,
-                    "Height": 68
-                },
-                "WordCoordPoint": [
-                    {
-                        "WordCoordinate": [
-                            {
-                                "Y": 0,
-                                "X": 0
-                            }
-                        ]
-                    }
-                ],
-                "DetectedText": "xx",
-                "Words": [
-                    {
-                        "Confidence": 0,
-                        "Character": "xx"
-                    }
-                ]
+                "WordCoordPoint": [],
+                "Words": []
             },
             {
-                "AdvancedInfo": "xx",
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":3}}",
+                "Confidence": 100,
+                "DetectedText": "八色鸫",
+                "ItemPolygon": {
+                    "Height": 28,
+                    "Width": 85,
+                    "X": 62,
+                    "Y": 443
+                },
                 "Polygon": [
                     {
-                        "Y": 318,
-                        "X": 402
+                        "X": 62,
+                        "Y": 443
                     },
                     {
-                        "Y": 339,
-                        "X": 587
+                        "X": 147,
+                        "Y": 442
                     },
                     {
-                        "Y": 370,
-                        "X": 584
+                        "X": 147,
+                        "Y": 470
                     },
                     {
-                        "Y": 349,
-                        "X": 398
+                        "X": 63,
+                        "Y": 471
                     }
                 ],
-                "Confidence": 99,
-                "ItemPolygon": {
-                    "Y": 385,
-                    "X": 437,
-                    "Width": 188,
-                    "Height": 32
-                },
-                "WordCoordPoint": [
-                    {
-                        "WordCoordinate": [
-                            {
-                                "Y": 0,
-                                "X": 0
-                            }
-                        ]
-                    }
-                ],
-                "DetectedText": "xx",
-                "Words": [
-                    {
-                        "Confidence": 0,
-                        "Character": "xx"
-                    }
-                ]
+                "WordCoordPoint": [],
+                "Words": []
             },
             {
-                "AdvancedInfo": "xx",
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":4}}",
+                "Confidence": 100,
+                "DetectedText": "Pitta nympha",
+                "ItemPolygon": {
+                    "Height": 17,
+                    "Width": 96,
+                    "X": 61,
+                    "Y": 482
+                },
                 "Polygon": [
                     {
-                        "Y": 366,
-                        "X": 386
+                        "X": 61,
+                        "Y": 482
                     },
                     {
-                        "Y": 390,
-                        "X": 591
+                        "X": 157,
+                        "Y": 483
                     },
                     {
-                        "Y": 423,
-                        "X": 587
+                        "X": 157,
+                        "Y": 500
                     },
                     {
-                        "Y": 399,
-                        "X": 382
+                        "X": 61,
+                        "Y": 499
                     }
                 ],
-                "Confidence": 99,
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":5}}",
+                "Confidence": 100,
+                "DetectedText": "八色鸫雌鸟和雄鸟一样漂亮。它经常在亚热带的森林地面上走动,捕",
                 "ItemPolygon": {
-                    "Y": 435,
-                    "X": 427,
-                    "Width": 207,
-                    "Height": 34
+                    "Height": 18,
+                    "Width": 426,
+                    "X": 60,
+                    "Y": 506
                 },
-                "WordCoordPoint": [
+                "Polygon": [
                     {
-                        "WordCoordinate": [
-                            {
-                                "Y": 0,
-                                "X": 0
-                            }
-                        ]
+                        "X": 60,
+                        "Y": 506
+                    },
+                    {
+                        "X": 486,
+                        "Y": 503
+                    },
+                    {
+                        "X": 486,
+                        "Y": 521
+                    },
+                    {
+                        "X": 60,
+                        "Y": 523
                     }
                 ],
-                "DetectedText": "xx",
-                "Words": [
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":5}}",
+                "Confidence": 100,
+                "DetectedText": "食落叶下的昆虫和晰蜴等小动物,唱歌时会飞到树上。因为森林砍伐",
+                "ItemPolygon": {
+                    "Height": 16,
+                    "Width": 426,
+                    "X": 60,
+                    "Y": 530
+                },
+                "Polygon": [
                     {
-                        "Confidence": 0,
-                        "Character": "xx"
+                        "X": 60,
+                        "Y": 530
+                    },
+                    {
+                        "X": 486,
+                        "Y": 530
+                    },
+                    {
+                        "X": 486,
+                        "Y": 546
+                    },
+                    {
+                        "X": 60,
+                        "Y": 546
                     }
-                ]
+                ],
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":5}}",
+                "Confidence": 100,
+                "DetectedText": "和非法的玩赏鸟贸易,现在它的数量已明显减少。",
+                "ItemPolygon": {
+                    "Height": 18,
+                    "Width": 308,
+                    "X": 59,
+                    "Y": 554
+                },
+                "Polygon": [
+                    {
+                        "X": 59,
+                        "Y": 554
+                    },
+                    {
+                        "X": 367,
+                        "Y": 552
+                    },
+                    {
+                        "X": 368,
+                        "Y": 570
+                    },
+                    {
+                        "X": 59,
+                        "Y": 572
+                    }
+                ],
+                "WordCoordPoint": [],
+                "Words": []
             }
-        ],
-        "RequestId": "xx",
-        "Language": "xx",
-        "PdfPageSize": 0
+        ]
     }
 }
 ```

@@ -8565,7 +8565,6 @@
       "document": "DescribeClusterKubeconfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-65r1c5nu",
           "member": "string",
@@ -8575,7 +8574,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "默认false 获取内网，是否获取外网访问的kubeconfig",
           "example": "true",
           "member": "bool",
@@ -8595,7 +8593,6 @@
           "example": "xxx",
           "member": "string",
           "name": "Kubeconfig",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

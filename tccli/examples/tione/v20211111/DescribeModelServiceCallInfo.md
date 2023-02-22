@@ -1,12 +1,12 @@
-**Example 1: 查询服务调用**
+**Example 1: 服务调用地址查询**
 
-
+查询某个服务
 
 Input: 
 
 ```
 tccli tione DescribeModelServiceCallInfo --cli-unfold-argument  \
-    --ServiceGroupId ms-xxxx
+    --ServiceGroupId ms-p8w5zvh7
 ```
 
 Output: 
@@ -14,22 +14,25 @@ Output:
 {
     "Response": {
         "ServiceCallInfo": {
-            "ServiceGroupId": "ms-xxxxx",
-            "InnerHttpAddr": "http://service-xxxxx-00000-in.gz.apigw.tencentcs.com:8009/tione",
-            "InnerHttpsAddr": "https://service-xxxxx-000000-in.gz.apigw.tencentcs.com:9009/tione",
-            "OuterHttpAddr": "http://service-xxxx-00000.gz.apigw.tencentcs.com:80/tione",
-            "OuterHttpsAddr": "https://service-xxxx-00000.gz.apigw.tencentcs.com:443/tione",
+            "ServiceGroupId": "ms-p8w5zvh7",
+            "InnerHttpAddr": "http://service-cmpdh0cg-1308945662-in.gz.apigw.tencentcs.com:8001/tione",
+            "InnerHttpsAddr": "https://service-cmpdh0cg-1308945662-in.gz.apigw.tencentcs.com:9001/tione",
+            "OuterHttpAddr": "http://service-cmpdh0cg-1308945662.gz.apigw.tencentcs.com:80/tione",
+            "OuterHttpsAddr": "https://service-cmpdh0cg-1308945662.gz.apigw.tencentcs.com:443/tione",
             "AppKey": "",
             "AppSecret": ""
         },
         "InferGatewayCallInfo": {
-            "SubnetId": "xx",
-            "VpcHttpsAddr": "xx",
             "VpcHttpAddr": "xx",
+            "VpcHttpsAddr": "xx",
+            "VpcGrpcTlsAddr": "xx",
             "VpcId": "xx",
-            "VpcGrpcTlsAddr": "xx"
+            "SubnetId": "xx"
         },
-        "RequestId": "5203eb3a-366e-4e14-bd59-afe109849377"
+        "DefaultNginxGatewayCallInfo": {
+            "Host": "xx"
+        },
+        "RequestId": "8db93f56-6061-44ae-9e69-41ec47577db4"
     }
 }
 ```

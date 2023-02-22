@@ -1,6 +1,6 @@
 **Example 1: 健康码识别示例代码**
 
-
+健康码识别
 
 Input: 
 
@@ -13,17 +13,17 @@ Output:
 ```
 {
     "Response": {
-        "Name": "京XX",
-        "Time": "XX - XX XX: XX: XX",
         "Color": "绿色",
-        "TestingResult": "48小时阴性",
-        "TestingInterval": "xx",
-        "TestingTime": "xx",
-        "IDNumber": "xx",
-        "Vaccination": "xx",
-        "SpotName": "xx",
-        "VaccinationTime": "xx",
-        "RequestId": "210103d3-db06-4691-abe0-c0853aae606b"
+        "IDNumber": "",
+        "Name": "王*一",
+        "RequestId": "632c1770-ef32-45e3-b4fc-2cc93ac0bad3",
+        "SpotName": "",
+        "TestingInterval": "48小时",
+        "TestingResult": "阴性",
+        "TestingTime": "2022-01-15 22:52",
+        "Time": "01-08 17:05:05",
+        "Vaccination": "已完成全程接种",
+        "VaccinationTime": "2021-07-25"
     }
 }
 ```
