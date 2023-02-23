@@ -2459,10 +2459,20 @@
         },
         {
           "default": "",
-          "document": "音量，范围 0~100，默认为 50。",
+          "document": "<del>音量，范围 0~100，默认为 50。</del>（已废弃，请采用 SetRealVolumeInput ）",
           "example": "无",
           "member": "SetVolumeCommandInput",
           "name": "SetVolumeInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "真实音量，范围 0~100，默认为 50。",
+          "example": "无",
+          "member": "SetRealVolumeCommandInput",
+          "name": "SetRealVolumeInput",
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -3567,6 +3577,22 @@
       ],
       "usage": "in"
     },
+    "SetRealVolumeCommandInput": {
+      "document": "设置真实音量。",
+      "members": [
+        {
+          "default": "",
+          "document": "真实音量大小，取值范围为 0~100，默认值为 50。",
+          "example": "50",
+          "member": "int64",
+          "name": "RealVolume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SetVolumeCommandInput": {
       "document": "设置音量。",
       "members": [
@@ -3674,7 +3700,7 @@
         },
         {
           "default": "",
-          "document": "指令，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>\n<li>SetVolume：设置音量</li>",
+          "document": "指令，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>\n<li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>\n<li>SetRealVolume：设置真实音量</li>",
           "example": "Play",
           "member": "string",
           "name": "Command",
@@ -3746,10 +3772,19 @@
         },
         {
           "default": "",
-          "document": "音量，当Command取SetVolume时，必填。",
+          "document": "<del>音量，当Command取SetVolume时，必填。</del>\n（已废弃，请采用 SetRealVolumeCommandInput ）",
           "example": "无",
           "member": "SetVolumeCommandInput",
           "name": "SetVolumeCommandInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "真实音量，当Command取SetRealVolume时，必填。",
+          "example": "无",
+          "member": "SetRealVolumeCommandInput",
+          "name": "SetRealVolumeCommandInput",
           "required": false,
           "type": "object"
         }
@@ -3773,7 +3808,7 @@
       "members": [
         {
           "default": "",
-          "document": "可同时传入多个指令，顺序执行。取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>\n<li>SetVolume：设置音量</li>",
+          "document": "可同时传入多个指令，顺序执行。取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>\n<li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>\n<li>SetRealVolume：设置真实音量</li>",
           "example": "无",
           "member": "string",
           "name": "Command",
@@ -3853,10 +3888,20 @@
         },
         {
           "default": "",
-          "document": "音量，当Command取SetVolume时，必填。",
+          "document": "<del>音量，当Command取SetVolume时，必填。</del>\n（已废弃，请采用 SetRealVolumeCommandInput）",
           "example": "无",
           "member": "SetVolumeCommandInput",
           "name": "SetVolumeCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "真实音量，当Command取SetRealVolume时，必填。",
+          "example": "无",
+          "member": "SetRealVolumeCommandInput",
+          "name": "SetRealVolumeCommandInput",
           "required": false,
           "type": "object",
           "value_allowed_null": false

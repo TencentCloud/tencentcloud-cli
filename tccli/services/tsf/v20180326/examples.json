@@ -123,8 +123,8 @@
     "CreateContainGroup": [
       {
         "document": "创建容器部署组",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateContainGroup\r\n&CpuRequest=0.25\r\n&MemRequest=128\r\n&InstanceNum=1\r\n&ApplicationId=application-xxxxxxx\r\n&GroupName=consumer\r\n&NamespaceId=namespace-xxxxxxx\r\n&ClusterId=cls-xxxxxxx\r\n&AccessType=2\r\n&ProtocolPorts.0.Protocol=TCP\r\n&ProtocolPorts.0.Port=90\r\n&ProtocolPorts.0.TargetPort=90\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"39bb8e88-1ccd-4204-9f9e-56804c980a31\",\n        \"Result\": \"group-xxxxxxx\"\n    }\n}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateContainGroup\n&CpuRequest=0.25\n&MemRequest=128\n&InstanceNum=1\n&ApplicationId=application-xxxxxxx\n&GroupName=consumer\n&NamespaceId=namespace-xxxxxxx\n&ClusterId=cls-xxxxxxx\n&AccessType=2\n&ProtocolPorts.0.Protocol=TCP\n&ProtocolPorts.0.Port=90\n&ProtocolPorts.0.TargetPort=90\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"39bb8e88-1ccd-4204-9f9e-56804c980a31\",\n        \"Result\": \"group-xxxxxxx（已废弃，请使用 CreateGroup 和 DeployContainerGroup 创建和部署容器部署组）\"\n    }\n}",
         "title": "创建容器部署组"
       }
     ],
@@ -854,7 +854,7 @@
     ],
     "DescribeInvocationMetricDataDimension": [
       {
-        "document": "",
+        "document": "demo",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInvocationMetricDataDimension\n<公共请求参数>\n\n{\n    \"StartTime\": \"xx\",\n    \"DimensionName\": \"xx\",\n    \"Limit\": 0,\n    \"SearchWord\": \"xx\",\n    \"Offset\": 0,\n    \"EndTime\": \"xx\",\n    \"MetricDimensionValues\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": [\n                \"xx\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                \"xx\"\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "demo"

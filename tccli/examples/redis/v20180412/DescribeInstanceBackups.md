@@ -1,46 +1,42 @@
-**Example 1: 请求示例**
+**Example 1: 示例1**
 
-
+通过该接口查询实例 crs-c7nuafdt 的备份列表。
 
 Input: 
 
 ```
 tccli redis DescribeInstanceBackups --cli-unfold-argument  \
-    --Limit 5 \
-    --Offset 0 \
-    --InstanceId crs-5a4py64p
+    --Status 2 \
+    --InstanceId crs-c7nuafdt \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2d4387ee-2011-449e-a32b-87f9366f3ef4",
-        "TotalCount": 2,
         "BackupSet": [
             {
-                "StartTime": "2018-09-04 12:51:21",
-                "BackupId": "2e4127f8-affe-11e8-941e-4846fb00c75d",
+                "BackupId": "154572601-1165734322-153731238",
+                "BackupSize": 191,
                 "BackupType": "0",
-                "Status": 2,
-                "Remark": "测试使用",
-                "Locked": 0,
-                "BackupSize": 543534435,
+                "EndTime": "2022-12-23 16:25:18",
+                "ExpireTime": "2022-12-30 16:24:41",
+                "FileType": "RDB-Redis 4.0",
                 "FullBackup": 0,
-                "InstanceType": 6
-            },
-            {
-                "StartTime": "2018-09-04 12:53:06",
-                "BackupId": "6cbbf53a-affe-11e8-905b-4846fb00c75d",
-                "BackupType": "0",
-                "Status": 2,
-                "Remark": "xxx",
+                "InstanceId": "crs-c7nuafdt",
+                "InstanceName": "备份test",
+                "InstanceType": 6,
                 "Locked": 0,
-                "BackupSize": 3124324,
-                "FullBackup": 0,
-                "InstanceType": 7
+                "Region": "ap-guangzhou",
+                "Remark": "test001",
+                "StartTime": "2022-12-23 16:24:41",
+                "Status": 2
             }
-        ]
+        ],
+        "RequestId": "2a95bfa4-ac8c-43cd-b7b1-5a93817d8de2",
+        "TotalCount": 1
     }
 }
 ```

@@ -1,6 +1,6 @@
 **Example 1: 播放列表添加歌曲**
 
-
+播放列表添加歌曲
 
 Input: 
 
@@ -69,7 +69,7 @@ Output:
 
 **Example 4: 切换下一首歌曲**
 
-
+切换下一首歌曲
 
 Input: 
 
@@ -90,7 +90,7 @@ Output:
 
 **Example 5: 发送自定义消息**
 
-
+发送自定义消息
 
 Input: 
 
@@ -156,17 +156,17 @@ Output:
 }
 ```
 
-**Example 8: 设置音量**
+**Example 8: 设置真实音量**
 
-
+设置真实音量
 
 Input: 
 
 ```
 tccli ame SyncKTVRobotCommand --cli-unfold-argument  \
     --RobotId xxxxx \
-    --Command SetDestroyMode \
-    --SetVolumeCommandInput.Volume 50
+    --Command SetRealVolume \
+    --SetRealVolumeCommandInput.RealVolume 50
 ```
 
 Output: 

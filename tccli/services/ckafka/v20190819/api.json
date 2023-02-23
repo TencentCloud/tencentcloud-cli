@@ -3703,7 +3703,6 @@
       "document": "Ctsdb连接源参数",
       "members": [
         {
-          "default": "",
           "document": "Ctsdb的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8080",
           "member": "int64",
@@ -3713,7 +3712,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Ctsdb连接源的实例vip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -3723,7 +3721,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Ctsdb连接源的vpcId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -3733,7 +3730,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Ctsdb连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -3743,7 +3739,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Ctsdb连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -3753,7 +3748,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Ctsdb连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -7108,7 +7102,6 @@
       "document": "Dts连接源参数",
       "members": [
         {
-          "default": "",
           "document": "Dts的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8080",
           "member": "int64",
@@ -7118,7 +7111,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Dts消费分组的Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -7128,7 +7120,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Dts消费分组的账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -7138,7 +7129,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Dts消费分组的密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -7148,7 +7138,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Dts实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -7158,7 +7147,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Dts订阅的topic\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -7168,7 +7156,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -9574,7 +9561,6 @@
       "document": "实例详情",
       "members": [
         {
-          "default": "",
           "document": "实例id",
           "example": "1",
           "member": "string",
@@ -9584,7 +9570,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名称",
           "example": "1",
           "member": "string",
@@ -9594,7 +9579,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "访问实例的vip 信息",
           "example": "1",
           "member": "string",
@@ -9604,7 +9588,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "访问实例的端口信息",
           "example": "1",
           "member": "string",
@@ -9614,7 +9597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "虚拟IP列表",
           "example": "1",
           "member": "VipEntity",
@@ -9624,7 +9606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败",
           "example": "1",
           "member": "int64",
@@ -9634,7 +9615,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例带宽，单位Mbps",
           "example": "1",
           "member": "int64",
@@ -9644,7 +9624,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例的存储大小，单位GB",
           "example": "1",
           "member": "int64",
@@ -9654,7 +9633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区域ID",
           "example": "1",
           "member": "int64",
@@ -9664,7 +9642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "vpcId，如果为空，说明是基础网络",
           "example": "1",
           "member": "string",
@@ -9674,7 +9651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网id",
           "example": "1",
           "member": "string",
@@ -9684,7 +9660,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例是否续费，int  枚举值：1表示自动续费，2表示明确不自动续费",
           "example": "1",
           "member": "int64",
@@ -9694,7 +9669,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例状态 int：1表示健康，2表示告警，3 表示实例状态异常",
           "example": "1",
           "member": "int64",
@@ -9704,7 +9678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例状态信息",
           "example": "1",
           "member": "string",
@@ -9714,7 +9687,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例创建时间时间",
           "example": "1",
           "member": "int64",
@@ -9724,7 +9696,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例过期时间",
           "example": "1",
           "member": "int64",
@@ -9734,7 +9705,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为内部客户。值为1 表示内部客户",
           "example": "1",
           "member": "int64",
@@ -9744,7 +9714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Topic个数",
           "example": "1",
           "member": "int64",
@@ -9754,7 +9723,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标识tag",
           "example": "1",
           "member": "Tag",
@@ -9764,7 +9732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "kafka版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -9774,7 +9741,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "跨可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -9784,7 +9750,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "ckafka售卖类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -9794,7 +9759,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "ckafka实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -9804,7 +9768,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -9814,7 +9777,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前规格最大Topic数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -9824,7 +9786,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前规格最大Partition数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -9834,7 +9795,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "计划升级配置时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "'yyyy-MM-dd HH:mm:ss'",
           "member": "string",
@@ -9844,7 +9804,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例当前partition数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -9854,7 +9813,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "公网带宽类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -9864,7 +9822,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "公网带宽值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -9874,7 +9831,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -9884,7 +9840,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -10234,6 +10189,11 @@
       ],
       "usage": "both"
     },
+    "LowercaseParam": {
+      "document": "小写字符解析",
+      "members": [],
+      "usage": "both"
+    },
     "MapParam": {
       "document": "Map参数",
       "members": [
@@ -10274,7 +10234,6 @@
       "document": "MariaDB连接源参数",
       "members": [
         {
-          "default": "",
           "document": "MariaDB的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8080",
           "member": "int64",
@@ -10284,7 +10243,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MariaDB连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -10294,7 +10252,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MariaDB连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -10304,7 +10261,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MariaDB连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -10314,7 +10270,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MariaDB连接源的实例vip，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -10324,7 +10279,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MariaDB连接源的vpcId，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -10334,7 +10288,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -12911,7 +12864,6 @@
       "document": "SQLServer连接源参数",
       "members": [
         {
-          "default": "",
           "document": "SQLServer的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1433",
           "member": "int64",
@@ -12921,7 +12873,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "SQLServer连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -12931,7 +12882,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "SQLServer连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -12941,7 +12891,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "SQLServer连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -12951,7 +12900,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "SQLServer连接源的实例vip，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -12961,7 +12909,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "SQLServer连接源的vpcId，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -12971,7 +12918,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否更新到关联的Dip任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -14438,7 +14384,6 @@
       "document": "数据处理——Value处理参数",
       "members": [
         {
-          "default": "",
           "document": "处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换，URL_DECODE，LOWERCASE转换为小写",
           "example": "TRIM",
           "member": "string",
@@ -14448,7 +14393,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "替换，TYPE=REPLACE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ReplaceParam",
@@ -14458,7 +14402,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "截取，TYPE=SUBSTR时必传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "SubstrParam",
@@ -14468,7 +14411,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "时间转换，TYPE=DATE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "DateParam",
@@ -14478,7 +14420,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "正则替换，TYPE=REGEX_REPLACE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "RegexReplaceParam",
@@ -14488,7 +14429,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "值支持一拆多，TYPE=SPLIT时必传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "SplitParam",
@@ -14498,7 +14438,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "key-value二次解析，TYPE=KV时必传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "KVParam",
@@ -14508,7 +14447,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "处理结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -14518,7 +14456,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "JsonPath替换，TYPE=JSON_PATH_REPLACE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "JsonPathReplaceParam",
@@ -14528,11 +14465,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Url解析\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "UrlDecodeParam",
           "name": "UrlDecode",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "小写字符解析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "LowercaseParam",
+          "name": "Lowercase",
           "required": false,
           "type": "object",
           "value_allowed_null": true

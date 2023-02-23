@@ -186,7 +186,7 @@
     ],
     "DescribeNoPrimaryKeyTables": [
       {
-        "document": "",
+        "document": "查询实例无主键表",
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeNoPrimaryKeyTables\n&InstanceId=cdb-test\n&Date=2022-04-12\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8108c1c0-bbcc-11ec-adb9-eb9c1358e03a\",\n        \"NoPrimaryKeyTables\": [\n            {\n                \"TableSchema\": \"test\",\n                \"TableName\": \"test\",\n                \"Engine\": \"InnoDB\",\n                \"TotalLength\": 0,\n                \"TableRows\": 0\n            }\n        ],\n        \"NoPrimaryKeyTableRecordCount\": 8,\n        \"NoPrimaryKeyTableCount\": 8,\n        \"NoPrimaryKeyTableCountDiff\": 0,\n        \"Timestamp\": 1649872593\n    }\n}",
         "title": "查询实例无主键表"

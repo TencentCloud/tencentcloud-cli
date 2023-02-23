@@ -1,43 +1,41 @@
 **Example 1: 印章识别示例代码**
 
-
+印章识别示例代码
 
 Input: 
 
 ```
 tccli ocr SealOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/SealOCR/SealOCR1.png
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "SealBody": "上海市宝山区市场监督管理局",
         "Location": {
-            "X": 428,
-            "Y": 259,
-            "Width": 226,
-            "Height": 235
+            "Height": 98,
+            "Width": 98,
+            "X": 143,
+            "Y": 78
         },
         "OtherTexts": [],
+        "RequestId": "442c7c51-9893-4411-9ba0-69747e5424d2",
+        "SealBody": "上海市宝山区市场监督管理局",
         "SealInfos": [
             {
-                "OtherTexts": [
-                    "xx"
-                ],
-                "SealBody": "xx",
-                "SealShape": "xx",
                 "Location": {
-                    "Y": 0,
-                    "X": 0,
-                    "Height": 0,
-                    "Width": 0
-                }
+                    "Height": 98,
+                    "Width": 98,
+                    "X": 143,
+                    "Y": 78
+                },
+                "OtherTexts": [],
+                "SealBody": "上海市宝山区市场监督管理局",
+                "SealShape": "0"
             }
         ],
-        "SealShape": "xx",
-        "RequestId": "98b75826-8ff4-4633-a9bb-9be12043f3f8"
+        "SealShape": "0"
     }
 }
 ```

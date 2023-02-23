@@ -1284,7 +1284,6 @@
       "document": "cos的路径信息",
       "members": [
         {
-          "default": "",
           "document": "存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "encent-cloud-product-release-66666",
           "member": "string",
@@ -1294,7 +1293,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
           "member": "string",
@@ -1304,7 +1302,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "路径列表，目前只支持单个\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"path/\"]",
           "member": "string",
@@ -6352,7 +6349,6 @@
       "document": "日志配置",
       "members": [
         {
-          "default": "",
           "document": "日志需要投递到cls的日志集\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-eeee",
           "member": "string",
@@ -6362,7 +6358,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志需要投递到cls的主题\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-topic-ccccc",
           "member": "string",
@@ -7395,7 +7390,7 @@
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "PointInfo": {
       "document": "点信息描述",
@@ -8778,7 +8773,7 @@
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ServiceLimit": {
       "document": "服务的限流限速等配置",

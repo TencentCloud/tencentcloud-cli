@@ -50,9 +50,9 @@
     ],
     "GetDevice": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"mna-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DeviceDetails\": {\n            \"DeviceBaseInfo\": {\n                \"DeviceName\": \"dev\",\n                \"Remark\": \"xx\",\n                \"DeviceId\": \"mna-xxx\",\n                \"LastTime\": \"1\",\n                \"CreateTime\": \"1\"\n            },\n            \"DeviceNetInfo\": [\n                {\n                    \"SignalStrength\": -85,\n                    \"Vendor\": 1,\n                    \"DataTx\": 10,\n                    \"UploadLimit\": 100,\n                    \"DownloadLimit\": 100,\n                    \"Rat\": 2,\n                    \"PublicIp\": \"xxx.xxx.xxx.xx\",\n                    \"State\": 0,\n                    \"DataRx\": 10,\n                    \"DataEnable\": true,\n                    \"Type\": 0,\n                    \"NetInfoName\": \"xx\"\n                },\n                {\n                    \"SignalStrength\": -90,\n                    \"Vendor\": 1,\n                    \"DataTx\": 10,\n                    \"UploadLimit\": 100,\n                    \"DownloadLimit\": 100,\n                    \"Rat\": 2,\n                    \"PublicIp\": \"xxx.xxx.xxx.xx\",\n                    \"State\": 0,\n                    \"DataRx\": 10,\n                    \"DataEnable\": true,\n                    \"Type\": 1,\n                    \"NetInfoName\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "获取设备基本信息和网络信息",
+        "input": "{\n    \"DeviceId\": \"mna-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceDetails\": {\n            \"BusinessDownRate\": 0,\n            \"BusinessUpRate\": 443292176.8,\n            \"DeviceBaseInfo\": {\n                \"CreateTime\": \"1662722094000\",\n                \"DeviceId\": \"mna-94p8c5zyst\",\n                \"DeviceName\": \"yusheng-test2\",\n                \"LastTime\": \"1675242602000\",\n                \"Remark\": \"yusheng-test\"\n            },\n            \"DeviceNetInfo\": [\n                {\n                    \"DataEnable\": false,\n                    \"DataRx\": 0,\n                    \"DataTx\": 0,\n                    \"DownRate\": 463128.799998,\n                    \"DownloadLimit\": \"0\",\n                    \"NetInfoName\": \"eth0\",\n                    \"PublicIp\": \"9.223.110.232\",\n                    \"Rat\": 0,\n                    \"SignalStrength\": 0,\n                    \"State\": 0,\n                    \"Type\": 0,\n                    \"UpRate\": 27040465.6,\n                    \"UploadLimit\": \"0\",\n                    \"Vendor\": 0\n                },\n                {\n                    \"DataEnable\": false,\n                    \"DataRx\": 0,\n                    \"DataTx\": 0,\n                    \"DownRate\": 4415987.2,\n                    \"DownloadLimit\": \"0\",\n                    \"NetInfoName\": \"eth1\",\n                    \"PublicIp\": \"9.223.96.218\",\n                    \"Rat\": 0,\n                    \"SignalStrength\": 0,\n                    \"State\": 0,\n                    \"Type\": 0,\n                    \"UpRate\": 428871766.399999,\n                    \"UploadLimit\": \"0\",\n                    \"Vendor\": 0\n                }\n            ],\n            \"GatewaySite\": \"gz\"\n        },\n        \"RequestId\": \"2ca4e2e9-f4a1-4b24-b88a-b7523099c123\"\n    }\n}",
         "title": "获取指定id设备信息"
       }
     ],
@@ -66,7 +66,7 @@
     ],
     "GetFlowStatistic": [
       {
-        "document": "",
+        "document": "获取指定id设备流量使用信息",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatistic\n<公共请求参数>\n\n{\n    \"EndTime\": 1659514692,\n    \"Type\": 1,\n    \"DeviceId\": \"xx\",\n    \"TimeGranularity\": 1,\n    \"BeginTime\": 1659513692\n}",
         "output": "{\n    \"Response\": {\n        \"MaxValue\": 51548,\n        \"AvgValue\": 15441,\n        \"TotalValue\": 656546,\n        \"NetDetails\": [\n            {\n                \"Time\": 1659513692,\n                \"Current\": 3546545\n            },\n            {\n                \"Time\": 1659513692,\n                \"Current\": 4454864\n            },\n            {\n                \"Time\": 1659513692,\n                \"Current\": 4848941\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
         "title": "获取指定id设备流量使用信息"
@@ -82,7 +82,7 @@
     ],
     "GetStatisticData": [
       {
-        "document": "",
+        "document": "获取流量统计数据",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetStatisticData\n<公共请求参数>\n\n{\n    \"EndTime\": 1659514692,\n    \"DeviceId\": \"xx\",\n    \"TimeGranularity\": 1,\n    \"BeginTime\": 1659513692\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"FilePath\": \"http://geekyang-cos-1257943044.cos-internal.ap-guangzhou.tencentcos.cn/test/175527768616861696.xlsx\"\n    }\n}",
         "title": "获取指定id的设备流量用量统计文件"

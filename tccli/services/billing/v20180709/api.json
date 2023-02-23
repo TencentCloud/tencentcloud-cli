@@ -2124,6 +2124,7 @@
         {
           "default": "",
           "document": "存储桶名称",
+          "example": "waytestssq1-1258535724",
           "member": "string",
           "name": "BucketName",
           "required": true,
@@ -2133,6 +2134,7 @@
         {
           "default": "",
           "document": "用量开始时间",
+          "example": "2022-11-23 00:00:00",
           "member": "string",
           "name": "DosageBeginTime",
           "required": true,
@@ -2142,6 +2144,7 @@
         {
           "default": "",
           "document": "用量结束时间",
+          "example": "2022-11-23 23:59:59",
           "member": "string",
           "name": "DosageEndTime",
           "required": true,
@@ -2150,7 +2153,8 @@
         },
         {
           "default": "",
-          "document": "一级产品类型名称",
+          "document": "子产品名称",
+          "example": "cos流量",
           "member": "string",
           "name": "SubProductCodeName",
           "required": true,
@@ -2159,7 +2163,8 @@
         },
         {
           "default": "",
-          "document": "二级产品类型名称",
+          "document": "计费项名称",
+          "example": "cos外网下行流量",
           "member": "string",
           "name": "BillingItemCodeName",
           "required": true,
@@ -2169,6 +2174,7 @@
         {
           "default": "",
           "document": "用量",
+          "example": "10",
           "member": "string",
           "name": "DosageValue",
           "required": true,
@@ -2178,6 +2184,7 @@
         {
           "default": "",
           "document": "单位",
+          "example": "GB",
           "member": "string",
           "name": "Unit",
           "required": true,
@@ -4301,8 +4308,7 @@
       "document": "DescribeDosageCosDetailByDate请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "查询用量开始时间",
+          "document": "查询用量开始时间，例如：2020-09-01",
           "example": "2020-09-01",
           "member": "string",
           "name": "StartDate",
@@ -4310,8 +4316,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "查询用量结束时间（与开始时间同月，不支持跨月查询）",
+          "document": "查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）",
           "example": "2020-09-30",
           "member": "string",
           "name": "EndDate",
@@ -4319,7 +4324,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "COS 存储桶名称，可通过Get Service 接口是用来获取请求者名下的所有存储空间列表（Bucket list）https://cloud.tencent.com/document/product/436/8291",
           "example": "systemcover-1000027",
           "member": "string",
@@ -4338,7 +4342,6 @@
           "example": "无",
           "member": "CosDetailSets",
           "name": "DetailSets",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

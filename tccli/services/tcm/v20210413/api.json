@@ -1691,7 +1691,6 @@
       "document": "负载均衡状态信息",
       "members": [
         {
-          "default": "",
           "document": "负载均衡实例 ID",
           "example": "lb-xxxxxxxx",
           "member": "string",
@@ -1701,7 +1700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "负载均衡实例名字",
           "example": "cls-xxxxxxxx_istio_igw",
           "member": "string",
@@ -1711,7 +1709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "负载均衡实例 VIP",
           "example": "x.x.x.x",
           "member": "string",
@@ -1719,6 +1716,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "负载均衡实例 Hostname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lb-xxxxx-xxxx.clb.ap-shanghai.tencentclb.com",
+          "member": "string",
+          "name": "LoadBalancerHostname",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

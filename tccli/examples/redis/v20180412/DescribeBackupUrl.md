@@ -1,6 +1,6 @@
-**Example 1: 查询备份Rdb下载地址**
+**Example 1: 查询备份Rdb下载地址。**
 
-
+通过该接口查询备份文件的 Rdb下载地址。
 
 Input: 
 

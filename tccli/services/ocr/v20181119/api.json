@@ -655,7 +655,6 @@
       "document": "ArithmeticOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "string",
           "member": "string",
@@ -664,7 +663,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "string",
           "member": "string",
@@ -673,7 +671,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于选择是否支持横屏拍摄。打开则支持横屏拍摄图片角度判断，角度信息在返回参数的angle中，默认值为true",
           "example": "true",
           "member": "bool",
@@ -682,7 +679,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否拒绝非速算图，打开则拒绝非速算图(注：非速算图是指风景人物等明显不是速算图片的图片)，默认值为false",
           "example": "true",
           "member": "bool",
@@ -691,7 +687,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否展开耦合算式中的竖式计算，默认值为false",
           "example": "true",
           "member": "bool",
@@ -700,7 +695,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否展示竖式算式的中间结果和格式控制字符，默认值为false",
           "example": "true",
           "member": "bool",
@@ -709,7 +703,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启pdf识别，默认值为true",
           "example": "true",
           "member": "bool",
@@ -718,7 +711,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "pdf页码，从0开始，默认为0",
           "example": "0",
           "member": "int64",
@@ -737,7 +729,6 @@
           "example": "{}",
           "member": "TextArithmetic",
           "name": "TextDetections",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -746,7 +737,6 @@
           "example": "0",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5676,8 +5666,8 @@
       "document": "QueryBarCode请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "条形码",
+          "example": "6928804021912",
           "member": "string",
           "name": "BarCode",
           "required": true,
@@ -5691,6 +5681,7 @@
       "members": [
         {
           "document": "条码",
+          "example": "06941858722888",
           "member": "string",
           "name": "BarCode",
           "type": "string",
@@ -5698,6 +5689,7 @@
         },
         {
           "document": "条码信息数组",
+          "example": "无",
           "member": "ProductDataRecord",
           "name": "ProductDataRecords",
           "type": "list",
@@ -6871,7 +6863,6 @@
       "document": "RecognizeTableOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片/PDF的 Base64 值。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -6880,7 +6871,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片/PDF的 Url 地址。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "xxx",
           "member": "string",
@@ -6889,7 +6879,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -6898,7 +6887,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "uint64",
@@ -6907,7 +6895,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "语言，zh：中英文（默认）jap：日文",
           "example": "zh",
           "member": "string",
@@ -6926,7 +6913,6 @@
           "example": "无",
           "member": "TableDetectInfo",
           "name": "TableDetections",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6935,7 +6921,6 @@
           "example": "8HAABnHAAAFAAAAAAAAAAAAAAAAADMJAAAeGwvc2hhcmVkU3RyaW5ncy54bWxQSwECFAAUAAAACAAAAAAAcxSJldcBAAD9BQAADQAAAAAAAAAAAAAAAACtLAAAeGwvc3R5bGVzLnhtbFBLAQIUABQAAAAIAAAAAAC8TIYcSAYAAP4kAAATAAAAAAAAAAAAAAAAAK8uAAB4bC90aGVtZS90aGVtZTEueG1sUEsBAhQAFAAAAAgAAAAAANG5P9oECwAAUU0AABgAAAAAAAAAAAAAAAAAKDUAAHhsL3dvcmtzaGVldHMvc2hlZXQyLnhtbFBLAQIUABQAAAAIAAAAAADjsY7PqAMAAE8PAAAYAAAAAAAAAAAAAAAAAGJAAAB4bC93b3Jrc2hlZXRzL3NoZWV0MS54bWxQSwUGAAAAAAwADAALAwAAQEQAAAAA",
           "member": "string",
           "name": "Data",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6944,7 +6929,6 @@
           "example": "0",
           "member": "int64",
           "name": "PdfPageSize",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6953,7 +6937,6 @@
           "example": "0",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7649,7 +7632,6 @@
       "document": "SealOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -7658,7 +7640,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -7677,7 +7658,6 @@
           "example": "上海市宝山区市场监督管理局",
           "member": "string",
           "name": "SealBody",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7686,7 +7666,6 @@
           "example": "无",
           "member": "Rect",
           "name": "Location",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7695,7 +7674,6 @@
           "example": "[]",
           "member": "string",
           "name": "OtherTexts",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7704,7 +7682,6 @@
           "example": "无",
           "member": "SealInfo",
           "name": "SealInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7713,7 +7690,6 @@
           "example": "xx",
           "member": "string",
           "name": "SealShape",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10459,7 +10435,6 @@
       "document": "VatInvoiceVerifyNew请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "发票号码，8位、20位（全电票）",
           "example": "04000000",
           "member": "string",
@@ -10468,7 +10443,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。",
           "example": "2019-12-11",
           "member": "string",
@@ -10477,7 +10451,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "发票代码（10或12 位），全电发票为空。查验未成功超过5次后当日无法再查。",
           "example": "1300000000",
           "member": "string",
@@ -10486,7 +10459,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "票种类型 01:增值税专用发票， 02:货运运输业增值税专用发 票， 03:机动车销售统一发票， 04:增值税普通发票， 08:增值税电子专用发票(含全电)， 10:增值税电子普通发票(含全电)， 11:增值税普通发票(卷式)， 14:增值税电子(通行费)发 票， 15:二手车销售统一发票， 32:深圳区块链发票(云南区块链因业务调整现已下线)。",
           "example": "04",
           "member": "string",
@@ -10495,7 +10467,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "校验码后 6 位，增值税普通发票、增值税电子普通发票、增值税普通发票(卷式)、增值税电子普通发票(通行费)时必填;\n区块链为 5 位",
           "example": "921630",
           "member": "string",
@@ -10504,7 +10475,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "不含税金额，增值税专用发票、增值税电子专用发票、机动车销售统一发票、二手车销售统一发票、区块链发票时必填; 全电发票为价税合计(含税金额)",
           "example": "88.88",
           "member": "string",
@@ -10513,7 +10483,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "地区编码，通用机打电子发票时必填。\n广东:4400，浙江:3300",
           "example": "4400",
           "member": "string",
@@ -10522,7 +10491,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "销方税号，通用机打电子发票必填",
           "example": "无",
           "member": "string",
@@ -10531,7 +10499,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启通用机打电子发票，默认为关闭。",
           "example": "true",
           "member": "bool",
@@ -10550,7 +10517,6 @@
           "example": "无",
           "member": "VatInvoice",
           "name": "Invoice",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10559,7 +10525,6 @@
           "example": "无",
           "member": "VehicleInvoiceInfo",
           "name": "VehicleInvoiceInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10568,7 +10533,6 @@
           "example": "无",
           "member": "UsedVehicleInvoiceInfo",
           "name": "UsedVehicleInvoiceInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10577,7 +10541,6 @@
           "example": "无",
           "member": "PassInvoiceInfo",
           "name": "PassInvoiceInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10594,7 +10557,6 @@
       "document": "VatInvoiceVerify请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "发票代码， 一张发票一天只能查询5次。",
           "example": "1300000000",
           "member": "string",
@@ -10603,7 +10565,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "发票号码（8位）",
           "example": "04000000",
           "member": "string",
@@ -10612,7 +10573,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。",
           "example": "2019-12-11",
           "member": "string",
@@ -10621,7 +10581,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "根据票种传递对应值，如果报参数错误，请仔细检查每个票种对应的值\n\n增值税专用发票：开具金额（不含税）\n\n增值税普通发票、增值税电子普通发票（含通行费发票）、增值税普通发票（卷票）：校验码后6位\n\n区块链发票：不含税金额/校验码，例如：“285.01/856ab”\n\n机动车销售统一发票：不含税价\n\n货物运输业增值税专用发票：合计金额\n\n二手车销售统一发票：车价合计",
           "example": "88.50",
           "member": "string",
@@ -10640,7 +10599,6 @@
           "example": "无",
           "member": "VatInvoice",
           "name": "Invoice",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10649,7 +10607,6 @@
           "example": "无",
           "member": "VehicleInvoiceInfo",
           "name": "VehicleInvoiceInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10658,7 +10615,6 @@
           "example": "无",
           "member": "UsedVehicleInvoiceInfo",
           "name": "UsedVehicleInvoiceInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11129,7 +11085,6 @@
       "document": "VerifyBasicBizLicense请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "用于入参是营业执照图片的场景，ImageBase64和ImageUrl必须提供一个，如果都提供，只使用 ImageUrl。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。",
           "example": "base64",
           "member": "string",
@@ -11138,7 +11093,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于入参是营业执照图片的场景，ImageBase64和ImageUrl必须提供一个，如果都提供，只使用 ImageUrl。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。",
           "example": "http://test",
           "member": "string",
@@ -11147,7 +11101,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于入参是营业执照图片的场景，表示需要校验的参数：RegNum（注册号或者统一社会信用代码），Name（企业名称），Address（经营地址）。选择后会返回相关参数校验结果。RegNum为必选，Name和Address可选。\n格式为{RegNum: true, Name:true/false, Address:true/false}\n\n设置方式参考：\nConfig = Json.stringify({\"Name\":true,\"Address\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"Name\":true,\"Address\":true}",
           "example": "string",
           "member": "string",
@@ -11156,7 +11109,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于入参是文本的场景，RegNum表示注册号或者统一社会信用代码。若没有传入营业执照图片，则RegNum为必选项，若图片和RegNum都传入，则只使用RegNum。",
           "example": "string",
           "member": "string",
@@ -11165,7 +11117,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于入参是文本的场景，Name表示企业名称。Name为可选项，填写后会返回Name的校验结果。",
           "example": "string",
           "member": "string",
@@ -11174,7 +11125,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于入参是文本的场景，Address表示经营地址。Address为可选项，填写后会返回Address的校验结果。",
           "example": "string",
           "member": "string",
@@ -11183,7 +11133,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "1表示输出注册资本字段（单位：万元），其他值表示不输出。默认不输出。",
           "example": "string",
           "member": "int64",
@@ -11192,7 +11141,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "true表示展示成立/注册日期",
           "example": "true",
           "member": "bool",
@@ -11211,7 +11159,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11220,7 +11167,6 @@
           "example": "string",
           "member": "string",
           "name": "CreditCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11229,7 +11175,6 @@
           "example": "2010-10-21",
           "member": "string",
           "name": "Opfrom",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11238,7 +11183,6 @@
           "example": "2010-10-21",
           "member": "string",
           "name": "Opto",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11247,7 +11191,6 @@
           "example": "XX",
           "member": "string",
           "name": "Frname",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11256,7 +11199,6 @@
           "example": "在营",
           "member": "string",
           "name": "Entstatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11265,7 +11207,6 @@
           "example": "string",
           "member": "string",
           "name": "Zsopscope",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11274,7 +11215,6 @@
           "example": "成功",
           "member": "string",
           "name": "Reason",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11283,7 +11223,6 @@
           "example": "string",
           "member": "string",
           "name": "Oriregno",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11292,7 +11231,6 @@
           "example": "string",
           "member": "string",
           "name": "VerifyRegno",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11301,7 +11239,6 @@
           "example": "string",
           "member": "string",
           "name": "Regno",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11310,7 +11247,6 @@
           "example": "string",
           "member": "string",
           "name": "VerifyEntname",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11319,7 +11255,6 @@
           "example": "string",
           "member": "string",
           "name": "Entname",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11328,7 +11263,6 @@
           "example": "string",
           "member": "string",
           "name": "VerifyDom",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11337,7 +11271,6 @@
           "example": "string",
           "member": "string",
           "name": "Dom",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11346,7 +11279,6 @@
           "example": "无",
           "member": "BizLicenseVerifyResult",
           "name": "RegNumResult",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11355,7 +11287,6 @@
           "example": "100",
           "member": "string",
           "name": "RegCapital",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11364,7 +11295,6 @@
           "example": "string",
           "member": "string",
           "name": "EstablishTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11381,7 +11311,6 @@
       "document": "VerifyBizLicense请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "用于入参是营业执照图片的场景，ImageBase64和ImageUrl必须提供一个，如果都提供，只使用 ImageUrl。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。",
           "example": "无",
           "member": "string",
@@ -11390,7 +11319,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于入参是营业执照图片的场景，ImageBase64和ImageUrl必须提供一个，如果都提供，只使用 ImageUrl。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。",
           "example": "无",
           "member": "string",
@@ -11399,7 +11327,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于入参是营业执照图片的场景，表示需要校验的参数：RegNum（注册号或者统一社会信用代码），Name（企业名称），Address（经营地址）。选择后会返回相关参数校验结果。RegNum为必选，Name和Address可选。\n格式为{RegNum: true, Name:true/false, Address:true/false}\n\n设置方式参考：\nConfig = Json.stringify({\"Name\":true,\"Address\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"Name\":true,\"Address\":true}",
           "example": "无",
           "member": "string",
@@ -11408,7 +11335,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于入参是文本的场景，RegNum表示注册号或者统一社会信用代码。若没有传入营业执照图片，则RegNum为必选项，若图片和RegNum都传入，则只使用RegNum。",
           "example": "无",
           "member": "string",
@@ -11417,7 +11343,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于入参是文本的场景，Name表示企业名称。Name为可选项，填写后会返回Name的校验结果。",
           "example": "无",
           "member": "string",
@@ -11426,7 +11351,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于入参是文本的场景，Address表示经营地址，填写后会返回Address的校验结果。",
           "example": "无",
           "member": "string",
@@ -11445,7 +11369,6 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11454,7 +11377,6 @@
           "example": "911101085636549482",
           "member": "string",
           "name": "CreditCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11463,7 +11385,6 @@
           "example": "563654948",
           "member": "string",
           "name": "OrgCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11472,7 +11393,6 @@
           "example": "2010-10-21",
           "member": "string",
           "name": "OpenFrom",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11481,7 +11401,6 @@
           "example": "2030-10-20",
           "member": "string",
           "name": "OpenTo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11490,7 +11409,6 @@
           "example": "谢兰芳",
           "member": "string",
           "name": "FrName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11499,7 +11417,6 @@
           "example": "在营（开业）",
           "member": "string",
           "name": "EnterpriseStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11508,7 +11425,6 @@
           "example": "利用互联网经营游戏产品运营、网络游戏虚拟货币发行、从事互联网文化产品的展览、比赛活动；经营电信业务（以增值电信业务经营许可证核定范围为准）（增值电信业务经营许可证有效期至2023年11月28日）；人力资源服务；销售第三类医疗器械；专利代理；技术开发、技术转让、技术咨询；设计、制作、代理、发布广告；基础软件服务；应用软件服务；销售自行开发的产品、医疗器械I类、II类、计算机、软件及辅助设备、通讯设备、机械设备、电子产品；货物进出口、技术进出口、代理进出口；企业管理咨询；市场调查；商标代理；著作权代理服务；移动电信、宽带网络的技术服务；代理记账。（企业依法自主选择经营项目，开展经营活动；代理记账以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动；不得从事本市产业政策禁止和限制类项目的经营活动。）",
           "member": "string",
           "name": "OperateScopeAndForm",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11517,7 +11433,6 @@
           "example": "14250.00",
           "member": "string",
           "name": "RegCap",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11526,7 +11441,6 @@
           "example": "人民币",
           "member": "string",
           "name": "RegCapCur",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11535,7 +11449,6 @@
           "example": "北京市工商行政管理局海淀分局",
           "member": "string",
           "name": "RegOrg",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11544,7 +11457,6 @@
           "example": "2010-10-21",
           "member": "string",
           "name": "EsDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11553,7 +11465,6 @@
           "example": "其他有限责任公司",
           "member": "string",
           "name": "EnterpriseType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11562,7 +11473,6 @@
           "example": "无",
           "member": "string",
           "name": "CancelDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11571,7 +11481,6 @@
           "example": "无",
           "member": "string",
           "name": "RevokeDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11580,7 +11489,6 @@
           "example": "无",
           "member": "string",
           "name": "AbuItem",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11589,7 +11497,6 @@
           "example": "无",
           "member": "string",
           "name": "CbuItem",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11598,7 +11505,6 @@
           "example": "2019-11-20",
           "member": "string",
           "name": "ApprDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11607,7 +11513,6 @@
           "example": "北京",
           "member": "string",
           "name": "Province",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11616,7 +11521,6 @@
           "example": "北京市",
           "member": "string",
           "name": "City",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11625,7 +11529,6 @@
           "example": "海淀区",
           "member": "string",
           "name": "County",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11634,7 +11537,6 @@
           "example": "110108",
           "member": "string",
           "name": "AreaCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11643,7 +11545,6 @@
           "example": "I",
           "member": "string",
           "name": "IndustryPhyCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11652,7 +11553,6 @@
           "example": "信息传输、软件和信息技术服务业",
           "member": "string",
           "name": "IndustryPhyName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11661,7 +11561,6 @@
           "example": "6439",
           "member": "string",
           "name": "IndustryCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11670,7 +11569,6 @@
           "example": "其他互联网平台",
           "member": "string",
           "name": "IndustryName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11679,7 +11577,6 @@
           "example": "利用互联网经营游戏产品运营、网络游戏虚拟货币发行、从事互联网文化产品的展览、比赛活动；经营电信业务（以增值电信业务经营许可证核定范围为准）（增值电信业务经营许可证有效期至2023年11月28日）；人力资源服务；销售第三类医疗器械；专利代理；技术开发、技术转让、技术咨询；设计、制作、代理、发布广告；基础软件服务；应用软件服务；销售自行开发的产品、医疗器械I类、II类、计算机、软件及辅助设备、通讯设备、机械设备、电子产品；货物进出口、技术进出口、代理进出口；企业管理咨询；市场调查；商标代理；著作权代理服务；移动电信、宽带网络的技术服务；代理记账。（企业依法自主选择经营项目，开展经营活动；代理记账以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动；不得从事本市产业政策禁止和限制类项目的经营活动。）",
           "member": "string",
           "name": "OperateScope",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11688,7 +11585,6 @@
           "example": "911101085636549482",
           "member": "string",
           "name": "VerifyRegNo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11697,7 +11593,6 @@
           "example": "110108013297537",
           "member": "string",
           "name": "RegNo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11706,7 +11601,6 @@
           "example": "腾讯云计算(北京)有限责任公司",
           "member": "string",
           "name": "VerifyEnterpriseName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11715,7 +11609,6 @@
           "example": "腾讯云计算（北京）有限责任公司",
           "member": "string",
           "name": "EnterpriseName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11724,7 +11617,6 @@
           "example": "北京市海淀区知春路49号3层西部309",
           "member": "string",
           "name": "VerifyAddress",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11733,7 +11625,6 @@
           "example": "北京市海淀区知春路49号3层西部309",
           "member": "string",
           "name": "Address",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11742,7 +11633,6 @@
           "example": "无",
           "member": "BizLicenseVerifyResult",
           "name": "RegNumResult",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11759,7 +11649,6 @@
       "document": "VerifyEnterpriseFourFactors请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "姓名",
           "example": "string",
           "member": "string",
@@ -11768,7 +11657,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "证件号码（公司注册证件号）",
           "example": "string",
           "member": "string",
@@ -11777,7 +11665,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "企业全称",
           "example": "string",
           "member": "string",
@@ -11786,7 +11673,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "企业标识（注册号，统一社会信用代码）",
           "example": "string",
           "member": "string",
@@ -11805,7 +11691,6 @@
           "example": "1",
           "member": "int64",
           "name": "State",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11814,7 +11699,6 @@
           "example": "无",
           "member": "Detail",
           "name": "Detail",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

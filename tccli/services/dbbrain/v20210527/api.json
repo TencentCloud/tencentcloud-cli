@@ -2120,7 +2120,6 @@
       "document": "DescribeNoPrimaryKeyTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -2129,7 +2128,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询日期，如2021-05-27，最早为30天前的日期。",
           "example": "2022-04-14",
           "member": "date",
@@ -2138,7 +2136,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询数目，默认为20，最大为100。",
           "example": "20",
           "member": "int64",
@@ -2147,7 +2144,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -2156,8 +2152,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -2175,7 +2170,6 @@
           "example": "10000",
           "member": "int64",
           "name": "NoPrimaryKeyTableCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2184,7 +2178,6 @@
           "example": "0",
           "member": "int64",
           "name": "NoPrimaryKeyTableCountDiff",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2193,7 +2186,6 @@
           "example": "1000",
           "member": "int64",
           "name": "NoPrimaryKeyTableRecordCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2202,7 +2194,6 @@
           "example": "无",
           "member": "Table",
           "name": "NoPrimaryKeyTables",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2211,7 +2202,6 @@
           "example": "1618890295",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
