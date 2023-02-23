@@ -9015,7 +9015,8 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9025,7 +9026,8 @@
           "name": "ZoneName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9035,17 +9037,19 @@
           "name": "ZoneId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄",
+          "document": "可用状态包含，\nUNAVAILABLE：不可用。\nAVAILABLE：可用。\nSELLOUT：售罄。\nSUPPORTMODIFYONLY：支持变配。",
           "example": "AVAILABLE",
           "member": "string",
           "name": "ZoneState",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9055,7 +9059,8 @@
           "name": "ZoneSupportIpv6",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9065,7 +9070,8 @@
           "name": "StandbyZoneSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

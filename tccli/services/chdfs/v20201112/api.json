@@ -362,40 +362,40 @@
       "document": "CreateAccessGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "权限组名称",
           "example": "test",
           "member": "string",
           "name": "AccessGroupName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC网络类型（1：CVM；2：黑石1.0）",
           "example": "1",
           "member": "uint64",
           "name": "VpcType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC网络ID",
           "example": "vpc-967aipkx",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "权限组描述，默认为空字符串",
           "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -408,9 +408,9 @@
           "example": "无",
           "member": "AccessGroup",
           "name": "AccessGroup",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -473,7 +473,6 @@
       "document": "CreateFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统名称",
           "example": "test",
           "member": "string",
@@ -483,7 +482,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍",
           "example": "1073741824",
           "member": "uint64",
@@ -493,7 +491,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否校验POSIX ACL",
           "example": "true",
           "member": "bool",
@@ -503,7 +500,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "文件系统描述，默认为空字符串",
           "example": "test",
           "member": "string",
@@ -513,7 +509,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "超级用户名列表，默认为空数组",
           "example": "[\"hadoop\"]",
           "member": "string",
@@ -523,7 +518,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "根目录Inode用户名，默认为hadoop",
           "example": "hadoop",
           "member": "string",
@@ -533,7 +527,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "根目录Inode组名，默认为supergroup",
           "example": "supergroup",
           "member": "string",
@@ -543,7 +536,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否打开Ranger地址校验",
           "example": "false",
           "member": "bool",
@@ -553,7 +545,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Ranger地址列表，默认为空数组",
           "example": "[\"127.0.0.1:8080\"]",
           "member": "string",
@@ -563,7 +554,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "多个资源标签，可以为空数组",
           "example": "无",
           "member": "Tag",
@@ -583,7 +573,6 @@
           "example": "无",
           "member": "FileSystem",
           "name": "FileSystem",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1

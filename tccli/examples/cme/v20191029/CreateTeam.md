@@ -8,8 +8,8 @@ Input:
 tccli cme CreateTeam --cli-unfold-argument  \
     --Platform test \
     --Name 测试团队名称 \
-    --OwnerId 997988688 \
-    --OwnerRemark 管理员李四
+    --OwnerRemark 管理员李四 \
+    --OwnerId 997988688
 ```
 
 Output: 

@@ -1289,42 +1289,52 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "团队名称，限30个字符。",
+          "example": "测试团队名称",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "团队所有者，指定用户 ID。",
+          "example": "997988688",
           "member": "string",
           "name": "OwnerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "团队所有者的备注，限30个字符。",
+          "example": "管理员李四",
           "member": "string",
           "name": "OwnerRemark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "自定义团队 ID。创建后不可修改，限20个英文字符及\"-\"。同时不能以 cmetid_开头。不填会生成默认团队 ID。",
+          "example": "无",
           "member": "string",
           "name": "TeamId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1334,10 +1344,13 @@
       "members": [
         {
           "document": "创建的团队 ID。",
+          "example": "cmetid_19882998399iieii87neu78",
           "member": "string",
           "name": "TeamId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

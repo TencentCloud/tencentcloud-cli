@@ -72,6 +72,14 @@
         "title": "获取指定id设备流量使用信息"
       }
     ],
+    "GetMultiFlowStatistic": [
+      {
+        "document": "批量获取指定设备列表流量使用信息",
+        "input": "{\n  \"DeviceIds\": [\n    \"mna-obzuio2pij\",\n    \"mna-ps9x7eako2\"\n  ],\n  \"BeginTime\": 1675255591,\n  \"EndTime\": 1675860391,\n  \"Type\": 1,\n  \"TimeGranularity\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowDetails\": [\n            {\n                \"AvgValue\": 26524619322,\n                \"DeviceId\": \"mna-obzuio2pij\",\n                \"MaxValue\": 44183705788,\n                \"NetDetails\": [\n                    {\n                        \"Current\": 421334,\n                        \"Time\": \"1675756800\"\n                    },\n                    {\n                        \"Current\": 32279199625,\n                        \"Time\": \"1675760400\"\n                    },\n                    {\n                        \"Current\": 44183705788,\n                        \"Time\": \"1675771200\"\n                    },\n                    {\n                        \"Current\": 29635150541,\n                        \"Time\": \"1675774800\"\n                    }\n                ],\n                \"TotalValue\": 106098477288\n            },\n            {\n                \"AvgValue\": 31803650050.5,\n                \"DeviceId\": \"mna-ps9x7eako2\",\n                \"MaxValue\": 50892172491,\n                \"NetDetails\": [\n                    {\n                        \"Current\": 22711,\n                        \"Time\": \"1675756800\"\n                    },\n                    {\n                        \"Current\": 46732569185,\n                        \"Time\": \"1675760400\"\n                    },\n                    {\n                        \"Current\": 29589835815,\n                        \"Time\": \"1675771200\"\n                    },\n                    {\n                        \"Current\": 50892172491,\n                        \"Time\": \"1675774800\"\n                    }\n                ],\n                \"TotalValue\": 127214600202\n            }\n        ],\n        \"RequestId\": \"ffad4f52-505f-4563-9431-b2ca1b5a887e\"\n    }\n}",
+        "title": "批量设备流量使用信息"
+      }
+    ],
     "GetPublicKey": [
       {
         "document": "",

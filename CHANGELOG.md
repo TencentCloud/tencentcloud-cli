@@ -1,3 +1,188 @@
+# Release 3.0.710.1
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 19 次发布
+
+发布时间：2023-02-24 01:11:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddNatAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/77108)
+* [DescribeNatAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/77107)
+* [ModifyNatAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/77106)
+* [RemoveNatAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/77105)
+
+新增数据结构：
+
+* [CommonFilter](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CommonFilter)
+* [CreateNatRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateNatRuleItem)
+* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 50 次发布
+
+发布时间：2023-02-24 01:12:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDatahubTopic](http://document.tencentcloudapi.woa.com/document/product/597/77109)
+* [DescribeDatahubTopics](http://document.tencentcloudapi.woa.com/document/product/597/77110)
+
+修改接口：
+
+* [DescribeInstancesDetail](http://document.tencentcloudapi.woa.com/document/product/597/40834)
+
+	* 新增入参：TagList
+
+
+新增数据结构：
+
+* [DatahubTopicDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubTopicDTO)
+* [DescribeDatahubTopicResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeDatahubTopicResp)
+* [DescribeDatahubTopicsResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeDatahubTopicsResp)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 31 次发布
+
+发布时间：2023-02-24 01:13:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTargets](http://document.tencentcloudapi.woa.com/document/product/214/30684)
+
+	* 新增入参：Filters
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 24 次发布
+
+发布时间：2023-02-24 01:26:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BlueprintPrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BlueprintPrice)
+
+	* <font color="#dd0000">**修改成员**：</font>Discount
+
+* [DiscountDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DiscountDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>Discount
+
+* [InstancePrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancePrice)
+
+	* <font color="#dd0000">**修改成员**：</font>Discount
+
+
+
+
+## 移动网络加速(mna) 版本：2021-01-19
+
+### 第 9 次发布
+
+发布时间：2023-02-24 01:31:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetMultiFlowStatistic](http://document.tencentcloudapi.woa.com/document/product/1385/77111)
+
+新增数据结构：
+
+* [FlowDetails](http://document.tencentcloudapi.woa.com/document/product/1385/55846#FlowDetails)
+
+
+
+## 弹性微服务 TEM(tem) 版本：2021-07-01
+
+### 第 31 次发布
+
+发布时间：2023-02-24 01:40:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EksService](http://document.tencentcloudapi.woa.com/document/product/1371/60171#EksService)
+
+	* 新增成员：ExternalDomain
+
+* [IngressInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#IngressInfo)
+
+	* 新增成员：Domain
+
+* [ServicePortMapping](http://document.tencentcloudapi.woa.com/document/product/1371/60171#ServicePortMapping)
+
+	* 新增成员：ExternalDomain
+
+
+
+
+## 弹性微服务 TEM(tem) 版本：2020-12-21
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 21 次发布
+
+发布时间：2023-02-24 01:47:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EnvAddressInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EnvAddressInfo)
+
+	* 新增成员：InternetBandWidth
+
+* [NacosReplica](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NacosReplica)
+
+	* 新增成员：VpcId
+
+* [SREInstance](http://document.tencentcloudapi.woa.com/document/product/1364/54942#SREInstance)
+
+	* 新增成员：EKSType, FeatureVersion, EnableClientIntranet
+
+* [ZookeeperReplica](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ZookeeperReplica)
+
+	* 新增成员：VpcId
+
+
+
+
 # Release 3.0.709.1
 
 ## 正版曲库直通车(ame) 版本：2019-09-16

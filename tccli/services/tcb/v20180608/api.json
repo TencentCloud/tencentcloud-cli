@@ -1956,94 +1956,94 @@
       "document": "CloudBaseRun 的 Side 描述定义",
       "members": [
         {
-          "default": "",
           "document": "容器镜像\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "ContainerImage",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "容器端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
           "member": "int64",
           "name": "ContainerPort",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "容器的名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "ContainerName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "kv的json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "EnvVar",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "InitialDelaySeconds 延迟多长时间启动健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "InitialDelaySeconds",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "CPU大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Cpu",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "内存大小（单位：M）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4096",
           "member": "int64",
           "name": "Mem",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "安全特性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CloudBaseSecurityContext",
           "name": "Security",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "挂载信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CloudBaseRunVolumeMount",
           "name": "VolumeMountInfos",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
