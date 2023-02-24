@@ -58,7 +58,7 @@
     ],
     "DescribeDedicatedClusterHosts": [
       {
-        "document": "",
+        "document": "专用集群宿主机信息",
         "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDedicatedClusterHosts\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-nk6e8j6c\"\n}",
         "output": "{\n    \"Response\": {\n        \"HostInfoSet\": [\n            {\n                \"HostIp\": \"50.4.2.2\",\n                \"ServiceType\": \"云服务器宿主机\",\n                \"HostStatus\": \"PENDING\",\n                \"HostType\": \"标准型S5.21XLARGE320\",\n                \"RunTime\": \"2022-03-29 16:37:01\",\n                \"ExpireTime\": \"2025-03-29 16:37:01\",\n                \"CpuAvailable\": 24,\n                \"CpuTotal\": 24,\n                \"MemAvailable\": 96,\n                \"MemTotal\": 96\n            },\n            {\n                \"HostIp\": \"50.4.2.3\",\n                \"ServiceType\": \"云服务器宿主机\",\n                \"HostStatus\": \"PENDING\",\n                \"HostType\": \"标准型S5.21XLARGE320\",\n                \"RunTime\": \"2022-03-30 16:37:01\",\n                \"ExpireTime\": \"2025-03-30 16:37:01\",\n                \"CpuAvailable\": 24,\n                \"CpuTotal\": 24,\n                \"MemAvailable\": 96,\n                \"MemTotal\": 96\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"7ffc723c-49d2-45ae-82cc-270aa35d3c59\"\n    }\n}",
         "title": "专用集群宿主机信息"
@@ -82,9 +82,9 @@
     ],
     "DescribeDedicatedClusterOverview": [
       {
-        "document": "",
+        "document": "专用集群概览信息",
         "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDedicatedClusterOverview\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-nk6e8j6c\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CvmCount\": 36,\n        \"HostCount\": 2,\n        \"RequestId\": \"ab5e5574-121b-4b5a-992c-fab691ac6737\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CvmCount\": 36,\n        \"HostCount\": 2,\n        \"VpnConnectionState\": \"AVAILABLE\",\n        \"VpngwBandwidthData\": {},\n        \"LocalNetInfo\": {},\n        \"VpnConnectionBandwidthData\": [],\n        \"RequestId\": \"ab5e5574-121b-4b5a-992c-fab691ac6737\"\n    }\n}",
         "title": "专用集群概览信息"
       }
     ],
@@ -130,7 +130,7 @@
     ],
     "ModifyDedicatedClusterInfo": [
       {
-        "document": "",
+        "document": "修改本地专用集群信息",
         "input": "https://cdc.tencentcloudapi.com/?Action=ModifyDedicatedClusterInfo\n&DedicatedClusterId=cluster-xx\n&Description=xxx\n&Zone=xxx\n&Name=xxx\n&SiteId=xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ceeecd2-2f24-4b3f-81eb-3461376xxc2f\"\n    }\n}",
         "title": "修改本地专用集群信息"
@@ -146,7 +146,7 @@
     ],
     "ModifySiteDeviceInfo": [
       {
-        "document": "",
+        "document": "修改机房设备信息",
         "input": "https://cdc.tencentcloudapi.com/?Action=ModifySiteDeviceInfo\n&SiteId=site-eilhrmr2\n&FiberType=SM\n&OpticalStandard=MM\n&PowerConnectors=220VAC50HZ\n&PowerFeedDrop=UP\n&MaxWeight=800\n&PowerDrawKva=5\n&UplinkSpeedGbps=10\n&UplinkCount=2\n&ConditionRequirement=true\n&DimensionRequirement=true\n&RedundantNetworking=true\n&NeedHelp=true\n&RedundantPower=true\n&BreakerRequirement=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ceeecd2-2f24-4b3f-81eb-346137682c2f\"\n    }\n}",
         "title": "修改机房设备信息"
@@ -154,7 +154,7 @@
     ],
     "ModifySiteInfo": [
       {
-        "document": "",
+        "document": "修改机房信息",
         "input": "https://cdc.tencentcloudapi.com/?Action=ModifySiteInfo\n&SiteId=site-xxxx\n&Name=new_name\n&Description=new_description\n&Note=new_note\n&Country=China\n&Province=Guangdong\n&City=Shenzhen\n&PostalCode=14353\n&AddressLine=腾讯滨海大厦\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ceeecd2-2f24-4b3f-81eb-346137682c3f\"\n    }\n}",
         "title": "修改机房信息"

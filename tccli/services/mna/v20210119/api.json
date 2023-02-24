@@ -63,6 +63,13 @@
       "output": "GetFlowStatisticResponse",
       "status": "online"
     },
+    "GetMultiFlowStatistic": {
+      "document": "批量获取设备流量统计曲线",
+      "input": "GetMultiFlowStatisticRequest",
+      "name": "批量获取设备流量统计",
+      "output": "GetMultiFlowStatisticResponse",
+      "status": "online"
+    },
     "GetPublicKey": {
       "document": "获取公钥用于验签",
       "input": "GetPublicKeyRequest",
@@ -878,6 +885,57 @@
       ],
       "usage": "in"
     },
+    "FlowDetails": {
+      "document": "设备流量信息",
+      "members": [
+        {
+          "document": "流量数据点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetDetails",
+          "name": "NetDetails",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"mna-xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "流量最大值（单位：bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "51548",
+          "member": "float",
+          "name": "MaxValue",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "流量平均值（单位：bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15441",
+          "member": "float",
+          "name": "AvgValue",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "流量总值（单位：bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "656546",
+          "member": "float",
+          "name": "TotalValue",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "GetDeviceRequest": {
       "document": "GetDevice请求参数结构体",
       "members": [
@@ -1063,6 +1121,72 @@
           "member": "float",
           "name": "TotalValue",
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetMultiFlowStatisticRequest": {
+      "document": "GetMultiFlowStatistic请求参数结构体",
+      "members": [
+        {
+          "document": "设备id列表，单次最多请求10个设备",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "1659514436",
+          "example": "1659514436",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "1659515000",
+          "example": "1659515000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "统计流量类型（1：上行流量，2：下行流量）",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "统计时间粒度（1：按小时统计，2：按天统计）",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeGranularity",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetMultiFlowStatisticResponse": {
+      "document": "GetMultiFlowStatistic返回参数结构体",
+      "members": [
+        {
+          "document": "批量设备流量信息",
+          "example": "无",
+          "member": "FlowDetails",
+          "name": "FlowDetails",
+          "type": "list",
           "value_allowed_null": false
         },
         {

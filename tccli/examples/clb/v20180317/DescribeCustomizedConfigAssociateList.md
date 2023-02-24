@@ -1,6 +1,6 @@
 **Example 1: 拉取配置绑定的server或location**
 
-
+拉取配置绑定的server或location
 
 Input: 
 

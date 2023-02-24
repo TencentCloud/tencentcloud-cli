@@ -1001,6 +1001,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "仿冒域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FakeDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "热度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",

@@ -16,6 +16,14 @@
         "title": "创建新企业安全组规则"
       }
     ],
+    "AddNatAcRule": [
+      {
+        "document": "添加nat访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNatAcRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"xx\",\n            \"SourceType\": \"xx\",\n            \"TargetContent\": \"xx\",\n            \"TargetType\": \"xx\",\n            \"Protocol\": \"xx\",\n            \"RuleAction\": \"xx\",\n            \"Port\": \"xx\",\n            \"Direction\": 1,\n            \"OrderIndex\": 0,\n            \"Uuid\": 0,\n            \"Enable\": \"xx\",\n            \"Description\": \"xx\"\n        }\n    ],\n    \"From\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "添加nat访问控制规则"
+      }
+    ],
     "CreateAcRules": [
       {
         "document": "",
@@ -204,6 +212,14 @@
         "title": "告警中心-资产安全事件统计-资产详情"
       }
     ],
+    "DescribeNatAcRule": [
+      {
+        "document": "查询NAT访问控制列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatAcRule\n<公共请求参数>\n\n{\n    \"Index\": \"xx\",\n    \"Filters\": [\n        {\n            \"Name\": \"xx\",\n            \"Values\": [\n                \"xx\"\n            ],\n            \"OperatorType\": 0\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"StartTime\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"Order\": \"xx\",\n    \"By\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"SourceContent\": \"xx\",\n                \"TargetContent\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"Port\": \"xx\",\n                \"RuleAction\": \"xx\",\n                \"Description\": \"xx\",\n                \"Count\": 1,\n                \"OrderIndex\": 1,\n                \"SourceType\": \"xx\",\n                \"TargetType\": \"xx\",\n                \"Uuid\": 1,\n                \"Invalid\": 1,\n                \"IsRegion\": 1,\n                \"CountryCode\": 1,\n                \"CityCode\": 1,\n                \"CountryName\": \"xx\",\n                \"CityName\": \"xx\",\n                \"CloudCode\": \"xx\",\n                \"IsCloud\": 1,\n                \"Enable\": \"xx\",\n                \"Direction\": 1,\n                \"InstanceName\": \"xx\",\n                \"InternalUuid\": 0,\n                \"Status\": 1\n            }\n        ],\n        \"AllTotal\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询NAT访问控制列表"
+      }
+    ],
     "DescribeNatFwInfoCount": [
       {
         "document": "",
@@ -388,6 +404,14 @@
         "title": "取消置顶接口"
       }
     ],
+    "ModifyNatAcRule": [
+      {
+        "document": "修改NAT访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatAcRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"xx\",\n            \"SourceType\": \"xx\",\n            \"TargetContent\": \"xx\",\n            \"TargetType\": \"xx\",\n            \"Protocol\": \"xx\",\n            \"RuleAction\": \"xx\",\n            \"Port\": \"xx\",\n            \"Direction\": 1,\n            \"OrderIndex\": 0,\n            \"Uuid\": 0,\n            \"Enable\": \"xx\",\n            \"Description\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改NAT访问控制规则"
+      }
+    ],
     "ModifyNatFwReSelect": [
       {
         "document": "接入模式示例",
@@ -510,6 +534,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveEnterpriseSecurityGroupRule\n<公共请求参数>\n\n{\n    \"RemoveType\": 0,\n    \"RuleUuid\": 8888\n}",
         "output": "{\n    \"Response\": {\n        \"RuleUuid\": 8888,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Status\": 0\n    }\n}",
         "title": "删除新企业安全组规则"
+      }
+    ],
+    "RemoveNatAcRule": [
+      {
+        "document": "删除NAT访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveNatAcRule\n<公共请求参数>\n\n{\n    \"RuleUuid\": [\n        0\n    ],\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除NAT访问控制规则"
       }
     ],
     "SetNatFwDnatRule": [

@@ -1710,6 +1710,42 @@
           "value_allowed_null": false
         },
         {
+          "document": "vpn通道状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "VpnConnectionState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "vpn网关监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpngwBandwidthData",
+          "name": "VpngwBandwidthData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本地网关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LocalNetInfo",
+          "name": "LocalNetInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "vpn网关通道监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpngwBandwidthData",
+          "name": "VpnConnectionBandwidthData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2250,11 +2286,82 @@
       ],
       "usage": "out"
     },
+    "InBandwidth": {
+      "document": "入带宽数据",
+      "members": [
+        {
+          "default": "",
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0]",
+          "member": "float",
+          "name": "Timestamps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间对应的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0]",
+          "member": "float",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LocalNetInfo": {
+      "document": "本地网络信息",
+      "members": [
+        {
+          "default": "",
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BGP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "路由信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.0/24",
+          "member": "string",
+          "name": "BGPRoute",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.0",
+          "member": "string",
+          "name": "LocalIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyDedicatedClusterInfoRequest": {
       "document": "ModifyDedicatedClusterInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "本地专用集群ID",
           "example": "cluster-6qvrhrmg",
           "member": "string",
@@ -2263,7 +2370,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "集群的新名称",
           "example": "task_success",
           "member": "string",
@@ -2272,7 +2378,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "集群的新可用区",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -2281,7 +2386,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "集群的新描述信息",
           "example": "this is a description",
           "member": "string",
@@ -2290,7 +2394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "集群所在站点",
           "example": "site-pp2cbp9k",
           "member": "string",
@@ -2362,7 +2465,6 @@
       "document": "ModifySiteDeviceInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "机房ID",
           "example": "site-pjmtpk14",
           "member": "string",
@@ -2371,7 +2473,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。",
           "example": "SM",
           "member": "string",
@@ -2380,7 +2481,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。",
           "example": "MM",
           "member": "string",
@@ -2389,7 +2489,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "电源连接器类型",
           "example": "220VAC50HZ",
           "member": "string",
@@ -2398,7 +2497,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "从机架上方还是下方供电。",
           "example": "UP",
           "member": "string",
@@ -2407,7 +2505,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "最大承重(KG)",
           "example": "800",
           "member": "int64",
@@ -2416,7 +2513,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "功耗(KW)",
           "example": "5",
           "member": "int64",
@@ -2425,7 +2521,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "网络到腾讯云Region区域的上行链路速度",
           "example": "10",
           "member": "int64",
@@ -2434,7 +2529,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。",
           "example": "3",
           "member": "int64",
@@ -2443,7 +2537,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否满足下面环境条件：\n1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。\n2、确定的机架位置包含:\n温度范围为 41 到 104°F (5 到 40°C)。\n湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。\n机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)。CFM 必须是 CDC 配置的 kVA 功耗值的 145.8 倍。",
           "example": "true",
           "member": "bool",
@@ -2452,7 +2545,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否满足下面的尺寸条件：\n您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。\n您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。\n在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。",
           "example": "true",
           "member": "bool",
@@ -2461,7 +2553,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否提供冗余的上游设备(交换机或路由器)，以便两台  网络设备都能连接到网络设备。",
           "example": "true",
           "member": "bool",
@@ -2470,7 +2561,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否需要腾讯云团队协助完成机架支撑工作",
           "example": "true",
           "member": "bool",
@@ -2479,7 +2569,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否电源冗余",
           "example": "true",
           "member": "bool",
@@ -2488,7 +2577,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "上游断路器是否具备",
           "example": "true",
           "member": "bool",
@@ -2515,7 +2603,6 @@
       "document": "ModifySiteInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "机房ID",
           "example": "site-pjmtpk14",
           "member": "string",
@@ -2524,7 +2611,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "站点名称",
           "example": "测试机房",
           "member": "string",
@@ -2533,7 +2619,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "站点描述",
           "example": "机房详细描述信息",
           "member": "string",
@@ -2542,7 +2627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "注意事项",
           "example": "机房注意事项",
           "member": "string",
@@ -2551,7 +2635,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "站点所在国家",
           "example": "中国",
           "member": "string",
@@ -2560,7 +2643,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "站点所在省份",
           "example": "广东",
           "member": "string",
@@ -2569,7 +2651,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "站点所在城市",
           "example": "深圳",
           "member": "string",
@@ -2578,7 +2659,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "站点所在地区的邮编",
           "example": "518000",
           "member": "string",
@@ -2587,7 +2667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "站点所在地区的详细地址信息",
           "example": "南山区",
           "member": "string",
@@ -2609,6 +2688,32 @@
         }
       ],
       "type": "object"
+    },
+    "OutBandwidth": {
+      "document": "出带宽数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0]",
+          "member": "float",
+          "name": "Timestamps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对应时间的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0]",
+          "member": "float",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RegionZoneInfo": {
       "document": "RegionZoneInfo信息",
@@ -2919,6 +3024,32 @@
           "name": "PostalCode",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpngwBandwidthData": {
+      "document": "VPN网关的流量监控数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "出带宽流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutBandwidth",
+          "name": "OutBandwidth",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "入带宽流量",
+          "example": "无",
+          "member": "InBandwidth",
+          "name": "InBandwidth",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

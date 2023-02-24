@@ -344,6 +344,22 @@
         "title": "查询Datahub任务列表"
       }
     ],
+    "DescribeDatahubTopic": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeDatahubTopic\n&Name=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"UserName\": \"xx\",\n            \"TopicId\": \"xx\",\n            \"Name\": \"xx\",\n            \"PartitionNum\": 1,\n            \"Status\": 1,\n            \"Note\": \"xx\",\n            \"RetentionMs\": 1,\n            \"Password\": \"xx\",\n            \"TopicName\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取主题属性"
+      }
+    ],
+    "DescribeDatahubTopics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatahubTopics\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"TopicList\": [\n                {}\n            ]\n        },\n        \"RequestId\": \"fd9afa97-cc0f-4ea7-9da8-63914a0877e1\"\n    }\n}",
+        "title": "查询Datahub主题列表"
+      }
+    ],
     "DescribeGroup": [
       {
         "document": "",

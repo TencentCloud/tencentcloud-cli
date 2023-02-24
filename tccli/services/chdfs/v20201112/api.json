@@ -362,7 +362,6 @@
       "document": "CreateAccessGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "权限组名称",
           "example": "test",
           "member": "string",
@@ -371,7 +370,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "VPC网络类型（1：CVM；2：黑石1.0）",
           "example": "1",
           "member": "uint64",
@@ -380,7 +378,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "VPC网络ID",
           "example": "vpc-967aipkx",
           "member": "string",
@@ -389,7 +386,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "权限组描述，默认为空字符串",
           "example": "test",
           "member": "string",
@@ -408,7 +404,6 @@
           "example": "无",
           "member": "AccessGroup",
           "name": "AccessGroup",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -470,7 +465,6 @@
       "document": "CreateFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统名称",
           "example": "test",
           "member": "string",
@@ -479,7 +473,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍",
           "example": "1073741824",
           "member": "uint64",
@@ -488,7 +481,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否校验POSIX ACL",
           "example": "true",
           "member": "bool",
@@ -497,7 +489,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "文件系统描述，默认为空字符串",
           "example": "test",
           "member": "string",
@@ -506,7 +497,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "超级用户名列表，默认为空数组",
           "example": "[\"hadoop\"]",
           "member": "string",
@@ -515,7 +505,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "根目录Inode用户名，默认为hadoop",
           "example": "hadoop",
           "member": "string",
@@ -524,7 +513,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "根目录Inode组名，默认为supergroup",
           "example": "supergroup",
           "member": "string",
@@ -533,7 +521,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否打开Ranger地址校验",
           "example": "false",
           "member": "bool",
@@ -542,7 +529,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "Ranger地址列表，默认为空数组",
           "example": "[\"127.0.0.1:8080\"]",
           "member": "string",
@@ -551,7 +537,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "多个资源标签，可以为空数组",
           "example": "无",
           "member": "Tag",
@@ -570,7 +555,6 @@
           "example": "无",
           "member": "FileSystem",
           "name": "FileSystem",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

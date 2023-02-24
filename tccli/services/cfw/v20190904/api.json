@@ -14,6 +14,13 @@
       "output": "AddEnterpriseSecurityGroupRulesResponse",
       "status": "online"
     },
+    "AddNatAcRule": {
+      "document": "添加nat访问控制规则",
+      "input": "AddNatAcRuleRequest",
+      "name": "添加nat访问控制规则",
+      "output": "AddNatAcRuleResponse",
+      "status": "online"
+    },
     "CreateAcRules": {
       "document": "创建访问控制规则",
       "input": "CreateAcRulesRequest",
@@ -166,6 +173,13 @@
       "input": "DescribeIPStatusListRequest",
       "name": "ip防护状态查询",
       "output": "DescribeIPStatusListResponse",
+      "status": "online"
+    },
+    "DescribeNatAcRule": {
+      "document": "查询NAT访问控制列表",
+      "input": "DescribeNatAcRuleRequest",
+      "name": "查询NAT访问控制列表",
+      "output": "DescribeNatAcRuleResponse",
       "status": "online"
     },
     "DescribeNatFwInfoCount": {
@@ -329,6 +343,13 @@
       "output": "ModifyBlockTopResponse",
       "status": "online"
     },
+    "ModifyNatAcRule": {
+      "document": "修改NAT访问控制规则",
+      "input": "ModifyNatAcRuleRequest",
+      "name": "修改NAT访问控制规则",
+      "output": "ModifyNatAcRuleResponse",
+      "status": "online"
+    },
     "ModifyNatFwReSelect": {
       "document": "防火墙实例重新选择vpc或nat",
       "input": "ModifyNatFwReSelectRequest",
@@ -425,6 +446,13 @@
       "input": "RemoveEnterpriseSecurityGroupRuleRequest",
       "name": "删除新企业安全组规则",
       "output": "RemoveEnterpriseSecurityGroupRuleResponse",
+      "status": "online"
+    },
+    "RemoveNatAcRule": {
+      "document": "删除NAT访问控制规则",
+      "input": "RemoveNatAcRuleRequest",
+      "name": "删除NAT访问控制规则",
+      "output": "RemoveNatAcRuleResponse",
       "status": "online"
     },
     "SetNatFwDnatRule": {
@@ -778,6 +806,48 @@
       ],
       "type": "object"
     },
+    "AddNatAcRuleRequest": {
+      "document": "AddNatAcRule请求参数结构体",
+      "members": [
+        {
+          "document": "需要添加的nat访问控制规则列表",
+          "example": "无",
+          "member": "CreateNatRuleItem",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则",
+          "example": "无",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddNatAcRuleResponse": {
+      "document": "AddNatAcRule返回参数结构体",
+      "members": [
+        {
+          "document": "创建成功后返回新策略ID列表",
+          "example": "[8888, 8889]",
+          "member": "int64",
+          "name": "RuleUuid",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AssetZone": {
       "document": "AssetZone ",
       "members": [
@@ -1099,6 +1169,42 @@
           "name": "Description",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CommonFilter": {
+      "document": "通用的列表检索过滤选项",
+      "members": [
+        {
+          "default": "",
+          "document": "检索的键值",
+          "example": "SrcIP",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检索的值",
+          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "枚举类型，代表name与values之间的匹配关系\nenum FilterOperatorType {\n    //INVALID\n    FILTER_OPERATOR_TYPE_INVALID = 0;\n    //等于\n    FILTER_OPERATOR_TYPE_EQUAL = 1;\n    //大于\n    FILTER_OPERATOR_TYPE_GREATER = 2;\n    //小于\n    FILTER_OPERATOR_TYPE_LESS = 3;\n    //大于等于\n    FILTER_OPERATOR_TYPE_GREATER_EQ = 4;\n    //小于等于\n    FILTER_OPERATOR_TYPE_LESS_EQ = 5;\n    //不等于\n    FILTER_OPERATOR_TYPE_NO_EQ = 6;\n    //in，数组中包含\n    FILTER_OPERATOR_TYPE_IN = 7;\n    //not in\n    FILTER_OPERATOR_TYPE_NOT_IN = 8;\n    //模糊匹配\n    FILTER_OPERATOR_TYPE_FUZZINESS = 9;\n    //存在\n    FILTER_OPERATOR_TYPE_EXIST = 10;\n    //不存在\n    FILTER_OPERATOR_TYPE_NOT_EXIST = 11;\n    //正则\n    FILTER_OPERATOR_TYPE_REGULAR = 12;\n}",
+          "example": "1",
+          "member": "int64",
+          "name": "OperatorType",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1517,6 +1623,120 @@
         }
       ],
       "type": "object"
+    },
+    "CreateNatRuleItem": {
+      "document": "创建NAT ACL规则参数结构",
+      "members": [
+        {
+          "document": "访问源示例： net：IP/CIDR(192.168.0.2)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.0.2",
+          "member": "string",
+          "name": "SourceContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ip",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*.qq.com",
+          "member": "string",
+          "name": "TargetContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "domain",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问控制策略的端口。取值： -1/-1：全部端口 80：80端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1/-1",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则方向：1，入站；0，出站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Direction",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则状态，true表示启用，false表示禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "string",
+          "name": "Enable",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则对应的唯一id，创建规则时无需填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8888",
+          "member": "int64",
+          "name": "Uuid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "CreateSecurityGroupRulesRequest": {
       "document": "CreateSecurityGroupRules请求参数结构体",
@@ -1994,6 +2214,228 @@
         }
       ],
       "type": "object"
+    },
+    "DescAcItem": {
+      "document": "访问控制列表对象",
+      "members": [
+        {
+          "document": "访问源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问目的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "命中次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行顺序",
+          "example": "1",
+          "member": "uint64",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ip",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为 ip,net,domain,template,location\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ip",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则对应的唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8888",
+          "member": "uint64",
+          "name": "Uuid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则有效性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Invalid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "0为正常规则,1为地域规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsRegion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "国家id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CountryCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "城市id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CityCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "国家名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CountryName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "省名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CityName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "云厂商code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CloudCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "0为正常规则,1为云厂商规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsCloud",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则状态，true表示启用，false表示禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "string",
+          "name": "Enable",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则方向：1，入向；0，出向\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "内部使用的uuid，一般情况下不会使用到该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456789",
+          "member": "int64",
+          "name": "InternalUuid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则状态，查询规则命中详情时该字段有效，0：新增，1: 已删除, 2: 编辑删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeAcListsRequest": {
       "document": "DescribeAcLists请求参数结构体",
@@ -2882,6 +3324,112 @@
           "name": "ReturnMsg",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatAcRuleRequest": {
+      "document": "DescribeNatAcRule请求参数结构体",
+      "members": [
+        {
+          "document": "每页条数",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "偏移值",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "需要查询的索引，特定场景使用，可不填",
+          "example": "vpc_rule",
+          "member": "string",
+          "name": "Index",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "过滤条件组合",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "检索的起始时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "检索的截止时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "排序所用到的字段",
+          "example": "id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatAcRuleResponse": {
+      "document": "DescribeNatAcRule返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "nat访问控制列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescAcItem",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "未过滤的总条数",
+          "example": "无",
+          "member": "uint64",
+          "name": "AllTotal",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4769,6 +5317,40 @@
       ],
       "type": "object"
     },
+    "ModifyNatAcRuleRequest": {
+      "document": "ModifyNatAcRule请求参数结构体",
+      "members": [
+        {
+          "document": "需要编辑的规则数组",
+          "example": "无",
+          "member": "CreateNatRuleItem",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNatAcRuleResponse": {
+      "document": "ModifyNatAcRule返回参数结构体",
+      "members": [
+        {
+          "document": "编辑成功后返回新策略ID列表",
+          "example": "[8888, 8889]",
+          "member": "int64",
+          "name": "RuleUuid",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyNatFwReSelectRequest": {
       "document": "ModifyNatFwReSelect请求参数结构体",
       "members": [
@@ -5801,6 +6383,48 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveNatAcRuleRequest": {
+      "document": "RemoveNatAcRule请求参数结构体",
+      "members": [
+        {
+          "document": "规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleUuid",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "规则方向：1，入站；0，出站",
+          "example": "0",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveNatAcRuleResponse": {
+      "document": "RemoveNatAcRule返回参数结构体",
+      "members": [
+        {
+          "document": "删除成功后返回被删除策略的uuid列表",
+          "example": "[8888,8889]",
+          "member": "int64",
+          "name": "RuleUuid",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

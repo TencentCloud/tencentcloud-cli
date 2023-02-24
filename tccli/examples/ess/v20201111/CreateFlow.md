@@ -1,6 +1,6 @@
-**Example 1: 测试**
+**Example 1: 创建单C流程**
 
-
+创建一个单C流程
 
 Input: 
 
@@ -10,7 +10,6 @@ tccli ess CreateFlow --cli-unfold-argument  \
     --UserData 字符串 \
     --FlowName 字符串 \
     --FlowDescription 字符串 \
-    --Agent.AppId 9d2b7f3*****56dcadf3b553 \
     --FlowType 字符串 \
     --Approvers.0.OrganizationName 字符串 \
     --Approvers.0.ApproverType 1 \
@@ -25,11 +24,7 @@ tccli ess CreateFlow --cli-unfold-argument  \
     --Approvers.0.PreReadTime 5 \
     --DeadLine 1652931170 \
     --ClientToken 字符串 \
-    --Operator.ProxyIp 字符串 \
-    --Operator.ClientIp 字符串 \
     --Operator.UserId yDxMkUy*****E8VI2JmKxPkk \
-    --Operator.Channel YUFU \
-    --Operator.OpenId us-6c4f2****bafe176c2b1cb86a \
     --Unordered true \
     --CallbackUrl 
 ```
@@ -44,9 +39,9 @@ Output:
 }
 ```
 
-**Example 2: 创建签署流程。**
+**Example 2: 创建签署流程**
 
-
+创建一个B2C流程
 
 Input: 
 

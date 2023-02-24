@@ -2322,7 +2322,6 @@
       "document": "CreateClsLogSet请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。",
           "example": "clb_logset",
           "member": "string",
@@ -2331,7 +2330,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志集的保存周期，单位：天。",
           "example": "7",
           "member": "uint64",
@@ -2340,7 +2338,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "日志集类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。",
           "example": "ACCESS",
           "member": "string",
@@ -2359,7 +2356,6 @@
           "example": "578dd0ad-2e7c-488b-b5fe-0b23da3537eb",
           "member": "string",
           "name": "LogsetId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2952,7 +2948,6 @@
       "document": "CreateTopic请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "日志主题的名称。",
           "example": "clb-topic",
           "member": "string",
@@ -2961,7 +2956,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。",
           "example": "3",
           "member": "uint64",
@@ -2970,7 +2964,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。",
           "example": "ACCESS",
           "member": "string",
@@ -2979,7 +2972,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志集的保存周期，单位：天，默认30天。",
           "example": "30",
           "member": "uint64",
@@ -2988,7 +2980,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。",
           "example": "HOT",
           "member": "string",
@@ -3007,7 +2998,6 @@
           "example": "b046ae5f-00cf-4e90-880c-215e5ae7b6xy",
           "member": "string",
           "name": "TopicId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4054,7 +4044,6 @@
       "document": "DescribeCustomizedConfigAssociateList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "配置ID",
           "example": "pz-fi018waq",
           "member": "string",
@@ -4063,7 +4052,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "拉取绑定关系列表开始位置，默认值 0",
           "example": "0",
           "member": "int64",
@@ -4072,7 +4060,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "拉取绑定关系列表数目，默认值 20",
           "example": "3",
           "member": "int64",
@@ -4081,7 +4068,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "搜索域名",
           "example": "a.cc",
           "member": "string",
@@ -4100,7 +4086,6 @@
           "example": "无",
           "member": "BindDetailItem",
           "name": "BindList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4109,7 +4094,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4889,7 +4873,6 @@
       "document": "DescribeResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回可用区资源列表数目，默认20，最大值100。",
           "example": "20",
           "member": "uint64",
@@ -4898,7 +4881,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回可用区资源列表起始偏移量，默认0。",
           "example": "0",
           "member": "uint64",
@@ -4907,7 +4889,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询可用区资源列表条件，详细的过滤条件如下：\n<li> zone - String - 是否必填：否 - （过滤条件）按照 可用区 过滤，如：\"ap-guangzhou-1\"（广州一区）。</li>\n<li> isp -- String - 是否必填：否 - （过滤条件）按照 Isp 类型过滤，如：\"BGP\",\"CMCC\",\"CUCC\",\"CTCC\"。</li>",
           "example": "无",
           "member": "Filter",
@@ -4926,7 +4907,6 @@
           "example": "无",
           "member": "ZoneResource",
           "name": "ZoneResourceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4935,7 +4915,6 @@
           "example": "3",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5236,7 +5215,6 @@
       "document": "DescribeTargets请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "负载均衡实例 ID。",
           "example": "lb-10iq9lou",
           "member": "string",
@@ -5245,7 +5223,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "监听器 ID 列表。ID 数量上限为20个。",
           "example": "无",
           "member": "string",
@@ -5254,7 +5231,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "监听器协议类型。",
           "example": "HTTP",
           "member": "string",
@@ -5263,13 +5239,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "监听器端口。",
           "example": "80",
           "member": "int64",
           "name": "Port",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "查询负载均衡绑定的后端服务列表，过滤条件如下：\n<li> location-id - String - 是否必填：否 - （过滤条件）按照 规则ID 过滤，如：\"loc-12345678\"。</li>\n<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照 后端服务内网IP 过滤，如：\"172.16.1.1\"。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5282,7 +5265,6 @@
           "example": "无",
           "member": "ListenerBackend",
           "name": "Listeners",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5299,7 +5281,6 @@
       "document": "DescribeTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "请求ID，即接口返回的 RequestId 参数。",
           "example": "55c85074-3e7f-4c6d-864f-673660d4f8de",
           "member": "string",
@@ -5308,7 +5289,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "订单ID。\n注意：参数TaskId和DealName必须传一个。",
           "example": "2022XXXX",
           "member": "string",
@@ -5327,7 +5307,6 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5336,7 +5315,6 @@
           "example": "[\"lb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7902,7 +7880,7 @@
         },
         {
           "default": "",
-          "document": "负载均衡绑定的后端服务的地域信息",
+          "document": "设置负载均衡跨地域绑定1.0的后端服务信息",
           "example": "无",
           "member": "TargetRegionInfo",
           "name": "TargetRegionInfo",
@@ -7929,7 +7907,7 @@
         },
         {
           "default": "",
-          "document": "是否开启SnatPro",
+          "document": "是否开启跨地域绑定2.0功能",
           "example": "false",
           "member": "bool",
           "name": "SnatPro",
@@ -8009,7 +7987,6 @@
       "document": "ModifyLoadBalancerSla请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "负载均衡实例信息。",
           "example": "无",
           "member": "SlaUpdateParam",

@@ -1085,6 +1085,15 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "客户端公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InternetBandWidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1315,7 +1324,6 @@
       "document": "Nacos副本信息",
       "members": [
         {
-          "default": "",
           "document": "名称",
           "example": "xxxx",
           "member": "string",
@@ -1325,7 +1333,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "角色",
           "example": "leader",
           "member": "string",
@@ -1335,7 +1342,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态",
           "example": "running",
           "member": "string",
@@ -1345,7 +1351,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxx",
           "member": "string",
@@ -1355,7 +1360,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
@@ -1365,12 +1369,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
           "name": "ZoneId",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "VPC ID\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxx\t",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1413,7 +1425,6 @@
       "document": "微服务注册引擎实例",
       "members": [
         {
-          "default": "",
           "document": "实例ID",
           "example": "inst-12345678",
           "member": "string",
@@ -1423,7 +1434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "名称",
           "example": "test",
           "member": "string",
@@ -1433,7 +1443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "版本号",
           "example": "1.8.6",
           "member": "string",
@@ -1443,7 +1452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态, 枚举值:creating/create_fail/running/updating/update_fail/restarting/restart_fail/destroying/destroy_fail",
           "example": "creating",
           "member": "string",
@@ -1453,7 +1461,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规格ID",
           "example": "spec-12345678",
           "member": "string",
@@ -1463,7 +1470,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "副本数",
           "example": "3",
           "member": "int64",
@@ -1473,7 +1479,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "类型",
           "example": "consul",
           "member": "string",
@@ -1483,7 +1488,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Vpc iD",
           "example": "vpc-12345678",
           "member": "string",
@@ -1493,7 +1497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"subnet-12345678\"]",
           "member": "string",
@@ -1503,7 +1506,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启持久化存储\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1513,7 +1515,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据存储方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
@@ -1523,7 +1524,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云硬盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -1533,7 +1533,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "计费方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "POSTPAID",
           "member": "string",
@@ -1543,7 +1542,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "EKS集群的ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-1234567",
           "member": "string",
@@ -1553,7 +1551,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-04-08 16:20:58",
           "member": "string",
@@ -1563,7 +1560,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "环境配置信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"EnvName\":\"pro\",\"StorageCapacity\":50,\"Status\":\"running\",\"Admin",
           "member": "EnvInfo",
@@ -1573,7 +1569,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "引擎所在的区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
           "member": "string",
@@ -1583,7 +1578,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "注册引擎是否开启公网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1593,7 +1587,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "私有网络列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "VpcInfo",
@@ -1603,7 +1596,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务治理相关信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceGovernanceInfo",
@@ -1613,7 +1605,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Key\":\"type\",\"Value\":\"nacos\"}]",
           "member": "KVPair",
@@ -1623,7 +1614,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "引擎实例是否开启控制台公网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1633,7 +1623,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "引擎实例是否开启控制台内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1643,7 +1632,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "引擎实例是否展示参数配置页面\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1653,7 +1641,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "引擎实例控制台默认密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "nacosxx",
           "member": "string",
@@ -1663,7 +1650,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "交易付费类型，0后付费/1预付费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1673,7 +1659,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1683,7 +1668,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "预付费到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-04-08 16:20:58",
           "member": "string",
@@ -1693,7 +1677,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "隔离开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-04-08 16:20:58",
           "member": "string",
@@ -1703,13 +1686,39 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例地域相关的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeInstanceRegionInfo",
           "name": "RegionInfos",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "所在EKS环境，分为common和yunti\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "common",
+          "member": "string",
+          "name": "EKSType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "引擎的产品版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "FeatureVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "引擎实例是否开启客户端内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableClientIntranet",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -1850,7 +1859,6 @@
       "document": "私有网络信息",
       "members": [
         {
-          "default": "",
           "document": "Vpc Id",
           "example": "vpc-xxxxxxxx",
           "member": "string",
@@ -1860,7 +1868,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网ID",
           "example": "subnet-xxxxxxxx",
           "member": "string",
@@ -1870,7 +1877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx.xx.xx.xx",
           "member": "string",
@@ -1886,7 +1892,6 @@
       "document": "Zookeeper副本信息",
       "members": [
         {
-          "default": "",
           "document": "名称",
           "example": "zk-xxxxx",
           "member": "string",
@@ -1896,7 +1901,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "角色",
           "example": "leading",
           "member": "string",
@@ -1906,7 +1910,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态",
           "example": "Running",
           "member": "string",
@@ -1916,7 +1919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxx",
           "member": "string",
@@ -1926,7 +1928,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz",
           "member": "string",
@@ -1936,7 +1937,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300001",
           "member": "string",
@@ -1946,12 +1946,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "别名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zookeeper-0",
           "member": "string",
           "name": "AliasName",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }

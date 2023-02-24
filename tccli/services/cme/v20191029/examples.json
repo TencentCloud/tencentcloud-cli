@@ -91,7 +91,7 @@
     "CreateTeam": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=CreateTeam\n&Platform=test\n&Name=测试团队名称\n&OwnerId=997988688\n&OwnerRemark=管理员李四\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTeam\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Name\": \"测试团队名称\",\n    \"OwnerRemark\": \"管理员李四\",\n    \"OwnerId\": \"997988688\"\n}",
         "output": "{\n    \"Response\": {\n        \"TeamId\": \"cmetid_19882998399iieii87neu78\",\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "创建一个团队"
       }

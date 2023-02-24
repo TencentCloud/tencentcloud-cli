@@ -794,13 +794,13 @@
           "value_allowed_null": false
         },
         {
-          "document": "镜像描述信息。",
+          "document": "镜像描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "discuzq",
           "member": "string",
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "操作系统名称。",
@@ -986,7 +986,6 @@
       "document": "BlueprintPrice\t自定义镜像的价格参数。",
       "members": [
         {
-          "default": "",
           "document": "镜像单价，原价。单位元。",
           "example": "0.008",
           "member": "float",
@@ -996,7 +995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "镜像总价，原价。单位元。",
           "example": "0.008",
           "member": "float",
@@ -1006,17 +1004,15 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "折扣。",
           "example": "100",
-          "member": "int64",
+          "member": "float",
           "name": "Discount",
           "required": true,
-          "type": "int",
+          "type": "float",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "镜像折扣后总价。单位元。",
           "example": "0.008",
           "member": "float",
@@ -3679,8 +3675,8 @@
       "document": "套餐折扣详情（仅用于控制台调用询价相关接口返回）。",
       "members": [
         {
-          "default": "",
           "document": "计费时长。",
+          "example": "无",
           "member": "int64",
           "name": "TimeSpan",
           "required": true,
@@ -3688,8 +3684,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "计费单元。",
+          "example": "无",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -3697,8 +3693,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "总价。",
+          "example": "无",
           "member": "float",
           "name": "TotalCost",
           "required": true,
@@ -3706,8 +3702,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "折后总价。",
+          "example": "无",
           "member": "float",
           "name": "RealTotalCost",
           "required": true,
@@ -3715,17 +3711,17 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "折扣。",
-          "member": "int64",
+          "example": "无",
+          "member": "float",
           "name": "Discount",
           "required": true,
-          "type": "int",
+          "type": "float",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "具体折扣详情。",
+          "example": "无",
           "member": "PolicyDetail",
           "name": "PolicyDetail",
           "required": true,
@@ -3739,7 +3735,6 @@
       "document": "磁盘信息",
       "members": [
         {
-          "default": "",
           "document": "磁盘ID",
           "example": "lhdisk-p1zflrif",
           "member": "string",
@@ -3749,7 +3744,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例ID",
           "example": "lhins-anxwfvxh",
           "member": "string",
@@ -3759,7 +3753,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -3769,7 +3762,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘名称",
           "example": "disk-name",
           "member": "string",
@@ -3779,7 +3771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘类型",
           "example": "DATA_DISK",
           "member": "string",
@@ -3789,7 +3780,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘介质类型",
           "example": "CLOUD_SSD",
           "member": "string",
@@ -3799,7 +3789,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘付费类型",
           "example": "PREPAID",
           "member": "string",
@@ -3809,7 +3798,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘大小",
           "example": "20",
           "member": "int64",
@@ -3819,7 +3807,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "续费标识",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
@@ -3829,7 +3816,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘状态，取值范围：\n<li>PENDING：创建中。 </li>\n<li>UNATTACHED：未挂载。</li>\n<li>ATTACHING：挂载中。</li>\n<li>ATTACHED：已挂载。</li>\n<li>DETACHING：卸载中。 </li>\n<li> SHUTDOWN：已隔离。</li>\n<li> CREATED_FAILED：创建失败。</li>\n<li>TERMINATING：销毁中。</li>\n<li> DELETING：删除中。</li>\n<li> FREEZING：冻结中。</li>",
           "example": "UNATTACHED",
           "member": "string",
@@ -3839,7 +3825,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘挂载状态",
           "example": "False",
           "member": "bool",
@@ -3849,7 +3834,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否随实例释放",
           "example": "False",
           "member": "bool",
@@ -3859,7 +3843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "上一次操作",
           "example": "CreateDisks",
           "member": "string",
@@ -3869,7 +3852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "上一次操作状态",
           "example": "SUCCESS",
           "member": "string",
@@ -3879,7 +3861,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "上一次请求ID",
           "example": "b786faac-d27b-4f70-a52e-3ae725e0f639",
           "member": "string",
@@ -3889,17 +3870,15 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
@@ -3909,7 +3888,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
@@ -3919,7 +3897,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云硬盘的已有备份点数量。",
           "example": "1",
           "member": "int64",
@@ -3929,7 +3906,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云硬盘的备份点配额数量。",
           "example": "1",
           "member": "int64",
@@ -5323,10 +5299,10 @@
         {
           "document": "折扣。",
           "example": "无",
-          "member": "int64",
+          "member": "float",
           "name": "Discount",
           "required": false,
-          "type": "int",
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -6557,7 +6533,6 @@
       "document": "描述了快照相关信息。",
       "members": [
         {
-          "default": "",
           "document": "快照 ID。",
           "example": "无",
           "member": "string",
@@ -6567,7 +6542,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建此快照的磁盘类型。取值：<li>SYSTEM_DISK：系统盘</li>",
           "example": "无",
           "member": "string",
@@ -6577,7 +6551,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建此快照的磁盘 ID。",
           "example": "无",
           "member": "string",
@@ -6587,7 +6560,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建此快照的磁盘大小，单位 GB。",
           "example": "无",
           "member": "int64",
@@ -6597,7 +6569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照名称，用户自定义的快照别名。",
           "example": "无",
           "member": "string",
@@ -6607,7 +6578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照的状态。取值范围：\n<li>NORMAL：正常 </li>\n<li>CREATING：创建中</li>\n<li>ROLLBACKING：回滚中。</li>",
           "example": "无",
           "member": "string",
@@ -6617,7 +6587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建或回滚快照进度百分比，成功后此字段取值为 100。",
           "example": "无",
           "member": "int64",
@@ -6627,7 +6596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照的最新操作，只有创建、回滚快照时记录。\n取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6637,7 +6605,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "快照的最新操作状态，只有创建、回滚快照时记录。\n取值范围：\n<li>SUCCESS：表示操作成功</li>\n<li>OPERATING：表示操作执行中</li>\n<li>FAILED：表示操作失败</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6647,7 +6614,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6657,14 +6623,13 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "快照的创建时间。",
+          "document": "快照的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

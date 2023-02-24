@@ -8503,7 +8503,7 @@
         },
         {
           "default": "",
-          "document": "可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄",
+          "document": "可用状态包含，\nUNAVAILABLE：不可用。\nAVAILABLE：可用。\nSELLOUT：售罄。\nSUPPORTMODIFYONLY：支持变配。",
           "example": "AVAILABLE",
           "member": "string",
           "name": "ZoneState",
