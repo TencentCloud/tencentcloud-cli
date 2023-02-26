@@ -1,5 +1,19 @@
 {
   "actions": {
+    "AddWhitelistUin": {
+      "document": "添加白名单账号",
+      "input": "AddWhitelistUinRequest",
+      "name": "添加白名单账号",
+      "output": "AddWhitelistUinResponse",
+      "status": "online"
+    },
+    "DeleteWhitelistUin": {
+      "document": "删除白名单账号",
+      "input": "DeleteWhitelistUinRequest",
+      "name": "删除白名单账号",
+      "output": "DeleteWhitelistUinResponse",
+      "status": "online"
+    },
     "DescribeIpByUin": {
       "document": "根据UIN查询注册IP地址",
       "input": "DescribeIpByUinRequest",
@@ -50,6 +64,80 @@
     "serviceShortName": "account"
   },
   "objects": {
+    "AddWhitelistUinRequest": {
+      "document": "AddWhitelistUin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "白名单键",
+          "example": "whiteKey",
+          "member": "string",
+          "name": "WhiteListKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "白名单值,最多1000个",
+          "example": "[\"123456\\n\"]",
+          "member": "string",
+          "name": "WhiteListValue",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddWhitelistUinResponse": {
+      "document": "AddWhitelistUin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWhitelistUinRequest": {
+      "document": "DeleteWhitelistUin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "白名单键",
+          "example": "whiteKey",
+          "member": "string",
+          "name": "WhiteListKey",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "白名单值,最多1000个",
+          "example": "[\"123456\\n\"]",
+          "member": "string",
+          "name": "WhiteListValue",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWhitelistUinResponse": {
+      "document": "DeleteWhitelistUin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIpByUinRequest": {
       "document": "DescribeIpByUin请求参数结构体",
       "members": [

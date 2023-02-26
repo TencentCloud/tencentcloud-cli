@@ -3,7 +3,7 @@
     "AddTeamMember": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=AddTeamMember\n&Platform=test\n&TeamId=1kdk882ddd88338ddd3k3\n&TeamMembers.0.MemberId=1kd3ej3okjdije3lejjdjk99\n&TeamMembers.0.Remark=编辑张三\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddTeamMember\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n    \"TeamMembers\": [\n        {\n            \"Remark\": \"编辑张三\",\n            \"MemberId\": \"1kd3ej3okjdije3lejjdjk99\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "将一个成员添加到团队"
       }
@@ -113,7 +113,7 @@
     "DeleteClass": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DeleteClass\r\n&Platform=test\r\n&Owner.Id=1111\r\n&Owner.Type=PERSON\r\n&ClassPath=/a/b\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClass\n<公共请求参数>\n\n{\n    \"Owner\": {\n        \"Type\": \"PERSON\",\n        \"Id\": \"1111\"\n    },\n    \"Platform\": \"test\",\n    \"ClassPath\": \"/a/b\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "删除分类"
       }
@@ -145,7 +145,7 @@
     "DeleteTeam": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DeleteTeam\n&Platform=test\n&TeamId=9aoodiiiekj899dkk99d7d6d5dff77f\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTeam\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"TeamId\": \"9aoodiiiekj899dkk99d7d6d5dff77f\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9l09d6d9f-aeec-4817-bbe2-d3499f95a3ac\"\n    }\n}",
         "title": "删除团队"
       }
@@ -153,7 +153,7 @@
     "DeleteTeamMembers": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DeleteTeamMembers\n&Platform=test\n&TeamId=1kdk882ddd88338ddd3k3\n&MemberIds.0=999kd3ej3okjdije3lejjdjk99\n&MemberIds.1=999kd3ej3okjdije3lejjdjk98\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTeamMembers\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n    \"MemberIds\": [\n        \"999kd3ej3okjdije3lejjdjk98\",\n        \"999kd3ej3okjdije3lejjdjk99\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"89dl4d9f-aeec-4817-bbe2-d3499f95aeba\"\n    }\n}",
         "title": "删除一个团队成员"
       }
@@ -191,7 +191,7 @@
     "DescribeJoinTeams": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeJoinTeams\n&Platform=test\n&MemberId=1993939392iidkei8ei\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJoinTeams\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"MemberId\": \"1993939392iidkei8ei\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TeamSet\": [\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n                \"Name\": \"工作室1\",\n                \"MemberCount\": 30,\n                \"Role\": \"Admin\"\n            },\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k4\",\n                \"Name\": \"工作室2\",\n                \"MemberCount\": 10,\n                \"Role\": \"Member\"\n            }\n        ],\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "获取用户所加入的团队列表"
       }
@@ -255,7 +255,7 @@
     "DescribeResourceAuthorization": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeResourceAuthorization\n&Platform=test\n&Operator=123\n&Owner.Type=TEAM\n&Owner.Id=teamA\n&Resource.Type=MATERIAL\n&Resource.Id=mid_abc\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceAuthorization\n<公共请求参数>\n\n{\n    \"Operator\": \"123\",\n    \"Platform\": \"test\",\n    \"Resource\": {\n        \"Type\": \"MATERIAL\",\n        \"Id\": \"mid_abc\"\n    },\n    \"Owner\": {\n        \"Type\": \"TEAM\",\n        \"Id\": \"teamA\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AuthorizationInfoSet\": [\n            {\n                \"Authorizee\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"d1c5eb0ee4994419b46560\"\n                },\n                \"PermissionSet\": [\n                    \"R\",\n                    \"W\"\n                ]\n            }\n        ],\n        \"RequestId\": \"d1c5eb0e-e499-4419-b465-60c097fbb65b\"\n    }\n}",
         "title": "获取媒资授权信息"
       }
@@ -263,7 +263,7 @@
     "DescribeSharedSpace": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeSharedSpace\n&Platform=test\n&Authorizee.Type=TEAM\n&Authorizee.Id=cmetid_acc5ddee49933d2b4338ud8d9\n&Operator=user_id_d1c5eb0ee4994419b465\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSharedSpace\n<公共请求参数>\n\n{\n    \"Operator\": \"user_id_d1c5eb0ee4994419b465\",\n    \"Platform\": \"test\",\n    \"Authorizee\": {\n        \"Type\": \"TEAM\",\n        \"Id\": \"cmetid_acc5ddee49933d2b4338ud8d9\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AuthorizerSet\": [\n            {\n                \"Type\": \"PERSON\",\n                \"Id\": \"user_id_d1c5eb0ee4994419b465\"\n            }\n        ],\n        \"RequestId\": \"d1c5eb0e-e499-4419-b465-60c097fbb6c9\"\n    }\n}",
         "title": "获取共享空间"
       }
@@ -305,13 +305,13 @@
     "DescribeTeamMembers": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTeamMembers\n&Platform=test\n&TeamId=1kdk882ddd88338ddd3k3\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTeamMembers\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"MemberSet\": [\n            {\n                \"MemberId\": \"299addf39392iidkei38\",\n                \"Remark\": \"主编辑李四\",\n                \"Role\": \"Owner\"\n            },\n            {\n                \"MemberId\": \"39a39a9b92iidkei9ab\",\n                \"Remark\": \"主编辑李四\",\n                \"Role\": \"Admin\"\n            },\n            {\n                \"MemberId\": \"i9dlld9393d2iidkei89i0\",\n                \"Remark\": \"主编辑李四\",\n                \"Role\": \"Members\"\n            }\n        ],\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "分页拉取团队成员信息"
       },
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTeamMembers\n&Platform=test\n&TeamId=1kdk882ddd88338ddd3k3\n&MemberIds.0=1993939392iidkei8ei\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTeamMembers\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n    \"MemberIds\": [\n        \"1993939392iidkei8ei\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MemberSet\": [\n            {\n                \"MemberId\": \"1993939392iidkei8ei\",\n                \"Remark\": \"主编辑李四\",\n                \"Role\": \"Members\"\n            }\n        ],\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "拉取指定成员的信息"
       }
@@ -319,13 +319,13 @@
     "DescribeTeams": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTeams\n&Platform=test\n&TeamIds.0=1kdk882ddd88338ddd3k3\n&TeamIds.1=1kdk882ddd88338ddd3k4\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTeams\n<公共请求参数>\n\n{\n    \"TeamIds\": [\n        \"1kdk882ddd88338ddd3k4\",\n        \"1kdk882ddd88338ddd3k3\"\n    ],\n    \"Platform\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TeamSet\": [\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n                \"Name\": \"工作室1\",\n                \"MemberCount\": 30,\n                \"CreateTime\": \"2020-03-09T02:35:21Z\",\n                \"UpdateTime\": \"2020-07-06T04:55:21Z\"\n            },\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k4\",\n                \"Name\": \"工作室2\",\n                \"MemberCount\": 10,\n                \"CreateTime\": \"2020-04-03T09:25:21Z\",\n                \"UpdateTime\": \"2020-06-06T03:16:21Z\"\n            }\n        ],\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "获取指定团队信息"
       },
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTeams\n&Platform=test\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTeams\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TeamSet\": [\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n                \"Name\": \"工作室1\",\n                \"MemberCount\": 30,\n                \"CreateTime\": \"2020-03-09T02:35:21Z\",\n                \"UpdateTime\": \"2020-07-06T04:55:21Z\"\n            }\n        ],\n        \"RequestId\": \"98534d9f-aeec-4817-bbe2-d3499f95a2af\"\n    }\n}",
         "title": "分布获取团队信息"
       }
@@ -405,13 +405,13 @@
     "ExportVideoByVideoSegmentationData": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByVideoSegmentationData\n&Platform=default_platform\n&ProjectId=cmepid_5fd1dfaf0e1b530001f5d9b0\n&SegmentGroupId=5fd6e20b0e1b530001f5daed\n&SegmentIds.0=seg_5fd6e20b0e1b530001f5daee\n&Definition=10\n&ExportDestination=VOD\n&VODExportInfo.Name=在线编辑视频\n&Operator=16556266637489\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportVideoByVideoSegmentationData\n<公共请求参数>\n\n{\n    \"Definition\": \"10\",\n    \"ProjectId\": \"cmepid_5fd1dfaf0e1b530001f5d9b0\",\n    \"ExportDestination\": \"VOD\",\n    \"Platform\": \"default_platform\",\n    \"VODExportInfo\": {\n        \"Name\": \"在线编辑视频\"\n    },\n    \"Operator\": \"16556266637489\",\n    \"SegmentGroupId\": \"5fd6e20b0e1b530001f5daed\",\n    \"SegmentIds\": [\n        \"seg_5fd6e20b0e1b530001f5daee\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"125009388839-tfusion-0a54392053f84053942f9308c49404d7\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d7\"\n    }\n}",
         "title": "使用视频智能拆条数据导出视频到VOD"
       },
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByVideoSegmentationData\n&Platform=default_platform\n&ProjectId=cmepid_5fd1dfaf0e1b530001f5d9b0\n&SegmentGroupId=5fd6e20b0e1b530001f5daed\n&SegmentIds.0=seg_5fd6e20b0e1b530001f5daee\n&SegmentIds.1=seg_5fd6e2100e1b530001f5daef\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Name=在线编辑视频\n&CMEExportInfo.ClassPath=/媒资/视频\n&CMEExportInfo.Owner.Type=PERSON\n&CMEExportInfo.Owner.Id=08f06c7c1fdddbea083f899b932c4987\n&Operator=16556266637489\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportVideoByVideoSegmentationData\n<公共请求参数>\n\n{\n    \"Definition\": \"10\",\n    \"ProjectId\": \"cmepid_5fd1dfaf0e1b530001f5d9b0\",\n    \"CMEExportInfo\": {\n        \"Owner\": {\n            \"Type\": \"PERSON\",\n            \"Id\": \"08f06c7c1fdddbea083f899b932c4987\"\n        },\n        \"ClassPath\": \"/媒资/视频\",\n        \"Name\": \"在线编辑视频\"\n    },\n    \"ExportDestination\": \"CME\",\n    \"Platform\": \"default_platform\",\n    \"Operator\": \"16556266637489\",\n    \"SegmentGroupId\": \"5fd6e20b0e1b530001f5daed\",\n    \"SegmentIds\": [\n        \"seg_5fd6e2100e1b530001f5daef\",\n        \"seg_5fd6e20b0e1b530001f5daee\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"125009388839-tfusion-0a54392053f84053942f9308c49404d7\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d7\"\n    }\n}",
         "title": "使用视频智能拆条数据导出视频到CME"
       }
@@ -451,7 +451,7 @@
     "FlattenListMedia": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=FlattenListMedia\n&Platform=test\n&ClassPath=/a/b\n&Owner.Id=user_id_8ad3d628dc30001bd0343\n&Owner.Type=PERSON\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FlattenListMedia\n<公共请求参数>\n\n{\n    \"Owner\": {\n        \"Type\": \"PERSON\",\n        \"Id\": \"user_id_8ad3d628dc30001bd0343\"\n    },\n    \"Platform\": \"test\",\n    \"ClassPath\": \"/a/b\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"281921553743710210\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"9Qvacao2r7EA\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/a/b\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810xxxxxxx2.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"user_id_8ad3d628dc30001bd0343\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"OtherMaterial\": null\n            }\n        ],\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
         "title": "平铺浏览媒体"
       }
@@ -459,7 +459,7 @@
     "GenerateVideoSegmentationSchemeByAi": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=GenerateVideoSegmentationSchemeByAi\n&Platform=test\n&ProjectId=1111\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateVideoSegmentationSchemeByAi\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"ProjectId\": \"1111\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"5f16967b64436100015fb025\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
         "title": "智能拆条"
       }
@@ -467,7 +467,7 @@
     "GrantResourceAuthorization": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=GrantResourceAuthorization\n&Platform=test\n&Operator=123\n&Permissions.0=R\n&Owner.Type=PERSON\n&Owner.Id=123\n&Resources.0.Type=MATERIAL\n&Resources.0.Id=mid_abc\n&Authorizees.0.Type=TEAM\n&Authorizees.0.Id=teamA\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantResourceAuthorization\n<公共请求参数>\n\n{\n    \"Authorizees\": [\n        {\n            \"Type\": \"TEAM\",\n            \"Id\": \"teamA\"\n        }\n    ],\n    \"Platform\": \"test\",\n    \"Operator\": \"123\",\n    \"Owner\": {\n        \"Type\": \"PERSON\",\n        \"Id\": \"123\"\n    },\n    \"Resources\": [\n        {\n            \"Type\": \"MATERIAL\",\n            \"Id\": \"mid_abc\"\n        }\n    ],\n    \"Permissions\": [\n        \"R\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1c5eb0e-e499-4419-b465-60c0973b3d2\"\n    }\n}",
         "title": "发起媒资授权"
       }
@@ -649,7 +649,7 @@
     "ModifyTeam": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ModifyTeam\n&Platform=test\n&TeamId=997988688\n&Name=测试团队名称\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTeam\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"TeamId\": \"997988688\",\n    \"Name\": \"测试团队名称\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a3ba\"\n    }\n}",
         "title": "修改团队名称"
       }
@@ -657,7 +657,7 @@
     "ModifyTeamMember": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ModifyTeamMember\n&Platform=test\n&TeamId=1kdk882ddd88338ddd3k3\n&MemberId=1kd3ej3okjdije3lejjdjk99\n&Remark=主编辑李四\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTeamMember\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n    \"Remark\": \"主编辑李四\",\n    \"MemberId\": \"1kd3ej3okjdije3lejjdjk99\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "修改一个团队成员的备注"
       }
@@ -721,7 +721,7 @@
     "RevokeResourceAuthorization": [
       {
         "document": "撤销素材 Id `5fd8ad3d628dc30001bd0895` 对团队 `cmetid_afd3ad3d6289k390d9dk09ad0` 授予的读权限。",
-        "input": "https://cme.tencentcloudapi.com/?Action=RevokeResourceAuthorization\n&Platform=test\n&Permissions.0=R\n&Owner.Type=PERSON\n&Owner.Id=user_id_1c5ebebd4392343b6489560\n&Resources.0.Type=MATERIAL\n&Resources.0.Id=5fd8ad3d628dc30001bd0895\n&Authorizees.0.Type=TEAM\n&Authorizees.0.Id=cmetid_afd3ad3d6289k390d9dk09ad0\n&Operator=user_id_1c5ebebd4392343b6489560\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevokeResourceAuthorization\n<公共请求参数>\n\n{\n    \"Authorizees\": [\n        {\n            \"Type\": \"TEAM\",\n            \"Id\": \"cmetid_afd3ad3d6289k390d9dk09ad0\"\n        }\n    ],\n    \"Operator\": \"user_id_1c5ebebd4392343b6489560\",\n    \"Platform\": \"test\",\n    \"Owner\": {\n        \"Type\": \"PERSON\",\n        \"Id\": \"user_id_1c5ebebd4392343b6489560\"\n    },\n    \"Resources\": [\n        {\n            \"Type\": \"MATERIAL\",\n            \"Id\": \"5fd8ad3d628dc30001bd0895\"\n        }\n    ],\n    \"Permissions\": [\n        \"R\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1c5eb0e-e499-4419-b465-60c097fbb65b\"\n    }\n}",
         "title": "撤销个人资源权限"
       }

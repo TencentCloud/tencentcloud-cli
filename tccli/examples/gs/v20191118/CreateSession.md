@@ -1,6 +1,6 @@
 **Example 1: CreateSession示例**
 
-
+锁定实例后，创建会话，以连接实例
 
 Input: 
 

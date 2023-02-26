@@ -1,6 +1,6 @@
 **Example 1: 查询集群已安装应用详情**
 
-
+查询集群已安装应用详情
 
 Input: 
 
@@ -21,9 +21,9 @@ Output:
             "Version": "1",
             "Status": "deployed",
             "Description": "Install complete",
-            "Notes": "xxxxxxxxx",
+            "Notes": "",
             "Config": "key1=v1,key2=v2",
-            "Manifest": "xxxxxxxxx",
+            "Manifest": "",
             "ChartVersion": "10.5.3",
             "ChartName": "redis",
             "ChartDescription": "Open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.",

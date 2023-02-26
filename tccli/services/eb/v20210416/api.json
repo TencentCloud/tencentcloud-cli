@@ -2790,6 +2790,15 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "document": "是否开启存储",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableStore",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cme DescribeResourceAuthorization --cli-unfold-argument  \
-    --Platform test \
     --Operator 123 \
-    --Owner.Type TEAM \
-    --Owner.Id teamA \
+    --Platform test \
     --Resource.Type MATERIAL \
-    --Resource.Id mid_abc
+    --Resource.Id mid_abc \
+    --Owner.Type TEAM \
+    --Owner.Id teamA
 ```
 
 Output: 

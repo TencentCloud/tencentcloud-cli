@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cme FlattenListMedia --cli-unfold-argument  \
-    --Platform test \
-    --ClassPath /a/b \
+    --Owner.Type PERSON \
     --Owner.Id user_id_8ad3d628dc30001bd0343 \
-    --Owner.Type PERSON
+    --Platform test \
+    --ClassPath /a/b
 ```
 
 Output: 

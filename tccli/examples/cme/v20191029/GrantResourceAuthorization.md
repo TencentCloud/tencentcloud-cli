@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cme GrantResourceAuthorization --cli-unfold-argument  \
+    --Authorizees.0.Type TEAM \
+    --Authorizees.0.Id teamA \
     --Platform test \
     --Operator 123 \
-    --Permissions R \
     --Owner.Type PERSON \
     --Owner.Id 123 \
     --Resources.0.Type MATERIAL \
     --Resources.0.Id mid_abc \
-    --Authorizees.0.Type TEAM \
-    --Authorizees.0.Id teamA
+    --Permissions R
 ```
 
 Output: 

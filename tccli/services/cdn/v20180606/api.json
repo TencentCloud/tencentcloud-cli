@@ -16957,22 +16957,22 @@
       "document": "VerifyDomainRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "www.qq.com",
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "验证方式\ndns: DNS 解析验证（默认值）\nfile: 文件验证",
           "example": "file",
           "member": "string",
           "name": "VerifyType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -16982,12 +16982,12 @@
       "members": [
         {
           "document": "是否验证成功",
-          "example": "ok",
+          "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

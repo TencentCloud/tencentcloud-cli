@@ -1,6 +1,6 @@
 **Example 1: 查询云盘扩容到200G的价格**
 
-
+查询云盘扩容到200G的价格
 
 Input: 
 
@@ -14,11 +14,18 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "6c6088bc-15e6-42e5-9d73-d5e41593117e",
         "DiskPrice": {
-            "DiscountPrice": 210.09,
-            "OriginalPrice": 210.09
-        },
-        "RequestId": "2ba7b520-ddb4-f5ea-34d1-5a1f80434911"
+            "DiscountPrice": null,
+            "UnitPrice": 0.18,
+            "UnitPriceHigh": "0.18",
+            "OriginalPriceHigh": null,
+            "OriginalPrice": null,
+            "UnitPriceDiscount": 0.18,
+            "UnitPriceDiscountHigh": "0.18",
+            "DiscountPriceHigh": null,
+            "ChargeUnit": "HOUR"
+        }
     }
 }
 ```

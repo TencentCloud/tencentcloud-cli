@@ -16,19 +16,21 @@ Output:
     "Response": {
         "TotalCount": 1,
         "RequestId": "xx",
-        "DiskStoragePoolSet": [
+        "DiskStoragePoolSet": [],
+        "CdcSet": [
             {
                 "CageId": "xx",
-                "CdcState": "xx",
-                "Zone": "xx",
-                "CdcName": "xx",
+                "CdcState": "NORMAL",
+                "Zone": "ap-chongqing-1",
+                "CdcName": "untitled",
                 "CdcResource": {
                     "DiskAavilable": 1,
-                    "DiskTotal": 1
+                    "DiskTotal": 10
                 },
-                "CdcId": "xx",
-                "DiskType": "xx",
-                "ExpiredTime": "2020-09-22 00:00:00"
+                "CdcId": "cdc-xxx",
+                "DiskType": "CLOUD_SSD",
+                "DiskNumber": 135,
+                "ExpiredTime": "2022-02-25 15:59:15"
             }
         ]
     }

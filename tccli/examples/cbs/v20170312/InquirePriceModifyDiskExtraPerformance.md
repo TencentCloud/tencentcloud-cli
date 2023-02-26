@@ -1,6 +1,6 @@
 **Example 1: 500G HSSD 额外购买200M性能询价**
 
-
+500G HSSD 额外购买200M性能询价
 
 Input: 
 
@@ -14,13 +14,13 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "55db49cf-b9d7-da27-825b-3232332eeewezxdsdrdew",
+        "RequestId": "2473a107-d3ee-49b6-98f1-2fa630610b85",
         "DiskPrice": {
-            "DiscountPrice": -192.06,
+            "DiscountPrice": 611.51,
             "UnitPrice": null,
             "UnitPriceHigh": null,
             "OriginalPriceHigh": null,
-            "OriginalPrice": -192.06,
+            "OriginalPrice": 611.51,
             "UnitPriceDiscount": null,
             "UnitPriceDiscountHigh": null,
             "DiscountPriceHigh": null,

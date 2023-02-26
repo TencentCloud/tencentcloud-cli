@@ -1,3 +1,195 @@
+# Release 3.0.711.1
+
+## 账号中心(account) 版本：2018-12-25
+
+### 第 6 次发布
+
+发布时间：2023-02-27 01:05:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddWhitelistUin](http://document.tencentcloudapi.woa.com/document/product/1594/77114)
+* [DeleteWhitelistUin](http://document.tencentcloudapi.woa.com/document/product/1594/77113)
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 22 次发布
+
+发布时间：2023-02-27 01:11:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSnapshot](http://document.tencentcloudapi.woa.com/document/product/362/15648)
+
+	* 新增入参：LocalSnap
+
+* [DescribeDiskStoragePool](http://document.tencentcloudapi.woa.com/document/product/362/62143)
+
+	* 新增出参：CdcSet
+
+
+新增数据结构：
+
+* [DetailPrice](http://document.tencentcloudapi.woa.com/document/product/362/15669#DetailPrice)
+
+修改数据结构：
+
+* [AutoSnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/362/15669#AutoSnapshotPolicy)
+
+	* 新增成员：CopyFromAccountUin, Tags
+
+* [Cdc](http://document.tencentcloudapi.woa.com/document/product/362/15669#Cdc)
+
+	* 新增成员：CreatedTime, DiskNumber
+
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
+
+	* 新增成员：LastAttachInsId, ErrorPrompt
+
+* [DiskConfig](http://document.tencentcloudapi.woa.com/document/product/362/15669#DiskConfig)
+
+	* 新增成员：Price
+
+* [Placement](http://document.tencentcloudapi.woa.com/document/product/362/15669#Placement)
+
+	* 新增成员：ProjectName
+
+* [PrepayPrice](http://document.tencentcloudapi.woa.com/document/product/362/15669#PrepayPrice)
+
+	* 新增成员：DetailPrices
+
+* [Snapshot](http://document.tencentcloudapi.woa.com/document/product/362/15669#Snapshot)
+
+	* <font color="#dd0000">**修改成员**：</font>Tags
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 35 次发布
+
+发布时间：2023-02-27 01:18:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateClusters](http://document.tencentcloudapi.woa.com/document/product/1003/48087)
+
+	* 新增入参：BusinessType
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 28 次发布
+
+发布时间：2023-02-27 01:20:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyDBEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/557/77115)
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 2 次发布
+
+发布时间：2023-02-27 01:22:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateEventBus](http://document.tencentcloudapi.woa.com/document/product/1359/67681)
+
+	* 新增入参：EnableStore
+
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 6 次发布
+
+发布时间：2023-02-27 01:25:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSession](http://document.tencentcloudapi.woa.com/document/product/1162/40740)
+
+	* <font color="#dd0000">**修改入参**：</font>ClientSession
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 25 次发布
+
+发布时间：2023-02-27 01:28:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquirePriceCreateInstances](http://document.tencentcloudapi.woa.com/document/product/1207/55558)
+
+	* <font color="#dd0000">**修改入参**：</font>InstanceChargePrepaid
+
+* [InquirePriceRenewInstances](http://document.tencentcloudapi.woa.com/document/product/1207/55557)
+
+	* <font color="#dd0000">**修改入参**：</font>InstanceChargePrepaid
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 68 次发布
+
+发布时间：2023-02-27 01:43:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyNatGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/36715)
+
+	* 新增入参：StrictSnatMode
+
+
+
+
 # Release 3.0.710.1
 
 ## 云防火墙(cfw) 版本：2019-09-04

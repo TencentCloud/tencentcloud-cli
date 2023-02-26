@@ -31086,7 +31086,8 @@
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -31095,7 +31096,8 @@
           "member": "string",
           "name": "NatGatewayName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -31104,7 +31106,8 @@
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -31113,7 +31116,8 @@
           "member": "bool",
           "name": "ModifySecurityGroup",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -31122,7 +31126,18 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "未匹配SNAT规则的请求是否禁止转发。true为禁止转发，false为随机选择NAT实例上的eip转发。",
+          "example": "false",
+          "member": "bool",
+          "name": "StrictSnatMode",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
         }
       ],
       "type": "object"
