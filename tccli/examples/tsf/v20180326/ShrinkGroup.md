@@ -12,15 +12,12 @@ tccli tsf ShrinkGroup --cli-unfold-argument  \
 Output: 
 ```
 {
-    "data": {
-        "Response": {
-            "RequestId": "6ae4fc90-8153-4b71-8310-a8ca5ad85440",
-            "Result": {
-                "TaskId": "task-xxxxxxx"
-            }
-        }
-    },
-    "code": 0
+    "Response": {
+        "Result": {
+            "TaskId": "xx"
+        },
+        "RequestId": "xx"
+    }
 }
 ```
 

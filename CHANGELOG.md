@@ -1,3 +1,165 @@
+# Release 3.0.712.1
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 23 次发布
+
+发布时间：2023-02-28 01:09:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSnapshot](http://document.tencentcloudapi.woa.com/document/product/362/15648)
+
+	* 新增入参：DiskUsage
+
+
+
+
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 41 次发布
+
+发布时间：2023-02-28 01:10:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeHttpsPackages](http://document.tencentcloudapi.woa.com/document/product/228/77116)
+
+新增数据结构：
+
+* [HttpsPackage](http://document.tencentcloudapi.woa.com/document/product/228/30987#HttpsPackage)
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 20 次发布
+
+发布时间：2023-02-28 01:13:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyEnterpriseSecurityDispatchStatus](http://document.tencentcloudapi.woa.com/document/product/1132/77117)
+* [ModifyEnterpriseSecurityGroupRule](http://document.tencentcloudapi.woa.com/document/product/1132/77119)
+* [ModifyNatSequenceRules](http://document.tencentcloudapi.woa.com/document/product/1132/77118)
+
+新增数据结构：
+
+* [RuleChangeItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#RuleChangeItem)
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 6 次发布
+
+发布时间：2023-02-28 01:21:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BindDeviceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1492/77131)
+* [BindDeviceAccountPrivateKey](http://document.tencentcloudapi.woa.com/document/product/1492/77130)
+* [CreateAssetSyncJob](http://document.tencentcloudapi.woa.com/document/product/1492/77129)
+* [CreateCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1492/77136)
+* [CreateDeviceAccount](http://document.tencentcloudapi.woa.com/document/product/1492/77128)
+* [DeleteCmdTemplates](http://document.tencentcloudapi.woa.com/document/product/1492/77135)
+* [DeleteDeviceAccounts](http://document.tencentcloudapi.woa.com/document/product/1492/77127)
+* [DeleteDevices](http://document.tencentcloudapi.woa.com/document/product/1492/77126)
+* [DeployResource](http://document.tencentcloudapi.woa.com/document/product/1492/77133)
+* [DescribeAssetSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1492/77125)
+* [DescribeCmdTemplates](http://document.tencentcloudapi.woa.com/document/product/1492/77134)
+* [DescribeDeviceAccounts](http://document.tencentcloudapi.woa.com/document/product/1492/77124)
+* [ImportExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1492/77123)
+* [ModifyDevice](http://document.tencentcloudapi.woa.com/document/product/1492/77122)
+* [ModifyDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1492/77138)
+* [ResetDeviceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1492/77121)
+* [ResetDeviceAccountPrivateKey](http://document.tencentcloudapi.woa.com/document/product/1492/77120)
+* [ResetUser](http://document.tencentcloudapi.woa.com/document/product/1492/77132)
+
+新增数据结构：
+
+* [AssetSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AssetSyncStatus)
+* [DeviceAccount](http://document.tencentcloudapi.woa.com/document/product/1492/74806#DeviceAccount)
+* [ExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1492/74806#ExternalDevice)
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 3 次发布
+
+发布时间：2023-02-28 01:23:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEventBus](http://document.tencentcloudapi.woa.com/document/product/1359/67686)
+
+	* 新增入参：EnableStore
+
+* [GetEventBus](http://document.tencentcloudapi.woa.com/document/product/1359/67684)
+
+	* 新增出参：PayMode, SaveDays, LogTopicId, EnableStore, LinkMode
+
+
+新增数据结构：
+
+* [ConnectionBrief](http://document.tencentcloudapi.woa.com/document/product/1359/67704#ConnectionBrief)
+* [DTSParams](http://document.tencentcloudapi.woa.com/document/product/1359/67704#DTSParams)
+
+修改数据结构：
+
+* [ConnectionDescription](http://document.tencentcloudapi.woa.com/document/product/1359/67704#ConnectionDescription)
+
+	* 新增成员：DTSParams
+
+* [EventBus](http://document.tencentcloudapi.woa.com/document/product/1359/67704#EventBus)
+
+	* 新增成员：PayMode, ConnectionBriefs, TargetBriefs
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 69 次发布
+
+发布时间：2023-02-28 01:47:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AddressTemplateItem](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplateItem)
+
+	* 新增成员：AddressTemplateId, AddressTemplateName
+
+	* <font color="#dd0000">**修改成员**：</font>From, To
+
+
+
+
 # Release 3.0.711.1
 
 ## 账号中心(account) 版本：2018-12-25

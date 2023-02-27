@@ -16,6 +16,22 @@
         "title": "添加用户组成员"
       }
     ],
+    "BindDeviceAccountPassword": [
+      {
+        "document": "绑定主机账号密码",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDeviceAccountPassword\n<公共请求参数>\n\n{\n    \"Password\": \"xx\",\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "绑定主机账号密码"
+      }
+    ],
+    "BindDeviceAccountPrivateKey": [
+      {
+        "document": "绑定主机账号私钥",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDeviceAccountPrivateKey\n<公共请求参数>\n\n{\n    \"PrivateKey\": \"xx\",\n    \"Id\": 1,\n    \"PrivateKeyPassword\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "绑定主机账号私钥"
+      }
+    ],
     "BindDeviceResource": [
       {
         "document": "修改资产绑定的堡垒机服务",
@@ -30,6 +46,30 @@
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcl\n<公共请求参数>\n\n{\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"Name\": \"xx\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AccountSet\": [\n        \"xx\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"UserIdSet\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "新建访问权限"
+      }
+    ],
+    "CreateAssetSyncJob": [
+      {
+        "document": "创建主机资产同步任务",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetSyncJob\n<公共请求参数>\n\n{\n    \"Category\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建主机资产同步任务"
+      }
+    ],
+    "CreateCmdTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmdTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"CmdList\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建高危命令模板"
+      }
+    ],
+    "CreateDeviceAccount": [
+      {
+        "document": "新建主机账号",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceAccount\n<公共请求参数>\n\n{\n    \"Account\": \"xx\",\n    \"DeviceId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建主机账号"
       }
     ],
     "CreateDeviceGroup": [
@@ -64,6 +104,22 @@
         "title": "删除访问权限"
       }
     ],
+    "DeleteCmdTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCmdTemplates\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除高危命令模板"
+      }
+    ],
+    "DeleteDeviceAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceAccounts\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除主机账号"
+      }
+    ],
     "DeleteDeviceGroupMembers": [
       {
         "document": "删除资产组成员",
@@ -78,6 +134,14 @@
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceGroups\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除资产组"
+      }
+    ],
+    "DeleteDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevices\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除主机"
       }
     ],
     "DeleteUserGroupMembers": [
@@ -104,6 +168,14 @@
         "title": "删除用户"
       }
     ],
+    "DeployResource": [
+      {
+        "document": "开通服务，初始化资源，只针对新购资源",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployResource\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"Zone\": \"ap-guangzhou-1\",\n    \"ResourceId\": \"bh-saas-xxxxxx\",\n    \"ApCode\": \"ap-guangzhou\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"CidrBlock\": \"10.10.10.0/32\",\n    \"VpcName\": \"vpc1\",\n    \"VpcCidrBlock\": \"10.10.0.0/16\",\n    \"SubnetName\": \"subnet1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "开通服务"
+      }
+    ],
     "DescribeAcls": [
       {
         "document": "",
@@ -118,12 +190,36 @@
         "title": "根据用户和主机查询对应的权限"
       }
     ],
+    "DescribeAssetSyncStatus": [
+      {
+        "document": "查询主机资产自动同步结果",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSyncStatus\n<公共请求参数>\n\n{\n    \"Category\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxx\",\n        \"Status\": {\n            \"LastStatus\": 1,\n            \"LastTime\": \"2021-09-22T15:04:05Z07:00\",\n            \"InProcess\": true\n        }\n    }\n}",
+        "title": "查询主机资产自动同步结果"
+      }
+    ],
+    "DescribeCmdTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCmdTemplates\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CmdTemplateSet\": [\n            {\n                \"CmdList\": \"xx\",\n                \"Name\": \"xx\",\n                \"Id\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询命令模板列表"
+      }
+    ],
     "DescribeDasbImageIds": [
       {
         "document": "",
         "input": "https://dasb.tencentcloudapi.com/?Action=DescribeDasbImageIds\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"BaseImageId\": \"SDFEEF\",\n        \"AiImageId\": \"XXXXX\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "获取镜像列表"
+      }
+    ],
+    "DescribeDeviceAccounts": [
+      {
+        "document": "查询主机账号列表",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceAccounts\n<公共请求参数>\n\n{\n    \"DeviceId\": 1,\n    \"Account\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DeviceAccountSet\": [\n            {\n                \"BoundPrivateKey\": true,\n                \"Account\": \"xx\",\n                \"Id\": 1,\n                \"BoundPassword\": true,\n                \"DeviceId\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询主机账号列表"
       }
     ],
     "DescribeDeviceGroupMembers": [
@@ -194,6 +290,14 @@
         "title": "根据主机查询有访问权限的用户信息"
       }
     ],
+    "ImportExternalDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportExternalDevice\n<公共请求参数>\n\n{\n    \"DeviceSet\": [\n        {\n            \"Ip\": \"xx\",\n            \"Name\": \"xx\",\n            \"OsName\": \"xx\",\n            \"Port\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "导入外部资产信息"
+      }
+    ],
     "ModifyAcl": [
       {
         "document": "修改访问权限",
@@ -202,12 +306,52 @@
         "title": "修改访问权限"
       }
     ],
+    "ModifyDevice": [
+      {
+        "document": "修改资产信息",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDevice\n<公共请求参数>\n\n{\n    \"GroupIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"Port\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改资产信息"
+      }
+    ],
+    "ModifyDeviceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceGroup\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改资产组"
+      }
+    ],
     "ModifyUser": [
       {
         "document": "修改用户信息",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"xx\",\n    \"GroupIdSet\": [\n        1,\n        2,\n        3\n    ],\n    \"Phone\": \"xx\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改用户信息"
+      }
+    ],
+    "ResetDeviceAccountPassword": [
+      {
+        "document": "清除设备账号绑定密码",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetDeviceAccountPassword\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "清除设备账号绑定密码"
+      }
+    ],
+    "ResetDeviceAccountPrivateKey": [
+      {
+        "document": "清除设备账号绑定的密钥",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetDeviceAccountPrivateKey\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "清除设备账号绑定的密钥"
+      }
+    ],
+    "ResetUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetUser\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "重置用户"
       }
     ]
   },

@@ -1,6 +1,6 @@
 **Example 1: 获取事件集列表**
 
-
+获取事件集列表
 
 Input: 
 
@@ -13,16 +13,16 @@ Output:
     "Response": {
         "EventBuses": [
             {
-                "AddTime": "2021-04-28T23:34:19+08:00",
-                "Description": "",
-                "EventBusId": "eb-l65vlc2u",
-                "EventBusName": "test",
-                "ModTime": "2021-04-28T23:34:19+08:00",
-                "Type": "Custom"
+                "ModTime": "2020-09-22T00:00:00+00:00",
+                "Description": "xx",
+                "AddTime": "2020-09-22T00:00:00+00:00",
+                "EventBusName": "xx",
+                "EventBusId": "xx",
+                "Type": "xx"
             }
         ],
-        "RequestId": "116a59b2-4d31-4d17-966e-6ee65f7401f5",
-        "TotalCount": 1
+        "TotalCount": 0,
+        "RequestId": "xx"
     }
 }
 ```
