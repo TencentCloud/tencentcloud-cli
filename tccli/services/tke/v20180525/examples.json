@@ -642,9 +642,9 @@
     ],
     "DescribeClusterReleaseDetails": [
       {
-        "document": "",
+        "document": "查询集群已安装应用详情",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterReleaseDetails\n<公共请求参数>\n\n{\n    \"Namespace\": \"default\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Name\": \"app-name\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Name\": \"app-name\",\n            \"Namespace\": \"default\",\n            \"Version\": \"1\",\n            \"Status\": \"deployed\",\n            \"Description\": \"Install complete\",\n            \"Notes\": \"xxxxxxxxx\",\n            \"Config\": \"key1=v1,key2=v2\",\n            \"Manifest\": \"xxxxxxxxx\",\n            \"ChartVersion\": \"10.5.3\",\n            \"ChartName\": \"redis\",\n            \"ChartDescription\": \"Open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.\",\n            \"AppVersion\": \"5.0.7\",\n            \"FirstDeployedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\",\n            \"LastDeployedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\"\n        },\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Name\": \"app-name\",\n            \"Namespace\": \"default\",\n            \"Version\": \"1\",\n            \"Status\": \"deployed\",\n            \"Description\": \"Install complete\",\n            \"Notes\": \"\",\n            \"Config\": \"key1=v1,key2=v2\",\n            \"Manifest\": \"\",\n            \"ChartVersion\": \"10.5.3\",\n            \"ChartName\": \"redis\",\n            \"ChartDescription\": \"Open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.\",\n            \"AppVersion\": \"5.0.7\",\n            \"FirstDeployedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\",\n            \"LastDeployedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\"\n        },\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "查询集群已安装应用详情"
       }
     ],

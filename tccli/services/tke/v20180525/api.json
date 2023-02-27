@@ -8071,7 +8071,6 @@
       "document": "DescribeClusterReleaseDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-65r1c5nu",
           "member": "string",
@@ -8080,7 +8079,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "应用名称",
           "example": "app-name",
           "member": "string",
@@ -8089,7 +8087,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "应用所在命名空间",
           "example": "default",
           "member": "string",
@@ -8098,7 +8095,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "集群类型",
           "example": "tke",
           "member": "string",
@@ -8117,7 +8113,6 @@
           "example": "无",
           "member": "ReleaseDetails",
           "name": "Release",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

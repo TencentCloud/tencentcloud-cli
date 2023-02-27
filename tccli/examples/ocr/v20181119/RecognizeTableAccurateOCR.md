@@ -6,1338 +6,1446 @@ Input:
 
 ```
 tccli ocr RecognizeTableAccurateOCR --cli-unfold-argument  \
-    --ImageUrl xxx
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/TableOCRDDS/TableOCRDDS1.png
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "Angle": 0,
+        "Data": "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",
+        "PdfPageSize": 0,
+        "RequestId": "f5a1fabb-956f-4622-9d5d-2982b01ac2ec",
         "TableDetections": [
             {
                 "Cells": [
                     {
+                        "ColBr": 1,
                         "ColTl": 0,
-                        "RowTl": 0,
-                        "ColBr": 9,
+                        "Confidence": 0,
+                        "Polygon": [
+                            {
+                                "X": 32,
+                                "Y": 29
+                            },
+                            {
+                                "X": 348,
+                                "Y": 29
+                            },
+                            {
+                                "X": 348,
+                                "Y": 74
+                            },
+                            {
+                                "X": 32,
+                                "Y": 74
+                            }
+                        ],
                         "RowBr": 1,
-                        "Text": "五(1) 班卫生值日表",
-                        "Type": "body",
-                        "Confidence": 99.982088804245,
-                        "Polygon": [
-                            {
-                                "X": 26,
-                                "Y": 193
-                            },
-                            {
-                                "X": 774,
-                                "Y": 193
-                            },
-                            {
-                                "X": 774,
-                                "Y": 282
-                            },
-                            {
-                                "X": 26,
-                                "Y": 282
-                            }
-                        ]
+                        "RowTl": 0,
+                        "Text": "",
+                        "Type": "body"
                     },
                     {
-                        "ColTl": 0,
-                        "RowTl": 1,
-                        "ColBr": 1,
-                        "RowBr": 2,
-                        "Text": "星期一",
-                        "Type": "body",
-                        "Confidence": 99.96871948242188,
-                        "Polygon": [
-                            {
-                                "X": 26,
-                                "Y": 282
-                            },
-                            {
-                                "X": 107,
-                                "Y": 282
-                            },
-                            {
-                                "X": 107,
-                                "Y": 326
-                            },
-                            {
-                                "X": 26,
-                                "Y": 326
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 1,
-                        "RowTl": 1,
                         "ColBr": 2,
-                        "RowBr": 2,
-                        "Text": "梅亚婷",
-                        "Type": "body",
-                        "Confidence": 99.99997615814209,
-                        "Polygon": [
-                            {
-                                "X": 107,
-                                "Y": 282
-                            },
-                            {
-                                "X": 191,
-                                "Y": 282
-                            },
-                            {
-                                "X": 191,
-                                "Y": 326
-                            },
-                            {
-                                "X": 107,
-                                "Y": 326
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 2,
-                        "RowTl": 1,
-                        "ColBr": 3,
-                        "RowBr": 2,
-                        "Text": "潘林峰",
-                        "Type": "body",
-                        "Confidence": 99.99949336051941,
-                        "Polygon": [
-                            {
-                                "X": 191,
-                                "Y": 282
-                            },
-                            {
-                                "X": 275,
-                                "Y": 282
-                            },
-                            {
-                                "X": 275,
-                                "Y": 326
-                            },
-                            {
-                                "X": 191,
-                                "Y": 326
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 3,
-                        "RowTl": 1,
-                        "ColBr": 4,
-                        "RowBr": 2,
-                        "Text": "余校凯",
-                        "Type": "body",
-                        "Confidence": 99.98820424079895,
-                        "Polygon": [
-                            {
-                                "X": 275,
-                                "Y": 282
-                            },
-                            {
-                                "X": 359,
-                                "Y": 282
-                            },
-                            {
-                                "X": 359,
-                                "Y": 326
-                            },
-                            {
-                                "X": 275,
-                                "Y": 326
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 4,
-                        "RowTl": 1,
-                        "ColBr": 5,
-                        "RowBr": 2,
-                        "Text": "郑江豪",
-                        "Type": "body",
-                        "Confidence": 99.99780654907227,
-                        "Polygon": [
-                            {
-                                "X": 359,
-                                "Y": 282
-                            },
-                            {
-                                "X": 442,
-                                "Y": 282
-                            },
-                            {
-                                "X": 442,
-                                "Y": 326
-                            },
-                            {
-                                "X": 359,
-                                "Y": 326
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 5,
-                        "RowTl": 1,
-                        "ColBr": 6,
-                        "RowBr": 2,
-                        "Text": "范立新",
-                        "Type": "body",
+                        "ColTl": 1,
                         "Confidence": 100,
                         "Polygon": [
                             {
-                                "X": 442,
-                                "Y": 282
+                                "X": 348,
+                                "Y": 29
                             },
                             {
-                                "X": 526,
-                                "Y": 282
+                                "X": 574,
+                                "Y": 29
                             },
                             {
-                                "X": 526,
-                                "Y": 326
+                                "X": 574,
+                                "Y": 74
                             },
                             {
-                                "X": 442,
-                                "Y": 326
+                                "X": 348,
+                                "Y": 74
                             }
-                        ]
+                        ],
+                        "RowBr": 1,
+                        "RowTl": 0,
+                        "Text": "本报告期末",
+                        "Type": "body"
                     },
                     {
-                        "ColTl": 6,
-                        "RowTl": 1,
-                        "ColBr": 7,
+                        "ColBr": 4,
+                        "ColTl": 2,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 574,
+                                "Y": 29
+                            },
+                            {
+                                "X": 872,
+                                "Y": 29
+                            },
+                            {
+                                "X": 873,
+                                "Y": 74
+                            },
+                            {
+                                "X": 574,
+                                "Y": 74
+                            }
+                        ],
+                        "RowBr": 1,
+                        "RowTl": 0,
+                        "Text": "期末余额",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 6,
+                        "ColTl": 4,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 872,
+                                "Y": 29
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 29
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 73
+                            },
+                            {
+                                "X": 873,
+                                "Y": 74
+                            }
+                        ],
+                        "RowBr": 1,
+                        "RowTl": 0,
+                        "Text": "本报告期末比去年度末增减",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 1,
+                        "ColTl": 0,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 32,
+                                "Y": 74
+                            },
+                            {
+                                "X": 348,
+                                "Y": 74
+                            },
+                            {
+                                "X": 348,
+                                "Y": 106
+                            },
+                            {
+                                "X": 32,
+                                "Y": 106
+                            }
+                        ],
                         "RowBr": 2,
-                        "Text": "柯志生",
-                        "Type": "body",
-                        "Confidence": 99.99997019767761,
-                        "Polygon": [
-                            {
-                                "X": 526,
-                                "Y": 282
-                            },
-                            {
-                                "X": 610,
-                                "Y": 282
-                            },
-                            {
-                                "X": 610,
-                                "Y": 326
-                            },
-                            {
-                                "X": 526,
-                                "Y": 326
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 7,
                         "RowTl": 1,
-                        "ColBr": 8,
-                        "RowBr": 2,
-                        "Text": "周于",
-                        "Type": "body",
-                        "Confidence": 99.9976396560669,
-                        "Polygon": [
-                            {
-                                "X": 610,
-                                "Y": 282
-                            },
-                            {
-                                "X": 694,
-                                "Y": 282
-                            },
-                            {
-                                "X": 694,
-                                "Y": 326
-                            },
-                            {
-                                "X": 610,
-                                "Y": 326
-                            }
-                        ]
+                        "Text": "总资产(元)",
+                        "Type": "body"
                     },
                     {
-                        "ColTl": 8,
+                        "ColBr": 2,
+                        "ColTl": 1,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 348,
+                                "Y": 74
+                            },
+                            {
+                                "X": 574,
+                                "Y": 74
+                            },
+                            {
+                                "X": 574,
+                                "Y": 106
+                            },
+                            {
+                                "X": 348,
+                                "Y": 106
+                            }
+                        ],
+                        "RowBr": 2,
                         "RowTl": 1,
-                        "ColBr": 9,
+                        "Text": "3,832,876,471.32",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 4,
+                        "ColTl": 2,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 574,
+                                "Y": 74
+                            },
+                            {
+                                "X": 873,
+                                "Y": 74
+                            },
+                            {
+                                "X": 873,
+                                "Y": 106
+                            },
+                            {
+                                "X": 574,
+                                "Y": 106
+                            }
+                        ],
                         "RowBr": 2,
-                        "Text": "李慧得",
-                        "Type": "body",
-                        "Confidence": 99.99997019767761,
-                        "Polygon": [
-                            {
-                                "X": 694,
-                                "Y": 282
-                            },
-                            {
-                                "X": 774,
-                                "Y": 282
-                            },
-                            {
-                                "X": 774,
-                                "Y": 326
-                            },
-                            {
-                                "X": 694,
-                                "Y": 326
-                            }
-                        ]
+                        "RowTl": 1,
+                        "Text": "2,965,689,152.98",
+                        "Type": "body"
                     },
                     {
-                        "ColTl": 0,
-                        "RowTl": 2,
-                        "ColBr": 1,
-                        "RowBr": 3,
-                        "Text": "星期二",
-                        "Type": "body",
-                        "Confidence": 99.99971389770508,
-                        "Polygon": [
-                            {
-                                "X": 26,
-                                "Y": 326
-                            },
-                            {
-                                "X": 107,
-                                "Y": 326
-                            },
-                            {
-                                "X": 107,
-                                "Y": 373
-                            },
-                            {
-                                "X": 26,
-                                "Y": 373
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 1,
-                        "RowTl": 2,
-                        "ColBr": 2,
-                        "RowBr": 3,
-                        "Text": "郑江尧",
-                        "Type": "body",
-                        "Confidence": 99.99954104423523,
-                        "Polygon": [
-                            {
-                                "X": 107,
-                                "Y": 326
-                            },
-                            {
-                                "X": 191,
-                                "Y": 326
-                            },
-                            {
-                                "X": 191,
-                                "Y": 373
-                            },
-                            {
-                                "X": 107,
-                                "Y": 373
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 2,
-                        "RowTl": 2,
-                        "ColBr": 3,
-                        "RowBr": 3,
-                        "Text": "郑锦证",
-                        "Type": "body",
-                        "Confidence": 99.99963641166687,
-                        "Polygon": [
-                            {
-                                "X": 191,
-                                "Y": 326
-                            },
-                            {
-                                "X": 275,
-                                "Y": 326
-                            },
-                            {
-                                "X": 275,
-                                "Y": 373
-                            },
-                            {
-                                "X": 191,
-                                "Y": 373
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 3,
-                        "RowTl": 2,
-                        "ColBr": 4,
-                        "RowBr": 3,
-                        "Text": "虞志峰",
-                        "Type": "body",
-                        "Confidence": 99.98536109924316,
-                        "Polygon": [
-                            {
-                                "X": 275,
-                                "Y": 326
-                            },
-                            {
-                                "X": 359,
-                                "Y": 326
-                            },
-                            {
-                                "X": 359,
-                                "Y": 373
-                            },
-                            {
-                                "X": 275,
-                                "Y": 373
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 4,
-                        "RowTl": 2,
-                        "ColBr": 5,
-                        "RowBr": 3,
-                        "Text": "虞雨清",
-                        "Type": "body",
-                        "Confidence": 98.66757988929749,
-                        "Polygon": [
-                            {
-                                "X": 359,
-                                "Y": 326
-                            },
-                            {
-                                "X": 442,
-                                "Y": 326
-                            },
-                            {
-                                "X": 442,
-                                "Y": 373
-                            },
-                            {
-                                "X": 359,
-                                "Y": 373
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 5,
-                        "RowTl": 2,
                         "ColBr": 6,
-                        "RowBr": 3,
-                        "Text": "郑小伟",
-                        "Type": "body",
+                        "ColTl": 4,
                         "Confidence": 100,
                         "Polygon": [
                             {
-                                "X": 442,
-                                "Y": 326
+                                "X": 873,
+                                "Y": 74
                             },
                             {
-                                "X": 526,
-                                "Y": 326
+                                "X": 1166,
+                                "Y": 73
                             },
                             {
-                                "X": 526,
-                                "Y": 373
+                                "X": 1166,
+                                "Y": 105
                             },
                             {
-                                "X": 442,
-                                "Y": 373
+                                "X": 873,
+                                "Y": 106
                             }
-                        ]
+                        ],
+                        "RowBr": 2,
+                        "RowTl": 1,
+                        "Text": "18.98%",
+                        "Type": "body"
                     },
                     {
-                        "ColTl": 6,
-                        "RowTl": 2,
-                        "ColBr": 7,
-                        "RowBr": 3,
-                        "Text": "桂堂豪",
-                        "Type": "body",
-                        "Confidence": 99.99939799308777,
-                        "Polygon": [
-                            {
-                                "X": 526,
-                                "Y": 326
-                            },
-                            {
-                                "X": 610,
-                                "Y": 326
-                            },
-                            {
-                                "X": 610,
-                                "Y": 373
-                            },
-                            {
-                                "X": 526,
-                                "Y": 373
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 7,
-                        "RowTl": 2,
-                        "ColBr": 8,
-                        "RowBr": 3,
-                        "Text": "何志勇",
-                        "Type": "body",
-                        "Confidence": 99.99999403953552,
-                        "Polygon": [
-                            {
-                                "X": 610,
-                                "Y": 326
-                            },
-                            {
-                                "X": 694,
-                                "Y": 326
-                            },
-                            {
-                                "X": 694,
-                                "Y": 373
-                            },
-                            {
-                                "X": 610,
-                                "Y": 373
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 8,
-                        "RowTl": 2,
-                        "ColBr": 9,
-                        "RowBr": 3,
-                        "Text": "张志霞",
-                        "Type": "body",
-                        "Confidence": 99.99999403953552,
-                        "Polygon": [
-                            {
-                                "X": 694,
-                                "Y": 326
-                            },
-                            {
-                                "X": 774,
-                                "Y": 326
-                            },
-                            {
-                                "X": 774,
-                                "Y": 373
-                            },
-                            {
-                                "X": 694,
-                                "Y": 373
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 0,
-                        "RowTl": 3,
                         "ColBr": 1,
-                        "RowBr": 4,
-                        "Text": "星期三",
-                        "Type": "body",
-                        "Confidence": 99.99997019767761,
-                        "Polygon": [
-                            {
-                                "X": 26,
-                                "Y": 373
-                            },
-                            {
-                                "X": 107,
-                                "Y": 373
-                            },
-                            {
-                                "X": 107,
-                                "Y": 418
-                            },
-                            {
-                                "X": 26,
-                                "Y": 418
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 1,
-                        "RowTl": 3,
-                        "ColBr": 2,
-                        "RowBr": 4,
-                        "Text": "桂小敏",
-                        "Type": "body",
-                        "Confidence": 99.99976754188538,
-                        "Polygon": [
-                            {
-                                "X": 107,
-                                "Y": 373
-                            },
-                            {
-                                "X": 191,
-                                "Y": 373
-                            },
-                            {
-                                "X": 191,
-                                "Y": 418
-                            },
-                            {
-                                "X": 107,
-                                "Y": 418
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 2,
-                        "RowTl": 3,
-                        "ColBr": 3,
-                        "RowBr": 4,
-                        "Text": "雷玉婷",
-                        "Type": "body",
-                        "Confidence": 99.99997019767761,
-                        "Polygon": [
-                            {
-                                "X": 191,
-                                "Y": 373
-                            },
-                            {
-                                "X": 275,
-                                "Y": 373
-                            },
-                            {
-                                "X": 275,
-                                "Y": 418
-                            },
-                            {
-                                "X": 191,
-                                "Y": 418
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 3,
-                        "RowTl": 3,
-                        "ColBr": 4,
-                        "RowBr": 4,
-                        "Text": "李洁",
-                        "Type": "body",
-                        "Confidence": 99.9998688697815,
-                        "Polygon": [
-                            {
-                                "X": 275,
-                                "Y": 373
-                            },
-                            {
-                                "X": 359,
-                                "Y": 373
-                            },
-                            {
-                                "X": 359,
-                                "Y": 418
-                            },
-                            {
-                                "X": 275,
-                                "Y": 418
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 4,
-                        "RowTl": 3,
-                        "ColBr": 5,
-                        "RowBr": 4,
-                        "Text": "雷可丽",
-                        "Type": "body",
-                        "Confidence": 99.99987483024597,
-                        "Polygon": [
-                            {
-                                "X": 359,
-                                "Y": 373
-                            },
-                            {
-                                "X": 442,
-                                "Y": 373
-                            },
-                            {
-                                "X": 442,
-                                "Y": 418
-                            },
-                            {
-                                "X": 359,
-                                "Y": 418
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 5,
-                        "RowTl": 3,
-                        "ColBr": 6,
-                        "RowBr": 4,
-                        "Text": "李爱兰",
-                        "Type": "body",
-                        "Confidence": 99.99998211860657,
-                        "Polygon": [
-                            {
-                                "X": 442,
-                                "Y": 373
-                            },
-                            {
-                                "X": 526,
-                                "Y": 373
-                            },
-                            {
-                                "X": 526,
-                                "Y": 418
-                            },
-                            {
-                                "X": 442,
-                                "Y": 418
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 6,
-                        "RowTl": 3,
-                        "ColBr": 7,
-                        "RowBr": 4,
-                        "Text": "桂喻霞",
-                        "Type": "body",
-                        "Confidence": 99.99707341194153,
-                        "Polygon": [
-                            {
-                                "X": 526,
-                                "Y": 373
-                            },
-                            {
-                                "X": 610,
-                                "Y": 373
-                            },
-                            {
-                                "X": 610,
-                                "Y": 418
-                            },
-                            {
-                                "X": 526,
-                                "Y": 418
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 7,
-                        "RowTl": 3,
-                        "ColBr": 8,
-                        "RowBr": 4,
-                        "Text": "郭培润",
-                        "Type": "body",
-                        "Confidence": 99.99442100524902,
-                        "Polygon": [
-                            {
-                                "X": 610,
-                                "Y": 373
-                            },
-                            {
-                                "X": 694,
-                                "Y": 373
-                            },
-                            {
-                                "X": 694,
-                                "Y": 418
-                            },
-                            {
-                                "X": 610,
-                                "Y": 418
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 8,
-                        "RowTl": 3,
-                        "ColBr": 9,
-                        "RowBr": 4,
-                        "Text": "范亚妮",
-                        "Type": "body",
-                        "Confidence": 99.99880194664001,
-                        "Polygon": [
-                            {
-                                "X": 694,
-                                "Y": 373
-                            },
-                            {
-                                "X": 774,
-                                "Y": 373
-                            },
-                            {
-                                "X": 774,
-                                "Y": 418
-                            },
-                            {
-                                "X": 694,
-                                "Y": 418
-                            }
-                        ]
-                    },
-                    {
                         "ColTl": 0,
-                        "RowTl": 4,
-                        "ColBr": 1,
-                        "RowBr": 5,
-                        "Text": "星期四",
-                        "Type": "body",
-                        "Confidence": 99.99974370002747,
-                        "Polygon": [
-                            {
-                                "X": 26,
-                                "Y": 418
-                            },
-                            {
-                                "X": 107,
-                                "Y": 418
-                            },
-                            {
-                                "X": 107,
-                                "Y": 464
-                            },
-                            {
-                                "X": 26,
-                                "Y": 464
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 1,
-                        "RowTl": 4,
-                        "ColBr": 2,
-                        "RowBr": 5,
-                        "Text": "桂宗宙",
-                        "Type": "body",
-                        "Confidence": 99.99898076057434,
-                        "Polygon": [
-                            {
-                                "X": 107,
-                                "Y": 418
-                            },
-                            {
-                                "X": 191,
-                                "Y": 418
-                            },
-                            {
-                                "X": 191,
-                                "Y": 464
-                            },
-                            {
-                                "X": 107,
-                                "Y": 464
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 2,
-                        "RowTl": 4,
-                        "ColBr": 3,
-                        "RowBr": 5,
-                        "Text": "李谓志",
-                        "Type": "body",
-                        "Confidence": 99.9998390674591,
-                        "Polygon": [
-                            {
-                                "X": 191,
-                                "Y": 418
-                            },
-                            {
-                                "X": 275,
-                                "Y": 418
-                            },
-                            {
-                                "X": 275,
-                                "Y": 464
-                            },
-                            {
-                                "X": 191,
-                                "Y": 464
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 3,
-                        "RowTl": 4,
-                        "ColBr": 4,
-                        "RowBr": 5,
-                        "Text": "雷彩霞",
-                        "Type": "body",
-                        "Confidence": 99.99995231628418,
-                        "Polygon": [
-                            {
-                                "X": 275,
-                                "Y": 418
-                            },
-                            {
-                                "X": 359,
-                                "Y": 418
-                            },
-                            {
-                                "X": 359,
-                                "Y": 464
-                            },
-                            {
-                                "X": 275,
-                                "Y": 464
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 4,
-                        "RowTl": 4,
-                        "ColBr": 5,
-                        "RowBr": 5,
-                        "Text": "郑佳勇",
-                        "Type": "body",
-                        "Confidence": 99.99539256095886,
-                        "Polygon": [
-                            {
-                                "X": 359,
-                                "Y": 418
-                            },
-                            {
-                                "X": 442,
-                                "Y": 418
-                            },
-                            {
-                                "X": 442,
-                                "Y": 464
-                            },
-                            {
-                                "X": 359,
-                                "Y": 464
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 5,
-                        "RowTl": 4,
-                        "ColBr": 6,
-                        "RowBr": 5,
-                        "Text": "马佳辉",
-                        "Type": "body",
-                        "Confidence": 99.99973773956299,
-                        "Polygon": [
-                            {
-                                "X": 442,
-                                "Y": 418
-                            },
-                            {
-                                "X": 526,
-                                "Y": 418
-                            },
-                            {
-                                "X": 526,
-                                "Y": 464
-                            },
-                            {
-                                "X": 442,
-                                "Y": 464
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 6,
-                        "RowTl": 4,
-                        "ColBr": 7,
-                        "RowBr": 5,
-                        "Text": "郭培建",
-                        "Type": "body",
-                        "Confidence": 99.99993443489075,
-                        "Polygon": [
-                            {
-                                "X": 526,
-                                "Y": 418
-                            },
-                            {
-                                "X": 610,
-                                "Y": 418
-                            },
-                            {
-                                "X": 610,
-                                "Y": 464
-                            },
-                            {
-                                "X": 526,
-                                "Y": 464
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 7,
-                        "RowTl": 4,
-                        "ColBr": 8,
-                        "RowBr": 5,
-                        "Text": "李智政",
-                        "Type": "body",
-                        "Confidence": 99.99950528144836,
-                        "Polygon": [
-                            {
-                                "X": 610,
-                                "Y": 418
-                            },
-                            {
-                                "X": 694,
-                                "Y": 418
-                            },
-                            {
-                                "X": 694,
-                                "Y": 464
-                            },
-                            {
-                                "X": 610,
-                                "Y": 464
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 8,
-                        "RowTl": 4,
-                        "ColBr": 9,
-                        "RowBr": 5,
-                        "Text": "范成龙",
-                        "Type": "body",
                         "Confidence": 100,
                         "Polygon": [
                             {
-                                "X": 694,
-                                "Y": 418
+                                "X": 32,
+                                "Y": 106
                             },
                             {
-                                "X": 774,
-                                "Y": 418
+                                "X": 348,
+                                "Y": 106
                             },
                             {
-                                "X": 774,
-                                "Y": 464
+                                "X": 348,
+                                "Y": 135
                             },
                             {
-                                "X": 694,
-                                "Y": 464
+                                "X": 32,
+                                "Y": 135
                             }
-                        ]
+                        ],
+                        "RowBr": 3,
+                        "RowTl": 2,
+                        "Text": "归属于上市公司股东的净资产",
+                        "Type": "body"
                     },
                     {
-                        "ColTl": 0,
-                        "RowTl": 5,
-                        "ColBr": 1,
-                        "RowBr": 6,
-                        "Text": "星期五",
-                        "Type": "body",
-                        "Confidence": 99.99926090240479,
-                        "Polygon": [
-                            {
-                                "X": 26,
-                                "Y": 464
-                            },
-                            {
-                                "X": 107,
-                                "Y": 464
-                            },
-                            {
-                                "X": 107,
-                                "Y": 510
-                            },
-                            {
-                                "X": 26,
-                                "Y": 510
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 1,
-                        "RowTl": 5,
                         "ColBr": 2,
-                        "RowBr": 6,
-                        "Text": "朱凯鹏",
-                        "Type": "body",
-                        "Confidence": 99.99980926513672,
+                        "ColTl": 1,
+                        "Confidence": 100,
                         "Polygon": [
                             {
-                                "X": 107,
-                                "Y": 464
+                                "X": 348,
+                                "Y": 106
                             },
                             {
-                                "X": 191,
-                                "Y": 464
+                                "X": 574,
+                                "Y": 106
                             },
                             {
-                                "X": 191,
-                                "Y": 510
+                                "X": 574,
+                                "Y": 135
                             },
                             {
-                                "X": 107,
-                                "Y": 510
+                                "X": 348,
+                                "Y": 135
                             }
-                        ]
+                        ],
+                        "RowBr": 3,
+                        "RowTl": 2,
+                        "Text": "763,789,872.82",
+                        "Type": "body"
                     },
                     {
-                        "ColTl": 2,
-                        "RowTl": 5,
-                        "ColBr": 3,
-                        "RowBr": 6,
-                        "Text": "虞校水",
-                        "Type": "body",
-                        "Confidence": 99.98979568481445,
-                        "Polygon": [
-                            {
-                                "X": 191,
-                                "Y": 464
-                            },
-                            {
-                                "X": 275,
-                                "Y": 464
-                            },
-                            {
-                                "X": 275,
-                                "Y": 510
-                            },
-                            {
-                                "X": 191,
-                                "Y": 510
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 3,
-                        "RowTl": 5,
                         "ColBr": 4,
-                        "RowBr": 6,
-                        "Text": "郑雯丽",
-                        "Type": "body",
-                        "Confidence": 99.99974370002747,
-                        "Polygon": [
-                            {
-                                "X": 275,
-                                "Y": 464
-                            },
-                            {
-                                "X": 359,
-                                "Y": 464
-                            },
-                            {
-                                "X": 359,
-                                "Y": 510
-                            },
-                            {
-                                "X": 275,
-                                "Y": 510
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 4,
-                        "RowTl": 5,
-                        "ColBr": 5,
-                        "RowBr": 6,
-                        "Text": "郑琳",
-                        "Type": "body",
+                        "ColTl": 2,
                         "Confidence": 100,
                         "Polygon": [
                             {
-                                "X": 359,
-                                "Y": 464
+                                "X": 574,
+                                "Y": 106
                             },
                             {
-                                "X": 442,
-                                "Y": 464
+                                "X": 873,
+                                "Y": 106
                             },
                             {
-                                "X": 442,
-                                "Y": 510
+                                "X": 873,
+                                "Y": 135
                             },
                             {
-                                "X": 359,
-                                "Y": 510
+                                "X": 574,
+                                "Y": 135
                             }
-                        ]
+                        ],
+                        "RowBr": 3,
+                        "RowTl": 2,
+                        "Text": "896,653,780.86",
+                        "Type": "body"
                     },
                     {
-                        "ColTl": 5,
-                        "RowTl": 5,
                         "ColBr": 6,
-                        "RowBr": 6,
-                        "Text": "范越",
-                        "Type": "body",
-                        "Confidence": 99.99940991401672,
-                        "Polygon": [
-                            {
-                                "X": 442,
-                                "Y": 464
-                            },
-                            {
-                                "X": 526,
-                                "Y": 464
-                            },
-                            {
-                                "X": 526,
-                                "Y": 510
-                            },
-                            {
-                                "X": 442,
-                                "Y": 510
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 6,
-                        "RowTl": 5,
-                        "ColBr": 7,
-                        "RowBr": 6,
-                        "Text": "张鑫涛",
-                        "Type": "body",
-                        "Confidence": 99.99998211860657,
-                        "Polygon": [
-                            {
-                                "X": 526,
-                                "Y": 464
-                            },
-                            {
-                                "X": 610,
-                                "Y": 464
-                            },
-                            {
-                                "X": 610,
-                                "Y": 510
-                            },
-                            {
-                                "X": 526,
-                                "Y": 510
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 7,
-                        "RowTl": 5,
-                        "ColBr": 8,
-                        "RowBr": 6,
-                        "Text": "雷万林",
-                        "Type": "body",
-                        "Confidence": 99.99470114707947,
-                        "Polygon": [
-                            {
-                                "X": 610,
-                                "Y": 464
-                            },
-                            {
-                                "X": 694,
-                                "Y": 464
-                            },
-                            {
-                                "X": 694,
-                                "Y": 511
-                            },
-                            {
-                                "X": 610,
-                                "Y": 510
-                            }
-                        ]
-                    },
-                    {
-                        "ColTl": 8,
-                        "RowTl": 5,
-                        "ColBr": 9,
-                        "RowBr": 6,
-                        "Text": "雷建国",
-                        "Type": "body",
+                        "ColTl": 4,
                         "Confidence": 100,
                         "Polygon": [
                             {
-                                "X": 694,
-                                "Y": 464
+                                "X": 873,
+                                "Y": 106
                             },
                             {
-                                "X": 774,
-                                "Y": 464
+                                "X": 1166,
+                                "Y": 105
                             },
                             {
-                                "X": 774,
-                                "Y": 510
+                                "X": 1166,
+                                "Y": 135
                             },
                             {
-                                "X": 694,
-                                "Y": 511
+                                "X": 873,
+                                "Y": 135
                             }
-                        ]
+                        ],
+                        "RowBr": 3,
+                        "RowTl": 2,
+                        "Text": "-11.42%",
+                        "Type": "body"
                     },
                     {
+                        "ColBr": 1,
                         "ColTl": 0,
-                        "RowTl": 6,
-                        "ColBr": 9,
+                        "Confidence": 0,
+                        "Polygon": [
+                            {
+                                "X": 32,
+                                "Y": 135
+                            },
+                            {
+                                "X": 348,
+                                "Y": 135
+                            },
+                            {
+                                "X": 348,
+                                "Y": 198
+                            },
+                            {
+                                "X": 32,
+                                "Y": 198
+                            }
+                        ],
+                        "RowBr": 4,
+                        "RowTl": 3,
+                        "Text": "",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 2,
+                        "ColTl": 1,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 348,
+                                "Y": 135
+                            },
+                            {
+                                "X": 554,
+                                "Y": 135
+                            },
+                            {
+                                "X": 554,
+                                "Y": 198
+                            },
+                            {
+                                "X": 348,
+                                "Y": 198
+                            }
+                        ],
+                        "RowBr": 4,
+                        "RowTl": 3,
+                        "Text": "本报告期",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 3,
+                        "ColTl": 2,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 554,
+                                "Y": 135
+                            },
+                            {
+                                "X": 789,
+                                "Y": 135
+                            },
+                            {
+                                "X": 789,
+                                "Y": 198
+                            },
+                            {
+                                "X": 554,
+                                "Y": 198
+                            }
+                        ],
+                        "RowBr": 4,
+                        "RowTl": 3,
+                        "Text": "本报告期比上年同期增减",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 5,
+                        "ColTl": 3,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 789,
+                                "Y": 135
+                            },
+                            {
+                                "X": 997,
+                                "Y": 135
+                            },
+                            {
+                                "X": 997,
+                                "Y": 198
+                            },
+                            {
+                                "X": 789,
+                                "Y": 198
+                            }
+                        ],
+                        "RowBr": 4,
+                        "RowTl": 3,
+                        "Text": "年初至报告期末",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 6,
+                        "ColTl": 5,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 997,
+                                "Y": 135
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 135
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 198
+                            },
+                            {
+                                "X": 997,
+                                "Y": 198
+                            }
+                        ],
+                        "RowBr": 4,
+                        "RowTl": 3,
+                        "Text": "年初至报告期末\n比上年同期增减",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 1,
+                        "ColTl": 0,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 32,
+                                "Y": 198
+                            },
+                            {
+                                "X": 348,
+                                "Y": 198
+                            },
+                            {
+                                "X": 348,
+                                "Y": 232
+                            },
+                            {
+                                "X": 32,
+                                "Y": 232
+                            }
+                        ],
+                        "RowBr": 5,
+                        "RowTl": 4,
+                        "Text": "营业收入(元)",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 2,
+                        "ColTl": 1,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 348,
+                                "Y": 198
+                            },
+                            {
+                                "X": 554,
+                                "Y": 198
+                            },
+                            {
+                                "X": 554,
+                                "Y": 232
+                            },
+                            {
+                                "X": 348,
+                                "Y": 232
+                            }
+                        ],
+                        "RowBr": 5,
+                        "RowTl": 4,
+                        "Text": "3,832,876,471.32",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 3,
+                        "ColTl": 2,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 554,
+                                "Y": 198
+                            },
+                            {
+                                "X": 789,
+                                "Y": 198
+                            },
+                            {
+                                "X": 789,
+                                "Y": 232
+                            },
+                            {
+                                "X": 554,
+                                "Y": 232
+                            }
+                        ],
+                        "RowBr": 5,
+                        "RowTl": 4,
+                        "Text": "-19.41%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 5,
+                        "ColTl": 3,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 789,
+                                "Y": 198
+                            },
+                            {
+                                "X": 997,
+                                "Y": 198
+                            },
+                            {
+                                "X": 997,
+                                "Y": 232
+                            },
+                            {
+                                "X": 789,
+                                "Y": 232
+                            }
+                        ],
+                        "RowBr": 5,
+                        "RowTl": 4,
+                        "Text": "89,678,082,87",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 6,
+                        "ColTl": 5,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 997,
+                                "Y": 198
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 198
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 232
+                            },
+                            {
+                                "X": 997,
+                                "Y": 232
+                            }
+                        ],
+                        "RowBr": 5,
+                        "RowTl": 4,
+                        "Text": "-23,87%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 1,
+                        "ColTl": 0,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 32,
+                                "Y": 232
+                            },
+                            {
+                                "X": 348,
+                                "Y": 232
+                            },
+                            {
+                                "X": 348,
+                                "Y": 261
+                            },
+                            {
+                                "X": 32,
+                                "Y": 261
+                            }
+                        ],
+                        "RowBr": 6,
+                        "RowTl": 5,
+                        "Text": "归属于上市公司股东的净利润(元)",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 2,
+                        "ColTl": 1,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 348,
+                                "Y": 232
+                            },
+                            {
+                                "X": 554,
+                                "Y": 232
+                            },
+                            {
+                                "X": 554,
+                                "Y": 261
+                            },
+                            {
+                                "X": 348,
+                                "Y": 261
+                            }
+                        ],
+                        "RowBr": 6,
+                        "RowTl": 5,
+                        "Text": "-28,789,872.82",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 3,
+                        "ColTl": 2,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 554,
+                                "Y": 232
+                            },
+                            {
+                                "X": 789,
+                                "Y": 232
+                            },
+                            {
+                                "X": 789,
+                                "Y": 261
+                            },
+                            {
+                                "X": 554,
+                                "Y": 261
+                            }
+                        ],
+                        "RowBr": 6,
+                        "RowTl": 5,
+                        "Text": "26.76%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 5,
+                        "ColTl": 3,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 789,
+                                "Y": 232
+                            },
+                            {
+                                "X": 997,
+                                "Y": 232
+                            },
+                            {
+                                "X": 997,
+                                "Y": 261
+                            },
+                            {
+                                "X": 789,
+                                "Y": 261
+                            }
+                        ],
+                        "RowBr": 6,
+                        "RowTl": 5,
+                        "Text": "-78,982,652.98",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 6,
+                        "ColTl": 5,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 997,
+                                "Y": 232
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 232
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 261
+                            },
+                            {
+                                "X": 997,
+                                "Y": 261
+                            }
+                        ],
+                        "RowBr": 6,
+                        "RowTl": 5,
+                        "Text": "46.87%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 1,
+                        "ColTl": 0,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 32,
+                                "Y": 261
+                            },
+                            {
+                                "X": 348,
+                                "Y": 261
+                            },
+                            {
+                                "X": 348,
+                                "Y": 321
+                            },
+                            {
+                                "X": 32,
+                                "Y": 322
+                            }
+                        ],
                         "RowBr": 7,
-                        "Text": "备注:李林涛、梅美雪、江瑶洁、郑佳杰、李建华负责黑板及窗台等区域卫生。",
-                        "Type": "body",
-                        "Confidence": 99.58259463310242,
-                        "Polygon": [
-                            {
-                                "X": 26,
-                                "Y": 510
-                            },
-                            {
-                                "X": 774,
-                                "Y": 510
-                            },
-                            {
-                                "X": 774,
-                                "Y": 557
-                            },
-                            {
-                                "X": 26,
-                                "Y": 557
-                            }
-                        ]
+                        "RowTl": 6,
+                        "Text": "归属于上市公司股东的扣除非经\n常性损益的净利润(元)",
+                        "Type": "body"
                     },
                     {
-                        "ColTl": 0,
-                        "RowTl": 7,
-                        "ColBr": 9,
-                        "RowBr": 8,
-                        "Text": "我们在一起一直在努力!",
-                        "Type": "body",
-                        "Confidence": 98.30002188682556,
+                        "ColBr": 2,
+                        "ColTl": 1,
+                        "Confidence": 100,
                         "Polygon": [
                             {
-                                "X": 26,
-                                "Y": 557
+                                "X": 348,
+                                "Y": 261
                             },
                             {
-                                "X": 774,
-                                "Y": 557
+                                "X": 554,
+                                "Y": 261
                             },
                             {
-                                "X": 774,
-                                "Y": 604
+                                "X": 554,
+                                "Y": 322
                             },
                             {
-                                "X": 26,
-                                "Y": 604
+                                "X": 348,
+                                "Y": 321
                             }
-                        ]
+                        ],
+                        "RowBr": 7,
+                        "RowTl": 6,
+                        "Text": "-32,282,770.51",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 3,
+                        "ColTl": 2,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 554,
+                                "Y": 261
+                            },
+                            {
+                                "X": 789,
+                                "Y": 261
+                            },
+                            {
+                                "X": 789,
+                                "Y": 322
+                            },
+                            {
+                                "X": 554,
+                                "Y": 322
+                            }
+                        ],
+                        "RowBr": 7,
+                        "RowTl": 6,
+                        "Text": "46.62%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 5,
+                        "ColTl": 3,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 789,
+                                "Y": 261
+                            },
+                            {
+                                "X": 997,
+                                "Y": 261
+                            },
+                            {
+                                "X": 997,
+                                "Y": 322
+                            },
+                            {
+                                "X": 789,
+                                "Y": 322
+                            }
+                        ],
+                        "RowBr": 7,
+                        "RowTl": 6,
+                        "Text": "-78,872,762.12",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 6,
+                        "ColTl": 5,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 997,
+                                "Y": 261
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 261
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 322
+                            },
+                            {
+                                "X": 997,
+                                "Y": 322
+                            }
+                        ],
+                        "RowBr": 7,
+                        "RowTl": 6,
+                        "Text": "46.42%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 1,
+                        "ColTl": 0,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 32,
+                                "Y": 322
+                            },
+                            {
+                                "X": 348,
+                                "Y": 321
+                            },
+                            {
+                                "X": 348,
+                                "Y": 383
+                            },
+                            {
+                                "X": 32,
+                                "Y": 383
+                            }
+                        ],
+                        "RowBr": 8,
+                        "RowTl": 7,
+                        "Text": "经营活动产生的现金流量净额(元)",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 2,
+                        "ColTl": 1,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 348,
+                                "Y": 321
+                            },
+                            {
+                                "X": 554,
+                                "Y": 322
+                            },
+                            {
+                                "X": 554,
+                                "Y": 383
+                            },
+                            {
+                                "X": 348,
+                                "Y": 383
+                            }
+                        ],
+                        "RowBr": 8,
+                        "RowTl": 7,
+                        "Text": "18,647,940.25",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 3,
+                        "ColTl": 2,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 554,
+                                "Y": 322
+                            },
+                            {
+                                "X": 789,
+                                "Y": 322
+                            },
+                            {
+                                "X": 789,
+                                "Y": 383
+                            },
+                            {
+                                "X": 554,
+                                "Y": 383
+                            }
+                        ],
+                        "RowBr": 8,
+                        "RowTl": 7,
+                        "Text": "42.16%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 5,
+                        "ColTl": 3,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 789,
+                                "Y": 322
+                            },
+                            {
+                                "X": 997,
+                                "Y": 322
+                            },
+                            {
+                                "X": 997,
+                                "Y": 383
+                            },
+                            {
+                                "X": 789,
+                                "Y": 383
+                            }
+                        ],
+                        "RowBr": 8,
+                        "RowTl": 7,
+                        "Text": "-41,784,760,76",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 6,
+                        "ColTl": 5,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 997,
+                                "Y": 322
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 322
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 383
+                            },
+                            {
+                                "X": 997,
+                                "Y": 383
+                            }
+                        ],
+                        "RowBr": 8,
+                        "RowTl": 7,
+                        "Text": "-77.76%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 1,
+                        "ColTl": 0,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 32,
+                                "Y": 383
+                            },
+                            {
+                                "X": 348,
+                                "Y": 383
+                            },
+                            {
+                                "X": 348,
+                                "Y": 416
+                            },
+                            {
+                                "X": 32,
+                                "Y": 416
+                            }
+                        ],
+                        "RowBr": 9,
+                        "RowTl": 8,
+                        "Text": "基本每股收益(元/股)",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 2,
+                        "ColTl": 1,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 348,
+                                "Y": 383
+                            },
+                            {
+                                "X": 554,
+                                "Y": 383
+                            },
+                            {
+                                "X": 554,
+                                "Y": 416
+                            },
+                            {
+                                "X": 348,
+                                "Y": 416
+                            }
+                        ],
+                        "RowBr": 9,
+                        "RowTl": 8,
+                        "Text": "-0.0541",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 3,
+                        "ColTl": 2,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 554,
+                                "Y": 383
+                            },
+                            {
+                                "X": 789,
+                                "Y": 383
+                            },
+                            {
+                                "X": 789,
+                                "Y": 416
+                            },
+                            {
+                                "X": 554,
+                                "Y": 416
+                            }
+                        ],
+                        "RowBr": 9,
+                        "RowTl": 8,
+                        "Text": "38.12%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 5,
+                        "ColTl": 3,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 789,
+                                "Y": 383
+                            },
+                            {
+                                "X": 997,
+                                "Y": 383
+                            },
+                            {
+                                "X": 997,
+                                "Y": 416
+                            },
+                            {
+                                "X": 789,
+                                "Y": 416
+                            }
+                        ],
+                        "RowBr": 9,
+                        "RowTl": 8,
+                        "Text": "-0.872",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 6,
+                        "ColTl": 5,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 997,
+                                "Y": 383
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 383
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 416
+                            },
+                            {
+                                "X": 997,
+                                "Y": 416
+                            }
+                        ],
+                        "RowBr": 9,
+                        "RowTl": 8,
+                        "Text": "47.87%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 1,
+                        "ColTl": 0,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 32,
+                                "Y": 416
+                            },
+                            {
+                                "X": 348,
+                                "Y": 416
+                            },
+                            {
+                                "X": 348,
+                                "Y": 444
+                            },
+                            {
+                                "X": 32,
+                                "Y": 444
+                            }
+                        ],
+                        "RowBr": 10,
+                        "RowTl": 9,
+                        "Text": "稀释每股收益(元/股)",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 2,
+                        "ColTl": 1,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 348,
+                                "Y": 416
+                            },
+                            {
+                                "X": 554,
+                                "Y": 416
+                            },
+                            {
+                                "X": 554,
+                                "Y": 444
+                            },
+                            {
+                                "X": 348,
+                                "Y": 444
+                            }
+                        ],
+                        "RowBr": 10,
+                        "RowTl": 9,
+                        "Text": "-0.0541",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 3,
+                        "ColTl": 2,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 554,
+                                "Y": 416
+                            },
+                            {
+                                "X": 789,
+                                "Y": 416
+                            },
+                            {
+                                "X": 789,
+                                "Y": 444
+                            },
+                            {
+                                "X": 554,
+                                "Y": 444
+                            }
+                        ],
+                        "RowBr": 10,
+                        "RowTl": 9,
+                        "Text": "38.12%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 5,
+                        "ColTl": 3,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 789,
+                                "Y": 416
+                            },
+                            {
+                                "X": 997,
+                                "Y": 416
+                            },
+                            {
+                                "X": 997,
+                                "Y": 444
+                            },
+                            {
+                                "X": 789,
+                                "Y": 444
+                            }
+                        ],
+                        "RowBr": 10,
+                        "RowTl": 9,
+                        "Text": "-0.872",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 6,
+                        "ColTl": 5,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 997,
+                                "Y": 416
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 416
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 444
+                            },
+                            {
+                                "X": 997,
+                                "Y": 444
+                            }
+                        ],
+                        "RowBr": 10,
+                        "RowTl": 9,
+                        "Text": "47.87%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 1,
+                        "ColTl": 0,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 32,
+                                "Y": 444
+                            },
+                            {
+                                "X": 348,
+                                "Y": 444
+                            },
+                            {
+                                "X": 348,
+                                "Y": 475
+                            },
+                            {
+                                "X": 32,
+                                "Y": 475
+                            }
+                        ],
+                        "RowBr": 11,
+                        "RowTl": 10,
+                        "Text": "加权平均净资产收益率",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 2,
+                        "ColTl": 1,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 348,
+                                "Y": 444
+                            },
+                            {
+                                "X": 554,
+                                "Y": 444
+                            },
+                            {
+                                "X": 554,
+                                "Y": 475
+                            },
+                            {
+                                "X": 348,
+                                "Y": 475
+                            }
+                        ],
+                        "RowBr": 11,
+                        "RowTl": 10,
+                        "Text": "-6.21%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 3,
+                        "ColTl": 2,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 554,
+                                "Y": 444
+                            },
+                            {
+                                "X": 789,
+                                "Y": 444
+                            },
+                            {
+                                "X": 789,
+                                "Y": 475
+                            },
+                            {
+                                "X": 554,
+                                "Y": 475
+                            }
+                        ],
+                        "RowBr": 11,
+                        "RowTl": 10,
+                        "Text": "-8.65%",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 5,
+                        "ColTl": 3,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 789,
+                                "Y": 444
+                            },
+                            {
+                                "X": 997,
+                                "Y": 444
+                            },
+                            {
+                                "X": 998,
+                                "Y": 475
+                            },
+                            {
+                                "X": 789,
+                                "Y": 475
+                            }
+                        ],
+                        "RowBr": 11,
+                        "RowTl": 10,
+                        "Text": "-13.78",
+                        "Type": "body"
+                    },
+                    {
+                        "ColBr": 6,
+                        "ColTl": 5,
+                        "Confidence": 100,
+                        "Polygon": [
+                            {
+                                "X": 997,
+                                "Y": 444
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 444
+                            },
+                            {
+                                "X": 1166,
+                                "Y": 475
+                            },
+                            {
+                                "X": 998,
+                                "Y": 475
+                            }
+                        ],
+                        "RowBr": 11,
+                        "RowTl": 10,
+                        "Text": "-8.65%",
+                        "Type": "body"
                     }
                 ],
-                "Type": 1,
                 "TableCoordPoint": [
                     {
-                        "X": 26,
-                        "Y": 193
+                        "X": 32,
+                        "Y": 29
                     },
                     {
-                        "X": 774,
-                        "Y": 193
+                        "X": 1166,
+                        "Y": 29
                     },
                     {
-                        "X": 774,
-                        "Y": 604
+                        "X": 1166,
+                        "Y": 475
                     },
                     {
-                        "X": 26,
-                        "Y": 604
+                        "X": 32,
+                        "Y": 475
                     }
-                ]
+                ],
+                "Type": 1
             }
-        ],
-        "PdfPageSize": 0,
-        "Data": "UEsDBBQAAAAIAAAAAADO8yasOQEAAKsEAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbK2Uy27CMBBF93xFlG1FTLvoogI2bbctUvsDrj1JXPySZ6Dw952ERwUqBBQ2saLxveeOPfL4cx0Bs5WzHid5TRSfhEBVg5NYhAieK2VIThL/pkpEqeayAvEwGj0KFTyBpyE1Hvl0kGXjFyjlwlL2uuIKmuAn+XeEKs+eN3sb3CQ3rvFoC+KUjMFHKhmjNUoSl0VTPSlNYPGMdun1UWvDbVsFK9s9WJuId3+Q9yWkZDRkM5noTTp2FCsrsJYJ9Acl4ysszif+hxrK0ijQQS0cSwqMCaTGGoCcLQ68L4hCaws3z9CadsOJ5wU23/veE==",
-        "Angle": 0,
-        "RequestId": "aab831e6-7ae6-49bd-b599-af3e39052364"
+        ]
     }
 }
 ```

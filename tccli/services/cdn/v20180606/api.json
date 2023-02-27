@@ -16520,7 +16520,6 @@
       "document": "VerifyDomainRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "www.qq.com",
           "member": "string",
@@ -16529,7 +16528,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "验证方式\ndns: DNS 解析验证（默认值）\nfile: 文件验证",
           "example": "file",
           "member": "string",
@@ -16545,10 +16543,9 @@
       "members": [
         {
           "document": "是否验证成功",
-          "example": "ok",
+          "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },

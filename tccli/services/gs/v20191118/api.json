@@ -68,16 +68,6 @@
       "document": "CreateSession请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "客户端session信息，从JSSDK请求中获得",
-          "example": "xxx",
-          "member": "string",
-          "name": "ClientSession",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "xxx",
           "member": "string",
@@ -86,7 +76,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏ID",
           "example": "game-abcd1234",
           "member": "string",
@@ -95,7 +84,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "【已废弃】只在TrylockWorker时生效",
           "example": "ap-guangzhou",
           "member": "string",
@@ -104,7 +92,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏参数",
           "example": "StartFor=1",
           "member": "string",
@@ -113,7 +100,14 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "客户端session信息，从JSSDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClientSession",
+          "required": false,
+          "type": "string"
+        },
+        {
           "document": "分辨率,，可设置为1080p或720p或1920x1080格式",
           "example": "1080p",
           "member": "string",
@@ -122,7 +116,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "背景图url，格式为png或jpeg，宽高1920*1080",
           "example": "http://ip:port/test.png",
           "member": "string",
@@ -131,7 +124,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "【已废弃】",
           "example": "1",
           "member": "uint64",
@@ -140,7 +132,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)",
           "example": "2",
           "member": "uint64",
@@ -149,7 +140,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "单位Mbps，动态调整最大码率建议值，会按实际情况调整",
           "example": "4",
           "member": "uint64",
@@ -158,7 +148,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "单位Mbps，动态调整最小码率建议值，会按实际情况调整",
           "example": "2",
           "member": "uint64",
@@ -167,7 +156,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "帧率，可设置为30、45、60、90、120、144",
           "example": "60",
           "member": "uint64",
@@ -176,7 +164,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
@@ -185,7 +172,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "【已废弃】优化项，便于客户灰度开启新的优化项，默认为0",
           "example": "0",
           "member": "uint64",
@@ -194,7 +180,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "【互动云游】游戏主机用户ID",
           "example": "xxx",
           "member": "string",
@@ -203,7 +188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "【互动云游】角色；Player表示玩家；Viewer表示观察者",
           "example": "Player",
           "member": "string",
@@ -212,7 +196,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏相关参数",
           "example": "{}",
           "member": "string",
@@ -221,7 +204,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云端运行模式。\nRunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运行\n默认值（空）：要求必须有客户端连接才会保持云端 App 运行。",
           "example": "RunWithoutClient",
           "member": "string",
@@ -240,7 +222,6 @@
           "example": "xxx",
           "member": "string",
           "name": "ServerSession",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -249,7 +230,6 @@
           "example": "xx",
           "member": "string",
           "name": "RoleNumber",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -258,7 +238,6 @@
           "example": "Player",
           "member": "string",
           "name": "Role",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

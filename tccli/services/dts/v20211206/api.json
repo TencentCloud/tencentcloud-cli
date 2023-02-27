@@ -1002,14 +1002,6 @@
           "type": "string"
         },
         {
-          "document": "同步任务选项",
-          "example": "无",
-          "member": "Options",
-          "name": "Options",
-          "required": true,
-          "type": "object"
-        },
-        {
           "document": "同步库表对象信息",
           "example": "无",
           "member": "Objects",
@@ -1062,6 +1054,14 @@
           "example": "无",
           "member": "Endpoint",
           "name": "DstInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "同步任务选项",
+          "example": "无",
+          "member": "Options",
+          "name": "Options",
           "required": false,
           "type": "object"
         },
@@ -2163,8 +2163,8 @@
           "value_allowed_null": true
         },
         {
-          "document": "触发器迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "partial",
+          "document": "触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Partial",
           "member": "string",
           "name": "TriggerMode",
           "required": false,
@@ -2181,8 +2181,8 @@
           "value_allowed_null": true
         },
         {
-          "document": "事件迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "partial",
+          "document": "事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Partial",
           "member": "string",
           "name": "EventMode",
           "required": false,

@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DescribeAutoSnapshotPolicies": {
-      "document": "本接口（DescribeAutoSnapshotPolicies）用于查询定期快照策略。\n\n* 可以根据定期快照策略ID、名称或者状态等信息来查询定期快照策略的详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的定期快照策略表。\n",
+      "document": "本接口（DescribeAutoSnapshotPolicies）用于查询定期快照策略。\n\n* 可以根据定期快照策略ID、名称或者状态等信息来查询定期快照策略的详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的定期快照策略表。",
       "input": "DescribeAutoSnapshotPoliciesRequest",
       "name": "查询定期快照策略",
       "output": "DescribeAutoSnapshotPoliciesResponse",
@@ -211,7 +211,7 @@
       "status": "online"
     },
     "InquiryPriceResizeDisk": {
-      "document": "本接口（InquiryPriceResizeDisk）用于扩容云硬盘询价。\n\n* 只支持预付费模式的云硬盘扩容询价。",
+      "document": "本接口（InquiryPriceResizeDisk）用于扩容云硬盘询价。",
       "input": "InquiryPriceResizeDiskRequest",
       "name": "扩容云硬盘询价",
       "output": "InquiryPriceResizeDiskResponse",
@@ -713,6 +713,24 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "该复制快照策略的源端账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "CopyFromAccountUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -757,7 +775,6 @@
       "document": "描述独享集群的详细信息。",
       "members": [
         {
-          "default": "",
           "document": "独享集群围笼ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cage-xxxxxxxx",
           "member": "string",
@@ -767,7 +784,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "独享集群状态。取值范围：<br><li>NORMAL：正常；<br><li>CLOSED：关闭，此时将不可使用该独享集群创建新的云硬盘；<br><li>FAULT：独享集群状态异常，此时独享集群将不可操作，腾讯云运维团队将会及时修复该集群；<br><li>ISOLATED：因未及时续费导致独享集群被隔离，此时将不可使用该独享集群创建新的云硬盘，对应的云硬盘也将不可操作。",
           "example": "NORMAL",
           "member": "string",
@@ -777,7 +793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shenzhen-fsi-2",
           "member": "string",
@@ -787,7 +802,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "独享集群实例名称。",
           "example": "test",
           "member": "string",
@@ -797,7 +811,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "独享集群的资源容量大小。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CdcSize",
@@ -807,7 +820,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "独享集群实例id。",
           "example": "cdc-xxxxxxxx",
           "member": "string",
@@ -817,7 +829,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "独享集群类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘集群<br><li>CLOUD_PREMIUM：表示高性能云硬盘集群<br><li>CLOUD_SSD：SSD表示SSD云硬盘集群。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
@@ -827,13 +838,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "独享集群到期时间。",
           "example": "2029-01-01 00:00:00",
           "member": "datetime",
           "name": "ExpiredTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储池创建时间。",
+          "example": "2018-01-01 00:00:00",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前集群中已创建的云盘数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskNumber",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1229,7 +1257,6 @@
       "document": "CreateSnapshot请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。",
           "example": "disk-l7mxexxc",
           "member": "string",
@@ -1238,7 +1265,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "快照名称，不传则新快照名称默认为“未命名”。",
           "example": "test",
           "member": "string",
@@ -1247,7 +1273,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00",
           "example": "2022-01-08T09:47:55+00:00",
           "member": "datetime_iso",
@@ -1256,7 +1281,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云硬盘备份点ID。传入此参数时，将通过备份点创建快照。",
           "example": "dbp-xxxxxxxx",
           "member": "string",
@@ -1265,7 +1289,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "快照绑定的标签。",
           "example": "无",
           "member": "Tag",
@@ -1284,7 +1307,6 @@
           "example": "snap-3xvkxyxp",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1390,48 +1412,48 @@
       "document": "DescribeAutoSnapshotPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要查询的定期快照策略ID列表。参数不支持同时指定`AutoSnapshotPolicyIds`和`Filters`。",
+          "example": "[\"asp-c9m1berf\"]",
           "member": "string",
           "name": "AutoSnapshotPolicyIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "document": "过滤条件。参数不支持同时指定`AutoSnapshotPolicyIds`和`Filters`。<br><li>auto-snapshot-policy-id - Array of String - 是否必填：否 -（过滤条件）按定期快照策略ID进行过滤。定期快照策略ID形如：`asp-11112222`。<br><li>auto-snapshot-policy-state - Array of String - 是否必填：否 -（过滤条件）按定期快照策略的状态进行过滤。定期快照策略ID形如：`asp-11112222`。(NORMAL：正常 | ISOLATED：已隔离。)<br><li>auto-snapshot-policy-name - Array of String - 是否必填：否 -（过滤条件）按定期快照策略名称进行过滤。",
+          "example": "[{\"Name\":\"auto-snapshot-policy-state\",\"Values\":[\"NORMAL\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/product/362/15633)中的相关小节。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/product/362/15633)中的相关小节。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "输出定期快照列表的排列顺序。取值范围：<br><li>ASC：升序排列<br><li>DESC：降序排列。",
+          "example": "ASC",
           "member": "string",
           "name": "Order",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "定期快照列表排序的依据字段。取值范围：<br><li>CREATETIME：依据定期快照的创建时间排序<br>默认按创建时间排序。",
+          "example": "CREATETIME",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -1445,6 +1467,7 @@
       "members": [
         {
           "document": "有效的定期快照策略数量。",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -1452,6 +1475,7 @@
         },
         {
           "document": "定期快照策略列表。",
+          "example": "[]",
           "member": "AutoSnapshotPolicy",
           "name": "AutoSnapshotPolicySet",
           "type": "list",
@@ -1470,8 +1494,8 @@
       "document": "DescribeDiskAssociatedAutoSnapshotPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要查询的云硬盘ID。",
+          "example": "disk-xxxx",
           "member": "string",
           "name": "DiskId",
           "required": true,
@@ -1485,6 +1509,7 @@
       "members": [
         {
           "document": "云盘绑定的定期快照数量。",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -1492,6 +1517,7 @@
         },
         {
           "document": "云盘绑定的定期快照列表。",
+          "example": "[]",
           "member": "AutoSnapshotPolicy",
           "name": "AutoSnapshotPolicySet",
           "type": "list",
@@ -1753,7 +1779,6 @@
       "document": "DescribeDiskStoragePool请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/product/362/15633)中的相关小节。",
           "example": "20",
           "member": "uint64",
@@ -1762,7 +1787,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "指定需要查询的独享集群ID列表，该入参不能与Filters一起使用。",
           "example": "cdc-asdasd",
           "member": "string",
@@ -1771,7 +1795,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "过滤条件。参数不支持同时指定`CdcIds`和`Filters`。<br><li>cdc-id - Array of String - 是否必填：否 -（过滤条件）按独享集群ID过滤。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按独享集群所在[可用区](/document/product/213/15753#ZoneInfo)过滤。<br><li>cage-id - Array of String - 是否必填：否 -（过滤条件）按独享集群所在围笼的ID过滤。<br><li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：SSD表示SSD云硬盘。)",
           "example": "无",
           "member": "Filter",
@@ -1780,7 +1803,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/product/362/15633)中的相关小节。",
           "example": "0",
           "member": "uint64",
@@ -1799,7 +1821,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1807,8 +1828,15 @@
           "document": "独享集群的详细信息列表",
           "example": "无",
           "member": "Cdc",
+          "name": "CdcSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "独享集群的详细信息列表",
+          "example": "无",
+          "member": "Cdc",
           "name": "DiskStoragePoolSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2014,8 +2042,8 @@
       "document": "DescribeSnapshotSharePermission请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要查询快照的ID。可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。",
+          "example": "snap-xxxxxxxx",
           "member": "string",
           "name": "SnapshotId",
           "required": true,
@@ -2029,6 +2057,7 @@
       "members": [
         {
           "document": "快照的分享信息的集合",
+          "example": "[{\"CreatedTime\":\"2023-02-26 01:21:03\",\"AccountId\":\"123456789\"}]",
           "member": "SharePermission",
           "name": "SharePermissionSet",
           "type": "list",
@@ -2158,6 +2187,111 @@
         }
       ],
       "type": "object"
+    },
+    "DetailPrice": {
+      "document": "描述购买云盘时的费用明细。",
+      "members": [
+        {
+          "document": "描述计费项目名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DiskSpace",
+          "member": "string",
+          "name": "PriceTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "描述计费项目显示名称，用户控制台展示。",
+          "example": "云盘空间",
+          "member": "string",
+          "name": "PriceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预付费云盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.0",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "预付费云盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.0",
+          "member": "float",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0",
+          "member": "float",
+          "name": "UnitPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0",
+          "member": "float",
+          "name": "UnitPriceDiscount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "后付费云盘的计价单元，取值范围：HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HOUR",
+          "member": "string",
+          "name": "ChargeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高精度预付费云盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "OriginalPriceHigh",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高精度预付费云盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "DiscountPriceHigh",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高精度后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "UnitPriceHigh",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高精度后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "UnitPriceDiscountHigh",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Disk": {
       "document": "描述了云硬盘的详细信息",
@@ -2512,6 +2646,24 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "云硬盘最后一次挂载的实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xxx",
+          "member": "string",
+          "name": "LastAttachInsId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "云硬盘最后一次操作错误提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrorPrompt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2652,7 +2804,6 @@
       "document": "云盘配置。",
       "members": [
         {
-          "default": "",
           "document": "配置是否可用。",
           "example": "false",
           "member": "bool",
@@ -2662,7 +2813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
@@ -2672,7 +2822,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -2682,7 +2831,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例机型系列。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "N1",
           "member": "string",
@@ -2692,7 +2840,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。",
           "example": "CLOUD_BASIC",
           "member": "string",
@@ -2702,7 +2849,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云盘大小变化的最小步长，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
@@ -2712,7 +2858,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "额外的性能区间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "int64",
@@ -2722,7 +2867,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -2732,7 +2876,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。",
           "example": "DATA_DISK",
           "member": "string",
@@ -2742,7 +2885,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最小可配置云盘大小，单位GB。",
           "example": "10",
           "member": "uint64",
@@ -2752,7 +2894,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最大可配置云盘大小，单位GB。",
           "example": "32000",
           "member": "uint64",
@@ -2760,6 +2901,15 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "描述预付费或后付费云盘的价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"UnitPriceDiscount\":0.09,\"UnitPrice\":0.09,\"ChargeDiskSize\":100,\"ChargeUnit\":\"HOUR\"}",
+          "member": "Price",
+          "name": "Price",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3003,20 +3153,20 @@
       "document": "InquirePriceModifyDiskExtraPerformance请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
-          "member": "string",
-          "name": "DiskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "额外购买的云硬盘性能值，单位MB/s。",
+          "example": "200",
           "member": "uint64",
           "name": "ThroughputPerformance",
           "required": true,
           "type": "int"
+        },
+        {
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-dritwhhm",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3026,6 +3176,7 @@
       "members": [
         {
           "document": "描述了调整云盘额外性能时对应的价格。",
+          "example": "无",
           "member": "Price",
           "name": "DiskPrice",
           "type": "object",
@@ -3206,24 +3357,24 @@
       "document": "InquiryPriceResizeDisk请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
-          "member": "string",
-          "name": "DiskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。",
+          "example": "200",
           "member": "uint64",
           "name": "DiskSize",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-dw0bbzws",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
           "document": "云盘所属项目ID。 如传入则仅用于鉴权。",
+          "example": "1002189",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -3237,6 +3388,7 @@
       "members": [
         {
           "document": "描述了扩容云盘的价格。",
+          "example": "无",
           "member": "PrepayPrice",
           "name": "DiskPrice",
           "type": "object",
@@ -3640,7 +3792,6 @@
       "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，以及所属的独享集群的ID和名字。",
       "members": [
         {
-          "default": "",
           "document": "云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。该参数也可以通过调用  [DescribeZones](/document/product/213/15707) 的返回值中的Zone字段来获取。",
           "example": "ap-shanghai-2",
           "member": "string",
@@ -3650,7 +3801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cage-xxxxxxxx",
           "member": "string",
@@ -3660,7 +3810,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。",
           "example": "0",
           "member": "uint64",
@@ -3670,7 +3819,15 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "document": "实例所属项目名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default Project",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CdcName",
           "member": "string",
@@ -3680,7 +3837,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdc-xxxxxxxx",
           "member": "string",
@@ -3690,7 +3846,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "独享集群id。",
           "example": "cluster-xxxxxxxx",
           "member": "string",
@@ -3748,7 +3903,6 @@
       "document": "预付费订单的费用。",
       "members": [
         {
-          "default": "",
           "document": "预付费云盘或快照预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
@@ -3758,7 +3912,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"h\"",
           "member": "string",
@@ -3768,7 +3921,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高精度后付费云盘原单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1.00\"",
           "member": "string",
@@ -3778,7 +3930,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高精度预付费云盘或快照预支费用的原价，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1.00\"",
           "member": "string",
@@ -3788,7 +3939,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "预付费云盘或快照预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
@@ -3798,7 +3948,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
@@ -3808,7 +3957,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高精度后付费云盘折扣单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1.00\"",
           "member": "string",
@@ -3818,7 +3966,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高精度预付费云盘或快照预支费用的折扣价，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1.00\"",
           "member": "string",
@@ -3828,13 +3975,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "UnitPrice",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "计费项目明细列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "DetailPrice",
+          "name": "DetailPrices",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4012,8 +4167,8 @@
       "document": "快照分享信息集合",
       "members": [
         {
-          "default": "",
           "document": "快照分享的时间",
+          "example": "2023-02-26 01:21:03",
           "member": "datetime",
           "name": "CreatedTime",
           "required": true,
@@ -4021,8 +4176,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分享的账号Id",
+          "example": "100022975249",
           "member": "string",
           "name": "AccountId",
           "required": true,
@@ -4036,7 +4191,6 @@
       "document": "描述了快照的详细信息",
       "members": [
         {
-          "default": "",
           "document": "快照所在的位置。",
           "example": "无",
           "member": "Placement",
@@ -4046,7 +4200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为跨地域复制的快照。取值范围：<br><li>true：表示为跨地域复制的快照。<br><li>false:本地域的快照。",
           "example": "false",
           "member": "bool",
@@ -4056,7 +4209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照的状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中<br><li>COPYING_FROM_REMOTE：跨地域复制中<br><li>CHECKING_COPIED：复制校验中<br><li>TORECYCLE：待回收。",
           "example": "NORMAL",
           "member": "string",
@@ -4066,7 +4218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为永久快照。取值范围：<br><li>true：永久快照<br><li>false：非永久快照。",
           "example": "true",
           "member": "bool",
@@ -4076,7 +4227,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照名称，用户自定义的快照别名。调用[ModifySnapshotAttribute](/document/product/362/15650)可修改此字段。",
           "example": "test",
           "member": "string",
@@ -4086,7 +4236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照到期时间。如果快照为永久保留，此字段为空。",
           "example": "2021-11-24 16:00:00",
           "member": "datetime",
@@ -4096,7 +4245,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照创建进度百分比，快照创建成功后此字段恒为100。",
           "example": "100",
           "member": "uint64",
@@ -4106,7 +4254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照关联的镜像列表。",
           "example": "无",
           "member": "Image",
@@ -4116,7 +4263,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照当前被共享数。",
           "example": "0",
           "member": "uint64",
@@ -4126,7 +4272,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT",
           "example": "PRIVATE_SNAPSHOT",
           "member": "string",
@@ -4136,7 +4281,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建此快照的云硬盘大小，单位GB。",
           "example": "10",
           "member": "uint64",
@@ -4146,7 +4290,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建此快照的云硬盘ID。",
           "example": "disk-xxxxxxxx",
           "member": "string",
@@ -4156,7 +4299,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照正在跨地域复制的目的地域，默认取值为[]。",
           "example": "[]",
           "member": "string",
@@ -4166,7 +4308,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为加密盘创建的快照。取值范围：<br><li>true：该快照为加密盘创建的<br><li>false:非加密盘创建的快照。",
           "example": "false",
           "member": "bool",
@@ -4176,7 +4317,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照的创建时间。",
           "example": "2019-07-15 00:00:00",
           "member": "datetime",
@@ -4186,7 +4326,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照关联的镜像个数。",
           "example": "0",
           "member": "uint64",
@@ -4196,7 +4335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建此快照的云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。",
           "example": "SYSTEM_DISK",
           "member": "string",
@@ -4206,7 +4344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照ID。",
           "example": "snap-xxxxxxx",
           "member": "string",
@@ -4216,7 +4353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照开始共享的时间。",
           "example": "2021-07-15",
           "member": "date",
@@ -4226,12 +4362,11 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照绑定的标签列表。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         }

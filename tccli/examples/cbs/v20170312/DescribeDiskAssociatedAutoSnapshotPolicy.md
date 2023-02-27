@@ -1,6 +1,6 @@
 **Example 1: 查询云盘disk-dw0bbzws绑定的定期快照策略**
 
-
+通过云硬盘ID查询云硬盘绑定的定期快照策略
 
 Input: 
 
@@ -15,27 +15,65 @@ Output:
     "Response": {
         "AutoSnapshotPolicySet": [
             {
-                "IsActivated": 1,
-                "AutoSnapshotPolicyName": "sds",
-                "IsPermanent": 0,
-                "NextTriggerTime": "2017-12-03 00:00:00",
-                "AutoSnapshotPolicyId": "asp-mrsrn243",
+                "DiskIdSet": [],
+                "IsActivated": true,
+                "AdvancedRetentionPolicy": null,
+                "IsCopyToRemote": 0,
+                "IsPermanent": false,
+                "AutoSnapshotPolicyState": "NORMAL",
+                "NextTriggerTime": "2023-02-24 23:00:00",
+                "AutoSnapshotPolicyName": "Orch-data-1h-3d",
+                "AutoSnapshotPolicyId": "asp-3drodm1k",
+                "CopyFromAccountUin": null,
+                "InstanceIdSet": [],
+                "RetentionAmount": 0,
+                "RetentionDays": 3,
                 "Policy": [
                     {
                         "DayOfWeek": [
-                            0
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6
                         ],
                         "Hour": [
-                            0
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12,
+                            13,
+                            14,
+                            15,
+                            16,
+                            17,
+                            18,
+                            19,
+                            20,
+                            21,
+                            22,
+                            23
                         ]
                     }
                 ],
-                "CreateTime": "2017-11-17 15:09:12",
-                "RetentionDays": 7
+                "RetentionMonths": 0,
+                "CreateTime": "2023-02-15 16:56:04",
+                "CopyToAccountUin": null
             }
         ],
         "TotalCount": 1,
-        "RequestId": "8612f14a-fd07-85b5-39f9-5a1fa51efa14"
+        "RequestId": "a9f6fd41-242f-4053-89c2-73ac5465ed9c"
     }
 }
 ```

@@ -382,7 +382,7 @@
     ],
     "DescribeLoadBalancerOverview": [
       {
-        "document": "",
+        "document": "查询各种clb运行状态数目",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeLoadBalancerOverview\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RunningCount\": 0,\n        \"IsolationCount\": 0,\n        \"WillExpireCount\": 0,\n        \"RequestId\": \"03b18184-caf1-40d7-b01a-8a76565b94ad\"\n    }\n}",
         "title": "查询各种clb运行状态数目"

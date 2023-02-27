@@ -4479,7 +4479,6 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4488,7 +4487,6 @@
           "example": "0",
           "member": "int64",
           "name": "RunningCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4497,7 +4495,6 @@
           "example": "0",
           "member": "int64",
           "name": "IsolationCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4506,7 +4503,6 @@
           "example": "0",
           "member": "int64",
           "name": "WillExpireCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

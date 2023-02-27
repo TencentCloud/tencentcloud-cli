@@ -2519,6 +2519,14 @@
           "name": "LogTopicId",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "是否开启存储",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableStore",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -78,7 +78,7 @@
     ],
     "CreateSnapshot": [
       {
-        "document": "",
+        "document": "用户创建快照",
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshot\n<公共请求参数>\n\n{\n    \"SnapshotName\": \"snap_201711301015\",\n    \"Deadline\": \"2022-01-08T09:47:55+00:00\",\n    \"DiskId\": \"disk-lzrg2pwi\"\n}",
         "output": "{\n    \"Response\": {\n        \"SnapshotId\": \"snap-gybrif0z\",\n        \"RequestId\": \"1bd35eca-0c9a-6e0b-938a-5a1f80511c19\"\n    }\n}",
         "title": "创建快照"
@@ -110,17 +110,17 @@
     ],
     "DescribeAutoSnapshotPolicies": [
       {
-        "document": "",
+        "document": "查询状态为NORMAL的定期快照策略",
         "input": "https://cbs.tencentcloudapi.com/?Action=DescribeAutoSnapshotPolicies\r\n&Filters.0.Name=auto-snapshot-policy-state\r\n&Filters.0.Values.0=NORMAL\r\n&Limit=3\r\n&Offset=0\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AutoSnapshotPolicySet\": [\n            {\n                \"DiskIdSet\": [],\n                \"IsActivated\": 1,\n                \"AutoSnapshotPolicyState\": \"NORMAL\",\n                \"AutoSnapshotPolicyName\": \"快照策略1\",\n                \"IsPermanent\": 0,\n                \"NextTriggerTime\": \"2017-12-04 12:00:00\",\n                \"AutoSnapshotPolicyId\": \"asp-lfp6fi4f\",\n                \"Policy\": [\n                    {\n                        \"DayOfWeek\": [\n                            1,\n                            4\n                        ],\n                        \"Hour\": [\n                            12\n                        ]\n                    }\n                ],\n                \"CreateTime\": \"2017-11-01 10:46:22\",\n                \"RetentionDays\": 7\n            },\n            {\n                \"DiskIdSet\": [],\n                \"IsActivated\": 1,\n                \"AutoSnapshotPolicyState\": \"NORMAL\",\n                \"AutoSnapshotPolicyName\": \"快照策略2\",\n                \"IsPermanent\": 0,\n                \"NextTriggerTime\": \"2017-12-03 10:00:00\",\n                \"AutoSnapshotPolicyId\": \"asp-nqu08k2l\",\n                \"Policy\": [\n                    {\n                        \"DayOfWeek\": [\n                            0\n                        ],\n                        \"Hour\": [\n                            10\n                        ]\n                    }\n                ],\n                \"CreateTime\": \"2017-11-17 15:01:25\",\n                \"RetentionDays\": 7\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"701c8a35-ed66-fc79-3795-5a1fa72cdbf1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoSnapshotPolicySet\": [\n            {\n                \"DiskIdSet\": [],\n                \"IsActivated\": true,\n                \"AdvancedRetentionPolicy\": null,\n                \"IsCopyToRemote\": 0,\n                \"IsPermanent\": false,\n                \"AutoSnapshotPolicyState\": \"NORMAL\",\n                \"Tags\": [],\n                \"NextTriggerTime\": \"2023-03-03 07:00:00\",\n                \"AutoSnapshotPolicyName\": \"default-policy\",\n                \"AutoSnapshotPolicyId\": \"asp-3stvwfxx\",\n                \"CopyFromAccountUin\": null,\n                \"InstanceIdSet\": [],\n                \"RetentionAmount\": 0,\n                \"RetentionDays\": 15,\n                \"Policy\": [\n                    {\n                        \"DayOfWeek\": [\n                            6,\n                            5\n                        ],\n                        \"Hour\": [\n                            7\n                        ]\n                    }\n                ],\n                \"RetentionMonths\": 0,\n                \"CreateTime\": \"2022-05-16 14:00:48\",\n                \"CopyToAccountUin\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9c112e22-96c6-4300-831e-5d52c8d361fc\"\n    }\n}",
         "title": "查询状态为NORMAL的定期快照策略"
       }
     ],
     "DescribeDiskAssociatedAutoSnapshotPolicy": [
       {
-        "document": "",
+        "document": "通过云硬盘ID查询云硬盘绑定的定期快照策略",
         "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskAssociatedAutoSnapshotPolicy\r\n&DiskId=disk-dw0bbzws\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AutoSnapshotPolicySet\": [\n            {\n                \"IsActivated\": 1,\n                \"AutoSnapshotPolicyName\": \"sds\",\n                \"IsPermanent\": 0,\n                \"NextTriggerTime\": \"2017-12-03 00:00:00\",\n                \"AutoSnapshotPolicyId\": \"asp-mrsrn243\",\n                \"Policy\": [\n                    {\n                        \"DayOfWeek\": [\n                            0\n                        ],\n                        \"Hour\": [\n                            0\n                        ]\n                    }\n                ],\n                \"CreateTime\": \"2017-11-17 15:09:12\",\n                \"RetentionDays\": 7\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8612f14a-fd07-85b5-39f9-5a1fa51efa14\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoSnapshotPolicySet\": [\n            {\n                \"DiskIdSet\": [],\n                \"IsActivated\": true,\n                \"AdvancedRetentionPolicy\": null,\n                \"IsCopyToRemote\": 0,\n                \"IsPermanent\": false,\n                \"AutoSnapshotPolicyState\": \"NORMAL\",\n                \"NextTriggerTime\": \"2023-02-24 23:00:00\",\n                \"AutoSnapshotPolicyName\": \"Orch-data-1h-3d\",\n                \"AutoSnapshotPolicyId\": \"asp-3drodm1k\",\n                \"CopyFromAccountUin\": null,\n                \"InstanceIdSet\": [],\n                \"RetentionAmount\": 0,\n                \"RetentionDays\": 3,\n                \"Policy\": [\n                    {\n                        \"DayOfWeek\": [\n                            0,\n                            1,\n                            2,\n                            3,\n                            4,\n                            5,\n                            6\n                        ],\n                        \"Hour\": [\n                            0,\n                            1,\n                            2,\n                            3,\n                            4,\n                            5,\n                            6,\n                            7,\n                            8,\n                            9,\n                            10,\n                            11,\n                            12,\n                            13,\n                            14,\n                            15,\n                            16,\n                            17,\n                            18,\n                            19,\n                            20,\n                            21,\n                            22,\n                            23\n                        ]\n                    }\n                ],\n                \"RetentionMonths\": 0,\n                \"CreateTime\": \"2023-02-15 16:56:04\",\n                \"CopyToAccountUin\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a9f6fd41-242f-4053-89c2-73ac5465ed9c\"\n    }\n}",
         "title": "查询云盘disk-dw0bbzws绑定的定期快照策略"
       }
     ],
@@ -152,7 +152,7 @@
       {
         "document": "部分用户(金融)对cbs集群有独享需求，该接口用来查询用户所拥有的独享集群。",
         "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskStoragePool\n&Filters.0.Name=cdc-id\n&Filters.0.Values.0=cdc-6brr1cvj\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DiskStoragePoolSet\": [\n            {\n                \"CageId\": \"xx\",\n                \"CdcState\": \"xx\",\n                \"Zone\": \"xx\",\n                \"CdcName\": \"xx\",\n                \"CdcResource\": {\n                    \"DiskAavilable\": 1,\n                    \"DiskTotal\": 1\n                },\n                \"CdcId\": \"xx\",\n                \"DiskType\": \"xx\",\n                \"ExpiredTime\": \"2020-09-22 00:00:00\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DiskStoragePoolSet\": [],\n        \"CdcSet\": [\n            {\n                \"CageId\": \"xx\",\n                \"CdcState\": \"NORMAL\",\n                \"Zone\": \"ap-chongqing-1\",\n                \"CdcName\": \"untitled\",\n                \"CdcResource\": {\n                    \"DiskAavilable\": 1,\n                    \"DiskTotal\": 10\n                },\n                \"CdcId\": \"cdc-xxx\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskNumber\": 135,\n                \"ExpiredTime\": \"2022-02-25 15:59:15\"\n            }\n        ]\n    }\n}",
         "title": "指定独享集群ID查询集群详情。"
       }
     ],
@@ -182,8 +182,8 @@
     ],
     "DescribeSnapshotSharePermission": [
       {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeSnapshotSharePermission\r\n&SnapshotId=snap-asxafa65                   \r\n&<公共请求参数>",
+        "document": "查询某个快照的分享信息",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DescribeSnapshotSharePermission\r\n&SnapshotId=snap-asxafa65                   \r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ab150b9-538d-48fb-8821-7fa185f1d07c\",\n        \"SharePermissionSet\": [\n            {\n                \"CreatedTime\": \"2019-07-08 00:00:06\",\n                \"AccountId\": \"123456789\"\n            }\n        ]\n    }\n}",
         "title": "查询某个快照的分享信息"
       }
@@ -230,9 +230,9 @@
     ],
     "InquirePriceModifyDiskExtraPerformance": [
       {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=InquirePriceModifyDiskExtraPerformance\n&DiskId=disk-dritwhhm\n&ThroughputPerformance=200\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"55db49cf-b9d7-da27-825b-3232332eeewezxdsdrdew\",\n        \"DiskPrice\": {\n            \"DiscountPrice\": -192.06,\n            \"UnitPrice\": null,\n            \"UnitPriceHigh\": null,\n            \"OriginalPriceHigh\": null,\n            \"OriginalPrice\": -192.06,\n            \"UnitPriceDiscount\": null,\n            \"UnitPriceDiscountHigh\": null,\n            \"DiscountPriceHigh\": null,\n            \"ChargeUnit\": null\n        }\n    }\n}",
+        "document": "500G HSSD 额外购买200M性能询价",
+        "input": "https://ecm.tencentcloudapi.com/?Action=InquirePriceModifyDiskExtraPerformance\n&DiskId=disk-dritwhhm\n&ThroughputPerformance=200\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2473a107-d3ee-49b6-98f1-2fa630610b85\",\n        \"DiskPrice\": {\n            \"DiscountPrice\": 611.51,\n            \"UnitPrice\": null,\n            \"UnitPriceHigh\": null,\n            \"OriginalPriceHigh\": null,\n            \"OriginalPrice\": 611.51,\n            \"UnitPriceDiscount\": null,\n            \"UnitPriceDiscountHigh\": null,\n            \"DiscountPriceHigh\": null,\n            \"ChargeUnit\": null\n        }\n    }\n}",
         "title": "500G HSSD 额外购买200M性能询价"
       }
     ],
@@ -266,9 +266,9 @@
     ],
     "InquiryPriceResizeDisk": [
       {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceResizeDisk\r\n&DiskId=disk-dw0bbzws\r\n&DiskSize=200\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DiskPrice\": {\n            \"DiscountPrice\": 210.09,\n            \"OriginalPrice\": 210.09\n        },\n        \"RequestId\": \"2ba7b520-ddb4-f5ea-34d1-5a1f80434911\"\n    }\n}",
+        "document": "查询云盘扩容到200G的价格",
+        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceResizeDisk\n&DiskId=disk-dw0bbzws\n&DiskSize=200\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c6088bc-15e6-42e5-9d73-d5e41593117e\",\n        \"DiskPrice\": {\n            \"DiscountPrice\": null,\n            \"UnitPrice\": 0.18,\n            \"UnitPriceHigh\": \"0.18\",\n            \"OriginalPriceHigh\": null,\n            \"OriginalPrice\": null,\n            \"UnitPriceDiscount\": 0.18,\n            \"UnitPriceDiscountHigh\": \"0.18\",\n            \"DiscountPriceHigh\": null,\n            \"ChargeUnit\": \"HOUR\"\n        }\n    }\n}",
         "title": "查询云盘扩容到200G的价格"
       }
     ],

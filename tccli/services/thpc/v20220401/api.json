@@ -14,6 +14,13 @@
       "output": "AddNodesResponse",
       "status": "online"
     },
+    "AddQueue": {
+      "document": "本接口(AddQueue)用于添加队列到指定集群。",
+      "input": "AddQueueRequest",
+      "name": "添加队列",
+      "output": "AddQueueResponse",
+      "status": "online"
+    },
     "BindAutoScalingGroup": {
       "document": "本接口(BindAutoScalingGroup)用于为集群队列绑定弹性伸缩组",
       "input": "BindAutoScalingGroupRequest",
@@ -49,6 +56,13 @@
       "output": "DeleteNodesResponse",
       "status": "online"
     },
+    "DeleteQueue": {
+      "document": "本接口(DeleteQueue)用于从指定集群删除队列。\n\n* 删除队列时，需要保证队列内不存在节点。",
+      "input": "DeleteQueueRequest",
+      "name": "删除队列",
+      "output": "DeleteQueueResponse",
+      "status": "online"
+    },
     "DescribeAutoScalingConfiguration": {
       "document": "本接口(DescribeAutoScalingConfiguration)用于查询集群弹性伸缩配置信息。本接口仅适用于弹性伸缩类型为THPC_AS的集群。",
       "input": "DescribeAutoScalingConfigurationRequest",
@@ -75,6 +89,20 @@
       "input": "DescribeClustersRequest",
       "name": "查询集群列表",
       "output": "DescribeClustersResponse",
+      "status": "online"
+    },
+    "DescribeNodes": {
+      "document": "本接口 (DescribeNodes) 用于查询指定集群节点概览信息列表。",
+      "input": "DescribeNodesRequest",
+      "name": "查询指定集群节点列表",
+      "output": "DescribeNodesResponse",
+      "status": "online"
+    },
+    "DescribeQueues": {
+      "document": "本接口(DescribeQueues)用于查询指定集群队列概览信息列表。",
+      "input": "DescribeQueuesRequest",
+      "name": "查询队列列表",
+      "output": "DescribeQueuesResponse",
       "status": "online"
     },
     "SetAutoScalingConfiguration": {
@@ -288,6 +316,40 @@
     },
     "AddNodesResponse": {
       "document": "AddNodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddQueueRequest": {
+      "document": "AddQueue请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-prkxbd7c",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "队列名称。<br><li>最多支持32个字符。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddQueueResponse": {
+      "document": "AddQueue返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1156,6 +1218,40 @@
       ],
       "type": "object"
     },
+    "DeleteQueueRequest": {
+      "document": "DeleteQueue请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-prkxbd7c",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "队列名称。<br><li>最多支持32个字符。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQueueResponse": {
+      "document": "DeleteQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAutoScalingConfigurationRequest": {
       "document": "DescribeAutoScalingConfiguration请求参数结构体",
       "members": [
@@ -1374,6 +1470,130 @@
       ],
       "type": "object"
     },
+    "DescribeNodesRequest": {
+      "document": "DescribeNodes请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "<li><strong>queue-name</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>队列名称</strong>】进行过滤。队列名称形如：compute。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\"><li><strong>node-role</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>节点角色</strong>】进行过滤。节点角色形如：Manager。（Manager：管控节点。Compute：计算节点。Login：登录节点。ManagerBackup：备用管控节点。）</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\"><li><strong>node-type</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>节点类型</strong>】进行过滤。节点类型形如：STATIC。(STATIC：静态节点。DYNAMIC：弹性节点。)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodesResponse": {
+      "document": "DescribeNodes返回参数结构体",
+      "members": [
+        {
+          "document": "节点概览信息列表。",
+          "example": "无",
+          "member": "NodeOverview",
+          "name": "NodeSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的节点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueuesRequest": {
+      "document": "DescribeQueues请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueuesResponse": {
+      "document": "DescribeQueues返回参数结构体",
+      "members": [
+        {
+          "document": "队列概览信息列表。",
+          "example": "无",
+          "member": "QueueOverview",
+          "name": "QueueSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的节点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ExpansionNodeConfig": {
       "document": "弹性扩容节点配置信息。",
       "members": [
@@ -1516,6 +1736,30 @@
         }
       ],
       "usage": "out"
+    },
+    "Filter": {
+      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。",
+      "members": [
+        {
+          "document": "需要过滤的字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "字段的过滤值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "GooseFSOption": {
       "document": "描述GooseFS挂载信息",
@@ -1887,6 +2131,75 @@
       ],
       "usage": "out"
     },
+    "NodeOverview": {
+      "document": "节点概览信息。",
+      "members": [
+        {
+          "document": "节点实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-f5ew7k5w",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点所在可用区信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chongqing-1",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "NodeState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img-l8og963d",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点所属队列名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Compute",
+          "member": "string",
+          "name": "NodeRole",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STATIC",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Placement": {
       "document": "描述了实例的抽象位置",
       "members": [
@@ -2065,6 +2378,21 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueueOverview": {
+      "document": "队列信息概览。",
+      "members": [
+        {
+          "document": "队列名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

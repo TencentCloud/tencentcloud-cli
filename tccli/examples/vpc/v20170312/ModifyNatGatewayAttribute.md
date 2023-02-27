@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc ModifyNatGatewayAttribute --cli-unfold-argument  \
+    --InternetMaxBandwidthOut 500 \
     --NatGatewayId nat-ig8xpno8 \
-    --NatGatewayName 测试nat网关 \
-    --InternetMaxBandwidthOut 500
+    --NatGatewayName 测试nat网关
 ```
 
 Output: 
@@ -16,6 +16,26 @@ Output:
 {
     "Response": {
         "RequestId": "e5c289dc-bf4b-4828-8093-3c434d1f0886"
+    }
+}
+```
+
+**Example 2: 变更NAT实例的SNAT模式**
+
+
+
+Input: 
+
+```
+tccli vpc ModifyNatGatewayAttribute --cli-unfold-argument  \
+    --NatGatewayId nat-owj32fec
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "5acefde4-3be5-4582-a432-742081e1c904"
     }
 }
 ```

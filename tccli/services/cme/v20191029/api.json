@@ -1451,6 +1451,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1459,6 +1460,7 @@
         {
           "default": "",
           "document": "归属者。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -1467,6 +1469,7 @@
         {
           "default": "",
           "document": "分类路径。",
+          "example": "/a/b",
           "member": "string",
           "name": "ClassPath",
           "required": true,
@@ -1475,6 +1478,7 @@
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "test",
           "member": "string",
           "name": "Operator",
           "required": false,

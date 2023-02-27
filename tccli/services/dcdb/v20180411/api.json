@@ -329,6 +329,13 @@
       "output": "ModifyAccountPrivilegesResponse",
       "status": "online"
     },
+    "ModifyDBEncryptAttributes": {
+      "document": "本接口(ModifyDBEncryptAttributes)用于修改实例数据加密。",
+      "input": "ModifyDBEncryptAttributesRequest",
+      "name": "修改实例数据加密属性",
+      "output": "ModifyDBEncryptAttributesResponse",
+      "status": "online"
+    },
     "ModifyDBInstanceName": {
       "document": "本接口（ModifyDBInstanceName）用于修改实例名字",
       "input": "ModifyDBInstanceNameRequest",
@@ -5419,6 +5426,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBEncryptAttributesRequest": {
+      "document": "ModifyDBEncryptAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id，形如：tdsqlshard-ow728lmc。",
+          "example": "tdsqlshard-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用数据加密，开启后暂不支持关闭。本接口的可选值为：1-开启数据加密。",
+          "example": "0",
+          "member": "int64",
+          "name": "EncryptEnabled",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBEncryptAttributesResponse": {
+      "document": "ModifyDBEncryptAttributes返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

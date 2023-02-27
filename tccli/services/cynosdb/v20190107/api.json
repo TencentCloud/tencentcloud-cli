@@ -2148,7 +2148,6 @@
       "document": "CreateClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -2157,7 +2156,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "所属VPC网络ID",
           "example": "vpc-1ptuei0b",
           "member": "string",
@@ -2166,7 +2164,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "所属子网ID",
           "example": "subnet-1tmw9t4o",
           "member": "string",
@@ -2175,7 +2172,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
           "example": "MYSQL",
           "member": "string",
@@ -2184,7 +2180,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据库版本，取值范围: \n<li> MYSQL可选值：5.7，8.0 </li>",
           "example": "5.7",
           "member": "string",
@@ -2193,7 +2188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "所属项目ID",
           "example": "0",
           "member": "int64",
@@ -2202,7 +2196,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "当DbMode为NORMAL或不填时必选\n普通实例Cpu核数",
           "example": "1",
           "member": "int64",
@@ -2211,7 +2204,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "当DbMode为NORMAL或不填时必选\n普通实例内存,单位G",
           "example": "4",
           "member": "int64",
@@ -2220,7 +2212,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "该参数无实际意义，已废弃。\n存储大小，单位G。",
           "example": "100",
           "member": "int64",
@@ -2229,7 +2220,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）",
           "example": "MyClusterName",
           "member": "string",
@@ -2238,7 +2228,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\\(){}[]:;'<>,.?/中的任意三种)",
           "example": "passwd@admin",
           "member": "string",
@@ -2247,7 +2236,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "端口，默认3306，取值范围[0, 65535)",
           "example": "3306",
           "member": "int64",
@@ -2256,7 +2244,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "计费模式，按量计费：0，包年包月：1。默认按量计费。",
           "example": "0",
           "member": "int64",
@@ -2265,7 +2252,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "购买集群数，可选值范围[1,50]，默认为1",
           "example": "1",
           "member": "int64",
@@ -2274,7 +2260,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "回档类型：\nnoneRollback：不回档；\nsnapRollback，快照回档；\ntimeRollback，时间点回档",
           "example": "noneRollback",
           "member": "string",
@@ -2283,7 +2268,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效",
           "example": "0",
           "member": "uint64",
@@ -2292,7 +2276,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "回档时，传入源集群ID，用于查找源poolId",
           "example": "cynosdbmysql-xxxxxxxx",
           "member": "string",
@@ -2301,7 +2284,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "时间点回档，指定时间；快照回档，快照时间",
           "example": "2021-04-26 18:13:10",
           "member": "string",
@@ -2310,7 +2292,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "该参数无实际意义，已废弃。\n时间点回档，指定时间允许范围",
           "example": "0",
           "member": "uint64",
@@ -2319,7 +2300,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "普通实例存储上限，单位GB\n当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限",
           "example": "100",
           "member": "int64",
@@ -2328,7 +2308,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例数量，数量范围为(0,16]",
           "example": "1",
           "member": "int64",
@@ -2337,7 +2316,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "包年包月购买时长",
           "example": "1",
           "member": "int64",
@@ -2346,7 +2324,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "包年包月购买时长单位，['s','d','m','y']",
           "example": "m",
           "member": "string",
@@ -2355,7 +2332,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "包年包月购买是否自动续费，默认为0",
           "example": "0",
           "member": "int64",
@@ -2364,7 +2340,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否自动选择代金券 1是 0否 默认为0",
           "example": "0",
           "member": "int64",
@@ -2373,7 +2348,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例数量（该参数已不再使用，只做存量兼容处理）",
           "example": "1",
           "member": "int64",
@@ -2382,7 +2356,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "订单来源",
           "example": "MyOrderSource",
           "member": "string",
@@ -2391,7 +2364,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "集群创建需要绑定的tag数组信息",
           "example": "无",
           "member": "Tag",
@@ -2400,7 +2372,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "Db类型\n当DbType为MYSQL时可选(默认NORMAL)：\n<li>NORMAL</li>\n<li>SERVERLESS</li>",
           "example": "NORMAL",
           "member": "string",
@@ -2409,7 +2380,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "当DbMode为SEVERLESS时必填\ncpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
           "example": "1.0",
           "member": "float",
@@ -2418,7 +2388,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "当DbMode为SEVERLESS时必填：\ncpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
           "example": "2.0",
           "member": "float",
@@ -2427,7 +2396,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围\n<li>yes</li>\n<li>no</li>\n默认值:yes",
           "example": "yes",
           "member": "string",
@@ -2436,7 +2404,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]\n默认值:600",
           "example": "600",
           "member": "int64",
@@ -2445,7 +2412,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "集群存储计费模式，按量计费：0，包年包月：1。默认按量计费\n当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费\n回档与克隆均不支持包年包月存储",
           "example": "0",
           "member": "int64",
@@ -2454,7 +2420,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "安全组id数组",
           "example": "无",
           "member": "string",
@@ -2463,7 +2428,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "告警策略Id数组",
           "example": "无",
           "member": "string",
@@ -2472,7 +2436,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
           "example": "无",
           "member": "ParamItem",
@@ -2481,7 +2444,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "交易模式，0-下单且支付，1-下单",
           "example": "0",
           "member": "int64",
@@ -2490,7 +2452,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID",
           "example": "0",
           "member": "int64",
@@ -2499,7 +2460,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "多可用区地址",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -2508,7 +2468,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例初始化配置信息，主要用于购买集群时选不同规格实例",
           "example": "无",
           "member": "InstanceInitInfo",
@@ -2527,7 +2486,6 @@
           "example": "20190522160000003106844584180998",
           "member": "string",
           "name": "TranId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2536,7 +2494,6 @@
           "example": "[\"20190522112283\"]",
           "member": "string",
           "name": "DealNames",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2545,7 +2502,6 @@
           "example": "[\"cynosdbpg-ins-67rmucgk\"]",
           "member": "string",
           "name": "ResourceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2554,7 +2510,6 @@
           "example": "[\"cynosdbmysql-sls-9nts65r2\"]",
           "member": "string",
           "name": "ClusterIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2563,7 +2518,6 @@
           "example": "[\"xxx\"]",
           "member": "string",
           "name": "BigDealIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

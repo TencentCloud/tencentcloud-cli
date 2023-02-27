@@ -4765,7 +4765,6 @@
       "document": "InquirePriceCreateInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例的套餐 ID。",
           "example": "bundle_ntp_small1_500",
           "member": "string",
@@ -4774,7 +4773,14 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
           "document": "创建数量，默认为 1。",
           "example": "2",
           "member": "int64",
@@ -4783,16 +4789,6 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "无",
-          "member": "InstanceChargePrepaid",
-          "name": "InstanceChargePrepaid",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
           "example": "lhbp-aaaabbbb",
           "member": "string",
@@ -4811,7 +4807,6 @@
           "example": "无",
           "member": "Price",
           "name": "Price",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4881,11 +4876,11 @@
           "type": "list"
         },
         {
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
-          "required": false,
+          "required": true,
           "type": "object"
         },
         {
@@ -5231,8 +5226,8 @@
       "document": "描述了实例的计费模式",
       "members": [
         {
-          "default": "",
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
+          "example": "无",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -5240,8 +5235,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费<br><li>DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "无",
           "member": "string",
           "name": "RenewFlag",
           "required": false,

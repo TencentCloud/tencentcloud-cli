@@ -356,7 +356,7 @@
       "document": "CreateBPFakeAPPList请求参数结构体",
       "members": [
         {
-          "document": "批量模版",
+          "document": "批量模板",
           "example": "无",
           "member": "string",
           "name": "FakeAPPs",
@@ -514,7 +514,7 @@
       "document": "CreateBPFakeURLs请求参数结构体",
       "members": [
         {
-          "document": "批量模版",
+          "document": "批量模板",
           "example": "无",
           "member": "string",
           "name": "FakeURLs",
