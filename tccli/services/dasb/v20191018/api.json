@@ -14,6 +14,20 @@
       "output": "AddUserGroupMembersResponse",
       "status": "online"
     },
+    "BindDeviceAccountPassword": {
+      "document": "绑定主机账号密码",
+      "input": "BindDeviceAccountPasswordRequest",
+      "name": "绑定主机账号密码",
+      "output": "BindDeviceAccountPasswordResponse",
+      "status": "online"
+    },
+    "BindDeviceAccountPrivateKey": {
+      "document": "绑定主机账号私钥",
+      "input": "BindDeviceAccountPrivateKeyRequest",
+      "name": "绑定主机账号私钥",
+      "output": "BindDeviceAccountPrivateKeyResponse",
+      "status": "online"
+    },
     "BindDeviceResource": {
       "document": "修改资产绑定的堡垒机服务",
       "input": "BindDeviceResourceRequest",
@@ -26,6 +40,27 @@
       "input": "CreateAclRequest",
       "name": "新建访问权限",
       "output": "CreateAclResponse",
+      "status": "online"
+    },
+    "CreateAssetSyncJob": {
+      "document": "创建手工资产同步任务",
+      "input": "CreateAssetSyncJobRequest",
+      "name": "创建手工资产同步任务",
+      "output": "CreateAssetSyncJobResponse",
+      "status": "online"
+    },
+    "CreateCmdTemplate": {
+      "document": "新建高危命令模板",
+      "input": "CreateCmdTemplateRequest",
+      "name": "新建高危命令模板",
+      "output": "CreateCmdTemplateResponse",
+      "status": "online"
+    },
+    "CreateDeviceAccount": {
+      "document": "新建主机账号",
+      "input": "CreateDeviceAccountRequest",
+      "name": "新建主机账号",
+      "output": "CreateDeviceAccountResponse",
       "status": "online"
     },
     "CreateDeviceGroup": {
@@ -56,6 +91,20 @@
       "output": "DeleteAclsResponse",
       "status": "online"
     },
+    "DeleteCmdTemplates": {
+      "document": "删除高危命令模板",
+      "input": "DeleteCmdTemplatesRequest",
+      "name": "删除高危命令模板",
+      "output": "DeleteCmdTemplatesResponse",
+      "status": "online"
+    },
+    "DeleteDeviceAccounts": {
+      "document": "删除主机账号",
+      "input": "DeleteDeviceAccountsRequest",
+      "name": "删除主机账号",
+      "output": "DeleteDeviceAccountsResponse",
+      "status": "online"
+    },
     "DeleteDeviceGroupMembers": {
       "document": "删除资产组成员",
       "input": "DeleteDeviceGroupMembersRequest",
@@ -68,6 +117,13 @@
       "input": "DeleteDeviceGroupsRequest",
       "name": "删除资产组",
       "output": "DeleteDeviceGroupsResponse",
+      "status": "online"
+    },
+    "DeleteDevices": {
+      "document": "删除主机",
+      "input": "DeleteDevicesRequest",
+      "name": "删除主机",
+      "output": "DeleteDevicesResponse",
       "status": "online"
     },
     "DeleteUserGroupMembers": {
@@ -91,6 +147,13 @@
       "output": "DeleteUsersResponse",
       "status": "online"
     },
+    "DeployResource": {
+      "document": "开通服务，初始化资源，只针对新购资源",
+      "input": "DeployResourceRequest",
+      "name": "开通服务",
+      "output": "DeployResourceResponse",
+      "status": "online"
+    },
     "DescribeAcls": {
       "document": "查询访问权限列表",
       "input": "DescribeAclsRequest",
@@ -98,11 +161,32 @@
       "output": "DescribeAclsResponse",
       "status": "online"
     },
+    "DescribeAssetSyncStatus": {
+      "document": "查询资产同步状态",
+      "input": "DescribeAssetSyncStatusRequest",
+      "name": "查询资产同步状态",
+      "output": "DescribeAssetSyncStatusResponse",
+      "status": "online"
+    },
+    "DescribeCmdTemplates": {
+      "document": "查询命令模板列表",
+      "input": "DescribeCmdTemplatesRequest",
+      "name": "查询命令模板列表",
+      "output": "DescribeCmdTemplatesResponse",
+      "status": "online"
+    },
     "DescribeDasbImageIds": {
       "document": "获取镜像列表",
       "input": "DescribeDasbImageIdsRequest",
       "name": "数盾-DASB-获取镜像列表",
       "output": "DescribeDasbImageIdsResponse",
+      "status": "online"
+    },
+    "DescribeDeviceAccounts": {
+      "document": "查询主机账号列表",
+      "input": "DescribeDeviceAccountsRequest",
+      "name": "查询主机账号列表",
+      "output": "DescribeDeviceAccountsResponse",
       "status": "online"
     },
     "DescribeDeviceGroupMembers": {
@@ -154,6 +238,13 @@
       "output": "DescribeUsersResponse",
       "status": "online"
     },
+    "ImportExternalDevice": {
+      "document": "导入外部资产信息",
+      "input": "ImportExternalDeviceRequest",
+      "name": "导入外部资产信息",
+      "output": "ImportExternalDeviceResponse",
+      "status": "online"
+    },
     "ModifyAcl": {
       "document": "修改访问权限",
       "input": "ModifyAclRequest",
@@ -161,11 +252,46 @@
       "output": "ModifyAclResponse",
       "status": "online"
     },
+    "ModifyDevice": {
+      "document": "修改资产信息",
+      "input": "ModifyDeviceRequest",
+      "name": "修改资产信息",
+      "output": "ModifyDeviceResponse",
+      "status": "online"
+    },
+    "ModifyDeviceGroup": {
+      "document": "修改资产组",
+      "input": "ModifyDeviceGroupRequest",
+      "name": "修改资产组",
+      "output": "ModifyDeviceGroupResponse",
+      "status": "online"
+    },
     "ModifyUser": {
       "document": "修改用户信息",
       "input": "ModifyUserRequest",
       "name": "修改用户信息",
       "output": "ModifyUserResponse",
+      "status": "online"
+    },
+    "ResetDeviceAccountPassword": {
+      "document": "清除设备账号绑定密码",
+      "input": "ResetDeviceAccountPasswordRequest",
+      "name": "清除设备账号绑定密码",
+      "output": "ResetDeviceAccountPasswordResponse",
+      "status": "online"
+    },
+    "ResetDeviceAccountPrivateKey": {
+      "document": "清除设备账号绑定的密钥",
+      "input": "ResetDeviceAccountPrivateKeyRequest",
+      "name": "清除设备账号绑定的密钥",
+      "output": "ResetDeviceAccountPrivateKeyResponse",
+      "status": "online"
+    },
+    "ResetUser": {
+      "document": "重置用户",
+      "input": "ResetUserRequest",
+      "name": "重置用户",
+      "output": "ResetUserResponse",
       "status": "online"
     }
   },
@@ -524,6 +650,123 @@
       ],
       "type": "object"
     },
+    "AssetSyncStatus": {
+      "document": "资产同步状态",
+      "members": [
+        {
+          "default": "",
+          "document": "上一次同步完成的时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一次同步的结果。 0 - 从未进行, 1 - 成功， 2 - 失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "LastStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同步任务是否正在进行中",
+          "example": "false",
+          "member": "bool",
+          "name": "InProcess",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BindDeviceAccountPasswordRequest": {
+      "document": "BindDeviceAccountPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主机账号ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主机账号密码",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindDeviceAccountPasswordResponse": {
+      "document": "BindDeviceAccountPassword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindDeviceAccountPrivateKeyRequest": {
+      "document": "BindDeviceAccountPrivateKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主机账号ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主机账号私钥，最新长度128字节，最大长度8192字节",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机账号私钥口令，最大长度256字节",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "PrivateKeyPassword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindDeviceAccountPrivateKeyResponse": {
+      "document": "BindDeviceAccountPrivateKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BindDeviceResourceRequest": {
       "document": "BindDeviceResource请求参数结构体",
       "members": [
@@ -848,6 +1091,123 @@
       ],
       "type": "object"
     },
+    "CreateAssetSyncJobRequest": {
+      "document": "CreateAssetSyncJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "同步资产类别，1 - 主机资产, 2 - 数据库资产",
+          "example": "1",
+          "member": "uint64",
+          "name": "Category",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAssetSyncJobResponse": {
+      "document": "CreateAssetSyncJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCmdTemplateRequest": {
+      "document": "CreateCmdTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板名，最大长度32字符，不能包含空白字符",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令列表，\\n分隔，最大长度32768字节",
+          "example": "rm -f",
+          "member": "string",
+          "name": "CmdList",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCmdTemplateResponse": {
+      "document": "CreateCmdTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "新建成功后返回的记录ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceAccountRequest": {
+      "document": "CreateDeviceAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主机记录ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeviceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "账号名",
+          "example": "admin",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceAccountResponse": {
+      "document": "CreateDeviceAccount返回参数结构体",
+      "members": [
+        {
+          "document": "新建成功后返回的记录ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDeviceGroupRequest": {
       "document": "CreateDeviceGroup请求参数结构体",
       "members": [
@@ -1082,6 +1442,60 @@
       ],
       "type": "object"
     },
+    "DeleteCmdTemplatesRequest": {
+      "document": "DeleteCmdTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCmdTemplatesResponse": {
+      "document": "DeleteCmdTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceAccountsRequest": {
+      "document": "DeleteDeviceAccounts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceAccountsResponse": {
+      "document": "DeleteDeviceAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDeviceGroupMembersRequest": {
       "document": "DeleteDeviceGroupMembers请求参数结构体",
       "members": [
@@ -1135,6 +1549,33 @@
     },
     "DeleteDeviceGroupsResponse": {
       "document": "DeleteDeviceGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDevicesRequest": {
+      "document": "DeleteDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDevicesResponse": {
+      "document": "DeleteDevices返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1271,6 +1712,105 @@
       ],
       "usage": "out"
     },
+    "DeployResourceRequest": {
+      "document": "DeployResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要开通服务的资源ID",
+          "example": "bh-saas-xxxxxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要开通服务的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ApCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网所在可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要开通服务的VPC",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要开通服务的子网ID",
+          "example": "subnet-xxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要开通服务的子网网段",
+          "example": "10.10.10.0/24",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要开通服务的VPC名称",
+          "example": "vpc1",
+          "member": "string",
+          "name": "VpcName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要开通服务的VPC对应的网段",
+          "example": "10.10.0.0/16",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要开通服务的子网名称",
+          "example": "subnet1",
+          "member": "string",
+          "name": "SubnetName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployResourceResponse": {
+      "document": "DeployResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAclsRequest": {
       "document": "DescribeAcls请求参数结构体",
       "members": [
@@ -1388,6 +1928,114 @@
       ],
       "type": "object"
     },
+    "DescribeAssetSyncStatusRequest": {
+      "document": "DescribeAssetSyncStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的资产同步类型。1 -主机资产， 2 - 数据库资产",
+          "example": "1",
+          "member": "uint64",
+          "name": "Category",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetSyncStatusResponse": {
+      "document": "DescribeAssetSyncStatus返回参数结构体",
+      "members": [
+        {
+          "document": "资产同步结果",
+          "example": "xxx",
+          "member": "AssetSyncStatus",
+          "name": "Status",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCmdTemplatesRequest": {
+      "document": "DescribeCmdTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命令模板ID集合，非必需",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "命令模板名，模糊查询，最大长度64字符",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置，默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页条目数量，默认20",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCmdTemplatesResponse": {
+      "document": "DescribeCmdTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "命令模板列表",
+          "example": "[]",
+          "member": "CmdTemplate",
+          "name": "CmdTemplateSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总记录数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDasbImageIdsRequest": {
       "document": "DescribeDasbImageIds请求参数结构体",
       "members": [],
@@ -1408,6 +2056,87 @@
           "member": "string",
           "name": "AiImageId",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceAccountsRequest": {
+      "document": "DescribeDeviceAccounts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主机账号ID集合，非必需，如果使用IdSet则忽略其他过滤参数",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "主机账号名，模糊查询，不能单独出现，必须于DeviceId一起提交",
+          "example": "root",
+          "member": "string",
+          "name": "Account",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机ID，未使用IdSet时必须携带",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeviceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置，默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页条目数量，默认20",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceAccountsResponse": {
+      "document": "DescribeDeviceAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账号信息列表",
+          "example": "[]",
+          "member": "DeviceAccount",
+          "name": "DeviceAccountSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2259,6 +2988,118 @@
       ],
       "usage": "out"
     },
+    "DeviceAccount": {
+      "document": "主机账号",
+      "members": [
+        {
+          "default": "",
+          "document": "账号ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeviceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号名",
+          "example": "admin",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "true-已托管密码，false-未托管密码",
+          "example": "true",
+          "member": "bool",
+          "name": "BoundPassword",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "true-已托管私钥，false-未托管私钥",
+          "example": "true",
+          "member": "bool",
+          "name": "BoundPrivateKey",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExternalDevice": {
+      "document": "主机参数，导入外部主机时使用",
+      "members": [
+        {
+          "default": "",
+          "document": "操作系统名称，只能是Linux、Windows或MySQL",
+          "example": "Linux",
+          "member": "string",
+          "name": "OsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP地址",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管理端口",
+          "example": "22",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名，可为空",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产所属的部门ID",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询",
       "members": [
@@ -2330,6 +3171,33 @@
         }
       ],
       "usage": "out"
+    },
+    "ImportExternalDeviceRequest": {
+      "document": "ImportExternalDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产参数列表",
+          "example": "[]",
+          "member": "ExternalDevice",
+          "name": "DeviceSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportExternalDeviceResponse": {
+      "document": "ImportExternalDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyAclRequest": {
       "document": "ModifyAcl请求参数结构体",
@@ -2583,6 +3451,105 @@
       ],
       "type": "object"
     },
+    "ModifyDeviceGroupRequest": {
+      "document": "ModifyDeviceGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产组名，最大长度32字符，不能为空",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资产组所属部门ID，如：1.2.3",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceGroupResponse": {
+      "document": "ModifyDeviceGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceRequest": {
+      "document": "ModifyDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产记录ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "管理端口",
+          "example": "22",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资产所属组ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "GroupIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资产所属部门ID",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceResponse": {
+      "document": "ModifyDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserRequest": {
       "document": "ModifyUser请求参数结构体",
       "members": [
@@ -2681,6 +3648,87 @@
     },
     "ModifyUserResponse": {
       "document": "ModifyUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetDeviceAccountPasswordRequest": {
+      "document": "ResetDeviceAccountPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ID集合",
+          "example": "无",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetDeviceAccountPasswordResponse": {
+      "document": "ResetDeviceAccountPassword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetDeviceAccountPrivateKeyRequest": {
+      "document": "ResetDeviceAccountPrivateKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ID集合",
+          "example": "无",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetDeviceAccountPrivateKeyResponse": {
+      "document": "ResetDeviceAccountPrivateKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetUserRequest": {
+      "document": "ResetUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID集合",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetUserResponse": {
+      "document": "ResetUser返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

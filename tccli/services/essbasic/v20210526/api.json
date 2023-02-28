@@ -1387,7 +1387,6 @@
       "document": "ChannelCreateReleaseFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
@@ -1396,7 +1395,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "待解除的流程编号（即原流程的编号）",
           "example": "xxx",
           "member": "string",
@@ -1405,7 +1403,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "解除协议内容",
           "example": "无",
           "member": "RelieveInfo",
@@ -1414,7 +1411,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量",
           "example": "无",
           "member": "ReleasedApprover",
@@ -1423,7 +1419,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "签署完回调url，最大长度1000个字符",
           "example": "https://qq.com",
           "member": "string",
@@ -1432,7 +1427,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "机构信息",
           "example": "无",
           "member": "OrganizationInfo",
@@ -1441,7 +1435,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "用户信息",
           "example": "无",
           "member": "UserInfo",
@@ -1460,7 +1453,6 @@
           "example": "xxx",
           "member": "string",
           "name": "FlowId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

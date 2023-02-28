@@ -20,18 +20,23 @@ Output:
         "RequestId": "xx",
         "AddressTemplateGroupSet": [
             {
-                "CreatedTime": "2020-12-03 16:12:15",
-                "AddressTemplateGroupName": "测试1",
+                "AddressTemplateGroupName": "test",
+                "AddressTemplateGroupId": "ipmg-xxxxxxxx",
                 "AddressTemplateIdSet": [
-                    "ipm-mdunqeb6"
+                    "ipm-xxxxxxxx",
+                    "ipm-yyyyyyyy"
                 ],
                 "AddressTemplateSet": [
                     {
-                        "To": "10.1.1.2/22",
-                        "From": "10.1.1.3/22"
+                        "AddressTemplateId": "ipm-xxxxxxxx",
+                        "AddressTemplateName": "xxxxxxxx"
+                    },
+                    {
+                        "AddressTemplateId": "ipm-yyyyyyyy",
+                        "AddressTemplateName": "yyyyyyyy"
                     }
                 ],
-                "AddressTemplateGroupId": "ipmg-ivrc58q8"
+                "CreatedTime": "2022-12-06 20:00:00"
             }
         ]
     }

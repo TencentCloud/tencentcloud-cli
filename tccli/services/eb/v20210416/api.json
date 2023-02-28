@@ -462,11 +462,34 @@
       ],
       "usage": "out"
     },
+    "ConnectionBrief": {
+      "document": "连接器基础信息",
+      "members": [
+        {
+          "document": "连接器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdmq",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "连接器状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ConnectionDescription": {
       "document": "ConnectionDescription描述",
       "members": [
         {
-          "default": "",
           "document": "资源qcs六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)",
           "example": "qcs::apigw:ap-guangzhou:uin/0000000:serviceid/service-id",
           "member": "string",
@@ -476,7 +499,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "apigw参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "APIGWParams",
@@ -486,11 +508,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "ckafka参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CkafkaParams",
           "name": "CkafkaParams",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "data transfer service (DTS)参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DTSParams",
+          "name": "DTSParams",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -605,6 +635,14 @@
           "name": "SaveDays",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "EB是否开启存储",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableStore",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -817,6 +855,11 @@
         }
       ],
       "type": "object"
+    },
+    "DTSParams": {
+      "document": "Data Transfer Service参数",
+      "members": [],
+      "usage": "both"
     },
     "DeadLetterConfig": {
       "document": "rule对应的dlq配置",
@@ -1175,7 +1218,6 @@
       "document": "事件集信息",
       "members": [
         {
-          "default": "",
           "document": "更新时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -1185,7 +1227,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件集描述，不限字符类型，200字符描述以内",
           "example": "这是一个描述",
           "member": "string",
@@ -1195,7 +1236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
@@ -1205,7 +1245,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
           "example": "EventBus",
           "member": "string",
@@ -1215,7 +1254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1225,7 +1263,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件集类型",
           "example": "Cloud",
           "member": "string",
@@ -1233,6 +1270,33 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Postpaid(后付费)",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "连接器基础信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConnectionBrief",
+          "name": "ConnectionBriefs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目标简要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetBrief",
+          "name": "TargetBriefs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1303,7 +1367,6 @@
       "document": "GetEventBus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1322,7 +1385,6 @@
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "ModTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1331,7 +1393,6 @@
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1340,7 +1401,6 @@
           "example": "78a5887e-357d-4bac-baca-1de008fa6ff0",
           "member": "string",
           "name": "ClsTopicId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1349,7 +1409,6 @@
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "AddTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1358,7 +1417,6 @@
           "example": "78a5887e-357d-4bac-baca-1de008fa6ff0",
           "member": "string",
           "name": "ClsLogsetId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1367,7 +1425,6 @@
           "example": "eb",
           "member": "string",
           "name": "EventBusName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1376,7 +1433,6 @@
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1385,9 +1441,48 @@
           "example": "Cloud",
           "member": "string",
           "name": "Type",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "计费模式",
+          "example": "无",
+          "member": "string",
+          "name": "PayMode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "EB日志存储时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SaveDays",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "EB日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogTopicId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否开启存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableStore",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "消息序列，是否有序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Disorder",
+          "member": "string",
+          "name": "LinkMode",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1402,7 +1497,6 @@
       "document": "GetRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1411,7 +1505,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
@@ -1430,7 +1523,6 @@
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1439,7 +1531,6 @@
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1448,7 +1539,6 @@
           "example": "rule",
           "member": "string",
           "name": "RuleName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1457,7 +1547,6 @@
           "example": "Active",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1466,7 +1555,6 @@
           "example": "true",
           "member": "bool",
           "name": "Enable",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1475,7 +1563,6 @@
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1484,7 +1571,6 @@
           "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
           "member": "string",
           "name": "EventPattern",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1493,7 +1579,6 @@
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "AddTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1502,7 +1587,6 @@
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "ModTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1654,7 +1738,6 @@
       "document": "ListEventBuses请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
           "example": "ModTime",
           "member": "string",
@@ -1663,7 +1746,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "int64",
@@ -1672,7 +1754,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
           "example": "DESC",
           "member": "string",
@@ -1681,7 +1762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
@@ -1690,7 +1770,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -1709,7 +1788,6 @@
           "example": "无",
           "member": "EventBus",
           "name": "EventBuses",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1718,7 +1796,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

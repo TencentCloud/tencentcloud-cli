@@ -210,15 +210,9 @@
     ],
     "DescribeRoomStatistics": [
       {
-        "document": "房间结束后获取房间相关的统计信息",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomStatistics\n<公共请求参数>\n\n{\n    \"RoomId\": 123,\n    \"Page\": 1,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"MemberNumber\": 1,\n        \"Total\": 1,\n        \"PeakMemberNumber\": 1,\n        \"RequestId\": \"xx\",\n        \"RealStartTime\": 1675677337,\n        \"RealEndTime\": 1675677337,\n        \"MemberRecords\": [\n            {\n                \"UserName\": \"xx\",\n                \"Mic\": 1,\n                \"UserId\": \"xx\",\n                \"Rewords\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"Camera\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"PresentTime\": 1,\n                \"Silence\": 1\n            }\n        ]\n    }\n}",
-        "title": "获取房间统计信息"
-      },
-      {
-        "document": "获取房间统计信息",
-        "input": "{\n  \"RoomId\": 1,\n  \"Page\": 1,\n  \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"PeakMemberNumber\": 1,\n        \"MemberNumber\": 1,\n        \"Total\": 1,\n        \"MemberRecords\": [\n            {\n                \"UserId\": \"xx\",\n                \"UserName\": \"xx\",\n                \"PresentTime\": 1,\n                \"Camera\": 1,\n                \"Mic\": 1,\n                \"Silence\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"Rewords\": 1\n            }\n        ],\n        \"RealStartTime\": 1,\n        \"RealEndTime\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "获取房间统计信息示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomStatistics\n<公共请求参数>\n\n{\n    \"RoomId\": 1,\n    \"Page\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"PeakMemberNumber\": 1,\n        \"MemberNumber\": 1,\n        \"Total\": 1,\n        \"MemberRecords\": [\n            {\n                \"UserId\": \"xx\",\n                \"UserName\": \"xx\",\n                \"PresentTime\": 1,\n                \"Camera\": 1,\n                \"Mic\": 1,\n                \"Silence\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"Rewords\": 1,\n                \"IPAddress\": \"xx\",\n                \"Location\": \"xx\",\n                \"Device\": 0\n            }\n        ],\n        \"RealStartTime\": 1,\n        \"RealEndTime\": 1,\n        \"MessageCount\": 1,\n        \"MicCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -236,6 +230,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUser\n<公共请求参数>\n\n{\n    \"UserId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"xx\",\n        \"UserId\": \"xx\",\n        \"Avatar\": \"xx\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取用户信息"
+      }
+    ],
+    "GetRoomMessage": [
+      {
+        "document": "获取房间历史消息示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRoomMessage\n<公共请求参数>\n\n{\n    \"SdkAppId\": 0,\n    \"RoomId\": 1,\n    \"Seq\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Messages\": [\n            {\n                \"Timestamp\": 0,\n                \"FromAccount\": \"xx\",\n                \"Seq\": 0,\n                \"MessageBody\": [\n                    {\n                        \"MessageType\": 0,\n                        \"TextMessage\": \"xx\",\n                        \"ImageMessage\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "GetWatermark": [

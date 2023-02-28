@@ -2407,7 +2407,6 @@
       "document": "描述实例的详细信息",
       "members": [
         {
-          "default": "",
           "document": "实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段",
           "example": "ap-guangzhou",
           "member": "string",
@@ -2417,7 +2416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -2427,7 +2425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "1",
           "member": "uint64",
@@ -2437,7 +2434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "私有网络ID",
           "example": "vpc-xxxxxxxx",
           "member": "string",
@@ -2447,7 +2443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网ID",
           "example": "subnet-xxxxxxxx",
           "member": "string",
@@ -2457,7 +2452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例ID",
           "example": "postgres-xxxxxxxx",
           "member": "string",
@@ -2467,7 +2461,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名称",
           "example": "xxxx",
           "member": "string",
@@ -2477,8 +2470,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）",
+          "document": "实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）",
           "example": "applying",
           "member": "string",
           "name": "DBInstanceStatus",
@@ -2487,7 +2479,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例分配的内存大小，单位：GB",
           "example": "2",
           "member": "uint64",
@@ -2497,7 +2488,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例分配的存储空间大小，单位：GB",
           "example": "10",
           "member": "uint64",
@@ -2507,7 +2497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例分配的CPU数量，单位：个",
           "example": "2",
           "member": "uint64",
@@ -2517,7 +2506,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "售卖规格ID",
           "example": "cdb.pg.ts1.2g",
           "member": "string",
@@ -2527,7 +2515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例类型，类型有：1、primary（主实例）；2、readonly（只读实例）；3、guard（灾备实例）；4、temp（临时实例）",
           "example": "primary",
           "member": "string",
@@ -2537,7 +2524,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例版本，目前只支持standard（双机高可用版, 一主一从）",
           "example": "standard",
           "member": "string",
@@ -2547,7 +2533,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例DB字符集",
           "example": "utf-8",
           "member": "string",
@@ -2557,7 +2542,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "PostgreSQL版本",
           "example": "12.4",
           "member": "string",
@@ -2567,7 +2551,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例创建时间",
           "example": "2014-08-03 12:00:00",
           "member": "datetime",
@@ -2577,7 +2560,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例执行最后一次更新的时间",
           "example": "2014-08-03 12:00:00",
           "member": "datetime",
@@ -2587,7 +2569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例到期时间",
           "example": "2014-08-03 12:00:00",
           "member": "datetime",
@@ -2597,7 +2578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例隔离时间",
           "example": "2014-08-03 12:00:00",
           "member": "datetime",
@@ -2607,7 +2587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "计费模式，1、prepaid（包年包月,预付费）；2、postpaid（按量计费，后付费）",
           "example": "prepaid",
           "member": "string",
@@ -2617,7 +2596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否自动续费，1：自动续费，0：不自动续费",
           "example": "1",
           "member": "uint64",
@@ -2627,7 +2605,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例网络连接信息",
           "example": "无",
           "member": "DBInstanceNetInfo",
@@ -2637,7 +2614,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器类型",
           "example": "TS85",
           "member": "string",
@@ -2647,7 +2623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户的AppId",
           "example": "123455",
           "member": "uint64",
@@ -2657,7 +2632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例的Uid",
           "example": "12344",
           "member": "uint64",
@@ -2667,7 +2641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例是否支持Ipv6，1：支持，0：不支持",
           "example": "1",
           "member": "uint64",
@@ -2677,7 +2650,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -2687,7 +2659,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主实例信息，仅在实例为只读实例时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "postgres-xxxxxxxx",
           "member": "string",
@@ -2697,7 +2668,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "只读实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6",
           "member": "int64",
@@ -2707,7 +2677,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "只读实例在只读组中的状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ok",
           "member": "string",
@@ -2717,7 +2686,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "下线时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2014-08-03 12:00",
           "member": "string",
@@ -2727,7 +2695,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据库内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v12.4_r1.0",
           "member": "string",
@@ -2737,7 +2704,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例网络信息列表（此字段已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NetworkAccess",
@@ -2747,7 +2713,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "PostgreSQL主要版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12",
           "member": "string",
@@ -2757,7 +2722,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例的节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DBNode",
@@ -2767,7 +2731,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例是否支持TDE数据加密  0：不支持，1：支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2777,7 +2740,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "postgresql",
           "member": "string",
@@ -2787,7 +2749,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据库引擎的配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5090,7 +5051,6 @@
       "document": "参数修改事件信息",
       "members": [
         {
-          "default": "",
           "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "wal_level",
           "member": "string",
@@ -5100,7 +5060,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "原参数值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "replica",
           "member": "string",
@@ -5110,7 +5069,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "本次修改期望参数值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "logical",
           "member": "string",
@@ -5120,7 +5078,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "后台参数修改开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-01 02:03:04",
           "member": "string",
@@ -5130,7 +5087,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "后台参数生效开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-01 02:03:34",
           "member": "string",
@@ -5140,7 +5096,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "修改状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "success",
           "member": "string",
@@ -5150,7 +5105,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "操作者（一般为用户sub UIN）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123344",
           "member": "string",
@@ -5160,7 +5114,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "时间日志。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",

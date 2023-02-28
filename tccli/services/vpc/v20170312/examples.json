@@ -1002,7 +1002,7 @@
       {
         "document": "查询IP地址模板集合",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddressTemplateGroups\n&Filters.0.Name=address-template-group-name\n&Filters.0.Values.0=TestName\n&Filters.1.Name=address-template-group-id\n&Filters.1.Values.0=ipmg-mdunqeb6\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"AddressTemplateGroupSet\": [\n            {\n                \"CreatedTime\": \"2020-12-03 16:12:15\",\n                \"AddressTemplateGroupName\": \"测试1\",\n                \"AddressTemplateIdSet\": [\n                    \"ipm-mdunqeb6\"\n                ],\n                \"AddressTemplateSet\": [\n                    {\n                        \"To\": \"10.1.1.2/22\",\n                        \"From\": \"10.1.1.3/22\"\n                    }\n                ],\n                \"AddressTemplateGroupId\": \"ipmg-ivrc58q8\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"AddressTemplateGroupSet\": [\n            {\n                \"AddressTemplateGroupName\": \"test\",\n                \"AddressTemplateGroupId\": \"ipmg-xxxxxxxx\",\n                \"AddressTemplateIdSet\": [\n                    \"ipm-xxxxxxxx\",\n                    \"ipm-yyyyyyyy\"\n                ],\n                \"AddressTemplateSet\": [\n                    {\n                        \"AddressTemplateId\": \"ipm-xxxxxxxx\",\n                        \"AddressTemplateName\": \"xxxxxxxx\"\n                    },\n                    {\n                        \"AddressTemplateId\": \"ipm-yyyyyyyy\",\n                        \"AddressTemplateName\": \"yyyyyyyy\"\n                    }\n                ],\n                \"CreatedTime\": \"2022-12-06 20:00:00\"\n            }\n        ]\n    }\n}",
         "title": "查询IP地址模板集合"
       }
     ],
@@ -1310,7 +1310,7 @@
     ],
     "DescribeIpGeolocationDatabaseUrl": [
       {
-        "document": "",
+        "document": "获取ipv4地理位置库下载链接。",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIpGeolocationDatabaseUrl\n&Type=ipv4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DownLoadUrl\": \"https://ip-address-repo-1255852779.cos.ap-guangzhou.myqcloud.com/tencent_ipv4_repo.tgz?q-sign-algorithm=sha1&q-ak=AKIDb5RbYFe5PcrwtkazVpxqX2MQIRM2xfy4&q-sign-time=1578970542;1579057002&q-key-time=1578970542;1579057002&q-header-list=&q-url-param-list=&q-signature=00f8d6ad0252822e17cca6450ebcd626eadc8405\",\n        \"ExpiredAt\": \"2020-01-15T10:56:42+00:00\",\n        \"RequestId\": \"21b41e67-8c0f-48cf-8af3-de0b6e1f4a4b\"\n    }\n}",
         "title": "获取ipv4地理位置库下载链接"
@@ -1318,7 +1318,7 @@
     ],
     "DescribeIpGeolocationInfos": [
       {
-        "document": "",
+        "document": "查询IP地理位置信息。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpGeolocationInfos\n<公共请求参数>\n\n{\n    \"AddressIps\": [\n        \"8.8.8.8\",\n        \"2001:1200::\"\n    ],\n    \"Fields\": {\n        \"Province\": \"True\",\n        \"Country\": \"True\",\n        \"Region\": \"True\",\n        \"Isp\": \"True\",\n        \"City\": \"True\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"AddressInfo\": [\n            {\n                \"AddressIp\": \"2001:1200::\",\n                \"Country\": \"墨西哥\",\n                \"Province\": \"tabasco\",\n                \"City\": \"miguel hidalgo\",\n                \"Region\": \"未知\",\n                \"Isp\": \"protel i-next, s.a. de c.v., mx\"\n            },\n            {\n                \"AddressIp\": \"8.8.8.8\",\n                \"Country\": \"美国\",\n                \"Province\": \"california\",\n                \"City\": \"mountain view\",\n                \"Region\": \"未知\",\n                \"Isp\": \"google - google inc., us\"\n            }\n        ],\n        \"RequestId\": \"6d3e1ba5-a3d0-41d4-93f7-4992a2e18b9d\"\n    }\n}",
         "title": "查询IP地理位置信息"

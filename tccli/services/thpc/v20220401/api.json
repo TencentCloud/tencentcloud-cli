@@ -555,7 +555,6 @@
       "document": "符合条件的集群活动信息。",
       "members": [
         {
-          "default": "",
           "document": "集群ID。",
           "example": "无",
           "member": "string",
@@ -565,7 +564,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群活动ID。",
           "example": "无",
           "member": "string",
@@ -575,8 +573,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "集群活动类型。",
+          "document": "集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载\n",
           "example": "无",
           "member": "string",
           "name": "ActivityType",
@@ -585,7 +582,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群活动状态。取值范围：<br><li>PENDING：等待运行<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>PARTIALLY_SUCCESSFUL：活动部分成功<br><li>FAILED：活动失败",
           "example": "无",
           "member": "string",
@@ -595,7 +591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群活动状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -605,7 +600,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群活动结果详情。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -615,7 +609,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群活动起因。",
           "example": "无",
           "member": "string",
@@ -625,7 +618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群活动描述。",
           "example": "无",
           "member": "string",
@@ -635,7 +627,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群活动相关节点活动集合。",
           "example": "无",
           "member": "NodeActivity",
@@ -645,7 +636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群活动开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime_iso",
@@ -655,7 +645,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群活动结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime_iso",

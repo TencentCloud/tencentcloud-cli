@@ -2,7 +2,7 @@
   "actions": {
     "CreateDedicatedCluster": [
       {
-        "document": "",
+        "document": "创建专用集群",
         "input": "https://cdc.tencentcloudapi.com/?Action=CreateDedicatedCluster\n&SiteId=site-98dj3kd\n&Name=my-site\n&Zone=ap-guangzhou \n&Description=site\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DedicatedClusterId\": \"cluster-gbo27yc4\",\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "创建专用集群"
@@ -10,7 +10,7 @@
     ],
     "CreateDedicatedClusterOrder": [
       {
-        "document": "",
+        "document": "创建专用集群订单",
         "input": "https://cdc.tencentcloudapi.com/?Action=CreateDedicatedClusterOrder\n&DedicatedClusterId=cluster-gbo27yc4\n&DedicatedClusterTypes.0.Id=cluster-gbo27yc4\n&DedicatedClusterTypes.0.Count=1\n&CosInfo.Size=1\n&CosInfo.Type=COS\n&CbsInfo.Size=1\n&CbsInfo.Type=SSD\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DedicatedClusterOrderId\": \"ord-0yq4a8ia\",\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "创建专用集群订单"
@@ -18,7 +18,7 @@
     ],
     "CreateSite": [
       {
-        "document": "",
+        "document": "创建站点",
         "input": "https://cdc.tencentcloudapi.com/?Action=CreateSite\n&Name=my-site\n&Description=firstsite\n&Note=newsite\n&FiberType=MM\n&OpticalStandard=1000Base-SX\n&PowerConnectors=2\n&PowerFeedDrop=above\n&MaxWeight=500\n&PowerDrawKva=3000\n&UplinkSpeedGbps=10\n&UplinkCount=2\n&ConditionRequirement=True\n&DimensionRequirement=True\n&RedundantNetworking=True\n&Country=China\n&Province=Guangdong\n&City=Shenzhen\n&PostalCode=51800\n&AddressLine=nanshan\n&OptionalAddressLine=tengda\n&BreakerRequirement=True\n&RedundantPower=True\n&NeedHelp=True\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SiteId\": \"site-c738dj\",\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc16\"\n    }\n}",
         "title": "创建站点"
@@ -26,7 +26,7 @@
     ],
     "DeleteDedicatedClusters": [
       {
-        "document": "",
+        "document": "删除专用集群",
         "input": "https://cdc.tencentcloudapi.com/?Action=DeleteDedicatedClusters\n&DedicatedClusterIds.0=cluster-gbo27yc4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "删除专用集群"
@@ -34,7 +34,7 @@
     ],
     "DeleteSites": [
       {
-        "document": "",
+        "document": "删除站点",
         "input": "https://cdc.tencentcloudapi.com/?Action=DeleteSites\n&SiteIds.0=site-98dj3kd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "删除站点"
@@ -42,7 +42,7 @@
     ],
     "DescribeDedicatedClusterCosCapacity": [
       {
-        "document": "",
+        "document": "查询专用集群内cos的容量信息",
         "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusterCosCapacity\n&DedicatedClusterId=cluster-gbo27yc4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CosCapacity\": {\n            \"TotalCapacity\": 3394.92,\n            \"TotalFreeCapacity\": 3367.41,\n            \"TotalUsedCapacity\": 27.51\n        },\n        \"RequestId\": \"41aa48c2-477b-43c0-9d93-04ef3f529e5f\"\n    }\n}",
         "title": "查询专用集群内cos的容量信息"
@@ -50,7 +50,7 @@
     ],
     "DescribeDedicatedClusterHostStatistics": [
       {
-        "document": "",
+        "document": "查询专用集群内宿主机的信息",
         "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusterHostStatistics\n&DedicatedClusterId=cluster-gbo27yc4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"HostStatisticSet\": [\n            {\n                \"HostType\": \"S5.21XLARGE320\",\n                \"HostFamily\": \"S5\",\n                \"Cpu\": 84,\n                \"Memory\": 320,\n                \"Count\": 240\n            },\n            {\n                \"HostType\": \"GN7.20XLARGE320\",\n                \"HostFamily\": \"GN7\",\n                \"Cpu\": 80,\n                \"Memory\": 320,\n                \"Count\": 30\n            },\n            {\n                \"HostType\": \"M5.21XLARGE320\",\n                \"HostFamily\": \"M5\",\n                \"Cpu\": 84,\n                \"Memory\": 320,\n                \"Count\": 128\n            }\n        ],\n        \"RequestId\": \"41aa48c2-477b-43c0-9d93-04ef3f529e5f\"\n    }\n}",
         "title": "查询专用集群内宿主机的信息"
@@ -66,7 +66,7 @@
     ],
     "DescribeDedicatedClusterInstanceTypes": [
       {
-        "document": "",
+        "document": "查询专用集群支持的实例规格列表",
         "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusterInstanceTypes\n&DedicatedClusterId=cluster-gbo27yc4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DedicatedClusterInstanceTypeSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceType\": \"S1.SMALL1\",\n                \"NetworkCard\": 0,\n                \"Cpu\": 1,\n                \"Memory\": 1,\n                \"InstanceFamily\": \"S1\",\n                \"TypeName\": \"Standard S1\",\n                \"StorageBlockAmount\": 0,\n                \"InstanceBandwidth\": 0,\n                \"InstancePps\": 0,\n                \"CpuType\": \"\",\n                \"Gpu\": 0,\n                \"Fpga\": 0,\n                \"Remark\": \"\",\n                \"Status\": \"SOLD_OUT\"\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceType\": \"S3.SMALL1\",\n                \"NetworkCard\": 0,\n                \"Cpu\": 1,\n                \"Memory\": 1,\n                \"InstanceFamily\": \"S3\",\n                \"TypeName\": \"Standard S3\",\n                \"StorageBlockAmount\": 0,\n                \"InstanceBandwidth\": 0,\n                \"InstancePps\": 0,\n                \"CpuType\": \"\",\n                \"Gpu\": 0,\n                \"Fpga\": 0,\n                \"Remark\": \"\",\n                \"Status\": \"SOLD_OUT\"\n            }\n        ],\n        \"RequestId\": \"90ddf8cf-168b-4175-99f0-28858e90634a\"\n    }\n}",
         "title": "查询专用集群支持的实例规格列表"
@@ -74,9 +74,9 @@
     ],
     "DescribeDedicatedClusterOrders": [
       {
-        "document": "",
+        "document": "查询专用集群订单列表",
         "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusterOrders\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"DedicatedClusterOrderSet\": [\n            {\n                \"DedicatedClusterTypeId\": \"xx\",\n                \"PowerDraw\": 2000.8,\n                \"Weight\": 3000,\n                \"Mem\": 0,\n                \"DedicatedClusterOrderItems\": [\n                    {\n                        \"Count\": 0,\n                        \"DedicatedClusterTypeId\": \"xx\",\n                        \"PowerDraw\": 0.0,\n                        \"Name\": \"xx\",\n                        \"Weight\": 0,\n                        \"TotalMem\": 0,\n                        \"TotalGpu\": 0,\n                        \"TotalCpu\": 0,\n                        \"SupportedStorageType\": [\n                            \"xx\"\n                        ],\n                        \"ComputeFormat\": \"xx\",\n                        \"TypeName\": \"xx\",\n                        \"SubOrderStatus\": \"xx\",\n                        \"SubOrderId\": \"xx\",\n                        \"SupportedInstanceFamily\": [\n                            \"xx\"\n                        ],\n                        \"SupportedUplinkSpeed\": [\n                            0\n                        ],\n                        \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                        \"Description\": \"xx\"\n                    }\n                ],\n                \"SupportedStorageType\": [\n                    \"xx\"\n                ],\n                \"DedicatedClusterOrderId\": \"xx\",\n                \"Action\": \"xx\",\n                \"OrderStatus\": \"xx\",\n                \"PayStatus\": 0,\n                \"SupportedInstanceFamily\": [\n                    \"S5\"\n                ],\n                \"Gpu\": 0,\n                \"SupportedUplinkSpeed\": [\n                    40,\n                    100\n                ],\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Cpu\": 0,\n                \"DedicatedClusterId\": \"xx\"\n            },\n            {\n                \"DedicatedClusterTypeId\": \"xx\",\n                \"PowerDraw\": 4156.7,\n                \"Weight\": 3273,\n                \"Mem\": 0,\n                \"SupportedStorageType\": [\n                    \"xx\"\n                ],\n                \"DedicatedClusterOrderId\": \"xx\",\n                \"SupportedInstanceFamily\": [\n                    \"S1\",\n                    \"S5\"\n                ],\n                \"Cpu\": 0,\n                \"OrderStatus\": \"xx\",\n                \"Gpu\": 0,\n                \"Action\": \"xx\",\n                \"PayStatus\": 0,\n                \"SupportedUplinkSpeed\": [\n                    13,\n                    100\n                ],\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"DedicatedClusterOrderItems\": [\n                    {\n                        \"Count\": 0,\n                        \"DedicatedClusterTypeId\": \"xx\",\n                        \"PowerDraw\": 0.0,\n                        \"Name\": \"xx\",\n                        \"Weight\": 0,\n                        \"TotalGpu\": 0,\n                        \"TotalCpu\": 0,\n                        \"SupportedStorageType\": [\n                            \"xx\"\n                        ],\n                        \"ComputeFormat\": \"xx\",\n                        \"TypeName\": \"xx\",\n                        \"SubOrderStatus\": \"xx\",\n                        \"SubOrderId\": \"xx\",\n                        \"SupportedInstanceFamily\": [\n                            \"xx\"\n                        ],\n                        \"Description\": \"xx\",\n                        \"SupportedUplinkSpeed\": [\n                            0\n                        ],\n                        \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                        \"TotalMem\": 0\n                    }\n                ],\n                \"DedicatedClusterId\": \"xx\"\n            },\n            {\n                \"DedicatedClusterTypeId\": \"xx\",\n                \"PowerDraw\": 3829.1,\n                \"Weight\": 3724,\n                \"Mem\": 0,\n                \"SupportedStorageType\": [\n                    \"xx\"\n                ],\n                \"DedicatedClusterOrderId\": \"xx\",\n                \"SupportedInstanceFamily\": [\n                    \"S3\"\n                ],\n                \"Cpu\": 0,\n                \"OrderStatus\": \"xx\",\n                \"Gpu\": 0,\n                \"Action\": \"xx\",\n                \"PayStatus\": 0,\n                \"SupportedUplinkSpeed\": [\n                    10,\n                    40\n                ],\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"DedicatedClusterOrderItems\": [\n                    {\n                        \"Count\": 0,\n                        \"DedicatedClusterTypeId\": \"xx\",\n                        \"PowerDraw\": 0.0,\n                        \"Name\": \"xx\",\n                        \"Weight\": 0,\n                        \"TotalGpu\": 0,\n                        \"TotalCpu\": 0,\n                        \"SupportedStorageType\": [\n                            \"xx\"\n                        ],\n                        \"ComputeFormat\": \"xx\",\n                        \"TypeName\": \"xx\",\n                        \"SubOrderStatus\": \"xx\",\n                        \"SubOrderId\": \"xx\",\n                        \"SupportedInstanceFamily\": [\n                            \"xx\"\n                        ],\n                        \"Description\": \"xx\",\n                        \"SupportedUplinkSpeed\": [\n                            0\n                        ],\n                        \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                        \"TotalMem\": 0\n                    }\n                ],\n                \"DedicatedClusterId\": \"xx\"\n            },\n            {\n                \"DedicatedClusterTypeId\": \"xx\",\n                \"PowerDraw\": 3829.1,\n                \"Weight\": 3724,\n                \"Mem\": 0,\n                \"SupportedStorageType\": [\n                    \"xx\"\n                ],\n                \"DedicatedClusterOrderId\": \"xx\",\n                \"SupportedInstanceFamily\": [\n                    \"xx\"\n                ],\n                \"Cpu\": 0,\n                \"OrderStatus\": \"xx\",\n                \"Gpu\": 0,\n                \"Action\": \"xx\",\n                \"PayStatus\": 0,\n                \"SupportedUplinkSpeed\": [\n                    10,\n                    40\n                ],\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"DedicatedClusterOrderItems\": [\n                    {\n                        \"Count\": 0,\n                        \"DedicatedClusterTypeId\": \"xx\",\n                        \"PowerDraw\": 0.0,\n                        \"Name\": \"xx\",\n                        \"Weight\": 0,\n                        \"TotalGpu\": 0,\n                        \"TotalCpu\": 0,\n                        \"SupportedStorageType\": [\n                            \"xx\"\n                        ],\n                        \"ComputeFormat\": \"xx\",\n                        \"TypeName\": \"xx\",\n                        \"SubOrderStatus\": \"xx\",\n                        \"SubOrderId\": \"xx\",\n                        \"SupportedInstanceFamily\": [\n                            \"xx\"\n                        ],\n                        \"Description\": \"xx\",\n                        \"SupportedUplinkSpeed\": [\n                            0\n                        ],\n                        \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                        \"TotalMem\": 0\n                    }\n                ],\n                \"DedicatedClusterId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DedicatedClusterOrderSet\": [\n            {\n                \"DedicatedClusterId\": \"xx\",\n                \"DedicatedClusterTypeId\": \"xx\",\n                \"SupportedStorageType\": [\n                    \"xx\"\n                ],\n                \"SupportedUplinkSpeed\": [\n                    0\n                ],\n                \"SupportedInstanceFamily\": [\n                    \"xx\"\n                ],\n                \"Weight\": 0,\n                \"PowerDraw\": 0,\n                \"OrderStatus\": \"xx\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"DedicatedClusterOrderId\": \"xx\",\n                \"Action\": \"xx\",\n                \"DedicatedClusterOrderItems\": [\n                    {\n                        \"DedicatedClusterTypeId\": \"xx\",\n                        \"SupportedStorageType\": [\n                            \"xx\"\n                        ],\n                        \"SupportedUplinkSpeed\": [\n                            0\n                        ],\n                        \"SupportedInstanceFamily\": [\n                            \"xx\"\n                        ],\n                        \"Weight\": 0,\n                        \"PowerDraw\": 0,\n                        \"SubOrderStatus\": \"xx\",\n                        \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                        \"SubOrderId\": \"xx\",\n                        \"Count\": 0,\n                        \"Name\": \"xx\",\n                        \"Description\": \"xx\",\n                        \"TotalCpu\": 0,\n                        \"TotalMem\": 0,\n                        \"TotalGpu\": 0,\n                        \"TypeName\": \"xx\",\n                        \"ComputeFormat\": \"xx\",\n                        \"TypeFamily\": \"xx\",\n                        \"SubOrderPayStatus\": 0\n                    }\n                ],\n                \"Cpu\": 0,\n                \"Mem\": 0,\n                \"Gpu\": 0,\n                \"PayStatus\": 0,\n                \"PayType\": \"xx\",\n                \"TimeUnit\": \"xx\",\n                \"TimeSpan\": 0,\n                \"OrderType\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询专用集群订单列表"
       }
     ],
@@ -98,7 +98,7 @@
     ],
     "DescribeDedicatedClusters": [
       {
-        "document": "",
+        "document": "查询专用集群列表",
         "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusters\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DedicatedClusterSet\": [\n            {\n                \"DedicatedClusterId\": \"cluster-e88qh1ue\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Description\": \"test\",\n                \"Name\": \"wechen-first-dc\",\n                \"LifecycleStatus\": \"PENDING\",\n                \"CreateTime\": \"2020-12-10T06:15:43Z\",\n                \"SiteId\": \"site-38d9ck\"\n            },\n            {\n                \"DedicatedClusterId\": \"cluster-1hza0fbu\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Description\": \"test\",\n                \"Name\": \"wechen-first-dc\",\n                \"LifecycleStatus\": \"PENDING\",\n                \"CreateTime\": \"2020-12-10T06:15:50Z\",\n                \"SiteId\": \"site-38d9ck\"\n            },\n            {\n                \"DedicatedClusterId\": \"cluster-ptrfvhyw\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Description\": \"test\",\n                \"Name\": \"wechen-first-dc\",\n                \"LifecycleStatus\": \"PENDING\",\n                \"CreateTime\": \"2020-12-10T06:17:26Z\",\n                \"SiteId\": \"site-38d9ck\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"92b47775-2f39-4ad0-b5dd-0a93a8f12636\"\n    }\n}",
         "title": "查询专用集群列表"
@@ -114,7 +114,7 @@
     ],
     "DescribeSites": [
       {
-        "document": "",
+        "document": "查询站点列表",
         "input": "https://cdc.tencentcloudapi.com/?Action=DescribeSites\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SiteSet\": [\n            {\n                \"SiteId\": \"site-98dj3kd\",\n                \"Name\": \"my-site\",\n                \"Description\": \"my first site\",\n                \"CreateTime\": \"2020-12-25T08:39:57Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"60f56861-42af-4778-96c2-018d35141a7f\"\n    }\n}",
         "title": "查询站点列表"
@@ -122,7 +122,7 @@
     ],
     "DescribeSitesDetail": [
       {
-        "document": "",
+        "document": "查询站点详情",
         "input": "https://cdc.tencentcloudapi.com/?Action=DescribeSitesDetail\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SiteDetailSet\": [\n            {\n                \"SiteId\": \"site-98dj3kd\",\n                \"Name\": \"\",\n                \"Description\": \"\",\n                \"CreateTime\": \"2020-12-25T08:39:57Z\",\n                \"FiberType\": \"MM\",\n                \"UplinkSpeedGbps\": 0,\n                \"UplinkCount\": 0,\n                \"OpticalStandard\": \"MM\",\n                \"RedundantNetworking\": false,\n                \"PowerConnectors\": \"1000Base-SX\",\n                \"PowerFeedDrop\": \"above\",\n                \"PowerDrawKva\": 0.0,\n                \"ConditionRequirement\": false,\n                \"DimensionRequirement\": false,\n                \"NeedHelp\": false,\n                \"BreakerRequirement\": false,\n                \"RedundantPower\": false,\n                \"MaxWeight\": 0,\n                \"AddressLine\": \"Nanshan Road\",\n                \"OptionalAddressLine\": \"\",\n                \"Country\": \"China\",\n                \"Province\": \"guangdong\",\n                \"City\": \"shenzhen\",\n                \"PostalCode\": 518000\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a07a5f9c-277c-4f03-a338-c2863982b1a6\"\n    }\n}",
         "title": "查询站点详情"

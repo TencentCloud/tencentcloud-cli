@@ -1,53 +1,15 @@
-**Example 1: 获取房间统计信息**
+**Example 1: 示例**
 
-房间结束后获取房间相关的统计信息
+获取房间统计信息示例
 
 Input: 
 
 ```
 tccli lcic DescribeRoomStatistics --cli-unfold-argument  \
-    --RoomId 123 \
+    --RoomId 1 \
     --Page 1 \
-    --Limit 10
+    --Limit 1
 ```
-
-Output: 
-```
-{
-    "Response": {
-        "MemberNumber": 1,
-        "Total": 1,
-        "PeakMemberNumber": 1,
-        "RequestId": "xx",
-        "RealStartTime": 1675677337,
-        "RealEndTime": 1675677337,
-        "MemberRecords": [
-            {
-                "UserName": "xx",
-                "Mic": 1,
-                "UserId": "xx",
-                "Rewords": 1,
-                "AnswerQuestions": 1,
-                "HandUps": 1,
-                "Camera": 1,
-                "FirstJoinTimestamp": 1,
-                "LastQuitTimestamp": 1,
-                "PresentTime": 1,
-                "Silence": 1
-            }
-        ]
-    }
-}
-```
-
-**Example 2: 示例**
-
-获取房间统计信息
-
-Input: 
-
-```
-tccli lcic DescribeRoomStatistics --cli-unfold-argument ```
 
 Output: 
 ```
@@ -68,11 +30,16 @@ Output:
                 "HandUps": 1,
                 "FirstJoinTimestamp": 1,
                 "LastQuitTimestamp": 1,
-                "Rewords": 1
+                "Rewords": 1,
+                "IPAddress": "xx",
+                "Location": "xx",
+                "Device": 0
             }
         ],
         "RealStartTime": 1,
         "RealEndTime": 1,
+        "MessageCount": 1,
+        "MicCount": 1,
         "RequestId": "xx"
     }
 }

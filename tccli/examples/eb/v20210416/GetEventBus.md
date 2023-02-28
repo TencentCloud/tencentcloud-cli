@@ -1,6 +1,6 @@
 **Example 1: 获取事件集**
 
-
+获取事件集
 
 Input: 
 
@@ -13,15 +13,20 @@ Output:
 ```
 {
     "Response": {
-        "AddTime": "2021-04-28T23:34:19+08:00",
+        "AddTime": "2022-12-12T20:09:46+08:00",
         "ClsLogsetId": "",
         "ClsTopicId": "",
         "Description": "",
-        "EventBusId": "eb-l65vlc2u",
-        "EventBusName": "test",
-        "ModTime": "2021-04-28T23:34:19+08:00",
-        "RequestId": "2a65b86b-19e2-4c4f-b38e-7380475cb963",
-        "Type": "Custom"
+        "EventBusId": "eb-0gdrbv5q",
+        "EventBusName": "default",
+        "ModTime": "2022-12-12T20:09:46+08:00",
+        "PayMode": "",
+        "LogTopicId": "xxx",
+        "SaveDays": "1",
+        "EnableStore": true,
+        "LinkMode": "Disorder",
+        "RequestId": "ffd4aae2-c29e-40a8-b18c-037a17ed810c",
+        "Type": "Cloud"
     }
 }
 ```

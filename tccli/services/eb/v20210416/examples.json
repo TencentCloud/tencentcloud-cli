@@ -98,15 +98,15 @@
     ],
     "GetEventBus": [
       {
-        "document": "",
+        "document": "获取事件集",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEventBus\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2021-04-28T23:34:19+08:00\",\n        \"ClsLogsetId\": \"\",\n        \"ClsTopicId\": \"\",\n        \"Description\": \"\",\n        \"EventBusId\": \"eb-l65vlc2u\",\n        \"EventBusName\": \"test\",\n        \"ModTime\": \"2021-04-28T23:34:19+08:00\",\n        \"RequestId\": \"2a65b86b-19e2-4c4f-b38e-7380475cb963\",\n        \"Type\": \"Custom\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2022-12-12T20:09:46+08:00\",\n        \"ClsLogsetId\": \"\",\n        \"ClsTopicId\": \"\",\n        \"Description\": \"\",\n        \"EventBusId\": \"eb-0gdrbv5q\",\n        \"EventBusName\": \"default\",\n        \"ModTime\": \"2022-12-12T20:09:46+08:00\",\n        \"PayMode\": \"\",\n        \"LogTopicId\": \"xxx\",\n        \"SaveDays\": \"1\",\n        \"EnableStore\": true,\n        \"LinkMode\": \"Disorder\",\n        \"RequestId\": \"ffd4aae2-c29e-40a8-b18c-037a17ed810c\",\n        \"Type\": \"Cloud\"\n    }\n}",
         "title": "获取事件集"
       }
     ],
     "GetRule": [
       {
-        "document": "",
+        "document": "获取规则详情",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRule\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\",\n    \"RuleId\": \"rule-qr2wsqqy\"\n}",
         "output": "{\n    \"Response\": {\n        \"AddTime\": \"2021-04-29T20:01:27+08:00\",\n        \"Description\": \"\",\n        \"Enable\": true,\n        \"EventBusId\": \"eb-l65vlc2u\",\n        \"EventPattern\": \"{\\\"data\\\":{\\\"prefix\\\":[\\\"1\\\",\\\"2\\\"]}}\",\n        \"ModTime\": \"2021-04-29T20:01:28+08:00\",\n        \"RequestId\": \"9babdbaf-85d9-4d79-8eb7-14fd989cf99a\",\n        \"RuleId\": \"rule-qr2wsqqy\",\n        \"RuleName\": \"test\",\n        \"Status\": \"Active\"\n    }\n}",
         "title": "获取规则详情"
@@ -136,9 +136,9 @@
     ],
     "ListEventBuses": [
       {
-        "document": "",
+        "document": "获取事件集列表",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEventBuses\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"EventBuses\": [\n            {\n                \"AddTime\": \"2021-04-28T23:34:19+08:00\",\n                \"Description\": \"\",\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"EventBusName\": \"test\",\n                \"ModTime\": \"2021-04-28T23:34:19+08:00\",\n                \"Type\": \"Custom\"\n            }\n        ],\n        \"RequestId\": \"116a59b2-4d31-4d17-966e-6ee65f7401f5\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EventBuses\": [\n            {\n                \"ModTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Description\": \"xx\",\n                \"AddTime\": \"2020-09-22T00:00:00+00:00\",\n                \"EventBusName\": \"xx\",\n                \"EventBusId\": \"xx\",\n                \"Type\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取事件集列表"
       }
     ],

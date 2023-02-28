@@ -343,6 +343,20 @@
       "output": "ModifyBlockTopResponse",
       "status": "online"
     },
+    "ModifyEnterpriseSecurityDispatchStatus": {
+      "document": "修改企业安全组下发状态",
+      "input": "ModifyEnterpriseSecurityDispatchStatusRequest",
+      "name": "修改企业安全组下发状态",
+      "output": "ModifyEnterpriseSecurityDispatchStatusResponse",
+      "status": "online"
+    },
+    "ModifyEnterpriseSecurityGroupRule": {
+      "document": "编辑新企业安全组规则",
+      "input": "ModifyEnterpriseSecurityGroupRuleRequest",
+      "name": "编辑新企业安全组规则",
+      "output": "ModifyEnterpriseSecurityGroupRuleResponse",
+      "status": "online"
+    },
     "ModifyNatAcRule": {
       "document": "修改NAT访问控制规则",
       "input": "ModifyNatAcRuleRequest",
@@ -369,6 +383,13 @@
       "input": "ModifyNatFwVpcDnsSwitchRequest",
       "name": "nat 防火墙VPC DNS 开关切换",
       "output": "ModifyNatFwVpcDnsSwitchResponse",
+      "status": "online"
+    },
+    "ModifyNatSequenceRules": {
+      "document": "NAT防火墙规则快速排序",
+      "input": "ModifyNatSequenceRulesRequest",
+      "name": "NAT防火墙规则快速排序",
+      "output": "ModifyNatSequenceRulesResponse",
       "status": "online"
     },
     "ModifyPublicIPSwitchStatus": {
@@ -5317,6 +5338,114 @@
       ],
       "type": "object"
     },
+    "ModifyEnterpriseSecurityDispatchStatusRequest": {
+      "document": "ModifyEnterpriseSecurityDispatchStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "状态，0：立即下发，1：停止下发",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnterpriseSecurityDispatchStatusResponse": {
+      "document": "ModifyEnterpriseSecurityDispatchStatus返回参数结构体",
+      "members": [
+        {
+          "document": "0: 修改成功, 其他: 修改失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnterpriseSecurityGroupRuleRequest": {
+      "document": "ModifyEnterpriseSecurityGroupRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则的uuid，可通过查询规则列表获取",
+          "example": "123",
+          "member": "uint64",
+          "name": "RuleUuid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "ModifyType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "编辑后的企业安全组规则数据；修改规则状态不用填该字段",
+          "example": "无",
+          "member": "SecurityGroupRule",
+          "name": "Data",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "0是关闭,1是开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnterpriseSecurityGroupRuleResponse": {
+      "document": "ModifyEnterpriseSecurityGroupRule返回参数结构体",
+      "members": [
+        {
+          "document": "状态值，0：编辑成功，非0：编辑失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "编辑后新生成规则的Id",
+          "example": "35641",
+          "member": "uint64",
+          "name": "NewRuleUuid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyNatAcRuleRequest": {
       "document": "ModifyNatAcRule请求参数结构体",
       "members": [
@@ -5504,6 +5633,40 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNatSequenceRulesRequest": {
+      "document": "ModifyNatSequenceRules请求参数结构体",
+      "members": [
+        {
+          "document": "规则快速排序：OrderIndex，原始序号；NewOrderIndex：新序号",
+          "example": "[{\"OrderIndex\":100,\"NewOrderIndex\":100}]",
+          "member": "RuleChangeItem",
+          "name": "RuleChangeItems",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "规则方向：1，入站；0，出站",
+          "example": "0",
+          "member": "uint64",
+          "name": "Direction",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNatSequenceRulesResponse": {
+      "document": "ModifyNatSequenceRules返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6434,6 +6597,32 @@
         }
       ],
       "type": "object"
+    },
+    "RuleChangeItem": {
+      "document": "规则顺序变更项，由原始id值变为新的id值。",
+      "members": [
+        {
+          "default": "",
+          "document": "原始sequence 值",
+          "example": "100",
+          "member": "int64",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新的sequence 值",
+          "example": "101",
+          "member": "int64",
+          "name": "NewOrderIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "RuleInfoData": {
       "document": "规则输入对象",

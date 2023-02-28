@@ -967,14 +967,14 @@
       "status": "online"
     },
     "DescribeIpGeolocationDatabaseUrl": {
-      "document": "本接口（DescribeIpGeolocationDatabaseUrl）用于获取IP地理位置库下载链接。",
+      "document": "本接口（DescribeIpGeolocationDatabaseUrl）用于获取IP地理位置库下载链接。\n<font color=\"#FF0000\">本接口即将下线，仅供存量用户使用，暂停新增用户。</font>",
       "input": "DescribeIpGeolocationDatabaseUrlRequest",
       "name": "获取IP地理位置库下载链接",
       "output": "DescribeIpGeolocationDatabaseUrlResponse",
       "status": "online"
     },
     "DescribeIpGeolocationInfos": {
-      "document": "本接口（DescribeIpGeolocationInfos）用于查询IP地址信息，包括地理位置信息和网络信息。\n本接口仅供存量客户使用，如有疑问，请提交[工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=660&source=0&data_title=%E5%BC%B9%E6%80%A7%E5%85%AC%E7%BD%91%20EIP&level3_id=662&queue=96&scene_code=16400&step=2)。",
+      "document": "本接口（DescribeIpGeolocationInfos）用于查询IP地址信息，包括地理位置信息和网络信息。\n<font color=\"#FF0000\">本接口即将下线，仅供存量客户使用，暂停新增用户。</font>",
       "input": "DescribeIpGeolocationInfosRequest",
       "name": "查询IP地理位置信息",
       "output": "DescribeIpGeolocationInfosResponse",
@@ -2736,22 +2736,38 @@
       "document": "地址信息",
       "members": [
         {
-          "default": "",
-          "document": "起始地址。",
-          "example": "10.1.1.2/22",
+          "document": "ipm-xxxxxxxx",
+          "example": "ipm-xxxx",
           "member": "string",
-          "name": "From",
-          "required": true,
+          "name": "AddressTemplateId",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "结束地址。",
-          "example": "10.1.1.3/22",
+          "document": "IP模板名称",
+          "example": "test",
+          "member": "string",
+          "name": "AddressTemplateName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "废弃字段",
+          "example": "无",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "废弃字段",
+          "example": "无",
           "member": "string",
           "name": "To",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9509,7 +9525,7 @@
       "members": [
         {
           "document": "过滤条件。\n<li>address-template-group-name - String - （过滤条件）IP地址模板集合名称。</li>\n<li>address-template-group-id - String - （过滤条件）IP地址模板实集合例ID，例如：ipmg-mdunqeb6。</li>",
-          "example": "ipmg-mdunqeb6",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -11496,7 +11512,6 @@
       "document": "DescribeIpGeolocationDatabaseUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "IP地理位置库协议类型，目前仅支持\"ipv4\"。",
           "example": "ipv4",
           "member": "string",
@@ -11515,7 +11530,6 @@
           "example": "https://ip-address-repo-1255852779.cos.ap-guangzhou.myqcloud.com",
           "member": "string",
           "name": "DownLoadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11524,7 +11538,6 @@
           "example": "2020-01-15T10:56:42+00:00",
           "member": "datetime_iso",
           "name": "ExpiredAt",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11541,7 +11554,6 @@
       "document": "DescribeIpGeolocationInfos请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需查询的IP地址列表，目前仅支持IPv4地址。查询的IP地址数量上限为100个。",
           "example": "[\"8.8.8.8\"]",
           "member": "string",
@@ -11550,7 +11562,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "需查询的IP地址的字段信息。",
           "example": "无",
           "member": "IpField",
@@ -11569,7 +11580,6 @@
           "example": "无",
           "member": "IpGeolocationInfo",
           "name": "AddressInfo",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11578,7 +11588,6 @@
           "example": "2",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

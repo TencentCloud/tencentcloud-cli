@@ -1503,8 +1503,8 @@
     "ShrinkGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ShrinkGroup\r\n&GroupId=group-xxxxxxx\r\n&<公共请求参数>",
-        "output": "{\r\n    \"data\":{\r\n        \"Response\":{\r\n            \"RequestId\":\"6ae4fc90-8153-4b71-8310-a8ca5ad85440\",\r\n            \"Result\":{\r\n                \"TaskId\":\"task-xxxxxxx\"\r\n            }\r\n        }\r\n    },\r\n    \"code\":0\r\n}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=ShrinkGroup\n&GroupId=group-xxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "缩容虚拟机部署组"
       }
     ],

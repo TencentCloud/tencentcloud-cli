@@ -182,6 +182,13 @@
       "output": "DescribeEventLogDataResponse",
       "status": "online"
     },
+    "DescribeHttpsPackages": {
+      "document": "DescribeHttpsPackages 用于查询 CDN HTTPS请求包详情。",
+      "input": "DescribeHttpsPackagesRequest",
+      "name": "HTTPS请求包查询",
+      "output": "DescribeHttpsPackagesResponse",
+      "status": "online"
+    },
     "DescribeImageConfig": {
       "document": "DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG、 Guetzli 和 Avif。 ",
       "input": "DescribeImageConfigRequest",
@@ -5793,6 +5800,87 @@
       ],
       "type": "object"
     },
+    "DescribeHttpsPackagesRequest": {
+      "document": "DescribeHttpsPackages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页查询起始地址，默认 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询记录个数，默认100，最大1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHttpsPackagesResponse": {
+      "document": "DescribeHttpsPackages返回参数结构体",
+      "members": [
+        {
+          "document": "HTTPS请求包总个数",
+          "example": "40",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "HTTPS请求包详情",
+          "example": "无",
+          "member": "HttpsPackage",
+          "name": "HttpsPackages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "即将过期的HTTPS请求包个数（7天内）",
+          "example": "0",
+          "member": "int64",
+          "name": "ExpiringCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "有效HTTPS请求包个数",
+          "example": "40",
+          "member": "int64",
+          "name": "EnabledCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "付费HTTPS请求包个数",
+          "example": "20",
+          "member": "int64",
+          "name": "PaidCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeImageConfigRequest": {
       "document": "DescribeImageConfig请求参数结构体",
       "members": [
@@ -9562,6 +9650,192 @@
       ],
       "usage": "both"
     },
+    "HttpsPackage": {
+      "document": "CDN HTTPS请求包。",
+      "members": [
+        {
+          "default": "",
+          "document": "HTTPS请求包 Id",
+          "example": "123",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包大小（单位为：次）",
+          "example": "10000",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已消耗HTTPS请求包（单位为：次）",
+          "example": "100",
+          "member": "int64",
+          "name": "SizeUsed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包状态\nenabled：已启用\nexpired：已过期\ndisabled：未启用",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包发放时间",
+          "example": "2021-09-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包生效时间",
+          "example": "2021-09-01 00:00:00",
+          "member": "string",
+          "name": "EnableTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包过期时间",
+          "example": "2021-09-01 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包来源",
+          "example": "CDN_GIFT",
+          "member": "string",
+          "name": "Channel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包生命周期月数",
+          "example": "1",
+          "member": "int64",
+          "name": "LifeTimeMonth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包是否支持退费",
+          "example": "false",
+          "member": "bool",
+          "name": "RefundAvailable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包类型id",
+          "example": "101",
+          "member": "int64",
+          "name": "ConfigId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包实际生效时间",
+          "example": "2022-08-02 10:00:00",
+          "member": "string",
+          "name": "TrueEnableTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包实际过期时间",
+          "example": "2022-08-02 23:59:59",
+          "member": "string",
+          "name": "TrueExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包生效区域 \nglobal：全球",
+          "example": "global",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包是否续订",
+          "example": "false",
+          "member": "bool",
+          "name": "ContractExtension",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包是否支持续订",
+          "example": "false",
+          "member": "bool",
+          "name": "ExtensionAvailable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS请求包当前续订模式\n0：未续订\n1：到期续订\n2：用完续订\n3：到期或用完续订",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExtensionMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "HwPrivateAccess": {
       "document": " 华为云对象存储回源鉴权",
       "members": [
@@ -10268,7 +10542,6 @@
       "document": "ListScdnTopBotData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "获取Top量，取值范围[1-10]",
           "example": "10",
           "member": "int64",
@@ -10277,7 +10550,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始时间",
           "example": "2021-02-01 00:00:00",
           "member": "datetime",
@@ -10286,7 +10558,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束时间",
           "example": "2021-02-01 23:59:59",
           "member": "datetime",
@@ -10295,7 +10566,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "mainland 大陆地区 overseas境外地区",
           "example": "overseas",
           "member": "string",
@@ -10304,7 +10574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "session表示查询BOT会话的Top信息\nip表示查询BOT客户端IP的Top信息\n\n不填代表获取会话信息",
           "example": "ip",
           "member": "string",
@@ -10313,7 +10582,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "域名，仅当Metric=ip，并且Domain为空时有效，不填写表示获取AppID信息",
           "example": "无",
           "member": "string",
@@ -10332,7 +10600,6 @@
           "example": "无",
           "member": "BotStatisticsCount",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

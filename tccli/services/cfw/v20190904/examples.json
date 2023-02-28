@@ -404,6 +404,22 @@
         "title": "取消置顶接口"
       }
     ],
+    "ModifyEnterpriseSecurityDispatchStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnterpriseSecurityDispatchStatus\n<公共请求参数>\n\n{\n    \"Status\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
+        "title": "修改企业安全组下发状态"
+      }
+    ],
+    "ModifyEnterpriseSecurityGroupRule": [
+      {
+        "document": "编辑新企业安全组规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnterpriseSecurityGroupRule\n<公共请求参数>\n\n{\n    \"RuleUuid\": 1,\n    \"Data\": {\n        \"OrderIndex\": \"xx\",\n        \"Protocol\": \"xx\",\n        \"SourceType\": \"xx\",\n        \"SourceContent\": \"xx\",\n        \"DestType\": \"xx\",\n        \"ServiceTemplateId\": \"xx\",\n        \"DestContent\": \"xx\",\n        \"RuleAction\": \"xx\",\n        \"Port\": \"xx\",\n        \"Description\": \"xx\"\n    },\n    \"ModifyType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": 0,\n        \"NewRuleUuid\": 35641\n    }\n}",
+        "title": "编辑新企业安全组规则"
+      }
+    ],
     "ModifyNatAcRule": [
       {
         "document": "修改NAT访问控制规则",
@@ -446,6 +462,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatFwVpcDnsSwitch\n<公共请求参数>\n\n{\n    \"NatFwInsId\": \"cfwnat-d1580b7b\",\n    \"DnsVpcSwitchLst\": [\n        {\n            \"VpcId\": \"vpc-ilbrv877\",\n            \"Status\": 0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "SetNatFwVpcDnsSwitch 防火墙VPC DNS 开关切换"
+      }
+    ],
+    "ModifyNatSequenceRules": [
+      {
+        "document": "NAT防火墙规则快速排序",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatSequenceRules\n<公共请求参数>\n\n{\n    \"RuleChangeItems\": [\n        {\n            \"OrderIndex\": 0,\n            \"NewOrderIndex\": 0\n        }\n    ],\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "NAT防火墙规则快速排序"
       }
     ],
     "ModifyPublicIPSwitchStatus": [

@@ -1,6 +1,6 @@
 **Example 1: 查询bot的topN域名**
 
-
+查询bot的topN域名
 
 Input: 
 
