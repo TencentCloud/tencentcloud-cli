@@ -1,13 +1,13 @@
 **Example 1: 创建日志采集规则**
 
-
+创建边缘集群日志采集规则
 
 Input: 
 
 ```
 tccli tke CreateEdgeLogConfig --cli-unfold-argument  \
-    --LogConfig xxxxxx \
-    --ClusterId xxxxx
+    --LogConfig '{"apiVersion":"cls.cloud.tencent.com/v1","kind":"LogConfig"... }' \
+    --ClusterId cls-1234abcd
 ```
 
 Output: 

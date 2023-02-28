@@ -1,12 +1,12 @@
 **Example 1: 获取边缘计算集群的接入认证信息**
 
-
+获取边缘集群的认证信息，其中包含kubeconfig文件
 
 Input: 
 
 ```
 tccli tke DescribeTKEEdgeClusterCredential --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx
+    --ClusterId cls-1234abcd
 ```
 
 Output: 

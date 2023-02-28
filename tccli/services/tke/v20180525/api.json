@@ -694,7 +694,7 @@
       "status": "online"
     },
     "DescribeEdgeLogSwitches": {
-      "document": "获取事件、审计和日志的状态接口",
+      "document": "获取事件、审计和日志的状态",
       "input": "DescribeEdgeLogSwitchesRequest",
       "name": "查询边缘集群日志开关列表",
       "output": "DescribeEdgeLogSwitchesResponse",
@@ -5957,28 +5957,31 @@
       "document": "CreateEdgeLogConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
+          "example": "cls-1234abcd",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "日志采集配置的json表达",
+          "example": "{\"apiVersion\":\"cls.cloud.tencent.com/v1\",\"kind\":\"LogConfig\",\"metadata\":{\"name\":\"test\"}...}",
           "member": "string",
           "name": "LogConfig",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "CLS日志集ID",
+          "example": "24804f51-0686-4e9f-a95b-2cc47ba5728b",
           "member": "string",
           "name": "LogsetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7439,20 +7442,22 @@
       "document": "DeleteEdgeCVMInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
+          "example": "cls-1234abcd",
           "member": "string",
           "name": "ClusterID",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "cvm id集合",
+          "example": "[\"cvm-1234abcd\"]",
           "member": "string",
           "name": "CvmIdSet",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7473,20 +7478,22 @@
       "document": "DeleteEdgeClusterInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
+          "example": "cls-1234abcd",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "待删除实例ID数组",
+          "example": "[\"cvm-445sgw23\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10265,7 +10272,6 @@
       "document": "DescribeEdgeLogSwitches请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID列表",
           "example": "[\"cls-xxx1\",\"cls-xxx2\"]",
           "member": "string",
@@ -10285,7 +10291,6 @@
           "example": "[{\"ClusterId\":\"cls-xxx1\",\"Audit\":{\"Enable\":true,\"TopicSet\":\"xxxx",
           "member": "string",
           "name": "SwitchSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -12162,13 +12167,13 @@
       "document": "DescribeTKEEdgeClusterCredential请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群Id",
           "example": "cls-xxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12181,72 +12186,72 @@
           "example": "无",
           "member": "IPAddress",
           "name": "Addresses",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "集群的认证信息",
           "example": "无",
           "member": "ClusterCredential",
           "name": "Credential",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群的公网访问信息",
           "example": "无",
           "member": "EdgeClusterPublicLB",
           "name": "PublicLB",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群的内网访问信息",
           "example": "无",
           "member": "EdgeClusterInternalLB",
           "name": "InternalLB",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群的CoreDns部署信息",
           "example": "yes",
           "member": "string",
           "name": "CoreDns",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群的健康检查多地域部署信息",
           "example": "yes",
           "member": "string",
           "name": "HealthRegion",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群的健康检查部署信息",
           "example": "yes",
           "member": "string",
           "name": "Health",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否部署GridDaemon以支持headless service",
           "example": "yes",
           "member": "string",
           "name": "GridDaemon",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13010,7 +13015,6 @@
       "document": "边缘计算集群信息",
       "members": [
         {
-          "default": "",
           "document": "集群Id",
           "example": "cls-xxxxxxxx",
           "member": "string",
@@ -13021,7 +13025,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群名称",
           "example": "test",
           "member": "string",
@@ -13032,7 +13035,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Vpc Id",
           "example": "vpc-xxxxxxxx",
           "member": "string",
@@ -13043,7 +13045,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群pod cidr",
           "example": "10.0.0.1/16",
           "member": "string",
@@ -13054,7 +13055,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群 service cidr",
           "example": "10.1.1.1/16",
           "member": "string",
@@ -13065,7 +13065,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "k8s 版本号",
           "example": "1.20.6",
           "member": "string",
@@ -13076,7 +13075,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群状态",
           "example": "Running",
           "member": "string",
@@ -13087,7 +13085,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群描述信息",
           "example": "test",
           "member": "string",
@@ -13098,7 +13095,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群创建时间",
           "example": "2022-08-09 16:54:33",
           "member": "string",
@@ -13109,7 +13105,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "边缘集群版本",
           "example": "2.2",
           "member": "string",
@@ -13120,7 +13115,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "节点最大Pod数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "61",
           "member": "int64",
@@ -13131,7 +13125,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ClusterAdvancedSettings",
           "member": "EdgeClusterAdvancedSettings",
@@ -13142,11 +13135,30 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "边缘容器集群级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "L5",
           "member": "string",
           "name": "Level",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "是否支持自动提升集群配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoUpgradeClusterLevel",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
           "required": false,
           "type": "string",
           "value_allowed_null": true,

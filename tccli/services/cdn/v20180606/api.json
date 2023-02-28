@@ -22,9 +22,9 @@
       "status": "online"
     },
     "CreateDiagnoseUrl": {
-      "document": "CreateDiagnoseUrl 用于添加域名诊断任务URL",
+      "document": "CreateDiagnoseUrl 用于添加域名诊断任务URL， <font color=red>将于 **2023年5月31日** 下线</font><br>",
       "input": "CreateDiagnoseUrlRequest",
-      "name": "添加诊断URL",
+      "name": "添加诊断URL(即将下线)",
       "output": "CreateDiagnoseUrlResponse",
       "status": "online"
     },
@@ -141,9 +141,9 @@
       "status": "online"
     },
     "DescribeDiagnoseReport": {
-      "document": "DescribeDiagnoseReport 用于获取指定报告id的内容",
+      "document": "DescribeDiagnoseReport 用于获取指定报告id的内容， <font color=red>将于 **2023年5月31日** 下线</font><br>",
       "input": "DescribeDiagnoseReportRequest",
-      "name": "获取诊断报告",
+      "name": "获取诊断报告(即将下线)",
       "output": "DescribeDiagnoseReportResponse",
       "status": "online"
     },
@@ -386,9 +386,9 @@
       "status": "online"
     },
     "ListDiagnoseReport": {
-      "document": "ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情。",
+      "document": "ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情， <font color=red>将于 **2023年5月31日** 下线</font><br>",
       "input": "ListDiagnoseReportRequest",
-      "name": "获取诊断任务列表",
+      "name": "获取诊断任务列表(即将下线)",
       "output": "ListDiagnoseReportResponse",
       "status": "online"
     },
@@ -3921,7 +3921,8 @@
           "member": "string",
           "name": "Url",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3930,7 +3931,8 @@
           "member": "string",
           "name": "Origin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3945,7 +3947,8 @@
           "name": "DiagnoseLink",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5396,7 +5399,8 @@
           "member": "string",
           "name": "ReportId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5411,7 +5415,8 @@
           "name": "BaskInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "CNAME检测信息",
@@ -5420,7 +5425,8 @@
           "name": "CnameInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "客户端检测信息",
@@ -5429,7 +5435,8 @@
           "name": "ClientInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "DNS检测信息",
@@ -5438,7 +5445,8 @@
           "name": "DnsInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "网络检测信息",
@@ -5447,7 +5455,8 @@
           "name": "NetworkInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "边缘节点检测信息",
@@ -5456,7 +5465,8 @@
           "name": "OcNodeInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "中间源节点检测信息",
@@ -5465,7 +5475,8 @@
           "name": "MidNodeInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "源站检测信息",
@@ -5474,7 +5485,8 @@
           "name": "OriginInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "刷新检测信息\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5483,7 +5495,8 @@
           "name": "PurgeInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10690,7 +10703,8 @@
           "member": "string",
           "name": "KeyWords",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10699,7 +10713,8 @@
           "member": "string",
           "name": "DiagnoseLink",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10708,7 +10723,8 @@
           "member": "string",
           "name": "Origin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10723,7 +10739,8 @@
           "name": "Data",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

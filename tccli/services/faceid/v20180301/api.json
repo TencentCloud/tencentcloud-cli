@@ -726,7 +726,6 @@
       "document": "核身过程中，鉴伪或OCR单次结果。",
       "members": [
         {
-          "default": "",
           "document": "鉴伪或OCR是否成功",
           "example": "true",
           "member": "bool",
@@ -737,7 +736,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "身份证鉴伪视频，仅开启证件视频鉴伪功能时返回，url链接有效期10分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfo",
@@ -748,7 +746,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "证件照图片，url链接有效期10分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfo",
@@ -759,8 +756,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "证件照的文字识别结果，如果鉴伪失败或者ocr失败则该参数为空。url链接有效期10分钟。格式为json文本信息。\nIdCardType为HK时：\n- CnName string 中文姓名\n- EnName string 英文姓名\n- TelexCode string 中文姓名对应电码\n- Sex string 性别 ：“男M”或“女F”\n- Birthday string 出生日期\n- Permanent int 永久性居民身份证。0：非永久； 1：永久； -1：未知。\n- IdNum string 身份证号码\n- Symbol string 证件符号，出生日期下的符号，例如\"***AZ\"\n- FirstIssueDate string 首次签发日期\n- CurrentIssueDate string 最近领用日期\n\nIdCardType为ML时：\n- Sex string 男：LELAKI 女：PEREMPUAN\n- Birthday  string 生日\n- ID string 证号\n- Name string 名字\n- Address string 地址\n- Type string 证件类型\n\nIdCardType为PhilippinesVoteID时：\n- Birthday  string 生日\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 姓名\n- VIN string VIN号\n- CivilStatus string 婚姻状况\n- Citizenship string 国籍\n- PrecinctNo string 地区\n\nIdCardType为PhilippinesDrivingLicense时：\n- Sex string 性别\n- Birthday  string 生日\n- Name string 姓名\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 首姓名\n- MiddleName string 中间姓名\n- Nationality string 国籍\n- LicenseNo string 证号\n- ExpiresDate string 有效期\n- AgencyCode string 机构代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件照的文字识别结果，如果鉴伪失败或者ocr失败则该参数为空。url链接有效期10分钟。格式为json文本信息。\nIdCardType为HK时：\n- CnName string 中文姓名\n- EnName string 英文姓名\n- TelexCode string 中文姓名对应电码\n- Sex string 性别 ：“男M”或“女F”\n- Birthday string 出生日期\n- Permanent int 永久性居民身份证。0：非永久； 1：永久； -1：未知。\n- IdNum string 身份证号码\n- Symbol string 证件符号，出生日期下的符号，例如\"***AZ\"\n- FirstIssueDate string 首次签发日期\n- CurrentIssueDate string 最近领用日期\n\nIdCardType为ML时：\n- Sex string 男：LELAKI 女：PEREMPUAN\n- Birthday  string 生日\n- ID string 证号\n- Name string 名字\n- Address string 地址\n- Type string 证件类型\n\nIdCardType为PhilippinesVoteID时：\n- Birthday  string 生日\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 姓名\n- VIN string VIN号\n- CivilStatus string 婚姻状况\n- Citizenship string 国籍\n- PrecinctNo string 地区\n\nIdCardType为PhilippinesDrivingLicense时：\n- Sex string 性别\n- Birthday  string 生日\n- Name string 姓名\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 首姓名\n- MiddleName string 中间姓名\n- Nationality string 国籍\n- LicenseNo string 证号\n- ExpiresDate string 有效期\n- AgencyCode string 机构代码\n\nIdCardType为IndonesiaIDCard时：\n- NIK string 证件号码\n- Nama string 姓名\n- TempatTglLahir string 出生地/出生时间\n- JenisKelamin string 性别\n- GolDarah string 血型\n- Alamat string 地址\n- RTRW string 街道\n- KelDesa string 村\n- Kecamatan string 地区\n- Agama string 宗教信仰\n- StatusPerkawinan string 婚姻状况\n- Perkerjaan string 职业\n- KewargaNegaraan string 国籍\n- BerlakuHingga string 身份证有效期限\n- IssuedDate string 发证日期\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfo",
           "name": "CardInfoOcrJson",
@@ -770,7 +766,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "单次流程请求标示。",
           "example": "c6df4b3d-d1aa-4d49-a676-d44baf379613",
           "member": "string",
@@ -1923,7 +1918,6 @@
       "document": "核身文本信息",
       "members": [
         {
-          "default": "",
           "document": "本次流程最终验证结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1934,7 +1928,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "本次流程最终验证结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
@@ -1945,7 +1938,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "本次验证使用的身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "440111111111111111",
           "member": "string",
@@ -1956,7 +1948,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "本次验证使用的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "爱新觉罗永琪",
           "member": "string",
@@ -1967,8 +1958,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "Ocr识别结果。民族。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份校验环节识别结果：民族。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "汉族",
           "member": "string",
           "name": "OcrNation",
@@ -1978,8 +1968,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "Ocr识别结果。家庭住址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份校验环节识别结果：家庭住址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广东省",
           "member": "string",
           "name": "OcrAddress",
@@ -1989,9 +1978,8 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "Ocr识别结果。生日。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1999/01/01",
+          "document": "身份校验环节识别结果：生日。格式为：YYYY/M/D\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1999/1/12",
           "member": "string",
           "name": "OcrBirth",
           "required": true,
@@ -2000,8 +1988,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "Ocr识别结果。签发机关。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份校验环节识别结果：签发机关。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广东省",
           "member": "string",
           "name": "OcrAuthority",
@@ -2011,9 +1998,8 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "Ocr识别结果。有效日期。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1999/01/01",
+          "document": "身份校验环节识别结果：有效日期。格式为：YYYY.MM.DD-YYYY.MM.DD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1999.01.01-2009.01.01",
           "member": "string",
           "name": "OcrValidDate",
           "required": true,
@@ -2022,8 +2008,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "Ocr识别结果。姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份校验环节识别结果：姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "爱新觉罗永琪",
           "member": "string",
           "name": "OcrName",
@@ -2033,8 +2018,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "Ocr识别结果。身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份校验环节识别结果：身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "440111111111111111",
           "member": "string",
           "name": "OcrIdCard",
@@ -2044,8 +2028,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "Ocr识别结果。性别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份校验环节识别结果：性别。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "女",
           "member": "string",
           "name": "OcrGender",
@@ -2055,7 +2038,16 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "document": "身份校验环节采用的信息上传方式。\n取值有\"NFC\"、\"OCR\"、\"手动输入\"、\"其他\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NFC",
+          "member": "string",
+          "name": "IdInfoFrom",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "document": "本次流程最终活体结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -2066,7 +2058,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "本次流程最终活体结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
@@ -2077,7 +2068,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "本次流程最终一比一结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -2088,7 +2078,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "本次流程最终一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
@@ -2099,7 +2088,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "本次流程活体一比一的分数，取值范围 [0.00, 100.00]。相似度大于等于70时才判断为同一人，也可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "88.3",
           "member": "string",
@@ -2110,7 +2098,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "地理位置经纬度。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "string",
@@ -2121,7 +2108,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Auth接口带入额外信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "string",
@@ -2132,7 +2118,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "本次流程进行的活体一比一流水。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "DetectDetail",
@@ -2143,7 +2128,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "手机号码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -2154,7 +2138,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "本次流程最终比对库源类型。包括：\n权威库；\n业务方自有库（用户上传照片、客户的混合库、混合部署库）；\n二次验证库；\n人工审核库；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "权威库",
           "member": "string",
@@ -2165,7 +2148,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "本次流程最终活体类型。包括：\n0：未知\n1：数字活体\n2：动作活体\n3：静默活体\n4：一闪活体（动作+光线）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
