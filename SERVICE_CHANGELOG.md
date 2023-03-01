@@ -1,48 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 访问管理(cam) 版本：2019-01-16
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 17 次发布
+### 第 45 次发布
 
-发布时间：2023-03-01 01:09:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [GetUser](http://document.tencentcloudapi.woa.com/document/product/598/34590)
-
-	* 新增出参：RecentlyLoginIP, RecentlyLoginTime
-
-
-
-
-## 人脸核身(faceid) 版本：2018-03-01
-
-### 第 26 次发布
-
-发布时间：2023-03-01 01:23:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
-
-	* 新增成员：IdInfoFrom
-
-
-
-
-## 图片内容安全(ims) 版本：2020-12-29
-
-### 第 5 次发布
-
-发布时间：2023-03-01 01:25:29
+发布时间：2023-03-02 01:05:33
 
 本次发布包含了以下内容：
 
@@ -50,19 +12,20 @@
 
 新增接口：
 
-* [CreateImageModerationAsyncTask](http://document.tencentcloudapi.woa.com/document/product/1125/77139)
+* [DescribeDBRoutes](http://document.tencentcloudapi.woa.com/document/product/236/77140)
+
+新增数据结构：
+
+* [Route](http://document.tencentcloudapi.woa.com/document/product/236/15878#Route)
+* [VipInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#VipInfo)
 
 
 
-## 图片内容安全(ims) 版本：2020-07-13
+## 医疗报告结构化(mrs) 版本：2020-09-10
 
+### 第 11 次发布
 
-
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 17 次发布
-
-发布时间：2023-03-01 01:29:24
+发布时间：2023-03-02 01:26:56
 
 本次发布包含了以下内容：
 
@@ -70,22 +33,257 @@
 
 修改接口：
 
-* [CreateDBInstanceHour](http://document.tencentcloudapi.woa.com/document/product/240/38570)
+* [ImageToObject](http://document.tencentcloudapi.woa.com/document/product/1314/56228)
 
-	* 新增入参：ReadonlyNodeNum, ReadonlyNodeAvailabilityZoneList, HiddenZone
+	* 新增入参：ReportTypeVersion
 
+* [TextToObject](http://document.tencentcloudapi.woa.com/document/product/1314/56226)
 
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
-
+	* 新增入参：ReportTypeVersion
 
 
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+新增数据结构：
 
-### 第 16 次发布
+* [AdmissionConditionBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#AdmissionConditionBlock)
+* [AdmissionDiagnosisBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#AdmissionDiagnosisBlock)
+* [BaseInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseInfo)
+* [BaseItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseItem)
+* [BaseItem2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseItem2)
+* [BaseItem3](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseItem3)
+* [BirthCert](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BirthCert)
+* [BirthPlaceBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BirthPlaceBlock)
+* [BlockInfoV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BlockInfoV2)
+* [BloodPressureBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BloodPressureBlock)
+* [BodyExaminationBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BodyExaminationBlock)
+* [BodyTemperatureBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BodyTemperatureBlock)
+* [ChiefComplaintBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ChiefComplaintBlock)
+* [ChiefComplaintDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ChiefComplaintDetailBlock)
+* [ClinicalStaging](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ClinicalStaging)
+* [Coord](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Coord)
+* [CovidItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#CovidItem)
+* [CovidItemsInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#CovidItemsInfo)
+* [DeathDateBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DeathDateBlock)
+* [DescInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DescInfo)
+* [DetailInformation](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DetailInformation)
+* [DischargeConditionBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DischargeConditionBlock)
+* [DischargeDiagnosisBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DischargeDiagnosisBlock)
+* [DischargeInfoBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DischargeInfoBlock)
+* [DiseaseHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DiseaseHistoryBlock)
+* [DiseasePresentBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DiseasePresentBlock)
+* [DosageBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DosageBlock)
+* [DrugHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DrugHistoryBlock)
+* [DrugListBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DrugListBlock)
+* [Exame](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Exame)
+* [EyeChildItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EyeChildItem)
+* [EyeItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EyeItem)
+* [EyeItemsInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EyeItemsInfo)
+* [FamilyHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FamilyHistoryBlock)
+* [FertilityHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FertilityHistoryBlock)
+* [Fetus](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Fetus)
+* [FieldInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FieldInfo)
+* [Fp2NdItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Fp2NdItem)
+* [GeneticHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#GeneticHistoryBlock)
+* [HistologyClass](http://document.tencentcloudapi.woa.com/document/product/1314/56230#HistologyClass)
+* [HistologyTypeV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#HistologyTypeV2)
+* [IHCBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IHCBlock)
+* [IHCV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IHCV2)
+* [ImmunohistochemistryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ImmunohistochemistryBlock)
+* [IndicatorItemV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IndicatorItemV2)
+* [IndicatorV3](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IndicatorV3)
+* [InvasiveV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#InvasiveV2)
+* [IssueInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IssueInfo)
+* [LastMenstrualPeriodBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#LastMenstrualPeriodBlock)
+* [LymphNode](http://document.tencentcloudapi.woa.com/document/product/1314/56230#LymphNode)
+* [LymphTotal](http://document.tencentcloudapi.woa.com/document/product/1314/56230#LymphTotal)
+* [MainDiseaseHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MainDiseaseHistoryBlock)
+* [Maternity](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Maternity)
+* [MaternityDesc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MaternityDesc)
+* [MaternitySummary](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MaternitySummary)
+* [MenstrualFlowBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualFlowBlock)
+* [MenstrualHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualHistoryBlock)
+* [MenstrualHistoryDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualHistoryDetailBlock)
+* [MenstrualPeriodBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualPeriodBlock)
+* [MenstruationOrNotBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstruationOrNotBlock)
+* [Molecular](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Molecular)
+* [MolecularValue](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MolecularValue)
+* [NeglistBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NeglistBlock)
+* [NeonatalInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NeonatalInfo)
+* [NumValue](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NumValue)
+* [ObstetricalHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ObstetricalHistoryBlock)
+* [OtherInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#OtherInfo)
+* [PTNM](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PTNM)
+* [PTNMBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PTNMBlock)
+* [ParagraphBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ParagraphBlock)
+* [ParentInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ParentInfo)
+* [PartDesc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PartDesc)
+* [PathologicalDiagnosisBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PathologicalDiagnosisBlock)
+* [PathologicalDiagnosisDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PathologicalDiagnosisDetailBlock)
+* [PathologyV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PathologyV2)
+* [PersonalHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PersonalHistoryBlock)
+* [Point](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Point)
+* [PoslistBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PoslistBlock)
+* [Rectangle](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Rectangle)
+* [RelapseDateBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelapseDateBlock)
+* [RelativeCancerHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelativeCancerHistoryBlock)
+* [RelativeHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelativeHistoryBlock)
+* [RelativeHistoryDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelativeHistoryDetailBlock)
+* [Report](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Report)
+* [ReportTypeVersion](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ReportTypeVersion)
+* [ResultInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ResultInfo)
+* [SmokeHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SmokeHistoryBlock)
+* [SummaryInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SummaryInfo)
+* [SurgeryConditionBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SurgeryConditionBlock)
+* [SurgeryHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SurgeryHistoryBlock)
+* [SurgeryListBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SurgeryListBlock)
+* [TableIndicators](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TableIndicators)
+* [TimelineEvent](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TimelineEvent)
+* [TimelineInformation](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TimelineInformation)
+* [TransfusionHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TransfusionHistoryBlock)
+* [TreatmentRecordBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TreatmentRecordBlock)
+* [ValueBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ValueBlock)
 
-发布时间：2023-03-01 01:34:43
+修改数据结构：
+
+* [BiopsyPart](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BiopsyPart)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Value, Src
+
+* [BlockInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BlockInfo)
+
+	* 新增成员：Size
+
+	* <font color="#dd0000">**修改成员**：</font>Index, Positive, Src, Value, Type, Name
+
+* [Desc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Desc)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Text, Organ, Tuber
+
+* [EndoscopyDesc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EndoscopyDesc)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Text, Organ
+
+* [EndoscopyOrgan](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EndoscopyOrgan)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Part, Index, Src, PartAlias, SymDescList
+
+* [FirstPage](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FirstPage)
+
+	* 新增成员：DamagePoi, Fp2NdItems
+
+	* <font color="#dd0000">**修改成员**：</font>DischargeDiagnosis, PathologicalDiagnosis, ClinicalDiagnosis
+
+* [IndicatorItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IndicatorItem)
+
+	* 新增成员：InferNormal
+
+* [NormPart](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NormPart)
+
+	* 新增成员：PartDetail
+
+	* <font color="#dd0000">**修改成员**：</font>Part, PartDirection, Tissue, TissueDirection, Upper
+
+* [NormSize](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NormSize)
+
+	* 新增成员：Impl
+
+	* <font color="#dd0000">**修改成员**：</font>Number, Type, Unit
+
+* [Organ](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Organ)
+
+	* 新增成员：Transparent, MriAdc, MriDwi, MriT1, MriT2, CtHu, Suvmax, Metabolism, RadioactiveUptake, LymphEnlargement, ImageFeature, Duct, Trend, Operation, Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Part, Size, Envelope, Edge, InnerEcho, Gland, Shape, Thickness, ShapeAttr, CDFI, SymDesc, SizeStatus, Outline, Structure, Density, Vas, Cysticwall, Capsule, IsthmusThicknese, InnerEchoDistribution, Src, Index
+
+* [Part](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Part)
+
+	* 新增成员：ValueBrief
+
+	* <font color="#dd0000">**修改成员**：</font>Index, NormPart, Src, Value, Name
+
+* [Size](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Size)
+
+	* 新增成员：Name
+
+	* <font color="#dd0000">**修改成员**：</font>Index, NormSize, Src, Value
+
+* [Summary](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Summary)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Symptom, Text
+
+* [Surgery](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Surgery)
+
+	* 新增成员：OtherInfo
+
+	* <font color="#dd0000">**修改成员**：</font>SurgeryHistory
+
+* [SymptomInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SymptomInfo)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Grade, Part, Index, Symptom, Attrs, Src
+
+* [Template](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Template)
+
+	* 新增成员：ReportTypeDesc, PathologyV2, C14, Exame, MedDocV2, IndicatorV3, Covid, Maternity, Eye, BirthCert, Timeline
+
+	* <font color="#dd0000">**修改成员**：</font>PatientInfo, ReportInfo, Check, Pathology, MedDoc, DiagCert, FirstPage, Indicator, ReportType, MedicalRecordInfo, Hospitalization, Surgery, Electrocardiogram, Endoscopy, Prescription, VaccineCertificate, OcrText, OcrResult
+
+* [TuberInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TuberInfo)
+
+	* 新增成员：Transparent, MriAdc, MriDwi, MriT1, MriT2, CtHu, Suvmax, Metabolism, RadioactiveUptake, SymDesc, ImageFeature, Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Type, Part, Size, Multiple, AspectRatio, Edge, InnerEcho, RearEcho, Elastic, Shape, ShapeAttr, SkinMedulla, Trend, Calcification, Envelope, Enhancement, LymphEnlargement, LymphDoor, Activity, Operation, CDFI, Index, SizeStatus, InnerEchoDistribution, InnerEchoType, Outline, Structure, Density, Vas, Cysticwall, Capsule, IsthmusThicknese, Src
+
+* [Vaccination](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Vaccination)
+
+	* 新增成员：Lot
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Vaccine, Dose, Date, LotNumber, Manufacturer, Clinic, Site, Provider
+
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 42 次发布
+
+发布时间：2023-03-02 01:27:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [MixedInvoiceOCR](http://document.tencentcloudapi.woa.com/document/product/866/37835)
+
+	* 新增入参：ReturnMultiplePage
+
+
+修改数据结构：
+
+* [MixedInvoiceItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#MixedInvoiceItem)
+
+	* 新增成员：Page
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 15 次发布
+
+发布时间：2023-03-02 01:29:04
 
 本次发布包含了以下内容：
 
@@ -93,22 +291,22 @@
 
 修改数据结构：
 
-* [ResourceTag](http://document.tencentcloudapi.woa.com/document/product/238/19976#ResourceTag)
+* [Job](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Job)
 
-	* <font color="#dd0000">**修改成员**：</font>TagKey, TagValue
+	* 新增成员：ProjectName, ScenarioName
 
+* [Scenario](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Scenario)
 
-
-
-## 容器服务(tke) 版本：2022-05-01
-
+	* 新增成员：ProjectName
 
 
-## 容器服务(tke) 版本：2018-05-25
 
-### 第 58 次发布
 
-发布时间：2023-03-01 01:41:05
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 70 次发布
+
+发布时间：2023-03-02 01:39:11
 
 本次发布包含了以下内容：
 
@@ -116,9 +314,9 @@
 
 修改数据结构：
 
-* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/31866#EdgeCluster)
+* [DefaultVpcSubnet](http://document.tencentcloudapi.woa.com/document/product/215/15824#DefaultVpcSubnet)
 
-	* 新增成员：AutoUpgradeClusterLevel, ChargeType
+	* 新增成员：VpcName, SubnetName, CidrBlock
 
 
 
@@ -6413,6 +6611,23 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 45 次发布
+
+发布时间：2023-03-02 01:05:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeDBRoutes](http://document.tencentcloudapi.woa.com/document/product/236/77140)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[Route](http://document.tencentcloudapi.woa.com/document/product/236/15878#Route)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[Route](http://document.tencentcloudapi.woa.com/document/product/236/15878#Route))
+* [[VipInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#VipInfo)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[VipInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#VipInfo))
 
 ### 第 44 次发布
 
@@ -25997,7 +26212,7 @@
 
 
 
-## 物联网卡(ic) 版本：2019-03-07
+## 图片瘦身(ic) 版本：2019-03-07
 
 ### 第 3 次发布
 
@@ -26349,7 +26564,7 @@
 
 新增接口：
 
-* [[CreateImageModerationAsyncTask](http://document.tencentcloudapi.woa.com/document/product/1125/77139)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateImageModerationAsyncTask](http://document.tencentcloudapi.woa.com/document/product/1125/77139)
 
 ### 第 4 次发布
 
@@ -30961,7 +31176,7 @@
 
 
 
-## 云监控(monitor) 版本：2018-07-24
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
 ### 第 44 次发布
 
@@ -32943,6 +33158,234 @@
 
 ## 医疗报告结构化(mrs) 版本：2020-09-10
 
+### 第 11 次发布
+
+发布时间：2023-03-02 01:26:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImageToObject](http://document.tencentcloudapi.woa.com/document/product/1314/56228)
+
+	* 新增入参：ReportTypeVersion
+
+* [TextToObject](http://document.tencentcloudapi.woa.com/document/product/1314/56226)
+
+	* 新增入参：ReportTypeVersion
+
+
+新增数据结构：
+
+* [[AdmissionConditionBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#AdmissionConditionBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[AdmissionConditionBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#AdmissionConditionBlock))
+* [[AdmissionDiagnosisBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#AdmissionDiagnosisBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[AdmissionDiagnosisBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#AdmissionDiagnosisBlock))
+* [[BaseInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[BaseInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseInfo))
+* [[BaseItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseItem)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[BaseItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseItem))
+* [[BaseItem2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseItem2)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[BaseItem2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseItem2))
+* [[BaseItem3](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseItem3)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[BaseItem3](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BaseItem3))
+* [[BirthCert](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BirthCert)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[BirthCert](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BirthCert))
+* [[BirthPlaceBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BirthPlaceBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[BirthPlaceBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BirthPlaceBlock))
+* [[BlockInfoV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BlockInfoV2)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[BlockInfoV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BlockInfoV2))
+* [[BloodPressureBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BloodPressureBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[BloodPressureBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BloodPressureBlock))
+* [[BodyExaminationBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BodyExaminationBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[BodyExaminationBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BodyExaminationBlock))
+* [[BodyTemperatureBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BodyTemperatureBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[BodyTemperatureBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BodyTemperatureBlock))
+* [[ChiefComplaintBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ChiefComplaintBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[ChiefComplaintBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ChiefComplaintBlock))
+* [[ChiefComplaintDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ChiefComplaintDetailBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[ChiefComplaintDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ChiefComplaintDetailBlock))
+* [[ClinicalStaging](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ClinicalStaging)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[ClinicalStaging](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ClinicalStaging))
+* [[Coord](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Coord)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[Coord](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Coord))
+* [[CovidItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#CovidItem)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[CovidItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#CovidItem))
+* [[CovidItemsInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#CovidItemsInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[CovidItemsInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#CovidItemsInfo))
+* [[DeathDateBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DeathDateBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DeathDateBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DeathDateBlock))
+* [[DescInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DescInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DescInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DescInfo))
+* [[DetailInformation](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DetailInformation)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DetailInformation](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DetailInformation))
+* [[DischargeConditionBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DischargeConditionBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DischargeConditionBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DischargeConditionBlock))
+* [[DischargeDiagnosisBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DischargeDiagnosisBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DischargeDiagnosisBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DischargeDiagnosisBlock))
+* [[DischargeInfoBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DischargeInfoBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DischargeInfoBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DischargeInfoBlock))
+* [[DiseaseHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DiseaseHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DiseaseHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DiseaseHistoryBlock))
+* [[DiseasePresentBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DiseasePresentBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DiseasePresentBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DiseasePresentBlock))
+* [[DosageBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DosageBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DosageBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DosageBlock))
+* [[DrugHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DrugHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DrugHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DrugHistoryBlock))
+* [[DrugListBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DrugListBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[DrugListBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#DrugListBlock))
+* [[Exame](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Exame)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[Exame](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Exame))
+* [[EyeChildItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EyeChildItem)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[EyeChildItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EyeChildItem))
+* [[EyeItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EyeItem)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[EyeItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EyeItem))
+* [[EyeItemsInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EyeItemsInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[EyeItemsInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EyeItemsInfo))
+* [[FamilyHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FamilyHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[FamilyHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FamilyHistoryBlock))
+* [[FertilityHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FertilityHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[FertilityHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FertilityHistoryBlock))
+* [[Fetus](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Fetus)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[Fetus](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Fetus))
+* [[FieldInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FieldInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[FieldInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FieldInfo))
+* [[Fp2NdItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Fp2NdItem)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[Fp2NdItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Fp2NdItem))
+* [[GeneticHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#GeneticHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[GeneticHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#GeneticHistoryBlock))
+* [[HistologyClass](http://document.tencentcloudapi.woa.com/document/product/1314/56230#HistologyClass)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[HistologyClass](http://document.tencentcloudapi.woa.com/document/product/1314/56230#HistologyClass))
+* [[HistologyTypeV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#HistologyTypeV2)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[HistologyTypeV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#HistologyTypeV2))
+* [[IHCBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IHCBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[IHCBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IHCBlock))
+* [[IHCV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IHCV2)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[IHCV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IHCV2))
+* [[ImmunohistochemistryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ImmunohistochemistryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[ImmunohistochemistryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ImmunohistochemistryBlock))
+* [[IndicatorItemV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IndicatorItemV2)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[IndicatorItemV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IndicatorItemV2))
+* [[IndicatorV3](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IndicatorV3)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[IndicatorV3](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IndicatorV3))
+* [[InvasiveV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#InvasiveV2)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[InvasiveV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#InvasiveV2))
+* [[IssueInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IssueInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[IssueInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IssueInfo))
+* [[LastMenstrualPeriodBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#LastMenstrualPeriodBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[LastMenstrualPeriodBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#LastMenstrualPeriodBlock))
+* [[LymphNode](http://document.tencentcloudapi.woa.com/document/product/1314/56230#LymphNode)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[LymphNode](http://document.tencentcloudapi.woa.com/document/product/1314/56230#LymphNode))
+* [[LymphTotal](http://document.tencentcloudapi.woa.com/document/product/1314/56230#LymphTotal)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[LymphTotal](http://document.tencentcloudapi.woa.com/document/product/1314/56230#LymphTotal))
+* [[MainDiseaseHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MainDiseaseHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[MainDiseaseHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MainDiseaseHistoryBlock))
+* [[Maternity](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Maternity)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[Maternity](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Maternity))
+* [[MaternityDesc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MaternityDesc)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[MaternityDesc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MaternityDesc))
+* [[MaternitySummary](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MaternitySummary)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[MaternitySummary](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MaternitySummary))
+* [[MenstrualFlowBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualFlowBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[MenstrualFlowBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualFlowBlock))
+* [[MenstrualHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[MenstrualHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualHistoryBlock))
+* [[MenstrualHistoryDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualHistoryDetailBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[MenstrualHistoryDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualHistoryDetailBlock))
+* [[MenstrualPeriodBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualPeriodBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[MenstrualPeriodBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstrualPeriodBlock))
+* [[MenstruationOrNotBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstruationOrNotBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[MenstruationOrNotBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MenstruationOrNotBlock))
+* [[Molecular](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Molecular)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[Molecular](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Molecular))
+* [[MolecularValue](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MolecularValue)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[MolecularValue](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MolecularValue))
+* [[NeglistBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NeglistBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[NeglistBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NeglistBlock))
+* [[NeonatalInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NeonatalInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[NeonatalInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NeonatalInfo))
+* [[NumValue](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NumValue)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[NumValue](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NumValue))
+* [[ObstetricalHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ObstetricalHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[ObstetricalHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ObstetricalHistoryBlock))
+* [[OtherInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#OtherInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[OtherInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#OtherInfo))
+* [[PTNM](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PTNM)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[PTNM](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PTNM))
+* [[PTNMBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PTNMBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[PTNMBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PTNMBlock))
+* [[ParagraphBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ParagraphBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[ParagraphBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ParagraphBlock))
+* [[ParentInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ParentInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[ParentInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ParentInfo))
+* [[PartDesc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PartDesc)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[PartDesc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PartDesc))
+* [[PathologicalDiagnosisBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PathologicalDiagnosisBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[PathologicalDiagnosisBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PathologicalDiagnosisBlock))
+* [[PathologicalDiagnosisDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PathologicalDiagnosisDetailBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[PathologicalDiagnosisDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PathologicalDiagnosisDetailBlock))
+* [[PathologyV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PathologyV2)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[PathologyV2](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PathologyV2))
+* [[PersonalHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PersonalHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[PersonalHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PersonalHistoryBlock))
+* [[Point](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Point)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[Point](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Point))
+* [[PoslistBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PoslistBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[PoslistBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#PoslistBlock))
+* [[Rectangle](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Rectangle)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[Rectangle](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Rectangle))
+* [[RelapseDateBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelapseDateBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[RelapseDateBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelapseDateBlock))
+* [[RelativeCancerHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelativeCancerHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[RelativeCancerHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelativeCancerHistoryBlock))
+* [[RelativeHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelativeHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[RelativeHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelativeHistoryBlock))
+* [[RelativeHistoryDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelativeHistoryDetailBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[RelativeHistoryDetailBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#RelativeHistoryDetailBlock))
+* [[Report](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Report)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[Report](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Report))
+* [[ReportTypeVersion](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ReportTypeVersion)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[ReportTypeVersion](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ReportTypeVersion))
+* [[ResultInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ResultInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[ResultInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ResultInfo))
+* [[SmokeHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SmokeHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[SmokeHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SmokeHistoryBlock))
+* [[SummaryInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SummaryInfo)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[SummaryInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SummaryInfo))
+* [[SurgeryConditionBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SurgeryConditionBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[SurgeryConditionBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SurgeryConditionBlock))
+* [[SurgeryHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SurgeryHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[SurgeryHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SurgeryHistoryBlock))
+* [[SurgeryListBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SurgeryListBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[SurgeryListBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SurgeryListBlock))
+* [[TableIndicators](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TableIndicators)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[TableIndicators](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TableIndicators))
+* [[TimelineEvent](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TimelineEvent)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[TimelineEvent](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TimelineEvent))
+* [[TimelineInformation](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TimelineInformation)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[TimelineInformation](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TimelineInformation))
+* [[TransfusionHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TransfusionHistoryBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[TransfusionHistoryBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TransfusionHistoryBlock))
+* [[TreatmentRecordBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TreatmentRecordBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[TreatmentRecordBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TreatmentRecordBlock))
+* [[ValueBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ValueBlock)](http://document.tencentcloudapi.woa.com/document/product/1314/56230#[ValueBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ValueBlock))
+
+修改数据结构：
+
+* [BiopsyPart](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BiopsyPart)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Value, Src
+
+* [BlockInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#BlockInfo)
+
+	* 新增成员：Size
+
+	* <font color="#dd0000">**修改成员**：</font>Index, Positive, Src, Value, Type, Name
+
+* [Desc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Desc)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Text, Organ, Tuber
+
+* [EndoscopyDesc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EndoscopyDesc)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Text, Organ
+
+* [EndoscopyOrgan](http://document.tencentcloudapi.woa.com/document/product/1314/56230#EndoscopyOrgan)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Part, Index, Src, PartAlias, SymDescList
+
+* [FirstPage](http://document.tencentcloudapi.woa.com/document/product/1314/56230#FirstPage)
+
+	* 新增成员：DamagePoi, Fp2NdItems
+
+	* <font color="#dd0000">**修改成员**：</font>DischargeDiagnosis, PathologicalDiagnosis, ClinicalDiagnosis
+
+* [IndicatorItem](http://document.tencentcloudapi.woa.com/document/product/1314/56230#IndicatorItem)
+
+	* 新增成员：InferNormal
+
+* [NormPart](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NormPart)
+
+	* 新增成员：PartDetail
+
+	* <font color="#dd0000">**修改成员**：</font>Part, PartDirection, Tissue, TissueDirection, Upper
+
+* [NormSize](http://document.tencentcloudapi.woa.com/document/product/1314/56230#NormSize)
+
+	* 新增成员：Impl
+
+	* <font color="#dd0000">**修改成员**：</font>Number, Type, Unit
+
+* [Organ](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Organ)
+
+	* 新增成员：Transparent, MriAdc, MriDwi, MriT1, MriT2, CtHu, Suvmax, Metabolism, RadioactiveUptake, LymphEnlargement, ImageFeature, Duct, Trend, Operation, Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Part, Size, Envelope, Edge, InnerEcho, Gland, Shape, Thickness, ShapeAttr, CDFI, SymDesc, SizeStatus, Outline, Structure, Density, Vas, Cysticwall, Capsule, IsthmusThicknese, InnerEchoDistribution, Src, Index
+
+* [Part](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Part)
+
+	* 新增成员：ValueBrief
+
+	* <font color="#dd0000">**修改成员**：</font>Index, NormPart, Src, Value, Name
+
+* [Size](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Size)
+
+	* 新增成员：Name
+
+	* <font color="#dd0000">**修改成员**：</font>Index, NormSize, Src, Value
+
+* [Summary](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Summary)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Symptom, Text
+
+* [Surgery](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Surgery)
+
+	* 新增成员：OtherInfo
+
+	* <font color="#dd0000">**修改成员**：</font>SurgeryHistory
+
+* [SymptomInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#SymptomInfo)
+
+	* 新增成员：Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Grade, Part, Index, Symptom, Attrs, Src
+
+* [Template](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Template)
+
+	* 新增成员：ReportTypeDesc, PathologyV2, C14, Exame, MedDocV2, IndicatorV3, Covid, Maternity, Eye, BirthCert, Timeline
+
+	* <font color="#dd0000">**修改成员**：</font>PatientInfo, ReportInfo, Check, Pathology, MedDoc, DiagCert, FirstPage, Indicator, ReportType, MedicalRecordInfo, Hospitalization, Surgery, Electrocardiogram, Endoscopy, Prescription, VaccineCertificate, OcrText, OcrResult
+
+* [TuberInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TuberInfo)
+
+	* 新增成员：Transparent, MriAdc, MriDwi, MriT1, MriT2, CtHu, Suvmax, Metabolism, RadioactiveUptake, SymDesc, ImageFeature, Coords
+
+	* <font color="#dd0000">**修改成员**：</font>Type, Part, Size, Multiple, AspectRatio, Edge, InnerEcho, RearEcho, Elastic, Shape, ShapeAttr, SkinMedulla, Trend, Calcification, Envelope, Enhancement, LymphEnlargement, LymphDoor, Activity, Operation, CDFI, Index, SizeStatus, InnerEchoDistribution, InnerEchoType, Outline, Structure, Density, Vas, Cysticwall, Capsule, IsthmusThicknese, Src
+
+* [Vaccination](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Vaccination)
+
+	* 新增成员：Lot
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Vaccine, Dose, Date, LotNumber, Manufacturer, Clinic, Site, Provider
+
+
 ### 第 10 次发布
 
 发布时间：2022-12-08 06:53:41
@@ -33806,6 +34249,28 @@
 
 
 ## 文字识别(ocr) 版本：2018-11-19
+
+### 第 42 次发布
+
+发布时间：2023-03-02 01:27:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [MixedInvoiceOCR](http://document.tencentcloudapi.woa.com/document/product/866/37835)
+
+	* 新增入参：ReturnMultiplePage
+
+
+修改数据结构：
+
+* [MixedInvoiceItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#MixedInvoiceItem)
+
+	* 新增成员：Page
+
 
 ### 第 41 次发布
 
@@ -35896,6 +36361,25 @@
 
 
 ## 云压测(pts) 版本：2021-07-28
+
+### 第 15 次发布
+
+发布时间：2023-03-02 01:29:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Job](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Job)
+
+	* 新增成员：ProjectName, ScenarioName
+
+* [Scenario](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Scenario)
+
+	* 新增成员：ProjectName
+
 
 ### 第 14 次发布
 
@@ -39814,7 +40298,7 @@
 
 
 
-## SSL证书监控SSLPod(sslpod) 版本：2019-06-05
+## 证书监控 SSLPod(sslpod) 版本：2019-06-05
 
 ### 第 2 次发布
 
@@ -43456,7 +43940,7 @@
 
 
 
-## 弹性微服务 TEM(tem) 版本：2020-12-21
+## 弹性微服务(tem) 版本：2020-12-21
 
 ### 第 1 次发布
 
@@ -43512,7 +43996,7 @@
 
 
 
-## 弹性微服务 TEM(tem) 版本：2021-07-01
+## 弹性微服务(tem) 版本：2021-07-01
 
 ### 第 31 次发布
 
@@ -44713,7 +45197,7 @@
 
 
 
-## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+## TI-ONE 训练平台(tione) 版本：2019-10-22
 
 ### 第 1 次发布
 
@@ -44775,7 +45259,7 @@
 
 
 
-## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+## TI-ONE 训练平台(tione) 版本：2021-11-11
 
 ### 第 18 次发布
 
@@ -51434,6 +51918,21 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 70 次发布
+
+发布时间：2023-03-02 01:39:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DefaultVpcSubnet](http://document.tencentcloudapi.woa.com/document/product/215/15824#DefaultVpcSubnet)
+
+	* 新增成员：VpcName, SubnetName, CidrBlock
+
 
 ### 第 69 次发布
 

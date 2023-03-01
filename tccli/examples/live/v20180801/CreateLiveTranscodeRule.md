@@ -1,6 +1,6 @@
 **Example 1: 请求示例**
 
-
+CreateLiveTranscodeRule 默认示例。
 
 Input: 
 

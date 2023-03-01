@@ -505,7 +505,6 @@
       "document": "告警通知渠道",
       "members": [
         {
-          "default": "",
           "document": "通知模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "notice-xx",
           "member": "string",
@@ -516,7 +515,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "AMP consumer ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "consumer-xx",
           "member": "string",
@@ -533,7 +531,6 @@
       "document": "告警通知接收组",
       "members": [
         {
-          "default": "",
           "document": "Notice ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "notice-xx",
           "member": "string",
@@ -544,7 +541,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Consumer ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "consumer-xx",
           "member": "string",
@@ -555,7 +551,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "project-xx",
           "member": "string",
@@ -566,7 +561,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -577,7 +571,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-02T03:18:35+08:00",
           "member": "string",
@@ -588,7 +581,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-02T03:18:35+08:00",
           "member": "string",
@@ -599,7 +591,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "App ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "int64",
@@ -610,7 +601,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -621,7 +611,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -4845,7 +4834,6 @@
       "document": "任务",
       "members": [
         {
-          "default": "",
           "document": "任务的JobID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "job-xx",
           "member": "string",
@@ -4856,7 +4844,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务的场景ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "scenario-xx",
           "member": "string",
@@ -4867,7 +4854,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务的施压配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Load",
@@ -4878,7 +4864,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "此字段不再使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"a.prop\", \"b.prop\"]",
           "member": "string",
@@ -4889,7 +4874,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务的数据集文件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TestData",
@@ -4900,7 +4884,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "此字段不再使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"a.jar\", \"b.jar\"]",
           "member": "string",
@@ -4911,7 +4894,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务的运行状态, JobUnknown: 0,JobCreated:1,JobPending:2, JobPreparing:3,JobSelectClustering:4,JobCreateTasking:5,JobSyncTasking:6\nJobRunning:11,JobFinished:12,JobPrepareException:13,JobFinishException:14,JobAborting:15,JobAborted:16,JobAbortException:17,JobDeleted:18,\nJobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -4922,7 +4904,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务的开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-08T16:08:50+08:00",
           "member": "datetime_iso",
@@ -4933,7 +4914,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务的结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-08T16:08:50+08:00",
           "member": "datetime_iso",
@@ -4944,7 +4924,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务的最大VU数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -4955,7 +4934,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务的备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a test",
           "member": "string",
@@ -4966,7 +4944,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误率百分比\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.5",
           "member": "float",
@@ -4977,7 +4954,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务发起人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tom",
           "member": "string",
@@ -4988,7 +4964,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "此字段不再使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LoadSource",
@@ -4999,7 +4974,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -5010,7 +4984,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最大每秒请求数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -5021,7 +4994,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "总请求数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "float",
@@ -5032,7 +5004,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "平均每秒请求数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "float",
@@ -5043,7 +5014,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "平均响应时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
@@ -5054,7 +5024,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "响应时间第99百分位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
@@ -5065,7 +5034,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "响应时间第95百分位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
@@ -5076,7 +5044,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "响应时间第90百分位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
@@ -5087,7 +5054,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "此字段不再使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"a.js\", \"b.js\"]",
           "member": "string",
@@ -5098,7 +5064,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最大响应时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
@@ -5109,7 +5074,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最小响应时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
@@ -5120,7 +5084,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "发压host信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LoadSource",
@@ -5131,7 +5094,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "测试脚本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScriptInfo",
@@ -5142,7 +5104,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "协议脚本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ProtocolInfo",
@@ -5153,7 +5114,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "请求文件信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfo",
@@ -5164,7 +5124,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "拓展包文件信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfo",
@@ -5175,7 +5134,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "定时任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cron-xx",
           "member": "string",
@@ -5186,7 +5144,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "场景类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "js",
           "member": "string",
@@ -5197,7 +5154,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名绑定配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DomainNameConfig",
@@ -5208,7 +5164,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "是否为调试型的压测任务",
           "member": "bool",
@@ -5219,7 +5174,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "中断原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -5230,7 +5184,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-08-09T10:27:22+08:00",
           "member": "datetime_iso",
@@ -5241,7 +5194,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "project-xx",
           "member": "string",
@@ -5252,7 +5204,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "通知事件回调\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NotificationHook",
@@ -5263,7 +5214,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "每秒接收字节数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123.456",
           "member": "float",
@@ -5274,7 +5224,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "每秒发送字节数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123.456",
           "member": "float",
@@ -5285,11 +5234,30 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "已完成",
           "member": "string",
           "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "test-project\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "test-scenario\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScenarioName",
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -6422,7 +6390,6 @@
       "document": "场景列表",
       "members": [
         {
-          "default": "",
           "document": "场景ID",
           "example": "scenario-xx",
           "member": "string",
@@ -6433,7 +6400,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "场景名",
           "example": "test",
           "member": "string",
@@ -6444,7 +6410,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "场景描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a test scenario",
           "member": "string",
@@ -6455,7 +6420,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "k6",
           "member": "string",
@@ -6466,7 +6430,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "场景状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -6477,7 +6440,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "施压配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Load",
@@ -6488,7 +6450,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "deprecated\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "WyJhYmMiLCAiZGVmZyJdCg==",
           "member": "string",
@@ -6499,7 +6460,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "deprecated\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"a.prop\",\"b.prop\"]",
           "member": "string",
@@ -6510,7 +6470,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "deprecated\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"a.jar\",\"b.jar\"]",
           "member": "string",
@@ -6521,7 +6480,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "测试数据集\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TestData",
@@ -6532,7 +6490,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "SLA规则的ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sla-xx",
           "member": "string",
@@ -6543,7 +6500,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Cron Job规则的ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cron-xx",
           "member": "string",
@@ -6554,7 +6510,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "场景创建时间",
           "example": "2021-08-16 15:09:56",
           "member": "string",
@@ -6565,7 +6520,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "场景修改时间",
           "example": "2021-08-16 15:09:56",
           "member": "string",
@@ -6576,7 +6530,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "project-xx",
           "member": "string",
@@ -6587,7 +6540,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "App ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "int64",
@@ -6598,7 +6550,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -6609,7 +6560,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -6620,7 +6570,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "测试脚本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScriptInfo",
@@ -6631,7 +6580,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "协议文件信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ProtocolInfo",
@@ -6642,7 +6590,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "请求文件信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfo",
@@ -6653,7 +6600,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "SLA 策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SLAPolicy",
@@ -6664,7 +6610,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "扩展包信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfo",
@@ -6675,7 +6620,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名解析配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DomainNameConfig",
@@ -6686,7 +6630,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "通知事件回调\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NotificationHook",
@@ -6697,11 +6640,20 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建人员\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Owner",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "场景所在的项目的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ProjectName",
           "required": false,
           "type": "string",
           "value_allowed_null": true,

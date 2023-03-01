@@ -8,11 +8,11 @@ Input:
 tccli essbasic ChannelCreateFlowSignUrl --cli-unfold-argument  \
     --Agent.ProxyAppId c17bdf***********200fef3d \
     --Agent.ProxyOperator.OpenId 00498cc***********3aff766cac \
-    --Agent.AppId xx \
+    --Agent.AppId test \
     --Agent.ProxyOrganizationOpenId d7c13a8***********0ee248f04 \
-    --FlowApproverInfos.0.Mobile xx \
-    --FlowApproverInfos.0.Name xx \
-    --FlowId xx
+    --FlowApproverInfos.0.Mobile test \
+    --FlowApproverInfos.0.Name test \
+    --FlowId test
 ```
 
 Output: 
@@ -22,9 +22,9 @@ Output:
         "FlowApproverUrlInfos": [
             {
                 "ApproverType": "PERSON",
-                "Mobile": "xx",
-                "Name": "xx",
-                "SignUrl": "xx"
+                "Mobile": "test",
+                "Name": "test",
+                "SignUrl": "test"
             }
         ],
         "RequestId": "s1672313474209059745"

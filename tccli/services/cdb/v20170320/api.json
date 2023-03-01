@@ -378,6 +378,13 @@
       "output": "DescribeDBPriceResponse",
       "status": "online"
     },
+    "DescribeDBRoutes": {
+      "document": "本接口查询云数据库实例的路由信息，包括内网的地址，只对内使用。",
+      "input": "DescribeDBRoutesRequest",
+      "name": "查询云数据库实例的路由",
+      "output": "DescribeDBRoutesResponse",
+      "status": "online"
+    },
     "DescribeDBSecurityGroups": {
       "document": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。",
       "input": "DescribeDBSecurityGroupsRequest",
@@ -8114,6 +8121,42 @@
       ],
       "type": "object"
     },
+    "DescribeDBRoutesRequest": {
+      "document": "DescribeDBRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "cdb-q0ltezep",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBRoutesResponse": {
+      "document": "DescribeDBRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "路由信息数组",
+          "example": "无",
+          "member": "Route",
+          "name": "Routers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBSecurityGroupsRequest": {
       "document": "DescribeDBSecurityGroups请求参数结构体",
       "members": [
@@ -15640,6 +15683,28 @@
       ],
       "usage": "out"
     },
+    "Route": {
+      "document": "路由信息",
+      "members": [
+        {
+          "default": "",
+          "document": "虚拟地址的类型，1-外网TGW；2-基础网络；3-VPC网络；4-腾讯云支持环境",
+          "member": "int64",
+          "name": "VipType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "VipInfo数组",
+          "member": "VipInfo",
+          "name": "VipList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "out"
+    },
     "Rule": {
       "document": "权重分配规则",
       "members": [
@@ -17087,6 +17152,45 @@
         }
       ],
       "type": "object"
+    },
+    "VipInfo": {
+      "document": "虚拟地址信息",
+      "members": [
+        {
+          "default": "",
+          "document": "虚拟地址的IP",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "虚拟地址的port",
+          "example": "13306",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SNAT使用的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[4.3.2.1]",
+          "member": "string",
+          "name": "SnatIpList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "ZoneConf": {
       "document": "多可用区信息",

@@ -8,9 +8,9 @@ Input:
 tccli vpc ModifyNetDetect --cli-unfold-argument  \
     --NetDetectId netd-12345678 \
     --NetDetectName test \
-    --DetectDestinationIp 10.0.0.2 10.0.0.3 \
     --NextHopType NORMAL_CVM \
-    --NextHopDestination 10.0.0.4
+    --NextHopDestination 10.0.0.4 \
+    --DetectDestinationIp 10.0.0.3 10.0.0.2
 ```
 
 Output: 

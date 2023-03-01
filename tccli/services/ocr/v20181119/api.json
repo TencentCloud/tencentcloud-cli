@@ -22,7 +22,7 @@
       "status": "online"
     },
     "BankSlipOCR": {
-      "document": "本接口支持银行回单全字段的识别，包括付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。\n           ",
+      "document": "本接口支持银行回单全字段的识别，包括付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。\n\n默认接口请求频率限制：10次/秒。",
       "input": "BankSlipOCRRequest",
       "name": "银行回单识别",
       "output": "BankSlipOCRResponse",
@@ -36,7 +36,7 @@
       "status": "online"
     },
     "BusInvoiceOCR": {
-      "document": "本接口支持识别公路汽车客票的发票代码、发票号码、日期、姓名、票价等字段。",
+      "document": "本接口支持识别公路汽车客票的发票代码、发票号码、日期、姓名、票价等字段。\n\n默认接口请求频率限制：5次/秒。",
       "input": "BusInvoiceOCRRequest",
       "name": "汽车票识别",
       "output": "BusInvoiceOCRResponse",
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DutyPaidProofOCR": {
-      "document": "本接口支持对完税证明的税号、纳税人识别号、纳税人名称、金额合计大写、金额合计小写、填发日期、税务机关、填票人等关键字段的识别。",
+      "document": "本接口支持对完税证明的税号、纳税人识别号、纳税人名称、金额合计大写、金额合计小写、填发日期、税务机关、填票人等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "DutyPaidProofOCRRequest",
       "name": "完税证明识别",
       "output": "DutyPaidProofOCRResponse",
@@ -141,7 +141,7 @@
       "status": "online"
     },
     "FlightInvoiceOCR": {
-      "document": "本接口支持机票行程单关键字段的识别，包括旅客姓名、有效身份证件号码、电子客票号码、验证码、填开单位、其他税费、燃油附加费、民航发展基金、保险费、销售单位代号、始发地、目的地、航班号、时间、日期、座位等级、承运人、发票消费类型、票价、合计金额、填开日期、国内国际标签、印刷序号、客票级别/类别、客票生效日期、有效期截止日期、免费行李等字段，支持航班信息多行明细输出。",
+      "document": "本接口支持机票行程单关键字段的识别，包括旅客姓名、有效身份证件号码、电子客票号码、验证码、填开单位、其他税费、燃油附加费、民航发展基金、保险费、销售单位代号、始发地、目的地、航班号、时间、日期、座位等级、承运人、发票消费类型、票价、合计金额、填开日期、国内国际标签、印刷序号、客票级别/类别、客票生效日期、有效期截止日期、免费行李等字段，支持航班信息多行明细输出。\n\n默认接口请求频率限制：5次/秒。",
       "input": "FlightInvoiceOCRRequest",
       "name": "机票行程单识别",
       "output": "FlightInvoiceOCRResponse",
@@ -239,7 +239,7 @@
       "status": "online"
     },
     "InvoiceGeneralOCR": {
-      "document": "本接口支持对通用机打发票的发票代码、发票号码、日期、购买方识别号、销售方识别号、校验码、小写金额等关键字段的识别。",
+      "document": "本接口支持对通用机打发票的发票代码、发票号码、日期、购买方识别号、销售方识别号、校验码、小写金额等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "InvoiceGeneralOCRRequest",
       "name": "通用机打发票识别",
       "output": "InvoiceGeneralOCRResponse",
@@ -274,7 +274,7 @@
       "status": "online"
     },
     "MaskingVideoSensitiveData": {
-      "document": "证照视频脱敏",
+      "document": "证照视频脱敏\n\n默认接口请求频率限制：5次/秒。",
       "input": "MaskingVideoSensitiveDataRequest",
       "name": "证照视频脱敏",
       "output": "MaskingVideoSensitiveDataResponse",
@@ -337,7 +337,7 @@
       "status": "online"
     },
     "QuotaInvoiceOCR": {
-      "document": "本接口支持定额发票的发票号码、发票代码、金额(大小写)、发票消费类型、地区及是否有公司印章等关键字段的识别。",
+      "document": "本接口支持定额发票的发票号码、发票代码、金额(大小写)、发票消费类型、地区及是否有公司印章等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "QuotaInvoiceOCRRequest",
       "name": "定额发票识别",
       "output": "QuotaInvoiceOCRResponse",
@@ -393,7 +393,7 @@
       "status": "online"
     },
     "RecognizeMedicalInvoiceOCR": {
-      "document": "医疗发票识别目前支持全国统一门诊发票、全国统一住院发票、以及部分地方的门诊和住院发票的识别。\n",
+      "document": "医疗发票识别目前支持全国统一门诊发票、全国统一住院发票、以及部分地方的门诊和住院发票的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "RecognizeMedicalInvoiceOCRRequest",
       "name": "医疗票据识别",
       "output": "RecognizeMedicalInvoiceOCRResponse",
@@ -498,7 +498,7 @@
       "status": "online"
     },
     "ShipInvoiceOCR": {
-      "document": "本接口支持识别轮船票的发票代码、发票号码、日期、姓名、票价、始发地、目的地、姓名、时间、发票消费类型、省、市、币种字段。",
+      "document": "本接口支持识别轮船票的发票代码、发票号码、日期、姓名、票价、始发地、目的地、姓名、时间、发票消费类型、省、市、币种字段。\n\n默认接口请求频率限制：5次/秒。",
       "input": "ShipInvoiceOCRRequest",
       "name": "轮船票识别",
       "output": "ShipInvoiceOCRResponse",
@@ -519,7 +519,7 @@
       "status": "online"
     },
     "TaxiInvoiceOCR": {
-      "document": "本接口支持出租车发票关键字段的识别，包括发票号码、发票代码、金额、日期、上下车时间、里程、车牌号、发票类型及所属地区等字段。",
+      "document": "本接口支持出租车发票关键字段的识别，包括发票号码、发票代码、金额、日期、上下车时间、里程、车牌号、发票类型及所属地区等字段。\n\n默认接口请求频率限制：5次/秒。",
       "input": "TaxiInvoiceOCRRequest",
       "name": "出租车发票识别",
       "output": "TaxiInvoiceOCRResponse",
@@ -533,14 +533,14 @@
       "status": "online"
     },
     "TollInvoiceOCR": {
-      "document": "本接口支持对过路过桥费发票的发票代码、发票号码、日期、小写金额等关键字段的识别。",
+      "document": "本接口支持对过路过桥费发票的发票代码、发票号码、日期、小写金额等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "TollInvoiceOCRRequest",
       "name": "过路过桥费发票识别",
       "output": "TollInvoiceOCRResponse",
       "status": "online"
     },
     "TrainTicketOCR": {
-      "document": "本接口支持火车票全字段的识别，包括编号、票价、姓名、座位号、出发时间、出发站、到达站、车次、席别、发票类型及序列号等。\n",
+      "document": "本接口支持火车票全字段的识别，包括编号、票价、姓名、座位号、出发时间、出发站、到达站、车次、席别、发票类型及序列号等。\n\n默认接口请求频率限制：5次/秒。",
       "input": "TrainTicketOCRRequest",
       "name": "火车票识别",
       "output": "TrainTicketOCRResponse",
@@ -554,21 +554,21 @@
       "status": "online"
     },
     "VatInvoiceVerify": {
-      "document": "本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票。",
+      "document": "本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票。\n\n默认接口请求频率限制：20次/秒。",
       "input": "VatInvoiceVerifyRequest",
       "name": "增值税发票核验",
       "output": "VatInvoiceVerifyResponse",
       "status": "online"
     },
     "VatInvoiceVerifyNew": {
-      "document": "本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票、通用机打电子发票（广东和浙江）。",
+      "document": "本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票、通用机打电子发票（广东和浙江）。\n\n默认接口请求频率限制：20次/秒。",
       "input": "VatInvoiceVerifyNewRequest",
       "name": "增值税发票核验（新版）",
       "output": "VatInvoiceVerifyNewResponse",
       "status": "online"
     },
     "VatRollInvoiceOCR": {
-      "document": "本接口支持对增值税发票（卷票）的发票代码、发票号码、日期、校验码、合计金额（小写）等关键字段的识别。",
+      "document": "本接口支持对增值税发票（卷票）的发票代码、发票号码、日期、校验码、合计金额（小写）等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "VatRollInvoiceOCRRequest",
       "name": "增值税发票（卷票）识别",
       "output": "VatRollInvoiceOCRResponse",
@@ -1071,7 +1071,6 @@
       "document": "BankSlipOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -1081,7 +1080,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -1091,7 +1089,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -1101,7 +1098,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -1121,7 +1117,6 @@
           "example": "无",
           "member": "BankSlipInfo",
           "name": "BankSlipInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -1131,7 +1126,6 @@
           "example": "0",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -1379,7 +1373,6 @@
       "document": "BusInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -1389,7 +1382,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
           "member": "string",
@@ -1399,7 +1391,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -1409,7 +1400,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -1429,7 +1419,6 @@
           "example": "无",
           "member": "BusInvoiceInfo",
           "name": "BusInvoiceInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -1439,7 +1428,6 @@
           "example": "358",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -2395,7 +2383,6 @@
       "document": "DutyPaidProofOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -2405,7 +2392,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
           "member": "string",
@@ -2415,7 +2401,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -2425,7 +2410,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -2445,7 +2429,6 @@
           "example": "无",
           "member": "DutyPaidProofInfo",
           "name": "DutyPaidProofInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -2455,7 +2438,6 @@
           "example": "0",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -3326,7 +3308,6 @@
       "document": "FlightInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "iVBORw0KGg ....",
           "member": "string",
@@ -3336,7 +3317,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -3346,7 +3326,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -3356,7 +3335,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -3376,7 +3354,6 @@
           "example": "无",
           "member": "FlightInvoiceInfo",
           "name": "FlightInvoiceInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -4706,7 +4683,6 @@
       "document": "InvoiceGeneralOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -4716,7 +4692,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
           "member": "string",
@@ -4726,7 +4701,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -4736,7 +4710,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -4756,7 +4729,6 @@
           "example": "无",
           "member": "InvoiceGeneralInfo",
           "name": "InvoiceGeneralInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -4766,7 +4738,6 @@
           "example": "0",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -5643,7 +5614,6 @@
       "document": "混贴票据单张发票识别信息",
       "members": [
         {
-          "default": "",
           "document": "识别结果。\nOK：表示识别成功；FailedOperation.UnsupportedInvioce：表示不支持识别；\nFailedOperation.UnKnowError：表示识别失败；\n其它错误码见各个票据接口的定义。",
           "example": "无",
           "member": "string",
@@ -5654,7 +5624,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "识别出的图片所属的票据类型。\n-1：未知类型\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票",
           "example": "无",
           "member": "int64",
@@ -5665,7 +5634,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "识别出的图片在混贴票据图片中的位置信息。与Angel结合可以得出原图位置，组成RotatedRect((X+0.5\\*Width,Y+0.5\\*Height), (Width, Height), Angle)，详情可参考OpenCV文档。",
           "example": "无",
           "member": "Rect",
@@ -5676,7 +5644,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "识别出的图片在混贴票据图片中的旋转角度。",
           "example": "无",
           "member": "float",
@@ -5687,13 +5654,22 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "识别到的内容。",
           "example": "无",
           "member": "SingleInvoiceInfo",
           "name": "SingleInvoiceInfos",
           "required": true,
           "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "发票处于识别图片或PDF文件中的页教，默认从1开始。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         }
@@ -5704,7 +5680,6 @@
       "document": "MixedInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -5714,7 +5689,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -5724,8 +5698,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n----------------------\n-1：其他发票,（仅返回，本参数不支持传入-1，请在ReturnOther中控制是否返回）",
+          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n----------------------\n-1：其他发票,（只传入此类型时，图片均采用其他票类型进行识别）",
           "example": "无",
           "member": "int64",
           "name": "Types",
@@ -5734,7 +5707,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否识别其他类型发票，默认为Yes\nYes：识别其他类型发票\nNo：不识别其他类型发票",
           "example": "无",
           "member": "string",
@@ -5744,7 +5716,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -5754,13 +5725,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "1",
           "member": "int64",
           "name": "PdfPageNumber",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "是否开启PDF多页识别，默认值为false，开启后可同时支持多页PDF的识别返回，仅支持返回文件前30页。开启后IsPDF和PdfPageNumber入参不进行控制。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnMultiplePage",
+          "required": false,
+          "type": "bool",
           "visibility": 1
         }
       ],
@@ -5774,7 +5753,6 @@
           "example": "无",
           "member": "MixedInvoiceItem",
           "name": "MixedInvoiceItems",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6788,7 +6766,6 @@
       "document": "QuotaInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -6798,7 +6775,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -6808,7 +6784,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -6818,7 +6793,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -6838,7 +6812,6 @@
           "example": "04947858",
           "member": "string",
           "name": "InvoiceNum",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6848,7 +6821,6 @@
           "example": "131001864304",
           "member": "string",
           "name": "InvoiceCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6858,7 +6830,6 @@
           "example": "伍元",
           "member": "string",
           "name": "Rate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6868,7 +6839,6 @@
           "example": "5.00",
           "member": "string",
           "name": "RateNum",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6878,7 +6848,6 @@
           "example": "交通",
           "member": "string",
           "name": "InvoiceType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6888,7 +6857,6 @@
           "example": "上海市",
           "member": "string",
           "name": "Province",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6898,7 +6866,6 @@
           "example": "无",
           "member": "string",
           "name": "City",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6908,7 +6875,6 @@
           "example": "1",
           "member": "string",
           "name": "HasStamp",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -7797,7 +7763,6 @@
       "document": "RecognizeMedicalInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的Base64 值。\n支持的文件格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载文件经Base64编码后不超过 7M。文件下载时间不超过 3 秒。\n输入参数 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -7807,7 +7772,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的Url 地址。\n支持的文件格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载文件经 Base64 编码后不超过 7M。文件下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "无",
           "member": "string",
@@ -7817,7 +7781,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否需要返回识别出的文本行在原图上的四点坐标，默认不返回",
           "example": "false",
           "member": "bool",
@@ -7827,7 +7790,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否需要返回识别出的文本行在旋转纠正之后的图像中的四点坐标，默认不返回",
           "example": "false",
           "member": "bool",
@@ -7837,7 +7799,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -7847,7 +7808,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -7867,7 +7827,6 @@
           "example": "无",
           "member": "MedicalInvoiceInfo",
           "name": "MedicalInvoiceInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -7877,7 +7836,6 @@
           "example": "无",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -9614,7 +9572,6 @@
       "document": "ShipInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -9624,7 +9581,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
           "member": "string",
@@ -9634,7 +9590,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -9644,7 +9599,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -9664,7 +9618,6 @@
           "example": "无",
           "member": "ShipInvoiceInfo",
           "name": "ShipInvoiceInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -9674,7 +9627,6 @@
           "example": "351",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -10301,7 +10253,6 @@
       "document": "TaxiInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -10311,7 +10262,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -10321,7 +10271,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -10331,7 +10280,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -10351,7 +10299,6 @@
           "example": "134031321361",
           "member": "string",
           "name": "InvoiceNum",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10361,7 +10308,6 @@
           "example": "15326798",
           "member": "string",
           "name": "InvoiceCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10371,7 +10317,6 @@
           "example": "2018年05月17日",
           "member": "string",
           "name": "Date",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10381,7 +10326,6 @@
           "example": "19.00",
           "member": "string",
           "name": "Fare",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10391,7 +10335,6 @@
           "example": "16:09",
           "member": "string",
           "name": "GetOnTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10401,7 +10344,6 @@
           "example": "16:32",
           "member": "string",
           "name": "GetOffTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10411,7 +10353,6 @@
           "example": "9.37",
           "member": "string",
           "name": "Distance",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10421,7 +10362,6 @@
           "example": "安徽省蚌埠市",
           "member": "string",
           "name": "Location",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10431,7 +10371,6 @@
           "example": "C-82851",
           "member": "string",
           "name": "PlateNumber",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10441,7 +10380,6 @@
           "example": "交通",
           "member": "string",
           "name": "InvoiceType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10451,7 +10389,6 @@
           "example": "安徽省",
           "member": "string",
           "name": "Province",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -10461,7 +10398,6 @@
           "example": "蚌埠市",
           "member": "string",
           "name": "City",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -11308,7 +11244,6 @@
       "document": "TollInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -11318,7 +11253,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
           "member": "string",
@@ -11328,7 +11262,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -11338,7 +11271,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -11358,7 +11290,6 @@
           "example": "无",
           "member": "TollInvoiceInfo",
           "name": "TollInvoiceInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -11368,7 +11299,6 @@
           "example": "0",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -11386,7 +11316,6 @@
       "document": "TrainTicketOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -11396,7 +11325,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -11406,7 +11334,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -11416,7 +11343,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -11436,7 +11362,6 @@
           "example": "17C060124",
           "member": "string",
           "name": "TicketNum",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11446,7 +11371,6 @@
           "example": "南京南",
           "member": "string",
           "name": "StartStation",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11456,7 +11380,6 @@
           "example": "上海虹桥",
           "member": "string",
           "name": "DestinationStation",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11466,7 +11389,6 @@
           "example": "2017年12月23日10:33",
           "member": "string",
           "name": "Date",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11476,7 +11398,6 @@
           "example": "G5",
           "member": "string",
           "name": "TrainNum",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11486,7 +11407,6 @@
           "example": "15车18A号",
           "member": "string",
           "name": "Seat",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11496,7 +11416,6 @@
           "example": "周周",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11506,7 +11425,6 @@
           "example": "134.50",
           "member": "string",
           "name": "Price",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11516,7 +11434,6 @@
           "example": "二等座",
           "member": "string",
           "name": "SeatCategory",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11526,7 +11443,6 @@
           "example": "3210231993****6499",
           "member": "string",
           "name": "ID",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11536,7 +11452,6 @@
           "example": "交通",
           "member": "string",
           "name": "InvoiceType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11546,7 +11461,6 @@
           "example": "16804000071224C060124",
           "member": "string",
           "name": "SerialNumber",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11556,7 +11470,6 @@
           "example": "2.00",
           "member": "string",
           "name": "AdditionalCost",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11566,7 +11479,6 @@
           "example": "5.00",
           "member": "string",
           "name": "HandlingFee",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11576,7 +11488,6 @@
           "example": "贰元",
           "member": "string",
           "name": "LegalAmount",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11586,7 +11497,6 @@
           "example": "成都客运段",
           "member": "string",
           "name": "TicketStation",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11596,7 +11506,6 @@
           "example": "83.50",
           "member": "string",
           "name": "OriginalPrice",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11606,7 +11515,6 @@
           "example": "火车票补票",
           "member": "string",
           "name": "InvoiceStyle",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11616,7 +11524,6 @@
           "example": "无",
           "member": "string",
           "name": "ReceiptNumber",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11626,7 +11533,6 @@
           "example": "0",
           "member": "string",
           "name": "IsReceipt",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -12772,7 +12678,6 @@
       "document": "VatRollInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -12782,7 +12687,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
           "member": "string",
@@ -12792,7 +12696,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "false",
           "member": "bool",
@@ -12802,7 +12705,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -12822,7 +12724,6 @@
           "example": "无",
           "member": "VatRollInvoiceInfo",
           "name": "VatRollInvoiceInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -12832,7 +12733,6 @@
           "example": "0",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1

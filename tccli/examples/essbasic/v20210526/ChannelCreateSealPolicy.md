@@ -18,8 +18,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "UserIds": []
+        "UserIds": [
+            "yDdzlxxxxxopk"
+        ],
+        "RequestId": "fdasfavdavxxxx"
     }
 }
 ```

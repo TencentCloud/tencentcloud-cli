@@ -1,21 +1,21 @@
 **Example 1: ChannelCreateMultiFlowSignQRCode**
 
-
+ChannelCreateMultiFlowSignQRCode
 
 Input: 
 
 ```
 tccli essbasic ChannelCreateMultiFlowSignQRCode --cli-unfold-argument  \
-    --FlowName xx \
-    --Agent.ProxyAppId xx \
-    --Agent.ProxyOperator.OpenId xx \
-    --Agent.ProxyOrganizationOpenId xx \
-    --Agent.AppId xx \
+    --FlowName test \
+    --Agent.ProxyAppId test \
+    --Agent.ProxyOperator.OpenId test \
+    --Agent.ProxyOrganizationOpenId test \
+    --Agent.AppId test \
     --FlowEffectiveDay 0 \
-    --TemplateId xx \
+    --TemplateId test \
     --MaxFlowNum 0 \
     --QrEffectiveDay 0 \
-    --CallbackUrl xx
+    --CallbackUrl test
 ```
 
 Output: 
@@ -23,16 +23,16 @@ Output:
 {
     "Response": {
         "QrCode": {
-            "QrCodeUrl": "xx",
+            "QrCodeUrl": "test",
             "ExpiredTime": 5,
-            "QrCodeId": "xx"
+            "QrCodeId": "test"
         },
         "SignUrls": {
-            "EffectiveTime": "xx",
-            "HttpSignUrl": "xx",
-            "AppSignUrl": "xx"
+            "EffectiveTime": "test",
+            "HttpSignUrl": "test",
+            "AppSignUrl": "test"
         },
-        "RequestId": "xx"
+        "RequestId": "test"
     }
 }
 ```

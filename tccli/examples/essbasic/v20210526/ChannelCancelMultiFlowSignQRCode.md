@@ -1,33 +1,33 @@
 **Example 1: ChannelCancelMultiFlowSignQRCode**
 
-
+ChannelCancelMultiFlowSignQRCode
 
 Input: 
 
 ```
 tccli essbasic ChannelCancelMultiFlowSignQRCode --cli-unfold-argument  \
-    --Operator.OpenId xx \
-    --Operator.ClientIp xx \
-    --Operator.CustomUserId xx \
-    --Operator.ProxyIp xx \
-    --Operator.Channel xx \
-    --QrCodeId xx \
-    --Agent.ProxyAppId xx \
-    --Agent.ProxyOrganizationId xx \
-    --Agent.ProxyOperator.OpenId xx \
-    --Agent.ProxyOperator.ClientIp xx \
-    --Agent.ProxyOperator.CustomUserId xx \
-    --Agent.ProxyOperator.ProxyIp xx \
-    --Agent.ProxyOperator.Channel xx \
-    --Agent.ProxyOrganizationOpenId xx \
-    --Agent.AppId xx
+    --Operator.OpenId test \
+    --Operator.ClientIp test \
+    --Operator.CustomUserId test \
+    --Operator.ProxyIp test \
+    --Operator.Channel test \
+    --QrCodeId test \
+    --Agent.ProxyAppId test \
+    --Agent.ProxyOrganizationId test \
+    --Agent.ProxyOperator.OpenId test \
+    --Agent.ProxyOperator.ClientIp test \
+    --Agent.ProxyOperator.CustomUserId test \
+    --Agent.ProxyOperator.ProxyIp test \
+    --Agent.ProxyOperator.Channel test \
+    --Agent.ProxyOrganizationOpenId test \
+    --Agent.AppId test
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "id"
     }
 }
 ```

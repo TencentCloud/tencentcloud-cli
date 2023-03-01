@@ -1,17 +1,17 @@
 **Example 1: 创建网络探测**
 
-
+创建网络探测
 
 Input: 
 
 ```
 tccli vpc CreateNetDetect --cli-unfold-argument  \
     --VpcId vpc-12345678 \
-    --SubnetId subnet-12345678 \
-    --NetDetectName test \
-    --DetectDestinationIp 10.0.0.2 10.0.0.3 \
+    --NextHopDestination 10.0.0.4 \
     --NextHopType NORMAL_CVM \
-    --NextHopDestination 10.0.0.4
+    --NetDetectName test \
+    --DetectDestinationIp 10.0.0.3 10.0.0.2 \
+    --SubnetId subnet-12345678
 ```
 
 Output: 

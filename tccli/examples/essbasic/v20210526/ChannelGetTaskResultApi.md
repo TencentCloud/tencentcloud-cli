@@ -1,6 +1,6 @@
-**Example 1: test示例**
+**Example 1: 查询转换任务**
 
-
+查询文件转换任务
 
 Input: 
 
@@ -22,7 +22,7 @@ Output:
         "TaskId": "2022*********4589282",
         "TaskMessage": "任务处理完成",
         "TaskStatus": 8,
-        "PreviewUrl": "xxxxxx"
+        "PreviewUrl": "https://xxxxx"
     }
 }
 ```

@@ -1,6 +1,6 @@
 **Example 1: 查询有效模板列表**
 
-
+查询有效模板列表
 
 Input: 
 
@@ -23,96 +23,96 @@ Output:
         "Templates": [
             {
                 "ChannelAutoSave": 0,
-                "PdfUrl": "xx",
-                "Description": "xx",
+                "PdfUrl": "test",
+                "Description": "test",
                 "Recipients": [
                     {
-                        "RecipientType": "xx",
-                        "Description": "xx",
+                        "RecipientType": "test",
+                        "Description": "test",
                         "RoutingOrder": 0,
                         "SignType": 0,
-                        "RecipientId": "xx",
+                        "RecipientId": "test",
                         "IsPromoter": true,
                         "RequireValidation": true,
-                        "RoleName": "xx",
+                        "RoleName": "test",
                         "RequireSign": true
                     }
                 ],
-                "TemplateName": "xx",
+                "TemplateName": "test",
                 "CreatedOn": 1234567890,
-                "Creator": "xx",
-                "ChannelTemplateName": "xx",
+                "Creator": "test",
+                "ChannelTemplateName": "test",
                 "SignComponents": [
                     {
-                        "ComponentValue": "xx",
+                        "ComponentValue": "test",
                         "FileIndex": 0,
                         "OffsetX": 0.0,
                         "OffsetY": 0.0,
-                        "ComponentType": "xx",
+                        "ComponentType": "test",
                         "ComponentPosX": 1241.15,
                         "ComponentPosY": 125.12,
-                        "GenerateMode": "xx",
+                        "GenerateMode": "test",
                         "KeywordIndexes": [
                             0
                         ],
                         "ComponentDateFontSize": 0,
-                        "RelativeLocation": "xx",
+                        "RelativeLocation": "test",
                         "ComponentHeight": 12.142,
-                        "ComponentDescription": "xx",
+                        "ComponentDescription": "test",
                         "ComponentRequired": true,
-                        "ComponentId": "xx",
-                        "ComponentRecipientId": "xx",
+                        "ComponentId": "test",
+                        "ComponentRecipientId": "test",
                         "KeywordPage": 0,
                         "ComponentWidth": 1.1,
-                        "ComponentName": "xx",
-                        "ChannelComponentId": "xx",
-                        "ComponentExtra": "xx",
+                        "ComponentName": "test",
+                        "ChannelComponentId": "test",
+                        "ComponentExtra": "test",
                         "ComponentPage": 1,
-                        "KeywordOrder": "xx",
-                        "DocumentId": "xx"
+                        "KeywordOrder": "test",
+                        "DocumentId": "test"
                     }
                 ],
                 "TemplateType": 0,
                 "IsPromoter": true,
-                "PreviewUrl": "xx",
+                "PreviewUrl": "test",
                 "Components": [
                     {
-                        "ComponentValue": "xx",
+                        "ComponentValue": "test",
                         "FileIndex": 0,
                         "OffsetX": 0.0,
                         "OffsetY": 0.0,
-                        "ComponentType": "xx",
+                        "ComponentType": "test",
                         "ComponentPosX": 1241.15,
                         "ComponentPosY": 125.12,
-                        "GenerateMode": "xx",
+                        "GenerateMode": "test",
                         "KeywordIndexes": [
                             0
                         ],
                         "ComponentDateFontSize": 0,
-                        "RelativeLocation": "xx",
+                        "RelativeLocation": "test",
                         "ComponentHeight": 12.142,
-                        "ComponentDescription": "xx",
+                        "ComponentDescription": "test",
                         "ComponentRequired": true,
-                        "ComponentId": "xx",
-                        "ComponentRecipientId": "xx",
+                        "ComponentId": "test",
+                        "ComponentRecipientId": "test",
                         "KeywordPage": 0,
                         "ComponentWidth": 1.1,
-                        "ComponentName": "xx",
-                        "ChannelComponentId": "xx",
-                        "ComponentExtra": "xx",
+                        "ComponentName": "test",
+                        "ChannelComponentId": "test",
+                        "ComponentExtra": "test",
                         "ComponentPage": 1,
-                        "KeywordOrder": "xx",
-                        "DocumentId": "xx"
+                        "KeywordOrder": "test",
+                        "DocumentId": "test"
                     }
                 ],
-                "TemplateId": "xx",
-                "TemplateVersion": "xx",
-                "ChannelTemplateId": "xx"
+                "TemplateId": "test",
+                "TemplateVersion": "test",
+                "ChannelTemplateId": "test"
             }
         ],
         "TotalCount": 1,
         "Limit": 1,
-        "RequestId": "xx",
+        "RequestId": "test",
         "Offset": 1
     }
 }
@@ -120,7 +120,7 @@ Output:
 
 **Example 2: 返回所有component**
 
-
+返回所有component
 
 Input: 
 
@@ -138,132 +138,107 @@ Output:
 ```
 {
     "Response": {
-        "Limit": 20,
-        "Offset": 0,
-        "RequestId": "90ceffe5-94xxxxcd54829065c",
         "Templates": [
             {
+                "TemplateId": "test",
+                "TemplateName": "test",
+                "Description": "test",
                 "Components": [
                     {
-                        "ComponentDateFontSize": 0,
-                        "ComponentDescription": "测试",
-                        "ComponentExtra": "{\"Font\":\"黑体\",\"FontAlign\":\"Left\",\"FontSize\":12,\"MaxLength\":6}",
-                        "ComponentHeight": 18,
-                        "ComponentId": "componentId_3",
+                        "ComponentId": "test",
+                        "ComponentType": "test",
                         "ComponentName": "test",
-                        "ComponentPage": 3,
-                        "ComponentPosX": 453.49572753906,
-                        "ComponentPosY": 312.78833580017,
-                        "ComponentRecipientId": "yDR0JUUxxxx4zjEE9SSKGgNe",
                         "ComponentRequired": true,
-                        "ComponentType": "TEXT",
-                        "ComponentValue": "",
-                        "ComponentWidth": 80,
-                        "DocumentId": "",
+                        "ComponentRecipientId": "test",
                         "FileIndex": 0,
-                        "GenerateMode": ""
-                    },
-                    {
+                        "GenerateMode": "test",
+                        "ComponentWidth": 0,
+                        "ComponentHeight": 0,
+                        "ComponentPage": 0,
+                        "ComponentPosX": 0,
+                        "ComponentPosY": 0,
+                        "ComponentExtra": "test",
+                        "ComponentValue": "test",
                         "ComponentDateFontSize": 0,
-                        "ComponentDescription": "测试",
-                        "ComponentExtra": "{\"Font\":\"黑体\",\"FontAlign\":\"Left\",\"FontSize\":12,\"MaxLength\":6}",
-                        "ComponentHeight": 18,
-                        "ComponentId": "componentId_3",
-                        "ComponentName": "test",
-                        "ComponentPage": 3,
-                        "ComponentPosX": 453.49572753906,
-                        "ComponentPosY": 312.78833580017,
-                        "ComponentRecipientId": "yDR0JUxxxxERyDQZICyF",
-                        "ComponentRequired": true,
-                        "ComponentType": "TEXT",
-                        "ComponentValue": "",
-                        "ComponentWidth": 80,
-                        "DocumentId": "",
-                        "FileIndex": 0,
-                        "GenerateMode": ""
+                        "DocumentId": "test",
+                        "ComponentDescription": "test",
+                        "OffsetX": 0,
+                        "OffsetY": 0,
+                        "ChannelComponentId": "test",
+                        "KeywordOrder": "test",
+                        "KeywordPage": 0,
+                        "RelativeLocation": "test",
+                        "KeywordIndexes": [
+                            0
+                        ]
                     }
                 ],
-                "CreatedOn": 1661503344,
-                "Creator": "xx",
-                "Description": "",
-                "IsPromoter": false,
                 "Recipients": [
                     {
-                        "Description": "",
-                        "IsPromoter": true,
-                        "RecipientId": "yDR0JUUxxxx4zjECvKyhk7jT",
-                        "RecipientType": "ENTERPRISE",
+                        "RecipientId": "test",
+                        "RecipientType": "test",
+                        "Description": "test",
+                        "RoleName": "test",
+                        "RequireValidation": true,
                         "RequireSign": true,
-                        "RequireValidation": false,
-                        "RoleName": "测试环境_自动化测试",
-                        "RoutingOrder": -1,
-                        "SignType": 0
-                    },
-                    {
-                        "Description": "",
-                        "IsPromoter": false,
-                        "RecipientId": "yDR0JUUgxxxx4zjERyDQZICyF",
-                        "RecipientType": "INDIVIDUAL",
-                        "RequireSign": true,
-                        "RequireValidation": false,
-                        "RoleName": "个人签署方1",
-                        "RoutingOrder": -1,
-                        "SignType": 0
+                        "SignType": 0,
+                        "RoutingOrder": 0,
+                        "IsPromoter": true
                     }
                 ],
                 "SignComponents": [
                     {
-                        "ComponentDateFontSize": 0,
-                        "ComponentDescription": "",
-                        "ComponentExtra": "",
-                        "ComponentHeight": 113.33,
-                        "ComponentId": "componentId_4",
-                        "ComponentName": "测试xxxx试盖章1",
-                        "ComponentPage": 3,
-                        "ComponentPosX": 327.49572753906,
-                        "ComponentPosY": 552.09656333923,
-                        "ComponentRecipientId": "yDR0JUxxxxjECvKyhk7jT",
+                        "ComponentId": "test",
+                        "ComponentType": "test",
+                        "ComponentName": "test",
                         "ComponentRequired": true,
-                        "ComponentType": "SIGN_SEAL",
-                        "ComponentValue": "",
-                        "ComponentWidth": 113.33,
-                        "DocumentId": "",
+                        "ComponentRecipientId": "test",
                         "FileIndex": 0,
-                        "GenerateMode": ""
-                    },
-                    {
+                        "GenerateMode": "test",
+                        "ComponentWidth": 0,
+                        "ComponentHeight": 0,
+                        "ComponentPage": 0,
+                        "ComponentPosX": 0,
+                        "ComponentPosY": 0,
+                        "ComponentExtra": "test",
+                        "ComponentValue": "test",
                         "ComponentDateFontSize": 0,
-                        "ComponentDescription": "",
-                        "ComponentExtra": "",
-                        "ComponentHeight": 40,
-                        "ComponentId": "componentId_5",
-                        "ComponentName": "个人签署方1签名1",
-                        "ComponentPage": 3,
-                        "ComponentPosX": 386.49572753906,
-                        "ComponentPosY": 730.18323326111,
-                        "ComponentRecipientId": "yDR0JUUgxxxxxRyDQZICyF",
-                        "ComponentRequired": true,
-                        "ComponentType": "SIGN_SIGNATURE",
-                        "ComponentValue": "",
-                        "ComponentWidth": 112,
-                        "DocumentId": "",
-                        "FileIndex": 0,
-                        "GenerateMode": ""
+                        "DocumentId": "test",
+                        "ComponentDescription": "test",
+                        "OffsetX": 0,
+                        "OffsetY": 0,
+                        "ChannelComponentId": "test",
+                        "KeywordOrder": "test",
+                        "KeywordPage": 0,
+                        "RelativeLocation": "test",
+                        "KeywordIndexes": [
+                            0
+                        ]
                     }
                 ],
-                "TemplateId": "yDR0JUUgygxxxxO4zjESIpKDSkE9",
-                "TemplateName": "xxxxx模板",
-                "TemplateType": 3
+                "TemplateType": 0,
+                "IsPromoter": true,
+                "Creator": "test",
+                "CreatedOn": 0,
+                "PreviewUrl": "test",
+                "PdfUrl": "test",
+                "ChannelTemplateId": "test",
+                "ChannelTemplateName": "test",
+                "ChannelAutoSave": 0,
+                "TemplateVersion": "test"
             }
         ],
-        "TotalCount": 1
+        "TotalCount": 0,
+        "Limit": 1,
+        "Offset": 1,
+        "RequestId": "test"
     }
 }
 ```
 
 **Example 3: 模糊搜索模板名**
 
-
+模糊搜索模板名
 
 Input: 
 
@@ -282,160 +257,100 @@ Output:
 ```
 {
     "Response": {
-        "Limit": 2,
-        "Offset": 0,
-        "RequestId": "3842c68d-dxxxxfc63bcddbf8",
         "Templates": [
             {
-                "Components": [],
-                "CreatedOn": 1661503792,
-                "Creator": "xx",
-                "Description": "",
-                "IsPromoter": false,
+                "TemplateId": "test",
+                "TemplateName": "test",
+                "Description": "test",
+                "Components": [
+                    {
+                        "ComponentId": "test",
+                        "ComponentType": "test",
+                        "ComponentName": "test",
+                        "ComponentRequired": true,
+                        "ComponentRecipientId": "test",
+                        "FileIndex": 0,
+                        "GenerateMode": "test",
+                        "ComponentWidth": 0,
+                        "ComponentHeight": 0,
+                        "ComponentPage": 0,
+                        "ComponentPosX": 0,
+                        "ComponentPosY": 0,
+                        "ComponentExtra": "test",
+                        "ComponentValue": "test",
+                        "ComponentDateFontSize": 0,
+                        "DocumentId": "test",
+                        "ComponentDescription": "test",
+                        "OffsetX": 0,
+                        "OffsetY": 0,
+                        "ChannelComponentId": "test",
+                        "KeywordOrder": "test",
+                        "KeywordPage": 0,
+                        "RelativeLocation": "test",
+                        "KeywordIndexes": [
+                            0
+                        ]
+                    }
+                ],
                 "Recipients": [
                     {
-                        "Description": "",
-                        "IsPromoter": true,
-                        "RecipientId": "yDR0JUUgxxxx2UuO4zjERwT0dL9xs",
-                        "RecipientType": "ENTERPRISE",
+                        "RecipientId": "test",
+                        "RecipientType": "test",
+                        "Description": "test",
+                        "RoleName": "test",
+                        "RequireValidation": true,
                         "RequireSign": true,
-                        "RequireValidation": false,
-                        "RoleName": "测试环境_自动化测试",
+                        "SignType": 0,
                         "RoutingOrder": 0,
-                        "SignType": 0
-                    },
-                    {
-                        "Description": "",
-                        "IsPromoter": false,
-                        "RecipientId": "yDR0JUUgxxxxO4zjEyDHvECsDZ",
-                        "RecipientType": "INDIVIDUAL",
-                        "RequireSign": true,
-                        "RequireValidation": false,
-                        "RoleName": "个人签署方1",
-                        "RoutingOrder": 1,
-                        "SignType": 0
+                        "IsPromoter": true
                     }
                 ],
                 "SignComponents": [
                     {
-                        "ComponentDateFontSize": 0,
-                        "ComponentDescription": "",
-                        "ComponentExtra": "",
-                        "ComponentHeight": 113.33,
-                        "ComponentId": "componentId_13",
-                        "ComponentName": "测试环境_自动化测试盖章1",
-                        "ComponentPage": 3,
-                        "ComponentPosX": 330.49572753906,
-                        "ComponentPosY": 384.09656333923,
-                        "ComponentRecipientId": "yDR0JUxxx4zjERwT0dL9xs",
+                        "ComponentId": "test",
+                        "ComponentType": "test",
+                        "ComponentName": "test",
                         "ComponentRequired": true,
-                        "ComponentType": "SIGN_SEAL",
-                        "ComponentValue": "",
-                        "ComponentWidth": 113.33,
-                        "DocumentId": "",
+                        "ComponentRecipientId": "test",
                         "FileIndex": 0,
-                        "GenerateMode": ""
-                    },
-                    {
+                        "GenerateMode": "test",
+                        "ComponentWidth": 0,
+                        "ComponentHeight": 0,
+                        "ComponentPage": 0,
+                        "ComponentPosX": 0,
+                        "ComponentPosY": 0,
+                        "ComponentExtra": "test",
+                        "ComponentValue": "test",
                         "ComponentDateFontSize": 0,
-                        "ComponentDescription": "",
-                        "ComponentExtra": "",
-                        "ComponentHeight": 40,
-                        "ComponentId": "componentId_14",
-                        "ComponentName": "个人签署方1签名1",
-                        "ComponentPage": 3,
-                        "ComponentPosX": 252.49572753906,
-                        "ComponentPosY": 632.18323326111,
-                        "ComponentRecipientId": "yDR0JUUxxxx4zjEyDHvECsDZ",
-                        "ComponentRequired": true,
-                        "ComponentType": "SIGN_SIGNATURE",
-                        "ComponentValue": "",
-                        "ComponentWidth": 112,
-                        "DocumentId": "",
-                        "FileIndex": 0,
-                        "GenerateMode": ""
+                        "DocumentId": "test",
+                        "ComponentDescription": "test",
+                        "OffsetX": 0,
+                        "OffsetY": 0,
+                        "ChannelComponentId": "test",
+                        "KeywordOrder": "test",
+                        "KeywordPage": 0,
+                        "RelativeLocation": "test",
+                        "KeywordIndexes": [
+                            0
+                        ]
                     }
                 ],
-                "TemplateId": "yDR0JUUxxxxEEauW70uGG",
-                "TemplateName": "顺序签署时B是首位签署的b2c模板",
-                "TemplateType": 3
-            },
-            {
-                "Components": [],
-                "CreatedOn": 1661503695,
-                "Creator": "张倩",
-                "Description": "",
-                "IsPromoter": false,
-                "Recipients": [
-                    {
-                        "Description": "",
-                        "IsPromoter": false,
-                        "RecipientId": "yDR0JUUgyxxx4zjETakC1TTWY",
-                        "RecipientType": "INDIVIDUAL",
-                        "RequireSign": true,
-                        "RequireValidation": false,
-                        "RoleName": "个人签署方1",
-                        "RoutingOrder": 0,
-                        "SignType": 0
-                    },
-                    {
-                        "Description": "",
-                        "IsPromoter": true,
-                        "RecipientId": "yDR0JUUxxxzjESF9B8DCsK",
-                        "RecipientType": "ENTERPRISE",
-                        "RequireSign": true,
-                        "RequireValidation": false,
-                        "RoleName": "测试环境_自动化测试",
-                        "RoutingOrder": 1,
-                        "SignType": 0
-                    }
-                ],
-                "SignComponents": [
-                    {
-                        "ComponentDateFontSize": 0,
-                        "ComponentDescription": "",
-                        "ComponentExtra": "",
-                        "ComponentHeight": 40,
-                        "ComponentId": "componentId_11",
-                        "ComponentName": "个人签署方1签名1",
-                        "ComponentPage": 3,
-                        "ComponentPosX": 413.49572753906,
-                        "ComponentPosY": 348.75421714783,
-                        "ComponentRecipientId": "yDR0JUUgxxxzjETakC1TTWY",
-                        "ComponentRequired": true,
-                        "ComponentType": "SIGN_SIGNATURE",
-                        "ComponentValue": "",
-                        "ComponentWidth": 112,
-                        "DocumentId": "",
-                        "FileIndex": 0,
-                        "GenerateMode": ""
-                    },
-                    {
-                        "ComponentDateFontSize": 0,
-                        "ComponentDescription": "",
-                        "ComponentExtra": "",
-                        "ComponentHeight": 113.33,
-                        "ComponentId": "componentId_12",
-                        "ComponentName": "测试环境_自动化测试盖章1",
-                        "ComponentPage": 3,
-                        "ComponentPosX": 318.49572753906,
-                        "ComponentPosY": 497.16193199158,
-                        "ComponentRecipientId": "yDR0Jxxxx4zjESF9B8DCsK",
-                        "ComponentRequired": true,
-                        "ComponentType": "SIGN_SEAL",
-                        "ComponentValue": "",
-                        "ComponentWidth": 113.33,
-                        "DocumentId": "",
-                        "FileIndex": 0,
-                        "GenerateMode": ""
-                    }
-                ],
-                "TemplateId": "yDR0JUUgygxxxx4zjE8v6DE0hRC",
-                "TemplateName": "顺序签xx模板",
-                "TemplateType": 3
+                "TemplateType": 0,
+                "IsPromoter": true,
+                "Creator": "test",
+                "CreatedOn": 0,
+                "PreviewUrl": "test",
+                "PdfUrl": "test",
+                "ChannelTemplateId": "test",
+                "ChannelTemplateName": "test",
+                "ChannelAutoSave": 0,
+                "TemplateVersion": "test"
             }
         ],
-        "TotalCount": 4
+        "TotalCount": 0,
+        "Limit": 1,
+        "Offset": 1,
+        "RequestId": "test"
     }
 }
 ```

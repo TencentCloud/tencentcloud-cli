@@ -1,16 +1,16 @@
 **Example 1: 领取合同**
 
-
+领取未归属的合同
 
 Input: 
 
 ```
 tccli essbasic ChannelCreateBoundFlows --cli-unfold-argument  \
-    --FlowIds xx \
-    --Agent.ProxyAppId xx \
-    --Agent.ProxyOperator.OpenId xx \
-    --Agent.ProxyOrganizationOpenId xx \
-    --Agent.AppId xx
+    --FlowIds test \
+    --Agent.ProxyAppId test \
+    --Agent.ProxyOperator.OpenId test \
+    --Agent.ProxyOrganizationOpenId test \
+    --Agent.AppId test
 ```
 
 Output: 

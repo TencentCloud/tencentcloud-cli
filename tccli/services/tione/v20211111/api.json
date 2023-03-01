@@ -389,7 +389,7 @@
   "metadata": {
     "apiVersion": "2021-11-11",
     "api_brief": "介绍如何使用API对腾讯云 TI 平台 TI-ONE 进行操作，包括存储库、Notebook、任务训练等。",
-    "serviceNameCN": "腾讯云 TI 平台 TI-ONE",
+    "serviceNameCN": "TI-ONE 训练平台",
     "serviceShortName": "tione"
   },
   "objects": {

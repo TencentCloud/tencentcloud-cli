@@ -50,17 +50,17 @@ tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
     --Agent.ProxyOrganizationOpenId d7c13a8***********0ee248f04 \
     --Agent.ProxyOperator.OpenId 00498cc***********3aff766cac \
     --Agent.AppId 65f***********aa382cc5ed0e \
-    --NeedRelievedFlowId 待解除的流程编号xx \
+    --NeedRelievedFlowId 待解除的流程编号test \
     --ReleasedApprovers.0.ApproverNumber 1 \
     --ReleasedApprovers.0.Name 张三 \
     --ReleasedApprovers.0.Mobile 13******** \
     --ReleasedApprovers.0.ApproverType ORGANIZATION \
-    --ReleasedApprovers.0.OrganizationName xx \
-    --ReliveInfo.Reason 解除理由xx \
-    --ReliveInfo.RemainInForceItem 保留条款xx \
-    --ReliveInfo.OriginalExpenseSettlement 原合同费用结算xx \
-    --ReliveInfo.OriginalOtherSettlement 原合同其他约定xx \
-    --ReliveInfo.OtherDeals 其他约定xx
+    --ReleasedApprovers.0.OrganizationName test \
+    --ReliveInfo.Reason 解除理由test \
+    --ReliveInfo.RemainInForceItem 保留条款test \
+    --ReliveInfo.OriginalExpenseSettlement 原合同费用结算test \
+    --ReliveInfo.OriginalOtherSettlement 原合同其他约定test \
+    --ReliveInfo.OtherDeals 其他约定test
 ```
 
 Output: 

@@ -1,6 +1,6 @@
 **Example 1: 示例-验证不通过**
 
-
+示例-验证不通过
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli essbasic ChannelVerifyPdf --cli-unfold-argument  \
     --Operator.OpenId testxxxx_test1 \
     --FlowId yDRvzUUgxxxxygxxxx4zjEuYdDnsxeT \
-    --Agent.ProxyAppId xxxx \
+    --Agent.ProxyAppId id \
     --Agent.ProxyOperator.OpenId test1_xxxxx_test1 \
     --Agent.AppId 7f3497f01xxxa35e0984a9657b0ec \
     --Agent.ProxyOrganizationOpenId test1_cxxxx_organization1
@@ -27,7 +27,7 @@ Output:
 
 **Example 2: 示例-验证通过**
 
-
+示例-验证通过
 
 Input: 
 
@@ -35,7 +35,7 @@ Input:
 tccli essbasic ChannelVerifyPdf --cli-unfold-argument  \
     --Operator.OpenId testxxxx_test1 \
     --FlowId yDRvzUUgxxxxygxxxx4zjEuYdDnsxeT \
-    --Agent.ProxyAppId xxxx \
+    --Agent.ProxyAppId id \
     --Agent.ProxyOperator.OpenId test1_clara_test1 \
     --Agent.AppId 7f3497f01xxxa35e0984a9657b0ec \
     --Agent.ProxyOrganizationOpenId test1_cxxxx_organization1
