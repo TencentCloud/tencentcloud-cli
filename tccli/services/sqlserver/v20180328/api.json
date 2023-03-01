@@ -10917,25 +10917,25 @@
       "document": "实例绑定的标签信息",
       "members": [
         {
-          "default": "",
           "document": "标签key",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签value",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "RestartDBInstanceRequest": {
       "document": "RestartDBInstance请求参数结构体",

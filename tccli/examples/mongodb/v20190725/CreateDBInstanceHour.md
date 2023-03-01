@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli mongodb CreateDBInstanceHour --cli-unfold-argument  \
-    --Memory 4 \
-    --Volume 250 \
-    --ReplicateSetNum 1 \
-    --NodeNum 2 \
-    --MongoVersion MONGO_40_WT \
-    --MachineCode HIO10G \
-    --GoodsNum 1 \
     --Zone ap-guangzhou-3 \
+    --GoodsNum 1 \
     --Clone 1 \
-    --ClusterType REPLSET
+    --Memory 4 \
+    --ClusterType REPLSET \
+    --Volume 250 \
+    --NodeNum 2 \
+    --ReplicateSetNum 1 \
+    --MachineCode HIO10G \
+    --MongoVersion MONGO_40_WT
 ```
 
 Output: 

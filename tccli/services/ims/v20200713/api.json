@@ -1,9 +1,9 @@
 {
   "actions": {
     "ImageModeration": {
-      "document": "图片内容检测服务（Image Moderation, IM）能自动扫描图片，识别可能令人反感、不安全或不适宜的内容，同时支持用户配置图片黑名单，打击自定义识别类型的图片。\n\n<div class=\"rno-api-explorer\" style=\"margin-bottom:20px\">\n    <div class=\"rno-api-explorer-inner\">\n        <div class=\"rno-api-explorer-hd\">\n            <div class=\"rno-api-explorer-title\">\n                关于版本迭代的描述\n            </div>\n        </div>\n        <div class=\"rno-api-explorer-body\">\n            <div class=\"rno-api-explorer-cont\">\n                <p>当前页面版本为图片内容安全2020版本，2020.11.3日前接入的图片内容安全接口为2019版本，在此时间前接入的用户可直接访问以下链接进行维护操作：<a href=\"https://cloud.tencent.com/document/product/1125/38206\" target=\"_blank\">图片内容安全-2019版本</a></p>\n                <p>2020版本相对2019版本进行了升级，支持更灵活的多场景业务策略配置以及更丰富的识别回调信息，满足不同业务的识别需求，建议按照2020版本接入指引进行接口升级；同时，2019版本也会持续维护直至用户不再使用为止。</p>\n            </div>\n        </div>\n    </div>\n</div>",
+      "document": "图片同步检测服务（Image Moderation, IM）能自动扫描图片，识别可能令人反感、不安全或不适宜的内容，同时支持用户配置图片黑名单，打击自定义识别类型的图片。\n\n<div class=\"rno-api-explorer\" style=\"margin-bottom:20px\">\n    <div class=\"rno-api-explorer-inner\">\n        <div class=\"rno-api-explorer-hd\">\n            <div class=\"rno-api-explorer-title\">\n                关于版本迭代的描述\n            </div>\n        </div>\n        <div class=\"rno-api-explorer-body\">\n            <div class=\"rno-api-explorer-cont\">\n                <p>当前页面版本为图片内容安全2020版本，2020.11.3日前接入的图片内容安全接口为2019版本，在此时间前接入的用户可直接访问以下链接进行维护操作：<a href=\"https://cloud.tencent.com/document/product/1125/38206\" target=\"_blank\">图片内容安全-2019版本</a></p>\n                <p>2020版本相对2019版本进行了升级，支持更灵活的多场景业务策略配置以及更丰富的识别回调信息，满足不同业务的识别需求，建议按照2020版本接入指引进行接口升级；同时，2019版本也会持续维护直至用户不再使用为止。</p>\n            </div>\n        </div>\n    </div>\n</div>",
       "input": "ImageModerationRequest",
-      "name": "图片内容检测",
+      "name": "图片同步检测",
       "output": "ImageModerationResponse",
       "status": "online"
     }
@@ -97,7 +97,6 @@
       "document": "ImageModeration请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。",
           "example": "test_1001",
           "member": "string",
@@ -106,7 +105,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据ID，可以由英文字母、数字、下划线、-、@#组成，不超过64个字符",
           "example": "1213",
           "member": "string",
@@ -115,7 +113,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据Base64编码，图片检测接口为图片文件内容，大小不能超过5M",
           "example": "aHR0cDovL2lubmVycG9ybnNjcmVlbnNob3QtMTI1MjgxMzg1MC5jb3MuYXAtZ3Vh",
           "member": "string",
@@ -124,8 +121,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "图片资源访问链接，__与FileContent参数必须二选一输入__",
+          "document": "图片资源访问链接，__与FileContent参数必须二选一输入__ 。由于网络安全策略，送审带重定向的链接，可能引起下载失败，请尽量避免，比如Http返回302状态码的链接，可能导致接口返回ResourceUnavailable.ImageDownloadError",
           "example": "https://xxx.jpg",
           "member": "string",
           "name": "FileUrl",
@@ -133,7 +129,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "截帧频率，GIF图/长图检测专用，默认值为0，表示只会检测GIF图/长图的第一帧",
           "example": "1",
           "member": "int64",
@@ -142,7 +137,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "GIF图/长图检测专用，代表均匀最大截帧数量，默认值为1（即只取GIF第一张，或长图不做切分处理（可能会造成处理超时））。",
           "example": "1",
           "member": "int64",
@@ -151,7 +145,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "账号相关信息字段，填入后可识别违规风险账号。",
           "example": "无",
           "member": "User",
@@ -160,7 +153,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "设备相关信息字段，填入后可识别违规风险设备。",
           "example": "无",
           "member": "Device",
@@ -179,7 +171,6 @@
           "example": "1",
           "member": "int64",
           "name": "HitFlag",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -188,7 +179,6 @@
           "example": "Block",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -197,7 +187,6 @@
           "example": "Porn",
           "member": "string",
           "name": "Label",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -206,7 +195,6 @@
           "example": "SexBehavior",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -215,7 +203,6 @@
           "example": "90",
           "member": "int64",
           "name": "Score",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -224,7 +211,6 @@
           "example": "无",
           "member": "LabelResult",
           "name": "LabelResults",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -233,7 +219,6 @@
           "example": "无",
           "member": "ObjectResult",
           "name": "ObjectResults",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -242,7 +227,6 @@
           "example": "无",
           "member": "OcrResult",
           "name": "OcrResults",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -251,7 +235,6 @@
           "example": "无",
           "member": "LibResult",
           "name": "LibResults",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -260,7 +243,6 @@
           "example": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
           "member": "string",
           "name": "DataId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -269,7 +251,6 @@
           "example": "test_1001",
           "member": "string",
           "name": "BizType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -278,7 +259,6 @@
           "example": "无",
           "member": "string",
           "name": "Extra",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

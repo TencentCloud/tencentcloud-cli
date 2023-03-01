@@ -3517,7 +3517,6 @@
       "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识\n1-个人：Name、Mobile必传\n2-渠道子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；\n3-渠道合作企业不指定经办人：OrgName必传、OrgOpenId必传；\n4-非渠道合作企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId",
       "members": [
         {
-          "default": "",
           "document": "签署人姓名，最大长度50个字符",
           "example": "张三",
           "member": "string",
@@ -3527,7 +3526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人身份证件类型\n1.ID_CARD 居民身份证\n2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证\n3.HONGKONG_AND_MACAO 港澳居民来往内地通行证",
           "example": "ID_CARD",
           "member": "string",
@@ -3537,7 +3535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人证件号",
           "example": "110101192008317114",
           "member": "string",
@@ -3547,7 +3544,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。",
           "example": "13888888888",
           "member": "string",
@@ -3557,7 +3553,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；",
           "example": "\"xxx\"",
           "member": "string",
@@ -3567,7 +3562,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。\n默认为false，即签署人位于同一个渠道应用号下；",
           "example": "false",
           "member": "bool",
@@ -3577,7 +3571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户侧第三方id，最大长度64个字符\n当签署方为同一渠道下的员工时，该字段若不指定，则发起【待领取】的流程",
           "example": "open_test_id",
           "member": "string",
@@ -3587,7 +3580,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；",
           "example": "\"xxx\"",
           "member": "string",
@@ -3597,7 +3589,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人类型\nPERSON-个人/自然人；\nPERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；\nORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；\nENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。",
           "example": "PERSON",
           "member": "string",
@@ -3607,7 +3598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；",
           "example": "\"xxx\"",
           "member": "string",
@@ -3617,7 +3607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署截止时间，默认一年",
           "example": "1689688460",
           "member": "int64",
@@ -3627,7 +3616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署完回调url，最大长度1000个字符",
           "example": "https://qq.com",
           "member": "string",
@@ -3637,7 +3625,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "使用PDF文件直接发起合同时，签署人指定的签署控件",
           "example": "无",
           "member": "Component",
@@ -3647,8 +3634,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)",
+          "document": "个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名\nHANDWRITE -手写签名",
           "example": "[\"OCR_ESIGN\"]",
           "member": "string",
           "name": "ComponentLimitType",
@@ -3657,7 +3643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同的强制预览时间：3~300s，未指定则按合同页数计算",
           "example": "3",
           "member": "int64",
@@ -3667,7 +3652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署完前端跳转的url，暂未使用",
           "example": "https://qq.com",
           "member": "string",
@@ -3677,7 +3661,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人个性化能力值",
           "example": "无",
           "member": "ApproverOption",
@@ -3687,7 +3670,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当前签署方进行签署操作是否需要企业内部审批，true 则为需要",
           "example": "false",
           "member": "bool",

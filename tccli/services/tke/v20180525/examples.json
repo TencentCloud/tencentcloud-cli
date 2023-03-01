@@ -190,8 +190,8 @@
     ],
     "CreateEdgeLogConfig": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateEdgeLogConfig\n&LogConfig=xxxxxx\n&ClusterId=xxxxx\n&<公共请求参数>",
+        "document": "创建边缘集群日志采集规则",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateEdgeLogConfig\n&LogConfig={\"apiVersion\":\"cls.cloud.tencent.com/v1\",\"kind\":\"LogConfig\"... }\n&ClusterId=cls-1234abcd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "创建日志采集规则"
       }
@@ -403,15 +403,15 @@
     "DeleteEdgeCVMInstances": [
       {
         "document": "删除边缘容器CVM实例",
-        "input": "https://tke.tencentcloudapi.com/?Action=DeleteEdgeCVMInstances\n&ClusterID=cls-xxxxx\n&CvmIdSet.0=ecm-xxxxx\n&<公共请求参数>",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteEdgeCVMInstances\n&ClusterID=cls-1234abcd\n&CvmIdSet.0=cvm-gdf53454\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\"\n    }\n}",
         "title": "删除边缘容器CVM实例"
       }
     ],
     "DeleteEdgeClusterInstances": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DeleteEdgeClusterInstances\r\n&ClusterId=cls-xxxxx\r\n&InstanceIds.0=xxxx\r\n&<公共请求参数>",
+        "document": "删除边缘集群计算节点",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteEdgeClusterInstances\n&ClusterId=cls-1234abcd\n&InstanceIds.0=cvm-xgj3ca32\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\"\n    }\n}",
         "title": "删除边缘计算实例"
       }
@@ -810,9 +810,9 @@
     ],
     "DescribeEdgeLogSwitches": [
       {
-        "document": "",
+        "document": "边缘集群日志开关",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeLogSwitches\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cls-xxx1\",\n        \"cls-xxx2\"\n    ]\n}",
-        "output": "{\r\n    \"Response\":{\r\n        \"SwitchSet\":[\r\n            {\r\n                \"ClusterId\":\"cls-xxx1\",\r\n                \"Audit\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                },\r\n                \"Event\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                },\r\n                \"Log\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                }\r\n            },\r\n            {\r\n                \"ClusterId\":\"cls-xxx2\",\r\n                \"Audit\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                },\r\n                \"Event\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                },\r\n                \"Log\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                }\r\n            }\r\n        ],\r\n        \"RequestId\":\"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\":{\n        \"SwitchSet\":[\n            {\n                \"ClusterId\":\"cls-xxx2\",\n                \"Audit\":{\n                   \"Enable\": true,\n                   \"TopicSet\": \"a0cd4067-c9a1-a895-907d-03b4025e4f2c\",\n                   \"TopicId\": \"sadfssfasdf-c9a1-a895-907d-03b4025e4f2c\"\n                },\n                \"Event\":{\n                   \"Enable\": true,\n                   \"TopicSet\": \"sadfssfasdf-564f-a895-907d-03b4025e4f2c\",\n                   \"TopicId\": \"sadfssfasdf-564f-a895-907d-5465tdtewrt\"\n                },\n                \"Log\":{\n                   \"Enable\": true,\n                   \"TopicSet\": \"3465345-564f-a895-907d-03b4025e4f2c\",\n                   \"TopicId\": \"6750000-564f-a895-907d-03b4025e4f2c\"\n                }\n            }\n        ],\n        \"RequestId\":\"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "查询开关列表接口示例"
       }
     ],
@@ -1048,8 +1048,8 @@
     ],
     "DescribeTKEEdgeClusterCredential": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusterCredential\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
+        "document": "获取边缘集群的认证信息，其中包含kubeconfig文件",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusterCredential\n&ClusterId=cls-1234abcd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Addresses\": [\n            {\n                \"Type\": \"advertise\",\n                \"Ip\": \"169.254.128.200\",\n                \"Port\": 60002\n            },\n            {\n                \"Type\": \"public\",\n                \"Ip\": \"100.98.109.15\",\n                \"Port\": 11126\n            }\n        ],\n        \"Credential\": {\n            \"CACert\": \"LS0tLS1CRUdJTiBDRVJUSUZJQ0FULQo=\",\n            \"Token\": \"WBnCe69iqui0HuEZJ0Yac2hvwxQ1jG0j\"\n        },\n        \"CoreDns\": \"yes\",\n        \"HealthRegion\": \"yes\",\n        \"Health\": \"yes\",\n        \"GridDaemon\": \"yes\",\n        \"PublicLB\": {\n            \"Enabled\": true,\n            \"AllowFromCidrs\": [\n                \"xx\"\n            ]\n        },\n        \"InternalLB\": {\n            \"SubnetId\": [\n                \"xx\"\n            ],\n            \"Enabled\": true\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "获取边缘计算集群的接入认证信息"
       }

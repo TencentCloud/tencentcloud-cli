@@ -3574,7 +3574,6 @@
       "document": "GetUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子用户用户名",
           "example": "test124",
           "member": "string",
@@ -3593,7 +3592,6 @@
           "example": "100000546533",
           "member": "uint64",
           "name": "Uin",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3602,7 +3600,6 @@
           "example": "test124",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3611,7 +3608,6 @@
           "example": "1001774",
           "member": "uint64",
           "name": "Uid",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3620,7 +3616,6 @@
           "example": "test",
           "member": "string",
           "name": "Remark",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3629,7 +3624,6 @@
           "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3638,7 +3632,6 @@
           "example": "10086",
           "member": "string",
           "name": "PhoneNum",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3647,7 +3640,6 @@
           "example": "86",
           "member": "string",
           "name": "CountryCode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3656,9 +3648,24 @@
           "example": "123@qq.com",
           "member": "string",
           "name": "Email",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "最近一次登录ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "RecentlyLoginIP",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最近一次登录时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-27 14:59:08",
+          "member": "string",
+          "name": "RecentlyLoginTime",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

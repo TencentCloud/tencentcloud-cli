@@ -22,9 +22,9 @@
       "status": "online"
     },
     "CreateDiagnoseUrl": {
-      "document": "CreateDiagnoseUrl 用于添加域名诊断任务URL",
+      "document": "CreateDiagnoseUrl 用于添加域名诊断任务URL， <font color=red>将于 **2023年5月31日** 下线</font><br>",
       "input": "CreateDiagnoseUrlRequest",
-      "name": "添加诊断URL",
+      "name": "添加诊断URL(即将下线)",
       "output": "CreateDiagnoseUrlResponse",
       "status": "online"
     },
@@ -141,9 +141,9 @@
       "status": "online"
     },
     "DescribeDiagnoseReport": {
-      "document": "DescribeDiagnoseReport 用于获取指定报告id的内容",
+      "document": "DescribeDiagnoseReport 用于获取指定报告id的内容， <font color=red>将于 **2023年5月31日** 下线</font><br>",
       "input": "DescribeDiagnoseReportRequest",
-      "name": "获取诊断报告",
+      "name": "获取诊断报告(即将下线)",
       "output": "DescribeDiagnoseReportResponse",
       "status": "online"
     },
@@ -386,9 +386,9 @@
       "status": "online"
     },
     "ListDiagnoseReport": {
-      "document": "ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情。",
+      "document": "ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情， <font color=red>将于 **2023年5月31日** 下线</font><br>",
       "input": "ListDiagnoseReportRequest",
-      "name": "获取诊断任务列表",
+      "name": "获取诊断任务列表(即将下线)",
       "output": "ListDiagnoseReportResponse",
       "status": "online"
     },

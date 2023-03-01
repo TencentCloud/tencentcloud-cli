@@ -1,13 +1,13 @@
 **Example 1: 删除边缘计算实例**
 
-
+删除边缘集群计算节点
 
 Input: 
 
 ```
 tccli tke DeleteEdgeClusterInstances --cli-unfold-argument  \
-    --ClusterId cls-xxxxx \
-    --InstanceIds xxxx
+    --ClusterId cls-1234abcd \
+    --InstanceIds cvm-xgj3ca32
 ```
 
 Output: 
