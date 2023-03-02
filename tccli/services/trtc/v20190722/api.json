@@ -3042,7 +3042,6 @@
       "document": "音量布局SEI参数，可以自定义AppData和PayloadType类型。\n该参数内容可以为空，表示携带默认的音量布局SEI。",
       "members": [
         {
-          "default": "",
           "document": "AppData的内容，会被写入自定义SEI中的app_data字段，长度需小于4096。",
           "example": "xxxx",
           "member": "string",
@@ -3053,7 +3052,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "SEI消息的payload_type，默认值100，取值范围100-254（244除外，244为我们内部自定义的时间戳SEI）",
           "example": "100",
           "member": "uint64",
@@ -3061,6 +3059,26 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "SEI发送间隔，单位毫秒，默认值为1000。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Interval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FollowIdr",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -3070,7 +3088,6 @@
       "document": "自定义透传SEI",
       "members": [
         {
-          "default": "",
           "document": "透传SEI的payload内容。",
           "example": "xxxx",
           "member": "string",
@@ -3081,7 +3098,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "SEI消息的payload_type，取值范围5、100-254（244除外，244为我们内部自定义的时间戳SEI）。",
           "example": "101",
           "member": "uint64",
@@ -3092,7 +3108,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "PayloadType为5，PayloadUuid必须填写。PayloadType不是5时，不需要填写，填写会被后台忽略。该值必须是32长度的十六进制。",
           "example": "xxxx",
           "member": "string",
@@ -3100,6 +3115,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "SEI发送间隔，单位毫秒，默认值为1000。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Interval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FollowIdr",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],

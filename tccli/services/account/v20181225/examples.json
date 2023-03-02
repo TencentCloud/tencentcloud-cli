@@ -8,6 +8,30 @@
         "title": "添加白名单账号"
       }
     ],
+    "BatchCheckWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCheckWhitelist\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"913ee0a9-dbf0-43ae-99ef-c093be729fce\"\n    }\n}",
+        "title": "批量检查白名单"
+      }
+    ],
+    "BindAccountForTCB": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindAccountForTCB\n<公共请求参数>\n\n{\n    \"AccountData\": {\n        \"AppID\": \" wx3fcd6d0f9dd497a1\",\n        \"AuthInfo\": {\n            \"ID\": \"1234\",\n            \"PrincipalName\": \"test\",\n            \"Type\": 0\n        },\n        \"Email\": \"1@qq.com\",\n        \"Nickname\": \"test\",\n        \"Phone\": \"12345678901\",\n        \"Username\": \" gh_56f03c56dc39\",\n        \"CountryCode\": \"86\"\n    },\n    \"Type\": \"la\",\n    \"BindUin\": 100000546547\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e2bda45-8d95-4061-af86-3f54dfe953a5\"\n    }\n}",
+        "title": "绑定TCB账号"
+      }
+    ],
+    "CheckAccountExists": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=CheckAccountExists\r\n&Account=test@qq.com\r\n&Type=mail\r\n&Platform=qcloud\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Exist\": false,\n        \"RequestId\": \"abf35200-2bf4-4d27-ad1e-1e8e865af9bf\"\n    }\n}",
+        "title": "查询账号是否存在"
+      }
+    ],
     "DeleteWhitelistUin": [
       {
         "document": "",
@@ -32,12 +56,60 @@
         "title": "获取用户昵称"
       }
     ],
+    "DescribeSensitiveInfoHashValue": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=DescribeSensitiveInfoHashValue\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HasSecurePhone\": 1,\n        \"HasAuthInfo\": 1,\n        \"HashAlgorithm\": \"md5\",\n        \"Salt\": \"969f9e11\",\n        \"SecurePhoneHashValue\": \"9c6cdaf0b33bc5cb991b113851d9f426\",\n        \"AuthNameHashValue\": \"fcbc647244e51c43c129afb13716c40d\",\n        \"RequestId\": \"95f11eac-1821-4eea-a36f-22bdd31b41f1\"\n    }\n}",
+        "title": "获取用户敏感信息哈希值"
+      }
+    ],
+    "DescribeTCBBinding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTCBBinding\n<公共请求参数>\n\n{\n    \"Type\": \"wx_open\",\n    \"Username\": \"xxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UsernameBoundUin\": 123,\n        \"BindType\": \"wx_open\",\n        \"UinBoundUsername\": null,\n        \"RequestId\": \"562abe2a-0817-4097-ad24-c936eb2a01e1\"\n    }\n}",
+        "title": "获取TCB账号绑定信息"
+      }
+    ],
+    "GetAppIdByUin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAppIdByUin\n<公共请求参数>\n\n{\n    \"OpUin\": 100000546547\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 1255427217,\n        \"RequestId\": \"04ffb703-42d5-49d5-84d5-07254540c086\"\n    }\n}",
+        "title": "根据uin获取appid"
+      }
+    ],
+    "GetAreaByUin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAreaByUin\n<公共请求参数>\n\n{\n    \"OpUin\": 100000546547\n}",
+        "output": "{\n    \"Response\": {\n        \"Area\": 1,\n        \"CountryName\": \"CN\",\n        \"CountryCode\": \"86\",\n        \"RequestId\": \"ffccca38-aef0-4487-9ead-c1f675f8d98d\"\n    }\n}",
+        "title": "根据uin获取地域"
+      }
+    ],
+    "GetAuthStatus": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=GetAuthStatus\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": 3,\n        \"Name\": \"testName\",\n        \"RequestId\": \"23fe0eb1-41bc-44e7-9984-61d13212b501\"\n    }\n}",
+        "title": "查看实名状态"
+      }
+    ],
     "GetBackUpValidate": [
       {
         "document": "",
         "input": "https://account.tencentcloudapi.com/?Action=GetBackUpValidate\n&OwnerUin=100000012\n&Interface=getInfo\n&ClientUA=chrome\n&Skey=LpZhb4CdVm5\n&ClientIP=0.0.0.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FaceId\": {\n            \"CanAuth\": 1,\n            \"Data\": null\n        },\n        \"Phone\": {\n            \"CanAuth\": 1,\n            \"Data\": null\n        },\n        \"Wechat\": {\n            \"CanAuth\": 1,\n            \"Data\": null\n        },\n        \"Token\": {\n            \"CanAuth\": 1,\n            \"Data\": null\n        },\n        \"Stoken\": {\n            \"CanAuth\": 1,\n            \"Data\": null\n        },\n        \"Mail\": {\n            \"CanAuth\": 1\n        },\n        \"RequestId\": \"69633ebf-4770-4024-a5f9-3b85d17e1cd0\"\n    }\n}",
         "title": "获取备选校验方式"
+      }
+    ],
+    "GetMediaPlatformAccessToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMediaPlatformAccessToken\n<公共请求参数>\n\n{\n    \"Username\": \"xxxx\",\n    \"AppID\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppID\": null,\n        \"Username\": null,\n        \"AccessToken\": null,\n        \"FuncScope\": null,\n        \"RequestId\": \"198419cc-886c-4ea8-836f-ebac69087d3d\"\n    }\n}",
+        "title": "获取微信公众号access_token"
       }
     ],
     "GetSiteProperties": [
@@ -54,6 +126,30 @@
         "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUinByAppId\n<公共请求参数>\n\n{\n    \"Appid\": 1255427217\n}",
         "output": "{\n    \"Response\": {\n        \"Uin\": 100000546547,\n        \"Appid\": 1255427217,\n        \"AddTimestamp\": \"2022-12-15 15:35:40\",\n        \"RequestId\": \"ffccca38-aef0-4487-9ead-c1f675f8d98d\"\n    }\n}",
         "title": "根据appid获取uin"
+      }
+    ],
+    "LoginViaTCB": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LoginViaTCB\n<公共请求参数>\n\n{\n    \"TmpCode\": \"xxx\",\n    \"UserIP\": \"119.147.10.197\",\n    \"UseV3Token\": 1,\n    \"RequireStsToken\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"xxxx\",\n        \"SecretId\": \"xxxx-go3KoEkGB6yFjk\",\n        \"SecretKey\": \"xxxxx+Y4l0FJo1VvvY=\",\n        \"SecretExpire\": 1675423777,\n        \"RequestId\": \"238c0fb5-97f6-4d1d-b0c2-d29d42b057ca\"\n    }\n}",
+        "title": "TCB登录云账号"
+      }
+    ],
+    "RegisterAccountForTCB": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterAccountForTCB\n<公共请求参数>\n\n{\n    \"RegisterData\": {\n        \"AppID\": \" wx3fcd6d0f9dd497a1\",\n        \"AuthInfo\": {\n            \"ID\": \"1234\",\n            \"PrincipalName\": \"test\",\n            \"Type\": 0\n        },\n        \"Email\": \"1@qq.com\",\n        \"Nickname\": \"test\",\n        \"Phone\": \"12345678901\",\n        \"Username\": \" gh_56f03c56dc39\"\n    },\n    \"Type\": \"la\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 600000561806,\n        \"IsBind\": 0,\n        \"RequestId\": \"b3d63aa7-8a8e-45af-902e-7835efbd24b7\"\n    }\n}",
+        "title": "TCB注册云账号"
+      }
+    ],
+    "UnbindTCBAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindTCBAccount\n<公共请求参数>\n\n{\n    \"Type\": \"wx_open\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Account\": \"test\",\n        \"RequestId\": \"aeccaa3e-8116-4ce8-9cba-fc83a8a48c2a\"\n    }\n}",
+        "title": "解绑TCB账号"
       }
     ]
   },

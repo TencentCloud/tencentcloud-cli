@@ -32,11 +32,19 @@ Output:
                     "TagSet": [],
                     "SourceInfo": {
                         "SourceType": "Record",
-                        "SourceContext": ""
+                        "SourceContext": "",
+                        "TrtcRecordInfo": null
                     },
-                    "StorageRegion": "gzp"
+                    "Category": "Video",
+                    "Vid": "",
+                    "StorageClass": "STANDARD",
+                    "StorageRegion": "gzp",
+                    "Status": "Normal"
                 },
                 "MetaData": {
+                    "AudioDuration": 3601,
+                    "VideoDuration": 3601,
+                    "Md5": "",
                     "Size": 10556,
                     "Container": "m4a",
                     "Duration": 3601,
@@ -50,7 +58,8 @@ Output:
                             "Height": 480,
                             "Width": 640,
                             "Codec": "h264",
-                            "Fps": 222
+                            "Fps": 222,
+                            "DynamicRangeInfo": {}
                         }
                     ],
                     "AudioStreamSet": [
@@ -73,13 +82,15 @@ Output:
                             "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
+                            "DigitalWatermarkType": "None",
                             "VideoStreamSet": [
                                 {
                                     "Bitrate": 246000,
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
-                                    "Fps": 222
+                                    "Fps": 222,
+                                    "DynamicRangeInfo": {}
                                 }
                             ],
                             "AudioStreamSet": [
@@ -100,13 +111,15 @@ Output:
                             "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
+                            "DigitalWatermarkType": "None",
                             "VideoStreamSet": [
                                 {
                                     "Bitrate": 246000,
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
-                                    "Fps": 222
+                                    "Fps": 222,
+                                    "DynamicRangeInfo": {}
                                 }
                             ],
                             "AudioStreamSet": [
@@ -127,13 +140,15 @@ Output:
                             "Width": 1920,
                             "Container": "hls,applehttp",
                             "Md5": "bfcf7c6f154b18890661f9e80b0731d0",
+                            "DigitalWatermarkType": "None",
                             "VideoStreamSet": [
                                 {
                                     "Bitrate": 2794233,
                                     "Height": 1080,
                                     "Width": 1920,
                                     "Codec": "h264",
-                                    "Fps": 24
+                                    "Fps": 24,
+                                    "DynamicRangeInfo": {}
                                 }
                             ],
                             "AudioStreamSet": [
@@ -231,13 +246,16 @@ Output:
                                 "Rotate": 0,
                                 "Container": "m4a",
                                 "AudioDuration": 0,
+                                "VideoDuration": 3601,
+                                "Md5": "",
                                 "VideoStreamSet": [
                                     {
                                         "Bitrate": 246000,
                                         "Height": 480,
                                         "Width": 640,
                                         "Codec": "h264",
-                                        "Fps": 222
+                                        "Fps": 222,
+                                        "DynamicRangeInfo": {}
                                     }
                                 ],
                                 "Bitrate": 563477,
@@ -245,7 +263,6 @@ Output:
                                 "Width": 672,
                                 "Duration": 3601,
                                 "Size": 10502,
-                                "VideoDuration": 3601,
                                 "AudioStreamSet": [
                                     {
                                         "Codec": "aac",
@@ -262,7 +279,7 @@ Output:
                         {
                             "Definition": 0,
                             "Package": "HLS",
-                            "DrmType": "xx",
+                            "DrmType": "None",
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
                             "Size": 0
                         }
@@ -344,9 +361,14 @@ Output:
                     "TagSet": [],
                     "SourceInfo": {
                         "SourceType": "Record",
-                        "SourceContext": ""
+                        "SourceContext": "",
+                        "TrtcRecordInfo": null
                     },
-                    "StorageRegion": "gzp"
+                    "Category": "Video",
+                    "Vid": "",
+                    "StorageClass": "STANDARD",
+                    "StorageRegion": "gzp",
+                    "Status": "Normal"
                 },
                 "MetaData": null,
                 "TranscodeInfo": null,

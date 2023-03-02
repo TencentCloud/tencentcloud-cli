@@ -4670,13 +4670,13 @@
       "document": "DescribeLoadBalancerTraffic请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "负载均衡所在地域，不传默认返回所有地域负载均衡。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "LoadBalancerRegion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4689,9 +4689,9 @@
           "example": "无",
           "member": "LoadBalancerTraffic",
           "name": "LoadBalancerTraffic",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7620,47 +7620,68 @@
         {
           "default": "",
           "document": "负载均衡ID",
+          "example": "lb-xxxxxxx",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "负载均衡名字",
+          "example": "test-name",
           "member": "string",
           "name": "LoadBalancerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "负载均衡所在地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "负载均衡的vip",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Vip",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "最大出带宽，单位：Mbps",
+          "example": "17",
           "member": "float",
           "name": "OutBandwidth",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "CLB域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guang.safsadf.tencentclb.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

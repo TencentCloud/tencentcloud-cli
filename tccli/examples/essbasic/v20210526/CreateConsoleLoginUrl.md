@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli essbasic CreateConsoleLoginUrl --cli-unfold-argument  \
-    --ProxyOrganizationName 渠道子客企业名称 \
+    --ProxyOrganizationName 子客企业名称 \
     --Agent.ProxyOperator.OpenId test \
     --Agent.ProxyOrganizationOpenId testx \
     --Agent.AppId test
@@ -32,7 +32,7 @@ Input:
 
 ```
 tccli essbasic CreateConsoleLoginUrl --cli-unfold-argument  \
-    --ProxyOrganizationName 渠道子客企业名称 \
+    --ProxyOrganizationName 子客企业名称 \
     --Agent.ProxyOperator.OpenId test \
     --Agent.ProxyOrganizationOpenId test \
     --Agent.AppId test \

@@ -1,3 +1,306 @@
+# Release 3.0.715.1
+
+## 账号中心(account) 版本：2018-12-25
+
+### 第 7 次发布
+
+发布时间：2023-03-03 01:05:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BatchCheckWhitelist](http://document.tencentcloudapi.woa.com/document/product/1594/77153)
+* [BindAccountForTCB](http://document.tencentcloudapi.woa.com/document/product/1594/77156)
+* [CheckAccountExists](http://document.tencentcloudapi.woa.com/document/product/1594/77158)
+* [DescribeSensitiveInfoHashValue](http://document.tencentcloudapi.woa.com/document/product/1594/77152)
+* [DescribeTCBBinding](http://document.tencentcloudapi.woa.com/document/product/1594/77151)
+* [GetAppIdByUin](http://document.tencentcloudapi.woa.com/document/product/1594/77150)
+* [GetAreaByUin](http://document.tencentcloudapi.woa.com/document/product/1594/77149)
+* [GetAuthStatus](http://document.tencentcloudapi.woa.com/document/product/1594/77148)
+* [GetMediaPlatformAccessToken](http://document.tencentcloudapi.woa.com/document/product/1594/77147)
+* [LoginViaTCB](http://document.tencentcloudapi.woa.com/document/product/1594/77157)
+* [RegisterAccountForTCB](http://document.tencentcloudapi.woa.com/document/product/1594/77155)
+* [UnbindTCBAccount](http://document.tencentcloudapi.woa.com/document/product/1594/77154)
+
+新增数据结构：
+
+* [TCBAuthInfo](http://document.tencentcloudapi.woa.com/document/product/1594/75172#TCBAuthInfo)
+* [TCBRegisterData](http://document.tencentcloudapi.woa.com/document/product/1594/75172#TCBRegisterData)
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 21 次发布
+
+发布时间：2023-03-03 01:11:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLogs](http://document.tencentcloudapi.woa.com/document/product/1132/77159)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 32 次发布
+
+发布时间：2023-03-03 01:12:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoadBalancerTraffic](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancerTraffic)
+
+	* 新增成员：Domain
+
+
+
+
+## 多媒体创作引擎(cme) 版本：2019-10-29
+
+### 第 16 次发布
+
+发布时间：2023-03-03 01:13:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateProject](http://document.tencentcloudapi.woa.com/document/product/1156/40350)
+
+	* 新增入参：MediaCastProjectInput
+
+
+新增数据结构：
+
+* [MediaCastProjectInput](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MediaCastProjectInput)
+
+修改数据结构：
+
+* [MediaCastDestinationInfo](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MediaCastDestinationInfo)
+
+	* 新增成员：Id
+
+	* <font color="#dd0000">**删除成员**：</font>Index
+
+* [MediaCastSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MediaCastSourceInfo)
+
+	* 新增成员：Id
+
+	* <font color="#dd0000">**删除成员**：</font>Index
+
+	* <font color="#dd0000">**修改成员**：</font>Type
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 36 次发布
+
+发布时间：2023-03-03 01:16:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CynosdbInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstance)
+
+	* 新增成员：MasterZone, SlaveZones
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 9 次发布
+
+发布时间：2023-03-03 01:19:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDomainExpireInfo](http://document.tencentcloudapi.woa.com/document/product/242/77161)
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 4 次发布
+
+发布时间：2023-03-03 01:20:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLogStats](http://document.tencentcloudapi.woa.com/document/product/1359/77165)
+* [DescribeLogTagValue](http://document.tencentcloudapi.woa.com/document/product/1359/77164)
+* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/1359/77163)
+
+新增数据结构：
+
+* [LogFilter](http://document.tencentcloudapi.woa.com/document/product/1359/67704#LogFilter)
+* [LogFilters](http://document.tencentcloudapi.woa.com/document/product/1359/67704#LogFilters)
+* [SearchLogResult](http://document.tencentcloudapi.woa.com/document/product/1359/67704#SearchLogResult)
+* [StatsLogData](http://document.tencentcloudapi.woa.com/document/product/1359/67704#StatsLogData)
+* [StatsLogResponse](http://document.tencentcloudapi.woa.com/document/product/1359/67704#StatsLogResponse)
+
+
+
+## 密钥管理系统(kms) 版本：2019-01-18
+
+### 第 5 次发布
+
+发布时间：2023-03-03 01:25:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetServiceStatus](http://document.tencentcloudapi.woa.com/document/product/573/34417)
+
+	* 新增出参：SubscriptionInfo
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 45 次发布
+
+发布时间：2023-03-03 01:27:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePrometheusConfig](http://document.tencentcloudapi.woa.com/document/product/248/76944)
+
+	* 新增出参：Config, ServiceMonitors, PodMonitors, RawJobs
+
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 27 次发布
+
+发布时间：2023-03-03 01:35:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupDownloadRestriction](http://document.tencentcloudapi.woa.com/document/product/239/77167)
+* [ModifyBackupDownloadRestriction](http://document.tencentcloudapi.woa.com/document/product/239/77166)
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 18 次发布
+
+发布时间：2023-03-03 01:40:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeInstanceAll
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 23 次发布
+
+发布时间：2023-03-03 01:43:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [McuLayoutVolume](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutVolume)
+
+	* 新增成员：Interval, FollowIdr
+
+* [McuPassThrough](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPassThrough)
+
+	* 新增成员：Interval, FollowIdr
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 50 次发布
+
+发布时间：2023-03-03 01:45:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [MediaSubStreamInfoItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaSubStreamInfoItem)
+
+修改数据结构：
+
+* [AdaptiveDynamicStreamingInfoItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#AdaptiveDynamicStreamingInfoItem)
+
+	* 新增成员：SubStreamSet
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 27 次发布
+
+发布时间：2023-03-03 01:48:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAttackOverview](http://document.tencentcloudapi.woa.com/document/product/627/77169)
+
+
+
 # Release 3.0.714.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

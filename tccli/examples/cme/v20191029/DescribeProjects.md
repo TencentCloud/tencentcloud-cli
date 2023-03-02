@@ -26,6 +26,7 @@ Output:
                     "Id": "user_31345df76a6b44104571916a"
                 },
                 "StreamConnectProjectInfo": null,
+                "MediaCastProjectInfo": null,
                 "UpdateTime": "2020-11-13T06:41:34.808Z",
                 "CreateTime": "2020-11-13T06:41:34.808Z",
                 "CoverUrl": ""
@@ -45,8 +46,8 @@ Input:
 ```
 tccli cme DescribeProjects --cli-unfold-argument  \
     --Platform test \
-    --ProjectIds cmepid_60599df66a6b440001518169 \
-    --CategorySet STREAM_CONNECT
+    --CategorySet STREAM_CONNECT \
+    --ProjectIds cmepid_60599df66a6b440001518169
 ```
 
 Output: 
@@ -89,6 +90,76 @@ Output:
                             }
                         }
                     ]
+                }
+            }
+        ],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5c"
+    }
+}
+```
+
+**Example 3: 获取点播转直播项目信息**
+
+
+
+Input: 
+
+```
+tccli cme DescribeProjects --cli-unfold-argument  \
+    --Platform test \
+    --CategorySet MEDIA_CAST \
+    --ProjectIds cmepid_60599df66a6b440001518169
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
+        "ProjectInfoSet": [
+            {
+                "ProjectId": "cmepid_60599df66a6b440001518169",
+                "Name": "test",
+                "AspectRatio": "",
+                "Category": "MEDIA_CAST",
+                "Owner": {
+                    "Type": "PERSON",
+                    "Id": "user_31345df76a6b44104571916a"
+                },
+                "UpdateTime": "2020-11-13T06:41:34.808Z",
+                "CreateTime": "2020-11-13T06:41:34.808Z",
+                "CoverUrl": "",
+                "StreamConnectProjectInfo": null,
+                "MediaCastProjectInfo": {
+                    "Status": "Working",
+                    "StartTime": "2020-11-13T06:41:34.808Z",
+                    "SourceInfos": [
+                        {
+                            "Type": "CME",
+                            "MaterialId": "a123"
+                        },
+                        {
+                            "Type": "VOD",
+                            "FileId": "53434"
+                        }
+                    ],
+                    "DestinationInfos": [
+                        {
+                            "Name": "test",
+                            "PushUrl": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08"
+                        }
+                    ],
+                    "PlaySetting": {
+                        "LoopCount": 2
+                    },
+                    "OutputMediaSetting": {
+                        "VideoSetting": {
+                            "Width": 1920,
+                            "Height": 1080,
+                            "Bitrate": 2500,
+                            "FrameRate": 25
+                        }
+                    }
                 }
             }
         ],

@@ -2083,7 +2083,6 @@
           "example": "1",
           "member": "bool",
           "name": "ServiceEnabled",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -2093,7 +2092,6 @@
           "example": "1",
           "member": "int64",
           "name": "InvalidType",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2103,7 +2101,6 @@
           "example": "0",
           "member": "uint64",
           "name": "UserLevel",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2113,7 +2110,6 @@
           "example": "1603701385",
           "member": "uint64",
           "name": "ProExpireTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2123,7 +2119,6 @@
           "example": "1",
           "member": "uint64",
           "name": "ProRenewFlag",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2133,7 +2128,6 @@
           "example": "kms_pro_12345",
           "member": "string",
           "name": "ProResourceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2143,7 +2137,6 @@
           "example": "false",
           "member": "bool",
           "name": "ExclusiveVSMEnabled",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -2153,8 +2146,16 @@
           "example": "false",
           "member": "bool",
           "name": "ExclusiveHSMEnabled",
-          "required": true,
           "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "KMS 订阅信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Prepaid_KMS",
+          "member": "string",
+          "name": "SubscriptionInfo",
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },

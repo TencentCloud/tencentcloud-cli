@@ -3725,7 +3725,6 @@
       "document": "实例信息",
       "members": [
         {
-          "default": "",
           "document": "用户Uin",
           "example": "11111111",
           "member": "string",
@@ -3736,7 +3735,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "用户AppId",
           "example": "11111111",
           "member": "int64",
@@ -3747,7 +3745,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群ID",
           "example": "cynosmysql-xxxxxxxx",
           "member": "string",
@@ -3758,7 +3755,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群名称",
           "example": "MyClusterName",
           "member": "string",
@@ -3769,7 +3765,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例ID",
           "example": "cynosmysql-ins-xxxxxxxx",
           "member": "string",
@@ -3780,7 +3775,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例名称",
           "example": "MyInstanceName",
           "member": "string",
@@ -3791,7 +3785,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "0",
           "member": "int64",
@@ -3802,7 +3795,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -3813,7 +3805,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -3824,7 +3815,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例状态",
           "example": "running",
           "member": "string",
@@ -3835,7 +3825,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例状态中文描述",
           "example": "运行中",
           "member": "string",
@@ -3846,7 +3835,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据库类型",
           "example": "MYSQL",
           "member": "string",
@@ -3857,7 +3845,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据库版本",
           "example": "5.7",
           "member": "string",
@@ -3868,7 +3855,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Cpu，单位：核",
           "example": "1",
           "member": "int64",
@@ -3879,7 +3865,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "内存，单位：GB",
           "example": "1",
           "member": "int64",
@@ -3890,7 +3875,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "存储量，单位：GB",
           "example": "1000",
           "member": "int64",
@@ -3901,7 +3885,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例类型",
           "example": "master",
           "member": "string",
@@ -3912,7 +3895,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例当前角色",
           "example": "master",
           "member": "string",
@@ -3923,7 +3905,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "更新时间",
           "example": "2021-06-08 14:29:25",
           "member": "datetime",
@@ -3934,7 +3915,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2021-06-08 14:29:25",
           "member": "datetime",
@@ -3945,7 +3925,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC网络ID",
           "example": "vpc-xxxxxxxx",
           "member": "string",
@@ -3956,7 +3935,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网ID",
           "example": "subnet-xxxxxxxx",
           "member": "string",
@@ -3967,7 +3945,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例内网IP",
           "example": "1.2.3.4",
           "member": "string",
@@ -3978,7 +3955,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例内网端口",
           "example": "3306",
           "member": "int64",
@@ -3989,7 +3965,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "付费模式",
           "example": "1",
           "member": "int64",
@@ -4000,7 +3975,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例过期时间",
           "example": "2021-07-08 14:29:25",
           "member": "datetime",
@@ -4011,7 +3985,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "销毁期限",
           "example": "0 天",
           "member": "string",
@@ -4022,7 +3995,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "隔离时间",
           "example": "2021-07-08 14:29:25",
           "member": "datetime",
@@ -4033,7 +4005,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网络类型",
           "example": "无",
           "member": "int64",
@@ -4044,7 +4015,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "外网域名",
           "example": "无",
           "member": "string",
@@ -4055,7 +4025,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "外网IP",
           "example": "2.3.4.5",
           "member": "string",
@@ -4066,7 +4035,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "外网端口",
           "example": "7654",
           "member": "int64",
@@ -4077,7 +4045,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "外网状态",
           "example": "无",
           "member": "string",
@@ -4088,7 +4055,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例销毁时间",
           "example": "无",
           "member": "string",
@@ -4099,7 +4065,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Cynos内核版本",
           "example": "2.0.12",
           "member": "string",
@@ -4110,7 +4075,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "正在处理的任务",
           "example": "ProcessingTask",
           "member": "string",
@@ -4121,7 +4085,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "续费标志",
           "example": "1",
           "member": "int64",
@@ -4132,7 +4095,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "serverless实例cpu下限",
           "example": "1",
           "member": "float",
@@ -4143,7 +4105,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "serverless实例cpu上限",
           "example": "2",
           "member": "float",
@@ -4154,7 +4115,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "serverless实例状态, 可选值：\nresume\npause",
           "example": "resume",
           "member": "string",
@@ -4165,7 +4125,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "预付费存储Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cynosmysql-xxxxxxxx",
           "member": "string",
@@ -4176,7 +4135,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "存储付费类型",
           "example": "1",
           "member": "int64",
@@ -4187,7 +4145,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "物理区",
           "example": "无",
           "member": "string",
@@ -4198,7 +4155,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "商业类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4209,7 +4165,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ObjectTask",
@@ -4220,7 +4175,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否冻结\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "yes",
           "member": "string",
@@ -4231,12 +4185,31 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MasterZone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "备可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SlaveZones",
+          "required": false,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -6641,7 +6614,6 @@
       "document": "DescribeInstanceSpecs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
           "example": "MYSQL",
           "member": "string",
@@ -6651,7 +6623,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否需要返回可用区信息",
           "example": "False",
           "member": "bool",
@@ -6671,7 +6642,6 @@
           "example": "无",
           "member": "InstanceSpec",
           "name": "InstanceSpecSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1

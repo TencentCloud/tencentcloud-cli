@@ -589,7 +589,7 @@ def doDescribeTaskInfo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDBInstanceSecurityGroups(args, parsed_globals):
+def doModifyBackupDownloadRestriction(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -618,11 +618,11 @@ def doModifyDBInstanceSecurityGroups(args, parsed_globals):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDBInstanceSecurityGroupsRequest()
+    model = models.ModifyBackupDownloadRestrictionRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyDBInstanceSecurityGroups(model)
+        rsp = client.ModifyBackupDownloadRestriction(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -901,7 +901,7 @@ def doClearInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBackupUrl(args, parsed_globals):
+def doAllocateWanAddress(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -930,11 +930,11 @@ def doDescribeBackupUrl(args, parsed_globals):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBackupUrlRequest()
+    model = models.AllocateWanAddressRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeBackupUrl(model)
+        rsp = client.AllocateWanAddress(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1785,7 +1785,7 @@ def doRenewInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAllocateWanAddress(args, parsed_globals):
+def doDescribeBackupUrl(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1814,11 +1814,11 @@ def doAllocateWanAddress(args, parsed_globals):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AllocateWanAddressRequest()
+    model = models.DescribeBackupUrlRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.AllocateWanAddress(model)
+        rsp = client.DescribeBackupUrl(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2357,7 +2357,7 @@ def doSwitchProxy(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDestroyPrepaidInstance(args, parsed_globals):
+def doRestoreInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2386,11 +2386,11 @@ def doDestroyPrepaidInstance(args, parsed_globals):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DestroyPrepaidInstanceRequest()
+    model = models.RestoreInstanceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DestroyPrepaidInstance(model)
+        rsp = client.RestoreInstance(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3397,6 +3397,58 @@ def doDescribeSlowLog(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeBackupDownloadRestriction(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBackupDownloadRestrictionRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeBackupDownloadRestriction(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeInstanceZoneInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3761,7 +3813,7 @@ def doDescribeInstanceShards(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRestoreInstance(args, parsed_globals):
+def doDestroyPrepaidInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3790,11 +3842,11 @@ def doRestoreInstance(args, parsed_globals):
     client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RestoreInstanceRequest()
+    model = models.DestroyPrepaidInstanceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.RestoreInstance(model)
+        rsp = client.DestroyPrepaidInstance(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4055,6 +4107,58 @@ def doDescribeProxySlowLog(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeProxySlowLog(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyDBInstanceSecurityGroups(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.RedisClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDBInstanceSecurityGroupsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyDBInstanceSecurityGroups(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4511,13 +4615,13 @@ ACTION_MAP = {
     "UpgradeInstanceVersion": doUpgradeInstanceVersion,
     "DescribeProductInfo": doDescribeProductInfo,
     "DescribeTaskInfo": doDescribeTaskInfo,
-    "ModifyDBInstanceSecurityGroups": doModifyDBInstanceSecurityGroups,
+    "ModifyBackupDownloadRestriction": doModifyBackupDownloadRestriction,
     "DescribeParamTemplates": doDescribeParamTemplates,
     "DescribeInstanceSecurityGroup": doDescribeInstanceSecurityGroup,
     "UpgradeVersionToMultiAvailabilityZones": doUpgradeVersionToMultiAvailabilityZones,
     "ModifyInstanceParams": doModifyInstanceParams,
     "ClearInstance": doClearInstance,
-    "DescribeBackupUrl": doDescribeBackupUrl,
+    "AllocateWanAddress": doAllocateWanAddress,
     "DeleteInstanceAccount": doDeleteInstanceAccount,
     "DisassociateSecurityGroups": doDisassociateSecurityGroups,
     "ModifyInstance": doModifyInstance,
@@ -4534,7 +4638,7 @@ ACTION_MAP = {
     "DescribeInstanceDTSInfo": doDescribeInstanceDTSInfo,
     "InquiryPriceUpgradeInstance": doInquiryPriceUpgradeInstance,
     "RenewInstance": doRenewInstance,
-    "AllocateWanAddress": doAllocateWanAddress,
+    "DescribeBackupUrl": doDescribeBackupUrl,
     "DescribeProjectSecurityGroups": doDescribeProjectSecurityGroups,
     "DescribeTendisSlowLog": doDescribeTendisSlowLog,
     "ModifyParamTemplate": doModifyParamTemplate,
@@ -4545,7 +4649,7 @@ ACTION_MAP = {
     "ModifyConnectionConfig": doModifyConnectionConfig,
     "ManualBackupInstance": doManualBackupInstance,
     "SwitchProxy": doSwitchProxy,
-    "DestroyPrepaidInstance": doDestroyPrepaidInstance,
+    "RestoreInstance": doRestoreInstance,
     "DescribeInstanceParamRecords": doDescribeInstanceParamRecords,
     "DescribeParamTemplateInfo": doDescribeParamTemplateInfo,
     "DestroyPostpaidInstance": doDestroyPostpaidInstance,
@@ -4565,6 +4669,7 @@ ACTION_MAP = {
     "KillMasterGroup": doKillMasterGroup,
     "DescribeCommonDBInstances": doDescribeCommonDBInstances,
     "DescribeSlowLog": doDescribeSlowLog,
+    "DescribeBackupDownloadRestriction": doDescribeBackupDownloadRestriction,
     "DescribeInstanceZoneInfo": doDescribeInstanceZoneInfo,
     "SwitchInstanceVip": doSwitchInstanceVip,
     "DescribeReplicationGroup": doDescribeReplicationGroup,
@@ -4572,12 +4677,13 @@ ACTION_MAP = {
     "ModifyMaintenanceWindow": doModifyMaintenanceWindow,
     "ModifyNetworkConfig": doModifyNetworkConfig,
     "DescribeInstanceShards": doDescribeInstanceShards,
-    "RestoreInstance": doRestoreInstance,
+    "DestroyPrepaidInstance": doDestroyPrepaidInstance,
     "DescribeInstances": doDescribeInstances,
     "OpenSSL": doOpenSSL,
     "DescribeAutoBackupConfig": doDescribeAutoBackupConfig,
     "DescribeInstanceDealDetail": doDescribeInstanceDealDetail,
     "DescribeProxySlowLog": doDescribeProxySlowLog,
+    "ModifyDBInstanceSecurityGroups": doModifyDBInstanceSecurityGroups,
     "ChangeMasterInstance": doChangeMasterInstance,
     "UpgradeInstance": doUpgradeInstance,
     "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,

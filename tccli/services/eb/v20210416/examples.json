@@ -96,6 +96,28 @@
         "title": "删除转换器"
       }
     ],
+    "DescribeLogStats": [
+      {
+        "document": "查询每分钟统计值，不以status分组",
+        "input": "{\n  \"StartTime\": 1600000000000,\n  \"EndTime\": 1600000010000,\n  \"EventBusId\": \"eb-xxxx\",\n  \"Filter\": [\n    {\n      \"Key\": \"host\",\n      \"Operator\": \"eq\",\n      \"Value\": \"106.53.106.243\"\n    }]\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"Status\": \"all\",\n                \"Data\": [\n                    {\n                        \"Count\": 0,\n                        \"Timestamp\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "demo1"
+      },
+      {
+        "document": "查询每分钟统计值，以status分组",
+        "input": "{\n  \"StartTime\": 1600000000000,\n  \"EndTime\": 1600000010000,\n  \"EventBusId\": \"eb-xxx\",\n  \"GroupByStatus\": [\"0\",\"1\"]\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"Status\": \"0\",\n                \"Data\": [\n                    {\n                        \"Count\": 18,\n                        \"Timestamp\": 1675656420000\n                    },\n                    {\n                        \"Timestamp\": 1675656480000\n                    }\n                ]\n            },\n            {\n                \"Status\": \"1\",\n                \"Data\": [\n                    {\n                        \"Count\": 18,\n                        \"Timestamp\": 1675656420000\n                    },\n                    {\n                        \"Timestamp\": 1675656480000\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "demo2"
+      }
+    ],
+    "DescribeLogTagValue": [
+      {
+        "document": "查询日志索引字段值",
+        "input": "{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"GroupField\": \"Source\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            \"eb-l65vlc2u\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询日志索引字段值"
+      }
+    ],
     "GetEventBus": [
       {
         "document": "获取事件集",
@@ -180,6 +202,14 @@
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutEventsOps\n<公共请求参数>\n\n{\n    \"EventList\": [\n        {\n            \"Data\": \"{\\\"Category\\\":0,\\\"Area\\\":0,\\\"Zone\\\":\\\"ap-guangzhou-1\\\"}\",\n            \"DataContentType\": \"application/json;charset=utf-8\",\n            \"Id\": \"b7ef8793-7bbc-449c-abf5-71f5b022ec60\",\n            \"Region\": \"ap-guangzhou\",\n            \"Source\": \"cvm.cloud.tencent\",\n            \"SpecVersion\": \"1.0\",\n            \"Status\": \"1\",\n            \"Subject\": \"all\",\n            \"Time\": 1670847967164,\n            \"Type\": \"cvm:statuspage:xxx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9178600d-67ba-4f25-9d6c-4f8ab3f32ccc\",\n        \"EventList\": [\n            {\n                \"Id\": \"b7ef8793-7bbc-449c-abf5-71f5b022ec60\"\n            }\n        ]\n    }\n}",
         "title": "demo"
+      }
+    ],
+    "SearchLog": [
+      {
+        "document": "日志检索",
+        "input": "{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"Results\": [\n            {\n                \"Timestamp\": \"xxx\",\n                \"Message\": \"xxx-1\",\n                \"Source\": \"xxx\",\n                \"Type\": \"xzz\",\n                \"RuleIds\": \"xxx\",\n                \"Subject\": \"xxx\",\n                \"Region\": \"xxx\",\n                \"Status\": \"xxx\"\n            }\n        ],\n        \"Total\": 1000,\n        \"Limit\": 500,\n        \"Page\": 1\n    }\n}",
+        "title": "日志检索"
       }
     ],
     "UpdateConnection": [

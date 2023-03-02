@@ -88,6 +88,14 @@
         "title": "获取域名基础信息"
       }
     ],
+    "DescribeDomainExpireInfo": [
+      {
+        "document": "查询域名过期信息",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainExpireInfo\n<公共请求参数>\n\n{\n    \"Domain\": \"qcloud.xyz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Domain\": \"qcloud.xyz\",\n        \"Registrar\": \"epp\",\n        \"Expired\": false,\n        \"ExpireTime\": \"2021-03-31 07:59:59\",\n        \"RequestId\": \"9112984c-f4ee-4446-b70b-8eac6f44ca2e\"\n    }\n}",
+        "title": "查询域名过期信息"
+      }
+    ],
     "DescribeDomainNameList": [
       {
         "document": "",

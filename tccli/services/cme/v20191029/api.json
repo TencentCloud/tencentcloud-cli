@@ -29,7 +29,7 @@
       "status": "online"
     },
     "CreateProject": {
-      "document": "创建多媒体创作引擎项目，目前支持的项目类型有：\n<li>视频剪辑项目：用于普通视频剪辑；</li>\n<li>直播剪辑项目：用于直播流剪辑；</li>\n<li>导播台项目：用于云导播台；</li>\n<li>视频拆条：用于视频拆条；</li>\n<li>录制回放项目：用于直播录制回放；</li>\n<li>云转推项目：用于直播云转推。</li>",
+      "document": "创建多媒体创作引擎项目，目前支持的项目类型有：\n<li>视频剪辑项目：用于普通视频剪辑；</li>\n<li>直播剪辑项目：用于直播流剪辑；</li>\n<li>导播台项目：用于云导播台；</li>\n<li>视频拆条：用于视频拆条；</li>\n<li>录制回放项目：用于直播录制回放；</li>\n<li>云转推项目：用于直播云转推。</li>\n<li>点播转直播项目：用于点播文件转直播输出。</li>",
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse",
@@ -1144,7 +1144,8 @@
           "member": "string",
           "name": "Platform",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1153,7 +1154,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1162,16 +1164,18 @@
           "member": "Entity",
           "name": "Owner",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>",
+          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>\n<li>MEDIA_CAST：点播转直播。</li>",
           "example": "VIDEO_EDIT",
           "member": "string",
           "name": "Category",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1180,7 +1184,8 @@
           "member": "string",
           "name": "Mode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1189,7 +1194,8 @@
           "member": "string",
           "name": "AspectRatio",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1198,7 +1204,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1207,7 +1214,8 @@
           "member": "SwitcherProjectInput",
           "name": "SwitcherProjectInput",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1216,7 +1224,8 @@
           "member": "LiveStreamClipProjectInput",
           "name": "LiveStreamClipProjectInput",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1225,7 +1234,8 @@
           "member": "VideoEditProjectInput",
           "name": "VideoEditProjectInput",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1234,7 +1244,8 @@
           "member": "VideoSegmentationProjectInput",
           "name": "VideoSegmentationProjectInput",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1243,7 +1254,8 @@
           "member": "StreamConnectProjectInput",
           "name": "StreamConnectProjectInput",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1252,7 +1264,18 @@
           "member": "RecordReplayProjectInput",
           "name": "RecordReplayProjectInput",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。",
+          "example": "无",
+          "member": "MediaCastProjectInput",
+          "name": "MediaCastProjectInput",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1267,7 +1290,8 @@
           "name": "ProjectId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "<li> 当 Catagory 为 STREAM_CONNECT 时，数组返回长度为2 ，第0个代表主输入源推流信息，第1个代表备输入源推流信息。只有当各自输入源类型为推流时才有有效内容。</li>",
@@ -1276,7 +1300,8 @@
           "name": "RtmpPushInputInfoSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2186,7 +2211,8 @@
           "member": "string",
           "name": "Platform",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2195,7 +2221,8 @@
           "member": "string",
           "name": "ProjectIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2204,16 +2231,18 @@
           "member": "string",
           "name": "AspectRatioSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "项目类型过滤参数列表，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>\n\n注：如果不填则不使用项目类型进行过滤。",
+          "document": "项目类型过滤参数列表，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>\n<li>MEDIA_CAST：点播转直播。</li>\n\n注：如果不填则不使用项目类型进行过滤。",
           "example": "无",
           "member": "string",
           "name": "CategorySet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2222,7 +2251,8 @@
           "member": "string",
           "name": "Modes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2231,7 +2261,8 @@
           "member": "SortBy",
           "name": "Sort",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2240,7 +2271,8 @@
           "member": "Entity",
           "name": "Owner",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2249,7 +2281,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2258,7 +2291,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2267,7 +2301,8 @@
           "member": "string",
           "name": "Operator",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2282,7 +2317,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "项目信息列表。",
@@ -2291,7 +2327,8 @@
           "name": "ProjectInfoSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5012,21 +5049,10 @@
       "members": [
         {
           "default": "",
-          "document": "输出源序号。由系统进行分配。",
-          "example": "无",
-          "member": "int64",
-          "name": "Index",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "输出源的名称。",
+          "document": "输出源 Id。由系统进行分配。",
           "example": "无",
           "member": "string",
-          "name": "Name",
+          "name": "Id",
           "required": false,
           "type": "string",
           "value_allowed_null": false,
@@ -5038,6 +5064,17 @@
           "example": "无",
           "member": "string",
           "name": "PushUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "输出源的名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
           "required": false,
           "type": "string",
           "value_allowed_null": false,
@@ -5202,26 +5239,76 @@
       ],
       "usage": "out"
     },
+    "MediaCastProjectInput": {
+      "document": "点播转直播项目输入信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "输入源列表。输入源列表最大个数为100.",
+          "example": "无",
+          "member": "MediaCastSourceInfo",
+          "name": "SourceInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "输出源列表。输出源列表最大个数为10.",
+          "example": "无",
+          "member": "MediaCastDestinationInfo",
+          "name": "DestinationInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "输出媒体配置。",
+          "example": "无",
+          "member": "MediaCastOutputMediaSetting",
+          "name": "OutputMediaSetting",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "播放控制参数。",
+          "example": "无",
+          "member": "MediaCastPlaySetting",
+          "name": "PlaySetting",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
     "MediaCastSourceInfo": {
       "document": "点播转直播输入源信息。",
       "members": [
+        {
+          "default": "",
+          "document": "输入源 Id，由系统分配。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
         {
           "default": "",
           "document": "输入源的媒体类型，取值有：\n<li>CME：多媒体创作引擎的媒体文件；</li>\n<li>VOD：云点播的媒资文件。</li>",
           "example": "CME",
           "member": "string",
           "name": "Type",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "多媒体创作引擎的媒体 ID。当 Type = CME  时必填。",
-          "example": "无",
-          "member": "string",
-          "name": "MaterialId",
           "required": false,
           "type": "string",
           "value_allowed_null": false,
@@ -5240,17 +5327,17 @@
         },
         {
           "default": "",
-          "document": "序号，位于输入源列表中的序号，由系统分配。",
-          "example": "0",
-          "member": "int64",
-          "name": "Index",
+          "document": "多媒体创作引擎的媒体 ID。当 Type = CME  时必填。",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialId",
           "required": false,
-          "type": "int",
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "MediaCastSourceInterruptInfo": {
       "document": "点播转直播输入断流信息。",

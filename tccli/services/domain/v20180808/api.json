@@ -77,6 +77,13 @@
       "output": "DescribeDomainBaseInfoResponse",
       "status": "online"
     },
+    "DescribeDomainExpireInfo": {
+      "document": "查询域名过期信息",
+      "input": "DescribeDomainExpireInfoRequest",
+      "name": "查询域名过期信息",
+      "output": "DescribeDomainExpireInfoResponse",
+      "status": "online"
+    },
     "DescribeDomainNameList": {
       "document": "本接口 (  DescribeDomainNameList ) 我的域名列表。\n",
       "input": "DescribeDomainNameListRequest",
@@ -1092,6 +1099,74 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainExpireInfoRequest": {
+      "document": "DescribeDomainExpireInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "'abc.com'",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainExpireInfoResponse": {
+      "document": "DescribeDomainExpireInfo返回参数结构体",
+      "members": [
+        {
+          "document": "域名",
+          "example": "‘abc.com’",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "注册商",
+          "example": "‘xinnet’",
+          "member": "string",
+          "name": "Registrar",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "是否过期，True表示已过期",
+          "example": "false",
+          "member": "bool",
+          "name": "Expired",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "过期时间",
+          "example": "‘2023-01-01 00:00:00’",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

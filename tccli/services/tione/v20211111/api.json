@@ -5480,7 +5480,6 @@
           "example": "无",
           "member": "FrameworkInfo",
           "name": "FrameworkInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6015,44 +6014,44 @@
       "document": "过滤器",
       "members": [
         {
-          "default": "",
           "document": "过滤字段名称",
           "example": "Name",
           "member": "string",
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤字段取值",
           "example": "{\"ss\",\"sss\"}",
           "member": "string",
           "name": "Values",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启反向查询",
           "example": "false",
           "member": "bool",
           "name": "Negative",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启模糊匹配",
           "example": "false",
           "member": "bool",
           "name": "Fuzzy",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -9835,24 +9834,24 @@
       "document": "描述腾讯云标签",
       "members": [
         {
-          "default": "",
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "type",
           "member": "string",
           "name": "TagKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "TagValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -9861,24 +9860,24 @@
       "document": "Tag过滤参数",
       "members": [
         {
-          "default": "",
           "document": "标签键",
           "example": "test",
           "member": "string",
           "name": "TagKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "多个标签值",
           "example": "{\"test\",\"test\"}",
           "member": "string",
           "name": "TagValues",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

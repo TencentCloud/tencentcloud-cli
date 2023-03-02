@@ -7,6 +7,27 @@
       "output": "AddWhitelistUinResponse",
       "status": "online"
     },
+    "BatchCheckWhitelist": {
+      "document": "批量检查白名单接口, 批量判断UIN是否在白名单内",
+      "input": "BatchCheckWhitelistRequest",
+      "name": "批量检查白名单",
+      "output": "BatchCheckWhitelistResponse",
+      "status": "online"
+    },
+    "BindAccountForTCB": {
+      "document": "TCB绑定云账号",
+      "input": "BindAccountForTCBRequest",
+      "name": "TCB绑定云账号",
+      "output": "BindAccountForTCBResponse",
+      "status": "online"
+    },
+    "CheckAccountExists": {
+      "document": "查询账号是否存在",
+      "input": "CheckAccountExistsRequest",
+      "name": "查询账号是否存在",
+      "output": "CheckAccountExistsResponse",
+      "status": "online"
+    },
     "DeleteWhitelistUin": {
       "document": "删除白名单账号",
       "input": "DeleteWhitelistUinRequest",
@@ -28,6 +49,34 @@
       "output": "DescribeNicknameResponse",
       "status": "online"
     },
+    "DescribeSensitiveInfoHashValue": {
+      "document": "获取账号敏感信息哈希值",
+      "input": "DescribeSensitiveInfoHashValueRequest",
+      "name": "获取账号敏感信息哈希值",
+      "output": "DescribeSensitiveInfoHashValueResponse",
+      "status": "online"
+    },
+    "DescribeTCBBinding": {
+      "document": "获取TCB账号绑定信息",
+      "input": "DescribeTCBBindingRequest",
+      "name": "获取TCB账号绑定信息",
+      "output": "DescribeTCBBindingResponse",
+      "status": "online"
+    },
+    "GetAppIdByUin": {
+      "document": "根据uin获取账号appid",
+      "input": "GetAppIdByUinRequest",
+      "name": "根据uin获取账号appid",
+      "output": "GetAppIdByUinResponse",
+      "status": "online"
+    },
+    "GetAreaByUin": {
+      "document": "获取账号地域属性",
+      "input": "GetAreaByUinRequest",
+      "name": "获取账号地域属性",
+      "output": "GetAreaByUinResponse",
+      "status": "online"
+    },
     "GetAuthNonSensitiveInfo": {
       "document": "获取实名认证非敏感信息",
       "input": "GetAuthNonSensitiveInfoRequest",
@@ -35,11 +84,25 @@
       "output": "GetAuthNonSensitiveInfoResponse",
       "status": "online"
     },
+    "GetAuthStatus": {
+      "document": "查询实名状态\n",
+      "input": "GetAuthStatusRequest",
+      "name": "查询实名状态",
+      "output": "GetAuthStatusResponse",
+      "status": "online"
+    },
     "GetBackUpValidate": {
       "document": "获取备选校验方式",
       "input": "GetBackUpValidateRequest",
       "name": "获取备选校验方式",
       "output": "GetBackUpValidateResponse",
+      "status": "online"
+    },
+    "GetMediaPlatformAccessToken": {
+      "document": "获取微信公众号access_token",
+      "input": "GetMediaPlatformAccessTokenRequest",
+      "name": "获取微信公众号access_token",
+      "output": "GetMediaPlatformAccessTokenResponse",
       "status": "online"
     },
     "GetSiteProperties": {
@@ -54,6 +117,27 @@
       "input": "GetUinByAppIdRequest",
       "name": "根据appid获取uin",
       "output": "GetUinByAppIdResponse",
+      "status": "online"
+    },
+    "LoginViaTCB": {
+      "document": "通过TCB登录腾讯云",
+      "input": "LoginViaTCBRequest",
+      "name": "通过TCB登录腾讯云",
+      "output": "LoginViaTCBResponse",
+      "status": "online"
+    },
+    "RegisterAccountForTCB": {
+      "document": "TCB注册云账号",
+      "input": "RegisterAccountForTCBRequest",
+      "name": "TCB注册云账号",
+      "output": "RegisterAccountForTCBResponse",
+      "status": "online"
+    },
+    "UnbindTCBAccount": {
+      "document": "解绑TCB账号",
+      "input": "UnbindTCBAccountRequest",
+      "name": "解绑TCB账号",
+      "output": "UnbindTCBAccountResponse",
       "status": "online"
     }
   },
@@ -91,6 +175,120 @@
     "AddWhitelistUinResponse": {
       "document": "AddWhitelistUin返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCheckWhitelistRequest": {
+      "document": "BatchCheckWhitelist请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "BatchCheckWhitelistResponse": {
+      "document": "BatchCheckWhitelist返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindAccountForTCBRequest": {
+      "document": "BindAccountForTCB请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要绑定的云账号uin",
+          "example": "123",
+          "member": "int64",
+          "name": "BindUin",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "账号类型。目前支持：wx_open，la，wx_biz",
+          "example": "wx_open",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "账号相关数据",
+          "example": "无",
+          "member": "TCBRegisterData",
+          "name": "AccountData",
+          "required": true,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "BindAccountForTCBResponse": {
+      "document": "BindAccountForTCB返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAccountExistsRequest": {
+      "document": "CheckAccountExists请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号名",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号类型。手机：phone；邮箱：mail；微信： wechat；QQ： qq；公众号：wechatMp",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号平台。coding：coding",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAccountExistsResponse": {
+      "document": "CheckAccountExists返回参数结构体",
+      "members": [
+        {
+          "document": "账号是否存在。true表示存在，false表示不存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Exist",
+          "type": "bool",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -237,6 +435,133 @@
       ],
       "type": "object"
     },
+    "DescribeSensitiveInfoHashValueRequest": {
+      "document": "DescribeSensitiveInfoHashValue请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSensitiveInfoHashValueResponse": {
+      "document": "DescribeSensitiveInfoHashValue返回参数结构体",
+      "members": [
+        {
+          "document": "哈希算法(如：md5)。",
+          "member": "string",
+          "name": "HashAlgorithm",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "哈希salt。",
+          "member": "string",
+          "name": "Salt",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否存在安全手机（0：不存在，1：存在）。",
+          "member": "int64",
+          "name": "HasSecurePhone",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否存在实名信息（0：不存在，1：存在）。",
+          "member": "int64",
+          "name": "HasAuthInfo",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全手机哈希值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecurePhoneHashValue",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实名认证名称哈希值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AuthNameHashValue",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTCBBindingRequest": {
+      "document": "DescribeTCBBinding请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "公众号username",
+          "example": "无",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "TCB账号类型(wx_open, la, wx_biz)",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTCBBindingResponse": {
+      "document": "DescribeTCBBinding返回参数结构体",
+      "members": [
+        {
+          "document": "username绑定的云账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "UsernameBoundUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "账号绑定类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "BindType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "当前账号指定绑定类型的username\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UinBoundUsername",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FaceIdData": {
       "document": "人脸参数",
       "members": [
@@ -294,6 +619,102 @@
       ],
       "usage": "out"
     },
+    "GetAppIdByUinRequest": {
+      "document": "GetAppIdByUin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询的uin",
+          "example": "123",
+          "member": "uint64",
+          "name": "OpUin",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "GetAppIdByUinResponse": {
+      "document": "GetAppIdByUin返回参数结构体",
+      "members": [
+        {
+          "document": "账号appid",
+          "example": "123",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAreaByUinRequest": {
+      "document": "GetAreaByUin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询的账号uin",
+          "example": "123",
+          "member": "uint64",
+          "name": "OpUin",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetAreaByUinResponse": {
+      "document": "GetAreaByUin返回参数结构体",
+      "members": [
+        {
+          "document": "1: 国内站，2：国际站",
+          "example": "1",
+          "member": "int64",
+          "name": "Area",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "国家名",
+          "example": "CN",
+          "member": "string",
+          "name": "CountryName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "国家代码",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetAuthNonSensitiveInfoRequest": {
       "document": "GetAuthNonSensitiveInfo请求参数结构体",
       "members": [
@@ -315,6 +736,37 @@
           "document": "实名认证通过时间",
           "member": "string",
           "name": "PassTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAuthStatusRequest": {
+      "document": "GetAuthStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetAuthStatusResponse": {
+      "document": "GetAuthStatus返回参数结构体",
+      "members": [
+        {
+          "document": "实名状态:0，未提交审核，1审核中，2审核失败，3通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
           "type": "string",
           "value_allowed_null": false
         },
@@ -434,6 +886,94 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetMediaPlatformAccessTokenRequest": {
+      "document": "GetMediaPlatformAccessToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "微信公众号username",
+          "example": "gh_7180000000",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "微信公众号appid",
+          "example": "wx5c07f2xxxxxx",
+          "member": "string",
+          "name": "AppID",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "是否刷新access_token。0：不刷新，1：刷新",
+          "example": "0",
+          "member": "int64",
+          "name": "Refresh",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "GetMediaPlatformAccessTokenResponse": {
+      "document": "GetMediaPlatformAccessToken返回参数结构体",
+      "members": [
+        {
+          "document": "微信公众号appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "微信公众号username\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "微信公众号access_token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "微信公众号func_scope\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FuncScope",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -590,6 +1130,104 @@
       ],
       "usage": "out"
     },
+    "LoginViaTCBRequest": {
+      "document": "LoginViaTCB请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "微信小程序tmp_code",
+          "example": "无",
+          "member": "string",
+          "name": "TmpCode",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "是否需要返回sts token",
+          "example": "1",
+          "member": "int64",
+          "name": "RequireStsToken",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "sts token是否使用v3版本",
+          "example": "1",
+          "member": "int64",
+          "name": "UseV3Token",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户IP。如果需要返回 sts token，该参数必填",
+          "example": "无",
+          "member": "string",
+          "name": "UserIP",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "LoginViaTCBResponse": {
+      "document": "LoginViaTCB返回参数结构体",
+      "members": [
+        {
+          "document": "登录token或者sts token",
+          "example": "无",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "临时密钥id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "临时密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "密钥过期时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SecretExpire",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MailValidInfo": {
       "document": "邮箱备选验证详情",
       "members": [
@@ -653,6 +1291,64 @@
       ],
       "usage": "out"
     },
+    "RegisterAccountForTCBRequest": {
+      "document": "RegisterAccountForTCB请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号类型。目前支持：la, wx_open, wx_biz",
+          "example": "la",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "账号注册信息",
+          "example": "无",
+          "member": "TCBRegisterData",
+          "name": "RegisterData",
+          "required": true,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterAccountForTCBResponse": {
+      "document": "RegisterAccountForTCB返回参数结构体",
+      "members": [
+        {
+          "document": "账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "0: 新建账号，1：绑定存量账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsBind",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StokenData": {
       "document": "软token参数",
       "members": [
@@ -701,6 +1397,128 @@
       ],
       "usage": "out"
     },
+    "TCBAuthInfo": {
+      "document": "tcb实名认证信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实名认证身份ID。个人实名为身份号码，企业实名为企业社会信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "实名认证名称",
+          "example": "无",
+          "member": "string",
+          "name": "PrincipalName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "实名认证类型。0：个人实名，1：企业实名",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
+    "TCBRegisterData": {
+      "document": "tcb注册云账号的用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "微信公众号username",
+          "example": "无",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "微信公账号appid",
+          "example": "无",
+          "member": "string",
+          "name": "AppID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "昵称",
+          "example": "无",
+          "member": "string",
+          "name": "Nickname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "实名认证信息",
+          "example": "无",
+          "member": "TCBAuthInfo",
+          "name": "AuthInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "邮箱地址",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "手机号码",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "国家代码",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
     "TokenData": {
       "document": "Token参数",
       "members": [
@@ -739,6 +1557,44 @@
         }
       ],
       "usage": "out"
+    },
+    "UnbindTCBAccountRequest": {
+      "document": "UnbindTCBAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TCB账号类型，目前只支持wx_open",
+          "example": "wx_open",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindTCBAccountResponse": {
+      "document": "UnbindTCBAccount返回参数结构体",
+      "members": [
+        {
+          "document": "账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "WeChatData": {
       "document": "微信参数",

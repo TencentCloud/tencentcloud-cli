@@ -150,6 +150,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeBackupDownloadRestriction": [
+      {
+        "document": "通过该接口查询当前地域用户设置的备份文件的下载来源限制。",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDownloadRestriction\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IpComparisonSymbol\": \"NotIn\",\n        \"LimitIp\": [\n            \"10.1.0.13\"\n        ],\n        \"LimitType\": \"Customize\",\n        \"LimitVpc\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"VpcList\": [\n                    \"vpc-5og4fwm9\",\n                    \"vpc-03dsikyx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"785b6c5f-999f-43ef-9906-14f4c24b8040\",\n        \"VpcComparisonSymbol\": \"In\"\n    }\n}",
+        "title": "查询当前地域用户设置的备份文件的下载来源限制。"
+      }
+    ],
     "DescribeBackupUrl": [
       {
         "document": "通过该接口查询备份文件的 Rdb下载地址。",
@@ -516,6 +524,14 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoBackupConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5a4py64p\",\n    \"AutoBackupType\": \"1\",\n    \"TimePeriod\": \"00%3A00-01%3A00\",\n    \"WeekDays\": [\n        \"Wednesday\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"BackupStorageDays\": 7,\n        \"AutoBackupType\": 1,\n        \"WeekDays\": [\n            \"Wednesday\"\n        ],\n        \"RequestId\": \"65e950b9-78e8-49b1-9200-0e62a1925554\",\n        \"TimePeriod\": \"00:00-01:00\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "ModifyBackupDownloadRestriction": [
+      {
+        "document": "通过该接口修改当前地域用户自定义的备份文件下载网络与地址。",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupDownloadRestriction\n<公共请求参数>\n\n{\n    \"LimitType\": \"Customize\",\n    \"VpcComparisonSymbol\": \"In\",\n    \"IpComparisonSymbol\": \"NotIn\",\n    \"LimitVpc\": [\n        {\n            \"VpcList\": [\n                \"vpc-5og4fwm9\",\n                \"vpc-03dsikyx\"\n            ],\n            \"Region\": \"ap-guangzho\"\n        }\n    ],\n    \"LimitIp\": [\n        \"10.1.0.13\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"489f7bc7-e0e0-4e6f-a5c4-97c5fcf7ea8b\"\n    }\n}",
+        "title": "修改备份文件下载地址。"
       }
     ],
     "ModifyConnectionConfig": [

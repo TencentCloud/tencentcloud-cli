@@ -175,6 +175,13 @@
       "output": "DescribeIPStatusListResponse",
       "status": "online"
     },
+    "DescribeLogs": {
+      "document": "日志审计日志查询",
+      "input": "DescribeLogsRequest",
+      "name": "日志审计日志查询",
+      "output": "DescribeLogsResponse",
+      "status": "online"
+    },
     "DescribeNatAcRule": {
       "document": "查询NAT访问控制列表",
       "input": "DescribeNatAcRuleRequest",
@@ -3529,6 +3536,124 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogsRequest": {
+      "document": "DescribeLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志类型标识",
+          "example": "netflow_border_",
+          "member": "string",
+          "name": "Index",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "每页条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "偏移值",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "筛选开始时间",
+          "example": "2021-09-21 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "筛选结束时间",
+          "example": "2021-09-21 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "过滤条件组合",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogsResponse": {
+      "document": "DescribeLogs返回参数结构体",
+      "members": [
+        {
+          "document": "日志列表",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "总条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "返回状态码 0 成功 非0不成功",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "返回信息  success 成功 其他 不成功",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

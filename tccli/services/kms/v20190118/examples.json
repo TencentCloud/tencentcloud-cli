@@ -298,7 +298,7 @@
       {
         "document": "查询服务状态",
         "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetServiceStatus\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"ServiceEnabled\": true,\n        \"InvalidType\": 1,\n        \"UserLevel\": 0,\n        \"ProResourceId\": \"kms_pro_12345\",\n        \"ProRenewFlag\": 1,\n        \"ProExpireTime\": 1603701385,\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\",\n        \"ExclusiveHSMEnabled\": false,\n        \"ExclusiveVSMEnabled\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceEnabled\": true,\n        \"InvalidType\": 1,\n        \"UserLevel\": 0,\n        \"ProResourceId\": \"kms_pro_12345\",\n        \"ProRenewFlag\": 1,\n        \"ProExpireTime\": 1603701385,\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\",\n        \"ExclusiveHSMEnabled\": false,\n        \"ExclusiveVSMEnabled\": false,\n        \"SubscriptionInfo\": \"Prepaid_KMS\"\n    }\n}",
         "title": "查询服务状态"
       }
     ],

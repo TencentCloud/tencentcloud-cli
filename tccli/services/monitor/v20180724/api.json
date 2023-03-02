@@ -10842,6 +10842,42 @@
       "document": "DescribePrometheusConfig返回参数结构体",
       "members": [
         {
+          "document": "全局配置",
+          "example": "无",
+          "member": "string",
+          "name": "Config",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "ServiceMonitor配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "PodMonitor配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "原生Job",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

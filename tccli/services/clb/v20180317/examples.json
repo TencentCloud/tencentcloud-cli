@@ -390,7 +390,7 @@
     ],
     "DescribeLoadBalancerTraffic": [
       {
-        "document": "",
+        "document": "查询账号下高流量负载均衡",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeLoadBalancerTraffic\n&LoadBalancerRegion=ap-guangzhou\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LoadBalancerTraffic\": [\n            {\n                \"LoadBalancerId\": \"lb-xxxxxx\",\n                \"LoadBalancerName\": \"lb-name1\",\n                \"Region\": \"ap-guangzhou\",\n                \"Vip\": \"1.1.1.1\",\n                \"OutBandwidth\": 177.083\n            },\n            {\n                \"LoadBalancerId\": \"lb-kxyz2\",\n                \"LoadBalancerName\": \"lb-xyzname\",\n                \"Region\": \"ap-guangzhou\",\n                \"Vip\": \"2.2.2.2\",\n                \"OutBandwidth\": 77.449\n            }\n        ],\n        \"RequestId\": \"03b18184-caf1-40d7-b01a-100010030712\"\n    }\n}",
         "title": "查询账号下高流量负载均衡"

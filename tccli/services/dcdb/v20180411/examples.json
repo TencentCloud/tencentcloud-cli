@@ -58,7 +58,7 @@
     ],
     "CreateDCDBInstance": [
       {
-        "document": "",
+        "document": "创建包年包月的分布式数据库实例",
         "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDCDBInstance\n<公共请求参数>\n\n{\n    \"Count\": \"1\",\n    \"DbVersionId\": \"5.7.17\",\n    \"ShardNodeCount\": \"3\",\n    \"Period\": \"1\",\n    \"AutoVoucher\": \"true\",\n    \"Zones\": [\n        \"ap-guangzhou-2\",\n        \"ap-guangzhou-2\"\n    ],\n    \"ShardMemory\": \"2\",\n    \"ShardCount\": \"2\",\n    \"ShardStorage\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"DealName\": \"20181103110163\",\n        \"InstanceIds\": [\n            \"dcdbt-avw0207d\"\n        ]\n    }\n}",
         "title": "创建包年包月的分布式数据库实例"
@@ -66,7 +66,7 @@
     ],
     "CreateHourDCDBInstance": [
       {
-        "document": "",
+        "document": "创建后付费分布式DB实例",
         "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHourDCDBInstance\n<公共请求参数>\n\n{\n    \"ShardCount\": \"2\",\n    \"ShardMemory\": \"2\",\n    \"ShardNodeCount\": \"2\",\n    \"ShardStorage\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"InstanceIds\": [\n            \"tdsql-xxxxxx\"\n        ],\n        \"DealName\": \"20200409111543\",\n        \"FlowId\": 1122\n    }\n}",
         "title": "无"
