@@ -3631,8 +3631,8 @@
       "document": "实例信息",
       "members": [
         {
-          "default": "",
           "document": "实例ID",
+          "example": "ins-089dlszs",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3640,8 +3640,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "伸缩组ID",
+          "example": "asg-02ofd40a",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -3649,8 +3649,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "启动配置ID",
+          "example": "asc-23yf98ie",
           "member": "string",
           "name": "LaunchConfigurationId",
           "required": true,
@@ -3658,8 +3658,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "启动配置名称",
+          "example": "测试asc-01_2.3",
           "member": "string",
           "name": "LaunchConfigurationName",
           "required": true,
@@ -3667,8 +3667,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "生命周期状态，取值如下：<br>\n<li>IN_SERVICE：运行中\n<li>CREATING：创建中\n<li>CREATION_FAILED：创建失败\n<li>TERMINATING：中止中\n<li>TERMINATION_FAILED：中止失败\n<li>ATTACHING：绑定中\n<li>DETACHING：解绑中\n<li>ATTACHING_LB：绑定LB中<li>DETACHING_LB：解绑LB中\n<li>STARTING：开机中\n<li>START_FAILED：开机失败\n<li>STOPPING：关机中\n<li>STOP_FAILED：关机失败\n<li>STOPPED：已关机",
+          "document": "生命周期状态，取值如下：<br>\n<li>IN_SERVICE：运行中\n<li>CREATING：创建中\n<li>CREATION_FAILED：创建失败\n<li>TERMINATING：中止中\n<li>TERMINATION_FAILED：中止失败\n<li>ATTACHING：绑定中\n<li>ATTACH_FAILED：绑定失败\n<li>DETACHING：解绑中\n<li>DETACH_FAILED：解绑失败\n<li>ATTACHING_LB：绑定LB中\n<li>DETACHING_LB：解绑LB中\n<li>MODIFYING_LB：修改LB中\n<li>STARTING：开机中\n<li>START_FAILED：开机失败\n<li>STOPPING：关机中\n<li>STOP_FAILED：关机失败\n<li>STOPPED：已关机\n<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中\n<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中",
+          "example": "IN_SERVICE",
           "member": "string",
           "name": "LifeCycleState",
           "required": true,
@@ -3676,8 +3676,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "健康状态，取值包括HEALTHY和UNHEALTHY",
+          "example": "HEALTHY",
           "member": "string",
           "name": "HealthStatus",
           "required": true,
@@ -3685,8 +3685,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否加入缩容保护",
+          "example": "false",
           "member": "bool",
           "name": "ProtectedFromScaleIn",
           "required": true,
@@ -3694,8 +3694,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -3703,8 +3703,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建类型，取值包括AUTO_CREATION, MANUAL_ATTACHING。",
+          "example": "AUTO_CREATION",
           "member": "string",
           "name": "CreationType",
           "required": true,
@@ -3712,8 +3712,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例加入时间",
+          "example": "2023-01-13T03:06:25Z",
           "member": "datetime_iso",
           "name": "AddTime",
           "required": true,
@@ -3721,8 +3721,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例类型",
+          "example": "S3.MEDIUM2",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -3730,8 +3730,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "版本号",
+          "example": "1",
           "member": "int64",
           "name": "VersionNumber",
           "required": true,
@@ -3739,8 +3739,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "伸缩组名称",
+          "example": "测试asg-01_2.3",
           "member": "string",
           "name": "AutoScalingGroupName",
           "required": true,

@@ -1218,6 +1218,15 @@
           "name": "Approvers",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "企微消息中的发起人",
+          "example": "无",
+          "member": "string",
+          "name": "Initiator",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

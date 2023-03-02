@@ -11,14 +11,14 @@ tccli essbasic ChannelDeleteSealPolicies --cli-unfold-argument  \
     --Agent.ProxyOperator.OpenId 732aaef****541b89c49e0cc \
     --Agent.AppId ed68bc6***********0214e4e \
     --SealId yDRTZxxxxxJNR \
-    --UserIds xx
+    --UserIds yDxxxTZxxxxxJNR
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "yDasdfasdfxxxxxJNR"
     }
 }
 ```

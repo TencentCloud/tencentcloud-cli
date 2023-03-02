@@ -334,19 +334,19 @@
     ],
     "CreateDefaultVpc": [
       {
-        "document": "",
+        "document": "创建默认VPC",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Vpc\": {\n            \"VpcId\": \"vpc-pin7sxcd\",\n            \"SubnetId\": \"subnet-ixzf2m42\"\n        },\n        \"RequestId\": \"a2353d77-5c08-49c4-a28a-632a8af5e294\"\n    }\n}",
         "title": "创建默认VPC"
       },
       {
-        "document": "",
+        "document": "不强制创建默认VPC",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Vpc\": {\n            \"VpcId\": \"0\",\n            \"SubnetId\": \"0\"\n        },\n        \"RequestId\": \"c52dda11-9e53-440f-b034-6292f2144dd0\"\n    }\n}",
         "title": "用户账号网络属性（DescribeAccountAttributes）同时支持基础网络和VPC，不强制创建默认VPC，则返回VpcId为0，表示不创建默认VPC"
       },
       {
-        "document": "",
+        "document": "强制创建默认VPC",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\n&Force=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Vpc\": {\n            \"VpcId\": \"vpc-8mpwlbdv\",\n            \"SubnetId\": \"subnet-l9emqwnw\"\n        },\n        \"RequestId\": \"91348b0a-6846-49ff-822b-a21eef848c9f\"\n    }\n}",
         "title": "强制生产默认VPC"
@@ -446,8 +446,8 @@
     ],
     "CreateNetDetect": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateNetDetect\n&VpcId=vpc-12345678\n&SubnetId=subnet-12345678\n&NetDetectName=test\n&DetectDestinationIp.0=10.0.0.2\n&DetectDestinationIp.1=10.0.0.3\n&NextHopType=NORMAL_CVM\n&NextHopDestination=10.0.0.4\n&<公共请求参数>",
+        "document": "创建网络探测",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetDetect\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NextHopDestination\": \"10.0.0.4\",\n    \"NextHopType\": \"NORMAL_CVM\",\n    \"NetDetectName\": \"test\",\n    \"DetectDestinationIp\": [\n        \"10.0.0.3\",\n        \"10.0.0.2\"\n    ],\n    \"SubnetId\": \"subnet-12345678\"\n}",
         "output": "{\n    \"Response\": {\n        \"NetDetect\": {\n            \"VpcId\": \"vpc-12345678\",\n            \"VpcName\": \"vpc-test\",\n            \"SubnetId\": \"subnet-12345678\",\n            \"SubnetName\": \"subnet-test\",\n            \"NetDetectId\": \"netd-12345678\",\n            \"NetDetectName\": \"test\",\n            \"DetectDestinationIp\": [\n                \"10.0.0.2\",\n                \"10.0.0.3\"\n            ],\n            \"DetectSourceIp\": [\n                \"10.0.0.5\",\n                \"10.0.0.6\"\n            ],\n            \"NextHopType\": \"NORMAL_CVM\",\n            \"NextHopDestination\": \"10.0.0.4\",\n            \"NextHopName\": \"\",\n            \"NetDetectDescription\": \"\",\n            \"CreateTime\": \"0000-00-00 00:00:00\"\n        },\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "创建网络探测"
       }
@@ -494,7 +494,7 @@
     ],
     "CreateSecurityGroup": [
       {
-        "document": "",
+        "document": "创建安全组",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"TestGroup\",\n    \"GroupDescription\": \"test-group-desc\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-3g7ftkp3\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"ProjectId\": \"0\",\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        }\n    }\n}",
         "title": "创建安全组"
@@ -772,7 +772,7 @@
     ],
     "DeleteNetDetect": [
       {
-        "document": "",
+        "document": "根据ID删除网络探测",
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNetDetect\n&NetDetectId=netd-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "根据ID删除网络探测"
@@ -804,7 +804,7 @@
     ],
     "DeleteRouteTable": [
       {
-        "document": "",
+        "document": "删除路由表",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRouteTable\n<公共请求参数>\n\n{\n    \"RouteTableId\": \"rtb-azd4dt1c\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "删除路由表"
@@ -1378,7 +1378,7 @@
     ],
     "DescribeNetDetectStates": [
       {
-        "document": "",
+        "document": "根据ID查询网络探测验证结果列表",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNetDetectStates\n&NetDetectIds.0=netd-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NetDetectStateSet\": [\n            {\n                \"NetDetectId\": \"netd-2owwwwd0\",\n                \"NetDetectIpStateSet\": [\n                    {\n                        \"DetectDestinationIp\": \"10.0.0.2\",\n                        \"State\": 0,\n                        \"Delay\": 0,\n                        \"PacketLossRate\": 0\n                    },\n                    {\n                        \"DetectDestinationIp\": \"10.0.0.3\",\n                        \"State\": 0,\n                        \"Delay\": 0,\n                        \"PacketLossRate\": 0\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "根据ID查询网络探测验证结果列表"
@@ -1386,14 +1386,14 @@
     ],
     "DescribeNetDetects": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNetDetects\r\n&Version=2017-03-12\r\n&<公共请求参数>",
+        "document": "查询所有网络探测",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNetDetects\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NetDetectSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"VpcName\": \"vpc-test\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"SubnetName\": \"subnet-test\",\n                \"NetDetectId\": \"netd-12345678\",\n                \"NetDetectName\": \"test\",\n                \"DetectDestinationIp\": [\n                    \"10.0.0.2\",\n                    \"10.0.0.3\"\n                ],\n                \"DetectSourceIp\": [\n                    \"10.0.0.5\",\n                    \"10.0.0.6\"\n                ],\n                \"NextHopType\": \"NORMAL_CVM\",\n                \"NextHopDestination\": \"10.0.0.4\",\n                \"NextHopName\": \"\",\n                \"NetDetectDescription\": \"\",\n                \"CreateTime\": \"0000-00-00 00:00:00\"\n            },\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"VpcName\": \"vpc-test\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"SubnetName\": \"subnet-test\",\n                \"NetDetectId\": \"netd-12345679\",\n                \"NetDetectName\": \"test\",\n                \"DetectDestinationIp\": [\n                    \"10.0.1.2\",\n                    \"10.0.1.3\"\n                ],\n                \"DetectSourceIp\": [\n                    \"10.0.1.5\",\n                    \"10.0.1.6\"\n                ],\n                \"NextHopType\": \"NORMAL_CVM\",\n                \"NextHopDestination\": \"10.0.0.4\",\n                \"NextHopName\": \"\",\n                \"NetDetectDescription\": \"\",\n                \"CreateTime\": \"0000-00-00 00:00:00\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "查询所有网络探测"
       },
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNetDetects\r\n&Version=2017-03-12\r\n&NetDetectIds.0=netd-12345678\r\n&<公共请求参数>",
+        "document": "根据ID查询网络探测",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNetDetects\n&NetDetectIds.0=netd-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NetDetectSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"VpcName\": \"vpc-test\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"SubnetName\": \"subnet-test\",\n                \"NetDetectId\": \"netd-12345678\",\n                \"NetDetectName\": \"test\",\n                \"DetectDestinationIp\": [\n                    \"10.0.0.2\",\n                    \"10.0.0.3\"\n                ],\n                \"DetectSourceIp\": [\n                    \"10.0.0.5\",\n                    \"10.0.0.6\"\n                ],\n                \"NextHopType\": \"NORMAL_CVM\",\n                \"NextHopDestination\": \"10.0.0.4\",\n                \"NextHopName\": \"\",\n                \"NetDetectDescription\": \"\",\n                \"CreateTime\": \"0000-00-00 00:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "根据ID查询网络探测"
       }
@@ -2317,7 +2317,7 @@
     "ModifyNetDetect": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetDetect\n&NetDetectId=netd-12345678\n&NetDetectName=test\n&DetectDestinationIp.0=10.0.0.2\n&DetectDestinationIp.1=10.0.0.3\n&NextHopType=NORMAL_CVM\n&NextHopDestination=10.0.0.4\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetDetect\n<公共请求参数>\n\n{\n    \"NetDetectId\": \"netd-12345678\",\n    \"NetDetectName\": \"test\",\n    \"NextHopType\": \"NORMAL_CVM\",\n    \"NextHopDestination\": \"10.0.0.4\",\n    \"DetectDestinationIp\": [\n        \"10.0.0.3\",\n        \"10.0.0.2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "修改网络探测参数"
       }
@@ -2384,9 +2384,9 @@
     ],
     "ModifyRouteTableAttribute": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyRouteTableAttribute\r\n&Version=2017-03-12\r\n&RouteTableId=rtb-n0yejvje\r\n&RouteTableName=NewRouteTableName\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "document": "修改路由表属性",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyRouteTableAttribute\n&RouteTableId=rtb-n0yejvje\n&RouteTableName=NewRouteTableName\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "修改路由表属性"
       }
     ],

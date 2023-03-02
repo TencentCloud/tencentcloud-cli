@@ -5,7 +5,13 @@
 Input: 
 
 ```
-tccli essbasic ModifyExtendedService --cli-unfold-argument ```
+tccli essbasic ModifyExtendedService --cli-unfold-argument  \
+    --Agent.ProxyOperator.OpenId admin-open-id \
+    --Agent.ProxyOrganizationOpenId org-open-id \
+    --Agent.AppId APPID122344555 \
+    --ServiceType AUTO_SIGN \
+    --Operate CLOSE
+```
 
 Output: 
 ```
@@ -24,7 +30,13 @@ Output:
 Input: 
 
 ```
-tccli essbasic ModifyExtendedService --cli-unfold-argument ```
+tccli essbasic ModifyExtendedService --cli-unfold-argument  \
+    --Agent.ProxyOperator.OpenId admin-open-id \
+    --Agent.ProxyOrganizationOpenId org-open-id \
+    --Agent.AppId APPID122344555 \
+    --ServiceType AUTO_SIGN \
+    --Operate OPEN
+```
 
 Output: 
 ```
@@ -43,7 +55,13 @@ Output:
 Input: 
 
 ```
-tccli essbasic ModifyExtendedService --cli-unfold-argument ```
+tccli essbasic ModifyExtendedService --cli-unfold-argument  \
+    --Agent.ProxyOperator.OpenId admin-open-id \
+    --Agent.ProxyOrganizationOpenId org-open-id \
+    --Agent.AppId APPID122344555 \
+    --ServiceType PAGING_SEAL \
+    --Operate OPEN
+```
 
 Output: 
 ```

@@ -1,13 +1,11 @@
 **Example 1: 查询所有网络探测**
 
-
+查询所有网络探测
 
 Input: 
 
 ```
-tccli vpc DescribeNetDetects --cli-unfold-argument  \
-    --Version 2017-03-12
-```
+tccli vpc DescribeNetDetects --cli-unfold-argument ```
 
 Output: 
 ```
@@ -65,13 +63,12 @@ Output:
 
 **Example 2: 根据ID查询网络探测**
 
-
+根据ID查询网络探测
 
 Input: 
 
 ```
 tccli vpc DescribeNetDetects --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --NetDetectIds netd-12345678
 ```
 

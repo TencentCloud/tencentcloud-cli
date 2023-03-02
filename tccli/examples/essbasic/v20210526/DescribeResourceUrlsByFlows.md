@@ -1,16 +1,16 @@
 **Example 1: 根据签署流程信息批量获取资源下载链接**
 
-
+根据签署流程信息批量获取资源下载链接
 
 Input: 
 
 ```
 tccli essbasic DescribeResourceUrlsByFlows --cli-unfold-argument  \
-    --Agent.ProxyAppId xx \
-    --Agent.ProxyOperator.OpenId xx \
-    --Agent.ProxyOrganizationOpenId xx \
-    --Agent.AppId xx \
-    --FlowIds xx
+    --Agent.ProxyAppId test \
+    --Agent.ProxyOperator.OpenId test \
+    --Agent.ProxyOrganizationOpenId test \
+    --Agent.AppId test \
+    --FlowIds test
 ```
 
 Output: 
@@ -19,20 +19,20 @@ Output:
     "Response": {
         "FlowResourceUrlInfos": [
             {
-                "FlowId": "xx",
+                "FlowId": "123",
                 "ResourceUrlInfos": [
                     {
-                        "Url": "xx",
-                        "Type": "xx",
-                        "Name": "xx"
+                        "Url": "https://",
+                        "Type": "test",
+                        "Name": "test"
                     }
                 ]
             }
         ],
         "ErrorMessages": [
-            "xx"
+            ""
         ],
-        "RequestId": "xx"
+        "RequestId": "12345"
     }
 }
 ```

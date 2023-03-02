@@ -46,18 +46,18 @@ Output:
         ],
         "TaskInfos": [
             {
-                "TaskId": "xx",
-                "TaskStatus": "xx"
+                "TaskId": "taskid",
+                "TaskStatus": "status"
             }
         ],
-        "RequestId": "s1629442787650001803"
+        "RequestId": "s16294xxxxx0001803"
     }
 }
 ```
 
 **Example 2: 使用模板批量创建签署流程**
 
-
+使用模板批量创建签署流程
 
 Input: 
 
@@ -119,11 +119,11 @@ Output:
         ],
         "TaskInfos": [
             {
-                "TaskId": "xx",
-                "TaskStatus": "xx"
+                "TaskId": "taskid",
+                "TaskStatus": "status"
             }
         ],
-        "RequestId": "s1629442787650001803"
+        "RequestId": "s162944xxxxx3"
     }
 }
 ```

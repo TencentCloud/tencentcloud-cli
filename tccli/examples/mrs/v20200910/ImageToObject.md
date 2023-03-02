@@ -1428,7 +1428,22 @@ Output:
             "MedicalRecordInfo": null,
             "Hospitalization": null,
             "Surgery": null,
-            "Electrocardiogram": null
+            "Electrocardiogram": null,
+            "Endoscopy": null,
+            "Prescription": null,
+            "VaccineCertificate": null,
+            "OcrText": "",
+            "OcrResult": "",
+            "ReportTypeDesc": "检查报告",
+            "PathologyV2": null,
+            "C14": null,
+            "Exame": null,
+            "MedDocV2": null,
+            "IndicatorV3": null,
+            "Covid": null,
+            "Maternity": null,
+            "Eye": null,
+            "BirthCert": null
         },
         "TextTypeList": [
             {

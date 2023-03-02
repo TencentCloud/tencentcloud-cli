@@ -3,14 +3,14 @@
     "ChannelBatchCancelFlows": {
       "document": "指定需要批量撤销的签署流程Id，批量撤销合同\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口失败后返回错误信息\n注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人",
       "input": "ChannelBatchCancelFlowsRequest",
-      "name": "电子签渠道版-根据签署流程id批量撤销合同",
+      "name": "根据签署流程id批量撤销合同",
       "output": "ChannelBatchCancelFlowsResponse",
       "status": "online"
     },
     "ChannelCancelFlow": {
-      "document": "渠道版撤销签署流程接口，可以撤回：未全部签署完成；不可以撤回（终态）：已全部签署完成、已拒签、已过期、已撤回。\n注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人\n",
+      "document": "撤销签署流程接口，可以撤回：未全部签署完成；不可以撤回（终态）：已全部签署完成、已拒签、已过期、已撤回。\n注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人",
       "input": "ChannelCancelFlowRequest",
-      "name": "渠道版撤销签署流程",
+      "name": "撤销签署流程",
       "output": "ChannelCancelFlowResponse",
       "status": "online"
     },
@@ -24,28 +24,28 @@
     "ChannelCreateBatchCancelFlowUrl": {
       "document": "指定需要批量撤销的签署流程Id，获取批量撤销链接 - 不建议使用此接口，可使用ChannelBatchCancelFlows\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；\n接口调用成功返回批量撤销合同的链接，通过链接跳转到电子签小程序完成批量撤销;\n可以撤回：未全部签署完成；不可以撤回（终态）：已全部签署完成、已拒签、已过期、已撤回。\n注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人",
       "input": "ChannelCreateBatchCancelFlowUrlRequest",
-      "name": "电子签渠道版-根据签署流程id创建批量撤销url",
+      "name": "根据签署流程id创建批量撤销url",
       "output": "ChannelCreateBatchCancelFlowUrlResponse",
       "status": "online"
     },
     "ChannelCreateBoundFlows": {
-      "document": "此接口（ChannelCreateBoundFlows）用于渠道子客领取合同，经办人需要有相应的角色，领取后的合同不能重复领取。",
+      "document": "此接口（ChannelCreateBoundFlows）用于子客领取合同，经办人需要有相应的角色，领取后的合同不能重复领取。",
       "input": "ChannelCreateBoundFlowsRequest",
-      "name": "渠道版领取合同",
+      "name": "领取未归属的合同",
       "output": "ChannelCreateBoundFlowsResponse",
       "status": "online"
     },
     "ChannelCreateConvertTaskApi": {
-      "document": "渠道创建文件转换任务",
+      "document": "创建文件转换任务",
       "input": "ChannelCreateConvertTaskApiRequest",
-      "name": "渠道创建文件转换任务",
+      "name": "创建文件转换任务",
       "output": "ChannelCreateConvertTaskApiResponse",
       "status": "online"
     },
     "ChannelCreateFlowByFiles": {
-      "document": "接口（ChannelCreateFlowByFiles）用于渠道版通过文件创建签署流程。此接口静默签能力不可直接使用，需要运营申请",
+      "document": "接口（ChannelCreateFlowByFiles）用于通过文件创建签署流程。此接口静默签能力不可直接使用，需要运营申请",
       "input": "ChannelCreateFlowByFilesRequest",
-      "name": "渠道版通过文件创建签署流程",
+      "name": "通过文件创建签署流程",
       "output": "ChannelCreateFlowByFilesResponse",
       "status": "online"
     },
@@ -71,9 +71,9 @@
       "status": "online"
     },
     "ChannelCreateFlowSignUrl": {
-      "document": "渠道版创建签署链接，需要联系运营人员开白后才可使用",
+      "document": "创建签署链接，需要联系运营人员开白后才可使用",
       "input": "ChannelCreateFlowSignUrlRequest",
-      "name": "渠道版创建签署链接",
+      "name": "创建签署链接",
       "output": "ChannelCreateFlowSignUrlResponse",
       "status": "online"
     },
@@ -85,14 +85,14 @@
       "status": "online"
     },
     "ChannelCreateReleaseFlow": {
-      "document": "渠道版发起解除协议，主要应用场景为：基于一份已经签署的合同，进行解除操作。\n合同发起人必须在电子签已经进行实名。",
+      "document": "发起解除协议，主要应用场景为：基于一份已经签署的合同，进行解除操作。\n合同发起人必须在电子签已经进行实名。",
       "input": "ChannelCreateReleaseFlowRequest",
       "name": "发起解除协议",
       "output": "ChannelCreateReleaseFlowResponse",
       "status": "online"
     },
     "ChannelCreateSealPolicy": {
-      "document": "将指定印章授权给企业下的某些员工",
+      "document": "将指定印章授权给子客企业下的某些员工",
       "input": "ChannelCreateSealPolicyRequest",
       "name": "创建印章授权",
       "output": "ChannelCreateSealPolicyResponse",
@@ -113,23 +113,23 @@
       "status": "online"
     },
     "ChannelDescribeOrganizationSeals": {
-      "document": "查询渠道子客企业电子印章，需要操作者具有管理印章权限\n客户指定需要获取的印章数量和偏移量，数量最多100，超过100按100处理；入参InfoType控制印章是否携带授权人信息，为1则携带，为0则返回的授权人信息为空数组。接口调用成功返回印章的信息列表还有企业印章的总数。",
+      "document": "查询子客企业电子印章，需要操作者具有管理印章权限\n客户指定需要获取的印章数量和偏移量，数量最多100，超过100按100处理；入参InfoType控制印章是否携带授权人信息，为1则携带，为0则返回的授权人信息为空数组。接口调用成功返回印章的信息列表还有企业印章的总数。",
       "input": "ChannelDescribeOrganizationSealsRequest",
-      "name": "查询渠道子客企业电子印章",
+      "name": "查询子客企业电子印章",
       "output": "ChannelDescribeOrganizationSealsResponse",
       "status": "online"
     },
     "ChannelGetTaskResultApi": {
-      "document": "渠道版查询转换任务状态",
+      "document": "查询转换任务状态",
       "input": "ChannelGetTaskResultApiRequest",
-      "name": "渠道版查询转换任务状态",
+      "name": "查询转换任务状态",
       "output": "ChannelGetTaskResultApiResponse",
       "status": "online"
     },
     "ChannelUpdateSealStatus": {
-      "document": "本接口（ChannelUpdateSealStatus）由于渠道版更新印章状态",
+      "document": "本接口（ChannelUpdateSealStatus）用于渠道为子客企业更新印章状态",
       "input": "ChannelUpdateSealStatusRequest",
-      "name": "渠道版更新印章状态",
+      "name": "更新印章状态",
       "output": "ChannelUpdateSealStatusResponse",
       "status": "online"
     },
@@ -176,7 +176,7 @@
       "status": "online"
     },
     "DescribeChannelFlowEvidenceReport": {
-      "document": "查询出证报告，返回报告 URL。\n",
+      "document": "查询出证报告，返回报告 URL。",
       "input": "DescribeChannelFlowEvidenceReportRequest",
       "name": "查询出证报告",
       "output": "DescribeChannelFlowEvidenceReportResponse",
@@ -213,12 +213,12 @@
     "DescribeUsage": {
       "document": "此接口（DescribeUsage）用于获取渠道所有合作企业流量消耗情况。\n 注: 此接口每日限频2次，若要扩大限制次数,请提前与客服经理或邮件至e-contract@tencent.com进行联系。",
       "input": "DescribeUsageRequest",
-      "name": "渠道用量查询",
+      "name": "渠道合同用量查询",
       "output": "DescribeUsageResponse",
       "status": "online"
     },
     "GetDownloadFlowUrl": {
-      "document": "此接口（GetDownloadFlowUrl）用于创建电子签批量下载地址，让合作企业进入控制台直接下载，支持客户合同（流程）按照自定义文件夹形式 分类下载。\n当前接口限制最多合同（流程）50个.\n",
+      "document": "此接口（GetDownloadFlowUrl）用于创建电子签批量下载地址，让合作企业进入控制台直接下载，支持客户合同（流程）按照自定义文件夹形式 分类下载。\n当前接口限制最多合同（流程）50个.",
       "input": "GetDownloadFlowUrlRequest",
       "name": "获取合同（流程）批量下载链接",
       "output": "GetDownloadFlowUrlResponse",
@@ -234,7 +234,7 @@
     "OperateChannelTemplate": {
       "document": "此接口（OperateChannelTemplate）用于针对渠道模板库中的模板对子客企业可见性的查询和设置，不会直接分配渠道模板给子客企业。\n1、OperateType=select时：\n查询渠道模板库\n2、OperateType=update或者delete时：\n对子客企业进行模板库中模板可见性的修改、删除操作。",
       "input": "OperateChannelTemplateRequest",
-      "name": "操作渠道模板",
+      "name": "操作渠道企业模板",
       "output": "OperateChannelTemplateResponse",
       "status": "online"
     },
@@ -454,8 +454,7 @@
       "document": "ChannelBatchCancelFlows请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -463,7 +462,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "签署流程Id数组，最多100个，超过100不处理",
           "example": "无",
           "member": "string",
@@ -472,7 +470,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "撤销理由",
           "example": "无",
           "member": "string",
@@ -481,7 +478,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "撤销理由自定义格式；选项：\n0 默认格式\n1 只保留身份信息：展示为【发起方】\n2 保留身份信息+企业名称：展示为【发起方xxx公司】\n3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】",
           "example": "无",
           "member": "int64",
@@ -490,8 +486,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "操作人信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -509,7 +504,6 @@
           "example": "无",
           "member": "string",
           "name": "FailMessages",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -526,7 +520,6 @@
       "document": "ChannelCancelFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "签署流程编号",
           "example": "xxx",
           "member": "string",
@@ -535,8 +528,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -544,7 +536,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "撤回原因，最大不超过200字符",
           "example": "xxx",
           "member": "string",
@@ -553,22 +544,20 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "撤销理由自定义格式；选项：\n0 默认格式\n1 只保留身份信息：展示为【发起方】\n2 保留身份信息+企业名称：展示为【发起方xxx公司】\n3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】",
           "example": "无",
           "member": "int64",
           "name": "CancelMessageFormat",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "暂未开放",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -589,8 +578,7 @@
       "document": "ChannelCancelMultiFlowSignQRCode请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -598,7 +586,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "二维码id",
           "example": "无",
           "member": "string",
@@ -607,8 +594,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "用户信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -634,8 +620,7 @@
       "document": "ChannelCreateBatchCancelFlowUrl请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -643,7 +628,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "签署流程Id数组",
           "example": "无",
           "member": "string",
@@ -652,8 +636,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "操作人信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -671,7 +654,6 @@
           "example": "无",
           "member": "string",
           "name": "BatchCancelFlowUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -680,7 +662,6 @@
           "example": "无",
           "member": "string",
           "name": "FailMessages",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -689,7 +670,6 @@
           "example": "无",
           "member": "string",
           "name": "UrlExpireOn",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -706,7 +686,6 @@
       "document": "ChannelCreateBoundFlows请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用信息\n此接口Agent.AppId、Agent.ProxyOrganizationOpenId 和 Agent. ProxyOperator.OpenId 必填",
           "example": "无",
           "member": "Agent",
@@ -715,7 +694,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "领取的合同id列表",
           "example": "无",
           "member": "string",
@@ -724,7 +702,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -751,8 +728,7 @@
       "document": "ChannelCreateConvertTaskApi请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -760,7 +736,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "资源类型 取值范围doc,docx,html,xls,xlsx之一",
           "example": "无",
           "member": "string",
@@ -769,7 +744,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源名称，长度限制为256字符",
           "example": "无",
           "member": "string",
@@ -778,7 +752,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源Id，通过UploadFiles获取",
           "example": "无",
           "member": "string",
@@ -787,8 +760,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "调用方用户信息，userId 必填",
+          "document": "调用方用户信息，不用传",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -796,7 +768,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
@@ -815,7 +786,6 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -832,8 +802,7 @@
       "document": "ChannelCreateFlowByFiles请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -841,7 +810,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "签署流程名称，长度不超过200个字符",
           "example": "\"xxx\"",
           "member": "string",
@@ -850,7 +818,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "签署流程签约方列表，最多不超过5个参与方",
           "example": "无",
           "member": "FlowApproverInfo",
@@ -859,7 +826,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "签署文件资源Id列表，目前仅支持单个文件",
           "example": "[\"xxx\"]",
           "member": "string",
@@ -868,7 +834,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "签署文件中的发起方的填写控件，需要在发起的时候进行填充",
           "example": "无",
           "member": "Component",
@@ -877,7 +842,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年",
           "example": "3",
           "member": "int64",
@@ -886,7 +850,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "签署流程回调地址，长度不超过255个字符",
           "example": "\"xxx\"",
           "member": "string",
@@ -895,7 +858,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序",
           "example": "false",
           "member": "bool",
@@ -904,7 +866,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "签署流程的类型，长度不超过255个字符",
           "example": "\"xxx\"",
           "member": "string",
@@ -913,7 +874,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "签署流程的描述，长度不超过1000个字符",
           "example": "\"xxx\"",
           "member": "string",
@@ -922,7 +882,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
           "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
           "member": "string",
@@ -931,7 +890,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
           "example": "\"xxx\"",
           "member": "string",
@@ -940,7 +898,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。 若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。  注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
           "example": "无",
           "member": "bool",
@@ -949,16 +906,6 @@
           "type": "bool"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "签署人校验方式\nVerifyCheck: 人脸识别（默认）\nMobileCheck：手机号验证\n参数说明：可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
           "example": "无",
           "member": "string",
@@ -967,13 +914,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件",
           "example": "0",
           "member": "int64",
           "name": "SignBeanTag",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "操作者的信息，不用传",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -986,7 +940,6 @@
           "example": "xxx",
           "member": "string",
           "name": "FlowId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1003,7 +956,6 @@
       "document": "ChannelCreateFlowGroupByFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "每个子合同的发起所需的信息，数量限制2-100",
           "example": "无",
           "member": "FlowFileInfo",
@@ -1012,7 +964,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "合同组名称，长度不超过200个字符",
           "example": "\"xxx\"",
           "member": "string",
@@ -1021,8 +972,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1030,7 +980,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "签署人校验方式\nVerifyCheck: 人脸识别（默认）\nMobileCheck：手机号验证\n参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。",
           "example": "无",
           "member": "string",
@@ -1039,8 +988,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "操作者的信息，此参数不用传",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1058,7 +1006,6 @@
           "example": "xxx",
           "member": "string",
           "name": "FlowGroupId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1067,7 +1014,6 @@
           "example": "xxx",
           "member": "string",
           "name": "FlowIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1084,7 +1030,7 @@
       "document": "ChannelCreateFlowReminds请求参数结构体",
       "members": [
         {
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1126,8 +1072,7 @@
       "document": "ChannelCreateFlowSignReview请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1135,7 +1080,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "签署流程编号",
           "example": "xxx",
           "member": "string",
@@ -1144,7 +1088,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "企业内部审核结果\nPASS: 通过\nREJECT: 拒绝\nSIGN_REJECT:拒签(流程结束)",
           "example": "xxx",
           "member": "string",
@@ -1153,7 +1096,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "审核原因 \n当ReviewType 是REJECT 时此字段必填,字符串长度不超过200",
           "example": "xx",
           "member": "string",
@@ -1162,7 +1104,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "签署节点审核时需要指定",
           "example": "32984r94w8f",
           "member": "string",
@@ -1189,8 +1130,7 @@
       "document": "ChannelCreateFlowSignUrl请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1198,7 +1138,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "流程编号",
           "example": "xx",
           "member": "string",
@@ -1207,7 +1146,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "流程签署人，其中Name和Mobile必传，其他可不传，ApproverType目前只支持PERSON类型的签署人，如果不传默认为该值。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。",
           "example": "无",
           "member": "FlowApproverInfo",
@@ -1216,7 +1154,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "用户信息，暂未开放",
           "example": "无",
           "member": "UserInfo",
@@ -1225,7 +1162,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "机构信息，暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
@@ -1244,7 +1180,6 @@
           "example": "无",
           "member": "FlowApproverUrlInfo",
           "name": "FlowApproverUrlInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1261,8 +1196,7 @@
       "document": "ChannelCreateMultiFlowSignQRCode请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。\n此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。",
+          "document": "应用相关信息。\n此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1270,7 +1204,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "模版ID",
           "example": "无",
           "member": "string",
@@ -1279,7 +1212,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "签署流程名称，最大长度200个字符。",
           "example": "无",
           "member": "string",
@@ -1288,7 +1220,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。",
           "example": "无",
           "member": "int64",
@@ -1297,7 +1228,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "签署流程有效天数 默认7天 最高设置不超过30天",
           "example": "无",
           "member": "int64",
@@ -1306,7 +1236,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "二维码有效天数 默认7天 最高设置不超过90天",
           "example": "无",
           "member": "int64",
@@ -1315,7 +1244,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "限制二维码用户条件",
           "example": "无",
           "member": "ApproverRestriction",
@@ -1324,7 +1252,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "回调地址，最大长度1000个字符\n不传默认使用渠道应用号配置的回调地址\n回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败",
           "example": "无",
           "member": "string",
@@ -1333,20 +1260,18 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "用户信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "限制二维码用户条件（已弃用）",
           "example": "无",
           "member": "ApproverRestriction",
           "name": "ApproverRestrictions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "暂未开放",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
           "required": false,
           "type": "object"
         }
@@ -1361,7 +1286,6 @@
           "example": "无",
           "member": "SignQrCode",
           "name": "QrCode",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1370,7 +1294,6 @@
           "example": "无",
           "member": "SignUrl",
           "name": "SignUrls",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1387,7 +1310,7 @@
       "document": "ChannelCreateReleaseFlow请求参数结构体",
       "members": [
         {
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1427,7 +1350,7 @@
           "type": "string"
         },
         {
-          "document": "机构信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
           "name": "Organization",
@@ -1435,7 +1358,7 @@
           "type": "object"
         },
         {
-          "document": "用户信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1469,7 +1392,7 @@
       "document": "ChannelCreateSealPolicy请求参数结构体",
       "members": [
         {
-          "document": "用户渠道信息",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1477,7 +1400,7 @@
           "type": "object"
         },
         {
-          "document": "指定印章",
+          "document": "指定印章ID",
           "example": "无",
           "member": "string",
           "name": "SealId",
@@ -1493,7 +1416,7 @@
           "type": "list"
         },
         {
-          "document": "企业机构信息",
+          "document": "企业机构信息，不用传",
           "example": "无",
           "member": "OrganizationInfo",
           "name": "Organization",
@@ -1501,7 +1424,7 @@
           "type": "object"
         },
         {
-          "document": "操作人（用户）信息",
+          "document": "操作人（用户）信息，不用传",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1535,7 +1458,7 @@
       "document": "ChannelDeleteSealPolicies请求参数结构体",
       "members": [
         {
-          "document": "渠道信息",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1559,18 +1482,18 @@
           "type": "list"
         },
         {
-          "document": "操作人（用户）信息",
+          "document": "组织机构信息，不用传",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
+          "member": "OrganizationInfo",
+          "name": "Organization",
           "required": false,
           "type": "object"
         },
         {
-          "document": "组织机构信息",
+          "document": "操作人（用户）信息，不用传",
           "example": "无",
-          "member": "OrganizationInfo",
-          "name": "Organization",
+          "member": "UserInfo",
+          "name": "Operator",
           "required": false,
           "type": "object"
         }
@@ -1593,7 +1516,6 @@
       "document": "ChannelDescribeEmployees请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回最大数量，最大为20",
           "example": "无",
           "member": "int64",
@@ -1602,8 +1524,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1611,7 +1532,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "查询过滤实名用户，Key为Status，Values为[\"IsVerified\"]\n根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为[\"OpenId\",\"OpenId\",...]\n查询离职员工时，Key为Status，Values为[\"QuiteJob\"]",
           "example": "无",
           "member": "Filter",
@@ -1620,7 +1540,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0，最大为20000",
           "example": "无",
           "member": "int64",
@@ -1629,8 +1548,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1648,7 +1566,6 @@
           "example": "无",
           "member": "Staff",
           "name": "Employees",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1657,7 +1574,6 @@
           "example": "无",
           "member": "int64",
           "name": "Offset",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1666,7 +1582,6 @@
           "example": "无",
           "member": "int64",
           "name": "Limit",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1675,7 +1590,6 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1692,7 +1606,7 @@
       "document": "ChannelDescribeOrganizationSeals请求参数结构体",
       "members": [
         {
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1774,8 +1688,7 @@
       "document": "ChannelGetTaskResultApi请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1783,7 +1696,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "任务Id，通过ChannelCreateConvertTaskApi接口获得",
           "example": "无",
           "member": "string",
@@ -1792,8 +1704,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "操作者的信息，不用传",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1801,7 +1712,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
@@ -1820,7 +1730,6 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1829,7 +1738,6 @@
           "example": "无",
           "member": "int64",
           "name": "TaskStatus",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1838,7 +1746,6 @@
           "example": "无",
           "member": "string",
           "name": "TaskMessage",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1847,7 +1754,6 @@
           "example": "无",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1856,7 +1762,6 @@
           "example": "无",
           "member": "string",
           "name": "PreviewUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1873,8 +1778,7 @@
       "document": "ChannelUpdateSealStatus请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1882,7 +1786,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "操作的印章状态，DISABLE-停用印章",
           "example": "DISABLE",
           "member": "string",
@@ -1891,7 +1794,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "印章ID",
           "example": "无",
           "member": "string",
@@ -1900,7 +1802,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
@@ -1909,7 +1810,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "更新印章状态原因说明",
           "example": "更新原因-停用印章",
           "member": "string",
@@ -1936,7 +1836,6 @@
       "document": "ChannelVerifyPdf请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "合同Id，流程Id",
           "example": "无",
           "member": "string",
@@ -1945,8 +1844,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1954,8 +1852,7 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1973,7 +1870,6 @@
           "example": "无",
           "member": "int64",
           "name": "VerifyResult",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1982,7 +1878,6 @@
           "example": "无",
           "member": "PdfVerifyResult",
           "name": "PdfVerifyResults",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2221,7 +2116,14 @@
       "document": "CreateChannelFlowEvidenceReport请求参数结构体",
       "members": [
         {
-          "default": "",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
           "document": "签署流程编号",
           "example": "无",
           "member": "string",
@@ -2230,17 +2132,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
-          "example": "无",
-          "member": "Agent",
-          "name": "Agent",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2258,7 +2150,6 @@
           "example": "yDRspUUgyg17sqr1Uur7PA0xEQpJXh2b",
           "member": "string",
           "name": "ReportId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2267,7 +2158,6 @@
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2276,7 +2166,6 @@
           "example": "无",
           "member": "string",
           "name": "ReportUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2293,7 +2182,6 @@
       "document": "CreateConsoleLoginUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用信息\n此接口Agent.AppId、Agent.ProxyOrganizationOpenId 和 Agent. ProxyOperator.OpenId 必填",
           "example": "无",
           "member": "Agent",
@@ -2302,7 +2190,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "渠道子客企业名称，最大长度64个字符",
           "example": "无",
           "member": "string",
@@ -2311,7 +2198,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "渠道子客企业经办人的姓名，最大长度50个字符",
           "example": "无",
           "member": "string",
@@ -2320,7 +2206,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "PC控制台指定模块，文件/合同管理:\"DOCUMENT\"，模板管理:\"TEMPLATE\"，印章管理:\"SEAL\"，组织架构/人员:\"OPERATOR\"，空字符串：\"账号信息\"。 EndPoint为\"CHANNEL\"/\"APP\"只支持\"SEAL\"-印章管理",
           "example": "无",
           "member": "string",
@@ -2329,7 +2214,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "控制台指定模块Id",
           "example": "无",
           "member": "string",
@@ -2338,7 +2222,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "渠道子客企业统一社会信用代码，最大长度200个字符",
           "example": "无",
           "member": "string",
@@ -2347,7 +2230,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否展示左侧菜单栏 是：ENABLE（默认） 否：DISABLE",
           "example": "无",
           "member": "string",
@@ -2356,7 +2238,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "链接跳转类型：\"PC\"-PC控制台，“CHANNEL”-H5跳转到电子签小程序；“APP”-第三方APP或小程序跳转电子签小程序，默认为PC控制台",
           "example": "无",
           "member": "string",
@@ -2365,7 +2246,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "触发自动跳转事件，仅对App类型有效，\"VERIFIED\":企业认证完成/员工认证完成后跳回原App/小程序",
           "example": "无",
           "member": "string",
@@ -2374,22 +2254,20 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "支持的授权方式,授权方式: \"1\" - 上传授权书认证  \"2\" - 法定代表人认证",
           "example": "无",
           "member": "int64",
           "name": "AuthorizationTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "暂未开放",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2402,7 +2280,6 @@
           "example": "无",
           "member": "string",
           "name": "ConsoleUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2411,7 +2288,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsActivated",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2420,7 +2296,6 @@
           "example": "无",
           "member": "bool",
           "name": "ProxyOperatorIsVerified",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2437,8 +2312,7 @@
       "document": "CreateFlowsByTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2446,7 +2320,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "多个合同（签署流程）信息，最多支持20个",
           "example": "无",
           "member": "FlowInfo",
@@ -2455,7 +2328,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，不会发起合同，会返回PreviewUrls；\n预览链接有效期300秒；\n同时，如果预览的文件中指定了动态表格控件，需要进行异步合成；此时此接口返回的是合成前的文档预览链接，而合成完成后的文档预览链接会通过：回调通知的方式、或使用返回的TaskInfo中的TaskId通过ChannelGetTaskResultApi接口查询；",
           "example": "false",
           "member": "bool",
@@ -2464,7 +2336,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,",
           "example": "0",
           "member": "int64",
@@ -2473,8 +2344,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "操作者的信息，不用传",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2492,7 +2362,6 @@
           "example": "[\"xx\",\"yy\"]",
           "member": "string",
           "name": "FlowIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2501,7 +2370,6 @@
           "example": "[\"\",\"\"]",
           "member": "string",
           "name": "CustomerData",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2510,7 +2378,6 @@
           "example": "[\"\",\"\"]",
           "member": "string",
           "name": "ErrorMessages",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2519,7 +2386,6 @@
           "example": "[\"xx\",\"yy\"]",
           "member": "string",
           "name": "PreviewUrls",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2528,7 +2394,6 @@
           "example": "无",
           "member": "TaskInfo",
           "name": "TaskInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2545,8 +2410,7 @@
       "document": "CreateSealByImage请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2554,7 +2418,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "印章名称，最大长度不超过50字符",
           "example": "无",
           "member": "string",
@@ -2563,7 +2426,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "印章图片base64，大小不超过10M（原始图片不超过7.6M）",
           "example": "无",
           "member": "string",
@@ -2572,7 +2434,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
@@ -2591,7 +2452,6 @@
           "example": "无",
           "member": "string",
           "name": "SealId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2608,8 +2468,7 @@
       "document": "CreateSignUrls请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2617,7 +2476,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "签署流程编号数组，最多支持100个。(备注：该参数和合同组编号必须二选一)",
           "example": "[\"xxx\", \"yyy\"]",
           "member": "string",
@@ -2626,7 +2484,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "合同组编号(备注：该参数和合同(流程)编号数组必须二选一)",
           "example": "无",
           "member": "string",
@@ -2635,7 +2492,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；\"LONGURL2WEIXINAPP\"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；",
           "example": "”WEIXINAPP“",
           "member": "string",
@@ -2644,7 +2500,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "签署链接生成类型，默认是 \"ALL\"；\n\"ALL\"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；\n\"CHANNEL\"：渠道合作企业；\n\"NOT_CHANNEL\"：非渠道合作企业；\n\"PERSON\"：个人；\n\"FOLLOWER\"：关注方，目前是合同抄送方；",
           "example": "CHANNEL",
           "member": "string",
@@ -2653,7 +2508,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "非渠道合作企业参与方的企业名称，GenerateType为\"NOT_CHANNEL\"时必填",
           "example": "测试企业",
           "member": "string",
@@ -2662,7 +2516,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "参与人姓名，GenerateType为\"PERSON\"时必填",
           "example": "张三",
           "member": "string",
@@ -2671,7 +2524,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "参与人手机号；\nGenerateType为\"PERSON\"或\"FOLLOWER\"时必填",
           "example": "xxx",
           "member": "string",
@@ -2680,7 +2532,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "渠道合作企业的企业Id，GenerateType为\"CHANNEL\"时必填",
           "example": "xxx",
           "member": "string",
@@ -2689,8 +2540,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "渠道合作企业参与人OpenId，GenerateType为\"CHANNEL\"时可用，指定到具体参与人",
+          "document": "渠道合作企业参与人OpenId，GenerateType为\"CHANNEL\"时可用，指定到具体参与人, 仅展示已经实名的经办人信息",
           "example": "xxx",
           "member": "string",
           "name": "OpenId",
@@ -2698,7 +2548,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Endpoint为\"APP\" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后自动回跳至调用方小程序",
           "example": "false",
           "member": "bool",
@@ -2707,7 +2556,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效，最大长度1000个字符。",
           "example": "“https://qq.com”",
           "member": "string",
@@ -2716,8 +2564,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2735,7 +2582,6 @@
           "example": "无",
           "member": "SignUrlInfo",
           "name": "SignUrlInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2744,7 +2590,6 @@
           "example": "[\"xx\",\"yy\"]",
           "member": "string",
           "name": "ErrorMessages",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2787,8 +2632,7 @@
       "document": "DescribeChannelFlowEvidenceReport请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2796,7 +2640,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "出证报告编号",
           "example": "无",
           "member": "string",
@@ -2805,8 +2648,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2824,7 +2666,6 @@
           "example": "无",
           "member": "string",
           "name": "ReportUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2833,7 +2674,6 @@
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2850,7 +2690,7 @@
       "document": "DescribeExtendedServiceAuthInfo请求参数结构体",
       "members": [
         {
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填\n\n注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId\n",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填\n\n注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId\n",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2884,8 +2724,7 @@
       "document": "DescribeFlowDetailInfo请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2893,7 +2732,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "合同(流程)编号数组，最多支持100个。\n（备注：该参数和合同组编号必须二选一）",
           "example": "无",
           "member": "string",
@@ -2902,22 +2740,20 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "合同组编号（备注：该参数和合同(流程)编号数组必须二选一）",
           "example": "无",
           "member": "string",
           "name": "FlowGroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "暂未开放",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2930,7 +2766,6 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2939,7 +2774,6 @@
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationOpenId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2948,7 +2782,6 @@
           "example": "无",
           "member": "FlowDetailInfo",
           "name": "FlowInfo",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2957,7 +2790,6 @@
           "example": "无",
           "member": "string",
           "name": "FlowGroupId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2966,7 +2798,6 @@
           "example": "无",
           "member": "string",
           "name": "FlowGroupName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2983,8 +2814,7 @@
       "document": "DescribeResourceUrlsByFlows请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。\n此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。\n此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2992,7 +2822,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "查询资源所对应的签署流程Id，最多支持50个",
           "example": "\"xxx\"",
           "member": "string",
@@ -3001,8 +2830,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "操作者的信息，不用传",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3020,7 +2848,6 @@
           "example": "无",
           "member": "FlowResourceUrlInfo",
           "name": "FlowResourceUrlInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3029,7 +2856,6 @@
           "example": "[\"\",\"\"]",
           "member": "string",
           "name": "ErrorMessages",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3046,8 +2872,7 @@
       "document": "DescribeTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3055,7 +2880,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "模板唯一标识，查询单个模板时使用",
           "example": "无",
           "member": "string",
@@ -3064,7 +2888,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询内容：0-模板列表及详情（默认），1-仅模板列表",
           "example": "无",
           "member": "int64",
@@ -3073,7 +2896,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询个数，默认20，最大100；在查询列表的时候有效",
           "example": "无",
           "member": "uint64",
@@ -3082,7 +2904,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询偏移位置，默认0；在查询列表的时候有效",
           "example": "无",
           "member": "uint64",
@@ -3091,7 +2912,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件",
           "example": "无",
           "member": "bool",
@@ -3100,7 +2920,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "模糊搜索模板名称，最大长度200",
           "example": "无",
           "member": "string",
@@ -3109,7 +2928,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
@@ -3118,7 +2936,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "是否获取模板预览链接",
           "example": "无",
           "member": "bool",
@@ -3127,7 +2944,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。",
           "example": "无",
           "member": "bool",
@@ -3136,7 +2952,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "渠道模板ID",
           "example": "无",
           "member": "string",
@@ -3155,7 +2970,6 @@
           "example": "无",
           "member": "TemplateInfo",
           "name": "Templates",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3164,7 +2978,6 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3173,7 +2986,6 @@
           "example": "无",
           "member": "uint64",
           "name": "Limit",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3182,7 +2994,6 @@
           "example": "无",
           "member": "uint64",
           "name": "Offset",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3199,7 +3010,6 @@
       "document": "DescribeUsage请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用信息，此接口Agent.AppId必填",
           "example": "无",
           "member": "Agent",
@@ -3208,7 +3018,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "开始时间，例如：2021-03-21",
           "example": "无",
           "member": "date",
@@ -3217,7 +3026,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束时间，例如：2021-06-21；\n开始时间到结束时间的区间长度小于等于90天。",
           "example": "无",
           "member": "date",
@@ -3226,7 +3034,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否汇总数据，默认不汇总。\n不汇总：返回在统计区间内渠道下所有企业的每日明细，即每个企业N条数据，N为统计天数；\n汇总：返回在统计区间内渠道下所有企业的汇总后数据，即每个企业一条数据；",
           "example": "无",
           "member": "bool",
@@ -3235,7 +3042,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "单次返回的最多条目数量。默认为1000，且不能超过1000。",
           "example": "无",
           "member": "uint64",
@@ -3244,7 +3050,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认是0。",
           "example": "无",
           "member": "uint64",
@@ -3253,8 +3058,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3272,7 +3076,6 @@
           "example": "无",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3281,7 +3084,6 @@
           "example": "无",
           "member": "UsageDetail",
           "name": "Details",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4131,8 +3933,7 @@
       "document": "GetDownloadFlowUrl请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4140,7 +3941,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "文件夹数组，签署流程总数不能超过50个，一个文件夹下，不能超过20个签署流程",
           "example": "无",
           "member": "DownloadFlowInfo",
@@ -4149,8 +3949,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "操作者的信息，不用传",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -4168,7 +3967,6 @@
           "example": "无",
           "member": "string",
           "name": "DownLoadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4185,7 +3983,7 @@
       "document": "ModifyExtendedService请求参数结构体",
       "members": [
         {
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。\n\n注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。\n\n注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4351,8 +4149,7 @@
       "document": "OperateChannelTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4360,7 +4157,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "操作类型，查询:\"SELECT\"，删除:\"DELETE\"，更新:\"UPDATE\"",
           "example": "无",
           "member": "string",
@@ -4369,7 +4165,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "渠道方模板库模板唯一标识",
           "example": "无",
           "member": "string",
@@ -4378,7 +4173,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "合作企业方第三方机构唯一标识数据，支持多个， 用\",\"进行分隔",
           "example": "无",
           "member": "string",
@@ -4387,7 +4181,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模板可见性, 全部可见-\"all\", 部分可见-\"part\"",
           "example": "无",
           "member": "string",
@@ -4396,8 +4189,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -4415,7 +4207,6 @@
           "example": "无",
           "member": "string",
           "name": "AppId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4424,7 +4215,6 @@
           "example": "无",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4433,7 +4223,6 @@
           "example": "all-success",
           "member": "string",
           "name": "OperateResult",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4442,7 +4231,6 @@
           "example": "SELECT",
           "member": "string",
           "name": "AuthTag",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4451,7 +4239,6 @@
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationOpenIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4460,7 +4247,6 @@
           "example": "无",
           "member": "AuthFailMessage",
           "name": "FailMessageList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4679,8 +4465,7 @@
       "document": "PrepareFlows请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4688,7 +4473,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "多个合同（签署流程）信息，最大支持20个签署流程。",
           "example": "无",
           "member": "FlowInfo",
@@ -4697,7 +4481,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "操作完成后的跳转地址，最大长度200",
           "example": "无",
           "member": "string",
@@ -4706,8 +4489,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -4725,7 +4507,6 @@
           "example": "https://ess.tencent.com",
           "member": "string",
           "name": "ConfirmUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5494,8 +5275,7 @@
       "document": "SyncProxyOrganizationOperators请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。",
+          "document": "应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5503,7 +5283,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "操作类型，新增:\"CREATE\"，修改:\"UPDATE\"，离职:\"RESIGN\"",
           "example": "无",
           "member": "string",
@@ -5512,7 +5291,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "经办人信息列表，最大长度200",
           "example": "无",
           "member": "ProxyOrganizationOperator",
@@ -5521,8 +5299,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5540,7 +5317,6 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5549,7 +5325,6 @@
           "example": "无",
           "member": "SyncFailReason",
           "name": "FailedList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5566,7 +5341,6 @@
       "document": "SyncProxyOrganization请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用信息\n此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填",
           "example": "无",
           "member": "Agent",
@@ -5575,7 +5349,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "渠道侧合作企业名称，最大长度64个字符",
           "example": "无",
           "member": "string",
@@ -5584,7 +5357,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "营业执照正面照(PNG或JPG) base64格式, 大小不超过5M",
           "example": "无",
           "member": "string",
@@ -5593,7 +5365,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "渠道侧合作企业统一社会信用代码，最大长度200个字符",
           "example": "无",
           "member": "string",
@@ -5602,7 +5373,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "渠道侧合作企业法人/负责人姓名",
           "example": "无",
           "member": "string",
@@ -5611,8 +5381,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "操作者的信息",
+          "document": "暂未开放",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",

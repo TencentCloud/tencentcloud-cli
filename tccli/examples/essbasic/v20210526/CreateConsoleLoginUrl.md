@@ -1,15 +1,15 @@
 **Example 1: 生成默认的控制台链接**
 
-
+生成默认的控制台链接
 
 Input: 
 
 ```
 tccli essbasic CreateConsoleLoginUrl --cli-unfold-argument  \
     --ProxyOrganizationName 渠道子客企业名称 \
-    --Agent.ProxyOperator.OpenId xx \
-    --Agent.ProxyOrganizationOpenId xxx \
-    --Agent.AppId xx
+    --Agent.ProxyOperator.OpenId test \
+    --Agent.ProxyOrganizationOpenId testx \
+    --Agent.AppId test
 ```
 
 Output: 
@@ -26,18 +26,18 @@ Output:
 
 **Example 2: 生成到模板详情的控制台链接**
 
-
+生成到模板详情的控制台链接
 
 Input: 
 
 ```
 tccli essbasic CreateConsoleLoginUrl --cli-unfold-argument  \
     --ProxyOrganizationName 渠道子客企业名称 \
-    --Agent.ProxyOperator.OpenId xx \
-    --Agent.ProxyOrganizationOpenId xx \
-    --Agent.AppId xx \
+    --Agent.ProxyOperator.OpenId test \
+    --Agent.ProxyOrganizationOpenId test \
+    --Agent.AppId test \
     --Module TEMPLATE \
-    --ModuleId xx \
+    --ModuleId test \
     --MenuStatus ENABLE
 ```
 

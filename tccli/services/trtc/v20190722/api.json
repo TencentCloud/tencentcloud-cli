@@ -3134,7 +3134,6 @@
       "document": "用户自定义混流布局参数列表。",
       "members": [
         {
-          "default": "",
           "document": "画布上该画面左上角的 y 轴坐标，取值范围 [0, 1920]，不能超过画布的高。",
           "example": "100",
           "member": "uint64",
@@ -3144,7 +3143,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "画布上该画面左上角的 x 轴坐标，取值范围 [0, 1920]，不能超过画布的宽。",
           "example": "100",
           "member": "uint64",
@@ -3154,7 +3152,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "画布上该画面宽度的相对值，取值范围 [0, 1920]，与Left相加不应超过画布的宽。",
           "example": "100",
           "member": "uint64",
@@ -3164,7 +3161,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "画布上该画面高度的相对值，取值范围 [0, 1920]，与Top相加不应超过画布的高。",
           "example": "100",
           "member": "uint64",
@@ -3174,7 +3170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "字符串内容为待显示在该画面的主播对应的UserId，如果不指定，会按照主播加入房间的顺序匹配。",
           "example": "123",
           "member": "string",
@@ -3184,7 +3179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "画布的透明度值，取值范围[0, 255]。0表示不透明，255表示全透明。默认值为0。",
           "example": "100",
           "member": "uint64",
@@ -3194,7 +3188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "0 ：拉伸模式，这个模式下整个视频内容会全部显示，并填满子画面，在源视频和目的视频宽高比不一致的时候，画面不会缺少内容，但是画面可能产生形变；\n\n1 ：剪裁模式（默认），这个模式下会严格按照目的视频的宽高比对源视频剪裁之后再拉伸，并填满子画面画布，在源视频和目的视频宽高比不一致的时候，画面保持不变形，但是会被剪裁；\n\n2 ：填黑模式，这个模式下会严格保持源视频的宽高比进行等比缩放，在源视频和目的视频宽高比不一致的时候，画面的上下侧边缘或者左右侧边缘会露出子画面画布的背景；\n\n3 ：智能拉伸模式，这个模式类似剪裁模式，区别是在源视频和目的视频宽高比不一致的时候，限制了最大剪裁比例为画面的宽度或者高度的20%；",
           "example": "1",
           "member": "uint64",
@@ -3204,7 +3197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对应订阅流的主辅路标识：\n0：主流（默认）；\n1：辅流；",
           "example": "1",
           "member": "uint64",
@@ -3214,7 +3206,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "该画布的图层顺序, 这个值越小表示图层越靠后。默认值为0。",
           "example": "2",
           "member": "uint64",
@@ -3224,8 +3215,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。",
+          "document": "图片的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。",
           "example": "https://xxxx",
           "member": "string",
           "name": "SubBackgroundImage",
@@ -3237,10 +3227,9 @@
       "usage": "in"
     },
     "MixLayoutParams": {
-      "document": "录制的混流布局参数。\n",
+      "document": "录制的混流布局参数。",
       "members": [
         {
-          "default": "",
           "document": "布局模式:\n1：悬浮布局；\n2：屏幕分享布局；\n3：九宫格布局（默认）；\n4：自定义布局；\n\n悬浮布局：默认第一个进入房间的主播（也可以指定一个主播）的视频画面会铺满整个屏幕。其他主播的视频画面从左下角开始依次按照进房顺序水平排列，显示为小画面，小画面悬浮于大画面之上。当画面数量小于等于17个时，每行4个（4 x 4排列）。当画面数量大于17个时，重新布局小画面为每行5个（5 x 5）排列。最多支持25个画面，如果用户只发送音频，仍然会占用画面位置。\n\n屏幕分享布局：指定一个主播在屏幕左侧的大画面位置（如果不指定，那么大画面位置为背景色），其他主播自上而下依次垂直排列于右侧。当画面数量少于17个的时候，右侧每列最多8人，最多占据两列。当画面数量多于17个的时候，超过17个画面的主播从左下角开始依次水平排列。最多支持25个画面，如果主播只发送音频，仍然会占用画面位置。\n\n九宫格布局：根据主播的数量自动调整每个画面的大小，每个主播的画面大小一致，最多支持25个画面。\n\n自定义布局：根据需要在MixLayoutList内定制每个主播画面的布局。",
           "example": "3",
           "member": "uint64",
@@ -3250,7 +3239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "如果MixLayoutMode 选择为4自定义布局模式的话，设置此参数为每个主播所对应的布局画面的详细信息，最大不超过25个。",
           "example": "无",
           "member": "MixLayout",
@@ -3260,7 +3248,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "录制背景颜色，RGB的颜色表的16进制表示，每个颜色通过8bit长度标识，默认为黑色。比如橙色对应的RGB为 R:255 G:165 B:0, 那么对应的字符串描述为#FFA500，格式规范：‘#‘开头，后面跟固定RGB的颜色值",
           "example": "123",
           "member": "string",
@@ -3270,7 +3257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "在布局模式为1：悬浮布局和 2：屏幕分享布局时，设定为显示大视频画面的UserId。不填的话：悬浮布局默认是第一个进房间的主播，屏幕分享布局默认是背景色",
           "example": "123",
           "member": "string",
@@ -3280,7 +3266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主辅路标识，\n0：主流（默认）；\n1：辅流（屏幕分享）；\n这个位置的MediaId代表的是对应MaxResolutionUserId的主辅路，MixLayoutList内代表的是自定义用户的主辅路。",
           "example": "0",
           "member": "uint64",
@@ -3290,8 +3275,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "下载的url地址， 只支持jpg， png，大小限制不超过5M。",
+          "document": "图片的url地址， 只支持jpg， png，大小限制不超过5M，url不可包含中文。",
           "example": "https://xxxx",
           "member": "string",
           "name": "BackgroundImageUrl",
@@ -3300,7 +3284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。",
           "example": "0",
           "member": "uint64",
@@ -3310,7 +3293,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "背景画面宽高比不一致的时候处理方案，与MixLayoufList定义的RenderMode一致。",
           "example": "1",
           "member": "uint64",
@@ -3320,7 +3302,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子画面占位图url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。",
           "example": "https://xxxx",
           "member": "string",
@@ -3330,7 +3311,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "水印布局参数， 最多支持25个。",
           "example": "无",
           "member": "WaterMark",
@@ -3340,7 +3320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。",
           "example": "1",
           "member": "uint64",
@@ -3350,7 +3329,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。",
           "example": "0",
           "member": "uint64",

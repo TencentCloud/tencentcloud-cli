@@ -28,6 +28,13 @@
       "output": "CreateWorkspaceByVersionControlResponse",
       "status": "online"
     },
+    "CreateWorkspaceTemporaryToken": {
+      "document": "为工作空间创建临时访问凭证，重复调用会创建新的 Token，旧的 Token 将会自动失效",
+      "input": "CreateWorkspaceTemporaryTokenRequest",
+      "name": "为工作空间创建临时访问凭证",
+      "output": "CreateWorkspaceTemporaryTokenResponse",
+      "status": "online"
+    },
     "DeleteCustomizeTemplatesById": {
       "document": "删除自定义模板",
       "input": "DeleteCustomizeTemplatesByIdRequest",
@@ -424,6 +431,40 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceTemporaryTokenRequest": {
+      "document": "CreateWorkspaceTemporaryToken请求参数结构体",
+      "members": [
+        {
+          "document": "创建工作空间凭证 DTO",
+          "example": "无",
+          "member": "WorkspaceTokenDTO",
+          "name": "WorkspaceTokenDTO",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceTemporaryTokenResponse": {
+      "document": "CreateWorkspaceTemporaryToken返回参数结构体",
+      "members": [
+        {
+          "document": "工作空间临时访问 token 信息",
+          "example": "无",
+          "member": "WorkspaceTokenInfoV0",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2424,6 +2465,54 @@
           "example": "xxx",
           "member": "string",
           "name": "AuthorAvatar",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkspaceTokenDTO": {
+      "document": "创建临时工作空间凭证 DTO",
+      "members": [
+        {
+          "document": "工作空间 SpaceKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "knhwex",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "token过期时间，单位是秒，默认 3600\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TokenExpiredLimitSec",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "WorkspaceTokenInfoV0": {
+      "document": "获取工作空间临时访问 token 出参",
+      "members": [
+        {
+          "document": "访问工作空间临时凭证",
+          "example": "83c99d6a03aa94f5e7bbfb4eded0de0b1153f44d05126d34b5f36e8343eca973",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "token 过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-13T12:33:48 GMT+08:00",
+          "member": "string",
+          "name": "ExpiredTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true

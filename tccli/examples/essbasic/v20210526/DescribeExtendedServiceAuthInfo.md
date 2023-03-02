@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli essbasic DescribeExtendedServiceAuthInfo --cli-unfold-argument ```
+tccli essbasic DescribeExtendedServiceAuthInfo --cli-unfold-argument  \
+    --Agent.ProxyOperator.OpenId admin-open-id \
+    --Agent.ProxyOrganizationOpenId org-open-id \
+    --Agent.AppId APPID12344556667777777
+```
 
 Output: 
 ```
@@ -48,7 +52,7 @@ Output:
                 "Type": "PAGING_SEAL"
             }
         ],
-        "RequestId": "s1673334710960667881"
+        "RequestId": "s16733xxx81"
     }
 }
 ```

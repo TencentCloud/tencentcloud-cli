@@ -113,7 +113,7 @@
       "status": "online"
     },
     "CreateLiveTranscodeRule": {
-      "document": "创建转码规则，需要先调用[CreateLiveTranscodeTemplate](/document/product/267/32646)接口创建转码模板，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。",
+      "document": "创建转码规则，数量上限：50，需要先调用[CreateLiveTranscodeTemplate](/document/product/267/32646)接口创建转码模板，将返回的模板id绑定到流使用。\n<br>转码相关文档：[直播转封装及转码](/document/product/267/32736)。",
       "input": "CreateLiveTranscodeRuleRequest",
       "name": "创建转码规则",
       "output": "CreateLiveTranscodeRuleResponse",
@@ -3154,7 +3154,6 @@
       "document": "CreateLiveTranscodeRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "播放域名。",
           "example": "xxx.xx.com",
           "member": "string",
@@ -3163,8 +3162,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填空。",
+          "document": "推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填\"\"。",
           "example": "live",
           "member": "string",
           "name": "AppName",
@@ -3172,7 +3170,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "流名称。如果只绑定域名或路径，则此处填空。",
           "example": "stream",
           "member": "string",
@@ -3181,7 +3178,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定已有的模板Id。",
           "example": "1000",
           "member": "int64",

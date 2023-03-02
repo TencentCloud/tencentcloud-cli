@@ -1,43 +1,43 @@
 **Example 1: 通过多文件创建合同组签署流程**
 
-
+通过多文件创建合同组签署流程
 
 Input: 
 
 ```
 tccli essbasic ChannelCreateFlowGroupByFiles --cli-unfold-argument  \
-    --Agent.ProxyAppId xx \
-    --Agent.ProxyOrganizationOpenId xx \
-    --Agent.ProxyOperator.OpenId xx \
-    --Agent.AppId xx \
-    --FlowGroupName xxx \
+    --Agent.ProxyAppId test \
+    --Agent.ProxyOrganizationOpenId test \
+    --Agent.ProxyOperator.OpenId test \
+    --Agent.AppId test \
+    --FlowGroupName testx \
     --ApproverVerifyType VerifyCheck \
     --FlowFileInfos.0.FlowName  \
-    --FlowFileInfos.0.FlowApprovers.0.ApproverType xxx \
-    --FlowFileInfos.0.FlowApprovers.0.OrganizationName xxx \
-    --FlowFileInfos.0.FlowApprovers.0.OrganizationOpenId xxx \
-    --FlowFileInfos.0.FlowApprovers.0.OpenId xxx \
-    --FlowFileInfos.0.FlowApprovers.0.SignComponents.0.GenerateMode xxx \
-    --FlowFileInfos.0.FlowApprovers.0.SignComponents.0.ComponentName xxx \
+    --FlowFileInfos.0.FlowApprovers.0.ApproverType testx \
+    --FlowFileInfos.0.FlowApprovers.0.OrganizationName testx \
+    --FlowFileInfos.0.FlowApprovers.0.OrganizationOpenId testx \
+    --FlowFileInfos.0.FlowApprovers.0.OpenId testx \
+    --FlowFileInfos.0.FlowApprovers.0.SignComponents.0.GenerateMode testx \
+    --FlowFileInfos.0.FlowApprovers.0.SignComponents.0.ComponentName testx \
     --FlowFileInfos.0.FlowApprovers.0.SignComponents.0.FileIndex 0 \
-    --FlowFileInfos.0.FlowApprovers.0.SignComponents.0.ComponentType xxx \
-    --FlowFileInfos.0.FlowApprovers.0.SignComponents.1.GenerateMode xxx \
-    --FlowFileInfos.0.FlowApprovers.0.SignComponents.1.ComponentName xxx \
+    --FlowFileInfos.0.FlowApprovers.0.SignComponents.0.ComponentType testx \
+    --FlowFileInfos.0.FlowApprovers.0.SignComponents.1.GenerateMode testx \
+    --FlowFileInfos.0.FlowApprovers.0.SignComponents.1.ComponentName testx \
     --FlowFileInfos.0.FlowApprovers.0.SignComponents.1.FileIndex 0 \
-    --FlowFileInfos.0.FlowApprovers.0.SignComponents.1.ComponentType xxx \
-    --FlowFileInfos.0.FileIds xxx
+    --FlowFileInfos.0.FlowApprovers.0.SignComponents.1.ComponentType testx \
+    --FlowFileInfos.0.FileIds testx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowGroupId": "xx",
+        "FlowGroupId": "test",
         "FlowIds": [
-            "xx",
-            "xx"
+            "test",
+            "test"
         ],
-        "RequestId": "xx"
+        "RequestId": "test"
     }
 }
 ```

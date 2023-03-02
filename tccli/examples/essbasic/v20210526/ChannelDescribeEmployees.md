@@ -1,15 +1,15 @@
 **Example 1: 查询员工**
 
-
+查询员工
 
 Input: 
 
 ```
 tccli essbasic ChannelDescribeEmployees --cli-unfold-argument  \
-    --Agent.ProxyAppId xx \
-    --Agent.ProxyOrganizationOpenId xx \
-    --Agent.ProxyOperator.OpenId xx \
-    --Agent.AppId xx \
+    --Agent.ProxyAppId test \
+    --Agent.ProxyOrganizationOpenId test \
+    --Agent.ProxyOperator.OpenId test \
+    --Agent.AppId test \
     --Filters.0.Values  \
     --Filters.0.Key  \
     --Limit 20 \
@@ -25,11 +25,11 @@ Output:
                 "CreatedOn": 1658114069,
                 "Department": {
                     "DepartmentId": "dp-8a801d51xxxx820e2aed8155f2",
-                    "DepartmentName": "**企业"
+                    "DepartmentName": "test企业"
                 },
-                "DisplayName": "**",
+                "DisplayName": "test",
                 "Email": "",
-                "Mobile": "123****4567",
+                "Mobile": "123testtest4567",
                 "OpenId": "",
                 "Roles": [
                     {
@@ -51,7 +51,8 @@ Output:
                 ],
                 "UserId": "yDRtvUUgygqxxxxO4zjESsMBKpnZs",
                 "Verified": true,
-                "VerifiedOn": 1658114065
+                "VerifiedOn": 1658114065,
+                "QuiteJob": 0
             }
         ],
         "Limit": 20,
