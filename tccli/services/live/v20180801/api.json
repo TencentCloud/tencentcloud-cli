@@ -13331,8 +13331,8 @@
       "document": "推断流事件信息。",
       "members": [
         {
-          "default": "",
           "document": "应用名称。",
+          "example": "无",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -13340,8 +13340,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "推流域名。",
+          "example": "无",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -13349,8 +13349,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "流名称。",
+          "example": "无",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -13358,8 +13358,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "推流开始时间。\nUTC 格式时间，例如：2019-01-07T12:00:00Z。",
+          "example": "无",
           "member": "string",
           "name": "StreamStartTime",
           "required": true,
@@ -13367,8 +13367,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "推流结束时间。\nUTC 格式时间，例如：2019-01-07T15:00:00Z。",
+          "example": "无",
           "member": "string",
           "name": "StreamEndTime",
           "required": true,
@@ -13376,8 +13376,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "停止原因。",
+          "example": "无",
           "member": "string",
           "name": "StopReason",
           "required": true,
@@ -13385,8 +13385,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "推流持续时长，单位：秒。",
+          "example": "无",
           "member": "uint64",
           "name": "Duration",
           "required": true,
@@ -13394,8 +13394,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "主播 IP。",
+          "document": "主播 IP。\n当客户端为内网推流时，展示为: - 。",
+          "example": "无",
           "member": "string",
           "name": "ClientIp",
           "required": true,
@@ -13403,8 +13403,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分辨率。",
+          "example": "无",
           "member": "string",
           "name": "Resolution",
           "required": true,

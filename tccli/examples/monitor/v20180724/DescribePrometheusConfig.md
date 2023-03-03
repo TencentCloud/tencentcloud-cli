@@ -15,7 +15,26 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
+        "Config": "xdfdfd",
+        "ServiceMonitors": [
+            {
+                "Name": "sm1",
+                "Config": "dfd"
+            }
+        ],
+        "PodMonitors": [
+            {
+                "Name": "pm1",
+                "Config": "fdfd"
+            }
+        ],
+        "RawJobs": [
+            {
+                "Name": "job1",
+                "Config": "fd"
+            }
+        ]
     }
 }
 ```

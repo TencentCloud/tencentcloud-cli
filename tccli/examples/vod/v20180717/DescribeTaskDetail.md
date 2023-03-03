@@ -23,11 +23,16 @@ Output:
             "Status": "FINISH",
             "ErrCode": 0,
             "Message": "",
+            "SessionContext": "",
+            "SessionId": "",
+            "Operator": "",
+            "OperationType": "",
             "FileId": "5285890784246869930",
             "FileName": "small",
             "FileUrl": "http://12567683xx.vod2.myqcloud.com/1c1ae5d2vodgzp12567683xx/c643347c5285890784246869930/AtUCmy6gmIYA.mp4",
             "MetaData": {
                 "AudioDuration": 59.9900016784668,
+                "Md5": "",
                 "AudioStreamSet": [
                     {
                         "Bitrate": 383854,
@@ -48,14 +53,16 @@ Output:
                         "Codec": "h264",
                         "Fps": 23,
                         "Height": 480,
-                        "Width": 640
+                        "Width": 640,
+                        "DynamicRangeInfo": {}
                     }
                 ],
                 "Width": 640
             },
-            "MediaProcessResultSet": null,
-            "AiContentReviewResultSet": null,
-            "AiAnalysisResultSet": null,
+            "MediaProcessResultSet": [],
+            "AiContentReviewResultSet": [],
+            "AiRecognitionResultSet": [],
+            "AiAnalysisResultSet": [],
             "TasksPriority": 0,
             "TasksNotifyMode": ""
         },

@@ -1093,16 +1093,14 @@
       "document": "CreateDCDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。\n注意当前可售卖的可用区需要通过DescribeDCDBSaleInfo接口拉取。",
-          "example": "[\"ap-guangzhou-2\\r\\n\",\"ap-guangzhou-2\\r\\n\"]",
+          "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "Zones",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "document": "欲购买的时长，单位：月。",
           "example": "1",
           "member": "int64",
@@ -1111,7 +1109,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分片内存大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "2",
           "member": "int64",
@@ -1120,7 +1117,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分片存储空间大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "10",
           "member": "int64",
@@ -1129,7 +1125,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "单个分片节点个数，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "3",
           "member": "int64",
@@ -1138,7 +1133,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例分片个数，可选范围2-8，可以通过升级实例进行新增分片到最多64个分片。",
           "example": "2",
           "member": "int64",
@@ -1147,7 +1141,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "欲购买实例的数量",
           "example": "1",
           "member": "int64",
@@ -1156,7 +1149,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "项目 ID，可以通过查看项目列表获取，不传则关联到默认项目",
           "example": "无",
           "member": "int64",
@@ -1165,7 +1157,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "虚拟私有网络 ID，不传或传空表示创建为基础网络",
           "example": "无",
           "member": "string",
@@ -1174,7 +1165,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "虚拟私有网络子网 ID，VpcId不为空时必填",
           "example": "无",
           "member": "string",
@@ -1183,16 +1173,14 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "数据库引擎版本，当前可选：8.0.18，10.1.9，5.7.17。\n8.0.18 - MySQL 8.0.18；\n10.1.9 - Mariadb 10.1.9；\n5.7.17 - Percona 5.7.17。\n如果不填的话，默认为5.7.17，表示Percona 5.7.17。",
-          "example": "5.7.17",
+          "document": "数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。",
+          "example": "5.7",
           "member": "string",
           "name": "DbVersionId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否自动使用代金券进行支付，默认不使用。",
           "example": "true",
           "member": "bool",
@@ -1201,7 +1189,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
           "example": "无",
           "member": "string",
@@ -1210,7 +1197,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "安全组id",
           "example": "无",
           "member": "string",
@@ -1219,7 +1205,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例名称， 可以通过该字段自主的设置实例的名字",
           "example": "无",
           "member": "string",
@@ -1228,7 +1213,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否支持IPv6",
           "example": "无",
           "member": "int64",
@@ -1237,7 +1221,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签键值对数组",
           "example": "无",
           "member": "ResourceTag",
@@ -1246,7 +1229,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。",
           "example": "无",
           "member": "DBParamValue",
@@ -1255,7 +1237,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "DCN源地域",
           "example": "无",
           "member": "string",
@@ -1264,7 +1245,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "DCN源实例ID",
           "example": "无",
           "member": "string",
@@ -1273,7 +1253,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费，用户开通了预付费不停服特权也会进行自动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0",
           "example": "0",
           "member": "int64",
@@ -1282,7 +1261,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "安全组ids，安全组可以传数组形式，兼容之前SecurityGroupId参数",
           "example": "无",
           "member": "string",
@@ -1301,7 +1279,6 @@
           "example": "20181103110163",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1310,7 +1287,6 @@
           "example": "[\"dcdbt-avw0207d\"]",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1327,7 +1303,6 @@
       "document": "CreateHourDCDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分片内存大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "2",
           "member": "int64",
@@ -1336,7 +1311,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分片存储空间大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "10",
           "member": "int64",
@@ -1345,7 +1319,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "单个分片节点个数，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "2",
           "member": "int64",
@@ -1354,7 +1327,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例分片个数，可选范围2-8，可以通过升级实例进行新增分片到最多64个分片。",
           "example": "2",
           "member": "int64",
@@ -1363,7 +1335,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "欲购买实例的数量",
           "example": "1",
           "member": "int64",
@@ -1372,7 +1343,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "项目 ID，可以通过查看项目列表获取，不传则关联到默认项目",
           "example": "0",
           "member": "int64",
@@ -1381,7 +1351,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "虚拟私有网络 ID，不传或传空表示创建为基础网络",
           "example": "0",
           "member": "string",
@@ -1390,7 +1359,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "虚拟私有网络子网 ID，VpcId不为空时必填",
           "example": "0",
           "member": "string",
@@ -1399,7 +1367,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分片cpu大小，单位：核，可以通过 DescribeShardSpec\n 查询实例规格获得。",
           "example": "0",
           "member": "int64",
@@ -1408,16 +1375,14 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。\n10.0.10 - Mariadb 10.0.10；\n10.1.9 - Mariadb 10.1.9；\n5.7.17 - Percona 5.7.17。\n如果不填的话，默认为10.1.9，表示Mariadb 10.1.9。",
-          "example": "5.7.17",
+          "document": "数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。",
+          "example": "5.7",
           "member": "string",
           "name": "DbVersionId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。",
           "example": "[\"ap-guangzhou-1\"]",
           "member": "string",
@@ -1426,7 +1391,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "安全组id",
           "example": "sg-12345",
           "member": "string",
@@ -1435,7 +1399,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例名称， 可以通过该字段自主的设置实例的名字",
           "example": "实例名称",
           "member": "string",
@@ -1444,7 +1407,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否支持IPv6",
           "example": "0",
           "member": "int64",
@@ -1453,7 +1415,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签键值对数组",
           "example": "无",
           "member": "ResourceTag",
@@ -1462,7 +1423,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "DCN源地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1471,7 +1431,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "DCN源实例ID",
           "example": "tdsqlshard-123",
           "member": "string",
@@ -1480,7 +1439,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。",
           "example": "无",
           "member": "DBParamValue",
@@ -1489,7 +1447,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "需要回档的源实例ID",
           "example": "无",
           "member": "string",
@@ -1498,7 +1455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "回档时间",
           "example": "无",
           "member": "string",
@@ -1507,7 +1463,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "安全组ids，安全组可以传数组形式，兼容之前SecurityGroupId参数",
           "example": "无",
           "member": "string",
@@ -1526,7 +1481,6 @@
           "example": "[\"tdsql-xxxxxx\"]",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1535,7 +1489,6 @@
           "example": "1122",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1544,7 +1497,6 @@
           "example": "20200409111543",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6376,8 +6328,8 @@
       "document": "标签对象，包含tagKey & tagValue",
       "members": [
         {
-          "default": "",
           "document": "标签键key",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -6385,8 +6337,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签值value",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -6394,7 +6346,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SecurityGroup": {
       "document": "安全组详情",

@@ -1284,7 +1284,6 @@
       "document": "转自适应码流信息",
       "members": [
         {
-          "default": "",
           "document": "转自适应码流规格。",
           "example": "10",
           "member": "int64",
@@ -1294,8 +1293,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "打包格式，只能为 HLS。",
+          "document": "打包格式，取值范围：\n<li>HLS；</li>\n<li>DASH。</li>",
           "example": "HLS",
           "member": "string",
           "name": "Package",
@@ -1304,7 +1302,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "加密类型。",
           "example": "SimpleAES",
           "member": "string",
@@ -1314,7 +1311,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "播放地址。",
           "example": "http://xxx.myqcloud.com/xxx.mp4",
           "member": "string",
@@ -1324,7 +1320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件大小，单位：字节。\n<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>\n<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>\n<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>",
           "example": "100",
           "member": "int64",
@@ -1334,7 +1329,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
           "example": "Trace",
           "member": "string",
@@ -1342,15 +1336,23 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "子流信息列表。",
+          "example": "无",
+          "member": "MediaSubStreamInfoItem",
+          "name": "SubStreamSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "AdaptiveDynamicStreamingTaskInput": {
       "document": "对视频转自适应码流的输入参数类型",
       "members": [
         {
-          "default": "",
           "document": "转自适应码流模板 ID。",
           "example": "10",
           "member": "uint64",
@@ -1360,7 +1362,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
           "example": "[]",
           "member": "WatermarkInput",
@@ -1370,7 +1371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "溯源水印。",
           "example": "无",
           "member": "TraceWatermarkInput",
@@ -1380,7 +1380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。",
           "example": "[]",
           "member": "string",
@@ -12176,7 +12175,6 @@
       "document": "DescribeMediaInfos请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "媒体文件 ID 列表，N 从 0 开始取值，最大 19。",
           "example": "[\"5285485487985271487\\n\",\"5285485487985271488\\n\"]",
           "member": "string",
@@ -12185,7 +12183,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -12194,7 +12191,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：\n<li>basicInfo（视频基础信息）。</li>\n<li>metaData（视频元信息）。</li>\n<li>transcodeInfo（视频转码结果信息）。</li>\n<li>animatedGraphicsInfo（视频转动图结果信息）。</li>\n<li>imageSpriteInfo（视频雪碧图信息）。</li>\n<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>\n<li>sampleSnapshotInfo（采样截图信息）。</li>\n<li>keyFrameDescInfo（打点信息）。</li>\n<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>\n<li>miniProgramReviewInfo（小程序审核信息）。</li>\n<li>subtitleInfo（字幕信息）。</li>\n<li>reviewInfo（审核信息）。</li>",
           "example": "无",
           "member": "string",
@@ -12213,7 +12209,6 @@
           "example": "无",
           "member": "MediaInfo",
           "name": "MediaInfoSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12222,7 +12217,6 @@
           "example": "[\"5285485487985271488\"]",
           "member": "string",
           "name": "NotExistFileIdSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13329,7 +13323,7 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务；</li>\n<li>ReviewAudioVideo：音视频审核任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务；</li>\n<li>ReviewAudioVideo：音视频审核任务；</li>\n<li>ExtractTraceWatermark：提取溯源水印任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -17082,7 +17076,6 @@
       "document": "点播媒体文件基础信息",
       "members": [
         {
-          "default": "",
           "document": "媒体文件名称。",
           "example": "无",
           "member": "string",
@@ -17092,7 +17085,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件描述。",
           "example": "无",
           "member": "string",
@@ -17102,7 +17094,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件的创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "无",
           "member": "string",
@@ -17112,7 +17103,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "无",
           "member": "string",
@@ -17122,7 +17112,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件的过期时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。“9999-12-31T23:59:59Z”表示永不过期。",
           "example": "无",
           "member": "string",
@@ -17132,7 +17121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件的分类 ID。",
           "example": "无",
           "member": "int64",
@@ -17142,7 +17130,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件的分类名称。",
           "example": "无",
           "member": "string",
@@ -17152,7 +17139,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件的分类路径，分类间以“-”分隔，如“新的一级分类 - 新的二级分类”。",
           "example": "无",
           "member": "string",
@@ -17162,7 +17148,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件的封面图片地址。",
           "example": "无",
           "member": "string",
@@ -17172,7 +17157,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件的封装格式，例如 mp4、flv 等。",
           "example": "无",
           "member": "string",
@@ -17182,7 +17166,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "原始媒体文件的 URL 地址。",
           "example": "无",
           "member": "string",
@@ -17192,7 +17175,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "该媒体文件的来源信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaSourceData",
@@ -17202,7 +17184,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。",
           "example": "无",
           "member": "string",
@@ -17212,7 +17193,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件的标签信息。",
           "example": "无",
           "member": "string",
@@ -17222,7 +17202,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "直播录制文件的唯一标识。",
           "example": "无",
           "member": "string",
@@ -17232,7 +17211,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件类型：\n<li>Video: 视频文件</li>\n<li>Audio: 音频文件</li>\n<li>Image: 图片文件</li>",
           "example": "无",
           "member": "string",
@@ -17242,8 +17220,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "文件状态：Normal：正常，Forbidden：封禁。\n\n*注意：此字段暂不支持。",
+          "document": "文件状态：Normal：正常，Forbidden：封禁。\n\n*注意：此字段暂不支持。\t",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -17252,7 +17229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件的存储类别：\n<li> STANDARD：标准存储。</li>\n<li> STANDARD_IA：低频存储。</li>\n<li> ARCHIVE：归档存储。</li>\n<li> DEEP_ARCHIVE：深度归档存储。</li>",
           "example": "STANDARD",
           "member": "string",
@@ -19102,6 +19078,48 @@
       ],
       "usage": "out"
     },
+    "MediaSubStreamInfoItem": {
+      "document": "转自适应码流子流信息。",
+      "members": [
+        {
+          "document": "子流类型，取值范围：\n<li>audio：纯音频；</li>\n<li>video：视频（可能包含音频流）。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当子流为视频流时，视频画面宽度，单位：px。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当子流为视频流时，视频画面高度，单位：px。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子流媒体文件大小，单位：Byte。\n<font color=red>注意：</font>在 2023-02-09T16:00:00Z 前处理生成的自适应码流文件此字段为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Size",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MediaSubtitleInfo": {
       "document": "字幕信息。",
       "members": [
@@ -19334,7 +19352,6 @@
       "document": "转码信息",
       "members": [
         {
-          "default": "",
           "document": "转码后的视频文件地址。",
           "example": "http://xxxx/xxx.mp4",
           "member": "string",
@@ -19344,7 +19361,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。",
           "example": "10010",
           "member": "int64",
@@ -19354,7 +19370,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频流码率平均值与音频流码率平均值之和， 单位：bps。",
           "example": "125000",
           "member": "int64",
@@ -19364,7 +19379,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频流高度的最大值，单位：px。",
           "example": "720",
           "member": "int64",
@@ -19374,7 +19388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频流宽度的最大值，单位：px。",
           "example": "1080",
           "member": "int64",
@@ -19384,7 +19397,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体文件总大小，单位：字节。\n<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>",
           "example": "123000",
           "member": "int64",
@@ -19394,7 +19406,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频时长，单位：秒。",
           "example": "10",
           "member": "float",
@@ -19404,7 +19415,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频的 md5 值。",
           "example": "1231",
           "member": "string",
@@ -19414,7 +19424,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "容器类型，例如 m4a，mp4 等。",
           "example": "mp4",
           "member": "string",
@@ -19424,7 +19433,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频流信息。",
           "example": "无",
           "member": "MediaVideoStreamItem",
@@ -19434,7 +19442,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "音频流信息。",
           "example": "无",
           "member": "MediaAudioStreamItem",
@@ -19444,7 +19451,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数字水印类型。可选值：\n<li>Trace 表示经过溯源水印处理；</li>\n<li>None 表示没有经过数字水印处理。</li>",
           "example": "Trace",
           "member": "string",
@@ -29372,7 +29378,6 @@
       "document": "转码任务输入参数类型",
       "members": [
         {
-          "default": "",
           "document": "视频转码模板 ID。",
           "example": "10000",
           "member": "uint64",
@@ -29382,7 +29387,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
           "example": "无",
           "member": "WatermarkInput",
@@ -29392,7 +29396,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "溯源水印。",
           "example": "无",
           "member": "TraceWatermarkInput",
@@ -29402,7 +29405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "马赛克列表，最大可支持 10 张。",
           "example": "无",
           "member": "MosaicInput",
@@ -29412,7 +29414,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "片头片尾列表，支持多片头片尾，最大可支持 10 个。",
           "example": "无",
           "member": "HeadTailTaskInput",
@@ -29422,7 +29423,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转码后的视频的起始时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>",
           "example": "2",
           "member": "float",
@@ -29432,7 +29432,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转码后视频的终止时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>",
           "example": "3",
           "member": "float",

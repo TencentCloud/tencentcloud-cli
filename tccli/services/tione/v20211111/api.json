@@ -5073,7 +5073,6 @@
           "example": "无",
           "member": "FrameworkInfo",
           "name": "FrameworkInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5575,7 +5574,6 @@
       "document": "过滤器",
       "members": [
         {
-          "default": "",
           "document": "过滤字段名称",
           "example": "Name",
           "member": "string",
@@ -5585,7 +5583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "过滤字段取值",
           "example": "{\"ss\",\"sss\"}",
           "member": "string",
@@ -5595,7 +5592,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启反向查询",
           "example": "false",
           "member": "bool",
@@ -5605,7 +5601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启模糊匹配",
           "example": "false",
           "member": "bool",
@@ -9147,7 +9142,6 @@
       "document": "描述腾讯云标签",
       "members": [
         {
-          "default": "",
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "type",
           "member": "string",
@@ -9157,7 +9151,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -9173,7 +9166,6 @@
       "document": "Tag过滤参数",
       "members": [
         {
-          "default": "",
           "document": "标签键",
           "example": "test",
           "member": "string",
@@ -9183,7 +9175,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "多个标签值",
           "example": "{\"test\",\"test\"}",
           "member": "string",

@@ -306,9 +306,9 @@
     ],
     "DescribeTrainingFrameworks": [
       {
-        "document": "",
+        "document": "查询训练框架列表",
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrainingFrameworks\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"FrameworkInfos\": [\n            {\n                \"Name\": \"xx\",\n                \"VersionInfos\": [\n                    {\n                        \"Version\": \"xx\",\n                        \"TrainingModes\": [\n                            \"xx\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FrameworkInfos\": [\n            {\n                \"Name\": \"PYTORCH\",\n                \"VersionInfos\": [\n                    {\n                        \"Version\": \"1.9\",\n                        \"TrainingModes\": [\n                            \"DDP\",\n                            \"MPI\",\n                            \"HOROVOD\"\n                        ],\n                        \"Environment\": \"torch1.9-py3.8-cuda11.1-gpu\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"c559beb8-9863-4929-9ef7-sasdasdwqe\"\n    }\n}",
         "title": "训练框架列表"
       }
     ],

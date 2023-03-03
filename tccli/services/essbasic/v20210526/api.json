@@ -148,7 +148,7 @@
       "status": "online"
     },
     "CreateConsoleLoginUrl": {
-      "document": "此接口（CreateConsoleLoginUrl）用于创建渠道子客企业控制台Web/移动登录链接。登录链接是子客控制台的唯一入口。\n若子客企业未激活，会进入企业激活流程，首次参与激活流程的经办人会成为超管。（若企业激活过程中填写信息有误，需要重置激活流程，可以换一个经办人OpenId获取新的链接进入。）\n若子客企业已激活，使用了新的经办人OpenId进入，则会进入经办人的实名流程。\n若子客企业、经办人均已完成认证，则会直接进入子客Web控制台。",
+      "document": "此接口（CreateConsoleLoginUrl）用于创建子客企业控制台Web/移动登录链接。登录链接是子客控制台的唯一入口。\n若子客企业未激活，会进入企业激活流程，首次参与激活流程的经办人会成为超管。（若企业激活过程中填写信息有误，需要重置激活流程，可以换一个经办人OpenId获取新的链接进入。）\n若子客企业已激活，使用了新的经办人OpenId进入，则会进入经办人的实名流程。\n若子客企业、经办人均已完成认证，则会直接进入子客Web控制台。",
       "input": "CreateConsoleLoginUrlRequest",
       "name": "生成控制台、移动端链接",
       "output": "CreateConsoleLoginUrlResponse",
@@ -2190,7 +2190,7 @@
           "type": "object"
         },
         {
-          "document": "渠道子客企业名称，最大长度64个字符",
+          "document": "子客企业名称，最大长度64个字符",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationName",
@@ -2198,7 +2198,7 @@
           "type": "string"
         },
         {
-          "document": "渠道子客企业经办人的姓名，最大长度50个字符",
+          "document": "子客企业经办人的姓名，最大长度50个字符",
           "example": "无",
           "member": "string",
           "name": "ProxyOperatorName",
@@ -2222,7 +2222,7 @@
           "type": "string"
         },
         {
-          "document": "渠道子客企业统一社会信用代码，最大长度200个字符",
+          "document": "子客企业统一社会信用代码，最大长度200个字符",
           "example": "无",
           "member": "string",
           "name": "UniformSocialCreditCode",
@@ -2276,7 +2276,7 @@
       "document": "CreateConsoleLoginUrl返回参数结构体",
       "members": [
         {
-          "document": "子客Web控制台url注意事项：\n1. 所有类型的链接在企业未认证/员工未认证完成时，只要在有效期内（一年）都可以访问\n2. 若企业认证完成且员工认证完成后，重新获取pc端的链接5分钟之内有效，且只能访问一次\n3. 若企业认证完成且员工认证完成后，重新获取H5/APP的链接只要在有效期内（一年）都可以访问\n4. 此链接仅单次有效，使用后需要再次创建新的链接（部分聊天软件，如企业微信默认会对链接进行解析，此时需要使用类似“代码片段”的方式或者放到txt文件里发送链接）\n5. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义",
+          "document": "子客企业Web控制台url注意事项：\n1. 所有类型的链接在企业未认证/员工未认证完成时，只要在有效期内（一年）都可以访问\n2. 若企业认证完成且员工认证完成后，重新获取pc端的链接5分钟之内有效，且只能访问一次\n3. 若企业认证完成且员工认证完成后，重新获取H5/APP的链接只要在有效期内（一年）都可以访问\n4. 此链接仅单次有效，使用后需要再次创建新的链接（部分聊天软件，如企业微信默认会对链接进行解析，此时需要使用类似“代码片段”的方式或者放到txt文件里发送链接）\n5. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义",
           "example": "无",
           "member": "string",
           "name": "ConsoleUrl",
@@ -2284,7 +2284,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "渠道子客企业是否已开通腾讯电子签",
+          "document": "子客企业是否已开通腾讯电子签",
           "example": "无",
           "member": "bool",
           "name": "IsActivated",

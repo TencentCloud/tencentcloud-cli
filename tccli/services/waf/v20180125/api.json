@@ -91,6 +91,13 @@
       "output": "DescribeAccessIndexResponse",
       "status": "online"
     },
+    "DescribeAttackOverview": {
+      "document": "攻击总览",
+      "input": "DescribeAttackOverviewRequest",
+      "name": "攻击总览",
+      "output": "DescribeAttackOverviewResponse",
+      "status": "online"
+    },
     "DescribeAutoDenyIP": {
       "document": "描述WAF自动封禁IP详情,对齐自动封堵状态",
       "input": "DescribeAutoDenyIPRequest",
@@ -1902,6 +1909,68 @@
           "member": "string",
           "name": "ModifyTime",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttackOverviewRequest": {
+      "document": "DescribeAttackOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAttackOverviewResponse": {
+      "document": "DescribeAttackOverview返回参数结构体",
+      "members": [
+        {
+          "document": "访问请求总数",
+          "example": "99",
+          "member": "uint64",
+          "name": "AccessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Web攻击总数",
+          "example": "99",
+          "member": "uint64",
+          "name": "AttackCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问控制总数",
+          "example": "99",
+          "member": "uint64",
+          "name": "ACLCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CC攻击总数",
+          "example": "99",
+          "member": "uint64",
+          "name": "CCCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Bot攻击总数",
+          "example": "99",
+          "member": "uint64",
+          "name": "BotCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

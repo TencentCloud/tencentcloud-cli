@@ -1050,7 +1050,6 @@
       "document": "CreateDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。",
           "example": "[\"ap-guangzhou-2\\r\\n\",\"ap-guangzhou-2\\r\\n\"]",
           "member": "string",
@@ -1059,7 +1058,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "节点个数大小，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得。",
           "example": "1",
           "member": "int64",
@@ -1068,7 +1066,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得。",
           "example": "2000",
           "member": "int64",
@@ -1077,7 +1074,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。",
           "example": "10000",
           "member": "int64",
@@ -1086,7 +1082,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "欲购买的时长，单位：月。",
           "example": "1",
           "member": "int64",
@@ -1095,7 +1090,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "欲购买的数量，默认查询购买1个实例的价格。",
           "example": "1",
           "member": "int64",
@@ -1104,7 +1098,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否自动使用代金券进行支付，默认不使用。",
           "example": "true",
           "member": "bool",
@@ -1113,7 +1106,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
           "example": "无",
           "member": "string",
@@ -1122,7 +1114,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "虚拟私有网络 ID，不传表示创建为基础网络",
           "example": "无",
           "member": "string",
@@ -1131,7 +1122,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "虚拟私有网络子网 ID，VpcId 不为空时必填",
           "example": "无",
           "member": "string",
@@ -1140,7 +1130,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "项目 ID，可以通过查看项目列表获取，不传则关联到默认项目",
           "example": "无",
           "member": "int64",
@@ -1149,8 +1138,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "数据库引擎版本，当前可选：8.0.18，10.1.9，5.7.17。如果不传的话，默认为 Percona 5.7.17。",
+          "document": "数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。",
           "example": "无",
           "member": "string",
           "name": "DbVersionId",
@@ -1158,7 +1146,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例名称， 可以通过该字段自主的设置实例的名字",
           "example": "无",
           "member": "string",
@@ -1167,7 +1154,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "安全组ID列表",
           "example": "无",
           "member": "string",
@@ -1176,7 +1162,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "自动续费标志，1:自动续费，2:不自动续费",
           "example": "无",
           "member": "int64",
@@ -1185,7 +1170,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否支持IPv6",
           "example": "无",
           "member": "int64",
@@ -1194,7 +1178,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签键值对数组",
           "example": "无",
           "member": "ResourceTag",
@@ -1203,7 +1186,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。",
           "example": "无",
           "member": "DBParamValue",
@@ -1212,7 +1194,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "DCN源地域",
           "example": "无",
           "member": "string",
@@ -1221,7 +1202,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "DCN源实例ID",
           "example": "无",
           "member": "string",
@@ -1240,7 +1220,6 @@
           "example": "20171103110163",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1249,7 +1228,6 @@
           "example": "无",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1527,7 +1505,6 @@
       "document": "CreateHourDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "节点可用区分布，最多可填两个可用区。",
           "example": "[\"ap-guangzhou-1\"]",
           "member": "string",
@@ -1536,7 +1513,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "节点个数",
           "example": "2",
           "member": "int64",
@@ -1545,7 +1521,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "内存大小，单位：GB",
           "example": "2",
           "member": "int64",
@@ -1554,7 +1529,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "储存大小，单位：GB",
           "example": "10",
           "member": "int64",
@@ -1563,7 +1537,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "购买实例数量",
           "example": "1",
           "member": "int64",
@@ -1572,7 +1545,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "项目ID，不传表示默认项目",
           "example": "0",
           "member": "int64",
@@ -1581,7 +1553,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "统一网络ID，不传表示基础网络",
           "example": "vpc-n2vdqxdx",
           "member": "string",
@@ -1590,7 +1561,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "统一子网ID，VpcId有值时需填写",
           "example": "subnet-j2ezrypg",
           "member": "string",
@@ -1599,16 +1569,14 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。\n如果不填的话，默认为10.1.9，表示Mariadb 10.1.9。",
-          "example": "5.7.17",
+          "document": "数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。",
+          "example": "5.7",
           "member": "string",
           "name": "DbVersionId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "自定义实例名称",
           "example": "实例名称",
           "member": "string",
@@ -1617,7 +1585,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "安全组ID，不传表示不绑定安全组",
           "example": "[\"sg-123456\"]",
           "member": "string",
@@ -1626,7 +1593,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否支持IPv6",
           "example": "0",
           "member": "int64",
@@ -1635,7 +1601,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签键值对数组",
           "example": "无",
           "member": "ResourceTag",
@@ -1644,7 +1609,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "DCN源地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1653,7 +1617,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "DCN源实例ID",
           "example": "tdsql-123456",
           "member": "string",
@@ -1662,7 +1625,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "参数列表。本接口的可选值为：\ncharacter_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），\ninnodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化，默认为强同步可退化）。",
           "example": "无",
           "member": "DBParamValue",
@@ -1671,7 +1633,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "回档源实例ID",
           "example": "tdsql-dup8gl6t",
           "member": "string",
@@ -1680,7 +1641,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "回档时间",
           "example": "2021-11-22 00:00:00",
           "member": "string",
@@ -1699,7 +1659,6 @@
           "example": "20200409111543",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1708,7 +1667,6 @@
           "example": "[\"tdsql-dup8gl6t\"]",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1717,7 +1675,6 @@
           "example": "22051110000",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

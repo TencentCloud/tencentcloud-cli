@@ -1,12 +1,12 @@
-**Example 1: 查询同步校验结果**
+**Example 1: 查询同步任务校验结果**
 
-
+任务发起校验为异步操作，需要通过此接口查询同步任务校验结果
 
 Input: 
 
 ```
 tccli dts DescribeCheckSyncJobResult --cli-unfold-argument  \
-    --JobId sync-7r1cz016
+    --JobId sync-bllmn8x9
 ```
 
 Output: 
@@ -14,10 +14,10 @@ Output:
 {
     "Response": {
         "Progress": 100,
-        "RequestId": "972f5d3e-9144-4ce3-9825-980eccf549a9",
+        "RequestId": "948377d0-b8a2-11ed-b8ff-e9277ed2f336",
         "Status": "success",
-        "StepCount": 12,
-        "StepCur": 12,
+        "StepCount": 14,
+        "StepCur": 14,
         "StepInfos": [
             {
                 "Errors": [],
@@ -25,7 +25,7 @@ Output:
                 "StartTime": "",
                 "Status": "finished",
                 "StepId": "ConnectDBCheck",
-                "StepName": "connect db check",
+                "StepName": "连接DB检查",
                 "StepNo": 1,
                 "Warnings": []
             },
@@ -35,7 +35,7 @@ Output:
                 "StartTime": "",
                 "Status": "finished",
                 "StepId": "OptimizeCheck",
-                "StepName": "necessary check",
+                "StepName": "周边检查",
                 "StepNo": 2,
                 "Warnings": []
             },
@@ -45,7 +45,7 @@ Output:
                 "StartTime": "",
                 "Status": "finished",
                 "StepId": "VersionCheck",
-                "StepName": "version check",
+                "StepName": "版本检查",
                 "StepNo": 3,
                 "Warnings": []
             },
@@ -55,13 +55,14 @@ Output:
                 "StartTime": "",
                 "Status": "finished",
                 "StepId": "SrcPrivilegeCheck",
-                "StepName": "source instance privilege check",
+                "StepName": "源实例权限检查",
                 "StepNo": 4,
                 "Warnings": [
                     {
                         "Code": "Warning: SrcPrivilegeCheck",
                         "HelpDoc": "",
-                        "Message": "Your grants is: GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE ON *.* TO 'root'@'%' WITH GRANT OPTION. Tencent Cloud DTS don't need any privilege may modify your source instance data, suggest removing it based on minimization principle: https://cloud.tencent.com/document/product/571/13706",
+                        "Message": "您的授权情况：GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE ON *.* TO 'root'@'%' WITH GRANT OPTION。 源端账号权限范围大于要求的账号权限范围，腾讯云DTS不会使用超过必要的权限，请按照最小化原则给与授权: https://cloud.tencent.com/document/product/571/58700",
+                        "SkipInfo": "",
                         "Solution": ""
                     }
                 ]
@@ -72,7 +73,7 @@ Output:
                 "StartTime": "",
                 "Status": "finished",
                 "StepId": "SimpleParamCheck",
-                "StepName": "simpe instance param check",
+                "StepName": "部分实例参数检查",
                 "StepNo": 5,
                 "Warnings": []
             },
@@ -82,7 +83,7 @@ Output:
                 "StartTime": "",
                 "Status": "finished",
                 "StepId": "DstPrivilegeCheck",
-                "StepName": "target instance privilege check",
+                "StepName": "目标实例权限检查",
                 "StepNo": 6,
                 "Warnings": []
             },
@@ -92,7 +93,7 @@ Output:
                 "StartTime": "",
                 "Status": "finished",
                 "StepId": "DstEmptyCheck",
-                "StepName": "check if target instance has conflict content",
+                "StepName": "目标实例内容冲突检查",
                 "StepNo": 7,
                 "Warnings": []
             },
@@ -102,7 +103,7 @@ Output:
                 "StartTime": "",
                 "Status": "finished",
                 "StepId": "DstSpaceCheck",
-                "StepName": "check if there's enough space in target instance",
+                "StepName": "目标实例空间检查",
                 "StepNo": 8,
                 "Warnings": []
             },
@@ -112,7 +113,7 @@ Output:
                 "StartTime": "",
                 "Status": "finished",
                 "StepId": "BinlogParamCheck",
-                "StepName": "source instance binlog param check",
+                "StepName": "binlog参数检查",
                 "StepNo": 9,
                 "Warnings": []
             },
@@ -122,7 +123,7 @@ Output:
                 "StartTime": "",
                 "Status": "finished",
                 "StepId": "ConstraintCheck",
-                "StepName": "foreign key constraint check",
+                "StepName": "外键依赖检查",
                 "StepNo": 10,
                 "Warnings": []
             },
@@ -131,8 +132,8 @@ Output:
                 "Progress": 100,
                 "StartTime": "",
                 "Status": "finished",
-                "StepId": "ViewCheck",
-                "StepName": "view check",
+                "StepId": "ConstraintRefCheck",
+                "StepName": "外键部分库表依赖检查",
                 "StepNo": 11,
                 "Warnings": []
             },
@@ -141,23 +142,45 @@ Output:
                 "Progress": 100,
                 "StartTime": "",
                 "Status": "finished",
-                "StepId": "WarningParamCheck",
-                "StepName": "warning param check",
+                "StepId": "ViewCheck",
+                "StepName": "视图检查",
                 "StepNo": 12,
+                "Warnings": []
+            },
+            {
+                "Errors": [],
+                "Progress": 100,
+                "StartTime": "",
+                "Status": "finished",
+                "StepId": "WarningParamCheck",
+                "StepName": "警告项检查",
+                "StepNo": 13,
                 "Warnings": [
                     {
                         "Code": "Warn: WarningParamCheck",
                         "HelpDoc": "",
-                        "Message": "Tables without primary key and unique key without any NULL columns have the risk of data duplication. Reference: https://cloud.tencent.com/document/product/571/58739",
+                        "Message": "对于既没有主键、也没有不能为null的唯一键的表，有数据重复的风险。 请参考 https://cloud.tencent.com/document/product/571/58739",
+                        "SkipInfo": "",
                         "Solution": ""
                     },
                     {
-                        "Code": "Error: WarningParamCheck",
+                        "Code": "Warn: WarningParamCheck",
                         "HelpDoc": "",
-                        "Message": "Source instance would hold Flush Table With Read Lock for a short time, meanwhile, the MyISAM tables would be locked untill full dump finished. Current wait lock timeout is 70s. Error will be reported if lock can not be acquired within this time. Reference: https://cloud.tencent.com/document/product/571/58739",
+                        "Message": "源实例中sql_mode为 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'， 目标实例中sql_mode为 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'。建议设置为相同",
+                        "SkipInfo": "",
                         "Solution": ""
                     }
                 ]
+            },
+            {
+                "Errors": [],
+                "Progress": 100,
+                "StartTime": "",
+                "Status": "finished",
+                "StepId": "AdvancedStoreObjectCheck",
+                "StepName": "高级对象检查",
+                "StepNo": 14,
+                "Warnings": []
             }
         ]
     }

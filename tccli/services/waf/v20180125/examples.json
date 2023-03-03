@@ -122,6 +122,14 @@
         "title": "访问日志索引配置信息"
       }
     ],
+    "DescribeAttackOverview": [
+      {
+        "document": "获取指定时间段内请求总数，这个接口不需要客户购买日志服务",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAttackOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AccessCount\": 8550963579,\n        \"AttackCount\": 63579,\n        \"ACLCount\": 963579,\n        \"CCCount\": 50963579,\n        \"BotCount\": 963579,\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "获取指定时间段内请求总数"
+      }
+    ],
     "DescribeAutoDenyIP": [
       {
         "document": "",

@@ -494,14 +494,6 @@
         "title": "列出规则"
       }
     ],
-    "DescribeInstanceAll": [
-      {
-        "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInstanceAll\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Registries\": [\n            {\n                \"RegistryId\": \"cls-xxxxxxx\",\n                \"RegistryName\": \"aaa\",\n                \"Status\": \"Running\",\n                \"RegistryType\": \"standard\",\n                \"PublicDomain\": \"mytest.tencentcloudcr.com\",\n                \"InternalEndpoint\": \"8.9.10.9\",\n                \"ExpiredAt\": \"2020-09-10\",\n                \"PayMod\": 1,\n                \"RenewFlag\": 1\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
-        "title": "查看实例列表"
-      }
-    ],
     "DescribeInstanceAllNamespaces": [
       {
         "document": "查询实例内所有的命名空间信息",

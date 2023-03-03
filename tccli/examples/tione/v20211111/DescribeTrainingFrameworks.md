@@ -1,6 +1,6 @@
 **Example 1: 训练框架列表**
 
-
+查询训练框架列表
 
 Input: 
 
@@ -13,18 +13,21 @@ Output:
     "Response": {
         "FrameworkInfos": [
             {
-                "Name": "xx",
+                "Name": "PYTORCH",
                 "VersionInfos": [
                     {
-                        "Version": "xx",
+                        "Version": "1.9",
                         "TrainingModes": [
-                            "xx"
-                        ]
+                            "DDP",
+                            "MPI",
+                            "HOROVOD"
+                        ],
+                        "Environment": "torch1.9-py3.8-cuda11.1-gpu"
                     }
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "c559beb8-9863-4929-9ef7-sasdasdwqe"
     }
 }
 ```

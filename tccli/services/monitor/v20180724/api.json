@@ -1047,7 +1047,7 @@
   "metadata": {
     "apiVersion": "2018-07-24",
     "api_brief": "介绍如何使用API对云监控进行操作，包括查询监控数据、创建报警规则等。",
-    "serviceNameCN": "云监控",
+    "serviceNameCN": "腾讯云可观测平台",
     "serviceShortName": "monitor"
   },
   "objects": {
@@ -1085,10 +1085,9 @@
       "usage": "out"
     },
     "AlarmHierarchicalNotice": {
-      "document": "通知模版ID及通知等级列表，[\"Remind\",\"Serious\"]表示该通知模板仅接收提醒和严重类别的告警",
+      "document": "通知模板ID及通知等级列表，[\"Remind\",\"Serious\"]表示该通知模板仅接收提醒和严重类别的告警",
       "members": [
         {
-          "default": "",
           "document": "通知模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1098,7 +1097,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "通知等级列表，[\"Remind\",\"Serious\"]表示该通知模板仅接收提醒和严重类别的告警\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"Remind\",\"Serious\"]",
           "member": "string",
@@ -1573,7 +1571,7 @@
         },
         {
           "default": "",
-          "document": "通知模版绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知模板绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1944,8 +1942,8 @@
       "document": "告警策略指标触发条件",
       "members": [
         {
-          "default": "",
-          "document": "指标触发与或条件，0=或，1=与\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警触发条件的判断方式. 0: 任意; 1: 全部; 2: 复合. 当取值为2的时候为复合告警，与参数 ComplexExpression 配合使用.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "IsUnionRule",
           "required": true,
@@ -1953,12 +1951,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "告警触发条件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AlarmPolicyRule",
           "name": "Rules",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "复合告警触发条件的判断表达式，当 IsUnionRule 取值为2的时候有效. 其作用是描述多个触发条件需要满足表达式求值为True时才算是满足告警条件.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "(1 OR 2) AND (3 OR 4)",
+          "member": "string",
+          "name": "ComplexExpression",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -2852,7 +2859,7 @@
         {
           "default": "",
           "document": "通知模板名称 60字符以内",
-          "example": "默认通知模版",
+          "example": "默认通知模板",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2905,7 +2912,7 @@
         },
         {
           "default": "",
-          "document": "模版绑定的标签",
+          "document": "模板绑定的标签",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -3067,7 +3074,7 @@
         },
         {
           "default": "",
-          "document": "模版绑定的标签",
+          "document": "模板绑定的标签",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -3536,8 +3543,8 @@
       "document": "创建策略传入的阈值告警条件",
       "members": [
         {
-          "default": "",
           "document": "指标Id",
+          "example": "无",
           "member": "int64",
           "name": "MetricId",
           "required": true,
@@ -3545,8 +3552,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "告警发送收敛类型。0连续告警，1指数告警",
+          "example": "无",
           "member": "int64",
           "name": "AlarmNotifyType",
           "required": true,
@@ -3554,8 +3561,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次",
+          "example": "无",
           "member": "int64",
           "name": "AlarmNotifyPeriod",
           "required": true,
@@ -3563,8 +3570,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等。如果指标有配置默认比较类型值可以不填。",
+          "example": "无",
           "member": "int64",
           "name": "CalcType",
           "required": false,
@@ -3572,8 +3579,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "比较的值，如果指标不必须CalcValue可不填",
+          "example": "无",
           "member": "float",
           "name": "CalcValue",
           "required": false,
@@ -3581,8 +3588,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据聚合周期(单位秒)，若指标有默认值可不填",
+          "example": "无",
           "member": "int64",
           "name": "CalcPeriod",
           "required": false,
@@ -3590,8 +3597,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "持续几个检测周期触发规则会告警",
+          "example": "无",
           "member": "int64",
           "name": "ContinuePeriod",
           "required": false,
@@ -3599,8 +3606,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "如果通过模版创建，需要传入模版中该指标的对应RuleId",
+          "document": "如果通过模板创建，需要传入模板中该指标的对应RuleId",
+          "example": "无",
           "member": "int64",
           "name": "RuleId",
           "required": false,
@@ -3614,8 +3621,8 @@
       "document": "创建策略传入的事件告警条件",
       "members": [
         {
-          "default": "",
           "document": "告警事件的Id",
+          "example": "无",
           "member": "int64",
           "name": "EventId",
           "required": true,
@@ -3623,8 +3630,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "告警发送收敛类型。0连续告警，1指数告警",
+          "example": "无",
           "member": "int64",
           "name": "AlarmNotifyType",
           "required": true,
@@ -3632,8 +3639,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次",
+          "example": "无",
           "member": "int64",
           "name": "AlarmNotifyPeriod",
           "required": true,
@@ -3641,8 +3648,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "如果通过模版创建，需要传入模版中该指标的对应RuleId",
+          "document": "如果通过模板创建，需要传入模板中该指标的对应RuleId",
+          "example": "无",
           "member": "int64",
           "name": "RuleId",
           "required": false,
@@ -3658,6 +3665,7 @@
         {
           "default": "",
           "document": "组策略名称",
+          "example": "test_group",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -3666,6 +3674,7 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -3673,7 +3682,8 @@
         },
         {
           "default": "",
-          "document": "策略组所属视图的名称，若通过模版创建，可不传入",
+          "document": "策略组所属视图的名称，若通过模板创建，可不传入",
+          "example": "cvm_device",
           "member": "string",
           "name": "ViewName",
           "required": false,
@@ -3682,6 +3692,7 @@
         {
           "default": "",
           "document": "策略组所属项目Id，会进行鉴权操作",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -3689,7 +3700,8 @@
         },
         {
           "default": "",
-          "document": "模版策略组Id, 通过模版创建时才需要传",
+          "document": "模板策略组Id, 通过模板创建时才需要传",
+          "example": "123",
           "member": "int64",
           "name": "ConditionTempGroupId",
           "required": false,
@@ -3698,6 +3710,7 @@
         {
           "default": "",
           "document": "是否屏蔽策略组，0表示不屏蔽，1表示屏蔽。不填默认为0",
+          "example": "1",
           "member": "int64",
           "name": "IsShielded",
           "required": false,
@@ -3706,6 +3719,7 @@
         {
           "default": "",
           "document": "策略组的备注信息",
+          "example": "backup_group",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -3714,6 +3728,7 @@
         {
           "default": "",
           "document": "插入时间，戳格式为Unix时间戳，不填则按后台处理时间填充",
+          "example": "106648246",
           "member": "int64",
           "name": "InsertTime",
           "required": false,
@@ -3722,6 +3737,7 @@
         {
           "default": "",
           "document": "策略组中的阈值告警规则",
+          "example": "无",
           "member": "CreatePolicyGroupCondition",
           "name": "Conditions",
           "required": false,
@@ -3730,6 +3746,7 @@
         {
           "default": "",
           "document": "策略组中的事件告警规则",
+          "example": "无",
           "member": "CreatePolicyGroupEventCondition",
           "name": "EventConditions",
           "required": false,
@@ -3737,7 +3754,8 @@
         },
         {
           "default": "",
-          "document": "是否为后端调用。当且仅当值为1时，后台拉取策略模版中的规则填充入Conditions以及EventConditions字段",
+          "document": "是否为后端调用。当且仅当值为1时，后台拉取策略模板中的规则填充入Conditions以及EventConditions字段",
+          "example": "0",
           "member": "int64",
           "name": "BackEndCall",
           "required": false,
@@ -3746,6 +3764,7 @@
         {
           "default": "",
           "document": "指标告警规则的且或关系，0表示或规则(满足任意规则就告警)，1表示且规则(满足所有规则才告警)",
+          "example": "1",
           "member": "int64",
           "name": "IsUnionRule",
           "required": false,
@@ -3759,8 +3778,10 @@
       "members": [
         {
           "document": "创建成功的策略组Id",
+          "example": "1288099",
           "member": "int64",
           "name": "GroupId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5842,7 +5863,7 @@
         },
         {
           "default": "",
-          "document": "模版根据标签过滤",
+          "document": "模板根据标签过滤",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -7804,8 +7825,8 @@
       "document": "DescribePolicyConditionList策略条件",
       "members": [
         {
-          "default": "",
           "document": "策略视图名称",
+          "example": "无",
           "member": "string",
           "name": "PolicyViewName",
           "required": true,
@@ -7813,8 +7834,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件告警条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribePolicyConditionListEventMetric",
           "name": "EventMetrics",
           "required": true,
@@ -7822,8 +7843,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否支持多地域",
+          "example": "无",
           "member": "bool",
           "name": "IsSupportMultiRegion",
           "required": true,
@@ -7831,8 +7852,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "指标告警条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribePolicyConditionListMetric",
           "name": "Metrics",
           "required": true,
@@ -7840,8 +7861,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "策略类型名称",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -7849,8 +7870,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "排序id",
+          "example": "无",
           "member": "int64",
           "name": "SortId",
           "required": true,
@@ -7858,8 +7879,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否支持默认策略",
+          "example": "无",
           "member": "bool",
           "name": "SupportDefault",
           "required": true,
@@ -7867,12 +7888,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "支持该策略类型的地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SupportRegions",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "弃用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribePolicyConditionListResponseDeprecatingInfo",
+          "name": "DeprecatingInfo",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -8306,6 +8336,39 @@
         }
       ],
       "type": "object"
+    },
+    "DescribePolicyConditionListResponseDeprecatingInfo": {
+      "document": "DescribePolicyConditionListResponseDeprecatingInfo",
+      "members": [
+        {
+          "document": "是否隐藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Hidden",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "新视图名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NewViewNames",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribePolicyGroupInfoCallback": {
       "document": "查询策略输出的用户回调信息",
@@ -9681,7 +9744,7 @@
         },
         {
           "default": "",
-          "document": "产品类型过滤，比如\"cvm\"表示云服务器",
+          "document": "产品类型过滤，例如\"cvm\"表示云服务器",
           "example": "cvm",
           "member": "string",
           "name": "ProductName",
@@ -9690,7 +9753,7 @@
         },
         {
           "default": "",
-          "document": "事件名称过滤，比如\"guest_reboot\"表示机器重启",
+          "document": "事件名称过滤，例如\"guest_reboot\"表示机器重启",
           "example": "guest_reboot",
           "member": "string",
           "name": "EventName",
@@ -9699,7 +9762,7 @@
         },
         {
           "default": "",
-          "document": "影响对象，比如\"ins-19708ino\"",
+          "document": "影响对象，例如\"ins-19708ino\"",
           "example": "ins-19708ino",
           "member": "string",
           "name": "InstanceId",
@@ -9708,7 +9771,7 @@
         },
         {
           "default": "",
-          "document": "维度过滤，比如外网IP:10.0.0.1",
+          "document": "维度过滤，例如外网IP:10.0.0.1",
           "example": "无",
           "member": "DescribeProductEventListDimensions",
           "name": "Dimensions",
@@ -9717,7 +9780,7 @@
         },
         {
           "default": "",
-          "document": "产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)",
+          "document": "产品事件地域过滤参数，例如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)",
           "example": "gz",
           "member": "string",
           "name": "RegionList",
@@ -10191,6 +10254,38 @@
     "DescribePrometheusConfigResponse": {
       "document": "DescribePrometheusConfig返回参数结构体",
       "members": [
+        {
+          "document": "全局配置",
+          "example": "无",
+          "member": "string",
+          "name": "Config",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ServiceMonitor配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "PodMonitor配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "原生Job",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14265,10 +14360,9 @@
       "usage": "in"
     },
     "NoticeBindPolicys": {
-      "document": "通知模版与策略绑定关系",
+      "document": "通知模板与策略绑定关系",
       "members": [
         {
-          "default": "",
           "document": "告警通知模板 ID",
           "example": "notice-xxx",
           "member": "string",
@@ -14278,7 +14372,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "告警通知模板绑定的告警策略ID列表",
           "example": "无",
           "member": "string",

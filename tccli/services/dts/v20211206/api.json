@@ -71,7 +71,7 @@
       "status": "online"
     },
     "DescribeCheckSyncJobResult": {
-      "document": "查询同步校验任务结果",
+      "document": "查询同步校验任务结果，检查必要参数和周边配置",
       "input": "DescribeCheckSyncJobResultRequest",
       "name": "查询同步校验任务结果",
       "output": "DescribeCheckSyncJobResultResponse",
@@ -2303,9 +2303,8 @@
       "document": "DescribeCheckSyncJobResult请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "同步任务id",
-          "example": "无",
+          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23，此值必填",
+          "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
           "required": false,
@@ -2318,11 +2317,10 @@
       "document": "DescribeCheckSyncJobResult返回参数结构体",
       "members": [
         {
-          "document": "校验结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2331,7 +2329,6 @@
           "example": "无",
           "member": "uint64",
           "name": "StepCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2340,16 +2337,14 @@
           "example": "无",
           "member": "uint64",
           "name": "StepCur",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "document": "总体进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总体进度，范围为[0,100]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "Progress",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2358,7 +2353,6 @@
           "example": "无",
           "member": "StepInfo",
           "name": "StepInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5409,9 +5403,8 @@
       "document": "单个步骤的详细信息",
       "members": [
         {
-          "default": "",
           "document": "步骤编号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "StepNo",
           "required": false,
@@ -5419,9 +5412,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "步骤名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "连接DB检查",
           "member": "string",
           "name": "StepName",
           "required": false,
@@ -5429,9 +5421,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "步骤标号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ConnectDBCheck",
           "member": "string",
           "name": "StepId",
           "required": false,
@@ -5439,9 +5430,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "当前状态，是否完成\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "当前步骤状态,可能返回有 notStarted(未开始)、running(校验中)、failed(校验任务失败)、finished(完成)、skipped(跳过)、paused(暂停)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "finished",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -5449,8 +5439,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "步骤开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "步骤开始时间，可能为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "StartTime",
@@ -5459,9 +5448,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "StepTip",
           "name": "Errors",
           "required": false,
@@ -5469,9 +5457,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "警告信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "StepTip",
           "name": "Warnings",
           "required": false,
@@ -5479,9 +5466,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "当前步骤进度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "当前步骤进度，范围为[0-100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "int64",
           "name": "Progress",
           "required": false,

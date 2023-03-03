@@ -20,10 +20,10 @@ Output:
                     {
                         "HasStock": true,
                         "StockCount": 0,
-                        "Zone": "xx"
+                        "Zone": "ap-guangzhou-3"
                     }
                 ],
-                "MachineType": "xx",
+                "MachineType": "common",
                 "StockCount": 0,
                 "HasStock": true,
                 "Memory": 1,
@@ -38,10 +38,10 @@ Output:
                     {
                         "HasStock": true,
                         "StockCount": 0,
-                        "Zone": "xx"
+                        "Zone": "ap-guangzhou-3"
                     }
                 ],
-                "MachineType": "xx",
+                "MachineType": "common",
                 "StockCount": 0,
                 "HasStock": true,
                 "Memory": 1,
@@ -51,7 +51,7 @@ Output:
                 "MaxIops": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "test-requestid"
     }
 }
 ```

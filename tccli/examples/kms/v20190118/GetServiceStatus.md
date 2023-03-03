@@ -19,7 +19,8 @@ Output:
         "ProExpireTime": 1603701385,
         "RequestId": "1b580852-1e38-11e9-b129-5cb9019b4b00",
         "ExclusiveHSMEnabled": false,
-        "ExclusiveVSMEnabled": false
+        "ExclusiveVSMEnabled": false,
+        "SubscriptionInfo": "Prepaid_KMS"
     }
 }
 ```
