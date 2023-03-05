@@ -1,14 +1,14 @@
 **Example 1: 多文件上传接口**
 
-
+多文件上传
 
 Input: 
 
 ```
 tccli essbasic UploadFiles --cli-unfold-argument  \
-    --Agent.ProxyAppId xx \
-    --Agent.ProxyOperator.OpenId xx \
-    --Agent.AppId xx \
+    --Agent.ProxyAppId abc \
+    --Agent.ProxyOperator.OpenId abc \
+    --Agent.AppId abc \
     --BusinessType TEMPLATE \
     --FileInfos.0.FileBody iVBORw0KGgoAAAANSUhxxxxAElEQVR4Xu3dbah1W5eQ7HmoAAAAASUVORK5CYII= \
     --FileInfos.0.FileName a.pdf

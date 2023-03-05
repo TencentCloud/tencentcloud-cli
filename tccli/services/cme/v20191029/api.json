@@ -245,6 +245,13 @@
       "output": "GrantResourceAuthorizationResponse",
       "status": "online"
     },
+    "HandleMediaCastProject": {
+      "document": "对点播转直播项目进行操作。\n### 操作类型<a id=\"Operation\"></a>\n- `AddSource`（添加输入源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B12-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `DeleteSource`（删除输入源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B7-.E5.88.A0.E9.99.A4.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `SwitchSource`（切换当前播放的输入源），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B6-.E5.88.87.E6.8D.A2.E5.BD.93.E5.89.8D.E6.92.AD.E6.94.BE.E7.9A.84.E8.BE.93.E5.85.A5.E6.BA.90)\n- `AddDestination`（ 添加输出源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B13-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DeleteDestination`（删除输出源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B8-.E5.88.A0.E9.99.A4.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `EnableDestination`（启动输出源），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B10-.E5.90.AF.E5.8A.A8.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DisableDestination`（停止输出源），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B5-.E5.81.9C.E6.AD.A2.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `ModifyDestination`（修改输出源），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B2-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `Start`（启动点播转直播），项目状态为 Idle 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B9-.E5.90.AF.E5.8A.A8.E7.82.B9.E6.92.AD.E8.BD.AC.E7.9B.B4.E6.92.AD)；\n- `Stop`（停止点播转直播），项目状态为 Working 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B4-.E5.81.9C.E6.AD.A2.E7.82.B9.E6.92.AD.E8.BD.AC.E7.9B.B4.E6.92.AD)；\n- `ModifyOutputMediaSetting`（修改媒体输出配置），项目状态为 Idle 时可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B3-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E7.9A.84.E5.AA.92.E4.BD.93.E9.85.8D.E7.BD.AE)；\n- `ModifyPlaySetting`（修改播放结束时间），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B1-.E4.BF.AE.E6.94.B9.E7.BB.93.E6.9D.9F.E6.97.B6.E9.97.B4);\n- `DescribePlayInfo`（查询播放信息），项目状态为 Idle、Working 时均可以操作。参见 [示例](#.E7.A4.BA.E4.BE.8B11-.E6.9F.A5.E8.AF.A2.E7.82.B9.E6.92.AD.E8.BD.AC.E7.9B.B4.E6.92.AD.E9.A1.B9.E7.9B.AE.E7.9A.84.E6.92.AD.E6.94.BE.E4.BF.A1.E6.81.AF)。",
+      "input": "HandleMediaCastProjectRequest",
+      "name": "操作点播转直播项目",
+      "output": "HandleMediaCastProjectResponse",
+      "status": "online"
+    },
     "HandleStreamConnectProject": {
       "document": "对云转推项目进行操作。\n### 操作类型<a id=\"Operation\"></a>\n- `AddInput`（添加输入源），包括：\n\t- 添加直播拉流输入源，参见 [示例1](#.E7.A4.BA.E4.BE.8B1-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加直播推流输入源，参见 [示例2](#.E7.A4.BA.E4.BE.8B2-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8E.A8.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加点播拉流输入源，参见 [示例3](#.E7.A4.BA.E4.BE.8B3-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.BE.AA.E7.8E.AF.E6.92.AD.E6.94.BE)、[示例4](#.E7.A4.BA.E4.BE.8B4-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.8D.95.E6.AC.A1.E6.92.AD.E6.94.BE)；\n- `DeleteInput`（删除输入源），参见 [示例5](#.E7.A4.BA.E4.BE.8B5-.E5.88.A0.E9.99.A4.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyInput`（修改输入源），参见 [示例6](#.E7.A4.BA.E4.BE.8B6-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `AddOutput`（ 添加输出源），参见 [示例7](#.E7.A4.BA.E4.BE.8B7-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DeleteOutput`（删除输出源），参见 [示例8](#.E7.A4.BA.E4.BE.8B8-.E5.88.A0.E9.99.A4.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `ModifyOutput`（修改输出源），参见 [示例9](#.E7.A4.BA.E4.BE.8B9-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `Start`（开启转推），参见 [示例10](#.E7.A4.BA.E4.BE.8B10-.E5.BC.80.E5.90.AF.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `Stop`（停止转推），参见 [示例11](#.E7.A4.BA.E4.BE.8B11-.E5.81.9C.E6.AD.A2.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `SwitchInput`（切换输入源），参见 [示例12](#.E7.A4.BA.E4.BE.8B12-.E5.88.87.E6.8D.A2.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyCurrentStopTime`（修改当前计划结束时间），参见 [示例13](#.E7.A4.BA.E4.BE.8B13-.E4.BF.AE.E6.94.B9.E8.BD.AC.E6.8E.A8.E7.BB.93.E6.9D.9F.E6.97.B6.E9.97.B4);\n- `DescribeInputPlayInfo`（查询播放进度），参见 [示例14](#.E7.A4.BA.E4.BE.8B14-.E6.9F.A5.E8.AF.A2.E7.82.B9.E6.92.AD.E8.BE.93.E5.85.A5.E6.BA.90.E6.92.AD.E6.94.BE.E8.BF.9B.E5.BA.A6)。",
       "input": "HandleStreamConnectProjectRequest",
@@ -3853,6 +3860,144 @@
       ],
       "type": "object"
     },
+    "HandleMediaCastProjectRequest": {
+      "document": "HandleMediaCastProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "点播转直播项目 Id 。",
+          "example": "project_id",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "请参考 [操作类型](#Operation)。",
+          "example": "AddSource",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "输入源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 AddSource、DeleteSource、SwitchSource 时必填。",
+          "example": "无",
+          "member": "MediaCastSourceInfo",
+          "name": "SourceInfos",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "输出源信息。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 AddDestination、DeleteDestination、EnableDestination、DisableDestination、ModifyDestination 时必填。",
+          "example": "无",
+          "member": "MediaCastDestinationInfo",
+          "name": "DestinationInfos",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "输出媒体配置。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 ModfiyOutputSetting 时必填。",
+          "example": "无",
+          "member": "MediaCastOutputMediaSetting",
+          "name": "OutputMediaSetting",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "播放控制参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 ModifyPlaySetting 时必填。",
+          "example": "无",
+          "member": "MediaCastPlaySetting",
+          "name": "PlaySetting",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "新添加的输入源位于输入源列表的位置，从0开始。默认加在输入源列表的后面。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 AddSource 时必填。",
+          "example": "无",
+          "member": "int64",
+          "name": "Position",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "HandleMediaCastProjectResponse": {
+      "document": "HandleMediaCastProject返回参数结构体",
+      "members": [
+        {
+          "document": "播放信息，Operation 为 DescribePlayInfo 时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaCastPlayInfo",
+          "name": "PlayInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "输入源信息， Operation 为 AddSource 时返回添加成功的输入源信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaCastSourceInfo",
+          "name": "SourceInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "输出源信息， Operation 为 AddDestination 时返回添加成功的输出源信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaCastDestinationInfo",
+          "name": "DestinationInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "HandleStreamConnectProjectRequest": {
       "document": "HandleStreamConnectProject请求参数结构体",
       "members": [
@@ -5111,6 +5256,45 @@
       ],
       "usage": "out"
     },
+    "MediaCastDestinationStatus": {
+      "document": "点播转直播输出源状态信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "输出源 Id，由系统分配。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "输出源直播地址。",
+          "example": "无",
+          "member": "string",
+          "name": "PushUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "输出源的状态。取值有：\n<li> Working ：运行中；</li>\n<li> Stopped：停止输出；</li>\n<li> Failed：输出失败。</li>",
+          "example": "Working",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "MediaCastOutputMediaSetting": {
       "document": "点播转直播输出媒体配置。",
       "members": [
@@ -5127,6 +5311,78 @@
         }
       ],
       "usage": "both"
+    },
+    "MediaCastPlayInfo": {
+      "document": "点播转直播播放信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "点播转直播项目运行状态，取值有：\n<li> Working : 运行中；</li>\n<li> Idle: 空闲状态。</li>",
+          "example": "Working",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当前播放的输入源 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentSourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当前播放的输入源的播放位置，单位：秒。",
+          "example": "100",
+          "member": "float",
+          "name": "CurrentSourcePosition",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当前播放的输入源时长，单位：秒。",
+          "example": "100",
+          "member": "float",
+          "name": "CurrentSourceDuration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "输出源状态信息。",
+          "example": "无",
+          "member": "MediaCastDestinationStatus",
+          "name": "DestinationStatusSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "已经循环播放的次数。",
+          "example": "1",
+          "member": "int64",
+          "name": "LoopCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "MediaCastPlaySetting": {
       "document": "播放控制参数。",

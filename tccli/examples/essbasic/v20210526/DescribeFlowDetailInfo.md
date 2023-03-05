@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli essbasic DescribeFlowDetailInfo --cli-unfold-argument  \
-    --Agent.ProxyOperator.OpenId 渠道经办人id \
-    --Agent.ProxyOrganizationOpenId 渠道企业第三方id \
+    --Agent.ProxyOperator.OpenId 子客企业经办人id \
+    --Agent.ProxyOrganizationOpenId 子客企业第三方id \
     --Agent.AppId 16fd2f7d7xxxxx5f8d501d57b5ec \
     --FlowIds yDxjGUUgydjxxxxxzjERvGKmZJeX
 ```
@@ -31,8 +31,8 @@ Output:
                         "ApproveType": "PERSON",
                         "Mobile": "签署方手机号码(11位数字)",
                         "ProxyOperatorOpenId": "us-a9f05aaxxxxxe963ff3f935d7fa39",
-                        "ProxyOrganizationName": "渠道侧企业名称",
-                        "ProxyOrganizationOpenId": "渠道侧企业第三方id",
+                        "ProxyOrganizationName": "第三方平台子客企业名称",
+                        "ProxyOrganizationOpenId": "第三方平台子客企业OpenId",
                         "ReceiptId": "签署人信息",
                         "SignOrder": 1
                     },
@@ -44,8 +44,8 @@ Output:
                         "ApproveType": "ORGANIZATION",
                         "Mobile": "签署方手机号码(11位数字)",
                         "ProxyOperatorOpenId": "us-a9f05axxxxxf935d7fa39",
-                        "ProxyOrganizationName": "渠道侧企业名称",
-                        "ProxyOrganizationOpenId": "渠道侧企业第三方id",
+                        "ProxyOrganizationName": "第三方平台子客企业名称",
+                        "ProxyOrganizationOpenId": "第三方平台子客企业OpenId",
                         "ReceiptId": "签署人信息",
                         "SignOrder": 0
                     }
@@ -57,7 +57,7 @@ Output:
                 "FlowType": "示例"
             }
         ],
-        "ProxyOrganizationOpenId": "渠道测第三方id",
+        "ProxyOrganizationOpenId": "第三方平台子客企业OpenId",
         "FlowGroupName": "",
         "FlowGroupId": "",
         "RequestId": "s16399xxxx603599"

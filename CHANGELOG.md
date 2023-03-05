@@ -1,3 +1,65 @@
+# Release 3.0.716.1
+
+## 多媒体创作引擎(cme) 版本：2019-10-29
+
+### 第 17 次发布
+
+发布时间：2023-03-06 01:14:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [HandleMediaCastProject](http://document.tencentcloudapi.woa.com/document/product/1156/77170)
+
+新增数据结构：
+
+* [MediaCastDestinationStatus](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MediaCastDestinationStatus)
+* [MediaCastPlayInfo](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MediaCastPlayInfo)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 42 次发布
+
+发布时间：2023-03-06 01:22:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ProxyOrganizationOperator](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ProxyOrganizationOperator)
+
+	* 新增成员：DefaultRole
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 24 次发布
+
+发布时间：2023-03-06 01:39:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeExternalTrtcMeasure
+
+
+
 # Release 3.0.715.1
 
 ## 账号中心(account) 版本：2018-12-25

@@ -43,11 +43,11 @@
       "status": "online"
     },
     "DescribeExternalTrtcMeasure": {
-      "document": "获取Trtc的用量统计数据。走计费渠道二期 只允许查两天的数据。\n当前接口已不再更新维护，请使用新版音视频用量接口：DescribeTrtcUsage （https://cloud.tencent.com/document/product/647/81425）",
+      "document": "接口内部调用计量接口，计量接口迁通用集群后不可用。目前已有新的对外接口可以供用户使用。\n\n获取Trtc的用量统计数据。走计费渠道二期 只允许查两天的数据。\n当前接口已不再更新维护，请使用新版音视频用量接口：DescribeTrtcUsage （https://cloud.tencent.com/document/product/647/81425）",
       "input": "DescribeExternalTrtcMeasureRequest",
       "name": "查询音视频用量计费时长（旧）",
       "output": "DescribeExternalTrtcMeasureResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMixTranscodingUsage": {
       "document": "获取TRTC混流转码的用量明细。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：5次/秒。",
