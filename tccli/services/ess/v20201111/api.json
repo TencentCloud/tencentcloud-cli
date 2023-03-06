@@ -119,6 +119,13 @@
       "output": "CreateSealPolicyResponse",
       "status": "online"
     },
+    "CreateUserAutoSignEnableUrl": {
+      "document": "企业方可以通过此接口获取个人用户开启自动签的跳转链接",
+      "input": "CreateUserAutoSignEnableUrlRequest",
+      "name": "获取个人用户自动签开启链接",
+      "output": "CreateUserAutoSignEnableUrlResponse",
+      "status": "online"
+    },
     "DeleteIntegrationEmployees": {
       "document": "移除员工",
       "input": "DeleteIntegrationEmployeesRequest",
@@ -201,6 +208,20 @@
       "input": "DescribeThirdPartyAuthCodeRequest",
       "name": "通过AuthCode查询用户是否实名",
       "output": "DescribeThirdPartyAuthCodeResponse",
+      "status": "online"
+    },
+    "DescribeUserAutoSignStatus": {
+      "document": "企业方可以通过此接口查询个人用户自动签开启状态",
+      "input": "DescribeUserAutoSignStatusRequest",
+      "name": "查询个人用户开通自动签状态",
+      "output": "DescribeUserAutoSignStatusResponse",
+      "status": "online"
+    },
+    "DisableUserAutoSign": {
+      "document": "企业方可以通过此接口关闭个人的自动签功能",
+      "input": "DisableUserAutoSignRequest",
+      "name": "关闭个人自动签功能",
+      "output": "DisableUserAutoSignResponse",
       "status": "online"
     },
     "GetTaskResultApi": {
@@ -555,6 +576,66 @@
         }
       ],
       "usage": "out"
+    },
+    "AutoSignConfig": {
+      "document": "自动签开启、签署相关配置",
+      "members": [
+        {
+          "document": "自动签开通个人用户的三要素\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "回调链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否回调证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CertInfoCallback",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否支持用户自定义签名印章\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "UserDefineSeal",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否需要回调的时候返回印章(签名) 图片的 base64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "SealImgCallback",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VerifyChannels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "Caller": {
       "document": "此结构体 (Caller) 用于描述调用方属性。",
@@ -2270,6 +2351,104 @@
       ],
       "usage": "out"
     },
+    "CreateUserAutoSignEnableUrlRequest": {
+      "document": "CreateUserAutoSignEnableUrl请求参数结构体",
+      "members": [
+        {
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "自动签场景:\nE_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "example": "无",
+          "member": "string",
+          "name": "SceneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "自动签开通，签署相关配置",
+          "example": "无",
+          "member": "AutoSignConfig",
+          "name": "AutoSignConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "链接类型，空-默认小程序端链接，H5SIGN-h5端链接",
+          "example": "无",
+          "member": "string",
+          "name": "UrlType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserAutoSignEnableUrlResponse": {
+      "document": "CreateUserAutoSignEnableUrl返回参数结构体",
+      "members": [
+        {
+          "document": "跳转短链",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "小程序AppId",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "小程序 原始 Id",
+          "example": "无",
+          "member": "string",
+          "name": "AppOriginalId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "跳转路径",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "base64格式跳转二维码",
+          "example": "无",
+          "member": "string",
+          "name": "QrCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "链接类型，空-默认小程序端链接，H5SIGN-h5端链接",
+          "example": "无",
+          "member": "string",
+          "name": "UrlType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteIntegrationEmployeesRequest": {
       "document": "DeleteIntegrationEmployees请求参数结构体",
       "members": [
@@ -3174,6 +3353,98 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserAutoSignStatusRequest": {
+      "document": "DescribeUserAutoSignStatus请求参数结构体",
+      "members": [
+        {
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "自动签场景:\nE_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "example": "无",
+          "member": "string",
+          "name": "SceneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "查询开启状态的用户信息",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserAutoSignStatusResponse": {
+      "document": "DescribeUserAutoSignStatus返回参数结构体",
+      "members": [
+        {
+          "document": "是否开通",
+          "example": "无",
+          "member": "bool",
+          "name": "IsOpen",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableUserAutoSignRequest": {
+      "document": "DisableUserAutoSign请求参数结构体",
+      "members": [
+        {
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "自动签场景:\nE_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "example": "无",
+          "member": "string",
+          "name": "SceneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "关闭自动签的个人的三要素",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableUserAutoSignResponse": {
+      "document": "DisableUserAutoSign返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5399,6 +5670,39 @@
         }
       ],
       "usage": "both"
+    },
+    "UserThreeFactor": {
+      "document": "用户的三要素：姓名，证件号，证件类型",
+      "members": [
+        {
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "小明",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证件类型: \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "证件号，如果有 X 请大写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "610*************1X",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "VerifyPdfRequest": {
       "document": "VerifyPdf请求参数结构体",

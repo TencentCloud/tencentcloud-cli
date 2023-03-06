@@ -2987,7 +2987,6 @@
       "document": "CreateInstancePre请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
           "example": "test",
           "member": "string",
@@ -2996,7 +2995,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值",
           "example": "100003",
           "member": "int64",
@@ -3005,7 +3003,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "预付费购买时长，例如 \"1m\",就是一个月",
           "example": "1m",
           "member": "string",
@@ -3014,8 +3011,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "实例规格说明 专业版实例[所有规格]填写1.\n标准版实例 ([入门型]填写1，[标准型]填写2，[进阶型]填写3，[容量型]填写4，[高阶型1]填写5，[高阶性2]填写6,[高阶型3]填写7,[高阶型4]填写8，[独占型]填写9。",
+          "document": "实例规格说明 专业版实例[所有规格]填写1.\n标准版实例 ([入门型(general)]填写1，[标准型(standard)]填写2，[进阶型(advanced)]填写3，[容量型(capacity)]填写4，[高阶型1(specialized-1)]填写5，[高阶性2(specialized-2)]填写6,[高阶型3(specialized-3)]填写7,[高阶型4(specialized-4)]填写8，[独占型(exclusive)]填写9。",
           "example": "1",
           "member": "int64",
           "name": "InstanceType",
@@ -3023,7 +3019,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "vpcId，不填默认基础网络",
           "example": "vpc-xxx",
           "member": "string",
@@ -3032,7 +3027,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "子网id，vpc网络需要传该参数，基础网络可以不传",
           "example": "subnet-xxx",
           "member": "string",
@@ -3041,7 +3035,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略",
           "example": "1440",
           "member": "int64",
@@ -3050,7 +3043,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "创建实例时可以选择集群Id, 该入参表示集群Id",
           "example": "1232",
           "member": "int64",
@@ -3059,7 +3051,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "预付费自动续费标记，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)",
           "example": "无",
           "member": "int64",
@@ -3068,7 +3059,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "CKafka版本号[0.10.2、1.1.1、2.4.1], 默认是1.1.1",
           "example": "0.10.2/1.1.1/2.4.1",
           "member": "string",
@@ -3077,7 +3067,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession",
           "example": "profession\\standard",
           "member": "string",
@@ -3086,7 +3075,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "磁盘大小,专业版不填写默认最小磁盘,填写后根据磁盘带宽分区数弹性计算",
           "example": "500GB",
           "member": "int64",
@@ -3095,7 +3083,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "带宽,专业版不填写默认最小带宽,填写后根据磁盘带宽分区数弹性计算",
           "example": "40MB",
           "member": "int64",
@@ -3104,7 +3091,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分区大小,专业版不填写默认最小分区数,填写后根据磁盘带宽分区数弹性计算",
           "example": "800",
           "member": "int64",
@@ -3113,7 +3099,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签",
           "example": "{tagKey:'kkk',tag:Value:'vvv'}",
           "member": "Tag",
@@ -3122,7 +3107,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "磁盘类型（ssd填写CLOUD_SSD，sata填写CLOUD_BASIC）",
           "example": "CLOUD_SSD",
           "member": "string",
@@ -3131,7 +3115,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "跨可用区，zoneIds必填",
           "example": "true",
           "member": "bool",
@@ -3140,7 +3123,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "可用区列表，购买多可用区实例时为必填项",
           "example": "[100006,100007]",
           "member": "int64",
@@ -3205,7 +3187,6 @@
           "example": "无",
           "member": "CreateInstancePreResp",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

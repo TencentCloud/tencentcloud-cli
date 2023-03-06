@@ -96,6 +96,14 @@
         "title": "获取用户自定义送检信息"
       }
     ],
+    "DescribeRecordInfo": [
+      {
+        "document": "查询录制",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordInfo\n<公共请求参数>\n\n{\n    \"TaskId\": 446192236330927912,\n    \"BizId\": 3400352518\n}",
+        "output": "{\n    \"Response\": {\n        \"RoomId\": \"7743\",\n        \"RecordMode\": 1,\n        \"RecordInfo\": [\n            {\n                \"RecordStatus\": 2,\n                \"RecordBeginTime\": 1234567868,\n                \"UserId\": \"6787\",\n                \"FileName\": \"/3400352518_2314_447947346201176660_9081\"\n            }\n        ],\n        \"RequestId\": \"h9167d24-a2c6-1125-a5bd-5c023ba721c2\"\n    }\n}",
+        "title": "查询录制"
+      }
+    ],
     "DescribeRoomInfo": [
       {
         "document": "获取房间内用户信息,RoomIds和StrRoomIds填一个即可,若都存在,则优先查询StrRoomIds。",
@@ -116,6 +124,14 @@
         "input": "https://gme.tencentcloudapi.com/?Action=DescribeScanResultList\n&BizId=1400000000\n&TaskIdList.0=6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Code\": 0,\n                \"DataId\": \"1400000000_test_data_id\",\n                \"ScanFinishTime\": 1566720906,\n                \"HitFlag\": true,\n                \"Live\": false,\n                \"Msg\": \"\",\n                \"ScanPiece\": [\n                    {\n                        \"DumpUrl\": \"\",\n                        \"HitFlag\": true,\n                        \"MainType\": \"abuse\",\n                        \"Info\": \"\",\n                        \"Offset\": 0,\n                        \"Duration\": 3400,\n                        \"PieceStartTime\": 1574684231,\n                        \"ScanDetail\": [\n                            {\n                                \"EndTime\": 1110,\n                                \"KeyWord\": \"违规字\",\n                                \"Label\": \"abuse\",\n                                \"Rate\": \"90.00\",\n                                \"StartTime\": 1110\n                            },\n                            {\n                                \"EndTime\": 1380,\n                                \"KeyWord\": \"违规字\",\n                                \"Label\": \"abuse\",\n                                \"Rate\": \"90.00\",\n                                \"StartTime\": 930\n                            },\n                            {\n                                \"EndTime\": 1560,\n                                \"KeyWord\": \"违规字\",\n                                \"Label\": \"abuse\",\n                                \"Rate\": \"90.00\",\n                                \"StartTime\": 930\n                            },\n                            {\n                                \"EndTime\": 2820,\n                                \"KeyWord\": \"违规字\",\n                                \"Label\": \"abuse\",\n                                \"Rate\": \"90.00\",\n                                \"StartTime\": 2490\n                            }\n                        ]\n                    }\n                ],\n                \"ScanStartTime\": 1566720905,\n                \"Scenes\": [\n                    \"default\"\n                ],\n                \"Status\": \"Success\",\n                \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\",\n                \"Url\": \"https://xxx/xxx.m4a\"\n            }\n        ],\n        \"RequestId\": \"863a8976-4d76-4481-9789-c631226f2475\"\n    }\n}",
         "title": "查询语音检测结果"
+      }
+    ],
+    "DescribeTaskInfo": [
+      {
+        "document": "查询录制taskid",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskInfo\n<公共请求参数>\n\n{\n    \"RoomId\": \"9832\",\n    \"BizId\": 3400352518\n}",
+        "output": "{\n    \"Response\": {\n        \"SubscribeRecordUserIds\": {\n            \"SubscribeUserIds\": [\n                3342\n            ],\n            \"UnSubscribeUserIds\": [\n                7619\n            ]\n        },\n        \"RecordMode\": 1,\n        \"RequestId\": \"h9167d24-a2c6-1125-a5bd-5c023ba721c2\",\n        \"TaskId\": 446192236330927912\n    }\n}",
+        "title": "查询录制taskid"
       }
     ],
     "DescribeUserInAndOutTime": [
@@ -158,6 +174,14 @@
         "title": "修改热句模型状态"
       }
     ],
+    "ModifyRecordInfo": [
+      {
+        "document": "修改录制配置信息",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordInfo\n<公共请求参数>\n\n{\n    \"SubscribeRecordUserIds\": {\n        \"SubscribeUserIds\": [\n            1342\n        ],\n        \"UnSubscribeUserIds\": [\n            9872\n        ]\n    },\n    \"RecordMode\": 1,\n    \"TaskId\": 446192236330927912,\n    \"BizId\": 3400352518\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"h9167d24-a2c6-1125-a5bd-5c023ba721c2\"\n    }\n}",
+        "title": "更新录制"
+      }
+    ],
     "ModifyUserMicStatus": [
       {
         "document": "修改用户麦克风属性",
@@ -184,6 +208,22 @@
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanVoice\n<公共请求参数>\n\n{\n    \"Callback\": \"https://0.0.0.0/user_callback\",\n    \"Live\": \"false\",\n    \"Tasks\": [\n        {\n            \"Url\": \"http://xxxx/audio_store/xxxx.mp3\",\n            \"DataId\": \"1400000000_test_data_id\"\n        }\n    ],\n    \"BizId\": \"1400000000\",\n    \"Scenes\": [\n        \"default\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\"\n            }\n        ],\n        \"RequestId\": \"de52afb5-3887-462d-876a-f8b0b654dc92\"\n    }\n}",
         "title": "提交语音文件检测任务"
+      }
+    ],
+    "StartRecord": [
+      {
+        "document": "开启录制",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartRecord\n<公共请求参数>\n\n{\n    \"RecordMode\": 1,\n    \"SubscribeRecordUserIds\": {\n        \"SubscribeUserIds\": [\n            1145\n        ],\n        \"UnSubscribeUserIds\": [\n            1987\n        ]\n    },\n    \"RoomId\": \"1987\",\n    \"BizId\": 3400352518\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 446192236330927912,\n        \"RequestId\": \"h9167d24-a2c6-1125-a5bd-5c023ba721c2\"\n    }\n}",
+        "title": "开始录制"
+      }
+    ],
+    "StopRecord": [
+      {
+        "document": "停止录制",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopRecord\n<公共请求参数>\n\n{\n    \"BizId\": 3400352518,\n    \"TaskId\": 446192236330927912\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"h9167d24-a2c6-1125-a5bd-5c023ba721c2\"\n    }\n}",
+        "title": "停止录制"
       }
     ],
     "UpdateScanRooms": [

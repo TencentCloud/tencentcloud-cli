@@ -154,6 +154,14 @@
         "title": "印章授权申请下发"
       }
     ],
+    "CreateUserAutoSignEnableUrl": [
+      {
+        "document": "获取跳转链接",
+        "input": "POST / HTTP/1.1\nHost:  ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"123\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"AutoSignConfig\": {\n        \"UserInfo\": {\n            \"Name\": \"小明\",\n            \"IdCardType\": \"ID_CARD\",\n            \"IdCardNumber\": \"1xxxxxxxxxxxxxx0\"\n        },\n        \"CertInfoCallback\": true,\n        \"UserDefineSeal\": false,\n        \"SealImgCallback\": false,\n        \"CallbackUrl\": \"\",\n        \"VerifyChannels\": [\n            \"\"\n        ]\n    },\n    \"UrlType\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"wxa02378y4jruwye1d\",\n        \"AppOriginalId\": \"gh_da87293fsd87987\",\n        \"Path\": \"page?abc=123&def=456\",\n        \"QrCode\": \"EBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCN\",\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\",\n        \"Url\": \"https://xxx.xxx/abc123\",\n        \"UrlType\": \"\"\n    }\n}",
+        "title": "获取跳转链接"
+      }
+    ],
     "DeleteIntegrationEmployees": [
       {
         "document": "",
@@ -266,6 +274,22 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeThirdPartyAuthCode\n<公共请求参数>\n\n{\n    \"AuthCode\": \"yDxAxU*******E4JGgr8S5\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"80905521-1203-41b1-9203-1eb2973cc488\",\n        \"VerifyStatus\": \"VERIFIED\"\n    }\n}",
         "title": "测试用例"
+      }
+    ],
+    "DescribeUserAutoSignStatus": [
+      {
+        "document": "查看个人自动签开启状态",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeUserAutoSignStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"UserInfo\": {\n        \"Name\": \"小明\",\n        \"IdCardNumber\": \"610000000000000000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IsOpen\": true,\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\"\n    }\n}",
+        "title": "查看个人自动签开启状态"
+      }
+    ],
+    "DisableUserAutoSign": [
+      {
+        "document": "关闭个人自动签",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDisableUserAutoSign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"UserInfo\": {\n        \"Name\": \"小明\",\n        \"IdCardNumber\": \"610000000000000000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\"\n    }\n}",
+        "title": "关闭个人自动签"
       }
     ],
     "GetTaskResultApi": [

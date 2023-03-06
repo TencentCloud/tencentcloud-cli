@@ -15,7 +15,7 @@ tccli bma DescribeBPFakeURLs --cli-unfold-argument  \
     --Filters.3.Name OfflineStatus \
     --Filters.3.Value 0 \
     --Filters.4.Name FakeURL \
-    --Filters.4.Value xxx \
+    --Filters.4.Value 仿冒网址 \
     --Filters.5.Name StartTime \
     --Filters.5.Value 2022-10-01 00:00:00 \
     --Filters.6.Name EndTime \
@@ -35,6 +35,7 @@ Output:
                 "Origin": 0,
                 "FakeURL": "仿冒网址",
                 "FakeDomain": "仿冒域名",
+                "Snapshot": "网址截图",
                 "Heat": 100,
                 "BlockStatus": 0,
                 "BlockNote": "协助处置状态说明",
@@ -53,7 +54,7 @@ Output:
             }
         ],
         "TotalCount": 100,
-        "RequestId": "xxx"
+        "RequestId": "请求id"
     }
 }
 ```

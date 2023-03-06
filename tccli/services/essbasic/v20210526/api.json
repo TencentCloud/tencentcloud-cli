@@ -29,7 +29,7 @@
       "status": "online"
     },
     "ChannelCreateBoundFlows": {
-      "document": "此接口（ChannelCreateBoundFlows）用于子客领取合同，经办人需要有相应的角色，领取后的合同不能重复领取。",
+      "document": "此接口（ChannelCreateBoundFlows）用于子客领取合同，经办人需要有相应的角色，合同不能重复领取。",
       "input": "ChannelCreateBoundFlowsRequest",
       "name": "领取未归属的合同",
       "output": "ChannelCreateBoundFlowsResponse",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "ChannelCreateSealPolicy": {
-      "document": "将指定印章授权给子客企业下的某些员工",
+      "document": "将指定印章授权给第三方平台子客企业下的某些员工",
       "input": "ChannelCreateSealPolicyRequest",
       "name": "创建印章授权",
       "output": "ChannelCreateSealPolicyResponse",
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "ChannelUpdateSealStatus": {
-      "document": "本接口（ChannelUpdateSealStatus）用于渠道为子客企业更新印章状态",
+      "document": "本接口（ChannelUpdateSealStatus）用于第三方应用平台为子客企业更新印章状态",
       "input": "ChannelUpdateSealStatusRequest",
       "name": "更新印章状态",
       "output": "ChannelUpdateSealStatusResponse",
@@ -148,7 +148,7 @@
       "status": "online"
     },
     "CreateConsoleLoginUrl": {
-      "document": "此接口（CreateConsoleLoginUrl）用于创建子客企业控制台Web/移动登录链接。登录链接是子客控制台的唯一入口。\n若子客企业未激活，会进入企业激活流程，首次参与激活流程的经办人会成为超管。（若企业激活过程中填写信息有误，需要重置激活流程，可以换一个经办人OpenId获取新的链接进入。）\n若子客企业已激活，使用了新的经办人OpenId进入，则会进入经办人的实名流程。\n若子客企业、经办人均已完成认证，则会直接进入子客Web控制台。",
+      "document": "此接口（CreateConsoleLoginUrl）用于创建第三方平台子客企业控制台Web/移动登录链接。登录链接是子客控制台的唯一入口。\n若子客企业未激活，会进入企业激活流程，首次参与激活流程的经办人会成为超管。（若企业激活过程中填写信息有误，需要重置激活流程，可以换一个经办人OpenId获取新的链接进入。）\n若子客企业已激活，使用了新的经办人OpenId进入，则会进入经办人的实名流程。\n若子客企业、经办人均已完成认证，则会直接进入子客Web控制台。",
       "input": "CreateConsoleLoginUrlRequest",
       "name": "生成控制台、移动端链接",
       "output": "CreateConsoleLoginUrlResponse",
@@ -162,9 +162,9 @@
       "status": "online"
     },
     "CreateSealByImage": {
-      "document": "渠道通过图片为子客代创建印章，图片最大5MB",
+      "document": "通过图片为子客企业代创建印章，图片最大5MB",
       "input": "CreateSealByImageRequest",
-      "name": "渠道通过图片为子客代创建印章",
+      "name": "通过图片为子客企业代创建印章",
       "output": "CreateSealByImageResponse",
       "status": "online"
     },
@@ -204,16 +204,16 @@
       "status": "online"
     },
     "DescribeTemplates": {
-      "document": "通过此接口（DescribeTemplates）查询该子客企业在电子签拥有的有效模板，不包括渠道模板",
+      "document": "通过此接口（DescribeTemplates）查询该第三方平台子客企业在电子签拥有的有效模板，不包括第三方平台模板",
       "input": "DescribeTemplatesRequest",
       "name": "查询模板信息列表",
       "output": "DescribeTemplatesResponse",
       "status": "online"
     },
     "DescribeUsage": {
-      "document": "此接口（DescribeUsage）用于获取渠道所有合作企业流量消耗情况。\n 注: 此接口每日限频2次，若要扩大限制次数,请提前与客服经理或邮件至e-contract@tencent.com进行联系。",
+      "document": "此接口（DescribeUsage）用于获取第三方平台所有合作企业流量消耗情况。\n 注: 此接口每日限频2次，若要扩大限制次数,请提前与客服经理或邮件至e-contract@tencent.com进行联系。",
       "input": "DescribeUsageRequest",
-      "name": "渠道合同用量查询",
+      "name": "合同用量查询",
       "output": "DescribeUsageResponse",
       "status": "online"
     },
@@ -232,9 +232,9 @@
       "status": "online"
     },
     "OperateChannelTemplate": {
-      "document": "此接口（OperateChannelTemplate）用于针对渠道模板库中的模板对子客企业可见性的查询和设置，不会直接分配渠道模板给子客企业。\n1、OperateType=select时：\n查询渠道模板库\n2、OperateType=update或者delete时：\n对子客企业进行模板库中模板可见性的修改、删除操作。",
+      "document": "此接口（OperateChannelTemplate）用于针对第三方应用平台模板库中的模板对子客企业可见性的查询和设置，不会直接分配第三方应用平台模板给子客企业。\n1、OperateType=select时：\n查询第三方应用平台模板库\n2、OperateType=update或者delete时：\n对子客企业进行模板库中模板可见性的修改、删除操作。",
       "input": "OperateChannelTemplateRequest",
-      "name": "操作渠道企业模板",
+      "name": "操作第三方应用平台企业模板",
       "output": "OperateChannelTemplateResponse",
       "status": "online"
     },
@@ -246,14 +246,14 @@
       "status": "online"
     },
     "SyncProxyOrganization": {
-      "document": "此接口（SyncProxyOrganization）用于同步渠道子客企业信息，主要是子客企业的营业执照，便于子客企业开通过程中不用手动上传。若有需要调用此接口，需要在创建控制链接CreateConsoleLoginUrl之后即刻进行调用。",
+      "document": "此接口（SyncProxyOrganization）用于同步第三方平台子客企业信息，主要是子客企业的营业执照，便于子客企业开通过程中不用手动上传。若有需要调用此接口，需要在创建控制链接CreateConsoleLoginUrl之后即刻进行调用。",
       "input": "SyncProxyOrganizationRequest",
       "name": "同步企业信息",
       "output": "SyncProxyOrganizationResponse",
       "status": "online"
     },
     "SyncProxyOrganizationOperators": {
-      "document": "此接口（SyncProxyOrganizationOperators）用于同步渠道子客企业经办人列表，主要是同步经办人的离职状态。子客Web控制台的组织架构管理，是依赖于渠道平台的，无法针对员工做新增/更新/离职等操作。\n若经办人信息有误，或者需要修改，也可以先将之前的经办人做离职操作，然后重新使用控制台链接CreateConsoleLoginUrl让经办人重新实名。",
+      "document": "此接口（SyncProxyOrganizationOperators）用于同步 第三方平台子客企业经办人列表，主要是同步经办人的离职状态。子客Web控制台的组织架构管理，是依赖于第三方应用平台的，无法针对员工做新增/更新/离职等操作。\n若经办人信息有误，或者需要修改，也可以先将之前的经办人做离职操作，然后重新使用控制台链接CreateConsoleLoginUrl让经办人重新实名。",
       "input": "SyncProxyOrganizationOperatorsRequest",
       "name": "同步企业经办人列表",
       "output": "SyncProxyOrganizationOperatorsResponse",
@@ -278,7 +278,6 @@
       "document": "应用相关信息",
       "members": [
         {
-          "default": "",
           "document": "应用的唯一标识。不同的业务系统可以采用不同的AppId，不同AppId下的数据是隔离的。可以由控制台开发者中心-应用集成自主生成。",
           "example": "无",
           "member": "string",
@@ -288,8 +287,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "渠道平台自定义，对于渠道子客企业的唯一标识。一个渠道子客企业主体与子客企业ProxyOrganizationOpenId是一一对应的，不可更改，不可重复使用。（例如，可以使用企业名称的hash值，或者社会统一信用代码的hash值，或者随机hash值，需要渠道平台保存），最大64位字符串",
+          "document": "第三方应用平台自定义，对应第三方平台子客企业的唯一标识。一个第三方平台子客企业主体与子客企业ProxyOrganizationOpenId是一一对应的，不可更改，不可重复使用。（例如，可以使用企业名称的hash值，或者社会统一信用代码的hash值，或者随机hash值，需要第三方应用平台保存），最大64位字符串",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationOpenId",
@@ -298,8 +296,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "渠道子客企业中的员工/经办人，通过渠道平台进入电子签完成实名、且被赋予相关权限后，可以参与到企业资源的管理或签署流程中。",
+          "document": "第三方平台子客企业中的员工/经办人，通过第三方应用平台进入电子签完成实名、且被赋予相关权限后，可以参与到企业资源的管理或签署流程中。",
           "example": "无",
           "member": "UserInfo",
           "name": "ProxyOperator",
@@ -308,8 +305,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "在子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。",
+          "document": "在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。",
           "example": "无",
           "member": "string",
           "name": "ProxyAppId",
@@ -318,7 +314,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内部参数，暂未开放使用",
           "example": "无",
           "member": "string",
@@ -890,7 +885,7 @@
           "type": "string"
         },
         {
-          "document": "渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
+          "document": "业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
           "example": "\"xxx\"",
           "member": "string",
           "name": "CustomerData",
@@ -1252,7 +1247,7 @@
           "type": "list"
         },
         {
-          "document": "回调地址，最大长度1000个字符\n不传默认使用渠道应用号配置的回调地址\n回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败",
+          "document": "回调地址，最大长度1000个字符\n不传默认使用第三方应用号配置的回调地址\n回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败",
           "example": "无",
           "member": "string",
           "name": "CallbackUrl",
@@ -2065,7 +2060,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "渠道控件ID。\n如果不为空，属于渠道预设控件；",
+          "document": "平台企业控件ID。\n如果不为空，属于平台企业预设控件；",
           "example": "无",
           "member": "string",
           "name": "ChannelComponentId",
@@ -2366,7 +2361,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "渠道的业务信息，限制1024字符",
+          "document": "业务信息，限制1024字符",
           "example": "[\"\",\"\"]",
           "member": "string",
           "name": "CustomerData",
@@ -2500,7 +2495,7 @@
           "type": "string"
         },
         {
-          "document": "签署链接生成类型，默认是 \"ALL\"；\n\"ALL\"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；\n\"CHANNEL\"：渠道合作企业；\n\"NOT_CHANNEL\"：非渠道合作企业；\n\"PERSON\"：个人；\n\"FOLLOWER\"：关注方，目前是合同抄送方；",
+          "document": "签署链接生成类型，默认是 \"ALL\"；\n\"ALL\"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；\n\"CHANNEL\"：第三方平台子客企业企业；\n\"NOT_CHANNEL\"：非第三方平台子客企业企业；\n\"PERSON\"：个人；\n\"FOLLOWER\"：关注方，目前是合同抄送方；",
           "example": "CHANNEL",
           "member": "string",
           "name": "GenerateType",
@@ -2508,7 +2503,7 @@
           "type": "string"
         },
         {
-          "document": "非渠道合作企业参与方的企业名称，GenerateType为\"NOT_CHANNEL\"时必填",
+          "document": "非第三方平台子客企业参与方的企业名称，GenerateType为\"NOT_CHANNEL\"时必填",
           "example": "测试企业",
           "member": "string",
           "name": "OrganizationName",
@@ -2532,7 +2527,7 @@
           "type": "string"
         },
         {
-          "document": "渠道合作企业的企业Id，GenerateType为\"CHANNEL\"时必填",
+          "document": "第三方平台子客企业的企业OpenId，GenerateType为\"CHANNEL\"时必填",
           "example": "xxx",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -2540,7 +2535,7 @@
           "type": "string"
         },
         {
-          "document": "渠道合作企业参与人OpenId，GenerateType为\"CHANNEL\"时可用，指定到具体参与人, 仅展示已经实名的经办人信息",
+          "document": "第三方平台子客企业参与人OpenId，GenerateType为\"CHANNEL\"时可用，指定到具体参与人, 仅展示已经实名的经办人信息",
           "example": "xxx",
           "member": "string",
           "name": "OpenId",
@@ -2603,10 +2598,9 @@
       "type": "object"
     },
     "Department": {
-      "document": "渠道版员工部门信息",
+      "document": "第三方应用集成员工部门信息",
       "members": [
         {
-          "default": "",
           "document": "部门id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2616,7 +2610,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2762,7 +2755,7 @@
       "document": "DescribeFlowDetailInfo返回参数结构体",
       "members": [
         {
-          "document": "渠道侧应用号Id",
+          "document": "第三方平台应用号Id",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
@@ -2770,7 +2763,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "渠道侧企业第三方Id",
+          "document": "第三方平台子客企业OpenId",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationOpenId",
@@ -2944,7 +2937,7 @@
           "type": "bool"
         },
         {
-          "document": "是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。",
+          "document": "是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。",
           "example": "无",
           "member": "bool",
           "name": "WithPdfUrl",
@@ -2952,7 +2945,7 @@
           "type": "bool"
         },
         {
-          "document": "渠道模板ID",
+          "document": "模板ID",
           "example": "无",
           "member": "string",
           "name": "ChannelTemplateId",
@@ -3034,7 +3027,7 @@
           "type": "string"
         },
         {
-          "document": "是否汇总数据，默认不汇总。\n不汇总：返回在统计区间内渠道下所有企业的每日明细，即每个企业N条数据，N为统计天数；\n汇总：返回在统计区间内渠道下所有企业的汇总后数据，即每个企业一条数据；",
+          "document": "是否汇总数据，默认不汇总。\n不汇总：返回在统计区间内第三方平台下所有企业的每日明细，即每个企业N条数据，N为统计天数；\n汇总：返回在统计区间内第三方平台下所有企业的汇总后数据，即每个企业一条数据；",
           "example": "无",
           "member": "bool",
           "name": "NeedAggregate",
@@ -3203,7 +3196,6 @@
       "document": "签署人的流程信息明细",
       "members": [
         {
-          "default": "",
           "document": "模板配置时候的签署人id,与控件绑定",
           "example": "无",
           "member": "string",
@@ -3213,8 +3205,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "渠道侧企业的第三方id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平台企业的第三方id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationOpenId",
@@ -3223,8 +3214,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "渠道侧企业操作人的第三方id",
+          "document": "平台企业操作人的第三方id",
           "example": "无",
           "member": "string",
           "name": "ProxyOperatorOpenId",
@@ -3233,8 +3223,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "渠道侧企业名称",
+          "document": "平台企业名称",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationName",
@@ -3243,7 +3232,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人手机号",
           "example": "无",
           "member": "string",
@@ -3253,7 +3241,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人签署顺序",
           "example": "无",
           "member": "int64",
@@ -3263,7 +3250,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3273,7 +3259,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前签署人的状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3283,7 +3268,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "签署人信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3293,7 +3277,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "签署人签署时间",
           "example": "无",
           "member": "int64",
@@ -3303,7 +3286,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参与者类型 (ORGANIZATION企业/PERSON个人)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3316,7 +3298,7 @@
       "usage": "out"
     },
     "FlowApproverInfo": {
-      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识\n1-个人：Name、Mobile必传\n2-渠道子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；\n3-渠道合作企业不指定经办人：OrgName必传、OrgOpenId必传；\n4-非渠道合作企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId",
+      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识\n1-个人：Name、Mobile必传\n2-第三方平台子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；\n3-第三方平台子客企业不指定经办人：OrgName必传、OrgOpenId必传；\n4-非第三方平台子客企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId",
       "members": [
         {
           "document": "签署人姓名，最大长度50个字符",
@@ -3364,7 +3346,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。\n默认为false，即签署人位于同一个渠道应用号下；",
+          "document": "指定签署人非第三方平台子客企业下员工，在ApproverType为ORGANIZATION时指定。\n默认为false，即签署人位于同一个第三方平台应用号下；默认为false，即签署人位于同一个第三方应用号下；",
           "example": "false",
           "member": "bool",
           "name": "NotChannelOrganization",
@@ -3373,7 +3355,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "用户侧第三方id，最大长度64个字符\n当签署方为同一渠道下的员工时，该字段若不指定，则发起【待领取】的流程",
+          "document": "用户侧第三方id，最大长度64个字符\n当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程",
           "example": "open_test_id",
           "member": "string",
           "name": "OpenId",
@@ -3382,7 +3364,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；",
+          "document": "企业签署方在同一第三方平台应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；",
           "example": "\"xxx\"",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -3629,7 +3611,6 @@
       "document": "合同组中每个子合同的发起信息",
       "members": [
         {
-          "default": "",
           "document": "签署文件资源Id列表，目前仅支持单个文件",
           "example": "[\"xxx\"]",
           "member": "string",
@@ -3639,7 +3620,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署流程名称，长度不超过200个字符",
           "example": "\"xxx\"",
           "member": "string",
@@ -3649,7 +3629,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署流程签约方列表，最多不超过5个参与方",
           "example": "无",
           "member": "FlowApproverInfo",
@@ -3659,7 +3638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年",
           "example": "1662110622",
           "member": "int64",
@@ -3669,7 +3647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署流程的描述，长度不超过1000个字符",
           "example": "\"xxx\"",
           "member": "string",
@@ -3679,7 +3656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署流程的类型，长度不超过255个字符",
           "example": "\"xxx\"",
           "member": "string",
@@ -3689,7 +3665,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署流程回调地址，长度不超过255个字符",
           "example": "\"xxx\"",
           "member": "string",
@@ -3699,8 +3674,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
+          "document": "第三方应用的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
           "example": "\"xxx\"",
           "member": "string",
           "name": "CustomerData",
@@ -3709,7 +3683,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署",
           "example": "false",
           "member": "bool",
@@ -3719,7 +3692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
           "example": "\"xxx\"",
           "member": "string",
@@ -3729,7 +3701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "本企业(发起方企业)是否需要签署审批",
           "example": "flase",
           "member": "bool",
@@ -3742,10 +3713,9 @@
       "usage": "in"
     },
     "FlowInfo": {
-      "document": "此结构体 (FlowInfo) 用于描述签署流程信息。\n\n【数据表格传参说明】\n当模板的 ComponentType='DYNAMIC_TABLE'时（渠道版或集成版），FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n\n表格参数headers说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| widthPercent   | Integer | 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35                    |\n| content    | String  | 表头单元格内容，字数不超过100                         |\n",
+      "document": "此结构体 (FlowInfo) 用于描述签署流程信息。\n\n【数据表格传参说明】\n当模板的 ComponentType='DYNAMIC_TABLE'时（ 第三方应用集成或集成版），FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n\n表格参数headers说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| widthPercent   | Integer | 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35                    |\n| content    | String  | 表头单元格内容，字数不超过100                         |",
       "members": [
         {
-          "default": "",
           "document": "合同名字，最大长度200个字符",
           "example": "签署流程名称",
           "member": "string",
@@ -3755,7 +3725,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署截止时间戳，超过有效签署时间则该签署流程失败，默认一年",
           "example": "截止时间",
           "member": "int64",
@@ -3765,7 +3734,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板ID",
           "example": "模板Id数组",
           "member": "string",
@@ -3775,7 +3743,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "多个签署人信息，最大支持50个签署方",
           "example": "签署人信息",
           "member": "FlowApproverInfo",
@@ -3785,7 +3752,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表单K-V对列表",
           "example": "表单K-V对列表",
           "member": "FormField",
@@ -3795,7 +3761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "回调地址，最大长度1000个字符",
           "example": "回调地址",
           "member": "string",
@@ -3805,7 +3770,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同类型，如：1. “劳务”；2. “销售”；3. “租赁”；4. “其他”，最大长度200个字符",
           "example": "签署流程类型",
           "member": "string",
@@ -3815,7 +3779,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同描述，最大长度1000个字符",
           "example": "签署流程详情",
           "member": "string",
@@ -3825,8 +3788,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
+          "document": " 第三方应用平台的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
           "example": "\"xxx\"",
           "member": "string",
           "name": "CustomerData",
@@ -3835,7 +3797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
           "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
           "member": "string",
@@ -3845,7 +3806,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "被抄送人的信息列表，抄送功能暂不开放",
           "example": "xxx",
           "member": "CcInfo",
@@ -3855,7 +3815,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。\n若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
           "example": "true",
           "member": "bool",
@@ -4165,7 +4124,7 @@
           "type": "string"
         },
         {
-          "document": "渠道方模板库模板唯一标识",
+          "document": "第三方应用平台模板库模板唯一标识",
           "example": "无",
           "member": "string",
           "name": "TemplateId",
@@ -4203,7 +4162,7 @@
       "document": "OperateChannelTemplate返回参数结构体",
       "members": [
         {
-          "document": "腾讯电子签颁发给渠道的应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "腾讯电子签颁发给第三方应用平台的应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AppId",
@@ -4211,7 +4170,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "渠道方模板库模板唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方应用平台模板库模板唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TemplateId",
@@ -4523,8 +4482,7 @@
       "document": "合作企业经办人列表信息",
       "members": [
         {
-          "default": "",
-          "document": "对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串",
+          "document": "对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串",
           "example": "无",
           "member": "string",
           "name": "Id",
@@ -4533,7 +4491,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "经办人姓名，最大长度50个字符",
           "example": "无",
           "member": "string",
@@ -4543,7 +4500,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "经办人身份证件类型\n1.ID_CARD 居民身份证\n2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证\n3.HONGKONG_AND_MACAO 港澳居民来往内地通行证",
           "example": "无",
           "member": "string",
@@ -4553,7 +4509,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "经办人证件号",
           "example": "无",
           "member": "string",
@@ -4563,7 +4518,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "经办人手机号，大陆手机号输入11位，暂不支持海外手机号。",
           "example": "无",
           "member": "string",
@@ -4571,6 +4525,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "默认角色，值为以下三个对应的英文：\n业务管理员：admin\n经办人：channel-normal-operator\n业务员：channel-sales-man\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DefaultRole",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -5220,10 +5183,9 @@
       "usage": "out"
     },
     "StaffRole": {
-      "document": "渠道版员工角色信息",
+      "document": "第三方应用集成员工角色信息",
       "members": [
         {
-          "default": "",
           "document": "角色id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5233,7 +5195,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5349,7 +5310,7 @@
           "type": "object"
         },
         {
-          "document": "渠道侧合作企业名称，最大长度64个字符",
+          "document": "第三方平台子客企业名称，最大长度64个字符",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationName",
@@ -5365,7 +5326,7 @@
           "type": "string"
         },
         {
-          "document": "渠道侧合作企业统一社会信用代码，最大长度200个字符",
+          "document": "第三方平台子客企业统一社会信用代码，最大长度200个字符",
           "example": "无",
           "member": "string",
           "name": "UniformSocialCreditCode",
@@ -5373,7 +5334,7 @@
           "type": "string"
         },
         {
-          "document": "渠道侧合作企业法人/负责人姓名",
+          "document": "第三方平台子客企业法人/负责人姓名",
           "example": "无",
           "member": "string",
           "name": "ProxyLegalName",
@@ -5433,7 +5394,6 @@
       "document": "此结构体 (TemplateInfo) 用于描述模板的信息。",
       "members": [
         {
-          "default": "",
           "document": "模板ID",
           "example": "无",
           "member": "string",
@@ -5443,7 +5403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板名字",
           "example": "无",
           "member": "string",
@@ -5453,7 +5412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板描述信息",
           "example": "无",
           "member": "string",
@@ -5463,7 +5421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板控件信息结构",
           "example": "无",
           "member": "Component",
@@ -5473,7 +5430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板中的流程参与人信息",
           "example": "无",
           "member": "Recipient",
@@ -5483,7 +5439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署区模板信息结构",
           "example": "无",
           "member": "Component",
@@ -5493,7 +5448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板类型：1-静默签；3-普通模板",
           "example": "3",
           "member": "int64",
@@ -5503,7 +5457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否是发起人 ,已弃用",
           "example": "true",
           "member": "bool",
@@ -5513,7 +5466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板的创建者信息",
           "example": "无",
           "member": "string",
@@ -5523,7 +5475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板创建的时间戳（精确到秒）",
           "example": "无",
           "member": "int64",
@@ -5533,7 +5484,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5543,8 +5493,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "渠道版-模板PDF文件链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方应用集成-模板PDF文件链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PdfUrl",
@@ -5553,8 +5502,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "关联的渠道模板ID",
+          "document": "关联的平台企业模板ID",
           "example": "无",
           "member": "string",
           "name": "ChannelTemplateId",
@@ -5563,8 +5511,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "关联的渠道模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的平台企业模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ChannelTemplateName",
@@ -5573,8 +5520,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0-需要子客企业手动领取平台企业的模板(默认); 1-平台自动设置子客模板\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "ChannelAutoSave",
@@ -5583,7 +5529,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模板版本，全数字字符。默认为空，初始版本为yyyyMMdd001。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5623,8 +5568,7 @@
       "document": "UploadFiles请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "应用相关信息，若是渠道版调用 appid 和proxyappid 必填",
+          "document": "应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5632,7 +5576,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "文件对应业务类型\n1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html",
           "example": "TEMPLATE",
           "member": "string",
@@ -5641,7 +5584,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "上传文件内容数组，最多支持20个文件",
           "example": "FileInfos",
           "member": "UploadFile",
@@ -5650,7 +5592,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
@@ -5669,7 +5610,6 @@
           "example": "无",
           "member": "string",
           "name": "FileIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5678,7 +5618,6 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5687,7 +5626,6 @@
           "example": "无",
           "member": "string",
           "name": "FileUrls",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5704,8 +5642,7 @@
       "document": "用量明细",
       "members": [
         {
-          "default": "",
-          "document": "渠道侧合作企业唯一标识",
+          "document": "子客企业唯一标识",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationOpenId",
@@ -5714,8 +5651,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "渠道侧合作企业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子客企业名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationName",
@@ -5724,7 +5660,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日期，当需要汇总数据时日期为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-31",
           "member": "date",
@@ -5734,7 +5669,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "消耗数量",
           "example": "50",
           "member": "uint64",
@@ -5744,7 +5678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "撤回数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -5754,7 +5687,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "消耗渠道\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "企业版",
           "member": "string",
@@ -5770,8 +5702,7 @@
       "document": "接口调用者信息",
       "members": [
         {
-          "default": "",
-          "document": "渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串",
+          "document": "第三方应用平台自定义，对应第三方平台子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串",
           "example": "无",
           "member": "string",
           "name": "OpenId",
@@ -5780,7 +5711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内部参数，暂未开放使用",
           "example": "无",
           "member": "string",
@@ -5790,7 +5720,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内部参数，暂未开放使用",
           "example": "无",
           "member": "string",
@@ -5800,7 +5729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内部参数，暂未开放使用",
           "example": "无",
           "member": "string",
@@ -5810,7 +5738,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内部参数，暂未开放使用",
           "example": "无",
           "member": "string",

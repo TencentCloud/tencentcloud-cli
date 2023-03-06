@@ -84,6 +84,13 @@
       "output": "DescribeRealtimeScanConfigResponse",
       "status": "online"
     },
+    "DescribeRecordInfo": {
+      "document": "查询录制任务信息。",
+      "input": "DescribeRecordInfoRequest",
+      "name": "查询录制任务信息",
+      "output": "DescribeRecordInfoResponse",
+      "status": "online"
+    },
     "DescribeRoomInfo": {
       "document": "获取房间内用户信息",
       "input": "DescribeRoomInfoRequest",
@@ -96,6 +103,13 @@
       "input": "DescribeScanResultListRequest",
       "name": "查询语音检测结果",
       "output": "DescribeScanResultListResponse",
+      "status": "online"
+    },
+    "DescribeTaskInfo": {
+      "document": "查询房间录制的详细信息",
+      "input": "DescribeTaskInfoRequest",
+      "name": "查询房间录制信息",
+      "output": "DescribeTaskInfoResponse",
       "status": "online"
     },
     "DescribeUserInAndOutTime": {
@@ -133,6 +147,13 @@
       "output": "ModifyCustomizationStateResponse",
       "status": "online"
     },
+    "ModifyRecordInfo": {
+      "document": "修改录制配置信息",
+      "input": "ModifyRecordInfoRequest",
+      "name": "更新录制信息",
+      "output": "ModifyRecordInfoResponse",
+      "status": "online"
+    },
     "ModifyUserMicStatus": {
       "document": "**接口作用**：此接口用于修改房间用户的麦克风状态，例如房间内用户麦克风为打开状态，可调用此接口将该用户麦克风进行关闭，关闭后即使该用户使用客户端接口 EnableMic 打开麦克风，依然无法与房间内成员通话，属于被禁言状态。该状态持续到此用户退房后失效，或者调用该接口重新打开此用户麦克风状态。\n**接口应用场景**：此接口多用于游戏业务中台或者风控后台，对一些发表不当言论的玩家进行禁言处理。\n**接口使用前提**：目前 ModifyUserMicStatus 接口通过白名单开放，如需使用，需要 [提交工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。",
       "input": "ModifyUserMicStatusRequest",
@@ -145,6 +166,20 @@
       "input": "ScanVoiceRequest",
       "name": "提交语音检测任务",
       "output": "ScanVoiceResponse",
+      "status": "online"
+    },
+    "StartRecord": {
+      "document": "开启录制",
+      "input": "StartRecordRequest",
+      "name": "开始录制",
+      "output": "StartRecordResponse",
+      "status": "online"
+    },
+    "StopRecord": {
+      "document": "停止录制\n",
+      "input": "StopRecordRequest",
+      "name": "停止录制",
+      "output": "StopRecordResponse",
       "status": "online"
     },
     "UpdateScanRooms": {
@@ -1437,6 +1472,69 @@
       ],
       "type": "object"
     },
+    "DescribeRecordInfoRequest": {
+      "document": "DescribeRecordInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "进行中的任务taskid（StartRecord接口返回）。",
+          "example": "446192236330927912",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "3400352518",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordInfoResponse": {
+      "document": "DescribeRecordInfo返回参数结构体",
+      "members": [
+        {
+          "document": "录制信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecordInfo",
+          "name": "RecordInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间ID。",
+          "example": "7743",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRoomInfoRequest": {
       "document": "DescribeRoomInfo请求参数结构体",
       "members": [
@@ -1670,6 +1768,69 @@
           "member": "DescribeScanResult",
           "name": "Data",
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskInfoRequest": {
+      "document": "DescribeTaskInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "3400352518",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间ID。",
+          "example": "9832",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskInfoResponse": {
+      "document": "DescribeTaskInfo返回参数结构体",
+      "members": [
+        {
+          "document": "进行中的任务taskid（StartRecord接口返回）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "446192236330927912",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指定订阅流白名单或者黑名单。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubscribeRecordUserIds",
+          "name": "SubscribeRecordUserIds",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -2024,6 +2185,60 @@
       ],
       "type": "object"
     },
+    "ModifyRecordInfoRequest": {
+      "document": "ModifyRecordInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "进行中的任务taskid（StartRecord接口返回）。",
+          "example": "446192236330927912",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "3400352518",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定订阅流白名单或者黑名单。",
+          "example": "无",
+          "member": "SubscribeRecordUserIds",
+          "name": "SubscribeRecordUserIds",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRecordInfoResponse": {
+      "document": "ModifyRecordInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserMicStatusRequest": {
       "document": "ModifyUserMicStatus请求参数结构体",
       "members": [
@@ -2196,6 +2411,52 @@
           "required": true,
           "type": "float",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordInfo": {
+      "document": "房间内录制信息信息\n注意：此字段可能返回 null，表示取不到有效值。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID（当混流模式时，取值为0）。",
+          "example": "6787",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制文件名。",
+          "example": "/3400352518_2314_447947346201176660_9081",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制开始时间（unix时间戳如：1234567868）。",
+          "example": "1234567868",
+          "member": "uint64",
+          "name": "RecordBeginTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制状态：2代表正在录制  10代表等待转码  11代表正在转码  12正在上传  13代表上传完成  14代表通知用户完成。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RecordStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2560,6 +2821,69 @@
       ],
       "usage": "out"
     },
+    "StartRecordRequest": {
+      "document": "StartRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "3400352518",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间ID。",
+          "example": "1987",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定订阅流白名单或者黑名单（不传默认订阅房间内所有音频流）。",
+          "example": "无",
+          "member": "SubscribeRecordUserIds",
+          "name": "SubscribeRecordUserIds",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "StartRecordResponse": {
+      "document": "StartRecord返回参数结构体",
+      "members": [
+        {
+          "document": "任务taskid。",
+          "example": "446192236330927912",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StatisticsItem": {
       "document": "用量数据单元",
       "members": [
@@ -2599,6 +2923,42 @@
       ],
       "usage": "out"
     },
+    "StopRecordRequest": {
+      "document": "StopRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID。",
+          "example": "446192236330927912",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "3400352518",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "StopRecordResponse": {
+      "document": "StopRecord返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StreamTextStatisticsItem": {
       "document": "流式转文本用量数据",
       "members": [
@@ -2614,6 +2974,32 @@
         }
       ],
       "usage": "out"
+    },
+    "SubscribeRecordUserIds": {
+      "document": "指定订阅流白名单或者黑名单。",
+      "members": [
+        {
+          "default": "",
+          "document": "订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表不订阅UserId 1，2，3的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过20。\n注意：只能同时设置UnSubscribeAudioUserIds、SubscribeAudioUserIds 其中1个参数",
+          "example": "无",
+          "member": "string",
+          "name": "UnSubscribeUserIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订阅音频流白名单，指定订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表订阅UserId 1，2，3的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过20。\n注意：只能同时设置UnSubscribeAudioUserIds、SubscribeAudioUserIds 其中1个参数。",
+          "example": "无",
+          "member": "string",
+          "name": "SubscribeUserIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Tag": {
       "document": "标签列表",
