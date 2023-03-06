@@ -10985,44 +10985,67 @@
       "document": "ModifyLivePushAuthKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "推流域名。",
+          "example": "无",
           "member": "string",
           "name": "DomainName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否启用，0：关闭，1：启用。\n不传表示不修改当前值。",
+          "example": "无",
           "member": "int64",
           "name": "Enable",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "主鉴权key。\n不传表示不修改当前值。",
+          "example": "无",
           "member": "string",
           "name": "MasterAuthKey",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "备鉴权key。\n不传表示不修改当前值。",
+          "example": "无",
           "member": "string",
           "name": "BackupAuthKey",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "有效时间，单位：秒。",
+          "example": "无",
           "member": "uint64",
           "name": "AuthDelta",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "鉴权参数名。默认为 txSecret 。",
+          "example": "无",
+          "member": "string",
+          "name": "SignParam",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "过期时间参数名。 默认为 txTime 。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeParam",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -12574,49 +12597,74 @@
       "document": "推流鉴权key信息。",
       "members": [
         {
-          "default": "",
           "document": "域名。",
+          "example": "无",
           "member": "string",
           "name": "DomainName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否启用，0：关闭，1：启用。",
+          "example": "无",
           "member": "int64",
           "name": "Enable",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "主鉴权 Key。",
+          "example": "无",
           "member": "string",
           "name": "MasterAuthKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "备鉴权 Key。",
+          "example": "无",
           "member": "string",
           "name": "BackupAuthKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "有效时间，单位：秒。",
+          "example": "无",
           "member": "uint64",
           "name": "AuthDelta",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "URL 中的签名参数。空代表默认参数 txSecret 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SignParam",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "URL 中的过期时间参数。空代表默认参数 txTime 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeParam",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"

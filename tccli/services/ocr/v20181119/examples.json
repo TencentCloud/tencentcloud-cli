@@ -574,6 +574,14 @@
         "title": "打印文档图片识别示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=RecognizePrintDocumentOCR"
       }
     ],
+    "RecognizeReceiptOCR": [
+      {
+        "document": "小票识别",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BusInvoiceOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StoreName\": \"便民便利店\",\n        \"Number\": \"00582643\",\n        \"Date\": \"2022/01/05\",\n        \"Time\": \"11:11\",\n        \"Total\": \"1.0\",\n        \"SkuInfos\": [\n            {\n                \"ItemName\": \"中号购物袋\",\n                \"UnitPrice\": \"0.5\",\n                \"Amount\": \"1.0\"\n            }\n        ],\n        \"RequestId\": \"79b3f0a4-05gd-484a-00fc-302390f546bd\"\n    }\n}",
+        "title": "小票识别"
+      }
+    ],
     "RecognizeTableAccurateOCR": [
       {
         "document": "表格识别示例代码",

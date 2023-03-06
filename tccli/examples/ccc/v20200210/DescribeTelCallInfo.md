@@ -18,6 +18,7 @@ Output:
         "RequestId": "53bccf04-0870-4520-8614-f4bdddfd68df",
         "TelCallOutCount": 10,
         "TelCallInCount": 10,
+        "VoipCallInCount": 10,
         "SeatUsedCount": 50
     }
 }

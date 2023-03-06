@@ -98,6 +98,13 @@
       "output": "CreateDMSTableResponse",
       "status": "online"
     },
+    "CreateDataEngine": {
+      "document": "为用户创建数据引擎",
+      "input": "CreateDataEngineRequest",
+      "name": "数据引擎创建",
+      "output": "CreateDataEngineResponse",
+      "status": "online"
+    },
     "CreateDatabase": {
       "document": "本接口（CreateDatabase）用于生成建库SQL语句。",
       "input": "CreateDatabaseRequest",
@@ -306,6 +313,27 @@
       "input": "DescribeDatabasesRequest",
       "name": "查询数据库列表",
       "output": "DescribeDatabasesResponse",
+      "status": "online"
+    },
+    "DescribeEngineUsageInfo": {
+      "document": "本接口根据引擎ID获取数据引擎资源使用情况",
+      "input": "DescribeEngineUsageInfoRequest",
+      "name": "获取数据引擎资源使用情况",
+      "output": "DescribeEngineUsageInfoResponse",
+      "status": "online"
+    },
+    "DescribeLakeFsDirSummary": {
+      "document": "查询托管存储指定目录的Summary",
+      "input": "DescribeLakeFsDirSummaryRequest",
+      "name": "查询托管存储指定目录的Summary",
+      "output": "DescribeLakeFsDirSummaryResponse",
+      "status": "online"
+    },
+    "DescribeLakeFsInfo": {
+      "document": "查询用户的托管存储信息",
+      "input": "DescribeLakeFsInfoRequest",
+      "name": "查询用户的托管存储信息",
+      "output": "DescribeLakeFsInfoResponse",
       "status": "online"
     },
     "DescribeNotebookSession": {
@@ -539,6 +567,13 @@
       "output": "SuspendResumeDataEngineResponse",
       "status": "online"
     },
+    "SwitchDataEngine": {
+      "document": "切换主备集群",
+      "input": "SwitchDataEngineRequest",
+      "name": "切换主备集群",
+      "output": "SwitchDataEngineResponse",
+      "status": "online"
+    },
     "UnbindWorkGroupsFromUser": {
       "document": "解绑用户上的用户组",
       "input": "UnbindWorkGroupsFromUserRequest",
@@ -551,6 +586,13 @@
       "input": "UnlockMetaDataRequest",
       "name": "元数据解锁",
       "output": "UnlockMetaDataResponse",
+      "status": "online"
+    },
+    "UpdateRowFilter": {
+      "document": "此接口用于更新行过滤规则。注意只能更新过滤规则，不能更新规格对象catalog，database和table。",
+      "input": "UpdateRowFilterRequest",
+      "name": "更新行过滤规则",
+      "output": "UpdateRowFilterResponse",
       "status": "online"
     }
   },
@@ -1811,6 +1853,276 @@
     "CreateDMSTableResponse": {
       "document": "CreateDMSTable返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataEngineRequest": {
+      "document": "CreateDataEngine请求参数结构体",
+      "members": [
+        {
+          "document": "引擎类型spark/presto",
+          "example": "spark",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "虚拟集群名称",
+          "example": "test",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "集群类型 spark_private/presto_private/presto_cu/spark_cu",
+          "example": "presto_private",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "计费模式 0=共享模式 1=按量计费 2=包年包月",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "是否自动启动集群",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoResume",
+          "required": true,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "最小资源",
+          "example": "1",
+          "member": "int64",
+          "name": "MinClusters",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "最大资源",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxClusters",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "是否为默虚拟集群",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultDataEngine",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "VPC网段",
+          "example": "10.10.0.0/16",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "描述信息",
+          "example": "test",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "集群规模",
+          "example": "1",
+          "member": "int64",
+          "name": "Size",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "计费类型，后付费：0，预付费：1。当前只支持后付费，不填默认为后付费。",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认3600",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "资源使用时长的单位，后付费：s，预付费：m。默认为s",
+          "example": "s",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "资源的自动续费标志。后付费无需续费，固定填0；预付费下：0表示手动续费、1代表自动续费、2代表不续费，在0下如果是大客户，会自动帮大客户续费。默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "创建资源的时候需要绑定的标签信息",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "是否自定挂起集群：false（默认）：不自动挂起、true：自动挂起",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoSuspend",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "定时启停集群策略：0（默认）：关闭定时策略、1：开启定时策略（注：定时启停策略与自动挂起策略互斥）",
+          "example": "1",
+          "member": "int64",
+          "name": "CrontabResumeSuspend",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "定时启停策略，复杂类型：包含启停时间、挂起集群策略",
+          "example": "无",
+          "member": "CrontabResumeSuspendStrategy",
+          "name": "CrontabResumeSuspendStrategy",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "引擎执行任务类型，默认为SQL",
+          "example": "SQL/STREAM/BATCH",
+          "member": "string",
+          "name": "EngineExecType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "单个集群最大并发任务数，默认5",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "可容忍的排队时间，默认0。当任务排队的时间超过可容忍的时间时可能会触发扩容。如果该参数为0，则表示一旦有任务排队就可能立即触发扩容。",
+          "example": "0",
+          "member": "int64",
+          "name": "TolerableQueueTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "集群自动挂起时间，默认10分钟",
+          "example": "10",
+          "member": "int64",
+          "name": "AutoSuspendTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "资源类型。Standard_CU：标准型；Memory_CU：内存型",
+          "example": "Standard_CU",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "集群高级配置",
+          "example": "无",
+          "member": "DataEngineConfigPair",
+          "name": "DataEngineConfigPairs",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "集群镜像版本名字。如SuperSQL-P 1.1;SuperSQL-S 3.2等,不传，默认创建最新镜像版本的集群",
+          "example": "SuperSQL-P 1.1",
+          "member": "string",
+          "name": "ImageVersionName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "主集群名称",
+          "example": "test",
+          "member": "string",
+          "name": "MainClusterName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataEngineResponse": {
+      "document": "CreateDataEngine返回参数结构体",
+      "members": [
+        {
+          "document": "虚拟引擎id",
+          "example": "xx",
+          "member": "string",
+          "name": "DataEngineId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3853,10 +4165,16 @@
       ],
       "usage": "out"
     },
+    "DataEngineConfigPair": {
+      "document": "引擎配置",
+      "members": [],
+      "usage": "both"
+    },
     "DataEngineInfo": {
       "document": "DataEngine详细信息",
       "members": [
         {
+          "default": "",
           "document": "DataEngine名称",
           "example": "shared_presto",
           "member": "string",
@@ -3867,6 +4185,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "引擎类型 spark/presto",
           "example": "presto",
           "member": "string",
@@ -3877,6 +4196,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "集群资源类型 spark_private/presto_private/presto_cu/spark_cu",
           "example": "presto_private",
           "member": "string",
@@ -3887,6 +4207,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "引用ID",
           "example": "****",
           "member": "string",
@@ -3897,6 +4218,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "数据引擎状态  -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中",
           "example": "1",
           "member": "int64",
@@ -3907,6 +4229,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "创建时间",
           "example": "1635320563",
           "member": "int64",
@@ -3917,6 +4240,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "更新时间",
           "example": "1635320563",
           "member": "int64",
@@ -3927,6 +4251,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "集群规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "64",
           "member": "int64",
@@ -3937,6 +4262,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "计费模式 0共享模式 1按量计费 2包年包月",
           "example": "0",
           "member": "int64",
@@ -3947,6 +4273,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "最小集群数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -3957,6 +4284,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "最大集群数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -3967,6 +4295,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "是否自动恢复\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -3977,6 +4306,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "自动恢复时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -3987,6 +4317,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "集群网段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.255.252.0/22",
           "member": "string",
@@ -3997,6 +4328,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "是否为默认引擎\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -4007,6 +4339,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试资源",
           "member": "string",
@@ -4017,6 +4350,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "引擎id",
           "example": "02345495-cfe0-461c-8c3d-5715d03feda4",
           "member": "string",
@@ -4027,6 +4361,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "操作者",
           "example": "****",
           "member": "string",
@@ -4037,6 +4372,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "到期时间",
           "example": "2022-03-16 10:41:03",
           "member": "string",
@@ -4047,6 +4383,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "隔离时间",
           "example": "2022-03-16 10:41:03",
           "member": "string",
@@ -4057,6 +4394,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "冲正时间",
           "example": "2022-03-16 10:41:03",
           "member": "string",
@@ -4067,6 +4405,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testname",
           "member": "string",
@@ -4077,6 +4416,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "标签对集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"TagKey\":\"mark002\"}]",
           "member": "TagInfo",
@@ -4087,6 +4427,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "引擎拥有的权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[USE]",
           "member": "string",
@@ -4097,6 +4438,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "是否自定挂起集群：false（默认）：不自动挂起、true：自动挂起\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -4107,6 +4449,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "定时启停集群策略：0（默认）：关闭定时策略、1：开启定时策略（注：定时启停策略与自动挂起策略互斥）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -4117,6 +4460,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "定时启停策略，复杂类型：包含启停时间、挂起集群策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CrontabResumeSuspendStrategy",
@@ -4127,6 +4471,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "引擎执行任务类型，有效值：SQL/BATCH\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4137,6 +4482,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "自动续费标志，0，初始状态，默认不自动续费，若用户有预付费不停服特权，自动续费。1：自动续费。2：明确不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4147,6 +4493,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "集群自动挂起时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -4157,6 +4504,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "网络连接配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NetworkConnection",
@@ -4167,6 +4515,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "ui的跳转地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dlc-xxx.com",
           "member": "string",
@@ -4177,6 +4526,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "引擎的资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Standard_CU",
           "member": "string",
@@ -4187,6 +4537,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "集群镜像版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
@@ -4197,6 +4548,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "集群镜像小版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
@@ -4207,12 +4559,24 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "集群镜像版本名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
           "name": "ImageVersionName",
           "required": false,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启备集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "StartStandbyCluster",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -5590,6 +5954,98 @@
           "value_allowed_null": false,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEngineUsageInfoRequest": {
+      "document": "DescribeEngineUsageInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "House Id",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEngineUsageInfoResponse": {
+      "document": "DescribeEngineUsageInfo返回参数结构体",
+      "members": [
+        {
+          "document": "集群总规格",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "已占用集群规格",
+          "example": "无",
+          "member": "int64",
+          "name": "Used",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "剩余集群规格",
+          "example": "无",
+          "member": "int64",
+          "name": "Available",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLakeFsDirSummaryRequest": {
+      "document": "DescribeLakeFsDirSummary请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLakeFsDirSummaryResponse": {
+      "document": "DescribeLakeFsDirSummary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLakeFsInfoRequest": {
+      "document": "DescribeLakeFsInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLakeFsInfoResponse": {
+      "document": "DescribeLakeFsInfo返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9338,6 +9794,17 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -10219,6 +10686,44 @@
           "value_allowed_null": false,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDataEngineRequest": {
+      "document": "SwitchDataEngine请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主集群名称",
+          "example": "test",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启备集群",
+          "example": "false",
+          "member": "bool",
+          "name": "StartStandbyCluster",
+          "required": true,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDataEngineResponse": {
+      "document": "SwitchDataEngine返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11457,6 +11962,44 @@
     },
     "UnlockMetaDataResponse": {
       "document": "UnlockMetaData返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRowFilterRequest": {
+      "document": "UpdateRowFilter请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "行过滤策略的id，此值可以通过DescribeUserInfo或者DescribeWorkGroupInfo接口获取",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "新的过滤策略。",
+          "example": "无",
+          "member": "Policy",
+          "name": "Policy",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRowFilterResponse": {
+      "document": "UpdateRowFilter返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

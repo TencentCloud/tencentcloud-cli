@@ -434,6 +434,13 @@
       "output": "RecognizePrintDocumentOCRResponse",
       "status": "online"
     },
+    "RecognizeReceiptOCR": {
+      "document": "小票识别",
+      "input": "RecognizeReceiptOCRRequest",
+      "name": "小票识别",
+      "output": "RecognizeReceiptOCRResponse",
+      "status": "online"
+    },
     "RecognizeTableAccurateOCR": {
       "document": "本接口支持中英文图片/PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。识别效果比表格识别V2更好，覆盖场景更加广泛，对表格难例场景，如无线表格、嵌套表格（有线表格中包含无线表格）的识别效果均优于表格识别V2。",
       "input": "RecognizeTableAccurateOCRRequest",
@@ -6888,6 +6895,42 @@
       ],
       "type": "object"
     },
+    "ReceiptSkuInfo": {
+      "document": "小票明细部分识别结果",
+      "members": [
+        {
+          "document": "商品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中号购物袋",
+          "member": "string",
+          "name": "ItemName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "单价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "string",
+          "name": "UnitPrice",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "总金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "string",
+          "name": "Amount",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "RecognizeContainerOCRRequest": {
       "document": "RecognizeContainerOCR请求参数结构体",
       "members": [
@@ -8403,6 +8446,96 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeReceiptOCRRequest": {
+      "document": "RecognizeReceiptOCR请求参数结构体",
+      "members": [
+        {
+          "document": "base64格式编码的图片",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "图片的URL",
+          "example": "https://xx/a.jpg ",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeReceiptOCRResponse": {
+      "document": "RecognizeReceiptOCR返回参数结构体",
+      "members": [
+        {
+          "document": "商家名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "便民便利店",
+          "member": "string",
+          "name": "StoreName",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "发票号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00276684",
+          "member": "string",
+          "name": "Number",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022/05/18",
+          "member": "string",
+          "name": "Date",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11:11",
+          "member": "string",
+          "name": "Time",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "总金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "string",
+          "name": "Total",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "小票明细信息识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"ItemName\":\"中号购物袋\",\"UnitPrice\":\"0.5\",\"Amount\":\"1.0\"}]",
+          "member": "ReceiptSkuInfo",
+          "name": "SkuInfos",
+          "type": "list",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {

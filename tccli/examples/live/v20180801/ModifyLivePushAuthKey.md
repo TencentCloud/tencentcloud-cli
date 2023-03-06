@@ -1,23 +1,23 @@
 **Example 1: 请求示例**
 
-
+请求示例。
 
 Input: 
 
 ```
 tccli live ModifyLivePushAuthKey --cli-unfold-argument  \
-    --DomainName 5000.livepush.myqcloud.com \
+    --DomainName abc.com \
     --Enable 0 \
-    --MasterAuthKey xxxx \
-    --BackupAuthKey xxx \
-    --AuthDelta 300
+    --MasterAuthKey abc*&^ \
+    --BackupAuthKey  \
+    --AuthDelta 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "e48b9f8d-d9d1-4de4-a732-5ab8a333c0d8"
     }
 }
 ```
