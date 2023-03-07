@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddActivityWhitelistUin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: opc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddActivityWhitelistUin\n<公共请求参数>\n\n{\n    \"ActivityID\": 12345,\n    \"WhitelistUin\": \"100013140416\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c68c700c-403e-4cf0-ab97-e2afd71459d9\"\n    }\n}",
+        "title": "添加UIN至活动页访问白名单"
+      }
+    ],
     "CancelActivityGoodsQuotaDeduction": [
       {
         "document": "",
@@ -14,6 +22,14 @@
         "input": "POST / HTTP/1.1\nHost: opc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfirmActivityGoodsQuotaDeduction\n<公共请求参数>\n\n{\n    \"DealUin\": \"\",\n    \"ActiveFlowList\": [],\n    \"DealResult\": \"{\\\"big_deal_no\\\": \\\"\\\", \\\"deal_names\\\": []}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"scbnohgb-wkaf-m3nt-yus0-zyaafyk4ch4z\"\n    }\n}",
         "title": "活动商品下单确认商品配额"
+      }
+    ],
+    "DescribeActivityInfoByPageURL": [
+      {
+        "document": "根据活动链接获取活动非敏感信息",
+        "input": "POST / HTTP/1.1\nHost: opc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeActivityInfoByPageURL\n<公共请求参数>\n\n{\n    \"PageURL\": \"https://cloud.tencent.com/act/pro/jensen-test-0119-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ActivityNonSensitiveInfo\": {\n            \"ActivityId\": 12266,\n            \"EndTime\": \"2200-08-28 23:59:59\",\n            \"Name\": \"jensen-test-0119-1\",\n            \"PageUrl\": \"https://cloud.tencent.com/act/pro/jensen-test-0119-1\",\n            \"StartTime\": \"2022-01-01 00:00:00\",\n            \"Status\": 0\n        },\n        \"RequestId\": \"21537ecd-2ad8-4b1d-a987-4e977105a4e9\"\n    }\n}",
+        "title": "根据活动链接获取活动信息"
       }
     ],
     "DescribeActivityNonSensitiveInfo": [

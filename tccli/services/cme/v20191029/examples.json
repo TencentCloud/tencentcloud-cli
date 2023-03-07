@@ -142,7 +142,7 @@
     ],
     "DeleteProject": [
       {
-        "document": "",
+        "document": "删除项目",
         "input": "https://cme.tencentcloudapi.com/?Action=DeleteProject\n&Platform=test\n&ProjectId=cmepid_5f16967b64436100015fb026\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a64cbb5b-b809-4061-8c36-7369b98e8e6x\"\n    }\n}",
         "title": "删除项目"

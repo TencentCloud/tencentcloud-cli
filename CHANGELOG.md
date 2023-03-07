@@ -1,3 +1,137 @@
+# Release 3.0.718.1
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 28 次发布
+
+发布时间：2023-03-08 01:05:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DisableCCCPhoneNumber](http://document.tencentcloudapi.woa.com/document/product/679/76374)
+
+	* <font color="#dd0000">**修改入参**：</font>SdkAppId
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 33 次发布
+
+发布时间：2023-03-08 01:09:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancer)
+
+	* 新增成员：LoadBalancerDomain
+
+* [LoadBalancerDetail](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancerDetail)
+
+	* 新增成员：LoadBalancerDomain
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 43 次发布
+
+发布时间：2023-03-08 01:19:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
+
+新增数据结构：
+
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+* [CommonApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonApproverOption)
+* [CommonFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonFlowApprover)
+* [CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CreateFlowOption)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 46 次发布
+
+发布时间：2023-03-08 01:29:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Label](http://document.tencentcloudapi.woa.com/document/product/248/30354#Label)
+
+	* 新增成员：Name, Value
+
+* [PrometheusAgentInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAgentInfo)
+
+	* 新增成员：ClusterType, ClusterId, Describe
+
+
+
+
+## 运营产品中心(opc) 版本：2018-07-19
+
+### 第 2 次发布
+
+发布时间：2023-03-08 01:32:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddActivityWhitelistUin](http://document.tencentcloudapi.woa.com/document/product/1602/77209)
+* [DescribeActivityInfoByPageURL](http://document.tencentcloudapi.woa.com/document/product/1602/77208)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 25 次发布
+
+发布时间：2023-03-08 01:46:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [McuWaterMarkText](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkText)
+
+修改数据结构：
+
+* [McuWaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkParams)
+
+	* 新增成员：WaterMarkText
+
+
+
+
 # Release 3.0.717.1
 
 ## 云呼叫中心(ccc) 版本：2020-02-10

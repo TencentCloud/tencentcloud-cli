@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AddActivityWhitelistUin": {
+      "document": "添加UIN至活动页访问白名单",
+      "input": "AddActivityWhitelistUinRequest",
+      "name": "添加活动页访问白名单",
+      "output": "AddActivityWhitelistUinResponse",
+      "status": "online"
+    },
     "CancelActivityGoodsQuotaDeduction": {
       "document": "活动商品下单取消商品配额扣减",
       "input": "CancelActivityGoodsQuotaDeductionRequest",
@@ -12,6 +19,13 @@
       "input": "ConfirmActivityGoodsQuotaDeductionRequest",
       "name": "活动商品下单确认商品配额扣减",
       "output": "ConfirmActivityGoodsQuotaDeductionResponse",
+      "status": "online"
+    },
+    "DescribeActivityInfoByPageURL": {
+      "document": "根据活动链接查询活动非敏感信息",
+      "input": "DescribeActivityInfoByPageURLRequest",
+      "name": "根据活动链接查询活动非敏感信息",
+      "output": "DescribeActivityInfoByPageURLResponse",
       "status": "online"
     },
     "DescribeActivityNonSensitiveInfo": {
@@ -115,6 +129,54 @@
         }
       ],
       "usage": "out"
+    },
+    "AddActivityWhitelistUinRequest": {
+      "document": "AddActivityWhitelistUin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "活动ID",
+          "example": "12345",
+          "member": "int64",
+          "name": "ActivityID",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户UIN",
+          "example": "100013140416",
+          "member": "string",
+          "name": "WhitelistUin",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "野鹤白名单KEY值",
+          "example": "WHITELIST_KEY",
+          "member": "string",
+          "name": "WhitelistKey",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "AddActivityWhitelistUinResponse": {
+      "document": "AddActivityWhitelistUin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CancelActivityGoodsQuotaDeductionRequest": {
       "document": "CancelActivityGoodsQuotaDeduction请求参数结构体",
@@ -250,6 +312,42 @@
         }
       ],
       "usage": "in"
+    },
+    "DescribeActivityInfoByPageURLRequest": {
+      "document": "DescribeActivityInfoByPageURL请求参数结构体",
+      "members": [
+        {
+          "document": "活动链接",
+          "example": "https://cloud.tencent.com/act/pro/2023spring",
+          "member": "string",
+          "name": "PageURL",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActivityInfoByPageURLResponse": {
+      "document": "DescribeActivityInfoByPageURL返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "ActivityNonSensitiveInfo",
+          "name": "ActivityNonSensitiveInfo",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeActivityNonSensitiveInfoRequest": {
       "document": "DescribeActivityNonSensitiveInfo请求参数结构体",

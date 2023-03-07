@@ -1,6 +1,6 @@
 **Example 1: 查询容器实例中容器日志**
 
-
+查询容器实例中容器日志
 
 Input: 
 
@@ -18,7 +18,7 @@ Output:
     "Response": {
         "ContainerName": "simple-cputest",
         "LogContent": "hello world",
-        "RequestId": "xx"
+        "RequestId": "5f792091-66a7-40fc-8043-4d8b9537faiu"
     }
 }
 ```

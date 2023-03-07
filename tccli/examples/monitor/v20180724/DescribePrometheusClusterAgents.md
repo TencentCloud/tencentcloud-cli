@@ -21,7 +21,10 @@ Output:
                 "Status": "xx",
                 "ClusterName": "xx",
                 "ExternalLabels": [
-                    {}
+                    {
+                        "Name": "xx",
+                        "Value": "xx"
+                    }
                 ],
                 "ClusterId": "xx",
                 "ClusterType": "xx",

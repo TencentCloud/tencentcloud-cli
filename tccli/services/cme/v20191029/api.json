@@ -71,7 +71,7 @@
       "status": "online"
     },
     "DeleteProject": {
-      "document": "删除项目。",
+      "document": "删除项目。处于推流状态的云转推和点播转直播项目不允许删除，若强行调用删除项目接口会返回失败。",
       "input": "DeleteProjectRequest",
       "name": "删除项目",
       "output": "DeleteProjectResponse",
@@ -1638,31 +1638,31 @@
       "document": "DeleteProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "要删除的项目 Id。",
           "example": "1112",
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以删除一切项目。如果指定操作者，则操作者必须为项目所有者。",
           "example": "user_id_100001",
           "member": "string",
           "name": "Operator",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

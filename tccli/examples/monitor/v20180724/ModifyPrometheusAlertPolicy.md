@@ -11,8 +11,12 @@ tccli monitor ModifyPrometheusAlertPolicy --cli-unfold-argument  \
     --AlertRule.Rules.0.Describe xx \
     --AlertRule.Rules.0.Name xx \
     --AlertRule.Rules.0.For xx \
+    --AlertRule.Rules.0.Labels.0.Name xx \
+    --AlertRule.Rules.0.Labels.0.Value xx \
     --AlertRule.Rules.0.Rule xx \
     --AlertRule.Rules.0.Template xx \
+    --AlertRule.Rules.0.Annotations.0.Name xx \
+    --AlertRule.Rules.0.Annotations.0.Value xx \
     --AlertRule.Notification.AlertManager.Url xx \
     --AlertRule.Notification.AlertManager.ClusterId xx \
     --AlertRule.Notification.AlertManager.ClusterType xx \

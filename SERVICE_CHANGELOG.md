@@ -2,135 +2,9 @@
 
 ## 云呼叫中心(ccc) 版本：2020-02-10
 
-### 第 27 次发布
-
-发布时间：2023-03-07 01:10:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeTelCallInfo](http://document.tencentcloudapi.woa.com/document/product/679/50168)
-
-	* 新增出参：VoipCallInCount
-
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 47 次发布
-
-发布时间：2023-03-07 01:16:32
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DeleteBaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/77199)
-* [DeleteBaselineRuleIgnore](http://document.tencentcloudapi.woa.com/document/product/296/77198)
-* [DeleteBaselineWeakPassword](http://document.tencentcloudapi.woa.com/document/product/296/77197)
-* [DescribeBaselineDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77196)
-* [DescribeBaselineDetectOverview](http://document.tencentcloudapi.woa.com/document/product/296/77195)
-* [DescribeBaselineDownloadList](http://document.tencentcloudapi.woa.com/document/product/296/77194)
-* [DescribeBaselineFixList](http://document.tencentcloudapi.woa.com/document/product/296/77193)
-* [DescribeBaselineHostIgnoreList](http://document.tencentcloudapi.woa.com/document/product/296/77192)
-* [DescribeBaselineHostRiskTop](http://document.tencentcloudapi.woa.com/document/product/296/77191)
-* [DescribeBaselineItemIgnoreList](http://document.tencentcloudapi.woa.com/document/product/296/77190)
-* [DescribeBaselineItemInfo](http://document.tencentcloudapi.woa.com/document/product/296/77189)
-* [DescribeBaselineItemRiskTop](http://document.tencentcloudapi.woa.com/document/product/296/77188)
-* [DescribeBaselineRuleCategoryList](http://document.tencentcloudapi.woa.com/document/product/296/77187)
-* [DescribeBaselineRuleDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77186)
-* [DescribeBaselineRuleIgnoreList](http://document.tencentcloudapi.woa.com/document/product/296/77185)
-* [DescribeBaselineRuleList](http://document.tencentcloudapi.woa.com/document/product/296/77184)
-* [DescribeBaselineWeakPasswordList](http://document.tencentcloudapi.woa.com/document/product/296/77183)
-* [DescribeIgnoreHostAndItemConfig](http://document.tencentcloudapi.woa.com/document/product/296/77182)
-* [ExportBaselineFixList](http://document.tencentcloudapi.woa.com/document/product/296/77181)
-* [ExportBaselineHostDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77180)
-* [ExportBaselineItemDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77179)
-* [ExportBaselineItemList](http://document.tencentcloudapi.woa.com/document/product/296/77178)
-* [ExportBaselineRuleDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77177)
-* [ExportBaselineWeakPasswordList](http://document.tencentcloudapi.woa.com/document/product/296/77176)
-* [FixBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/77175)
-* [ModifyBaselinePolicyState](http://document.tencentcloudapi.woa.com/document/product/296/77174)
-* [ModifyBaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/77173)
-* [ModifyBaselineRuleIgnore](http://document.tencentcloudapi.woa.com/document/product/296/77172)
-* [ModifyBaselineWeakPassword](http://document.tencentcloudapi.woa.com/document/product/296/77171)
-
-修改接口：
-
-* [DescribeScanVulSetting](http://document.tencentcloudapi.woa.com/document/product/296/58237)
-
-	* 新增出参：Uuids
-
-* [ScanVulSetting](http://document.tencentcloudapi.woa.com/document/product/296/58235)
-
-	* 新增入参：Uuids
-
-
-新增数据结构：
-
-* [BaselineCategory](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineCategory)
-* [BaselineCustomRuleIdName](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineCustomRuleIdName)
-* [BaselineDownload](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDownload)
-* [BaselineFix](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineFix)
-* [BaselineHost](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHost)
-* [BaselineItemInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemInfo)
-* [BaselinePolicyDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicyDetect)
-* [BaselineRiskItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRiskItem)
-* [BaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRule)
-* [BaselineRuleDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRuleDetect)
-* [BaselineWeakPassword](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineWeakPassword)
-* [HostRiskLevelCount](http://document.tencentcloudapi.woa.com/document/product/296/19867#HostRiskLevelCount)
-* [Item](http://document.tencentcloudapi.woa.com/document/product/296/19867#Item)
-
-
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 39 次发布
-
-发布时间：2023-03-07 01:20:31
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
-* [DescribeEngineUsageInfo](http://document.tencentcloudapi.woa.com/document/product/1342/77205)
-* [DescribeLakeFsDirSummary](http://document.tencentcloudapi.woa.com/document/product/1342/77203)
-* [DescribeLakeFsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/77202)
-* [SwitchDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77201)
-* [UpdateRowFilter](http://document.tencentcloudapi.woa.com/document/product/1342/77200)
-
-新增数据结构：
-
-* [DataEngineConfigPair](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineConfigPair)
-
-修改数据结构：
-
-* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
-
-	* 新增成员：StartStandbyCluster
-
-* [Policy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#Policy)
-
-	* 新增成员：Id
-
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
 ### 第 28 次发布
 
-发布时间：2023-03-07 01:28:27
+发布时间：2023-03-08 01:05:27
 
 本次发布包含了以下内容：
 
@@ -138,45 +12,18 @@
 
 修改接口：
 
-* [ModifyLivePushAuthKey](http://document.tencentcloudapi.woa.com/document/product/267/30423)
+* [DisableCCCPhoneNumber](http://document.tencentcloudapi.woa.com/document/product/679/76374)
 
-	* 新增入参：SignParam, TimeParam
-
-
-修改数据结构：
-
-* [PushAuthKeyInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#PushAuthKeyInfo)
-
-	* 新增成员：SignParam, TimeParam
+	* <font color="#dd0000">**修改入参**：</font>SdkAppId
 
 
 
 
-## 文字识别(ocr) 版本：2018-11-19
-
-### 第 43 次发布
-
-发布时间：2023-03-07 01:32:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [RecognizeReceiptOCR](http://document.tencentcloudapi.woa.com/document/product/866/77206)
-
-新增数据结构：
-
-* [ReceiptSkuInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#ReceiptSkuInfo)
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+## 负载均衡(clb) 版本：2018-03-17
 
 ### 第 33 次发布
 
-发布时间：2023-03-07 01:40:23
+发布时间：2023-03-08 01:09:38
 
 本次发布包含了以下内容：
 
@@ -184,35 +31,104 @@
 
 修改数据结构：
 
-* [RocketMQInstanceConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQInstanceConfig)
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancer)
 
-	* 新增成员：MaxQueuesPerTopic
+	* 新增成员：LoadBalancerDomain
 
-	* <font color="#dd0000">**修改成员**：</font>MaxTpsPerNamespace, MaxNamespaceNum, UsedNamespaceNum, MaxTopicNum, UsedTopicNum, MaxGroupNum, UsedGroupNum, ConfigDisplay, NodeCount, NodeDistribution, TopicDistribution
+* [LoadBalancerDetail](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancerDetail)
+
+	* 新增成员：LoadBalancerDomain
 
 
 
 
-## 微服务引擎 TSE(tse) 版本：2020-12-07
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 22 次发布
+### 第 43 次发布
 
-发布时间：2023-03-07 01:43:52
+发布时间：2023-03-08 01:19:06
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateEngine](http://document.tencentcloudapi.woa.com/document/product/1364/74907)
-
-	* 新增入参：EngineRegionInfos
-
+* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
 
 新增数据结构：
 
-* [EngineRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EngineRegionInfo)
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+* [CommonApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonApproverOption)
+* [CommonFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonFlowApprover)
+* [CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CreateFlowOption)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 46 次发布
+
+发布时间：2023-03-08 01:29:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Label](http://document.tencentcloudapi.woa.com/document/product/248/30354#Label)
+
+	* 新增成员：Name, Value
+
+* [PrometheusAgentInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAgentInfo)
+
+	* 新增成员：ClusterType, ClusterId, Describe
+
+
+
+
+## 运营产品中心(opc) 版本：2018-07-19
+
+### 第 2 次发布
+
+发布时间：2023-03-08 01:32:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddActivityWhitelistUin](http://document.tencentcloudapi.woa.com/document/product/1602/77209)
+* [DescribeActivityInfoByPageURL](http://document.tencentcloudapi.woa.com/document/product/1602/77208)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 25 次发布
+
+发布时间：2023-03-08 01:46:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [McuWaterMarkText](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkText)
+
+修改数据结构：
+
+* [McuWaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkParams)
+
+	* 新增成员：WaterMarkText
+
 
 
 
@@ -6021,6 +5937,21 @@
 
 ## 云呼叫中心(ccc) 版本：2020-02-10
 
+### 第 28 次发布
+
+发布时间：2023-03-08 01:05:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DisableCCCPhoneNumber](http://document.tencentcloudapi.woa.com/document/product/679/76374)
+
+	* <font color="#dd0000">**修改入参**：</font>SdkAppId
+
+
 ### 第 27 次发布
 
 发布时间：2023-03-07 01:10:21
@@ -11073,6 +11004,25 @@
 
 ## 负载均衡(clb) 版本：2018-03-17
 
+### 第 33 次发布
+
+发布时间：2023-03-08 01:09:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancer)
+
+	* 新增成员：LoadBalancerDomain
+
+* [LoadBalancerDetail](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancerDetail)
+
+	* 新增成员：LoadBalancerDomain
+
+
 ### 第 32 次发布
 
 发布时间：2023-03-03 01:12:40
@@ -15604,35 +15554,35 @@
 
 新增接口：
 
-* [[DeleteBaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/77199)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteBaselineRuleIgnore](http://document.tencentcloudapi.woa.com/document/product/296/77198)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteBaselineWeakPassword](http://document.tencentcloudapi.woa.com/document/product/296/77197)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77196)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineDetectOverview](http://document.tencentcloudapi.woa.com/document/product/296/77195)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineDownloadList](http://document.tencentcloudapi.woa.com/document/product/296/77194)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineFixList](http://document.tencentcloudapi.woa.com/document/product/296/77193)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineHostIgnoreList](http://document.tencentcloudapi.woa.com/document/product/296/77192)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineHostRiskTop](http://document.tencentcloudapi.woa.com/document/product/296/77191)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineItemIgnoreList](http://document.tencentcloudapi.woa.com/document/product/296/77190)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineItemInfo](http://document.tencentcloudapi.woa.com/document/product/296/77189)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineItemRiskTop](http://document.tencentcloudapi.woa.com/document/product/296/77188)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineRuleCategoryList](http://document.tencentcloudapi.woa.com/document/product/296/77187)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineRuleDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77186)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineRuleIgnoreList](http://document.tencentcloudapi.woa.com/document/product/296/77185)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineRuleList](http://document.tencentcloudapi.woa.com/document/product/296/77184)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineWeakPasswordList](http://document.tencentcloudapi.woa.com/document/product/296/77183)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeIgnoreHostAndItemConfig](http://document.tencentcloudapi.woa.com/document/product/296/77182)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ExportBaselineFixList](http://document.tencentcloudapi.woa.com/document/product/296/77181)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ExportBaselineHostDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77180)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ExportBaselineItemDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77179)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ExportBaselineItemList](http://document.tencentcloudapi.woa.com/document/product/296/77178)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ExportBaselineRuleDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77177)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ExportBaselineWeakPasswordList](http://document.tencentcloudapi.woa.com/document/product/296/77176)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[FixBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/77175)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyBaselinePolicyState](http://document.tencentcloudapi.woa.com/document/product/296/77174)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyBaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/77173)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyBaselineRuleIgnore](http://document.tencentcloudapi.woa.com/document/product/296/77172)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyBaselineWeakPassword](http://document.tencentcloudapi.woa.com/document/product/296/77171)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteBaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/77199)
+* [DeleteBaselineRuleIgnore](http://document.tencentcloudapi.woa.com/document/product/296/77198)
+* [DeleteBaselineWeakPassword](http://document.tencentcloudapi.woa.com/document/product/296/77197)
+* [DescribeBaselineDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77196)
+* [DescribeBaselineDetectOverview](http://document.tencentcloudapi.woa.com/document/product/296/77195)
+* [DescribeBaselineDownloadList](http://document.tencentcloudapi.woa.com/document/product/296/77194)
+* [DescribeBaselineFixList](http://document.tencentcloudapi.woa.com/document/product/296/77193)
+* [DescribeBaselineHostIgnoreList](http://document.tencentcloudapi.woa.com/document/product/296/77192)
+* [DescribeBaselineHostRiskTop](http://document.tencentcloudapi.woa.com/document/product/296/77191)
+* [DescribeBaselineItemIgnoreList](http://document.tencentcloudapi.woa.com/document/product/296/77190)
+* [DescribeBaselineItemInfo](http://document.tencentcloudapi.woa.com/document/product/296/77189)
+* [DescribeBaselineItemRiskTop](http://document.tencentcloudapi.woa.com/document/product/296/77188)
+* [DescribeBaselineRuleCategoryList](http://document.tencentcloudapi.woa.com/document/product/296/77187)
+* [DescribeBaselineRuleDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77186)
+* [DescribeBaselineRuleIgnoreList](http://document.tencentcloudapi.woa.com/document/product/296/77185)
+* [DescribeBaselineRuleList](http://document.tencentcloudapi.woa.com/document/product/296/77184)
+* [DescribeBaselineWeakPasswordList](http://document.tencentcloudapi.woa.com/document/product/296/77183)
+* [DescribeIgnoreHostAndItemConfig](http://document.tencentcloudapi.woa.com/document/product/296/77182)
+* [ExportBaselineFixList](http://document.tencentcloudapi.woa.com/document/product/296/77181)
+* [ExportBaselineHostDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77180)
+* [ExportBaselineItemDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77179)
+* [ExportBaselineItemList](http://document.tencentcloudapi.woa.com/document/product/296/77178)
+* [ExportBaselineRuleDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77177)
+* [ExportBaselineWeakPasswordList](http://document.tencentcloudapi.woa.com/document/product/296/77176)
+* [FixBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/77175)
+* [ModifyBaselinePolicyState](http://document.tencentcloudapi.woa.com/document/product/296/77174)
+* [ModifyBaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/77173)
+* [ModifyBaselineRuleIgnore](http://document.tencentcloudapi.woa.com/document/product/296/77172)
+* [ModifyBaselineWeakPassword](http://document.tencentcloudapi.woa.com/document/product/296/77171)
 
 修改接口：
 
@@ -15647,19 +15597,19 @@
 
 新增数据结构：
 
-* [[BaselineCategory](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineCategory)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineCategory](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineCategory))
-* [[BaselineCustomRuleIdName](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineCustomRuleIdName)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineCustomRuleIdName](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineCustomRuleIdName))
-* [[BaselineDownload](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDownload)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineDownload](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDownload))
-* [[BaselineFix](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineFix)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineFix](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineFix))
-* [[BaselineHost](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHost)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineHost](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHost))
-* [[BaselineItemInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemInfo)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineItemInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemInfo))
-* [[BaselinePolicyDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicyDetect)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselinePolicyDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicyDetect))
-* [[BaselineRiskItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRiskItem)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineRiskItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRiskItem))
-* [[BaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRule)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRule))
-* [[BaselineRuleDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRuleDetect)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineRuleDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRuleDetect))
-* [[BaselineWeakPassword](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineWeakPassword)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineWeakPassword](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineWeakPassword))
-* [[HostRiskLevelCount](http://document.tencentcloudapi.woa.com/document/product/296/19867#HostRiskLevelCount)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[HostRiskLevelCount](http://document.tencentcloudapi.woa.com/document/product/296/19867#HostRiskLevelCount))
-* [[Item](http://document.tencentcloudapi.woa.com/document/product/296/19867#Item)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[Item](http://document.tencentcloudapi.woa.com/document/product/296/19867#Item))
+* [BaselineCategory](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineCategory)
+* [BaselineCustomRuleIdName](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineCustomRuleIdName)
+* [BaselineDownload](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDownload)
+* [BaselineFix](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineFix)
+* [BaselineHost](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHost)
+* [BaselineItemInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemInfo)
+* [BaselinePolicyDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicyDetect)
+* [BaselineRiskItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRiskItem)
+* [BaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRule)
+* [BaselineRuleDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineRuleDetect)
+* [BaselineWeakPassword](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineWeakPassword)
+* [HostRiskLevelCount](http://document.tencentcloudapi.woa.com/document/product/296/19867#HostRiskLevelCount)
+* [Item](http://document.tencentcloudapi.woa.com/document/product/296/19867#Item)
 
 ### 第 46 次发布
 
@@ -19402,16 +19352,16 @@
 
 新增接口：
 
-* [[CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeEngineUsageInfo](http://document.tencentcloudapi.woa.com/document/product/1342/77205)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeLakeFsDirSummary](http://document.tencentcloudapi.woa.com/document/product/1342/77203)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeLakeFsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/77202)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SwitchDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77201)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpdateRowFilter](http://document.tencentcloudapi.woa.com/document/product/1342/77200)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+* [DescribeEngineUsageInfo](http://document.tencentcloudapi.woa.com/document/product/1342/77205)
+* [DescribeLakeFsDirSummary](http://document.tencentcloudapi.woa.com/document/product/1342/77203)
+* [DescribeLakeFsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/77202)
+* [SwitchDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77201)
+* [UpdateRowFilter](http://document.tencentcloudapi.woa.com/document/product/1342/77200)
 
 新增数据结构：
 
-* [[DataEngineConfigPair](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineConfigPair)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[DataEngineConfigPair](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineConfigPair))
+* [DataEngineConfigPair](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineConfigPair)
 
 修改数据结构：
 
@@ -23498,6 +23448,25 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 43 次发布
+
+发布时间：2023-03-08 01:19:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo))
+* [[CommonApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonApproverOption)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[CommonApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonApproverOption))
+* [[CommonFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonFlowApprover)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[CommonFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonFlowApprover))
+* [[CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CreateFlowOption)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CreateFlowOption))
 
 ### 第 42 次发布
 
@@ -31396,6 +31365,25 @@
 
 ## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
+### 第 46 次发布
+
+发布时间：2023-03-08 01:29:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Label](http://document.tencentcloudapi.woa.com/document/product/248/30354#Label)
+
+	* 新增成员：Name, Value
+
+* [PrometheusAgentInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAgentInfo)
+
+	* 新增成员：ClusterType, ClusterId, Describe
+
+
 ### 第 45 次发布
 
 发布时间：2023-03-03 01:27:59
@@ -34493,11 +34481,11 @@
 
 新增接口：
 
-* [[RecognizeReceiptOCR](http://document.tencentcloudapi.woa.com/document/product/866/77206)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [RecognizeReceiptOCR](http://document.tencentcloudapi.woa.com/document/product/866/77206)
 
 新增数据结构：
 
-* [[ReceiptSkuInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#ReceiptSkuInfo)](http://document.tencentcloudapi.woa.com/document/product/866/33527#[ReceiptSkuInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#ReceiptSkuInfo))
+* [ReceiptSkuInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#ReceiptSkuInfo)
 
 ### 第 42 次发布
 
@@ -35390,6 +35378,19 @@
 
 
 ## 运营产品中心(opc) 版本：2018-07-19
+
+### 第 2 次发布
+
+发布时间：2023-03-08 01:32:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddActivityWhitelistUin](http://document.tencentcloudapi.woa.com/document/product/1602/77209)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeActivityInfoByPageURL](http://document.tencentcloudapi.woa.com/document/product/1602/77208)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 1 次发布
 
@@ -47921,6 +47922,25 @@
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
+### 第 25 次发布
+
+发布时间：2023-03-08 01:46:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[McuWaterMarkText](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkText)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuWaterMarkText](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkText))
+
+修改数据结构：
+
+* [McuWaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkParams)
+
+	* 新增成员：WaterMarkText
+
+
 ### 第 24 次发布
 
 发布时间：2023-03-06 01:39:26
@@ -48510,7 +48530,7 @@
 
 新增数据结构：
 
-* [[EngineRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EngineRegionInfo)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[EngineRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EngineRegionInfo))
+* [EngineRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EngineRegionInfo)
 
 ### 第 21 次发布
 

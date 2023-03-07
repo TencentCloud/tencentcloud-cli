@@ -6,25 +6,25 @@ Input:
 
 ```
 tccli tke DescribeClusterSecurity --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx
+    --ClusterId cls-7ph3twqe
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "UserName": "xx",
-        "Domain": "xx",
-        "CertificationAuthority": "xx",
-        "Kubeconfig": "xx",
-        "PgwEndpoint": "xx",
-        "JnsGwEndpoint": "xx",
-        "RequestId": "xx",
+        "UserName": "admin",
+        "Domain": "cls-7ph3twqe.ccs.tencent-cloud.com",
+        "CertificationAuthority": "",
+        "Kubeconfig": "",
+        "PgwEndpoint": "0.0.0.0",
+        "JnsGwEndpoint": "127.0.0.1:8080",
+        "RequestId": "5f792091-66a7-40fc-8043-4d8b9537fa44",
         "SecurityPolicy": [
-            "xx"
+            "192.168.0.1"
         ],
-        "ClusterExternalEndpoint": "xx",
-        "Password": "xx"
+        "ClusterExternalEndpoint": "https://127.0.0.1",
+        "Password": ""
     }
 }
 ```
