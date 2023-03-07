@@ -96,12 +96,36 @@
         "title": "删除策略"
       }
     ],
+    "DeleteBaselineRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBaselineRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"35184372088862\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2c42036-e5c2-4ace-af66-7348922b5bbe\"\n    }\n}",
+        "title": "删除规则"
+      }
+    ],
+    "DeleteBaselineRuleIgnore": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBaselineRuleIgnore\n<公共请求参数>\n\n{\n    \"RuleIds\": [\n        \"125\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0cfbf290-f12e-430a-a867-682429cf1310\"\n    }\n}",
+        "title": "删除忽略规则"
+      }
+    ],
     "DeleteBaselineStrategy": [
       {
         "document": "根据基线策略id删除基线策略",
         "input": "https://cwp.tencentcloudapi.com/?Action=DeleteBaselineStrategy\n&StrategyId=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "删除基线策略接口"
+      }
+    ],
+    "DeleteBaselineWeakPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBaselineWeakPassword\n<公共请求参数>\n\n{\n    \"PasswordIds\": [\n        \"3433\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4618e64b-6ca2-4506-88b4-95084de25534\"\n    }\n}",
+        "title": "删除弱口令"
       }
     ],
     "DeleteBashEvents": [
@@ -584,6 +608,30 @@
         "title": "查询基线详情"
       }
     ],
+    "DescribeBaselineDetectList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineDetectList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 172,\n                \"TaskId\": 2290,\n                \"HostCount\": 48,\n                \"StartTime\": \"2022-08-16 15:41:07\",\n                \"FinishTime\": \"2022-08-16 15:44:25\",\n                \"PolicyName\": \"专业版主机弱口令+旗舰版\",\n                \"SuccessCount\": 0,\n                \"FailedCount\": 0,\n                \"TimeoutCount\": 0,\n                \"PolicyDetectStatus\": 2\n            },\n            {\n                \"PolicyId\": 172,\n                \"TaskId\": 2307,\n                \"HostCount\": 48,\n                \"StartTime\": \"2022-08-16 17:54:39\",\n                \"FinishTime\": \"2022-08-16 17:55:19\",\n                \"PolicyName\": \"专业版主机弱口令+旗舰版\",\n                \"SuccessCount\": 0,\n                \"FailedCount\": 0,\n                \"TimeoutCount\": 0,\n                \"PolicyDetectStatus\": 2\n            },\n            {\n                \"PolicyId\": 168,\n                \"TaskId\": 2298,\n                \"HostCount\": 48,\n                \"StartTime\": \"2022-08-16 17:06:08\",\n                \"FinishTime\": \"2022-08-16 17:15:23\",\n                \"PolicyName\": \"全部\",\n                \"SuccessCount\": 0,\n                \"FailedCount\": 0,\n                \"TimeoutCount\": 0,\n                \"PolicyDetectStatus\": 2\n            },\n            {\n                \"PolicyId\": 172,\n                \"TaskId\": 2295,\n                \"HostCount\": 48,\n                \"StartTime\": \"2022-08-16 16:56:35\",\n                \"FinishTime\": \"2022-08-16 16:58:39\",\n                \"PolicyName\": \"专业版主机弱口令+旗舰版\",\n                \"SuccessCount\": 0,\n                \"FailedCount\": 0,\n                \"TimeoutCount\": 0,\n                \"PolicyDetectStatus\": 2\n            },\n            {\n                \"PolicyId\": 172,\n                \"TaskId\": 2294,\n                \"HostCount\": 48,\n                \"StartTime\": \"2022-08-16 16:47:52\",\n                \"FinishTime\": \"2022-08-16 16:48:48\",\n                \"PolicyName\": \"专业版主机弱口令+旗舰版\",\n                \"SuccessCount\": 0,\n                \"FailedCount\": 0,\n                \"TimeoutCount\": 0,\n                \"PolicyDetectStatus\": 2\n            },\n            {\n                \"PolicyId\": 172,\n                \"TaskId\": 2288,\n                \"HostCount\": 48,\n                \"StartTime\": \"2022-08-16 15:02:40\",\n                \"FinishTime\": \"2022-08-16 15:04:43\",\n                \"PolicyName\": \"专业版主机弱口令+旗舰版\",\n                \"SuccessCount\": 0,\n                \"FailedCount\": 0,\n                \"TimeoutCount\": 0,\n                \"PolicyDetectStatus\": 2\n            },\n            {\n                \"PolicyId\": 168,\n                \"TaskId\": 2297,\n                \"HostCount\": 48,\n                \"StartTime\": \"2022-08-16 17:05:33\",\n                \"FinishTime\": \"2022-08-16 17:10:58\",\n                \"PolicyName\": \"全部\",\n                \"SuccessCount\": 0,\n                \"FailedCount\": 0,\n                \"TimeoutCount\": 0,\n                \"PolicyDetectStatus\": 2\n            },\n            {\n                \"PolicyId\": 172,\n                \"TaskId\": 2289,\n                \"HostCount\": 48,\n                \"StartTime\": \"2022-08-16 15:06:38\",\n                \"FinishTime\": \"2022-08-16 15:08:20\",\n                \"PolicyName\": \"专业版主机弱口令+旗舰版\",\n                \"SuccessCount\": 0,\n                \"FailedCount\": 0,\n                \"TimeoutCount\": 0,\n                \"PolicyDetectStatus\": 2\n            },\n            {\n                \"PolicyId\": 255,\n                \"TaskId\": 2305,\n                \"HostCount\": 48,\n                \"StartTime\": \"2022-08-16 17:13:52\",\n                \"FinishTime\": \"2022-08-16 17:14:21\",\n                \"PolicyName\": \"自定义啦啦\",\n                \"SuccessCount\": 0,\n                \"FailedCount\": 0,\n                \"TimeoutCount\": 0,\n                \"PolicyDetectStatus\": 2\n            },\n            {\n                \"PolicyId\": 257,\n                \"TaskId\": 2351,\n                \"HostCount\": 47,\n                \"StartTime\": \"2022-08-19 00:00:00\",\n                \"FinishTime\": \"2022-08-19 00:17:15\",\n                \"PolicyName\": \"1111\",\n                \"SuccessCount\": 0,\n                \"FailedCount\": 0,\n                \"TimeoutCount\": 0,\n                \"PolicyDetectStatus\": 2\n            }\n        ],\n        \"RequestId\": \"48f973be-b1f0-4f58-aa9e-7a813655ee43\",\n        \"Total\": 110\n    }\n}",
+        "title": "检测列表"
+      }
+    ],
+    "DescribeBaselineDetectOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineDetectOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"LatestPassCount\": 0,\n        \"HostCount\": 8,\n        \"LatestNotPassCount\": 0,\n        \"PolicyCount\": 18,\n        \"PassRate\": 0,\n        \"RequestId\": \"xx\",\n        \"ItemCount\": 2955\n    }\n}",
+        "title": "基线检测概要"
+      }
+    ],
+    "DescribeBaselineDownloadList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineDownloadList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"TaskId\": 1,\n                \"TaskName\": \"123\",\n                \"Status\": 0,\n                \"StartTime\": \"0001-01-01 00:00:00\",\n                \"EndTime\": \"0001-01-01 00:00:00\",\n                \"DownloadUrl\": \"http://www.a.b.c\"\n            },\n            {\n                \"TaskId\": 1659337212,\n                \"TaskName\": \"baseline_weak_password_2022-08-01 15:00:12\",\n                \"Status\": 1,\n                \"StartTime\": \"2022-08-01 15:00:12\",\n                \"EndTime\": \"2022-08-01 15:00:13\",\n                \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/baseline-weakpassword-20220801-9d17c467-07d5-41e8-b17a-08023b747cdb.csv?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1659337213%3B1659423613&q-key-time=1659337213%3B1659423613&q-header-list=host&q-url-param-list=&q-signature=0b4faed272a2849ab0b1c88a578a5c3302d99321\"\n            },\n            {\n                \"TaskId\": 1659338577,\n                \"TaskName\": \"baseline_item_result_2022-08-01 15:22:57\",\n                \"Status\": 1,\n                \"StartTime\": \"2022-08-01 15:22:57\",\n                \"EndTime\": \"2022-08-01 15:22:58\",\n                \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/baseline-item-result20220801-b9a74c51-6d64-476c-94bb-ef4321c23d19.csv?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1659338578%3B1659424978&q-key-time=1659338578%3B1659424978&q-header-list=host&q-url-param-list=&q-signature=5e8a8e35fa56b8ae40b2b75325523b6a272d5a0c\"\n            },\n            {\n                \"TaskId\": 1659340686,\n                \"TaskName\": \"baseline_host_view_result_2022-08-01 15:58:06\",\n                \"Status\": 1,\n                \"StartTime\": \"2022-08-01 15:58:06\",\n                \"EndTime\": \"2022-08-01 15:58:06\",\n                \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/baseline-host-view-20220801-334e8211-eece-408c-b7c2-6262799d16bf.csv?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1659340686%3B1659427086&q-key-time=1659340686%3B1659427086&q-header-list=host&q-url-param-list=&q-signature=deb402bb4d3b51a679cc2e88e0571f7d70ea3508\"\n            },\n            {\n                \"TaskId\": 1659341050,\n                \"TaskName\": \"baseline_rule_view_result_2022-08-01 16:04:10\",\n                \"Status\": 1,\n                \"StartTime\": \"2022-08-01 16:04:10\",\n                \"EndTime\": \"2022-08-01 16:04:10\",\n                \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/baseline-rule-view-result-20220801-e3e02620-290f-4e09-93a6-93010c39d9d2.csv?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1659341050%3B1659427450&q-key-time=1659341050%3B1659427450&q-header-list=host&q-url-param-list=&q-signature=7946fdb78f6d5197234d3aee67affe6159245bd1\"\n            },\n            {\n                \"TaskId\": 1659341335,\n                \"TaskName\": \"baseline_item_view_result_2022-08-01 16:08:55\",\n                \"Status\": 1,\n                \"StartTime\": \"2022-08-01 16:08:55\",\n                \"EndTime\": \"2022-08-01 16:08:56\",\n                \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/baseline-item-view-20220801-a92c6549-5371-4872-b1fc-c1b19cce6e20.csv?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1659341336%3B1659427736&q-key-time=1659341336%3B1659427736&q-header-list=host&q-url-param-list=&q-signature=e59b7a006fd6a9ff2354866eb9b8723b15bc95f1\"\n            },\n            {\n                \"TaskId\": 1659341438,\n                \"TaskName\": \"baseline_item_result_2022-08-01 16:10:38\",\n                \"Status\": 1,\n                \"StartTime\": \"2022-08-01 16:10:38\",\n                \"EndTime\": \"2022-08-01 16:10:38\",\n                \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/baseline-item-result-20220801-7281f049-ac13-4572-ae30-b37091be37e1.csv?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1659341438%3B1659427838&q-key-time=1659341438%3B1659427838&q-header-list=host&q-url-param-list=&q-signature=e194a8b23fc811b93706547cacf533d58defe639\"\n            },\n            {\n                \"TaskId\": 1659344330,\n                \"TaskName\": \"baseline_rule_view_result_2022-08-01 16:58:50\",\n                \"Status\": 1,\n                \"StartTime\": \"2022-08-01 16:58:50\",\n                \"EndTime\": \"2022-08-01 16:58:50\",\n                \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/baseline-rule-view-result-20220801-9decfcc3-4c03-45c5-8e1e-e2387d81fc9a.csv?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1659344330%3B1659430730&q-key-time=1659344330%3B1659430730&q-header-list=host&q-url-param-list=&q-signature=f4de013652394a87c8f2805304564da81475aa13\"\n            },\n            {\n                \"TaskId\": 1659344370,\n                \"TaskName\": \"baseline_rule_view_result_2022-08-01 16:59:30\",\n                \"Status\": 1,\n                \"StartTime\": \"2022-08-01 16:59:30\",\n                \"EndTime\": \"2022-08-01 16:59:30\",\n                \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/baseline-rule-view-result-20220801-e12ac1c4-bf1f-443d-bef5-42b8eb0adf6b.csv?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1659344370%3B1659430770&q-key-time=1659344370%3B1659430770&q-header-list=host&q-url-param-list=&q-signature=2a445f16f3334b835345c8cad77c91443de480dc\"\n            },\n            {\n                \"TaskId\": 1659344382,\n                \"TaskName\": \"baseline_rule_view_result_2022-08-01 16:59:42\",\n                \"Status\": 1,\n                \"StartTime\": \"2022-08-01 16:59:42\",\n                \"EndTime\": \"2022-08-01 16:59:42\",\n                \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/baseline-rule-view-result-20220801-6bb54b9e-d2c3-4d4b-a08c-8e6fa12e82b3.csv?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1659344382%3B1659430782&q-key-time=1659344382%3B1659430782&q-header-list=host&q-url-param-list=&q-signature=f4f3c8fb1401858225304d9a9c6cf28f6e8cc8a4\"\n            }\n        ],\n        \"RequestId\": \"b0596030-57ec-42aa-8e0f-738a6a07e2d0\",\n        \"Total\": 19\n    }\n}",
+        "title": "全部下载列表"
+      }
+    ],
     "DescribeBaselineEffectHostList": [
       {
         "document": "根据基线id查询基线影响主机列表数据",
@@ -592,12 +640,36 @@
         "title": "基线影响主机列表接口"
       }
     ],
+    "DescribeBaselineFixList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineFixList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": 334525,\n                \"ItemName\": \"Memcached UDP 端口可被利用为 DDOS 放大攻击\",\n                \"HostIp\": \"172.16.64.15\",\n                \"CreateTime\": \"2022-05-18 00:12:20\",\n                \"ModifyTime\": \"2022-07-28 15:02:32\",\n                \"FixTime\": \"2022-06-13 16:00:03\"\n            },\n            {\n                \"Id\": 335549,\n                \"ItemName\": \"确保在/tmp分区上设置nodev选项\",\n                \"HostIp\": \"10.0.22.10\",\n                \"CreateTime\": \"2022-05-26 16:14:51\",\n                \"ModifyTime\": \"2022-07-28 15:02:32\",\n                \"FixTime\": \"2022-06-15 17:02:55\"\n            },\n            {\n                \"Id\": 331453,\n                \"ItemName\": \"确保配置/etc/shadow-的权限\",\n                \"HostIp\": \"119.147.2.168\",\n                \"CreateTime\": \"2022-05-11 00:26:21\",\n                \"ModifyTime\": \"2022-07-28 15:02:32\",\n                \"FixTime\": \"2022-06-13 16:00:03\"\n            },\n            {\n                \"Id\": 331709,\n                \"ItemName\": \"Kubelet 未授权访问\",\n                \"HostIp\": \"10.0.22.46\",\n                \"CreateTime\": \"2022-05-11 17:07:31\",\n                \"ModifyTime\": \"2022-07-28 15:02:32\",\n                \"FixTime\": \"2022-06-13 16:00:03\"\n            },\n            {\n                \"Id\": 333501,\n                \"ItemName\": \"确保已启用auditd服务\",\n                \"HostIp\": \"172.16.16.37\",\n                \"CreateTime\": \"2022-05-17 17:47:12\",\n                \"ModifyTime\": \"2022-07-28 15:02:32\",\n                \"FixTime\": \"2022-06-13 16:00:03\"\n            },\n            {\n                \"Id\": 340925,\n                \"ItemName\": \"确保在/etc/issue.net上配置了权限\",\n                \"HostIp\": \"192.168.111.12\",\n                \"CreateTime\": \"2022-06-21 15:39:02\",\n                \"ModifyTime\": \"2022-07-28 15:02:32\",\n                \"FixTime\": \"2022-06-24 17:07:13\"\n            },\n            {\n                \"Id\": 338621,\n                \"ItemName\": \"禁用自动挂载\",\n                \"HostIp\": \"192.168.53.10\",\n                \"CreateTime\": \"2022-05-31 17:07:25\",\n                \"ModifyTime\": \"2022-07-28 15:02:32\",\n                \"FixTime\": \"2022-06-13 16:00:03\"\n            },\n            {\n                \"Id\": 347069,\n                \"ItemName\": \"未限制Nginx账户登录系统 \",\n                \"HostIp\": \"10.0.0.68\",\n                \"CreateTime\": \"2022-07-28 17:16:14\",\n                \"ModifyTime\": \"2022-08-04 11:31:13\",\n                \"FixTime\": \"2022-07-28 17:16:14\"\n            },\n            {\n                \"Id\": 343357,\n                \"ItemName\": \"确保在/var/tmp分区上设置nodev选项\",\n                \"HostIp\": \"10.0.0.14\",\n                \"CreateTime\": \"2022-06-30 17:07:32\",\n                \"ModifyTime\": \"2022-07-28 15:02:32\",\n                \"FixTime\": \"2022-07-03 17:11:47\"\n            },\n            {\n                \"Id\": 335677,\n                \"ItemName\": \"确保在/tmp分区上设置了noexec选项\",\n                \"HostIp\": \"10.0.22.33\",\n                \"CreateTime\": \"2022-05-26 16:20:28\",\n                \"ModifyTime\": \"2022-07-28 15:02:32\",\n                \"FixTime\": \"2022-06-13 16:00:03\"\n            }\n        ],\n        \"RequestId\": \"8a667d00-bc48-4ab7-8725-cd6728e121ca\",\n        \"Total\": 1402\n    }\n}",
+        "title": "全部修复"
+      }
+    ],
     "DescribeBaselineHostDetectList": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineHostDetectList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"HostId\": \"a0770b41-9697-4a1d-8150-b8fa247b6189\",\n                \"HostIp\": \"172.23.16.10\",\n                \"HostName\": \"功能测试ubuntu20漏洞修复v_txmitan\",\n                \"WanIp\": \"10.104.9.1\",\n                \"DetectStatus\": 0,\n                \"PassedItemCount\": 188,\n                \"NotPassedItemCount\": 202,\n                \"ItemCount\": 390,\n                \"FirstTime\": \"2022-05-11 17:11:32\",\n                \"LastTime\": \"2022-08-23 14:28:51\",\n                \"Uuid\": \"a0770b41-9697-4a1d-8150-b8fa247b6189\"\n            },\n            {\n                \"HostId\": \"36a78a1e-7711-4e7f-9fbe-c7afab78cd78\",\n                \"HostIp\": \"10.255.0.36\",\n                \"HostName\": \"jaryzhou-编码测试\",\n                \"WanIp\": \"10.104.9.1\",\n                \"DetectStatus\": 0,\n                \"PassedItemCount\": 183,\n                \"NotPassedItemCount\": 203,\n                \"ItemCount\": 386,\n                \"FirstTime\": \"2022-08-17 12:53:15\",\n                \"LastTime\": \"2022-08-17 12:53:15\",\n                \"Uuid\": \"36a78a1e-7711-4e7f-9fbe-c7afab78cd78\"\n            },\n            {\n                \"HostId\": \"cc0e8a25-7169-4b5c-a929-2b4cccbfce10\",\n                \"HostIp\": \"172.23.16.4\",\n                \"HostName\": \"功能测试ubuntu18漏洞修复v_txmitan\",\n                \"WanIp\": \"10.104.9.1\",\n                \"DetectStatus\": 0,\n                \"PassedItemCount\": 186,\n                \"NotPassedItemCount\": 183,\n                \"ItemCount\": 369,\n                \"FirstTime\": \"2022-05-11 17:11:16\",\n                \"LastTime\": \"2022-08-23 10:48:21\",\n                \"Uuid\": \"cc0e8a25-7169-4b5c-a929-2b4cccbfce10\"\n            },\n            {\n                \"HostId\": \"59b8dd86-333a-4b4a-872f-2162614e5e97\",\n                \"HostIp\": \"172.23.16.7\",\n                \"HostName\": \"功能测试ubuntu14漏洞修复v_txmitan\",\n                \"WanIp\": \"10.104.9.1\",\n                \"DetectStatus\": 0,\n                \"PassedItemCount\": 225,\n                \"NotPassedItemCount\": 132,\n                \"ItemCount\": 357,\n                \"FirstTime\": \"2022-05-11 17:08:46\",\n                \"LastTime\": \"2022-08-22 17:01:23\",\n                \"Uuid\": \"59b8dd86-333a-4b4a-872f-2162614e5e97\"\n            },\n            {\n                \"HostId\": \"044889f8-d6a2-4fc3-a8a8-c114b6f5266b\",\n                \"HostIp\": \"172.23.16.14\",\n                \"HostName\": \"功能测试ubuntu16漏洞修复v_txmitan\",\n                \"WanIp\": \"10.104.9.1\",\n                \"DetectStatus\": 0,\n                \"PassedItemCount\": 226,\n                \"NotPassedItemCount\": 131,\n                \"ItemCount\": 357,\n                \"FirstTime\": \"2022-08-03 14:10:06\",\n                \"LastTime\": \"2022-08-22 21:37:14\",\n                \"Uuid\": \"044889f8-d6a2-4fc3-a8a8-c114b6f5266b\"\n            },\n            {\n                \"HostId\": \"d8feb20e-dcdd-461b-9b37-336c42d48657\",\n                \"HostIp\": \"172.16.0.49\",\n                \"HostName\": \"功能测试软件较多_ivon\",\n                \"WanIp\": \"10.104.9.1\",\n                \"DetectStatus\": 0,\n                \"PassedItemCount\": 176,\n                \"NotPassedItemCount\": 160,\n                \"ItemCount\": 336,\n                \"FirstTime\": \"2022-08-03 14:09:26\",\n                \"LastTime\": \"2022-08-23 10:48:32\",\n                \"Uuid\": \"7168bc08-c1b8-11ea-9053-48fd8e5f474c\"\n            },\n            {\n                \"HostId\": \"346f0497-894c-492f-9afb-ccef1fdb3adc\",\n                \"HostIp\": \"172.16.0.40\",\n                \"HostName\": \"cwp性能测试_ivon\",\n                \"WanIp\": \"10.104.9.1\",\n                \"DetectStatus\": 0,\n                \"PassedItemCount\": 178,\n                \"NotPassedItemCount\": 157,\n                \"ItemCount\": 335,\n                \"FirstTime\": \"2022-08-17 12:52:39\",\n                \"LastTime\": \"2022-08-17 17:24:13\",\n                \"Uuid\": \"346f0497-894c-492f-9afb-ccef1fdb3adc\"\n            },\n            {\n                \"HostId\": \"8c09e1b1-5611-45b3-9c02-737996011b81\",\n                \"HostIp\": \"172.27.16.8\",\n                \"HostName\": \"cos挂载验证_ivon\",\n                \"WanIp\": \"10.104.9.1\",\n                \"DetectStatus\": 0,\n                \"PassedItemCount\": 177,\n                \"NotPassedItemCount\": 158,\n                \"ItemCount\": 335,\n                \"FirstTime\": \"2022-08-03 14:11:35\",\n                \"LastTime\": \"2022-08-23 10:48:21\",\n                \"Uuid\": \"8c09e1b1-5611-45b3-9c02-737996011b81\"\n            },\n            {\n                \"HostId\": \"bce5ff2e-8c8d-4077-9acc-80ce542a6937\",\n                \"HostIp\": \"172.16.16.10\",\n                \"HostName\": \"v_vxuebai\",\n                \"WanIp\": \"10.104.9.1\",\n                \"DetectStatus\": 0,\n                \"PassedItemCount\": 178,\n                \"NotPassedItemCount\": 157,\n                \"ItemCount\": 335,\n                \"FirstTime\": \"2022-05-10 20:14:37\",\n                \"LastTime\": \"2022-08-17 12:52:37\",\n                \"Uuid\": \"bce5ff2e-8c8d-4077-9acc-80ce542a6937\"\n            },\n            {\n                \"HostId\": \"ea6ce403-d165-4ed4-8362-958667c9ae37\",\n                \"HostIp\": \"172.16.16.33\",\n                \"HostName\": \"v_vxuebai-1\",\n                \"WanIp\": \"10.104.9.1\",\n                \"DetectStatus\": 0,\n                \"PassedItemCount\": 178,\n                \"NotPassedItemCount\": 156,\n                \"ItemCount\": 334,\n                \"FirstTime\": \"2022-06-21 15:36:02\",\n                \"LastTime\": \"2022-08-17 12:51:20\",\n                \"Uuid\": \"ea6ce403-d165-4ed4-8362-958667c9ae37\"\n            }\n        ],\n        \"RequestId\": \"fca17381-b0fa-45c4-8568-82c186be9dc0\",\n        \"Total\": 36\n    }\n}",
         "title": "主机视角检测列表"
+      }
+    ],
+    "DescribeBaselineHostIgnoreList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineHostIgnoreList\n<公共请求参数>\n\n{\n    \"RuleID\": \"126\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"HostId\": \"d8feb20e-dcdd-461b-9b37-336c42d48657\",\n                \"HostName\": \"功能测试软件较多_ivon\",\n                \"HostTag\": \"\",\n                \"HostIp\": \"172.16.0.49\",\n                \"WanIp\": \"10.104.9.1\"\n            }\n        ],\n        \"RequestId\": \"0eb82ff4-667a-4525-82b5-e304aee952ee\",\n        \"Total\": 1\n    }\n}",
+        "title": "忽略规则关联的主机"
+      }
+    ],
+    "DescribeBaselineHostRiskTop": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineHostRiskTop\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"HostRiskTop5\": [\n            {\n                \"HostId\": \"36a78a1e-7711-4e7f-9fbe-c7afab78cd78\",\n                \"HostName\": \"jaryzhou-编码测试\",\n                \"SeriousCount\": 0,\n                \"HighCount\": 32,\n                \"MediumCount\": 126,\n                \"LowCount\": 45\n            },\n            {\n                \"HostId\": \"a0770b41-9697-4a1d-8150-b8fa247b6189\",\n                \"HostName\": \"功能测试ubuntu20漏洞修复v_txmitan\",\n                \"SeriousCount\": 0,\n                \"HighCount\": 33,\n                \"MediumCount\": 125,\n                \"LowCount\": 44\n            },\n            {\n                \"HostId\": \"cc0e8a25-7169-4b5c-a929-2b4cccbfce10\",\n                \"HostName\": \"功能测试ubuntu18漏洞修复v_txmitan\",\n                \"SeriousCount\": 0,\n                \"HighCount\": 17,\n                \"MediumCount\": 123,\n                \"LowCount\": 43\n            },\n            {\n                \"HostId\": \"69796250-2a3a-40ef-b418-676e677019a4\",\n                \"HostName\": \"piperpeng-test2\",\n                \"SeriousCount\": 0,\n                \"HighCount\": 25,\n                \"MediumCount\": 116,\n                \"LowCount\": 23\n            },\n            {\n                \"HostId\": \"dbf3dcd4-179a-4bc6-86e4-15439f4cc898\",\n                \"HostName\": \"漏洞yhvs编译机-linux\",\n                \"SeriousCount\": 0,\n                \"HighCount\": 25,\n                \"MediumCount\": 117,\n                \"LowCount\": 21\n            }\n        ],\n        \"RequestId\": \"fc13bcdc-464f-4f94-a985-239e499d0bc0\"\n    }\n}",
+        "title": "主机风险top5"
       }
     ],
     "DescribeBaselineHostTop": [
@@ -616,12 +688,42 @@
         "title": "全部检测项视角结果"
       }
     ],
+    "DescribeBaselineItemIgnoreList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineItemIgnoreList\n<公共请求参数>\n\n{\n    \"RuleID\": \"125\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"529a6a2c-91ef-44e3-a822-953846e0e596\",\n        \"Total\": 0\n    }\n}",
+        "title": "检测项列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineItemIgnoreList\n<公共请求参数>\n\n{\n    \"RuleID\": \"125\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"529a6a2c-91ef-44e3-a822-953846e0e596\",\n        \"Total\": 0\n    }\n}",
+        "title": "忽略检测项列表"
+      }
+    ],
+    "DescribeBaselineItemInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineItemInfo\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ItemId\": 1001,\n                \"ItemName\": \"Kubelet 未授权访问\",\n                \"RuleId\": 74,\n                \"ItemDesc\": \"Kubelet 未限制访问来源且未配置任何认证，导致攻击者可以在任意 Pod 中执行任意代码。也可以造成 Pod 泄漏导致敏感信息泄漏等。\",\n                \"FixMethod\": \"1. kubelet 监听在本地：\\n--address=127.0.0.1\\n\\n2. kubelet server 禁止匿名访问：\\n--anonymous-auth=false\\n\\n如果已经通过防火墙等方式对端口访问进行限制，请忽略。\\n\\n3. 配置证书：\\n--client-ca-file=path/to/ca\\n--kubelet-client-certificate\\n--kubelet-client-key\",\n                \"RuleName\": \"Kubelet 未授权访问\",\n                \"Level\": 3,\n                \"SysRuleId\": 74,\n                \"RelatedCustomRuleInfo\": []\n            }\n        ],\n        \"RequestId\": \"90344239-519c-4f7f-8a71-1820d38e163c\",\n        \"Total\": 2955\n    }\n}",
+        "title": "检测项信息"
+      }
+    ],
     "DescribeBaselineItemList": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineItemList\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ItemId\": 3077,\n                \"ItemName\": \"确保未启用DNS服务\",\n                \"CategoryId\": 19,\n                \"ItemDesc\": \"域名系统（DNS）是一种分层命名系统，它将名称映射到IP地址，以连接到网络的计算机，服务和其他资源。\\n\",\n                \"FixMethod\": \"运行以下命令以禁用named：\\n# systemctl disable bind9\",\n                \"RuleName\": \"国际标准-Ubuntu 16安全基线检查Level1\",\n                \"DetectResultDesc\": \"\",\n                \"Level\": 2,\n                \"CanBeFixed\": 0,\n                \"DetectStatus\": 3,\n                \"HostName\": \"功能测试ubuntu16漏洞修复v_txmitan\",\n                \"HostIp\": \"172.23.16.14\",\n                \"HostId\": \"044889f8-d6a2-4fc3-a8a8-c114b6f5266b\",\n                \"WanIp\": \"10.104.9.1\",\n                \"LastTime\": \"2022-08-22 09:48:42\",\n                \"FirstTime\": \"2022-08-06 09:43:07\",\n                \"Uuid\": \"044889f8-d6a2-4fc3-a8a8-c114b6f5266b\"\n            }\n        ],\n        \"RequestId\": \"3a2b20bc-2e93-46b3-8bb7-b655aa249c00\",\n        \"Total\": 8412\n    }\n}",
         "title": "检测项结果"
+      }
+    ],
+    "DescribeBaselineItemRiskTop": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineItemRiskTop\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"718b3dda-c0a7-409c-84bd-712411880bbe\",\n        \"RiskItemTop5\": [\n            {\n                \"ItemId\": 1505,\n                \"ItemName\": \"Linux口令过期后账号最长有效天数策略\",\n                \"Level\": 2,\n                \"HostCount\": 31\n            },\n            {\n                \"ItemId\": 1509,\n                \"ItemName\": \"限制root权限用户远程登录\",\n                \"Level\": 2,\n                \"HostCount\": 31\n            },\n            {\n                \"ItemId\": 1500,\n                \"ItemName\": \"SSH监听在默认端口\",\n                \"Level\": 1,\n                \"HostCount\": 31\n            },\n            {\n                \"ItemId\": 5275,\n                \"ItemName\": \"检查SSH的root用户登录是否被禁用\",\n                \"Level\": 3,\n                \"HostCount\": 22\n            },\n            {\n                \"ItemId\": 5273,\n                \"ItemName\": \"检查账户超时自动登出设置\",\n                \"Level\": 2,\n                \"HostCount\": 22\n            }\n        ]\n    }\n}",
+        "title": "检测项top5"
       }
     ],
     "DescribeBaselineList": [
@@ -646,6 +748,38 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBaselineRule\n&BaselineId=100441\n&Level.0=1\n&Status=0\n&Quuid=\"8c8a-69e3ab73aa8a\"\n&Uuid=\"asdasd123-124sfas\"\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"TotalCount\": 21,\n        \"ShowRuleRemark\": true,\n        \"BaselineRuleList\": [\n            {\n                \"RuleName\": \"安全检测项目1\",\n                \"Description\": \"安全检测项目1描述\",\n                \"FixMessage\": \"重新启动服务\",\n                \"Level\": 1,\n                \"Status\": 0,\n                \"RuleId\": 1,\n                \"LastScanAt\": \"2020-09-16 ：00:00:00\",\n                \"EventId\": 1,\n                \"Uuid\": \"Uuid\"\n            }\n        ]\n    }\n}",
         "title": "查询基线检测项信息"
+      }
+    ],
+    "DescribeBaselineRuleCategoryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineRuleCategoryList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"CategoryId\": 1,\n                \"ParentCategoryId\": 0,\n                \"CategoryName\": \"等保合规\"\n            },\n            {\n                \"CategoryId\": 3,\n                \"ParentCategoryId\": 0,\n                \"CategoryName\": \"未授权访问\"\n            },\n            {\n                \"CategoryId\": 4,\n                \"ParentCategoryId\": 0,\n                \"CategoryName\": \"弱口令\"\n            },\n            {\n                \"CategoryId\": 5,\n                \"ParentCategoryId\": 0,\n                \"CategoryName\": \"远程代码执行\"\n            },\n            {\n                \"CategoryId\": 6,\n                \"ParentCategoryId\": 0,\n                \"CategoryName\": \"其他\"\n            },\n            {\n                \"CategoryId\": 7,\n                \"ParentCategoryId\": 0,\n                \"CategoryName\": \"腾讯云安全标准\"\n            }\n        ],\n        \"RequestId\": \"0be3d997-550d-4762-8a6e-243994719407\"\n    }\n}",
+        "title": "基线分类"
+      }
+    ],
+    "DescribeBaselineRuleDetectList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineRuleDetectList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"RuleId\": 125,\n                \"RuleName\": \"信息泄露基线检查\",\n                \"RuleDesc\": \"信息泄露基线检查\",\n                \"ItemCount\": 5,\n                \"HostCount\": 36,\n                \"FirstTime\": \"2022-05-11 01:03:35\",\n                \"LastTime\": \"2022-08-23 09:48:19\",\n                \"DetectStatus\": 0,\n                \"ItemIds\": [\n                    1900,\n                    1901,\n                    1902,\n                    1903,\n                    1904\n                ]\n            },\n            {\n                \"RuleId\": 124,\n                \"RuleName\": \"Nginx安全基线检查\",\n                \"RuleDesc\": \"Nginx安全基线检查\",\n                \"ItemCount\": 6,\n                \"HostCount\": 36,\n                \"FirstTime\": \"2022-05-11 01:03:35\",\n                \"LastTime\": \"2022-08-23 10:48:36\",\n                \"DetectStatus\": 0,\n                \"ItemIds\": [\n                    1800,\n                    1801,\n                    1802,\n                    1803,\n                    1804,\n                    1805\n                ]\n            },\n            {\n                \"RuleId\": 120,\n                \"RuleName\": \"MongoDB安全基线检查\",\n                \"RuleDesc\": \"MongoDB安全基线检查\",\n                \"ItemCount\": 4,\n                \"HostCount\": 36,\n                \"FirstTime\": \"2022-05-11 01:03:35\",\n                \"LastTime\": \"2022-08-23 09:48:19\",\n                \"DetectStatus\": 3,\n                \"ItemIds\": [\n                    1400,\n                    1401,\n                    1402,\n                    1403\n                ]\n            },\n            {\n                \"RuleId\": 74,\n                \"RuleName\": \"Kubelet 未授权访问\",\n                \"RuleDesc\": \"Kubelet 未授权访问\",\n                \"ItemCount\": 1,\n                \"HostCount\": 34,\n                \"FirstTime\": \"2022-05-11 17:07:31\",\n                \"LastTime\": \"2022-08-23 09:48:19\",\n                \"DetectStatus\": 3,\n                \"ItemIds\": [\n                    1001\n                ]\n            },\n            {\n                \"RuleId\": 51,\n                \"RuleName\": \"MySQL 弱口令检测\",\n                \"RuleDesc\": \"MySQL 弱口令检测\",\n                \"ItemCount\": 1,\n                \"HostCount\": 34,\n                \"FirstTime\": \"2022-05-11 01:03:35\",\n                \"LastTime\": \"2022-08-23 09:48:19\",\n                \"DetectStatus\": 0,\n                \"ItemIds\": [\n                    1103\n                ]\n            },\n            {\n                \"RuleId\": 52,\n                \"RuleName\": \"Tomcat 弱口令检测\",\n                \"RuleDesc\": \"Tomcat 弱口令检测\",\n                \"ItemCount\": 1,\n                \"HostCount\": 34,\n                \"FirstTime\": \"2022-05-11 01:03:35\",\n                \"LastTime\": \"2022-08-23 09:48:19\",\n                \"DetectStatus\": 3,\n                \"ItemIds\": [\n                    1101\n                ]\n            },\n            {\n                \"RuleId\": 70,\n                \"RuleName\": \"CouchDB未授权访问\",\n                \"RuleDesc\": \"CouchDB未授权访问\",\n                \"ItemCount\": 1,\n                \"HostCount\": 34,\n                \"FirstTime\": \"2022-05-11 17:07:31\",\n                \"LastTime\": \"2022-08-23 09:48:19\",\n                \"DetectStatus\": 3,\n                \"ItemIds\": [\n                    1005\n                ]\n            },\n            {\n                \"RuleId\": 71,\n                \"RuleName\": \"Elasticsearch未授权访问\",\n                \"RuleDesc\": \"Elasticsearch未授权访问\",\n                \"ItemCount\": 1,\n                \"HostCount\": 34,\n                \"FirstTime\": \"2022-05-11 17:07:31\",\n                \"LastTime\": \"2022-08-23 09:48:19\",\n                \"DetectStatus\": 3,\n                \"ItemIds\": [\n                    1004\n                ]\n            },\n            {\n                \"RuleId\": 58,\n                \"RuleName\": \"ActiveMQ基线合规检测\",\n                \"RuleDesc\": \"ActiveMQ基线合规检测\",\n                \"ItemCount\": 1,\n                \"HostCount\": 34,\n                \"FirstTime\": \"2022-05-11 01:03:35\",\n                \"LastTime\": \"2022-08-23 09:48:19\",\n                \"DetectStatus\": 3,\n                \"ItemIds\": [\n                    1108\n                ]\n            },\n            {\n                \"RuleId\": 72,\n                \"RuleName\": \"MongoDB未授权访问\",\n                \"RuleDesc\": \"MongoDB未授权访问\",\n                \"ItemCount\": 1,\n                \"HostCount\": 33,\n                \"FirstTime\": \"2022-05-11 17:07:31\",\n                \"LastTime\": \"2022-08-23 09:48:19\",\n                \"DetectStatus\": 3,\n                \"ItemIds\": [\n                    1003\n                ]\n            }\n        ],\n        \"RequestId\": \"55a2919d-7bd6-4220-b347-cb9cfca9dd6c\",\n        \"Total\": 70\n    }\n}",
+        "title": "检测规则视角"
+      }
+    ],
+    "DescribeBaselineRuleIgnoreList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineRuleIgnoreList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"RuleName\": \"test\",\n                \"CategoryId\": -1,\n                \"RuleDesc\": \"ignore rule\",\n                \"Items\": [],\n                \"RuleId\": 125,\n                \"RuleType\": 1,\n                \"HostCount\": 0,\n                \"HostIps\": [\n                    \"\"\n                ]\n            }\n        ],\n        \"RequestId\": \"aaddca9b-8634-47c5-bdf3-add2f36ad7a9\",\n        \"Total\": 1\n    }\n}",
+        "title": "忽略策略列表"
+      }
+    ],
+    "DescribeBaselineRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineRuleList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"test\"\n            ],\n            \"Name\": \"RuleName\"\n        }\n    ],\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"RuleName\": \"test111\",\n                \"CategoryId\": -1,\n                \"RuleDesc\": \"test111\",\n                \"Items\": [\n                    {\n                        \"ItemId\": 1000\n                    }\n                ],\n                \"RuleId\": 35184372088862,\n                \"RuleType\": 1,\n                \"HostCount\": 0\n            }\n        ],\n        \"RequestId\": \"8d445426-dfea-459c-9a13-1c1a3141353d\",\n        \"Total\": 1\n    }\n}",
+        "title": "规则列表"
       }
     ],
     "DescribeBaselineScanSchedule": [
@@ -678,6 +812,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBaselineTop\n&StrategyId=1\n&Top=5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"RuleTopList\": [\n            {\n                \"RuleName\": \"检测项名1\",\n                \"Level\": 1,\n                \"EventCount\": 4000,\n                \"RuleId\": 1\n            },\n            {\n                \"RuleName\": \"检测项名2\",\n                \"Level\": 2,\n                \"EventCount\": 4000,\n                \"RuleId\": 2\n            }\n        ]\n    }\n}",
         "title": "基线检测项TOP接口"
+      }
+    ],
+    "DescribeBaselineWeakPasswordList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineWeakPasswordList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PasswordId\": 2431,\n                \"WeakPassword\": \"132\",\n                \"CreateTime\": \"2022-07-28 21:37:22\",\n                \"ModifyTime\": \"2022-07-28 21:37:22\"\n            },\n            {\n                \"PasswordId\": 2432,\n                \"WeakPassword\": \"133\",\n                \"CreateTime\": \"2022-07-28 21:37:22\",\n                \"ModifyTime\": \"2022-07-28 21:37:22\"\n            },\n            {\n                \"PasswordId\": 2433,\n                \"WeakPassword\": \"134\",\n                \"CreateTime\": \"2022-07-28 21:37:22\",\n                \"ModifyTime\": \"2022-07-28 21:37:22\"\n            },\n            {\n                \"PasswordId\": 2434,\n                \"WeakPassword\": \"135\",\n                \"CreateTime\": \"2022-07-28 21:37:22\",\n                \"ModifyTime\": \"2022-07-28 21:37:22\"\n            },\n            {\n                \"PasswordId\": 2435,\n                \"WeakPassword\": \"136\",\n                \"CreateTime\": \"2022-07-28 21:37:22\",\n                \"ModifyTime\": \"2022-07-28 21:37:22\"\n            },\n            {\n                \"PasswordId\": 2436,\n                \"WeakPassword\": \"137\",\n                \"CreateTime\": \"2022-07-28 21:37:22\",\n                \"ModifyTime\": \"2022-07-28 21:37:22\"\n            },\n            {\n                \"PasswordId\": 2437,\n                \"WeakPassword\": \"138\",\n                \"CreateTime\": \"2022-07-28 21:37:22\",\n                \"ModifyTime\": \"2022-07-28 21:37:22\"\n            },\n            {\n                \"PasswordId\": 2438,\n                \"WeakPassword\": \"139\",\n                \"CreateTime\": \"2022-07-28 21:37:22\",\n                \"ModifyTime\": \"2022-07-28 21:37:22\"\n            },\n            {\n                \"PasswordId\": 2439,\n                \"WeakPassword\": \"140\",\n                \"CreateTime\": \"2022-07-28 21:37:22\",\n                \"ModifyTime\": \"2022-07-28 21:37:22\"\n            },\n            {\n                \"PasswordId\": 2440,\n                \"WeakPassword\": \"141\",\n                \"CreateTime\": \"2022-07-28 21:37:22\",\n                \"ModifyTime\": \"2022-07-28 21:37:22\"\n            }\n        ],\n        \"RequestId\": \"a5ac3a8f-b4a5-4d0c-a8ef-c24601bffd98\",\n        \"Total\": 998\n    }\n}",
+        "title": "弱口令配置"
       }
     ],
     "DescribeBashEvents": [
@@ -828,6 +970,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeIgnoreBaselineRule\n&Limit=10\n&Offset=0\n&RuleName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"TotalCount\": 100,\n        \"IgnoreBaselineRuleList\": [\n            {\n                \"RuleName\": \"检测项1\",\n                \"RuleId\": 1,\n                \"EffectHostCount\": 20,\n                \"ModifyTime\": \"2020-11-11 :00:00:00\",\n                \"Fix\": \"重启\"\n            },\n            {\n                \"RuleName\": \"检测项2\",\n                \"EffectHostCount\": 25,\n                \"RuleId\": 12,\n                \"ModifyTime\": \"2020-11-11 :00:00:50\",\n                \"Fix\": \"重启2次\"\n            }\n        ]\n    }\n}",
         "title": "查询忽略检测项信息"
+      }
+    ],
+    "DescribeIgnoreHostAndItemConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIgnoreHostAndItemConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"HostSet\": [],\n        \"ItemSet\": [],\n        \"RequestId\": \"8cecce8d-a57b-4209-a09b-8366ff0b5cf5\"\n    }\n}",
+        "title": "所有主机和检测项配置"
       }
     ],
     "DescribeIgnoreRuleEffectHostList": [
@@ -1170,7 +1320,7 @@
       {
         "document": "使用appid查询定时检测配置的信息",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeScanVulSetting\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"VulCategories\": \"xx\",\n        \"TimerTime\": \"xx\",\n        \"VulLevels\": \"xx\",\n        \"VulEmergency\": 1,\n        \"RequestId\": \"xx\",\n        \"TimerInterval\": 1,\n        \"EndTime\": \"\",\n        \"EnableScan\": 1,\n        \"StartTime\": \"\",\n        \"ClickTimeout\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VulCategories\": \"xx\",\n        \"TimerTime\": \"xx\",\n        \"VulLevels\": \"xx\",\n        \"VulEmergency\": 1,\n        \"RequestId\": \"xx\",\n        \"TimerInterval\": 1,\n        \"EndTime\": \"\",\n        \"EnableScan\": 1,\n        \"StartTime\": \"\",\n        \"ClickTimeout\": 0,\n        \"Uuids\": []\n    }\n}",
         "title": "查询定时检测配置信息"
       }
     ],
@@ -1454,12 +1604,60 @@
         "title": "漏洞影响主机列表导出"
       }
     ],
+    "ExportBaselineFixList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportBaselineFixList\n<公共请求参数>\n\n{\n    \"ExportAll\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c448f6ff-997e-41a4-b068-da45a467e258\"\n    }\n}",
+        "title": "导出全部"
+      }
+    ],
+    "ExportBaselineHostDetectList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportBaselineHostDetectList\n<公共请求参数>\n\n{\n    \"ExportAll\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69b009b3-93dd-4d91-93a0-165e9fdb976d\"\n    }\n}",
+        "title": "主机视角导出"
+      }
+    ],
+    "ExportBaselineItemDetectList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportBaselineItemDetectList\n<公共请求参数>\n\n{\n    \"ExportAll\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"edd85ca1-0428-48d2-9502-84715e701b77\"\n    }\n}",
+        "title": "检测项视角导出"
+      }
+    ],
+    "ExportBaselineItemList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportBaselineItemList\n<公共请求参数>\n\n{\n    \"ExportAll\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f5dcb2a-6f3e-4f10-9eee-e47a51255cbb\"\n    }\n}",
+        "title": "检测结果导出"
+      }
+    ],
     "ExportBaselineList": [
       {
         "document": "导出列表信息或者详情信息",
         "input": "https://cwp.tencentcloudapi.com/?Action=ExportBaselineList\n&IfDetail=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"\",\n        \"RequestId\": \"123456789\",\n        \"TaskId\": \"123\"\n    }\n}",
         "title": "基线列表导出接口"
+      }
+    ],
+    "ExportBaselineRuleDetectList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportBaselineRuleDetectList\n<公共请求参数>\n\n{\n    \"ExportAll\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cbc912a7-c030-4a80-8d76-6e938a930fa1\"\n    }\n}",
+        "title": "导出规则视角"
+      }
+    ],
+    "ExportBaselineWeakPasswordList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportBaselineWeakPasswordList\n<公共请求参数>\n\n{\n    \"ExportAll\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7540ea91-97fa-436d-ba58-39005176a063\"\n    }\n}",
+        "title": "导出自定义弱口令"
       }
     ],
     "ExportBashEvents": [
@@ -1614,6 +1812,14 @@
         "title": "示例"
       }
     ],
+    "FixBaselineDetect": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FixBaselineDetect\n<公共请求参数>\n\n{\n    \"ItemId\":\"1100\",\n    \"HostId\":\"a0770b41-9697-4a1d-8150-b8fa247b6189\",\n    \"Data\":[\n        \"\"test977\":\"e7c153cd9e70120a1d9f3610db0a15d0\"\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"898d14bd-2334-4b8d-9240-6ad77e48df45\"\n    }\n}",
+        "title": "修复"
+      }
+    ],
     "IgnoreImpactedHosts": [
       {
         "document": "忽略漏洞",
@@ -1648,16 +1854,54 @@
     ],
     "ModifyBaselinePolicy": [
       {
-        "document": "",
+        "document": "自定义和系统规则添加",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselinePolicy\n<公共请求参数>\n\n{\n    \"Data\": {\n        \"DetectTime\": \"03:00:00\",\n        \"PolicyName\": \"策略1111\",\n        \"DetectInterval\": \"1\",\n        \"AssetType\": \"0\",\n        \"IsEnabled\": \"1\",\n        \"PolicyId\": \"1\",\n        \"RuleIds\": [\n            \"4611686018427387909\",\n            \"128\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"07c4d170-f547-4a44-be2e-7f992d483f26\"\n    }\n}",
         "title": "自定义和系统规则添加"
       },
       {
-        "document": "",
+        "document": "修改策略",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselinePolicy\n<公共请求参数>\n\n{\n    \"Data\": {\n        \"DetectTime\": \"02:00:00\",\n        \"PolicyName\": \"test1\",\n        \"DetectInterval\": \"1\",\n        \"AssetType\": \"0\",\n        \"IsEnabled\": \"1\",\n        \"PolicyId\": \"268\",\n        \"RuleIds\": [\n            \"11\"\n        ],\n        \"IsDefault\": \"0\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9549bbb8-915f-4c0c-a03c-5b069d70b4d9\"\n    }\n}",
         "title": "修改策略"
+      }
+    ],
+    "ModifyBaselinePolicyState": [
+      {
+        "document": "禁用检测策略",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselinePolicyState\n<公共请求参数>\n\n{\n    \"IsEnabled\": \"0\",\n    \"PolicyId\": \"259\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4306e95-f45b-408b-aff0-b3cc16f673e1\"\n    }\n}",
+        "title": "禁用检测策略"
+      },
+      {
+        "document": "使能策略",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselinePolicyState\n<公共请求参数>\n\n{\n    \"IsEnabled\": \"0\",\n    \"PolicyId\": \"259\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca6e6339-34ba-4c0d-90ac-3c4a6ea6d383\"\n    }\n}",
+        "title": "使能策略"
+      }
+    ],
+    "ModifyBaselineRule": [
+      {
+        "document": "创建自定义规则",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselineRule\n<公共请求参数>\n\n{\n    \"Data\": {\n        \"Items\": [\n            {\n                \"ItemId\": \"1000\",\n                \"ItemName\": \"Redis 基线合规检测\"\n            }\n        ],\n        \"RuleDesc\": \"test111\",\n        \"RuleName\": \"test111\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0358f7f9-d07c-4db8-96ba-eed1bcbd947d\"\n    }\n}",
+        "title": "创建自定义规则"
+      }
+    ],
+    "ModifyBaselineRuleIgnore": [
+      {
+        "document": "添加忽略规则",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselineRuleIgnore\n<公共请求参数>\n\n{\n    \"AssetType\": \"0\",\n    \"ItemIds\": [\n        \"11\"\n    ],\n    \"RuleName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cbf3ee7-0e7c-4190-aae8-95254726c7f2\"\n    }\n}",
+        "title": "添加忽略规则"
+      }
+    ],
+    "ModifyBaselineWeakPassword": [
+      {
+        "document": "修改弱口令配置",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselineWeakPassword\n<公共请求参数>\n\n{\n    \"Data\": [\n        {\n            \"PasswordId\": \"3432\",\n            \"WeakPassword\": \"1111\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ee20febc-b59d-45ab-97f6-d55efdfa57b7\"\n    }\n}",
+        "title": "修改弱口令配置"
       }
     ],
     "ModifyBruteAttackRules": [

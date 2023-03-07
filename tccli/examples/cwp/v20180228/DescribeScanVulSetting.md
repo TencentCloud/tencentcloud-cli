@@ -20,7 +20,8 @@ Output:
         "EndTime": "",
         "EnableScan": 1,
         "StartTime": "",
-        "ClickTimeout": 0
+        "ClickTimeout": 0,
+        "Uuids": []
     }
 }
 ```

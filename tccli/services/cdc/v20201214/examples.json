@@ -131,7 +131,7 @@
     "ModifyDedicatedClusterInfo": [
       {
         "document": "修改本地专用集群信息",
-        "input": "https://cdc.tencentcloudapi.com/?Action=ModifyDedicatedClusterInfo\n&DedicatedClusterId=cluster-xx\n&Description=xxx\n&Zone=xxx\n&Name=xxx\n&SiteId=xxx\n&<公共请求参数>",
+        "input": "https://cdc.tencentcloudapi.com/?Action=ModifyDedicatedClusterInfo\n&DedicatedClusterId=cluster-dfaf323\n&Description=专用集群\n&Zone=site3\n&Name=专用集群\n&SiteId=1000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ceeecd2-2f24-4b3f-81eb-3461376xxc2f\"\n    }\n}",
         "title": "修改本地专用集群信息"
       }

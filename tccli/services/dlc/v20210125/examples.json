@@ -112,6 +112,14 @@
         "title": "创建表"
       }
     ],
+    "CreateDataEngine": [
+      {
+        "document": "创建引擎的",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataEngine\n<公共请求参数>\n\n{\n    \"EngineType\": \"xx\",\n    \"DataEngineName\": \"xx\",\n    \"ClusterType\": \"xx\",\n    \"MinClusters\": 0,\n    \"MaxClusters\": 0,\n    \"DefaultDataEngine\": true,\n    \"CidrBlock\": \"xx\",\n    \"Mode\": 0,\n    \"Message\": \"xx\",\n    \"AutoResume\": true,\n    \"Size\": 0,\n    \"PayMode\": 0,\n    \"TimeSpan\": 0,\n    \"TimeUnit\": \"xx\",\n    \"AutoRenew\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"AutoSuspend\": true,\n    \"CrontabResumeSuspend\": 0,\n    \"CrontabResumeSuspendStrategy\": {\n        \"ResumeTime\": \"xx\",\n        \"SuspendTime\": \"xx\",\n        \"SuspendStrategy\": 0\n    },\n    \"EngineExecType\": \"xx\",\n    \"MaxConcurrency\": 0,\n    \"TolerableQueueTime\": 0,\n    \"AutoSuspendTime\": 0,\n    \"ResourceType\": \"xx\",\n    \"ImageVersionName\": \"SuperSQL-P 1.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngineId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建引擎"
+      }
+    ],
     "CreateDatabase": [
       {
         "document": "",
@@ -350,6 +358,30 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"DatasourceConnectionName\": \"DataLakeCatalog\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1068a137-ed80-4cbd-a7e6-1cd0341db332\",\n        \"TotalCount\": 1,\n        \"DatabaseList\": [\n            {\n                \"DatabaseName\": \"testdb\",\n                \"Comment\": \"create by nick\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"1630486408000\",\n                \"ModifiedTime\": \"1630486408000\",\n                \"UserAlias\": \"testUser\",\n                \"UserSubUin\": \"100019878767\",\n                \"Location\": \"\"\n            }\n        ]\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "DescribeEngineUsageInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEngineUsageInfo\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 128,\n        \"Used\": 64,\n        \"Available\": 64,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "example"
+      }
+    ],
+    "DescribeLakeFsDirSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLakeFsDirSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例一"
+      }
+    ],
+    "DescribeLakeFsInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLakeFsInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例一"
       }
     ],
     "DescribeNotebookSession": [
@@ -616,6 +648,14 @@
         "title": "test"
       }
     ],
+    "SwitchDataEngine": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchDataEngine\n<公共请求参数>\n\n{\n    \"DataEngineName\": \"test\",\n    \"StartStandbyCluster\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2f67771a-a384-4b4e-86a5-146d8829ae2d\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "UnbindWorkGroupsFromUser": [
       {
         "document": "",
@@ -630,6 +670,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockMetaData\n<公共请求参数>\n\n{\n    \"LockId\": 0,\n    \"DatasourceConnectionName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\"\n    }\n}",
         "title": "元数据解锁"
+      }
+    ],
+    "UpdateRowFilter": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRowFilter\n<公共请求参数>\n\n{\n    \"Policy\": {\n        \"Table\": \"TableName\",\n        \"Catalog\": \"COSDataCatalog\",\n        \"Operation\": \"ALL\",\n        \"Database\": \"DatabaseName\"\n    },\n    \"PolicyId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
+        "title": "更新行过滤策略信息"
       }
     ]
   },

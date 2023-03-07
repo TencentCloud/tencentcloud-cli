@@ -1,0 +1,93 @@
+{
+  "actions": {
+    "AllocateCustomerCredit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateCustomerCredit\n<公共请求参数>\n\n{\n    \"ClientUin\": 1,\n    \"AddedCredit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RemainingCredit\": 100,\n        \"RequestId\": \"2b7c676e-bb4b-449d-89e6-4866132036c5\",\n        \"TotalCredit\": 100\n    }\n}",
+        "title": "设置客户信用额度"
+      }
+    ],
+    "CreateAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"Extended\": \"11111111\",\n    \"CountryCode\": \"852\",\n    \"Area\": \"HK\",\n    \"PhoneNum\": \"18888888888\",\n    \"AccountType\": \"business\",\n    \"Mail\": \"account@qq.com\",\n    \"Password\": \"111111\",\n    \"ConfirmPassword\": \"111111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Uin\": \"200000123456\",\n        \"RequestId\": \"a9e390a7-a1af-42cd-8178-13bd046337a7\"\n    }\n}",
+        "title": "申请创建客户账户"
+      }
+    ],
+    "GetCountryCodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCountryCodes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"EnName\": \"Albania\",\n                \"Name\": \"阿尔巴尼亚\",\n                \"IOS2\": \"AL\",\n                \"IOS3\": \"ALB\",\n                \"Code\": \"355\"\n            },\n            {\n                \"EnName\": \"Algeria\",\n                \"Name\": \"阿尔及利亚\",\n                \"IOS2\": \"DZ\",\n                \"IOS3\": \"DZA\",\n                \"Code\": \"213\"\n            }\n        ],\n        \"RequestId\": \"a9e390a7-a1af-42cd-8178-13bd046337a7\"\n    }\n}",
+        "title": "获取国家、地区代码"
+      }
+    ],
+    "QueryCreditAllocationHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCreditAllocationHistory\n<公共请求参数>\n\n{\n    \"ClientUin\": 1,\n    \"Page\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"2b7c676e-bb4b-449d-89e6-4866132036c6\",\n        \"History\": [\n            {\n                \"Operator\": \"PartnerTest Limited\",\n                \"Credit\": 0.1,\n                \"AllocatedTime\": \"2022-07-28 15:04:08\",\n                \"AllocatedCredit\": 1000.1\n            }\n        ]\n    }\n}",
+        "title": "查询客户信用分配历史信息"
+      }
+    ],
+    "QueryCreditByUinList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCreditByUinList\n<公共请求参数>\n\n{\n    \"UinList\": [\n        10000,\n        100001\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"RemainingCredit\": 0.01,\n                \"TotalCredit\": 100.01,\n                \"Uin\": 1\n            },\n            {\n                \"RemainingCredit\": 0.01,\n                \"TotalCredit\": 100.01,\n                \"Uin\": 1\n            }\n        ],\n        \"RequestId\": \"0abe4d4f7fdb79c9829d945c2161ff9b\"\n    }\n}",
+        "title": "查询用户列表信用"
+      }
+    ],
+    "QueryCustomersCredit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomersCredit\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"ClientUin\": 1,\n                \"Name\": \"abcdefg@tencent.com\",\n                \"Mobile\": \"131123456789\",\n                \"RecentExpiry\": \"2022-10-13 20:09:03\",\n                \"RemainingCredit\": 100,\n                \"Remark\": \"remark\",\n                \"Credit\": 100,\n                \"AssociationTime\": \"2022-10-13 20:09:03\",\n                \"IdentifyType\": 1,\n                \"Type\": \"new\",\n                \"Email\": \"abcd*********@tencent.com\",\n                \"Arrears\": \"-\"\n            }\n        ],\n        \"RequestId\": \"2b7c676e-bb4b-449d-89e6-4866132036c4\"\n    }\n}",
+        "title": "查询客户信用额度"
+      }
+    ],
+    "QueryDirectCustomersCredit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDirectCustomersCredit\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"RemainingCredit\": 0.01,\n                \"TotalCredit\": 100.01,\n                \"Uin\": 1\n            },\n            {\n                \"RemainingCredit\": 0.01,\n                \"TotalCredit\": 100.01,\n                \"Uin\": 1\n            }\n        ],\n        \"RequestId\": \"0abe4d4f7fdb79c9829d945c2161ff9b\"\n    }\n}",
+        "title": "查询直接子客信用"
+      }
+    ],
+    "QueryPartnerCredit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryPartnerCredit\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RemainingCredit\": 1000.1,\n        \"RequestId\": \"2b7c676e-bb4b-449d-89e6-4866132036c7\",\n        \"TotalCredit\": 1050.1,\n        \"AllocatedCredit\": 50\n    }\n}",
+        "title": "查询合作伙伴信用额度"
+      }
+    ],
+    "QueryVoucherAmountByUin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryVoucherAmountByUin\n<公共请求参数>\n\n{\n    \"ClientUins\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TotalAmount\": 0.0,\n                \"ClientUin\": 0,\n                \"RemainAmount\": 0.0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "根据客户uin查询代金券额度"
+      }
+    ],
+    "QueryVoucherListByUin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryVoucherListByUin\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"ClientUins\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TotalCount\": 0,\n                \"ClientUin\": 0,\n                \"Data\": [\n                    {\n                        \"VoucherId\": \"xx\",\n                        \"TotalAmount\": 0.0,\n                        \"RemainAmount\": 0.0,\n                        \"VoucherStatus\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "根据客户uin查询代金券列表"
+      }
+    ],
+    "QueryVoucherPool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryVoucherPool\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalQuota\": 0.0,\n        \"IssuedNum\": 0,\n        \"RemainingQuota\": 0.0,\n        \"RequestId\": \"xx\",\n        \"AccountType\": 0,\n        \"AgentName\": \"xx\"\n    }\n}",
+        "title": "查询代金券额度池"
+      }
+    ]
+  },
+  "version": "1.0"
+}

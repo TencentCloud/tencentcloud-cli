@@ -4635,10 +4635,9 @@
       "usage": "both"
     },
     "ReleasedApprover": {
-      "document": "解除协议的签署人，如不指定，默认使用待解除流程（即原流程）中的签署人。\n注意：不支持更换C端（个人身份类型）签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。\n\n如果需要指定B端（机构身份类型）签署人，其中ReleasedApprover需要传递的参数如下：\nApproverNumber, OrganizationName, ApproverType必传。\n对于其他身份标识\n- 渠道子客企业指定经办人：OpenId必传，OrganizationOpenId必传；\n- 非渠道合作企业：Name、Mobile必传。",
+      "document": "解除协议的签署人，如不指定，默认使用待解除流程（即原流程）中的签署人。\n注意：不支持更换C端（个人身份类型）签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。\n\n如果需要指定B端（机构身份类型）签署人，其中ReleasedApprover需要传递的参数如下：\nApproverNumber, OrganizationName, ApproverType必传。\n对于其他身份标识\n- 子客企业指定经办人：OpenId必传，OrganizationOpenId必传；\n- 非子客企业：Name、Mobile必传。",
       "members": [
         {
-          "default": "",
           "document": "企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符",
           "example": "xxx",
           "member": "string",
@@ -4648,7 +4647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人在原流程中的签署人列表中的顺序序号（从0开始，按顺序依次递增），如果不清楚原流程中的签署人列表，可以通过DescribeFlows接口查看",
           "example": "0",
           "member": "uint64",
@@ -4658,7 +4656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人类型，目前仅支持\nORGANIZATION-企业",
           "example": "ORGANIZATION",
           "member": "string",
@@ -4668,7 +4665,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人姓名，最大长度50个字符",
           "example": "张三",
           "member": "string",
@@ -4678,7 +4674,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人身份证件类型\n1.ID_CARD 居民身份证\n2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证\n3.HONGKONG_AND_MACAO 港澳居民来往内地通行证",
           "example": "ID_CARD",
           "member": "string",
@@ -4688,7 +4683,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人证件号",
           "example": "110101192008317114",
           "member": "string",
@@ -4698,7 +4692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号",
           "example": "13888888888",
           "member": "string",
@@ -4708,8 +4701,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符",
+          "document": "企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符",
           "example": "xxx",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -4718,8 +4710,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "用户侧第三方id，最大长度64个字符\n当签署方为同一渠道下的员工时，该字必传",
+          "document": "用户侧第三方id，最大长度64个字符\n当签署方为同一第三方应用下的员工时，该字必传",
           "example": "xxx",
           "member": "string",
           "name": "OpenId",

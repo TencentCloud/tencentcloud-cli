@@ -7410,8 +7410,7 @@
       "document": "DescribeRocketMQVipInstances请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "查询条件过滤器",
+          "document": "查询条件过滤器，支持的查询条件如下：\ninstanceIds - 实例ID\ninstanceName - 实例名称",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7419,7 +7418,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "查询数目上限，默认20",
           "example": "20",
           "member": "uint64",
@@ -7428,9 +7426,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询起始位置",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -7447,7 +7444,6 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7456,7 +7452,6 @@
           "example": "无",
           "member": "RocketMQVipInstance",
           "name": "Instances",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10678,114 +10673,112 @@
       "document": "RocketMQ专享集群实例配置",
       "members": [
         {
-          "default": "",
           "document": "单命名空间TPS上线",
           "example": "8000",
           "member": "uint64",
           "name": "MaxTpsPerNamespace",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最大命名空间数量",
           "example": "10",
           "member": "uint64",
           "name": "MaxNamespaceNum",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "已使用命名空间数量",
           "example": "3",
           "member": "uint64",
           "name": "UsedNamespaceNum",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最大Topic数量",
           "example": "1000",
           "member": "uint64",
           "name": "MaxTopicNum",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "已使用Topic数量",
           "example": "8",
           "member": "uint64",
           "name": "UsedTopicNum",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最大Group数量",
           "example": "10000",
           "member": "uint64",
           "name": "MaxGroupNum",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "已使用Group数量",
           "example": "10",
           "member": "uint64",
           "name": "UsedGroupNum",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群类型",
           "example": "标准版",
           "member": "string",
           "name": "ConfigDisplay",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群节点数",
           "example": "2",
           "member": "uint64",
           "name": "NodeCount",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点分布情况",
           "example": "无",
           "member": "InstanceNodeDistribution",
           "name": "NodeDistribution",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "topic分布情况",
           "example": "无",
           "member": "RocketMQTopicDistribution",
           "name": "TopicDistribution",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "每个主题最大队列数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "uint64",
+          "name": "MaxQueuesPerTopic",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10955,7 +10948,6 @@
       "document": "RocketMQ专享实例信息",
       "members": [
         {
-          "default": "",
           "document": "实例id",
           "example": "rocketmq-xxxx",
           "member": "string",
@@ -10965,7 +10957,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名称",
           "example": "abc",
           "member": "string",
@@ -10975,7 +10966,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4.9.3",
           "member": "string",
@@ -10985,8 +10975,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败",
+          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -10995,7 +10984,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点数量",
           "example": "5",
           "member": "uint64",
@@ -11005,7 +10993,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例配置规格名称",
           "example": "基础型",
           "member": "string",
@@ -11015,7 +11002,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "峰值TPS",
           "example": "10000",
           "member": "uint64",
@@ -11025,7 +11011,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "峰值带宽，Mbps为单位",
           "example": "1200",
           "member": "uint64",
@@ -11035,7 +11020,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "存储容量，GB为单位",
           "example": "100",
           "member": "uint64",
@@ -11045,7 +11029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例到期时间，毫秒为单位",
           "example": "100000",
           "member": "uint64",
@@ -11055,7 +11038,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
           "example": "0",
           "member": "uint64",
@@ -11065,7 +11047,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "0-后付费，1-预付费",
           "example": "0",
           "member": "uint64",
@@ -11075,7 +11056,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -11085,7 +11065,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例配置ID",
           "example": "vip-basic-1",
           "member": "string",

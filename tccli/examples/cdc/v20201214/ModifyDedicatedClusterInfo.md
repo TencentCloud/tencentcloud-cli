@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cdc ModifyDedicatedClusterInfo --cli-unfold-argument  \
-    --DedicatedClusterId cluster-xx \
-    --Description xxx \
-    --Zone xxx \
-    --Name xxx \
-    --SiteId xxx
+    --DedicatedClusterId cluster-dfaf323 \
+    --Description 专用集群 \
+    --Zone site3 \
+    --Name 专用集群 \
+    --SiteId 1000001
 ```
 
 Output: 

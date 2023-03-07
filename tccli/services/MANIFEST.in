@@ -247,6 +247,8 @@ include tccli/services/ims/v20201229/api.json
 include tccli/services/ims/v20201229/examples.json
 include tccli/services/ims/v20200713/api.json
 include tccli/services/ims/v20200713/examples.json
+include tccli/services/intlpartnersmgt/v20220928/api.json
+include tccli/services/intlpartnersmgt/v20220928/examples.json
 include tccli/services/iot/v20180123/api.json
 include tccli/services/iot/v20180123/examples.json
 include tccli/services/iotcloud/v20210408/api.json

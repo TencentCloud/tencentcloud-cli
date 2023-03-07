@@ -954,9 +954,9 @@
     ],
     "ModifyLivePushAuthKey": [
       {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyLivePushAuthKey\r\n&DomainName=5000.livepush.myqcloud.com\r\n&Enable=0\r\n&MasterAuthKey=xxxx\r\n&BackupAuthKey=xxx\r\n&AuthDelta=300\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "document": "请求示例。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLivePushAuthKey\n<公共请求参数>\n\n{\n    \"DomainName\": \"abc.com\",\n    \"Enable\": 0,\n    \"MasterAuthKey\": \"abc*&^\",\n    \"BackupAuthKey\": \"\",\n    \"AuthDelta\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e48b9f8d-d9d1-4de4-a732-5ab8a333c0d8\"\n    }\n}",
         "title": "请求示例"
       }
     ],

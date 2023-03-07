@@ -229,7 +229,7 @@
         },
         {
           "document": "引擎的开源版本。每种引擎支持的开源版本不同，请参考产品文档或者控制台购买页",
-          "example": "3.4.14",
+          "example": "3.5.9",
           "member": "string",
           "name": "EngineVersion",
           "required": true,
@@ -338,6 +338,14 @@
           "name": "PrepaidRenewFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "跨地域部署的引擎地域配置详情",
+          "example": "[{\"EngineRegion\":\"ap-guangzhou\",\"Replica\":2,\"SpecId\":\"1C2G\",\"VpcInfos\":[{\"VpcId\":\"vpc-XXX\",\"SubnetId\":\"subnet-XXX\"}]},{\"EngineRegion\":\"ap-beijing\",\"Replica\":1,\"SpecId\":\"1C2G\",\"VpcInfos\":[{\"VpcId\":\"vpc-XXX\",\"SubnetId\":\"subnet-XXX\"}]}]",
+          "member": "EngineRegionInfo",
+          "name": "EngineRegionInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1037,6 +1045,39 @@
         }
       ],
       "usage": "both"
+    },
+    "EngineRegionInfo": {
+      "document": "引擎地域配置详情",
+      "members": [
+        {
+          "document": "引擎节点所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "EngineRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "此地域节点分配数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Replica",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"VpcId\":\"vpc-XXX\",\"SubnetId\":\"subnet-XXX\"}]",
+          "member": "VpcInfo",
+          "name": "VpcInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "EnvAddressInfo": {
       "document": "多环境网络信息",

@@ -227,8 +227,8 @@
     "DescribeTelCallInfo": [
       {
         "document": "",
-        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeTelCallInfo\n&StartTimeStamp=0\n&EndTimeStamp=0\n&SdkAppIdList.0=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53bccf04-0870-4520-8614-f4bdddfd68df\",\n        \"TelCallOutCount\": 10,\n        \"TelCallInCount\": 10,\n        \"SeatUsedCount\": 50\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTelCallInfo\n<公共请求参数>\n\n{\n    \"StartTimeStamp\": \"0\",\n    \"EndTimeStamp\": \"0\",\n    \"SdkAppIdList\": [\n        \"0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53bccf04-0870-4520-8614-f4bdddfd68df\",\n        \"TelCallOutCount\": 10,\n        \"TelCallInCount\": 10,\n        \"VoipCallInCount\": 10,\n        \"SeatUsedCount\": 50\n    }\n}",
         "title": "获取电话呼叫统计信息示例"
       }
     ],
