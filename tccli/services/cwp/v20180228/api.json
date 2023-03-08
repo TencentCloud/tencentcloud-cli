@@ -9999,7 +9999,8 @@
           "member": "uint64",
           "name": "VulId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10008,7 +10009,18 @@
           "member": "string",
           "name": "Uuids",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "扫描超时时长 ，单位秒",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TimeoutPeriod",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

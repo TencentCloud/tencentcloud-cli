@@ -48,6 +48,14 @@
         "title": "创建转换任务"
       }
     ],
+    "ChannelCreateEmbedWebUrl": [
+      {
+        "document": "获取创建印章的嵌入WEB链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateEmbedWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"Channel\": \"CHANNEL\",\n        \"CustomUserId\": \"1\",\n        \"ClientIp\": \"1.1.1.1\",\n        \"ProxyIp\": \"0.0.0.0\"\n    },\n    \"BusinessId\": \"\",\n    \"EmbedType\": \"CREATE_SEAL\",\n    \"Agent\": {\n        \"AppId\": \"1\",\n        \"ProxyOrganizationOpenId\": \"1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"1\",\n            \"Channel\": \"1\",\n            \"CustomUserId\": \"1\",\n            \"ClientIp\": \"1\",\n            \"ProxyIp\": \"1\"\n        },\n        \"ProxyAppId\": \"1\",\n        \"ProxyOrganizationId\": \"1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"WebUrl\": \"https://test.ess.com/seal-create?embed=1&code=testcode&channel=PROXYCHANNEL\",\n        \"RequestId\": \"2\"\n    }\n}",
+        "title": "获取创建印章的嵌入WEB链接"
+      }
+    ],
     "ChannelCreateFlowByFiles": [
       {
         "document": "使用文件创建签署流程",

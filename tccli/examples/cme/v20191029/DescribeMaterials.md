@@ -160,7 +160,7 @@ Output:
 
 **Example 3: 获取图片媒体详情**
 
-
+ 
 
 Input: 
 

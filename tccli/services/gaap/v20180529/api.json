@@ -2226,7 +2226,6 @@
       "document": "CreateGlobalDomain请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名所属项目ID",
           "example": "0",
           "member": "int64",
@@ -2236,7 +2235,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名默认入口",
           "example": "1.1.1.1",
           "member": "string",
@@ -2246,7 +2244,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "别名",
           "example": "test",
           "member": "string",
@@ -2256,7 +2253,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签列表",
           "example": "无",
           "member": "TagPair",
@@ -2276,7 +2272,6 @@
           "example": "dm-pcp5xac5",
           "member": "string",
           "name": "DomainId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

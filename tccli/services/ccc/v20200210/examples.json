@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ApplyCustomNumberList": [
+      {
+        "document": "审批客户自有号码示例。",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyCustomNumberList\n<公共请求参数>\n\n{\n    \"ApplyId\": 0,\n    \"Checker\": \"lulu\",\n    \"CheckMsg\": \"ok\",\n    \"State\": 0,\n    \"SdkAppId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3651cda6-6501-4482-9f4e-8d0c9548a4db\"\n    }\n}",
+        "title": "审批客户自有号码示例"
+      }
+    ],
     "BindNumberCallOutSkillGroup": [
       {
         "document": "绑定号码和技能组",
@@ -14,6 +22,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindStaffSkillGroupList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"StaffEmail\": \"staff1@xxx.com\",\n    \"SkillGroupList\": [\n        100,\n        101\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\"\n    }\n}",
         "title": "绑定坐席所属技能组示例"
+      }
+    ],
+    "CheckCustomGatewayConnect": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCustomGatewayConnect\n<公共请求参数>\n\n{\n    \"Address\": [\n        \"10.0.0.1:5060\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "检测客户自带网关连通性示例"
       }
     ],
     "CreateAutoCalloutTask": [
@@ -64,6 +80,14 @@
         "title": "创建 SDK 登录 Token"
       }
     ],
+    "CreateSipTrunk": [
+      {
+        "document": "创建SIP通道示例",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSipTrunk\n<公共请求参数>\n\n{\n    \"SipTrunk\": {\n        \"Id\": 0,\n        \"Uin\": \"xx\",\n        \"AppId\": \"xx\",\n        \"Mode\": \"xx\",\n        \"CheckHealth\": true,\n        \"ProviderId\": 0,\n        \"RegisterUserName\": \"xx\",\n        \"RegisterPassword\": \"xx\",\n        \"RegisterServer\": \"xx\",\n        \"RegisterServerPort\": 0,\n        \"RegisterOutboundProxy\": \"xx\",\n        \"RegisterOutboundProxyPort\": 0,\n        \"RegisterProto\": \"xx\",\n        \"RegisterFullName\": \"xx\",\n        \"RegisterExpires\": 0,\n        \"InboundCalleeFormat\": \"xx\",\n        \"InboundCalleeField\": \"xx\",\n        \"OutboundCallerFormat\": \"xx\",\n        \"State\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3651cda6-6501-4482-9f4e-8d0c9548a4db\"\n    }\n}",
+        "title": "创建SIP通道示例"
+      }
+    ],
     "CreateStaff": [
       {
         "document": "",
@@ -86,6 +110,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExtension\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
         "title": "删除话机账号"
+      }
+    ],
+    "DeleteSipTrunk": [
+      {
+        "document": "删除SIP通道示例",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSipTrunk\n<公共请求参数>\n\n{\n    \"Id\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3651cda6-6501-4482-9f4e-8d0c9548a4db\"\n    }\n}",
+        "title": "删除SIP通道示例"
       }
     ],
     "DeleteStaff": [
@@ -200,6 +232,14 @@
         "title": "获取主被叫受保护的电话话单示例"
       }
     ],
+    "DescribeSipTrunkList": [
+      {
+        "document": "查询SIP通道列表示例",
+        "input": "{\n  \"PageNumber\": 1,\n  \"PageSize\": 1,\n  \"Filters\": [\n    {\n      \"Name\": \"xx\",\n      \"Values\": [\n        \"xx\"\n      ]\n    }\n  ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SipTrunkList\": [\n            {\n                \"Id\": 0,\n                \"Uin\": \"xx\",\n                \"AppId\": \"xx\",\n                \"Mode\": \"xx\",\n                \"CheckHealth\": true,\n                \"ProviderId\": 0,\n                \"RegisterUserName\": \"xx\",\n                \"RegisterPassword\": \"xx\",\n                \"RegisterServer\": \"xx\",\n                \"RegisterServerPort\": 0,\n                \"RegisterOutboundProxy\": \"xx\",\n                \"RegisterOutboundProxyPort\": 0,\n                \"RegisterProto\": \"xx\",\n                \"RegisterFullName\": \"xx\",\n                \"RegisterExpires\": 0,\n                \"InboundCalleeFormat\": \"xx\",\n                \"InboundCalleeField\": \"xx\",\n                \"OutboundCallerFormat\": \"xx\",\n                \"State\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询SIP通道列表示例"
+      }
+    ],
     "DescribeSkillGroupInfoList": [
       {
         "document": "",
@@ -270,6 +310,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtension\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\",\n    \"ExtensionName\": \"分机1\",\n    \"SkillGroupIds\": [\n        1000\n    ],\n    \"Relation\": \"xxx@xxxx.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
         "title": "修改话机账号"
+      }
+    ],
+    "ModifySipTrunk": [
+      {
+        "document": "修改SIP通道示例",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySipTrunk\n<公共请求参数>\n\n{\n    \"SipTrunk\": {\n        \"Id\": 0,\n        \"Uin\": \"xx\",\n        \"AppId\": \"xx\",\n        \"Mode\": \"xx\",\n        \"CheckHealth\": true,\n        \"ProviderId\": 0,\n        \"RegisterUserName\": \"xx\",\n        \"RegisterPassword\": \"xx\",\n        \"RegisterServer\": \"xx\",\n        \"RegisterServerPort\": 0,\n        \"RegisterOutboundProxy\": \"xx\",\n        \"RegisterOutboundProxyPort\": 0,\n        \"RegisterProto\": \"xx\",\n        \"RegisterFullName\": \"xx\",\n        \"RegisterExpires\": 0,\n        \"InboundCalleeFormat\": \"xx\",\n        \"InboundCalleeField\": \"xx\",\n        \"OutboundCallerFormat\": \"xx\",\n        \"State\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3651cda6-6501-4482-9f4e-8d0c9548a4db\"\n    }\n}",
+        "title": "修改SIP通道示例"
       }
     ],
     "ModifyStaff": [

@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ApplyCustomNumberList": {
+      "document": "审批客户自有号码",
+      "input": "ApplyCustomNumberListRequest",
+      "name": "审批客户自有号码",
+      "output": "ApplyCustomNumberListResponse",
+      "status": "online"
+    },
     "BindNumberCallOutSkillGroup": {
       "document": "绑定号码外呼技能组",
       "input": "BindNumberCallOutSkillGroupRequest",
@@ -12,6 +19,13 @@
       "input": "BindStaffSkillGroupListRequest",
       "name": "绑定坐席所属技能组",
       "output": "BindStaffSkillGroupListResponse",
+      "status": "online"
+    },
+    "CheckCustomGatewayConnect": {
+      "document": "检测客户自带网关连通性",
+      "input": "CheckCustomGatewayConnectRequest",
+      "name": "检测客户自带网关连通性",
+      "output": "CheckCustomGatewayConnectResponse",
       "status": "online"
     },
     "CreateAutoCalloutTask": {
@@ -56,6 +70,13 @@
       "output": "CreateSDKLoginTokenResponse",
       "status": "online"
     },
+    "CreateSipTrunk": {
+      "document": "创建SIP通道",
+      "input": "CreateSipTrunkRequest",
+      "name": "创建SIP通道",
+      "output": "CreateSipTrunkResponse",
+      "status": "online"
+    },
     "CreateStaff": {
       "document": "创建客服账号。",
       "input": "CreateStaffRequest",
@@ -75,6 +96,13 @@
       "input": "DeleteExtensionRequest",
       "name": "删除话机账号",
       "output": "DeleteExtensionResponse",
+      "status": "online"
+    },
+    "DeleteSipTrunk": {
+      "document": "删除SIP通道",
+      "input": "DeleteSipTrunkRequest",
+      "name": "删除SIP通道",
+      "output": "DeleteSipTrunkResponse",
       "status": "online"
     },
     "DeleteStaff": {
@@ -175,6 +203,13 @@
       "output": "DescribeProtectedTelCdrResponse",
       "status": "online"
     },
+    "DescribeSipTrunkList": {
+      "document": "查询SIP通道列表",
+      "input": "DescribeSipTrunkListRequest",
+      "name": "查询SIP通道列表",
+      "output": "DescribeSipTrunkListResponse",
+      "status": "online"
+    },
     "DescribeSkillGroupInfoList": {
       "document": "获取技能组信息列表",
       "input": "DescribeSkillGroupInfoListRequest",
@@ -236,6 +271,13 @@
       "input": "ModifyExtensionRequest",
       "name": "修改话机账号(绑定技能组、绑定坐席账号)",
       "output": "ModifyExtensionResponse",
+      "status": "online"
+    },
+    "ModifySipTrunk": {
+      "document": "修改SIP通道",
+      "input": "ModifySipTrunkRequest",
+      "name": "修改SIP通道",
+      "output": "ModifySipTrunkResponse",
       "status": "online"
     },
     "ModifyStaff": {
@@ -326,6 +368,69 @@
         }
       ],
       "usage": "out"
+    },
+    "ApplyCustomNumberListRequest": {
+      "document": "ApplyCustomNumberList请求参数结构体",
+      "members": [
+        {
+          "document": "审核单号",
+          "example": "1",
+          "member": "int64",
+          "name": "ApplyId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "审核人",
+          "example": "xxx",
+          "member": "string",
+          "name": "Checker",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "审核状态 1-审核不通过|2-审核通过(号码配置中)|4-号码配置完成",
+          "example": "2",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "实例ID",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "审核信息",
+          "example": "通过",
+          "member": "string",
+          "name": "CheckMsg",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyCustomNumberListResponse": {
+      "document": "ApplyCustomNumberList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AutoCalloutTaskCalleeInfo": {
       "document": "外呼任务被叫信息",
@@ -824,6 +929,33 @@
       ],
       "usage": "out"
     },
+    "CheckCustomGatewayConnectRequest": {
+      "document": "CheckCustomGatewayConnect请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户网关地址： 例如：10.0.0.1:5060",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckCustomGatewayConnectResponse": {
+      "document": "CheckCustomGatewayConnect返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAutoCalloutTaskRequest": {
       "document": "CreateAutoCalloutTask请求参数结构体",
       "members": [
@@ -1282,6 +1414,42 @@
       ],
       "type": "object"
     },
+    "CreateSipTrunkRequest": {
+      "document": "CreateSipTrunk请求参数结构体",
+      "members": [
+        {
+          "document": "SIP通道信息",
+          "example": "无",
+          "member": "SipTrunkInfo",
+          "name": "SipTrunk",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSipTrunkResponse": {
+      "document": "CreateSipTrunk返回参数结构体",
+      "members": [
+        {
+          "document": "新建的Sip通道ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateStaffRequest": {
       "document": "CreateStaff请求参数结构体",
       "members": [
@@ -1431,6 +1599,33 @@
     },
     "DeleteExtensionResponse": {
       "document": "DeleteExtension返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSipTrunkRequest": {
+      "document": "DeleteSipTrunk请求参数结构体",
+      "members": [
+        {
+          "document": "SIP通道Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSipTrunkResponse": {
+      "document": "DeleteSipTrunk返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2545,6 +2740,69 @@
       ],
       "type": "object"
     },
+    "DescribeSipTrunkListRequest": {
+      "document": "DescribeSipTrunkList请求参数结构体",
+      "members": [
+        {
+          "document": "默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "document": "默认10，最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "document": "筛选条件Name支持：Id(按SIP通道Id查询)，FuzzingKeyWord(模糊查询通道名称和绑定号码)",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSipTrunkListResponse": {
+      "document": "DescribeSipTrunkList返回参数结构体",
+      "members": [
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "SIP通道列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SipTrunkInfo",
+          "name": "SipTrunkList",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSkillGroupInfoListRequest": {
       "document": "DescribeSkillGroupInfoList请求参数结构体",
       "members": [
@@ -3317,6 +3575,32 @@
       ],
       "type": "object"
     },
+    "HostInfo": {
+      "document": "地址信息",
+      "members": [
+        {
+          "document": "Host信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "端口信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5060",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "IMCdrInfo": {
       "document": "文本会话服务记录信息",
       "members": [
@@ -3613,6 +3897,33 @@
     },
     "ModifyExtensionResponse": {
       "document": "ModifyExtension返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySipTrunkRequest": {
+      "document": "ModifySipTrunk请求参数结构体",
+      "members": [
+        {
+          "document": "SIP通道信息",
+          "example": "无",
+          "member": "SipTrunkInfo",
+          "name": "SipTrunk",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySipTrunkResponse": {
+      "document": "ModifySipTrunk返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4532,6 +4843,282 @@
         }
       ],
       "usage": "out"
+    },
+    "SipTrunkInfo": {
+      "document": "SIP通道信息",
+      "members": [
+        {
+          "document": "SIP通道Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "SIP通道类型：IP-ALLOW-LIST | REGISTER | UAC-REGISTER\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IP-ALLOW-LIST",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "IP白名单模式健康检查开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CheckHealth",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "内部运营商ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101",
+          "member": "int64",
+          "name": "ProviderId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "注册账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001",
+          "member": "string",
+          "name": "RegisterUserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "注册域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abcd",
+          "member": "string",
+          "name": "RegisterPassword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "注册服务器地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sip.xxx.com",
+          "member": "string",
+          "name": "RegisterServer",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "注册服务器端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5060",
+          "member": "int64",
+          "name": "RegisterServerPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "OutBound代理服务器地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "outbound.xxx.com",
+          "member": "string",
+          "name": "RegisterOutboundProxy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "OutBound代理服务器端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5060",
+          "member": "int64",
+          "name": "RegisterOutboundProxyPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "传输协议: UDP | TCP | TLS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UDP",
+          "member": "string",
+          "name": "RegisterProto",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "完整注册账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001@sip.xxx.com",
+          "member": "string",
+          "name": "RegisterFullName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "int64",
+          "name": "RegisterExpires",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "呼入被叫格式: NUMBER | USER\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NUMBER",
+          "member": "string",
+          "name": "InboundCalleeFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "呼入被叫优选: TO | REQUEST-URI\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TO",
+          "member": "string",
+          "name": "InboundCalleeField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "呼出主叫格式: NUMBER | USER\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NUMBER",
+          "member": "string",
+          "name": "OutboundCallerFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "通道状态：0 - 停用 | 1 - 启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "白名单对接，第三方SIP地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HostInfo",
+          "name": "AllowIpList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "账号注册状态：NOT_REGISTERED | REGISTERING | AUTHENTICATING | REGISTERED | REGISTER_TIMEOUT | INTERNAL_ERROR | WRONG_CREDENTIALS | REGISTRAR_ERROR | UNREGISTERING | AUTHENTICATING_UNREGISTER\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "REGISTERED",
+          "member": "string",
+          "name": "RegisterStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "健康检查状态：UNKNOWN | HEALTH | UNHEALTH\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HEALTH",
+          "member": "string",
+          "name": "HealthStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "SIP通道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "注册模式TCP端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35090",
+          "member": "int64",
+          "name": "RegisterServerTCPPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "注册模式TLS端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5061",
+          "member": "int64",
+          "name": "RegisterServerTLSPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "注册模式OutBound代理TCP端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35090",
+          "member": "int64",
+          "name": "RegisterOutboundProxyTCPPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "注册模式OutBound代理TLS端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5061",
+          "member": "int64",
+          "name": "RegisterOutboundProxyTLSPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
     },
     "SkillGroupInfoItem": {
       "document": "技能组信息",

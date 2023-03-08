@@ -1,6 +1,6 @@
 **Example 1: 创建域名**
 
-
+创建域名
 
 Input: 
 
@@ -23,7 +23,7 @@ Output:
 
 **Example 2: 创建域名示例**
 
-
+创建域名示例
 
 Input: 
 

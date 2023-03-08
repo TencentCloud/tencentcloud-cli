@@ -5879,7 +5879,6 @@
       "document": "日志集相关信息",
       "members": [
         {
-          "default": "",
           "document": "日志集ID",
           "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
           "member": "string",
@@ -5890,7 +5889,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志集名称",
           "example": "test",
           "member": "string",
@@ -5901,7 +5899,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2021-04-01 08:00:00",
           "member": "string",
@@ -5912,7 +5909,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TCB",
           "member": "string",
@@ -5923,7 +5919,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志集绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -5934,7 +5929,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志集下日志主题的数目",
           "example": "10",
           "member": "int64",
@@ -5945,7 +5939,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "若AssumerName非空，则表示创建该日志集的服务方角色",
           "example": "TCB_QcsRole",
           "member": "string",
@@ -8325,22 +8318,24 @@
       "document": "创建资源实例时同时绑定的标签对说明",
       "members": [
         {
-          "default": "",
           "document": "标签键",
+          "example": "无",
           "member": "string",
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "标签值",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -8375,7 +8370,6 @@
       "document": "日志主题信息",
       "members": [
         {
-          "default": "",
           "document": "日志集ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -8386,7 +8380,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志主题ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -8397,7 +8390,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志主题名称",
           "example": "test",
           "member": "string",
@@ -8408,7 +8400,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "主题分区个数",
           "example": "1",
           "member": "int64",
@@ -8419,7 +8410,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启索引",
           "example": "true",
           "member": "bool",
@@ -8430,7 +8420,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -8441,7 +8430,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "无",
           "member": "string",
@@ -8452,7 +8440,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日主主题是否开启采集",
           "example": "true",
           "member": "bool",
@@ -8463,7 +8450,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志主题绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -8474,7 +8460,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该主题是否开启自动分裂\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -8485,7 +8470,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "若开启自动分裂的话，该主题能够允许的最大分区数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "int64",
@@ -8496,7 +8480,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日主题的存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hot",
           "member": "string",
@@ -8507,7 +8490,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "int64",
@@ -8518,7 +8500,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TKE-Audio",
           "member": "string",
@@ -8529,13 +8510,22 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志主题描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx部门xx业务topic",
           "member": "string",
           "name": "Describes",
           "required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "开启日志沉降，热存储的生命周期， hotPeriod < Period。\n热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "HotPeriod",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         }

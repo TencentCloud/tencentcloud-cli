@@ -1,3 +1,215 @@
+# Release 3.0.719.1
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 29 次发布
+
+发布时间：2023-03-09 01:05:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApplyCustomNumberList](http://document.tencentcloudapi.woa.com/document/product/679/77215)
+* [CheckCustomGatewayConnect](http://document.tencentcloudapi.woa.com/document/product/679/77214)
+* [CreateSipTrunk](http://document.tencentcloudapi.woa.com/document/product/679/77213)
+* [DeleteSipTrunk](http://document.tencentcloudapi.woa.com/document/product/679/77212)
+* [DescribeSipTrunkList](http://document.tencentcloudapi.woa.com/document/product/679/77211)
+* [ModifySipTrunk](http://document.tencentcloudapi.woa.com/document/product/679/77210)
+
+新增数据结构：
+
+* [HostInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#HostInfo)
+* [SipTrunkInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#SipTrunkInfo)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 28 次发布
+
+发布时间：2023-03-09 01:10:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TopicInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#TopicInfo)
+
+	* 新增成员：HotPeriod
+
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 43 次发布
+
+发布时间：2023-03-09 01:13:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTaskInfo](http://document.tencentcloudapi.woa.com/document/product/213/77217)
+
+修改接口：
+
+* [ImportImage](http://document.tencentcloudapi.woa.com/document/product/213/15717)
+
+	* 新增入参：BootMode
+
+
+新增数据结构：
+
+* [RepairTaskInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#RepairTaskInfo)
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 48 次发布
+
+发布时间：2023-03-09 01:13:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEmergencyVulScan](http://document.tencentcloudapi.woa.com/document/product/296/60904)
+
+	* 新增入参：TimeoutPeriod
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 44 次发布
+
+发布时间：2023-03-09 01:20:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreateEmbedWebUrl](http://document.tencentcloudapi.woa.com/document/product/1595/77218)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 20 次发布
+
+发布时间：2023-03-09 01:31:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [WithdrawsWatermark](http://document.tencentcloudapi.woa.com/document/product/862/77219)
+
+新增数据结构：
+
+* [AwsS3FileUploadTrigger](http://document.tencentcloudapi.woa.com/document/product/862/37615#AwsS3FileUploadTrigger)
+* [S3InputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#S3InputInfo)
+
+修改数据结构：
+
+* [MediaInputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaInputInfo)
+
+	* 新增成员：S3InputInfo
+
+* [WorkflowTrigger](http://document.tencentcloudapi.woa.com/document/product/862/37615#WorkflowTrigger)
+
+	* 新增成员：AwsS3FileUploadTrigger
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 22 次发布
+
+发布时间：2023-03-09 01:32:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [RefJobStatusCountItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#RefJobStatusCountItem)
+
+修改数据结构：
+
+* [ResourceConfigItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ResourceConfigItem)
+
+	* 新增成员：RefJobStatusCountSet
+
+* [ResourceItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ResourceItem)
+
+	* 新增成员：IsJobRun, FileName, WorkSpaceId, RefJobStatusCountSet
+
+	* <font color="#dd0000">**修改成员**：</font>ResourceId, Name, ResourceType, ResourceLoc, Region, AppId, OwnerUin, CreatorUin, CreateTime, UpdateTime, LatestResourceConfigVersion, Remark, VersionCount, RefJobCount
+
+* [RunJobDescription](http://document.tencentcloudapi.woa.com/document/product/849/52010#RunJobDescription)
+
+	* 新增成员：UseOldSystemConnector
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 34 次发布
+
+发布时间：2023-03-09 01:41:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateAMQPCluster
+* CreateAMQPExchange
+* CreateAMQPQueue
+* CreateAMQPRouteRelation
+* CreateAMQPVHost
+* DeleteAMQPCluster
+* DeleteAMQPExchange
+* DeleteAMQPQueue
+* DeleteAMQPRouteRelation
+* DeleteAMQPVHost
+* DescribeAMQPCluster
+* DescribeAMQPCreateQuota
+* DescribeAMQPExchanges
+* DescribeAMQPQueues
+* DescribeAMQPRouteRelations
+* DescribeAMQPVHosts
+* ModifyAMQPExchange
+* ModifyAMQPQueue
+* ModifyAMQPVHost
+
+
+
 # Release 3.0.718.1
 
 ## 云呼叫中心(ccc) 版本：2020-02-10
