@@ -84,6 +84,13 @@
       "output": "ChannelCreateMultiFlowSignQRCodeResponse",
       "status": "online"
     },
+    "ChannelCreatePrepareFlow": {
+      "document": "创建预发起合同",
+      "input": "ChannelCreatePrepareFlowRequest",
+      "name": "创建预发起合同",
+      "output": "ChannelCreatePrepareFlowResponse",
+      "status": "online"
+    },
     "ChannelCreateReleaseFlow": {
       "document": "发起解除协议，主要应用场景为：基于一份已经签署的合同，进行解除操作。\n合同发起人必须在电子签已经进行实名。",
       "input": "ChannelCreateReleaseFlowRequest",
@@ -428,6 +435,84 @@
         }
       ],
       "usage": "out"
+    },
+    "BaseFlowInfo": {
+      "document": "基础流程信息",
+      "members": [
+        {
+          "document": "合同流程名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "合同流程类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "合同流程描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "合同流程截止时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否顺序签署(true:无序签,false:顺序签)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Unordered",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "打开智能添加填写区(默认开启，打开:\"OPEN\" 关闭：\"CLOSE\")\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IntelligentStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "填写控件内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FormField",
+          "name": "FormFields",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "CcInfo": {
       "document": "抄送信息",
@@ -1301,6 +1386,120 @@
       ],
       "type": "object"
     },
+    "ChannelCreatePrepareFlowRequest": {
+      "document": "ChannelCreatePrepareFlow请求参数结构体",
+      "members": [
+        {
+          "document": "资源id，与ResourceType对应",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "资源类型，1：模版，目前仅支持模版，与ResourceId对应",
+          "example": "无",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "合同流程基础信息",
+          "example": "无",
+          "member": "BaseFlowInfo",
+          "name": "FlowInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "合同签署人信息",
+          "example": "无",
+          "member": "CommonFlowApprover",
+          "name": "FlowApproverList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "合同流程配置信息",
+          "example": "无",
+          "member": "CreateFlowOption",
+          "name": "FlowOption",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedPreview",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "企业机构信息，不用传",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "操作人（用户）信息，不用传",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreatePrepareFlowResponse": {
+      "document": "ChannelCreatePrepareFlow返回参数结构体",
+      "members": [
+        {
+          "document": "预发起的合同链接",
+          "example": "无",
+          "member": "string",
+          "name": "PrepareFlowUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "合同发起后预览链接",
+          "example": "无",
+          "member": "string",
+          "name": "PreviewFlowUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelCreateReleaseFlowRequest": {
       "document": "ChannelCreateReleaseFlow请求参数结构体",
       "members": [
@@ -1885,6 +2084,153 @@
       ],
       "type": "object"
     },
+    "CommonApproverOption": {
+      "document": "签署人配置信息",
+      "members": [
+        {
+          "document": "是否允许修改签署人信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CanEditApprover",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "CommonFlowApprover": {
+      "document": "通用签署人信息",
+      "members": [
+        {
+          "document": "指定当前签署人为第三方应用集成子客，默认false：当前签署人为第三方应用集成子客，true：当前签署人为saas企业用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "NotChannelOrganization",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署人类型,目前支持：0-企业签署人，1-个人签署人，3-企业静默签署人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ApproverType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "企业OpenId，第三方应用集成非静默签子客企业签署人发起合同毕传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "企业名称，第三方应用集成非静默签子客企业签署人必传，saas企业签署人必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户openId，第三方应用集成非静默签子客企业签署人必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署人名称，saas企业签署人，个人签署人必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署人手机号，saas企业签署人，个人签署人必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverMobile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署人Id，使用模版发起是，对应模版配置中的签署人RecipientId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署前置条件：阅读时长限制，不传默认10s,最大300s，最小3s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PreReadTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署前置条件：阅读全文限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsFullText",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署人配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonApproverOption",
+          "name": "ApproverOption",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "Component": {
       "document": "此结构体 (Component) 用于描述控件属性。\n\n在通过文件发起合同时，对应的component有三种定位方式\n1. 绝对定位方式\n2. 表单域(FIELD)定位方式\n3. 关键字(KEYWORD)定位方式\n可以参考官网说明\nhttps://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.8D.E5.AE.9A.E4.BD.8D.E6.96.B9.E5.BC.8F.E8.AF.B4.E6.98.8E",
       "members": [
@@ -2302,6 +2648,21 @@
         }
       ],
       "type": "object"
+    },
+    "CreateFlowOption": {
+      "document": "创建合同配置信息",
+      "members": [
+        {
+          "document": "是否允许修改合同信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CanEditFlow",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "CreateFlowsByTemplatesRequest": {
       "document": "CreateFlowsByTemplates请求参数结构体",

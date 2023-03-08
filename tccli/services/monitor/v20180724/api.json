@@ -12772,7 +12772,26 @@
     },
     "Label": {
       "document": "k8s中标签，一般以数组的方式存在",
-      "members": [],
+      "members": [
+        {
+          "document": "map表中的Name",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "map表中的Value",
+          "example": "xxx",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "both"
     },
     "LogAlarmReq": {
@@ -14867,7 +14886,35 @@
     },
     "PrometheusAgentInfo": {
       "document": "托管Prometheus agent信息",
-      "members": [],
+      "members": [
+        {
+          "document": "集群类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群id",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "in"
     },
     "PrometheusAgentOverview": {

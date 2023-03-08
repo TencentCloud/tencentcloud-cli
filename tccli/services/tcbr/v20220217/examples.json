@@ -2,10 +2,16 @@
   "actions": {
     "CreateCloudRunEnv": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunEnv\n<公共请求参数>\n\n{\n    \"FreeQuota\": \"basic\",\n    \"PackageType\": \"Enterprise\"\n}",
+        "document": "创建环境",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunEnv\n<公共请求参数>\n\n{\n    \"Alias\": \"xx\",\n    \"FreeQuota\": \"xx\",\n    \"Flag\": \"xx\",\n    \"VpcId\": \"xx\",\n    \"SubNetIds\": [\n        \"xx\"\n    ],\n    \"ReqKey\": \"xx\",\n    \"PackageType\": \"xx\",\n    \"Source\": \"xx\",\n    \"Channel\": \"xx\",\n    \"EnvId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvId\": \"prod-3g69bdvme2ac11cb\",\n        \"TranId\": \"0ow89eea326\",\n        \"RequestId\": \"1db46cfe-3b3d-47e8-aff2-1cbf1b6c3018\"\n    }\n}",
         "title": "CreateCloudRunEnv"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunEnv\n<公共请求参数>\n\n{\n    \"VpcId\": \"字符串\",\n    \"Alias\": \"字符串\",\n    \"SubNetIds\": [\n        \"字符串\"\n    ],\n    \"FreeQuota\": \"字符串\",\n    \"EnvId\": \"字符串\",\n    \"Source\": \"字符串\",\n    \"Flag\": \"字符串\",\n    \"PackageType\": \"字符串\",\n    \"ReqKey\": \"字符串\",\n    \"Channel\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-test\",\n        \"RequestId\": \"c8b68d5a-d045-4740-b731-da71512be06e\",\n        \"TranId\": \"\"\n    }\n}",
+        "title": "success"
       }
     ],
     "CreateCloudRunServer": [

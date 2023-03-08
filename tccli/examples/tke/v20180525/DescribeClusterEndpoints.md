@@ -1,6 +1,6 @@
 **Example 1: 获取集群访问地址**
 
-
+获取集群访问地址
 
 Input: 
 
@@ -13,10 +13,10 @@ Output:
 ```
 {
     "Response": {
-        "CertificationAuthority": "xxx",
-        "ClusterIntranetDomain": "xx",
-        "ClusterExternalDomain": "xx",
-        "SecurityGroup": "xx",
+        "CertificationAuthority": "",
+        "ClusterIntranetDomain": "cls.domain",
+        "ClusterExternalDomain": "cls.domain",
+        "SecurityGroup": "sg-2quou3re",
         "ClusterExternalEndpoint": "12.34.56.78",
         "ClusterIntranetEndpoint": "10.0.0.1",
         "ClusterDomain": "cls-65r1c5nu.ccs.tencent-cloud.com",

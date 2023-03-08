@@ -1428,16 +1428,6 @@
         },
         {
           "default": "",
-          "document": "告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停",
-          "example": "1",
-          "member": "uint64",
-          "name": "AlarmIndicator",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "告警方式,多个用逗号隔开（1:邮件，2:短信，3:微信，4:语音，5:代表企业微信，6:http）",
           "example": "1,2,3",
           "member": "uint64",
@@ -1464,6 +1454,16 @@
           "name": "ProjectId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停",
+          "example": "1",
+          "member": "uint64",
+          "name": "AlarmIndicator",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1541,6 +1541,72 @@
           "document": "阈值计算算子，1 : 大于 2 ：小于\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
+          "name": "Operator",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AlarmIndicatorInfo": {
+      "document": "告警指标",
+      "members": [
+        {
+          "default": "",
+          "document": "指标id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "AlarmIndicator",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警指标描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "AlarmIndicatorDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标阈值，1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "TriggerType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预计的超时时间，分钟级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "EstimatedTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实时任务告警需要的参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
           "name": "Operator",
           "required": false,
           "type": "int",
@@ -1737,6 +1803,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业微信群，0：未设置，1：成功，2：失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "WecomGroup",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -15582,6 +15658,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "dataproxy url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataProxyUrl",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务版本是否已提交运维\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Submit",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -22914,6 +23010,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表databaseName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "OriginDatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表schemaName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "OriginSchemaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -23121,30 +23237,10 @@
         },
         {
           "default": "",
-          "document": "告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停\n，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数",
-          "example": "1",
-          "member": "uint64",
-          "name": "AlarmIndicator",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "告警方式,多个用逗号隔开（1:邮件，2:短信，3:微信，4:语音，5:代表企业微信，6:http）",
           "example": "1,2",
           "member": "string",
           "name": "AlarmWay",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "告警接收人ID，多个用逗号隔开",
-          "example": "4529080",
-          "member": "string",
-          "name": "AlarmRecipientId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -23158,16 +23254,6 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "告警接收人昵称，多个用逗号隔开\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "afdhauhu,fdaga",
-          "member": "string",
-          "name": "AlarmRecipientName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
         },
         {
           "default": "",
@@ -23187,6 +23273,16 @@
           "name": "RegularId",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停\n，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "AlarmIndicator",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -23211,6 +23307,16 @@
         },
         {
           "default": "",
+          "document": "告警接收人ID，多个用逗号隔开",
+          "example": "4529080",
+          "member": "string",
+          "name": "AlarmRecipientId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "709896987",
           "member": "string",
@@ -23225,6 +23331,16 @@
           "example": "7897809",
           "member": "string",
           "name": "Creater",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警接收人昵称，多个用逗号隔开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "afdhauhu,fdaga",
+          "member": "string",
+          "name": "AlarmRecipientName",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -23265,6 +23381,36 @@
           "example": "无",
           "member": "string",
           "name": "NodeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlarmIndicatorInfo",
+          "name": "AlarmIndicatorInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警接收人类型，0指定人员；1任务责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AlarmRecipientType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业微信群Hook地址，多个hook地址使用,隔开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WeComHook",
           "required": false,
           "type": "string",
           "value_allowed_null": true

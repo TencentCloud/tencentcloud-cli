@@ -7543,7 +7543,6 @@
       "document": "DescribeClusterEndpoints请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-65r1c5nu",
           "member": "string",
@@ -7559,10 +7558,9 @@
       "members": [
         {
           "document": "集群APIServer的CA证书",
-          "example": "xxx",
+          "example": "”“",
           "member": "string",
           "name": "CertificationAuthority",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7571,7 +7569,6 @@
           "example": "12.34.56.78",
           "member": "string",
           "name": "ClusterExternalEndpoint",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7580,7 +7577,6 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "ClusterIntranetEndpoint",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7589,7 +7585,6 @@
           "example": "cls-65r1c5nu.ccs.tencent-cloud.com",
           "member": "string",
           "name": "ClusterDomain",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7598,7 +7593,6 @@
           "example": "[\"10.0.0.0\\/24\"]",
           "member": "string",
           "name": "ClusterExternalACL",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7607,7 +7601,6 @@
           "example": "cls.domain",
           "member": "string",
           "name": "ClusterExternalDomain",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7616,16 +7609,14 @@
           "example": "cls.domain",
           "member": "string",
           "name": "ClusterIntranetDomain",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "外网安全组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sg-xxx",
+          "example": "sg-3euou3gv",
           "member": "string",
           "name": "SecurityGroup",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8388,9 +8379,8 @@
       "document": "DescribeClusterSecurity请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段",
-          "example": "\"cls-xxxxxxxx\"",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -8407,7 +8397,6 @@
           "example": "\"admin\"",
           "member": "string",
           "name": "UserName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8416,70 +8405,62 @@
           "example": "\"xxiE6lEtexG8Lba7YQSoX97bPaMGNGQU\"",
           "member": "string",
           "name": "Password",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群访问CA证书",
-          "example": "\"xx\"",
+          "example": "\"\"",
           "member": "string",
           "name": "CertificationAuthority",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群访问的地址",
-          "example": "\"xx\"",
+          "example": "\"https://127.0.0.1\"",
           "member": "string",
           "name": "ClusterExternalEndpoint",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群访问的域名",
-          "example": "\"xx\"",
+          "example": "\"cls-7ph3twqe.ccs.tencent-cloud.com\"",
           "member": "string",
           "name": "Domain",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群Endpoint地址",
-          "example": "\"xx\"",
+          "example": "\"0.0.0.0\"",
           "member": "string",
           "name": "PgwEndpoint",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群访问策略组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"xx\",\"yy\"]",
+          "example": "[\"192.168.0.1\"]",
           "member": "string",
           "name": "SecurityPolicy",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "集群Kubeconfig文件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xx\"",
+          "example": "\"[REDACTED]\"",
           "member": "string",
           "name": "Kubeconfig",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "集群JnsGw的访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xx\"",
+          "example": "\"127.0.0.1:8080\"",
           "member": "string",
           "name": "JnsGwEndpoint",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8768,7 +8749,7 @@
         {
           "default": "",
           "document": "集群Id",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -8782,7 +8763,7 @@
       "members": [
         {
           "document": "集群的接入地址信息",
-          "example": "{}",
+          "example": "无",
           "member": "IPAddress",
           "name": "Addresses",
           "required": true,
@@ -8791,7 +8772,7 @@
         },
         {
           "document": "集群的认证信息（token只有请求是主账号才返回，子账户请使用返回的kubeconfig）",
-          "example": "{}",
+          "example": "无",
           "member": "ClusterCredential",
           "name": "Credential",
           "required": true,
@@ -8800,7 +8781,7 @@
         },
         {
           "document": "集群的公网访问信息",
-          "example": "{}",
+          "example": "无",
           "member": "ClusterPublicLB",
           "name": "PublicLB",
           "required": true,
@@ -8809,7 +8790,7 @@
         },
         {
           "document": "集群的内网访问信息",
-          "example": "{}",
+          "example": "无",
           "member": "ClusterInternalLB",
           "name": "InternalLB",
           "required": true,
@@ -9381,7 +9362,6 @@
       "document": "DescribeEksContainerInstanceLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Eks Container Instance Id，即容器实例Id",
           "example": "\"\"",
           "member": "string",
@@ -9390,7 +9370,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器名称，单容器的实例可选填。如果为多容器实例，请指定容器名称。",
           "example": "\"\"",
           "member": "string",
@@ -9399,7 +9378,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回最新日志行数，默认500，最大2000。日志内容最大返回 1M 数据。",
           "example": "\"\"",
           "member": "uint64",
@@ -9408,7 +9386,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "UTC时间，RFC3339标准",
           "example": "\"\"",
           "member": "string",
@@ -9417,7 +9394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否是查上一个容器（如果容器退出重启了）",
           "example": "\"\"",
           "member": "bool",
@@ -9426,7 +9402,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "查询最近多少秒内的日志",
           "example": "\"\"",
           "member": "uint64",
@@ -9435,7 +9410,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "日志总大小限制",
           "example": "\"\"",
           "member": "uint64",
@@ -9454,7 +9428,6 @@
           "example": "“”",
           "member": "string",
           "name": "ContainerName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9463,7 +9436,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "LogContent",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14985,16 +14957,14 @@
       "document": "ModifyClusterEndpointSP请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)",
           "example": "[\"192.168.1.0\\/24\\r\\n\"]",
           "member": "string",
@@ -15003,9 +14973,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "修改外网访问安全组",
-          "example": "sg-xxx",
+          "example": "sg-r0g2kty7",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,

@@ -407,7 +407,6 @@
       "document": "状态节点",
       "members": [
         {
-          "default": "",
           "document": "节点id",
           "example": "1",
           "member": "string",
@@ -417,7 +416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点名称",
           "example": "a",
           "member": "string",
@@ -427,7 +425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点类型 1:审批节点 2:执行节点 3:条件节点",
           "example": "1",
           "member": "uint64",
@@ -437,7 +434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "下一个节点",
           "example": "2",
           "member": "string",
@@ -447,7 +443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "审批意见模型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApproveOpinion",
@@ -457,7 +452,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "scf函数名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -467,7 +461,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）18: 外部审批中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -477,7 +470,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "审批节点审批人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "uint64",
@@ -487,7 +479,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "审批时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-06 10:11:11",
           "member": "string",
@@ -497,7 +488,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "审批意见信息 审批节点:审批人意见  执行节点:scf函数执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "success",
           "member": "string",
@@ -507,7 +497,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "有权限审批该节点的uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "ApproveUser",
@@ -517,7 +506,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否有权限审批该节点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -527,7 +515,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "审批id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101",
           "member": "string",
@@ -537,7 +524,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "审批方式 0或签 1会签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -547,7 +533,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "审批节点审批类型，1人工审批 2自动通过 3自动决绝 4外部审批scf\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -557,7 +542,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外部审批类型 scf:0或null ; CKafka:1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -567,7 +551,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "CKafka - 接入资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "datahub-y9xxx",
           "member": "string",
@@ -577,7 +560,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "CKafka - 任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TOPIC",
           "member": "string",
@@ -587,7 +569,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "CKafka - 地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -597,12 +578,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外部审批Url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://www.baidu.com/",
           "member": "string",
           "name": "ExternalUrl",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "并行节点 3-4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3-4",
+          "member": "string",
+          "name": "ParallelNodes",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }

@@ -41,7 +41,11 @@ tccli monitor CreatePrometheusClusterAgent --cli-unfold-argument  \
     --Agents.0.InClusterPodConfig.Tolerations.0.Operator xx \
     --Agents.0.InClusterPodConfig.Tolerations.0.Effect xx \
     --Agents.0.InClusterPodConfig.Tolerations.0.Key xx \
-    --Agents.0.NotScrape True
+    --Agents.0.InClusterPodConfig.NodeSelector.0.Name xx \
+    --Agents.0.InClusterPodConfig.NodeSelector.0.Value xx \
+    --Agents.0.NotScrape True \
+    --Agents.0.ExternalLabels.0.Name xx \
+    --Agents.0.ExternalLabels.0.Value xx
 ```
 
 Output: 

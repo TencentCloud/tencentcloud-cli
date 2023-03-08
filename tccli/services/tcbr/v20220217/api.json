@@ -1,7 +1,7 @@
 {
   "actions": {
     "CreateCloudRunEnv": {
-      "document": "创建云托管环境，并开通资源。\t",
+      "document": "创建云托管环境，并开通资源。",
       "input": "CreateCloudRunEnvRequest",
       "name": "创建环境",
       "output": "CreateCloudRunEnvResponse",
@@ -174,7 +174,6 @@
       "document": "CreateCloudRunEnv请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Trial,Standard,Professional,Enterprise",
           "example": "Enterprise",
           "member": "string",
@@ -183,7 +182,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符",
           "example": "env-alias",
           "member": "string",
@@ -192,7 +190,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。",
           "example": "basic",
           "member": "string",
@@ -201,7 +198,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "订单标记。建议使用方统一转大小写之后再判断。\nQuickStart：快速启动来源\nActivity：活动来源",
           "example": "QuickStart",
           "member": "string",
@@ -210,7 +206,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "私有网络Id",
           "example": "vpc-45olnsxx",
           "member": "string",
@@ -219,7 +214,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "子网列表",
           "example": "[\"subnet-n17bt4yb\",\"subnet-dw0xrh1b\",\"subnet-h5xm5f2x\"]",
           "member": "string",
@@ -228,7 +222,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "请求key 用于防重",
           "example": "4045b63716e",
           "member": "string",
@@ -237,7 +230,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源：wechat | cloud",
           "example": "wechat",
           "member": "string",
@@ -246,11 +238,18 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "渠道：wechat | cloud",
           "example": "wechat",
           "member": "string",
           "name": "Channel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "环境ID",
+          "example": "xxx-xxxx",
+          "member": "string",
+          "name": "EnvId",
           "required": false,
           "type": "string"
         }
@@ -265,7 +264,6 @@
           "example": "prod-3g69bdvme2ac11cb",
           "member": "string",
           "name": "EnvId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -274,7 +272,6 @@
           "example": "0ow89eea326",
           "member": "string",
           "name": "TranId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

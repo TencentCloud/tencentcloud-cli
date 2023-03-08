@@ -27,12 +27,18 @@ Output:
                         "Name": "xx",
                         "For": "xx",
                         "Labels": [
-                            {}
+                            {
+                                "Name": "xx",
+                                "Value": "xx"
+                            }
                         ],
                         "Rule": "xx",
                         "Template": "xx",
                         "Annotations": [
-                            {}
+                            {
+                                "Name": "xx",
+                                "Value": "xx"
+                            }
                         ]
                     }
                 ],

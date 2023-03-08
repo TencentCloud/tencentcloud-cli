@@ -3139,8 +3139,7 @@
       "document": "水印参数。",
       "members": [
         {
-          "default": "",
-          "document": "水印类型，0为图片（默认）。",
+          "document": "水印类型，0为图片（默认），1为文字。",
           "example": "0",
           "member": "uint64",
           "name": "WaterMarkType",
@@ -3149,7 +3148,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "图片水印参数。WaterMarkType为0指定。",
           "example": "WaterMarkImage",
           "member": "McuWaterMarkImage",
@@ -3157,6 +3155,93 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "文字水印参数。WaterMarkType为1指定。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WaterMarkText",
+          "member": "McuWaterMarkText",
+          "name": "WaterMarkText",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "McuWaterMarkText": {
+      "document": "文字水印参数。",
+      "members": [
+        {
+          "document": "文字水印内容。",
+          "example": "\"XXX\"",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "水印在输出时的宽。单位为像素值。",
+          "example": "64",
+          "member": "uint64",
+          "name": "WaterMarkWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "水印在输出时的高。单位为像素值。",
+          "example": "64",
+          "member": "uint64",
+          "name": "WaterMarkHeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "水印在输出时的X偏移。单位为像素值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LocationX",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "水印在输出时的Y偏移。单位为像素值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LocationY",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "字体大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "FontSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0xFFFFFF",
+          "member": "string",
+          "name": "FontColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0x000000",
+          "member": "string",
+          "name": "BackGroundColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

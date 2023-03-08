@@ -2903,16 +2903,6 @@
       "document": "DisableCCCPhoneNumber请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "TCCC 实例应用 ID",
-          "example": "1400000000",
-          "member": "uint64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "号码列表，0086开头",
           "example": "['00860755XXXX','0086021XXXX']",
           "member": "string",
@@ -2921,12 +2911,19 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "停用开关，0启用 1停用",
           "example": "1",
           "member": "int64",
           "name": "Disabled",
           "required": true,
+          "type": "int"
+        },
+        {
+          "document": "TCCC 实例应用 ID",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
           "type": "int"
         }
       ],

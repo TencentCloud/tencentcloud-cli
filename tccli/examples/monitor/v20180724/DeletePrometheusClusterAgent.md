@@ -6,7 +6,10 @@ Input:
 
 ```
 tccli monitor DeletePrometheusClusterAgent --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId xx \
+    --Agents.0.Describe xx \
+    --Agents.0.ClusterId xx \
+    --Agents.0.ClusterType xx
 ```
 
 Output: 

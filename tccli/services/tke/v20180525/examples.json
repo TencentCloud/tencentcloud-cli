@@ -578,9 +578,9 @@
     ],
     "DescribeClusterEndpoints": [
       {
-        "document": "",
+        "document": "获取集群访问地址",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterEndpoints\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-65r1c5nu\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CertificationAuthority\": \"xxx\",\n        \"ClusterIntranetDomain\": \"xx\",\n        \"ClusterExternalDomain\": \"xx\",\n        \"SecurityGroup\": \"xx\",\n        \"ClusterExternalEndpoint\": \"12.34.56.78\",\n        \"ClusterIntranetEndpoint\": \"10.0.0.1\",\n        \"ClusterDomain\": \"cls-65r1c5nu.ccs.tencent-cloud.com\",\n        \"ClusterExternalACL\": [\n            \"10.0.0.0/24\"\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificationAuthority\": \"\",\n        \"ClusterIntranetDomain\": \"cls.domain\",\n        \"ClusterExternalDomain\": \"cls.domain\",\n        \"SecurityGroup\": \"sg-2quou3re\",\n        \"ClusterExternalEndpoint\": \"12.34.56.78\",\n        \"ClusterIntranetEndpoint\": \"10.0.0.1\",\n        \"ClusterDomain\": \"cls-65r1c5nu.ccs.tencent-cloud.com\",\n        \"ClusterExternalACL\": [\n            \"10.0.0.0/24\"\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
         "title": "获取集群访问地址"
       }
     ],
@@ -683,8 +683,8 @@
     "DescribeClusterSecurity": [
       {
         "document": "集群的密钥信息",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterSecurity\n&ClusterId=cls-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Domain\": \"xx\",\n        \"CertificationAuthority\": \"xx\",\n        \"Kubeconfig\": \"xx\",\n        \"PgwEndpoint\": \"xx\",\n        \"JnsGwEndpoint\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SecurityPolicy\": [\n            \"xx\"\n        ],\n        \"ClusterExternalEndpoint\": \"xx\",\n        \"Password\": \"xx\"\n    }\n}",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterSecurity\n&ClusterId=cls-7ph3twqe\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"UserName\": \"admin\",\n        \"Domain\": \"cls-7ph3twqe.ccs.tencent-cloud.com\",\n        \"CertificationAuthority\": \"\",\n        \"Kubeconfig\": \"\",\n        \"PgwEndpoint\": \"0.0.0.0\",\n        \"JnsGwEndpoint\": \"127.0.0.1:8080\",\n        \"RequestId\": \"5f792091-66a7-40fc-8043-4d8b9537fa44\",\n        \"SecurityPolicy\": [\n            \"192.168.0.1\"\n        ],\n        \"ClusterExternalEndpoint\": \"https://127.0.0.1\",\n        \"Password\": \"\"\n    }\n}",
         "title": "集群的密钥信息"
       }
     ],
@@ -731,8 +731,8 @@
     "DescribeEKSClusterCredential": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEKSClusterCredential\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Credential\": {\n            \"CACert\": \"xx\",\n            \"Token\": \"xx\"\n        },\n        \"Addresses\": [\n            {\n                \"Ip\": \"xx\",\n                \"Type\": \"xx\",\n                \"Port\": 1\n            },\n            {\n                \"Ip\": \"xx\",\n                \"Type\": \"xx\",\n                \"Port\": 1\n            }\n        ],\n        \"ProxyLB\": true,\n        \"RequestId\": \"xx\",\n        \"PublicLB\": {\n            \"SecurityPolicies\": [\n                \"xx\"\n            ],\n            \"Enabled\": true,\n            \"SecurityGroup\": \"xx\",\n            \"AllowFromCidrs\": [\n                \"xx\"\n            ],\n            \"ExtraParam\": \"xx\"\n        },\n        \"InternalLB\": {\n            \"SubnetId\": \"xx\",\n            \"Enabled\": true\n        },\n        \"Kubeconfig\": \"apiVersion: v1 \\n clusters: \\n - cluster: \\n     insecure-skip-tls-verify: true\\n     server: https://9.3.224.18:10909 \\n   name: cls-xxxxxxxx \\n contexts: \\n - context:\\n     cluster: cls-xxxxxxxx \\n     user: admin\\n  name: master\\n current-context: master \\n kind: Config \\n preferences: {} \\n users: \\n- \\n ame: admin \\n  user:\\n    token: xxxxlWn8DaQQneFkPWht1Suorkxxxxxx\\n\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEKSClusterCredential\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-7ph3twqe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Credential\": {\n            \"CACert\": \"\",\n            \"Token\": \"\"\n        },\n        \"Addresses\": [\n            {\n                \"Ip\": \"127.0.0.1\",\n                \"Type\": \"Public\",\n                \"Port\": 443\n            }\n        ],\n        \"ProxyLB\": true,\n        \"RequestId\": \"0d1f4439-266b-4ea1-8c97-b0cca5eed7io\",\n        \"PublicLB\": {\n            \"SecurityPolicies\": [\n                \"192.168.1.1\"\n            ],\n            \"Enabled\": true,\n            \"SecurityGroup\": \"\",\n            \"AllowFromCidrs\": [\n                \"\"\n            ],\n            \"ExtraParam\": \"\"\n        },\n        \"InternalLB\": {\n            \"SubnetId\": \"\",\n            \"Enabled\": true\n        },\n        \"Kubeconfig\": \"apiVersion: v1 \\n clusters: \\n - cluster: \\n     insecure-skip-tls-verify: true\\n     server: https://9.3.224.18:10909 \\n   name: cls-7ph3twqe \\n contexts: \\n - context:\\n     cluster: cls-7ph3twqe \\n     user: admin\\n  name: master\\n current-context: master \\n kind: Config \\n preferences: {} \\n users: \\n- \\n ame: admin \\n  user:\\n    token: wqwwqlWn8DaQQneFkPWht1Suorktrwewq\\n\"\n    }\n}",
         "title": "获取弹性容器集群的接入认证信息"
       }
     ],
@@ -818,9 +818,9 @@
     ],
     "DescribeEksContainerInstanceLog": [
       {
-        "document": "",
+        "document": "查询容器实例中容器日志",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEksContainerInstanceLog\n<公共请求参数>\n\n{\n    \"EksCiId\": \"eksci-123456\",\n    \"Tail\": 500,\n    \"Previous\": false,\n    \"ContainerName\": \"simple-cputest\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ContainerName\": \"simple-cputest\",\n        \"LogContent\": \"hello world\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ContainerName\": \"simple-cputest\",\n        \"LogContent\": \"hello world\",\n        \"RequestId\": \"5f792091-66a7-40fc-8043-4d8b9537faiu\"\n    }\n}",
         "title": "查询容器实例中容器日志"
       }
     ],
@@ -1272,8 +1272,8 @@
     ],
     "ModifyClusterEndpointSP": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterEndpointSP\n<公共请求参数>\n\n{\n    \"SecurityPolicies\": [\n        \"192.168.1.0/24\"\n    ],\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
+        "document": "修改托管集群外网端口的安全策略",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterEndpointSP\n<公共请求参数>\n\n{\n    \"SecurityPolicies\": [\n        \"192.168.1.0/24\"\n    ],\n    \"ClusterId\": \"cls-7ph3twqe\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改托管集群外网端口的安全策略"
       }
