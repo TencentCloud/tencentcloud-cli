@@ -1,6 +1,6 @@
 **Example 1: 完成生命周期动作，通过InstanceId调用**
 
-
+通过InstanceId参数，完成指定实例的生命周期挂钩
 
 Input: 
 
@@ -22,7 +22,7 @@ Output:
 
 **Example 2: 完成生命周期动作，通过LifecycleActionToken调用**
 
-
+通过LifecycleActionToken参数，完成指定实例的生命周期挂钩，生命周期挂钩发送给TDMQ的通知消息中包含LifecycleActionToken参数
 
 Input: 
 

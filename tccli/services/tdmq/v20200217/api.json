@@ -22,39 +22,39 @@
       "status": "online"
     },
     "CreateAMQPCluster": {
-      "document": "创建AMQP集群",
+      "document": "产品下线了，对应的接口也要下线。\n\n创建AMQP集群",
       "input": "CreateAMQPClusterRequest",
       "name": "创建AMQP集群",
       "output": "CreateAMQPClusterResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAMQPExchange": {
-      "document": "创建AMQP Exchange",
+      "document": "产品下线了，对应的接口也要下线。\n\n创建AMQP Exchange",
       "input": "CreateAMQPExchangeRequest",
       "name": "创建AMQP Exchange",
       "output": "CreateAMQPExchangeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAMQPQueue": {
-      "document": "创建AMQP队列",
+      "document": "产品下线了，对应的接口也要下线。\n\n创建AMQP队列",
       "input": "CreateAMQPQueueRequest",
       "name": "创建AMQP队列",
       "output": "CreateAMQPQueueResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAMQPRouteRelation": {
-      "document": "创建AMQP路由关系",
+      "document": "产品下线了，对应的接口也要下线。\n\n创建AMQP路由关系",
       "input": "CreateAMQPRouteRelationRequest",
       "name": "创建AMQP路由关系",
       "output": "CreateAMQPRouteRelationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAMQPVHost": {
-      "document": "创建Amqp Vhost",
+      "document": "产品下线了，对应的接口也要下线。\n\n创建Amqp Vhost",
       "input": "CreateAMQPVHostRequest",
       "name": "创建Amqp Vhost",
       "output": "CreateAMQPVHostResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateCluster": {
       "document": "创建用户的集群",
@@ -148,39 +148,39 @@
       "status": "online"
     },
     "DeleteAMQPCluster": {
-      "document": "删除AMQP集群",
+      "document": "产品下线了，对应的接口也要下线。\n\n删除AMQP集群",
       "input": "DeleteAMQPClusterRequest",
       "name": "删除AMQP集群",
       "output": "DeleteAMQPClusterResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteAMQPExchange": {
-      "document": "删除Amqp交换机",
+      "document": "产品下线了，对应的接口也要下线。\n\n删除Amqp交换机",
       "input": "DeleteAMQPExchangeRequest",
       "name": "删除Amqp交换机",
       "output": "DeleteAMQPExchangeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteAMQPQueue": {
-      "document": "删除Amqp队列",
+      "document": "产品下线了，对应的接口也要下线。\n\n删除Amqp队列",
       "input": "DeleteAMQPQueueRequest",
       "name": "删除Amqp队列",
       "output": "DeleteAMQPQueueResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteAMQPRouteRelation": {
-      "document": "删除Amqp路由关系",
+      "document": "产品下线了，对应的接口也要下线。\n\n删除Amqp路由关系",
       "input": "DeleteAMQPRouteRelationRequest",
       "name": "删除Amqp路由关系",
       "output": "DeleteAMQPRouteRelationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteAMQPVHost": {
-      "document": "删除Vhost",
+      "document": "产品下线了，对应的接口也要下线。\n\n删除Vhost",
       "input": "DeleteAMQPVHostRequest",
       "name": "删除Vhost",
       "output": "DeleteAMQPVHostResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteCluster": {
       "document": "删除集群",
@@ -274,11 +274,11 @@
       "status": "online"
     },
     "DescribeAMQPCluster": {
-      "document": "获取单个Amqp集群信息",
+      "document": "产品下线了，对应的接口也要下线。\n\n获取单个Amqp集群信息",
       "input": "DescribeAMQPClusterRequest",
       "name": "获取单个Amqp集群信息",
       "output": "DescribeAMQPClusterResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAMQPClusters": {
       "document": "获取amqp集群列表",
@@ -288,39 +288,39 @@
       "status": "online"
     },
     "DescribeAMQPCreateQuota": {
-      "document": "获取用户的配额，如Queue容量，Exchange容量，Vhost容量，单Vhost Tps数,剩余可创建集群数",
+      "document": "产品下线了，对应的接口也要下线。\n\n获取用户的配额，如Queue容量，Exchange容量，Vhost容量，单Vhost Tps数,剩余可创建集群数",
       "input": "DescribeAMQPCreateQuotaRequest",
       "name": "获取用户配额",
       "output": "DescribeAMQPCreateQuotaResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAMQPExchanges": {
-      "document": "获取AMQP Exchange列表",
+      "document": "产品下线了，对应的接口也要下线。\n\n获取AMQP Exchange列表",
       "input": "DescribeAMQPExchangesRequest",
       "name": "获取AMQP Exchange列表",
       "output": "DescribeAMQPExchangesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAMQPQueues": {
-      "document": "获取Amqp队列列表",
+      "document": "产品下线了，对应的接口也要下线。\n\n获取Amqp队列列表",
       "input": "DescribeAMQPQueuesRequest",
       "name": "获取Amqp队列列表",
       "output": "DescribeAMQPQueuesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAMQPRouteRelations": {
-      "document": "获取Amqp路由关系列表",
+      "document": "产品下线了，对应的接口也要下线。\n\n获取Amqp路由关系列表",
       "input": "DescribeAMQPRouteRelationsRequest",
       "name": "获取Amqp路由关系列表",
       "output": "DescribeAMQPRouteRelationsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAMQPVHosts": {
-      "document": "获取Amqp Vhost 列表",
+      "document": "产品下线了，对应的接口也要下线。\n\n获取Amqp Vhost 列表",
       "input": "DescribeAMQPVHostsRequest",
       "name": "获取Amqp Vhost列表",
       "output": "DescribeAMQPVHostsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAllTenants": {
       "document": "获取某个租户的虚拟集群列表",
@@ -540,25 +540,25 @@
       "status": "online"
     },
     "ModifyAMQPExchange": {
-      "document": "更新Amqp交换机",
+      "document": "产品下线了，对应的接口也要下线。\n\n更新Amqp交换机",
       "input": "ModifyAMQPExchangeRequest",
       "name": "更新Amqp交换机",
       "output": "ModifyAMQPExchangeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyAMQPQueue": {
-      "document": "更新Amqp队列",
+      "document": "产品下线了，对应的接口也要下线。\n\n更新Amqp队列",
       "input": "ModifyAMQPQueueRequest",
       "name": "更新Amqp队列",
       "output": "ModifyAMQPQueueResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyAMQPVHost": {
-      "document": "更新Vhost",
+      "document": "产品下线了，对应的接口也要下线。\n\n更新Vhost",
       "input": "ModifyAMQPVHostRequest",
       "name": "更新Vhost",
       "output": "ModifyAMQPVHostResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyCluster": {
       "document": "更新集群信息",

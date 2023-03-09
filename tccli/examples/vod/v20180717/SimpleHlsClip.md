@@ -7,8 +7,8 @@ Input:
 ```
 tccli vod SimpleHlsClip --cli-unfold-argument  \
     --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8 \
-    --StartTimeOffset 2 \
-    --EndTimeOffset 10
+    --StartTimeOffset 2.0 \
+    --EndTimeOffset 10.0
 ```
 
 Output: 
@@ -24,7 +24,7 @@ Output:
             "Bitrate": 622014,
             "Height": 480,
             "Width": 640,
-            "Duration": 48,
+            "Duration": 48.0,
             "Rotate": 0,
             "VideoStreamSet": [
                 {
@@ -32,7 +32,12 @@ Output:
                     "Height": 480,
                     "Width": 640,
                     "Codec": "h264",
-                    "Fps": 25
+                    "Fps": 25,
+                    "CodecTag": "",
+                    "DynamicRangeInfo": {
+                        "Type": "",
+                        "HDRType": ""
+                    }
                 }
             ],
             "AudioStreamSet": [
@@ -42,8 +47,9 @@ Output:
                     "Codec": "aac"
                 }
             ],
-            "VideoDuration": 0,
-            "AudioDuration": 0
+            "VideoDuration": 0.0,
+            "AudioDuration": 0.0,
+            "Md5": "Md5"
         },
         "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
     }
@@ -76,7 +82,7 @@ Output:
             "Bitrate": 622014,
             "Height": 480,
             "Width": 640,
-            "Duration": 48,
+            "Duration": 48.0,
             "Rotate": 0,
             "VideoStreamSet": [
                 {
@@ -84,7 +90,12 @@ Output:
                     "Height": 480,
                     "Width": 640,
                     "Codec": "h264",
-                    "Fps": 25
+                    "Fps": 25,
+                    "CodecTag": "",
+                    "DynamicRangeInfo": {
+                        "Type": "",
+                        "HDRType": ""
+                    }
                 }
             ],
             "AudioStreamSet": [
@@ -94,8 +105,9 @@ Output:
                     "Codec": "aac"
                 }
             ],
-            "VideoDuration": 0,
-            "AudioDuration": 0
+            "VideoDuration": 0.0,
+            "AudioDuration": 0.0,
+            "Md5": "Md5"
         },
         "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
     }

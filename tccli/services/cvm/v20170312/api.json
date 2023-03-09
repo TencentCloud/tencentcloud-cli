@@ -308,6 +308,13 @@
       "output": "DescribeReservedInstancesOfferingsResponse",
       "status": "online"
     },
+    "DescribeTaskInfo": {
+      "document": "本接口 (DescribeTaskInfo) 用于查询云服务器维修任务列表及详细信息。\n\n- 可以根据实例ID、实例名称或任务状态等信息来查询维修任务列表。过滤信息详情可参考入参说明。\n- 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的维修任务列表。\n\n默认接口请求频率限制：10次/秒。</br>",
+      "input": "DescribeTaskInfoRequest",
+      "name": "查询维修任务列表",
+      "output": "DescribeTaskInfoResponse",
+      "status": "online"
+    },
     "DescribeZoneInstanceConfigInfos": {
       "document": "本接口(DescribeZoneInstanceConfigInfos) 获取可用区的机型信息。",
       "input": "DescribeZoneInstanceConfigInfosRequest",
@@ -3906,6 +3913,136 @@
       ],
       "type": "object"
     },
+    "DescribeTaskInfoRequest": {
+      "document": "DescribeTaskInfo请求参数结构体",
+      "members": [
+        {
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "按照指定的产品类型查询，支持取值：\n\n- `CVM`：云服务器\n- `CDH`：专用宿主机\n- `CPM2.0`：裸金属云服务器\n\n未传入或为空时，默认查询全部产品类型。",
+          "example": "CVM",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "按照一个或多个任务状态ID进行过滤。\n`TaskStatus`（任务状态ID）与任务状态中文名的对应关系如下：\n\n- `1`：待授权\n- `2`：处理中\n- `3`：已结束\n- `4`：已预约\n- `5`：已取消\n- `6`：已避免\n\n各任务状态的具体含义，可参考 [任务状态](https://cloud.tencent.com/document/product/213/67789#.E4.BB.BB.E5.8A.A1.E7.8A.B6.E6.80.81)。",
+          "example": "[1, 2, 3, 4, 5, 6]",
+          "member": "int64",
+          "name": "TaskStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "按照一个或多个任务类型ID进行过滤。\n\n`TaskTypeId`（任务类型ID）与任务类型中文名的对应关系如下：\n\n- `101`：实例运行隐患\n- `102`：实例运行异常\n- `103`：实例硬盘异常\n- `104`：实例网络连接异常\n- `105`：实例运行预警\n- `106`：实例硬盘预警\n- `107`：实例维护升级\n\n各任务类型的具体含义，可参考 [维修任务分类](https://cloud.tencent.com/document/product/213/67789#.E7.BB.B4.E4.BF.AE.E4.BB.BB.E5.8A.A1.E5.88.86.E7.B1.BB)。",
+          "example": "[101, 102, 103, 104, 105, 106, 107]",
+          "member": "int64",
+          "name": "TaskTypeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "按照一个或者多个任务ID查询。任务ID形如：`rep-xxxxxxxx`。",
+          "example": "[\"rep-xxxxxxxx\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "按照一个或者多个实例ID查询。实例ID形如：`ins-xxxxxxxx`。",
+          "example": "[\"ins-xxxxxxxx\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "按照一个或者多个实例名称查询。",
+          "example": "[\"test-1\"]",
+          "member": "string",
+          "name": "Aliases",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "时间查询区间的起始位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当天`00:00:00`。",
+          "example": "2023-01-01 00:00:00",
+          "member": "datetime",
+          "name": "StartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "时间查询区间的终止位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当前时刻。",
+          "example": "2023-02-01 00:00:00",
+          "member": "datetime",
+          "name": "EndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "指定返回维修任务列表的排序字段，目前支持：\n\n- `CreateTime`：任务创建时间\n- `AuthTime`：任务授权时间\n- `EndTime`：任务结束时间\n\n未传入时或为空时，默认按`CreateTime`字段进行排序。",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "排序方式，目前支持：\n\n- `0`：升序（默认）\n- `1`：降序\n\n未传入或为空时，默认按升序排序。\n",
+          "example": "1",
+          "member": "int64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskInfoResponse": {
+      "document": "DescribeTaskInfo返回参数结构体",
+      "members": [
+        {
+          "document": "查询返回的维修任务总数量。",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询返回的维修任务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "RepairTaskInfo",
+          "name": "RepairTaskInfoSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZoneInstanceConfigInfosRequest": {
       "document": "DescribeZoneInstanceConfigInfos请求参数结构体",
       "members": [
@@ -5050,6 +5187,15 @@
           "example": "TencentCloud",
           "member": "string",
           "name": "LicenseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启动模式",
+          "example": "Legacy BIOS",
+          "member": "string",
+          "name": "BootMode",
           "required": false,
           "type": "string"
         }
@@ -8801,6 +8947,228 @@
         }
       ],
       "type": "object"
+    },
+    "RepairTaskInfo": {
+      "document": "描述维修任务的相关信息",
+      "members": [
+        {
+          "document": "维修任务ID",
+          "example": "rep-xxxxxxxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例ID",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务类型ID，与任务类型中文名的对应关系如下：\n\n- `101`：实例运行隐患\n- `102`：实例运行异常\n- `103`：实例硬盘异常\n- `104`：实例网络连接异常\n- `105`：实例运行预警\n- `106`：实例硬盘预警\n- `107`：实例维护升级\n\n各任务类型的具体含义，可参考 [维修任务分类](https://cloud.tencent.com/document/product/213/67789#.E7.BB.B4.E4.BF.AE.E4.BB.BB.E5.8A.A1.E5.88.86.E7.B1.BB)。",
+          "example": "101",
+          "member": "uint64",
+          "name": "TaskTypeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务类型中文名",
+          "example": "实例运行隐患",
+          "member": "string",
+          "name": "TaskTypeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务状态ID，与任务状态中文名的对应关系如下：\n\n- `1`：待授权\n- `2`：处理中\n- `3`：已结束\n- `4`：已预约\n- `5`：已取消\n- `6`：已避免\n\n各任务状态的具体含义，可参考 [任务状态](https://cloud.tencent.com/document/product/213/67789#.E4.BB.BB.E5.8A.A1.E7.8A.B6.E6.80.81)。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备状态ID，与设备状态中文名的对应关系如下：\n\n- `1`：故障中\n- `2`：处理中\n- `3`：正常\n- `4`：已预约\n- `5`：已取消\n- `6`：已避免",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeviceStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "操作状态ID，与操作状态中文名的对应关系如下：\n\n- `1`：未授权\n- `2`：已授权\n- `3`：已处理\n- `4`：已预约\n- `5`：已取消\n- `6`：已避免",
+          "example": "1",
+          "member": "uint64",
+          "name": "OperateStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务创建时间",
+          "example": "2017-01-01 12:00:00",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务授权时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2017-01-03 12:00:00",
+          "member": "datetime",
+          "name": "AuthTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2017-01-03 14:00:00",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "监控到您的云服务器存在隐患，可能导致云服务器高负载或宕机。为尽快修复隐患，需要您授权我们在线迁移。感谢您的支持与理解。",
+          "member": "string",
+          "name": "TaskDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-7",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "所在私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "所在私有网络名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default-VPC",
+          "member": "string",
+          "name": "VpcName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "所在子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "所在子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default-Subnet",
+          "member": "string",
+          "name": "SubnetName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.22.33.44",
+          "member": "string",
+          "name": "WanIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.10.1.9",
+          "member": "string",
+          "name": "LanIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "产品类型，支持取值：\n\n- `CVM`：云服务器\n- `CDH`：专用宿主机\n- `CPM2.0`：裸金属云服务器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVM",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务子类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "string",
+          "name": "TaskSubType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务授权类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "AuthType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "授权渠道，支持取值：\n\n- `Waiting_auth`：待授权\n- `Customer_auth`：客户操作授权\n- `System_mandatory_auth`：系统默认授权\n- `Pre_policy_auth`：预置策略授权",
+          "example": "Customer_auth",
+          "member": "string",
+          "name": "AuthSource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ReservedInstanceConfigInfoItem": {
       "document": "预留实例静态配置信息。预留实例当前只针对国际站白名单用户开放。",

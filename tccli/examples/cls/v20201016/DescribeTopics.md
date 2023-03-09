@@ -32,6 +32,7 @@ Output:
                 "MaxSplitPartitions": 0,
                 "LogsetId": "x15",
                 "TopicId": "x16",
+                "HotPeriod": 1,
                 "StorageType": "x17",
                 "Period": 0,
                 "AutoSplit": true,

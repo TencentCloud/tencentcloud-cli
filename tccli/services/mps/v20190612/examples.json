@@ -795,6 +795,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aaaaa\"\n    }\n}",
         "title": "请求示例"
       }
+    ],
+    "WithdrawsWatermark": [
+      {
+        "document": "提取视频中的暗水印。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: WithdrawsWatermark\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"COS\",\n        \"CosInputInfo\": {\n            \"Region\": \"ap-chongqing\",\n            \"Object\": \"/movie/201907/WildAnimal.mov\",\n            \"Bucket\": \"TopRankVideo-125xxx88\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"125xxx65-WithdrawsWatermark-bffb15f07530b57bc1aabb01fac74bca\",\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "发起提取水印任务"
+      }
     ]
   },
   "version": "1.0"

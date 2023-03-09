@@ -27358,7 +27358,6 @@
       "document": "SimpleHlsClip请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要裁剪的腾讯云点播 HLS 视频 URL。",
           "example": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8",
           "member": "string",
@@ -27367,7 +27366,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "1",
           "member": "uint64",
@@ -27376,7 +27374,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "裁剪的开始偏移时间，单位秒。默认 0，即从视频开头开始裁剪。负数表示距离视频结束多少秒开始裁剪。例如 -10 表示从倒数第 10 秒开始裁剪。",
           "example": "2",
           "member": "float",
@@ -27385,7 +27382,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "裁剪的结束偏移时间，单位秒。默认 0，即裁剪到视频尾部。负数表示距离视频结束多少秒结束裁剪。例如 -10 表示到倒数第 10 秒结束裁剪。",
           "example": "10",
           "member": "float",
@@ -27394,7 +27390,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "是否固化。0 不固化，1 固化。默认不固化。",
           "example": "0",
           "member": "int64",
@@ -27403,7 +27398,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "剪辑固化后的视频存储过期时间。格式参照 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。仅 IsPersistence 为 1 时有效，默认剪辑固化的视频永不过期。",
           "example": "无",
           "member": "string",
@@ -27412,7 +27406,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "剪辑固化后的视频点播任务流处理，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。仅 IsPersistence 为 1 时有效。",
           "example": "无",
           "member": "string",
@@ -27421,7 +27414,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>\n仅 IsPersistence 为 1 时有效。",
           "example": "无",
           "member": "int64",
@@ -27430,7 +27422,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。",
           "example": "无",
           "member": "string",
@@ -27439,7 +27430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。",
           "example": "无",
           "member": "string",
@@ -27458,7 +27448,6 @@
           "example": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8",
           "member": "string",
           "name": "Url",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27467,7 +27456,6 @@
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -27476,7 +27464,6 @@
           "example": "无",
           "member": "string",
           "name": "FileId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27485,7 +27472,6 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -35,7 +35,7 @@
     "CreateEmergencyVulScan": [
       {
         "document": "漏洞管理 - 应急漏洞检测",
-        "input": "https://cwp.tencentcloudapi.com/?Action=CreateEmergencyVulScan\n&VulId=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmergencyVulScan\n<公共请求参数>\n\n{\n    \"VulId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"42342314\"\n    }\n}",
         "title": "漏洞管理 -应急漏洞检测"
       }

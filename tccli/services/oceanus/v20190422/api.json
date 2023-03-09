@@ -2987,12 +2987,36 @@
       ],
       "usage": "in"
     },
+    "RefJobStatusCountItem": {
+      "document": "依赖作业分状态计数信息",
+      "members": [
+        {
+          "document": "作业状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JobStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "作业数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ResourceConfigItem": {
       "document": "描述资源配置的返回参数",
       "members": [
         {
-          "default": "",
           "document": "资源ID",
+          "example": "无",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -3000,8 +3024,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源类型",
+          "example": "无",
           "member": "int64",
           "name": "ResourceType",
           "required": true,
@@ -3009,8 +3033,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源所属地域",
+          "example": "无",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -3018,8 +3042,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源所属AppId",
+          "example": "无",
           "member": "int64",
           "name": "AppId",
           "required": true,
@@ -3027,8 +3051,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主账号Uin",
+          "example": "无",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -3036,8 +3060,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子账号Uin",
+          "example": "无",
           "member": "string",
           "name": "CreatorUin",
           "required": true,
@@ -3045,8 +3069,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源位置描述",
+          "example": "无",
           "member": "ResourceLoc",
           "name": "ResourceLoc",
           "required": true,
@@ -3054,8 +3078,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源创建时间",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -3063,8 +3087,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源版本",
+          "example": "无",
           "member": "int64",
           "name": "Version",
           "required": true,
@@ -3072,8 +3096,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源描述",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -3081,8 +3105,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源状态：0: 资源同步中，1:资源已就绪\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -3090,12 +3114,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关联作业个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "RefJobCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分状态统计关联作业数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RefJobStatusCountItem",
+          "name": "RefJobStatusCountSet",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -3105,129 +3138,165 @@
       "document": "资源详细描述",
       "members": [
         {
-          "default": "",
           "document": "资源ID",
+          "example": "\"test\"",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源名称",
+          "example": "\"test\"",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源类型",
+          "example": "0",
           "member": "uint64",
           "name": "ResourceType",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源位置",
+          "example": "0",
           "member": "ResourceLoc",
           "name": "ResourceLoc",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源地域",
+          "example": "\"test\"",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "应用ID",
+          "example": "0",
           "member": "uint64",
           "name": "AppId",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主账号Uin",
+          "example": "\"test\"",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子账号Uin",
+          "example": "\"test\"",
           "member": "string",
           "name": "CreatorUin",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源创建时间",
+          "example": "\"test\"",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源最后更新时间",
+          "example": "\"test\"",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源的资源版本ID",
+          "example": "0",
           "member": "int64",
           "name": "LatestResourceConfigVersion",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"test\"",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "版本个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "VersionCount",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关联作业数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "RefJobCount",
-          "required": true,
+          "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "作业运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsJobRun",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分状态统计关联作业数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RefJobStatusCountItem",
+          "name": "RefJobStatusCountSet",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -3237,7 +3306,6 @@
       "document": "资源位置描述",
       "members": [
         {
-          "default": "",
           "document": "资源位置的存储类型，目前只支持1:COS",
           "example": "1",
           "member": "int64",
@@ -3247,7 +3315,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "描述资源位置的json",
           "example": "{\"Bucket\":\"bucket1\",\"Path\":\"your/path\",\"Region\":\"ap-guangzhou\"}",
           "member": "ResourceLocParam",
@@ -3416,7 +3483,6 @@
       "document": "作业启动详情",
       "members": [
         {
-          "default": "",
           "document": "作业Id",
           "example": "cql-6w8eab6f",
           "member": "string",
@@ -3426,7 +3492,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "运行类型，1：启动，2：恢复",
           "example": "1",
           "member": "int64",
@@ -3436,8 +3501,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点",
+          "document": "兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）",
           "example": "LATEST",
           "member": "string",
           "name": "StartMode",
@@ -3446,7 +3510,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当前作业的某个版本",
           "example": "1",
           "member": "uint64",
@@ -3456,7 +3519,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Savepoint路径",
           "example": "Savepoint",
           "member": "string",
@@ -3466,7 +3528,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Savepoint的Id",
           "example": "cql-6w8eab6f",
           "member": "string",
@@ -3474,6 +3535,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "使用历史版本系统依赖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "UseOldSystemConnector",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

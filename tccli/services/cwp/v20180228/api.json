@@ -9467,6 +9467,15 @@
           "name": "Uuids",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "扫描超时时长 ，单位秒",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TimeoutPeriod",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

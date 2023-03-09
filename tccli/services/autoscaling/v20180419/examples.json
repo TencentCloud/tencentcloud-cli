@@ -32,13 +32,13 @@
     ],
     "CompleteLifecycleAction": [
       {
-        "document": "",
+        "document": "通过InstanceId参数，完成指定实例的生命周期挂钩",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteLifecycleAction\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-ni8bpmve\",\n    \"LifecycleActionResult\": \"CONTINUE\",\n    \"LifecycleHookId\": \"ash-fbjiexz7\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0cf47b9-4236-491c-bfab-106947198afe\"\n    }\n}",
         "title": "完成生命周期动作，通过InstanceId调用"
       },
       {
-        "document": "",
+        "document": "通过LifecycleActionToken参数，完成指定实例的生命周期挂钩，生命周期挂钩发送给TDMQ的通知消息中包含LifecycleActionToken参数",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteLifecycleAction\n<公共请求参数>\n\n{\n    \"LifecycleActionResult\": \"CONTINUE\",\n    \"LifecycleHookId\": \"ash-fbjiexz7\",\n    \"LifecycleActionToken\": \"4d910016-2590-444d-8f4a-c14940036902\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"de792ffe-e37e-4f1d-8534-300b555739da\"\n    }\n}",
         "title": "完成生命周期动作，通过LifecycleActionToken调用"
@@ -374,14 +374,14 @@
     ],
     "ModifyAutoScalingGroup": [
       {
-        "document": "",
+        "document": "修改指定伸缩组的VpcId和SubnetIds参数",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoScalingGroup\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-ka0s0q80\",\n    \"SubnetIds\": [\n        \"subnet-b0vxjhot\",\n        \"subnet-3tmerl37\"\n    ],\n    \"VpcId\": \"vpc-hy436tmc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c503ddc6-496c-44c9-8cec-e9f1c3f9c11c\"\n    }\n}",
         "title": "修改伸缩组VPC子网信息"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoScalingGroup\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-ka0s0q80\",\n    \"MinSize\": \"1\",\n    \"MaxSize\": \"10\",\n    \"DesiredCapacity\": \"3\"\n}",
+        "document": "修改指定伸缩组的期望实例数为3，最大实例数为10，最小实例数为1",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoScalingGroup\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-ka0s0q80\",\n    \"MinSize\": 1,\n    \"MaxSize\": 10,\n    \"DesiredCapacity\": 3\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b41d8d30-21d4-412c-b7f3-53041879968c\"\n    }\n}",
         "title": "修改伸缩组期望实例、最大实例数、最小实例数"
       }
