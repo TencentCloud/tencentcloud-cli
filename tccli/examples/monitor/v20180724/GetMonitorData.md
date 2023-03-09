@@ -119,7 +119,7 @@ Input:
 ```
 tccli monitor GetMonitorData --cli-unfold-argument  \
     --Namespace QCE/CDB \
-    --MetricName SlowQueries \
+    --MetricName CpuUseRate \
     --Period 300 \
     --Instances.0.Dimensions.0.Name InstanceId \
     --Instances.0.Dimensions.0.Value cdb-k5d6z7p0 \
@@ -136,7 +136,7 @@ Output:
         "StartTime": "2018-09-22T19:20:00+08:00",
         "EndTime": "2018-09-22T20:20:00+08:00",
         "Period": 300,
-        "MetricName": "SlowQueries",
+        "MetricName": "CpuUseRate",
         "DataPoints": [
             {
                 "Dimensions": [

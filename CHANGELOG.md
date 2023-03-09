@@ -1,3 +1,323 @@
+# Release 3.0.720.1
+
+## 账号中心(account) 版本：2018-12-25
+
+### 第 8 次发布
+
+发布时间：2023-03-10 01:05:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddAccountBindForSaaS](http://document.tencentcloudapi.woa.com/document/product/1594/77228)
+* [DescribeBasicAuthForSaaS](http://document.tencentcloudapi.woa.com/document/product/1594/77222)
+* [DescribeUserTrade](http://document.tencentcloudapi.woa.com/document/product/1594/77221)
+* [GetTradeConfigList](http://document.tencentcloudapi.woa.com/document/product/1594/77220)
+* [ModifyTrade](http://document.tencentcloudapi.woa.com/document/product/1594/77224)
+* [RegisterCloudForSaaS](http://document.tencentcloudapi.woa.com/document/product/1594/77227)
+* [SaveBasicAuthForSaaS](http://document.tencentcloudapi.woa.com/document/product/1594/77223)
+* [SendEmailVerifyCode](http://document.tencentcloudapi.woa.com/document/product/1594/77226)
+* [SendSmsVerifyCode](http://document.tencentcloudapi.woa.com/document/product/1594/77225)
+
+新增数据结构：
+
+* [TradeOneNode](http://document.tencentcloudapi.woa.com/document/product/1594/75172#TradeOneNode)
+* [TradeTwoNode](http://document.tencentcloudapi.woa.com/document/product/1594/75172#TradeTwoNode)
+
+
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 42 次发布
+
+发布时间：2023-03-10 01:06:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BGPInstanceSpecification](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstanceSpecification)
+
+	* 新增成员：DownGradeProtect
+
+
+
+
+## 访问管理(cam) 版本：2019-01-16
+
+### 第 18 次发布
+
+发布时间：2023-03-10 01:09:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChangeTokenUser](http://document.tencentcloudapi.woa.com/document/product/598/77231)
+* [CheckTokenValid](http://document.tencentcloudapi.woa.com/document/product/598/77230)
+* [GetTokenByAuthCodeForSaaS](http://document.tencentcloudapi.woa.com/document/product/598/77229)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 46 次发布
+
+发布时间：2023-03-10 01:10:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloneItem](http://document.tencentcloudapi.woa.com/document/product/236/15878#CloneItem)
+
+	* 新增成员：NewRegionId, SrcRegionId
+
+
+
+
+## 云加密机(cloudhsm) 版本：2019-11-12
+
+### 第 3 次发布
+
+发布时间：2023-03-10 01:16:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetAlarmEvent](http://document.tencentcloudapi.woa.com/document/product/639/77234)
+* [GetVsmMonitorInfo](http://document.tencentcloudapi.woa.com/document/product/639/77232)
+* [ModifyAlarmEvent](http://document.tencentcloudapi.woa.com/document/product/639/77233)
+
+修改接口：
+
+* [ModifyVsmAttributes](http://document.tencentcloudapi.woa.com/document/product/639/41441)
+
+	* 新增入参：AlarmStatus
+
+
+新增数据结构：
+
+* [AlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/639/41450#AlarmPolicy)
+
+修改数据结构：
+
+* [HsmInfo](http://document.tencentcloudapi.woa.com/document/product/639/41450#HsmInfo)
+
+	* 新增成员：HsmType
+
+* [ResourceInfo](http://document.tencentcloudapi.woa.com/document/product/639/41450#ResourceInfo)
+
+	* 新增成员：AlarmStatus
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 29 次发布
+
+发布时间：2023-03-10 01:16:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCosRecharge](http://document.tencentcloudapi.woa.com/document/product/614/77237)
+* [DescribeCosRecharges](http://document.tencentcloudapi.woa.com/document/product/614/77236)
+* [ModifyCosRecharge](http://document.tencentcloudapi.woa.com/document/product/614/77235)
+
+新增数据结构：
+
+* [CosRechargeInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#CosRechargeInfo)
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 44 次发布
+
+发布时间：2023-03-10 01:18:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RepairTaskControl](http://document.tencentcloudapi.woa.com/document/product/213/77238)
+
+修改接口：
+
+* [InquiryPriceTerminateInstances](http://document.tencentcloudapi.woa.com/document/product/213/58193)
+
+	* <font color="#dd0000">**修改出参**：</font>InstanceRefundsSet
+
+* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/213/15723)
+
+	* 新增入参：ReleasePrepaidDataDisks
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 49 次发布
+
+发布时间：2023-03-10 01:20:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [JavaMemShellInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#JavaMemShellInfo)
+
+	* 新增成员：Uuid
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 40 次发布
+
+发布时间：2023-03-10 01:23:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeForbiddenTablePro](http://document.tencentcloudapi.woa.com/document/product/1342/77239)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 45 次发布
+
+发布时间：2023-03-10 01:26:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
+
+	* 新增入参：CcInfos, CcNotifyType
+
+
+修改数据结构：
+
+* [CcInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CcInfo)
+
+	* 新增成员：Name, CcType, CcPermission
+
+* [FlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowInfo)
+
+	* 新增成员：CcNotifyType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 21 次发布
+
+发布时间：2023-03-10 01:33:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateSchedule](http://document.tencentcloudapi.woa.com/document/product/862/77245)
+* [DeleteSchedule](http://document.tencentcloudapi.woa.com/document/product/862/77244)
+* [DescribeSchedules](http://document.tencentcloudapi.woa.com/document/product/862/77243)
+* [DisableSchedule](http://document.tencentcloudapi.woa.com/document/product/862/77242)
+* [EnableSchedule](http://document.tencentcloudapi.woa.com/document/product/862/77241)
+* [ModifySchedule](http://document.tencentcloudapi.woa.com/document/product/862/77240)
+
+新增数据结构：
+
+* [Activity](http://document.tencentcloudapi.woa.com/document/product/862/37615#Activity)
+* [ActivityPara](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityPara)
+* [SchedulesInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#SchedulesInfo)
+
+
+
+## 安全凭证服务(sts) 版本：2018-08-13
+
+### 第 7 次发布
+
+发布时间：2023-03-10 01:39:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetSaaSAccessToken](http://document.tencentcloudapi.woa.com/document/product/1312/77247)
+* [GetThirdPartyFederationToken](http://document.tencentcloudapi.woa.com/document/product/1312/77248)
+
+
+
+## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
+
+### 第 7 次发布
+
+发布时间：2023-03-10 01:39:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClusterInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#ClusterInfo)
+
+	* 新增成员：RestProxyStatus
+
+* [ProxyDetailInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#ProxyDetailInfo)
+
+	* 新增成员：Version
+
+* [ServerDetailInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#ServerDetailInfo)
+
+	* 新增成员：Version
+
+* [TableGroupInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#TableGroupInfo)
+
+	* 新增成员：TxhBackupExpireDay, EnableMysql, MysqlConnIp, MysqlConnPort
+
+
+
+
 # Release 3.0.719.1
 
 ## 云呼叫中心(ccc) 版本：2020-02-10

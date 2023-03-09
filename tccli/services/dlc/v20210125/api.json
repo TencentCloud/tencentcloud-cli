@@ -322,6 +322,13 @@
       "output": "DescribeEngineUsageInfoResponse",
       "status": "online"
     },
+    "DescribeForbiddenTablePro": {
+      "document": "本接口（DescribeForbiddenTablePro）用于获取被禁用的表属性列表",
+      "input": "DescribeForbiddenTableProRequest",
+      "name": "获取被禁用的表属性列表",
+      "output": "DescribeForbiddenTableProResponse",
+      "status": "online"
+    },
     "DescribeLakeFsDirSummary": {
       "document": "查询托管存储指定目录的Summary",
       "input": "DescribeLakeFsDirSummaryRequest",
@@ -6011,6 +6018,32 @@
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeForbiddenTableProRequest": {
+      "document": "DescribeForbiddenTablePro请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeForbiddenTableProResponse": {
+      "document": "DescribeForbiddenTablePro返回参数结构体",
+      "members": [
+        {
+          "document": "被禁用的表属性列表，该列表的属性不可进行增删改操作",
+          "example": "{[\"uin\"]}",
+          "member": "string",
+          "name": "ForbiddenTableProperties",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

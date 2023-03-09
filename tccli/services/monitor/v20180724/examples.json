@@ -214,7 +214,7 @@
     ],
     "DeleteAlarmNotices": [
       {
-        "document": "",
+        "document": "删除两个告警通知模板",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlarmNotices\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"NoticeIds\": [\n        \"notice-235h325y\",\n        \"notice-h25hj534h\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fahkjbgag3h2bvaqer2-23\"\n    }\n}",
         "title": "删除告警通知模板（批量）"
@@ -867,8 +867,8 @@
       },
       {
         "document": "拉取某台CDB实例某段时间内统计周期为5分钟的CPU利用率监控数据",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMonitorData\n<公共请求参数>\n\n{\n    \"Namespace\": \"QCE/CDB\",\n    \"MetricName\": \"SlowQueries\",\n    \"Period\": 300,\n    \"Instances\": [\n        {\n            \"Dimensions\": [\n                {\n                    \"Name\": \"InstanceId\",\n                    \"Value\": \"cdb-k5d6z7p0\"\n                },\n                {\n                    \"Name\": \"InstanceType\",\n                    \"Value\": \"2\"\n                }\n            ]\n        }\n    ],\n    \"StartTime\": \"2018-09-22T19:23:07+08:00\",\n    \"EndTime\": \"2018-09-22T20:23:07+08:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2018-09-22T19:20:00+08:00\",\n        \"EndTime\": \"2018-09-22T20:20:00+08:00\",\n        \"Period\": 300,\n        \"MetricName\": \"SlowQueries\",\n        \"DataPoints\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"InstanceType\",\n                        \"Value\": \"2\"\n                    },\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"cdb-k5d6z7p0\"\n                    }\n                ],\n                \"Timestamps\": [],\n                \"Values\": []\n            }\n        ],\n        \"Msg\": \"\",\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMonitorData\n<公共请求参数>\n\n{\n    \"Namespace\": \"QCE/CDB\",\n    \"MetricName\": \"CpuUseRate\",\n    \"Period\": 300,\n    \"Instances\": [\n        {\n            \"Dimensions\": [\n                {\n                    \"Name\": \"InstanceId\",\n                    \"Value\": \"cdb-k5d6z7p0\"\n                },\n                {\n                    \"Name\": \"InstanceType\",\n                    \"Value\": \"2\"\n                }\n            ]\n        }\n    ],\n    \"StartTime\": \"2018-09-22T19:23:07+08:00\",\n    \"EndTime\": \"2018-09-22T20:23:07+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2018-09-22T19:20:00+08:00\",\n        \"EndTime\": \"2018-09-22T20:20:00+08:00\",\n        \"Period\": 300,\n        \"MetricName\": \"CpuUseRate\",\n        \"DataPoints\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"InstanceType\",\n                        \"Value\": \"2\"\n                    },\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"cdb-k5d6z7p0\"\n                    }\n                ],\n                \"Timestamps\": [],\n                \"Values\": []\n            }\n        ],\n        \"Msg\": \"\",\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\n    }\n}",
         "title": "拉取单台CDB监控数据"
       }
     ],

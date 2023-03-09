@@ -35,11 +35,25 @@
       "output": "GetFederationTokenResponse",
       "status": "online"
     },
+    "GetSaaSAccessToken": {
+      "document": "SaaS登录token换临时证书",
+      "input": "GetSaaSAccessTokenRequest",
+      "name": "SaaS登录token换临时证书",
+      "output": "GetSaaSAccessTokenResponse",
+      "status": "online"
+    },
     "GetServiceTokenForInternal": {
       "document": "内网服务票据（只允许内网发起调用）",
       "input": "GetServiceTokenForInternalRequest",
       "name": "内网服务票据（内部）",
       "output": "GetServiceTokenForInternalResponse",
+      "status": "online"
+    },
+    "GetThirdPartyFederationToken": {
+      "document": "获取用户临时证书（第三方开发商） ",
+      "input": "GetThirdPartyFederationTokenRequest",
+      "name": "获取用户临时证书（第三方开发商）",
+      "output": "GetThirdPartyFederationTokenResponse",
       "status": "online"
     },
     "QueryApiKey": {
@@ -533,6 +547,132 @@
       ],
       "type": "object"
     },
+    "GetSaaSAccessTokenRequest": {
+      "document": "GetSaaSAccessToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SaaS登录Token",
+          "example": "Didfer***",
+          "member": "string",
+          "name": "SaaSToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "coding",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Token关联的Uin",
+          "example": "30000***129",
+          "member": "uint64",
+          "name": "TokenUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Token关联的OwnerUin",
+          "example": "30000***123",
+          "member": "uint64",
+          "name": "TokenOwnerUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户端IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "ClientIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端UA",
+          "example": "chrome",
+          "member": "string",
+          "name": "ClientUA",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
+          "example": "7200",
+          "member": "uint64",
+          "name": "DurationSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要申请权限的产品名。",
+          "example": "cam",
+          "member": "string",
+          "name": "TargetProduct",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要申请权限的接口名列表。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetAction",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSaaSAccessTokenResponse": {
+      "document": "GetSaaSAccessToken返回参数结构体",
+      "members": [
+        {
+          "document": "临时安全证书",
+          "example": "无",
+          "member": "Credentials",
+          "name": "Credentials",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书无效的时间，返回 Unix 时间戳，精确到秒",
+          "example": "1594985702",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书无效的时间，以 iso8601 格式的 UTC 时间表示",
+          "example": "2020-07-17T11:35:02Z",
+          "member": "string",
+          "name": "Expiration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetServiceTokenForInternalRequest": {
       "document": "GetServiceTokenForInternal请求参数结构体",
       "members": [
@@ -631,6 +771,62 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetThirdPartyFederationTokenRequest": {
+      "document": "GetThirdPartyFederationToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "访问Token",
+          "member": "string",
+          "name": "UserAccessToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "有效期",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "该参数已废除(传0即可)",
+          "member": "uint64",
+          "name": "ApiAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetThirdPartyFederationTokenResponse": {
+      "document": "GetThirdPartyFederationToken返回参数结构体",
+      "members": [
+        {
+          "document": "证书秘钥",
+          "member": "Credentials",
+          "name": "Credentials",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "有效期(时间戳)",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

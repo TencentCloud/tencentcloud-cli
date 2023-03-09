@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AddAccountBindForSaaS": {
+      "document": "OAuth登录后，绑定uin和SaaS账号关系",
+      "input": "AddAccountBindForSaaSRequest",
+      "name": "OAuth登录后，绑定uin和SaaS账号关系",
+      "output": "AddAccountBindForSaaSResponse",
+      "status": "online"
+    },
     "AddWhitelistUin": {
       "document": "添加白名单账号",
       "input": "AddWhitelistUinRequest",
@@ -35,6 +42,13 @@
       "output": "DeleteWhitelistUinResponse",
       "status": "online"
     },
+    "DescribeBasicAuthForSaaS": {
+      "document": "SaaS获取用户基础认证信息",
+      "input": "DescribeBasicAuthForSaaSRequest",
+      "name": "SaaS获取用户基础认证信息",
+      "output": "DescribeBasicAuthForSaaSResponse",
+      "status": "online"
+    },
     "DescribeIpByUin": {
       "document": "根据UIN查询注册IP地址",
       "input": "DescribeIpByUinRequest",
@@ -61,6 +75,13 @@
       "input": "DescribeTCBBindingRequest",
       "name": "获取TCB账号绑定信息",
       "output": "DescribeTCBBindingResponse",
+      "status": "online"
+    },
+    "DescribeUserTrade": {
+      "document": "获取用户行业信息",
+      "input": "DescribeUserTradeRequest",
+      "name": "获取用户行业信息",
+      "output": "DescribeUserTradeResponse",
       "status": "online"
     },
     "GetAppIdByUin": {
@@ -112,6 +133,13 @@
       "output": "GetSitePropertiesResponse",
       "status": "online"
     },
+    "GetTradeConfigList": {
+      "document": "获取行业信息配置列表",
+      "input": "GetTradeConfigListRequest",
+      "name": "获取行业信息配置列表",
+      "output": "GetTradeConfigListResponse",
+      "status": "online"
+    },
     "GetUinByAppId": {
       "document": "根据appid获取uin",
       "input": "GetUinByAppIdRequest",
@@ -126,11 +154,46 @@
       "output": "LoginViaTCBResponse",
       "status": "online"
     },
+    "ModifyTrade": {
+      "document": "更新用户行业信息\n",
+      "input": "ModifyTradeRequest",
+      "name": "修改用户行业信息",
+      "output": "ModifyTradeResponse",
+      "status": "online"
+    },
     "RegisterAccountForTCB": {
       "document": "TCB注册云账号",
       "input": "RegisterAccountForTCBRequest",
       "name": "TCB注册云账号",
       "output": "RegisterAccountForTCBResponse",
+      "status": "online"
+    },
+    "RegisterCloudForSaaS": {
+      "document": "SaaS注册接口，支持接入级别Level2和Level3。",
+      "input": "RegisterCloudForSaaSRequest",
+      "name": "SaaS注册接口，支持接入级别Level2和Level3。",
+      "output": "RegisterCloudForSaaSResponse",
+      "status": "online"
+    },
+    "SaveBasicAuthForSaaS": {
+      "document": "SaaS提交的用户基础认证信息",
+      "input": "SaveBasicAuthForSaaSRequest",
+      "name": "SaaS提交的用户基础认证信息",
+      "output": "SaveBasicAuthForSaaSResponse",
+      "status": "online"
+    },
+    "SendEmailVerifyCode": {
+      "document": "发送注册邮件验证码",
+      "input": "SendEmailVerifyCodeRequest",
+      "name": "发送注册邮件验证码",
+      "output": "SendEmailVerifyCodeResponse",
+      "status": "online"
+    },
+    "SendSmsVerifyCode": {
+      "document": "发送注册短信验证码",
+      "input": "SendSmsVerifyCodeRequest",
+      "name": "发送注册短信验证码",
+      "output": "SendSmsVerifyCodeResponse",
       "status": "online"
     },
     "UnbindTCBAccount": {
@@ -148,6 +211,42 @@
     "serviceShortName": "account"
   },
   "objects": {
+    "AddAccountBindForSaaSRequest": {
+      "document": "AddAccountBindForSaaS请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SaaS账号唯一ID。",
+          "example": "132****1234",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台。coding：coding；腾讯会议：meeting。",
+          "example": "co**ng",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAccountBindForSaaSResponse": {
+      "document": "AddAccountBindForSaaS返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddWhitelistUinRequest": {
       "document": "AddWhitelistUin请求参数结构体",
       "members": [
@@ -327,6 +426,83 @@
     "DeleteWhitelistUinResponse": {
       "document": "DeleteWhitelistUin返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBasicAuthForSaaSRequest": {
+      "document": "DescribeBasicAuthForSaaS请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBasicAuthForSaaSResponse": {
+      "document": "DescribeBasicAuthForSaaS返回参数结构体",
+      "members": [
+        {
+          "document": "主账号 uin",
+          "example": "10001",
+          "member": "int64",
+          "name": "AccountOwnerUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "账号类型。0：个人，1：企业",
+          "example": "1",
+          "member": "int64",
+          "name": "AccountType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "账号名称（个人姓名或企业名称）",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "手机号码",
+          "example": "13712345678",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "国际代码",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "证件号码。证件类型身份证：身份账号号。 证件类型公司营业执照：统一身份信用代码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "91xxxxxxxxxx504XW",
+          "member": "string",
+          "name": "Idcard",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -552,6 +728,142 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserTradeRequest": {
+      "document": "DescribeUserTrade请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserTradeResponse": {
+      "document": "DescribeUserTrade返回参数结构体",
+      "members": [
+        {
+          "document": "UIN",
+          "member": "uint64",
+          "name": "Uin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "审核状态(0：未提交审核; 1：审核中; 2：审核不通过; 3：审核通过)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CheckStatus",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "认证级别(1级、2级、3级)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AuthLevel",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "拒绝原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RejectReason",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已经领取扶持（0：未领取；1：已领取）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "GetSupport",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "套餐领取时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "SupportTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扶持套餐（对应package id字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SupportPkg",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "行业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TradeName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "一级行业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TradeOne",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "二级行业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TradeTwo",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "添加时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "AddTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "审核时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "CheckTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "拒绝类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RejectType",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "审核人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Checker",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "上一次审核通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "PassTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "套餐ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PkgIds",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1022,6 +1334,39 @@
       ],
       "type": "object"
     },
+    "GetTradeConfigListRequest": {
+      "document": "GetTradeConfigList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "语言版本",
+          "member": "string",
+          "name": "Lang",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTradeConfigListResponse": {
+      "document": "GetTradeConfigList返回参数结构体",
+      "members": [
+        {
+          "document": "行业列表",
+          "member": "TradeOneNode",
+          "name": "TradeList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetUinByAppIdRequest": {
       "document": "GetUinByAppId请求参数结构体",
       "members": [
@@ -1243,6 +1588,40 @@
       ],
       "usage": "out"
     },
+    "ModifyTradeRequest": {
+      "document": "ModifyTrade请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一级行业",
+          "member": "string",
+          "name": "TradeOne",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "二级行业",
+          "member": "string",
+          "name": "TradeTwo",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTradeResponse": {
+      "document": "ModifyTrade返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PhoneData": {
       "document": "备选电话详情",
       "members": [
@@ -1340,6 +1719,436 @@
           "value_allowed_null": true,
           "visibility": 2
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterCloudForSaaSRequest": {
+      "document": "RegisterCloudForSaaS请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端浏览器UA。",
+          "example": "chrome",
+          "member": "string",
+          "name": "ClientUA",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端IP。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "ClientIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "所属国家简称。 参考http://tapd.oa.com/QCloud_2015/markdown_wikis/show/#1210103951000762171",
+          "example": "CN",
+          "member": "string",
+          "name": "CountryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "所有国家区号。",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "注册类型。手机：phone；邮件：email；微信：wechat；QQ：qq。",
+          "example": "phone",
+          "member": "string",
+          "name": "RegisterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "语言，中文：zh；英文：en。",
+          "example": "zh",
+          "member": "string",
+          "name": "Lang",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域，1中国版，2国际版。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Area",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "注册来源，接入时统一分配。",
+          "example": "co****g",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接入级别，接入时协定，1代表level1，依次类推。具体级别参考：http://tapd.oa.com/QCloud_2015/markdown_wikis/show/#1210103951001599427",
+          "example": "3",
+          "member": "uint64",
+          "name": "AccessLevel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "安全手机，发送敏感短信信息。",
+          "example": "132****9791",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机验证码。",
+          "example": "42***43",
+          "member": "string",
+          "name": "PhoneVerifyCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全邮箱，发送敏感邮件信息。",
+          "example": "test@qq.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "邮箱验证码。",
+          "example": "343423",
+          "member": "string",
+          "name": "EmailVerifyCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户密码，手机和邮箱注册用户必填。",
+          "example": "1234***abcd",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信和QQ用户必填，扫码调用登录接口返回的。",
+          "example": "dfdf",
+          "member": "string",
+          "name": "AccountToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名，不填默认为注册账号名。接入级别为level2时，验证用户名的合法性。",
+          "example": "adf",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "行业名称。SaaS注册，此字段传空，要求和TradeOne，TradeTwo一起传递。",
+          "example": "finance",
+          "member": "string",
+          "name": "TradeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "行业一级分类。可选参数参考接口：https://tcloud-dev.oa.com/document/product/1023/31684?!preview&!document=1",
+          "example": "finance",
+          "member": "string",
+          "name": "TradeOne",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "行业二级分类，可选参数参考接口：https://tcloud-dev.oa.com/document/product/1023/31684?!preview&!document=1",
+          "example": "finance",
+          "member": "string",
+          "name": "TradeTwo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterCloudForSaaSResponse": {
+      "document": "RegisterCloudForSaaS返回参数结构体",
+      "members": [
+        {
+          "document": "用户Uin。",
+          "example": "300000000001",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户登录Key。",
+          "example": "d5c50bdcdb2****7b479b4f17bf5461e",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "登录Key的有效期。",
+          "example": "1596875744",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveBasicAuthForSaaSRequest": {
+      "document": "SaveBasicAuthForSaaS请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号类型。0：个人，1：企业",
+          "example": "1",
+          "member": "int64",
+          "name": "AccountType",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "账号名称（个人姓名或者企业名称）",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "接入时申请的Platform",
+          "example": "meeting",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "证件号码。证件类型身份证：身份账号号。 证件类型公司营业执照：统一身份信用代码。",
+          "example": "91xxxxxxxxxx504XW",
+          "member": "string",
+          "name": "Idcard",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "SaveBasicAuthForSaaSResponse": {
+      "document": "SaveBasicAuthForSaaS返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendEmailVerifyCodeRequest": {
+      "document": "SendEmailVerifyCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "邮箱号",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ip",
+          "member": "string",
+          "name": "ClientIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发送语言，中文：zh；英文： en",
+          "member": "string",
+          "name": "Lang",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "滑动验证码AppId",
+          "member": "string",
+          "name": "CaptchaAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "滑动验证码客户端验证回调的票据",
+          "member": "string",
+          "name": "Ticket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "滑动验证码客户端验证回调的随机串",
+          "member": "string",
+          "name": "Random",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendEmailVerifyCodeResponse": {
+      "document": "SendEmailVerifyCode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendSmsVerifyCodeRequest": {
+      "document": "SendSmsVerifyCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "所在国家电话区号",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号码",
+          "example": "13211111111",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发送语言，中文：zh；英文： en",
+          "example": "zh",
+          "member": "string",
+          "name": "Lang",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ip",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "ClientIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "滑动验证码AppId",
+          "example": "121",
+          "member": "string",
+          "name": "CaptchaAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "滑动验证码客户端验证回调的票据",
+          "example": "12",
+          "member": "string",
+          "name": "Ticket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "滑动验证码客户端验证回调的随机串",
+          "example": "12",
+          "member": "string",
+          "name": "Random",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "没有特需要求默认不传。",
+          "example": "12",
+          "member": "int64",
+          "name": "ThemeId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SendSmsVerifyCodeResponse": {
+      "document": "SendSmsVerifyCode返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1557,6 +2366,90 @@
         }
       ],
       "usage": "out"
+    },
+    "TradeOneNode": {
+      "document": "一级行业节点",
+      "members": [
+        {
+          "default": "",
+          "document": "一级行业信息",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行业名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否展示",
+          "member": "string",
+          "name": "Display",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级行业列表",
+          "member": "TradeTwoNode",
+          "name": "Children",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TradeTwoNode": {
+      "document": "二级行业结点",
+      "members": [
+        {
+          "default": "",
+          "document": "行业名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Display属性",
+          "member": "string",
+          "name": "Display",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级行业信息",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行业信息",
+          "member": "string",
+          "name": "Trade",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UnbindTCBAccountRequest": {
       "document": "UnbindTCBAccount请求参数结构体",

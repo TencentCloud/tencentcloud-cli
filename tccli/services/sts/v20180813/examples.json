@@ -52,12 +52,28 @@
         "title": "获取临时证书"
       }
     ],
+    "GetSaaSAccessToken": [
+      {
+        "document": "",
+        "input": "https://sts.tencentcloudapi.com/?Action=GetSaaSAccessToken\n&SaaSToken=Didfer***\n&Platform=coding\n&TokenUin=30000129\n&TokenOwnerUin=3000023\n&ClientIP=1.1.1.1\n&ClientUA=chrome\n&DurationSeconds=7200\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1594985702,\n        \"Expiration\": \"2020-07-17T11:35:02Z\",\n        \"Credentials\": {\n            \"Token\": \"v0YuJBgp8F***\",\n            \"TmpSecretId\": \"AKIDjtBloQ***\",\n            \"TmpSecretKey\": \"4Y7Sb3***\"\n        },\n        \"RequestId\": \"8623dd94-01f6-43f2-91ec-2b5fd27b20f1\"\n    }\n}",
+        "title": "SaaS应用登录token换临时证书"
+      }
+    ],
     "GetServiceTokenForInternal": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetServiceTokenForInternal\n<公共请求参数>\n\n{\n    \"TargetUin\": \"100000000001\",\n    \"TargetOwnerUin\": \"10000000001\",\n    \"TargetAction\": [\n        \"DescribeInstances\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"Token\": \"da1e9d2ee9dda83506832d5ecb903b790132dfe340001\",\n            \"TmpSecretId\": \"AKID65zyIP0mpXtaI******WIQVMn1umNH58\",\n            \"TmpSecretKey\": \"q95K84wrzuEGoc*******52boxvp71yoh\"\n        },\n        \"ExpiredTime\": 1543914376,\n        \"Expiration\": \"2018-12-04T09:06:16Z\",\n        \"RequestId\": \"4daec797-9cd2-4f09-9e7a-7d4c43b2a74c\"\n    }\n}",
         "title": "获取全程票据"
+      }
+    ],
+    "GetThirdPartyFederationToken": [
+      {
+        "document": "",
+        "input": "https://sts.tencentcloudapi.com/?Action=GetThirdPartyFederationToken\r\n&UserAccessToken=XXXXX\r\n&Duration=7200\r\n&ApiAppId=XXXXX\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": [\n            {\n                \"Token\": \"xxxxxx\",\n                \"TmpSecretId\": \"XXXXXX\",\n                \"TmpSecretKey\": \"XXXXXXX\"\n            }\n        ],\n        \"ExpiredTime\": \"7200\",\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "获取用户临时证书（第三方开发商）"
       }
     ],
     "QueryApiKey": [

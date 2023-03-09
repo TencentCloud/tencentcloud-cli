@@ -40,6 +40,22 @@
         "title": "绑定策略到用户"
       }
     ],
+    "ChangeTokenUser": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=ChangeTokenUser\n&TokenUin=100000009472\n&TokenOwnerUin=100000009472\n&TokenChangeUin=100000009473\n&TokenChangeOwnerUin=100000009473\n&Platform=coding\n&Type=wx\n&SaaSToken=abcef\n&ClientIP=1.1.1.1\n&ClientUA=chrome\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Key\": \"abcedf\",\n        \"Uin\": 100000009473,\n        \"OwnerUin\": 100000009473,\n        \"ExpireTimestamp\": 123456789,\n        \"RequestId\": 0\n    }\n}",
+        "title": "切换用户身份"
+      }
+    ],
+    "CheckTokenValid": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=CheckTokenValid\n&SaaSToken=100000009472\n&Platform=coding\n&TokenUin=123456\n&TokenOwnerUin=123456\n&ClientIP=127.0.0.1\n&ClientUA=chrome\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": 0\n    }\n}",
+        "title": "检验saas登录态"
+      }
+    ],
     "ConsumeCustomMFAToken": [
       {
         "document": "",
@@ -396,6 +412,14 @@
         "input": "https://cam.tencentcloudapi.com/?Action=GetServiceLinkedRoleDeletionStatus\r\n&DeletionTaskId=100\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCEEDED\",\n        \"ServiceType\": \"cam\",\n        \"ServiceName\": \"访问管理\",\n        \"Reason\": \"{}\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
         "title": "获取服务相关角色删除状态"
+      }
+    ],
+    "GetTokenByAuthCodeForSaaS": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=GetTokenByAuthCodeForSaaS\n&AuthCode=234564\n&Platform=meeting\n&ClientIP=0.0.0.0\n&ClientUA=chrome\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 302000000001,\n        \"OwnerUin\": 302000000001,\n        \"Token\": \"35f0******`924\",\n        \"ExpiredTime\": 1602995914,\n        \"RequestId\": \"12390bee-9701-4179-aefc-7f38a8824e89\"\n    }\n}",
+        "title": "通过SaaS的登录Code获取token"
       }
     ],
     "GetUser": [

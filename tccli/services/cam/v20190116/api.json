@@ -35,6 +35,20 @@
       "output": "AttachUserPolicyResponse",
       "status": "online"
     },
+    "ChangeTokenUser": {
+      "document": "SaaS切换用户",
+      "input": "ChangeTokenUserRequest",
+      "name": "SaaS切换用户",
+      "output": "ChangeTokenUserResponse",
+      "status": "online"
+    },
+    "CheckTokenValid": {
+      "document": "检验saasToken有效性",
+      "input": "CheckTokenValidRequest",
+      "name": "检验saasToken有效性",
+      "output": "CheckTokenValidResponse",
+      "status": "online"
+    },
     "ConsumeCustomMFAToken": {
       "document": "验证自定义多因子Token",
       "input": "ConsumeCustomMFATokenRequest",
@@ -341,6 +355,13 @@
       "input": "GetServiceLinkedRoleDeletionStatusRequest",
       "name": "获取服务相关角色删除状态",
       "output": "GetServiceLinkedRoleDeletionStatusResponse",
+      "status": "online"
+    },
+    "GetTokenByAuthCodeForSaaS": {
+      "document": "通过SaaS的登录Code获取token",
+      "input": "GetTokenByAuthCodeForSaaSRequest",
+      "name": "通过SaaS的登录Code获取token",
+      "output": "GetTokenByAuthCodeForSaaSResponse",
       "status": "online"
     },
     "GetUser": {
@@ -1389,6 +1410,190 @@
         }
       ],
       "usage": "out"
+    },
+    "ChangeTokenUserRequest": {
+      "document": "ChangeTokenUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "登录态关联uin",
+          "member": "uint64",
+          "name": "TokenUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "登录态关联主账号",
+          "member": "uint64",
+          "name": "TokenOwnerUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "想要切换的uin",
+          "member": "uint64",
+          "name": "TokenChangeUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "想要切换的主账号",
+          "member": "uint64",
+          "name": "TokenChangeOwnerUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "登录方式",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "登录态",
+          "member": "string",
+          "name": "SaaSToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端IP",
+          "member": "string",
+          "name": "ClientIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端UA",
+          "member": "string",
+          "name": "ClientUA",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeTokenUserResponse": {
+      "document": "ChangeTokenUser返回参数结构体",
+      "members": [
+        {
+          "document": "登录态",
+          "member": "string",
+          "name": "Key",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "登录态关联uin",
+          "member": "uint64",
+          "name": "Uin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "登录态关联主账号",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "过期时间戳",
+          "member": "uint64",
+          "name": "ExpireTimestamp",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckTokenValidRequest": {
+      "document": "CheckTokenValid请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SaaS登录态",
+          "member": "string",
+          "name": "SaaSToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "token 关联uin",
+          "member": "uint64",
+          "name": "TokenUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "token关联主账号",
+          "member": "uint64",
+          "name": "TokenOwnerUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户端IP",
+          "member": "string",
+          "name": "ClientIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端UA",
+          "member": "string",
+          "name": "ClientUA",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckTokenValidResponse": {
+      "document": "CheckTokenValid返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ConsumeCustomMFATokenRequest": {
       "document": "ConsumeCustomMFAToken请求参数结构体",
@@ -3777,6 +3982,84 @@
           "name": "ServiceName",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTokenByAuthCodeForSaaSRequest": {
+      "document": "GetTokenByAuthCodeForSaaS请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "登录Code。",
+          "member": "string",
+          "name": "AuthCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SaaS平台。会议：meeting。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端IP。",
+          "member": "string",
+          "name": "ClientIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端UA。",
+          "member": "string",
+          "name": "ClientUA",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTokenByAuthCodeForSaaSResponse": {
+      "document": "GetTokenByAuthCodeForSaaS返回参数结构体",
+      "members": [
+        {
+          "document": "账号的Uin。",
+          "member": "uint64",
+          "name": "Uin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账号的OwnerUin。",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账号的Token",
+          "member": "string",
+          "name": "Token",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Token的有效期，unix时间戳。",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

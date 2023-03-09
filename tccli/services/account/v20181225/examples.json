@@ -1,5 +1,19 @@
 {
   "actions": {
+    "AddAccountBindForSaaS": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=AddAccountBindForSaaS\n&Account=132****1234\n&Platform=co**ng\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"748cff28-3afd-4a8d-9a80-d783729d9a1f\"\n    }\n}",
+        "title": "绑定登录账号"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAccountBindForSaaS\n<公共请求参数>\n\n{\n    \"Platform\": \"cmp\",\n    \"Account\": \"122232\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"07635a8a-718d-4264-8edd-73b2dd606e78\"\n    }\n}",
+        "title": "绑定SaaS账号"
+      }
+    ],
     "AddWhitelistUin": [
       {
         "document": "",
@@ -40,6 +54,14 @@
         "title": "添加白名单账号"
       }
     ],
+    "DescribeBasicAuthForSaaS": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBasicAuthForSaaS\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AccountOwnerUin\": 100000559051,\n        \"AccountType\": 1,\n        \"Name\": \"新公*****\",\n        \"Mobile\": \"151****1005\",\n        \"CountryCode\": \"86\",\n        \"Idcard\": \"961************475\",\n        \"RequestId\": \"f364a16d-e13c-4b62-a15e-f557a426f5f4\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeIpByUin": [
       {
         "document": "",
@@ -70,6 +92,14 @@
         "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTCBBinding\n<公共请求参数>\n\n{\n    \"Type\": \"wx_open\",\n    \"Username\": \"xxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"UsernameBoundUin\": 123,\n        \"BindType\": \"wx_open\",\n        \"UinBoundUsername\": null,\n        \"RequestId\": \"562abe2a-0817-4097-ad24-c936eb2a01e1\"\n    }\n}",
         "title": "获取TCB账号绑定信息"
+      }
+    ],
+    "DescribeUserTrade": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=DescribeUserTrade\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 20548499,\n        \"CheckStatus\": 3,\n        \"AuthLevel\": 0,\n        \"RejectReason\": \"\",\n        \"GetSupport\": 0,\n        \"SupportTime\": null,\n        \"SupportPkg\": 0,\n        \"TradeName\": \"game\",\n        \"TradeOne\": \"game\",\n        \"TradeTwo\": \"game\",\n        \"AddTime\": \"2017-10-26 11:39:12\",\n        \"CheckTime\": null,\n        \"RejectType\": 0,\n        \"UpdateTime\": \"2020-01-08 20:33:56\",\n        \"Checker\": \"\",\n        \"PassTime\": null,\n        \"PkgIds\": null,\n        \"RequestId\": \"08def8d4-1513-4b79-afa3-f8bf1a4f76f2\"\n    }\n}",
+        "title": "获取用户行业信息"
       }
     ],
     "GetAppIdByUin": [
@@ -136,12 +166,52 @@
         "title": "TCB登录云账号"
       }
     ],
+    "ModifyTrade": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=ModifyTrade\r\n&TradeOne=test\r\n&TradeTwo=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2400dff-8fce-4029-864c-2a0417c8a482\"\n    }\n}",
+        "title": "更新用户行业信息"
+      }
+    ],
     "RegisterAccountForTCB": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterAccountForTCB\n<公共请求参数>\n\n{\n    \"RegisterData\": {\n        \"AppID\": \" wx3fcd6d0f9dd497a1\",\n        \"AuthInfo\": {\n            \"ID\": \"1234\",\n            \"PrincipalName\": \"test\",\n            \"Type\": 0\n        },\n        \"Email\": \"1@qq.com\",\n        \"Nickname\": \"test\",\n        \"Phone\": \"12345678901\",\n        \"Username\": \" gh_56f03c56dc39\"\n    },\n    \"Type\": \"la\"\n}",
         "output": "{\n    \"Response\": {\n        \"Uin\": 600000561806,\n        \"IsBind\": 0,\n        \"RequestId\": \"b3d63aa7-8a8e-45af-902e-7835efbd24b7\"\n    }\n}",
         "title": "TCB注册云账号"
+      }
+    ],
+    "RegisterCloudForSaaS": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=RegisterCloudForSaaS\n&ClientUA=chrome\n&ClientIP=1.1.1.1\n&CountryName=CN\n&CountryCode=86\n&RegisterType=phone\n&Lang=zh\n&Area=1\n&Platform=co****g\n&AccessLevel=3\n&PhoneNumber=132****9791\n&PhoneVerifyCode=42***43\n&Password=123***abcd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 300000000001,\n        \"Key\": \"d5c50bdcdb2****7b479b4f17bf5461e\",\n        \"ExpiredTime\": 1596875744,\n        \"RequestId\": \"e0e551ca-f2c1-4734-831a-3d677df0320c\"\n    }\n}",
+        "title": "注册SaaS用户"
+      }
+    ],
+    "SaveBasicAuthForSaaS": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveBasicAuthForSaaS\n<公共请求参数>\n\n{\n    \"Platform\": \"cmp\",\n    \"Name\": \"123\",\n    \"AccountType\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83eaff99-bac3-4022-bb28-0c0bede311fd\"\n    }\n}",
+        "title": "提交SaaS基础认证信息"
+      }
+    ],
+    "SendEmailVerifyCode": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=SendEmailVerifyCode\r\n&Email=test@qq.com\r\n&ClientIP=192.168.1.1\r\n&Lang=zh\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"049d2419-5c81-45ee-be29-fbaa6f12804a\"\n    }\n}",
+        "title": "发送注册邮箱验证码"
+      }
+    ],
+    "SendSmsVerifyCode": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=SendSmsVerifyCode\n&CountryCode=86\n&PhoneNumber=13211111111\n&ClientIP=192.168.1.1\n&Lang=zh\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"131d2a2d-80b2-47f0-b7d4-673bf0ce22ac\"\n    }\n}",
+        "title": "发送注册短信验证码"
       }
     ],
     "UnbindTCBAccount": [
