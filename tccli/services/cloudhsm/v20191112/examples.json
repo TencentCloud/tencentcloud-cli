@@ -72,12 +72,36 @@
         "title": "获取用户VSM列表"
       }
     ],
+    "GetAlarmEvent": [
+      {
+        "document": "获取告警策略",
+        "input": "POST / HTTP/1.1\nHost: cloudhsm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAlarmEvent\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AlarmConfig\": [\n            {\n                \"Uin\": \"xx\",\n                \"Event\": \"xx\",\n                \"Limit\": 0,\n                \"Status\": 0,\n                \"BeginTime\": \"xx\",\n                \"EndTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取告警策略"
+      }
+    ],
+    "GetVsmMonitorInfo": [
+      {
+        "document": "获取VSM监控信息",
+        "input": "POST / HTTP/1.1\nHost: cloudhsm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVsmMonitorInfo\n<公共请求参数>\n\n{\n    \"ResourceId\": \"hsm-1234abcd\",\n    \"ResourceName\": \"default-hsmName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorInfo\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取VSM监控信息"
+      }
+    ],
     "InquiryPriceBuyVsm": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cloudhsm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceBuyVsm\n<公共请求参数>\n\n{\n    \"PayMode\": \"1\",\n    \"TimeUnit\": \"y\",\n    \"Type\": \"CREATE\",\n    \"GoodsNum\": \"1\",\n    \"TimeSpan\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCost\": 2000.0,\n        \"GoodsNum\": 1,\n        \"TimeSpan\": 1,\n        \"TimeUnit\": \"y\",\n        \"OriginalCost\": 2000.0,\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "询价"
+      }
+    ],
+    "ModifyAlarmEvent": [
+      {
+        "document": "修改告警事件",
+        "input": "POST / HTTP/1.1\nHost: cloudhsm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmEvent\n<公共请求参数>\n\n{\n    \"Event\": \"CPU\",\n    \"Limit\": 0,\n    \"Status\": 0,\n    \"BeginTime\": \"00:00:00\",\n    \"EndTime\": \"23:59:59\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456789\"\n    }\n}",
+        "title": "修改告警事件"
       }
     ],
     "ModifyVsmAttributes": [

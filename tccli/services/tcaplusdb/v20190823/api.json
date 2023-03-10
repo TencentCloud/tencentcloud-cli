@@ -839,7 +839,7 @@
         },
         {
           "default": "",
-          "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群类型，0,1:共享集群; 2:独立集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ClusterType",
@@ -849,7 +849,7 @@
         },
         {
           "default": "",
-          "document": "集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ClusterStatus",
@@ -973,6 +973,16 @@
           "example": "0",
           "member": "uint64",
           "name": "IsReadOnlyUlogBackupExpireDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "restproxy状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RestProxyStatus",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -4204,6 +4214,7 @@
         {
           "default": "",
           "document": "proxy的唯一id",
+          "example": "1.2.2.2",
           "member": "string",
           "name": "ProxyUid",
           "required": true,
@@ -4213,6 +4224,7 @@
         {
           "default": "",
           "document": "机器类型",
+          "example": "0",
           "member": "string",
           "name": "MachineType",
           "required": true,
@@ -4222,6 +4234,7 @@
         {
           "default": "",
           "document": "请求包速度",
+          "example": "0",
           "member": "int64",
           "name": "ProcessSpeed",
           "required": true,
@@ -4231,6 +4244,7 @@
         {
           "default": "",
           "document": "请求包时延",
+          "example": "0",
           "member": "int64",
           "name": "AverageProcessDelay",
           "required": true,
@@ -4240,11 +4254,22 @@
         {
           "default": "",
           "document": "慢处理包速度",
+          "example": "0",
           "member": "int64",
           "name": "SlowProcessSpeed",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.46.0",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4663,6 +4688,7 @@
         {
           "default": "",
           "document": "svr唯一id",
+          "example": "1.2.2.2",
           "member": "string",
           "name": "ServerUid",
           "required": true,
@@ -4672,6 +4698,7 @@
         {
           "default": "",
           "document": "机器类型",
+          "example": "master",
           "member": "string",
           "name": "MachineType",
           "required": true,
@@ -4681,6 +4708,7 @@
         {
           "default": "",
           "document": "内存占用量",
+          "example": "0",
           "member": "int64",
           "name": "MemoryRate",
           "required": true,
@@ -4690,6 +4718,7 @@
         {
           "default": "",
           "document": "磁盘占用量",
+          "example": "0",
           "member": "int64",
           "name": "DiskRate",
           "required": true,
@@ -4699,6 +4728,7 @@
         {
           "default": "",
           "document": "读次数",
+          "example": "0",
           "member": "int64",
           "name": "ReadNum",
           "required": true,
@@ -4708,11 +4738,22 @@
         {
           "default": "",
           "document": "写次数",
+          "example": "0",
           "member": "int64",
           "name": "WriteNum",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.46.0",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5196,6 +5237,7 @@
         {
           "default": "",
           "document": "表格组ID",
+          "example": "\"123\"",
           "member": "string",
           "name": "TableGroupId",
           "required": true,
@@ -5205,6 +5247,7 @@
         {
           "default": "",
           "document": "表格组名称",
+          "example": "\"ZoneName\"",
           "member": "string",
           "name": "TableGroupName",
           "required": true,
@@ -5214,6 +5257,7 @@
         {
           "default": "",
           "document": "表格组创建时间",
+          "example": "20211011",
           "member": "datetime",
           "name": "CreatedTime",
           "required": true,
@@ -5223,6 +5267,7 @@
         {
           "default": "",
           "document": "表格组包含的表格数量",
+          "example": "10",
           "member": "uint64",
           "name": "TableCount",
           "required": true,
@@ -5232,11 +5277,52 @@
         {
           "default": "",
           "document": "表格组包含的表格存储总量（MB）",
+          "example": "100",
           "member": "uint64",
           "name": "TotalSize",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格Txh备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TxhBackupExpireDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启mysql负载均衡,0未开启 1开启中 2已开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableMysql",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "mysql负载均衡vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "MysqlConnIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "mysql负载均衡vport\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3306",
+          "member": "uint64",
+          "name": "MysqlConnPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -14,17 +14,17 @@ Output:
 {
     "Response": {
         "AutoMic": 1,
-        "RecordUrl": "xx",
-        "Name": "xx",
+        "RecordUrl": "https://example.com/test.mp4",
+        "Name": "test",
         "AudioQuality": 1,
         "MaxMicNumber": 1,
-        "SubType": "xx",
+        "SubType": "videodoc",
         "SdkAppId": 1,
-        "RequestId": "xx",
+        "RequestId": "test",
         "StartTime": 1,
-        "TeacherId": "xx",
+        "TeacherId": "test",
         "Assistants": [
-            "xx"
+            "test"
         ],
         "EndTime": 1,
         "Resolution": 1,

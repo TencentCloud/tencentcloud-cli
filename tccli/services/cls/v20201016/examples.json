@@ -64,6 +64,14 @@
         "title": "创建投递任务"
       }
     ],
+    "CreateCosRecharge": [
+      {
+        "document": "创建cos导入任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"LogsetId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\",\n    \"Bucket\": \"test_bucket\",\n    \"BucketRegion\": \"gz_open\",\n    \"Prefix\": \"text_prefix\",\n    \"LogType\": \"minimalist_log\",\n    \"Compress\": \"gzip\",\n    \"ExtractRuleInfo\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "title": "创建cos导入任务"
+      }
+    ],
     "CreateExport": [
       {
         "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。",
@@ -82,7 +90,7 @@
     ],
     "CreateLogset": [
       {
-        "document": "",
+        "document": "创建日志集",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLogset\n<公共请求参数>\n\n{\n    \"LogsetName\": \"testname\",\n    \"Tags\": [\n        {\n            \"Key\": \"test-tag\",\n            \"Value\": \"test-value\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"LogsetId\": \"dc01b74a-49e4-11eb-b378-0242ac130002\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建日志集"
@@ -106,7 +114,7 @@
     ],
     "CreateTopic": [
       {
-        "document": "",
+        "document": "创建日志主题",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"xxxxxx-xx-xx-xx-xxxxxxxx\",\n    \"TopicName\": \"testname\",\n    \"PartitionCount\": 1,\n    \"Tags\": [],\n    \"Period\": 12\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建日志主题"
@@ -264,6 +272,14 @@
         "title": "获取投递配置"
       }
     ],
+    "DescribeCosRecharges": [
+      {
+        "document": "获取cos导入配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosRecharges\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Status\": 0,\n    \"Enable\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Status\": 3,\n                \"TopicId\": \"5590efdf-cae5-4703-8d00-2a813xxxxx\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"Enable\": 1,\n                \"Name\": \"test\",\n                \"Progress\": 1,\n                \"Compress\": \"gzip\",\n                \"Bucket\": \"xxxxx-1254xxxx\",\n                \"UpdateTime\": \"2023-03-08 14:51:14\",\n                \"Id\": \"0333114e-2e93-42d8-8a2f-a55de8474\",\n                \"LogType\": \"minimalist_log\",\n                \"Prefix\": \"xxx/2023/03/07/16/202303071600_000_1030.gz\",\n                \"LogsetId\": \"03efb75a-0f89-41b0-8cc6-9049a51fexxxx\",\n                \"CreateTime\": \"2023-03-08 15:29:55\",\n                \"ExtractRuleInfo\": {\n                    \"LogRegex\": \"\",\n                    \"Keys\": [\n                        \"@time\"\n                    ],\n                    \"TimeKey\": \"\",\n                    \"BeginRegex\": \"\",\n                    \"UnMatchUpLoadSwitch\": true,\n                    \"Delimiter\": \",\",\n                    \"TimeFormat\": \"\",\n                    \"UnMatchLogKey\": \"fieldName\",\n                    \"Backtracking\": 0\n                }\n            }\n        ],\n        \"RequestId\": \"xx-xx-xx-xx\"\n    }\n}",
+        "title": "获取cos导入配置"
+      }
+    ],
     "DescribeExports": [
       {
         "document": "",
@@ -416,6 +432,14 @@
         "title": "修改投递任务"
       }
     ],
+    "ModifyCosRecharge": [
+      {
+        "document": "修改cos导入任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"1\",\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "title": "修改cos导入任务"
+      }
+    ],
     "ModifyIndex": [
       {
         "document": "",
@@ -458,7 +482,7 @@
     ],
     "OpenKafkaConsumer": [
       {
-        "document": "",
+        "document": "打开Kafka协议消费功能",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenKafkaConsumer\n<公共请求参数>\n\n{\n    \"FromTopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n    \"Compression\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TopicID\": \"out-a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "打开Kafka协议消费功能"

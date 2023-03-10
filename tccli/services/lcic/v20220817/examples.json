@@ -204,7 +204,7 @@
       {
         "document": "获取课堂房间信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"xx\",\n        \"Name\": \"xx\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"xx\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"xx\",\n        \"StartTime\": 1,\n        \"TeacherId\": \"xx\",\n        \"Assistants\": [\n            \"xx\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0,\n        \"GroupId\": \"afdg\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"https://example.com/test.mp4\",\n        \"Name\": \"test\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"videodoc\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"test\",\n        \"StartTime\": 1,\n        \"TeacherId\": \"test\",\n        \"Assistants\": [\n            \"test\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0,\n        \"GroupId\": \"afdg\"\n    }\n}",
         "title": "房间信息"
       }
     ],

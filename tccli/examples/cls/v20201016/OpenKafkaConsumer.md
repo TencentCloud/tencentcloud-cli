@@ -1,6 +1,6 @@
 **Example 1: 打开Kafka协议消费功能**
 
-
+打开Kafka协议消费功能
 
 Input: 
 

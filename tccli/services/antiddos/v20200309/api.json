@@ -1480,7 +1480,6 @@
       "document": "高防包资产实例的规格信息",
       "members": [
         {
-          "default": "",
           "document": "保底防护峰值，单位Gbps",
           "example": "1",
           "member": "uint64",
@@ -1490,7 +1489,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "防护次数，单位次",
           "example": "10",
           "member": "uint64",
@@ -1500,7 +1498,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "防护IP数，单位个",
           "example": "10",
           "member": "uint64",
@@ -1510,7 +1507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自动续费状态，取值[\n0：没有开启自动续费\n1：开启了自动续费\n]",
           "example": "0",
           "member": "uint64",
@@ -1520,7 +1516,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "联合产品标记，0代表普通高防包，1代表联合高防包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1530,7 +1525,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "业务带宽\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1540,7 +1534,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "战斗服版本标记，0表示普通高防包，1表示战斗服高防包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1550,7 +1543,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "渠道版标记，0表示普通高防包，1表示渠道版高防包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1560,7 +1552,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高防包企业版标记，0表示普通高防包；1表示企业版高防包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1570,12 +1561,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "ElasticLimit",
           "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "降配后的防护能力，单位Gbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DownGradeProtect",
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }

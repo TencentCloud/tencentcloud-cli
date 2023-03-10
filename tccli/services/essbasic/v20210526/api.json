@@ -525,7 +525,6 @@
       "document": "抄送信息",
       "members": [
         {
-          "default": "",
           "document": "被抄送人手机号，大陆11位手机号",
           "example": "xxx",
           "member": "string",
@@ -533,6 +532,33 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "被抄送人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "被抄送人类型\n0--个人. 1--员工\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CcType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "被抄送人权限\n0--可查看\n1--可查看也可下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CcPermission",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -971,7 +997,7 @@
           "type": "string"
         },
         {
-          "document": "签署流程签约方列表，最多不超过5个参与方",
+          "document": "签署流程签约方列表，最多不超过50个参与方",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApprovers",
@@ -1081,6 +1107,22 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "document": "被抄送人信息列表",
+          "example": "无",
+          "member": "CcInfo",
+          "name": "CcInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知",
+          "example": "无",
+          "member": "int64",
+          "name": "CcNotifyType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4255,6 +4297,15 @@
           "name": "NeedSignReview",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知",
+          "example": "0",
+          "member": "int64",
+          "name": "CcNotifyType",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

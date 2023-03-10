@@ -63,11 +63,32 @@
       "output": "DescribeVsmsResponse",
       "status": "online"
     },
+    "GetAlarmEvent": {
+      "document": "获取告警事件",
+      "input": "GetAlarmEventRequest",
+      "name": "获取告警事件",
+      "output": "GetAlarmEventResponse",
+      "status": "online"
+    },
+    "GetVsmMonitorInfo": {
+      "document": "获取VSM监控信息",
+      "input": "GetVsmMonitorInfoRequest",
+      "name": "获取VSM监控信息",
+      "output": "GetVsmMonitorInfoResponse",
+      "status": "online"
+    },
     "InquiryPriceBuyVsm": {
       "document": "购买询价接口",
       "input": "InquiryPriceBuyVsmRequest",
       "name": "询价",
       "output": "InquiryPriceBuyVsmResponse",
+      "status": "online"
+    },
+    "ModifyAlarmEvent": {
+      "document": "修改告警事件",
+      "input": "ModifyAlarmEventRequest",
+      "name": "修改告警事件",
+      "output": "ModifyAlarmEventResponse",
       "status": "online"
     },
     "ModifyVsmAttributes": {
@@ -85,6 +106,66 @@
     "serviceShortName": "cloudhsm"
   },
   "objects": {
+    "AlarmPolicy": {
+      "document": "告警策略",
+      "members": [
+        {
+          "document": "用户账号",
+          "example": "123456789",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警事件",
+          "example": "CPU",
+          "member": "string",
+          "name": "Event",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警阈值",
+          "example": "90",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警策略是否生效，0：停用，1：启用",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "在这个时间后才允许发送告警",
+          "example": "00:00:00",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "在这个时间前才允许发送告警",
+          "example": "23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeHSMBySubnetIdRequest": {
       "document": "DescribeHSMBySubnetId请求参数结构体",
       "members": [
@@ -794,11 +875,77 @@
       ],
       "usage": "out"
     },
+    "GetAlarmEventRequest": {
+      "document": "GetAlarmEvent请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetAlarmEventResponse": {
+      "document": "GetAlarmEvent返回参数结构体",
+      "members": [
+        {
+          "document": "用户所有的告警策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlarmPolicy",
+          "name": "AlarmConfig",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetVsmMonitorInfoRequest": {
+      "document": "GetVsmMonitorInfo请求参数结构体",
+      "members": [
+        {
+          "document": "资源Id",
+          "example": "hsm-1234abcd",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "资源名称",
+          "example": "default-hsmName",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetVsmMonitorInfoResponse": {
+      "document": "GetVsmMonitorInfo返回参数结构体",
+      "members": [
+        {
+          "document": "VSM监控信息",
+          "example": "无",
+          "member": "string",
+          "name": "MonitorInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "HsmInfo": {
       "document": "支持的加密机类型信息",
       "members": [
         {
-          "default": "",
           "document": "加密机型号",
           "example": "SJJ1528",
           "member": "string",
@@ -808,13 +955,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "此类型的加密机所支持的VSM类型列表",
           "example": "无",
           "member": "VsmInfo",
           "name": "VsmTypes",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "加密机母机类型：virtualization、GHSM、EHSM、SHSM",
+          "example": "virtualization",
+          "member": "string",
+          "name": "HsmType",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -946,12 +1101,71 @@
       ],
       "type": "object"
     },
+    "ModifyAlarmEventRequest": {
+      "document": "ModifyAlarmEvent请求参数结构体",
+      "members": [
+        {
+          "document": "告警事件，支持CPU、MEM、TCP",
+          "example": "CPU",
+          "member": "string",
+          "name": "Event",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "告警阈值",
+          "example": "70",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "告警状态，0表示停用，1表示启动",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "告警开始时间，只有在这个时间后才会发送告警，当跟EndTime同时为空时表示全天告警",
+          "example": "00:00:00",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "告警结束时间，只有在这个时间前才会发送告警，当跟BeginTime同时为空时表示全天告警",
+          "example": "23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmEventResponse": {
+      "document": "ModifyAlarmEvent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyVsmAttributesRequest": {
       "document": "ModifyVsmAttributes请求参数结构体",
       "members": [
         {
           "default": "",
           "document": "资源Id",
+          "example": "xx",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -960,6 +1174,7 @@
         {
           "default": "",
           "document": "UpdateResourceName-修改资源名称,\nUpdateSgIds-修改安全组名称,\nUpdateNetWork-修改网络,\nDefault-默认不修改",
+          "example": "[\"xx\"]",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -968,6 +1183,7 @@
         {
           "default": "",
           "document": "资源名称",
+          "example": "xx",
           "member": "string",
           "name": "ResourceName",
           "required": false,
@@ -976,6 +1192,7 @@
         {
           "default": "",
           "document": "安全组Id",
+          "example": "[\"xx\"]",
           "member": "string",
           "name": "SgIds",
           "required": false,
@@ -984,6 +1201,7 @@
         {
           "default": "",
           "document": "虚拟专网Id",
+          "example": "xx",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -992,10 +1210,20 @@
         {
           "default": "",
           "document": "子网Id",
+          "example": "xx",
           "member": "string",
           "name": "SubnetId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警开关，0表示关闭告警，1表示启用告警",
+          "example": "0",
+          "member": "int64",
+          "name": "AlarmStatus",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1016,7 +1244,6 @@
       "document": "资源信息",
       "members": [
         {
-          "default": "",
           "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hsm-xxxxxxxx",
           "member": "string",
@@ -1026,7 +1253,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "defaultHsmName",
           "member": "string",
@@ -1036,7 +1262,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源状态，1-正常，2-隔离，3-销毁\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1046,7 +1271,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.2.3.4",
           "member": "string",
@@ -1056,7 +1280,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源所属Vpc\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxxxxxx",
           "member": "string",
@@ -1066,7 +1289,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源所属子网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxxxxxx",
           "member": "string",
@@ -1076,7 +1298,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源所属HSM规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SJJ1528",
           "member": "string",
@@ -1086,7 +1307,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云加密机类型id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "17",
           "member": "int64",
@@ -1096,7 +1316,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地域Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1106,7 +1325,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "区域Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100001",
           "member": "int64",
@@ -1116,7 +1334,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "过期时间（Epoch Unix Timestamp）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1126,7 +1343,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州",
           "member": "string",
@@ -1136,7 +1352,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "区域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州一区",
           "member": "string",
@@ -1146,7 +1361,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SgUnit",
@@ -1156,7 +1370,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1166,7 +1379,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前实例是否已经过期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -1176,7 +1388,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1186,7 +1397,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Vpc名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1196,7 +1406,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建者Uin账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
@@ -1206,7 +1415,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1216,7 +1424,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -1226,13 +1433,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TASS",
           "member": "string",
           "name": "Manufacturer",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "告警状态，0：停用，1：启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AlarmStatus",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

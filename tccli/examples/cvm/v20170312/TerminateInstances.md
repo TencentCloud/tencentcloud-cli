@@ -1,19 +1,19 @@
-**Example 1: 销毁指定ID的实例**
+**Example 1: 销毁指定ID实例**
 
-
+用于销毁指定ID的一个或多个实例
 
 Input: 
 
 ```
 tccli cvm TerminateInstances --cli-unfold-argument  \
-    --InstanceIds ins-5d8a23rs ins-r8hr2upy
+    --InstanceIds ins-3jaw1j8m
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
+        "RequestId": "9a2f76a2-3b5b-4760-a90b-eff0c611b360"
     }
 }
 ```

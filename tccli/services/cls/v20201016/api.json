@@ -56,6 +56,13 @@
       "output": "CreateConsumerResponse",
       "status": "online"
     },
+    "CreateCosRecharge": {
+      "document": "本接口用于创建cos导入任务",
+      "input": "CreateCosRechargeRequest",
+      "name": "创建cos导入任务",
+      "output": "CreateCosRechargeResponse",
+      "status": "online"
+    },
     "CreateExport": {
       "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449",
       "input": "CreateExportRequest",
@@ -231,6 +238,13 @@
       "output": "DescribeConsumerResponse",
       "status": "online"
     },
+    "DescribeCosRecharges": {
+      "document": "本接口用于获取cos导入配置",
+      "input": "DescribeCosRechargesRequest",
+      "name": "获取cos导入配置",
+      "output": "DescribeCosRechargesResponse",
+      "status": "online"
+    },
     "DescribeExports": {
       "document": "本接口用于获取日志下载任务列表",
       "input": "DescribeExportsRequest",
@@ -362,6 +376,13 @@
       "input": "ModifyConsumerRequest",
       "name": "修改投递任务",
       "output": "ModifyConsumerResponse",
+      "status": "online"
+    },
+    "ModifyCosRecharge": {
+      "document": "本接口用于修改cos导入任务",
+      "input": "ModifyCosRechargeRequest",
+      "name": "修改cos导入任务",
+      "output": "ModifyCosRechargeResponse",
       "status": "online"
     },
     "ModifyIndex": {
@@ -1733,6 +1754,147 @@
       ],
       "usage": "both"
     },
+    "CosRechargeInfo": {
+      "document": "cos导入配置信息",
+      "members": [
+        {
+          "document": "COS导入配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cos导入任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx任务导入",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cos存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bucket1",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cos存储桶地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz_open",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cos存储桶前缀地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/test",
+          "member": "string",
+          "name": "Prefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志；\n默认为minimalist_log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "minimalist_log",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否启用:   0： 未启用  ， 1：启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-08 14:40:22",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-08 14:40:22",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "进度条百分值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "supported: \"\", \"gzip\", \"lzop\", \"snappy”; 默认空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gzip",
+          "member": "string",
+          "name": "Compress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "见： ExtractRuleInfo 结构描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractRuleInfo",
+          "name": "ExtractRuleInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateAlarmNoticeRequest": {
       "document": "CreateAlarmNotice请求参数结构体",
       "members": [
@@ -2255,6 +2417,96 @@
       ],
       "type": "object"
     },
+    "CreateCosRechargeRequest": {
+      "document": "CreateCosRecharge请求参数结构体",
+      "members": [
+        {
+          "document": "日志主题 ID",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "日志集ID",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "投递任务名称",
+          "example": "cos导入",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "COS存储桶",
+          "example": "bucket1",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "COS存储桶所在地域",
+          "example": "gz_open",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "COS文件所在文件夹的前缀",
+          "example": "var/xxx",
+          "member": "string",
+          "name": "Prefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；\n默认为minimalist_log",
+          "example": "minimalist_log",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "supported: \"\", \"gzip\", \"lzop\", \"snappy”; 默认空",
+          "example": "gzip",
+          "member": "string",
+          "name": "Compress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
+          "example": "无",
+          "member": "ExtractRuleInfo",
+          "name": "ExtractRuleInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosRechargeResponse": {
+      "document": "CreateCosRecharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateExportRequest": {
       "document": "CreateExport请求参数结构体",
       "members": [
@@ -2412,7 +2664,6 @@
       "document": "CreateLogset请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "日志集名字，不能重名",
           "example": "testname",
           "member": "string",
@@ -2421,7 +2672,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签描述列表。最大支持10个标签键值对，并且不能有重复的键值对",
           "example": "无",
           "member": "Tag",
@@ -2440,7 +2690,6 @@
           "example": "dc01b74a-49e4-11eb-b378-0242ac130002",
           "member": "string",
           "name": "LogsetId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3530,6 +3779,56 @@
           "name": "Compression",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRechargesRequest": {
+      "document": "DescribeCosRecharges请求参数结构体",
+      "members": [
+        {
+          "document": "日志主题 ID",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "状态   status 0: 已创建, 1: 运行中, 2: 已停止, 3: 已完成, 4: 运行失败。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "是否启用:   0： 未启用  ， 1：启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosRechargesResponse": {
+      "document": "DescribeCosRecharges返回参数结构体",
+      "members": [
+        {
+          "document": "见: CosRechargeInfo 结构描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosRechargeInfo",
+          "name": "Data",
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -6064,6 +6363,56 @@
       ],
       "type": "object"
     },
+    "ModifyCosRechargeRequest": {
+      "document": "ModifyCosRecharge请求参数结构体",
+      "members": [
+        {
+          "document": "COS导入配置ID",
+          "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "日志主题Id",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "COS导入任务名称",
+          "example": "导入任务1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "是否启用:   0： 未启用  ， 1：启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCosRechargeResponse": {
+      "document": "ModifyCosRecharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyIndexRequest": {
       "document": "ModifyIndex请求参数结构体",
       "members": [
@@ -6551,7 +6900,6 @@
       "document": "OpenKafkaConsumer请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "CLS控制台创建的TopicId",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -6560,7 +6908,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
           "example": "1",
           "member": "int64",
@@ -6579,7 +6926,6 @@
           "example": "out-57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TopicID",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7308,25 +7654,25 @@
       "document": "创建资源实例时同时绑定的标签对说明",
       "members": [
         {
-          "document": "标签键",
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "document": "标签值",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TopicInfo": {
       "document": "日志主题信息",

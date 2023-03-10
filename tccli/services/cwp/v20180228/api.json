@@ -25287,6 +25287,15 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "服务器uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "e1f081aa-7777-4fdf-a2f7-88f3faa3d302",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

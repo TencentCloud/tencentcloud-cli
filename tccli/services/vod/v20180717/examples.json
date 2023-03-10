@@ -3,7 +3,7 @@
     "ApplyUpload": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ApplyUpload\n&MediaType=mp4\n&SubAppId=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyUpload\n<公共请求参数>\n\n{\n    \"SubAppId\": \"1\",\n    \"MediaType\": \"mp4\"\n}",
         "output": "{\n    \"Response\": {\n        \"CoverStoragePath\": null,\n        \"RequestId\": \"880f3005-a8c9-4bba-8c87-74e216a17a0b\",\n        \"StorageBucket\": \"xadagzp111211-100922\",\n        \"StorageRegion\": \"ap-guangzhou-2\",\n        \"MediaStoragePath\": \"/dir/name.xx\",\n        \"VodSessionKey\": \"VodSessionKey\",\n        \"TempCertificate\": {\n            \"SecretId\": \"xxxxxxx\",\n            \"SecretKey\": \"xxxxxxxx\",\n            \"Token\": \"xxxxxxxx\",\n            \"ExpiredTime\": 182823331\n        }\n    }\n}",
         "title": "申请上传成功例子"
       }

@@ -1998,7 +1998,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "录制地址。仅在房间结束后存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录制地址（协议为https)。仅在房间结束后存在。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
           "name": "RecordUrl",

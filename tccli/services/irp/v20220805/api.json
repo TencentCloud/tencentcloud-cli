@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeGoodsRecommend": {
+      "document": "获取电商类推荐结果",
+      "input": "DescribeGoodsRecommendRequest",
+      "name": "获取电商类推荐结果",
+      "output": "DescribeGoodsRecommendResponse",
+      "status": "online"
+    },
     "FeedRecommend": {
       "document": "获取信息流推荐结果",
       "input": "FeedRecommendRequest",
@@ -27,6 +34,20 @@
       "name": "上报信息流用户信息",
       "output": "ReportFeedUserResponse",
       "status": "online"
+    },
+    "ReportGoodsBehavior": {
+      "document": "上报电商类行为数据",
+      "input": "ReportGoodsBehaviorRequest",
+      "name": "上报电商类行为数据",
+      "output": "ReportGoodsBehaviorResponse",
+      "status": "online"
+    },
+    "ReportGoodsInfo": {
+      "document": "上报电商类商品信息",
+      "input": "ReportGoodsInfoRequest",
+      "name": "上报电商类商品信息",
+      "output": "ReportGoodsInfoResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -36,6 +57,104 @@
     "serviceShortName": "irp"
   },
   "objects": {
+    "DescribeGoodsRecommendRequest": {
+      "document": "DescribeGoodsRecommend请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID，在控制台获取",
+          "example": "3154571c_d511",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "场景ID，在控制台创建场景后获取",
+          "example": "20787a_13428",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用户唯一ID，客户自定义用户ID，作为一个用户的唯一标识，需和行为数据上报接口中的UserId一致，否则影响特征关联",
+          "example": "2824324234",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用户设备ID数组，可传入用户的多个类型ID，用于关联画像信息",
+          "example": "无",
+          "member": "StrUserIdInfo",
+          "name": "UserIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "推荐返回数量，默认10个，最多支持50个的内容返回。如果有更多数量要求，<a href=\"https://console.cloud.tencent.com/workorder/category\" target=\"_blank\">提单</a>沟通解决",
+          "example": "10",
+          "member": "int64",
+          "name": "GoodsCnt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "当场景是相关推荐时该值必填，场景是非相关推荐时该值无效",
+          "example": "f458988816c956727db5d9f",
+          "member": "string",
+          "name": "CurrentGoodsId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "用户的实时特征信息，用作特征",
+          "example": "无",
+          "member": "UserPortraitInfo",
+          "name": "UserPortraitInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "本次请求针对该用户需要过滤的物品列表(不超过100个)",
+          "example": "123321",
+          "member": "string",
+          "name": "BlackGoodsList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "json字符串，扩展字段",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extension",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGoodsRecommendResponse": {
+      "document": "DescribeGoodsRecommend返回参数结构体",
+      "members": [
+        {
+          "document": "推荐返回的商品信息列表",
+          "example": "无",
+          "member": "RecGoodsData",
+          "name": "DataList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DislikeInfo": {
       "document": "不喜欢信息",
       "members": [
@@ -821,6 +940,513 @@
       ],
       "usage": "in"
     },
+    "GoodsBehaviorInfo": {
+      "document": "电商行为",
+      "members": [
+        {
+          "document": "用户唯一ID，客户自定义用户ID，作为一个用户的唯一标识",
+          "example": "3154571",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "商品唯一ID，skuId或spuId，客户根据需求自行决定商品主键粒度",
+          "example": "2824324234",
+          "member": "string",
+          "name": "GoodsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "行为类型：<br> ● expose - 曝光，<b>必须</b><br> ● click - 点击，<b>必须</b><br/>  ● stay - 详情页停留时长，<b>强烈建议</b><br/>  ● videoover - 视频播放时长，<b>强烈建议</b><br/> ●  like - 点赞&喜欢，<b>正效果</b><br/> ● collect - 收藏，<b>正效果</b><br/> ●  share - 转发&分享，<b>正效果</b><br/> ● reward - 打赏，<b>正效果</b><br/> ● unlike - 踩&不喜欢，<b>负效果</b><br/> ●  comment - 评论<br/> ●  order - 下单<br/> ●  buy - 购买成功<br/> ●  addcart - 加入购物车<br/>   \n不支持的行为类型，可以映射到未被使用的其他行为类型。如实际业务数据中有私信行为，没有收藏行为，可以将私信行为映射到收藏行为",
+          "example": "expose",
+          "member": "string",
+          "name": "BehaviorType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "行为类型对应的行为值：<br/> ● expose - 曝光，固定填1<br/> ● click - 点击，固定填1<br/>  ● stay - 详情页停留时长，填停留秒数，取值[1-86400]<br/>  ● videoover - 视频播放时长，填播放结束的秒数，取值[1-86400]<br/> ●  like - 点赞&喜欢，固定填1<br/> ● collect - 收藏，固定填1<br/> ●  share - 转发&分享，固定填1<br/> ● reward - 打赏，填打赏金额，没有则填1<br/> ● unlike - 踩&不喜欢，填不喜欢的原因，没有则填1<br/> ●  comment - 评论，填评论内容，如“上海加油”<br/> ●  order - 下单，固定填1<br/> ●  buy - 购买成功，固定填1<br/> ●  addcart - 加入购物车，固定填1",
+          "example": "expose",
+          "member": "string",
+          "name": "BehaviorValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "行为发生的时间戳： 秒级时间戳，尽量实时上报，最长不超过半小时否则会影响推荐结果的准确性",
+          "example": "1652705901",
+          "member": "int64",
+          "name": "BehaviorTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "行为发生的场景ID，在控制台创建场景后获取",
+          "example": "db5ccd_765291",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "算法来源： <br>● business 业务自己的算法对照组<br/> ● tencent 腾讯算法<br/> ● other 其他算法<br/>默认为tencent，区分行为来源于哪个算法，<b>用于Poc阶段的效果对比验证</b>",
+          "example": "tencent",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标识行为发生在app内哪个页面，取值客户自定，可以是明文或id，建议传明文便于理解、分析，如首页，发现页，用户中心等\n<b>用作上下文特征，刻画不同场景用户行为分布的差异</b>",
+          "example": "fpage",
+          "member": "string",
+          "name": "Page",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标识行为发生在页面的哪一区块，取值客户自定，可以是明文或id，建议传明文便于理解、分析，如横幅、广告位、猜你喜欢等\n<b>用作上下文特征，刻画不同模块用户行为分布的差异</b>",
+          "example": "guess_you_like",
+          "member": "string",
+          "name": "Module",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "推荐追踪ID，使用推荐结果中返回的GoodsTraceId填入。 \n注意：如果和推荐结果中的GoodsTraceId不同，会影响行为特征归因，影响推荐算法效果。<b>强烈建议</b>",
+          "example": "9994f7bc21231288365e0f773",
+          "member": "string",
+          "name": "GoodsTraceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "相关推荐场景点击进入详情页的内容id，该字段用来注明行为发生于哪个内容的详情页推荐中，<b>相关推荐场景强烈建议</b>",
+          "example": "2824324234",
+          "member": "string",
+          "name": "ReferrerGoodsId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单商品购买个数，当behaviorType=order，buy或addcart时有值，<b>用作特征</b>",
+          "example": "2",
+          "member": "int64",
+          "name": "OrderGoodsCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单总金额，当behaviorType=order或buy时有值（单位：元，统一货币体系，如统一为RMB，美元等），<b>用作特征</b>",
+          "example": "9.97",
+          "member": "float",
+          "name": "OrderAmount",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户设备ID数组，可传入用户的多个类型ID，详见UserIdInfo结构体，建议补齐，<b>用于构建用户画像信息</b>",
+          "example": "无",
+          "member": "StrUserIdInfo",
+          "name": "UserIdList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "行为发生时用户基础特征信息，<b>用作特征</b>",
+          "example": "无",
+          "member": "UserPortraitInfo",
+          "name": "UserPortraitInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标识行为发生在模块内的具体位置，如1、2、...\n<b>用作上下文特征，刻画不同位置用户行为分布的差异</b>",
+          "example": "1",
+          "member": "int64",
+          "name": "Position",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "json字符串，<b>用于行为数据的扩展</b>",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extension",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GoodsInfo": {
+      "document": "电商物料内容",
+      "members": [
+        {
+          "default": "",
+          "document": "商品唯一ID，skuId或spuId，客户根据需求自行决定商品主键粒度。建议限制在128字符以内",
+          "example": "1001",
+          "member": "string",
+          "name": "GoodsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品物料展示类型：<br/>● article -图文<br>● text -纯文本<br/>● video -视频<br/>● short_video -时长15秒以内的视频<br/>● mini_video -竖屏视频<br/>● image -纯图片<br/>（如当前类型不满足，请<a href=\"https://console.cloud.tencent.com/workorder/category\" target=\"_blank\">提单</a>沟通解决方案）",
+          "example": "article",
+          "member": "string",
+          "name": "GoodsType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品状态：\n● 1 - 上架 \n● 2 - 下架 \nStatus=2的内容不会在推荐结果中出现 \n需要下架内容时，把Status的值修改为2即可",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品生成时间，秒级时间戳（1639624786），需大于0，<b>用作特征和物料管理</b>",
+          "example": "1639624786",
+          "member": "int64",
+          "name": "PublishTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品过期时间，秒级时间戳（1639624786），如未填，则默认PublishTimestamp往后延一年，<b>用作特征</b>，过期则不会被推荐，<b>强烈建议</b>",
+          "example": "1642668637",
+          "member": "int64",
+          "name": "ExpireTimestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spu((Standard Product Unit))维度id，商品聚合信息的最小单位，<b>强烈建议</b>",
+          "example": "2413123",
+          "member": "string",
+          "name": "SpuId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类目层级数，例如3级类目，则填3，和CategoryPath字段的类数据匹配，<b>强烈建议</b>",
+          "example": "3",
+          "member": "int64",
+          "name": "CategoryLevel",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类目路径，一级二级三级等依次用英文冒号联接，和CategoryLevel字段值匹配，如体育：“女装:裙子:半身裙”。<b>用于物料池管理，强烈建议</b>",
+          "example": "女装:裙子:半身裙",
+          "member": "string",
+          "name": "CategoryPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品标题，<b>主要用于语义分析</b>，<b>强烈建议</b>",
+          "example": "修身连衣裙",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品标签，多个标签用英文冒号联接，<b>用作特征，强烈建议</b>",
+          "example": "科技:娱乐",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品对应的品牌，取值用户自定义，可以是品牌id或品牌明文，<b>用作特征以及打散/过滤规则，强烈建议</b>",
+          "example": "huawei",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品所属店铺ID，取值客户自定义，<b>用作特征，强烈建议</b>",
+          "example": "123212",
+          "member": "string",
+          "name": "ShopId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品原始价格（单位：元，统一货币体系，如统一为RMB或美元等），<b>用作特征，强烈建议</b>",
+          "example": "9.9",
+          "member": "float",
+          "name": "OrgPrice",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品当前价格（单位：元，统一货币体系，如统一为RMB或美元等），<b>用作特征，强烈建议</b>",
+          "example": "9.5",
+          "member": "float",
+          "name": "CurPrice",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品来源类型，客户自定义，<b>用于物料池管理</b>",
+          "example": "1",
+          "member": "string",
+          "name": "SourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品正文关键片段，建议控制在500字符以内，<b>主要用于语义分析</b>",
+          "example": "修身可爱连衣裙",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品正文详情，主要用于语义分析，当内容过大时建议用ContentUrl传递，<b>与Content可二选一</b>",
+          "example": "https://sm.ms/**",
+          "member": "string",
+          "name": "ContentUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品封面url，不超过10个，<b>用作特征</b>",
+          "example": "http://p3.itc.cn/images01/20201021/080c89113d5a4b52b19f803582467",
+          "member": "string",
+          "name": "PicUrlList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卖家所在国家，ISO 3166-1 alpha-2编码，参考<a href=\"https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2\" target=\"_blank\">ISO 3166-1 alpha-2</a>，中国：“CN”，<b>用作特征</b>",
+          "example": "CN",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卖家所在省份，ISO 3166-2行政区编码，如中国参考<a href=\"https://zh.wikipedia.org/wiki/ISO_3166-2:CN\" target=\"_blank\">ISO_3166-2:CN</a>，广东省：“CN-GD”，<b>用作特征</b>",
+          "example": "CN-GD",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卖家所在城市地区，统一用国家最新标准地区行政编码，如：<a href=\"https://www.mca.gov.cn/article/sj/xzqh/2020/\" target=\"_blank\">2020年行政区编码</a>，其他国家统一用国际公认城市简称或者城市编码，<b>用作特征</b>",
+          "example": "440100",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品是否包邮；1:包邮；2:不包邮；3:满足条件包邮，<b>用作特征</b>",
+          "example": "1",
+          "member": "int64",
+          "name": "FreeShipping",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品邮费（单位：元，统一货币体系，如统一为RMB或美元等），<b>用作特征</b>",
+          "example": "10.1",
+          "member": "float",
+          "name": "ShippingPrice",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品累计好评次数，<b>用作特征</b>",
+          "example": "1231",
+          "member": "int64",
+          "name": "PraiseCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品累计评论次数，<b>用作特征</b>",
+          "example": "232",
+          "member": "int64",
+          "name": "CommentCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品累计分享次数，<b>用作特征</b>",
+          "example": "12",
+          "member": "int64",
+          "name": "ShareCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品累计收藏次数，<b>用作特征</b>",
+          "example": "23",
+          "member": "int64",
+          "name": "CollectCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品累积成交次数，<b>用作特征</b>",
+          "example": "12",
+          "member": "int64",
+          "name": "OrderCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品平均客户评分，取值范围用户自定，<b>用作特征</b>",
+          "example": "3.6",
+          "member": "float",
+          "name": "Score",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "json字符串，<b>用于物料池管理的自定义扩展</b>",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extension",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RecGoodsData": {
+      "document": "推荐返回的内容信息",
+      "members": [
+        {
+          "document": "推荐返回的商品ID",
+          "example": "20220324V08431**",
+          "member": "string",
+          "name": "GoodsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "推荐结果分，取值范围[0,1000000]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6.1",
+          "member": "float",
+          "name": "Score",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "推荐追踪id，本次推荐内容产生的后续行为上报均要用该GoodsTraceId上报。每次接口调用返回的GoodsTraceId不同\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9588983c6db7a36734d628537fb26463",
+          "member": "string",
+          "name": "GoodsTraceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "商品所在位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Position",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RecItemData": {
       "document": "推荐返回的内容信息",
       "members": [
@@ -975,6 +1601,81 @@
       ],
       "type": "object"
     },
+    "ReportGoodsBehaviorRequest": {
+      "document": "ReportGoodsBehavior请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，在控制台获取",
+          "example": "3154571c_d511",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上报的商品对应的用户行为数据数组，数量不超过50",
+          "example": "无",
+          "member": "GoodsBehaviorInfo",
+          "name": "GoodsBehaviorList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportGoodsBehaviorResponse": {
+      "document": "ReportGoodsBehavior返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportGoodsInfoRequest": {
+      "document": "ReportGoodsInfo请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID，在控制台获取",
+          "example": "3154571c_d511",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "上报的商品数组，一次数量不超过50",
+          "example": "无",
+          "member": "GoodsInfo",
+          "name": "GoodsList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportGoodsInfoResponse": {
+      "document": "ReportGoodsInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StrUserIdInfo": {
+      "document": "用户信息",
+      "members": [],
+      "usage": "in"
+    },
     "UserIdInfo": {
       "document": "用户ID信息",
       "members": [
@@ -999,6 +1700,11 @@
           "value_allowed_null": false
         }
       ],
+      "usage": "in"
+    },
+    "UserPortraitInfo": {
+      "document": "用户基础画像",
+      "members": [],
       "usage": "in"
     }
   },

@@ -715,7 +715,7 @@
       "status": "online"
     },
     "GetMonitorData": {
-      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n\n>?\n>- 2022年9月1日起，云监控开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
+      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用限制：单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n\n>?\n>- 2022年9月1日起，云监控开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
       "input": "GetMonitorDataRequest",
       "name": "拉取指标监控数据",
       "output": "GetMonitorDataResponse",
@@ -4463,7 +4463,6 @@
       "document": "DeleteAlarmNotices请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，这里填“monitor”",
           "example": "monitor",
           "member": "string",
@@ -4472,7 +4471,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警通知模板id列表",
           "example": "[\"notice-235h325y\",\"notice-h25hj534h\"]",
           "member": "string",
@@ -4481,8 +4479,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "通知模版与策略绑定关系",
+          "document": "通知模板与策略绑定关系",
           "example": "无",
           "member": "NoticeBindPolicys",
           "name": "NoticeBindPolicys",
@@ -11893,7 +11890,6 @@
       "document": "GetMonitorData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "命名空间，如QCE/CVM。各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档",
           "example": "QCE/CVM",
           "member": "string",
@@ -11902,7 +11898,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指标名称，如CPUUsage，仅支持单指标拉取。各个云产品的详细指标说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的指标英文名即为MetricName",
           "example": "CPUUsage",
           "member": "string",
@@ -11911,7 +11906,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例对象的维度组合，格式为key-value键值对形式的集合。不同类型的实例字段完全不同，如CVM为[{\"Name\":\"InstanceId\",\"Value\":\"ins-j0hk02zo\"}]，Ckafka为[{\"Name\":\"instanceId\",\"Value\":\"ckafka-l49k54dd\"}]，COS为[{\"Name\":\"appid\",\"Value\":\"1258344699\"},{\"Name\":\"bucket\",\"Value\":\"rig-1258344699\"}]。各个云产品的维度请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的维度列即为维度组合的key，value为key对应的值。单请求最多支持批量拉取10个实例的监控数据。",
           "example": "无",
           "member": "Instance",
@@ -11920,7 +11914,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "监控统计周期，如60。默认为取值为300，单位为s。每个指标支持的统计周期不一定相同，各个云产品支持的统计周期请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的统计周期列即为支持的统计周期。单请求的数据点数限制为1440个。",
           "example": "300",
           "member": "uint64",
@@ -11929,7 +11922,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "起始时间，如2018-09-22T19:51:23+08:00",
           "example": "2019-03-24T10:51:23+08:00",
           "member": "datetime_iso",
@@ -11938,7 +11930,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束时间，如2018-09-22T20:51:23+08:00，默认为当前时间。 EndTime不能小于StartTime",
           "example": "2019-03-24T20:51:23+08:00",
           "member": "datetime_iso",
@@ -11957,7 +11948,6 @@
           "example": "300",
           "member": "uint64",
           "name": "Period",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11966,7 +11956,6 @@
           "example": "CPUUsage",
           "member": "string",
           "name": "MetricName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11975,7 +11964,6 @@
           "example": "无",
           "member": "DataPoint",
           "name": "DataPoints",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11984,7 +11972,6 @@
           "example": "2019-03-24T10:50:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11993,7 +11980,6 @@
           "example": "2019-03-24T20:50:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12002,7 +11988,6 @@
           "example": "无",
           "member": "string",
           "name": "Msg",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

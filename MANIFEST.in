@@ -11,6 +11,8 @@ include tccli/services/af/v20200226/api.json
 include tccli/services/af/v20200226/examples.json
 include tccli/services/afc/v20200226/api.json
 include tccli/services/afc/v20200226/examples.json
+include tccli/services/aiart/v20221229/api.json
+include tccli/services/aiart/v20221229/examples.json
 include tccli/services/ame/v20190916/api.json
 include tccli/services/ame/v20190916/examples.json
 include tccli/services/ams/v20201229/api.json

@@ -718,6 +718,20 @@
         "title": "续费实例"
       }
     ],
+    "RepairTaskControl": [
+      {
+        "document": "授权待授权的维修任务，允许立即进行处理",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RepairTaskControl\n<公共请求参数>\n\n{\n    \"Product\": \"CVM\",\n    \"InstanceIds\": [\n        \"ins-xxxxxxxx\"\n    ],\n    \"TaskId\": \"rep-xxxxxxxx\",\n    \"Operate\": \"AuthorizeRepair\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0436564c-1234-4f0f-a341-59e86338446\",\n        \"TaskId\": \"rep-xxxxxxxx\"\n    }\n}",
+        "title": "授权维修任务立即进行处理"
+      },
+      {
+        "document": "提前预约待授权的维修任务在`2023-01-02 12:00:00`授权进行处理",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RepairTaskControl\n<公共请求参数>\n\n{\n    \"Product\": \"CVM\",\n    \"InstanceIds\": [\n        \"ins-xxxxxxxx\"\n    ],\n    \"TaskId\": \"rep-xxxxxxxx\",\n    \"Operate\": \"AuthorizeRepair\",\n    \"OrderAuthTime\": \"2023-01-02 12:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0436564c-1234-4f0f-a341-59e86338446\",\n        \"TaskId\": \"rep-xxxxxxxx\"\n    }\n}",
+        "title": "预约维修任务在指定时间进行处理"
+      }
+    ],
     "ResetInstance": [
       {
         "document": "本示例用于指定镜像、登录密码和增强服务来重装实例，同时扩容实例系统盘。",
@@ -822,10 +836,10 @@
     ],
     "TerminateInstances": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-5d8a23rs\",\n        \"ins-r8hr2upy\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "销毁指定ID的实例"
+        "document": "用于销毁指定ID的一个或多个实例",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-3jaw1j8m\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a2f76a2-3b5b-4760-a90b-eff0c611b360\"\n    }\n}",
+        "title": "销毁指定ID实例"
       }
     ]
   },

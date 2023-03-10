@@ -56,6 +56,13 @@
       "output": "CreateSampleSnapshotTemplateResponse",
       "status": "online"
     },
+    "CreateSchedule": {
+      "document": "对 COS 中指定 Bucket 的目录下上传的媒体文件，设置处理规则，包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。\n\n注意：创建编排成功后是禁用状态，需要手动启用。",
+      "input": "CreateScheduleRequest",
+      "name": "创建编排",
+      "output": "CreateScheduleResponse",
+      "status": "online"
+    },
     "CreateSnapshotByTimeOffsetTemplate": {
       "document": "创建用户自定义指定时间点截图模板，数量上限：16。",
       "input": "CreateSnapshotByTimeOffsetTemplateRequest",
@@ -159,6 +166,13 @@
       "input": "DeleteSampleSnapshotTemplateRequest",
       "name": "删除采样截图模板",
       "output": "DeleteSampleSnapshotTemplateResponse",
+      "status": "online"
+    },
+    "DeleteSchedule": {
+      "document": "删除编排",
+      "input": "DeleteScheduleRequest",
+      "name": "删除编排",
+      "output": "DeleteScheduleResponse",
       "status": "online"
     },
     "DeleteSnapshotByTimeOffsetTemplate": {
@@ -273,6 +287,13 @@
       "output": "DescribeSampleSnapshotTemplatesResponse",
       "status": "online"
     },
+    "DescribeSchedules": {
+      "document": "查询编排。",
+      "input": "DescribeSchedulesRequest",
+      "name": "查询编排",
+      "output": "DescribeSchedulesResponse",
+      "status": "online"
+    },
     "DescribeSnapshotByTimeOffsetTemplates": {
       "document": "查询指定时间点截图模板，支持根据条件，分页查询。",
       "input": "DescribeSnapshotByTimeOffsetTemplatesRequest",
@@ -385,6 +406,13 @@
       "output": "DescribeWorkflowsResponse",
       "status": "online"
     },
+    "DisableSchedule": {
+      "document": "禁用自动化触发编排任务。",
+      "input": "DisableScheduleRequest",
+      "name": "禁用编排",
+      "output": "DisableScheduleResponse",
+      "status": "online"
+    },
     "DisableWorkflow": {
       "document": "禁用工作流。",
       "input": "DisableWorkflowRequest",
@@ -397,6 +425,13 @@
       "input": "EditMediaRequest",
       "name": "编辑视频",
       "output": "EditMediaResponse",
+      "status": "online"
+    },
+    "EnableSchedule": {
+      "document": "启用自动化触发编排任务。",
+      "input": "EnableScheduleRequest",
+      "name": "启用编排",
+      "output": "EnableScheduleResponse",
       "status": "online"
     },
     "EnableWorkflow": {
@@ -474,6 +509,13 @@
       "input": "ModifySampleSnapshotTemplateRequest",
       "name": "修改采样截图模板",
       "output": "ModifySampleSnapshotTemplateResponse",
+      "status": "online"
+    },
+    "ModifySchedule": {
+      "document": "修改编排",
+      "input": "ModifyScheduleRequest",
+      "name": "修改编排",
+      "output": "ModifyScheduleResponse",
       "status": "online"
     },
     "ModifySnapshotByTimeOffsetTemplate": {
@@ -832,6 +874,138 @@
         }
       ],
       "usage": "both"
+    },
+    "Activity": {
+      "document": "编排原子任务",
+      "members": [
+        {
+          "default": "",
+          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>",
+          "example": "input",
+          "member": "string",
+          "name": "ActivityType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后驱节点索引数组",
+          "example": "无",
+          "member": "int64",
+          "name": "ReardriveIndex",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原子任务参数",
+          "example": "无",
+          "member": "ActivityPara",
+          "name": "ActivityPara",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ActivityPara": {
+      "document": "编排原子任务",
+      "members": [
+        {
+          "default": "",
+          "document": "视频转码任务",
+          "example": "无",
+          "member": "TranscodeTaskInput",
+          "name": "TranscodeTask",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频转动图任务",
+          "example": "无",
+          "member": "AnimatedGraphicTaskInput",
+          "name": "AnimatedGraphicTask",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频按时间点截图任务",
+          "example": "无",
+          "member": "SnapshotByTimeOffsetTaskInput",
+          "name": "SnapshotByTimeOffsetTask",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频采样截图任务",
+          "example": "无",
+          "member": "SampleSnapshotTaskInput",
+          "name": "SampleSnapshotTask",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频截雪碧图任务",
+          "example": "无",
+          "member": "ImageSpriteTaskInput",
+          "name": "ImageSpriteTask",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转自适应码流任务",
+          "example": "无",
+          "member": "AdaptiveDynamicStreamingTaskInput",
+          "name": "AdaptiveDynamicStreamingTask",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频内容审核类型任务",
+          "example": "无",
+          "member": "AiContentReviewTaskInput",
+          "name": "AiContentReviewTask",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频内容分析类型任务",
+          "example": "无",
+          "member": "AiAnalysisTaskInput",
+          "name": "AiAnalysisTask",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频内容识别类型任务",
+          "example": "无",
+          "member": "AiRecognitionTaskInput",
+          "name": "AiRecognitionTask",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ActivityResItem": {
       "document": "编排子任务输出",
@@ -6613,6 +6787,87 @@
       ],
       "type": "object"
     },
+    "CreateScheduleRequest": {
+      "document": "CreateSchedule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编排名称，最多128字符。同一个用户该名称唯一。",
+          "example": "trans-100020-100030-100040",
+          "member": "string",
+          "name": "ScheduleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "编排绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。",
+          "example": "无",
+          "member": "WorkflowTrigger",
+          "name": "Trigger",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "编排任务列表。",
+          "example": "无",
+          "member": "Activity",
+          "name": "Activities",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "媒体处理的文件输出存储位置。不填则继承 Trigger 中的存储位置。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OutputDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务的事件通知配置，不填代表不获取事件通知。",
+          "example": "无",
+          "member": "TaskNotifyConfig",
+          "name": "TaskNotifyConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScheduleResponse": {
+      "document": "CreateSchedule返回参数结构体",
+      "members": [
+        {
+          "document": "编排 ID。",
+          "example": "157482",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSnapshotByTimeOffsetTemplateRequest": {
       "document": "CreateSnapshotByTimeOffsetTemplate请求参数结构体",
       "members": [
@@ -7392,6 +7647,33 @@
     },
     "DeleteSampleSnapshotTemplateResponse": {
       "document": "DeleteSampleSnapshotTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScheduleRequest": {
+      "document": "DeleteSchedule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编排唯一标识。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScheduleResponse": {
+      "document": "DeleteSchedule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9141,6 +9423,78 @@
       ],
       "type": "object"
     },
+    "DescribeSchedulesRequest": {
+      "document": "DescribeSchedules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编排 ID 过滤条件，数组长度限制：100。",
+          "example": "无",
+          "member": "int64",
+          "name": "ScheduleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "状态，取值范围：\n<li>Enabled：已启用，</li>\n<li>Disabled：已禁用。</li>\n不填此参数，则不区分工作流状态。",
+          "example": "“”",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSchedulesResponse": {
+      "document": "DescribeSchedules返回参数结构体",
+      "members": [
+        {
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "编排信息数组。",
+          "example": "无",
+          "member": "SchedulesInfo",
+          "name": "ScheduleInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSnapshotByTimeOffsetTemplatesRequest": {
       "document": "DescribeSnapshotByTimeOffsetTemplates请求参数结构体",
       "members": [
@@ -10390,6 +10744,33 @@
       ],
       "type": "object"
     },
+    "DisableScheduleRequest": {
+      "document": "DisableSchedule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编排唯一表示。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableScheduleResponse": {
+      "document": "DisableSchedule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableWorkflowRequest": {
       "document": "DisableWorkflow请求参数结构体",
       "members": [
@@ -10672,6 +11053,33 @@
         }
       ],
       "usage": "out"
+    },
+    "EnableScheduleRequest": {
+      "document": "EnableSchedule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编排唯一标识。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableScheduleResponse": {
+      "document": "EnableSchedule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EnableWorkflowRequest": {
       "document": "EnableWorkflow请求参数结构体",
@@ -15840,6 +16248,87 @@
       ],
       "type": "object"
     },
+    "ModifyScheduleRequest": {
+      "document": "ModifySchedule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编排唯一标识。",
+          "example": "20010",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "编排名称。",
+          "example": "“”",
+          "member": "string",
+          "name": "ScheduleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "编排绑定的触发规则。",
+          "example": "无",
+          "member": "WorkflowTrigger",
+          "name": "Trigger",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "编排任务列表。\n注意：内部不允许部分更新，如果需要更新需全量提交编排任务列表。",
+          "example": "无",
+          "member": "Activity",
+          "name": "Activities",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "媒体处理的文件输出存储位置。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "媒体处理生成的文件输出的目标目录。\n注意：如果设置为空，则表示取消老配置的OutputDir值。",
+          "example": "无",
+          "member": "string",
+          "name": "OutputDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务的事件通知配置。",
+          "example": "无",
+          "member": "TaskNotifyConfig",
+          "name": "TaskNotifyConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyScheduleResponse": {
+      "document": "ModifySchedule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySnapshotByTimeOffsetTemplateRequest": {
       "document": "ModifySnapshotByTimeOffsetTemplate请求参数结构体",
       "members": [
@@ -18842,6 +19331,112 @@
           "name": "ActivityResultSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SchedulesInfo": {
+      "document": "编排详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "编排唯一标识。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编排名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "ScheduleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编排状态，取值范围：\nEnabled：已启用，\nDisabled：已禁用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编排绑定的触发规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkflowTrigger",
+          "name": "Trigger",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编排任务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Activity",
+          "name": "Activities",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体处理的文件输出存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体处理生成的文件输出的目标目录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "OutputDir",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务的事件通知配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskNotifyConfig",
+          "name": "TaskNotifyConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后编辑时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

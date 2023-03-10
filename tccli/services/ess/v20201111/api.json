@@ -105,6 +105,13 @@
       "output": "CreatePrepareFlowResponse",
       "status": "online"
     },
+    "CreateReleaseFlow": {
+      "document": "发起解除协议，主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。",
+      "input": "CreateReleaseFlowRequest",
+      "name": "发起解除协议",
+      "output": "CreateReleaseFlowResponse",
+      "status": "online"
+    },
     "CreateSchemeUrl": {
       "document": "获取小程序跳转链接\n\n适用场景：如果需要签署人在自己的APP、小程序、H5应用中签署，可以通过此接口获取跳转腾讯电子签小程序的签署跳转链接。\n\n注：如果签署人是在PC端扫码签署，可以通过生成跳转链接自主转换成二维码，让签署人在PC端扫码签署。\n\n\n跳转到小程序的实现，参考官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）\n\n\n如您需要自主配置小程序跳转链接，请参考: <a href=\"https://cloud.tencent.com/document/product/1323/74774\">跳转小程序链接配置说明</a>",
       "input": "CreateSchemeUrlRequest",
@@ -786,7 +793,6 @@
       "document": "抄送信息",
       "members": [
         {
-          "default": "",
           "document": "被抄送人手机号",
           "example": "xxx",
           "member": "string",
@@ -794,6 +800,33 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "被抄送人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "李白",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "被抄送人类型,\n0--个人\n1--员工\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CcType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "被抄送人权限\n0--可查看\n1--可查看也可下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CcPermission",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -1470,6 +1503,14 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "document": "给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知",
+          "example": "无",
+          "member": "int64",
+          "name": "CcNotifyType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2133,6 +2174,64 @@
           "member": "string",
           "name": "Url",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReleaseFlowRequest": {
+      "document": "CreateReleaseFlow请求参数结构体",
+      "members": [
+        {
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "待解除的签署流程编号（即原签署流程的编号）",
+          "example": "无",
+          "member": "string",
+          "name": "NeedRelievedFlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "解除协议内容",
+          "example": "无",
+          "member": "RelieveInfo",
+          "name": "ReliveInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "非必须，解除协议的本企业签署人列表，\n默认使用原流程的签署人列表,当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业其他已实名员工来替换原流程中的原签署人，注意需要指明原签署人的编号(ReceiptId,通过DescribeFlowInfo接口获取)来代表需要替换哪一个签署人\n解除协议的签署人数量不能多于原流程的签署人数量",
+          "example": "无",
+          "member": "ReleasedApprover",
+          "name": "ReleasedApprovers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReleaseFlowResponse": {
+      "document": "CreateReleaseFlow返回参数结构体",
+      "members": [
+        {
+          "document": "解除协议流程编号\n",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
           "type": "string",
           "value_allowed_null": false
         },
@@ -4929,6 +5028,90 @@
       ],
       "usage": "in"
     },
+    "ReleasedApprover": {
+      "document": "解除协议的签署人，如不指定，默认使用待解除流程（即原流程）中的签署人。\n注意：不支持更换C端（个人身份类型）签署人，如果原流程中含有C端签署人，默认使用原流程中的该C端签署人。",
+      "members": [
+        {
+          "document": "签署人姓名，最大长度50个字符\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署人手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RelievedApproverReceiptId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "RelieveInfo": {
+      "document": "解除协议文档中内容信息，包括但不限于：解除理由、解除后仍然有效的条款-保留条款、原合同事项处理-费用结算、原合同事项处理-其他事项、其他约定等。",
+      "members": [
+        {
+          "document": "解除理由，最大支持200个字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "解除后仍然有效的条款，保留条款，最大支持200个字\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RemainInForceItem",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "原合同事项处理-费用结算，最大支持200个字\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalExpenseSettlement",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "原合同事项处理-其他事项，最大支持200个字\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalOtherSettlement",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "其他约定，最大支持200个字\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OtherDeals",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "RemindFlowRecords": {
       "document": "催办接口返回详细信息",
       "members": [
@@ -5213,6 +5396,14 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "document": "给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知",
+          "example": "无",
+          "member": "int64",
+          "name": "CcNotifyType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -2755,6 +2755,7 @@
         {
           "default": "",
           "document": "克隆任务的源实例Id。",
+          "example": "\"\"",
           "member": "string",
           "name": "SrcInstanceId",
           "required": true,
@@ -2764,6 +2765,7 @@
         {
           "default": "",
           "document": "克隆任务的新产生实例Id。",
+          "example": "\"\"",
           "member": "string",
           "name": "DstInstanceId",
           "required": true,
@@ -2773,6 +2775,7 @@
         {
           "default": "",
           "document": "克隆任务对应的任务列表Id。",
+          "example": "1",
           "member": "int64",
           "name": "CloneJobId",
           "required": true,
@@ -2782,6 +2785,7 @@
         {
           "default": "",
           "document": "克隆实例使用的策略， 包括以下类型：  timepoint:指定时间点回档，  backupset: 指定备份文件回档。",
+          "example": "\"\"",
           "member": "string",
           "name": "RollbackStrategy",
           "required": true,
@@ -2791,6 +2795,7 @@
         {
           "default": "",
           "document": "克隆实例回档的时间点。",
+          "example": "\"\"",
           "member": "string",
           "name": "RollbackTargetTime",
           "required": true,
@@ -2800,6 +2805,7 @@
         {
           "default": "",
           "document": "任务开始时间。",
+          "example": "\"\"",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -2809,6 +2815,7 @@
         {
           "default": "",
           "document": "任务结束时间。",
+          "example": "\"\"",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2818,10 +2825,31 @@
         {
           "default": "",
           "document": "任务状态，包括以下状态：initial,running,wait_complete,success,failed",
+          "example": "\"\"",
           "member": "string",
           "name": "TaskStatus",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "克隆实例所在地域Id",
+          "example": "1",
+          "member": "int64",
+          "name": "NewRegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源实例所在地域Id",
+          "example": "2",
+          "member": "int64",
+          "name": "SrcRegionId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -6681,7 +6709,6 @@
       "document": "DescribeCloneList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "查询指定源实例的克隆任务列表。",
           "example": "cdb-9303wd4x",
           "member": "string",
@@ -6690,7 +6717,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页查询时的偏移量，默认值为0。",
           "example": "0",
           "member": "int64",
@@ -6699,7 +6725,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页查询时的每页条目数，默认值为20。",
           "example": "20",
           "member": "int64",
@@ -6718,7 +6743,6 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6727,7 +6751,6 @@
           "example": "无",
           "member": "CloneItem",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
