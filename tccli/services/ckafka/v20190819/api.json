@@ -13744,7 +13744,6 @@
       "document": "路由实体对象",
       "members": [
         {
-          "default": "",
           "document": "实例接入方式\n0：PLAINTEXT (明文方式，没有带用户信息老版本及社区版本都支持)\n1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）\n2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）\n3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）",
           "example": "1",
           "member": "int64",
@@ -13755,7 +13754,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "路由ID",
           "example": "1",
           "member": "int64",
@@ -13766,7 +13764,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）",
           "example": "1",
           "member": "int64",
@@ -13777,7 +13774,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "虚拟IP列表",
           "example": "1",
           "member": "VipEntity",
@@ -13788,7 +13784,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -13799,7 +13794,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名port\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -13810,7 +13804,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-08-21 11:15:54",
           "member": "string",
@@ -13821,7 +13814,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sub-xxx",
           "member": "string",
@@ -13832,7 +13824,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "虚拟IP列表(1对1 broker节点)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "VipEntity",
@@ -13843,13 +13834,22 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "路由创建任务处理状态（0已完成，1处理中）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Processing",
           "required": true,
           "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "vpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 2
         }
@@ -14704,7 +14704,8 @@
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14714,7 +14715,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14724,7 +14726,8 @@
           "name": "Note",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14734,7 +14737,8 @@
           "name": "PartitionNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14744,7 +14748,8 @@
           "name": "EnableWhiteList",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14754,7 +14759,8 @@
           "name": "IpWhiteList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14764,7 +14770,8 @@
           "name": "Config",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14774,7 +14781,8 @@
           "name": "Partitions",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14784,7 +14792,8 @@
           "name": "EnableAclRule",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14794,7 +14803,8 @@
           "name": "AclRuleList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14804,7 +14814,19 @@
           "name": "QuotaConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ReplicaNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -14950,6 +14972,16 @@
           "name": "Status",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

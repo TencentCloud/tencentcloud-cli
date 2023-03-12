@@ -736,7 +736,6 @@
       "document": "线索信息详情",
       "members": [
         {
-          "default": "",
           "document": "线索id，线索唯一识别编码",
           "example": "1348080105398452226",
           "member": "string",
@@ -747,7 +746,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "接待客户经销商顾问所属组织id,多个组织使用逗号分割",
           "example": "1,5,9",
           "member": "string",
@@ -758,7 +756,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "线索获取时间，用户添加企业微信时间，单位是秒",
           "example": "1618556502",
           "member": "uint64",
@@ -769,7 +766,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "客户在微信生态中唯一识别码",
           "example": "ozynqsulJFCZ2z1aYeS8h",
           "member": "string",
@@ -780,7 +776,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "微信昵称",
           "example": "文",
           "member": "string",
@@ -791,7 +786,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "联系方式",
           "example": "134xxxx3232",
           "member": "string",
@@ -802,7 +796,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "车系编号",
           "example": "无",
           "member": "string",
@@ -813,7 +806,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "车型编号",
           "example": "无",
           "member": "string",
@@ -824,7 +816,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "省份编号",
           "example": "无",
           "member": "string",
@@ -835,7 +826,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "城市编号",
           "example": "无",
           "member": "string",
@@ -846,7 +836,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "顾问名称",
           "example": "张三",
           "member": "string",
@@ -857,7 +846,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "顾问电话",
           "example": "134xxxx4321",
           "member": "string",
@@ -868,7 +856,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "备注",
           "example": "备注",
           "member": "string",
@@ -879,7 +866,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签",
           "example": "[\"标签1\",\"标签2\"]",
           "member": "string",
@@ -890,7 +876,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "客户姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "李四",
           "member": "string",
@@ -898,6 +883,126 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "线索属性，0：个人，1：企业",
+          "example": "0",
+          "member": "int64",
+          "name": "LeadUserType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "线索来源类型，1：线上，2：线下",
+          "example": "1",
+          "member": "int64",
+          "name": "LeadType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "线索渠道对应ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "线索渠道类型，与线索来源对应的渠道名称",
+          "example": "渠道1",
+          "member": "string",
+          "name": "ChannelName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "线索渠道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "渠道1",
+          "member": "string",
+          "name": "SourceChannelName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "0：未知，1：男，2：女",
+          "example": "1",
+          "member": "int64",
+          "name": "Gender",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "线索创建时间戳，单位：秒",
+          "example": "1618322621",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "线索所处状态，101-待分配 201-待建档 301-已建档 401-已邀约 501-跟进中 601-已下订单 701-已成交 801-战败申请中 901-已战败 1001-未知状态 1101-转移申请中 1201-已完成",
+          "example": "101",
+          "member": "int64",
+          "name": "LeadStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "线索意向等级",
+          "example": "101",
+          "member": "string",
+          "name": "LevelCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "线索成功导入的时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "ImportAtTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "完成线索分配的时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "DistributeTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "获取线索的时间戳，单位：秒",
+          "example": "1618322621",
+          "member": "uint64",
+          "name": "CreateAtTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
           "visibility": 1
         }
       ],
@@ -1536,24 +1641,54 @@
       "document": "经销商信息",
       "members": [
         {
-          "default": "",
           "document": "企微SaaS平台经销商id",
           "example": "1438393844623261698",
           "member": "uint64",
           "name": "DealerId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "经销商名称",
           "example": "深圳神车经销商",
           "member": "string",
           "name": "DealerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "所属省份编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "110100",
+          "member": "string",
+          "name": "ProvinceCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "所属城市编号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[110100]",
+          "member": "string",
+          "name": "CityCodeList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "业务覆盖品牌id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2]",
+          "member": "string",
+          "name": "BrandIdList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2451,7 +2586,6 @@
       "document": "QueryClueInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
@@ -2461,11 +2595,28 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
           "member": "int64",
           "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "查询开始时间， 单位秒",
+          "example": "1647187200",
+          "member": "uint64",
+          "name": "BeginTime",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "查询结束时间， 单位秒",
+          "example": "1647273600",
+          "member": "uint64",
+          "name": "EndTime",
           "required": false,
           "type": "int",
           "visibility": 1
@@ -2481,7 +2632,6 @@
           "example": "无",
           "member": "ClueInfoDetail",
           "name": "PageData",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -2491,7 +2641,6 @@
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2501,7 +2650,6 @@
           "example": "1",
           "member": "uint64",
           "name": "HasMore",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2681,22 +2829,22 @@
       "document": "QueryDealerInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "Cursor",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2709,27 +2857,27 @@
           "example": "无",
           "member": "DealerInfo",
           "name": "PageData",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉取新增的数据，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "HasMore",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

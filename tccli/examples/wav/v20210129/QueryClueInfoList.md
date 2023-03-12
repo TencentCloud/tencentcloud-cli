@@ -1,13 +1,15 @@
 **Example 1: 查询线索列表接口**
 
-
+用于查询线索列表
 
 Input: 
 
 ```
 tccli wav QueryClueInfoList --cli-unfold-argument  \
     --Cursor sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU= \
-    --Limit 1
+    --Limit 100 \
+    --BeginTime 1647187200 \
+    --EndTime 1647273600
 ```
 
 Output: 
@@ -23,7 +25,7 @@ Output:
                 "EnquireTime": 1618556502,
                 "UnionId": "wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA",
                 "Name": "微信昵称",
-                "UserName": "客户姓名",
+                "UserName": "李四",
                 "Phone": "134xxxx1234",
                 "SeriesCode": "车系编号",
                 "ModelCode": "车型编号",
@@ -35,7 +37,19 @@ Output:
                 "TagList": [
                     "标签1",
                     "标签2"
-                ]
+                ],
+                "LeadUserType": 0,
+                "LeadType": 1,
+                "ChannelId": 1,
+                "ChannelName": "渠道1",
+                "SourceChannelName": "渠道1",
+                "Gender": 1,
+                "CreateTime": "2023-01-01 00:00:00",
+                "LeadStatus": 101,
+                "LevelCode": "101",
+                "ImportAtTime": 1618322621,
+                "DistributeTime": 1618322621,
+                "CreateAtTime": 1618322621
             }
         ],
         "RequestId": "b1a024bf-4d74-4b5d-a5bd-bbec330520e8"

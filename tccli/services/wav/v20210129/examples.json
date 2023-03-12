@@ -66,9 +66,9 @@
     ],
     "QueryClueInfoList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryClueInfoList\n<公共请求参数>\n\n{\n    \"Cursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n    \"Limit\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"HasMore\": 1,\n        \"PageData\": [\n            {\n                \"DealerId\": \"1,3,5\",\n                \"ClueId\": \"1348080105398452226\",\n                \"EnquireTime\": 1618556502,\n                \"UnionId\": \"wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA\",\n                \"Name\": \"微信昵称\",\n                \"UserName\": \"客户姓名\",\n                \"Phone\": \"134xxxx1234\",\n                \"SeriesCode\": \"车系编号\",\n                \"ModelCode\": \"车型编号\",\n                \"ProvinceCode\": \"省份编号\",\n                \"CityCode\": \"城市编号\",\n                \"SalesName\": \"顾问名称\",\n                \"SalesPhone\": \"134xxxx6789\",\n                \"Remark\": \"备注\",\n                \"TagList\": [\n                    \"标签1\",\n                    \"标签2\"\n                ]\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "document": "用于查询线索列表",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryClueInfoList\n<公共请求参数>\n\n{\n    \"Cursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n    \"Limit\": 100,\n    \"BeginTime\": 1647187200,\n    \"EndTime\": 1647273600\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"HasMore\": 1,\n        \"PageData\": [\n            {\n                \"DealerId\": \"1,3,5\",\n                \"ClueId\": \"1348080105398452226\",\n                \"EnquireTime\": 1618556502,\n                \"UnionId\": \"wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA\",\n                \"Name\": \"微信昵称\",\n                \"UserName\": \"李四\",\n                \"Phone\": \"134xxxx1234\",\n                \"SeriesCode\": \"车系编号\",\n                \"ModelCode\": \"车型编号\",\n                \"ProvinceCode\": \"省份编号\",\n                \"CityCode\": \"城市编号\",\n                \"SalesName\": \"顾问名称\",\n                \"SalesPhone\": \"134xxxx6789\",\n                \"Remark\": \"备注\",\n                \"TagList\": [\n                    \"标签1\",\n                    \"标签2\"\n                ],\n                \"LeadUserType\": 0,\n                \"LeadType\": 1,\n                \"ChannelId\": 1,\n                \"ChannelName\": \"渠道1\",\n                \"SourceChannelName\": \"渠道1\",\n                \"Gender\": 1,\n                \"CreateTime\": \"2023-01-01 00:00:00\",\n                \"LeadStatus\": 101,\n                \"LevelCode\": \"101\",\n                \"ImportAtTime\": 1618322621,\n                \"DistributeTime\": 1618322621,\n                \"CreateAtTime\": 1618322621\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
         "title": "查询线索列表接口"
       }
     ],
@@ -90,9 +90,9 @@
     ],
     "QueryDealerInfoList": [
       {
-        "document": "",
-        "input": "https://wav.tencentcloudapi.com/?Action=QueryDealerInfoList\n&Cursor=sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"HasMore\": 1,\n        \"PageData\": [\n            {\n                \"DealerId\": 1348080105398452226,\n                \"DealerName\": \"经销商名称\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "document": "查询经销商信息列表",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDealerInfoList\n<公共请求参数>\n\n{\n    \"Cursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"HasMore\": 1,\n        \"PageData\": [\n            {\n                \"DealerId\": 1348080105398452200,\n                \"DealerName\": \"经销商名称\",\n                \"ProvinceCode\": \"110100\",\n                \"CityCodeList\": [\n                    \"110100\"\n                ],\n                \"BrandIdList\": [\n                    \"1\"\n                ]\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
         "title": "查询经销商信息列表接口"
       }
     ],

@@ -3080,7 +3080,6 @@
       "document": "通用时间窗",
       "members": [
         {
-          "default": "",
           "document": "周一的时间窗，格式如： 02:00-06:00",
           "example": "02:00-06:00",
           "member": "string",
@@ -3091,7 +3090,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "周二的时间窗，格式如： 02:00-06:00",
           "example": "02:00-06:00",
           "member": "string",
@@ -3102,7 +3100,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "周三的时间窗，格式如： 02:00-06:00",
           "example": "02:00-06:00",
           "member": "string",
@@ -3113,7 +3110,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "周四的时间窗，格式如： 02:00-06:00",
           "example": "02:00-06:00",
           "member": "string",
@@ -3124,7 +3120,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "周五的时间窗，格式如： 02:00-06:00",
           "example": "02:00-06:00",
           "member": "string",
@@ -3135,7 +3130,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "周六的时间窗，格式如： 02:00-06:00",
           "example": "02:00-06:00",
           "member": "string",
@@ -3146,7 +3140,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "周日的时间窗，格式如： 02:00-06:00",
           "example": "02:00-06:00",
           "member": "string",
@@ -3157,7 +3150,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "常规备份保留策略，weekly-按周备份，monthly-按月备份，默认为weekly",
           "example": "weekly",
           "member": "string",
@@ -3168,7 +3160,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "如果设置为按月备份，需填入每月具体备份日期，相邻备份天数不得超过两天。例[1,4,7,9,11,14,17,19,22,25,28,30,31]",
           "example": "[1,4,7,9,11,14,17,19,22,25,28,30,31]",
           "member": "int64",
@@ -3179,7 +3170,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "月度备份时间窗，BackupPeriodStrategy为monthly时必填。格式如： 02:00-06:00",
           "example": "02:00-06:00",
           "member": "string",
@@ -3190,7 +3180,7 @@
           "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ConnectionPoolInfo": {
       "document": "连接池信息",
@@ -5973,7 +5963,6 @@
       "document": "DescribeBackupConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -5993,7 +5982,6 @@
           "example": "10",
           "member": "int64",
           "name": "StartTimeMin",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6003,7 +5991,6 @@
           "example": "14",
           "member": "int64",
           "name": "StartTimeMax",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6013,7 +6000,6 @@
           "example": "7",
           "member": "int64",
           "name": "BackupExpireDays",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6023,7 +6009,6 @@
           "example": "physical",
           "member": "string",
           "name": "BackupMethod",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6033,7 +6018,6 @@
           "example": "7",
           "member": "int64",
           "name": "BinlogExpireDays",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6043,7 +6027,6 @@
           "example": "无",
           "member": "CommonTimeWindow",
           "name": "BackupTimeWindow",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -6053,7 +6036,6 @@
           "example": "off",
           "member": "string",
           "name": "EnableBackupPeriodSave",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6063,7 +6045,6 @@
           "example": "1080",
           "member": "int64",
           "name": "BackupPeriodSaveDays",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6073,7 +6054,6 @@
           "example": "weekly",
           "member": "string",
           "name": "BackupPeriodSaveInterval",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6083,7 +6063,6 @@
           "example": "1",
           "member": "int64",
           "name": "BackupPeriodSaveCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6093,7 +6072,6 @@
           "example": "1970-01-01 00:00:01",
           "member": "string",
           "name": "StartBackupPeriodSaveDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6103,7 +6081,6 @@
           "example": "off",
           "member": "string",
           "name": "EnableBackupArchive",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6113,7 +6090,6 @@
           "example": "180",
           "member": "int64",
           "name": "BackupArchiveDays",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6123,7 +6099,6 @@
           "example": "off",
           "member": "string",
           "name": "EnableBinlogArchive",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6133,7 +6108,6 @@
           "example": "180",
           "member": "int64",
           "name": "BinlogArchiveDays",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6143,7 +6117,6 @@
           "example": "off",
           "member": "string",
           "name": "EnableBackupStandby",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6153,7 +6126,6 @@
           "example": "30",
           "member": "int64",
           "name": "BackupStandbyDays",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6163,7 +6135,6 @@
           "example": "off",
           "member": "string",
           "name": "EnableBinlogStandby",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6173,7 +6144,6 @@
           "example": "30",
           "member": "int64",
           "name": "BinlogStandbyDays",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6668,7 +6638,6 @@
       "document": "DescribeBackups请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -6678,7 +6647,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，最小值为0。",
           "example": "0",
           "member": "int64",
@@ -6688,7 +6656,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "分页大小，默认值为20，最小值为1，最大值为100。",
           "example": "0",
           "member": "int64",
@@ -6708,7 +6675,6 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6718,7 +6684,6 @@
           "example": "无",
           "member": "BackupInfo",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6844,7 +6809,6 @@
       "document": "DescribeBinlogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -6854,7 +6818,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，最小值为0。",
           "example": "0",
           "member": "int64",
@@ -6864,7 +6827,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "分页大小，默认值为20，最小值为1，最大值为100。",
           "example": "0",
           "member": "int64",
@@ -6884,7 +6846,6 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6894,7 +6855,6 @@
           "example": "无",
           "member": "BinlogInfo",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1

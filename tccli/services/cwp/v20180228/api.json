@@ -14736,7 +14736,6 @@
       "document": "DescribeBaselineDownloadList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "<li>Status - int - 是否必填：否 - 0:导出中 1:已完成</li>\n<li>StartTime - string - 是否必填：否 - 开始时间</li>\n<li>EndTime - string - 是否必填：否 - 结束时间</li>\n<li>TaskName - string - 是否必填：否 - 任务名称</li>",
           "example": "无",
           "member": "Filter",
@@ -14746,7 +14745,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "限制条数,默认10,最大100",
           "example": "无",
           "member": "int64",
@@ -14756,7 +14754,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量,默认0",
           "example": "无",
           "member": "int64",
@@ -14766,7 +14763,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序方式: [ASC:升序|DESC:降序]",
           "example": "无",
           "member": "string",
@@ -14776,7 +14772,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "可选排序列: [StartTime|EndTime]",
           "example": "无",
           "member": "string",
@@ -14796,7 +14791,6 @@
           "example": "无",
           "member": "BaselineDownload",
           "name": "List",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -14806,7 +14800,6 @@
           "example": "无",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -14914,8 +14907,7 @@
       "document": "DescribeBaselineFixList请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "<li>ItemName- string - 是否必填：否 - 项名称</i>",
+          "document": "<li>ItemName- string - 是否必填：否 - 项名称</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -14924,7 +14916,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "限制条数,默认10,最大100",
           "example": "无",
           "member": "int64",
@@ -14934,7 +14925,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量,默认0",
           "example": "无",
           "member": "int64",
@@ -14944,7 +14934,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序方式: [ASC:升序|DESC:降序]",
           "example": "无",
           "member": "string",
@@ -14954,7 +14943,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "可选排序列: [CreateTime|MoifyTime|FixTime]",
           "example": "无",
           "member": "string",
@@ -14974,7 +14962,6 @@
           "example": "无",
           "member": "BaselineFix",
           "name": "List",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -14984,7 +14971,6 @@
           "example": "无",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -15329,7 +15315,6 @@
       "document": "DescribeBaselineItemIgnoreList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "忽略规则ID",
           "example": "1",
           "member": "int64",
@@ -15339,7 +15324,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "限制条数,默认10,最大100",
           "example": "无",
           "member": "int64",
@@ -15349,7 +15333,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "请求偏移默认0",
           "example": "无",
           "member": "int64",
@@ -15359,8 +15342,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "<li>CatgoryId - int64 - 是否必填：否 - 规则Id</i>",
+          "document": "<li>CatgoryId - int64 - 是否必填：否 - 规则Id</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -15369,7 +15351,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序方式 [ASC:升序|DESC:降序]",
           "example": "ASC",
           "member": "string",
@@ -15379,7 +15360,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "可选排序列 [ID]",
           "example": "ID",
           "member": "string",
@@ -15399,7 +15379,6 @@
           "example": "无",
           "member": "BaselineItemInfo",
           "name": "List",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -15409,7 +15388,6 @@
           "example": "无",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
