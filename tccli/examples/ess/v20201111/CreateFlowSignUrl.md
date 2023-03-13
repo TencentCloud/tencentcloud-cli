@@ -7,10 +7,10 @@ Input:
 ```
 tccli ess CreateFlowSignUrl --cli-unfold-argument  \
     --Organization.OrganizationId yD*****************1Khs7 \
-    --FlowApproverInfos.0.ApproverMobile xx \
-    --FlowApproverInfos.0.ApproverName xx \
+    --FlowApproverInfos.0.ApproverMobile test \
+    --FlowApproverInfos.0.ApproverName test \
     --FlowApproverInfos.0.ApproverType 1 \
-    --FlowId xx
+    --FlowId test
 ```
 
 Output: 
@@ -19,8 +19,8 @@ Output:
     "Response": {
         "FlowApproverUrlInfos": [
             {
-                "ApproverMobile": "xx",
-                "ApproverName": "xx",
+                "ApproverMobile": "test",
+                "ApproverName": "test",
                 "ApproverType": 1,
                 "SignUrl": "https://***cn/7YIxx"
             }

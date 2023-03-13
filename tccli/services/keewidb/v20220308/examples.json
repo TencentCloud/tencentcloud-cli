@@ -258,10 +258,10 @@
     ],
     "RenewInstance": [
       {
-        "document": "",
+        "document": "给实例续费",
         "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewInstance\n<公共请求参数>\n\n{\n    \"Period\": 1,\n    \"InstanceId\": \"kee-lagg****\"\n}",
         "output": "{\n    \"Response\": {\n        \"DealId\": \"1655902381\",\n        \"RequestId\": \"12eb8b4f-8aab-43df-aea4-7cae92b134a5\"\n    }\n}",
-        "title": "实例1"
+        "title": "示例1"
       }
     ],
     "ResetPassword": [

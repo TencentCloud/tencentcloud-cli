@@ -124,6 +124,14 @@
         "title": "创建环境角色关系映射"
       }
     ],
+    "CreateRabbitMQVipInstance": [
+      {
+        "document": "创建RabbitMQ专享版实例",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        190001\n    ],\n    \"NodeSpec\": \"rabbit-vip-basic-2\",\n    \"NodeNum\": 1,\n    \"StorageSize\": 100,\n    \"VpcId\": \"vpc-xxx\",\n    \"SubnetId\": \"subnet-xxx\",\n    \"ClusterName\": \"ApiCreate\",\n    \"EnableCreateDefaultHaMirrorQueue\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sadasfdsfs\",\n        \"TranId\": \"20230110002025620411234\",\n        \"InstanceId\": \"amqp-aegnagjg\"\n    }\n}",
+        "title": "创建RabbitMQ专享版实例"
+      }
+    ],
     "CreateRocketMQCluster": [
       {
         "document": "",

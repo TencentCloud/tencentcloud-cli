@@ -1,6 +1,6 @@
-**Example 1: 多文件上传接口**
+**Example 1: 上传印章**
 
-
+上传印章
 
 Input: 
 
@@ -28,9 +28,9 @@ Output:
 }
 ```
 
-**Example 2: 1**
+**Example 2: 上传文件**
 
-
+上传文件
 
 Input: 
 

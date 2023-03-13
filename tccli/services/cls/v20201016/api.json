@@ -1804,7 +1804,7 @@
         },
         {
           "document": "cos存储桶地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "gz_open",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
           "required": true,
@@ -2454,7 +2454,7 @@
         },
         {
           "document": "COS存储桶所在地域",
-          "example": "gz_open",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
           "required": true,

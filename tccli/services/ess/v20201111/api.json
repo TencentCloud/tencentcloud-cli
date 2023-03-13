@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateFlowReminds": {
-      "document": "指定需要批量催办的签署流程Id，批量催办合同，最多100个; 接口失败后返回错误信息\n注意:\n该接口不可直接调用，需要联系运营开通后方可调用。",
+      "document": "指定需要批量催办的签署流程Id，批量催办合同，最多100个; 接口失败后返回错误信息\n注意:\n该接口不可直接调用，请联系客户经理申请使用",
       "input": "CreateFlowRemindsRequest",
       "name": "合同催办",
       "output": "CreateFlowRemindsResponse",
@@ -78,7 +78,7 @@
       "status": "online"
     },
     "CreateFlowSignUrl": {
-      "document": "创建签署链接，需要联系运营人员开白后才可使用",
+      "document": "创建签署链接，请联系客户经理申请使用",
       "input": "CreateFlowSignUrlRequest",
       "name": "创建签署链接",
       "output": "CreateFlowSignUrlResponse",
@@ -253,7 +253,7 @@
       "status": "online"
     },
     "UploadFiles": {
-      "document": "此接口（UploadFiles）用于文件上传。\n适用场景：用于生成pdf资源编号（FileIds）来配合“用PDF创建流程”接口使用，使用场景可详见“用PDF创建流程”接口说明。\n调用时需要设置Domain/接口请求域名为 file.ess.tencent.cn，并设置参数Version/版本号为2020-12-22",
+      "document": "此接口（UploadFiles）用于文件上传。\n适用场景：用于生成pdf资源编号（FileIds）来配合“用PDF创建流程”接口使用，使用场景可详见“用PDF创建流程”接口说明。\n其中上传的文件，图片类型(png/jpg/jpeg)大小限制为5M，其他大小限制为60M。\n调用时需要设置Domain/接口请求域名为 file.ess.tencent.cn，并设置参数Version/版本号为2020-12-22",
       "input": "UploadFilesRequest",
       "name": "多文件上传",
       "output": "UploadFilesResponse",
@@ -1861,7 +1861,6 @@
       "document": "CreateFlowSignUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "流程编号",
           "example": "xx",
           "member": "string",
@@ -1870,7 +1869,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。",
           "example": "无",
           "member": "FlowCreateApprover",
@@ -1879,7 +1877,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "机构信息，暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
@@ -1888,7 +1885,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "用户信息，此结构体UserId必填",
           "example": "无",
           "member": "UserInfo",
@@ -1907,7 +1903,6 @@
           "example": "无",
           "member": "FlowApproverUrlInfo",
           "name": "FlowApproverUrlInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3893,7 +3888,6 @@
       "document": "签署链接信息",
       "members": [
         {
-          "default": "",
           "document": "签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -3903,7 +3897,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "签署人手机号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -3913,7 +3906,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "签署人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
@@ -3923,7 +3915,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "签署人类型 1-个人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -5716,7 +5707,6 @@
       "document": "UploadFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件对应业务类型\n1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html\n3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png",
           "example": "TEMPLATE",
           "member": "string",
@@ -5725,7 +5715,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "调用方信息，其中OperatorId为必填字段，即用户的UserId",
           "example": "Caller",
           "member": "Caller",
@@ -5734,7 +5723,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "上传文件内容数组，最多支持20个文件",
           "example": "FileInfos",
           "member": "UploadFile",
@@ -5743,7 +5731,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。\n如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF",
           "example": "PDF",
           "member": "string",
@@ -5752,7 +5739,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白\ntrue--是，处理置白\n默认为false--否，不处理",
           "example": "true",
           "member": "bool",
@@ -5761,7 +5747,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "用户自定义ID数组，与上传文件一一对应",
           "example": "无",
           "member": "string",
@@ -5770,7 +5755,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "不再使用，上传文件链接数组，最多支持20个URL",
           "example": "FileUrls",
           "member": "string",
@@ -5789,7 +5773,6 @@
           "example": "d54e3caec25ad0ea6be24406762b7562",
           "member": "string",
           "name": "FileIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5798,7 +5781,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

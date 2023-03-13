@@ -43,14 +43,14 @@
       "status": "online"
     },
     "ChannelCreateEmbedWebUrl": {
-      "document": "本接口（ChannelCreateEmbedWebUrl）用于创建嵌入web的链接",
+      "document": "本接口（ChannelCreateEmbedWebUrl）用于创建嵌入web的链接\n本接口支持创建：创建印章，创建模版，修改模版，预览模版，预览合同流程的web链接\n进入web连接后与当前控制台操作保持一致",
       "input": "ChannelCreateEmbedWebUrlRequest",
       "name": "创建嵌入web的链接",
       "output": "ChannelCreateEmbedWebUrlResponse",
       "status": "online"
     },
     "ChannelCreateFlowByFiles": {
-      "document": "接口（ChannelCreateFlowByFiles）用于通过文件创建签署流程。此接口静默签能力不可直接使用，需要运营申请",
+      "document": "接口（ChannelCreateFlowByFiles）用于通过文件创建签署流程。此接口静默签能力不可直接使用，请联系客户经理申请使用",
       "input": "ChannelCreateFlowByFilesRequest",
       "name": "通过文件创建签署流程",
       "output": "ChannelCreateFlowByFilesResponse",
@@ -64,7 +64,7 @@
       "status": "online"
     },
     "ChannelCreateFlowReminds": {
-      "document": "指定需要批量催办的签署流程Id，批量催办合同，最多100个；接口失败后返回错误信息\n注意:\n该接口不可直接调用，请联系电子签运营开通后方可调用。",
+      "document": "指定需要批量催办的签署流程Id，批量催办合同，最多100个；接口失败后返回错误信息\n注意:\n该接口不可直接调用，请联系客户经理申请使用",
       "input": "ChannelCreateFlowRemindsRequest",
       "name": "合同催办",
       "output": "ChannelCreateFlowRemindsResponse",
@@ -78,7 +78,7 @@
       "status": "online"
     },
     "ChannelCreateFlowSignUrl": {
-      "document": "创建签署链接，需要联系运营人员开白后才可使用",
+      "document": "创建签署链接，请联系客户经理申请使用\n该接口用于发起合同后，生成C端签署人的签署链接，点击跳转小程序完成签署\n注意：该接口目前签署人类型仅支持个人签署方（PERSON）\n注意：该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件",
       "input": "ChannelCreateFlowSignUrlRequest",
       "name": "创建签署链接",
       "output": "ChannelCreateFlowSignUrlResponse",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "ChannelCreatePrepareFlow": {
-      "document": "创建预发起合同",
+      "document": "创建预发起合同\n通过此接口指定：合同，签署人，填写控件信息，生成预创建合同链接，点击后跳转到web页面完成合同创建并发起\n可指定合同信息不可更改，签署人信息不可更改\n合同发起后，填写及签署流程与现有操作流程一致\n注意：目前仅支持模版发起",
       "input": "ChannelCreatePrepareFlowRequest",
       "name": "创建预发起合同",
       "output": "ChannelCreatePrepareFlowResponse",
@@ -183,7 +183,7 @@
       "status": "online"
     },
     "CreateSignUrls": {
-      "document": "创建跳转小程序查看或签署的链接。\n\n跳转小程序的几种方式：主要是设置不同的EndPoint\n1. 通过链接Url直接跳转到小程序，不需要返回\n设置EndPoint为WEIXINAPP，得到链接打开即可。（与短信提醒用户签署形式一样）。\n2. 通过链接Url打开H5引导页-->点击跳转到小程序-->签署完退出小程序-->回到H5引导页-->跳转到指定JumpUrl\n设置EndPoint为CHANNEL，指定JumpUrl，得到链接打开即可。\n3. 客户App直接跳转到小程序-->小程序签署完成-->返回App\n跳转到小程序的实现，参考官方文档（分为全屏、半屏两种方式）\n全屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html）\n半屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html）\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。\n4. 客户小程序直接跳到电子签小程序-->签署完成退出电子签小程序-->回到客户小程序\n实现方式同App跳小程序。",
+      "document": "创建跳转小程序查看或签署的链接。\n\n跳转小程序的几种方式：主要是设置不同的EndPoint\n1. 通过链接Url直接跳转到小程序，不需要返回\n设置EndPoint为WEIXINAPP，得到链接打开即可。（与短信提醒用户签署形式一样）。\n\n2. 通过链接Url打开H5引导页-->点击跳转到小程序-->签署完退出小程序-->回到H5引导页-->跳转到指定JumpUrl\n设置EndPoint为CHANNEL，指定JumpUrl，得到链接打开即可。\n\n3. 客户App直接跳转到小程序-->小程序签署完成-->返回App\n跳转到小程序的实现，参考官方文档\nhttps://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。\n\n4. 客户小程序直接跳到电子签小程序-->签署完成退出电子签小程序-->回到客户小程序\n跳转到小程序的实现，参考官方文档（分为全屏、半屏两种方式）\n全屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html）\n半屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html）\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。",
       "input": "CreateSignUrlsRequest",
       "name": "获取跳转小程序查看或签署链接",
       "output": "CreateSignUrlsResponse",
@@ -274,7 +274,7 @@
       "status": "online"
     },
     "UploadFiles": {
-      "document": "此接口（UploadFiles）用于文件上传。\n调用时需要设置Domain, 正式环境为 file.ess.tencent.cn。\n代码示例：\nHttpProfile httpProfile = new HttpProfile();\nhttpProfile.setEndpoint(\"file.test.ess.tencent.cn\");",
+      "document": "此接口（UploadFiles）用于文件上传。\n其中上传的文件，图片类型(png/jpg/jpeg)大小限制为5M，其他大小限制为60M。\n调用时需要设置Domain, 正式环境为 file.ess.tencent.cn。\n代码示例：\nHttpProfile httpProfile = new HttpProfile();\nhttpProfile.setEndpoint(\"file.test.ess.tencent.cn\");",
       "input": "UploadFilesRequest",
       "name": "文件上传",
       "output": "UploadFilesResponse",
@@ -2299,7 +2299,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署人Id，使用模版发起是，对应模版配置中的签署人RecipientId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人Id，使用模版发起是，对应模版配置中的签署人RecipientId\n注意：模版发起时该字段必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RecipientId",
@@ -3945,7 +3945,6 @@
       "document": "签署人签署链接信息",
       "members": [
         {
-          "default": "",
           "document": "签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。",
           "example": "xx",
           "member": "string",
@@ -3955,7 +3954,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人手机号",
           "example": "xx",
           "member": "string",
@@ -3965,7 +3963,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人姓名",
           "example": "xx",
           "member": "string",
@@ -3975,7 +3972,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人类型 PERSON-个人",
           "example": "PERSON",
           "member": "string",
@@ -3991,7 +3987,6 @@
       "document": "此结构体(FlowDetailInfo)描述的是合同(流程)的详细信息",
       "members": [
         {
-          "default": "",
           "document": "合同(流程)的Id",
           "example": "无",
           "member": "string",
@@ -4001,7 +3996,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的名字",
           "example": "无",
           "member": "string",
@@ -4011,7 +4005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的类型",
           "example": "无",
           "member": "string",
@@ -4021,7 +4014,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的状态",
           "example": "无",
           "member": "string",
@@ -4031,7 +4023,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的信息",
           "example": "无",
           "member": "string",
@@ -4041,7 +4032,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的创建时间戳",
           "example": "无",
           "member": "int64",
@@ -4051,7 +4041,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的签署截止时间戳",
           "example": "无",
           "member": "int64",
@@ -4061,7 +4050,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户自定义数据",
           "example": "无",
           "member": "string",
@@ -4071,7 +4059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的签署人数组",
           "example": "无",
           "member": "FlowApproverDetail",

@@ -34,6 +34,12 @@ Output:
                 "Name": "job1",
                 "Config": "fd"
             }
+        ],
+        "Probes": [
+            {
+                "Name": "job1",
+                "Config": "fd"
+            }
         ]
     }
 }

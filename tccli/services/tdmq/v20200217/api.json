@@ -98,6 +98,13 @@
       "output": "CreateEnvironmentRoleResponse",
       "status": "online"
     },
+    "CreateRabbitMQVipInstance": {
+      "document": "创建RabbitMQ专享版实例",
+      "input": "CreateRabbitMQVipInstanceRequest",
+      "name": "创建RabbitMQ专享版实例",
+      "output": "CreateRabbitMQVipInstanceResponse",
+      "status": "online"
+    },
     "CreateRocketMQCluster": {
       "document": "此接口用于创建一个RocketMQ集群",
       "input": "CreateRocketMQClusterRequest",
@@ -3563,6 +3570,120 @@
     "CreateEnvironmentRoleResponse": {
       "document": "CreateEnvironmentRole返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRabbitMQVipInstanceRequest": {
+      "document": "CreateRabbitMQVipInstance请求参数结构体",
+      "members": [
+        {
+          "document": "可用区",
+          "example": "[100003,100004]",
+          "member": "int64",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "私有网络VpcId",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "私有网络SubnetId",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群名称",
+          "example": "testCluster",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "节点规格,基础型rabbit-vip-basic-1,标准型rabbit-vip-basic-2,高阶1型rabbit-vip-basic-3,高阶2型rabbit-vip-basic-4。不传默认为基础型",
+          "example": "rabbit-vip-basic-1",
+          "member": "string",
+          "name": "NodeSpec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "节点数量,多可用区最少为3节点。不传默认单可用区为1,多可用区为3",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "单节点存储规格,不传默认为200G",
+          "example": "200",
+          "member": "int64",
+          "name": "StorageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "镜像队列,不传默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCreateDefaultHaMirrorQueue",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "自动续费,不传默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "购买时长,不传默认为1(月)",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRabbitMQVipInstanceResponse": {
+      "document": "CreateRabbitMQVipInstance返回参数结构体",
+      "members": [
+        {
+          "document": "订单号Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20230110002025620411234",
+          "member": "string",
+          "name": "TranId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "amqp-aegnagjg",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

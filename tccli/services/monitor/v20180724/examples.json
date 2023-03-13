@@ -666,7 +666,7 @@
       {
         "document": "拉取prometheus配置",
         "input": "https://monitor.tencentcloudapi.com/?Action=DescribePrometheusConfig\r\n&InstanceId=prom-xxx\r\n&ClusterType=tke\r\n&ClusterId=cls-xxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Config\": \"xdfdfd\",\n        \"ServiceMonitors\": [\n            {\n                \"Name\": \"sm1\",\n                \"Config\": \"dfd\"\n            }\n        ],\n        \"PodMonitors\": [\n            {\n                \"Name\": \"pm1\",\n                \"Config\": \"fdfd\"\n            }\n        ],\n        \"RawJobs\": [\n            {\n                \"Name\": \"job1\",\n                \"Config\": \"fd\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Config\": \"xdfdfd\",\n        \"ServiceMonitors\": [\n            {\n                \"Name\": \"sm1\",\n                \"Config\": \"dfd\"\n            }\n        ],\n        \"PodMonitors\": [\n            {\n                \"Name\": \"pm1\",\n                \"Config\": \"fdfd\"\n            }\n        ],\n        \"RawJobs\": [\n            {\n                \"Name\": \"job1\",\n                \"Config\": \"fd\"\n            }\n        ],\n        \"Probes\": [\n            {\n                \"Name\": \"job1\",\n                \"Config\": \"fd\"\n            }\n        ]\n    }\n}",
         "title": "拉取prometheus配置"
       }
     ],

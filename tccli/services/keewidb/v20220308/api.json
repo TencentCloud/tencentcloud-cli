@@ -4233,7 +4233,6 @@
       "document": "RenewInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例 ID。",
           "example": "kee-7djvzcnx",
           "member": "string",
@@ -4242,8 +4241,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "购买时长，单位：月。取值范围为 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
+          "document": "购买时长。单位：月。取值为 [1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60]。",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -4261,7 +4259,6 @@
           "example": "6977675",
           "member": "string",
           "name": "DealId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

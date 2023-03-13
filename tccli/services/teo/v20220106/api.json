@@ -225,11 +225,11 @@
       "status": "online"
     },
     "DescribeDDosMajorAttackEvent": {
-      "document": "查询DDos主攻击事件",
+      "document": "此接口已经做不兼容变更，所以此版本的接口已经无法调用，故作下线处理\n\n查询DDos主攻击事件",
       "input": "DescribeDDosMajorAttackEventRequest",
       "name": "查询DDos主攻击事件",
       "output": "DescribeDDosMajorAttackEventResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDefaultCertificates": {
       "document": "查询默认证书列表",
@@ -309,11 +309,11 @@
       "status": "online"
     },
     "DescribeOverviewL7Data": {
-      "document": "本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。",
+      "document": "接口已经不兼容升级，故作下线处理\n\n本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。",
       "input": "DescribeOverviewL7DataRequest",
       "name": "查询七层监控类时序流量数据",
       "output": "DescribeOverviewL7DataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribePrefetchTasks": {
       "document": "查询预热任务状态",
@@ -386,11 +386,11 @@
       "status": "online"
     },
     "DescribeTimingL4Data": {
-      "document": "四层时序流量数据查询",
+      "document": "旧版本的接口已经不兼容，故作下线处理\n\n四层时序流量数据查询",
       "input": "DescribeTimingL4DataRequest",
       "name": "四层时序流量数据查询接口",
       "output": "DescribeTimingL4DataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTimingL7AnalysisData": {
       "document": "查询七层数据分析类时序流量数据",
@@ -442,11 +442,11 @@
       "status": "online"
     },
     "DescribeWebManagedRulesTopData": {
-      "document": "查询waf攻击top数据",
+      "document": "此版本的接口已经废弃\n\n查询waf攻击top数据",
       "input": "DescribeWebManagedRulesTopDataRequest",
       "name": "查询waf攻击top数据",
       "output": "DescribeWebManagedRulesTopDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeWebProtectionAttackEvents": {
       "document": "查询web防护攻击事件",

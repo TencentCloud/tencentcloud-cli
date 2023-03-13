@@ -573,7 +573,6 @@
       "document": "批量任务中的记录信息",
       "members": [
         {
-          "default": "",
           "document": "记录 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "158",
           "member": "uint64",
@@ -583,7 +582,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子域名(主机记录)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www",
           "member": "string",
@@ -593,7 +591,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "记录类型, 详见 DescribeRecordType 接口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "A",
           "member": "string",
@@ -603,7 +600,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "解析记录的线路，详见 DescribeRecordLineList 接口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "百度",
           "member": "string",
@@ -613,7 +609,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "记录值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "129.23.32.32",
           "member": "string",
@@ -623,7 +618,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "记录的 TTL 值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "600",
           "member": "uint64",
@@ -633,7 +627,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "记录添加状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "waiting",
           "member": "string",
@@ -643,7 +636,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "plus",
           "member": "string",
@@ -653,7 +645,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
@@ -663,7 +654,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "此条记录在列表中的ID",
           "example": "1",
           "member": "uint64",
@@ -673,7 +663,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录生效状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -683,12 +672,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "记录的MX权重\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12",
           "member": "uint64",
           "name": "MX",
           "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "记录权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }

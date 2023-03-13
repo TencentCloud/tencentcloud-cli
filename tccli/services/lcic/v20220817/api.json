@@ -91,6 +91,13 @@
       "output": "CreateSupervisorResponse",
       "status": "online"
     },
+    "DeleteAppCustomContent": {
+      "document": "删除设置自定义元素。如果参数scenes为空则删除所有自定义元素，否则删除指定的scene自定义元素。",
+      "input": "DeleteAppCustomContentRequest",
+      "name": "删除应用自定义内容",
+      "output": "DeleteAppCustomContentResponse",
+      "status": "online"
+    },
     "DeleteDocument": {
       "document": "删除文档",
       "input": "DeleteDocumentRequest",
@@ -1145,6 +1152,42 @@
     },
     "CreateSupervisorResponse": {
       "document": "CreateSupervisor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAppCustomContentRequest": {
+      "document": "DeleteAppCustomContent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定需要删除的已设置的scene场景自定义元素，如果为空则删除应用下已设置的所有自定义元素。",
+          "example": "无",
+          "member": "string",
+          "name": "Scenes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAppCustomContentResponse": {
+      "document": "DeleteAppCustomContent返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
