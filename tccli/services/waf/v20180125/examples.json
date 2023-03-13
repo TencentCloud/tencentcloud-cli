@@ -178,6 +178,14 @@
         "title": "查询示例"
       }
     ],
+    "DescribeCustomWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1234567890\"\n            ],\n            \"Name\": \"RuleID\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"1\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
+        "title": "获取精准白名单规则列表"
+      }
+    ],
     "DescribeDomainDetailsSaas": [
       {
         "document": "",
@@ -272,6 +280,22 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOpUserSignatureRule\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"OpAppId\": 1,\n    \"OpLanguage\": \"en\",\n    \"Offset\": 1,\n    \"Limit\": 20,\n    \"Order\": \"asc\",\n    \"By\": \"signature_id\",\n    \"Filters\": [\n        {\n            \"Name\": \"MainClassID\",\n            \"Values\": [\n                \"010000000\"\n            ],\n            \"ExactMatch\": false\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Total\": 8,\n        \"Rules\": [\n            {\n                \"ID\": \"010000002\",\n                \"Description\": \"xxx\",\n                \"Status\": 0,\n                \"MainClassID\": \"010000000\",\n                \"MainClassName\": \"Cross Site Scripting\",\n                \"SubClassID\": \"000000000\",\n                \"SubClassName\": \"\",\n                \"CveID\": \"\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2021-11-22T16:16:52+08:00\"\n            },\n            {\n                \"ID\": \"050000022\",\n                \"Description\": \"xxx\",\n                \"Status\": 1,\n                \"MainClassID\": \"050000000\",\n                \"MainClassName\": \"Cross Site Scripting\",\n                \"SubClassID\": \"050030000\",\n                \"SubClassName\": \"data\",\n                \"CveID\": \"\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2021-11-22T16:16:52+08:00\"\n            }\n        ]\n    }\n}",
         "title": "查询示例"
+      }
+    ],
+    "DescribePolicyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"Edition\": \"saas-waf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7984267-1b60-4979-accb-8f1ca497f827\",\n        \"InstanceId\": \"aaa\",\n        \"Status\": 0\n    }\n}",
+        "title": "DescribePolicyStatus"
+      }
+    ],
+    "DescribeRuleLimit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleLimit\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Res\": {\n            \"CC\": 0,\n            \"CustomRule\": 0,\n            \"IPControl\": 0,\n            \"AntiLeak\": 0,\n            \"AntiTamper\": 0,\n            \"AutoCC\": 0,\n            \"AreaBan\": 0,\n            \"CCSession\": 0,\n            \"AI\": 0,\n            \"CustomWhite\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeRuleLimit"
       }
     ],
     "DescribeTsRegion": [

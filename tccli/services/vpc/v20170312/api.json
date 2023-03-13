@@ -2751,6 +2751,13 @@
       "output": "ReplaceRoutesResponse",
       "status": "online"
     },
+    "ReplaceSecurityGroupPolicies": {
+      "document": "本接口（ReplaceSecurityGroupPolicies）用于批量修改安全组规则（SecurityGroupPolicy）。\n单个请求中只能替换单个方向的一条或多条规则, 必须要指定索引（PolicyIndex）。",
+      "input": "ReplaceSecurityGroupPoliciesRequest",
+      "name": "批量修改安全组规则",
+      "output": "ReplaceSecurityGroupPoliciesResponse",
+      "status": "online"
+    },
     "ReplaceSecurityGroupPolicy": {
       "document": "本接口（ReplaceSecurityGroupPolicy）用于替换单条安全组规则（SecurityGroupPolicy）。\n单个请求中只能替换单个方向的一条规则, 必须要指定索引（PolicyIndex）。",
       "input": "ReplaceSecurityGroupPolicyRequest",
@@ -34676,6 +34683,51 @@
       ],
       "type": "object"
     },
+    "ReplaceSecurityGroupPoliciesRequest": {
+      "document": "ReplaceSecurityGroupPolicies请求参数结构体",
+      "members": [
+        {
+          "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "example": "sg-ohuuioma",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "安全组规则集合对象。",
+          "example": "无",
+          "member": "SecurityGroupPolicySet",
+          "name": "SecurityGroupPolicySet",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "旧的安全组规则集合对象，可选，日志记录用。",
+          "example": "无",
+          "member": "SecurityGroupPolicySet",
+          "name": "OriginalSecurityGroupPolicySet",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceSecurityGroupPoliciesResponse": {
+      "document": "ReplaceSecurityGroupPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReplaceSecurityGroupPolicyRequest": {
       "document": "ReplaceSecurityGroupPolicy请求参数结构体",
       "members": [
@@ -52049,7 +52101,6 @@
       "document": "复杂类型: VpcOssUpdateIpUniqInstanceId",
       "members": [
         {
-          "default": "",
           "document": "整数vpcId",
           "example": "1",
           "member": "int64",
@@ -52060,7 +52111,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "对外唯一VpcId",
           "example": "vpc-jmaywf6r",
           "member": "string",
@@ -52071,7 +52121,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateIpUniqInstanceId.ip",
           "example": "1.1.1.1",
           "member": "string",
@@ -52082,7 +52131,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateIpUniqInstanceId.uniqInstanceId",
           "example": "ins-asdadas",
           "member": "string",
@@ -52093,7 +52141,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateIpUniqInstanceId.oldUniqInstanceId",
           "example": "ins-asdasdas",
           "member": "string",
@@ -52101,6 +52148,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: UpdateIpUniqInstanceId.bSkipCheckInstance\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SkipCheckInstanceFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 2
         }
       ],

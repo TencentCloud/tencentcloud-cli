@@ -1,3 +1,67 @@
+# Release 3.0.722.1
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 36 次发布
+
+发布时间：2023-03-14 01:35:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77252)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 71 次发布
+
+发布时间：2023-03-14 01:44:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ReplaceSecurityGroupPolicies](http://document.tencentcloudapi.woa.com/document/product/215/77253)
+
+修改数据结构：
+
+* [VpcOssUpdateIpUniqInstanceId](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssUpdateIpUniqInstanceId)
+
+	* 新增成员：SkipCheckInstanceFlag
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 28 次发布
+
+发布时间：2023-03-14 01:47:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77255)
+* [DescribePolicyStatus](http://document.tencentcloudapi.woa.com/document/product/627/77256)
+* [DescribeRuleLimit](http://document.tencentcloudapi.woa.com/document/product/627/77254)
+
+新增数据结构：
+
+* [DescribeCustomRulesRspRuleListItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#DescribeCustomRulesRspRuleListItem)
+* [WafRuleLimit](http://document.tencentcloudapi.woa.com/document/product/627/53609#WafRuleLimit)
+
+
+
 # Release 3.0.721.1
 
 ## 消息队列 CKafka(ckafka) 版本：2019-08-19

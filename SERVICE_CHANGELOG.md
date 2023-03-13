@@ -1,105 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 消息队列 CKafka(ckafka) 版本：2019-08-19
-
-### 第 51 次发布
-
-发布时间：2023-03-13 01:14:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Route](http://document.tencentcloudapi.woa.com/document/product/597/40861#Route)
-
-	* 新增成员：VpcId
-
-* [TopicAttributesResponse](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicAttributesResponse)
-
-	* 新增成员：ReplicaNum
-
-* [TopicDetail](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicDetail)
-
-	* 新增成员：Tags
-
-
-
-
-## DNSPod(dnspod) 版本：2021-03-23
-
-### 第 18 次发布
-
-发布时间：2023-03-13 01:23:34
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [BatchRecordInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#BatchRecordInfo)
-
-	* 新增成员：Weight
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 46 次发布
-
-发布时间：2023-03-13 01:26:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverUrlInfo)
-
-	* 新增成员：ExpirationTime
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 47 次发布
-
-发布时间：2023-03-13 01:34:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribePrometheusConfig](http://document.tencentcloudapi.woa.com/document/product/248/76944)
-
-	* 新增出参：Probes
-
-
-修改数据结构：
-
-* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAgentOverview)
-
-	* 新增成员：Name
-
-
-
-
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-### 第 35 次发布
+### 第 36 次发布
 
-发布时间：2023-03-13 01:43:03
+发布时间：2023-03-14 01:35:07
 
 本次发布包含了以下内容：
 
@@ -107,37 +12,53 @@
 
 新增接口：
 
-* [CreateRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77249)
+* [ModifyRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77252)
 
 
 
-## 企业微信汽车行业版(wav) 版本：2021-01-29
+## 私有网络(vpc) 版本：2017-03-12
 
-### 第 7 次发布
+### 第 71 次发布
 
-发布时间：2023-03-13 01:50:40
+发布时间：2023-03-14 01:44:46
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [QueryClueInfoList](http://document.tencentcloudapi.woa.com/document/product/1318/62149)
-
-	* 新增入参：BeginTime, EndTime
-
+* [ReplaceSecurityGroupPolicies](http://document.tencentcloudapi.woa.com/document/product/215/77253)
 
 修改数据结构：
 
-* [ClueInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ClueInfoDetail)
+* [VpcOssUpdateIpUniqInstanceId](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssUpdateIpUniqInstanceId)
 
-	* 新增成员：LeadUserType, LeadType, ChannelId, ChannelName, SourceChannelName, Gender, CreateTime, LeadStatus, LevelCode, ImportAtTime, DistributeTime, CreateAtTime
+	* 新增成员：SkipCheckInstanceFlag
 
-* [DealerInfo](http://document.tencentcloudapi.woa.com/document/product/1318/56791#DealerInfo)
 
-	* 新增成员：ProvinceCode, CityCodeList, BrandIdList
 
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 28 次发布
+
+发布时间：2023-03-14 01:47:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77255)
+* [DescribePolicyStatus](http://document.tencentcloudapi.woa.com/document/product/627/77256)
+* [DescribeRuleLimit](http://document.tencentcloudapi.woa.com/document/product/627/77254)
+
+新增数据结构：
+
+* [DescribeCustomRulesRspRuleListItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#DescribeCustomRulesRspRuleListItem)
+* [WafRuleLimit](http://document.tencentcloudapi.woa.com/document/product/627/53609#WafRuleLimit)
 
 
 
@@ -43884,6 +43805,18 @@
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
+### 第 36 次发布
+
+发布时间：2023-03-14 01:35:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77252)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 35 次发布
 
 发布时间：2023-03-13 01:43:03
@@ -43894,7 +43827,7 @@
 
 新增接口：
 
-* [[CreateRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77249)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77249)
 
 ### 第 34 次发布
 
@@ -52831,6 +52764,25 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 71 次发布
+
+发布时间：2023-03-14 01:44:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ReplaceSecurityGroupPolicies](http://document.tencentcloudapi.woa.com/document/product/215/77253)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改数据结构：
+
+* [VpcOssUpdateIpUniqInstanceId](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssUpdateIpUniqInstanceId)
+
+	* 新增成员：SkipCheckInstanceFlag
+
+
 ### 第 70 次发布
 
 发布时间：2023-03-02 01:39:11
@@ -55003,6 +54955,25 @@
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 28 次发布
+
+发布时间：2023-03-14 01:47:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77255)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribePolicyStatus](http://document.tencentcloudapi.woa.com/document/product/627/77256)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRuleLimit](http://document.tencentcloudapi.woa.com/document/product/627/77254)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DescribeCustomRulesRspRuleListItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#DescribeCustomRulesRspRuleListItem)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[DescribeCustomRulesRspRuleListItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#DescribeCustomRulesRspRuleListItem))
+* [[WafRuleLimit](http://document.tencentcloudapi.woa.com/document/product/627/53609#WafRuleLimit)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[WafRuleLimit](http://document.tencentcloudapi.woa.com/document/product/627/53609#WafRuleLimit))
 
 ### 第 27 次发布
 
