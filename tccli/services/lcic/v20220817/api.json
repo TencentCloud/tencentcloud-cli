@@ -1147,7 +1147,24 @@
     },
     "CreateSupervisorRequest": {
       "document": "CreateSupervisor请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "应用ID。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "用户ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "Users",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "CreateSupervisorResponse": {

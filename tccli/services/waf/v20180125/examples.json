@@ -138,6 +138,14 @@
         "title": "描述WAF自动封禁IP 详情"
       }
     ],
+    "DescribeCustomWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1234567890\"\n            ],\n            \"Name\": \"RuleID\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"1\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
+        "title": "获取精准白名单规则列表"
+      }
+    ],
     "DescribeDomainDetailsSaas": [
       {
         "document": "",
@@ -192,6 +200,22 @@
         "input": "https://waf.tencentcloudapi.com/?Action=DescribeIpHitItems\r\n&Domain=www.test.com\r\n&Category=cc\r\n&Skip=0\r\n&Limit=10\r\n&Sort=ts_version:-1\r\n&Count=1\r\n&CtsMin=1578468704000\r\n&CtsMax=1578499199000\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"a4010dd1-d24b-43f5-bab4-8a6b204835b7\"\n    }\n}",
         "title": "Waf  IP封堵状态查询"
+      }
+    ],
+    "DescribePolicyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"Edition\": \"saas-waf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7984267-1b60-4979-accb-8f1ca497f827\",\n        \"InstanceId\": \"aaa\",\n        \"Status\": 0\n    }\n}",
+        "title": "DescribePolicyStatus"
+      }
+    ],
+    "DescribeRuleLimit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleLimit\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Res\": {\n            \"CC\": 0,\n            \"CustomRule\": 0,\n            \"IPControl\": 0,\n            \"AntiLeak\": 0,\n            \"AntiTamper\": 0,\n            \"AutoCC\": 0,\n            \"AreaBan\": 0,\n            \"CCSession\": 0,\n            \"AI\": 0,\n            \"CustomWhite\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeRuleLimit"
       }
     ],
     "DescribeUserCdcClbWafRegions": [

@@ -708,7 +708,7 @@
     ],
     "IdentifyZone": [
       {
-        "document": "",
+        "document": "认证站点",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IdentifyZone\n<公共请求参数>\n\n{\n    \"ZoneName\": \"example.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"Ascription\": {\n            \"Subdomain\": \"edgeonereclaim\",\n            \"RecordType\": \"TXT\",\n            \"RecordValue\": \"reclaim-a24aba2420cf4ce8b7bff7c8be6d337f\"\n        },\n        \"FileAscription\": {\n            \"IdentifyPath\": \"/.well-known/teo-verification/vd4ewuqa9n.txt\",\n            \"IdentifyContent\": \"88v24mnnljwbhaohrpfx80f63duhdnjx\"\n        },\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
         "title": "认证站点"

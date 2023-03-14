@@ -11824,7 +11824,6 @@
       "document": "DescribeHeadTailTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "125000",
           "member": "uint64",
@@ -11833,7 +11832,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "片头片尾模板号，数组长度限制：100。",
           "example": "[\"10\\n\"]",
           "member": "int64",
@@ -11842,7 +11840,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页偏移量，默认值：0。",
           "example": "10",
           "member": "uint64",
@@ -11851,7 +11848,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
           "example": "100",
           "member": "uint64",
@@ -11870,7 +11866,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11879,7 +11874,6 @@
           "example": "无",
           "member": "HeadTailTemplate",
           "name": "HeadTailTemplateSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15663,7 +15657,6 @@
       "document": "片头片尾模板详情",
       "members": [
         {
-          "default": "",
           "document": "片头片尾模板号。",
           "example": "10000",
           "member": "int64",
@@ -15673,7 +15666,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板名，最大支持 64 个字符。",
           "example": "模板名",
           "member": "string",
@@ -15683,7 +15675,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模板描述，最大支持 256 个字符。",
           "example": "模板描述",
           "member": "string",
@@ -15693,7 +15684,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "片头候选列表。使用时会选择跟正片分辨率最贴近的一个使用，当存在相同的候选时，选择第一个使用，最大支持 5 个。",
           "example": "[\"123xxx90\"]",
           "member": "string",
@@ -15703,7 +15693,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "片尾候选列表。使用时会选择跟正片分辨率最贴近的一个使用，当存在相同的候选时，选择第一个使用，最大支持 5 个。",
           "example": "[\"123xxx89\"]",
           "member": "string",
@@ -15713,7 +15702,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li> gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊；</li>\n<li> white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充；</li>\n<li> black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：stretch 。",
           "example": "black",
           "member": "string",

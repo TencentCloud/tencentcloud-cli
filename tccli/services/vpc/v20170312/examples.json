@@ -2636,6 +2636,14 @@
         "title": "替换路由策略"
       }
     ],
+    "ReplaceSecurityGroupPolicies": [
+      {
+        "document": "批量修改安全组规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceSecurityGroupPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-12345678\",\n    \"SecurityGroupPolicySet\": {\n        \"Ingress\": [\n            {\n                \"PolicyIndex\": \"3\",\n                \"Protocol\": \"tcp\",\n                \"PolicyDescription\": \"TestPolicy\",\n                \"Action\": \"ACCEPT\",\n                \"CidrBlock\": \"20.0.0.0/16\",\n                \"Port\": \"22\"\n            },\n            {\n                \"PolicyIndex\": \"4\",\n                \"Protocol\": \"tcp\",\n                \"PolicyDescription\": \"TestPolicy2\",\n                \"Action\": \"DROP\",\n                \"CidrBlock\": \"30.0.0.0/16\",\n                \"Port\": \"22\"\n            }\n        ],\n        \"Version\": \"20\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "批量修改安全组规则"
+      }
+    ],
     "ReplaceSecurityGroupPolicy": [
       {
         "document": "替换单条安全组路由规则",

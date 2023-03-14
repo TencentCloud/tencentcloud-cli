@@ -1981,6 +1981,13 @@
       "output": "ReplaceRoutesResponse",
       "status": "online"
     },
+    "ReplaceSecurityGroupPolicies": {
+      "document": "本接口（ReplaceSecurityGroupPolicies）用于批量修改安全组规则（SecurityGroupPolicy）。\n单个请求中只能替换单个方向的一条或多条规则, 必须要指定索引（PolicyIndex）。",
+      "input": "ReplaceSecurityGroupPoliciesRequest",
+      "name": "批量修改安全组规则",
+      "output": "ReplaceSecurityGroupPoliciesResponse",
+      "status": "online"
+    },
     "ReplaceSecurityGroupPolicy": {
       "document": "本接口（ReplaceSecurityGroupPolicy）用于替换单条安全组规则（SecurityGroupPolicy）。\n单个请求中只能替换单个方向的一条规则, 必须要指定索引（PolicyIndex）。",
       "input": "ReplaceSecurityGroupPolicyRequest",
@@ -21847,6 +21854,48 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceSecurityGroupPoliciesRequest": {
+      "document": "ReplaceSecurityGroupPolicies请求参数结构体",
+      "members": [
+        {
+          "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "example": "sg-ohuuioma",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "安全组规则集合对象。",
+          "example": "无",
+          "member": "SecurityGroupPolicySet",
+          "name": "SecurityGroupPolicySet",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "旧的安全组规则集合对象，可选，日志记录用。",
+          "example": "无",
+          "member": "SecurityGroupPolicySet",
+          "name": "OriginalSecurityGroupPolicySet",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceSecurityGroupPoliciesResponse": {
+      "document": "ReplaceSecurityGroupPolicies返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

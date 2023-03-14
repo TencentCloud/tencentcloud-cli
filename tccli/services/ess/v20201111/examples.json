@@ -140,16 +140,16 @@
     ],
     "CreateReleaseFlow": [
       {
-        "document": "发起解除协议（使用本企业的签署人，替换用原流程中本企业的签署人\n",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxjOUUgydjfxgnzUuO4zjEWA07rC2xl\"\n    },\n    \"NeedRelievedFlowId\": \"yDwnGUUgygkgi7fdUx6JlVOE0wxxxxx\",\n    \"ReleasedApprovers\": [\n        {\n            \"Mobile\": \"1870000000\",\n            \"Name\": \"典子谦\",\n            \"RelievedApproverReceiptId\": \"yDRscUUgyg1zr7vjUyJ8QKxxxxxxx\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方人民币10000元以作赔偿\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整,结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDRscAABDg1zr7vjUyJ8QKxxxxxxx\",\n        \"RequestId\": \"s1989876373464\"\n    }\n}",
-        "title": "发起解除协议（使用本企业的签署人，替换用原流程中本企业的签署人"
-      },
-      {
         "document": "1.使用原流程的签署人\n2.包含了详细的解除内容",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"xxxOUUgydjfxgnzUuO4zjEWA0dddl\"\n    },\n    \"NeedRelievedFlowId\": \"xxxnGUUgygkgi7fdUx6JlVOE0wzdddd\",\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方人民币10000元以作赔偿\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整,结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDwnGUUgygkgi7fdUx6JlVOE0wzmtxxx\",\n        \"RequestId\": \"s187767536345780\"\n    }\n}",
         "title": "发起解除协议（默认情况，使用原流程的签署人）"
+      },
+      {
+        "document": "发起解除协议（使用本企业的签署人，替换用原流程中本企业的签署人）\n",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxjOUUgydjfxgnzUuO4zjEWA07rC2xl\"\n    },\n    \"NeedRelievedFlowId\": \"yDwnGUUgygkgi7fdUx6JlVOE0wxxxxx\",\n    \"ReleasedApprovers\": [\n        {\n            \"Mobile\": \"1870000000\",\n            \"Name\": \"典子谦\",\n            \"RelievedApproverReceiptId\": \"yDRscUUgyg1zr7vjUyJ8QKxxxxxxx\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方人民币10000元以作赔偿\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整,结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDRscAABDg1zr7vjUyJ8QKxxxxxxx\",\n        \"RequestId\": \"s1989876373464\"\n    }\n}",
+        "title": "发起解除协议（使用本企业的签署人，替换用原流程中本企业的签署人）"
       }
     ],
     "CreateSchemeUrl": [

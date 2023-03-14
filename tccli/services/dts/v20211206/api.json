@@ -1050,12 +1050,44 @@
           "type": "object"
         },
         {
+          "document": "源端信息，多节点数据库使用，且SrcNodeType传cluster",
+          "example": "无",
+          "member": "SyncDBEndpointInfos",
+          "name": "SrcInfos",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster",
+          "example": "cluster",
+          "member": "string",
+          "name": "SrcNodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
           "document": "目标端信息，单节点数据库使用",
           "example": "无",
           "member": "Endpoint",
           "name": "DstInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "document": "目标端信息，多节点数据库使用，且DstNodeType传cluster",
+          "example": "无",
+          "member": "SyncDBEndpointInfos",
+          "name": "DstInfos",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster",
+          "example": "无",
+          "member": "string",
+          "name": "DstNodeType",
+          "required": false,
+          "type": "string"
         },
         {
           "document": "同步任务选项",
@@ -1421,7 +1453,6 @@
       "document": "CreateSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)",
           "example": "PrePay",
           "member": "string",
@@ -1430,7 +1461,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "源端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等",
           "example": "mysql",
           "member": "string",
@@ -1439,7 +1469,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "源端数据库所在地域,如ap-guangzhou",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1448,8 +1477,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等",
+          "document": "目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等",
           "example": "mysql",
           "member": "string",
           "name": "DstDatabaseType",
@@ -1457,7 +1485,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目标端数据库所在地域,如ap-guangzhou",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1466,7 +1493,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "同步任务规格，Standard:标准版",
           "example": "Standard",
           "member": "string",
@@ -1475,7 +1501,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签信息",
           "example": "无",
           "member": "TagItem",
@@ -1484,7 +1509,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "一次购买的同步任务数量，取值范围为[1, 10]，默认为1",
           "example": "1",
           "member": "uint64",
@@ -1493,7 +1517,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）",
           "example": "1",
           "member": "uint64",
@@ -1502,7 +1525,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "同步链路规格，如micro,small,medium,large，默认为medium",
           "example": "large",
           "member": "string",
@@ -1511,7 +1533,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "同步任务名称",
           "example": "test_job",
           "member": "string",
@@ -1520,7 +1541,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "创建类似任务的现有任务Id",
           "example": "sync-1dd3rjvt",
           "member": "string",
@@ -1539,7 +1559,6 @@
           "example": "sync-btso140",
           "member": "string",
           "name": "JobIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4068,6 +4087,48 @@
       ],
       "usage": "out"
     },
+    "KafkaOption": {
+      "document": "目标端为kakfa时添加的同步选项字段",
+      "members": [
+        {
+          "document": "投递到kafka的数据类型，如Avro,Json",
+          "example": "Avro,Json",
+          "member": "string",
+          "name": "DataType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "同步topic策略，如Single（集中投递到单topic）,Multi (自定义topic名称)",
+          "example": "Single（集中投递到单topic）,Multi (自定义topic名称)",
+          "member": "string",
+          "name": "TopicType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用于存储ddl的topic",
+          "example": "test",
+          "member": "string",
+          "name": "DDLTopicName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单topic和自定义topic的描述",
+          "example": "无",
+          "member": "TopicRule",
+          "name": "TopicRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "KeyValuePairOption": {
       "document": "存放配置时的额外信息",
       "members": [
@@ -4727,6 +4788,15 @@
           "name": "DdlOptions",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "kafka同步选项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KafkaOption",
+          "name": "KafkaOption",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -5623,6 +5693,48 @@
       ],
       "type": "object"
     },
+    "SyncDBEndpointInfos": {
+      "document": "数据同步配置多节点数据库的节点信息。多节点数据库，如tdsqlmysql使用该结构；单节点数据库，如mysql使用Endpoint。",
+      "members": [
+        {
+          "document": "数据库所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb",
+          "member": "string",
+          "name": "AccessType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例数据库类型，如：mysql,redis,mongodb,postgresql,mariadb,percona 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdsqlmysql",
+          "member": "string",
+          "name": "DatabaseType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Endpoint",
+          "name": "Info",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SyncDetailInfo": {
       "document": "同步任务的步骤信息",
       "members": [
@@ -6127,6 +6239,66 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TopicRule": {
+      "document": "单topic和自定义topic的描述",
+      "members": [
+        {
+          "document": "topic名",
+          "example": "test",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "topic分区策略，如 自定义topic：Random（随机投递），集中投递到单Topic：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)",
+          "example": " Random（自定义topic时使用），AllInPartitionZero（全部投递至partition0）, PartitionByTable(按表名分区)，PartitionByTableAndKey(按表名加主键分区)",
+          "member": "string",
+          "name": "PartitionType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "库名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中必须有一项为‘Default’",
+          "example": "Regular（正则匹配）, Default(不符合匹配规则的剩余库)",
+          "member": "string",
+          "name": "DbMatchMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "库名，仅“自定义topic”时，DbMatchMode=Regular生效",
+          "example": "db1",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中必须有一项为‘Default’",
+          "example": "Regular（正则匹配）, Default(不符合匹配规则的剩余表)",
+          "member": "string",
+          "name": "TableMatchMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表名，仅“自定义topic”时，TableMatchMode=Regular生效",
+          "example": "tb1",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

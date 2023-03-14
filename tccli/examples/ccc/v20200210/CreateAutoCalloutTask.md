@@ -1,6 +1,6 @@
 **Example 1: 创建任务**
 
-
+创建任务
 
 Input: 
 
@@ -17,8 +17,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "TaskId": 1
+        "TaskId": 1,
+        "RequestId": "abc"
     }
 }
 ```

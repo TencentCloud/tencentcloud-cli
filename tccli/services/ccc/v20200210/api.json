@@ -802,7 +802,6 @@
       "document": "CreateAutoCalloutTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
@@ -811,7 +810,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "任务起始时间戳，Unix 秒级时间戳",
           "example": "1642500621",
           "member": "int64",
@@ -820,7 +818,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "被叫号码列表",
           "example": "[008613912341234,008613912341235]",
           "member": "string",
@@ -829,7 +826,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "主叫号码列表",
           "example": "[008601012345678]",
           "member": "string",
@@ -838,7 +834,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "呼叫使用的Ivr",
           "example": "3",
           "member": "uint64",
@@ -847,7 +842,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "任务名",
           "example": "任务1",
           "member": "string",
@@ -856,7 +850,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务描述",
           "example": "任务描述1",
           "member": "string",
@@ -865,7 +858,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务停止时间戳，Unix 秒级时间戳",
           "example": "1642500622",
           "member": "int64",
@@ -874,7 +866,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "最大尝试次数",
           "example": "1",
           "member": "uint64",
@@ -883,7 +874,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "自定义变量（仅高级版支持）",
           "example": "无",
           "member": "Variable",
@@ -902,7 +892,6 @@
           "example": "2",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

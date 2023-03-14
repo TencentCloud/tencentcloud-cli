@@ -98,8 +98,8 @@
     ],
     "CreateSupervisor": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSupervisor\n<公共请求参数>\n\n{}",
+        "document": "创建巡课教师",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSupervisor\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123,\n    \"Users\": [\n        \"test\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "创建巡课"
       }

@@ -105,6 +105,13 @@
       "output": "DescribeAutoDenyIPResponse",
       "status": "online"
     },
+    "DescribeCustomWhiteRule": {
+      "document": "获取防护配置中的精准白名单策略列表",
+      "input": "DescribeCustomWhiteRuleRequest",
+      "name": "查询精准白名单规则",
+      "output": "DescribeCustomWhiteRuleResponse",
+      "status": "online"
+    },
     "DescribeDomainDetailsSaas": {
       "document": "查询单个saas域名详情",
       "input": "DescribeDomainDetailsSaasRequest",
@@ -152,6 +159,20 @@
       "input": "DescribeIpHitItemsRequest",
       "name": "Waf  IP封堵状态查询",
       "output": "DescribeIpHitItemsResponse",
+      "status": "online"
+    },
+    "DescribePolicyStatus": {
+      "document": "获取防护状态以及生效的实例id",
+      "input": "DescribePolicyStatusRequest",
+      "name": "获取防护状态以及生效的实例id",
+      "output": "DescribePolicyStatusResponse",
+      "status": "online"
+    },
+    "DescribeRuleLimit": {
+      "document": "获取各个模块具体的规格限制",
+      "input": "DescribeRuleLimitRequest",
+      "name": "获取规格限制",
+      "output": "DescribeRuleLimitResponse",
       "status": "online"
     },
     "DescribeUserCdcClbWafRegions": {
@@ -2103,6 +2124,192 @@
       ],
       "type": "object"
     },
+    "DescribeCustomRulesRspRuleListItem": {
+      "document": "DescribeCustomRules接口回包中的复杂类型",
+      "members": [
+        {
+          "default": "",
+          "document": "动作类型",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跳过的策略",
+          "member": "string",
+          "name": "Bypass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重定向地址",
+          "member": "string",
+          "name": "Redirect",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优先级",
+          "member": "string",
+          "name": "SortId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略详情",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCustomWhiteRuleRequest": {
+      "document": "DescribeCustomWhiteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "容量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤数组,name可以是如下的值： RuleID,RuleName,Match",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "asc或者desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "exp_ts或者mod_ts",
+          "example": "mod_ts",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomWhiteRuleResponse": {
+      "document": "DescribeCustomWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则详情",
+          "example": "无",
+          "member": "DescribeCustomRulesRspRuleListItem",
+          "name": "RuleList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则条数",
+          "example": "1",
+          "member": "string",
+          "name": "TotalCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainDetailsSaasRequest": {
       "document": "DescribeDomainDetailsSaas请求参数结构体",
       "members": [
@@ -2647,6 +2854,96 @@
           "name": "Data",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyStatusRequest": {
+      "document": "DescribePolicyStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "clb-waf或者saas-waf",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyStatusResponse": {
+      "document": "DescribePolicyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "\"\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "防护状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRuleLimitRequest": {
+      "document": "DescribeRuleLimit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "\"test.com\"",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRuleLimitResponse": {
+      "document": "DescribeRuleLimit返回参数结构体",
+      "members": [
+        {
+          "document": "waf模块的规格",
+          "example": "\"\"",
+          "member": "WafRuleLimit",
+          "name": "Res",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5284,6 +5581,142 @@
         }
       ],
       "type": "object"
+    },
+    "WafRuleLimit": {
+      "document": "waf模块的规格",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义CC的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "CC",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义策略的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "CustomRule",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑白名单的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "IPControl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "信息防泄漏的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "AntiLeak",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防篡改的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "AntiTamper",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "紧急CC的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoCC",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域封禁的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "AreaBan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义CC中配置session",
+          "example": "0",
+          "member": "uint64",
+          "name": "CCSession",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AI的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "AI",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "精准白名单的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "CustomWhite",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "api安全的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "ApiSecurity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端流量标记的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "ClientMsg",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量标记的规格",
+          "example": "0",
+          "member": "uint64",
+          "name": "TrafficMarking",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "WafThreatenIntelligenceDetails": {
       "document": "Waf 威胁情报封禁模块配置详情",

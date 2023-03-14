@@ -43,7 +43,7 @@
       "status": "online"
     },
     "ChannelCreateEmbedWebUrl": {
-      "document": "本接口（ChannelCreateEmbedWebUrl）用于创建嵌入web的链接\n本接口支持创建：创建印章，创建模版，修改模版，预览模版，预览合同流程的web链接\n进入web连接后与当前控制台操作保持一致",
+      "document": "本接口（ChannelCreateEmbedWebUrl）用于创建嵌入web的链接\n本接口支持创建：创建印章，创建模板，修改模板，预览模板，预览合同流程的web链接\n进入web连接后与当前控制台操作保持一致",
       "input": "ChannelCreateEmbedWebUrlRequest",
       "name": "创建嵌入web的链接",
       "output": "ChannelCreateEmbedWebUrlResponse",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "ChannelCreatePrepareFlow": {
-      "document": "创建预发起合同\n通过此接口指定：合同，签署人，填写控件信息，生成预创建合同链接，点击后跳转到web页面完成合同创建并发起\n可指定合同信息不可更改，签署人信息不可更改\n合同发起后，填写及签署流程与现有操作流程一致\n注意：目前仅支持模版发起",
+      "document": "创建预发起合同\n通过此接口指定：合同，签署人，填写控件信息，生成预创建合同链接，点击后跳转到web页面完成合同创建并发起\n可指定合同信息不可更改，签署人信息不可更改\n合同发起后，填写及签署流程与现有操作流程一致\n注意：目前仅支持模板发起",
       "input": "ChannelCreatePrepareFlowRequest",
       "name": "创建预发起合同",
       "output": "ChannelCreatePrepareFlowResponse",
@@ -1513,7 +1513,7 @@
           "type": "string"
         },
         {
-          "document": "资源类型，1：模版，目前仅支持模版，与ResourceId对应",
+          "document": "资源类型，1：模板，目前仅支持模板，与ResourceId对应",
           "example": "无",
           "member": "int64",
           "name": "ResourceType",
@@ -2299,7 +2299,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署人Id，使用模版发起是，对应模版配置中的签署人RecipientId\n注意：模版发起时该字段必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人Id，使用模板发起是，对应模板配置中的签署人RecipientId\n注意：模板发起时该字段必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RecipientId",

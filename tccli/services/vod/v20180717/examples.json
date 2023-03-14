@@ -668,7 +668,7 @@
     ],
     "DescribeHeadTailTemplates": [
       {
-        "document": "",
+        "document": "获取片头片尾模板列表",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeHeadTailTemplates\n&Definitions.0=10000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\",\n        \"HeadTailTemplateSet\": [\n            {\n                \"Definition\": 10000,\n                \"HeadCandidateSet\": [\n                    \"123xxx000\"\n                ],\n                \"FillType\": \"black\",\n                \"Name\": \"模板号\",\n                \"Comment\": \"模板描述\",\n                \"TailCandidateSet\": [\n                    \"1230xxx99\"\n                ]\n            }\n        ]\n    }\n}",
         "title": "获取片头片尾模板列表"

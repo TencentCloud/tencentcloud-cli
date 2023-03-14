@@ -609,6 +609,13 @@
       "output": "ModifyEnvironmentRoleResponse",
       "status": "online"
     },
+    "ModifyRabbitMQVipInstance": {
+      "document": "修改RabbitMQ专享版实例",
+      "input": "ModifyRabbitMQVipInstanceRequest",
+      "name": "修改RabbitMQ专享版实例",
+      "output": "ModifyRabbitMQVipInstanceResponse",
+      "status": "online"
+    },
     "ModifyRocketMQCluster": {
       "document": "更新RocketMQ集群信息",
       "input": "ModifyRocketMQClusterRequest",
@@ -9092,6 +9099,56 @@
     "ModifyEnvironmentRoleResponse": {
       "document": "ModifyEnvironmentRole返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRabbitMQVipInstanceRequest": {
+      "document": "ModifyRabbitMQVipInstance请求参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群名称",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRabbitMQVipInstanceResponse": {
+      "document": "ModifyRabbitMQVipInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "amqp-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
