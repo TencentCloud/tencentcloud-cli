@@ -160,6 +160,13 @@
       "name": "支付订单",
       "output": "PayDealsResponse",
       "status": "online"
+    },
+    "SendResource": {
+      "document": "业务接入计费后,用于后付费用量推量接口",
+      "input": "SendResourceRequest",
+      "name": "计费后付费推量接口",
+      "output": "SendResourceResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -6024,6 +6031,23 @@
         }
       ],
       "usage": "out"
+    },
+    "SendResourceRequest": {
+      "document": "SendResource请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SendResourceResponse": {
+      "document": "SendResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SummaryTotal": {
       "document": "总数",

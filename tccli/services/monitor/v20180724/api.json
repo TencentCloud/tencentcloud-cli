@@ -2668,7 +2668,6 @@
       "document": "统一的命名空间信息",
       "members": [
         {
-          "default": "",
           "document": "命名空间标示",
           "example": "无",
           "member": "string",
@@ -2679,7 +2678,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "命名空间名称",
           "example": "无",
           "member": "string",
@@ -2690,7 +2688,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "命名空间值",
           "example": "无",
           "member": "string",
@@ -2701,7 +2698,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "产品名称",
           "example": "无",
           "member": "string",
@@ -2712,7 +2708,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "配置信息",
           "example": "无",
           "member": "string",
@@ -2723,7 +2718,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "支持地域列表",
           "example": "无",
           "member": "string",
@@ -2734,7 +2728,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序Id",
           "example": "无",
           "member": "int64",
@@ -2745,7 +2738,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Dashboard中的唯一表示",
           "example": "无",
           "member": "string",
@@ -12059,76 +12051,76 @@
       "document": "DescribeStatisticData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "所属模块，固定值，为monitor",
           "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "命名空间，目前只支持QCE/TKE",
-          "example": "QCE/TKE",
+          "document": "命名空间，目前只支持QCE/TKE2",
+          "example": "QCE/TKE2",
           "member": "string",
           "name": "Namespace",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "指标名列表",
           "example": "[\"K8sPodCpuCoreUsed\"]",
           "member": "string",
           "name": "MetricNames",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "维度条件，操作符支持=、in",
           "example": "无",
           "member": "MidQueryCondition",
           "name": "Conditions",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "统计粒度。默认取值为300，单位为s；可选的值为60、300、3600、86400\n受存储时长限制，统计粒度与统计的时间范围有关：\n60s：EndTime-StartTime<12小时，且StartTime距当前时间不能超过15天；\n300s：EndTime-StartTime<3天，且StartTime距当前时间不能超过31天；\n3600s：EndTime-StartTime<30天，且StartTime距当前时间不能超过93天；\n86400s：EndTime-StartTime<186天，且StartTime距当前时间不能超过186天。",
           "example": "300",
           "member": "uint64",
           "name": "Period",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "起始时间，默认为当前时间，如2020-12-08T19:51:23+08:00",
           "example": "2020-11-24T15:15:50+08:00",
           "member": "string",
           "name": "StartTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "结束时间，默认为当前时间，如2020-12-08T19:51:23+08:00",
           "example": "2020-11-24T15:25:50+08:00",
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "按指定维度groupBy",
           "example": "[\"K8sPodCpuCoreUsed\"]",
           "member": "string",
           "name": "GroupBys",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12141,36 +12133,36 @@
           "example": "300",
           "member": "uint64",
           "name": "Period",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "开始时间",
           "example": "2020-11-24 15:15:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "结束时间",
           "example": "2020-11-24 15:25:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "监控数据",
           "example": "无",
           "member": "MetricData",
           "name": "Data",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

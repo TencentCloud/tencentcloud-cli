@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
-    --Sort.Field CreatTime \
+    --Sort.Field CreateTime \
     --Sort.Order Desc \
     --StreamIds StreamId_test2 StreamId_test1 \
     --Limit 1 \
@@ -26,39 +26,61 @@ Output:
             {
                 "FileId": "5285485487985271487",
                 "BasicInfo": {
-                    "Name": "test file",
+                    "Name": "Sport file",
                     "Description": "",
                     "CreateTime": "2020-12-11T07:25:52Z",
                     "UpdateTime": "2020-12-11T07:25:52Z",
                     "ExpireTime": "9999-12-31T23:59:59Z",
-                    "ClassId": 1,
+                    "ClassId": 123,
                     "ClassName": "测试",
                     "ClassPath": "测试",
                     "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
                     "MediaUrl": "http://xx.vod2.myqcloud.com/xxx/xx/f0.mp4",
-                    "TagSet": [],
+                    "TagSet": [
+                        "tag1",
+                        "tag2"
+                    ],
                     "SourceInfo": {
-                        "SourceType": "Record",
-                        "SourceContext": ""
+                        "SourceType": "Upload",
+                        "SourceContext": "",
+                        "TrtcRecordInfo": {
+                            "SdkAppId": 1,
+                            "RoomId": "RoomId",
+                            "TaskId": "TaskId",
+                            "UserIds": [
+                                "UserId"
+                            ]
+                        }
                     },
-                    "StorageRegion": "ap-chongqing"
+                    "StorageRegion": "ap-chongqing",
+                    "Category": "Image",
+                    "Vid": "5285485487985271487",
+                    "Status": "Normal",
+                    "StorageClass": "STANDARD"
                 },
                 "MetaData": {
                     "Size": 10556,
                     "Container": "m4a",
-                    "Duration": 3601,
+                    "Duration": 3601.0,
                     "Bitrate": 246035,
                     "Height": 480,
                     "Width": 640,
                     "Rotate": 0,
+                    "VideoDuration": 3601.0,
+                    "AudioDuration": 3601.0,
+                    "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                     "VideoStreamSet": [
                         {
                             "Bitrate": 246000,
                             "Height": 480,
                             "Width": 640,
                             "Codec": "h264",
-                            "Fps": 222
+                            "Fps": 222,
+                            "DynamicRangeInfo": {
+                                "Type": "HDR",
+                                "HDRType": "hdr10"
+                            }
                         }
                     ],
                     "AudioStreamSet": [
@@ -78,7 +100,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "m4a",
-                            "Duration": 3601,
+                            "Duration": 3601.0,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -87,7 +109,11 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
-                                    "Fps": 222
+                                    "Fps": 222,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -96,7 +122,8 @@ Output:
                                     "SamplingRate": 44100,
                                     "Bitrate": 35
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
@@ -105,7 +132,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "mov",
-                            "Duration": 3601,
+                            "Duration": 3601.0,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -114,7 +141,11 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
-                                    "Fps": 222
+                                    "Fps": 222,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -123,12 +154,13 @@ Output:
                                     "SamplingRate": 44100,
                                     "Bitrate": 35
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
-                            "Duration": 145,
+                            "Duration": 145.0,
                             "Size": 265,
                             "Bitrate": 2840055,
                             "Height": 1080,
@@ -141,7 +173,11 @@ Output:
                                     "Height": 1080,
                                     "Width": 1920,
                                     "Codec": "h264",
-                                    "Fps": 24
+                                    "Fps": 24,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -150,7 +186,8 @@ Output:
                                     "Bitrate": 45822,
                                     "Codec": "aac"
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         }
                     ]
                 },
@@ -165,8 +202,8 @@ Output:
                             "Bitrate": 1000000,
                             "Size": 600000,
                             "Md5": "bfcf7c6f154b1842a661f9e80b07a1d0",
-                            "StartTimeOffset": 10,
-                            "EndTimeOffset": 15
+                            "StartTimeOffset": 10.0,
+                            "EndTimeOffset": 15.0
                         }
                     ]
                 },
@@ -211,11 +248,11 @@ Output:
                             "Definition": 10,
                             "PicInfoSet": [
                                 {
-                                    "TimeOffset": 0,
+                                    "TimeOffset": 0.0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
                                 },
                                 {
-                                    "TimeOffset": 1000,
+                                    "TimeOffset": 1000.0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
                                 }
                             ]
@@ -225,11 +262,11 @@ Output:
                 "KeyFrameDescInfo": {
                     "KeyFrameDescSet": [
                         {
-                            "TimeOffset": 1,
+                            "TimeOffset": 1.0,
                             "Content": "abc"
                         },
                         {
-                            "TimeOffset": 100,
+                            "TimeOffset": 100.0,
                             "Content": "def"
                         }
                     ]
@@ -237,27 +274,32 @@ Output:
                 "MiniProgramReviewInfo": {
                     "MiniProgramReviewList": [
                         {
-                            "Url": "xx",
+                            "Url": "url",
                             "Definition": 0,
-                            "ReviewResult": "xx",
+                            "ReviewResult": "Pass",
                             "ReviewSummary": [
                                 {
                                     "Confidence": 0.0,
-                                    "Type": "xx",
-                                    "Suggestion": "xx"
+                                    "Type": "Porn",
+                                    "Suggestion": "pass"
                                 }
                             ],
                             "MetaData": {
                                 "Rotate": 0,
-                                "Container": "xx",
+                                "Container": "mp4",
                                 "AudioDuration": 0.0,
+                                "Md5": "md5",
                                 "VideoStreamSet": [
                                     {
                                         "Width": 0,
-                                        "Codec": "xx",
+                                        "Codec": "h264",
                                         "Bitrate": 0,
                                         "Fps": 0,
-                                        "Height": 0
+                                        "Height": 0,
+                                        "DynamicRangeInfo": {
+                                            "Type": "HDR",
+                                            "HDRType": "hdr10"
+                                        }
                                     }
                                 ],
                                 "Height": 0,
@@ -269,7 +311,7 @@ Output:
                                 "AudioStreamSet": [
                                     {
                                         "SamplingRate": 0,
-                                        "Codec": "xx",
+                                        "Codec": "h264",
                                         "Bitrate": 0
                                     }
                                 ]
@@ -280,21 +322,21 @@ Output:
                 "AdaptiveDynamicStreamingInfo": {
                     "AdaptiveDynamicStreamingSet": [
                         {
-                            "DrmType": "xx",
+                            "DrmType": "drm",
                             "Definition": 0,
-                            "Url": "xx",
-                            "Package": "xx"
+                            "Url": "url",
+                            "Package": "HLS"
                         }
                     ]
                 },
                 "SubtitleInfo": {
                     "SubtitleSet": [
                         {
-                            "Url": "xx",
-                            "Format": "xx",
-                            "Name": "xx",
-                            "Language": "xx",
-                            "Id": "xx"
+                            "Url": "url",
+                            "Format": "vtt",
+                            "Name": "name",
+                            "Language": "cn",
+                            "Id": "id"
                         }
                     ]
                 }
@@ -312,7 +354,7 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
-    --Sort.Field CreatTime \
+    --Sort.Field CreateTime \
     --Sort.Order Desc \
     --NamePrefixes Sport \
     --CreateTime.After 2020-12-10T07:25:52Z \
@@ -343,25 +385,44 @@ Output:
                     "TagSet": [],
                     "SourceInfo": {
                         "SourceType": "Record",
-                        "SourceContext": ""
+                        "SourceContext": "",
+                        "TrtcRecordInfo": {
+                            "SdkAppId": 1,
+                            "RoomId": "RoomId",
+                            "TaskId": "TaskId",
+                            "UserIds": [
+                                "UserId"
+                            ]
+                        }
                     },
-                    "StorageRegion": "ap-chongqing"
+                    "StorageRegion": "ap-chongqing",
+                    "Category": "Video",
+                    "Vid": "5285485487985271487",
+                    "Status": "Normal",
+                    "StorageClass": "STANDARD"
                 },
                 "MetaData": {
                     "Size": 10556,
                     "Container": "m4a",
-                    "Duration": 3601,
+                    "Duration": 3601.0,
                     "Bitrate": 246035,
                     "Height": 480,
                     "Width": 640,
                     "Rotate": 0,
+                    "VideoDuration": 3601.0,
+                    "AudioDuration": 3601.0,
+                    "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                     "VideoStreamSet": [
                         {
                             "Bitrate": 246000,
                             "Height": 480,
                             "Width": 640,
                             "Codec": "h264",
-                            "Fps": 222
+                            "Fps": 222,
+                            "DynamicRangeInfo": {
+                                "Type": "HDR",
+                                "HDRType": "hdr10"
+                            }
                         }
                     ],
                     "AudioStreamSet": [
@@ -381,7 +442,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "m4a",
-                            "Duration": 3601,
+                            "Duration": 3601.0,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -390,7 +451,11 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
-                                    "Fps": 222
+                                    "Fps": 222,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -399,7 +464,8 @@ Output:
                                     "SamplingRate": 44100,
                                     "Bitrate": 35
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
@@ -408,7 +474,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "mov",
-                            "Duration": 3601,
+                            "Duration": 3601.0,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -417,7 +483,11 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
-                                    "Fps": 222
+                                    "Fps": 222,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -426,12 +496,13 @@ Output:
                                     "SamplingRate": 44100,
                                     "Bitrate": 35
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
-                            "Duration": 145,
+                            "Duration": 145.0,
                             "Size": 265,
                             "Bitrate": 2840055,
                             "Height": 1080,
@@ -444,7 +515,11 @@ Output:
                                     "Height": 1080,
                                     "Width": 1920,
                                     "Codec": "h264",
-                                    "Fps": 24
+                                    "Fps": 24,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -453,7 +528,8 @@ Output:
                                     "Bitrate": 45822,
                                     "Codec": "aac"
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         }
                     ]
                 },
@@ -468,8 +544,8 @@ Output:
                             "Bitrate": 1000000,
                             "Size": 600000,
                             "Md5": "bfcf7c6f154b1842a661f9e80b07a1d0",
-                            "StartTimeOffset": 10,
-                            "EndTimeOffset": 15
+                            "StartTimeOffset": 10.0,
+                            "EndTimeOffset": 15.0
                         }
                     ]
                 },
@@ -514,11 +590,11 @@ Output:
                             "Definition": 10,
                             "PicInfoSet": [
                                 {
-                                    "TimeOffset": 0,
+                                    "TimeOffset": 0.0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
                                 },
                                 {
-                                    "TimeOffset": 1000,
+                                    "TimeOffset": 1000.0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
                                 }
                             ]
@@ -528,11 +604,11 @@ Output:
                 "KeyFrameDescInfo": {
                     "KeyFrameDescSet": [
                         {
-                            "TimeOffset": 1,
+                            "TimeOffset": 1.0,
                             "Content": "abc"
                         },
                         {
-                            "TimeOffset": 100,
+                            "TimeOffset": 100.0,
                             "Content": "def"
                         }
                     ]
@@ -540,39 +616,44 @@ Output:
                 "MiniProgramReviewInfo": {
                     "MiniProgramReviewList": [
                         {
-                            "Url": "xx",
+                            "Url": "url",
                             "Definition": 0,
-                            "ReviewResult": "xx",
+                            "ReviewResult": "Pass",
                             "ReviewSummary": [
                                 {
-                                    "Confidence": 0,
-                                    "Type": "xx",
-                                    "Suggestion": "xx"
+                                    "Confidence": 0.0,
+                                    "Type": "Porn",
+                                    "Suggestion": "pass"
                                 }
                             ],
                             "MetaData": {
                                 "Rotate": 0,
-                                "Container": "xx",
-                                "AudioDuration": 0,
+                                "Container": "mp4",
+                                "AudioDuration": 0.0,
+                                "Md5": "md5",
                                 "VideoStreamSet": [
                                     {
                                         "Width": 0,
-                                        "Codec": "xx",
+                                        "Codec": "h264",
                                         "Bitrate": 0,
                                         "Fps": 0,
-                                        "Height": 0
+                                        "Height": 0,
+                                        "DynamicRangeInfo": {
+                                            "Type": "HDR",
+                                            "HDRType": "hdr10"
+                                        }
                                     }
                                 ],
                                 "Height": 0,
-                                "VideoDuration": 0,
+                                "VideoDuration": 0.0,
                                 "Width": 0,
-                                "Duration": 0,
+                                "Duration": 0.0,
                                 "Size": 0,
                                 "Bitrate": 0,
                                 "AudioStreamSet": [
                                     {
                                         "SamplingRate": 0,
-                                        "Codec": "xx",
+                                        "Codec": "h264",
                                         "Bitrate": 0
                                     }
                                 ]
@@ -583,21 +664,21 @@ Output:
                 "AdaptiveDynamicStreamingInfo": {
                     "AdaptiveDynamicStreamingSet": [
                         {
-                            "DrmType": "xx",
+                            "DrmType": "drm",
                             "Definition": 0,
-                            "Url": "xx",
-                            "Package": "xx"
+                            "Url": "url",
+                            "Package": "HLS"
                         }
                     ]
                 },
                 "SubtitleInfo": {
                     "SubtitleSet": [
                         {
-                            "Url": "xx",
-                            "Format": "xx",
-                            "Name": "xx",
-                            "Language": "xx",
-                            "Id": "xx"
+                            "Url": "url",
+                            "Format": "vtt",
+                            "Name": "name",
+                            "Language": "cn",
+                            "Id": "id"
                         }
                     ]
                 }
@@ -615,7 +696,7 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
-    --Sort.Field CreatTime \
+    --Sort.Field CreateTime \
     --Sort.Order Desc \
     --Names Sport \
     --CreateTime.After 2020-12-10T07:25:52Z \
@@ -646,25 +727,44 @@ Output:
                     "TagSet": [],
                     "SourceInfo": {
                         "SourceType": "Record",
-                        "SourceContext": ""
+                        "SourceContext": "",
+                        "TrtcRecordInfo": {
+                            "SdkAppId": 1,
+                            "RoomId": "RoomId",
+                            "TaskId": "TaskId",
+                            "UserIds": [
+                                "UserId"
+                            ]
+                        }
                     },
-                    "StorageRegion": "ap-chongqing"
+                    "StorageRegion": "ap-chongqing",
+                    "Category": "Video",
+                    "Vid": "5285485487985271487",
+                    "Status": "Normal",
+                    "StorageClass": "STANDARD"
                 },
                 "MetaData": {
                     "Size": 10556,
                     "Container": "m4a",
-                    "Duration": 3601,
+                    "Duration": 3601.0,
                     "Bitrate": 246035,
                     "Height": 480,
                     "Width": 640,
                     "Rotate": 0,
+                    "VideoDuration": 3601.0,
+                    "AudioDuration": 3601.0,
+                    "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                     "VideoStreamSet": [
                         {
                             "Bitrate": 246000,
                             "Height": 480,
                             "Width": 640,
                             "Codec": "h264",
-                            "Fps": 222
+                            "Fps": 222,
+                            "DynamicRangeInfo": {
+                                "Type": "HDR",
+                                "HDRType": "hdr10"
+                            }
                         }
                     ],
                     "AudioStreamSet": [
@@ -684,7 +784,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "m4a",
-                            "Duration": 3601,
+                            "Duration": 3601.0,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -693,7 +793,11 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
-                                    "Fps": 222
+                                    "Fps": 222,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -702,7 +806,8 @@ Output:
                                     "SamplingRate": 44100,
                                     "Bitrate": 35
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
@@ -711,7 +816,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "mov",
-                            "Duration": 3601,
+                            "Duration": 3601.0,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -720,7 +825,11 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
-                                    "Fps": 222
+                                    "Fps": 222,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -729,12 +838,13 @@ Output:
                                     "SamplingRate": 44100,
                                     "Bitrate": 35
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
-                            "Duration": 145,
+                            "Duration": 145.0,
                             "Size": 265,
                             "Bitrate": 2840055,
                             "Height": 1080,
@@ -747,7 +857,11 @@ Output:
                                     "Height": 1080,
                                     "Width": 1920,
                                     "Codec": "h264",
-                                    "Fps": 24
+                                    "Fps": 24,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -756,7 +870,8 @@ Output:
                                     "Bitrate": 45822,
                                     "Codec": "aac"
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         }
                     ]
                 },
@@ -771,8 +886,8 @@ Output:
                             "Bitrate": 1000000,
                             "Size": 600000,
                             "Md5": "bfcf7c6f154b1842a661f9e80b07a1d0",
-                            "StartTimeOffset": 10,
-                            "EndTimeOffset": 15
+                            "StartTimeOffset": 10.0,
+                            "EndTimeOffset": 15.0
                         }
                     ]
                 },
@@ -817,11 +932,11 @@ Output:
                             "Definition": 10,
                             "PicInfoSet": [
                                 {
-                                    "TimeOffset": 0,
+                                    "TimeOffset": 0.0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
                                 },
                                 {
-                                    "TimeOffset": 1000,
+                                    "TimeOffset": 1000.0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
                                 }
                             ]
@@ -831,11 +946,11 @@ Output:
                 "KeyFrameDescInfo": {
                     "KeyFrameDescSet": [
                         {
-                            "TimeOffset": 1,
+                            "TimeOffset": 1.0,
                             "Content": "abc"
                         },
                         {
-                            "TimeOffset": 100,
+                            "TimeOffset": 100.0,
                             "Content": "def"
                         }
                     ]
@@ -843,39 +958,44 @@ Output:
                 "MiniProgramReviewInfo": {
                     "MiniProgramReviewList": [
                         {
-                            "Url": "xx",
+                            "Url": "url",
                             "Definition": 0,
-                            "ReviewResult": "xx",
+                            "ReviewResult": "Pass",
                             "ReviewSummary": [
                                 {
-                                    "Confidence": 0,
-                                    "Type": "xx",
-                                    "Suggestion": "xx"
+                                    "Confidence": 0.0,
+                                    "Type": "Porn",
+                                    "Suggestion": "pass"
                                 }
                             ],
                             "MetaData": {
                                 "Rotate": 0,
-                                "Container": "xx",
-                                "AudioDuration": 0,
+                                "Container": "mp4",
+                                "AudioDuration": 0.0,
+                                "Md5": "md5",
                                 "VideoStreamSet": [
                                     {
                                         "Width": 0,
-                                        "Codec": "xx",
+                                        "Codec": "h264",
                                         "Bitrate": 0,
                                         "Fps": 0,
-                                        "Height": 0
+                                        "Height": 0,
+                                        "DynamicRangeInfo": {
+                                            "Type": "HDR",
+                                            "HDRType": "hdr10"
+                                        }
                                     }
                                 ],
                                 "Height": 0,
-                                "VideoDuration": 0,
+                                "VideoDuration": 0.0,
                                 "Width": 0,
-                                "Duration": 0,
+                                "Duration": 0.0,
                                 "Size": 0,
                                 "Bitrate": 0,
                                 "AudioStreamSet": [
                                     {
                                         "SamplingRate": 0,
-                                        "Codec": "xx",
+                                        "Codec": "h264",
                                         "Bitrate": 0
                                     }
                                 ]
@@ -886,21 +1006,21 @@ Output:
                 "AdaptiveDynamicStreamingInfo": {
                     "AdaptiveDynamicStreamingSet": [
                         {
-                            "DrmType": "xx",
+                            "DrmType": "drm",
                             "Definition": 0,
-                            "Url": "xx",
-                            "Package": "xx"
+                            "Url": "url",
+                            "Package": "HLS"
                         }
                     ]
                 },
                 "SubtitleInfo": {
                     "SubtitleSet": [
                         {
-                            "Url": "xx",
-                            "Format": "xx",
-                            "Name": "xx",
-                            "Language": "xx",
-                            "Id": "xx"
+                            "Url": "url",
+                            "Format": "vtt",
+                            "Name": "name",
+                            "Language": "cn",
+                            "Id": "id"
                         }
                     ]
                 }
@@ -918,7 +1038,7 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
-    --Sort.Field CreatTime \
+    --Sort.Field CreateTime \
     --Sort.Order Desc \
     --CreateTime.After 2020-12-10T07:25:52Z \
     --CreateTime.Before 2020-12-13T07:25:52Z \
@@ -952,25 +1072,45 @@ Output:
                         "tag2"
                     ],
                     "SourceInfo": {
-                        "SourceType": "Upload"
+                        "SourceType": "Upload",
+                        "SourceContext": "",
+                        "TrtcRecordInfo": {
+                            "SdkAppId": 1,
+                            "RoomId": "RoomId",
+                            "TaskId": "TaskId",
+                            "UserIds": [
+                                "UserId"
+                            ]
+                        }
                     },
-                    "StorageRegion": "ap-chongqing"
+                    "StorageRegion": "ap-chongqing",
+                    "Category": "Video",
+                    "Vid": "5285485487985271487",
+                    "Status": "Normal",
+                    "StorageClass": "STANDARD"
                 },
                 "MetaData": {
                     "Size": 10556,
                     "Container": "m4a",
-                    "Duration": 3601,
+                    "Duration": 3601.0,
                     "Bitrate": 246035,
                     "Height": 480,
                     "Width": 640,
                     "Rotate": 0,
+                    "VideoDuration": 3601.0,
+                    "AudioDuration": 3601.0,
+                    "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                     "VideoStreamSet": [
                         {
                             "Bitrate": 246000,
                             "Height": 480,
                             "Width": 640,
                             "Codec": "h264",
-                            "Fps": 222
+                            "Fps": 222,
+                            "DynamicRangeInfo": {
+                                "Type": "HDR",
+                                "HDRType": "hdr10"
+                            }
                         }
                     ],
                     "AudioStreamSet": [
@@ -990,7 +1130,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "m4a",
-                            "Duration": 3601,
+                            "Duration": 3601.0,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -999,7 +1139,11 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
-                                    "Fps": 222
+                                    "Fps": 222,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -1008,7 +1152,8 @@ Output:
                                     "SamplingRate": 44100,
                                     "Bitrate": 35
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
@@ -1017,7 +1162,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "mov",
-                            "Duration": 3601,
+                            "Duration": 3601.0,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -1026,7 +1171,11 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
-                                    "Fps": 222
+                                    "Fps": 222,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -1035,12 +1184,13 @@ Output:
                                     "SamplingRate": 44100,
                                     "Bitrate": 35
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
-                            "Duration": 145,
+                            "Duration": 145.0,
                             "Size": 265,
                             "Bitrate": 2840055,
                             "Height": 1080,
@@ -1053,7 +1203,11 @@ Output:
                                     "Height": 1080,
                                     "Width": 1920,
                                     "Codec": "h264",
-                                    "Fps": 24
+                                    "Fps": 24,
+                                    "DynamicRangeInfo": {
+                                        "Type": "HDR",
+                                        "HDRType": "hdr10"
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -1062,7 +1216,8 @@ Output:
                                     "Bitrate": 45822,
                                     "Codec": "aac"
                                 }
-                            ]
+                            ],
+                            "DigitalWatermarkType": "None"
                         }
                     ]
                 },
@@ -1077,8 +1232,8 @@ Output:
                             "Bitrate": 1000000,
                             "Size": 600000,
                             "Md5": "bfcf7c6f154b1842a661f9e80b07a1d0",
-                            "StartTimeOffset": 10,
-                            "EndTimeOffset": 15
+                            "StartTimeOffset": 10.0,
+                            "EndTimeOffset": 15.0
                         }
                     ]
                 },
@@ -1123,11 +1278,11 @@ Output:
                             "Definition": 10,
                             "PicInfoSet": [
                                 {
-                                    "TimeOffset": 0,
+                                    "TimeOffset": 0.0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
                                 },
                                 {
-                                    "TimeOffset": 1000,
+                                    "TimeOffset": 1000.0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
                                 }
                             ]
@@ -1137,11 +1292,11 @@ Output:
                 "KeyFrameDescInfo": {
                     "KeyFrameDescSet": [
                         {
-                            "TimeOffset": 1,
+                            "TimeOffset": 1.0,
                             "Content": "abc"
                         },
                         {
-                            "TimeOffset": 100,
+                            "TimeOffset": 100.0,
                             "Content": "def"
                         }
                     ]
@@ -1149,39 +1304,44 @@ Output:
                 "MiniProgramReviewInfo": {
                     "MiniProgramReviewList": [
                         {
-                            "Url": "xx",
+                            "Url": "url",
                             "Definition": 0,
-                            "ReviewResult": "xx",
+                            "ReviewResult": "Pass",
                             "ReviewSummary": [
                                 {
-                                    "Confidence": 0,
-                                    "Type": "xx",
-                                    "Suggestion": "xx"
+                                    "Confidence": 0.0,
+                                    "Type": "Porn",
+                                    "Suggestion": "pass"
                                 }
                             ],
                             "MetaData": {
                                 "Rotate": 0,
-                                "Container": "xx",
-                                "AudioDuration": 0,
+                                "Container": "mp4",
+                                "AudioDuration": 0.0,
+                                "Md5": "md5",
                                 "VideoStreamSet": [
                                     {
                                         "Width": 0,
-                                        "Codec": "xx",
+                                        "Codec": "h264",
                                         "Bitrate": 0,
                                         "Fps": 0,
-                                        "Height": 0
+                                        "Height": 0,
+                                        "DynamicRangeInfo": {
+                                            "Type": "HDR",
+                                            "HDRType": "hdr10"
+                                        }
                                     }
                                 ],
                                 "Height": 0,
-                                "VideoDuration": 0,
+                                "VideoDuration": 0.0,
                                 "Width": 0,
-                                "Duration": 0,
+                                "Duration": 0.0,
                                 "Size": 0,
                                 "Bitrate": 0,
                                 "AudioStreamSet": [
                                     {
                                         "SamplingRate": 0,
-                                        "Codec": "xx",
+                                        "Codec": "h264",
                                         "Bitrate": 0
                                     }
                                 ]
@@ -1192,21 +1352,21 @@ Output:
                 "AdaptiveDynamicStreamingInfo": {
                     "AdaptiveDynamicStreamingSet": [
                         {
-                            "DrmType": "xx",
+                            "DrmType": "drm",
                             "Definition": 0,
-                            "Url": "xx",
-                            "Package": "xx"
+                            "Url": "url",
+                            "Package": "HLS"
                         }
                     ]
                 },
                 "SubtitleInfo": {
                     "SubtitleSet": [
                         {
-                            "Url": "xx",
-                            "Format": "xx",
-                            "Name": "xx",
-                            "Language": "xx",
-                            "Id": "xx"
+                            "Url": "url",
+                            "Format": "vtt",
+                            "Name": "name",
+                            "Language": "cn",
+                            "Id": "id"
                         }
                     ]
                 }
@@ -1224,7 +1384,7 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
-    --Sort.Field CreatTime \
+    --Sort.Field CreateTime \
     --Sort.Order Desc \
     --Filters basicInfo \
     --Categories Image \
@@ -1258,20 +1418,29 @@ Output:
                     "StorageRegion": "ap-shanghai",
                     "SourceInfo": {
                         "SourceType": "Upload",
-                        "SourceContext": ""
+                        "SourceContext": "",
+                        "TrtcRecordInfo": {
+                            "SdkAppId": 1,
+                            "RoomId": "RoomId",
+                            "TaskId": "TaskId",
+                            "UserIds": [
+                                "UserId"
+                            ]
+                        }
                     },
                     "Vid": "5285890811175706012",
                     "Category": "Image",
-                    "Status": "Normal"
+                    "Status": "Normal",
+                    "StorageClass": "STANDARD"
                 },
                 "SubtitleInfo": {
                     "SubtitleSet": [
                         {
-                            "Url": "xx",
-                            "Format": "xx",
-                            "Name": "xx",
-                            "Language": "xx",
-                            "Id": "xx"
+                            "Url": "url",
+                            "Format": "vtt",
+                            "Name": "name",
+                            "Language": "cn",
+                            "Id": "id"
                         }
                     ]
                 },
@@ -1303,20 +1472,29 @@ Output:
                     "StorageRegion": "ap-shanghai",
                     "SourceInfo": {
                         "SourceType": "Upload",
-                        "SourceContext": ""
+                        "SourceContext": "",
+                        "TrtcRecordInfo": {
+                            "SdkAppId": 1,
+                            "RoomId": "RoomId",
+                            "TaskId": "TaskId",
+                            "UserIds": [
+                                "UserId"
+                            ]
+                        }
                     },
                     "Vid": "5285890811175698692",
                     "Category": "Image",
-                    "Status": "Normal"
+                    "Status": "Normal",
+                    "StorageClass": "STANDARD"
                 },
                 "SubtitleInfo": {
                     "SubtitleSet": [
                         {
-                            "Url": "xx",
-                            "Format": "xx",
-                            "Name": "xx",
-                            "Language": "xx",
-                            "Id": "xx"
+                            "Url": "url",
+                            "Format": "vtt",
+                            "Name": "name",
+                            "Language": "cn",
+                            "Id": "id"
                         }
                     ]
                 },

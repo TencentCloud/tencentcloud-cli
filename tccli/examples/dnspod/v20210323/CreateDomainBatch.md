@@ -1,6 +1,6 @@
 **Example 1: 批量添加域名**
 
- 
+ 批量添加域名
 
 Input: 
 
@@ -22,7 +22,7 @@ Output:
                         "RecordLine": "默认",
                         "TTL": 600,
                         "Id": 0,
-                        "SubDomain": "www",
+                        "SubDomain": "test",
                         "RecordType": "A",
                         "Value": "11.22.33.45",
                         "ErrMsg": null,
@@ -54,7 +54,7 @@ Output:
                         "RecordLine": "默认",
                         "TTL": 600,
                         "Id": 0,
-                        "SubDomain": "www",
+                        "SubDomain": "test",
                         "RecordType": "A",
                         "Value": "11.22.33.45",
                         "ErrMsg": null,

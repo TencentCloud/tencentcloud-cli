@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli dnspod DescribeDomainPreview --cli-unfold-argument ```
+tccli dnspod DescribeDomainPreview --cli-unfold-argument  \
+    --Domain dnspod.cn
+```
 
 Output: 
 ```

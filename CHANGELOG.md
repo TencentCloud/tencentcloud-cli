@@ -1,3 +1,204 @@
+# Release 3.0.723.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 14 次发布
+
+发布时间：2023-03-15 01:03:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SendResource](http://document.tencentcloudapi.woa.com/document/product/555/77257)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 37 次发布
+
+发布时间：2023-03-15 01:15:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [InstanceNetInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceNetInfo)
+
+修改数据结构：
+
+* [CynosdbInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstance)
+
+	* 新增成员：InstanceNetInfo
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 27 次发布
+
+发布时间：2023-03-15 01:24:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
+
+	* 新增成员：NFCRequestIds, NFCBillingCounts
+
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 44 次发布
+
+发布时间：2023-03-15 01:37:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [MLIDPassportOCR](http://document.tencentcloudapi.woa.com/document/product/866/37657)
+
+	* 新增出参：Surname, GivenName
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 19 次发布
+
+发布时间：2023-03-15 01:43:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCustomAccount](http://document.tencentcloudapi.woa.com/document/product/1141/77262)
+* [DeleteCustomAccount](http://document.tencentcloudapi.woa.com/document/product/1141/77261)
+* [DescribeCustomAccounts](http://document.tencentcloudapi.woa.com/document/product/1141/77260)
+* [ModifyCustomAccount](http://document.tencentcloudapi.woa.com/document/product/1141/77259)
+
+新增数据结构：
+
+* [CustomAccount](http://document.tencentcloudapi.woa.com/document/product/1141/41603#CustomAccount)
+* [Permission](http://document.tencentcloudapi.woa.com/document/product/1141/41603#Permission)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 37 次发布
+
+发布时间：2023-03-15 01:44:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77263)
+
+新增数据结构：
+
+* [ExchangeQuota](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ExchangeQuota)
+* [PrometheusEndpointInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PrometheusEndpointInfo)
+* [QueueQuota](http://document.tencentcloudapi.woa.com/document/product/1179/46089#QueueQuota)
+* [RabbitMQClusterAccessInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQClusterAccessInfo)
+* [RabbitMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQClusterInfo)
+* [RabbitMQClusterSpecInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQClusterSpecInfo)
+* [RabbitMQClusterWhiteListInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQClusterWhiteListInfo)
+* [VirtualHostQuota](http://document.tencentcloudapi.woa.com/document/product/1179/46089#VirtualHostQuota)
+* [VpcEndpointInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#VpcEndpointInfo)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 26 次发布
+
+发布时间：2023-03-15 01:47:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [WaterMarkChar](http://document.tencentcloudapi.woa.com/document/product/647/44055#WaterMarkChar)
+* [WaterMarkTimestamp](http://document.tencentcloudapi.woa.com/document/product/647/44055#WaterMarkTimestamp)
+
+修改数据结构：
+
+* [WaterMark](http://document.tencentcloudapi.woa.com/document/product/647/44055#WaterMark)
+
+	* 新增成员：WaterMarkChar, WaterMarkTimestamp
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 51 次发布
+
+发布时间：2023-03-15 01:49:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SearchMedia](http://document.tencentcloudapi.woa.com/document/product/266/31813)
+
+	* 新增入参：MediaTypes
+
+
+
+
+## 企业微信汽车行业版(wav) 版本：2021-01-29
+
+### 第 8 次发布
+
+发布时间：2023-03-15 01:53:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryCustomerProfileList](http://document.tencentcloudapi.woa.com/document/product/1318/77265)
+* [QueryExternalContactDetailByDate](http://document.tencentcloudapi.woa.com/document/product/1318/77264)
+
+新增数据结构：
+
+* [ChannelTag](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ChannelTag)
+* [CustomerProfile](http://document.tencentcloudapi.woa.com/document/product/1318/56791#CustomerProfile)
+* [EnterpriseTag](http://document.tencentcloudapi.woa.com/document/product/1318/56791#EnterpriseTag)
+* [ExternalContactDetailPro](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ExternalContactDetailPro)
+* [FollowUserPro](http://document.tencentcloudapi.woa.com/document/product/1318/56791#FollowUserPro)
+* [PurchaseConcern](http://document.tencentcloudapi.woa.com/document/product/1318/56791#PurchaseConcern)
+* [VehiclePurpose](http://document.tencentcloudapi.woa.com/document/product/1318/56791#VehiclePurpose)
+
+
+
 # Release 3.0.722.1
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17

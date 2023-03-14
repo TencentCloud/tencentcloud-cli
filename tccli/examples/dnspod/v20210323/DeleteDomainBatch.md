@@ -1,6 +1,6 @@
 **Example 1: 批量删除域名**
 
- 
+ 批量删除域名
 
 Input: 
 
@@ -13,17 +13,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "0f8cc178-1a8d-4923-a24d-2b47883386f7",
-        "JobId": "1701611",
         "DetailList": [
             {
-                "DomainId": "12620428",
-                "Domain": "sdfsdfsdf.com",
+                "Domain": "yyds999.com",
+                "DomainId": 12620607,
                 "Error": null,
-                "Status": "waiting",
-                "Operation": "remove"
+                "Operation": "remove",
+                "Status": "waiting"
             }
-        ]
+        ],
+        "JobId": 1703509,
+        "RequestId": "5090a972-50ca-4be9-abf3-a1f90e8db36c"
     }
 }
 ```

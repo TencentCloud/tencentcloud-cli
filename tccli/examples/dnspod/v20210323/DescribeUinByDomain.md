@@ -1,6 +1,6 @@
 **Example 1: 根据域名查UIN**
 
-
+根据域名查UIN
 
 Input: 
 
