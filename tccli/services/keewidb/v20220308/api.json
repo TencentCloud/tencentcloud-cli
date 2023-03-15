@@ -70,6 +70,13 @@
       "output": "DescribeInstanceBinlogsResponse",
       "status": "online"
     },
+    "DescribeInstanceDealDetail": {
+      "document": "本接口（DescribeInstanceDealDetail）用于查询预付费订单信息。",
+      "input": "DescribeInstanceDealDetailRequest",
+      "name": "查询订单信息",
+      "output": "DescribeInstanceDealDetailResponse",
+      "status": "online"
+    },
     "DescribeInstanceNodeInfo": {
       "document": "本接口（DescribeInstanceNodeInfo）查询实例节点信息。",
       "input": "DescribeInstanceNodeInfoRequest",
@@ -1111,6 +1118,40 @@
           "member": "BinlogInfo",
           "name": "BackupSet",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceDealDetailRequest": {
+      "document": "DescribeInstanceDealDetail请求参数结构体",
+      "members": [
+        {
+          "document": "订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。",
+          "example": "[\"8159037\"]\t",
+          "member": "string",
+          "name": "DealIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceDealDetailResponse": {
+      "document": "DescribeInstanceDealDetail返回参数结构体",
+      "members": [
+        {
+          "document": "订单详细信息",
+          "example": "无",
+          "member": "TradeDealDetail",
+          "name": "DealDetails",
           "type": "list",
           "value_allowed_null": false
         },
@@ -4657,6 +4698,120 @@
           "name": "Node",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TradeDealDetail": {
+      "document": "订单交易信息",
+      "members": [
+        {
+          "document": "订单号ID，调用云API时使用此ID\t",
+          "example": "无",
+          "member": "string",
+          "name": "DealId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "长订单ID，反馈订单问题给官方客服使用此ID\t",
+          "example": "无",
+          "member": "string",
+          "name": "DealName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用区id",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单关联的实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建用户uin",
+          "example": "无",
+          "member": "string",
+          "name": "Creater",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreatTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单超时时间",
+          "example": "无",
+          "member": "string",
+          "name": "OverdueTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单完成时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单状态 1：未支付 2:已支付，未发货 3:发货中 4:发货成功 5:发货失败 6:已退款 7:已关闭订单 8:订单过期 9:订单已失效 10:产品已失效 11:代付拒绝 12:支付中",
+          "example": "4",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单状态描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单实际总价，单位：分",
+          "example": "无",
+          "member": "float",
+          "name": "Price",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

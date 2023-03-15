@@ -246,7 +246,7 @@
       "status": "online"
     },
     "MLIDPassportOCR": {
-      "document": "本接口支持中国港澳台地区以及其他国家、地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。\n\n默认接口请求频率限制：5次/秒。\n",
+      "document": "本接口支持中国港澳台地区以及其他国家、地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。\n\n默认接口请求频率限制：5次/秒。",
       "input": "MLIDPassportOCRRequest",
       "name": "护照识别（港澳台地区及境外护照）",
       "output": "MLIDPassportOCRResponse",
@@ -4230,7 +4230,6 @@
       "document": "MLIDPassportOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。",
           "example": "base64编码",
           "member": "string",
@@ -4239,7 +4238,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否返回图片，默认false",
           "example": "false",
           "member": "bool",
@@ -4258,25 +4256,22 @@
           "example": "E6918C",
           "member": "string",
           "name": "ID",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "姓名",
-          "example": "LIM HEG CHUN STEE",
+          "example": "BROWN BENJAMIN",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "出生日期",
-          "example": "无",
+          "example": "20230414",
           "member": "string",
           "name": "DateOfBirth",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4285,16 +4280,14 @@
           "example": "M",
           "member": "string",
           "name": "Sex",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "有效期",
-          "example": "230414",
+          "example": "20230414",
           "member": "string",
           "name": "DateOfExpiration",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4303,7 +4296,6 @@
           "example": "SGP",
           "member": "string",
           "name": "IssuingCountry",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4312,7 +4304,6 @@
           "example": "SGP",
           "member": "string",
           "name": "Nationality",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4321,7 +4312,6 @@
           "example": "[]",
           "member": "int64",
           "name": "Warn",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4330,7 +4320,6 @@
           "example": "无",
           "member": "string",
           "name": "Image",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4339,7 +4328,6 @@
           "example": "{\"IssuingCountry\":{\"Confidence\":\"0.9500\"},\"Name\":{\"Confidence\":\"0.9500\"},\"ID\":{\"Confidence\":\"0.9500\"},\"Nationality\":{\"Confidence\":\"0.9500\"},\"Sex\":{\"Confidence\":\"0.9500\"},\"DateOfExpiration\":{\"Confidence\":\"0.9500\"}}",
           "member": "string",
           "name": "AdvancedInfo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4348,7 +4336,6 @@
           "example": "P<CANBROWN<<BENJAMIN<<<<<<<<<<<<<<<<<<<<<<<<",
           "member": "string",
           "name": "CodeSet",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4357,9 +4344,24 @@
           "example": "JK123488<3CAN8510168M2603298<<<<<<<<<<<<<<04",
           "member": "string",
           "name": "CodeCrc",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "姓\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BROWN",
+          "member": "string",
+          "name": "Surname",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BENJAMIN",
+          "member": "string",
+          "name": "GivenName",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

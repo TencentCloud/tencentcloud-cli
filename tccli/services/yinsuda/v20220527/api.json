@@ -220,7 +220,6 @@
       "document": "BatchDescribeKTVMusicDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -229,7 +228,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -238,13 +236,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "歌曲 Id 列表。",
           "example": "无",
           "member": "string",
           "name": "MusicIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
+          "example": "无",
+          "member": "string",
+          "name": "PlayScene",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -257,7 +262,6 @@
           "example": "无",
           "member": "KTVMusicDetailInfo",
           "name": "KTVMusicDetailInfoSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -266,7 +270,6 @@
           "example": "无",
           "member": "string",
           "name": "NotExistMusicIdSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

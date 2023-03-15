@@ -1,6 +1,6 @@
 **Example 1: 批量修改记录**
 
- 
+ 批量修改记录
 
 Input: 
 
@@ -23,9 +23,9 @@ Output:
                 "RecordList": [
                     {
                         "RecordLine": "默认",
-                        "TTL": "600",
-                        "MX": "21",
-                        "RecordId": "178",
+                        "TTL": 600,
+                        "MX": 21,
+                        "RecordId": 178,
                         "SubDomain": "test",
                         "RecordType": "MX",
                         "Value": "test.aaaaaaa.com.",

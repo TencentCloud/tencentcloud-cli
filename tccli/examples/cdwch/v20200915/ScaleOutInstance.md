@@ -5,16 +5,24 @@ ck水平扩容实例
 Input: 
 
 ```
-tccli cdwch ScaleOutInstance --cli-unfold-argument ```
+tccli cdwch ScaleOutInstance --cli-unfold-argument  \
+    --InstanceId abc \
+    --Type abc \
+    --NodeCount 0 \
+    --ScaleOutCluster abc \
+    --UserSubnetIPNum 0 \
+    --ScaleOutNodeIp abc \
+    --ReduceShardInfo abc
+```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": "xx",
-        "InstanceId": "xx",
-        "ErrorMsg": "xx",
-        "RequestId": "xx"
+        "FlowId": "abc",
+        "InstanceId": "abc",
+        "ErrorMsg": "abc",
+        "RequestId": "abc"
     }
 }
 ```

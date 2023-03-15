@@ -442,7 +442,7 @@
       "status": "online"
     },
     "ModifyInstancesAttribute": {
-      "document": "本接口（ModifyInstancesAttribute）用于修改实例的属性。\n* “实例名称”仅为方便用户自己管理之用。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口（ModifyInstancesAttribute）用于修改实例的属性。\n* “实例名称”仅为方便用户自己管理之用。\n* 支持批量操作。每次请求批量实例的上限为 100。",
       "input": "ModifyInstancesAttributeRequest",
       "name": "修改实例的属性",
       "output": "ModifyInstancesAttributeResponse",
@@ -463,7 +463,7 @@
       "status": "online"
     },
     "ModifyInstancesRenewFlag": {
-      "document": "本接口 (ModifyInstancesRenewFlag) 用于修改包年包月实例续费标识。\n\n* 实例被标识为自动续费后，每次在实例到期时，会自动续费一个月。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ModifyInstancesRenewFlag) 用于修改包年包月实例续费标识。\n\n* 实例被标识为自动续费后，每次在实例到期时，会自动续费一个月。\n* 支持批量操作。每次请求批量实例的上限为100。",
       "input": "ModifyInstancesRenewFlagRequest",
       "name": "修改实例续费标识",
       "output": "ModifyInstancesRenewFlagResponse",
@@ -5877,7 +5877,6 @@
       "document": "ModifyInstancesAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
           "member": "string",
@@ -5886,7 +5885,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例名称。可任意命名，但不得超过 60 个字符。",
           "example": "test",
           "member": "string",
@@ -5994,7 +5992,6 @@
       "document": "ModifyInstancesRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\"]",
           "member": "string",
@@ -6003,7 +6000,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",

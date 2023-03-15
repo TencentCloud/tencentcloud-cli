@@ -1,13 +1,13 @@
 **Example 1: 根据维度条件查询监控数据**
 
-
+查询“K8sPodCpuCoreUsed”指标监控数据
 
 Input: 
 
 ```
 tccli monitor DescribeStatisticData --cli-unfold-argument  \
     --Module monitor \
-    --Namespace QCE/TKE \
+    --Namespace QCE/TKE2 \
     --MetricNames K8sPodCpuCoreUsed \
     --Period 300 \
     --Conditions.0.Key tke_cluster_instance_id \

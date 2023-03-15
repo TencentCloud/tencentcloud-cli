@@ -12,30 +12,31 @@ tccli hasim DescribeLinks --cli-unfold-argument  \
     --Status 1 \
     --TeleOperator 1 \
     --TagID 100101 \
-    --TacticID 100101
+    --TacticID 100101 \
+    --Limit 20 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "12345678901",
         "Data": {
-            "Total": 1,
+            "Total": 0,
             "List": [
                 {
-                    "ID": 397294615,
+                    "ID": 0,
                     "Status": 0,
                     "ActiveTime": "0001-01-01T00:00:00Z",
                     "ExpireTime": "0001-01-01T00:00:00Z",
                     "DataUse": 0,
                     "AudioUse": 0,
                     "SmsUse": 0,
-                    "LinkedState": 1,
+                    "LinkedState": 0,
                     "TacticID": 0,
                     "TacticStatus": 0,
-                    "TacticExpireTime": "0001-01-01T00:00:00Z",
-                    "IsActiveLog": false,
+                    "TacticExpireTime": "abc",
+                    "IsActiveLog": true,
                     "TeleOperator": 0,
                     "Report": {
                         "Imei": "89860919730018794506",
@@ -59,7 +60,8 @@ Output:
                     }
                 }
             ]
-        }
+        },
+        "RequestId": "abc"
     }
 }
 ```

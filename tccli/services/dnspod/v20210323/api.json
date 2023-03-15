@@ -2790,7 +2790,6 @@
           "example": "无",
           "member": "PackageDetailItem",
           "name": "Info",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2799,7 +2798,6 @@
           "example": "无",
           "member": "string",
           "name": "LevelMap",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2816,7 +2814,6 @@
       "document": "DescribeRecordExistExceptDefaultNS请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "dnspod.cn",
           "member": "string",
@@ -2825,7 +2822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "1923",
           "member": "uint64",
@@ -2844,7 +2840,6 @@
           "example": "true",
           "member": "bool",
           "name": "Exist",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3733,7 +3728,6 @@
       "document": "DescribeVASStatistic请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名ID",
           "example": "54863243",
           "member": "uint64",
@@ -3752,7 +3746,6 @@
           "example": "无",
           "member": "VASStatisticItem",
           "name": "VASList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

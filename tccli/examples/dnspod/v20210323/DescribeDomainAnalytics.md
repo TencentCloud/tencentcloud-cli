@@ -15,269 +15,137 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "AliasData": [
-            {
-                "Data": [
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 0,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 1,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 2,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 3,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 4,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 5,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 6,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 7,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 8,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 9,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 10,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 11,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 12,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 13,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 14,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 15,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 16,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 17,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 18,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 19,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 20,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 21,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 22,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": 23,
-                        "Num": 0
-                    }
-                ],
-                "Info": {
-                    "DnsFormat": "HOUR",
-                    "DnsTotal": 0,
-                    "Domain": "example.comalias.com",
-                    "EndDate": "2022-06-14",
-                    "StartDate": "2022-06-14"
-                }
-            }
-        ],
+        "AliasData": [],
         "Data": [
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 0,
-                "Num": 140
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 1,
-                "Num": 136
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 2,
-                "Num": 134
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 3,
-                "Num": 126
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 4,
-                "Num": 147
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 5,
-                "Num": 125
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 6,
-                "Num": 121
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 7,
-                "Num": 120
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 8,
-                "Num": 133
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 9,
-                "Num": 100
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 10,
-                "Num": 114
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 11,
-                "Num": 139
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 12,
-                "Num": 114
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 13,
-                "Num": 114
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 14,
-                "Num": 141
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 15,
-                "Num": 115
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 16,
-                "Num": 116
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 17,
-                "Num": 103
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 18,
-                "Num": 107
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 19,
-                "Num": 107
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 20,
-                "Num": 106
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 21,
-                "Num": 131
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 22,
-                "Num": 120
+                "Num": 0
             },
             {
-                "DateKey": "20220614",
+                "DateKey": "20221201",
                 "HourKey": 23,
-                "Num": 131
+                "Num": 0
             }
         ],
         "Info": {
             "DnsFormat": "HOUR",
-            "DnsTotal": 2940,
-            "Domain": "example.com",
-            "EndDate": "2022-06-14",
-            "StartDate": "2022-06-14"
-        }
+            "DnsTotal": 8358,
+            "Domain": "zhaodapian.com",
+            "EndDate": "2022-12-01",
+            "StartDate": "2022-12-01"
+        },
+        "RequestId": "e0815831-4978-445e-b524-746df0069d39"
     }
 }
 ```

@@ -162,7 +162,7 @@
     ],
     "CreateLiveTranscodeTemplate": [
       {
-        "document": "",
+        "document": "CreateLiveTranscodeTemplate 例子。",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Profile\": \"main\",\n    \"AudioBitrate\": \"500\",\n    \"Rotate\": \"0\",\n    \"Description\": \"test\",\n    \"TemplateName\": \"900m\",\n    \"VideoBitrate\": \"900\",\n    \"Vcodec\": \"h264\",\n    \"Height\": \"250\",\n    \"Width\": \"250\",\n    \"NeedAudio\": \"1\",\n    \"FpsToOrig\": \"0\",\n    \"Fps\": \"30\",\n    \"BitrateToOrig\": \"0\",\n    \"HeightToOrig\": \"0\",\n    \"NeedVideo\": \"1\",\n    \"Gop\": \"3\",\n    \"Acodec\": \"aac\"\n}",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
@@ -986,7 +986,7 @@
     ],
     "ModifyLiveTranscodeTemplate": [
       {
-        "document": "",
+        "document": "ModifyLiveTranscodeTemplate 例子。",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Profile\": \"main\",\n    \"AudioBitrate\": \"600\",\n    \"Rotate\": \"0\",\n    \"Description\": \"test\",\n    \"VideoBitrate\": \"1500\",\n    \"Vcodec\": \"h265\",\n    \"Height\": \"240\",\n    \"Width\": \"250\",\n    \"NeedAudio\": \"1\",\n    \"FpsToOrig\": \"0\",\n    \"Fps\": \"30\",\n    \"TemplateId\": \"1001\",\n    \"BitrateToOrig\": \"0\",\n    \"HeightToOrig\": \"0\",\n    \"NeedVideo\": \"1\",\n    \"Gop\": \"3\",\n    \"Acodec\": \"aac\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"

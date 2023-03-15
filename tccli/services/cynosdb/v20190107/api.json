@@ -3865,6 +3865,15 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "实例网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceNetInfo",
+          "name": "InstanceNetInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6067,7 +6076,6 @@
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为 20，最大值为 100",
           "example": "0",
           "member": "int64",
@@ -6076,7 +6084,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "记录偏移量，默认值为0",
           "example": "0",
           "member": "int64",
@@ -6085,7 +6092,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "排序字段，取值范围：\n<li> CREATETIME：创建时间</li>\n<li> PERIODENDTIME：过期时间</li>",
           "example": "xx",
           "member": "string",
@@ -6094,7 +6100,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序类型，取值范围：\n<li> ASC：升序排序 </li>\n<li> DESC：降序排序 </li>",
           "example": "xx",
           "member": "string",
@@ -6103,7 +6108,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
           "example": "无",
           "member": "QueryFilter",
@@ -6112,7 +6116,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "引擎类型：目前支持“MYSQL”， “POSTGRESQL”",
           "example": "xx",
           "member": "string",
@@ -6121,7 +6124,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例状态, 可选值:\ncreating 创建中\nrunning 运行中\nisolating 隔离中\nisolated 已隔离\nactivating 恢复中\nofflining 下线中\nofflined 已下线",
           "example": "xx",
           "member": "string",
@@ -6130,7 +6132,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例id列表",
           "example": "[\"xx\"]",
           "member": "string",
@@ -6149,7 +6150,6 @@
           "example": "26",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6158,7 +6158,6 @@
           "example": "无",
           "member": "CynosdbInstance",
           "name": "InstanceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7171,6 +7170,111 @@
         }
       ],
       "usage": "in"
+    },
+    "InstanceNetInfo": {
+      "document": "实例网络信息",
+      "members": [
+        {
+          "document": "网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ro",
+          "member": "string",
+          "name": "InstanceGroupType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "接入组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdbmysql-grp-qwertyui",
+          "member": "string",
+          "name": "InstanceGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-qwerty",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-qwerty",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "网络类型, 0-基础网络, 1-vpc网络, 2-黑石网络\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NetType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "私有网络IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123.123.123.1",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "私有网络端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "int64",
+          "name": "Vport",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外网域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa.com",
+          "member": "string",
+          "name": "WanDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外网Ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12.12.23.3",
+          "member": "string",
+          "name": "WanIP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外网端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
+          "member": "int64",
+          "name": "WanPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外网开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "init",
+          "member": "string",
+          "name": "WanStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "InstanceSpec": {
       "document": "实例可售卖规格详细信息，创建实例时Cpu/Memory确定实例规格，存储可选大小为[MinStorageSize,MaxStorageSize]",

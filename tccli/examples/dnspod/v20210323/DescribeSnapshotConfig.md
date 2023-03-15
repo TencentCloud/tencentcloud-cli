@@ -1,6 +1,6 @@
 **Example 1: 查询解析快照配置**
 
- 
+ 查询解析快照配置
 
 Input: 
 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "RequestId": "567ca259-aff2-449b-a3af-c8cf7ee32f91",
         "SnapshotConfig": {
-            "Id": "1111",
+            "Id": "1112",
             "DomainId": "121212",
             "Status": "enable",
             "Config": "monthly",

@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli yinsuda BatchDescribeKTVMusicDetails --cli-unfold-argument  \
-    --UserId xx \
+    --UserId userid1 \
     --MusicIds mid-47n6qwV1 testdddd \
-    --AppName xx
+    --AppName AppName1 \
+    --PlayScene Live
 ```
 
 Output: 
@@ -52,11 +53,20 @@ Output:
                     "SingerSet": [
                         "等什么君(邓寓君)",
                         "FOX胡天渝"
-                    ]
+                    ],
+                    "RecommendType": "Other"
                 },
                 "LyricsUrl": "https://mcetest.ame.qcloud.com/download?sign=xxxxx&source=%2FLyrics%2F47n6qwV1%2Fsubtitle.vtt&t=1653897260&us=1300054767_test_1111",
                 "MidiUrl": "https://mcetest.ame.qcloud.com/download?sign=xxxx&source=%2FPitch%2F47n6qwV1%2Fmusic.pitch&t=1653897260&us=1300054767_test_1111",
-                "PlayToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJZCI6MTMwMDA1NDc2NywiQXBwTmFtZSI6InRlc3QiLCJDdXJUaW1lIjowLCJFeHBpcmVUaW1lIjoxNjUzOTA0NDYwLCJNdXNpY0lkIjoibWlkLTQ3bjZxd1YxIiwiVXNlcklkIjoiMTExMSJ9.xxxxxiwlc"
+                "PlayToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJZCI6MTMwMDA1NDc2NywiQXBwTmFtZSI6InRlc3QiLCJDdXJUaW1lIjowLCJFeHBpcmVUaW1lIjoxNjUzOTA0NDYwLCJNdXNpY0lkIjoibWlkLTQ3bjZxd1YxIiwiVXNlcklkIjoiMTExMSJ9.xxxxxiwlc",
+                "GenreSet": [
+                    "fg"
+                ],
+                "PreludeInterval": 12,
+                "BPMInfo": {
+                    "Type": "axx",
+                    "Value": 12
+                }
             }
         ],
         "NotExistMusicIdSet": [

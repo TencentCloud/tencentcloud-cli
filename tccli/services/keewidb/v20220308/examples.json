@@ -80,6 +80,14 @@
         "title": "示例1"
       }
     ],
+    "DescribeInstanceDealDetail": [
+      {
+        "document": "新购订单发货中",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDealDetail\n<公共请求参数>\n\n{\n    \"DealIds\": [\n        \"138172054\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DealDetails\": [\n            {\n                \"CreatTime\": \"2023-03-13 11:28:10\",\n                \"Creater\": \"100xxxxxxxxx\",\n                \"DealId\": \"138172054\",\n                \"DealName\": \"20230313xxxxxxxxxxxxxxx\",\n                \"Description\": \"发货中\",\n                \"EndTime\": \"\",\n                \"GoodsNum\": 1,\n                \"InstanceIds\": [\n                    \"kee-w7xxxxxx\"\n                ],\n                \"OverdueTime\": \"2023-03-28 11:28:09\",\n                \"Price\": 0,\n                \"Status\": 3,\n                \"ZoneId\": 100006\n            }\n        ],\n        \"RequestId\": \"b835a553-b98c-49bd-be22-e3e1ce465438\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeInstanceNodeInfo": [
       {
         "document": "",

@@ -1587,6 +1587,24 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "nfc重复计费requestId列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "NFCRequestIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "nfc重复计费计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NFCBillingCounts",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

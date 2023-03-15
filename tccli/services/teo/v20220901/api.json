@@ -715,8 +715,7 @@
       "document": "精准防护条件",
       "members": [
         {
-          "default": "",
-          "document": "匹配字段，取值有：\n<li>host：请求域名；</li>\n<li>sip：客户端IP；</li>\n<li>ua：User-Agent；</li>\n<li>cookie：会话 Cookie；</li>\n<li>cgi：CGI 脚本；</li>\n<li>xff：XFF 扩展头部；</li>\n<li>url：请求 URL；</li>\n<li>accept：请求内容类型；</li>\n<li>method：请求方式；</li>\n<li>header：请求头部；</li>\n<li>app_proto：应用层协议；</li>\n<li>sip_proto：网络层协议。</li>",
+          "document": "匹配字段，取值有：\n<li>host：请求域名；</li>\n<li>sip：客户端IP；</li>\n<li>ua：User-Agent；</li>\n<li>cookie：会话 Cookie；</li>\n<li>cgi：CGI 脚本；</li>\n<li>xff：XFF 扩展头部；</li>\n<li>url：请求 URL；</li>\n<li>accept：请求内容类型；</li>\n<li>method：请求方式；</li>\n<li>header：请求头部；</li>\n<li>app_proto：应用层协议；</li>\n<li>sip_proto：网络层协议；</li>\n<li>uabot：UA 特征规则，仅bot自定义规则可用；</li>\n<li>idcid：IDC 规则，仅bot自定义规则可用；</li>\n<li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>\n<li>portrait：画像分析，仅bot自定义规则可用；</li>\n<li>header_seq：请求头顺序，仅bot自定义规则可用。</li>",
           "example": "host",
           "member": "string",
           "name": "MatchFrom",
@@ -725,7 +724,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "匹配字符串。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。",
           "example": "a",
           "member": "string",
@@ -735,7 +733,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "匹配关系，取值有：\n<li>equal：字符串等于；</li>\n<li>not_equal：数值不等于；</li>\n<li>include：字符包含；</li>\n<li>not_include：字符不包含；</li>\n<li>match：ip匹配；</li>\n<li>not_match：ip不匹配；</li>\n<li>include_area：地域包含；</li>\n<li>is_empty：存在字段但值为空；</li>\n<li>not_exists：不存在关键字段；</li>\n<li>regexp：正则匹配；</li>\n<li>len_gt：数值大于；</li>\n<li>len_lt：数值小于；</li>\n<li>len_eq：数值等于；</li>\n<li>match_prefix：前缀匹配；</li>\n<li>match_suffix：后缀匹配；</li>\n<li>wildcard：通配符。</li>",
           "example": "include",
           "member": "string",
@@ -745,7 +742,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "匹配内容。",
           "example": "a",
           "member": "string",
@@ -1438,7 +1434,6 @@
       "document": "安全Bot配置",
       "members": [
         {
-          "default": "",
           "document": "bot开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "off",
           "member": "string",
@@ -1448,7 +1443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "通用详细基础规则。如果为null，默认使用历史配置。",
           "example": "{}",
           "member": "BotManagedRule",
@@ -1458,7 +1452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户画像规则。如果为null，默认使用历史配置。",
           "example": "{}",
           "member": "BotPortraitRule",
@@ -1468,13 +1461,54 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Bot智能分析。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "IntelligenceRule",
           "name": "IntelligenceRule",
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Bot自定义规则。如果为null，默认使用历史配置。",
+          "example": "[]",
+          "member": "BotUserRule",
+          "name": "BotUserRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Bot托管定制策略，入参可不填，仅出参使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BotUserRule",
+          "name": "Customizes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BotExtendAction": {
+      "document": "Bot扩展处置方式，多处置动作组合。",
+      "members": [
+        {
+          "document": "处置动作，取值有：\n<li>monitor：观察；</li>\n<li>trans：放行；</li>\n<li>alg：JavaScript挑战；</li>\n<li>captcha：托管挑战；</li>\n<li>random：随机，按照ExtendActions分配处置动作和比例；</li>\n<li>silence：静默；</li>\n<li>shortdelay：短时响应；</li>\n<li>longdelay：长时响应。</li>",
+          "example": "monitor",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "处置方式的触发概率，范围0-100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Percent",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -1615,6 +1649,102 @@
           "example": "[1,2]",
           "member": "int64",
           "name": "DropManagedIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BotUserRule": {
+      "document": "Bot自定义规则",
+      "members": [
+        {
+          "document": "规则名，只能以英文字符，数字，下划线组合，且不能以下划线开头。",
+          "example": "rule",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "处置动作，取值有：\n<li>drop：拦截；</li>\n<li>monitor：观察；</li>\n<li>trans：放行；</li>\n<li>alg：JavaScript挑战；</li>\n<li>captcha：托管挑战；</li>\n<li>silence：静默；</li>\n<li>shortdelay：短时响应；</li>\n<li>longdelay：长时响应。</li>",
+          "example": "drop",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则状态，取值有：\n<li>on：生效；</li>\n<li>off：不生效。</li>默认on生效。",
+          "example": "on",
+          "member": "string",
+          "name": "RuleStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则详情。",
+          "example": "无",
+          "member": "AclCondition",
+          "name": "AclConditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则权重，取值范围0-100。",
+          "example": "1",
+          "member": "int64",
+          "name": "RulePriority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则id。仅出参使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "随机处置的处置方式及占比，非随机处置可不填暂不支持。",
+          "example": "drop",
+          "member": "BotExtendAction",
+          "name": "ExtendActions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "过滤词，取值有：\n<li>sip：客户端ip。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"sip\"",
+          "member": "string",
+          "name": "FreqFields",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "统计范围，字段为null时，代表source_to_eo。取值有：\n<li>source_to_eo：（响应）源站到EdgeOne。</li>\n<li>client_to_eo：（请求）客户端到EdgeOne；</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "source_to_eo",
+          "member": "string",
+          "name": "FreqScope",
           "required": false,
           "type": "list",
           "value_allowed_null": true

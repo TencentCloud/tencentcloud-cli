@@ -536,7 +536,7 @@
     ],
     "ModifyInstancesRenewFlag": [
       {
-        "document": "",
+        "document": "修改实例的续费标识",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=ModifyInstancesRenewFlag\n&InstanceIds.0=lhins-ruy9d2tw\n&RenewFlag=NOTIFY_AND_AUTO_RENEW\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4804b3a2-0c0f-4900-a39a-76885a17d4bb\"\n    }\n}",
         "title": "修改实例的续费标识"

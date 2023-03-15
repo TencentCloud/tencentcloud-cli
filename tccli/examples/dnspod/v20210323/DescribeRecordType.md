@@ -1,6 +1,6 @@
 **Example 1: 获取等级允许的记录类型**
 
- 
+ 获取等级允许的记录类型
 
 Input: 
 
@@ -20,7 +20,6 @@ Output:
             "MX",
             "TXT",
             "NS",
-            "AAAA",
             "SPF",
             "SRV",
             "CAA",

@@ -1,6 +1,6 @@
 **Example 1: 请求示例**
 
-
+CreateLiveTranscodeTemplate 例子。
 
 Input: 
 

@@ -2547,7 +2547,6 @@
       "document": "统一的命名空间信息",
       "members": [
         {
-          "default": "",
           "document": "命名空间标示",
           "example": "无",
           "member": "string",
@@ -2557,7 +2556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "命名空间名称",
           "example": "无",
           "member": "string",
@@ -2567,7 +2565,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "命名空间值",
           "example": "无",
           "member": "string",
@@ -2577,7 +2574,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品名称",
           "example": "无",
           "member": "string",
@@ -2587,7 +2583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "配置信息",
           "example": "无",
           "member": "string",
@@ -2597,7 +2592,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "支持地域列表",
           "example": "无",
           "member": "string",
@@ -2607,7 +2601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "排序Id",
           "example": "无",
           "member": "int64",
@@ -2617,7 +2610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Dashboard中的唯一表示",
           "example": "无",
           "member": "string",
@@ -11385,7 +11377,6 @@
       "document": "DescribeStatisticData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "所属模块，固定值，为monitor",
           "example": "monitor",
           "member": "string",
@@ -11394,16 +11385,14 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "命名空间，目前只支持QCE/TKE",
-          "example": "QCE/TKE",
+          "document": "命名空间，目前只支持QCE/TKE2",
+          "example": "QCE/TKE2",
           "member": "string",
           "name": "Namespace",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "指标名列表",
           "example": "[\"K8sPodCpuCoreUsed\"]",
           "member": "string",
@@ -11412,7 +11401,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "维度条件，操作符支持=、in",
           "example": "无",
           "member": "MidQueryCondition",
@@ -11421,7 +11409,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "统计粒度。默认取值为300，单位为s；可选的值为60、300、3600、86400\n受存储时长限制，统计粒度与统计的时间范围有关：\n60s：EndTime-StartTime<12小时，且StartTime距当前时间不能超过15天；\n300s：EndTime-StartTime<3天，且StartTime距当前时间不能超过31天；\n3600s：EndTime-StartTime<30天，且StartTime距当前时间不能超过93天；\n86400s：EndTime-StartTime<186天，且StartTime距当前时间不能超过186天。",
           "example": "300",
           "member": "uint64",
@@ -11430,7 +11417,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "起始时间，默认为当前时间，如2020-12-08T19:51:23+08:00",
           "example": "2020-11-24T15:15:50+08:00",
           "member": "string",
@@ -11439,7 +11425,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束时间，默认为当前时间，如2020-12-08T19:51:23+08:00",
           "example": "2020-11-24T15:25:50+08:00",
           "member": "string",
@@ -11448,7 +11433,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "按指定维度groupBy",
           "example": "[\"K8sPodCpuCoreUsed\"]",
           "member": "string",
@@ -11467,7 +11451,6 @@
           "example": "300",
           "member": "uint64",
           "name": "Period",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11476,7 +11459,6 @@
           "example": "2020-11-24 15:15:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11485,7 +11467,6 @@
           "example": "2020-11-24 15:25:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11494,7 +11475,6 @@
           "example": "无",
           "member": "MetricData",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

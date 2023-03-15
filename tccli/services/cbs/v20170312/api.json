@@ -1626,7 +1626,6 @@
       "document": "DescribeDiskConfigQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "查询类别，取值范围。<br><li>INQUIRY_CBS_CONFIG：查询云盘配置列表<br><li>INQUIRY_CVM_CONFIG：查询云盘与实例搭配的配置列表。",
           "example": "INQUIRY_CVM_CONFIG",
           "member": "string",
@@ -1635,7 +1634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "付费模式。取值范围：<br><li>PREPAID：预付费<br><li>POSTPAID_BY_HOUR：后付费。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
@@ -1644,7 +1642,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)",
           "example": "[\"S3\\n\"]",
           "member": "string",
@@ -1653,7 +1650,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。",
           "example": "[\"CLOUD_PREMIUM\"]",
           "member": "string",
@@ -1662,7 +1658,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。",
           "example": "[\"ap-guangzhou-2\\n\"]",
           "member": "string",
@@ -1671,7 +1666,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例内存大小。",
           "example": "4",
           "member": "uint64",
@@ -1680,7 +1674,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。",
           "example": "DATA_DISK",
           "member": "string",
@@ -1689,7 +1682,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例CPU核数。",
           "example": "2",
           "member": "uint64",
@@ -1708,7 +1700,6 @@
           "example": "无",
           "member": "DiskConfig",
           "name": "DiskConfigSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

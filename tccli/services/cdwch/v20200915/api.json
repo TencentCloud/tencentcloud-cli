@@ -49,6 +49,13 @@
       "output": "DescribeInstanceResponse",
       "status": "online"
     },
+    "DescribeInstanceClusters": {
+      "document": "集群vcluster列表",
+      "input": "DescribeInstanceClustersRequest",
+      "name": "vcluster列表",
+      "output": "DescribeInstanceClustersResponse",
+      "status": "online"
+    },
     "DescribeInstanceKeyValConfigs": {
       "document": "在集群详情页面获取所有参数列表",
       "input": "DescribeInstanceKeyValConfigsRequest",
@@ -378,6 +385,32 @@
           "name": "FilePath",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterInfo": {
+      "document": "clickhouse vcluster信息",
+      "members": [
+        {
+          "default": "",
+          "document": "vcluster名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前cluster的IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "NodeIps",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -812,6 +845,42 @@
           "example": "无",
           "member": "ClusterConfigsInfoFromEMR",
           "name": "ClusterConfList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceClustersRequest": {
+      "document": "DescribeInstanceClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceClustersResponse": {
+      "document": "DescribeInstanceClusters返回参数结构体",
+      "members": [
+        {
+          "document": "cluster列表",
+          "example": "无",
+          "member": "ClusterInfo",
+          "name": "Clusters",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2173,7 +2242,7 @@
           "type": "int"
         },
         {
-          "document": "同步元数据节点IP （uip）",
+          "document": "同步元数据节点IP （uip），扩容的时候必填",
           "example": "10.0.20.163",
           "member": "string",
           "name": "ScaleOutNodeIp",
@@ -2181,7 +2250,7 @@
           "type": "string"
         },
         {
-          "document": "缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔",
+          "document": "缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填",
           "example": "ha集群:[\"10.0.20.163,10.0.20.163\"],非ha集群:[\"10.0.20.163\"]",
           "member": "string",
           "name": "ReduceShardInfo",

@@ -421,8 +421,7 @@
       "document": "录制音频转码参数。",
       "members": [
         {
-          "default": "",
-          "document": "音频采样率:\n1：48000Hz（默认）;\n2：44100Hz\n3：16000Hz。",
+          "document": "音频采样率枚举值:(注意1 代表48000HZ, 2 代表44100HZ, 3 代表16000HZ)\n1：48000Hz（默认）;\n2：44100Hz\n3：16000Hz。",
           "example": "1",
           "member": "uint64",
           "name": "SampleRate",
@@ -431,8 +430,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "声道数:\n1：单声道;\n2：双声道（默认）。",
+          "document": "声道数枚举值:\n1：单声道;\n2：双声道（默认）。",
           "example": "2",
           "member": "uint64",
           "name": "Channel",
@@ -441,7 +439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "音频码率: 取值范围[32000, 128000] ，单位bps，默认64000bps。",
           "example": "64000",
           "member": "uint64",
@@ -5653,8 +5650,7 @@
       "document": "水印布局参数",
       "members": [
         {
-          "default": "",
-          "document": "水印类型，0为图片（默认），1为文字（暂不支持）。",
+          "document": "水印类型，0为图片（默认），1为文字，2为时间戳。",
           "example": "0",
           "member": "uint64",
           "name": "WaterMarkType",
@@ -5663,7 +5659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "水印为图片时的参数列表，水印为图片时校验必填。",
           "example": "无",
           "member": "WaterMarkImage",
@@ -5671,6 +5666,102 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "水印为文字时的参数列表，水印为文字时校验必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WaterMarkChar",
+          "name": "WaterMarkChar",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "水印为时间戳时的参数列表，水印为时间戳时校验必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WaterMarkTimestamp",
+          "name": "WaterMarkTimestamp",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "WaterMarkChar": {
+      "document": "自定义文字水印数据结构",
+      "members": [
+        {
+          "document": "文字水印的起始坐标Y值，从左上角开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Top",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文字水印的起始坐标X值，从左上角开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Left",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文字水印的宽度，单位像素值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文字水印的高度，单位像素值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "水印文字的内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "李专家",
+          "member": "string",
+          "name": "Chars",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "水印文字的大小，单位像素，默认14\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14",
+          "member": "uint64",
+          "name": "FontSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "水印文字的颜色，默认白色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0xFFFFFF",
+          "member": "string",
+          "name": "FontColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "水印文字的背景色，为空代表背景透明，默认为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0xbbccbb",
+          "member": "string",
+          "name": "BackGroundColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -5793,6 +5884,30 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "WaterMarkTimestamp": {
+      "document": "时间戳水印数据结构",
+      "members": [
+        {
+          "document": "时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Pos",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "显示时间戳的时区，默认东八区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "uint64",
+          "name": "TimeZone",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
