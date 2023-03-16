@@ -358,7 +358,7 @@
       "status": "online"
     },
     "CreateHaVip": {
-      "document": "本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）",
+      "document": "本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）。",
       "input": "CreateHaVipRequest",
       "name": "创建HAVIP",
       "output": "CreateHaVipResponse",
@@ -6986,7 +6986,6 @@
       "document": "CreateAndAttachNetworkInterface请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
           "example": "vpc-m0c2kcun",
           "member": "string",
@@ -6996,7 +6995,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡名称，最大长度不能超过60个字节。",
           "example": "eni-ed3452de",
           "member": "string",
@@ -7006,7 +7004,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。",
           "example": "subnet-76r802pg",
           "member": "string",
@@ -7016,7 +7013,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云服务器实例ID。",
           "example": "ins-12345678",
           "member": "string",
@@ -7026,7 +7022,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指定的内网IP信息，单次最多指定10个。",
           "example": "10.0.0.0",
           "member": "PrivateIpAddressSpecification",
@@ -7036,8 +7031,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。",
+          "document": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。",
           "example": "10.0.0.2",
           "member": "uint64",
           "name": "SecondaryPrivateIpAddressCount",
@@ -7046,7 +7040,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指定绑定的安全组，例如：['sg-1dd51d']。",
           "example": "--",
           "member": "string",
@@ -7056,7 +7049,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡描述，可任意命名，但不得超过60个字符。",
           "example": "uiui",
           "member": "string",
@@ -7066,8 +7058,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
           "example": "--",
           "member": "Tag",
           "name": "Tags",
@@ -7076,7 +7067,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "绑定类型：0 标准型 1 扩展型。",
           "example": "1",
           "member": "uint64",
@@ -7086,7 +7076,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网卡trunking模式设置，Enable-开启，Disable--关闭，默认关闭。",
           "example": "Enable",
           "member": "string",
@@ -7096,11 +7085,19 @@
           "visibility": 2
         },
         {
-          "default": "",
-          "document": "是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false",
+          "document": "是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false。",
           "example": "true",
           "member": "bool",
           "name": "IsRdma",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
+        },
+        {
+          "document": "是否刷新子网卡Havip的开关。",
+          "example": "true",
+          "member": "bool",
+          "name": "FlushSubEniHavipFlag",
           "required": false,
           "type": "bool",
           "visibility": 2
@@ -7116,7 +7113,6 @@
           "example": "--",
           "member": "NetworkInterface",
           "name": "NetworkInterface",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -8027,6 +8023,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "`HAVIP`所在弹性网卡`ID`。",
+          "example": "eni-ph0075l1",
+          "member": "string",
+          "name": "NetworkInterfaceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8776,7 +8782,6 @@
       "document": "CreateNetworkInterface请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
           "example": "vpc-0akbol5v",
           "member": "string",
@@ -8786,7 +8791,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡名称，最大长度不能超过60个字节。",
           "example": "TestNIC",
           "member": "string",
@@ -8796,7 +8800,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。",
           "example": "subnet-76r802pg",
           "member": "string",
@@ -8806,7 +8809,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡描述，可任意命名，但不得超过60个字符。",
           "example": "TestDesc",
           "member": "string",
@@ -8816,8 +8818,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。",
+          "document": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。",
           "example": "1",
           "member": "uint64",
           "name": "SecondaryPrivateIpAddressCount",
@@ -8826,7 +8827,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指定绑定的安全组，例如：['sg-1dd51d']。",
           "example": "[\"sg-05bb4upy\\r\\n\"]",
           "member": "string",
@@ -8836,7 +8836,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指定的内网IP信息，单次最多指定10个。",
           "example": "无",
           "member": "PrivateIpAddressSpecification",
@@ -8846,7 +8845,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
           "example": "无",
           "member": "Tag",
@@ -8856,7 +8854,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网卡trunking模式设置，Enable-开启，Disable--关闭，默认关闭。",
           "example": "Enable",
           "member": "string",
@@ -8866,11 +8863,19 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false",
           "example": "true",
           "member": "bool",
           "name": "IsRdma",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
+        },
+        {
+          "document": "是否刷新子网卡Havip的开关",
+          "example": "true",
+          "member": "bool",
+          "name": "FlushSubEniHavipFlag",
           "required": false,
           "type": "bool",
           "visibility": 2
@@ -8886,7 +8891,6 @@
           "example": "无",
           "member": "NetworkInterface",
           "name": "NetworkInterface",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -31497,49 +31501,76 @@
       "document": "ModifyNetworkInterfaceAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID，例如：eni-pxir56ns。",
           "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡名称，最大长度不能超过60个字节。",
           "example": "NewName",
           "member": "string",
           "name": "NetworkInterfaceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡描述，可任意命名，但不得超过60个字符。",
           "example": "test",
           "member": "string",
           "name": "NetworkInterfaceDescription",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "指定绑定的安全组，例如:['sg-1dd51d']。",
           "example": "-",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "网卡trunking模式设置，Enable-开启，Disable--关闭，默认关闭。",
           "example": "Enable",
           "member": "string",
           "name": "TrunkingFlag",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "是否刷新子网卡Havip的开关。",
+          "example": "True",
+          "member": "bool",
+          "name": "FlushSubEniHavipFlag",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
+        },
+        {
+          "document": "安全组业务类型。",
+          "example": "-",
+          "member": "uint64",
+          "name": "BusinessType",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "document": "是否支持安全组统计输出。",
+          "example": "false",
+          "member": "bool",
+          "name": "SecurityGroupStatisticsVisible",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
         }
       ],
       "type": "object"

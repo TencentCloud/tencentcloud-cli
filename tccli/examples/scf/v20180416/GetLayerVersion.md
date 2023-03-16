@@ -1,13 +1,13 @@
 **Example 1: 获取层版本详情**
 
-
+获取层版本详情
 
 Input: 
 
 ```
 tccli scf GetLayerVersion --cli-unfold-argument  \
-    --LayerName <LayerName> \
-    --LayerVersion <LayerVersion>
+    --LayerName abc \
+    --LayerVersion 0
 ```
 
 Output: 

@@ -1,13 +1,13 @@
 **Example 1: 获取层版本列表**
 
-
+获取层版本列表
 
 Input: 
 
 ```
 tccli scf ListLayerVersions --cli-unfold-argument  \
-    --LayerName <LayerName> \
-    --CompatibleRuntime <CompatibleRuntime>
+    --LayerName abc \
+    --CompatibleRuntime abc
 ```
 
 Output: 

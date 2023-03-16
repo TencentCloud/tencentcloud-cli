@@ -1,3 +1,91 @@
+# Release 3.0.724.1
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 41 次发布
+
+发布时间：2023-03-16 01:21:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateMetaDatabase](http://document.tencentcloudapi.woa.com/document/product/1342/77266)
+
+新增数据结构：
+
+* [MetaDatabaseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#MetaDatabaseInfo)
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 28 次发布
+
+发布时间：2023-03-16 01:45:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSSLStatus](http://document.tencentcloudapi.woa.com/document/product/239/77267)
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 25 次发布
+
+发布时间：2023-03-16 01:47:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Namespace](http://document.tencentcloudapi.woa.com/document/product/583/17244#Namespace)
+
+	* 新增成员：Stamp
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 72 次发布
+
+发布时间：2023-03-16 01:59:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAndAttachNetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/43370)
+
+	* 新增入参：FlushSubEniHavipFlag
+
+* [CreateHaVip](http://document.tencentcloudapi.woa.com/document/product/215/30652)
+
+	* 新增入参：NetworkInterfaceId
+
+* [CreateNetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15818)
+
+	* 新增入参：FlushSubEniHavipFlag
+
+* [ModifyNetworkInterfaceAttribute](http://document.tencentcloudapi.woa.com/document/product/215/15815)
+
+	* 新增入参：FlushSubEniHavipFlag, BusinessType, SecurityGroupStatisticsVisible
+
+
+
+
 # Release 3.0.723.1
 
 ## 费用中心(billing) 版本：2018-07-09
