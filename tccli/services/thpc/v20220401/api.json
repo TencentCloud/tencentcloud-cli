@@ -15,7 +15,7 @@
       "status": "online"
     },
     "AddQueue": {
-      "document": "本接口(AddQueue)用于添加队列到指定集群。",
+      "document": "本接口(AddQueue)用于添加队列到指定集群。\n* 本接口为目前只支持SchedulerType为SLURM的集群。\n* 单个集群中队列数量上限为10个。",
       "input": "AddQueueRequest",
       "name": "添加队列",
       "output": "AddQueueResponse",
@@ -57,7 +57,7 @@
       "status": "online"
     },
     "DeleteQueue": {
-      "document": "本接口(DeleteQueue)用于从指定集群删除队列。\n\n* 删除队列时，需要保证队列内不存在节点。",
+      "document": "本接口(DeleteQueue)用于从指定集群删除队列。\n* 本接口为目前只支持SchedulerType为SLURM的集群。\n\n* 删除队列时，需要保证队列内不存在节点。",
       "input": "DeleteQueueRequest",
       "name": "删除队列",
       "output": "DeleteQueueResponse",
@@ -1303,7 +1303,6 @@
       "document": "DescribeClusterActivities请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID。通过该参数指定需要查询活动历史记录的集群。",
           "example": "hpc-myd8fgsc",
           "member": "string",
@@ -1312,7 +1311,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -1321,7 +1319,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -1340,7 +1337,6 @@
           "example": "无",
           "member": "ClusterActivity",
           "name": "ClusterActivitySet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1349,7 +1345,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1400,7 +1395,6 @@
       "document": "DescribeClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID列表。通过该参数可以指定需要查询信息的集群列表。<br>如果您不指定该参数，则返回Limit数量以内的集群信息。",
           "example": "无",
           "member": "string",
@@ -1409,7 +1403,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -1418,7 +1411,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -1437,7 +1429,6 @@
           "example": "无",
           "member": "ClusterOverview",
           "name": "ClusterSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1446,7 +1437,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

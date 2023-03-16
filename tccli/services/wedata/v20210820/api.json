@@ -19546,7 +19546,6 @@
       "document": "数据质量规则",
       "members": [
         {
-          "default": "",
           "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "uint64",
@@ -19556,7 +19555,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "uint64",
@@ -19566,7 +19564,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据表Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "string",
@@ -19576,7 +19573,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rule1",
           "member": "string",
@@ -19586,7 +19582,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则类型 1.系统模版, 2.自定义模版, 3.自定义SQL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -19596,7 +19591,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则模板Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "uint64",
@@ -19606,7 +19600,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则模板概述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "准确性：表行数，与固定值比较",
           "member": "string",
@@ -19616,7 +19609,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则所属质量维度 1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -19626,7 +19618,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则适用的源数据对象类型（1：常量，2：离线表级，3：离线字段级别）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
@@ -19636,7 +19627,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则适用的源数据对象类型（1：数值，2：字符串）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -19646,7 +19636,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源字段详细类型，INT、STRING\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "int",
           "member": "string",
@@ -19656,9 +19645,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "name",
+          "example": "Name",
           "member": "string",
           "name": "SourceObjectValue",
           "required": false,
@@ -19666,7 +19654,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "检测范围 1.全表, 2.条件扫描\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
@@ -19676,7 +19663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "条件扫描WHERE条件表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dt=1",
           "member": "string",
@@ -19686,7 +19672,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自定义SQL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "select count(*) from person",
           "member": "string",
@@ -19696,7 +19681,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "报警触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CompareRule",
@@ -19706,7 +19690,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "报警触发级别 1.低, 2.中, 3.高\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -19716,7 +19699,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
@@ -19726,7 +19708,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则配置人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "park",
           "member": "string",
@@ -19736,7 +19717,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标库Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "string",
@@ -19746,7 +19726,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标库名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "string",
@@ -19756,7 +19735,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标表Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "string",
@@ -19766,7 +19744,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标表名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "string",
@@ -19776,7 +19753,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标字段过滤条件表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dt=${yyyymmdd}",
           "member": "string",
@@ -19786,7 +19762,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源字段与目标字段关联条件on表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a.age=b.age",
           "member": "string",
@@ -19796,7 +19771,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自定义模版sql表达式参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RuleFieldConfig",
@@ -19806,7 +19780,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否关联多表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -19816,13 +19789,66 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否where参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "WhereFlag",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "模版原始SQL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select count(1) from ${table_1}",
+          "member": "string",
+          "name": "TemplateSql",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "模版子维度：0.父维度类型,1.一致性: 枚举范围一致性,2.一致性：数值范围一致性,3.一致性：字段数据相关性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubQualityDim",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TargetObjectType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则适用的目标数据对象类型（1：数值，2：字符串）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TargetObjectDataType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目标字段详细类型，INT、STRING\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "INT",
+          "member": "string",
+          "name": "TargetObjectDataTypeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目标字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "string",
+          "name": "TargetObjectValue",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

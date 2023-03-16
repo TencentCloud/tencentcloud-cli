@@ -86,12 +86,36 @@
         "title": "获取标签列表"
       }
     ],
+    "DescribeLiveVipTradeInfos": [
+      {
+        "document": "获取直播会员充值记录信息列表",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveVipTradeInfos\n<公共请求参数>\n\n{\n    \"AppName\": \"test\",\n    \"StartTime\": \"2023-01-22T00:00:00+00:00\",\n    \"EndTime\": \"2023-02-22T00:00:00+00:00\",\n    \"TradeSerialNos\": [\n        \"no1\"\n    ],\n    \"UserIds\": [\n        \"user1\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"LiveVipTradeInfoSet\": [\n            {\n                \"TradeSerialNo\": \"no1\",\n                \"AppName\": \"test1\",\n                \"UserId\": \"1\",\n                \"RoomId\": \"12\",\n                \"VipDays\": 31,\n                \"Status\": \"Success\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取直播会员充值记录信息列表"
+      }
+    ],
+    "DescribeUserInfo": [
+      {
+        "document": "获取用户详细信息",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveVipUserInfo\n<公共请求参数>\n\n{\n    \"AppName\": \"test\",\n    \"UserId\": \"111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserInfo\": {\n            \"AppName\": \"test\",\n            \"UserId\": \"111\",\n            \"LiveVipUserInfo\": {\n                \"RoomId\": \"321\",\n                \"LiveVipEndTime\": \"2020-09-22T00:00:00+00:00\",\n                \"LiveVipStatus\": \"Valid\"\n            },\n            \"UserType\": \"Normal\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取用户信息"
+      }
+    ],
     "DestroyKTVRobot": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyKTVRobot\n<公共请求参数>\n\n{\n    \"RobotId\": \"125001-robot-xxxxx1\",\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "销毁机器人"
+      }
+    ],
+    "RechargeLiveVip": [
+      {
+        "document": "为用户充值直播会员",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RechargeLiveVip\n<公共请求参数>\n\n{\n    \"AppName\": \"test\",\n    \"UserId\": \"test\",\n    \"TradeSerialNo\": \"TradeSerialNo1\",\n    \"RoomId\": \"123\",\n    \"VipDays\": 31\n}",
+        "output": "{\n    \"Response\": {\n        \"LiveVipUserInfo\": {\n            \"LiveVipEndTime\": \"2023-07-10T18:17:37+08:00\",\n            \"LiveVipStatus\": \"LiveVip\",\n            \"RoomId\": \"123\"\n        },\n        \"RequestId\": \"RequestId\"\n    }\n}",
+        "title": "充值直播会员"
       }
     ],
     "SearchKTVMusics": [

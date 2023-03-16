@@ -343,6 +343,13 @@
       "output": "DescribeReplicationGroupResponse",
       "status": "online"
     },
+    "DescribeSSLStatus": {
+      "document": "查询SSL状态",
+      "input": "DescribeSSLStatusRequest",
+      "name": "查询SSL状态",
+      "output": "DescribeSSLStatusResponse",
+      "status": "online"
+    },
     "DescribeSlowLog": {
       "document": "本接口（DescribeSlowLog）查询实例慢查询记录。",
       "input": "DescribeSlowLogRequest",
@@ -4250,6 +4257,78 @@
           "name": "Groups",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSSLStatusRequest": {
+      "document": "DescribeSSLStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-deindi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSSLStatusResponse": {
+      "document": "DescribeSSLStatus返回参数结构体",
+      "members": [
+        {
+          "document": "证书下载地址",
+          "example": "https://",
+          "member": "string",
+          "name": "CertDownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书下载链接到期时间",
+          "example": "2022-05-31 10:47:29",
+          "member": "string",
+          "name": "UrlExpiredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例SSL配置状态， true：开启 false：关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "SSLConfig",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例SSL特性支持， true：支持 false：不支持（小版本升级后才能支持SSL特性）",
+          "example": "false",
+          "member": "bool",
+          "name": "FeatureSupport",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SSL配置状态，1: 配置中 2：配置成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

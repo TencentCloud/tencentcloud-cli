@@ -286,7 +286,7 @@
     ],
     "CreateAndAttachNetworkInterface": [
       {
-        "document": "",
+        "document": "创建弹性网卡并绑定云服务器",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndAttachNetworkInterface\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"InstanceId\": \"ins-12345678\",\n    \"PrivateIpAddresses\": [\n        {\n            \"Primary\": \"true\",\n            \"PrivateIpAddress\": \"172.16.64.13\"\n        }\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-05bb4upy\"\n    ],\n    \"NetworkInterfaceDescription\": \"TestDesc\",\n    \"SecondaryPrivateIpAddressCount\": \"1\",\n    \"SubnetId\": \"subnet-76r802pg\",\n    \"NetworkInterfaceName\": \"TestNIC\"\n}",
         "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"NetworkInterfaceId\": \"eni-irk5qhhl\",\n            \"VpcId\": \"vpc-0akbol5v\",\n            \"SubnetId\": \"subnet-76r802pg\",\n            \"NetworkInterfaceName\": \"TestNIC\",\n            \"NetworkInterfaceDescription\": \"TestDesc\",\n            \"MacAddress\": \"20:90:6F:62:33:E2\",\n            \"Business\": \"TKE\",\n            \"CdcId\": \"\",\n            \"EniType\": 1,\n            \"AttachType\": 1,\n            \"PrivateIpAddressSet\": [\n                {\n                    \"PrivateIpAddress\": \"172.16.64.13\",\n                    \"Primary\": true,\n                    \"AddressId\": \"\",\n                    \"PublicIpAddress\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"State\": \"PENDING\"\n                }\n            ],\n            \"Attachment\": {\n                \"InstanceId\": \"ins-12345678\"\n            },\n            \"GroupSet\": [],\n            \"Primary\": false,\n            \"State\": \"PENDING\",\n            \"Zone\": \"\",\n            \"CreatedTime\": \"\",\n            \"Ipv6AddressSet\": [],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "创建弹性网卡并绑定云服务器"
@@ -392,7 +392,7 @@
     ],
     "CreateHaVip": [
       {
-        "document": "",
+        "document": "创建HAVIP",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHaVip\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-qq51iwr4\",\n    \"Vip\": \"10.4.6.15\",\n    \"VpcId\": \"vpc-6v2ht8q5\",\n    \"HaVipName\": \"test+name\"\n}",
         "output": "{\n    \"Response\": {\n        \"HaVip\": {\n            \"HaVipId\": \"havip-72alakye\",\n            \"HaVipName\": \"test name\",\n            \"Vip\": \"10.4.6.15\",\n            \"VpcId\": \"vpc-6v2ht8q5\",\n            \"SubnetId\": \"subnet-qq51iwr4\",\n            \"NetworkInterfaceId\": \"\",\n            \"InstanceId\": \"\",\n            \"AddressIp\": \"\",\n            \"State\": \"UNBIND\",\n            \"CreatedTime\": \"2018-10-10 17:03:09\",\n            \"Business\": \"SCF\"\n        },\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "创建HAVIP"
@@ -470,7 +470,7 @@
     ],
     "CreateNetworkInterface": [
       {
-        "document": "",
+        "document": "创建弹性网卡",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkInterface\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"PrivateIpAddresses\": [\n        {\n            \"Primary\": \"true\",\n            \"PrivateIpAddress\": \"172.16.64.13\"\n        }\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-05bb4upy\"\n    ],\n    \"NetworkInterfaceDescription\": \"TestDesc\",\n    \"SecondaryPrivateIpAddressCount\": \"1\",\n    \"SubnetId\": \"subnet-76r802pg\",\n    \"NetworkInterfaceName\": \"TestNIC\"\n}",
         "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"NetworkInterfaceId\": \"eni-irk5qhhl\",\n            \"VpcId\": \"vpc-0akbol5v\",\n            \"SubnetId\": \"subnet-76r802pg\",\n            \"NetworkInterfaceName\": \"TestNIC\",\n            \"NetworkInterfaceDescription\": \"TestDesc\",\n            \"MacAddress\": \"20:90:6F:62:33:E2\",\n            \"Business\": \"xx\",\n            \"CdcId\": \"xx\",\n            \"EniType\": 1,\n            \"AttachType\": 1,\n            \"PrivateIpAddressSet\": [\n                {\n                    \"PrivateIpAddress\": \"172.16.64.13\",\n                    \"Primary\": true,\n                    \"AddressId\": \"\",\n                    \"PublicIpAddress\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"State\": \"PENDING\"\n                }\n            ],\n            \"Attachment\": null,\n            \"GroupSet\": [],\n            \"Primary\": false,\n            \"State\": \"PENDING\",\n            \"Zone\": \"\",\n            \"CreatedTime\": \"\",\n            \"Ipv6AddressSet\": [],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "创建弹性网卡"
@@ -2360,8 +2360,8 @@
     ],
     "ModifyNetworkInterfaceAttribute": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetworkInterfaceAttribute\n&NetworkInterfaceId=eni-afo43z61\n&NetworkInterfaceName=NewName\n&<公共请求参数>",
+        "document": "修改弹性网卡",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkInterfaceAttribute\n<公共请求参数>\n\n{\n    \"NetworkInterfaceId\": \"eni-afo43z61\",\n    \"NetworkInterfaceName\": \"NewName\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "修改弹性网卡"
       }

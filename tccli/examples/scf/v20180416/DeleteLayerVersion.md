@@ -1,13 +1,13 @@
 **Example 1: 删除层版本**
 
-
+删除层版本
 
 Input: 
 
 ```
 tccli scf DeleteLayerVersion --cli-unfold-argument  \
-    --LayerName <LayerName> \
-    --LayerVersion <LayerVersion>
+    --LayerName abc \
+    --LayerVersion 0
 ```
 
 Output: 

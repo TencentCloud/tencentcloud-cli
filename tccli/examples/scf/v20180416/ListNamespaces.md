@@ -1,6 +1,6 @@
 **Example 1: 列出命名空间列表**
 
-
+列出命名空间列表
 
 Input: 
 
@@ -14,17 +14,17 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "xx",
         "Namespaces": [
             {
                 "ModTime": "2020-09-22 00:00:00",
                 "AddTime": "2020-09-22 00:00:00",
-                "Type": "xx",
-                "Description": "xx",
-                "Name": "xx"
+                "Description": "abc",
+                "Name": "abc",
+                "Type": "abc"
             }
-        ]
+        ],
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

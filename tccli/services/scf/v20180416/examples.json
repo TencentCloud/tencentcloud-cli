@@ -58,8 +58,8 @@
     ],
     "DeleteLayerVersion": [
       {
-        "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=DeleteLayerVersion\r\n&LayerName=<LayerName>\r\n&LayerVersion=<LayerVersion>\r\n&<公共请求参数>",
+        "document": "删除层版本",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLayerVersion\n<公共请求参数>\n\n{\n    \"LayerName\": \"abc\",\n    \"LayerVersion\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1ffbba5-5489-45bc-89c5-453e50d5386e\"\n    }\n}",
         "title": "删除层版本"
       }
@@ -114,9 +114,9 @@
     ],
     "GetAsyncEventStatus": [
       {
-        "document": "",
+        "document": "查询函数异步事件状态",
         "input": "https://scf.tencentcloudapi.com/?Action=GetAsyncEventStatus\n&InvokeRequestId=b379787f-8487-4bac-bd8c-17a20a9ce40e\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ee33a89b-3825-4d2f-bd88-35a8fa27aae1\",\n        \"Result\": {\n            \"Status\": \"RUNNING\",\n            \"InvokeRequestId\": \"xx\",\n            \"StatusCode\": 0\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": \"abc\",\n            \"StatusCode\": 0,\n            \"InvokeRequestId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询函数异步事件状态"
       }
     ],
@@ -146,7 +146,7 @@
     ],
     "GetFunctionLogs": [
       {
-        "document": "",
+        "document": "获取函数运行日志",
         "input": "https://scf.tencentcloudapi.com/?Action=GetFunctionLogs\n&FunctionName=<FunctionName>\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"MemUsage\": 3174400,\n                \"RetCode\": 1,\n                \"RetMsg\": \"Success\",\n                \"Log\": \"\",\n                \"BillDuration\": 100,\n                \"InvokeFinished\": 1,\n                \"RequestId\": \"bc309eaa-6d64-11e8-a7fe-5254000b4175\",\n                \"StartTime\": \"2018-06-11 18:46:45\",\n                \"Duration\": 0.532,\n                \"FunctionName\": \"APITest\",\n                \"Level\": \"\",\n                \"Source\": \"\",\n                \"RetryNum\": 1\n            }\n        ],\n        \"SearchContext\": {\n            \"Offset\": \"\",\n            \"Limit\": 0,\n            \"Keyword\": \"\",\n            \"Type\": \"\"\n        },\n        \"RequestId\": \"e2571ff3-da04-4c53-8438-f58bf057ce4a\"\n    }\n}",
         "title": "获取函数运行日志"
@@ -154,8 +154,8 @@
     ],
     "GetLayerVersion": [
       {
-        "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=GetLayerVersion\r\n&LayerName=<LayerName>\r\n&LayerVersion=<LayerVersion>\r\n&<公共请求参数>",
+        "document": "获取层版本详情",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLayerVersion\n<公共请求参数>\n\n{\n    \"LayerName\": \"abc\",\n    \"LayerVersion\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"Active\",\n        \"LayerVersion\": 1,\n        \"CodeSha256\": \"c7c8bda601817ce4faab4c4fb3e73b9a32040e0e9f31f7a649d84d4bdde9e4a5\",\n        \"Description\": \"desc\",\n        \"LicenseInfo\": \"\",\n        \"AddTime\": \"2019-11-26 16:15:33\",\n        \"Location\": \"https://lambdalayerin-1253665819.cos.ap-mumbai.myqcloud.com/1253970226/layer3/1/1253970226_layer3_1.zip?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDqbBtfGe4eSSK8CExGjmC0e8Qcnswv6yj%26q-sign-time%3D1582083327%3B1582093387%26q-key-time%3D1582083327%3B1582093387%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D255d3e5aaa6c7224396b39f857e134a0dfb27c89&response-content-type=application/octet-stream\",\n        \"CompatibleRuntimes\": [\n            \"Nodejs8.9\",\n            \"Nodejs6.10\"\n        ],\n        \"LayerName\": \"layer3\",\n        \"RequestId\": \"6c7578ed-b816-4e50-930a-54e855452b8b\"\n    }\n}",
         "title": "获取层版本详情"
       }
@@ -232,33 +232,33 @@
     ],
     "ListLayerVersions": [
       {
-        "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListLayerVersions\r\n&LayerName=<LayerName>\r\n&CompatibleRuntime=<CompatibleRuntime>\r\n&<公共请求参数>",
+        "document": "获取层版本列表",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLayerVersions\n<公共请求参数>\n\n{\n    \"LayerName\": \"abc\",\n    \"CompatibleRuntime\": [\n        \"abc\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"LayerVersions\": [\n            {\n                \"Status\": \"Active\",\n                \"LayerVersion\": 1,\n                \"Description\": \"desc\",\n                \"LicenseInfo\": \"\",\n                \"AddTime\": \"2019-11-26 16:15:33\",\n                \"CompatibleRuntimes\": [\n                    \"Nodejs8.9\",\n                    \"Nodejs6.10\"\n                ],\n                \"LayerName\": \"layer3\"\n            }\n        ],\n        \"RequestId\": \"4e9bc0ab-0b7c-45f1-8eec-e4f1f4f73e2b\"\n    }\n}",
         "title": "获取层版本列表"
       }
     ],
     "ListLayers": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLayers\n<公共请求参数>\n\n{\n    \"SearchKey\": \"xx\",\n    \"CompatibleRuntime\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Layers\": [\n            {\n                \"Status\": \"xx\",\n                \"LayerVersion\": 0,\n                \"Description\": \"xx\",\n                \"LicenseInfo\": \"xx\",\n                \"AddTime\": \"xx\",\n                \"CompatibleRuntimes\": [\n                    \"xx\"\n                ],\n                \"LayerName\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "拉取层列表",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLayers\n<公共请求参数>\n\n{\n    \"CompatibleRuntime\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"SearchKey\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Layers\": [\n            {\n                \"CompatibleRuntimes\": [\n                    \"abc\"\n                ],\n                \"AddTime\": \"abc\",\n                \"Description\": \"abc\",\n                \"LicenseInfo\": \"abc\",\n                \"LayerVersion\": 0,\n                \"LayerName\": \"abc\",\n                \"Status\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "拉取层列表"
       }
     ],
     "ListNamespaces": [
       {
-        "document": "",
+        "document": "列出命名空间列表",
         "input": "https://scf.tencentcloudapi.com/?Action=ListNamespaces\n&SearchKey.0.Key=Namespace\n&SearchKey.0.Value=dev\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Namespaces\": [\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Type\": \"xx\",\n                \"Description\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Namespaces\": [\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Description\": \"abc\",\n                \"Name\": \"abc\",\n                \"Type\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "列出命名空间列表"
       }
     ],
     "ListTriggers": [
       {
-        "document": "",
+        "document": "获取函数触发器列表",
         "input": "https://scf.tencentcloudapi.com/?Action=ListTriggers\n&FunctionName=aaa\n&Limit=2\n&Order=ASC\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Triggers\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Triggers\": [\n            {\n                \"Enable\": 1,\n                \"Qualifier\": \"abc\",\n                \"TriggerName\": \"abc\",\n                \"Type\": \"abc\",\n                \"TriggerDesc\": \"abc\",\n                \"AvailableStatus\": \"abc\",\n                \"CustomArgument\": \"abc\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"ResourceId\": \"abc\",\n                \"BindStatus\": \"abc\",\n                \"TriggerAttribute\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取函数触发器列表"
       }
     ],
@@ -272,9 +272,9 @@
     ],
     "PublishLayerVersion": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishLayerVersion\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"LicenseInfo\": \"xx\",\n    \"Content\": {\n        \"GitUserName\": \"xx\",\n        \"TempCosObjectName\": \"xx\",\n        \"DemoId\": \"xx\",\n        \"ZipFile\": \"xx\",\n        \"GitUrl\": \"xx\",\n        \"GitUserNameSecret\": \"xx\",\n        \"GitCommitId\": \"xx\",\n        \"CosObjectName\": \"xx\",\n        \"GitBranch\": \"xx\",\n        \"GitPassword\": \"xx\",\n        \"CosBucketRegion\": \"xx\",\n        \"CosBucketName\": \"xx\",\n        \"GitDirectory\": \"xx\",\n        \"GitPasswordSecret\": \"xx\"\n    },\n    \"CompatibleRuntimes\": [\n        \"xx\"\n    ],\n    \"LayerName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LayerVersion\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "发布层版本",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishLayerVersion\n<公共请求参数>\n\n{\n    \"LayerName\": \"abc\",\n    \"CompatibleRuntimes\": [\n        \"abc\"\n    ],\n    \"Content\": {\n        \"CosBucketName\": \"abc\",\n        \"CosObjectName\": \"abc\",\n        \"ZipFile\": \"abc\",\n        \"CosBucketRegion\": \"abc\",\n        \"DemoId\": \"abc\",\n        \"TempCosObjectName\": \"abc\",\n        \"GitUrl\": \"abc\",\n        \"GitUserName\": \"abc\",\n        \"GitPassword\": \"abc\",\n        \"GitPasswordSecret\": \"abc\",\n        \"GitBranch\": \"abc\",\n        \"GitDirectory\": \"abc\",\n        \"GitCommitId\": \"abc\",\n        \"GitUserNameSecret\": \"abc\",\n        \"ImageConfig\": {\n            \"RegistryId\": \"abc\",\n            \"ImageType\": \"abc\",\n            \"ImageUri\": \"abc\",\n            \"EntryPoint\": \"abc\",\n            \"Command\": \"abc\",\n            \"Args\": \"abc\",\n            \"ContainerImageAccelerate\": true\n        }\n    },\n    \"Description\": \"abc\",\n    \"LicenseInfo\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LayerVersion\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "发布层版本"
       }
     ],

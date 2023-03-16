@@ -1442,16 +1442,16 @@
       "document": "DeleteLayerVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "层名称",
+          "example": "layer-1",
           "member": "string",
           "name": "LayerName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本号",
+          "example": "v1",
           "member": "int64",
           "name": "LayerVersion",
           "required": true,
@@ -2239,7 +2239,6 @@
       "document": "GetAsyncEventStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "异步执行请求 id",
           "example": "5f825fd3-a59d-4879-aa28-3ac967c128885f825fd3-a59d-4879-aa28-3ac9",
           "member": "string",
@@ -2258,7 +2257,6 @@
           "example": "{             \"Status\": \"RUNNING\",             \"StatusCode\": 0  ",
           "member": "AsyncEventStatus",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2392,7 +2390,6 @@
       "document": "GetFunctionLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "函数的名称。\n- 为保证[获取函数运行日志](https://cloud.tencent.com/document/product/583/18583)接口`GetFunctionLogs`兼容性，输入参数`FunctionName`仍为非必填项，但建议填写该参数，否则可能导致日志获取失败。\n- 函数关联日志服务后，建议使用[日志服务](https://cloud.tencent.com/document/product/614/16875)相关接口以获得最佳日志检索体验。",
           "example": "helloworld-demo",
           "member": "string",
@@ -2401,7 +2398,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据的偏移量，Offset+Limit不能大于10000",
           "example": "0",
           "member": "int64",
@@ -2410,7 +2406,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数据的长度，Offset+Limit不能大于10000",
           "example": "20",
           "member": "int64",
@@ -2419,7 +2414,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "以升序还是降序的方式对日志进行排序，可选值 desc和 asc",
           "example": "desc",
           "member": "string",
@@ -2428,7 +2422,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "根据某个字段排序日志,支持以下字段：function_name, duration, mem_usage, start_time",
           "example": "function_name",
           "member": "string",
@@ -2437,7 +2430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志过滤条件。可用来区分正确和错误日志，filter.RetCode=not0 表示只返回错误日志，filter.RetCode=is0 表示只返回正确日志，不传，则返回所有日志",
           "example": "not0",
           "member": "LogFilter",
@@ -2446,7 +2438,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "函数的命名空间",
           "example": "default",
           "member": "string",
@@ -2455,7 +2446,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "函数的版本",
           "example": "$LATEST",
           "member": "string",
@@ -2464,7 +2454,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "执行该函数对应的requestId",
           "example": "d1922633-55cf-443a-a6cc-0788ce93df06",
           "member": "string",
@@ -2473,7 +2462,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询的具体日期，例如：2017-05-16 20:00:00，只能与endtime相差一天之内",
           "example": "2017-05-16 20:00:00",
           "member": "datetime",
@@ -2482,7 +2470,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询的具体日期，例如：2017-05-16 20:59:59，只能与startTime相差一天之内",
           "example": "2017-05-16 20:59:59",
           "member": "datetime",
@@ -2491,7 +2478,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "该字段已下线",
           "example": "无",
           "member": "LogSearchContext",
@@ -2510,7 +2496,6 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2519,7 +2504,6 @@
           "example": "无",
           "member": "FunctionLog",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2528,7 +2512,6 @@
           "example": "无",
           "member": "LogSearchContext",
           "name": "SearchContext",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2947,16 +2930,16 @@
       "document": "GetLayerVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "层名称",
+          "example": "ln",
           "member": "string",
           "name": "LayerName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本号",
+          "example": "lv",
           "member": "int64",
           "name": "LayerVersion",
           "required": true,
@@ -2970,6 +2953,7 @@
       "members": [
         {
           "document": "适配的运行时",
+          "example": "demo",
           "member": "string",
           "name": "CompatibleRuntimes",
           "type": "list",
@@ -2977,6 +2961,7 @@
         },
         {
           "document": "层中版本文件的SHA256编码",
+          "example": "test",
           "member": "string",
           "name": "CodeSha256",
           "type": "string",
@@ -2984,6 +2969,7 @@
         },
         {
           "document": "层中版本文件的下载地址",
+          "example": "http://demo",
           "member": "string",
           "name": "Location",
           "type": "string",
@@ -2991,6 +2977,7 @@
         },
         {
           "document": "版本的创建时间",
+          "example": "2023-01-01",
           "member": "string",
           "name": "AddTime",
           "type": "string",
@@ -2998,6 +2985,7 @@
         },
         {
           "document": "版本的描述",
+          "example": "demo",
           "member": "string",
           "name": "Description",
           "type": "string",
@@ -3005,6 +2993,7 @@
         },
         {
           "document": "许可证信息",
+          "example": "LicenseInfoDemo",
           "member": "string",
           "name": "LicenseInfo",
           "type": "string",
@@ -3012,6 +3001,7 @@
         },
         {
           "document": "版本号",
+          "example": "l1",
           "member": "int64",
           "name": "LayerVersion",
           "type": "int",
@@ -3019,13 +3009,15 @@
         },
         {
           "document": "层名称",
+          "example": "ln",
           "member": "string",
           "name": "LayerName",
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "层的具体版本当前状态，可能取值：\nActive 正常\nPublishing  发布中\nPublishFailed  发布失败\nDeleted 已删除",
+          "document": "层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)",
+          "example": "Active",
           "member": "string",
           "name": "Status",
           "type": "string",
@@ -3958,16 +3950,16 @@
       "document": "ListLayerVersions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "层名称",
+          "example": "l1",
           "member": "string",
           "name": "LayerName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "适配的运行时",
+          "example": "c1",
           "member": "string",
           "name": "CompatibleRuntime",
           "required": false,
@@ -3981,6 +3973,7 @@
       "members": [
         {
           "document": "层版本列表",
+          "example": "v1",
           "member": "LayerVersionInfo",
           "name": "LayerVersions",
           "type": "list",
@@ -3999,7 +3992,6 @@
       "document": "ListLayers请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "适配的运行时",
           "example": "<CompatibleRuntime>",
           "member": "string",
@@ -4008,7 +4000,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移位置",
           "example": "<Offset>",
           "member": "int64",
@@ -4017,7 +4008,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询数目限制",
           "example": "<Limit>",
           "member": "int64",
@@ -4026,7 +4016,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询key，模糊匹配名称",
           "example": "<SearchKey>",
           "member": "string",
@@ -4045,7 +4034,6 @@
           "example": "无",
           "member": "LayerVersionInfo",
           "name": "Layers",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4054,7 +4042,6 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4071,7 +4058,6 @@
       "document": "ListNamespaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数据长度，默认值为 20",
           "example": "1",
           "member": "int64",
@@ -4080,7 +4066,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "数据的偏移量，默认值为 0",
           "example": "0",
           "member": "int64",
@@ -4089,7 +4074,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "根据哪个字段进行返回结果排序,支持以下字段：Name,Updatetime",
           "example": "Name",
           "member": "string",
@@ -4098,7 +4082,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
           "example": "DESC",
           "member": "string",
@@ -4107,7 +4090,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "关键字匹配搜索，Key 可选值为 Namespace 和 Description，多个搜索条件之间是与的关系",
           "example": "无",
           "member": "SearchKey",
@@ -4126,7 +4108,6 @@
           "example": "无",
           "member": "Namespace",
           "name": "Namespaces",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4135,7 +4116,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4152,56 +4132,56 @@
       "document": "ListTriggers请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "函数名称",
+          "example": "funname",
           "member": "string",
           "name": "FunctionName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "命名空间，默认是default",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据偏移量，默认值为 0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数据长度，默认值为 20",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "根据哪个字段进行返回结果排序,支持以下字段：add_time，mod_time，默认mod_time",
+          "example": "add_time",
           "member": "string",
           "name": "OrderBy",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC，默认DESC",
+          "example": "ASC",
           "member": "string",
           "name": "Order",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "* Qualifier:\n函数版本，别名",
+          "example": "Qualifier: $LATEST",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4215,6 +4195,7 @@
       "members": [
         {
           "document": "触发器总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
@@ -4222,6 +4203,7 @@
         },
         {
           "document": "触发器列表",
+          "example": "Triggers",
           "member": "TriggerInfo",
           "name": "Triggers",
           "type": "list",
@@ -4396,7 +4378,6 @@
       "document": "命名空间",
       "members": [
         {
-          "default": "",
           "document": "命名空间创建时间",
           "example": "0000-00-00 00:00",
           "member": "datetime",
@@ -4406,7 +4387,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "命名空间修改时间",
           "example": "0000-00-00 00:00",
           "member": "datetime",
@@ -4416,7 +4396,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "命名空间描述",
           "example": "test",
           "member": "string",
@@ -4426,7 +4405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "命名空间名称",
           "example": "test",
           "member": "string",
@@ -4436,9 +4414,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "默认default，TCB表示是小程序云开发创建的",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -4688,7 +4665,6 @@
       "document": "PublishLayerVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "层名称，支持26个英文字母大小写、数字、连接符和下划线，第一个字符只能以字母开头，最后一个字符不能为连接符或者下划线，名称长度1-64",
           "example": "<LayerName>",
           "member": "string",
@@ -4697,7 +4673,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "层适用的运行时，可多选，可选的值对应函数的 Runtime 可选值。",
           "example": "Python2.7",
           "member": "string",
@@ -4706,7 +4681,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "层的文件来源或文件内容",
           "example": "无",
           "member": "Code",
@@ -4715,7 +4689,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "层的版本的描述",
           "example": "<Description>",
           "member": "string",
@@ -4724,7 +4697,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "层的软件许可证",
           "example": "<LicenseInfo>",
           "member": "string",
@@ -4743,7 +4715,6 @@
           "example": "1",
           "member": "int64",
           "name": "LayerVersion",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

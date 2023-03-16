@@ -186,6 +186,52 @@
       ],
       "type": "object"
     },
+    "AttachCBSSpec": {
+      "document": "集群内节点的规格磁盘规格描述",
+      "members": [
+        {
+          "default": "",
+          "document": "节点磁盘类型，例如“CLOUD_SSD”\\\"CLOUD_PREMIUM\"",
+          "example": "xx",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘容量，单位G",
+          "example": "xx",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘总数",
+          "example": "xx",
+          "member": "int64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "xx",
+          "member": "string",
+          "name": "DiskDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BackupTableContent": {
       "document": "备份表信息",
       "members": [
@@ -1362,7 +1408,6 @@
       "document": "实例描述信息",
       "members": [
         {
-          "default": "",
           "document": "集群实例ID, \"cdw-xxxx\" 字符串类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdwch-xxxxxxxx",
           "member": "string",
@@ -1372,7 +1417,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "clickhouse集群",
           "member": "string",
@@ -1382,7 +1426,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "状态,\nInit 创建中; Serving 运行中； \nDeleted已销毁；Deleting 销毁中；\nModify 集群变更中；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Running",
           "member": "string",
@@ -1392,7 +1435,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20.7.2.30",
           "member": "string",
@@ -1402,7 +1444,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地域, ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1412,7 +1453,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可用区， ap-guangzhou-3\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -1422,7 +1462,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "私有网络名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxxxx",
           "member": "string",
@@ -1432,7 +1471,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxxx",
           "member": "string",
@@ -1442,7 +1480,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "付费类型，\"hour\", \"prepay\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hour",
           "member": "string",
@@ -1452,7 +1489,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-01-01 11:11:11",
           "member": "string",
@@ -1462,7 +1498,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-02-01 11:11:11",
           "member": "string",
@@ -1472,7 +1507,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据节点描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodesSummary",
@@ -1482,7 +1516,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "zookeeper节点描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodesSummary",
@@ -1492,7 +1525,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高可用，“true\" \"false\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "string",
@@ -1502,7 +1534,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "访问地址，例如 \"10.0.0.1:9000\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"10.0.0.1:9000\"",
           "member": "string",
@@ -1512,7 +1543,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "记录ID，数值型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1522,7 +1552,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "regionId, 表示地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1532,7 +1561,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "可用区说明，例如 \"广州二区\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州三区",
           "member": "string",
@@ -1542,7 +1570,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "错误流程说明信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1552,7 +1579,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "状态描述，例如“运行中”等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "运行中",
           "member": "string",
@@ -1562,7 +1588,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动续费标记\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -1572,7 +1597,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -1582,7 +1606,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "监控信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "prom-aaaaa",
           "member": "string",
@@ -1592,7 +1615,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开通日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1602,7 +1624,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -1612,7 +1633,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -1622,7 +1642,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否支持xml配置管理\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1632,7 +1651,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州",
           "member": "string",
@@ -1642,7 +1660,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "弹性网卡地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
           "member": "string",
@@ -1652,13 +1669,198 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "冷热分层系数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
           "name": "CosMoveFactor",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "external/local/yunti\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yunti",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否弹性ck\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsElastic",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群详细状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceStateInfo",
+          "name": "InstanceStateInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "ZK高可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HAZk",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "挂载盘,默认0:没有类型；1:裸盘;2:lvm\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MountDiskType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CHProxyVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cos buket的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否可以挂载云盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CanAttachCbs",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否可以挂载云盘阵列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CanAttachCbsLvm",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否可以挂载cos\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CanAttachCos",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ServiceInfo",
+          "name": "Components",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "可升级的内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UpgradeVersions",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceStateInfo": {
+      "document": "集群状态抽象后的结构体",
+      "members": [
+        {
+          "document": "集群状态，例如：Serving\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群操作创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群操作名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群操作进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "FlowProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群状态描述，例如：运行中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceStateDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群流程错误信息，例如：“创建失败，资源不足”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前步骤的名称，例如：”购买资源中“\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ProcessName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "RequestId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1900,8 +2102,8 @@
       "document": "节点角色描述信息",
       "members": [
         {
-          "default": "",
           "document": "机型，如 S1",
+          "example": "xx",
           "member": "string",
           "name": "Spec",
           "required": true,
@@ -1909,8 +2111,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点数目",
+          "example": "1",
           "member": "int64",
           "name": "NodeSize",
           "required": true,
@@ -1918,8 +2120,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cpu核数，单位个",
+          "example": "2",
           "member": "int64",
           "name": "Core",
           "required": true,
@@ -1927,8 +2129,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内存大小，单位G",
+          "example": "4",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -1936,8 +2138,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘大小，单位G",
+          "example": "xx",
           "member": "int64",
           "name": "Disk",
           "required": true,
@@ -1945,8 +2147,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘类型",
+          "example": "xx",
           "member": "string",
           "name": "DiskType",
           "required": true,
@@ -1954,13 +2156,76 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "磁盘描述",
+          "example": "xx",
           "member": "string",
           "name": "DiskDesc",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "挂载云盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "AttachCBSSpec",
+          "name": "AttachCBSSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "SubProductType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规格对应的核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SpecCore",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规格对应的内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SpecMemory",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "磁盘的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "磁盘的最大大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxDiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否为加密云盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Encrypt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2433,11 +2698,34 @@
       ],
       "usage": "out"
     },
+    "ServiceInfo": {
+      "document": "服务详细信息描述。",
+      "members": [
+        {
+          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1.2.3",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Tag": {
       "document": "标签描述",
       "members": [
         {
-          "default": "",
           "document": "标签的键",
           "example": "标签一",
           "member": "string",
@@ -2447,7 +2735,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签的值",
           "example": "内容一",
           "member": "string",

@@ -70,11 +70,32 @@
       "output": "DescribeKTVTagsResponse",
       "status": "online"
     },
+    "DescribeLiveVipTradeInfos": {
+      "document": "批量获取直播会员充值流水详细信息，包括：流水号，订单状态，下订单时间等",
+      "input": "DescribeLiveVipTradeInfosRequest",
+      "name": "获取直播会员充值记录信息列表",
+      "output": "DescribeLiveVipTradeInfosResponse",
+      "status": "online"
+    },
+    "DescribeUserInfo": {
+      "document": "获取用户信息，包括是否为直播会员，及直播会员信息等",
+      "input": "DescribeUserInfoRequest",
+      "name": "获取用户信息",
+      "output": "DescribeUserInfoResponse",
+      "status": "online"
+    },
     "DestroyKTVRobot": {
       "document": "销毁机器人，机器人退出 RTC 房间。",
       "input": "DestroyKTVRobotRequest",
       "name": "销毁机器人",
       "output": "DestroyKTVRobotResponse",
+      "status": "online"
+    },
+    "RechargeLiveVip": {
+      "document": "充值直播会员，使该用户可以在直播场景使用",
+      "input": "RechargeLiveVipRequest",
+      "name": "充值直播会员",
+      "output": "RechargeLiveVipResponse",
       "status": "online"
     },
     "SearchKTVMusics": {
@@ -902,6 +923,138 @@
       ],
       "type": "object"
     },
+    "DescribeLiveVipTradeInfosRequest": {
+      "document": "DescribeLiveVipTradeInfos请求参数结构体",
+      "members": [
+        {
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "直播会员充值下单起始时间，格式为 ISO。默认为当前时间前一天。",
+          "example": "2022-06-06T18:29:33Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "直播会员充值下单截止时间，格式为 ISO。默认为当前时间。 EndTime不能小于StartTime",
+          "example": "2022-07-06T18:29:33Z\t",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "交易流水号集合，匹配集合指定所有流水号 。\n<li>数组长度限制：10。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "TradeSerialNos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "用户标识集合，匹配集合指定所有用户标识 。\n<li>数组长度限制：10。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "分页返回的记录条数，默认值：20，最大值：50。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveVipTradeInfosResponse": {
+      "document": "DescribeLiveVipTradeInfos返回参数结构体",
+      "members": [
+        {
+          "document": "直播会员充值流水信息列表",
+          "example": "无",
+          "member": "LiveVipTradeInfo",
+          "name": "LiveVipTradeInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "直播会员充值流水总数。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInfoRequest": {
+      "document": "DescribeUserInfo请求参数结构体",
+      "members": [
+        {
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInfoResponse": {
+      "document": "DescribeUserInfo返回参数结构体",
+      "members": [
+        {
+          "document": "用户信息。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "UserInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DestroyKTVRobotRequest": {
       "document": "DestroyKTVRobot请求参数结构体",
       "members": [
@@ -1459,6 +1612,108 @@
       ],
       "usage": "out"
     },
+    "LiveVipTradeInfo": {
+      "document": "充值直播会员流水信息",
+      "members": [
+        {
+          "document": "交易流水号。",
+          "example": "无",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "充值会员天数。\n取值有： \n<li>31</li> <li>93</li><li>186</li> <li>372</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "VipDays",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单状态。 \n取值有： \n<li>Success：成功</li><li>Fail：失败</li><li>Processing：订单处理中</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveVipUserInfo": {
+      "document": "直播会员用户信息",
+      "members": [
+        {
+          "document": "房间标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "直播会员结束时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "LiveVipEndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "会员生效状态\n<li>Valid：生效</li><li>Invalid：无效</li>",
+          "example": "无",
+          "member": "string",
+          "name": "LiveVipStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MusicAlbumCoverInfo": {
       "document": "歌曲专辑封面信息。",
       "members": [
@@ -1526,6 +1781,72 @@
         }
       ],
       "usage": "in"
+    },
+    "RechargeLiveVipRequest": {
+      "document": "RechargeLiveVip请求参数结构体",
+      "members": [
+        {
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "交易流水号，用于标记此次充值记录，多次充值记录传入相同的 TradeSerialNo 会判断为失败，可用于防止重提提交造成重复计费。",
+          "example": "无",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "房间标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "充值会员天数。\n取值有：\n<li>31</li>\n<li>93</li>\n<li>186</li>\n<li>372</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "VipDays",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RechargeLiveVipResponse": {
+      "document": "RechargeLiveVip返回参数结构体",
+      "members": [
+        {
+          "document": "直播会员信息。",
+          "example": "无",
+          "member": "LiveVipUserInfo",
+          "name": "LiveVipUserInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SearchKTVMusicsRequest": {
       "document": "SearchKTVMusics请求参数结构体",
@@ -1974,6 +2295,48 @@
         }
       ],
       "usage": "in"
+    },
+    "UserInfo": {
+      "document": "用户信息",
+      "members": [
+        {
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "直播会员详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveVipUserInfo",
+          "name": "LiveVipUserInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户类型\n<li>Normal：普通用户</li>\n<li>LiveVip：直播会员用户</li>",
+          "example": "无",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

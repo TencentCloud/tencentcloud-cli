@@ -398,6 +398,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeSSLStatus": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeSSLStatus\n&InstanceId=crs-2btr9ryn\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"FeatureSupport\": false,\n        \"UrlExpiredTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"CertDownloadUrl\": \"xx\",\n        \"SSLConfig\": true\n    }\n}",
+        "title": "查询SSL状态实例"
+      }
+    ],
     "DescribeSlowLog": [
       {
         "document": "通过 DescribeSlowLog 接口查询一实例的慢查询详情，包含：慢查询的命令、命令行信息、延迟时间、客户端地址、节点ID等信息。",

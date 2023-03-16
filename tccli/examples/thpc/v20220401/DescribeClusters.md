@@ -1,6 +1,6 @@
 **Example 1: 查询集群列表**
 
-
+查询集群列表。
 
 Input: 
 
@@ -24,6 +24,7 @@ Output:
                 },
                 "CreateTime": "2021-12-07T03:29:09Z",
                 "SchedulerType": "SGE",
+                "VpcId": "vpc-xxxxxxxx",
                 "ComputeNodeCount": 1,
                 "LoginNodeSet": [
                     {
