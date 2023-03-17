@@ -300,6 +300,13 @@
       "name": "解绑定期快照策略",
       "output": "UnbindAutoSnapshotPolicyResponse",
       "status": "online"
+    },
+    "UnbindUserDedicatedCluster": {
+      "document": "该接口用于进行用户独享集群的解绑操作\n\n目前仅用于CVM在生成outpostId后调用本接口做用户和outpostId的解绑",
+      "input": "UnbindUserDedicatedClusterRequest",
+      "name": "解绑用户独享集群",
+      "output": "UnbindUserDedicatedClusterResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -5012,6 +5019,51 @@
     },
     "UnbindAutoSnapshotPolicyResponse": {
       "document": "UnbindAutoSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindUserDedicatedClusterRequest": {
+      "document": "UnbindUserDedicatedCluster请求参数结构体",
+      "members": [
+        {
+          "document": "用户账号AppId",
+          "example": "251005944",
+          "member": "string",
+          "name": "UserAppId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "可用区名称",
+          "example": "ap-guangzhou-xx",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "独享集群ID",
+          "example": "cluster-xxxxxxxx",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindUserDedicatedClusterResponse": {
+      "document": "UnbindUserDedicatedCluster返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -3993,7 +3993,6 @@
       "document": "堡垒机服务信息",
       "members": [
         {
-          "default": "",
           "document": "服务实例ID，如bh-saas-s3ed4r5e",
           "example": "bh-saas-s3ed4r5e",
           "member": "string",
@@ -4004,7 +4003,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "地域编码",
           "example": "ap-guangzhou",
           "member": "string",
@@ -4015,7 +4013,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "服务实例规格信息",
           "example": "sv_cds_dasb_saas_xxx",
           "member": "string",
@@ -4026,7 +4023,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC ID",
           "example": "vpc-xxxxxx",
           "member": "string",
@@ -4037,7 +4033,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "服务规格对应的资产数",
           "example": "50",
           "member": "uint64",
@@ -4048,7 +4043,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费",
           "example": "1",
           "member": "uint64",
@@ -4059,7 +4053,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过期时间",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
@@ -4070,7 +4063,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中",
           "example": "1",
           "member": "uint64",
@@ -4081,7 +4073,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "服务实例名，如T-Sec-堡垒机（SaaS型）",
           "example": "T-Sec-堡垒机（SaaS型）",
           "member": "string",
@@ -4092,7 +4083,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "定价模型ID",
           "example": "1007488",
           "member": "uint64",
@@ -4103,7 +4093,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源创建时间",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
@@ -4114,7 +4103,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "商品码, p_cds_dasb",
           "example": "p_cds_dasb",
           "member": "string",
@@ -4125,7 +4113,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子商品码, sp_cds_dasb_bh_saas",
           "example": "sp_cds_dasb_bh_saas",
           "member": "string",
@@ -4136,7 +4123,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -4147,7 +4133,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否过期，true-过期，false-未过期",
           "example": "true",
           "member": "bool",
@@ -4158,7 +4143,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开通，true-开通，false-未开通",
           "example": "true",
           "member": "bool",
@@ -4169,7 +4153,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开通服务的 VPC 名称",
           "example": "vpc1",
           "member": "string",
@@ -4180,7 +4163,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开通服务的 VPC 对应的网段",
           "example": "10.10.10.0/16",
           "member": "string",
@@ -4191,7 +4173,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开通服务的子网ID",
           "example": "subnet-xxxxxx",
           "member": "string",
@@ -4202,7 +4183,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开通服务的子网名称",
           "example": "subnet1",
           "member": "string",
@@ -4213,7 +4193,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开通服务的子网网段",
           "example": "10.10.10.0/24",
           "member": "string",
@@ -4224,7 +4203,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "外部IP",
           "example": "无",
           "member": "string",
@@ -4235,7 +4213,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "内部IP",
           "example": "无",
           "member": "string",
@@ -4246,7 +4223,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "服务开通的高级功能列表，如:[DB]",
           "example": "无",
           "member": "string",
@@ -4257,7 +4233,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "已使用的授权点数",
           "example": "10",
           "member": "uint64",
@@ -4268,7 +4243,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "扩展点数",
           "example": "50",
           "member": "uint64",
@@ -4279,7 +4253,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽扩展包个数(4M)",
           "example": "1",
           "member": "uint64",
@@ -4290,7 +4263,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "授权点数扩展包个数(50点)",
           "example": "1",
           "member": "uint64",
@@ -4298,6 +4270,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "日志投递规格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_cds_dasb_saas_xxx",
+          "member": "string",
+          "name": "LogDeliveryArgs",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],

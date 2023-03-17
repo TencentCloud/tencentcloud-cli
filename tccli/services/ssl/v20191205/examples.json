@@ -214,9 +214,9 @@
     ],
     "UploadCertificate": [
       {
-        "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=UploadCertificate\n&CertificatePublicKey=CertificateContent\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"a92b1Z1i\",\n        \"RequestId\": \"7ef2d2bb-f609-4e3d-a35c-04a5d3ac633b\"\n    }\n}",
+        "document": "上传证书",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadCertificate\n<公共请求参数>\n\n{\n    \"CertificatePublicKey\": \"CertificateContent\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"a92b1Z1i\",\n        \"RepeatCertId\": \"\",\n        \"RequestId\": \"7ef2d2bb-f609-4e3d-a35c-04a5d3ac633b\"\n    }\n}",
         "title": "上传证书"
       }
     ],

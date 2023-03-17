@@ -3518,7 +3518,6 @@
       "document": "CreateGrafanaInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例名",
           "example": "my-grafana",
           "member": "string",
@@ -3528,7 +3527,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC ID",
           "example": "vpc-id",
           "member": "string",
@@ -3538,7 +3536,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网 ID 数组",
           "example": "[\"subnet-id1\"]",
           "member": "string",
@@ -3548,17 +3545,6 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "Grafana 初始密码",
-          "example": "admin",
-          "member": "string",
-          "name": "GrafanaInitPassword",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
           "document": "是否启用外网",
           "example": "true",
           "member": "bool",
@@ -3568,7 +3554,15 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "document": "Grafana 初始密码",
+          "example": "admin",
+          "member": "string",
+          "name": "GrafanaInitPassword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
           "document": "标签",
           "example": "无",
           "member": "PrometheusTag",
@@ -3588,7 +3582,6 @@
           "example": "my-grafana",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4383,6 +4376,15 @@
           "member": "string",
           "name": "Content",
           "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "规则名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
           "type": "string",
           "visibility": 1
         }

@@ -8,7 +8,7 @@ Input:
 tccli dnspod CheckRecordSnapshotRollback --cli-unfold-argument  \
     --Domain domain.com \
     --SnapshotId A4EEXXXX \
-    --Record.RecordId 1111111 \
+    --Record.RecordId 1111112 \
     --Record.SubDomain no_line \
     --Record.RecordType A \
     --Record.RecordLine 测试啊 \

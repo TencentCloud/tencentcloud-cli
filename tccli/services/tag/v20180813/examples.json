@@ -16,6 +16,14 @@
         "title": "给标签关联资源"
       }
     ],
+    "AttachResourceProject": [
+      {
+        "document": "为资源关联项目。",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachResourceProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"Resource\": \"qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-xxxxx\"\n    }\n}",
+        "title": "为资源关联项目"
+      }
+    ],
     "AttachResourcesTag": [
       {
         "document": "",
@@ -166,6 +174,14 @@
         "title": "查询标签"
       }
     ],
+    "DetachResourceProject": [
+      {
+        "document": "解绑资源和项目的关联关系。",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachResourceProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"10001\",\n    \"Resource\": \"qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877dxxxxx\"\n    }\n}",
+        "title": "解绑资源和项目的关联关系"
+      }
+    ],
     "DetachResourcesTag": [
       {
         "document": "",
@@ -230,10 +246,26 @@
     ],
     "TagResources": [
       {
-        "document": "",
+        "document": "为资源绑定标签",
         "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TagResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        \"qcs::cvm:ap-beijing:uin/10000055****:instance/ins-****\",\n        \"qcs::cvm:ap-shanghai:uin/10000055****:volme/volme-****\"\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"11\",\n            \"TagValue\": \"11\"\n        },\n        {\n            \"TagKey\": \"22\",\n            \"TagValue\": \"22\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedResources\": [],\n        \"RequestId\": \"a4c9f540-b04e-47c4-a267-4a398b70d2f5\"\n    }\n}",
         "title": "为资源绑定标签"
+      }
+    ],
+    "TagResourcesAllocateQuotas": [
+      {
+        "document": "为资源绑定标签预分配配额。",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TagResourcesAllocateQuotas\n<公共请求参数>\n\n{\n    \"ResourceTypeQuotasList\": [\n        {\n            \"ResourceType\": \"qcs::redis:ap-beijing::instance/*\",\n            \"Quotas\": 1\n        }\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"k\",\n            \"TagValue\": \"v\"\n        }\n    ],\n    \"QuotasExpiredTimestamp\": 1678335045,\n    \"DryRun\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9880017c-8d4c-45b1-84f1-36e4xxxxxxc3\"\n    }\n}",
+        "title": "为资源绑定标签预分配配额"
+      }
+    ],
+    "TagResourcesDeallocateQuotas": [
+      {
+        "document": "此接口为预先申请配额后，流程异常导致不能创建给资源打标签请求时调用来释放已经申请的配额。",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TagResourcesDeallocateQuotas\n<公共请求参数>\n\n{\n    \"ResourceTypeQuotasList\": [\n        {\n            \"ResourceType\": \"qcs::redis:ap-beijing::instance/*\",\n            \"Quotas\": 5\n        }\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"k\",\n            \"TagValue\": \"v\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf35716d-0fb2-4623-835a-0209xxxxxxx\"\n    }\n}",
+        "title": "为资源绑定标签解除配额"
       }
     ],
     "UnTagResources": [
@@ -250,6 +282,14 @@
         "input": "https://tag.tencentcloudapi.com/?Action=UpdateProject\r\n&ProjectId=1024690\r\n&ProjectName=test\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f26b281e-0cbc-40ab-a38b-e9e62ef6fd24\"\n    }\n}",
         "title": "修改项目名称"
+      }
+    ],
+    "UpdateResourceProject": [
+      {
+        "document": "更新资源关联的项目。",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateResourceProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 10001,\n    \"Resource\": \"qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b7db954-057d-4860-8ee3-000f41e7c610\"\n    }\n}",
+        "title": "更新资源关联的项目"
       }
     ],
     "UpdateResourceTagValue": [

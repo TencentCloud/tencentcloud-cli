@@ -1,6 +1,6 @@
 **Example 1: 请求示例**
 
-
+批量获取日志URL。
 
 Input: 
 

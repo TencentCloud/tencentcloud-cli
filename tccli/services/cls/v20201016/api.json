@@ -3364,114 +3364,114 @@
       "document": "仪表盘信息",
       "members": [
         {
-          "default": "",
           "document": "仪表盘id",
           "example": "xxxxx--xxx",
           "member": "string",
           "name": "DashboardId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "仪表盘名字",
           "example": "testname",
           "member": "string",
           "name": "DashboardName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "仪表盘数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testdata",
           "member": "string",
           "name": "Data",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "创建仪表盘的时间",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "AssumerUin非空则表示创建该日志主题的服务方Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "uint64",
           "name": "AssumerUin",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "RoleName非空则表示创建该日志主题的服务方使用的角色\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLB_QcsRole",
           "member": "string",
           "name": "RoleName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "AssumerName非空则表示创建该日志主题的服务方名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "AssumerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "日志主题绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "仪表盘所在地域： 为了兼容老的地域。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
           "member": "string",
           "name": "DashboardRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "修改仪表盘的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-22 16:11:27",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "仪表盘对应的topic相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DashboardTopicInfo",
           "name": "DashboardTopicInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

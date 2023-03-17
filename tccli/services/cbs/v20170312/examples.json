@@ -385,6 +385,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"52ba40b8-018b-d906-cad3-5a1fa6542fd6\"\n    }\n}",
         "title": "解绑定期快照策略"
       }
+    ],
+    "UnbindUserDedicatedCluster": [
+      {
+        "document": "前置条件：测试用户251005944在测试低于ap-guangzhou-2绑定了测试独享集群cluster-22120192，现在需要解绑该集群，需要调用接口UnbindUserDedicatedCluster接口实现。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDedicatedClusterUser\n<公共请求参数>\n\n{\n    \"UserAppId\": 251005944,\n    \"Zone\": \"ap-guangzhou-2\",\n    \"DedicatedClusterId\": \"cluster-22120192\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"129uhhdsgh983-sdff-sdfsadfg-qsdfasdfsad\"\n    }\n}",
+        "title": "解绑用户独享进群"
+      }
     ]
   },
   "version": "1.0"

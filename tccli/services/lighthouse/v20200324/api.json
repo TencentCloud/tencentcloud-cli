@@ -112,6 +112,13 @@
       "output": "DeleteSnapshotsResponse",
       "status": "online"
     },
+    "DescribeAllInstancesOverview": {
+      "document": "本接口 (DescribeAllInstancesOverview) 用于查询全地域实例概览信息。\n\n",
+      "input": "DescribeAllInstancesOverviewRequest",
+      "name": "查询全地域实例概览",
+      "output": "DescribeAllInstancesOverviewResponse",
+      "status": "online"
+    },
     "DescribeAllScenes": {
       "document": "本接口(DescribeAllScenes)用于查询全地域使用场景列表。",
       "input": "DescribeAllScenesRequest",
@@ -1891,6 +1898,41 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeAllInstancesOverviewRequest": {
+      "document": "DescribeAllInstancesOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAllInstancesOverviewResponse": {
+      "document": "DescribeAllInstancesOverview返回参数结构体",
+      "members": [
+        {
+          "document": "全地域实例概览。",
+          "example": "无",
+          "member": "InstancesOverview",
+          "name": "AllInstancesOverview",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各地域实例详情集合。",
+          "example": "无",
+          "member": "InstancesDetail",
+          "name": "InstancesDetailSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAllScenesRequest": {
       "document": "DescribeAllScenes请求参数结构体",
@@ -5640,6 +5682,88 @@
       ],
       "usage": "out"
     },
+    "InstancesDetail": {
+      "document": "实例概览详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例概览。",
+          "example": "无",
+          "member": "InstancesOverview",
+          "name": "InstancesOverview",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配额概览。",
+          "example": "无",
+          "member": "QuotaOverview",
+          "name": "QuotaOverview",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstancesOverview": {
+      "document": "实例概览。",
+      "members": [
+        {
+          "default": "",
+          "document": "总数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行中实例数量。",
+          "example": "7",
+          "member": "int64",
+          "name": "RunningCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待回收实例数量。",
+          "example": "2",
+          "member": "int64",
+          "name": "ShutdownCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "即将到期实例数量。",
+          "example": "0",
+          "member": "int64",
+          "name": "ExpiringCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "InternetAccessible": {
       "document": "描述了启动配置创建实例的公网可访问性，声明了实例的公网使用计费模式，最大带宽等。",
       "members": [
@@ -6363,6 +6487,32 @@
           "name": "InstancePrice",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QuotaOverview": {
+      "document": "配额概览。",
+      "members": [
+        {
+          "default": "",
+          "document": "资源总数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源当前可用数量。",
+          "example": "6",
+          "member": "int64",
+          "name": "Available",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

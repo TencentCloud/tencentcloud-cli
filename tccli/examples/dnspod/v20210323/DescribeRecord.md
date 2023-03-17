@@ -1,6 +1,6 @@
 **Example 1: 获取记录信息**
 
- 
+ 获取记录信息
 
 Input: 
 
@@ -18,7 +18,7 @@ Output:
         "RequestId": "ab4f1426-ea15-42ea-8183-dc1b44151166",
         "RecordInfo": {
             "Id": 158,
-            "SubDomain": "wwww",
+            "SubDomain": "test",
             "RecordType": "A",
             "RecordLine": "百度",
             "RecordLineId": "90=0",

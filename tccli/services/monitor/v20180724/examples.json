@@ -74,8 +74,8 @@
     ],
     "CreateGrafanaInstance": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaInstance\n<公共请求参数>\n\n{\n    \"SubnetIds\": [\n        \"xx\"\n    ],\n    \"VpcId\": \"xx\",\n    \"InstanceName\": \"xx\",\n    \"GrafanaInitPassword\": \"test\",\n    \"EnableInternet\": true\n}",
+        "document": "创建Grafana实例",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaInstance\n<公共请求参数>\n\n{\n    \"SubnetIds\": [\n        \"subnet-123\"\n    ],\n    \"VpcId\": \"vpc-123\",\n    \"InstanceName\": \"test\",\n    \"GrafanaInitPassword\": \"test\",\n    \"EnableInternet\": true\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"grafana-c1enzs01\",\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
         "title": "创建 Grafana 实例"
       }
