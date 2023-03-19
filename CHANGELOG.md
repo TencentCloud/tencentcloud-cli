@@ -1,3 +1,46 @@
+# Release 3.0.726.1
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 28 次发布
+
+发布时间：2023-03-20 01:37:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupFiles](http://document.tencentcloudapi.woa.com/document/product/237/77277)
+* [DescribeDBEngines](http://document.tencentcloudapi.woa.com/document/product/237/77276)
+
+新增数据结构：
+
+* [DBEngineInfo](http://document.tencentcloudapi.woa.com/document/product/237/16191#DBEngineInfo)
+* [InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/237/16191#InstanceBackupFileItem)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 22 次发布
+
+发布时间：2023-03-20 01:40:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OverrideTranscodeParameter](http://document.tencentcloudapi.woa.com/document/product/862/37615#OverrideTranscodeParameter)
+
+	* 新增成员：AddonAudioStream
+
+
+
+
 # Release 3.0.725.1
 
 ## 云硬盘(cbs) 版本：2017-03-12

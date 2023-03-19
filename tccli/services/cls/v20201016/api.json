@@ -2707,31 +2707,31 @@
       "document": "CreateDashboard请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "仪表盘名称",
           "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "DashboardName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "仪表盘配置数据",
           "example": "testname",
           "member": "string",
           "name": "Data",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2744,9 +2744,9 @@
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "DashboardId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7160,40 +7160,40 @@
       "document": "ModifyDashboard请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "仪表盘id",
           "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "DashboardId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "仪表盘名称",
           "example": "testname",
           "member": "string",
           "name": "DashboardName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "仪表盘配置数据",
           "example": "testdata",
           "member": "string",
           "name": "Data",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"

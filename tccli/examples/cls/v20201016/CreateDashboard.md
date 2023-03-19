@@ -1,15 +1,15 @@
 **Example 1: 创建仪表盘**
 
-
+创建仪表盘
 
 Input: 
 
 ```
 tccli cls CreateDashboard --cli-unfold-argument  \
-    --DashboardName xx \
-    --Data xx \
-    --Tags.0.Value xx \
-    --Tags.0.Key xx
+    --DashboardName 仪表盘名称 \
+    --Data {} \
+    --Tags.0.Value tagValue \
+    --Tags.0.Key tagKey
 ```
 
 Output: 

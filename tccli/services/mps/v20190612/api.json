@@ -18007,7 +18007,6 @@
       "document": "自定义转码的规格参数。用于覆盖模板中对应参数值。",
       "members": [
         {
-          "default": "",
           "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
           "example": "mp4",
           "member": "string",
@@ -18018,7 +18017,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否去除视频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>",
           "example": "0",
           "member": "uint64",
@@ -18029,7 +18027,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否去除音频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>",
           "example": "0",
           "member": "uint64",
@@ -18040,7 +18037,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频流配置参数。",
           "example": "NULL",
           "member": "VideoTemplateInfoForUpdate",
@@ -18051,7 +18047,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "音频流配置参数。",
           "example": "NULL",
           "member": "AudioTemplateInfoForUpdate",
@@ -18062,7 +18057,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "极速高清转码参数。",
           "example": "NULL",
           "member": "TEHDConfigForUpdate",
@@ -18073,7 +18067,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "字幕流配置参数。",
           "example": "NULL",
           "member": "SubtitleTemplate",
@@ -18081,6 +18074,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "外挂音轨参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "MediaInputInfo",
+          "name": "AddonAudioStream",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],

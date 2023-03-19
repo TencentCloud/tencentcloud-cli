@@ -74,8 +74,8 @@
     ],
     "CreateDashboard": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDashboard\n<公共请求参数>\n\n{\n    \"DashboardName\": \"xx\",\n    \"Data\": \"xx\",\n    \"Tags\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ]\n}",
+        "document": "创建仪表盘",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDashboard\n<公共请求参数>\n\n{\n    \"DashboardName\": \"仪表盘名称\",\n    \"Data\": \"{}\",\n    \"Tags\": [\n        {\n            \"Value\": \"tagValue\",\n            \"Key\": \"tagKey\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"DashboardId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建仪表盘"
       }
@@ -466,9 +466,9 @@
     ],
     "ModifyDashboard": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDashboard\n<公共请求参数>\n\n{\n    \"DashboardId\": \"xx\",\n    \"DashboardName\": \"xx\",\n    \"Data\": \"xx\",\n    \"Tags\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "修改仪表盘",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDashboard\n<公共请求参数>\n\n{\n    \"DashboardId\": \"dashboard-x-x-x-x\",\n    \"DashboardName\": \"修改仪表盘\",\n    \"Data\": \"{}\",\n    \"Tags\": [\n        {\n            \"Value\": \"tagValue\",\n            \"Key\": \"tagKey\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx-xx-xx-xx\"\n    }\n}",
         "title": "修改仪表盘"
       }
     ],

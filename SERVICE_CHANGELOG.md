@@ -1,87 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云硬盘(cbs) 版本：2017-03-12
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
 
-### 第 24 次发布
+### 第 28 次发布
 
-发布时间：2023-03-17 11:16:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [UnbindUserDedicatedCluster](http://document.tencentcloudapi.woa.com/document/product/362/77268)
-
-
-
-## 文件存储(cfs) 版本：2019-07-19
-
-### 第 7 次发布
-
-发布时间：2023-03-17 11:18:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [TieringDetailInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#TieringDetailInfo)
-
-修改数据结构：
-
-* [FileSystemInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#FileSystemInfo)
-
-	* 新增成员：TieringState, TieringDetail
-
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 38 次发布
-
-发布时间：2023-03-17 11:26:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [AddInstances](http://document.tencentcloudapi.woa.com/document/product/1003/48088)
-
-	* 新增入参：SecurityGroupIds
-
-
-
-
-## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
-
-### 第 7 次发布
-
-发布时间：2023-03-17 11:27:15
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Resource](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Resource)
-
-	* 新增成员：LogDeliveryArgs
-
-
-
-
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
-
-### 第 26 次发布
-
-发布时间：2023-03-17 11:40:33
+发布时间：2023-03-20 01:37:28
 
 本次发布包含了以下内容：
 
@@ -89,63 +12,21 @@
 
 新增接口：
 
-* [DescribeAllInstancesOverview](http://document.tencentcloudapi.woa.com/document/product/1207/77270)
+* [DescribeBackupFiles](http://document.tencentcloudapi.woa.com/document/product/237/77277)
+* [DescribeDBEngines](http://document.tencentcloudapi.woa.com/document/product/237/77276)
 
 新增数据结构：
 
-* [InstancesDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesDetail)
-* [InstancesOverview](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesOverview)
-* [QuotaOverview](http://document.tencentcloudapi.woa.com/document/product/1207/47576#QuotaOverview)
+* [DBEngineInfo](http://document.tencentcloudapi.woa.com/document/product/237/16191#DBEngineInfo)
+* [InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/237/16191#InstanceBackupFileItem)
 
 
 
-## 云直播CSS(live) 版本：2018-08-01
+## 媒体处理(mps) 版本：2019-06-12
 
-### 第 29 次发布
+### 第 22 次发布
 
-发布时间：2023-03-17 11:41:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeLogDownloadList](http://document.tencentcloudapi.woa.com/document/product/267/34084)
-
-	* 新增入参：IsFastLive
-
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 48 次发布
-
-发布时间：2023-03-17 11:43:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateGrafanaInstance](http://document.tencentcloudapi.woa.com/document/product/248/75697)
-
-	* <font color="#dd0000">**修改入参**：</font>GrafanaInitPassword
-
-* [CreatePrometheusRecordRuleYaml](http://document.tencentcloudapi.woa.com/document/product/248/76946)
-
-	* 新增入参：Name
-
-
-
-
-## 集团账号管理(organization) 版本：2021-03-31
-
-### 第 18 次发布
-
-发布时间：2023-03-17 11:47:00
+发布时间：2023-03-20 01:40:19
 
 本次发布包含了以下内容：
 
@@ -153,81 +34,9 @@
 
 修改数据结构：
 
-* [OrgMember](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrgMember)
+* [OverrideTranscodeParameter](http://document.tencentcloudapi.woa.com/document/product/862/37615#OverrideTranscodeParameter)
 
-	* 新增成员：AuthName
-
-* [OrgMemberAuthIdentity](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrgMemberAuthIdentity)
-
-	* 新增成员：IdentityType
-
-
-
-
-## 集团账号管理(organization) 版本：2018-12-25
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 20 次发布
-
-发布时间：2023-03-17 11:52:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [UploadCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41665)
-
-	* 新增入参：Repeatable
-
-	* 新增出参：RepeatCertId
-
-
-
-
-## 标签(tag) 版本：2018-08-13
-
-### 第 5 次发布
-
-发布时间：2023-03-17 11:52:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [AttachResourceProject](http://document.tencentcloudapi.woa.com/document/product/651/77273)
-* [DetachResourceProject](http://document.tencentcloudapi.woa.com/document/product/651/77272)
-* [TagResourcesAllocateQuotas](http://document.tencentcloudapi.woa.com/document/product/651/77275)
-* [TagResourcesDeallocateQuotas](http://document.tencentcloudapi.woa.com/document/product/651/77274)
-* [UpdateResourceProject](http://document.tencentcloudapi.woa.com/document/product/651/77271)
-
-新增数据结构：
-
-* [ResourceTypeQuotas](http://document.tencentcloudapi.woa.com/document/product/651/35327#ResourceTypeQuotas)
-
-
-
-## 容器镜像服务(tcr) 版本：2019-09-24
-
-### 第 20 次发布
-
-发布时间：2023-03-17 11:55:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1141/41572)
-
-	* 新增入参：EnableCosMAZ
+	* 新增成员：AddonAudioStream
 
 
 
@@ -5619,7 +5428,7 @@
 
 新增接口：
 
-* [[UnbindUserDedicatedCluster](http://document.tencentcloudapi.woa.com/document/product/362/77268)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UnbindUserDedicatedCluster](http://document.tencentcloudapi.woa.com/document/product/362/77268)
 
 ### 第 23 次发布
 
@@ -9011,7 +8820,7 @@
 
 新增数据结构：
 
-* [[TieringDetailInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#TieringDetailInfo)](http://document.tencentcloudapi.woa.com/document/product/582/38175#[TieringDetailInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#TieringDetailInfo))
+* [TieringDetailInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#TieringDetailInfo)
 
 修改数据结构：
 
@@ -29279,13 +29088,13 @@
 
 新增接口：
 
-* [[DescribeAllInstancesOverview](http://document.tencentcloudapi.woa.com/document/product/1207/77270)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAllInstancesOverview](http://document.tencentcloudapi.woa.com/document/product/1207/77270)
 
 新增数据结构：
 
-* [[InstancesDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesDetail)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[InstancesDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesDetail))
-* [[InstancesOverview](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesOverview)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[InstancesOverview](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesOverview))
-* [[QuotaOverview](http://document.tencentcloudapi.woa.com/document/product/1207/47576#QuotaOverview)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[QuotaOverview](http://document.tencentcloudapi.woa.com/document/product/1207/47576#QuotaOverview))
+* [InstancesDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesDetail)
+* [InstancesOverview](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesOverview)
+* [QuotaOverview](http://document.tencentcloudapi.woa.com/document/product/1207/47576#QuotaOverview)
 
 ### 第 25 次发布
 
@@ -30773,6 +30582,24 @@
 
 
 ## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 28 次发布
+
+发布时间：2023-03-20 01:37:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeBackupFiles](http://document.tencentcloudapi.woa.com/document/product/237/77277)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDBEngines](http://document.tencentcloudapi.woa.com/document/product/237/77276)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DBEngineInfo](http://document.tencentcloudapi.woa.com/document/product/237/16191#DBEngineInfo)](http://document.tencentcloudapi.woa.com/document/product/237/16191#[DBEngineInfo](http://document.tencentcloudapi.woa.com/document/product/237/16191#DBEngineInfo))
+* [[InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/237/16191#InstanceBackupFileItem)](http://document.tencentcloudapi.woa.com/document/product/237/16191#[InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/237/16191#InstanceBackupFileItem))
 
 ### 第 27 次发布
 
@@ -33181,6 +33008,21 @@
 
 
 ## 媒体处理(mps) 版本：2019-06-12
+
+### 第 22 次发布
+
+发布时间：2023-03-20 01:40:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OverrideTranscodeParameter](http://document.tencentcloudapi.woa.com/document/product/862/37615#OverrideTranscodeParameter)
+
+	* 新增成员：AddonAudioStream
+
 
 ### 第 21 次发布
 
@@ -41882,15 +41724,15 @@
 
 新增接口：
 
-* [[AttachResourceProject](http://document.tencentcloudapi.woa.com/document/product/651/77273)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DetachResourceProject](http://document.tencentcloudapi.woa.com/document/product/651/77272)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[TagResourcesAllocateQuotas](http://document.tencentcloudapi.woa.com/document/product/651/77275)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[TagResourcesDeallocateQuotas](http://document.tencentcloudapi.woa.com/document/product/651/77274)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpdateResourceProject](http://document.tencentcloudapi.woa.com/document/product/651/77271)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AttachResourceProject](http://document.tencentcloudapi.woa.com/document/product/651/77273)
+* [DetachResourceProject](http://document.tencentcloudapi.woa.com/document/product/651/77272)
+* [TagResourcesAllocateQuotas](http://document.tencentcloudapi.woa.com/document/product/651/77275)
+* [TagResourcesDeallocateQuotas](http://document.tencentcloudapi.woa.com/document/product/651/77274)
+* [UpdateResourceProject](http://document.tencentcloudapi.woa.com/document/product/651/77271)
 
 新增数据结构：
 
-* [[ResourceTypeQuotas](http://document.tencentcloudapi.woa.com/document/product/651/35327#ResourceTypeQuotas)](http://document.tencentcloudapi.woa.com/document/product/651/35327#[ResourceTypeQuotas](http://document.tencentcloudapi.woa.com/document/product/651/35327#ResourceTypeQuotas))
+* [ResourceTypeQuotas](http://document.tencentcloudapi.woa.com/document/product/651/35327#ResourceTypeQuotas)
 
 ### 第 4 次发布
 
