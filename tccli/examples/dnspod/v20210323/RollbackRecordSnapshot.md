@@ -1,6 +1,6 @@
 **Example 1: 重新回滚指定解析记录快照**
 
- 
+ 重新回滚指定解析记录快照
 
 Input: 
 
@@ -9,7 +9,7 @@ tccli dnspod RollbackRecordSnapshot --cli-unfold-argument  \
     --TaskId 179 \
     --Domain domain.com \
     --SnapshotId A4EE5XXX \
-    --RecordList.0.RecordId 1111 \
+    --RecordList.0.RecordId 11112 \
     --RecordList.0.SubDomain no_line \
     --RecordList.0.RecordType A \
     --RecordList.0.RecordLine 测试啊 \

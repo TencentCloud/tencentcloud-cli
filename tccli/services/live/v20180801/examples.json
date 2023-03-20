@@ -722,7 +722,7 @@
     ],
     "DescribeLogDownloadList": [
       {
-        "document": "",
+        "document": "批量获取日志URL。",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogDownloadList\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-03-12 12:00:00\",\n    \"StartTime\": \"2019-03-12 00:00:00\",\n    \"PlayDomains\": [\n        \"5000.liveplay.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"LogInfoList\": [\n            {\n                \"LogName\": \"test\",\n                \"LogUrl\": \"http://test.log.com\",\n                \"LogTime\": \"2019-03-13 00:00:00\",\n                \"FileSize\": 1000\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"

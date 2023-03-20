@@ -4208,7 +4208,6 @@
       "document": "UploadCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "证书内容。",
           "example": "无",
           "member": "string",
@@ -4217,7 +4216,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。",
           "example": "无",
           "member": "string",
@@ -4226,7 +4224,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "证书类型，默认 SVR。CA = 客户端证书，SVR = 服务器证书。",
           "example": "无",
           "member": "string",
@@ -4235,7 +4232,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注名称。",
           "example": "无",
           "member": "string",
@@ -4244,7 +4240,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "项目 ID。",
           "example": "无",
           "member": "uint64",
@@ -4253,13 +4248,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”",
           "example": "无",
           "member": "string",
           "name": "CertificateUse",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "相同的证书是否允许重复上传",
+          "example": "true",
+          "member": "bool",
+          "name": "Repeatable",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4272,9 +4274,16 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "重复证书的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RepeatCertId",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

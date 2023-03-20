@@ -2169,7 +2169,6 @@
       "document": "文件系统基本信息",
       "members": [
         {
-          "default": "",
           "document": "创建时间",
           "example": "无",
           "member": "string",
@@ -2179,7 +2178,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户自定义名称",
           "example": "无",
           "member": "string",
@@ -2189,7 +2187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统 ID",
           "example": "无",
           "member": "string",
@@ -2199,7 +2196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统状态",
           "example": "无",
           "member": "string",
@@ -2209,7 +2205,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统已使用容量",
           "example": "无",
           "member": "uint64",
@@ -2219,7 +2214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统最大空间限制",
           "example": "无",
           "member": "uint64",
@@ -2229,7 +2223,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "区域 ID",
           "example": "无",
           "member": "uint64",
@@ -2239,7 +2232,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "区域名称",
           "example": "无",
           "member": "string",
@@ -2249,7 +2241,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统协议类型",
           "example": "无",
           "member": "string",
@@ -2259,7 +2250,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统存储类型",
           "example": "无",
           "member": "string",
@@ -2269,7 +2259,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统绑定的预付费存储包",
           "example": "无",
           "member": "string",
@@ -2279,7 +2268,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统绑定的预付费带宽包（暂未支持）",
           "example": "无",
           "member": "string",
@@ -2289,7 +2277,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统绑定权限组信息",
           "example": "无",
           "member": "PGroup",
@@ -2299,7 +2286,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户自定义名称",
           "example": "无",
           "member": "string",
@@ -2309,7 +2295,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统是否加密",
           "example": "无",
           "member": "bool",
@@ -2319,7 +2304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "加密所使用的密钥，可以为密钥的 ID 或者 ARN",
           "example": "无",
           "member": "string",
@@ -2329,7 +2313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "应用ID",
           "example": "无",
           "member": "int64",
@@ -2339,7 +2322,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定",
           "example": "无",
           "member": "float",
@@ -2349,7 +2331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统总容量",
           "example": "无",
           "member": "uint64",
@@ -2359,7 +2340,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统标签列表",
           "example": "无",
           "member": "TagInfo",
@@ -2367,6 +2347,24 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "文件系统声明周期管理状态",
+          "example": "无",
+          "member": "string",
+          "name": "TieringState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分层存储详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TieringDetailInfo",
+          "name": "TieringDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2970,7 +2968,6 @@
       "document": "Tag信息单元",
       "members": [
         {
-          "default": "",
           "document": "标签键",
           "example": "xx",
           "member": "string",
@@ -2980,7 +2977,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签值",
           "example": "xx",
           "member": "string",
@@ -2990,7 +2986,12 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
+    },
+    "TieringDetailInfo": {
+      "document": "分层存储详细信息",
+      "members": [],
+      "usage": "both"
     },
     "UnbindAutoSnapshotPolicyRequest": {
       "document": "UnbindAutoSnapshotPolicy请求参数结构体",

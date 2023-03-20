@@ -929,7 +929,7 @@
       "document": "规则引擎功能项操作，对于一种功能只对应下面三种类型的其中一种，RuleAction 数组中的每一项只能是其中一个类型，更多功能项的填写规范可调用接口 [查询规则引擎的设置参数](https://tcloud4api.woa.com/document/product/1657/79433?!preview&!document=1) 查看。",
       "members": [
         {
-          "document": "常规功能操作，选择该类型的功能项有：\n<li> 访问URL 重写（AccessUrlRedirect）；</li>\n<li> 回源 URL 重写 （UpstreamUrlRedirect）；</li>\n<li> QUIC（QUIC）；</li>\n<li> WebSocket （WebSocket）；</li>\n<li> 视频拖拽（VideoSeek）；</li>\n<li> Token 鉴权（Authentication）；</li>\n<li> 自定义CacheKey（CacheKey）；</li>\n<li> 节点缓存 TTL （Cache）；</li>\n<li> 浏览器缓存 TTL（MaxAge）；</li>\n<li> 离线缓存（OfflineCache）；</li>\n<li> 智能加速（SmartRouting）；</li>\n<li> 分片回源（RangeOriginPull）；</li>\n<li> HTTP/2 回源（UpstreamHttp2）；</li>\n<li> Host Header 重写（HostHeader）；</li>\n<li> 强制 HTTPS（ForceRedirect）；</li>\n<li> 回源 HTTPS（OriginPullProtocol）；</li>\n<li> 缓存预刷新（CachePrefresh）；</li>\n<li> 智能压缩（Compression）；</li>\n<li> Hsts；</li>\n<li> ClientIpHeader；</li>\n<li> TlsVersion；</li>\n<li> OcspStapling；</li>\n<li> HTTP/2 访问（Http2）；</li>\n<li> 回源跟随重定向(UpstreamFollowRedirect)；</li>\n<li> 修改源站(Origin)。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "常规功能操作，选择该类型的功能项有：\n<li> 访问URL 重写（AccessUrlRedirect）；</li>\n<li> 回源 URL 重写 （UpstreamUrlRedirect）；</li>\n<li> QUIC（QUIC）；</li>\n<li> WebSocket （WebSocket）；</li>\n<li> 视频拖拽（VideoSeek）；</li>\n<li> Token 鉴权（Authentication）；</li>\n<li> 自定义CacheKey（CacheKey）；</li>\n<li> 节点缓存 TTL （Cache）；</li>\n<li> 浏览器缓存 TTL（MaxAge）；</li>\n<li> 离线缓存（OfflineCache）；</li>\n<li> 智能加速（SmartRouting）；</li>\n<li> 分片回源（RangeOriginPull）；</li>\n<li> HTTP/2 回源（UpstreamHttp2）；</li>\n<li> Host Header 重写（HostHeader）；</li>\n<li> 强制 HTTPS（ForceRedirect）；</li>\n<li> 回源 HTTPS（OriginPullProtocol）；</li>\n<li> 缓存预刷新（CachePrefresh）；</li>\n<li> 智能压缩（Compression）；</li>\n<li> Hsts；</li>\n<li> ClientIpHeader；</li>\n<li> SslTlsSecureConf；</li>\n<li> OcspStapling；</li>\n<li> HTTP/2 访问（Http2）；</li>\n<li> 回源跟随重定向(UpstreamFollowRedirect)；</li>\n<li> 修改源站(Origin)。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NormalAction",
           "name": "NormalAction",
@@ -3509,7 +3509,6 @@
       "document": "DescribeAccelerationDomains请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "加速域名所属站点ID。不填写该参数默认返回所有站点下的加速域名。",
           "example": "zone-20hyebgyfsko",
           "member": "string",
@@ -3518,8 +3517,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>domain-name<br>   按照【<strong>加速域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否\n<li>origin-type<br>   按照【<strong>源站类型</strong>】进行过滤。<br>   类型：String<br>   必选：否\n<li>origin<br>   按照【<strong>主源站地址</strong>】进行过滤。<br>   类型：String<br>   必选：否\n<li>backup-origin<br>   按照【<strong>备用源站地址</strong>】进行过滤。<br>   类型：String<br>   必选：否",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>domain-name<br>   按照【<strong>加速域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否\n<li>origin-type<br>   按照【<strong>源站类型</strong>】进行过滤。<br>   类型：String<br>   必选：否\n<li>origin<br>   按照【<strong>主源站地址</strong>】进行过滤。<br>   类型：String<br>   必选：否\n<li>backup-origin<br>   按照【<strong>备用源站地址</strong>】进行过滤。<br>   类型：String<br>   必选：否\n<li>domain-cname<br>   按照【<strong>加速CNAME名</strong>】进行过滤。<br>   类型：String<br>   必选：否\n<li>share-cname<br>   按照【<strong>共享CNAME名</strong>】进行过滤。<br>   类型：String<br>   必选：否",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -3527,7 +3525,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "列表排序方式，取值有：\n<li>asc：升序排列；</li>\n<li>desc：降序排列。</li>默认值为asc。",
           "example": "asc",
           "member": "string",
@@ -3536,7 +3533,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "匹配方式，取值有：\n<li>all：返回匹配所有查询条件的加速域名；</li>\n<li>any：返回匹配任意一个查询条件的加速域名。</li>默认值为all。",
           "example": "all",
           "member": "string",
@@ -3545,7 +3541,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页查询限制数目，默认值：20，上限：200。",
           "example": "10",
           "member": "int64",
@@ -3554,7 +3549,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页查询偏移量，默认为 0。",
           "example": "0",
           "member": "int64",
@@ -3563,7 +3557,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "排序依据，取值有：\n<li>created_on：加速域名创建时间；</li>\n<li>domain-name：加速域名名称；</li>\n</li>默认根据domain-name属性排序。",
           "example": "domain-name",
           "member": "string",
@@ -3582,7 +3575,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3591,7 +3583,6 @@
           "example": "无",
           "member": "AccelerationDomain",
           "name": "AccelerationDomains",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8095,6 +8086,22 @@
       ],
       "type": "object"
     },
+    "ImageOptimize": {
+      "document": "图片优化配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IntelligenceRule": {
       "document": "智能分析规则",
       "members": [
@@ -9791,7 +9798,6 @@
       "document": "源站配置。",
       "members": [
         {
-          "default": "",
           "document": "主源站列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
@@ -9801,7 +9807,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备源站列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"2.2.2.2\"]",
           "member": "string",
@@ -9811,7 +9816,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "回源协议配置，取值有：\n<li>http：强制 http 回源；</li>\n<li>follow：协议跟随回源；</li>\n<li>https：强制 https 回源。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https",
           "member": "string",
@@ -9821,7 +9825,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源站为腾讯云COS时，是否为私有访问bucket，取值有：\n<li>on：私有访问；</li>\n<li>off：公共访问。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
           "member": "string",
@@ -13757,7 +13760,6 @@
       "document": "站点配置。",
       "members": [
         {
-          "default": "",
           "document": "站点名称。",
           "example": "example.com",
           "member": "string",
@@ -13767,7 +13769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点加速区域信息，取值有：\n<li> mainland：中国境内加速；</li>\n<li> overseas：中国境外加速。</li>",
           "example": "mainland",
           "member": "string",
@@ -13777,7 +13778,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点缓存键配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CacheKey",
@@ -13787,7 +13787,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Quic访问配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Quic",
@@ -13797,7 +13796,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "POST请求传输配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PostMaxSize",
@@ -13807,7 +13805,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "智能压缩配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Compression",
@@ -13817,7 +13814,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Http2回源配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UpstreamHttp2",
@@ -13827,7 +13823,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "访问协议强制Https跳转配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ForceRedirect",
@@ -13837,7 +13832,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "缓存过期时间配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CacheConfig",
@@ -13847,7 +13841,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源站配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Origin",
@@ -13857,7 +13850,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "智能加速配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartRouting",
@@ -13867,7 +13859,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "浏览器缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MaxAge",
@@ -13877,7 +13868,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "离线缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OfflineCache",
@@ -13887,7 +13877,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "WebSocket配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WebSocket",
@@ -13897,7 +13886,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "客户端IP回源请求头配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClientIpHeader",
@@ -13907,7 +13895,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "缓存预刷新配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CachePrefresh",
@@ -13917,7 +13904,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Ipv6访问配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Ipv6",
@@ -13927,7 +13913,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Https 加速配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Https",
@@ -13937,7 +13922,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "回源时是否携带客户端IP所属地域信息的配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClientIpCountry",
@@ -13947,11 +13931,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Grpc协议支持配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Grpc",
           "name": "Grpc",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "图片优化相关配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageOptimize",
+          "name": "ImageOptimize",
           "required": true,
           "type": "object",
           "value_allowed_null": true

@@ -1883,7 +1883,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "有效期截止时间（YYYY-MM-DD）",
+          "document": "有效期截止时间（新版驾驶证返回 YYYY-MM-DD，\n老版驾驶证返回有效期限 X年）",
           "example": "2017-10-01",
           "member": "string",
           "name": "EndDate",

@@ -210,6 +210,13 @@
       "output": "DescribeUserResponse",
       "status": "online"
     },
+    "GetRoomEvent": {
+      "document": "获取房间事件,仅在课堂结束1小时内有效。",
+      "input": "GetRoomEventRequest",
+      "name": "获取房间事件",
+      "output": "GetRoomEventResponse",
+      "status": "online"
+    },
     "GetRoomMessage": {
       "document": "获取房间历史消息(房间历史消息保存7天)",
       "input": "GetRoomMessageRequest",
@@ -2448,6 +2455,137 @@
         }
       ],
       "usage": "out"
+    },
+    "EventDataInfo": {
+      "document": "房间事件对应的信息。",
+      "members": [
+        {
+          "document": "事件发生的房间号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "事件发生的用户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EventInfo": {
+      "document": "房间事件信息。",
+      "members": [
+        {
+          "document": "事件发生的秒级unix时间戳。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "Timestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件类型,有以下值:\nRoomStart:房间开始 RoomEnd:房间结束 MemberJoin:成员加入 MemberQuit:成员退出 RecordFinish:录制结束",
+          "example": "RoomStart",
+          "member": "string",
+          "name": "EventType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件详细内容，包含房间号,成员类型事件包含用户Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"RoomId\":1234}",
+          "member": "EventDataInfo",
+          "name": "EventData",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetRoomEventRequest": {
+      "document": "GetRoomEvent请求参数结构体",
+      "members": [
+        {
+          "document": "房间Id。",
+          "example": "301234567",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "应用Id。",
+          "example": "12345",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "起始页，1开始。keyword为空时有效。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "每页个数。keyword为空时有效。一次性最多200条。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "搜索事件类型。有以下事件类型:\nRoomStart:房间开始\nRoomEnd:房间结束\nMemberJoin:成员加入\nMemberQuit:成员退出\nRecordFinish:录制结束",
+          "example": "RoomStart",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoomEventResponse": {
+      "document": "GetRoomEvent返回参数结构体",
+      "members": [
+        {
+          "document": "该房间的事件总数，keyword搜索不影响该值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "详细事件内容。包含相应的类型、发生的时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Timestamp\":1234,\"EventType\":\"RoomStart\",\"EventData\":{\"RoomId\":123456}}]",
+          "member": "EventInfo",
+          "name": "Events",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetRoomMessageRequest": {
       "document": "GetRoomMessage请求参数结构体",

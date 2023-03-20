@@ -1,6 +1,6 @@
 **Example 1: 运行时更新文件查杀实时监控设置**
 
-
+运行时更新文件查杀实时监控设置
 
 Input: 
 
@@ -8,7 +8,8 @@ Input:
 tccli tcss ModifyVirusMonitorSetting --cli-unfold-argument  \
     --EnableScan True \
     --ScanPathType 1 \
-    --ScanPathAll True
+    --ScanPathAll True \
+    --ScanPathMode SCAN_PATH_DEFAULT
 ```
 
 Output: 

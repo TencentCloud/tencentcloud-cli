@@ -1,6 +1,6 @@
 **Example 1: 获取成员列表**
 
-
+获取成员列表
 
 Input: 
 
@@ -19,10 +19,10 @@ Output:
             {
                 "CreateTime": "2021-04-17 12:19:07",
                 "MemberType": "Invite",
-                "MemberUin": 100000558815,
+                "MemberUin": 111111111111,
                 "Name": "test2",
                 "NodeId": 27,
-                "NodeName": "",
+                "NodeName": "node1",
                 "IsAllowQuit": "Denied",
                 "OrgPermission": [
                     {
@@ -47,10 +47,10 @@ Output:
             {
                 "CreateTime": "2021-04-16 11:49:39",
                 "MemberType": "Create",
-                "MemberUin": 100000546922,
-                "Name": "",
+                "MemberUin": 222222222222,
+                "Name": "name2",
                 "NodeId": 26,
-                "NodeName": "",
+                "NodeName": "node2",
                 "IsAllowQuit": "Denied",
                 "OrgPermission": [
                     {

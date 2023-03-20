@@ -9637,7 +9637,6 @@
       "document": "CreateVirusScanTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "是否扫描所有路径",
           "example": "true",
           "member": "bool",
@@ -9646,7 +9645,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "扫描范围0容器1主机节点",
           "example": "1",
           "member": "uint64",
@@ -9655,7 +9653,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "true 全选，false 自选",
           "example": "true",
           "member": "bool",
@@ -9664,7 +9661,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "超时时长，单位小时",
           "example": "1",
           "member": "uint64",
@@ -9673,7 +9669,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "当ScanPathAll为false生效 0扫描以下路径 1、扫描除以下路径",
           "example": "0",
           "member": "uint64",
@@ -9682,7 +9677,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "自选扫描范围的容器id或者主机id 根据ScanRangeType决定",
           "example": "[]",
           "member": "string",
@@ -9691,13 +9685,20 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "自选排除或扫描的地址",
           "example": "[]",
           "member": "string",
           "name": "ScanPath",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "扫描路径模式：\nSCAN_PATH_ALL：全部路径\nSCAN_PATH_DEFAULT：默认路径\nSCAN_PATH_USER_DEFINE：用户自定义路径\n",
+          "example": "SCAN_PATH_ALL",
+          "member": "string",
+          "name": "ScanPathMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9710,7 +9711,6 @@
           "example": "无",
           "member": "string",
           "name": "TaskID",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23352,7 +23352,6 @@
       "document": "DescribeVirusDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "木马文件id",
           "example": "无",
           "member": "string",
@@ -23371,7 +23370,6 @@
           "example": "xx",
           "member": "string",
           "name": "ImageId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23380,7 +23378,6 @@
           "example": "xx",
           "member": "string",
           "name": "ImageName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23389,7 +23386,6 @@
           "example": "xx",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23398,7 +23394,6 @@
           "example": "xx",
           "member": "uint64",
           "name": "Size",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23407,7 +23402,6 @@
           "example": "xx",
           "member": "string",
           "name": "FilePath",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23416,7 +23410,6 @@
           "example": "xx",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23425,7 +23418,6 @@
           "example": "xx",
           "member": "string",
           "name": "VirusName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23434,7 +23426,6 @@
           "example": "xx",
           "member": "string",
           "name": "RiskLevel",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23443,7 +23434,6 @@
           "example": "xx",
           "member": "string",
           "name": "ContainerName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23452,7 +23442,6 @@
           "example": "xx",
           "member": "string",
           "name": "ContainerId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23461,7 +23450,6 @@
           "example": "xx",
           "member": "string",
           "name": "HostName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23470,7 +23458,6 @@
           "example": "xx",
           "member": "string",
           "name": "HostId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23479,7 +23466,6 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23488,7 +23474,6 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessPath",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23497,7 +23482,6 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessMd5",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23506,7 +23490,6 @@
           "example": "xx",
           "member": "uint64",
           "name": "ProcessId",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23515,7 +23498,6 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessArgv",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23524,7 +23506,6 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessChan",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23533,7 +23514,6 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessAccountGroup",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23542,7 +23522,6 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessStartAccount",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23551,7 +23530,6 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessFileAuthority",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23560,7 +23538,6 @@
           "example": "xx",
           "member": "int64",
           "name": "SourceType",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23569,7 +23546,6 @@
           "example": "xx",
           "member": "string",
           "name": "PodName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23578,7 +23554,6 @@
           "example": "[]",
           "member": "string",
           "name": "Tags",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23587,7 +23562,6 @@
           "example": "xx",
           "member": "string",
           "name": "HarmDescribe",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23596,7 +23570,6 @@
           "example": "xx",
           "member": "string",
           "name": "SuggestScheme",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23605,7 +23578,6 @@
           "example": "xx",
           "member": "string",
           "name": "Mark",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23614,7 +23586,6 @@
           "example": "xx",
           "member": "string",
           "name": "FileName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23623,7 +23594,6 @@
           "example": "xx",
           "member": "string",
           "name": "FileMd5",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23632,7 +23602,6 @@
           "example": "xx",
           "member": "string",
           "name": "EventType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23641,7 +23610,6 @@
           "example": "xx",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23650,7 +23618,6 @@
           "example": "xx",
           "member": "string",
           "name": "SubStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23659,7 +23626,6 @@
           "example": "xx",
           "member": "string",
           "name": "HostIP",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23668,7 +23634,6 @@
           "example": "xx",
           "member": "string",
           "name": "ClientIP",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23677,7 +23642,6 @@
           "example": "无",
           "member": "string",
           "name": "PProcessStartUser",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23686,7 +23650,6 @@
           "example": "无",
           "member": "string",
           "name": "PProcessUserGroup",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23695,7 +23658,6 @@
           "example": "无",
           "member": "string",
           "name": "PProcessPath",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23704,7 +23666,6 @@
           "example": "无",
           "member": "string",
           "name": "PProcessParam",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23713,7 +23674,6 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessStartUser",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23722,7 +23682,6 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessUserGroup",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23731,7 +23690,6 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessPath",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23740,7 +23698,6 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessParam",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23749,7 +23706,6 @@
           "example": "无",
           "member": "string",
           "name": "OperationTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23758,7 +23714,6 @@
           "example": "无",
           "member": "string",
           "name": "ContainerNetStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23767,7 +23722,6 @@
           "example": "无",
           "member": "string",
           "name": "ContainerNetSubStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23776,7 +23730,6 @@
           "example": "无",
           "member": "string",
           "name": "ContainerIsolateOperationSrc",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23785,8 +23738,23 @@
           "example": "[\"xxx\"]",
           "member": "string",
           "name": "CheckPlatform",
-          "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件访问时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "FileAccessTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "FileModifyTime",
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -23991,7 +23959,6 @@
           "example": "true",
           "member": "bool",
           "name": "EnableScan",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -24000,7 +23967,6 @@
           "example": "true",
           "member": "bool",
           "name": "ScanPathAll",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -24009,7 +23975,6 @@
           "example": "0",
           "member": "uint64",
           "name": "ScanPathType",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -24018,9 +23983,16 @@
           "example": "[]",
           "member": "string",
           "name": "ScanPath",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "扫描路径模式：\nSCAN_PATH_ALL：全部路径\nSCAN_PATH_DEFAULT：默认路径\nSCAN_PATH_USER_DEFINE：用户自定义路径\n",
+          "example": "SCAN_PATH_ALL",
+          "member": "string",
+          "name": "ScanPathMode",
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -24080,7 +24052,6 @@
           "example": "true",
           "member": "bool",
           "name": "EnableScan",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -24089,7 +24060,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Cycle",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -24098,7 +24068,6 @@
           "example": "10:00:00",
           "member": "string",
           "name": "BeginScanAt",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -24107,7 +24076,6 @@
           "example": "true",
           "member": "bool",
           "name": "ScanPathAll",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -24116,7 +24084,6 @@
           "example": "0",
           "member": "uint64",
           "name": "ScanPathType",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -24125,7 +24092,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Timeout",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -24134,7 +24100,6 @@
           "example": "0",
           "member": "uint64",
           "name": "ScanRangeType",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -24143,7 +24108,6 @@
           "example": "true",
           "member": "bool",
           "name": "ScanRangeAll",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -24152,7 +24116,6 @@
           "example": "[]",
           "member": "string",
           "name": "ScanIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -24161,7 +24124,6 @@
           "example": "[]",
           "member": "string",
           "name": "ScanPath",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -24170,9 +24132,16 @@
           "example": "1",
           "member": "uint64",
           "name": "ClickTimeout",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "扫描路径模式：\nSCAN_PATH_ALL：全部路径\nSCAN_PATH_DEFAULT：默认路径\nSCAN_PATH_USER_DEFINE：用户自定义路径\n",
+          "example": "SCAN_PATH_ALL",
+          "member": "string",
+          "name": "ScanPathMode",
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -31037,7 +31006,6 @@
       "document": "ModifyVirusMonitorSetting请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "是否开启定期扫描",
           "example": "true",
           "member": "bool",
@@ -31046,7 +31014,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "扫描全部路径",
           "example": "true",
           "member": "bool",
@@ -31055,7 +31022,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径(扫描范围只能小于等于1)",
           "example": "1",
           "member": "uint64",
@@ -31064,13 +31030,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "自选排除或扫描的地址",
           "example": "[]",
           "member": "string",
           "name": "ScanPath",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "扫描路径模式：\nSCAN_PATH_ALL：全部路径\nSCAN_PATH_DEFAULT：默认路径\nSCAN_PATH_USER_DEFINE：用户自定义路径\n",
+          "example": "SCAN_PATH_ALL",
+          "member": "string",
+          "name": "ScanPathMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -31091,7 +31064,6 @@
       "document": "ModifyVirusScanSetting请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "是否开启定期扫描",
           "example": "true",
           "member": "bool",
@@ -31100,7 +31072,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "检测周期每隔多少天(1|3|7)",
           "example": "1",
           "member": "uint64",
@@ -31109,7 +31080,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "扫描开始时间",
           "example": "10:00:00",
           "member": "string",
@@ -31118,7 +31088,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "扫描全部路径(true:全选,false:自选)",
           "example": "true",
           "member": "bool",
@@ -31127,7 +31096,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径",
           "example": "1",
           "member": "uint64",
@@ -31136,7 +31104,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "超时时长(5~24h)",
           "example": "1",
           "member": "uint64",
@@ -31145,7 +31112,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "扫描范围0容器1主机节点",
           "example": "1",
           "member": "uint64",
@@ -31154,7 +31120,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "true 全选，false 自选",
           "example": "true",
           "member": "bool",
@@ -31163,7 +31128,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "自选扫描范围的容器id或者主机id 根据ScanRangeType决定",
           "example": "[]",
           "member": "string",
@@ -31172,13 +31136,20 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "扫描路径",
           "example": "[]",
           "member": "string",
           "name": "ScanPath",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "扫描路径模式：\nSCAN_PATH_ALL：全部路径\nSCAN_PATH_DEFAULT：默认路径\nSCAN_PATH_USER_DEFINE：用户自定义路径\n",
+          "example": "SCAN_PATH_ALL",
+          "member": "string",
+          "name": "ScanPathMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

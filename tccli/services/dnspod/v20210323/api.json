@@ -3711,7 +3711,6 @@
           "example": "无",
           "member": "UserInfo",
           "name": "UserInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

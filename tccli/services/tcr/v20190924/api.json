@@ -1404,6 +1404,14 @@
           "name": "SyncTag",
           "required": false,
           "type": "bool"
+        },
+        {
+          "document": "是否开启Cos桶多AZ特性",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCosMAZ",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

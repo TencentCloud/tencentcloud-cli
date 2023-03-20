@@ -800,7 +800,6 @@
       "document": "AddInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cynosdbmysql-6gtlgm5l",
           "member": "string",
@@ -809,7 +808,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Cpu核数",
           "example": "2",
           "member": "int64",
@@ -818,7 +816,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "内存，单位为GB",
           "example": "4",
           "member": "int64",
@@ -827,7 +824,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "新增只读实例数，取值范围为[0,4]",
           "example": "1",
           "member": "int64",
@@ -836,8 +832,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。",
+          "document": "实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。",
           "example": "cynosmysql-grp-xxxxxxxx",
           "member": "string",
           "name": "InstanceGrpId",
@@ -845,8 +840,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "所属VPC网络ID，该参数已废弃",
+          "document": "所属VPC网络ID。",
           "example": "vpc-1ptuei0b",
           "member": "string",
           "name": "VpcId",
@@ -854,8 +848,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。",
+          "document": "所属子网ID，如果设置了VpcId，则SubnetId必填。",
           "example": "subnet-1tmw9t4o",
           "member": "string",
           "name": "SubnetId",
@@ -863,7 +856,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "新增RO组时使用的Port，取值范围为[0,65535)",
           "example": "2000",
           "member": "int64",
@@ -872,7 +864,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'",
           "example": "cynosmysql-xxxxxxxx",
           "member": "string",
@@ -881,7 +872,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否自动选择代金券 1是 0否 默认为0",
           "example": "0",
           "member": "int64",
@@ -890,7 +880,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
           "example": "MYSQL",
           "member": "string",
@@ -899,7 +888,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "订单来源，字符串长度范围为[0,64)",
           "example": "api",
           "member": "string",
@@ -908,7 +896,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "交易模式 0-下单并支付 1-下单",
           "example": "0",
           "member": "int64",
@@ -917,7 +904,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "参数模版ID",
           "example": "0",
           "member": "int64",
@@ -926,11 +912,18 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "参数列表，ParamTemplateId 传入时InstanceParams才有效",
           "example": "无",
           "member": "ModifyParamItem",
           "name": "InstanceParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "安全组ID，新建只读实例时可以指定安全组。",
+          "example": "sg-rgf3qgld",
+          "member": "string",
+          "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
         }
@@ -945,7 +938,6 @@
           "example": "myTranId",
           "member": "string",
           "name": "TranId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -954,7 +946,6 @@
           "example": "[123]",
           "member": "string",
           "name": "DealNames",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -963,7 +954,6 @@
           "example": "[cynosmysql-xxxxxxxx]",
           "member": "string",
           "name": "ResourceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -972,7 +962,6 @@
           "example": "[234]",
           "member": "string",
           "name": "BigDealIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

@@ -3,7 +3,7 @@
     "CheckRecordSnapshotRollback": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRecordSnapshotRollback\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A4EEXXXX\",\n    \"Record\": {\n        \"RecordId\": \"1111111\",\n        \"SubDomain\": \"no_line\",\n        \"RecordType\": \"A\",\n        \"RecordLine\": \"测试啊\",\n        \"Value\": \"0.0.0.1\",\n        \"TTL\": \"600\",\n        \"MX\": \"0\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRecordSnapshotRollback\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A4EEXXXX\",\n    \"Record\": {\n        \"RecordId\": \"1111112\",\n        \"SubDomain\": \"no_line\",\n        \"RecordType\": \"A\",\n        \"RecordLine\": \"测试啊\",\n        \"Value\": \"0.0.0.1\",\n        \"TTL\": \"600\",\n        \"MX\": \"0\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1664058d-f8b0-4b4b-9127-cc6d6b36f2b7\",\n        \"Reason\": \"记录线路不正确\"\n    }\n}",
         "title": "回滚前检查单条记录"
       }
@@ -222,9 +222,9 @@
     ],
     "DescribeDomainPurview": [
       {
-        "document": " ",
+        "document": " 获取域名权限",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainPurview\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"PurviewList\": [\n            {\n                \"Name\": \"URL转发条数\",\n                \"Value\": \"10\"\n            },\n            {\n                \"Name\": \"NS记录条数\",\n                \"Value\": \"99999\"\n            },\n            {\n                \"Name\": \"AAAA记录条数\",\n                \"Value\": \"99999\"\n            },\n            {\n                \"Name\": \"SRV记录条数\",\n                \"Value\": \"99999\"\n            },\n            {\n                \"Name\": \"域名别名绑定个数\",\n                \"Value\": \"10\"\n            },\n            {\n                \"Name\": \"域名锁定天数\",\n                \"Value\": \"365\"\n            },\n            {\n                \"Name\": \"域名共享个数\",\n                \"Value\": \"1000\"\n            },\n            {\n                \"Name\": \"子域名级数\",\n                \"Value\": \"12\"\n            },\n            {\n                \"Name\": \"泛解析级数\",\n                \"Value\": \"10\"\n            },\n            {\n                \"Name\": \"负载均衡数量\",\n                \"Value\": \"60\"\n            },\n            {\n                \"Name\": \"记录TTL最低\",\n                \"Value\": \"1\"\n            },\n            {\n                \"Name\": \"混合泛解析支持\",\n                \"Value\": \"yes\"\n            },\n            {\n                \"Name\": \"增强线路类型\",\n                \"Value\": \"yes\"\n            },\n            {\n                \"Name\": \"分省线路类型\",\n                \"Value\": \"yes\"\n            },\n            {\n                \"Name\": \"分大洲线路类型\",\n                \"Value\": \"yes\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"PurviewList\": [\n            {\n                \"Name\": \"URL转发条数\",\n                \"Value\": \"10\"\n            },\n            {\n                \"Name\": \"NS记录条数\",\n                \"Value\": \"1999\"\n            },\n            {\n                \"Name\": \"AAAA记录条数\",\n                \"Value\": \"1999\"\n            },\n            {\n                \"Name\": \"SRV记录条数\",\n                \"Value\": \"1999\"\n            },\n            {\n                \"Name\": \"域名别名绑定个数\",\n                \"Value\": \"10\"\n            },\n            {\n                \"Name\": \"域名锁定天数\",\n                \"Value\": \"365\"\n            },\n            {\n                \"Name\": \"域名共享个数\",\n                \"Value\": \"1000\"\n            },\n            {\n                \"Name\": \"子域名级数\",\n                \"Value\": \"12\"\n            },\n            {\n                \"Name\": \"泛解析级数\",\n                \"Value\": \"10\"\n            },\n            {\n                \"Name\": \"负载均衡数量\",\n                \"Value\": \"60\"\n            },\n            {\n                \"Name\": \"记录TTL最低\",\n                \"Value\": \"1\"\n            },\n            {\n                \"Name\": \"混合泛解析支持\",\n                \"Value\": \"yes\"\n            },\n            {\n                \"Name\": \"增强线路类型\",\n                \"Value\": \"yes\"\n            },\n            {\n                \"Name\": \"分省线路类型\",\n                \"Value\": \"yes\"\n            },\n            {\n                \"Name\": \"分大洲线路类型\",\n                \"Value\": \"yes\"\n            }\n        ]\n    }\n}",
         "title": "获取域名权限"
       }
     ],
@@ -254,9 +254,9 @@
     ],
     "DescribeRecord": [
       {
-        "document": " ",
+        "document": " 获取记录信息",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"RecordId\": 162\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordInfo\": {\n            \"Id\": 158,\n            \"SubDomain\": \"wwww\",\n            \"RecordType\": \"A\",\n            \"RecordLine\": \"百度\",\n            \"RecordLineId\": \"90=0\",\n            \"Value\": \"129.23.32.32\",\n            \"Weight\": null,\n            \"MX\": 0,\n            \"TTL\": 10,\n            \"Enabled\": 1,\n            \"MonitorStatus\": \"Ok\",\n            \"Remark\": \"以下参数列表仅列出了此接口响应代码，除此接口请求响应代码外\",\n            \"UpdatedOn\": \"2021-03-31 11:38:02\",\n            \"DomainId\": 62\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordInfo\": {\n            \"Id\": 158,\n            \"SubDomain\": \"test\",\n            \"RecordType\": \"A\",\n            \"RecordLine\": \"百度\",\n            \"RecordLineId\": \"90=0\",\n            \"Value\": \"129.23.32.32\",\n            \"Weight\": null,\n            \"MX\": 0,\n            \"TTL\": 10,\n            \"Enabled\": 1,\n            \"MonitorStatus\": \"Ok\",\n            \"Remark\": \"以下参数列表仅列出了此接口响应代码，除此接口请求响应代码外\",\n            \"UpdatedOn\": \"2021-03-31 11:38:02\",\n            \"DomainId\": 62\n        }\n    }\n}",
         "title": "获取记录信息"
       }
     ],
@@ -356,9 +356,9 @@
     ],
     "DescribeUserDetail": [
       {
-        "document": "",
+        "document": "获取帐户信息",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDetail\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"UserInfo\": {\n            \"Nick\": \"jionly\",\n            \"Id\": 5299600,\n            \"Email\": \"qcloud_uin_100000000328@qcloud.com\",\n            \"Status\": \"enabled\",\n            \"Telephone\": \"187****3214\",\n            \"EmailVerified\": \"yes\",\n            \"TelephoneVerified\": \"yes\",\n            \"UserGrade\": \"DP_Free\",\n            \"RealName\": \"王小云\",\n            \"WechatBinded\": \"no\",\n            \"Uin\": 100000000328\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"UserInfo\": {\n            \"Nick\": \"jionly\",\n            \"Id\": 5299600,\n            \"Email\": \"qcloud_uin_100000000328@qcloud.com\",\n            \"Status\": \"enabled\",\n            \"Telephone\": \"187****3214\",\n            \"EmailVerified\": \"yes\",\n            \"TelephoneVerified\": \"yes\",\n            \"UserGrade\": \"DP_Free\",\n            \"RealName\": \"王小云\",\n            \"WechatBinded\": \"no\",\n            \"Uin\": 100000000328,\n            \"FreeNs\": [\n                \"hannah.dnspod.net\",\n                \"perch.dnspod.net\"\n            ]\n        }\n    }\n}",
         "title": "获取帐户信息"
       }
     ],
@@ -420,8 +420,8 @@
     ],
     "ModifyDynamicDNS": [
       {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDynamicDNS\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"SubDomain\": \"bbbb\",\n    \"RecordId\": 162,\n    \"RecordLine\": \"默认\",\n    \"RecordLineId\": \"0\",\n    \"Value\": \"129.23.32.32\",\n    \"Ttl\": 600\n}",
+        "document": " 更新动态 DNS 记录",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDynamicDNS\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"SubDomain\": \"test\",\n    \"RecordId\": 162,\n    \"RecordLine\": \"默认\",\n    \"RecordLineId\": \"0\",\n    \"Value\": \"129.23.32.32\",\n    \"Ttl\": 600\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordId\": 162\n    }\n}",
         "title": "更新动态 DNS 记录"
       }
@@ -542,8 +542,8 @@
     ],
     "RollbackRecordSnapshot": [
       {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackRecordSnapshot\n<公共请求参数>\n\n{\n    \"TaskId\": 179,\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A4EE5XXX\",\n    \"RecordList\": [\n        {\n            \"RecordId\": \"1111\",\n            \"SubDomain\": \"no_line\",\n            \"RecordType\": \"A\",\n            \"RecordLine\": \"测试啊\",\n            \"Value\": \"0.0.0.1\",\n            \"TTL\": \"600\",\n            \"MX\": \"0\"\n        }\n    ]\n}",
+        "document": " 重新回滚指定解析记录快照",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackRecordSnapshot\n<公共请求参数>\n\n{\n    \"TaskId\": 179,\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A4EE5XXX\",\n    \"RecordList\": [\n        {\n            \"RecordId\": \"11112\",\n            \"SubDomain\": \"no_line\",\n            \"RecordType\": \"A\",\n            \"RecordLine\": \"测试啊\",\n            \"Value\": \"0.0.0.1\",\n            \"TTL\": \"600\",\n            \"MX\": \"0\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"265628c4-a5ed-4a84-9c8b-719582e6c43b\",\n        \"JobId\": 5657107\n    }\n}",
         "title": "重新回滚指定解析记录快照"
       }

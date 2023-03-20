@@ -7214,8 +7214,7 @@
       "document": "DescribeLogDownloadList请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "开始时间，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。",
+          "document": "开始时间，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。\n注：此字段为北京时间（UTC+8时区）。",
           "example": "2019-03-12 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -7223,8 +7222,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "结束时间，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。\n注意：结束时间 - 开始时间 <=7天。",
+          "document": "结束时间，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。\n注意：结束时间 - 开始时间 <=7天。\n注：此字段为北京时间（UTC+8时区）。",
           "example": "2019-03-12 12:00:00",
           "member": "string",
           "name": "EndTime",
@@ -7232,13 +7230,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "域名列表。",
           "example": "[\"5000.liveplay.com\\r\\n\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": true,
           "type": "list"
+        },
+        {
+          "document": "快直播还是标准直播，0：标准直播，1：快直播。默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsFastLive",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7251,7 +7256,6 @@
           "example": "无",
           "member": "LogInfo",
           "name": "LogInfoList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7260,7 +7264,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

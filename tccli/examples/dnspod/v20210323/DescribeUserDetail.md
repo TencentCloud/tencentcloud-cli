@@ -1,6 +1,6 @@
 **Example 1: 获取帐户信息**
 
-
+获取帐户信息
 
 Input: 
 
@@ -23,7 +23,11 @@ Output:
             "UserGrade": "DP_Free",
             "RealName": "王小云",
             "WechatBinded": "no",
-            "Uin": 100000000328
+            "Uin": 100000000328,
+            "FreeNs": [
+                "hannah.dnspod.net",
+                "perch.dnspod.net"
+            ]
         }
     }
 }

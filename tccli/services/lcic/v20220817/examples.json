@@ -240,6 +240,14 @@
         "title": "获取用户信息"
       }
     ],
+    "GetRoomEvent": [
+      {
+        "document": "获取房间事件",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRoomEvent\n<公共请求参数>\n\n{\n    \"RoomId\": 1,\n    \"SdkAppId\": 1234,\n    \"Page\": 1,\n    \"Limit\": 10,\n    \"Keyword\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Events\": [\n            {\n                \"Timestamp\": 1,\n                \"EventType\": \"abc\",\n                \"EventData\": {\n                    \"RoomId\": 1,\n                    \"UserId\": \"abc\"\n                }\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取房间事件"
+      }
+    ],
     "GetRoomMessage": [
       {
         "document": "获取房间历史消息示例",

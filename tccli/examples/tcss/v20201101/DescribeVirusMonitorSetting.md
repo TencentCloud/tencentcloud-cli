@@ -1,6 +1,6 @@
 **Example 1: 运行时查询文件查杀实时监控设置**
 
-
+运行时查询文件查杀实时监控设置
 
 Input: 
 
@@ -15,6 +15,7 @@ Output:
         "EnableScan": true,
         "ScanPathAll": true,
         "ScanPathType": 0,
+        "ScanPathMode": "SCAN_PATH_DEFAULT",
         "ScanPath": []
     }
 }

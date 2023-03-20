@@ -38,7 +38,15 @@ Output:
                 "BandwidthResourcePkg": "",
                 "FsName": "test_fs",
                 "AppId": 12700000,
-                "BandwidthLimit": 200
+                "BandwidthLimit": 200,
+                "TieringDetail": {},
+                "TieringState": "xx",
+                "Tags": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ]
             }
         ]
     }

@@ -422,8 +422,8 @@
     ],
     "CreateVirusScanTask": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVirusScanTask\n<公共请求参数>\n\n{\n    \"ScanRangeAll\": true,\n    \"ScanPathAll\": true,\n    \"ScanRangeType\": 1,\n    \"Timeout\": 2\n}",
+        "document": "运行时文件查杀一键扫描",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVirusScanTask\n<公共请求参数>\n\n{\n    \"ScanRangeAll\": true,\n    \"ScanPathAll\": true,\n    \"ScanRangeType\": 1,\n    \"ScanPathMode\": \"SCAN_PATH_DEFAULT\",\n    \"Timeout\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6d8d540-940f-47d9-8d7f-daac832ba5b4\",\n        \"TaskID\": \"6013a6c334b9a9000cf519be\"\n    }\n}",
         "title": "运行时文件查杀一键扫描"
       }
@@ -2014,7 +2014,7 @@
       {
         "document": "运行时查询木马文件信息",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusDetail\n<公共请求参数>\n\n{\n    \"Id\": \"dskaldjskld\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ContainerName\": \"xx\",\n        \"ProcessStartAccount\": \"xx\",\n        \"RiskLevel\": \"xx\",\n        \"VirusName\": \"xx\",\n        \"FileMd5\": \"xx\",\n        \"ProcessChan\": \"xx\",\n        \"ProcessAccountGroup\": \"xx\",\n        \"Status\": \"xx\",\n        \"ProcessId\": 1,\n        \"Tags\": [\n            \"xx\"\n        ],\n        \"EventType\": \"xx\",\n        \"HostName\": \"xx\",\n        \"HostIP\": \"xx\",\n        \"SubStatus\": \"xx\",\n        \"ImageId\": \"xx\",\n        \"PProcessParam\": \"xx\",\n        \"ClientIP\": \"xx\",\n        \"AncestorProcessStartUser\": \"xx\",\n        \"HarmDescribe\": \"xx\",\n        \"SuggestScheme\": \"xx\",\n        \"AncestorProcessParam\": \"xx\",\n        \"ProcessName\": \"xx\",\n        \"ProcessArgv\": \"xx\",\n        \"ProcessMd5\": \"xx\",\n        \"ProcessFileAuthority\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"PProcessPath\": \"xx\",\n        \"ModifyTime\": \"xx\",\n        \"Mark\": \"xx\",\n        \"SourceType\": 1,\n        \"ProcessPath\": \"xx\",\n        \"HostId\": \"xx\",\n        \"ContainerId\": \"xx\",\n        \"FilePath\": \"xx\",\n        \"AncestorProcessUserGroup\": \"xx\",\n        \"OperationTime\": \"xx\",\n        \"AncestorProcessPath\": \"xx\",\n        \"PProcessStartUser\": \"xx\",\n        \"FileName\": \"xx\",\n        \"ImageName\": \"xx\",\n        \"PProcessUserGroup\": \"xx\",\n        \"PodName\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"Size\": 1,\n        \"ContainerNetStatus\": \"xx\",\n        \"ContainerNetSubStatus\": \"xx\",\n        \"ContainerIsolateOperationSrc\": \"xx\",\n        \"CheckPlatform\": [\n            \"1\",\n            \"2\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageId\": \"abc\",\n        \"ImageName\": \"abc\",\n        \"CreateTime\": \"abc\",\n        \"Size\": 1,\n        \"FilePath\": \"abc\",\n        \"ModifyTime\": \"abc\",\n        \"VirusName\": \"abc\",\n        \"RiskLevel\": \"abc\",\n        \"ContainerName\": \"abc\",\n        \"ContainerId\": \"abc\",\n        \"HostName\": \"abc\",\n        \"HostId\": \"abc\",\n        \"ProcessName\": \"abc\",\n        \"ProcessPath\": \"abc\",\n        \"ProcessMd5\": \"abc\",\n        \"ProcessId\": 1,\n        \"ProcessArgv\": \"abc\",\n        \"ProcessChan\": \"abc\",\n        \"ProcessAccountGroup\": \"abc\",\n        \"ProcessStartAccount\": \"abc\",\n        \"ProcessFileAuthority\": \"abc\",\n        \"SourceType\": 0,\n        \"PodName\": \"abc\",\n        \"Tags\": [\n            \"abc\"\n        ],\n        \"HarmDescribe\": \"abc\",\n        \"SuggestScheme\": \"abc\",\n        \"Mark\": \"abc\",\n        \"FileName\": \"abc\",\n        \"FileMd5\": \"abc\",\n        \"EventType\": \"abc\",\n        \"Status\": \"abc\",\n        \"SubStatus\": \"abc\",\n        \"HostIP\": \"abc\",\n        \"ClientIP\": \"abc\",\n        \"PProcessStartUser\": \"abc\",\n        \"PProcessUserGroup\": \"abc\",\n        \"PProcessPath\": \"abc\",\n        \"PProcessParam\": \"abc\",\n        \"AncestorProcessStartUser\": \"abc\",\n        \"AncestorProcessUserGroup\": \"abc\",\n        \"AncestorProcessPath\": \"abc\",\n        \"AncestorProcessParam\": \"abc\",\n        \"OperationTime\": \"abc\",\n        \"ContainerNetStatus\": \"abc\",\n        \"ContainerNetSubStatus\": \"abc\",\n        \"ContainerIsolateOperationSrc\": \"abc\",\n        \"CheckPlatform\": [\n            \"abc\"\n        ],\n        \"FileAccessTime\": \"abc\",\n        \"FileModifyTime\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "运行时查询木马文件信息"
       }
     ],
@@ -2044,9 +2044,9 @@
     ],
     "DescribeVirusMonitorSetting": [
       {
-        "document": "",
+        "document": "运行时查询文件查杀实时监控设置",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusMonitorSetting\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\",\n        \"EnableScan\": true,\n        \"ScanPathAll\": true,\n        \"ScanPathType\": 0,\n        \"ScanPath\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\",\n        \"EnableScan\": true,\n        \"ScanPathAll\": true,\n        \"ScanPathType\": 0,\n        \"ScanPathMode\": \"SCAN_PATH_DEFAULT\",\n        \"ScanPath\": []\n    }\n}",
         "title": "运行时查询文件查杀实时监控设置"
       }
     ],
@@ -2060,9 +2060,9 @@
     ],
     "DescribeVirusScanSetting": [
       {
-        "document": "",
+        "document": "运行时查询文件查杀设置",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusScanSetting\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\",\n        \"EnableScan\": true,\n        \"Cycle\": 1,\n        \"BeginScanAt\": \"01:00:00\",\n        \"ScanPathAll\": true,\n        \"ScanPathType\": 0,\n        \"Timeout\": 2,\n        \"ScanRangeType\": 0,\n        \"ClickTimeout\": 1,\n        \"ScanRangeAll\": true,\n        \"ScanIds\": [],\n        \"ScanPath\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnableScan\": true,\n        \"Cycle\": 1,\n        \"BeginScanAt\": \"xx\",\n        \"ScanPathAll\": true,\n        \"ScanPathType\": 1,\n        \"Timeout\": 1,\n        \"ScanRangeType\": 1,\n        \"ScanRangeAll\": true,\n        \"ScanIds\": [\n            \"xx\"\n        ],\n        \"ScanPath\": [\n            \"xx\"\n        ],\n        \"ClickTimeout\": 1,\n        \"ScanPathMode\": \"SCAN_PATH_DEFAULT\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "运行时查询文件查杀设置"
       }
     ],
@@ -2516,16 +2516,16 @@
     ],
     "ModifyVirusMonitorSetting": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVirusMonitorSetting\n<公共请求参数>\n\n{\n    \"EnableScan\": true,\n    \"ScanPathType\": 1,\n    \"ScanPathAll\": true,\n    \"ScanPath\": []\n}",
+        "document": "运行时更新文件查杀实时监控设置",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVirusMonitorSetting\n<公共请求参数>\n\n{\n    \"EnableScan\": true,\n    \"ScanPathType\": 1,\n    \"ScanPathAll\": true,\n    \"ScanPathMode\": \"SCAN_PATH_DEFAULT\",\n    \"ScanPath\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\"\n    }\n}",
         "title": "运行时更新文件查杀实时监控设置"
       }
     ],
     "ModifyVirusScanSetting": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVirusScanSetting\n<公共请求参数>\n\n{\n    \"BeginScanAt\": \"xx\",\n    \"EnableScan\": true,\n    \"ScanPathType\": 1,\n    \"ScanRangeType\": 1,\n    \"ScanPathAll\": true,\n    \"Timeout\": 1,\n    \"ScanIds\": [\n        \"xx\"\n    ],\n    \"ScanPath\": [\n        \"xx\"\n    ],\n    \"ScanRangeAll\": true,\n    \"Cycle\": 1\n}",
+        "document": "运行时更新文件查杀设置",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVirusScanSetting\n<公共请求参数>\n\n{\n    \"BeginScanAt\": \"xx\",\n    \"EnableScan\": true,\n    \"ScanPathType\": 1,\n    \"ScanRangeType\": 1,\n    \"ScanPathAll\": true,\n    \"Timeout\": 1,\n    \"ScanIds\": [\n        \"xx\"\n    ],\n    \"ScanPath\": [\n        \"xx\"\n    ],\n    \"ScanRangeAll\": true,\n    \"Cycle\": 1,\n    \"ScanPathMode\": \"SCAN_PATH_ALL\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\"\n    }\n}",
         "title": "运行时更新文件查杀设置"
       }

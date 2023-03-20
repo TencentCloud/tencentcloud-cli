@@ -1,6 +1,6 @@
 **Example 1: 运行时更新文件查杀设置**
 
-
+运行时更新文件查杀设置
 
 Input: 
 
@@ -15,7 +15,8 @@ tccli tcss ModifyVirusScanSetting --cli-unfold-argument  \
     --ScanIds xx \
     --ScanPath xx \
     --ScanRangeAll True \
-    --Cycle 1
+    --Cycle 1 \
+    --ScanPathMode SCAN_PATH_ALL
 ```
 
 Output: 

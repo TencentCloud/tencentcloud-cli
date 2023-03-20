@@ -1,6 +1,6 @@
 **Example 1: 获取域名权限**
 
- 
+ 获取域名权限
 
 Input: 
 
@@ -22,15 +22,15 @@ Output:
             },
             {
                 "Name": "NS记录条数",
-                "Value": "99999"
+                "Value": "1999"
             },
             {
                 "Name": "AAAA记录条数",
-                "Value": "99999"
+                "Value": "1999"
             },
             {
                 "Name": "SRV记录条数",
-                "Value": "99999"
+                "Value": "1999"
             },
             {
                 "Name": "域名别名绑定个数",

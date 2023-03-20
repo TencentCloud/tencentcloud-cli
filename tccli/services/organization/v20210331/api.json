@@ -675,8 +675,7 @@
       "document": "DescribeOrganizationMemberAuthIdentities请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "偏移量。",
+          "document": "偏移量。取值是limit的整数倍，默认值 : 0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -684,8 +683,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "限制数目。最大50",
+          "document": "限制数目。取值范围：1~50，默认值：10",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -693,9 +691,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "组织成员Uin。",
-          "example": "1000001",
+          "example": "11111111111",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -708,11 +705,10 @@
       "document": "DescribeOrganizationMemberAuthIdentities返回参数结构体",
       "members": [
         {
-          "document": "列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权身份列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgMemberAuthIdentity",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -721,7 +717,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -810,8 +805,7 @@
       "document": "DescribeOrganizationMembers请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "偏移量。",
+          "document": "偏移量。取值是limit的整数倍，默认值 : 0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -819,8 +813,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "限制数目。最大50",
+          "document": "限制数目。取值范围：1~50，默认值：10",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -828,7 +821,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "国际站：en，国内站：zh",
           "example": "en",
           "member": "string",
@@ -837,7 +829,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "成员名称或者成员ID搜索。",
           "example": "test",
           "member": "string",
@@ -846,7 +837,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主体名称搜索。",
           "example": "\"\"",
           "member": "string",
@@ -855,7 +845,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "可信服务产品简称。可信服务管理员查询时必须指定",
           "example": "\"\"",
           "member": "string",
@@ -874,7 +863,6 @@
           "example": "无",
           "member": "OrgMember",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -883,7 +871,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1386,7 +1373,6 @@
       "document": "企业组织成员",
       "members": [
         {
-          "default": "",
           "document": "成员Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000001",
           "member": "int64",
@@ -1396,7 +1382,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "成员名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tt",
           "member": "string",
@@ -1406,7 +1391,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "成员类型，邀请：Invite， 创建：Create\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Invite",
           "member": "string",
@@ -1416,7 +1400,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关系策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Finical",
           "member": "string",
@@ -1426,7 +1409,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关系策略名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "财务管理",
           "member": "string",
@@ -1436,7 +1418,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关系策略权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgPermission",
@@ -1446,7 +1427,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "所属节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1002",
           "member": "int64",
@@ -1456,7 +1436,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "所属节点名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Root",
           "member": "string",
@@ -1466,7 +1445,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tt",
           "member": "string",
@@ -1476,7 +1454,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-12 12:12:22",
           "member": "string",
@@ -1486,7 +1463,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-12 12:12:22",
           "member": "string",
@@ -1496,7 +1472,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否允许成员退出。允许：Allow，不允许：Denied。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Allow",
           "member": "string",
@@ -1506,7 +1481,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "代付者Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1516,7 +1490,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "代付者名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -1526,7 +1499,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "管理身份\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MemberIdentity",
@@ -1536,7 +1508,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Unbound",
           "member": "string",
@@ -1546,7 +1517,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "成员权限状态 已确认：Confirmed ，待确认：UnConfirmed\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Confirmed",
           "member": "string",
@@ -1658,7 +1628,6 @@
       "document": "组织成员可授权的身份",
       "members": [
         {
-          "default": "",
           "document": "身份ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "111",
           "member": "int64",
@@ -1668,8 +1637,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "身份角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份的角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "IdentityRoleName",
@@ -1678,8 +1646,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "身份角色别名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份的角色别名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "IdentityRoleAliasName",
@@ -1688,8 +1655,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "Description",
@@ -1698,7 +1664,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
@@ -1708,13 +1673,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "身份类型。取值： 1-预设  2-自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IdentityType",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

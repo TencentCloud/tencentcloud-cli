@@ -1,6 +1,6 @@
 **Example 1: 更新动态 DNS 记录**
 
- 
+ 更新动态 DNS 记录
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli dnspod ModifyDynamicDNS --cli-unfold-argument  \
     --Domain dnspod.site \
     --DomainId 62 \
-    --SubDomain bbbb \
+    --SubDomain test \
     --RecordId 162 \
     --RecordLine 默认 \
     --RecordLineId 0 \
