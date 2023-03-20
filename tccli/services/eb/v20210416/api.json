@@ -1561,7 +1561,7 @@
       "document": "腾讯内部平台级事件结构，比如各云产品可用性的事件",
       "members": [
         {
-          "document": "事件结构体版本（cloudevents 遵循版本，目前仅支持1.0）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件结构体版本（cloudevents 遵循版本，目前仅支持1.0）",
           "example": "1.0",
           "member": "string",
           "name": "SpecVersion",
@@ -1571,7 +1571,7 @@
           "visibility": 2
         },
         {
-          "document": "事件唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件唯一ID",
           "example": "f583f408-6cf1-432e-b69f-68d4bf4f380a",
           "member": "string",
           "name": "Id",
@@ -1581,7 +1581,7 @@
           "visibility": 2
         },
         {
-          "document": "事件来源\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件来源\t",
           "example": "cvm.cloud.tencent",
           "member": "string",
           "name": "Source",
@@ -1591,7 +1591,7 @@
           "visibility": 2
         },
         {
-          "document": "事件名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件名称\t",
           "example": "cvm:statuspage:xxx",
           "member": "string",
           "name": "Type",
@@ -1601,7 +1601,7 @@
           "visibility": 2
         },
         {
-          "document": "事件发生时间戳，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件发生时间戳，单位毫秒",
           "example": "1675666108658",
           "member": "int64",
           "name": "Time",
@@ -1611,7 +1611,7 @@
           "visibility": 2
         },
         {
-          "document": "地域信息，按照地域管理系统的查询产品支持的地域列表上报\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域信息，按照地域管理系统的查询产品支持的地域列表上报\t",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -1621,7 +1621,7 @@
           "visibility": 2
         },
         {
-          "document": "数据类型申明（默认：application/json）\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据类型申明（默认：application/json）\t",
           "example": "application/json;charset=utf-8",
           "member": "string",
           "name": "DataContentType",
@@ -1631,7 +1631,7 @@
           "visibility": 2
         },
         {
-          "document": "事件状态,\"0\"：通知/提示，\"1\"：正常，\"2\"：故障/异常\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件状态,\"0\"：通知/提示，\"1\"：正常，\"2\"：故障/异常\n",
           "example": "1",
           "member": "string",
           "name": "Status",
@@ -1641,7 +1641,7 @@
           "visibility": 2
         },
         {
-          "document": "事件扩展字段（json字符串格式）\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件扩展字段（json字符串格式）\t",
           "example": "无",
           "member": "string",
           "name": "Data",
@@ -1651,7 +1651,7 @@
           "visibility": 2
         },
         {
-          "document": "事件对象\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件对象\t",
           "example": "all",
           "member": "string",
           "name": "Subject",
@@ -2385,7 +2385,7 @@
       "document": "日志查询相关接口filter参数定义",
       "members": [
         {
-          "document": "过滤字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤字段名称",
           "example": "status",
           "member": "string",
           "name": "Key",
@@ -2395,7 +2395,7 @@
           "visibility": 1
         },
         {
-          "document": "运算符，全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运算符，全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange",
           "example": "eq",
           "member": "string",
           "name": "Operator",
@@ -2405,7 +2405,7 @@
           "visibility": 1
         },
         {
-          "document": "过滤值,范围运算需要同时输入两个值，以英文逗号分隔\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤值,范围运算需要同时输入两个值，以英文逗号分隔\n",
           "example": "\"0\"",
           "member": "string",
           "name": "Value",
@@ -2415,7 +2415,7 @@
           "visibility": 1
         },
         {
-          "document": "该层级filters逻辑关系，取值 \"AND\" 或 \"OR\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该层级filters逻辑关系，取值 \"AND\" 或 \"OR\"",
           "example": "AND",
           "member": "string",
           "name": "Type",
@@ -2425,7 +2425,7 @@
           "visibility": 1
         },
         {
-          "document": "LogFilters数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "LogFilters数组",
           "example": "无",
           "member": "LogFilters",
           "name": "Filters",
@@ -2441,7 +2441,7 @@
       "document": "日志存储过滤条件",
       "members": [
         {
-          "document": "过滤字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤字段名称",
           "example": "status",
           "member": "string",
           "name": "Key",
@@ -2451,7 +2451,7 @@
           "visibility": 1
         },
         {
-          "document": "运算符, 全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运算符, 全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange",
           "example": "eq",
           "member": "string",
           "name": "Operator",
@@ -2461,7 +2461,7 @@
           "visibility": 1
         },
         {
-          "document": "过滤值，范围运算需要同时输入两个值，以英文逗号分隔\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤值，范围运算需要同时输入两个值，以英文逗号分隔\n",
           "example": "\"0\"",
           "member": "string",
           "name": "Value",

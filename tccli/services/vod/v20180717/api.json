@@ -14340,7 +14340,6 @@
       "document": "DescribeTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "145xxx",
           "member": "uint64",
@@ -14350,7 +14349,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。",
           "example": "FINISH",
           "member": "string",
@@ -14360,7 +14358,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件：文件 ID。",
           "example": "528xxx",
           "member": "string",
@@ -14370,7 +14367,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件：任务创建时间。",
           "example": "无",
           "member": "TimeRange",
@@ -14380,7 +14376,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件：任务结束时间。",
           "example": "无",
           "member": "TimeRange",
@@ -14390,7 +14385,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序方式。Sort.Field 可选：\n<li> CreateTime 任务创建时间。</li>\n<li>FinishTime 任务结束时间。</li>",
           "example": "无",
           "member": "SortBy",
@@ -14400,7 +14394,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
           "example": "5",
           "member": "uint64",
@@ -14410,7 +14403,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。",
           "example": "taskId6",
           "member": "string",
@@ -14430,7 +14422,6 @@
           "example": "无",
           "member": "TaskSimpleInfo",
           "name": "TaskSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -14440,7 +14431,6 @@
           "example": "taskId6",
           "member": "string",
           "name": "ScrollToken",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

@@ -66,15 +66,15 @@
     ],
     "CreateConnectResource": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"DtsConnectParam\": {\n        \"UserName\": \"root\",\n        \"Resource\": \"dts-xxx\",\n        \"Topic\": \"topic\",\n        \"GroupId\": \"group\",\n        \"Password\": \"xx\",\n        \"Port\": 0\n    },\n    \"ResourceName\": \"xx\",\n    \"Type\": \"DTS\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "创建Datahub连接源(DTS)",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xxxxx\",\n    \"DtsConnectParam\": {\n        \"UserName\": \"root\",\n        \"Resource\": \"dts-xxx\",\n        \"Topic\": \"topic\",\n        \"GroupId\": \"group\",\n        \"Password\": \"xxxx\",\n        \"Port\": 0\n    },\n    \"ResourceName\": \"xxxx\",\n    \"Type\": \"DTS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xxxx\"\n    }\n}",
         "title": "创建Datahub连接源(DTS)"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"EsConnectParam\": {\n        \"UserName\": \"elastic\",\n        \"Resource\": \"es-xxx\",\n        \"Password\": \"xx\",\n        \"Port\": 9200,\n        \"ServiceVip\": \"10.0.0.1\",\n        \"UniqVpcId\": \"vpc-xxx\",\n        \"SelfBuilt\": false\n    },\n    \"ResourceName\": \"xx\",\n    \"Type\": \"ES\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "创建Datahub连接源(ES)",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xxxx\",\n    \"EsConnectParam\": {\n        \"UserName\": \"elastic\",\n        \"Resource\": \"es-xxx\",\n        \"Password\": \"xxxx\",\n        \"Port\": 9200,\n        \"ServiceVip\": \"10.0.0.1\",\n        \"UniqVpcId\": \"vpc-xxx\",\n        \"SelfBuilt\": false\n    },\n    \"ResourceName\": \"xxxx\",\n    \"Type\": \"ES\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xxxx\"\n    }\n}",
         "title": "创建Datahub连接源(ES)"
       }
     ],
@@ -110,6 +110,14 @@
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MyTaskName\",\n    \"TaskType\": \"SINK\",\n    \"SourceResource\": {\n        \"Type\": \"TOPIC\",\n        \"TopicParam\": {\n            \"Resource\": \"12345-xxx\",\n            \"OffsetType\": \"earliest\"\n        }\n    },\n    \"TargetResource\": {\n        \"Type\": \"ES\",\n        \"EsParam\": {\n            \"Resource\": \"resource-xxx\",\n            \"DropInvalidMessage\": true,\n            \"Index\": \"xxx\",\n            \"DropInvalidJsonMessage\": false\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"task-xx\",\n            \"DatahubId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建SINK任务(DIP Topic to ES)"
+      }
+    ],
+    "CreateDatahubTopic": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateDatahubTopic\n&Name=xxx\n&PartitionNum=1\n&RetentionMs=3600000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TopicName\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建主题"
       }
     ],
     "CreateInstancePost": [

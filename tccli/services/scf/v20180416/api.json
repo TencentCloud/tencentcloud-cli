@@ -3877,7 +3877,7 @@
       "document": "内网配置",
       "members": [
         {
-          "document": "是否开启固定内网IP\nENABLE 为开启\nDISABLE 为不开启\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启固定内网IP\nENABLE 为开启\nDISABLE 为不开启\n",
           "example": "ENABLE",
           "member": "string",
           "name": "IpFixed",
@@ -3887,7 +3887,7 @@
           "visibility": 2
         },
         {
-          "document": "当开启固定IP时有效\n当该值为空时，将优先自动复用vpc已有的固定IP，若无固定IP，则新建\n当该值为非空时，将复用指定IP，该IP必须是由ListIntranetAddress返回的\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当开启固定IP时有效\n当该值为空时，将优先自动复用vpc已有的固定IP，若无固定IP，则新建\n当该值为非空时，将复用指定IP，该IP必须是由ListIntranetAddress返回的\n",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "IpAddress",

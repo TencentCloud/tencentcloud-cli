@@ -7030,7 +7030,7 @@
       "members": [
         {
           "default": "",
-          "document": "媒资和分类资源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒资和分类资源。",
           "example": "无",
           "member": "Resource",
           "name": "Resource",
@@ -8151,7 +8151,7 @@
       "document": "时间范围",
       "members": [
         {
-          "document": "开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "无",
           "member": "string",
           "name": "StartTime",
@@ -8161,7 +8161,7 @@
           "visibility": 1
         },
         {
-          "document": "结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "无",
           "member": "string",
           "name": "EndTime",
@@ -8246,44 +8246,54 @@
       "document": "项目导出信息。",
       "members": [
         {
-          "default": "",
           "document": "导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。",
           "example": "无",
           "member": "string",
           "name": "MaterialId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "云点播媒资 FileId。",
           "example": "无",
           "member": "string",
           "name": "VodFileId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "导出的媒资 URL。",
           "example": "无",
           "member": "string",
           "name": "URL",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "导出视频的封面图片 URL。",
+          "example": "无",
+          "member": "string",
+          "name": "CoverURL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

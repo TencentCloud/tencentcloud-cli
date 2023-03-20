@@ -11204,7 +11204,7 @@
       "document": "后付费用量",
       "members": [
         {
-          "document": "uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "uin",
           "example": "100001",
           "member": "string",
           "name": "Uin",
@@ -11214,7 +11214,7 @@
           "visibility": 2
         },
         {
-          "document": "appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "appid",
           "example": "11111",
           "member": "string",
           "name": "AppId",
@@ -11224,7 +11224,7 @@
           "visibility": 2
         },
         {
-          "document": "region\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "region",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -11234,7 +11234,7 @@
           "visibility": 2
         },
         {
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "无",
           "member": "string",
           "name": "ResourceName",
@@ -11244,7 +11244,7 @@
           "visibility": 2
         },
         {
-          "document": "用量起始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量起始时间",
           "example": "无",
           "member": "string",
           "name": "StartTime",
@@ -11254,7 +11254,7 @@
           "visibility": 2
         },
         {
-          "document": "用量截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量截止时间",
           "example": "无",
           "member": "string",
           "name": "EndTime",
@@ -11264,7 +11264,7 @@
           "visibility": 2
         },
         {
-          "document": "status状态，区分补推or正常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "status状态，区分补推or正常",
           "example": "无",
           "member": "int64",
           "name": "DataStatus",
@@ -11274,7 +11274,7 @@
           "visibility": 2
         },
         {
-          "document": "详细用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详细用量",
           "example": "无",
           "member": "UsageDataPart",
           "name": "Parts",
@@ -11284,7 +11284,7 @@
           "visibility": 2
         },
         {
-          "document": "eks集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "eks集群ID",
           "example": "无",
           "member": "string",
           "name": "ClusterId",
@@ -11294,7 +11294,7 @@
           "visibility": 2
         },
         {
-          "document": "eks ns\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "eks ns",
           "example": "无",
           "member": "string",
           "name": "Namespace",
@@ -11304,7 +11304,7 @@
           "visibility": 2
         },
         {
-          "document": "云托管kind\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云托管kind",
           "example": "无",
           "member": "string",
           "name": "Kind",
@@ -11314,7 +11314,7 @@
           "visibility": 2
         },
         {
-          "document": "云托管KindName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云托管KindName",
           "example": "无",
           "member": "string",
           "name": "KindName",
@@ -11324,7 +11324,7 @@
           "visibility": 2
         },
         {
-          "document": "云托管Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云托管Name",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -11340,7 +11340,7 @@
       "document": "用量数值",
       "members": [
         {
-          "document": "用量名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量名称",
           "example": "Flux",
           "member": "string",
           "name": "Name",
@@ -11350,7 +11350,7 @@
           "visibility": 2
         },
         {
-          "document": "具体用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "具体用量",
           "example": "123",
           "member": "uint64",
           "name": "Value",

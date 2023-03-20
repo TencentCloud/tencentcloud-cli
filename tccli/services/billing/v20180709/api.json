@@ -5256,7 +5256,7 @@
           "visibility": 1
         },
         {
-          "document": "实例类型\n2-资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例类型\n2-资源包",
           "example": "2",
           "member": "int64",
           "name": "InstanceType",

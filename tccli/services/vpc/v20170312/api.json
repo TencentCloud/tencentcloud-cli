@@ -6070,7 +6070,7 @@
       "document": "云联网限速实例锁对象，该对象特用于运营端使用，用于封禁实例流量。",
       "members": [
         {
-          "document": "带宽所属的云联网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽所属的云联网ID。",
           "example": "无",
           "member": "string",
           "name": "CcnId",
@@ -6080,7 +6080,7 @@
           "visibility": 1
         },
         {
-          "document": "实例所属用户主账号ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所属用户主账号ID。",
           "example": "无",
           "member": "string",
           "name": "UserAccountID",
@@ -6090,7 +6090,7 @@
           "visibility": 1
         },
         {
-          "document": "带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。",
           "example": "无",
           "member": "string",
           "name": "RegionFlowControlId",
@@ -14603,16 +14603,6 @@
       "document": "DescribeDefaultUSGInternal返回参数结构体",
       "members": [
         {
-          "document": "原DFW APIv2名称: getUSGById.returnCode",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
-        },
-        {
           "document": "原DFW APIv2名称: fetchDefaultUSG.projectId",
           "example": "133",
           "member": "string",
@@ -14699,6 +14689,16 @@
           "name": "SgRemark",
           "required": false,
           "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原DFW APIv2名称: getUSGById.returnCode",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 2
         },
@@ -15115,22 +15115,22 @@
       "document": "DescribeDryRunFlowInObjectInternal返回参数结构体",
       "members": [
         {
-          "document": "原DFW APIv2名称: getUSGById.returnCode",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
-        },
-        {
           "document": "原DFW APIv2名称: dryrunFlowInObject.runResult",
           "example": "无",
           "member": "DfwOssDryRunFlowInObjectResult",
           "name": "DryRunFlowInObjectResult",
           "required": false,
           "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原DFW APIv2名称: getUSGById.returnCode",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 2
         },
@@ -21690,22 +21690,22 @@
       "document": "DescribeUSGFromVmInternal返回参数结构体",
       "members": [
         {
-          "document": "原DFW APIv2名称: getUSGById.returnCode",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
-        },
-        {
           "document": "原VPC OSS APIv2名称: getUSGfromVM.uSGFromInfoSet",
           "example": "无",
           "member": "DfwOssUSGFromVMInfo",
           "name": "USGFromVMInfoSet",
           "required": false,
           "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原DFW APIv2名称: getUSGById.returnCode",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 2
         },
@@ -21738,22 +21738,22 @@
       "document": "DescribeUSGInternal返回参数结构体",
       "members": [
         {
-          "document": "原DFW APIv2名称: getUSGById.returnCode",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
-        },
-        {
           "document": "原DFW APIv2名称: getUSGById.uSGSet",
           "example": "无",
           "member": "DfwOssUSG",
           "name": "USGSet",
           "required": false,
           "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原DFW APIv2名称: getUSGById.returnCode",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 2
         },
@@ -21834,22 +21834,22 @@
       "document": "DescribeUSGPolicyInternal返回参数结构体",
       "members": [
         {
-          "document": "原DFW APIv2名称: getUSGById.returnCode",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
-        },
-        {
           "document": "原DFW APIv2名称: getUSGPolicy.uSGPolicySet",
           "example": "无",
           "member": "DfwOssUSGPolicy",
           "name": "USGPolicySet",
           "required": false,
           "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原DFW APIv2名称: getUSGById.returnCode",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 2
         },
@@ -21882,22 +21882,22 @@
       "document": "DescribeUSGQuotaInternal返回参数结构体",
       "members": [
         {
-          "document": "原DFW APIv2名称: getUSGQuota.returnCode",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
-        },
-        {
           "document": "原DFW APIv2名称: getUSGQuota.uSGQuotaResult",
           "example": "无",
           "member": "DfwOssUSGQuotaResult",
           "name": "USGQuotaResult",
           "required": false,
           "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原DFW APIv2名称: getUSGQuota.returnCode",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 2
         },
@@ -22203,36 +22203,6 @@
     "DescribeVpcDetailInternalResponse": {
       "document": "DescribeVpcDetailInternal返回参数结构体",
       "members": [
-        {
-          "document": "原VPC OSS APIv2名称: GetVpcDetail.assistCidrs\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "VpcOssAssistCidrs",
-          "name": "AssistCidrs",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true,
-          "visibility": 2
-        },
-        {
-          "document": "原VPC OSS APIv2名称: GetVpcDetail.vbcRoutePublishType\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "int64",
-          "name": "VbcRoutePublishType",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
-        },
-        {
-          "document": "原VPC OSS APIv2名称: GetVpcDetail.bVisible\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "VisibleFlag",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
-        },
         {
           "document": "原VPC OSS APIv2名称: GetVpcDetail.bDefault",
           "example": "0",
@@ -22570,6 +22540,36 @@
           "name": "Router",
           "required": false,
           "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: GetVpcDetail.assistCidrs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcOssAssistCidrs",
+          "name": "AssistCidrs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: GetVpcDetail.vbcRoutePublishType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "VbcRoutePublishType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: GetVpcDetail.bVisible\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "VisibleFlag",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 2
         },
@@ -38890,22 +38890,22 @@
       "document": "UpdateVmToUSGInternal返回参数结构体",
       "members": [
         {
-          "document": "原DFW APIv2名称: getUSGById.returnCode",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
-        },
-        {
           "document": "原DFW APIv2名称: bindVMToUSGs.bindResult",
           "example": "无",
           "member": "DfwOssBindVMToUSGResult",
           "name": "BindVMToUSGResult",
           "required": false,
           "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原DFW APIv2名称: getUSGById.returnCode",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 2
         },
@@ -41952,7 +41952,6 @@
       "document": "复杂类型: VpcOssDelRouteKey",
       "members": [
         {
-          "default": "",
           "document": "整数vpcId",
           "example": "1",
           "member": "int64",
@@ -41963,7 +41962,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: DelRouteKey.proto",
           "example": "tcp",
           "member": "string",
@@ -41974,7 +41972,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: DelRouteKey.vip",
           "example": "10.6.2.3",
           "member": "string",
@@ -41985,11 +41982,20 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: DelRouteKey.vport",
           "example": "8181",
           "member": "int64",
           "name": "VirtualPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: DelRouteKey.groupId",
+          "example": "0",
+          "member": "int64",
+          "name": "GroupId",
           "required": false,
           "type": "int",
           "value_allowed_null": false,
@@ -49322,7 +49328,6 @@
       "document": "复杂类型: VpcOssNewService",
       "members": [
         {
-          "default": "",
           "document": "整数vpcId",
           "example": "1",
           "member": "int64",
@@ -49333,7 +49338,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "对外唯一VpcId",
           "example": "vpc-jmaywf6r",
           "member": "string",
@@ -49344,7 +49348,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.type",
           "example": "0",
           "member": "int64",
@@ -49355,7 +49358,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.proto",
           "example": "tcp",
           "member": "string",
@@ -49366,7 +49368,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.vport",
           "example": "22",
           "member": "int64",
@@ -49377,7 +49378,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.vip",
           "example": "172.16.0.18",
           "member": "string",
@@ -49388,7 +49388,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.remoteVpcId",
           "example": "1",
           "member": "int64",
@@ -49399,7 +49398,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.uniqVpcgwId",
           "example": "xxx",
           "member": "string",
@@ -49410,7 +49408,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.uniqClassicVpcgwId",
           "example": "xxx",
           "member": "string",
@@ -49421,7 +49418,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.uniqVpcGwIpVpcgwId",
           "example": "xxx",
           "member": "string",
@@ -49432,7 +49428,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.vpcGwIp",
           "example": "1.1.1.1",
           "member": "string",
@@ -49443,7 +49438,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.vpcGwType",
           "example": "1",
           "member": "int64",
@@ -49454,7 +49448,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.vpcgwZoneId",
           "example": "1",
           "member": "int64",
@@ -49465,7 +49458,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.bVpcgwAttrFlag",
           "example": "0",
           "member": "int64",
@@ -49476,7 +49468,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.subnetRouteAlgorithm",
           "example": "0",
           "member": "int64",
@@ -49487,7 +49478,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.noSnatFlag",
           "example": "0",
           "member": "int64",
@@ -49498,7 +49488,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.stickyFlag",
           "example": "0",
           "member": "int64",
@@ -49509,7 +49498,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.stickyTimeout",
           "example": "0",
           "member": "int64",
@@ -49520,7 +49508,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.stickyMaxCount",
           "example": "0",
           "member": "int64",
@@ -49531,7 +49518,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.lbType",
           "example": "0",
           "member": "int64",
@@ -49542,7 +49528,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.rstFlag",
           "example": "0",
           "member": "int64",
@@ -49553,7 +49538,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.bypassFlag",
           "example": "0",
           "member": "int64",
@@ -49564,7 +49548,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.business",
           "example": "xxx",
           "member": "string",
@@ -49575,7 +49558,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.routeGroupFlag",
           "example": "0",
           "member": "int64",
@@ -49586,7 +49568,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.routeGroupId",
           "example": "1",
           "member": "int64",
@@ -49597,7 +49578,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.uniqRouteGroupId",
           "example": "xxx",
           "member": "string",
@@ -49608,7 +49588,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddService.route",
           "example": "无",
           "member": "VpcOssRouteForDeleteRouteInternal",
@@ -49616,6 +49595,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: AddService.groupId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 2
         }
       ],
@@ -51072,7 +51061,6 @@
       "document": "复杂类型: VpcOssServiceRequest",
       "members": [
         {
-          "default": "",
           "document": "整数vpcId",
           "example": "1",
           "member": "int64",
@@ -51083,7 +51071,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "对外唯一VpcId",
           "example": "vpc-jmaywf6r",
           "member": "string",
@@ -51094,7 +51081,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: DelService.type",
           "example": "0",
           "member": "int64",
@@ -51105,7 +51091,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: DelService.proto",
           "example": "tcp",
           "member": "string",
@@ -51116,7 +51101,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: DelService.vport",
           "example": "22",
           "member": "int64",
@@ -51127,7 +51111,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: DelService.vip",
           "example": "172.16.0.18",
           "member": "string",
@@ -51138,7 +51121,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: DelService.remoteVpcId",
           "example": "1",
           "member": "int64",
@@ -51149,11 +51131,20 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: DelService.bDelRoute",
           "example": "0",
           "member": "int64",
           "name": "DeleteRouteFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: DelService.groupId",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
           "required": false,
           "type": "int",
           "value_allowed_null": false,

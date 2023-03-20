@@ -86,6 +86,14 @@
         "title": "获取服务概览数据"
       }
     ],
+    "ModifyApmInstance": [
+      {
+        "document": "修改APM实例",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmInstance\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"Tags\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"InstanceId\": \"xx\",\n    \"OpenBilling\": true,\n    \"TraceDuration\": 0,\n    \"Description\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wcl-9esoxoii8t2exer215won26rkzc8\"\n    }\n}",
+        "title": "修改APM实例"
+      }
+    ],
     "TerminateApmInstance": [
       {
         "document": "销毁apm实例",

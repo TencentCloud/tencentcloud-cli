@@ -364,7 +364,7 @@
         },
         {
           "default": "",
-          "document": "一级分类概率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一级分类概率",
           "example": "1.0",
           "member": "float",
           "name": "FirstClassProbability",
@@ -374,7 +374,7 @@
         },
         {
           "default": "",
-          "document": "二级分类概率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "二级分类概率",
           "example": "1.0",
           "member": "float",
           "name": "SecondClassProbability",
@@ -384,7 +384,7 @@
         },
         {
           "default": "",
-          "document": "三级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "三级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "股票",
           "member": "string",
           "name": "ThirdClassName",
@@ -394,7 +394,7 @@
         },
         {
           "default": "",
-          "document": "三级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "三级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "1.0",
           "member": "float",
           "name": "ThirdClassProbability",
@@ -404,7 +404,7 @@
         },
         {
           "default": "",
-          "document": "四级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "四级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "A股",
           "member": "string",
           "name": "FourthClassName",
@@ -414,7 +414,7 @@
         },
         {
           "default": "",
-          "document": "四级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "四级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "1.0",
           "member": "float",
           "name": "FourthClassProbability",
@@ -424,7 +424,7 @@
         },
         {
           "default": "",
-          "document": "五级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "五级分类名称，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "公司动态",
           "member": "string",
           "name": "FifthClassName",
@@ -434,7 +434,7 @@
         },
         {
           "default": "",
-          "document": "五级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "五级分类概率，仅有当新闻领域五分类可能出现，详情见文本分类文档",
           "example": "1.0",
           "member": "float",
           "name": "FifthClassProbability",
@@ -793,7 +793,7 @@
         },
         {
           "default": "",
-          "document": "自定义词库描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义词库描述信息。",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -802,7 +802,7 @@
         },
         {
           "default": "",
-          "document": "自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。",
           "member": "string",
           "name": "UpdateTime",
           "required": false,
@@ -811,7 +811,7 @@
         },
         {
           "default": "",
-          "document": "自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。",
           "member": "string",
           "name": "CreateTime",
           "required": false,
@@ -826,7 +826,7 @@
       "members": [
         {
           "default": "",
-          "document": "句法依存关系的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "句法依存关系的类型",
           "member": "string",
           "name": "Relation",
           "required": false,
@@ -835,7 +835,7 @@
         },
         {
           "default": "",
-          "document": "当前词父节点的序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前词父节点的序号",
           "member": "uint64",
           "name": "HeadId",
           "required": false,
@@ -844,7 +844,7 @@
         },
         {
           "default": "",
-          "document": "基础词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础词",
           "member": "string",
           "name": "Word",
           "required": false,
@@ -853,7 +853,7 @@
         },
         {
           "default": "",
-          "document": "基础词的序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础词的序号",
           "member": "uint64",
           "name": "Id",
           "required": false,
@@ -1234,7 +1234,7 @@
         },
         {
           "default": "",
-          "document": "匹配到的词条文本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配到的词条文本。",
           "member": "string",
           "name": "MatchText",
           "required": true,
@@ -1243,7 +1243,7 @@
         },
         {
           "default": "",
-          "document": "词条的词性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "词条的词性。",
           "member": "string",
           "name": "Pos",
           "required": false,
@@ -1841,7 +1841,7 @@
         },
         {
           "default": "",
-          "document": "词条的词性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "词条的词性。",
           "member": "string",
           "name": "Pos",
           "required": false,
