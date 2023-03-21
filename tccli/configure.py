@@ -404,7 +404,7 @@ class ConfigureCommand(BasicConfigure):
             config = {
                 "region": "ap-guangzhou",
                 "output": "json",
-                "array_count": 10,
+                "arrayCount": 10,
                 "warning": "off"
             }
         self._init_configure("default.configure", config)
