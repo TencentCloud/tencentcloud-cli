@@ -211,7 +211,7 @@
       "status": "online"
     },
     "DescribeScanStats": {
-      "document": "查询某个批次被扫码的统计列表，没有被扫过的不会返回",
+      "document": "查询扫码的统计信息列表，支持按照商户ID，产品ID，批次ID，安心码筛选，筛选条件至少有一个\n没有被扫过的不会返回",
       "input": "DescribeScanStatsRequest",
       "name": "查询扫码统计列表",
       "output": "DescribeScanStatsResponse",
@@ -3030,14 +3030,6 @@
       "document": "DescribeScanStats请求参数结构体",
       "members": [
         {
-          "document": "批次ID",
-          "example": "aba",
-          "member": "string",
-          "name": "BatchId",
-          "required": true,
-          "type": "string"
-        },
-        {
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -3060,6 +3052,30 @@
           "name": "PageNumber",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "商户ID",
+          "example": "mid",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "产品ID",
+          "example": "pid",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "批次ID",
+          "example": "bid",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4760,7 +4776,6 @@
       "document": "扫码统计",
       "members": [
         {
-          "default": "",
           "document": "安心码",
           "example": "https://anxin.m.qq.com/qr/bmy7uus50t54",
           "member": "string",
@@ -4770,7 +4785,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "企业ID",
           "example": "10000",
           "member": "uint64",
@@ -4780,7 +4794,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "商户ID",
           "example": "无",
           "member": "string",
@@ -4790,7 +4803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品ID",
           "example": "无",
           "member": "string",
@@ -4800,7 +4812,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "批次ID",
           "example": "无",
           "member": "string",
@@ -4810,7 +4821,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "扫码次数",
           "example": "10",
           "member": "uint64",
@@ -4820,7 +4830,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "扫码人数",
           "example": "1",
           "member": "uint64",
@@ -4830,7 +4839,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "无",
           "member": "string",
@@ -4840,11 +4848,28 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "更新时间",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "商户名称",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -1160,7 +1160,7 @@
       "document": "过滤参数",
       "members": [
         {
-          "document": "过滤参数键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤参数键",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -1169,7 +1169,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "过滤参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤参数值",
           "example": "无",
           "member": "string",
           "name": "Value",

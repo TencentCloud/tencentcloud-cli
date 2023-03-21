@@ -1,0 +1,240 @@
+{
+  "actions": {
+    "SubmitTaskEvent": {
+      "document": "提交任务事件接口",
+      "input": "SubmitTaskEventRequest",
+      "name": "提交任务事件",
+      "output": "SubmitTaskEventResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-03",
+    "api_brief": "腾讯安全营销运营平台是一款SaaS级运营工具，可帮助企业快速搭建运营平台，提供积分商城、会员系统、卡券管理系统、活动管理系统等运营过程中所使用的运营工具，帮助企业一键搭建运营平台，快速完成产品运营，收集数据指标，并进行自动化运营，提升产品活跃、留存、新增等关键指标；",
+    "serviceNameCN": "腾讯安心用户运营平台",
+    "serviceShortName": "smop"
+  },
+  "objects": {
+    "SubmitTaskEventRequest": {
+      "document": "SubmitTaskEvent请求参数结构体",
+      "members": [
+        {
+          "document": "用户ID",
+          "example": "littleMing7",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "设备ID",
+          "example": "Huawei",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "订单ID",
+          "example": "123456789",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "任务事件Code",
+          "example": "1",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "同步异步方式",
+          "example": "0",
+          "member": "int64",
+          "name": "Async",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "产品ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "回调地址",
+          "example": "https://testgmall.m.qq.com/ext/testReceiveTaskNotify",
+          "member": "string",
+          "name": "NotifyURL",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitTaskEventResponse": {
+      "document": "SubmitTaskEvent返回参数结构体",
+      "members": [
+        {
+          "document": "订单ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456789",
+          "member": "string",
+          "name": "OrderId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "信息码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "success\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "提示信息",
+          "member": "string",
+          "name": "Message",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务处理结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskEventData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TaskEventData": {
+      "document": "后端提交任务事件返回Data复杂类型",
+      "members": [
+        {
+          "document": "状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11100",
+          "member": "int64",
+          "name": "TaskId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前完成或正在完成的任务订单ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3772179646188093549",
+          "member": "string",
+          "name": "TaskOrderId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前任务订单状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "获得积分数/成长值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskCoinNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务类型后台代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1151",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前积分/成长值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCoin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户透传的代码块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "function(){}",
+          "member": "string",
+          "name": "Attach",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "计次任务当前完成次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DoneTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "计次任务当前所需完成次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "自定义任务",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

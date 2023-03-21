@@ -3086,7 +3086,7 @@
       "document": "筛选条件",
       "members": [
         {
-          "document": "筛选字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "筛选字段名",
           "example": "Key",
           "member": "string",
           "name": "Name",
@@ -3095,7 +3095,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "筛选条件值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "筛选条件值",
           "example": "[\"Value1\",\"Value2\"]",
           "member": "string",
           "name": "Values",

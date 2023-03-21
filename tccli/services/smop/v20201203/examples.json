@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "SubmitTaskEvent": [
+      {
+        "document": "提交任务事件",
+        "input": "{\n  \"AccountId\": \"xx\",\n  \"DeviceId\": \"xx\",\n  \"OrderId\": \"xx\",\n  \"Code\": \"xx\",\n  \"Async\": 0,\n  \"NotifyURL\": \"xx\",\n  \"ProductId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderId\": \"xx\",\n        \"Code\": 0,\n        \"Message\": \"xx\",\n        \"Data\": [\n            {\n                \"Code\": 0,\n                \"Message\": \"xx\",\n                \"TaskId\": 0,\n                \"TaskOrderId\": \"xx\",\n                \"TaskCode\": 0,\n                \"TaskCoinNumber\": 0,\n                \"TaskType\": 0,\n                \"TotalCoin\": 0,\n                \"Attach\": \"xx\",\n                \"DoneTimes\": 0,\n                \"TotalTimes\": 0,\n                \"TaskName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "SubmitTaskEvent"
+      }
+    ]
+  },
+  "version": "1.0"
+}

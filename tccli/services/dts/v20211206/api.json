@@ -2784,7 +2784,6 @@
       "document": "DescribeMigrationDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "数据迁移任务ID",
           "example": "dts-amm1jw5q",
           "member": "string",
@@ -2803,7 +2802,6 @@
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2812,7 +2810,6 @@
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2821,7 +2818,6 @@
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2830,7 +2826,6 @@
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2839,7 +2834,6 @@
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "StartTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2848,7 +2842,6 @@
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "EndTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2857,16 +2850,14 @@
           "example": "无",
           "member": "string",
           "name": "BriefMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "document": "任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、\npausing(暂停中)、\nmanualPaused(已暂停)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "running",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2875,7 +2866,6 @@
           "example": "无",
           "member": "MigrateAction",
           "name": "Action",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2884,7 +2874,6 @@
           "example": "无",
           "member": "MigrateDetailInfo",
           "name": "StepInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2893,7 +2882,6 @@
           "example": "无",
           "member": "DBEndpointInfo",
           "name": "SrcInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2902,7 +2890,6 @@
           "example": "无",
           "member": "DBEndpointInfo",
           "name": "DstInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2911,7 +2898,6 @@
           "example": "无",
           "member": "CompareTaskInfo",
           "name": "CompareTask",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2920,7 +2906,6 @@
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2929,7 +2914,6 @@
           "example": "immediate",
           "member": "string",
           "name": "RunMode",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2938,7 +2922,6 @@
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "ExpectRunTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2947,7 +2930,6 @@
           "example": "无",
           "member": "MigrateOption",
           "name": "MigrateOption",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2956,7 +2938,6 @@
           "example": "无",
           "member": "CheckStepInfo",
           "name": "CheckStepInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2965,7 +2946,6 @@
           "example": "无",
           "member": "TradeInfo",
           "name": "TradeInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2974,7 +2954,6 @@
           "example": "无",
           "member": "ErrorInfoItem",
           "name": "ErrorInfo",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3905,7 +3884,6 @@
       "document": "迁移任务列表",
       "members": [
         {
-          "default": "",
           "document": "数据迁移任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dts-amm1jw5q",
           "member": "string",
@@ -3915,7 +3893,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据迁移任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dts-amm1jw5q",
           "member": "string",
@@ -3925,7 +3902,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 16:20:49",
           "member": "string",
@@ -3935,7 +3911,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务更新时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 16:20:49",
           "member": "string",
@@ -3945,7 +3920,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 16:20:49",
           "member": "string",
@@ -3955,7 +3929,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 16:20:49",
           "member": "string",
@@ -3965,7 +3938,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "迁移任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3975,8 +3947,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "任务状态，取值为：creating(创建中)、created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态，取值为：creating(创建中)、created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、\npausing(暂停中)、\nmanualPaused(已暂停)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "created",
           "member": "string",
           "name": "Status",
@@ -3985,7 +3956,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务运行模式，值包括：immediate(立即运行)，timed(定时运行)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "immediate",
           "member": "string",
@@ -3995,7 +3965,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "期待启动时间，当RunMode取值为timed时，此值必填，形如：2022-07-11 16:20:49\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 16:20:49",
           "member": "string",
@@ -4005,7 +3974,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务操作信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MigrateAction",
@@ -4015,7 +3983,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "迁移执行过程信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MigrateDetailInfo",
@@ -4025,7 +3992,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DBEndpointInfo",
@@ -4035,7 +4001,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "目标端信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DBEndpointInfo",
@@ -4045,7 +4010,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据一致性校验结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CompareTaskInfo",
@@ -4055,7 +4019,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "计费状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TradeInfo",
@@ -4065,7 +4028,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TagItem",
@@ -4075,7 +4037,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动重试时间段信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",

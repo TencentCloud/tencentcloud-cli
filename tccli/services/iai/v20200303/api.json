@@ -2983,7 +2983,7 @@
       "members": [
         {
           "default": "",
-          "document": "人员库自定义描述字段Index，从0开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人员库自定义描述字段Index，从0开始",
           "member": "uint64",
           "name": "GroupExDescriptionIndex",
           "required": true,
@@ -3309,7 +3309,7 @@
       "members": [
         {
           "default": "",
-          "document": "人员描述字段Index，从0开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "人员描述字段Index，从0开始",
           "member": "uint64",
           "name": "PersonExDescriptionIndex",
           "required": true,

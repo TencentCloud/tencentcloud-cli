@@ -1526,7 +1526,7 @@
       "members": [
         {
           "default": "",
-          "document": "AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId",
           "example": "xx",
           "member": "string",
           "name": "AttributeKey",
@@ -1536,7 +1536,7 @@
         },
         {
           "default": "",
-          "document": "AttributeValue的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AttributeValue的值",
           "example": "xx",
           "member": "string",
           "name": "AttributeValue",
@@ -1652,7 +1652,7 @@
         },
         {
           "default": "",
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "xx",
           "member": "string",
           "name": "ResourceName",

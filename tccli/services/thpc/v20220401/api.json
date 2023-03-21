@@ -1720,7 +1720,7 @@
       "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。",
       "members": [
         {
-          "document": "需要过滤的字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "需要过滤的字段。",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -1729,7 +1729,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "字段的过滤值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段的过滤值。",
           "example": "无",
           "member": "string",
           "name": "Values",
@@ -2443,8 +2443,7 @@
       "document": "描述集群文件系统选项",
       "members": [
         {
-          "default": "",
-          "document": "集群挂载CFS文件系统选项",
+          "document": "集群挂载CFS文件系统选项。",
           "example": "无",
           "member": "CFSOption",
           "name": "CFSOptions",
@@ -2453,8 +2452,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "集群挂在GooseFS文件系统选项",
+          "document": "集群挂载GooseFS文件系统选项。",
           "example": "无",
           "member": "GooseFSOption",
           "name": "GooseFSOptions",
@@ -2469,7 +2467,6 @@
       "document": "集群存储选项概览信息。",
       "members": [
         {
-          "default": "",
           "document": "CFS存储选项概览信息列表。",
           "example": "无",
           "member": "CFSOptionOverview",
@@ -2479,7 +2476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "GooseFS存储选项概览信息列表。",
           "example": "无",
           "member": "GooseFSOptionOverview",

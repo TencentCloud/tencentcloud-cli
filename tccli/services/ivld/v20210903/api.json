@@ -1930,7 +1930,7 @@
       "members": [
         {
           "default": "",
-          "document": "媒资名称过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒资名称过滤条件",
           "example": "[\"新闻30分\",\"朝闻天下\"]",
           "member": "string",
           "name": "MediaNameSet",
@@ -1940,7 +1940,7 @@
         },
         {
           "default": "",
-          "document": "媒资状态数组，媒资状态可选值参见MediaInfo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒资状态数组，媒资状态可选值参见MediaInfo",
           "example": "[1,2]",
           "member": "int64",
           "name": "StatusSet",
@@ -1950,7 +1950,7 @@
         },
         {
           "default": "",
-          "document": "媒资ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒资ID数组",
           "example": "[\"123\",\"456\"]",
           "member": "string",
           "name": "MediaIdSet",
@@ -1960,7 +1960,7 @@
         },
         {
           "default": "",
-          "document": "媒资自定义标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒资自定义标签数组",
           "example": "[\"tag1\"]",
           "member": "string",
           "name": "LabelSet",
@@ -1970,7 +1970,7 @@
         },
         {
           "default": "",
-          "document": "媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)",
           "example": "2",
           "member": "int64",
           "name": "MediaType",

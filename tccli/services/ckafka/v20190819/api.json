@@ -77,6 +77,13 @@
       "output": "CreateDatahubTaskResponse",
       "status": "online"
     },
+    "CreateDatahubTopic": {
+      "document": "创建Datahub主题",
+      "input": "CreateDatahubTopicRequest",
+      "name": "创建Datahub主题",
+      "output": "CreateDatahubTopicResponse",
+      "status": "online"
+    },
     "CreateInstancePost": {
       "document": "创建按量计费实例",
       "input": "CreateInstancePostRequest",
@@ -1772,7 +1779,7 @@
       "members": [
         {
           "default": "",
-          "document": "生产的信息是否为json格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生产的信息是否为json格式",
           "example": "true",
           "member": "bool",
           "name": "DecodeJson",
@@ -1792,7 +1799,7 @@
         },
         {
           "default": "",
-          "document": "cls日志集id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cls日志集id",
           "example": "test",
           "member": "string",
           "name": "LogSet",
@@ -1802,7 +1809,7 @@
         },
         {
           "default": "",
-          "document": "当DecodeJson为false时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当DecodeJson为false时必填",
           "example": "\"content\"",
           "member": "string",
           "name": "ContentKey",
@@ -2529,7 +2536,6 @@
       "document": "CreateConnectResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "连接源名称",
           "example": "xxx",
           "member": "string",
@@ -2538,7 +2544,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "连接源类型",
           "example": "xxx",
           "member": "string",
@@ -2547,7 +2552,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "连接源描述",
           "example": "xxx",
           "member": "string",
@@ -2556,7 +2560,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Dts配置，Type为DTS时必填",
           "example": "xxx",
           "member": "DtsConnectParam",
@@ -2565,7 +2568,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "MongoDB配置，Type为MONGODB时必填",
           "example": "xxx",
           "member": "MongoDBConnectParam",
@@ -2574,7 +2576,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "Es配置，Type为ES时必填",
           "example": "xxx",
           "member": "EsConnectParam",
@@ -2583,7 +2584,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "ClickHouse配置，Type为CLICKHOUSE时必填",
           "example": "xxx",
           "member": "ClickHouseConnectParam",
@@ -2592,7 +2592,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填",
           "example": "xxx",
           "member": "MySQLConnectParam",
@@ -2601,7 +2600,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填",
           "example": "xxx",
           "member": "PostgreSQLConnectParam",
@@ -2610,7 +2608,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "MariaDB配置，Type为MARIADB时必填",
           "example": "xxx",
           "member": "MariaDBConnectParam",
@@ -2619,7 +2616,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "SQLServer配置，Type为SQLSERVER时必填",
           "example": "xxx",
           "member": "SQLServerConnectParam",
@@ -2628,11 +2624,18 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "Doris 配置，Type为 DORIS 时必填",
           "example": "xxx",
           "member": "DorisConnectParam",
           "name": "DorisConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "Kafka配置，Type为 KAFKA 时必填",
+          "example": "xxx",
+          "member": "KafkaConnectParam",
+          "name": "KafkaConnectParam",
           "required": false,
           "type": "object"
         }
@@ -2647,7 +2650,6 @@
           "example": "xxx",
           "member": "ConnectResourceResourceIdResp",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2852,6 +2854,78 @@
           "document": "任务id",
           "example": "xxx",
           "member": "CreateDatahubTaskRes",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatahubTopicRequest": {
+      "document": "CreateDatahubTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Partition个数，大于0",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息保留时间，单位ms，当前最小值为60000ms",
+          "example": "60000",
+          "member": "int64",
+          "name": "RetentionMs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "example": "note",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "1",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatahubTopicResponse": {
+      "document": "CreateDatahubTopic返回参数结构体",
+      "members": [
+        {
+          "document": "返回创建结果",
+          "example": "无",
+          "member": "DatahubTopicResp",
           "name": "Result",
           "required": true,
           "type": "object",
@@ -4240,6 +4314,22 @@
       ],
       "usage": "out"
     },
+    "DatahubTopicResp": {
+      "document": "Datahub Topic 响应",
+      "members": [
+        {
+          "default": "",
+          "document": "Topic名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DateParam": {
       "document": "数据处理——Value处理参数——转换时间格式参数",
       "members": [
@@ -5019,7 +5109,6 @@
       "document": "查询连接源具体数据的返参",
       "members": [
         {
-          "default": "",
           "document": "连接源的Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resource-xxx",
           "member": "string",
@@ -5029,7 +5118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5039,7 +5127,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5049,7 +5136,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5059,7 +5145,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源的状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -5069,7 +5154,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5079,7 +5163,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源的异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5089,7 +5172,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源的当前所处步骤\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5099,7 +5181,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "该连接源关联的Datahub任务数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -5109,7 +5190,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Dts配置，Type为DTS时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "DtsConnectParam",
@@ -5119,7 +5199,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MongoDB配置，Type为MONGODB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "MongoDBConnectParam",
@@ -5129,7 +5208,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Es配置，Type为ES时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "EsConnectParam",
@@ -5139,7 +5217,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "ClickHouse配置，Type为CLICKHOUSE时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "ClickHouseConnectParam",
@@ -5149,7 +5226,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "MySQLConnectParam",
@@ -5159,7 +5235,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "PostgreSQLConnectParam",
@@ -5169,7 +5244,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MariaDB配置，Type为MARIADB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "MariaDBConnectParam",
@@ -5179,7 +5253,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "SQLServer配置，Type为SQLSERVER时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "SQLServerConnectParam",
@@ -5189,7 +5262,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Ctsdb配置，Type为CTSDB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "CtsdbConnectParam",
@@ -5199,12 +5271,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Doris 配置，Type 为 DORIS 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "DorisConnectParam",
           "name": "DorisConnectParam",
           "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Kafka配置，Type 为 KAFKA 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "KafkaConnectParam",
+          "name": "KafkaConnectParam",
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -5230,7 +5310,6 @@
       "document": "查询连接源具体数据的返参",
       "members": [
         {
-          "default": "",
           "document": "连接源的Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resource-xxx",
           "member": "string",
@@ -5240,7 +5319,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5250,7 +5328,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5260,7 +5337,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5270,7 +5346,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源的状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -5280,7 +5355,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5290,7 +5364,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源的异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5300,7 +5373,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "连接源的当前所处步骤\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5310,7 +5382,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "步骤列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5320,7 +5391,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "MySQLConnectParam",
@@ -5330,7 +5400,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "PostgreSQLConnectParam",
@@ -5340,7 +5409,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Dts配置，Type为DTS时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "DtsConnectParam",
@@ -5350,7 +5418,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MongoDB配置，Type为MONGODB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "MongoDBConnectParam",
@@ -5360,7 +5427,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Es配置，Type为ES时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "EsConnectParam",
@@ -5370,7 +5436,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "ClickHouse配置，Type为CLICKHOUSE时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "ClickHouseConnectParam",
@@ -5380,7 +5445,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "MariaDB配置，Type为MARIADB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "MariaDBConnectParam",
@@ -5390,7 +5454,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "SQLServer配置，Type为SQLSERVER时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "SQLServerConnectParam",
@@ -5400,7 +5463,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Ctsdb配置，Type为CTSDB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "CtsdbConnectParam",
@@ -5410,12 +5472,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Doris 配置，Type 为 DORIS 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "DorisConnectParam",
           "name": "DorisConnectParam",
           "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Kafka配置，Type 为 KAFKA 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "KafkaConnectParam",
+          "name": "KafkaConnectParam",
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -7473,7 +7543,7 @@
       "members": [
         {
           "default": "",
-          "document": "Dts实例Id【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Dts实例Id【不支持修改】",
           "example": "xxx",
           "member": "string",
           "name": "Resource",
@@ -7483,7 +7553,7 @@
         },
         {
           "default": "",
-          "document": "Dts的连接port【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Dts的连接port【不支持修改】",
           "example": "8080",
           "member": "int64",
           "name": "Port",
@@ -7493,7 +7563,7 @@
         },
         {
           "default": "",
-          "document": "Dts消费分组的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Dts消费分组的Id",
           "example": "xxx",
           "member": "string",
           "name": "GroupId",
@@ -7503,7 +7573,7 @@
         },
         {
           "default": "",
-          "document": "Dts消费分组的账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Dts消费分组的账号",
           "example": "xxx",
           "member": "string",
           "name": "UserName",
@@ -7513,7 +7583,7 @@
         },
         {
           "default": "",
-          "document": "Dts消费分组的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Dts消费分组的密码",
           "example": "xxx",
           "member": "string",
           "name": "Password",
@@ -7523,7 +7593,7 @@
         },
         {
           "default": "",
-          "document": "是否更新到关联的Datahub任务，默认为true\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否更新到关联的Datahub任务，默认为true",
           "example": "true",
           "member": "bool",
           "name": "IsUpdate",
@@ -7533,7 +7603,7 @@
         },
         {
           "default": "",
-          "document": "Dts订阅的topic【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Dts订阅的topic【不支持修改】",
           "example": "xxx",
           "member": "string",
           "name": "Topic",
@@ -10282,6 +10352,57 @@
           "example": "false",
           "member": "string",
           "name": "KeepOriginalKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KafkaConnectParam": {
+      "document": "Kafka连接源参数",
+      "members": [
+        {
+          "document": "Kafka连接源的实例资源, 非自建时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否为自建集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否更新到关联的Dip任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Kafka连接的broker地址, 自建时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ip1:9092,ip2:9092",
+          "member": "string",
+          "name": "BrokerAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CKafka连接源的实例资源地域, 跨地域时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13361,7 +13482,7 @@
       "members": [
         {
           "default": "",
-          "document": "SCF云函数函数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SCF云函数函数名",
           "example": "xxx",
           "member": "string",
           "name": "FunctionName",
@@ -13371,7 +13492,7 @@
         },
         {
           "default": "",
-          "document": "SCF云函数命名空间, 默认为default\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SCF云函数命名空间, 默认为default",
           "example": "default",
           "member": "string",
           "name": "Namespace",
@@ -13381,7 +13502,7 @@
         },
         {
           "default": "",
-          "document": "SCF云函数版本及别名, 默认为$DEFAULT\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SCF云函数版本及别名, 默认为$DEFAULT",
           "example": "$DEFAULT",
           "member": "string",
           "name": "Qualifier",

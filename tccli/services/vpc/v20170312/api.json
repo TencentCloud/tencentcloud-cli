@@ -4345,7 +4345,7 @@
       "document": "云联网限速实例锁对象，该对象特用于运营端使用，用于封禁实例流量。",
       "members": [
         {
-          "document": "带宽所属的云联网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽所属的云联网ID。",
           "example": "无",
           "member": "string",
           "name": "CcnId",
@@ -4354,7 +4354,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "实例所属用户主账号ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所属用户主账号ID。",
           "example": "无",
           "member": "string",
           "name": "UserAccountID",
@@ -4363,7 +4363,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。",
           "example": "无",
           "member": "string",
           "name": "RegionFlowControlId",

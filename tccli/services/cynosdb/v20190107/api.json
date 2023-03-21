@@ -7173,7 +7173,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "接入组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cynosdbmysql-grp-qwertyui",
           "member": "string",
           "name": "InstanceGroupId",

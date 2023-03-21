@@ -7948,7 +7948,7 @@
       "document": "指定报告类型选用其结构化版本",
       "members": [
         {
-          "document": "检验报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检验报告",
           "example": "11",
           "member": "int64",
           "name": "ReportType",
@@ -7957,7 +7957,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "版本2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本2",
           "example": "2",
           "member": "int64",
           "name": "Version",

@@ -1594,7 +1594,6 @@
       "document": "AddVpcCniSubnets请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-xxxx",
           "member": "string",
@@ -1603,7 +1602,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "为集群容器网络增加的子网列表",
           "example": "[\"subnet-xxxxx\\n\"]",
           "member": "string",
@@ -1612,13 +1610,20 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "集群所属的VPC的ID",
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string"
+        },
+        {
+          "document": "是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipAddingNonMasqueradeCIDRs",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

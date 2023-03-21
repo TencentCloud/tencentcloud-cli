@@ -22260,7 +22260,7 @@
         },
         {
           "default": "",
-          "document": "产品名称，可选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称，可选",
           "example": "1",
           "member": "uint64",
           "name": "ProductName",
@@ -22270,7 +22270,7 @@
         },
         {
           "default": "",
-          "document": "资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源组",
           "example": "1",
           "member": "uint64",
           "name": "ResourceGroup",

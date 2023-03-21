@@ -32,6 +32,14 @@
         "title": "关闭serverless外网"
       }
     ],
+    "CreateBaseBackup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBaseBackup\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-dzg9p3kb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e468f289-2313-4117-a5f0-f406faaefa24\"\n    }\n}",
+        "title": "创建实例基础备份"
+      }
+    ],
     "CreateDBInstanceNetworkAccess": [
       {
         "document": "",
@@ -108,12 +116,28 @@
         "title": "创建serverlessDB实例"
       }
     ],
+    "DeleteBaseBackup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBaseBackup\n<公共请求参数>\n\n{\n    \"BaseBackupId\": \"88d3a71e-b822-5728-9d41-d8cfc0d0556e\",\n    \"DBInstanceId\": \"postgres-9n26zs6n\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e468f289-2313-4117-a5f0-f406faaefa24\"\n    }\n}",
+        "title": "删除实例基础备份"
+      }
+    ],
     "DeleteDBInstanceNetworkAccess": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDBInstanceNetworkAccess\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-4s9dejli\",\n    \"Vip\": \"127.0.01\",\n    \"VpcId\": \"vpc-gaestjaf\",\n    \"DBInstanceId\": \"postgres-6bwgamo3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"FlowId\": 912\n    }\n}",
         "title": "删除实例网络"
+      }
+    ],
+    "DeleteLogBackup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLogBackup\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-2xmqduu9\",\n    \"LogBackupId\": \"7b85234b-4f46-5047-b658-acb172074bf6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"171aa9e7-c171-4ee1-8416-e69659f71f93\"\n    }\n}",
+        "title": "删除实例日志备份"
       }
     ],
     "DeleteParameterTemplate": [
@@ -170,12 +194,52 @@
         "title": "查询实例可恢复的时间范围"
       }
     ],
+    "DescribeBackupDownloadURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDownloadURL\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-oamgybor\",\n    \"BackupType\": \"LogBackup\",\n    \"BackupId\": \"f9509fc2-2281-551c-b937-86d38cf79f3b\",\n    \"URLExpireTime\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupDownloadURL\": \"******\",\n        \"RequestId\": \"7c4e788e-5ec9-4125-bb80-7baabe2744dc\"\n    }\n}",
+        "title": "获取备份下载链接"
+      }
+    ],
+    "DescribeBackupOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AutoBaseBackupCount\": 494,\n        \"AutoBaseBackupSize\": 25577154048,\n        \"LogBackupCount\": 4677,\n        \"LogBackupSize\": 89789143040,\n        \"ManualBaseBackupCount\": 20,\n        \"ManualBaseBackupSize\": 1002476032,\n        \"RequestId\": \"b4c5f18a-f917-46b4-8689-d4a64e3381fb\",\n        \"TotalFreeSize\": 13378823127040,\n        \"UsedBillingSize\": 4329912320,\n        \"UsedFreeSize\": 112038860800\n    }\n}",
+        "title": "查询备份概览"
+      }
+    ],
     "DescribeBackupPlans": [
       {
         "document": "查询postgres-xxxxxxxx实例的所有备份计划",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupPlans\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Plans\": [\n            {\n                \"BackupPeriod\": \"[\\\"monday\\\",\\\"thursday\\\",\\\"friday\\\"]\",\n                \"BaseBackupRetentionPeriod\": 3,\n                \"MaxBackupStartTime\": \"10:00:00\",\n                \"MinBackupStartTime\": \"08:00:00\"\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
         "title": "查询实例所有备份计划"
+      }
+    ],
+    "DescribeBackupSummaries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupSummaries\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"OrderByType\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupSummarySet\": [\n            {\n                \"AutoBaseBackupCount\": 3,\n                \"AutoBaseBackupSize\": 3535342436352,\n                \"DBInstanceId\": \"postgres-lsw5y0bp\",\n                \"LogBackupCount\": 2,\n                \"LogBackupSize\": 167792640,\n                \"ManualBaseBackupCount\": 1,\n                \"ManualBaseBackupSize\": 1178447478784,\n                \"TotalBackupCount\": 6,\n                \"TotalBackupSize\": 4713957707776\n            }\n        ],\n        \"RequestId\": \"3929dd3a-d95d-4ec2-ae69-a98317ce24fa\",\n        \"TotalCount\": 10\n    }\n}",
+        "title": "查询备份统计信息"
+      }
+    ],
+    "DescribeBaseBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaseBackups\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"OrderByType\": \"desc\",\n    \"MaxFinishTime\": \"\",\n    \"MinFinishTime\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseBackupSet\": [\n            {\n                \"BackupMethod\": \"physical\",\n                \"BackupMode\": \"manual\",\n                \"DBInstanceId\": \"postgres-9n26zs6n\",\n                \"ExpireTime\": \"2023-02-18 23:59:59\",\n                \"FinishTime\": \"2023-02-15 19:09:36\",\n                \"Id\": \"88d3a71e-b822-5728-9d41-d8cfc0d0556e\",\n                \"Name\": \"manual-20230215190924.tar.gz\",\n                \"Size\": 39845888,\n                \"StartTime\": \"2023-02-15 19:09:24\",\n                \"State\": \"finished\"\n            }\n        ],\n        \"RequestId\": \"3f164712-8746-464f-a490-3084a470000e\",\n        \"TotalCount\": 10\n    }\n}",
+        "title": "查询基础备份列表"
+      }
+    ],
+    "DescribeClasses": [
+      {
+        "document": "查询在售卖的规格列表",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClasses\n<公共请求参数>\n\n{\n    \"DBEngine\": \"postgresql\",\n    \"DBMajorVersion\": \"12\",\n    \"Zone\": \"ap-guangzhou-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClassInfoSet\": [\n            {\n                \"CPU\": 16,\n                \"MaxStorage\": 3000,\n                \"Memory\": 131072,\n                \"MinStorage\": 1000,\n                \"QPS\": 79000,\n                \"SpecCode\": \"cdb.pg.sh1.128g\"\n            },\n            {\n                \"CPU\": 48,\n                \"MaxStorage\": 6000,\n                \"Memory\": 491520,\n                \"MinStorage\": 1000,\n                \"QPS\": 238000,\n                \"SpecCode\": \"cdb.pg.sh1.480g\"\n            }\n        ],\n        \"RequestId\": \"012ed950-e375-4a2e-a7f8-15ec9fcd1d48\"\n    }\n}",
+        "title": "查询规格列表"
       }
     ],
     "DescribeCloneDBInstanceSpec": [
@@ -254,6 +318,14 @@
         "title": "获取实例慢查询日志"
       }
     ],
+    "DescribeDBVersions": [
+      {
+        "document": "新购实例、升级实例版本号时，可通过此接口查询有效的数据库版本号列表",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBVersions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"99fd1cde-d477-4cb4-8a05-12b62502e6fc\",\n        \"VersionSet\": [\n            {\n                \"AvailableUpgradeTarget\": [],\n                \"DBEngine\": \"mssql_compatible\",\n                \"DBKernelVersion\": \"v14.3_r1.3\",\n                \"DBMajorVersion\": \"14\",\n                \"DBVersion\": \"14.3\",\n                \"Status\": \"AVAILABLE\",\n                \"SupportedFeatureNames\": []\n            },\n            {\n                \"AvailableUpgradeTarget\": [\n                    \"v14.3_r1.3\"\n                ],\n                \"DBEngine\": \"postgresql\",\n                \"DBKernelVersion\": \"v14.2_r1.1\",\n                \"DBMajorVersion\": \"14\",\n                \"DBVersion\": \"14.2\",\n                \"Status\": \"AVAILABLE\",\n                \"SupportedFeatureNames\": [\n                    \"TDE\"\n                ]\n            },\n            {\n                \"AvailableUpgradeTarget\": [\n                    \"v14.3_r1.3\",\n                    \"v14.2_r1.1\"\n                ],\n                \"DBEngine\": \"postgresql\",\n                \"DBKernelVersion\": \"v14.2_r1.0\",\n                \"DBMajorVersion\": \"14\",\n                \"DBVersion\": \"14.2\",\n                \"Status\": \"AVAILABLE\",\n                \"SupportedFeatureNames\": [\n                    \"TDE\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询版本号列表"
+      }
+    ],
     "DescribeDBXlogs": [
       {
         "document": "",
@@ -284,6 +356,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEncryptionKeys\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \" postgres-abcdefg\"\n}",
         "output": "{\n    \"Response\": {\n        \"EncryptionKeys\": [\n            {\n                \"CreateTime\": \"2022-03-24 10:39:14\",\n                \"DEKCipherTextBlob\": \"xxxxxxxxxxx\",\n                \"IsEnabled\": 1,\n                \"KeyAlias\": \"PGSQL-KMS\",\n                \"KeyId\": \" f4d88aa7-ae72-11ec-9fcc-5254007ffd46\",\n                \"KeyRegion\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
         "title": "DescribeEncryptionKeys"
+      }
+    ],
+    "DescribeLogBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogBackups\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"OrderByType\": \"desc\",\n    \"MaxFinishTime\": \"\",\n    \"MinFinishTime\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogBackupSet\": [\n            {\n                \"BackupMethod\": \"physical\",\n                \"BackupMode\": \"automatic\",\n                \"DBInstanceId\": \"postgres-jdlmoll9\",\n                \"ExpireTime\": \"2023-02-22 21:10:52\",\n                \"FinishTime\": \"2023-02-15 21:10:52\",\n                \"Id\": \"2628bcde-ce13-554a-b47d-2b15187a02ec\",\n                \"Name\": \"******.tar.gz\",\n                \"Size\": 16783360,\n                \"StartTime\": \"2023-02-15 21:10:52\",\n                \"State\": \"finished\"\n            }\n        ],\n        \"RequestId\": \"c716c175-6037-4bdd-a35b-2c05399489f3\",\n        \"TotalCount\": 10\n    }\n}",
+        "title": "查询日志备份列表"
       }
     ],
     "DescribeOrders": [
@@ -450,6 +530,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPeriod\": [\n        \"tuesday\",\n        \"monday\"\n    ],\n    \"BaseBackupRetentionPeriod\": \"3\",\n    \"DBInstanceId\": \"postgres-xxxxxxxx\",\n    \"MinBackupStartTime\": \"01:00:00\",\n    \"MaxBackupStartTime\": \"02:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\"\n    }\n}",
         "title": "修改实例备份计划"
+      }
+    ],
+    "ModifyBaseBackupExpireTime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaseBackupExpireTime\n<公共请求参数>\n\n{\n    \"BaseBackupId\": \"88d3a71e-b822-5728-9d41-d8cfc0d0556e\",\n    \"DBInstanceId\": \"postgres-9n26zs6n\",\n    \"NewExpireTime\": \"2023-02-18 23:59:59\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be3bafde-f34e-4fda-9f40-04c5515e2148\"\n    }\n}",
+        "title": "修改基础备份过期时间"
       }
     ],
     "ModifyDBInstanceDeployment": [
@@ -638,6 +726,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDBInstance\n<公共请求参数>\n\n{\n    \"Storage\": \"200\",\n    \"DBInstanceId\": \"postgres-6bwgamo3\",\n    \"Memory\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DealName\": \"201806127634\",\n        \"BillId\": \"123\"\n    }\n}",
         "title": "升级实例"
+      }
+    ],
+    "UpgradeDBInstanceKernelVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDBInstanceKernelVersion\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"pgro-g7w4itfg\",\n    \"TargetDBKernelVersion\": \"v12.7_r1.5\",\n    \"DryRun\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b376d28-d5fd-40b0-9bdc-d992f8fed15d\"\n    }\n}",
+        "title": "升级版本号"
       }
     ]
   },

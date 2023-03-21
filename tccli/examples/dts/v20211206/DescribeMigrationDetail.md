@@ -1,6 +1,6 @@
 **Example 1: 查询某个迁移任务详情**
 
-
+查询某个迁移任务详情
 
 Input: 
 
@@ -46,6 +46,163 @@ Output:
                 "Percent": 100,
                 "Status": "success",
                 "StepAll": 12,
+                "Steps": [
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "ConnectDBCheck",
+                        "StepMessage": "",
+                        "StepName": "连接DB检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "VersionCheck",
+                        "StepMessage": "",
+                        "StepName": "版本检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "SrcPrivilegeCheck",
+                        "StepMessage": "",
+                        "StepName": "源实例权限检查",
+                        "StepNo": 0,
+                        "Warnings": [
+                            {
+                                "HelpDoc": "",
+                                "Message": "您的授权情况：GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE ON *.* TO 'root'@'%' WITH GRANT OPTION。 源端账号权限范围大于要求的账号权限范围，腾讯云DTS不会使用超过必要的权限，请按照最小化原则给与授权: https://cloud.tencent.com/document/product/571/58700",
+                                "Solution": ""
+                            }
+                        ]
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "SimpleParamCheck",
+                        "StepMessage": "",
+                        "StepName": "部分实例参数检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "DstPrivilegeCheck",
+                        "StepMessage": "",
+                        "StepName": "目标实例权限检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "DstEmptyCheck",
+                        "StepMessage": "",
+                        "StepName": "目标实例内容冲突检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "DstSpaceCheck",
+                        "StepMessage": "",
+                        "StepName": "目标实例空间检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "BinlogParamCheck",
+                        "StepMessage": "",
+                        "StepName": "binlog参数检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "ConstraintCheck",
+                        "StepMessage": "",
+                        "StepName": "外键依赖检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "ConstraintRefCheck",
+                        "StepMessage": "",
+                        "StepName": "外键部分库表依赖检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "ViewCheck",
+                        "StepMessage": "",
+                        "StepName": "视图检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 100,
+                        "StartTime": "",
+                        "Status": "finished",
+                        "StepId": "WarningParamCheck",
+                        "StepMessage": "",
+                        "StepName": "警告项检查",
+                        "StepNo": 0,
+                        "Warnings": []
+                    },
+                    {
+                        "Errors": [],
+                        "Percent": 0,
+                        "StartTime": "",
+                        "Status": "skipped",
+                        "StepId": "OptimizeCheck",
+                        "StepMessage": "",
+                        "StepName": "周边检查",
+                        "StepNo": 0,
+                        "Warnings": [
+                            {
+                                "HelpDoc": "",
+                                "Message": "skipped",
+                                "Solution": ""
+                            }
+                        ]
+                    }
+                ],
                 "StepNow": 12
             },
             "StartAt": "2022-07-11 17:18:57"
@@ -204,6 +361,8 @@ Output:
             "StepAll": 3,
             "StepInfo": [
                 {
+                    "StepMessage": "",
+                    "Percent": 100,
                     "Errors": [],
                     "StartTime": "2022-07-11 17:21:59",
                     "Status": "finished",
@@ -213,6 +372,8 @@ Output:
                     "Warnings": []
                 },
                 {
+                    "StepMessage": "",
+                    "Percent": 100,
                     "Errors": [],
                     "StartTime": "2022-07-11 17:22:43",
                     "Status": "finished",
@@ -222,6 +383,8 @@ Output:
                     "Warnings": []
                 },
                 {
+                    "StepMessage": "",
+                    "Percent": 100,
                     "Errors": [],
                     "StartTime": "2022-07-11 17:23:26",
                     "Status": "running",
@@ -243,7 +406,9 @@ Output:
             "LastDealName": "",
             "OfflineReason": "",
             "PayType": "postpay",
-            "TradeStatus": "normal"
+            "TradeStatus": "normal",
+            "OfflineTime": "",
+            "IsolateTime": ""
         },
         "UpdateTime": "2022-07-11 19:53:03"
     }

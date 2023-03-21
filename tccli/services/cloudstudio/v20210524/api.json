@@ -2476,7 +2476,7 @@
       "document": "创建临时工作空间凭证 DTO",
       "members": [
         {
-          "document": "工作空间 SpaceKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作空间 SpaceKey",
           "example": "knhwex",
           "member": "string",
           "name": "SpaceKey",
@@ -2485,7 +2485,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "token过期时间，单位是秒，默认 3600\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "token过期时间，单位是秒，默认 3600",
           "example": "3600",
           "member": "uint64",
           "name": "TokenExpiredLimitSec",

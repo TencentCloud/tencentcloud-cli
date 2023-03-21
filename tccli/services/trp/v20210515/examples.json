@@ -243,8 +243,8 @@
     "DescribeScanStats": [
       {
         "document": "分页查询某批次的扫码统计记录",
-        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanStats\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\",\n    \"CorpId\": 10000,\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ScanStats\": [],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanStats\n<公共请求参数>\n\n{\n    \"BatchId\": \"batchid\",\n    \"CorpId\": 10000,\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ScanStats\": [],\n        \"RequestId\": \"RequestId\"\n    }\n}",
         "title": "查询扫码统计记录"
       }
     ],

@@ -447,7 +447,7 @@
       "document": "基础流程信息",
       "members": [
         {
-          "document": "合同流程名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程名称",
           "example": "无",
           "member": "string",
           "name": "FlowName",
@@ -456,7 +456,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "合同流程类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程类型",
           "example": "无",
           "member": "string",
           "name": "FlowType",
@@ -465,7 +465,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "合同流程描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程描述信息",
           "example": "无",
           "member": "string",
           "name": "FlowDescription",
@@ -474,7 +474,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "合同流程截止时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程截止时间，unix时间戳",
           "example": "无",
           "member": "int64",
           "name": "Deadline",
@@ -483,7 +483,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否顺序签署(true:无序签,false:顺序签)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否顺序签署(true:无序签,false:顺序签)",
           "example": "无",
           "member": "bool",
           "name": "Unordered",
@@ -492,7 +492,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "打开智能添加填写区(默认开启，打开:\"OPEN\" 关闭：\"CLOSE\")\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "打开智能添加填写区(默认开启，打开:\"OPEN\" 关闭：\"CLOSE\")",
           "example": "无",
           "member": "string",
           "name": "IntelligentStatus",
@@ -501,7 +501,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "填写控件内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "填写控件内容",
           "example": "无",
           "member": "FormField",
           "name": "FormFields",
@@ -510,7 +510,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批",
           "example": "无",
           "member": "bool",
           "name": "NeedSignReview",
@@ -534,7 +534,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "被抄送人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被抄送人姓名",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -543,7 +543,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "被抄送人类型\n0--个人. 1--员工\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被抄送人类型\n0--个人. 1--员工",
           "example": "无",
           "member": "int64",
           "name": "CcType",
@@ -552,7 +552,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "被抄送人权限\n0--可查看\n1--可查看也可下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被抄送人权限\n0--可查看\n1--可查看也可下载",
           "example": "无",
           "member": "int64",
           "name": "CcPermission",
@@ -2203,7 +2203,7 @@
       "document": "签署人配置信息",
       "members": [
         {
-          "document": "是否允许修改签署人信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否允许修改签署人信息",
           "example": "无",
           "member": "bool",
           "name": "CanEditApprover",
@@ -2218,7 +2218,7 @@
       "document": "通用签署人信息",
       "members": [
         {
-          "document": "指定当前签署人为第三方应用集成子客，默认false：当前签署人为第三方应用集成子客，true：当前签署人为saas企业用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指定当前签署人为第三方应用集成子客，默认false：当前签署人为第三方应用集成子客，true：当前签署人为saas企业用户",
           "example": "无",
           "member": "bool",
           "name": "NotChannelOrganization",
@@ -2227,7 +2227,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署人类型,目前支持：0-企业签署人，1-个人签署人，3-企业静默签署人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人类型,目前支持：0-企业签署人，1-个人签署人，3-企业静默签署人",
           "example": "无",
           "member": "int64",
           "name": "ApproverType",
@@ -2236,7 +2236,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业id",
           "example": "无",
           "member": "string",
           "name": "OrganizationId",
@@ -2245,7 +2245,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "企业OpenId，第三方应用集成非静默签子客企业签署人发起合同毕传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业OpenId，第三方应用集成非静默签子客企业签署人发起合同毕传",
           "example": "无",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -2254,7 +2254,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "企业名称，第三方应用集成非静默签子客企业签署人必传，saas企业签署人必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业名称，第三方应用集成非静默签子客企业签署人必传，saas企业签署人必传",
           "example": "无",
           "member": "string",
           "name": "OrganizationName",
@@ -2263,7 +2263,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户id",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -2272,7 +2272,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "用户openId，第三方应用集成非静默签子客企业签署人必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户openId，第三方应用集成非静默签子客企业签署人必传",
           "example": "无",
           "member": "string",
           "name": "OpenId",
@@ -2281,7 +2281,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署人名称，saas企业签署人，个人签署人必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人名称，saas企业签署人，个人签署人必传",
           "example": "无",
           "member": "string",
           "name": "ApproverName",
@@ -2290,7 +2290,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署人手机号，saas企业签署人，个人签署人必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人手机号，saas企业签署人，个人签署人必传",
           "example": "无",
           "member": "string",
           "name": "ApproverMobile",
@@ -2299,7 +2299,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署人Id，使用模板发起是，对应模板配置中的签署人RecipientId\n注意：模板发起时该字段必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人Id，使用模板发起是，对应模板配置中的签署人RecipientId\n注意：模板发起时该字段必填",
           "example": "无",
           "member": "string",
           "name": "RecipientId",
@@ -2308,7 +2308,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署前置条件：阅读时长限制，不传默认10s,最大300s，最小3s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署前置条件：阅读时长限制，不传默认10s,最大300s，最小3s",
           "example": "无",
           "member": "int64",
           "name": "PreReadTime",
@@ -2317,7 +2317,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署前置条件：阅读全文限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署前置条件：阅读全文限制",
           "example": "无",
           "member": "bool",
           "name": "IsFullText",
@@ -2326,7 +2326,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS",
           "example": "无",
           "member": "string",
           "name": "NotifyType",
@@ -2335,7 +2335,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署人配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人配置",
           "example": "无",
           "member": "CommonApproverOption",
           "name": "ApproverOption",
@@ -2768,7 +2768,7 @@
       "document": "创建合同配置信息",
       "members": [
         {
-          "document": "是否允许修改合同信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否允许修改合同信息",
           "example": "true",
           "member": "bool",
           "name": "CanEditFlow",
@@ -4999,7 +4999,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "默认角色，值为以下三个对应的英文：\n业务管理员：admin\n经办人：channel-normal-operator\n业务员：channel-sales-man\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认角色，值为以下三个对应的英文：\n业务管理员：admin\n经办人：channel-normal-operator\n业务员：channel-sales-man",
           "example": "无",
           "member": "string",
           "name": "DefaultRole",

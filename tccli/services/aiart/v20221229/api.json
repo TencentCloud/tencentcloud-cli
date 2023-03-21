@@ -124,7 +124,7 @@
       "document": "logo参数",
       "members": [
         {
-          "document": "水印url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "水印url",
           "example": "无",
           "member": "string",
           "name": "LogoUrl",
@@ -133,7 +133,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "水印base64，url和base64二选一传入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "水印base64，url和base64二选一传入",
           "example": "无",
           "member": "string",
           "name": "LogoImage",
@@ -142,7 +142,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配",
           "example": "无",
           "member": "LogoRect",
           "name": "LogoRect",
@@ -157,7 +157,7 @@
       "document": "输入框",
       "members": [
         {
-          "document": "左上角X坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "左上角X坐标",
           "example": "无",
           "member": "int64",
           "name": "X",
@@ -166,7 +166,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "左上角Y坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "左上角Y坐标",
           "example": "无",
           "member": "int64",
           "name": "Y",
@@ -175,7 +175,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "方框宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "方框宽度",
           "example": "无",
           "member": "int64",
           "name": "Width",
@@ -184,7 +184,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "方框高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "方框高度",
           "example": "无",
           "member": "int64",
           "name": "Height",
@@ -199,7 +199,7 @@
       "document": "返回结果配置",
       "members": [
         {
-          "document": "生成图分辨率\n支持生成以下不同分辨率的图片，对应1:1方图、3:4竖图、4:3横图三种尺寸规格，不传默认为\"768:768\"\n取值：\n● 768:768\n● 768:1024\n● 1024:768\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生成图分辨率\n支持生成以下不同分辨率的图片，对应1:1方图、3:4竖图、4:3横图三种尺寸规格，不传默认为\"768:768\"\n取值：\n● 768:768\n● 768:1024\n● 1024:768",
           "example": "768:768",
           "member": "string",
           "name": "Resolution",

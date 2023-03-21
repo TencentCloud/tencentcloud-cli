@@ -311,7 +311,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "被代理机构的应用号，一般不用传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被代理机构的应用号，一般不用传",
           "example": "无",
           "member": "string",
           "name": "ProxyAppId",
@@ -320,7 +320,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "被代理机构在电子签平台的机构编号，集团代理下场景必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被代理机构在电子签平台的机构编号，集团代理下场景必传",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationId",
@@ -329,7 +329,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "被代理机构的经办人，一般不用传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被代理机构的经办人，一般不用传",
           "example": "无",
           "member": "string",
           "name": "ProxyOperator",
@@ -588,7 +588,7 @@
       "document": "自动签开启、签署相关配置",
       "members": [
         {
-          "document": "自动签开通个人用户的三要素\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动签开通个人用户的三要素",
           "example": "无",
           "member": "UserThreeFactor",
           "name": "UserInfo",
@@ -597,7 +597,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "回调链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调链接",
           "example": "无",
           "member": "string",
           "name": "CallbackUrl",
@@ -606,7 +606,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否回调证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否回调证书信息",
           "example": "无",
           "member": "bool",
           "name": "CertInfoCallback",
@@ -615,7 +615,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否支持用户自定义签名印章\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否支持用户自定义签名印章",
           "example": "无",
           "member": "bool",
           "name": "UserDefineSeal",
@@ -624,7 +624,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否需要回调的时候返回印章(签名) 图片的 base64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否需要回调的时候返回印章(签名) 图片的 base64",
           "example": "无",
           "member": "bool",
           "name": "SealImgCallback",
@@ -633,7 +633,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。",
           "example": "无",
           "member": "string",
           "name": "VerifyChannels",
@@ -802,7 +802,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "被抄送人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被抄送人姓名",
           "example": "李白",
           "member": "string",
           "name": "Name",
@@ -811,7 +811,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "被抄送人类型,\n0--个人\n1--员工\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被抄送人类型,\n0--个人\n1--员工",
           "example": "1",
           "member": "int64",
           "name": "CcType",
@@ -820,7 +820,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "被抄送人权限\n0--可查看\n1--可查看也可下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被抄送人权限\n0--可查看\n1--可查看也可下载",
           "example": "1",
           "member": "int64",
           "name": "CcPermission",
@@ -5023,7 +5023,7 @@
       "document": "解除协议的签署人，如不指定，默认使用待解除流程（即原流程）中的签署人。\n注意：不支持更换C端（个人身份类型）签署人，如果原流程中含有C端签署人，默认使用原流程中的该C端签署人。",
       "members": [
         {
-          "document": "签署人姓名，最大长度50个字符\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人姓名，最大长度50个字符\n",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -5032,7 +5032,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "签署人手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人手机号",
           "example": "无",
           "member": "string",
           "name": "Mobile",
@@ -5041,7 +5041,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）",
           "example": "无",
           "member": "string",
           "name": "RelievedApproverReceiptId",
@@ -5056,7 +5056,7 @@
       "document": "解除协议文档中内容信息，包括但不限于：解除理由、解除后仍然有效的条款-保留条款、原合同事项处理-费用结算、原合同事项处理-其他事项、其他约定等。",
       "members": [
         {
-          "document": "解除理由，最大支持200个字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解除理由，最大支持200个字",
           "example": "无",
           "member": "string",
           "name": "Reason",
@@ -5065,7 +5065,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "解除后仍然有效的条款，保留条款，最大支持200个字\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解除后仍然有效的条款，保留条款，最大支持200个字\n",
           "example": "无",
           "member": "string",
           "name": "RemainInForceItem",
@@ -5074,7 +5074,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "原合同事项处理-费用结算，最大支持200个字\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原合同事项处理-费用结算，最大支持200个字\n",
           "example": "无",
           "member": "string",
           "name": "OriginalExpenseSettlement",
@@ -5083,7 +5083,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "原合同事项处理-其他事项，最大支持200个字\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原合同事项处理-其他事项，最大支持200个字\n",
           "example": "无",
           "member": "string",
           "name": "OriginalOtherSettlement",
@@ -5092,7 +5092,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "其他约定，最大支持200个字\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "其他约定，最大支持200个字\n",
           "example": "无",
           "member": "string",
           "name": "OtherDeals",
@@ -5848,7 +5848,7 @@
       "document": "用户的三要素：姓名，证件号，证件类型",
       "members": [
         {
-          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓名",
           "example": "小明",
           "member": "string",
           "name": "Name",
@@ -5857,7 +5857,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "证件类型: \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件类型: \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -5866,7 +5866,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "证件号，如果有 X 请大写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件号，如果有 X 请大写",
           "example": "610*************1X",
           "member": "string",
           "name": "IdCardNumber",

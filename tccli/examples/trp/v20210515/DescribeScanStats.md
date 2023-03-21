@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trp DescribeScanStats --cli-unfold-argument  \
-    --BatchId xx \
+    --BatchId batchid \
     --CorpId 10000 \
     --PageSize 10 \
     --PageNumber 1
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "ScanStats": [],
-        "RequestId": "xx"
+        "RequestId": "RequestId"
     }
 }
 ```

@@ -28,6 +28,13 @@
       "output": "CloseServerlessDBExtranetAccessResponse",
       "status": "online"
     },
+    "CreateBaseBackup": {
+      "document": "本接口（CreateBaseBackup）用于创建实例的全量备份。",
+      "input": "CreateBaseBackupRequest",
+      "name": "创建实例基础备份",
+      "output": "CreateBaseBackupResponse",
+      "status": "online"
+    },
     "CreateDBInstanceNetworkAccess": {
       "document": "可对实例进行网络的添加操作。",
       "input": "CreateDBInstanceNetworkAccessRequest",
@@ -84,11 +91,25 @@
       "output": "CreateServerlessDBInstanceResponse",
       "status": "online"
     },
+    "DeleteBaseBackup": {
+      "document": "本接口（DeleteBaseBackup）用于删除实例指定全量备份。",
+      "input": "DeleteBaseBackupRequest",
+      "name": "删除实例基础备份",
+      "output": "DeleteBaseBackupResponse",
+      "status": "online"
+    },
     "DeleteDBInstanceNetworkAccess": {
       "document": "可对实例进行网络的删除操作。",
       "input": "DeleteDBInstanceNetworkAccessRequest",
       "name": "删除实例网络",
       "output": "DeleteDBInstanceNetworkAccessResponse",
+      "status": "online"
+    },
+    "DeleteLogBackup": {
+      "document": "本接口（DeleteLogBackup）用于删除实例指定日志备份。",
+      "input": "DeleteLogBackupRequest",
+      "name": "删除实例日志备份",
+      "output": "DeleteLogBackupResponse",
       "status": "online"
     },
     "DeleteParameterTemplate": {
@@ -133,11 +154,46 @@
       "output": "DescribeAvailableRecoveryTimeResponse",
       "status": "online"
     },
+    "DescribeBackupDownloadURL": {
+      "document": "本接口 (DescribeBackupDownloadURL) 用于获取备份下载链接。",
+      "input": "DescribeBackupDownloadURLRequest",
+      "name": "获取备份下载链接",
+      "output": "DescribeBackupDownloadURLResponse",
+      "status": "online"
+    },
+    "DescribeBackupOverview": {
+      "document": "本接口（DescribeBackupOverview）用于查询用户的备份概览信息。返回用户当前备份个数、备份占用容量、免费容量、收费容量等信息（容量单位为字节）。",
+      "input": "DescribeBackupOverviewRequest",
+      "name": "查询备份概览",
+      "output": "DescribeBackupOverviewResponse",
+      "status": "online"
+    },
     "DescribeBackupPlans": {
       "document": "本接口 (DescribeBackupPlans) 用于实例所有的备份计划查询",
       "input": "DescribeBackupPlansRequest",
       "name": "查询备份计划",
       "output": "DescribeBackupPlansResponse",
+      "status": "online"
+    },
+    "DescribeBackupSummaries": {
+      "document": "本接口(DescribeBackupSummaries)用于查询实例备份的统计信息，返回以实例为维度的备份个数、占用容量等信息（容量单位为字节）。",
+      "input": "DescribeBackupSummariesRequest",
+      "name": "查询备份统计信息",
+      "output": "DescribeBackupSummariesResponse",
+      "status": "online"
+    },
+    "DescribeBaseBackups": {
+      "document": "本接口 (DescribeBaseBackups) 用于查询基础备份列表。",
+      "input": "DescribeBaseBackupsRequest",
+      "name": "查询基础备份列表",
+      "output": "DescribeBaseBackupsResponse",
+      "status": "online"
+    },
+    "DescribeClasses": {
+      "document": "本接口（DescribeClasses）用于查询实例售卖规格。",
+      "input": "DescribeClassesRequest",
+      "name": "查询售卖规格",
+      "output": "DescribeClassesResponse",
       "status": "online"
     },
     "DescribeCloneDBInstanceSpec": {
@@ -196,6 +252,13 @@
       "output": "DescribeDBSlowlogsResponse",
       "status": "online"
     },
+    "DescribeDBVersions": {
+      "document": "本接口（DescribeDBVersions）用于查询支持的数据库版本号列表。",
+      "input": "DescribeDBVersionsRequest",
+      "name": "查询支持的数据库版本号列表",
+      "output": "DescribeDBVersionsResponse",
+      "status": "online"
+    },
     "DescribeDBXlogs": {
       "document": "本接口（DescribeDBXlogs）用于获取实例Xlog列表。",
       "input": "DescribeDBXlogsRequest",
@@ -222,6 +285,13 @@
       "input": "DescribeEncryptionKeysRequest",
       "name": "实例密钥信息列表",
       "output": "DescribeEncryptionKeysResponse",
+      "status": "online"
+    },
+    "DescribeLogBackups": {
+      "document": "本接口 (DescribeLogBackups) 用于查询日志备份列表。",
+      "input": "DescribeLogBackupsRequest",
+      "name": "查询日志备份列表",
+      "output": "DescribeLogBackupsResponse",
       "status": "online"
     },
     "DescribeOrders": {
@@ -364,6 +434,13 @@
       "output": "ModifyBackupPlanResponse",
       "status": "online"
     },
+    "ModifyBaseBackupExpireTime": {
+      "document": "本接口（DeleteBaseBackup）用于修改实例指定全量备份的过期时间。",
+      "input": "ModifyBaseBackupExpireTimeRequest",
+      "name": "修改基础备份过期时间",
+      "output": "ModifyBaseBackupExpireTimeResponse",
+      "status": "online"
+    },
     "ModifyDBInstanceDeployment": {
       "document": "本接口（ModifyDBInstanceDeployment）用于修改节点可用区部署方式，仅支持主实例。",
       "input": "ModifyDBInstanceDeploymentRequest",
@@ -495,6 +572,13 @@
       "input": "UpgradeDBInstanceRequest",
       "name": "升级实例配置（废弃）",
       "output": "UpgradeDBInstanceResponse",
+      "status": "online"
+    },
+    "UpgradeDBInstanceKernelVersion": {
+      "document": "本接口（UpgradeDBInstanceKernelVersion）用于升级实例的内核版本号。",
+      "input": "UpgradeDBInstanceKernelVersionRequest",
+      "name": "升级实例内核版本号",
+      "output": "UpgradeDBInstanceKernelVersionResponse",
       "status": "online"
     }
   },
@@ -792,6 +876,268 @@
       ],
       "usage": "out"
     },
+    "BackupSummary": {
+      "document": "实例备份统计项",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-xxxxxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例日志备份数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LogBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例日志备份大小。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LogBackupSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手动创建的实例基础备份数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ManualBaseBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手动创建的实例基础备份大小。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ManualBaseBackupSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动创建的实例基础备份数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoBaseBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动创建的实例基础备份大小。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoBaseBackupSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总备份数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总备份大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalBackupSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BaseBackup": {
+      "document": "数据库基础备份信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-xxxxxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件唯一标识。",
+          "example": "f6adc02a-432e-536f-a5f3-3dbf40ecd683",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件名称。",
+          "example": "0",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份方式：物理备份、逻辑备份。",
+          "example": "0",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份模式：自动备份、手动备份。",
+          "example": "0",
+          "member": "string",
+          "name": "BackupMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份任务状态。",
+          "example": "0",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份集大小，单位bytes。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份的开始时间。",
+          "example": "0",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份的结束时间。",
+          "example": "0",
+          "member": "string",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份的过期时间。",
+          "example": "0",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClassInfo": {
+      "document": "数据库实例规格",
+      "members": [
+        {
+          "document": "规格ID",
+          "example": "无",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CPU核数",
+          "example": "无",
+          "member": "uint64",
+          "name": "CPU",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内存大小，单位：MB",
+          "example": "无",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该规格所支持最大存储容量，单位：GB",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该规格所支持最小存储容量，单位：GB",
+          "example": "无",
+          "member": "uint64",
+          "name": "MinStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该规格的预估QPS",
+          "example": "无",
+          "member": "uint64",
+          "name": "QPS",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CloneDBInstanceRequest": {
       "document": "CloneDBInstance请求参数结构体",
       "members": [
@@ -1070,6 +1416,33 @@
     },
     "CloseServerlessDBExtranetAccessResponse": {
       "document": "CloseServerlessDBExtranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBaseBackupRequest": {
+      "document": "CreateBaseBackup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-xxxxxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBaseBackupResponse": {
+      "document": "CreateBaseBackup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2872,6 +3245,42 @@
       ],
       "usage": "both"
     },
+    "DeleteBaseBackupRequest": {
+      "document": "DeleteBaseBackup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-apzvwncr",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "基础备份ID。",
+          "example": "4c144959-aca8-5266-bb96-7fb7aa2ca409",
+          "member": "string",
+          "name": "BaseBackupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBaseBackupResponse": {
+      "document": "DeleteBaseBackup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDBInstanceNetworkAccessRequest": {
       "document": "DeleteDBInstanceNetworkAccess请求参数结构体",
       "members": [
@@ -2926,6 +3335,42 @@
           "type": "int",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLogBackupRequest": {
+      "document": "DeleteLogBackup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-apzvwncr",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志备份ID。",
+          "example": "4c144959-aca8-5266-bb96-7fb7aa2ca409",
+          "member": "string",
+          "name": "LogBackupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLogBackupResponse": {
+      "document": "DeleteLogBackup返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3223,6 +3668,167 @@
       ],
       "type": "object"
     },
+    "DescribeBackupDownloadURLRequest": {
+      "document": "DescribeBackupDownloadURL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-xxxxxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份类型，目前支持：LogBackup，BaseBackup。",
+          "example": "LogBackup",
+          "member": "string",
+          "name": "BackupType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份的唯一ID。",
+          "example": "f6adc02a-432e-536f-a5f3-3dbf40ecd683",
+          "member": "string",
+          "name": "BackupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "链接的有效时间，默认为12小时。",
+          "example": "12",
+          "member": "uint64",
+          "name": "URLExpireTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupDownloadURLResponse": {
+      "document": "DescribeBackupDownloadURL返回参数结构体",
+      "members": [
+        {
+          "document": "备份的下载地址。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupDownloadURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupOverviewRequest": {
+      "document": "DescribeBackupOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBackupOverviewResponse": {
+      "document": "DescribeBackupOverview返回参数结构体",
+      "members": [
+        {
+          "document": "总免费空间大小，单位byte。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalFreeSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已使用免费空间大小，单位byte。",
+          "example": "0",
+          "member": "uint64",
+          "name": "UsedFreeSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已使用收费空间大小，单位byte。",
+          "example": "0",
+          "member": "uint64",
+          "name": "UsedBillingSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志备份数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LogBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志备份大小，单位byte。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LogBackupSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "手动创建的基础备份数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ManualBaseBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "手动创建的基础备份大小，单位byte。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ManualBaseBackupSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自动创建的基础备份数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoBaseBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自动创建的基础备份大小，单位byte。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoBaseBackupSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBackupPlansRequest": {
       "document": "DescribeBackupPlans请求参数结构体",
       "members": [
@@ -3247,6 +3853,236 @@
           "member": "BackupPlan",
           "name": "Plans",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupSummariesRequest": {
+      "document": "DescribeBackupSummaries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "每页显示数量，取值范围为1-100，默认为返回10条。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，从0开始。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持TotalBackupSize,LogBackupSize,ManualBaseBackupSize,AutoBaseBackupSize。",
+          "example": "TotalBackupSize",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，包括升序：asc，降序：desc。",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupSummariesResponse": {
+      "document": "DescribeBackupSummaries返回参数结构体",
+      "members": [
+        {
+          "document": "备份统计信息列表。",
+          "example": "无",
+          "member": "BackupSummary",
+          "name": "BackupSummarySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询到的所有备份信息数量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaseBackupsRequest": {
+      "document": "DescribeBaseBackups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "备份的最小结束时间，形如2018-01-01 00:00:00。默认为7天前。",
+          "example": "2018-06-10 17:06:38",
+          "member": "string",
+          "name": "MinFinishTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份的最大结束时间，形如2018-01-01 00:00:00。默认为当前时间。",
+          "example": "2018-06-10 17:06:38",
+          "member": "string",
+          "name": "MaxFinishTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "每页显示数量，取值范围为1-100，默认为返回10条。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，从0开始。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持StartTime,FinishTime,Size。",
+          "example": "StartTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，包括升序：asc，降序：desc。",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaseBackupsResponse": {
+      "document": "DescribeBaseBackups返回参数结构体",
+      "members": [
+        {
+          "document": "查询到的基础备份数量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "基础备份详细信息列表。",
+          "example": "无",
+          "member": "BaseBackup",
+          "name": "BaseBackupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassesRequest": {
+      "document": "DescribeClasses请求参数结构体",
+      "members": [
+        {
+          "document": "可用区ID。可以通过接口DescribeZones获取。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；",
+          "example": "postgresql",
+          "member": "string",
+          "name": "DBEngine",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "数据库主版本号。例如12，13，可以通过接口DescribeDBVersions获取。",
+          "example": "12",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassesResponse": {
+      "document": "DescribeClasses返回参数结构体",
+      "members": [
+        {
+          "document": "数据库规格列表",
+          "example": "无",
+          "member": "ClassInfo",
+          "name": "ClassInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
@@ -3835,6 +4671,31 @@
       ],
       "type": "object"
     },
+    "DescribeDBVersionsRequest": {
+      "document": "DescribeDBVersions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDBVersionsResponse": {
+      "document": "DescribeDBVersions返回参数结构体",
+      "members": [
+        {
+          "document": "数据库版本号信息列表",
+          "example": "无",
+          "member": "Version",
+          "name": "VersionSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBXlogsRequest": {
       "document": "DescribeDBXlogs请求参数结构体",
       "members": [
@@ -4032,6 +4893,105 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogBackupsRequest": {
+      "document": "DescribeLogBackups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "备份的最小结束时间，形如2018-01-01 00:00:00。默认为7天前。",
+          "example": "2018-06-10 17:06:38",
+          "member": "string",
+          "name": "MinFinishTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份的最大结束时间，形如2018-01-01 00:00:00。默认为当前时间。",
+          "example": "2018-06-10 17:06:38",
+          "member": "string",
+          "name": "MaxFinishTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "每页显示数量，取值范围为1-100，默认为返回10条。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，从0开始。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持StartTime,FinishTime,Size。",
+          "example": "StartTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，包括升序：asc，降序：desc。",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogBackupsResponse": {
+      "document": "DescribeLogBackups返回参数结构体",
+      "members": [
+        {
+          "document": "查询到的日志备份数量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志备份详细信息列表。",
+          "example": "无",
+          "member": "LogBackup",
+          "name": "LogBackupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5543,6 +6503,112 @@
       ],
       "type": "object"
     },
+    "LogBackup": {
+      "document": "数据库日志备份信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "0",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件唯一标识。",
+          "example": "0",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件名称。",
+          "example": "0",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份方式：物理备份、逻辑备份。",
+          "example": "0",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份模式：自动备份、手动备份。",
+          "example": "0",
+          "member": "string",
+          "name": "BackupMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份任务状态。",
+          "example": "0",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份集大小，单位bytes。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份的开始时间。",
+          "example": "0",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份的结束时间。",
+          "example": "0",
+          "member": "string",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份的过期时间。",
+          "example": "0",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAccountRemarkRequest": {
       "document": "ModifyAccountRemark请求参数结构体",
       "members": [
@@ -5641,6 +6707,51 @@
     },
     "ModifyBackupPlanResponse": {
       "document": "ModifyBackupPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBaseBackupExpireTimeRequest": {
+      "document": "ModifyBaseBackupExpireTime请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-xxxxxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "基础备份ID。",
+          "example": "f6adc02a-432e-536f-a5f3-3dbf40ecd683",
+          "member": "string",
+          "name": "BaseBackupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新过期时间。",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "NewExpireTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBaseBackupExpireTimeResponse": {
+      "document": "ModifyBaseBackupExpireTime返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8244,6 +9355,78 @@
       ],
       "usage": "both"
     },
+    "UpgradeDBInstanceKernelVersionRequest": {
+      "document": "UpgradeDBInstanceKernelVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "postgres-aser1j2o",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。",
+          "example": "v12.4_r1.5",
+          "member": "string",
+          "name": "TargetDBKernelVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定实例升级内核版本号完成后的切换时间。可选值，\n0：立即切换（默认值）。\n1：指定时间切换。\n2：维护时间窗口内切换。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SwitchTag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。",
+          "example": "01:00:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。SwitchStartTime和SwitchEndTime时间窗口不能小于30分钟。",
+          "example": "01:30:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否对本次升级实例内核版本号操作执行预检查。可选值，\ntrue：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。\nfalse：发送正常请求（默认值），通过检查后直接升级内核版本号。",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDBInstanceKernelVersionResponse": {
+      "document": "UpgradeDBInstanceKernelVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpgradeDBInstanceRequest": {
       "document": "UpgradeDBInstance请求参数结构体",
       "members": [
@@ -8360,6 +9543,75 @@
         }
       ],
       "type": "object"
+    },
+    "Version": {
+      "document": "数据库版本号信息",
+      "members": [
+        {
+          "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；",
+          "example": "postgresql",
+          "member": "string",
+          "name": "DBEngine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库版本，例如：12.4",
+          "example": "12.4",
+          "member": "string",
+          "name": "DBVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库主要版本，例如：12",
+          "example": "12",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库内核版本，例如：v12.4_r1.3",
+          "example": "v12.4_r1.3",
+          "member": "string",
+          "name": "DBKernelVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库内核支持的特性列表。例如，\nTDE：支持数据加密。",
+          "example": "[\"TDE\"]",
+          "member": "string",
+          "name": "SupportedFeatureNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库版本状态，包括：\nAVAILABLE：可用；\nDEPRECATED：已弃用。",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该数据库版本（DBKernelVersion）可以升级到的版本号列表。",
+          "example": "[\"v12.4_r1.4\"]",
+          "member": "string",
+          "name": "AvailableUpgradeTarget",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Xlog": {
       "document": "数据库Xlog信息",

@@ -1050,7 +1050,7 @@
       "document": "引擎地域配置详情",
       "members": [
         {
-          "document": "引擎节点所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "引擎节点所在地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "EngineRegion",
@@ -1059,7 +1059,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "此地域节点分配数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此地域节点分配数量",
           "example": "2",
           "member": "int64",
           "name": "Replica",
@@ -1068,7 +1068,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "集群网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群网络信息",
           "example": "[{\"VpcId\":\"vpc-XXX\",\"SubnetId\":\"subnet-XXX\"}]",
           "member": "VpcInfo",
           "name": "VpcInfos",

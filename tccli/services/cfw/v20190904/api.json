@@ -1649,7 +1649,7 @@
       "document": "创建NAT ACL规则参数结构",
       "members": [
         {
-          "document": "访问源示例： net：IP/CIDR(192.168.0.2)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问源示例： net：IP/CIDR(192.168.0.2)",
           "example": "192.168.0.2",
           "member": "string",
           "name": "SourceContent",
@@ -1658,7 +1658,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag",
           "example": "ip",
           "member": "string",
           "name": "SourceType",
@@ -1667,7 +1667,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com",
           "example": "*.qq.com",
           "member": "string",
           "name": "TargetContent",
@@ -1676,7 +1676,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location",
           "example": "domain",
           "member": "string",
           "name": "TargetType",
@@ -1685,7 +1685,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -1694,7 +1694,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察",
           "example": "accept",
           "member": "string",
           "name": "RuleAction",
@@ -1703,7 +1703,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "访问控制策略的端口。取值： -1/-1：全部端口 80：80端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问控制策略的端口。取值： -1/-1：全部端口 80：80端口",
           "example": "-1/-1",
           "member": "string",
           "name": "Port",
@@ -1712,7 +1712,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "规则方向：1，入站；0，出站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则方向：1，入站；0，出站",
           "example": "0",
           "member": "uint64",
           "name": "Direction",
@@ -1721,7 +1721,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "规则序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则序号",
           "example": "1",
           "member": "int64",
           "name": "OrderIndex",
@@ -1730,7 +1730,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "规则状态，true表示启用，false表示禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则状态，true表示启用，false表示禁用",
           "example": "true",
           "member": "string",
           "name": "Enable",
@@ -1739,7 +1739,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "规则对应的唯一id，创建规则时无需填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则对应的唯一id，创建规则时无需填写",
           "example": "8888",
           "member": "int64",
           "name": "Uuid",
@@ -1748,7 +1748,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "test",
           "member": "string",
           "name": "Description",
