@@ -50,7 +50,7 @@
     ],
     "DescribeAuditTracks": [
       {
-        "document": "",
+        "document": "在控制台或者使用接口，查看已经创建的跟踪集列表",
         "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditTracks\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Tracks\": [\n            {\n                \"TrackId\": 1,\n                \"Name\": \"audit\",\n                \"ActionType\": \"Read\",\n                \"ResourceType\": \"audit\",\n                \"EventNames\": [\n                    \"LookUpEvents\"\n                ],\n                \"Storage\": {\n                    \"StorageName\": \"audit-cos\",\n                    \"StoragePrefix\": \"test\",\n                    \"StorageRegion\": \"ap-guangzhou\",\n                    \"StorageType\": \"cos\"\n                },\n                \"Status\": 1,\n                \"CreateTime\": \"2021-01-14 14:43:38\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
         "title": "查询云审计跟踪集列表"

@@ -1,6 +1,6 @@
 **Example 1: 查询子应用资源列表**
 
-
+查询子应用资源列表
 
 Input: 
 
@@ -16,6 +16,7 @@ Output:
             {
                 "SubAppId": 1451123904,
                 "Name": "子应用1",
+                "SubAppIdName": "主应用",
                 "Description": "子应用1简介",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "Status": "On"
@@ -23,6 +24,7 @@ Output:
             {
                 "SubAppId": 1251123904,
                 "Name": "主应用",
+                "SubAppIdName": "主应用",
                 "Description": "",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "Status": "On"

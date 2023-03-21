@@ -221,6 +221,14 @@
         "output": "{\n    \"Response\": {\n        \"Account\": \"test\",\n        \"RequestId\": \"aeccaa3e-8116-4ce8-9cba-fc83a8a48c2a\"\n    }\n}",
         "title": "解绑TCB账号"
       }
+    ],
+    "UpdatePhoneByAuthCodeForSaaS": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePhoneByAuthCodeForSaaS\n<公共请求参数>\n\n{\n    \"NewPhoneCountryCode\": \"xx\",\n    \"OldPhoneNumber\": \"xx\",\n    \"NewPhoneNumber\": \"xx\",\n    \"AuthCode\": \"xx\",\n    \"VerifyCode\": \"xx\",\n    \"Platform\": \"xx\",\n    \"OldPhoneCountryCode\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83eaff99-bac3-4022-bb28-0c0bede311fd\"\n    }\n}",
+        "title": "更新手机号"
+      }
     ]
   },
   "version": "1.0"

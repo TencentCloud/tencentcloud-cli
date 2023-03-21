@@ -40,6 +40,14 @@
         "title": "同步调用设备行为"
       }
     ],
+    "CallTRTCDevice": [
+      {
+        "document": "呼叫TRTC设备",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallTRTCDevice\n<公共请求参数>\n\n{\n    \"ProductId\": \"product\",\n    \"DeviceName\": \"device\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TRTCParams\": {\n            \"SDKAppId\": 123,\n            \"UserId\": \"userid\",\n            \"UserSig\": \"sig\",\n            \"StrRoomId\": \"roomid\",\n            \"PrivateMapKey\": \"key\"\n        },\n        \"RequestId\": \"asdf\"\n    }\n}",
+        "title": "呼叫TRTC设备"
+      }
+    ],
     "CancelAIModelApplication": [
       {
         "document": "",

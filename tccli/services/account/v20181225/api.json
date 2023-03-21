@@ -202,6 +202,13 @@
       "name": "解绑TCB账号",
       "output": "UnbindTCBAccountResponse",
       "status": "online"
+    },
+    "UpdatePhoneByAuthCodeForSaaS": {
+      "document": "通过AuthCode修改SaaS账号安全手机",
+      "input": "UpdatePhoneByAuthCodeForSaaSRequest",
+      "name": "通过AuthCode修改SaaS账号安全手机",
+      "output": "UpdatePhoneByAuthCodeForSaaSResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -2480,6 +2487,87 @@
           "value_allowed_null": true,
           "visibility": 2
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePhoneByAuthCodeForSaaSRequest": {
+      "document": "UpdatePhoneByAuthCodeForSaaS请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "老手机号区号。",
+          "example": "86",
+          "member": "string",
+          "name": "OldPhoneCountryCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "老手机号。",
+          "example": "123",
+          "member": "string",
+          "name": "OldPhoneNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新手机号区号。",
+          "example": "86",
+          "member": "string",
+          "name": "NewPhoneCountryCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新手机号。",
+          "example": "456",
+          "member": "string",
+          "name": "NewPhoneNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "校验Code。",
+          "example": "adf",
+          "member": "string",
+          "name": "AuthCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新手机号验证码。",
+          "example": "1232",
+          "member": "string",
+          "name": "VerifyCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePhoneByAuthCodeForSaaSResponse": {
+      "document": "UpdatePhoneByAuthCodeForSaaS返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

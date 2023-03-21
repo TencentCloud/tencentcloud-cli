@@ -746,7 +746,6 @@
       "document": "AddUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子用户用户名",
           "example": "test124",
           "member": "string",
@@ -756,7 +755,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子用户备注",
           "example": "test",
           "member": "string",
@@ -766,7 +764,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。",
           "example": "1",
           "member": "uint64",
@@ -776,7 +773,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。",
           "example": "1",
           "member": "uint64",
@@ -786,7 +782,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。",
           "example": "test123456",
           "member": "string",
@@ -796,7 +791,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。",
           "example": "0",
           "member": "uint64",
@@ -806,7 +800,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "手机号",
           "example": "10086",
           "member": "string",
@@ -816,7 +809,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "区号",
           "example": "86",
           "member": "string",
@@ -826,7 +818,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "邮箱",
           "example": "12340qq.com",
           "member": "string",
@@ -846,7 +837,6 @@
           "example": "100000546533",
           "member": "uint64",
           "name": "Uin",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -856,7 +846,6 @@
           "example": "test124",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -866,7 +855,6 @@
           "example": "test123456",
           "member": "string",
           "name": "Password",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -876,7 +864,6 @@
           "example": "faweffewagwaegawe",
           "member": "string",
           "name": "SecretId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -886,7 +873,6 @@
           "example": "fawef23rjhiuaefhuaifhiuawef",
           "member": "string",
           "name": "SecretKey",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -896,7 +882,6 @@
           "example": "5648765",
           "member": "uint64",
           "name": "Uid",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1132,40 +1117,40 @@
       "document": "AttachRolePolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "策略ID，入参PolicyId与PolicyName二选一",
           "example": "1",
           "member": "uint64",
           "name": "PolicyId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
           "example": "4611686018427397905",
           "member": "string",
           "name": "AttachRoleId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
           "example": "QCS_RoleName",
           "member": "string",
           "name": "AttachRoleName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "策略名，入参PolicyId与PolicyName二选一",
           "example": "policygen-test",
           "member": "string",
           "name": "PolicyName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1661,7 +1646,6 @@
       "document": "CreateGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "用户组名",
           "example": "test1",
           "member": "string",
@@ -1671,7 +1655,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "用户组描述",
           "example": "test2",
           "member": "string",
@@ -1691,7 +1674,6 @@
           "example": "2020",
           "member": "uint64",
           "name": "GroupId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1772,28 +1754,31 @@
       "document": "CreatePolicy请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "策略名",
+          "document": "策略名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。",
+          "example": "TestPolicyName",
           "member": "string",
           "name": "PolicyName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
+          "example": "{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}",
           "member": "string",
           "name": "PolicyDocument",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "策略描述",
+          "example": "测试描述信息",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1803,10 +1788,12 @@
       "members": [
         {
           "document": "新增策略ID",
+          "example": "12378",
           "member": "uint64",
           "name": "PolicyId",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1870,58 +1857,58 @@
       "document": "CreateRole请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "角色名称",
+          "document": "角色名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。",
           "example": "test_1234544",
           "member": "string",
           "name": "RoleName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
           "example": "%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D",
           "member": "string",
           "name": "PolicyDocument",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "角色描述",
           "example": "abc",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否允许登录 1 为允许 0 为不允许",
           "example": "0",
           "member": "uint64",
           "name": "ConsoleLogin",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "申请角色临时密钥的最长有效期限制(范围：0~43200)",
           "example": "3600",
           "member": "uint64",
           "name": "SessionDuration",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "角色绑定标签",
           "example": "无",
           "member": "RoleTags",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1934,9 +1921,9 @@
           "example": "123456789",
           "member": "string",
           "name": "RoleId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

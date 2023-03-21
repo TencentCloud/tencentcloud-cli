@@ -528,6 +528,14 @@
         "title": "根据offset查询消息"
       }
     ],
+    "InjectDownAttack": [
+      {
+        "document": "关机",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InjectDownAttack\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"InjectZoneId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"AsyncRequestId\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "关机"
+      }
+    ],
     "InquireCkafkaPrice": [
       {
         "document": "",

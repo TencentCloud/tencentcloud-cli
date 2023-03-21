@@ -148,7 +148,7 @@
       "status": "online"
     },
     "OperateResourcesInner": {
-      "document": "进行退资源、销毁资源和恢复资源内部操作",
+      "document": "进行退资源、销毁资源和恢复资源内部操作。公共参数Region根据资源实际拥有者(OwnerUin)所在站点传递: 国内广州(ap-guangzhou), 国外新加坡(ap-singapore)",
       "input": "OperateResourcesInnerRequest",
       "name": "操作资源内部接口",
       "output": "OperateResourcesInnerResponse",
@@ -5431,7 +5431,7 @@
           "visibility": 1
         },
         {
-          "document": "资源操作结果。取值：0-成功，1-失败",
+          "document": "资源操作结果。取值：0-成功，非0-失败\n106000-无操作权限",
           "example": "0",
           "member": "int64",
           "name": "OperateResult",
@@ -5530,7 +5530,7 @@
           "visibility": 1
         },
         {
-          "document": "退还原因。\n1-计费自动处理\n2-退货不退款\n3-退货并退款",
+          "document": "退还原因。\n1-计费自动处理（不传时默认）\n2-退货不退款\n3-退货并退款",
           "example": "1",
           "member": "int64",
           "name": "ReturnReason",

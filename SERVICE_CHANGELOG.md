@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 应用性能观测(apm) 版本：2021-06-22
+## 账号中心(account) 版本：2018-12-25
 
-### 第 3 次发布
+### 第 9 次发布
 
-发布时间：2023-03-21 01:03:27
+发布时间：2023-03-22 01:00:57
 
 本次发布包含了以下内容：
 
@@ -12,54 +12,153 @@
 
 新增接口：
 
-* [ModifyApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/77278)
+* [UpdatePhoneByAuthCodeForSaaS](http://document.tencentcloudapi.woa.com/document/product/1594/77306)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 47 次发布
+
+发布时间：2023-03-22 01:10:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AnalyzeAuditLogs](http://document.tencentcloudapi.woa.com/document/product/236/77307)
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* InitDBInstances
+
+新增数据结构：
+
+* [AggregationCondition](http://document.tencentcloudapi.woa.com/document/product/236/15878#AggregationCondition)
+* [AuditLogAggregationResult](http://document.tencentcloudapi.woa.com/document/product/236/15878#AuditLogAggregationResult)
+* [Bucket](http://document.tencentcloudapi.woa.com/document/product/236/15878#Bucket)
+
+修改数据结构：
+
+* [AuditLogFilter](http://document.tencentcloudapi.woa.com/document/product/236/15878#AuditLogFilter)
+
+	* 新增成员：AffectRowsSection, SentRowsSection, ExecTimeSection, LockWaitTimeSection, IoWaitTimeSection, TransactionLivingTimeSection
+
 
 
 
 ## 消息队列 CKafka(ckafka) 版本：2019-08-19
 
+### 第 53 次发布
+
+发布时间：2023-03-22 01:14:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [InjectDownAttack](http://document.tencentcloudapi.woa.com/document/product/597/77308)
+
+修改数据结构：
+
+* [KafkaParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KafkaParam)
+
+	* 新增成员：ConnectorSyncType, KeepPartition
+
+
+
+
+## 云审计(cloudaudit) 版本：2019-03-19
+
+### 第 6 次发布
+
+发布时间：2023-03-22 01:16:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAuditTracks](http://document.tencentcloudapi.woa.com/document/product/629/69204)
+
+	* 新增入参：TrackForAllMembers
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 8 次发布
+
+发布时间：2023-03-22 01:39:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CallTRTCDevice](http://document.tencentcloudapi.woa.com/document/product/1131/77309)
+
+新增数据结构：
+
+* [TRTCParams](http://document.tencentcloudapi.woa.com/document/product/1131/75389#TRTCParams)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 21 次发布
+
+发布时间：2023-03-22 02:00:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CertificateExtra](http://document.tencentcloudapi.woa.com/document/product/400/41679#CertificateExtra)
+
+	* 新增成员：SMCert
+
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 31 次发布
+
+发布时间：2023-03-22 02:03:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeGatewayCurveData](http://document.tencentcloudapi.woa.com/document/product/876/77310)
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
 ### 第 52 次发布
 
-发布时间：2023-03-21 01:13:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateDatahubTopic](http://document.tencentcloudapi.woa.com/document/product/597/77293)
-
-修改接口：
-
-* [CreateConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75538)
-
-	* 新增入参：KafkaConnectParam
-
-
-新增数据结构：
-
-* [DatahubTopicResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubTopicResp)
-* [KafkaConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KafkaConnectParam)
-
-修改数据结构：
-
-* [DescribeConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResource)
-
-	* 新增成员：KafkaConnectParam
-
-* [DescribeConnectResourceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResourceResp)
-
-	* 新增成员：KafkaConnectParam
-
-
-
-
-## 多媒体创作引擎(cme) 版本：2019-10-29
-
-### 第 18 次发布
-
-发布时间：2023-03-21 01:15:56
+发布时间：2023-03-22 02:14:03
 
 本次发布包含了以下内容：
 
@@ -67,94 +166,32 @@
 
 修改数据结构：
 
-* [VideoEditProjectOutput](http://document.tencentcloudapi.woa.com/document/product/1156/40360#VideoEditProjectOutput)
+* [SubAppIdInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#SubAppIdInfo)
 
-	* 新增成员：CoverURL
-
-
-
-
-## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
-
-### 第 19 次发布
-
-发布时间：2023-03-21 01:46:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateBaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/77304)
-* [DeleteBaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/77303)
-* [DeleteLogBackup](http://document.tencentcloudapi.woa.com/document/product/409/77302)
-* [DescribeBackupDownloadURL](http://document.tencentcloudapi.woa.com/document/product/409/77301)
-* [DescribeBackupOverview](http://document.tencentcloudapi.woa.com/document/product/409/77300)
-* [DescribeBackupSummaries](http://document.tencentcloudapi.woa.com/document/product/409/77299)
-* [DescribeBaseBackups](http://document.tencentcloudapi.woa.com/document/product/409/77298)
-* [DescribeClasses](http://document.tencentcloudapi.woa.com/document/product/409/77295)
-* [DescribeDBVersions](http://document.tencentcloudapi.woa.com/document/product/409/77294)
-* [DescribeLogBackups](http://document.tencentcloudapi.woa.com/document/product/409/77297)
-* [ModifyBaseBackupExpireTime](http://document.tencentcloudapi.woa.com/document/product/409/77296)
-* [UpgradeDBInstanceKernelVersion](http://document.tencentcloudapi.woa.com/document/product/409/77305)
-
-新增数据结构：
-
-* [BackupSummary](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupSummary)
-* [BaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/16778#BaseBackup)
-* [ClassInfo](http://document.tencentcloudapi.woa.com/document/product/409/16778#ClassInfo)
-* [LogBackup](http://document.tencentcloudapi.woa.com/document/product/409/16778#LogBackup)
-* [Version](http://document.tencentcloudapi.woa.com/document/product/409/16778#Version)
-
-
-
-## 容器服务(tke) 版本：2022-05-01
-
-
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 59 次发布
-
-发布时间：2023-03-21 02:02:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [AddVpcCniSubnets](http://document.tencentcloudapi.woa.com/document/product/457/56371)
-
-	* 新增入参：SkipAddingNonMasqueradeCIDRs
+	* 新增成员：Type
 
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 73 次发布
+### 第 74 次发布
 
-发布时间：2023-03-21 02:08:16
+发布时间：2023-03-22 02:16:00
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+修改接口：
 
-* [VpcOssDelRouteKey](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssDelRouteKey)
+* [AssociateNetworkInterfaceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/215/43132)
 
-	* 新增成员：GroupId
+	* 新增入参：IsCrossTenant, VpcAppId, VpcUin, VpcSubAccountUin
 
-* [VpcOssNewService](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssNewService)
+* [DisassociateNetworkInterfaceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/215/43131)
 
-	* 新增成员：GroupId
-
-* [VpcOssServiceRequest](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssServiceRequest)
-
-	* 新增成员：GroupId
+	* 新增入参：IsCrossTenant, VpcAppId, VpcUin, VpcSubAccountUin
 
 
 
@@ -228,6 +265,18 @@
 
 
 ## 账号中心(account) 版本：2018-12-25
+
+### 第 9 次发布
+
+发布时间：2023-03-22 01:00:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[UpdatePhoneByAuthCodeForSaaS](http://document.tencentcloudapi.woa.com/document/product/1594/77306)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 8 次发布
 
@@ -2669,7 +2718,7 @@
 
 新增接口：
 
-* [[ModifyApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/77278)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/77278)
 
 ### 第 2 次发布
 
@@ -6620,6 +6669,35 @@
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
+### 第 47 次发布
+
+发布时间：2023-03-22 01:10:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AnalyzeAuditLogs](http://document.tencentcloudapi.woa.com/document/product/236/77307)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* InitDBInstances
+
+新增数据结构：
+
+* [[AggregationCondition](http://document.tencentcloudapi.woa.com/document/product/236/15878#AggregationCondition)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[AggregationCondition](http://document.tencentcloudapi.woa.com/document/product/236/15878#AggregationCondition))
+* [[AuditLogAggregationResult](http://document.tencentcloudapi.woa.com/document/product/236/15878#AuditLogAggregationResult)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[AuditLogAggregationResult](http://document.tencentcloudapi.woa.com/document/product/236/15878#AuditLogAggregationResult))
+* [[Bucket](http://document.tencentcloudapi.woa.com/document/product/236/15878#Bucket)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[Bucket](http://document.tencentcloudapi.woa.com/document/product/236/15878#Bucket))
+
+修改数据结构：
+
+* [AuditLogFilter](http://document.tencentcloudapi.woa.com/document/product/236/15878#AuditLogFilter)
+
+	* 新增成员：AffectRowsSection, SentRowsSection, ExecTimeSection, LockWaitTimeSection, IoWaitTimeSection, TransactionLivingTimeSection
+
+
 ### 第 46 次发布
 
 发布时间：2023-03-10 01:10:45
@@ -9984,6 +10062,25 @@
 
 ## 消息队列 CKafka(ckafka) 版本：2019-08-19
 
+### 第 53 次发布
+
+发布时间：2023-03-22 01:14:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[InjectDownAttack](http://document.tencentcloudapi.woa.com/document/product/597/77308)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改数据结构：
+
+* [KafkaParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KafkaParam)
+
+	* 新增成员：ConnectorSyncType, KeepPartition
+
+
 ### 第 52 次发布
 
 发布时间：2023-03-21 01:13:23
@@ -9994,7 +10091,7 @@
 
 新增接口：
 
-* [[CreateDatahubTopic](http://document.tencentcloudapi.woa.com/document/product/597/77293)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateDatahubTopic](http://document.tencentcloudapi.woa.com/document/product/597/77293)
 
 修改接口：
 
@@ -10005,8 +10102,8 @@
 
 新增数据结构：
 
-* [[DatahubTopicResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubTopicResp)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[DatahubTopicResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubTopicResp))
-* [[KafkaConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KafkaConnectParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[KafkaConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KafkaConnectParam))
+* [DatahubTopicResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubTopicResp)
+* [KafkaConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KafkaConnectParam)
 
 修改数据结构：
 
@@ -11963,6 +12060,21 @@
 
 
 ## 云审计(cloudaudit) 版本：2019-03-19
+
+### 第 6 次发布
+
+发布时间：2023-03-22 01:16:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAuditTracks](http://document.tencentcloudapi.woa.com/document/product/629/69204)
+
+	* 新增入参：TrackForAllMembers
+
 
 ### 第 5 次发布
 
@@ -28561,6 +28673,22 @@
 
 ## 物联网智能视频服务(iotvideo) 版本：2021-11-25
 
+### 第 8 次发布
+
+发布时间：2023-03-22 01:39:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CallTRTCDevice](http://document.tencentcloudapi.woa.com/document/product/1131/77309)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[TRTCParams](http://document.tencentcloudapi.woa.com/document/product/1131/75389#TRTCParams)](http://document.tencentcloudapi.woa.com/document/product/1131/75389#[TRTCParams](http://document.tencentcloudapi.woa.com/document/product/1131/75389#TRTCParams))
+
 ### 第 7 次发布
 
 发布时间：2023-02-15 01:34:48
@@ -36682,26 +36810,26 @@
 
 新增接口：
 
-* [[CreateBaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/77304)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteBaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/77303)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteLogBackup](http://document.tencentcloudapi.woa.com/document/product/409/77302)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackupDownloadURL](http://document.tencentcloudapi.woa.com/document/product/409/77301)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackupOverview](http://document.tencentcloudapi.woa.com/document/product/409/77300)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackupSummaries](http://document.tencentcloudapi.woa.com/document/product/409/77299)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaseBackups](http://document.tencentcloudapi.woa.com/document/product/409/77298)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeClasses](http://document.tencentcloudapi.woa.com/document/product/409/77295)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDBVersions](http://document.tencentcloudapi.woa.com/document/product/409/77294)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeLogBackups](http://document.tencentcloudapi.woa.com/document/product/409/77297)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyBaseBackupExpireTime](http://document.tencentcloudapi.woa.com/document/product/409/77296)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpgradeDBInstanceKernelVersion](http://document.tencentcloudapi.woa.com/document/product/409/77305)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateBaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/77304)
+* [DeleteBaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/77303)
+* [DeleteLogBackup](http://document.tencentcloudapi.woa.com/document/product/409/77302)
+* [DescribeBackupDownloadURL](http://document.tencentcloudapi.woa.com/document/product/409/77301)
+* [DescribeBackupOverview](http://document.tencentcloudapi.woa.com/document/product/409/77300)
+* [DescribeBackupSummaries](http://document.tencentcloudapi.woa.com/document/product/409/77299)
+* [DescribeBaseBackups](http://document.tencentcloudapi.woa.com/document/product/409/77298)
+* [DescribeClasses](http://document.tencentcloudapi.woa.com/document/product/409/77295)
+* [DescribeDBVersions](http://document.tencentcloudapi.woa.com/document/product/409/77294)
+* [DescribeLogBackups](http://document.tencentcloudapi.woa.com/document/product/409/77297)
+* [ModifyBaseBackupExpireTime](http://document.tencentcloudapi.woa.com/document/product/409/77296)
+* [UpgradeDBInstanceKernelVersion](http://document.tencentcloudapi.woa.com/document/product/409/77305)
 
 新增数据结构：
 
-* [[BackupSummary](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupSummary)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[BackupSummary](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupSummary))
-* [[BaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/16778#BaseBackup)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[BaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/16778#BaseBackup))
-* [[ClassInfo](http://document.tencentcloudapi.woa.com/document/product/409/16778#ClassInfo)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[ClassInfo](http://document.tencentcloudapi.woa.com/document/product/409/16778#ClassInfo))
-* [[LogBackup](http://document.tencentcloudapi.woa.com/document/product/409/16778#LogBackup)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[LogBackup](http://document.tencentcloudapi.woa.com/document/product/409/16778#LogBackup))
-* [[Version](http://document.tencentcloudapi.woa.com/document/product/409/16778#Version)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[Version](http://document.tencentcloudapi.woa.com/document/product/409/16778#Version))
+* [BackupSummary](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupSummary)
+* [BaseBackup](http://document.tencentcloudapi.woa.com/document/product/409/16778#BaseBackup)
+* [ClassInfo](http://document.tencentcloudapi.woa.com/document/product/409/16778#ClassInfo)
+* [LogBackup](http://document.tencentcloudapi.woa.com/document/product/409/16778#LogBackup)
+* [Version](http://document.tencentcloudapi.woa.com/document/product/409/16778#Version)
 
 ### 第 18 次发布
 
@@ -41034,6 +41162,21 @@
 
 ## SSL 证书(ssl) 版本：2019-12-05
 
+### 第 21 次发布
+
+发布时间：2023-03-22 02:00:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CertificateExtra](http://document.tencentcloudapi.woa.com/document/product/400/41679#CertificateExtra)
+
+	* 新增成员：SMCert
+
+
 ### 第 20 次发布
 
 发布时间：2023-03-17 11:52:09
@@ -42593,6 +42736,18 @@
 
 
 ## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 31 次发布
+
+发布时间：2023-03-22 02:03:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeGatewayCurveData](http://document.tencentcloudapi.woa.com/document/product/876/77310)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 30 次发布
 
@@ -51600,6 +51755,21 @@
 
 ## 云点播(vod) 版本：2018-07-17
 
+### 第 52 次发布
+
+发布时间：2023-03-22 02:14:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SubAppIdInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#SubAppIdInfo)
+
+	* 新增成员：Type
+
+
 ### 第 51 次发布
 
 发布时间：2023-03-15 01:49:48
@@ -53368,6 +53538,25 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 74 次发布
+
+发布时间：2023-03-22 02:16:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AssociateNetworkInterfaceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/215/43132)
+
+	* 新增入参：IsCrossTenant, VpcAppId, VpcUin, VpcSubAccountUin
+
+* [DisassociateNetworkInterfaceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/215/43131)
+
+	* 新增入参：IsCrossTenant, VpcAppId, VpcUin, VpcSubAccountUin
+
 
 ### 第 73 次发布
 

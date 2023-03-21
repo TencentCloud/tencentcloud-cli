@@ -857,7 +857,6 @@
       "document": "DescribeAuditTracks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "页码",
           "example": "1",
           "member": "uint64",
@@ -867,7 +866,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "每页数目",
           "example": "10",
           "member": "uint64",
@@ -875,6 +873,15 @@
           "required": true,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "document": "跟踪集是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)",
+          "example": "0",
+          "member": "uint64",
+          "name": "TrackForAllMembers",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -887,7 +894,6 @@
           "example": "*",
           "member": "Tracks",
           "name": "Tracks",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -897,7 +903,6 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
