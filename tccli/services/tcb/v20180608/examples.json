@@ -604,6 +604,14 @@
         "title": "修改环境备注名示例"
       }
     ],
+    "NotifyPackageOverrun": [
+      {
+        "document": "通知资源用尽",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: NotifyPackageOverrun\n<公共请求参数>\n\n{\n    \"ResourceType\": \"xx\",\n    \"ResourceName\": \"xx\",\n    \"ResourceIndex\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "通知资源用尽"
+      }
+    ],
     "ReinstateEnv": [
       {
         "document": "",

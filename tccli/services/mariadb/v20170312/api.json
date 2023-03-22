@@ -6153,22 +6153,22 @@
       "document": "ModifyDBEncryptAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例Id，形如：tdsql-ow728lmc。",
           "example": "tdsql-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否启用数据加密，开启后暂不支持关闭。本接口的可选值为：1-开启数据加密。",
           "example": "0",
           "member": "int64",
           "name": "EncryptEnabled",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

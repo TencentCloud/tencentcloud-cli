@@ -152,6 +152,14 @@
         "title": "查询旁路转码计费时长"
       }
     ],
+    "DescribeTrtcRoomUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrtcRoomUsage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68fccf1c-c2c7-466a-9f14-1db4bed6054b\"\n    }\n}",
+        "title": "查询TRTC音视频房间维度用量"
+      }
+    ],
     "DescribeTrtcUsage": [
       {
         "document": "",

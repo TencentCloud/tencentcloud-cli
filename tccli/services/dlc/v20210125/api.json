@@ -336,6 +336,13 @@
       "output": "DescribeForbiddenTableProResponse",
       "status": "online"
     },
+    "DescribeGovernDefaultPolicy": {
+      "document": "查询数据治理规则默认值",
+      "input": "DescribeGovernDefaultPolicyRequest",
+      "name": "查询数据治理规则默认值",
+      "output": "DescribeGovernDefaultPolicyResponse",
+      "status": "online"
+    },
     "DescribeLakeFsDirSummary": {
       "document": "查询托管存储指定目录的Summary",
       "input": "DescribeLakeFsDirSummaryRequest",
@@ -6120,6 +6127,23 @@
           "value_allowed_null": false,
           "visibility": 2
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernDefaultPolicyRequest": {
+      "document": "DescribeGovernDefaultPolicy请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeGovernDefaultPolicyResponse": {
+      "document": "DescribeGovernDefaultPolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

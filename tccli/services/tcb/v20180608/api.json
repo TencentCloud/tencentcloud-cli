@@ -518,6 +518,13 @@
       "output": "ModifyEnvResponse",
       "status": "online"
     },
+    "NotifyPackageOverrun": {
+      "document": "超限用量通知",
+      "input": "NotifyPackageOverrunRequest",
+      "name": "超限用量通知",
+      "output": "NotifyPackageOverrunResponse",
+      "status": "online"
+    },
     "ReinstateEnv": {
       "document": "针对已隔离的免费环境，可以通过本接口将其恢复访问。",
       "input": "ReinstateEnvRequest",
@@ -9730,6 +9737,69 @@
     },
     "ModifyEnvResponse": {
       "document": "ModifyEnv返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NotifyPackageOverrunRequest": {
+      "document": "NotifyPackageOverrun请求参数结构体",
+      "members": [
+        {
+          "document": "资源类型：SCF/CDN/FLEXDB/COS",
+          "example": "SCF/CDN/FLEXDB/COS",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "资源标识",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "资源指标",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceIndex",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "用户uin（uin与appid至少填1个）",
+          "example": "无",
+          "member": "string",
+          "name": "UserUin",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "用户appid（uin与appid至少填1个）",
+          "example": "无",
+          "member": "string",
+          "name": "UserAppId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "NotifyPackageOverrunResponse": {
+      "document": "NotifyPackageOverrun返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

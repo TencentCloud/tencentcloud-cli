@@ -7,6 +7,20 @@
       "output": "BatchModifyDomainInfoResponse",
       "status": "online"
     },
+    "BatchModifyIntlDomainDNS": {
+      "document": "本接口 ( BatchModifyIntlDomainDNS) 用于批量域名 DNS 修改 。",
+      "input": "BatchModifyIntlDomainDNSRequest",
+      "name": "批量修改域名 DNS",
+      "output": "BatchModifyIntlDomainDNSResponse",
+      "status": "online"
+    },
+    "BatchModifyIntlDomainInfo": {
+      "document": "本接口 ( BatchModifyIntlDomainInfo) 用于批量域名信息修改 。",
+      "input": "BatchModifyIntlDomainInfoRequest",
+      "name": "批量修改域名信息",
+      "output": "BatchModifyIntlDomainInfoResponse",
+      "status": "online"
+    },
     "CheckBatchStatus": {
       "document": "本接口 ( CheckBatchStatus ) 用于查询批量操作日志状态 。",
       "input": "CheckBatchStatusRequest",
@@ -21,11 +35,39 @@
       "output": "CheckDomainResponse",
       "status": "online"
     },
+    "CheckIntlDomainNew": {
+      "document": "检查域名是否可以注册。",
+      "input": "CheckIntlDomainNewRequest",
+      "name": "检查域名注册查询新版",
+      "output": "CheckIntlDomainNewResponse",
+      "status": "online"
+    },
     "CreateDomainBatch": {
       "document": "本接口 ( CreateDomainBatch ) 用于批量域名注册 。",
       "input": "CreateDomainBatchRequest",
       "name": "批量域名注册",
       "output": "CreateDomainBatchResponse",
+      "status": "online"
+    },
+    "CreateIntlDomainBatch": {
+      "document": "本接口 ( CreateIntlDomainBatch) 用于批量域名注册 。",
+      "input": "CreateIntlDomainBatchRequest",
+      "name": "批量注册域名",
+      "output": "CreateIntlDomainBatchResponse",
+      "status": "online"
+    },
+    "CreateIntlPhoneEmail": {
+      "document": "国际站-验证手机邮箱验证码",
+      "input": "CreateIntlPhoneEmailRequest",
+      "name": "验证手机邮箱验证码",
+      "output": "CreateIntlPhoneEmailResponse",
+      "status": "online"
+    },
+    "CreateIntlTemplate": {
+      "document": "本接口 ( CreateIntlTemplate) 用于添加域名信息模板 。",
+      "input": "CreateIntlTemplateRequest",
+      "name": "添加信息模板",
+      "output": "CreateIntlTemplateResponse",
       "status": "online"
     },
     "CreatePhoneEmail": {
@@ -40,6 +82,20 @@
       "input": "CreateTemplateRequest",
       "name": "添加域名信息模板",
       "output": "CreateTemplateResponse",
+      "status": "online"
+    },
+    "DeleteIntlPhoneEmail": {
+      "document": "国际站-删除手机或邮箱",
+      "input": "DeleteIntlPhoneEmailRequest",
+      "name": "删除手机或邮箱",
+      "output": "DeleteIntlPhoneEmailResponse",
+      "status": "online"
+    },
+    "DeleteIntlTemplate": {
+      "document": "国际站-删除信息模板",
+      "input": "DeleteIntlTemplateRequest",
+      "name": "删除模板",
+      "output": "DeleteIntlTemplateResponse",
       "status": "online"
     },
     "DeletePhoneEmail": {
@@ -105,6 +161,62 @@
       "output": "DescribeDomainSimpleInfoResponse",
       "status": "online"
     },
+    "DescribeIntlBatchOperationLogs": {
+      "document": "批量购买域名日志查询",
+      "input": "DescribeIntlBatchOperationLogsRequest",
+      "name": "批量购买域名日志查询",
+      "output": "DescribeIntlBatchOperationLogsResponse",
+      "status": "online"
+    },
+    "DescribeIntlDomain": {
+      "document": "国际版-查询域名信息。",
+      "input": "DescribeIntlDomainRequest",
+      "name": "查询域名信息",
+      "output": "DescribeIntlDomainResponse",
+      "status": "online"
+    },
+    "DescribeIntlDomainBatchDetails": {
+      "document": "国际站-获取批量购买域名日志详情",
+      "input": "DescribeIntlDomainBatchDetailsRequest",
+      "name": "获取批量购买域名日志详情",
+      "output": "DescribeIntlDomainBatchDetailsResponse",
+      "status": "online"
+    },
+    "DescribeIntlDomainList": {
+      "document": "国际站-查询我的域名列表。",
+      "input": "DescribeIntlDomainListRequest",
+      "name": "查询我的域名列表",
+      "output": "DescribeIntlDomainListResponse",
+      "status": "online"
+    },
+    "DescribeIntlDomainPriceNewList": {
+      "document": "国际站-按照域名后缀获取对应的价格列表",
+      "input": "DescribeIntlDomainPriceNewListRequest",
+      "name": "获取域名价格列表新版",
+      "output": "DescribeIntlDomainPriceNewListResponse",
+      "status": "online"
+    },
+    "DescribeIntlPhoneEmailList": {
+      "document": "国际站-获取已验证的手机邮箱列表",
+      "input": "DescribeIntlPhoneEmailListRequest",
+      "name": "获取已验证的手机邮箱列表",
+      "output": "DescribeIntlPhoneEmailListResponse",
+      "status": "online"
+    },
+    "DescribeIntlTemplate": {
+      "document": "国际站-获取信息模板详情",
+      "input": "DescribeIntlTemplateRequest",
+      "name": "获取信息模板详情",
+      "output": "DescribeIntlTemplateResponse",
+      "status": "online"
+    },
+    "DescribeIntlTemplateList": {
+      "document": "该接口用于获取域名模板",
+      "input": "DescribeIntlTemplateListRequest",
+      "name": "模板列表接口",
+      "output": "DescribeIntlTemplateListResponse",
+      "status": "online"
+    },
     "DescribePhoneEmailList": {
       "document": "本接口用于获取已验证的手机邮箱列表",
       "input": "DescribePhoneEmailListRequest",
@@ -140,11 +252,32 @@
       "output": "ModifyDomainOwnerBatchResponse",
       "status": "online"
     },
+    "ModifyOwnerIntlBatch": {
+      "document": "国际站-批量域名账号间转移",
+      "input": "ModifyOwnerIntlBatchRequest",
+      "name": "批量域名账号间转移",
+      "output": "ModifyOwnerIntlBatchResponse",
+      "status": "online"
+    },
     "RenewDomainBatch": {
       "document": "本接口 ( RenewDomainBatch ) 用于批量续费域名 。\n",
       "input": "RenewDomainBatchRequest",
       "name": "批量域名续费",
       "output": "RenewDomainBatchResponse",
+      "status": "online"
+    },
+    "RenewIntlDomainBatch": {
+      "document": "国际站-批量域名续费",
+      "input": "RenewIntlDomainBatchRequest",
+      "name": "批量续费域名",
+      "output": "RenewIntlDomainBatchResponse",
+      "status": "online"
+    },
+    "SendIntlPhoneEmailCode": {
+      "document": "国际站-发送手机或邮箱验证码",
+      "input": "SendIntlPhoneEmailCodeRequest",
+      "name": "发送手机或邮箱验证码",
+      "output": "SendIntlPhoneEmailCodeResponse",
       "status": "online"
     },
     "SendPhoneEmailCode": {
@@ -161,11 +294,25 @@
       "output": "SetDomainAutoRenewResponse",
       "status": "online"
     },
+    "SetIntlDomainAutoRenew": {
+      "document": "国际站-设置自动续费。",
+      "input": "SetIntlDomainAutoRenewRequest",
+      "name": "设置自动续费",
+      "output": "SetIntlDomainAutoRenewResponse",
+      "status": "online"
+    },
     "TransferInDomainBatch": {
       "document": "本接口 ( TransferInDomainBatch ) 用于批量转入域名 。",
       "input": "TransferInDomainBatchRequest",
       "name": "批量域名转入",
       "output": "TransferInDomainBatchResponse",
+      "status": "online"
+    },
+    "TransferInIntlDomainBatch": {
+      "document": "国际站-本接口 ( TransferInIntlDomainBatch) 用于批量域名转入 。",
+      "input": "TransferInIntlDomainBatchRequest",
+      "name": "批量转入域名",
+      "output": "TransferInIntlDomainBatchResponse",
       "status": "online"
     },
     "TransferProhibitionBatch": {
@@ -175,11 +322,25 @@
       "output": "TransferProhibitionBatchResponse",
       "status": "online"
     },
+    "TransferProhibitionIntlBatch": {
+      "document": "国际站-批量禁止域名转移",
+      "input": "TransferProhibitionIntlBatchRequest",
+      "name": "批量禁止域名转移",
+      "output": "TransferProhibitionIntlBatchResponse",
+      "status": "online"
+    },
     "UpdateProhibitionBatch": {
       "document": "本接口 ( UpdateProhibitionBatch ) 用于批量禁止更新锁。",
       "input": "UpdateProhibitionBatchRequest",
       "name": "批量禁止更新锁",
       "output": "UpdateProhibitionBatchResponse",
+      "status": "online"
+    },
+    "UpdateProhibitionIntlBatch": {
+      "document": "国际站-批量禁止域名更新",
+      "input": "UpdateProhibitionIntlBatchRequest",
+      "name": "批量禁止域名更新",
+      "output": "UpdateProhibitionIntlBatchResponse",
       "status": "online"
     },
     "UploadImage": {
@@ -197,6 +358,299 @@
     "serviceShortName": "domain"
   },
   "objects": {
+    "AdminContact": {
+      "document": "管理员联系人",
+      "members": [
+        {
+          "default": "",
+          "document": "名字",
+          "example": "Test",
+          "member": "string",
+          "name": "FirstName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓氏",
+          "example": "Test",
+          "member": "string",
+          "name": "LastName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家/地区 ， 例如CN",
+          "example": "CN",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "州/省",
+          "example": "Guangdong",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "example": "Shenzhen",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地址行1",
+          "example": "Nanshan Road",
+          "member": "string",
+          "name": "AddressLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮政编码",
+          "example": "816000",
+          "member": "string",
+          "name": "ZipCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子邮件",
+          "example": "123@qq.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话,例如：+86.1360000000",
+          "example": "+86.1360000000",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司/机构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "职称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "JobTitle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地址行2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AddressLineTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "传真\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Fax",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BatchDomainBuyDetails": {
+      "document": "批量购买域名详情  ",
+      "members": [
+        {
+          "default": "",
+          "document": "详情ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新",
+          "example": "new",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xx.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态  SUCCESS 成功  FAILURE 失败",
+          "example": "SUCCESS ",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fail",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-04-23 17:40:27",
+          "member": "string",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2021-04-23 17:40:27",
+          "member": "string",
+          "name": "UpdatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "null: 未转移对应的 DNS 解析域名，false: 转移对应的 DNS 解析域名失败，true: 转移对应的 DNS 解析域名成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "TransferDnsResult",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败原因，中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "原因",
+          "member": "string",
+          "name": "ReasonZh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchDomainBuyLog": {
+      "document": "批量购买域名记录",
+      "members": [
+        {
+          "default": "",
+          "document": "日志ID",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "批量操作类型  new:域名注册  batch_transfer_prohibition_on:开启禁止转移 batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新 batch_update_prohibition_off:关闭禁止更新",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数量",
+          "member": "int64",
+          "name": "Number",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行状态  doing 执行中   done执行完成",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提交时间",
+          "member": "string",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BatchModifyDomainInfoRequest": {
       "document": "BatchModifyDomainInfo请求参数结构体",
       "members": [
@@ -251,6 +705,114 @@
       ],
       "type": "object"
     },
+    "BatchModifyIntlDomainDNSRequest": {
+      "document": "BatchModifyIntlDomainDNS请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量操作的域名。",
+          "example": "[\"h101.tencent.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名DNS 数组。",
+          "example": "[\"f1g1ns2.dnspod.net\",\"f1g1ns2.dnspod.net\"]",
+          "member": "string",
+          "name": "Dns",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可选值：batch_modify_domain_dns1, batch_modify_domain_dns2, batch_modify_domain_dns3",
+          "example": "batch_modify_domain_dns1",
+          "member": "string",
+          "name": "BatchAction",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyIntlDomainDNSResponse": {
+      "document": "BatchModifyIntlDomainDNS返回参数结构体",
+      "members": [
+        {
+          "document": "日志ID。",
+          "example": "54",
+          "member": "uint64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyIntlDomainInfoRequest": {
+      "document": "BatchModifyIntlDomainInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量修改的域名。",
+          "example": "[\"h101.tencent.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模板ID。",
+          "example": "tmpl-xxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启 \"60天禁止转移注册商锁定期\"",
+          "example": "true",
+          "member": "bool",
+          "name": "LockTransfer",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyIntlDomainInfoResponse": {
+      "document": "BatchModifyIntlDomainInfo返回参数结构体",
+      "members": [
+        {
+          "document": "日志ID",
+          "example": "318",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BatchStatus": {
       "document": "批量任务状态",
       "members": [
@@ -283,6 +845,142 @@
         }
       ],
       "usage": "out"
+    },
+    "BillingContact": {
+      "document": "账单联系人",
+      "members": [
+        {
+          "default": "",
+          "document": "名字",
+          "example": "Test",
+          "member": "string",
+          "name": "FirstName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓氏",
+          "example": "Test",
+          "member": "string",
+          "name": "LastName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家/地区 ， 例如CN",
+          "example": "CN",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "州/省",
+          "example": "Guangdong",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "example": "Shenzhen",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地址行1",
+          "example": "Nanshan Road",
+          "member": "string",
+          "name": "AddressLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮政编码",
+          "example": "816000",
+          "member": "string",
+          "name": "ZipCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子邮件",
+          "example": "123@qq.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话,例如：+86.1360000000",
+          "example": "+86.1360000000",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司/机构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "职称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "JobTitle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地址行2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AddressLineTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "传真\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Fax",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CertificateInfo": {
       "document": "认证资料信息",
@@ -494,6 +1192,168 @@
           "member": "bool",
           "name": "RecordSupport",
           "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckIntlDomainNewRequest": {
+      "document": "CheckIntlDomainNew请求参数结构体",
+      "members": [
+        {
+          "document": "所查询域名名称",
+          "example": "domain.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "年限。该参数为空时无法查询溢价词域名",
+          "example": "1",
+          "member": "string",
+          "name": "Period",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CheckIntlDomainNewResponse": {
+      "document": "CheckIntlDomainNew返回参数结构体",
+      "members": [
+        {
+          "document": "所查询域名名称",
+          "example": "domain.com",
+          "member": "string",
+          "name": "DomainName",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "是否能够注册",
+          "example": "1",
+          "member": "bool",
+          "name": "Available",
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "不能注册原因",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Reason",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "是否是溢价词",
+          "example": "false",
+          "member": "bool",
+          "name": "Premium",
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "域名价格",
+          "example": "35",
+          "member": "float",
+          "name": "Price",
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "是否是敏感词",
+          "example": "false",
+          "member": "bool",
+          "name": "BlackWord",
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "溢价词描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Describe",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "溢价词的续费价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "FeeRenew",
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "域名真实价格, 溢价词时价格跟年限有关，非溢价词时价格为1年的价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "float",
+          "name": "RealPrice",
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "溢价词的转入价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "FeeTransfer",
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "溢价词的赎回价格",
+          "example": "0",
+          "member": "float",
+          "name": "FeeRestore",
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "检测年限",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "不能注册原因，中文",
+          "example": "xx",
+          "member": "string",
+          "name": "ReasonZh",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "内部错误代码",
+          "example": "1001",
+          "member": "string",
+          "name": "ResCode",
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
@@ -794,6 +1654,213 @@
       ],
       "type": "object"
     },
+    "CreateIntlDomainBatchRequest": {
+      "document": "CreateIntlDomainBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID。",
+          "example": "tmpl-xxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购买域名的年限，可选值：[1-10]",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "批量购买的域名,最多为4000个",
+          "example": "qq.com",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "付费模式 0手动在线付费，1使用余额付费，2使用特惠包 3 线下结算",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启 \"自动续费\"",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启 \"禁止转移锁\"",
+          "example": "true",
+          "member": "bool",
+          "name": "TransferProhibition",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启 \"禁止更新锁\"",
+          "example": "true",
+          "member": "bool",
+          "name": "UpdateProhibition",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIntlDomainBatchResponse": {
+      "document": "CreateIntlDomainBatch返回参数结构体",
+      "members": [
+        {
+          "document": "批量日志ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "318",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIntlPhoneEmailRequest": {
+      "document": "CreateIntlPhoneEmail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "类型 1手机 2邮箱",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "手机或者邮箱",
+          "example": "12345678911",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "验证码",
+          "example": "123456",
+          "member": "string",
+          "name": "VerifyCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIntlPhoneEmailResponse": {
+      "document": "CreateIntlPhoneEmail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIntlTemplateRequest": {
+      "document": "CreateIntlTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "注册联系人",
+          "example": "无",
+          "member": "RegistrantContact",
+          "name": "RegistrantContact",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "管理员联系人",
+          "example": "无",
+          "member": "AdminContact",
+          "name": "AdminContact",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "技术联系人",
+          "example": "无",
+          "member": "TechnicalContact",
+          "name": "TechnicalContact",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "账单联系人",
+          "example": "无",
+          "member": "BillingContact",
+          "name": "BillingContact",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模板类型I=个人，E=企业，默认个人",
+          "example": "I",
+          "member": "string",
+          "name": "TemplateType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIntlTemplateResponse": {
+      "document": "CreateIntlTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "模板ID",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePhoneEmailRequest": {
       "document": "CreatePhoneEmail请求参数结构体",
       "members": [
@@ -875,6 +1942,69 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIntlPhoneEmailRequest": {
+      "document": "DeleteIntlPhoneEmail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "类型 1手机 2邮箱",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "手机或者邮箱",
+          "example": "11@qq.com",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIntlPhoneEmailResponse": {
+      "document": "DeleteIntlPhoneEmail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIntlTemplateRequest": {
+      "document": "DeleteIntlTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "信息模板唯一ID",
+          "example": "xx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIntlTemplateResponse": {
+      "document": "DeleteIntlTemplate返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1320,6 +2450,519 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlBatchOperationLogsRequest": {
+      "document": "DescribeIntlBatchOperationLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "整型",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "整型",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlBatchOperationLogsResponse": {
+      "document": "DescribeIntlBatchOperationLogs返回参数结构体",
+      "members": [
+        {
+          "document": "总数量",
+          "example": "204",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BatchDomainBuyLog",
+          "name": "DomainBatchLogSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlDomainBatchDetailsRequest": {
+      "document": "DescribeIntlDomainBatchDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志ID",
+          "example": "整型",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "整型",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "整型",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序key Domain UpdateOn Status",
+          "example": "Status",
+          "member": "string",
+          "name": "OrderByKey",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "0 升序 1 降序",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderBy",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlDomainBatchDetailsResponse": {
+      "document": "DescribeIntlDomainBatchDetails返回参数结构体",
+      "members": [
+        {
+          "document": "总数量",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "日志详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BatchDomainBuyDetails",
+          "name": "DomainBatchDetailSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlDomainListRequest": {
+      "document": "DescribeIntlDomainList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页-第几页",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页-每页数据量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名关键字(模糊搜索)",
+          "example": "zbc",
+          "member": "string",
+          "name": "KeyWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "注册时间排序 可选参数 1: 降序 2: 升序",
+          "example": "0",
+          "member": "int64",
+          "name": "OrderByRegTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "到期时间排序 可选参数 1: 降序 2: 升序",
+          "example": "0",
+          "member": "int64",
+          "name": "OrderByExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名状态\n全部域名：all\n急需续费: UrgentNeedRenew\n急需赎回: RedemptionPending\n未实名认证: nosubmit\n转入中: tran",
+          "example": "all",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DNS状态 可选参数 1: DNSPod 2: 其他",
+          "example": "1",
+          "member": "uint64",
+          "name": "DnsStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名排序 可选参数 1: 降序 2: 升序",
+          "example": "0",
+          "member": "uint64",
+          "name": "OrderByDomainName",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlDomainListResponse": {
+      "document": "DescribeIntlDomainList返回参数结构体",
+      "members": [
+        {
+          "document": "域名信息集合",
+          "example": "无",
+          "member": "IntlDomainInfo",
+          "name": "DomainSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名总数量",
+          "example": "108",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlDomainPriceNewListRequest": {
+      "document": "DescribeIntlDomainPriceNewList请求参数结构体",
+      "members": [
+        {
+          "document": "查询价格的后缀列表。默认则为全部后缀",
+          "example": "[\".com\"]",
+          "member": "string",
+          "name": "TldList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "查询购买的年份，默认会列出所有年份的价格",
+          "example": "1",
+          "member": "int64",
+          "name": "Year",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "域名的购买类型：new  新购，renew 续费，redem 赎回，tran 转入",
+          "example": "new",
+          "member": "string",
+          "name": "Operation",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlDomainPriceNewListResponse": {
+      "document": "DescribeIntlDomainPriceNewList返回参数结构体",
+      "members": [
+        {
+          "document": "域名价格列表",
+          "example": "无",
+          "member": "PriceInfoNew",
+          "name": "PriceList",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlDomainRequest": {
+      "document": "DescribeIntlDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "1",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlDomainResponse": {
+      "document": "DescribeIntlDomain返回参数结构体",
+      "members": [
+        {
+          "document": "域名信息",
+          "example": "无",
+          "member": "IntlDomainInfo",
+          "name": "DomainInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlPhoneEmailListRequest": {
+      "document": "DescribeIntlPhoneEmailList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "类型 1手机 2邮箱",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页-每页数据量",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页-第几页",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlPhoneEmailListResponse": {
+      "document": "DescribeIntlPhoneEmailList返回参数结构体",
+      "members": [
+        {
+          "document": "已验证列表",
+          "example": "无",
+          "member": "IntlPhoneEmailLists",
+          "name": "PhoneEmailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlTemplateListRequest": {
+      "document": "DescribeIntlTemplateList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大条数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名所有者关键词(精确匹配)",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型 all: 全部 I: 个人 E: 企业",
+          "example": "I",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlTemplateListResponse": {
+      "document": "DescribeIntlTemplateList返回参数结构体",
+      "members": [
+        {
+          "document": "模板列表信息",
+          "example": "{}",
+          "member": "IntlTemplate",
+          "name": "TemplateSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlTemplateRequest": {
+      "document": "DescribeIntlTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "信息模板唯一ID",
+          "example": "xx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlTemplateResponse": {
+      "document": "DescribeIntlTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "模板详情",
+          "example": "无",
+          "member": "IntlTemplateInfo",
+          "name": "Template",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2065,6 +3708,586 @@
       ],
       "usage": "out"
     },
+    "IntlContactInfo": {
+      "document": "国际站-联系人信息",
+      "members": [
+        {
+          "default": "",
+          "document": "城市",
+          "example": "厦门",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家",
+          "example": "中国",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "example": "xx",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名所有者",
+          "example": "xx",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省份",
+          "example": "福建省",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册人",
+          "example": "xx",
+          "member": "string",
+          "name": "RegistrantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册类型：I=个人，E=企业",
+          "example": "I",
+          "member": "string",
+          "name": "RegistrantType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "详细地址",
+          "example": "街道",
+          "member": "string",
+          "name": "Street",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "12345677890",
+          "member": "string",
+          "name": "Telephone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮编",
+          "example": "123456",
+          "member": "string",
+          "name": "ZipCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名",
+          "example": "san",
+          "member": "string",
+          "name": "FirstName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓",
+          "example": "zhang",
+          "member": "string",
+          "name": "LastName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业名称",
+          "example": "xx公司",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IntlDomainInfo": {
+      "document": "国际站-域名信息集合",
+      "members": [
+        {
+          "default": "",
+          "document": "自动续费标识 0.默认关闭 1.主动开启 2 主动关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册时间",
+          "example": "2021-04-23 17:40:27",
+          "member": "string",
+          "name": "CreationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "1",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1：DNSPod 2：其他 3：未知",
+          "example": "1",
+          "member": "int64",
+          "name": "DnsStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.cn",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名状态",
+          "example": "['ok']",
+          "member": "string",
+          "name": "DomainStatus",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名购买状态：\nok=正常\nRegisterPending=注册中\nRegisterDoing=注册中\nRegisterFailed=注册失败\nRenewPending=续费宽限期\nRenewDoing=续费中\nRedemptionPending=赎回期\nAboutToExpire=即将到期\nTransferPending=转入中\nTransferTransing=转入中\nTransferFailed=转入失败",
+          "example": "ok",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "example": "2021-04-23",
+          "member": "string",
+          "name": "ExpirationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否到期提醒标识 1.主动开启 2 主动关闭 3.默认关闭",
+          "example": "3",
+          "member": "int64",
+          "name": "ExpireMessage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否溢价词",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPremium",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名DNS",
+          "example": " [                     \"f1g1ns1.dnspod.net\"                 ]",
+          "member": "string",
+          "name": "Dns",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人信息",
+          "example": "1",
+          "member": "IntlContactInfo",
+          "name": "ContactInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "等于 0 表示已达到最长有效期10年，不可续费",
+          "example": "1",
+          "member": "int64",
+          "name": "CanRenewYears",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册商类型，这个值等于 'epp' 时，页面上的注册时间后面跟着 (UTC)，否则跟着 (UTC+8)",
+          "example": "epp",
+          "member": "string",
+          "name": "RegistrarType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名归属账号",
+          "example": "111111",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "temp-123456",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持dnssec",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportDnssec",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "whois隐私状态，1=已开启，2=已关闭，3=开启中，4=关闭中",
+          "example": "1",
+          "member": "int64",
+          "name": "WhoisPrivacy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NotModify=未修改， Modifying=修改中， Failed=修改失败",
+          "example": "NotModify",
+          "member": "string",
+          "name": "ModifyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NotModify=未修改， Modifying=修改中， Failed=修改失败",
+          "example": "NotModify",
+          "member": "string",
+          "name": "DnsModifyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IntlPhoneEmailLists": {
+      "document": "国际站-已验证手机邮箱列表",
+      "members": [
+        {
+          "default": "",
+          "document": "手机号/邮箱",
+          "example": "12345678",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型 1 手机 2 邮箱",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "验证时间",
+          "example": "2021-04-23 17:40:27",
+          "member": "string",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IntlTemplate": {
+      "document": "模板详情",
+      "members": [
+        {
+          "default": "",
+          "document": "注册联系人",
+          "example": "{}",
+          "member": "RegistrantContact",
+          "name": "RegistrantContact",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后台联系人",
+          "example": "{}",
+          "member": "AdminContact",
+          "name": "AdminContact",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "技术联系人",
+          "example": "{}",
+          "member": "TechnicalContact",
+          "name": "TechnicalContact",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单联系人",
+          "example": "{}",
+          "member": "BillingContact",
+          "name": "BillingContact",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-08-13 11:00:00",
+          "member": "datetime",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "tmpl-123121",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否默认模板",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDefault",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "example": "2021-08-13 11:00:00",
+          "member": "datetime",
+          "name": "UpdatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IntlTemplateInfo": {
+      "document": "国际站-模板详情",
+      "members": [
+        {
+          "default": "",
+          "document": "注册联系人",
+          "example": "{}",
+          "member": "RegistrantContact",
+          "name": "RegistrantContact",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "后台联系人",
+          "example": "{}",
+          "member": "AdminContact",
+          "name": "AdminContact",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "技术联系人",
+          "example": "{}",
+          "member": "TechnicalContact",
+          "name": "TechnicalContact",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "账单联系人",
+          "example": "{}",
+          "member": "BillingContact",
+          "name": "BillingContact",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-08-13 11:00:00",
+          "member": "datetime",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "tmpl-123121",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "模板主册人类型（I个人E企业）",
+          "example": "I",
+          "member": "string",
+          "name": "TemplateType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "example": "2021-08-13 11:00:00",
+          "member": "datetime",
+          "name": "UpdatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "账号ID",
+          "example": "12345678",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否默认模板",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDefault",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyDomainDNSBatchRequest": {
       "document": "ModifyDomainDNSBatch请求参数结构体",
       "members": [
@@ -2178,6 +4401,60 @@
       ],
       "type": "object"
     },
+    "ModifyOwnerIntlBatchRequest": {
+      "document": "ModifyOwnerIntlBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "[\"aa.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "12456",
+          "member": "string",
+          "name": "ToUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否DNS解析转移",
+          "example": "true",
+          "member": "bool",
+          "name": "DnsTransfer",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOwnerIntlBatchResponse": {
+      "document": "ModifyOwnerIntlBatch返回参数结构体",
+      "members": [
+        {
+          "document": "批量任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PhoneEmailData": {
       "document": "手机号邮箱列表",
       "members": [
@@ -2274,6 +4551,214 @@
         }
       ],
       "usage": "out"
+    },
+    "PriceInfoNew": {
+      "document": "域名价格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "域名后缀，例如.com",
+          "example": ".com",
+          "member": "string",
+          "name": "Tld",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "购买年限，范围[1-10]",
+          "example": "1",
+          "member": "uint64",
+          "name": "Year",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "域名原价",
+          "example": "1.00",
+          "member": "float",
+          "name": "Price",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "域名现价",
+          "example": "1.00",
+          "member": "float",
+          "name": "RealPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "商品的购买类型，新购，续费，赎回，转入，续费并转入",
+          "example": "xxx",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "RegistrantContact": {
+      "document": "注册联系人",
+      "members": [
+        {
+          "default": "",
+          "document": "名字",
+          "example": "Test",
+          "member": "string",
+          "name": "FirstName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓氏",
+          "example": "Test",
+          "member": "string",
+          "name": "LastName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家/地区 ， 例如CN",
+          "example": "CN",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "州/省",
+          "example": "Guangdong",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "example": "Shenzhen",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地址行1",
+          "example": "Nanshan Road",
+          "member": "string",
+          "name": "AddressLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮政编码",
+          "example": "816000",
+          "member": "string",
+          "name": "ZipCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子邮件",
+          "example": "123@qq.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话,例如：+86.1360000000",
+          "example": "+86.1360000000",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司/机构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "职称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "JobTitle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地址行2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AddressLineTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "传真\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Fax",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "RenewDomainBatchRequest": {
       "document": "RenewDomainBatch请求参数结构体",
@@ -2383,6 +4868,105 @@
       ],
       "type": "object"
     },
+    "RenewIntlDomainBatchRequest": {
+      "document": "RenewIntlDomainBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "检查域名",
+          "example": "[\"aa.com\",\"bb.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "年限。该参数为空时无法查询溢价词域名 1-10",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "支付方式 1使用余额付费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启 \"自动续费\"",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewIntlDomainBatchResponse": {
+      "document": "RenewIntlDomainBatch返回参数结构体",
+      "members": [
+        {
+          "document": "批量任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendIntlPhoneEmailCodeRequest": {
+      "document": "SendIntlPhoneEmailCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "类型 1手机 2邮箱",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "手机或者邮箱",
+          "example": "111@qq.com",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendIntlPhoneEmailCodeResponse": {
+      "document": "SendIntlPhoneEmailCode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SendPhoneEmailCodeRequest": {
       "document": "SendPhoneEmailCode请求参数结构体",
       "members": [
@@ -2456,6 +5040,178 @@
         }
       ],
       "type": "object"
+    },
+    "SetIntlDomainAutoRenewRequest": {
+      "document": "SetIntlDomainAutoRenew请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "1",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否设置自动续费 1.开启 2 关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetIntlDomainAutoRenewResponse": {
+      "document": "SetIntlDomainAutoRenew返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TechnicalContact": {
+      "document": "技术联系人",
+      "members": [
+        {
+          "default": "",
+          "document": "名字",
+          "example": "Test",
+          "member": "string",
+          "name": "FirstName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓氏",
+          "example": "Test",
+          "member": "string",
+          "name": "LastName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家/地区 ， 例如CN",
+          "example": "CN",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "州/省",
+          "example": "Guangdong",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "example": "Shenzhen",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地址行1",
+          "example": "Nanshan Road",
+          "member": "string",
+          "name": "AddressLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮政编码",
+          "example": "816000",
+          "member": "string",
+          "name": "ZipCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子邮件",
+          "example": "123@qq.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话,例如：+86.1360000000",
+          "example": "+86.1360000000",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公司/机构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "职称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "JobTitle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地址行2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AddressLineTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "传真\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Fax",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TemplateInfo": {
       "document": "Template数据",
@@ -2721,6 +5477,105 @@
       ],
       "type": "object"
     },
+    "TransferInIntlDomainBatchRequest": {
+      "document": "TransferInIntlDomainBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "tmpl-xxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名对应转移密码",
+          "example": "[\"xxxxx\"]",
+          "member": "string",
+          "name": "PassWords",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "批量转入的域名,",
+          "example": "[\"aa.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "支付方式 1使用余额付费",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启 \"自动续费\"",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启 \"禁止转移锁\"",
+          "example": "true",
+          "member": "bool",
+          "name": "TransferProhibition",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启 \"禁止更新锁\"",
+          "example": "true",
+          "member": "bool",
+          "name": "UpdateProhibition",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启 \"60天禁止转移注册商锁定期\"",
+          "example": "true",
+          "member": "bool",
+          "name": "LockTransfer",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferInIntlDomainBatchResponse": {
+      "document": "TransferInIntlDomainBatch返回参数结构体",
+      "members": [
+        {
+          "document": "批量日志ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "318",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TransferProhibitionBatchRequest": {
       "document": "TransferProhibitionBatch请求参数结构体",
       "members": [
@@ -2766,6 +5621,51 @@
       ],
       "type": "object"
     },
+    "TransferProhibitionIntlBatchRequest": {
+      "document": "TransferProhibitionIntlBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名数组",
+          "example": "['aa.com']",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启禁止转移 true 开启 false 关闭",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferProhibitionIntlBatchResponse": {
+      "document": "TransferProhibitionIntlBatch返回参数结构体",
+      "members": [
+        {
+          "document": "记录id",
+          "example": "1",
+          "member": "int64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateProhibitionBatchRequest": {
       "document": "UpdateProhibitionBatch请求参数结构体",
       "members": [
@@ -2797,6 +5697,51 @@
           "document": "日志ID",
           "example": "54",
           "member": "uint64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProhibitionIntlBatchRequest": {
+      "document": "UpdateProhibitionIntlBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名数组",
+          "example": "[\"aaa.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启禁止更新 true 开启 false 关闭",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProhibitionIntlBatchResponse": {
+      "document": "UpdateProhibitionIntlBatch返回参数结构体",
+      "members": [
+        {
+          "document": "记录ID",
+          "example": "11",
+          "member": "int64",
           "name": "LogId",
           "required": true,
           "type": "int",

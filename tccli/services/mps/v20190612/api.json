@@ -6615,7 +6615,6 @@
       "document": "创建输出的配置信息。",
       "members": [
         {
-          "default": "",
           "document": "输出的名称。",
           "example": "OutputName",
           "member": "string",
@@ -6626,7 +6625,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出描述。",
           "example": "OutputName",
           "member": "string",
@@ -6637,7 +6635,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。",
           "example": "SRT",
           "member": "string",
@@ -6648,7 +6645,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出地区。",
           "example": "ap-hongkong",
           "member": "string",
@@ -6659,7 +6655,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的SRT的配置。",
           "example": "0",
           "member": "CreateOutputSRTSettings",
@@ -6670,7 +6665,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的RTMP的配置。",
           "example": "0",
           "member": "CreateOutputRTMPSettings",
@@ -6681,7 +6675,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的RTP的配置。",
           "example": "0",
           "member": "CreateOutputInfoRTPSettings",
@@ -6692,7 +6685,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "IP白名单列表，格式为CIDR，如0.0.0.0/0。\n当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。",
           "example": "0",
           "member": "string",
@@ -6700,6 +6692,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "最大拉流并发数，最大4，默认4。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxConcurrent",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -9301,7 +9303,6 @@
       "document": "查询输出的配置信息。",
       "members": [
         {
-          "default": "",
           "document": "输出Id。",
           "example": "AB342ED131CE",
           "member": "string",
@@ -9312,7 +9313,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出名称。",
           "example": "OutputName",
           "member": "string",
@@ -9323,7 +9323,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出类型。",
           "example": "Internet",
           "member": "string",
@@ -9334,7 +9333,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Description",
           "member": "string",
@@ -9345,7 +9343,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出协议。",
           "example": "RTMP",
           "member": "string",
@@ -9356,7 +9353,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的出口地址信息列表。",
           "example": "无",
           "member": "OutputAddress",
@@ -9367,7 +9363,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的地区。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shanghai",
           "member": "string",
@@ -9378,7 +9373,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的SRT配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputSRTSettings",
@@ -9389,7 +9383,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的RTP配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputRTPSettings",
@@ -9400,7 +9393,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的RTMP配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputRTMPSettings",
@@ -9411,7 +9403,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的RTMP拉流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputRTMPPullSettings",
@@ -9422,7 +9413,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "CIDR白名单列表。\n当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -9433,7 +9423,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的RTSP拉流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputRTSPPullSettings",
@@ -9444,7 +9433,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的HLS拉流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeOutputHLSPullSettings",
@@ -9452,6 +9440,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "最大拉流并发数，最大为4，默认4。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxConcurrent",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
           "visibility": 1
         }
       ],
@@ -16866,7 +16864,6 @@
       "document": "修改Output配置。",
       "members": [
         {
-          "default": "",
           "document": "需要修改的Output的Id。",
           "example": "AB342ED131CE",
           "member": "string",
@@ -16877,7 +16874,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的名称。",
           "example": "OutputName",
           "member": "string",
@@ -16888,7 +16884,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的描述。",
           "example": "Description",
           "member": "string",
@@ -16899,7 +16894,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出的转推协议，支持SRT|RTP|RTMP。",
           "example": "SRT",
           "member": "string",
@@ -16910,7 +16904,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "转推SRT的配置。",
           "example": "无",
           "member": "CreateOutputSRTSettings",
@@ -16921,7 +16914,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "转推RTP的配置。",
           "example": "无",
           "member": "CreateOutputInfoRTPSettings",
@@ -16932,7 +16924,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "转推RTMP的配置。",
           "example": "无",
           "member": "CreateOutputRTMPSettings",
@@ -16943,7 +16934,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "IP白名单列表，格式为CIDR，如0.0.0.0/0。\n当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。",
           "example": "无",
           "member": "string",
@@ -16951,6 +16941,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "最大拉流并发数，最大4，默认4。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxConcurrent",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],

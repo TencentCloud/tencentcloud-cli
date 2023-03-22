@@ -31,21 +31,21 @@ Input:
 
 ```
 tccli monitor CreatePrometheusClusterAgent --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId xxx \
     --Agents.0.EnableExternal True \
-    --Agents.0.Region xx \
-    --Agents.0.ClusterId xx \
-    --Agents.0.ClusterType xx \
+    --Agents.0.Region xxx \
+    --Agents.0.ClusterId xxx \
+    --Agents.0.ClusterType xxx \
     --Agents.0.NotInstallBasicScrape True \
     --Agents.0.InClusterPodConfig.HostNet True \
-    --Agents.0.InClusterPodConfig.Tolerations.0.Operator xx \
-    --Agents.0.InClusterPodConfig.Tolerations.0.Effect xx \
-    --Agents.0.InClusterPodConfig.Tolerations.0.Key xx \
-    --Agents.0.InClusterPodConfig.NodeSelector.0.Name xx \
-    --Agents.0.InClusterPodConfig.NodeSelector.0.Value xx \
+    --Agents.0.InClusterPodConfig.Tolerations.0.Operator xxx \
+    --Agents.0.InClusterPodConfig.Tolerations.0.Effect xxx \
+    --Agents.0.InClusterPodConfig.Tolerations.0.Key xxx \
+    --Agents.0.InClusterPodConfig.NodeSelector.0.Name xxx \
+    --Agents.0.InClusterPodConfig.NodeSelector.0.Value xxx \
     --Agents.0.NotScrape True \
-    --Agents.0.ExternalLabels.0.Name xx \
-    --Agents.0.ExternalLabels.0.Value xx
+    --Agents.0.ExternalLabels.0.Name xxx \
+    --Agents.0.ExternalLabels.0.Value xxx
 ```
 
 Output: 

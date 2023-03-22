@@ -252,6 +252,13 @@
       "output": "DescribeExclusiveClustersResponse",
       "status": "online"
     },
+    "DescribeGatewayLoadBalancers": {
+      "document": "查询一个地域的网关负载均衡实例列表",
+      "input": "DescribeGatewayLoadBalancersRequest",
+      "name": "查询网关负载均衡实例列表",
+      "output": "DescribeGatewayLoadBalancersResponse",
+      "status": "online"
+    },
     "DescribeIdleLoadBalancers": {
       "document": "闲置实例是指创建超过7天后付费实例，且没有创建规则或创建规则没有绑定子机的负载均衡实例。",
       "input": "DescribeIdleLoadBalancersRequest",
@@ -4406,6 +4413,84 @@
       ],
       "type": "object"
     },
+    "DescribeGatewayLoadBalancersRequest": {
+      "document": "DescribeGatewayLoadBalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关负载均衡实例ID。实例ID数量上限为20个。",
+          "example": "无",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "返回网关负载均衡实例的数量，默认为20，最大值为100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "【开发中】过滤条件如下:",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayLoadBalancersResponse": {
+      "document": "DescribeGatewayLoadBalancers返回参数结构体",
+      "members": [
+        {
+          "document": "满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "返回的网关负载均衡实例数组。",
+          "example": "无",
+          "member": "GatewayLoadBalancer",
+          "name": "LoadBalancerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIdleLoadBalancersRequest": {
       "document": "DescribeIdleLoadBalancers请求参数结构体",
       "members": [
@@ -5716,6 +5801,155 @@
         }
       ],
       "usage": "both"
+    },
+    "GatewayLoadBalancer": {
+      "document": "网关负载均衡实例的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "网关负载均衡实例 ID。",
+          "example": "gwlb-xxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网关负载均衡实例的名称。",
+          "example": "name",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网关负载均衡提供服务的虚拟ip",
+          "example": "x.x.x.x",
+          "member": "string",
+          "name": "Vips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网关负载均衡所属子网",
+          "example": "subnet-lzj3xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网关负载均衡实例状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "最大带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "删除保护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteProtect",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "目标组唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lbtg-xxx",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网关负载均衡所属私有网络\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-mj65xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例所属的项目 ID， 0 表示默认项目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网关负载均衡的实例规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "share",
+          "member": "string",
+          "name": "Specifications",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2022-12-14 20:30:48",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "HealthCheck": {
       "document": "健康检查信息。\n注意，自定义探测相关参数 目前只有少量区域灰度支持。",

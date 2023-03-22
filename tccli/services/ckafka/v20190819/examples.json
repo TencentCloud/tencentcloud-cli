@@ -296,6 +296,14 @@
         "title": "查询用户列表"
       }
     ],
+    "DescribeAttackAsyncRequestResult": [
+      {
+        "document": "RequestPassword",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAttackAsyncRequestResult\n<公共请求参数>\n\n{\n    \"AsyncRequestId\": \"abc\",\n    \"RequestPassword\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查看关机结果"
+      }
+    ],
     "DescribeCkafkaZone": [
       {
         "document": "",
@@ -424,6 +432,14 @@
         "title": "枚举地域"
       }
     ],
+    "DescribeRollbackAsyncRequestResult": [
+      {
+        "document": "查看开机结果",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRollbackAsyncRequestResult\n<公共请求参数>\n\n{\n    \"AsyncRequestId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查看开机结果"
+      }
+    ],
     "DescribeRoute": [
       {
         "document": "",
@@ -494,6 +510,14 @@
         "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeUser\r\n&InstanceId=xxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Users\": [\n                {\n                    \"UserId\": 41,\n                    \"Name\": \"ANONYMOUS\",\n                    \"CreateTime\": \"2019-09-05 00:53:28\",\n                    \"UpdateTime\": \"2019-09-05 00:53:28\"\n                },\n                {\n                    \"UserId\": 40,\n                    \"Name\": \"test\",\n                    \"CreateTime\": \"2019-09-05 00:20:36\",\n                    \"UpdateTime\": \"2019-09-05 00:20:36\"\n                }\n            ],\n            \"TotalCount\": 2\n        },\n        \"RequestId\": \"26f6afd4-2966-43f5-a7a2-d506de3e881f\"\n    }\n}",
         "title": "查询用户信息"
+      }
+    ],
+    "DownAttackRollback": [
+      {
+        "document": "开机",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownAttackRollback\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "开机"
       }
     ],
     "FetchDatahubMessageByOffset": [

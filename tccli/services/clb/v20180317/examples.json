@@ -336,6 +336,14 @@
         "title": "查询集群列表"
       }
     ],
+    "DescribeGatewayLoadBalancers": [
+      {
+        "document": "查询网关负载均衡",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayLoadBalancers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"Status\": 1,\n                \"TargetGroupId\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"Vips\": [\n                    \"x.x.x.x\"\n                ],\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ],\n                \"Specifications\": \"xx\",\n                \"ProjectId\": 1,\n                \"DeleteProtect\": true,\n                \"InternetMaxBandwidthOut\": 0,\n                \"LoadBalancerId\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"LoadBalancerName\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询网关负载均衡"
+      }
+    ],
     "DescribeIdleLoadBalancers": [
       {
         "document": "",

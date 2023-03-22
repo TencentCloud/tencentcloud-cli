@@ -1,6 +1,6 @@
 **Example 1: 获取项目列表**
 
-
+ 
 
 Input: 
 
@@ -39,7 +39,7 @@ Output:
 
 **Example 2: 获取云转推项目信息**
 
-
+ 
 
 Input: 
 
@@ -68,6 +68,7 @@ Output:
                 "UpdateTime": "2020-11-13T06:41:34.808Z",
                 "CreateTime": "2020-11-13T06:41:34.808Z",
                 "CoverUrl": "",
+                "MediaCastProjectInfo": null,
                 "StreamConnectProjectInfo": {
                     "Status": "Working",
                     "CurrentInputEndpoint": "Main",
@@ -100,7 +101,7 @@ Output:
 
 **Example 3: 获取点播转直播项目信息**
 
-
+ 
 
 Input: 
 
@@ -133,18 +134,22 @@ Output:
                 "MediaCastProjectInfo": {
                     "Status": "Working",
                     "StartTime": "2020-11-13T06:41:34.808Z",
+                    "StopTime": "2020-11-14T06:41:34.808Z",
                     "SourceInfos": [
                         {
+                            "Id": "fsdf",
                             "Type": "CME",
                             "MaterialId": "a123"
                         },
                         {
+                            "Id": "sdfs",
                             "Type": "VOD",
                             "FileId": "53434"
                         }
                     ],
                     "DestinationInfos": [
                         {
+                            "Id": "2342342",
                             "Name": "test",
                             "PushUrl": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08"
                         }

@@ -1,6 +1,6 @@
-**Example 1: 更新文件系统快照策略**
+**Example 1: UpdateAutoSnapshotPolicy**
 
-
+更新文件系统快照策略
 
 Input: 
 

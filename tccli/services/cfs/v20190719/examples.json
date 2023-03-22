@@ -2,7 +2,7 @@
   "actions": {
     "BindAutoSnapshotPolicy": [
       {
-        "document": "",
+        "document": "绑定文件系统快照策略",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyId\": \"asp-12345\",\n    \"FileSystemIds\": \"cfs-12345\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"AutoSnapshotPolicyId\": \"asp-12345\"\n    }\n}",
         "title": "绑定文件系统快照策略"
@@ -10,7 +10,7 @@
     ],
     "CreateAutoSnapshotPolicy": [
       {
-        "document": "",
+        "document": "创建文件系统快照策略",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"DayOfWeek\": \"\\\"1,2\\\"\",\n    \"Hour\": \"\\\"2,3\\\"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"AutoSnapshotPolicyId\": \"asp-12345\"\n    }\n}",
         "title": "创建文件系统快照策略"
@@ -226,10 +226,10 @@
     ],
     "UpdateAutoSnapshotPolicy": [
       {
-        "document": "",
+        "document": "更新文件系统快照策略",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyId\": \"asp-12345\",\n    \"PolicyName\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"AutoSnapshotPolicyId\": \"asp-12345\"\n    }\n}",
-        "title": "更新文件系统快照策略"
+        "title": "UpdateAutoSnapshotPolicy"
       }
     ],
     "UpdateCfsFileSystemName": [

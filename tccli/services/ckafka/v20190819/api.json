@@ -238,6 +238,13 @@
       "output": "DescribeAppInfoResponse",
       "status": "online"
     },
+    "DescribeAttackAsyncRequestResult": {
+      "document": "混沌演练关机结果查询",
+      "input": "DescribeAttackAsyncRequestResultRequest",
+      "name": "混沌演练关机结果查询",
+      "output": "DescribeAttackAsyncRequestResultResponse",
+      "status": "online"
+    },
     "DescribeCkafkaZone": {
       "document": "用于查看ckafka的可用区列表",
       "input": "DescribeCkafkaZoneRequest",
@@ -350,6 +357,13 @@
       "output": "DescribeRegionResponse",
       "status": "online"
     },
+    "DescribeRollbackAsyncRequestResult": {
+      "document": "混沌演练开机结果查询",
+      "input": "DescribeRollbackAsyncRequestResultRequest",
+      "name": "混沌演练开机结果查询",
+      "output": "DescribeRollbackAsyncRequestResultResponse",
+      "status": "online"
+    },
     "DescribeRoute": {
       "document": "查看路由信息",
       "input": "DescribeRouteRequest",
@@ -411,6 +425,13 @@
       "input": "DescribeUserRequest",
       "name": "查询用户信息",
       "output": "DescribeUserResponse",
+      "status": "online"
+    },
+    "DownAttackRollback": {
+      "document": "混沌演练开机",
+      "input": "DownAttackRollbackRequest",
+      "name": "混沌演练开机",
+      "output": "DownAttackRollbackResponse",
       "status": "online"
     },
     "FetchDatahubMessageByOffset": {
@@ -5227,6 +5248,60 @@
       ],
       "type": "object"
     },
+    "DescribeAttackAsyncRequestResultRequest": {
+      "document": "DescribeAttackAsyncRequestResult请求参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "2231041243",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "RequestPassword",
+          "example": "RequestPassword",
+          "member": "string",
+          "name": "RequestPassword",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttackAsyncRequestResultResponse": {
+      "document": "DescribeAttackAsyncRequestResult返回参数结构体",
+      "members": [
+        {
+          "document": "响应码",
+          "example": "200",
+          "member": "uint64",
+          "name": "Code",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "响应说明",
+          "example": "正在关机",
+          "member": "string",
+          "name": "Msg",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCkafkaZoneRequest": {
       "document": "DescribeCkafkaZone请求参数结构体",
       "members": [
@@ -7071,6 +7146,60 @@
       ],
       "type": "object"
     },
+    "DescribeRollbackAsyncRequestResultRequest": {
+      "document": "DescribeRollbackAsyncRequestResult请求参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "2032142334",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "RequestPassword",
+          "example": "RequestPassword",
+          "member": "string",
+          "name": "RequestPassword",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRollbackAsyncRequestResultResponse": {
+      "document": "DescribeRollbackAsyncRequestResult返回参数结构体",
+      "members": [
+        {
+          "document": "响应码",
+          "example": "200",
+          "member": "uint64",
+          "name": "Code",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "响应描述",
+          "example": "开机成功",
+          "member": "string",
+          "name": "Msg",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRouteRequest": {
       "document": "DescribeRoute请求参数结构体",
       "members": [
@@ -7793,6 +7922,69 @@
         }
       ],
       "usage": "both"
+    },
+    "DownAttackRollbackRequest": {
+      "document": "DownAttackRollback请求参数结构体",
+      "members": [
+        {
+          "document": "ckafka实例ID",
+          "example": "ckafka-asdgbds",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "RequestPassword",
+          "example": "RequestPassword",
+          "member": "string",
+          "name": "RequestPassword",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DownAttackRollbackResponse": {
+      "document": "DownAttackRollback返回参数结构体",
+      "members": [
+        {
+          "document": "状态码",
+          "example": "200",
+          "member": "uint64",
+          "name": "Code",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "响应描述",
+          "example": "开机成功",
+          "member": "string",
+          "name": "Msg",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "2323214234",
+          "example": "任务ID",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DropCls": {
       "document": "dip失败消息写入cls的配置",
@@ -9442,6 +9634,15 @@
           "name": "InjectZoneId",
           "required": false,
           "type": "int",
+          "visibility": 2
+        },
+        {
+          "document": "RequestPassword",
+          "example": "RequestPassword",
+          "member": "string",
+          "name": "RequestPassword",
+          "required": false,
+          "type": "string",
           "visibility": 2
         }
       ],
