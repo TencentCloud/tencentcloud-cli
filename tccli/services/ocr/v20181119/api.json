@@ -8,7 +8,7 @@
       "status": "online"
     },
     "ArithmeticOCR": {
-      "document": "本接口支持作业算式题目的自动识别和判分，目前覆盖 K12 学力范围内的 11 种题型，包括加减乘除四则、加减乘除已知结果求运算因子、判断大小、约等于估算、带余数除法、分数四则运算、单位换算、竖式加减法、竖式乘除法、脱式计算和解方程，平均识别精度达到93%以上。",
+      "document": "本接口支持作业算式题目的自动识别和判分，目前覆盖 K12 学力范围内的 11 种题型，包括加减乘除四则、加减乘除已知结果求运算因子、判断大小、约等于估算、带余数除法、分数四则运算、单位换算、竖式加减法、竖式乘除法、脱式计算和解方程，平均识别精度达到93%以上。\n\n默认接口请求频率限制：10次/秒。",
       "input": "ArithmeticOCRRequest",
       "name": "算式识别",
       "output": "ArithmeticOCRResponse",
@@ -43,7 +43,7 @@
       "status": "online"
     },
     "BusinessCardOCR": {
-      "document": "本接口支持名片各字段的自动定位与识别，包含姓名、电话、手机号、邮箱、公司、部门、职位、网址、地址、QQ、微信、MSN等。",
+      "document": "本接口支持名片各字段的自动定位与识别，包含姓名、电话、手机号、邮箱、公司、部门、职位、网址、地址、QQ、微信、MSN等。\n\n默认接口请求频率限制：10次/秒。",
       "input": "BusinessCardOCRRequest",
       "name": "名片识别",
       "output": "BusinessCardOCRResponse",
@@ -57,7 +57,7 @@
       "status": "online"
     },
     "ClassifyDetectOCR": {
-      "document": "支持身份证、护照、名片、银行卡、行驶证、驾驶证、港澳台通行证、户口本、港澳台来往内地通行证、港澳台居住证、不动产证、营业执照的智能分类。\n",
+      "document": "支持身份证、护照、名片、银行卡、行驶证、驾驶证、港澳台通行证、户口本、港澳台来往内地通行证、港澳台居住证、不动产证、营业执照的智能分类。\n\n默认接口请求频率限制：20次/秒。",
       "input": "ClassifyDetectOCRRequest",
       "name": "智能卡证分类",
       "output": "ClassifyDetectOCRResponse",
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "EduPaperOCR": {
-      "document": "本接口支持数学试题内容的识别和结构化输出，包括通用文本解析和小学/初中/高中数学公式解析能力（包括91种题型，180种符号），公式返回格式为 Latex 格式文本。",
+      "document": "本接口支持数学试题内容的识别和结构化输出，包括通用文本解析和小学/初中/高中数学公式解析能力（包括91种题型，180种符号），公式返回格式为 Latex 格式文本。\n\n默认接口请求频率限制：5次/秒。",
       "input": "EduPaperOCRRequest",
       "name": "数学试题识别",
       "output": "EduPaperOCRResponse",
@@ -99,21 +99,21 @@
       "status": "online"
     },
     "EnterpriseLicenseOCR": {
-      "document": "本接口支持智能化识别各类企业登记证书、许可证书、企业执照、三证合一类证书，结构化输出统一社会信用代码、公司名称、法定代表人、公司地址、注册资金、企业类型、经营范围等关键字段。",
+      "document": "本接口支持智能化识别各类企业登记证书、许可证书、企业执照、三证合一类证书，结构化输出统一社会信用代码、公司名称、法定代表人、公司地址、注册资金、企业类型、经营范围等关键字段。\n\n默认接口请求频率限制：5次/秒。",
       "input": "EnterpriseLicenseOCRRequest",
       "name": "企业证照识别",
       "output": "EnterpriseLicenseOCRResponse",
       "status": "online"
     },
     "EstateCertOCR": {
-      "document": "本接口支持不动产权证关键字段的识别，包括使用期限、面积、用途、权利性质、权利类型、坐落、共有情况、权利人、权利其他状况等。\n\n\n",
+      "document": "本接口支持不动产权证关键字段的识别，包括使用期限、面积、用途、权利性质、权利类型、坐落、共有情况、权利人、权利其他状况等。\n\n默认接口请求频率限制：5次/秒。\n\n",
       "input": "EstateCertOCRRequest",
       "name": "不动产权证识别",
       "output": "EstateCertOCRResponse",
       "status": "online"
     },
     "FinanBillOCR": {
-      "document": "本接口支持常见银行票据的自动分类和识别。整单识别包括支票（含现金支票、普通支票、转账支票），承兑汇票（含银行承兑汇票、商业承兑汇票）以及进账单等，适用于中国人民银行印发的 2010 版银行票据凭证版式（银发[2010]299 号）。",
+      "document": "本接口支持常见银行票据的自动分类和识别。整单识别包括支票（含现金支票、普通支票、转账支票），承兑汇票（含银行承兑汇票、商业承兑汇票）以及进账单等，适用于中国人民银行印发的 2010 版银行票据凭证版式（银发[2010]299 号）。\n\n默认接口请求频率限制：5次/秒。",
       "input": "FinanBillOCRRequest",
       "name": "金融票据整单识别",
       "output": "FinanBillOCRResponse",
@@ -134,7 +134,7 @@
       "status": "online"
     },
     "FormulaOCR": {
-      "document": "本接口支持识别主流初高中数学符号和公式，返回公式的 Latex 格式文本。",
+      "document": "本接口支持识别主流初高中数学符号和公式，返回公式的 Latex 格式文本。\n\n默认接口请求频率限制：5次/秒。",
       "input": "FormulaOCRRequest",
       "name": "数学公式识别",
       "output": "FormulaOCRResponse",
@@ -190,7 +190,7 @@
       "status": "online"
     },
     "HmtResidentPermitOCR": {
-      "document": "港澳台居住证OCR支持港澳台居住证正反面全字段内容检测识别功能，包括姓名、性别、出生日期、地址、身份证ID、签发机关、有效期限、签发次数、通行证号码关键字段识别。可以应用于港澳台居住证信息有效性校验场景，例如银行开户、用户注册等场景。",
+      "document": "港澳台居住证OCR支持港澳台居住证正反面全字段内容检测识别功能，包括姓名、性别、出生日期、地址、身份证ID、签发机关、有效期限、签发次数、通行证号码关键字段识别。可以应用于港澳台居住证信息有效性校验场景，例如银行开户、用户注册等场景。\n\n默认接口请求频率限制：20次/秒。",
       "input": "HmtResidentPermitOCRRequest",
       "name": "港澳台居住证识别",
       "output": "HmtResidentPermitOCRResponse",
@@ -204,21 +204,21 @@
       "status": "online"
     },
     "ImageEnhancement": {
-      "document": "文本图像增强是面向文档类图片提供的图像增强处理能力，包括切边增强、图像矫正、阴影去除、摩尔纹去除等；可以有效优化文档类的图片质量，提升文字的清晰度。",
+      "document": "文本图像增强是面向文档类图片提供的图像增强处理能力，包括切边增强、图像矫正、阴影去除、摩尔纹去除等；可以有效优化文档类的图片质量，提升文字的清晰度。\n\n默认接口请求频率限制：10次/秒。",
       "input": "ImageEnhancementRequest",
       "name": "文本图像增强",
       "output": "ImageEnhancementResponse",
       "status": "online"
     },
     "InstitutionOCR": {
-      "document": "本接口支持事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等。",
+      "document": "本接口支持事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等。\n\n默认接口请求频率限制：5次/秒。",
       "input": "InstitutionOCRRequest",
       "name": "事业单位法人证书识别",
       "output": "InstitutionOCRResponse",
       "status": "online"
     },
     "InsuranceBillOCR": {
-      "document": "本接口支持病案首页、费用清单、结算单、医疗发票四种保险理赔单据的文本识别和结构化输出。",
+      "document": "本接口支持病案首页、费用清单、结算单、医疗发票四种保险理赔单据的文本识别和结构化输出。\n\n默认接口请求频率限制：1次/秒。",
       "input": "InsuranceBillOCRRequest",
       "name": "保险单据识别",
       "output": "InsuranceBillOCRResponse",
@@ -1343,6 +1343,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1351,6 +1352,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg ",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -1359,6 +1361,7 @@
         {
           "default": "",
           "document": "可选字段，根据需要选择是否请求对应字段。\n目前支持的字段为：\nRetImageType-“PROPROCESS” 图像预处理，string 类型。\n图像预处理功能为，检测图片倾斜的角度，将原本倾斜的图片围绕中心点转正，最终输出一张正的名片抠图。\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"RetImageType\":\"PROPROCESS\"})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"RetImageType\":\"PROPROCESS\"}",
+          "example": "无",
           "member": "string",
           "name": "Config",
           "required": false,
@@ -1372,22 +1375,28 @@
       "members": [
         {
           "document": "名片识别结果，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "BusinessCardInfo",
           "name": "BusinessCardInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "返回图像预处理后的图片，图像预处理未开启时返回内容为空。",
+          "example": "无",
           "member": "string",
           "name": "RetImageBase64",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
+          "example": "0",
           "member": "float",
           "name": "Angle",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2299,6 +2308,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -2307,6 +2317,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg ",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -2320,85 +2331,109 @@
       "members": [
         {
           "document": "权利人",
+          "example": "周框吉",
           "member": "string",
           "name": "Obligee",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "共有情况",
+          "example": "单独所有",
           "member": "string",
           "name": "Ownership",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "坐落",
+          "example": "番禺区南村镇沙溪大道520号",
           "member": "string",
           "name": "Location",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "不动产单元号",
+          "example": "440113013008G800003F00230055",
           "member": "string",
           "name": "Unit",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "权利类型",
+          "example": "国有建设用地使用权/房屋(构筑物)所有权",
           "member": "string",
           "name": "Type",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "权利性质",
+          "example": "土地:出让/房屋:商品房",
           "member": "string",
           "name": "Property",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "用途",
+          "example": "土地:/房屋:住宅",
           "member": "string",
           "name": "Usage",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "面积",
+          "example": "270.13平方米",
           "member": "string",
           "name": "Area",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "使用期限",
+          "example": "2017年03月01日-2087年03月01日",
           "member": "string",
           "name": "Term",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "权利其他状况，多行会用换行符\\n连接。",
+          "example": "无",
           "member": "string",
           "name": "Other",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "图片旋转角度",
+          "example": "0",
           "member": "float",
           "name": "Angle",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "不动产权号",
+          "example": "07037799",
           "member": "string",
           "name": "Number",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2439,7 +2474,6 @@
       "document": "FinanBillOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -2448,7 +2482,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
           "member": "string",
@@ -2467,7 +2500,6 @@
           "example": "无",
           "member": "FinanBillInfo",
           "name": "FinanBillInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2643,7 +2675,6 @@
       "document": "FormulaOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -2652,7 +2683,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -2671,7 +2701,6 @@
           "example": "0",
           "member": "int64",
           "name": "Angle",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2680,7 +2709,6 @@
           "example": "无",
           "member": "TextFormula",
           "name": "FormulaInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

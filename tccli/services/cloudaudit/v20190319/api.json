@@ -839,7 +839,6 @@
       "document": "DescribeAuditTracks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "页码",
           "example": "1",
           "member": "uint64",
@@ -848,7 +847,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "每页数目",
           "example": "10",
           "member": "uint64",
@@ -867,7 +865,6 @@
           "example": "*",
           "member": "Tracks",
           "name": "Tracks",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -876,7 +873,6 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

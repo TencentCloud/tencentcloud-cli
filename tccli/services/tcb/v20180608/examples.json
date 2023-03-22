@@ -412,6 +412,14 @@
         "title": "查询用户增值包详情"
       }
     ],
+    "DescribeGatewayCurveData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayCurveData\n<公共请求参数>\n\n{\n    \"EnvId\": \"xxx\",\n    \"GatewayId\": \"xxxx\",\n    \"GatewayVersion\": \"xx\",\n    \"GatewayRoute\": \"xxx\",\n    \"MetricName\": \"GwHttp404\",\n    \"StartTime\": \"2022-02-22 20:08:10\",\n    \"EndTime\": \"2022-02-22 20:18:10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Period\": 1,\n        \"Values\": [\n            0,\n            0\n        ],\n        \"RequestId\": \"xx\",\n        \"StartTime\": \"xx\",\n        \"Time\": [\n            1640845840,\n            1640845841\n        ],\n        \"EndTime\": \"xx\",\n        \"MetricName\": \"xx\"\n    }\n}",
+        "title": "查询网关监控数据实例"
+      }
+    ],
     "DescribeHostingDomainTask": [
       {
         "document": "",

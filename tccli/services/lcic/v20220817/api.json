@@ -147,6 +147,13 @@
       "output": "DescribeCurrentMemberListResponse",
       "status": "online"
     },
+    "DescribeDeveloper": {
+      "document": "服务商信息获取",
+      "input": "DescribeDeveloperRequest",
+      "name": "服务商信息获取",
+      "output": "DescribeDeveloperResponse",
+      "status": "online"
+    },
     "DescribeDocument": {
       "document": "获取文档信息",
       "input": "DescribeDocumentRequest",
@@ -1493,6 +1500,23 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeveloperRequest": {
+      "document": "DescribeDeveloper请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDeveloperResponse": {
+      "document": "DescribeDeveloper返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

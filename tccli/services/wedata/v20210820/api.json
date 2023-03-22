@@ -4492,7 +4492,6 @@
       "document": "CreateOfflineTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "项目/工作",
           "example": "123",
           "member": "string",
@@ -4501,7 +4500,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "1",
           "example": "1",
           "member": "int64",
@@ -4510,7 +4508,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "0",
           "example": "0",
           "member": "int64",
@@ -4519,7 +4516,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "2099-12-31 00:00:00",
           "example": "2099-12-31 00:00:00",
           "member": "string",
@@ -4528,7 +4524,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注",
           "example": "123",
           "member": "string",
@@ -4537,7 +4532,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "当前日期",
           "example": "2022-04-21 00:00:00",
           "member": "string",
@@ -4546,7 +4540,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称",
           "example": "123",
           "member": "string",
@@ -4555,7 +4548,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "跟之前调用调度接口保持一致27",
           "example": "27",
           "member": "int64",
@@ -4564,7 +4556,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "默认 \"\"",
           "example": "默认 \"\"",
           "member": "string",
@@ -4573,7 +4564,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "区分画布和表单",
           "example": "1",
           "member": "string",
@@ -4588,11 +4578,18 @@
       "document": "CreateOfflineTask返回参数结构体",
       "members": [
         {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "结果",
           "example": "无",
           "member": "string",
           "name": "Data",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

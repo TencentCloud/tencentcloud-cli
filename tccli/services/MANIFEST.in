@@ -325,6 +325,8 @@ include tccli/services/oceanus/v20190422/api.json
 include tccli/services/oceanus/v20190422/examples.json
 include tccli/services/ocr/v20181119/api.json
 include tccli/services/ocr/v20181119/examples.json
+include tccli/services/omics/v20221128/api.json
+include tccli/services/omics/v20221128/examples.json
 include tccli/services/organization/v20210331/api.json
 include tccli/services/organization/v20210331/examples.json
 include tccli/services/organization/v20181225/api.json

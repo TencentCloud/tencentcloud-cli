@@ -7,6 +7,13 @@
       "output": "AddTimeWindowResponse",
       "status": "online"
     },
+    "AnalyzeAuditLogs": {
+      "document": "在不同过滤条件下的审计日志结果集中，选定特定的数据列进行聚合统计。",
+      "input": "AnalyzeAuditLogsRequest",
+      "name": "分析审计日志",
+      "output": "AnalyzeAuditLogsResponse",
+      "status": "online"
+    },
     "AssociateSecurityGroups": {
       "document": "本接口(AssociateSecurityGroups)用于安全组批量绑定实例。",
       "input": "AssociateSecurityGroupsRequest",
@@ -589,11 +596,11 @@
       "status": "online"
     },
     "InitDBInstances": {
-      "document": "本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等。该接口已经废弃，在发货接口CreateDBInstance、CreateDBInstanceHour可以直接使用参数Password设置密码，使用参数ParamList设置字符集，使用参数Port设置端口号。",
+      "document": "该接口不再维护，参考CreateDBInstance+API文档，在发货时即可完成初始化。\n\n本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等。该接口已经废弃，在发货接口CreateDBInstance、CreateDBInstanceHour可以直接使用参数Password设置密码，使用参数ParamList设置字符集，使用参数Port设置端口号。",
       "input": "InitDBInstancesRequest",
       "name": "初始化新实例（该接口已经不再维护，不建议使用）",
       "output": "InitDBInstancesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "InquiryPriceUpgradeInstances": {
       "document": "本接口(InquiryPriceUpgradeInstances)用于查询云数据库实例升级的价格，支持查询按量计费或者包年包月实例的升级价格，实例类型支持主实例、灾备实例和只读实例。",
@@ -1227,6 +1234,113 @@
       ],
       "usage": "out"
     },
+    "AggregationCondition": {
+      "document": "审计日志聚合条件",
+      "members": [
+        {
+          "document": "聚合字段。目前仅支持host-源IP、user-用户名、dbName-数据库名、sqlType-sql类型。",
+          "example": "host",
+          "member": "string",
+          "name": "AggregationField",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "偏移量。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "该聚合字段下要返回聚合桶的数量，最大100。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "AnalyzeAuditLogsRequest": {
+      "document": "AnalyzeAuditLogs请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID。",
+          "example": "cdb-r9bpb9gs",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "要分析的日志开始时间，格式为：\"2023-02-16 00:00:20\"。",
+          "example": "2023-02-16 00:00:20",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "要分析的日志结束时间，格式为：\"2023-02-16 00:10:20\"。",
+          "example": "2023-02-16 00:10:20",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "聚合维度的排序条件。",
+          "example": "无",
+          "member": "AggregationCondition",
+          "name": "AggregationConditions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "该过滤条件下的审计日志结果集作为分析日志。",
+          "example": "无",
+          "member": "AuditLogFilter",
+          "name": "AuditLogFilter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AnalyzeAuditLogsResponse": {
+      "document": "AnalyzeAuditLogs返回参数结构体",
+      "members": [
+        {
+          "document": "返回的聚合桶信息集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditLogAggregationResult",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扫描的日志条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AssociateSecurityGroupsRequest": {
       "document": "AssociateSecurityGroups请求参数结构体",
       "members": [
@@ -1304,6 +1418,30 @@
         }
       ],
       "usage": "both"
+    },
+    "AuditLogAggregationResult": {
+      "document": "审计日志分析结果",
+      "members": [
+        {
+          "document": "聚合维度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "host",
+          "member": "string",
+          "name": "AggregationField",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "聚合桶的结果集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Bucket",
+          "name": "Buckets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AuditLogFile": {
       "document": "审计日志文件",
@@ -1476,6 +1614,66 @@
           "name": "Sqls",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "影响行数，格式为M-N，例如：10-200",
+          "example": "无",
+          "member": "string",
+          "name": "AffectRowsSection",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回行数，格式为M-N，例如：10-200",
+          "example": "无",
+          "member": "string",
+          "name": "SentRowsSection",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行时间，格式为M-N，例如：10-200",
+          "example": "无",
+          "member": "string",
+          "name": "ExecTimeSection",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "锁等待时间，格式为M-N，例如：10-200",
+          "example": "无",
+          "member": "string",
+          "name": "LockWaitTimeSection",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IO等待时间，格式为M-N，例如：10-200",
+          "example": "无",
+          "member": "string",
+          "name": "IoWaitTimeSection",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事务持续时间，格式为M-N，例如：10-200",
+          "example": "无",
+          "member": "string",
+          "name": "TransactionLivingTimeSection",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2284,6 +2482,30 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Bucket": {
+      "document": "聚合桶的信息",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.8",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "ip等于10.0.0.8访问了26次实例，即桶内文档数量。",
+          "example": "26",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

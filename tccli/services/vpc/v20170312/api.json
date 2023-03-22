@@ -3575,16 +3575,16 @@
       "document": "AssociateNetworkInterfaceSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。",
+          "example": "[\"eni-1a2b3c4d\"]",
           "member": "string",
           "name": "NetworkInterfaceIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "document": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。",
+          "example": "[\"sg-1a2b3c4d\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -15442,16 +15442,16 @@
       "document": "DisassociateNetworkInterfaceSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。",
+          "example": "[\"eni-12345678\"]",
           "member": "string",
           "name": "NetworkInterfaceIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "document": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。",
+          "example": "[\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,

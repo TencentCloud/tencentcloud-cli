@@ -1,0 +1,1078 @@
+{
+  "actions": {
+    "DescribeRunGroups": {
+      "document": "查询任务批次列表。",
+      "input": "DescribeRunGroupsRequest",
+      "name": "查询任务批次列表",
+      "output": "DescribeRunGroupsResponse",
+      "status": "online"
+    },
+    "DescribeRuns": {
+      "document": "查询任务列表。",
+      "input": "DescribeRunsRequest",
+      "name": "查询任务列表",
+      "output": "DescribeRunsResponse",
+      "status": "online"
+    },
+    "GetRunCalls": {
+      "document": "查询作业详情。",
+      "input": "GetRunCallsRequest",
+      "name": "查询作业详情",
+      "output": "GetRunCallsResponse",
+      "status": "online"
+    },
+    "GetRunStatus": {
+      "document": "查询任务详情。",
+      "input": "GetRunStatusRequest",
+      "name": "查询任务详情",
+      "output": "GetRunStatusResponse",
+      "status": "online"
+    },
+    "ImportTableFile": {
+      "document": "导入表格文件。",
+      "input": "ImportTableFileRequest",
+      "name": "导入表格文件",
+      "output": "ImportTableFileResponse",
+      "status": "online"
+    },
+    "RunApplication": {
+      "document": "运行应用。",
+      "input": "RunApplicationRequest",
+      "name": "运行应用",
+      "output": "RunApplicationResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-11-28",
+    "api_brief": "腾讯健康组学平台API",
+    "serviceNameCN": "腾讯健康组学平台",
+    "serviceShortName": "omics"
+  },
+  "objects": {
+    "DescribeRunGroupsRequest": {
+      "document": "DescribeRunGroups请求参数结构体",
+      "members": [
+        {
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "偏移量，默认为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "过滤器，支持过滤字段：\n- Name：任务批次名称\n- RunGroupId：任务批次ID\n- Status：任务批次状态",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRunGroupsResponse": {
+      "document": "DescribeRunGroups返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的数量。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务批次列表。",
+          "example": "无",
+          "member": "RunGroup",
+          "name": "RunGroups",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRunsRequest": {
+      "document": "DescribeRuns请求参数结构体",
+      "members": [
+        {
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "偏移量，默认为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "过滤器，支持过滤字段：\n- RunGroupId：任务批次ID\n- Status：任务状态\n- RunUuid：任务UUID\n- UserDefinedId：用户定义ID",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRunsResponse": {
+      "document": "DescribeRuns返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的数量。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务列表。",
+          "example": "无",
+          "member": "Run",
+          "name": "Runs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecutionTime": {
+      "document": "执行时间。",
+      "members": [
+        {
+          "document": "提交时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "SubmitTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。\n\n- 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n\n- 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "document": "过滤字段。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "过滤字段值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "GetRunCallsRequest": {
+      "document": "GetRunCalls请求参数结构体",
+      "members": [
+        {
+          "document": "任务Uuid。",
+          "example": "无",
+          "member": "string",
+          "name": "RunUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "作业路径",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRunCallsResponse": {
+      "document": "GetRunCalls返回参数结构体",
+      "members": [
+        {
+          "document": "作业详情。",
+          "example": "无",
+          "member": "RunMetadata",
+          "name": "Calls",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRunStatusRequest": {
+      "document": "GetRunStatus请求参数结构体",
+      "members": [
+        {
+          "document": "任务Uuid。",
+          "example": "无",
+          "member": "string",
+          "name": "RunUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRunStatusResponse": {
+      "document": "GetRunStatus返回参数结构体",
+      "members": [
+        {
+          "document": "作业详情。",
+          "example": "无",
+          "member": "RunMetadata",
+          "name": "Metadata",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportTableFileRequest": {
+      "document": "ImportTableFile请求参数结构体",
+      "members": [
+        {
+          "document": "表格关联的项目ID。",
+          "example": "prj-aggressive-lime-porcupine-752427",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "表格名称，支持20个字符内的英文字符、数字和下划线。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "表格文件Cos对象路径。",
+          "example": "cos://bucket/testFile.csv",
+          "member": "string",
+          "name": "CosUri",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]",
+          "example": "无",
+          "member": "string",
+          "name": "DataType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "表格描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportTableFileResponse": {
+      "document": "ImportTableFile返回参数结构体",
+      "members": [
+        {
+          "document": "表格ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TableId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Run": {
+      "document": "任务。",
+      "members": [
+        {
+          "document": "任务UUID。",
+          "example": "无",
+          "member": "string",
+          "name": "RunUuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务批次ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RunGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户定义ID，单例运行为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserDefinedId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "表格ID，单例运行为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "表格行UUID，单例运行为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableRowUuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务状态。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务输入。",
+          "example": "无",
+          "member": "string",
+          "name": "Input",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运行选项。",
+          "example": "无",
+          "member": "RunOption",
+          "name": "Option",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行时间。",
+          "example": "无",
+          "member": "ExecutionTime",
+          "name": "ExecutionTime",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RunApplicationRequest": {
+      "document": "RunApplication请求参数结构体",
+      "members": [
+        {
+          "document": "应用ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "任务批次名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "投递环境ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "任务输入JSON。需要进行base64编码。",
+          "example": "无",
+          "member": "string",
+          "name": "InputBase64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "任务缓存清理时间。不填表示不清理。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CacheClearDelay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "运行选项。",
+          "example": "无",
+          "member": "RunOption",
+          "name": "Option",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "任务批次描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "批量投递表格ID，不填表示单例投递。",
+          "example": "无",
+          "member": "string",
+          "name": "TableId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "批量投递表格行UUID。不填表示表格全部行。",
+          "example": "无",
+          "member": "string",
+          "name": "TableRowUuids",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RunApplicationResponse": {
+      "document": "RunApplication返回参数结构体",
+      "members": [
+        {
+          "document": "任务批次ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RunGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunGroup": {
+      "document": "任务。",
+      "members": [
+        {
+          "document": "任务批次ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RunGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目名称。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用类型。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境名称。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表格ID，单例运行为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务状态。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务输入。",
+          "example": "无",
+          "member": "string",
+          "name": "Input",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运行选项。",
+          "example": "无",
+          "member": "RunOption",
+          "name": "Option",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务总数量。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalRun",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各状态任务的数量。",
+          "example": "无",
+          "member": "RunStatusCount",
+          "name": "RunStatusCounts",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行时间。",
+          "example": "无",
+          "member": "ExecutionTime",
+          "name": "ExecutionTime",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RunMetadata": {
+      "document": "任务作业详情。",
+      "members": [
+        {
+          "document": "任务类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RunType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RunId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "父层ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "作业ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "作业名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CallName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Scatter索引。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScatterIndex",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Input",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Output",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "提交时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "SubmitTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "命令行。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运行时。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Runtime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "预处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Preprocess",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "后处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "PostProcess",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Cache命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CallCached",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "标准输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Stdout",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Stderr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RunOption": {
+      "document": "运行应用选项。",
+      "members": [
+        {
+          "document": "运行失败模式，取值范围：\n- ContinueWhilePossible\n- NoNewCalls",
+          "example": "无",
+          "member": "string",
+          "name": "FailureMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否使用Call-Caching功能。",
+          "example": "无",
+          "member": "bool",
+          "name": "UseCallCache",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否使用错误挂起功能。",
+          "example": "无",
+          "member": "bool",
+          "name": "UseErrorOnHold",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RunStatusCount": {
+      "document": "任务运行状态。",
+      "members": [
+        {
+          "document": "状态。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数量。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

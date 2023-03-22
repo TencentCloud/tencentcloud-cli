@@ -168,6 +168,14 @@
         "title": "获取当前房间的成员列表"
       }
     ],
+    "DescribeDeveloper": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeveloper\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "DescribeDeveloper 示例"
+      }
+    ],
     "DescribeDocument": [
       {
         "document": "",

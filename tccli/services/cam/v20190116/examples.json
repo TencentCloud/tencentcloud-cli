@@ -2,7 +2,7 @@
   "actions": {
     "AddUser": [
       {
-        "document": "",
+        "document": "创建子账号",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUser\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"Name\": \"test124\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"10086\",\n    \"UseApi\": \"1\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"test123456\",\n    \"Email\": \"123%40qq.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"Uid\": 5648765,\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Password\": \"test123456\",\n        \"SecretId\": \"faweffewagwaegawe\",\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "添加子用户"
@@ -26,7 +26,7 @@
     ],
     "AttachRolePolicy": [
       {
-        "document": "",
+        "document": "以下示例将绑定一个策略到指定的角色",
         "input": "https://cam.tencentcloudapi.com/?Action=AttachRolePolicy\n&PolicyId=1\n&AttachRoleId=4611686018427397905\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b55ef5b-36b1-4649-8bb9-1aca465f17fb\"\n    }\n}",
         "title": "绑定权限策略到角色"
@@ -58,7 +58,7 @@
     ],
     "CreateGroup": [
       {
-        "document": "",
+        "document": "创建用户组",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"test1\",\n    \"Remark\": \"test2\"\n}",
         "output": "{\n    \"Response\": {\n        \"GroupId\": 2020,\n        \"RequestId\": \"f36a5d34-0d51-4b91-b9fc-af5d02571656\"\n    }\n}",
         "title": "创建用户组"
@@ -90,10 +90,10 @@
     ],
     "CreateRole": [
       {
-        "document": "",
+        "document": "以下示例将创建一个以日志服务和云审计为载体的角色",
         "input": "https://cam.tencentcloudapi.com/?Action=CreateRole\n&RoleName=test_1234544\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\n&Description=abc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RoleId\": 123456789,\n        \"RequestId\": \"0bac591a-6cc7-4e9d-8d01-74618f1a9611\"\n    }\n}",
-        "title": "创建角色"
+        "output": "{\n    \"Response\": {\n        \"RoleId\": \"123456789000\",\n        \"RequestId\": \"0bac591a-6cc7-4e9d-8d01-74618f1a9611\"\n    }\n}",
+        "title": "创建一个角色"
       }
     ],
     "CreateSAMLProvider": [

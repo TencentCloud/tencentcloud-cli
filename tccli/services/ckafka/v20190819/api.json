@@ -10414,7 +10414,6 @@
       "document": "Ckafka配置",
       "members": [
         {
-          "default": "",
           "document": "是否为自建集群",
           "example": "false",
           "member": "bool",
@@ -10424,7 +10423,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例资源",
           "example": "ckafka-xxx",
           "member": "string",
@@ -10434,7 +10432,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Topic名称，多个以“,”分隔",
           "example": "test",
           "member": "string",
@@ -10444,7 +10441,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "timestamp",
           "member": "string",
@@ -10454,7 +10450,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Offset类型为timestamp时必传，传时间戳，精确到秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1635339533",
           "member": "uint64",
@@ -10464,7 +10459,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MyCkafkaName",
           "member": "string",
@@ -10474,7 +10468,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Zone ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "200005",
           "member": "int64",
@@ -10484,7 +10477,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Topic的Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -10494,7 +10486,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Topic的分区数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -10504,7 +10495,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "启用容错实例/开启死信队列\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -10514,7 +10504,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Qps 限制\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4000",
           "member": "uint64",
@@ -10524,7 +10513,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Table到Topic的路由，「分发到多个topic」开关打开时必传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "TableMapping",
@@ -10534,7 +10522,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "「分发到多个topic」开关，默认为false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -10544,7 +10531,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -10554,7 +10540,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "写入Topic时是否进行压缩，不开启填\"none\"，开启的话，填写\"open\"。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "none",
           "member": "string",
@@ -10564,13 +10549,30 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "MsgMultiple",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据同步专用参数, 正常数据处理可为空, 实例级别同步: 仅同步元数据填写\"META_SYNC_INSTANCE_TYPE\", 同步元数据及全部topic内消息的填写\"META_AND_DATA_SYNC_INSTANCE_TYPE\"; topic级别同步: 选中的源和目标topic中的消息(需要目标实例也包含该topic)填写\"DATA_SYNC_TYPE\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DATA_SYNC_TYPE",
+          "member": "string",
+          "name": "ConnectorSyncType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据同步专用参数, 当通过时,希望下游的消息写入分区与上游的一致,则填true,但下游分区小于上游时,会报错; 不需要一致则为false, 默认为false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "KeepPartition",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

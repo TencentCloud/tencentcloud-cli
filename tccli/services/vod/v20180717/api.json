@@ -7286,24 +7286,24 @@
       "document": "ConfirmEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "事件句柄，即 [拉取事件通知](/document/product/266/33433) 接口输出参数中的 EventSet. EventHandle 字段。\n数组长度限制：16。",
+          "example": "无",
           "member": "string",
           "name": "EventHandles",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "document": "保留字段，特殊用途时使用。",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9197,6 +9197,7 @@
         {
           "default": "",
           "document": "子应用名称，长度限制：40个字符。",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -9205,6 +9206,7 @@
         {
           "default": "",
           "document": "子应用简介，长度限制： 300个字符。",
+          "example": "demo",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -9218,8 +9220,10 @@
       "members": [
         {
           "document": "新创建的子应用 ID。",
+          "example": "12345",
           "member": "uint64",
           "name": "SubAppId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13142,7 +13146,6 @@
       "document": "DescribeSubAppIds请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "子应用名称。",
           "example": "无",
           "member": "string",
@@ -13151,7 +13154,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签信息，查询指定标签的子应用列表。",
           "example": "无",
           "member": "ResourceTag",
@@ -13160,7 +13162,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页拉取的起始偏移量。默认值：0。",
           "example": "无",
           "member": "uint64",
@@ -13169,7 +13170,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页拉取的最大返回结果数。默认值：200；最大值：200。",
           "example": "无",
           "member": "uint64",
@@ -13188,7 +13188,6 @@
           "example": "无",
           "member": "SubAppIdInfo",
           "name": "SubAppIdInfoSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13197,7 +13196,6 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28315,7 +28313,6 @@
       "document": "子应用信息。",
       "members": [
         {
-          "default": "",
           "document": "子应用 ID。",
           "example": "无",
           "member": "uint64",
@@ -28325,7 +28322,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子应用名称。",
           "example": "无",
           "member": "string",
@@ -28335,7 +28331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子应用简介。",
           "example": "无",
           "member": "string",
@@ -28345,7 +28340,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子应用创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "无",
           "member": "string",
@@ -28355,7 +28349,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子应用状态，有效值：\n<li>On：启用；</li>\n<li>Off：停用。</li>\n<li>Destroying：销毁中。</li>\n<li>Destroyed：销毁完成。</li>",
           "example": "无",
           "member": "string",
@@ -28365,7 +28358,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子应用名称（该字段已不推荐使用，建议使用新的子应用名称字段 SubAppIdName）。",
           "example": "无",
           "member": "string",

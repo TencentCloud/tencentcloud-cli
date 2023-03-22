@@ -1,12 +1,12 @@
 **Example 1: 金融票据整单识别示例代码**
 
-
+金融票据整单识别示例代码
 
 Input: 
 
 ```
 tccli ocr FinanBillOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://xx/a.jpg 
 ```
 
 Output: 

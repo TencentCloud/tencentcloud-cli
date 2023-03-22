@@ -46,8 +46,8 @@
     ],
     "ConfirmEvents": [
       {
-        "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ConfirmEvents\r\n&EventHandles.0=111\r\n&EventHandles.1=222\r\n&<公共请求参数>",
+        "document": "确认事件通知.",
+        "input": "https://vod.tencentcloudapi.com/?Action=ConfirmEvents\n&EventHandles.0=111\n&EventHandles.1=222\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "确认事件通知"
       }
@@ -255,7 +255,7 @@
     "CreateSubAppId": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateSubAppId\r\n&Name=test\r\n&Description=demo\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubAppId\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Description\": \"demo\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"SubAppId\": 12345\n    }\n}",
         "title": "创建子应用"
       }
@@ -832,9 +832,9 @@
     ],
     "DescribeSubAppIds": [
       {
-        "document": "",
+        "document": "查询子应用资源列表",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeSubAppIds\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"SubAppIdInfoSet\": [\n            {\n                \"SubAppId\": 1451123904,\n                \"Name\": \"子应用1\",\n                \"Description\": \"子应用1简介\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Status\": \"On\"\n            },\n            {\n                \"SubAppId\": 1251123904,\n                \"Name\": \"主应用\",\n                \"Description\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Status\": \"On\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"SubAppIdInfoSet\": [\n            {\n                \"SubAppId\": 1451123904,\n                \"Name\": \"子应用1\",\n                \"SubAppIdName\": \"主应用\",\n                \"Description\": \"子应用1简介\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Status\": \"On\"\n            },\n            {\n                \"SubAppId\": 1251123904,\n                \"Name\": \"主应用\",\n                \"SubAppIdName\": \"主应用\",\n                \"Description\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Status\": \"On\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "查询子应用资源列表"
       }
     ],

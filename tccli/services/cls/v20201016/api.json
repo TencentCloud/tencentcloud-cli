@@ -1785,7 +1785,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "cos导入任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "COS导入任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx任务导入",
           "member": "string",
           "name": "Name",
@@ -1794,7 +1794,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "cos存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "COS存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bucket1",
           "member": "string",
           "name": "Bucket",
@@ -1803,7 +1803,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "cos存储桶地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "COS存储桶所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
@@ -1812,7 +1812,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "cos存储桶前缀地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "COS文件所在文件夹的前缀\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/var/test",
           "member": "string",
           "name": "Prefix",
@@ -1821,7 +1821,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志；\n默认为minimalist_log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；\n默认为minimalist_log\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "minimalist_log",
           "member": "string",
           "name": "LogType",

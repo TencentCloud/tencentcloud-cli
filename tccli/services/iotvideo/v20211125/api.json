@@ -35,6 +35,13 @@
       "output": "CallDeviceActionSyncResponse",
       "status": "online"
     },
+    "CallTRTCDevice": {
+      "document": "呼叫TRTC设备",
+      "input": "CallTRTCDeviceRequest",
+      "name": "呼叫TRTC设备",
+      "output": "CallTRTCDeviceResponse",
+      "status": "online"
+    },
     "CancelAIModelApplication": {
       "document": "取消AI模型申请",
       "input": "CancelAIModelApplicationRequest",
@@ -1396,6 +1403,48 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CallTRTCDeviceRequest": {
+      "document": "CallTRTCDevice请求参数结构体",
+      "members": [
+        {
+          "document": "产品ID",
+          "example": "AQTV2839QJ",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "设备名称",
+          "example": "p2p_32731213_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CallTRTCDeviceResponse": {
+      "document": "CallTRTCDevice返回参数结构体",
+      "members": [
+        {
+          "document": "TRTC SDK房间参数",
+          "example": "无",
+          "member": "TRTCParams",
+          "name": "TRTCParams",
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8313,6 +8362,57 @@
           "name": "Total",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TRTCParams": {
+      "document": "TRTC调用参数",
+      "members": [
+        {
+          "document": "应用id，供TRTC SDK使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "int64",
+          "name": "SDKAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户id，供TRTC SDK使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "userid",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户id签名，供TRTC SDK使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "876afmnihawf",
+          "member": "string",
+          "name": "UserSig",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "房间id，供TRTC SDK使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rootId",
+          "member": "string",
+          "name": "StrRoomId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "权限票据，供TRTC SDK使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fjhgugi123",
+          "member": "string",
+          "name": "PrivateMapKey",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

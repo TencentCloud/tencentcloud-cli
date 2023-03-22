@@ -258,9 +258,9 @@
     ],
     "CreateOfflineTask": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOfflineTask\n<公共请求参数>\n\n{\n    \"TypeId\": 0,\n    \"ProjectId\": \"xx\",\n    \"Notes\": \"xx\",\n    \"TaskAction\": \"xx\",\n    \"DelayTime\": 0,\n    \"StartTime\": \"xx\",\n    \"TaskName\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"CycleStep\": 0,\n    \"TaskMode\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "创建离线任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOfflineTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"CycleStep\": 0,\n    \"DelayTime\": 0,\n    \"EndTime\": \"abc\",\n    \"Notes\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"TaskName\": \"abc\",\n    \"TypeId\": 0,\n    \"TaskAction\": \"abc\",\n    \"TaskMode\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建离线任务"
       }
     ],
