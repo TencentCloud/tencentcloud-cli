@@ -24,7 +24,7 @@
     ],
     "ClearLaunchConfigurationAttributes": [
       {
-        "document": "",
+        "document": "指定启动配置asc-kr4beurf，入参ClearDataDisks设置为true，接口调用后启动配置中的数据盘信息被清空，后续基于asc-kr4beurf创建的云主机将不再分配任何数据盘",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ClearLaunchConfigurationAttributes\n<公共请求参数>\n\n{\n    \"LaunchConfigurationId\": \"asc-kr4beurf\",\n    \"ClearDataDisks\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"382c6cad-15ae-496a-a965-66b95674f5a7\"\n    }\n}",
         "title": "清空启动配置中的数据盘项"
@@ -402,13 +402,13 @@
     ],
     "ModifyLaunchConfigurationAttributes": [
       {
-        "document": "",
+        "document": "指定启动配置asc-291kq6ku，修改镜像为img-8toqc6s3，修改实例类型为S2.SMALL1，修改启动配置名称为updated_config",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLaunchConfigurationAttributes\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceTypes\": [\n        \"S2.SMALL1\"\n    ],\n    \"LaunchConfigurationName\": \"updated_config\",\n    \"LaunchConfigurationId\": \"asc-291kq6ku\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"07022dcb-5bba-48f0-a2b0-800ad006d031\"\n    }\n}",
         "title": "指定启动配置，修改镜像、实例类型、名称"
       },
       {
-        "document": "",
+        "document": "指定启动配置asc-291kq6ku，将UserData修改为空字符串",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLaunchConfigurationAttributes\n<公共请求参数>\n\n{\n    \"LaunchConfigurationId\": \"asc-291kq6ku\",\n    \"UserData\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c027f22-3a3b-489a-a77a-89c53fc15212\"\n    }\n}",
         "title": "清空UserData"

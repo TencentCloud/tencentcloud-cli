@@ -1,3 +1,190 @@
+# Release 3.0.730.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 24 次发布
+
+发布时间：2023-03-24 01:03:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ClearLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/54255)
+
+	* 新增入参：ClearDisasterRecoverGroupIds
+
+* [CreateLaunchConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/20447)
+
+	* 新增入参：DisasterRecoverGroupIds
+
+* [ModifyLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/31298)
+
+	* 新增入参：DisasterRecoverGroupIds
+
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/377/20453#Instance)
+
+	* 新增成员：DisasterRecoverGroupIds
+
+
+
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 31 次发布
+
+发布时间：2023-03-24 01:10:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SeatUserInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#SeatUserInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Mail, StaffNumber
+
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 55 次发布
+
+发布时间：2023-03-24 01:15:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAclRule](http://document.tencentcloudapi.woa.com/document/product/597/77344)
+* [DescribeAclRule](http://document.tencentcloudapi.woa.com/document/product/597/77343)
+* [ModifyAclRule](http://document.tencentcloudapi.woa.com/document/product/597/77342)
+
+新增数据结构：
+
+* [AclRuleResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#AclRuleResp)
+
+修改数据结构：
+
+* [DescribeConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResource)
+
+	* 新增成员：TaskProgress, StepList
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 35 次发布
+
+发布时间：2023-03-24 01:16:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDomainAttributes](http://document.tencentcloudapi.woa.com/document/product/214/38092)
+
+	* 新增入参：Quic
+
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 45 次发布
+
+发布时间：2023-03-24 01:21:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LaunchTemplateVersionData](http://document.tencentcloudapi.woa.com/document/product/213/15753#LaunchTemplateVersionData)
+
+	* 新增成员：DisableApiTermination
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 11 次发布
+
+发布时间：2023-03-24 01:29:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeIntlBatchDetailStatus](http://document.tencentcloudapi.woa.com/document/product/242/77345)
+
+新增数据结构：
+
+* [IntlBatchDetails](http://document.tencentcloudapi.woa.com/document/product/242/38895#IntlBatchDetails)
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 50 次发布
+
+发布时间：2023-03-24 01:43:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrometheusClusterAgentBasic](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusClusterAgentBasic)
+
+	* 新增成员：OpenDefaultRecord
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 26 次发布
+
+发布时间：2023-03-24 01:50:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNamespace](http://document.tencentcloudapi.woa.com/document/product/583/37160)
+
+	* 新增入参：ResourceEnv
+
+
+修改数据结构：
+
+* [ImageConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#ImageConfig)
+
+	* 新增成员：ImagePort
+
+
+
+
 # Release 3.0.729.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

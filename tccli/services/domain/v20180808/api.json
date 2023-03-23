@@ -161,6 +161,13 @@
       "output": "DescribeDomainSimpleInfoResponse",
       "status": "online"
     },
+    "DescribeIntlBatchDetailStatus": {
+      "document": "国际站-查询批量详情状态",
+      "input": "DescribeIntlBatchDetailStatusRequest",
+      "name": "查询批量任务详情状态",
+      "output": "DescribeIntlBatchDetailStatusResponse",
+      "status": "online"
+    },
     "DescribeIntlBatchOperationLogs": {
       "document": "批量购买域名日志查询",
       "input": "DescribeIntlBatchOperationLogsRequest",
@@ -2460,6 +2467,42 @@
       ],
       "type": "object"
     },
+    "DescribeIntlBatchDetailStatusRequest": {
+      "document": "DescribeIntlBatchDetailStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的logId",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "LogIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntlBatchDetailStatusResponse": {
+      "document": "DescribeIntlBatchDetailStatus返回参数结构体",
+      "members": [
+        {
+          "document": "详情",
+          "example": "无",
+          "member": "IntlBatchDetails",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIntlBatchOperationLogsRequest": {
       "document": "DescribeIntlBatchOperationLogs请求参数结构体",
       "members": [
@@ -3701,6 +3744,52 @@
           "example": "zhangsan",
           "member": "string",
           "name": "RegistrantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IntlBatchDetails": {
+      "document": "国际站-批量任务详情",
+      "members": [
+        {
+          "default": "",
+          "document": "批量任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态",
+          "example": "doing",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原因",
+          "example": "xx",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原因（中文）",
+          "example": "xx",
+          "member": "string",
+          "name": "ReasonZh",
           "required": true,
           "type": "string",
           "value_allowed_null": false

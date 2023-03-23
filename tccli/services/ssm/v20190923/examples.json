@@ -114,8 +114,8 @@
     ],
     "GetSecretValue": [
       {
-        "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=GetSecretValue\n&SecretName=test_secret\n&VersionId=v1.0\n&<公共请求参数>",
+        "document": "获取凭据明文信息",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSecretValue\n<公共请求参数>\n\n{\n    \"VersionId\": \"v1.0\",\n    \"SecretName\": \"test_secret\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8e6b67f-3ca7-4341-b4fa-a372bdf4e11c\",\n        \"SecretName\": \"test_secret\",\n        \"VersionId\": \"v1.0\",\n        \"SecretBinary\": \"\",\n        \"SecretString\": \"test\"\n    }\n}",
         "title": "获取凭据明文信息"
       }

@@ -1,13 +1,13 @@
 **Example 1: 获取凭据明文信息**
 
-
+获取凭据明文信息
 
 Input: 
 
 ```
 tccli ssm GetSecretValue --cli-unfold-argument  \
-    --SecretName test_secret \
-    --VersionId v1.0
+    --VersionId v1.0 \
+    --SecretName test_secret
 ```
 
 Output: 

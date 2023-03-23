@@ -8017,7 +8017,6 @@
       "document": "ModifyDomainAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "负载均衡实例ID。",
           "example": "lb-1wvl****",
           "member": "string",
@@ -8027,7 +8026,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "负载均衡监听器ID。",
           "example": "lbl-n8mb****",
           "member": "string",
@@ -8037,7 +8035,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。",
           "example": "foo.net",
           "member": "string",
@@ -8047,7 +8044,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "要修改的新域名。NewDomain和NewDomains只能传一个。",
           "example": "www.new.example.com",
           "member": "string",
@@ -8057,7 +8053,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。",
           "example": "无",
           "member": "CertificateInput",
@@ -8067,7 +8062,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启Http2，注意，只有HTTPS域名才能开启Http2。",
           "example": "true",
           "member": "bool",
@@ -8077,7 +8071,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否设为默认域名，注意，一个监听器下只能设置一个默认域名。",
           "example": "true",
           "member": "bool",
@@ -8087,7 +8080,15 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "document": "是否开启Quic，注意，只有HTTPS域名才能开启Quic",
+          "example": "true",
+          "member": "bool",
+          "name": "Quic",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
           "document": "监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。",
           "example": "www.qcloud.example.com",
           "member": "string",
@@ -8097,7 +8098,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "要修改的新域名列表。NewDomain和NewDomains只能传一个。",
           "example": "[\"www.new.example.com\"]",
           "member": "string",
@@ -8107,7 +8107,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。",
           "example": "无",
           "member": "MultiCertInfo",

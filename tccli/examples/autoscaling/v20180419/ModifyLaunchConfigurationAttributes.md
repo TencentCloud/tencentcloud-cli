@@ -1,6 +1,6 @@
 **Example 1: 指定启动配置，修改镜像、实例类型、名称**
 
-
+指定启动配置asc-291kq6ku，修改镜像为img-8toqc6s3，修改实例类型为S2.SMALL1，修改启动配置名称为updated_config
 
 Input: 
 
@@ -23,7 +23,7 @@ Output:
 
 **Example 2: 清空UserData**
 
-
+指定启动配置asc-291kq6ku，将UserData修改为空字符串
 
 Input: 
 

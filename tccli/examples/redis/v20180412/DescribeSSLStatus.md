@@ -1,6 +1,6 @@
-**Example 1: 查询SSL状态实例**
+**Example 1: 示例1**
 
-
+查询实例 SSL 认证信息
 
 Input: 
 
@@ -13,12 +13,12 @@ Output:
 ```
 {
     "Response": {
+        "CertDownloadUrl": "abc",
+        "UrlExpiredTime": "abc",
+        "SSLConfig": true,
+        "FeatureSupport": true,
         "Status": 0,
-        "FeatureSupport": false,
-        "UrlExpiredTime": "xx",
-        "RequestId": "xx",
-        "CertDownloadUrl": "xx",
-        "SSLConfig": true
+        "RequestId": "abc"
     }
 }
 ```

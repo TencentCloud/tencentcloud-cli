@@ -4585,74 +4585,74 @@
       "document": "坐席用户信息",
       "members": [
         {
-          "default": "",
           "document": "坐席名称",
           "example": "张三",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "坐席邮箱",
           "example": "foo@tencent.com",
           "member": "string",
           "name": "Mail",
-          "required": false,
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
+          "document": "工号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "007",
+          "member": "string",
+          "name": "StaffNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "document": "坐席电话号码（带0086前缀）",
           "example": "008613012345678",
           "member": "string",
           "name": "Phone",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "坐席昵称",
           "example": "三三",
           "member": "string",
           "name": "Nick",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "用户ID",
           "example": "foo@tencent.com",
           "member": "string",
           "name": "UserId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "坐席关联的技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "SkillGroupNameList",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "工号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "007",
-          "member": "string",
-          "name": "StaffNumber",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

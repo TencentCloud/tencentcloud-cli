@@ -16130,6 +16130,16 @@
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "是否开启默认预聚合规则",
+          "example": "无",
+          "member": "bool",
+          "name": "OpenDefaultRecord",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "in"

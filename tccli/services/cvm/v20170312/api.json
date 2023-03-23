@@ -759,37 +759,37 @@
       "document": "定时任务",
       "members": [
         {
-          "document": "定时器名称，目前仅支持销毁一个值：TerminateInstances。",
+          "document": "定时器名称，目前仅支持销毁一个值：TerminateInstances。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xx\"",
           "member": "string",
           "name": "TimerAction",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "document": "执行时间，按照ISO8601标准表示，并且使用UTC时间。格式为 YYYY-MM-DDThh:mm:ssZ。例如 2018-05-29T11:26:40Z，执行时间必须大于当前时间5分钟。",
+          "document": "执行时间，按照ISO8601标准表示，并且使用UTC时间。格式为 YYYY-MM-DDThh:mm:ssZ。例如 2018-05-29T11:26:40Z，执行时间必须大于当前时间5分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xx\"",
           "member": "string",
           "name": "ActionTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "document": "扩展数据",
+          "document": "扩展数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"StorageBlockAttr\":{\"MinSize\":0,\"MaxSize\":0,\"Type\":\"xx\"}}",
           "member": "Externals",
           "name": "Externals",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "AllocateHostsRequest": {
       "document": "AllocateHosts请求参数结构体",
@@ -4693,31 +4693,34 @@
       "document": "扩展数据",
       "members": [
         {
-          "default": "",
           "document": "释放地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "ReleaseAddress",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "不支持的网络类型，取值范围：<br><li>BASIC：基础网络<br><li>VPC1.0：私有网络VPC1.0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UnsupportNetworks",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "HDD本地存储属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "StorageBlock",
           "name": "StorageBlockAttr",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -6885,25 +6888,27 @@
       "document": "描述了实例的计费模式",
       "members": [
         {
-          "default": "",
-          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
+          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Period",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "InstanceFamilyConfig": {
       "document": "描述实例的机型族配置信息\n形如：{'InstanceFamilyName': '标准型S1', 'InstanceFamily': 'S1'}、{'InstanceFamilyName': '网络优化型N1', 'InstanceFamily': 'N1'}、{'InstanceFamilyName': '高IO型I1', 'InstanceFamily': 'I1'}等。",
@@ -6933,25 +6938,27 @@
       "document": "竞价请求相关选项",
       "members": [
         {
-          "default": "",
-          "document": "竞价相关选项",
+          "document": "竞价相关选项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SpotMarketOptions",
           "name": "SpotOptions",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "spot",
-          "document": "市场选项类型，当前只支持取值：spot",
+          "document": "市场选项类型，当前只支持取值：spot\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MarketType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "InstanceRefund": {
       "document": "描述退款详情。",
@@ -7870,7 +7877,6 @@
       "document": "实例启动模板版本信息",
       "members": [
         {
-          "default": "",
           "document": "实例所在的位置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "Placement",
@@ -7881,7 +7887,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "S1.SMALL2",
           "member": "string",
@@ -7892,7 +7897,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MyInstance",
           "member": "string",
@@ -7903,7 +7907,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PREPAID",
           "member": "string",
@@ -7914,7 +7917,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例系统盘信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "SystemDisk",
@@ -7925,7 +7927,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例数据盘信息。只包含随实例购买的数据盘。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "DataDisk",
@@ -7936,7 +7937,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例带宽信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "InternetAccessible",
@@ -7947,7 +7947,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例所属虚拟私有网络信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "VirtualPrivateCloud",
@@ -7958,7 +7957,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "生产实例所使用的镜像`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "img-pi0aa46r",
           "member": "string",
@@ -7969,7 +7967,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "['sg-rf6ogz49']",
           "member": "string",
@@ -7980,7 +7977,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例登录设置。目前只返回实例所关联的密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "LoginSettings",
@@ -7991,7 +7987,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "CAM角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testroleName001",
           "member": "string",
@@ -8002,7 +7997,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "高性能计算集群`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hpc-a5n666lo",
           "member": "string",
@@ -8013,7 +8007,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "购买实例数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -8024,7 +8017,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "增强服务。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "EnhancedService",
@@ -8035,7 +8027,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TXlVc2VyRGF0YQo=",
           "member": "string",
@@ -8046,7 +8037,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "置放群组ID，仅支持指定一个。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "['ps-3p88qhfo']",
           "member": "string",
@@ -8057,7 +8047,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "ActionTimer",
@@ -8068,7 +8057,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "InstanceMarketOptionsRequest",
@@ -8079,7 +8067,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云服务器的主机名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MyHostName",
           "member": "string",
@@ -8090,7 +8077,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "用于保证请求幂等性的字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "system-f3827db9-c58a-49cc-bf10-33fc1923a34a",
           "member": "string",
@@ -8101,7 +8087,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "预付费模式，即包年包月相关参数设置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "InstanceChargePrepaid",
@@ -8112,13 +8097,22 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
           "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：\n\nTRUE：表示开启实例保护，不允许通过api接口删除实例\nFALSE：表示关闭实例保护，允许通过api接口删除实例\n\n默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableApiTermination",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -11540,29 +11534,27 @@
       "document": "创建资源实例时同时绑定的标签对说明",
       "members": [
         {
-          "default": "",
-          "document": "标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”，镜像为“image”，密钥为“keypair”",
+          "document": "标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”，镜像为“image”，密钥为“keypair”\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "instance",
           "member": "string",
           "name": "ResourceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "标签对列表",
+          "document": "标签对列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TerminateInstancesRequest": {
       "document": "TerminateInstances请求参数结构体",

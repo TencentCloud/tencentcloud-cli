@@ -184,6 +184,14 @@
         "title": "域名详情"
       }
     ],
+    "DescribeIntlBatchDetailStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntlBatchDetailStatus\n<公共请求参数>\n\n{\n    \"LogIds\": [\n        12,\n        13\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"Id\": 12,\n                \"Status\": \"doing\",\n                \"Reason\": \"\",\n                \"ReasonZh\": \"\"\n            }\n        ],\n        \"RequestId\": \"121323\"\n    }\n}",
+        "title": "查询批量详情状态"
+      }
+    ],
     "DescribeIntlBatchOperationLogs": [
       {
         "document": "",

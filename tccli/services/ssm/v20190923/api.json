@@ -1354,7 +1354,8 @@
           "member": "string",
           "name": "SecretName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1363,7 +1364,8 @@
           "member": "string",
           "name": "VersionId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1378,7 +1380,8 @@
           "name": "SecretName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "该凭据对应的版本号。",
@@ -1387,7 +1390,8 @@
           "name": "VersionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。\nSecretBinary和SecretString只有一个不为空。",
@@ -1396,7 +1400,8 @@
           "name": "SecretBinary",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。\nSecretBinary和SecretString只有一个不为空。",
@@ -1405,7 +1410,8 @@
           "name": "SecretString",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
