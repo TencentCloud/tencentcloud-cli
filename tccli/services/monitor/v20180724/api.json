@@ -43,9 +43,9 @@
       "status": "online"
     },
     "CreateAlarmPolicy": {
-      "document": "创建云监控告警策略",
+      "document": "创建告警策略",
       "input": "CreateAlarmPolicyRequest",
-      "name": "创建云监控告警策略",
+      "name": "创建告警策略",
       "output": "CreateAlarmPolicyResponse",
       "status": "online"
     },
@@ -106,7 +106,7 @@
       "status": "online"
     },
     "CreatePrometheusClusterAgent": {
-      "document": "与云监控融合的2.0实例关联集群",
+      "document": "与腾讯云可观测融合的2.0实例关联集群",
       "input": "CreatePrometheusClusterAgentRequest",
       "name": "2.0实例关联集群",
       "output": "CreatePrometheusClusterAgentResponse",
@@ -176,7 +176,7 @@
       "status": "online"
     },
     "DeleteAlarmNotices": {
-      "document": "云监控告警删除告警通知模板",
+      "document": "删除告警通知模板",
       "input": "DeleteAlarmNoticesRequest",
       "name": "删除告警通知模板（批量）",
       "output": "DeleteAlarmNoticesResponse",
@@ -337,7 +337,7 @@
       "status": "online"
     },
     "DescribeAlarmNoticeCallbacks": {
-      "document": "云监控告警获取告警通知模板所有回调URL",
+      "document": "获取告警通知模板所有回调URL",
       "input": "DescribeAlarmNoticeCallbacksRequest",
       "name": "查询账号下所有回调URL列表",
       "output": "DescribeAlarmNoticeCallbacksResponse",
@@ -477,7 +477,7 @@
       "status": "online"
     },
     "DescribeMonitorTypes": {
-      "document": "云监控支持多种类型的监控，此接口列出支持的所有类型",
+      "document": "腾讯云可观测平台支持多种类型的监控，此接口列出支持的所有类型",
       "input": "DescribeMonitorTypesRequest",
       "name": "查询监控类型",
       "output": "DescribeMonitorTypesResponse",
@@ -519,9 +519,9 @@
       "status": "online"
     },
     "DescribeProductList": {
-      "document": "查询云监控产品列表，支持云服务器CVM、云数据库、云消息队列、负载均衡、容器服务、专线等云产品。",
+      "document": "查询腾讯云可观测平台云产品列表，支持云服务器CVM、云数据库、云消息队列、负载均衡、容器服务、专线等云产品。",
       "input": "DescribeProductListRequest",
-      "name": "查询云监控产品列表",
+      "name": "查询云产品列表",
       "output": "DescribeProductListResponse",
       "status": "online"
     },
@@ -757,7 +757,7 @@
       "status": "online"
     },
     "ModifyAlarmPolicyNotice": {
-      "document": "云监控告警修改告警策略绑定的告警通知模板",
+      "document": "告警修改告警策略绑定的告警通知模板",
       "input": "ModifyAlarmPolicyNoticeRequest",
       "name": "修改告警策略绑定的告警通知模板",
       "output": "ModifyAlarmPolicyNoticeResponse",
@@ -771,7 +771,7 @@
       "status": "online"
     },
     "ModifyAlarmPolicyTasks": {
-      "document": "云监控告警修改告警策略的触发任务，TriggerTasks字段放触发任务列表，TriggerTasks传空数组时，代表解绑该策略的所有触发任务。",
+      "document": "修改告警策略的触发任务，TriggerTasks字段放触发任务列表，TriggerTasks传空数组时，代表解绑该策略的所有触发任务。",
       "input": "ModifyAlarmPolicyTasksRequest",
       "name": "修改告警策略的触发任务",
       "output": "ModifyAlarmPolicyTasksResponse",
@@ -2939,7 +2939,6 @@
       "document": "CreateAlarmPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
           "member": "string",
@@ -2948,7 +2947,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "策略名称，不超过20字符",
           "example": "云服务器告警策略",
           "member": "string",
@@ -2957,7 +2955,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "监控类型 MT_QCE=云产品监控",
           "example": "MT_QCE",
           "member": "string",
@@ -2966,7 +2963,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警策略类型，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device",
           "example": "cvm_device",
           "member": "string",
@@ -2975,7 +2971,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注，不超过100字符，仅支持中英文、数字、下划线、-",
           "example": "策略demo",
           "member": "string",
@@ -2984,7 +2979,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否启用 0=停用 1=启用，可不传 默认为1",
           "example": "1",
           "member": "int64",
@@ -2993,7 +2987,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "项目 Id，对于区分项目的产品必须传入非 -1 的值。 -1=无项目 0=默认项目，如不传 默认为 -1。支持的项目 Id 可以在控制台 [账号中心-项目管理](https://console.cloud.tencent.com/project) 中查看。",
           "example": "0",
           "member": "int64",
@@ -3002,7 +2995,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 [DescribeConditionsTemplateList](https://cloud.tencent.com/document/api/248/70250) 接口获取。",
           "example": "无",
           "member": "int64",
@@ -3011,7 +3003,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "指标触发条件，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。",
           "example": "无",
           "member": "AlarmPolicyCondition",
@@ -3020,7 +3011,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "事件触发条件，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询。",
           "example": "无",
           "member": "AlarmPolicyEventCondition",
@@ -3029,7 +3019,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "通知规则 Id 列表，由 [DescribeAlarmNotices](https://cloud.tencent.com/document/product/248/51280) 获得",
           "example": "[\"notice-bv9b4ghqbg\",\"notice-gj2n9wnt29\"]",
           "member": "string",
@@ -3038,7 +3027,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "触发任务列表",
           "example": "无",
           "member": "AlarmPolicyTriggerTask",
@@ -3047,7 +3035,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "全局过滤条件",
           "example": "无",
           "member": "AlarmPolicyFilter",
@@ -3056,7 +3043,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "聚合维度列表，指定按哪些维度 key 来做 group by",
           "example": "[\"service_name\"]",
           "member": "string",
@@ -3065,7 +3051,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "模板绑定的标签",
           "example": "无",
           "member": "Tag",
@@ -3074,7 +3059,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "日志告警信息",
           "example": "无",
           "member": "LogAlarmReq",
@@ -3083,7 +3067,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "告警分级通知规则配置",
           "example": "无",
           "member": "AlarmHierarchicalNotice",
@@ -3092,7 +3075,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑",
           "example": "1",
           "member": "int64",
@@ -3101,7 +3083,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "事件配置的告警",
           "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
           "member": "string",
@@ -3120,7 +3101,6 @@
           "example": "policy-hi498gw3h2",
           "member": "string",
           "name": "PolicyId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3129,7 +3109,6 @@
           "example": "1234556",
           "member": "string",
           "name": "OriginId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5684,8 +5663,8 @@
       "document": "DescribeAlarmNoticeCallbacks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -5699,6 +5678,7 @@
       "members": [
         {
           "document": "告警回调通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "URLNotice",
           "member": "URLNotice",
           "name": "URLNotices",
           "type": "list",
@@ -7744,7 +7724,6 @@
       "document": "DescribeMonitorTypes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，固定值 monitor",
           "example": "monitor",
           "member": "string",
@@ -7763,7 +7742,6 @@
           "example": "[\"MT_QCE\"]",
           "member": "string",
           "name": "MonitorTypes",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7772,7 +7750,6 @@
           "example": "无",
           "member": "MonitorTypeInfo",
           "name": "MonitorTypeInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9904,7 +9881,6 @@
       "document": "DescribeProductList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "固定传值monitor",
           "example": "monitor",
           "member": "string",
@@ -9913,7 +9889,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序方式：DESC/ASC（区分大小写），默认值DESC",
           "example": "DESC",
           "member": "string",
@@ -9922,7 +9897,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页查询的偏移量，默认值0",
           "example": "0",
           "member": "uint64",
@@ -9931,7 +9905,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页查询的每页数据量，默认值20",
           "example": "5",
           "member": "uint64",
@@ -9950,7 +9923,6 @@
           "example": "无",
           "member": "ProductSimple",
           "name": "ProductList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9959,7 +9931,6 @@
           "example": "294",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13568,7 +13539,6 @@
       "document": "ModifyAlarmPolicyNotice请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，这里填“monitor”。",
           "example": "monitor",
           "member": "string",
@@ -13577,7 +13547,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警策略 ID，如果该参数与PolicyIds参数同时存在，则以PolicyIds为准。",
           "example": "policy-asgh3gb2",
           "member": "string",
@@ -13586,7 +13555,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警通知模板 ID 列表。",
           "example": "[\"notice-bv9b4ghqbg\",\"notice-gj2n9wnt29\"]",
           "member": "string",
@@ -13595,11 +13563,18 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "告警策略ID数组，支持给多个告警策略批量绑定通知模板。最多30个。",
           "example": "[\"policy-asgh3gb2\", \"policy-2vh28fhb\"]",
           "member": "string",
           "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "告警分级通知规则配置",
+          "example": "无",
+          "member": "AlarmHierarchicalNotice",
+          "name": "HierarchicalNotices",
           "required": false,
           "type": "list"
         }
@@ -13667,7 +13642,6 @@
       "document": "ModifyAlarmPolicyTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，这里填“monitor”",
           "example": "monitor",
           "member": "string",
@@ -13676,7 +13650,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警策略 ID",
           "example": "policy-29ng82fs",
           "member": "string",
@@ -13685,7 +13658,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警策略触发任务列表，空数据代表解绑",
           "example": "无",
           "member": "AlarmPolicyTriggerTask",
@@ -16938,24 +16910,24 @@
       "document": "SendCustomAlarmMsg请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "接口模块名，当前取值monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "消息策略ID，在云监控自定义消息页面配置",
+          "document": "消息策略ID，在自定义消息页面配置",
+          "example": "cm-04rhwvwg",
           "member": "string",
           "name": "PolicyId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户想要发送的自定义消息内容",
+          "example": "xxx",
           "member": "string",
           "name": "Msg",
           "required": true,

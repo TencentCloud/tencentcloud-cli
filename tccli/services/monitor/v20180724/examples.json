@@ -135,7 +135,7 @@
       },
       {
         "document": "关联eks集群",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Agents\": [\n        {\n            \"EnableExternal\": true,\n            \"Region\": \"xx\",\n            \"ClusterId\": \"xx\",\n            \"ClusterType\": \"xx\",\n            \"NotInstallBasicScrape\": true,\n            \"InClusterPodConfig\": {\n                \"HostNet\": true,\n                \"Tolerations\": [\n                    {\n                        \"Operator\": \"xx\",\n                        \"Effect\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"NodeSelector\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            },\n            \"NotScrape\": true,\n            \"ExternalLabels\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xxx\",\n    \"Agents\": [\n        {\n            \"EnableExternal\": true,\n            \"Region\": \"xxx\",\n            \"ClusterId\": \"xxx\",\n            \"ClusterType\": \"xxx\",\n            \"NotInstallBasicScrape\": true,\n            \"InClusterPodConfig\": {\n                \"HostNet\": true,\n                \"Tolerations\": [\n                    {\n                        \"Operator\": \"xxx\",\n                        \"Effect\": \"xxx\",\n                        \"Key\": \"xxx\"\n                    }\n                ],\n                \"NodeSelector\": [\n                    {\n                        \"Name\": \"xxx\",\n                        \"Value\": \"xxx\"\n                    }\n                ]\n            },\n            \"NotScrape\": true,\n            \"ExternalLabels\": [\n                {\n                    \"Name\": \"xxx\",\n                    \"Value\": \"xxx\"\n                }\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "关联集群"
       }
@@ -404,7 +404,7 @@
     ],
     "DescribeAlarmNoticeCallbacks": [
       {
-        "document": "",
+        "document": "查询账号下所有回调URL列表",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmNoticeCallbacks\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\"\n}",
         "output": "{\n    \"Response\": {\n        \"URLNotices\": [\n            {\n                \"URL\": \"http://www.test1.com/validate\",\n                \"IsValid\": 0\n            },\n            {\n                \"URL\": \"http://www.test2.com/validate\",\n                \"IsValid\": 0\n            },\n            {\n                \"URL\": \"https://www.test3.com/validate\",\n                \"IsValid\": 1\n            }\n        ],\n        \"RequestId\": \"neh390an4opw0-45nw\"\n    }\n}",
         "title": "查询账号下所有回调URL列表"
@@ -576,7 +576,7 @@
     ],
     "DescribeMonitorTypes": [
       {
-        "document": "",
+        "document": "查询所有监控类型",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorTypes\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\"\n}",
         "output": "{\n    \"Response\": {\n        \"MonitorTypes\": [\n            \"MT_QCE\"\n        ],\n        \"MonitorTypeInfos\": [\n            {\n                \"Id\": \"1002\",\n                \"Name\": \"MT_QCE\",\n                \"SortId\": 1\n            }\n        ],\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\n    }\n}",
         "title": "查询所有监控类型"
@@ -624,7 +624,7 @@
     ],
     "DescribeProductList": [
       {
-        "document": "",
+        "document": "查询腾讯云可观测平台产品列表",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductList\n<公共请求参数>\n\n{\n    \"Limit\": \"5\",\n    \"Module\": \"monitor\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"ProductList\": [\n            {\n                \"ProductName\": \"私有网络-NAT网关\",\n                \"ProductEnName\": \"NAT Gateway\",\n                \"Namespace\": \"qce/nat_qos_stats\"\n            },\n            {\n                \"ProductName\": \"CDN-CDN域名国内\",\n                \"ProductEnName\": \"CDN-China_CDN_Domain\",\n                \"Namespace\": \"qce/cdn\"\n            },\n            {\n                \"ProductName\": \"CDN-CDN项目国内\",\n                \"ProductEnName\": \"CDN-China_CDN_Project\",\n                \"Namespace\": \"qce/cdn\"\n            },\n            {\n                \"ProductName\": \"云服务器-基础监控\",\n                \"ProductEnName\": \"Cloud Virtual Machine\",\n                \"Namespace\": \"qce/cvm\"\n            },\n            {\n                \"ProductName\": \"专线接入-物理专线\",\n                \"ProductEnName\": \"Physical dedicated line\",\n                \"Namespace\": \"qce/dc\"\n            }\n        ],\n        \"RequestId\": \"28b84e33-8865-4cd3-a4ac-bdacccefbb2d\",\n        \"TotalCount\": 446\n    }\n}",
         "title": "分页查询产品列表"
@@ -914,7 +914,7 @@
     ],
     "ModifyAlarmPolicyNotice": [
       {
-        "document": "",
+        "document": "修改告警策略（policy-asgh3gb2）绑定的告警通知模板",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmPolicyNotice\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"PolicyId\": \"policy-asgh3gb2\",\n    \"NoticeIds\": [\n        \"notice-bv9b4ghqbg\",\n        \"notice-gj2n9wnt29\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"29ghj2hh-45-h53h234h-23\"\n    }\n}",
         "title": "修改告警策略绑定的告警通知模板"
@@ -930,7 +930,7 @@
     ],
     "ModifyAlarmPolicyTasks": [
       {
-        "document": "",
+        "document": "修改告警策略的触发任务",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmPolicyTasks\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"PolicyId\": \"policy-29ng82fs\",\n    \"TriggerTasks\": [\n        {\n            \"Type\": \"AS\",\n            \"TaskConfig\": \"{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Group\\\":\\\"asg-0zhspjx\\\",\\\"Policy\\\":\\\"asp-ganig28\\\"}\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"29ghj2hh-45-h53h234h-23\"\n    }\n}",
         "title": "修改告警策略的触发任务"

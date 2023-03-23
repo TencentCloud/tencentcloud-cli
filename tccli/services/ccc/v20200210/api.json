@@ -4587,7 +4587,6 @@
       "document": "坐席状态相关信息",
       "members": [
         {
-          "default": "",
           "document": "坐席邮箱",
           "example": "xxx@xxx.com",
           "member": "string",
@@ -4597,7 +4596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "坐席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线",
           "example": "free",
           "member": "string",
@@ -4607,7 +4605,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "坐席状态补充信息",
           "example": "无",
           "member": "StaffStatusExtra",
@@ -4617,7 +4614,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当天在线总时长",
           "example": "0",
           "member": "int64",
@@ -4627,7 +4623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当天示闲总时长",
           "example": "0",
           "member": "int64",
@@ -4637,7 +4632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当天忙碌总时长",
           "example": "0",
           "member": "int64",
@@ -4647,7 +4641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当天示忙总时长",
           "example": "0",
           "member": "int64",
@@ -4657,7 +4650,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当天小休总时长",
           "example": "0",
           "member": "int64",
@@ -4667,7 +4659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当天话后调整总时长",
           "example": "0",
           "member": "int64",
@@ -4677,7 +4668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "小休原因",
           "example": "会议",
           "member": "string",
@@ -4687,7 +4677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否预约小休",
           "example": "false",
           "member": "bool",
@@ -4697,7 +4686,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否预约示忙",
           "example": "false",
           "member": "bool",
@@ -4707,7 +4695,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "手机接听模式： 0 - 关闭 | 1 - 仅离线 | 2- 始终",
           "example": "0",
           "member": "int64",
@@ -4717,7 +4704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "手机外呼开关",
           "example": "false",
           "member": "bool",
@@ -4725,6 +4711,24 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "最近一次上线时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1679300000",
+          "member": "int64",
+          "name": "LastOnlineTimestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最近一次状态时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1679300000",
+          "member": "int64",
+          "name": "LastStatusTimestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

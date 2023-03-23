@@ -344,7 +344,6 @@
       "document": "参与者信息",
       "members": [
         {
-          "default": "",
           "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。",
           "example": "无",
           "member": "int64",
@@ -354,7 +353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "本环节需要操作人的名字",
           "example": "无",
           "member": "string",
@@ -364,7 +362,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "本环节需要操作人的手机号",
           "example": "无",
           "member": "string",
@@ -374,7 +371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "本环节操作人签署控件配置",
           "example": "无",
           "member": "Component",
@@ -384,7 +380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "如果是企业,则为企业的名字",
           "example": "无",
           "member": "string",
@@ -394,7 +389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "身份证号",
           "example": "xxx",
           "member": "string",
@@ -404,7 +398,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证件类型 \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
           "example": "ID_CARD",
           "member": "string",
@@ -414,7 +407,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "sms--短信，none--不通知",
           "example": "sms",
           "member": "string",
@@ -424,7 +416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "1--收款人、2--开具人、3--见证人",
           "example": "1",
           "member": "int64",
@@ -434,7 +425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署意愿确认渠道,WEIXINAPP:人脸识别",
           "example": "[\"WEIXINAPP\"]",
           "member": "string",
@@ -444,7 +434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同的强制预览时间：3~300s，未指定则按合同页数计算",
           "example": "3",
           "member": "int64",
@@ -454,7 +443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人userId，传此字段则不用传姓名、手机号",
           "example": "无",
           "member": "string",
@@ -464,7 +452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人用户来源,企微侧用户请传入：WEWORKAPP",
           "example": "无",
           "member": "string",
@@ -474,7 +461,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客户自定义签署人标识，64位长度，保证唯一，非企微场景不使用此字段",
           "example": "无",
           "member": "string",
@@ -484,7 +470,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人个性化能力值",
           "example": "无",
           "member": "ApproverOption",
@@ -492,6 +477,24 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "签署人查看合同时认证方式, \n1-实名查看 2-短信验证码查看(企业签署方不支持该方式)\n如果不传默认为1",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "ApproverVerifyTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署人签署合同时的认证方式\n1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)\n合同签署认证方式的优先级 verifyChannel>approverSignTypes",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "ApproverSignTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

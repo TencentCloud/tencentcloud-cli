@@ -133,6 +133,13 @@
       "output": "DescribeTrtcMcuTranscodeTimeResponse",
       "status": "online"
     },
+    "DescribeTrtcRoomUsage": {
+      "document": "查询TRTC音视频房间维度用量。\n- 单次只能查询一天数据，返回查询时间段内的汇总数据；通过多次查询可以查不同天数据。若查询跨天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：1次/15秒。",
+      "input": "DescribeTrtcRoomUsageRequest",
+      "name": "查询TRTC音视频房间维度用量",
+      "output": "DescribeTrtcRoomUsageResponse",
+      "status": "online"
+    },
     "DescribeTrtcUsage": {
       "document": "获取TRTC音视频互动的用量明细。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：5次/秒。",
       "input": "DescribeTrtcUsageRequest",
@@ -1855,6 +1862,23 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrtcRoomUsageRequest": {
+      "document": "DescribeTrtcRoomUsage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeTrtcRoomUsageResponse": {
+      "document": "DescribeTrtcRoomUsage返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

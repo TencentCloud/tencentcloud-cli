@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cloudstudio CreateWorkspaceTemporaryToken --cli-unfold-argument  \
-    --WorkspaceTokenDTO.SpaceKey xx \
+    --WorkspaceTokenDTO.SpaceKey 123 \
     --WorkspaceTokenDTO.TokenExpiredLimitSec 3600
 ```
 
@@ -18,7 +18,7 @@ Output:
             "Token": "83c99d6a03aa94f5e7bbfb4eded0de0b1153f44d05126d34b5f36e8343eca973",
             "ExpiredTime": "2023-02-13T12:33:48 GMT+08:00"
         },
-        "RequestId": "xx"
+        "RequestId": "123"
     }
 }
 ```

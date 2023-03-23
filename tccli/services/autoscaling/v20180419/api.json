@@ -225,7 +225,7 @@
       "status": "online"
     },
     "ExecuteScalingPolicy": {
-      "document": "本接口（ExecuteScalingPolicy）用于执行伸缩策略。\n\n* 可以根据伸缩策略ID执行伸缩策略。\n* 伸缩策略所属伸缩组处于伸缩活动时，会拒绝执行伸缩策略。",
+      "document": "本接口（ExecuteScalingPolicy）用于执行伸缩策略。\n\n* 可以根据伸缩策略ID执行伸缩策略。\n* 伸缩策略所属伸缩组处于伸缩活动时，会拒绝执行伸缩策略。\n* 本接口不支持执行目标追踪策略。",
       "input": "ExecuteScalingPolicyRequest",
       "name": "触发伸缩策略",
       "output": "ExecuteScalingPolicyResponse",
@@ -1314,7 +1314,6 @@
       "document": "CreateAutoScalingGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "伸缩组名称，在您账号中必须唯一。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超55个字节。",
           "example": "asgname",
           "member": "string",
@@ -1323,7 +1322,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "启动配置ID",
           "example": "asc-aaaabbbb",
           "member": "string",
@@ -1332,7 +1330,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "最大实例数，取值范围为0-2000。",
           "example": "1",
           "member": "uint64",
@@ -1341,7 +1338,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "最小实例数，取值范围为0-2000。",
           "example": "1",
           "member": "uint64",
@@ -1350,7 +1346,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "VPC ID，基础网络则填空字符串",
           "example": "vpc-aaaabbbb",
           "member": "string",
@@ -1359,7 +1354,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "默认冷却时间，单位秒，默认值为300",
           "example": "300",
           "member": "uint64",
@@ -1368,7 +1362,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "期望实例数，大小介于最小实例数和最大实例数之间",
           "example": "1",
           "member": "uint64",
@@ -1377,7 +1370,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
           "example": "[\"lb-aaaabbbb\"]",
           "member": "string",
@@ -1386,7 +1378,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "伸缩组内实例所属项目ID。不填为默认项目。",
           "example": "1",
           "member": "uint64",
@@ -1395,7 +1386,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "应用型负载均衡器列表，目前长度上限为100，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
           "example": "无",
           "member": "ForwardLoadBalancer",
@@ -1404,7 +1394,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "子网ID列表，VPC场景下必须指定子网。多个子网以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。",
           "example": "[\"subnet-xxxxbbbb\"]",
           "member": "string",
@@ -1413,7 +1402,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。\n<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。\n<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。",
           "example": "无",
           "member": "string",
@@ -1422,7 +1410,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "可用区列表，基础网络场景下必须指定可用区。多个可用区以填写顺序为优先级，依次进行尝试，直至可以成功创建实例。",
           "example": "[\"ap-beijing-1\"]",
           "member": "string",
@@ -1431,8 +1418,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。\n<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。",
+          "document": "重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。部分成功的伸缩活动判定为一次失败活动。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。\n<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。",
           "example": "IMMEDIATE_RETRY",
           "member": "string",
           "name": "RetryPolicy",
@@ -1440,7 +1426,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。\n\n可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。\n如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。",
           "example": "ALL",
           "member": "string",
@@ -1449,7 +1434,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签描述列表。通过指定该参数可以支持绑定标签到伸缩组。同时绑定标签到相应的资源实例。每个伸缩组最多支持30个标签。",
           "example": "无",
           "member": "Tag",
@@ -1458,7 +1442,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "服务设置，包括云监控不健康替换等服务设置。",
           "example": "无",
           "member": "ServiceSettings",
@@ -1467,7 +1450,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "实例具有IPv6地址数量的配置，取值包括 0、1，默认值为0。",
           "example": "1",
           "member": "int64",
@@ -1476,7 +1458,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "多可用区/子网策略，取值包括 PRIORITY 和 EQUALITY，默认为 PRIORITY。\n<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。\n<br><li> EQUALITY：扩容出的实例会打散到多个可用区/子网，保证扩容后的各个可用区/子网实例数相对均衡。\n\n与本策略相关的注意点：\n<br><li> 当伸缩组为基础网络时，本策略适用于多可用区；当伸缩组为VPC网络时，本策略适用于多子网，此时不再考虑可用区因素，例如四个子网ABCD，其中ABC处于可用区1，D处于可用区2，此时考虑子网ABCD进行排序，而不考虑可用区1、2。\n<br><li> 本策略适用于多可用区/子网，不适用于启动配置的多机型。多机型按照优先级策略进行选择。\n<br><li> 按照 PRIORITY 策略创建实例时，先保证多机型的策略，后保证多可用区/子网的策略。例如多机型A、B，多子网1、2、3，会按照A1、A2、A3、B1、B2、B3 进行尝试，如果A1售罄，会尝试A2（而非B1）。",
           "example": "PRIORITY ",
           "member": "string",
@@ -1485,7 +1466,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "伸缩组实例健康检查类型，取值如下：<br><li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)<br><li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097) <br>如果选择了`CLB`类型，伸缩组将同时检查实例网络状态与CLB健康检查状态，如果出现实例网络状态不健康，实例将被标记为 UNHEALTHY 状态；如果出现 CLB 健康检查状态异常，实例将被标记为CLB_UNHEALTHY 状态，如果两个异常状态同时出现，实例`HealthStatus`字段将返回 UNHEALTHY|CLB_UNHEALTHY。默认值：CLB",
           "example": "CLB",
           "member": "string",
@@ -1494,7 +1474,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CLB健康检查宽限期，当扩容的实例进入`IN_SERVICE`后，在宽限期时间范围内将不会被标记为不健康`CLB_UNHEALTHY`。<br>默认值：0。取值范围[0, 7200]，单位：秒。",
           "example": "0",
           "member": "uint64",
@@ -1503,7 +1482,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例分配策略，取值包括 LAUNCH_CONFIGURATION 和 SPOT_MIXED，默认取 LAUNCH_CONFIGURATION。\n<br><li> LAUNCH_CONFIGURATION，代表传统的按照启动配置模式。\n<br><li> SPOT_MIXED，代表竞价混合模式。目前仅支持启动配置为按量计费模式时使用混合模式，混合模式下，伸缩组将根据设定扩容按量或竞价机型。使用混合模式时，关联的启动配置的计费类型不可被修改。",
           "example": "LAUNCH_CONFIGURATION",
           "member": "string",
@@ -1512,7 +1490,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "竞价混合模式下，各计费类型实例的分配策略。\n仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时可用。",
           "example": "无",
           "member": "SpotMixedAllocationPolicy",
@@ -1521,7 +1498,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "容量重平衡功能，仅对伸缩组内的竞价实例有效。取值范围：\n<br><li> TRUE，开启该功能，当伸缩组内的竞价实例即将被竞价实例服务自动回收前，AS 主动发起竞价实例销毁流程，如果有配置过缩容 hook，则销毁前 hook 会生效。销毁流程启动后，AS 会异步开启一个扩容活动，用于补齐期望实例数。\n<br><li> FALSE，不开启该功能，则 AS 等待竞价实例被销毁后才会去扩容补齐伸缩组期望实例数。\n\n默认取 FALSE。",
           "example": "false",
           "member": "bool",
@@ -1540,7 +1516,6 @@
           "example": "asg-aaaaqqqq",
           "member": "string",
           "name": "AutoScalingGroupId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1989,7 +1964,6 @@
       "document": "CreateScalingPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "伸缩组ID。",
           "example": "asg-12wjuh0s",
           "member": "string",
@@ -1998,7 +1972,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警触发策略名称。",
           "example": "cpu_policy_test",
           "member": "string",
@@ -2007,35 +1980,31 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>",
-          "example": " CHANGE_IN_CAPACITY",
+          "document": "告警触发策略类型，默认类型为SIMPLE。取值范围：<br><li>SIMPLE：简单策略</li><li>TARGET_TRACKING：目标追踪策略</li>",
+          "example": "SIMPLE",
           "member": "string",
-          "name": "AdjustmentType",
-          "required": true,
+          "name": "ScalingPolicyType",
+          "required": false,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。",
+          "document": "告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>",
+          "example": "CHANGE_IN_CAPACITY",
+          "member": "string",
+          "name": "AdjustmentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "告警触发后，期望实例数的调整值，仅适用于简单策略。<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。",
           "example": "1",
           "member": "int64",
           "name": "AdjustmentValue",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
-          "default": "",
-          "document": "告警监控指标。",
-          "example": "无",
-          "member": "MetricAlarm",
-          "name": "MetricAlarm",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "冷却时间，单位为秒。默认冷却时间300秒。",
+          "document": "冷却时间，单位为秒，仅适用于简单策略。默认冷却时间300秒。",
           "example": "60",
           "member": "uint64",
           "name": "Cooldown",
@@ -2043,7 +2012,46 @@
           "type": "int"
         },
         {
-          "default": "",
+          "document": "告警监控指标，仅适用于简单策略。",
+          "example": "无",
+          "member": "MetricAlarm",
+          "name": "MetricAlarm",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>",
+          "example": "ASG_AVG_CPU_UTILIZATION",
+          "member": "string",
+          "name": "PredefinedMetricType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>",
+          "example": "10",
+          "member": "uint64",
+          "name": "TargetValue",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600，默认预热时间300秒。",
+          "example": "300",
+          "member": "uint64",
+          "name": "EstimatedInstanceWarmup",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "是否禁用缩容，仅适用于目标追踪策略，默认值为 false。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableScaleIn",
+          "required": false,
+          "type": "bool"
+        },
+        {
           "document": "此参数已不再生效，请使用[创建通知](https://cloud.tencent.com/document/api/377/33185)。\n通知组ID，即为用户组ID集合。",
           "example": "[\"1678\\n\"]",
           "member": "string",
@@ -2062,7 +2070,6 @@
           "example": "asp-iir70sxv",
           "member": "string",
           "name": "AutoScalingPolicyId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2981,7 +2988,6 @@
       "document": "DescribeScalingPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "按照一个或者多个告警策略ID查询。告警策略ID形如：asp-i9vkg894。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。",
           "example": "[\"asp-5zffv598\\n\"]",
           "member": "string",
@@ -2990,8 +2996,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "过滤条件。\n<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> scaling-policy-name - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。",
+          "document": "过滤条件。\n<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> scaling-policy-name - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>\n<li> scaling-policy-type - String - 是否必填：否 -（过滤条件）按照告警策略类型过滤，取值范围为SIMPLE，TARGET_TRACKING。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2999,7 +3004,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "uint64",
@@ -3008,7 +3012,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "uint64",
@@ -3027,7 +3030,6 @@
           "example": "无",
           "member": "ScalingPolicy",
           "name": "ScalingPolicySet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3036,7 +3038,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3400,8 +3401,7 @@
       "document": "ExecuteScalingPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "告警伸缩策略ID",
+          "document": "告警伸缩策略ID，不支持目标追踪策略。",
           "example": "asp-f59pppuh",
           "member": "string",
           "name": "AutoScalingPolicyId",
@@ -3409,7 +3409,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否检查伸缩组活动处于冷却时间内，默认值为false",
           "example": "false",
           "member": "bool",
@@ -3418,7 +3417,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。",
           "example": "API",
           "member": "string",
@@ -3437,7 +3435,6 @@
           "example": "asa-o4v87ae9",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3739,6 +3736,15 @@
           "example": "测试asg-01_2.3",
           "member": "string",
           "name": "AutoScalingGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预热状态，取值如下：\n<li>WAITING_ENTER_WARMUP：等待进入预热\n<li>NO_NEED_WARMUP：无需预热\n<li>IN_WARMUP：预热中\n<li>AFTER_WARMUP：完成预热",
+          "example": "IN_WARMUP",
+          "member": "string",
+          "name": "WarmupStatus",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4528,8 +4534,8 @@
       "document": "弹性伸缩告警指标",
       "members": [
         {
-          "default": "",
           "document": "比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>",
+          "example": "GREATER_THAN",
           "member": "string",
           "name": "ComparisonOperator",
           "required": true,
@@ -4537,8 +4543,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li>",
+          "example": "CPU_UTILIZATION",
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -4546,8 +4552,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li>",
+          "example": "10",
           "member": "uint64",
           "name": "Threshold",
           "required": true,
@@ -4555,8 +4561,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "时间周期，单位：秒，取值枚举值为60、300。",
+          "example": "60",
           "member": "uint64",
           "name": "Period",
           "required": true,
@@ -4564,8 +4570,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "重复次数。取值范围 [1, 10]",
+          "example": "3",
           "member": "uint64",
           "name": "ContinuousTime",
           "required": true,
@@ -4573,12 +4579,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE",
+          "example": "AVERAGE",
           "member": "string",
           "name": "Statistic",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li>",
+          "example": "10.123",
+          "member": "float",
+          "name": "PreciseThreshold",
+          "required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -4684,7 +4699,7 @@
           "type": "list"
         },
         {
-          "document": "重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。\n<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。\n<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。",
+          "document": "重试策略，取值包括 IMMEDIATE_RETRY、 INCREMENTAL_INTERVALS、NO_RETRY，默认取值为 IMMEDIATE_RETRY。部分成功的伸缩活动判定为一次失败活动。\n<br><li>\nIMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。\n<br><li>\nINCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。\n<br><li> NO_RETRY，不进行重试，直到再次收到用户调用或者告警信息后才会重试。",
           "example": "IMMEDIATE_RETRY",
           "member": "string",
           "name": "RetryPolicy",
@@ -5304,7 +5319,6 @@
       "document": "ModifyScalingPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "告警策略ID。",
           "example": "asp-iir70sxv",
           "member": "string",
@@ -5313,7 +5327,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警策略名称。",
           "example": "cpu_policy_test",
           "member": "string",
@@ -5322,8 +5335,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>",
+          "document": "告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>",
           "example": "CHANGE_IN_CAPACITY",
           "member": "string",
           "name": "AdjustmentType",
@@ -5331,8 +5343,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。",
+          "document": "告警触发后，期望实例数的调整值，仅适用于简单策略。<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。",
           "example": "1",
           "member": "int64",
           "name": "AdjustmentValue",
@@ -5340,8 +5351,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "冷却时间，单位为秒。",
+          "document": "冷却时间，仅适用于简单策略，单位为秒。",
           "example": "60",
           "member": "uint64",
           "name": "Cooldown",
@@ -5349,8 +5359,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "告警监控指标。",
+          "document": "告警监控指标，仅适用于简单策略。",
           "example": "无",
           "member": "MetricAlarm",
           "name": "MetricAlarm",
@@ -5358,7 +5367,38 @@
           "type": "object"
         },
         {
-          "default": "",
+          "document": "预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>",
+          "example": "ASG_AVG_CPU_UTILIZATION",
+          "member": "string",
+          "name": "PredefinedMetricType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>",
+          "example": "10",
+          "member": "uint64",
+          "name": "TargetValue",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。",
+          "example": "300",
+          "member": "uint64",
+          "name": "EstimatedInstanceWarmup",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableScaleIn",
+          "required": false,
+          "type": "bool"
+        },
+        {
           "document": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。\n如果需要清空通知用户组，需要在列表中传入特定字符串 \"NULL\"。",
           "example": "[\"1678\\n\"]",
           "member": "string",
@@ -5692,8 +5732,8 @@
       "document": "告警触发策略。",
       "members": [
         {
-          "default": "",
           "document": "伸缩组ID。",
+          "example": "asg-12345678",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -5701,8 +5741,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "告警触发策略ID。",
+          "example": "asp-12345678",
           "member": "string",
           "name": "AutoScalingPolicyId",
           "required": true,
@@ -5710,8 +5750,17 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "document": "告警触发策略类型。取值：\n- SIMPLE：简单策略\n- TARGET_TRACKING：目标追踪策略",
+          "example": "SIMPLE",
+          "member": "string",
+          "name": "ScalingPolicyType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "告警触发策略名称。",
+          "example": "test-asp",
           "member": "string",
           "name": "ScalingPolicyName",
           "required": true,
@@ -5719,8 +5768,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>",
+          "document": "告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>",
+          "example": "CHANGE_IN_CAPACITY",
           "member": "string",
           "name": "AdjustmentType",
           "required": true,
@@ -5728,8 +5777,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "告警触发后，期望实例数的调整值。",
+          "document": "告警触发后，期望实例数的调整值，仅适用于简单策略。",
+          "example": "2",
           "member": "int64",
           "name": "AdjustmentValue",
           "required": true,
@@ -5737,8 +5786,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "冷却时间。",
+          "document": "冷却时间，仅适用于简单策略。",
+          "example": "60",
           "member": "uint64",
           "name": "Cooldown",
           "required": true,
@@ -5746,8 +5795,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "告警监控指标。",
+          "document": "简单告警触发策略告警监控指标，仅适用于简单策略。",
+          "example": "{}",
           "member": "MetricAlarm",
           "name": "MetricAlarm",
           "required": true,
@@ -5755,8 +5804,53 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "document": "预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ASG_AVG_CPU_UTILIZATION",
+          "member": "string",
+          "name": "PredefinedMetricType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TargetValue",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "uint64",
+          "name": "EstimatedInstanceWarmup",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableScaleIn",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "告警监控指标列表，仅适用于目标追踪策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MetricAlarm",
+          "name": "MetricAlarms",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "通知组ID，即为用户组ID集合。",
+          "example": "[]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": true,

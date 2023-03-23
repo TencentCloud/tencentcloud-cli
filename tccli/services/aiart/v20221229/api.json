@@ -90,7 +90,7 @@
           "type": "object"
         },
         {
-          "document": "生成自由度。\nStrength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.6。",
+          "document": "生成自由度。\nStrength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。",
           "example": "无",
           "member": "float",
           "name": "Strength",

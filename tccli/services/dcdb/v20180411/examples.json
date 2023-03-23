@@ -384,9 +384,9 @@
     ],
     "ModifyDBEncryptAttributes": [
       {
-        "document": "",
+        "document": "用户开启实例的透明加密",
         "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBEncryptAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-xxx\",\n    \"EncryptEnabled\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"afb70c41-025e-4cec-bec3-6207a5d635d6\"\n    }\n}",
         "title": "无"
       }
     ],

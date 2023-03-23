@@ -257,7 +257,6 @@
       "document": "快照策略信息",
       "members": [
         {
-          "default": "",
           "document": "快照策略ID",
           "example": "asp-xx",
           "member": "string",
@@ -267,7 +266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照策略ID",
           "example": "xx",
           "member": "string",
@@ -277,7 +275,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照策略创建时间",
           "example": "xx",
           "member": "string",
@@ -287,7 +284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关联的文件系统个数",
           "example": "2",
           "member": "uint64",
@@ -297,8 +293,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "快照定期备份在一星期哪一天",
+          "document": "快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥",
           "example": "['1','2']",
           "member": "string",
           "name": "DayOfWeek",
@@ -307,7 +302,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照定期备份在一天的哪一小时",
           "example": "['3','4']",
           "member": "string",
@@ -317,7 +311,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否激活定期快照功能",
           "example": "1",
           "member": "uint64",
@@ -327,7 +320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "下一次触发快照时间",
           "example": "xx",
           "member": "string",
@@ -337,7 +329,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快照策略状态",
           "example": "1",
           "member": "string",
@@ -347,7 +338,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帐号ID",
           "example": "122445",
           "member": "uint64",
@@ -357,7 +347,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "保留时间",
           "example": "3",
           "member": "uint64",
@@ -367,7 +356,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地域",
           "example": "xx",
           "member": "string",
@@ -377,7 +365,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统信息",
           "example": "112",
           "member": "FileSystemByPolicy",
@@ -385,6 +372,24 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "'1,2,3,4'",
+          "member": "string",
+          "name": "DayOfMonth",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "IntervalDays",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -552,7 +557,6 @@
       "document": "BindAutoSnapshotPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "快照策略ID",
           "example": "asp-xx",
           "member": "string",
@@ -561,7 +565,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统列表",
           "example": "cfs-abc,cfs-bdc.",
           "member": "string",
@@ -580,7 +583,6 @@
           "example": "asp-xx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -597,16 +599,6 @@
       "document": "CreateAutoSnapshotPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "快照重复日期，星期一到星期日",
-          "example": "xx",
-          "member": "string",
-          "name": "DayOfWeek",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "快照重复时间点",
           "example": "xx",
           "member": "string",
@@ -615,7 +607,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "策略名称",
           "example": "xx",
           "member": "string",
@@ -624,11 +615,34 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "快照重复日期，星期一到星期日",
+          "example": "xx",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": false,
+          "type": "string"
+        },
+        {
           "document": "快照保留时长",
           "example": "3",
           "member": "uint64",
           "name": "AliveDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "快照按月重复，每月1-31号，选择一天，每月这一天打快照。",
+          "example": "无",
+          "member": "string",
+          "name": "DayOfMonth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "间隔天数",
+          "example": "无",
+          "member": "uint64",
+          "name": "IntervalDays",
           "required": false,
           "type": "int"
         }
@@ -643,7 +657,6 @@
           "example": "asp-xx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3042,7 +3055,6 @@
       "document": "UpdateAutoSnapshotPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "快照策略ID",
           "example": "asp-xx",
           "member": "string",
@@ -3051,7 +3063,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "快照策略名称",
           "example": "xx",
           "member": "string",
@@ -3060,7 +3071,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "快照定期备份在一星期哪一天",
           "example": "['0','1']",
           "member": "string",
@@ -3069,7 +3079,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "快照定期备份在一天的哪一小时",
           "example": "['0','1']",
           "member": "string",
@@ -3078,7 +3087,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "快照保留日期",
           "example": "20",
           "member": "uint64",
@@ -3087,11 +3095,26 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否激活定期快照功能",
           "example": "0",
           "member": "uint64",
           "name": "IsActivated",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "定期快照在月的某几天天，该参数与DayOfWeek互斥",
+          "example": "'1,3,4,10'",
+          "member": "string",
+          "name": "DayOfMonth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "间隔天数定期执行快照，该参数与DayOfWeek,DayOfMonth 互斥",
+          "example": "1",
+          "member": "uint64",
+          "name": "IntervalDays",
           "required": false,
           "type": "int"
         }
@@ -3106,7 +3129,6 @@
           "example": "asp-xx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

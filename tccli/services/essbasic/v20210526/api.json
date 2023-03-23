@@ -3937,6 +3937,24 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1\n查看合同的签署方式 Flow层级的优先于approver层级的",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "ApproverVerifyTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签署人签署合同时的认证方式\n1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "ApproverSignTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -4064,6 +4082,15 @@
           "member": "FlowApproverDetail",
           "name": "FlowApproverInfos",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "合同(流程)关注方信息列表",
+          "example": "无",
+          "member": "FlowApproverDetail",
+          "name": "CcInfos",
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         }
