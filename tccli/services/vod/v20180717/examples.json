@@ -144,7 +144,7 @@
     ],
     "CreateHeadTailTemplate": [
       {
-        "document": "",
+        "document": "创建片头片尾模板。",
         "input": "https://vod.tencentcloudapi.com/?Action=CreateHeadTailTemplate\n&Name=模板名\n&Comment=模板描述\n&HeadCandidateSet.0=1234422xxxx123\n&TailCandidateSet.0=1234422xxxx124\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1000,\n        \"RequestId\": \"12ae8d8e-xxxx-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建片头片尾模板"
@@ -152,16 +152,16 @@
     ],
     "CreateImageProcessingTemplate": [
       {
-        "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateImageProcessingTemplate\n&Operations.0.Type=Scale\n&Operations.0.Scale.Type=ShortEdgeFirst\n&Operations.0.Scale.ShortEdge=120\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "创建短边缩放模板"
-      },
-      {
-        "document": "",
+        "document": "创建240x240缩略图的图片即时处理模板。",
         "input": "https://vod.tencentcloudapi.com/?Action=CreateImageProcessingTemplate\n&Operations.0.Type=Scale\n&Operations.0.Scale.Type=ShortEdgeFirst\n&Operations.0.Scale.ShortEdge=240\n&Operations.1.Type=CenterCut\n&Operations.1.CenterCut.Type=Rectangle\n&Operations.1.CenterCut.Width=240\n&Operations.1.CenterCut.Height=240\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1009,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "创建240x240缩略图"
+        "title": "创建240x240缩略图的图片即时处理模板"
+      },
+      {
+        "document": "创建短边缩放的图片即时处理模板。",
+        "input": "https://vod.tencentcloudapi.com/?Action=CreateImageProcessingTemplate\n&Operations.0.Type=Scale\n&Operations.0.Scale.Type=ShortEdgeFirst\n&Operations.0.Scale.ShortEdge=120\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建短边缩放的图片即时处理模板"
       }
     ],
     "CreateImageSpriteTemplate": [
@@ -676,10 +676,10 @@
     ],
     "DescribeImageProcessingTemplates": [
       {
-        "document": "",
+        "document": "查询图片即时处理模板。",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeImageProcessingTemplates\n&Definitions.0=1008\n&Definitions.1=1009\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ImageProcessingTemplateSet\": [\n            {\n                \"Definition\": 1008,\n                \"Comment\": \"\",\n                \"Name\": \"\",\n                \"Type\": \"Custom\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Operations\": [\n                    {\n                        \"Type\": \"CenterCut\",\n                        \"CenterCut\": {\n                            \"Type\": \"Circle\",\n                            \"Radius\": 30\n                        }\n                    },\n                    {\n                        \"Type\": \"Scale\",\n                        \"Scale\": {\n                            \"Type\": \"ShortEdgeFirst\",\n                            \"ShortEdge\": 100\n                        }\n                    }\n                ]\n            },\n            {\n                \"Definition\": 1009,\n                \"Comment\": \"\",\n                \"Name\": \"\",\n                \"Type\": \"Custom\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Operations\": [\n                    {\n                        \"Type\": \"Scale\",\n                        \"Scale\": {\n                            \"Type\": \"WidthFirst\",\n                            \"Width\": 200\n                        }\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "读取多个模板"
+        "title": "查询图片即时处理模板"
       }
     ],
     "DescribeImageReviewUsageData": [
@@ -1128,7 +1128,7 @@
     ],
     "ModifyHeadTailTemplate": [
       {
-        "document": "",
+        "document": "修改片头片尾模板。",
         "input": "https://vod.tencentcloudapi.com/?Action=ModifyHeadTailTemplate\n&Definition=10000\n&Name=模板1\n&HeadCandidateSet.0=1234422xxxx123\n&TailCandidateSet.0=1234422xxxx124\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-xxxx-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改片头片尾模板"

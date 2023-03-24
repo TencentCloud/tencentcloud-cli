@@ -1184,7 +1184,6 @@
       "document": "CreateNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "命名空间名称",
           "example": "test",
           "member": "string",
@@ -1193,7 +1192,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "命名空间描述",
           "example": "test",
           "member": "string",
@@ -3225,7 +3223,6 @@
       "document": "TCR镜像信息描述",
       "members": [
         {
-          "default": "",
           "document": "镜像仓库类型，个人版或者企业版：personal/enterprise",
           "example": "enterprise",
           "member": "string",
@@ -3235,7 +3232,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "{domain}/{namespace}/{imageName}:{tag}@{digest}",
           "example": "tcr.tencentcloudcr.com/namespace/test:latest",
           "member": "string",
@@ -3245,7 +3241,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用于企业版TCR获取镜像拉取临时凭证，ImageType为\"enterprise\"时必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcr-xxx",
           "member": "string",
@@ -3255,7 +3250,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "参数已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"entrypoint.sh\"",
           "member": "string",
@@ -3265,7 +3259,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -3275,7 +3268,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"'",
           "member": "string",
@@ -3285,13 +3277,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "镜像加速开关，默认False\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "False",
           "member": "bool",
           "name": "ContainerImageAccelerate",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像函数端口设置\n-1: 无端口镜像函数\n0: 默认端口，当前默认端口是9000\n其他: 特殊端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9000",
+          "member": "int64",
+          "name": "ImagePort",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

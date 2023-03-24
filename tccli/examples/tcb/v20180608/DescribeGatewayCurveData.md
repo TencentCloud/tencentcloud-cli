@@ -1,15 +1,15 @@
 **Example 1: 查询网关监控数据实例**
 
-
+查询网关监控数据实例
 
 Input: 
 
 ```
 tccli tcb DescribeGatewayCurveData --cli-unfold-argument  \
-    --EnvId xxx \
-    --GatewayId xxxx \
-    --GatewayVersion xx \
-    --GatewayRoute xxx \
+    --EnvId envId \
+    --GatewayId gatewayId \
+    --GatewayVersion version-001 \
+    --GatewayRoute route \
     --MetricName GwHttp404 \
     --StartTime 2022-02-22 20:08:10 \
     --EndTime 2022-02-22 20:18:10
@@ -24,14 +24,14 @@ Output:
             0,
             0
         ],
-        "RequestId": "xx",
-        "StartTime": "xx",
+        "RequestId": "req",
+        "StartTime": "2022-02-22 20:08:10",
         "Time": [
             1640845840,
             1640845841
         ],
-        "EndTime": "xx",
-        "MetricName": "xx"
+        "EndTime": "2022-02-22 20:18:10",
+        "MetricName": "GwHttp404"
     }
 }
 ```

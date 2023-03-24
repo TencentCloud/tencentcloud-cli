@@ -84,6 +84,13 @@
       "output": "DeleteTransformationResponse",
       "status": "online"
     },
+    "DescribeLogTagValue": {
+      "document": "查询日志索引维度值",
+      "input": "DescribeLogTagValueRequest",
+      "name": "查询日志索引维度值",
+      "output": "DescribeLogTagValueResponse",
+      "status": "online"
+    },
     "GetEventBus": {
       "document": "获取事件集详情",
       "input": "GetEventBusRequest",
@@ -145,6 +152,13 @@
       "input": "PutEventsRequest",
       "name": "事件投递",
       "output": "PutEventsResponse",
+      "status": "online"
+    },
+    "SearchLog": {
+      "document": "日志检索",
+      "input": "SearchLogRequest",
+      "name": "日志检索",
+      "output": "SearchLogResponse",
       "status": "online"
     },
     "UpdateConnection": {
@@ -1076,6 +1090,88 @@
       ],
       "type": "object"
     },
+    "DescribeLogTagValueRequest": {
+      "document": "DescribeLogTagValue请求参数结构体",
+      "members": [
+        {
+          "document": "起始时间",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "结束时间",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "事件集ID",
+          "example": "eb-xxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "聚合字段",
+          "example": "无",
+          "member": "string",
+          "name": "GroupField",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "页数",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "每页数据大小",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "筛选条件",
+          "example": "无",
+          "member": "LogFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogTagValueResponse": {
+      "document": "DescribeLogTagValue返回参数结构体",
+      "members": [
+        {
+          "document": "索引检索维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Results",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ESTargetParams": {
       "document": "描述Es规则目标",
       "members": [
@@ -1979,6 +2075,90 @@
       ],
       "type": "object"
     },
+    "LogFilter": {
+      "document": "日志查询相关接口filter参数定义",
+      "members": [
+        {
+          "document": "过滤字段名称",
+          "example": "status",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运算符，全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange",
+          "example": "eq",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "过滤值,范围运算需要同时输入两个值，以英文逗号分隔\n",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "该层级filters逻辑关系，取值 \"AND\" 或 \"OR\"",
+          "example": "AND",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "LogFilters数组",
+          "example": "无",
+          "member": "LogFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "LogFilters": {
+      "document": "日志存储过滤条件",
+      "members": [
+        {
+          "document": "过滤字段名称",
+          "example": "status",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运算符, 全等 eq，不等 neq，相似 like，排除相似 not like,  小于 lt，小于且等于 lte，大于 gt，大于且等于 gte，在范围内 range，不在范围内 norange",
+          "example": "eq",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "过滤值，范围运算需要同时输入两个值，以英文逗号分隔\n",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "OutputStructParam": {
       "document": "Transform输出参数",
       "members": [
@@ -2254,6 +2434,198 @@
         }
       ],
       "usage": "in"
+    },
+    "SearchLogRequest": {
+      "document": "SearchLog请求参数结构体",
+      "members": [
+        {
+          "document": "起始时间unix 毫秒时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "结束时间unix 毫秒时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "事件集ID",
+          "example": "eb-xxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "每页数据大小",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "筛选条件",
+          "example": "无",
+          "member": "LogFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "排序数组",
+          "example": "无",
+          "member": "string",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "排序方式，asc 从旧到新，desc 从新到旧",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchLogResponse": {
+      "document": "SearchLog返回参数结构体",
+      "members": [
+        {
+          "document": "日志总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "每页日志条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志检索结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogResult",
+          "name": "Results",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchLogResult": {
+      "document": "日志检索详情",
+      "members": [
+        {
+          "document": "单条日志上报时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Timestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志内容详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "事件来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "事件匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rule-xxxx",
+          "member": "string",
+          "name": "RuleIds",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xxxx",
+          "member": "string",
+          "name": "Subject",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "事件状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Target": {
       "document": "Target信息",

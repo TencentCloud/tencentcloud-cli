@@ -88,6 +88,14 @@
         "title": "创建API限流规则"
       }
     ],
+    "CreateApiRateLimitRuleWithDetailResp": [
+      {
+        "document": "创建新的 API 分组限流规则",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiRateLimitRuleWithDetailResp\n<公共请求参数>\n\n{\n    \"ApiId\": \"api-xxxxxxx\",\n    \"UsableStatus\": \"enable\",\n    \"MaxQps\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"RuleId\": \"ruleId-xxxx\",\n            \"ApiId\": \"abc\",\n            \"RuleName\": \"null\",\n            \"MaxQps\": 1,\n            \"UsableStatus\": \"enable\",\n            \"RuleContent\": \"xxx\",\n            \"TsfRuleId\": \"tsfRuleId-xxx\",\n            \"Description\": \"null\",\n            \"CreatedTime\": \"xxxx-xx-xx\",\n            \"UpdatedTime\": \"xxxx-xx-xx\"\n        },\n        \"RequestId\": \"xxxxxxxxxxx\"\n    }\n}",
+        "title": "创建新 API 分组限流规则"
+      }
+    ],
     "CreateApplication": [
       {
         "document": "",
@@ -118,6 +126,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=CreateConfigTemplate\n&ConfigTemplateName=配置1\n&ConfigTemplateDesc=11111111111\n&ConfigTemplateType=Ribbon\n&ConfigTemplateValue=#请求处理超时时间\nribbon.ReadTimeout: 5000\n#请求连接超时时间\nribbon.ConnectTimeout: 2000\n#同一实例最大重试次数，不包括首次调用\nribbon.MaxAutoRetries: 0\n#重试其他实例的最大重试次数，不包括首次所选的server\nribbon.MaxAutoRetriesNextServer: 1\n#是否对所有操作请求都进行重试\nribbon.OkToRetryOnAllOperations: false\n\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"841f10d8-24e7-471b-ad8a-b401d9dcbe70\",\n        \"Result\": true\n    }\n}",
         "title": "配置模板创建"
+      }
+    ],
+    "CreateConfigTemplateWithDetailResp": [
+      {
+        "document": "创建配置模版",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigTemplateWithDetailResp\n<公共请求参数>\n\n{\n    \"ConfigTemplateName\": \"abc\",\n    \"ConfigTemplateDesc\": \"abc\",\n    \"ConfigTemplateType\": \"abc\",\n    \"ConfigTemplateValue\": \"abc\",\n    \"ProgramIdList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigTemplateId\": \"abc\",\n            \"ConfigTemplateName\": \"abc\",\n            \"ConfigTemplateDesc\": \"abc\",\n            \"ConfigTemplateType\": \"abc\",\n            \"ConfigTemplateValue\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"UpdateTime\": \"abc\"\n        },\n        \"RequestId\": \"xxxxxxxxxxx\"\n    }\n}",
+        "title": "创建配置模版"
       }
     ],
     "CreateContainGroup": [
@@ -200,11 +216,27 @@
         "title": "创建路径重写"
       }
     ],
+    "CreatePathRewritesWithDetailResp": [
+      {
+        "document": "创建路径重写规则",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePathRewritesWithDetailResp\n<公共请求参数>\n\n{\n    \"PathRewrites\": [\n        {\n            \"GatewayGroupId\": \"abc\",\n            \"Regex\": \"abc\",\n            \"Replacement\": \"abc\",\n            \"Blocked\": \"abc\",\n            \"Order\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "批量创建路径重写"
+      }
+    ],
     "CreatePublicConfig": [
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=CreatePublicConfig\n&ConfigName=testconfig\n&ConfigVersion=1.3\n&ConfigValue=tsf.inventory.password.encrypt2:%20ENC(3M7wGw2XtFc5Y+rxOgNBLrm2spUtgodjIxa+7F3XcAo=)\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d600e1f-87c3-4aa6-afa5-a4f8330fa181\",\n        \"Result\": true\n    }\n}",
+        "title": "创建公共配置项"
+      }
+    ],
+    "CreatePublicConfigWithDetailResp": [
+      {
+        "document": "创建公共配置项",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePublicConfigWithDetailResp\n<公共请求参数>\n\n{\n    \"ConfigName\": \"abc\",\n    \"ConfigVersion\": \"abc\",\n    \"ConfigVersionDesc\": \"abc\",\n    \"ConfigValue\": \"abc\",\n    \"ConfigType\": \"abc\",\n    \"EncodeWithBase64\": true,\n    \"ProgramIdList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigId\": \"abc\",\n            \"ConfigName\": \"abc\",\n            \"ConfigVersion\": \"abc\",\n            \"ConfigVersionDesc\": \"abc\",\n            \"ConfigValue\": \"abc\",\n            \"ConfigType\": \"abc\",\n            \"CreationTime\": \"abc\",\n            \"ApplicationId\": \"abc\",\n            \"ApplicationName\": \"abc\",\n            \"DeleteFlag\": true,\n            \"LastUpdateTime\": \"abc\",\n            \"ConfigVersionCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建公共配置项"
       }
     ],
@@ -240,12 +272,28 @@
         "title": "创建单元化规则"
       }
     ],
+    "CreateUnitRuleWithDetailResp": [
+      {
+        "document": "创建单元化规则",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUnitRuleWithDetailResp\n<公共请求参数>\n\n{\n    \"GatewayInstanceId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Description\": \"abc\",\n    \"UnitRuleItemList\": [\n        {\n            \"Id\": \"abc\",\n            \"UnitRuleId\": \"abc\",\n            \"Relationship\": \"abc\",\n            \"DestNamespaceId\": \"abc\",\n            \"DestNamespaceName\": \"abc\",\n            \"Name\": \"abc\",\n            \"Priority\": 0,\n            \"Description\": \"abc\",\n            \"UnitRuleTagList\": [\n                {\n                    \"UnitRuleItemId\": \"abc\",\n                    \"Id\": \"abc\",\n                    \"TagType\": \"abc\",\n                    \"TagField\": \"abc\",\n                    \"TagOperator\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Id\": \"abc\",\n            \"GatewayInstanceId\": \"abc\",\n            \"Name\": \"abc\",\n            \"Description\": \"abc\",\n            \"Status\": \"abc\",\n            \"UnitRuleItemList\": [\n                {\n                    \"Id\": \"abc\",\n                    \"UnitRuleId\": \"abc\",\n                    \"Relationship\": \"abc\",\n                    \"DestNamespaceId\": \"abc\",\n                    \"DestNamespaceName\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Priority\": 0,\n                    \"Description\": \"abc\",\n                    \"UnitRuleTagList\": [\n                        {\n                            \"UnitRuleItemId\": \"abc\",\n                            \"Id\": \"abc\",\n                            \"TagType\": \"abc\",\n                            \"TagField\": \"abc\",\n                            \"TagOperator\": \"abc\",\n                            \"TagValue\": \"abc\"\n                        }\n                    ]\n                }\n            ],\n            \"CreatedTime\": \"abc\",\n            \"UpdatedTime\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建单元化规则"
+      }
+    ],
     "DeleteApiGroup": [
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DeleteApiGroup\n&GroupId=grp-5yk7oor1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
         "title": "删除Api分组"
+      }
+    ],
+    "DeleteApiRateLimitRule": [
+      {
+        "document": "删除单元化规则",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApiRateLimitRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除单元化规则"
       }
     ],
     "DeleteApplication": [
@@ -1044,6 +1092,14 @@
         "title": "获取仓库信息"
       }
     ],
+    "DescribeResourceTaskStatus": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeResourceTaskStatus\n&TaskId=task-57xee9nb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d227ab41-d339-441c-a71a-89e4b8304716\",\n        \"Result\": {\n            \"TaskStatus\": 2\n        }\n    }\n}",
+        "title": "获取资源任务的执行状态"
+      }
+    ],
     "DescribeSimpleApplications": [
       {
         "document": "",
@@ -1425,6 +1481,14 @@
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=ReleaseConfig\n&ConfigId=dcfg-zvw6kxa8\n&GroupId=group-nalqbgvq\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"36ccafba-c8ab-4d15-a4f1-4cfd2070d1d3\",\n        \"Result\": true\n    }\n}",
+        "title": "发布配置"
+      }
+    ],
+    "ReleaseConfigWithDetailResp": [
+      {
+        "document": "将一个应用配置项发布到指定的应用部署组",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: actionName\n<公共请求参数>\n\n{\n    \"ConfigId\": \"configId-xxxxxxx\",\n    \"GroupId\": \"gourp-xxxxxx\",\n    \"ReleaseDesc\": \"demo config realse\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigReleaseId\": \"dcfgr-xxxxxx\",\n            \"ConfigId\": \"null\",\n            \"ConfigName\": \"null\",\n            \"ConfigVersion\": \"null\",\n            \"ReleaseTime\": \"null\",\n            \"GroupId\": \"null\",\n            \"GroupName\": \"null\",\n            \"NamespaceId\": \"null\",\n            \"NamespaceName\": \"null\",\n            \"ClusterId\": \"null\",\n            \"ClusterName\": \"null\",\n            \"ReleaseDesc\": \"null\",\n            \"ApplicationId\": \"null\"\n        },\n        \"RequestId\": \"36ccafba-c8ab-4d15-a4f1-4cfd2070d1d3\"\n    }\n}",
         "title": "发布配置"
       }
     ],

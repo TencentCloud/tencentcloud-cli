@@ -208,7 +208,7 @@
     ],
     "DescribeInstanceDealDetail": [
       {
-        "document": "",
+        "document": "查询订单信息",
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceDealDetail\n&DealIds.0=6959052\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DealDetails\": [\n            {\n                \"DealId\": \"6959052\",\n                \"DealName\": \"20181101110365\",\n                \"ZoneId\": 100002,\n                \"GoodsNum\": 1,\n                \"Creater\": \"1817983094\",\n                \"CreatTime\": \"2018-11-01 21:12:05\",\n                \"OverdueTime\": \"2018-11-16 21:12:05\",\n                \"EndTime\": \"2018-11-01 21:13:18\",\n                \"Status\": 4,\n                \"Description\": \"发货成功\",\n                \"Price\": 91949,\n                \"InstanceIds\": [\n                    \"crs-bz8prb7x\"\n                ]\n            }\n        ],\n        \"RequestId\": \"5d739ed7-af13-489f-b005-aaa57aeaf022\"\n    }\n}",
         "title": "请求示例"
@@ -400,10 +400,10 @@
     ],
     "DescribeSSLStatus": [
       {
-        "document": "",
+        "document": "查询实例 SSL 认证信息",
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeSSLStatus\n&InstanceId=crs-2btr9ryn\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"FeatureSupport\": false,\n        \"UrlExpiredTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"CertDownloadUrl\": \"xx\",\n        \"SSLConfig\": true\n    }\n}",
-        "title": "查询SSL状态实例"
+        "output": "{\n    \"Response\": {\n        \"CertDownloadUrl\": \"abc\",\n        \"UrlExpiredTime\": \"abc\",\n        \"SSLConfig\": true,\n        \"FeatureSupport\": true,\n        \"Status\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DescribeSlowLog": [
@@ -520,7 +520,7 @@
     ],
     "ModfiyInstancePassword": [
       {
-        "document": "",
+        "document": "重置实例密码",
         "input": "https://redis.tencentcloudapi.com/?Action=ModfiyInstancePassword\n&InstanceId=crs-5a4py64p\n&OldPassword=zy456987\n&Password=456987zy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cca16225-a169-4f11-b1cf-13398200f604\",\n        \"TaskId\": 16661\n    }\n}",
         "title": "请求示例"

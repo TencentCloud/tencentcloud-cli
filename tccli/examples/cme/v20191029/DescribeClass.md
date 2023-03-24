@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cme DescribeClass --cli-unfold-argument  \
-    --Platform test \
+    --Owner.Type PERSON \
     --Owner.Id 1111 \
-    --Owner.Type PERSON
+    --Platform test
 ```
 
 Output: 

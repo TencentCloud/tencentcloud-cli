@@ -3070,8 +3070,8 @@
       "document": "扩展数据",
       "members": [
         {
-          "default": "",
           "document": "释放地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "ReleaseAddress",
           "required": false,
@@ -3079,8 +3079,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "不支持的网络类型，取值范围：<br><li>BASIC：基础网络<br><li>VPC1.0：私有网络VPC1.0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UnsupportNetworks",
           "required": false,
@@ -3088,8 +3088,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "HDD本地存储属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "StorageBlock",
           "name": "StorageBlockAttr",
           "required": false,
@@ -3216,25 +3216,25 @@
       "document": "竞价请求相关选项",
       "members": [
         {
-          "default": "",
-          "document": "竞价相关选项",
+          "document": "竞价相关选项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SpotMarketOptions",
           "name": "SpotOptions",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "spot",
-          "document": "市场选项类型，当前只支持取值：spot",
+          "document": "市场选项类型，当前只支持取值：spot\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MarketType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "InstanceTypeConfig": {
       "document": "批量计算可用的InstanceTypeConfig信息",

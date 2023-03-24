@@ -6945,7 +6945,6 @@
       "document": "DescribeGatewayCurveData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境id",
           "example": "env-xxx",
           "member": "string",
@@ -6954,7 +6953,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "网关id",
           "example": "gate-xxx",
           "member": "string",
@@ -6963,8 +6961,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502",
+          "document": "监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502 GwConnect GwCircuit",
           "example": "GWQps",
           "member": "string",
           "name": "MetricName",
@@ -6972,7 +6969,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "监控起始时间",
           "example": "2022-02-22 20:08:10",
           "member": "string",
@@ -6981,7 +6977,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "监控结束时间",
           "example": "2022-02-22 20:08:10",
           "member": "string",
@@ -6990,7 +6985,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "网关版本",
           "example": "version-xxx",
           "member": "string",
@@ -6999,7 +6993,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "网关路由名称",
           "example": "xxxx",
           "member": "string",
@@ -7018,7 +7011,6 @@
           "example": "GWQps",
           "member": "string",
           "name": "MetricName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7027,7 +7019,6 @@
           "example": "2022-02-22 20:08:10",
           "member": "string",
           "name": "StartTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7036,7 +7027,6 @@
           "example": "2022-02-22 20:08:10",
           "member": "string",
           "name": "EndTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7045,7 +7035,6 @@
           "example": "10",
           "member": "int64",
           "name": "Period",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7054,7 +7043,6 @@
           "example": "[10,20,30]",
           "member": "float",
           "name": "Values",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7063,7 +7051,6 @@
           "example": "[1640253400,1640253401,1640253402]]",
           "member": "int64",
           "name": "Time",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

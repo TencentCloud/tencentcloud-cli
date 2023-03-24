@@ -49,6 +49,13 @@
       "output": "CreateAclResponse",
       "status": "online"
     },
+    "CreateAclRule": {
+      "document": "添加 ACL 规则",
+      "input": "CreateAclRuleRequest",
+      "name": "添加 ACL 规则",
+      "output": "CreateAclRuleResponse",
+      "status": "online"
+    },
     "CreateCdcCluster": {
       "document": "用于cdc的专用ckafka集群",
       "input": "CreateCdcClusterRequest",
@@ -229,6 +236,13 @@
       "input": "DescribeACLRequest",
       "name": "枚举ACL",
       "output": "DescribeACLResponse",
+      "status": "online"
+    },
+    "DescribeAclRule": {
+      "document": "查询ACL规则列表",
+      "input": "DescribeAclRuleRequest",
+      "name": "查询ACL规则列表",
+      "output": "DescribeAclRuleResponse",
       "status": "online"
     },
     "DescribeAppInfo": {
@@ -439,6 +453,13 @@
       "input": "InquireCkafkaPriceRequest",
       "name": "Ckafka询价",
       "output": "InquireCkafkaPriceResponse",
+      "status": "online"
+    },
+    "ModifyAclRule": {
+      "document": "修改\bAC策略，目前只支持预设规则的是否应用到新增topic这一项的修改",
+      "input": "ModifyAclRuleRequest",
+      "name": "修改Acl策略",
+      "output": "ModifyAclRuleResponse",
       "status": "online"
     },
     "ModifyConnectResource": {
@@ -770,6 +791,32 @@
         }
       ],
       "usage": "in"
+    },
+    "AclRuleResp": {
+      "document": "AclRule列表接口返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "总数据条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AclRule列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AclRule",
+          "name": "AclRuleList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AnalyseParam": {
       "document": "数据处理-解析参数",
@@ -2422,6 +2469,105 @@
           "name": "Result",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAclRuleRequest": {
+      "document": "CreateAclRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id信息",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Acl资源类型,目前只支持Topic,枚举值列表：Topic",
+          "example": "Topic",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET",
+          "example": "PREFIXED",
+          "member": "string",
+          "name": "PatternType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "test",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设置的ACL规则列表",
+          "example": "无",
+          "member": "AclRuleInfo",
+          "name": "RuleList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "表示前缀匹配的前缀的值",
+          "example": "topic-",
+          "member": "string",
+          "name": "Pattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预设ACL规则是否应用到新增的topic中",
+          "example": "1",
+          "member": "int64",
+          "name": "IsApplied",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ACL规则的备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAclRuleResponse": {
+      "document": "CreateAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则的唯一表示Key",
+          "example": "1",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4992,6 +5138,69 @@
       ],
       "type": "object"
     },
+    "DescribeAclRuleRequest": {
+      "document": "DescribeAclRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ACL规则名",
+          "example": "xxx",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ACL规则匹配类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "PatternType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否读取简略的ACL规则",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSimplified",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAclRuleResponse": {
+      "document": "DescribeAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "返回的AclRule结果集对象",
+          "example": "无",
+          "member": "AclRuleResp",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAppInfoRequest": {
       "document": "DescribeAppInfo请求参数结构体",
       "members": [
@@ -5172,6 +5381,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "该连接源关联的Datahub任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DatahubTaskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "连接源的当前所处步骤\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -5181,12 +5399,21 @@
           "value_allowed_null": true
         },
         {
-          "document": "该连接源关联的Datahub任务数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "int64",
-          "name": "DatahubTaskCount",
-          "required": true,
-          "type": "int",
+          "document": "创建进度百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "float",
+          "name": "TaskProgress",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "步骤列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "StepList",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -10869,6 +11096,60 @@
         }
       ],
       "usage": "in"
+    },
+    "ModifyAclRuleRequest": {
+      "document": "ModifyAclRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ACL策略名",
+          "example": "xxx",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否应用到新增的Topic",
+          "example": "1",
+          "member": "int64",
+          "name": "IsApplied",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAclRuleResponse": {
+      "document": "ModifyAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则的唯一表示Key",
+          "example": "1",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyConnectResourceRequest": {
       "document": "ModifyConnectResource请求参数结构体",

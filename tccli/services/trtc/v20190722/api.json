@@ -2725,7 +2725,6 @@
       "document": "混流布局参数。",
       "members": [
         {
-          "default": "",
           "document": "用户媒体流参数。不填时腾讯云后台按照上行主播的进房顺序自动填充。",
           "example": "UserMediaStream",
           "member": "UserMediaStream",
@@ -2735,7 +2734,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子画面在输出时的宽度，单位为像素值，不填默认为0。",
           "example": "1280",
           "member": "uint64",
@@ -2745,7 +2743,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子画面在输出时的高度，单位为像素值，不填默认为0。",
           "example": "720",
           "member": "uint64",
@@ -2755,7 +2752,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子画面在输出时的X偏移，单位为像素值，LocationX与ImageWidth之和不能超过混流输出的总宽度，不填默认为0。",
           "example": "0",
           "member": "uint64",
@@ -2765,7 +2761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子画面在输出时的Y偏移，单位为像素值，LocationY与ImageHeight之和不能超过混流输出的总高度，不填默认为0。",
           "example": "0",
           "member": "uint64",
@@ -2775,7 +2770,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子画面在输出时的层级，不填默认为0。",
           "example": "0",
           "member": "uint64",
@@ -2785,7 +2779,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。",
           "example": "0",
           "member": "uint64",
@@ -2795,8 +2788,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "子画面的背景颜色，常用的颜色有：\n红色：0xcc0033。\n黄色：0xcc9900。\n绿色：0xcccc33。\n蓝色：0x99CCFF。\n黑色：0x000000。\n白色：0xFFFFFF。\n灰色：0x999999。",
+          "document": "【此参数配置无效，暂不支持】子画面的背景颜色，常用的颜色有：\n红色：0xcc0033。\n黄色：0xcc9900。\n绿色：0xcccc33。\n蓝色：0x99CCFF。\n黑色：0x000000。\n白色：0xFFFFFF。\n灰色：0x999999。",
           "example": "0xFFFFFF",
           "member": "string",
           "name": "BackGroundColor",
@@ -2805,7 +2797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子画面的背景图url，填写该参数，当用户关闭摄像头或未进入TRTC房间时，会在布局位置填充为指定图片。若指定图片与布局位置尺寸比例不一致，则会对图片进行拉伸处理，优先级高于BackGroundColor。",
           "example": "xxxx",
           "member": "string",
@@ -2815,7 +2806,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客户自定义裁剪，针对原始输入流裁剪",
           "example": "xxx",
           "member": "McuCustomCrop",

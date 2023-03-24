@@ -77,6 +77,13 @@
       "output": "CreateApiRateLimitRuleResponse",
       "status": "online"
     },
+    "CreateApiRateLimitRuleWithDetailResp": {
+      "document": "创建API限流规则,并返回规则信息",
+      "input": "CreateApiRateLimitRuleWithDetailRespRequest",
+      "name": "创建API限流规则返回详细信息",
+      "output": "CreateApiRateLimitRuleWithDetailRespResponse",
+      "status": "online"
+    },
     "CreateApplication": {
       "document": "创建应用",
       "input": "CreateApplicationRequest",
@@ -103,6 +110,13 @@
       "input": "CreateConfigTemplateRequest",
       "name": "创建参数模板",
       "output": "CreateConfigTemplateResponse",
+      "status": "online"
+    },
+    "CreateConfigTemplateWithDetailResp": {
+      "document": "创建参数模板,并返回模版详细信息",
+      "input": "CreateConfigTemplateWithDetailRespRequest",
+      "name": "创建参数模板返回详细信息",
+      "output": "CreateConfigTemplateWithDetailRespResponse",
       "status": "online"
     },
     "CreateContainGroup": {
@@ -175,11 +189,25 @@
       "output": "CreatePathRewritesResponse",
       "status": "online"
     },
+    "CreatePathRewritesWithDetailResp": {
+      "document": "创建路径重写，并返回路径重写规则信息",
+      "input": "CreatePathRewritesWithDetailRespRequest",
+      "name": "创建路径重写返回详细信息",
+      "output": "CreatePathRewritesWithDetailRespResponse",
+      "status": "online"
+    },
     "CreatePublicConfig": {
       "document": "创建公共配置项",
       "input": "CreatePublicConfigRequest",
       "name": "创建公共配置项",
       "output": "CreatePublicConfigResponse",
+      "status": "online"
+    },
+    "CreatePublicConfigWithDetailResp": {
+      "document": "创建公共配置项，并返回配置项详细信息",
+      "input": "CreatePublicConfigWithDetailRespRequest",
+      "name": "创建公共配置项返回详细信息",
+      "output": "CreatePublicConfigWithDetailRespResponse",
       "status": "online"
     },
     "CreateRepository": {
@@ -210,11 +238,25 @@
       "output": "CreateUnitRuleResponse",
       "status": "online"
     },
+    "CreateUnitRuleWithDetailResp": {
+      "document": "创建单元化规则, 并返回详细信息",
+      "input": "CreateUnitRuleWithDetailRespRequest",
+      "name": "创建单元化规则返回详细信息",
+      "output": "CreateUnitRuleWithDetailRespResponse",
+      "status": "online"
+    },
     "DeleteApiGroup": {
       "document": "删除Api分组",
       "input": "DeleteApiGroupRequest",
       "name": "删除Api分组",
       "output": "DeleteApiGroupResponse",
+      "status": "online"
+    },
+    "DeleteApiRateLimitRule": {
+      "document": "删除API限流规则",
+      "input": "DeleteApiRateLimitRuleRequest",
+      "name": "删除API限流规则",
+      "output": "DeleteApiRateLimitRuleResponse",
       "status": "online"
     },
     "DeleteApplication": {
@@ -903,6 +945,13 @@
       "output": "DescribeRepositoryResponse",
       "status": "online"
     },
+    "DescribeResourceTaskStatus": {
+      "document": "资源任务的执行状态描述接口",
+      "input": "DescribeResourceTaskStatusRequest",
+      "name": "资源任务的执行状态描述",
+      "output": "DescribeResourceTaskStatusResponse",
+      "status": "online"
+    },
     "DescribeSimpleApplications": {
       "document": "查询简单应用列表",
       "input": "DescribeSimpleApplicationsRequest",
@@ -1237,6 +1286,13 @@
       "input": "ReleaseConfigRequest",
       "name": "发布配置",
       "output": "ReleaseConfigResponse",
+      "status": "online"
+    },
+    "ReleaseConfigWithDetailResp": {
+      "document": "发布配置,并且返回配置 ID",
+      "input": "ReleaseConfigWithDetailRespRequest",
+      "name": "发布配置返回详细信息",
+      "output": "ReleaseConfigWithDetailRespResponse",
       "status": "online"
     },
     "ReleaseFileConfig": {
@@ -5757,6 +5813,56 @@
       ],
       "type": "object"
     },
+    "CreateApiRateLimitRuleWithDetailRespRequest": {
+      "document": "CreateApiRateLimitRuleWithDetailResp请求参数结构体",
+      "members": [
+        {
+          "document": "Api Id",
+          "example": "无",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "qps值",
+          "example": "20",
+          "member": "uint64",
+          "name": "MaxQps",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "开启/禁用，enabled/disabled, 不传默认开启",
+          "example": "无",
+          "member": "string",
+          "name": "UsableStatus",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApiRateLimitRuleWithDetailRespResponse": {
+      "document": "CreateApiRateLimitRuleWithDetailResp返回参数结构体",
+      "members": [
+        {
+          "document": "创建的规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ruleId-xxx",
+          "member": "ApiRateLimitRule",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateApplicationRequest": {
       "document": "CreateApplication请求参数结构体",
       "members": [
@@ -6215,6 +6321,72 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigTemplateWithDetailRespRequest": {
+      "document": "CreateConfigTemplateWithDetailResp请求参数结构体",
+      "members": [
+        {
+          "document": "配置模板名称",
+          "example": "配置1",
+          "member": "string",
+          "name": "ConfigTemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置模板对应的微服务框架",
+          "example": "Ribbon",
+          "member": "string",
+          "name": "ConfigTemplateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置模板数据",
+          "example": "#请求处理超时时间ribbon.ReadTimeout: 5000#请求连接超时时间ribbon.ConnectTimeout: 2000#同一实例最大重试次数，不包括首次调用ribbon.MaxAutoRetries: 0#重试其他实例的最大重试次数，不包括首次所选的serverribbon.MaxAutoRetriesNextServer: 1#是否对所有操作请求都进行重试ribbon.OkToRetryOnAllOperations: false",
+          "member": "string",
+          "name": "ConfigTemplateValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置模板描述",
+          "example": "11111111111",
+          "member": "string",
+          "name": "ConfigTemplateDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigTemplateWithDetailRespResponse": {
+      "document": "CreateConfigTemplateWithDetailResp返回参数结构体",
+      "members": [
+        {
+          "document": "创建成功，返回 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "config-xxx",
+          "member": "ConfigTemplate",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7126,6 +7298,40 @@
       ],
       "type": "object"
     },
+    "CreatePathRewritesWithDetailRespRequest": {
+      "document": "CreatePathRewritesWithDetailResp请求参数结构体",
+      "members": [
+        {
+          "document": "路径重写列表",
+          "example": "无",
+          "member": "PathRewriteCreateObject",
+          "name": "PathRewrites",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePathRewritesWithDetailRespResponse": {
+      "document": "CreatePathRewritesWithDetailResp返回参数结构体",
+      "members": [
+        {
+          "document": "返回路径重写规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePublicConfigRequest": {
       "document": "CreatePublicConfig请求参数结构体",
       "members": [
@@ -7205,6 +7411,88 @@
           "name": "Result",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePublicConfigWithDetailRespRequest": {
+      "document": "CreatePublicConfigWithDetailResp请求参数结构体",
+      "members": [
+        {
+          "document": "配置项名称",
+          "example": "testconfig",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项版本",
+          "example": "1.3",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项值，总是接收yaml格式的内容",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项版本描述",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigVersionDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "配置项类型",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "Base64编码的配置项",
+          "example": "无",
+          "member": "bool",
+          "name": "EncodeWithBase64",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePublicConfigWithDetailRespResponse": {
+      "document": "CreatePublicConfigWithDetailResp返回参数结构体",
+      "members": [
+        {
+          "document": "公共配置项 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Config",
+          "name": "Result",
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -7589,6 +7877,64 @@
       ],
       "type": "object"
     },
+    "CreateUnitRuleWithDetailRespRequest": {
+      "document": "CreateUnitRuleWithDetailResp请求参数结构体",
+      "members": [
+        {
+          "document": "网关实体ID",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "规则描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "规则项列表",
+          "example": "无",
+          "member": "UnitRuleItem",
+          "name": "UnitRuleItemList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUnitRuleWithDetailRespResponse": {
+      "document": "CreateUnitRuleWithDetailResp返回参数结构体",
+      "members": [
+        {
+          "document": "单元化规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UnitRule",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CurvePoint": {
       "document": "构成监控数据图的曲线坐标点",
       "members": [
@@ -7641,6 +7987,40 @@
       "members": [
         {
           "document": "成功失败",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApiRateLimitRuleRequest": {
+      "document": "DeleteApiRateLimitRule请求参数结构体",
+      "members": [
+        {
+          "document": "限流规则ID",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApiRateLimitRuleResponse": {
+      "document": "DeleteApiRateLimitRule返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "example": "无",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -13929,6 +14309,39 @@
           "name": "Result",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTaskStatusRequest": {
+      "document": "DescribeResourceTaskStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTaskStatusResponse": {
+      "document": "DescribeResourceTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "资源任务执行状态结果",
+          "member": "ResourceTaskStatusResult",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -21497,6 +21910,56 @@
       ],
       "type": "object"
     },
+    "ReleaseConfigWithDetailRespRequest": {
+      "document": "ReleaseConfigWithDetailResp请求参数结构体",
+      "members": [
+        {
+          "document": "配置ID",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "部署组ID",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "发布描述",
+          "example": "w",
+          "member": "string",
+          "name": "ReleaseDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseConfigWithDetailRespResponse": {
+      "document": "ReleaseConfigWithDetailResp返回参数结构体",
+      "members": [
+        {
+          "document": "配置项发布 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigRelease",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReleaseFileConfigRequest": {
       "document": "ReleaseFileConfig请求参数结构体",
       "members": [
@@ -21908,6 +22371,21 @@
         }
       ],
       "usage": "both"
+    },
+    "ResourceTaskStatusResult": {
+      "document": "资源任务转态结果",
+      "members": [
+        {
+          "default": "",
+          "document": "任务的执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RevocationConfigRequest": {
       "document": "RevocationConfig请求参数结构体",

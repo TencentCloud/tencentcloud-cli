@@ -568,7 +568,7 @@
     ],
     "ModifyDomainAttributes": [
       {
-        "document": "",
+        "document": "修改七层监听器下域名的相关属性",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainAttributes\n<公共请求参数>\n\n{\n    \"Domain\": \"foo.net\",\n    \"ListenerId\": \"lbl-n8mb2r3a\",\n    \"LoadBalancerId\": \"lb-1wvl0ejw\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"db141822-c025-4765-88d4-02bdec0e67ed\"\n    }\n}",
         "title": "修改七层监听器下域名的相关属性"

@@ -96,6 +96,14 @@
         "title": "删除转换器"
       }
     ],
+    "DescribeLogTagValue": [
+      {
+        "document": "查询日志索引字段值",
+        "input": "{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"GroupField\": \"Source\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            \"eb-l65vlc2u\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询日志索引字段值"
+      }
+    ],
     "GetEventBus": [
       {
         "document": "获取事件集",
@@ -172,6 +180,14 @@
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutEvents\n<公共请求参数>\n\n{\n    \"EventList\": [\n        {\n            \"Data\": \"string\",\n            \"Type\": \"string\",\n            \"Source\": \"string\",\n            \"Subject\": \"qcs::dts:ap-guangzhou:appid12312/uid1250000000:xxx\"\n        },\n        {\n            \"Data\": \"string\",\n            \"Type\": \"string\",\n            \"Source\": \"string\",\n            \"Subject\": \"qcs::dts:ap-guangzhou:appid12312/uid1250000000:xxx\"\n        }\n    ],\n    \"EventBusId\": \"string\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae684d86-33ec-449e-bc38-9d9552199267\"\n    }\n}",
         "title": "事件投递"
+      }
+    ],
+    "SearchLog": [
+      {
+        "document": "日志检索",
+        "input": "{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"Results\": [\n            {\n                \"Timestamp\": \"xxx\",\n                \"Message\": \"xxx-1\",\n                \"Source\": \"xxx\",\n                \"Type\": \"xzz\",\n                \"RuleIds\": \"xxx\",\n                \"Subject\": \"xxx\",\n                \"Region\": \"xxx\",\n                \"Status\": \"xxx\"\n            }\n        ],\n        \"Total\": 1000,\n        \"Limit\": 500,\n        \"Page\": 1\n    }\n}",
+        "title": "日志检索"
       }
     ],
     "UpdateConnection": [

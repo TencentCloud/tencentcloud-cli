@@ -1,6 +1,6 @@
 **Example 1: 获取任务详情**
 
-获取任务详情。
+ 获取任务详情。
 
 Input: 
 
@@ -22,7 +22,7 @@ Output:
         "Status": "SUCCESS",
         "TaskType": "VIDEO_EDIT_PROJECT_EXPORT",
         "VideoEditProjectOutput": {
-            "MaterialId": "1111",
+            "MaterialId": "6866c9a7-a2ca-4d",
             "MetaData": {
                 "AudioStreamInfoSet": [
                     {

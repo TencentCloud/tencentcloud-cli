@@ -26,7 +26,7 @@
     ],
     "CreateNamespace": [
       {
-        "document": "",
+        "document": "创建命名空间。",
         "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNamespace\n<公共请求参数>\n\n{\n    \"Namespace\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建命名空间。"
