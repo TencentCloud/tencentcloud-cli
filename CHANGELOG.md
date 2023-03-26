@@ -1,3 +1,329 @@
+# Release 3.0.731.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 15 次发布
+
+发布时间：2023-03-27 01:06:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeVoucherUsageDetails](http://document.tencentcloudapi.woa.com/document/product/555/70812)
+
+	* <font color="#dd0000">**修改入参**：</font>VoucherId
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 48 次发布
+
+发布时间：2023-03-27 01:11:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDefaultParams](http://document.tencentcloudapi.woa.com/document/product/236/32662)
+
+	* 新增入参：EngineType
+
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 56 次发布
+
+发布时间：2023-03-27 01:17:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeConnectResources](http://document.tencentcloudapi.woa.com/document/product/597/75547)
+
+	* 新增入参：ResourceRegion
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 12 次发布
+
+发布时间：2023-03-27 01:30:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceConfs](http://document.tencentcloudapi.woa.com/document/product/1130/57812#InstanceConfs)
+
+	* 新增成员：AZType, KeyDelimiters, ShardSize, ShardNum, AnalysisTopKey, ReplicasNum
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#InstanceInfo)
+
+	* 新增成员：InternalVip, InternalVport, CreateTime
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 29 次发布
+
+发布时间：2023-03-27 01:31:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDCDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/557/77346)
+
+新增数据结构：
+
+* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/557/16142#NodeInfo)
+* [ShardBriefInfo](http://document.tencentcloudapi.woa.com/document/product/557/16142#ShardBriefInfo)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 43 次发布
+
+发布时间：2023-03-27 01:32:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
+
+	* 新增成员：SparkImageVersion
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 21 次发布
+
+发布时间：2023-03-27 01:38:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EmrListInstance](http://document.tencentcloudapi.woa.com/document/product/589/33981#EmrListInstance)
+
+	* 新增成员：IsSupportOutsideCluster
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 48 次发布
+
+发布时间：2023-03-27 01:39:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreateUserRoles](http://document.tencentcloudapi.woa.com/document/product/1595/77349)
+* [ChannelDeleteRoleUsers](http://document.tencentcloudapi.woa.com/document/product/1595/77348)
+* [ChannelDescribeRoles](http://document.tencentcloudapi.woa.com/document/product/1595/77347)
+
+新增数据结构：
+
+* [ChannelRole](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelRole)
+* [FailedCreateRoleData](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FailedCreateRoleData)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 29 次发布
+
+发布时间：2023-03-27 01:51:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/237/77350)
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 29 次发布
+
+发布时间：2023-03-27 02:01:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloneInstances](http://document.tencentcloudapi.woa.com/document/product/239/77351)
+
+
+
+## 分布式身份(tdid) 版本：2021-05-19
+
+### 第 5 次发布
+
+发布时间：2023-03-27 02:12:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* AddLabel
+* CancelAuthorityIssuer
+* CheckDidDeploy
+* CreateDidService
+* CreateLabel
+* DeployByName
+* DownCpt
+* EnableHash
+* GetAuthoritiesList
+* GetConsortiumClusterList
+* GetConsortiumList
+* GetCptList
+* GetCredentialCptRank
+* GetCredentialIssueRank
+* GetCredentialIssueTrend
+* GetDataPanel
+* GetDeployInfo
+* GetDeployList
+* GetDidClusterDetail
+* GetDidClusterList
+* GetDidDetail
+* GetDidList
+* GetDidRegisterTrend
+* GetDidServiceDetail
+* GetDidServiceList
+* GetGroupList
+* GetLabelList
+* GetPolicyList
+* GetPublicKey
+* QueryPolicy
+* RecognizeAuthorityIssuer
+* RegisterClaimPolicy
+* RegisterIssuer
+* RemoveHash
+
+
+
+## 互动白板(tiw) 版本：2019-09-19
+
+### 第 10 次发布
+
+发布时间：2023-03-27 02:16:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApplyTiwTrial](http://document.tencentcloudapi.woa.com/document/product/1137/77378)
+* [CreateApplication](http://document.tencentcloudapi.woa.com/document/product/1137/77377)
+* [CreateOfflineRecord](http://document.tencentcloudapi.woa.com/document/product/1137/77356)
+* [DescribeAPIService](http://document.tencentcloudapi.woa.com/document/product/1137/77376)
+* [DescribeApplicationInfos](http://document.tencentcloudapi.woa.com/document/product/1137/77375)
+* [DescribeApplicationUsage](http://document.tencentcloudapi.woa.com/document/product/1137/77374)
+* [DescribeBoardSDKLog](http://document.tencentcloudapi.woa.com/document/product/1137/77373)
+* [DescribeIMApplications](http://document.tencentcloudapi.woa.com/document/product/1137/77372)
+* [DescribeOfflineRecord](http://document.tencentcloudapi.woa.com/document/product/1137/77355)
+* [DescribeOfflineRecordCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77354)
+* [DescribePostpaidUsage](http://document.tencentcloudapi.woa.com/document/product/1137/77371)
+* [DescribeRoomList](http://document.tencentcloudapi.woa.com/document/product/1137/77370)
+* [DescribeTranscodeSearch](http://document.tencentcloudapi.woa.com/document/product/1137/77358)
+* [DescribeUsageSummary](http://document.tencentcloudapi.woa.com/document/product/1137/77369)
+* [DescribeUserList](http://document.tencentcloudapi.woa.com/document/product/1137/77368)
+* [DescribeUserResources](http://document.tencentcloudapi.woa.com/document/product/1137/77367)
+* [DescribeUserStatus](http://document.tencentcloudapi.woa.com/document/product/1137/77366)
+* [DescribeWhiteboardApplicationConfig](http://document.tencentcloudapi.woa.com/document/product/1137/77365)
+* [DescribeWhiteboardBucketConfig](http://document.tencentcloudapi.woa.com/document/product/1137/77364)
+* [DescribeWhiteboardPushSearch](http://document.tencentcloudapi.woa.com/document/product/1137/77357)
+* [ModifyApplication](http://document.tencentcloudapi.woa.com/document/product/1137/77363)
+* [ModifyAutoRenewFlag](http://document.tencentcloudapi.woa.com/document/product/1137/77362)
+* [ModifyWhiteboardApplicationConfig](http://document.tencentcloudapi.woa.com/document/product/1137/77361)
+* [ModifyWhiteboardBucketConfig](http://document.tencentcloudapi.woa.com/document/product/1137/77360)
+* [SetOfflineRecordCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77353)
+
+新增数据结构：
+
+* [ApplicationItem](http://document.tencentcloudapi.woa.com/document/product/1137/40068#ApplicationItem)
+* [DataItem](http://document.tencentcloudapi.woa.com/document/product/1137/40068#DataItem)
+* [Detail](http://document.tencentcloudapi.woa.com/document/product/1137/40068#Detail)
+* [RoomListItem](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RoomListItem)
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1137/40068#Tag)
+* [TranscodeTaskResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#TranscodeTaskResult)
+* [TranscodeTaskSearchResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#TranscodeTaskSearchResult)
+* [UserListItem](http://document.tencentcloudapi.woa.com/document/product/1137/40068#UserListItem)
+* [WhiteboardApplicationConfig](http://document.tencentcloudapi.woa.com/document/product/1137/40068#WhiteboardApplicationConfig)
+* [WhiteboardPushResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#WhiteboardPushResult)
+* [WhiteboardPushTaskSearchResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#WhiteboardPushTaskSearchResult)
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 29 次发布
+
+发布时间：2023-03-27 02:28:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAttackOverview](http://document.tencentcloudapi.woa.com/document/product/627/77169)
+
+	* 新增入参：FromTime, ToTime, Appid, Domain, Edition, InstanceID
+
+
+
+
 # Release 3.0.730.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

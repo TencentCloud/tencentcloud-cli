@@ -2374,7 +2374,62 @@
     },
     "DescribeAttackOverviewRequest": {
       "document": "DescribeAttackOverview请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "查询开始时间",
+          "example": "2019-12-30 00:00:00",
+          "member": "datetime",
+          "name": "FromTime",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "查询结束时间",
+          "example": "2019-12-30 23:59:59",
+          "member": "datetime",
+          "name": "ToTime",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "客户的Appid",
+          "example": "1",
+          "member": "uint64",
+          "name": "Appid",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "被查询的域名",
+          "example": "abc.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "只有两个值有效，sparta-waf，clb-waf，不传则不过滤",
+          "example": "sparta-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "WAF实例ID，不传则不过滤",
+          "example": "waf_000q3t12p",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "DescribeAttackOverviewResponse": {
@@ -2385,45 +2440,45 @@
           "example": "99",
           "member": "uint64",
           "name": "AccessCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "Web攻击总数",
           "example": "99",
           "member": "uint64",
           "name": "AttackCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "访问控制总数",
           "example": "99",
           "member": "uint64",
           "name": "ACLCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "CC攻击总数",
           "example": "99",
           "member": "uint64",
           "name": "CCCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "Bot攻击总数",
           "example": "99",
           "member": "uint64",
           "name": "BotCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

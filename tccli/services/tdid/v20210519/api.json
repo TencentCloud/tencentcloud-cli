@@ -1,18 +1,18 @@
 {
   "actions": {
     "AddLabel": {
-      "document": "DID添加标签\n",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\nDID添加标签\n",
       "input": "AddLabelRequest",
       "name": "DID添加标签",
       "output": "AddLabelResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CancelAuthorityIssuer": {
-      "document": "撤消权威机构认证",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n撤消权威机构认证",
       "input": "CancelAuthorityIssuerRequest",
       "name": "撤消权威机构认证",
       "output": "CancelAuthorityIssuerResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CheckChain": {
       "document": "检查区块链信息",
@@ -22,11 +22,11 @@
       "status": "online"
     },
     "CheckDidDeploy": {
-      "document": "检查部署情况",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n检查部署情况",
       "input": "CheckDidDeployRequest",
       "name": "检查部署情况",
       "output": "CheckDidDeployResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateCredential": {
       "document": "创建凭证",
@@ -36,18 +36,18 @@
       "status": "online"
     },
     "CreateDidService": {
-      "document": "创建DID服务",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n创建DID服务",
       "input": "CreateDidServiceRequest",
       "name": "创建DID服务",
       "output": "CreateDidServiceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateLabel": {
-      "document": "新建标签",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n新建标签",
       "input": "CreateLabelRequest",
       "name": "新建标签",
       "output": "CreateLabelResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateSelectiveCredential": {
       "document": "创建选择性批露凭证",
@@ -78,25 +78,25 @@
       "status": "online"
     },
     "DeployByName": {
-      "document": "通过Name部署TDID合约",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n通过Name部署TDID合约",
       "input": "DeployByNameRequest",
       "name": "通过Name部署TDID合约",
       "output": "DeployByNameResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DownCpt": {
-      "document": "凭证模版下载",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n凭证模版下载",
       "input": "DownCptRequest",
       "name": "凭证模版下载",
       "output": "DownCptResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "EnableHash": {
-      "document": "启用合约",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n启用合约",
       "input": "EnableHashRequest",
       "name": "启用合约",
       "output": "EnableHashResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetAgencyTDid": {
       "document": "该接口已废弃\n\n本机构DID详情",
@@ -106,11 +106,11 @@
       "status": "deprecated"
     },
     "GetAuthoritiesList": {
-      "document": "权威机构列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n权威机构列表",
       "input": "GetAuthoritiesListRequest",
       "name": "权威机构列表",
       "output": "GetAuthoritiesListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetAuthorityIssuer": {
       "document": "获取权威机构信息",
@@ -120,18 +120,18 @@
       "status": "online"
     },
     "GetConsortiumClusterList": {
-      "document": "获取联盟bcos网络列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n获取联盟bcos网络列表",
       "input": "GetConsortiumClusterListRequest",
       "name": "获取联盟bcos网络列表",
       "output": "GetConsortiumClusterListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetConsortiumList": {
-      "document": "获取联盟列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n获取联盟列表",
       "input": "GetConsortiumListRequest",
       "name": "获取联盟列表",
       "output": "GetConsortiumListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetCptInfo": {
       "document": "凭证模版详情",
@@ -141,32 +141,32 @@
       "status": "online"
     },
     "GetCptList": {
-      "document": "凭证模版列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n凭证模版列表",
       "input": "GetCptListRequest",
       "name": "凭证模版列表",
       "output": "GetCptListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetCredentialCptRank": {
-      "document": "凭证颁发按机构排行",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n凭证颁发按机构排行",
       "input": "GetCredentialCptRankRequest",
       "name": "凭证颁发模板排行",
       "output": "GetCredentialCptRankResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetCredentialIssueRank": {
-      "document": "凭证颁发按机构排行",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n凭证颁发按机构排行",
       "input": "GetCredentialIssueRankRequest",
       "name": "凭证颁发机构排行",
       "output": "GetCredentialIssueRankResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetCredentialIssueTrend": {
-      "document": "凭证颁发趋势",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n凭证颁发趋势",
       "input": "GetCredentialIssueTrendRequest",
       "name": "凭证颁发趋势",
       "output": "GetCredentialIssueTrendResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetCredentialStatus": {
       "document": "获取凭证链上状态信息",
@@ -176,46 +176,46 @@
       "status": "online"
     },
     "GetDataPanel": {
-      "document": "概览\n",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n概览\n",
       "input": "GetDataPanelRequest",
       "name": "概览",
       "output": "GetDataPanelResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDeployInfo": {
-      "document": "合约部署详情\n",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n合约部署详情\n",
       "input": "GetDeployInfoRequest",
       "name": "合约部署详情",
       "output": "GetDeployInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDeployList": {
-      "document": "合约部署列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n合约部署列表",
       "input": "GetDeployListRequest",
       "name": "合约部署列表",
       "output": "GetDeployListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDidClusterDetail": {
-      "document": "获取DID区块链网络详情",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n获取DID区块链网络详情",
       "input": "GetDidClusterDetailRequest",
       "name": "获取DID网络详情",
       "output": "GetDidClusterDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDidClusterList": {
-      "document": "获取用户的DID网络列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n获取用户的DID网络列表",
       "input": "GetDidClusterListRequest",
       "name": "获取DID网络列表",
       "output": "GetDidClusterListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDidDetail": {
-      "document": "DID详情",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\nDID详情",
       "input": "GetDidDetailRequest",
       "name": "DID详情",
       "output": "GetDidDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDidDocument": {
       "document": "查看DID文档\n",
@@ -225,81 +225,81 @@
       "status": "online"
     },
     "GetDidList": {
-      "document": "DID列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\nDID列表",
       "input": "GetDidListRequest",
       "name": "DID列表",
       "output": "GetDidListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDidRegisterTrend": {
-      "document": "DID注册趋势",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\nDID注册趋势",
       "input": "GetDidRegisterTrendRequest",
       "name": "DID注册趋势",
       "output": "GetDidRegisterTrendResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDidServiceDetail": {
-      "document": "获取DID服务详情",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n获取DID服务详情",
       "input": "GetDidServiceDetailRequest",
       "name": "获取DID服务详情",
       "output": "GetDidServiceDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDidServiceList": {
-      "document": "获取DID服务列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n获取DID服务列表",
       "input": "GetDidServiceListRequest",
       "name": "获取DID服务列表",
       "output": "GetDidServiceListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetGroupList": {
-      "document": "主群组配置列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n主群组配置列表",
       "input": "GetGroupListRequest",
       "name": "主群组配置列表",
       "output": "GetGroupListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetLabelList": {
-      "document": "标签列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n标签列表",
       "input": "GetLabelListRequest",
       "name": "标签列表",
       "output": "GetLabelListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetPolicyList": {
-      "document": "披露策略Policy管理列表",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n披露策略Policy管理列表",
       "input": "GetPolicyListRequest",
       "name": "披露策略Policy管理列表",
       "output": "GetPolicyListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetPublicKey": {
-      "document": "查看公钥",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n查看公钥",
       "input": "GetPublicKeyRequest",
       "name": "查看公钥",
       "output": "GetPublicKeyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryPolicy": {
-      "document": "披露策略Policy查看",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n披露策略Policy查看",
       "input": "QueryPolicyRequest",
       "name": "披露策略Policy查看",
       "output": "QueryPolicyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RecognizeAuthorityIssuer": {
-      "document": "认证权威机构",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n认证权威机构",
       "input": "RecognizeAuthorityIssuerRequest",
       "name": "认证权威机构",
       "output": "RecognizeAuthorityIssuerResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RegisterClaimPolicy": {
-      "document": "披露策略Policy注册",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n披露策略Policy注册",
       "input": "RegisterClaimPolicyRequest",
       "name": "披露策略Policy注册",
       "output": "RegisterClaimPolicyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RegisterCpt": {
       "document": "凭证模版新建",
@@ -309,18 +309,18 @@
       "status": "online"
     },
     "RegisterIssuer": {
-      "document": "注册为权威机构",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n注册为权威机构",
       "input": "RegisterIssuerRequest",
       "name": "注册为权威机构",
       "output": "RegisterIssuerResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RemoveHash": {
-      "document": "删除合约",
+      "document": "下线已有内测接口，待上线正式版本的接口\n\n删除合约",
       "input": "RemoveHashRequest",
       "name": "删除合约",
       "output": "RemoveHashResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SetCredentialStatus": {
       "document": "设置凭证链上状态",

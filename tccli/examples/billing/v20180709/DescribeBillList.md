@@ -1,18 +1,18 @@
 **Example 1: 查询账户收支明细**
 
-
+查询账户收支明细
 
 Input: 
 
 ```
 tccli billing DescribeBillList --cli-unfold-argument  \
-    --StartTime '2019-07-31 00:00:00' \
-    --EndTime '2020-07-31 00:00:00' \
-    --Offset 0 \
-    --Limit 1 \
+    --WithZeroAmount 1 \
     --PayType all \
     --SubPayType all \
-    --WithZeroAmount 1
+    --Limit 1 \
+    --StartTime 2019-07-31 00:00:00 \
+    --Offset 0 \
+    --EndTime 2020-07-31 00:00:00
 ```
 
 Output: 
@@ -42,7 +42,7 @@ Output:
                 "Cash": 1957274510,
                 "Incentive": 0,
                 "Freezing": 5342336,
-                "DeductMode": "hourm"
+                "DeductMode": "trade"
             }
         ],
         "RequestId": "d40b48bf-6755-4128-910b-b54f8b9df6c3"

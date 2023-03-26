@@ -8764,22 +8764,31 @@
       "document": "DescribeDefaultParams请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "mysql版本，目前支持 [\"5.1\", \"5.5\", \"5.6\", \"5.7\"]。",
           "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "TemplateType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "参数模板引擎，默认值：InnoDB",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8792,18 +8801,18 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "参数详情。",
           "example": "无",
           "member": "ParameterDetail",
           "name": "Items",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

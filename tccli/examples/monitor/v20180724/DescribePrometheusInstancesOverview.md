@@ -7,9 +7,9 @@ Input:
 ```
 tccli monitor DescribePrometheusInstancesOverview --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Type xx \
-    --Filters.0.Key xx \
-    --Filters.0.Value xx \
+    --Filters.0.Type xxx \
+    --Filters.0.Key xxx \
+    --Filters.0.Value xxx \
     --Offset 1
 ```
 
@@ -21,23 +21,23 @@ Output:
             {
                 "InstanceStatus": 0,
                 "BoundNormal": 0,
-                "VpcId": "xx",
+                "VpcId": "xxx",
                 "AutoRenewFlag": 0,
-                "InstanceId": "xx",
+                "InstanceId": "xxx",
                 "BoundTotal": 0,
-                "ExpireTime": "xx",
-                "SpecName": "xx",
+                "ExpireTime": "xxx",
+                "SpecName": "xxx",
                 "InstanceChargeType": 0,
                 "EnableGrafana": 0,
                 "DataRetentionTime": 0,
-                "GrafanaURL": "xx",
-                "SubnetId": "xx",
-                "InstanceName": "xx",
+                "GrafanaURL": "xxx",
+                "SubnetId": "xxx",
+                "InstanceName": "xxx",
                 "ChargeStatus": 0
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "xxx"
     }
 }
 ```

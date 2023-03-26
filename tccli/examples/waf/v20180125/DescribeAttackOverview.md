@@ -5,18 +5,21 @@
 Input: 
 
 ```
-tccli waf DescribeAttackOverview --cli-unfold-argument ```
+tccli waf DescribeAttackOverview --cli-unfold-argument  \
+    --FromTime 2023-02-06 00:00:00 \
+    --ToTime 2023-02-06 23:59:59
+```
 
 Output: 
 ```
 {
     "Response": {
-        "AccessCount": 8550963579,
-        "AttackCount": 63579,
-        "ACLCount": 963579,
-        "CCCount": 50963579,
-        "BotCount": 963579,
-        "RequestId": "9b02bf9e-c89c-42c3-9ae1-685f968fa02d"
+        "AccessCount": 158,
+        "AttackCount": 98,
+        "ACLCount": 0,
+        "CCCount": 0,
+        "BotCount": 0,
+        "RequestId": "8a3b7134-77f9-4ee5-b30e-73809ccad10f"
     }
 }
 ```

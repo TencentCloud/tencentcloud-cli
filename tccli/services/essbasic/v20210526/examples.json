@@ -134,6 +134,22 @@
         "title": "创建印章授权"
       }
     ],
+    "ChannelCreateUserRoles": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateUserRoles\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"UserIds\": [\n        \"abc\"\n    ],\n    \"RoleIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedCreateRoleData\": [],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ChannelDeleteRoleUsers": [
+      {
+        "document": "解绑用户与角色绑定关系",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDeleteRoleUsers\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"RoleId\": \"abc\",\n    \"UserIds\": [\n        \"abc\"\n    ],\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "解绑用户与角色关系"
+      }
+    ],
     "ChannelDeleteSealPolicies": [
       {
         "document": "删除指定印章下多个授权信息",
@@ -156,6 +172,14 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeOrganizationSeals\n<公共请求参数>\n\n{\n    \"InfoType\": \"1\",\n    \"Limit\": \"1\",\n    \"Agent\": {\n        \"AppId\": \"xxxx015042c9a35e0984a9657b0ec\",\n        \"ProxyOrganizationOpenId\": \"test1_xxxxpen_organization1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xxxtest1\"\n        }\n    },\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ff****2-be87-af68a7842493\",\n        \"Seals\": [\n            {\n                \"AuthorizedUsers\": [\n                    {\n                        \"OpenId\": \"xxxtest1\"\n                    }\n                ],\n                \"CreateOn\": 163549000069,\n                \"Creator\": \"xxxtest1\",\n                \"FailReason\": \"\",\n                \"IsAllTime\": true,\n                \"SealId\": \"yDxHTUUgydj94zlcUuO4zjESIzF*****\",\n                \"SealName\": \"测试环境_测试\",\n                \"SealPolicyId\": \"\",\n                \"SealStatus\": \"SUCCESS\",\n                \"SealType\": \"OFFICIAL\",\n                \"Url\": \"https://***************.jpg\"\n            }\n        ],\n        \"TotalCount\": 35\n    }\n}",
         "title": "查询子客企业电子印章"
+      }
+    ],
+    "ChannelDescribeRoles": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeRoles\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Offset\": 1,\n        \"Limit\": 1,\n        \"TotalCount\": 1,\n        \"ChannelRoles\": [\n            {\n                \"RoleId\": \"abc\",\n                \"RoleName\": \"abc\",\n                \"RoleStatus\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ChannelGetTaskResultApi": [

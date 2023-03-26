@@ -3107,7 +3107,6 @@
       "document": "集群列表返回示例",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "emr-xxxx",
           "member": "string",
@@ -3118,7 +3117,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "状态描述",
           "member": "string",
@@ -3129,7 +3127,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群名字",
           "example": "集群名字",
           "member": "string",
@@ -3140,7 +3137,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群地域",
           "example": "集群地域",
           "member": "uint64",
@@ -3151,7 +3147,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "用户APPID",
           "example": "663622",
           "member": "uint64",
@@ -3162,7 +3157,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "创建时间",
           "member": "string",
@@ -3173,7 +3167,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "运行时间",
           "example": "运行时间",
           "member": "string",
@@ -3184,7 +3177,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群IP",
           "example": "集群ID",
           "member": "string",
@@ -3195,7 +3187,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群版本",
           "example": "集群版本",
           "member": "string",
@@ -3206,7 +3197,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群计费类型",
           "example": "0",
           "member": "uint64",
@@ -3217,7 +3207,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "emr ID",
           "example": "23321",
           "member": "uint64",
@@ -3228,7 +3217,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "44333",
           "member": "uint64",
@@ -3239,7 +3227,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4555",
           "member": "uint64",
@@ -3250,7 +3237,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4552",
           "member": "uint64",
@@ -3261,7 +3247,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3422",
           "member": "uint64",
@@ -3272,7 +3257,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "45666",
           "member": "uint64",
@@ -3283,7 +3267,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zone",
           "member": "string",
@@ -3294,7 +3277,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "状态码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3305,7 +3287,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Tag",
@@ -3316,7 +3297,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "告警信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "告警信息",
           "member": "string",
@@ -3327,7 +3307,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否是woodpecker集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3338,7 +3317,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Vpc中文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "emr",
           "member": "string",
@@ -3349,7 +3327,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网中文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "emr",
           "member": "string",
@@ -3360,7 +3337,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "字符串VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-lzd3w8jz",
           "member": "string",
@@ -3371,7 +3347,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "字符串子网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-3d73yezg",
           "member": "string",
@@ -3382,7 +3357,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "spark",
           "member": "string",
@@ -3393,7 +3367,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否为跨AZ集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -3404,7 +3377,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否手戳集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -3415,13 +3387,22 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "体外客户端组件信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"hdfs-2.8.5\",true]",
           "member": "SoftDependInfo",
           "name": "OutSideSoftInfo",
           "required": true,
           "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "当前集群的应用场景是否支持体外客户端\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportOutsideCluster",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
         }

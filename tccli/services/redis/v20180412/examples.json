@@ -72,6 +72,14 @@
         "title": "请求示例"
       }
     ],
+    "CloneInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloneInstances\n<公共请求参数>\n\n{\n    \"AlarmPolicyList\": [\n        \"xx\"\n    ],\n    \"TemplateId\": \"xx\",\n    \"VpcId\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"AutoRenew\": 1,\n    \"SubnetId\": \"xx\",\n    \"Password\": \"xx\",\n    \"GoodsNum\": 1,\n    \"ProjectId\": 0,\n    \"ZoneId\": 1,\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"VPort\": 1,\n    \"InstanceName\": \"xx\",\n    \"SecurityGroupIdList\": [\n        \"xx\"\n    ],\n    \"NodeSet\": [\n        {\n            \"ZoneName\": \"xx\",\n            \"NodeType\": 0,\n            \"NodeId\": 0,\n            \"ZoneId\": 1\n        }\n    ],\n    \"Period\": 1,\n    \"BillingMode\": 0,\n    \"BackupId\": \"xx\",\n    \"NoAuth\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a836c00-175f-11eb-aeb3-db134c8d8fec\",\n        \"InstanceIds\": [\n            \"crs-kic39axx\"\n        ],\n        \"DealId\": \"22716\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CloseSSL": [
       {
         "document": "",
