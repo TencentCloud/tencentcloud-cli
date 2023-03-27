@@ -504,7 +504,7 @@
     ],
     "DescribeDefaultParams": [
       {
-        "document": "",
+        "document": "查询默认的可设置参数列表",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDefaultParams\n&EngineVersion=5.7\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"92131c95-aa65-44db-8c3c-e8cd67883b58\",\n        \"Items\": [\n            {\n                \"CurrentValue\": \"utf8\",\n                \"Default\": \"LATIN1\",\n                \"Description\": \"Specify default server character set\",\n                \"EnumValue\": [\n                    \"LATIN1\",\n                    \"UTF8\",\n                    \"GBK\",\n                    \"UTF8MB4\"\n                ],\n                \"Max\": 0,\n                \"MaxFunc\": \"\",\n                \"Min\": 0,\n                \"MinFunc\": \"\",\n                \"Name\": \"character_set_server\",\n                \"NeedReboot\": 1,\n                \"ParamType\": \"enum\"\n            },\n            {\n                \"CurrentValue\": \"1600\",\n                \"Default\": \"{MIN(DBInitMemory/4+500,1000000)}\",\n                \"Description\": \"The maximum permitted number of simultaneous client connections.\",\n                \"EnumValue\": [],\n                \"Max\": 100000,\n                \"MaxFunc\": \"100000\",\n                \"Min\": 1,\n                \"MinFunc\": \"1\",\n                \"Name\": \"max_connections\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"func\"\n            }\n        ]\n    }\n}",
         "title": "查询默认的可设置参数列表"

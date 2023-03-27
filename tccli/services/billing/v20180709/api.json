@@ -1186,8 +1186,8 @@
       "document": "收支明细的流水信息",
       "members": [
         {
-          "default": "",
           "document": "收支类型：deduct 扣费, recharge 充值, return 退费， block 冻结, unblock 解冻",
+          "example": "\"deduct\"",
           "member": "string",
           "name": "ActionType",
           "required": true,
@@ -1195,8 +1195,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "流水金额，单位（分）；正数表示入账，负数表示出账",
+          "example": "-45",
           "member": "int64",
           "name": "Amount",
           "required": true,
@@ -1204,8 +1204,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用余额，单位（分）；正数表示入账，负数表示出账",
+          "example": "1951932174",
           "member": "int64",
           "name": "Balance",
           "required": true,
@@ -1213,8 +1213,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "流水号，如20190131020000236005203583326401",
+          "example": "\"20200708000000005009170242661921\"",
           "member": "string",
           "name": "BillId",
           "required": true,
@@ -1222,8 +1222,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "描述信息",
+          "example": "\"描述\"",
           "member": "string",
           "name": "OperationInfo",
           "required": true,
@@ -1231,8 +1231,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作时间\"2019-01-31 23:35:10.000\"",
+          "example": "\"2020-07-08 15:52:30.941\"",
           "member": "string",
           "name": "OperationTime",
           "required": true,
@@ -1240,8 +1240,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "现金账户余额，单位（分）",
+          "example": "1957274510",
           "member": "int64",
           "name": "Cash",
           "required": true,
@@ -1249,8 +1249,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "赠送金余额，单位（分）",
+          "example": " 0",
           "member": "int64",
           "name": "Incentive",
           "required": true,
@@ -1258,8 +1258,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "冻结余额，单位（分）",
+          "example": "5342336",
           "member": "int64",
           "name": "Freezing",
           "required": true,
@@ -1267,8 +1267,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "交易渠道",
+          "example": "\"\"",
           "member": "string",
           "name": "PayChannel",
           "required": true,
@@ -1276,8 +1276,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "扣费模式：trade 包年包月(预付费)，hourh  按量-小时结，hourd 按量-日结，hourm 按量-月结，month 按量-月结",
+          "example": "\"trade\"",
           "member": "string",
           "name": "DeductMode",
           "required": true,
@@ -3031,25 +3031,22 @@
       "document": "DescribeBillList请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "查询范围的起始时间（包含）",
-          "example": "2020-01-01",
+          "document": "查询范围的起始时间（包含）时间格式 yyyy-MM-dd HH:mm:ss 开始时间和结束时间差值小于等于六个月",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "查询范围的结束时间（包含）",
-          "example": "2020-01-02",
+          "document": "查询范围的结束时间（包含）时间格式 yyyy-MM-dd HH:mm:ss ，开始时间和结束时间差值小于等于六个月",
+          "example": "2020-01-02 00:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "翻页偏移量，初始值为0",
           "example": "1",
           "member": "uint64",
@@ -3058,7 +3055,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "每页的限制数量",
           "example": "1",
           "member": "uint64",
@@ -3067,7 +3063,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "交易类型： all所有交易类型，recharge充值，return退款，unblock解冻，agentin资金转入，advanced垫付，cash提现，deduct扣费，block冻结，agentout资金转出，repay垫付回款，repayment还款(仅国际信用账户)，adj_refund调增(仅国际信用账户)，adj_deduct调减(仅国际信用账户)",
           "example": "['deduct']",
           "member": "string",
@@ -3076,7 +3071,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "扣费模式，\n当所选的交易类型为扣费deduct时： \nall所有扣费类型;trade预付费支付;hour_h按量小时结;hour_d按量日结;hour_m按量月结;decompensate调账扣费;other第三方扣费;panshi 线下项目扣费;offline 线下产品扣费;\n\n当所选的交易类型为扣费recharge时： \nonline 在线充值;bank-enterprice 银企直连;offline 线下充值;transfer 分成充值\n\n当所选的交易类型为扣费cash时： \nonline 线上提现;offline 线下提现;panshi 赠送金清零\n\n当所选的交易类型为扣费advanced时： \nadvanced 垫付充值\n\n当所选的交易类型为扣费repay时： \npanshi 垫付回款\n\n当所选的交易类型为扣费block时： \nother 第三方冻结;hour 按量冻结;month按月冻结\n\n当所选的交易类型为扣费return时： \ncompensate 调账补偿;trade 预付费退款\n\n当所选的交易类型为扣费unblock时：\nother 第三方解冻;hour 按量解冻;month 按月解冻",
           "example": "all",
           "member": "string",
@@ -3085,7 +3079,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否返回0元交易金额的交易项，取值：0-不返回，1-返回。不传该参数则不返回",
           "example": "1",
           "member": "uint64",
@@ -3104,7 +3097,6 @@
           "example": "[]",
           "member": "BillTransactionInfo",
           "name": "TransactionList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3113,7 +3105,6 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3122,7 +3113,6 @@
           "example": "1",
           "member": "float",
           "name": "ReturnAmount",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3131,7 +3121,6 @@
           "example": "1",
           "member": "float",
           "name": "RechargeAmount",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3140,7 +3129,6 @@
           "example": "1",
           "member": "float",
           "name": "BlockAmount",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3149,7 +3137,6 @@
           "example": "1",
           "member": "float",
           "name": "UnblockAmount",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3158,7 +3145,6 @@
           "example": "1",
           "member": "float",
           "name": "DeductAmount",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3167,7 +3153,6 @@
           "example": "1",
           "member": "float",
           "name": "AgentInAmount",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3176,7 +3161,6 @@
           "example": "1",
           "member": "float",
           "name": "AdvanceRechargeAmount",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3185,7 +3169,6 @@
           "example": "1",
           "member": "float",
           "name": "WithdrawAmount",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3194,7 +3177,6 @@
           "example": "1",
           "member": "float",
           "name": "AgentOutAmount",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3203,7 +3185,6 @@
           "example": "1",
           "member": "float",
           "name": "AdvancePayAmount",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -4637,7 +4618,6 @@
       "document": "DescribeVoucherUsageDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "一页多少条数据，默认是20条，最大不超过1000",
           "example": "10",
           "member": "int64",
@@ -4646,7 +4626,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "第多少页，默认是1",
           "example": "1",
           "member": "int64",
@@ -4655,16 +4634,14 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "代金券id",
           "example": "123",
           "member": "string",
           "name": "VoucherId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作人，默认就是用户uin",
           "example": "aa",
           "member": "string",
@@ -4683,7 +4660,6 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4692,7 +4668,6 @@
           "example": "0",
           "member": "int64",
           "name": "TotalUsedAmount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4701,7 +4676,6 @@
           "example": "无",
           "member": "UsageRecords",
           "name": "UsageRecords",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

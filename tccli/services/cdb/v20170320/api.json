@@ -8245,7 +8245,6 @@
       "document": "DescribeDefaultParams请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "mysql版本，目前支持 [\"5.1\", \"5.5\", \"5.6\", \"5.7\"]。",
           "example": "5.7",
           "member": "string",
@@ -8254,11 +8253,18 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "TemplateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "参数模板引擎，默认值：InnoDB",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "EngineType",
           "required": false,
           "type": "string"
         }
@@ -8273,7 +8279,6 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8282,7 +8287,6 @@
           "example": "无",
           "member": "ParameterDetail",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

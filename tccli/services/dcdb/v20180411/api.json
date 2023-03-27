@@ -119,6 +119,13 @@
       "output": "DescribeDBSyncModeResponse",
       "status": "online"
     },
+    "DescribeDCDBInstanceDetail": {
+      "document": "本接口（DescribeDCDBInstanceDetail）用于获取DCDB实例详情",
+      "input": "DescribeDCDBInstanceDetailRequest",
+      "name": "获取DCDB实例详情",
+      "output": "DescribeDCDBInstanceDetailResponse",
+      "status": "online"
+    },
     "DescribeDCDBInstanceNodeInfo": {
       "document": "本接口（DescribeDCDBInstanceNodeInfo）用于获取实例节点信息",
       "input": "DescribeDCDBInstanceNodeInfoRequest",
@@ -3349,6 +3356,474 @@
       ],
       "type": "object"
     },
+    "DescribeDCDBInstanceDetailRequest": {
+      "document": "DescribeDCDBInstanceDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如dcdbt-7oaxtcb7",
+          "example": "tdsqlshard-rlye31jd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDCDBInstanceDetailResponse": {
+      "document": "DescribeDCDBInstanceDetail返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID，形如dcdbt-7oaxtcb7",
+          "example": "tdsqlshard-rlye31jd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例名称",
+          "example": "tdsqlshard-rlye31jd",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例状态。0-实例创建中；1-异步任务处理中；2-运行中；3-实例未初始化；-1-实例已隔离",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例目前运行状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例内网IP地址",
+          "example": "172.16.0.39",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例内网端口",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例节点数。值为2时表示一主一从，值为3时表示一主二从",
+          "example": "2",
+          "member": "int64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例所在地域名称，形如ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例私有网络ID，形如vpc-r9jr0de3",
+          "example": "vpc-4x1eyoyv",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例私有网络子网ID，形如subnet-6rqs61o2",
+          "example": "subnet-58oypmoq",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "外网状态，0-未开通；1-已开通；2-关闭；3-开通中；4-关闭中",
+          "example": "0",
+          "member": "int64",
+          "name": "WanStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "外网访问的域名，公网可解析",
+          "example": "无",
+          "member": "string",
+          "name": "WanDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "外网IP地址，公网可访问",
+          "example": "无",
+          "member": "string",
+          "name": "WanVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "外网访问端口",
+          "example": "0",
+          "member": "int64",
+          "name": "WanPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例所属项目ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例自动续费标志。0-正常续费；1-自动续费；2-到期不续费",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "独享集群ID",
+          "example": "dbdc-odgvdv66",
+          "member": "string",
+          "name": "ExclusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "付费模式。prepaid-预付费；postpaid-按量计费",
+          "example": "prepaid",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例创建时间，格式为 2006-01-02 15:04:05",
+          "example": "2020-04-08 13:59:39",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例到期时间，格式为 2006-01-02 15:04:05",
+          "example": "2020-05-08 13:59:39",
+          "member": "datetime",
+          "name": "PeriodEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库版本信息",
+          "example": "5.7.17",
+          "member": "string",
+          "name": "DbVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例是否支持审计。0-不支持；1-支持",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAuditSupported",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例是否支持数据加密。0-不支持；1-支持",
+          "example": "0",
+          "member": "int64",
+          "name": "IsEncryptSupported",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例母机机器型号",
+          "example": "SH02D",
+          "member": "string",
+          "name": "Machine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例内存大小，单位 GB，各个分片的内存大小的和",
+          "example": "12",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例磁盘存储大小，单位 GB，各个分片的磁盘大小的和",
+          "example": "40",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例存储空间使用率，计算方式为：各个分片已经使用的磁盘大小的和/各个分片的磁盘大小的和。",
+          "example": "0.001",
+          "member": "float",
+          "name": "StorageUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志存储空间大小，单位GB",
+          "example": "16",
+          "member": "int64",
+          "name": "LogStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品类型ID",
+          "example": "11128",
+          "member": "int64",
+          "name": "Pid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主DB可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "MasterZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "从DB可用区",
+          "example": "[\"ap-guangzhou-1\"]",
+          "member": "string",
+          "name": "SlaveZones",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分片信息",
+          "example": "无",
+          "member": "ShardBriefInfo",
+          "name": "Shards",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内网IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Vip6",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例Cpu核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例QPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4000",
+          "member": "int64",
+          "name": "Qps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "DB引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Mysql",
+          "member": "string",
+          "name": "DbEngine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否支持IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Ipv6Flag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外网IPv6地址，公网可访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WanVipv6",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外网状态，0-未开通；1-已开通；2-关闭；3-开通中；4-关闭中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "WanStatusIpv6",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外网IPv6端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "WanPortIpv6",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "标签信息",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DCN标志，0-无，1-主实例，2-灾备实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DcnFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "DCN状态，0-无，1-创建中，2-同步中，3-已断开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DcnStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "DCN灾备实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DcnDstNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例是否支持设置用户连接数限制，内核为10.1暂不支持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMaxUserConnectionsSupported",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "对外显示的数据库版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5.7",
+          "member": "string",
+          "name": "DbVersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "加密状态, 0-未开启，1-已开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EncryptStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "独享集群类型，0:公有云, 1:金融围笼, 2:CDC集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ExclusterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDCDBInstanceNodeInfoRequest": {
       "document": "DescribeDCDBInstanceNodeInfo请求参数结构体",
       "members": [
@@ -5862,6 +6337,30 @@
       ],
       "type": "object"
     },
+    "NodeInfo": {
+      "document": "描述DB节点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DB节点ID",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB节点角色，取值为master或者slave",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OpenDBExtranetAccessRequest": {
       "document": "OpenDBExtranetAccess请求参数结构体",
       "members": [
@@ -6457,6 +6956,162 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ShardBriefInfo": {
+      "document": "DCDB分片信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分片SerialId",
+          "example": "set_1612751240_1",
+          "member": "string",
+          "name": "ShardSerialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片ID，形如shard-7vg1o339",
+          "example": "shard-lbt0utcz",
+          "member": "string",
+          "name": "ShardInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片运行状态",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片运行状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片创建时间",
+          "example": "2021-02-08 10:25:08",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片内存大小，单位GB",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片磁盘大小，单位GB",
+          "example": "10",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片日志磁盘空间大小，单位GB",
+          "example": "8",
+          "member": "int64",
+          "name": "LogDisk",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片节点个数",
+          "example": "3",
+          "member": "int64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片磁盘空间使用率",
+          "example": "0.007",
+          "member": "float",
+          "name": "StorageUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片Proxy版本信息",
+          "example": "1.14.63-M-V2R667D003",
+          "member": "string",
+          "name": "ProxyVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片主DB可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ShardMasterZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片从DB可用区",
+          "example": "[\"ap-guangzhou-1\", \"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "ShardSlaveZones",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片Cpu核数",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "NodeInfo",
+          "name": "NodesInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

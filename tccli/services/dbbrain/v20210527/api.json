@@ -4024,7 +4024,6 @@
       "document": "实例配置。",
       "members": [
         {
-          "default": "",
           "document": "数据库巡检开关, Yes/No。",
           "example": "Yes",
           "member": "string",
@@ -4034,7 +4033,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例概览开关，Yes/No。",
           "example": "Yes",
           "member": "string",
@@ -4042,6 +4040,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "redis大key分析的自定义分割符，仅redis使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyDelimiters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4050,7 +4057,6 @@
       "document": "查询实例列表，返回实例的相关信息的对象。",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "cdb-test",
           "member": "string",
@@ -4060,7 +4066,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名称。",
           "example": "cdb-测试",
           "member": "string",
@@ -4070,7 +4075,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所属地域。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -4080,7 +4084,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "健康得分。",
           "example": "100",
           "member": "int64",
@@ -4090,7 +4093,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "所属产品。",
           "example": "MySql",
           "member": "string",
@@ -4100,7 +4102,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "异常事件数量。",
           "example": "0",
           "member": "int64",
@@ -4110,7 +4111,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例类型：1:MASTER；2:DR，3：RO，4:SDR。",
           "example": "1",
           "member": "int64",
@@ -4120,7 +4120,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "核心数。",
           "example": "1",
           "member": "int64",
@@ -4130,7 +4129,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内存，单位MB。",
           "example": "4000",
           "member": "int64",
@@ -4140,7 +4138,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "硬盘存储，单位GB。",
           "example": "50",
           "member": "int64",
@@ -4150,7 +4147,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据库版本。",
           "example": "5.6",
           "member": "string",
@@ -4160,7 +4156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内网地址。",
           "example": "127.0.0.1",
           "member": "string",
@@ -4170,7 +4165,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内网端口。",
           "example": "3306",
           "member": "int64",
@@ -4180,7 +4174,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "接入来源。",
           "example": "TENCENT_CLOUD",
           "member": "string",
@@ -4190,7 +4183,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分组ID。",
           "example": "test-group",
           "member": "string",
@@ -4200,7 +4192,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分组组名。",
           "example": "test-group-name",
           "member": "string",
@@ -4210,7 +4201,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例状态：0：发货中；1：运行正常；4：销毁中；5：隔离中。",
           "example": "1",
           "member": "int64",
@@ -4220,7 +4210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网统一ID。",
           "example": "subnet-igztest",
           "member": "string",
@@ -4230,7 +4219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cdb类型。",
           "example": "CUSTOM",
           "member": "string",
@@ -4240,7 +4228,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cdb实例初始化标志：0：未初始化；1：已初始化。",
           "example": "1",
           "member": "int64",
@@ -4250,7 +4237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务状态。",
           "example": "0",
           "member": "int64",
@@ -4260,7 +4246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "私有网络统一ID。",
           "example": "vpc-fstest",
           "member": "string",
@@ -4270,7 +4255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例巡检/概览的状态。",
           "example": "-",
           "member": "InstanceConfs",
@@ -4280,7 +4264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源到期时间。",
           "example": "2021-02-25 16:33:26",
           "member": "datetime",
@@ -4290,7 +4273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否是DBbrain支持的实例。",
           "example": "true",
           "member": "bool",
@@ -4300,7 +4282,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例安全审计日志开启状态：ON： 安全审计开启；OFF： 未开启安全审计。",
           "example": "OFF",
           "member": "string",
@@ -4310,7 +4291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例审计日志开启状态，ALL_AUDIT： 开启全审计；RULE_AUDIT： 开启规则审计；UNBOUND： 未开启审计。",
           "example": "UNBOUND",
           "member": "string",
@@ -4320,12 +4300,38 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例审计日志运行状态：normal： 运行中； paused： 欠费暂停。",
           "example": "normal",
           "member": "string",
           "name": "AuditRunningStatus",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内网vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InternalVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "内网port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InternalVport",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

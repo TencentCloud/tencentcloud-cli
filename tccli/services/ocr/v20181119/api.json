@@ -351,7 +351,7 @@
       "status": "online"
     },
     "RecognizeOnlineTaxiItineraryOCR": {
-      "document": "本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。",
+      "document": "本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。\n\n默认接口请求频率限制：20次/秒。",
       "input": "RecognizeOnlineTaxiItineraryOCRRequest",
       "name": "网约车行程单识别",
       "output": "RecognizeOnlineTaxiItineraryOCRResponse",
@@ -379,7 +379,7 @@
       "status": "online"
     },
     "RecognizeTableOCR": {
-      "document": "本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。",
+      "document": "本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。\n\n默认接口请求频率限制：10次/秒。",
       "input": "RecognizeTableOCRRequest",
       "name": "表格识别（V2)",
       "output": "RecognizeTableOCRResponse",
@@ -400,21 +400,21 @@
       "status": "online"
     },
     "ResidenceBookletOCR": {
-      "document": "本接口支持居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等。",
+      "document": "本接口支持居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等。\n\n默认接口请求频率限制：5次/秒。",
       "input": "ResidenceBookletOCRRequest",
       "name": "户口本识别",
       "output": "ResidenceBookletOCRResponse",
       "status": "online"
     },
     "RideHailingDriverLicenseOCR": {
-      "document": "本接口支持网约车驾驶证关键字段的识别，包括姓名、证号、起始日期、截止日期、发证日期。",
+      "document": "本接口支持网约车驾驶证关键字段的识别，包括姓名、证号、起始日期、截止日期、发证日期。\n\n默认接口请求频率限制：5次/秒。",
       "input": "RideHailingDriverLicenseOCRRequest",
       "name": "网约车驾驶证识别",
       "output": "RideHailingDriverLicenseOCRResponse",
       "status": "online"
     },
     "RideHailingTransportLicenseOCR": {
-      "document": "本接口支持网约车运输证关键字段的识别，包括交运管许可字号、车辆所有人、车辆号牌、起始日期、截止日期、发证日期。\n           ",
+      "document": "本接口支持网约车运输证关键字段的识别，包括交运管许可字号、车辆所有人、车辆号牌、起始日期、截止日期、发证日期。\n\n默认接口请求频率限制：5次/秒。",
       "input": "RideHailingTransportLicenseOCRRequest",
       "name": "网约车运输证识别",
       "output": "RideHailingTransportLicenseOCRResponse",
@@ -442,7 +442,7 @@
       "status": "online"
     },
     "TableOCR": {
-      "document": "<b>此接口为表格识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/49525\">新版表格识别</a>。</b>\n\n本接口支持图片内表格文档的检测和识别，返回每个单元格的文字内容，支持将识别结果保存为 Excel 格式。\n\n",
+      "document": "<b>此接口为表格识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/49525\">新版表格识别</a>。</b>\n\n本接口支持图片内表格文档的检测和识别，返回每个单元格的文字内容，支持将识别结果保存为 Excel 格式。\n\n默认接口请求频率限制：10次/秒。",
       "input": "TableOCRRequest",
       "name": "表格识别（V1)",
       "output": "TableOCRResponse",
@@ -512,7 +512,7 @@
       "status": "online"
     },
     "VehicleRegCertOCR": {
-      "document": "本接口支持国内机动车登记证书主要字段的结构化识别，包括机动车所有人、身份证明名称、号码、车辆型号、车辆识别代号、发动机号、制造厂名称等。",
+      "document": "本接口支持国内机动车登记证书主要字段的结构化识别，包括机动车所有人、身份证明名称、号码、车辆型号、车辆识别代号、发动机号、制造厂名称等。\n\n默认接口请求频率限制：5次/秒。",
       "input": "VehicleRegCertOCRRequest",
       "name": "机动车登记证书识别",
       "output": "VehicleRegCertOCRResponse",
@@ -2516,8 +2516,8 @@
       "document": "金融票据切片识别单个字段的内容",
       "members": [
         {
-          "default": "",
           "document": "识别出的字段名称(关键字)，支持以下字段：\n大写金额、小写金额、账号、票号1、票号2、收款人、大写日期、同城交换号、地址-省份、地址-城市、付款行全称、支票密码、支票用途。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2525,8 +2525,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -6433,7 +6433,6 @@
       "document": "RecognizeOnlineTaxiItineraryOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -6442,7 +6441,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -6451,7 +6449,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
           "example": "无",
           "member": "bool",
@@ -6460,7 +6457,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "无",
           "member": "uint64",
@@ -6479,7 +6475,6 @@
           "example": "无",
           "member": "OnlineTaxiItineraryInfo",
           "name": "OnlineTaxiItineraryInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7427,16 +7422,16 @@
       "document": "RideHailingDriverLicenseOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "example": "无",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -7450,6 +7445,7 @@
       "members": [
         {
           "document": "姓名",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "type": "string",
@@ -7457,6 +7453,7 @@
         },
         {
           "document": "证号，对应网约车驾驶证字段：证号/从业资格证号/驾驶员证号/身份证号",
+          "example": "无",
           "member": "string",
           "name": "LicenseNumber",
           "type": "string",
@@ -7464,6 +7461,7 @@
         },
         {
           "document": "有效起始日期",
+          "example": "无",
           "member": "string",
           "name": "StartDate",
           "type": "string",
@@ -7471,6 +7469,7 @@
         },
         {
           "document": "有效期截止时间，对应网约车驾驶证字段：有效期至/营运期限止",
+          "example": "无",
           "member": "string",
           "name": "EndDate",
           "type": "string",
@@ -7478,6 +7477,7 @@
         },
         {
           "document": "初始发证日期，对应网约车驾驶证字段：初始领证日期/发证日期",
+          "example": "无",
           "member": "string",
           "name": "ReleaseDate",
           "type": "string",
@@ -7496,16 +7496,16 @@
       "document": "RideHailingTransportLicenseOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "example": "无",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -7519,6 +7519,7 @@
       "members": [
         {
           "document": "交运管许可字号。",
+          "example": "无",
           "member": "string",
           "name": "OperationLicenseNumber",
           "type": "string",
@@ -7526,6 +7527,7 @@
         },
         {
           "document": "车辆所有人，对应网约车运输证字段：车辆所有人/车主名称/业户名称。",
+          "example": "无",
           "member": "string",
           "name": "VehicleOwner",
           "type": "string",
@@ -7533,6 +7535,7 @@
         },
         {
           "document": "车牌号码，对应网约车运输证字段：车牌号码/车辆号牌。",
+          "example": "无",
           "member": "string",
           "name": "VehicleNumber",
           "type": "string",
@@ -7540,6 +7543,7 @@
         },
         {
           "document": "有效起始日期。",
+          "example": "无",
           "member": "string",
           "name": "StartDate",
           "type": "string",
@@ -7547,6 +7551,7 @@
         },
         {
           "document": "有效期截止时间，对应网约车运输证字段：有效期至/营运期限止。",
+          "example": "无",
           "member": "string",
           "name": "EndDate",
           "type": "string",
@@ -7554,6 +7559,7 @@
         },
         {
           "document": "初始发证日期，对应网约车运输证字段：初始领证日期/发证日期。",
+          "example": "无",
           "member": "string",
           "name": "ReleaseDate",
           "type": "string",
@@ -8227,16 +8233,16 @@
       "document": "TableOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "http%3A%2F%2Fimg3.redocn.com%2Ftupian%2F20180301%2Fkongbaiqiuzhijianlibiaogesheji_9230633.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -8250,6 +8256,7 @@
       "members": [
         {
           "document": "检测到的文本信息，具体内容请点击左侧链接",
+          "example": "无",
           "member": "TextTable",
           "name": "TextDetections",
           "type": "list",
@@ -8257,6 +8264,7 @@
         },
         {
           "document": "Base64 编码后的 Excel 数据。",
+          "example": "bWxQSwECFAAUAAAACAAAAAAAcxSJldcBAAD9BQAADQAAAAAAAAAAAAAAAACtLAAAeGwvc3R5bGVzLnhtbFBLAQIUABQAAAAIAAAAAAC8TIYcSAYAAP4kAAATAAAAAAAAAAAAAAAAAK8uAAB4bC90aGVtZS90aGVtZTEueG1sUEsBAhQAFAAAAAgAAAAAANG5P9oECwAAUU0AABgAAAAAAAAAAAAAAAAAKDUAAHhsL3dvcmtzaGVldHMvc2hlZXQyLnhtbFBLAQIUABQAAAAIAAAAAADjsY7PqAMAAE8PAAAYAAAAAAAAAAAAAAAAAGJAAAB4bC93b3Jrc2hlZXRzL3NoZWV0MS54bWxQSwUGAAAAAAwADAALAwAAQEQAAAAA",
           "member": "string",
           "name": "Data",
           "type": "string",
@@ -10968,7 +10976,6 @@
       "document": "VehicleRegCertOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -10977,7 +10984,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -10996,7 +11002,6 @@
           "example": "无",
           "member": "VehicleRegCertInfo",
           "name": "VehicleRegCertInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -267,7 +267,7 @@
       "status": "online"
     },
     "CreateFlowLog": {
-      "document": "本接口（CreateFlowLog）用于创建流日志",
+      "document": "本接口（CreateFlowLog）用于创建网络流日志。",
       "input": "CreateFlowLogRequest",
       "name": "创建流日志",
       "output": "CreateFlowLogResponse",
@@ -5680,8 +5680,7 @@
       "document": "CreateFlowLog请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "流日志实例名字",
+          "document": "流日志实例名字。",
           "example": "test-flowlog",
           "member": "string",
           "name": "FlowLogName",
@@ -5689,8 +5688,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG",
+          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",
@@ -5698,8 +5696,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "资源唯一ID",
+          "document": "资源唯一ID。",
           "example": "eni-12345678",
           "member": "string",
           "name": "ResourceId",
@@ -5707,8 +5704,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "流日志采集类型，ACCEPT|REJECT|ALL",
+          "document": "流日志采集类型，ACCEPT|REJECT|ALL。",
           "example": "ACCEPT",
           "member": "string",
           "name": "TrafficType",
@@ -5716,7 +5712,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。",
           "example": "vpc-12345678",
           "member": "string",
@@ -5725,8 +5720,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "流日志实例描述",
+          "document": "流日志实例描述。",
           "example": "test",
           "member": "string",
           "name": "FlowLogDescription",
@@ -5734,8 +5728,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "流日志存储ID",
+          "document": "流日志存储ID。",
           "example": "99991111-2222-4444-9999-222266663333",
           "member": "string",
           "name": "CloudLogId",
@@ -5743,8 +5736,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -5752,8 +5744,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "消费端类型：cls、ckafka",
+          "document": "消费端类型：cls、ckafka。默认值cls。",
           "example": "cls",
           "member": "string",
           "name": "StorageType",
@@ -5761,7 +5752,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "流日志消费端信息，当消费端类型为ckafka时，必填。",
           "example": "无",
           "member": "FlowLogStorage",
@@ -5770,7 +5760,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "流日志存储ID对应的地域，不传递默认为本地域。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -5785,11 +5774,10 @@
       "document": "CreateFlowLog返回参数结构体",
       "members": [
         {
-          "document": "创建的流日志信息",
+          "document": "创建的流日志信息。",
           "example": "无",
           "member": "FlowLog",
           "name": "FlowLog",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6316,7 +6304,7 @@
       "document": "CreateNetworkAcl请求参数结构体",
       "members": [
         {
-          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "document": "VPC实例ID。可通过<a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a>接口返回值中的VpcId获取。",
           "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
@@ -6332,7 +6320,7 @@
           "type": "string"
         },
         {
-          "document": "网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)。",
+          "document": "网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)。默认值三元组(TRIPLE)。",
           "example": "TRIPLE,QUINTUPLE",
           "member": "string",
           "name": "NetworkAclType",
@@ -11171,7 +11159,7 @@
           "type": "int"
         },
         {
-          "document": "排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。",
+          "document": "排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。默认值`OutTraffic`。",
           "example": "InPkg",
           "member": "string",
           "name": "OrderField",
@@ -11179,7 +11167,7 @@
           "type": "string"
         },
         {
-          "document": "排序方法。顺序：`ASC`，倒序：`DESC`。",
+          "document": "排序方法。顺序：`ASC`，倒序：`DESC`。默认值`DESC`。",
           "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
@@ -15817,7 +15805,7 @@
           "type": "list"
         },
         {
-          "document": "是否接受终端节点连接请求。",
+          "document": "是否接受终端节点连接请求。\n<li> true：自动接受。</li> <li> false：不自动接受。</li>",
           "example": "True",
           "member": "bool",
           "name": "AcceptFlag",

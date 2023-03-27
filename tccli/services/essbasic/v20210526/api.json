@@ -112,6 +112,20 @@
       "output": "ChannelCreateSealPolicyResponse",
       "status": "online"
     },
+    "ChannelCreateUserRoles": {
+      "document": "渠道版绑定员工角色",
+      "input": "ChannelCreateUserRolesRequest",
+      "name": "渠道版绑定员工角色",
+      "output": "ChannelCreateUserRolesResponse",
+      "status": "online"
+    },
+    "ChannelDeleteRoleUsers": {
+      "document": "渠道版删除员工绑定角色",
+      "input": "ChannelDeleteRoleUsersRequest",
+      "name": "渠道版删除员工绑定角色",
+      "output": "ChannelDeleteRoleUsersResponse",
+      "status": "online"
+    },
     "ChannelDeleteSealPolicies": {
       "document": "删除指定印章下多个授权信息",
       "input": "ChannelDeleteSealPoliciesRequest",
@@ -131,6 +145,13 @@
       "input": "ChannelDescribeOrganizationSealsRequest",
       "name": "查询子客企业电子印章",
       "output": "ChannelDescribeOrganizationSealsResponse",
+      "status": "online"
+    },
+    "ChannelDescribeRoles": {
+      "document": "渠道办查询用户角色",
+      "input": "ChannelDescribeRolesRequest",
+      "name": "渠道办查询用户角色",
+      "output": "ChannelDescribeRolesResponse",
       "status": "online"
     },
     "ChannelGetTaskResultApi": {
@@ -1763,6 +1784,122 @@
       ],
       "type": "object"
     },
+    "ChannelCreateUserRolesRequest": {
+      "document": "ChannelCreateUserRoles请求参数结构体",
+      "members": [
+        {
+          "document": "操作者信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "绑定角色的员工id列表",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "绑定角色的角色id列表",
+          "example": "无",
+          "member": "string",
+          "name": "RoleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateUserRolesResponse": {
+      "document": "ChannelCreateUserRoles返回参数结构体",
+      "members": [
+        {
+          "document": "绑定失败的用户角色列表",
+          "example": "无",
+          "member": "FailedCreateRoleData",
+          "name": "FailedCreateRoleData",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDeleteRoleUsersRequest": {
+      "document": "ChannelDeleteRoleUsers请求参数结构体",
+      "members": [
+        {
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "角色Id",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用户列表",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "代理信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDeleteRoleUsersResponse": {
+      "document": "ChannelDeleteRoleUsers返回参数结构体",
+      "members": [
+        {
+          "document": "角色id",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelDeleteSealPoliciesRequest": {
       "document": "ChannelDeleteSealPolicies请求参数结构体",
       "members": [
@@ -1993,6 +2130,96 @@
       ],
       "type": "object"
     },
+    "ChannelDescribeRolesRequest": {
+      "document": "ChannelDescribeRoles请求参数结构体",
+      "members": [
+        {
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "查询起始偏移，最大2000",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "查询数量，最大200",
+          "example": "无",
+          "member": "string",
+          "name": "Limit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "查询的关键字段:\nKey:\"RoleType\",Vales:[\"1\"]查询系统角色，Values:[\"2]查询自定义角色\nKey:\"RoleStatus\",Values:[\"1\"]查询启用角色，Values:[\"2\"]查询禁用角色",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDescribeRolesResponse": {
+      "document": "ChannelDescribeRoles返回参数结构体",
+      "members": [
+        {
+          "document": "页面偏移量，最大2000",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询数量，最大200",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询角色的总数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "角色信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChannelRole",
+          "name": "ChannelRoles",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelGetTaskResultApiRequest": {
       "document": "ChannelGetTaskResultApi请求参数结构体",
       "members": [
@@ -2083,6 +2310,39 @@
       ],
       "type": "object"
     },
+    "ChannelRole": {
+      "document": "渠道角色信息",
+      "members": [
+        {
+          "document": "角色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色状态：1-启用；2-禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoleStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ChannelUpdateSealStatusRequest": {
       "document": "ChannelUpdateSealStatus请求参数结构体",
       "members": [
@@ -2145,7 +2405,7 @@
       "document": "ChannelVerifyPdf请求参数结构体",
       "members": [
         {
-          "document": "合同Id，流程Id",
+          "document": "流程ID",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -2183,7 +2443,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "验签结果详情,内部状态1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域\n；5-文件签名格式错误",
+          "document": "验签结果详情,内部状态1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误",
           "example": "无",
           "member": "PdfVerifyResult",
           "name": "PdfVerifyResults",
@@ -3637,6 +3897,30 @@
           "name": "OperateOn",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FailedCreateRoleData": {
+      "document": "绑定失败的用户角色信息",
+      "members": [
+        {
+          "document": "用户userId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色RoleId列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleIds",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

@@ -8,7 +8,6 @@ Input:
 tccli vpc DescribeGatewayFlowMonitorDetail --cli-unfold-argument  \
     --TimePoint '2019-02-28 18:15:20' \
     --NatId nat-lz6rjk7n \
-    --Limit 5 \
     --OrderField OutTraffic \
     --OrderDirection DESC
 ```

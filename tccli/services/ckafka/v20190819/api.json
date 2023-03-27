@@ -5744,7 +5744,6 @@
       "document": "DescribeConnectResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "连接源类型",
           "example": "xxx",
           "member": "string",
@@ -5753,7 +5752,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "连接源名称的关键字查询",
           "example": "xxx",
           "member": "string",
@@ -5762,7 +5760,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页偏移量，默认为0",
           "example": "0",
           "member": "int64",
@@ -5771,13 +5768,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100",
           "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5816,7 +5820,6 @@
           "example": "xxx",
           "member": "DescribeConnectResourcesResp",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

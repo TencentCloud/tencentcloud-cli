@@ -136,6 +136,14 @@
         "title": "无"
       }
     ],
+    "DescribeDBInstanceDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-jv8z8fhl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WanStatus\": 0,\n        \"Zone\": \"ap-guangzhou-2\",\n        \"Pid\": 1002231,\n        \"WanPortIpv6\": 0,\n        \"Storage\": 10,\n        \"Machine\": \"SH12\",\n        \"AutoRenewFlag\": 0,\n        \"NodesInfo\": [\n            {\n                \"Role\": \"xx\",\n                \"NodeId\": \"xx\"\n            }\n        ],\n        \"Memory\": 2,\n        \"Status\": 2,\n        \"Vip6\": \"\",\n        \"MasterZone\": \"ap-guangzhou-1\",\n        \"VpcId\": \"vpc-hqxhp43z\",\n        \"IsEncryptSupported\": 0,\n        \"InstanceId\": \"tdsql-jv8z8fhl\",\n        \"WanVipv6\": \"\",\n        \"SlaveZones\": [\n            \"ap-guangzhou-2\",\n            \"ap-guangzhou-2\"\n        ],\n        \"TdsqlVersion\": \"基于MariaDB 10.0.10设计(兼容MySQL 5.5)\",\n        \"WanStatusIpv6\": 0,\n        \"SubnetId\": \"subnet-15y3y4eo\",\n        \"InstanceType\": 0,\n        \"StorageUsage\": \"10.1\",\n        \"DcnStatus\": 0,\n        \"DbVersion\": \"5.7.17\",\n        \"DcnDstNum\": 0,\n        \"ProjectId\": 0,\n        \"Region\": \"ap-guangzhou\",\n        \"DbEngine\": \"Percona\",\n        \"IsTmp\": 0,\n        \"PayMode\": \"1\",\n        \"PeriodEndTime\": \"2020-09-22 00:00:00\",\n        \"ResourceTags\": [\n            {\n                \"TagKey\": \"k1\",\n                \"TagValue\": \"v1\"\n            }\n        ],\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"Ipv6Flag\": 0,\n        \"StatusDesc\": \"运行中\",\n        \"InstanceName\": \"cos_test\",\n        \"Cpu\": 1,\n        \"DcnFlag\": 0,\n        \"IsAuditSupported\": true,\n        \"WanDomain\": \"\",\n        \"WanPort\": 0,\n        \"CreateTime\": \"2020-09-22 00:00:00\",\n        \"Vip\": \"192.168.240.44\",\n        \"ExclusterId\": \"\",\n        \"LogStorage\": 8,\n        \"NodeCount\": 3,\n        \"Qps\": 2100,\n        \"Vport\": 3306,\n        \"WanVip\": \"\",\n        \"IsMaxUserConnectionsSupported\": true,\n        \"DbVersionId\": \"5.7\",\n        \"ReplicaConfig\": {\n            \"DelayReplicationType\": \"xx\",\n            \"ReplicationDelay\": 0,\n            \"RoReplicationMode\": \"xx\",\n            \"DueTime\": \"xx\"\n        },\n        \"ReplicaStatus\": {\n            \"Status\": \"xx\",\n            \"Delay\": 0\n        },\n        \"EncryptStatus\": 0,\n        \"ExclusterType\": 0\n    }\n}",
+        "title": "查询实例详细信息"
+      }
+    ],
     "DescribeDBInstanceSpecs": [
       {
         "document": "",

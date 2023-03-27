@@ -116,7 +116,7 @@
     ],
     "CreateIntegrationEmployees": [
       {
-        "document": "",
+        "document": "创建员工",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"DisplayName\": \"张三\",\n            \"Mobile\": \"12345678901\",\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三\",\n                    \"Mobile\": \"1***********7\",\n                    \"UserId\": \"*******\"\n                }\n            ]\n        },\n        \"RequestId\": \"s166*************073\"\n    }\n}",
         "title": "创建员工"
@@ -136,6 +136,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrepareFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"1956103********520fde6a\"\n    },\n    \"FlowName\": \"测试\",\n    \"Unordered\": false,\n    \"IntelligentStatus\": \"OPEN\",\n    \"UserFlowTypeId\": \"xx\",\n    \"ResourceId\": \"xx\",\n    \"Deadline\": 1604912664,\n    \"Approvers\": [\n        {\n            \"ApproverType\": 0,\n            \"OrganizationName\": \"***有限公司\",\n            \"Required\": true,\n            \"ApproverName\": \"张三\",\n            \"ApproverMobile\": \"185****11111\"\n        },\n        {\n            \"ApproverType\": 1,\n            \"Required\": true,\n            \"ApproverName\": \"李四\",\n            \"ApproverMobile\": \"185****2222\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Url\": \"\",\n        \"RequestId\": \"s1234345677xxxx\"\n    }\n}",
         "title": "创建签署流程。"
+      }
+    ],
+    "CreatePreparedPersonalEsign": [
+      {
+        "document": "通过准备好的印章图片创建个人印章",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreparedPersonalEsign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"OpenId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"UserName\": \"印章归属个人姓名\",\n    \"IdCardType\": \"\",\n    \"IdCardNumber\": \"身份证件号码\",\n    \"SealImage\": \"印章图片Base64\",\n    \"SealName\": \"我的印章名称\",\n    \"Mobile\": \"135*111\",\n    \"EnableAutoSign\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"SealId\": \"sealid-1\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "通过准备好的印章图片创建个人印章"
       }
     ],
     "CreateReleaseFlow": [
@@ -178,9 +186,9 @@
     ],
     "DeleteIntegrationEmployees": [
       {
-        "document": "",
+        "document": "删除员工，支持离职交接",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DeleteEmployeeResult\": {\n            \"FailedEmployeeData\": [\n                {\n                    \"OpenId\": \"xx\",\n                    \"Reason\": \"xx\",\n                    \"UserId\": \"xx\"\n                }\n            ],\n            \"SuccessEmployeeData\": [\n                {\n                    \"Mobile\": \"xx\",\n                    \"UserId\": \"xx\",\n                    \"DisplayName\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteEmployeeResult\": {\n            \"FailedEmployeeData\": [\n                {\n                    \"OpenId\": \"SomeopenID\",\n                    \"Reason\": \"员工不存在\",\n                    \"UserId\": \"SomeUserID\"\n                }\n            ],\n            \"SuccessEmployeeData\": [\n                {\n                    \"Mobile\": \"133XXXX1234\",\n                    \"UserId\": \"SomeUserID\",\n                    \"DisplayName\": \"SomeOne\"\n                }\n            ]\n        },\n        \"RequestId\": \"req123\"\n    }\n}",
         "title": "删除员工"
       }
     ],
@@ -346,13 +354,13 @@
     ],
     "VerifyPdf": [
       {
-        "document": "",
+        "document": "对流程进行验证",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyPdf\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxoQUxxxxxxjEyd1h2hnnR\"\n    },\n    \"FlowId\": \"yDRINUUgxxxx4zjEReF3rOOwb\"\n}",
         "output": "{\n    \"Response\": {\n        \"PdfVerifyResults\": [\n            {\n                \"CertNotAfter\": 166300032000,\n                \"CertNotBefore\": 16630002000,\n                \"CertSn\": \"166300032000\",\n                \"ComponentHeight\": 33.340026855469,\n                \"ComponentPage\": 1,\n                \"ComponentPosX\": 160,\n                \"ComponentPosY\": 293.32995605469,\n                \"ComponentWidth\": 100,\n                \"SignAlgorithm\": \"SHA1withRSA\",\n                \"SignPlatform\": \"腾讯电子签\",\n                \"SignTime\": 1663304532000,\n                \"SignerName\": \"ESS@xxx二@41xxxxx6635@666744\",\n                \"VerifyResult\": 1\n            },\n            {\n                \"CertNotAfter\": 1663304655000,\n                \"CertNotBefore\": 1663304655000,\n                \"CertSn\": \"2b42298dcxxxxx7527eaa1017e254e8\",\n                \"ComponentHeight\": 75.680023193359,\n                \"ComponentPage\": 1,\n                \"ComponentPosX\": 260,\n                \"ComponentPosY\": 272.15997314453,\n                \"ComponentWidth\": 100,\n                \"SignAlgorithm\": \"SHA1withRSA\",\n                \"SignPlatform\": \"腾讯电子签\",\n                \"SignTime\": 1663304656000,\n                \"SignerName\": \"张x x\",\n                \"VerifyResult\": 1\n            }\n        ],\n        \"RequestId\": \"79900a28xxxxxx-4af8a90f7292\",\n        \"VerifySerialNo\": \"16698630779\",\n        \"VerifyResult\": 1\n    }\n}",
         "title": "示例"
       },
       {
-        "document": "",
+        "document": "对流程进行验证",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyPdf\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxoQUUgydjfxxxxEyd1h2hnnR\"\n    },\n    \"FlowId\": \"yDRIKUUgyxxxxUuO4zjExhs82XeuX\"\n}",
         "output": "{\n    \"Response\": {\n        \"PdfVerifyResults\": [\n            {\n                \"CertNotAfter\": 16691000034000,\n                \"CertNotBefore\": 163700034000,\n                \"CertSn\": \"5255f51cxxxxxx4d66f2a9eb8fb3d2bc1\",\n                \"ComponentHeight\": 43,\n                \"ComponentPage\": 1,\n                \"ComponentPosX\": 210.25,\n                \"ComponentPosY\": 43,\n                \"ComponentWidth\": 96.75,\n                \"SignAlgorithm\": \"SHA1withRSA\",\n                \"SignPlatform\": \"腾讯电子签\",\n                \"SignTime\": 1663238861000,\n                \"SignerName\": \"深圳市腾讯计算机系统有限公司\",\n                \"VerifyResult\": 1\n            },\n            {\n                \"CertNotAfter\": 166300032000,\n                \"CertNotBefore\": 166300032000,\n                \"CertSn\": \"5255f51c7xxx82c4d66f2a9eb8fb3d2bc1\",\n                \"ComponentHeight\": 12,\n                \"ComponentPage\": 1,\n                \"ComponentPosX\": 223.64999389648,\n                \"ComponentPosY\": 86,\n                \"ComponentWidth\": 69.950012207031,\n                \"SignAlgorithm\": \"SHA1withRSA\",\n                \"SignPlatform\": \"腾讯电子签\",\n                \"SignTime\": 1663238861000,\n                \"SignerName\": \"深圳xxxxx限公司\",\n                \"VerifyResult\": 1\n            }\n        ],\n        \"RequestId\": \"57151f15-2xxxxxx46418d4b72a\",\n        \"VerifySerialNo\": \"16698630779\",\n        \"VerifyResult\": 1\n    }\n}",
         "title": "示例1"

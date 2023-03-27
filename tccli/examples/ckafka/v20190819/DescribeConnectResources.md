@@ -1,14 +1,14 @@
 **Example 1: 查询Datahub连接源列表**
 
-
+查询Datahub连接源列表
 
 Input: 
 
 ```
 tccli ckafka DescribeConnectResources --cli-unfold-argument  \
     --Limit 0 \
-    --Type xx \
-    --SearchWord xx \
+    --Type xxx \
+    --SearchWord xxx \
     --Offset 0
 ```
 
@@ -21,21 +21,35 @@ Output:
             "ConnectResourceList": [
                 {
                     "Status": 0,
-                    "ResourceName": "xx",
-                    "Description": "xx",
+                    "ResourceName": "xxx",
+                    "Description": "xxx",
+                    "ResourceId": "resource-xxx",
                     "DtsConnectParam": {
-                        "UserName": "xx",
-                        "Resource": "xx",
-                        "GroupId": "xx",
-                        "Password": "xx",
+                        "Topic": "xxx",
+                        "UserName": "xxx",
+                        "Resource": "xxx",
+                        "GroupId": "xxx",
+                        "Password": "xxx",
                         "Port": 0
                     },
+                    "MySQLConnectParam": null,
+                    "MongoDBConnectParam": null,
+                    "EsConnectParam": null,
+                    "PostgreSQLConnectParam": null,
+                    "ClickHouseConnectParam": null,
+                    "SQLServerConnectParam": null,
+                    "CurrentStep": "FINISH",
+                    "CtsdbConnectParam": null,
+                    "ErrorMessage": "RUNNING",
+                    "MariaDBConnectParam": null,
+                    "DorisConnectParam": null,
                     "Type": "",
-                    "CreateTime": "xx"
+                    "DatahubTaskCount": 0,
+                    "CreateTime": "xxx"
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "xxx"
     }
 }
 ```

@@ -228,7 +228,7 @@
       {
         "document": "CIDR与VPC现存信息存在冲突。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NewCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [\n            {\n                \"ConflictSourceId\": \"vpc-xxx\",\n                \"SourceItem\": \"xxx\",\n                \"ConflictItemSet\": [\n                    {\n                        \"ConfilctId\": \"xxx\",\n                        \"DestinationItem\": \"xxx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [\n            {\n                \"ConflictSourceId\": \"vpcd-122d5678\",\n                \"SourceItem\": \"172.16.0.0/16\",\n                \"ConflictItemSet\": [\n                    {\n                        \"ConfilctId\": \"vpc-12345678\",\n                        \"DestinationItem\": \"172.16.0.0/24\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e906fed4-29ew-44ba-a240-f5bde9fd84c7\"\n    }\n}",
         "title": "检查辅助CIDR冲突"
       }
     ],
@@ -384,10 +384,10 @@
     ],
     "CreateFlowLog": [
       {
-        "document": "",
+        "document": "创建网络流日志",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowLog\n<公共请求参数>\n\n{\n    \"FlowLogName\": \"test\",\n    \"CloudLogId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"FlowLogDescription\": \"test-flowlog\",\n    \"ResourceType\": \"NETWORKINTERFACE\",\n    \"ResourceId\": \"eni-xxxxxxxx\",\n    \"TrafficType\": \"ACCEPT\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowLog\": [\n            {\n                \"VpcId\": \"vpc-pq9vxykj\",\n                \"FlowLogId\": \"fl-f42uhpkj\",\n                \"FlowLogName\": \"test\",\n                \"ResourceType\": \"NETWORKINTERFACE\",\n                \"ResourceId\": \"eni-78ysaex1\",\n                \"TrafficType\": \"ACCEPT\",\n                \"CloudLogId\": \"dfb8f1a2-8522-47c1-8571-67905167ab3f\",\n                \"CloudLogState\": \"\",\n                \"CloudLogRegion\": \"\",\n                \"FlowLogDescription\": \"\",\n                \"Enable\": true,\n                \"StorageType\": \"cls\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"city\",\n                        \"Value\": \"shanghai\"\n                    }\n                ],\n                \"FlowLogStorage\": {\n                    \"StorageTopic\": \"\",\n                    \"StorageId\": \"\"\n                },\n                \"CreatedTime\": \"0000-00-00 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"404428db-f850-40c2-803\"\n    }\n}",
-        "title": "创建流日志"
+        "title": "创建网络流日志"
       }
     ],
     "CreateHaVip": [
@@ -549,8 +549,8 @@
     "CreateSubnet": [
       {
         "document": "创建子网",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubnet\n<公共请求参数>\n\n{\n    \"SubnetName\": \"TestSubnet\",\n    \"VpcId\": \"vpc-m3ul053f\",\n    \"CidrBlock\": \"10.8.0.0/16\",\n    \"Zone\": \"ap-guangzhou-1\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Subnet\": {\n            \"NetworkAclId\": \"xx\",\n            \"RouteTableId\": \"xx\",\n            \"VpcId\": \"xx\",\n            \"EnableBroadcast\": true,\n            \"Zone\": \"xx\",\n            \"IsCdcSubnet\": 0,\n            \"Ipv6CidrBlock\": \"xx\",\n            \"CdcId\": \"xx\",\n            \"AvailableIpAddressCount\": 1,\n            \"IsRemoteVpcSnat\": true,\n            \"SubnetName\": \"xx\",\n            \"TotalIpAddressCount\": 1,\n            \"TagSet\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ],\n            \"CreatedTime\": \"xx\",\n            \"SubnetId\": \"xx\",\n            \"CidrBlock\": \"xx\",\n            \"IsDefault\": false\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubnet\n<公共请求参数>\n\n{\n    \"SubnetName\": \"TestSubnet\",\n    \"VpcId\": \"vpc-m3ul053f\",\n    \"CidrBlock\": \"10.8.0.0/24\",\n    \"Zone\": \"ap-guangzhou-1\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Subnet\": {\n            \"VpcId\": \"vpc-m3ul053f\",\n            \"EnableBroadcast\": true,\n            \"Zone\": \"1001\",\n            \"IsCdcSubnet\": 0,\n            \"AvailableIpAddressCount\": 1021,\n            \"IsRemoteVpcSnat\": true,\n            \"SubnetName\": \"subnet1\",\n            \"TotalIpAddressCount\": 1024,\n            \"TagSet\": [\n                {\n                    \"Value\": \"shanghai\",\n                    \"Key\": \"city\"\n                }\n            ],\n            \"CreatedTime\": \"2023-03-21 18:00:00\",\n            \"SubnetId\": \"subnet-1d32nvu2\",\n            \"CidrBlock\": \"10.8.0.0/24\",\n            \"IsDefault\": false,\n            \"CdcId\": \"\",\n            \"Ipv6CidrBlock\": \"\",\n            \"RouteTableId\": \"\",\n            \"NetworkAclId\": \"\"\n        },\n        \"RequestId\": \"9450a158-0487-4baa-bd3f-a07f343b6c4e\"\n    }\n}",
         "title": "创建子网"
       }
     ],
@@ -1245,7 +1245,7 @@
     "DescribeGatewayFlowMonitorDetail": [
       {
         "document": "查询一个NAT网关流量监控明细",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeGatewayFlowMonitorDetail\n&TimePoint=2019-02-28 18:15:20\n&NatId=nat-lz6rjk7n\n&Limit=5\n&OrderField=OutTraffic\n&OrderDirection=DESC\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeGatewayFlowMonitorDetail\n&TimePoint=2019-02-28 18:15:20\n&NatId=nat-lz6rjk7n\n&OrderField=OutTraffic\n&OrderDirection=DESC\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"GatewayFlowMonitorDetailSet\": [\n            {\n                \"PrivateIpAddress\": \"172.20.65.74\",\n                \"InPkg\": 182,\n                \"OutPkg\": 263,\n                \"InTraffic\": 17316,\n                \"OutTraffic\": 35269\n            },\n            {\n                \"PrivateIpAddress\": \"172.20.65.63\",\n                \"InPkg\": 0,\n                \"OutPkg\": 20,\n                \"InTraffic\": 0,\n                \"OutTraffic\": 1960\n            },\n            {\n                \"PrivateIpAddress\": \"172.20.65.70\",\n                \"InPkg\": 0,\n                \"OutPkg\": 20,\n                \"InTraffic\": 0,\n                \"OutTraffic\": 1960\n            },\n            {\n                \"PrivateIpAddress\": \"172.20.65.172\",\n                \"InPkg\": 0,\n                \"OutPkg\": 20,\n                \"InTraffic\": 0,\n                \"OutTraffic\": 1960\n            },\n            {\n                \"PrivateIpAddress\": \"172.20.65.249\",\n                \"InPkg\": 0,\n                \"OutPkg\": 20,\n                \"InTraffic\": 0,\n                \"OutTraffic\": 1960\n            }\n        ],\n        \"TotalCount\": 261,\n        \"RequestId\": \"0fc9884d-7aa1-4d95-95d3-7945108d2b10\"\n    }\n}",
         "title": "查询一个NAT网关流量监控明细"
       }

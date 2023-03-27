@@ -1,6 +1,6 @@
 **Example 1: 删除员工**
 
-
+删除员工，支持离职交接
 
 Input: 
 
@@ -17,20 +17,20 @@ Output:
         "DeleteEmployeeResult": {
             "FailedEmployeeData": [
                 {
-                    "OpenId": "xx",
-                    "Reason": "xx",
-                    "UserId": "xx"
+                    "OpenId": "SomeopenID",
+                    "Reason": "员工不存在",
+                    "UserId": "SomeUserID"
                 }
             ],
             "SuccessEmployeeData": [
                 {
-                    "Mobile": "xx",
-                    "UserId": "xx",
-                    "DisplayName": "xx"
+                    "Mobile": "133XXXX1234",
+                    "UserId": "SomeUserID",
+                    "DisplayName": "SomeOne"
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "req123"
     }
 }
 ```

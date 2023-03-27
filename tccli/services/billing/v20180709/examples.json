@@ -18,9 +18,9 @@
     ],
     "DescribeBillList": [
       {
-        "document": "",
-        "input": "https://billing.tencentcloudapi.com/?Action=DescribeBillList\n&StartTime=2019-07-31 00:00:00\n&EndTime=2020-07-31 00:00:00\n&Offset=0\n&Limit=1\n&PayType.0=all\n&SubPayType.0=all\n&WithZeroAmount=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 39,\n        \"ReturnAmount\": 9667,\n        \"DeductAmount\": 7057155,\n        \"RechargeAmount\": 2247483647,\n        \"BlockAmount\": 5130854,\n        \"UnblockAmount\": 10000,\n        \"AgentInAmount\": 10000,\n        \"AdvanceRechargeAmount\": 10000,\n        \"WithdrawAmount\": 10000,\n        \"AgentOutAmount\": 10000,\n        \"AdvancePayAmount\": 10000,\n        \"TransactionList\": [\n            {\n                \"OperationTime\": \"2020-07-08 15:52:30.941\",\n                \"ActionType\": \"deduct\",\n                \"PayChannel\": \"用户余额\",\n                \"OperationInfo\": \"OCR文字识别-广州-07月按月结算扣费\",\n                \"Amount\": -45,\n                \"Balance\": 1951932174,\n                \"BillId\": \"20200708000000005009170242661921\",\n                \"Cash\": 1957274510,\n                \"Incentive\": 0,\n                \"Freezing\": 5342336,\n                \"DeductMode\": \"hourm\"\n            }\n        ],\n        \"RequestId\": \"d40b48bf-6755-4128-910b-b54f8b9df6c3\"\n    }\n}",
+        "document": "查询账户收支明细",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillList\n<公共请求参数>\n\n{\n    \"WithZeroAmount\": 1,\n    \"PayType\": [\n        \"all\"\n    ],\n    \"SubPayType\": [\n        \"all\"\n    ],\n    \"Limit\": 1,\n    \"StartTime\": \"2019-07-31 00:00:00\",\n    \"Offset\": 0,\n    \"EndTime\": \"2020-07-31 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 39,\n        \"ReturnAmount\": 9667,\n        \"DeductAmount\": 7057155,\n        \"RechargeAmount\": 2247483647,\n        \"BlockAmount\": 5130854,\n        \"UnblockAmount\": 10000,\n        \"AgentInAmount\": 10000,\n        \"AdvanceRechargeAmount\": 10000,\n        \"WithdrawAmount\": 10000,\n        \"AgentOutAmount\": 10000,\n        \"AdvancePayAmount\": 10000,\n        \"TransactionList\": [\n            {\n                \"OperationTime\": \"2020-07-08 15:52:30.941\",\n                \"ActionType\": \"deduct\",\n                \"PayChannel\": \"用户余额\",\n                \"OperationInfo\": \"OCR文字识别-广州-07月按月结算扣费\",\n                \"Amount\": -45,\n                \"Balance\": 1951932174,\n                \"BillId\": \"20200708000000005009170242661921\",\n                \"Cash\": 1957274510,\n                \"Incentive\": 0,\n                \"Freezing\": 5342336,\n                \"DeductMode\": \"trade\"\n            }\n        ],\n        \"RequestId\": \"d40b48bf-6755-4128-910b-b54f8b9df6c3\"\n    }\n}",
         "title": "查询账户收支明细"
       }
     ],
@@ -152,9 +152,9 @@
     ],
     "DescribeVoucherUsageDetails": [
       {
-        "document": "",
-        "input": "https://billing.tencentcloudapi.com/?Action=DescribeVoucherUsageDetails\n&Limit=10\n&Offset=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": \"0\",\n        \"TotalUsedAmount\": 0,\n        \"UsageRecords\": [\n            {\n                \"UsedAmount\": 0,\n                \"UsedTime\": \"xx\",\n                \"UsageDetails\": [\n                    {\n                        \"ProductName\": \"xxx\",\n                        \"SubProductName\": \"xxx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "获取代金券使用记录",
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeVoucherUsageDetails\n&Limit=10\n&Offset=1\n&VoucherId=\"abc\"\n&Operator=\"abc\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": \"1\",\n        \"TotalUsedAmount\": 18000000000,\n        \"UsageRecords\": [\n            {\n                \"UsedAmount\": 18000000000,\n                \"UsedTime\": \"2021-01-01 00:00:00\",\n                \"UsageDetails\": [\n                    {\n                        \"ProductName\": \"轻量应用服务器\",\n                        \"SubProductName\": \"轻量应用服务器 (通用型-2核2G-50G-500G)\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"76cf663e-f683-41b9-b44d-849123783bf4\"\n    }\n}",
         "title": "获取代金券使用记录"
       }
     ],

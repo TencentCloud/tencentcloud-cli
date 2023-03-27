@@ -603,7 +603,7 @@
       "status": "online"
     },
     "DescribePrometheusInstancesOverview": {
-      "document": "获取与云监控融合实例列表",
+      "document": "获取与 Prometheus 监控融合实例列表",
       "input": "DescribePrometheusInstancesOverviewRequest",
       "name": "获取2.0实例列表",
       "output": "DescribePrometheusInstancesOverviewResponse",
@@ -736,7 +736,7 @@
       "status": "online"
     },
     "ModifyAlarmNotice": {
-      "document": "云监控告警编辑告警通知模板",
+      "document": "编辑告警通知模板",
       "input": "ModifyAlarmNoticeRequest",
       "name": "修改通知模板",
       "output": "ModifyAlarmNoticeResponse",
@@ -13260,7 +13260,6 @@
       "document": "ModifyAlarmNotice请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，这里填“monitor”",
           "example": "monitor",
           "member": "string",
@@ -13269,7 +13268,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警通知规则名称 60字符以内",
           "example": "默认通知模版",
           "member": "string",
@@ -13278,7 +13276,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知",
           "example": "ALL",
           "member": "string",
@@ -13287,7 +13284,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "通知语言 zh-CN=中文 en-US=英文",
           "example": "zh-CN",
           "member": "string",
@@ -13296,7 +13292,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警通知模板 ID",
           "example": "notice-xxx",
           "member": "string",
@@ -13305,7 +13300,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户通知 最多5个",
           "example": "无",
           "member": "UserNotice",
@@ -13314,7 +13308,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "回调通知 最多3个",
           "example": "无",
           "member": "URLNotice",
@@ -13323,7 +13316,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "告警通知推送到CLS服务 最多1个",
           "example": "无",
           "member": "CLSNotice",
@@ -13332,7 +13324,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "告警通知模板绑定的告警策略ID列表",
           "example": "无",
           "member": "string",
