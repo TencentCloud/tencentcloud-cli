@@ -176,7 +176,7 @@
     ],
     "DescribeDistrictIspData": [
       {
-        "document": "",
+        "document": "查询域名用量的地区运营商分布情况",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeDistrictIspData\n&StartTime=2020-03-27 00:00:00\n&EndTime=2020-03-27 00:00:00\n&Metric=bandwidth\n&Domains.0=www.test.com\n&Districts.0=122\n&Isps.0=3947\n&Protocol=http\n&IpProtocol=ipv4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd-efgh-ijkl-mnop\",\n        \"Data\": [\n            {\n                \"Domain\": \"www.test.com\",\n                \"Protocol\": \"http\",\n                \"IpProtocol\": \"ipv4\",\n                \"StartTime\": \"2020-03-27 00:00:00\",\n                \"EndTime\": \"2020-03-27 00:00:00\",\n                \"Interval\": 5,\n                \"Metric\": \"bandwidth\",\n                \"District\": 122,\n                \"Isp\": 3947,\n                \"DataPoints\": [\n                    0\n                ],\n                \"DistrictName\": \"山东\",\n                \"IspName\": \"中国铁通\"\n            }\n        ]\n    }\n}",
         "title": "查询CDN地区运营商明细日志数据"

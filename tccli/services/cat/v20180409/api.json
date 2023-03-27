@@ -610,7 +610,6 @@
       "document": "DescribeDetailedSingleProbeData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "开始时间戳（毫秒级）",
           "example": "1000000000",
           "member": "uint64",
@@ -620,7 +619,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "结束时间戳（毫秒级）",
           "example": "1000000000",
           "member": "uint64",
@@ -630,7 +628,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务类型\nAnalyzeTaskType_Network：网络质量\nAnalyzeTaskType_Browse：页面性能\nAnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）\nAnalyzeTaskType_Transport：端口性能\nAnalyzeTaskType_MediaStream：音视频体验",
           "example": "AnalyzeTaskType_UploadDownload",
           "member": "string",
@@ -640,7 +637,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "待排序字段\n可以填写 ProbeTime 拨测时间排序\n也可填写SelectedFields 中的选中字段",
           "example": "ProbeTime",
           "member": "string",
@@ -650,7 +646,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "true表示升序",
           "example": "true",
           "member": "bool",
@@ -660,7 +655,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "选中字段",
           "example": "[ProbeTime]",
           "member": "string",
@@ -670,7 +664,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "起始取数位置",
           "example": "0",
           "member": "int64",
@@ -680,7 +673,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "取数数量",
           "example": "10",
           "member": "int64",
@@ -690,7 +682,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务ID",
           "example": "[task_fasdfds]",
           "member": "string",
@@ -700,7 +691,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "拨测点运营商\n\t\n这里实际按拨测结果中的运营商来填写即可\n\n电信：中国电信\n移动：中国移动\n联通：中国联通",
           "example": "[电信]",
           "member": "string",
@@ -710,7 +700,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "拨测点地区\n\t\n这里实际按拨测结果中的地区来填写即可\n\n国内一般是省级单位，如广东、广西、中国香港、新疆；直辖市则填北京、上海\n\n境外一般是国家名，如澳大利亚、新加坡",
           "example": "[上海]",
           "member": "string",
@@ -720,7 +709,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误类型",
           "example": "[正常]",
           "member": "string",
@@ -730,7 +718,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "城市\n这里实际按拨测结果中的城市来填写即可\n\n示例：\n\n深圳市\n武汉市\n首尔\n多伦多",
           "example": "[深圳市]",
           "member": "string",
@@ -740,7 +727,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "拨测点编码",
           "example": "[10001]",
           "member": "string",
@@ -760,7 +746,6 @@
           "example": "无",
           "member": "DetailedSingleDataDefine",
           "name": "DataSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -770,7 +755,6 @@
           "example": "10000",
           "member": "int64",
           "name": "TotalNumber",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -972,7 +956,6 @@
       "document": "DescribeProbeMetricData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分析任务类型，支持以下几种类型：\nAnalyzeTaskType_Network：网络质量\nAnalyzeTaskType_Browse：页面性能\nAnalyzeTaskType_Transport：端口性能\nAnalyzeTaskType_UploadDownload：文件传输\nAnalyzeTaskType_MediaStream：音视频体验",
           "example": "AnalyzeTaskType_UploadDownload",
           "member": "string",
@@ -982,7 +965,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指标类型，指标查询默认传gauge",
           "example": "gauge",
           "member": "string",
@@ -992,7 +974,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如：\"avg(ping_time)\"代表整体时延(ms)",
           "example": "avg(ping_time)",
           "member": "string",
@@ -1002,7 +983,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件可以传单个过滤条件也可以拼接多个参数",
           "example": "host = '123' and time >= now()-30m",
           "member": "string",
@@ -1012,7 +992,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "聚合时间, 1m、1d、30d 等等",
           "example": "time(1m),  operator",
           "member": "string",
@@ -1022,7 +1001,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "多条件过滤，支持多个过滤条件组合查询\n例如：[\"\"host\" = 'www.test.com'\", \"time >= now()-1h\"]",
           "example": "\"\"host\" = 'https://test.com'\", \"time >= now()-1h\"]",
           "member": "string",
@@ -1042,7 +1020,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "MetricSet",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1060,7 +1037,6 @@
       "document": "DescribeProbeNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "节点类型\n<li> 1 = IDC </li>\n<li> 2 = LastMile </li>\n<li> 3 = Mobile </li>",
           "example": "1",
           "member": "int64",
@@ -1070,7 +1046,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "节点区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 海外 </li>",
           "example": "1",
           "member": "int64",
@@ -1080,7 +1055,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否IPv6",
           "example": "false",
           "member": "bool",
@@ -1090,7 +1064,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "名字模糊搜索",
           "example": "沈阳",
           "member": "string",
@@ -1100,7 +1073,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
           "example": "1",
           "member": "int64",
@@ -1120,7 +1092,6 @@
           "example": "[{\"Code\":1000, \"Type\":1, \"Name\":\"北京\"}]",
           "member": "NodeDefine",
           "name": "NodeSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1

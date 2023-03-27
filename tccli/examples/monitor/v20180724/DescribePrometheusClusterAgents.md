@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribePrometheusClusterAgents --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId abc \
     --Limit 1 \
     --Offset 1
 ```
@@ -16,24 +16,25 @@ Output:
 {
     "Response": {
         "Total": 1,
+        "IsFirstBind": true,
         "Agents": [
             {
-                "Status": "xx",
-                "ClusterName": "xx",
+                "Status": "abc",
+                "ClusterName": "abc",
                 "ExternalLabels": [
                     {
-                        "Name": "xx",
-                        "Value": "xx"
+                        "Name": "abc",
+                        "Value": "abc"
                     }
                 ],
-                "ClusterId": "xx",
-                "ClusterType": "xx",
-                "Region": "xx",
-                "VpcId": "xx",
-                "FailedReason": "xx"
+                "ClusterId": "abc",
+                "ClusterType": "abc",
+                "Region": "abc",
+                "VpcId": "abc",
+                "FailedReason": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

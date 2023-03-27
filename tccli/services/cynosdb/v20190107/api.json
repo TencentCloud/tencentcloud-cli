@@ -35,6 +35,13 @@
       "output": "CheckAccountPasswordValidationResponse",
       "status": "online"
     },
+    "CheckMigrateDB": {
+      "document": "检查源实例是否符合一键迁移条件",
+      "input": "CheckMigrateDBRequest",
+      "name": "一键迁移检查",
+      "output": "CheckMigrateDBResponse",
+      "status": "online"
+    },
     "CloseAuditService": {
       "document": "TDSQL-C for MySQL实例关闭审计服务",
       "input": "CloseAuditServiceRequest",
@@ -483,11 +490,25 @@
       "output": "PauseServerlessResponse",
       "status": "online"
     },
+    "QueryMigrateDBTask": {
+      "document": "查询一键迁移任务",
+      "input": "QueryMigrateDBTaskRequest",
+      "name": "查询一键迁移任务",
+      "output": "QueryMigrateDBTaskResponse",
+      "status": "online"
+    },
     "RemoveClusterSlaveZone": {
       "document": "删除从可用区",
       "input": "RemoveClusterSlaveZoneRequest",
       "name": "删除从可用区",
       "output": "RemoveClusterSlaveZoneResponse",
+      "status": "online"
+    },
+    "RepairMigrateDB": {
+      "document": "一键修复迁移源DB",
+      "input": "RepairMigrateDBRequest",
+      "name": "一键修复迁移源DB",
+      "output": "RepairMigrateDBResponse",
       "status": "online"
     },
     "ResetAccountPassword": {
@@ -560,11 +581,39 @@
       "output": "SwitchClusterZoneResponse",
       "status": "online"
     },
+    "SwitchFromCDB": {
+      "document": "切换cdb到本产品",
+      "input": "SwitchFromCDBRequest",
+      "name": "切换cdb到本产品",
+      "output": "SwitchFromCDBResponse",
+      "status": "online"
+    },
     "SwitchProxyVpc": {
       "document": "本接口(SwitchProxyVpc)更换数据库代理vpc",
       "input": "SwitchProxyVpcRequest",
       "name": "更换数据库代理vpc",
       "output": "SwitchProxyVpcResponse",
+      "status": "online"
+    },
+    "SwitchSpec": {
+      "document": "将cdb实例规格映射为本产品规格",
+      "input": "SwitchSpecRequest",
+      "name": "实例规格映射",
+      "output": "SwitchSpecResponse",
+      "status": "online"
+    },
+    "TransferFromCDB": {
+      "document": "从cdb迁移到本产品",
+      "input": "TransferFromCDBRequest",
+      "name": "从cdb迁移到本产品",
+      "output": "TransferFromCDBResponse",
+      "status": "online"
+    },
+    "UndoTransferFromCDB": {
+      "document": "放弃cdb迁移任务",
+      "input": "UndoTransferFromCDBRequest",
+      "name": "放弃cdb迁移任务",
+      "output": "UndoTransferFromCDBResponse",
       "status": "online"
     },
     "UpgradeInstance": {
@@ -1800,6 +1849,69 @@
     "CheckAccountPasswordValidationResponse": {
       "document": "CheckAccountPasswordValidation返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckMigrateDBRequest": {
+      "document": "CheckMigrateDB请求参数结构体",
+      "members": [
+        {
+          "document": "源实例id",
+          "example": "cdb-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "源实例类型，目前只支持cdb, 默认cdb",
+          "example": "cdb",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CheckMigrateDBResponse": {
+      "document": "CheckMigrateDB返回参数结构体",
+      "members": [
+        {
+          "document": "是否可以执行一键迁移，可选值\"Yes\",\"No\"",
+          "example": "Yes",
+          "member": "string",
+          "name": "IsAllowMigration",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "禁止迁移的`不可修复原因`",
+          "example": "无",
+          "member": "string",
+          "name": "IrreparableForbiddenReasons",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "禁止迁移的`可修复原因`",
+          "example": "无",
+          "member": "string",
+          "name": "RepairableForbiddenReasons",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8306,6 +8418,72 @@
       ],
       "type": "object"
     },
+    "MigrateInstanceInfo": {
+      "document": "迁移实例的信息",
+      "members": [
+        {
+          "document": "实例di\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb-xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "实例只读状态:\nON(只读)\nOFF(读写)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "ReadOnlyStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "vpc ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "vpc vort\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "外网域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx.xx.xx.xx",
+          "member": "string",
+          "name": "WanDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "外网端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3306",
+          "member": "int64",
+          "name": "WanPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "ModifiableInfo": {
       "document": "参数是否可修改的详细信息",
       "members": [],
@@ -10022,6 +10200,96 @@
       ],
       "usage": "in"
     },
+    "QueryMigrateDBTaskRequest": {
+      "document": "QueryMigrateDBTask请求参数结构体",
+      "members": [
+        {
+          "document": "迁移任务的taskId(入参任选一, 优先级依次为MigrateDBTaskId,SrcInstanceId,DstInstanceId)",
+          "example": "123",
+          "member": "int64",
+          "name": "MigrateDBTaskId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "迁移任务的源实例Id(入参任选一, 优先级依次为MigrateDBTaskId,SrcInstanceId,DstInstanceId)",
+          "example": "cdb-xx",
+          "member": "string",
+          "name": "SrcInstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "迁移任务的目标实例Id(入参任选一, 优先级依次为MigrateDBTaskId,SrcInstanceId,DstInstanceId)",
+          "example": "cynosdbmysql-xx",
+          "member": "string",
+          "name": "DstInstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMigrateDBTaskResponse": {
+      "document": "QueryMigrateDBTask返回参数结构体",
+      "members": [
+        {
+          "document": "迁移任务id",
+          "example": "123",
+          "member": "int64",
+          "name": "MigrateDBTaskId",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "迁移任务状态，可选值:\ninit(初始化)\nrunning(迁移中)\nready(等待切换)\nundoing(回滚中)\nundone(已回滚)\nswitching(切换中)\nsuccess（已成功）",
+          "example": "running",
+          "member": "string",
+          "name": "MigrateTaskStatus",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "迁移源实例信息",
+          "example": "无",
+          "member": "MigrateInstanceInfo",
+          "name": "SrcInstanceInfo",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "迁移目标实例信息",
+          "example": "无",
+          "member": "MigrateInstanceInfo",
+          "name": "DstInstanceInfo",
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "迁移任务过期时间(东八区)",
+          "example": "2023-02-10 16:49:19",
+          "member": "string",
+          "name": "ExpireTime",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RemoveClusterSlaveZoneRequest": {
       "document": "RemoveClusterSlaveZone请求参数结构体",
       "members": [
@@ -10057,6 +10325,51 @@
           "member": "int64",
           "name": "FlowId",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RepairMigrateDBRequest": {
+      "document": "RepairMigrateDB请求参数结构体",
+      "members": [
+        {
+          "document": "需要修复的源实例id(目前仅支持cdb)",
+          "example": "cdb-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "源实例类型，目前只支持cdb, 默认cdb",
+          "example": "cdb",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RepairMigrateDBResponse": {
+      "document": "RepairMigrateDB返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务Id(可通过DescribeFlow接口查询任务状态)",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11166,6 +11479,42 @@
       ],
       "type": "object"
     },
+    "SwitchFromCDBRequest": {
+      "document": "SwitchFromCDB请求参数结构体",
+      "members": [
+        {
+          "document": "已经处于待切换任务状态的迁移任务id",
+          "example": "123",
+          "member": "int64",
+          "name": "MigrateDBTaskId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchFromCDBResponse": {
+      "document": "SwitchFromCDB返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务Id, 可通过DescribeFlow接口查询任务状态",
+          "example": "12334",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SwitchProxyVpcRequest": {
       "document": "SwitchProxyVpc请求参数结构体",
       "members": [
@@ -11231,6 +11580,78 @@
           "member": "int64",
           "name": "FlowId",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchSpecRequest": {
+      "document": "SwitchSpec请求参数结构体",
+      "members": [
+        {
+          "document": "CPU，单位核",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "内存，单位G",
+          "example": "1",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "源实例类型，目前只支持cdb, 默认cdb",
+          "example": "cdb",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchSpecResponse": {
+      "document": "SwitchSpec返回参数结构体",
+      "members": [
+        {
+          "document": "映射的cpu(单位核)",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "映射的内存（单位G）",
+          "example": "1",
+          "member": "int64",
+          "name": "Mem",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "映射的存储上限（单位G）",
+          "example": "3000",
+          "member": "int64",
+          "name": "StorageLimit",
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11479,6 +11900,69 @@
         }
       ],
       "usage": "out"
+    },
+    "TransferFromCDBRequest": {
+      "document": "TransferFromCDB请求参数结构体",
+      "members": [
+        {
+          "document": "迁移的源cdb实例id",
+          "example": "cdb-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "TransferFromCDBResponse": {
+      "document": "TransferFromCDB返回参数结构体",
+      "members": [
+        {
+          "document": "生成的迁移任务id",
+          "example": "12324",
+          "member": "int64",
+          "name": "MigrateDBTaskId",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UndoTransferFromCDBRequest": {
+      "document": "UndoTransferFromCDB请求参数结构体",
+      "members": [
+        {
+          "document": "迁移任务id",
+          "example": "1234",
+          "member": "int64",
+          "name": "MigrateDBTaskId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "UndoTransferFromCDBResponse": {
+      "document": "UndoTransferFromCDB返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpgradeInstanceRequest": {
       "document": "UpgradeInstance请求参数结构体",

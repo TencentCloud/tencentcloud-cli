@@ -8,8 +8,8 @@ Input:
 tccli iotexplorer GetStudioProductList --cli-unfold-argument  \
     --ProjectId prj-zunfat46 \
     --DevStatus dev \
-    --Offset 0 \
-    --Limit 0
+    --Limit 0 \
+    --Offset 0
 ```
 
 Output: 
@@ -33,6 +33,7 @@ Output:
                 "Region": "gz",
                 "ModuleId": 0,
                 "EnableProductScript": "e",
+                "BindStrategy": 0,
                 "CreateUserId": 100034,
                 "CreatorNickName": "-"
             }

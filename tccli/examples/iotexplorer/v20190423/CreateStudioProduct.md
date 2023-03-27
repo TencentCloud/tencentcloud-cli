@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli iotexplorer CreateStudioProduct --cli-unfold-argument  \
-    --ProductName name \
-    --CategoryId 10 \
-    --ProductType 0 \
     --EncryptionType 1 \
-    --NetType wifi \
     --DataProtocol 1 \
+    --ProjectId prj-zunfat46 \
+    --ProductName name \
     --ProductDesc desc \
-    --ProjectId prj-zunfat46
+    --NetType wifi \
+    --ProductType 0 \
+    --CategoryId 10
 ```
 
 Output: 
@@ -36,6 +36,7 @@ Output:
             "ProductType": 0,
             "CreatorNickName": "xx",
             "CreateTime": 1,
+            "BindStrategy": 0,
             "CategoryId": 10,
             "ProductId": "xx"
         },

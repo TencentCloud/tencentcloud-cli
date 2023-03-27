@@ -1,3 +1,147 @@
+# Release 3.0.732.1
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 32 次发布
+
+发布时间：2023-03-28 01:07:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTelCallInfo](http://document.tencentcloudapi.woa.com/document/product/679/50168)
+
+	* 新增出参：AsrOfflineCount, AsrRealtimeCount
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 49 次发布
+
+发布时间：2023-03-28 01:08:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/236/15872)
+
+	* 新增入参：EngineTypes
+
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceInfo)
+
+	* 新增成员：DiskType
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 39 次发布
+
+发布时间：2023-03-28 01:18:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckMigrateDB](http://document.tencentcloudapi.woa.com/document/product/1003/77386)
+* [QueryMigrateDBTask](http://document.tencentcloudapi.woa.com/document/product/1003/77385)
+* [RepairMigrateDB](http://document.tencentcloudapi.woa.com/document/product/1003/77384)
+* [SwitchFromCDB](http://document.tencentcloudapi.woa.com/document/product/1003/77383)
+* [SwitchSpec](http://document.tencentcloudapi.woa.com/document/product/1003/77382)
+* [TransferFromCDB](http://document.tencentcloudapi.woa.com/document/product/1003/77381)
+* [UndoTransferFromCDB](http://document.tencentcloudapi.woa.com/document/product/1003/77380)
+
+新增数据结构：
+
+* [MigrateInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#MigrateInstanceInfo)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 20 次发布
+
+发布时间：2023-03-28 01:30:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyStudioProduct](http://document.tencentcloudapi.woa.com/document/product/1081/34983)
+
+	* 新增入参：BindStrategy
+
+
+修改数据结构：
+
+* [ProductEntry](http://document.tencentcloudapi.woa.com/document/product/1081/34988#ProductEntry)
+
+	* 新增成员：BindStrategy
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 51 次发布
+
+发布时间：2023-03-28 01:35:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePrometheusClusterAgents](http://document.tencentcloudapi.woa.com/document/product/248/77001)
+
+	* 新增出参：IsFirstBind
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 28 次发布
+
+发布时间：2023-03-28 01:52:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTrtcRoomUsage](http://document.tencentcloudapi.woa.com/document/product/647/77341)
+
+	* 新增入参：SdkAppid, StartTime, EndTime
+
+
+修改数据结构：
+
+* [McuLayoutParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutParams)
+
+	* 新增成员：RenderMode
+
+
+
+
 # Release 3.0.731.1
 
 ## 费用中心(billing) 版本：2018-07-09

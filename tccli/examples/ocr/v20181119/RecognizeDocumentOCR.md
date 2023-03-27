@@ -1,6 +1,6 @@
 **Example 1: 办公文档还原示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=RecognizeDocumentOCR))**
 
-
+办公文档还原示例
 
 Input: 
 
@@ -13,9 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "ImageContent": [
-            "xx"
-        ],
+        "ImageContent": [],
         "ItemContent": [
             {
                 "Confidence": 99,
@@ -43,7 +41,7 @@ Output:
                     "Height": 0,
                     "Width": 0
                 },
-                "DetectedText": "xx",
+                "DetectedText": "实验",
                 "Words": [
                     {
                         "Confidence": 0,
@@ -53,20 +51,39 @@ Output:
                                 "X": 0
                             }
                         ],
-                        "Color": "",
+                        "Color": "0A0A0A",
                         "WordPolygon": {
                             "Y": 0,
                             "X": 0,
                             "Height": 0,
                             "Width": 0
                         },
-                        "Character": "xx",
-                        "FontAttribute": "xx",
-                        "FontSize": 0
+                        "Character": "实",
+                        "FontAttribute": "__font__:报宋;__handwritting__:0;__midline__:0;__underline__:0",
+                        "FontSize": 100
+                    },
+                    {
+                        "Confidence": 0,
+                        "Polygon": [
+                            {
+                                "Y": 0,
+                                "X": 0
+                            }
+                        ],
+                        "Color": "0A0A0A",
+                        "WordPolygon": {
+                            "Y": 0,
+                            "X": 0,
+                            "Height": 0,
+                            "Width": 0
+                        },
+                        "Character": "验",
+                        "FontAttribute": "__font__:报宋;__handwritting__:0;__midline__:0;__underline__:0",
+                        "FontSize": 100
                     }
                 ],
                 "GroupID": 0,
-                "ItemType": "xx"
+                "ItemType": "ti"
             },
             {
                 "Confidence": 99,
@@ -94,7 +111,7 @@ Output:
                     "Width": 0,
                     "Height": 0
                 },
-                "DetectedText": "xx",
+                "DetectedText": "章节",
                 "Words": [
                     {
                         "Confidence": 0,
@@ -104,23 +121,42 @@ Output:
                                 "X": 0
                             }
                         ],
-                        "Color": "",
+                        "Color": "0A0A0A",
                         "WordPolygon": {
                             "Y": 0,
                             "X": 0,
                             "Width": 0,
                             "Height": 0
                         },
-                        "Character": "xx",
-                        "FontAttribute": "xx",
-                        "FontSize": 0
+                        "Character": "章",
+                        "FontAttribute": "__font__:报宋;__handwritting__:0;__midline__:0;__underline__:0",
+                        "FontSize": 100
+                    },
+                    {
+                        "Confidence": 0,
+                        "Polygon": [
+                            {
+                                "Y": 0,
+                                "X": 0
+                            }
+                        ],
+                        "Color": "0A0A0A",
+                        "WordPolygon": {
+                            "Y": 0,
+                            "X": 0,
+                            "Width": 0,
+                            "Height": 0
+                        },
+                        "Character": "节",
+                        "FontAttribute": "__font__:报宋;__handwritting__:0;__midline__:0;__underline__:0",
+                        "FontSize": 100
                     }
                 ],
                 "GroupID": 0,
-                "ItemType": "xx"
+                "ItemType": "ti"
             }
         ],
-        "RequestId": "xx",
+        "RequestId": "8e6bfecf-ada0-425a-80f8-ff666dbae88f",
         "ElemContent": [
             {
                 "Confidence": 0,
@@ -150,25 +186,7 @@ Output:
                     4,
                     5
                 ],
-                "TableContent": [
-                    {
-                        "Confidence": 0,
-                        "Polygon": [
-                            {
-                                "Y": 0,
-                                "X": 0
-                            }
-                        ],
-                        "ItemIDLists": [
-                            0
-                        ],
-                        "ElemType": 0,
-                        "CellIndex": [
-                            0
-                        ],
-                        "Description": "xx"
-                    }
-                ],
+                "TableContent": [],
                 "ElemType": 1,
                 "GroupID": 0
             },
@@ -195,25 +213,7 @@ Output:
                 "ItemIDLists": [
                     6
                 ],
-                "TableContent": [
-                    {
-                        "Confidence": 0,
-                        "Description": "xx",
-                        "ItemIDLists": [
-                            0
-                        ],
-                        "ElemType": 0,
-                        "CellIndex": [
-                            0
-                        ],
-                        "Polygon": [
-                            {
-                                "Y": 0,
-                                "X": 0
-                            }
-                        ]
-                    }
-                ],
+                "TableContent": [],
                 "ElemType": 2,
                 "GroupID": 0
             },
@@ -240,40 +240,7 @@ Output:
                 "ItemIDLists": [
                     0
                 ],
-                "TableContent": [
-                    {
-                        "Confidence": 100,
-                        "Description": "xx",
-                        "ItemIDLists": [
-                            0
-                        ],
-                        "ElemType": 101,
-                        "CellIndex": [
-                            0,
-                            0,
-                            0,
-                            0
-                        ],
-                        "Polygon": [
-                            {
-                                "Y": 1193,
-                                "X": 137
-                            },
-                            {
-                                "Y": 1193,
-                                "X": 559
-                            },
-                            {
-                                "Y": 1344,
-                                "X": 559
-                            },
-                            {
-                                "Y": 1344,
-                                "X": 137
-                            }
-                        ]
-                    }
-                ],
+                "TableContent": [],
                 "ElemType": 3,
                 "GroupID": 2
             }

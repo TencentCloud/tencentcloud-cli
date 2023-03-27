@@ -1,12 +1,12 @@
 **Example 1: 港澳台通行证识别示例代码**
 
-
+港澳台通行证识
 
 Input: 
 
 ```
 tccli ocr PermitOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://xx/a.jpg 
 ```
 
 Output: 

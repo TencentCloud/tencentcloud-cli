@@ -40,6 +40,14 @@
         "title": "校验参数是否符合规范"
       }
     ],
+    "CheckMigrateDB": [
+      {
+        "document": "允许一键迁移",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckMigrateDB\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IrreparableForbiddenReasons\": [],\n        \"IsAllowMigration\": \"yes\",\n        \"RepairableForbiddenReasons\": [],\n        \"RequestId\": \"63e31387f0332\"\n    }\n}",
+        "title": "允许一键迁移"
+      }
+    ],
     "CloseAuditService": [
       {
         "document": "",
@@ -552,12 +560,28 @@
         "title": "暂停serverless集群"
       }
     ],
+    "QueryMigrateDBTask": [
+      {
+        "document": "查询迁移任务",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryMigrateDBTask\n<公共请求参数>\n\n{\n    \"MigrateDBTaskId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"DstInstanceInfo\": {\n            \"InstanceId\": \"\",\n            \"ReadOnlyStatus\": \"\",\n            \"Vip\": \"\",\n            \"Vport\": 0,\n            \"WanDomain\": \"\",\n            \"WanPort\": 0\n        },\n        \"ExpireTime\": \"\",\n        \"MigrateDBTaskId\": 0,\n        \"MigrateTaskStatus\": \"init\",\n        \"RequestId\": \"b73db580-a6cb-11ed-b2ab-0524d54048a6\",\n        \"SrcInstanceInfo\": {\n            \"InstanceId\": \"\",\n            \"ReadOnlyStatus\": \"\",\n            \"Vip\": \"\",\n            \"Vport\": 0,\n            \"WanDomain\": \"\",\n            \"WanPort\": 0\n        }\n    }\n}",
+        "title": "查询迁移任务"
+      }
+    ],
     "RemoveClusterSlaveZone": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveClusterSlaveZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"SlaveZone\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"123\",\n        \"RequestId\": \"128046\"\n    }\n}",
         "title": "删除从可用区"
+      }
+    ],
+    "RepairMigrateDB": [
+      {
+        "document": "发起一键修复",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RepairMigrateDB\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 123,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "发起一键修复"
       }
     ],
     "ResetAccountPassword": [
@@ -640,12 +664,44 @@
         "title": "切换到从可用区"
       }
     ],
+    "SwitchFromCDB": [
+      {
+        "document": "发起切换任务",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchFromCdb\n<公共请求参数>\n\n{\n    \"MigrateDBTaskId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 123,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "发起切换任务"
+      }
+    ],
     "SwitchProxyVpc": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchProxyVpc\n<公共请求参数>\n\n{\n    \"OldIpReserveHours\": \"0\",\n    \"UniqSubnetId\": \"xx\",\n    \"ClusterId\": \"xxx\",\n    \"UniqVpcId\": \"xx\",\n    \"ProxyGroupId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
         "title": "转换网络"
+      }
+    ],
+    "SwitchSpec": [
+      {
+        "document": "实例规格映射",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchSpec\n<公共请求参数>\n\n{\n    \"Cpu\": 1,\n    \"Memory\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Cpu\": 1,\n        \"Mem\": 1,\n        \"StorageLimit\": 3000,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "实例规格映射"
+      }
+    ],
+    "TransferFromCDB": [
+      {
+        "document": "迁移cdb",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferFromCDB\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MigrateDBTaskId\": 123,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "迁移cdb"
+      }
+    ],
+    "UndoTransferFromCDB": [
+      {
+        "document": "放弃迁移任务",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UndoTransferFromCDB\n<公共请求参数>\n\n{\n    \"MigrateDBTaskId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "放弃迁移任务"
       }
     ],
     "UpgradeInstance": [
