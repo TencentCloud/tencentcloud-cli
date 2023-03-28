@@ -1,6 +1,6 @@
 **Example 1: 获取电话呼叫统计信息示例**
 
-
+获取电话呼叫统计信息
 
 Input: 
 
@@ -15,11 +15,13 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "53bccf04-0870-4520-8614-f4bdddfd68df",
-        "TelCallOutCount": 10,
-        "TelCallInCount": 10,
-        "VoipCallInCount": 10,
-        "SeatUsedCount": 50
+        "TelCallOutCount": 0,
+        "TelCallInCount": 0,
+        "SeatUsedCount": 0,
+        "VoipCallInCount": 0,
+        "AsrOfflineCount": 0,
+        "AsrRealtimeCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

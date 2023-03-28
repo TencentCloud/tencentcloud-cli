@@ -12971,8 +12971,7 @@
       "document": "直播流 AI 审核结果",
       "members": [
         {
-          "default": "",
-          "document": "审核结果的类型，可以取的值有：\n<li>ImagePorn：图片鉴黄</li>\n<li>ImageTerrorism：图片涉敏</li>\n<li>ImagePolitical：图片涉敏</li>\n<li>PornVoice：声音鉴黄</li>",
+          "document": "审核结果的类型，可以取的值有：\n<li>ImagePorn：图片鉴黄</li>\n<li>ImageTerrorism：图片涉敏</li>\n<li>ImagePolitical：图片涉敏</li>\n<li>VoicePorn：声音违规</li>",
           "example": "\"\"",
           "member": "string",
           "name": "Type",
@@ -12981,7 +12980,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "图片鉴黄的结果，当 Type 为 ImagePorn 时有效。",
           "example": "无",
           "member": "LiveStreamAiReviewImagePornResult",
@@ -12991,7 +12989,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。",
           "example": "无",
           "member": "LiveStreamAiReviewImageTerrorismResult",
@@ -13001,7 +12998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "图片涉敏的结果，当 Type 为 ImagePolitical 时有效。",
           "example": "无",
           "member": "LiveStreamAiReviewImagePoliticalResult",
@@ -13011,8 +13007,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "声音鉴黄的结果，当 Type 为 PornVoice 时有效。",
+          "document": "声音违规的结果，当 Type 为 VoicePorn 时有效。",
           "example": "无",
           "member": "LiveStreamAiReviewVoicePornResult",
           "name": "VoicePornResultSet",

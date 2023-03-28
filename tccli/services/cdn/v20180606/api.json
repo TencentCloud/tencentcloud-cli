@@ -5374,7 +5374,6 @@
       "document": "DescribeDistrictIspData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名列表，最多支持20个域名",
           "example": "[\"www.test.com\\n\"]",
           "member": "string",
@@ -5383,7 +5382,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间\n支持近 60 天内的数据查询，每次查询时间区间为 3 小时",
           "example": "2020-03-27 00:00:00",
           "member": "datetime",
@@ -5392,7 +5390,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间\n结束时间与起始时间区间最大为 3 小时",
           "example": "2020-03-27 00:00:00",
           "member": "datetime",
@@ -5401,8 +5398,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "指定查询指标，支持:\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次",
+          "document": "指定查询指标，支持:\nbandwidth：带宽，单位为 bps\nflux：流量，单位为 byte\nrequest：请求数，单位为 次\nstatusCode：状态码，返回 0、2xx、3xx、4xx、5xx 汇总数据，单位为 次\n2xx：返回 2xx 状态码汇总及各 2 开头状态码数据，单位为 次\n3xx：返回 3xx 状态码汇总及各 3 开头状态码数据，单位为 次\n4xx：返回 4xx 状态码汇总及各 4 开头状态码数据，单位为 次\n5xx：返回 5xx 状态码汇总及各 5 开头状态码数据，单位为 次\n支持指定具体状态码查询，若未产生过，则返回为空",
           "example": "bandwidth",
           "member": "string",
           "name": "Metric",
@@ -5410,7 +5406,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定省份查询，不填充表示查询所有省份\n省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8)",
           "example": "[\"122\\n\"]",
           "member": "int64",
@@ -5419,7 +5414,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "指定运营商查询，不填充表示查询所有运营商\n运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8)",
           "example": "[\"3947\\n\"]",
           "member": "int64",
@@ -5428,7 +5422,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "指定协议查询，不填充表示查询所有协议\nall：所有协议\nhttp：指定查询 HTTP 对应指标\nhttps：指定查询 HTTPS 对应指标",
           "example": "http",
           "member": "string",
@@ -5437,7 +5430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定IP协议查询，不填充表示查询所有协议\nall：所有协议\nipv4：指定查询 ipv4 对应指标\nipv6：指定查询 ipv6 对应指标\n指定IP协议查询时，不可同时指定省份、运营商查询",
           "example": "ipv4",
           "member": "string",
@@ -5446,7 +5438,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "时间粒度，支持以下几种模式（默认5min）：\nmin：1 分钟粒度，支持近 60 天内的数据查询，每次查询时间区间不超过10分钟，可返回 1 分钟粒度明细数据\n5min：5 分钟粒度，支持近 60 天内的数据查询，每次查询时间区间不超过3 小时，可返回 5 分钟粒度明细数据",
           "example": "5min",
           "member": "string",
@@ -5465,7 +5456,6 @@
           "example": "无",
           "member": "DistrictIspInfo",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

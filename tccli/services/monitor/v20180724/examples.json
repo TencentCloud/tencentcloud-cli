@@ -657,8 +657,8 @@
     "DescribePrometheusClusterAgents": [
       {
         "document": "拉取agent信息",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusClusterAgents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Agents\": [\n            {\n                \"Status\": \"xx\",\n                \"ClusterName\": \"xx\",\n                \"ExternalLabels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"ClusterId\": \"xx\",\n                \"ClusterType\": \"xx\",\n                \"Region\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"FailedReason\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusClusterAgents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"IsFirstBind\": true,\n        \"Agents\": [\n            {\n                \"Status\": \"abc\",\n                \"ClusterName\": \"abc\",\n                \"ExternalLabels\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"ClusterId\": \"abc\",\n                \"ClusterType\": \"abc\",\n                \"Region\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"FailedReason\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "拉取agent信息"
       }
     ],

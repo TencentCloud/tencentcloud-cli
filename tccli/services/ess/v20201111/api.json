@@ -91,6 +91,13 @@
       "output": "CreateIntegrationEmployeesResponse",
       "status": "online"
     },
+    "CreateIntegrationUserRoles": {
+      "document": "集成版绑定员工角色",
+      "input": "CreateIntegrationUserRolesRequest",
+      "name": "集成版绑定员工角色",
+      "output": "CreateIntegrationUserRolesResponse",
+      "status": "online"
+    },
     "CreateMultiFlowSignQRCode": {
       "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n适用的模板仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模板，且模板中发起方没有填写控件。",
       "input": "CreateMultiFlowSignQRCodeRequest",
@@ -145,6 +152,13 @@
       "input": "DeleteIntegrationEmployeesRequest",
       "name": "移除员工",
       "output": "DeleteIntegrationEmployeesResponse",
+      "status": "online"
+    },
+    "DeleteIntegrationRoleUsers": {
+      "document": "解绑用户角色绑定关系",
+      "input": "DeleteIntegrationRoleUsersRequest",
+      "name": "集成版解绑用户角色",
+      "output": "DeleteIntegrationRoleUsersResponse",
       "status": "online"
     },
     "DeleteSealPolicies": {
@@ -203,6 +217,13 @@
       "output": "DescribeIntegrationMainOrganizationUserResponse",
       "status": "online"
     },
+    "DescribeIntegrationRoles": {
+      "document": "查询集成版角色",
+      "input": "DescribeIntegrationRolesRequest",
+      "name": "查询集成版角色",
+      "output": "DescribeIntegrationRolesResponse",
+      "status": "online"
+    },
     "DescribeOrganizationGroupOrganizations": {
       "document": "此API接口用户查询加入集团的成员企业",
       "input": "DescribeOrganizationGroupOrganizationsRequest",
@@ -257,6 +278,13 @@
       "input": "StartFlowRequest",
       "name": "发起流程",
       "output": "StartFlowResponse",
+      "status": "online"
+    },
+    "UpdateIntegrationEmployees": {
+      "document": "更新集成版员工信息(姓名，手机号，邮件)，用户实名后无法更改姓名与手机号",
+      "input": "UpdateIntegrationEmployeesRequest",
+      "name": "更新集成版员工信息",
+      "output": "UpdateIntegrationEmployeesResponse",
       "status": "online"
     },
     "UploadFiles": {
@@ -989,7 +1017,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "渠道版控件 id 标识",
+          "document": "平台模板控件 id 标识",
           "example": "无",
           "member": "string",
           "name": "ChannelComponentId",
@@ -1016,7 +1044,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "//渠道子客控件来源。0-渠道指定；1-用户自定义",
+          "document": "//子客控件来源。0-平台指定；1-用户自定义",
           "example": "无",
           "member": "uint64",
           "name": "ChannelComponentSource",
@@ -1975,6 +2003,64 @@
       ],
       "type": "object"
     },
+    "CreateIntegrationUserRolesRequest": {
+      "document": "CreateIntegrationUserRoles请求参数结构体",
+      "members": [
+        {
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "绑定角色的用户id列表",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "绑定角色的角色id列表",
+          "example": "无",
+          "member": "string",
+          "name": "RoleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIntegrationUserRolesResponse": {
+      "document": "CreateIntegrationUserRoles返回参数结构体",
+      "members": [
+        {
+          "document": "绑定角色失败列表信息",
+          "example": "无",
+          "member": "FailedCreateRoleData",
+          "name": "FailedCreateRoleData",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMultiFlowSignQRCodeRequest": {
       "document": "CreateMultiFlowSignQRCode请求参数结构体",
       "members": [
@@ -2698,6 +2784,64 @@
       ],
       "type": "object"
     },
+    "DeleteIntegrationRoleUsersRequest": {
+      "document": "DeleteIntegrationRoleUsers请求参数结构体",
+      "members": [
+        {
+          "document": "操作人",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "角色id",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Users",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "代理信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIntegrationRoleUsersResponse": {
+      "document": "DeleteIntegrationRoleUsers返回参数结构体",
+      "members": [
+        {
+          "document": "角色id",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteSealPoliciesRequest": {
       "document": "DeleteSealPolicies请求参数结构体",
       "members": [
@@ -3140,7 +3284,7 @@
           "type": "list"
         },
         {
-          "document": "这个参数跟下面的IsChannel参数配合使用。\nIsChannel=false时，ApplicationId参数不起任何作用。\nIsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表\nApplicationId为空，查询渠道模板列表",
+          "document": "这个参数跟下面的IsChannel参数配合使用。\nIsChannel=false时，ApplicationId参数不起任何作用。\nIsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表\nApplicationId为空，查询所有应用下的模板列表",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
@@ -3148,7 +3292,7 @@
           "type": "string"
         },
         {
-          "document": "默认为false，查询SaaS模板库列表；\n为true，查询渠道模板库管理列表",
+          "document": "默认为false，查询SaaS模板库列表；\n为true，查询第三方应用集成平台企业模板库管理列表",
           "example": "无",
           "member": "bool",
           "name": "IsChannel",
@@ -3316,6 +3460,96 @@
           "name": "IntegrationMainOrganizationUser",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntegrationRolesRequest": {
+      "document": "DescribeIntegrationRoles请求参数结构体",
+      "members": [
+        {
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "返回最大数量，最大为200",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "查询的关键字段:\nKey:\"RoleType\",Vales:[\"1\"]查询系统角色，Values:[\"2]查询自定义角色\nKey:\"RoleStatus\",Values:[\"1\"]查询启用角色，Values:[\"2\"]查询禁用角色\nKey:\"IsGroupRole\"，Values:[\"0\"],查询非集团角色，Values:[\"1\"]表示查询集团角色",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "偏移量，默认为0，最大为2000",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntegrationRolesResponse": {
+      "document": "DescribeIntegrationRoles返回参数结构体",
+      "members": [
+        {
+          "document": "偏移量，默认为0，最大为2000",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回最大数量，最大为200",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合查询条件的总的角色数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "企业角色信息列表",
+          "example": "无",
+          "member": "IntegrateRole",
+          "name": "IntegrateRoles",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3658,6 +3892,30 @@
       ],
       "type": "object"
     },
+    "FailedCreateRoleData": {
+      "document": "绑定角色失败信息",
+      "members": [
+        {
+          "document": "用户userId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FailedCreateStaffData": {
       "document": "创建员工的失败数据",
       "members": [
@@ -3724,6 +3982,57 @@
           "member": "string",
           "name": "Reason",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FailedUpdateStaffData": {
+      "document": "更新员工信息失败返回的数据信息",
+      "members": [
+        {
+          "document": "用户传入的名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户传入的手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "失败原因",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户Id",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户OpenId",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4375,10 +4684,9 @@
       "usage": "out"
     },
     "FormField": {
-      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n【数据表格传参说明】\n当模板的 ComponentType='DYNAMIC_TABLE'时（渠道版或集成版），FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\ncontent String 表头单元格内容，字数不超过100",
+      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n【数据表格传参说明】\n当模板的 ComponentType='DYNAMIC_TABLE'时，FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\ncontent String 表头单元格内容，字数不超过100",
       "members": [
         {
-          "default": "",
           "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo",
           "example": "ComponentValue",
           "member": "string",
@@ -4388,7 +4696,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "控件id，和ComponentName选择一项传入即可",
           "example": "componentId",
           "member": "string",
@@ -4398,7 +4705,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可",
           "example": "ComponentName",
           "member": "string",
@@ -4609,6 +4915,57 @@
           "name": "FlowEngineEnable",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "IntegrateRole": {
+      "document": "企业角色数据信息",
+      "members": [
+        {
+          "document": "角色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色类型：1-系统角色，2-自定义角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoleStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否是集团角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsGroupRole",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "管辖的子企业列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubOrgIdList",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4971,7 +5328,6 @@
       "document": "签署参与者信息",
       "members": [
         {
-          "default": "",
           "document": "签署参与者ID",
           "example": "无",
           "member": "string",
@@ -4981,7 +5337,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参与者类型（ENTERPRISE/INDIVIDUAL）",
           "example": "无",
           "member": "string",
@@ -4991,7 +5346,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "描述信息",
           "example": "无",
           "member": "string",
@@ -5001,7 +5355,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "角色名称",
           "example": "无",
           "member": "string",
@@ -5011,7 +5364,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否需要验证，默认为false",
           "example": "无",
           "member": "bool",
@@ -5021,7 +5373,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否需要签署，默认为true",
           "example": "无",
           "member": "bool",
@@ -5031,7 +5382,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "添加序列",
           "example": "无",
           "member": "int64",
@@ -5041,7 +5391,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否需要发送，默认为true",
           "example": "无",
           "member": "bool",
@@ -5051,7 +5400,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "邮箱地址",
           "example": "无",
           "member": "string",
@@ -5061,7 +5409,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "电话号码",
           "example": "无",
           "member": "string",
@@ -5071,7 +5418,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关联的用户ID",
           "example": "无",
           "member": "string",
@@ -5081,7 +5427,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发送方式（EMAIL/MOBILE）",
           "example": "无",
           "member": "string",
@@ -5091,7 +5436,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "附属信息",
           "example": "无",
           "member": "string",
@@ -5614,6 +5958,39 @@
       ],
       "usage": "out"
     },
+    "SuccessUpdateStaffData": {
+      "document": "更新员工信息成功返回的数据信息",
+      "members": [
+        {
+          "document": "传入的用户名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "传入的手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户Id",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TemplateInfo": {
       "document": "二期接口返回的模板的信息结构",
       "members": [
@@ -5799,6 +6176,64 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateIntegrationEmployeesRequest": {
+      "document": "UpdateIntegrationEmployees请求参数结构体",
+      "members": [
+        {
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "代理信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "员工信息",
+          "example": "无",
+          "member": "Staff",
+          "name": "Employees",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateIntegrationEmployeesResponse": {
+      "document": "UpdateIntegrationEmployees返回参数结构体",
+      "members": [
+        {
+          "document": "更新成功的用户列表",
+          "example": "无",
+          "member": "SuccessUpdateStaffData",
+          "name": "SuccessEmployeeData",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新失败的用户列表",
+          "example": "无",
+          "member": "FailedUpdateStaffData",
+          "name": "FailedEmployeeData",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UploadFile": {
       "document": "此结构体 (UploadFile) 用于描述多文件上传的文件信息。",

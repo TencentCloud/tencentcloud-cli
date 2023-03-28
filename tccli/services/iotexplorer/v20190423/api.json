@@ -1901,7 +1901,7 @@
         },
         {
           "default": "",
-          "document": "产品类型 填写 ( 0 普通产品 )",
+          "document": "产品类型 填写 ( 0 普通产品 ， 5 网关产品)",
           "example": "0",
           "member": "int64",
           "name": "ProductType",
@@ -1910,7 +1910,7 @@
         },
         {
           "default": "",
-          "document": "加密类型 加密类型，1表示证书认证，2表示签名认证。",
+          "document": "加密类型 ，1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式",
           "example": "1",
           "member": "string",
           "name": "EncryptionType",
@@ -1919,7 +1919,7 @@
         },
         {
           "default": "",
-          "document": "连接类型 可以填写 wifi cellular else",
+          "document": "连接类型 可以填写 wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh",
           "example": "wifi",
           "member": "string",
           "name": "NetType",
@@ -3848,7 +3848,6 @@
       "document": "DescribeStudioProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "example": "M5AWDSEUYO",
           "member": "string",
@@ -3867,7 +3866,6 @@
           "example": "无",
           "member": "ProductEntry",
           "name": "Product",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6678,7 +6676,6 @@
       "document": "ModifyStudioProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "example": "4GDIU5HTEN",
           "member": "string",
@@ -6687,7 +6684,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品名称",
           "example": "testProduct",
           "member": "string",
@@ -6696,7 +6692,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品描述",
           "example": "Pdesc",
           "member": "string",
@@ -6705,7 +6700,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模型ID",
           "example": "0",
           "member": "int64",
@@ -6714,13 +6708,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否打开二进制转Json功能, 取值为字符串 true/false",
           "example": "\"\"",
           "member": "string",
           "name": "EnableProductScript",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "传1或者2；1代表强踢，2代表非强踢。传其它值不做任何处理",
+          "example": "1",
+          "member": "uint64",
+          "name": "BindStrategy",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6733,7 +6734,6 @@
           "example": "无",
           "member": "ProductEntry",
           "name": "Product",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7115,7 +7115,6 @@
       "document": "产品详情",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "example": "1",
           "member": "string",
@@ -7125,7 +7124,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品名称",
           "example": "1",
           "member": "string",
@@ -7135,7 +7133,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品分组模板ID",
           "example": "0",
           "member": "int64",
@@ -7145,8 +7142,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "加密类型",
+          "document": "加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式",
           "example": "0",
           "member": "string",
           "name": "EncryptionType",
@@ -7155,8 +7151,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "连接类型",
+          "document": "连接类型。如：\nwifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh",
           "example": "0",
           "member": "string",
           "name": "NetType",
@@ -7165,8 +7160,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "数据协议",
+          "document": "数据协议 (1 使用物模型 2 为自定义类型)",
           "example": "0",
           "member": "int64",
           "name": "DataProtocol",
@@ -7175,7 +7169,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品描述",
           "example": "0",
           "member": "string",
@@ -7185,8 +7178,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "状态",
+          "document": "状态 如：all 全部, dev 开发中, audit 审核中 released 已发布",
           "example": "0",
           "member": "string",
           "name": "DevStatus",
@@ -7195,7 +7187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "0",
           "member": "uint64",
@@ -7205,7 +7196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "更新时间",
           "example": "0",
           "member": "uint64",
@@ -7215,7 +7205,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "区域",
           "example": "0",
           "member": "string",
@@ -7225,8 +7214,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "产品类型",
+          "document": "产品类型。如： 0 普通产品 ， 5 网关产品",
           "example": "0",
           "member": "int64",
           "name": "ProductType",
@@ -7235,7 +7223,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "0",
           "member": "string",
@@ -7245,7 +7232,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品ModuleId",
           "example": "0",
           "member": "int64",
@@ -7255,7 +7241,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否使用脚本进行二进制转json功能 可以取值 true / false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -7265,7 +7250,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建人 UinId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -7275,13 +7259,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建者昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "CreatorNickName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "绑定策略（1：强踢；2：非强踢；0：表示无意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BindStrategy",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

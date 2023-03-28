@@ -156,8 +156,8 @@
     ],
     "FinanBillSliceOCR": [
       {
-        "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=FinanBillSliceOCR\r\n&ImageUrl=https://xx/a.jpg \r\n&<公共请求参数>",
+        "document": "金融票据切片识别示例代码",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FinanBillSliceOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg \"\n}",
         "output": "{\n    \"Response\": {\n        \"FinanBillSliceInfos\": [\n            {\n                \"Name\": \"票号1\",\n                \"Value\": \"31300051\"\n            },\n            {\n                \"Name\": \"票号2\",\n                \"Value\": \"46686866\"\n            }\n        ],\n        \"RequestId\": \"f904eaa3-c868-4a89-9bd9-60afe9635c81\"\n    }\n}",
         "title": "金融票据切片识别示例代码"
       }
@@ -338,15 +338,15 @@
     ],
     "MainlandPermitOCR": [
       {
-        "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=MainlandPermitOCR\n&ImageUrl=https://xx/a.jpg\n&RetProfile=False\n&<公共请求参数>",
+        "document": "港澳台来往内地通行证识别",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MainlandPermitOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\",\n    \"RetProfile\": \"False\"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"李明\",\n        \"EnglishName\": \"LIMING\",\n        \"Number\": \"C00000000\",\n        \"Sex\": \"男\",\n        \"ValidDate\": \"2018.10.09-2028.10.08\",\n        \"IssueAuthority\": \"公安部出入境管理局\",\n        \"IssueAddress\": \"广东\",\n        \"Birthday\": \"1981.08.03\",\n        \"IssueNumber\": \"02\",\n        \"Type\": \"台湾居民来往大陆通行证\",\n        \"Profile\": \"\",\n        \"RequestId\": \"3090debe-3662-4ef1-8784-6ef2fb59f75e\"\n    }\n}",
         "title": "港澳台来往内地通行证识别示例代码"
       }
     ],
     "MixedInvoiceDetect": [
       {
-        "document": "",
+        "document": "混贴票据分类",
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MixedInvoiceDetect\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\",\n    \"ReturnImage\": \"False\"\n}",
         "output": "{\n    \"Response\": {\n        \"InvoiceDetectInfos\": [\n            {\n                \"Angle\": 0,\n                \"Type\": 3,\n                \"Rect\": {\n                    \"X\": 19,\n                    \"Y\": 43,\n                    \"Width\": 1340,\n                    \"Height\": 852\n                },\n                \"Image\": null\n            },\n            {\n                \"Angle\": 0,\n                \"Type\": 13,\n                \"Rect\": {\n                    \"X\": 20,\n                    \"Y\": 891,\n                    \"Width\": 479,\n                    \"Height\": 597\n                },\n                \"Image\": null\n            },\n            {\n                \"Angle\": 0,\n                \"Type\": 2,\n                \"Rect\": {\n                    \"X\": 520,\n                    \"Y\": 904,\n                    \"Width\": 455,\n                    \"Height\": 286\n                },\n                \"Image\": null\n            }\n        ],\n        \"RequestId\": \"c8cedc79-d03b-463d-8b95-b807b4ca5135\"\n    }\n}",
         "title": "混贴票据分类示例代码"
@@ -368,8 +368,8 @@
     ],
     "OrgCodeCertOCR": [
       {
-        "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=OrgCodeCertOCR\n&ImageUrl=https://xx/a.jpg \n&<公共请求参数>",
+        "document": "组织机构代码证识别",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OrgCodeCertOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg \"\n}",
         "output": "{\n    \"Response\": {\n        \"OrgCode\": \"300000-3\",\n        \"Name\": \"望江县xxx店\",\n        \"Address\": \"望江县天鹅购物广场xxx铺\",\n        \"ValidDate\": \"自2019年07月01日至2023年06月30日\",\n        \"RequestId\": \"e7fdecd4-39a3-46a7-a565-274a2004af2e\"\n    }\n}",
         "title": "组织机构代码证识别示例代码"
       }
@@ -377,31 +377,31 @@
     "PassportOCR": [
       {
         "document": "以中国大陆地区护照为例",
-        "input": "https://ocr.tencentcloudapi.com/?Action=PassportOCR\n&ImageUrl=https://xx/a.jpg\n&Type=CN\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PassportOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\",\n    \"Type\": \"CN\"\n}",
         "output": "{\n    \"Response\": {\n        \"Country\": \"CHN\",\n        \"PassportNo\": \"G12345678\",\n        \"Sex\": \"M\",\n        \"Nationality\": \"CHN\",\n        \"BirthDate\": \"19920922\",\n        \"BirthPlace\": \"SHANGHAI\",\n        \"IssueDate\": \"20100820\",\n        \"IssuePlace\": \"SHANGHAI\",\n        \"ExpiryDate\": \"20200819\",\n        \"Signature\": \"\",\n        \"CodeSet\": \"POCHNZHANG<<SAN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\",\n        \"CodeCrc\": \"G123456785CHN9209220M200819219203100<<<<<<60\",\n        \"Name\": \"张三\",\n        \"FamilyName\": \"ZHANG\",\n        \"FirstName\": \"SAN\",\n        \"RequestId\": \"39cce0fc-77b1-4271-82ae-9f0bf1036906\"\n    }\n}",
         "title": "护照识别示例代码    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=PassportOCR)"
       }
     ],
     "PermitOCR": [
       {
-        "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=PermitOCR\n&ImageUrl=https://xx/a.jpg \n&<公共请求参数>",
+        "document": "港澳台通行证识",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PermitOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg \"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"李明\",\n        \"EnglishName\": \"LIMING\",\n        \"Number\": \"C00000000\",\n        \"Sex\": \"男\",\n        \"ValidDate\": \"2018.10.09-2028.10.08\",\n        \"IssueAuthority\": \"公安部出入境管理局\",\n        \"IssueAddress\": \"广东\",\n        \"Birthday\": \"1981.08.03\",\n        \"RequestId\": \"3090debe-3662-4ef1-8784-6ef2fb59f75e\"\n    }\n}",
         "title": "港澳台通行证识别示例代码"
       }
     ],
     "PropOwnerCertOCR": [
       {
-        "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=PropOwnerCertOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "document": "房产证识别",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PropOwnerCertOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Owner\": \"李明\",\n        \"Possession\": \"单独所有\",\n        \"RegisterTime\": \"2015-02-22\",\n        \"Purpose\": \"成套住宅\",\n        \"Nature\": \"商品房\",\n        \"Location\": \"上海市徐汇区田林路397号腾云大厦\",\n        \"RequestId\": \"67c12150-b6e4-41a0-a404-503fe83d7e85\"\n    }\n}",
         "title": "房产证识别示例代码"
       }
     ],
     "QrcodeOCR": [
       {
-        "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=QrcodeOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "document": "二维码和条形码识别",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QrcodeOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"CodeResults\": [\n            {\n                \"TypeName\": \"QR_CODE\",\n                \"Url\": \"http://baike.baidu.com\",\n                \"Position\": {\n                    \"LeftTop\": {\n                        \"X\": 0,\n                        \"Y\": 0\n                    },\n                    \"RightTop\": {\n                        \"X\": 380,\n                        \"Y\": 0\n                    },\n                    \"RightBottom\": {\n                        \"X\": 380,\n                        \"Y\": 380\n                    },\n                    \"LeftBottom\": {\n                        \"X\": 0,\n                        \"Y\": 380\n                    }\n                }\n            }\n        ],\n        \"ImgSize\": {\n            \"Wide\": 380,\n            \"High\": 380\n        },\n        \"RequestId\": \"06c7ba12-ec94-4fd4-be48-239c714f0cf4\"\n    }\n}",
         "title": "二维码和条形码识别示例代码  [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=QrcodeOCR)"
       }
@@ -424,8 +424,8 @@
     ],
     "RecognizeContainerOCR": [
       {
-        "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeContainerOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "document": "集装箱识别",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeContainerOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"ContainerId\": \"APHU7042391\",\n        \"ContainerType\": \"45G1\",\n        \"GrossKG\": \"32500KG\",\n        \"GrossLB\": \"71650LB\",\n        \"PayloadKG\": \"28630KG\",\n        \"PayloadLB\": \"63120LB\",\n        \"TareKG\": \"3870KG\",\n        \"TareLB\": \"8530LB\",\n        \"CapacityM3\": \"76.4CUM\",\n        \"CapacityFT3\": \"2700CUFT\",\n        \"Warn\": [\n            -9926,\n            -9927\n        ],\n        \"RequestId\": \"45afaba3-5fb8-480e-83f9-2681f1373783\"\n    }\n}",
         "title": "集装箱识别示例代码"
       }

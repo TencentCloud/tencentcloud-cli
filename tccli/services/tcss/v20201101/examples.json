@@ -2236,9 +2236,9 @@
     ],
     "DescribeVulSummary": [
       {
-        "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulSummary\n&Filters.0.Name=CategoryType\n&Filters.0.Values.0=ALL\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SeriousVulCount\": 0,\n        \"VulTotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"SeriousVulNewestImageCount\": 0,\n        \"SuggestVulCount\": 0,\n        \"PocExpLevelVulCount\": 0,\n        \"RemoteExpLevelVulCount\": 0\n    }\n}",
+        "document": "查询漏洞风险统计概览",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"VulTotalCount\": 0,\n        \"SeriousVulCount\": 0,\n        \"SuggestVulCount\": 0,\n        \"PocExpLevelVulCount\": 0,\n        \"RemoteExpLevelVulCount\": 0,\n        \"SeriousVulNewestImageCount\": 0,\n        \"SystemVulnerabilityFocusCount\": 0,\n        \"WebVulnerabilityFocusCount\": 0,\n        \"SeriousVulnerabilityLocalImageCount\": 0,\n        \"SeriousVulnerabilityRegistryImageCount\": 0,\n        \"EmergencyVulnerabilityCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询漏洞风险统计概览"
       }
     ],

@@ -7,10 +7,10 @@ Input:
 ```
 tccli iotexplorer SearchStudioProduct --cli-unfold-argument  \
     --ProjectId prj-zunfat46 \
-    --ProductName testtproduct \
-    --Limit 0 \
+    --DevStatus dev \
     --Offset 0 \
-    --DevStatus dev
+    --Limit 0 \
+    --ProductName testtproduct
 ```
 
 Output: 
@@ -33,6 +33,7 @@ Output:
                 "ProductType": 0,
                 "ModuleId": 0,
                 "CreateTime": 1560341975,
+                "BindStrategy": 0,
                 "CategoryId": 3,
                 "CreateUserId": 0,
                 "CreatorNickName": "xx",

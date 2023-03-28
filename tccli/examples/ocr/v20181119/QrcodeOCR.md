@@ -1,6 +1,6 @@
 **Example 1: 二维码和条形码识别示例代码  [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=QrcodeOCR)**
 
-
+二维码和条形码识别
 
 Input: 
 

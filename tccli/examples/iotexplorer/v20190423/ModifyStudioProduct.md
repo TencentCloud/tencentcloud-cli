@@ -6,10 +6,11 @@ Input:
 
 ```
 tccli iotexplorer ModifyStudioProduct --cli-unfold-argument  \
-    --ProductId 4GDIU5HTEN \
+    --BindStrategy 1 \
+    --ModuleId 0 \
     --ProductName testProduct \
     --ProductDesc Pdesc \
-    --ModuleId 0
+    --ProductId 4GDIU5HTEN
 ```
 
 Output: 
@@ -17,25 +18,26 @@ Output:
 {
     "Response": {
         "Product": {
-            "DevStatus": "xx",
-            "EncryptionType": "xx",
+            "DevStatus": "dev",
+            "EncryptionType": "2",
             "DataProtocol": 1,
-            "ProjectId": "xx",
-            "Region": "xx",
+            "ProjectId": "prj-zunfat46",
+            "Region": "gz",
             "ModuleId": 0,
-            "EnableProductScript": "xx",
+            "EnableProductScript": "true",
             "UpdateTime": 1,
-            "ProductName": "xx",
+            "ProductName": "testProduct",
             "CreateUserId": 0,
-            "ProductDesc": "xx",
-            "NetType": "xx",
+            "ProductDesc": "test",
+            "NetType": "else",
             "ProductType": 0,
-            "CreatorNickName": "xx",
+            "CreatorNickName": "test",
             "CreateTime": 1,
             "CategoryId": 3,
-            "ProductId": "xx"
+            "BindStrategy": 0,
+            "ProductId": "4GDIU5HTEN"
         },
-        "RequestId": "xx"
+        "RequestId": "1c469fbf-d80c-4299-9b54-31340898b839"
     }
 }
 ```

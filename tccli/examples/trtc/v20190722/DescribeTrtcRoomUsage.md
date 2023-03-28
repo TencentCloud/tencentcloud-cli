@@ -1,11 +1,15 @@
 **Example 1: 查询TRTC音视频房间维度用量**
 
-
+查询TRTC音视频房间维度用量
 
 Input: 
 
 ```
-tccli trtc DescribeTrtcRoomUsage --cli-unfold-argument ```
+tccli trtc DescribeTrtcRoomUsage --cli-unfold-argument  \
+    --StartTime 2023-01-06 00:00 \
+    --EndTime 2023-01-06 10:00 \
+    --SdkAppid 1400017192
+```
 
 Output: 
 ```

@@ -1,6 +1,6 @@
 **Example 1: 查询实例列表**
 
-
+查询实例列表
 
 Input: 
 
@@ -14,154 +14,155 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "97939db3-ef94-4a60-9b64-2a1f4e2f1ea3",
         "Items": [
             {
                 "WanStatus": 0,
-                "Zone": "xx",
+                "Zone": "100001",
                 "WanPort": 0,
+                "DiskType": "test",
                 "RoVipInfo": {
                     "RoVport": 0,
                     "RoVpcId": 0,
                     "RoVipStatus": 0,
-                    "RoVip": "xx",
+                    "RoVip": "192.168.1.1",
                     "RoSubnetId": 0
                 },
                 "Memory": 1000,
-                "EngineType": "xx",
+                "EngineType": "InnoDB",
                 "Status": 1,
                 "VpcId": 511512,
                 "SlaveInfo": {
                     "Second": {
                         "Vport": 0,
-                        "Vip": "xx",
-                        "Region": "xx",
-                        "Zone": "xx"
+                        "Vip": "test",
+                        "Region": "ap-guangzhou",
+                        "Zone": "ap-guangzhou-1"
                     },
                     "First": {
                         "Vport": 0,
-                        "Vip": "xx",
-                        "Region": "xx",
-                        "Zone": "xx"
+                        "Vip": "test",
+                        "Region": "ap-guangzhou",
+                        "Zone": "ap-guangzhou-1"
                     }
                 },
-                "InstanceId": "xx",
-                "PhysicalId": "xx",
+                "InstanceId": "cdn-abc",
+                "PhysicalId": "test",
                 "Volume": 50,
                 "AutoRenew": 0,
                 "ProtectMode": 0,
                 "CdbError": 0,
-                "DeviceClass": "xx",
+                "DeviceClass": "test",
                 "MasterInfo": {
                     "Status": 0,
                     "VpcId": 0,
-                    "Zone": "xx",
-                    "ExClusterName": "xx",
-                    "InstanceId": "xx",
-                    "ResourceId": "xx",
-                    "Region": "xx",
+                    "Zone": "100001",
+                    "ExClusterName": "test",
+                    "InstanceId": "test",
+                    "ResourceId": "test",
+                    "Region": "ap-guangzhou",
                     "RegionId": 0,
                     "ZoneId": 0,
                     "Volume": 0,
-                    "DeviceType": "xx",
+                    "DeviceType": "test",
                     "Memory": 0,
                     "SubnetId": 0,
                     "Qps": 0,
                     "TaskStatus": 0,
-                    "InstanceName": "xx",
+                    "InstanceName": "test",
                     "InstanceType": 0,
-                    "ExClusterId": "xx"
+                    "ExClusterId": "test"
                 },
-                "DeployGroupId": "xx",
+                "DeployGroupId": "test",
                 "InstanceNodes": 2,
                 "RoGroups": [
                     {
                         "RoOfflineDelay": 0,
-                        "RoGroupMode": "xx",
-                        "RoGroupZone": "xx",
+                        "RoGroupMode": "test",
+                        "RoGroupZone": "test",
                         "MinRoInGroup": 1,
                         "DelayReplicationTime": 0,
-                        "RoGroupId": "xx",
+                        "RoGroupId": "test",
                         "RoMaxDelayTime": 1,
-                        "RoGroupName": "xx",
+                        "RoGroupName": "test",
                         "Weight": 0,
-                        "UniqVpcId": "xx",
+                        "UniqVpcId": "test",
                         "RoInstances": [
                             {
-                                "Zone": "xx",
-                                "MasterInstanceId": "xx",
+                                "Zone": "test",
+                                "MasterInstanceId": "test",
                                 "Memory": 1000,
                                 "Status": 1,
                                 "VpcId": 511512,
-                                "InstanceId": "xx",
+                                "InstanceId": "test",
                                 "Volume": 50,
-                                "OfflineTime": "xx",
+                                "OfflineTime": "test",
                                 "SubnetId": 115839,
                                 "HourFeeStatus": 1,
-                                "RoStatus": "xx",
-                                "Region": "xx",
-                                "DeadlineTime": "xx",
+                                "RoStatus": "test",
+                                "Region": "test",
+                                "DeadlineTime": "test",
                                 "TaskStatus": 0,
-                                "DeviceType": "xx",
-                                "EngineVersion": "xx",
-                                "InstanceName": "xx",
+                                "DeviceType": "test",
+                                "EngineVersion": "test",
+                                "InstanceName": "test",
                                 "Weight": 0,
                                 "PayType": 1,
                                 "InstanceType": 3,
-                                "Vip": "xx",
+                                "Vip": "test",
                                 "Qps": 1000,
                                 "Vport": 3306
                             }
                         ],
-                        "Vip": "xx",
-                        "UniqSubnetId": "xx",
-                        "RoGroupRegion": "xx",
+                        "Vip": "test",
+                        "UniqSubnetId": "test",
+                        "RoGroupRegion": "test",
                         "Vport": 3306,
-                        "WeightMode": "xx"
+                        "WeightMode": "test"
                     },
                     {
                         "RoOfflineDelay": 0,
-                        "RoGroupMode": "xx",
-                        "RoGroupZone": "xx",
+                        "RoGroupMode": "test",
+                        "RoGroupZone": "test",
                         "MinRoInGroup": 1,
                         "DelayReplicationTime": 0,
-                        "RoGroupId": "xx",
+                        "RoGroupId": "test",
                         "RoMaxDelayTime": 1,
-                        "RoGroupName": "xx",
-                        "UniqVpcId": "xx",
+                        "RoGroupName": "test",
+                        "UniqVpcId": "test",
                         "Weight": 0,
                         "RoInstances": [
                             {
-                                "Zone": "xx",
-                                "MasterInstanceId": "xx",
+                                "Zone": "test",
+                                "MasterInstanceId": "test",
                                 "Memory": 1000,
                                 "Status": 1,
                                 "VpcId": 511512,
-                                "InstanceId": "xx",
+                                "InstanceId": "test",
                                 "Volume": 25,
-                                "OfflineTime": "xx",
+                                "OfflineTime": "test",
                                 "SubnetId": 115839,
                                 "HourFeeStatus": 1,
-                                "RoStatus": "xx",
-                                "Region": "xx",
-                                "DeadlineTime": "xx",
+                                "RoStatus": "test",
+                                "Region": "test",
+                                "DeadlineTime": "test",
                                 "TaskStatus": 0,
-                                "DeviceType": "xx",
-                                "EngineVersion": "xx",
-                                "InstanceName": "xx",
+                                "DeviceType": "test",
+                                "EngineVersion": "test",
+                                "InstanceName": "test",
                                 "Weight": 0,
                                 "PayType": 1,
                                 "InstanceType": 3,
-                                "Vip": "xx",
+                                "Vip": "test",
                                 "Qps": 1000,
                                 "Vport": 3306
                             }
                         ],
-                        "Vip": "xx",
-                        "UniqSubnetId": "xx",
-                        "RoGroupRegion": "xx",
+                        "Vip": "test",
+                        "UniqSubnetId": "test",
+                        "RoGroupRegion": "test",
                         "Vport": 3306,
-                        "WeightMode": "xx"
+                        "WeightMode": "test"
                     }
                 ],
                 "ProjectId": 0,
@@ -169,41 +170,41 @@ Output:
                 "DeployMode": 0,
                 "TaskStatus": 0,
                 "SubnetId": 115839,
-                "DeviceType": "xx",
-                "EngineVersion": "xx",
+                "DeviceType": "test",
+                "EngineVersion": "test",
                 "MaxDelayTime": 0,
-                "InstanceName": "xx",
+                "InstanceName": "test",
                 "Cpu": 8,
                 "DrInfo": [
                     {
                         "Status": 0,
-                        "Zone": "xx",
-                        "InstanceId": "xx",
-                        "Region": "xx",
+                        "Zone": "test",
+                        "InstanceId": "test",
+                        "Region": "test",
                         "SyncStatus": 0,
-                        "InstanceName": "xx",
+                        "InstanceName": "test",
                         "InstanceType": 0
                     }
                 ],
-                "UniqVpcId": "xx",
-                "WanDomain": "xx",
+                "UniqVpcId": "test",
+                "WanDomain": "test",
                 "InitFlag": 1,
                 "PayType": 1,
                 "InstanceType": 1,
-                "Vip": "xx",
-                "UniqSubnetId": "xx",
-                "Region": "xx",
+                "Vip": "test",
+                "UniqSubnetId": "test",
+                "Region": "test",
                 "Qps": 0,
                 "Vport": 3306,
                 "TagList": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "test",
+                        "TagValue": "test"
                     }
                 ],
-                "CreateTime": "xx",
+                "CreateTime": "test",
                 "ZoneId": 720001,
-                "ZoneName": "xx"
+                "ZoneName": "test"
             }
         ]
     }

@@ -24,9 +24,9 @@
     ],
     "DescribeDetailedSingleProbeData": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDetailedSingleProbeData\n<公共请求参数>\n\n{\n    \"BeginTime\": 1627345083000,\n    \"EndTime\": 1627363083000,\n    \"TaskType\": \"xxx\",\n    \"SortField\": \"xxx\",\n    \"Ascending\": true,\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"SelectedFields\": [\n        \"xxx\"\n    ],\n    \"TaskID\": [\n        \"task_xxx\"\n    ],\n    \"Operators\": [\n        \"xxx\"\n    ],\n    \"Districts\": [\n        \"xxx\"\n    ],\n    \"ErrorTypes\": [\n        \"xxx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalNumber\": 10,\n        \"DataSet\": [\n            {\n                \"ProbeTime\": 1,\n                \"Labels\": [\n                    {\n                        \"ID\": 0,\n                        \"Name\": \"xxx\",\n                        \"Value\": \"xxx\"\n                    }\n                ],\n                \"Fields\": [\n                    {\n                        \"ID\": 0,\n                        \"Name\": \"xxx\",\n                        \"Value\": 1\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "列出单次拨测详情数据",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDetailedSingleProbeData\n<公共请求参数>\n\n{\n    \"BeginTime\": 1679899994107,\n    \"EndTime\": 1679903594107,\n    \"TaskType\": \"AnalyzeTaskType_Network\",\n    \"SortField\": \"ProbeTime\",\n    \"Ascending\": true,\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"SelectedFields\": [\n        \"ProbeTime\",\n        \"City\",\n        \"Operator\",\n        \"ProbeIP\"\n    ],\n    \"TaskID\": [\n        \"task-p4najqd4\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNumber\": 10,\n        \"DataSet\": [\n            {\n                \"ProbeTime\": 1,\n                \"Labels\": [\n                    {\n                        \"ID\": 0,\n                        \"Name\": \"City\",\n                        \"Value\": \"上海市\"\n                    }\n                ],\n                \"Fields\": [\n                    {\n                        \"ID\": 0,\n                        \"Name\": \"ProbeTime\",\n                        \"Value\": 1679903537000\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"asd\"\n    }\n}",
         "title": "列出单次拨测详情数据"
       }
     ],
@@ -40,7 +40,7 @@
     ],
     "DescribeProbeMetricData": [
       {
-        "document": "",
+        "document": "请求浏览数据",
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeMetricData\n<公共请求参数>\n\n{\n    \"AnalyzeTaskType\": \"AnalyzeTaskType_Browse\",\n    \"MetricType\": \"gauge\",\n    \"Field\": \"avg(\\\"count\\\")\",\n    \"GroupBy\": \"time(30d), \\\"operator\\\"\",\n    \"Filters\": [\n        \"\\\"host\\\" = 'default-host'\",\n        \"time >= now()-3h\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"MetricSet\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求浏览数据"
@@ -48,9 +48,9 @@
     ],
     "DescribeProbeNodes": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeNodes\n<公共请求参数>\n\n{\n    \"NodeType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"City\": \"xx\",\n                \"Code\": \"xx\",\n                \"Name\": \"xx\",\n                \"District\": \"xx\",\n                \"NetService\": \"xx\",\n                \"Location\": 0,\n                \"Type\": 1,\n                \"IPType\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "查询拨测节点\n",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeNodes\n<公共请求参数>\n\n{\n    \"NodeType\": 0,\n    \"Location\": 0,\n    \"IsIPv6\": true,\n    \"NodeName\": \"广东\",\n    \"PayMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"Name\": \"北京-北京市-中国电信[IDC]\",\n                \"Code\": \"10000\",\n                \"Type\": 1,\n                \"NetService\": \"中国电信\",\n                \"District\": \"北京\",\n                \"City\": \"北京市\",\n                \"IPType\": 1,\n                \"Location\": 1,\n                \"CodeType\": \"\",\n                \"NodeDefineStatus\": 1\n            }\n        ],\n        \"RequestId\": \"avb\"\n    }\n}",
         "title": "查询拨测节点"
       }
     ],

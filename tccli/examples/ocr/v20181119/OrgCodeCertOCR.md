@@ -1,12 +1,12 @@
 **Example 1: 组织机构代码证识别示例代码**
 
-
+组织机构代码证识别
 
 Input: 
 
 ```
 tccli ocr OrgCodeCertOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://xx/a.jpg 
 ```
 
 Output: 

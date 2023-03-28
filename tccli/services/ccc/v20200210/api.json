@@ -2640,7 +2640,6 @@
       "document": "DescribeTelCallInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "起始时间戳，Unix 时间戳",
           "example": "0",
           "member": "int64",
@@ -2649,7 +2648,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "结束时间戳，Unix 时间戳，查询时间范围最大为90天",
           "example": "0",
           "member": "int64",
@@ -2658,7 +2656,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "应用ID列表，多个ID时，返回值为多个ID使用总和",
           "example": "[\"0\\n\"]",
           "member": "int64",
@@ -2677,7 +2674,6 @@
           "example": "10",
           "member": "int64",
           "name": "TelCallOutCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2686,7 +2682,6 @@
           "example": "10",
           "member": "int64",
           "name": "TelCallInCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2695,7 +2690,6 @@
           "example": "50",
           "member": "int64",
           "name": "SeatUsedCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2704,7 +2698,22 @@
           "example": "10",
           "member": "int64",
           "name": "VoipCallInCount",
-          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "离线语音转文字套餐包消耗分钟数",
+          "example": "1",
+          "member": "int64",
+          "name": "AsrOfflineCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实时语音转文字套餐包消耗分钟数",
+          "example": "1",
+          "member": "int64",
+          "name": "AsrRealtimeCount",
           "type": "int",
           "value_allowed_null": false
         },
