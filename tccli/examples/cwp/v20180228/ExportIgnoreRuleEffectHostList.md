@@ -13,9 +13,9 @@ Output:
 ```
 {
     "Response": {
-        "DownloadUrl": "xx",
-        "RequestId": "xx",
-        "TaskId": "xx"
+        "DownloadUrl": "",
+        "TaskId": "12312",
+        "RequestId": "abc"
     }
 }
 ```

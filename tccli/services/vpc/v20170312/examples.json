@@ -1928,8 +1928,8 @@
     ],
     "DownloadCustomerGatewayConfiguration": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DownloadCustomerGatewayConfiguration\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-p4lmqawn\r\n&VpnConnectionId=vpnx-5p7vkch8\r\n&CustomerGatewayVendor.Platform=comware\r\n&CustomerGatewayVendor.SoftwareVersion=V1.0\r\n&CustomerGatewayVendor.VendorName=h3c\r\n&InterfaceName=eth0\r\n&<公共请求参数>",
+        "document": "下载VPN通道配置",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadCustomerGatewayConfiguration\n<公共请求参数>\n\n{\n    \"VpnGatewayId\": \"vpngw-p3lmbqwn\",\n    \"VpnConnectionId\": \"vpnx-3a4xoch6\",\n    \"CustomerGatewayVendor\": {\n        \"Platform\": \"comware\",\n        \"SoftwareVersion\": \"V1.0\",\n        \"VendorName\": \"h3c\"\n    },\n    \"InterfaceName\": \"eth0\"\n}",
         "output": "{\n    \"Response\": {\n        \"CustomerGatewayConfiguration\": \"# VPC utilizes unique identifiers to manipulate the configuration of\\r\\n# a VPN Connection. Each VPN Connection is assigned an identifier and is\\r\\n# associated with Virtual Private Gateway ...\",\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "下载VPN通道配置"
       }

@@ -857,6 +857,7 @@
         {
           "default": "",
           "document": "待检查的证书链",
+          "example": "无",
           "member": "string",
           "name": "CertificateChain",
           "required": true,
@@ -870,22 +871,28 @@
       "members": [
         {
           "document": "true为通过检查，false为未通过检查。",
+          "example": "1",
           "member": "bool",
           "name": "IsValid",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "true为可信CA，false为不可信CA。",
+          "example": "1",
           "member": "bool",
           "name": "IsTrustedCA",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "包含证书链中每一段证书的通用名称。",
+          "example": "[\"qcloud.com\",\"WoTrus DV Server CA  [Run by the Issuer]\"]",
           "member": "string",
           "name": "Chains",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1232,7 +1239,6 @@
       "document": "DescribeCertificateDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "证书 ID。",
           "example": "无",
           "member": "string",
@@ -1251,7 +1257,6 @@
           "example": "无",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1260,7 +1265,6 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1269,7 +1273,6 @@
           "example": "无",
           "member": "string",
           "name": "From",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1278,16 +1281,14 @@
           "example": "无",
           "member": "string",
           "name": "CertificateType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "document": "证书套餐类型：1 = GeoTrust DV SSL CA - G3， 2 = TrustAsia TLS RSA CA， 3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书，25 = Wotrus 域名型证书，26 = Wotrus 域名型多域名证书，27 = Wotrus 域名型通配符证书，28 = Wotrus 企业型证书，29 = Wotrus 企业型多域名证书，30 = Wotrus 企业型通配符证书，31 = Wotrus 增强型证书，32 = Wotrus 增强型多域名证书，33 = DNSPod 国密域名型证书，34 = DNSPod 国密域名型多域名证书，35 = DNSPod 国密域名型通配符证书，37 = DNSPod 国密企业型证书，38 = DNSPod 国密企业型多域名证书，39 = DNSPod 国密企业型通配符证书，40 = DNSPod 国密增强型证书，41 = DNSPod 国密增强型多域名证书，42 = TrustAsia 域名型通配符多域名证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书套餐类型：null = 用户上传证书（没有套餐类型），1 = GeoTrust DV SSL CA - G3， 2 = TrustAsia TLS RSA CA， 3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书，25 = Wotrus 域名型证书，26 = Wotrus 域名型多域名证书，27 = Wotrus 域名型通配符证书，28 = Wotrus 企业型证书，29 = Wotrus 企业型多域名证书，30 = Wotrus 企业型通配符证书，31 = Wotrus 增强型证书，32 = Wotrus 增强型多域名证书，33 = DNSPod 国密域名型证书，34 = DNSPod 国密域名型多域名证书，35 = DNSPod 国密域名型通配符证书，37 = DNSPod 国密企业型证书，38 = DNSPod 国密企业型多域名证书，39 = DNSPod 国密企业型通配符证书，40 = DNSPod 国密增强型证书，41 = DNSPod 国密增强型多域名证书，42 = TrustAsia 域名型通配符多域名证书。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PackageType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1296,7 +1297,6 @@
           "example": "无",
           "member": "string",
           "name": "ProductZhName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1305,7 +1305,6 @@
           "example": "无",
           "member": "string",
           "name": "Domain",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1314,7 +1313,6 @@
           "example": "无",
           "member": "string",
           "name": "Alias",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1323,7 +1321,6 @@
           "example": "无",
           "member": "uint64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1332,7 +1329,6 @@
           "example": "无",
           "member": "string",
           "name": "StatusMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1341,7 +1337,6 @@
           "example": "无",
           "member": "string",
           "name": "VerifyType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1350,7 +1345,6 @@
           "example": "无",
           "member": "string",
           "name": "VulnerabilityStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1359,7 +1353,6 @@
           "example": "无",
           "member": "datetime",
           "name": "CertBeginTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1368,7 +1361,6 @@
           "example": "无",
           "member": "datetime",
           "name": "CertEndTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1377,7 +1369,6 @@
           "example": "无",
           "member": "string",
           "name": "ValidityPeriod",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1386,7 +1377,6 @@
           "example": "无",
           "member": "datetime",
           "name": "InsertTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1395,7 +1385,6 @@
           "example": "无",
           "member": "string",
           "name": "OrderId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1404,7 +1393,6 @@
           "example": "无",
           "member": "CertificateExtra",
           "name": "CertificateExtra",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1413,7 +1401,6 @@
           "example": "无",
           "member": "string",
           "name": "CertificatePrivateKey",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1422,7 +1409,6 @@
           "example": "无",
           "member": "string",
           "name": "CertificatePublicKey",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1431,7 +1417,6 @@
           "example": "无",
           "member": "DvAuthDetail",
           "name": "DvAuthDetail",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1440,7 +1425,6 @@
           "example": "无",
           "member": "string",
           "name": "VulnerabilityReport",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1449,7 +1433,6 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1458,7 +1441,6 @@
           "example": "无",
           "member": "string",
           "name": "TypeName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1467,7 +1449,6 @@
           "example": "无",
           "member": "string",
           "name": "StatusName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1476,7 +1457,6 @@
           "example": "无",
           "member": "string",
           "name": "SubjectAltName",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1485,7 +1465,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsVip",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1494,7 +1473,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsWildcard",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1503,7 +1481,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsDv",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1512,7 +1489,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsVulnerability",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1521,7 +1497,6 @@
           "example": "无",
           "member": "SubmittedData",
           "name": "SubmittedData",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1530,7 +1505,6 @@
           "example": "无",
           "member": "bool",
           "name": "RenewAble",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1539,7 +1513,6 @@
           "example": "无",
           "member": "bool",
           "name": "Deployable",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1548,7 +1521,6 @@
           "example": "无",
           "member": "Tags",
           "name": "Tags",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1557,7 +1529,6 @@
           "example": "无",
           "member": "RootCertificates",
           "name": "RootCert",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1566,7 +1537,6 @@
           "example": "无",
           "member": "string",
           "name": "EncryptCert",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1575,7 +1545,6 @@
           "example": "无",
           "member": "string",
           "name": "EncryptPrivateKey",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1584,7 +1553,6 @@
           "example": "无",
           "member": "string",
           "name": "CertFingerprint",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1593,7 +1561,6 @@
           "example": "无",
           "member": "string",
           "name": "EncryptCertFingerprint",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1602,7 +1569,6 @@
           "example": "无",
           "member": "string",
           "name": "EncryptAlgorithm",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2143,7 +2109,6 @@
       "document": "DescribeDeployedResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "证书ID",
           "example": "无",
           "member": "string",
@@ -2152,7 +2117,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "资源类型:clb,cdn,live,waf,antiddos",
           "example": "无",
           "member": "string",
@@ -2171,7 +2135,6 @@
           "example": "无",
           "member": "DeployedResources",
           "name": "DeployedResources",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2383,6 +2346,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "审核状态详细信息",
+          "example": "无",
+          "member": "ManagerStatusInfo",
+          "name": "StatusInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2423,7 +2395,7 @@
         },
         {
           "default": "",
-          "document": "管理人姓名",
+          "document": "管理人姓名（将废弃），请使用SearchKey",
           "example": "腾讯",
           "member": "string",
           "name": "ManagerName",
@@ -2432,7 +2404,7 @@
         },
         {
           "default": "",
-          "document": "模糊查询管理人邮箱",
+          "document": "模糊查询管理人邮箱（将废弃），请使用SearchKey",
           "example": "tencent@tencent.com",
           "member": "string",
           "name": "ManagerMail",
@@ -2450,7 +2422,7 @@
         },
         {
           "default": "",
-          "document": "管理人姓名/邮箱/部门精准匹配",
+          "document": "管理人姓/管理人名/邮箱/部门精准匹配",
           "example": "腾讯/tencent@tencent.com/开发一部",
           "member": "string",
           "name": "SearchKey",
@@ -3061,7 +3033,6 @@
       "document": "ModifyCertificatesExpiringNotificationSwitch请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "证书ID列表。最多50个",
           "example": "无",
           "member": "string",
@@ -3070,7 +3041,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "0:不忽略通知。1:忽略通知",
           "example": "0:不忽略通知。1:忽略通知",
           "member": "uint64",
@@ -3089,7 +3059,6 @@
           "example": "无",
           "member": "string",
           "name": "CertificateIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4180,7 +4149,7 @@
           "type": "string"
         },
         {
-          "document": "证书类型，默认 SVR。CA = 客户端证书，SVR = 服务器证书。",
+          "document": "证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。",
           "example": "无",
           "member": "string",
           "name": "CertificateType",

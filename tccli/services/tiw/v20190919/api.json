@@ -119,6 +119,13 @@
       "output": "DescribeQualityMetricsResponse",
       "status": "online"
     },
+    "DescribeRecordSearch": {
+      "document": "根据房间号搜索实时录制任务",
+      "input": "DescribeRecordSearchRequest",
+      "name": "搜索实时录制任务",
+      "output": "DescribeRecordSearchResponse",
+      "status": "online"
+    },
     "DescribeRoomList": {
       "document": "查询白板房间列表",
       "input": "DescribeRoomListRequest",
@@ -1673,6 +1680,41 @@
           "name": "Content",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordSearchRequest": {
+      "document": "DescribeRecordSearch请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRecordSearchResponse": {
+      "document": "DescribeRecordSearch返回参数结构体",
+      "members": [
+        {
+          "document": "录制任务搜索结果集合",
+          "example": "无",
+          "member": "RecordTaskSearchResult",
+          "name": "RecordTaskSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "录制总任务数",
+          "example": "151",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -3278,6 +3320,180 @@
         }
       ],
       "usage": "in"
+    },
+    "RecordTaskResult": {
+      "document": "实时录制结果",
+      "members": [
+        {
+          "default": "",
+          "document": "AUTO - 自动停止录制， USER_CALL - 用户主动调用停止录制",
+          "member": "string",
+          "name": "FinishReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常数",
+          "member": "int64",
+          "name": "ExceptionCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间号",
+          "member": "int64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制真实开始时间",
+          "member": "int64",
+          "name": "RecordStartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制结束时间",
+          "member": "int64",
+          "name": "RecordStopTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制总时长",
+          "member": "int64",
+          "name": "TotalTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频信息列表",
+          "member": "VideoInfo",
+          "name": "VideoInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被忽略的视频时间段",
+          "member": "OmittedDuration",
+          "name": "OmittedDurations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "详情",
+          "member": "string",
+          "name": "Details",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务失败错误码",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordTaskSearchResult": {
+      "document": "实时录制任务搜索结果",
+      "members": [
+        {
+          "default": "",
+          "document": "任务唯一ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实时录制任务状态\n- PAUSED: 录制已暂停\n- PREPARED: 录制在准备阶段\n- RECORDING: 正在录制\n- STOPPED：录制已停止\n- FINISHED: 录制已结束",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实时录制房间号",
+          "member": "int64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户应用SdkAppId",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实时录制结果",
+          "member": "RecordTaskResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ResumeOnlineRecordRequest": {
       "document": "ResumeOnlineRecord请求参数结构体",

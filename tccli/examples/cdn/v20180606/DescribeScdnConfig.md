@@ -1,6 +1,6 @@
 **Example 1: 查询SCDN域名配置**
 
-
+查询SCDN域名配置
 
 Input: 
 

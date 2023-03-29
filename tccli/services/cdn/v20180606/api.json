@@ -6964,7 +6964,6 @@
       "document": "DescribeScdnConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "www.test.com",
           "member": "string",
@@ -6983,7 +6982,6 @@
           "example": "无",
           "member": "ScdnAclConfig",
           "name": "Acl",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6992,7 +6990,6 @@
           "example": "无",
           "member": "ScdnWafConfig",
           "name": "Waf",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7001,7 +6998,6 @@
           "example": "无",
           "member": "ScdnConfig",
           "name": "CC",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7010,7 +7006,6 @@
           "example": "无",
           "member": "ScdnDdosConfig",
           "name": "Ddos",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7019,7 +7014,6 @@
           "example": "无",
           "member": "ScdnBotConfig",
           "name": "Bot",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7028,7 +7022,6 @@
           "example": "online",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16494,7 +16487,6 @@
       "document": "UpdateScdnDomain请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "www.test.com",
           "member": "string",
@@ -16503,7 +16495,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Web 攻击防护（WAF）配置",
           "example": "无",
           "member": "ScdnWafConfig",
@@ -16512,7 +16503,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "自定义防护策略配置",
           "example": "无",
           "member": "ScdnAclConfig",
@@ -16521,7 +16511,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "CC 防护配置，目前 CC 防护默认开启",
           "example": "无",
           "member": "ScdnConfig",
@@ -16530,7 +16519,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "DDOS 防护配置，目前 DDoS 防护默认开启",
           "example": "无",
           "member": "ScdnDdosConfig",
@@ -16539,7 +16527,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "BOT 防护配置",
           "example": "无",
           "member": "ScdnBotConfig",
@@ -16558,7 +16545,6 @@
           "example": "Success",
           "member": "string",
           "name": "Result",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

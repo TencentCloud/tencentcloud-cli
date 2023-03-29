@@ -361,7 +361,7 @@
     "ModifyApplicationCallbackInfo": [
       {
         "document": "修改应用callbackinfo",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationCallbackInfo\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationCallbackInfo\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"xxx\"\n    },\n    \"CallbackInfo\": {\n        \"CallbackUrl\": \"https://y.qq.com/\",\n        \"Token\": \"xxx222xxx\"\n    },\n    \"OperateType\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1675154686215203499\"\n    }\n}",
         "title": "修改应用callbackinfo"
       }

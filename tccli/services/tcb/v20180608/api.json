@@ -2947,7 +2947,6 @@
       "document": "CreateCloudBaseRunServerVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
           "example": "dsdx-demo-4gkfdf588ce6e585",
           "member": "string",
@@ -2956,7 +2955,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "枚举（package/repository/image/jar/war)",
           "example": "image",
           "member": "string",
@@ -2965,7 +2963,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "流量占比",
           "example": "0",
           "member": "int64",
@@ -2974,7 +2971,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "Cpu的大小，单位：核",
           "example": "1",
           "member": "float",
@@ -2983,7 +2979,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "Mem的大小，单位：G",
           "example": "1",
           "member": "float",
@@ -2992,7 +2987,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "最小副本数，最小值：0",
           "example": "0",
           "member": "int64",
@@ -3001,7 +2995,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "副本最大数，最大值：50",
           "example": "3",
           "member": "int64",
@@ -3010,7 +3003,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "策略类型(枚举值：比如cpu)",
           "example": "cpu",
           "member": "string",
@@ -3019,7 +3011,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "策略阈值",
           "example": "60",
           "member": "int64",
@@ -3028,7 +3019,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "服务端口",
           "example": "80",
           "member": "int64",
@@ -3037,7 +3027,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "服务名称",
           "example": "demo",
           "member": "string",
@@ -3046,7 +3035,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "repository的类型(coding/gitlab/github/coding)",
           "example": "coding",
           "member": "string",
@@ -3055,7 +3043,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Dockerfile地址",
           "example": "./",
           "member": "string",
@@ -3064,7 +3051,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "构建目录",
           "example": "./",
           "member": "string",
@@ -3073,7 +3059,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "环境变量",
           "example": "{‘cpu’:'1'}",
           "member": "string",
@@ -3082,7 +3067,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "repository地址",
           "example": "test",
           "member": "string",
@@ -3091,7 +3075,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分支",
           "example": "master",
           "member": "string",
@@ -3100,7 +3083,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本备注",
           "example": "test",
           "member": "string",
@@ -3109,7 +3091,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "代码包名字",
           "example": "std-we",
           "member": "string",
@@ -3118,7 +3099,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "代码包的版本",
           "example": "dsd-we",
           "member": "string",
@@ -3127,7 +3107,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Image的详情",
           "example": "无",
           "member": "CloudBaseRunImageInfo",
@@ -3136,7 +3115,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "Github等拉取代码的详情",
           "example": "无",
           "member": "CloudBaseCodeRepoDetail",
@@ -3145,7 +3123,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "私有镜像秘钥信息",
           "example": "无",
           "member": "CloudBaseRunImageSecretInfo",
@@ -3154,7 +3131,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "私有镜像 认证名称",
           "example": "dsd-ds",
           "member": "string",
@@ -3163,7 +3139,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户自定义采集日志路径",
           "example": "stdout",
           "member": "string",
@@ -3172,7 +3147,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "延迟多长时间开始健康检查（单位s）",
           "example": "2",
           "member": "int64",
@@ -3181,7 +3155,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "cfs挂载信息",
           "example": "无",
           "member": "CloudBaseRunVolumeMount",
@@ -3190,7 +3163,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "4 代表只能微信链路访问",
           "example": "2",
           "member": "int64",
@@ -3199,7 +3171,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "es信息",
           "example": "无",
           "member": "CloudBaseEsInfo",
@@ -3208,7 +3179,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "是否使用统一域名",
           "example": "false",
           "member": "bool",
@@ -3217,7 +3187,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "操作备注",
           "example": "test",
           "member": "string",
@@ -3226,7 +3195,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务路径",
           "example": "test-demo",
           "member": "string",
@@ -3235,7 +3203,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "镜像复用的key",
           "example": "sdsd",
           "member": "string",
@@ -3244,7 +3211,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器的描述文件",
           "example": "无",
           "member": "CloudBaseRunSideSpec",
@@ -3253,7 +3219,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "安全特性",
           "example": "无",
           "member": "CloudBaseSecurityContext",
@@ -3262,7 +3227,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "服务磁盘挂载",
           "example": "无",
           "member": "CloudRunServiceVolume",
@@ -3271,7 +3235,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否创建JnsGw 0未传默认创建 1创建 2不创建",
           "example": "无",
           "member": "int64",
@@ -3280,7 +3243,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "数据卷挂载参数",
           "example": "无",
           "member": "CloudBaseRunServiceVolumeMount",
@@ -3289,7 +3251,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否有Dockerfile：0-default has, 1-has, 2-has not",
           "example": "0",
           "member": "int64",
@@ -3298,7 +3259,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "基础镜像",
           "example": "JDK7",
           "member": "string",
@@ -3307,7 +3267,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器启动入口命令",
           "example": "java -jar app.jar",
           "member": "string",
@@ -3316,7 +3275,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "仓库语言",
           "example": "Java",
           "member": "string",
@@ -3325,7 +3283,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户实际上传文件名（仅UploadType为jar/war时必填）",
           "example": "demo-1.jar",
           "member": "string",
@@ -3334,7 +3291,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "自动扩缩容策略组",
           "example": "无",
           "member": "HpaPolicy",
@@ -3353,7 +3309,6 @@
           "example": "succ",
           "member": "string",
           "name": "Result",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3362,7 +3317,6 @@
           "example": "test",
           "member": "string",
           "name": "VersionName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3371,7 +3325,6 @@
           "example": "test12345",
           "member": "string",
           "name": "RunId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3433,7 +3386,6 @@
       "document": "CreatePostpayPackage请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID，需要系统自动创建环境时，此字段不传",
           "example": "cdnheader-v2a",
           "member": "string",
@@ -3442,7 +3394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "微信 AppId，微信必传",
           "example": "wxxjklfjdkld",
           "member": "string",
@@ -3451,7 +3402,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "付费来源\n<li>miniapp</li>\n<li>qcloud</li>",
           "example": "qcloud",
           "member": "string",
@@ -3460,7 +3410,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。",
           "example": "basic",
           "member": "string",
@@ -3469,7 +3418,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "环境创建来源，取值：\n<li>miniapp</li>\n<li>qcloud</li>\n用法同CreateEnv接口的Source参数\n和 Channel 参数同时传，或者同时不传；EnvId 为空时必传。",
           "example": "qcloud",
           "member": "string",
@@ -3478,7 +3426,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "环境别名，要以a-z开头，不能包含  a-z,0-9,-  以外的字符",
           "example": "env-alias",
           "member": "string",
@@ -3487,7 +3434,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "如果envsource为miniapp, channel可以为ide或api;\n如果envsource为qcloud, channel可以为qc_console,cocos, qq, cloudgame,dcloud,serverless_framework\n和 EnvSource 参数同时传，或者同时不传；EnvId 为空时必传。",
           "example": "qc_console",
           "member": "string",
@@ -3496,7 +3442,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "扩展ID",
           "example": "无",
           "member": "string",
@@ -3505,11 +3450,26 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "订单标记。建议使用方统一转大小写之后再判断。\n<li>QuickStart：快速启动来源</li>\n<li>Activity：活动来源</li>",
           "example": "Activity",
           "member": "string",
           "name": "Flag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "环境别名，无字符类型限制",
+          "example": "my-env",
+          "member": "string",
+          "name": "EnvAlias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "附加字段，用于透传额外的自定义信息",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
           "required": false,
           "type": "string"
         }
@@ -3524,7 +3484,6 @@
           "example": "20200603119423",
           "member": "string",
           "name": "TranId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3533,7 +3492,6 @@
           "example": "cdnheader-v2a",
           "member": "string",
           "name": "EnvId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5325,7 +5283,6 @@
       "document": "DescribeCloudBaseRunServerVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
           "example": "env-98772234",
           "member": "string",
@@ -5334,7 +5291,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务名称",
           "example": "sv",
           "member": "string",
@@ -5343,7 +5299,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本名称",
           "example": "sv-001",
           "member": "string",
@@ -5362,7 +5317,6 @@
           "example": "sv-001",
           "member": "string",
           "name": "VersionName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5371,7 +5325,6 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5380,7 +5333,6 @@
           "example": "Dockefile",
           "member": "string",
           "name": "DockerfilePath",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5389,7 +5341,6 @@
           "example": ".",
           "member": "string",
           "name": "BuildDir",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5398,7 +5349,6 @@
           "example": "1",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5407,7 +5357,6 @@
           "example": "1024",
           "member": "int64",
           "name": "Mem",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5416,7 +5365,6 @@
           "example": "1",
           "member": "int64",
           "name": "MinNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5425,7 +5373,6 @@
           "example": "50",
           "member": "int64",
           "name": "MaxNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5434,7 +5381,6 @@
           "example": "Dockefile",
           "member": "string",
           "name": "PolicyType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5443,7 +5389,6 @@
           "example": "无",
           "member": "float",
           "name": "PolicyThreshold",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5452,7 +5397,6 @@
           "example": "无",
           "member": "string",
           "name": "EnvParams",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5461,7 +5405,6 @@
           "example": "无",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5470,7 +5413,6 @@
           "example": "无",
           "member": "string",
           "name": "UpdatedTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5479,7 +5421,6 @@
           "example": "无",
           "member": "string",
           "name": "VersionIP",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5488,7 +5429,6 @@
           "example": "无",
           "member": "int64",
           "name": "VersionPort",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5497,7 +5437,6 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5506,7 +5445,6 @@
           "example": "无",
           "member": "string",
           "name": "PackageName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5515,7 +5453,6 @@
           "example": "无",
           "member": "string",
           "name": "PackageVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5524,7 +5461,6 @@
           "example": "无",
           "member": "string",
           "name": "UploadType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5533,7 +5469,6 @@
           "example": "无",
           "member": "string",
           "name": "RepoType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5542,7 +5477,6 @@
           "example": "无",
           "member": "string",
           "name": "Repo",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5551,7 +5485,6 @@
           "example": "无",
           "member": "string",
           "name": "Branch",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5560,7 +5493,6 @@
           "example": "无",
           "member": "string",
           "name": "ServerName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5569,7 +5501,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsPublic",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5578,7 +5509,6 @@
           "example": "无",
           "member": "string",
           "name": "VpcId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5587,7 +5517,6 @@
           "example": "无",
           "member": "string",
           "name": "SubnetIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5596,7 +5525,6 @@
           "example": "无",
           "member": "string",
           "name": "CustomLogs",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5605,7 +5533,6 @@
           "example": "无",
           "member": "int64",
           "name": "ContainerPort",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5614,7 +5541,6 @@
           "example": "无",
           "member": "int64",
           "name": "InitialDelaySeconds",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5623,7 +5549,6 @@
           "example": "无",
           "member": "string",
           "name": "ImageUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5632,7 +5557,6 @@
           "example": "无",
           "member": "float",
           "name": "CpuSize",
-          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -5641,7 +5565,6 @@
           "example": "无",
           "member": "float",
           "name": "MemSize",
-          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -5650,7 +5573,6 @@
           "example": "0",
           "member": "int64",
           "name": "HasDockerfile",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5659,7 +5581,6 @@
           "example": "JDK7",
           "member": "string",
           "name": "BaseImage",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5668,7 +5589,6 @@
           "example": "java -jar app.jar",
           "member": "string",
           "name": "EntryPoint",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5677,7 +5597,6 @@
           "example": "Java",
           "member": "string",
           "name": "RepoLanguage",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5686,7 +5605,6 @@
           "example": "无",
           "member": "HpaPolicy",
           "name": "PolicyDetail",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5695,7 +5613,6 @@
           "example": "无",
           "member": "TkeClusterInfo",
           "name": "TkeClusterInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5704,7 +5621,6 @@
           "example": "deployment",
           "member": "string",
           "name": "TkeWorkloadType",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9817,7 +9733,6 @@
       "document": "RollUpdateCloudBaseRunServerVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境ID",
           "example": "无",
           "member": "string",
@@ -9826,7 +9741,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "要替换的版本名称，可以为latest",
           "example": "无",
           "member": "string",
@@ -9835,7 +9749,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "枚举（package/repository/image)",
           "example": "无",
           "member": "string",
@@ -9844,7 +9757,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "repository的类型(coding/gitlab/github)",
           "example": "无",
           "member": "string",
@@ -9853,7 +9765,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "流量占比",
           "example": "无",
           "member": "int64",
@@ -9862,7 +9773,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "dockerfile地址",
           "example": "无",
           "member": "string",
@@ -9871,7 +9781,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "构建目录",
           "example": "无",
           "member": "string",
@@ -9880,7 +9789,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Cpu的大小，单位：核",
           "example": "无",
           "member": "string",
@@ -9889,7 +9797,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Mem的大小，单位：G",
           "example": "无",
           "member": "string",
@@ -9898,7 +9805,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "最小副本数，最小值：0",
           "example": "无",
           "member": "string",
@@ -9907,7 +9813,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "最大副本数",
           "example": "无",
           "member": "string",
@@ -9916,7 +9821,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "策略类型",
           "example": "无",
           "member": "string",
@@ -9925,7 +9829,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "策略阈值",
           "example": "无",
           "member": "string",
@@ -9934,7 +9837,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "环境变量",
           "example": "无",
           "member": "string",
@@ -9943,7 +9845,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器端口",
           "example": "无",
           "member": "int64",
@@ -9952,7 +9853,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "服务名称",
           "example": "无",
           "member": "string",
@@ -9961,7 +9861,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "repository地址",
           "example": "无",
           "member": "string",
@@ -9970,7 +9869,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分支",
           "example": "无",
           "member": "string",
@@ -9979,7 +9877,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本备注",
           "example": "无",
           "member": "string",
@@ -9988,7 +9885,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "代码包名字",
           "example": "无",
           "member": "string",
@@ -9997,7 +9893,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "代码包版本",
           "example": "无",
           "member": "string",
@@ -10006,7 +9901,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Image的详情",
           "example": "无",
           "member": "CloudBaseRunImageInfo",
@@ -10015,7 +9909,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "Github等拉取代码的详情",
           "example": "无",
           "member": "CloudBaseCodeRepoDetail",
@@ -10024,7 +9917,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "是否回放流量",
           "example": "无",
           "member": "bool",
@@ -10033,7 +9925,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "延迟多长时间开始健康检查（单位s）",
           "example": "无",
           "member": "int64",
@@ -10042,7 +9933,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "cfs挂载信息",
           "example": "无",
           "member": "CloudBaseRunVolumeMount",
@@ -10051,7 +9941,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否回滚",
           "example": "无",
           "member": "bool",
@@ -10060,7 +9949,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "版本历史名",
           "example": "无",
           "member": "string",
@@ -10069,7 +9957,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "自定义采集路径",
           "example": "无",
           "member": "string",
@@ -10078,7 +9965,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否启用统一域名",
           "example": "无",
           "member": "bool",
@@ -10087,7 +9973,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "操作备注",
           "example": "无",
           "member": "string",
@@ -10096,7 +9981,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务路径（只会第一次生效）",
           "example": "无",
           "member": "string",
@@ -10105,7 +9989,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否更新Cls",
           "example": "无",
           "member": "bool",
@@ -10114,7 +9997,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "自动扩缩容策略组",
           "example": "无",
           "member": "HpaPolicy",
@@ -10133,7 +10015,6 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10142,7 +10023,6 @@
           "example": "无",
           "member": "string",
           "name": "VersionName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10151,7 +10031,6 @@
           "example": "aa123",
           "member": "string",
           "name": "RunId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

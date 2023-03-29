@@ -1520,7 +1520,7 @@
       "status": "online"
     },
     "ExportScanTaskDetails": {
-      "document": "根据任务id导出指定扫描任务详情 ",
+      "document": "根据任务id导出指定扫描任务详情",
       "input": "ExportScanTaskDetailsRequest",
       "name": "导出扫描任务详情",
       "output": "ExportScanTaskDetailsResponse",
@@ -16482,7 +16482,6 @@
       "document": "DescribeExportMachines请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>",
           "example": "CVM",
           "member": "string",
@@ -16491,7 +16490,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
           "example": "ap-guangzhou",
           "member": "string",
@@ -16500,7 +16498,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "example": "10",
           "member": "uint64",
@@ -16509,7 +16506,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -16518,7 +16514,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询",
           "example": "[]",
           "member": "Filter",
@@ -16527,7 +16522,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "机器所属业务ID列表",
           "example": "[]",
           "member": "uint64",
@@ -16542,11 +16536,10 @@
       "document": "DescribeExportMachines返回参数结构体",
       "members": [
         {
-          "document": "任务id",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20312,7 +20305,6 @@
       "document": "DescribeSearchExportList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "ES查询条件JSON",
           "example": "xxx",
           "member": "string",
@@ -20327,20 +20319,18 @@
       "document": "DescribeSearchExportList返回参数结构体",
       "members": [
         {
-          "document": "导出的任务号",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "下载地址",
+          "document": "该参数作废",
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23137,7 +23127,6 @@
       "document": "ExportAttackLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤条件。\n<li>HttpMethod - String - 是否必填：否 - 攻击方法(POST|GET)</li>\n<li>DateRange - String - 是否必填：否 - 时间范围(存储最近3个月的数据)，如最近一个月[\"2019-11-17\", \"2019-12-17\"]</li>\n<li>VulType - String 威胁类型 - 是否必填: 否</li>\n<li>SrcIp - String 攻击源IP - 是否必填: 否</li>\n<li>DstIp - String 攻击目标IP - 是否必填: 否</li>\n<li>SrcPort - String 攻击源端口 - 是否必填: 否</li>\n<li>DstPort - String 攻击目标端口 - 是否必填: 否</li>",
           "example": "[]",
           "member": "Filters",
@@ -23146,7 +23135,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "主机安全客户端ID",
           "example": "uuid",
           "member": "string",
@@ -23155,7 +23143,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云主机机器ID",
           "example": "quuid",
           "member": "string",
@@ -23174,16 +23161,14 @@
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "导出任务ID 可通过ExportTasks接口下载",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "123456",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23200,7 +23185,6 @@
       "document": "ExportBaselineEffectHostList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "基线id",
           "example": "1",
           "member": "uint64",
@@ -23209,7 +23193,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "筛选条件\n<li>AliasName- String- 主机别名</li>",
           "example": "[]",
           "member": "Filters",
@@ -23218,7 +23201,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "策略id",
           "example": "2",
           "member": "uint64",
@@ -23227,7 +23209,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "主机uuid数组",
           "example": "[]",
           "member": "string",
@@ -23236,7 +23217,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "基线名称",
           "example": "xxx",
           "member": "string",
@@ -23251,20 +23231,18 @@
       "document": "ExportBaselineEffectHostList返回参数结构体",
       "members": [
         {
-          "document": "下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该参数已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "document": "导出任务id 可通过 ExportTasks接口下载",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23425,7 +23403,6 @@
       "document": "ExportBaselineList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤条件：\n<li>StrategyId- Uint64 - 基线策略id</li>\n<li>Status - Uint64 - 事件状态：0-未通过，1-忽略，3-通过，5-检测中</li>\n<li>BaselineName  - String - 基线名称</li>\n<li>AliasName- String - 服务器名称/服务器ip</li>\n<li>Uuid- String - 主机uuid</li>",
           "example": "[]",
           "member": "Filters",
@@ -23434,7 +23411,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "已废弃",
           "example": "1",
           "member": "uint64",
@@ -23453,16 +23429,14 @@
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "document": "导出文件Id 可通过ExportTasks接口下载",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23551,7 +23525,6 @@
       "document": "ExportBashEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤参数",
           "example": "[]",
           "member": "Filters",
@@ -23570,16 +23543,14 @@
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "导出任务ID",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23596,7 +23567,6 @@
       "document": "ExportBruteAttacks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤参数",
           "example": "[]",
           "member": "Filters",
@@ -23611,20 +23581,18 @@
       "document": "ExportBruteAttacks返回参数结构体",
       "members": [
         {
-          "document": "导出文件下载链接地址。",
+          "document": "该参数已废弃",
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "导出任务ID",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23641,7 +23609,6 @@
       "document": "ExportIgnoreBaselineRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "检测项名称",
           "example": "xxx",
           "member": "string",
@@ -23656,20 +23623,18 @@
       "document": "ExportIgnoreBaselineRule返回参数结构体",
       "members": [
         {
-          "document": "文件下载地址",
+          "document": "该参数已废弃",
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "导出任务Id , 可通过ExportTasks 接口下载",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23686,7 +23651,6 @@
       "document": "ExportIgnoreRuleEffectHostList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "检测项id",
           "example": "1",
           "member": "uint64",
@@ -23695,7 +23659,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>AliasName- String- 主机别名</li>",
           "example": "[]",
           "member": "Filters",
@@ -23710,20 +23673,18 @@
       "document": "ExportIgnoreRuleEffectHostList返回参数结构体",
       "members": [
         {
-          "document": "导出文件下载地址",
+          "document": "该参数已废弃",
           "example": "url",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "导出任务Id , 可通过ExportTasks 接口下载",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23740,7 +23701,6 @@
       "document": "ExportLicenseDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集\n<li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>\n<li>ResourceId 资源ID</li>",
           "example": "[]",
           "member": "Filters",
@@ -23749,7 +23709,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否导出全部授权详情",
           "example": "false",
           "member": "bool",
@@ -23758,7 +23717,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象",
           "example": "[]",
           "member": "Tags",
@@ -23767,7 +23725,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "导出月份, 该参数仅在IsHistory 时可选.",
           "example": "2022-03",
           "member": "string",
@@ -23786,16 +23743,14 @@
           "example": "url",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "任务ID,可通过任务ID去查下载任务",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -23812,7 +23767,6 @@
       "document": "ExportMaliciousRequests请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤参数",
           "example": "[]",
           "member": "Filters",
@@ -23827,20 +23781,18 @@
       "document": "ExportMaliciousRequests返回参数结构体",
       "members": [
         {
-          "document": "导出文件下载链接地址。",
+          "document": "该参数已废弃",
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "导出任务Id , 可通过ExportTasks 接口下载",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23857,7 +23809,6 @@
       "document": "ExportMalwares请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "限制条数,默认10",
           "example": "10",
           "member": "uint64",
@@ -23866,7 +23817,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量 默认0",
           "example": "0",
           "member": "uint64",
@@ -23875,7 +23825,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤参数。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>FilePath - String - 是否必填：否 - 路径筛选</li>\n<li>VirusName - String - 是否必填：否 - 描述筛选</li>\n<li>CreateBeginTime - String - 是否必填：否 - 创建时间筛选-开始时间</li>\n<li>CreateEndTime - String - 是否必填：否 - 创建时间筛选-结束时间</li>\n<li>Status - String - 是否必填：否 - 状态筛选</li>",
           "example": "[]",
           "member": "Filters",
@@ -23884,7 +23833,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "排序值 CreateTime",
           "example": "xxx",
           "member": "string",
@@ -23893,7 +23841,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序 方式 ，ASC，DESC",
           "example": "ASC",
           "member": "string",
@@ -23908,20 +23855,18 @@
       "document": "ExportMalwares返回参数结构体",
       "members": [
         {
-          "document": "导出文件下载链接地址。",
+          "document": "该参数已废弃",
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "任务id",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23938,7 +23883,6 @@
       "document": "ExportNonlocalLoginPlaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；2：异地登录</li>",
           "example": "[]",
           "member": "Filter",
@@ -23953,20 +23897,18 @@
       "document": "ExportNonlocalLoginPlaces返回参数结构体",
       "members": [
         {
-          "document": "导出文件下载链接地址。",
+          "document": "该参数已废弃",
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "导出任务ID",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23983,7 +23925,6 @@
       "document": "ExportPrivilegeEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤参数",
           "example": "[]",
           "member": "Filters",
@@ -23998,20 +23939,18 @@
       "document": "ExportPrivilegeEvents返回参数结构体",
       "members": [
         {
-          "document": "导出文件下载链接地址。",
+          "document": "该参数已废弃",
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "导出任务ID",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1596595610",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -24028,7 +23967,6 @@
       "document": "ExportProtectDirList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "DirName 网站名称\nDirPath 网站防护目录地址",
           "example": "[]",
           "member": "AssetFilters",
@@ -24037,7 +23975,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "asc：升序/desc：降序",
           "example": "asc",
           "member": "string",
@@ -24046,7 +23983,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序字段",
           "example": "xxx",
           "member": "string",
@@ -24061,11 +23997,10 @@
       "document": "ExportProtectDirList返回参数结构体",
       "members": [
         {
-          "document": "任务ID",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -24082,7 +24017,6 @@
       "document": "ExportReverseShellEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤参数",
           "example": "[]",
           "member": "Filters",
@@ -24097,20 +24031,18 @@
       "document": "ExportReverseShellEvents返回参数结构体",
       "members": [
         {
-          "document": "导出文件下载链接地址。",
+          "document": "该参数已废弃",
           "example": "xxx",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "任务id",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -24127,7 +24059,6 @@
       "document": "ExportScanTaskDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "本次检测的任务id（不同于出参的导出本次检测Excel的任务Id）",
           "example": "1596595610",
           "member": "uint64",
@@ -24136,7 +24067,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "模块类型，当前提供：Malware 木马 , Vul 漏洞 , Baseline 基线",
           "example": "Malware ",
           "member": "string",
@@ -24145,7 +24075,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "过滤参数：ipOrAlias（服务器名/ip）",
           "example": "[]",
           "member": "Filters",
@@ -24160,11 +24089,10 @@
       "document": "ExportScanTaskDetails返回参数结构体",
       "members": [
         {
-          "document": "导出本次检测Excel的任务Id（不同于入参的本次检测任务id）",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址(不同于入参的本次检测任务id)",
           "example": "1615549629",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -24271,7 +24199,6 @@
       "document": "ExportVulDetectionExcel请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "本次漏洞检测任务id（不同于出参的导出本次漏洞检测Excel的任务Id）",
           "example": "1596595610",
           "member": "uint64",
@@ -24286,20 +24213,18 @@
       "document": "ExportVulDetectionExcel返回参数结构体",
       "members": [
         {
-          "document": "导出文件下载链接地址",
-          "example": "https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/%E6",
+          "document": "该参数已废弃",
+          "example": "无",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "导出本次漏洞检测Excel的任务Id（不同于入参的本次漏洞检测任务id）",
+          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址（不同于入参的本次漏洞检测任务id）",
           "example": "1615549629",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30941,11 +30866,20 @@
         },
         {
           "default": "",
+          "document": "标签ID，该操作会覆盖原有的标签列表",
+          "example": "[]",
+          "member": "uint64",
+          "name": "TagIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "服务器地区 如: ap-guangzhou",
           "example": "xxx",
           "member": "string",
           "name": "MachineRegion",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -30954,17 +30888,8 @@
           "example": "CVM",
           "member": "string",
           "name": "MachineArea",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "标签ID，该操作会覆盖原有的标签列表",
-          "example": "[]",
-          "member": "uint64",
-          "name": "TagIds",
           "required": false,
-          "type": "list"
+          "type": "string"
         }
       ],
       "type": "object"

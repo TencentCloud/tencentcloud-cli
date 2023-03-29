@@ -928,7 +928,7 @@
       {
         "document": "本接口 (DescribeExportMachines) 用于导出区域主机列表。",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeExportMachines\n&MachineType=CVM\n&MachineRegion=ap-shanghai\n&Filters.0.Name=Keywords\n&Filters.0.Values.0=10.0.1.1\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": 1,\n        \"RequestId\": \"c30f35cb-2f3e-94f5-59ae-316e0f32e660\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"123\",\n        \"RequestId\": \"c30f35cb-2f3e-94f5-59ae-316e0f32e660\"\n    }\n}",
         "title": "导出获取区域主机列表"
       }
     ],
@@ -1326,7 +1326,7 @@
     ],
     "DescribeSearchExportList": [
       {
-        "document": "",
+        "document": "导出ES查询文档列表",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeSearchExportList\n&Query={\\\"index\\\":[\\\"netflow\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1597075200000,\\\"lte\\\":1597161599999}}},\\\"must\\\":[],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"highlight\\\":{\\\"fields\\\":{\\\"*\\\":{}}}},\\\"sort\\\":[{\\\"timestamp\\\":\\\"desc\\\"}]}\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"www.xxxx.com\",\n        \"TaskId\": 10000,\n        \"RequestId\": \"e4ee7f6c-a036-43e7-b98f-96f174827fea\"\n    }\n}",
         "title": "导出ES查询文档列表"
@@ -1600,7 +1600,7 @@
       {
         "document": "导出漏洞影响主机列表数据",
         "input": "https://cwp.tencentcloudapi.com/?Action=ExportBaselineEffectHostList\n&BaselineId=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"\",\n        \"RequestId\": \"requestId\",\n        \"TaskId\": \"123456\"\n    }\n}",
         "title": "漏洞影响主机列表导出"
       }
     ],
@@ -1680,7 +1680,7 @@
       {
         "document": "导出已忽略的检测项信息",
         "input": "https://cwp.tencentcloudapi.com/?Action=ExportIgnoreBaselineRule\n&RuleName=\"检测项1\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"\",\n        \"RequestId\": \"requestId\",\n        \"TaskId\": \"12123\"\n    }\n}",
         "title": "忽略基线检测项导出"
       }
     ],
@@ -1688,13 +1688,13 @@
       {
         "document": "根据忽略检测项id导出影响主机列表数据",
         "input": "https://cwp.tencentcloudapi.com/?Action=ExportIgnoreRuleEffectHostList\n&RuleId=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"\",\n        \"TaskId\": \"12312\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "导出忽略检测项影响主机列表"
       }
     ],
     "ExportLicenseDetail": [
       {
-        "document": "",
+        "document": "导出授权使用记录/历史记录",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportLicenseDetail\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d09cfcae-fab2-4cb7-a41e-5fd4c12d69f4\",\n        \"DownloadUrl\": \"\",\n        \"TaskId\": 1\n    }\n}",
         "title": "示例"
@@ -1704,15 +1704,15 @@
       {
         "document": "导出下载恶意请求文件",
         "input": "https://cwp.tencentcloudapi.com/?Action=ExportMaliciousRequests\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"\",\n        \"RequestId\": \"requestId\",\n        \"TaskId\": \"123\"\n    }\n}",
         "title": "导出下载恶意请求文件"
       }
     ],
     "ExportMalwares": [
       {
-        "document": "导出木马记录CSV文件",
+        "document": "导出木马记录",
         "input": "https://cwp.tencentcloudapi.com/?Action=ExportMalwares\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"http://download.url/xxx.csv\",\n        \"TaskId\": \"dasjdkhajk\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"\",\n        \"TaskId\": \"123\"\n    }\n}",
         "title": "导出木马记录"
       }
     ],
@@ -1728,13 +1728,13 @@
       {
         "document": "导出本地提权事件",
         "input": "https://cwp.tencentcloudapi.com/?Action=ExportPrivilegeEvents\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"http://download.url/xxx.csv\",\n        \"TaskId\": \"1596595610\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"\",\n        \"TaskId\": \"1596595610\"\n    }\n}",
         "title": "导出本地提权事件"
       }
     ],
     "ExportProtectDirList": [
       {
-        "document": "",
+        "document": "导出",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportProtectDirList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"TaskId\": \"1234\"\n    }\n}",
         "title": "示例"
@@ -1744,14 +1744,14 @@
       {
         "document": "导出反弹Shell事件",
         "input": "https://cwp.tencentcloudapi.com/?Action=ExportReverseShellEvents\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"http://download.url/xxx.csv\",\n        \"TaskId\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"\",\n        \"TaskId\": \"123456\"\n    }\n}",
         "title": "导出反弹Shell事件"
       }
     ],
     "ExportScanTaskDetails": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportScanTaskDetails\n<公共请求参数>\n\n{\n    \"ModuleType\": \"xx\",\n    \"TaskId\": 1\n}",
+        "document": "导出扫描任务详情",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportScanTaskDetails\n<公共请求参数>\n\n{\n    \"ModuleType\": \"abc\",\n    \"TaskId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"TaskId\": \"1615549629\"\n    }\n}",
         "title": "导出扫描任务详情"
       }
@@ -1774,9 +1774,9 @@
     ],
     "ExportVulDetectionExcel": [
       {
-        "document": "",
+        "document": "导出本次漏洞检测Excel",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportVulDetectionExcel\n<公共请求参数>\n\n{\n    \"TaskId\": \"1596595610\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"https://yunjing-dev-1256299843.cos.ap-guangzhou.myqcloud.com/%E6%BC%8F%E6%B4%9E%E6%A3%80%E6%B5%8B%E6%8A%A5%E5%91%8A_20210312.pdf?q-sign-algorithm=sha1&q-ak=AKIDhKl043NTODrNqE5dghYgnmdIqEPSgDug&q-sign-time=1615549630%3B1615553230&q-key-time=1615549630%3B1615553230&q-header-list=host&q-url-param-list=&q-signature=b6bcb7404ad9338e34fce4766c32ba6c47b7e5ec\",\n        \"TaskId\": 1615549629\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"\",\n        \"TaskId\": \"1615549629\"\n    }\n}",
         "title": "导出本次漏洞检测Excel"
       }
     ],
@@ -2115,7 +2115,7 @@
     "UpdateMachineTags": [
       {
         "document": "",
-        "input": "https://cwp.tencentcloudapi.com/?Action=UpdateMachineTags\n&Quuid=2b6e5770-8e4d-11e9-8127-98be94219792\n&TagIds.0=11\n&TagIds.1=12\n&MachineRegion=ap-guangzhou\n&MachineArea=CVM\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateMachineTags\n<公共请求参数>\n\n{\n    \"Quuid\": \"xxxx\",\n    \"TagIds\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "关联机器标签列表"
       }

@@ -3588,7 +3588,6 @@
       "document": "DescribeBillSummaryByTag请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "example": "2019-09",
           "member": "string",
@@ -3597,7 +3596,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
           "example": "2019-09",
           "member": "string",
@@ -3606,8 +3604,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "分账标签键",
+          "document": "分账标签键，用户自定义",
           "example": "province",
           "member": "string",
           "name": "TagKey",
@@ -3615,7 +3612,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询账单数据的用户UIN",
           "example": "xxx",
           "member": "string",
@@ -3624,7 +3620,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分账标签值",
           "example": "0",
           "member": "string",
@@ -3643,7 +3638,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Ready",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3652,7 +3646,6 @@
           "example": "无",
           "member": "TagSummaryOverviewItem",
           "name": "SummaryOverview",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3661,7 +3654,6 @@
           "example": "无",
           "member": "SummaryTotal",
           "name": "SummaryTotal",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

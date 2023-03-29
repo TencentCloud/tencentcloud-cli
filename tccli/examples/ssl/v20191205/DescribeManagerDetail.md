@@ -13,18 +13,24 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6d0a1dc1-2782-4456-8f30-901f59f46242",
-        "Status": "ok",
+        "Status": "xx",
         "ManagerFirstName": "xx",
-        "ManagerPhone": "xx",
-        "ManagerPosition": "xx",
-        "ManagerLastName": "xx",
         "ManagerMail": "xx",
-        "ContactFirstName": "xx",
         "ContactPhone": "xx",
-        "ContactPosition": "xx",
-        "ContactLastName": "xx",
         "ContactMail": "xx",
+        "CompanyId": 0,
+        "ManagerPosition": "xx",
+        "ContactPosition": "xx",
+        "ManagerLastName": "xx",
+        "VerifyTime": "xx",
+        "ManagerId": 23,
+        "ExpireTime": "xx",
+        "ContactLastName": "xx",
+        "ContactFirstName": "xx",
+        "StatusInfo": [
+            {}
+        ],
+        "RequestId": "xx",
         "ManagerDepartment": "xx",
         "CompanyInfo": {
             "CompanyCity": "xx",
@@ -35,10 +41,7 @@ Output:
             "CompanyProvince": "xx",
             "CompanyPhone": "xx"
         },
-        "VerifyTime": "xx",
-        "ExpireTime": "xx",
-        "CompanyId": 0,
-        "ManagerId": 23,
+        "ManagerPhone": "xx",
         "CreateTime": "xx"
     }
 }

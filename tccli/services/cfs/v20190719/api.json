@@ -2209,7 +2209,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "文件系统状态",
+          "document": "文件系统状态。取值范围：\n- creating:创建中\n- mounting:挂载中\n- create_failed:创建失败\n- available:可使用\n- unserviced:停服中\n- upgrading:升级中",
           "example": "无",
           "member": "string",
           "name": "LifeCycleState",
@@ -2362,7 +2362,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "文件系统声明周期管理状态",
+          "document": "文件系统生命周期管理状态",
           "example": "无",
           "member": "string",
           "name": "TieringState",

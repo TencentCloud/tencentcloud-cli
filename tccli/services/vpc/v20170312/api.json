@@ -1429,7 +1429,7 @@
       "status": "online"
     },
     "DownloadCustomerGatewayConfiguration": {
-      "document": "本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。",
+      "document": "本接口（DownloadCustomerGatewayConfiguration）用于下载VPN通道配置。",
       "input": "DownloadCustomerGatewayConfigurationRequest",
       "name": "下载VPN通道配置",
       "output": "DownloadCustomerGatewayConfigurationResponse",
@@ -15498,32 +15498,32 @@
       "document": "DownloadCustomerGatewayConfiguration请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPN网关实例ID。",
+          "example": "vpngw-p4lmbqwn",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "VPN通道实例ID。形如：vpnx-f49l6u0z。",
+          "example": "vpnx-4p6vkch3",
           "member": "string",
           "name": "VpnConnectionId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。",
+          "example": "{     \"Platform\":\"comware\",     \"SoftwareVersion\":\"V1.0\",     \"VendorName\":\"h3c\" }",
           "member": "CustomerGatewayVendor",
           "name": "CustomerGatewayVendor",
           "required": true,
           "type": "object"
         },
         {
-          "default": "",
           "document": "通道接入设备物理接口名称。",
+          "example": "eth0",
           "member": "string",
           "name": "InterfaceName",
           "required": true,
@@ -15537,6 +15537,7 @@
       "members": [
         {
           "document": "XML格式配置信息。",
+          "example": "# VPC utilizes unique identifiers to manipulate the configuration of\\r\\n# a VPN Connection. Each VPN Connection is assigned an identifier and is\\r\\n# associated with Virtual Private Gateway ...",
           "member": "string",
           "name": "CustomerGatewayConfiguration",
           "type": "string",

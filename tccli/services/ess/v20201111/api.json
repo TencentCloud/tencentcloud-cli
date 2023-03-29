@@ -682,6 +682,30 @@
       ],
       "usage": "in"
     },
+    "CallbackInfo": {
+      "document": "应用回调信息",
+      "members": [
+        {
+          "document": "回调url",
+          "example": "http://123.com",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回调加密token",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Caller": {
       "document": "此结构体 (Caller) 用于描述调用方属性。",
       "members": [
@@ -5006,7 +5030,32 @@
     },
     "ModifyApplicationCallbackInfoRequest": {
       "document": "ModifyApplicationCallbackInfo请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "操作类型：1-新增，2-删除",
+          "example": "无",
+          "member": "int64",
+          "name": "OperateType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "回调信息",
+          "example": "无",
+          "member": "CallbackInfo",
+          "name": "CallbackInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
       "type": "object"
     },
     "ModifyApplicationCallbackInfoResponse": {

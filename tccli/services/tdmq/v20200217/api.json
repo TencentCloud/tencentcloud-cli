@@ -6000,7 +6000,6 @@
       "document": "DescribeCmqQueueDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "精确匹配QueueName",
           "example": "xxx",
           "member": "string",
@@ -6019,7 +6018,6 @@
           "example": "无",
           "member": "CmqQueue",
           "name": "QueueDescribe",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

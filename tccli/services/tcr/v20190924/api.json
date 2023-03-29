@@ -43,11 +43,11 @@
       "status": "online"
     },
     "CreateImageLifecyclePersonal": {
-      "document": "用于在个人版中创建清理策略",
+      "document": "前端与现有逻辑均不再使用，可下线\n\n用于在个人版中创建清理策略",
       "input": "CreateImageLifecyclePersonalRequest",
       "name": "创建个人版镜像版本清理策略",
       "output": "CreateImageLifecyclePersonalResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateImmutableTagRules": {
       "document": "创建镜像不可变规则",
@@ -204,11 +204,11 @@
       "status": "online"
     },
     "DeleteImageLifecyclePersonal": {
-      "document": "用于在个人版镜像仓库中删除仓库Tag自动清理策略",
+      "document": "前端与后端目前现有逻辑均不再使用，可下线\n\n用于在个人版镜像仓库中删除仓库Tag自动清理策略",
       "input": "DeleteImageLifecyclePersonalRequest",
       "name": "删除个人版镜像仓库Tag自动清理策略",
       "output": "DeleteImageLifecyclePersonalResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteImagePersonal": {
       "document": "用于在个人版中删除tag",

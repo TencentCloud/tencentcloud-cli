@@ -1,12 +1,12 @@
 **Example 1: 导出扫描任务详情**
 
-
+导出扫描任务详情
 
 Input: 
 
 ```
 tccli cwp ExportScanTaskDetails --cli-unfold-argument  \
-    --ModuleType xx \
+    --ModuleType abc \
     --TaskId 1
 ```
 

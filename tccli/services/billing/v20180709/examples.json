@@ -66,7 +66,7 @@
     ],
     "DescribeBillSummaryByTag": [
       {
-        "document": "",
+        "document": "获取按标签汇总费用分布",
         "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillSummaryByTag\n<公共请求参数>\n\n{\n    \"TagKey\": \"province\",\n    \"EndTime\": \"2019-09\",\n    \"BeginTime\": \"2019-09\"\n}",
         "output": "{\n    \"Response\": {\n        \"Ready\": 1,\n        \"SummaryOverview\": [\n            {\n                \"TagValue\": \"\",\n                \"RealTotalCost\": \"3081.26707105\",\n                \"TotalCost\": \"5026.37707609\",\n                \"RealTotalCostRatio\": \"99.88\",\n                \"CashPayAmount\": \"3081.26707105\",\n                \"IncentivePayAmount\": \"0.00000000\",\n                \"VoucherPayAmount\": \"0.00000000\",\n                \"TransferPayAmount\": \"0.00000000\"\n            },\n            {\n                \"TagValue\": \"kCH0vYyI\",\n                \"RealTotalCost\": \"3.77264000\",\n                \"TotalCost\": \"4.71580000\",\n                \"RealTotalCostRatio\": \"0.12\",\n                \"CashPayAmount\": \"3.77264000\",\n                \"IncentivePayAmount\": \"0.00000000\",\n                \"VoucherPayAmount\": \"0.00000000\",\n                \"TransferPayAmount\": \"0.00000000\"\n            }\n        ],\n        \"SummaryTotal\": {\n            \"RealTotalCost\": \"3085.03971105\",\n            \"TotalCost\": \"5031.09287609\"\n        },\n        \"RequestId\": \"0cdd9b57-4597-4e78-a60b-0e72f7637a3a\"\n    }\n}",
         "title": "获取按标签汇总费用分布"

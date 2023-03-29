@@ -1,6 +1,6 @@
-**Example 1: 无**
+**Example 1: 查询实例详细信息**
 
-
+查询分布式实例 dcdbt-21dfpcv1 的详细信息
 
 Input: 
 
@@ -119,9 +119,10 @@ Output:
         "WanVip": "",
         "WanVipv6": "",
         "IsMaxUserConnectionsSupported": true,
-        "DbVersionId": "xx",
+        "DbVersionId": "5.7",
         "EncryptStatus": 0,
-        "ExclusterType": 0
+        "ExclusterType": 0,
+        "RsAccessStrategy": 0
     }
 }
 ```

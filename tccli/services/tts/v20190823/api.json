@@ -255,7 +255,6 @@
       "document": "时间戳信息。",
       "members": [
         {
-          "default": "",
           "document": "⽂本信息。",
           "example": "你",
           "member": "string",
@@ -265,7 +264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "⽂本对应tts语⾳开始时间戳，单位ms。",
           "example": "250",
           "member": "int64",
@@ -275,7 +273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "⽂本对应tts语⾳结束时间戳，单位ms。",
           "example": "580,",
           "member": "int64",
@@ -285,7 +282,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "该字在整句中的开始位置，从0开始。",
           "example": "0",
           "member": "int64",
@@ -295,7 +291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "该字在整句中的结束位置，从0开始。",
           "example": "1",
           "member": "int64",
@@ -303,6 +298,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "该字的音素\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phoneme",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -554,9 +554,9 @@
     ],
     "ModifyConnectResource": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"DtsConnectParam\": {\n        \"UserName\": \"xx\",\n        \"Resource\": \"xx\",\n        \"GroupId\": \"xx\",\n        \"Password\": \"xx\",\n        \"Topic\": \"xx\",\n        \"Port\": 0\n    },\n    \"ResourceName\": \"xx\",\n    \"ResourceId\": \"reource-xxx\",\n    \"Type\": \"DTS\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "编辑Datahub连接源",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xxx\",\n    \"DtsConnectParam\": {\n        \"UserName\": \"xxx\",\n        \"Resource\": \"xxx\",\n        \"GroupId\": \"xxx\",\n        \"Password\": \"xxx\",\n        \"Topic\": \"xxx\",\n        \"Port\": 0\n    },\n    \"ResourceName\": \"xxx\",\n    \"ResourceId\": \"reource-xxx\",\n    \"Type\": \"DTS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "编辑Datahub连接源"
       }
     ],
@@ -566,6 +566,14 @@
         "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyDatahubTask\n&TaskId=xx\n&TaskName=xx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改Datahub任务"
+      }
+    ],
+    "ModifyDatahubTopic": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyDatahubTopic\n&Name=xxx\n&Note=xxx\n&RetentionMs=3600000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnMessage\": \"xx\",\n            \"ReturnCode\": \"xx\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "设置主题属性"
       }
     ],
     "ModifyGroupOffsets": [
