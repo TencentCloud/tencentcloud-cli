@@ -75,7 +75,7 @@
     "CreateAIFormTask": [
       {
         "document": "创建文件识别任务示例",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIFormTask\nVersion:2018-11-19\nRegion:ap-beijing\n<公共请求参数>\n\n{\n    \"FileList\": [\n        {},\n        {}\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIFormTask\nVersion:2018-11-19\nRegion:ap-beijing\n<公共请求参数>\n\n{\n    \"FileList\": [\n        {\n            \"FileUrl\": \"https://xxx.jpg\",\n            \"FileOrderNumber\": 1\n        },\n        {\n            \"FileUrl\": \"https://xxx.jpg\",\n            \"FileOrderNumber\": 2\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e522a812-cb79-1ed4-77ab-908572ghu6qq\",\n        \"TaskId\": \"209fef6e-117c-11ed-9368-525400e51a47\",\n        \"OperateUrl\": \"https://ocr.smartform.cloud.tencent.com?taskId=209fef6e-117c-11ed-9368-525400e51a47\"\n    }\n}",
         "title": "创建文件识别任务示例"
       }

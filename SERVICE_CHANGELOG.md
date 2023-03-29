@@ -1,98 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 内容分发网络 CDN(cdn) 版本：2018-06-06
-
-### 第 42 次发布
-
-发布时间：2023-03-29 03:54:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeScdnConfig](http://document.tencentcloudapi.woa.com/document/product/228/51326)
-
-	* 新增出参：SourceLimit
-
-* [UpdateScdnDomain](http://document.tencentcloudapi.woa.com/document/product/228/50712)
-
-	* 新增入参：SourceLimit
-
-
-新增数据结构：
-
-* [ScdnSourceLimitConfig](http://document.tencentcloudapi.woa.com/document/product/228/30987#ScdnSourceLimitConfig)
-
-
-
-## 消息队列 CKafka(ckafka) 版本：2019-08-19
-
-### 第 57 次发布
-
-发布时间：2023-03-29 03:57:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyDatahubTopic](http://document.tencentcloudapi.woa.com/document/product/597/77389)
-
-修改接口：
-
-* [ModifyConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75544)
-
-	* 新增入参：KafkaConnectParam
-
-
-
-
 ## 主机安全(cwp) 版本：2018-02-28
 
-### 第 50 次发布
+### 第 51 次发布
 
-发布时间：2023-03-29 04:01:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [UpdateMachineTags](http://document.tencentcloudapi.woa.com/document/product/296/60890)
-
-	* <font color="#dd0000">**修改入参**：</font>MachineRegion, MachineArea
-
-
-
-
-## TDSQL MySQL 版(dcdb) 版本：2018-04-11
-
-### 第 30 次发布
-
-发布时间：2023-03-29 04:06:49
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDCDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/557/77346)
-
-	* 新增出参：RsAccessStrategy
-
-
-
-
-## Elasticsearch Service(es) 版本：2018-04-16
-
-### 第 26 次发布
-
-发布时间：2023-03-29 04:11:32
+发布时间：2023-03-30 01:10:44
 
 本次发布包含了以下内容：
 
@@ -100,175 +12,19 @@
 
 新增接口：
 
-* [CreateServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77396)
-* [CreateServerlessInstance](http://document.tencentcloudapi.woa.com/document/product/845/77395)
-* [CreateServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/77394)
-* [DescribeServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77393)
-* [DescribeServerlessInstances](http://document.tencentcloudapi.woa.com/document/product/845/77392)
-* [DescribeServerlessSpaces](http://document.tencentcloudapi.woa.com/document/product/845/77391)
+* [DescribeRiskDnsEventList](http://document.tencentcloudapi.woa.com/document/product/296/77399)
 
 新增数据结构：
 
-* [DiData](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiData)
-* [DiDataSinkServerless](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSinkServerless)
-* [DiDataSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvm)
-* [DiDataSourceCvmInstance](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvmInstance)
-* [DiDataSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceTke)
-* [DiSinkServerless](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSinkServerless)
-* [DiSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceCvm)
-* [DiSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceTke)
-* [DiSourceTkePodLabel](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceTkePodLabel)
-* [ServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessDi)
-* [ServerlessIndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexMetaField)
-* [ServerlessIndexNetworkField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexNetworkField)
-* [ServerlessIndexOptionsField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexOptionsField)
-* [ServerlessIndexSettingsField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexSettingsField)
-* [ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace)
+* [RiskDnsEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#RiskDnsEvent)
 
 
 
-## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+## 文字识别(ocr) 版本：2018-11-19
 
-### 第 30 次发布
+### 第 46 次发布
 
-发布时间：2023-03-29 04:20:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/237/77350)
-
-	* 新增出参：RsAccessStrategy
-
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 52 次发布
-
-发布时间：2023-03-29 04:21:44
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* PutMonitorData
-
-
-
-## 地域管理系统(region) 版本：2022-06-27
-
-### 第 3 次发布
-
-发布时间：2023-03-29 04:27:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeRegions](http://document.tencentcloudapi.woa.com/document/product/1605/76893)
-
-	* 新增入参：Scene
-
-* [DescribeRegionsAndZones](http://document.tencentcloudapi.woa.com/document/product/1605/76896)
-
-	* 新增入参：Scene
-
-* [DescribeZones](http://document.tencentcloudapi.woa.com/document/product/1605/76892)
-
-	* 新增入参：Scene
-
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 27 次发布
-
-发布时间：2023-03-29 04:28:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [PushSysLogs](http://document.tencentcloudapi.woa.com/document/product/583/77397)
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 22 次发布
-
-发布时间：2023-03-29 04:30:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeManagerDetail](http://document.tencentcloudapi.woa.com/document/product/400/52673)
-
-	* 新增出参：StatusInfo
-
-
-
-
-## 云开发 CloudBase(tcb) 版本：2018-06-08
-
-### 第 33 次发布
-
-发布时间：2023-03-29 04:32:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreatePostpayPackage](http://document.tencentcloudapi.woa.com/document/product/876/45287)
-
-	* 新增入参：EnvAlias, Extra
-
-
-
-
-## 互动白板(tiw) 版本：2019-09-19
-
-### 第 11 次发布
-
-发布时间：2023-03-29 04:37:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeRecordSearch](http://document.tencentcloudapi.woa.com/document/product/1137/77398)
-
-新增数据结构：
-
-* [RecordTaskResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RecordTaskResult)
-* [RecordTaskSearchResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RecordTaskSearchResult)
-
-
-
-## 语音合成(tts) 版本：2019-08-23
-
-### 第 5 次发布
-
-发布时间：2023-03-29 04:40:09
+发布时间：2023-03-30 01:30:31
 
 本次发布包含了以下内容：
 
@@ -276,28 +32,45 @@
 
 修改数据结构：
 
-* [Subtitle](http://document.tencentcloudapi.woa.com/document/product/1073/57374#Subtitle)
+* [SmartFormFileUrl](http://document.tencentcloudapi.woa.com/document/product/866/33527#SmartFormFileUrl)
 
-	* 新增成员：Phoneme
-
-
+	* 新增成员：FileUrl, FileOrderNumber
 
 
-## 云点播(vod) 版本：2018-07-17
 
-### 第 53 次发布
 
-发布时间：2023-03-29 04:40:40
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 21 次发布
+
+发布时间：2023-03-30 01:36:41
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [SearchMedia](http://document.tencentcloudapi.woa.com/document/product/266/31813)
+* CreateImageLifecyclePersonal
+* DeleteImageLifecyclePersonal
 
-	* 新增入参：Status, ReviewResults
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 23 次发布
+
+发布时间：2023-03-30 01:44:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudNativeAPIGatewayNode](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayNode)
+
+	* 新增成员：ZoneId, Zone, GroupId, GroupName, Status
 
 
 
@@ -8130,7 +7903,7 @@
 
 新增数据结构：
 
-* [[ScdnSourceLimitConfig](http://document.tencentcloudapi.woa.com/document/product/228/30987#ScdnSourceLimitConfig)](http://document.tencentcloudapi.woa.com/document/product/228/30987#[ScdnSourceLimitConfig](http://document.tencentcloudapi.woa.com/document/product/228/30987#ScdnSourceLimitConfig))
+* [ScdnSourceLimitConfig](http://document.tencentcloudapi.woa.com/document/product/228/30987#ScdnSourceLimitConfig)
 
 ### 第 41 次发布
 
@@ -10392,7 +10165,7 @@
 
 新增接口：
 
-* [[ModifyDatahubTopic](http://document.tencentcloudapi.woa.com/document/product/597/77389)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyDatahubTopic](http://document.tencentcloudapi.woa.com/document/product/597/77389)
 
 修改接口：
 
@@ -16462,6 +16235,22 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 51 次发布
+
+发布时间：2023-03-30 01:10:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeRiskDnsEventList](http://document.tencentcloudapi.woa.com/document/product/296/77399)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[RiskDnsEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#RiskDnsEvent)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[RiskDnsEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#RiskDnsEvent))
 
 ### 第 50 次发布
 
@@ -24002,30 +23791,30 @@
 
 新增接口：
 
-* [[CreateServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77396)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateServerlessInstance](http://document.tencentcloudapi.woa.com/document/product/845/77395)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/77394)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77393)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeServerlessInstances](http://document.tencentcloudapi.woa.com/document/product/845/77392)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeServerlessSpaces](http://document.tencentcloudapi.woa.com/document/product/845/77391)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77396)
+* [CreateServerlessInstance](http://document.tencentcloudapi.woa.com/document/product/845/77395)
+* [CreateServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/77394)
+* [DescribeServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77393)
+* [DescribeServerlessInstances](http://document.tencentcloudapi.woa.com/document/product/845/77392)
+* [DescribeServerlessSpaces](http://document.tencentcloudapi.woa.com/document/product/845/77391)
 
 新增数据结构：
 
-* [[DiData](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiData)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[DiData](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiData))
-* [[DiDataSinkServerless](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSinkServerless)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[DiDataSinkServerless](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSinkServerless))
-* [[DiDataSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvm)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[DiDataSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvm))
-* [[DiDataSourceCvmInstance](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvmInstance)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[DiDataSourceCvmInstance](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvmInstance))
-* [[DiDataSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceTke)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[DiDataSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceTke))
-* [[DiSinkServerless](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSinkServerless)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[DiSinkServerless](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSinkServerless))
-* [[DiSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceCvm)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[DiSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceCvm))
-* [[DiSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceTke)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[DiSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceTke))
-* [[DiSourceTkePodLabel](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceTkePodLabel)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[DiSourceTkePodLabel](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceTkePodLabel))
-* [[ServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessDi)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[ServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessDi))
-* [[ServerlessIndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexMetaField)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[ServerlessIndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexMetaField))
-* [[ServerlessIndexNetworkField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexNetworkField)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[ServerlessIndexNetworkField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexNetworkField))
-* [[ServerlessIndexOptionsField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexOptionsField)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[ServerlessIndexOptionsField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexOptionsField))
-* [[ServerlessIndexSettingsField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexSettingsField)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[ServerlessIndexSettingsField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexSettingsField))
-* [[ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace))
+* [DiData](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiData)
+* [DiDataSinkServerless](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSinkServerless)
+* [DiDataSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvm)
+* [DiDataSourceCvmInstance](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvmInstance)
+* [DiDataSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceTke)
+* [DiSinkServerless](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSinkServerless)
+* [DiSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceCvm)
+* [DiSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceTke)
+* [DiSourceTkePodLabel](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceTkePodLabel)
+* [ServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessDi)
+* [ServerlessIndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexMetaField)
+* [ServerlessIndexNetworkField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexNetworkField)
+* [ServerlessIndexOptionsField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexOptionsField)
+* [ServerlessIndexSettingsField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexSettingsField)
+* [ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace)
 
 ### 第 25 次发布
 
@@ -36180,6 +35969,21 @@
 
 ## 文字识别(ocr) 版本：2018-11-19
 
+### 第 46 次发布
+
+发布时间：2023-03-30 01:30:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SmartFormFileUrl](http://document.tencentcloudapi.woa.com/document/product/866/33527#SmartFormFileUrl)
+
+	* 新增成员：FileUrl, FileOrderNumber
+
+
 ### 第 45 次发布
 
 发布时间：2023-03-23 01:44:46
@@ -40155,7 +39959,7 @@
 
 新增接口：
 
-* [[PushSysLogs](http://document.tencentcloudapi.woa.com/document/product/583/77397)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [PushSysLogs](http://document.tencentcloudapi.woa.com/document/product/583/77397)
 
 ### 第 26 次发布
 
@@ -44773,6 +44577,19 @@
 
 ## 容器镜像服务(tcr) 版本：2019-09-24
 
+### 第 21 次发布
+
+发布时间：2023-03-30 01:36:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateImageLifecyclePersonal
+* DeleteImageLifecyclePersonal
+
 ### 第 20 次发布
 
 发布时间：2023-03-17 11:55:02
@@ -48281,12 +48098,12 @@
 
 新增接口：
 
-* [[DescribeRecordSearch](http://document.tencentcloudapi.woa.com/document/product/1137/77398)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeRecordSearch](http://document.tencentcloudapi.woa.com/document/product/1137/77398)
 
 新增数据结构：
 
-* [[RecordTaskResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RecordTaskResult)](http://document.tencentcloudapi.woa.com/document/product/1137/40068#[RecordTaskResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RecordTaskResult))
-* [[RecordTaskSearchResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RecordTaskSearchResult)](http://document.tencentcloudapi.woa.com/document/product/1137/40068#[RecordTaskSearchResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RecordTaskSearchResult))
+* [RecordTaskResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RecordTaskResult)
+* [RecordTaskSearchResult](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RecordTaskSearchResult)
 
 ### 第 10 次发布
 
@@ -50837,6 +50654,21 @@
 
 
 ## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 23 次发布
+
+发布时间：2023-03-30 01:44:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudNativeAPIGatewayNode](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayNode)
+
+	* 新增成员：ZoneId, Zone, GroupId, GroupName, Status
+
 
 ### 第 22 次发布
 

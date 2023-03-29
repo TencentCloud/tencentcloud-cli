@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli ocr CreateAIFormTask --cli-unfold-argument ```
+tccli ocr CreateAIFormTask --cli-unfold-argument  \
+    --FileList.0.FileUrl https://xxx.jpg \
+    --FileList.0.FileOrderNumber 1 \
+    --FileList.1.FileUrl https://xxx.jpg \
+    --FileList.1.FileOrderNumber 2
+```
 
 Output: 
 ```

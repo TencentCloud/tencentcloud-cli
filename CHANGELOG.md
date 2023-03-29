@@ -1,3 +1,80 @@
+# Release 3.0.734.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 51 次发布
+
+发布时间：2023-03-30 01:10:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRiskDnsEventList](http://document.tencentcloudapi.woa.com/document/product/296/77399)
+
+新增数据结构：
+
+* [RiskDnsEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#RiskDnsEvent)
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 46 次发布
+
+发布时间：2023-03-30 01:30:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SmartFormFileUrl](http://document.tencentcloudapi.woa.com/document/product/866/33527#SmartFormFileUrl)
+
+	* 新增成员：FileUrl, FileOrderNumber
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 21 次发布
+
+发布时间：2023-03-30 01:36:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateImageLifecyclePersonal
+* DeleteImageLifecyclePersonal
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 23 次发布
+
+发布时间：2023-03-30 01:44:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudNativeAPIGatewayNode](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayNode)
+
+	* 新增成员：ZoneId, Zone, GroupId, GroupName, Status
+
+
+
+
 # Release 3.0.733.1
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06
