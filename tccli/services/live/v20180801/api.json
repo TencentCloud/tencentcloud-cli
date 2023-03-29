@@ -6932,31 +6932,31 @@
       "document": "DescribeLiveStreamState请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
           "example": "live",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "您的推流域名。",
           "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "流名称。",
           "example": "stream1",
           "member": "string",
           "name": "StreamName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6969,9 +6969,9 @@
           "example": "active",
           "member": "string",
           "name": "StreamState",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

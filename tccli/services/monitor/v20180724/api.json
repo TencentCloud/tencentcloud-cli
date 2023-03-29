@@ -848,11 +848,11 @@
       "status": "online"
     },
     "PutMonitorData": {
-      "document": "默认接口请求频率限制：50次/秒。\n默认单租户指标上限：100个。\n单次上报最多 30 个指标/值对，请求返回错误时，请求中所有的指标/值均不会被保存。\n\n上报的时间戳为期望保存的时间戳，建议构造整数分钟时刻的时间戳。\n时间戳时间范围必须为当前时间到 300 秒前之间。\n同一 IP 指标对的数据需按分钟先后顺序上报。",
+      "document": "对应的功能控制台及后端服务已于2年前下线，剩余该API接口未下线。\n\n默认接口请求频率限制：50次/秒。\n默认单租户指标上限：100个。\n单次上报最多 30 个指标/值对，请求返回错误时，请求中所有的指标/值均不会被保存。\n\n上报的时间戳为期望保存的时间戳，建议构造整数分钟时刻的时间戳。\n时间戳时间范围必须为当前时间到 300 秒前之间。\n同一 IP 指标对的数据需按分钟先后顺序上报。",
       "input": "PutMonitorDataRequest",
       "name": "自定义监控上报数据",
       "output": "PutMonitorDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RegisterTable": {
       "document": "预注册表结构",
@@ -16345,7 +16345,6 @@
       "document": "Prometheus 服务响应体",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "prom-123456",
           "member": "string",
@@ -16356,7 +16355,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例名称。",
           "example": "test",
           "member": "string",
@@ -16367,7 +16365,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例计费模式。取值范围：\n<ul>\n<li>2：包年包月</li>\n<li>3：按量</li>\n</ul>",
           "example": "2",
           "member": "int64",
@@ -16378,7 +16375,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "地域 ID",
           "example": "1",
           "member": "int64",
@@ -16389,7 +16385,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "可用区",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -16400,7 +16395,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC ID",
           "example": "vpc-123456",
           "member": "string",
@@ -16411,7 +16405,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网 ID",
           "example": "subnet-123456",
           "member": "string",
@@ -16422,7 +16415,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "存储周期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15",
           "member": "int64",
@@ -16433,7 +16425,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例业务状态。取值范围：\n<ul>\n<li>1：正在创建</li>\n<li>2：运行中</li>\n<li>3：异常</li>\n<li>4：重建中</li>\n<li>5：销毁中</li>\n<li>6：已停服</li>\n<li>8：欠费停服中</li>\n<li>9：欠费已停服</li>\n</ul>",
           "example": "2",
           "member": "int64",
@@ -16444,7 +16435,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Grafana 面板 URL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://url",
           "member": "string",
@@ -16455,7 +16445,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2021-01-01 00:00:00",
           "member": "string",
@@ -16466,7 +16455,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启 Grafana\n<li>0：不开启</li>\n<li>1：开启</li>",
           "example": "1",
           "member": "int64",
@@ -16477,7 +16465,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例IPV4地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.1.2",
           "member": "string",
@@ -16488,7 +16475,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "PrometheusTag",
@@ -16499,7 +16485,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "购买的实例过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-01 00:00:00",
           "member": "string",
@@ -16510,7 +16495,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "计费状态\n<ul>\n<li>1：正常</li>\n<li>2：过期</li>\n<li>3：销毁</li>\n<li>4：分配中</li>\n<li>5：分配失败</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -16521,7 +16505,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "基础1",
           "member": "string",
@@ -16532,7 +16515,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自动续费标记\n<ul>\n<li>0：不自动续费</li>\n<li>1：开启自动续费</li>\n<li>2：禁止自动续费</li>\n<li>-1：无效</ii>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -16543,7 +16525,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否快过期\n<ul>\n<li>0：否</li>\n<li>1：快过期</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -16554,7 +16535,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据写入需要的 Token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "token",
           "member": "string",
@@ -16565,7 +16545,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Prometheus Remote Write 的地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://url",
           "member": "string",
@@ -16576,7 +16555,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Prometheus HTTP Api 根地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://url",
           "member": "string",
@@ -16587,7 +16565,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Proxy 的地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://url",
           "member": "string",
@@ -16598,7 +16575,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Grafana 运行状态\n<ul>\n<li>1：正在创建</li>\n<li>2：运行中</li>\n<li>3：异常</li>\n<li>4：重启中</li>\n<li>5：销毁中</li>\n<li>6：已停机</li>\n<li>7：已删除</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -16609,7 +16585,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Grafana IP 白名单列表，使用英文分号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.1.2",
           "member": "string",
@@ -16620,7 +16595,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例的授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "PrometheusInstanceGrantInfo",
@@ -16631,7 +16605,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "绑定的 Grafana 实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "grafana-xxxx",
           "member": "string",
@@ -16642,7 +16615,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "告警规则限制\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "150",
           "member": "int64",
@@ -16653,7 +16625,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "预聚合规则限制\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "150",
           "member": "int64",
@@ -16664,7 +16635,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",

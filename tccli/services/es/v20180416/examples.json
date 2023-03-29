@@ -24,6 +24,30 @@
         "title": "创建Logstash实例"
       }
     ],
+    "CreateServerlessDi": [
+      {
+        "document": "创建cvm数据接入",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessDi\n<公共请求参数>\n\n{\n    \"DiSourceType\": \"xx\",\n    \"DiSourceCvm\": {\n        \"VpcId\": \"xx\",\n        \"CvmIds\": [\n            \"xx\"\n        ],\n        \"LogPaths\": [\n            \"xx\"\n        ]\n    },\n    \"DiSourceTke\": {\n        \"VpcId\": \"xx\",\n        \"TkeId\": \"xx\"\n    },\n    \"DiSinkServerless\": {\n        \"ServerlessId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DiId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建cvm数据接入"
+      }
+    ],
+    "CreateServerlessInstance": [
+      {
+        "document": "创建Serverless实例",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessInstance\n<公共请求参数>\n\n{\n    \"SubnetId\": \"xx\",\n    \"IndexMetaJson\": \"xx\",\n    \"VpcId\": \"xx\",\n    \"IndexName\": \"xx\",\n    \"Zone\": \"xx\",\n    \"SpaceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"DealName\": \"xx\"\n    }\n}",
+        "title": "创建Serverless实例"
+      }
+    ],
+    "CreateServerlessSpace": [
+      {
+        "document": "创建Serverless索引空间",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessSpace\n<公共请求参数>\n\n{\n    \"SpaceName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"SpaceId\": \"xx\"\n    }\n}",
+        "title": "创建Serverless索引空间"
+      }
+    ],
     "DeleteIndex": [
       {
         "document": "",
@@ -134,6 +158,30 @@
         "input": "https://es.tencentcloudapi.com/?Action=DescribeLogstashPipelines\n&InstanceId=ls-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"LogstashPipelineList\": [\n            {\n                \"PipelineId\": \"g4cqkhhr_1\",\n                \"PipelineDesc\": \"1111\",\n                \"Config\": \"xx\",\n                \"Status\": -2,\n                \"Workers\": 11,\n                \"BatchSize\": 1111,\n                \"BatchDelay\": 111,\n                \"QueueType\": \"memory\",\n                \"QueueMaxBytes\": \"1111MB\",\n                \"QueueCheckPointWrites\": 1111\n            },\n            {\n                \"PipelineId\": \"g4cqkhhr_2\",\n                \"PipelineDesc\": \"1111\",\n                \"Config\": \"xxx\",\n                \"Status\": 2,\n                \"Workers\": 11,\n                \"BatchSize\": 1111,\n                \"BatchDelay\": 111,\n                \"QueueType\": \"memory\",\n                \"QueueMaxBytes\": \"1111MB\",\n                \"QueueCheckPointWrites\": 1111\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
         "title": "获取Logstash实例管道列表"
+      }
+    ],
+    "DescribeServerlessDi": [
+      {
+        "document": "查询serverless数据接入",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessDi\n<公共请求参数>\n\n{\n    \"ServerlessId\": \"xx\",\n    \"DiIds\": [\n        \"xx\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"OrderBy\": \"xx\",\n    \"Order\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DiDataList\": [\n            {\n                \"DiId\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"Status\": 0,\n                \"DiDataSourceCvm\": {\n                    \"VpcId\": \"xx\",\n                    \"LogPaths\": [\n                        \"xx\"\n                    ],\n                    \"CvmInstances\": [\n                        {\n                            \"InstanceId\": \"xx\",\n                            \"VpcId\": \"xx\",\n                            \"SubnetId\": \"xx\",\n                            \"ErrMsg\": \"xx\"\n                        }\n                    ]\n                },\n                \"DiDataSourceTke\": {\n                    \"VpcId\": \"xx\"\n                },\n                \"DiDataSinkServerless\": {\n                    \"ServerlessId\": \"xx\"\n                }\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询serverless数据接入"
+      }
+    ],
+    "DescribeServerlessInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessInstances\n<公共请求参数>\n\n{\n    \"IndexNames\": [\n        \"test\"\n    ],\n    \"InstanceIds\": [\n        \"index-abcdefgh\"\n    ],\n    \"Limit\": 0,\n    \"Offset\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"IndexMetaFields\": [\n            {\n                \"IndexOptionsField\": {\n                    \"ExpireMaxAge\": \"xx\",\n                    \"TimestampField\": \"xx\"\n                },\n                \"IndexName\": \"xx\",\n                \"IndexSettingsField\": {\n                    \"NumberOfShards\": \"xx\",\n                    \"RefreshInterval\": \"xx\"\n                },\n                \"IndexNetworkField\": null,\n                \"IndexCreateTime\": \"xx\",\n                \"IndexStorage\": 0\n            }\n        ]\n    }\n}",
+        "title": "Serverless获取索引列表"
+      }
+    ],
+    "DescribeServerlessSpaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessSpaces\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ServerlessSpaces\": [\n            {\n                \"Status\": 0,\n                \"SpaceName\": \"xx\",\n                \"SpaceId\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取Serverless索引空间列表"
       }
     ],
     "DescribeViews": [

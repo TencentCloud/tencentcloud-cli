@@ -1,71 +1,71 @@
 **Example 1: 示例**
 
-
+查询版本信息
 
 Input: 
 
 ```
 tccli tcb DescribeCloudBaseRunServerVersion --cli-unfold-argument  \
-    --ServerName dockerservicename \
-    --EnvId lotestapi100004 \
-    --VersionName adb
+    --EnvId abc \
+    --ServerName abc \
+    --VersionName abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TkeClusterInfo": {
-            "VpcId": "xx",
-            "ClusterId": "xx",
-            "VersionClbSubnetId": "xx"
-        },
-        "UpdatedTime": "xx",
-        "MaxNum": 50,
-        "EnvParams": "xx",
-        "PackageName": "xx",
-        "BaseImage": "xx",
-        "TkeWorkloadType": "xx",
-        "RepoLanguage": "xx",
-        "Branch": "xx",
-        "CreatedTime": "xx",
-        "Status": "xx",
-        "VpcId": "xx",
-        "BuildDir": "xx",
-        "VersionPort": 80,
-        "Mem": 1,
-        "UploadType": "xx",
-        "InitialDelaySeconds": 2,
-        "CustomLogs": "xx",
-        "Repo": "xx",
+        "VersionName": "abc",
+        "Remark": "abc",
+        "DockerfilePath": "abc",
+        "BuildDir": "abc",
+        "Cpu": 0,
+        "Mem": 0,
         "MinNum": 0,
-        "DockerfilePath": "xx",
-        "EntryPoint": "xx",
-        "ContainerPort": 80,
-        "Remark": "xx",
-        "VersionIP": "xx",
-        "ServerName": "xx",
-        "RepoType": "xx",
-        "RequestId": "xx",
-        "MemSize": 0.0,
-        "PackageVersion": "xx",
-        "Cpu": 1,
-        "HasDockerfile": 0,
-        "CpuSize": 0.0,
-        "PolicyThreshold": 0.0,
-        "SubnetIds": [
-            "subnet-6yny6j0d"
-        ],
+        "MaxNum": 0,
+        "PolicyType": "abc",
+        "PolicyThreshold": 0,
+        "EnvParams": "abc",
+        "CreatedTime": "abc",
+        "UpdatedTime": "abc",
+        "VersionIP": "abc",
+        "VersionPort": 0,
+        "Status": "abc",
+        "PackageName": "abc",
+        "PackageVersion": "abc",
+        "UploadType": "abc",
+        "RepoType": "abc",
+        "Repo": "abc",
+        "Branch": "abc",
+        "ServerName": "abc",
         "IsPublic": true,
-        "PolicyType": "xx",
+        "VpcId": "abc",
+        "SubnetIds": [
+            "abc"
+        ],
+        "CustomLogs": "abc",
+        "ContainerPort": 0,
+        "InitialDelaySeconds": 0,
+        "ImageUrl": "abc",
+        "CpuSize": 0,
+        "MemSize": 0,
+        "HasDockerfile": 0,
+        "BaseImage": "abc",
+        "EntryPoint": "abc",
+        "RepoLanguage": "abc",
         "PolicyDetail": [
             {
-                "PolicyThreshold": 0,
-                "PolicyType": "xx"
+                "PolicyType": "abc",
+                "PolicyThreshold": 0
             }
         ],
-        "VersionName": "xx",
-        "ImageUrl": "xx"
+        "TkeClusterInfo": {
+            "ClusterId": "abc",
+            "VpcId": "abc",
+            "VersionClbSubnetId": "abc"
+        },
+        "TkeWorkloadType": "abc",
+        "RequestId": "abc"
     }
 }
 ```

@@ -310,6 +310,14 @@
         "title": "发布新版本"
       }
     ],
+    "PushSysLogs": [
+      {
+        "document": "推送系统日志",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PushSysLogs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "推送系统日志"
+      }
+    ],
     "PutProvisionedConcurrencyConfig": [
       {
         "document": "",

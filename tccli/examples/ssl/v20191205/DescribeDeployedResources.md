@@ -1,6 +1,6 @@
 **Example 1: 证书查询关联资源**
 
-
+证书查询关联资源
 
 Input: 
 
@@ -17,7 +17,8 @@ Output:
         "DeployedResources": [
             {
                 "CertificateId": "xx",
-                "ResourceIds": [],
+                "ResourceIds": null,
+                "Resources": [],
                 "Type": "xx",
                 "Count": 0
             }

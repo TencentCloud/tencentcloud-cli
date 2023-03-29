@@ -1,6 +1,6 @@
 **Example 1: SCDN域名配置变更**
 
-
+SCDN域名配置变更
 
 Input: 
 

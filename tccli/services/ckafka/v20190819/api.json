@@ -511,6 +511,13 @@
       "output": "ModifyDatahubTaskResponse",
       "status": "online"
     },
+    "ModifyDatahubTopic": {
+      "document": "修改Datahub主题属性",
+      "input": "ModifyDatahubTopicRequest",
+      "name": "修改Datahub主题属性",
+      "output": "ModifyDatahubTopicResponse",
+      "status": "online"
+    },
     "ModifyGroupOffsets": {
       "document": "设置Groups 消费分组offset",
       "input": "ModifyGroupOffsetsRequest",
@@ -12104,7 +12111,6 @@
       "document": "ModifyConnectResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "连接源的Id",
           "example": "resource-xxx",
           "member": "string",
@@ -12114,7 +12120,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "连接源名称，为空时不修改",
           "example": "xxx",
           "member": "string",
@@ -12124,7 +12129,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "连接源描述，为空时不修改",
           "example": "xxx",
           "member": "string",
@@ -12134,7 +12138,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "连接源类型，修改数据源参数时，需要与原Type相同，否则编辑数据源无效",
           "example": "xxx",
           "member": "string",
@@ -12144,7 +12147,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Dts配置，Type为DTS时必填",
           "example": "xxx",
           "member": "DtsModifyConnectParam",
@@ -12154,7 +12156,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "MongoDB配置，Type为MONGODB时必填",
           "example": "xxx",
           "member": "MongoDBModifyConnectParam",
@@ -12164,7 +12165,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Es配置，Type为ES时必填",
           "example": "xxx",
           "member": "EsModifyConnectParam",
@@ -12174,7 +12174,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "ClickHouse配置，Type为CLICKHOUSE时必填",
           "example": "xxx",
           "member": "ClickHouseModifyConnectParam",
@@ -12184,7 +12183,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填",
           "example": "xxx",
           "member": "MySQLModifyConnectParam",
@@ -12194,7 +12192,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填",
           "example": "xxx",
           "member": "PostgreSQLModifyConnectParam",
@@ -12204,7 +12201,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "MariaDB配置，Type为MARIADB时必填",
           "example": "xxx",
           "member": "MariaDBModifyConnectParam",
@@ -12214,7 +12210,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "SQLServer配置，Type为SQLSERVER时必填",
           "example": "xxx",
           "member": "SQLServerModifyConnectParam",
@@ -12224,7 +12219,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Ctsdb配置，Type为CTSDB",
           "example": "xxx",
           "member": "CtsdbModifyConnectParam",
@@ -12234,11 +12228,19 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Doris配置，Type为DORIS",
           "example": "xxx",
           "member": "DorisModifyConnectParam",
           "name": "DorisConnectParam",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "Kafka配置，Type为 KAFKA 时必填",
+          "example": "xxx",
+          "member": "KafkaConnectParam",
+          "name": "KafkaConnectParam",
           "required": false,
           "type": "object",
           "visibility": 1
@@ -12254,7 +12256,6 @@
           "example": "xxx",
           "member": "ConnectResourceResourceIdResp",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -12303,6 +12304,74 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatahubTopicRequest": {
+      "document": "ModifyDatahubTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "消息保留时间，单位：ms，当前最小值为60000ms。",
+          "example": "1000",
+          "member": "int64",
+          "name": "RetentionMs",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "1",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatahubTopicResponse": {
+      "document": "ModifyDatahubTopic返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果集",
+          "example": "无",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

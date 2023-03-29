@@ -1,14 +1,13 @@
 **Example 1: 下载VPN通道配置**
 
-
+下载VPN通道配置
 
 Input: 
 
 ```
 tccli vpc DownloadCustomerGatewayConfiguration --cli-unfold-argument  \
-    --Version 2017-03-12 \
-    --VpnGatewayId vpngw-p4lmqawn \
-    --VpnConnectionId vpnx-5p7vkch8 \
+    --VpnGatewayId vpngw-p3lmbqwn \
+    --VpnConnectionId vpnx-3a4xoch6 \
     --CustomerGatewayVendor.Platform comware \
     --CustomerGatewayVendor.SoftwareVersion V1.0 \
     --CustomerGatewayVendor.VendorName h3c \

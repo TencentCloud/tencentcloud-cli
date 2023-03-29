@@ -1,62 +1,69 @@
 **Example 1: 示例**
 
-
+滚动更新
 
 Input: 
 
 ```
 tccli tcb RollUpdateCloudBaseRunServerVersion --cli-unfold-argument  \
-    --MaxNum xx \
-    --EnvParams xx \
-    --PackageName xx \
-    --MountVolumeInfo.0.ReadOnly True \
-    --MountVolumeInfo.0.MountPath xx \
-    --MountVolumeInfo.0.Name xx \
-    --MountVolumeInfo.0.NfsVolumes.0.Path xx \
-    --MountVolumeInfo.0.NfsVolumes.0.ReadOnly True \
-    --MountVolumeInfo.0.NfsVolumes.0.Server xx \
-    --Branch xx \
-    --Rollback True \
-    --BuildDir xx \
-    --Repository xx \
-    --Mem xx \
-    --UploadType xx \
-    --RepositoryType xx \
-    --InitialDelaySeconds 0 \
-    --CustomLogs xx \
+    --EnvId abc \
+    --VersionName abc \
+    --UploadType abc \
+    --RepositoryType abc \
     --FlowRatio 0 \
-    --MinNum xx \
-    --VersionRemark xx \
+    --DockerfilePath abc \
+    --BuildDir abc \
+    --Cpu abc \
+    --Mem abc \
+    --MinNum abc \
+    --MaxNum abc \
+    --PolicyType abc \
+    --PolicyThreshold abc \
+    --EnvParams abc \
     --ContainerPort 0 \
-    --DockerfilePath xx \
-    --EnvId xx \
-    --SnapshotName xx \
-    --ServerName xx \
-    --EnableUnion True \
-    --PackageVersion xx \
-    --Cpu xx \
-    --CodeDetail.Url xx \
-    --CodeDetail.Name.FullName xx \
-    --CodeDetail.Name.Name xx \
-    --ImageInfo.ImageUrl xx \
-    --ImageInfo.RepositoryName xx \
+    --ServerName abc \
+    --Repository abc \
+    --Branch abc \
+    --VersionRemark abc \
+    --PackageName abc \
+    --PackageVersion abc \
+    --ImageInfo.RepositoryName abc \
     --ImageInfo.IsPublic True \
-    --ImageInfo.ServerAddr xx \
-    --ImageInfo.TagName xx \
-    --PolicyThreshold xx \
+    --ImageInfo.TagName abc \
+    --ImageInfo.ServerAddr abc \
+    --ImageInfo.ImageUrl abc \
+    --CodeDetail.Name.Name abc \
+    --CodeDetail.Name.FullName abc \
+    --CodeDetail.Url abc \
     --IsRebuild True \
-    --PolicyType xx \
-    --VersionName xx
+    --InitialDelaySeconds 0 \
+    --MountVolumeInfo.0.Name abc \
+    --MountVolumeInfo.0.MountPath abc \
+    --MountVolumeInfo.0.ReadOnly True \
+    --MountVolumeInfo.0.NfsVolumes.0.Server abc \
+    --MountVolumeInfo.0.NfsVolumes.0.Path abc \
+    --MountVolumeInfo.0.NfsVolumes.0.ReadOnly True \
+    --MountVolumeInfo.0.NfsVolumes.0.SecretName abc \
+    --MountVolumeInfo.0.NfsVolumes.0.EnableEmptyDirVolume True \
+    --Rollback True \
+    --SnapshotName abc \
+    --CustomLogs abc \
+    --EnableUnion True \
+    --OperatorRemark abc \
+    --ServerPath abc \
+    --IsUpdateCls True \
+    --PolicyDetail.0.PolicyType abc \
+    --PolicyDetail.0.PolicyThreshold 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "succ",
-        "VersionName": "xxx",
-        "RunId": "a123",
-        "RequestId": "5620b49e-a25a-4007-84ef-03c9035c584d"
+        "Result": "abc",
+        "VersionName": "abc",
+        "RunId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

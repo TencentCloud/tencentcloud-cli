@@ -3736,7 +3736,6 @@
       "document": "DescribeDCDBInstanceDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID，形如dcdbt-7oaxtcb7",
           "example": "tdsqlshard-rlye31jd",
           "member": "string",
@@ -3756,7 +3755,6 @@
           "example": "tdsqlshard-rlye31jd",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3766,7 +3764,6 @@
           "example": "tdsqlshard-rlye31jd",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3776,7 +3773,6 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3786,7 +3782,6 @@
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3796,7 +3791,6 @@
           "example": "172.16.0.39",
           "member": "string",
           "name": "Vip",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3806,7 +3800,6 @@
           "example": "3306",
           "member": "int64",
           "name": "Vport",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3816,7 +3809,6 @@
           "example": "2",
           "member": "int64",
           "name": "NodeCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3826,7 +3818,6 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3836,7 +3827,6 @@
           "example": "vpc-4x1eyoyv",
           "member": "string",
           "name": "VpcId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3846,7 +3836,6 @@
           "example": "subnet-58oypmoq",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3856,7 +3845,6 @@
           "example": "0",
           "member": "int64",
           "name": "WanStatus",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3866,7 +3854,6 @@
           "example": "无",
           "member": "string",
           "name": "WanDomain",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3876,7 +3863,6 @@
           "example": "无",
           "member": "string",
           "name": "WanVip",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3886,7 +3872,6 @@
           "example": "0",
           "member": "int64",
           "name": "WanPort",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3896,7 +3881,6 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3906,7 +3890,6 @@
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3916,7 +3899,6 @@
           "example": "dbdc-odgvdv66",
           "member": "string",
           "name": "ExclusterId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3926,7 +3908,6 @@
           "example": "prepaid",
           "member": "string",
           "name": "PayMode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3936,7 +3917,6 @@
           "example": "2020-04-08 13:59:39",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3946,7 +3926,6 @@
           "example": "2020-05-08 13:59:39",
           "member": "datetime",
           "name": "PeriodEndTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3956,7 +3935,6 @@
           "example": "5.7.17",
           "member": "string",
           "name": "DbVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3966,7 +3944,6 @@
           "example": "1",
           "member": "int64",
           "name": "IsAuditSupported",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3976,7 +3953,6 @@
           "example": "0",
           "member": "int64",
           "name": "IsEncryptSupported",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3986,7 +3962,6 @@
           "example": "SH02D",
           "member": "string",
           "name": "Machine",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3996,7 +3971,6 @@
           "example": "12",
           "member": "int64",
           "name": "Memory",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4006,7 +3980,6 @@
           "example": "40",
           "member": "int64",
           "name": "Storage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4016,7 +3989,6 @@
           "example": "0.001",
           "member": "float",
           "name": "StorageUsage",
-          "required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -4026,7 +3998,6 @@
           "example": "16",
           "member": "int64",
           "name": "LogStorage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4036,7 +4007,6 @@
           "example": "11128",
           "member": "int64",
           "name": "Pid",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4046,7 +4016,6 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "MasterZone",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4056,7 +4025,6 @@
           "example": "[\"ap-guangzhou-1\"]",
           "member": "string",
           "name": "SlaveZones",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -4066,7 +4034,6 @@
           "example": "无",
           "member": "ShardBriefInfo",
           "name": "Shards",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -4076,7 +4043,6 @@
           "example": "无",
           "member": "string",
           "name": "Vip6",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -4086,7 +4052,6 @@
           "example": "1",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4096,7 +4061,6 @@
           "example": "4000",
           "member": "int64",
           "name": "Qps",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4106,7 +4070,6 @@
           "example": "Mysql",
           "member": "string",
           "name": "DbEngine",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -4116,7 +4079,6 @@
           "example": "0",
           "member": "int64",
           "name": "Ipv6Flag",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4126,7 +4088,6 @@
           "example": "无",
           "member": "string",
           "name": "WanVipv6",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -4136,7 +4097,6 @@
           "example": "0",
           "member": "int64",
           "name": "WanStatusIpv6",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4146,7 +4106,6 @@
           "example": "0",
           "member": "int64",
           "name": "WanPortIpv6",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4156,7 +4115,6 @@
           "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -4166,7 +4124,6 @@
           "example": "0",
           "member": "int64",
           "name": "DcnFlag",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4176,7 +4133,6 @@
           "example": "0",
           "member": "int64",
           "name": "DcnStatus",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4186,7 +4142,6 @@
           "example": "0",
           "member": "int64",
           "name": "DcnDstNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4196,7 +4151,6 @@
           "example": "2",
           "member": "int64",
           "name": "InstanceType",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4206,7 +4160,6 @@
           "example": "true",
           "member": "bool",
           "name": "IsMaxUserConnectionsSupported",
-          "required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -4216,7 +4169,6 @@
           "example": "5.7",
           "member": "string",
           "name": "DbVersionId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -4226,7 +4178,6 @@
           "example": "0",
           "member": "int64",
           "name": "EncryptStatus",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -4236,7 +4187,15 @@
           "example": "0",
           "member": "int64",
           "name": "ExclusterType",
-          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "VPC就近访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RsAccessStrategy",
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1

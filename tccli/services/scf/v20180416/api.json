@@ -266,6 +266,13 @@
       "output": "PublishVersionResponse",
       "status": "online"
     },
+    "PushSysLogs": {
+      "document": "推送SCF On TKE中系统组件的日志",
+      "input": "PushSysLogsRequest",
+      "name": "推送系统日志",
+      "output": "PushSysLogsResponse",
+      "status": "online"
+    },
     "PutProvisionedConcurrencyConfig": {
       "document": "设置函数某一非$LATEST版本的预置并发。",
       "input": "PutProvisionedConcurrencyConfigRequest",
@@ -5810,6 +5817,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PushSysLogsRequest": {
+      "document": "PushSysLogs请求参数结构体",
+      "members": [
+        {
+          "document": "日志类型，可填\nLog\nTrace",
+          "example": "Log",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "document": "日志内容",
+          "example": "test",
+          "member": "string",
+          "name": "Logs",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "PushSysLogsResponse": {
+      "document": "PushSysLogs返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

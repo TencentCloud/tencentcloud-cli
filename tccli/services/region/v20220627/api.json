@@ -204,13 +204,21 @@
       "document": "DescribeRegionsAndZones请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "如果不填则默认查所有地域和可用区，否则为某个产品的",
           "example": "cvm",
           "member": "string",
           "name": "Product",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "不传或者0表示不查询【可选业务白名单】，1表示查询【可选业务白名单】，该参数设置了1，只有在业务白名单查不到情况下，才会查该白名单",
+          "example": "1",
+          "member": "int64",
+          "name": "Scene",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -224,7 +232,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -234,7 +241,6 @@
           "example": "无",
           "member": "ResourceRegionInfo",
           "name": "ResourceRegionSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -244,7 +250,6 @@
           "example": "zone",
           "member": "string",
           "name": "ProductType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -262,13 +267,21 @@
       "document": "DescribeRegions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "待查询产品的名称，例如cvm，具体取值请查询DescribeProducts接口",
           "example": "cvm",
           "member": "string",
           "name": "Product",
           "required": true,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "不传或者0表示不查询【可选业务白名单】，1表示查询【可选业务白名单】，该参数设置了1，只有在业务白名单查不到情况下，才会查该白名单",
+          "example": "1",
+          "member": "int64",
+          "name": "Scene",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -282,7 +295,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -292,7 +304,6 @@
           "example": "参考输出示例",
           "member": "RegionInfo",
           "name": "RegionSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -310,13 +321,21 @@
       "document": "DescribeZones请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "待查询产品的名称，例如cvm，具体取值请查询DescribeProducts接口",
           "example": "cvm",
           "member": "string",
           "name": "Product",
           "required": true,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "不传或者0表示不查询【可选业务白名单】，1表示查询【可选业务白名单】，该参数设置了1，只有在业务白名单查不到情况下，才会查该白名单",
+          "example": "1",
+          "member": "int64",
+          "name": "Scene",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -330,7 +349,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -340,7 +358,6 @@
           "example": "参开输出示例",
           "member": "ZoneInfo",
           "name": "ZoneSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
