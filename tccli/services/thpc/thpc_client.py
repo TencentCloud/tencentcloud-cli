@@ -11,6 +11,8 @@ from tccli.exceptions import ConfigurationError, ClientError, ParamError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.thpc.v20230321 import thpc_client as thpc_client_v20230321
+from tencentcloud.thpc.v20230321 import models as models_v20230321
 from tencentcloud.thpc.v20220401 import thpc_client as thpc_client_v20220401
 from tencentcloud.thpc.v20220401 import models as models_v20220401
 from tencentcloud.thpc.v20211109 import thpc_client as thpc_client_v20211109
@@ -487,7 +489,7 @@ def doDeleteQueue(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAutoScalingConfiguration(args, parsed_globals):
+def doDescribeQueues(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -516,11 +518,11 @@ def doDescribeAutoScalingConfiguration(args, parsed_globals):
     client = mod.ThpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAutoScalingConfigurationRequest()
+    model = models.DescribeQueuesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeAutoScalingConfiguration(model)
+        rsp = client.DescribeQueues(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -591,7 +593,7 @@ def doAddNodes(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeQueues(args, parsed_globals):
+def doDescribeAutoScalingConfiguration(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -620,11 +622,11 @@ def doDescribeQueues(args, parsed_globals):
     client = mod.ThpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeQueuesRequest()
+    model = models.DescribeAutoScalingConfigurationRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeQueues(model)
+        rsp = client.DescribeAutoScalingConfiguration(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -852,12 +854,14 @@ def doDeleteCluster(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20230321": thpc_client_v20230321,
     "v20220401": thpc_client_v20220401,
     "v20211109": thpc_client_v20211109,
 
 }
 
 MODELS_MAP = {
+    "v20230321": models_v20230321,
     "v20220401": models_v20220401,
     "v20211109": models_v20211109,
 
@@ -873,9 +877,9 @@ ACTION_MAP = {
     "AddQueue": doAddQueue,
     "DescribeNodes": doDescribeNodes,
     "DeleteQueue": doDeleteQueue,
-    "DescribeAutoScalingConfiguration": doDescribeAutoScalingConfiguration,
-    "AddNodes": doAddNodes,
     "DescribeQueues": doDescribeQueues,
+    "AddNodes": doAddNodes,
+    "DescribeAutoScalingConfiguration": doDescribeAutoScalingConfiguration,
     "DescribeClusters": doDescribeClusters,
     "AddClusterStorageOption": doAddClusterStorageOption,
     "DescribeClusterActivities": doDescribeClusterActivities,
@@ -884,6 +888,7 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20230321",
     "v20220401",
     "v20211109",
 

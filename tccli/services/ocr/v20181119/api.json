@@ -7810,7 +7810,26 @@
     },
     "SmartFormFileUrl": {
       "document": "智慧表单上传文件信息",
-      "members": [],
+      "members": [
+        {
+          "document": "文件url地址",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件的顺序，顺序从1开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "FileOrderNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "in"
     },
     "SmartStructuralOCRRequest": {

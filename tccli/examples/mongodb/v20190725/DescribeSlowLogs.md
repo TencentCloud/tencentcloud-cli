@@ -1,17 +1,18 @@
-**Example 1: 获取数据库实例慢日志信息**
+**Example 1: 获取实例慢日志信息**
 
-
+以下示例为获取一实例的慢日志信息。
 
 Input: 
 
 ```
 tccli mongodb DescribeSlowLogs --cli-unfold-argument  \
-    --InstanceId cmgo-a3bm93hf \
-    --StartTime '2020-04-20 00:00:00' \
-    --EndTime '2020-04-20 22:00:00' \
-    --SlowMS 100 \
-    --Offset 0 \
-    --Limit 100
+    --InstanceId abc \
+    --StartTime 2020-09-22 00:00:00 \
+    --EndTime 2020-09-22 00:00:00 \
+    --SlowMS 1 \
+    --Offset 1 \
+    --Limit 1 \
+    --Format abc
 ```
 
 Output: 

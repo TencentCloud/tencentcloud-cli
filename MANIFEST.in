@@ -433,6 +433,8 @@ include tccli/services/teo/v20220901/api.json
 include tccli/services/teo/v20220901/examples.json
 include tccli/services/teo/v20220106/api.json
 include tccli/services/teo/v20220106/examples.json
+include tccli/services/thpc/v20230321/api.json
+include tccli/services/thpc/v20230321/examples.json
 include tccli/services/thpc/v20220401/api.json
 include tccli/services/thpc/v20220401/examples.json
 include tccli/services/thpc/v20211109/api.json

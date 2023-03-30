@@ -1092,6 +1092,13 @@
       "output": "DescribeReverseShellRulesResponse",
       "status": "online"
     },
+    "DescribeRiskDnsEventList": {
+      "document": "获取恶意请求事件列表",
+      "input": "DescribeRiskDnsEventListRequest",
+      "name": "获取恶意请求事件列表",
+      "output": "DescribeRiskDnsEventListResponse",
+      "status": "online"
+    },
     "DescribeRiskDnsList": {
       "document": "入侵检测，获取恶意请求列表",
       "input": "DescribeRiskDnsListRequest",
@@ -19665,6 +19672,87 @@
       ],
       "type": "object"
     },
+    "DescribeRiskDnsEventListRequest": {
+      "document": "DescribeRiskDnsEventList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<li>IpOrName - String - 是否必填：否 - 主机Ip或别名筛选</li>\n<li>HostId - String - 是否必填：否 - 主机Id</li>\n<li>AgentId - String - 是否必填：否 - 客户端Id</li>\n<li>PolicyType - String - 是否必填：否 - 策略类型,0:系统策略1:用户自定义策略</li>\n<li>Domain - String - 是否必填：否 - 域名(先对域名做urlencode,再base64)</li>\n<li>HandleStatus - String - 是否必填：否 - 状态筛选0:待处理；2:信任；3:不信任</li>\n<li>BeginTime - String - 是否必填：否 - 最近访问开始时间</li>\n<li>EndTime - String - 是否必填：否 - 最近访问结束时间</li>",
+          "example": "10",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "[]",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：[asc:升序|desc:降序]",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段：[AccessCount:请求次数|LastTime:最近请求时间]",
+          "example": "AccessCount",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskDnsEventListResponse": {
+      "document": "DescribeRiskDnsEventList返回参数结构体",
+      "members": [
+        {
+          "document": "恶意请求事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RiskDnsEvent",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRiskDnsListRequest": {
       "document": "DescribeRiskDnsList请求参数结构体",
       "members": [
@@ -29150,6 +29238,237 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RiskDnsEvent": {
+      "document": "恶意请求事件",
+      "members": [
+        {
+          "document": "事件Id",
+          "example": "153",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "策略ID",
+          "example": "10000",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命中策略类型[-1:未知|0系统|1:用户]",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命中策略名称",
+          "example": "test",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "保护级别[0:基础版|1:专业版|2:旗舰版]",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectLevel",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机ID",
+          "example": "d1f53e38-3f03-4a72-bf16-afa78ed698f2",
+          "member": "string",
+          "name": "HostId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机名称",
+          "example": "test",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机IP",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "HostIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "外网IP",
+          "example": "123.22.3.1",
+          "member": "string",
+          "name": "WanIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户端ID",
+          "example": "a1f53e38-3f03-4a72-bf16-afa78dd698f3",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问域名",
+          "example": "re.r3r3.org",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签特性",
+          "example": "[\"vueir\",\"mle\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问次数",
+          "example": "10",
+          "member": "int64",
+          "name": "AccessCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "威胁描述",
+          "example": "威胁描述",
+          "member": "string",
+          "name": "ThreatDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "修复方案",
+          "example": "无",
+          "member": "string",
+          "name": "SuggestSolution",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参考链接",
+          "example": "http://www.vxjump.net/files/virus_analysis/virut%20botnet%20anal",
+          "member": "string",
+          "name": "ReferenceLink",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略]",
+          "example": "1",
+          "member": "int64",
+          "name": "HandleStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Pid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程名",
+          "example": "pidname",
+          "member": "string",
+          "name": "ProcessName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程MD5",
+          "example": "3c59dc048e8850243be8079a5c74d079",
+          "member": "string",
+          "name": "ProcessMd5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命令行",
+          "example": "cmd",
+          "member": "string",
+          "name": "CmdLine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "首次访问时间",
+          "example": "2021-04-26 15:19:04",
+          "member": "string",
+          "name": "FirstTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最近访问时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "LastTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "HostStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MachineExtraInfo",
+          "name": "MachineExtraInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

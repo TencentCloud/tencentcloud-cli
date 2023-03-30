@@ -325,7 +325,7 @@
     "DescribeForbiddenTablePro": {
       "document": "本接口（DescribeForbiddenTablePro）用于获取被禁用的表属性列表",
       "input": "DescribeForbiddenTableProRequest",
-      "name": "获取被禁用的表属性列表",
+      "name": "获取被禁用的表属性列表（新）",
       "output": "DescribeForbiddenTableProResponse",
       "status": "online"
     },

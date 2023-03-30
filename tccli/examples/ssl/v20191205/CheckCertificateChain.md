@@ -17,10 +17,9 @@ Output:
         "IsValid": true,
         "IsTrustedCA": true,
         "Chains": [
-            "qcloud.com",
-            "WoTrus DV Server CA  [Run by the Issuer]"
+            "abc"
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

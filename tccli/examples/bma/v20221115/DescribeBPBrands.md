@@ -13,44 +13,45 @@ Output:
     "Response": {
         "Brands": [
             {
+                "Uin": "abc",
                 "CompanyId": 0,
-                "CompanyName": "xx",
-                "BrandName": "xx",
-                "Phone": "xx",
-                "License": "xx",
+                "CompanyName": "abc",
+                "BrandName": "abc",
+                "Phone": "abc",
+                "License": "abc",
                 "LicenseStatus": 0,
-                "LicenseNote": "xx",
-                "Authorization": "xx",
+                "LicenseNote": "abc",
+                "Authorization": "abc",
                 "AuthorizationStatus": 0,
-                "AuthorizationNote": "xx",
+                "AuthorizationNote": "abc",
                 "Trademarks": [
                     {
-                        "Trademark": "xx",
+                        "Trademark": "abc",
                         "TrademarkStatus": 0,
-                        "TrademarkNote": "xx",
+                        "TrademarkNote": "abc",
                         "TrademarkId": 0,
-                        "Transfer": "xx",
+                        "Transfer": "abc",
                         "TransferStatus": 0,
-                        "TransferNote": "xx",
-                        "TrademarkName": "xx"
+                        "TransferNote": "abc",
+                        "TrademarkName": "abc"
                     }
                 ],
-                "InsertTime": "xx",
+                "InsertTime": "abc",
                 "Services": {
                     "ProtectURLCount": 0,
-                    "ProtectURLExpireTime": "xx",
+                    "ProtectURLExpireTime": "abc",
                     "ProtectAPPCount": 0,
-                    "ProtectAPPExpireTime": "xx",
+                    "ProtectAPPExpireTime": "abc",
                     "ProtectOfficialAccountCount": 0,
-                    "ProtectOfficialAccountExpireTime": "xx",
+                    "ProtectOfficialAccountExpireTime": "abc",
                     "ProtectMiniProgramCount": 0,
-                    "ProtectMiniProgramExpireTime": "xx",
+                    "ProtectMiniProgramExpireTime": "abc",
                     "OfflineCount": 0
                 }
             }
         ],
         "NoticeStatus": 0,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

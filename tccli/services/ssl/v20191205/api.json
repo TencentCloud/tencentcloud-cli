@@ -855,7 +855,6 @@
       "document": "CheckCertificateChain请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "待检查的证书链",
           "example": "无",
           "member": "string",
@@ -874,7 +873,6 @@
           "example": "1",
           "member": "bool",
           "name": "IsValid",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -883,7 +881,6 @@
           "example": "1",
           "member": "bool",
           "name": "IsTrustedCA",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -892,7 +889,6 @@
           "example": "[\"qcloud.com\",\"WoTrus DV Server CA  [Run by the Issuer]\"]",
           "member": "string",
           "name": "Chains",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

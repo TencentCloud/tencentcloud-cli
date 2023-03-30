@@ -1,0 +1,2414 @@
+{
+  "actions": {
+    "AddClusterStorageOption": {
+      "document": "本接口（AddClusterStorageOption）用于添加集群存储选项信息。",
+      "input": "AddClusterStorageOptionRequest",
+      "name": "添加集群存储选项",
+      "output": "AddClusterStorageOptionResponse",
+      "status": "online"
+    },
+    "AddNodes": {
+      "document": "本接口(AddNodes)用于添加一个或者多个计算节点或者登录节点到指定集群。",
+      "input": "AddNodesRequest",
+      "name": "添加节点",
+      "output": "AddNodesResponse",
+      "status": "online"
+    },
+    "AddQueue": {
+      "document": "本接口(AddQueue)用于添加队列到指定集群。\n* 本接口为目前只支持SchedulerType为SLURM的集群。\n* 单个集群中队列数量上限为10个。",
+      "input": "AddQueueRequest",
+      "name": "添加队列",
+      "output": "AddQueueResponse",
+      "status": "online"
+    },
+    "CreateCluster": {
+      "document": "本接口 (CreateCluster) 用于创建并启动集群。\n\n* 本接口为异步接口， 当创建集群请求下发成功后会返回一个集群`ID`和一个`RequestId`，此时创建集群操作并未立即完成。在此期间集群的状态将会处于“PENDING”或者“INITING”，集群创建结果可以通过调用 [DescribeClusters](https://cloud.tencent.com/document/product/1527/72100)  接口查询，如果集群状态(ClusterStatus)变为“RUNNING(运行中)”，则代表集群创建成功，“ INIT_FAILED”代表集群创建失败。",
+      "input": "CreateClusterRequest",
+      "name": "创建集群",
+      "output": "CreateClusterResponse",
+      "status": "online"
+    },
+    "DeleteCluster": {
+      "document": "本接口（DeleteCluster）用于删除一个指定的集群。",
+      "input": "DeleteClusterRequest",
+      "name": "删除集群",
+      "output": "DeleteClusterResponse",
+      "status": "online"
+    },
+    "DeleteClusterStorageOption": {
+      "document": "本接口 (DeleteClusterStorageOption) 用于删除集群存储选项信息。",
+      "input": "DeleteClusterStorageOptionRequest",
+      "name": "删除集群存储选项",
+      "output": "DeleteClusterStorageOptionResponse",
+      "status": "online"
+    },
+    "DeleteNodes": {
+      "document": "本接口(DeleteNodes)用于删除指定集群中一个或者多个计算节点或者登录节点。",
+      "input": "DeleteNodesRequest",
+      "name": "删除节点",
+      "output": "DeleteNodesResponse",
+      "status": "online"
+    },
+    "DeleteQueue": {
+      "document": "本接口(DeleteQueue)用于从指定集群删除队列。\n* 本接口为目前只支持SchedulerType为SLURM的集群。\n\n* 删除队列时，需要保证队列内不存在节点。",
+      "input": "DeleteQueueRequest",
+      "name": "删除队列",
+      "output": "DeleteQueueResponse",
+      "status": "online"
+    },
+    "DescribeAutoScalingConfiguration": {
+      "document": "本接口(DescribeAutoScalingConfiguration)用于查询集群弹性伸缩配置信息。本接口仅适用于弹性伸缩类型为THPC_AS的集群。",
+      "input": "DescribeAutoScalingConfigurationRequest",
+      "name": "查询弹性伸缩配置信息",
+      "output": "DescribeAutoScalingConfigurationResponse",
+      "status": "online"
+    },
+    "DescribeClusterActivities": {
+      "document": "本接口（DescribeClusterActivities）用于查询集群活动历史记录列表。",
+      "input": "DescribeClusterActivitiesRequest",
+      "name": "查询集群活动历史记录",
+      "output": "DescribeClusterActivitiesResponse",
+      "status": "online"
+    },
+    "DescribeClusterStorageOption": {
+      "document": "本接口 (DescribeClusterStorageOption) 用于查询集群存储选项信息。",
+      "input": "DescribeClusterStorageOptionRequest",
+      "name": "查询集群存储选项",
+      "output": "DescribeClusterStorageOptionResponse",
+      "status": "online"
+    },
+    "DescribeClusters": {
+      "document": "本接口（DescribeClusters）用于查询集群列表。",
+      "input": "DescribeClustersRequest",
+      "name": "查询集群列表",
+      "output": "DescribeClustersResponse",
+      "status": "online"
+    },
+    "DescribeNodes": {
+      "document": "本接口 (DescribeNodes) 用于查询指定集群节点概览信息列表。",
+      "input": "DescribeNodesRequest",
+      "name": "查询指定集群节点列表",
+      "output": "DescribeNodesResponse",
+      "status": "online"
+    },
+    "DescribeQueues": {
+      "document": "本接口(DescribeQueues)用于查询指定集群队列概览信息列表。",
+      "input": "DescribeQueuesRequest",
+      "name": "查询队列列表",
+      "output": "DescribeQueuesResponse",
+      "status": "online"
+    },
+    "SetAutoScalingConfiguration": {
+      "document": "本接口(SetAutoScalingConfiguration)用于为集群设置集群弹性伸缩配置信息。",
+      "input": "SetAutoScalingConfigurationRequest",
+      "name": "设置弹性伸缩配置信息",
+      "output": "SetAutoScalingConfigurationResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-03-21",
+    "api_brief": "THPC一期可实现固定集群的创建，暂不支持弹性扩容。",
+    "serviceNameCN": "高性能计算平台",
+    "serviceShortName": "thpc"
+  },
+  "objects": {
+    "AddClusterStorageOptionRequest": {
+      "document": "AddClusterStorageOption请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "集群存储选项。",
+          "example": "无",
+          "member": "StorageOption",
+          "name": "StorageOption",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AddClusterStorageOptionResponse": {
+      "document": "AddClusterStorageOption返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddNodesRequest": {
+      "document": "AddNodes请求参数结构体",
+      "members": [
+        {
+          "document": "集群中实例所在的位置。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "集群ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "私有网络相关信息配置。",
+          "example": "无",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "添加节点数量。",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和特定自定义镜像。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "节点显示名称。\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "集群登录设置。",
+          "example": "无",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "集群中实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。\n",
+          "example": "无",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeRole",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
+          "example": "无",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddNodesResponse": {
+      "document": "AddNodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddQueueRequest": {
+      "document": "AddQueue请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-prkxbd7c",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "队列名称。<br><li>最多支持32个字符。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddQueueResponse": {
+      "document": "AddQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CFSOption": {
+      "document": "描述CFS文件系统版本和挂载信息",
+      "members": [
+        {
+          "document": "文件系统本地挂载路径。",
+          "example": "/data/",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统远程挂载ip及路径。",
+          "example": "172.0.0.1:/",
+          "member": "string",
+          "name": "RemotePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统协议类型，默认值NFS 3.0。\n<li>NFS 3.0。\n<li>NFS 4.0。\n<li>TURBO。",
+          "example": "NFS 3.0",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。",
+          "example": "SD",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CFSOptionOverview": {
+      "document": "CFS存储选项概览信息。",
+      "members": [
+        {
+          "document": "文件系统本地挂载路径。",
+          "example": "/data/",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统远程挂载ip及路径。",
+          "example": "172.0.0.1:/",
+          "member": "string",
+          "name": "RemotePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统协议类型。\n<li>NFS 3.0。\n<li>NFS 4.0。\n<li>TURBO。",
+          "example": "NFS 3.0",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。",
+          "example": "SD",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterActivity": {
+      "document": "符合条件的集群活动信息。",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群活动ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载\n",
+          "example": "无",
+          "member": "string",
+          "name": "ActivityType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群活动状态。取值范围：<br><li>PENDING：等待运行<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>PARTIALLY_SUCCESSFUL：活动部分成功<br><li>FAILED：活动失败",
+          "example": "无",
+          "member": "string",
+          "name": "ActivityStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群活动状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActivityStatusCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群活动结果详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResultDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群活动起因。",
+          "example": "无",
+          "member": "string",
+          "name": "Cause",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群活动描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群活动相关节点活动集合。",
+          "example": "无",
+          "member": "NodeActivity",
+          "name": "RelatedNodeActivitySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群活动开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群活动结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterOverview": {
+      "document": "集群概览信息。",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-2mv1i3d8",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群状态。取值范围：<br><li>PENDING：创建中<br><li>INITING：初始化中<br><li>INIT_FAILED：初始化失败<br><li>RUNNING：运行中<br><li>TERMINATING：销毁中",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ClusterStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群名称。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群位置信息。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群创建时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群调度器。",
+          "example": "SGE",
+          "member": "string",
+          "name": "SchedulerType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "计算节点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "ComputeNodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "计算节点概览。",
+          "example": "无",
+          "member": "ComputeNodeOverview",
+          "name": "ComputeNodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管控节点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "ManagerNodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管控节点概览。",
+          "example": "无",
+          "member": "ManagerNodeOverview",
+          "name": "ManagerNodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "登录节点概览。",
+          "example": "无",
+          "member": "LoginNodeOverview",
+          "name": "LoginNodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "登录节点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "LoginNodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群所属私有网络ID。",
+          "example": "vpc-r9fr2jzy",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ComputeNode": {
+      "document": "计算节点信息。",
+      "members": [
+        {
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "example": "S2.SMALL2",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。",
+          "example": "未命名",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ComputeNodeOverview": {
+      "document": "计算节点概览。",
+      "members": [
+        {
+          "document": "计算节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-jfhc307q",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateClusterRequest": {
+      "document": "CreateCluster请求参数结构体",
+      "members": [
+        {
+          "document": "集群中实例所在的位置。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "指定管理节点。",
+          "example": "无",
+          "member": "ManagerNode",
+          "name": "ManagerNode",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "指定管理节点的数量。默认取值：1。取值范围：1～2。",
+          "example": "无",
+          "member": "int64",
+          "name": "ManagerNodeCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "指定计算节点。",
+          "example": "无",
+          "member": "ComputeNode",
+          "name": "ComputeNode",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "指定计算节点的数量。默认取值：0。",
+          "example": "无",
+          "member": "int64",
+          "name": "ComputeNodeCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。",
+          "example": "SGE",
+          "member": "string",
+          "name": "SchedulerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前支持部分公有镜像和自定义镜像。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "私有网络相关信息配置。",
+          "example": "无",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "集群登录设置。",
+          "example": "无",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "集群中实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
+          "example": "无",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "域名字服务类型。默认取值：NIS。\n<li>NIS：NIS域名字服务。",
+          "example": "NIS",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "集群显示名称。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "集群存储选项",
+          "example": "无",
+          "member": "StorageOption",
+          "name": "StorageOption",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "指定登录节点。",
+          "example": "无",
+          "member": "LoginNode",
+          "name": "LoginNode",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "指定登录节点的数量。默认取值：0。取值范围：0～10。",
+          "example": "无",
+          "member": "int64",
+          "name": "LoginNodeCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "创建集群时同时绑定的标签对说明。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "弹性伸缩类型。默认值：THPC_AS<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。",
+          "example": "无",
+          "member": "string",
+          "name": "AutoScalingType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterResponse": {
+      "document": "CreateCluster返回参数结构体",
+      "members": [
+        {
+          "document": "集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DataDisk": {
+      "document": "描述了数据盘的信息",
+      "members": [
+        {
+          "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><li>CLOUD_BSSD：通用型SSD云硬盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_BASIC",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteClusterRequest": {
+      "document": "DeleteCluster请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterResponse": {
+      "document": "DeleteCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterStorageOptionRequest": {
+      "document": "DeleteClusterStorageOption请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "本地挂载路径。",
+          "example": "/data/",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterStorageOptionResponse": {
+      "document": "DeleteClusterStorageOption返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNodesRequest": {
+      "document": "DeleteNodes请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "节点ID。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNodesResponse": {
+      "document": "DeleteNodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQueueRequest": {
+      "document": "DeleteQueue请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-prkxbd7c",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "队列名称。<br><li>最多支持32个字符。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQueueResponse": {
+      "document": "DeleteQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScalingConfigurationRequest": {
+      "document": "DescribeAutoScalingConfiguration请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。\t",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScalingConfigurationResponse": {
+      "document": "DescribeAutoScalingConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-rv7hahw2",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务连续等待时间，队列的任务处于连续等待的时间。单位秒。",
+          "example": "120",
+          "member": "int64",
+          "name": "ExpansionBusyTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。",
+          "example": "300",
+          "member": "int64",
+          "name": "ShrinkIdleTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩容队列配置概览列表。",
+          "example": "无",
+          "member": "QueueConfigOverview",
+          "name": "QueueConfigs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterActivitiesRequest": {
+      "document": "DescribeClusterActivities请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。通过该参数指定需要查询活动历史记录的集群。",
+          "example": "hpc-myd8fgsc",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterActivitiesResponse": {
+      "document": "DescribeClusterActivities返回参数结构体",
+      "members": [
+        {
+          "document": "集群活动历史记录列表。",
+          "example": "无",
+          "member": "ClusterActivity",
+          "name": "ClusterActivitySet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群活动历史记录数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterStorageOptionRequest": {
+      "document": "DescribeClusterStorageOption请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterStorageOptionResponse": {
+      "document": "DescribeClusterStorageOption返回参数结构体",
+      "members": [
+        {
+          "document": "集群存储选项信息概览。",
+          "example": "无",
+          "member": "StorageOptionOverview",
+          "name": "StorageOption",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersRequest": {
+      "document": "DescribeClusters请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID列表。通过该参数可以指定需要查询信息的集群列表。<br>如果您不指定该参数，则返回Limit数量以内的集群信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersResponse": {
+      "document": "DescribeClusters返回参数结构体",
+      "members": [
+        {
+          "document": "集群概览信息列表。",
+          "example": "无",
+          "member": "ClusterOverview",
+          "name": "ClusterSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodesRequest": {
+      "document": "DescribeNodes请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "<li><strong>queue-name</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>队列名称</strong>】进行过滤。队列名称形如：compute。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\"><li><strong>node-role</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>节点角色</strong>】进行过滤。节点角色形如：Manager。（Manager：管控节点。Compute：计算节点。Login：登录节点。ManagerBackup：备用管控节点。）</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\"><li><strong>node-type</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>节点类型</strong>】进行过滤。节点类型形如：STATIC。(STATIC：静态节点。DYNAMIC：弹性节点。)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodesResponse": {
+      "document": "DescribeNodes返回参数结构体",
+      "members": [
+        {
+          "document": "节点概览信息列表。",
+          "example": "无",
+          "member": "NodeOverview",
+          "name": "NodeSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的节点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueuesRequest": {
+      "document": "DescribeQueues请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQueuesResponse": {
+      "document": "DescribeQueues返回参数结构体",
+      "members": [
+        {
+          "document": "队列概览信息列表。",
+          "example": "无",
+          "member": "QueueOverview",
+          "name": "QueueSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的节点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExpansionNodeConfig": {
+      "document": "弹性扩容节点配置信息。",
+      "members": [
+        {
+          "document": "扩容实例所在的位置。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "example": "S2.SMALL2",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "私有网络相关信息配置。",
+          "example": "无",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ExpansionNodeConfigOverview": {
+      "document": "扩容节点配置信息概览。",
+      "members": [
+        {
+          "document": "节点机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S2.SMALL2",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扩容实例所在的位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "私有网络相关信息配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img-3la7wgnt",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "公网带宽相关信息设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点系统盘配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点数据盘配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。",
+      "members": [
+        {
+          "document": "需要过滤的字段。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "字段的过滤值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "GooseFSOption": {
+      "document": "描述GooseFS挂载信息",
+      "members": [
+        {
+          "document": "文件系统本地挂载路径。",
+          "example": "/data",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统远程挂载路径。",
+          "example": "/data/goosefs-fuse",
+          "member": "string",
+          "name": "RemotePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统master的ip和端口。",
+          "example": "无",
+          "member": "string",
+          "name": "Masters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GooseFSOptionOverview": {
+      "document": "GooseFS存储选项概览信息。",
+      "members": [
+        {
+          "document": "文件系统本地挂载路径。",
+          "example": "/data/",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统远程挂载路径。",
+          "example": "/data/goosefs-fuse/",
+          "member": "string",
+          "name": "RemotePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统master的ip和端口。",
+          "example": "无",
+          "member": "string",
+          "name": "Masters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GooseFSxOption": {
+      "document": "描述GooseFSx挂载信息",
+      "members": [
+        {
+          "document": "文件系统master的ip和端口列表。",
+          "example": "[\"172.16.0.2:55533\",\"172.16.0.3:55533\",\"172.16.0.4:55533\"]",
+          "member": "string",
+          "name": "Masters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。",
+          "example": "/goosefsx/x_c60_54oi5id3_proxy/",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "GooseFSxOptionOverview": {
+      "document": "GooseFSx存储选项概览信息。",
+      "members": [
+        {
+          "document": "文件系统master的ip和端口列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"172.16.0.2:55533\",\"172.16.0.3:55533\",\"172.16.0.4:55533\"]",
+          "member": "string",
+          "name": "Masters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/goosefsx/x_c60_54oi5id3_proxy/",
+          "member": "string",
+          "name": "LocalPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceChargePrepaid": {
+      "document": "描述了实例的计费模式",
+      "members": [
+        {
+          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "自动续费标识。取值范围：\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InternetAccessible": {
+      "document": "描述了实例的公网可访问性，声明了实例的公网使用计费模式，最大带宽等",
+      "members": [
+        {
+          "document": "网络计费类型。取值范围：\nBANDWIDTH_PREPAID：预付费按带宽结算\nTRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费\nBANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费\nBANDWIDTH_PACKAGE：带宽包用户\n默认取值：非带宽包用户默认与子机付费类型保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TRAFFIC_POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InternetChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见购买网络带宽。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LoginNode": {
+      "document": "登录节点信息。",
+      "members": [
+        {
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br>默认值：POSTPAID_BY_HOUR。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "example": "S2.SMALL2",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。",
+          "example": "未命名",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LoginNodeOverview": {
+      "document": "登录节点概览。",
+      "members": [
+        {
+          "document": "登录节点ID。",
+          "example": "ins-jfhc307q",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LoginSettings": {
+      "document": "描述了实例登录相关配置与信息。",
+      "members": [
+        {
+          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ManagerNode": {
+      "document": "管控节点信息",
+      "members": [
+        {
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br>默认值：POSTPAID_BY_HOUR。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>对于付费模式为PREPAID或POSTPAID\\_BY\\_HOUR的实例创建，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "example": "S2.SMALL2",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n</li><li>购买多个节点，如果指定模式串`{R:x}`，表示生成数字[`[x, x+n-1]`，其中`n`表示购买节点的数量，例如`server_{R:3}`，购买1个时，节点显示名称为`server_3`；购买2个时，节点显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。\n购买多个节点，如果不指定模式串，则在节点显示名称添加后缀`1、2...n`，其中`n`表示购买节点的数量，例如`server_`，购买2个时，节点显示名称分别为`server_1`，`server_2`。</li><li>\n最多支持60个字符（包含模式串）。",
+          "example": "未命名",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ManagerNodeOverview": {
+      "document": "管控节点概览。",
+      "members": [
+        {
+          "document": "管控节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-jfhc307q",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeActivity": {
+      "document": "节点活动信息。",
+      "members": [
+        {
+          "document": "节点活动所在的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败",
+          "example": "无",
+          "member": "string",
+          "name": "NodeActivityStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点活动状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeActivityStatusCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点活动状态原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeActivityStatusReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeOverview": {
+      "document": "节点概览信息。",
+      "members": [
+        {
+          "document": "节点实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-f5ew7k5w",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点所在可用区信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chongqing-1",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "NodeState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img-l8og963d",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点所属队列名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Compute",
+          "member": "string",
+          "name": "NodeRole",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STATIC",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Placement": {
+      "document": "描述了实例的抽象位置",
+      "members": [
+        {
+          "document": "实例所属的可用区名称。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "QueueConfig": {
+      "document": "扩容队列配置。",
+      "members": [
+        {
+          "document": "队列名称。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列中弹性节点数量最小值。取值范围0～200。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MinSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列中弹性节点数量最大值。取值范围0～200。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启自动扩容。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoExpansion",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启自动缩容。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoShrink",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜和特定自定义镜像。",
+          "example": "ins-jfhc307q",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩容节点配置信息。",
+          "example": "无",
+          "member": "ExpansionNodeConfig",
+          "name": "ExpansionNodeConfigs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "QueueConfigOverview": {
+      "document": "扩容队列配置概览。",
+      "members": [
+        {
+          "document": "队列名称。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列中弹性节点数量最小值。取值范围0～200。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列中弹性节点数量最大值。取值范围0～200。",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启自动扩容。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoExpansion",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启自动缩容。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoShrink",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩容节点配置信息。",
+          "example": "无",
+          "member": "ExpansionNodeConfigOverview",
+          "name": "ExpansionNodeConfigs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueueOverview": {
+      "document": "队列信息概览。",
+      "members": [
+        {
+          "document": "队列名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SetAutoScalingConfigurationRequest": {
+      "document": "SetAutoScalingConfiguration请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "任务连续等待时间，队列的任务处于连续等待的时间。单位秒。默认值120。",
+          "example": "120",
+          "member": "int64",
+          "name": "ExpansionBusyTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。单位秒。默认值300。",
+          "example": "300",
+          "member": "int64",
+          "name": "ShrinkIdleTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "扩容队列配置列表。",
+          "example": "无",
+          "member": "QueueConfig",
+          "name": "QueueConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "是否只预检此次请求。\ntrue：发送检查请求，不会绑定弹性伸缩组。检查项包括是否填写了必需参数，请求格式，业务限制。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId。\nfalse（默认）：发送正常请求，通过检查后直接绑定弹性伸缩组。",
+          "example": "无",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SetAutoScalingConfigurationResponse": {
+      "document": "SetAutoScalingConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StorageOption": {
+      "document": "描述集群文件系统选项",
+      "members": [
+        {
+          "document": "集群挂载CFS文件系统选项。",
+          "example": "无",
+          "member": "CFSOption",
+          "name": "CFSOptions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群挂载GooseFS文件系统选项。",
+          "example": "无",
+          "member": "GooseFSOption",
+          "name": "GooseFSOptions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群挂载GooseFSx文件系统选项。",
+          "example": "无",
+          "member": "GooseFSxOption",
+          "name": "GooseFSxOptions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "StorageOptionOverview": {
+      "document": "集群存储选项概览信息。",
+      "members": [
+        {
+          "document": "CFS存储选项概览信息列表。",
+          "example": "无",
+          "member": "CFSOptionOverview",
+          "name": "CFSOptions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "GooseFS存储选项概览信息列表。",
+          "example": "无",
+          "member": "GooseFSOptionOverview",
+          "name": "GooseFSOptions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "GooseFSx存储选项概览信息列表。",
+          "example": "无",
+          "member": "GooseFSxOptionOverview",
+          "name": "GooseFSxOptions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SystemDisk": {
+      "document": "描述了操作系统所在块设备即系统盘的信息",
+      "members": [
+        {
+          "document": "系统盘类型。系统盘类型限制详见存储概述。取值范围：\nCLOUD_BASIC：普通云硬盘\nCLOUD_SSD：SSD云硬盘\nCLOUD_PREMIUM：高性能云硬盘\n\n默认取值：当前有库存的硬盘类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_BASIC",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "系统盘大小，单位：GB。默认值为 50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Tag": {
+      "document": "标签键值对。",
+      "members": [
+        {
+          "document": "标签键",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签值",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VirtualPrivateCloud": {
+      "document": "描述了VPC相关信息",
+      "members": [
+        {
+          "document": "私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

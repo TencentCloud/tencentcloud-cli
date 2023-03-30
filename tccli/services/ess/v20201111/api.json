@@ -2350,7 +2350,7 @@
           "type": "object"
         },
         {
-          "document": "身份证件类型:\nID_CARD 身份证\nPASSPORT 护照\nHONGKONG_AND_MACAO 香港身份\nFOREIGN_ID_CARD 国外身份\nHONGKONG_MACAO_AND_TAIWAN 港台身份",
+          "document": "身份证件类型:\nID_CARD 身份证\nPASSPORT 护照\nHONGKONG_AND_MACAO 中国香港\nFOREIGN_ID_CARD 境外身份\nHONGKONG_MACAO_AND_TAIWAN 中国台湾",
           "example": "无",
           "member": "string",
           "name": "IdCardType",
