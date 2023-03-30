@@ -1079,7 +1079,7 @@
       "status": "online"
     },
     "DeleteVpnGatewayRoutes": {
-      "document": "本接口（DeleteVpnGatewayCcnRoutes）用于删除VPN网关路由",
+      "document": "本接口（DeleteVpnGatewayRoutes）用于删除VPN网关路由",
       "input": "DeleteVpnGatewayRoutesRequest",
       "name": "删除VPN网关路由",
       "output": "DeleteVpnGatewayRoutesResponse",
@@ -1212,7 +1212,7 @@
       "status": "online"
     },
     "DescribeCrossBorderCcnRegionBandwidthLimits": {
-      "document": "本接口（DescribeCrossBorderCcnRegionBandwidthLimits）用于获取要锁定的限速实例列表。\n该接口一般用来封禁地域间限速的云联网实例下的限速实例, 目前联通内部运营系统通过云API调用, 如果是出口限速, 一般使用更粗的云联网实例粒度封禁（DescribeTenantCcns）\n如有需要, 可以封禁任意限速实例, 可接入到内部运营系统\n",
+      "document": "本接口（DescribeCrossBorderCcnRegionBandwidthLimits）用于获取要锁定的限速实例列表。\n该接口一般用来封禁地域间限速的云联网实例下的限速实例, 目前联通内部运营系统通过云API调用, 如果是出口限速, 一般使用更粗的云联网实例粒度封禁（DescribeTenantCcns）\n如有需要, 可以封禁任意限速实例, 可接入到内部运营系统",
       "input": "DescribeCrossBorderCcnRegionBandwidthLimitsRequest",
       "name": "查询云联网跨境限速实例",
       "output": "DescribeCrossBorderCcnRegionBandwidthLimitsResponse",
@@ -2003,14 +2003,14 @@
       "status": "online"
     },
     "DescribeVpnGatewayCcnRoutes": {
-      "document": "本接口（DescribeVpnGatewayCcnRoutes）用于查询VPN网关云联网路由",
+      "document": "本接口（DescribeVpnGatewayCcnRoutes）用于查询VPN网关云联网路由。",
       "input": "DescribeVpnGatewayCcnRoutesRequest",
       "name": "查询VPN网关云联网路由",
       "output": "DescribeVpnGatewayCcnRoutesResponse",
       "status": "online"
     },
     "DescribeVpnGatewayRoutes": {
-      "document": "查询路由型VPN网关的目的路由",
+      "document": "本接口（DescribeVpnGatewayRoutes）用于查询VPN网关路由。",
       "input": "DescribeVpnGatewayRoutesRequest",
       "name": "查询VPN网关路由",
       "output": "DescribeVpnGatewayRoutesResponse",
@@ -2654,14 +2654,14 @@
       "status": "online"
     },
     "ModifyVpnGatewayCcnRoutes": {
-      "document": "本接口（ModifyVpnGatewayCcnRoutes）用于修改VPN网关云联网路由",
+      "document": "本接口（ModifyVpnGatewayCcnRoutes）用于修改VPN网关云联网路由。",
       "input": "ModifyVpnGatewayCcnRoutesRequest",
       "name": "修改VPN网关云联网路由",
       "output": "ModifyVpnGatewayCcnRoutesResponse",
       "status": "online"
     },
     "ModifyVpnGatewayRoutes": {
-      "document": "修改VPN路由是否启用",
+      "document": "本接口（ModifyVpnGatewayRoutes）用于修改VPN路由是否启用。",
       "input": "ModifyVpnGatewayRoutesRequest",
       "name": "修改VPN路由状态",
       "output": "ModifyVpnGatewayRoutesResponse",
@@ -2843,7 +2843,7 @@
       "status": "online"
     },
     "SetVpnGatewaysRenewFlag": {
-      "document": "设置VPNGW续费标记",
+      "document": "本接口（SetVpnGatewaysRenewFlag）用于设置VPNGW续费标记。",
       "input": "SetVpnGatewaysRenewFlagRequest",
       "name": "设置VPNGW续费标记",
       "output": "SetVpnGatewaysRenewFlagResponse",
@@ -5429,31 +5429,31 @@
       "document": "AuditCrossBorderCompliance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务商, 可选值：`UNICOM`。",
           "example": "UNICOM",
           "member": "string",
           "name": "ServiceProvider",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "表单唯一`ID`。",
+          "document": "表单唯一`ID`。可通过[DescribeCrossBorderCompliance](https://cloud.tencent.com/document/product/215/47838)接口查询ComplianceId信息",
           "example": "10006",
           "member": "uint64",
           "name": "ComplianceId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "通过：`APPROVED `，拒绝：`DENY`。",
           "example": "DENY",
           "member": "string",
           "name": "AuditBehavior",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6028,6 +6028,132 @@
       ],
       "usage": "out"
     },
+    "CcnBandwidth": {
+      "document": "用于描述云联网地域间限速带宽实例的信息。",
+      "members": [
+        {
+          "document": "带宽所属的云联网ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "实例的过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "带宽实例的唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionFlowControlId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "带宽是否自动续费的标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CcnRegionBandwidthLimitInfo",
+          "name": "CcnRegionBandwidthLimit",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "云市场实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MarketId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "实例所属用户主账号ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserAccountID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "是否跨境，`true`表示跨境，反之不跨境。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsCrossBorder",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "`true`表示封禁，地域间流量不通，`false`解禁，地域间流量正常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsSecurityLock",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "`POSTPAID`表示后付费，`PREPAID`表示预付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "实例更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "CcnBandwidthInfo": {
       "document": "用于描述云联网地域间限速带宽实例的信息。",
       "members": [
@@ -6256,6 +6382,11 @@
         }
       ],
       "usage": "both"
+    },
+    "CcnRegionBandwidthLimitInfo": {
+      "document": "云联网（CCN）地域出带宽上限。",
+      "members": [],
+      "usage": "out"
     },
     "CcnRoute": {
       "document": "CCN路由策略对象",
@@ -10543,22 +10674,22 @@
       "document": "CreateVpnGatewayRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPN网关的ID",
           "example": "vpn-ngenl4az",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "VPN网关目的路由列表",
           "example": "无",
           "member": "VpnGatewayRoute",
           "name": "Routes",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10571,9 +10702,9 @@
           "example": "无",
           "member": "VpnGatewayRoute",
           "name": "Routes",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13139,22 +13270,22 @@
       "document": "DeleteVpnGatewayRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPN网关实例ID",
           "example": "vpngw-12345678",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "路由ID信息列表",
+          "document": "路由ID信息列表，可以通过[DescribeVpnGatewayRoutes](https://cloud.tencent.com/document/api/215/57676)接口查询。",
           "example": "[\"xxx-xxxx\\n\",\"xxx-xxxx\\n\"]",
           "member": "string",
           "name": "RouteIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13823,7 +13954,6 @@
       "document": "DescribeCcnAttachedInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -13833,7 +13963,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量",
           "example": "20",
           "member": "uint64",
@@ -13843,7 +13972,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件：\n<li>ccn-id - String -（过滤条件）CCN实例ID。</li>\n<li>instance-type - String -（过滤条件）关联实例类型。</li>\n<li>instance-region - String -（过滤条件）关联实例所属地域。</li>\n<li>instance-id - String -（过滤条件）关联实例实例ID。</li>",
           "example": "无",
           "member": "Filter",
@@ -13853,7 +13981,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云联网实例ID",
           "example": "ccn-245ecr35",
           "member": "string",
@@ -13863,8 +13990,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。",
+          "document": "排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`",
           "example": "CcnId",
           "member": "string",
           "name": "OrderField",
@@ -13873,8 +13999,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "排序方法。升序：`ASC`，倒序：`DESC`。",
+          "document": "排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`",
           "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
@@ -13893,7 +14018,6 @@
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -13903,7 +14027,6 @@
           "example": "无",
           "member": "CcnAttachedInstance",
           "name": "InstanceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -14074,7 +14197,7 @@
           "visibility": 1
         },
         {
-          "document": "排序字段。支持：`CcnId` `CcnName` `CreateTime` `State` `QosLevel`",
+          "document": "排序字段。支持：`CcnId` `CcnName` `CreateTime` `State` `QosLevel`。默认值: `CreateTime`",
           "example": "CcnName",
           "member": "string",
           "name": "OrderField",
@@ -14083,7 +14206,7 @@
           "visibility": 1
         },
         {
-          "document": "排序方法。升序：`ASC`，倒序：`DESC`。",
+          "document": "排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`",
           "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
@@ -14189,12 +14312,58 @@
     },
     "DescribeCrossBorderCcnRegionBandwidthLimitsRequest": {
       "document": "DescribeCrossBorderCcnRegionBandwidthLimits请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "document": "过滤条件，目前`value`值个数只支持一个，可支持的字段有：\n<li>`source-region` 源地域，值形如：`[\"ap-guangzhou\"]`</li> <li>`destination-region` 目的地域，值形如：`[\"ap-shanghai\"]`</li> <li>`ccn-ids` 云联网ID数组，值形如：`[\"ccn-12345678\"]`</li> <li>`user-account-id` 用户账号ID，值形如`[\"12345678\"]`</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "偏移量，默认0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "单页返回数据量可选值0到100之间的整数，默认20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "DescribeCrossBorderCcnRegionBandwidthLimitsResponse": {
       "document": "DescribeCrossBorderCcnRegionBandwidthLimits返回参数结构体",
       "members": [
+        {
+          "document": "符合条件的对象总数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "云联网地域间限速带宽实例的信息。",
+          "example": "无",
+          "member": "CcnBandwidth",
+          "name": "CcnBandwidthSet",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14519,36 +14688,40 @@
       "document": "DescribeCustomerGateways请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。",
+          "example": "cgw-2wqq41m9",
           "member": "string",
           "name": "CustomerGatewayIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。\n<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>\n<li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>\n<li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>",
+          "example": "null",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -14557,18 +14730,22 @@
       "document": "DescribeCustomerGateways返回参数结构体",
       "members": [
         {
-          "document": "对端网关对象列表",
+          "document": "对端网关对象列表。",
+          "example": " [             {                 \"CustomerGatewayId\": \"cgw-mgp33pll\",                 \"IpAddress\": \"58.211.1.12\",                 \"CustomerGatewayName\": \"test-cgw\",                 \"CreatedTime\": \"2018-03-25 17:52:39\"             }         ]",
           "member": "CustomerGateway",
           "name": "CustomerGatewaySet",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "符合条件的实例数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -23828,28 +24005,31 @@
       "document": "DescribeVpnGatewayCcnRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "VPN网关实例ID",
+          "document": "VPN网关实例ID。",
+          "example": "vpngw-xxx",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "偏移量",
+          "document": "偏移量。默认值：0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "返回数量",
+          "document": "返回数量。默认值：20",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -23859,17 +24039,21 @@
       "members": [
         {
           "document": "云联网路由（IDC网段）列表。",
+          "example": "null",
           "member": "VpngwCcnRoutes",
           "name": "RouteSet",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "符合条件的对象数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -23884,40 +24068,40 @@
       "document": "DescribeVpnGatewayRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "VPN网关的ID",
-          "example": "vpn-ngenl4az",
+          "document": "VPN网关实例ID。",
+          "example": "vpngw-ngenl4az",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "过滤条件,  条件包括(DestinationCidr, InstanceId,InstanceType)",
+          "document": "过滤条件,  条件包括(DestinationCidr, InstanceId,InstanceType)。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "偏移量, 默认0",
+          "document": "偏移量, 默认0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "单页个数, 默认20, 最大值100",
+          "document": "单页个数, 默认20, 最大值100。",
           "example": "2",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -23926,13 +24110,22 @@
       "document": "DescribeVpnGatewayRoutes返回参数结构体",
       "members": [
         {
-          "document": "VPN网关目的路由",
+          "document": "VPN网关目的路由。",
           "example": "无",
           "member": "VpnGatewayRoute",
           "name": "Routes",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "路由条数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -27759,7 +27952,7 @@
           "visibility": 1
         },
         {
-          "document": "对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。",
+          "document": "对端网关厂商信息对象，可通过[DescribeCustomerGatewayVendors](https://cloud.tencent.com/document/api/215/17513)获取。",
           "example": "{     \"Platform\":\"comware\",     \"SoftwareVersion\":\"V1.0\",     \"VendorName\":\"h3c\" }",
           "member": "CustomerGatewayVendor",
           "name": "CustomerGatewayVendor",
@@ -30685,22 +30878,22 @@
       "document": "ModifyCcnRegionBandwidthLimitsType请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云联网实例ID。",
           "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。",
+          "document": "云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。默认值：OUTER_REGION_LIMIT。",
           "example": "OUTER_REGION_LIMIT",
           "member": "string",
           "name": "BandwidthLimitType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -32623,20 +32816,22 @@
       "document": "ModifyVpnGatewayCcnRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "VPN网关实例ID",
+          "document": "VPN网关实例ID。",
+          "example": "vpngw-qol17bja",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "云联网路由（IDC网段）列表",
+          "document": "云联网路由（IDC网段）列表。",
+          "example": "[     {       \"RouteId\": \"dcr-6t3tknmg\",       \"Status\": \"ENABLE\",       \"DestinationCidrBlock\": \"172.2.9.6/32\"     }   ]",
           "member": "VpngwCcnRoutes",
           "name": "Routes",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -32657,22 +32852,22 @@
       "document": "ModifyVpnGatewayRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "Vpn网关id",
+          "document": "VPN网关实例ID。",
           "example": "vpn-ngenl4az",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "路由修改参数",
+          "document": "路由修改参数。",
           "example": "无",
           "member": "VpnGatewayRouteModify",
           "name": "Routes",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -32685,9 +32880,9 @@
           "example": "无",
           "member": "VpnGatewayRoute",
           "name": "Routes",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -37249,8 +37444,7 @@
       "document": "SetVpnGatewaysRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "VPNGW字符型ID列表",
+          "document": "VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。",
           "example": "['vpngw-m6hhy6or']",
           "member": "string",
           "name": "VpnGatewayIds",
@@ -37259,8 +37453,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "自动续费标记[0, 1, 2]\n0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费",
+          "document": "自动续费标记 [0, 1, 2]\n0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费。",
           "example": "2",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -37269,8 +37462,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "VPNGW类型['IPSEC', 'SSL']",
+          "document": "VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。",
           "example": "IPSEC",
           "member": "string",
           "name": "Type",
@@ -55556,88 +55748,97 @@
       "usage": "out"
     },
     "VpnGatewayRoute": {
-      "document": "Vpn网关目的路由",
+      "document": "VPN网关目的路由",
       "members": [
         {
-          "default": "",
-          "document": "目的端IDC网段",
+          "document": "目的端IDC网段。",
+          "example": "无",
           "member": "string",
           "name": "DestinationCidrBlock",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "下一跳类型（关联实例类型）可选值:\"VPNCONN\"(VPN通道), \"CCN\"(CCN实例)",
+          "document": "下一跳类型（关联实例类型）可选值：\"VPNCONN\"（VPN通道）， \"CCN\"（CCN实例）。",
+          "example": "无",
           "member": "string",
           "name": "InstanceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "下一跳实例ID",
+          "document": "下一跳实例ID。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "优先级, 可选值: 0, 100",
+          "document": "优先级，可选值：0，100。",
+          "example": "无",
           "member": "int64",
           "name": "Priority",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "启用状态, 可选值: \"ENABLE\"(启用), \"DISABLE\"(禁用)",
+          "document": "启用状态，可选值：\"ENABLE\"（启用），\"DISABLE\"  (禁用)。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "路由条目ID",
+          "document": "路由条目ID。",
+          "example": "无",
           "member": "string",
           "name": "RouteId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "路由类型, 可选值: \"VPC\"(VPC路由), \"CCN\"(云联网传播路由), \"Static\"(静态路由), \"BGP\"(BGP路由)",
+          "document": "路由类型，可选值：\"VPC\"（VPC路由），\"CCN\"（云联网传播路由），\"Static\"（静态路由），\"BGP\"（BGP路由）。",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "创建时间",
+          "document": "创建时间。",
+          "example": "无",
           "member": "datetime",
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "更新时间",
+          "document": "更新时间。",
+          "example": "无",
           "member": "datetime",
           "name": "UpdateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -55646,22 +55847,24 @@
       "document": "修改VPN状态参数",
       "members": [
         {
-          "default": "",
-          "document": "Vpn网关路由ID",
+          "document": "VPN网关路由ID。",
+          "example": "无",
           "member": "string",
           "name": "RouteId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "Vpn网关状态, ENABEL 启用, DISABLE禁用",
+          "document": "VPN网关状态, ENABLE 启用, DISABLE禁用。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -55670,8 +55873,7 @@
       "document": "VPN网关云联网路由信息",
       "members": [
         {
-          "default": "",
-          "document": "路由信息ID",
+          "document": "路由信息ID。",
           "example": "xxx",
           "member": "string",
           "name": "RouteId",
@@ -55681,8 +55883,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "路由信息是否启用\nENABLE：启用该路由\nDISABLE：不启用该路由",
+          "document": "路由信息是否启用。\nENABLE：启用该路由\nDISABLE：不启用该路由",
           "example": "ENABLE",
           "member": "string",
           "name": "Status",
@@ -55692,8 +55893,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "路由CIDR",
+          "document": "路由CIDR。",
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "DestinationCidrBlock",

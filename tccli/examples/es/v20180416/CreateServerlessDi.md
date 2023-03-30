@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli es CreateServerlessDi --cli-unfold-argument  \
-    --DiSourceType xx \
-    --DiSourceCvm.VpcId xx \
-    --DiSourceCvm.CvmIds xx \
-    --DiSourceCvm.LogPaths xx \
-    --DiSourceTke.VpcId xx \
-    --DiSourceTke.TkeId xx \
-    --DiSinkServerless.ServerlessId xx
+    --DiSourceType cvm \
+    --DiSourceCvm.VpcId vpc-xxx \
+    --DiSourceCvm.CvmIds ins-xxx \
+    --DiSourceCvm.LogPaths /data \
+    --DiSourceTke.VpcId vpc-xxx \
+    --DiSourceTke.TkeId tke-xxx \
+    --DiSinkServerless.ServerlessId sid-xxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DiId": "xx",
-        "RequestId": "xx"
+        "DiId": "sid-xxx",
+        "RequestId": "xxx-xxx-xxx"
     }
 }
 ```

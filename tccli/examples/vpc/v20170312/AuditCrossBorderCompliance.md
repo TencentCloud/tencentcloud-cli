@@ -1,6 +1,6 @@
 **Example 1: 合规化审批**
 
-
+本接口（AuditCrossBorderCompliance）用于服务商操作合规化资质审批。
 
 Input: 
 

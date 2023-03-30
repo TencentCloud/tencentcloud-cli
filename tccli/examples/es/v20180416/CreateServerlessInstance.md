@@ -1,26 +1,28 @@
-**Example 1: 创建Serverless实例**
+**Example 1: 创建serverless实例**
 
-创建Serverless实例
+创建serverless实例
 
 Input: 
 
 ```
 tccli es CreateServerlessInstance --cli-unfold-argument  \
-    --SubnetId xx \
-    --IndexMetaJson xx \
-    --VpcId xx \
-    --IndexName xx \
-    --Zone xx \
-    --SpaceId xx
+    --Zone abc \
+    --VpcId abc \
+    --SubnetId abc \
+    --IndexName abc \
+    --IndexMetaJson {} \
+    --SpaceId abc \
+    --Username abc \
+    --Password abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "InstanceId": "xx",
-        "RequestId": "xx",
-        "DealName": "xx"
+        "InstanceId": "abc",
+        "DealName": "abc",
+        "RequestId": "abc"
     }
 }
 ```

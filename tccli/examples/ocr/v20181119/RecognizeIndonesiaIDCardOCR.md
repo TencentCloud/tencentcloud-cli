@@ -1,13 +1,13 @@
 **Example 1: RecognizeIndonesiaIDCardOCR**
 
-
+印尼身份证
 
 Input: 
 
 ```
 tccli ocr RecognizeIndonesiaIDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
-    --ReturnHeadImage false
+    --ReturnHeadImage false \
+    --ImageUrl https://xx/a.jpg
 ```
 
 Output: 
@@ -30,7 +30,9 @@ Output:
         "RTRW": "00/000",
         "RequestId": "0000-0000-0000-0001",
         "StatusPerkawinan": "KAWFN",
-        "TempatTglLahir": "JAKARTA 13-01-1987"
+        "TempatTglLahir": "JAKARTA 13-01-1987",
+        "Provinsi": "DKI JAKARTA",
+        "Kota": "DKI JAKARTA"
     }
 }
 ```

@@ -1,12 +1,16 @@
 **Example 1: 查询对端网关**
 
-
+查询对端网关
 
 Input: 
 
 ```
 tccli vpc DescribeCustomerGateways --cli-unfold-argument  \
-    --Version 2017-03-12
+    --CustomerGatewayIds cgw-mgp33pll \
+    --Filters.0.Name customer-gateway-name \
+    --Filters.0.Values test-cgw \
+    --Offset 1 \
+    --Limit 1
 ```
 
 Output: 

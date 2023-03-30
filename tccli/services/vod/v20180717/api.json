@@ -26460,6 +26460,16 @@
           "visibility": 1
         },
         {
+          "document": "音画质重生模版号。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "document": "画质修复控制参数。",
           "example": "无",
           "member": "RepairInfo",

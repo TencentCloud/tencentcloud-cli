@@ -379,7 +379,7 @@
       "status": "online"
     },
     "RecognizeIndonesiaIDCardOCR": {
-      "document": "印尼身份证识别",
+      "document": "印尼身份证识别\n\n默认接口请求频率限制：20次/秒。",
       "input": "RecognizeIndonesiaIDCardOCRRequest",
       "name": "印尼身份证识别",
       "output": "RecognizeIndonesiaIDCardOCRResponse",
@@ -7534,7 +7534,6 @@
       "document": "RecognizeIndonesiaIDCardOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "image",
           "member": "string",
@@ -7544,7 +7543,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -7554,7 +7552,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否返回人像照片。",
           "example": "true",
           "member": "bool",
@@ -7564,7 +7561,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "场景参数，默认值为V1\n可选值：\nV1\nV2",
           "example": "无",
           "member": "string",
@@ -7584,7 +7580,6 @@
           "example": "360XXXXXX",
           "member": "string",
           "name": "NIK",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7594,7 +7589,6 @@
           "example": "INM",
           "member": "string",
           "name": "Nama",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7604,7 +7598,6 @@
           "example": "JAKARTA 13-01-1987",
           "member": "string",
           "name": "TempatTglLahir",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7614,7 +7607,6 @@
           "example": "LAKEI",
           "member": "string",
           "name": "JenisKelamin",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7624,7 +7616,6 @@
           "example": "o",
           "member": "string",
           "name": "GolDarah",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7634,7 +7625,6 @@
           "example": "BANJARSARI",
           "member": "string",
           "name": "Alamat",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7644,7 +7634,6 @@
           "example": "00/000",
           "member": "string",
           "name": "RTRW",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7654,7 +7643,6 @@
           "example": "PAKEMBINANGUN",
           "member": "string",
           "name": "KelDesa",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7664,7 +7652,6 @@
           "example": "LAKEI",
           "member": "string",
           "name": "Kecamatan",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7674,7 +7661,6 @@
           "example": "ATHOLIK",
           "member": "string",
           "name": "Agama",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7684,7 +7670,6 @@
           "example": "KAWFN",
           "member": "string",
           "name": "StatusPerkawinan",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7694,7 +7679,6 @@
           "example": "KARYAWAN",
           "member": "string",
           "name": "Perkerjaan",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7704,7 +7688,6 @@
           "example": "INM",
           "member": "string",
           "name": "KewargaNegaraan",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7714,7 +7697,6 @@
           "example": "SEUMUR",
           "member": "string",
           "name": "BerlakuHingga",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7724,7 +7706,6 @@
           "example": "15-05-2015",
           "member": "string",
           "name": "IssuedDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -7734,7 +7715,24 @@
           "example": "无",
           "member": "string",
           "name": "Photo",
-          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "省份，Scene为V2时支持识别",
+          "example": "无",
+          "member": "string",
+          "name": "Provinsi",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "城市，Scene为V2时支持识别",
+          "example": "无",
+          "member": "string",
+          "name": "Kota",
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

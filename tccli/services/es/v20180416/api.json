@@ -70,6 +70,13 @@
       "output": "DeleteLogstashPipelinesResponse",
       "status": "online"
     },
+    "DeleteServerlessDi": {
+      "document": "删除serverless数据接入",
+      "input": "DeleteServerlessDiRequest",
+      "name": "删除serverless数据接入",
+      "output": "DeleteServerlessDiResponse",
+      "status": "online"
+    },
     "DescribeIndexList": {
       "document": "获取索引列表",
       "input": "DescribeIndexListRequest",
@@ -1291,7 +1298,6 @@
       "document": "CreateServerlessDi请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "数据源类型，可选cvm_collector、tke_collector",
           "example": "cvm_collector",
           "member": "string",
@@ -1301,7 +1307,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "serverless目的端",
           "example": "无",
           "member": "DiSinkServerless",
@@ -1311,7 +1316,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "cvm数据源",
           "example": "无",
           "member": "DiSourceCvm",
@@ -1321,7 +1325,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "tke数据源",
           "example": "无",
           "member": "DiSourceTke",
@@ -1329,6 +1332,24 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "document": "serverless目的端索引ID",
+          "example": "index-xxxxxxxx",
+          "member": "string",
+          "name": "ServerlessId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "cdw数据源（cvm）",
+          "example": "无",
+          "member": "DiSourceCvmCdw",
+          "name": "DiSourceCvmCdw",
+          "required": false,
+          "type": "object",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -1341,7 +1362,6 @@
           "example": "sdi-xxxx",
           "member": "string",
           "name": "DiId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1359,7 +1379,6 @@
       "document": "CreateServerlessInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -1369,7 +1388,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "私有网络ID",
           "example": "vpc-xxxxxx",
           "member": "string",
@@ -1379,7 +1397,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网ID",
           "example": "subnet-xxxxxx",
           "member": "string",
@@ -1389,7 +1406,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引名，需以-AppId结尾",
           "example": "test-12345678",
           "member": "string",
@@ -1399,7 +1415,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建的索引元数据JSON，如mappings、settings",
           "example": "{}",
           "member": "string",
@@ -1409,7 +1424,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建索引的空间ID",
           "example": "space-xxxxxxxx",
           "member": "string",
@@ -1419,7 +1433,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建索引的用户名",
           "example": "test",
           "member": "string",
@@ -1429,7 +1442,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建索引的密码",
           "example": "test",
           "member": "string",
@@ -1439,13 +1451,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建数据接入",
           "example": "无",
           "member": "ServerlessDi",
           "name": "ServerlessDi",
           "required": false,
           "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "是否自行添加白名单ip",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoGetIp",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -1459,7 +1479,6 @@
           "example": "index-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1469,7 +1488,6 @@
           "example": "123",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1683,6 +1701,42 @@
     },
     "DeleteLogstashPipelinesResponse": {
       "document": "DeleteLogstashPipelines返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServerlessDiRequest": {
+      "document": "DeleteServerlessDi请求参数结构体",
+      "members": [
+        {
+          "document": "数据接入id",
+          "example": "sdi-xxxx",
+          "member": "string",
+          "name": "DiId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "serverless目的端索引id",
+          "example": "index-xxxxxxxx",
+          "member": "string",
+          "name": "ServerlessId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServerlessDiResponse": {
+      "document": "DeleteServerlessDi返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3128,6 +3182,16 @@
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "数据接入类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm_collector",
+          "member": "string",
+          "name": "DiDataSourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3430,6 +3494,32 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "DiSourceCvmCdw": {
+      "document": "serverless索引数据cdw接入数据源",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "document": "vpc id",
+          "example": "vpc-xxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "cdw集群id",
+          "example": "cdwss-xxxxx",
+          "member": "string",
+          "name": "CdwId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "usage": "in"
@@ -6883,7 +6973,6 @@
       "document": "索引元数据字段",
       "members": [
         {
-          "default": "",
           "document": "索引所属集群APP ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10004222",
           "member": "uint64",
@@ -6894,7 +6983,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -6905,7 +6993,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引文档数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -6916,7 +7003,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引存储大小，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "int64",
@@ -6927,7 +7013,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-01 10:00:00",
           "member": "string",
@@ -6938,7 +7023,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "index-abcdefgh",
           "member": "string",
@@ -6949,7 +7033,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引自治字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServerlessIndexOptionsField",
@@ -6960,7 +7043,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引配置字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServerlessIndexSettingsField",
@@ -6971,7 +7053,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引所属连接相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServerlessIndexNetworkField",
@@ -6982,7 +7063,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Kibana公网域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6993,7 +7073,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Kibana内网域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -7004,7 +7083,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -7015,7 +7093,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Kibana外网访问控制配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EsAcl",
@@ -7026,7 +7103,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -7037,7 +7113,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -7048,7 +7123,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引空间名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -7059,7 +7133,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引关联的数据链路列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiData",
@@ -7070,13 +7143,22 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引用户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Username",
           "required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "StorageType",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -7446,25 +7528,27 @@
       "document": "实例标签信息",
       "members": [
         {
-          "default": "",
           "document": "标签键",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "标签值",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TaskDetail": {
       "document": "实例操作记录中的流程任务信息",

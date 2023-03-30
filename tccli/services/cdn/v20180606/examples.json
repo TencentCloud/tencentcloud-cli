@@ -10,16 +10,10 @@
     ],
     "AddCdnDomain": [
       {
-        "document": "",
+        "document": "新增加速域名",
         "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCdnDomain\n<公共请求参数>\n\n{\n    \"Origin\": {\n        \"OriginType\": \"ip\",\n        \"Origins\": [\n            \"1.1.1.1\"\n        ]\n    },\n    \"ProjectId\": \"0\",\n    \"Domain\": \"www.test.com\",\n    \"ServiceType\": \"web\",\n    \"Area\": \"mainland\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4ac88a3-a159-47ac-9b87-19185d7deb09\"\n    }\n}",
         "title": "新增加速域名"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCdnDomain\n<公共请求参数>\n\n{\n    \"Origin\": {\n        \"OriginPullProtocol\": \"http\",\n        \"ServerName\": \"test04.lukachen.work\",\n        \"OriginType\": \"domain\",\n        \"Origins\": [\n            \"www.baidu.com\"\n        ]\n    },\n    \"ProjectId\": \"0\",\n    \"ServiceType\": \"web\",\n    \"Domain\": \"test04.lukachen.work\",\n    \"Area\": \"mainland\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"281e0d75-d2df-4039-bad2-79c0f753baf9\"\n    }\n}",
-        "title": "bennyddeng-test"
       }
     ],
     "CreateClsLogTopic": [
@@ -608,16 +602,10 @@
     ],
     "UpdateDomainConfig": [
       {
-        "document": "",
+        "document": "更新域名配置",
         "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDomainConfig\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"Domain\": \"www.test.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c17\"\n    }\n}",
         "title": "更新域名配置"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDomainConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"test02.lukachen.work\",\n    \"HttpsBilling\": {\n        \"Switch\": \"on\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"283d5206-8768-4322-8a68-8c1d09afcdff\"\n    }\n}",
-        "title": "bennyddeng-test"
       }
     ],
     "UpdateImageConfig": [

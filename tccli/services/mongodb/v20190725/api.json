@@ -2147,129 +2147,143 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。",
           "example": "cmgo-hcscymcl",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例类型，取值范围：0-所有实例,1-正式实例，2-临时实例, 3-只读实例，-1-正式实例+只读+灾备实例",
+          "document": "实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>2：临时实例。</li><li>3：只读实例。</li><li>-1：正式实例、只读、灾备实例。</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "InstanceType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "集群类型，取值范围：0-副本集实例，1-分片实例，-1-所有实例",
+          "document": "集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：所有实例。</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "ClusterType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-已隔离（包年包月实例），-3-已隔离（按量计费实例）",
+          "document": "实例状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程执行中。</li><li>2：实例有效。</li><li>-2：已隔离（包年包月实例）。</li><li>-3：已隔离（按量计费实例）。</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "Status",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "私有网络的ID，基础网络则不传该参数",
+          "document": "私有网络的ID，基础网络则不传该参数。",
           "example": "1",
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId",
+          "document": "私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId。",
           "example": "1",
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "付费类型，取值范围：0-按量计费，1-包年包月，-1-按量计费+包年包月",
+          "document": "付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "单次请求返回的数量，最小值为1，最大值为100，默认值为20",
+          "document": "单次请求返回的数量。默认值为20，取值范围为[1,100]。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "偏移量，默认值为0",
+          "document": "偏移量，默认值为0。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "返回结果集排序的字段，目前支持：\"ProjectId\", \"InstanceName\", \"CreateTime\"，默认为升序排序",
+          "document": "返回结果集排序的字段，目前支持：\"ProjectId\"、\"InstanceName\"、\"CreateTime\"，默认为升序排序。",
           "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "返回结果集排序方式，目前支持：\"ASC\"或者\"DESC\"",
+          "document": "返回结果集排序方式，目前支持：\"ASC\"或者\"DESC\"。",
           "example": "无",
           "member": "string",
           "name": "OrderByType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "项目 ID",
+          "document": "项目 ID。",
           "example": "无",
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "搜索关键词，支持实例ID、实例名称、完整IP",
+          "document": "搜索关键词，支持实例ID、实例名称、完整IP。",
           "example": "无",
           "member": "string",
           "name": "SearchKey",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "Tag信息",
+          "document": "Tag信息。",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "required": false,
-          "type": "object"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2278,22 +2292,24 @@
       "document": "DescribeDBInstances返回参数结构体",
       "members": [
         {
-          "document": "符合查询条件的实例总数",
+          "document": "符合查询条件的实例总数。",
           "example": "19",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "实例详细信息列表",
+          "document": "实例详细信息列表。",
           "example": "无",
           "member": "InstanceDetail",
           "name": "InstanceDetails",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3018,6 +3034,7 @@
       "document": "实例详情",
       "members": [
         {
+          "default": "",
           "document": "实例ID。",
           "example": "cmgo-7pjedvz7",
           "member": "string",
@@ -3028,6 +3045,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例名称。",
           "example": "test-instance",
           "member": "string",
@@ -3038,6 +3056,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "付费类型，可能的返回值：1-包年包月；0-按量计费",
           "example": "1",
           "member": "uint64",
@@ -3048,6 +3067,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "项目ID。",
           "example": "无",
           "member": "uint64",
@@ -3058,6 +3078,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "集群类型，可能的返回值：0-副本集实例，1-分片实例。",
           "example": "1",
           "member": "uint64",
@@ -3068,6 +3089,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "地域信息。",
           "example": "无",
           "member": "string",
@@ -3078,6 +3100,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "可用区信息。",
           "example": "无",
           "member": "string",
@@ -3088,6 +3111,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "网络类型，可能的返回值：0-基础网络，1-私有网络",
           "example": "1",
           "member": "uint64",
@@ -3098,6 +3122,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "私有网络的ID。",
           "example": "vpc-0vjmgwtn",
           "member": "string",
@@ -3108,6 +3133,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "私有网络的子网ID。",
           "example": "subnet-emtfpj2o",
           "member": "string",
@@ -3118,6 +3144,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期。",
           "example": "2",
           "member": "int64",
@@ -3128,6 +3155,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例IP。",
           "example": "10.100.0.0",
           "member": "string",
@@ -3138,6 +3166,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "端口号。",
           "example": "27017",
           "member": "uint64",
@@ -3148,6 +3177,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例创建时间。",
           "example": "2010-07-25 18:00:00",
           "member": "datetime",
@@ -3158,6 +3188,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例到期时间。",
           "example": "2010-07-25 20:00:00",
           "member": "datetime",
@@ -3168,6 +3199,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例版本信息。",
           "example": "MONGO_42_WT",
           "member": "string",
@@ -3178,6 +3210,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例内存规格，单位为MB。",
           "example": "4",
           "member": "uint64",
@@ -3188,6 +3221,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例磁盘规格，单位为MB。",
           "example": "120",
           "member": "uint64",
@@ -3198,6 +3232,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例CPU核心数。",
           "example": "2",
           "member": "uint64",
@@ -3208,6 +3243,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例机器类型。",
           "example": "HIO10G",
           "member": "string",
@@ -3218,6 +3254,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例从节点数。",
           "example": "2",
           "member": "uint64",
@@ -3228,6 +3265,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例分片数。",
           "example": "3",
           "member": "uint64",
@@ -3238,6 +3276,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。",
           "example": "0",
           "member": "int64",
@@ -3248,6 +3287,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "已用容量，单位MB。",
           "example": "100",
           "member": "uint64",
@@ -3258,6 +3298,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "维护窗口起始时间。",
           "example": "04:00:00",
           "member": "string",
@@ -3268,6 +3309,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "维护窗口结束时间。",
           "example": "05:00:00",
           "member": "string",
@@ -3278,6 +3320,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "分片信息。",
           "example": "无",
           "member": "ShardInfo",
@@ -3288,6 +3331,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "只读实例信息。",
           "example": "无",
           "member": "DBInstanceInfo",
@@ -3298,6 +3342,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "灾备实例信息。",
           "example": "无",
           "member": "DBInstanceInfo",
@@ -3308,6 +3353,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "临时实例信息。",
           "example": "无",
           "member": "DBInstanceInfo",
@@ -3318,6 +3364,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息。",
           "example": "无",
           "member": "DBInstanceInfo",
@@ -3328,6 +3375,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例标签信息集合。",
           "example": "无",
           "member": "TagInfo",
@@ -3338,6 +3386,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例版本标记。",
           "example": "4",
           "member": "uint64",
@@ -3348,6 +3397,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例版本标记。",
           "example": "1",
           "member": "uint64",
@@ -3358,6 +3408,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "协议信息，可能的返回值：1-mongodb，2-dynamodb。",
           "example": "0",
           "member": "uint64",
@@ -3368,6 +3419,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例类型，可能的返回值，1-正式实例，2-临时实例，3-只读实例，4-灾备实例",
           "example": "1",
           "member": "uint64",
@@ -3378,6 +3430,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例状态描述",
           "example": "运行中",
           "member": "string",
@@ -3388,6 +3441,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取",
           "example": "cmgo-8go1o9xl",
           "member": "string",
@@ -3398,6 +3452,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "实例当前任务描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3408,6 +3463,7 @@
           "visibility": 2
         },
         {
+          "default": "",
           "document": "mongos节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
@@ -3418,6 +3474,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "mongos节点内存。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
@@ -3428,6 +3485,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "mongos节点CPU核数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3438,6 +3496,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "Config Server节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
@@ -3448,6 +3507,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "Config Server节点内存。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
@@ -3458,6 +3518,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "Config Server节点磁盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "uint64",
@@ -3468,6 +3529,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "Config Server节点CPU核数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -3478,6 +3540,7 @@
           "visibility": 1
         },
         {
+          "default": "",
           "document": "readonly节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",

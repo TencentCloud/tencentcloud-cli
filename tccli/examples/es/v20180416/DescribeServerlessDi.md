@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli es DescribeServerlessDi --cli-unfold-argument  \
-    --ServerlessId xx \
-    --DiIds xx \
+    --ServerlessId index-xxx \
+    --DiIds id-xx \
     --Offset 0 \
     --Limit 0 \
-    --OrderBy xx \
-    --Order xx
+    --OrderBy desc \
+    --Order 1
 ```
 
 Output: 
@@ -20,33 +20,35 @@ Output:
     "Response": {
         "DiDataList": [
             {
-                "DiId": "xx",
-                "CreateTime": "xx",
+                "DiId": "id-xx",
+                "CreateTime": "xx-xx",
                 "Status": 0,
                 "DiDataSourceCvm": {
-                    "VpcId": "xx",
+                    "VpcId": "vpc-xx",
+                    "CollectorId": "co-xx",
                     "LogPaths": [
-                        "xx"
+                        "/data"
                     ],
                     "CvmInstances": [
                         {
-                            "InstanceId": "xx",
-                            "VpcId": "xx",
-                            "SubnetId": "xx",
-                            "ErrMsg": "xx"
+                            "InstanceId": "ins-xx",
+                            "VpcId": "vpc-xx",
+                            "SubnetId": "subnet-xx",
+                            "ErrMsg": "err-xx"
                         }
                     ]
                 },
                 "DiDataSourceTke": {
-                    "VpcId": "xx"
+                    "VpcId": "vpc-xx",
+                    "CollectorId": "co-xx"
                 },
                 "DiDataSinkServerless": {
-                    "ServerlessId": "xx"
+                    "ServerlessId": "index-xx"
                 }
             }
         ],
         "TotalCount": 0,
-        "RequestId": "xx"
+        "RequestId": "xx-xx"
     }
 }
 ```

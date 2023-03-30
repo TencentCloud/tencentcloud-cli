@@ -27,17 +27,17 @@
     "CreateServerlessDi": [
       {
         "document": "创建cvm数据接入",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessDi\n<公共请求参数>\n\n{\n    \"DiSourceType\": \"xx\",\n    \"DiSourceCvm\": {\n        \"VpcId\": \"xx\",\n        \"CvmIds\": [\n            \"xx\"\n        ],\n        \"LogPaths\": [\n            \"xx\"\n        ]\n    },\n    \"DiSourceTke\": {\n        \"VpcId\": \"xx\",\n        \"TkeId\": \"xx\"\n    },\n    \"DiSinkServerless\": {\n        \"ServerlessId\": \"xx\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"DiId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessDi\n<公共请求参数>\n\n{\n    \"DiSourceType\": \"cvm\",\n    \"DiSourceCvm\": {\n        \"VpcId\": \"vpc-xxx\",\n        \"CvmIds\": [\n            \"ins-xxx\"\n        ],\n        \"LogPaths\": [\n            \"/data\"\n        ]\n    },\n    \"DiSourceTke\": {\n        \"VpcId\": \"vpc-xxx\",\n        \"TkeId\": \"tke-xxx\"\n    },\n    \"DiSinkServerless\": {\n        \"ServerlessId\": \"sid-xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DiId\": \"sid-xxx\",\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
         "title": "创建cvm数据接入"
       }
     ],
     "CreateServerlessInstance": [
       {
-        "document": "创建Serverless实例",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessInstance\n<公共请求参数>\n\n{\n    \"SubnetId\": \"xx\",\n    \"IndexMetaJson\": \"xx\",\n    \"VpcId\": \"xx\",\n    \"IndexName\": \"xx\",\n    \"Zone\": \"xx\",\n    \"SpaceId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"DealName\": \"xx\"\n    }\n}",
-        "title": "创建Serverless实例"
+        "document": "创建serverless实例",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"abc\",\n    \"VpcId\": \"abc\",\n    \"SubnetId\": \"abc\",\n    \"IndexName\": \"abc\",\n    \"IndexMetaJson\": \"{}\",\n    \"SpaceId\": \"abc\",\n    \"Username\": \"abc\",\n    \"Password\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"abc\",\n        \"DealName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建serverless实例"
       }
     ],
     "CreateServerlessSpace": [
@@ -78,6 +78,14 @@
         "input": "https://es.tencentcloudapi.com/?Action=DeleteLogstashPipelines\n&InstanceId=ls-xxxxxxxx\n&PipelineIds.0=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
         "title": "删除Logstash管道"
+      }
+    ],
+    "DeleteServerlessDi": [
+      {
+        "document": "删除serverless数据接入",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServerlessDi\n<公共请求参数>\n\n{\n    \"DiId\": \"id-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx-xx-xx\"\n    }\n}",
+        "title": "删除serverless数据接入"
       }
     ],
     "DescribeIndexList": [
@@ -163,8 +171,8 @@
     "DescribeServerlessDi": [
       {
         "document": "查询serverless数据接入",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessDi\n<公共请求参数>\n\n{\n    \"ServerlessId\": \"xx\",\n    \"DiIds\": [\n        \"xx\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"OrderBy\": \"xx\",\n    \"Order\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DiDataList\": [\n            {\n                \"DiId\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"Status\": 0,\n                \"DiDataSourceCvm\": {\n                    \"VpcId\": \"xx\",\n                    \"LogPaths\": [\n                        \"xx\"\n                    ],\n                    \"CvmInstances\": [\n                        {\n                            \"InstanceId\": \"xx\",\n                            \"VpcId\": \"xx\",\n                            \"SubnetId\": \"xx\",\n                            \"ErrMsg\": \"xx\"\n                        }\n                    ]\n                },\n                \"DiDataSourceTke\": {\n                    \"VpcId\": \"xx\"\n                },\n                \"DiDataSinkServerless\": {\n                    \"ServerlessId\": \"xx\"\n                }\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessDi\n<公共请求参数>\n\n{\n    \"ServerlessId\": \"index-xxx\",\n    \"DiIds\": [\n        \"id-xx\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"OrderBy\": \"desc\",\n    \"Order\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DiDataList\": [\n            {\n                \"DiId\": \"id-xx\",\n                \"CreateTime\": \"xx-xx\",\n                \"Status\": 0,\n                \"DiDataSourceCvm\": {\n                    \"VpcId\": \"vpc-xx\",\n                    \"CollectorId\": \"co-xx\",\n                    \"LogPaths\": [\n                        \"/data\"\n                    ],\n                    \"CvmInstances\": [\n                        {\n                            \"InstanceId\": \"ins-xx\",\n                            \"VpcId\": \"vpc-xx\",\n                            \"SubnetId\": \"subnet-xx\",\n                            \"ErrMsg\": \"err-xx\"\n                        }\n                    ]\n                },\n                \"DiDataSourceTke\": {\n                    \"VpcId\": \"vpc-xx\",\n                    \"CollectorId\": \"co-xx\"\n                },\n                \"DiDataSinkServerless\": {\n                    \"ServerlessId\": \"index-xx\"\n                }\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx-xx\"\n    }\n}",
         "title": "查询serverless数据接入"
       }
     ],

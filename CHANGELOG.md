@@ -1,3 +1,208 @@
+# Release 3.0.735.1
+
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 43 次发布
+
+发布时间：2023-03-31 01:11:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddCdnDomain](http://document.tencentcloudapi.woa.com/document/product/228/41123)
+
+	* 新增入参：OthersPrivateAccess
+
+* [UpdateDomainConfig](http://document.tencentcloudapi.woa.com/document/product/228/41116)
+
+	* 新增入参：OthersPrivateAccess
+
+
+新增数据结构：
+
+* [OthersPrivateAccess](http://document.tencentcloudapi.woa.com/document/product/228/30987#OthersPrivateAccess)
+
+修改数据结构：
+
+* [DetailDomain](http://document.tencentcloudapi.woa.com/document/product/228/30987#DetailDomain)
+
+	* 新增成员：OthersPrivateAccess
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 36 次发布
+
+发布时间：2023-03-31 01:13:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckLBHealthSourceIP](http://document.tencentcloudapi.woa.com/document/product/214/77400)
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 52 次发布
+
+发布时间：2023-03-31 01:16:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/77401)
+
+新增数据结构：
+
+* [BashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/19867#BashEventsInfoNew)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 27 次发布
+
+发布时间：2023-03-31 01:24:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77402)
+
+修改接口：
+
+* [CreateServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77396)
+
+	* 新增入参：ServerlessId, DiSourceCvmCdw
+
+* [CreateServerlessInstance](http://document.tencentcloudapi.woa.com/document/product/845/77395)
+
+	* 新增入参：AutoGetIp
+
+
+新增数据结构：
+
+* [DiSourceCvmCdw](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceCvmCdw)
+
+修改数据结构：
+
+* [DiData](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiData)
+
+	* 新增成员：DiDataSourceType
+
+* [ServerlessIndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexMetaField)
+
+	* 新增成员：StorageType
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 18 次发布
+
+发布时间：2023-03-31 01:30:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/240/38568)
+
+	* <font color="#dd0000">**修改入参**：</font>Tags
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 47 次发布
+
+发布时间：2023-03-31 01:32:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RecognizeIndonesiaIDCardOCR](http://document.tencentcloudapi.woa.com/document/product/866/74931)
+
+	* 新增出参：Provinsi, Kota
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 54 次发布
+
+发布时间：2023-03-31 01:46:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RebuildMediaTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTaskInput)
+
+	* 新增成员：Definition
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 75 次发布
+
+发布时间：2023-03-31 01:47:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCrossBorderCcnRegionBandwidthLimits](http://document.tencentcloudapi.woa.com/document/product/215/71325)
+
+	* 新增入参：Filters, Offset, Limit
+
+	* 新增出参：TotalCount, CcnBandwidthSet
+
+* [DescribeVpnGatewayRoutes](http://document.tencentcloudapi.woa.com/document/product/215/57676)
+
+	* 新增出参：TotalCount
+
+
+新增数据结构：
+
+* [CcnBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnBandwidth)
+* [CcnRegionBandwidthLimitInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnRegionBandwidthLimitInfo)
+
+
+
 # Release 3.0.734.1
 
 ## 主机安全(cwp) 版本：2018-02-28

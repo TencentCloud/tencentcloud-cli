@@ -46,6 +46,14 @@
         "title": "绑定云主机或弹性网卡"
       }
     ],
+    "CheckLBHealthSourceIP": [
+      {
+        "document": "诊断指定负载均衡的健康检查源IP是否为VIP。",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckLBHealthSourceIP\n<公共请求参数>\n\n{\n    \"LoadBalancerIds\": [\n        \"lb-jc1z46**\",\n        \"lb-if8fml**\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b368eea-4e9d-469f-8a26-3164e8dd6f**\"\n    }\n}",
+        "title": "诊断负载均衡的健康检查源IP"
+      }
+    ],
     "CloneLoadBalancer": [
       {
         "document": "",

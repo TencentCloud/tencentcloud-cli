@@ -1,13 +1,13 @@
 **Example 1: 删除指定VPN网关路由**
 
-
+本接口（DeleteVpnGatewayRoutes）用于删除VPN网关路由
 
 Input: 
 
 ```
 tccli vpc DeleteVpnGatewayRoutes --cli-unfold-argument  \
     --VpnGatewayId vpngw-12345678 \
-    --RouteIds xxx-xxxx xxx-xxxx
+    --RouteIds vpnr-00wv1z75 vpnr-19oqx1ab
 ```
 
 Output: 
