@@ -5488,7 +5488,7 @@
           "visibility": 1
         },
         {
-          "document": "操作的资源ID列表",
+          "document": "操作的资源ID列表, 最多支持操作5个资源",
           "example": "无",
           "member": "FactoryResources",
           "name": "ResourceSet",
@@ -5533,7 +5533,7 @@
           "visibility": 1
         },
         {
-          "document": "退还原因。\n1-计费自动处理（不传时默认）\n2-退货不退款\n3-退货并退款",
+          "document": "退还原因。3-退货并退款\n暂时仅支持退货并退款, 业务可不传此参数",
           "example": "1",
           "member": "int64",
           "name": "ReturnReason",

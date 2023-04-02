@@ -6158,74 +6158,84 @@
       "document": "用于描述云联网地域间限速带宽实例的信息。",
       "members": [
         {
-          "default": "",
           "document": "带宽所属的云联网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ccn-ef5nufih",
           "member": "string",
           "name": "CcnId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2018-12-18 20:11:37",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "实例的过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-01-18 20:11:37",
           "member": "string",
           "name": "ExpiredTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽实例的唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fcr-6fda09za",
           "member": "string",
           "name": "RegionFlowControlId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽是否自动续费的标记。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CcnRegionBandwidthLimit",
           "name": "CcnRegionBandwidthLimit",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "云市场实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "MarketId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "资源绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -28923,52 +28933,58 @@
       "document": "GetCcnRegionBandwidthLimits请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "无",
           "member": "string",
           "name": "CcnId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>sregion - String - （过滤条件）源地域，形如：ap-guangzhou。</li>\n<li>dregion - String - （过滤条件）目的地域，形如：ap-shanghai-bm</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "排序条件，目前支持带宽（BandwidthLimit）和过期时间（ExpireTime）",
+          "document": "排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。",
+          "example": "无",
           "member": "string",
           "name": "SortedBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "偏移量",
+          "document": "偏移量。",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "返回数量",
+          "document": "返回数量。",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "排序方式，'ASC':升序,'DESC':降序。",
+          "document": "排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -28977,18 +28993,22 @@
       "document": "GetCcnRegionBandwidthLimits返回参数结构体",
       "members": [
         {
-          "document": "云联网（CCN）各地域出带宽带宽详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云联网（CCN）各地域出带宽详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CcnBandwidthInfo",
           "name": "CcnBandwidthSet",
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "符合条件的对象数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -29564,22 +29584,24 @@
       "document": "预付费（包年包月）计费对象。",
       "members": [
         {
-          "default": "",
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36。",
+          "example": "无",
           "member": "uint64",
           "name": "Period",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "自动续费标识。取值范围： NOTIFY_AND_AUTO_RENEW：通知过期且自动续费， NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费。默认：NOTIFY_AND_MANUAL_RENEW",
+          "document": "自动续费标识。取值范围： NOTIFY_AND_AUTO_RENEW：通知过期且自动续费， NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费。默认：NOTIFY_AND_AUTO_RENEW",
+          "example": "无",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

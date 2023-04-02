@@ -78,11 +78,11 @@
       "status": "online"
     },
     "DriverLicenseQuery": {
-      "document": "本接口支持驾驶证信息的准确性核验，查得一致时返回驾驶证关键信息。",
+      "document": "库源服务调整，接口将做下线处理。\n\n本接口支持驾驶证信息的准确性核验，查得一致时返回驾驶证关键信息。",
       "input": "DriverLicenseQueryRequest",
       "name": "驾驶证信息查询（下线）",
       "output": "DriverLicenseQueryResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DutyPaidProofOCR": {
       "document": "本接口支持对完税证明的税号、纳税人识别号、纳税人名称、金额合计大写、金额合计小写、填发日期、税务机关、填票人等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",

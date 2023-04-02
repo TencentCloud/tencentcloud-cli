@@ -1,164 +1,68 @@
 # 本版本更新包含以下内容：
 
-## 内容分发网络 CDN(cdn) 版本：2018-06-06
+## 云服务器(cvm) 版本：2017-03-12
 
-### 第 43 次发布
+### 第 46 次发布
 
-发布时间：2023-03-31 01:11:27
+发布时间：2023-04-03 01:09:23
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改接口：
-
-* [AddCdnDomain](http://document.tencentcloudapi.woa.com/document/product/228/41123)
-
-	* 新增入参：OthersPrivateAccess
-
-* [UpdateDomainConfig](http://document.tencentcloudapi.woa.com/document/product/228/41116)
-
-	* 新增入参：OthersPrivateAccess
-
-
-新增数据结构：
-
-* [OthersPrivateAccess](http://document.tencentcloudapi.woa.com/document/product/228/30987#OthersPrivateAccess)
 
 修改数据结构：
 
-* [DetailDomain](http://document.tencentcloudapi.woa.com/document/product/228/30987#DetailDomain)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
 
-	* 新增成员：OthersPrivateAccess
-
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 36 次发布
-
-发布时间：2023-03-31 01:13:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CheckLBHealthSourceIP](http://document.tencentcloudapi.woa.com/document/product/214/77400)
+	* 新增成员：InstanceFamily, ImageType
 
 
 
-## 主机安全(cwp) 版本：2018-02-28
 
-### 第 52 次发布
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-发布时间：2023-03-31 01:16:43
+### 第 49 次发布
+
+发布时间：2023-04-03 01:15:20
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-新增接口：
-
-* [DescribeBashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/77401)
-
-新增数据结构：
-
-* [BashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/19867#BashEventsInfoNew)
-
-
-
-## Elasticsearch Service(es) 版本：2018-04-16
-
-### 第 27 次发布
-
-发布时间：2023-03-31 01:24:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DeleteServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77402)
-
-修改接口：
-
-* [CreateServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77396)
-
-	* 新增入参：ServerlessId, DiSourceCvmCdw
-
-* [CreateServerlessInstance](http://document.tencentcloudapi.woa.com/document/product/845/77395)
-
-	* 新增入参：AutoGetIp
-
-
-新增数据结构：
-
-* [DiSourceCvmCdw](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceCvmCdw)
 
 修改数据结构：
 
-* [DiData](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiData)
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
 
-	* 新增成员：DiDataSourceType
-
-* [ServerlessIndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexMetaField)
-
-	* 新增成员：StorageType
+	* 新增成员：UserData
 
 
 
 
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 18 次发布
-
-发布时间：2023-03-31 01:30:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/240/38568)
-
-	* <font color="#dd0000">**修改入参**：</font>Tags
-
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
 
 ## 文字识别(ocr) 版本：2018-11-19
 
-### 第 47 次发布
+### 第 48 次发布
 
-发布时间：2023-03-31 01:32:56
+发布时间：2023-04-03 01:22:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [RecognizeIndonesiaIDCardOCR](http://document.tencentcloudapi.woa.com/document/product/866/74931)
-
-	* 新增出参：Provinsi, Kota
+* DriverLicenseQuery
 
 
 
+## 私有网络(vpc) 版本：2017-03-12
 
-## 云点播(vod) 版本：2018-07-17
+### 第 76 次发布
 
-### 第 54 次发布
-
-发布时间：2023-03-31 01:46:21
+发布时间：2023-04-03 01:31:42
 
 本次发布包含了以下内容：
 
@@ -166,40 +70,10 @@
 
 修改数据结构：
 
-* [RebuildMediaTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTaskInput)
+* [CcnBandwidthInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnBandwidthInfo)
 
-	* 新增成员：Definition
+	* 新增成员：TagSet
 
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 75 次发布
-
-发布时间：2023-03-31 01:47:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeCrossBorderCcnRegionBandwidthLimits](http://document.tencentcloudapi.woa.com/document/product/215/71325)
-
-	* 新增入参：Filters, Offset, Limit
-
-	* 新增出参：TotalCount, CcnBandwidthSet
-
-* [DescribeVpnGatewayRoutes](http://document.tencentcloudapi.woa.com/document/product/215/57676)
-
-	* 新增出参：TotalCount
-
-
-新增数据结构：
-
-* [CcnBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnBandwidth)
-* [CcnRegionBandwidthLimitInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnRegionBandwidthLimitInfo)
 
 
 
@@ -8031,7 +7905,7 @@
 
 新增数据结构：
 
-* [[OthersPrivateAccess](http://document.tencentcloudapi.woa.com/document/product/228/30987#OthersPrivateAccess)](http://document.tencentcloudapi.woa.com/document/product/228/30987#[OthersPrivateAccess](http://document.tencentcloudapi.woa.com/document/product/228/30987#OthersPrivateAccess))
+* [OthersPrivateAccess](http://document.tencentcloudapi.woa.com/document/product/228/30987#OthersPrivateAccess)
 
 修改数据结构：
 
@@ -11673,7 +11547,7 @@
 
 新增接口：
 
-* [[CheckLBHealthSourceIP](http://document.tencentcloudapi.woa.com/document/product/214/77400)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckLBHealthSourceIP](http://document.tencentcloudapi.woa.com/document/product/214/77400)
 
 ### 第 35 次发布
 
@@ -15483,6 +15357,21 @@
 
 ## 云服务器(cvm) 版本：2017-03-12
 
+### 第 46 次发布
+
+发布时间：2023-04-03 01:09:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
+
+	* 新增成员：InstanceFamily, ImageType
+
+
 ### 第 45 次发布
 
 发布时间：2023-03-24 01:21:10
@@ -16416,11 +16305,11 @@
 
 新增接口：
 
-* [[DescribeBashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/77401)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/77401)
 
 新增数据结构：
 
-* [[BashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/19867#BashEventsInfoNew)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/19867#BashEventsInfoNew))
+* [BashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/19867#BashEventsInfoNew)
 
 ### 第 51 次发布
 
@@ -23977,7 +23866,7 @@
 
 新增接口：
 
-* [[DeleteServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77402)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77402)
 
 修改接口：
 
@@ -23992,7 +23881,7 @@
 
 新增数据结构：
 
-* [[DiSourceCvmCdw](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceCvmCdw)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[DiSourceCvmCdw](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceCvmCdw))
+* [DiSourceCvmCdw](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceCvmCdw)
 
 修改数据结构：
 
@@ -24732,6 +24621,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 49 次发布
+
+发布时间：2023-04-03 01:15:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+
+	* 新增成员：UserData
+
 
 ### 第 48 次发布
 
@@ -36207,6 +36111,18 @@
 
 
 ## 文字识别(ocr) 版本：2018-11-19
+
+### 第 48 次发布
+
+发布时间：2023-04-03 01:22:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DriverLicenseQuery
 
 ### 第 47 次发布
 
@@ -54785,6 +54701,21 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 76 次发布
+
+发布时间：2023-04-03 01:31:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CcnBandwidthInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnBandwidthInfo)
+
+	* 新增成员：TagSet
+
+
 ### 第 75 次发布
 
 发布时间：2023-03-31 01:47:26
@@ -54808,8 +54739,8 @@
 
 新增数据结构：
 
-* [[CcnBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnBandwidth)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[CcnBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnBandwidth))
-* [[CcnRegionBandwidthLimitInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnRegionBandwidthLimitInfo)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[CcnRegionBandwidthLimitInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnRegionBandwidthLimitInfo))
+* [CcnBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnBandwidth)
+* [CcnRegionBandwidthLimitInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnRegionBandwidthLimitInfo)
 
 ### 第 74 次发布
 

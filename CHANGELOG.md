@@ -1,3 +1,82 @@
+# Release 3.0.736.1
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 46 次发布
+
+发布时间：2023-04-03 01:09:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
+
+	* 新增成员：InstanceFamily, ImageType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 49 次发布
+
+发布时间：2023-04-03 01:15:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+
+	* 新增成员：UserData
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 48 次发布
+
+发布时间：2023-04-03 01:22:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DriverLicenseQuery
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 76 次发布
+
+发布时间：2023-04-03 01:31:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CcnBandwidthInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnBandwidthInfo)
+
+	* 新增成员：TagSet
+
+
+
+
 # Release 3.0.735.1
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06

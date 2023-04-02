@@ -1483,103 +1483,103 @@
       "document": "CreateInstances请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "套餐ID。",
+          "document": "套餐ID。可以通过调用 [查询套餐](https://cloud.tencent.com/document/api/1207/47575) 接口获取。",
           "example": "bundle_gen_03",
           "member": "string",
           "name": "BundleId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "镜像ID。",
+          "document": "镜像ID。可以通过调用 [查询镜像信息](https://cloud.tencent.com/document/api/1207/47689) 接口获取。",
           "example": "lhbp-g0tn7djh",
           "member": "string",
           "name": "BlueprintId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "当前实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "实例显示名称。",
           "example": "mylighthouse",
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "购买实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量",
           "example": "1",
           "member": "uint64",
           "name": "InstanceCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "可用区列表。默认为随机可用区",
           "example": "[\"ap-beijing-1\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "无",
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。",
           "example": "无",
           "member": "LoginConfiguration",
           "name": "LoginConfiguration",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "要创建的容器配置列表。",
           "example": "无",
           "member": "DockerContainerConfiguration",
           "name": "Containers",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否自动使用代金券。默认不使用。",
           "example": "false",
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1592,9 +1592,9 @@
           "example": "无",
           "member": "string",
           "name": "InstanceIdSet",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1717,13 +1717,13 @@
       "document": "DeleteBlueprints请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "镜像ID列表。镜像ID，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
           "example": "[\"lhbp-aaaabbbb\"]",
           "member": "string",
           "name": "BlueprintIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7253,13 +7253,13 @@
       "document": "TerminateDisks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-p1zflrif\"]",
           "member": "string",
           "name": "DiskIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7280,13 +7280,13 @@
       "document": "TerminateInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-ruy9d2tw\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
