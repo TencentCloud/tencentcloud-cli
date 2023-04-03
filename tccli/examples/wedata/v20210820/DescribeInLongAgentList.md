@@ -1,52 +1,55 @@
 **Example 1: 获取采集器列表**
 
-
+获取采集器列表
 
 Input: 
 
 ```
 tccli wedata DescribeInLongAgentList --cli-unfold-argument  \
-    --Status xx \
-    --PageIndex 1 \
-    --VpcId xx \
-    --PageSize 1 \
-    --ProjectId xx \
+    --AgentId abc \
+    --AgentName abc \
     --AgentType 1 \
-    --AgentName xx \
-    --AgentId xx
+    --Status abc \
+    --VpcId abc \
+    --PageIndex 1 \
+    --PageSize 1 \
+    --ProjectId abc \
+    --Like 1 \
+    --AgentTypes abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "PageIndex": 1,
-        "PageSize": 1,
         "Items": [
             {
-                "Status": "xx",
-                "AgentTotal": 1,
-                "VpcId": "xx",
-                "ExecutorGroupId": "xx",
+                "AgentId": "abc",
+                "AgentName": "abc",
+                "Status": "abc",
+                "StatusDesc": "abc",
                 "AgentType": 1,
-                "AgentGroupId": "xx",
-                "StatusDesc": "xx",
-                "Source": "xx",
-                "ExecutorGroupName": "xx",
+                "Source": "abc",
+                "VpcId": "abc",
+                "ExecutorGroupId": "abc",
+                "ExecutorGroupName": "abc",
                 "TaskCount": 1,
-                "AgentName": "xx",
-                "AgentId": "xx",
+                "AgentGroupId": "abc",
                 "CvmAgentStatusList": [
                     {
-                        "Status": "xx",
+                        "Status": "abc",
                         "Count": 1
                     }
-                ]
+                ],
+                "AgentTotal": 1,
+                "LifeDays": 0
             }
         ],
-        "TotalPage": 1,
+        "PageIndex": 1,
+        "PageSize": 1,
         "TotalCount": 1,
-        "RequestId": "xx"
+        "TotalPage": 1,
+        "RequestId": "abc"
     }
 }
 ```

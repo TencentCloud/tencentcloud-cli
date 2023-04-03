@@ -1,6 +1,6 @@
-**Example 1: 销毁磁盘**
+**Example 1: 销毁云硬盘**
 
-
+销毁云硬盘
 
 Input: 
 

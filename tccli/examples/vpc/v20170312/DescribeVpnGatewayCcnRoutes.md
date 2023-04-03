@@ -1,13 +1,14 @@
 **Example 1: 查询VPN网关云联网路由**
 
-
+查询VPN网关云联网路由
 
 Input: 
 
 ```
 tccli vpc DescribeVpnGatewayCcnRoutes --cli-unfold-argument  \
-    --Version 2017-03-12 \
-    --VpnGatewayId vpngw-12345678
+    --VpnGatewayId vpngw-qol17bjx \
+    --Offset 1 \
+    --Limit 1
 ```
 
 Output: 
@@ -16,12 +17,12 @@ Output:
     "Response": {
         "RouteSet": [
             {
-                "RouteId": "xxx-xxxxxx",
+                "RouteId": "vpnr-00wv1z75",
                 "DestinationCidrBlock": "10.33.0.0/24",
                 "Status": "ENABLE"
             },
             {
-                "RouteId": "xxx-xxxxxx",
+                "RouteId": "vpnr-11xe2z54",
                 "DestinationCidrBlock": "192.168.0.0/24",
                 "Status": "ENABLE"
             }

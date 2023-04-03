@@ -1,14 +1,13 @@
 **Example 1: 请求示例**
 
-
+查询单个复制组信息
 
 Input: 
 
 ```
 tccli redis DescribeReplicationGroup --cli-unfold-argument  \
-    --SearchKey xx \
     --Limit 20 \
-    --GroupId xx \
+    --GroupId crs-rpl-lkgv**** \
     --Offset 0
 ```
 
@@ -21,12 +20,12 @@ Output:
         "Groups": [
             {
                 "Status": 37,
-                "Remark": "xx",
+                "Remark": "测试复制组",
                 "InstanceCount": 1,
                 "Instances": [
                     {
                         "Engine": "社区版Redis",
-                        "Vip6": "xx",
+                        "Vip6": "",
                         "UpdateTime": "2022-11-02 15:04:05",
                         "VpcID": 16770550,
                         "InstanceId": "crs-9c36****",

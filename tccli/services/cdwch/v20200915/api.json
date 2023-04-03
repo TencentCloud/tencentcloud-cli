@@ -70,6 +70,13 @@
       "output": "DescribeInstanceShardsResponse",
       "status": "online"
     },
+    "DescribeInstanceState": {
+      "document": "集群详情页中显示集群状态、流程进度等",
+      "input": "DescribeInstanceStateRequest",
+      "name": "获取集群实例状态",
+      "output": "DescribeInstanceStateResponse",
+      "status": "online"
+    },
     "DescribeSpec": {
       "document": "购买页拉取集群的数据节点和zookeeper节点的规格列表",
       "input": "DescribeSpecRequest",
@@ -1016,13 +1023,20 @@
       "document": "DescribeInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群实例ID",
           "example": "cdwch-12345678",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "document": "是否是open api查询",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOpenApi",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1035,7 +1049,6 @@
           "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1072,6 +1085,81 @@
           "member": "string",
           "name": "InstanceShardsList",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStateRequest": {
+      "document": "DescribeInstanceState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例名称",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStateResponse": {
+      "document": "DescribeInstanceState返回参数结构体",
+      "members": [
+        {
+          "document": "集群状态，例如：Serving",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceState",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群操作创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowCreateTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群操作名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群操作进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "float",
+          "name": "FlowProgress",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群状态描述，例如：运行中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceStateDesc",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群流程错误信息，例如：“创建失败，资源不足”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowMsg",
           "type": "string",
           "value_allowed_null": true
         },

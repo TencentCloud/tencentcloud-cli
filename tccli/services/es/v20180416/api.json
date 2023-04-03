@@ -5474,8 +5474,8 @@
       "document": "实例标签信息",
       "members": [
         {
-          "default": "",
           "document": "标签键",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -5483,8 +5483,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签值",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -5492,7 +5492,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TaskDetail": {
       "document": "实例操作记录中的流程任务信息",

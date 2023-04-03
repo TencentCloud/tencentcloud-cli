@@ -90,7 +90,7 @@
     ],
     "DeleteBlueprints": [
       {
-        "document": "",
+        "document": "删除一个自定义镜像",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlueprints\n<公共请求参数>\n\n{\n    \"BlueprintIds\": [\n        \"lhbp-1ynlfst1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ecad302e-6952-4c06-a64c-2f8f6c526029\"\n    }\n}",
         "title": "删除一个自定义镜像"
@@ -608,15 +608,15 @@
     ],
     "TerminateDisks": [
       {
-        "document": "",
+        "document": "销毁云硬盘",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-p1zflrif\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d5e192e-10a2-44a6-a6ce-2ac6b01f7646\"\n    }\n}",
-        "title": "销毁磁盘"
+        "title": "销毁云硬盘"
       }
     ],
     "TerminateInstances": [
       {
-        "document": "",
+        "document": "销毁实例",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=TerminateInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abecf549-b609-4210-8e48-0ff76bbcd1fe\"\n    }\n}",
         "title": "销毁实例"

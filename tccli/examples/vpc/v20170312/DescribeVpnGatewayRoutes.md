@@ -1,16 +1,13 @@
 **Example 1: 查询VPN网关目的路由**
 
-
+查询VPN网关目的路由
 
 Input: 
 
 ```
 tccli vpc DescribeVpnGatewayRoutes --cli-unfold-argument  \
-    --VpnGatewayId vpn-ngenl4az \
-    --Offset 0 \
-    --Limit 2 \
-    --Filters.0.Name DestinationCidr \
-    --Filters.0.Values 192.241.0.0/24
+    --VpnGatewayId vpngw-7lhl5331 \
+    --Offset 0
 ```
 
 Output: 
@@ -19,14 +16,19 @@ Output:
     "Response": {
         "Routes": [
             {
-                "DestinationCidrBlock": "192.241.0.0/24",
+                "RouteId": "vpnr-h53fo5tv",
+                "DestinationCidrBlock": "10.0.0.0/16",
                 "Status": "ENABLE",
-                "InstanceId": "vpnx-ng2asdew",
+                "InstanceId": "vpnx-f99clft2",
                 "InstanceType": "VPNCONN",
-                "Priority": 100
+                "Priority": 0,
+                "Type": "Static",
+                "CreateTime": "2022-12-05 11:02:44",
+                "UpdateTime": "2022-12-05 11:02:44"
             }
         ],
-        "RequestId": "6e446c86-d8c9-4981-9b33-d10956585058"
+        "TotalCount": 1,
+        "RequestId": "cf5ec1b0-ec85-4e28-bc05-763c617b57a0"
     }
 }
 ```

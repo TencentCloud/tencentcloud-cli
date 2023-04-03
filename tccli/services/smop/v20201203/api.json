@@ -51,7 +51,7 @@
           "type": "string"
         },
         {
-          "document": "同步异步方式",
+          "document": "同步异步方式：0为同步、1位异步",
           "example": "0",
           "member": "int64",
           "name": "Async",
@@ -188,7 +188,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "当前积分/成长值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前积分\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "TotalCoin",
@@ -230,6 +230,15 @@
           "name": "TaskName",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前成长值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "GrowScore",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

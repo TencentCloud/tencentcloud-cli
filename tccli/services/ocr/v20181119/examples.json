@@ -440,9 +440,9 @@
     ],
     "RecognizeIndonesiaIDCardOCR": [
       {
-        "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeIndonesiaIDCardOCR\n&ImageUrl=https://xx/a.jpg\n&ReturnHeadImage=false\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Agama\": \"ATHOLIK\",\n        \"Alamat\": \"BANJARSARI\",\n        \"BerlakuHingga\": \"SEUMUR HIDUP\",\n        \"GolDarah\": \"O\",\n        \"IssuedDate\": \"15-05-2015\",\n        \"JenisKelamin\": \"LAKEI AKI\",\n        \"Kecamatan\": \"\",\n        \"KelDesa\": \"PAKEMBINANGUN\",\n        \"KewargaNegaraan\": \"INM\",\n        \"NIK\": \"360000000006\",\n        \"Nama\": \"\",\n        \"Perkerjaan\": \"KARYAWAN SWASTA\",\n        \"Photo\": \"\",\n        \"RTRW\": \"00/000\",\n        \"RequestId\": \"0000-0000-0000-0001\",\n        \"StatusPerkawinan\": \"KAWFN\",\n        \"TempatTglLahir\": \"JAKARTA 13-01-1987\"\n    }\n}",
+        "document": "印尼身份证",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeIndonesiaIDCardOCR\n<公共请求参数>\n\n{\n    \"ReturnHeadImage\": \"false\",\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Agama\": \"ATHOLIK\",\n        \"Alamat\": \"BANJARSARI\",\n        \"BerlakuHingga\": \"SEUMUR HIDUP\",\n        \"GolDarah\": \"O\",\n        \"IssuedDate\": \"15-05-2015\",\n        \"JenisKelamin\": \"LAKEI AKI\",\n        \"Kecamatan\": \"\",\n        \"KelDesa\": \"PAKEMBINANGUN\",\n        \"KewargaNegaraan\": \"INM\",\n        \"NIK\": \"360000000006\",\n        \"Nama\": \"\",\n        \"Perkerjaan\": \"KARYAWAN SWASTA\",\n        \"Photo\": \"\",\n        \"RTRW\": \"00/000\",\n        \"RequestId\": \"0000-0000-0000-0001\",\n        \"StatusPerkawinan\": \"KAWFN\",\n        \"TempatTglLahir\": \"JAKARTA 13-01-1987\",\n        \"Provinsi\": \"DKI JAKARTA\",\n        \"Kota\": \"DKI JAKARTA\"\n    }\n}",
         "title": "RecognizeIndonesiaIDCardOCR"
       }
     ],

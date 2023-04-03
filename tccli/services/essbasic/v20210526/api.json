@@ -538,6 +538,15 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "用户流程自定义数据参数",
+          "example": "无",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

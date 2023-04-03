@@ -4625,7 +4625,6 @@
       "document": "此结构体(FlowDetailInfo)描述的是合同(流程)的详细信息",
       "members": [
         {
-          "default": "",
           "document": "合同(流程)的Id",
           "example": "无",
           "member": "string",
@@ -4635,7 +4634,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的名字",
           "example": "无",
           "member": "string",
@@ -4645,7 +4643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4655,7 +4652,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "合同(流程)的状态\n1：未签署\n2：部分签署\n3：已退回\n4：完成签署\n5：已过期\n6：已取消",
           "example": "无",
           "member": "int64",
@@ -4665,7 +4661,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4675,7 +4670,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "流程的描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4685,7 +4679,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "合同(流程)的创建时间戳",
           "example": "无",
           "member": "int64",
@@ -4695,12 +4688,20 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "合同(流程)的签署人数组",
           "example": "无",
           "member": "FlowApproverDetail",
           "name": "FlowApproverInfos",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "合同(流程)的关注方信息列表",
+          "example": "无",
+          "member": "FlowApproverDetail",
+          "name": "CcInfos",
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         }

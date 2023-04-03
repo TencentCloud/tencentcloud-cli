@@ -2423,7 +2423,7 @@
       "document": "DescribeDomainList请求参数结构体",
       "members": [
         {
-          "document": "域名分组类型，默认为ALL。可取值为ALL，MINE，SHARE，ISMARK，PAUSE，VIP，RECENT，SHARE_OUT。",
+          "document": "域名分组类型，默认为ALL。可取值为ALL，MINE，SHARE，ISMARK，PAUSE，VIP，RECENT，SHARE_OUT，FREE。",
           "example": "ALL",
           "member": "string",
           "name": "Type",
@@ -4313,7 +4313,6 @@
       "document": "域名列表元素",
       "members": [
         {
-          "default": "",
           "document": "系统分配给域名的唯一标识",
           "example": "12",
           "member": "uint64",
@@ -4323,7 +4322,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名的原始格式",
           "example": "qq.com",
           "member": "string",
@@ -4333,7 +4331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名的状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM",
           "example": "ENABLE",
           "member": "string",
@@ -4343,7 +4340,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名默认的解析记录默认TTL值",
           "example": "600",
           "member": "uint64",
@@ -4353,7 +4349,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启CNAME加速，开启：ENABLE，未开启：DISABLE",
           "example": "DISABLE",
           "member": "string",
@@ -4363,7 +4358,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "DNS 设置状态，错误：DNSERROR，正常：空字符串",
           "example": "DNSERROR",
           "member": "string",
@@ -4373,7 +4367,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名的套餐等级代码",
           "example": "DP_FREE",
           "member": "string",
@@ -4383,7 +4376,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名所属的分组Id",
           "example": "1",
           "member": "uint64",
@@ -4393,7 +4385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启搜索引擎推送优化，是：YES，否：NO",
           "example": "NO",
           "member": "string",
@@ -4403,7 +4394,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名备注说明",
           "example": "重要域名",
           "member": "string",
@@ -4413,7 +4403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "经过punycode编码后的域名格式",
           "example": "xn--a9.com",
           "member": "string",
@@ -4423,7 +4412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "系统为域名分配的有效DNS",
           "example": "[\"f1g1ns1.dnspod.net\",\"f1g1ns2.dnspod.net\"]",
           "member": "string",
@@ -4433,7 +4421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名套餐等级对应的序号",
           "example": "5",
           "member": "uint64",
@@ -4443,7 +4430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "套餐名称",
           "example": "免费版",
           "member": "string",
@@ -4453,7 +4439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否是付费套餐",
           "example": "YES",
           "member": "string",
@@ -4463,7 +4448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "付费套餐开通时间",
           "example": "2021-04-07 13:34:20",
           "member": "datetime",
@@ -4473,7 +4457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "付费套餐到期时间",
           "example": "2022-04-07 13:34:20",
           "member": "datetime",
@@ -4483,7 +4466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名是否开通VIP自动续费，是：YES，否：NO，默认：DEFAULT",
           "example": "YES",
           "member": "string",
@@ -4493,7 +4475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名下的记录数量",
           "example": "20",
           "member": "uint64",
@@ -4503,7 +4484,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名添加时间",
           "example": "2020-05-21 16:08:29",
           "member": "datetime",
@@ -4513,7 +4493,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名更新时间",
           "example": "2021-04-01 18:09:58",
           "member": "datetime",
@@ -4523,7 +4502,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名所属账号",
           "example": "abc@tencent.com",
           "member": "string",

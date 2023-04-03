@@ -1,6 +1,6 @@
 **Example 1: 查询云联网关联实例列表**
 
-
+用于查询云联网实例下已关联的网络实例
 
 Input: 
 
@@ -33,7 +33,7 @@ Output:
                 "AttachedTime": "2021-03-03 16:19:44",
                 "RouteTableId": null,
                 "RouteTableName": null,
-                "Description": null
+                "Description": ""
             },
             {
                 "CcnId": "ccn-gree226l",
@@ -51,7 +51,7 @@ Output:
                 "AttachedTime": "2021-03-03 16:19:44",
                 "RouteTableId": null,
                 "RouteTableName": null,
-                "Description": null
+                "Description": ""
             },
             {
                 "CcnId": "ccn-gree226l",
@@ -69,7 +69,7 @@ Output:
                 "AttachedTime": "2021-03-03 16:19:44",
                 "RouteTableId": null,
                 "RouteTableName": null,
-                "Description": null
+                "Description": ""
             },
             {
                 "CcnId": "ccn-gree226l",
@@ -87,7 +87,7 @@ Output:
                 "AttachedTime": "2021-03-03 16:19:44",
                 "RouteTableId": null,
                 "RouteTableName": null,
-                "Description": null
+                "Description": ""
             },
             {
                 "CcnId": "ccn-gree226l",
@@ -105,7 +105,7 @@ Output:
                 "AttachedTime": "2021-03-03 16:19:44",
                 "RouteTableId": null,
                 "RouteTableName": null,
-                "Description": null
+                "Description": ""
             }
         ],
         "TotalCount": 5,

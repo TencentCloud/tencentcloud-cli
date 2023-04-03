@@ -152,6 +152,14 @@
         "title": "删除房间"
       }
     ],
+    "DescribeAnswerList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAnswerList\n<公共请求参数>\n\n{\n    \"QuestionId\": \"69d2345d-0p80-7821-b3b7-cbfsdew\",\n    \"Page\": 1,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"AnswerInfo\": [\n            {\n                \"Answer\": 12,\n                \"CostTime\": 10,\n                \"IsCorrect\": 0,\n                \"Name\": \"zhangsan\",\n                \"UserId\": \"2MANXmcVsYjgo9Bk00mvONkvekd\"\n            },\n            {\n                \"Answer\": 33,\n                \"CostTime\": 6,\n                \"IsCorrect\": 0,\n                \"Name\": \"lisi\",\n                \"UserId\": \"2NP9SrTzakytuidv429i4rbNepD\"\n            }\n        ],\n        \"RequestId\": \"8cc600da-b066-476a-a527-ee19c46f77f9\",\n        \"Total\": 2\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeAppDetail": [
       {
         "document": "获取应用配置",
@@ -170,9 +178,9 @@
     ],
     "DescribeDeveloper": [
       {
-        "document": "",
+        "document": "示例",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeveloper\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DeveloperId\": \"123\",\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "DescribeDeveloper 示例"
       }
     ],
@@ -216,6 +224,14 @@
         "title": "获取群组成员列表"
       }
     ],
+    "DescribeQuestionList": [
+      {
+        "document": "获取房间问答提问列表",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQuestionList\n<公共请求参数>\n\n{\n    \"RoomId\": 382651668,\n    \"Page\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"QuestionInfo\": [\n            {\n                \"AnswerStats\": [\n                    {\n                        \"Answer\": 1,\n                        \"Count\": 0\n                    },\n                    {\n                        \"Answer\": 2,\n                        \"Count\": 1\n                    },\n                    {\n                        \"Answer\": 4,\n                        \"Count\": 0\n                    },\n                    {\n                        \"Answer\": 8,\n                        \"Count\": 1\n                    },\n                    {\n                        \"Answer\": 16,\n                        \"Count\": 0\n                    }\n                ],\n                \"CorrectAnswer\": 8,\n                \"Duration\": 0,\n                \"QuestionContent\": \"测试内容\",\n                \"QuestionId\": \"7bd1e2cf-4291-447e-bd9d-123007abcf9a\"\n            }\n        ],\n        \"RequestId\": \"2b0b1930-c032-4b8b-b4da-33a333da78d1\",\n        \"Total\": 2\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeRoom": [
       {
         "document": "获取课堂房间信息",
@@ -238,6 +254,14 @@
         "input": "{\n  \"SdkAppId\": 123456\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Users\": [\n            {\n                \"Name\": \"xx\",\n                \"UserId\": \"xx\",\n                \"Avatar\": \"xx\",\n                \"SdkAppId\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取应用下用户列表"
+      }
+    ],
+    "DescribeSupervisors": [
+      {
+        "document": "获取巡课列表",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSupervisors\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"Limit\": 1,\n    \"Page\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Page\": 1,\n        \"Limit\": 1,\n        \"UserIds\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeUser": [

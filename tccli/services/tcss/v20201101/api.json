@@ -16351,7 +16351,6 @@
       "document": "DescribeClusterDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群id",
           "example": "cls-jvrv0kf2",
           "member": "string",
@@ -16370,7 +16369,6 @@
           "example": "cls-jvrv0kf2",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16379,7 +16377,6 @@
           "example": "tke_test",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16388,7 +16385,6 @@
           "example": "20",
           "member": "int64",
           "name": "ScanTaskProgress",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16397,7 +16393,6 @@
           "example": "1.8.8",
           "member": "string",
           "name": "ClusterVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16406,7 +16401,6 @@
           "example": "docker",
           "member": "string",
           "name": "ContainerRuntime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16415,7 +16409,6 @@
           "example": "2",
           "member": "uint64",
           "name": "ClusterNodeNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16424,7 +16417,6 @@
           "example": "Running",
           "member": "string",
           "name": "ClusterStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16433,7 +16425,6 @@
           "example": "MANAGED_CLUSTER",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16442,7 +16433,6 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16451,7 +16441,6 @@
           "example": "3",
           "member": "uint64",
           "name": "SeriousRiskCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16460,7 +16449,6 @@
           "example": "2",
           "member": "uint64",
           "name": "HighRiskCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16469,7 +16457,6 @@
           "example": "4",
           "member": "uint64",
           "name": "MiddleRiskCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16478,7 +16465,6 @@
           "example": "5",
           "member": "uint64",
           "name": "HintRiskCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16487,7 +16473,6 @@
           "example": "无",
           "member": "string",
           "name": "CheckStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16496,7 +16481,6 @@
           "example": "无",
           "member": "string",
           "name": "DefenderStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16505,7 +16489,6 @@
           "example": "2021-10-19 12:26:56",
           "member": "string",
           "name": "TaskCreateTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16514,7 +16497,6 @@
           "example": "PublicNetwork",
           "member": "string",
           "name": "NetworkType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16523,7 +16505,6 @@
           "example": "https://10.100.0.123:60002",
           "member": "string",
           "name": "ApiServerAddress",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16532,7 +16513,6 @@
           "example": "4",
           "member": "uint64",
           "name": "NodeCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16541,7 +16521,6 @@
           "example": "4",
           "member": "uint64",
           "name": "NamespaceCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16550,7 +16529,6 @@
           "example": "4",
           "member": "uint64",
           "name": "WorkloadCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16559,7 +16537,6 @@
           "example": "5",
           "member": "uint64",
           "name": "PodCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16568,7 +16545,6 @@
           "example": "5",
           "member": "uint64",
           "name": "ServiceCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16577,8 +16553,15 @@
           "example": "5",
           "member": "uint64",
           "name": "IngressCount",
-          "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主节点的ip列表",
+          "example": "127.0.0.1;127.0.0.2;",
+          "member": "string",
+          "name": "MasterIps",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -16603,7 +16586,6 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16612,7 +16594,6 @@
           "example": "3",
           "member": "uint64",
           "name": "RiskClusterCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16621,7 +16602,6 @@
           "example": "2",
           "member": "uint64",
           "name": "UncheckClusterCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16630,7 +16610,6 @@
           "example": "5",
           "member": "uint64",
           "name": "ManagedClusterCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16639,7 +16618,6 @@
           "example": "3",
           "member": "uint64",
           "name": "IndependentClusterCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16648,7 +16626,6 @@
           "example": "3",
           "member": "uint64",
           "name": "NoRiskClusterCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16657,7 +16634,6 @@
           "example": "3",
           "member": "uint64",
           "name": "CheckedClusterCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16666,7 +16642,6 @@
           "example": "2",
           "member": "uint64",
           "name": "AutoCheckClusterCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16675,7 +16650,6 @@
           "example": "2",
           "member": "uint64",
           "name": "ManualCheckClusterCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16684,7 +16658,14 @@
           "example": "1",
           "member": "uint64",
           "name": "FailedClusterCount",
-          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "未导入的集群数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "NotImportedClusterCount",
           "type": "int",
           "value_allowed_null": false
         },

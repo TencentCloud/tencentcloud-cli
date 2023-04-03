@@ -1,6 +1,6 @@
 **Example 1: 后付费云联网实例修改限速类型**
 
-
+本接口（ModifyCcnRegionBandwidthLimitsType）用于修改后付费云联网实例修改带宽限速策略。
 
 Input: 
 

@@ -1,6 +1,6 @@
 **Example 1: 查询集群详情**
 
-
+查询集群的详细信息
 
 Input: 
 
@@ -37,7 +37,8 @@ Output:
         "WorkloadCount": 0,
         "PodCount": 0,
         "ServiceCount": 0,
-        "IngressCount": 0
+        "IngressCount": 0,
+        "MasterIps": "127.0.0.1;127.0.0.2;"
     }
 }
 ```

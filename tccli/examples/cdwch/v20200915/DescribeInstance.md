@@ -14,58 +14,109 @@ Output:
 {
     "Response": {
         "InstanceInfo": {
-            "RegionId": 1,
-            "AccessInfo": "xx",
-            "Monitor": "xx",
-            "Zone": "xx",
-            "ClsLogSetId": "xx",
-            "Version": "xx",
+            "InstanceId": "abc",
+            "InstanceName": "abc",
+            "Status": "abc",
+            "Version": "abc",
+            "Region": "abc",
+            "Zone": "abc",
+            "VpcId": "abc",
+            "SubnetId": "abc",
+            "PayMode": "abc",
+            "CreateTime": "abc",
+            "ExpireTime": "abc",
+            "MasterSummary": {
+                "Spec": "abc",
+                "NodeSize": 0,
+                "Core": 0,
+                "Memory": 0,
+                "Disk": 0,
+                "DiskType": "abc",
+                "DiskDesc": "abc",
+                "AttachCBSSpec": {
+                    "DiskType": "abc",
+                    "DiskSize": 0,
+                    "DiskCount": 0,
+                    "DiskDesc": "abc"
+                },
+                "SubProductType": "abc",
+                "SpecCore": 0,
+                "SpecMemory": 0,
+                "DiskCount": 0,
+                "MaxDiskSize": 0,
+                "Encrypt": 0
+            },
+            "CommonSummary": {
+                "Spec": "abc",
+                "NodeSize": 0,
+                "Core": 0,
+                "Memory": 0,
+                "Disk": 0,
+                "DiskType": "abc",
+                "DiskDesc": "abc",
+                "AttachCBSSpec": {
+                    "DiskType": "abc",
+                    "DiskSize": 0,
+                    "DiskCount": 0,
+                    "DiskDesc": "abc"
+                },
+                "SubProductType": "abc",
+                "SpecCore": 0,
+                "SpecMemory": 0,
+                "DiskCount": 0,
+                "MaxDiskSize": 0,
+                "Encrypt": 0
+            },
+            "HA": "abc",
+            "AccessInfo": "abc",
+            "Id": 0,
+            "RegionId": 0,
+            "ZoneDesc": "abc",
+            "FlowMsg": "abc",
+            "StatusDesc": "abc",
             "RenewFlag": true,
-            "HA": "xx",
-            "Status": "xx",
-            "EnableXMLConfig": 0,
-            "VpcId": "xx",
             "Tags": [
                 {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
+                    "TagKey": "abc",
+                    "TagValue": "abc"
                 }
             ],
-            "InstanceId": "xx",
-            "MasterSummary": {
-                "DiskDesc": "xx",
-                "Core": 4,
-                "DiskType": "xx",
-                "Memory": 8,
-                "Disk": 1000,
-                "Spec": "xx",
-                "NodeSize": 2
-            },
-            "SubnetId": "xx",
+            "Monitor": "abc",
             "HasClsTopic": true,
-            "Eip": "xx",
-            "FlowMsg": "xx",
-            "ClsTopicId": "xx",
-            "Region": "xx",
-            "PayMode": "xx",
-            "StatusDesc": "xx",
-            "InstanceName": "xx",
-            "RegionDesc": "xx",
-            "CommonSummary": {
-                "DiskDesc": "xx",
-                "Core": 2,
-                "DiskType": "xx",
-                "Memory": 4,
-                "Disk": 500,
-                "Spec": "xx",
-                "NodeSize": 1
+            "ClsTopicId": "abc",
+            "ClsLogSetId": "abc",
+            "EnableXMLConfig": 0,
+            "RegionDesc": "abc",
+            "Eip": "abc",
+            "CosMoveFactor": 0,
+            "Kind": "abc",
+            "IsElastic": true,
+            "InstanceStateInfo": {
+                "InstanceState": "abc",
+                "FlowCreateTime": "abc",
+                "FlowName": "abc",
+                "FlowProgress": 0,
+                "InstanceStateDesc": "abc",
+                "FlowMsg": "abc",
+                "ProcessName": "abc",
+                "RequestId": "abc"
             },
-            "ZoneDesc": "xx",
-            "CreateTime": "xx",
-            "ExpireTime": "xx",
-            "Id": 1
+            "HAZk": true,
+            "MountDiskType": 0,
+            "CHProxyVip": "abc",
+            "CosBucketName": "abc",
+            "CanAttachCbs": true,
+            "CanAttachCbsLvm": true,
+            "CanAttachCos": true,
+            "Components": [
+                {
+                    "Name": "abc",
+                    "Version": "abc"
+                }
+            ],
+            "UpgradeVersions": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

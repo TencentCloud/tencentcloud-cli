@@ -7797,7 +7797,6 @@
       "document": "DescribeInLongAgentList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "WeData项目ID",
           "example": "xxx",
           "member": "string",
@@ -7806,7 +7805,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "采集器ID",
           "example": "xxx",
           "member": "string",
@@ -7815,7 +7813,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Agent Name",
           "example": "xxxx",
           "member": "string",
@@ -7824,7 +7821,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】",
           "example": "1",
           "member": "uint64",
@@ -7833,7 +7829,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "Agent状态(running运行中，initializing 操作中，failed心跳异常)",
           "example": "xxx",
           "member": "string",
@@ -7842,7 +7837,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Vpc Id",
           "example": "xxx",
           "member": "string",
@@ -7851,7 +7845,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页页码，从1开始，默认：1",
           "example": "1",
           "member": "uint64",
@@ -7860,7 +7853,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页每页记录数，默认10",
           "example": "10",
           "member": "uint64",
@@ -7869,7 +7861,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "名称搜索是否开启模糊匹配，1：开启，0：不开启（精确匹配）",
           "example": "1",
           "member": "uint64",
@@ -7878,7 +7869,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "agent类型【多个用逗号分隔】",
           "example": "1",
           "member": "string",
@@ -7897,7 +7887,6 @@
           "example": "无",
           "member": "InLongAgentDetail",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7906,7 +7895,6 @@
           "example": "1",
           "member": "uint64",
           "name": "PageIndex",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7915,7 +7903,6 @@
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7924,7 +7911,6 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7933,7 +7919,6 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalPage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14227,7 +14212,6 @@
       "document": "采集器详细信息",
       "members": [
         {
-          "default": "",
           "document": "Agent ID",
           "example": "xxx",
           "member": "string",
@@ -14237,7 +14221,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Agent Name",
           "example": "xxx",
           "member": "string",
@@ -14247,7 +14230,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Agent状态(running运行中，initializing 操作中，failed心跳异常)",
           "example": "initializing",
           "member": "string",
@@ -14257,7 +14239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Agent状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -14267,7 +14248,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群类型，1：TKE Agent，2：BOSS SDK，默认：1",
           "example": "1",
           "member": "uint64",
@@ -14277,7 +14257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "采集来源",
           "example": "xxx",
           "member": "string",
@@ -14287,7 +14266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "VPC",
           "example": "xxx",
           "member": "string",
@@ -14297,7 +14275,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集成资源组Id",
           "example": "xxx",
           "member": "string",
@@ -14307,7 +14284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集成资源组名称",
           "example": "xxx",
           "member": "string",
@@ -14317,7 +14293,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关联任务数",
           "example": "0",
           "member": "uint64",
@@ -14327,7 +14302,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "采集器组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hdgrsa",
           "member": "string",
@@ -14337,7 +14311,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "agent状态统计\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CvmAgentStatus",
@@ -14347,12 +14320,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "agent数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "AgentTotal",
           "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LifeDays",
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }

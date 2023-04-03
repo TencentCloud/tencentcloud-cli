@@ -133,6 +133,13 @@
       "output": "DeleteRoomResponse",
       "status": "online"
     },
+    "DescribeAnswerList": {
+      "document": "获取房间答题详情",
+      "input": "DescribeAnswerListRequest",
+      "name": "获取房间答题详情",
+      "output": "DescribeAnswerListResponse",
+      "status": "online"
+    },
     "DescribeAppDetail": {
       "document": "获取应用详情",
       "input": "DescribeAppDetailRequest",
@@ -189,6 +196,13 @@
       "output": "DescribeGroupMemberListResponse",
       "status": "online"
     },
+    "DescribeQuestionList": {
+      "document": "获取房间提问列表",
+      "input": "DescribeQuestionListRequest",
+      "name": "获取课堂提问列表",
+      "output": "DescribeQuestionListResponse",
+      "status": "online"
+    },
     "DescribeRoom": {
       "document": "获取房间信息",
       "input": "DescribeRoomRequest",
@@ -208,6 +222,13 @@
       "input": "DescribeSdkAppIdUsersRequest",
       "name": "获取应用ID下用户列表",
       "output": "DescribeSdkAppIdUsersResponse",
+      "status": "online"
+    },
+    "DescribeSupervisors": {
+      "document": "获取巡课列表",
+      "input": "DescribeSupervisorsRequest",
+      "name": "获取巡课列表",
+      "output": "DescribeSupervisorsResponse",
       "status": "online"
     },
     "DescribeUser": {
@@ -357,6 +378,81 @@
         }
       ],
       "type": "object"
+    },
+    "AnswerInfo": {
+      "document": "房间问答问题详情",
+      "members": [
+        {
+          "document": "用户名",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Answer",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "答题用时",
+          "example": "1",
+          "member": "uint64",
+          "name": "CostTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "答案是否正确（1正确0错误）",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsCorrect",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AnswerStat": {
+      "document": "每个选项答题人数统计",
+      "members": [
+        {
+          "document": "选项（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）",
+          "example": "1",
+          "member": "int64",
+          "name": "Answer",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "答题人数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AppConfig": {
       "document": "应用配置信息",
@@ -1393,6 +1489,64 @@
       ],
       "type": "object"
     },
+    "DescribeAnswerListRequest": {
+      "document": "DescribeAnswerList请求参数结构体",
+      "members": [
+        {
+          "document": "问题ID",
+          "example": "0491cbde-opd4-4d4c-a063-96864eccc73c",
+          "member": "string",
+          "name": "QuestionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "1",
+          "example": "分页查询当前页数，从1开始递增，默认值为1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "100",
+          "example": "每页数据量，最大1000，默认值为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnswerListResponse": {
+      "document": "DescribeAnswerList返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件的房间答案总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间提问答案列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnswerInfo",
+          "name": "AnswerInfo",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAppDetailRequest": {
       "document": "DescribeAppDetail请求参数结构体",
       "members": [
@@ -1517,6 +1671,14 @@
     "DescribeDeveloperResponse": {
       "document": "DescribeDeveloper返回参数结构体",
       "members": [
+        {
+          "document": "服务商ID",
+          "example": "123",
+          "member": "string",
+          "name": "DeveloperId",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1975,6 +2137,64 @@
       ],
       "type": "object"
     },
+    "DescribeQuestionListRequest": {
+      "document": "DescribeQuestionList请求参数结构体",
+      "members": [
+        {
+          "document": "房间ID",
+          "example": "312345678",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "分页查询当前页数，从1开始递增，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "分页查询当前页数，从1开始递增，默认值为1",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQuestionListResponse": {
+      "document": "DescribeQuestionList返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件的房间问答问题总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间问答问题列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "课堂回答问题列表",
+          "member": "QuestionInfo",
+          "name": "QuestionInfo",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRoomRequest": {
       "document": "DescribeRoom请求参数结构体",
       "members": [
@@ -2275,6 +2495,80 @@
           "name": "Users",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSupervisorsRequest": {
+      "document": "DescribeSupervisors请求参数结构体",
+      "members": [
+        {
+          "document": "低代码互动课堂的SdkAppId。\n",
+          "example": "1",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "每页数据量，最大100。 不填默认20.",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "分页查询当前页数，从1开始递增，不填默认为1。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSupervisorsResponse": {
+      "document": "DescribeSupervisors返回参数结构体",
+      "members": [
+        {
+          "document": "数据总量",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分页查询当前页数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Page",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前页数据量",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "巡课列表",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3389,6 +3683,57 @@
         }
       ],
       "type": "object"
+    },
+    "QuestionInfo": {
+      "document": "房间问答答案详情",
+      "members": [
+        {
+          "document": "问题ID",
+          "example": "a304828e-c109-436e-aada-59aec20b7aab",
+          "member": "string",
+          "name": "QuestionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "问题内容",
+          "example": "测试题",
+          "member": "string",
+          "name": "QuestionContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "倒计时答题设置的秒数（0 表示不计时）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Duration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "正确答案（按照位表示是否选择，如0x1表示选择A，0x11表示选择AB）",
+          "example": "1",
+          "member": "int64",
+          "name": "CorrectAnswer",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每个选项答题人数统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnswerStat",
+          "name": "AnswerStats",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RegisterUserRequest": {
       "document": "RegisterUser请求参数结构体",
