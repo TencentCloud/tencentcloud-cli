@@ -234,6 +234,14 @@
         "title": "获取对客户已经开放的负载均衡型WAF的地域"
       }
     ],
+    "DescribeVipInfo": [
+      {
+        "document": "查询实例的vip信息",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVipInfo\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"VipInfo\": [\n            {\n                \"Vip\": \"abc\",\n                \"InstanceId\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询vip"
+      }
+    ],
     "DescribeWafAutoDenyRules": [
       {
         "document": "",

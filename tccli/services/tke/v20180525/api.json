@@ -19047,7 +19047,15 @@
       "document": "ServiceAccount认证相关配置",
       "members": [
         {
-          "default": "",
+          "document": "使用TKE默认issuer和jwksuri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "UseTKEDefault",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
           "document": "service-account-issuer\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://cls-xxxxxxxx.ccs.tencent-cloud.com",
           "member": "string",
@@ -19057,7 +19065,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "service-account-jwks-uri\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://cls-xxxxxxxx.ccs.tencent-cloud.com:60002/openid/v1/jwks",
           "member": "string",
@@ -19067,7 +19074,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "如果为true，则会自动创建允许匿名用户访问'/.well-known/openid-configuration'和/openid/v1/jwks的rbac规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",

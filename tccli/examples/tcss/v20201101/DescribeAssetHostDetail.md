@@ -1,6 +1,6 @@
 **Example 1: 查询主机详细信息**
 
-
+查询主机详细信息
 
 Input: 
 
@@ -13,41 +13,41 @@ Output:
 ```
 {
     "Response": {
-        "Group": "xx",
-        "InstanceID": "xx",
-        "RegionID": 0,
-        "OsName": "xx",
-        "DockerRootDir": "xx",
-        "DockerFileSystemDriver": "xx",
-        "Status": "xx",
-        "PublicIp": "xx",
-        "UpdateTime": "xx",
-        "IsContainerd": true,
-        "HostName": "xx",
-        "KubeProxyVersion": "xx",
-        "AgentVersion": "xx",
-        "DockerAPIVersion": "xx",
-        "DockerGoVersion": "xx",
-        "RequestId": "xx",
-        "HostIP": "xx",
-        "DockerVersion": "xx",
-        "KernelVersion": "xx",
-        "MachineType": "xx",
-        "UUID": "xx",
-        "K8sVersion": "xx",
-        "K8sMasterIP": "xx",
+        "UUID": "abc",
+        "UpdateTime": "abc",
+        "HostName": "abc",
+        "Group": "abc",
+        "HostIP": "abc",
+        "OsName": "abc",
+        "AgentVersion": "abc",
+        "KernelVersion": "abc",
+        "DockerVersion": "abc",
+        "DockerAPIVersion": "abc",
+        "DockerGoVersion": "abc",
+        "DockerFileSystemDriver": "abc",
+        "DockerRootDir": "abc",
         "ImageCnt": 1,
         "ContainerCnt": 1,
+        "K8sMasterIP": "abc",
+        "K8sVersion": "abc",
+        "KubeProxyVersion": "abc",
+        "Status": "abc",
+        "IsContainerd": true,
+        "MachineType": "abc",
+        "PublicIp": "abc",
+        "InstanceID": "abc",
+        "RegionID": 0,
         "Project": {
-            "ProjectName": "xx",
+            "ProjectName": "abc",
             "ProjectID": 0
         },
         "Tags": [
             {
-                "TagKey": "xx",
-                "TagValue": "xx"
+                "TagKey": "abc",
+                "TagValue": "abc"
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

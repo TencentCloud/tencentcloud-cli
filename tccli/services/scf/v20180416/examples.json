@@ -357,6 +357,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2b845e1-d44a-4c3e-8314-b6b774b4e66f\"\n    }\n}",
         "title": "更新命名空间"
       }
+    ],
+    "UpdateTriggerStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTriggerStatus\n<公共请求参数>\n\n{\n    \"Enable\": \"CLOSE\",\n    \"Type\": \"timer\",\n    \"FunctionName\": \"<FunctionName>\",\n    \"TriggerName\": \"<TriggerName>\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"375d4028-2666-4cef-bcab-2331cb974fc3\"\n    }\n}",
+        "title": "修改触发器状态"
+      }
     ]
   },
   "version": "1.0"

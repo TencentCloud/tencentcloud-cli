@@ -206,6 +206,14 @@
         "title": "创建一个发起内容审核任务的任务流模板"
       }
     ],
+    "CreateRebuildMediaTemplate": [
+      {
+        "document": "创建音画质重生模版。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRebuildMediaTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"rebuildMediaTestTempalte\",\n    \"Container\": \"mp4\",\n    \"RebuildVideoInfo\": {\n        \"RepairInfo\": {\n            \"Switch\": \"ON\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 20001,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建音画质重生模版。"
+      }
+    ],
     "CreateReviewTemplate": [
       {
         "document": "开启涉黄、涉暴、广告检测。",
@@ -418,6 +426,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DeleteProcedureTemplate\n&Name=我的一个任务流\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "删除指定名字的任务流模板"
+      }
+    ],
+    "DeleteRebuildMediaTemplate": [
+      {
+        "document": "删除音画质重生模版。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRebuildMediaTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 20001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除音画质重生模版。"
       }
     ],
     "DeleteReviewTemplate": [
@@ -764,6 +780,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeProcedureTemplates\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"ProcedureTemplateSet\": [\n            {\n                \"Name\": \"我的任务流A\",\n                \"Type\": \"Custom\",\n                \"Comment\": \"我的任务流A\",\n                \"UpdateTime\": \"2018-10-01T18:00:00\",\n                \"CreateTime\": \"2018-10-01T18:00:00\",\n                \"MediaProcessTask\": {\n                    \"TranscodeTaskSet\": [\n                        {\n                            \"Definition\": 20,\n                            \"WatermarkSet\": null\n                        },\n                        {\n                            \"Definition\": 30,\n                            \"WatermarkSet\": null\n                        },\n                        {\n                            \"Definition\": 40,\n                            \"WatermarkSet\": null\n                        }\n                    ],\n                    \"AnimatedGraphicTaskSet\": null,\n                    \"SnapshotByTimeOffsetTaskSet\": null,\n                    \"SampleSnapshotTaskSet\": null,\n                    \"ImageSpriteTaskSet\": null,\n                    \"CoverBySnapshotTaskSet\": null\n                },\n                \"AiContentReviewTask\": null,\n                \"AiAnalysisTask\": null,\n                \"AiRecognitionTask\": null,\n                \"MiniProgramPublishTask\": null,\n                \"ReviewAudioVideoTask\": null\n            },\n            {\n                \"Name\": \"我的任务流B\",\n                \"Type\": \"Custom\",\n                \"Comment\": \"我的任务流B\",\n                \"UpdateTime\": \"2018-10-01T18:00:00\",\n                \"CreateTime\": \"2018-10-01T18:00:00\",\n                \"MediaProcessTask\": {\n                    \"TranscodeTaskSet\": [\n                        {\n                            \"Definition\": 20,\n                            \"WatermarkSet\": [\n                                {\n                                    \"Definition\": 15780,\n                                    \"TextContent\": null\n                                }\n                            ]\n                        },\n                        {\n                            \"Definition\": 30,\n                            \"WatermarkSet\": [\n                                {\n                                    \"Definition\": 15780,\n                                    \"TextContent\": null\n                                }\n                            ]\n                        },\n                        {\n                            \"Definition\": 40,\n                            \"WatermarkSet\": [\n                                {\n                                    \"Definition\": 15780,\n                                    \"TextContent\": null\n                                }\n                            ]\n                        }\n                    ],\n                    \"AnimatedGraphicTaskSet\": null,\n                    \"SnapshotByTimeOffsetTaskSet\": null,\n                    \"SampleSnapshotTaskSet\": null,\n                    \"ImageSpriteTaskSet\": null,\n                    \"CoverBySnapshotTaskSet\": null\n                },\n                \"AiContentReviewTask\": null,\n                \"AiAnalysisTask\": null,\n                \"AiRecognitionTask\": null,\n                \"MiniProgramPublishTask\": null,\n                \"ReviewAudioVideoTask\": null\n            },\n            {\n                \"Name\": \"我的任务流C\",\n                \"Type\": \"Custom\",\n                \"Comment\": \"我的任务流C\",\n                \"UpdateTime\": \"2018-10-01T18:00:00\",\n                \"CreateTime\": \"2018-10-01T18:00:00\",\n                \"MediaProcessTask\": null,\n                \"AiContentReviewTask\": {\n                    \"Definition\": 10\n                },\n                \"AiAnalysisTask\": null,\n                \"AiRecognitionTask\": null,\n                \"MiniProgramPublishTask\": null,\n                \"ReviewAudioVideoTask\": null\n            }\n        ],\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "查询所有的任务流模板"
+      }
+    ],
+    "DescribeRebuildMediaTemplates": [
+      {
+        "document": "获取音画质重生模版列表。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRebuildMediaTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        20001\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RebuildMediaTemplateSet\": [\n            {\n                \"Definition\": 20001,\n                \"Name\": \"test\",\n                \"Comment\": \"\",\n                \"Container\": \"mp4\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"CreateTime\": \"\",\n                \"UpdateTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "获取音画质重生模版列表。"
       }
     ],
     "DescribeReviewDetails": [
@@ -1208,6 +1232,14 @@
         "title": "修改素材样本-delete"
       }
     ],
+    "ModifyRebuildMediaTemplate": [
+      {
+        "document": "修改音画质重生模版。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRebuildMediaTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 20001,\n    \"Name\": \"testRebuildName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改音画质重生模版。"
+      }
+    ],
     "ModifyReviewTemplate": [
       {
         "document": "去掉广告检测，只保留涉黄、涉暴检测。",
@@ -1402,19 +1434,19 @@
     ],
     "PullUpload": [
       {
-        "document": "",
+        "document": "拉取上传 MP4 视频",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullUpload\n<公共请求参数>\n\n{\n    \"MediaUrl\": \"http://www.abc.com/abc.mp4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"TaskId\": \"125xxxxxx07-pull-893dc41e6fdc22dcf24aa6e9c61cp94\"\n    }\n}",
         "title": "拉取上传一个 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频。"
       },
       {
-        "document": "",
+        "document": "拉取上传 MP4 视频至重庆园区",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullUpload\n<公共请求参数>\n\n{\n    \"StorageRegion\": \"ap-chongqing\",\n    \"MediaUrl\": \"http://www.abc.com/abc.mp4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"TaskId\": \"125xxxxxx07-pull-793dc41e6fdc22dcf24aa6e9c61cp94\"\n    }\n}",
         "title": "拉取上传一个国内 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频至重庆园区。"
       },
       {
-        "document": "",
+        "document": "拉取上传 MP4 至新加坡园区",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullUpload\n<公共请求参数>\n\n{\n    \"StorageRegion\": \"ap-singapore\",\n    \"MediaUrl\": \"http://www.abc.com/abc.mp4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"TaskId\": \"125xxxxxx07-pull-693dc41e6fdc22dcf24aa6e9c61cp94\"\n    }\n}",
         "title": "拉取上传一个海外 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频至新加坡园区。"
@@ -1434,6 +1466,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebuildMedia\n<公共请求参数>\n\n{\n    \"SuperResolutionInfo\": {\n        \"Switch\": \"ON\"\n    },\n    \"VideoFrameInterpolationInfo\": {\n        \"Switch\": \"ON\",\n        \"Fps\": \"25\"\n    },\n    \"FileId\": \"8312960950918954859\",\n    \"RepairInfo\": {\n        \"Switch\": \"ON\"\n    },\n    \"TargetInfo\": {\n        \"Container\": \"mp4\",\n        \"MediaName\": \"字符串\",\n        \"Description\": \"字符串\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"125xxx-RebuildMedia-75e45d323ffad76987112fafe2eb87dxxx\",\n        \"RequestId\": \"ef5aae86-6eab-4cb3-9ebc-0979010b3f22\"\n    }\n}",
         "title": "发起音画质重生"
+      }
+    ],
+    "RebuildMediaByTemplate": [
+      {
+        "document": "使用模版发起音画质重生。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebuildMediaByTemplate\n<公共请求参数>\n\n{\n    \"FileId\": \"8312960950918954859\",\n    \"Definition\": 20001\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"125xxx-RebuildMedia-75e45d323ffad76987112fafe2eb87dxxx\",\n        \"RequestId\": \"ef5aae86-6eab-4cb3-9ebc-0979010b3f22\"\n    }\n}",
+        "title": "使用模版发起音画质重生。"
       }
     ],
     "RefreshUrlCache": [

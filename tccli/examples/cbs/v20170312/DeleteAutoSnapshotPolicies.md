@@ -1,6 +1,6 @@
 **Example 1: 批量删除定期快照策略**
 
-
+删除指定定期快照策略：asp-mrsrn243、asp-3lpl7ev3
 
 Input: 
 

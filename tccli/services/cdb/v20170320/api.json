@@ -2500,7 +2500,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "ip等于10.0.0.8访问了26次实例，即桶内文档数量。",
+          "document": "key值出现的次数。",
           "example": "26",
           "member": "uint64",
           "name": "Count",

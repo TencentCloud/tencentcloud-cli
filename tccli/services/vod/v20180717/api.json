@@ -112,6 +112,13 @@
       "output": "CreateProcedureTemplateResponse",
       "status": "online"
     },
+    "CreateRebuildMediaTemplate": {
+      "document": "创建音画质重生模版。",
+      "input": "CreateRebuildMediaTemplateRequest",
+      "name": "创建音画质重生模版",
+      "output": "CreateRebuildMediaTemplateResponse",
+      "status": "online"
+    },
     "CreateReviewTemplate": {
       "document": "创建用户自定义审核模板，数量上限：50。\n>模板仅适用于 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 和 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217) 接口。",
       "input": "CreateReviewTemplateRequest",
@@ -271,6 +278,13 @@
       "input": "DeleteProcedureTemplateRequest",
       "name": "删除任务流模板",
       "output": "DeleteProcedureTemplateResponse",
+      "status": "online"
+    },
+    "DeleteRebuildMediaTemplate": {
+      "document": "删除音画质重生模版。",
+      "input": "DeleteRebuildMediaTemplateRequest",
+      "name": "删除音画质重生模版",
+      "output": "DeleteRebuildMediaTemplateResponse",
       "status": "online"
     },
     "DeleteReviewTemplate": {
@@ -539,6 +553,13 @@
       "output": "DescribeProcedureTemplatesResponse",
       "status": "online"
     },
+    "DescribeRebuildMediaTemplates": {
+      "document": "获取音画质重生模版列表。",
+      "input": "DescribeRebuildMediaTemplatesRequest",
+      "name": "获取音画质重生模版列表",
+      "output": "DescribeRebuildMediaTemplatesResponse",
+      "status": "online"
+    },
     "DescribeReviewDetails": {
       "document": "<b>本接口已不推荐使用，用 [DescribeMediaProcessUsageData](/document/product/266/41464) 替代</b>\n\n该接口返回查询时间范围内每天使用的视频内容智能识别时长数据，单位： 秒。\n\n1. 可以查询最近365天内的视频内容智能识别时长统计数据。\n2. 查询时间跨度不超过90天。",
       "input": "DescribeReviewDetailsRequest",
@@ -784,6 +805,13 @@
       "output": "ModifyPersonSampleResponse",
       "status": "online"
     },
+    "ModifyRebuildMediaTemplate": {
+      "document": "修改音画质重生模版。",
+      "input": "ModifyRebuildMediaTemplateRequest",
+      "name": "修改音画质重生模版",
+      "output": "ModifyRebuildMediaTemplateResponse",
+      "status": "online"
+    },
     "ModifyReviewTemplate": {
       "document": "修改用户自定义审核模板。\n>模板仅适用于 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 和 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217) 接口。",
       "input": "ModifyReviewTemplateRequest",
@@ -929,6 +957,13 @@
       "input": "RebuildMediaRequest",
       "name": "发起音画质重生",
       "output": "RebuildMediaResponse",
+      "status": "online"
+    },
+    "RebuildMediaByTemplate": {
+      "document": "使用模版发起音画质重生。",
+      "input": "RebuildMediaByTemplateRequest",
+      "name": "使用模版发起音画质重生",
+      "output": "RebuildMediaByTemplateResponse",
       "status": "online"
     },
     "RefreshUrlCache": {
@@ -8795,6 +8830,112 @@
       ],
       "type": "object"
     },
+    "CreateRebuildMediaTemplateRequest": {
+      "document": "CreateRebuildMediaTemplate请求参数结构体",
+      "members": [
+        {
+          "document": "输出文件封装格式，可选值：mp4、flv、hls。",
+          "example": "无",
+          "member": "string",
+          "name": "Container",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "音画质重生模版名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "模版描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "音画质重生视频控制控制信息。",
+          "example": "无",
+          "member": "RebuildVideoInfo",
+          "name": "RebuildVideoInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "音画质重生音频控制控制信息。",
+          "example": "无",
+          "member": "RebuildAudioInfo",
+          "name": "RebuildAudioInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "输出目标视频控制信息。",
+          "example": "无",
+          "member": "RebuildMediaTargetVideoStream",
+          "name": "TargetVideoInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "输出目标音频控制信息。",
+          "example": "无",
+          "member": "RebuildMediaTargetAudioStream",
+          "name": "TargetAudioInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值 0。",
+          "example": "无",
+          "member": "string",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRebuildMediaTemplateResponse": {
+      "document": "CreateRebuildMediaTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "音画质重生模版 ID。",
+          "example": "10000",
+          "member": "int64",
+          "name": "Definition",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateReviewTemplateRequest": {
       "document": "CreateReviewTemplate请求参数结构体",
       "members": [
@@ -10147,6 +10288,40 @@
     },
     "DeleteProcedureTemplateResponse": {
       "document": "DeleteProcedureTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRebuildMediaTemplateRequest": {
+      "document": "DeleteRebuildMediaTemplate请求参数结构体",
+      "members": [
+        {
+          "document": "音画质重生模版号。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "int64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRebuildMediaTemplateResponse": {
+      "document": "DeleteRebuildMediaTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12525,6 +12700,80 @@
           "example": "无",
           "member": "ProcedureTemplate",
           "name": "ProcedureTemplateSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRebuildMediaTemplatesRequest": {
+      "document": "DescribeRebuildMediaTemplates请求参数结构体",
+      "members": [
+        {
+          "document": "音画质重生模版列表。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "int64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "分页偏移量，默认值：0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRebuildMediaTemplatesResponse": {
+      "document": "DescribeRebuildMediaTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "符合过滤条件的记录总数。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "音画质重生模板详情列表。",
+          "example": "无",
+          "member": "RebuildMediaTemplate",
+          "name": "RebuildMediaTemplateSet",
           "type": "list",
           "value_allowed_null": false
         },
@@ -20747,6 +20996,112 @@
       ],
       "type": "object"
     },
+    "ModifyRebuildMediaTemplateRequest": {
+      "document": "ModifyRebuildMediaTemplate请求参数结构体",
+      "members": [
+        {
+          "document": "音画质重生模版号。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "音画质重生模版名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "音画质重生模版描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "音画质重生视频控制信息。",
+          "example": "无",
+          "member": "RebuildVideoInfo",
+          "name": "RebuildVideoInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "音画质重生音频控制信息。",
+          "example": "无",
+          "member": "RebuildAudioInfo",
+          "name": "RebuildAudioInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "输出目标视频控制信息。",
+          "example": "无",
+          "member": "RebuildMediaTargetVideoStream",
+          "name": "TargetVideoInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "输出目标音频控制信息。",
+          "example": "无",
+          "member": "RebuildMediaTargetAudioStream",
+          "name": "TargetAudioInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "输出文件封装格式，可选值：mp4、flv、hls。",
+          "example": "无",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRebuildMediaTemplateResponse": {
+      "document": "ModifyRebuildMediaTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyReviewTemplateRequest": {
       "document": "ModifyReviewTemplate请求参数结构体",
       "members": [
@@ -23973,7 +24328,6 @@
       "document": "PullUpload请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。\n支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。请确保媒体 URL 可以访问。",
           "example": "http://www.abc.com/abc.mp4",
           "member": "string",
@@ -23982,7 +24336,14 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "媒体文件类型（扩展名），支持的类型详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。\n如果 MediaType 不填或取值为空字符串，将根据 MediaUrl 自动获取文件类型。",
+          "example": "mp4",
+          "member": "string",
+          "name": "MediaType",
+          "required": false,
+          "type": "string"
+        },
+        {
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -23991,7 +24352,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "媒体名称。",
           "example": "无",
           "member": "string",
@@ -24000,7 +24360,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。",
           "example": "无",
           "member": "string",
@@ -24009,7 +24368,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "媒体后续任务操作，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。",
           "example": "无",
           "member": "string",
@@ -24018,7 +24376,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "无",
           "member": "datetime_iso",
@@ -24027,7 +24384,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定上传园区，仅适用于对上传地域有特殊需求的用户：\n<li>不填默认上传至您的[默认地域](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)。</li>\n<li>若指定上传园区，请先确认[上传存储设置](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)已经开启相应的存储地域。</li>",
           "example": "无",
           "member": "string",
@@ -24036,7 +24392,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分类ID，用于对媒体进行分类管理，可通过[创建分类](https://cloud.tencent.com/document/product/266/7812)接口，创建分类，获得分类 ID。",
           "example": "无",
           "member": "int64",
@@ -24045,7 +24400,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
           "example": "无",
           "member": "string",
@@ -24054,7 +24408,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
           "example": "无",
           "member": "string",
@@ -24063,7 +24416,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "保留字段，特殊用途时使用。",
           "example": "无",
           "member": "string",
@@ -24072,7 +24424,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。",
           "example": "无",
           "member": "string",
@@ -24091,7 +24442,6 @@
           "example": "125xxxxxx07-pull-893dc41e6fdc22dcf24aa6e9c61cp94",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -24262,6 +24612,160 @@
         }
       ],
       "type": "object"
+    },
+    "RebuildAudioInfo": {
+      "document": "音画质重生音频控制控制信息。",
+      "members": [
+        {
+          "document": "音频降噪控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioDenoiseInfo",
+          "name": "AudioDenoiseInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RebuildMediaByTemplateRequest": {
+      "document": "RebuildMediaByTemplate请求参数结构体",
+      "members": [
+        {
+          "document": "媒体文件 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "音画质重生模版 ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "起始偏移时间，单位：秒，不填表示从视频开始截取。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "结束偏移时间，单位：秒，不填表示截取到视频末尾。",
+          "example": "无",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "document": "音画质重生后的文件配置。",
+          "example": "无",
+          "member": "RebuildMediaOutputConfig",
+          "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "保留字段，特殊用途时使用。",
+          "example": "无",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebuildMediaByTemplateResponse": {
+      "document": "RebuildMediaByTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "音画质重生的任务 ID，可以通过该 ID 查询音画质重生任务的状态。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebuildMediaOutputConfig": {
+      "document": "音画质重生结果文件输出。",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "name",
+          "member": "string",
+          "name": "MediaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ClassId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "RebuildMediaRequest": {
       "document": "RebuildMedia请求参数结构体",
@@ -25000,6 +25504,234 @@
         }
       ],
       "usage": "out"
+    },
+    "RebuildMediaTemplate": {
+      "document": "音画质重生模版详情。",
+      "members": [
+        {
+          "document": "音画质重生模版号。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板类型，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "音画质重生模版名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "音画质重生模版描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "音画质重生视频控制信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RebuildVideoInfo",
+          "name": "RebuildVideoInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音画质重生音频控制信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RebuildAudioInfo",
+          "name": "RebuildAudioInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "输出视频控制信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RebuildMediaTargetVideoStream",
+          "name": "TargetVideoInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "输出音频控制信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RebuildMediaTargetAudioStream",
+          "name": "TargetAudioInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "封装格式。可选值：mp4、hls。默认是 mp4。",
+          "example": "无",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RebuildVideoInfo": {
+      "document": "音画质重生视频控制控制信息。",
+      "members": [
+        {
+          "document": "画质修复控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RepairInfo",
+          "name": "RepairInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "智能插帧控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoFrameInterpolationInfo",
+          "name": "VideoFrameInterpolationInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "画面超分控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SuperResolutionInfo",
+          "name": "SuperResolutionInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高动态范围类型控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HDRInfo",
+          "name": "HDRInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "视频降噪控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoDenoiseInfo",
+          "name": "VideoDenoiseInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "色彩增强控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ColorEnhanceInfo",
+          "name": "ColorInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "细节增强控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SharpEnhanceInfo",
+          "name": "SharpInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "人脸增强控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FaceEnhanceInfo",
+          "name": "FaceInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "低光照控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LowLightEnhanceInfo",
+          "name": "LowLightInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "去划痕控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScratchRepairInfo",
+          "name": "ScratchRepairInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "去伪影控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ArtifactRepairInfo",
+          "name": "ArtifactRepairInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ReduceMediaBitrateAdaptiveDynamicStreamingResult": {
       "document": "降码率任务转自适应码流结果类型",

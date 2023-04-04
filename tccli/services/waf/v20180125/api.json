@@ -189,6 +189,13 @@
       "output": "DescribeUserClbWafRegionsResponse",
       "status": "online"
     },
+    "DescribeVipInfo": {
+      "document": "根据过滤条件查询VIP信息",
+      "input": "DescribeVipInfoRequest",
+      "name": "查询VIP信息",
+      "output": "DescribeVipInfoResponse",
+      "status": "online"
+    },
     "DescribeWafAutoDenyRules": {
       "document": "返回ip惩罚规则详细信息",
       "input": "DescribeWafAutoDenyRulesRequest",
@@ -3050,6 +3057,40 @@
       ],
       "type": "object"
     },
+    "DescribeVipInfoRequest": {
+      "document": "DescribeVipInfo请求参数结构体",
+      "members": [
+        {
+          "document": "waf实例id列表",
+          "example": "[\"waf-xxx2\",\"waf-xxx1\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVipInfoResponse": {
+      "document": "DescribeVipInfo返回参数结构体",
+      "members": [
+        {
+          "document": "VIP信息",
+          "example": "无",
+          "member": "VipInfo",
+          "name": "VipInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWafAutoDenyRulesRequest": {
       "document": "DescribeWafAutoDenyRules请求参数结构体",
       "members": [
@@ -5625,6 +5666,30 @@
         }
       ],
       "type": "object"
+    },
+    "VipInfo": {
+      "document": "Vip信息",
+      "members": [
+        {
+          "document": "Virtual IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”1.1.1.1“",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "waf实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"waf-0001\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "WafRuleLimit": {
       "document": "waf模块的规格",

@@ -2958,8 +2958,8 @@
       "document": "分组识别结果Item",
       "members": [
         {
-          "default": "",
           "document": "人员库ID 。",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -2967,8 +2967,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "识别出的最相似候选人。",
+          "example": "无",
           "member": "Candidate",
           "name": "Candidates",
           "required": true,

@@ -18,7 +18,7 @@
     ],
     "AttachDisks": [
       {
-        "document": "",
+        "document": "将云硬盘disk-lzrg2pwi挂载到子机ins-dyzmimrw上",
         "input": "https://cbs.tencentcloudapi.com/?Action=AttachDisks\n&DiskIds.0=disk-lzrg2pwi\n&InstanceId=ins-dyzmimrw\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e0f140e5-14d6-c4a1-91e0-5a1f7f05a68a\"\n    }\n}",
         "title": "挂载云硬盘"
@@ -86,7 +86,7 @@
     ],
     "DeleteAutoSnapshotPolicies": [
       {
-        "document": "",
+        "document": "删除指定定期快照策略：asp-mrsrn243、asp-3lpl7ev3",
         "input": "https://cbs.tencentcloudapi.com/?Action=DeleteAutoSnapshotPolicies\n&AutoSnapshotPolicyIds.0=asp-mrsrn243\n&AutoSnapshotPolicyIds.1=asp-3lpl7ev3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"60874256-0230-6c3b-371d-5a1fa64e6b8c\"\n    }\n}",
         "title": "批量删除定期快照策略"

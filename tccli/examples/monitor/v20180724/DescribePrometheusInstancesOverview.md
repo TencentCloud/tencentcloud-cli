@@ -33,7 +33,9 @@ Output:
                 "GrafanaURL": "xxx",
                 "SubnetId": "xxx",
                 "InstanceName": "xxx",
-                "ChargeStatus": 0
+                "ChargeStatus": 0,
+                "ResourcePackageStatus": 1,
+                "ResourcePackageSpecName": "fff"
             }
         ],
         "Total": 1,

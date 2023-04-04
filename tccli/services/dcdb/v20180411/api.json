@@ -84,6 +84,13 @@
       "output": "DescribeAccountsResponse",
       "status": "online"
     },
+    "DescribeBackupFiles": {
+      "document": "本接口(DescribeBackupFiles)用于查看备份文件列表。",
+      "input": "DescribeBackupFilesRequest",
+      "name": "查看备份文件列表",
+      "output": "DescribeBackupFilesResponse",
+      "status": "online"
+    },
     "DescribeDBLogFiles": {
       "document": "本接口(DescribeDBLogFiles)用于获取数据库的各种日志列表，包括冷备、binlog、errlog和slowlog。",
       "input": "DescribeDBLogFilesRequest",
@@ -2933,6 +2940,123 @@
       ],
       "type": "object"
     },
+    "DescribeBackupFilesRequest": {
+      "document": "DescribeBackupFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按实例ID查询",
+          "example": "tdsqlshard-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按分片ID查询",
+          "example": "shard-xxxx",
+          "member": "string",
+          "name": "ShardId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份类型，Data:数据备份，Binlog:Binlog备份，Errlog:错误日志，Slowlog:慢日志",
+          "example": "Binlog",
+          "member": "string",
+          "name": "BackupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按开始时间查询",
+          "example": "2022-05-10 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按结束时间查询",
+          "example": "2022-05-10 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序参数，可选值：Time,Size",
+          "example": "Time",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序参数，可选值：DESC,ASC",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupFilesResponse": {
+      "document": "DescribeBackupFiles返回参数结构体",
+      "members": [
+        {
+          "document": "备份文件列表",
+          "example": "无",
+          "member": "InstanceBackupFileItem",
+          "name": "Files",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总条目数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBLogFilesRequest": {
       "document": "DescribeDBLogFiles请求参数结构体",
       "members": [
@@ -5498,6 +5622,122 @@
         }
       ],
       "type": "object"
+    },
+    "InstanceBackupFileItem": {
+      "document": "实例备份文件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsqlshard-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "tdsqlshard-xxx",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片ID",
+          "example": "shard-xxx",
+          "member": "string",
+          "name": "ShardId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件路径",
+          "example": "/backup/xxx.lz4",
+          "member": "string",
+          "name": "FilePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名",
+          "example": "xxx.lz4",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小",
+          "example": "1",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份类型，Data:数据备份，Binlog:Binlog备份，Errlog:错误日志，Slowlog:慢日志",
+          "example": "Binlog",
+          "member": "string",
+          "name": "BackupType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手动备份，0:否，1:是",
+          "example": "0",
+          "member": "int64",
+          "name": "ManualBackup",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份开始时间",
+          "example": "2022-05-10 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份结束时间",
+          "example": "2022-05-10 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "IsolateDedicatedDBInstanceRequest": {
       "document": "IsolateDedicatedDBInstance请求参数结构体",

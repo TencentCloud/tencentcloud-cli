@@ -12821,7 +12821,6 @@
       "document": "DescribeAssetHostDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "主机id",
           "example": "无",
           "member": "string",
@@ -12836,11 +12835,10 @@
       "document": "DescribeAssetHostDetail返回参数结构体",
       "members": [
         {
-          "document": "云镜uuid",
+          "document": "容器安全uuid",
           "example": "无",
           "member": "string",
           "name": "UUID",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12849,7 +12847,6 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12858,7 +12855,6 @@
           "example": "无",
           "member": "string",
           "name": "HostName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12867,7 +12863,6 @@
           "example": "无",
           "member": "string",
           "name": "Group",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12876,7 +12871,6 @@
           "example": "无",
           "member": "string",
           "name": "HostIP",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12885,7 +12879,6 @@
           "example": "无",
           "member": "string",
           "name": "OsName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12894,7 +12887,6 @@
           "example": "无",
           "member": "string",
           "name": "AgentVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12903,7 +12895,6 @@
           "example": "无",
           "member": "string",
           "name": "KernelVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12912,7 +12903,6 @@
           "example": "无",
           "member": "string",
           "name": "DockerVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12921,7 +12911,6 @@
           "example": "无",
           "member": "string",
           "name": "DockerAPIVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12930,7 +12919,6 @@
           "example": "无",
           "member": "string",
           "name": "DockerGoVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12939,7 +12927,6 @@
           "example": "无",
           "member": "string",
           "name": "DockerFileSystemDriver",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12948,7 +12935,6 @@
           "example": "无",
           "member": "string",
           "name": "DockerRootDir",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12957,7 +12943,6 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageCnt",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12966,7 +12951,6 @@
           "example": "无",
           "member": "uint64",
           "name": "ContainerCnt",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12975,7 +12959,6 @@
           "example": "无",
           "member": "string",
           "name": "K8sMasterIP",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12984,7 +12967,6 @@
           "example": "无",
           "member": "string",
           "name": "K8sVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12993,7 +12975,6 @@
           "example": "无",
           "member": "string",
           "name": "KubeProxyVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13002,7 +12983,6 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13011,7 +12991,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsContainerd",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -13020,7 +12999,6 @@
           "example": "无",
           "member": "string",
           "name": "MachineType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13029,7 +13007,6 @@
           "example": "无",
           "member": "string",
           "name": "PublicIp",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13038,7 +13015,6 @@
           "example": "无",
           "member": "string",
           "name": "InstanceID",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13047,7 +13023,6 @@
           "example": "无",
           "member": "int64",
           "name": "RegionID",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13056,7 +13031,6 @@
           "example": "无",
           "member": "ProjectInfo",
           "name": "Project",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13065,7 +13039,6 @@
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

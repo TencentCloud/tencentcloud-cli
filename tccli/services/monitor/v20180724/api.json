@@ -11822,34 +11822,49 @@
       "document": "查询过滤参数",
       "members": [
         {
-          "default": "",
           "document": "过滤方式（=, !=, in）",
           "example": "=",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "过滤维度名",
           "example": "serviceName",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "过滤值，in过滤方式用逗号分割多个值",
           "example": "sso-api",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "过滤条件名称",
+          "example": "abc",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "过滤条件取值范围",
+          "example": "[\"aa\", \"bb\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -15815,6 +15830,24 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "资源包状态，0-无可用资源包，1-有可用资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourcePackageStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源包规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”xxxx“",
+          "member": "string",
+          "name": "ResourcePackageSpecName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -178,7 +178,7 @@
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeRoles\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Offset\": 1,\n        \"Limit\": 1,\n        \"TotalCount\": 1,\n        \"ChannelRoles\": [\n            {\n                \"RoleId\": \"abc\",\n                \"RoleName\": \"abc\",\n                \"RoleStatus\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Offset\": 1,\n        \"Limit\": 1,\n        \"TotalCount\": 1,\n        \"ChannelRoles\": [\n            {\n                \"RoleId\": \"abc\",\n                \"RoleName\": \"abc\",\n                \"RoleStatus\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
     ],

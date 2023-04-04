@@ -5521,7 +5521,6 @@
       "document": "DescribeSpeedTestingQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "站点ID。",
           "example": "zone-sdfafcad",
           "member": "string",
@@ -5540,7 +5539,6 @@
           "example": "无",
           "member": "SpeedTestingQuota",
           "name": "SpeedTestingQuota",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7840,7 +7838,6 @@
       "document": "例外规则的生效范围。",
       "members": [
         {
-          "default": "",
           "document": "例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：\n<li>complete：完全跳过模式；</li>\n<li>partial：部分跳过模式。</li>",
           "example": "complete",
           "member": "string",
@@ -7850,8 +7847,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "生效的模块，该字段取值有：\n<li>waf：托管规则；</li>\n<li>cc：速率限制规则；</li>\n<li>bot：Bot防护。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效的模块，该字段取值有：\n<li>waf：托管规则；</li>\n<li>rate：速率限制；</li>\n<li>acl：自定义规则；</li>\n<li>cc：cc攻击防护；</li>\n<li>bot：Bot防护。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"waf\"]",
           "member": "string",
           "name": "Modules",
@@ -7860,7 +7856,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PartialModule",
@@ -7870,7 +7865,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SkipCondition",
