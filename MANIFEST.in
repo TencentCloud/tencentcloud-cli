@@ -471,6 +471,8 @@ include tccli/services/trdp/v20220726/api.json
 include tccli/services/trdp/v20220726/examples.json
 include tccli/services/trp/v20210515/api.json
 include tccli/services/trp/v20210515/examples.json
+include tccli/services/trro/v20220325/api.json
+include tccli/services/trro/v20220325/examples.json
 include tccli/services/trtc/v20190722/api.json
 include tccli/services/trtc/v20190722/examples.json
 include tccli/services/tse/v20201207/api.json
