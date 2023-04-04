@@ -1,3 +1,162 @@
+# Release 3.0.737.1
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 31 次发布
+
+发布时间：2023-04-04 01:17:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupFiles](http://document.tencentcloudapi.woa.com/document/product/557/77405)
+
+新增数据结构：
+
+* [InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/557/16142#InstanceBackupFileItem)
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 12 次发布
+
+发布时间：2023-04-04 01:18:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateIntlDomainBatch](http://document.tencentcloudapi.woa.com/document/product/242/77318)
+
+	* 新增入参：CustomDns
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 53 次发布
+
+发布时间：2023-04-04 01:28:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/248/30354#Filter)
+
+	* 新增成员：Name, Values
+
+	* <font color="#dd0000">**修改成员**：</font>Type, Key, Value
+
+* [PrometheusInstancesOverview](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusInstancesOverview)
+
+	* 新增成员：ResourcePackageStatus, ResourcePackageSpecName
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 28 次发布
+
+发布时间：2023-04-04 01:33:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateTriggerStatus](http://document.tencentcloudapi.woa.com/document/product/583/77406)
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 60 次发布
+
+发布时间：2023-04-04 01:38:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServiceAccountAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/31866#ServiceAccountAuthenticationOptions)
+
+	* 新增成员：UseTKEDefault
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 55 次发布
+
+发布时间：2023-04-04 01:40:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77411)
+* [DeleteRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77410)
+* [DescribeRebuildMediaTemplates](http://document.tencentcloudapi.woa.com/document/product/266/77409)
+* [ModifyRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77408)
+* [RebuildMediaByTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77407)
+
+修改接口：
+
+* [PullUpload](http://document.tencentcloudapi.woa.com/document/product/266/35575)
+
+	* 新增入参：MediaType
+
+
+新增数据结构：
+
+* [RebuildAudioInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildAudioInfo)
+* [RebuildMediaOutputConfig](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaOutputConfig)
+* [RebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTemplate)
+* [RebuildVideoInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildVideoInfo)
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 30 次发布
+
+发布时间：2023-04-04 02:00:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeVipInfo](http://document.tencentcloudapi.woa.com/document/product/627/77412)
+
+新增数据结构：
+
+* [VipInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#VipInfo)
+
+
+
 # Release 3.0.736.1
 
 ## 云服务器(cvm) 版本：2017-03-12

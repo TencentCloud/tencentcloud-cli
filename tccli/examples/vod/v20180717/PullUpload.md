@@ -1,6 +1,6 @@
 **Example 1: 拉取上传一个 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频。**
 
-
+拉取上传 MP4 视频
 
 Input: 
 
@@ -21,7 +21,7 @@ Output:
 
 **Example 2: 拉取上传一个国内 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频至重庆园区。**
 
-
+拉取上传 MP4 视频至重庆园区
 
 Input: 
 
@@ -43,7 +43,7 @@ Output:
 
 **Example 3: 拉取上传一个海外 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频至新加坡园区。**
 
-
+拉取上传 MP4 至新加坡园区
 
 Input: 
 

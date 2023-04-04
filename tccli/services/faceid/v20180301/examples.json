@@ -10,8 +10,8 @@
     ],
     "ApplySdkVerificationToken": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplySdkVerificationToken\n<公共请求参数>\n\n{\n    \"NeedVerifyIdCard\": true,\n    \"Extra\": \"xx\",\n    \"IdCardType\": \"HK\"\n}",
+        "document": "获取核验 token",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplySdkVerificationToken\n<公共请求参数>\n\n{\n    \"NeedVerifyIdCard\": true,\n    \"Extra\": \"fewfewf\",\n    \"IdCardType\": \"HK\"\n}",
         "output": "{\n    \"Response\": {\n        \"SdkToken\": \"A561B769-C347-4724-A69A-6C3B3483E107\",\n        \"RequestId\": \"d73c0c05-f7ff-419c-84cb-0756303b1925\"\n    }\n}",
         "title": "获取Token成功"
       }

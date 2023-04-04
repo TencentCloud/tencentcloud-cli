@@ -1,15 +1,15 @@
 **Example 1: 批量域名注册**
 
-
+批量域名注册
 
 Input: 
 
 ```
 tccli domain CreateIntlDomainBatch --cli-unfold-argument  \
-    --Domains xx \
+    --Domains a.com \
     --PayMode 0 \
     --Period 1 \
-    --TemplateId xx
+    --TemplateId tmpl-aabb
 ```
 
 Output: 

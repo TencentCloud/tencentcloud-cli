@@ -3002,22 +3002,24 @@
       "document": "分组识别结果Item",
       "members": [
         {
-          "default": "",
           "document": "人员库ID 。",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "识别出的最相似候选人。",
+          "example": "无",
           "member": "Candidate",
           "name": "Candidates",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

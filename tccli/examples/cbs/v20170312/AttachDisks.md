@@ -1,6 +1,6 @@
 **Example 1: 挂载云硬盘**
 
-
+将云硬盘disk-lzrg2pwi挂载到子机ins-dyzmimrw上
 
 Input: 
 

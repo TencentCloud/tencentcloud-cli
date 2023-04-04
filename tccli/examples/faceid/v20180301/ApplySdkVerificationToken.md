@@ -1,13 +1,13 @@
 **Example 1: 获取Token成功**
 
-
+获取核验 token
 
 Input: 
 
 ```
 tccli faceid ApplySdkVerificationToken --cli-unfold-argument  \
     --NeedVerifyIdCard True \
-    --Extra xx \
+    --Extra fewfewf \
     --IdCardType HK
 ```
 

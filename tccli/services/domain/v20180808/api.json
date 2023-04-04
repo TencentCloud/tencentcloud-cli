@@ -1665,67 +1665,76 @@
       "document": "CreateIntlDomainBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模板ID。",
           "example": "tmpl-xxxxxx",
           "member": "string",
           "name": "TemplateId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "购买域名的年限，可选值：[1-10]",
           "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "批量购买的域名,最多为4000个",
           "example": "qq.com",
           "member": "string",
           "name": "Domains",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "付费模式 0手动在线付费，1使用余额付费，2使用特惠包 3 线下结算",
           "example": "0",
           "member": "int64",
           "name": "PayMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启 \"自动续费\"",
           "example": "true",
           "member": "bool",
           "name": "AutoRenewFlag",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启 \"禁止转移锁\"",
           "example": "true",
           "member": "bool",
           "name": "TransferProhibition",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启 \"禁止更新锁\"",
           "example": "true",
           "member": "bool",
           "name": "UpdateProhibition",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "自定义dns",
+          "example": "a.dnspod.com",
+          "member": "string",
+          "name": "CustomDns",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1738,9 +1747,9 @@
           "example": "318",
           "member": "int64",
           "name": "LogId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

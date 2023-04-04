@@ -351,7 +351,6 @@
       "document": "ApplySdkVerificationToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "是否需要身份证鉴伪，如果不需要，则仅做证件OCR。当前仅IdCardType为HK支持鉴伪。",
           "example": "true",
           "member": "bool",
@@ -361,8 +360,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "卡证类型，当前仅支持HK（中国香港身份证），ML（马来西亚身份证），PhilippinesVoteID（菲律宾选民卡），PhilippinesDrivingLicense（菲律宾驾驶证）。默认为HK。",
+          "document": "卡证类型，当前仅支持HK（中国香港身份证），ML（马来西亚身份证），PhilippinesVoteID（菲律宾选民卡），IndonesiaIDCard（印度身份证），SingaporeIDCard（新加坡身份证），PhilippinesDrivingLicense（菲律宾驾驶证）。默认为HK。",
           "example": "HK",
           "member": "string",
           "name": "IdCardType",
@@ -371,7 +369,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否允许用户修改ocr结果，默认false，允许。",
           "example": "true",
           "member": "bool",
@@ -381,7 +378,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否关闭OCR告警，默认false，不关闭。如果为false开启OCR告警，我们会根据Ocr的告警信息进行拦截，当NeedVerifyIdCard为true时该字段将为true。",
           "example": "true",
           "member": "bool",
@@ -391,7 +387,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "透传字段，在获取验证结果时返回，最长1024位。",
           "example": "1",
           "member": "string",
@@ -411,7 +406,6 @@
           "example": "A561B769-C347-4724-A69A-6C3B3483E107",
           "member": "string",
           "name": "SdkToken",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

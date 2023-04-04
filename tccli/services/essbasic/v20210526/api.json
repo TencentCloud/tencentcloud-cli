@@ -113,16 +113,16 @@
       "status": "online"
     },
     "ChannelCreateUserRoles": {
-      "document": "渠道版绑定员工角色",
+      "document": "绑定员工角色",
       "input": "ChannelCreateUserRolesRequest",
-      "name": "渠道版绑定员工角色",
+      "name": "绑定员工角色",
       "output": "ChannelCreateUserRolesResponse",
       "status": "online"
     },
     "ChannelDeleteRoleUsers": {
-      "document": "渠道版删除员工绑定角色",
+      "document": "删除员工绑定角色",
       "input": "ChannelDeleteRoleUsersRequest",
-      "name": "渠道版删除员工绑定角色",
+      "name": "删除员工绑定角色",
       "output": "ChannelDeleteRoleUsersResponse",
       "status": "online"
     },
@@ -148,9 +148,9 @@
       "status": "online"
     },
     "ChannelDescribeRoles": {
-      "document": "渠道办查询用户角色",
+      "document": "查询用户角色",
       "input": "ChannelDescribeRolesRequest",
-      "name": "渠道办查询用户角色",
+      "name": "查询用户角色",
       "output": "ChannelDescribeRolesResponse",
       "status": "online"
     },
@@ -1935,15 +1935,6 @@
       "document": "ChannelCreateUserRoles请求参数结构体",
       "members": [
         {
-          "document": "操作者信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object",
-          "visibility": 1
-        },
-        {
           "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。",
           "example": "无",
           "member": "Agent",
@@ -1968,6 +1959,15 @@
           "name": "RoleIds",
           "required": true,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "操作者信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object",
           "visibility": 1
         }
       ],
@@ -1998,10 +1998,10 @@
       "document": "ChannelDeleteRoleUsers请求参数结构体",
       "members": [
         {
-          "document": "操作人信息",
+          "document": "代理信息",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
+          "member": "Agent",
+          "name": "Agent",
           "required": true,
           "type": "object",
           "visibility": 1
@@ -2025,10 +2025,10 @@
           "visibility": 1
         },
         {
-          "document": "代理信息",
+          "document": "操作人信息",
           "example": "无",
-          "member": "Agent",
-          "name": "Agent",
+          "member": "UserInfo",
+          "name": "Operator",
           "required": true,
           "type": "object",
           "visibility": 1
@@ -2313,15 +2313,6 @@
       "document": "ChannelDescribeRoles请求参数结构体",
       "members": [
         {
-          "document": "操作人信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object",
-          "visibility": 1
-        },
-        {
           "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。",
           "example": "无",
           "member": "Agent",
@@ -2346,6 +2337,15 @@
           "name": "Limit",
           "required": true,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object",
           "visibility": 1
         },
         {

@@ -37,7 +37,7 @@ Output:
             {
                 "RoleId": "abc",
                 "RoleName": "abc",
-                "RoleStatus": "abc"
+                "RoleStatus": 1
             }
         ],
         "RequestId": "abc"
