@@ -1,30 +1,33 @@
 **Example 1: 创建房间**
 
-创建上课房间
+示例
 
 Input: 
 
 ```
 tccli lcic CreateRoom --cli-unfold-argument  \
-    --AutoMic 1 \
-    --Name xx \
-    --AudioQuality 1 \
-    --MaxMicNumber 1 \
-    --SubType xx \
-    --SdkAppId 1 \
+    --Name abc \
     --StartTime 1 \
-    --TeacherId xx \
     --EndTime 1 \
+    --TeacherId abc \
+    --SdkAppId 1 \
     --Resolution 1 \
-    --DisableRecord 1
+    --MaxMicNumber 1 \
+    --AutoMic 1 \
+    --AudioQuality 1 \
+    --SubType abc \
+    --DisableRecord 1 \
+    --Assistants abc \
+    --RecordLayout 1 \
+    --GroupId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RoomId": 301234567,
-        "RequestId": "213das"
+        "RoomId": 1,
+        "RequestId": "abc"
     }
 }
 ```

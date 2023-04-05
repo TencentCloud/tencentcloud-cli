@@ -70,6 +70,13 @@
       "output": "DescribeWorkspaceEnvListResponse",
       "status": "online"
     },
+    "DescribeWorkspaceIsReady": {
+      "document": "获取工作空间是否已经启动就绪",
+      "input": "DescribeWorkspaceIsReadyRequest",
+      "name": "获取工作空间是否已经启动就绪",
+      "output": "DescribeWorkspaceIsReadyResponse",
+      "status": "online"
+    },
     "DescribeWorkspaceNameExist": {
       "document": "检查工作空间是否存在",
       "input": "DescribeWorkspaceNameExistRequest",
@@ -709,11 +716,44 @@
       ],
       "type": "object"
     },
+    "DescribeWorkspaceIsReadyRequest": {
+      "document": "DescribeWorkspaceIsReady请求参数结构体",
+      "members": [
+        {
+          "document": "工作空间 spaceKey",
+          "example": "无",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceIsReadyResponse": {
+      "document": "DescribeWorkspaceIsReady返回参数结构体",
+      "members": [
+        {
+          "document": "工作空间是否就绪\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Data",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWorkspaceNameExistRequest": {
       "document": "DescribeWorkspaceNameExist请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "用户所属组",
           "example": "cloudstudio-devops",
           "member": "string",
@@ -722,7 +762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "工作空间名称",
           "example": "Go2-kubsff",
           "member": "string",
@@ -731,7 +770,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "工作空间ID",
           "example": "xxx",
           "member": "string",
@@ -745,6 +783,14 @@
     "DescribeWorkspaceNameExistResponse": {
       "document": "DescribeWorkspaceNameExist返回参数结构体",
       "members": [
+        {
+          "document": "工作空间信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkspaceInfoDTO",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

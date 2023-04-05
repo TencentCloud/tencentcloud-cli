@@ -26,7 +26,7 @@
     ],
     "CreateAlarm": [
       {
-        "document": "",
+        "document": "创建告警策略",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlarm\n<公共请求参数>\n\n{\n    \"AlarmNoticeIds\": [\n        \"notice-b02af159-f67b-44c3-877c-a55343f874c3\"\n    ],\n    \"Name\": \"test\",\n    \"TriggerCount\": 1,\n    \"AlarmPeriod\": 0,\n    \"MonitorTime\": {\n        \"Type\": \"Period\",\n        \"Time\": 10\n    },\n    \"AlarmTargets\": [\n        {\n            \"TopicId\": \"be3d88bb-a9cb-4d29-b697-0fcfbfd601ef\",\n            \"Number\": 1,\n            \"Query\": \"* | select count(*) as count\",\n            \"EndTimeOffset\": 0,\n            \"StartTimeOffset\": 0,\n            \"LogsetId\": \"fe3d45bb-a9cb-4d29-b697-0fcfbfd601ef\"\n        }\n    ],\n    \"Condition\": \"$1.count > 10\"\n}",
         "output": "{\n    \"Response\": {\n        \"AlarmId\": \"alarm-479dec34-4a59-11eb-b378-0242ac130002\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建告警策略"
@@ -98,7 +98,7 @@
     ],
     "CreateMachineGroup": [
       {
-        "document": "",
+        "document": "创建机器组",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMachineGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"testname\",\n    \"MachineGroupType\": {\n        \"Type\": \"ip\",\n        \"Values\": [\n            \"10.10.1.119\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"GroupId\": \"57f5808c-4a55-11eb-b378-0242ac130002\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建机器组"
@@ -234,7 +234,7 @@
     ],
     "DescribeAlarms": [
       {
-        "document": "",
+        "document": "获取告警策略列表",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarms\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Alarms\": [],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "获取告警策略列表"
@@ -394,7 +394,7 @@
     ],
     "ModifyAlarm": [
       {
-        "document": "",
+        "document": "修改告警策略",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarm\n<公共请求参数>\n\n{\n    \"AlarmNoticeIds\": [\n        \"notice-479dec34-4a59-11eb-b378-0242ac130002\"\n    ],\n    \"Name\": \"test\",\n    \"TriggerCount\": 1,\n    \"AlarmPeriod\": 0,\n    \"MonitorTime\": {\n        \"Type\": \"Period\",\n        \"Time\": 10\n    },\n    \"AlarmTargets\": [\n        {\n            \"TopicId\": \"6f574591-01b0-4475-bf0c-68255839a35d\",\n            \"Number\": 1,\n            \"Query\": \"* | select source\",\n            \"EndTimeOffset\": 0,\n            \"StartTimeOffset\": 0,\n            \"LogsetId\": \"ff574591-01b0-4475-bf0c-68255839a35d\"\n        }\n    ],\n    \"Condition\": \"$1.source='10.0.0.1'\",\n    \"AlarmId\": \"alarm-bea71170-4a59-11eb-b378-0242ac130002\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改告警策略"
@@ -458,7 +458,7 @@
     ],
     "ModifyMachineGroup": [
       {
-        "document": "",
+        "document": "修改机器组",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMachineGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"57f5808c-4a55-11eb-b378-0242ac130002\",\n    \"GroupName\": \"testgroup\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改机器组"
@@ -474,7 +474,7 @@
     ],
     "ModifyTopic": [
       {
-        "document": "",
+        "document": "修改日志主题",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxxxxx-xx-xx-xx-xxxxxxxx\",\n    \"TopicName\": \"testname\",\n    \"Status\": false,\n    \"Tags\": [],\n    \"Period\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改日志主题"

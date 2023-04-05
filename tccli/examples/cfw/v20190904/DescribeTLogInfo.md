@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cfw DescribeTLogInfo --cli-unfold-argument  \
-    --EndTime xx \
-    --SearchValue xx \
-    --QueryType xx \
-    --StartTime xx
+    --EndTime 2021-09-18 12:00:00 \
+    --SearchValue {country: 1, instance_id:instanceidtest, source:1} \
+    --QueryType 1 \
+    --StartTime 2021-09-17 12:00:00
 ```
 
 Output: 

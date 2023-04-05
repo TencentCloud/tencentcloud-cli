@@ -4028,7 +4028,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "当前签署人的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前签署人的状态, 状态如下\n\nPENDING 流程等待中 \nFILLPENDING 待填写状态\nFILLACCEPT 参与人已经填写\nFILLREJECT 参与人解决填写\nWAITPICKUP 待签收\nACCEPT 签收 \nREJECT 拒签 \nDEADLINE 过期没有处理 \nCANCEL 取消\nFORWARD 已经转他人处理\nSTOP 流程因为其他原因终止\nRELIEVED 已经解除\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApproveStatus",
@@ -4325,7 +4325,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "合同(流程)的状态",
+          "document": "合同(流程)的状态, 状态如下\n\nINIT 还没发起\nPART 部分签署\nREJECT 拒签\nALL 全部签署\nDEADLINE 流签\nCANCEL 取消\nRELIEVED 解除\n ",
           "example": "无",
           "member": "string",
           "name": "FlowStatus",

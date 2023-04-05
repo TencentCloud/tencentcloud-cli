@@ -92,11 +92,19 @@
         "title": "DescribeWorkspaceStatusList"
       }
     ],
+    "DescribeWorkspaceIsReady": [
+      {
+        "document": "获取工作空间是否已经启动就绪",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceIsReady\n<公共请求参数>\n\n{\n    \"SpaceKey\": \"abcx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取工作空间是否已经启动就绪"
+      }
+    ],
     "DescribeWorkspaceNameExist": [
       {
-        "document": "",
+        "document": "检查工作空间是否存在",
         "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceNameExist\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d6a1d78-9c62-4e5d-92fb-5e1361425b7e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"6d6a1d78-9c62-4e5d-92fb-5e1361425b7e\"\n    }\n}",
         "title": "DescribeWorkspaceNameExist"
       }
     ],

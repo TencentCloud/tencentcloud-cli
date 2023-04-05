@@ -192,7 +192,7 @@
       {
         "document": "查询新企业安全组规则",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnterpriseSecurityGroupRule\n<公共请求参数>\n\n{\n    \"Enable\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"Description\": \"xx\",\n    \"PageNo\": \"xx\",\n    \"SourceContent\": \"xx\",\n    \"ServiceTemplateId\": \"xx\",\n    \"PageSize\": \"xx\",\n    \"DestContent\": \"xx\",\n    \"RuleAction\": \"xx\",\n    \"Port\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"OrderIndex\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"SourceType\": \"xx\",\n                \"SourceContent\": \"xx\",\n                \"DestType\": \"xx\",\n                \"ServiceTemplateId\": \"xx\",\n                \"DestContent\": \"xx\",\n                \"RuleAction\": \"xx\",\n                \"Port\": \"xx\",\n                \"Description\": \"xx\"\n            }\n        ],\n        \"TotalCount\": \"xx\",\n        \"PageSize\": \"xx\",\n        \"PageNo\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"Id\": \"xxx-xxx\",\n                \"OrderIndex\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"SourceType\": \"xx\",\n                \"SourceContent\": \"xx\",\n                \"DestType\": \"xx\",\n                \"ServiceTemplateId\": \"xx\",\n                \"DestContent\": \"xx\",\n                \"RuleAction\": \"xx\",\n                \"Port\": \"xx\",\n                \"Enable\": \"true\",\n                \"Description\": \"xx\"\n            }\n        ],\n        \"TotalCount\": \"xx\",\n        \"PageSize\": \"xx\",\n        \"PageNo\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询新企业安全组规则"
       }
     ],
@@ -311,7 +311,7 @@
     "DescribeTLogInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTLogInfo\n<公共请求参数>\n\n{\n    \"EndTime\": \"xx\",\n    \"SearchValue\": \"xx\",\n    \"QueryType\": \"xx\",\n    \"StartTime\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTLogInfo\n<公共请求参数>\n\n{\n    \"EndTime\": \"2021-09-18 12:00:00\",\n    \"SearchValue\": \"{country: 1, instance_id:instanceidtest, source:1}\",\n    \"QueryType\": \"1\",\n    \"StartTime\": \"2021-09-17 12:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"NetworkNum\": 0,\n            \"HandleNum\": 0,\n            \"BanNum\": 0,\n            \"VulNum\": 0,\n            \"OutNum\": 0,\n            \"BruteForceNum\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "DescribeTLogInfo"
       }

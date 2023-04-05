@@ -140,6 +140,13 @@
       "output": "DescribeCronJobsResponse",
       "status": "online"
     },
+    "DescribeErrorSummary": {
+      "document": "查询错误详情汇总信息",
+      "input": "DescribeErrorSummaryRequest",
+      "name": "查询错误详情汇总信息",
+      "output": "DescribeErrorSummaryResponse",
+      "status": "online"
+    },
     "DescribeFiles": {
       "document": "查询文件列表",
       "input": "DescribeFilesRequest",
@@ -870,7 +877,6 @@
       "document": "并发模式的施压配置",
       "members": [
         {
-          "default": "",
           "document": "多阶段配置数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Stage",
@@ -880,7 +886,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "运行次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -890,7 +895,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大RPS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -900,11 +904,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "优雅终止任务的等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "int64",
           "name": "GracefulStopSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "Resources",
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2477,6 +2489,64 @@
       ],
       "type": "object"
     },
+    "DescribeErrorSummaryRequest": {
+      "document": "DescribeErrorSummary请求参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "场景ID",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "项目ID",
+          "example": "\"project-xx\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeErrorSummaryResponse": {
+      "document": "DescribeErrorSummary返回参数结构体",
+      "members": [
+        {
+          "document": "错误汇总信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorSummary",
+          "name": "ErrorSummarySet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFilesRequest": {
       "document": "DescribeFiles请求参数结构体",
       "members": [
@@ -3908,6 +3978,66 @@
         }
       ],
       "usage": "both"
+    },
+    "ErrorSummary": {
+      "document": "错误信息汇总",
+      "members": [
+        {
+          "document": "状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结果码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200 ok",
+          "member": "string",
+          "name": "Result",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误出现次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.11",
+          "member": "float",
+          "name": "Rate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求协议类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HTTP/1.1",
+          "member": "string",
+          "name": "Proto",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "File": {
       "document": "文件列表",

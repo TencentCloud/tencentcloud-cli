@@ -973,6 +973,39 @@
       ],
       "usage": "both"
     },
+    "BetaInfoByACL": {
+      "document": "规则关联的beta任务",
+      "members": [
+        {
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001",
+          "member": "int64",
+          "name": "TaskId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务xxx",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "上次执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-02 10:00:00",
+          "member": "string",
+          "name": "LastTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BlockIgnoreRule": {
       "document": "入侵防御放通封禁规则",
       "members": [
@@ -2453,6 +2486,15 @@
           "name": "Status",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "关联任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BetaInfoByACL",
+          "name": "BetaList",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4306,7 +4348,7 @@
       "document": "DescribeTLogInfo返回参数结构体",
       "members": [
         {
-          "document": "无",
+          "document": "\"NetworkNum\":网络扫描探测\n \"HandleNum\": 待处理事件\n\"BanNum\": \n  \"VulNum\": 漏洞利用\n  \"OutNum\": 失陷主机\n\"BruteForceNum\": 0",
           "example": "无",
           "member": "TLogInfo",
           "name": "Data",

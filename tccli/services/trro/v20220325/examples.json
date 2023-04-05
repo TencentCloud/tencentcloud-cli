@@ -16,6 +16,14 @@
         "title": "批量删除权限示例"
       }
     ],
+    "BoundLicenses": [
+      {
+        "document": "为推流设备绑定license，优先绑定到期时间最近的，到期时间相同优先绑定月包",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BoundLicenses\n<公共请求参数>\n\n{\n    \"DeviceId\": \"remote11\",\n    \"ProjectId\": \"m82k54kco5arav1n\",\n    \"Count\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"468bf31b-b5f7-44c4-8663-8d9548693cf5\"\n    }\n}",
+        "title": "绑定license"
+      }
+    ],
     "CreateDevice": [
       {
         "document": "",
@@ -96,6 +104,14 @@
         "title": "获取项目列表示例"
       }
     ],
+    "DescribeRecentSessionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecentSessionList\n<公共请求参数>\n\n{\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"10\",\n    \"ProjectId\": \"abcdefg\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": \"0\",\n    \"EndTime\": \"1670000000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RecentSessionList\": [\n            {\n                \"LatestUpdateTime\": 1650000060,\n                \"FieldDeviceId\": \"dev2\",\n                \"RemoteDeviceId\": \"dev2\",\n                \"Resolution\": \"1920*1080\",\n                \"SessionId\": \"abcdefg-50f7-4c60-9c89-e7076c8529a9-0\",\n                \"StartTime\": 1650000000\n            }\n        ],\n        \"RequestId\": \"abcdefg-186d-4dc5-9a36-6849446dd921\",\n        \"Total\": 1,\n        \"Num\": 1\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeSessionStatistics": [
       {
         "document": "",
@@ -110,6 +126,38 @@
         "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionStatisticsByInterval\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abcdefg\",\n    \"EndTime\": \"1670000000\",\n    \"StatisticInterval\": \"hour\",\n    \"DeviceId\": \"dev2\",\n    \"StartTime\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdefg-774e-4756-9f5b-8faa55ae1e5b\",\n        \"SessionStatistics\": [\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 0,\n                \"SessionNum\": 1,\n                \"TotalDuration\": 0\n            },\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 0,\n                \"SessionNum\": 2,\n                \"TotalDuration\": 0\n            },\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 1,\n                \"SessionNum\": 4,\n                \"TotalDuration\": 604\n            },\n            {\n                \"ActiveFieldDeviceNum\": 1,\n                \"ActiveRemoteDeviceNum\": 0,\n                \"SessionNum\": 1,\n                \"TotalDuration\": 0\n            }\n        ]\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "GetDeviceLicense": [
+      {
+        "document": "获取设备可用license数量",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDeviceLicense\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"DeviceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AvailableCount\": 12,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取设备license"
+      }
+    ],
+    "GetDevices": [
+      {
+        "document": "查询用户购买的license列表以及设备绑定情况",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDevices\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 10,\n    \"ProjectId\": \"abc\",\n    \"DeviceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"468bf31b-b5f7-44c4-8663-8d9548693cf5\",\n        \"Devices\": [\n            {\n                \"DeviceId\": \"xxx\",\n                \"DeviceName\": \"xxx\",\n                \"LicenseCount\": 2,\n                \"RemainDay\": 30,\n                \"ExpireTime\": 167840945,\n                \"Duration\": 86400,\n                \"LicenseIds\": [\n                    \"trro-2e24a74a-67ea-1732-076d-75bf772529a\",\n                    \"trro-2e24a74a-67ea-1732-073d-75bf772579a\"\n                ]\n            },\n            {\n                \"DeviceId\": \"xxx\",\n                \"DeviceName\": \"xxx\",\n                \"LicenseCount\": 2,\n                \"RemainDay\": 30,\n                \"ExpireTime\": 167840945,\n                \"Duration\": 86400,\n                \"LicenseIds\": [\n                    \"trro-2e24a74a-67ea-1732-076d-75bf772529a\",\n                    \"trro-2e24a74a-67ea-1732-073d-75bf772579a\"\n                ]\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询license列表"
+      }
+    ],
+    "GetLicenseStat": [
+      {
+        "document": "统计各个类型的license数量",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLicenseStat\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Valid\": 10,\n        \"Bound\": 8,\n        \"UnBound\": 2,\n        \"Expire\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "license统计"
+      }
+    ],
+    "GetLicenses": [
+      {
+        "document": "查询用户购买的license列表以及设备绑定情况",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLicenses\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Licenses\": [\n            {\n                \"Status\": 0,\n                \"Duration\": \"86400\",\n                \"ExpireTime\": \"1686362610\",\n                \"RemainDay\": 82,\n                \"Count\": 2,\n                \"LicenseIds\": [\n                    \"trro-2e24a74a-67ea-1732-076d-75bf772529a\",\n                    \"trro-2e24a74a-67ea-1732-073d-75bf772579a\"\n                ]\n            },\n            {\n                \"Status\": 0,\n                \"Duration\": \"486400\",\n                \"ExpireTime\": \"1688954610\",\n                \"RemainDay\": 112,\n                \"Count\": 2\n            },\n            {\n                \"Status\": 0,\n                \"Duration\": \"186400\",\n                \"ExpireTime\": \"1689386610\",\n                \"RemainDay\": 117,\n                \"LicenseIds\": [\n                    \"trro-2e24a74a-67ea-1732-076d-75bf772529a\",\n                    \"trro-2e24a74a-67ea-1732-073d-75bf772579a\"\n                ],\n                \"Count\": 2\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "license列表"
       }
     ],
     "ModifyDevice": [

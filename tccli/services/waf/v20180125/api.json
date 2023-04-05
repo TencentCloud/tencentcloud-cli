@@ -28,6 +28,13 @@
       "output": "CreateAccessExportResponse",
       "status": "online"
     },
+    "CreateHost": {
+      "document": "clb-waf中添加防护的域名",
+      "input": "CreateHostRequest",
+      "name": "添加防护域名",
+      "output": "CreateHostResponse",
+      "status": "online"
+    },
     "DeleteAccessExport": {
       "document": "本接口用于删除访问日志导出",
       "input": "DeleteAccessExportRequest",
@@ -1526,6 +1533,51 @@
           "example": "\"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\"",
           "member": "string",
           "name": "ExportId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHostRequest": {
+      "document": "CreateHost请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "防护域名配置信息",
+          "example": "无",
+          "member": "HostRecord",
+          "name": "Host",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "aaaa",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHostResponse": {
+      "document": "CreateHost返回参数结构体",
+      "members": [
+        {
+          "document": "新增防护域名ID",
+          "example": "无",
+          "member": "string",
+          "name": "DomainId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4139,6 +4191,172 @@
       ],
       "type": "object"
     },
+    "HostRecord": {
+      "document": "clb-waf防护域名",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "\"test.qcloudwaf.com\"",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "\"waf-Bz0Wntsz\"",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主域名，入参时为空",
+          "example": "\"qcloudwaf.com\"",
+          "member": "string",
+          "name": "MainDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "waf模式，同saas waf保持一致",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "waf和LD的绑定，0：没有绑定，1：绑定",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名状态，0：正常，1：未检测到流量，2：即将过期，3：过期",
+          "example": "1",
+          "member": "uint64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用的规则，同saas waf保持一致",
+          "example": "20",
+          "member": "uint64",
+          "name": "Engine",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启代理，0：不开启，1：开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsCdn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定的LB列表",
+          "example": "{}",
+          "member": "LoadBalancer",
+          "name": "LoadBalancerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名绑定的LB的地域，以,分割多个地域",
+          "example": "\"gz\"",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品分类，取值为：sparta-waf、clb-waf、cdn-waf",
+          "example": "\"clb-waf\"",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "WAF的流量模式，1：清洗模式，0：镜像模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "FlowMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启访问日志，1：开启，0：关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "ClsStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护等级，可选值100,200,300\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Level",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名需要下发到的cdc集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"\t cluster-o41khj88\",\"\t cluster-o41khj99\"]",
+          "member": "string",
+          "name": "CdcClusters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用型负载均衡类型: clb或者apisix，默认clb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clb",
+          "member": "string",
+          "name": "AlbType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceInfo": {
       "document": "一个实例的详细信息",
       "members": [
@@ -4562,6 +4780,122 @@
         }
       ],
       "usage": "out"
+    },
+    "LoadBalancer": {
+      "document": "负载均衡的监听器",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡LD的ID",
+          "example": "lb-xx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡LD的名称",
+          "example": "test",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器的ID",
+          "example": "lbl-xx",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器的名称",
+          "example": "test",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的端口",
+          "example": "80",
+          "member": "uint64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡LD的地域",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器协议，http、https",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡监听器所在的zone",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的VPCID，公网为-1，内网按实际填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NumericalVpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡的网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN 公网； INTERNAL 内网",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "LoadBalancerPackageNew": {
       "document": "负载均衡算法",

@@ -14,6 +14,13 @@
       "output": "BatchDeletePolicyResponse",
       "status": "online"
     },
+    "BoundLicenses": {
+      "document": "为推流设备绑定license，优先绑定到期时间最近的，到期时间相同优先绑定月包",
+      "input": "BoundLicensesRequest",
+      "name": "设备绑定license",
+      "output": "BoundLicensesResponse",
+      "status": "online"
+    },
     "CreateDevice": {
       "document": "用于创建设备",
       "input": "CreateDeviceRequest",
@@ -84,6 +91,13 @@
       "output": "DescribeProjectListResponse",
       "status": "online"
     },
+    "DescribeRecentSessionList": {
+      "document": "获取最新设备会话列表",
+      "input": "DescribeRecentSessionListRequest",
+      "name": "获取最新设备会话列表",
+      "output": "DescribeRecentSessionListResponse",
+      "status": "online"
+    },
     "DescribeSessionStatistics": {
       "document": "获取会话统计值",
       "input": "DescribeSessionStatisticsRequest",
@@ -96,6 +110,34 @@
       "input": "DescribeSessionStatisticsByIntervalRequest",
       "name": "获取各时间段的会话统计值",
       "output": "DescribeSessionStatisticsByIntervalResponse",
+      "status": "online"
+    },
+    "GetDeviceLicense": {
+      "document": "获取设备已经绑定的可用授权数量",
+      "input": "GetDeviceLicenseRequest",
+      "name": "获取设备授权数量",
+      "output": "GetDeviceLicenseResponse",
+      "status": "online"
+    },
+    "GetDevices": {
+      "document": "查询用户设备的授权绑定情况",
+      "input": "GetDevicesRequest",
+      "name": "设备的授权列表",
+      "output": "GetDevicesResponse",
+      "status": "online"
+    },
+    "GetLicenseStat": {
+      "document": "统计license类型数量",
+      "input": "GetLicenseStatRequest",
+      "name": "licenses统计",
+      "output": "GetLicenseStatResponse",
+      "status": "online"
+    },
+    "GetLicenses": {
+      "document": "按授权查看license列表",
+      "input": "GetLicensesRequest",
+      "name": "查看license列表",
+      "output": "GetLicensesResponse",
       "status": "online"
     },
     "ModifyDevice": {
@@ -217,6 +259,48 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BoundLicensesRequest": {
+      "document": "BoundLicenses请求参数结构体",
+      "members": [
+        {
+          "document": "license数量",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "设备id",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "项目ID",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BoundLicensesResponse": {
+      "document": "BoundLicenses返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -919,6 +1003,105 @@
       ],
       "type": "object"
     },
+    "DescribeRecentSessionListRequest": {
+      "document": "DescribeRecentSessionList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备ID，支持过滤远端设备或现场设备",
+          "example": "xx",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算",
+          "example": "1650000000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算",
+          "example": "1650000050",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecentSessionListResponse": {
+      "document": "DescribeRecentSessionList返回参数结构体",
+      "members": [
+        {
+          "document": "总个数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "会话列表",
+          "example": "无",
+          "member": "RecentSessionInfo",
+          "name": "RecentSessionList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSessionStatisticsByIntervalRequest": {
       "document": "DescribeSessionStatisticsByInterval请求参数结构体",
       "members": [
@@ -1090,6 +1273,75 @@
       ],
       "type": "object"
     },
+    "Device": {
+      "document": "查询用户设备的授权绑定情况",
+      "members": [
+        {
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已经绑定license数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "LicenseCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "剩余天数：天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "RemainDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "过期时间：s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "167840945",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务时长：s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "86400",
+          "member": "string",
+          "name": "Duration",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已经绑定licenseId列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DeviceInfo": {
       "document": "设备信息",
       "members": [
@@ -1162,6 +1414,289 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetDeviceLicenseRequest": {
+      "document": "GetDeviceLicense请求参数结构体",
+      "members": [
+        {
+          "document": "目标设备所属项目ID",
+          "example": "f3glr49ry0i0xlm7",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "目标设备ID",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDeviceLicenseResponse": {
+      "document": "GetDeviceLicense返回参数结构体",
+      "members": [
+        {
+          "document": "指定设备已经绑定的可用license数量",
+          "example": "12",
+          "member": "int64",
+          "name": "AvailableCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDevicesRequest": {
+      "document": "GetDevices请求参数结构体",
+      "members": [
+        {
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "页面数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "项目 ID",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "设备ID",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDevicesResponse": {
+      "document": "GetDevices返回参数结构体",
+      "members": [
+        {
+          "document": "设备授权列表",
+          "example": "无",
+          "member": "Device",
+          "name": "Devices",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLicenseStatRequest": {
+      "document": "GetLicenseStat请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetLicenseStatResponse": {
+      "document": "GetLicenseStat返回参数结构体",
+      "members": [
+        {
+          "document": "有效授权",
+          "example": "10",
+          "member": "int64",
+          "name": "Valid",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已绑定授权",
+          "example": "8",
+          "member": "int64",
+          "name": "Bound",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "未绑定授权",
+          "example": "2",
+          "member": "int64",
+          "name": "UnBound",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "过期授权",
+          "example": "1",
+          "member": "int64",
+          "name": "Expire",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLicensesRequest": {
+      "document": "GetLicenses请求参数结构体",
+      "members": [
+        {
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "页面数量",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "projectId",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "DeviceId",
+          "example": "xxx",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLicensesResponse": {
+      "document": "GetLicenses返回参数结构体",
+      "members": [
+        {
+          "document": "license列表",
+          "example": "无",
+          "member": "License",
+          "name": "Licenses",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "license列表项数量",
+          "example": "4",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "License": {
+      "document": "按授权查看的license列表",
+      "members": [
+        {
+          "document": "该类型的license个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "license状态：0:未绑定；1:已绑定；2:已停服；3:已退费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "到期时间戳：s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1678503945",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务时长：s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "86400",
+          "member": "string",
+          "name": "Duration",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "剩余天数：天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "RemainDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "该类型的licenseId列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1442,6 +1977,72 @@
           "name": "ModifyTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecentSessionInfo": {
+      "document": "最新会话信息",
+      "members": [
+        {
+          "default": "",
+          "document": "会话ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "远端设备ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "RemoteDeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现场设备ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "FieldDeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分辨率",
+          "example": "1920*1080",
+          "member": "string",
+          "name": "Resolution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话开始时间",
+          "example": "1650000000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "example": "1650000060",
+          "member": "uint64",
+          "name": "LatestUpdateTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

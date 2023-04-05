@@ -1017,6 +1017,228 @@
       ],
       "usage": "both"
     },
+    "AlgDetectJS": {
+      "document": "Bot主动特征识别客户端行为校验。",
+      "members": [
+        {
+          "document": "操作名称。",
+          "example": "client_action",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "工作量证明 (proof_Of-Work)校验强度，默认low，取值有：\n<li>low：低；</li>\n<li>middle：中；</li>\n<li>high：高。</li>",
+          "example": "low",
+          "member": "string",
+          "name": "WorkLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行方式，js延迟执行的时间。单位为ms，默认500，取值：0～1000。",
+          "example": "500",
+          "member": "int64",
+          "name": "ExecuteMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户端末启用JS（末完成检测）统计周期。单位为秒，默认10，取值：5～3600。",
+          "example": "10",
+          "member": "int64",
+          "name": "InvalidStatTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户端末启用JS（末完成检测）触发阈值。单位为次，默认300，取值：1～100000000。",
+          "example": "100",
+          "member": "int64",
+          "name": "InvalidThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Bot主动特征识别客户端行为校验结果。",
+          "example": "无",
+          "member": "AlgDetectResult",
+          "name": "AlgDetectResults",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AlgDetectResult": {
+      "document": "Bot主动特征识别校验结果。",
+      "members": [
+        {
+          "document": "校验结果，取值有：\n<li>invalid：不合法Cookie；</li>\n<li>cookie_empty：末携带Cookie或Cookie己过期；</li>\n<li>js_empty：客户端末启用JS（末完成检测）；</li>\n<li>low：会话速率和周期特征校验低风险；</li>\n<li>middle：会话速率和周期特征校验中风险；</li>\n<li>high：会话速率和周期特征校验高风险；</li>\n<li>timeout：检测超时时长；</li>\n<li>not_browser：不合法浏览器；</li>\n<li>is_bot：Bot客户端。</li>",
+          "example": "invalid",
+          "member": "string",
+          "name": "Result",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "处罚动作，取值有：\n<li>drop：拦截；</li>\n<li>monitor：观察；</li>\n<li>silence：静默；</li>\n<li>shortdelay：（短时间）等待后响应；</li>\n<li>longdelay：（长时间）等待后响应。</li>",
+          "example": "drop",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AlgDetectRule": {
+      "document": "Bot主动特征识别规则。",
+      "members": [
+        {
+          "document": "规则id。",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则名。",
+          "example": "rule1",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则开关。",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自定义规则。",
+          "example": "无",
+          "member": "AclCondition",
+          "name": "AlgConditions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Cookie校验和会话行为分析。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlgDetectSession",
+          "name": "AlgDetectSession",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "客户端行为校验。",
+          "example": "无",
+          "member": "AlgDetectJS",
+          "name": "AlgDetectJS",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间。仅出参使用。",
+          "example": "2022-09-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AlgDetectSession": {
+      "document": "Cookie校验与会话跟踪。",
+      "members": [
+        {
+          "document": "操作名称。",
+          "example": "cookie_session",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "校验方式，默认update_detect，取值有：\n<li>detect：仅校验；</li>\n<li>update_detect：更新Cookie并校验。</li>",
+          "example": "detect",
+          "member": "string",
+          "name": "DetectMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "会话速率和周期特征校验开关，默认off，取值有：\n<li>off：关闭；</li>\n<li>on：打开。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "SessionAnalyzeSwitch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "校验结果为未携带Cookie或Cookie已过期的统计周期。单位为秒，默认10，取值：5～3600。",
+          "example": "10",
+          "member": "int64",
+          "name": "InvalidStatTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "校验结果为未携带Cookie或Cookie已过期的触发阈值。单位为次，默认300，取值：1～100000000。",
+          "example": "100",
+          "member": "int64",
+          "name": "InvalidThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Cookie校验校验结果。",
+          "example": "无",
+          "member": "AlgDetectResult",
+          "name": "AlgDetectResults",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "会话速率和周期特征校验结果。",
+          "example": "无",
+          "member": "AlgDetectResult",
+          "name": "SessionBehaviors",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AliasDomain": {
       "document": "别称域名信息。",
       "members": [
@@ -1481,6 +1703,15 @@
           "example": "[]",
           "member": "BotUserRule",
           "name": "BotUserRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Bot主动特征识别规则。",
+          "example": "[]",
+          "member": "AlgDetectRule",
+          "name": "AlgDetectRule",
           "required": false,
           "type": "list",
           "value_allowed_null": false

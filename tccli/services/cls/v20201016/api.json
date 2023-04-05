@@ -529,7 +529,6 @@
       "document": "告警策略描述",
       "members": [
         {
-          "default": "",
           "document": "告警策略名称。",
           "example": "test",
           "member": "string",
@@ -539,7 +538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "监控对象列表。",
           "example": "无",
           "member": "AlarmTargetInfo",
@@ -549,7 +547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "监控任务运行时间点。",
           "example": "无",
           "member": "MonitorTime",
@@ -559,7 +556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发条件。",
           "example": "无",
           "member": "string",
@@ -569,7 +565,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
           "example": "1",
           "member": "int64",
@@ -579,7 +574,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "告警重复的周期。单位是min。取值范围是0~1440。",
           "example": "20",
           "member": "int64",
@@ -589,7 +583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关联的告警通知模板列表。",
           "example": "无",
           "member": "string",
@@ -599,7 +592,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "开启状态。",
           "example": "true",
           "member": "bool",
@@ -609,7 +601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "告警策略ID。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -619,7 +610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间。",
           "example": "无",
           "member": "string",
@@ -629,7 +619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最近更新时间。",
           "example": "无",
           "member": "string",
@@ -639,7 +628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自定义通知模板\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "message tpl test {{.TopicName}}, raw result: {{.RawResults}}",
           "member": "string",
@@ -649,7 +637,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自定义回调模板\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CallBackInfo",
@@ -659,7 +646,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "多维分析设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AnalysisDimensional",
@@ -903,47 +889,43 @@
       "document": "多维分析的分析维度",
       "members": [
         {
-          "default": "",
-          "document": "分析名称",
+          "document": "分析名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "status 502 pv",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "分析类型：query，field ，original",
+          "document": "分析类型：query，field ，original\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "query",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "分析内容",
+          "document": "分析内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "*|select count(1) as pv where status = 502",
           "member": "string",
           "name": "Content",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "配置",
+          "document": "配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AlarmAnalysisConfig",
           "name": "ConfigInfo",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ApplyConfigToMachineGroupRequest": {
       "document": "ApplyConfigToMachineGroup请求参数结构体",
@@ -1962,7 +1944,6 @@
       "document": "CreateAlarm请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "告警策略名称",
           "example": "test",
           "member": "string",
@@ -1971,7 +1952,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "监控对象列表。",
           "example": "无",
           "member": "AlarmTarget",
@@ -1980,7 +1960,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "监控任务运行时间点。",
           "example": "无",
           "member": "MonitorTime",
@@ -1989,7 +1968,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "触发条件。",
           "example": "$1.count > 10",
           "member": "string",
@@ -1998,7 +1976,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
           "example": "1",
           "member": "int64",
@@ -2007,7 +1984,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "告警重复的周期。单位是分钟。取值范围是0~1440。",
           "example": "0",
           "member": "int64",
@@ -2016,7 +1992,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "关联的告警通知模板列表。",
           "example": "[\"notice-b02af159-f67b-44c3-877c-a55343f874c3\"]",
           "member": "string",
@@ -2025,7 +2000,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否开启告警策略。默认值为true",
           "example": "true",
           "member": "bool",
@@ -2034,7 +2008,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "用户自定义告警内容",
           "example": "\"\"",
           "member": "string",
@@ -2043,7 +2016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户自定义回调",
           "example": "无",
           "member": "CallBackInfo",
@@ -2052,7 +2024,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "多维分析",
           "example": "无",
           "member": "AnalysisDimensional",
@@ -2071,7 +2042,6 @@
           "example": "alarm-479dec34-4a59-11eb-b378-0242ac130002",
           "member": "string",
           "name": "AlarmId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2706,7 +2676,6 @@
       "document": "CreateMachineGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "机器组名字，不能重复",
           "example": "testgroup",
           "member": "string",
@@ -2715,7 +2684,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组",
           "example": "无",
           "member": "MachineGroupTypeInfo",
@@ -2724,7 +2692,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的机器组。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
           "example": "无",
           "member": "Tag",
@@ -2733,7 +2700,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否开启机器组自动更新",
           "example": "true",
           "member": "bool",
@@ -2742,7 +2708,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "升级开始时间，建议业务低峰期升级LogListener",
           "example": "\"12:00:00\"",
           "member": "string",
@@ -2751,7 +2716,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "升级结束时间，建议业务低峰期升级LogListener",
           "example": "\"13:00:00\"",
           "member": "string",
@@ -2760,7 +2724,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费",
           "example": "true",
           "member": "bool",
@@ -2779,7 +2742,6 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "GroupId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2910,7 +2872,6 @@
       "document": "CreateTopic请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "日志集ID",
           "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
@@ -2919,7 +2880,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志主题名称",
           "example": "testname",
           "member": "string",
@@ -2928,7 +2888,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志主题分区个数。默认创建1个，最大支持创建10个分区。",
           "example": "1",
           "member": "int64",
@@ -2937,7 +2896,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
           "example": "无",
           "member": "Tag",
@@ -2946,7 +2904,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否开启自动分裂，默认值为true",
           "example": "true",
           "member": "bool",
@@ -2955,7 +2912,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "开启自动分裂后，每个主题能够允许的最大分区数，默认值为50",
           "example": "50",
           "member": "int64",
@@ -2964,7 +2920,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。",
           "example": "hot",
           "member": "string",
@@ -2973,7 +2928,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生命周期，单位天，标准存储取值范围1\\~3600，低频存储取值范围7\\~3600天。取值为3640时代表永久保存",
           "example": "30",
           "member": "int64",
@@ -2992,7 +2946,6 @@
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "TopicId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3497,7 +3450,6 @@
       "document": "DescribeAlarms请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "<br><li> name\n\n按照【告警策略名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> alarmId\n\n按照【告警策略ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【监控对象的日志主题ID】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> enable\n\n按照【启用状态】进行过滤。\n\n类型：String\n\n备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
@@ -3506,7 +3458,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页的偏移量，默认值为0。",
           "example": "1",
           "member": "int64",
@@ -3515,7 +3466,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页单页限制数目，默认值为20，最大值100。",
           "example": "1",
           "member": "int64",
@@ -3534,7 +3484,6 @@
           "example": "无",
           "member": "AlarmInfo",
           "name": "Alarms",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3543,7 +3492,6 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5925,7 +5873,6 @@
       "document": "ModifyAlarm请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "告警策略ID。",
           "example": "alarm-bea71170-4a59-11eb-b378-0242ac130002",
           "member": "string",
@@ -5934,7 +5881,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警策略名称",
           "example": "test",
           "member": "string",
@@ -5943,7 +5889,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "监控任务运行时间点。",
           "example": "无",
           "member": "MonitorTime",
@@ -5952,7 +5897,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "触发条件。",
           "example": "$1.source='10.0.0.1'",
           "member": "string",
@@ -5961,7 +5905,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
           "example": "1",
           "member": "int64",
@@ -5970,7 +5913,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "告警重复的周期。单位是分钟。取值范围是0~1440。",
           "example": "0",
           "member": "int64",
@@ -5979,7 +5921,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "关联的告警通知模板列表。",
           "example": "[\"notice-479dec34-4a59-11eb-b378-0242ac130002\"]",
           "member": "string",
@@ -5988,7 +5929,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "监控对象列表。",
           "example": "无",
           "member": "AlarmTarget",
@@ -5997,7 +5937,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否开启告警策略。",
           "example": "true",
           "member": "bool",
@@ -6006,7 +5945,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "用户自定义告警内容",
           "example": "\"\"",
           "member": "string",
@@ -6015,7 +5953,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户自定义回调",
           "example": "无",
           "member": "CallBackInfo",
@@ -6024,7 +5961,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "多维分析",
           "example": "无",
           "member": "AnalysisDimensional",
@@ -6542,7 +6478,6 @@
       "document": "ModifyMachineGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "机器组ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -6551,7 +6486,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "机器组名称",
           "example": "testname",
           "member": "string",
@@ -6560,7 +6494,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "机器组类型",
           "example": "无",
           "member": "MachineGroupTypeInfo",
@@ -6569,7 +6502,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "标签列表",
           "example": "无",
           "member": "Tag",
@@ -6578,7 +6510,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否开启机器组自动更新",
           "example": "true",
           "member": "bool",
@@ -6587,7 +6518,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "升级开始时间，建议业务低峰期升级LogListener",
           "example": "\"12:00:00\"",
           "member": "string",
@@ -6596,7 +6526,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "升级结束时间，建议业务低峰期升级LogListener",
           "example": "\"13:00:00\"",
           "member": "string",
@@ -6605,7 +6534,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费",
           "example": "true",
           "member": "bool",
@@ -6746,7 +6674,6 @@
       "document": "ModifyTopic请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "日志主题ID",
           "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
@@ -6755,7 +6682,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志主题名称",
           "example": "testname",
           "member": "string",
@@ -6764,7 +6690,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，并且不能有重复的键值对。",
           "example": "无",
           "member": "Tag",
@@ -6773,7 +6698,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "该日志主题是否开始采集",
           "example": "true",
           "member": "bool",
@@ -6782,7 +6706,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启自动分裂",
           "example": "true",
           "member": "bool",
@@ -6791,7 +6714,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "若开启最大分裂，该主题能够能够允许的最大分区数",
           "example": "50",
           "member": "int64",
@@ -6800,7 +6722,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "生命周期，单位天，标准存储取值范围1\\~3600，低频存储取值范围7\\~3600。取值为3640时代表永久保存",
           "example": "30",
           "member": "int64",

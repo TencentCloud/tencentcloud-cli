@@ -160,6 +160,14 @@
         "title": "DescribeCronJobs"
       }
     ],
+    "DescribeErrorSummary": [
+      {
+        "document": "查询错误汇总信息",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeErrorSummary\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"JobId\": \"job-xx\",\n    \"ScenarioId\": \"scenario-xx\",\n    \"Filters\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"ErrorSummarySet\": [\n            {\n                \"Status\": \"200\",\n                \"Result\": \"200 OK\",\n                \"Count\": 1000,\n                \"Rate\": 1.2,\n                \"Message\": \"成功\"\n            }\n        ]\n    }\n}",
+        "title": "查询错误汇总信息"
+      }
+    ],
     "DescribeFiles": [
       {
         "document": "",

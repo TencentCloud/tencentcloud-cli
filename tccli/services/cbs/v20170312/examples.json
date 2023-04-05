@@ -26,7 +26,7 @@
     ],
     "BindAutoSnapshotPolicy": [
       {
-        "document": "",
+        "document": "给单块盘绑定定期快照策略",
         "input": "https://cbs.tencentcloudapi.com/?Action=BindAutoSnapshotPolicy\n&AutoSnapshotPolicyId=asp-mrsrn243\n&DiskIds.0=disk-dw0bbzws\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bda8bd1a-754d-d71b-8300-5a1fa45c237f\"\n    }\n}",
         "title": "给单块盘绑定定期快照策略"
@@ -310,8 +310,8 @@
     ],
     "ModifyDiskExtraPerformance": [
       {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskExtraPerformance\n&DiskId=disk-dritwhhm\n&ThroughputPerformance=300\n&<公共请求参数>",
+        "document": "500G TSSD 额外购买300M性能",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDiskExtraPerformance\n<公共请求参数>\n\n{\n  \"ThroughputPerformance\": 1,\n  \"DiskId\": \"disk-xx\"\n}\n\n{\n    \"ThroughputPerformance\": \"300\",\n    \"DiskId\": \"disk-dritwhhm\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d010c751-3edb-4388-878c-123fe111d1111owngrade400\"\n    }\n}",
         "title": "500G TSSD 额外购买300M性能"
       }

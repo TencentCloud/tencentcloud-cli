@@ -4173,8 +4173,7 @@
       "document": "DescribeDealsByCond请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "开始时间",
+          "document": "开始时间 2016-01-01 00:00:00",
           "example": "2016-01-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -4182,8 +4181,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "结束时间",
+          "document": "结束时间 2016-02-01 00:00:00 建议跨度不超过3个月",
           "example": "2016-02-01 00:00:00",
           "member": "datetime",
           "name": "EndTime",
@@ -4191,7 +4189,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "一页多少条数据，默认是20条，最大不超过1000",
           "example": "20",
           "member": "int64",
@@ -4200,7 +4197,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "第多少页，从0开始，默认是0",
           "example": "0",
           "member": "int64",
@@ -4209,7 +4205,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "订单状态,默认为4（成功的订单）\n订单的状态\n1：未支付\n2：已支付3：发货中\n4：已发货\n5：发货失败\n6：已退款\n7：已关单\n8：订单过期\n9：订单已失效\n10：产品已失效\n11：代付拒绝\n12：支付中",
           "example": "4",
           "member": "int64",
@@ -4218,7 +4213,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "订单号",
           "example": "202202021234567",
           "member": "string",
@@ -4227,7 +4221,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "大订单号",
           "example": "202202021234566",
           "member": "string",
@@ -4236,7 +4229,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源id",
           "example": "ins-a2bb34",
           "member": "string",
@@ -4255,7 +4247,6 @@
           "example": "无",
           "member": "Deal",
           "name": "Deals",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4264,7 +4255,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

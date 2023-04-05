@@ -1,6 +1,6 @@
 **Example 1: 示例**
 
-获取房间历史消息示例
+示例
 
 Input: 
 
@@ -19,18 +19,18 @@ Output:
         "Messages": [
             {
                 "Timestamp": 0,
-                "FromAccount": "xx",
+                "FromAccount": "abc",
                 "Seq": 0,
                 "MessageBody": [
                     {
                         "MessageType": 0,
-                        "TextMessage": "xx",
-                        "ImageMessage": "xx"
+                        "TextMessage": "abc",
+                        "ImageMessage": "abc"
                     }
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -889,7 +889,6 @@
       "document": "DescribeEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "起始时间戳（单位秒，不超过当前时间 90 天）",
           "example": "1612171581",
           "member": "uint64",
@@ -898,7 +897,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "结束时间戳（单位秒，查询时间跨度小于 30 天）",
           "example": "1612173581",
           "member": "uint64",
@@ -907,7 +905,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查看更多日志的凭证",
           "example": "123213213312313",
           "member": "uint64",
@@ -916,7 +913,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回日志的最大条数（最大 50 条）",
           "example": "10",
           "member": "uint64",
@@ -925,8 +921,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "检索条件（目前支持 RequestId：请求 ID、EventName：事件名称、ActionType：操作类型（Write：写；Read：读）、PrincipalId：子账号、ResourceType：资源类型、ResourceName：资源名称、AccessKeyId：密钥 ID、SensitiveAction：是否敏感操作、ApiErrorCode：API 错误码、CamErrorCode：CAM 错误码、Tags：标签（AttributeValue格式：[{\"key\":\"*\",\"value\":\"*\"}]））",
+          "document": "检索条件（目前支持 RequestId：请求 ID、EventName：事件名称、ActionType：操作类型（Write：写；Read：读）、PrincipalId：子账号、ResourceType：资源类型、ResourceName：资源名称、AccessKeyId：密钥 ID、SensitiveAction：是否敏感操作、ApiErrorCode：API 错误码、CamErrorCode：CAM 错误码、Tags：标签（AttributeValue格式：[{\"key\":\"*\",\"value\":\"*\"}]）备注:检索的各个条件间是与的关系,EventName传多个值内部是或的关系）",
           "example": "[{\"AttributeKey:XX,\"AttributeValue\":xx}]",
           "member": "LookupAttribute",
           "name": "LookupAttributes",
@@ -934,7 +929,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否返回 IP 归属地（1 返回，0 不返回）",
           "example": "1",
           "member": "uint64",
@@ -953,7 +947,6 @@
           "example": "false",
           "member": "bool",
           "name": "ListOver",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -962,7 +955,6 @@
           "example": "123123213",
           "member": "uint64",
           "name": "NextToken",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -971,7 +963,6 @@
           "example": "*",
           "member": "Event",
           "name": "Events",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -980,7 +971,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
