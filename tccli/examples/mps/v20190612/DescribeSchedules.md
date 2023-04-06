@@ -1,6 +1,6 @@
 **Example 1: 示例**
 
-
+查询编排ID为0的编排
 
 Input: 
 
@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 0,
         "ScheduleInfoSet": [],
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }

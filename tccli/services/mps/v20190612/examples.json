@@ -102,7 +102,7 @@
     ],
     "CreateSchedule": [
       {
-        "document": "对名为 TopRankVideo-125xxx88 的 Bucket 设置名称为\"trans-100020-100030-100040\"转码规则，转出100020，100030，100040三种格式。",
+        "document": "对名为 evan-test-1300828900 的Bucket 创建编排，当 mp4或者flv文件上传到 /input/ 目录时，触发多次转码任务，转码模板ID为 10。",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchedule\n<公共请求参数>\n\n{\n    \"ScheduleName\": \"evan_test7\",\n    \"Trigger\": {\n        \"Type\": \"CosFileUpload\",\n        \"CosFileUploadTrigger\": {\n            \"Bucket\": \"evan-test-1300828900\",\n            \"Region\": \"ap-guangzhou\",\n            \"Dir\": \"/input/\",\n            \"Formats\": [\n                \"mp4\",\n                \"flv\"\n            ]\n        }\n    },\n    \"Activities\": [\n        {\n            \"ActivityType\": \"input\",\n            \"ReardriveIndex\": [\n                1,\n                2\n            ]\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                3\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                6,\n                7\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                4,\n                5\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                10\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                10\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                10\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                8\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                9\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                10\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"output\",\n            \"ActivityPara\": {}\n        }\n    ],\n    \"OutputStorage\": {\n        \"Type\": \"COS\",\n        \"CosOutputStorage\": {\n            \"Bucket\": \"evan-test-1300828900\",\n            \"Region\": \"ap-nanjing\"\n        }\n    },\n    \"OutputDir\": \"output/\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"ScheduleId\": 157482\n    }\n}",
         "title": "设置转码规则"
@@ -402,9 +402,9 @@
     ],
     "DescribeSchedules": [
       {
-        "document": "",
+        "document": "查询编排ID为0的编排",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedules\n<公共请求参数>\n\n{\n    \"ScheduleIds\": [\n        0\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ScheduleInfoSet\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ScheduleInfoSet\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -718,10 +718,10 @@
     ],
     "ModifySchedule": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySchedule\n<公共请求参数>\n\n{\n    \"ScheduleId\": 20010,\n    \"ScheduleName\": \"evan_test1\",\n    \"OutputStorage\": {\n        \"Type\": \"COS\",\n        \"CosOutputStorage\": {\n            \"Region\": \"ap-guangzhou\"\n        }\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "示例"
+        "document": "修改编排",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySchedule\n<公共请求参数>\n\n{\n    \"ScheduleId\": 22435,\n    \"Trigger\": {\n        \"Type\": \"AwsS3FileUpload\",\n        \"AwsS3FileUploadTrigger\": {\n            \"S3Bucket\": \"evanxia-test\",\n            \"S3Region\": \"us-east-1\",\n            \"Dir\": \"/input/\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改编排"
       }
     ],
     "ModifySnapshotByTimeOffsetTemplate": [

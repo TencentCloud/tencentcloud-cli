@@ -1,3 +1,260 @@
+# Release 3.0.739.1
+
+## 验证码(captcha) 版本：2019-07-22
+
+### 第 9 次发布
+
+发布时间：2023-04-07 01:10:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCaptchaResult](http://document.tencentcloudapi.woa.com/document/product/1110/36926)
+
+	* 新增出参：EvilBitmap, SubmitCaptchaTime
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 37 次发布
+
+发布时间：2023-04-07 01:14:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IdleLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#IdleLoadBalancer)
+
+	* 新增成员：Domain
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 53 次发布
+
+发布时间：2023-04-07 01:17:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAlarmIncidentNodes](http://document.tencentcloudapi.woa.com/document/product/296/77420)
+* [DescribeAlarmVertexId](http://document.tencentcloudapi.woa.com/document/product/296/77419)
+* [DescribeEventByTable](http://document.tencentcloudapi.woa.com/document/product/296/77418)
+* [DescribePrivilegeEventInfo](http://document.tencentcloudapi.woa.com/document/product/296/77421)
+* [DescribeReverseShellEventInfo](http://document.tencentcloudapi.woa.com/document/product/296/77423)
+* [DescribeRiskDnsEventInfo](http://document.tencentcloudapi.woa.com/document/product/296/77422)
+* [DescribeVertexDetail](http://document.tencentcloudapi.woa.com/document/product/296/77417)
+
+新增数据结构：
+
+* [AlarmInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#AlarmInfo)
+* [IncidentVertexInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#IncidentVertexInfo)
+* [PrivilegeEventInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#PrivilegeEventInfo)
+* [ReverseShellEventInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#ReverseShellEventInfo)
+* [VertexDetail](http://document.tencentcloudapi.woa.com/document/product/296/19867#VertexDetail)
+* [VertexInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VertexInfo)
+
+修改数据结构：
+
+* [BruteAttackInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BruteAttackInfo)
+
+	* 新增成员：Location
+
+* [HostLoginList](http://document.tencentcloudapi.woa.com/document/product/296/19867#HostLoginList)
+
+	* 新增成员：Port
+
+* [PrivilegeEscalationProcess](http://document.tencentcloudapi.woa.com/document/product/296/19867#PrivilegeEscalationProcess)
+
+	* 新增成员：Pid
+
+* [ReverseShell](http://document.tencentcloudapi.woa.com/document/product/296/19867#ReverseShell)
+
+	* 新增成员：Pid
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 24 次发布
+
+发布时间：2023-04-07 01:42:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSchedules](http://document.tencentcloudapi.woa.com/document/product/862/77243)
+
+	* 新增入参：TriggerType
+
+* [ProcessMedia](http://document.tencentcloudapi.woa.com/document/product/862/37578)
+
+	* 新增入参：AiQualityControlTask
+
+
+新增数据结构：
+
+* [AiAnalysisTaskHighlightInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskHighlightInput)
+* [AiAnalysisTaskHighlightOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskHighlightOutput)
+* [AiAnalysisTaskHighlightResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskHighlightResult)
+* [AiQualityControlTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiQualityControlTaskInput)
+* [HighlightSegmentItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#HighlightSegmentItem)
+* [MediaAiAnalysisHighlightItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisHighlightItem)
+* [QualityControlData](http://document.tencentcloudapi.woa.com/document/product/862/37615#QualityControlData)
+* [QualityControlItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#QualityControlItem)
+* [QualityControlResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#QualityControlResult)
+* [ScheduleQualityControlTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleQualityControlTaskResult)
+
+修改数据结构：
+
+* [ActivityResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityResult)
+
+	* 新增成员：PredriveIndex, ReardriveIndex
+
+* [AiAnalysisResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisResult)
+
+	* 新增成员：HighlightTask
+
+* [MediaProcessTaskTranscodeResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskTranscodeResult)
+
+	* 新增成员：FinishTime
+
+* [ScheduleTask](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleTask)
+
+	* 新增成员：ErrCode, Message
+
+* [WorkflowTask](http://document.tencentcloudapi.woa.com/document/product/862/37615#WorkflowTask)
+
+	* 新增成员：AiQualityControlTaskResult
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 19 次发布
+
+发布时间：2023-04-07 01:51:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTrainingModels](http://document.tencentcloudapi.woa.com/document/product/851/74830)
+
+	* 新增入参：WithModelVersions
+
+* [RestartModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76547)
+
+	* 新增入参：FrameworkVersion
+
+
+修改数据结构：
+
+* [BatchModelAccTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#BatchModelAccTask)
+
+	* 新增成员：FrameworkVersion
+
+* [EngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#EngineVersion)
+
+	* 新增成员：FrameworkVersion
+
+* [HyperParameter](http://document.tencentcloudapi.woa.com/document/product/851/74915#HyperParameter)
+
+	* 新增成员：Encrypted
+
+* [ModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccelerateTask)
+
+	* 新增成员：FrameworkVersion
+
+* [Pod](http://document.tencentcloudapi.woa.com/document/product/851/74915#Pod)
+
+	* 新增成员：ContainerInfos
+
+* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
+
+	* 新增成员：PodInfos
+
+* [TrainingModelDTO](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingModelDTO)
+
+	* 新增成员：TrainingModelVersions
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 62 次发布
+
+发布时间：2023-04-07 01:52:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/457/31866#Cluster)
+
+	* 新增成员：ClusterEtcdNodeNum
+
+* [ClusterNetworkSettings](http://document.tencentcloudapi.woa.com/document/product/457/31866#ClusterNetworkSettings)
+
+	* 新增成员：CiliumMode
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 56 次发布
+
+发布时间：2023-04-07 01:54:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ImageBlur](http://document.tencentcloudapi.woa.com/document/product/266/31773#ImageBlur)
+
+修改数据结构：
+
+* [ImageOperation](http://document.tencentcloudapi.woa.com/document/product/266/31773#ImageOperation)
+
+	* 新增成员：Blur
+
+
+
+
 # Release 3.0.738.1
 
 ## 语音识别(asr) 版本：2019-06-14

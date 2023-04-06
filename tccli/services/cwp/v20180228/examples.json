@@ -296,6 +296,22 @@
         "title": "获取帐号统计列表数据"
       }
     ],
+    "DescribeAlarmIncidentNodes": [
+      {
+        "document": "获取告警点所在事件的所有节点信息",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmIncidentNodes\n<公共请求参数>\n\n{\n    \"Uuid\": \"abc\",\n    \"AlarmVid\": \"abc\",\n    \"AlarmTime\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"IncidentNodes\": [\n            {\n                \"IncidentId\": \"abc\",\n                \"TableName\": \"abc\",\n                \"Vertex\": [\n                    {\n                        \"Type\": 0,\n                        \"Vid\": \"abc\",\n                        \"ParentVid\": \"abc\",\n                        \"IsLeaf\": true,\n                        \"ProcNamePrefix\": \"abc\",\n                        \"ProcNameMd5\": \"abc\",\n                        \"CmdLinePrefix\": \"abc\",\n                        \"CmdLineMd5\": \"abc\",\n                        \"FilePathPrefix\": \"abc\",\n                        \"AddressPrefix\": \"abc\",\n                        \"IsWeDetect\": true,\n                        \"IsAlarm\": true,\n                        \"FilePathMd5\": \"abc\",\n                        \"AddressMd5\": \"abc\"\n                    }\n                ],\n                \"VertexCount\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeAlarmVertexId": [
+      {
+        "document": "获取时间范围内所有告警vid",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmVertexId\n<公共请求参数>\n\n{\n    \"Uuid\": \"abc\",\n    \"StartTime\": 0,\n    \"EndTime\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AlarmVertexIds\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeAssetAppList": [
       {
         "document": "",
@@ -922,6 +938,14 @@
         "title": "应急漏洞列表"
       }
     ],
+    "DescribeEventByTable": [
+      {
+        "document": "根据事件表名和id查询告警事件详情",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEventByTable\n<公共请求参数>\n\n{\n    \"TableName\": \"abc\",\n    \"Ids\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"abc\",\n        \"Value\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeExpertServiceList": [
       {
         "document": "专家服务-安全管家列表",
@@ -1194,6 +1218,14 @@
         "title": "获取概览统计数据"
       }
     ],
+    "DescribePrivilegeEventInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivilegeEventInfo\n<公共请求参数>\n\n{\n    \"Id\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"PrivilegeEventInfo\": {\n            \"UserName\": \"xx\",\n            \"Uuid\": \"xx\",\n            \"ParentProcUser\": \"xx\",\n            \"ProcFilePrivilege\": \"xx\",\n            \"UserGroup\": \"xx\",\n            \"Status\": 1,\n            \"MachineWanIp\": \"xx\",\n            \"Tags\": [\n                \"xx\"\n            ],\n            \"MachineName\": \"xx\",\n            \"HarmDescribe\": \"xx\",\n            \"SuggestScheme\": \"xx\",\n            \"CmdLine\": \"xx\",\n            \"NewCaps\": \"xx\",\n            \"ParentProcName\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ParentProcPath\": \"xx\",\n            \"Id\": 1,\n            \"References\": [\n                \"xx\"\n            ],\n            \"Quuid\": \"xx\",\n            \"ParentProcGroup\": \"xx\",\n            \"HostIp\": \"xx\",\n            \"MachineStatus\": \"xx\",\n            \"FullPath\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"PsTree\": \"xx\"\n        },\n        \"RequestId\": \"f14ce73f-50d7-4c36-af1d-fc33dae510c4\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribePrivilegeEvents": [
       {
         "document": "获取本地提权事件列表",
@@ -1258,6 +1290,14 @@
         "title": "专家服务-旗舰重保列表"
       }
     ],
+    "DescribeReverseShellEventInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReverseShellEventInfo\n<公共请求参数>\n\n{\n    \"Id\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"ReverseShellEventInfo\": {\n            \"UserName\": \"xx\",\n            \"Uuid\": \"xx\",\n            \"ParentProcUser\": \"xx\",\n            \"UserGroup\": \"xx\",\n            \"DetectBy\": 1,\n            \"Status\": 1,\n            \"ModifyTime\": \"xx\",\n            \"MachineWanIp\": \"xx\",\n            \"Tags\": [\n                \"xx\"\n            ],\n            \"MachineName\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"HarmDescribe\": \"xx\",\n            \"SuggestScheme\": \"xx\",\n            \"DstIp\": \"xx\",\n            \"CmdLine\": \"xx\",\n            \"ParentProcName\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ParentProcPath\": \"xx\",\n            \"Id\": 1,\n            \"References\": [\n                \"xx\"\n            ],\n            \"Quuid\": \"xx\",\n            \"ParentProcGroup\": \"xx\",\n            \"HostIp\": \"xx\",\n            \"MachineStatus\": \"xx\",\n            \"FullPath\": \"xx\",\n            \"DstPort\": 1,\n            \"PsTree\": \"xx\"\n        },\n        \"RequestId\": \"f14ce73f-50d7-4c36-af1d-fc33dae510c4\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeReverseShellEvents": [
       {
         "document": "获取反弹Shell列表",
@@ -1272,6 +1312,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeReverseShellRules\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Status\": 1,\n                \"Uuid\": \"xx\",\n                \"DestIp\": \"xx\",\n                \"Hostip\": \"xx\",\n                \"IsGlobal\": 1,\n                \"CreateTime\": \"xx\",\n                \"ProcessName\": \"xx\",\n                \"ModifyTime\": \"xx\",\n                \"Operator\": \"xx\",\n                \"Id\": 1,\n                \"DestPort\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取反弹Shell规则列表"
+      }
+    ],
+    "DescribeRiskDnsEventInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskDnsEventInfo\n<公共请求参数>\n\n{\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Id\": 10368,\n            \"PolicyId\": 0,\n            \"PolicyType\": -1,\n            \"PolicyName\": \"\",\n            \"ProtectLevel\": 2,\n            \"HostId\": \"02db9a21-78fe-4a4c-b96f-a11bf819a962\",\n            \"HostName\": \"v_llzlu恶意请求\",\n            \"HostIp\": \"192.168.111.28\",\n            \"WanIp\": \"43.138.255.181\",\n            \"HostStatus\": \"OFFLINE\",\n            \"AgentId\": \"02db9a21-78fe-4a4c-b96f-a11bf819a962\",\n            \"Domain\": \"183.60.95.201\",\n            \"Tags\": [],\n            \"AccessCount\": 1,\n            \"ThreatDesc\": \"发现主机存在访问恶意IP/域名的行为，您的主机可能已经失陷。\\n恶意IP/域名可能是黑客的远控服务器、恶意软件下载源、矿池地址等。\",\n            \"SuggestSolution\": \"1.检查恶意进程及非法端口，删除可疑的启动项和定时任务；\\n2.隔离或者删除相关的木马文件；\\n3.对系统进行风险排查，并进行安全加固，详情可参考如下链接： \\n【Linux】https://cloud.tencent.com/document/product/296/9604 \\n【Windows】https://cloud.tencent.com/document/product/296/9605\",\n            \"ReferenceLink\": \"\",\n            \"HandleStatus\": 6,\n            \"Pid\": 1387042,\n            \"ProcessName\": \"/usr/bin/ping\",\n            \"ProcessMd5\": \"7f42e35e3065eaa9a58b89e249e8cbc7\",\n            \"CmdLine\": \"ping 183.60.95.201 \",\n            \"FirstTime\": \"2022-09-19 14:57:23\",\n            \"LastTime\": \"2022-09-19 14:57:23\"\n        },\n        \"RequestId\": \"083fae4c-ac2c-4e41-ad88-b4420c9fce7c\"\n    }\n}",
+        "title": "查询恶意请求事件详情"
       }
     ],
     "DescribeRiskDnsEventList": [
@@ -1464,6 +1512,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVersionStatistics\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"BasicVersionNum\": 1,\n        \"ProVersionNum\": 1,\n        \"RequestId\": \"xx\",\n        \"UltimateVersionNum\": 1,\n        \"GeneralVersionNum\": 1\n    }\n}",
         "title": "统计专业版和基础版机器数"
+      }
+    ],
+    "DescribeVertexDetail": [
+      {
+        "document": "获取指定点属性信息",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVertexDetail\n<公共请求参数>\n\n{\n    \"VertexIds\": [\n        \"abc\"\n    ],\n    \"IncidentId\": \"abc\",\n    \"TableName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VertexDetails\": [\n            {\n                \"Type\": 0,\n                \"Time\": \"abc\",\n                \"AlarmInfo\": [\n                    {\n                        \"AlarmId\": \"abc\",\n                        \"Status\": 0\n                    }\n                ],\n                \"ProcName\": \"abc\",\n                \"CmdLine\": \"abc\",\n                \"Pid\": \"abc\",\n                \"FileMd5\": \"abc\",\n                \"FileContent\": \"abc\",\n                \"FilePath\": \"abc\",\n                \"FileCreateTime\": \"abc\",\n                \"Address\": \"abc\",\n                \"DstPort\": 1,\n                \"SrcIP\": \"abc\",\n                \"User\": \"abc\",\n                \"VulName\": \"abc\",\n                \"VulTime\": \"abc\",\n                \"HttpContent\": \"abc\",\n                \"VulSrcIP\": \"abc\",\n                \"VertexId\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeVulCountByDates": [

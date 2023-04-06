@@ -1482,7 +1482,6 @@
       "document": "DescribeCaptchaResult请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "固定填值：9。可在控制台配置不同验证码类型。",
           "example": "9",
           "member": "uint64",
@@ -1492,7 +1491,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "前端回调函数返回的用户验证票据",
           "example": "xxxx",
           "member": "string",
@@ -1502,7 +1500,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "业务侧获取到的验证码使用者的外网IP",
           "example": "127.0.0.1",
           "member": "string",
@@ -1512,7 +1509,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "前端回调函数返回的随机字符串",
           "example": "xxx",
           "member": "string",
@@ -1522,7 +1518,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。",
           "example": "201111111",
           "member": "uint64",
@@ -1532,7 +1527,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。",
           "example": "xxxxxx",
           "member": "string",
@@ -1542,8 +1536,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "业务 ID，网站或应用在多个业务中使用此服务，通过此 ID 区分统计数据",
+          "document": "预留字段",
           "example": "xxx",
           "member": "uint64",
           "name": "BusinessId",
@@ -1552,8 +1545,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "场景 ID，网站或应用的业务下有多个场景使用此服务，通过此 ID 区分统计数据",
+          "document": "预留字段",
           "example": "xxx",
           "member": "uint64",
           "name": "SceneId",
@@ -1562,7 +1554,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "mac 地址或设备唯一标识",
           "example": "xxx",
           "member": "string",
@@ -1572,7 +1563,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "手机设备号",
           "example": "xxx",
           "member": "string",
@@ -1582,7 +1572,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否返回前端获取验证码时间，取值1：需要返回",
           "example": "1",
           "member": "int64",
@@ -1602,7 +1591,6 @@
           "example": "1",
           "member": "int64",
           "name": "CaptchaCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1612,7 +1600,6 @@
           "example": "OK",
           "member": "string",
           "name": "CaptchaMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1622,7 +1609,6 @@
           "example": "0",
           "member": "int64",
           "name": "EvilLevel",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1632,9 +1618,26 @@
           "example": "1583749870",
           "member": "int64",
           "name": "GetCaptchaTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "拦截类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EvilBitmap",
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "提交验证码时间",
+          "example": "1583749870",
+          "member": "int64",
+          "name": "SubmitCaptchaTime",
+          "type": "int",
+          "value_allowed_null": false,
           "visibility": 1
         },
         {

@@ -2140,7 +2140,6 @@
       "document": "集群信息结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-xxxxxxx",
           "member": "string",
@@ -2151,7 +2150,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群名称",
           "example": "集群",
           "member": "string",
@@ -2162,7 +2160,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群描述",
           "example": "示例集群",
           "member": "string",
@@ -2173,7 +2170,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群版本（默认值为1.10.5）",
           "example": "1.20.6",
           "member": "string",
@@ -2184,7 +2180,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64",
           "example": "ubuntu16.04.1 LTSx86_64",
           "member": "string",
@@ -2195,7 +2190,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
           "example": "INDEPENDENT_CLUSTER",
           "member": "string",
@@ -2206,7 +2200,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群网络相关参数",
           "example": "无",
           "member": "ClusterNetworkSettings",
@@ -2217,7 +2210,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群当前node数量",
           "example": "3",
           "member": "uint64",
@@ -2228,7 +2220,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群所属的项目ID",
           "example": "0",
           "member": "uint64",
@@ -2239,7 +2230,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签描述列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TagSpecification",
@@ -2250,8 +2240,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "集群状态 (Running 运行中  Creating 创建中 Idling 闲置中  Abnormal 异常  )",
+          "document": "集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)",
           "example": "Running",
           "member": "string",
           "name": "ClusterStatus",
@@ -2261,7 +2250,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\\\"NodeNameType\\\":\\\"lan-ip\\\",\\\"NetworkType\\\":\\\"GR\\\"}",
           "member": "string",
@@ -2272,7 +2260,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群当前master数量",
           "example": "1",
           "member": "uint64",
@@ -2283,7 +2270,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群使用镜像id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2294,7 +2280,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "OsCustomizeType 系统定制类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GENERAL",
           "member": "string",
@@ -2305,7 +2290,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群运行环境docker或container\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "docker",
           "member": "string",
@@ -2316,7 +2300,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-16T07:42:57Z",
           "member": "string",
@@ -2327,7 +2310,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "删除保护开关\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -2338,7 +2320,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群是否开启第三方节点支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -2349,7 +2330,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群等级，针对托管集群生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "L5",
           "member": "string",
@@ -2360,7 +2340,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自动变配集群等级，针对托管集群生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -2371,7 +2350,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启QGPU共享\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -2382,13 +2360,22 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "运行时版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.4.3",
           "member": "string",
           "name": "RuntimeVersion",
           "required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "集群当前etcd数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ClusterEtcdNodeNum",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -4002,6 +3989,17 @@
           "example": "10.0.0.0/24",
           "member": "string",
           "name": "Ipv6ServiceCIDR",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群Cilium Mode配置\n- clusterIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"clusterIP\"",
+          "member": "string",
+          "name": "CiliumMode",
           "required": true,
           "type": "string",
           "value_allowed_null": true,
@@ -9436,10 +9434,12 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-abcd1234",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9449,17 +9449,23 @@
       "members": [
         {
           "document": "节点池总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "虚拟节点池列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VirtualNodePool",
           "name": "NodePoolSet",
+          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -20731,22 +20737,24 @@
       "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云主机实例。",
       "members": [
         {
-          "default": "",
           "document": "标签绑定的资源类型，当前支持类型：\"cluster\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ResourceType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "标签对列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -22034,7 +22042,6 @@
       "document": "虚拟节点池",
       "members": [
         {
-          "default": "",
           "document": "节点池ID",
           "example": "无",
           "member": "string",
@@ -22045,7 +22052,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -22056,7 +22062,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "节点池名称",
           "example": "无",
           "member": "string",
@@ -22067,7 +22072,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "节点池生命周期",
           "example": "无",
           "member": "string",
@@ -22078,7 +22082,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "虚拟节点label\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Label",
@@ -22089,7 +22092,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "虚拟节点taint\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Taint",

@@ -1,22 +1,23 @@
-**Example 1: 示例**
+**Example 1: 修改编排**
 
-
+修改编排
 
 Input: 
 
 ```
 tccli mps ModifySchedule --cli-unfold-argument  \
-    --ScheduleId 20010 \
-    --ScheduleName evan_test1 \
-    --OutputStorage.Type COS \
-    --OutputStorage.CosOutputStorage.Region ap-guangzhou
+    --ScheduleId 22435 \
+    --Trigger.Type AwsS3FileUpload \
+    --Trigger.AwsS3FileUploadTrigger.S3Bucket evanxia-test \
+    --Trigger.AwsS3FileUploadTrigger.S3Region us-east-1 \
+    --Trigger.AwsS3FileUploadTrigger.Dir /input/
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "abc"
     }
 }
 ```
