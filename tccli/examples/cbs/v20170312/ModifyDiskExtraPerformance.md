@@ -1,13 +1,13 @@
 **Example 1: 500G TSSD 额外购买300M性能**
 
-
+500G TSSD 额外购买300M性能
 
 Input: 
 
 ```
 tccli cbs ModifyDiskExtraPerformance --cli-unfold-argument  \
-    --DiskId disk-dritwhhm \
-    --ThroughputPerformance 300
+    --ThroughputPerformance 300 \
+    --DiskId disk-dritwhhm
 ```
 
 Output: 

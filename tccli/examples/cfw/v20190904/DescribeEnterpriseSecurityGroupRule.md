@@ -24,6 +24,7 @@ Output:
     "Response": {
         "Rules": [
             {
+                "Id": "xxx-xxx",
                 "OrderIndex": "xx",
                 "Protocol": "xx",
                 "SourceType": "xx",
@@ -33,6 +34,7 @@ Output:
                 "DestContent": "xx",
                 "RuleAction": "xx",
                 "Port": "xx",
+                "Enable": "true",
                 "Description": "xx"
             }
         ],

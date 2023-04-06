@@ -1,3 +1,118 @@
+# Release 3.0.738.1
+
+## 语音识别(asr) 版本：2019-06-14
+
+### 第 10 次发布
+
+发布时间：2023-04-05 01:12:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SentenceRecognition](http://document.tencentcloudapi.woa.com/document/product/1093/35646)
+
+	* <font color="#dd0000">**修改入参**：</font>ProjectId, SubServiceType, UsrAudioKey
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 22 次发布
+
+发布时间：2023-04-05 01:26:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [BetaInfoByACL](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BetaInfoByACL)
+
+修改数据结构：
+
+* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
+
+	* 新增成员：BetaList
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 16 次发布
+
+发布时间：2023-04-05 02:40:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeErrorSummary](http://document.tencentcloudapi.woa.com/document/product/1597/77415)
+
+新增数据结构：
+
+* [ErrorSummary](http://document.tencentcloudapi.woa.com/document/product/1597/75228#ErrorSummary)
+
+修改数据结构：
+
+* [Concurrency](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Concurrency)
+
+	* 新增成员：Resources
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 61 次发布
+
+发布时间：2023-04-05 02:59:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeClusterReleases](http://document.tencentcloudapi.woa.com/document/product/457/76768)
+
+	* 新增入参：ClusterType
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 31 次发布
+
+发布时间：2023-04-05 03:32:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateHost](http://document.tencentcloudapi.woa.com/document/product/627/77416)
+
+新增数据结构：
+
+* [HostRecord](http://document.tencentcloudapi.woa.com/document/product/627/53609#HostRecord)
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/627/53609#LoadBalancer)
+
+
+
 # Release 3.0.737.1
 
 ## TDSQL MySQL 版(dcdb) 版本：2018-04-11

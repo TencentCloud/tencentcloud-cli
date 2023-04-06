@@ -9085,7 +9085,6 @@
       "document": "DescribeClusterReleases请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群id",
           "example": "cls-65r1c5nu",
           "member": "string",
@@ -9095,7 +9094,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "每页数量限制",
           "example": "20",
           "member": "int64",
@@ -9105,7 +9103,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "页偏移量",
           "example": "10",
           "member": "int64",
@@ -9115,7 +9112,15 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "document": "集群类型, 目前支持传入 tke, eks, tkeedge, external ",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
           "document": "helm Release 安装的namespace",
           "example": "default",
           "member": "string",
@@ -9125,7 +9130,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "helm Release 的名字",
           "example": "test-coredns",
           "member": "string",
@@ -9135,7 +9139,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "helm Chart 的名字",
           "example": "coredns",
           "member": "string",
@@ -9155,7 +9158,6 @@
           "example": "0",
           "member": "int64",
           "name": "Limit",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -9165,7 +9167,6 @@
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -9175,7 +9176,6 @@
           "example": "无",
           "member": "Release",
           "name": "ReleaseSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -9185,7 +9185,6 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1

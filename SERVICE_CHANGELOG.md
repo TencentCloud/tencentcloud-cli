@@ -1,30 +1,10 @@
 # 本版本更新包含以下内容：
 
-## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+## 语音识别(asr) 版本：2019-06-14
 
-### 第 31 次发布
+### 第 10 次发布
 
-发布时间：2023-04-04 01:17:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeBackupFiles](http://document.tencentcloudapi.woa.com/document/product/557/77405)
-
-新增数据结构：
-
-* [InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/557/16142#InstanceBackupFileItem)
-
-
-
-## 域名注册(domain) 版本：2018-08-08
-
-### 第 12 次发布
-
-发布时间：2023-04-04 01:18:21
+发布时间：2023-04-05 01:12:57
 
 本次发布包含了以下内容：
 
@@ -32,43 +12,41 @@
 
 修改接口：
 
-* [CreateIntlDomainBatch](http://document.tencentcloudapi.woa.com/document/product/242/77318)
+* [SentenceRecognition](http://document.tencentcloudapi.woa.com/document/product/1093/35646)
 
-	* 新增入参：CustomDns
-
-
+	* <font color="#dd0000">**修改入参**：</font>ProjectId, SubServiceType, UsrAudioKey
 
 
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
-### 第 53 次发布
 
-发布时间：2023-04-04 01:28:23
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 22 次发布
+
+发布时间：2023-04-05 01:26:28
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增数据结构：
+
+* [BetaInfoByACL](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BetaInfoByACL)
+
 修改数据结构：
 
-* [Filter](http://document.tencentcloudapi.woa.com/document/product/248/30354#Filter)
+* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
 
-	* 新增成员：Name, Values
-
-	* <font color="#dd0000">**修改成员**：</font>Type, Key, Value
-
-* [PrometheusInstancesOverview](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusInstancesOverview)
-
-	* 新增成员：ResourcePackageStatus, ResourcePackageSpecName
+	* 新增成员：BetaList
 
 
 
 
-## 云函数(scf) 版本：2018-04-16
+## 云压测(pts) 版本：2021-07-28
 
-### 第 28 次发布
+### 第 16 次发布
 
-发布时间：2023-04-04 01:33:54
+发布时间：2023-04-05 02:40:34
 
 本次发布包含了以下内容：
 
@@ -76,7 +54,18 @@
 
 新增接口：
 
-* [UpdateTriggerStatus](http://document.tencentcloudapi.woa.com/document/product/583/77406)
+* [DescribeErrorSummary](http://document.tencentcloudapi.woa.com/document/product/1597/77415)
+
+新增数据结构：
+
+* [ErrorSummary](http://document.tencentcloudapi.woa.com/document/product/1597/75228#ErrorSummary)
+
+修改数据结构：
+
+* [Concurrency](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Concurrency)
+
+	* 新增成员：Resources
+
 
 
 
@@ -86,62 +75,28 @@
 
 ## 容器服务(tke) 版本：2018-05-25
 
-### 第 60 次发布
+### 第 61 次发布
 
-发布时间：2023-04-04 01:38:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ServiceAccountAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/31866#ServiceAccountAuthenticationOptions)
-
-	* 新增成员：UseTKEDefault
-
-
-
-
-## 云点播(vod) 版本：2018-07-17
-
-### 第 55 次发布
-
-发布时间：2023-04-04 01:40:25
+发布时间：2023-04-05 02:59:00
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-新增接口：
-
-* [CreateRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77411)
-* [DeleteRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77410)
-* [DescribeRebuildMediaTemplates](http://document.tencentcloudapi.woa.com/document/product/266/77409)
-* [ModifyRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77408)
-* [RebuildMediaByTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77407)
 
 修改接口：
 
-* [PullUpload](http://document.tencentcloudapi.woa.com/document/product/266/35575)
+* [DescribeClusterReleases](http://document.tencentcloudapi.woa.com/document/product/457/76768)
 
-	* 新增入参：MediaType
+	* 新增入参：ClusterType
 
-
-新增数据结构：
-
-* [RebuildAudioInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildAudioInfo)
-* [RebuildMediaOutputConfig](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaOutputConfig)
-* [RebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTemplate)
-* [RebuildVideoInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildVideoInfo)
 
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
 
-### 第 30 次发布
+### 第 31 次发布
 
-发布时间：2023-04-04 02:00:50
+发布时间：2023-04-05 03:32:39
 
 本次发布包含了以下内容：
 
@@ -149,11 +104,12 @@
 
 新增接口：
 
-* [DescribeVipInfo](http://document.tencentcloudapi.woa.com/document/product/627/77412)
+* [CreateHost](http://document.tencentcloudapi.woa.com/document/product/627/77416)
 
 新增数据结构：
 
-* [VipInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#VipInfo)
+* [HostRecord](http://document.tencentcloudapi.woa.com/document/product/627/53609#HostRecord)
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/627/53609#LoadBalancer)
 
 
 
@@ -3321,6 +3277,21 @@
 
 
 ## 语音识别(asr) 版本：2019-06-14
+
+### 第 10 次发布
+
+发布时间：2023-04-05 01:12:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SentenceRecognition](http://document.tencentcloudapi.woa.com/document/product/1093/35646)
+
+	* <font color="#dd0000">**修改入参**：</font>ProjectId, SubServiceType, UsrAudioKey
+
 
 ### 第 9 次发布
 
@@ -9388,6 +9359,25 @@
 
 
 ## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 22 次发布
+
+发布时间：2023-04-05 01:26:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[BetaInfoByACL](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BetaInfoByACL)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[BetaInfoByACL](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BetaInfoByACL))
+
+修改数据结构：
+
+* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
+
+	* 新增成员：BetaList
+
 
 ### 第 21 次发布
 
@@ -19804,11 +19794,11 @@
 
 新增接口：
 
-* [[DescribeBackupFiles](http://document.tencentcloudapi.woa.com/document/product/557/77405)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBackupFiles](http://document.tencentcloudapi.woa.com/document/product/557/77405)
 
 新增数据结构：
 
-* [[InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/557/16142#InstanceBackupFileItem)](http://document.tencentcloudapi.woa.com/document/product/557/16142#[InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/557/16142#InstanceBackupFileItem))
+* [InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/557/16142#InstanceBackupFileItem)
 
 ### 第 30 次发布
 
@@ -38507,6 +38497,29 @@
 
 ## 云压测(pts) 版本：2021-07-28
 
+### 第 16 次发布
+
+发布时间：2023-04-05 02:40:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeErrorSummary](http://document.tencentcloudapi.woa.com/document/product/1597/77415)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ErrorSummary](http://document.tencentcloudapi.woa.com/document/product/1597/75228#ErrorSummary)](http://document.tencentcloudapi.woa.com/document/product/1597/75228#[ErrorSummary](http://document.tencentcloudapi.woa.com/document/product/1597/75228#ErrorSummary))
+
+修改数据结构：
+
+* [Concurrency](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Concurrency)
+
+	* 新增成员：Resources
+
+
 ### 第 15 次发布
 
 发布时间：2023-03-02 01:29:04
@@ -40261,7 +40274,7 @@
 
 新增接口：
 
-* [[UpdateTriggerStatus](http://document.tencentcloudapi.woa.com/document/product/583/77406)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateTriggerStatus](http://document.tencentcloudapi.woa.com/document/product/583/77406)
 
 ### 第 27 次发布
 
@@ -48662,6 +48675,21 @@
 
 ## 容器服务(tke) 版本：2018-05-25
 
+### 第 61 次发布
+
+发布时间：2023-04-05 02:59:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeClusterReleases](http://document.tencentcloudapi.woa.com/document/product/457/76768)
+
+	* 新增入参：ClusterType
+
+
 ### 第 60 次发布
 
 发布时间：2023-04-04 01:38:43
@@ -53056,11 +53084,11 @@
 
 新增接口：
 
-* [[CreateRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77411)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77410)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeRebuildMediaTemplates](http://document.tencentcloudapi.woa.com/document/product/266/77409)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77408)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RebuildMediaByTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77407)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77411)
+* [DeleteRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77410)
+* [DescribeRebuildMediaTemplates](http://document.tencentcloudapi.woa.com/document/product/266/77409)
+* [ModifyRebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77408)
+* [RebuildMediaByTemplate](http://document.tencentcloudapi.woa.com/document/product/266/77407)
 
 修改接口：
 
@@ -53071,10 +53099,10 @@
 
 新增数据结构：
 
-* [[RebuildAudioInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildAudioInfo)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[RebuildAudioInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildAudioInfo))
-* [[RebuildMediaOutputConfig](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaOutputConfig)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[RebuildMediaOutputConfig](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaOutputConfig))
-* [[RebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTemplate)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[RebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTemplate))
-* [[RebuildVideoInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildVideoInfo)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[RebuildVideoInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildVideoInfo))
+* [RebuildAudioInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildAudioInfo)
+* [RebuildMediaOutputConfig](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaOutputConfig)
+* [RebuildMediaTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildMediaTemplate)
+* [RebuildVideoInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#RebuildVideoInfo)
 
 ### 第 54 次发布
 
@@ -57192,6 +57220,23 @@
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
 
+### 第 31 次发布
+
+发布时间：2023-04-05 03:32:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateHost](http://document.tencentcloudapi.woa.com/document/product/627/77416)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[HostRecord](http://document.tencentcloudapi.woa.com/document/product/627/53609#HostRecord)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[HostRecord](http://document.tencentcloudapi.woa.com/document/product/627/53609#HostRecord))
+* [[LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/627/53609#LoadBalancer)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/627/53609#LoadBalancer))
+
 ### 第 30 次发布
 
 发布时间：2023-04-04 02:00:50
@@ -57202,11 +57247,11 @@
 
 新增接口：
 
-* [[DescribeVipInfo](http://document.tencentcloudapi.woa.com/document/product/627/77412)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeVipInfo](http://document.tencentcloudapi.woa.com/document/product/627/77412)
 
 新增数据结构：
 
-* [[VipInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#VipInfo)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[VipInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#VipInfo))
+* [VipInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#VipInfo)
 
 ### 第 29 次发布
 
