@@ -5756,7 +5756,6 @@
       "document": "DescribeHttpsPackages请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分页查询起始地址，默认 0",
           "example": "0",
           "member": "int64",
@@ -5765,7 +5764,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页查询记录个数，默认100，最大1000",
           "example": "100",
           "member": "int64",
@@ -5784,7 +5782,6 @@
           "example": "40",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5793,7 +5790,6 @@
           "example": "无",
           "member": "HttpsPackage",
           "name": "HttpsPackages",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5802,7 +5798,6 @@
           "example": "0",
           "member": "int64",
           "name": "ExpiringCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5811,7 +5806,6 @@
           "example": "40",
           "member": "int64",
           "name": "EnabledCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5820,7 +5814,6 @@
           "example": "20",
           "member": "int64",
           "name": "PaidCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

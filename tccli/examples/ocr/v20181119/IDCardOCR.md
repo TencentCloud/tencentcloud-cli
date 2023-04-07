@@ -1,6 +1,6 @@
 **Example 1: 身份证识别（人像面）示例代码   [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)**
 
-
+身份证识别（人像面）示例代码
 
 Input: 
 
@@ -30,7 +30,7 @@ Output:
 
 **Example 2: 身份证识别（国徽面）示例代码   [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)**
 
-
+身份证识别（国徽面）示例代码 
 
 Input: 
 
@@ -60,7 +60,7 @@ Output:
 
 **Example 3: 身份证照片裁剪和人像照片裁剪示例代码    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)**
 
-
+身份证照片裁剪和人像照片裁剪示例代码
 
 Input: 
 
@@ -91,7 +91,7 @@ Output:
 
 **Example 4: 临时身份证告警示例代码    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)**
 
-
+临时身份证告警示例代码
 
 Input: 
 

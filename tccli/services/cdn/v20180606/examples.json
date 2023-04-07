@@ -210,7 +210,7 @@
     ],
     "DescribeHttpsPackages": [
       {
-        "document": "",
+        "document": "HTTPS请求包查询",
         "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHttpsPackages\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"HttpsPackages\": [\n            {\n                \"Status\": \"enable\",\n                \"EnableTime\": \"2023-02-10 00:00:00\",\n                \"SizeUsed\": 100,\n                \"ExpireTime\": \"2023-03-10 00:00:00\",\n                \"Area\": \"global\",\n                \"TrueExpireTime\": \"2023-03-31 23:59:59\",\n                \"TrueEnableTime\": \"2023-02-01 00:00:00\",\n                \"Id\": 1,\n                \"LifeTimeMonth\": 12,\n                \"ExtensionAvailable\": true,\n                \"ExtensionMode\": 1,\n                \"RefundAvailable\": false,\n                \"ContractExtension\": true,\n                \"ConfigId\": 661,\n                \"Type\": \"HTTPS请求包\",\n                \"CreateTime\": \"2023-02-10 00:00:00\",\n                \"Channel\": \"ACTIVE_PURCHASE\",\n                \"Size\": 10000\n            }\n        ],\n        \"ExpiringCount\": 0,\n        \"TotalCount\": 1,\n        \"EnabledCount\": 1,\n        \"RequestId\": \"eb308d9a-6c72-4f23-aed6-b06b5a481047\",\n        \"PaidCount\": 1\n    }\n}",
         "title": "HTTPS请求包查询"

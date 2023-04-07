@@ -259,6 +259,20 @@
       "output": "DescribeAccountStatisticsResponse",
       "status": "online"
     },
+    "DescribeAlarmIncidentNodes": {
+      "document": "获取告警点所在事件的所有节点信息",
+      "input": "DescribeAlarmIncidentNodesRequest",
+      "name": "获取告警点所在事件的所有节点信息",
+      "output": "DescribeAlarmIncidentNodesResponse",
+      "status": "online"
+    },
+    "DescribeAlarmVertexId": {
+      "document": "查询告警点id列表",
+      "input": "DescribeAlarmVertexIdRequest",
+      "name": "查询告警点id列表",
+      "output": "DescribeAlarmVertexIdResponse",
+      "status": "online"
+    },
     "DescribeAssetAppList": {
       "document": "查询应用列表",
       "input": "DescribeAssetAppListRequest",
@@ -791,6 +805,13 @@
       "output": "DescribeEmergencyVulListResponse",
       "status": "online"
     },
+    "DescribeEventByTable": {
+      "document": "根据事件表名和id查询告警事件详情",
+      "input": "DescribeEventByTableRequest",
+      "name": "根据事件表名和id查询告警事件详情",
+      "output": "DescribeEventByTableResponse",
+      "status": "online"
+    },
     "DescribeExpertServiceList": {
       "document": "专家服务-安全管家列表",
       "input": "DescribeExpertServiceListRequest",
@@ -1029,6 +1050,13 @@
       "output": "DescribeOverviewStatisticsResponse",
       "status": "online"
     },
+    "DescribePrivilegeEventInfo": {
+      "document": "本地提权信息详情",
+      "input": "DescribePrivilegeEventInfoRequest",
+      "name": "查询本地提权详情",
+      "output": "DescribePrivilegeEventInfoResponse",
+      "status": "online"
+    },
     "DescribePrivilegeEvents": {
       "document": "获取本地提权事件列表",
       "input": "DescribePrivilegeEventsRequest",
@@ -1085,6 +1113,13 @@
       "output": "DescribeProtectNetListResponse",
       "status": "online"
     },
+    "DescribeReverseShellEventInfo": {
+      "document": "反弹shell信息详情",
+      "input": "DescribeReverseShellEventInfoRequest",
+      "name": "查询反弹shell详情",
+      "output": "DescribeReverseShellEventInfoResponse",
+      "status": "online"
+    },
     "DescribeReverseShellEvents": {
       "document": "获取反弹Shell列表",
       "input": "DescribeReverseShellEventsRequest",
@@ -1097,6 +1132,13 @@
       "input": "DescribeReverseShellRulesRequest",
       "name": "获取反弹Shell规则列表",
       "output": "DescribeReverseShellRulesResponse",
+      "status": "online"
+    },
+    "DescribeRiskDnsEventInfo": {
+      "document": "查询恶意请求事件详情",
+      "input": "DescribeRiskDnsEventInfoRequest",
+      "name": "查询恶意请求事件详情",
+      "output": "DescribeRiskDnsEventInfoResponse",
       "status": "online"
     },
     "DescribeRiskDnsEventList": {
@@ -1265,6 +1307,13 @@
       "input": "DescribeVersionStatisticsRequest",
       "name": "获取专业版和基础版机器数",
       "output": "DescribeVersionStatisticsResponse",
+      "status": "online"
+    },
+    "DescribeVertexDetail": {
+      "document": "获取指定点属性信息",
+      "input": "DescribeVertexDetailRequest",
+      "name": "获取指定点属性信息",
+      "output": "DescribeVertexDetailResponse",
       "status": "online"
     },
     "DescribeVulCountByDates": {
@@ -1873,6 +1922,32 @@
           "document": "主机数量。",
           "member": "uint64",
           "name": "MachineNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AlarmInfo": {
+      "document": "节点关联的告警信息",
+      "members": [
+        {
+          "default": "",
+          "document": "该节点关联的告警，告警的table_name+id（t1:id1,t2:id2,...)",
+          "example": "events_risk_dns:10000",
+          "member": "string",
+          "name": "AlarmId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警事件表状态，当该节点为告警点时生效",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9364,6 +9439,15 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "地理位置中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中国:北京市:北京市",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -11045,6 +11129,106 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmIncidentNodesRequest": {
+      "document": "DescribeAlarmIncidentNodes请求参数结构体",
+      "members": [
+        {
+          "document": "机器uuid",
+          "example": "1ad273c9172ddcd6f0ae3cde317149f9",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "告警vid",
+          "example": "1ad273c9172ddcd6f0ae3cde317149f9",
+          "member": "string",
+          "name": "AlarmVid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "告警时间",
+          "example": "1664413164",
+          "member": "int64",
+          "name": "AlarmTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmIncidentNodesResponse": {
+      "document": "DescribeAlarmIncidentNodes返回参数结构体",
+      "members": [
+        {
+          "document": "告警点所在事件的所有节点信息,可能包含多事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IncidentVertexInfo",
+          "name": "IncidentNodes",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmVertexIdRequest": {
+      "document": "DescribeAlarmVertexId请求参数结构体",
+      "members": [
+        {
+          "document": "机器uuid",
+          "example": "xxx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "开始时间戳",
+          "example": "1679027368",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "结束时间戳",
+          "example": "1679027368",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmVertexIdResponse": {
+      "document": "DescribeAlarmVertexId返回参数结构体",
+      "members": [
+        {
+          "document": "告警点id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AlarmVertexIds",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -16660,6 +16844,56 @@
       ],
       "type": "object"
     },
+    "DescribeEventByTableRequest": {
+      "document": "DescribeEventByTable请求参数结构体",
+      "members": [
+        {
+          "document": "事件表名",
+          "example": "event_risk_dns",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "事件表id号",
+          "example": "1",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventByTableResponse": {
+      "document": "DescribeEventByTable返回参数结构体",
+      "members": [
+        {
+          "document": "告警类型，爆破bruteattack，高危命令bash，恶意文件malware，恶意请求risk_dns，本地提权privilege_escalation，反弹shell reverse_shell，内存马java_shell",
+          "example": "malware",
+          "member": "string",
+          "name": "Type",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件内容的json编码字符串，字段结构对齐事件表",
+          "example": "xxx",
+          "member": "string",
+          "name": "Value",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExpertServiceListRequest": {
       "document": "DescribeExpertServiceList请求参数结构体",
       "members": [
@@ -19308,6 +19542,42 @@
       ],
       "type": "object"
     },
+    "DescribePrivilegeEventInfoRequest": {
+      "document": "DescribePrivilegeEventInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件id",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivilegeEventInfoResponse": {
+      "document": "DescribePrivilegeEventInfo返回参数结构体",
+      "members": [
+        {
+          "document": "本地提权详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrivilegeEventInfo",
+          "name": "PrivilegeEventInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrivilegeEventsRequest": {
       "document": "DescribePrivilegeEvents请求参数结构体",
       "members": [
@@ -19847,6 +20117,42 @@
       ],
       "type": "object"
     },
+    "DescribeReverseShellEventInfoRequest": {
+      "document": "DescribeReverseShellEventInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件id",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReverseShellEventInfoResponse": {
+      "document": "DescribeReverseShellEventInfo返回参数结构体",
+      "members": [
+        {
+          "document": "反弹shell详情信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReverseShellEventInfo",
+          "name": "ReverseShellEventInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeReverseShellEventsRequest": {
       "document": "DescribeReverseShellEvents请求参数结构体",
       "members": [
@@ -19981,6 +20287,42 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskDnsEventInfoRequest": {
+      "document": "DescribeRiskDnsEventInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "恶意请求事件Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskDnsEventInfoResponse": {
+      "document": "DescribeRiskDnsEventInfo返回参数结构体",
+      "members": [
+        {
+          "document": "恶意请求事件详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RiskDnsEvent",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -21812,6 +22154,56 @@
           "name": "GeneralVersionNum",
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVertexDetailRequest": {
+      "document": "DescribeVertexDetail请求参数结构体",
+      "members": [
+        {
+          "document": "点id列表",
+          "example": "无",
+          "member": "string",
+          "name": "VertexIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "事件id",
+          "example": "无",
+          "member": "string",
+          "name": "IncidentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "事件所在表名",
+          "example": "无",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVertexDetailResponse": {
+      "document": "DescribeVertexDetail返回参数结构体",
+      "members": [
+        {
+          "document": "指定点列表的属性信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VertexDetail",
+          "name": "VertexDetails",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -25255,6 +25647,15 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "请求目的端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3306",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -25474,6 +25875,48 @@
           "name": "Quuid",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "IncidentVertexInfo": {
+      "document": "事件点信息",
+      "members": [
+        {
+          "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "IncidentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "事件所在表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点信息列表，数组项中包含节点详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VertexInfo",
+          "name": "Vertex",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "VertexCount",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -28433,6 +28876,281 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "进程id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Pid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PrivilegeEventInfo": {
+      "document": "本地提权数据",
+      "members": [
+        {
+          "default": "",
+          "document": "数据ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云镜ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "xxx",
+          "member": "string",
+          "name": "HostIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程名",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProcessName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程路径",
+          "example": "xxx",
+          "member": "string",
+          "name": "FullPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行命令",
+          "example": "xxx",
+          "member": "string",
+          "name": "CmdLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户组",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程文件权限",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProcFilePrivilege",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程名",
+          "example": "xxx",
+          "member": "string",
+          "name": "ParentProcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程用户名",
+          "example": "xxx",
+          "member": "string",
+          "name": "ParentProcUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程用户组",
+          "example": "xxx",
+          "member": "string",
+          "name": "ParentProcGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程路径",
+          "example": "xxx",
+          "member": "string",
+          "name": "ParentProcPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源",
+          "example": "xxx",
+          "member": "string",
+          "name": "PsTree",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理状态：0-待处理 2-白名单 3-已处理 4-已忽略",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发生时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器名",
+          "example": "xxx",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "建议方案",
+          "example": "建议方案",
+          "member": "string",
+          "name": "SuggestScheme",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "危害描述信息",
+          "example": "危害描述",
+          "member": "string",
+          "name": "HarmDescribe",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "[\"标签1\",\"标签2\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考链接",
+          "example": "[\"http://www.tencent.com\"]",
+          "member": "string",
+          "name": "References",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网ip",
+          "example": "124.2.4.55",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权限列表|隔开",
+          "example": "CUEN-CUNE;CNE-EE",
+          "member": "string",
+          "name": "NewCaps",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机在线状态 OFFLINE  ONLINE",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "MachineStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理时间",
+          "example": "2021-03-30 19:17:28",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -29452,6 +30170,291 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "进程id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Pid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ReverseShellEventInfo": {
+      "document": "反弹Shell数据详情",
+      "members": [
+        {
+          "default": "",
+          "document": "ID 主键",
+          "example": "11",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云镜UUID",
+          "example": "dsdsds",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机ID",
+          "example": "dsdsds",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "HostIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "DstIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标端口",
+          "example": "12",
+          "member": "uint64",
+          "name": "DstPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程名",
+          "example": "1.exe",
+          "member": "string",
+          "name": "ProcessName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程路径",
+          "example": "/home",
+          "member": "string",
+          "name": "FullPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令详情",
+          "example": "dadad",
+          "member": "string",
+          "name": "CmdLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行用户",
+          "example": "root",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行用户组",
+          "example": "root",
+          "member": "string",
+          "name": "UserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程名",
+          "example": "2.exe",
+          "member": "string",
+          "name": "ParentProcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程用户",
+          "example": "root",
+          "member": "string",
+          "name": "ParentProcUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程用户组",
+          "example": "root",
+          "member": "string",
+          "name": "ParentProcGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程路径",
+          "example": "/home",
+          "member": "string",
+          "name": "ParentProcPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理状态：0-待处理 2-白名单 3-已处理 4-已忽略",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产生时间",
+          "example": "2021-05-20 17:00:33",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名",
+          "example": "sasas",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测方法",
+          "example": "1",
+          "member": "uint64",
+          "name": "DetectBy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"pid\":\"123\"}]",
+          "member": "string",
+          "name": "PsTree",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建议方案",
+          "example": "建议方案",
+          "member": "string",
+          "name": "SuggestScheme",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "HarmDescribe",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "[\"标签1\",\"标签2\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考链接",
+          "example": "[\"http://www.tencent.com\"]",
+          "member": "string",
+          "name": "References",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网ip",
+          "example": "124.2.4.55",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机在线状态 OFFLINE  ONLINE",
+          "example": "OFFLINE",
+          "member": "string",
+          "name": "MachineStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理时间",
+          "example": "2021-03-30 19:17:28",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -31591,6 +32594,329 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VertexDetail": {
+      "document": "点详细信息",
+      "members": [
+        {
+          "document": "该节点类型，进程:1；网络:2；文件:3；ssh:4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "各节点类型用到的时间，2022-11-29 00:00:00 格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-29 00:00:00",
+          "member": "string",
+          "name": "Time",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "告警信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlarmInfo",
+          "name": "AlarmInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "进程名，当该节点为进程时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ps",
+          "member": "string",
+          "name": "ProcName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "命令行，当该节点为进程时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ps -ef",
+          "member": "string",
+          "name": "CmdLine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "进程id，当该节点为进程时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1122",
+          "member": "string",
+          "name": "Pid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件md5，当该节点为文件时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "FileMd5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件写入内容，当该节点为文件时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件路径，当该节点为文件时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "FilePath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件创建时间，当该节点为文件时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-29 00:00:00",
+          "member": "string",
+          "name": "FileCreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "请求目的地址，当该节点为网络时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目标端口，当该节点为网络时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "uint64",
+          "name": "DstPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "登录源ip，当该节点为ssh时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SrcIP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "登录用户名用户组，当该节点为ssh时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root:user",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞名称，当该节点为漏洞时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "VulName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞利用时间，当该节点为漏洞时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-29 00:00:00",
+          "member": "string",
+          "name": "VulTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "http请求内容，当该节点为漏洞时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "HttpContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞利用者来源ip，当该节点为漏洞时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "VulSrcIP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "VertexId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VertexInfo": {
+      "document": "攻击溯源节点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "该结点类型，进程:1；网络:2；文件:3；ssh:4；",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该节点包含的vid",
+          "example": "738cbb17dea872888b31912c0b52a2f7",
+          "member": "string",
+          "name": "Vid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该节点的父节点vid",
+          "example": "738cbb17dea872888b31912c0b52a2f7",
+          "member": "string",
+          "name": "ParentVid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否叶子",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLeaf",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程名，当Type=1时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/bin/a",
+          "member": "string",
+          "name": "ProcNamePrefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "进程名md5，当Type=1时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "b50b7128905fb0a604366eceaa106c9d",
+          "member": "string",
+          "name": "ProcNameMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命令行，当Type=1时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/bin/a a",
+          "member": "string",
+          "name": "CmdLinePrefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命令行md5，当Type=1时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "b50b7128905fb0a604366eceaa106c9d",
+          "member": "string",
+          "name": "CmdLineMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件路径，当Type=3时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/root/test",
+          "member": "string",
+          "name": "FilePathPrefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求目的地址，当Type=2时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "AddressPrefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否漏洞节点",
+          "example": "true",
+          "member": "bool",
+          "name": "IsWeDetect",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否告警节点",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAlarm",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件路径md5，当Type=3时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "b50b7128905fb0a604366eceaa106c9d",
+          "member": "string",
+          "name": "FilePathMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求目的地址md5，当Type=2时使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "b50b7128905fb0a604366eceaa106c9d",
+          "member": "string",
+          "name": "AddressMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -879,37 +879,34 @@
       "document": "编排原子任务",
       "members": [
         {
-          "default": "",
-          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>",
+          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "input",
           "member": "string",
           "name": "ActivityType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "后驱节点索引数组",
+          "document": "后驱节点索引数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "ReardriveIndex",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "原子任务参数",
+          "document": "原子任务参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ActivityPara",
           "name": "ActivityPara",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ActivityPara": {
       "document": "编排原子任务",
@@ -1107,7 +1104,6 @@
       "document": "编排任务输出",
       "members": [
         {
-          "default": "",
           "document": "原子任务类型。\n<li>Transcode：转码。</li>\n<li>SampleSnapshot：采样截图。</li>\n<li>AnimatedGraphics：转动图。</li>\n<li>SnapshotByTimeOffset：时间点截图。</li>\n<li>ImageSprites：雪碧图。</li>\n<li>AdaptiveDynamicStreaming：自适应码流。</li>\n<li>AiContentReview：内容审核。</li>\n<li>AIRecognition：智能识别。</li>\n<li>AIAnalysis：智能分析。</li>",
           "example": "\"\"",
           "member": "string",
@@ -1117,7 +1113,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "原子任务输出。",
           "example": "NULL",
           "member": "ActivityResItem",
@@ -1375,6 +1370,7 @@
         {
           "default": "",
           "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>",
+          "example": "Classification",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1384,6 +1380,7 @@
         {
           "default": "",
           "document": "视频内容分析智能分类任务的查询结果，当任务类型为 Classification 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskClassificationResult",
           "name": "ClassificationTask",
           "required": true,
@@ -1393,6 +1390,7 @@
         {
           "default": "",
           "document": "视频内容分析智能封面任务的查询结果，当任务类型为 Cover 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskCoverResult",
           "name": "CoverTask",
           "required": true,
@@ -1402,6 +1400,7 @@
         {
           "default": "",
           "document": "视频内容分析智能标签任务的查询结果，当任务类型为 Tag 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskTagResult",
           "name": "TagTask",
           "required": true,
@@ -1411,8 +1410,19 @@
         {
           "default": "",
           "document": "视频内容分析智能按帧标签任务的查询结果，当任务类型为 FrameTag 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskFrameTagResult",
           "name": "FrameTagTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频内容分析集锦任务的查询结果，当任务类型为 Highlight时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskHighlightResult",
+          "name": "HighlightTask",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -1717,6 +1727,96 @@
       ],
       "usage": "out"
     },
+    "AiAnalysisTaskHighlightInput": {
+      "document": "智能精彩片段任务输入类型",
+      "members": [
+        {
+          "default": "",
+          "document": "视频智能精彩片段模板 ID。",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskHighlightOutput": {
+      "document": "智能精彩片段结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视频智能精彩片段列表。",
+          "member": "MediaAiAnalysisHighlightItem",
+          "name": "HighlightSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "精彩片段的存储位置。",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskHighlightResult": {
+      "document": "智能精彩片段结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0：成功，其他值：失败。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能精彩片段任务输入。",
+          "member": "AiAnalysisTaskHighlightInput",
+          "name": "Input",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能精彩片段任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AiAnalysisTaskHighlightOutput",
+          "name": "Output",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AiAnalysisTaskInput": {
       "document": "AI 视频智能分析输入参数类型",
       "members": [
@@ -1745,8 +1845,8 @@
       "document": "智能标签任务输入类型",
       "members": [
         {
-          "default": "",
           "document": "视频智能标签模板 ID。",
+          "example": "0",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -1985,6 +2085,30 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AiQualityControlTaskInput": {
+      "document": "视频质检输入参数类型",
+      "members": [
+        {
+          "document": "视频质检模板 ID 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "渠道扩展参数json序列化字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ChannelExtPara",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5019,7 +5143,7 @@
       "document": "AWS S3 文件是上传触发器。",
       "members": [
         {
-          "document": "工作流绑定的 AWS S3 存储桶。",
+          "document": "绑定的 AWS S3 存储桶。",
           "example": "test",
           "member": "string",
           "name": "S3Bucket",
@@ -5028,7 +5152,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "工作流绑定的桶所在 AWS 区域。",
+          "document": "绑定的桶所在 AWS 区域。",
           "example": "无",
           "member": "string",
           "name": "S3Region",
@@ -5037,7 +5161,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。\t",
+          "document": "绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。\t",
           "example": "无",
           "member": "string",
           "name": "Dir",
@@ -5046,7 +5170,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "工作流允许触发的文件格式列表，如 [\"mp4\", \"flv\", \"mov\"]。不填代表所有格式的文件都可以触发工作流。\t",
+          "document": "允许触发的文件格式列表，如 [\"mp4\", \"flv\", \"mov\"]。不填代表所有格式的文件都可以触发工作流。\t",
           "example": "无",
           "member": "string",
           "name": "Formats",
@@ -5055,7 +5179,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "工作流绑定的 AWS S3 存储桶的秘钥ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的 AWS S3 存储桶的秘钥ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "S3SecretId",
@@ -5064,7 +5188,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "工作流绑定的 AWS S3 存储桶的秘钥Key。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的 AWS S3 存储桶的秘钥Key。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "S3SecretKey",
@@ -5073,7 +5197,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "工作流绑定的 AWS S3 存储桶对应的 SQS事件队列。\n注意：队列和桶需要在同一区域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的 AWS S3 存储桶对应的 SQS事件队列。\n注意：队列和桶需要在同一区域。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AwsSQS",
           "name": "AwsSQS",
@@ -6792,7 +6916,6 @@
       "document": "CreateSchedule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "编排名称，最多128字符。同一个用户该名称唯一。",
           "example": "trans-100020-100030-100040",
           "member": "string",
@@ -6801,8 +6924,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "编排绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。",
+          "document": "编排绑定的触发规则，当上传视频命中该规则到该对象时即触发编排。",
           "example": "无",
           "member": "WorkflowTrigger",
           "name": "Trigger",
@@ -6810,7 +6932,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "编排任务列表。",
           "example": "无",
           "member": "Activity",
@@ -6819,7 +6940,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "媒体处理的文件输出存储位置。不填则继承 Trigger 中的存储位置。",
           "example": "无",
           "member": "TaskOutputStorage",
@@ -6828,8 +6948,7 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致。",
+          "document": "媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。\n如果不填，表示与触发文件所在的目录一致。",
           "example": "\"\"",
           "member": "string",
           "name": "OutputDir",
@@ -6837,7 +6956,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务的事件通知配置，不填代表不获取事件通知。",
           "example": "无",
           "member": "TaskNotifyConfig",
@@ -6856,7 +6974,6 @@
           "example": "157482",
           "member": "int64",
           "name": "ScheduleId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7330,7 +7447,6 @@
       "document": "CreateWorkflow请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "工作流名称，最多128字符。同一个用户该名称唯一。",
           "example": "trans-100020-100030-100040",
           "member": "string",
@@ -7339,7 +7455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "工作流绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。",
           "example": "无",
           "member": "WorkflowTrigger",
@@ -7348,7 +7463,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "媒体处理的文件输出存储位置。不填则继承 Trigger 中的存储位置。",
           "example": "无",
           "member": "TaskOutputStorage",
@@ -7357,8 +7471,7 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致。",
+          "document": "媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。\n如果不填，表示与触发文件所在的目录一致。",
           "example": "\"\"",
           "member": "string",
           "name": "OutputDir",
@@ -7366,7 +7479,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "媒体处理类型任务参数。",
           "example": "无",
           "member": "MediaProcessTaskInput",
@@ -7375,7 +7487,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "视频内容审核类型任务参数。",
           "example": "无",
           "member": "AiContentReviewTaskInput",
@@ -7384,7 +7495,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "视频内容分析类型任务参数。",
           "example": "无",
           "member": "AiAnalysisTaskInput",
@@ -7393,7 +7503,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "视频内容识别类型任务参数。",
           "example": "无",
           "member": "AiRecognitionTaskInput",
@@ -7402,7 +7511,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "任务的事件通知配置，不填代表不获取事件通知。",
           "example": "无",
           "member": "TaskNotifyConfig",
@@ -7411,7 +7519,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
           "example": "0",
           "member": "int64",
@@ -7430,7 +7537,6 @@
           "example": "157482",
           "member": "int64",
           "name": "WorkflowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9423,7 +9529,6 @@
       "document": "DescribeSchedules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "编排 ID 过滤条件，数组长度限制：100。",
           "example": "无",
           "member": "int64",
@@ -9432,8 +9537,15 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "状态，取值范围：\n<li>Enabled：已启用，</li>\n<li>Disabled：已禁用。</li>\n不填此参数，则不区分工作流状态。",
+          "document": "编排触发类型，可选值：\n<li>CosFileUpload： 腾讯云 COS 文件上传触发</li>\n<li>AwsS3FileUpload：Aws S3 文件上传触发。</li>\n不填或者为空表示全部。",
+          "example": "无",
+          "member": "string",
+          "name": "TriggerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "状态，取值范围：\n<li>Enabled：已启用，</li>\n<li>Disabled：已禁用。</li>\n不填此参数，则不区编排状态。",
           "example": "“”",
           "member": "string",
           "name": "Status",
@@ -9441,7 +9553,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页偏移量，默认值：0。",
           "example": "0",
           "member": "uint64",
@@ -9450,7 +9561,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
           "example": "0",
           "member": "uint64",
@@ -9469,7 +9579,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9478,7 +9587,6 @@
           "example": "无",
           "member": "SchedulesInfo",
           "name": "ScheduleInfoSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12235,6 +12343,39 @@
       ],
       "usage": "in"
     },
+    "HighlightSegmentItem": {
+      "document": "智能精彩集锦片段列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "置信度。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片段起始时间偏移。",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片段结束时间偏移。",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ImageQualityEnhanceConfig": {
       "document": "综合增强配置",
       "members": [
@@ -13700,6 +13841,57 @@
       ],
       "usage": "out"
     },
+    "MediaAiAnalysisHighlightItem": {
+      "document": "智能精彩片段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "智能精彩集锦地址。",
+          "member": "string",
+          "name": "HighlightPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能精彩集锦封面地址。",
+          "member": "string",
+          "name": "CovImgPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能精彩集锦的可信度，取值范围是 0 到 100。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能精彩集锦持续时间。",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能精彩集锦子片段列表。",
+          "member": "HighlightSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MediaAiAnalysisTagItem": {
       "document": "智能标签结果信息",
       "members": [
@@ -14861,7 +15053,6 @@
       "document": "转码任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "PROCESSING",
           "member": "string",
@@ -14871,7 +15062,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
@@ -14881,7 +15071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "0",
           "member": "int64",
@@ -14891,7 +15080,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "\"xx\"",
           "member": "string",
@@ -14901,7 +15089,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转码任务的输入。",
           "example": "NULL",
           "member": "TranscodeTaskInput",
@@ -14911,7 +15098,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转码任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "MediaTranscodeItem",
@@ -14921,7 +15107,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "转码进度，取值范围 [0-100]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -16244,7 +16429,6 @@
       "document": "ModifySchedule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "编排唯一标识。",
           "example": "20010",
           "member": "int64",
@@ -16253,7 +16437,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "编排名称。",
           "example": "“”",
           "member": "string",
@@ -16262,7 +16445,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "编排绑定的触发规则。",
           "example": "无",
           "member": "WorkflowTrigger",
@@ -16271,7 +16453,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "编排任务列表。\n注意：内部不允许部分更新，如果需要更新需全量提交编排任务列表。",
           "example": "无",
           "member": "Activity",
@@ -16280,7 +16461,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "媒体处理的文件输出存储位置。",
           "example": "无",
           "member": "TaskOutputStorage",
@@ -16289,8 +16469,7 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "媒体处理生成的文件输出的目标目录。\n注意：如果设置为空，则表示取消老配置的OutputDir值。",
+          "document": "媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾。\n注意：如果设置为空，则表示取消老配置的OutputDir值。",
           "example": "无",
           "member": "string",
           "name": "OutputDir",
@@ -16298,7 +16477,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务的事件通知配置。",
           "example": "无",
           "member": "TaskNotifyConfig",
@@ -17963,7 +18141,6 @@
       "document": "ProcessMedia请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "媒体处理的文件输入信息。",
           "example": "无",
           "member": "MediaInputInfo",
@@ -17972,7 +18149,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。",
           "example": "无",
           "member": "TaskOutputStorage",
@@ -17981,8 +18157,7 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。",
+          "document": "媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。\n如果不填，表示与 InputInfo 中文件所在的目录一致。",
           "example": "无",
           "member": "string",
           "name": "OutputDir",
@@ -17990,79 +18165,6 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "媒体处理类型任务参数。",
-          "example": "无",
-          "member": "MediaProcessTaskInput",
-          "name": "MediaProcessTask",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "视频内容审核类型任务参数。",
-          "example": "无",
-          "member": "AiContentReviewTaskInput",
-          "name": "AiContentReviewTask",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "视频内容分析类型任务参数。",
-          "example": "无",
-          "member": "AiAnalysisTaskInput",
-          "name": "AiAnalysisTask",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "视频内容识别类型任务参数。",
-          "example": "无",
-          "member": "AiRecognitionTaskInput",
-          "name": "AiRecognitionTask",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "任务的事件通知信息，不填代表不获取事件通知。",
-          "example": "无",
-          "member": "TaskNotifyConfig",
-          "name": "TaskNotifyConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。",
-          "example": "无",
-          "member": "int64",
-          "name": "TasksPriority",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
-          "example": "无",
-          "member": "string",
-          "name": "SessionId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "无",
-          "member": "string",
-          "name": "SessionContext",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "编排ID。\n注意1：对于OutputStorage、OutputDir参数：\n<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>\n<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有输出，将覆盖原有编排的默认输出。</li>\n注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。\n\n注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。",
           "example": "无",
           "member": "int64",
@@ -18071,7 +18173,78 @@
           "type": "int"
         },
         {
-          "default": "",
+          "document": "媒体处理类型任务参数。",
+          "example": "无",
+          "member": "MediaProcessTaskInput",
+          "name": "MediaProcessTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "视频内容审核类型任务参数。",
+          "example": "无",
+          "member": "AiContentReviewTaskInput",
+          "name": "AiContentReviewTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "视频内容分析类型任务参数。",
+          "example": "无",
+          "member": "AiAnalysisTaskInput",
+          "name": "AiAnalysisTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "视频内容识别类型任务参数。",
+          "example": "无",
+          "member": "AiRecognitionTaskInput",
+          "name": "AiRecognitionTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "视频质检类型任务参数。",
+          "example": "无",
+          "member": "AiQualityControlTaskInput",
+          "name": "AiQualityControlTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "任务的事件通知信息，不填代表不获取事件通知。",
+          "example": "无",
+          "member": "TaskNotifyConfig",
+          "name": "TaskNotifyConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。",
+          "example": "无",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
           "document": "任务类型，默认Online\n<li> Online：实时任务</li>\n<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>",
           "example": "Online",
           "member": "string",
@@ -18090,7 +18263,6 @@
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18282,6 +18454,120 @@
         }
       ],
       "usage": "in"
+    },
+    "QualityControlData": {
+      "document": "质检结果输出。",
+      "members": [
+        {
+          "default": "",
+          "document": "为true时表示视频无音频轨。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "NoAudio",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "为true时表示视频无视频轨。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "NoVideo",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频无参考质量打分，百分制。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "95",
+          "member": "int64",
+          "name": "QualityEvaluationScore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "质检检出异常项。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityControlResult",
+          "name": "QualityControlResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityControlItem": {
+      "document": "质检结果项",
+      "members": [
+        {
+          "document": "置信度，取值范围是 0 到 100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "出现的起始时间戳，秒。",
+          "example": "12.3",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "出现的结束时间戳，秒。",
+          "example": "15.7",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区域坐标(px)，即左上角坐标、右下角坐标。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityControlResult": {
+      "document": "质检异常项。",
+      "members": [
+        {
+          "default": "",
+          "document": "异常类型，取值范围：\nJitter：抖动，\nBlur：模糊，\nLowLighting：低光照，\nHighLighting：过曝，\nCrashScreen：花屏，\nBlackWhiteEdge：黑白边，\nSolidColorScreen：纯色屏，\nNoise：噪点，\nMosaic：马赛克，\nQRCode：二维码，\nAppletCode：小程序码，\nBarCode：条形码，\nLowVoice：低音，\nHighVoice：爆音，\nNoVoice：静音，\nLowEvaluation：无参考打分低于阈值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "质检结果项。",
+          "example": "无",
+          "member": "QualityControlItem",
+          "name": "QualityControlItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RTMPAddressDestination": {
       "document": "RTMP转推的目标地址信息。",
@@ -19142,6 +19428,72 @@
       ],
       "usage": "out"
     },
+    "ScheduleQualityControlTaskResult": {
+      "document": "质检任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "example": "\"xx\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "质检任务的输入。",
+          "example": "NULL",
+          "member": "AiQualityControlTaskInput",
+          "name": "Input",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "质检任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "QualityControlData",
+          "name": "Output",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ScheduleRecognitionTaskResult": {
       "document": "编排视频识别任务结果类型",
       "members": [
@@ -19278,7 +19630,6 @@
       "document": "编排任务信息",
       "members": [
         {
-          "default": "",
           "document": "编排任务 ID。",
           "example": "NULL",
           "member": "string",
@@ -19288,7 +19639,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
           "example": "NULL",
           "member": "string",
@@ -19298,7 +19648,24 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "document": "源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "源异常时返回对应异常Message，否则请使用各个具体任务的 Message。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "媒体处理的目标文件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "MediaInputInfo",
@@ -19308,7 +19675,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "MediaMetaData",
@@ -19318,7 +19684,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "编排任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "ActivityResult",
@@ -19334,7 +19699,6 @@
       "document": "编排详情。",
       "members": [
         {
-          "default": "",
           "document": "编排唯一标识。",
           "example": "0",
           "member": "int64",
@@ -19344,7 +19708,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "编排名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
           "member": "string",
@@ -19354,7 +19717,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "编排状态，取值范围：\nEnabled：已启用，\nDisabled：已禁用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
           "member": "string",
@@ -19364,7 +19726,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "编排绑定的触发规则。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowTrigger",
@@ -19374,7 +19735,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "编排任务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Activity",
@@ -19384,7 +19744,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "媒体处理的文件输出存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskOutputStorage",
@@ -19394,7 +19753,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "媒体处理生成的文件输出的目标目录。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
           "member": "string",
@@ -19404,7 +19762,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务的事件通知配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskNotifyConfig",
@@ -19414,7 +19771,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
           "member": "string",
@@ -19424,7 +19780,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最后编辑时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
           "member": "string",
@@ -21771,7 +22126,6 @@
       "document": "媒体处理任务信息",
       "members": [
         {
-          "default": "",
           "document": "媒体处理任务 ID。",
           "example": "NULL",
           "member": "string",
@@ -21781,7 +22135,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
           "example": "NULL",
           "member": "string",
@@ -21791,7 +22144,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。",
           "example": "NULL",
           "member": "int64",
@@ -21801,7 +22153,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源异常时返回对应异常Message，否则请使用各个具体任务的 Message。",
           "example": "NULL",
           "member": "string",
@@ -21811,7 +22162,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "媒体处理的目标文件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "MediaInputInfo",
@@ -21821,7 +22171,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "MediaMetaData",
@@ -21831,7 +22180,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "媒体处理任务的执行状态与结果。",
           "example": "NULL",
           "member": "MediaProcessTaskResult",
@@ -21841,7 +22189,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频内容审核任务的执行状态与结果。",
           "example": "NULL",
           "member": "AiContentReviewResult",
@@ -21851,7 +22198,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频内容分析任务的执行状态与结果。",
           "example": "NULL",
           "member": "AiAnalysisResult",
@@ -21861,7 +22207,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频内容识别任务的执行状态与结果。",
           "example": "NULL",
           "member": "AiRecognitionResult",
@@ -21869,6 +22214,15 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "视频质检任务的执行状态与结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "ScheduleQualityControlTaskResult",
+          "name": "AiQualityControlTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

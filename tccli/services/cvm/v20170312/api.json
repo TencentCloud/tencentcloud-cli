@@ -752,7 +752,7 @@
       "document": "定时任务",
       "members": [
         {
-          "document": "定时器名称，目前仅支持销毁一个值：TerminateInstances。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时器动作，目前仅支持销毁一个值：TerminateInstances。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xx\"",
           "member": "string",
           "name": "TimerAction",

@@ -208,10 +208,10 @@
     ],
     "CreateRebuildMediaTemplate": [
       {
-        "document": "创建音画质重生模版。",
+        "document": "创建音画质重生模板。",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRebuildMediaTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"rebuildMediaTestTempalte\",\n    \"Container\": \"mp4\",\n    \"RebuildVideoInfo\": {\n        \"RepairInfo\": {\n            \"Switch\": \"ON\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 20001,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "创建音画质重生模版。"
+        "title": "创建音画质重生模板。"
       }
     ],
     "CreateReviewTemplate": [
@@ -430,10 +430,10 @@
     ],
     "DeleteRebuildMediaTemplate": [
       {
-        "document": "删除音画质重生模版。",
+        "document": "删除音画质重生模板。",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRebuildMediaTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 20001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "删除音画质重生模版。"
+        "title": "删除音画质重生模板。"
       }
     ],
     "DeleteReviewTemplate": [
@@ -784,10 +784,10 @@
     ],
     "DescribeRebuildMediaTemplates": [
       {
-        "document": "获取音画质重生模版列表。",
+        "document": "获取音画质重生模板列表。",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRebuildMediaTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        20001\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RebuildMediaTemplateSet\": [\n            {\n                \"Definition\": 20001,\n                \"Name\": \"test\",\n                \"Comment\": \"\",\n                \"Container\": \"mp4\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"CreateTime\": \"\",\n                \"UpdateTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "获取音画质重生模版列表。"
+        "title": "获取音画质重生模板列表。"
       }
     ],
     "DescribeReviewDetails": [
@@ -1234,10 +1234,10 @@
     ],
     "ModifyRebuildMediaTemplate": [
       {
-        "document": "修改音画质重生模版。",
+        "document": "修改音画质重生模板。",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRebuildMediaTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 20001,\n    \"Name\": \"testRebuildName\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "修改音画质重生模版。"
+        "title": "修改音画质重生模板。"
       }
     ],
     "ModifyReviewTemplate": [
@@ -1470,10 +1470,10 @@
     ],
     "RebuildMediaByTemplate": [
       {
-        "document": "使用模版发起音画质重生。",
+        "document": "使用模板发起音画质重生。",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebuildMediaByTemplate\n<公共请求参数>\n\n{\n    \"FileId\": \"8312960950918954859\",\n    \"Definition\": 20001\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"125xxx-RebuildMedia-75e45d323ffad76987112fafe2eb87dxxx\",\n        \"RequestId\": \"ef5aae86-6eab-4cb3-9ebc-0979010b3f22\"\n    }\n}",
-        "title": "使用模版发起音画质重生。"
+        "title": "使用模板发起音画质重生。"
       }
     ],
     "RefreshUrlCache": [

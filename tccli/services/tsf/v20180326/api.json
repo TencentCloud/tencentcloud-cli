@@ -22376,8 +22376,8 @@
       "document": "资源任务转态结果",
       "members": [
         {
-          "default": "",
           "document": "任务的执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "TaskStatus",
           "required": true,

@@ -256,25 +256,25 @@
     ],
     "IDCardOCR": [
       {
-        "document": "",
+        "document": "身份证识别（人像面）示例代码",
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IDCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\",\n    \"CardSide\": \"FRONT\"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"李明\",\n        \"Sex\": \"男\",\n        \"Nation\": \"汉\",\n        \"Birth\": \"1987/1/1\",\n        \"Address\": \"北京市石景山区高新技术园腾讯大楼\",\n        \"IdNum\": \"440524198701010014\",\n        \"Authority\": \"\",\n        \"ValidDate\": \"\",\n        \"AdvancedInfo\": \"{}\",\n        \"RequestId\": \"ab2c132e-9e1c-43d3-b0ef-9b4d80f00330\"\n    }\n}",
         "title": "身份证识别（人像面）示例代码   [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)"
       },
       {
-        "document": "",
+        "document": "身份证识别（国徽面）示例代码 ",
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IDCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\",\n    \"CardSide\": \"BACK\"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"\",\n        \"Sex\": \"\",\n        \"Nation\": \"\",\n        \"Birth\": \"\",\n        \"Address\": \"\",\n        \"IdNum\": \"\",\n        \"Authority\": \"赵县公安局\",\n        \"ValidDate\": \"2010.07.21-2020.07.21\",\n        \"AdvancedInfo\": \"{}\",\n        \"RequestId\": \"0d394478-6d4d-48fc-8b19-552415bf46de\"\n    }\n}",
         "title": "身份证识别（国徽面）示例代码   [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)"
       },
       {
-        "document": "",
+        "document": "身份证照片裁剪和人像照片裁剪示例代码",
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IDCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\",\n    \"Config\": \"{\\\"CropIdCard\\\":true,\\\"CropPortrait\\\":true}\",\n    \"CardSide\": \"FRONT\"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"李明\",\n        \"Sex\": \"男\",\n        \"Nation\": \"汉\",\n        \"Birth\": \"1987/1/1\",\n        \"Address\": \"北京市石景山区高新技术园腾讯大楼\",\n        \"IdNum\": \"440524198701010014\",\n        \"Authority\": \"\",\n        \"ValidDate\": \"\",\n        \"AdvancedInfo\": \"{\\\"IdCard\\\":\\\"/9j/4AAA.........\\\",\\\"Portrait\\\":\\\"/9j/4AAQSkZJRBA=...........\\\"}\",\n        \"RequestId\": \"97c323da-5fd3-4fe6-b0b3-1cf10b04422c\"\n    }\n}",
         "title": "身份证照片裁剪和人像照片裁剪示例代码    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)"
       },
       {
-        "document": "",
+        "document": "临时身份证告警示例代码",
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IDCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\",\n    \"Config\": \"{\\\"TempIdWarn\\\":true}\",\n    \"CardSide\": \"FRONT\"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"\",\n        \"Sex\": \"\",\n        \"Nation\": \"\",\n        \"Birth\": \"\",\n        \"Address\": \"\",\n        \"IdNum\": \"\",\n        \"Authority\": \"\",\n        \"ValidDate\": \"\",\n        \"AdvancedInfo\": \"{\\\"WarnInfos\\\":[-9104]}\",\n        \"RequestId\": \"sd33222eqd1dqq948487\"\n    }\n}",
         "title": "临时身份证告警示例代码    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=IDCardOCR)"

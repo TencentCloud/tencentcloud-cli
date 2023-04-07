@@ -1,6 +1,6 @@
 **Example 1: 查询实例安全组**
 
-
+查询当前实例已绑定的全部安全组
 
 Input: 
 
@@ -13,60 +13,40 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "Groups": [
             {
-                "Outbound": [
-                    {
-                        "PortRange": "xx",
-                        "CidrIp": "xx",
-                        "ServiceModule": "xx",
-                        "AddressModule": "xx",
-                        "Action": "xx",
-                        "IpProtocol": "xx",
-                        "Id": "xx",
-                        "Desc": "xx"
-                    },
-                    {
-                        "PortRange": "xx",
-                        "CidrIp": "xx",
-                        "Action": "xx",
-                        "AddressModule": "xx",
-                        "ServiceModule": "xx",
-                        "IpProtocol": "xx",
-                        "Id": "xx",
-                        "Desc": "xx"
-                    }
-                ],
-                "SecurityGroupName": "xx",
+                "ProjectId": 0,
+                "CreateTime": "2022-03-23 12:05:22",
                 "Inbound": [
                     {
-                        "PortRange": "xx",
-                        "CidrIp": "xx",
-                        "ServiceModule": "xx",
-                        "AddressModule": "xx",
-                        "Action": "xx",
-                        "IpProtocol": "xx",
-                        "Id": "xx",
-                        "Desc": "xx"
-                    },
-                    {
-                        "PortRange": "xx",
-                        "CidrIp": "xx",
-                        "Action": "xx",
-                        "AddressModule": "xx",
-                        "ServiceModule": "xx",
-                        "IpProtocol": "xx",
-                        "Id": "xx",
-                        "Desc": "xx"
+                        "Action": "Describe*",
+                        "CidrIp": "127.0.0.1",
+                        "PortRange": "27017",
+                        "IpProtocol": "tcp",
+                        "Id": "abc",
+                        "AddressModule": "",
+                        "ServiceModule": "",
+                        "Desc": "localip"
                     }
                 ],
-                "ProjectId": 0,
-                "SecurityGroupId": "xx",
-                "SecurityGroupRemark": "xx",
-                "CreateTime": "xx"
+                "Outbound": [
+                    {
+                        "Action": "Describe*",
+                        "CidrIp": "127.0.0.1",
+                        "PortRange": "27017",
+                        "IpProtocol": "tcp",
+                        "Id": "abc",
+                        "AddressModule": "",
+                        "ServiceModule": "",
+                        "Desc": "localip"
+                    }
+                ],
+                "SecurityGroupId": "sg-cadead",
+                "SecurityGroupName": "sg",
+                "SecurityGroupRemark": "sg-mark"
             }
-        ]
+        ],
+        "RequestId": "bc59fa05-d429-4bcf-863f-1f6f99295485"
     }
 }
 ```

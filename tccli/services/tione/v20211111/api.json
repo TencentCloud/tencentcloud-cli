@@ -523,7 +523,6 @@
       "document": "批量模型加速任务",
       "members": [
         {
-          "default": "",
           "document": "模型ID",
           "example": "m-123",
           "member": "string",
@@ -533,7 +532,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型版本",
           "example": "v1",
           "member": "string",
@@ -543,7 +541,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型来源(JOB/COS)",
           "example": "COS",
           "member": "string",
@@ -553,7 +550,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型格式(TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/MMDETECTION/ONNX/HUGGING_FACE)",
           "example": "TORCH_SCRIPT",
           "member": "string",
@@ -563,7 +559,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型Tensor信息",
           "example": "无",
           "member": "string",
@@ -573,7 +568,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "加速引擎版本",
           "example": "v2.0",
           "member": "string",
@@ -583,7 +577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型输入cos路径",
           "example": "无",
           "member": "CosPathInfo",
@@ -593,7 +586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型名称",
           "example": "test",
           "member": "string",
@@ -603,7 +595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "SavedModel保存时配置的签名",
           "example": "test",
           "member": "string",
@@ -611,6 +602,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "加速引擎对应的框架版本",
+          "example": "无",
+          "member": "string",
+          "name": "FrameworkVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -5215,8 +5215,7 @@
       "document": "DescribeTrainingModels请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "过滤器\nFilter.Name: 枚举值:\n    keyword (模型名称)\n    TrainingModelId (模型ID)\n    ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)\n    TrainingModelSource (模型来源)  其值Filter.Values支持： JOB/COS\n    ModelFormat（模型格式）其值Filter.Values支持：\nPYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE\nFilter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询\n每次请求的Filters的上限为10，Filter.Values的上限为100\nFilter.Fuzzy取值：true/false，是否支持模糊匹配",
+          "document": "过滤器\nFilter.Name: 枚举值:\nkeyword (模型名称)\nTrainingModelId (模型ID)\nModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)\nTrainingModelSource (模型来源) 其值Filter.Values支持： JOB/COS\nModelFormat（模型格式）其值Filter.Values支持：\nPYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE\nFilter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询\n每次请求的Filters的上限为10，Filter.Values的上限为100\nFilter.Fuzzy取值：true/false，是否支持模糊匹配",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5224,7 +5223,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "排序字段，默认CreateTime",
           "example": "CreateTime",
           "member": "string",
@@ -5233,7 +5231,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序方式，ASC/DESC，默认DESC",
           "example": "DESC",
           "member": "string",
@@ -5242,7 +5239,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "int64",
@@ -5251,7 +5247,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回结果数量",
           "example": "10",
           "member": "int64",
@@ -5260,13 +5255,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签过滤",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "是否同时返回模型版本列表",
+          "example": "无",
+          "member": "bool",
+          "name": "WithModelVersions",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5279,7 +5281,6 @@
           "example": "无",
           "member": "TrainingModelDTO",
           "name": "TrainingModels",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5288,7 +5289,6 @@
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5539,6 +5539,16 @@
           "name": "IsSupportIntEightQuantization",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "框架版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pytorch1.12",
+          "member": "string",
+          "name": "FrameworkVersion",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5988,7 +5998,6 @@
       "document": "模型专业参数",
       "members": [
         {
-          "default": "",
           "document": "最大nnz数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -5998,7 +6007,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "slot数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -6008,7 +6016,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "gpu cache 使用率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.2",
           "member": "string",
@@ -6018,7 +6025,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "cpu cache 使用率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.2",
           "member": "string",
@@ -6028,7 +6034,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启分布式模式(true/false)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "string",
@@ -6038,7 +6043,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "TORCH_SCRIPT、MMDETECTION、DETECTRON2、HUGGINGFACE格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为3\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "string",
@@ -6048,7 +6052,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "FROZEN_GRAPH、SAVED_MODEL格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为10\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "string",
@@ -6516,7 +6519,6 @@
       "document": "模型加速任务",
       "members": [
         {
-          "default": "",
           "document": "模型加速任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "acc-3v3yf470zrpc",
           "member": "string",
@@ -6526,7 +6528,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型加速任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test-task",
           "member": "string",
@@ -6536,7 +6537,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6546,7 +6546,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -6556,7 +6555,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v1",
           "member": "string",
@@ -6566,7 +6564,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "JOB",
           "member": "string",
@@ -6576,7 +6573,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "优化级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "FP16",
           "member": "string",
@@ -6586,7 +6582,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "STATUS_SUCCESS",
           "member": "string",
@@ -6596,7 +6591,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "input节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -6606,7 +6600,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "input节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModelInputInfo",
@@ -6616,7 +6609,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "GPU型号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "T4",
           "member": "string",
@@ -6626,7 +6618,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "FREE",
           "member": "string",
@@ -6636,7 +6627,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "加速比\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.86x",
           "member": "string",
@@ -6646,7 +6636,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型输入cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CosPathInfo",
@@ -6656,7 +6645,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型输出cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CosPathInfo",
@@ -6666,7 +6654,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6676,7 +6663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "算法框架\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PYTORCH",
           "member": "string",
@@ -6686,7 +6672,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "排队个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -6696,7 +6681,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-05-10 22:10:11",
           "member": "string",
@@ -6706,7 +6690,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务进度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -6716,7 +6699,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SAVED_MODEL",
           "member": "string",
@@ -6726,7 +6708,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型Tensor信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6736,7 +6717,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型专业参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HyperParameter",
@@ -6746,7 +6726,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "加速引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -6756,7 +6735,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -6766,7 +6744,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "优化模型是否已保存到模型仓库\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -6776,7 +6753,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "SAVED_MODEL保存时配置的签名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -6786,13 +6762,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否是QAT模型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "QATModel",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "加速引擎对应的框架版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FrameworkVersion",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -7383,6 +7367,15 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Container",
+          "name": "ContainerInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7674,7 +7667,6 @@
       "document": "RestartModelAccelerateTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模型加速任务ID",
           "example": "acc-3v3yf470zrpc",
           "member": "string",
@@ -7683,7 +7675,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模型加速任务名称",
           "example": "test",
           "member": "string",
@@ -7692,7 +7683,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模型来源（JOB/COS）",
           "example": "JOB",
           "member": "string",
@@ -7701,7 +7691,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "算法框架（废弃）",
           "example": "Pytorch",
           "member": "string",
@@ -7710,7 +7699,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模型ID",
           "example": "m-123",
           "member": "string",
@@ -7719,7 +7707,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模型名称",
           "example": "test",
           "member": "string",
@@ -7728,7 +7715,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模型版本",
           "example": "v1",
           "member": "string",
@@ -7737,7 +7723,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模型输入cos路径",
           "example": "无",
           "member": "CosPathInfo",
@@ -7746,7 +7731,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "优化级别（NO_LOSS/FP16/INT8），默认FP16",
           "example": "FP16",
           "member": "string",
@@ -7755,7 +7739,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "input节点个数（废弃）",
           "example": "1",
           "member": "uint64",
@@ -7764,7 +7747,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "input节点信息（废弃）",
           "example": "无",
           "member": "ModelInputInfo",
@@ -7773,7 +7755,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "模型输出cos路径",
           "example": "无",
           "member": "CosPathInfo",
@@ -7782,7 +7763,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "模型格式（TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/MMDETECTION/ONNX/HUGGING_FACE）",
           "example": "SAVED_MODEL",
           "member": "string",
@@ -7791,7 +7771,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模型Tensor信息",
           "example": "无",
           "member": "string",
@@ -7800,7 +7779,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "GPU类型（T4/V100/A10），默认T4",
           "example": "无",
           "member": "string",
@@ -7809,7 +7787,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模型专业参数",
           "example": "无",
           "member": "HyperParameter",
@@ -7818,7 +7795,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "加速引擎版本",
           "example": "无",
           "member": "string",
@@ -7827,7 +7803,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签",
           "example": "无",
           "member": "Tag",
@@ -7836,11 +7811,18 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "SavedModel保存时配置的签名",
           "example": "test",
           "member": "string",
           "name": "ModelSignature",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "加速引擎对应的框架版本",
+          "example": "无",
+          "member": "string",
+          "name": "FrameworkVersion",
           "required": false,
           "type": "string"
         }
@@ -8766,6 +8748,15 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "Pod列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Pod",
+          "name": "PodInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9497,7 +9488,6 @@
       "document": "模型列表",
       "members": [
         {
-          "default": "",
           "document": "模型id",
           "example": "a1",
           "member": "string",
@@ -9507,7 +9497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型名称",
           "example": "a1",
           "member": "string",
@@ -9517,7 +9506,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -9527,13 +9515,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-18T12:30:14Z",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "模型版本列表。默认不返回，仅在指定请求参数开启时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TrainingModelVersionDTO",
+          "name": "TrainingModelVersions",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

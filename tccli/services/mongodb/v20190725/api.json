@@ -99,7 +99,7 @@
       "status": "online"
     },
     "DescribeDBInstances": {
-      "document": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。",
+      "document": "本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选主实例、灾备实例和只读实例信息列表。",
       "input": "DescribeDBInstancesRequest",
       "name": "查询云数据库实例列表",
       "output": "DescribeDBInstancesResponse",
@@ -113,7 +113,7 @@
       "status": "online"
     },
     "DescribeSecurityGroup": {
-      "document": "查询实例绑定的安全组",
+      "document": "本就口（DescribeSecurityGroup）用于查询实例绑定的安全组。",
       "input": "DescribeSecurityGroupRequest",
       "name": "查询实例绑定的安全组",
       "output": "DescribeSecurityGroupResponse",
@@ -190,7 +190,7 @@
       "status": "online"
     },
     "ModifyDBInstanceSecurityGroup": {
-      "document": "修改实例绑定的安全组",
+      "document": "本接口（ModifyDBInstanceSecurityGroup）用于修改实例绑定的安全组",
       "input": "ModifyDBInstanceSecurityGroupRequest",
       "name": "修改实例安全组",
       "output": "ModifyDBInstanceSecurityGroupResponse",
@@ -2067,8 +2067,7 @@
       "document": "DescribeDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。",
+          "document": "实例ID列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-hcscymcl",
           "member": "string",
           "name": "InstanceIds",
@@ -2076,7 +2075,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>2：临时实例。</li><li>3：只读实例。</li><li>-1：正式实例、只读、灾备实例。</li></ul>",
           "example": "0",
           "member": "int64",
@@ -2085,7 +2083,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：所有实例。</li></ul>",
           "example": "0",
           "member": "int64",
@@ -2094,7 +2091,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程执行中。</li><li>2：实例有效。</li><li>-2：已隔离（包年包月实例）。</li><li>-3：已隔离（按量计费实例）。</li></ul>",
           "example": "2",
           "member": "int64",
@@ -2103,8 +2099,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "私有网络的ID，基础网络则不传该参数。",
+          "document": "私有网络的 ID。\n- 基础网络则无需配置该参数。\n- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其 ID。",
           "example": "1",
           "member": "string",
           "name": "VpcId",
@@ -2112,8 +2107,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId。",
+          "document": "私有网络的子网ID。\n- 基础网络则无需配置该参数。\n- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其子网 ID。",
           "example": "1",
           "member": "string",
           "name": "SubnetId",
@@ -2121,7 +2115,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>",
           "example": "1",
           "member": "int64",
@@ -2130,7 +2123,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "单次请求返回的数量。默认值为20，取值范围为[1,100]。",
           "example": "10",
           "member": "uint64",
@@ -2139,7 +2131,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认值为0。",
           "example": "1",
           "member": "uint64",
@@ -2148,8 +2139,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "返回结果集排序的字段，目前支持：\"ProjectId\"、\"InstanceName\"、\"CreateTime\"，默认为升序排序。",
+          "document": "配置返回结果排序依据的字段。目前支持依据\"ProjectId\"、\"InstanceName\"、\"CreateTime\"排序。",
           "example": "无",
           "member": "string",
           "name": "OrderBy",
@@ -2157,8 +2147,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "返回结果集排序方式，目前支持：\"ASC\"或者\"DESC\"。",
+          "document": "配置返回结果的排序方式。\n- ASC：升序。\n- DESC：降序。",
           "example": "无",
           "member": "string",
           "name": "OrderByType",
@@ -2166,8 +2155,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "项目 ID。",
+          "document": "项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。",
           "example": "无",
           "member": "uint64",
           "name": "ProjectIds",
@@ -2175,8 +2163,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "搜索关键词，支持实例ID、实例名称、完整IP。",
+          "document": "配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。",
           "example": "无",
           "member": "string",
           "name": "SearchKey",
@@ -2184,8 +2171,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "Tag信息。",
+          "document": "标签信息，包含标签键与标签值。",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -2203,7 +2189,6 @@
           "example": "19",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2212,7 +2197,6 @@
           "example": "无",
           "member": "InstanceDetail",
           "name": "InstanceDetails",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2301,8 +2285,7 @@
       "document": "DescribeSecurityGroup请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID，格式如：cmgo-p8vnipr5。",
+          "document": "实例 ID。例如：cmgo-p8vn****。",
           "example": "cmgo-p8vnipr5",
           "member": "string",
           "name": "InstanceId",
@@ -2316,11 +2299,10 @@
       "document": "DescribeSecurityGroup返回参数结构体",
       "members": [
         {
-          "document": "实例绑定的安全组",
+          "document": "实例绑定的安全组信息。",
           "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3869,8 +3851,7 @@
       "document": "ModifyDBInstanceSecurityGroup请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID",
+          "document": "实例 ID。例如：cmgo-7pje****。",
           "example": "cmgo-7pjedvz7",
           "member": "string",
           "name": "InstanceId",
@@ -3878,8 +3859,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "目标安全组id",
+          "document": "目标安全组 ID。请通过接口[DescribeSecurityGroup](https://cloud.tencent.com/document/product/240/55675)查看具体的安全组 ID。",
           "example": "[\"sg-a\", \"sg-b\"]",
           "member": "string",
           "name": "SecurityGroupIds",

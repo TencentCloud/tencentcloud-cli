@@ -3479,7 +3479,6 @@
       "document": "IDCardOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -3488,7 +3487,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -3497,7 +3495,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "FRONT：身份证有照片的一面（人像面），\nBACK：身份证有国徽的一面（国徽面），\n该参数如果不填，将为您自动判断身份证正反面。",
           "example": "FRONT",
           "member": "string",
@@ -3506,7 +3503,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "以下可选字段均为bool 类型，默认false：\nCropIdCard，身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）\nCropPortrait，人像照片裁剪（自动抠取身份证头像区域）\nCopyWarn，复印件告警\nBorderCheckWarn，边框和框内遮挡告警\nReshootWarn，翻拍告警\nDetectPsWarn，PS检测告警\nTempIdWarn，临时身份证告警\nInvalidDateWarn，身份证有效日期不合法告警\nQuality，图片质量分数（评价图片的模糊程度）\nMultiCardDetect，是否开启多卡证检测\nReflectWarn，是否开启反光检测\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CropIdCard\":true,\"CropPortrait\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CropIdCard\":true,\"CropPortrait\":true}",
           "example": "无",
           "member": "string",
@@ -3525,7 +3521,6 @@
           "example": "李明",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3534,7 +3529,6 @@
           "example": "男",
           "member": "string",
           "name": "Sex",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3543,7 +3537,6 @@
           "example": "汉",
           "member": "string",
           "name": "Nation",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3552,7 +3545,6 @@
           "example": "1987/1/1",
           "member": "string",
           "name": "Birth",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3561,7 +3553,6 @@
           "example": "北京市石景山区高新技术园腾讯大楼",
           "member": "string",
           "name": "Address",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3570,7 +3561,6 @@
           "example": "440524198701010014",
           "member": "string",
           "name": "IdNum",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3579,7 +3569,6 @@
           "example": "无",
           "member": "string",
           "name": "Authority",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3588,7 +3577,6 @@
           "example": "无",
           "member": "string",
           "name": "ValidDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3597,7 +3585,6 @@
           "example": "{}",
           "member": "string",
           "name": "AdvancedInfo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -451,136 +451,136 @@
       "document": "CreateDirectConnect请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "物理专线的名称。",
+          "example": "北京航信物理专线1",
           "member": "string",
           "name": "DirectConnectName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "物理专线所在的接入点。\n您可以通过调用 DescribeAccessPoints接口获取地域ID。所选择的接入点必须存在且处于可接入的状态。",
+          "example": "ap-cn-beijing-hx",
           "member": "string",
           "name": "AccessPointId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。",
+          "document": "提供接入物理专线的运营商。\nChinaTelecom：中国电信； \nChinaMobile：中国移动；\nChinaUnicom：中国联通；\n In-houseWiring：楼内线；\nChinaOther：中国其他；\n InternationalOperator：境外其他。",
+          "example": "ChinaMobile",
           "member": "string",
           "name": "LineOperator",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。",
+          "document": "物理专线接入端口类型，取值：\n100Base-T：百兆电口；\n1000Base-T（默认值）：千兆电口；\n1000Base-LX：千兆单模光口（10千米）；\n10GBase-T：万兆电口；\n10GBase-LR（默认值）：万兆单模光口（10千米）。",
+          "example": "1000Base-LX",
           "member": "string",
           "name": "PortType",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "运营商或者服务商为物理专线提供的电路编码。",
+          "example": "北京航信ANE0348NP",
           "member": "string",
           "name": "CircuitCode",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "本地数据中心的地理位置。",
+          "example": "北京市海淀区西格玛A大厦14楼",
           "member": "string",
           "name": "Location",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。",
+          "example": "1000",
           "member": "int64",
           "name": "Bandwidth",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "冗余物理专线的ID。",
+          "example": "dc-12345678",
           "member": "string",
           "name": "RedundantDirectConnectId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。",
+          "example": "100",
           "member": "int64",
           "name": "Vlan",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "物理专线调试腾讯侧互联 IP。默认自动分配。",
+          "example": "IP地址",
           "member": "string",
           "name": "TencentAddress",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "物理专线调试用户侧互联 IP。默认自动分配。",
+          "example": "客户端IP地址",
           "member": "string",
           "name": "CustomerAddress",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "物理专线申请者姓名。默认从账户体系获取。",
+          "example": "张三",
           "member": "string",
           "name": "CustomerName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "物理专线申请者联系邮箱。默认从账户体系获取。",
+          "example": "12345@qq.com",
           "member": "string",
           "name": "CustomerContactMail",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "物理专线申请者联系号码。默认从账户体系获取。",
+          "example": "180XXXXXXXX",
           "member": "string",
           "name": "CustomerContactNumber",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "报障联系人。",
+          "example": "李四",
           "member": "string",
           "name": "FaultReportContactPerson",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "报障联系电话。",
+          "example": "181XXXXXXXX",
           "member": "string",
           "name": "FaultReportContactNumber",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "物理专线申请者是否签署了用户使用协议。默认已签署",
+          "document": "物理专线申请者是否签署了用户使用协议。默认已签署。",
+          "example": "是",
           "member": "bool",
           "name": "SignLaw",
           "required": false,
@@ -594,6 +594,7 @@
       "members": [
         {
           "document": "物理专线的ID。",
+          "example": "[\"dc-abcdefgh\"]",
           "member": "string",
           "name": "DirectConnectIdSet",
           "type": "list",

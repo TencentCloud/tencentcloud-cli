@@ -85,7 +85,7 @@
       "status": "online"
     },
     "CreateImageProcessingTemplate": {
-      "document": "创建一个用户自定义的图片处理模板，数量上限：16。最多支持三次操作，例如：裁剪-缩略-裁剪。",
+      "document": "创建一个用户自定义的图片处理模板，数量上限：16。最多支持十次操作，例如：裁剪-缩略-裁剪-模糊-缩略-裁剪-缩略-裁剪-模糊-缩略。",
       "input": "CreateImageProcessingTemplateRequest",
       "name": "创建图片即时处理模板",
       "output": "CreateImageProcessingTemplateResponse",
@@ -113,9 +113,9 @@
       "status": "online"
     },
     "CreateRebuildMediaTemplate": {
-      "document": "创建音画质重生模版。",
+      "document": "创建音画质重生模板。",
       "input": "CreateRebuildMediaTemplateRequest",
-      "name": "创建音画质重生模版",
+      "name": "创建音画质重生模板",
       "output": "CreateRebuildMediaTemplateResponse",
       "status": "online"
     },
@@ -281,9 +281,9 @@
       "status": "online"
     },
     "DeleteRebuildMediaTemplate": {
-      "document": "删除音画质重生模版。",
+      "document": "删除音画质重生模板。",
       "input": "DeleteRebuildMediaTemplateRequest",
-      "name": "删除音画质重生模版",
+      "name": "删除音画质重生模板",
       "output": "DeleteRebuildMediaTemplateResponse",
       "status": "online"
     },
@@ -554,9 +554,9 @@
       "status": "online"
     },
     "DescribeRebuildMediaTemplates": {
-      "document": "获取音画质重生模版列表。",
+      "document": "获取音画质重生模板列表。",
       "input": "DescribeRebuildMediaTemplatesRequest",
-      "name": "获取音画质重生模版列表",
+      "name": "获取音画质重生模板列表",
       "output": "DescribeRebuildMediaTemplatesResponse",
       "status": "online"
     },
@@ -806,9 +806,9 @@
       "status": "online"
     },
     "ModifyRebuildMediaTemplate": {
-      "document": "修改音画质重生模版。",
+      "document": "修改音画质重生模板。",
       "input": "ModifyRebuildMediaTemplateRequest",
-      "name": "修改音画质重生模版",
+      "name": "修改音画质重生模板",
       "output": "ModifyRebuildMediaTemplateResponse",
       "status": "online"
     },
@@ -960,9 +960,9 @@
       "status": "online"
     },
     "RebuildMediaByTemplate": {
-      "document": "使用模版发起音画质重生。",
+      "document": "使用模板发起音画质重生。",
       "input": "RebuildMediaByTemplateRequest",
-      "name": "使用模版发起音画质重生",
+      "name": "使用模板发起音画质重生",
       "output": "RebuildMediaByTemplateResponse",
       "status": "online"
     },
@@ -8391,7 +8391,7 @@
       "document": "CreateImageProcessingTemplate请求参数结构体",
       "members": [
         {
-          "document": "图片处理操作数组，操作将以其在数组中的顺序执行。\n<li>长度限制：3。</li>",
+          "document": "图片处理操作数组，操作将以其在数组中的顺序执行。\n<li>长度限制：10。</li>",
           "example": "无",
           "member": "ImageOperation",
           "name": "Operations",
@@ -8850,7 +8850,7 @@
           "type": "int"
         },
         {
-          "document": "音画质重生模版名称。",
+          "document": "音画质重生模板名称。",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -8858,7 +8858,7 @@
           "type": "string"
         },
         {
-          "document": "模版描述。",
+          "document": "模板描述。",
           "example": "无",
           "member": "string",
           "name": "Comment",
@@ -8920,7 +8920,7 @@
       "document": "CreateRebuildMediaTemplate返回参数结构体",
       "members": [
         {
-          "document": "音画质重生模版 ID。",
+          "document": "音画质重生模板 ID。",
           "example": "10000",
           "member": "int64",
           "name": "Definition",
@@ -10302,7 +10302,7 @@
       "document": "DeleteRebuildMediaTemplate请求参数结构体",
       "members": [
         {
-          "document": "音画质重生模版号。",
+          "document": "音画质重生模板号。",
           "example": "无",
           "member": "int64",
           "name": "Definition",
@@ -12716,7 +12716,7 @@
       "document": "DescribeRebuildMediaTemplates请求参数结构体",
       "members": [
         {
-          "document": "音画质重生模版列表。",
+          "document": "音画质重生模板列表。",
           "example": "无",
           "member": "int64",
           "name": "Definitions",
@@ -15989,6 +15989,42 @@
       ],
       "usage": "in"
     },
+    "ImageBlur": {
+      "document": "图片模糊处理。",
+      "members": [
+        {
+          "default": "",
+          "document": "图片模糊的操作类型。可选模式有：\n<li>Gaussian : 高斯模糊。</li>",
+          "example": "Gaussian",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模糊半径，取值范围为1 - 50。当 Type 取值为 Gaussian 时此字段有效。",
+          "example": "1",
+          "member": "int64",
+          "name": "Radius",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正态分布的标准差，必须大于0。当 Type 取值为 Gaussian 时此字段有效。",
+          "example": "1",
+          "member": "int64",
+          "name": "Sigma",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ImageCenterCut": {
       "document": "图片中心裁剪处理。",
       "members": [
@@ -16073,6 +16109,15 @@
           "example": "无",
           "member": "ImageCenterCut",
           "name": "CenterCut",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片模糊处理，仅当 Type 为 Blur 时有效。",
+          "example": "无",
+          "member": "ImageBlur",
+          "name": "Blur",
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -21000,7 +21045,7 @@
       "document": "ModifyRebuildMediaTemplate请求参数结构体",
       "members": [
         {
-          "document": "音画质重生模版号。",
+          "document": "音画质重生模板号。",
           "example": "无",
           "member": "int64",
           "name": "Definition",
@@ -21016,7 +21061,7 @@
           "type": "string"
         },
         {
-          "document": "音画质重生模版名称。",
+          "document": "音画质重生模板名称。",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -21024,7 +21069,7 @@
           "type": "string"
         },
         {
-          "document": "音画质重生模版描述。",
+          "document": "音画质重生模板描述。",
           "example": "无",
           "member": "string",
           "name": "Comment",
@@ -24640,7 +24685,7 @@
           "type": "string"
         },
         {
-          "document": "音画质重生模版 ID。",
+          "document": "音画质重生模板 ID。",
           "example": "无",
           "member": "int64",
           "name": "Definition",
@@ -25506,10 +25551,10 @@
       "usage": "out"
     },
     "RebuildMediaTemplate": {
-      "document": "音画质重生模版详情。",
+      "document": "音画质重生模板详情。",
       "members": [
         {
-          "document": "音画质重生模版号。",
+          "document": "音画质重生模板号。",
           "example": "无",
           "member": "int64",
           "name": "Definition",
@@ -25527,7 +25572,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "音画质重生模版名称。",
+          "document": "音画质重生模板名称。",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -25536,7 +25581,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "音画质重生模版描述。",
+          "document": "音画质重生模板描述。",
           "example": "无",
           "member": "string",
           "name": "Comment",
