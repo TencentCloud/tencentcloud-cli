@@ -5619,13 +5619,22 @@
       "document": "DescribeReleaseFileSign请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "超时时间，不填默认是 5 分钟",
           "example": "10",
           "member": "int64",
           "name": "Timeout",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "bucket类型，不填默认web，2:app",
+          "example": "2",
+          "member": "int64",
+          "name": "FileType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5638,45 +5647,45 @@
           "example": "sfdgfgfgfdf",
           "member": "string",
           "name": "SecretKey",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "临时密钥 id",
           "example": "dfdfdfdgfgfbf",
           "member": "string",
           "name": "SecretID",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "临时密钥临时 token",
           "example": "asdfdsfdsgg",
           "member": "string",
           "name": "SessionToken",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "开始时间戳",
           "example": "123787043",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "过期时间戳",
           "example": "23435436565",
           "member": "int64",
           "name": "ExpiredTime",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

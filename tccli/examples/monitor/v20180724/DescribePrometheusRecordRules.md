@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribePrometheusRecordRules --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId xxx
 ```
 
 Output: 
@@ -15,15 +15,18 @@ Output:
     "Response": {
         "Records": [
             {
-                "Content": "xx",
-                "UpdateTime": "xx",
-                "ClusterId": "xx",
-                "Name": "xx",
-                "TemplateId": "xx"
+                "Content": "xdx",
+                "UpdateTime": "xdx",
+                "ClusterId": "xdx",
+                "Name": "xdx",
+                "TemplateId": "xdx",
+                "Id": "de",
+                "Status": 1,
+                "Count": 1
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "xxx"
     }
 }
 ```

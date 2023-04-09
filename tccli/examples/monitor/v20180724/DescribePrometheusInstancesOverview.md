@@ -7,9 +7,8 @@ Input:
 ```
 tccli monitor DescribePrometheusInstancesOverview --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Type xxx \
-    --Filters.0.Key xxx \
-    --Filters.0.Value xxx \
+    --Filters.0.Name Name \
+    --Filters.0.Values alert-test \
     --Offset 1
 ```
 

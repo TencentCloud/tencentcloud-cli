@@ -8,7 +8,7 @@
       "status": "online"
     },
     "CreateAccountUser": {
-      "document": "本接口(CreateAccountUser)用于创建mongodb实例账号。",
+      "document": "本接口（CreateAccountUser）用于自定义实例访问账号。",
       "input": "CreateAccountUserRequest",
       "name": "创建账号",
       "output": "CreateAccountUserResponse",
@@ -43,7 +43,7 @@
       "status": "online"
     },
     "DescribeAccountUsers": {
-      "document": "本接口(DescribeAccountUsers)用于获取当前实例的全部账号。",
+      "document": "本接口（DescribeAccountUsers）用于获取当前实例的全部账号。",
       "input": "DescribeAccountUsersRequest",
       "name": "全部账号列表",
       "output": "DescribeAccountUsersResponse",
@@ -64,7 +64,7 @@
       "status": "online"
     },
     "DescribeClientConnections": {
-      "document": "本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。",
+      "document": "本接口（DescribeClientConnections）用于查询实例客户端连接信息，包括连接 IP 和连接数量。",
       "input": "DescribeClientConnectionsRequest",
       "name": "查询实例客户端连接信息",
       "output": "DescribeClientConnectionsResponse",
@@ -585,8 +585,7 @@
       "document": "CreateAccountUser请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例 ID。",
+          "document": "实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-7pjedvz7",
           "member": "string",
           "name": "InstanceId",
@@ -595,7 +594,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "新账号名称。其格式要求如下：<ul><li>字符范围[1,32]。</li><li>可输入[A,Z]、[a,z]、[1,9]范围的字符以及下划线“_”与短划线“-”。</li></ul>",
           "example": "mong_test",
           "member": "string",
@@ -605,7 +603,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "新账号密码。密码复杂度要求如下：<ul><li>字符长度范围[8,32]。</li><li>至少包含字母、数字和特殊字符（叹号“!”、at\"@\"、井号“#”、百分号“%”、插入符“^”、星号“*”、小括号“()”、下划线“_”）中的两种。</li></ul>",
           "example": "abc123...",
           "member": "string",
@@ -615,7 +612,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "mongouser 账号对应的密码。mongouser 为系统默认账号，即为创建实例时，设置的密码。",
           "example": "Abc123...",
           "member": "string",
@@ -625,7 +621,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "账号备注信息。",
           "example": "测试账号",
           "member": "string",
@@ -635,7 +630,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "账号的读写权限信息。",
           "example": "无",
           "member": "Auth",
@@ -655,7 +649,6 @@
           "example": "1",
           "member": "uint64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1523,8 +1516,7 @@
       "document": "DescribeAccountUsers请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID。",
+          "document": "指定待获取账号的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-******",
           "member": "string",
           "name": "InstanceId",
@@ -1543,7 +1535,6 @@
           "example": "无",
           "member": "UserInfo",
           "name": "Users",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -1714,31 +1705,31 @@
       "document": "DescribeClientConnections请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "document": "指定待查询的实例ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。\n",
           "example": "cmgo-eqmoaxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "单次请求返回的数量，最小值为1，最大值为1000，默认值为1000。",
+          "document": "单次请求返回的数量。最小值为1，最大值为1000，默认值为1000。",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "偏移量，默认值为0。",
+          "document": "偏移量，默认值为0。Offset=Limit*(页码-1)。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1747,22 +1738,22 @@
       "document": "DescribeClientConnections返回参数结构体",
       "members": [
         {
-          "document": "客户端连接信息，包括客户端IP和对应IP的连接数量。",
+          "document": "客户端连接信息，包括客户端 IP 和对应 IP 的连接数量。",
           "example": "无",
           "member": "ClientConnection",
           "name": "Clients",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "满足条件的记录总条数，可用于分页查询。",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2146,7 +2137,7 @@
       "document": "DescribeDBInstances请求参数结构体",
       "members": [
         {
-          "document": "实例ID列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "document": "实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-hcscymcl",
           "member": "string",
           "name": "InstanceIds",

@@ -970,6 +970,14 @@
         "title": "导出获取区域主机列表"
       }
     ],
+    "DescribeFileTamperEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileTamperEvents\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Status\": 1,\n                \"RuleId\": 1,\n                \"Uuid\": \"xx\",\n                \"EventCount\": 1,\n                \"Pstree\": \"xx\",\n                \"HostName\": \"xx\",\n                \"RuleName\": \"xx\",\n                \"Id\": 1,\n                \"ProcessArgv\": \"xx\",\n                \"ProcessExe\": \"xx\",\n                \"Quuid\": \"xx\",\n                \"ModifyTime\": \"xx\",\n                \"HostIp\": \"xx\",\n                \"Type\": 1,\n                \"CreateTime\": \"xx\",\n                \"Target\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "核心文件监控事件列表"
+      }
+    ],
     "DescribeGeneralStat": [
       {
         "document": "",

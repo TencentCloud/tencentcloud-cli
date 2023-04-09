@@ -24,6 +24,14 @@
         "title": "云鼎-订单查询接口"
       }
     ],
+    "GetTrailProductDetail": [
+      {
+        "document": "获取试用数据",
+        "input": "POST / HTTP/1.1\nHost: market.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTrailProductDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TrialDetail\": [\n            {\n                \"TrialTitle\": \"abc\",\n                \"SubTrialInfo\": [\n                    {\n                        \"SubTitle\": \"abc\",\n                        \"ProductInfo\": [\n                            {\n                                \"ProductID\": 1,\n                                \"ProductName\": \"abc\",\n                                \"ProductDesc\": \"abc\",\n                                \"ProductIcon\": \"abc\",\n                                \"TrialDesc\": \"abc\",\n                                \"InfoDesc\": \"abc\",\n                                \"AssignSpecID\": \"abc\",\n                                \"AssignCycleId\": \"abc\",\n                                \"AssignSubChargedItem\": \"abc\",\n                                \"AuthType\": \"abc\",\n                                \"IsHot\": true,\n                                \"SpecName\": \"abc\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "1"
+      }
+    ],
     "GetUsagePlanUsageAmount": [
       {
         "document": "",

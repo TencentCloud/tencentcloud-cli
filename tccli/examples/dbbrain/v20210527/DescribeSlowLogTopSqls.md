@@ -1,6 +1,6 @@
-**Example 1: 按照Sql模板查询指定时间段内的慢日志统计结果**
+**Example 1: 获取慢SQL模版列表 **
 
-
+按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。
 
 Input: 
 
@@ -32,8 +32,8 @@ Output:
                 "RowsSentMax": 0,
                 "RowsExaminedMin": 0,
                 "RowsSentMin": 0,
-                "SqlText": "xx",
-                "Schema": "xx",
+                "SqlText": "select * from user",
+                "Schema": "test",
                 "LockTimeMax": 0.0,
                 "LockTimeRatio": 0.0,
                 "ExecTimes": 2,
@@ -46,9 +46,9 @@ Output:
                 "RowsSent": 0,
                 "RowsExaminedRatio": 0.0,
                 "QueryTimeAvg": 0.0,
-                "SqlTemplate": "xx",
+                "SqlTemplate": "select * from user where name=?",
                 "LockTime": 0.0,
-                "Md5": "xx"
+                "Md5": "2323847233"
             }
         ]
     }

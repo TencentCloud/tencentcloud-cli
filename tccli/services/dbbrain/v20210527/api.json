@@ -70,6 +70,13 @@
       "output": "CreateSqlFilterResponse",
       "status": "online"
     },
+    "DeleteDBDiagReportTasks": {
+      "document": "根据任务id删除健康报告生成任务",
+      "input": "DeleteDBDiagReportTasksRequest",
+      "name": "删除健康报告生成任务",
+      "output": "DeleteDBDiagReportTasksResponse",
+      "status": "online"
+    },
     "DeleteSecurityAuditLogExportTasks": {
       "document": "删除安全审计日志导出任务。",
       "input": "DeleteSecurityAuditLogExportTasksRequest",
@@ -234,7 +241,7 @@
     "DescribeSlowLogTopSqls": {
       "document": "按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。",
       "input": "DescribeSlowLogTopSqlsRequest",
-      "name": "按照Sql模板查询指定时间段内的慢日志统计结果",
+      "name": "获取慢SQL模版列表",
       "output": "DescribeSlowLogTopSqlsResponse",
       "status": "online"
     },
@@ -1077,6 +1084,60 @@
           "member": "int64",
           "name": "FilterId",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDBDiagReportTasksRequest": {
+      "document": "DeleteDBDiagReportTasks请求参数结构体",
+      "members": [
+        {
+          "document": "需要删除的任务id列表",
+          "example": "[123,12]",
+          "member": "int64",
+          "name": "AsyncRequestIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "实例ID",
+          "example": "crs-hor87q50",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB for MySQL， \"mongodb\" - 云数据库 CynosDB for MySQL，\n默认值为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDBDiagReportTasksResponse": {
+      "document": "DeleteDBDiagReportTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务删除状态, 0-删除成功",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2996,85 +3057,85 @@
       "document": "DescribeSlowLogTopSqls请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例 ID 。",
           "example": "test",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "开始时间，如“2019-09-10 12:13:14”。",
           "example": "2019-01-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。",
           "example": "2019-01-01 01:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。",
           "example": "QueryTime",
           "member": "string",
           "name": "SortBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。",
           "example": "ASC",
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "数据库名称数组。",
           "example": "无",
           "member": "SchemaItem",
           "name": "SchemaList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3087,18 +3148,18 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "慢日志 top sql 列表",
           "example": "无",
           "member": "SlowLogTopSqlItem",
           "name": "Rows",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

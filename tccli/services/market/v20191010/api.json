@@ -21,6 +21,13 @@
       "output": "GetOrderForYUNDINGResponse",
       "status": "online"
     },
+    "GetTrailProductDetail": {
+      "document": "前端获取试用数据",
+      "input": "GetTrailProductDetailRequest",
+      "name": "前端获取试用数据",
+      "output": "GetTrailProductDetailResponse",
+      "status": "online"
+    },
     "GetUsagePlanUsageAmount": {
       "document": "该接口可以根据InstanceId查询实例的api的使用情况。\n",
       "input": "GetUsagePlanUsageAmountRequest",
@@ -601,6 +608,32 @@
       ],
       "type": "object"
     },
+    "GetTrailProductDetailRequest": {
+      "document": "GetTrailProductDetail请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetTrailProductDetailResponse": {
+      "document": "GetTrailProductDetail返回参数结构体",
+      "members": [
+        {
+          "document": "试用全部数据",
+          "example": "无",
+          "member": "TrialDetail",
+          "name": "TrialDetail",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetUsagePlanUsageAmountRequest": {
       "document": "GetUsagePlanUsageAmount请求参数结构体",
       "members": [
@@ -733,6 +766,184 @@
         }
       ],
       "usage": "out"
+    },
+    "SubTrialInfo": {
+      "document": "试用商品上层结构",
+      "members": [
+        {
+          "document": "二级标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubTitle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TrialProductInfo",
+          "name": "ProductInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "TrialDetail": {
+      "document": "试用数据",
+      "members": [
+        {
+          "document": "试用大标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TrialTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "试用信息分组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubTrialInfo",
+          "name": "SubTrialInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "TrialProductInfo": {
+      "document": "试用商品信息",
+      "members": [
+        {
+          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProductID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "商品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "商品描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "商品logo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductIcon",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "试用文案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TrialDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "试用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InfoDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "试用规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssignSpecID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "试用周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssignCycleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "试用计费项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssignSubChargedItem",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "认证类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "是否热门\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsHot",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "规格名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "YunDingOrder": {
       "document": "云鼎订单信息",

@@ -1,3 +1,239 @@
+# Release 3.0.740.1
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 58 次发布
+
+发布时间：2023-04-10 01:13:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatahubTopicResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubTopicResp)
+
+	* 新增成员：TopicId
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 38 次发布
+
+发布时间：2023-04-10 01:13:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateListener](http://document.tencentcloudapi.woa.com/document/product/214/30693)
+
+	* 新增入参：IdleConnectTimeout
+
+* [ModifyListener](http://document.tencentcloudapi.woa.com/document/product/214/30681)
+
+	* 新增入参：IdleConnectTimeout
+
+
+修改数据结构：
+
+* [Listener](http://document.tencentcloudapi.woa.com/document/product/214/30694#Listener)
+
+	* 新增成员：IdleConnectTimeout
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 54 次发布
+
+发布时间：2023-04-10 01:17:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeFileTamperEvents](http://document.tencentcloudapi.woa.com/document/product/296/77424)
+
+新增数据结构：
+
+* [FileTamperEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#FileTamperEvent)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 13 次发布
+
+发布时间：2023-04-10 01:19:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteDBDiagReportTasks](http://document.tencentcloudapi.woa.com/document/product/1130/77425)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 22 次发布
+
+发布时间：2023-04-10 01:24:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [StartStopServiceOrMonitor](http://document.tencentcloudapi.woa.com/document/product/589/77427)
+* [TerminateClusterNodes](http://document.tencentcloudapi.woa.com/document/product/589/77426)
+
+新增数据结构：
+
+* [ComponentBasicRestartInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ComponentBasicRestartInfo)
+* [OpScope](http://document.tencentcloudapi.woa.com/document/product/589/33981#OpScope)
+* [ServiceBasicRestartInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceBasicRestartInfo)
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 18 次发布
+
+发布时间：2023-04-10 01:25:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteProxyGroup](http://document.tencentcloudapi.woa.com/document/product/608/36947)
+
+	* <font color="#dd0000">**修改入参**：</font>GroupId
+
+
+
+
+## 云市场(market) 版本：2019-10-10
+
+### 第 4 次发布
+
+发布时间：2023-04-10 01:30:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetTrailProductDetail](http://document.tencentcloudapi.woa.com/document/product/306/77428)
+
+新增数据结构：
+
+* [SubTrialInfo](http://document.tencentcloudapi.woa.com/document/product/306/59175#SubTrialInfo)
+* [TrialDetail](http://document.tencentcloudapi.woa.com/document/product/306/59175#TrialDetail)
+* [TrialProductInfo](http://document.tencentcloudapi.woa.com/document/product/306/59175#TrialProductInfo)
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 54 次发布
+
+发布时间：2023-04-10 01:31:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePrometheusGlobalConfig](http://document.tencentcloudapi.woa.com/document/product/248/77000)
+
+	* 新增出参：Probes
+
+
+新增数据结构：
+
+* [Targets](http://document.tencentcloudapi.woa.com/document/product/248/30354#Targets)
+
+修改数据结构：
+
+* [PrometheusAlertPolicyItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAlertPolicyItem)
+
+	* 新增成员：Interval
+
+* [PrometheusConfigItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusConfigItem)
+
+	* 新增成员：Targets
+
+* [PrometheusRecordRuleYamlItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusRecordRuleYamlItem)
+
+	* 新增成员：Status, Id, Count
+
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 49 次发布
+
+发布时间：2023-04-10 01:33:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SmartStructuralOCRV2](http://document.tencentcloudapi.woa.com/document/product/866/77429)
+
+新增数据结构：
+
+* [GroupInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#GroupInfo)
+* [ItemInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#ItemInfo)
+* [Key](http://document.tencentcloudapi.woa.com/document/product/866/33527#Key)
+* [LineInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#LineInfo)
+* [Value](http://document.tencentcloudapi.woa.com/document/product/866/33527#Value)
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 21 次发布
+
+发布时间：2023-04-10 01:36:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeReleaseFileSign](http://document.tencentcloudapi.woa.com/document/product/1464/69216)
+
+	* 新增入参：FileType
+
+
+
+
 # Release 3.0.739.1
 
 ## 验证码(captcha) 版本：2019-07-22
