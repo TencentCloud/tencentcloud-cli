@@ -441,6 +441,13 @@
       "output": "SmartStructuralOCRResponse",
       "status": "online"
     },
+    "SmartStructuralOCRV2": {
+      "document": "本接口支持识别并提取各类证照、票据、表单、合同等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。\n\n默认接口请求频率限制：10次/秒。",
+      "input": "SmartStructuralOCRV2Request",
+      "name": "智能结构化识别V2",
+      "output": "SmartStructuralOCRV2Response",
+      "status": "online"
+    },
     "TableOCR": {
       "document": "<b>此接口为表格识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/49525\">新版表格识别</a>。</b>\n\n本接口支持图片内表格文档的检测和识别，返回每个单元格的文字内容，支持将识别结果保存为 Excel 格式。\n\n默认接口请求频率限制：10次/秒。",
       "input": "TableOCRRequest",
@@ -3169,6 +3176,21 @@
       ],
       "type": "object"
     },
+    "GroupInfo": {
+      "document": "组在图中的序号",
+      "members": [
+        {
+          "document": "每一行的元素",
+          "example": "1",
+          "member": "LineInfo",
+          "name": "Groups",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "HKIDCardOCRRequest": {
       "document": "HKIDCardOCR请求参数结构体",
       "members": [
@@ -3996,6 +4018,45 @@
       ],
       "usage": "out"
     },
+    "ItemInfo": {
+      "document": "智能结构化元素组",
+      "members": [
+        {
+          "document": "key信息组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Key",
+          "name": "Key",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Value信息组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Value",
+          "name": "Value",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Key": {
+      "document": "key信息组",
+      "members": [
+        {
+          "document": "自动识别的字段名称",
+          "example": "号码",
+          "member": "string",
+          "name": "AutoName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LicensePlateInfo": {
       "document": "全部车牌信息",
       "members": [
@@ -4115,6 +4176,21 @@
         }
       ],
       "type": "object"
+    },
+    "LineInfo": {
+      "document": "按行输出，行序号",
+      "members": [
+        {
+          "document": "每行的一个元素",
+          "example": "无",
+          "member": "ItemInfo",
+          "name": "Lines",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "MLIDCardOCRRequest": {
       "document": "MLIDCardOCR请求参数结构体",
@@ -7905,6 +7981,80 @@
       ],
       "type": "object"
     },
+    "SmartStructuralOCRV2Request": {
+      "document": "SmartStructuralOCRV2请求参数结构体",
+      "members": [
+        {
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/docume",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "自定义结构化功能需返回的字段名称，例：\n若客户只想返回姓名、性别两个字段的识别结果，则输入\nItemNames=[\"姓名\",\"性别\"]",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "ItemNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SmartStructuralOCRV2Response": {
+      "document": "SmartStructuralOCRV2返回参数结构体",
+      "members": [
+        {
+          "document": "图片旋转角度(角度制)，文本的水平方向\n为 0；顺时针为正，逆时针为负",
+          "example": "无",
+          "member": "float",
+          "name": "Angle",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "配置结构化文本信息",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "StructuralList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StructuralItem": {
       "document": "智能结构化识别",
       "members": [
@@ -9766,6 +9916,30 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Value": {
+      "document": "value信息组",
+      "members": [
+        {
+          "document": "自动识别的字段内容",
+          "example": "* 2 1 0 0 0 5 8 9 8 1 2 4 *",
+          "member": "string",
+          "name": "AutoContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "四点坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Polygon",
+          "name": "Coord",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

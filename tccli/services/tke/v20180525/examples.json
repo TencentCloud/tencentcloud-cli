@@ -19,7 +19,7 @@
     "AddExistedInstances": [
       {
         "document": "添加已经存在的实例到集群",
-        "input": "https://tke.tencentcloudapi.com/?Action=AddExistedInstances\n&ClusterId=cls-xxxxxx\n&InstanceIds.0=ins-xxxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddExistedInstances\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxx\",\n    \"InstanceIds\": [\n        \"ins-xxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TimeoutInstanceIds\": [\n            \"ins-lqdahrp3\"\n        ],\n        \"SuccInstanceIds\": [\n            \"ins-lqdahrp4\"\n        ],\n        \"FailedInstanceIds\": [\n            \"ins-lqdahrp5\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"FailedReasons\": [\n            \"InstanceId ins-lqdahrp5 ServiceResetCvmV3 failed ...\"\n        ]\n    }\n}",
         "title": "添加已经存在的实例到集群"
       }

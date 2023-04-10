@@ -3523,16 +3523,14 @@
       "document": "DeleteProxyGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要删除的通道组ID。",
           "example": "lg-b7h4d02f",
           "member": "string",
           "name": "GroupId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "强制删除标识。其中：\n0，不强制删除，\n1，强制删除。\n默认为0，当通道组中存在通道或通道组中存在监听器/规则绑定了源站时，且Force为0时，该操作会返回失败。",
           "example": "0",
           "member": "uint64",

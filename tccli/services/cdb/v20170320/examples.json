@@ -1126,7 +1126,7 @@
     ],
     "UpgradeDBInstance": [
       {
-        "document": "",
+        "document": "升级云数据库实例",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-6si6qy6p\",\n    \"Volume\": \"50\",\n    \"Memory\": \"1000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealIds\": [\n            \"20171204110077\"\n        ],\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfdc\"\n    }\n}",
         "title": "升级云数据库实例"

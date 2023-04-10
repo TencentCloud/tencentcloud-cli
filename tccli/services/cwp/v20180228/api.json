@@ -833,6 +833,13 @@
       "output": "DescribeExportMachinesResponse",
       "status": "online"
     },
+    "DescribeFileTamperEvents": {
+      "document": "核心文件监控事件列表",
+      "input": "DescribeFileTamperEventsRequest",
+      "name": "核心文件监控事件列表",
+      "output": "DescribeFileTamperEventsResponse",
+      "status": "online"
+    },
     "DescribeGeneralStat": {
       "document": "获取主机相关统计",
       "input": "DescribeGeneralStatRequest",
@@ -17112,6 +17119,87 @@
       ],
       "type": "object"
     },
+    "DescribeFileTamperEventsRequest": {
+      "document": "DescribeFileTamperEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>RuleCategory- string - 是否必填：否 - 规则类别 0 系统规则 1 自定义规则</li>",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式 ASC,DESC",
+          "example": "xx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段 CreateTime、ModifyTime",
+          "example": "xx",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileTamperEventsResponse": {
+      "document": "DescribeFileTamperEvents返回参数结构体",
+      "members": [
+        {
+          "document": "核心文件事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileTamperEvent",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeGeneralStatRequest": {
       "document": "DescribeGeneralStat请求参数结构体",
       "members": [
@@ -25269,6 +25357,345 @@
         }
       ],
       "type": "object"
+    },
+    "FileTamperEvent": {
+      "document": "核心文件监控事件",
+      "members": [
+        {
+          "document": "机器名称",
+          "example": "xx",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机器IP",
+          "example": "xxx",
+          "member": "string",
+          "name": "HostIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发生时间",
+          "example": "xx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最近发生时间",
+          "example": "xx",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "cvm id",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件类型/动作  0 -- 告警",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程路径",
+          "example": "xx",
+          "member": "string",
+          "name": "ProcessExe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程参数",
+          "example": "xx",
+          "member": "string",
+          "name": "ProcessArgv",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "目标文件路径",
+          "example": "xx",
+          "member": "string",
+          "name": "Target",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略 4-已手动处理",
+          "example": "xx",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件产生次数",
+          "example": "xx",
+          "member": "uint64",
+          "name": "EventCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则id",
+          "example": "xx",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则名称",
+          "example": "xx",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件详情: json格式",
+          "example": "xx",
+          "member": "string",
+          "name": "Pstree",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则类型 0系统规则 1自定义规则",
+          "example": "xx",
+          "member": "uint64",
+          "name": "RuleCategory",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机在线信息 ONLINE、OFFLINE",
+          "example": "xxx",
+          "member": "string",
+          "name": "MachineStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "危害描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "修护建议",
+          "example": "xxx",
+          "member": "string",
+          "name": "Suggestion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内网ip",
+          "example": "xxx",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程权限",
+          "example": "xx",
+          "member": "string",
+          "name": "ExePermission",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户名",
+          "example": "xx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户组",
+          "example": "xx",
+          "member": "string",
+          "name": "UserGroup",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程名",
+          "example": "xx",
+          "member": "string",
+          "name": "ExeMd5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程文件大小",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "ExeSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程执行时长",
+          "example": "xx",
+          "member": "uint64",
+          "name": "ExeTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "目标文件大小",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "TargetSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "目标文件权限",
+          "example": "xxx",
+          "member": "string",
+          "name": "TargetPermission",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "目标文件更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-02 15:04:05",
+          "member": "string",
+          "name": "TargetModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目标文件创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-02 15:04:05",
+          "member": "string",
+          "name": "TargetCreatTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "进程pid",
+          "example": "xx",
+          "member": "uint64",
+          "name": "ExePid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "TargetName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参考链接",
+          "example": "xxx",
+          "member": "string",
+          "name": "Reference",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "风险等级 0：无， 1: 高危， 2:中危， 3: 低危",
+          "example": "1",
+          "member": "uint64",
+          "name": "Level",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vim",
+          "member": "string",
+          "name": "ExeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": " 主机额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MachineExtraInfo",
+          "name": "MachineExtraInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。\n\n* 最多只能有5个Filter\n* 同一个Filter存在多个Values，Values值数量最多不能超过5个。\n",

@@ -2934,6 +2934,22 @@
           "name": "Period",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "日志主题描述",
+          "example": "xx部门xx任务topic",
+          "member": "string",
+          "name": "Describes",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "0：关闭日志沉降。\n非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效",
+          "example": "7",
+          "member": "uint64",
+          "name": "HotPeriod",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6726,6 +6742,22 @@
           "example": "30",
           "member": "int64",
           "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "日志主题描述",
+          "example": "xx部门xx业务topic",
+          "member": "string",
+          "name": "Describes",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "0：关闭日志沉降。\n非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效",
+          "example": "1",
+          "member": "uint64",
+          "name": "HotPeriod",
           "required": false,
           "type": "int"
         }

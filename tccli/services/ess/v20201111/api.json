@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateConvertTaskApi": {
-      "document": "创建文件转换任务",
+      "document": "上传了word、excel文件后，通过该接口发起文件转换任务，将word、excel文件转换为pdf文件。",
       "input": "CreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "CreateConvertTaskApiResponse",
@@ -1182,7 +1182,6 @@
       "document": "CreateConvertTaskApi请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "资源类型 取值范围doc,docx,html,xls,xlsx之一",
           "example": "无",
           "member": "string",
@@ -1191,7 +1190,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源名称，长度限制为256字符",
           "example": "无",
           "member": "string",
@@ -1200,7 +1198,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源Id，通过UploadFiles获取",
           "example": "无",
           "member": "string",
@@ -1209,7 +1206,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "调用方用户信息，userId 必填",
           "example": "无",
           "member": "UserInfo",
@@ -1218,7 +1214,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "应用号信息",
           "example": "无",
           "member": "Agent",
@@ -1227,7 +1222,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "暂未开放",
           "example": "无",
           "member": "OrganizationInfo",
@@ -1246,7 +1240,6 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

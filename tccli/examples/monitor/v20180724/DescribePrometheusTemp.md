@@ -7,9 +7,8 @@ Input:
 ```
 tccli monitor DescribePrometheusTemp --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Type xx \
-    --Filters.0.Key xx \
-    --Filters.0.Value xx \
+    --Filters.0.Name ID \
+    --Filters.0.Values alert-test \
     --Offset 1
 ```
 
@@ -19,66 +18,66 @@ Output:
     "Response": {
         "Templates": [
             {
-                "UpdateTime": "xx",
+                "UpdateTime": "xxx",
                 "RecordRules": [
                     {
-                        "Config": "xx",
-                        "Name": "xx",
-                        "TemplateId": "xx"
+                        "Config": "xxx",
+                        "Name": "xxx",
+                        "TemplateId": "xxx"
                     }
                 ],
-                "Version": "xx",
-                "Name": "xx",
-                "Level": "xx",
-                "Describe": "xx",
+                "Version": "xxx",
+                "Name": "xxx",
+                "Level": "xxx",
+                "Describe": "xxx",
                 "TargetsTotal": 0,
                 "RawJobs": [
                     {
-                        "Config": "xx",
-                        "Name": "xx",
-                        "TemplateId": "xx"
+                        "Config": "xxx",
+                        "Name": "xxx",
+                        "TemplateId": "xxx"
                     }
                 ],
                 "PodMonitors": [
                     {
-                        "Config": "xx",
-                        "Name": "xx",
-                        "TemplateId": "xx"
+                        "Config": "xxx",
+                        "Name": "xxx",
+                        "TemplateId": "xxx"
                     }
                 ],
-                "TemplateId": "xx",
+                "TemplateId": "xxx",
                 "AlertDetailRules": [
                     {
-                        "Name": "xx",
+                        "Name": "xxx",
                         "Rules": [
                             {
-                                "Describe": "xx",
-                                "Name": "xx",
-                                "For": "xx",
+                                "Describe": "xxx",
+                                "Name": "xxx",
+                                "For": "xxx",
                                 "Labels": [
                                     {
-                                        "Name": "xx",
-                                        "Value": "xx"
+                                        "Name": "xxx",
+                                        "Value": "xxx"
                                     }
                                 ],
-                                "Rule": "xx",
-                                "Template": "xx",
+                                "Rule": "xxx",
+                                "Template": "xxx",
                                 "Annotations": [
                                     {
-                                        "Name": "xx",
-                                        "Value": "xx"
+                                        "Name": "xxx",
+                                        "Value": "xxx"
                                     }
                                 ]
                             }
                         ],
                         "Notification": {
                             "AlertManager": {
-                                "Url": "xx",
-                                "ClusterId": "xx",
-                                "ClusterType": "xx"
+                                "Url": "xxx",
+                                "ClusterId": "xxx",
+                                "ClusterType": "xxx"
                             },
-                            "RepeatInterval": "xx",
-                            "WebHook": "xx",
+                            "RepeatInterval": "xxx",
+                            "WebHook": "xxx",
                             "Enabled": true,
                             "PhoneNotifyOrder": [
                                 1
@@ -86,35 +85,35 @@ Output:
                             "PhoneInnerInterval": 0,
                             "PhoneCircleInterval": 0,
                             "NotifyWay": [
-                                "xx"
+                                "xxx"
                             ],
                             "ReceiverGroups": [
-                                "xx"
+                                "xxx"
                             ],
                             "PhoneArriveNotice": true,
                             "PhoneCircleTimes": 0,
-                            "TimeRangeStart": "xx",
-                            "Type": "xx",
-                            "TimeRangeEnd": "xx"
+                            "TimeRangeStart": "xxx",
+                            "Type": "xxx",
+                            "TimeRangeEnd": "xxx"
                         },
-                        "TemplateId": "xx",
-                        "ClusterId": "xx",
-                        "UpdatedAt": "xx",
-                        "Id": "xx"
+                        "TemplateId": "xxx",
+                        "ClusterId": "xxx",
+                        "UpdatedAt": "xxx",
+                        "Id": "xxx"
                     }
                 ],
                 "IsDefault": true,
                 "ServiceMonitors": [
                     {
-                        "Config": "xx",
-                        "Name": "xx",
-                        "TemplateId": "xx"
+                        "Config": "xxx",
+                        "Name": "xxx",
+                        "TemplateId": "xxx"
                     }
                 ]
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "xxx"
     }
 }
 ```

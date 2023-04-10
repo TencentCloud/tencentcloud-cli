@@ -467,6 +467,8 @@ include tccli/services/tms/v20200713/api.json
 include tccli/services/tms/v20200713/examples.json
 include tccli/services/tmt/v20180321/api.json
 include tccli/services/tmt/v20180321/examples.json
+include tccli/services/tourism/v20230215/api.json
+include tccli/services/tourism/v20230215/examples.json
 include tccli/services/trdp/v20220726/api.json
 include tccli/services/trdp/v20220726/examples.json
 include tccli/services/trp/v20210515/api.json

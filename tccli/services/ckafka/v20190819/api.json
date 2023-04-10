@@ -4471,7 +4471,6 @@
       "document": "Datahub Topic 响应",
       "members": [
         {
-          "default": "",
           "document": "Topic名称",
           "example": "xxx",
           "member": "string",
@@ -4479,6 +4478,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "TopicId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

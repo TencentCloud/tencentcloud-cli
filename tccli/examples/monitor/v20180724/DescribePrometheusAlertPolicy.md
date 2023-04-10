@@ -6,11 +6,10 @@ Input:
 
 ```
 tccli monitor DescribePrometheusAlertPolicy --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId xxx \
     --Limit 1 \
-    --Filters.0.Type xx \
-    --Filters.0.Key xx \
-    --Filters.0.Value xx \
+    --Filters.0.Name Name \
+    --Filters.0.Values alert-test \
     --Offset 1
 ```
 
@@ -20,36 +19,36 @@ Output:
     "Response": {
         "AlertRules": [
             {
-                "Name": "xx",
+                "Name": "xxx",
                 "Rules": [
                     {
-                        "Describe": "xx",
-                        "Name": "xx",
-                        "For": "xx",
+                        "Describe": "xxx",
+                        "Name": "xxx",
+                        "For": "xxx",
                         "Labels": [
                             {
-                                "Name": "xx",
-                                "Value": "xx"
+                                "Name": "xxx",
+                                "Value": "xxx"
                             }
                         ],
-                        "Rule": "xx",
-                        "Template": "xx",
+                        "Rule": "xxx",
+                        "Template": "xxx",
                         "Annotations": [
                             {
-                                "Name": "xx",
-                                "Value": "xx"
+                                "Name": "xxx",
+                                "Value": "xxx"
                             }
                         ]
                     }
                 ],
                 "Notification": {
                     "AlertManager": {
-                        "Url": "xx",
-                        "ClusterId": "xx",
-                        "ClusterType": "xx"
+                        "Url": "xxx",
+                        "ClusterId": "xxx",
+                        "ClusterType": "xxx"
                     },
-                    "RepeatInterval": "xx",
-                    "WebHook": "xx",
+                    "RepeatInterval": "xxx",
+                    "WebHook": "xxx",
                     "Enabled": true,
                     "PhoneNotifyOrder": [
                         1
@@ -57,25 +56,25 @@ Output:
                     "PhoneInnerInterval": 0,
                     "PhoneCircleInterval": 0,
                     "NotifyWay": [
-                        "xx"
+                        "xxx"
                     ],
                     "ReceiverGroups": [
-                        1
+                        "1"
                     ],
                     "PhoneArriveNotice": true,
                     "PhoneCircleTimes": 0,
-                    "TimeRangeStart": "xx",
-                    "Type": "xx",
-                    "TimeRangeEnd": "xx"
+                    "TimeRangeStart": "xxx",
+                    "Type": "xxx",
+                    "TimeRangeEnd": "xxx"
                 },
-                "TemplateId": "xx",
-                "ClusterId": "xx",
-                "UpdatedAt": "xx",
-                "Id": "xx"
+                "TemplateId": "xxx",
+                "ClusterId": "xxx",
+                "UpdatedAt": "xxx",
+                "Id": "xxx"
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "xxx"
     }
 }
 ```

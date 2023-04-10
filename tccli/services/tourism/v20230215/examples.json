@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeDrawResourceList": [
+      {
+        "document": "默认返回",
+        "input": "POST / HTTP/1.1\nHost: tourism.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDrawResourceList\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ResourceDrawList\": [\n            {\n                \"Id\": 1,\n                \"FlowId\": 1,\n                \"ResourceId\": \"abc\",\n                \"IndexId\": \"abc\",\n                \"Uin\": \"abc\",\n                \"BigDealId\": \"abc\",\n                \"SmallOrderId\": \"abc\",\n                \"ResourceNewStartTime\": \"abc\",\n                \"ResourceNewEndTime\": \"abc\",\n                \"ResourceStatus\": 0,\n                \"Status\": 1,\n                \"ResourceType\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "默认实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

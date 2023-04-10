@@ -10330,6 +10330,14 @@
           "value_allowed_null": true
         },
         {
+          "document": "Probes列表以及对应targets信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "Probes",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -15268,7 +15276,6 @@
       "document": "prometheus配置",
       "members": [
         {
-          "default": "",
           "document": "名称",
           "example": "xxx",
           "member": "string",
@@ -15278,7 +15285,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "配置内容",
           "example": "xxx",
           "member": "string",
@@ -15288,13 +15294,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用于出参，如果该配置来至模板，则为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "TemplateId",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目标数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "Targets",
+          "name": "Targets",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -16035,6 +16049,33 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -17199,6 +17240,48 @@
         }
       ],
       "usage": "out"
+    },
+    "Targets": {
+      "document": "抓取目标数",
+      "members": [
+        {
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "在线数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Up",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "不在线数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Down",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "未知状态数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Unknown",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TaskStepInfo": {
       "document": "任务步骤信息",

@@ -1,6 +1,6 @@
 **Example 1: 调用示例**
 
-
+适用场景：通过word文件资源id进行文件转换
 
 Input: 
 
@@ -34,7 +34,7 @@ Output:
 
 **Example 2: test示例**
 
-
+适用场景：通过word文件资源id进行文件转换
 
 Input: 
 

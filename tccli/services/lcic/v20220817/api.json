@@ -252,6 +252,13 @@
       "output": "GetRoomMessageResponse",
       "status": "online"
     },
+    "GetRooms": {
+      "document": "获取房间列表",
+      "input": "GetRoomsRequest",
+      "name": "获取房间列表",
+      "output": "GetRoomsResponse",
+      "status": "online"
+    },
     "GetWatermark": {
       "document": "获取水印设置",
       "input": "GetWatermarkRequest",
@@ -2963,6 +2970,80 @@
       ],
       "type": "object"
     },
+    "GetRoomsRequest": {
+      "document": "GetRooms请求参数结构体",
+      "members": [
+        {
+          "document": "低代码平台的SdkAppId。\n",
+          "example": "无",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "开始时间。默认以当前时间减去半小时作为开始时间。",
+          "example": "无",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "结束时间。默认以当前时间加上半小时作为结束时间。",
+          "example": "无",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "分页查询当前页数，从1开始递增",
+          "example": "无",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "默认是10条",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoomsResponse": {
+      "document": "GetRooms返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间列表",
+          "example": "无",
+          "member": "RoomItem",
+          "name": "Rooms",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetWatermarkRequest": {
       "document": "GetWatermark请求参数结构体",
       "members": [
@@ -3956,6 +4037,111 @@
         }
       ],
       "usage": "in"
+    },
+    "RoomItem": {
+      "document": "房间列表",
+      "members": [
+        {
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "room",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "房间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "房间状态。0 未开始 ；1进行中  ；2 已结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实际开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RealStartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实际结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RealEndTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分辨率。1 标清\n2 高清\n3 全高清\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Resolution",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最大允许连麦人数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxRTCMember",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "房间录制地址。已废弃，使用新字段 RecordUrl\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReplayUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "录制地址（协议为https)。仅在房间结束后存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecordUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SceneItem": {
       "document": "场景配置",

@@ -380,7 +380,7 @@
     ],
     "DescribeReleaseFileSign": [
       {
-        "document": "",
+        "document": "获取临时密钥",
         "input": "https://rum.tencentcloudapi.com/?Action=DescribeReleaseFileSign\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SecretKey\": \"dahfldaflndfdfdsf\",\n        \"SecretID\": \"asdkadalsdlsafk\",\n        \"SessionToken\": \"fdslkfjdkjfldsjfdfdf\",\n        \"StartTime\": 1232132132,\n        \"ExpiredTime\": 123212143434,\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取临时密钥"

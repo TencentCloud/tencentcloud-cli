@@ -2506,6 +2506,14 @@
           "name": "MaxCps",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~2000。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。",
+          "example": "900",
+          "member": "int64",
+          "name": "IdleConnectTimeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5937,7 +5945,6 @@
       "document": "监听器的信息",
       "members": [
         {
-          "default": "",
           "document": "负载均衡监听器 ID",
           "example": "lbl-odt45qxx",
           "member": "string",
@@ -5947,7 +5954,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "监听器协议",
           "example": "HTTP",
           "member": "string",
@@ -5957,7 +5963,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "监听器端口",
           "example": "80",
           "member": "int64",
@@ -5967,7 +5972,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "监听器绑定的证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CertificateOutput",
@@ -5977,7 +5981,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "监听器的健康检查信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HealthCheck",
@@ -5987,7 +5990,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "请求的调度方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "WRR",
           "member": "string",
@@ -5997,7 +5999,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "会话保持时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -6007,7 +6008,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启SNI特性（本参数仅对于HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -6017,7 +6017,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "监听器下的全部转发规则（本参数仅对于HTTP/HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RuleOutput",
@@ -6027,9 +6026,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "监听器的名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "name",
+          "example": "Name",
           "member": "string",
           "name": "ListenerName",
           "required": true,
@@ -6037,7 +6035,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "监听器的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-01 15:27:04",
           "member": "string",
@@ -6047,7 +6044,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "端口段结束端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -6057,7 +6053,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "后端服务器类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NODE",
           "member": "string",
@@ -6067,7 +6062,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "绑定的目标组基本信息；当监听器绑定目标组时，会返回该字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BasicTargetGroupInfo",
@@ -6077,7 +6071,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NORMAL",
           "member": "string",
@@ -6087,7 +6080,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启长连接，1开启，0关闭，（本参数仅对于HTTP/HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -6097,7 +6089,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "仅支持Nat64 CLB TCP监听器\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -6107,7 +6098,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
@@ -6117,7 +6107,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "监听器的属性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Stop",
           "member": "string",
@@ -6127,7 +6116,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "绑定的目标组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BasicTargetGroupInfo",
@@ -6137,7 +6125,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "监听器最大连接数，-1表示监听器维度不限速。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
@@ -6147,12 +6134,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "监听器最大新增连接数，-1表示监听器维度不限速。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
           "name": "MaxCps",
           "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "空闲连接超时时间，仅支持TCP监听器。默认值:900；共享型实例和独占型实例取值范围：300～900，性能容量型实例取值范围:300～1980。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "900",
+          "member": "int64",
+          "name": "IdleConnectTimeout",
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -7784,6 +7779,14 @@
           "example": "-1",
           "member": "int64",
           "name": "MaxCps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "空闲连接超时时间，此参数仅适用于TCP监听器，单位：秒。默认值：900，取值范围：共享型实例和独占型实例支持：300～900，性能容量型实例支持：300~2000。如需设置超过2000s，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category),最大可设置到3600s。",
+          "example": "900",
+          "member": "int64",
+          "name": "IdleConnectTimeout",
           "required": false,
           "type": "int"
         }
@@ -10092,8 +10095,8 @@
       "document": "负载均衡实例所绑定的后端服务的信息，包括所属地域、所属网络。",
       "members": [
         {
-          "default": "",
           "document": "Target所属地域，如 ap-guangzhou",
+          "example": "无",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -10101,8 +10104,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Target所属网络，私有网络格式如 vpc-abcd1234，如果是基础网络，则为\"0\"",
+          "example": "无",
           "member": "string",
           "name": "VpcId",
           "required": true,

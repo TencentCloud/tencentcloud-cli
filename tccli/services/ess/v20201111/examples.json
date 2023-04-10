@@ -26,13 +26,13 @@
     ],
     "CreateConvertTaskApi": [
       {
-        "document": "",
+        "document": "适用场景：通过word文件资源id进行文件转换",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConvertTaskApi\n<公共请求参数>\n\n{\n    \"ResourceType\": \"doc\",\n    \"ResourceId\": \"y***********************************l\",\n    \"Agent\": {\n        \"AppId\": \"\"\n    },\n    \"Organization\": {\n        \"OrganizationOpenId\": \"\",\n        \"OrganizationId\": \"\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"y***********************************p\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\"\n    },\n    \"ResourceName\": \"hello.docx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2eae803-fe6e-4b1c-8901-c61cfaf19a21\",\n        \"TaskId\": \"20220726175923011294\"\n    }\n}",
         "title": "调用示例"
       },
       {
-        "document": "",
+        "document": "适用场景：通过word文件资源id进行文件转换",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConvertTaskApi\n<公共请求参数>\n\n{\n    \"ResourceType\": \"doc\",\n    \"ResourceName\": \"hello.docx\",\n    \"Operator\": {\n        \"ProxyIp\": \"8.8.8.8\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"y***********************************R\"\n    },\n    \"Organization\": {\n        \"OrganizationId\": \"6***********************************1\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"ProxyIp\": \"8.8.8.8\"\n    },\n    \"ResourceId\": \"y***********************************l\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fbf25f31-1b45-4ed5-9b45-8afed19e9849\",\n        \"TaskId\": \"20220728163549202141\"\n    }\n}",
         "title": "test示例"

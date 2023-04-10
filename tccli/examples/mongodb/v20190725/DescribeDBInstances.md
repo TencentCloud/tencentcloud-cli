@@ -8,8 +8,8 @@ Input:
 tccli mongodb DescribeDBInstances --cli-unfold-argument  \
     --Status 0 \
     --OrderBy DESC \
-    --InstanceIds cmgo-3vgrapm5 \
-    --VpcId vpc-gfb3pqo1 \
+    --InstanceIds cmgo-3vgr**** \
+    --VpcId vpc-gfb3**** \
     --Tags.0.TagKey test \
     --Tags.0.TagValue testValue \
     --ClusterType 0 \
@@ -40,7 +40,7 @@ Output:
                 "CpuNum": 2,
                 "CreateTime": "2023-03-30 07:44:21",
                 "DeadLine": "2073-03-30 07:44:21",
-                "InstanceId": "cmgo-3vgrapm5",
+                "InstanceId": "cmgo-3vgr****",
                 "InstanceName": "测试实例",
                 "InstanceStatusDesc": "运行中",
                 "InstanceType": 1,
@@ -59,7 +59,7 @@ Output:
                 "Protocol": 0,
                 "ReadonlyInstances": [],
                 "ReadonlyNodeNum": 0,
-                "RealInstanceId": "cmgo-3vgrapm5",
+                "RealInstanceId": "cmgo-3vgr****",
                 "Region": "ap-guangzhou",
                 "RelatedInstance": {
                     "InstanceId": "",
@@ -69,9 +69,9 @@ Output:
                     {
                         "Memory": 4096,
                         "OplogSize": 1024,
-                        "RealReplicaSetId": "cmgo-3vgrapm5_0",
-                        "ReplicaSetId": "cmgo-3vgrapm5_0",
-                        "ReplicaSetName": "cmgo-3vgrapm5_0",
+                        "RealReplicaSetId": "cmgo-3vgrapm5_*",
+                        "ReplicaSetId": "cmgo-3vgrapm5_*",
+                        "ReplicaSetName": "cmgo-3vgrapm5_*",
                         "SecondaryNum": 2,
                         "UsedVolume": 315,
                         "Volume": 10240
@@ -81,12 +81,12 @@ Output:
                 "SecondaryNum": 2,
                 "StandbyInstances": [],
                 "Status": 2,
-                "SubnetId": "subnet-7q7daudy",
+                "SubnetId": "subnet-7q7d****",
                 "Tags": [],
                 "UsedVolume": 315,
                 "Vip": "10.5.2.12;10.5.2.14;10.5.2.10",
                 "Volume": 10240,
-                "VpcId": "vpc-gfb3pqo1",
+                "VpcId": "vpc-gfb3****",
                 "Vport": 27017,
                 "Zone": "ap-guangzhou-2"
             }

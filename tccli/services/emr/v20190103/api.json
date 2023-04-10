@@ -168,11 +168,25 @@
       "output": "ScaleOutInstanceResponse",
       "status": "online"
     },
+    "StartStopServiceOrMonitor": {
+      "document": "用于启动或停止监控或服务",
+      "input": "StartStopServiceOrMonitorRequest",
+      "name": "启动或停止监控或服务",
+      "output": "StartStopServiceOrMonitorResponse",
+      "status": "online"
+    },
     "SyncPodState": {
       "document": "EMR同步TKE中POD状态",
       "input": "SyncPodStateRequest",
       "name": "EMR同步POD状态",
       "output": "SyncPodStateResponse",
+      "status": "online"
+    },
+    "TerminateClusterNodes": {
+      "document": "销毁集群节点",
+      "input": "TerminateClusterNodesRequest",
+      "name": "销毁集群节点",
+      "output": "TerminateClusterNodesResponse",
       "status": "online"
     },
     "TerminateInstance": {
@@ -1247,6 +1261,30 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ComponentBasicRestartInfo": {
+      "document": "操作的进程范围",
+      "members": [
+        {
+          "document": "进程名，必填，如NameNode\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“NameNode”",
+          "member": "string",
+          "name": "ComponentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "操作的IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ip1\", \"ip2\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5467,6 +5505,21 @@
       ],
       "usage": "both"
     },
+    "OpScope": {
+      "document": "操作范围",
+      "members": [
+        {
+          "document": "操作范围，要操作的服务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceBasicRestartInfo",
+          "name": "ServiceInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "OutterResource": {
       "document": "资源详情",
       "members": [
@@ -7544,6 +7597,30 @@
       ],
       "usage": "in"
     },
+    "ServiceBasicRestartInfo": {
+      "document": "操作的服务范围",
+      "members": [
+        {
+          "document": "服务名，必填，如HDFS",
+          "example": "“HDFS”",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "如果没传，则表示所有进程",
+          "example": "无",
+          "member": "ComponentBasicRestartInfo",
+          "name": "ComponentInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ShortNodeInfo": {
       "document": "节点信息",
       "members": [
@@ -7595,6 +7672,48 @@
         }
       ],
       "usage": "out"
+    },
+    "StartStopServiceOrMonitorRequest": {
+      "document": "StartStopServiceOrMonitor请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "操作类型，当前支持\n<li>StartService：启动服务</li>\n<li>StopService：停止服务</li>\n<li>StartMonitor：退出维护</li>\n<li>StopMonitor：进入维护</li>\n",
+          "example": "StartService",
+          "member": "string",
+          "name": "OpType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "操作范围",
+          "example": "无",
+          "member": "OpScope",
+          "name": "OpScope",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "StartStopServiceOrMonitorResponse": {
+      "document": "StartStopServiceOrMonitor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Step": {
       "document": "执行步骤",
@@ -7720,6 +7839,72 @@
         }
       ],
       "usage": "both"
+    },
+    "TerminateClusterNodesRequest": {
+      "document": "TerminateClusterNodes请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "emr-4slr7ad7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "销毁资源列表",
+          "example": "[\"ins-42u6moui\\r\\n\"]",
+          "member": "string",
+          "name": "CvmInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "销毁节点类型取值范围：\n  <li>MASTER</li>\n  <li>TASK</li>\n  <li>CORE</li>\n  <li>ROUTER</li>",
+          "example": "MASTER",
+          "member": "string",
+          "name": "NodeFlag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "优雅缩容开关\n  <li>true:开启</li>\n  <li>false:不开启</li>",
+          "example": "无",
+          "member": "bool",
+          "name": "GraceDownFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "优雅缩容等待时间,时间范围60到1800  单位秒",
+          "example": "无",
+          "member": "int64",
+          "name": "GraceDownTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateClusterNodesResponse": {
+      "document": "TerminateClusterNodes返回参数结构体",
+      "members": [
+        {
+          "document": "缩容流程ID。",
+          "example": "1000",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TerminateInstanceRequest": {
       "document": "TerminateInstance请求参数结构体",

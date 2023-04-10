@@ -5434,11 +5434,18 @@
       "document": "DescribeReleaseFileSign请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "超时时间，不填默认是 5 分钟",
           "example": "10",
           "member": "int64",
           "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "bucket类型，不填默认web，2:app",
+          "example": "2",
+          "member": "int64",
+          "name": "FileType",
           "required": false,
           "type": "int"
         }
@@ -5453,7 +5460,6 @@
           "example": "sfdgfgfgfdf",
           "member": "string",
           "name": "SecretKey",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5462,7 +5468,6 @@
           "example": "dfdfdfdgfgfbf",
           "member": "string",
           "name": "SecretID",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5471,7 +5476,6 @@
           "example": "asdfdsfdsgg",
           "member": "string",
           "name": "SessionToken",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5480,7 +5484,6 @@
           "example": "123787043",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5489,7 +5492,6 @@
           "example": "23435436565",
           "member": "int64",
           "name": "ExpiredTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
