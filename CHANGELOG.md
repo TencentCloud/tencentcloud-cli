@@ -1,3 +1,230 @@
+# Release 3.0.741.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 16 次发布
+
+发布时间：2023-04-11 01:07:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetail)
+
+	* 新增成员：PriceInfo
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 50 次发布
+
+发布时间：2023-04-11 01:09:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpgradeDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15876)
+
+	* 新增入参：RoTransType
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 55 次发布
+
+发布时间：2023-04-11 01:14:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/19867#BashEventsInfoNew)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Uuid, Quuid, HostIp, Platform, BashCmd, RuleId, RuleName, RuleLevel, Status, CreateTime, MachineName, Exe, ModifyTime, RuleCategory, RegexBashCmd, PsTree, SuggestScheme, HarmDescribe, Tags, References, MachineWanIp, MachineStatus, User, Pid, MachineType, DetectBy
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 8 次发布
+
+发布时间：2023-04-11 01:16:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLoginEvent](http://document.tencentcloudapi.woa.com/document/product/1492/77432)
+* [DescribeOperationEvent](http://document.tencentcloudapi.woa.com/document/product/1492/77431)
+* [SearchAuditLog](http://document.tencentcloudapi.woa.com/document/product/1492/77439)
+* [SearchCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77438)
+* [SearchCommandBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77437)
+* [SearchFile](http://document.tencentcloudapi.woa.com/document/product/1492/77436)
+* [SearchFileBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77435)
+* [SearchSession](http://document.tencentcloudapi.woa.com/document/product/1492/77434)
+* [SearchSessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77433)
+
+新增数据结构：
+
+* [AuditLogResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AuditLogResult)
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
+* [LoginEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#LoginEvent)
+* [OperationEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#OperationEvent)
+* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
+* [SearchFileBySidResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileBySidResult)
+* [SearchFileResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileResult)
+* [SearchFileTypeFilter](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileTypeFilter)
+* [SessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SessionCommand)
+* [SessionResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SessionResult)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 14 次发布
+
+发布时间：2023-04-11 01:17:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSlowLogs](http://document.tencentcloudapi.woa.com/document/product/1130/77440)
+
+新增数据结构：
+
+* [SlowLogInfoItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SlowLogInfoItem)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 44 次发布
+
+发布时间：2023-04-11 01:17:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+	* 新增入参：ElasticSwitch, ElasticLimit
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 19 次发布
+
+发布时间：2023-04-11 01:18:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CreateRecordBatchRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56185#CreateRecordBatchRecord)
+
+	* 新增成员：Weight
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 19 次发布
+
+发布时间：2023-04-11 01:26:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteAccountUser](http://document.tencentcloudapi.woa.com/document/product/240/77441)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 38 次发布
+
+发布时间：2023-04-11 01:33:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePulsarProInstances](http://document.tencentcloudapi.woa.com/document/product/1179/77442)
+
+新增数据结构：
+
+* [PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)
+
+
+
+## 互动白板(tiw) 版本：2019-09-19
+
+### 第 12 次发布
+
+发布时间：2023-04-11 01:35:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreatePPTCheckTask](http://document.tencentcloudapi.woa.com/document/product/1137/77448)
+* [DescribePPTCheck](http://document.tencentcloudapi.woa.com/document/product/1137/77447)
+* [DescribePPTCheckCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77446)
+* [DescribeRunningTasks](http://document.tencentcloudapi.woa.com/document/product/1137/77443)
+* [DescribeWarningCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77451)
+* [SetPPTCheckCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77445)
+* [SetPPTCheckCallbackKey](http://document.tencentcloudapi.woa.com/document/product/1137/77444)
+* [SetWarningCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77450)
+
+新增数据结构：
+
+* [PPTErr](http://document.tencentcloudapi.woa.com/document/product/1137/40068#PPTErr)
+* [PPTErrSlide](http://document.tencentcloudapi.woa.com/document/product/1137/40068#PPTErrSlide)
+* [RunningTaskItem](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RunningTaskItem)
+
+
+
 # Release 3.0.740.1
 
 ## 消息队列 CKafka(ckafka) 版本：2019-08-19

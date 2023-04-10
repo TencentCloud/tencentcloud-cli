@@ -22,7 +22,7 @@
       "status": "online"
     },
     "DescribeBillResourceSummary": {
-      "document": "查询账单资源汇总数据 ",
+      "document": "查询账单资源汇总数据",
       "input": "DescribeBillResourceSummaryRequest",
       "name": "查询账单资源汇总数据",
       "output": "DescribeBillResourceSummaryResponse",
@@ -302,244 +302,254 @@
       "document": "账单明细数据对象",
       "members": [
         {
-          "default": "",
           "document": "产品名称：云产品大类，如云服务器CVM、云数据库MySQL",
           "example": "云服务器CVM",
           "member": "string",
           "name": "BusinessCodeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "子产品名称：云产品子类，如云服务器CVM-标准型S1",
           "example": "云服务器CVM-标准型S1",
           "member": "string",
           "name": "ProductCodeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "计费模式：包年包月和按量计费",
           "example": "按量计费",
           "member": "string",
           "name": "PayModeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "项目:资源所属项目",
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "区域：资源所属地域，如华南地区（广州）",
           "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "可用区：资源所属可用区，如广州三区",
           "example": "广州三区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "资源实例ID",
           "example": "ins-rb7bmkwx",
           "member": "string",
           "name": "ResourceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "实例名称",
           "example": "emr-Core.3_emr-4g83a3k3",
           "member": "string",
           "name": "ResourceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "交易类型",
           "example": "包年包月新购",
           "member": "string",
           "name": "ActionTypeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "订单ID",
           "example": "20211202400008418120371",
           "member": "string",
           "name": "OrderId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "交易ID",
           "example": "20211202400008418120371",
           "member": "string",
           "name": "BillId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "扣费时间",
           "example": "2021-12-02 12:45:12",
           "member": "datetime",
           "name": "PayTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "开始使用时间",
           "example": "2021-12-02 12:45:05",
           "member": "datetime",
           "name": "FeeBeginTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "结束使用时间",
           "example": "2021-12-03 12:45:05",
           "member": "datetime",
           "name": "FeeEndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "组件列表",
           "example": "[           {             \"ComponentCodeName\": \"实例\",            ",
           "member": "BillDetailComponent",
           "name": "ComponentSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "支付者UIN",
           "example": "909619400",
           "member": "string",
           "name": "PayerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "使用者UIN",
           "example": "909619400",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "操作者UIN",
           "example": "909619400",
           "member": "string",
           "name": "OperateUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "Tag 信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[           {             \"TagKey\": \"jemmahuang\",             \"T",
           "member": "BillTagInfo",
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "产品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "p_cdn",
           "member": "string",
           "name": "BusinessCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "子产品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sp_cvm_sa2",
           "member": "string",
           "name": "ProductCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "交易类型代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "postpay_deduct_h",
           "member": "string",
           "name": "ActionType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "RegionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID:资源所属项目ID",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "价格属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"操作系统\"：\"linux\"，\"连续使用时长T\"：\"第三阶梯\"，\"平台\"：\"云平\"]",
+          "member": "string",
+          "name": "PriceInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2966,7 +2976,6 @@
       "document": "DescribeBillDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -2976,7 +2985,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数量，最大值为100",
           "example": "1",
           "member": "uint64",
@@ -2986,7 +2994,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
           "example": "byPayTime",
           "member": "string",
@@ -2996,7 +3003,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。",
           "example": "2018-07",
           "member": "string",
@@ -3006,7 +3012,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "周期开始时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。(不支持跨月查询)",
           "example": "2018-11-0100:00:00",
           "member": "string",
@@ -3016,7 +3021,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "周期结束时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。（不支持跨月查询）",
           "example": "2018-11-0123:59:59",
           "member": "string",
@@ -3026,7 +3030,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
           "example": "1",
           "member": "int64",
@@ -3036,7 +3039,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "已废弃参数，未开放",
           "example": "0",
           "member": "string",
@@ -3046,7 +3048,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "付费模式 prePay/postPay",
           "example": "prePay",
           "member": "string",
@@ -3056,7 +3057,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "查询指定资源信息",
           "example": "ins-49zhx6z1",
           "member": "string",
@@ -3066,7 +3066,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "查询交易类型（请使用交易类型名称入参），入参示例枚举如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n包年包月转按量",
           "example": "按量计费日结",
           "member": "string",
@@ -3076,7 +3075,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "项目ID:资源所属项目ID",
           "example": "0",
           "member": "int64",
@@ -3086,7 +3084,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "产品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
           "example": "p_cvm",
           "member": "string",
@@ -3106,7 +3103,6 @@
           "example": "无",
           "member": "BillDetail",
           "name": "DetailSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -3116,7 +3112,6 @@
           "example": "11841",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3323,7 +3318,6 @@
       "document": "DescribeBillResourceSummary请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -3333,7 +3327,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数量，最大值为1000",
           "example": "1",
           "member": "uint64",
@@ -3343,7 +3336,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。",
           "example": "2018-08",
           "member": "string",
@@ -3353,7 +3345,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
           "example": "byPayTime",
           "member": "string",
@@ -3363,7 +3354,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
           "example": "无",
           "member": "int64",
@@ -3373,7 +3363,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "查询交易类型，如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n包年包月转按量",
           "example": "按量计费扣费",
           "member": "string",
@@ -3383,7 +3372,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "查询指定资源信息",
           "example": "ins-1op7g2iz",
           "member": "string",
@@ -3393,7 +3381,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "付费模式 prePay/postPay",
           "example": "prePay",
           "member": "string",
@@ -3403,7 +3390,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "产品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
           "example": "p_cvm",
           "member": "string",
@@ -3423,7 +3409,6 @@
           "example": "无",
           "member": "BillResourceSummary",
           "name": "ResourceSummarySet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -3433,7 +3418,6 @@
           "example": "103",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1

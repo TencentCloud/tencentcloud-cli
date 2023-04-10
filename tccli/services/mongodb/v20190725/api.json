@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CreateBackupDBInstance": {
-      "document": "备份实例接口",
+      "document": "本接口（CreateBackupDBInstance）用于备份实例。",
       "input": "CreateBackupDBInstanceRequest",
       "name": "备份实例接口",
       "output": "CreateBackupDBInstanceResponse",
@@ -40,6 +40,13 @@
       "input": "CreateDBInstanceHourRequest",
       "name": "创建云数据库实例（按量计费）",
       "output": "CreateDBInstanceHourResponse",
+      "status": "online"
+    },
+    "DeleteAccountUser": {
+      "document": "本接口（DeleteAccountUser）用于删除实例的自定义账号。",
+      "input": "DeleteAccountUserRequest",
+      "name": "删除账号",
+      "output": "DeleteAccountUserResponse",
       "status": "online"
     },
     "DescribeAccountUsers": {
@@ -106,7 +113,7 @@
       "status": "online"
     },
     "DescribeInstanceParams": {
-      "document": "本接口(DescribeInstanceParams)用于查询当前实例可修改的参数列表。",
+      "document": "本接口（DescribeInstanceParams）用于查询当前实例可修改的参数列表。",
       "input": "DescribeInstanceParamsRequest",
       "name": "获取当前实例可修改的参数列表",
       "output": "DescribeInstanceParamsResponse",
@@ -232,7 +239,7 @@
       "status": "online"
     },
     "SetAccountUserPrivilege": {
-      "document": "本接口(SetAccountUserPrivilege)用于设置mongodb实例的账号权限。",
+      "document": "本接口（SetAccountUserPrivilege）用于设置实例的账号权限。",
       "input": "SetAccountUserPrivilegeRequest",
       "name": "设置账户权限",
       "output": "SetAccountUserPrivilegeResponse",
@@ -666,31 +673,31 @@
       "document": "CreateBackupDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例id",
+          "document": "实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-ayxpky6l",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "0-逻辑备份，1-物理备份",
+          "document": "设置备份方式。\n- 0：逻辑备份。\n- 1：物理备份。",
           "example": "0",
           "member": "int64",
           "name": "BackupMethod",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "备份备注",
+          "document": "备份备注信息。",
           "example": "remarkInfo",
           "member": "string",
           "name": "BackupRemark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -699,13 +706,13 @@
       "document": "CreateBackupDBInstance返回参数结构体",
       "members": [
         {
-          "document": "查询备份流程的状态",
+          "document": "查询备份流程的状态。",
           "example": "4773",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1512,6 +1519,60 @@
       ],
       "usage": "both"
     },
+    "DeleteAccountUserRequest": {
+      "document": "DeleteAccountUser请求参数结构体",
+      "members": [
+        {
+          "document": "指定待删除账号的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。\n",
+          "example": "cmgo-7pjedvz7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "配置待删除的账号名。",
+          "example": "mong_test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "配置 mongouser 对应的密码。mongouser为系统默认账号，输入其对应的密码。",
+          "example": "Abc123...",
+          "member": "string",
+          "name": "MongoUserPassword",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountUserResponse": {
+      "document": "DeleteAccountUser返回参数结构体",
+      "members": [
+        {
+          "document": "账户删除任务ID。",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAccountUsersRequest": {
       "document": "DescribeAccountUsers请求参数结构体",
       "members": [
@@ -2299,13 +2360,13 @@
       "document": "DescribeInstanceParams请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID",
+          "document": "指定待查询参数列表的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-********",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2314,49 +2375,49 @@
       "document": "DescribeInstanceParams返回参数结构体",
       "members": [
         {
-          "document": "值为枚举类型参数集合",
+          "document": "参数值为枚举类型参数集合。",
           "example": "无",
           "member": "InstanceEnumParam",
           "name": "InstanceEnumParam",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "值为integer类型参数集合",
+          "document": "参数值为 Integer 类型参数集合。",
           "example": "无",
           "member": "InstanceIntegerParam",
           "name": "InstanceIntegerParam",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "值为text类型的参数集合",
+          "document": "参数值为 Text 类型的参数集合。",
           "example": "无",
           "member": "InstanceTextParam",
           "name": "InstanceTextParam",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "值为混合类型的参数集合",
+          "document": "参数值为混合类型的参数集合。",
           "example": "无",
           "member": "InstanceMultiParam",
           "name": "InstanceMultiParam",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "当前实例支持修改的参数个数统计 如0",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3530,190 +3591,190 @@
       "document": "实例可修改参数枚举类型集合。",
       "members": [
         {
-          "default": "",
-          "document": "参数当前值",
+          "document": "参数当前值。",
           "example": "\"all\"",
           "member": "string",
           "name": "CurrentValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "默认值",
+          "document": "参数默认值。",
           "example": "\"slowOp\"",
           "member": "string",
           "name": "DefaultValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "枚举值，所有支持的值",
+          "document": "枚举值，所有支持的值。",
           "example": "[\"off\",\"slowOp\",\"all\"]",
           "member": "string",
           "name": "EnumValue",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；",
+          "document": "参数修改之后是否需要重启生效。\n- 1：需要重启后生效。\n- 0：无需重启，设置成功即可生效。",
           "example": "\"0\"",
           "member": "string",
           "name": "NeedRestart",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "参数名称",
+          "document": "参数名称。",
           "example": "\"operationProfiling.mode\"",
           "member": "string",
           "name": "ParamName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "中英文说明",
+          "document": "参数说明。",
           "example": "[\"事务加锁超时时间\",\"max transaction lockrequest timeout millis\"]",
           "member": "string",
           "name": "Tips",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "参数值类型说明",
+          "document": "参数值类型说明。",
           "example": "\"enum\"",
           "member": "string",
           "name": "ValueType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "是否为运行中参数值 1:运行中参数值；0：非运行中参数值；",
+          "document": "是否为运行中参数值。\n- 1：运行中参数值。\n- 0：非运行中参数值。",
           "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
     },
     "InstanceIntegerParam": {
-      "document": "实例可修改参数integer类型集合。",
+      "document": "实例可修改参数 Integer 类型集合。",
       "members": [
         {
-          "default": "",
-          "document": "当前值",
+          "document": "参数当前值。",
           "example": "\"100\"",
           "member": "string",
           "name": "CurrentValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "默认值",
+          "document": "参数默认值。",
           "example": "\"100\"",
           "member": "string",
           "name": "DefaultValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "最大值",
+          "document": "参数最大值。",
           "example": "\"65536\"",
           "member": "string",
           "name": "Max",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "最小值",
+          "document": "最小值。",
           "example": "\"0\"",
           "member": "string",
           "name": "Min",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；",
+          "document": "参数修改之后是否需要重启生效。\n- 1:需要重启后生效。\n- 0：无需重启，设置成功即可生效。",
           "example": "\"1\"",
           "member": "string",
           "name": "NeedRestart",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "参数名称",
+          "document": "参数名称。",
           "example": "\"operation.profiling.slowOpThresholdMs\"",
           "member": "string",
           "name": "ParamName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "参数说明",
+          "document": "参数说明。",
           "example": "[\"数据库profiler确定慢查询的阈值，单位毫秒，默认值100\",\"The Performance Advisor re\"]",
           "member": "string",
           "name": "Tips",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "参数类型",
+          "document": "参数类型。",
           "example": "\"integer\"",
           "member": "string",
           "name": "ValueType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "是否为运行中参数值 1:运行中参数值；0：非运行中参数值；",
+          "document": "是否为运行中参数值。\n- 1：运行中参数值。\n- 0：非运行中参数值。",
           "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "冗余字段，可忽略",
+          "document": "冗余字段，可忽略。",
           "example": "\"\"",
           "member": "string",
           "name": "Unit",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3722,170 +3783,170 @@
       "document": "实例可修改参数Multi类型集合。",
       "members": [
         {
-          "default": "",
-          "document": "当前值",
+          "document": "参数当前值。",
           "example": "\"01:00\"",
           "member": "string",
           "name": "CurrentValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "默认值",
+          "document": "参数默认值。",
           "example": "NULL",
           "member": "string",
           "name": "DefaultValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "指导值范围",
+          "document": "参考值范围。",
           "example": "[\"00:00\",\"23:00\" ]",
           "member": "string",
           "name": "EnumValue",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；",
+          "document": "参数修改后是否需要重启才会生效。\n- 1：需要重启后生效。\n- 0：无需重启，设置成功即可生效。",
           "example": "\"1\"",
           "member": "string",
           "name": "NeedRestart",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "参数名称",
+          "document": "参数名称。",
           "example": "\"openBalance.window\"",
           "member": "string",
           "name": "ParamName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "是否为运行中参数值 1:运行中参数值；0：非运行中参数值；",
+          "document": "是否为运行中参数值。\n- 1：运行中参数值。\n- 0：非运行中参数值。",
           "example": "\"1\"",
           "member": "uint64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "参数说明",
+          "document": "参数说明。",
           "example": "[\"负载均衡时间窗\",\"balance.window\"]",
           "member": "string",
           "name": "Tips",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "当前值的类型描述，默认为multi",
+          "document": "当前值的类型描述，默认为multi。",
           "example": "\"multi\"",
           "member": "string",
           "name": "ValueType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
     },
     "InstanceTextParam": {
-      "document": "实例可修改参数text类型集合。",
+      "document": "实例可修改参数为 Text 类型的参数集合。",
       "members": [
         {
-          "default": "",
-          "document": "当前值",
+          "document": "参数当前值。",
           "example": "\"\"",
           "member": "string",
           "name": "CurrentValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "默认值",
+          "document": "参数默认值。",
           "example": "\"\"",
           "member": "string",
           "name": "DefaultValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "是否需要重启",
+          "document": "修改参数值之后是否需要重启。",
           "example": "\"\"",
           "member": "string",
           "name": "NeedRestart",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "参数名称",
+          "document": "参数名称。",
           "example": "\"\"",
           "member": "string",
           "name": "ParamName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "text类型值",
+          "document": "Text 类型参数对应的值。",
           "example": "\"\"",
           "member": "string",
           "name": "TextValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "参数说明",
+          "document": "参数说明。",
           "example": "\"\"",
           "member": "string",
           "name": "Tips",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "值类型说明",
+          "document": "参数值类型说明。",
           "example": "\"\"",
           "member": "string",
           "name": "ValueType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "是否为运行中参数值 1:运行中参数值；0：非运行中参数值；",
+          "document": "是否为运行中的参数值。\n- 1：运行中参数值。\n- 0：非运行中参数值。",
           "example": "\"\"",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -4710,8 +4771,7 @@
       "document": "SetAccountUserPrivilege请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID。",
+          "document": "指定待设置账号的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-kbcfl64r",
           "member": "string",
           "name": "InstanceId",
@@ -4720,8 +4780,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "账号名称。",
+          "document": "设置账号名称。",
           "example": "bob",
           "member": "string",
           "name": "UserName",
@@ -4730,8 +4789,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "权限信息。",
+          "document": "设置权限信息。",
           "example": "11",
           "member": "Auth",
           "name": "AuthRole",
@@ -4746,11 +4804,10 @@
       "document": "SetAccountUserPrivilege返回参数结构体",
       "members": [
         {
-          "document": "设置任务ID,用于查询是否设置完成",
+          "document": "任务ID。",
           "example": "100000",
           "member": "uint64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1

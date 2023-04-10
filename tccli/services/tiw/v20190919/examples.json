@@ -24,6 +24,14 @@
         "title": "创建课后录制任务"
       }
     ],
+    "CreatePPTCheckTask": [
+      {
+        "document": "创建PPT检测任务，识别动态转码不支持的元素列表",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"http://example.com/%E6%B5%8B%E8%AF%95.pptx\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
+        "title": "创建PPT检测任务"
+      }
+    ],
     "CreateSnapshotTask": [
       {
         "document": "",
@@ -132,6 +140,28 @@
         "title": "查询实时录制回调地址"
       }
     ],
+    "DescribePPTCheck": [
+      {
+        "document": "查询PPT检测任务，存在异常",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePPTCheck\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"bj0mt2l23osdj300hl30\",\n        \"IsOK\": false,\n        \"Status\": \"FINISHED\",\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"ResultUrl\": \"https://xxx/xxx/测试_fixed.ppt\",\n        \"Slides\": [\n            {\n                \"Page\": \"幻灯片5\",\n                \"Errs\": [\n                    {\n                        \"Name\": \"Ink 1\",\n                        \"Type\": 0,\n                        \"Detail\": \"wps墨迹\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询PPT检测任务异常"
+      },
+      {
+        "document": "查询PPT检测任务，PPT无异常",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePPTCheck\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"bj0mt2l23osdj300hl30\",\n        \"IsOK\": true,\n        \"Status\": \"FINISHED\",\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"ResultUrl\": null,\n        \"Slides\": null\n    }\n}",
+        "title": "查询PPT检测任务无异常"
+      }
+    ],
+    "DescribePPTCheckCallback": [
+      {
+        "document": "查询回调地址",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribePPTCheckCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Callback\": \"https://example.com/transcode/callback\",\n        \"CallbackKey\": \"6vg9G7Fd\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询回调地址"
+      }
+    ],
     "DescribePostpaidUsage": [
       {
         "document": "查询用户后付费用量",
@@ -162,6 +192,14 @@
         "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000001,\n    \"Query\": \"*\",\n    \"MaxSize\": 1000,\n    \"TimeRange\": [\n        1614519034000,\n        1615190492000\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f560a64-d7fb-476b-89b9-2b90acc5c675\",\n        \"RoomList\": [\n            {\n                \"RoomId\": \"108594741\",\n                \"StartTime\": 1614851243268,\n                \"EndTime\": 1614851284952,\n                \"UserNumber\": 1\n            }\n        ]\n    }\n}",
         "title": "查询白板房间列表"
+      }
+    ],
+    "DescribeRunningTasks": [
+      {
+        "document": "通过接口获取当前应用白板推流任务类型的正在执行中的任务列表",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRunningTasks\n<公共请求参数>\n\n{\n    \"SdkAppID\": 1400000001,\n    \"TaskType\": \"WhiteboardPush\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Tasks\": [\n            {\n                \"TaskID\": \"bj0mt2l23osdj300hl31\",\n                \"TaskType\": \"WhiteboardPush\",\n                \"CreateTime\": \"2023-03-14 15:00:00\",\n                \"CancelTime\": \"\",\n                \"Status\": \"PROCESSING\",\n                \"Progress\": 11,\n                \"RoomID\": 12345,\n                \"FileURL\": \"\",\n                \"SdkAppID\": 1400000001\n            }\n        ],\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
+        "title": "获取当前正在执行的白板推流任务列表"
       }
     ],
     "DescribeSnapshotTask": [
@@ -264,6 +302,14 @@
         "input": "https://tiw.tencentcloudapi.com/?Action=DescribeVideoGenerationTaskCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Callback\": \"https://example.com/offline/callback\",\n        \"CallbackKey\": \"6vg9G7Fd\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "查询录制视频生成回调地址"
+      }
+    ],
+    "DescribeWarningCallback": [
+      {
+        "document": "获取告警回调地址信息",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWarningCallback\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123456\n}",
+        "output": "{\n    \"Response\": {\n        \"Callback\": \"http://callback\",\n        \"CallbackKey\": \"12345\",\n        \"RequestId\": \"786eafde-17a8-47a9-9e1c-05b2b282dccc\"\n    }\n}",
+        "title": "获取告警回调地址信息"
       }
     ],
     "DescribeWhiteboardApplicationConfig": [
@@ -384,6 +430,22 @@
         "title": "设置实时录制回调鉴权密钥"
       }
     ],
+    "SetPPTCheckCallback": [
+      {
+        "document": "设置回调地址",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetPPTCheckCallback\n&SdkAppId=1400000001\n&Callback=https://example.com/transcode/callback\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置回调地址"
+      }
+    ],
+    "SetPPTCheckCallbackKey": [
+      {
+        "document": "设置回调鉴权密钥",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetPPTCheckCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置回调鉴权密钥"
+      }
+    ],
     "SetTranscodeCallback": [
       {
         "document": "",
@@ -414,6 +476,14 @@
         "input": "https://tiw.tencentcloudapi.com/?Action=SetVideoGenerationTaskCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "设置视频生成回调鉴权密钥"
+      }
+    ],
+    "SetWarningCallback": [
+      {
+        "document": "设置告警回调地址",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetWarningCallback\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123456,\n    \"Callback\": \"http://callback\",\n    \"CallbackKey\": \"123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"786eafde-17a8-47a9-9e1c-05b2b282dccc\"\n    }\n}",
+        "title": "设置告警回调地址"
       }
     ],
     "SetWhiteboardPushCallback": [

@@ -1,70 +1,65 @@
 **Example 1: 获取账单资源汇总**
 
-
+获取账单资源汇总
 
 Input: 
 
 ```
 tccli billing DescribeBillResourceSummary --cli-unfold-argument  \
-    --Month 2018-08 \
-    --PeriodType byPayTime \
     --Offset 0 \
     --Limit 1 \
-    --ActionType 按量计费扣费
+    --PeriodType byPayTime \
+    --Month 2022-01 \
+    --NeedRecordNum 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 103,
-        "RequestId": "xx",
+        "RequestId": "a63a68af-fb44-4d2f-8595-5269a9e69876",
         "ResourceSummarySet": [
             {
-                "ReduceType": "xx",
-                "SPDeduction": "xx",
-                "ProductCode": "xx",
-                "FeeEndTime": "2020-09-22 00:00:00",
-                "CashPayAmount": "xx",
-                "ProductCodeName": "xx",
-                "ActionTypeName": "xx",
-                "Tags": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "ResourceId": "xx",
-                "RegionId": 0,
-                "ConfigDesc": "xx",
-                "Discount": "xx",
-                "ResourceName": "xx",
-                "InstanceType": "xx",
-                "RegionName": "xx",
-                "TotalCost": "xx",
-                "BusinessCode": "xx",
-                "RealTotalCost": "xx",
-                "OwnerUin": "xx",
-                "PayerUin": "xx",
-                "ExtendField4": "xx",
-                "OperateUin": "xx",
-                "BusinessCodeName": "xx",
-                "OrderId": "xx",
-                "ExtendField1": "xx",
-                "ExtendField2": "xx",
-                "ExtendField3": "xx",
-                "VoucherPayAmount": "xx",
-                "ExtendField5": "xx",
-                "PayModeName": "xx",
-                "OriginalCostWithRI": "xx",
-                "FeeBeginTime": "2020-09-22 00:00:00",
-                "IncentivePayAmount": "xx",
-                "ProjectName": "xx",
-                "PayTime": "2020-09-22 00:00:00",
-                "OriginalCostWithSP": "xx",
-                "ZoneName": "xx"
+                "ActionTypeName": "按量计费日结",
+                "BusinessCode": "p_yunjing",
+                "BusinessCodeName": "T-Sec-主机安全（CWP）",
+                "CashPayAmount": "16.20000000",
+                "ConfigDesc": "主机安全/专业版: 1 个",
+                "Discount": "0.3",
+                "ExtendField1": "-",
+                "ExtendField2": "-",
+                "ExtendField3": "-",
+                "ExtendField4": "-",
+                "ExtendField5": "-",
+                "FeeBeginTime": "2022-01-13 00:00:00",
+                "FeeEndTime": "2022-01-31 23:59:59",
+                "IncentivePayAmount": "0.00000000",
+                "InstanceType": "-",
+                "OperateUin": "90xxxxx00",
+                "OrderId": "-",
+                "OriginalCostWithRI": "0.00000000",
+                "OriginalCostWithSP": "0.00000000",
+                "OwnerUin": "90xxxxx00",
+                "PayModeName": "按量计费",
+                "PayTime": "0000-00-00 00:00:00",
+                "PayerUin": "90xxxxx00",
+                "ProductCode": "sp_yunjing_vip",
+                "ProductCodeName": "主机安全/专业防护",
+                "ProjectName": "默认项目",
+                "RealTotalCost": "17.10000000",
+                "ReduceType": "折扣",
+                "RegionId": 1,
+                "RegionName": "华南地区（广州）",
+                "ResourceId": "0-0xxd9-1ab4-4d6d-b38a-axx0fa4e-172.16.64.12",
+                "ResourceName": "",
+                "SPDeduction": "0.00000000",
+                "Tags": [],
+                "TotalCost": "57",
+                "VoucherPayAmount": "0.90000000",
+                "ZoneName": "其他"
             }
-        ]
+        ],
+        "Total": 465
     }
 }
 ```

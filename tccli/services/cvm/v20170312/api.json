@@ -5317,7 +5317,6 @@
       "document": "一个关于镜像详细信息的结构体，主要包括镜像的主要状态与属性。",
       "members": [
         {
-          "default": "",
           "document": "镜像ID",
           "example": "img-19mu3fy3",
           "member": "string",
@@ -5328,7 +5327,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像操作系统",
           "example": "CentOS 8.0 64位",
           "member": "string",
@@ -5339,7 +5337,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像类型",
           "example": "PRIVATE_IMAGE",
           "member": "string",
@@ -5350,7 +5347,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像创建时间",
           "example": "2022-03-21T08:41:45Z",
           "member": "datetime_iso",
@@ -5361,7 +5357,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像名称",
           "example": "test",
           "member": "string",
@@ -5372,7 +5367,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像描述",
           "example": "test",
           "member": "string",
@@ -5383,7 +5377,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像大小",
           "example": "50",
           "member": "int64",
@@ -5394,7 +5387,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像架构",
           "example": "x86_64",
           "member": "string",
@@ -5405,7 +5397,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像状态:\nCREATING-创建中\nNORMAL-正常\nCREATEFAILED-创建失败\nUSING-使用中\nSYNCING-同步中\nIMPORTING-导入中\nIMPORTFAILED-导入失败",
           "example": "NORMAL",
           "member": "string",
@@ -5416,8 +5407,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "镜像来源平台",
+          "document": "镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。",
           "example": "CentOS",
           "member": "string",
           "name": "Platform",
@@ -5427,7 +5417,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像创建者",
           "example": "xxx",
           "member": "string",
@@ -5438,7 +5427,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像来源",
           "example": "CREATE_IMAGE",
           "member": "string",
@@ -5449,7 +5437,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "同步百分比\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "int64",
@@ -5460,7 +5447,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像是否支持cloud-init\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -5471,7 +5457,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像关联的快照信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Snapshot",
@@ -5482,7 +5467,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Tag",
@@ -5493,7 +5477,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像许可类型",
           "example": "TencentCloud",
           "member": "string",
@@ -11520,7 +11503,7 @@
       "usage": "both"
     },
     "Tag": {
-      "document": "标签键值对",
+      "document": "标签键值对，可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。",
       "members": [
         {
           "document": "标签键",

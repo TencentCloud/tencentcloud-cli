@@ -106,7 +106,7 @@
     ],
     "DescribeScaleInfo": [
       {
-        "document": "",
+        "document": "查询历史房间与用户规模信息。",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScaleInfo\n<公共请求参数>\n\n{\n    \"StartTime\": 1590065777,\n    \"SdkAppId\": 1400353843,\n    \"EndTime\": 1590065877\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 4,\n        \"ScaleList\": [\n            {\n                \"Time\": 1587830400,\n                \"RoomNumbers\": 130644,\n                \"UserNumber\": 2111978,\n                \"UserCount\": 7004243\n            },\n            {\n                \"Time\": 1587744000,\n                \"RoomNumbers\": 79241,\n                \"UserNumber\": 781494,\n                \"UserCount\": 2968232\n            },\n            {\n                \"Time\": 1587657600,\n                \"RoomNumbers\": 180341,\n                \"UserNumber\": 3047931,\n                \"UserCount\": 10839565\n            },\n            {\n                \"Time\": 1587571200,\n                \"RoomNumbers\": 185469,\n                \"UserNumber\": 3267726,\n                \"UserCount\": 11656700\n            }\n        ],\n        \"RequestId\": \"70259dd1-c935-4a31-8576-f4daadd942ef\"\n    }\n}",
         "title": "查询历史房间与用户规模信息"
