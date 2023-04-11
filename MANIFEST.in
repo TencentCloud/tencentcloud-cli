@@ -501,6 +501,8 @@ include tccli/services/vod/v20180717/api.json
 include tccli/services/vod/v20180717/examples.json
 include tccli/services/vpc/v20170312/api.json
 include tccli/services/vpc/v20170312/examples.json
+include tccli/services/vrs/v20200824/api.json
+include tccli/services/vrs/v20200824/examples.json
 include tccli/services/waf/v20180125/api.json
 include tccli/services/waf/v20180125/examples.json
 include tccli/services/wav/v20210129/api.json

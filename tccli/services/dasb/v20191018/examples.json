@@ -252,6 +252,22 @@
         "title": "根据用户查询有访问权限的资产"
       }
     ],
+    "DescribeLoginEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoginEvent\n<公共请求参数>\n\n{\n    \"UserName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoginEventSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"RealName\": \"xx\",\n                \"Result\": 1,\n                \"Time\": \"2020-09-22T00:00:00+00:00\",\n                \"Entry\": 1,\n                \"SourceIp\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询登录日志列表"
+      }
+    ],
+    "DescribeOperationEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOperationEvent\n<公共请求参数>\n\n{\n    \"UserName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"OperationEventSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"Kind\": 1,\n                \"RealName\": \"xx\",\n                \"Result\": 1,\n                \"Time\": \"2020-09-22T00:00:00+00:00\",\n                \"Operation\": \"xx\",\n                \"SourceIp\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询操作日志列表"
+      }
+    ],
     "DescribeResources": [
       {
         "document": "查询用户购买的资源信息，包括资源ID，授权点数，vpc，过期时间等。",
@@ -352,6 +368,62 @@
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetUser\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "重置用户"
+      }
+    ],
+    "SearchAuditLog": [
+      {
+        "document": "搜索审计日志",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchAuditLog\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-01-01T01:01:01Z\",\n    \"EndTime\": \"2020-01-01T01:01:01Z\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AuditLogSet\": [\n            {\n                \"SubAccountUin\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Sid\": \"xx\",\n                \"Uin\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"Time\": \"xx\",\n                \"Operation\": 1,\n                \"PrivateIp\": \"xx\",\n                \"ClientIp\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "搜索审计日志"
+      }
+    ],
+    "SearchCommand": [
+      {
+        "document": "命令执行检索",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommand\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"DeviceName\": \"xx\",\n    \"RealName\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Cmd\": \"xx\",\n    \"AuditAction\": [\n        1\n    ],\n    \"PrivateIp\": \"xx\",\n    \"PublicIp\": \"xx\",\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Offset\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Commands\": [\n            {\n                \"UserName\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"RealName\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Cmd\": \"xx\",\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"TimeOffset\": 1,\n                \"Sid\": \"xx\",\n                \"Time\": \"xx\",\n                \"Action\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "命令执行检索"
+      }
+    ],
+    "SearchCommandBySid": [
+      {
+        "document": "根据会话Id搜索Command",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommandBySid\n<公共请求参数>\n\n{\n    \"Sid\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"CommandSet\": [\n            {\n                \"TimeOffset\": 1,\n                \"Action\": 0,\n                \"Cmd\": \"xx\",\n                \"Time\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "根据会话Id搜索Command"
+      }
+    ],
+    "SearchFile": [
+      {
+        "document": "搜索session列表",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchFile\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"DeviceName\": \"xx\",\n    \"RealName\": \"xx\",\n    \"PrivateIp\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"AuditAction\": [\n        0\n    ],\n    \"FileName\": \"xx\",\n    \"PublicIp\": \"xx\",\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Offset\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Method\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Files\": [\n            {\n                \"UserName\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"RealName\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"Time\": \"xx\",\n                \"Action\": 1,\n                \"Method\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "搜索session列表"
+      }
+    ],
+    "SearchFileBySid": [
+      {
+        "document": "搜索session列表",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchFileBySid\n<公共请求参数>\n\n{\n    \"FileName\": \"1.txt\",\n    \"Offset\": 1,\n    \"Sid\": \"xx\",\n    \"Limit\": 5,\n    \"AuditLog\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"RequestId\": \"xx\",\n        \"SearchFileBySidResult\": [\n            {\n                \"Time\": \"2020-01-02T01:01:01Z\",\n                \"Method\": 1,\n                \"Protocol\": \"SFTP\",\n                \"FileCurr\": \"/home/1.txt\",\n                \"FileNew\": \"/home/2.txt\"\n            }\n        ]\n    }\n}",
+        "title": "搜索session列表"
+      }
+    ],
+    "SearchSession": [
+      {
+        "document": "搜索session列表",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSession\n<公共请求参数>\n\n{\n    \"UserName\": \"user1\",\n    \"Account\": \"admistrator\",\n    \"PrivateIp\": \"127.0.0.1\",\n    \"PublicIp\": \"192.168.12.12\",\n    \"FromIp\": \"192.12.12.12\",\n    \"StartTime\": \"2020-01-02T01:01:01Z\",\n    \"EndTime\": \"2020-01-02T01:02:00Z\",\n    \"Kind\": 1,\n    \"Offset\": 0,\n    \"Limit\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"SessionSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"Account\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"RealName\": \"xx\",\n                \"Status\": 1,\n                \"InstanceId\": \"xx\",\n                \"FromIp\": \"xx\",\n                \"DangerCount\": 1,\n                \"PublicIp\": \"xx\",\n                \"Count\": 1,\n                \"StartTime\": \"xx\",\n                \"ApCode\": \"xx\",\n                \"Duration\": 0.0,\n                \"PrivateIp\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"Id\": \"xx\",\n                \"Size\": 1\n            }\n        ]\n    }\n}",
+        "title": "搜索session列表"
+      }
+    ],
+    "SearchSessionCommand": [
+      {
+        "document": "命令检索",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSessionCommand\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Cmd\": \"pwd\",\n    \"StartTime\": \"2020-01-01T01:01:01Z\",\n    \"EndTime\": \"2020-01-01T01:01:01Z\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"CommandSessionSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"Commands\": [\n                    {\n                        \"TimeOffset\": 1,\n                        \"Action\": 0,\n                        \"Cmd\": \"xx\",\n                        \"Time\": \"xx\"\n                    }\n                ],\n                \"RealName\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"Count\": 1,\n                \"StartTime\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"Id\": \"xx\",\n                \"ApCode\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "命令检索"
       }
     ]
   },

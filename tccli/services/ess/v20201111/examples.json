@@ -352,7 +352,7 @@
     ],
     "GetTaskResultApi": [
       {
-        "document": "",
+        "document": "通过转换任务Id查询任务状态",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTaskResultApi\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"yDxoQUUgydjfn4yaUuO4zjEyd1h2hnnR\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\"\n    },\n    \"Organization\": {\n        \"OrganizationOpenId\": \"\",\n        \"OrganizationId\": \"682c1d5bdce884ad3df5ba5fabb6fcf1\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"Agent\": {\n        \"AppId\": \"\"\n    },\n    \"TaskId\": \"20220726183047992850\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2255ca9d-d831-4c9d-ab76-6192fc301053\",\n        \"ResourceId\": \"yDRtsUUgygq7jtzwUuO4zjEyx4jZM3A7\",\n        \"TaskId\": \"20220726183047992850\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8\n    }\n}",
         "title": "test示例"

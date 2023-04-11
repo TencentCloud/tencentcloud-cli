@@ -1,0 +1,445 @@
+{
+  "actions": {
+    "CreateVRSTask": {
+      "document": "本接口服务对提交音频进行声音复刻任务创建接口，异步返回复刻结果。\n• 请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n• 签名方法参考 公共参数 中签名方法v3。\n• 默认接口请求频率限制：30次/秒，",
+      "input": "CreateVRSTaskRequest",
+      "name": "声音复刻任务创建接口",
+      "output": "CreateVRSTaskResponse",
+      "status": "online"
+    },
+    "DescribeVRSTaskStatus": {
+      "document": "在调用声音复刻创建任务请求接口后，有回调和轮询两种方式获取识别结果。\n• 当采用回调方式时，识别完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见 声音复刻结果回调 。\n• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。\n• 请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n• 签名方法参考 公共参数 中签名方法v3。\n• 默认接口请求频率限制：20次/秒，如您有提高请求频率限制的需求，请提工单进行咨询。",
+      "input": "DescribeVRSTaskStatusRequest",
+      "name": "声音复刻任务结果查询接口",
+      "output": "DescribeVRSTaskStatusResponse",
+      "status": "online"
+    },
+    "DetectEnvAndSoundQuality": {
+      "document": "本接口用于检测音频的环境和音频质量。\n• 请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n• 签名方法参考 公共参数 中签名方法v3。\n• 默认接口请求频率限制：20次/秒。",
+      "input": "DetectEnvAndSoundQualityRequest",
+      "name": "环境检测和音频质量检测",
+      "output": "DetectEnvAndSoundQualityResponse",
+      "status": "online"
+    },
+    "GetTrainingText": {
+      "document": "本接口用于获取声音复刻训练文本信息。\n 请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n• 签名方法参考 公共参数 中签名方法v3。\n• 默认接口请求频率限制：20次/秒。",
+      "input": "GetTrainingTextRequest",
+      "name": "获取声音复刻训练文本",
+      "output": "GetTrainingTextResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-08-24",
+    "api_brief": "声音复刻的接口主要包括两部分，一是音频文件上传接口，用于客户上传音频到后台进行训练；二是tts服务调用接口，用于客户调用训练后的tts音色，接入到实际业务中。",
+    "serviceNameCN": "声音复刻",
+    "serviceShortName": "vrs"
+  },
+  "objects": {
+    "CreateVRSTaskRequest": {
+      "document": "CreateVRSTask请求参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "音色名称",
+          "example": "无",
+          "member": "string",
+          "name": "VoiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "音频采样率：\n\n16000：16k（默认）",
+          "example": "无",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "音色性别:\n\n1-male\n\n2-female",
+          "example": "无",
+          "member": "int64",
+          "name": "VoiceGender",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "语言类型：\n\n1-中文（默认）",
+          "example": "无",
+          "member": "int64",
+          "name": "VoiceLanguage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "音频格式，音频类型(wav,mp3,aac,m4a)",
+          "example": "无",
+          "member": "string",
+          "name": "Codec",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "音频ID集合",
+          "example": "无",
+          "member": "string",
+          "name": "AudioIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "回调 URL，用户自行搭建的用于接收识别结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVRSTaskRespData": {
+      "document": "声音复刻任务创建响应",
+      "members": [
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ce68122c-0ca8-4fa6-99b1-90a28670626b",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateVRSTaskResponse": {
+      "document": "CreateVRSTask返回参数结构体",
+      "members": [
+        {
+          "document": "创建任务结果",
+          "example": "无",
+          "member": "CreateVRSTaskRespData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVRSTaskStatusRequest": {
+      "document": "DescribeVRSTaskStatus请求参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVRSTaskStatusRespData": {
+      "document": "任务结果",
+      "members": [
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusStr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VoiceType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "失败原因说明。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeVRSTaskStatusResponse": {
+      "document": "DescribeVRSTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "声音复刻任务结果",
+          "example": "无",
+          "member": "DescribeVRSTaskStatusRespData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectEnvAndSoundQualityRequest": {
+      "document": "DetectEnvAndSoundQuality请求参数结构体",
+      "members": [
+        {
+          "document": "标注文本信息 ID",
+          "example": "无",
+          "member": "string",
+          "name": "TextId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "语音数据 要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。",
+          "example": "无",
+          "member": "string",
+          "name": "AudioData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "音频格式，音频类型(wav,mp3,aac,m4a)",
+          "example": "无",
+          "member": "string",
+          "name": "Codec",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "1:环境检测 2:音质检测",
+          "example": "无",
+          "member": "int64",
+          "name": "TypeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "音频采样率：\n\n16000：16k（默认）",
+          "example": "无",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectEnvAndSoundQualityResponse": {
+      "document": "DetectEnvAndSoundQuality返回参数结构体",
+      "members": [
+        {
+          "document": "检测结果",
+          "example": "无",
+          "member": "DetectionEnvAndSoundQualityRespData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectionEnvAndSoundQualityRespData": {
+      "document": "环境检测和音频检测响应",
+      "members": [
+        {
+          "document": "音频ID （用于创建任务接口AudioIds）,环境检测该值为空，仅在音质检测情况下返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vrs8270f89c-51f8-41c9-8bee-19fb5b8b9708",
+          "member": "string",
+          "name": "AudioId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "检测code \n\n0 表示当前语音通过\n-1 表示检测失败，需要重试\n-2 表示语音检测不通过，提示用户再重新录制一下（通常漏读，错读，或多读）\n-3 表示语音中噪声较大，不通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DetectionCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "检测提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "DetectionMsg",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "检测提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Words",
+          "name": "DetectionTip",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetTrainingTextRequest": {
+      "document": "GetTrainingText请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetTrainingTextResponse": {
+      "document": "GetTrainingText返回参数结构体",
+      "members": [
+        {
+          "document": "文本列表",
+          "example": "无",
+          "member": "TrainingTexts",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TrainingText": {
+      "document": "训练文本",
+      "members": [
+        {
+          "document": "文本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00001",
+          "member": "string",
+          "name": "TextId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TrainingTexts": {
+      "document": "训练文本列表",
+      "members": [
+        {
+          "document": "训练文本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TrainingText",
+          "name": "TrainingTextList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Words": {
+      "document": "Words",
+      "members": [
+        {
+          "document": "准确度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "PronAccuracy",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "流畅度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "PronFluency",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "tag: 0: match, 1: insert, 2: delete, 3: replace, 4: oov, 5: unknown\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Tag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Word",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

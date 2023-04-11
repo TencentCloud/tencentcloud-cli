@@ -18,9 +18,9 @@
     ],
     "CreateBackupDBInstance": [
       {
-        "document": "",
+        "document": "备份实例接口",
         "input": "https://mongodb.tencentcloudapi.com/?Action=CreateBackupDBInstance\n&InstanceId=cmgo-ayxpky6l\n&BackupRemark=remarkInfo\n&BackupMethod=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": 4773,\n        \"RequestId\": \"e600a8d0-9014-11ea-84c1-01cccde830c6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"1680780049\",\n        \"RequestId\": \"1df930fb-eb7e-4e3f-bcab-15a1aa5fede0\"\n    }\n}",
         "title": "备份实例接口"
       }
     ],
@@ -46,6 +46,14 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\",\n    \"GoodsNum\": \"1\",\n    \"Clone\": \"1\",\n    \"Memory\": \"4\",\n    \"ClusterType\": \"REPLSET\",\n    \"Volume\": \"250\",\n    \"NodeNum\": \"2\",\n    \"ReplicateSetNum\": \"1\",\n    \"MachineCode\": \"HIO10G\",\n    \"MongoVersion\": \"MONGO_40_WT\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f\",\n        \"DealId\": \"20190709160000003502416120946732\",\n        \"InstanceIds\": [\n            \"cmgo-m26c6jsf\"\n        ]\n    }\n}",
         "title": "创建云数据库实例（按量计费）"
+      }
+    ],
+    "DeleteAccountUser": [
+      {
+        "document": "刪除实例账号",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccountUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p****\",\n    \"UserName\": \"test_user\",\n    \"MongoUserPassword\": \"Abc@123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"RequestId\": \"1df930fb-eb7e-4e3f-bcab-15a1aa5fede0\"\n    }\n}",
+        "title": "刪除实例账号"
       }
     ],
     "DescribeAccountUsers": [
@@ -123,8 +131,8 @@
     "DescribeInstanceParams": [
       {
         "document": "用户请求该接口获取其mongoDB实例可配置的参数列表；",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"jyjcw8yv\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceEnumParam\": [\n            {\n                \"Status\": 1,\n                \"CurrentValue\": \"xx\",\n                \"DefaultValue\": \"xx\",\n                \"NeedRestart\": \"xx\",\n                \"EnumValue\": [\n                    \"xx\"\n                ],\n                \"ParamName\": \"xx\",\n                \"Tips\": [\n                    \"xx\"\n                ],\n                \"ValueType\": \"xx\"\n            }\n        ],\n        \"InstanceTextParam\": [\n            {\n                \"Status\": \"xx\",\n                \"CurrentValue\": \"xx\",\n                \"DefaultValue\": \"xx\",\n                \"NeedRestart\": \"xx\",\n                \"ParamName\": \"xx\",\n                \"Tips\": [\n                    \"xx\"\n                ],\n                \"TextValue\": \"xx\",\n                \"ValueType\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"InstanceIntegerParam\": [\n            {\n                \"Status\": 1,\n                \"CurrentValue\": \"xx\",\n                \"Min\": \"xx\",\n                \"Max\": \"xx\",\n                \"DefaultValue\": \"xx\",\n                \"NeedRestart\": \"xx\",\n                \"ParamName\": \"xx\",\n                \"Tips\": [\n                    \"xx\"\n                ],\n                \"ValueType\": \"xx\",\n                \"Unit\": \"xx\"\n            }\n        ],\n        \"InstanceMultiParam\": [\n            {\n                \"Status\": 1,\n                \"CurrentValue\": \"xx\",\n                \"DefaultValue\": \"xx\",\n                \"NeedRestart\": \"xx\",\n                \"EnumValue\": [\n                    \"xx\"\n                ],\n                \"ParamName\": \"xx\",\n                \"Tips\": [\n                    \"xx\"\n                ],\n                \"ValueType\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceEnumParam\": [\n            {\n                \"CurrentValue\": \"off\",\n                \"DefaultValue\": \"off\",\n                \"EnumValue\": [\n                    \"off\",\n                    \"slowOp\",\n                    \"all\"\n                ],\n                \"NeedRestart\": \"0\",\n                \"ParamName\": \"operationProfiling.mode\",\n                \"Status\": 0,\n                \"Tips\": [\n                    \"\",\n                    \"specifies which operations should be profiled.\"\n                ],\n                \"ValueType\": \"enum\"\n            },\n            {\n                \"CurrentValue\": \"true\",\n                \"DefaultValue\": \"true\",\n                \"EnumValue\": [\n                    \"true\",\n                    \"false\"\n                ],\n                \"NeedRestart\": \"0\",\n                \"ParamName\": \"setParameter.failIndexKeyTooLong\",\n                \"Status\": 0,\n                \"Tips\": [\n                    \"\",\n                    \"index key length limit applies.\"\n                ],\n                \"ValueType\": \"enum\"\n            }\n        ],\n        \"InstanceIntegerParam\": [\n            {\n                \"CurrentValue\": \"100\",\n                \"DefaultValue\": \"100\",\n                \"Max\": \"65536\",\n                \"Min\": \"0\",\n                \"NeedRestart\": \"0\",\n                \"ParamName\": \"operation.profiling.slowOpThresholdMs\",\n                \"Status\": 0,\n                \"Tips\": [\n                    \"\",\n                    \"the slow operation time threshold, in milliseconds.\"\n                ],\n                \"Unit\": \"\",\n                \"ValueType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"600000\",\n                \"DefaultValue\": \"600000\",\n                \"Max\": \"2147483647\",\n                \"Min\": \"1\",\n                \"NeedRestart\": \"0\",\n                \"ParamName\": \"setParameter.cursorTimeoutMillis\",\n                \"Status\": 0,\n                \"Tips\": [\n                    \"\",\n                    \"sets the expiration threshold in milliseconds for idle cursors before MongoDB removes them.\"\n                ],\n                \"Unit\": \"\",\n                \"ValueType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"33554432\",\n                \"DefaultValue\": \"33554432\",\n                \"Max\": \"268435456\",\n                \"Min\": \"33554432\",\n                \"NeedRestart\": \"0\",\n                \"ParamName\": \"setParameter.internalQueryExecMaxBlockingSortBytes\",\n                \"Status\": 0,\n                \"Tips\": [\n                    \"\",\n                    \"internal query exec max blocking sort bytes.\"\n                ],\n                \"Unit\": \"\",\n                \"ValueType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"5\",\n                \"DefaultValue\": \"5\",\n                \"Max\": \"60\",\n                \"Min\": \"0\",\n                \"NeedRestart\": \"0\",\n                \"ParamName\": \"setParameter.maxTransactionLockRequestTimeoutMillis\",\n                \"Status\": 0,\n                \"Tips\": [\n                    \"\",\n                    \"the maximum amount of time in milliseconds that multi-document transactions should wait to acquire locks required by the operations in the transaction.\"\n                ],\n                \"Unit\": \"\",\n                \"ValueType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"60\",\n                \"DefaultValue\": \"60\",\n                \"Max\": \"300\",\n                \"Min\": \"5\",\n                \"NeedRestart\": \"0\",\n                \"ParamName\": \"setParameter.transactionLifetimeLimitSeconds\",\n                \"Status\": 0,\n                \"Tips\": [\n                    \"\",\n                    \"specifies the lifetime of multi-document transactions.\"\n                ],\n                \"Unit\": \"\",\n                \"ValueType\": \"integer\"\n            }\n        ],\n        \"InstanceMultiParam\": [],\n        \"InstanceTextParam\": [],\n        \"RequestId\": \"c07728e2-6747-4b0f-bcc9-e022036d5e28\",\n        \"TotalCount\": 7\n    }\n}",
         "title": "InstanceEnumParam"
       }
     ],
@@ -266,10 +274,10 @@
     ],
     "SetAccountUserPrivilege": [
       {
-        "document": "为当前实例的指定账号设置操作权限。",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAccountUserPrivilege\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"UserName\": \"xx\",\n    \"AuthRole\": [\n        {\n            \"Mask\": 0,\n            \"NameSpace\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "为当前实例设置账号权限。"
+        "document": "为当前实例的指定账号设置操作权限",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAccountUserPrivilege\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p6umb\",\n    \"UserName\": \"test_user\",\n    \"AuthRole\": [\n        {\n            \"Mask\": 0,\n            \"NameSpace\": \"eg_collection\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1680767468,\n        \"RequestId\": \"1df930fb-eb7e-4e3f-bcab-15a1aa5fede0\"\n    }\n}",
+        "title": "为当前实例设置账号权限"
       }
     ],
     "TerminateDBInstances": [

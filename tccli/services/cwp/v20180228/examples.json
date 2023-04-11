@@ -1118,7 +1118,7 @@
       {
         "document": "本接口（DescribeMachineInfo）用于获取机器详细情况。",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMachineInfo\n&Uuid=UUID\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ProVersionDeadline\": \"xx\",\n        \"IsProVersion\": true,\n        \"MachineOs\": \"xx\",\n        \"Uuid\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"HasAssetScan\": 1,\n        \"InstanceId\": \"xx\",\n        \"MachineName\": \"xx\",\n        \"FreeVulsLeft\": 1,\n        \"MachineIp\": \"xx\",\n        \"PayMode\": \"xx\",\n        \"AgentVersion\": \"xx\",\n        \"MachineRegion\": \"xx\",\n        \"ProtectDays\": 1,\n        \"Quuid\": \"xx\",\n        \"FreeMalwaresLeft\": 1,\n        \"MachineStatus\": \"xx\",\n        \"MachineWanIp\": \"xx\",\n        \"MachineType\": \"xx\",\n        \"ProVersionOpenDate\": \"xx\",\n        \"ProtectType\": \"BASIC_VERSION\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MachineIp\": \"abc\",\n        \"ProtectDays\": 1,\n        \"MachineOs\": \"abc\",\n        \"MachineName\": \"abc\",\n        \"MachineStatus\": \"abc\",\n        \"InstanceId\": \"abc\",\n        \"MachineWanIp\": \"abc\",\n        \"Quuid\": \"abc\",\n        \"Uuid\": \"abc\",\n        \"IsProVersion\": true,\n        \"ProVersionOpenDate\": \"abc\",\n        \"MachineType\": \"abc\",\n        \"MachineRegion\": \"abc\",\n        \"PayMode\": \"abc\",\n        \"FreeMalwaresLeft\": 1,\n        \"FreeVulsLeft\": 1,\n        \"AgentVersion\": \"abc\",\n        \"ProVersionDeadline\": \"abc\",\n        \"HasAssetScan\": 1,\n        \"ProtectType\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取机器详情"
       }
     ],

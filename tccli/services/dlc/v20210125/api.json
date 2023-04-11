@@ -2006,6 +2006,22 @@
           "name": "MainClusterName",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "spark jar 包年包月集群是否开启弹性",
+          "example": "false",
+          "member": "bool",
+          "name": "ElasticSwitch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "spark jar 包年包月集群弹性上限",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticLimit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

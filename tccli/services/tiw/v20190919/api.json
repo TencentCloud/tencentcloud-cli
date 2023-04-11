@@ -21,6 +21,13 @@
       "output": "CreateOfflineRecordResponse",
       "status": "online"
     },
+    "CreatePPTCheckTask": {
+      "document": "检测PPT文件，识别PPT中包含的动态转码任务（Transcode）不支持的元素",
+      "input": "CreatePPTCheckTaskRequest",
+      "name": "创建PPT检测任务",
+      "output": "CreatePPTCheckTaskResponse",
+      "status": "online"
+    },
     "CreateSnapshotTask": {
       "document": "创建白板板书生成任务, 在任务结束后，如果提供了回调地址，将通过回调地址通知板书生成结果",
       "input": "CreateSnapshotTaskRequest",
@@ -105,6 +112,20 @@
       "output": "DescribeOnlineRecordCallbackResponse",
       "status": "online"
     },
+    "DescribePPTCheck": {
+      "document": "查询PPT检测任务的执行进度或结果",
+      "input": "DescribePPTCheckRequest",
+      "name": "查询PPT检测任务状态",
+      "output": "DescribePPTCheckResponse",
+      "status": "online"
+    },
+    "DescribePPTCheckCallback": {
+      "document": "查询PPT检测任务回调地址",
+      "input": "DescribePPTCheckCallbackRequest",
+      "name": "查询PPT检测任务回调地址",
+      "output": "DescribePPTCheckCallbackResponse",
+      "status": "online"
+    },
     "DescribePostpaidUsage": {
       "document": "查询用户后付费用量",
       "input": "DescribePostpaidUsageRequest",
@@ -131,6 +152,13 @@
       "input": "DescribeRoomListRequest",
       "name": "查询白板房间列表",
       "output": "DescribeRoomListResponse",
+      "status": "online"
+    },
+    "DescribeRunningTasks": {
+      "document": "根据指定的任务类型，获取当前正在执行中的任务列表。只能查询最近3天内创建的任务。",
+      "input": "DescribeRunningTasksRequest",
+      "name": "查询当前执行中的任务列表",
+      "output": "DescribeRunningTasksResponse",
       "status": "online"
     },
     "DescribeSnapshotTask": {
@@ -215,6 +243,13 @@
       "input": "DescribeVideoGenerationTaskCallbackRequest",
       "name": "查询录制视频生成回调地址",
       "output": "DescribeVideoGenerationTaskCallbackResponse",
+      "status": "online"
+    },
+    "DescribeWarningCallback": {
+      "document": "查询告警回调地址。此功能需要申请白名单使用。",
+      "input": "DescribeWarningCallbackRequest",
+      "name": "查询告警回调地址",
+      "output": "DescribeWarningCallbackResponse",
       "status": "online"
     },
     "DescribeWhiteboardApplicationConfig": {
@@ -315,6 +350,20 @@
       "output": "SetOnlineRecordCallbackKeyResponse",
       "status": "online"
     },
+    "SetPPTCheckCallback": {
+      "document": "设置PPT检测任务回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260",
+      "input": "SetPPTCheckCallbackRequest",
+      "name": "设置PPT检测任务回调地址",
+      "output": "SetPPTCheckCallbackResponse",
+      "status": "online"
+    },
+    "SetPPTCheckCallbackKey": {
+      "document": "设置PPT检测任务回调密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
+      "input": "SetPPTCheckCallbackKeyRequest",
+      "name": "设置PPT检测任务回调密钥",
+      "output": "SetPPTCheckCallbackKeyResponse",
+      "status": "online"
+    },
     "SetTranscodeCallback": {
       "document": "设置文档转码回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260",
       "input": "SetTranscodeCallbackRequest",
@@ -341,6 +390,13 @@
       "input": "SetVideoGenerationTaskCallbackKeyRequest",
       "name": "设置录制视频生成回调密钥",
       "output": "SetVideoGenerationTaskCallbackKeyResponse",
+      "status": "online"
+    },
+    "SetWarningCallback": {
+      "document": "设置告警回调地址。此功能需要申请白名单使用。",
+      "input": "SetWarningCallbackRequest",
+      "name": "设置告警回调地址",
+      "output": "SetWarningCallbackResponse",
       "status": "online"
     },
     "SetWhiteboardPushCallback": {
@@ -664,6 +720,56 @@
     "CreateOfflineRecordResponse": {
       "document": "CreateOfflineRecord返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePPTCheckTaskRequest": {
+      "document": "CreatePPTCheckTask请求参数结构体",
+      "members": [
+        {
+          "document": "客户的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "经过URL编码后的PPT文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pptx，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pptx。为了提高URL解析的成功率，请对URL进行编码。",
+          "example": "http://example.com/%E6%B5%8B%E8%AF%95.pptx",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "是否对不支持元素开启自动处理的功能。默认不开启。\n\n在开启自动处理的情况下，会自动进行如下处理：\n1. 墨迹：移除不支持的墨迹（比如使用WPS画的）\n2. 自动翻页：移除PPT上所有的自动翻页设置，并设置为单击鼠标翻页\n3. 已损坏音视频：移除PPT上对损坏音视频的引用",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoHandleUnsupportedElement",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePPTCheckTaskResponse": {
+      "document": "CreatePPTCheckTask返回参数结构体",
+      "members": [
+        {
+          "document": "检测任务的唯一标识Id，用于查询该任务的进度以及检测结果",
+          "example": "g6ls63ps49vteb8bk1mb",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1576,6 +1682,130 @@
       ],
       "type": "object"
     },
+    "DescribePPTCheckCallbackRequest": {
+      "document": "DescribePPTCheckCallback请求参数结构体",
+      "members": [
+        {
+          "document": "应用的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePPTCheckCallbackResponse": {
+      "document": "DescribePPTCheckCallback返回参数结构体",
+      "members": [
+        {
+          "document": "回调地址",
+          "example": "https://example.com/transcode/callback",
+          "member": "string",
+          "name": "Callback",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回调鉴权密钥",
+          "example": "6vg9G7Fd",
+          "member": "string",
+          "name": "CallbackKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePPTCheckRequest": {
+      "document": "DescribePPTCheck请求参数结构体",
+      "members": [
+        {
+          "document": "客户的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "任务的唯一标识Id",
+          "example": "g0jb42ps49vtebjshilb",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePPTCheckResponse": {
+      "document": "DescribePPTCheck返回参数结构体",
+      "members": [
+        {
+          "document": "任务的唯一标识Id",
+          "example": "0agdnligqtgtvkm65emb",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "PPT文件是否正常",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOK",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "修复后的PPT URL，只有创建任务时参数AutoHandleUnsupportedElement=true，才返回此参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxx/xxx/测试_fixed.ppt",
+          "member": "string",
+          "name": "ResultUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误PPT页面列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PPTErrSlide",
+          "name": "Slides",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务的当前状态 - QUEUED: 正在排队等待 - PROCESSING: 执行中 - FINISHED: 执行完成\t",
+          "example": "FINISHED",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前进度,取值范围为0~100",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePostpaidUsageRequest": {
       "document": "DescribePostpaidUsage请求参数结构体",
       "members": [
@@ -1777,6 +2007,72 @@
           "member": "RoomListItem",
           "name": "RoomList",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRunningTasksRequest": {
+      "document": "DescribeRunningTasks请求参数结构体",
+      "members": [
+        {
+          "document": "应用的SdkAppID",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "指定需要获取的任务类型。\n有效取值如下：\n- TranscodeH5: 动态转码任务，文档转HTML5页面\n- TranscodeJPG: 静态转码任务，文档转图片\n- WhiteboardPush: 白板推流任务\n- OnlineRecord: 实时录制任务",
+          "example": "WhiteboardPush",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "分页获取时的任务偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "每次获取任务列表时最大获取任务数，默认值为100。\n有效取值范围：[1, 500]",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRunningTasksResponse": {
+      "document": "DescribeRunningTasks返回参数结构体",
+      "members": [
+        {
+          "document": "当前正在执行中的任务总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务信息列表",
+          "example": "无",
+          "member": "RunningTaskItem",
+          "name": "Tasks",
           "type": "list",
           "value_allowed_null": false
         },
@@ -2563,6 +2859,48 @@
       ],
       "type": "object"
     },
+    "DescribeWarningCallbackRequest": {
+      "document": "DescribeWarningCallback请求参数结构体",
+      "members": [
+        {
+          "document": "应用的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWarningCallbackResponse": {
+      "document": "DescribeWarningCallback返回参数结构体",
+      "members": [
+        {
+          "document": "告警事件回调地址，如果未设置回调地址，该字段为空字符串",
+          "example": "https://example.com/online/callback",
+          "member": "string",
+          "name": "Callback",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警回调鉴权密钥",
+          "example": "6vg9G7Fd",
+          "member": "string",
+          "name": "CallbackKey",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWhiteboardApplicationConfigRequest": {
       "document": "DescribeWhiteboardApplicationConfig请求参数结构体",
       "members": [
@@ -3236,6 +3574,63 @@
       ],
       "usage": "out"
     },
+    "PPTErr": {
+      "document": "PPT错误元素",
+      "members": [
+        {
+          "document": "元素名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Ink 1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "0: 不支持的墨迹类型，1: 不支持自动翻页，2: 存在已损坏音视频，3: 存在不可访问资源，4: 只读文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wps墨迹",
+          "member": "string",
+          "name": "Detail",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PPTErrSlide": {
+      "document": "PPT错误页面列表",
+      "members": [
+        {
+          "document": "异常元素存在的页面，由页面类型+页码组成，页码类型包括：幻灯片、幻灯片母版、幻灯片布局等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "幻灯片1",
+          "member": "string",
+          "name": "Page",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误元素列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PPTErr",
+          "name": "Errs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PauseOnlineRecordRequest": {
       "document": "PauseOnlineRecord请求参数结构体",
       "members": [
@@ -3631,6 +4026,93 @@
       ],
       "usage": "out"
     },
+    "RunningTaskItem": {
+      "document": "正在运行的任务列表项",
+      "members": [
+        {
+          "document": "应用SdkAppID",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务ID",
+          "example": "0agdnligqtgtvkm65emb",
+          "member": "string",
+          "name": "TaskID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务类型\n- TranscodeH5: 动态转码任务，文档转HTML5页面\n- TranscodeJPG: 静态转码任务，文档转图片\n- WhiteboardPush: 白板推流任务\n- OnlineRecord: 实时录制任务",
+          "example": "WhiteboardPush",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务创建时间",
+          "example": "2023-03-14 15:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务取消时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-14 20:00:00",
+          "member": "string",
+          "name": "CancelTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务状态\n- QUEUED: 任务正在排队等待执行中\n- PROCESSING: 任务正在执行中 \n- FINISHED: 任务已完成",
+          "example": "QUEUED",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务当前进度",
+          "example": "50",
+          "member": "int64",
+          "name": "Progress",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "转码任务中转码文件的原始URL\n此参数只有任务类型为TranscodeH5、TranscodeJPG类型时才会有有效值。其他任务类型为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx.pptx",
+          "member": "string",
+          "name": "FileURL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "房间号\n\n当任务类型为TranscodeH5、TranscodeJPG时，房间号为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
+          "member": "int64",
+          "name": "RoomID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SetOfflineRecordCallbackRequest": {
       "document": "SetOfflineRecordCallback请求参数结构体",
       "members": [
@@ -3725,6 +4207,74 @@
     },
     "SetOnlineRecordCallbackResponse": {
       "document": "SetOnlineRecordCallback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetPPTCheckCallbackKeyRequest": {
+      "document": "SetPPTCheckCallbackKey请求参数结构体",
+      "members": [
+        {
+          "document": "应用的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "设置回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257\t",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetPPTCheckCallbackKeyResponse": {
+      "document": "SetPPTCheckCallbackKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetPPTCheckCallbackRequest": {
+      "document": "SetPPTCheckCallback请求参数结构体",
+      "members": [
+        {
+          "document": "客户的SdkAppId\t",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "进度回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。 回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260\t",
+          "example": "https://example.com/transcode/callback",
+          "member": "string",
+          "name": "Callback",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetPPTCheckCallbackResponse": {
+      "document": "SetPPTCheckCallback返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3863,6 +4413,48 @@
     },
     "SetVideoGenerationTaskCallbackResponse": {
       "document": "SetVideoGenerationTaskCallback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetWarningCallbackRequest": {
+      "document": "SetWarningCallback请求参数结构体",
+      "members": [
+        {
+          "document": "客户的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "告警回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。\n回调数据格式请参考文档：",
+          "example": "https://example.com/transcode/callback",
+          "member": "string",
+          "name": "Callback",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "设置告警回调鉴权密钥，最长64字符，如果传入空字符串，那么删除现有的鉴权回调密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
+          "example": "123456",
+          "member": "string",
+          "name": "CallbackKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetWarningCallbackResponse": {
+      "document": "SetWarningCallback返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

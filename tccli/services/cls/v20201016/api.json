@@ -4586,6 +4586,21 @@
       ],
       "type": "object"
     },
+    "DynamicIndex": {
+      "document": "动态更新索引配置",
+      "members": [
+        {
+          "document": "动态索引配置开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ExcludePathInfo": {
       "document": "黑名单path信息",
       "members": [
@@ -4750,7 +4765,6 @@
       "document": "日志提取规则",
       "members": [
         {
-          "default": "",
           "document": "时间字段的key名字，time_key和time_format必须成对出现\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -4760,7 +4774,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "YYDDWW",
           "member": "string",
@@ -4770,7 +4783,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "分隔符类型日志的分隔符，只有log_type为delimiter_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": ",",
           "member": "string",
@@ -4780,7 +4792,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "整条日志匹配规则，只有log_type为fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\\w",
           "member": "string",
@@ -4790,7 +4801,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "行首匹配规则，只有log_type为multiline_log或fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\\w",
           "member": "string",
@@ -4800,7 +4810,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -4810,7 +4819,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "需要过滤日志的key，及其对应的regex\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KeyRegexInfo",
@@ -4820,7 +4828,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "解析失败日志是否上传，true表示上传，false表示不上传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -4830,7 +4837,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "失败日志的key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testlog",
           "member": "string",
@@ -4840,7 +4846,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "增量采集模式下的回溯数据量，默认-1（全量采集）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
@@ -4850,7 +4855,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否为Gbk编码.   0: 否, 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4860,7 +4864,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否为标准json.   0: 否, 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4870,7 +4873,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "syslog传输协议，取值为tcp或者udp。\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcp",
           "member": "string",
@@ -4880,7 +4882,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1:9000",
           "member": "string",
@@ -4890,7 +4891,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "rfc3164：指定系统日志采集使用RFC3164协议解析日志。\nrfc5424：指定系统日志采集使用RFC5424协议解析日志。\nauto：自动匹配rfc3164或者rfc5424其中一种协议\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RFC3164",
           "member": "string",
@@ -5575,7 +5575,6 @@
       "document": "机器组信息",
       "members": [
         {
-          "default": "",
           "document": "机器组ID",
           "example": "559d015f-fac7-43cd-ad6e-3c4523fe8767",
           "member": "string",
@@ -5585,7 +5584,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器组名称",
           "example": "test",
           "member": "string",
@@ -5595,7 +5593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器组类型",
           "example": "无",
           "member": "MachineGroupTypeInfo",
@@ -5605,7 +5602,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2021-03-05 00:40:22",
           "member": "string",
@@ -5615,7 +5611,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器组绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -5625,7 +5620,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启机器组自动更新\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"true\"",
           "member": "string",
@@ -5635,7 +5629,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "升级开始时间，建议业务低峰期升级LogListener\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"12:00:00\"",
           "member": "string",
@@ -5645,7 +5638,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "升级结束时间，建议业务低峰期升级LogListener\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"13:00:00\"",
           "member": "string",
@@ -5655,7 +5647,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -7057,10 +7048,9 @@
       "type": "object"
     },
     "RuleInfo": {
-      "document": "索引规则，FullText、KeyValue、Tag参数必须输入一个有效参数\n",
+      "document": "索引规则，FullText、KeyValue、Tag参数必须输入一个有效参数",
       "members": [
         {
-          "default": "",
           "document": "全文索引配置, 如果为空时代表未开启全文索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "FullTextInfo",
@@ -7070,7 +7060,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "键值索引配置，如果为空时代表未开启键值索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "RuleKeyValueInfo",
@@ -7080,11 +7069,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "元字段索引配置，如果为空时代表未开启元字段索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "RuleTagInfo",
           "name": "Tag",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "动态索引配置，如果为空时代表未开启动态段索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DynamicIndex",
+          "name": "DynamicIndex",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7220,7 +7217,7 @@
           "type": "float"
         },
         {
-          "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules",
+          "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
           "example": "1",
           "member": "uint64",
           "name": "SyntaxRule",
@@ -7295,6 +7292,14 @@
           "member": "Column",
           "name": "Columns",
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本次统计分析使用的采样率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
+          "member": "float",
+          "name": "SamplingRate",
+          "type": "float",
           "value_allowed_null": true
         },
         {

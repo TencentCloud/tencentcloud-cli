@@ -238,6 +238,13 @@
       "output": "DescribeSlowLogUserHostStatsResponse",
       "status": "online"
     },
+    "DescribeSlowLogs": {
+      "document": "获取指定时间内某个sql模版的慢日志明细",
+      "input": "DescribeSlowLogsRequest",
+      "name": "获取SQL模板在指定时间段内的详细信息",
+      "output": "DescribeSlowLogsResponse",
+      "status": "online"
+    },
     "DescribeSqlFilters": {
       "document": "查询实例SQL限流任务列表。",
       "input": "DescribeSqlFiltersRequest",
@@ -2981,6 +2988,136 @@
       ],
       "type": "object"
     },
+    "DescribeSlowLogsRequest": {
+      "document": "DescribeSlowLogs请求参数结构体",
+      "members": [
+        {
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "实例id。",
+          "example": "cdb-insde12",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "sql模版的md5值",
+          "example": "2693831786114179882",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "开始时间，如“2019-09-10 12:13:14”。",
+          "example": "2019-01-01 00:00:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。",
+          "example": "2019-01-01 01:00:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "分页参数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "分页参数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "数据库列表",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "DB",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "关键字",
+          "example": "[\"select\"]",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "用户",
+          "example": "[\"root\",\"test\"]",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "ip",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "耗时区间,耗时区间的左右边界分别对应数组的第0个元素和第一个元素",
+          "example": "[2,4]",
+          "member": "int64",
+          "name": "Time",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogsResponse": {
+      "document": "DescribeSlowLogs返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的记录总数。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢日志明细",
+          "example": "无",
+          "member": "SlowLogInfoItem",
+          "name": "Rows",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSqlFiltersRequest": {
       "document": "DescribeSqlFilters请求参数结构体",
       "members": [
@@ -5602,6 +5739,93 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SlowLogInfoItem": {
+      "document": "慢日志详细信息",
+      "members": [
+        {
+          "document": "慢日志开始时间",
+          "example": "2023-03-31 10:47:35",
+          "member": "string",
+          "name": "Timestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "sql语句",
+          "example": "select * from t",
+          "member": "string",
+          "name": "SqlText",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库",
+          "example": "information_schema",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "User来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "IP来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "UserHost",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "执行时间,单位秒",
+          "example": "12",
+          "member": "int64",
+          "name": "QueryTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "锁时间,单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LockTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扫描行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "RowsExamined",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "122",
+          "member": "int64",
+          "name": "RowsSent",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

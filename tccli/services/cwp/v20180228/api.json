@@ -148,9 +148,9 @@
       "status": "online"
     },
     "DeleteMachine": {
-      "document": "本接口（DeleteMachine）用于卸载云镜客户端。",
+      "document": "本接口（DeleteMachine）用于卸载主机安全客户端。",
       "input": "DeleteMachineRequest",
-      "name": "卸载云镜客户端",
+      "name": "卸载主机安全客户端",
       "output": "DeleteMachineResponse",
       "status": "online"
     },
@@ -8427,7 +8427,6 @@
       "document": "高危命令数据",
       "members": [
         {
-          "default": "",
           "document": "数据ID",
           "example": "1",
           "member": "uint64",
@@ -8437,8 +8436,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "云镜ID",
+          "document": "主机安全ID",
           "example": "dadada",
           "member": "string",
           "name": "Uuid",
@@ -8447,7 +8445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机ID",
           "example": "dadasda",
           "member": "string",
@@ -8457,7 +8454,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP",
           "example": "127.0.0.1",
           "member": "string",
@@ -8467,7 +8463,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "执行用户名",
           "example": "root",
           "member": "string",
@@ -8477,7 +8472,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "平台类型",
           "example": "1",
           "member": "uint64",
@@ -8487,7 +8481,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "执行命令",
           "example": "rm",
           "member": "string",
@@ -8497,7 +8490,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则ID",
           "example": "1",
           "member": "uint64",
@@ -8507,7 +8499,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则名称",
           "example": "1",
           "member": "string",
@@ -8517,7 +8508,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则等级：1-高 2-中 3-低",
           "example": "1",
           "member": "uint64",
@@ -8527,7 +8517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略",
           "example": "1",
           "member": "uint64",
@@ -8537,7 +8526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发生时间",
           "example": "2021-03-30 19:17:28",
           "member": "string",
@@ -8547,7 +8535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名",
           "example": "主机",
           "member": "string",
@@ -8557,7 +8544,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "0: bash日志 1: 实时监控(雷霆版)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -8567,7 +8553,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "进程id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8577,7 +8562,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "进程名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.exe",
           "member": "string",
@@ -8587,7 +8571,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "处理时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-30 19:17:28",
           "member": "string",
@@ -8597,7 +8580,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则类别  0=系统规则，1=用户规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -8607,7 +8589,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动生成的正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rm -rf /tmp/t*",
           "member": "string",
@@ -8632,7 +8613,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "云镜ID",
+          "document": "主机安全ID",
           "example": "dadada",
           "member": "string",
           "name": "Uuid",
@@ -8818,272 +8799,245 @@
       "document": "高危命令数据详情(新)",
       "members": [
         {
-          "default": "",
           "document": "数据ID",
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "云镜ID",
+          "document": "主机安全ID",
           "example": "dadada",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机ID",
           "example": "dadasda",
           "member": "string",
           "name": "Quuid",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP",
           "example": "127.0.0.1",
           "member": "string",
           "name": "HostIp",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "平台类型",
           "example": "1",
           "member": "uint64",
           "name": "Platform",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "执行命令",
           "example": "rm",
           "member": "string",
           "name": "BashCmd",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则ID,等于0表示已规则已被删除或生效范围已修改",
           "example": "1",
           "member": "uint64",
           "name": "RuleId",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则名称",
           "example": "1",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则等级：1-高 2-中 3-低",
           "example": "1",
           "member": "uint64",
           "name": "RuleLevel",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3= 已忽略",
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发生时间",
           "example": "2021-03-30 19:17:28",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名",
           "example": "主机",
           "member": "string",
           "name": "MachineName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.exe",
           "member": "string",
           "name": "Exe",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "处理时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-30 19:17:28",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则类别  0=系统规则，1=用户规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "RuleCategory",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动生成的正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rm -rf /tmp/t*",
           "member": "string",
           "name": "RegexBashCmd",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"[{\"pid\":1234,\"exe\":\"/usr/bin/bash\",\"account\":\"root:root\",\"cmdl\"",
           "member": "string",
           "name": "PsTree",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "建议方案\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "建议方案",
           "member": "string",
           "name": "SuggestScheme",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "描述",
           "member": "string",
           "name": "HarmDescribe",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"标签1\",\"标签2\"]",
           "member": "string",
           "name": "Tags",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "参考链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"http://www.tencent.com\"]",
           "member": "string",
           "name": "References",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主机外网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "124.2.4.55",
           "member": "string",
           "name": "MachineWanIp",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主机在线状态 OFFLINE  ONLINE\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ONLINE",
           "member": "string",
           "name": "MachineStatus",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "登录用户\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "User",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "进程号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1234",
           "member": "string",
           "name": "Pid",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "0:普通 1:专业版 2:旗舰版\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "MachineType",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "检测来源 0:bash日志 1:实时监控\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DetectBy",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -9259,7 +9213,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "云镜客户端唯一标识UUID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主机安全客户端唯一标识UUID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dadasda",
           "member": "string",
           "name": "Uuid",
@@ -10648,8 +10602,7 @@
       "document": "DeleteMachine请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "云镜客户端Uuid。",
+          "document": "主机安全客户端Uuid。",
           "example": "uuid",
           "member": "string",
           "name": "Uuid",
@@ -18523,8 +18476,7 @@
       "document": "DescribeMachineInfo请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。",
+          "document": "主机安全客户端唯一Uuid。",
           "example": "xxx",
           "member": "string",
           "name": "Uuid",
@@ -18532,7 +18484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Quuid , Uuid 必填一项",
           "example": "xxx",
           "member": "string",
@@ -18551,16 +18502,14 @@
           "example": "xxx",
           "member": "string",
           "name": "MachineIp",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "受云镜保护天数。",
+          "document": "受主机安全保护天数。",
           "example": "1",
           "member": "uint64",
           "name": "ProtectDays",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18569,7 +18518,6 @@
           "example": "xxx",
           "member": "string",
           "name": "MachineOs",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18578,7 +18526,6 @@
           "example": "xxx",
           "member": "string",
           "name": "MachineName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18587,7 +18534,6 @@
           "example": "OFFLINE",
           "member": "string",
           "name": "MachineStatus",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18596,7 +18542,6 @@
           "example": "CVM",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18605,7 +18550,6 @@
           "example": "xxx",
           "member": "string",
           "name": "MachineWanIp",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18614,16 +18558,14 @@
           "example": "xxx",
           "member": "string",
           "name": "Quuid",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "云镜客户端唯一Uuid。",
+          "document": "主机安全客户端唯一Uuid。",
           "example": "xxx",
           "member": "string",
           "name": "Uuid",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18632,7 +18574,6 @@
           "example": "false",
           "member": "bool",
           "name": "IsProVersion",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -18641,7 +18582,6 @@
           "example": "xxx",
           "member": "string",
           "name": "ProVersionOpenDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18650,7 +18590,6 @@
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18659,7 +18598,6 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18668,7 +18606,6 @@
           "example": "PREPAY",
           "member": "string",
           "name": "PayMode",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18677,7 +18614,6 @@
           "example": "1",
           "member": "uint64",
           "name": "FreeMalwaresLeft",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18686,7 +18622,6 @@
           "example": "1",
           "member": "uint64",
           "name": "FreeVulsLeft",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18695,7 +18630,6 @@
           "example": "xxx",
           "member": "string",
           "name": "AgentVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18704,7 +18638,6 @@
           "example": "xxx",
           "member": "string",
           "name": "ProVersionDeadline",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18713,16 +18646,14 @@
           "example": "1",
           "member": "uint64",
           "name": "HasAssetScan",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.",
+          "document": "防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版",
           "example": "BASIC_VERSION",
           "member": "string",
           "name": "ProtectType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22171,8 +22102,7 @@
       "document": "DescribeUsualLoginPlaces请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "云镜客户端UUID",
+          "document": "主机安全客户端UUID",
           "example": "xxx",
           "member": "string",
           "name": "Uuid",
@@ -22190,7 +22120,6 @@
           "example": "[]",
           "member": "UsualPlace",
           "name": "UsualLoginPlaces",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -25818,8 +25747,8 @@
       "document": "账号变更历史数据。",
       "members": [
         {
-          "default": "",
           "document": "唯一ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -25827,8 +25756,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。",
+          "document": "主机安全客户端唯一Uuid。",
+          "example": "无",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -25836,8 +25765,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP。",
+          "example": "无",
           "member": "string",
           "name": "MachineIp",
           "required": true,
@@ -25845,8 +25774,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名。",
+          "example": "无",
           "member": "string",
           "name": "MachineName",
           "required": true,
@@ -25854,8 +25783,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帐号名。",
+          "example": "无",
           "member": "string",
           "name": "Username",
           "required": true,
@@ -25863,8 +25792,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帐号变更类型。\n<li>CREATE：表示新增帐号</li>\n<li>MODIFY：表示修改帐号</li>\n<li>DELETE：表示删除帐号</li>",
+          "example": "无",
           "member": "string",
           "name": "ModifyType",
           "required": true,
@@ -25872,8 +25801,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "变更时间。",
+          "example": "无",
           "member": "datetime",
           "name": "ModifyTime",
           "required": true,

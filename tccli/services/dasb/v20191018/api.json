@@ -210,6 +210,20 @@
       "output": "DescribeDevicesResponse",
       "status": "online"
     },
+    "DescribeLoginEvent": {
+      "document": "查询登录日志",
+      "input": "DescribeLoginEventRequest",
+      "name": "查询登录日志",
+      "output": "DescribeLoginEventResponse",
+      "status": "online"
+    },
+    "DescribeOperationEvent": {
+      "document": "查询操作日志",
+      "input": "DescribeOperationEventRequest",
+      "name": "查询操作日志",
+      "output": "DescribeOperationEventResponse",
+      "status": "online"
+    },
     "DescribeResources": {
       "document": "查询用户购买的堡垒机服务信息，包括资源ID、授权点数、VPC、过期时间等。",
       "input": "DescribeResourcesRequest",
@@ -292,6 +306,55 @@
       "input": "ResetUserRequest",
       "name": "重置用户",
       "output": "ResetUserResponse",
+      "status": "online"
+    },
+    "SearchAuditLog": {
+      "document": "搜索审计日志",
+      "input": "SearchAuditLogRequest",
+      "name": "搜索审计日志",
+      "output": "SearchAuditLogResponse",
+      "status": "online"
+    },
+    "SearchCommand": {
+      "document": "命令执行检索",
+      "input": "SearchCommandRequest",
+      "name": "命令执行检索",
+      "output": "SearchCommandResponse",
+      "status": "online"
+    },
+    "SearchCommandBySid": {
+      "document": "根据会话Id搜索Command",
+      "input": "SearchCommandBySidRequest",
+      "name": "根据会话Id搜索Command",
+      "output": "SearchCommandBySidResponse",
+      "status": "online"
+    },
+    "SearchFile": {
+      "document": "文件传输检索",
+      "input": "SearchFileRequest",
+      "name": "文件传输检索",
+      "output": "SearchFileResponse",
+      "status": "online"
+    },
+    "SearchFileBySid": {
+      "document": "搜索文件传输会话下文件操作列表",
+      "input": "SearchFileBySidRequest",
+      "name": "搜索文件传输会话下文件操作列表",
+      "output": "SearchFileBySidResponse",
+      "status": "online"
+    },
+    "SearchSession": {
+      "document": "搜索会话",
+      "input": "SearchSessionRequest",
+      "name": "搜索会话",
+      "output": "SearchSessionResponse",
+      "status": "online"
+    },
+    "SearchSessionCommand": {
+      "document": "命令检索",
+      "input": "SearchSessionCommandRequest",
+      "name": "命令检索",
+      "output": "SearchSessionCommandResponse",
       "status": "online"
     }
   },
@@ -686,6 +749,122 @@
       ],
       "usage": "out"
     },
+    "AuditLogResult": {
+      "document": "审计日志",
+      "members": [
+        {
+          "default": "",
+          "document": "被审计会话的Sid",
+          "example": "xxx",
+          "member": "string",
+          "name": "Sid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审计者的编号",
+          "example": "xxx",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审计动作发生的时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审计者的Ip",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审计动作类型，1--回放、2--中断、3--监控",
+          "example": "1",
+          "member": "int64",
+          "name": "Operation",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被审计主机的Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被审计主机的主机名",
+          "example": "xxx",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被审计会话所属的类型，如字符会话",
+          "example": "xxx",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被审计主机的内部Ip",
+          "example": "xxx",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被审计主机的外部Ip",
+          "example": "xxx",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审计者的子账号",
+          "example": "xxx",
+          "member": "string",
+          "name": "SubAccountUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BindDeviceAccountPasswordRequest": {
       "document": "BindDeviceAccountPassword请求参数结构体",
       "members": [
@@ -834,6 +1013,52 @@
           "name": "CmdList",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Command": {
+      "document": "命令集合",
+      "members": [
+        {
+          "default": "",
+          "document": "命令",
+          "example": "pwd",
+          "member": "string",
+          "name": "Cmd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令输入的时间",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令执行时间相对于所属会话开始时间的偏移量，单位ms",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令执行情况，1--允许，2--拒绝，3--确认",
+          "example": "1",
+          "member": "int64",
+          "name": "Action",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2490,6 +2715,240 @@
       ],
       "type": "object"
     },
+    "DescribeLoginEventRequest": {
+      "document": "DescribeLoginEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名，如果不包含其他条件时对user_name or real_name两个字段模糊查询",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名，模糊查询",
+          "example": "xx",
+          "member": "string",
+          "name": "RealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询时间范围，起始时间",
+          "example": "2021-02-04T15:23:52+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询时间范围，结束时间",
+          "example": "2021-02-04T15:23:52+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源IP，模糊查询",
+          "example": "1.0.0.1",
+          "member": "string",
+          "name": "SourceIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "登录入口：1-字符界面,2-图形界面，3-web页面, 4-API",
+          "example": "1",
+          "member": "uint64",
+          "name": "Entry",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作结果，1-成功，2-失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "Result",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置，默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页每页记录数，默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoginEventResponse": {
+      "document": "DescribeLoginEvent返回参数结构体",
+      "members": [
+        {
+          "document": "登录日志列表",
+          "example": "无",
+          "member": "LoginEvent",
+          "name": "LoginEventSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总记录数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOperationEventRequest": {
+      "document": "DescribeOperationEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名，如果不包含其他条件时对user_name or real_name两个字段模糊查询",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名，模糊查询",
+          "example": "xx",
+          "member": "string",
+          "name": "RealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询时间范围，起始时间",
+          "example": "2021-02-04T15:23:52+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询时间范围，结束时间",
+          "example": "2021-02-04T15:23:52+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源IP，模糊查询",
+          "example": "1.0.0.1",
+          "member": "string",
+          "name": "SourceIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作类型，参考DescribeOperationType返回结果",
+          "example": "100",
+          "member": "uint64",
+          "name": "Kind",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作结果，1-成功，2-失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "Result",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置，默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页每页记录数，默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOperationEventResponse": {
+      "document": "DescribeOperationEvent返回参数结构体",
+      "members": [
+        {
+          "document": "操作日志列表",
+          "example": "无",
+          "member": "OperationEvent",
+          "name": "OperationEventSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总记录数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourcesRequest": {
       "document": "DescribeResources请求参数结构体",
       "members": [
@@ -3199,6 +3658,72 @@
       ],
       "type": "object"
     },
+    "LoginEvent": {
+      "document": "登录日志",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "xx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "xx",
+          "member": "string",
+          "name": "RealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作时间",
+          "example": "2020-12-31T17:34:17+0800",
+          "member": "datetime_iso",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源IP",
+          "example": "1.0.0.1",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "登录入口：1-字符界面,2-图形界面，3-web页面, 4-API",
+          "example": "1",
+          "member": "uint64",
+          "name": "Entry",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作结果，1-成功，2-失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAclRequest": {
       "document": "ModifyAcl请求参数结构体",
       "members": [
@@ -3658,6 +4183,82 @@
       ],
       "type": "object"
     },
+    "OperationEvent": {
+      "document": "操作日志",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "xx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "xx",
+          "member": "string",
+          "name": "RealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作时间",
+          "example": "2020-12-31T17:34:17+0800",
+          "member": "datetime_iso",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源IP",
+          "example": "1.0.0.1",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型",
+          "example": "100",
+          "member": "uint64",
+          "name": "Kind",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "具体操作内容",
+          "example": "新建主机",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作结果，1-成功，2-失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResetDeviceAccountPasswordRequest": {
       "document": "ResetDeviceAccountPassword请求参数结构体",
       "members": [
@@ -4002,6 +4603,1444 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchAuditLogRequest": {
+      "document": "SearchAuditLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间，不得早于当前时间的180天前",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页容量，默认为20，最大200",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchAuditLogResponse": {
+      "document": "SearchAuditLog返回参数结构体",
+      "members": [
+        {
+          "document": "审计日志",
+          "example": "[]",
+          "member": "AuditLogResult",
+          "name": "AuditLogSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志总数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchCommandBySidRequest": {
+      "document": "SearchCommandBySid请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "会话Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "Sid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令，可模糊搜索",
+          "example": "xxx",
+          "member": "string",
+          "name": "Cmd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页容量，默认20，最大200",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据拦截状态进行过滤",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "AuditAction",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchCommandBySidResponse": {
+      "document": "SearchCommandBySid返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命令列表",
+          "example": "[]",
+          "member": "Command",
+          "name": "CommandSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchCommandRequest": {
+      "document": "SearchCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索区间的开始时间",
+          "example": "2020-01-02T01:01:01Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索区间的结束时间，不填默认为开始时间到现在为止",
+          "example": "2020-01-03T01:01:01Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "RealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产实例ID",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产名称",
+          "example": "开发机",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产的公网IP",
+          "example": "100.100.100.100",
+          "member": "string",
+          "name": "PublicIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产的内网IP",
+          "example": "192.168.1.100",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行的命令",
+          "example": "ls",
+          "member": "string",
+          "name": "Cmd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据拦截状态进行过滤：1 - 已执行，2 - 被阻断",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AuditAction",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "每页容量，默认20，最大200",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置，默认值为0",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchCommandResponse": {
+      "document": "SearchCommand返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命令列表",
+          "example": "[]",
+          "member": "SearchCommandResult",
+          "name": "Commands",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchCommandResult": {
+      "document": "命令执行检索结果",
+      "members": [
+        {
+          "default": "",
+          "document": "命令输入的时间",
+          "example": "2022-01-01T01:01:01Z",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "RealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产ID",
+          "example": "ins-xxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产名称",
+          "example": "开发机",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产公网IP",
+          "example": "100.100.100.100",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产内网IP",
+          "example": "192.168.1.100",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令",
+          "example": "pwd",
+          "member": "string",
+          "name": "Cmd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令执行情况，1--允许，2--拒绝",
+          "example": "1",
+          "member": "uint64",
+          "name": "Action",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令所属的会话ID",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Sid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令执行时间相对于所属会话开始时间的偏移量，单位ms",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchFileBySidRequest": {
+      "document": "SearchFileBySid请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话",
+          "example": "xxx",
+          "member": "string",
+          "name": "Sid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否创建审计日志,通过查看按钮调用时为true,其他为false",
+          "example": "true",
+          "member": "bool",
+          "name": "AuditLog",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "分页的页内记录数，默认为20，最大200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可填写路径名或文件名",
+          "example": "1.txt",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页用偏移量",
+          "example": "123",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "1-已执行，  2-被阻断",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditAction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "以Protocol和Method为条件查询",
+          "example": "无",
+          "member": "SearchFileTypeFilter",
+          "name": "TypeFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchFileBySidResponse": {
+      "document": "SearchFileBySid返回参数结构体",
+      "members": [
+        {
+          "document": "记录数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "某会话的文件操作列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SearchFileBySidResult",
+          "name": "SearchFileBySidResult",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchFileBySidResult": {
+      "document": "文件操作搜索结果",
+      "members": [
+        {
+          "default": "",
+          "document": "文件操作时间",
+          "example": "2006-01-02T15:04:05Z",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1-上传文件 2-下载文件 3-删除文件 4-移动文件 5-重命名文件 6-新建文件夹 7-移动文件夹 8-重命名文件夹 9-删除文件夹",
+          "example": "1",
+          "member": "int64",
+          "name": "Method",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件传输协议",
+          "example": "\"SFTP\"",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "method为上传、下载、删除时文件在服务器上的位置, 或重命名、移动文件前文件的位置",
+          "example": "\"/home/1.txt\"",
+          "member": "string",
+          "name": "FileCurr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "method为重命名、移动文件时代表移动后的新位置.其他情况为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"/home/2.txt\"",
+          "member": "string",
+          "name": "FileNew",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "method为上传文件、下载文件、删除文件时显示文件大小。其他情况为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "堡垒机拦截情况, 1-已执行，  2-被阻断",
+          "example": "1",
+          "member": "int64",
+          "name": "Action",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchFileRequest": {
+      "document": "SearchFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "example": "2020-01-03T01:01:01Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "example": "2020-01-04T01:01:01Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "RealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产ID",
+          "example": "ins-xxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产名称",
+          "example": "开发机",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产公网IP",
+          "example": "100.100.100.100",
+          "member": "string",
+          "name": "PublicIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产内网IP",
+          "example": "192.168.1.100",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹",
+          "example": "1",
+          "member": "uint64",
+          "name": "Method",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可填写路径名或文件（夹）名",
+          "example": "1.txt",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1-已执行，  2-被阻断",
+          "example": "1",
+          "member": "uint64",
+          "name": "AuditAction",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页的页内记录数，默认为20，最大200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置，默认值为0",
+          "example": "123",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchFileResponse": {
+      "document": "SearchFile返回参数结构体",
+      "members": [
+        {
+          "document": "记录数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件操作列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SearchFileResult",
+          "name": "Files",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchFileResult": {
+      "document": "文件传输检索结果",
+      "members": [
+        {
+          "default": "",
+          "document": "文件传输的时间",
+          "example": "2022-01-01T01:01:01Z",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "RealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产ID",
+          "example": "ins-xxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产名称",
+          "example": "开发机",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产公网IP",
+          "example": "100.100.100.100",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产内网IP",
+          "example": "192.168.1.100",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作结果：1 - 已执行，2 - 已阻断",
+          "example": "1",
+          "member": "uint64",
+          "name": "Action",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹",
+          "example": "1",
+          "member": "uint64",
+          "name": "Method",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载的文件（夹）路径及名称",
+          "example": "/home/abc.txt",
+          "member": "string",
+          "name": "FileCurr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传或新建文件（夹）路径及名称",
+          "example": "/home/abc.txt",
+          "member": "string",
+          "name": "FileNew",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchFileTypeFilter": {
+      "document": "用于搜索文件传输记录等日志时按照protocol和method进行过滤",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查询的文件传输类型，如SFTP/CLIP/RDP/RZSZ",
+          "example": "SFTP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在当前指定的protocol下进一步过滤具体操作类型,如剪贴板文件上传，剪贴板文件下载等",
+          "example": "1, 2",
+          "member": "int64",
+          "name": "Method",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SearchSessionCommandRequest": {
+      "document": "SearchSessionCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "检索的目标命令，为模糊搜索",
+          "example": "pwd",
+          "member": "string",
+          "name": "Cmd",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，不得早于当前时间的180天前",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置，默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认值为20，最大200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchSessionCommandResponse": {
+      "document": "SearchSessionCommand返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命令和所属会话",
+          "example": "[]",
+          "member": "SessionCommand",
+          "name": "CommandSessionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchSessionRequest": {
+      "document": "SearchSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "内部Ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部Ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PublicIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名，长度不超过20",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号，长度不超过64",
+          "example": "administrator",
+          "member": "string",
+          "name": "Account",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源Ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "FromIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索区间的开始时间。若入参是Id，则非必传，否则为必传。",
+          "example": "2020-01-02T01:01:01Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索区间的结束时间",
+          "example": "2020-01-02T01:01:01Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话协议类型，只能是1、2、3或4 对应关系为1-tui 2-gui 3-file 4-数据库。若入参是Id，则非必传，否则为必传。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Kind",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的页内记录数，默认为20，最大200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "姓名，长度不超过20",
+          "example": "xxx",
+          "member": "string",
+          "name": "RealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机名，长度不超过64",
+          "example": "xxx",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态，1为活跃，2为结束，3为强制离线，4为其他错误",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话",
+          "example": "xxx",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchSessionResponse": {
+      "document": "SearchSession返回参数结构体",
+      "members": [
+        {
+          "document": "记录数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "会话信息列表",
+          "example": "[]",
+          "member": "SessionResult",
+          "name": "SessionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SessionCommand": {
+      "document": "命令和所属会话",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号",
+          "example": "administrator",
+          "member": "string",
+          "name": "RealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "xxx",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内部Ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部Ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令列表",
+          "example": "[]",
+          "member": "Command",
+          "name": "Commands",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备id",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备所属的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ApCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SessionResult": {
+      "document": "搜索字符或图形会话时返回的SessionResul结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "王建国",
+          "member": "string",
+          "name": "RealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机账号",
+          "example": "administrator",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2006-01-02T15:04:05Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2006-01-02T15:04:05Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内部Ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部Ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源Ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "FromIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话持续时长",
+          "example": "50",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该会话内命令数量 ，搜索图形会话时该字段无意义",
+          "example": "20",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该会话内高危命令数，搜索图形时该字段无意义",
+          "example": "3",
+          "member": "uint64",
+          "name": "DangerCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话状态，如1会话活跃  2会话结束  3强制离线  4其他错误",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备所属的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ApCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话协议",
+          "example": "SSH",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

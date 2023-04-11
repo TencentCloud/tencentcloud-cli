@@ -14,10 +14,13 @@ tccli lcic CreateRoom --cli-unfold-argument  \
     --Resolution 1 \
     --MaxMicNumber 1 \
     --AutoMic 1 \
+    --TurnOffMic 1 \
     --AudioQuality 1 \
     --SubType abc \
     --DisableRecord 1 \
     --Assistants abc \
+    --RTCAudienceNumber 1 \
+    --AudienceType 1 \
     --RecordLayout 1 \
     --GroupId abc
 ```

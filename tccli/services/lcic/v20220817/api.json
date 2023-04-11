@@ -1200,6 +1200,14 @@
           "type": "int"
         },
         {
+          "document": "释放音视频权限后是否自动取消连麦。可以有以下取值：\n0 自动取消连麦（默认值）\n1 保持连麦状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "TurnOffMic",
+          "required": false,
+          "type": "int"
+        },
+        {
           "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质",
           "example": "1",
           "member": "uint64",
@@ -1222,6 +1230,22 @@
           "name": "Assistants",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "rtc人数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RTCAudienceNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudienceType",
+          "required": false,
+          "type": "int"
         },
         {
           "document": "录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744",

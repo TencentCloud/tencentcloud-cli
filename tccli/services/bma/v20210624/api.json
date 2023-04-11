@@ -57,11 +57,11 @@
       "status": "online"
     },
     "CreateCRObtain": {
-      "document": "版权保护-新建取证接口",
+      "document": "不对外提供接口能力了\n\n版权保护-新建取证接口",
       "input": "CreateCRObtainRequest",
       "name": "新建取证",
       "output": "CreateCRObtainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateCRRight": {
       "document": "版权保护-新建发函接口",

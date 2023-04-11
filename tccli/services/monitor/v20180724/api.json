@@ -14742,11 +14742,11 @@
       "usage": "in"
     },
     "ProductSimple": {
-      "document": "云监控支持的产品简要信息",
+      "document": "云产品监控支持的产品简要信息",
       "members": [
         {
-          "default": "",
           "document": "命名空间",
+          "example": "无",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -14754,8 +14754,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品中文名称",
+          "example": "无",
           "member": "string",
           "name": "ProductName",
           "required": true,
@@ -14763,8 +14763,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品英文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ProductEnName",
           "required": true,
@@ -15153,7 +15153,7 @@
       "usage": "both"
     },
     "PrometheusClusterAgentBasic": {
-      "document": "与云监控融合托管prometheus实例，关联集群基础信息",
+      "document": "与腾讯云可观测平台融合托管 Prometheus 实例，关联集群基础信息",
       "members": [
         {
           "document": "集群ID",
@@ -17511,10 +17511,9 @@
       "usage": "in"
     },
     "URLNotice": {
-      "document": "云监控告警通知模板 - 回调通知详情",
+      "document": "告警通知模板 - 回调通知详情",
       "members": [
         {
-          "default": "",
           "document": "回调 url（限长256字符）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://www.123.com",
           "member": "string",
@@ -17524,7 +17523,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否通过验证 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -17534,7 +17532,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "验证码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "82hf8t",
           "member": "string",
@@ -17544,7 +17541,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "通知开始时间 一天开始的秒数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -17554,7 +17550,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "通知结束时间 一天开始的秒数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "86399",
           "member": "int64",
@@ -17564,7 +17559,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "通知周期 1-7表示周一到周日\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1,2,5]",
           "member": "int64",
@@ -18672,10 +18666,9 @@
       "type": "object"
     },
     "UserNotice": {
-      "document": "云监控告警通知模板 - 用户通知详情",
+      "document": "告警通知模板 - 用户通知详情",
       "members": [
         {
-          "default": "",
           "document": "接收者类型 USER=用户 GROUP=用户组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "USER",
           "member": "string",
@@ -18685,7 +18678,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "通知开始时间 00:00:00 开始的秒数（取值范围0-86399）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -18695,7 +18687,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "通知结束时间 00:00:00 开始的秒数（取值范围0-86399）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "86399",
           "member": "int64",
@@ -18705,7 +18696,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "通知渠道列表 EMAIL=邮件 SMS=短信 CALL=电话 WECHAT=微信 RTX=企业微信\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"SMS\", \"CALL\"]",
           "member": "string",
@@ -18715,7 +18705,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户 uid 列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[100001,100002]",
           "member": "int64",
@@ -18725,7 +18714,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户组 group id 列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[10001,10002]",
           "member": "int64",
@@ -18735,7 +18723,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "电话轮询列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[100001,100002]",
           "member": "int64",
@@ -18745,7 +18732,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "电话轮询次数 （取值范围1-5）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -18755,7 +18741,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "单次轮询内拨打间隔 秒数 （取值范围60-900）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "int64",
@@ -18765,7 +18750,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "两次轮询间隔 秒数（取值范围60-900）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "int64",
@@ -18775,7 +18759,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否需要触达通知 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -18785,7 +18768,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "电话拨打类型 SYNC=同时拨打 CIRCLE=轮询拨打 不指定时默认是轮询\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SYNC",
           "member": "string",
@@ -18795,7 +18777,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "通知周期 1-7表示周一到周日\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1,2,5]",
           "member": "int64",

@@ -272,6 +272,14 @@
         "title": "获取慢日志来源地址统计分布图"
       }
     ],
+    "DescribeSlowLogs": [
+      {
+        "document": "按照Sql模板查询指定时间段内的慢日志详细信息",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action= DescribeSlowLogs\n&Product=mysql\n&InstanceId=test\n&Md5=12323242323\n&Limit=10\n&Offset=0\n&StartTime=2020-09-22T00:00:00+00:00\n&EndTime=2020-09-22T00:00:00+00:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"ea7afb20-cf8d-11ed-9231-5be1865f5f0a\",\n        \"Rows\": [\n            {\n                \"LockTime\": 0,\n                \"UserHost\": \"169.254.128.9\",\n                \"RowsSent\": 1,\n                \"UserName\": \"root\",\n                \"Database\": \"information_schema\",\n                \"SqlText\": \"/* dbbrain user mark */select SLEEP(10)\",\n                \"QueryTime\": 10,\n                \"RowsExamined\": 0,\n                \"Timestamp\": \"2023-03-31 10:47:35\"\n            },\n            {\n                \"LockTime\": 0,\n                \"UserHost\": \"169.254.128.9\",\n                \"RowsSent\": 1,\n                \"UserName\": \"root\",\n                \"Database\": \"information_schema\",\n                \"SqlText\": \"/* dbbrain user mark */select SLEEP(8)\",\n                \"QueryTime\": 8,\n                \"RowsExamined\": 0,\n                \"Timestamp\": \"2023-03-31 10:47:45\"\n            }\n        ]\n    }\n}",
+        "title": "按照Sql模板查询指定时间段内的慢日志详细信息"
+      }
+    ],
     "DescribeSqlFilters": [
       {
         "document": "",

@@ -92,7 +92,7 @@
       "status": "online"
     },
     "DescribeScaleInfo": {
-      "document": "可查询SdkAppId每天的房间数和用户数，按天统计，可查询最近14天的数据。当天未结束，数据未统计完成，无法查到当天的房间数与用户数。（同老接口DescribeHistoryScale） ",
+      "document": "可查询SdkAppId每天的房间数和用户数，按天统计，可查询最近14天的数据。当天未结束，数据未统计完成，无法查到当天的房间数与用户数。（同老接口DescribeHistoryScale）",
       "input": "DescribeScaleInfoRequest",
       "name": "查询历史房间和用户数",
       "output": "DescribeScaleInfoResponse",
@@ -1506,7 +1506,6 @@
       "document": "DescribeScaleInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "1400xxxxxx",
           "member": "uint64",
@@ -1515,7 +1514,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据。",
           "example": "1590065777",
           "member": "uint64",
@@ -1524,8 +1522,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。\n注意：按天统计，结束时间小于前一天，否则查询数据为空（如：需查询20号数据，结束时间需小于20号0点）。",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。\n注意：按天统计，结束时间小于前一天，否则查询数据为空（如：需查询20号数据，结束时间需晚于20号0点）。",
           "example": "1590065777",
           "member": "uint64",
           "name": "EndTime",
@@ -1543,7 +1540,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1552,7 +1548,6 @@
           "example": "{   \"Time\": 1587830400,                 \"RoomNumbe",
           "member": "ScaleInfomation",
           "name": "ScaleList",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4982,8 +4977,7 @@
       "document": "第三方存储参数。",
       "members": [
         {
-          "default": "",
-          "document": "第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。",
+          "document": "第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。",
           "example": "无",
           "member": "CloudStorage",
           "name": "CloudStorage",
@@ -4992,8 +4986,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。",
+          "document": "腾讯云云点播的账号信息。",
           "example": "无",
           "member": "CloudVod",
           "name": "CloudVod",

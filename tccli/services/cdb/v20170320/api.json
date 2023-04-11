@@ -16338,6 +16338,14 @@
           "name": "ZoneId",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "针对跨集群搬迁场景，选择同可用区RO的处理逻辑。together-同可用区RO跟随主实例迁移至目标可用区（默认选项），severally-同可用区RO保持原部署模式、不迁移至目标可用区。",
+          "example": "\"together\"",
+          "member": "string",
+          "name": "RoTransType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

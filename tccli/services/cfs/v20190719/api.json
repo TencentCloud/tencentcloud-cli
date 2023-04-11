@@ -631,7 +631,7 @@
           "type": "int"
         },
         {
-          "document": "快照按月重复，每月1-31号，选择一天，每月这一天打快照。",
+          "document": "快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。",
           "example": "无",
           "member": "string",
           "name": "DayOfMonth",
@@ -3103,7 +3103,7 @@
           "type": "int"
         },
         {
-          "document": "定期快照在月的某几天天，该参数与DayOfWeek互斥",
+          "document": "定期快照在每月的第几天创建快照，该参数与DayOfWeek互斥",
           "example": "'1,3,4,10'",
           "member": "string",
           "name": "DayOfMonth",

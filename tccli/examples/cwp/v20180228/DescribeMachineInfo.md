@@ -13,27 +13,27 @@ Output:
 ```
 {
     "Response": {
-        "ProVersionDeadline": "xx",
-        "IsProVersion": true,
-        "MachineOs": "xx",
-        "Uuid": "xx",
-        "RequestId": "xx",
-        "HasAssetScan": 1,
-        "InstanceId": "xx",
-        "MachineName": "xx",
-        "FreeVulsLeft": 1,
-        "MachineIp": "xx",
-        "PayMode": "xx",
-        "AgentVersion": "xx",
-        "MachineRegion": "xx",
+        "MachineIp": "abc",
         "ProtectDays": 1,
-        "Quuid": "xx",
+        "MachineOs": "abc",
+        "MachineName": "abc",
+        "MachineStatus": "abc",
+        "InstanceId": "abc",
+        "MachineWanIp": "abc",
+        "Quuid": "abc",
+        "Uuid": "abc",
+        "IsProVersion": true,
+        "ProVersionOpenDate": "abc",
+        "MachineType": "abc",
+        "MachineRegion": "abc",
+        "PayMode": "abc",
         "FreeMalwaresLeft": 1,
-        "MachineStatus": "xx",
-        "MachineWanIp": "xx",
-        "MachineType": "xx",
-        "ProVersionOpenDate": "xx",
-        "ProtectType": "BASIC_VERSION"
+        "FreeVulsLeft": 1,
+        "AgentVersion": "abc",
+        "ProVersionDeadline": "abc",
+        "HasAssetScan": 1,
+        "ProtectType": "abc",
+        "RequestId": "abc"
     }
 }
 ```
