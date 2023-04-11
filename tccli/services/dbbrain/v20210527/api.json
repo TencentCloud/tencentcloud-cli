@@ -3307,7 +3307,7 @@
           "visibility": 1
         },
         {
-          "document": "分页参数",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3316,7 +3316,7 @@
           "visibility": 1
         },
         {
-          "document": "分页参数",
+          "document": "查询数目，默认为20，最大为100。",
           "example": "20",
           "member": "int64",
           "name": "Limit",

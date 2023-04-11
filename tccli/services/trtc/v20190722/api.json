@@ -478,64 +478,74 @@
       "document": "第三方云存储的账号信息。",
       "members": [
         {
-          "default": "",
           "document": "第三方云储存的供应商:\n0：腾讯云存储 COS，暂不支持其他家。",
           "example": "1",
           "member": "uint64",
           "name": "Vendor",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "第三方云存储的地域信息。",
           "example": "cn-shanghai-1",
           "member": "string",
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "第三方存储桶信息。",
           "example": "test-bucket",
           "member": "string",
           "name": "Bucket",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "第三方存储的access_key账号信息。",
           "example": "test-accesskey",
           "member": "string",
           "name": "AccessKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "第三方存储的secret_key账号信息。",
           "example": "test-secretkey",
           "member": "string",
           "name": "SecretKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "第三方云存储bucket 的指定位置，由字符串数组组成。合法的字符串范围a~z,A~Z,0~9,'_'和'-'，举个例子，录制文件xxx.m3u8在 [\"prefix1\", \"prefix2\"]作用下，会变成prefix1/prefix2/TaskId/xxx.m3u8。",
           "example": "[\"prefix1\", \"prefix2\"]",
           "member": "string",
           "name": "FileNamePrefix",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "特殊录制前缀。0: 默认，1: 按照<taskid>_<xxxx.m3u8/mp4>格式生成录制文件",
+          "example": "0",
+          "member": "uint64",
+          "name": "PrefixFormat",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "in"

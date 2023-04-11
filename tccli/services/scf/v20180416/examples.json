@@ -2,9 +2,9 @@
   "actions": {
     "CopyFunction": [
       {
-        "document": "",
+        "document": "复制函数",
         "input": "https://scf.tencentcloudapi.com/?Action=CopyFunction\n&Namespace=default\n&FunctionName=myfunc\n&TargetNamespace=otherns\n&NewFunctionName=newfunc\n&TargetRegion=ap-shanghai\n&Override=FALSE\n&CopyConfiguration=TRUE\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
         "title": "复制函数"
       }
     ],

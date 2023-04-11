@@ -1,48 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 费用中心(billing) 版本：2018-07-09
-
-### 第 16 次发布
-
-发布时间：2023-04-11 01:07:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [BillDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetail)
-
-	* 新增成员：PriceInfo
-
-
-
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
 ### 第 50 次发布
 
-发布时间：2023-04-11 01:09:49
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [UpgradeDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15876)
-
-	* 新增入参：RoTransType
-
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 55 次发布
-
-发布时间：2023-04-11 01:14:41
+发布时间：2023-04-12 01:21:15
 
 本次发布包含了以下内容：
 
@@ -50,55 +12,22 @@
 
 修改数据结构：
 
-* [BashEventsInfoNew](http://document.tencentcloudapi.woa.com/document/product/296/19867#BashEventsInfoNew)
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
 
-	* <font color="#dd0000">**修改成员**：</font>Id, Uuid, Quuid, HostIp, Platform, BashCmd, RuleId, RuleName, RuleLevel, Status, CreateTime, MachineName, Exe, ModifyTime, RuleCategory, RegexBashCmd, PsTree, SuggestScheme, HarmDescribe, Tags, References, MachineWanIp, MachineStatus, User, Pid, MachineType, DetectBy
-
-
-
-
-## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
-
-### 第 8 次发布
-
-发布时间：2023-04-11 01:16:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeLoginEvent](http://document.tencentcloudapi.woa.com/document/product/1492/77432)
-* [DescribeOperationEvent](http://document.tencentcloudapi.woa.com/document/product/1492/77431)
-* [SearchAuditLog](http://document.tencentcloudapi.woa.com/document/product/1492/77439)
-* [SearchCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77438)
-* [SearchCommandBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77437)
-* [SearchFile](http://document.tencentcloudapi.woa.com/document/product/1492/77436)
-* [SearchFileBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77435)
-* [SearchSession](http://document.tencentcloudapi.woa.com/document/product/1492/77434)
-* [SearchSessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77433)
-
-新增数据结构：
-
-* [AuditLogResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AuditLogResult)
-* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
-* [LoginEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#LoginEvent)
-* [OperationEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#OperationEvent)
-* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
-* [SearchFileBySidResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileBySidResult)
-* [SearchFileResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileResult)
-* [SearchFileTypeFilter](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileTypeFilter)
-* [SessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SessionCommand)
-* [SessionResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SessionResult)
+	* 新增成员：Available
 
 
 
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
-### 第 14 次发布
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
-发布时间：2023-04-11 01:17:11
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 30 次发布
+
+发布时间：2023-04-12 01:32:17
 
 本次发布包含了以下内容：
 
@@ -106,23 +35,16 @@
 
 新增接口：
 
-* [DescribeSlowLogs](http://document.tencentcloudapi.woa.com/document/product/1130/77440)
-
-新增数据结构：
-
-* [SlowLogInfoItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SlowLogInfoItem)
+* [DescribeBandwidthRange](http://document.tencentcloudapi.woa.com/document/product/239/77453)
+* [RemoveReplicationInstance](http://document.tencentcloudapi.woa.com/document/product/239/77452)
 
 
 
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+## 云函数(scf) 版本：2018-04-16
 
+### 第 29 次发布
 
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 44 次发布
-
-发布时间：2023-04-11 01:17:52
+发布时间：2023-04-12 01:33:07
 
 本次发布包含了以下内容：
 
@@ -130,18 +52,18 @@
 
 修改接口：
 
-* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+* [CopyFunction](http://document.tencentcloudapi.woa.com/document/product/583/33847)
 
-	* 新增入参：ElasticSwitch, ElasticLimit
-
-
+	* 新增入参：CLSLogsetId, CLSTopicId
 
 
-## DNSPod(dnspod) 版本：2021-03-23
 
-### 第 19 次发布
 
-发布时间：2023-04-11 01:18:18
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 29 次发布
+
+发布时间：2023-04-12 01:38:47
 
 本次发布包含了以下内容：
 
@@ -149,79 +71,10 @@
 
 修改数据结构：
 
-* [CreateRecordBatchRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56185#CreateRecordBatchRecord)
+* [CloudStorage](http://document.tencentcloudapi.woa.com/document/product/647/44055#CloudStorage)
 
-	* 新增成员：Weight
+	* 新增成员：PrefixFormat
 
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 19 次发布
-
-发布时间：2023-04-11 01:26:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DeleteAccountUser](http://document.tencentcloudapi.woa.com/document/product/240/77441)
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 38 次发布
-
-发布时间：2023-04-11 01:33:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribePulsarProInstances](http://document.tencentcloudapi.woa.com/document/product/1179/77442)
-
-新增数据结构：
-
-* [PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)
-
-
-
-## 互动白板(tiw) 版本：2019-09-19
-
-### 第 12 次发布
-
-发布时间：2023-04-11 01:35:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreatePPTCheckTask](http://document.tencentcloudapi.woa.com/document/product/1137/77448)
-* [DescribePPTCheck](http://document.tencentcloudapi.woa.com/document/product/1137/77447)
-* [DescribePPTCheckCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77446)
-* [DescribeRunningTasks](http://document.tencentcloudapi.woa.com/document/product/1137/77443)
-* [DescribeWarningCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77451)
-* [SetPPTCheckCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77445)
-* [SetPPTCheckCallbackKey](http://document.tencentcloudapi.woa.com/document/product/1137/77444)
-* [SetWarningCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77450)
-
-新增数据结构：
-
-* [PPTErr](http://document.tencentcloudapi.woa.com/document/product/1137/40068#PPTErr)
-* [PPTErrSlide](http://document.tencentcloudapi.woa.com/document/product/1137/40068#PPTErrSlide)
-* [RunningTaskItem](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RunningTaskItem)
 
 
 
@@ -19235,28 +19088,28 @@
 
 新增接口：
 
-* [[DescribeLoginEvent](http://document.tencentcloudapi.woa.com/document/product/1492/77432)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeOperationEvent](http://document.tencentcloudapi.woa.com/document/product/1492/77431)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchAuditLog](http://document.tencentcloudapi.woa.com/document/product/1492/77439)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77438)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchCommandBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77437)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchFile](http://document.tencentcloudapi.woa.com/document/product/1492/77436)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchFileBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77435)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchSession](http://document.tencentcloudapi.woa.com/document/product/1492/77434)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchSessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77433)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeLoginEvent](http://document.tencentcloudapi.woa.com/document/product/1492/77432)
+* [DescribeOperationEvent](http://document.tencentcloudapi.woa.com/document/product/1492/77431)
+* [SearchAuditLog](http://document.tencentcloudapi.woa.com/document/product/1492/77439)
+* [SearchCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77438)
+* [SearchCommandBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77437)
+* [SearchFile](http://document.tencentcloudapi.woa.com/document/product/1492/77436)
+* [SearchFileBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77435)
+* [SearchSession](http://document.tencentcloudapi.woa.com/document/product/1492/77434)
+* [SearchSessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77433)
 
 新增数据结构：
 
-* [[AuditLogResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AuditLogResult)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[AuditLogResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AuditLogResult))
-* [[Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command))
-* [[LoginEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#LoginEvent)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[LoginEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#LoginEvent))
-* [[OperationEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#OperationEvent)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[OperationEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#OperationEvent))
-* [[SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult))
-* [[SearchFileBySidResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileBySidResult)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[SearchFileBySidResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileBySidResult))
-* [[SearchFileResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileResult)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[SearchFileResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileResult))
-* [[SearchFileTypeFilter](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileTypeFilter)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[SearchFileTypeFilter](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileTypeFilter))
-* [[SessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SessionCommand)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[SessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SessionCommand))
-* [[SessionResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SessionResult)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[SessionResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SessionResult))
+* [AuditLogResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AuditLogResult)
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
+* [LoginEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#LoginEvent)
+* [OperationEvent](http://document.tencentcloudapi.woa.com/document/product/1492/74806#OperationEvent)
+* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
+* [SearchFileBySidResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileBySidResult)
+* [SearchFileResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileResult)
+* [SearchFileTypeFilter](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchFileTypeFilter)
+* [SessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SessionCommand)
+* [SessionResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SessionResult)
 
 ### 第 7 次发布
 
@@ -19773,11 +19626,11 @@
 
 新增接口：
 
-* [[DescribeSlowLogs](http://document.tencentcloudapi.woa.com/document/product/1130/77440)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeSlowLogs](http://document.tencentcloudapi.woa.com/document/product/1130/77440)
 
 新增数据结构：
 
-* [[SlowLogInfoItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SlowLogInfoItem)](http://document.tencentcloudapi.woa.com/document/product/1130/57812#[SlowLogInfoItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SlowLogInfoItem))
+* [SlowLogInfoItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SlowLogInfoItem)
 
 ### 第 13 次发布
 
@@ -25122,6 +24975,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 50 次发布
+
+发布时间：2023-04-12 01:21:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
+
+	* 新增成员：Available
+
 
 ### 第 49 次发布
 
@@ -32991,7 +32859,7 @@
 
 新增接口：
 
-* [[DeleteAccountUser](http://document.tencentcloudapi.woa.com/document/product/240/77441)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteAccountUser](http://document.tencentcloudapi.woa.com/document/product/240/77441)
 
 ### 第 18 次发布
 
@@ -39720,6 +39588,19 @@
 
 ## 云数据库Redis(redis) 版本：2018-04-12
 
+### 第 30 次发布
+
+发布时间：2023-04-12 01:32:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeBandwidthRange](http://document.tencentcloudapi.woa.com/document/product/239/77453)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RemoveReplicationInstance](http://document.tencentcloudapi.woa.com/document/product/239/77452)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 29 次发布
 
 发布时间：2023-03-27 02:01:08
@@ -40832,6 +40713,21 @@
 
 
 ## 云函数(scf) 版本：2018-04-16
+
+### 第 29 次发布
+
+发布时间：2023-04-12 01:33:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CopyFunction](http://document.tencentcloudapi.woa.com/document/product/583/33847)
+
+	* 新增入参：CLSLogsetId, CLSTopicId
+
 
 ### 第 28 次发布
 
@@ -46228,11 +46124,11 @@
 
 新增接口：
 
-* [[DescribePulsarProInstances](http://document.tencentcloudapi.woa.com/document/product/1179/77442)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribePulsarProInstances](http://document.tencentcloudapi.woa.com/document/product/1179/77442)
 
 新增数据结构：
 
-* [[PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance))
+* [PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)
 
 ### 第 37 次发布
 
@@ -49060,20 +48956,20 @@
 
 新增接口：
 
-* [[CreatePPTCheckTask](http://document.tencentcloudapi.woa.com/document/product/1137/77448)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribePPTCheck](http://document.tencentcloudapi.woa.com/document/product/1137/77447)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribePPTCheckCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77446)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeRunningTasks](http://document.tencentcloudapi.woa.com/document/product/1137/77443)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeWarningCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77451)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SetPPTCheckCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77445)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SetPPTCheckCallbackKey](http://document.tencentcloudapi.woa.com/document/product/1137/77444)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SetWarningCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77450)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreatePPTCheckTask](http://document.tencentcloudapi.woa.com/document/product/1137/77448)
+* [DescribePPTCheck](http://document.tencentcloudapi.woa.com/document/product/1137/77447)
+* [DescribePPTCheckCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77446)
+* [DescribeRunningTasks](http://document.tencentcloudapi.woa.com/document/product/1137/77443)
+* [DescribeWarningCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77451)
+* [SetPPTCheckCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77445)
+* [SetPPTCheckCallbackKey](http://document.tencentcloudapi.woa.com/document/product/1137/77444)
+* [SetWarningCallback](http://document.tencentcloudapi.woa.com/document/product/1137/77450)
 
 新增数据结构：
 
-* [[PPTErr](http://document.tencentcloudapi.woa.com/document/product/1137/40068#PPTErr)](http://document.tencentcloudapi.woa.com/document/product/1137/40068#[PPTErr](http://document.tencentcloudapi.woa.com/document/product/1137/40068#PPTErr))
-* [[PPTErrSlide](http://document.tencentcloudapi.woa.com/document/product/1137/40068#PPTErrSlide)](http://document.tencentcloudapi.woa.com/document/product/1137/40068#[PPTErrSlide](http://document.tencentcloudapi.woa.com/document/product/1137/40068#PPTErrSlide))
-* [[RunningTaskItem](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RunningTaskItem)](http://document.tencentcloudapi.woa.com/document/product/1137/40068#[RunningTaskItem](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RunningTaskItem))
+* [PPTErr](http://document.tencentcloudapi.woa.com/document/product/1137/40068#PPTErr)
+* [PPTErrSlide](http://document.tencentcloudapi.woa.com/document/product/1137/40068#PPTErrSlide)
+* [RunningTaskItem](http://document.tencentcloudapi.woa.com/document/product/1137/40068#RunningTaskItem)
 
 ### 第 11 次发布
 
@@ -51045,6 +50941,21 @@
 
 
 ## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 29 次发布
+
+发布时间：2023-04-12 01:38:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudStorage](http://document.tencentcloudapi.woa.com/document/product/647/44055#CloudStorage)
+
+	* 新增成员：PrefixFormat
+
 
 ### 第 28 次发布
 

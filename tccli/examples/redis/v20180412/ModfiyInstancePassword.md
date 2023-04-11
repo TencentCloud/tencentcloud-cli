@@ -1,14 +1,14 @@
-**Example 1: 请求示例**
+**Example 1: 变更密码**
 
-重置实例密码
+重置实例的访问密码
 
 Input: 
 
 ```
 tccli redis ModfiyInstancePassword --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p \
-    --OldPassword zy456987 \
-    --Password 456987zy
+    --InstanceId crs-5a4p**** \
+    --OldPassword zy45**** \
+    --Password 4569****
 ```
 
 Output: 

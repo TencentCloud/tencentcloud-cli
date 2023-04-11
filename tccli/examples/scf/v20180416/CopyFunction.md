@@ -1,6 +1,6 @@
 **Example 1: 复制函数**
 
-
+复制函数
 
 Input: 
 
@@ -19,7 +19,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
     }
 }
 ```

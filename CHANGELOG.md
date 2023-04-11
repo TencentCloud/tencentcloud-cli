@@ -1,3 +1,83 @@
+# Release 3.0.742.1
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 50 次发布
+
+发布时间：2023-04-12 01:21:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
+
+	* 新增成员：Available
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 30 次发布
+
+发布时间：2023-04-12 01:32:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBandwidthRange](http://document.tencentcloudapi.woa.com/document/product/239/77453)
+* [RemoveReplicationInstance](http://document.tencentcloudapi.woa.com/document/product/239/77452)
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 29 次发布
+
+发布时间：2023-04-12 01:33:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CopyFunction](http://document.tencentcloudapi.woa.com/document/product/583/33847)
+
+	* 新增入参：CLSLogsetId, CLSTopicId
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 29 次发布
+
+发布时间：2023-04-12 01:38:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudStorage](http://document.tencentcloudapi.woa.com/document/product/647/44055#CloudStorage)
+
+	* 新增成员：PrefixFormat
+
+
+
+
 # Release 3.0.741.1
 
 ## 费用中心(billing) 版本：2018-07-09
