@@ -7,8 +7,8 @@ Input:
 ```
 tccli cwp DescribeBruteAttackList --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
+    --Filters.0.Values abc \
+    --Filters.0.Name abc \
     --Filters.0.ExactMatch True \
     --Offset 1
 ```

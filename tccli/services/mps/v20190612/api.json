@@ -6317,7 +6317,6 @@
       "document": "创建的输入SRT的配置信息。",
       "members": [
         {
-          "default": "",
           "document": "SRT模式，可选[LISTENER|CALLER]，默认为LISTENER。",
           "example": "LISTENER",
           "member": "string",
@@ -6327,8 +6326,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。",
+          "document": "流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。具体格式可以参考：https://github.com/Haivision/srt/blob/master/docs/features/access-control.md#standard-keys。",
           "example": "streamId",
           "member": "string",
           "name": "StreamId",
@@ -6337,7 +6335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "延迟，默认0，单位ms，范围为[0, 3000]。",
           "example": "0",
           "member": "int64",
@@ -6347,7 +6344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "接收延迟，默认120，单位ms，范围为[0, 3000]。",
           "example": "120",
           "member": "int64",
@@ -6357,7 +6353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对端延迟，默认0，单位ms，范围为[0, 3000]。",
           "example": "0",
           "member": "int64",
@@ -6367,7 +6362,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对端超时时间，默认5000，单位ms，范围为[1000, 10000]。",
           "example": "5000",
           "member": "int64",
@@ -6377,7 +6371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "解密密钥，默认为空，表示不加密。只可填ascii码值，长度为[10, 79]。",
           "example": "无",
           "member": "string",
@@ -6387,7 +6380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "密钥长度，默认为0，可选[0|16|24|32]。",
           "example": "0",
           "member": "int64",
@@ -6397,7 +6389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "SRT对端地址，当Mode为CALLER时必填，且只能填1组。",
           "example": "无",
           "member": "SRTSourceAddressReq",
@@ -7080,7 +7071,6 @@
       "document": "CreateStreamLinkFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "流名称。",
           "example": "aaa",
           "member": "string",
@@ -7089,7 +7079,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "最大带宽，单位bps，可选[10000000, 20000000, 50000000]。",
           "example": "20000000",
           "member": "int64",
@@ -7098,7 +7087,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "流的输入组。",
           "example": "无",
           "member": "CreateInput",
@@ -7107,7 +7095,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。",
           "example": "eventid",
           "member": "string",
@@ -7126,7 +7113,6 @@
           "example": "无",
           "member": "DescribeFlow",
           "name": "Info",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8525,7 +8511,6 @@
       "document": "查询输入配置信息。",
       "members": [
         {
-          "default": "",
           "document": "输入Id。",
           "example": "id",
           "member": "string",
@@ -8535,7 +8520,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输入名称。",
           "example": "inputName",
           "member": "string",
@@ -8545,7 +8529,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输入描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "description",
           "member": "string",
@@ -8555,7 +8538,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "输入协议。",
           "example": "SRT",
           "member": "string",
@@ -8565,7 +8547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输入地址列表。",
           "example": "0",
           "member": "InputAddress",
@@ -8575,7 +8556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输入IP白名单列表。",
           "example": "0",
           "member": "string",
@@ -8585,7 +8565,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输入的SRT配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "DescribeInputSRTSettings",
@@ -8595,7 +8574,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "输入的RTP配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "DescribeInputRTPSettings",
@@ -8605,7 +8583,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "输入的地区。",
           "example": "ap-hongkong",
           "member": "string",
@@ -8615,7 +8592,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输入的RTMP配置信息。",
           "example": "0",
           "member": "DescribeInputRTMPSettings",
@@ -8625,7 +8601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输入的主备开关。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOSE",
           "member": "string",
@@ -8635,7 +8610,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "输入的RTMP_PULL配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeInputRTMPPullSettings",
@@ -8645,7 +8619,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "输入的RTSP_PULL配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeInputRTSPPullSettings",
@@ -8655,7 +8628,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "输入的HLS_PULL配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeInputHLSPullSettings",
@@ -8665,7 +8637,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "延播平滑吐流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResilientStreamConf",

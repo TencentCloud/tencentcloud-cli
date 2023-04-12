@@ -795,7 +795,6 @@
       "document": "CopyFunction请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要复制的函数的名称",
           "example": "myfunc",
           "member": "string",
@@ -804,7 +803,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "新函数的名称",
           "example": "newfunc",
           "member": "string",
@@ -813,7 +811,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "要复制的函数所在的命名空间，默认为default",
           "example": "default",
           "member": "string",
@@ -822,7 +819,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "将函数复制到的命名空间，默认为default",
           "example": "otherns",
           "member": "string",
@@ -831,7 +827,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "新函数的描述",
           "example": "无",
           "member": "string",
@@ -840,7 +835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "要将函数复制到的地域，不填则默认为当前地域",
           "example": "ap-shanghai",
           "member": "string",
@@ -849,7 +843,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "如果目标Namespace下已有同名函数，是否覆盖，默认为否\n（注意：如果选择覆盖，会导致同名函数被删除，请慎重操作）\nTRUE：覆盖同名函数\nFALSE：不覆盖同名函数",
           "example": "FALSE",
           "member": "bool",
@@ -858,7 +851,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否复制函数的属性，包括环境变量、内存、超时、函数描述、标签、VPC等，默认为是。\nTRUE：复制函数配置\nFALSE：不复制函数配置",
           "example": "TRUE",
           "member": "bool",

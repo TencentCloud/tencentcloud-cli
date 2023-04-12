@@ -3076,6 +3076,14 @@
           "name": "BatchId",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "安心码",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
