@@ -154,11 +154,25 @@
       "output": "GetFaceIdResultResponse",
       "status": "online"
     },
+    "GetFaceIdResultIntl": {
+      "document": "身份验证流程结束后，使用SdkToken调用本接口可获取对应的认证结果信息，SdkToken生成后两小时内（2*3,600秒）可多次拉取。",
+      "input": "GetFaceIdResultIntlRequest",
+      "name": "获取活体SDK核验结果",
+      "output": "GetFaceIdResultIntlResponse",
+      "status": "online"
+    },
     "GetFaceIdToken": {
       "document": "每次调用人脸核身SDK服务前，需先调用本接口获取SDKToken，用来串联核身流程，在验证完成后，用于获取验证结果信息，该token仅能核身一次。",
       "input": "GetFaceIdTokenRequest",
       "name": "获取SDKToken",
       "output": "GetFaceIdTokenResponse",
+      "status": "online"
+    },
+    "GetFaceIdTokenIntl": {
+      "document": "每次调用活体人脸比对SDK服务前，您需先调用本接口获取SDK的Token用来串联身份认证全流程，并在验证完成后使用对应的Token获取验证结果信息，一个Token仅能完成一次身份认证。",
+      "input": "GetFaceIdTokenIntlRequest",
+      "name": "获取SDKToken",
+      "output": "GetFaceIdTokenIntlResponse",
       "status": "online"
     },
     "GetLiveCode": {
@@ -2170,6 +2184,26 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "港澳台居住证通行证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PassNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "港澳台居住证签发次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "VisaNum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3134,6 +3168,87 @@
       ],
       "type": "object"
     },
+    "GetFaceIdResultIntlRequest": {
+      "document": "GetFaceIdResultIntl请求参数结构体",
+      "members": [
+        {
+          "document": "活体人脸比对SDK流程的标识，调用GetFaceIdTokenIntl接口时生成。\t",
+          "example": "aeee6d62-b2b2-4634-9662-919a5ac729ab",
+          "member": "string",
+          "name": "SdkToken",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetFaceIdResultIntlResponse": {
+      "document": "GetFaceIdResultIntl返回参数结构体",
+      "members": [
+        {
+          "document": "业务核验结果的返回码:\n0: 成功\n1001: 系统错误\n1004: 活体人脸检测失败\n2004: 传入照片过大或过小\n2012: 检测到多张人脸\n2013: 未检测到人脸或人脸不完整\n2014: 照片清晰度太低或质量不达标\n2015: 人脸比对失败\n2016: 比对相似度未达到标准通过阈值\n-999: 核身流程未完成",
+          "example": "0",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "业务核验结果的描述",
+          "example": "Success",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "用户认证过程中截取的最佳帧图片，格式为base64。",
+          "example": "无",
+          "member": "string",
+          "name": "BestFrame",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "用户认证的视频文件，格式为base64。",
+          "example": "无",
+          "member": "string",
+          "name": "Video",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "比对相似度，取值范围为0-100，数值越大表示相似度越高。该参数仅“活体比对模式”下返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "89.99",
+          "member": "float",
+          "name": "Similarity",
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "透传参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetFaceIdResultRequest": {
       "document": "GetFaceIdResult请求参数结构体",
       "members": [
@@ -3259,6 +3374,69 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFaceIdTokenIntlRequest": {
+      "document": "GetFaceIdTokenIntl请求参数结构体",
+      "members": [
+        {
+          "document": "表示检测模式，参数取值如下：\n“liveness”：仅活体检测；\n“compare”：活体检测+人脸比对；\n默认值为：“liveness”。",
+          "example": "liveness",
+          "member": "string",
+          "name": "CheckMode",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "表示认证的安全等级，安全等级分为：\n“1”：静默活体；\n“2”：动作活体；\n“3”：光线活体：\n“4”：动作+光线活体；\n默认值为“4”。",
+          "example": "1",
+          "member": "string",
+          "name": "SecureLevel",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "选择“活体比对”模式时，用于比对的照片，当参数CheckMode为“compare”时，该参数必传。",
+          "example": "无",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "业务透传参数",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetFaceIdTokenIntlResponse": {
+      "document": "GetFaceIdTokenIntl返回参数结构体",
+      "members": [
+        {
+          "document": "SdkToken，用来串联核身流程，通过该Token可以拉取核身结果",
+          "example": "0749c982-499e-4d1d-9e6a-103390933016",
+          "member": "string",
+          "name": "SdkToken",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

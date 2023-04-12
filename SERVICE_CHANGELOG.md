@@ -1,33 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+## 人脸核身(faceid) 版本：2018-03-01
 
-### 第 50 次发布
+### 第 28 次发布
 
-发布时间：2023-04-12 01:21:15
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
-
-	* 新增成员：Available
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 云数据库Redis(redis) 版本：2018-04-12
-
-### 第 30 次发布
-
-发布时间：2023-04-12 01:32:17
+发布时间：2023-04-13 01:20:22
 
 本次发布包含了以下内容：
 
@@ -35,46 +12,38 @@
 
 新增接口：
 
-* [DescribeBandwidthRange](http://document.tencentcloudapi.woa.com/document/product/239/77453)
-* [RemoveReplicationInstance](http://document.tencentcloudapi.woa.com/document/product/239/77452)
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 29 次发布
-
-发布时间：2023-04-12 01:33:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CopyFunction](http://document.tencentcloudapi.woa.com/document/product/583/33847)
-
-	* 新增入参：CLSLogsetId, CLSTopicId
-
-
-
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 29 次发布
-
-发布时间：2023-04-12 01:38:47
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [GetFaceIdResultIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77455)
+* [GetFaceIdTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77454)
 
 修改数据结构：
 
-* [CloudStorage](http://document.tencentcloudapi.woa.com/document/product/647/44055#CloudStorage)
+* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
 
-	* 新增成员：PrefixFormat
+	* 新增成员：PassNo, VisaNum
 
+
+
+
+## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
+
+### 第 8 次发布
+
+发布时间：2023-04-13 01:33:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77458)
+* [DescribeBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77456)
+* [SetBackupExpireRule](http://document.tencentcloudapi.woa.com/document/product/596/77457)
+
+新增数据结构：
+
+* [BackupExpireRuleInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupExpireRuleInfo)
+* [BackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupRecords)
 
 
 
@@ -25988,6 +25957,26 @@
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
+### 第 28 次发布
+
+发布时间：2023-04-13 01:20:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GetFaceIdResultIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77455)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GetFaceIdTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77454)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改数据结构：
+
+* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
+
+	* 新增成员：PassNo, VisaNum
+
+
 ### 第 27 次发布
 
 发布时间：2023-03-15 01:24:56
@@ -39598,8 +39587,8 @@
 
 新增接口：
 
-* [[DescribeBandwidthRange](http://document.tencentcloudapi.woa.com/document/product/239/77453)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RemoveReplicationInstance](http://document.tencentcloudapi.woa.com/document/product/239/77452)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBandwidthRange](http://document.tencentcloudapi.woa.com/document/product/239/77453)
+* [RemoveReplicationInstance](http://document.tencentcloudapi.woa.com/document/product/239/77452)
 
 ### 第 29 次发布
 
@@ -44044,6 +44033,25 @@
 
 
 ## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
+
+### 第 8 次发布
+
+发布时间：2023-04-13 01:33:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeleteBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77458)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77456)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SetBackupExpireRule](http://document.tencentcloudapi.woa.com/document/product/596/77457)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BackupExpireRuleInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupExpireRuleInfo)](http://document.tencentcloudapi.woa.com/document/product/596/39686#[BackupExpireRuleInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupExpireRuleInfo))
+* [[BackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupRecords)](http://document.tencentcloudapi.woa.com/document/product/596/39686#[BackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupRecords))
 
 ### 第 7 次发布
 

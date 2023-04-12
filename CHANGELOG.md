@@ -1,3 +1,52 @@
+# Release 3.0.743.1
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 28 次发布
+
+发布时间：2023-04-13 01:20:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetFaceIdResultIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77455)
+* [GetFaceIdTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77454)
+
+修改数据结构：
+
+* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
+
+	* 新增成员：PassNo, VisaNum
+
+
+
+
+## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
+
+### 第 8 次发布
+
+发布时间：2023-04-13 01:33:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77458)
+* [DescribeBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77456)
+* [SetBackupExpireRule](http://document.tencentcloudapi.woa.com/document/product/596/77457)
+
+新增数据结构：
+
+* [BackupExpireRuleInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupExpireRuleInfo)
+* [BackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupRecords)
+
+
+
 # Release 3.0.742.1
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26

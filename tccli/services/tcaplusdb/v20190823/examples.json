@@ -56,6 +56,14 @@
         "title": "批量创建表"
       }
     ],
+    "DeleteBackupRecords": [
+      {
+        "document": "删除备份记录",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupRecords\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"BackupRecords\": [\n        {\n            \"BackupBatchTime\": \"xx\",\n            \"AppId\": 1,\n            \"TableName\": \"xx\",\n            \"ZoneId\": 1,\n            \"BackupType\": \"xx\",\n            \"FileTag\": \"xx\",\n            \"ShardCount\": 1,\n            \"BackupExpireTime\": \"xx\",\n            \"BackupSuccRate\": \"xx\",\n            \"BackupFileSize\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "删除备份记录"
+      }
+    ],
     "DeleteCluster": [
       {
         "document": "指定集群ID删除TcaplusDB集群。",
@@ -117,6 +125,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"TableGroupId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"Applicant\": \"xx\",\n    \"TableName\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"CensorStatus\": 0,\n    \"ApplyType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Applications\": [\n            {\n                \"Applicant\": \"100000012683\",\n                \"ApplicationId\": \"4-169\",\n                \"ApplicationStatus\": 2,\n                \"ApplicationType\": 2,\n                \"CanCensor\": true,\n                \"CanWithdrawal\": false,\n                \"ClusterId\": \"4\",\n                \"ClusterName\": \"xml_1_ly\",\n                \"CreatedTime\": \"2021-02-25 11:58:37\",\n                \"ExecuteStatus\": \"-1\",\n                \"ExecuteUser\": \"222\",\n                \"TableGroupId\": \"1\",\n                \"TableGroupName\": \"zone_1_1\",\n                \"TableInstanceId\": \"null\",\n                \"TableName\": \"add_table10\",\n                \"TaskId\": \"0\",\n                \"UpdateTime\": \"2021-02-25 11:58:37\"\n            }\n        ],\n        \"RequestId\": \"fdsfdsfdsfdsf\",\n        \"TotalCount\": 92\n    }\n}",
+        "title": "获取审批申请"
+      }
+    ],
+    "DescribeBackupRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupRecords\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"ClusterId\": \"xx\",\n    \"TableGroupId\": \"xx\",\n    \"TableName\": \"xx\",\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 92,\n        \"BackupRecords\": [\n            {\n                \"BackupBatchTime\": \"xx\",\n                \"AppId\": 1,\n                \"TableName\": \"xx\",\n                \"ZoneId\": 1,\n                \"BackupType\": \"xx\",\n                \"FileTag\": \"xx\",\n                \"ShardCount\": 1,\n                \"BackupExpireTime\": \"xx\",\n                \"BackupSuccRate\": \"xx\",\n                \"BackupFileSize\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取审批申请"
       }
     ],
@@ -372,6 +388,14 @@
         "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackTables\n<公共请求参数>\n\n{\n    \"RollbackTime\": \"2019-08-29 10:00:00\",\n    \"ClusterId\": \"5674209986\",\n    \"Mode\": \"xx\",\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"PROTO\",\n            \"TableGroupId\": \"101\",\n            \"FileExtType\": \"txt\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_example\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"uin%20name%0A1%20calvin%0A2%20jacob%0A3%20matthew%0A%0A\",\n            \"FileName\": \"tb_example_key1\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128a5622-0de1-41ed-9850-483944f11370\",\n        \"TableResults\": [\n            {\n                \"Error\": null,\n                \"FileId\": \"604\",\n                \"TableGroupId\": \"101\",\n                \"SuccKeyNum\": 3,\n                \"TableIdlType\": \"PROTO\",\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": null,\n                \"TaskId\": \"5674209986-1212\",\n                \"TaskIds\": null,\n                \"TotalKeyNum\": 3\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "表格按主键回档"
+      }
+    ],
+    "SetBackupExpireRule": [
+      {
+        "document": "新增、删除、修改备份过期策略",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetBackupExpireRule\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"BackupExpireRules\": [\n        {\n            \"ExpireDay\": 1,\n            \"OperType\": 1,\n            \"TableGroupId\": \"xx\",\n            \"TableName\": \"xx\",\n            \"FileTag\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "新增、删除、修改备份过期策略"
       }
     ],
     "SetTableDataFlow": [

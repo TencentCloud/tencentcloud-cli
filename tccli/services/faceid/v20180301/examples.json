@@ -200,12 +200,28 @@
         "title": "获取结果成功时"
       }
     ],
+    "GetFaceIdResultIntl": [
+      {
+        "document": "获取核身结果",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdResultIntl\n<公共请求参数>\n\n{\n    \"SdkToken\": \"aeee6d62-b2b2-4634-9662-919a5ac729ab\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"Success\",\n        \"BestFrame\": \"AAAAHGZ0eXBtcDQyAAAAAWlzb2...\",\n        \"Video\": \"/9j/4AAQSkZJRgABAQAASABIAAD/4QBMR...\",\n        \"Similarity\": 98.8,\n        \"Extra\": \"abc\",\n        \"RequestId\": \"aea12d62-b2b2-4634-9662-919a5ac729ab\"\n    }\n}",
+        "title": "获取结果成功"
+      }
+    ],
     "GetFaceIdToken": [
       {
         "document": "获取 SDK 核验 token",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdToken\n<公共请求参数>\n\n{\n    \"CompareLib\": \"BUSINESS\",\n    \"IdCard\": \"xxxxxxxxxxxxxxxxx\",\n    \"Name\": \"xxxxxxxxxxxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"asdasdadasdasd\",\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\n    }\n}",
         "title": "获取token成功"
+      }
+    ],
+    "GetFaceIdTokenIntl": [
+      {
+        "document": "\t\n获取 SDK 核验 token",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdTokenIntl\n<公共请求参数>\n\n{\n    \"CheckMode\": \"liveness\",\n    \"SecureLevel\": \"4\",\n    \"Extra\": \"idxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c27f8a53-1766-4d62-84fc-c400843e9e21\",\n        \"SdkToken\": \"91BF5AD0-C5C9-41CC-9562-DB35BBA2712D\"\n    }\n}",
+        "title": "获取Token"
       }
     ],
     "GetLiveCode": [
