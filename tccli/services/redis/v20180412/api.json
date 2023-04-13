@@ -309,7 +309,7 @@
       "status": "online"
     },
     "DescribeParamTemplateInfo": {
-      "document": "查询参数模板详情。",
+      "document": "本接口（DescribeParamTemplateInfo）用于查询参数模板详情。",
       "input": "DescribeParamTemplateInfoRequest",
       "name": "查询参数模板详情",
       "output": "DescribeParamTemplateInfoResponse",
@@ -948,10 +948,10 @@
       "usage": "out"
     },
     "BackupLimitVpcItem": {
-      "document": "自定义的备份文件下载地址的 VPC 信息。",
+      "document": "已配置的备份文件下载地址对应的 VPC 信息。",
       "members": [
         {
-          "document": "自定义下载备份文件的VPC 所属地域。",
+          "document": "备份文件的下载地址对应VPC 所属的地域。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -960,7 +960,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "自定义下载备份文件的 VPC 列表。",
+          "document": "备份文件下载地址的 VPC 列表。",
           "example": "[\"vpc-b3ksv7yt\", \"vpc-a9pl9fiu\"]",
           "member": "string",
           "name": "VpcList",
@@ -4082,8 +4082,7 @@
       "document": "DescribeParamTemplateInfo请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "参数模板 ID。",
+          "document": "指定查询的参数模板 ID。请通过接口[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)获取参数模板列表信息。",
           "example": "crs-cfg-rhlppeye",
           "member": "string",
           "name": "TemplateId",
@@ -4097,11 +4096,10 @@
       "document": "DescribeParamTemplateInfo返回参数结构体",
       "members": [
         {
-          "document": "实例参数个数",
+          "document": "参数模板的参数数量。",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4110,7 +4108,6 @@
           "example": "crs-cfg-rhlppeye",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4119,34 +4116,30 @@
           "example": "CustomParamTemplate",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "产品类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）",
+          "document": "产品类型。\n- 2：Redis 2.8内存版（标准架构）。\n- 3：CKV 3.2内存版（标准架构）。\n- 4：CKV 3.2内存版（集群架构）。\n- 5：Redis 2.8内存版（单机）。\n- 6：Redis 4.0内存版（标准架构）。\n- 7：Redis 4.0内存版（集群架构）。\n- 8：Redis 5.0内存版（标准架构）。\n- 9：Redis 5.0内存版（集群架构）。\n- 15：Redis 6.2内存版（标准架构）。\n- 16：Redis 6.2内存版（集群架构）。",
           "example": "6",
           "member": "uint64",
           "name": "ProductType",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "参数模板描述",
+          "document": "参数模板描述。",
           "example": "MyCustomParamTemplate",
           "member": "string",
           "name": "Description",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "参数详情",
+          "document": "参数详情。包含：参数的名称，当前运行值，默认值，最大值、最小值、枚举值等信息。",
           "example": "无",
           "member": "ParameterDetail",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5203,7 +5196,7 @@
       "document": "复制组信息",
       "members": [
         {
-          "document": "用户AppID",
+          "document": "用户 APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。",
           "example": "100001",
           "member": "int64",
           "name": "AppId",
@@ -5221,7 +5214,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "复制组 ID。",
+          "document": "复制组 ID。格式如：crs-rpl-deind****。",
           "example": "crs-rpl-deindi7de",
           "member": "string",
           "name": "GroupId",
@@ -6128,8 +6121,8 @@
       "document": "实例参数修改历史",
       "members": [
         {
-          "default": "",
-          "document": "参数名称",
+          "document": "参数名称。",
+          "example": "无",
           "member": "string",
           "name": "ParamName",
           "required": true,
@@ -6137,8 +6130,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "修改前值",
+          "document": "参数修改之前的值。",
+          "example": "无",
           "member": "string",
           "name": "PreValue",
           "required": true,
@@ -6146,8 +6139,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "修改后值",
+          "document": "参数修改之后的值。",
+          "example": "无",
           "member": "string",
           "name": "NewValue",
           "required": true,
@@ -6155,8 +6148,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败",
+          "document": "参数配置状态。\n- 1：参数配置修改中。\n- 2：参数配置修改成功。\n- 3：参数配置修改失败。",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -6164,8 +6157,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "修改时间",
+          "document": "修改时间。",
+          "example": "无",
           "member": "string",
           "name": "ModifyTime",
           "required": true,
@@ -6179,7 +6172,7 @@
       "document": "代理慢查询详情",
       "members": [
         {
-          "document": "慢查询耗时（单位：毫秒）。",
+          "document": "慢查询耗时时长。单位：毫秒。",
           "example": "无",
           "member": "int64",
           "name": "Duration",
@@ -6197,7 +6190,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "命令。",
+          "document": "慢查询的命令。",
           "example": "无",
           "member": "string",
           "name": "Command",
@@ -6206,7 +6199,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "详细命令行信息。",
+          "document": "慢查询详细命令行信息。",
           "example": "无",
           "member": "string",
           "name": "CommandLine",
@@ -6380,7 +6373,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实例类型：<ul><li>1：Redis2.8内存版（集群架构）。</li><li>2：Redis2.8内存版（标准架构）。</li><li>3：CKV 3.2内存版(标准架构)。</li><li>4：CKV 3.2内存版(集群架构)。</li><li>5：Redis2.8内存版（单机）。</li></li><li>6：Redis4.0内存版（标准架构）。</li></li><li>7：Redis4.0内存版（集群架构）。</li></li><li>8：Redis5.0内存版（标准架构）。</li></li><li>9：Redis5.0内存版（集群架构）。</li></ul>",
+          "document": "实例类型。\n- 2：Redis 2.8内存版（标准架构）。\n- 3：CKV 3.2内存版（标准架构）。\n- 4：CKV 3.2内存版（集群架构）。\n- 5：Redis 2.8内存版（单机）。\n- 6：Redis 4.0内存版（标准架构）。\n- 7：Redis 4.0内存版（集群架构）。\n- 8：Redis 5.0内存版（标准架构）。\n- 9：Redis 5.0内存版（集群架构）。\n- 15：Redis 6.2内存版（标准架构）。\n- 16：Redis 6.2内存版（集群架构）。",
           "example": "7",
           "member": "int64",
           "name": "Type",
@@ -6917,7 +6910,7 @@
       "document": "复制组实例",
       "members": [
         {
-          "document": "用户AppID。",
+          "document": "用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。",
           "example": "100001",
           "member": "int64",
           "name": "AppId",
@@ -7070,7 +7063,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实例类型。<ul><li>1：Redis 2.8 内存版（集群架构）。</li><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>5：Redis 2.8 单机版。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li></ul>",
+          "document": "实例类型。\n- 2：Redis 2.8内存版（标准架构）。\n- 3：CKV 3.2内存版（标准架构）。\n- 4：CKV 3.2内存版（集群架构）。\n- 5：Redis 2.8内存版（单机）。\n- 6：Redis 4.0内存版（标准架构）。\n- 7：Redis 4.0内存版（集群架构）。\n- 8：Redis 5.0内存版（标准架构）。\n- 9：Redis 5.0内存版（集群架构）。\n- 15：Redis 6.2内存版（标准架构）。\n- 16：Redis 6.2内存版（集群架构）。",
           "example": "7",
           "member": "int64",
           "name": "ProductType",
@@ -8123,8 +8116,7 @@
       "document": "参数模板信息",
       "members": [
         {
-          "default": "",
-          "document": "参数模板ID",
+          "document": "参数模板 ID。",
           "example": "crs-cfg-rhlppeye",
           "member": "string",
           "name": "TemplateId",
@@ -8133,8 +8125,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数模板名称",
+          "document": "参数模板名称。",
           "example": "CustomParamTemplate",
           "member": "string",
           "name": "Name",
@@ -8143,8 +8134,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数模板描述",
+          "document": "参数模板描述。",
           "example": "MyCustomParamTemplate",
           "member": "string",
           "name": "Description",
@@ -8153,8 +8143,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "产品类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）",
+          "document": "实例类型。\n- 2：Redis 2.8内存版（标准架构）。\n- 3：CKV 3.2内存版（标准架构）。\n- 4：CKV 3.2内存版（集群架构）。\n- 5：Redis 2.8内存版（单机）。\n- 6：Redis 4.0内存版（标准架构）。\n- 7：Redis 4.0内存版（集群架构）。\n- 8：Redis 5.0内存版（标准架构）。\n- 9：Redis 5.0内存版（集群架构）。\n",
           "example": "6",
           "member": "uint64",
           "name": "ProductType",
@@ -8169,8 +8158,7 @@
       "document": "Redis参数模板参数详情",
       "members": [
         {
-          "default": "",
-          "document": "参数名称",
+          "document": "参数名称。",
           "example": "slowlog-log-slower-than",
           "member": "string",
           "name": "Name",
@@ -8179,8 +8167,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数类型",
+          "document": "参数类型。",
           "example": "integer",
           "member": "string",
           "name": "ParamType",
@@ -8189,8 +8176,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数默认值",
+          "document": "参数默认值。",
           "example": "10",
           "member": "string",
           "name": "Default",
@@ -8199,8 +8185,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数描述",
+          "document": "参数描述。",
           "example": "Over this time the command is recorded in us.a negative number d",
           "member": "string",
           "name": "Description",
@@ -8209,8 +8194,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数当前值",
+          "document": "参数当前值。",
           "example": "5",
           "member": "string",
           "name": "CurrentValue",
@@ -8219,8 +8203,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "修改参数后，是否需要重启数据库以使参数生效。可能的值包括：0-不需要重启；1-需要重启",
+          "document": "修改参数后，是否需要重启数据库以使参数生效。\n- 0：不需要重启。\n- 1：需要重启。",
           "example": "0",
           "member": "int64",
           "name": "NeedReboot",
@@ -8229,8 +8212,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "参数允许的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数允许的最大值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Max",
@@ -8239,8 +8221,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "参数允许的最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数允许的最小值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "string",
           "name": "Min",
@@ -8249,8 +8230,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "参数的可选枚举值。如果为非枚举参数，则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数可选枚举值。如果为非枚举参数，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "string",
           "name": "EnumValue",
@@ -8555,8 +8535,7 @@
       "document": "单个实例信息",
       "members": [
         {
-          "default": "",
-          "document": "实例名称",
+          "document": "实例名称。",
           "example": "InstanceName",
           "member": "string",
           "name": "InstanceName",
@@ -8565,8 +8544,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例id",
+          "document": "实例 ID。",
           "example": "crs-xxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -8575,8 +8553,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "用户id",
+          "document": "用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。",
           "example": "000000000",
           "member": "int64",
           "name": "AppId",
@@ -8585,8 +8562,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例所属项目id",
+          "document": "实例所属项目 ID。",
           "example": "000000000",
           "member": "int64",
           "name": "ProjectId",
@@ -8595,8 +8571,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例接入区域",
+          "document": "实例接入区域。",
           "example": "1",
           "member": "string",
           "name": "Region",
@@ -8605,8 +8580,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例接入zone",
+          "document": "实例接入可用区。",
           "example": "100001",
           "member": "string",
           "name": "Zone",
@@ -8615,8 +8589,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例网络id",
+          "document": "实例私有网络 ID。",
           "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
@@ -8625,8 +8598,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "子网id",
+          "document": "私有网络所属子网 ID。",
           "example": "sub-vcp-xxx",
           "member": "string",
           "name": "SubnetId",
@@ -8635,8 +8607,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例状态信息，1-流程中 ,2-运行中, -2-实例已隔离 ,-3-实例待回收, -4-实例已删除",
+          "document": "实例状态信息。\n- 1-流程中。\n- 2-运行中。\n- -2-实例已隔离。\n- -3-实例待回收。\n- -4-实例已删除。",
           "example": "1",
           "member": "string",
           "name": "Status",
@@ -8645,8 +8616,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例网络ip",
+          "document": "实例私有网络 IP 地址。",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Vips",
@@ -8655,8 +8625,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例网络端口",
+          "document": "实例网络端口。",
           "example": "6379",
           "member": "int64",
           "name": "Vport",
@@ -8665,8 +8634,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例创建时间",
+          "document": "实例创建时间。",
           "example": "yyyy-MM-dd",
           "member": "string",
           "name": "Createtime",
@@ -8675,8 +8643,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "计费类型，0-按量计费，1-包年包月",
+          "document": "计费类型。\n- 0：按量计费。\n- 1：包年包月。",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -8685,8 +8652,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "网络类型，0-基础网络，1-VPC网络",
+          "document": "网络类型。\n- 0：基础网络。\n- 1：VPC 网络。",
           "example": "1",
           "member": "int64",
           "name": "NetType",
@@ -9158,8 +9124,8 @@
       "document": "API购买实例绑定标签",
       "members": [
         {
-          "default": "",
-          "document": "标签key",
+          "document": "标签Key。",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -9167,8 +9133,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "标签value",
+          "document": "标签 Key 对应的 Value。",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
           "required": true,

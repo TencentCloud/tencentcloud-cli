@@ -49,6 +49,13 @@
       "output": "CreateTablesResponse",
       "status": "online"
     },
+    "DeleteBackupRecords": {
+      "document": "删除手工备份",
+      "input": "DeleteBackupRecordsRequest",
+      "name": "删除手工备份",
+      "output": "DeleteBackupRecordsResponse",
+      "status": "online"
+    },
     "DeleteCluster": {
       "document": "删除TcaplusDB集群，必须在集群所属所有资源（包括表格组，表）都已经释放的情况下才会成功。",
       "input": "DeleteClusterRequest",
@@ -103,6 +110,13 @@
       "input": "DescribeApplicationsRequest",
       "name": "获取审批管理的申请单",
       "output": "DescribeApplicationsResponse",
+      "status": "online"
+    },
+    "DescribeBackupRecords": {
+      "document": "查询备份记录\n\n查询集群级别时， 将TableGroupId设置为\"-1\", 将TableName设置为\"-1\"\n查询集群+表格组级别时， 将TableName设置为\"-1\"\n查询集群+表格组+表格级别时， 都不能设置为“-1”",
+      "input": "DescribeBackupRecordsRequest",
+      "name": "查询备份记录",
+      "output": "DescribeBackupRecordsResponse",
       "status": "online"
     },
     "DescribeClusterTags": {
@@ -320,6 +334,13 @@
       "input": "RollbackTablesRequest",
       "name": "表格数据回档",
       "output": "RollbackTablesResponse",
+      "status": "online"
+    },
+    "SetBackupExpireRule": {
+      "document": "新增、删除、修改备份过期策略， ClusterId必须为具体的集群Id（appid）",
+      "input": "SetBackupExpireRuleRequest",
+      "name": "新增、删除、修改备份过期策略",
+      "output": "SetBackupExpireRuleResponse",
       "status": "online"
     },
     "SetTableDataFlow": {
@@ -635,6 +656,168 @@
         }
       ],
       "usage": "in"
+    },
+    "BackupExpireRuleInfo": {
+      "document": "备份保留策略详情\n集群策略： ClueterId=集群Id， TableGroupId=-1,  TableName=\"-1\"\n集群+表格组策略： ClueterId=集群Id， TableGroupId=表格组Id,  TableName=\"-1\"\n集群+表格组+表格策略： ClueterId=集群Id， TableGroupId=表格组Id,  TableName=\"表格名\"\n\nFileTag=0 txh引擎文件， =1 ulog流水文件， 当要设置为=1时， 这两项不可变 TableGroupId=-1和TableName=\"-1\"\nExpireDay为大于等于1，小于999的整形数字\nOperType=0 代表动作为新增， =1 代表动作为删除， =2 代表动作为修改， 其中0和2可以混用，后端实现兼容",
+      "members": [
+        {
+          "default": "",
+          "document": "所属表格组ID",
+          "example": "0",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表名称",
+          "example": "0",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件标签，见上面描述",
+          "example": "0",
+          "member": "uint64",
+          "name": "FileTag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "淘汰天数，见上面描述",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型，见上面描述",
+          "example": "0",
+          "member": "uint64",
+          "name": "OperType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "BackupRecords": {
+      "document": "备份记录\n作为出参时，每个字段都会填充\n作为入参时， 原封不动将每个字段填回结构体， 注意只有FIleTag=OSDATA才可以调用此接口",
+      "members": [
+        {
+          "default": "",
+          "document": "表格组ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表名称",
+          "example": "0",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份源",
+          "example": "0",
+          "member": "string",
+          "name": "BackupType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件标签：TCAPLUS_FULL或OSDATA",
+          "example": "0",
+          "member": "string",
+          "name": "FileTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "ShardCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份批次日期",
+          "example": "0",
+          "member": "string",
+          "name": "BackupBatchTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件汇总大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "BackupFileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份成功率",
+          "example": "0",
+          "member": "string",
+          "name": "BackupSuccRate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件过期时间",
+          "example": "0",
+          "member": "string",
+          "name": "BackupExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ClearTablesRequest": {
       "document": "ClearTables请求参数结构体",
@@ -1503,6 +1686,51 @@
       ],
       "type": "object"
     },
+    "DeleteBackupRecordsRequest": {
+      "document": "DeleteBackupRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除备份记录的所在集群ID",
+          "example": "5674209986",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待删除备份记录的详情",
+          "example": "无",
+          "member": "BackupRecords",
+          "name": "BackupRecords",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBackupRecordsResponse": {
+      "document": "DeleteBackupRecords返回参数结构体",
+      "members": [
+        {
+          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClusterRequest": {
       "document": "DeleteCluster请求参数结构体",
       "members": [
@@ -1921,6 +2149,87 @@
         },
         {
           "document": "申请单个数",
+          "example": "92",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupRecordsRequest": {
+      "document": "DescribeBackupRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID，用于获取指定集群的单据",
+          "example": "10001",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "12",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "表格组id，用于过滤",
+          "example": "xx",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表格名，用于过滤",
+          "example": "xx",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupRecordsResponse": {
+      "document": "DescribeBackupRecords返回参数结构体",
+      "members": [
+        {
+          "document": "备份记录详情",
+          "example": "无",
+          "member": "BackupRecords",
+          "name": "BackupRecords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回记录条数",
           "example": "92",
           "member": "int64",
           "name": "TotalCount",
@@ -4781,6 +5090,51 @@
         }
       ],
       "usage": "out"
+    },
+    "SetBackupExpireRuleRequest": {
+      "document": "SetBackupExpireRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表所属集群实例ID",
+          "example": "5674209986",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "淘汰策略数组",
+          "example": "无",
+          "member": "BackupExpireRuleInfo",
+          "name": "BackupExpireRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetBackupExpireRuleResponse": {
+      "document": "SetBackupExpireRule返回参数结构体",
+      "members": [
+        {
+          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SetTableDataFlowRequest": {
       "document": "SetTableDataFlow请求参数结构体",

@@ -3,7 +3,7 @@
     "CancelFlow": {
       "document": "用于撤销签署流程\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n注：如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同。",
       "input": "CancelFlowRequest",
-      "name": "撤销签署流程",
+      "name": "撤销单个签署流程",
       "output": "CancelFlowResponse",
       "status": "online"
     },
@@ -15,9 +15,9 @@
       "status": "online"
     },
     "CreateBatchCancelFlowUrl": {
-      "document": "电子签企业版：指定需要批量撤回的签署流程Id，获取批量撤销链接\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
+      "document": "指定需要批量撤回的签署流程Id，获取批量撤销链接\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
       "input": "CreateBatchCancelFlowUrlRequest",
-      "name": "获取批量撤销签署流程链接",
+      "name": "批量撤销签署流程",
       "output": "CreateBatchCancelFlowUrlResponse",
       "status": "online"
     },
@@ -31,14 +31,14 @@
     "CreateDocument": {
       "document": "创建签署流程电子文档\n适用场景：见创建签署流程接口。\n注：该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。是“发起流程”接口的前置接口。",
       "input": "CreateDocumentRequest",
-      "name": "创建电子文档",
+      "name": "模板发起合同-创建电子文档",
       "output": "CreateDocumentResponse",
       "status": "online"
     },
     "CreateFlow": {
       "document": "创建签署流程\n适用场景：在标准制式的合同场景中，可通过提前预制好模板文件，每次调用模板文件的id，补充合同内容信息及签署信息生成电子合同。\n注：该接口是通过模板生成合同流程的前置接口，先创建一个不包含签署文件的流程。配合“创建电子文档”接口和“发起流程”接口使用。",
       "input": "CreateFlowRequest",
-      "name": "创建签署流程",
+      "name": "模板发起合同-创建签署流程",
       "output": "CreateFlowResponse",
       "status": "online"
     },
@@ -78,23 +78,23 @@
       "status": "online"
     },
     "CreateFlowSignUrl": {
-      "document": "创建签署链接，请联系客户经理申请使用",
+      "document": "创建集成页面签署链接，请联系客户经理申请使用",
       "input": "CreateFlowSignUrlRequest",
-      "name": "创建签署链接",
+      "name": "获取集成页面签署链接",
       "output": "CreateFlowSignUrlResponse",
       "status": "online"
     },
     "CreateIntegrationEmployees": {
       "document": "创建员工,如需在此接口提醒员工实名，入参Employees的OpenId不传",
       "input": "CreateIntegrationEmployeesRequest",
-      "name": "创建员工",
+      "name": "创建企业员工",
       "output": "CreateIntegrationEmployeesResponse",
       "status": "online"
     },
     "CreateIntegrationUserRoles": {
-      "document": "集成版绑定员工角色",
+      "document": "绑定员工与对应角色",
       "input": "CreateIntegrationUserRolesRequest",
-      "name": "集成版绑定员工角色",
+      "name": "绑定员工角色",
       "output": "CreateIntegrationUserRolesResponse",
       "status": "online"
     },
@@ -108,7 +108,7 @@
     "CreatePrepareFlow": {
       "document": "创建快速发起流程\n适用场景：用户通过API 合同文件及签署信息，并可通过我们返回的URL在页面完成签署控件等信息的编辑与确认，快速发起合同.\n注：该接口文件的resourceId 是通过上传文件之后获取的。",
       "input": "CreatePrepareFlowRequest",
-      "name": "创建快速发起流程",
+      "name": "通过页面快速发起签署流程",
       "output": "CreatePrepareFlowResponse",
       "status": "online"
     },
@@ -127,16 +127,16 @@
       "status": "online"
     },
     "CreateSchemeUrl": {
-      "document": "获取小程序跳转链接\n\n适用场景：如果需要签署人在自己的APP、小程序、H5应用中签署，可以通过此接口获取跳转腾讯电子签小程序的签署跳转链接。\n\n注：如果签署人是在PC端扫码签署，可以通过生成跳转链接自主转换成二维码，让签署人在PC端扫码签署。\n\n\n跳转到小程序的实现，参考官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）\n\n\n如您需要自主配置小程序跳转链接，请参考: <a href=\"https://cloud.tencent.com/document/product/1323/74774\">跳转小程序链接配置说明</a>",
+      "document": "获取小程序签署链接\n\n适用场景：如果需要签署人在自己的APP、小程序、H5应用中签署，可以通过此接口获取跳转腾讯电子签小程序的签署跳转链接。\n\n注：如果签署人是在PC端扫码签署，可以通过生成跳转链接自主转换成二维码，让签署人在PC端扫码签署。\n\n\n跳转到小程序的实现，参考官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）\n\n\n如您需要自主配置小程序跳转链接，请参考: <a href=\"https://cloud.tencent.com/document/product/1323/74774\">跳转小程序链接配置说明</a>",
       "input": "CreateSchemeUrlRequest",
-      "name": "获取小程序跳转链接",
+      "name": "获取小程序签署链接",
       "output": "CreateSchemeUrlResponse",
       "status": "online"
     },
     "CreateSealPolicy": {
       "document": "对企业员工进行印章授权",
       "input": "CreateSealPolicyRequest",
-      "name": "印章授权",
+      "name": "创建印章授权",
       "output": "CreateSealPolicyResponse",
       "status": "online"
     },
@@ -150,21 +150,21 @@
     "DeleteIntegrationEmployees": {
       "document": "移除员工",
       "input": "DeleteIntegrationEmployeesRequest",
-      "name": "移除员工",
+      "name": "移除企业员工",
       "output": "DeleteIntegrationEmployeesResponse",
       "status": "online"
     },
     "DeleteIntegrationRoleUsers": {
-      "document": "解绑用户角色绑定关系",
+      "document": "解绑员工与对应角色关系",
       "input": "DeleteIntegrationRoleUsersRequest",
-      "name": "集成版解绑用户角色",
+      "name": "解绑员工角色",
       "output": "DeleteIntegrationRoleUsersResponse",
       "status": "online"
     },
     "DeleteSealPolicies": {
       "document": "撤销员工持有的印章权限",
       "input": "DeleteSealPoliciesRequest",
-      "name": "撤销员工的印章权限",
+      "name": "撤销印章授权",
       "output": "DeleteSealPoliciesResponse",
       "status": "online"
     },
@@ -204,23 +204,23 @@
       "status": "online"
     },
     "DescribeIntegrationEmployees": {
-      "document": "查询员工信息，每次返回的数据量最大为20",
+      "document": "查询企业员工列表，每次返回的数据量最大为20",
       "input": "DescribeIntegrationEmployeesRequest",
-      "name": "查询员工信息",
+      "name": "查询企业员工列表",
       "output": "DescribeIntegrationEmployeesResponse",
       "status": "online"
     },
     "DescribeIntegrationMainOrganizationUser": {
       "document": "通过子企业影子账号查询主企业员工账号",
       "input": "DescribeIntegrationMainOrganizationUserRequest",
-      "name": "查询集成版主企业员工账号",
+      "name": "查询集团主企业员工账号",
       "output": "DescribeIntegrationMainOrganizationUserResponse",
       "status": "online"
     },
     "DescribeIntegrationRoles": {
-      "document": "查询集成版角色",
+      "document": "查询企业角色列表",
       "input": "DescribeIntegrationRolesRequest",
-      "name": "查询集成版角色",
+      "name": "查询企业角色列表",
       "output": "DescribeIntegrationRolesResponse",
       "status": "online"
     },
@@ -269,21 +269,21 @@
     "ModifyApplicationCallbackInfo": {
       "document": "新增/删除应用callbackinfo\ncallbackinfo包含： 回调地址和签名key\n操作：新增/删除",
       "input": "ModifyApplicationCallbackInfoRequest",
-      "name": "修改应用callbackinfo",
+      "name": "修改企业回调配置",
       "output": "ModifyApplicationCallbackInfoResponse",
       "status": "online"
     },
     "StartFlow": {
       "document": "此接口用于发起流程\n适用场景：见创建签署流程接口。\n注：该接口是“创建电子文档”接口的后置接口，用于激活包含完整合同信息（模板及内容信息）的流程。激活后的流程就是一份待签署的电子合同。",
       "input": "StartFlowRequest",
-      "name": "发起流程",
+      "name": "模板发起合同-发起签署流程",
       "output": "StartFlowResponse",
       "status": "online"
     },
     "UpdateIntegrationEmployees": {
-      "document": "更新集成版员工信息(姓名，手机号，邮件)，用户实名后无法更改姓名与手机号",
+      "document": "更新员工信息(姓名，手机号，邮件)，用户实名后无法更改姓名与手机号",
       "input": "UpdateIntegrationEmployeesRequest",
-      "name": "更新集成版员工信息",
+      "name": "更新企业员工信息",
       "output": "UpdateIntegrationEmployeesResponse",
       "status": "online"
     },
@@ -756,7 +756,6 @@
       "document": "CancelFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "调用方用户信息，userId 必填",
           "example": "无",
           "member": "UserInfo",
@@ -765,7 +764,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "签署流程id",
           "example": "flow-id",
           "member": "string",
@@ -774,7 +772,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "撤销原因，最长200个字符；",
           "example": "cancel",
           "member": "string",
@@ -783,7 +780,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "应用相关信息",
           "example": "无",
           "member": "Agent",
@@ -1119,7 +1115,6 @@
       "document": "CreateBatchCancelFlowUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "调用方用户信息，userId 必填",
           "example": "无",
           "member": "UserInfo",
@@ -1128,7 +1123,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "需要执行撤回的签署流程id数组，最多100个",
           "example": "无",
           "member": "string",
@@ -1147,7 +1141,6 @@
           "example": "无",
           "member": "string",
           "name": "BatchCancelFlowUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1156,7 +1149,6 @@
           "example": "无",
           "member": "string",
           "name": "FailMessages",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1165,7 +1157,6 @@
           "example": "无",
           "member": "string",
           "name": "UrlExpireOn",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2204,7 +2195,6 @@
       "document": "CreatePrepareFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "调用方用户信息，userId 必填",
           "example": "无",
           "member": "UserInfo",
@@ -2213,7 +2203,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "资源Id，通过多文件上传（UploadFiles）接口获得",
           "example": "无",
           "member": "string",
@@ -2222,7 +2211,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "合同名称",
           "example": "无",
           "member": "string",
@@ -2231,7 +2219,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否顺序签署(true:无序签,false:顺序签)",
           "example": "true",
           "member": "bool",
@@ -2240,7 +2227,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后",
           "example": "无",
           "member": "int64",
@@ -2249,7 +2235,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "用户自定义合同类型",
           "example": "无",
           "member": "string",
@@ -2258,7 +2243,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "签署流程参与者信息，最大限制50方",
           "example": "无",
           "member": "FlowCreateApprover",
@@ -2267,7 +2251,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "打开智能添加填写区(默认开启，打开:\"OPEN\" 关闭：\"CLOSE\")",
           "example": "OPEN",
           "member": "string",
@@ -2286,7 +2269,6 @@
           "example": "无",
           "member": "string",
           "name": "Url",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3367,7 +3349,6 @@
       "document": "DescribeIntegrationEmployees请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "操作人信息，userId必填",
           "example": "无",
           "member": "UserInfo",
@@ -3376,7 +3357,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "返回最大数量，最大为20",
           "example": "无",
           "member": "int64",
@@ -3385,7 +3365,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询过滤实名用户，Key为Status，Values为[\"IsVerified\"]\n根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为[\"OpenId\",\"OpenId\",...]",
           "example": "无",
           "member": "Filter",
@@ -3394,7 +3373,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0，最大为20000",
           "example": "无",
           "member": "int64",
@@ -3413,7 +3391,6 @@
           "example": "无",
           "member": "Staff",
           "name": "Employees",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3422,7 +3399,6 @@
           "example": "无",
           "member": "int64",
           "name": "Offset",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3431,7 +3407,6 @@
           "example": "无",
           "member": "int64",
           "name": "Limit",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3440,7 +3415,6 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

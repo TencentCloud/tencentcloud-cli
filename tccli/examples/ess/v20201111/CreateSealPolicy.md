@@ -14,18 +14,14 @@ tccli ess CreateSealPolicy --cli-unfold-argument  \
     --Operator.OpenId string \
     --Operator.ProxyIp 192.6.5.45 \
     --Expired 123 \
-    --Users.0.OpenId xx \
-    --Users.0.ClientIp xx \
-    --Users.0.UserId xx \
-    --Users.0.Channel xx \
-    --Users.0.ProxyIp xx
+    --Users.0.UserId test
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "test",
         "UserIds": []
     }
 }

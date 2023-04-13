@@ -1,6 +1,6 @@
-**Example 1: 创建签署流程。**
+**Example 1: 创建签署流程**
 
-
+通过页面创建签署流程
 
 Input: 
 
@@ -10,8 +10,8 @@ tccli ess CreatePrepareFlow --cli-unfold-argument  \
     --FlowName 测试 \
     --Unordered False \
     --IntelligentStatus OPEN \
-    --UserFlowTypeId xx \
-    --ResourceId xx \
+    --UserFlowTypeId test \
+    --ResourceId test \
     --Deadline 1604912664 \
     --Approvers.0.ApproverType 0 \
     --Approvers.0.OrganizationName ***有限公司 \

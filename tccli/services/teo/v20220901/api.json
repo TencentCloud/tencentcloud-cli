@@ -9730,7 +9730,6 @@
       "document": "ModifySecurityPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "站点Id。",
           "example": "test.com",
           "member": "string",
@@ -9739,7 +9738,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "安全配置。",
           "example": "无",
           "member": "SecurityConfig",
@@ -9748,7 +9746,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。",
           "example": "a.test.com",
           "member": "string",
@@ -9757,7 +9754,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。",
           "example": "1",
           "member": "string",
@@ -13834,7 +13830,6 @@
       "document": "Waf规则",
       "members": [
         {
-          "default": "",
           "document": "托管规则开关，取值有：\n<li> on：开启；</li>\n<li> off：关闭。</li>",
           "example": "on",
           "member": "string",
@@ -13844,8 +13839,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "黑名单，ID参考接口 [DescribeSecurityGroupManagedRules](https://tcloud4api.woa.com/document/product/1657/80807?!preview&!document=1)。",
+          "document": "黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。",
           "example": "[0,1]",
           "member": "int64",
           "name": "BlockRuleIDs",
@@ -13854,8 +13848,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。ID参考接口 [DescribeSecurityGroupManagedRules](https://tcloud4api.woa.com/document/product/1657/80807?!preview&!document=1)。",
+          "document": "观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。",
           "example": "[4,5]",
           "member": "int64",
           "name": "ObserveRuleIDs",

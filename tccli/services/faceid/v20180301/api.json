@@ -1605,6 +1605,24 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "港澳台居住证通行证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PassNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "港澳台居住证签发次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "VisaNum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

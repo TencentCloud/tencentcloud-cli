@@ -977,13 +977,12 @@
     "ChcDeployExtraConfig": {
       "document": "chc部署网络minos引导配置。",
       "members": [],
-      "usage": "in"
+      "usage": "both"
     },
     "ChcHost": {
       "document": "CHC物理服务器信息",
       "members": [
         {
-          "default": "",
           "document": "CHC物理服务器ID。",
           "example": "chc-1a2b3c4d",
           "member": "string",
@@ -993,7 +992,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名称。",
           "example": "托管服务器1",
           "member": "string",
@@ -1003,7 +1001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务器序列号。",
           "example": "sn34asdfabd",
           "member": "string",
@@ -1013,8 +1010,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "CHC的状态<br/>\n<ul>\n<li>REGISTERED: 设备已录入。还未配置带外和部署网络</li>\n<li>VPC_READY: 已配置带外和部署网络</li>\n<li>PREPARED: 可分配云主机</li>\n<li>ONLINE: 已分配云主机</li>\n</ul>",
+          "document": "CHC的状态<br/>\n<ul>\n<li>INIT: 设备已录入。还未配置带外和部署网络</li>\n<li>READY: 已配置带外和部署网络</li>\n<li>PREPARED: 可分配云主机</li>\n<li>ONLINE: 已分配云主机</li>\n<li>OPERATING: 设备操作中，如正在配置带外网络等。</li>\n<li>CLEAR_NETWORK_FAILED: 清理带外和部署网络失败</li>\n</ul>",
           "example": "ONLINE",
           "member": "string",
           "name": "InstanceState",
@@ -1023,7 +1019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CHC_HS1",
           "member": "string",
@@ -1033,7 +1028,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "所属可用区",
           "example": "NA",
           "member": "Placement",
@@ -1043,7 +1037,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "带外网络。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "VirtualPrivateCloud",
@@ -1053,7 +1046,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "带外网络Ip。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.12.10.34",
           "member": "string",
@@ -1063,7 +1055,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "带外网络安全组Id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"sg-1a2b34af\"]",
           "member": "string",
@@ -1073,7 +1064,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署网络。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NA",
           "member": "VirtualPrivateCloud",
@@ -1083,7 +1073,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署网络Ip。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.12.10.34",
           "member": "string",
@@ -1093,7 +1082,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署网络安全组Id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"sg-1a2b34af\"]",
           "member": "string",
@@ -1103,7 +1091,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关联的云主机Id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-34as43at",
           "member": "string",
@@ -1113,7 +1100,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器导入的时间。",
           "example": "2020-03-10T02:43:51Z",
           "member": "string",
@@ -1123,7 +1109,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机型的硬件描述，分别为CPU核数，内存容量和磁盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "128C 22GB 2424GB",
           "member": "string",
@@ -1133,7 +1118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "CHC物理服务器的CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "128",
           "member": "int64",
@@ -1143,7 +1127,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "CHC物理服务器的内存大小，单位为GB\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "22",
           "member": "int64",
@@ -1153,7 +1136,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "CHC物理服务器的磁盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1163,7 +1145,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "带外网络下分配的MAC地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "51:94:20:9C:B1:CB",
           "member": "string",
@@ -1173,7 +1154,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署网络下分配的MAC地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "51:94:20:9C:B1:CB",
           "member": "string",
@@ -1183,7 +1163,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "设备托管类型。\nHOSTING: 托管\nTENANT: 租赁\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HOSTING",
           "member": "string",
@@ -1193,7 +1172,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "chc dhcp选项，用于minios调试\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ChcDeployExtraConfig",
@@ -3374,7 +3352,6 @@
       "document": "DescribeInstancesStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "按照一个或者多个实例ID查询。实例ID形如：`ins-11112222`。此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的`ids.N`一节）。每次请求的实例的上限为100。",
           "example": "[\"ins-r8hr2upy\\r\\n\",\"ins-5d8a23rs\\r\\n\"]",
           "member": "string",
@@ -3383,7 +3360,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -3392,7 +3368,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "2",
           "member": "int64",
@@ -3411,7 +3386,6 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3420,7 +3394,6 @@
           "example": "无",
           "member": "InstanceStatus",
           "name": "InstanceStatusSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
