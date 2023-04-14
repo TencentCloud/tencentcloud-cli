@@ -29,14 +29,14 @@
       "status": "online"
     },
     "BizLicenseOCR": {
-      "document": "本接口支持快速精准识别营业执照上的字段，包括统一社会信用代码、公司名称、经营场所、主体类型、法定代表人、注册资金、组成形式、成立日期、营业期限和经营范围等字段。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "本接口支持快速精准识别营业执照上的字段，包括统一社会信用代码、公司名称、主体类型、法定代表人、注册资本、组成形式、成立日期、营业期限和经营范围等字段。\n\n默认接口请求频率限制：10次/秒。",
       "input": "BizLicenseOCRRequest",
       "name": "营业执照识别",
       "output": "BizLicenseOCRResponse",
       "status": "online"
     },
     "BusInvoiceOCR": {
-      "document": "本接口支持识别公路汽车客票的发票代码、发票号码、日期、姓名、票价等字段。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "本接口支持识别公路汽车客票关键字段的识别，包括发票代码、发票号码、日期、票价、始发地、目的地、姓名、时间、发票消费类型、身份证号、省、市、开票日期、乘车地点、检票口、客票类型、车型、座位号、车次等。\n\n默认接口请求频率限制：5次/秒。",
       "input": "BusInvoiceOCRRequest",
       "name": "汽车票识别",
       "output": "BusInvoiceOCRResponse",
@@ -99,7 +99,7 @@
       "status": "online"
     },
     "EnterpriseLicenseOCR": {
-      "document": "本接口支持智能化识别各类企业登记证书、许可证书、企业执照、三证合一类证书，结构化输出统一社会信用代码、公司名称、法定代表人、公司地址、注册资金、企业类型、经营范围等关键字段。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "本接口支持智能化识别各类企业登记证书、许可证书、企业执照、三证合一类证书，结构化输出统一社会信用代码、公司名称、法定代表人、公司地址、注册资金、企业类型、经营范围、成立日期、有效期、开办资金、经费来源、举办单位等关键字段。\n\n默认接口请求频率限制：5次/秒。",
       "input": "EnterpriseLicenseOCRRequest",
       "name": "企业证照识别",
       "output": "EnterpriseLicenseOCRResponse",
@@ -190,7 +190,7 @@
       "status": "online"
     },
     "HmtResidentPermitOCR": {
-      "document": "港澳台居住证OCR支持港澳台居住证正反面全字段内容检测识别功能，包括姓名、性别、出生日期、地址、身份证ID、签发机关、有效期限、签发次数、通行证号码关键字段识别。可以应用于港澳台居住证信息有效性校验场景，例如银行开户、用户注册等场景。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "港澳台居住证OCR支持港澳台居住证正反面全字段内容检测识别功能，包括姓名、性别、出生日期、地址、身份证号、签发机关、有效期限、签发次数、通行证号码关键字段识别。可以应用于港澳台居住证信息识别场景，例如银行开户、用户注册等。\n\n默认接口请求频率限制：20次/秒。",
       "input": "HmtResidentPermitOCRRequest",
       "name": "港澳台居住证识别",
       "output": "HmtResidentPermitOCRResponse",
@@ -225,7 +225,7 @@
       "status": "online"
     },
     "InvoiceGeneralOCR": {
-      "document": "本接口支持对通用机打发票的发票代码、发票号码、日期、购买方识别号、销售方识别号、校验码、小写金额等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "本接口支持对通用机打发票的发票代码、发票号码、日期、合计金额(小写)、合计金额(大写)、购买方识别号、销售方识别号、校验码、购买方名称、销售方名称、时间、种类、发票消费类型、省、市、是否有公司印章、发票名称、购买方地址、电话、销售方地址、电话、购买方开户行及账号、销售方开户行及账号、经办人取票用户、经办人支付信息、经办人商户号、经办人订单号、货物或应税劳务、服务名称、数量、单价、税率、税额、金额、单位、规格型号、合计税额、合计金额、备注、收款人、复核、开票人、密码区、行业分类等字段的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "InvoiceGeneralOCRRequest",
       "name": "通用机打发票识别",
       "output": "InvoiceGeneralOCRResponse",
@@ -246,7 +246,7 @@
       "status": "online"
     },
     "MLIDPassportOCR": {
-      "document": "本接口支持中国港澳台地区以及其他国家、地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "本接口支持中国港澳台地区以及其他国家、地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍、国家地区代码，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。\n\n默认接口请求频率限制：5次/秒。",
       "input": "MLIDPassportOCRRequest",
       "name": "护照识别（港澳台地区及境外护照）",
       "output": "MLIDPassportOCRResponse",
@@ -365,7 +365,7 @@
       "status": "online"
     },
     "RecognizePhilippinesVoteIDOCR": {
-      "document": "菲律宾VoteID识别",
+      "document": "本接口支持菲律宾VoteID识别，识别字段包括姓名、姓氏、出生日期、婚姻状况、国籍、地址、地区、菲律宾VoteID的VIN等。\n\n默认接口请求频率限制：20次/秒。",
       "input": "RecognizePhilippinesVoteIDOCRRequest",
       "name": "菲律宾VoteID识别",
       "output": "RecognizePhilippinesVoteIDOCRResponse",
@@ -386,7 +386,7 @@
       "status": "online"
     },
     "RecognizeThaiIDCardOCR": {
-      "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)",
+      "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码、首次领用日期、签发日期等字段。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)",
       "input": "RecognizeThaiIDCardOCRRequest",
       "name": "泰国身份证识别",
       "output": "RecognizeThaiIDCardOCRResponse",
@@ -470,14 +470,14 @@
       "status": "online"
     },
     "TollInvoiceOCR": {
-      "document": "本接口支持对过路过桥费发票的发票代码、发票号码、日期、小写金额等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "本接口支持过路过桥费发票关键字段的识别，包括发票代码、发票号码、日期、金额、入口、出口、时间、发票消费类型、高速标志等。\n\n默认接口请求频率限制：5次/秒。",
       "input": "TollInvoiceOCRRequest",
       "name": "过路过桥费发票识别",
       "output": "TollInvoiceOCRResponse",
       "status": "online"
     },
     "TrainTicketOCR": {
-      "document": "本接口支持火车票全字段的识别，包括编号、票价、姓名、座位号、出发时间、出发站、到达站、车次、席别、发票类型及序列号等。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "本接口支持火车票全字段的识别，包括编号、出发站、到达站、出发时间、车次、座位号、姓名、票价、席别、身份证号、发票消费类型、序列号、加收票价、手续费、大写金额、售票站、原票价、发票类型、收据号码、是否仅供报销使用等字段的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "TrainTicketOCRRequest",
       "name": "火车票识别",
       "output": "TrainTicketOCRResponse",
@@ -505,7 +505,7 @@
       "status": "online"
     },
     "VatRollInvoiceOCR": {
-      "document": "本接口支持对增值税发票（卷票）的发票代码、发票号码、日期、校验码、合计金额（小写）等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "本接口支持对增值税发票（卷票）关键字段的识别，包括的发票代码、合计金额(小写)、合计金额(大写)、开票日期、发票号码、购买方识别号、销售方识别号、校验码、销售方名称、购买方名称、发票消费类型、省、市、是否有公司印章、单价、金额、数量、服务类型、品名、种类等。\n\n默认接口请求频率限制：5次/秒。",
       "input": "VatRollInvoiceOCRRequest",
       "name": "增值税发票（卷票）识别",
       "output": "VatRollInvoiceOCRResponse",
@@ -561,7 +561,7 @@
       "status": "online"
     },
     "WaybillOCR": {
-      "document": "本接口支持市面上主流版式电子运单的识别，包括收件人和寄件人的姓名、电话、地址以及运单号等字段，精度均处于业界领先水平，识别准确率达到99%以上。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "本接口支持市面上主流版式电子运单的识别，包括收件人和寄件人的姓名、电话、地址以及运单号等字段。\n\n默认接口请求频率限制：10次/秒。",
       "input": "WaybillOCRRequest",
       "name": "运单识别",
       "output": "WaybillOCRResponse",
@@ -1033,7 +1033,6 @@
       "document": "BizLicenseOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -1042,7 +1041,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -1061,7 +1059,6 @@
           "example": "110000012345678",
           "member": "string",
           "name": "RegNum",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1070,7 +1067,6 @@
           "example": "深圳市腾讯计算机系统有限公司",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1079,7 +1075,6 @@
           "example": "人民币600000万元整",
           "member": "string",
           "name": "Capital",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1088,7 +1083,6 @@
           "example": "艾米",
           "member": "string",
           "name": "Person",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1097,7 +1091,6 @@
           "example": "深圳市南山区高新区高新南一路飞亚达大厦",
           "member": "string",
           "name": "Address",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1106,7 +1099,6 @@
           "example": "计算机软、硬件的设计、技术开发、销售(不含专营、专控、专卖商品及限制项目);数据库及计算机网络服务;国内商业、物资供销业(不含专营、专控、专卖商品)",
           "member": "string",
           "name": "Business",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1115,7 +1107,6 @@
           "example": "有限责任公司",
           "member": "string",
           "name": "Type",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1124,7 +1115,6 @@
           "example": "1998年11月至长期",
           "member": "string",
           "name": "Period",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1133,7 +1123,6 @@
           "example": "无",
           "member": "string",
           "name": "ComposingForm",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1142,7 +1131,6 @@
           "example": "1998年11月",
           "member": "string",
           "name": "SetDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1151,7 +1139,6 @@
           "example": "无",
           "member": "int64",
           "name": "RecognizeWarnCode",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1160,7 +1147,6 @@
           "example": "无",
           "member": "string",
           "name": "RecognizeWarnMsg",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2259,7 +2245,6 @@
       "document": "EnterpriseLicenseOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -2268,7 +2253,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
           "member": "string",
@@ -2287,7 +2271,6 @@
           "example": "无",
           "member": "EnterpriseLicenseInfo",
           "name": "EnterpriseLicenseInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2296,7 +2279,6 @@
           "example": "0",
           "member": "float",
           "name": "Angle",
-          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3366,7 +3348,6 @@
       "document": "HmtResidentPermitOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -3375,7 +3356,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -3384,7 +3364,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "FRONT：有照片的一面（人像面），\nBACK：无照片的一面（国徽面），\n该参数如果不填或填错，将为您自动判断正反面。",
           "example": "FRONT",
           "member": "string",
@@ -3403,7 +3382,6 @@
           "example": "李优优",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3412,7 +3390,6 @@
           "example": "女",
           "member": "string",
           "name": "Sex",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3421,7 +3398,6 @@
           "example": "1997/6/2",
           "member": "string",
           "name": "Birth",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3430,7 +3406,6 @@
           "example": "上海市徐汇区古美路1528号A1栋腾讯优图1号",
           "member": "string",
           "name": "Address",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3439,7 +3414,6 @@
           "example": "830000199706020042",
           "member": "string",
           "name": "IdCardNo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3448,7 +3422,6 @@
           "example": "0",
           "member": "int64",
           "name": "CardType",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3457,7 +3430,6 @@
           "example": "2018.09.06-2023.09.06",
           "member": "string",
           "name": "ValidDate",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3466,7 +3438,6 @@
           "example": "合肥市公安局高新分局",
           "member": "string",
           "name": "Authority",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3475,7 +3446,6 @@
           "example": "0",
           "member": "string",
           "name": "VisaNum",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3484,7 +3454,6 @@
           "example": "无",
           "member": "string",
           "name": "PassNo",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6682,7 +6651,6 @@
       "document": "RecognizePhilippinesVoteIDOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "是否返回人像照片。",
           "example": "true",
           "member": "bool",
@@ -6691,7 +6659,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "image",
           "member": "string",
@@ -6700,7 +6667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -6719,7 +6685,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "HeadPortrait",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6728,7 +6693,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "VIN",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6737,7 +6701,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "FirstName",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6746,7 +6709,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "LastName",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6755,7 +6717,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "Birthday",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6764,7 +6725,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "CivilStatus",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6773,7 +6733,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "Citizenship",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6782,7 +6741,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "Address",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6791,7 +6749,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "PrecinctNo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12018,7 +11975,6 @@
       "document": "WaybillOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
@@ -12027,7 +11983,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -12036,7 +11991,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "预检测开关，当待识别运单占整个输入图像的比例较小时，建议打开预检测开关。默认值为false。",
           "example": "无",
           "member": "bool",
@@ -12045,7 +11999,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
           "example": "true",
           "member": "bool",
@@ -12054,7 +12007,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "0",
           "member": "int64",
@@ -12073,7 +12025,6 @@
           "example": "无",
           "member": "TextWaybill",
           "name": "TextDetections",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

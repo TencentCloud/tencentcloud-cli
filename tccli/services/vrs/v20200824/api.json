@@ -399,10 +399,10 @@
       "usage": "out"
     },
     "Words": {
-      "document": "Words",
+      "document": "音频检测提示信息：\n1.检测字是否存在多读、 少读、 错读等\n2.检测准确度和流畅度",
       "members": [
         {
-          "document": "准确度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "准确度 (<75则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
           "name": "PronAccuracy",
@@ -411,7 +411,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "流畅度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流畅度 (<0.95则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
           "name": "PronFluency",
@@ -420,7 +420,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "tag: 0: match, 1: insert, 2: delete, 3: replace, 4: oov, 5: unknown\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tag: \n0: match  匹配\n1: insert   多读\n2: delete  少读\n3: replace 错读\n4: oov  待评估字不在发音评估的词库\n5: unknown 未知错误\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Tag",

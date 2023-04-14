@@ -15,7 +15,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "68fccf1c-c2c7-466a-9f14-1db4bed6054b"
+        "RequestId": "68fccf1c-c2c7-466a-9f14-1db4bed6054b",
+        "Data": "RoomId,Audio,SD,hd,FullHD,2K,4K\ntest_room,1,2,3,4,5,6\n"
     }
 }
 ```

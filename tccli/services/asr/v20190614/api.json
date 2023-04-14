@@ -1053,8 +1053,8 @@
       "document": "自学习模型信息",
       "members": [
         {
-          "default": "",
           "document": "模型名称",
+          "example": "无",
           "member": "string",
           "name": "ModelName",
           "required": true,
@@ -1062,8 +1062,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型文件名称",
+          "example": "无",
           "member": "string",
           "name": "DictName",
           "required": true,
@@ -1071,8 +1071,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型Id",
+          "example": "无",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -1080,8 +1080,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "模型类型，“8k”或者”16k“",
+          "example": "无",
           "member": "string",
           "name": "ModelType",
           "required": true,
@@ -1089,8 +1089,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务类型",
+          "example": "无",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -1098,8 +1098,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "模型状态，-1下线状态，1上线状态, 0训练中, -2 训练失败",
+          "document": "模型状态：\n-2：模型训练失败；\n-1：已下线；\n0：训练中；\n1：已上线；\n3：上线中；\n4：下线中；",
+          "example": "无",
           "member": "int64",
           "name": "ModelState",
           "required": true,
@@ -1107,8 +1107,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最后更新时间",
+          "example": "无",
           "member": "string",
           "name": "AtUpdated",
           "required": true,
@@ -1116,8 +1116,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TagInfos",
           "required": true,

@@ -2950,6 +2950,14 @@
           "name": "HotPeriod",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "webtracking开关； false: 关闭 true： 开启",
+          "example": "false",
+          "member": "bool",
+          "name": "IsWebTracking",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6751,6 +6759,14 @@
           "name": "HotPeriod",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "webtracking开关； false: 关闭 true: 开启",
+          "example": "false",
+          "member": "bool",
+          "name": "IsWebTracking",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
