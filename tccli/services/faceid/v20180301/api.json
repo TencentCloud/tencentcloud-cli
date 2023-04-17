@@ -2970,17 +2970,24 @@
       "document": "意愿核身问答模式结果",
       "members": [
         {
-          "default": "",
-          "document": "意愿核身最终结果：\n0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "意愿核身错误码：\n0: \"成功\"       \n-1: \"参数错误\"    \n-2: \"系统异常\"    \n-101: \"请保持人脸在框内\"    \n-102: \"检测到多张人脸\"   \n-103: \"人脸检测失败\"   \n-104: \"人脸检测不完整\"   \n-105: \"请勿遮挡眼睛\"    \n-106: \"请勿遮挡嘴巴\"     \n-107: \"请勿遮挡鼻子\"     \n-201: \"人脸比对相似度低\"    \n-202: \"人脸比对失败\"    \n-301: \"意愿核验不通过\"   \n-800: \"前端不兼容错误\"    \n-801: \"用户未授权摄像头和麦克风权限\"   \n-802: \"获取视频流失败\"   \n-803: \"用户主动关闭链接/异常断开链接\"   \n-998: \"系统数据异常\"   \n-999: \"系统未知错误，请联系人工核实\"   \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FinalResultDetailCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "意愿核身错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
-          "name": "FinalResultCode",
-          "required": true,
+          "name": "FinalResultMessage",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频base64（其中包含全程问题和回答音频，mp4格式）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2990,7 +2997,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "屏幕截图base64列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3000,7 +3006,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "和答案匹配结果列表\n0：成功，-1：不匹配\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
@@ -3010,7 +3015,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "回答问题语音识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3020,13 +3024,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "答案录音音频\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Audios",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "意愿核身最终结果：\n0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验。建议使用“FinalResultDetailCode”参数获取详细的错误码信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "FinalResultCode",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

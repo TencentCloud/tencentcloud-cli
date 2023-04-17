@@ -42,6 +42,13 @@
       "output": "CreateCfsSnapshotResponse",
       "status": "online"
     },
+    "CreateMigrationTask": {
+      "document": "用于创建迁移任务。\n此接口需提交工单，开启白名单之后才能使用。",
+      "input": "CreateMigrationTaskRequest",
+      "name": "创建迁移任务",
+      "output": "CreateMigrationTaskResponse",
+      "status": "online"
+    },
     "DeleteAutoSnapshotPolicy": {
       "document": "删除快照定期策略",
       "input": "DeleteAutoSnapshotPolicyRequest",
@@ -77,6 +84,13 @@
       "output": "DeleteCfsSnapshotResponse",
       "status": "online"
     },
+    "DeleteMigrationTask": {
+      "document": "用于删除迁移任务。\n此接口需提交工单，开启白名单之后才能使用。",
+      "input": "DeleteMigrationTaskRequest",
+      "name": "删除迁移任务",
+      "output": "DeleteMigrationTaskResponse",
+      "status": "online"
+    },
     "DeleteMountTarget": {
       "document": "本接口（DeleteMountTarget）用于删除挂载点",
       "input": "DeleteMountTargetRequest",
@@ -103,6 +117,13 @@
       "input": "DescribeAvailableZoneInfoRequest",
       "name": "查询区域可用情况",
       "output": "DescribeAvailableZoneInfoResponse",
+      "status": "online"
+    },
+    "DescribeBucketList": {
+      "document": "用于获取数据源桶列表。\n此接口需提交工单，开启白名单之后才能使用。",
+      "input": "DescribeBucketListRequest",
+      "name": "获取对象存储桶列表",
+      "output": "DescribeBucketListResponse",
       "status": "online"
     },
     "DescribeCfsFileSystemClients": {
@@ -154,6 +175,13 @@
       "output": "DescribeCfsSnapshotsResponse",
       "status": "online"
     },
+    "DescribeMigrationTasks": {
+      "document": "用于获取迁移任务列表。\n此接口需提交工单，开启白名单之后才能使用。",
+      "input": "DescribeMigrationTasksRequest",
+      "name": "获取迁移任务列表",
+      "output": "DescribeMigrationTasksResponse",
+      "status": "online"
+    },
     "DescribeMountTargets": {
       "document": "本接口（DescribeMountTargets）用于查询文件系统挂载点信息",
       "input": "DescribeMountTargetsRequest",
@@ -187,6 +215,13 @@
       "input": "SignUpCfsServiceRequest",
       "name": "开通CFS服务",
       "output": "SignUpCfsServiceResponse",
+      "status": "online"
+    },
+    "StopMigrationTask": {
+      "document": "用于终止迁移任务。\n此接口需提交工单，开启白名单之后才能使用。",
+      "input": "StopMigrationTaskRequest",
+      "name": "终止迁移任务",
+      "output": "StopMigrationTaskResponse",
       "status": "online"
     },
     "UnbindAutoSnapshotPolicy": {
@@ -594,6 +629,32 @@
         }
       ],
       "type": "object"
+    },
+    "BucketInfo": {
+      "document": "对象存储桶",
+      "members": [
+        {
+          "default": "",
+          "document": "桶名称",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "桶所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "region",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateAutoSnapshotPolicyRequest": {
       "document": "CreateAutoSnapshotPolicy请求参数结构体",
@@ -1137,6 +1198,152 @@
       ],
       "type": "object"
     },
+    "CreateMigrationTaskRequest": {
+      "document": "CreateMigrationTask请求参数结构体",
+      "members": [
+        {
+          "document": "迁移任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移",
+          "example": "0",
+          "member": "uint64",
+          "name": "MigrationType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "迁移模式，默认为0。0: 全量迁移",
+          "example": "0",
+          "member": "uint64",
+          "name": "MigrationMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "数据源账号的SecretId",
+          "example": "12345",
+          "member": "string",
+          "name": "SrcSecretId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "数据源账号的SecretKey",
+          "example": "12345",
+          "member": "string",
+          "name": "SrcSecretKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "文件系统实例Id",
+          "example": "无",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "文件系统路径",
+          "example": "无",
+          "member": "string",
+          "name": "FsPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖",
+          "example": "0",
+          "member": "uint64",
+          "name": "CoverType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "数据源服务商。COS: 腾讯云COS，OSS: 阿里云OSS，OBS:华为云OBS",
+          "example": "OSS",
+          "member": "string",
+          "name": "SrcService",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "数据源桶名称，名称和地址至少有一个",
+          "example": "无",
+          "member": "string",
+          "name": "BucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "数据源桶地域",
+          "example": "无",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "数据源桶地址，名称和地址至少有一个",
+          "example": "无",
+          "member": "string",
+          "name": "BucketAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "清单地址，迁移方式为清单迁移时必填",
+          "example": "无",
+          "member": "string",
+          "name": "ListAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "目标文件系统名称",
+          "example": "name",
+          "member": "string",
+          "name": "FsName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "源桶路径，默认为/",
+          "example": "cos/",
+          "member": "string",
+          "name": "BucketPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMigrationTaskResponse": {
+      "document": "CreateMigrationTask返回参数结构体",
+      "members": [
+        {
+          "document": "迁移任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAutoSnapshotPolicyRequest": {
       "document": "DeleteAutoSnapshotPolicy请求参数结构体",
       "members": [
@@ -1344,6 +1551,32 @@
       ],
       "type": "object"
     },
+    "DeleteMigrationTaskRequest": {
+      "document": "DeleteMigrationTask请求参数结构体",
+      "members": [
+        {
+          "document": "迁移任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMigrationTaskResponse": {
+      "document": "DeleteMigrationTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteMountTargetRequest": {
       "document": "DeleteMountTarget请求参数结构体",
       "members": [
@@ -1529,6 +1762,64 @@
           "member": "AvailableRegion",
           "name": "RegionZones",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBucketListRequest": {
+      "document": "DescribeBucketList请求参数结构体",
+      "members": [
+        {
+          "document": "数据源服务商。COS: 腾讯云COS，OSS: 阿里云OSS，OBS:华为云OBS",
+          "example": "OSS",
+          "member": "string",
+          "name": "SrcService",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "数据源账号的SecretId\n",
+          "example": "20",
+          "member": "string",
+          "name": "SrcSecretId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "数据源账号的SecretKey",
+          "example": "无",
+          "member": "string",
+          "name": "SrcSecretKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBucketListResponse": {
+      "document": "DescribeBucketList返回参数结构体",
+      "members": [
+        {
+          "document": "桶的数量",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "桶列表",
+          "example": "无",
+          "member": "BucketInfo",
+          "name": "BucketList",
           "type": "list",
           "value_allowed_null": false
         },
@@ -1851,6 +2142,64 @@
           "name": "TotalSize",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMigrationTasksRequest": {
+      "document": "DescribeMigrationTasks请求参数结构体",
+      "members": [
+        {
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "<br><li> taskId\n\n按照【迁移任务id】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> taskName\n\n按照【迁移任务名字】进行模糊搜索过滤。\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMigrationTasksResponse": {
+      "document": "DescribeMigrationTasks返回参数结构体",
+      "members": [
+        {
+          "document": "迁移任务的数量",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "迁移任务详情",
+          "example": "无",
+          "member": "MigrationTaskInfo",
+          "name": "MigrationTasks",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2407,6 +2756,262 @@
         }
       ],
       "usage": "in"
+    },
+    "MigrationTaskInfo": {
+      "document": "CFS数据迁移任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "迁移任务名称",
+          "example": "name",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移任务id",
+          "example": "migrate-001",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移",
+          "example": "0",
+          "member": "uint64",
+          "name": "MigrationType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移模式，默认为0。0: 全量迁移",
+          "example": "0",
+          "member": "uint64",
+          "name": "MigrationMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx-123455",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源桶地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源桶地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xx-12345.cos.ap-shanghai.myqcloud.com",
+          "member": "string",
+          "name": "BucketAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "清单地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xx-12345.cos.ap-shanghai.myqcloud.com/list.csv",
+          "member": "string",
+          "name": "ListAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件系统实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "FsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件系统实例Id",
+          "example": "无",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统路径",
+          "example": "无",
+          "member": "string",
+          "name": "FsPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖",
+          "example": "无",
+          "member": "uint64",
+          "name": "CoverType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "完成/终止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "迁移状态。0: 已完成；1: 进行中；2: 已终止",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "FileTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已迁移文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "FileMigratedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "迁移失败文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "FileFailedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FileTotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已迁移文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FileMigratedSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "迁移失败文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FileFailedSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "全部清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileTotalList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已完成文件清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileCompletedList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败文件清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileFailedList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源桶路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BucketPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MountInfo": {
       "document": "挂载点信息",
@@ -2976,6 +3581,48 @@
         }
       ],
       "usage": "out"
+    },
+    "StopMigrationTaskRequest": {
+      "document": "StopMigrationTask请求参数结构体",
+      "members": [
+        {
+          "document": "迁移任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMigrationTaskResponse": {
+      "document": "StopMigrationTask返回参数结构体",
+      "members": [
+        {
+          "document": "迁移任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "迁移状态。0: 已完成；1: 进行中；2: 已终止",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TagInfo": {
       "document": "Tag信息单元",

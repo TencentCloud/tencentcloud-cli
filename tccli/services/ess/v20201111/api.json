@@ -1678,7 +1678,7 @@
       "document": "CreateFlowReminds返回参数结构体",
       "members": [
         {
-          "document": "签署连接过期时间字符串：年月日-时分秒",
+          "document": "催办合同详情列表",
           "example": "无",
           "member": "RemindFlowRecords",
           "name": "RemindFlowRecords",
@@ -4619,7 +4619,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "合同(流程)的状态\n1：未签署\n2：部分签署\n3：已退回\n4：完成签署\n5：已过期\n6：已取消",
+          "document": "流程状态\n- 0 还没有发起\n- 1 未签署\n- 2 部分签署\n- 3 已退回\n- 4 完成签署\n- 5 已过期\n- 6 已取消\n- 7 还没有预发起\n- 8 等待填写\n- 9 部分填写\n- 10 拒填",
           "example": "无",
           "member": "int64",
           "name": "FlowStatus",

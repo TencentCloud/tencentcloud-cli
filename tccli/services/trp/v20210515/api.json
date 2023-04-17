@@ -238,6 +238,13 @@
       "output": "DescribeTraceCodesResponse",
       "status": "online"
     },
+    "DescribeTraceDataById": {
+      "document": "查询溯源ID查溯源信息，通常溯源信息跟生产批次绑定，即一个批次的所有溯源信息都是一样的",
+      "input": "DescribeTraceDataByIdRequest",
+      "name": "根据溯源ID查溯源信息",
+      "output": "DescribeTraceDataByIdResponse",
+      "status": "online"
+    },
     "DescribeTraceDataList": {
       "document": "查询溯源信息，通常溯源信息跟生产批次绑定，即一个批次的所有溯源信息都是一样的",
       "input": "DescribeTraceDataListRequest",
@@ -3260,6 +3267,51 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraceDataByIdRequest": {
+      "document": "DescribeTraceDataById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "溯源ID",
+          "example": "ccc",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTraceDataByIdResponse": {
+      "document": "DescribeTraceDataById返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "TraceData",
+          "name": "TraceData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

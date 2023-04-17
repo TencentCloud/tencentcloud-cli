@@ -43,11 +43,11 @@
       "status": "online"
     },
     "DeleteScanInstances": {
-      "document": "删除一个或者多个app扫描信息",
+      "document": "由于该产品是线上免费使用产品，无企业版用户，升级迭代成本高及人力安排等原因，安全测评产品不再接入新用户，故下线。\n\n删除一个或者多个app扫描信息",
       "input": "DeleteScanInstancesRequest",
       "name": "批量删除提交过的app扫描信息",
       "output": "DeleteScanInstancesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteShieldInstances": {
       "document": "删除一个或者多个app加固信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
