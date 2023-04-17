@@ -156,7 +156,7 @@
       {
         "document": "查询TRTC音视频房间维度用量",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrtcRoomUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"2023-01-06 00:00\",\n    \"EndTime\": \"2023-01-06 10:00\",\n    \"SdkAppid\": 1400017192\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68fccf1c-c2c7-466a-9f14-1db4bed6054b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68fccf1c-c2c7-466a-9f14-1db4bed6054b\",\n        \"Data\": \"RoomId,Audio,SD,hd,FullHD,2K,4K\\ntest_room,1,2,3,4,5,6\\n\"\n    }\n}",
         "title": "查询TRTC音视频房间维度用量"
       }
     ],

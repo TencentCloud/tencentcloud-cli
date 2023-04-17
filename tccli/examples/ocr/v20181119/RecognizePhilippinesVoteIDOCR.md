@@ -1,13 +1,13 @@
 **Example 1: 菲律宾VoteID识别示例**
 
-
+菲律宾VoteID识别示例
 
 Input: 
 
 ```
 tccli ocr RecognizePhilippinesVoteIDOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
-    --ReturnHeadImage false
+    --ReturnHeadImage false \
+    --ImageUrl https://xx/a.jpg
 ```
 
 Output: 

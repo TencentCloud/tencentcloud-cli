@@ -1,34 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 人脸核身(faceid) 版本：2018-03-01
+## 文件存储(cfs) 版本：2019-07-19
 
-### 第 28 次发布
+### 第 9 次发布
 
-发布时间：2023-04-13 01:20:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GetFaceIdResultIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77455)
-* [GetFaceIdTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77454)
-
-修改数据结构：
-
-* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
-
-	* 新增成员：PassNo, VisaNum
-
-
-
-
-## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
-
-### 第 8 次发布
-
-发布时间：2023-04-13 01:33:47
+发布时间：2023-04-17 01:11:14
 
 本次发布包含了以下内容：
 
@@ -36,14 +12,35 @@
 
 新增接口：
 
-* [DeleteBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77458)
-* [DescribeBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77456)
-* [SetBackupExpireRule](http://document.tencentcloudapi.woa.com/document/product/596/77457)
+* [CreateMigrationTask](http://document.tencentcloudapi.woa.com/document/product/582/77464)
+* [DeleteMigrationTask](http://document.tencentcloudapi.woa.com/document/product/582/77463)
+* [DescribeBucketList](http://document.tencentcloudapi.woa.com/document/product/582/77462)
+* [DescribeMigrationTasks](http://document.tencentcloudapi.woa.com/document/product/582/77461)
+* [StopMigrationTask](http://document.tencentcloudapi.woa.com/document/product/582/77460)
 
 新增数据结构：
 
-* [BackupExpireRuleInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupExpireRuleInfo)
-* [BackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupRecords)
+* [BucketInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#BucketInfo)
+* [MigrationTaskInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#MigrationTaskInfo)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 29 次发布
+
+发布时间：2023-04-17 01:21:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IntentionQuestionResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#IntentionQuestionResult)
+
+	* 新增成员：FinalResultDetailCode, FinalResultMessage
+
 
 
 
@@ -9144,6 +9141,27 @@
 
 
 ## 文件存储(cfs) 版本：2019-07-19
+
+### 第 9 次发布
+
+发布时间：2023-04-17 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateMigrationTask](http://document.tencentcloudapi.woa.com/document/product/582/77464)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteMigrationTask](http://document.tencentcloudapi.woa.com/document/product/582/77463)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeBucketList](http://document.tencentcloudapi.woa.com/document/product/582/77462)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeMigrationTasks](http://document.tencentcloudapi.woa.com/document/product/582/77461)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StopMigrationTask](http://document.tencentcloudapi.woa.com/document/product/582/77460)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BucketInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#BucketInfo)](http://document.tencentcloudapi.woa.com/document/product/582/38175#[BucketInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#BucketInfo))
+* [[MigrationTaskInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#MigrationTaskInfo)](http://document.tencentcloudapi.woa.com/document/product/582/38175#[MigrationTaskInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#MigrationTaskInfo))
 
 ### 第 8 次发布
 
@@ -25957,6 +25975,21 @@
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
+### 第 29 次发布
+
+发布时间：2023-04-17 01:21:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IntentionQuestionResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#IntentionQuestionResult)
+
+	* 新增成员：FinalResultDetailCode, FinalResultMessage
+
+
 ### 第 28 次发布
 
 发布时间：2023-04-13 01:20:22
@@ -25967,8 +26000,8 @@
 
 新增接口：
 
-* [[GetFaceIdResultIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77455)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GetFaceIdTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77454)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GetFaceIdResultIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77455)
+* [GetFaceIdTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77454)
 
 修改数据结构：
 
@@ -44044,14 +44077,14 @@
 
 新增接口：
 
-* [[DeleteBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77458)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77456)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SetBackupExpireRule](http://document.tencentcloudapi.woa.com/document/product/596/77457)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77458)
+* [DescribeBackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/77456)
+* [SetBackupExpireRule](http://document.tencentcloudapi.woa.com/document/product/596/77457)
 
 新增数据结构：
 
-* [[BackupExpireRuleInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupExpireRuleInfo)](http://document.tencentcloudapi.woa.com/document/product/596/39686#[BackupExpireRuleInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupExpireRuleInfo))
-* [[BackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupRecords)](http://document.tencentcloudapi.woa.com/document/product/596/39686#[BackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupRecords))
+* [BackupExpireRuleInfo](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupExpireRuleInfo)
+* [BackupRecords](http://document.tencentcloudapi.woa.com/document/product/596/39686#BackupRecords)
 
 ### 第 7 次发布
 
@@ -50949,6 +50982,21 @@
 
 
 ## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 30 次发布
+
+发布时间：2023-04-14 01:41:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTrtcRoomUsage](http://document.tencentcloudapi.woa.com/document/product/647/77341)
+
+	* 新增出参：Data
+
 
 ### 第 29 次发布
 

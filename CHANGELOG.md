@@ -1,3 +1,49 @@
+# Release 3.0.744.1
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 9 次发布
+
+发布时间：2023-04-17 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateMigrationTask](http://document.tencentcloudapi.woa.com/document/product/582/77464)
+* [DeleteMigrationTask](http://document.tencentcloudapi.woa.com/document/product/582/77463)
+* [DescribeBucketList](http://document.tencentcloudapi.woa.com/document/product/582/77462)
+* [DescribeMigrationTasks](http://document.tencentcloudapi.woa.com/document/product/582/77461)
+* [StopMigrationTask](http://document.tencentcloudapi.woa.com/document/product/582/77460)
+
+新增数据结构：
+
+* [BucketInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#BucketInfo)
+* [MigrationTaskInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#MigrationTaskInfo)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 29 次发布
+
+发布时间：2023-04-17 01:21:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IntentionQuestionResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#IntentionQuestionResult)
+
+	* 新增成员：FinalResultDetailCode, FinalResultMessage
+
+
+
+
 # Release 3.0.743.1
 
 ## 人脸核身(faceid) 版本：2018-03-01
