@@ -4691,6 +4691,26 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 2
+        },
+        {
+          "document": "签署长链接，不对外展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LongUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "签署场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SignScene",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"

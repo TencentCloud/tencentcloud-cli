@@ -1,3 +1,84 @@
+# Release 3.0.745.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 56 次发布
+
+发布时间：2023-04-18 01:12:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeSearchExportList
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 51 次发布
+
+发布时间：2023-04-18 01:17:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverUrlInfo)
+
+	* 新增成员：LongUrl, SignScene
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 22 次发布
+
+发布时间：2023-04-18 01:27:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAppDimensionMetrics](http://document.tencentcloudapi.woa.com/document/product/1464/77470)
+* [DescribeAppMetricsData](http://document.tencentcloudapi.woa.com/document/product/1464/77469)
+* [DescribeAppSingleCaseDetailList](http://document.tencentcloudapi.woa.com/document/product/1464/77468)
+* [DescribeAppSingleCaseList](http://document.tencentcloudapi.woa.com/document/product/1464/77467)
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 32 次发布
+
+发布时间：2023-04-18 01:36:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePeakPoints](http://document.tencentcloudapi.woa.com/document/product/627/77472)
+* [DescribePeakValue](http://document.tencentcloudapi.woa.com/document/product/627/77471)
+
+新增数据结构：
+
+* [PeakPointsItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#PeakPointsItem)
+
+
+
 # Release 3.0.744.1
 
 ## 文件存储(cfs) 版本：2019-07-19
