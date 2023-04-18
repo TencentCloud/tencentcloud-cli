@@ -47,6 +47,8 @@ Output:
                     {
                         "Id": 0,
                         "Name": "QRCODE",
+                        "Value": "https://test.com/test",
+                        "SubLabel": "QRCODE",
                         "Score": 100,
                         "Location": {
                             "X": 155.01746,

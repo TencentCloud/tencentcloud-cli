@@ -168,6 +168,20 @@
       "output": "DescribeIpHitItemsResponse",
       "status": "online"
     },
+    "DescribePeakPoints": {
+      "document": "查询业务和攻击概要趋势",
+      "input": "DescribePeakPointsRequest",
+      "name": "查询业务和攻击概要趋势",
+      "output": "DescribePeakPointsResponse",
+      "status": "online"
+    },
+    "DescribePeakValue": {
+      "document": "获取业务和攻击概览峰值",
+      "input": "DescribePeakValueRequest",
+      "name": "获取业务和攻击概览峰值",
+      "output": "DescribePeakValueResponse",
+      "status": "online"
+    },
     "DescribePolicyStatus": {
       "document": "获取防护状态以及生效的实例id",
       "input": "DescribePolicyStatusRequest",
@@ -2967,6 +2981,204 @@
       ],
       "type": "object"
     },
+    "DescribePeakPointsRequest": {
+      "document": "DescribePeakPoints请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询起始时间",
+          "example": "2019-12-30 00:00:00",
+          "member": "datetime",
+          "name": "FromTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询终止时间",
+          "example": "2019-12-30 23:59:59",
+          "member": "datetime",
+          "name": "ToTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的域名，如果查询所有域名数据，该参数不填写",
+          "example": "abc.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只有两个值有效，sparta-waf，clb-waf，不传则不过滤",
+          "example": "sparta-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "WAF实例ID，不传则不过滤",
+          "example": "waf_000q3t12p",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "六个值可选：\naccess-峰值qps趋势图\nbotAccess- bot峰值qps趋势图\ndown-下行峰值带宽趋势图\nup-上行峰值带宽趋势图\nattack-Web攻击总数趋势图\ncc-CC攻击总数趋势图",
+          "example": "access",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePeakPointsResponse": {
+      "document": "DescribePeakPoints返回参数结构体",
+      "members": [
+        {
+          "document": "数据点",
+          "example": "无",
+          "member": "PeakPointsItem",
+          "name": "Points",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePeakValueRequest": {
+      "document": "DescribePeakValue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询起始时间",
+          "example": "2019-12-30 00:00:00",
+          "member": "datetime",
+          "name": "FromTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "example": "2019-12-30 23:59:59",
+          "member": "datetime",
+          "name": "ToTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要查询的域名，当前用户所有域名可以不传",
+          "example": "abc.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只有两个值有效，sparta-waf，clb-waf，不传则不过滤",
+          "example": "sparta-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "WAF实例ID，不传则不过滤",
+          "example": "waf_000q3t12p",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "五个值可选：\naccess-峰值qps\ndown-下行峰值带宽\nup-上行峰值带宽\nattack-Web攻击总数\ncc-CC攻击总数趋势图",
+          "example": "access",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePeakValueResponse": {
+      "document": "DescribePeakValue返回参数结构体",
+      "members": [
+        {
+          "document": "QPS峰值",
+          "example": "0",
+          "member": "uint64",
+          "name": "Access",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上行带宽峰值，单位B",
+          "example": "0",
+          "member": "uint64",
+          "name": "Up",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下行带宽峰值，单位B",
+          "example": "0",
+          "member": "uint64",
+          "name": "Down",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Web攻击总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Attack",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CC攻击总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Cc",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePolicyStatusRequest": {
       "document": "DescribePolicyStatus请求参数结构体",
       "members": [
@@ -5338,6 +5550,82 @@
         }
       ],
       "type": "object"
+    },
+    "PeakPointsItem": {
+      "document": "PeakPoints数组项",
+      "members": [
+        {
+          "default": "",
+          "document": "秒级别时间戳",
+          "example": "2",
+          "member": "uint64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "QPS",
+          "example": "1",
+          "member": "uint64",
+          "name": "Access",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上行带宽峰值，单位B",
+          "example": "4",
+          "member": "uint64",
+          "name": "Up",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下行带宽峰值，单位B",
+          "example": "7",
+          "member": "uint64",
+          "name": "Down",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Web攻击次数",
+          "example": "8",
+          "member": "uint64",
+          "name": "Attack",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CC攻击次数",
+          "example": "9",
+          "member": "uint64",
+          "name": "Cc",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Bot qps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "BotAccess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "PortInfo": {
       "document": "防护域名端口配置信息",

@@ -210,6 +210,22 @@
         "title": "Waf  IP封堵状态查询"
       }
     ],
+    "DescribePeakPoints": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePeakPoints\n<公共请求参数>\n\n{\n    \"FromTime\": \"2021-07-21 00:00:00\",\n    \"ToTime\": \"2021-07-21 23:59:59\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Points\": [\n            {\n                \"Time\": 1626908400,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            },\n            {\n                \"Time\": 1626908460,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            },\n            {\n                \"Time\": 1626908520,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            },\n            {\n                \"Time\": 1626908580,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            },\n            {\n                \"Time\": 1626908640,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            },\n            {\n                \"Time\": 1626908700,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            },\n            {\n                \"Time\": 1626908760,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            },\n            {\n                \"Time\": 1626908820,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            },\n            {\n                \"Time\": 1626908880,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            },\n            {\n                \"Time\": 1626908940,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            },\n            {\n                \"Time\": 1626909000,\n                \"Access\": 0,\n                \"BotAccess\": 0,\n                \"Attack\": 0,\n                \"Cc\": 0,\n                \"Down\": 0,\n                \"Up\": 0\n            }\n        ],\n        \"RequestId\": \"fuqian-test\"\n    }\n}",
+        "title": "查询业务和攻击概要趋势"
+      }
+    ],
+    "DescribePeakValue": [
+      {
+        "document": "获取业务和攻击概览峰值",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribePeakValue\n&FromTime=2019-12-30 00:00:00\n&ToTime=2019-12-30 23:59:59\n&Domain=abc.qcloudwaf.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Access\": 0,\n        \"Up\": 0,\n        \"Down\": 0,\n        \"Attack\": 0,\n        \"Cc\": 0,\n        \"RequestId\": \"xxxx-xxxx-xxxxx\"\n    }\n}",
+        "title": "获取业务和攻击概览峰值"
+      }
+    ],
     "DescribePolicyStatus": [
       {
         "document": "",

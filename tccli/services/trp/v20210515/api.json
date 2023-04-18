@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AuthorizedTransfer": {
+      "document": "接收客户侧的用户已授权的号码。",
+      "input": "AuthorizedTransferRequest",
+      "name": "授权数据上报接口",
+      "output": "AuthorizedTransferResponse",
+      "status": "online"
+    },
     "CreateCodeBatch": {
       "document": "新增批次",
       "input": "CreateCodeBatchRequest",
@@ -252,6 +259,13 @@
       "output": "DescribeTraceDataListResponse",
       "status": "online"
     },
+    "EffectFeedback": {
+      "document": "接收客户反馈的各环节数据",
+      "input": "EffectFeedbackRequest",
+      "name": "效果数据反馈",
+      "output": "EffectFeedbackResponse",
+      "status": "online"
+    },
     "ModifyCodeBatch": {
       "document": "修改批次",
       "input": "ModifyCodeBatchRequest",
@@ -314,6 +328,13 @@
       "name": "修改溯源信息的排序",
       "output": "ModifyTraceDataRanksResponse",
       "status": "online"
+    },
+    "ReportBatchCallbackStatus": {
+      "document": "接收离线筛选包回执，用于效果统计和分析。",
+      "input": "ReportBatchCallbackStatusRequest",
+      "name": "离线筛选包数据推送",
+      "output": "ReportBatchCallbackStatusResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -323,6 +344,40 @@
     "serviceShortName": "trp"
   },
   "objects": {
+    "AuthorizedTransferRequest": {
+      "document": "AuthorizedTransfer请求参数结构体",
+      "members": [
+        {
+          "document": "业务加密入参。",
+          "example": "无",
+          "member": "InputEncryptData",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AuthorizedTransferResponse": {
+      "document": "AuthorizedTransfer返回参数结构体",
+      "members": [
+        {
+          "document": "业务出参。",
+          "example": "无",
+          "member": "OutputAuthorizedTransfer",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChainData": {
       "document": "上链数据",
       "members": [
@@ -3421,10 +3476,95 @@
       ],
       "type": "object"
     },
+    "EffectFeedbackRequest": {
+      "document": "EffectFeedback请求参数结构体",
+      "members": [
+        {
+          "document": "业务加密入参。",
+          "example": "无",
+          "member": "InputEncryptData",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "EffectFeedbackResponse": {
+      "document": "EffectFeedback返回参数结构体",
+      "members": [
+        {
+          "document": "业务出参。",
+          "example": "无",
+          "member": "OutputAuthorizedTransfer",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Ext": {
       "document": "预留字段",
       "members": [],
       "usage": "out"
+    },
+    "InputEncryptData": {
+      "document": "业务加密入参",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "document": "加密方式，0：AES加密；\n",
+          "example": "1",
+          "member": "int64",
+          "name": "EncryptMethod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "加密算法中的块处理模式，1：CBC模式； 目前只支持CBC模式",
+          "example": "1",
+          "member": "int64",
+          "name": "EncryptMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "填充模式，0：ZeroPadding；1：PKCS5Padding；2：\nPKCS7Padding。",
+          "example": "1",
+          "member": "int64",
+          "name": "PaddingType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "加密数据，将AuthorizedData结构体数组（数组最大长度不超过20）序列化成JSON字符串，对得到的字符串加密并填充到该字段。",
+          "example": "abc",
+          "member": "string",
+          "name": "EncryptData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "用户是否授权，本接口取值：1，已授权。\n",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAuthorized",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "Job": {
       "document": "通用调度任务",
@@ -4295,6 +4435,39 @@
       ],
       "type": "object"
     },
+    "OutputAuthorizedTransfer": {
+      "document": "业务出参",
+      "members": [
+        {
+          "document": "推送状态，0表示成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误信息描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PackSpec": {
       "document": "层级码配置",
       "members": [
@@ -4665,6 +4838,40 @@
         }
       ],
       "usage": "both"
+    },
+    "ReportBatchCallbackStatusRequest": {
+      "document": "ReportBatchCallbackStatus请求参数结构体",
+      "members": [
+        {
+          "document": "业务加密入参。",
+          "example": "无",
+          "member": "InputEncryptData",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportBatchCallbackStatusResponse": {
+      "document": "ReportBatchCallbackStatus返回参数结构体",
+      "members": [
+        {
+          "document": "业务出参。",
+          "example": "无",
+          "member": "OutputAuthorizedTransfer",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ScanLog": {
       "document": "扫码明细",

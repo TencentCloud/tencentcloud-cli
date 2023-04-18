@@ -105,6 +105,34 @@
       "output": "DeleteWhitelistResponse",
       "status": "online"
     },
+    "DescribeAppDimensionMetrics": {
+      "document": "用于查询 app 监控多维分析数据",
+      "input": "DescribeAppDimensionMetricsRequest",
+      "name": "查询 app 多维分析数据",
+      "output": "DescribeAppDimensionMetricsResponse",
+      "status": "online"
+    },
+    "DescribeAppMetricsData": {
+      "document": "获取 app 监控指标数据",
+      "input": "DescribeAppMetricsDataRequest",
+      "name": "获取 app 监控指标数据",
+      "output": "DescribeAppMetricsDataResponse",
+      "status": "online"
+    },
+    "DescribeAppSingleCaseDetailList": {
+      "document": "查询 app 监控个例样本详情列表",
+      "input": "DescribeAppSingleCaseDetailListRequest",
+      "name": "查询 app 监控个例样本详情列表",
+      "output": "DescribeAppSingleCaseDetailListResponse",
+      "status": "online"
+    },
+    "DescribeAppSingleCaseList": {
+      "document": "查询 app 监控个例聚合列表",
+      "input": "DescribeAppSingleCaseListRequest",
+      "name": "查询 app 监控个例聚合列表",
+      "output": "DescribeAppSingleCaseListResponse",
+      "status": "online"
+    },
     "DescribeData": {
       "document": "转发monitor查询",
       "input": "DescribeDataRequest",
@@ -1267,6 +1295,456 @@
           "example": "无",
           "member": "string",
           "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppDimensionMetricsRequest": {
+      "document": "DescribeAppDimensionMetrics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "app 项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的表名",
+          "example": "kv_7_dist",
+          "member": "string",
+          "name": "From",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指标 fields",
+          "example": "[[\\\"as\\\",[\\\"if\\\",[\\\"equals\\\",\\\"launch_cnt\\\",[\\\"toInt64\\\",0]],0,[",
+          "member": "string",
+          "name": "Fields",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的过滤条件",
+          "example": "[\\\"or\\\",[\\\"and\\\",[\\\"equals\\\",\\\"category\\\",\\\"'PERF_CRASH'\\\"],[\\\"i",
+          "member": "string",
+          "name": "Filter",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询简单过滤条件",
+          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\",\\\"PERF_MASTER_T",
+          "member": "string",
+          "name": "FilterSimple",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "group by 条件",
+          "example": "无",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "order by 条件",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "limit 参数",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "offset 参数",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务上下文参数",
+          "example": "{\\\"threshold\\\":\\\"0.001\\\"}",
+          "member": "string",
+          "name": "BusinessContext",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppDimensionMetricsResponse": {
+      "document": "DescribeAppDimensionMetrics返回参数结构体",
+      "members": [
+        {
+          "document": "查询数据返回",
+          "example": "{\\n    \\\"status\\\": \\\"ok\\\",\\n    \\\"code\\\": 10000,\\n    \\\"msg\\\": \\",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppMetricsDataRequest": {
+      "document": "DescribeAppMetricsData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "app 项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的表名",
+          "example": "kv_7_dist",
+          "member": "string",
+          "name": "From",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指标 field",
+          "example": "[[\\\"as\\\",[\\\"if\\\",[\\\"equals\\\",\\\"launch_cnt\\\",[\\\"toInt64\\\",0]],0,[",
+          "member": "string",
+          "name": "Fields",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的过滤条件",
+          "example": "[\\\"or\\\",[\\\"and\\\",[\\\"equals\\\",\\\"category\\\",\\\"'PERF_CRASH'\\\"],[\\\"i",
+          "member": "string",
+          "name": "Filter",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询简单过滤条件",
+          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\",\\\"PERF_MASTER_T",
+          "member": "string",
+          "name": "FilterSimple",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "group by 条件",
+          "example": "无",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "order by 条件",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "limit 参数",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "offset 参数",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "group by 参数",
+          "example": "rollup",
+          "member": "string",
+          "name": "GroupByModifier",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppMetricsDataResponse": {
+      "document": "DescribeAppMetricsData返回参数结构体",
+      "members": [
+        {
+          "document": "查询数据返回",
+          "example": "{\\n    \\\"status\\\": \\\"ok\\\",\\n    \\\"code\\\": 10000,\\n    \\\"msg\\\": \\",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppSingleCaseDetailListRequest": {
+      "document": "DescribeAppSingleCaseDetailList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "app 项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的表名",
+          "example": "singleton_v2_dist",
+          "member": "string",
+          "name": "From",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指标 field",
+          "example": "[[\\\"as\\\",[\\\"if\\\",[\\\"equals\\\",\\\"launch_cnt\\\",[\\\"toInt64\\\",0]],0,[",
+          "member": "string",
+          "name": "Fields",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的过滤条件",
+          "example": "[\\\"or\\\",[\\\"and\\\",[\\\"equals\\\",\\\"category\\\",\\\"'PERF_CRASH'\\\"],[\\\"i",
+          "member": "string",
+          "name": "Filter",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询简单过滤条件",
+          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\",\\\"PERF_MASTER_T",
+          "member": "string",
+          "name": "FilterSimple",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "group by 条件",
+          "example": "无",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "order by 条件",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "limit 参数",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "offset 参数",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppSingleCaseDetailListResponse": {
+      "document": "DescribeAppSingleCaseDetailList返回参数结构体",
+      "members": [
+        {
+          "document": "查询数据返回",
+          "example": "{\\n    \\\"status\\\": \\\"ok\\\",\\n    \\\"code\\\": 10000,\\n    \\\"msg\\\": \\",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppSingleCaseListRequest": {
+      "document": "DescribeAppSingleCaseList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "app 项目 ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的表名",
+          "example": "kv_7_dist",
+          "member": "string",
+          "name": "From",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指标 field",
+          "example": "[[\\\"as\\\",[\\\"if\\\",[\\\"equals\\\",\\\"launch_cnt\\\",[\\\"toInt64\\\",0]],0,[",
+          "member": "string",
+          "name": "Fields",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的过滤条件",
+          "example": "[\\\"or\\\",[\\\"and\\\",[\\\"equals\\\",\\\"category\\\",\\\"'PERF_CRASH'\\\"],[\\\"i",
+          "member": "string",
+          "name": "Filter",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询简单过滤条件",
+          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\",\\\"PERF_MASTER_T",
+          "member": "string",
+          "name": "FilterSimple",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "group by 条件",
+          "example": "无",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "order by 条件",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "limit 参数",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "offset 参数",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppSingleCaseListResponse": {
+      "document": "DescribeAppSingleCaseList返回参数结构体",
+      "members": [
+        {
+          "document": "查询数据返回",
+          "example": "{\\n    \\\"status\\\": \\\"ok\\\",\\n    \\\"code\\\": 10000,\\n    \\\"msg\\\": \\",
+          "member": "string",
+          "name": "Data",
           "required": true,
           "type": "string",
           "value_allowed_null": false

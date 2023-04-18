@@ -1,5 +1,12 @@
 {
   "actions": {
+    "BindEmployeeUserIdWithClientOpenId": {
+      "document": "将电子签系统员工userId与客户系统员工openId进行绑定",
+      "input": "BindEmployeeUserIdWithClientOpenIdRequest",
+      "name": "员工userid与客户系统openid绑定",
+      "output": "BindEmployeeUserIdWithClientOpenIdResponse",
+      "status": "online"
+    },
     "CancelFlow": {
       "document": "用于撤销签署流程\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n注：如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同。",
       "input": "CancelFlowRequest",
@@ -278,6 +285,13 @@
       "input": "StartFlowRequest",
       "name": "模板发起合同-发起签署流程",
       "output": "StartFlowResponse",
+      "status": "online"
+    },
+    "UnbindEmployeeUserIdWithClientOpenId": {
+      "document": "将存在绑定关系的电子签系统员工userId与客户系统员工openId进行解绑",
+      "input": "UnbindEmployeeUserIdWithClientOpenIdRequest",
+      "name": "员工userid与客户系统openid解绑",
+      "output": "UnbindEmployeeUserIdWithClientOpenIdResponse",
       "status": "online"
     },
     "UpdateIntegrationEmployees": {
@@ -681,6 +695,60 @@
         }
       ],
       "usage": "in"
+    },
+    "BindEmployeeUserIdWithClientOpenIdRequest": {
+      "document": "BindEmployeeUserIdWithClientOpenId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "OpenId与UserId二选一必填一个，当传入客户系统openId，传入的openId需与电子签员工userId绑定，且渠道channel必填，channel值为INTEGRATE，否则传入userId",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "电子签系统员工UserId",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户系统OpenId",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindEmployeeUserIdWithClientOpenIdResponse": {
+      "document": "BindEmployeeUserIdWithClientOpenId返回参数结构体",
+      "members": [
+        {
+          "document": "绑定是否成功，1表示成功，0表示失败",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CallbackInfo": {
       "document": "应用回调信息",
@@ -6176,6 +6244,60 @@
         }
       ],
       "usage": "both"
+    },
+    "UnbindEmployeeUserIdWithClientOpenIdRequest": {
+      "document": "UnbindEmployeeUserIdWithClientOpenId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "OpenId与UserId二选一必填一个，当传入客户系统openId，传入的openId需与电子签员工userId绑定，且渠道channel必填，channel值为INTEGRATE，否则传入userId",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "电子签系统员工UserId",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户系统OpenId",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindEmployeeUserIdWithClientOpenIdResponse": {
+      "document": "UnbindEmployeeUserIdWithClientOpenId返回参数结构体",
+      "members": [
+        {
+          "document": "解绑是否成功，1表示成功，0表示失败",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateIntegrationEmployeesRequest": {
       "document": "UpdateIntegrationEmployees请求参数结构体",

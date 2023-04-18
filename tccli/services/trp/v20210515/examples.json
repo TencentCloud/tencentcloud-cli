@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AuthorizedTransfer": [
+      {
+        "document": "接收客户侧的用户已授权的号码",
+        "input": "POST / HTTP/1.1\nHost: smop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuthorizedTransfer\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"IsAuthorized\": 0,\n        \"EncryptMethod\": 0,\n        \"EncryptMode\": 0,\n        \"PaddingType\": 0,\n        \"EncryptData\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"abc\",\n            \"Value\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "接收客户侧的用户已授权的号码"
+      }
+    ],
     "CreateCodeBatch": [
       {
         "document": "新增批次",
@@ -288,6 +296,14 @@
         "title": "查询溯源信息"
       }
     ],
+    "EffectFeedback": [
+      {
+        "document": "接收客户反馈的各环节数据\n\n",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EffectFeedback\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"IsAuthorized\": 0,\n        \"EncryptMethod\": 0,\n        \"EncryptMode\": 0,\n        \"PaddingType\": 0,\n        \"EncryptData\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"abc\",\n            \"Value\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "效果数据反馈"
+      }
+    ],
     "ModifyCodeBatch": [
       {
         "document": "激活批次",
@@ -358,6 +374,14 @@
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTraceDataRanks\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\",\n    \"TraceIds\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改溯源信息的排序"
+      }
+    ],
+    "ReportBatchCallbackStatus": [
+      {
+        "document": "接收离线筛选包回执，用于效果统计和分析。",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportBatchCallbackStatus\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"IsAuthorized\": 0,\n        \"EncryptMethod\": 0,\n        \"EncryptMode\": 0,\n        \"PaddingType\": 0,\n        \"EncryptData\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"abc\",\n            \"Value\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "离线筛选包数据推送"
       }
     ]
   },

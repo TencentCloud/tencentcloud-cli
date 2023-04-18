@@ -1212,11 +1212,11 @@
       "status": "online"
     },
     "DescribeSearchExportList": {
-      "document": "导出ES查询文档列表",
+      "document": "旧版日志下载接口下线\n\n导出ES查询文档列表",
       "input": "DescribeSearchExportListRequest",
       "name": "导出ES查询文档列表",
       "output": "DescribeSearchExportListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSearchLogs": {
       "document": "获取历史搜索记录",
