@@ -320,6 +320,14 @@
         "title": "查询实例列表"
       }
     ],
+    "DescribeDBInstancesAttribute": [
+      {
+        "document": "实例附属属性",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstancesAttribute\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-j8kv137v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"mssql-j8kv137v\",\n        \"RegularBackupSaveDays\": 1,\n        \"RequestId\": \"7\",\n        \"RegularBackupCounts\": 1,\n        \"RegularBackupEnable\": \"enable\",\n        \"RegularBackupStrategy\": \"months\",\n        \"RegularBackupStartTime\": \"2022-10-10\",\n        \"EventSaveDays\": 0,\n        \"BlockedThreshold\": 6\n    }\n}",
+        "title": "查询实例mssql-j8kv137v的附属属性"
+      }
+    ],
     "DescribeDBSecurityGroups": [
       {
         "document": "",
@@ -502,6 +510,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeUploadIncrementalInfo\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&IncrementalMigrationId=mssql-incremental-migration-kp7bgv8p\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"BucketName\": \"cosbacktest-1254065710\",\n        \"ExpiredTime\": \"1601211711\",\n        \"Path\": \"251006279/sqlserver/mssql-rdc0gajn/migration/backup/mssql-backup-migration-cg0ffgqt/increment/mssql-incremental-migration-kp7bgv8p/\",\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"8498f427-5b9b-42c8-b587-74fad369f27c\",\n        \"StartTime\": \"1601211211\",\n        \"TmpSecretId\": \"AKIDOxJelHkinofTdXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n        \"TmpSecretKey\": \"gzfh3Olpe5HKiviXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\n        \"XCosSecurityToken\": \"S0niafv9wK40qvkDv2OjmEc2J7DAJRRa7b8c49fac8faf31d51469d4c639c866eKiE4vy8Y1d36neOhi1yg4RD4q9J4MeUyVSNsdiEt1z8X5zVFLGvGayDCfuA2uNuA5aoUSytd3CZzviKkGN-_Nq4OrIdSMzfeM-SrY3OEkV9TRItcig0PtpUYocSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\"\n    }\n}",
         "title": "查询上传增量备份信息"
+      }
+    ],
+    "DescribeXEvents": [
+      {
+        "document": "查询实例的扩展事件记录，包括慢SQL、阻塞、死锁",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeXEvents\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 2,\n    \"StartTime\": \"2023-03-05 11:49:08\",\n    \"EndTime\": \"2023-03-13 11:49:08\",\n    \"EventType\": \"slow\",\n    \"InstanceId\": \"mssql-qp7gu6ch\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"023a2da2-c152-11ed-b1aa-525400853186\",\n        \"TotalCount\": 10,\n        \"Events\": [\n            {\n                \"EndTime\": \"2023-03-10 15:45:05\",\n                \"EventType\": \"slow\",\n                \"ExternalAddr\": \"https://***\",\n                \"FileName\": \"autoed_instance_58001_20230220110419.xel\",\n                \"Id\": 1004,\n                \"InternalAddr\": \"https:***\",\n                \"Size\": 10240,\n                \"StartTime\": \"2023-03-10 15:44:15\",\n                \"Status\": 1\n            }\n        ]\n    }\n}",
+        "title": "DescribeXEvents"
       }
     ],
     "DescribeZones": [
@@ -828,6 +844,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=StartIncrementalMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&IncrementalMigrationId=mssql-incremental-migration-kp7bgv8p\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1001403,\n        \"RequestId\": \"6f2b5d2b-a3c1-426d-8e1c-325a69ccb694\"\n    }\n}",
         "title": "启动增量导入任务"
+      }
+    ],
+    "StartInstanceXEvent": [
+      {
+        "document": " 开启、关闭扩展事件",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstanceXEvent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-77auaua\",\n    \"EventConfig\": [\n        {\n            \"EventType\": \"slow\",\n            \"Threshold\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"AH7AAJ_909AA_AAAQ_2134343\"\n    }\n}",
+        "title": "StartInstanceXEvent"
       }
     ],
     "StartMigrationCheck": [

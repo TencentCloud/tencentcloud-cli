@@ -122,9 +122,9 @@
     ],
     "DescribeCdnDomainLogs": [
       {
-        "document": "",
+        "document": "查询域名指定时间段的日志列表",
         "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCdnDomainLogs\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"EndTime\": \"2019-09-04 12:00:00\",\n    \"StartTime\": \"2019-09-04 00:00:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"DomainLogs\": [\n            {\n                \"Area\": \"mainland\",\n                \"StartTime\": \"2019-09-04 23:00:00\",\n                \"EndTime\": \"2019-09-04 23:59:59\",\n                \"LogPath\": \"http://www.test.qcloud.com/20190904/23/201909042300-www.test.com.gz?st=hGzJr0QFpo3jYM2uj7kkjA&e=3135214538\",\n                \"LogName\": \"2019090423\"\n            }\n        ],\n        \"TotalCount\": 300\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"DomainLogs\": [\n            {\n                \"Area\": \"mainland\",\n                \"StartTime\": \"2019-09-04 23:00:00\",\n                \"EndTime\": \"2019-09-04 23:59:59\",\n                \"LogPath\": \"http://www.test.qcloud.com/20190904/23/201909042300-www.test.com.gz?st=hGzJr0QFpo3jYM2uj7kkjA&e=3135214538\",\n                \"LogName\": \"2019090423\",\n                \"FileSize\": 9999\n            }\n        ],\n        \"TotalCount\": 300\n    }\n}",
         "title": "日志下载链接查询"
       }
     ],

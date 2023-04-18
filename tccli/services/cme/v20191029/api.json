@@ -6034,6 +6034,15 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "document": "下载开关。 取值有：\n<li>OFF：关闭；</li>\n<li>ON：打开。</li>",
+          "example": "OFF",
+          "member": "string",
+          "name": "DownloadSwitch",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"

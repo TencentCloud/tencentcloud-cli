@@ -1426,7 +1426,6 @@
       "document": "回调模板信息。",
       "members": [
         {
-          "default": "",
           "document": "模板 ID。",
           "example": "1",
           "member": "int64",
@@ -1437,7 +1436,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "模板名称。",
           "example": "aaa",
           "member": "string",
@@ -1448,7 +1446,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "描述信息。",
           "example": "xxx",
           "member": "string",
@@ -1459,7 +1456,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开播回调 URL。",
           "example": "http://abc.com/abc",
           "member": "string",
@@ -1470,7 +1466,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "混流回调 URL。(参数已弃用)。",
           "example": "无",
           "member": "string",
@@ -1481,7 +1476,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "断流回调 URL。",
           "example": "http://abc.com/abc",
           "member": "string",
@@ -1492,7 +1486,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "录制回调 URL。",
           "example": "http://abc.com/abc",
           "member": "string",
@@ -1503,7 +1496,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "截图回调 URL。",
           "example": "http://abc.com/abc",
           "member": "string",
@@ -1514,7 +1506,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "鉴黄回调 URL。",
           "example": "http://abc.com/abc",
           "member": "string",
@@ -1525,7 +1516,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "回调的鉴权 key。",
           "example": "def",
           "member": "string",
@@ -1536,12 +1526,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "推流异常回调 URL。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://abc.com/abc",
           "member": "string",
           "name": "PushExceptionNotifyUrl",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "音频审核回调 URL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AudioAuditNotifyUrl",
+          "required": false,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -10358,6 +10357,26 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "是否自动续购。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "WillRenew",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "续购状态。\n1 ：续购成功。\n0 ：尚未续购。\n<0  : 续购失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RenewalResult",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],

@@ -18047,49 +18047,49 @@
       "document": "DescribeFileTamperEvents请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>RuleCategory- string - 是否必填：否 - 规则类别 0 系统规则 1 自定义规则</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>RuleCategory- string - 是否必填：否 - 规则类别 0 系统规则 1 自定义规则</li>\n<li>FileAction- string - 是否必填：否 - 威胁行为 read 读取文件 write 写文件</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "排序方式 ASC,DESC",
           "example": "xx",
           "member": "string",
           "name": "Order",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "排序字段 CreateTime、ModifyTime",
           "example": "xx",
           "member": "string",
           "name": "By",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -18102,18 +18102,18 @@
           "example": "无",
           "member": "FileTamperEvent",
           "name": "List",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "数据总条数",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -26994,6 +26994,16 @@
           "name": "MachineExtraInfo",
           "required": false,
           "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "文件威胁行为\n<li>read 读取文件</li>\n<li>write 修改文件</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "read",
+          "member": "string",
+          "name": "FileAction",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }

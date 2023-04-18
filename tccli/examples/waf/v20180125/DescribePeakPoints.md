@@ -22,7 +22,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             },
             {
                 "Time": 1626908460,
@@ -31,7 +38,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             },
             {
                 "Time": 1626908520,
@@ -40,7 +54,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             },
             {
                 "Time": 1626908580,
@@ -49,7 +70,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             },
             {
                 "Time": 1626908640,
@@ -58,7 +86,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             },
             {
                 "Time": 1626908700,
@@ -67,7 +102,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             },
             {
                 "Time": 1626908760,
@@ -76,7 +118,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             },
             {
                 "Time": 1626908820,
@@ -85,7 +134,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             },
             {
                 "Time": 1626908880,
@@ -94,7 +150,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             },
             {
                 "Time": 1626908940,
@@ -103,7 +166,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             },
             {
                 "Time": 1626909000,
@@ -112,7 +182,14 @@ Output:
                 "Attack": 0,
                 "Cc": 0,
                 "Down": 0,
-                "Up": 0
+                "Up": 0,
+                "StatusServerError": 1,
+                "StatusClientError": 1,
+                "StatusRedirect": 1,
+                "StatusOk": 1,
+                "UpstreamServerError": 1,
+                "UpstreamClientError": 1,
+                "UpstreamRedirect": 1
             }
         ],
         "RequestId": "fuqian-test"
