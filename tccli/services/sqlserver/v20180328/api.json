@@ -259,6 +259,13 @@
       "output": "DescribeDBInstancesResponse",
       "status": "online"
     },
+    "DescribeDBInstancesAttribute": {
+      "document": "本接口（DescribeDBInstancesAttribute）用于查询实例附属属性",
+      "input": "DescribeDBInstancesAttributeRequest",
+      "name": "实例附属属性",
+      "output": "DescribeDBInstancesAttributeResponse",
+      "status": "online"
+    },
     "DescribeDBSecurityGroups": {
       "document": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。",
       "input": "DescribeDBSecurityGroupsRequest",
@@ -418,6 +425,13 @@
       "input": "DescribeUploadIncrementalInfoRequest",
       "name": "查询增量备份上传权限",
       "output": "DescribeUploadIncrementalInfoResponse",
+      "status": "online"
+    },
+    "DescribeXEvents": {
+      "document": "本接口（DescribeXEvents）用于查询扩展事件列表。",
+      "input": "DescribeXEventsRequest",
+      "name": "查询扩展事件列表",
+      "output": "DescribeXEventsResponse",
       "status": "online"
     },
     "DescribeZones": {
@@ -698,6 +712,13 @@
       "input": "StartIncrementalMigrationRequest",
       "name": "启动增量备份导入任务",
       "output": "StartIncrementalMigrationResponse",
+      "status": "online"
+    },
+    "StartInstanceXEvent": {
+      "document": "本接口（StartInstanceXEvent）用于开启、关闭扩展事件。",
+      "input": "StartInstanceXEventRequest",
+      "name": "开启、关闭扩展事件",
+      "output": "StartInstanceXEventResponse",
       "status": "online"
     },
     "StartMigrationCheck": {
@@ -5482,6 +5503,96 @@
       ],
       "type": "object"
     },
+    "DescribeDBInstancesAttributeRequest": {
+      "document": "DescribeDBInstancesAttribute请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "mssql-j8kv137v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstancesAttributeResponse": {
+      "document": "DescribeDBInstancesAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "mssql-j8kv137v",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期备份状态 enable-开启，disable-关闭",
+          "example": "enable",
+          "member": "string",
+          "name": "RegularBackupEnable",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期备份保留天数 [90 - 3650]天",
+          "example": "90",
+          "member": "uint64",
+          "name": "RegularBackupSaveDays",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期备份策略 years-每年，quarters-每季度，months-每月",
+          "example": "months",
+          "member": "string",
+          "name": "RegularBackupStrategy",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期备份保留个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegularBackupCounts",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期备份开始日期，格式-YYYY-MM-DD 默认当前日期",
+          "example": "2022-10-10",
+          "member": "string",
+          "name": "RegularBackupStartTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "阻塞进程阈值，单位毫秒",
+          "example": "0",
+          "member": "int64",
+          "name": "BlockedThreshold",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢SQL、阻塞、死锁扩展事件文件保留时长",
+          "example": "7",
+          "member": "int64",
+          "name": "EventSaveDays",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBInstancesRequest": {
       "document": "DescribeDBInstances请求参数结构体",
       "members": [
@@ -7422,6 +7533,88 @@
       ],
       "type": "object"
     },
+    "DescribeXEventsRequest": {
+      "document": "DescribeXEvents请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "mssql-wy78shs8",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件",
+          "example": "slow",
+          "member": "string",
+          "name": "EventType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "扩展文件生成开始时间",
+          "example": "2023-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "扩展文件生成结束时间",
+          "example": "2023-01-01 12:05:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "分页返回，页编号，默认值为第0页",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "分页返回，每页返回的数目，取值为1~100，默认值为20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeXEventsResponse": {
+      "document": "DescribeXEvents返回参数结构体",
+      "members": [
+        {
+          "document": "扩展事件列表",
+          "example": "[]",
+          "member": "Events",
+          "name": "Events",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩展事件总数量",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
       "members": [],
@@ -7492,6 +7685,117 @@
         }
       ],
       "type": "object"
+    },
+    "EventConfig": {
+      "document": "设置实例扩展事件阈值",
+      "members": [
+        {
+          "document": "事件类型，slow-设置慢SQL阈值，blocked-设置阻塞、死锁阈值",
+          "example": "slow",
+          "member": "string",
+          "name": "EventType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "阈值，单位毫秒。0表示关闭，大于0表示开启",
+          "example": "1000",
+          "member": "int64",
+          "name": "Threshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "Events": {
+      "document": "实例扩展事件详情",
+      "members": [
+        {
+          "document": "ID",
+          "example": "100",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩展事件文件名称",
+          "example": "*.xel",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩展事件文件大小",
+          "example": "1024",
+          "member": "int64",
+          "name": "Size",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件",
+          "example": "slow",
+          "member": "string",
+          "name": "EventType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件记录状态，1-成功，2-失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩展文件生成开始时间",
+          "example": "2023-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩展文件生成开始时间",
+          "example": "2023-01-01 12:05:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内网下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "InternalAddr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "外网下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalAddr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FileAction": {
       "document": "允许动作信息",
@@ -11626,6 +11930,40 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartInstanceXEventRequest": {
+      "document": "StartInstanceXEvent请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "mssql-wuw78w",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "开启、关闭扩展事件",
+          "example": "[]",
+          "member": "EventConfig",
+          "name": "EventConfig",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartInstanceXEventResponse": {
+      "document": "StartInstanceXEvent返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

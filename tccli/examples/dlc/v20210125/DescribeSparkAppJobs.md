@@ -10,8 +10,8 @@ tccli dlc DescribeSparkAppJobs --cli-unfold-argument  \
     --SortBy create-time \
     --StartTime 2022-01-01 00:00:00 \
     --EndTime 2022-01-01 00:00:00 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
+    --Filters.0.Values value \
+    --Filters.0.Name key \
     --Offset 0 \
     --Limit 10
 ```

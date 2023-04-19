@@ -152,6 +152,14 @@
         "title": "删除房间"
       }
     ],
+    "DeleteSupervisor": [
+      {
+        "document": "刪除巡课",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSupervisor\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"Users\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeAnswerList": [
       {
         "document": "示例",
@@ -190,6 +198,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"UpdateTime\": 1,\n        \"DocumentUrl\": \"xx\",\n        \"TranscodeState\": 1,\n        \"Permission\": 1,\n        \"TranscodeType\": 1,\n        \"DocumentName\": \"xx\",\n        \"TranscodeInfo\": \"xx\",\n        \"DocumentSize\": 1,\n        \"TranscodeResult\": \"xx\",\n        \"SdkAppId\": 1,\n        \"DocumentType\": \"xx\",\n        \"Owner\": \"xx\",\n        \"TranscodeProgress\": 1,\n        \"DocumentId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取文档信息"
+      }
+    ],
+    "DescribeDocuments": [
+      {
+        "document": "批量获取文档信息",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocuments\n<公共请求参数>\n\n{\n    \"SchoolId\": 1,\n    \"Page\": 0,\n    \"Limit\": 0,\n    \"Permission\": [\n        1\n    ],\n    \"Owner\": \"abc\",\n    \"Keyword\": \"abc\",\n    \"DocumentId\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Documents\": [\n            {\n                \"DocumentId\": \"abc\",\n                \"DocumentUrl\": \"abc\",\n                \"DocumentName\": \"abc\",\n                \"Owner\": \"abc\",\n                \"SdkAppId\": 1,\n                \"Permission\": 1,\n                \"TranscodeResult\": \"abc\",\n                \"TranscodeType\": 1,\n                \"TranscodeProgress\": 1,\n                \"TranscodeState\": 1,\n                \"TranscodeInfo\": \"abc\",\n                \"DocumentType\": \"abc\",\n                \"DocumentSize\": 1,\n                \"UpdateTime\": 1,\n                \"Pages\": 1,\n                \"Width\": 1,\n                \"Height\": 1,\n                \"Cover\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeDocumentsByRoom": [
@@ -270,6 +286,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUser\n<公共请求参数>\n\n{\n    \"UserId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"xx\",\n        \"UserId\": \"xx\",\n        \"Avatar\": \"xx\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取用户信息"
+      }
+    ],
+    "EndRoom": [
+      {
+        "document": "房间ID存在示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EndRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1111\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19faa0a4-c1c8-40fe-afdb-6cb67f1b3196\"\n    }\n}",
+        "title": "结束房间"
       }
     ],
     "GetRoomEvent": [
@@ -374,6 +398,14 @@
         "input": "{\n  \"SdkAppId\": 1,\n  \"TeacherUrl\": \"xx\",\n  \"BoardUrl\": \"xx\",\n  \"VideoUrl\": \"xx\",\n  \"BoardW\": 0,\n  \"BoardH\": 0,\n  \"BoardX\": 0,\n  \"BoardY\": 0,\n  \"TeacherW\": 0,\n  \"TeacherH\": 0,\n  \"TeacherX\": 0,\n  \"TeacherY\": 0,\n  \"Text\": \"xx\",\n  \"TextColor\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "StartRoom": [
+      {
+        "document": "房间不存在示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 11111\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0479a5ea-0b81-4d94-845d-f57b23e52e4e\"\n    }\n}",
+        "title": "开始房间"
       }
     ],
     "UnbindDocumentFromRoom": [

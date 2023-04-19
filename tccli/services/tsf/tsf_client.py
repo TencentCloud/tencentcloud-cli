@@ -433,7 +433,7 @@ def doDescribePodInstances(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeUsableUnitNamespaces(args, parsed_globals):
+def doCreateConfigWithDetailResp(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -462,11 +462,11 @@ def doDescribeUsableUnitNamespaces(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUsableUnitNamespacesRequest()
+    model = models.CreateConfigWithDetailRespRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeUsableUnitNamespaces(model)
+        rsp = client.CreateConfigWithDetailResp(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -953,7 +953,7 @@ def doDescribeGroupAttribute(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeConfigs(args, parsed_globals):
+def doCreateFileConfigWithDetailResp(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -982,11 +982,11 @@ def doDescribeConfigs(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeConfigsRequest()
+    model = models.CreateFileConfigWithDetailRespRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeConfigs(model)
+        rsp = client.CreateFileConfigWithDetailResp(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1889,7 +1889,7 @@ def doRevokeFileConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDeliveryConfig(args, parsed_globals):
+def doCreateContainGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1918,11 +1918,11 @@ def doDescribeDeliveryConfig(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDeliveryConfigRequest()
+    model = models.CreateContainGroupRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeDeliveryConfig(model)
+        rsp = client.CreateContainGroup(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2807,6 +2807,58 @@ def doCreateUnitRule(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CreateUnitRule(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeUsableUnitNamespaces(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeUsableUnitNamespacesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeUsableUnitNamespaces(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5199,6 +5251,58 @@ def doModifyCluster(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ModifyCluster(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeConfigs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeConfigsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeConfigs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9793,7 +9897,7 @@ def doModifyGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateContainGroup(args, parsed_globals):
+def doDescribeDeliveryConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -9822,11 +9926,11 @@ def doCreateContainGroup(args, parsed_globals):
     client = mod.TsfClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateContainGroupRequest()
+    model = models.DescribeDeliveryConfigRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateContainGroup(model)
+        rsp = client.DescribeDeliveryConfig(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -11112,7 +11216,7 @@ ACTION_MAP = {
     "DescribeConfigSummary": doDescribeConfigSummary,
     "DescribeInvocationMetricScatterPlot": doDescribeInvocationMetricScatterPlot,
     "DescribePodInstances": doDescribePodInstances,
-    "DescribeUsableUnitNamespaces": doDescribeUsableUnitNamespaces,
+    "CreateConfigWithDetailResp": doCreateConfigWithDetailResp,
     "CreateNamespace": doCreateNamespace,
     "AddClusterInstances": doAddClusterInstances,
     "DeleteLaneRule": doDeleteLaneRule,
@@ -11122,7 +11226,7 @@ ACTION_MAP = {
     "CreateApplication": doCreateApplication,
     "CreateMicroservice": doCreateMicroservice,
     "DescribeGroupAttribute": doDescribeGroupAttribute,
-    "DescribeConfigs": doDescribeConfigs,
+    "CreateFileConfigWithDetailResp": doCreateFileConfigWithDetailResp,
     "CreateConfigTemplate": doCreateConfigTemplate,
     "DisableTaskFlow": doDisableTaskFlow,
     "RevocationPublicConfig": doRevocationPublicConfig,
@@ -11140,7 +11244,7 @@ ACTION_MAP = {
     "DescribeSimpleClusters": doDescribeSimpleClusters,
     "DescribeApiDetail": doDescribeApiDetail,
     "RevokeFileConfig": doRevokeFileConfig,
-    "DescribeDeliveryConfig": doDescribeDeliveryConfig,
+    "CreateContainGroup": doCreateContainGroup,
     "DescribeGroupsWithPlugin": doDescribeGroupsWithPlugin,
     "DisableUnitRoute": doDisableUnitRoute,
     "DisassociateBusinessLogConfig": doDisassociateBusinessLogConfig,
@@ -11158,6 +11262,7 @@ ACTION_MAP = {
     "DescribeApplication": doDescribeApplication,
     "UpdateUnitRule": doUpdateUnitRule,
     "CreateUnitRule": doCreateUnitRule,
+    "DescribeUsableUnitNamespaces": doDescribeUsableUnitNamespaces,
     "DescribeGroupUseDetail": doDescribeGroupUseDetail,
     "DescribeUnitNamespaces": doDescribeUnitNamespaces,
     "ReassociateBusinessLogConfig": doReassociateBusinessLogConfig,
@@ -11204,6 +11309,7 @@ ACTION_MAP = {
     "DescribeInovcationIndicators": doDescribeInovcationIndicators,
     "DescribeDeliveryConfigByGroupId": doDescribeDeliveryConfigByGroupId,
     "ModifyCluster": doModifyCluster,
+    "DescribeConfigs": doDescribeConfigs,
     "DescribeStatistics": doDescribeStatistics,
     "DeleteConfigTemplate": doDeleteConfigTemplate,
     "ReleaseFileConfig": doReleaseFileConfig,
@@ -11292,7 +11398,7 @@ ACTION_MAP = {
     "DescribeApiVersions": doDescribeApiVersions,
     "DescribeGroup": doDescribeGroup,
     "ModifyGroup": doModifyGroup,
-    "CreateContainGroup": doCreateContainGroup,
+    "DescribeDeliveryConfig": doDescribeDeliveryConfig,
     "DescribeEnabledUnitRule": doDescribeEnabledUnitRule,
     "DeleteConfig": doDeleteConfig,
     "ModifyContainerReplicas": doModifyContainerReplicas,

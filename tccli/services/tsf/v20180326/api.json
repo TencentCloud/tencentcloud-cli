@@ -119,6 +119,13 @@
       "output": "CreateConfigTemplateWithDetailRespResponse",
       "status": "online"
     },
+    "CreateConfigWithDetailResp": {
+      "document": "创建配置项，返回详细信息",
+      "input": "CreateConfigWithDetailRespRequest",
+      "name": "创建配置项并返回详细信息",
+      "output": "CreateConfigWithDetailRespResponse",
+      "status": "online"
+    },
     "CreateContainGroup": {
       "document": "（已废弃，请使用 CreateGroup 和 DeployContainerGroup 创建和部署容器部署组）创建容器部署组",
       "input": "CreateContainGroupRequest",
@@ -131,6 +138,13 @@
       "input": "CreateFileConfigRequest",
       "name": "创建文件配置项",
       "output": "CreateFileConfigResponse",
+      "status": "online"
+    },
+    "CreateFileConfigWithDetailResp": {
+      "document": "创建文件配置项，返回详细信息",
+      "input": "CreateFileConfigWithDetailRespRequest",
+      "name": "创建文件配置项并返回详细信息",
+      "output": "CreateFileConfigWithDetailRespResponse",
       "status": "online"
     },
     "CreateGatewayApi": {
@@ -6397,6 +6411,96 @@
       ],
       "type": "object"
     },
+    "CreateConfigWithDetailRespRequest": {
+      "document": "CreateConfigWithDetailResp请求参数结构体",
+      "members": [
+        {
+          "document": "配置项名称",
+          "example": "test_openapi_config",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项版本",
+          "example": "v1.0",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项值",
+          "example": "api.invok.limit: 5000",
+          "member": "string",
+          "name": "ConfigValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "应用ID",
+          "example": "application-gyq2xry5",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项版本描述",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigVersionDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "配置项值类型",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "Base64编码的配置项",
+          "example": "无",
+          "member": "bool",
+          "name": "EncodeWithBase64",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigWithDetailRespResponse": {
+      "document": "CreateConfigWithDetailResp返回参数结构体",
+      "members": [
+        {
+          "document": "配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{   \"ConfigName\": \"abc\",   \"ConfigVersion\": \"abc\",   \"ConfigVersionDesc\": \"abc\",   \"ConfigValue\": \"abc\",   \"ApplicationId\": \"abc\",   \"ConfigType\": \"abc\",   \"EncodeWithBase64\": true,   \"ProgramIdList\": [     \"abc\"   ] }",
+          "member": "Config",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateContainGroupRequest": {
       "document": "CreateContainGroup请求参数结构体",
       "members": [
@@ -6755,6 +6859,120 @@
           "name": "Result",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileConfigWithDetailRespRequest": {
+      "document": "CreateFileConfigWithDetailResp请求参数结构体",
+      "members": [
+        {
+          "document": "配置项名称",
+          "example": "consumer-config",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项版本",
+          "example": "1",
+          "member": "string",
+          "name": "ConfigVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项文件名",
+          "example": "update",
+          "member": "string",
+          "name": "ConfigFileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项文件内容（原始内容编码需要 utf-8 格式，如果 ConfigFileCode 为 gbk，后台会进行转换）",
+          "example": "workdir",
+          "member": "string",
+          "name": "ConfigFileValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项关联应用ID",
+          "example": "application-dapbkdgy",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "发布路径",
+          "example": "/root",
+          "member": "string",
+          "name": "ConfigFilePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "配置项版本描述",
+          "example": "first",
+          "member": "string",
+          "name": "ConfigVersionDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "配置项文件编码，utf-8 或 gbk。注：如果选择 gbk，需要新版本 tsf-consul-template （公有云虚拟机需要使用 1.32 tsf-agent，容器需要从文档中获取最新的 tsf-consul-template-docker.tar.gz）的支持",
+          "example": "utf-8",
+          "member": "string",
+          "name": "ConfigFileCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "后置命令",
+          "example": "/usr/bin/bash",
+          "member": "string",
+          "name": "ConfigPostCmd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "Base64编码的配置项",
+          "example": "true",
+          "member": "bool",
+          "name": "EncodeWithBase64",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileConfigWithDetailRespResponse": {
+      "document": "CreateFileConfigWithDetailResp返回参数结构体",
+      "members": [
+        {
+          "document": "文件配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "FileConfig",
+          "name": "Result",
+          "type": "object",
           "value_allowed_null": true
         },
         {

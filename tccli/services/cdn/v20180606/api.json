@@ -4930,7 +4930,6 @@
       "document": "DescribeCdnDomainLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "指定域名查询",
           "example": "www.test.com",
           "member": "string",
@@ -4939,7 +4938,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "开始时间，如 2019-09-04 00:00:00",
           "example": "2021-02-01 00:00:00",
           "member": "datetime",
@@ -4948,7 +4946,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束时间，如 2019-09-04 12:00:00",
           "example": "2021-02-01 01:00:00",
           "member": "datetime",
@@ -4957,7 +4954,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页查询偏移量，默认为 0",
           "example": "0",
           "member": "int64",
@@ -4966,7 +4962,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页查询限制数目，默认为 100，最大为 1000",
           "example": "10",
           "member": "int64",
@@ -4975,7 +4970,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "指定区域下载日志\nmainland：获取境内加速日志包下载链接\noverseas：获取境外加速日志包下载链接\nglobal：同时获取境内、境外加速日志包下载链接（分开打包）\n不指定时默认为 mainland",
           "example": "mainland",
           "member": "string",
@@ -4984,7 +4978,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定下载日志的类型，目前仅支持访问日志（access）。\naccess：访问日志",
           "example": "access",
           "member": "string",
@@ -5003,7 +4996,6 @@
           "example": "无",
           "member": "DomainLog",
           "name": "DomainLogs",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5012,7 +5004,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8676,8 +8667,8 @@
       "document": "日志包下载链接详情",
       "members": [
         {
-          "default": "",
           "document": "日志包起始时间",
+          "example": "无",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -8685,8 +8676,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志包结束时间",
+          "example": "无",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -8694,8 +8685,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志包下载链接",
+          "example": "无",
           "member": "string",
           "name": "LogPath",
           "required": true,
@@ -8703,8 +8694,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志包对应加速区域\nmainland：境内\noverseas：境外",
+          "example": "无",
           "member": "string",
           "name": "Area",
           "required": true,
@@ -8712,13 +8703,22 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志包文件名",
+          "example": "无",
           "member": "string",
           "name": "LogName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "文件大小，单位: Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

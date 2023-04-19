@@ -17069,8 +17069,7 @@
       "document": "DescribeFileTamperEvents请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>RuleCategory- string - 是否必填：否 - 规则类别 0 系统规则 1 自定义规则</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>RuleCategory- string - 是否必填：否 - 规则类别 0 系统规则 1 自定义规则</li>\n<li>FileAction- string - 是否必填：否 - 威胁行为 read 读取文件 write 写文件</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -17078,7 +17077,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "1",
           "member": "uint64",
@@ -17087,7 +17085,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "1",
           "member": "uint64",
@@ -17096,7 +17093,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "排序方式 ASC,DESC",
           "example": "xx",
           "member": "string",
@@ -17105,7 +17101,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序字段 CreateTime、ModifyTime",
           "example": "xx",
           "member": "string",
@@ -17124,7 +17119,6 @@
           "example": "无",
           "member": "FileTamperEvent",
           "name": "List",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17133,7 +17127,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25606,6 +25599,15 @@
           "name": "MachineExtraInfo",
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件威胁行为\n<li>read 读取文件</li>\n<li>write 修改文件</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "read",
+          "member": "string",
+          "name": "FileAction",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

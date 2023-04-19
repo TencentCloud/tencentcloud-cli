@@ -1,6 +1,6 @@
 **Example 1: 信息模板列表**
 
-
+信息模板列表
 
 Input: 
 
@@ -10,7 +10,7 @@ tccli domain DescribeTemplateList --cli-unfold-argument  \
     --Limit 20 \
     --Status InAudit \
     --Type E \
-    --Keyword xx
+    --Keyword abc
 ```
 
 Output: 

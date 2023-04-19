@@ -1,6 +1,6 @@
-**Example 1: 创建spark应用**
+**Example 1: 更新spark应用**
 
-本接口用于创建spark应用。
+本接口用于更新spark应用。
 
 Input: 
 

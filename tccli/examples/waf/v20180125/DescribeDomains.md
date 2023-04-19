@@ -50,7 +50,13 @@ Output:
                 ],
                 "CCList": [],
                 "Ports": [
-                    {}
+                    {
+                        "NginxServerId": 0,
+                        "Port": "",
+                        "Protocol": "",
+                        "UpstreamPort": "",
+                        "UpstreamProtocol": ""
+                    }
                 ],
                 "LoadBalancerSet": []
             },
@@ -81,7 +87,13 @@ Output:
                 ],
                 "CCList": [],
                 "Ports": [
-                    {}
+                    {
+                        "NginxServerId": 0,
+                        "Port": "",
+                        "Protocol": "",
+                        "UpstreamPort": "",
+                        "UpstreamProtocol": ""
+                    }
                 ],
                 "LoadBalancerSet": []
             },
@@ -112,7 +124,13 @@ Output:
                 ],
                 "CCList": [],
                 "Ports": [
-                    {}
+                    {
+                        "NginxServerId": 0,
+                        "Port": "",
+                        "Protocol": "",
+                        "UpstreamPort": "",
+                        "UpstreamProtocol": ""
+                    }
                 ],
                 "LoadBalancerSet": []
             },
@@ -143,7 +161,13 @@ Output:
                 ],
                 "CCList": [],
                 "Ports": [
-                    {}
+                    {
+                        "NginxServerId": 0,
+                        "Port": "",
+                        "Protocol": "",
+                        "UpstreamPort": "",
+                        "UpstreamProtocol": ""
+                    }
                 ],
                 "LoadBalancerSet": []
             },
@@ -165,7 +189,13 @@ Output:
                 "RsList": [],
                 "CCList": [],
                 "Ports": [
-                    {}
+                    {
+                        "NginxServerId": 0,
+                        "Port": "",
+                        "Protocol": "",
+                        "UpstreamPort": "",
+                        "UpstreamProtocol": ""
+                    }
                 ],
                 "LoadBalancerSet": [
                     {
@@ -199,7 +229,13 @@ Output:
                 "RsList": [],
                 "CCList": [],
                 "Ports": [
-                    {}
+                    {
+                        "NginxServerId": 0,
+                        "Port": "",
+                        "Protocol": "",
+                        "UpstreamPort": "",
+                        "UpstreamProtocol": ""
+                    }
                 ],
                 "LoadBalancerSet": [
                     {
@@ -233,7 +269,13 @@ Output:
                 "RsList": [],
                 "CCList": [],
                 "Ports": [
-                    {}
+                    {
+                        "NginxServerId": 0,
+                        "Port": "",
+                        "Protocol": "",
+                        "UpstreamPort": "",
+                        "UpstreamProtocol": ""
+                    }
                 ],
                 "LoadBalancerSet": [
                     {
@@ -267,7 +309,13 @@ Output:
                 "RsList": [],
                 "CCList": [],
                 "Ports": [
-                    {}
+                    {
+                        "NginxServerId": 0,
+                        "Port": "",
+                        "Protocol": "",
+                        "UpstreamPort": "",
+                        "UpstreamProtocol": ""
+                    }
                 ],
                 "LoadBalancerSet": [
                     {

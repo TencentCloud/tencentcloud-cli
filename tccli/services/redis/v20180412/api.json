@@ -85,7 +85,7 @@
       "status": "online"
     },
     "CreateInstances": {
-      "document": "本接口(CreateInstances)用于创建redis实例。",
+      "document": "本接口（CreateInstances）用于创建 Redis 实例。",
       "input": "CreateInstancesRequest",
       "name": "创建Redis实例",
       "output": "CreateInstancesResponse",
@@ -1620,8 +1620,7 @@
       "document": "CreateInstances请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例类型：2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)，15 – Redis6.0内存版(标准架构)，16 – Redis6.0内存版(集群架构)。",
+          "document": "实例类型。\n<ul><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li><li>15：Redis 6.2 内存版（标准架构）。</li><li>16：Redis 6.2 内存版（集群架构）。</li></ul>",
           "example": "6",
           "member": "uint64",
           "name": "TypeId",
@@ -1629,8 +1628,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "内存容量，单位为MB， 数值需为1024的整数倍，具体规格以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。\nTypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架构时，MemSize是单分片内存容量。",
+          "document": "内存容量，单位为MB， 数值需为1024的整数倍。具体规格，请通过 [DescribeProductInfo](https://cloud.tencent.com/document/api/239/30600) 接口查询全地域的售卖规格。\n- **TypeId**为标准架构时，**MemSize**是实例总内存容量；\n- **TypeId**为集群架构时，**MemSize**是单分片内存容量。",
           "example": "4096",
           "member": "uint64",
           "name": "MemSize",
@@ -1638,8 +1636,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "实例数量，单次购买实例数量以 [查询产品售卖规格](https://cloud.tencent.com/document/api/239/30600) 返回的规格为准。",
+          "document": "实例数量，单次购买实例数量。具体信息，请通过 [DescribeProductInfo](https://cloud.tencent.com/document/api/239/30600) 接口查询全地域的售卖规格。",
           "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
@@ -1647,8 +1644,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "购买时长，在创建包年包月实例的时候需要填写，按量计费实例填1即可，单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
+          "document": "购买实例的时长。\n- 若 **BillingMode**为**1**，即计费方式为包年包月时，需设置该参数，指定所购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。\n- 若 **BillingMode**为**0**，即计费方式为按量计费时，该参数配置为1。",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -1656,8 +1652,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "付费方式:0-按量计费，1-包年包月。",
+          "document": "计费方式。\n- 0：按量计费。\n- 1：包年包月。",
           "example": "0",
           "member": "int64",
           "name": "BillingMode",
@@ -1665,7 +1660,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。",
           "example": "100002",
           "member": "uint64",
@@ -1674,8 +1668,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "实例密码，当输入参数NoAuth为true且使用私有网络VPC时，Password为非必填，否则Password为必填参数。\n当实例类型TypeId为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头；\n当实例类型TypeId为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字 且 不包含其他字符。",
+          "document": "访问实例的密码。\n- 当输入参数**NoAuth**为**true**时，指设置实例为免密码访问，Password可不用配置，否则Password为必填参数。\n- 当实例类型**TypeId**为Redis 2.8 内存版标准架构、Redis 4.0、5.0、6.0内存版标准架构或集群架构时，其密码复杂度要求为：8-30个字符，至少包含小写字母、大写字母、数字和字符()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头。\n- 当实例类型**TypeId**为CKV 3.2 内存版标准架构或集群架构时，其密码复杂度为：8-30个字符，必须包含字母和数字，且 不包含其他字符。",
           "example": "123456MyP@ssword",
           "member": "string",
           "name": "Password",
@@ -1683,8 +1676,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "私有网络ID，如果不传则默认选择基础网络，请使用私有网络列表查询，如：vpc-sad23jfdfk。",
+          "document": "私有网络ID。如果不配置该参数则默认选择基础网络。请登录 [私有网络](https://console.cloud.tencent.com/vpc)控制台查询具体的ID。",
           "example": "vpc-pxyzim13",
           "member": "string",
           "name": "VpcId",
@@ -1692,8 +1684,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "基础网络下， subnetId无效； vpc子网下，取值以查询子网列表，如：subnet-fdj24n34j2。",
+          "document": "私有网络VPC的子网。基础网络下， 该参数无需配置。请登录 [私有网络](https://console.cloud.tencent.com/vpc)控制台查询子网列表获取具体的 ID。",
           "example": "subnet-7jbabche",
           "member": "string",
           "name": "SubnetId",
@@ -1701,8 +1692,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。",
+          "document": "项目 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)，在右上角的账户信息菜单中，选择**项目管理**查询项目 ID。",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -1710,8 +1700,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "自动续费标识。0 - 默认状态（手动续费）；1 - 自动续费；2 - 明确不自动续费。",
+          "document": "自动续费标识。\n- 0：默认状态（手动续费）。\n- 1：自动续费。\n- 2：到期不续费。",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenew",
@@ -1719,8 +1708,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "安全组id数组。",
+          "document": "安全组 ID 数组。请通过[DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/product/239/34447)接口获取实例的安全组 ID。",
           "example": "[\"sg-bmadczm1\"]",
           "member": "string",
           "name": "SecurityGroupIdList",
@@ -1728,8 +1716,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "用户自定义的端口 不填则默认为6379，范围[1024,65535]。",
+          "document": "用户自定义的网络端口。默认为6379，范围为 [1024,65535]。",
           "example": "6378",
           "member": "uint64",
           "name": "VPort",
@@ -1737,8 +1724,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "实例分片数量，购买标准版实例不需要填写，集群版分片数量范围[3,5,8,12,16,24,32,64,96,128]。",
+          "document": "实例分片数量。\n- 标准版实例无需配置该参数。\n- 集群版实例，分片数量范围为：[1、3、5、8、12、16、24、32、40、48、64、80、96、128]。",
           "example": "1",
           "member": "int64",
           "name": "RedisShardNum",
@@ -1746,8 +1732,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "实例副本数量，Redis 2.8标准版、CKV标准版只支持1副本，4.0、5.0标准版和集群版支持1-5个副本。",
+          "document": "实例副本数量。\n- Redis 内存版 4.0、5.0、6.2 标准架构和集群架构支持副本数量范围为[1,5]。\n- Redis 2.8标准版、CKV标准版只支持1副本。",
           "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
@@ -1755,8 +1740,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "是否支持副本只读，Redis 2.8标准版、CKV标准版不支持副本只读，开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点，如需开启副本只读建议副本数>=2。",
+          "document": "标识实例是否需支持副本只读。\n- Redis 2.8 标准版、CKV标准版不支持副本只读。\n- 开启副本只读，实例将自动读写分离，写请求路由到主节点，读请求路由到副本节点。\n- 如需开启副本只读，建议副本数量大于等于2。",
           "example": "true",
           "member": "bool",
           "name": "ReplicasReadonly",
@@ -1764,8 +1748,7 @@
           "type": "bool"
         },
         {
-          "default": "",
-          "document": "实例名称，长度小于60的中文/英文/数字/\"-\"/\"_\"。",
+          "document": "实例名称。命名要求：仅支持长度小于60的中文、英文或者数字，短划线\"-\"、下划线\"_\"。",
           "example": "MyInstanceName",
           "member": "string",
           "name": "InstanceName",
@@ -1773,8 +1756,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "是否支持免密，true-免密实例，false-非免密实例，默认为非免密实例，仅VPC网络的实例支持免密码访问。",
+          "document": "配置实例是否支持免密码访问。\n- true：免密访问实例。\n- false：非免密访问实例。默认为非免密方式，仅VPC网络的实例支持免密码访问。",
           "example": "false",
           "member": "bool",
           "name": "NoAuth",
@@ -1782,8 +1764,7 @@
           "type": "bool"
         },
         {
-          "default": "",
-          "document": "实例的节点信息，目前支持传入节点的类型（主节点或者副本节点），节点的可用区。单可用区部署不需要传递此参数。",
+          "document": "实例的节点信息，包含节点 ID、节点类型、节点可用区 ID等。具体信息，请参见[RedisNodeInfo ](https://cloud.tencent.com/document/product/239/20022)。\n目前支持传入节点的类型（主节点或者副本节点），节点的可用区。单可用区部署不需要传递此参数。",
           "example": "无",
           "member": "RedisNodeInfo",
           "name": "NodeSet",
@@ -1791,8 +1772,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "购买实例绑定标签",
+          "document": "给实例设定标签。",
           "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
@@ -1800,8 +1780,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。",
+          "document": "指定实例所属的可用区名称。具体信息，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ZoneName",
@@ -1809,8 +1788,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "创建实例需要应用的参数模板ID，不传则应用默认的参数模板",
+          "document": "指定实例相关的参数模板 ID。\n- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。\n- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。",
           "example": "crs-cfg-rhlppeye",
           "member": "string",
           "name": "TemplateId",
@@ -1818,8 +1796,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "false ：默认值,发送正常请求，通过检查后直接创建实例 true：发送检查请求，不会创建实例。",
+          "document": "内部参数，标识创建实例是否需要检查。\n- false ：默认值。发送正常请求，通过检查后直接创建实例。\n- true：发送检查请求，不会创建实例。",
           "example": "true",
           "member": "bool",
           "name": "DryRun",
@@ -1827,8 +1804,7 @@
           "type": "bool"
         },
         {
-          "default": "",
-          "document": "\"local\"本地盘版，\"cloud\"云盘版，\"cdc\"独享集群版，如果不传默认发货为本地盘版本",
+          "document": "指定实例的产品版本。\n- local：本地盘版。\n- cloud：云盘版，\n- cdc：独享集群版。如果不传默认发货为本地盘版本。",
           "example": "cdc",
           "member": "string",
           "name": "ProductVersion",
@@ -1836,8 +1812,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "独享集群id，ProductVersion=\"cdc\"时必传",
+          "document": "独享集群 ID。当**ProductVersion**设置为**cdc**时，该参数必须设置。",
           "example": "crs-cdc-0xigvn3t",
           "member": "string",
           "name": "RedisClusterId",
@@ -1851,20 +1826,18 @@
       "document": "CreateInstances返回参数结构体",
       "members": [
         {
-          "document": "交易的ID",
+          "document": "交易的ID。",
           "example": "199878234",
           "member": "string",
           "name": "DealId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "crs-3sz5wdav",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5732,8 +5705,8 @@
       "document": "实例分片列表信息",
       "members": [
         {
-          "default": "",
-          "document": "分片节点名称",
+          "document": "分片节点名称。",
+          "example": "无",
           "member": "string",
           "name": "ShardName",
           "required": true,
@@ -5741,8 +5714,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "分片节点Id",
+          "document": "分片节点序号。",
+          "example": "无",
           "member": "string",
           "name": "ShardId",
           "required": true,
@@ -5750,8 +5723,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "角色",
+          "document": "分片节点的角色。\n- 0：主节点。\n- 1：副本节点。",
+          "example": "无",
           "member": "int64",
           "name": "Role",
           "required": true,
@@ -5759,8 +5732,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "Key数量",
+          "document": "Key数量。",
+          "example": "无",
           "member": "int64",
           "name": "Keys",
           "required": true,
@@ -5768,8 +5741,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "slot信息",
+          "document": "Slot信息。",
+          "example": "无",
           "member": "string",
           "name": "Slots",
           "required": true,
@@ -5777,8 +5750,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "使用容量",
+          "document": "已使用容量。",
+          "example": "无",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -5786,8 +5759,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "容量倾斜率",
+          "document": "容量倾斜率。",
+          "example": "无",
           "member": "float",
           "name": "StorageSlope",
           "required": true,
@@ -5795,8 +5768,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例运行时节点Id",
+          "document": "实例运行时节点 ID。",
+          "example": "无",
           "member": "string",
           "name": "Runid",
           "required": true,
@@ -5804,8 +5777,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "服务状态：0-down；1-on",
+          "document": "服务状态。\n- 0：down。\n- 1：on。",
+          "example": "无",
           "member": "int64",
           "name": "Connected",
           "required": true,
@@ -6265,7 +6238,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "用户的 AppID。",
+          "document": "用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。\n",
           "example": "12345",
           "member": "int64",
           "name": "Appid",
@@ -6346,7 +6319,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实例创建时间。",
+          "document": "实例创建时间。格式如：2020-01-15 10:20:00。",
           "example": "2020-01-15 10:20:00",
           "member": "string",
           "name": "Createtime",
@@ -6355,7 +6328,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实例容量大小，单位：MB。",
+          "document": "实例内存容量大小。单位：MB，1MB=1024KB。",
           "example": "1451",
           "member": "float",
           "name": "Size",
@@ -6391,7 +6364,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实例到期时间。",
+          "document": "包年包月计费实例到期的时间。",
           "example": "2020-02-15 10:20:00",
           "member": "string",
           "name": "DeadlineTime",
@@ -6454,7 +6427,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "计划下线时间。",
+          "document": "已隔离实例默认下线时间。按量计费实例隔离后默认两小时后下线，包年包月默认7天后下线。格式如：2020-02-15 10:20:00。",
           "example": "2020-02-15 10:20:00",
           "member": "string",
           "name": "OfflineTime",
@@ -6526,7 +6499,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "隔离时间。",
+          "document": "实例隔离开始的时间。",
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "CloseTime",
@@ -6643,7 +6616,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5s",
           "member": "string",
           "name": "MonitorVersion",
@@ -6697,7 +6670,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "北极星服务地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "北极星服务地址，内部使用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "txcloud-paas-crs-xxx",
           "member": "string",
           "name": "PolarisServer",

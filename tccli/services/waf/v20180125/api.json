@@ -17,7 +17,7 @@
     "AddSpartaProtection": {
       "document": "添加Spart防护域名",
       "input": "AddSpartaProtectionRequest",
-      "name": "添加Spart防护域名",
+      "name": "添加SAAS-WAF防护域名",
       "output": "AddSpartaProtectionResponse",
       "status": "online"
     },
@@ -246,7 +246,7 @@
       "status": "online"
     },
     "ModifyAccessPeriod": {
-      "document": "本接口用于修改访问日志保存期限",
+      "document": "本接口用于修改访问日志保存期限及大字段是否存储",
       "input": "ModifyAccessPeriodRequest",
       "name": "修改访问日志保存期限",
       "output": "ModifyAccessPeriodResponse",
@@ -1016,7 +1016,7 @@
         },
         {
           "default": "",
-          "document": "版本：sparta-waf、clb-waf、cdn-waf",
+          "document": "WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF，cdn-waf表示CDN上的Web防护能力",
           "example": "clb-waf",
           "member": "string",
           "name": "Edition",
@@ -1112,6 +1112,33 @@
           "name": "ProxySendTimeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；",
+          "example": "2",
+          "member": "int64",
+          "name": "SniType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "SniType=3时，需要填此参数，表示自定义的host；",
+          "example": "test.com",
+          "member": "string",
+          "name": "SniHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "is_cdn=3时，需要填此参数，表示自定义header",
+          "example": "[\"x-real-ip\"]",
+          "member": "string",
+          "name": "IpHeaders",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2431,7 +2458,6 @@
       "document": "DescribeDomainDetailsSaas请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "1",
           "member": "string",
@@ -2440,7 +2466,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "域名id",
           "example": "1",
           "member": "string",
@@ -2449,7 +2474,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例id",
           "example": "1",
           "member": "string",
@@ -2468,7 +2492,6 @@
           "example": "无",
           "member": "DomainsPartInfo",
           "name": "DomainsPartInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3031,7 +3054,7 @@
         },
         {
           "default": "",
-          "document": "六个值可选：\naccess-峰值qps趋势图\nbotAccess- bot峰值qps趋势图\ndown-下行峰值带宽趋势图\nup-上行峰值带宽趋势图\nattack-Web攻击总数趋势图\ncc-CC攻击总数趋势图",
+          "document": "十三个值可选：\naccess-峰值qps趋势图\nbotAccess- bot峰值qps趋势图\ndown-下行峰值带宽趋势图\nup-上行峰值带宽趋势图\nattack-Web攻击总数趋势图\ncc-CC攻击总数趋势图\nStatusServerError-WAF返回给客户端状态码次数趋势图\nStatusClientError-WAF返回给客户端状态码次数趋势图\nStatusRedirect-WAF返回给客户端状态码次数趋势图\nStatusOk-WAF返回给客户端状态码次数趋势图\nUpstreamServerError-源站返回给WAF状态码次数趋势图\nUpstreamClientError-源站返回给WAF状态码次数趋势图\nUpstreamRedirect-源站返回给WAF状态码次数趋势图",
           "example": "access",
           "member": "string",
           "name": "MetricName",
@@ -4030,6 +4053,46 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "SniType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SniType=3时，需要填此参数，表示自定义的host；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.com",
+          "member": "string",
+          "name": "SniHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Weights",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IsCdn=3时，表示自定义header\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"x-real-ip\"]",
+          "member": "string",
+          "name": "IpHeaders",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4407,7 +4470,6 @@
       "document": "clb-waf防护域名",
       "members": [
         {
-          "default": "",
           "document": "域名",
           "example": "\"test.qcloudwaf.com\"",
           "member": "string",
@@ -4417,7 +4479,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名ID",
           "example": "\"waf-Bz0Wntsz\"",
           "member": "string",
@@ -4427,7 +4488,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主域名，入参时为空",
           "example": "\"qcloudwaf.com\"",
           "member": "string",
@@ -4437,7 +4497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "waf模式，同saas waf保持一致",
           "example": "1",
           "member": "uint64",
@@ -4447,7 +4506,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "waf和LD的绑定，0：没有绑定，1：绑定",
           "example": "1",
           "member": "uint64",
@@ -4457,7 +4515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名状态，0：正常，1：未检测到流量，2：即将过期，3：过期",
           "example": "1",
           "member": "uint64",
@@ -4467,7 +4524,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "使用的规则，同saas waf保持一致",
           "example": "20",
           "member": "uint64",
@@ -4477,7 +4533,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启代理，0：不开启，1：开启",
           "example": "0",
           "member": "uint64",
@@ -4487,7 +4542,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "绑定的LB列表",
           "example": "{}",
           "member": "LoadBalancer",
@@ -4497,7 +4551,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名绑定的LB的地域，以,分割多个地域",
           "example": "\"gz\"",
           "member": "string",
@@ -4507,7 +4560,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品分类，取值为：sparta-waf、clb-waf、cdn-waf",
           "example": "\"clb-waf\"",
           "member": "string",
@@ -4517,7 +4569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "WAF的流量模式，1：清洗模式，0：镜像模式",
           "example": "1",
           "member": "uint64",
@@ -4527,7 +4578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启访问日志，1：开启，0：关闭",
           "example": "1",
           "member": "uint64",
@@ -4537,7 +4587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "防护等级，可选值100,200,300\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -4547,7 +4596,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "域名需要下发到的cdc集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"\t cluster-o41khj88\",\"\t cluster-o41khj99\"]",
           "member": "string",
@@ -4557,13 +4605,30 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用型负载均衡类型: clb或者apisix，默认clb\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "clb",
           "member": "string",
           "name": "AlbType",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "IsCdn=3时，需要填此参数，表示自定义header\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"x-real-ip\"]",
+          "member": "string",
+          "name": "IpHeaders",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则引擎类型， 1: menshen,   2:tiga\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EngineType",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -5616,10 +5681,80 @@
         },
         {
           "default": "",
-          "document": "Bot qps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Bot qps",
           "example": "100",
           "member": "uint64",
           "name": "BotAccess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "StatusServerError",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "StatusClientError",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "StatusRedirect",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "StatusOk",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站返回给WAF状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "uint64",
+          "name": "UpstreamServerError",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站返回给WAF状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "UpstreamClientError",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站返回给WAF状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "uint64",
+          "name": "UpstreamRedirect",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -5628,9 +5763,55 @@
       "usage": "out"
     },
     "PortInfo": {
-      "document": "防护域名端口配置信息",
-      "members": [],
-      "usage": "out"
+      "document": "服务端口配置",
+      "members": [
+        {
+          "document": "Nginx的服务器id",
+          "example": "1",
+          "member": "uint64",
+          "name": "NginxServerId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "监听端口配置",
+          "example": "213",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "与端口对应的协议",
+          "example": "213",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回源端口",
+          "example": "213",
+          "member": "string",
+          "name": "UpstreamPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回源协议",
+          "example": "213",
+          "member": "string",
+          "name": "UpstreamProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PortItem": {
       "document": "防护域名端口配置信息",

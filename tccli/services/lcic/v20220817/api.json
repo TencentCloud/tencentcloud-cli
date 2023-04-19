@@ -133,6 +133,13 @@
       "output": "DeleteRoomResponse",
       "status": "online"
     },
+    "DeleteSupervisor": {
+      "document": "删除巡课",
+      "input": "DeleteSupervisorRequest",
+      "name": "删除巡课",
+      "output": "DeleteSupervisorResponse",
+      "status": "online"
+    },
     "DescribeAnswerList": {
       "document": "获取房间答题详情",
       "input": "DescribeAnswerListRequest",
@@ -166,6 +173,13 @@
       "input": "DescribeDocumentRequest",
       "name": "获取文档信息",
       "output": "DescribeDocumentResponse",
+      "status": "online"
+    },
+    "DescribeDocuments": {
+      "document": "批量获取文档信息",
+      "input": "DescribeDocumentsRequest",
+      "name": "批量获取文档信息",
+      "output": "DescribeDocumentsResponse",
       "status": "online"
     },
     "DescribeDocumentsByRoom": {
@@ -236,6 +250,13 @@
       "input": "DescribeUserRequest",
       "name": "获取用户信息",
       "output": "DescribeUserResponse",
+      "status": "online"
+    },
+    "EndRoom": {
+      "document": "结束房间的直播",
+      "input": "EndRoomRequest",
+      "name": "结束房间",
+      "output": "EndRoomResponse",
       "status": "online"
     },
     "GetRoomEvent": {
@@ -327,6 +348,13 @@
       "input": "SetWatermarkRequest",
       "name": "设置水印",
       "output": "SetWatermarkResponse",
+      "status": "online"
+    },
+    "StartRoom": {
+      "document": "开始房间的直播",
+      "input": "StartRoomRequest",
+      "name": "开始房间",
+      "output": "StartRoomResponse",
       "status": "online"
     },
     "UnbindDocumentFromRoom": {
@@ -1515,6 +1543,40 @@
       ],
       "type": "object"
     },
+    "DeleteSupervisorRequest": {
+      "document": "DeleteSupervisor请求参数结构体",
+      "members": [
+        {
+          "document": "应用ID",
+          "example": "12345",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "用户ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "Users",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSupervisorResponse": {
+      "document": "DeleteSupervisor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAnswerListRequest": {
       "document": "DescribeAnswerList请求参数结构体",
       "members": [
@@ -1939,6 +2001,96 @@
           "name": "Total",
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentsRequest": {
+      "document": "DescribeDocuments请求参数结构体",
+      "members": [
+        {
+          "document": "学校id",
+          "example": "1234",
+          "member": "uint64",
+          "name": "SchoolId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "分页查询当前页数，从1开始递增",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "每页数据量，最大1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件",
+          "example": "无",
+          "member": "uint64",
+          "name": "Permission",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "课件所有者的user_id，不填默认获取school_id下所有课件",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "课件名称搜索词",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "课件id列表，从列表中查询，忽略错误的id",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentsResponse": {
+      "document": "DescribeDocuments返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件文档总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文档信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocumentInfo",
+          "name": "Documents",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2796,9 +2948,71 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "课件页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Pages",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "宽，仅在静态转码的课件有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高，仅在静态转码的课件有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "封面，仅转码的课件会生成封面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Cover",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "EndRoomRequest": {
+      "document": "EndRoom请求参数结构体",
+      "members": [
+        {
+          "document": "房间ID。",
+          "example": "3123456789",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EndRoomResponse": {
+      "document": "EndRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EventDataInfo": {
       "document": "房间事件对应的信息。",
@@ -3441,6 +3655,42 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "用户角色。0代表学生；1代表老师； 2助教；3巡课。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Role",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上课班号",
+          "example": "abc",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子上课班号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubGroupId",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户的上台状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Stage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4321,6 +4571,32 @@
     },
     "SetWatermarkResponse": {
       "document": "SetWatermark返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartRoomRequest": {
+      "document": "StartRoom请求参数结构体",
+      "members": [
+        {
+          "document": "房间ID。",
+          "example": "3123456789",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "StartRoomResponse": {
+      "document": "StartRoom返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

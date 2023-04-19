@@ -1,6 +1,6 @@
 **Example 1: 查询单个saas域名详情**
 
-
+查询单个saas域名详情
 
 Input: 
 
@@ -20,6 +20,13 @@ Output:
             "CertType": 0,
             "Cls": 0,
             "Cname": "",
+            "SniType": 0,
+            "SniHost": "",
+            "ProxySendTimeout": 0,
+            "ProxyReadTimeout": 0,
+            "Ciphers": [
+                0
+            ],
             "HttpsRewrite": 0,
             "HttpsUpstreamPort": "",
             "IsKeepAlive": 0,
@@ -34,6 +41,8 @@ Output:
             "UpstreamDomain": "",
             "UpstreamScheme": "",
             "UpstreamType": 0,
+            "TLSVersion": 0,
+            "CipherTemplate": 0,
             "SrcList": [],
             "Ports": [],
             "ActiveCheck": 1

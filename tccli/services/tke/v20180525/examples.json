@@ -1470,6 +1470,14 @@
         "title": "卸载日志插件"
       }
     ],
+    "UpdateClusterKubeconfig": [
+      {
+        "document": "更新集群的kubeconfig信息",
+        "input": "https://tke.tencentcloudapi.com/?Action=UpdateClusterKubeconfig\r\n&ClusterId=cls-65r1c5nu\r\n&SubAccounts.0=123456\r\n&SubAccounts.1=123457\r\n&SubAccounts.2=123458\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"UpdatedSubAccounts\": [\n            \"123456\",\n            \"123457\",\n            \"1234568\"\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "title": "更新集群的kubeconfig信息"
+      }
+    ],
     "UpdateClusterVersion": [
       {
         "document": "",

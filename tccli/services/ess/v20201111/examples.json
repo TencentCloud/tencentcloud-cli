@@ -2,14 +2,14 @@
   "actions": {
     "BindEmployeeUserIdWithClientOpenId": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"0.0.0.1\",\n        \"UserId\": \"\",\n        \"Channel\": \"CLOUD_API\",\n        \"OpenId\": \"12345\"\n    },\n    \"UserId\": \"************\",\n    \"OpenId\": \"***********\"\n}",
+        "document": "传入OpenId",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ClientIp\": \"0.0.0.1\",\n        \"Channel\": \"INTEGRATE\",\n        \"OpenId\": \"12345\"\n    },\n    \"UserId\": \"************\",\n    \"OpenId\": \"***********\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1665218505798774974\",\n        \"Status\": 1\n    }\n}",
         "title": "示例1"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"0.0.0.1\",\n        \"UserId\": \"**************\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\"\n    },\n    \"UserId\": \"************\",\n    \"OpenId\": \"***********\"\n}",
+        "document": "传入UserId",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ClientIp\": \"0.0.0.1\",\n        \"UserId\": \"**************\"\n    },\n    \"UserId\": \"************\",\n    \"OpenId\": \"***********\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1665218590874024539\",\n        \"Status\": 1\n    }\n}",
         "title": "示例2"
       }
@@ -390,14 +390,14 @@
     ],
     "UnbindEmployeeUserIdWithClientOpenId": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"0.0.0.1\",\n        \"UserId\": \"\",\n        \"Channel\": \"CLOUD_API\",\n        \"OpenId\": \"12345\"\n    },\n    \"UserId\": \"************\",\n    \"OpenId\": \"***********\"\n}",
+        "document": "传入OpenId",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ClientIp\": \"0.0.0.1\",\n        \"Channel\": \"INTEGRATE\",\n        \"OpenId\": \"12345\"\n    },\n    \"UserId\": \"************\",\n    \"OpenId\": \"***********\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1665384640598336866\",\n        \"Status\": 1\n    }\n}",
         "title": "示例1"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"0.0.0.1\",\n        \"UserId\": \"**************\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\"\n    },\n    \"UserId\": \"************\",\n    \"OpenId\": \"***********\"\n}",
+        "document": "传入userId",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ClientIp\": \"0.0.0.1\",\n        \"UserId\": \"**************\"\n    },\n    \"UserId\": \"************\",\n    \"OpenId\": \"***********\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1665218558695032958\",\n        \"Status\": 1\n    }\n}",
         "title": "示例2"
       }

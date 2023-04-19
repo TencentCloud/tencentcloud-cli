@@ -830,6 +830,52 @@
       ],
       "usage": "out"
     },
+    "BackupDownloadRestriction": {
+      "document": "备份下载限制信息",
+      "members": [
+        {
+          "document": "备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。",
+          "example": "无",
+          "member": "string",
+          "name": "RestrictionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "vpc限制效力，ALLOW 允许；DENY 拒绝。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcRestrictionEffect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "允许或拒绝下载备份文件的vpcId列表。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "ip限制效力，ALLOW 允许；DENY 拒绝。",
+          "example": "无",
+          "member": "string",
+          "name": "IpRestrictionEffect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "允许或拒绝下载备份文件的ip列表。",
+          "example": "无",
+          "member": "string",
+          "name": "IpSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "BackupPlan": {
       "document": "备份计划",
       "members": [
@@ -3672,7 +3718,6 @@
       "document": "DescribeBackupDownloadURL请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "postgres-xxxxxxxx",
           "member": "string",
@@ -3681,7 +3726,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备份类型，目前支持：LogBackup，BaseBackup。",
           "example": "LogBackup",
           "member": "string",
@@ -3690,7 +3734,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备份的唯一ID。",
           "example": "f6adc02a-432e-536f-a5f3-3dbf40ecd683",
           "member": "string",
@@ -3699,13 +3742,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "链接的有效时间，默认为12小时。",
           "example": "12",
           "member": "uint64",
           "name": "URLExpireTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "备份下载限制",
+          "example": "无",
+          "member": "BackupDownloadRestriction",
+          "name": "BackupDownloadRestriction",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3718,7 +3768,6 @@
           "example": "无",
           "member": "string",
           "name": "BackupDownloadURL",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

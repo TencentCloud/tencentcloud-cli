@@ -98,16 +98,16 @@
     ],
     "CreateInstances": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"TypeId\": \"6\",\n    \"Password\": \"**********\",\n    \"GoodsNum\": \"1\",\n    \"Period\": \"1\",\n    \"BillingMode\": \"0\",\n    \"MemSize\": \"1024\",\n    \"ZoneId\": \"100002\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a836c00-175f-11eb-aeb3-db134c8d8fec\",\n        \"InstanceIds\": [\n            \"crs-kic39axx\"\n        ],\n        \"DealId\": \"22716\"\n    }\n}",
-        "title": "请求示例：购买按量计费的Redis4.0内存版（标准架构）实例"
-      },
-      {
-        "document": "",
+        "document": "购买包年包月的Redis5.0内存版（集群架构）实例",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"TypeId\": \"9\",\n    \"VpcId\": \"vpc-fmh*****\",\n    \"GoodsNum\": \"1\",\n    \"RedisShardNum\": \"3\",\n    \"Period\": \"3\",\n    \"BillingMode\": \"1\",\n    \"NoAuth\": \"true\",\n    \"MemSize\": \"2048\",\n    \"SubnetId\": \"subnet-680c****\",\n    \"RedisReplicasNum\": \"1\",\n    \"ZoneId\": \"200002\"\n}",
         "output": "{\n    \"Response\": {\n        \"DealId\": \"154494263\",\n        \"InstanceIds\": [\n            \"crs-h9sn****\"\n        ],\n        \"RequestId\": \"d39baee1-e34f-4685-a810-5d27c510acb3\"\n    }\n}",
-        "title": "请求示例：购买包年包月的Redis5.0内存版（集群架构）实例"
+        "title": "请求示例一"
+      },
+      {
+        "document": "购买按量计费的Redis4.0内存版（标准架构）实例",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"TypeId\": \"6\",\n    \"Password\": \"**********\",\n    \"GoodsNum\": \"1\",\n    \"Period\": \"1\",\n    \"BillingMode\": \"0\",\n    \"MemSize\": \"1024\",\n    \"ZoneId\": \"100002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a836c00-175f-11eb-aeb3-db134c8d8fec\",\n        \"InstanceIds\": [\n            \"crs-kic39axx\"\n        ],\n        \"DealId\": \"22716\"\n    }\n}",
+        "title": "请求示例二"
       }
     ],
     "CreateParamTemplate": [

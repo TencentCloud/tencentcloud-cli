@@ -302,11 +302,11 @@
       "status": "online"
     },
     "DescribeCDBProxy": {
-      "document": "查询数据库代理（待下线，替换接口QueryCDBProxy）",
+      "document": "接口已经废弃，请使用+DescribeCdbProxyInfo+进行替换。\n\n查询数据库代理（待下线，替换接口QueryCDBProxy）",
       "input": "DescribeCDBProxyRequest",
       "name": "查询数据库代理",
       "output": "DescribeCDBProxyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCdbZoneConfig": {
       "document": "本接口(DescribeCdbZoneConfig)用于查询云数据库各地域可售卖的规格配置。",
@@ -484,11 +484,11 @@
       "status": "online"
     },
     "DescribeProxyConnectionPoolConf": {
-      "document": "获取数据库代理连接池相关规格配置",
+      "document": "当前接口已经废弃，请使用+DescribeCdbProxyInfo+替代。\n\n获取数据库代理连接池相关规格配置",
       "input": "DescribeProxyConnectionPoolConfRequest",
       "name": "查询代理连接池规格配置",
       "output": "DescribeProxyConnectionPoolConfResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeProxyCustomConf": {
       "document": "查询代理规格配置",
@@ -694,25 +694,25 @@
       "status": "online"
     },
     "ModifyCDBProxyConnectionPool": {
-      "document": "请求该接口配置数据库连接池；支持的连接池配置请求DescribeProxyConnectionPoolConf接口获取。",
+      "document": "当前接口已经废弃，请使用+AdjustCdbProxyAddress+进行替代。\n\n请求该接口配置数据库连接池；支持的连接池配置请求DescribeProxyConnectionPoolConf接口获取。",
       "input": "ModifyCDBProxyConnectionPoolRequest",
       "name": "配置数据库代理连接池",
       "output": "ModifyCDBProxyConnectionPoolResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyCDBProxyDesc": {
-      "document": "修改数据库代理描述",
+      "document": "当前接口已经废弃，请使用+ModifyCdbProxyAddressDesc+进行替代。\n\n修改数据库代理描述",
       "input": "ModifyCDBProxyDescRequest",
       "name": "修改数据库代理描述",
       "output": "ModifyCDBProxyDescResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyCDBProxyVipVPort": {
-      "document": "修改数据库代理VIP或端口",
+      "document": "当前接口已经废弃，请使用+ModifyCdbProxyAddressVipAndVPort+进行替代。\n\n修改数据库代理VIP或端口",
       "input": "ModifyCDBProxyVipVPortRequest",
       "name": "修改数据库代理VIP或端口",
       "output": "ModifyCDBProxyVipVPortResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyDBInstanceName": {
       "document": "本接口(ModifyDBInstanceName)用于修改云数据库实例的名称。",
@@ -841,11 +841,11 @@
       "status": "online"
     },
     "QueryCDBProxy": {
-      "document": "查询代理详情",
+      "document": "当前接口已经废弃，请使用+DescribeCdbProxyInfo+进行替代。\n\n查询代理详情",
       "input": "QueryCDBProxyRequest",
       "name": "查询代理详情",
       "output": "QueryCDBProxyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ReleaseIsolatedDBInstances": {
       "document": "本接口（ReleaseIsolatedDBInstances）用于恢复已隔离云数据库实例。",

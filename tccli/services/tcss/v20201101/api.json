@@ -20998,7 +20998,6 @@
       "document": "DescribeReverseShellEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "10",
           "member": "uint64",
@@ -21007,7 +21006,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -21016,8 +21014,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "过滤参数,\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
+          "document": "过滤参数\nInnerNetAlarmShow- int - 是否必填：1 - 内网告警展示 0 - 不展示",
           "example": "sub1",
           "member": "RunTimeFilters",
           "name": "Filters",
@@ -21025,7 +21022,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "升序降序,asc desc",
           "example": "desc",
           "member": "string",
@@ -21034,7 +21030,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序字段",
           "example": "CreateTime",
           "member": "string",
@@ -21053,7 +21048,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21062,7 +21056,6 @@
           "example": "[]",
           "member": "ReverseShellEventInfo",
           "name": "EventSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -32631,7 +32624,6 @@
       "document": "容器安全运行时高危系统调用信息",
       "members": [
         {
-          "default": "",
           "document": "进程名称",
           "example": "bash",
           "member": "string",
@@ -32641,7 +32633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程路径",
           "example": "/home/work/",
           "member": "string",
@@ -32651,7 +32642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "镜像id",
           "example": "81abdbc1427b1983b63a2e7bf48ab156a9a22",
           "member": "string",
@@ -32661,7 +32651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "容器id",
           "example": "81abdbc1427b1983b63a2e7bf48ab156a9a22",
           "member": "string",
@@ -32671,7 +32660,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "镜像名",
           "example": "镜像名",
           "member": "string",
@@ -32681,7 +32669,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "容器名",
           "example": "/condescending_allen",
           "member": "string",
@@ -32691,7 +32678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成时间",
           "example": "2020-2-2 13:00:00",
           "member": "string",
@@ -32701,7 +32687,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件解决方案",
           "example": "解决方案",
           "member": "string",
@@ -32711,7 +32696,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件详细描述",
           "example": "xxx事件",
           "member": "string",
@@ -32721,7 +32705,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态，EVENT_UNDEAL:事件未处理\n    EVENT_DEALED:事件已经处理\n    EVENT_INGNORE：事件已经忽略\n    EVENT_ADD_WHITE：时间已经加白",
           "example": "EVENT_UNDEAL",
           "member": "string",
@@ -32731,7 +32714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件id",
           "example": "xxx",
           "member": "string",
@@ -32741,7 +32723,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "备注",
           "example": "备注",
           "member": "string",
@@ -32751,7 +32732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父进程名",
           "example": "父进程名",
           "member": "string",
@@ -32761,7 +32741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件数量",
           "example": "1",
           "member": "int64",
@@ -32771,7 +32750,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最近生成时间",
           "example": "2020-2-2 13:00:00",
           "member": "string",
@@ -32781,7 +32759,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标地址",
           "example": "127.0.0.1:80",
           "member": "string",
@@ -32791,7 +32768,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED",
           "example": "xxx",
           "member": "string",
@@ -32801,7 +32777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\t\"NODE_DESTROYED\"      //节点已销毁\n\t\"CONTAINER_EXITED\"    //容器已退出\n\t\"CONTAINER_DESTROYED\" //容器已销毁\n\t\"SHARED_HOST\"         // 容器与主机共享网络\n\t\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\t\"UNKNOW\"              // 原因未知",
           "example": "xxx",
           "member": "string",
@@ -32811,7 +32786,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "容器隔离操作来源",
           "example": "xxx",
           "member": "string",
@@ -32821,7 +32795,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "容器状态\n正在运行: RUNNING\n暂停: PAUSED\n停止: STOPPED\n已经创建: CREATED\n已经销毁: DESTROYED\n正在重启中: RESTARTING\n迁移中: REMOVING",
           "example": "xxx",
           "member": "string",

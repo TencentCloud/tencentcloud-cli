@@ -1260,6 +1260,13 @@
       "output": "UninstallLogAgentResponse",
       "status": "online"
     },
+    "UpdateClusterKubeconfig": {
+      "document": "对集群的Kubeconfig信息进行更新",
+      "input": "UpdateClusterKubeconfigRequest",
+      "name": "更新集群的kubeconfig信息",
+      "output": "UpdateClusterKubeconfigResponse",
+      "status": "online"
+    },
     "UpdateClusterVersion": {
       "document": "升级集群 Master 组件到指定版本",
       "input": "UpdateClusterVersionRequest",
@@ -19587,6 +19594,48 @@
     "UninstallLogAgentResponse": {
       "document": "UninstallLogAgent返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateClusterKubeconfigRequest": {
+      "document": "UpdateClusterKubeconfig请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "子账户Uin列表，传空默认为调用此接口的SubUin",
+          "example": "无",
+          "member": "string",
+          "name": "SubAccounts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateClusterKubeconfigResponse": {
+      "document": "UpdateClusterKubeconfig返回参数结构体",
+      "members": [
+        {
+          "document": "已更新的子账户Uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedSubAccounts",
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

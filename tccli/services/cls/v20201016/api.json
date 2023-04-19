@@ -210,6 +210,13 @@
       "output": "DescribeAlarmsResponse",
       "status": "online"
     },
+    "DescribeAlertRecordHistory": {
+      "document": "获取告警历史，例如今天未恢复的告警",
+      "input": "DescribeAlertRecordHistoryRequest",
+      "name": "获取告警历史",
+      "output": "DescribeAlertRecordHistoryResponse",
+      "status": "online"
+    },
     "DescribeConfigExtras": {
       "document": "本接口用于获取特殊采集配置，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "DescribeConfigExtrasRequest",
@@ -884,6 +891,180 @@
         }
       ],
       "usage": "out"
+    },
+    "AlertHistoryNotice": {
+      "document": "告警通知渠道组详情",
+      "members": [
+        {
+          "document": "通知渠道组名称",
+          "example": "shicao_test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "通知渠道组ID",
+          "example": "无",
+          "member": "string",
+          "name": "AlarmNoticeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AlertHistoryRecord": {
+      "document": "告警历史详情",
+      "members": [
+        {
+          "document": "告警历史ID",
+          "example": "7cfbe19f-99af-42ca-8f9f-b59d1f9c6157",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警策略ID",
+          "example": "alarm-8211a509-xxxx-43dd-9ec0-6a6e7bc92552",
+          "member": "string",
+          "name": "AlarmId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警策略名称",
+          "example": "日志错误数超限",
+          "member": "string",
+          "name": "AlarmName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "监控对象ID",
+          "example": "0bf009c5-53f3-4f60-xxxx-341d732ed5b9",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "监控对象名称",
+          "example": "Nginx请求日志",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "监控对象所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "触发条件",
+          "example": "$1.d > 300",
+          "member": "string",
+          "name": "Trigger",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "持续周期，持续满足触发条件TriggerCount个周期后，再进行告警",
+          "example": "1",
+          "member": "int64",
+          "name": "TriggerCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警通知发送频率，单位为分钟",
+          "example": "15",
+          "member": "int64",
+          "name": "AlarmPeriod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "通知渠道组",
+          "example": "无",
+          "member": "AlertHistoryNotice",
+          "name": "Notices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警持续时间，单位为分钟",
+          "example": "60",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警状态，0代表未恢复，1代表已恢复，2代表已失效",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警发生时间，毫秒级Unix时间戳",
+          "example": "1619359718000",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警分组触发时对应的分组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Key\":\"$1.count\",\"Value\":\"100\"}]",
+          "member": "GroupTriggerConditionInfo",
+          "name": "GroupTriggerCondition",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlarmLevel",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "监控对象类型。\n0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MonitorObjectType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "AnalysisDimensional": {
       "document": "多维分析的分析维度",
@@ -3528,6 +3709,80 @@
       ],
       "type": "object"
     },
+    "DescribeAlertRecordHistoryRequest": {
+      "document": "DescribeAlertRecordHistory请求参数结构体",
+      "members": [
+        {
+          "document": "查询时间范围启始时间，毫秒级unix时间戳",
+          "example": "1619063300000",
+          "member": "uint64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "查询时间范围结束时间，毫秒级unix时间戳",
+          "example": "1619581700000",
+          "member": "uint64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "分页单页限制数目，最大值100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "- alertId：按照告警策略ID进行过滤。类型：String 必选：否\n- topicId：按照监控对象ID进行过滤。类型：String 必选：否\n- status：按照告警状态进行过滤。类型：String 必选：否，0代表未恢复，1代表已恢复，2代表已失效\n- alarmLevel：按照告警等级进行过滤。类型：String 必选：否，0代表警告，1代表提醒，2代表紧急\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlertRecordHistoryResponse": {
+      "document": "DescribeAlertRecordHistory返回参数结构体",
+      "members": [
+        {
+          "document": "告警历史总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "告警历史详情",
+          "example": "无",
+          "member": "AlertHistoryRecord",
+          "name": "Records",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeConfigExtrasRequest": {
       "document": "DescribeConfigExtras请求参数结构体",
       "members": [
@@ -5140,6 +5395,30 @@
         }
       ],
       "type": "object"
+    },
+    "GroupTriggerConditionInfo": {
+      "document": "分组触发条件",
+      "members": [
+        {
+          "document": "分组触发字段名称",
+          "example": "$1.count",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分组触发字段值",
+          "example": "100",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "HistogramInfo": {
       "document": "直方图详细信息",

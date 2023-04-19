@@ -136,6 +136,14 @@
         "title": "创建配置模版"
       }
     ],
+    "CreateConfigWithDetailResp": [
+      {
+        "document": "为应用创建配置项",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigWithDetailResp\n<公共请求参数>\n\n{\n    \"ConfigName\": \"abc\",\n    \"ConfigVersion\": \"abc\",\n    \"ConfigVersionDesc\": \"abc\",\n    \"ConfigValue\": \"abc\",\n    \"ApplicationId\": \"abc\",\n    \"ConfigType\": \"abc\",\n    \"EncodeWithBase64\": true,\n    \"ProgramIdList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigId\": \"abc\",\n            \"ConfigName\": \"abc\",\n            \"ConfigVersion\": \"abc\",\n            \"ConfigVersionDesc\": \"abc\",\n            \"ConfigValue\": \"abc\",\n            \"ConfigType\": \"abc\",\n            \"CreationTime\": \"abc\",\n            \"ApplicationId\": \"abc\",\n            \"ApplicationName\": \"abc\",\n            \"DeleteFlag\": true,\n            \"LastUpdateTime\": \"abc\",\n            \"ConfigVersionCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建配置项"
+      }
+    ],
     "CreateContainGroup": [
       {
         "document": "创建容器部署组",
@@ -149,6 +157,14 @@
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=CreateFileConfig\n&ApplicationId=application-dapbkdgy\n&ConfigName=war-config\n&ConfigVersion=1\n&ConfigFileName=update\n&ConfigFileCode=utf-8\n&ConfigPostCmd=/usr/bin/bash\n&ConfigFileValue=workdir\n&ConfigFilePath=/root\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3063d6c8-9801-4ed0-b306-be14b89f6133\",\n        \"Result\": true\n    }\n}",
+        "title": "创建文件配置项"
+      }
+    ],
+    "CreateFileConfigWithDetailResp": [
+      {
+        "document": "为应用创建文件配置",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileConfigWithDetailResp\n<公共请求参数>\n\n{\n    \"ConfigName\": \"abc\",\n    \"ConfigVersion\": \"abc\",\n    \"ConfigVersionDesc\": \"abc\",\n    \"ConfigFileName\": \"abc\",\n    \"ConfigFileValue\": \"abc\",\n    \"ConfigFileCode\": \"abc\",\n    \"ApplicationId\": \"abc\",\n    \"ConfigFilePath\": \"abc\",\n    \"ConfigPostCmd\": \"abc\",\n    \"EncodeWithBase64\": true,\n    \"ProgramIdList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigId\": \"abc\",\n            \"ConfigName\": \"abc\",\n            \"ConfigVersion\": \"abc\",\n            \"ConfigVersionDesc\": \"abc\",\n            \"ConfigFileName\": \"abc\",\n            \"ConfigFileValue\": \"abc\",\n            \"ConfigFileCode\": \"abc\",\n            \"CreationTime\": \"abc\",\n            \"ApplicationId\": \"abc\",\n            \"ApplicationName\": \"abc\",\n            \"DeleteFlag\": true,\n            \"ConfigVersionCount\": 0,\n            \"LastUpdateTime\": \"abc\",\n            \"ConfigFilePath\": \"abc\",\n            \"ConfigPostCmd\": \"abc\",\n            \"ConfigFileValueLength\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建文件配置项"
       }
     ],

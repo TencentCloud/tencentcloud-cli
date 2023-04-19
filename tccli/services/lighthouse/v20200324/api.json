@@ -1026,7 +1026,6 @@
       "document": "套餐信息。",
       "members": [
         {
-          "default": "",
           "document": "套餐 ID。",
           "example": "bundle_gen_01",
           "member": "string",
@@ -1036,7 +1035,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内存大小，单位 GB。",
           "example": "1",
           "member": "int64",
@@ -1046,7 +1044,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "系统盘类型。\n取值范围： \n<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>",
           "example": "CLOUD_SSD",
           "member": "string",
@@ -1056,7 +1053,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "系统盘大小。",
           "example": "40",
           "member": "int64",
@@ -1066,7 +1062,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "每月网络流量，单位 Gb。",
           "example": "300",
           "member": "int64",
@@ -1076,7 +1071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否支持 Linux/Unix 平台。",
           "example": "true",
           "member": "bool",
@@ -1086,7 +1080,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否支持 Windows 平台。",
           "example": "true",
           "member": "bool",
@@ -1096,7 +1089,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "套餐当前单位价格信息。",
           "example": " {           \"InstancePrice\": {             \"OriginalBundlePrice",
           "member": "Price",
@@ -1106,7 +1098,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "CPU 核数。",
           "example": "1",
           "member": "int64",
@@ -1116,7 +1107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "峰值带宽，单位 Mbps。",
           "example": "3",
           "member": "uint64",
@@ -1126,7 +1116,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "网络计费类型。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
@@ -1136,7 +1125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "套餐售卖状态,取值:‘AVAILABLE’(可用) , ‘SOLD_OUT’(售罄)",
           "example": "SOLD_OUT",
           "member": "string",
@@ -1146,8 +1134,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "套餐类型。\n取值范围：\n<li> GENERAL_BUNDLE：通用型</li><li> STORAGE_BUNDLE：存储型 </li>",
+          "document": "套餐类型。\n取值范围：\n<li>STARTER_BUNDLE：入门型</li>\n<li>GENERAL_BUNDLE：通用型</li>\n<li>ENTERPRISE_BUNDLE：企业型</li>\n<li>STORAGE_BUNDLE：存储型</li>\n<li>EXCLUSIVE_BUNDLE：专属型</li>\n<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>\n<li>CAREFREE_BUNDLE：无忧型</li>\n<li>BEFAST_BUNDLE：蜂驰型 </li>",
           "example": "GENERAL_BUNDLE",
           "member": "string",
           "name": "BundleType",
@@ -1156,7 +1143,15 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "document": "套餐类型描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "通用型",
+          "member": "string",
+          "name": "BundleTypeDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "套餐展示标签.\n取值范围:\n\"ACTIVITY\": 活动套餐,\n\"NORMAL\": 普通套餐\n\"CAREFREE\": 无忧套餐",
           "example": "NORMAL",
           "member": "string",
@@ -2847,7 +2842,7 @@
           "type": "list"
         },
         {
-          "document": "过滤器列表。\n<li>instance-name</li>按照【实例名称】进行过滤。\n类型：String\n必选：否\n<li>private-ip-address</li>按照【实例主网卡的内网 IP】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n<li>zone</li>按照【可用区】进行过滤。\n类型：String\n必选：否\n<li>instance-state</li>按照【实例状态】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。",
+          "document": "过滤器列表。\n<li>instance-name</li>按照【实例名称】进行过滤。\n类型：String\n必选：否\n<li>private-ip-address</li>按照【实例主网卡的内网 IP】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n<li>zone</li>按照【可用区】进行过滤。\n类型：String\n必选：否\n<li>instance-state</li>按照【实例状态】进行过滤。\n类型：String\n必选：否\n<li>tag-key</li>按照【标签键】进行过滤。\n类型：String\n必选：否\n<li>tag-value</li>按照【标签值】进行过滤。\n类型：String\n必选：否\n<li> tag:tag-key</li>按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 InstanceIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

@@ -113,7 +113,7 @@
       "status": "online"
     },
     "DescribeTemplateList": {
-      "document": "本接口 (DescribeTemplateList) 用于获取信息模板列表。\n",
+      "document": "本接口 (DescribeTemplateList) 用于获取信息模板列表。",
       "input": "DescribeTemplateListRequest",
       "name": "信息模板列表",
       "output": "DescribeTemplateListResponse",
@@ -281,8 +281,8 @@
       "document": "认证资料信息",
       "members": [
         {
-          "default": "",
           "document": "证件号码。",
+          "example": "无",
           "member": "string",
           "name": "CertificateCode",
           "required": true,
@@ -290,8 +290,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证件类型。\nSFZ: 身份证。\nHZ: 护照。\nTXZ: 中国港澳居民来往内地通行证。\nTWSFZ: 中国台湾居民来往大陆通行证。\nGWSFZ: 外国人永久居留身份证。\nORG: 组织机构代码证\nYYZZ: 工商营业执照。\nTYDMZ: 统一社会信用代码证书。\nBDDH: 部队代号\nJDXKZ: 军队单位对外有偿服务许可证。\nSYZS: 事业单位法定代表人证书。\nGWCZDJZ: 外国企业常驻代表机构登记证。\nSTDJZ: 社会团体法定代表人登记证书。\nZJDJZ: 宗教活动场所登记证。\nMBDJZ: 民办非企业单位登记证书。\nJJDJZ: 基金会法定代表人登记证书。\nLSXKZ: 律师事务所执业许可证。\nGWZHDJZ: 外国在华文化中心登记证。\nGWLYDJZ: 外国政府旅游部门常驻代表机构批准登记证。\nSFXKZ: 司法鉴定许可证\nGWJGZJ: 外国机构证件。\nSHFWJGZ: 社会服务机构登记证书。\nMBXXXKZ: 民办学校办学许可证。\nYLJGXKZ: 医疗机构执业许可证。\nGAJZZ: 中国港澳居住证。\nTWJZZ: 中国台湾居住证。\nQTTYDM: 其他-统一社会信用代码证书。\nGZJGZY: 公证机构执业证。",
+          "example": "无",
           "member": "string",
           "name": "CertificateType",
           "required": true,
@@ -299,13 +299,40 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证件照片地址。",
+          "example": "无",
           "member": "string",
           "name": "ImgUrl",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "联系人证件号码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegistrantCertificateCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "联系人证件类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegistrantCertificateType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "联系人证件照片地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegistrantImgUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -809,7 +836,6 @@
       "document": "CreateTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "联系人信息",
           "example": "无",
           "member": "ContactInfo",
@@ -818,7 +844,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "证件信息",
           "example": "无",
           "member": "CertificateInfo",
@@ -837,7 +862,6 @@
           "example": "无",
           "member": "TemplateInfo",
           "name": "Template",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1300,7 +1324,6 @@
       "document": "DescribeTemplateList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -1309,7 +1332,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "uint64",
@@ -1318,7 +1340,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "用户注册类型，默认:all , 个人：I ,企业: E",
           "example": "E",
           "member": "string",
@@ -1327,7 +1348,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "认证状态：未实名审核:NotUpload, 实名审核中:InAudit，已实名审核:Approved，实名审核失败:Reject，更新手机邮箱:NotVerified。",
           "example": "InAudit",
           "member": "string",
@@ -1336,7 +1356,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "域名所有者筛选",
           "example": "域名所有者",
           "member": "string",
@@ -1355,7 +1374,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1364,7 +1382,6 @@
           "example": "无",
           "member": "TemplateInfo",
           "name": "TemplateSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

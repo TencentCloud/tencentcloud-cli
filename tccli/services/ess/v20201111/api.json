@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateBatchCancelFlowUrl": {
-      "document": "指定需要批量撤回的签署流程Id，获取批量撤销链接\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
+      "document": "注：此接口建会废弃，请使用撤销单个签署流程（CancelFlow）接口。\n指定需要批量撤回的签署流程Id，获取批量撤销链接。\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回。",
       "input": "CreateBatchCancelFlowUrlRequest",
       "name": "批量撤销签署流程",
       "output": "CreateBatchCancelFlowUrlResponse",
@@ -700,8 +700,7 @@
       "document": "BindEmployeeUserIdWithClientOpenId请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "OpenId与UserId二选一必填一个，当传入客户系统openId，传入的openId需与电子签员工userId绑定，且渠道channel必填，channel值为INTEGRATE，否则传入userId",
+          "document": "用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为INTEGRATE；当传入参数UserId，Channel无需指定",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -709,7 +708,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "电子签系统员工UserId",
           "example": "无",
           "member": "string",
@@ -718,7 +716,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户系统OpenId",
           "example": "无",
           "member": "string",
@@ -737,7 +734,6 @@
           "example": "无",
           "member": "int64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1339,7 +1335,7 @@
           "type": "string"
         },
         {
-          "document": "文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起",
+          "document": "文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起。设置后流程对应的文件名称当前设置的值。",
           "example": "无",
           "member": "string",
           "name": "FileNames",
@@ -2737,6 +2733,22 @@
           "name": "UrlType",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "若上方填写为 SMS，则此处为手机号",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyAddress",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2821,7 +2833,7 @@
           "type": "list"
         },
         {
-          "document": "代理信息",
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3311,14 +3323,6 @@
           "type": "object"
         },
         {
-          "document": "企业组织相关信息，一般不用填",
-          "example": "无",
-          "member": "OrganizationInfo",
-          "name": "Organization",
-          "required": false,
-          "type": "object"
-        },
-        {
           "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
           "example": "无",
           "member": "Agent",
@@ -3367,18 +3371,26 @@
           "type": "bool"
         },
         {
-          "document": "暂未开放",
-          "example": "无",
-          "member": "uint64",
-          "name": "GenerateSource",
-          "required": false,
-          "type": "int"
-        },
-        {
           "document": "查询内容：0-模板列表及详情（默认），1-仅模板列表",
           "example": "无",
           "member": "int64",
           "name": "ContentType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "暂未开放",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "暂未开放",
+          "example": "无",
+          "member": "uint64",
+          "name": "GenerateSource",
           "required": false,
           "type": "int"
         }
@@ -3663,7 +3675,7 @@
           "type": "int"
         },
         {
-          "document": "是否到处当前成员企业数据",
+          "document": "是否导出当前成员企业数据",
           "example": "无",
           "member": "bool",
           "name": "Export",
@@ -4898,7 +4910,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "成员企业状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "Status",
@@ -5218,7 +5230,7 @@
       "document": "机构信息",
       "members": [
         {
-          "document": "机构在平台的编号",
+          "document": "机构在平台的编号，内部字段，暂未开放",
           "example": "无",
           "member": "string",
           "name": "OrganizationId",
@@ -5227,7 +5239,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "用户渠道",
+          "document": "用户渠道，内部字段，暂未开放",
           "example": "无",
           "member": "string",
           "name": "Channel",
@@ -5236,7 +5248,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "用户在渠道的机构编号",
+          "document": "用户在渠道的机构编号，内部字段，暂未开放",
           "example": "无",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -5245,7 +5257,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "用户真实的IP",
+          "document": "用户真实的IP，内部字段，暂未开放",
           "example": "无",
           "member": "string",
           "name": "ClientIp",
@@ -5254,7 +5266,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "机构的代理IP",
+          "document": "机构的代理IP，内部字段，暂未开放",
           "example": "无",
           "member": "string",
           "name": "ProxyIp",
@@ -5269,8 +5281,7 @@
       "document": "合同文件验签单个结果结构体",
       "members": [
         {
-          "default": "",
-          "document": "验签结果",
+          "document": "验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。",
           "example": "无",
           "member": "int64",
           "name": "VerifyResult",
@@ -5279,8 +5290,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "签署平台",
+          "document": "签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。",
           "example": "无",
           "member": "string",
           "name": "SignPlatform",
@@ -5289,7 +5299,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人名称",
           "example": "无",
           "member": "string",
@@ -5299,7 +5308,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署时间",
           "example": "无",
           "member": "int64",
@@ -5309,7 +5317,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名算法",
           "example": "无",
           "member": "string",
@@ -5319,7 +5326,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名证书序列号",
           "example": "无",
           "member": "string",
@@ -5329,7 +5335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证书起始时间",
           "example": "无",
           "member": "int64",
@@ -5339,7 +5344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证书过期时间",
           "example": "无",
           "member": "int64",
@@ -5349,7 +5353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名域横坐标",
           "example": "无",
           "member": "float",
@@ -5359,7 +5362,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名域纵坐标",
           "example": "无",
           "member": "float",
@@ -5369,7 +5371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名域宽度",
           "example": "无",
           "member": "float",
@@ -5379,7 +5380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名域高度",
           "example": "无",
           "member": "float",
@@ -5389,7 +5389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名域所在页码",
           "example": "无",
           "member": "int64",
@@ -5414,8 +5413,8 @@
           "value_allowed_null": false
         },
         {
-          "document": "参与者类型（ENTERPRISE/INDIVIDUAL）",
-          "example": "无",
+          "document": "参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方",
+          "example": "ENTERPRISE",
           "member": "string",
           "name": "RecipientType",
           "required": false,
@@ -5504,8 +5503,8 @@
           "value_allowed_null": false
         },
         {
-          "document": "发送方式（EMAIL/MOBILE）",
-          "example": "无",
+          "document": "发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知",
+          "example": "EMAIL",
           "member": "string",
           "name": "DeliveryMethod",
           "required": false,
@@ -6198,7 +6197,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "模板可用状态，取值：0未知，但默认会被转成启用；1启用（默认），2停用",
+          "document": "模板可用状态，取值：1启用（默认），2停用",
           "example": "无",
           "member": "int64",
           "name": "Available",
@@ -6249,8 +6248,7 @@
       "document": "UnbindEmployeeUserIdWithClientOpenId请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "OpenId与UserId二选一必填一个，当传入客户系统openId，传入的openId需与电子签员工userId绑定，且渠道channel必填，channel值为INTEGRATE，否则传入userId",
+          "document": "用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为INTEGRATE；当传入参数UserId，Channel无需指定",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -6258,7 +6256,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "电子签系统员工UserId",
           "example": "无",
           "member": "string",
@@ -6267,7 +6264,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户系统OpenId",
           "example": "无",
           "member": "string",
@@ -6286,7 +6282,6 @@
           "example": "无",
           "member": "int64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6311,20 +6306,20 @@
           "type": "object"
         },
         {
-          "document": "代理信息",
-          "example": "无",
-          "member": "Agent",
-          "name": "Agent",
-          "required": true,
-          "type": "object"
-        },
-        {
           "document": "员工信息",
           "example": "无",
           "member": "Staff",
           "name": "Employees",
           "required": true,
           "type": "list"
+        },
+        {
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -6477,8 +6472,8 @@
       "document": "用户信息",
       "members": [
         {
-          "default": "",
           "document": "用户在平台的编号",
+          "example": "无",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -6486,8 +6481,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "用户的来源渠道",
+          "document": "用户的来源渠道，一般不用传，特定场景根据接口说明传值",
+          "example": "无",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -6495,8 +6490,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "用户在渠道的编号",
+          "document": "用户在渠道的编号，一般不用传，特定场景根据接口说明传值",
+          "example": "无",
           "member": "string",
           "name": "OpenId",
           "required": false,
@@ -6504,8 +6499,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "用户真实IP",
+          "document": "用户真实IP，内部字段，暂未开放",
+          "example": "无",
           "member": "string",
           "name": "ClientIp",
           "required": false,
@@ -6513,8 +6508,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "用户代理IP",
+          "document": "用户代理IP，内部字段，暂未开放",
+          "example": "无",
           "member": "string",
           "name": "ProxyIp",
           "required": false,

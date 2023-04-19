@@ -5334,7 +5334,6 @@
       "document": "签署参与者信息",
       "members": [
         {
-          "default": "",
           "document": "签署人唯一标识",
           "example": "ed68bc6904fbd4795b4658c480214e4e",
           "member": "string",
@@ -5344,9 +5343,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "签署方类型：ENTERPRISE-企业INDIVIDUAL-自然人",
-          "example": "ORGANIZATION",
+          "document": "参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方",
+          "example": "ENTERPRISE",
           "member": "string",
           "name": "RecipientType",
           "required": false,
@@ -5354,7 +5352,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "描述",
           "example": "无",
           "member": "string",
@@ -5364,7 +5361,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署方备注信息",
           "example": "无",
           "member": "string",
@@ -5374,7 +5370,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否需要校验",
           "example": "true",
           "member": "bool",
@@ -5384,7 +5379,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否必须填写",
           "example": "true",
           "member": "bool",
@@ -5394,7 +5388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署类型",
           "example": "0",
           "member": "int64",
@@ -5404,7 +5397,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署顺序：数字越小优先级越高",
           "example": "0",
           "member": "int64",
@@ -5414,7 +5406,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否是发起方",
           "example": "true",
           "member": "bool",
