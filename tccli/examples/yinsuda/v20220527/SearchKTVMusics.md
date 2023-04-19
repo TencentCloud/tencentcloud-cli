@@ -35,6 +35,7 @@ Output:
                     ],
                     "Name": "等"
                 },
+                "RecommendType": "Featured",
                 "Duration": 216000,
                 "MusicId": "mid-11x9dj3",
                 "Name": "等",
