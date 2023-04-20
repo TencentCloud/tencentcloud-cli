@@ -1,3 +1,211 @@
+# Release 3.0.747.1
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 28 次发布
+
+发布时间：2023-04-20 01:21:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateServerlessInstanceUser](http://document.tencentcloudapi.woa.com/document/product/845/77480)
+* [DescribeServerlessInstanceUsers](http://document.tencentcloudapi.woa.com/document/product/845/77479)
+
+新增数据结构：
+
+* [ServerlessInstanceUser](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessInstanceUser)
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 17 次发布
+
+发布时间：2023-04-20 01:23:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AsrConf](http://document.tencentcloudapi.woa.com/document/product/607/35375#AsrConf)
+* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/607/35375#SceneInfo)
+
+修改数据结构：
+
+* [CreateAppResp](http://document.tencentcloudapi.woa.com/document/product/607/35375#CreateAppResp)
+
+	* 新增成员：AsrConf
+
+* [VoiceFilterConf](http://document.tencentcloudapi.woa.com/document/product/607/35375#VoiceFilterConf)
+
+	* 新增成员：SceneInfos
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 28 次发布
+
+发布时间：2023-04-20 01:25:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBlueprint](http://document.tencentcloudapi.woa.com/document/product/1207/54385)
+
+	* 新增入参：ForcePowerOff
+
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 50 次发布
+
+发布时间：2023-04-20 01:29:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RecognizePhilippinesSssIDOCR](http://document.tencentcloudapi.woa.com/document/product/866/77482)
+* [RecognizePhilippinesTinIDOCR](http://document.tencentcloudapi.woa.com/document/product/866/77481)
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 30 次发布
+
+发布时间：2023-04-20 01:32:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LayerVersionInfo](http://document.tencentcloudapi.woa.com/document/product/583/17244#LayerVersionInfo)
+
+	* 新增成员：Stamp
+
+
+
+
+## 弹性微服务(tem) 版本：2021-07-01
+
+### 第 32 次发布
+
+发布时间：2023-04-20 01:36:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RollingUpdateApplicationByVersion](http://document.tencentcloudapi.woa.com/document/product/1371/66371)
+
+	* 新增入参：Force
+
+
+
+
+## 弹性微服务(tem) 版本：2020-12-21
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 64 次发布
+
+发布时间：2023-04-20 01:38:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VirtualNodeSpec](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodeSpec)
+
+	* 新增成员：Tags
+
+
+
+
+## 语音合成(tts) 版本：2019-08-23
+
+### 第 6 次发布
+
+发布时间：2023-04-20 01:39:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TextToVoice](http://document.tencentcloudapi.woa.com/document/product/1073/37995)
+
+	* 新增入参：EmotionCategory, EmotionIntensity
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 77 次发布
+
+发布时间：2023-04-20 01:45:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DisassociateAddress](http://document.tencentcloudapi.woa.com/document/product/215/16703)
+
+	* 新增入参：OnlyUnbindVpcEndPoint
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 34 次发布
+
+发布时间：2023-04-20 01:47:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77485)
+* [DeleteCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77484)
+* [ModifyCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77483)
+
+
+
 # Release 3.0.746.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

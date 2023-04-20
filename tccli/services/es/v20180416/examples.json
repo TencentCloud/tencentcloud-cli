@@ -40,6 +40,14 @@
         "title": "创建serverless实例"
       }
     ],
+    "CreateServerlessInstanceUser": [
+      {
+        "document": "创建实例用户",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessInstanceUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Username\": \"abc\",\n    \"Password\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建实例用户"
+      }
+    ],
     "CreateServerlessSpace": [
       {
         "document": "创建Serverless索引空间",
@@ -174,6 +182,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessDi\n<公共请求参数>\n\n{\n    \"ServerlessId\": \"index-xxx\",\n    \"DiIds\": [\n        \"id-xx\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"OrderBy\": \"desc\",\n    \"Order\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"DiDataList\": [\n            {\n                \"DiId\": \"id-xx\",\n                \"CreateTime\": \"xx-xx\",\n                \"Status\": 0,\n                \"DiDataSourceCvm\": {\n                    \"VpcId\": \"vpc-xx\",\n                    \"CollectorId\": \"co-xx\",\n                    \"LogPaths\": [\n                        \"/data\"\n                    ],\n                    \"CvmInstances\": [\n                        {\n                            \"InstanceId\": \"ins-xx\",\n                            \"VpcId\": \"vpc-xx\",\n                            \"SubnetId\": \"subnet-xx\",\n                            \"ErrMsg\": \"err-xx\"\n                        }\n                    ]\n                },\n                \"DiDataSourceTke\": {\n                    \"VpcId\": \"vpc-xx\",\n                    \"CollectorId\": \"co-xx\"\n                },\n                \"DiDataSinkServerless\": {\n                    \"ServerlessId\": \"index-xx\"\n                }\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx-xx\"\n    }\n}",
         "title": "查询serverless数据接入"
+      }
+    ],
+    "DescribeServerlessInstanceUsers": [
+      {
+        "document": "Serverless获取索引用户列表",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessInstanceUsers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Usernames\": [\n        \"abc\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"OrderBy\": \"abc\",\n    \"Order\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstanceUsers\": [\n            {\n                \"Username\": \"abc\",\n                \"Password\": \"abc\",\n                \"CreateTime\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "Serverless获取索引用户列表"
       }
     ],
     "DescribeServerlessInstances": [

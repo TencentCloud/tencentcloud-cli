@@ -18,7 +18,7 @@
     ],
     "CreateDataset": [
       {
-        "document": "",
+        "document": "CreateDataset",
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataset\n<公共请求参数>\n\n{\n    \"DatasetName\": \"test\",\n    \"AnnotationStatus\": \"STATUS_NON_ANNOTATED\",\n    \"SchemaInfos\": [\n        {\n            \"Type\": \"\",\n            \"Name\": \"\"\n        }\n    ],\n    \"StorageDataPath\": {\n        \"Paths\": [\n            \"input/\"\n        ],\n        \"Region\": \"ap-guangzhou\",\n        \"Bucket\": \"test-1256580188\"\n    },\n    \"StorageLabelPath\": {\n        \"Paths\": [\n            \"output/\"\n        ],\n        \"Region\": \"ap-guangzhou\",\n        \"Bucket\": \"test-1256580188\"\n    },\n    \"DatasetType\": \"TYPE_DATASET_TEXT\",\n    \"IsSchemaExisted\": false,\n    \"ContentType\": \"TYPE_TEXT_LINE\"\n}",
         "output": "{\n    \"Response\": {\n        \"DatasetId\": \"ds-4575dwt7\",\n        \"RequestId\": \"3d033484-30f4-42e7-837e-825f33fdd23b\"\n    }\n}",
         "title": "创建数据集"

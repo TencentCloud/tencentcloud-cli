@@ -1311,31 +1311,40 @@
       "document": "CreateBlueprint请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "镜像名称。最大长度60。",
           "example": "test-blueprint",
           "member": "string",
           "name": "BlueprintName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "镜像描述。最大长度60。",
           "example": "test-blueprint",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "需要制作镜像的实例ID。",
           "example": "lhins-aaaabbbb",
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "是否执行强制关机以制作镜像。\n取值范围：\nTrue：表示关机之后制作镜像\nFalse：表示开机状态制作镜像\n默认取值：True\n开机状态制作镜像，可能导致部分数据未备份，影响数据安全。",
+          "example": "True",
+          "member": "bool",
+          "name": "ForcePowerOff",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1348,9 +1357,9 @@
           "example": "lhbp-xkeh87da",
           "member": "string",
           "name": "BlueprintId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6288,8 +6297,7 @@
       "document": "ModifyInstancesBundle请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为30。",
+          "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为15。",
           "example": "[“lhins-123456”]",
           "member": "string",
           "name": "InstanceIds",
@@ -6298,7 +6306,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。",
           "example": "“bundle_ent_01”",
           "member": "string",
@@ -6308,7 +6315,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否自动抵扣代金券。取值范围：\ntrue：表示自动抵扣代金券\nfalse：表示不自动抵扣代金券\n默认取值：false。",
           "example": "false",
           "member": "bool",

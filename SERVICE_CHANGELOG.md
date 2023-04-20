@@ -1,50 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## Elasticsearch Service(es) 版本：2018-04-16
 
-### 第 51 次发布
+### 第 28 次发布
 
-发布时间：2023-04-19 01:07:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribeCDBProxy
-* DescribeProxyConnectionPoolConf
-* ModifyCDBProxyConnectionPool
-* ModifyCDBProxyDesc
-* ModifyCDBProxyVipVPort
-* QueryCDBProxy
-
-
-
-## 内容分发网络 CDN(cdn) 版本：2018-06-06
-
-### 第 44 次发布
-
-发布时间：2023-04-19 01:08:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DomainLog](http://document.tencentcloudapi.woa.com/document/product/228/30987#DomainLog)
-
-	* 新增成员：FileSize
-
-
-
-
-## 消息队列 CKafka(ckafka) 版本：2019-08-19
-
-### 第 59 次发布
-
-发布时间：2023-04-19 01:09:31
+发布时间：2023-04-20 01:21:55
 
 本次发布包含了以下内容：
 
@@ -52,177 +12,48 @@
 
 新增接口：
 
-* [RenewCkafkaInstance](http://document.tencentcloudapi.woa.com/document/product/597/77473)
+* [CreateServerlessInstanceUser](http://document.tencentcloudapi.woa.com/document/product/845/77480)
+* [DescribeServerlessInstanceUsers](http://document.tencentcloudapi.woa.com/document/product/845/77479)
+
+新增数据结构：
+
+* [ServerlessInstanceUser](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessInstanceUser)
 
 
 
-## 多媒体创作引擎(cme) 版本：2019-10-29
+## 游戏多媒体引擎(gme) 版本：2018-07-11
 
-### 第 19 次发布
+### 第 17 次发布
 
-发布时间：2023-04-19 01:10:37
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyMaterial](http://document.tencentcloudapi.woa.com/document/product/1156/43241)
-
-	* 新增入参：DownloadSwitch
-
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 57 次发布
-
-发布时间：2023-04-19 01:14:17
+发布时间：2023-04-20 01:23:19
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+新增数据结构：
+
+* [AsrConf](http://document.tencentcloudapi.woa.com/document/product/607/35375#AsrConf)
+* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/607/35375#SceneInfo)
 
 修改数据结构：
 
-* [FileTamperEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#FileTamperEvent)
+* [CreateAppResp](http://document.tencentcloudapi.woa.com/document/product/607/35375#CreateAppResp)
 
-	* 新增成员：FileAction
+	* 新增成员：AsrConf
 
+* [VoiceFilterConf](http://document.tencentcloudapi.woa.com/document/product/607/35375#VoiceFilterConf)
 
-
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 45 次发布
-
-发布时间：2023-04-19 01:17:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateSparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74538)
-
-	* 新增入参：SessionId
-
-* [DescribeNotebookSessionStatement](http://document.tencentcloudapi.woa.com/document/product/1342/77044)
-
-	* 新增入参：TaskId
-
-* [ListTaskJobLogDetail](http://document.tencentcloudapi.woa.com/document/product/1342/74971)
-
-	* 新增入参：BatchId
-
-	* 新增出参：LogUrl
-
-* [ModifySparkApp](http://document.tencentcloudapi.woa.com/document/product/1342/74532)
-
-	* 新增入参：SessionId
-
-
-修改数据结构：
-
-* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
-
-	* 新增成员：ElasticSwitch, ElasticLimit
-
-* [JobLogResult](http://document.tencentcloudapi.woa.com/document/product/1342/53778#JobLogResult)
-
-	* 新增成员：PkgLogId
-
-* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
-
-	* 新增成员：SessionId
-
-
-
-
-## 域名注册(domain) 版本：2018-08-08
-
-### 第 13 次发布
-
-发布时间：2023-04-19 01:18:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateTemplate](http://document.tencentcloudapi.woa.com/document/product/242/49208)
-
-	* 新增入参：Tag
-
-* [DescribeTemplateList](http://document.tencentcloudapi.woa.com/document/product/242/48940)
-
-	* 新增入参：Tag
-
-
-修改数据结构：
-
-* [CertificateInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#CertificateInfo)
-
-	* 新增成员：RegistrantCertificateCode, RegistrantCertificateType, RegistrantImgUrl
-
-* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#TemplateInfo)
-
-	* 新增成员：Tag
+	* 新增成员：SceneInfos
 
 
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 27 次发布
+### 第 28 次发布
 
-发布时间：2023-04-19 01:23:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Bundle](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Bundle)
-
-	* 新增成员：BundleTypeDescription, BundleTypePriority
-
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
-### 第 30 次发布
-
-发布时间：2023-04-19 01:24:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CallBackTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CallBackTemplateInfo)
-
-	* 新增成员：AudioAuditNotifyUrl
-
-* [LivePackageInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LivePackageInfo)
-
-	* 新增成员：WillRenew, RenewalResult
-
-
-
-
-## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
-
-### 第 20 次发布
-
-发布时间：2023-04-19 01:28:46
+发布时间：2023-04-20 01:25:54
 
 本次发布包含了以下内容：
 
@@ -230,22 +61,18 @@
 
 修改接口：
 
-* [DescribeBackupDownloadURL](http://document.tencentcloudapi.woa.com/document/product/409/77301)
+* [CreateBlueprint](http://document.tencentcloudapi.woa.com/document/product/1207/54385)
 
-	* 新增入参：BackupDownloadRestriction
-
-
-新增数据结构：
-
-* [BackupDownloadRestriction](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupDownloadRestriction)
+	* 新增入参：ForcePowerOff
 
 
 
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
-### 第 17 次发布
+## 文字识别(ocr) 版本：2018-11-19
 
-发布时间：2023-04-19 01:32:14
+### 第 50 次发布
+
+发布时间：2023-04-20 01:29:33
 
 本次发布包含了以下内容：
 
@@ -253,14 +80,50 @@
 
 新增接口：
 
-* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
-* [DescribeXEvents](http://document.tencentcloudapi.woa.com/document/product/238/77476)
-* [StartInstanceXEvent](http://document.tencentcloudapi.woa.com/document/product/238/77475)
+* [RecognizePhilippinesSssIDOCR](http://document.tencentcloudapi.woa.com/document/product/866/77482)
+* [RecognizePhilippinesTinIDOCR](http://document.tencentcloudapi.woa.com/document/product/866/77481)
 
-新增数据结构：
 
-* [EventConfig](http://document.tencentcloudapi.woa.com/document/product/238/19976#EventConfig)
-* [Events](http://document.tencentcloudapi.woa.com/document/product/238/19976#Events)
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 30 次发布
+
+发布时间：2023-04-20 01:32:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LayerVersionInfo](http://document.tencentcloudapi.woa.com/document/product/583/17244#LayerVersionInfo)
+
+	* 新增成员：Stamp
+
+
+
+
+## 弹性微服务(tem) 版本：2021-07-01
+
+### 第 32 次发布
+
+发布时间：2023-04-20 01:36:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RollingUpdateApplicationByVersion](http://document.tencentcloudapi.woa.com/document/product/1371/66371)
+
+	* 新增入参：Force
+
+
+
+
+## 弹性微服务(tem) 版本：2020-12-21
 
 
 
@@ -270,25 +133,28 @@
 
 ## 容器服务(tke) 版本：2018-05-25
 
-### 第 63 次发布
+### 第 64 次发布
 
-发布时间：2023-04-19 01:36:37
+发布时间：2023-04-20 01:38:30
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [UpdateClusterKubeconfig](http://document.tencentcloudapi.woa.com/document/product/457/77478)
+* [VirtualNodeSpec](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodeSpec)
+
+	* 新增成员：Tags
 
 
 
-## Web 应用防火墙(waf) 版本：2018-01-25
 
-### 第 33 次发布
+## 语音合成(tts) 版本：2019-08-23
 
-发布时间：2023-04-19 01:40:57
+### 第 6 次发布
+
+发布时间：2023-04-20 01:39:59
 
 本次发布包含了以下内容：
 
@@ -296,29 +162,47 @@
 
 修改接口：
 
-* [AddSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/72689)
+* [TextToVoice](http://document.tencentcloudapi.woa.com/document/product/1073/37995)
 
-	* 新增入参：SniType, SniHost, IpHeaders
+	* 新增入参：EmotionCategory, EmotionIntensity
 
 
-修改数据结构：
 
-* [DomainsPartInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainsPartInfo)
 
-	* 新增成员：SniType, SniHost, Weights, IpHeaders
+## 私有网络(vpc) 版本：2017-03-12
 
-* [HostRecord](http://document.tencentcloudapi.woa.com/document/product/627/53609#HostRecord)
+### 第 77 次发布
 
-	* 新增成员：IpHeaders, EngineType
+发布时间：2023-04-20 01:45:23
 
-* [PeakPointsItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#PeakPointsItem)
+本次发布包含了以下内容：
 
-	* 新增成员：StatusServerError, StatusClientError, StatusRedirect, StatusOk, UpstreamServerError, UpstreamClientError, UpstreamRedirect
+改善已有的文档。
 
-* [PortInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#PortInfo)
+修改接口：
 
-	* 新增成员：NginxServerId, Port, Protocol, UpstreamPort, UpstreamProtocol
+* [DisassociateAddress](http://document.tencentcloudapi.woa.com/document/product/215/16703)
 
+	* 新增入参：OnlyUnbindVpcEndPoint
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 34 次发布
+
+发布时间：2023-04-20 01:47:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77485)
+* [DeleteCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77484)
+* [ModifyCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77483)
 
 
 
@@ -10574,7 +10458,7 @@
 
 新增接口：
 
-* [[RenewCkafkaInstance](http://document.tencentcloudapi.woa.com/document/product/597/77473)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [RenewCkafkaInstance](http://document.tencentcloudapi.woa.com/document/product/597/77473)
 
 ### 第 58 次发布
 
@@ -24635,6 +24519,23 @@
 
 ## Elasticsearch Service(es) 版本：2018-04-16
 
+### 第 28 次发布
+
+发布时间：2023-04-20 01:21:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateServerlessInstanceUser](http://document.tencentcloudapi.woa.com/document/product/845/77480)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeServerlessInstanceUsers](http://document.tencentcloudapi.woa.com/document/product/845/77479)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ServerlessInstanceUser](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessInstanceUser)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[ServerlessInstanceUser](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessInstanceUser))
+
 ### 第 27 次发布
 
 发布时间：2023-03-31 01:24:04
@@ -27658,6 +27559,30 @@
 
 
 ## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 17 次发布
+
+发布时间：2023-04-20 01:23:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[AsrConf](http://document.tencentcloudapi.woa.com/document/product/607/35375#AsrConf)](http://document.tencentcloudapi.woa.com/document/product/607/35375#[AsrConf](http://document.tencentcloudapi.woa.com/document/product/607/35375#AsrConf))
+* [[SceneInfo](http://document.tencentcloudapi.woa.com/document/product/607/35375#SceneInfo)](http://document.tencentcloudapi.woa.com/document/product/607/35375#[SceneInfo](http://document.tencentcloudapi.woa.com/document/product/607/35375#SceneInfo))
+
+修改数据结构：
+
+* [CreateAppResp](http://document.tencentcloudapi.woa.com/document/product/607/35375#CreateAppResp)
+
+	* 新增成员：AsrConf
+
+* [VoiceFilterConf](http://document.tencentcloudapi.woa.com/document/product/607/35375#VoiceFilterConf)
+
+	* 新增成员：SceneInfos
+
 
 ### 第 16 次发布
 
@@ -30897,6 +30822,21 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 28 次发布
+
+发布时间：2023-04-20 01:25:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBlueprint](http://document.tencentcloudapi.woa.com/document/product/1207/54385)
+
+	* 新增入参：ForcePowerOff
+
 
 ### 第 27 次发布
 
@@ -37145,6 +37085,19 @@
 
 ## 文字识别(ocr) 版本：2018-11-19
 
+### 第 50 次发布
+
+发布时间：2023-04-20 01:29:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[RecognizePhilippinesSssIDOCR](http://document.tencentcloudapi.woa.com/document/product/866/77482)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RecognizePhilippinesTinIDOCR](http://document.tencentcloudapi.woa.com/document/product/866/77481)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 49 次发布
 
 发布时间：2023-04-10 01:33:57
@@ -38702,7 +38655,7 @@
 
 新增数据结构：
 
-* [[BackupDownloadRestriction](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupDownloadRestriction)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[BackupDownloadRestriction](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupDownloadRestriction))
+* [BackupDownloadRestriction](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupDownloadRestriction)
 
 ### 第 19 次发布
 
@@ -41257,6 +41210,21 @@
 
 ## 云函数(scf) 版本：2018-04-16
 
+### 第 30 次发布
+
+发布时间：2023-04-20 01:32:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LayerVersionInfo](http://document.tencentcloudapi.woa.com/document/product/583/17244#LayerVersionInfo)
+
+	* 新增成员：Stamp
+
+
 ### 第 29 次发布
 
 发布时间：2023-04-12 01:33:07
@@ -42444,14 +42412,14 @@
 
 新增接口：
 
-* [[DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeXEvents](http://document.tencentcloudapi.woa.com/document/product/238/77476)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StartInstanceXEvent](http://document.tencentcloudapi.woa.com/document/product/238/77475)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
+* [DescribeXEvents](http://document.tencentcloudapi.woa.com/document/product/238/77476)
+* [StartInstanceXEvent](http://document.tencentcloudapi.woa.com/document/product/238/77475)
 
 新增数据结构：
 
-* [[EventConfig](http://document.tencentcloudapi.woa.com/document/product/238/19976#EventConfig)](http://document.tencentcloudapi.woa.com/document/product/238/19976#[EventConfig](http://document.tencentcloudapi.woa.com/document/product/238/19976#EventConfig))
-* [[Events](http://document.tencentcloudapi.woa.com/document/product/238/19976#Events)](http://document.tencentcloudapi.woa.com/document/product/238/19976#[Events](http://document.tencentcloudapi.woa.com/document/product/238/19976#Events))
+* [EventConfig](http://document.tencentcloudapi.woa.com/document/product/238/19976#EventConfig)
+* [Events](http://document.tencentcloudapi.woa.com/document/product/238/19976#Events)
 
 ### 第 16 次发布
 
@@ -47685,6 +47653,21 @@
 
 ## 弹性微服务(tem) 版本：2021-07-01
 
+### 第 32 次发布
+
+发布时间：2023-04-20 01:36:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RollingUpdateApplicationByVersion](http://document.tencentcloudapi.woa.com/document/product/1371/66371)
+
+	* 新增入参：Force
+
+
 ### 第 31 次发布
 
 发布时间：2023-02-24 01:40:35
@@ -49812,6 +49795,21 @@
 
 ## 容器服务(tke) 版本：2018-05-25
 
+### 第 64 次发布
+
+发布时间：2023-04-20 01:38:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VirtualNodeSpec](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodeSpec)
+
+	* 新增成员：Tags
+
+
 ### 第 63 次发布
 
 发布时间：2023-04-19 01:36:37
@@ -49822,7 +49820,7 @@
 
 新增接口：
 
-* [[UpdateClusterKubeconfig](http://document.tencentcloudapi.woa.com/document/product/457/77478)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateClusterKubeconfig](http://document.tencentcloudapi.woa.com/document/product/457/77478)
 
 ### 第 62 次发布
 
@@ -53809,6 +53807,21 @@
 
 ## 语音合成(tts) 版本：2019-08-23
 
+### 第 6 次发布
+
+发布时间：2023-04-20 01:39:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TextToVoice](http://document.tencentcloudapi.woa.com/document/product/1073/37995)
+
+	* 新增入参：EmotionCategory, EmotionIntensity
+
+
 ### 第 5 次发布
 
 发布时间：2023-03-29 04:40:09
@@ -56135,6 +56148,21 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 77 次发布
+
+发布时间：2023-04-20 01:45:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DisassociateAddress](http://document.tencentcloudapi.woa.com/document/product/215/16703)
+
+	* 新增入参：OnlyUnbindVpcEndPoint
+
+
 ### 第 76 次发布
 
 发布时间：2023-04-03 01:31:42
@@ -58436,6 +58464,20 @@
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 34 次发布
+
+发布时间：2023-04-20 01:47:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77485)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77484)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77483)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 33 次发布
 

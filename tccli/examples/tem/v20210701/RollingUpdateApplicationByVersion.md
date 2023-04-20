@@ -6,10 +6,17 @@ Input:
 
 ```
 tccli tem RollingUpdateApplicationByVersion --cli-unfold-argument  \
-    --ApplicationId xx \
-    --EnvironmentId xx \
-    --DeployVersion xx \
-    --PackageName xxx
+    --ApplicationId abc \
+    --EnvironmentId abc \
+    --DeployVersion abc \
+    --PackageName abc \
+    --From abc \
+    --DeployStrategyType abc \
+    --TotalBatchCount 0 \
+    --BatchInterval 0 \
+    --BetaBatchNum 0 \
+    --MinAvailable 0 \
+    --Force True
 ```
 
 Output: 
@@ -24,7 +31,7 @@ Output:
 
 **Example 2: 部署成功**
 
-
+部署成功
 
 Input: 
 

@@ -1713,7 +1713,6 @@
       "document": "CreateDataset请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "数据集名称，不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
           "example": "Voc2017",
           "member": "string",
@@ -1723,7 +1722,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据集类型:\nTYPE_DATASET_TEXT，文本\nTYPE_DATASET_IMAGE，图片\nTYPE_DATASET_TABLE，表格\nTYPE_DATASET_OTHER，其他",
           "example": "TYPE_DATASET_TEXT",
           "member": "string",
@@ -1733,7 +1731,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据源cos路径",
           "example": "无",
           "member": "CosPathInfo",
@@ -1743,7 +1740,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据集标签cos存储路径",
           "example": "无",
           "member": "CosPathInfo",
@@ -1753,7 +1749,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据集标签",
           "example": "无",
           "member": "Tag",
@@ -1763,7 +1758,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据集标注状态:\nSTATUS_NON_ANNOTATED，未标注\nSTATUS_ANNOTATED，已标注",
           "example": "STATUS_ANNOTATED",
           "member": "string",
@@ -1773,7 +1767,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标注类型:\nANNOTATION_TYPE_CLASSIFICATION，图片分类\nANNOTATION_TYPE_DETECTION，目标检测\nANNOTATION_TYPE_SEGMENTATION，图片分割\nANNOTATION_TYPE_TRACKING，目标跟踪",
           "example": "ANNOTATION_TYPE_DETECTION",
           "member": "string",
@@ -1783,7 +1776,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标注格式:\nANNOTATION_FORMAT_TI，TI平台格式\nANNOTATION_FORMAT_PASCAL，Pascal Voc\nANNOTATION_FORMAT_COCO，COCO\nANNOTATION_FORMAT_FILE，文件目录结构",
           "example": "VOC",
           "member": "string",
@@ -1793,7 +1785,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "表头信息",
           "example": "无",
           "member": "SchemaInfo",
@@ -1803,7 +1794,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据是否存在表头",
           "example": "true",
           "member": "bool",
@@ -1813,7 +1803,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "导入文件粒度，按行或者按文件",
           "example": "TYPE_TEXT_LINE",
           "member": "string",
@@ -1833,7 +1822,6 @@
           "example": "rodftu04veo",
           "member": "string",
           "name": "DatasetId",
-          "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1

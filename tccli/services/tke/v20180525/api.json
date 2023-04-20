@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateClusterRelease": {
-      "document": "在应用市场中给集群创建应用",
+      "document": "集群创建应用",
       "input": "CreateClusterReleaseRequest",
       "name": "集群安装应用",
       "output": "CreateClusterReleaseResponse",
@@ -4482,7 +4482,6 @@
       "document": "CreateClusterEndpoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-xxxxxxxx",
           "member": "string",
@@ -4492,7 +4491,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)",
           "example": "subnet-xxxxxx",
           "member": "string",
@@ -4502,7 +4500,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）",
           "example": "true",
           "member": "bool",
@@ -4512,7 +4509,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "设置域名",
           "example": "cls.domain.com",
           "member": "string",
@@ -4522,7 +4518,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "使用的安全组，只有外网访问需要传递（开启外网访问时必传）",
           "example": "sg-xxx",
           "member": "string",
@@ -4532,8 +4527,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "创建lb参数，只有外网访问需要设置",
+          "document": "创建lb参数，只有外网访问需要设置，是一个json格式化后的字符串：{\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":\"200\"},\"VipIsp\":\"\",\"BandwidthPackageId\":\"\"}。\n各个参数意义：\nInternetAccessible.InternetChargeType含义：TRAFFIC_POSTPAID_BY_HOUR按流量按小时后计费;BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;InternetAccessible.BANDWIDTH_PACKAGE 按带宽包计费。\nInternetMaxBandwidthOut含义：最大出带宽，单位Mbps，范围支持0到2048，默认值10。\nVipIsp含义：CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。\nBandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE。",
           "example": "无",
           "member": "string",
           "name": "ExtensiveParameters",
@@ -4835,7 +4829,6 @@
       "document": "CreateClusterRelease请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-65r1c5nu",
           "member": "string",
@@ -4845,7 +4838,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "应用名称",
           "example": "app-05",
           "member": "string",
@@ -4855,7 +4847,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "应用命名空间",
           "example": "lwj",
           "member": "string",
@@ -4865,7 +4856,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品名称或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz",
           "example": "redis",
           "member": "string",
@@ -4875,7 +4865,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义参数",
           "example": "无",
           "member": "ReleaseValues",
@@ -4885,8 +4874,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "制品来源，范围：tke 应用市场/第三方chart",
+          "document": "制品来源，范围：tke-market 或 other",
           "example": "tke-market",
           "member": "string",
           "name": "ChartFrom",
@@ -4895,7 +4883,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品版本",
           "example": "10.5.3",
           "member": "string",
@@ -4905,7 +4892,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品仓库URL地址",
           "example": "无",
           "member": "string",
@@ -4915,7 +4901,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品访问用户名",
           "example": "xxx",
           "member": "string",
@@ -4925,7 +4910,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品访问密码",
           "example": "yyy",
           "member": "string",
@@ -4935,7 +4919,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品命名空间",
           "example": "helm-public",
           "member": "string",
@@ -4945,7 +4928,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）",
           "example": "tke",
           "member": "string",
@@ -4965,7 +4947,6 @@
           "example": "无",
           "member": "PendingRelease",
           "name": "Release",
-          "required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -21814,7 +21795,6 @@
       "document": "UpgradeClusterRelease请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-65r1c5nu",
           "member": "string",
@@ -21824,7 +21804,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义的应用名称",
           "example": "app-05",
           "member": "string",
@@ -21834,7 +21813,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "应用命名空间",
           "example": "lwj",
           "member": "string",
@@ -21844,7 +21822,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品名称或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz",
           "example": "redis",
           "member": "string",
@@ -21854,7 +21831,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义参数，覆盖chart 中values.yaml 中的参数",
           "example": "无",
           "member": "ReleaseValues",
@@ -21864,8 +21840,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "制品来源，范围：tke-market/tcr/other",
+          "document": "制品来源，范围：tke-market 或 other",
           "example": "tke-market",
           "member": "string",
           "name": "ChartFrom",
@@ -21874,7 +21849,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品版本( 从第三安装时，不传这个参数）",
           "example": "10.5.3",
           "member": "string",
@@ -21884,7 +21858,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品仓库URL地址",
           "example": "无",
           "member": "string",
@@ -21894,7 +21867,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品访问用户名",
           "example": "xxx",
           "member": "string",
@@ -21904,7 +21876,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品访问密码",
           "example": "yyy",
           "member": "string",
@@ -21914,7 +21885,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "制品命名空间",
           "example": "helm-public",
           "member": "string",
@@ -21924,7 +21894,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）",
           "example": "tke",
           "member": "string",
@@ -21944,7 +21913,6 @@
           "example": "无",
           "member": "PendingRelease",
           "name": "Release",
-          "required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -22145,7 +22113,6 @@
       "document": "虚拟节点",
       "members": [
         {
-          "default": "",
           "document": "节点展示名称",
           "example": "测试节点",
           "member": "string",
@@ -22156,7 +22123,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网ID",
           "example": "subnet-xxxxxx",
           "member": "string",
@@ -22167,7 +22133,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "节点名称，用于包年包月已创建节点回调",
           "example": "eklet-subnet-xxxxxx-xxxxxx",
           "member": "string",
@@ -22176,6 +22141,16 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 2
+        },
+        {
+          "document": "腾讯云标签",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "in"

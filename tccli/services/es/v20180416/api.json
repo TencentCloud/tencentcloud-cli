@@ -35,6 +35,13 @@
       "output": "CreateServerlessInstanceResponse",
       "status": "online"
     },
+    "CreateServerlessInstanceUser": {
+      "document": "创建Serverless索引用户",
+      "input": "CreateServerlessInstanceUserRequest",
+      "name": "创建Serverless索引用户",
+      "output": "CreateServerlessInstanceUserResponse",
+      "status": "online"
+    },
     "CreateServerlessSpace": {
       "document": "创建Serverless索引空间",
       "input": "CreateServerlessSpaceRequest",
@@ -152,6 +159,13 @@
       "input": "DescribeServerlessDiRequest",
       "name": "查询serverless数据接入",
       "output": "DescribeServerlessDiResponse",
+      "status": "online"
+    },
+    "DescribeServerlessInstanceUsers": {
+      "document": "Serverless获取索引用户列表",
+      "input": "DescribeServerlessInstanceUsersRequest",
+      "name": "Serverless获取索引用户列表",
+      "output": "DescribeServerlessInstanceUsersResponse",
       "status": "online"
     },
     "DescribeServerlessInstances": {
@@ -1492,6 +1506,51 @@
           "value_allowed_null": true,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerlessInstanceUserRequest": {
+      "document": "CreateServerlessInstanceUser请求参数结构体",
+      "members": [
+        {
+          "document": "索引的ID",
+          "example": "index-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "创建索引的用户名",
+          "example": "test",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "创建索引的密码",
+          "example": "test",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerlessInstanceUserResponse": {
+      "document": "CreateServerlessInstanceUser返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2849,6 +2908,96 @@
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServerlessInstanceUsersRequest": {
+      "document": "DescribeServerlessInstanceUsers请求参数结构体",
+      "members": [
+        {
+          "document": "索引ID",
+          "example": "\"index-abcdefgh\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "过滤用户名",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "Usernames",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "分页起始位置",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "一页展示数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "排序，支持Username、CreateTime，默认CreateTime",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "排序顺序，支持asc、desc，默认desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServerlessInstanceUsersResponse": {
+      "document": "DescribeServerlessInstanceUsers返回参数结构体",
+      "members": [
+        {
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "用户信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServerlessInstanceUser",
+          "name": "InstanceUsers",
+          "type": "list",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -7292,6 +7441,42 @@
         }
       ],
       "usage": "both"
+    },
+    "ServerlessInstanceUser": {
+      "document": "实例用户信息",
+      "members": [
+        {
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-10 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "ServerlessSpace": {
       "document": "Serverless索引空间信息",
