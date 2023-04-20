@@ -42,7 +42,7 @@
     ],
     "CreateBlueprint": [
       {
-        "document": "",
+        "document": "使用实例创建镜像",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlueprint\n<公共请求参数>\n\n{\n    \"BlueprintName\": \"test-blueprint\",\n    \"InstanceId\": \"lhins-7ugtz5e1\"\n}",
         "output": "{\n    \"Response\": {\n        \"BlueprintId\": \"lhbp-xkeh87da\",\n        \"RequestId\": \"6bdba9db-c3fe-45b2-87f3-b0125d901a90\"\n    }\n}",
         "title": "使用实例创建镜像"
@@ -520,7 +520,7 @@
     ],
     "ModifyInstancesBundle": [
       {
-        "document": "",
+        "document": "变更实例套餐",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesBundle\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-1a2b3c\"\n    ],\n    \"BundleId\": \"bundle_gen_lin_01\",\n    \"AutoVoucher\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3964a892-5399-4eb7-a35b-8bddfe683ab4\"\n    }\n}",
         "title": "变更实例套餐"

@@ -393,12 +393,12 @@
     "RollingUpdateApplicationByVersion": [
       {
         "document": "应用部署",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollingUpdateApplicationByVersion\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\",\n    \"DeployVersion\": \"xx\",\n    \"PackageName\": \"xxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollingUpdateApplicationByVersion\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"EnvironmentId\": \"abc\",\n    \"DeployVersion\": \"abc\",\n    \"PackageName\": \"abc\",\n    \"From\": \"abc\",\n    \"DeployStrategyType\": \"abc\",\n    \"TotalBatchCount\": 0,\n    \"BatchInterval\": 0,\n    \"BetaBatchNum\": 0,\n    \"MinAvailable\": 0,\n    \"Force\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": \"version-xxx\"\n    }\n}",
         "title": "应用部署"
       },
       {
-        "document": "",
+        "document": "部署成功",
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollingUpdateApplicationByVersion\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"env-qgnzgy8r\",\n    \"TotalBatchCount\": \"2\",\n    \"PackageName\": \"tem/pkg/1300555551/service-gn54vdy6/1641528220867/hello-world-0.0.1-SNAPSHOT.jar\",\n    \"DeployStrategyType\": \"AUTO\",\n    \"DeployVersion\": \"20220107122452\",\n    \"BatchInterval\": \"60\",\n    \"ApplicationId\": \"service-gn54vdy6\",\n    \"BetaBatchNum\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"28fe46b2-dbd9-4ee6-b388-603acb6c9263\",\n        \"Result\": \"\"\n    }\n}",
         "title": "部署成功"

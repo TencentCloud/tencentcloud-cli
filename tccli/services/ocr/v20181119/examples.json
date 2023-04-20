@@ -470,6 +470,22 @@
         "title": "菲律宾驾驶证识别示例"
       }
     ],
+    "RecognizePhilippinesSssIDOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizePhilippinesSssIDOCR\n&ImageUrl=https://xx/a.jpg\n&ReturnHeadImage=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Birthday\": {\n            \"Polygon\": [\n                {\n                    \"X\": 543,\n                    \"Y\": 805\n                },\n                {\n                    \"X\": 754,\n                    \"Y\": 805\n                },\n                {\n                    \"X\": 754,\n                    \"Y\": 842\n                },\n                {\n                    \"X\": 543,\n                    \"Y\": 842\n                }\n            ],\n            \"Value\": \"JULY 7,1980\"\n        },\n        \"FullName\": {\n            \"Polygon\": [\n                {\n                    \"X\": 540,\n                    \"Y\": 609\n                },\n                {\n                    \"X\": 1094,\n                    \"Y\": 609\n                },\n                {\n                    \"X\": 1094,\n                    \"Y\": 664\n                },\n                {\n                    \"X\": 540,\n                    \"Y\": 664\n                }\n            ],\n            \"Value\": \"JEFFREY\"\n        },\n        \"HeadPortrait\": {\n            \"Polygon\": [],\n            \"Value\": \"\"\n        },\n        \"LicenseNumber\": {\n            \"Polygon\": [\n                {\n                    \"X\": 533,\n                    \"Y\": 736\n                },\n                {\n                    \"X\": 1014,\n                    \"Y\": 739\n                },\n                {\n                    \"X\": 1014,\n                    \"Y\": 816\n                },\n                {\n                    \"X\": 533,\n                    \"Y\": 813\n                }\n            ],\n            \"Value\": \"33-111111-1\"\n        },\n        \"RequestId\": \"11111-11111-11111-11111\"\n    }\n}",
+        "title": "菲律宾SSSID识别"
+      }
+    ],
+    "RecognizePhilippinesTinIDOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizePhilippinesTinIDOCR\n&ImageUrl=https://xx/a.jpg\n&ReturnHeadImage=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Address\": {\n            \"Polygon\": [],\n            \"Value\": \"18 A KATIPUNAN ST.\"\n        },\n        \"Birthday\": {\n            \"Polygon\": [\n                {\n                    \"X\": 665,\n                    \"Y\": 737\n                },\n                {\n                    \"X\": 997,\n                    \"Y\": 737\n                },\n                {\n                    \"X\": 997,\n                    \"Y\": 787\n                },\n                {\n                    \"X\": 665,\n                    \"Y\": 787\n                }\n            ],\n            \"Value\": \"August 17,1902\"\n        },\n        \"FullName\": {\n            \"Polygon\": [],\n            \"Value\": \"VERGARA,AMALIA ALBIOR\"\n        },\n        \"HeadPortrait\": {\n            \"Polygon\": [],\n            \"Value\": \"\"\n        },\n        \"IssueDate\": {\n            \"Polygon\": [\n                {\n                    \"X\": 665,\n                    \"Y\": 737\n                },\n                {\n                    \"X\": 997,\n                    \"Y\": 737\n                },\n                {\n                    \"X\": 997,\n                    \"Y\": 787\n                },\n                {\n                    \"X\": 665,\n                    \"Y\": 787\n                }\n            ],\n            \"Value\": \"August 17,1902\"\n        },\n        \"LicenseNumber\": {\n            \"Polygon\": [\n                {\n                    \"X\": 505,\n                    \"Y\": 522\n                },\n                {\n                    \"X\": 897,\n                    \"Y\": 522\n                },\n                {\n                    \"X\": 897,\n                    \"Y\": 572\n                },\n                {\n                    \"X\": 505,\n                    \"Y\": 572\n                }\n            ],\n            \"Value\": \"497-881-123-123\"\n        },\n        \"RequestId\": \"11111-11111-11111-11111\"\n    }\n}",
+        "title": "菲律宾TinID识别"
+      }
+    ],
     "RecognizePhilippinesVoteIDOCR": [
       {
         "document": "菲律宾VoteID识别示例",

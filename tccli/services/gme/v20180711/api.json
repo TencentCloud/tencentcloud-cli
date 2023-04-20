@@ -561,6 +561,21 @@
       ],
       "usage": "out"
     },
+    "AsrConf": {
+      "document": "语音转文本配置数据",
+      "members": [
+        {
+          "document": "语音转文本服务开关，取值：open/close",
+          "example": "open",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AudioTextStatisticsItem": {
       "document": "录音转文本用量统计数据",
       "members": [
@@ -709,7 +724,6 @@
       "document": "CreateApp的输出参数",
       "members": [
         {
-          "default": "",
           "document": "应用ID，由后台自动生成。",
           "example": "123456",
           "member": "uint64",
@@ -719,7 +733,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "应用名称，透传输入参数的AppName",
           "example": "abcd",
           "member": "string",
@@ -729,7 +742,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目ID，透传输入的ProjectId",
           "example": "0",
           "member": "uint64",
@@ -739,7 +751,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "应用密钥，GME SDK初始化时使用",
           "example": "sdsd",
           "member": "string",
@@ -749,7 +760,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务创建时间戳",
           "example": "123456",
           "member": "uint64",
@@ -759,7 +769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实时语音服务配置数据",
           "example": "{}",
           "member": "RealtimeSpeechConf",
@@ -769,8 +778,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "语音消息及转文本服务配置数据",
+          "document": "语音消息服务配置数据",
           "example": "{}",
           "member": "VoiceMessageConf",
           "name": "VoiceMessageConf",
@@ -779,12 +787,20 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "语音分析服务配置数据",
           "example": "{}",
           "member": "VoiceFilterConf",
           "name": "VoiceFilterConf",
           "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "语音转文本服务配置数据",
+          "example": "{}",
+          "member": "AsrConf",
+          "name": "AsrConf",
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         }
@@ -2377,7 +2393,6 @@
       "document": "实时语音配置数据",
       "members": [
         {
-          "default": "",
           "document": "实时语音服务开关，取值：open/close",
           "example": "open",
           "member": "string",
@@ -2387,8 +2402,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实时语音音质类型，取值：high-高音质",
+          "document": "实时语音音质类型，取值：high-高音质 ordinary-普通音质",
           "example": "high",
           "member": "string",
           "name": "Quality",
@@ -2764,6 +2778,11 @@
         }
       ],
       "usage": "out"
+    },
+    "SceneInfo": {
+      "document": "SceneInfo场景信息\n'RealTime','实时语音分析',\n'VoiceMessage','语音消息',\n'GMECloudApi':'GME云API接口'",
+      "members": [],
+      "usage": "both"
     },
     "ServiceStatus": {
       "document": "服务开关状态",
@@ -3207,13 +3226,22 @@
       "document": "语音过滤服务配置数据",
       "members": [
         {
-          "default": "",
           "document": "语音过滤服务开关，取值：open/close",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "场景配置信息，如开关状态，回调地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SceneInfo",
+          "name": "SceneInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

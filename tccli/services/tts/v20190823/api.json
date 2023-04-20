@@ -409,6 +409,22 @@
           "name": "SegmentRate",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "控制合成音频的情感，仅支持情绪音色使用。取值: peaceful、exciting、thrill、neutral、sad、angry、cute、fear、poetry、happy、regretful、exciting_strong、aojiao、sajiao、story、raido、call、jieshuo等等；",
+          "example": "无",
+          "member": "string",
+          "name": "EmotionCategory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；",
+          "example": "无",
+          "member": "int64",
+          "name": "EmotionIntensity",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

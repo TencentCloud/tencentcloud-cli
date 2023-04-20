@@ -364,6 +364,20 @@
       "output": "RecognizePhilippinesDrivingLicenseOCRResponse",
       "status": "online"
     },
+    "RecognizePhilippinesSssIDOCR": {
+      "document": "菲律宾SSSID识别",
+      "input": "RecognizePhilippinesSssIDOCRRequest",
+      "name": "菲律宾SSSID识别",
+      "output": "RecognizePhilippinesSssIDOCRResponse",
+      "status": "online"
+    },
+    "RecognizePhilippinesTinIDOCR": {
+      "document": "菲律宾TinID识别",
+      "input": "RecognizePhilippinesTinIDOCRRequest",
+      "name": "菲律宾TinID识别",
+      "output": "RecognizePhilippinesTinIDOCRResponse",
+      "status": "online"
+    },
     "RecognizePhilippinesVoteIDOCR": {
       "document": "本接口支持菲律宾VoteID识别，识别字段包括姓名、姓氏、出生日期、婚姻状况、国籍、地址、地区、菲律宾VoteID的VIN等。\n\n默认接口请求频率限制：20次/秒。",
       "input": "RecognizePhilippinesVoteIDOCRRequest",
@@ -6634,6 +6648,186 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "Birthday",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesSssIDOCRRequest": {
+      "document": "RecognizePhilippinesSssIDOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否返回人像照片。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesSssIDOCRResponse": {
+      "document": "RecognizePhilippinesSssIDOCR返回参数结构体",
+      "members": [
+        {
+          "document": "人像照片Base64后的结果",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "HeadPortrait",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "编号",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "LicenseNumber",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "姓名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "FullName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生日",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Birthday",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesTinIDOCRRequest": {
+      "document": "RecognizePhilippinesTinIDOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否返回人像照片。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesTinIDOCRResponse": {
+      "document": "RecognizePhilippinesTinIDOCR返回参数结构体",
+      "members": [
+        {
+          "document": "人像照片Base64后的结果",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "HeadPortrait",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "编码",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "LicenseNumber",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "姓名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "FullName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地址",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Address",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生日",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Birthday",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发证日期",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "IssueDate",
           "required": true,
           "type": "object",
           "value_allowed_null": false

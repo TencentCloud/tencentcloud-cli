@@ -415,7 +415,7 @@
       "type": "object"
     },
     "AnswerInfo": {
-      "document": "房间问答问题详情",
+      "document": "房间问答答案详情",
       "members": [
         {
           "document": "用户名",
@@ -4035,7 +4035,7 @@
       "type": "object"
     },
     "QuestionInfo": {
-      "document": "房间问答答案详情",
+      "document": "房间问答问题详情",
       "members": [
         {
           "document": "问题ID",

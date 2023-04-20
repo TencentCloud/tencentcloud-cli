@@ -3497,8 +3497,8 @@
       "document": "层版本信息",
       "members": [
         {
-          "default": "",
           "document": "版本适用的运行时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CompatibleRuntimes",
           "required": false,
@@ -3506,8 +3506,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间",
+          "example": "无",
           "member": "string",
           "name": "AddTime",
           "required": false,
@@ -3515,8 +3515,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "版本描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -3524,8 +3524,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "许可证信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LicenseInfo",
           "required": false,
@@ -3533,8 +3533,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "版本号",
+          "example": "无",
           "member": "int64",
           "name": "LayerVersion",
           "required": true,
@@ -3542,8 +3542,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "层名称",
+          "example": "无",
           "member": "string",
           "name": "LayerName",
           "required": true,
@@ -3551,13 +3551,22 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "Stamp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Stamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5115,6 +5124,7 @@
         {
           "default": "",
           "document": "表示执行过程中的日志输出，异步调用返回为空",
+          "example": "\"\"",
           "member": "string",
           "name": "Log",
           "required": true,
@@ -5124,6 +5134,7 @@
         {
           "default": "",
           "document": "表示执行函数的返回，异步调用返回为空",
+          "example": "\"hello from scf\"",
           "member": "string",
           "name": "RetMsg",
           "required": true,
@@ -5133,6 +5144,7 @@
         {
           "default": "",
           "document": "表示执行函数的错误返回信息，异步调用返回为空",
+          "example": "\" \"",
           "member": "string",
           "name": "ErrMsg",
           "required": true,
@@ -5142,6 +5154,7 @@
         {
           "default": "",
           "document": "执行函数时的内存大小，单位为Byte，异步调用返回为空",
+          "example": "32",
           "member": "int64",
           "name": "MemUsage",
           "required": true,
@@ -5151,6 +5164,7 @@
         {
           "default": "",
           "document": "表示执行函数的耗时，单位是毫秒，异步调用返回为空",
+          "example": "100",
           "member": "float",
           "name": "Duration",
           "required": true,
@@ -5160,6 +5174,7 @@
         {
           "default": "",
           "document": "表示函数的计费耗时，单位是毫秒，异步调用返回为空",
+          "example": "100",
           "member": "int64",
           "name": "BillDuration",
           "required": true,
@@ -5169,6 +5184,7 @@
         {
           "default": "",
           "document": "此次函数执行的Id",
+          "example": "c2af8a64-c922-4d55-aee0-bd86a5c2cd12",
           "member": "string",
           "name": "FunctionRequestId",
           "required": true,
@@ -5177,7 +5193,8 @@
         },
         {
           "default": "",
-          "document": "0为正确，异步调用返回为空",
+          "document": "请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。",
+          "example": "200",
           "member": "int64",
           "name": "InvokeResult",
           "required": true,

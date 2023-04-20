@@ -832,7 +832,7 @@
     ],
     "DescribeStorageData": [
       {
-        "document": "",
+        "document": "查询当前存储情况",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageData\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"MediaCount\": 100,\n        \"TotalStorage\": 4700000,\n        \"InfrequentStorage\": 0,\n        \"StandardStorage\": 2000000,\n        \"ArchiveStorage\": 1500000,\n        \"DeepArchiveStorage\": 1200000,\n        \"StorageStat\": [\n            {\n                \"Area\": \"Chinese Mainland\",\n                \"TotalStorage\": 3800000,\n                \"InfrequentStorage\": 0,\n                \"StandardStorage\": 1800000,\n                \"ArchiveStorage\": 1000000,\n                \"DeepArchiveStorage\": 1000000\n            },\n            {\n                \"Area\": \"Outside Chinese Mainland\",\n                \"TotalStorage\": 900000,\n                \"InfrequentStorage\": 0,\n                \"StandardStorage\": 200000,\n                \"ArchiveStorage\": 500000,\n                \"DeepArchiveStorage\": 200000\n            }\n        ],\n        \"RequestId\": \"12345678-90ab-cdef-1234-567890abcdef\"\n    }\n}",
         "title": "查询当前存储情况"

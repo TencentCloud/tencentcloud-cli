@@ -7,6 +7,13 @@
       "output": "AddCustomRuleResponse",
       "status": "online"
     },
+    "AddCustomWhiteRule": {
+      "document": "增加精准白名单规则",
+      "input": "AddCustomWhiteRuleRequest",
+      "name": "添加精准白名单规则",
+      "output": "AddCustomWhiteRuleResponse",
+      "status": "online"
+    },
     "AddDomainWhiteRule": {
       "document": "增加域名规则白名单",
       "input": "AddDomainWhiteRuleRequest",
@@ -47,6 +54,13 @@
       "input": "DeleteAttackDownloadRecordRequest",
       "name": "删除攻击日志下载任务记录",
       "output": "DeleteAttackDownloadRecordResponse",
+      "status": "online"
+    },
+    "DeleteCustomWhiteRule": {
+      "document": "删除精准白名单规则",
+      "input": "DeleteCustomWhiteRuleRequest",
+      "name": "删除精准白名单规则",
+      "output": "DeleteCustomWhiteRuleResponse",
       "status": "online"
     },
     "DeleteDomainWhiteRules": {
@@ -264,6 +278,13 @@
       "input": "ModifyCustomRuleStatusRequest",
       "name": "开启或禁用访问控制（自定义策略）",
       "output": "ModifyCustomRuleStatusResponse",
+      "status": "online"
+    },
+    "ModifyCustomWhiteRule": {
+      "document": "编辑精准白名单",
+      "input": "ModifyCustomWhiteRuleRequest",
+      "name": "编辑精准白名单",
+      "output": "ModifyCustomWhiteRuleResponse",
       "status": "online"
     },
     "ModifyDomainWhiteRule": {
@@ -763,6 +784,96 @@
           "example": "7025",
           "member": "int64",
           "name": "RuleId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCustomWhiteRuleRequest": {
+      "document": "AddCustomWhiteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "优先级",
+          "example": "无",
+          "member": "string",
+          "name": "SortId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略详情",
+          "example": "无",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要添加策略的域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "放行的详情",
+          "example": "无",
+          "member": "string",
+          "name": "Bypass",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCustomWhiteRuleResponse": {
+      "document": "AddCustomWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
+          "example": "无",
+          "member": "ResponseCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "添加成功的规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7025",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1686,6 +1797,51 @@
     "DeleteAttackDownloadRecordResponse": {
       "document": "DeleteAttackDownloadRecord返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomWhiteRuleRequest": {
+      "document": "DeleteCustomWhiteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "删除的域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "删除的规则ID",
+          "example": "1100000001",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomWhiteRuleResponse": {
+      "document": "DeleteCustomWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
+          "example": "无",
+          "member": "ResponseCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5418,6 +5574,96 @@
       ],
       "type": "object"
     },
+    "ModifyCustomWhiteRuleRequest": {
+      "document": "ModifyCustomWhiteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑的域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "编辑的规则ID",
+          "example": "1100000001",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "编辑的规则名称",
+          "example": "test",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。",
+          "example": "cc",
+          "member": "string",
+          "name": "Bypass",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "优先级，1~100的整数，数字越小，代表这条规则的执行优先级越高。",
+          "example": "100",
+          "member": "uint64",
+          "name": "SortId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。",
+          "example": "1234567",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "匹配条件数组",
+          "example": "无",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomWhiteRuleResponse": {
+      "document": "ModifyCustomWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
+          "example": "无",
+          "member": "ResponseCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDomainWhiteRuleRequest": {
       "document": "ModifyDomainWhiteRule请求参数结构体",
       "members": [
@@ -6432,7 +6678,7 @@
           "type": "string"
         },
         {
-          "document": "是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，佛祖饿为空",
+          "document": "是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空",
           "example": "batch",
           "member": "string",
           "name": "SourceType",

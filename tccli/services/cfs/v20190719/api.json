@@ -734,7 +734,6 @@
       "document": "CreateCfsFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "可用区名称，例如ap-beijing-1，请参考 [概览](https://cloud.tencent.com/document/product/582/13225) 文档中的地域与可用区列表",
           "example": "ap-beijing-1",
           "member": "string",
@@ -743,7 +742,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "网络类型，可选值为 VPC，BASIC，CCN；其中 VPC 为私有网络，BASIC 为基础网络, CCN 为云联网，Turbo系列当前必须选择云联网。目前基础网络已逐渐淘汰，不推荐使用。",
           "example": "VPC",
           "member": "string",
@@ -752,7 +750,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "权限组 ID，通用标准型和性能型必填，turbo系列请填写pgroupbasic",
           "example": "pgroupbasic",
           "member": "string",
@@ -761,7 +758,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS",
           "example": "NFS",
           "member": "string",
@@ -770,7 +766,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。",
           "example": "SD",
           "member": "string",
@@ -779,7 +774,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。",
           "example": "123",
           "member": "string",
@@ -788,7 +782,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "子网 ID，若网络类型选择的是VPC，该字段为必填。",
           "example": "234",
           "member": "string",
@@ -797,7 +790,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP，Turbo系列当前不支持指定",
           "example": "10.0.0.1",
           "member": "string",
@@ -806,7 +798,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户自定义文件系统名称",
           "example": "QcloudCfs",
           "member": "string",
@@ -815,7 +806,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统标签",
           "example": "[\"TagKey\":\"a\",\"TagValue\":1]",
           "member": "TagInfo",
@@ -824,7 +814,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。用于保证请求幂等性的字符串失效时间为2小时。",
           "example": "QcloudCfs001",
           "member": "string",
@@ -833,7 +822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云联网ID， 若网络类型选择的是CCN，该字段为必填",
           "example": "ccn-12345",
           "member": "string",
@@ -842,7 +830,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突",
           "example": "10.0.0.1/24",
           "member": "string",
@@ -851,7 +838,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售40TiB，即40960 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，10240 GiB。",
           "example": "40960",
           "member": "uint64",
@@ -870,7 +856,6 @@
           "example": "2017-02-24 11:28:12",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -879,7 +864,6 @@
           "example": "QcloudCfs",
           "member": "string",
           "name": "CreationToken",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -888,7 +872,6 @@
           "example": "cfs-abc",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -897,7 +880,6 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "LifeCycleState",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -906,7 +888,6 @@
           "example": "1000",
           "member": "uint64",
           "name": "SizeByte",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -915,7 +896,6 @@
           "example": "800001",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -924,7 +904,6 @@
           "example": "QcloudCfs",
           "member": "string",
           "name": "FsName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -933,7 +912,6 @@
           "example": "False",
           "member": "bool",
           "name": "Encrypted",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },

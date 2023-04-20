@@ -15,6 +15,8 @@ Output:
 {
     "Response": {
         "Status": 1,
+        "FinishedFileNumber": 1,
+        "FinishedCapacity": 1,
         "TaskId": "x_task_xxf4",
         "RequestId": "b3caa32f-5e39-4360-91e4-5724369b78a6"
     }

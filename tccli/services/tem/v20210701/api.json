@@ -6084,7 +6084,6 @@
       "document": "RollingUpdateApplicationByVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用ID",
           "example": "1",
           "member": "string",
@@ -6093,7 +6092,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "环境ID",
           "example": "1",
           "member": "string",
@@ -6102,7 +6100,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "更新版本，IMAGE 部署为 tag 值；JAR/WAR 部署 为 Version",
           "example": "v1",
           "member": "string",
@@ -6111,7 +6108,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "JAR/WAR 包名，仅 JAR/WAR 部署时必填",
           "example": "xxx",
           "member": "string",
@@ -6120,7 +6116,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "请求来源平台，含 IntelliJ，Coding",
           "example": "IntelliJ",
           "member": "string",
@@ -6129,7 +6124,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "部署策略，AUTO 为全自动；BETA 为小批量验证后自动；MANUAL 为全手动；",
           "example": "AUTO",
           "member": "string",
@@ -6138,7 +6132,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "发布批次数",
           "example": "2",
           "member": "int64",
@@ -6147,7 +6140,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "批次间隔时间",
           "example": "60",
           "member": "int64",
@@ -6156,7 +6148,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "小批量验证批次的实例数",
           "example": "1",
           "member": "int64",
@@ -6165,13 +6156,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "发布过程中保障的最小可用实例数",
           "example": "1",
           "member": "int64",
           "name": "MinAvailable",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "是否强制发布",
+          "example": "force",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6184,7 +6182,6 @@
           "example": "1",
           "member": "string",
           "name": "Result",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

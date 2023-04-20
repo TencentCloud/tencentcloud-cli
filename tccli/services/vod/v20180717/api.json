@@ -13164,7 +13164,6 @@
       "document": "DescribeStorageData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "1250000001",
           "member": "uint64",
@@ -13183,7 +13182,6 @@
           "example": "100",
           "member": "uint64",
           "name": "MediaCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13192,7 +13190,6 @@
           "example": "4000000",
           "member": "uint64",
           "name": "TotalStorage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13201,7 +13198,6 @@
           "example": "2000000",
           "member": "uint64",
           "name": "StandardStorage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13210,7 +13206,6 @@
           "example": "0",
           "member": "uint64",
           "name": "InfrequentStorage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13219,7 +13214,6 @@
           "example": "1000000",
           "member": "uint64",
           "name": "ArchiveStorage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13228,7 +13222,6 @@
           "example": "1000000",
           "member": "uint64",
           "name": "DeepArchiveStorage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13237,7 +13230,6 @@
           "example": "无",
           "member": "StorageStatData",
           "name": "StorageStat",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

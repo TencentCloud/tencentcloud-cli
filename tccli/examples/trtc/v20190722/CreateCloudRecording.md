@@ -15,8 +15,8 @@ Input:
 ```
 tccli trtc CreateCloudRecording --cli-unfold-argument  \
     --StorageParams.CloudVod.TencentVod.ExpireTime 0 \
-    --UserSig xx \
-    --UserId xx \
+    --UserSig 11xx111 \
+    --UserId 10001 \
     --RecordParams.MaxIdleTime 60 \
     --RecordParams.StreamType 0 \
     --RecordParams.RecordMode 2 \
