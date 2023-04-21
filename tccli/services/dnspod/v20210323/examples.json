@@ -196,6 +196,14 @@
         "title": "获取域名信息及归属账号"
       }
     ],
+    "DescribeDomainDetailListBatch": [
+      {
+        "document": "批量查询指定域名的详细信息",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainDetailListBatch\n<公共请求参数>\n\n{\n    \"QcloudUin\": 100000014880,\n    \"DomainList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DomainList\": [\n            {\n                \"DomainId\": 1,\n                \"Name\": \"abc\",\n                \"Status\": \"abc\",\n                \"IsDNSPodNS\": \"abc\",\n                \"Grade\": \"abc\",\n                \"Punycode\": \"abc\",\n                \"EffectiveDNS\": [\n                    \"abc\"\n                ],\n                \"GradeTitle\": \"abc\",\n                \"VipEndAt\": \"abc\",\n                \"NowDNS\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "批量查询指定域名的详细信息"
+      }
+    ],
     "DescribeDomainGroupList": [
       {
         "document": " ",

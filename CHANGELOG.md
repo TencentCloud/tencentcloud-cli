@@ -1,3 +1,322 @@
+# Release 3.0.748.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 43 次发布
+
+发布时间：2023-04-21 01:06:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBizTrend](http://document.tencentcloudapi.woa.com/document/product/1021/60144)
+
+	* 新增入参：BusinessType
+
+	* 新增出参：MaxData
+
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
+
+	* 新增入参：FilterAssetIpList
+
+* [DescribeListSchedulingDomain](http://document.tencentcloudapi.woa.com/document/product/1021/57556)
+
+	* 新增入参：Status
+
+* [DescribeOverviewCCTrend](http://document.tencentcloudapi.woa.com/document/product/1021/73420)
+
+	* <font color="#dd0000">**修改入参**：</font>Business
+
+* [DescribeOverviewDDoSTrend](http://document.tencentcloudapi.woa.com/document/product/1021/73419)
+
+	* <font color="#dd0000">**修改入参**：</font>Business
+
+
+修改数据结构：
+
+* [BGPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstance)
+
+	* 新增成员：ModifyTime
+
+* [EipProductInfo](http://document.tencentcloudapi.woa.com/document/product/1021/57582#EipProductInfo)
+
+	* 新增成员：Domain
+
+* [IPLineInfo](http://document.tencentcloudapi.woa.com/document/product/1021/57582#IPLineInfo)
+
+	* 新增成员：Domain
+
+
+
+
+## 应用性能观测(apm) 版本：2021-06-22
+
+### 第 4 次发布
+
+发布时间：2023-04-21 01:09:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ApmInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmInstanceDetail)
+
+	* 新增成员：LogSet, MetricDuration
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 15 次发布
+
+发布时间：2023-04-21 01:19:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1130/77489)
+* [DeleteAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1130/77488)
+* [DescribeAuditLogFiles](http://document.tencentcloudapi.woa.com/document/product/1130/77487)
+
+新增数据结构：
+
+* [AuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1130/57812#AuditLogFile)
+* [AuditLogFilter](http://document.tencentcloudapi.woa.com/document/product/1130/57812#AuditLogFilter)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 20 次发布
+
+发布时间：2023-04-21 01:20:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDomainDetailListBatch](http://document.tencentcloudapi.woa.com/document/product/1427/77490)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 29 次发布
+
+发布时间：2023-04-21 01:22:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateServerlessInstanceUser](http://document.tencentcloudapi.woa.com/document/product/845/77480)
+
+	* 新增入参：UserType
+
+* [DescribeServerlessInstanceUsers](http://document.tencentcloudapi.woa.com/document/product/845/77479)
+
+	* 新增入参：UserTypes
+
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 18 次发布
+
+发布时间：2023-04-21 01:24:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApp](http://document.tencentcloudapi.woa.com/document/product/607/38692)
+
+	* 新增入参：AsrConf
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 18 次发布
+
+发布时间：2023-04-21 01:34:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RestoreInstance](http://document.tencentcloudapi.woa.com/document/product/238/19950)
+
+	* 新增入参：Type, DBList
+
+* [RollbackInstance](http://document.tencentcloudapi.woa.com/document/product/238/19949)
+
+	* <font color="#dd0000">**修改入参**：</font>DBs
+
+
+修改数据结构：
+
+* [DBInstance](http://document.tencentcloudapi.woa.com/document/product/238/19976#DBInstance)
+
+	* 新增成员：Architecture, Style
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 23 次发布
+
+发布时间：2023-04-21 01:35:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCompanies](http://document.tencentcloudapi.woa.com/document/product/400/77491)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 39 次发布
+
+发布时间：2023-04-21 01:37:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePulsarProInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1179/77492)
+
+新增数据结构：
+
+* [PulsarNetworkAccessPointInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarNetworkAccessPointInfo)
+* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
+* [PulsarProClusterSpecInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterSpecInfo)
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 65 次发布
+
+发布时间：2023-04-21 01:38:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBackupStorageLocation](http://document.tencentcloudapi.woa.com/document/product/457/77495)
+* [DeleteBackupStorageLocation](http://document.tencentcloudapi.woa.com/document/product/457/77494)
+* [DescribeBackupStorageLocations](http://document.tencentcloudapi.woa.com/document/product/457/77493)
+
+修改接口：
+
+* [EnableVpcCniNetworkType](http://document.tencentcloudapi.woa.com/document/product/457/55757)
+
+	* 新增入参：SkipAddingNonMasqueradeCIDRs
+
+
+新增数据结构：
+
+* [BackupStorageLocation](http://document.tencentcloudapi.woa.com/document/product/457/31866#BackupStorageLocation)
+
+修改数据结构：
+
+* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/31866#EdgeCluster)
+
+	* 新增成员：EdgeVersion
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 57 次发布
+
+发布时间：2023-04-21 01:40:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyVodDomainConfig](http://document.tencentcloudapi.woa.com/document/product/266/61479)
+
+	* 新增入参：QUICConfig
+
+
+新增数据结构：
+
+* [DomainQUICConfig](http://document.tencentcloudapi.woa.com/document/product/266/31773#DomainQUICConfig)
+
+修改数据结构：
+
+* [DomainDetailInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#DomainDetailInfo)
+
+	* 新增成员：QUICConfig
+
+* [RemoveWaterMarkTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#RemoveWaterMarkTaskOutput)
+
+	* 新增成员：FileType, FileUrl, MediaName
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 78 次发布
+
+发布时间：2023-04-21 01:41:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
+
+	* 新增成员：DeadlineDate, InstanceType, EndPointId
+
+
+
+
 # Release 3.0.747.1
 
 ## Elasticsearch Service(es) 版本：2018-04-16

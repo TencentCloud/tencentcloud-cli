@@ -323,8 +323,8 @@
     "DescribeBizTrend": [
       {
         "document": "获取高防IP业务流量曲线",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBizTrend\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"Statistics\": \"avg\",\n    \"Business\": \"bgpip\",\n    \"ProtoInfo\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"Port\": 1\n        }\n    ],\n    \"Period\": 1,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"bgpip-00000001\",\n    \"MetricName\": \"qps\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236\n        ],\n        \"MetricName\": \"intraffic\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBizTrend\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"Statistics\": \"avg\",\n    \"Business\": \"bgpip\",\n    \"ProtoInfo\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"Port\": 1\n        }\n    ],\n    \"Period\": 1,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"bgpip-00000001\",\n    \"BusinessType\": \"domain\",\n    \"MetricName\": \"qps\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236\n        ],\n        \"MetricName\": \"intraffic\",\n        \"MaxData\": 236,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "获取高防IP业务流量曲线"
       }
     ],
@@ -538,7 +538,7 @@
     ],
     "DescribeListSchedulingDomain": [
       {
-        "document": "",
+        "document": "查询智能调度列表",
         "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListSchedulingDomain\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"FilterDomain\": \"www.test.com\",\n    \"Offset\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"0506d138-ef0f-4ff4-83b0-f1d85e740afd\",\n        \"DomainList\": [\n            {\n                \"Status\": 1,\n                \"Domain\": \"www.test.com\",\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"TTL\": 1,\n                \"CreatedTime\": \"2020-09-22 00:00:00\",\n                \"UsrDomainName\": \"www.test.com\",\n                \"LineIPList\": [\n                    {\n                        \"Eip\": \"1.1.1.1\",\n                        \"Type\": \"bgp\"\n                    }\n                ],\n                \"Method\": \"priority\"\n            }\n        ]\n    }\n}",
         "title": "获取智能调度域名列表"
@@ -578,8 +578,8 @@
     ],
     "DescribeOverviewCCTrend": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverviewCCTrend\n<公共请求参数>\n\n{\n    \"Business\": \"xx\",\n    \"Period\": 0,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"xx\",\n    \"MetricName\": \"xx\"\n}",
+        "document": "当Business可以不传，统计所有Business为 基础防护 + 高防ip + 高防包 的和",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverviewCCTrend\n<公共请求参数>\n\n{\n    \"Period\": 0,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"MetricName\": \"bps\"\n}",
         "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"Data\": [\n            1234\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "获取防护概览趋势图"
       }
@@ -594,7 +594,7 @@
     ],
     "DescribeOverviewDDoSTrend": [
       {
-        "document": "",
+        "document": "当Business可以不传，统计所有Business为 基础防护 + 高防ip + 高防包 的和",
         "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverviewDDoSTrend\n<公共请求参数>\n\n{\n    \"Business\": \"bgp\",\n    \"Period\": 0,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"bgp-00000001\",\n    \"MetricName\": \"bps\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb39db80-b483-4139-a00e-1177ed011579\",\n        \"Count\": 1,\n        \"Data\": [\n            12234\n        ]\n    }\n}",
         "title": "获取防护概览DDoS攻击流量带宽和攻击包速率数据"

@@ -149,6 +149,7 @@ Output:
                 "AddressStatus": "UNBIND",
                 "AddressType": "EIP",
                 "InstanceId": "aa",
+                "InstanceType": null,
                 "NetworkInterfaceId": "bb",
                 "PrivateAddressIp": "cc",
                 "IsArrears": false,
@@ -164,6 +165,7 @@ Output:
                 "TagSet": [],
                 "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
                 "Bandwidth": 1,
+                "DeadlineDate": null,
                 "InternetServiceProvider": "BGP"
             },
             {
@@ -173,6 +175,7 @@ Output:
                 "AddressStatus": "UNBIND",
                 "AddressType": "EIP",
                 "InstanceId": "aa",
+                "InstanceType": null,
                 "NetworkInterfaceId": "bb",
                 "PrivateAddressIp": "cc",
                 "IsArrears": false,
@@ -188,6 +191,7 @@ Output:
                 "TagSet": [],
                 "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
                 "Bandwidth": 1,
+                "DeadlineDate": null,
                 "InternetServiceProvider": "BGP"
             }
         ],

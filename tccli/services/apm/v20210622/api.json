@@ -267,7 +267,6 @@
       "document": "apm实例信息",
       "members": [
         {
-          "default": "",
           "document": "存储使用量(MB)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "float",
@@ -278,7 +277,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试Demo",
           "member": "string",
@@ -289,7 +287,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例所属tag列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApmTag",
@@ -300,7 +297,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例ID",
           "example": "52Dpv13GR",
           "member": "string",
@@ -311,7 +307,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建人Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12543625",
           "member": "string",
@@ -322,7 +317,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该实例已上报的服务端应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -333,7 +327,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日均上报Span数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
@@ -344,7 +337,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "AppId信息",
           "example": "12653698",
           "member": "int64",
@@ -355,7 +347,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Trace数据保存时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "604800",
           "member": "int64",
@@ -366,7 +357,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -377,7 +367,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -388,7 +377,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -399,7 +387,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例上报额度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "500000",
           "member": "int64",
@@ -410,7 +397,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "实例是否开通计费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -421,7 +407,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误率阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "int64",
@@ -432,7 +417,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "采样率阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -443,7 +427,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否开启错误采样 0  关 1 开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -454,7 +437,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "慢调用保存阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "500",
           "member": "int64",
@@ -465,7 +447,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "cls日志所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -476,7 +457,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLS",
           "member": "string",
@@ -487,7 +467,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志功能开关 0 关 | 1 开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -498,7 +477,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxxx",
           "member": "string",
@@ -509,7 +487,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该实例已上报的客户端应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "int64",
@@ -520,11 +497,30 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该实例已上报的总应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "CLS日志集 | ES集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "LogSet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "Metric数据保存时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "MetricDuration",
           "required": true,
           "type": "int",
           "value_allowed_null": true,

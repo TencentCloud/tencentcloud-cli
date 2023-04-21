@@ -1,6 +1,6 @@
 **Example 1: 获取防护概览DDoS攻击流量带宽和攻击包速率数据**
 
-
+当Business可以不传，统计所有Business为 基础防护 + 高防ip + 高防包 的和
 
 Input: 
 

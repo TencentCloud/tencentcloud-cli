@@ -1544,6 +1544,15 @@
           "required": true,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "document": "用户类型：0 普通用户",
+          "example": "0",
+          "member": "int64",
+          "name": "UserType",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -2939,6 +2948,15 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "document": "过滤用户类型",
+          "example": "[0]",
+          "member": "int64",
+          "name": "UserTypes",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         },
         {
           "document": "分页起始位置",

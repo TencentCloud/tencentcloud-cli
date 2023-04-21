@@ -667,76 +667,85 @@
       "document": "CreateApp请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用名称",
           "example": "simple_gme_application",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "腾讯云项目ID，默认为0，表示默认项目",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "需要支持的引擎列表，默认全选。",
+          "document": "需要支持的引擎列表，默认全选。\n取值：android/ios/unity/cocos/unreal/windows",
           "example": "无",
           "member": "string",
           "name": "EngineList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "服务区域列表，默认全选。",
+          "document": "服务区域列表，默认全选。\n取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东",
           "example": "无",
           "member": "string",
           "name": "RegionList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "实时语音服务配置数据",
           "example": "无",
           "member": "RealtimeSpeechConf",
           "name": "RealtimeSpeechConf",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "语音消息及转文本服务配置数据",
+          "document": "语音消息服务配置数据",
           "example": "无",
           "member": "VoiceMessageConf",
           "name": "VoiceMessageConf",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "语音分析服务配置数据",
           "example": "无",
           "member": "VoiceFilterConf",
           "name": "VoiceFilterConf",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
+          "document": "语音转文本配置数据",
+          "example": "无",
+          "member": "AsrConf",
+          "name": "AsrConf",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
           "document": "需要添加的标签列表",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -845,9 +854,9 @@
           "example": "无",
           "member": "CreateAppResp",
           "name": "Data",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

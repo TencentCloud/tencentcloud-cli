@@ -10,7 +10,7 @@
     ],
     "CreatePicture": [
       {
-        "document": "",
+        "document": "上传图片",
         "input": "https://trtc.tencentcloudapi.com/?Action=CreatePicture\n&Content=test\n&Suffix=jpg\n&SdkAppId=123\n&Height=12\n&Width=15\n&XPosition=15\n&YPosition=36\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PictureId\": 1400297109,\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "上传图片"

@@ -696,67 +696,67 @@
       "document": "CreatePicture请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用id",
           "example": "1234567",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "图片内容经base64编码后的string格式",
+          "document": "图片内容经base64编码后的string格式,最大长度为2M",
           "example": "abcde",
           "member": "string",
           "name": "Content",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "图片后缀名",
           "example": "jpg",
           "member": "string",
           "name": "Suffix",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "图片长度",
           "example": "15",
           "member": "uint64",
           "name": "Height",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "图片宽度",
           "example": "15",
           "member": "uint64",
           "name": "Width",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "显示位置x轴方向",
           "example": "15",
           "member": "uint64",
           "name": "XPosition",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "显示位置y轴方向",
           "example": "15",
           "member": "uint64",
           "name": "YPosition",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -769,9 +769,9 @@
           "example": "123",
           "member": "uint64",
           "name": "PictureId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

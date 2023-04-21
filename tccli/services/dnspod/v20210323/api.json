@@ -161,6 +161,13 @@
       "output": "DescribeDomainAndUinResponse",
       "status": "online"
     },
+    "DescribeDomainDetailListBatch": {
+      "document": "批量获取指定域名详细信息",
+      "input": "DescribeDomainDetailListBatchRequest",
+      "name": "批量获取指定域名详细信息",
+      "output": "DescribeDomainDetailListBatchResponse",
+      "status": "online"
+    },
     "DescribeDomainGroupList": {
       "document": "获取域名分组列表",
       "input": "DescribeDomainGroupListRequest",
@@ -2618,6 +2625,51 @@
           "member": "string",
           "name": "Status",
           "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainDetailListBatchRequest": {
+      "document": "DescribeDomainDetailListBatch请求参数结构体",
+      "members": [
+        {
+          "document": "域名名称列表",
+          "example": "['test.com','test.cn']",
+          "member": "string",
+          "name": "DomainList",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "document": "UIN",
+          "example": "100000014880",
+          "member": "uint64",
+          "name": "QcloudUin",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainDetailListBatchResponse": {
+      "document": "DescribeDomainDetailListBatch返回参数结构体",
+      "members": [
+        {
+          "document": "域名信息",
+          "example": "无",
+          "member": "DomainListItemByRecordId",
+          "name": "DomainList",
+          "type": "list",
           "value_allowed_null": false,
           "visibility": 2
         },
