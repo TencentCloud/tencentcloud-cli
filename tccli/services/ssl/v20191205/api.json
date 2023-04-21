@@ -84,6 +84,13 @@
       "output": "DescribeCertificatesResponse",
       "status": "online"
     },
+    "DescribeCompanies": {
+      "document": "查询公司列表",
+      "input": "DescribeCompaniesRequest",
+      "name": "查询公司列表",
+      "output": "DescribeCompaniesResponse",
+      "status": "online"
+    },
     "DescribeDeployedResources": {
       "document": "证书查询关联资源",
       "input": "DescribeDeployedResourcesRequest",
@@ -2091,6 +2098,69 @@
           "name": "Certificates",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompaniesRequest": {
+      "document": "DescribeCompanies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页每页限制数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "公司ID",
+          "example": "无",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompaniesResponse": {
+      "document": "DescribeCompanies返回参数结构体",
+      "members": [
+        {
+          "document": "公司列表",
+          "example": "无",
+          "member": "CompanyInfo",
+          "name": "Companies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公司总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

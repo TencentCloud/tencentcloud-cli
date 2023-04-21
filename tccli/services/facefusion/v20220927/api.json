@@ -26,7 +26,6 @@
       "document": "DescribeMaterialList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "活动Id",
           "example": "string",
           "member": "string",
@@ -35,7 +34,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "素材Id",
           "example": "string",
           "member": "string",
@@ -44,7 +42,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "每次拉取条数",
           "example": "1",
           "member": "int64",
@@ -53,7 +50,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "1",
           "member": "int64",
@@ -72,7 +68,6 @@
           "example": "无",
           "member": "PublicMaterialInfos",
           "name": "MaterialInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -81,7 +76,6 @@
           "example": "1",
           "member": "int64",
           "name": "Count",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

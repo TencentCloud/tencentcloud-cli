@@ -2727,7 +2727,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "参数控件样式，json格式表述\n\n不同类型的控件会有部分非通用参数\n\nTEXT/MULTI_LINE_TEXT控件可以指定\n1 Font：目前只支持黑体、宋体\n2 FontSize： 范围12-72\n3 FontAlign： Left/Right/Center，左对齐/居中/右对齐\n例如：{\"FontSize\":12}\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nBORDERLESS_ESIGN – 自动生成无边框腾讯体\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\n如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}",
+          "document": "参数控件样式，json格式表述\n\n不同类型的控件会有部分非通用参数\n\nTEXT/MULTI_LINE_TEXT控件可以指定\n1 Font：目前只支持黑体、宋体\n2 FontSize： 范围12-72\n3 FontAlign： Left/Right/Center，左对齐/居中/右对齐\n例如：{\"FontSize\":12}\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nBORDERLESS_ESIGN – 自动生成无边框腾讯体\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\n如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}\n\nComponentType为SIGN_DATE时，支持以下参数：\n1 Font：字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"\n2 FontSize： 数字类型，范围6-72，默认值为12\n3 FontAlign： 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐\n4 Format： 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。\n5 Gaps:： 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙钟的空格个数\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n参数样例：    \"ComponentExtra\": \"{\\\"Format\\\":“yyyy m d”,\\\"FontSize\\\":12,\\\"Gaps\\\":\\\"2,2\\\", \\\"FontAlign\\\":\\\"Right\\\"}\",",
           "example": "ComponentExtra",
           "member": "string",
           "name": "ComponentExtra",
@@ -5070,8 +5070,7 @@
       "document": "合同文件验签单个结果结构体",
       "members": [
         {
-          "default": "",
-          "document": "验签结果",
+          "document": "验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。",
           "example": "无",
           "member": "int64",
           "name": "VerifyResult",
@@ -5080,8 +5079,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "签署平台",
+          "document": "签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。",
           "example": "无",
           "member": "string",
           "name": "SignPlatform",
@@ -5090,7 +5088,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人名称",
           "example": "无",
           "member": "string",
@@ -5100,7 +5097,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署时间",
           "example": "无",
           "member": "int64",
@@ -5110,7 +5106,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名算法",
           "example": "无",
           "member": "string",
@@ -5120,7 +5115,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名证书序列号",
           "example": "无",
           "member": "string",
@@ -5130,7 +5124,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证书起始时间",
           "example": "无",
           "member": "int64",
@@ -5140,7 +5133,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证书过期时间",
           "example": "无",
           "member": "int64",
@@ -5150,7 +5142,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名类型",
           "example": "无",
           "member": "int64",
@@ -5160,7 +5151,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名域横坐标",
           "example": "无",
           "member": "float",
@@ -5170,7 +5160,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名域纵坐标",
           "example": "无",
           "member": "float",
@@ -5180,7 +5169,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名域宽度",
           "example": "无",
           "member": "float",
@@ -5190,7 +5178,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名域高度",
           "example": "无",
           "member": "float",
@@ -5200,7 +5187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签名域所在页码",
           "example": "无",
           "member": "int64",

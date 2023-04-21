@@ -407,7 +407,6 @@
       "document": "DescribeNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "节点类型\n<li> 1 = IDC </li>\n<li> 2 = LastMile </li>\n<li> 3 = Mobile </li>",
           "example": "1",
           "member": "int64",
@@ -416,7 +415,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "节点区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 境外</li>",
           "example": "1",
           "member": "int64",
@@ -425,7 +423,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否IPv6",
           "example": "false",
           "member": "bool",
@@ -434,7 +431,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "名字模糊搜索",
           "example": "沈阳",
           "member": "string",
@@ -443,7 +439,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
           "example": "1",
           "member": "int64",
@@ -452,7 +447,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "任务类型\n<li>1 = 页面性能</li>\n<li>2 = 文件上传</li>\n<li>3 = 文件下载</li>\n<li>4 = 端口性能</li>\n<li>5 = 网络质量</li>\n<li>6 = 音视频体验</li>",
           "example": "1",
           "member": "int64",
@@ -471,7 +465,6 @@
           "example": "[{\"Code\":1000, \"Type\":1, \"Name\":\"北京\"}]",
           "member": "NodeDefineExt",
           "name": "NodeSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

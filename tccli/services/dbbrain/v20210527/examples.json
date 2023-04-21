@@ -16,6 +16,14 @@
         "title": "终止中断会话任务"
       }
     ],
+    "CreateAuditLogFile": [
+      {
+        "document": "创建审计日志文件生成任务",
+        "input": "https://cdb.tencentcloudapi.com/?Action=CreateAuditLogFile\n&Product=dcdb\n&NodeRequestType=dcdb\n&InstanceId=cdb-qwerasdf\n&StartTime=2020-09-22T00:00:00+00:00\n&EndTime=2020-09-22T00:00:00+00:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": 64,\n        \"RequestId\": \"a5039c90-d83f-11ed-a995-6d91182a5559\"\n    }\n}",
+        "title": "创建审计日志文件"
+      }
+    ],
     "CreateDBDiagReportTask": [
       {
         "document": "",
@@ -80,6 +88,14 @@
         "title": "创建实例SQL限流任务"
       }
     ],
+    "DeleteAuditLogFile": [
+      {
+        "document": "删除审计日志文件",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBDiagReportTasks\n&Product=dcdb\n&NodeRequestType=dcdb\n&InstanceId=tdsql-cerses\n&AsyncRequestId=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "删除审计日志文件"
+      }
+    ],
     "DeleteDBDiagReportTasks": [
       {
         "document": "健康报告任务删除成功",
@@ -118,6 +134,14 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeAllUserGroup\n&Product=mysql\n&Names.0=group1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"31dd9325-792f-4d76-89ad-ca8902cbe4d9\",\n        \"Groups\": [\n            {\n                \"MemberCount\": 0,\n                \"Id\": 1,\n                \"Name\": \"group1\"\n            },\n            {\n                \"MemberCount\": 2,\n                \"Id\": 2,\n                \"Name\": \"group11\"\n            }\n        ]\n    }\n}",
         "title": "获取联系组信息"
+      }
+    ],
+    "DescribeAuditLogFiles": [
+      {
+        "document": "查询审计日志文件列表",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBDiagReportTasks\n&Product=dcdb\n&NodeRequestType=dcdb\n&InstanceId=tdsql-cerses\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"8ca4d610-dcf3-11ed-9a8b-393823b6fd49\",\n        \"Items\": [\n            {\n                \"Status\": \"success\",\n                \"AsyncRequestId\": 173,\n                \"ErrMsg\": \"\",\n                \"CreateTime\": \"2023-04-17 15:37:55\",\n                \"FileName\": \"tdsql-8fyt6dkd_20230417-151100_to_20230417-151403_1681717077964.tar.gz\",\n                \"FileSize\": 0.326,\n                \"DownloadUrl\": \"abc\"\n            }\n        ]\n    }\n}",
+        "title": "查询审计日志文件列表"
       }
     ],
     "DescribeDBDiagEvent": [

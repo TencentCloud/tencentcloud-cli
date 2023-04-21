@@ -42,6 +42,13 @@
       "output": "BatchDeleteRecordResponse",
       "status": "online"
     },
+    "BatchDescribeDocument": {
+      "document": "批量获取文档详情",
+      "input": "BatchDescribeDocumentRequest",
+      "name": "批量获取文档详情",
+      "output": "BatchDescribeDocumentResponse",
+      "status": "online"
+    },
     "BatchRegister": {
       "document": "如果批量注册的用户已存在，则会被覆盖。一次最多注册1000个用户。默认请求频率限制：10次/秒",
       "input": "BatchRegisterRequest",
@@ -176,11 +183,11 @@
       "status": "online"
     },
     "DescribeDocuments": {
-      "document": "批量获取文档信息",
+      "document": "有新接口替换\n\n批量获取文档信息（已废弃，替代接口BatchDescribeDocument）",
       "input": "DescribeDocumentsRequest",
       "name": "批量获取文档信息",
       "output": "DescribeDocumentsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDocumentsByRoom": {
       "document": "此接口获取指定房间下课件列表",
@@ -351,7 +358,7 @@
       "status": "online"
     },
     "StartRoom": {
-      "document": "开始房间的直播",
+      "document": "开始房间的直播。 说明：开始房间接口调用之前需要有用户进入课堂初始化课堂信息。",
       "input": "StartRoomRequest",
       "name": "开始房间",
       "output": "StartRoomResponse",
@@ -766,6 +773,96 @@
           "example": "无",
           "member": "int64",
           "name": "RoomIds",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeDocumentRequest": {
+      "document": "BatchDescribeDocument请求参数结构体",
+      "members": [
+        {
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "分页查询当前页数，从1开始递增",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "每页数据量，最大1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件",
+          "example": "无",
+          "member": "uint64",
+          "name": "Permission",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "课件所有者的user_id，不填默认获取SdkAppId下所有课件",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "课件名称搜索词",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "课件id列表，从列表中查询，忽略错误的id",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeDocumentResponse": {
+      "document": "BatchDescribeDocument返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件文档总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文档信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocumentInfo",
+          "name": "Documents",
           "type": "list",
           "value_allowed_null": true
         },

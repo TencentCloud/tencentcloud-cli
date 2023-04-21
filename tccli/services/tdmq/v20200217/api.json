@@ -455,6 +455,20 @@
       "output": "DescribePublishersResponse",
       "status": "online"
     },
+    "DescribePulsarProInstanceDetail": {
+      "document": "获取Pulsar专业版集群实例信息",
+      "input": "DescribePulsarProInstanceDetailRequest",
+      "name": "获取Pulsar专业版集群实例信息",
+      "output": "DescribePulsarProInstanceDetailResponse",
+      "status": "online"
+    },
+    "DescribePulsarProInstances": {
+      "document": "查询用户已购的Pulsar专业版实例列表",
+      "input": "DescribePulsarProInstancesRequest",
+      "name": "查询Pulsar专业版实例列表",
+      "output": "DescribePulsarProInstancesResponse",
+      "status": "online"
+    },
     "DescribeRabbitMQNodeList": {
       "document": "RabbitMQ专享版查询节点列表",
       "input": "DescribeRabbitMQNodeListRequest",
@@ -6912,6 +6926,123 @@
       ],
       "type": "object"
     },
+    "DescribePulsarProInstanceDetailRequest": {
+      "document": "DescribePulsarProInstanceDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "pulsar-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePulsarProInstanceDetailResponse": {
+      "document": "DescribePulsarProInstanceDetail返回参数结构体",
+      "members": [
+        {
+          "document": "集群信息",
+          "example": "无",
+          "member": "PulsarProClusterInfo",
+          "name": "ClusterInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群网络接入点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PulsarNetworkAccessPointInfo",
+          "name": "NetworkAccessPointInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群规格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PulsarProClusterSpecInfo",
+          "name": "ClusterSpecInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePulsarProInstancesRequest": {
+      "document": "DescribePulsarProInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询条件过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询数目上限，默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询起始位置",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePulsarProInstancesResponse": {
+      "document": "DescribePulsarProInstances返回参数结构体",
+      "members": [
+        {
+          "document": "未分页的总数目",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例信息列表",
+          "example": "无",
+          "member": "PulsarProInstance",
+          "name": "Instances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRabbitMQNodeListRequest": {
       "document": "DescribeRabbitMQNodeList请求参数结构体",
       "members": [
@@ -9993,6 +10124,380 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PulsarNetworkAccessPointInfo": {
+      "document": "Pulsar 网络接入点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "vpc的id，支撑网和公网接入点，该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网id，支撑网和公网接入点，该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接入地址",
+          "example": "ip:port",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入点类型：\n0：支撑网接入点 \n1：VPC接入点 \n2：公网接入点",
+          "example": "1",
+          "member": "uint64",
+          "name": "RouteType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PulsarProClusterInfo": {
+      "document": "Pulsar专业版集群信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id。",
+          "example": "1000",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称。",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "说明信息。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-04-21 19:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群状态，0:创建中，1:正常，2:隔离",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群版本",
+          "example": "2.5.1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点分布情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceNodeDistribution",
+          "name": "NodeDistribution",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大储存容量，单位：MB",
+          "example": "1000",
+          "member": "uint64",
+          "name": "MaxStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PulsarProClusterSpecInfo": {
+      "document": "Pulsar专业版集群规格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群规格名称",
+          "example": "标准型",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "峰值tps",
+          "example": "5000",
+          "member": "uint64",
+          "name": "MaxTps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "峰值带宽。单位：mbps",
+          "example": "50",
+          "member": "uint64",
+          "name": "MaxBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大命名空间个数",
+          "example": "50",
+          "member": "uint64",
+          "name": "MaxNamespaces",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大主题分区数",
+          "example": "4000",
+          "member": "uint64",
+          "name": "MaxTopics",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格外弹性TPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000",
+          "member": "uint64",
+          "name": "ScalableTps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PulsarProInstance": {
+      "document": "Pulsar专业版实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "cluster-test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例版本",
+          "example": "2.7.2",
+          "member": "string",
+          "name": "InstanceVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例配置规格名称",
+          "example": "基础型",
+          "member": "string",
+          "name": "ConfigDisplay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "峰值TPS",
+          "example": "10000",
+          "member": "uint64",
+          "name": "MaxTps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储容量，GB为单位",
+          "example": "100",
+          "member": "uint64",
+          "name": "MaxStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例到期时间，毫秒为单位",
+          "example": "100000",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0-后付费，1-预付费",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例配置ID",
+          "example": "vip-basic-1",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格外弹性TPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "ScalableTps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VPC的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "峰值带宽。单位：mbps",
+          "example": "100",
+          "member": "uint64",
+          "name": "MaxBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -14168,7 +14168,6 @@
       "document": "域名信息",
       "members": [
         {
-          "default": "",
           "document": "域名名称。",
           "example": "无",
           "member": "string",
@@ -14178,7 +14177,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "加速地区信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AccelerateAreaInfo",
@@ -14188,7 +14186,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署状态，取值有：\n<li>Online：上线；</li>\n<li>Deploying：部署中；</li>\n<li>Locked: 锁定中，出现该状态时，无法对该域名进行部署变更。</li>",
           "example": "无",
           "member": "string",
@@ -14198,7 +14195,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "HTTPS 配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DomainHTTPSConfig",
@@ -14208,7 +14204,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "[Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UrlSignatureAuthPolicy",
@@ -14218,7 +14213,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "[Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RefererAuthPolicy",
@@ -14228,7 +14222,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "域名添加到腾讯云点播系统中的时间。\n<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>",
           "example": "无",
           "member": "string",
@@ -14236,6 +14229,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "域名 QUIC 配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DomainQUICConfig",
+          "name": "QUICConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14249,6 +14251,21 @@
           "example": "无",
           "member": "string",
           "name": "CertExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DomainQUICConfig": {
+      "document": "域名 QUIC 配置信息",
+      "members": [
+        {
+          "document": "QUIC 配置状态，可选值：\n<li>Enabled: 启用；</li>\n<li>Disabled: 禁用。</li>",
+          "example": "Enabled",
+          "member": "string",
+          "name": "Status",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21850,7 +21867,6 @@
       "document": "ModifyVodDomainConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "域名。",
           "example": "myexample.com",
           "member": "string",
@@ -21859,7 +21875,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -21868,7 +21883,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "[Referer 防盗链](/document/product/266/14046)规则。",
           "example": "无",
           "member": "RefererAuthPolicy",
@@ -21877,11 +21891,18 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "[Key 防盗链](/document/product/266/14047)规则。",
           "example": "无",
           "member": "UrlSignatureAuthPolicy",
           "name": "UrlSignatureAuthPolicy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "QUIC 配置。",
+          "example": "无",
+          "member": "DomainQUICConfig",
+          "name": "QUICConfig",
           "required": false,
           "type": "object"
         }
@@ -26166,8 +26187,7 @@
       "document": "智能去除水印任务的输出。",
       "members": [
         {
-          "default": "",
-          "document": "视频 ID。",
+          "document": "媒体文件 ID。",
           "example": "123",
           "member": "string",
           "name": "FileId",
@@ -26176,7 +26196,33 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "document": "文件类型，例如 mp4、mp3 等。",
+          "example": "无",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "媒体文件播放地址。",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件名称，最长 64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "MediaName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "元信息。包括大小、时长、视频流信息、音频流信息等。",
           "example": "null",
           "member": "MediaMetaData",

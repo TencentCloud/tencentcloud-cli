@@ -14,6 +14,13 @@
       "output": "CancelKillTaskResponse",
       "status": "online"
     },
+    "CreateAuditLogFile": {
+      "document": "用于创建云数据库实例的审计日志文件，最多下载600w审计日志。",
+      "input": "CreateAuditLogFileRequest",
+      "name": "创建审计日志文件",
+      "output": "CreateAuditLogFileResponse",
+      "status": "online"
+    },
     "CreateDBDiagReportTask": {
       "document": "创建健康报告，并可以选择是否发送邮件。",
       "input": "CreateDBDiagReportTaskRequest",
@@ -70,6 +77,13 @@
       "output": "CreateSqlFilterResponse",
       "status": "online"
     },
+    "DeleteAuditLogFile": {
+      "document": "用于删除云数据库实例的审计日志文件。",
+      "input": "DeleteAuditLogFileRequest",
+      "name": "删除审计日志文件",
+      "output": "DeleteAuditLogFileResponse",
+      "status": "online"
+    },
     "DeleteDBDiagReportTasks": {
       "document": "根据任务id删除健康报告生成任务",
       "input": "DeleteDBDiagReportTasksRequest",
@@ -103,6 +117,13 @@
       "input": "DescribeAllUserGroupRequest",
       "name": "获取邮件发送中联系组信息",
       "output": "DescribeAllUserGroupResponse",
+      "status": "online"
+    },
+    "DescribeAuditLogFiles": {
+      "document": "用于创建云数据库实例的审计日志文件",
+      "input": "DescribeAuditLogFilesRequest",
+      "name": "查询审计日志文件",
+      "output": "DescribeAuditLogFilesResponse",
       "status": "online"
     },
     "DescribeDBDiagEvent": {
@@ -384,6 +405,153 @@
       ],
       "type": "object"
     },
+    "AuditLogFile": {
+      "document": "审计日志文件",
+      "members": [
+        {
+          "document": "审计日志文件生成异步任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "审计日志文件名称。",
+          "example": "tdsql-8fyt6dkd_20230417-151100_to_20230417-151403_1681717077964.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "审计日志文件创建时间。格式为 : \"2019-03-20 17:09:13\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-03-20 17:09:13",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件状态值。可能返回的值为：\n\"creating\" - 生成中;\n\"failed\" - 创建失败;\n\"success\" - 已生成;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文件大小，单位为 KB。",
+          "example": "233",
+          "member": "float",
+          "name": "FileSize",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "审计日志下载地址。",
+          "example": "无",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件生成进度。",
+          "example": "20",
+          "member": "float",
+          "name": "Progress",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件生成成功时间。",
+          "example": "2019-03-20 17:09:13",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditLogFilter": {
+      "document": "过滤条件。可按设置的过滤条件过滤日志。",
+      "members": [
+        {
+          "document": "客户端地址。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据库名称。",
+          "example": "test",
+          "member": "string",
+          "name": "DBName",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户名。",
+          "example": "root",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回行数。表示筛选返回行数大于该值的审计日志。",
+          "example": "1",
+          "member": "int64",
+          "name": "SentRows",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "影响行数。表示筛选影响行数大于该值的审计日志。",
+          "example": "2",
+          "member": "int64",
+          "name": "AffectRows",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "执行时间。单位为：µs。表示筛选执行时间大于该值的审计日志。",
+          "example": "3",
+          "member": "int64",
+          "name": "ExecTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "CancelKillTaskRequest": {
       "document": "CancelKillTask请求参数结构体",
       "members": [
@@ -464,6 +632,80 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAuditLogFileRequest": {
+      "document": "CreateAuditLogFile请求参数结构体",
+      "members": [
+        {
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"",
+          "example": "dcdb",
+          "member": "string",
+          "name": "NodeRequestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "实例 ID 。",
+          "example": "tdsqlshard-eg8b01gr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "开始时间，如“2019-09-10 12:13:14”。\t",
+          "example": "2019-01-01 00:00:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "截止时间，如“2019-09-11 10:13:14”。",
+          "example": "2019-01-01 01:00:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "过滤条件。可按设置的过滤条件过滤日志。",
+          "example": "无",
+          "member": "AuditLogFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditLogFileResponse": {
+      "document": "CreateAuditLogFile返回参数结构体",
+      "members": [
+        {
+          "document": "审计日志文件下载的任务ID",
+          "example": "1000",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDBDiagReportTaskRequest": {
       "document": "CreateDBDiagReportTask请求参数结构体",
@@ -1068,6 +1310,56 @@
       ],
       "type": "object"
     },
+    "DeleteAuditLogFileRequest": {
+      "document": "DeleteAuditLogFile请求参数结构体",
+      "members": [
+        {
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"\t",
+          "example": "dcdb",
+          "member": "string",
+          "name": "NodeRequestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "实例 ID 。",
+          "example": "tdsqlshard-eg8b01gr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "审计日志文件生成异步任务ID。",
+          "example": "12",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditLogFileResponse": {
+      "document": "DeleteAuditLogFile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDBDiagReportTasksRequest": {
       "document": "DeleteDBDiagReportTasks请求参数结构体",
       "members": [
@@ -1304,6 +1596,80 @@
           "member": "GroupItem",
           "name": "Groups",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogFilesRequest": {
+      "document": "DescribeAuditLogFiles请求参数结构体",
+      "members": [
+        {
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"",
+          "example": "dcdb",
+          "member": "string",
+          "name": "NodeRequestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "实例 ID 。",
+          "example": "tdsqlshard-eg8b01gr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "查询数目，默认为20，最大为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogFilesResponse": {
+      "document": "DescribeAuditLogFiles返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的审计日志文件个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "审计日志文件详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "AuditLogFile",
+          "name": "Items",
           "type": "list",
           "value_allowed_null": true
         },

@@ -680,16 +680,16 @@
       "status": "online"
     },
     "RestoreInstance": {
-      "document": "本接口（RestoreInstance）用于根据备份文件恢复实例。",
+      "document": "本接口（RestoreInstance）用于按照备份集回档数据库。",
       "input": "RestoreInstanceRequest",
-      "name": "根据备份文件恢复实例",
+      "name": "按照备份集回档数据库",
       "output": "RestoreInstanceResponse",
       "status": "online"
     },
     "RollbackInstance": {
-      "document": "本接口（RollbackInstance）用于回档实例",
+      "document": "本接口（RollbackInstance）用于按照时间点回档实例",
       "input": "RollbackInstanceRequest",
-      "name": "回档实例",
+      "name": "按照时间点回档数据库",
       "output": "RollbackInstanceResponse",
       "status": "online"
     },
@@ -3228,7 +3228,6 @@
       "document": "实例详细信息",
       "members": [
         {
-          "default": "",
           "document": "实例ID",
           "example": "mssql-dj5i29c5n",
           "member": "string",
@@ -3238,7 +3237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名称",
           "example": "Name",
           "member": "string",
@@ -3248,7 +3246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所在项目ID",
           "example": "0",
           "member": "int64",
@@ -3258,7 +3255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所在地域ID",
           "example": "1",
           "member": "int64",
@@ -3268,7 +3264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所在可用区ID",
           "example": "100004",
           "member": "int64",
@@ -3278,7 +3273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所在私有网络ID，基础网络时为 0",
           "example": "12345",
           "member": "int64",
@@ -3288,7 +3282,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所在私有网络子网ID，基础网络时为 0",
           "example": "67890",
           "member": "int64",
@@ -3298,7 +3291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例状态。取值范围： <li>1：申请中</li> <li>2：运行中</li> <li>3：受限运行中 (主备切换中)</li> <li>4：已隔离</li> <li>5：回收中</li> <li>6：已回收</li> <li>7：任务执行中 (实例做备份、回档等操作)</li> <li>8：已下线</li> <li>9：实例扩容中</li> <li>10：实例迁移中</li> <li>11：只读</li> <li>12：重启中</li>  <li>13：实例修改中且待切换</li> <li>14：订阅发布创建中</li> <li>15：订阅发布修改中</li> <li>16：实例修改中且切换中</li> <li>17：创建RO副本中</li>",
           "example": "2",
           "member": "int64",
@@ -3308,7 +3300,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例访问IP",
           "example": "192.168.0.16",
           "member": "string",
@@ -3318,7 +3309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例访问端口",
           "example": "1433",
           "member": "int64",
@@ -3328,7 +3318,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例创建时间",
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
@@ -3338,7 +3327,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例更新时间",
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
@@ -3348,7 +3336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例计费开始时间",
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
@@ -3358,7 +3345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例计费结束时间",
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
@@ -3368,7 +3354,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例隔离时间",
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
@@ -3378,7 +3363,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例内存大小，单位G",
           "example": "64",
           "member": "int64",
@@ -3388,7 +3372,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例已经使用存储空间大小，单位G",
           "example": "500",
           "member": "int64",
@@ -3398,7 +3381,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例存储空间大小，单位G",
           "example": "500",
           "member": "int64",
@@ -3408,7 +3390,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例版本",
           "example": "SQL Server 2008 Enterprise",
           "member": "string",
@@ -3418,7 +3399,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例续费标记，0-正常续费，1-自动续费，2-到期不续费",
           "example": "0",
           "member": "int64",
@@ -3428,7 +3408,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例高可用， 1-双机高可用，2-单机，3-跨可用区，4-集群跨可用区，5-集群，9-自研机房",
           "example": "1",
           "member": "int64",
@@ -3438,7 +3417,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所在地域名称，如 ap-guangzhou",
           "example": "ap-guangzhou",
           "member": "string",
@@ -3448,7 +3426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所在可用区名称，如 ap-guangzhou-1",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -3458,7 +3435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "备份时间点",
           "example": "00:00",
           "member": "string",
@@ -3468,7 +3444,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例付费模式， 0-按量计费，1-包年包月",
           "example": "1",
           "member": "int64",
@@ -3478,7 +3453,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例唯一UID",
           "example": "gamedb.gz000.cdb.db",
           "member": "string",
@@ -3488,7 +3462,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例cpu核心数",
           "example": "4",
           "member": "int64",
@@ -3498,7 +3471,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例版本代号",
           "example": "2008R2",
           "member": "string",
@@ -3508,7 +3480,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "物理机代号",
           "example": "TS85",
           "member": "string",
@@ -3518,7 +3489,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "计费ID",
           "example": "1",
           "member": "int64",
@@ -3528,7 +3498,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所属VPC的唯一字符串ID，格式如：vpc-xxx，基础网络时为空字符串",
           "example": "vpc-xxxxx",
           "member": "string",
@@ -3538,7 +3507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例所属子网的唯一字符串ID，格式如： subnet-xxx，基础网络时为空字符串",
           "example": "subnet-xxxxx",
           "member": "string",
@@ -3548,7 +3516,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例隔离操作\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "User",
           "member": "string",
@@ -3558,7 +3525,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUB",
           "member": "string",
@@ -3568,7 +3534,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MASTER",
           "member": "string",
@@ -3578,7 +3543,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MIRROR",
           "member": "string",
@@ -3588,7 +3552,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "ResourceTag",
@@ -3598,7 +3561,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备份模式，master_pkg-主节点打包备份(默认) ；master_no_pkg-主节点不打包备份；slave_pkg-从节点打包备份(always on集群有效)；slave_no_pkg-从节点不打包备份(always on集群有效)；只读副本对该值无效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "master_pkg",
           "member": "string",
@@ -3608,7 +3570,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例备份信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -3618,7 +3579,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备份周期",
           "example": "1",
           "member": "int64",
@@ -3628,7 +3588,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "备份周期类型，[daily、weekly、monthly]",
           "example": "daily",
           "member": "string",
@@ -3638,7 +3597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据(日志)备份保留时间",
           "example": "7",
           "member": "int64",
@@ -3648,7 +3606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务",
           "example": "HA",
           "member": "string",
@@ -3658,7 +3615,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "跨地域备份目的地域，如果为空，则表示未开启跨地域备份",
           "example": "[ap-guangzhou]",
           "member": "string",
@@ -3668,7 +3624,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "跨地域备份状态 enable-开启，disable-关闭",
           "example": "enable",
           "member": "string",
@@ -3678,7 +3633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "跨地域备份保留天数，则默认7天",
           "example": "7",
           "member": "uint64",
@@ -3688,7 +3642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "外网地址域名",
           "example": "gz.xxx.sqlserver.tencent.com",
           "member": "string",
@@ -3698,7 +3651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "外网端口号",
           "example": "2032",
           "member": "int64",
@@ -3708,7 +3660,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
           "example": "Chinese_PRC_CI_AS",
           "member": "string",
@@ -3718,7 +3669,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "系统时区，默认：China Standard Time",
           "example": "China Standard Time",
           "member": "string",
@@ -3728,7 +3678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否跨AZ",
           "example": "false",
           "member": "bool",
@@ -3738,13 +3687,30 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "备可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "SlaveZones",
           "name": "SlaveZones",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DOUBLE",
+          "member": "string",
+          "name": "Architecture",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "类型标识，EXCLUSIVE-独享型，SHARED-共享型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EXCLUSIVE",
+          "member": "string",
+          "name": "Style",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -11281,7 +11247,6 @@
       "document": "RestoreInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID，形如mssql-j8kv137v",
           "example": "mssql-njj2mtpl",
           "member": "string",
@@ -11290,7 +11255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备份文件ID，该ID可以通过DescribeBackups接口返回数据中的Id字段获得",
           "example": "32687264876",
           "member": "int64",
@@ -11299,7 +11263,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID",
           "example": "mssql-njj2mtpl",
           "member": "string",
@@ -11308,7 +11271,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。",
           "example": "无",
           "member": "RenameRestoreDatabase",
@@ -11317,9 +11279,24 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。",
-          "example": "558800",
+          "document": "回档类型，0-覆盖方式；1-重命名方式，默认1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "需要覆盖回档的数据库，只有覆盖回档时必填",
+          "example": "[\"test_db\"]",
+          "member": "string",
+          "name": "DBList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "备份任务组ID，在单库备份文件模式下",
+          "example": "2993992",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -11336,7 +11313,6 @@
           "example": "3546",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11353,7 +11329,6 @@
       "document": "RollbackInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID",
           "example": "mssql-j8kv137v",
           "member": "string",
@@ -11362,7 +11337,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "回档类型，0-回档的数据库覆盖原库；1-回档的数据库以重命名的形式生成，不覆盖原库",
           "example": "0",
           "member": "uint64",
@@ -11371,16 +11345,6 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "需要回档的数据库",
-          "example": "[\"db1\\n\"]",
-          "member": "string",
-          "name": "DBs",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "回档目标时间点",
           "example": "2018-08-0711:32:29",
           "member": "datetime",
@@ -11389,7 +11353,14 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "需要回档的数据库",
+          "example": "[\"db1\"]",
+          "member": "string",
+          "name": "DBs",
+          "required": false,
+          "type": "list"
+        },
+        {
           "document": "备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID",
           "example": "mssql-dj5i29c5n",
           "member": "string",
@@ -11398,7 +11369,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "按照ReNameRestoreDatabase中的库进行重命名，仅在Type = 1重命名回档方式有效；不填则按照默认方式命名库，DBs参数确定要恢复的库",
           "example": "无",
           "member": "RenameRestoreDatabase",
@@ -11417,7 +11387,6 @@
           "example": "1234",
           "member": "uint64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -928,7 +928,6 @@
       "document": "高防IP资产实例信息",
       "members": [
         {
-          "default": "",
           "document": "资产实例的详细信息",
           "example": "无",
           "member": "InstanceRelation",
@@ -938,7 +937,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例的规格信息",
           "example": "无",
           "member": "BGPIPInstanceSpecification",
@@ -948,7 +946,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例的使用统计信息",
           "example": "无",
           "member": "BGPIPInstanceUsages",
@@ -958,7 +955,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例所在的地域",
           "example": "无",
           "member": "RegionInfo",
@@ -968,7 +964,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例的防护状态，状态码如下：\n\"idle\"：正常状态(无攻击)\n\"attacking\"：攻击中\n\"blocking\"：封堵中\n\"creating\"：创建中\n\"deblocking\"：解封中\n\"isolate\"：回收隔离中",
           "example": "idle",
           "member": "string",
@@ -978,8 +973,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "购买时间",
+          "document": "到期时间",
           "example": "2020-06-09 23:12:23",
           "member": "datetime",
           "name": "ExpiredTime",
@@ -988,8 +982,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "到期时间",
+          "document": "购买时间",
           "example": "2020-05-09 23:12:23",
           "member": "datetime",
           "name": "CreatedTime",
@@ -998,7 +991,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例的名称",
           "example": "Test",
           "member": "string",
@@ -1008,7 +1000,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资产实例所属的套餐包信息，\n注意：当资产实例不是套餐包的实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PackInfo",
@@ -1018,7 +1009,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产实例所属的三网套餐包详情，\n注意：当资产实例不是三网套餐包的实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StaticPackRelation",
@@ -1028,7 +1018,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "区分高防IP境外线路\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1038,7 +1027,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "区分集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -1048,7 +1036,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高防弹性公网IP状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)。只对高防弹性公网IP实例有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UNBIND",
           "member": "string",
@@ -1058,7 +1045,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否高防弹性公网IP实例，是为1，否为0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1068,7 +1054,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产实例所属的高防弹性公网IP套餐包详情，\n注意：当资产实例不是高防弹性公网IP套餐包的实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EipAddressPackRelation",
@@ -1078,7 +1063,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "高防弹性公网IP关联的实例信息。\n注意：当资产实例不是高防弹性公网IP实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EipAddressRelation",
@@ -1088,7 +1072,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "建议客户接入的域名，客户可使用域名接入。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.8cname.com",
           "member": "string",
@@ -1098,7 +1081,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启安全加速，是为1，否为0。",
           "example": "0",
           "member": "uint64",
@@ -1108,7 +1090,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否Ipv6版本的IP, 是为1，否为0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1118,7 +1099,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否渠道版高防IP，是为1，否为0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1128,7 +1108,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源关联标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "TagInfo",
@@ -1138,7 +1117,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资产实例所属的全力防护套餐包详情，\n注意：当资产实例不是全力防护套餐包的实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AnycastOutPackRelation",
@@ -1148,7 +1126,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源实例版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1158,7 +1135,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "重保实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1168,7 +1144,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "带宽后付费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "uint64",
@@ -1178,7 +1153,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否为EO代播的ip: 1是，0不是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -1472,6 +1446,15 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4577,6 +4560,14 @@
           "name": "ProtoInfo",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "业务类型可取值domain, port\nport：端口业务\ndomain：域名业务",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4599,6 +4590,14 @@
           "name": "MetricName",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "返回DataList中的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxData",
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6133,6 +6132,14 @@
           "name": "ExcludeAdvancedInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "document": "资产IP数组",
+          "example": "[1.1.1.1]",
+          "member": "string",
+          "name": "FilterAssetIpList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6888,7 +6895,6 @@
       "document": "DescribeListSchedulingDomain请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "1",
           "member": "uint64",
@@ -6897,7 +6903,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "一页条数，当Limit=0时，默认一页条数为20;最大取值为100",
           "example": "25",
           "member": "uint64",
@@ -6906,11 +6911,18 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "调度域名搜索",
           "example": "test.com",
           "member": "string",
           "name": "FilterDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "运行状态 0 代表未运行  1 正在运行  2 运行异常 ",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
           "required": false,
           "type": "string"
         }
@@ -6925,7 +6937,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6934,7 +6945,6 @@
           "example": "无",
           "member": "SchedulingDomainInfo",
           "name": "DomainList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7311,16 +7321,6 @@
       "document": "DescribeOverviewCCTrend请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）",
-          "example": "bgp",
-          "member": "string",
-          "name": "Business",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
           "example": "3600",
           "member": "int64",
@@ -7329,7 +7329,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "统计开始时间",
           "example": "2018-08-2715:05:10",
           "member": "datetime",
@@ -7338,7 +7337,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "统计结束时间",
           "example": "2018-08-2716:05:10",
           "member": "datetime",
@@ -7347,7 +7345,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]",
           "example": "inqps",
           "member": "string",
@@ -7356,7 +7353,14 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
+        },
+        {
           "document": "资源的IP",
           "example": "无",
           "member": "string",
@@ -7365,7 +7369,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "资源实例ID",
           "example": "bgp-00000010",
           "member": "string",
@@ -7384,7 +7387,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Count",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7393,7 +7395,6 @@
           "example": "[1234]",
           "member": "uint64",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7491,16 +7492,6 @@
       "document": "DescribeOverviewDDoSTrend请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "大禹子产品代号（bgpip表示高防IP；bgp-multip表示高防包；basic表示DDoS基础防护）",
-          "example": "bgp",
-          "member": "string",
-          "name": "Business",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
           "example": "3600",
           "member": "int64",
@@ -7509,7 +7500,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "统计开始时间",
           "example": "2018-08-2715:05:10",
           "member": "datetime",
@@ -7518,7 +7508,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "统计结束时间",
           "example": "2018-08-2716:05:10",
           "member": "datetime",
@@ -7527,7 +7516,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指标，取值[bps(攻击流量带宽，pps(攻击包速率))]",
           "example": "bps",
           "member": "string",
@@ -7536,7 +7524,14 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp-multip表示高防包；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
+        },
+        {
           "document": "资源实例的IP列表",
           "example": "无",
           "member": "string",
@@ -7545,7 +7540,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "资源实例ID",
           "example": "bgp-00000010",
           "member": "string",
@@ -7564,7 +7558,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Count",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7573,7 +7566,6 @@
           "example": "[1234]",
           "member": "uint64",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7906,8 +7898,8 @@
       "document": "EIP所属的云产品信息",
       "members": [
         {
-          "default": "",
           "document": "IP地址",
+          "example": "无",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -7915,8 +7907,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云产品类型，取值[\npublic（CVM产品），\nbm（黑石产品），\neni（弹性网卡），\nvpngw（VPN网关），\n natgw（NAT网关），\nwaf（Web应用安全产品），\nfpc（金融产品），\ngaap（GAAP产品）, \nother(托管IP)\n]",
+          "example": "无",
           "member": "string",
           "name": "BizType",
           "required": true,
@@ -7924,8 +7916,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云产品子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]",
+          "example": "无",
           "member": "string",
           "name": "DeviceType",
           "required": true,
@@ -7933,13 +7925,22 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "IP所属的云产品实例ID，例如是弹性网卡的IP，InstanceId为弹性网卡的ID(eni-*); 如果是托管IP没有对应的资源实例ID,InstanceId为\"\"",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "域名化资产对应的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8123,7 +8124,6 @@
       "document": "IP线路信息",
       "members": [
         {
-          "default": "",
           "document": "IP线路类型，取值[\n\"bgp\"：BGP线路IP\n\"ctcc\"：电信线路IP\n\"cucc\"：联通线路IP\n\"cmcc\"：移动线路IP\n\"abroad\"：境外线路IP\n]",
           "example": "bgp",
           "member": "string",
@@ -8133,7 +8133,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "线路IP",
           "example": "1.1.1.1",
           "member": "string",
@@ -8143,7 +8142,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例对应的cname",
           "example": "abcdefg",
           "member": "string",
@@ -8153,7 +8151,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源flag，0：高防包资源，1：高防IP资源，2：非高防资源IP",
           "example": "0",
           "member": "int64",
@@ -8161,6 +8158,15 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "域名化资产对应的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

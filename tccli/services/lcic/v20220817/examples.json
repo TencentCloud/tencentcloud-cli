@@ -48,6 +48,14 @@
         "title": "示例"
       }
     ],
+    "BatchDescribeDocument": [
+      {
+        "document": "批量获取文档详情",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDescribeDocument\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"Page\": 0,\n    \"Limit\": 0,\n    \"Permission\": [\n        1\n    ],\n    \"Owner\": \"abc\",\n    \"Keyword\": \"abc\",\n    \"DocumentId\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Documents\": [\n            {\n                \"DocumentId\": \"abc\",\n                \"DocumentUrl\": \"abc\",\n                \"DocumentName\": \"abc\",\n                \"Owner\": \"abc\",\n                \"SdkAppId\": 1,\n                \"Permission\": 1,\n                \"TranscodeResult\": \"abc\",\n                \"TranscodeType\": 1,\n                \"TranscodeProgress\": 1,\n                \"TranscodeState\": 1,\n                \"TranscodeInfo\": \"abc\",\n                \"DocumentType\": \"abc\",\n                \"DocumentSize\": 1,\n                \"UpdateTime\": 1,\n                \"Pages\": 1,\n                \"Width\": 1,\n                \"Height\": 1,\n                \"Cover\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "BatchRegister": [
       {
         "document": "批量注册用户",

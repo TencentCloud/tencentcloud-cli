@@ -1,6 +1,6 @@
 **Example 1: 查询素材列表**
 
-
+查询素材列表
 
 Input: 
 
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "Count": 6,
+        "Count": 5,
         "MaterialInfos": [
             {
                 "CreateTime": "2022-11-29 18:46:34",
@@ -31,7 +31,7 @@ Output:
                     }
                 ],
                 "MaterialId": "mt_1597542526641664000",
-                "MaterialName": "1-fps15.png",
+                "MaterialName": "test1.png",
                 "MaterialStatus": 0,
                 "UpdateTime": "2022-11-29 18:46:34"
             },
@@ -49,7 +49,7 @@ Output:
                     }
                 ],
                 "MaterialId": "mt_1603273612711829504",
-                "MaterialName": "1-fps15.png",
+                "MaterialName": "test2.png",
                 "MaterialStatus": 0,
                 "UpdateTime": "2022-12-15 14:19:51"
             },
@@ -67,7 +67,7 @@ Output:
                     }
                 ],
                 "MaterialId": "mt_1590531733435097088",
-                "MaterialName": "testcos",
+                "MaterialName": "test3.png",
                 "MaterialStatus": 1,
                 "UpdateTime": "2022-12-07 17:10:54"
             },
@@ -85,7 +85,7 @@ Output:
                     }
                 ],
                 "MaterialId": "mt_1600403157392855040",
-                "MaterialName": "蔡英文官方元首肖像照.png",
+                "MaterialName": "test4.png",
                 "MaterialStatus": 3,
                 "UpdateTime": "2022-12-07 16:13:52"
             },
@@ -103,7 +103,7 @@ Output:
                     }
                 ],
                 "MaterialId": "mt_1603273738050215936",
-                "MaterialName": "1616638339604436.video_thumb.jpg",
+                "MaterialName": "test5.jpg",
                 "MaterialStatus": 3,
                 "UpdateTime": "2022-12-15 14:25:28"
             }

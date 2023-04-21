@@ -56,6 +56,13 @@
       "output": "CheckInstancesUpgradeAbleResponse",
       "status": "online"
     },
+    "CreateBackupStorageLocation": {
+      "document": "创建备份仓库，指定了存储仓库类型（如COS）、COS桶地区、名称等信息，当前最多允许创建100个仓库， 注意此接口当前是全局接口，多个地域的TKE集群如果要备份到相同的备份仓库中，不需要重复创建备份仓库",
+      "input": "CreateBackupStorageLocationRequest",
+      "name": "创建备份仓库",
+      "output": "CreateBackupStorageLocationResponse",
+      "status": "online"
+    },
     "CreateCluster": {
       "document": "创建集群",
       "input": "CreateClusterRequest",
@@ -236,6 +243,13 @@
       "input": "CreateTKEEdgeClusterRequest",
       "name": "创建边缘计算集群",
       "output": "CreateTKEEdgeClusterResponse",
+      "status": "online"
+    },
+    "DeleteBackupStorageLocation": {
+      "document": "删除备份仓库",
+      "input": "DeleteBackupStorageLocationRequest",
+      "name": "删除备份仓库",
+      "output": "DeleteBackupStorageLocationResponse",
       "status": "online"
     },
     "DeleteCluster": {
@@ -432,6 +446,13 @@
       "input": "DescribeAvailableTKEEdgeVersionRequest",
       "name": "边缘计算支持的k8s版本",
       "output": "DescribeAvailableTKEEdgeVersionResponse",
+      "status": "online"
+    },
+    "DescribeBackupStorageLocations": {
+      "document": "查询备份仓库信息",
+      "input": "DescribeBackupStorageLocationsRequest",
+      "name": "查询备份仓库",
+      "output": "DescribeBackupStorageLocationsResponse",
       "status": "online"
     },
     "DescribeClusterAsGroupOption": {
@@ -1746,6 +1767,84 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BackupStorageLocation": {
+      "document": "仓储仓库信息",
+      "members": [
+        {
+          "document": "备份仓库名称\t",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储仓库所属地域，比如COS广州(ap-guangzhou)\t",
+          "example": "ap-guangzhou\t",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储服务提供方，默认腾讯云\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tencentcloud",
+          "member": "string",
+          "name": "Provider",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "对象存储桶名称，如果是COS必须是tke-backup-前缀开头\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tke-backup-xxx",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "对象存储桶路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "存储仓库状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Available/Unavailable",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "详细状态信息\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最后一次检查时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastValidationTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3867,6 +3966,64 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateBackupStorageLocationRequest": {
+      "document": "CreateBackupStorageLocation请求参数结构体",
+      "members": [
+        {
+          "document": "存储仓库所属地域，比如COS广州(ap-guangzhou)",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "对象存储桶名称，如果是COS必须是tke-backup前缀开头",
+          "example": "tke-backup-xxx",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "备份仓库名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "存储服务提供方，默认腾讯云",
+          "example": "tencentcloud",
+          "member": "string",
+          "name": "Provider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "对象存储桶路径",
+          "example": "test",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupStorageLocationResponse": {
+      "document": "CreateBackupStorageLocation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateClusterEndpointRequest": {
       "document": "CreateClusterEndpoint请求参数结构体",
@@ -6099,6 +6256,32 @@
       ],
       "usage": "out"
     },
+    "DeleteBackupStorageLocationRequest": {
+      "document": "DeleteBackupStorageLocation请求参数结构体",
+      "members": [
+        {
+          "document": "备份仓库名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBackupStorageLocationResponse": {
+      "document": "DeleteBackupStorageLocation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClusterAsGroupsRequest": {
       "document": "DeleteClusterAsGroups请求参数结构体",
       "members": [
@@ -7168,6 +7351,40 @@
           "name": "EdgeVersionCurrent",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupStorageLocationsRequest": {
+      "document": "DescribeBackupStorageLocations请求参数结构体",
+      "members": [
+        {
+          "document": "多个备份仓库名称，如果不填写，默认返回当前地域所有存储仓库名称",
+          "example": "[\"test-1\"]",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupStorageLocationsResponse": {
+      "document": "DescribeBackupStorageLocations返回参数结构体",
+      "members": [
+        {
+          "document": "详细备份仓库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupStorageLocation",
+          "name": "BackupStorageLocationSet",
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -12012,6 +12229,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "边缘集群组件的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.9.0",
+          "member": "string",
+          "name": "EdgeVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12737,7 +12963,6 @@
       "document": "EnableVpcCniNetworkType请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "cls-xxx",
           "member": "string",
@@ -12746,7 +12971,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "开启vpc-cni的模式，tke-route-eni开启的是策略路由模式，tke-direct-eni开启的是独立网卡模式",
           "example": "tke-route-eni;tke-direct-eni",
           "member": "string",
@@ -12755,7 +12979,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否开启固定IP模式",
           "example": "false",
           "member": "bool",
@@ -12764,7 +12987,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "使用的容器子网",
           "example": "[\"subnet-aaa\",\"subnet-bbb\"]",
           "member": "string",
@@ -12773,13 +12995,20 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。",
           "example": "300",
           "member": "uint64",
           "name": "ExpiredSeconds",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipAddingNonMasqueradeCIDRs",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -32,9 +32,9 @@
     ],
     "DescribeNodes": [
       {
-        "document": "",
+        "document": "获取拨测节点",
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodes\n<公共请求参数>\n\n{\n    \"NodeType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"City\": \"xx\",\n                \"Code\": \"xx\",\n                \"Name\": \"xx\",\n                \"District\": \"xx\",\n                \"NetService\": \"xx\",\n                \"Location\": 0,\n                \"Type\": 1,\n                \"IPType\": 0,\n                \"TaskTypes\": [\n                    1,\n                    2\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"City\": \"北京\",\n                \"Code\": \"10001\",\n                \"Name\": \"123\",\n                \"District\": \"1223\",\n                \"NetService\": \"中国电信\",\n                \"Location\": 0,\n                \"Type\": 1,\n                \"IPType\": 0,\n                \"TaskTypes\": [\n                    1,\n                    2\n                ],\n                \"CodeType\": \"\"\n            }\n        ],\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "获取拨测节点"
       }
     ],

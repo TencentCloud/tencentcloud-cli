@@ -2390,7 +2390,6 @@
       "document": "描述 EIP 信息",
       "members": [
         {
-          "default": "",
           "document": "`EIP`的`ID`，是`EIP`的唯一标识。",
           "example": "eip-ip9ongec",
           "member": "string",
@@ -2400,7 +2399,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "`EIP`名称。",
           "example": "未命名",
           "member": "string",
@@ -2410,7 +2408,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "`EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)",
           "example": "UNBIND",
           "member": "string",
@@ -2420,7 +2417,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "外网IP地址",
           "example": "100.10.1.1",
           "member": "string",
@@ -2430,7 +2426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "绑定的资源实例`ID`。可能是一个`CVM`，`NAT`。",
           "example": "ins-xxxxx",
           "member": "string",
@@ -2440,7 +2435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
           "example": "2021-05-19T08:37:53Z",
           "member": "datetime_iso",
@@ -2450,7 +2444,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "绑定的弹性网卡ID",
           "example": "null",
           "member": "string",
@@ -2460,7 +2453,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "绑定的资源内网ip",
           "example": "null",
           "member": "string",
@@ -2470,7 +2462,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态",
           "example": "false",
           "member": "bool",
@@ -2480,7 +2471,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态",
           "example": "false",
           "member": "bool",
@@ -2490,7 +2480,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式",
           "example": "false",
           "member": "bool",
@@ -2500,7 +2489,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：`CalcIP` 表示设备 IP，`WanIP` 表示普通公网 IP，`EIP` 表示弹性公网 IP，`AnycastEip` 表示加速 EIP，`AntiDDoSEIP`表示高防EIP。",
           "example": "EIP",
           "member": "string",
@@ -2510,7 +2498,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放",
           "example": "false",
           "member": "bool",
@@ -2520,7 +2507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "EIP ALG开启的协议类型。",
           "example": "无",
           "member": "AlgType",
@@ -2530,7 +2516,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "弹性公网IP的运营商信息，当前可能返回值包括\"CMCC\",\"CTCC\",\"CUCC\",\"BGP\"",
           "example": "BGP",
           "member": "string",
@@ -2540,7 +2525,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否本地带宽EIP",
           "example": "false",
           "member": "bool",
@@ -2550,7 +2534,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -2560,7 +2543,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。\n注意：此字段可能返回 null，表示取不到有效值。\n包括：\n<li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li>\n<p style=\"padding-left: 30px;\">表示包月带宽预付费。</p>\n<li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li>\n<p style=\"padding-left: 30px;\">表示按小时流量后付费。</p>\n<li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li>\n<p style=\"padding-left: 30px;\">表示按小时带宽后付费。</p>\n<li><strong>BANDWIDTH_PACKAGE</strong></li>\n<p style=\"padding-left: 30px;\">表示共享带宽包。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
@@ -2570,13 +2552,30 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "弹性公网IP关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "到期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "date",
+          "name": "DeadlineDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "EIP绑定的实例类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

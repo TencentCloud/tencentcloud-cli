@@ -1,12 +1,23 @@
 **Example 1: 使用自定义配置，创建一个GME应用**
 
-使用项目10000，开启实时语音服务，使用高音质；关闭离线语音服务； 开启语音过滤服务
+创建GME应用123，开启实时语音服务，使用高音质；开启离线语音服务； 关闭语音过滤服务；关闭ASR语音转文本服务。
 
 Input: 
 
 ```
 tccli gme CreateApp --cli-unfold-argument  \
-    --AppName simple_gme_application
+    --AppName 123 \
+    --ProjectId 0 \
+    --EngineList android \
+    --RegionList mainland \
+    --RealtimeSpeechConf.Status open \
+    --RealtimeSpeechConf.Quality high \
+    --VoiceMessageConf.Status open \
+    --VoiceMessageConf.Language all \
+    --VoiceFilterConf.Status close \
+    --AsrConf.Status close \
+    --Tags.0.TagKey abc \
+    --Tags.0.TagValue abc
 ```
 
 Output: 
@@ -14,24 +25,32 @@ Output:
 {
     "Response": {
         "Data": {
-            "AppName": "simple_gme_application",
-            "CreateTime": 1568945078,
-            "ProjectId": 10000,
-            "BizId": 140000002,
-            "SecretKey": "abcdefghijklmnop",
+            "AppName": "123",
+            "AsrConf": {
+                "Status": "close"
+            },
+            "BizId": 1410000000,
+            "CreateTime": 1681894000,
+            "ProjectId": 0,
             "RealtimeSpeechConf": {
-                "Status": "open",
-                "Quality": "high"
+                "Quality": "high",
+                "Status": "open"
+            },
+            "SecretKey": "7f9xxac16axxx49x",
+            "VoiceFilterConf": {
+                "SceneInfos": [
+                    {},
+                    {},
+                    {}
+                ],
+                "Status": "close"
             },
             "VoiceMessageConf": {
-                "Status": "open",
-                "Language": "cnen"
-            },
-            "VoiceFilterConf": {
+                "Language": "all",
                 "Status": "open"
             }
         },
-        "RequestId": "d61be8ca-f010-11e9-af81-fa163ee00eb7"
+        "RequestId": "f28xxxfe-8xx8-4xx6-bcxx-22xxxfd00xxx"
     }
 }
 ```

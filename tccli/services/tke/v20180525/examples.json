@@ -64,6 +64,14 @@
         "title": "检查节点是否可升级"
       }
     ],
+    "CreateBackupStorageLocation": [
+      {
+        "document": "创建TKE存储仓库",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupStorageLocation\n<公共请求参数>\n\n{\n    \"StorageRegion\": \"ap-guangzhou\",\n    \"Provider\": \"tencentcloud\",\n    \"Bucket\": \"tke-backup-xxx\",\n    \"Path\": \"\",\n    \"Name\": \"test-registry-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4bef4bc7-edf2-4de6-a2e1-684bfc37185f\"\n    }\n}",
+        "title": "创建TKE存储仓库"
+      }
+    ],
     "CreateCluster": [
       {
         "document": "创建托管集群",
@@ -296,6 +304,14 @@
         "title": "创建边缘计算集群示例"
       }
     ],
+    "DeleteBackupStorageLocation": [
+      {
+        "document": "删除备份仓库，注意，此接口不会清理备份仓库底层存储数据",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupStorageLocation\n<公共请求参数>\n\n{\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0878bad3-d0aa-4886-beac-7f4d450d55fa\"\n    }\n}",
+        "title": "删除备份仓库"
+      }
+    ],
     "DeleteCluster": [
       {
         "document": "删除集群",
@@ -518,6 +534,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableTKEEdgeVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Versions\": [\n            \"1.14.1\",\n            \"1.16.1\"\n        ],\n        \"EdgeVersionLatest\": \"1.0.1\",\n        \"EdgeVersionCurrent\": \"1.0.1\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "检查当前支持的k8s版本"
+      }
+    ],
+    "DescribeBackupStorageLocations": [
+      {
+        "document": "查询备份仓库信息",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupStorageLocations\n<公共请求参数>\n\n{\n    \"Names\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupStorageLocationSet\": [\n            {\n                \"Name\": \"abc\",\n                \"StorageRegion\": \"ap-guangzhou\",\n                \"Provider\": \"tencentcloud\",\n                \"Bucket\": \"tke-backup-xx\",\n                \"Path\": \"\",\n                \"State\": \"Available\",\n                \"Message\": \"\",\n                \"LastValidationTime\": \"2023-04-07T03:18:10Z\"\n            }\n        ],\n        \"RequestId\": \"05670c78-3fa8-42c8-87ac-e6b06d0f1f96\"\n    }\n}",
+        "title": "查询备份仓库"
       }
     ],
     "DescribeClusterAsGroupOption": [
@@ -1168,7 +1192,7 @@
     ],
     "EnableVpcCniNetworkType": [
       {
-        "document": "",
+        "document": "TKE 集群启用 vpc-cni 网络",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableVpcCniNetworkType\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcdefgh\",\n    \"EnableStaticIp\": false,\n    \"VpcCniType\": \"tke-route-eni\",\n    \"Subnets\": [\n        \"subnet-abcdefg1\",\n        \"subnet-abcdefg2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"defc0237-d413-4079-9faa-7f3ff928d224\"\n    }\n}",
         "title": "启用vpc-cni网络"

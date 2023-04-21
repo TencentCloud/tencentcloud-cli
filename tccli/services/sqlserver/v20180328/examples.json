@@ -808,18 +808,18 @@
     ],
     "RestoreInstance": [
       {
-        "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=RestoreInstance\n&InstanceId=mssql-njj2mtpl\n&BackupId=32687264876\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3\",\n        \"FlowId\": 3546\n    }\n}",
-        "title": "恢复实例"
+        "document": "根据备份集回档数据库",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-u81902ja\",\n    \"BackupId\": 0,\n    \"TargetInstanceId\": \"mssql-u8190212\",\n    \"RenameRestore\": [\n        {\n            \"OldName\": \"test_db\",\n            \"NewName\": \"new_db\"\n        }\n    ],\n    \"GroupId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"RequestId\": \"tqKar0yjquorXdNkDzkAZ8lh1_JTWJq3\"\n    }\n}",
+        "title": "根据备份集回档数据库"
       }
     ],
     "RollbackInstance": [
       {
-        "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=RollbackInstance\n&InstanceId=mssql-j8kv137v\n&Type=0\n&Time=2018-08-07 11:32:29\n&DBs.0=db1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"780339f6-30d7-419a-a30c-c2dc0933af1c\",\n        \"FlowId\": 1234\n    }\n}",
-        "title": "将实例mssql-j8kv137v中的db1回档到2018-08-07 11:32:29时刻"
+        "document": "本接口（RollbackInstance）用于按照时间点回档数据库",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-aj89iq78\",\n    \"Type\": 1,\n    \"DBs\": [\n        \"abc\"\n    ],\n    \"Time\": \"2020-09-22 00:00:00\",\n    \"TargetInstanceId\": \"mssql-aj89iq79\",\n    \"RenameRestore\": [\n        {\n            \"OldName\": \"abc\",\n            \"NewName\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 100023,\n        \"RequestId\": \"cd7a35be-2fbf-f3a6-210a-ea9afe158817\"\n    }\n}",
+        "title": "按照时间点回档数据库"
       }
     ],
     "RunMigration": [
