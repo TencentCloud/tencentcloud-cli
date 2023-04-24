@@ -1,15 +1,15 @@
-**Example 1: API调用**
+**Example 1: 文本翻译调用示例**
 
-
+文本翻译
 
 Input: 
 
 ```
 tccli tmt TextTranslate --cli-unfold-argument  \
     --SourceText hello \
-    --ProjectId 0 \
+    --Source en \
     --Target zh \
-    --Source en
+    --ProjectId 0
 ```
 
 Output: 

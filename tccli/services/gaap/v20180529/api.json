@@ -10523,7 +10523,8 @@
           "name": "RegionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10533,7 +10534,8 @@
           "name": "RegionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10543,7 +10545,8 @@
           "name": "RegionArea",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10553,7 +10556,8 @@
           "name": "RegionAreaName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10563,7 +10567,8 @@
           "name": "IDCType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10573,7 +10578,19 @@
           "name": "FeatureBitmap",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "接入区域支持的能力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"normal\", \"cn2\"]",
+          "member": "SupportFeature",
+          "name": "SupportFeature",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -11159,6 +11176,23 @@
           "required": true,
           "type": "float",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SupportFeature": {
+      "document": "加速区域支持的能力，包括支持的网络类型等等。",
+      "members": [
+        {
+          "default": "",
+          "document": "接入区域支持的网络类型列表，normal表示支持常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全eip。",
+          "example": "[\"normal\", \"cn2\"]",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

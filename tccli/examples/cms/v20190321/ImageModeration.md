@@ -1,6 +1,6 @@
 **Example 1: 图片内容检测**
 
-
+审核结果
 
 Input: 
 
@@ -23,8 +23,8 @@ Output:
                 "ModerationCode": 0,
                 "ModerationDetail": [
                     {
-                        "CodeCharset": "UTF-8",
-                        "CodePosition": [
+                        "StrCharset": "UTF-8",
+                        "QrCodePosition": [
                             {
                                 "FloatX": 5.8333335,
                                 "FloatY": 314.16666
@@ -42,8 +42,8 @@ Output:
                                 "FloatY": 314.16666
                             }
                         ],
-                        "CodeText": "http://xxx",
-                        "CodeType": 2
+                        "StrQrCodeText": "http://xxx",
+                        "Uint32QrCodeType": 2
                     }
                 ]
             },

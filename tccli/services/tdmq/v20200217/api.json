@@ -11858,6 +11858,16 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败\n为了和计费区分开，额外开启一个状态位，用于显示。",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -12520,6 +12530,26 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "TCP内部接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InternalEndpoint",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "HTTP协议内部接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HttpInternalEndpoint",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -12856,64 +12886,74 @@
       "document": "RocketMQ命名空间信息",
       "members": [
         {
-          "default": "",
           "document": "命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”",
           "example": "prod",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "未消费消息的保留时间，以毫秒单位，范围60秒到15天",
+          "document": "已废弃，未消费消息的保留时间，以毫秒单位，范围60秒到15天",
           "example": "100000",
           "member": "uint64",
           "name": "Ttl",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "消息持久化后保留的时间，以毫秒单位",
           "example": "10000",
           "member": "uint64",
           "name": "RetentionTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "说明\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "公网接入点地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PublicEndpoint",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC接入点地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "VpcEndpoint",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "内部接入点地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InternalEndpoint",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -13163,6 +13203,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "最大可设置消息保留时间，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "168",
+          "member": "int64",
+          "name": "MaxRetention",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "最小可设置消息保留时间，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "int64",
+          "name": "MinRetention",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "实例消息保留时间，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "72",
+          "member": "int64",
+          "name": "Retention",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],

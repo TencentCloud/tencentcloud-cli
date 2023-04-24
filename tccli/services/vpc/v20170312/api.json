@@ -49930,6 +49930,16 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: AddService.sip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Sip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "both"
@@ -51192,7 +51202,6 @@
       "document": "复杂类型: VpcOssServicePropertyRequest",
       "members": [
         {
-          "default": "",
           "document": "整数vpcId",
           "example": "1",
           "member": "int64",
@@ -51203,7 +51212,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "对外唯一VpcId",
           "example": "vpc-jmaywf6r",
           "member": "string",
@@ -51214,7 +51222,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.groupId",
           "example": "1",
           "member": "int64",
@@ -51225,7 +51232,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.proto",
           "example": "tcp",
           "member": "string",
@@ -51236,7 +51242,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.vip",
           "example": "172.16.0.18",
           "member": "string",
@@ -51247,7 +51252,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.vport",
           "example": "22",
           "member": "int64",
@@ -51258,7 +51262,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.lbType",
           "example": "1",
           "member": "int64",
@@ -51269,7 +51272,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.stickFlag",
           "example": "0",
           "member": "int64",
@@ -51280,7 +51282,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.stickTimeout",
           "example": "1",
           "member": "int64",
@@ -51291,7 +51292,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.stickMaxCount",
           "example": "0",
           "member": "int64",
@@ -51302,7 +51302,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.rstFlag",
           "example": "1",
           "member": "int64",
@@ -51313,7 +51312,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.toaHostIpFlag",
           "example": "1",
           "member": "int64",
@@ -51324,7 +51322,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.bypassFlag",
           "example": "1",
           "member": "int64",
@@ -51335,7 +51332,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.rsAllDeadAsAliveFlag",
           "example": "1",
           "member": "int64",
@@ -51346,7 +51342,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.routeGroupFlag",
           "example": "1",
           "member": "int64",
@@ -51357,7 +51352,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.uniqRouteGroupId",
           "example": "xxx",
           "member": "string",
@@ -51368,13 +51362,22 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceProperty.routeGroupId",
           "example": "1",
           "member": "int64",
           "name": "RouteGroupId",
           "required": false,
           "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: UpdateServiceProperty.business",
+          "example": "eks",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 2
         }
@@ -51471,6 +51474,16 @@
           "name": "GroupId",
           "required": false,
           "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: DelService.sip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Sip",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 2
         }
@@ -52574,7 +52587,6 @@
       "document": "复杂类型: VpcOssUpdateMonitor",
       "members": [
         {
-          "default": "",
           "document": "整数vpcId",
           "example": "1",
           "member": "int64",
@@ -52585,7 +52597,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateMonitor.groupId",
           "example": "1",
           "member": "int64",
@@ -52596,7 +52607,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateMonitor.proto",
           "example": "tcp",
           "member": "string",
@@ -52607,7 +52617,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateMonitor.ip",
           "example": "10.6.2.3",
           "member": "string",
@@ -52618,7 +52627,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateMonitor.port",
           "example": "8181",
           "member": "int64",
@@ -52629,7 +52637,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateMonitor.interval",
           "example": "3",
           "member": "int64",
@@ -52640,7 +52647,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateMonitor.timeout",
           "example": "3",
           "member": "int64",
@@ -52651,7 +52657,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateMonitor.activeflag",
           "example": "0",
           "member": "int64",
@@ -52662,7 +52667,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateMonitor.goodlimit",
           "example": "3",
           "member": "int64",
@@ -52673,11 +52677,20 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateMonitor.badlimit",
           "example": "3",
           "member": "int64",
           "name": "BadLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: UpdateMonitor.reportflag",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportFlag",
           "required": false,
           "type": "int",
           "value_allowed_null": false,
@@ -53495,7 +53508,6 @@
       "document": "复杂类型: VpcOssUpdateServiceVPCGateway",
       "members": [
         {
-          "default": "",
           "document": "整数vpcId",
           "example": "1",
           "member": "int64",
@@ -53506,7 +53518,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "对外唯一VpcId",
           "example": "vpc-jmaywf6r",
           "member": "string",
@@ -53517,7 +53528,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.vip",
           "example": "172.16.0.18",
           "member": "string",
@@ -53528,7 +53538,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.uniqVpcgwId",
           "example": "vpcgw-fxu02n4l",
           "member": "string",
@@ -53539,7 +53548,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.subnetRouteAlgorithm",
           "example": "0",
           "member": "int64",
@@ -53550,7 +53558,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.noSnatFlag",
           "example": "1",
           "member": "int64",
@@ -53561,7 +53568,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.vpcgwZoneId",
           "example": "1231",
           "member": "int64",
@@ -53572,7 +53578,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.bVpcgwAttrFlag",
           "example": "1",
           "member": "int64",
@@ -53583,7 +53588,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.vpcGwIp",
           "example": "1.1.1.1",
           "member": "string",
@@ -53594,7 +53598,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.uniqClassicVpcgwId",
           "example": "xxxxxx",
           "member": "string",
@@ -53605,7 +53608,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.uniqVpcGwIpVpcgwId",
           "example": "xxxxx",
           "member": "string",
@@ -53616,11 +53618,20 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.bypassVpcgwFlag",
           "example": "1",
           "member": "int64",
           "name": "BypassVpcGatewayFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: UpdateServiceVpcgw.bSyncVpcgwIp",
+          "example": "1",
+          "member": "int64",
+          "name": "SyncVpcGatewayIpFlag",
           "required": false,
           "type": "int",
           "value_allowed_null": false,

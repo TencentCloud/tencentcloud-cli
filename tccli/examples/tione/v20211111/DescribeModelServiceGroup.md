@@ -48,6 +48,7 @@ Output:
                         "LogEnable": false,
                         "LogConfig": null,
                         "AuthorizationEnable": false,
+                        "ScaleMode": "MANUAL",
                         "HorizontalPodAutoscaler": null,
                         "Status": {
                             "Replicas": 0,

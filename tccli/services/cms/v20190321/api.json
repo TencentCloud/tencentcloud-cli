@@ -271,40 +271,84 @@
       "document": "从图片中检测到的二维码，可能为多个",
       "members": [
         {
-          "default": "",
           "document": "二维码文本的编码格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StrCharset",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "二维码在图片中的位置，由边界点的坐标表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CodePosition",
+          "name": "QrCodePosition",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "二维码的文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StrQrCodeText",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Uint32QrCodeType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "二维码文本的编码格式（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CodeCharset",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "二维码在图片中的位置，由边界点的坐标表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "二维码在图片中的位置，由边界点的坐标表示（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CodePosition",
           "name": "CodePosition",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "二维码的文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "二维码的文本内容（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CodeText",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "CodeType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2459,31 +2503,31 @@
       "document": "ImageModeration请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件地址",
           "example": "http://123.jpg",
           "member": "string",
           "name": "FileUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "文件MD5值",
           "example": "无",
           "member": "string",
           "name": "FileMD5",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "文件内容 Base64,与FileUrl必须二填一",
           "example": "无",
           "member": "string",
           "name": "FileContent",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2496,18 +2540,18 @@
           "example": "0",
           "member": "int64",
           "name": "BusinessCode",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "识别结果",
           "example": "无",
           "member": "ImageData",
           "name": "Data",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -1505,28 +1505,31 @@
       "document": "CreateHpcCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "可用区。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "高性能计算集群名称。",
+          "example": "MyHpcCluster",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "高性能计算集群备注。",
+          "example": "备注",
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1536,10 +1539,12 @@
       "members": [
         {
           "document": "高性能计算集群信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"HpcClusterId\":\"hpc-jtynq57p\",\"Name\":\"test\",\"Remark\":\"test\",\"InstanceIds\":[],\"Zone\":\"ap-guangzhou-2\",\"CvmQuotaTotal\":100,\"CurrentNum\":0,\"CreateTime\":\"2023-04-20T06:25:58Z\"}]",
           "member": "HpcClusterInfo",
           "name": "HpcClusterSet",
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2429,7 +2434,6 @@
       "document": "DeleteHpcClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "高性能计算集群ID列表。",
           "example": "[\"hpc-p64fdfa9\\r\\n\"]",
           "member": "string",
@@ -3007,44 +3011,49 @@
       "document": "DescribeHpcClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "高性能计算集群ID数组。",
+          "example": "[\"hpc-p64fdfa9\"]",
           "member": "string",
           "name": "HpcClusterIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "高性能计算集群名称。",
+          "example": "MyCluster",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "可用区。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量, 默认值0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "本次请求量, 默认值20。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3054,17 +3063,21 @@
       "members": [
         {
           "document": "高性能计算集群信息。",
+          "example": "[{\"HpcClusterId\":\"hpc-jtynq57p\",\"Name\":\"test\",\"Remark\":\"test\",\"CvmQuotaTotal\":100,\"Zone\":\"ap-guangzhou-2\",\"CurrentNum\":0,\"InstanceIds\":[],\"CreateTime\":\"2023-04-20T06:25:58Z\"}]",
           "member": "HpcClusterInfo",
           "name": "HpcClusterSet",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "高性能计算集群总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8451,28 +8464,31 @@
       "document": "ModifyHpcClusterAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "高性能计算集群ID。",
+          "example": "hpc-jtynq57p",
           "member": "string",
           "name": "HpcClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "高性能计算集群新名称。",
+          "example": "MyHpcCluster",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "高性能计算集群新备注。",
+          "example": "test",
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

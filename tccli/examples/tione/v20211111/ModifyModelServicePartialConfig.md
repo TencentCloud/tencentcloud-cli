@@ -55,14 +55,25 @@ Output:
                         "Region": "ap-guangzhou",
                         "Paths": [
                             "优化模型/m-549834620985377536/mv-v1-549853865408430848/"
-                        ]
+                        ],
+                        "Uin": "100005348929",
+                        "SubUin": "100023251204"
                     },
+                    "GpuType": "T4",
                     "AlgorithmFramework": ""
                 },
+                "VolumeMount": null,
                 "LogEnable": false,
                 "LogConfig": null,
                 "AuthorizationEnable": false,
+                "ScaleMode": "MANUAL",
                 "HorizontalPodAutoscaler": null,
+                "CronScaleJobs": [],
+                "ScaleStrategy": "",
+                "ScheduledAction": {
+                    "ScheduleStop": true,
+                    "ScheduleStopTime": "2022-11-28T03:59:12Z"
+                },
                 "Status": {
                     "Replicas": 1,
                     "UpdatedReplicas": 1,
@@ -70,20 +81,23 @@ Output:
                     "AvailableReplicas": 1,
                     "UnavailableReplicas": 0,
                     "Status": "Normal",
+                    "Reason": "",
                     "Conditions": [
                         {
                             "Message": "Deployment has minimum availability.",
                             "Reason": "MinimumReplicasAvailable",
                             "Status": "True",
                             "Type": "Available",
-                            "LastTransitionTime": "2022-11-28T11:03:18+08:00"
+                            "LastTransitionTime": "2022-11-28T11:03:18+08:00",
+                            "LastUpdateTime": "2022-11-28T11:03:18+08:00"
                         },
                         {
                             "Message": "ReplicaSet \"ms-kxqfprc5-1-5b4fdfd87c\" has successfully progressed.",
                             "Reason": "NewReplicaSetAvailable",
                             "Status": "True",
                             "Type": "Progressing",
-                            "LastTransitionTime": "2022-06-17T15:42:29+08:00"
+                            "LastTransitionTime": "2022-06-17T15:42:29+08:00",
+                            "LastUpdateTime": "2022-11-28T11:03:18+08:00"
                         }
                     ]
                 },
@@ -107,6 +121,17 @@ Output:
                 "OldReplicas": 1,
                 "HybridBillingPrepaidReplicas": 0,
                 "OldHybridBillingPrepaidReplicas": 0,
+                "ServiceLimit": {
+                    "EnableInstanceRpsLimit": true,
+                    "InstanceRpsLimit": 22
+                },
+                "BillingStatus": "BILLING",
+                "BillingUnits": [
+                    {
+                        "Spec": "TI.GN7.8XLARGE128.POST",
+                        "Count": 1
+                    }
+                ],
                 "ModelHotUpdateEnable": false
             },
             "ClusterId": "",
