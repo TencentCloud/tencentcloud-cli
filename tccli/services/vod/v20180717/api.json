@@ -6446,7 +6446,6 @@
       "document": "语音全文识别任务控制参数",
       "members": [
         {
-          "default": "",
           "document": "语音全文识别任务开关，可选值：\n<li>ON：开启智能语音全文识别任务；</li>\n<li>OFF：关闭智能语音全文识别任务。</li>",
           "example": "无",
           "member": "string",
@@ -6457,7 +6456,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li>",
           "example": "无",
           "member": "string",
@@ -6468,11 +6466,20 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li>\n<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormats。</font>",
           "example": "无",
           "member": "string",
           "name": "SubtitleFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "媒体源语言，取值范围：\n<li>zh：中文普通话；</li>\n<li>en：英语；</li>\n<li>ja：日语；</li>\n<li>zh-ca：粤语。</li>\n<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。",
+          "example": "无",
+          "member": "string",
+          "name": "SrcLanguage",
           "required": false,
           "type": "string",
           "value_allowed_null": false,
@@ -6485,7 +6492,6 @@
       "document": "语音全文识别任务控制参数",
       "members": [
         {
-          "default": "",
           "document": "语音全文识别任务开关，可选值：\n<li>ON：开启智能语音全文识别任务；</li>\n<li>OFF：关闭智能语音全文识别任务。</li>",
           "example": "无",
           "member": "string",
@@ -6496,7 +6502,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "字幕格式列表操作信息。",
           "example": "无",
           "member": "SubtitleFormatsOperation",
@@ -6507,7 +6512,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "生成的字幕文件格式，<font color='red'>填空字符串</font>表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li>\n<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormatsOperation。</font>",
           "example": "无",
           "member": "string",
@@ -6515,6 +6519,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "媒体源语言，取值范围：\n<li>zh：中文普通话；</li>\n<li>en：英语；</li>\n<li>ja：日语；</li>\n<li>zh-ca：粤语。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "SrcLanguage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -8172,7 +8186,6 @@
       "document": "CreateAIRecognitionTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -8182,7 +8195,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "音视频内容识别模板名称，长度限制：64 个字符。",
           "example": "视频片头片尾识别任务模板",
           "member": "string",
@@ -8192,7 +8204,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "音视频内容识别模板描述信息，长度限制：256 个字符。",
           "example": "模板1",
           "member": "string",
@@ -8202,7 +8213,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频片头片尾识别控制参数。",
           "example": "无",
           "member": "HeadTailConfigureInfo",
@@ -8212,7 +8222,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频拆条识别控制参数。",
           "example": "无",
           "member": "SegmentConfigureInfo",
@@ -8222,7 +8231,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "人脸识别控制参数。",
           "example": "无",
           "member": "FaceConfigureInfo",
@@ -8232,7 +8240,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "文本全文识别控制参数。",
           "example": "无",
           "member": "OcrFullTextConfigureInfo",
@@ -8242,7 +8249,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "文本关键词识别控制参数。",
           "example": "无",
           "member": "OcrWordsConfigureInfo",
@@ -8252,7 +8258,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "语音全文识别控制参数。",
           "example": "无",
           "member": "AsrFullTextConfigureInfo",
@@ -8262,7 +8267,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "语音关键词识别控制参数。",
           "example": "无",
           "member": "AsrWordsConfigureInfo",
@@ -8272,7 +8276,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "物体识别控制参数。",
           "example": "无",
           "member": "ObjectConfigureInfo",
@@ -8282,7 +8285,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "截帧间隔，单位为秒。当不填时，默认截帧间隔为 1 秒，最小值为 0.5 秒。",
           "example": "无",
           "member": "float",
@@ -8302,7 +8304,6 @@
           "example": "30",
           "member": "int64",
           "name": "Definition",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11333,7 +11334,6 @@
       "document": "DescribeAIRecognitionTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "123",
           "member": "uint64",
@@ -11343,7 +11343,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "音视频内容识别模板唯一标识过滤条件，数组长度限制：100。",
           "example": "[\"30\\r\\n\"]",
           "member": "int64",
@@ -11353,7 +11352,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "分页偏移量，默认值：0。",
           "example": "0",
           "member": "uint64",
@@ -11363,7 +11361,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
           "example": "10",
           "member": "uint64",
@@ -11383,7 +11380,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11393,7 +11389,6 @@
           "example": "无",
           "member": "AIRecognitionTemplateItem",
           "name": "AIRecognitionTemplateSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -21198,7 +21193,6 @@
       "document": "ModifyAIRecognitionTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "音视频内容识别模板唯一标识。",
           "example": "30",
           "member": "int64",
@@ -21208,7 +21202,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -21218,7 +21211,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "音视频内容识别模板名称，长度限制：64 个字符。",
           "example": "无",
           "member": "string",
@@ -21228,7 +21220,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "音视频内容识别模板描述信息，长度限制：256 个字符。",
           "example": "无",
           "member": "string",
@@ -21238,7 +21229,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频片头片尾识别控制参数。",
           "example": "无",
           "member": "HeadTailConfigureInfoForUpdate",
@@ -21248,7 +21238,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频拆条识别控制参数。",
           "example": "无",
           "member": "SegmentConfigureInfoForUpdate",
@@ -21258,7 +21247,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "人脸识别控制参数。",
           "example": "无",
           "member": "FaceConfigureInfoForUpdate",
@@ -21268,7 +21256,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "文本全文识别控制参数。",
           "example": "无",
           "member": "OcrFullTextConfigureInfoForUpdate",
@@ -21278,7 +21265,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "文本关键词识别控制参数。",
           "example": "无",
           "member": "OcrWordsConfigureInfoForUpdate",
@@ -21288,7 +21274,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "语音全文识别控制参数。",
           "example": "无",
           "member": "AsrFullTextConfigureInfoForUpdate",
@@ -21298,7 +21283,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "语音关键词识别控制参数。",
           "example": "无",
           "member": "AsrWordsConfigureInfoForUpdate",
@@ -21308,7 +21292,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "物体识别控制参数。",
           "example": "无",
           "member": "ObjectConfigureInfoForUpdate",
@@ -21318,7 +21301,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "截帧间隔，单位为秒，最小值为 0.5 秒。",
           "example": "无",
           "member": "float",

@@ -659,114 +659,114 @@
       "document": "呼入实时指标",
       "members": [
         {
-          "default": "",
           "document": "IVR驻留数量",
           "example": "0",
           "member": "int64",
           "name": "IvrCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "排队中数量",
           "example": "0",
           "member": "int64",
           "name": "QueueCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "振铃中数量",
           "example": "0",
           "member": "int64",
           "name": "RingCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "接通中数量",
           "example": "0",
           "member": "int64",
           "name": "AcceptCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "客服转接外线中数量",
           "example": "0",
           "member": "int64",
           "name": "TransferOuterCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "最大排队时长",
           "example": "0",
           "member": "int64",
           "name": "MaxQueueDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "平均排队时长",
           "example": "0",
           "member": "int64",
           "name": "AvgQueueDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "最大振铃时长",
           "example": "0",
           "member": "int64",
           "name": "MaxRingDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "平均振铃时长",
           "example": "0",
           "member": "int64",
           "name": "AvgRingDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "最大接通时长",
           "example": "0",
           "member": "int64",
           "name": "MaxAcceptDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "平均接通时长",
           "example": "0",
           "member": "int64",
           "name": "AvgAcceptDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1989,31 +1989,40 @@
       "document": "DescribeCallInMetrics请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否返回技能组维度信息，默认“是”",
           "example": "true",
           "member": "bool",
           "name": "EnabledSkillGroup",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否返回线路维度信息，默认“否”",
           "example": "false",
           "member": "bool",
           "name": "EnabledNumber",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "筛选技能组列表",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupIdList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2026,36 +2035,36 @@
           "example": "1",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "总体指标",
           "example": "无",
           "member": "CallInMetrics",
           "name": "TotalMetrics",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "线路维度指标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CallInNumberMetrics",
           "name": "NumberMetrics",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "技能组维度指标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CallInSkillGroupMetrics",
           "name": "SkillGroupMetrics",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2992,22 +3001,40 @@
       "document": "DescribeStaffStatusMetrics请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "筛选坐席列表，默认不传返回全部坐席信息",
           "example": "无",
           "member": "string",
           "name": "StaffList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "筛选技能组ID列表",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupIdList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "筛选坐席状态列表",
+          "example": "无",
+          "member": "string",
+          "name": "StatusList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3020,9 +3047,9 @@
           "example": "无",
           "member": "StaffStatusMetrics",
           "name": "Metrics",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5368,24 +5395,24 @@
       "document": "坐席状态补充信息",
       "members": [
         {
-          "default": "",
           "document": "im - 文本 | tel - 电话 | all - 全媒体",
           "example": "tel",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "in - 呼入 | out - 呼出",
           "example": "in",
           "member": "string",
           "name": "Direct",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

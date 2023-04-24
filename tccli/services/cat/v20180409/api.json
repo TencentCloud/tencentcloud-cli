@@ -1477,27 +1477,27 @@
       "document": "健值对",
       "members": [
         {
-          "default": "",
           "document": "健",
-          "example": "name",
+          "example": "Name",
           "member": "string",
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "值",
           "example": "zhangsan",
           "member": "string",
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Label": {
       "document": "保存string类型字段",
@@ -1771,7 +1771,6 @@
       "document": "拨测任务",
       "members": [
         {
-          "default": "",
           "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "probe",
           "member": "string",
@@ -1782,7 +1781,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务 ID",
           "example": "task-xx",
           "member": "string",
@@ -1793,7 +1791,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "拨测类型\n<li>1 = 页面浏览</li>\n<li> 2 =文件上传 </li>\n<li> 3 = 文件下载</li>\n<li> 4 = 端口性能 </li>\n<li> 5 = 网络质量 </li>\n<li> 6 =流媒体 </li>\n\n即时拨测只支持页面浏览，网络质量，文件下载",
           "example": "1",
           "member": "int64",
@@ -1804,7 +1801,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "拨测节点列表",
           "example": "[\"10000\"]",
           "member": "string",
@@ -1815,7 +1811,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "拨测间隔",
           "example": "30",
           "member": "int64",
@@ -1826,7 +1821,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "拨测参数",
           "example": "{}",
           "member": "string",
@@ -1837,7 +1831,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务状态\n<li>1 = 创建中</li>\n<li> 2 = 运行中 </li>\n<li> 3 = 运行异常 </li>\n<li> 4 = 暂停中 </li>\n<li> 5 = 暂停异常 </li>\n<li> 6 = 任务暂停 </li>\n<li> 7 = 任务删除中 </li>\n<li> 8 = 任务删除异常 </li>\n<li> 9 = 任务删除</li>\n<li> 10 = 定时任务暂停中 </li>",
           "example": "1",
           "member": "int64",
@@ -1848,7 +1841,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "目标地址",
           "example": "http://www.qq.com",
           "member": "string",
@@ -1859,7 +1851,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
           "example": "1",
           "member": "int64",
@@ -1870,7 +1861,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "订单状态\n<li>1 = 正常</li>\n<li> 2 = 欠费 </li>",
           "example": "1",
           "member": "int64",
@@ -1881,7 +1871,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务分类\n<li>1 = PC</li>\n<li> 2 = Mobile </li>",
           "example": "1",
           "member": "int64",
@@ -1892,7 +1881,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "\"2020\"",
           "member": "string",
@@ -1903,7 +1891,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "定时任务cron表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "* 0-5 * * *",
           "member": "string",
@@ -1914,7 +1901,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "定时任务启动状态\n<li>1 = 定时任务表达式生效</li>\n<li> 2 = 定时任务表达式未生效（一般为任务手动暂停）</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1925,7 +1911,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务当前绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Key\":\"name\", \"Value\": \"zhangsan\"}]",
           "member": "KeyValuePair",

@@ -19,6 +19,7 @@ Output:
         "ACLCount": 0,
         "CCCount": 0,
         "BotCount": 0,
+        "ApiAssetsCount": 1,
         "RequestId": "8a3b7134-77f9-4ee5-b30e-73809ccad10f"
     }
 }

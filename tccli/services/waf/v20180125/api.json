@@ -830,7 +830,7 @@
           "visibility": 1
         },
         {
-          "document": "过期时间",
+          "document": "过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期",
           "example": "无",
           "member": "string",
           "name": "ExpireTime",
@@ -1543,7 +1543,6 @@
       "document": "Bot资源信息",
       "members": [
         {
-          "default": "",
           "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sada",
           "member": "string",
@@ -1554,7 +1553,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1565,7 +1563,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1576,7 +1573,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-05",
           "member": "string",
@@ -1587,7 +1583,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-05",
           "member": "string",
@@ -1598,7 +1593,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "申请数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -1609,7 +1603,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -1620,7 +1613,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子产品code\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sp_wsm_waf_bot",
           "member": "string",
@@ -1637,7 +1629,6 @@
       "document": "bot的qps详情",
       "members": [
         {
-          "default": "",
           "document": "资源id",
           "example": "waf_2kuj8hls00b7bo99_bot",
           "member": "string",
@@ -1648,7 +1639,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "有效时间",
           "example": "2022-08-11 17:39:53",
           "member": "string",
@@ -1659,7 +1649,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源数量",
           "example": "1",
           "member": "uint64",
@@ -1670,7 +1659,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源所在地区",
           "example": "gz",
           "member": "string",
@@ -1681,7 +1669,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "使用qps的最大值",
           "example": "0",
           "member": "uint64",
@@ -2740,6 +2727,15 @@
           "visibility": 1
         },
         {
+          "document": "api资产总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "ApiAssetsCount",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2936,94 +2932,114 @@
       "document": "DescribeCustomRules接口回包中的复杂类型",
       "members": [
         {
-          "default": "",
           "document": "动作类型",
+          "example": "无",
           "member": "string",
           "name": "ActionType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "跳过的策略",
+          "example": "无",
           "member": "string",
           "name": "Bypass",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "过期时间",
+          "example": "无",
           "member": "string",
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "策略名称",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "重定向地址",
+          "example": "无",
           "member": "string",
           "name": "Redirect",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "策略ID",
+          "example": "无",
           "member": "string",
           "name": "RuleId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "优先级",
+          "example": "无",
           "member": "string",
           "name": "SortId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "状态",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "策略详情",
+          "example": "无",
           "member": "Strategy",
           "name": "Strategies",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3383,7 +3399,6 @@
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移",
           "example": "1",
           "member": "uint64",
@@ -3393,7 +3408,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "容量",
           "example": "20",
           "member": "uint64",
@@ -3403,7 +3417,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤数组",
           "example": "无",
           "member": "FiltersItemNew",
@@ -3423,7 +3436,6 @@
           "example": "2",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3433,7 +3445,6 @@
           "example": "无",
           "member": "InstanceInfo",
           "name": "Instances",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5746,113 +5757,113 @@
       "usage": "out"
     },
     "FiltersItemNew": {
-      "document": "实例入参过滤器",
+      "document": "过滤数组",
       "members": [
         {
-          "default": "",
           "document": "字段名",
           "example": "InstanceType",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤值",
           "example": "[\"clb\",\"saas\"]",
           "member": "string",
           "name": "Values",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否精确查找",
           "example": "true",
           "member": "bool",
           "name": "ExactMatch",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "FraudPkg": {
       "document": "业务安全资源信息",
       "members": [
         {
-          "default": "",
           "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sada",
           "member": "string",
           "name": "ResourceIds",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Region",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-05",
           "member": "string",
           "name": "BeginTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-05",
           "member": "string",
           "name": "EndTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "申请数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "InquireNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "UsedNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -6074,7 +6085,6 @@
       "document": "一个实例的详细信息",
       "members": [
         {
-          "default": "",
           "document": "id",
           "example": "waf",
           "member": "string",
@@ -6085,8 +6095,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "name",
+          "document": "Name",
           "example": "waf",
           "member": "string",
           "name": "InstanceName",
@@ -6096,7 +6105,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源id",
           "example": "waf",
           "member": "string",
@@ -6107,7 +6115,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "地域",
           "example": "gz",
           "member": "string",
@@ -6118,7 +6125,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "付费模式",
           "example": "1",
           "member": "uint64",
@@ -6129,7 +6135,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自动续费",
           "example": "1",
           "member": "uint64",
@@ -6140,7 +6145,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性计费",
           "example": "1",
           "member": "uint64",
@@ -6151,7 +6155,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "套餐版本",
           "example": "2",
           "member": "uint64",
@@ -6162,7 +6165,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过期时间",
           "example": "年月日",
           "member": "string",
@@ -6173,7 +6175,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开始时间",
           "example": "年月日",
           "member": "string",
@@ -6184,7 +6185,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "已用",
           "example": "4",
           "member": "uint64",
@@ -6195,7 +6195,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "上限",
           "example": "5",
           "member": "uint64",
@@ -6206,7 +6205,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "已用",
           "example": "4",
           "member": "uint64",
@@ -6217,7 +6215,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "上限",
           "example": "5",
           "member": "uint64",
@@ -6228,7 +6225,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "峰值",
           "example": "111",
           "member": "uint64",
@@ -6239,7 +6235,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "qps套餐",
           "example": "11",
           "member": "QPSPackageNew",
@@ -6250,7 +6245,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "域名套餐",
           "example": "11",
           "member": "DomainPackageNew",
@@ -6261,7 +6255,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "用户appid",
           "example": "11",
           "member": "uint64",
@@ -6272,7 +6265,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "clb或saas",
           "example": "clb",
           "member": "string",
@@ -6283,7 +6275,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "业务安全包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FraudPkg",
@@ -6294,7 +6285,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "Bot资源包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BotPkg",
@@ -6305,7 +6295,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "bot的qps详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BotQPS",
@@ -6316,7 +6305,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "qps弹性计费上限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "uint64",
@@ -6327,7 +6315,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "攻击日志投递开关\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -6338,11 +6325,60 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽峰值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "111",
           "member": "uint64",
           "name": "MaxBandwidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "api安全是否购买",
+          "example": "1",
+          "member": "uint64",
+          "name": "APISecurity",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "购买的qps规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "QpsStandard",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "购买的带宽规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500",
+          "member": "uint64",
+          "name": "BandwidthStandard",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "实例沙箱值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30000",
+          "member": "uint64",
+          "name": "SandboxQps",
           "required": false,
           "type": "int",
           "value_allowed_null": true,
@@ -7961,54 +7997,54 @@
       "document": "clb-waf QPS套餐 New",
       "members": [
         {
-          "default": "",
           "document": "资源ID",
           "example": "waf_000q6ntyb",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "过期时间",
           "example": "年月日",
           "member": "string",
           "name": "ValidTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否自动续费，1：自动续费，0：不自动续费",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "套餐购买个数",
           "example": "1",
           "member": "int64",
           "name": "Count",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "套餐购买地域，clb-waf暂时没有用到",
           "example": "gz",
           "member": "string",
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -8477,43 +8513,47 @@
       "document": "自定义规则的匹配条件结构体",
       "members": [
         {
-          "default": "",
-          "document": "匹配字段",
+          "document": "匹配字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Field",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "逻辑符号",
+          "document": "逻辑符号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CompareFunc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "匹配内容",
+          "document": "匹配内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Content",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "匹配参数",
+          "document": "匹配参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Arg",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SwitchDomainRulesRequest": {
       "document": "SwitchDomainRules请求参数结构体",

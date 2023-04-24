@@ -25,6 +25,7 @@ Output:
                 "TriggerDesc": "abc",
                 "AvailableStatus": "abc",
                 "CustomArgument": "abc",
+                "Description": "abc",
                 "AddTime": "2020-09-22 00:00:00",
                 "ModTime": "2020-09-22 00:00:00",
                 "ResourceId": "abc",

@@ -194,6 +194,14 @@
         "title": "查询实例可恢复的时间范围"
       }
     ],
+    "DescribeBackupDownloadRestriction": [
+      {
+        "document": " 查询备份文件下载限制",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDownloadRestriction\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RestrictionType\": \"Customize\",\n        \"VpcRestrictionEffect\": \"Allow\",\n        \"VpcIdSet\": [\n            \"vpc-15ld6dhr\"\n        ],\n        \"IpRestrictionEffect\": \"\",\n        \"IpSet\": [],\n        \"RequestId\": \"be3bafde-f34e-4fda-9f40-04c5515e2148\"\n    }\n}",
+        "title": "查询备份文件下载限制"
+      }
+    ],
     "DescribeBackupDownloadURL": [
       {
         "document": "获取备份下载链接",
@@ -524,6 +532,14 @@
         "title": "修改帐号备注"
       }
     ],
+    "ModifyBackupDownloadRestriction": [
+      {
+        "document": " 修改备份下载限制",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupDownloadRestriction\n<公共请求参数>\n\n{\n    \"RestrictionType\": \"CUSTOMIZE\",\n    \"VpcRestrictionEffect\": \"ALLOW\",\n    \"VpcIdSet\": [\n        \"vpc-15ld6dhr\"\n    ],\n    \"IpRestrictionEffect\": \"\",\n    \"IpSet\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be3bafde-f34e-4fda-9f40-04c5515e2148\"\n    }\n}",
+        "title": "修改备份下载限制"
+      }
+    ],
     "ModifyBackupPlan": [
       {
         "document": "将实例postgres-xxxxxxxx的备份计划修改为每周一、周二的01:00:00~02:00:00，且备份保留3天",
@@ -538,6 +554,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaseBackupExpireTime\n<公共请求参数>\n\n{\n    \"BaseBackupId\": \"88d3a71e-b822-5728-9d41-d8cfc0d0556e\",\n    \"DBInstanceId\": \"postgres-9n26zs6n\",\n    \"NewExpireTime\": \"2023-02-18 23:59:59\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be3bafde-f34e-4fda-9f40-04c5515e2148\"\n    }\n}",
         "title": "修改基础备份过期时间"
+      }
+    ],
+    "ModifyDBInstanceChargeType": [
+      {
+        "document": "postgres-apzvwncr修改计费模式为包年包月",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceChargeType\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-apzvwncr\",\n    \"InstanceChargeType\": \"PREPAID\",\n    \"AutoRenewFlag\": 0,\n    \"AutoVoucher\": 0,\n    \"Period\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DealName\": \"201806181256\"\n    }\n}",
+        "title": "postgres-apzvwncr修改计费模式"
       }
     ],
     "ModifyDBInstanceDeployment": [

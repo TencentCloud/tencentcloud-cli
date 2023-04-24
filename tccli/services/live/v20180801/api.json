@@ -35,6 +35,13 @@
       "output": "CancelCommonMixStreamResponse",
       "status": "online"
     },
+    "CreateAiProcessTask": {
+      "document": "创建AI处理任务。",
+      "input": "CreateAiProcessTaskRequest",
+      "name": "创建AI处理任务",
+      "output": "CreateAiProcessTaskResponse",
+      "status": "online"
+    },
     "CreateCommonMixStream": {
       "document": "该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。\n注意：当前最多支持16路混流。\n最佳实践：https://cloud.tencent.com/document/product/267/45566",
       "input": "CreateCommonMixStreamRequest",
@@ -159,6 +166,13 @@
       "input": "CreateTVRecordTaskRequest",
       "name": "创建电视流录制任务",
       "output": "CreateTVRecordTaskResponse",
+      "status": "online"
+    },
+    "DeleteAiProcessTask": {
+      "document": "删除AI处理任务。",
+      "input": "DeleteAiProcessTaskRequest",
+      "name": "删除AI处理任务",
+      "output": "DeleteAiProcessTaskResponse",
       "status": "online"
     },
     "DeleteLiveCallbackRule": {
@@ -353,7 +367,7 @@
     "DescribeLiveCallbackTemplate": {
       "document": "获取单个回调模板。",
       "input": "DescribeLiveCallbackTemplateRequest",
-      "name": "获取单个回调模板",
+      "name": "获取直播单个回调模板",
       "output": "DescribeLiveCallbackTemplateResponse",
       "status": "online"
     },
@@ -1146,6 +1160,22 @@
         }
       ],
       "type": "object"
+    },
+    "AiTaskParam": {
+      "document": "Ai任务参数",
+      "members": [
+        {
+          "document": "任务类型\n1：识别字幕任务\n2： 翻译字幕任务\n3：人脸模糊任务\n4： ROI 识别任务（region of interest，感兴趣区域）\n5.：去水印任务",
+          "example": "RecognizeSubtitle",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
     },
     "AuthenticateDomainOwnerRequest": {
       "document": "AuthenticateDomainOwner请求参数结构体",
@@ -2171,6 +2201,60 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAiProcessTaskRequest": {
+      "document": "CreateAiProcessTask请求参数结构体",
+      "members": [
+        {
+          "document": "推流域名。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "推流路径。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "流名称。",
+          "example": "无",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "任务参数。",
+          "example": "无",
+          "member": "AiTaskParam",
+          "name": "TaskParamList",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAiProcessTaskResponse": {
+      "document": "CreateAiProcessTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateCommonMixStreamRequest": {
       "document": "CreateCommonMixStream请求参数结构体",
@@ -4083,6 +4167,60 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteAiProcessTaskRequest": {
+      "document": "DeleteAiProcessTask请求参数结构体",
+      "members": [
+        {
+          "document": "推流域名。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "推流路径。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "流名称。",
+          "example": "无",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "任务参数数组。注意：同一类型的任务，只能填写一个",
+          "example": "无",
+          "member": "AiTaskParam",
+          "name": "TaskParamList",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAiProcessTaskResponse": {
+      "document": "DeleteAiProcessTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteLiveCallbackRuleRequest": {
       "document": "DeleteLiveCallbackRule请求参数结构体",

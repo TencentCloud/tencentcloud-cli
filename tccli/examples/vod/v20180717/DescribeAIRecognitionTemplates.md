@@ -1,6 +1,6 @@
 **Example 1: 获取模板 ID 为 30 的音视频内容识别模板**
 
-
+获取模板 ID 为 30 的音视频内容识别模板
 
 Input: 
 
@@ -34,14 +34,14 @@ Output:
                 },
                 "OcrWordsConfigure": {
                     "Switch": "OFF",
-                    "LabelSet": null
+                    "LabelSet": []
                 },
                 "AsrFullTextConfigure": {
                     "Switch": "ON"
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",
-                    "LabelSet": null
+                    "LabelSet": []
                 },
                 "ObjectConfigure": {
                     "Switch": "ON",
@@ -94,14 +94,14 @@ Output:
                 },
                 "OcrWordsConfigure": {
                     "Switch": "OFF",
-                    "LabelSet": null
+                    "LabelSet": []
                 },
                 "AsrFullTextConfigure": {
                     "Switch": "ON"
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",
-                    "LabelSet": null
+                    "LabelSet": []
                 },
                 "ObjectConfigure": {
                     "Switch": "ON",
@@ -130,14 +130,14 @@ Output:
                 },
                 "OcrWordsConfigure": {
                     "Switch": "OFF",
-                    "LabelSet": null
+                    "LabelSet": []
                 },
                 "AsrFullTextConfigure": {
                     "Switch": "OFF"
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",
-                    "LabelSet": null
+                    "LabelSet": []
                 },
                 "ObjectConfigure": {
                     "Switch": "ON",

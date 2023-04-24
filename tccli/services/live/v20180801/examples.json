@@ -40,6 +40,14 @@
         "title": "取消示例"
       }
     ],
+    "CreateAiProcessTask": [
+      {
+        "document": "创建AI处理任务。",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAiProcessTask\n<公共请求参数>\n\n{\n    \"DomainName\": \"abc\",\n    \"AppName\": \"abc\",\n    \"StreamName\": \"abc\",\n    \"TaskParamList\": [\n        {\n            \"TaskType\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateCommonMixStream": [
       {
         "document": "使用混流预置模板混流。",
@@ -206,6 +214,14 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTVRecordTask\n<公共请求参数>\n\n{\n    \"StreamUrl\": \"http://test.play.xxx/live/13409303.m3u8\",\n    \"DomainName\": \"\",\n    \"StreamName\": \"13409303\",\n    \"AppName\": \"yangshipinlive\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DeleteAiProcessTask": [
+      {
+        "document": "删除AI处理任务。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAiProcessTask\n<公共请求参数>\n\n{\n    \"DomainName\": \"abc\",\n    \"AppName\": \"abc\",\n    \"StreamName\": \"abc\",\n    \"TaskParamList\": [\n        {\n            \"TaskType\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DeleteLiveCallbackRule": [

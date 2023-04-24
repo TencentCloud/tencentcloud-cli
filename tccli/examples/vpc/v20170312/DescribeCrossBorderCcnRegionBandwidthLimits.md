@@ -24,7 +24,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-guangzhou",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 0
+                }
             },
             {
                 "CcnId": "ccn-qhmusb7r",
@@ -38,7 +42,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-shanghai",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 0
+                }
             },
             {
                 "CcnId": "ccn-cdnjw6bv",
@@ -52,7 +60,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-guangzhou",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 2
+                }
             },
             {
                 "CcnId": "ccn-qhmusb7r",
@@ -66,7 +78,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-guangzhou",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 0
+                }
             },
             {
                 "CcnId": "ccn-cdnjw6bv",
@@ -80,7 +96,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-hongkong",
+                    "DestinationRegion": "ap-beijing",
+                    "BandwidthLimit": 0
+                }
             },
             {
                 "CcnId": "ccn-q64rvk9x",
@@ -94,7 +114,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-hongkong",
+                    "DestinationRegion": "ap-guangzhou",
+                    "BandwidthLimit": 0
+                }
             },
             {
                 "CcnId": "ccn-bwt4g84j",
@@ -108,7 +132,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-hongkong",
+                    "DestinationRegion": "ap-beijing",
+                    "BandwidthLimit": 0
+                }
             },
             {
                 "CcnId": "ccn-dp8rjtnn",
@@ -122,7 +150,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-guangzhou",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 0
+                }
             },
             {
                 "CcnId": "ccn-qd9rws31",
@@ -136,7 +168,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-shanghai",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 3
+                }
             },
             {
                 "CcnId": "ccn-qd9rws31",
@@ -150,7 +186,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-guangzhou",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 1
+                }
             },
             {
                 "CcnId": "ccn-3wgiiipt",
@@ -164,7 +204,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_AUTO_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-guangzhou",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 20
+                }
             }
         ],
         "TotalCount": 14,
@@ -202,7 +246,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-guangzhou",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 0
+                }
             }
         ],
         "TotalCount": 1,
@@ -240,7 +288,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-guangzhou",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 0
+                }
             },
             {
                 "CcnId": "ccn-cdnjw6bv",
@@ -254,7 +306,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-guangzhou",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 2
+                }
             },
             {
                 "CcnId": "ccn-cdnjw6bv",
@@ -268,7 +324,11 @@ Output:
                 "IsSecurityLock": false,
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {}
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-hongkong",
+                    "DestinationRegion": "ap-beijing",
+                    "BandwidthLimit": 0
+                }
             }
         ],
         "TotalCount": 3,

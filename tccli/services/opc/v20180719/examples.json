@@ -2,7 +2,7 @@
   "actions": {
     "AddActivityWhitelistUin": [
       {
-        "document": "",
+        "document": "添加UIN至活动页访问白名单",
         "input": "POST / HTTP/1.1\nHost: opc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddActivityWhitelistUin\n<公共请求参数>\n\n{\n    \"ActivityID\": 12345,\n    \"WhitelistUin\": \"100013140416\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c68c700c-403e-4cf0-ab97-e2afd71459d9\"\n    }\n}",
         "title": "添加UIN至活动页访问白名单"
