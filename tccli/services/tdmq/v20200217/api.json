@@ -651,6 +651,13 @@
       "output": "ModifyRocketMQGroupResponse",
       "status": "online"
     },
+    "ModifyRocketMQInstanceSpec": {
+      "document": "本API用于修改RocketMQ专享实例配置，可以支持实例规格、节点数和存储的升配和实例规格的降配。本API发起订单并成功支付后进入实例配置变更的流程，可通过DescribeRocketMQVipInstances查询实例是否已变更完成。",
+      "input": "ModifyRocketMQInstanceSpecRequest",
+      "name": "修改RocketMQ专享实例配置",
+      "output": "ModifyRocketMQInstanceSpecResponse",
+      "status": "online"
+    },
     "ModifyRocketMQNamespace": {
       "document": "更新RocketMQ命名空间",
       "input": "ModifyRocketMQNamespaceRequest",
@@ -9412,7 +9419,6 @@
       "document": "ModifyRocketMQCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "RocketMQ集群ID",
           "example": "rocketmq-xxxxx",
           "member": "string",
@@ -9421,7 +9427,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "3-64个字符，只能包含字母、数字、“-”及“_”",
           "example": "test",
           "member": "string",
@@ -9430,7 +9435,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "说明信息，不超过128个字符",
           "example": "备注",
           "member": "string",
@@ -9525,6 +9529,64 @@
     "ModifyRocketMQGroupResponse": {
       "document": "ModifyRocketMQGroup返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRocketMQInstanceSpecRequest": {
+      "document": "ModifyRocketMQInstanceSpec请求参数结构体",
+      "members": [
+        {
+          "document": "专享实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "实例规格，\nrocket-vip-basic-1 基础型\nrocket-vip-basic-2 标准型\nrocket-vip-basic-3 高阶Ⅰ型\nrocket-vip-basic-4 高阶Ⅱ型",
+          "example": "rocket-vip-basic-1",
+          "member": "string",
+          "name": "Specification",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "节点数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "NodeCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "存储空间，GB为单位",
+          "example": "1000",
+          "member": "uint64",
+          "name": "StorageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRocketMQInstanceSpecResponse": {
+      "document": "ModifyRocketMQInstanceSpec返回参数结构体",
+      "members": [
+        {
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20121212312322",
+          "member": "string",
+          "name": "OrderId",
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

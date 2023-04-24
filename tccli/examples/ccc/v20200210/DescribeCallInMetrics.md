@@ -1,6 +1,6 @@
 **Example 1: 获取呼入实时数据统计指标实例**
 
-
+获取呼入实时数据统计指标实例。
 
 Input: 
 
@@ -16,76 +16,63 @@ Output:
 {
     "Response": {
         "Timestamp": 0,
-        "SkillGroupMetrics": [
-            {
-                "Metrics": {
-                    "AvgQueueDuration": 5,
-                    "AvgAcceptDuration": 0,
-                    "MaxRingDuration": 4,
-                    "RingCount": 1,
-                    "MaxQueueDuration": 5,
-                    "TransferOuterCount": 0,
-                    "AcceptCount": 0,
-                    "MaxAcceptDuration": 0,
-                    "QueueCount": 1,
-                    "IvrCount": 0,
-                    "AvgRingDuration": 4
-                },
-                "Name": "xx",
-                "SkillGroupId": 1070
-            }
-        ],
+        "TotalMetrics": {
+            "IvrCount": 0,
+            "QueueCount": 0,
+            "RingCount": 0,
+            "AcceptCount": 0,
+            "TransferOuterCount": 0,
+            "MaxQueueDuration": 0,
+            "AvgQueueDuration": 0,
+            "MaxRingDuration": 0,
+            "AvgRingDuration": 0,
+            "MaxAcceptDuration": 0,
+            "AvgAcceptDuration": 0
+        },
         "NumberMetrics": [
             {
+                "Number": "abc",
                 "Metrics": {
-                    "AvgQueueDuration": 5,
-                    "AvgAcceptDuration": 0,
-                    "MaxRingDuration": 4,
-                    "RingCount": 1,
-                    "MaxQueueDuration": 5,
-                    "TransferOuterCount": 0,
-                    "AcceptCount": 0,
-                    "MaxAcceptDuration": 0,
-                    "QueueCount": 1,
                     "IvrCount": 0,
-                    "AvgRingDuration": 4
+                    "QueueCount": 0,
+                    "RingCount": 0,
+                    "AcceptCount": 0,
+                    "TransferOuterCount": 0,
+                    "MaxQueueDuration": 0,
+                    "AvgQueueDuration": 0,
+                    "MaxRingDuration": 0,
+                    "AvgRingDuration": 0,
+                    "MaxAcceptDuration": 0,
+                    "AvgAcceptDuration": 0
                 },
                 "SkillGroupMetrics": [
                     {
+                        "SkillGroupId": 0,
                         "Metrics": {
-                            "AvgQueueDuration": 5,
-                            "AvgAcceptDuration": 0,
-                            "MaxRingDuration": 4,
-                            "RingCount": 1,
-                            "MaxQueueDuration": 5,
-                            "TransferOuterCount": 0,
-                            "AcceptCount": 0,
-                            "MaxAcceptDuration": 0,
-                            "QueueCount": 1,
                             "IvrCount": 0,
-                            "AvgRingDuration": 4
+                            "QueueCount": 0,
+                            "RingCount": 0,
+                            "AcceptCount": 0,
+                            "TransferOuterCount": 0,
+                            "MaxQueueDuration": 0,
+                            "AvgQueueDuration": 0,
+                            "MaxRingDuration": 0,
+                            "AvgRingDuration": 0,
+                            "MaxAcceptDuration": 0,
+                            "AvgAcceptDuration": 0
                         },
-                        "Name": "xx",
-                        "SkillGroupId": 1070
+                        "Name": "abc"
                     }
-                ],
-                "Number": "xx"
+                ]
             }
         ],
-        "RequestId": "xx",
-        "TotalMetrics": {
-            "AvgQueueDuration": 5,
-            "AvgAcceptDuration": 0,
-            "MaxRingDuration": 4,
-            "RingCount": 1,
-            "MaxQueueDuration": 5,
-            "TransferOuterCount": 0,
-            "AcceptCount": 0,
-            "MaxAcceptDuration": 0,
-            "QueueCount": 1,
-            "IvrCount": 0,
-            "AvgRingDuration": 4
-        }
+        "SkillGroupMetrics": [
+            {
+                "SkillGroupId": 0,
+                "Name": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

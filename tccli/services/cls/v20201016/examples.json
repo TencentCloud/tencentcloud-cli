@@ -266,9 +266,9 @@
     ],
     "DescribeConfigs": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"configId\",\n            \"Values\": [\n                \"xxxx-xxx-xxxx\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Configs\": [\n            {\n                \"ConfigId\": \"xxxx-xx-xx-xx-yyyyyyyy\",\n                \"Name\": \"testname\",\n                \"Path\": \"/abc/log/test.log\",\n                \"LogType\": \"delimiter_log\",\n                \"ExtractRule\": {\n                    \"TimeKey\": \"date\",\n                    \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n                    \"Delimiter\": \"|\",\n                    \"LogRegex\": \".*\",\n                    \"BeginRegex\": \"^\",\n                    \"Keys\": [\n                        \"date\",\n                        \"\",\n                        \"content\"\n                    ],\n                    \"FilterKeyRegex\": [\n                        {\n                            \"Key\": \"xx\",\n                            \"Regex\": \"xxxx\"\n                        }\n                    ],\n                    \"UnMatchLogKey\": \"testlog\",\n                    \"UnMatchUpLoadSwitch\": true,\n                    \"Backtracking\": -1\n                },\n                \"UserDefineRule\": \"xxxx\",\n                \"UpdateTime\": \"2017-08-08 12:12:12\",\n                \"CreateTime\": \"2017-08-08 12:12:12\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "document": "根据主题ID获取采集配置详情",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"topicId\",\n            \"Values\": [\n                \"97e8a872-xxxx-4644-9d3c-603d95051458\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Configs\": [\n            {\n                \"ConfigId\": \"02f11930-xxxx-4dca-8c9b-b6a147223945\",\n                \"Name\": \"test\",\n                \"LogFormat\": \"\",\n                \"Path\": \"/test/**/test\",\n                \"LogType\": \"minimalist_log\",\n                \"ExtractRule\": {\n                    \"TimeKey\": \"\",\n                    \"TimeFormat\": \"\",\n                    \"Delimiter\": \"\",\n                    \"LogRegex\": \"\",\n                    \"BeginRegex\": \"\",\n                    \"Keys\": null,\n                    \"FilterKeyRegex\": [],\n                    \"UnMatchUpLoadSwitch\": false,\n                    \"UnMatchLogKey\": null,\n                    \"Backtracking\": 0,\n                    \"IsGBK\": 0,\n                    \"JsonStandard\": 0,\n                    \"Protocol\": \"\",\n                    \"Address\": \"\",\n                    \"ParseProtocol\": \"\"\n                },\n                \"ExcludePaths\": null,\n                \"Output\": \"97e8a872-xxxx-4644-9d3c-603d95051458\",\n                \"UpdateTime\": \"2022-09-02 14:26:49\",\n                \"CreateTime\": \"2022-09-02 14:26:49\",\n                \"UserDefineRule\": \"\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6eff3561-xxxx-4502-b625-3eb26c4ab450\"\n    }\n}",
         "title": "获取采集配置"
       }
     ],
@@ -322,9 +322,9 @@
     ],
     "DescribeLogsets": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogsets\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"Logsets\": [\n            {\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"xx\",\n                \"RoleName\": \"xx\",\n                \"AssumerName\": \"xx\",\n                \"TopicCount\": 0,\n                \"LogsetName\": \"xx\",\n                \"LogsetId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "document": "获取日志集列表",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogsets\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Logsets\": [\n            {\n                \"LogsetId\": \"cce2db26-xxxx-43f3-ae7d-3502a4b424fd\",\n                \"LogsetName\": \"CLS Demo日志集_100007xxxx27\",\n                \"CreateTime\": \"2022-04-27 14:53:42\",\n                \"AssumerName\": \"CLS\",\n                \"Tags\": [],\n                \"TopicCount\": 8,\n                \"RoleName\": \"inner_cls_demo\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"141c1a10-da4b-4d86-a70d-ed49fd9b3b58\"\n    }\n}",
         "title": "获取日志集列表"
       }
     ],
@@ -338,9 +338,9 @@
     ],
     "DescribeMachineGroups": [
       {
-        "document": "",
+        "document": "获取包含指定标签的机器组列表",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMachineGroups\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"tagKey\",\n            \"Values\": [\n                \"k1\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"MachineGroups\": [\n            {\n                \"GroupId\": \"57f5808c-4a55-11eb-b378-0242ac130002\",\n                \"GroupName\": \"testgroup\",\n                \"MachineGroupType\": {\n                    \"Type\": \"ip\",\n                    \"Values\": [\n                        \"10.10.1.119\"\n                    ]\n                },\n                \"CreateTime\": \"2020-10-11 19:22:33\"\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MachineGroups\": [\n            {\n                \"GroupId\": \"4a4ee397-xxxx-466f-a04c-b3413b9db40c\",\n                \"GroupName\": \"cos-recharge\",\n                \"MachineGroupType\": {\n                    \"Type\": \"label\",\n                    \"Values\": [\n                        \"cos-recharge\"\n                    ]\n                },\n                \"CreateTime\": \"2022-02-13 21:07:54\",\n                \"AutoUpdate\": \"\",\n                \"UpdateStartTime\": \"\",\n                \"UpdateEndTime\": \"\",\n                \"ServiceLogging\": true,\n                \"Tags\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"2dc17eaa-xxxx-40ea-8cdc-650aa85ccb80\"\n    }\n}",
         "title": "获取机器组列表"
       }
     ],

@@ -258,7 +258,7 @@
       {
         "document": "获取函数触发器列表",
         "input": "https://scf.tencentcloudapi.com/?Action=ListTriggers\n&FunctionName=aaa\n&Limit=2\n&Order=ASC\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Triggers\": [\n            {\n                \"Enable\": 1,\n                \"Qualifier\": \"abc\",\n                \"TriggerName\": \"abc\",\n                \"Type\": \"abc\",\n                \"TriggerDesc\": \"abc\",\n                \"AvailableStatus\": \"abc\",\n                \"CustomArgument\": \"abc\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"ResourceId\": \"abc\",\n                \"BindStatus\": \"abc\",\n                \"TriggerAttribute\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Triggers\": [\n            {\n                \"Enable\": 1,\n                \"Qualifier\": \"abc\",\n                \"TriggerName\": \"abc\",\n                \"Type\": \"abc\",\n                \"TriggerDesc\": \"abc\",\n                \"AvailableStatus\": \"abc\",\n                \"CustomArgument\": \"abc\",\n                \"Description\": \"abc\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"ResourceId\": \"abc\",\n                \"BindStatus\": \"abc\",\n                \"TriggerAttribute\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取函数触发器列表"
       }
     ],

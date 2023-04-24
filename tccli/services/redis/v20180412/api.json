@@ -470,7 +470,7 @@
       "status": "online"
     },
     "ModifyAutoBackupConfig": {
-      "document": "设置自动备份配置",
+      "document": "本接口（ModifyAutoBackupConfig）用于设置自动备份的配置。",
       "input": "ModifyAutoBackupConfigRequest",
       "name": "设置自动备份配置",
       "output": "ModifyAutoBackupConfigResponse",
@@ -7227,8 +7227,7 @@
       "document": "ModifyAutoBackupConfig请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID。",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。\n",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -7236,7 +7235,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设置自动备份周期。可设置为Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。该参数暂不支持修改。",
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]",
           "member": "string",
@@ -7245,7 +7243,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "备份时间段。可设置为每个整点。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。",
           "example": "04:00-05:00",
           "member": "string",
@@ -7254,8 +7251,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "自动备份类型： 1 “定时回档”。",
+          "document": "自动备份类型。目前仅能配置为：1 ，指定时备份。",
           "example": "1",
           "member": "int64",
           "name": "AutoBackupType",
@@ -7269,11 +7265,10 @@
       "document": "ModifyAutoBackupConfig返回参数结构体",
       "members": [
         {
-          "document": "自动备份类型： 1 “定时回档”",
+          "document": "自动备份类型。目前仅能配置为：1 ，指定时备份。",
           "example": "1",
           "member": "int64",
           "name": "AutoBackupType",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7282,16 +7277,14 @@
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]",
           "member": "string",
           "name": "WeekDays",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "自动备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。",
+          "document": "自动定时备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。",
           "example": "04:00-05:00",
           "member": "string",
           "name": "TimePeriod",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7300,7 +7293,6 @@
           "example": "7",
           "member": "int64",
           "name": "BackupStorageDays",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -49,6 +49,13 @@
       "output": "DescribeAutoBackupConfigResponse",
       "status": "online"
     },
+    "DescribeConnectionConfig": {
+      "document": "本接口（DescribeConnectionConfig）用于查询实例连接配置，包括出流量和入流量带宽、最大连接数限制。",
+      "input": "DescribeConnectionConfigRequest",
+      "name": "查询实例连接配置",
+      "output": "DescribeConnectionConfigResponse",
+      "status": "online"
+    },
     "DescribeDBSecurityGroups": {
       "document": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。",
       "input": "DescribeDBSecurityGroupsRequest",
@@ -875,6 +882,56 @@
           "member": "int64",
           "name": "BinlogStorageDays",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectionConfigRequest": {
+      "document": "DescribeConnectionConfig请求参数结构体",
+      "members": [
+        {
+          "document": "实例 ID，如：kee-6ubh****。",
+          "example": "kee-6ubhgouj",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectionConfigResponse": {
+      "document": "DescribeConnectionConfig返回参数结构体",
+      "members": [
+        {
+          "document": "单分片入流量带宽限制，单位：MB。",
+          "example": "96",
+          "member": "int64",
+          "name": "InNetLimit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单分片出流量带宽限制，单位：MB。",
+          "example": "96",
+          "member": "int64",
+          "name": "OutNetLimit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单分片连接数限制。",
+          "example": "10000",
+          "member": "int64",
+          "name": "ClientLimit",
           "type": "int",
           "value_allowed_null": false
         },

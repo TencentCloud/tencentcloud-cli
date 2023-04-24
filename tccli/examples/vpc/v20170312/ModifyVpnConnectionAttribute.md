@@ -6,15 +6,17 @@ Input:
 
 ```
 tccli vpc ModifyVpnConnectionAttribute --cli-unfold-argument  \
-    --VpnConnectionId vpnx-i0f4fo4m \
-    --VpnConnectionName new_name
+    --VpnConnectionName test-abc \
+    --VpnConnectionId vpnx-abc123x \
+    --PreShareKey 123 \
+    --EnableHealthCheck false
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "74883e1b-5901-46de-ae1e-d6e2cf591c5b"
+        "RequestId": "b6c8a8c4-ba39-49ca-9b21-66247b7e3ad3"
     }
 }
 ```

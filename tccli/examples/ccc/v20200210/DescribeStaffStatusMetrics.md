@@ -1,13 +1,15 @@
 **Example 1: 获取坐席实时状态统计指标示例**
 
-
+获取坐席实时状态统计指标示例。
 
 Input: 
 
 ```
 tccli ccc DescribeStaffStatusMetrics --cli-unfold-argument  \
     --SdkAppId 0 \
-    --StaffList xx
+    --StaffList aaa@abc.com \
+    --GroupIdList 0 \
+    --StatusList free
 ```
 
 Output: 
@@ -16,24 +18,28 @@ Output:
     "Response": {
         "Metrics": [
             {
+                "Email": "aaa@abc.com",
                 "Status": "free",
-                "BusyDuration": 63,
-                "NotReadyDuration": 39175,
-                "ReserveRest": false,
-                "ReserveNotReady": false,
-                "Reason": "xx",
-                "OnlineDuration": 54548,
-                "AfterCallWorkDuration": 15,
-                "FreeDuration": 15253,
                 "StatusExtra": {
-                    "Type": "xx",
-                    "Direct": "xx"
+                    "Type": "tel",
+                    "Direct": "callin"
                 },
-                "RestDuration": 41,
-                "Email": "xx"
+                "OnlineDuration": 0,
+                "FreeDuration": 0,
+                "BusyDuration": 0,
+                "NotReadyDuration": 0,
+                "RestDuration": 0,
+                "AfterCallWorkDuration": 0,
+                "Reason": "abc",
+                "ReserveRest": true,
+                "ReserveNotReady": true,
+                "UseMobileAccept": 0,
+                "UseMobileCallOut": true,
+                "LastOnlineTimestamp": 0,
+                "LastStatusTimestamp": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

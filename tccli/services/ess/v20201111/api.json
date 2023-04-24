@@ -1339,7 +1339,7 @@
           "example": "无",
           "member": "string",
           "name": "FileNames",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -1987,18 +1987,18 @@
           "type": "list"
         },
         {
-          "document": "机构信息，暂未开放",
-          "example": "无",
-          "member": "OrganizationInfo",
-          "name": "Organization",
-          "required": true,
-          "type": "object"
-        },
-        {
           "document": "用户信息，此结构体UserId必填",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "document": "机构信息，暂未开放",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
           "required": false,
           "type": "object"
         }
@@ -4420,7 +4420,6 @@
       "document": "流程信息摘要",
       "members": [
         {
-          "default": "",
           "document": "流程的编号",
           "example": "xxx",
           "member": "string",
@@ -4430,7 +4429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "流程的名称",
           "example": "xxx",
           "member": "string",
@@ -4440,7 +4438,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "流程的描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -4450,7 +4447,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "流程的类型",
           "example": "xxx",
           "member": "string",
@@ -4460,7 +4456,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "流程状态\n- `0`  还没有发起\n- `1`  未签署\n- `2`  部分签署\n- `3`  已退回\n- `4`  完成签署\n- `5`  已过期\n- `6`  已取消\n- `7`  还没有预发起\n- `8`  等待填写\n- `9`  部分填写\n- `10`  拒填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "int64",
@@ -4470,7 +4465,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "流程创建的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4480,12 +4474,20 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "拒签或者取消的原因描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "FlowMessage",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": " 合同发起人userId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Creator",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4751,6 +4753,15 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "合同发起人UserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Creator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

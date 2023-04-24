@@ -138,7 +138,7 @@
     ],
     "CreateDBInstanceHour": [
       {
-        "document": "",
+        "document": "创建云数据库实例（按量计费）",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"marchtest\",\n            \"TagValue\": [\n                \"test1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": \"0\",\n    \"SlaveZone\": \"ap-guangzhou-3\",\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": \"1\",\n    \"DeployMode\": \"0\",\n    \"Volume\": \"25\",\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": \"1000\",\n    \"ProtectMode\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceIds\": [\n            \"cdb-03brtubb\"\n        ],\n        \"DealIds\": [\n            \"20171201160000002670226599824833\"\n        ]\n    }\n}",
         "title": "创建云数据库实例（按量计费）"
@@ -966,8 +966,8 @@
     ],
     "OpenAuditService": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-1j75n2zz\",\n    \"LogExpireDay\": 7,\n    \"HighLogExpireDay\": 1\n}",
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-3u8h3h1w\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7,\n    \"AuditRuleFilters\": [\n        {\n            \"RuleFilters\": [\n                {\n                    \"Compare\": \"NEQ\",\n                    \"Type\": \"host\",\n                    \"Value\": [\n                        \"127.0.0.1\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf6123\"\n    }\n}",
         "title": "开通实例审计服务"
       }

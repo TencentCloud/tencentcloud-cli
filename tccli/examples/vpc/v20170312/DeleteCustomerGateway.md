@@ -1,12 +1,11 @@
 **Example 1: 删除对端网关**
 
-
+本接口示例用于删除对端网关
 
 Input: 
 
 ```
 tccli vpc DeleteCustomerGateway --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --CustomerGatewayId cgw-mgp33pll
 ```
 

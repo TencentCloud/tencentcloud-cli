@@ -11682,6 +11682,7 @@
         {
           "default": "",
           "document": "目的IPv4网段",
+          "example": "10.2.2.0/24",
           "member": "string",
           "name": "DestinationCidrBlock",
           "required": false,
@@ -11691,6 +11692,7 @@
         {
           "default": "",
           "document": "下一跳类型\nNORMAL_CVM：普通云服务器；",
+          "example": "NAT",
           "member": "string",
           "name": "GatewayType",
           "required": false,
@@ -11700,6 +11702,7 @@
         {
           "default": "",
           "document": "下一跳地址\n这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址\n当 GatewayType 为 EIP 时，GatewayId 固定值 '0'",
+          "example": "nat-irmuq4z4",
           "member": "string",
           "name": "GatewayId",
           "required": false,
@@ -11709,6 +11712,7 @@
         {
           "default": "",
           "document": "路由策略唯一ID",
+          "example": "rti-mpgivlqt",
           "member": "string",
           "name": "RouteItemId",
           "required": false,
@@ -11718,6 +11722,7 @@
         {
           "default": "",
           "document": "路由策略描述",
+          "example": "TEST",
           "member": "string",
           "name": "RouteDescription",
           "required": false,
@@ -11727,6 +11732,7 @@
         {
           "default": "",
           "document": "是否启用",
+          "example": "True",
           "member": "bool",
           "name": "Enabled",
           "required": false,
@@ -11736,6 +11742,7 @@
         {
           "default": "",
           "document": "路由类型，目前我们支持的类型有：\nUSER：用户路由；\nNETD：网络探测路由，创建网络探测实例时，系统默认下发，不可编辑与删除；\nCCN：云联网路由，系统默认下发，不可编辑与删除。\n用户只能添加和操作 USER 类型的路由。",
+          "example": "CCN",
           "member": "string",
           "name": "RouteType",
           "required": false,
@@ -11745,10 +11752,21 @@
         {
           "default": "",
           "document": "路由策略ID。IPv4路由策略ID是有意义的值，IPv6路由策略是无意义的值0。后续建议完全使用字符串唯一ID `RouteItemId`操作路由策略",
+          "example": "1",
           "member": "uint64",
           "name": "RouteId",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "rtb-azd4dt1c",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

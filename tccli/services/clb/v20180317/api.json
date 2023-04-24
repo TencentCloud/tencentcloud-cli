@@ -7809,7 +7809,6 @@
       "document": "ModifyLoadBalancerAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "负载均衡的唯一ID",
           "example": "lb-6efswuxa",
           "member": "string",
@@ -7818,7 +7817,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "负载均衡实例名称",
           "example": "newlbname",
           "member": "string",
@@ -7827,7 +7825,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设置负载均衡跨地域绑定1.0的后端服务信息",
           "example": "无",
           "member": "TargetRegionInfo",
@@ -7836,7 +7833,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "网络计费相关参数",
           "example": "无",
           "member": "InternetAccessible",
@@ -7845,7 +7841,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "Target是否放通来自CLB的流量。开启放通（true）：只验证CLB上的安全组；不开启放通（false）：需同时验证CLB和后端实例上的安全组。",
           "example": "true",
           "member": "bool",
@@ -7854,7 +7849,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启跨地域绑定2.0功能",
           "example": "false",
           "member": "bool",
@@ -7863,11 +7857,18 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否开启删除保护",
           "example": "false",
           "member": "bool",
           "name": "DeleteProtect",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "document": "将负载均衡二级域名由mycloud.com改为tencentclb.com，子域名也会变换。修改后mycloud.com域名将失效。",
+          "example": "true",
+          "member": "bool",
+          "name": "ModifyClassicDomain",
           "required": false,
           "type": "bool"
         }
@@ -7882,7 +7883,6 @@
           "example": "null",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

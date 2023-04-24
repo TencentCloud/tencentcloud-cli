@@ -544,7 +544,7 @@
     ],
     "ModifyAutoBackupConfig": [
       {
-        "document": "",
+        "document": "自动备份配置",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoBackupConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5a4py64p\",\n    \"AutoBackupType\": \"1\",\n    \"TimePeriod\": \"00%3A00-01%3A00\",\n    \"WeekDays\": [\n        \"Wednesday\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"BackupStorageDays\": 7,\n        \"AutoBackupType\": 1,\n        \"WeekDays\": [\n            \"Wednesday\"\n        ],\n        \"RequestId\": \"65e950b9-78e8-49b1-9200-0e62a1925554\",\n        \"TimePeriod\": \"00:00-01:00\"\n    }\n}",
         "title": "请求示例"

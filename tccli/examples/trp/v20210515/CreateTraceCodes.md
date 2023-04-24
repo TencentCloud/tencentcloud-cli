@@ -1,6 +1,6 @@
-**Example 1: 批量导入二维码**
+**Example 1: 批量将码和批次绑定**
 
-
+批量将码和批次绑定并激活，会返回绑定后批次对应码的数量
 
 Input: 
 
@@ -14,10 +14,10 @@ Output:
 ```
 {
     "Response": {
-        "BatchId": "xx",
+        "BatchId": "abc",
         "ActiveCnt": 1,
-        "RequestId": "xx",
-        "CodeCnt": 1
+        "CodeCnt": 1,
+        "RequestId": "abc"
     }
 }
 ```

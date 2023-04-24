@@ -3655,7 +3655,7 @@
       "document": "DescribeAlarms请求参数结构体",
       "members": [
         {
-          "document": "<br><li> name\n\n按照【告警策略名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> alarmId\n\n按照【告警策略ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【监控对象的日志主题ID】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> enable\n\n按照【启用状态】进行过滤。\n\n类型：String\n\n备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "name\n- 按照【告警策略名称】进行过滤。\n- 类型：String\n- 必选：否\n\nalarmId\n- 按照【告警策略ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntopicId\n- 按照【监控对象的日志主题ID】进行过滤。\n- 类型：String\n- 必选：否\n\nenable\n- 按照【启用状态】进行过滤。\n- 类型：String\n- 备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3886,8 +3886,7 @@
       "document": "DescribeConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "<br><li> configName\n\n按照【采集配置名称】进行模糊匹配过滤。\n类型：String\n\n必选：否\n\n<br><li> configId\n\n按照【采集配置ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【日志主题】进行过滤。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "configName\n- 按照【采集配置名称】进行模糊匹配过滤。\n- 类型：String\n- 必选：否\n\nconfigId\n- 按照【采集配置ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntopicId\n- 按照【日志主题】进行过滤。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3895,7 +3894,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页的偏移量，默认值为0",
           "example": "0",
           "member": "int64",
@@ -3904,7 +3902,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页单页的限制数目，默认值为20，最大值100",
           "example": "10",
           "member": "int64",
@@ -3923,7 +3920,6 @@
           "example": "无",
           "member": "ConfigInfo",
           "name": "Configs",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3932,7 +3928,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4404,8 +4399,7 @@
       "document": "DescribeLogsets请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "<br><li> logsetName\n\n按照【日志集名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> logsetId\n\n按照【日志集ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n类型：String\n\n必选：否\n\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "logsetName\n- 按照【日志集名称】进行过滤。\n- 类型：String\n- 必选：否\n\nlogsetId\n- 按照【日志集ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4413,7 +4407,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页的偏移量，默认值为0",
           "example": "0",
           "member": "int64",
@@ -4422,7 +4415,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页单页的限制数目，默认值为20，最大值100",
           "example": "1",
           "member": "int64",
@@ -4441,7 +4433,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4450,7 +4441,6 @@
           "example": "无",
           "member": "LogsetInfo",
           "name": "Logsets",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4503,8 +4493,7 @@
       "document": "DescribeMachineGroups请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "<br><li> machineGroupName\n\n按照【机器组名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> machineGroupId\n\n按照【机器组ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n类型：String\n\n必选：否\n\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "machineGroupName\n- 按照【机器组名称】进行过滤。\n- 类型：String\n- 必选：否\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4512,7 +4501,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页的偏移量，默认值为0",
           "example": "0",
           "member": "int64",
@@ -4521,7 +4509,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页单页的限制数目，默认值为20，最大值100",
           "example": "10",
           "member": "int64",
@@ -4540,7 +4527,6 @@
           "example": "无",
           "member": "MachineGroupInfo",
           "name": "MachineGroups",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4549,7 +4535,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4737,7 +4722,7 @@
       "document": "DescribeShippers请求参数结构体",
       "members": [
         {
-          "document": "<br><li> shipperName\n\n按照【投递规则名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> shipperId\n\n按照【投递规则ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【日志主题】进行过滤。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "- shipperName：按照【投递规则名称】进行过滤。类型：String。必选：否\n- shipperId：按照【投递规则ID】进行过滤。类型：String。必选：否\n- topicId：按照【日志主题】进行过滤。类型：String。必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

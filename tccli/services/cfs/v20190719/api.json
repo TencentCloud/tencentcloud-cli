@@ -203,6 +203,13 @@
       "output": "DescribeUserQuotaResponse",
       "status": "online"
     },
+    "ScaleUpFileSystem": {
+      "document": "该接口用于对turbo 文件系统扩容使用",
+      "input": "ScaleUpFileSystemRequest",
+      "name": "文件系统存储量扩容",
+      "output": "ScaleUpFileSystemResponse",
+      "status": "online"
+    },
     "SetUserQuota": {
       "document": "设置文件系统配额，提供UID/GID的配额设置的接口",
       "input": "SetUserQuotaRequest",
@@ -3242,6 +3249,56 @@
         }
       ],
       "usage": "out"
+    },
+    "ScaleUpFileSystemRequest": {
+      "document": "ScaleUpFileSystem请求参数结构体",
+      "members": [
+        {
+          "document": "文件系统Id",
+          "example": "cfs-x",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "扩容的目标容量",
+          "example": "10240",
+          "member": "uint64",
+          "name": "TargetCapacity",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleUpFileSystemResponse": {
+      "document": "ScaleUpFileSystem返回参数结构体",
+      "members": [
+        {
+          "document": "文件系统Id",
+          "example": "cfs-x",
+          "member": "string",
+          "name": "FileSystemId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩容的目标容量",
+          "example": "10240",
+          "member": "uint64",
+          "name": "TargetCapacity",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SetUserQuotaRequest": {
       "document": "SetUserQuota请求参数结构体",

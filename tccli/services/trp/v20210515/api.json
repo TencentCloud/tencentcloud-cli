@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateTraceCodes": {
-      "document": "批量导入二维码，只支持平台发的码",
+      "document": "批量绑定指定批次并激活二维码，只支持平台发的码，且只会激活没有使用过的码",
       "input": "CreateTraceCodesRequest",
       "name": "批量导入二维码",
       "output": "CreateTraceCodesResponse",
@@ -382,37 +382,34 @@
       "document": "上链数据",
       "members": [
         {
-          "default": "",
           "document": "区块hash\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0xfc7f37ba117bb01afd237c6949f7d6a0b0d4a4c785b3fb90cd9004e0335a9d",
           "member": "string",
           "name": "BlockHash",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "区块高度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "28102",
           "member": "string",
           "name": "BlockHeight",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "区块时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021",
           "member": "string",
           "name": "BlockTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "CodeBatch": {
       "document": "批次",
@@ -1673,7 +1670,6 @@
       "document": "CreateTraceCodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "批次ID",
           "example": "ccc",
           "member": "string",
@@ -1682,7 +1678,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "企业ID",
           "example": "1000",
           "member": "uint64",
@@ -1691,13 +1686,28 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "码",
           "example": "无",
           "member": "CodeItem",
           "name": "Codes",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "码绑定激活策略，默认  0\n0: 传什么码就激活什么码\n1: 层级码 + 层级子码",
+          "example": "0",
+          "member": "uint64",
+          "name": "CodeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "错误检查类型，默认 0\n0: 没有新导入码时正常返回\n1: 没有新导入码时报错，并返回没有导入成功的原因",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1710,7 +1720,6 @@
           "example": "abc",
           "member": "string",
           "name": "BatchId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1719,7 +1728,6 @@
           "example": "1",
           "member": "uint64",
           "name": "ActiveCnt",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1728,7 +1736,6 @@
           "example": "1",
           "member": "uint64",
           "name": "CodeCnt",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4259,7 +4266,6 @@
       "document": "ModifyTraceData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "溯源ID",
           "example": "VyKxxkmi_myRD6ulG6HFo",
           "member": "string",
@@ -4268,7 +4274,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "批次ID",
           "example": "ccc",
           "member": "string",
@@ -4277,7 +4282,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生产溯源任务ID",
           "example": "1",
           "member": "string",
@@ -4286,7 +4290,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "溯源信息",
           "example": "无",
           "member": "TraceItem",
@@ -4295,7 +4298,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "溯源阶段名称",
           "example": "名称",
           "member": "string",
@@ -4304,97 +4306,14 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "[无效] 类型",
-          "example": "1",
-          "member": "uint64",
-          "name": "Type",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "[无效] 溯源码",
-          "example": "xfetmgoiky2nms6nk8",
-          "member": "string",
-          "name": "Code",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "[无效] 排序",
-          "example": "1",
-          "member": "uint64",
-          "name": "Rank",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "[无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
-          "example": "1",
-          "member": "uint64",
-          "name": "Phase",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "[无效] 溯源时间",
-          "example": "2021-12-03T02:58:48.000Z",
-          "member": "string",
-          "name": "TraceTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "[无效] 创建时间",
-          "example": "2021-12-03T02:58:48.000Z",
-          "member": "string",
-          "name": "CreateTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "[无效] 上链状态",
-          "example": "1",
-          "member": "uint64",
-          "name": "ChainStatus",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "[无效] 上链时间",
-          "example": "2021-12-03T02:58:48.000Z",
-          "member": "string",
-          "name": "ChainTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "[无效] 上链数据",
+          "document": "环节数据",
           "example": "无",
-          "member": "ChainData",
-          "name": "ChainData",
+          "member": "PhaseData",
+          "name": "PhaseData",
           "required": false,
           "type": "object"
         },
         {
-          "default": "",
-          "document": "企业ID",
-          "example": "1000",
-          "member": "uint64",
-          "name": "CorpId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "溯源状态 0: 无效, 1: 有效",
           "example": "1",
           "member": "uint64",
@@ -4403,13 +4322,84 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "环节数据",
+          "document": "排序",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rank",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "[无效] 类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "[无效] 溯源码",
+          "example": "xfetmgoiky2nms6nk8",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "[无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
+          "example": "1",
+          "member": "uint64",
+          "name": "Phase",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "[无效] 溯源时间",
+          "example": "2021-12-03T02:58:48.000Z",
+          "member": "string",
+          "name": "TraceTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "[无效] 创建时间",
+          "example": "2021-12-03T02:58:48.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "[无效] 上链状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChainStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "[无效] 上链时间",
+          "example": "2021-12-03T02:58:48.000Z",
+          "member": "string",
+          "name": "ChainTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "[无效] 上链数据",
           "example": "无",
-          "member": "PhaseData",
-          "name": "PhaseData",
+          "member": "ChainData",
+          "name": "ChainData",
           "required": false,
           "type": "object"
+        },
+        {
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4422,7 +4412,6 @@
           "example": "abc",
           "member": "string",
           "name": "TraceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4528,7 +4517,6 @@
       "document": "环节数据",
       "members": [
         {
-          "default": "",
           "document": "启用头",
           "example": "false",
           "member": "bool",
@@ -4538,7 +4526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标题",
           "example": "标题",
           "member": "string",
@@ -4548,7 +4535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标识符",
           "example": "product",
           "member": "string",
@@ -4558,7 +4544,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "小程序AppId",
           "example": "AppId",
           "member": "string",
@@ -4568,7 +4553,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "小程序AppPath",
           "example": "AppPath",
           "member": "string",
@@ -4578,7 +4562,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "小程序名称AppName",
           "example": "AppName",
           "member": "string",
@@ -5271,37 +5254,33 @@
       "document": "溯源数据",
       "members": [
         {
-          "default": "",
-          "document": "溯源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源ID",
           "example": "VyKxxkmi_myRD6ulG6HFo",
           "member": "string",
           "name": "TraceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业ID",
           "example": "10",
           "member": "uint64",
           "name": "CorpId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "码类型 0: 批次, 1: 码, 2: 生产任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码类型 0: 批次, 1: 码, 2: 生产任务",
           "example": "码类型",
           "member": "uint64",
           "name": "Type",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "码值，跟码类型一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xfetmgoiky2nms6nk8",
           "member": "string",
@@ -5311,37 +5290,33 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "排序，在Phase相同情况下，值越小排名靠前\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "排序，在Phase相同情况下，值越小排名靠前",
           "example": "1",
           "member": "uint64",
           "name": "Rank",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
           "example": "0",
           "member": "uint64",
           "name": "Phase",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "溯源环节名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源环节名称",
           "example": "环节名称",
           "member": "string",
           "name": "PhaseName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "溯源时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-03T02:58:48.000Z",
           "member": "string",
@@ -5351,17 +5326,15 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无",
           "example": "无",
           "member": "TraceItem",
           "name": "TraceItems",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T09:20:57.000Z",
           "member": "string",
@@ -5371,7 +5344,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
@@ -5381,7 +5353,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "上链时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-06T09:20:57.000Z",
           "member": "string",
@@ -5391,7 +5362,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "上链数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ChainData",
@@ -5401,7 +5371,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "溯源阶段配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PhaseData",
@@ -5411,103 +5380,112 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "溯源阶段状态 0: 无效, 1: 有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源阶段状态 0: 无效, 1: 有效",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TraceItem": {
-      "document": "溯源数据项\nType的枚举值\ntext:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型\n具体组合如下\nType: \"text\" 文本类型, 对应值 Value: \"文本字符串\"\nType: \"longtext\" 长文本类型, 对应值 Value: \"长文本字符串, 支持换行\\n\"\nType: \"banner\" 单图片类型, 对应图片地址 Value: \"https://sample.cdn.com/xxx.jpg\"\nType: \"image\" 多图片类型, 对应图片地址 Values: [\"https://sample.cdn.com/1.jpg\", \"https://sample.cdn.com/2.jpg\"]\nType: \"video\" 视频类型, 对应视频地址 Value: \"https://sample.cdn.com/xxx.mp4\"\nType: \"mp\" 小程序类型, 对应配置 Values: [\"WXAPPID\", \"WXAPP_PATH\", \"跳转说明\"]",
+      "document": "溯源数据项 Type 的枚举值\n\ntext:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型\n\n具体组合如下\n- Type: \"text\" 文本类型, 对应值 Value: \"文本字符串\"\n- Type: \"longtext\" 长文本类型, 对应值 Value: \"长文本字符串, 支持换行\\n\"\n- Type: \"banner\" 单图片类型, 对应图片地址 Value: \"https://sample.cdn.com/xxx.jpg\"\n- Type: \"image\" 多图片类型, 对应图片地址 Values: [\"https://sample.cdn.com/1.jpg\", \"https://sample.cdn.com/2.jpg\"]\n- Type: \"video\" 视频类型, 对应视频地址 Value: \"https://sample.cdn.com/xxx.mp4\"\n- Type: \"mp\" 小程序类型, 对应配置 Values: [\"WXAPPID\", \"WXAPP_PATH\", \"跳转说明\"]",
       "members": [
         {
-          "default": "",
-          "document": "字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段名称",
           "example": "商品名称2",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "字段值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段值",
           "example": "demo",
           "member": "string",
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "类型 text:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段类型\ntext:文本类型, \nlongtext:长文本类型, banner:单图片类型, image:多图片类型,\nvideo:视频类型,\nmp:小程序类型",
           "example": "text",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "只读\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读",
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "扫码展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扫码展示",
           "example": "false",
           "member": "bool",
           "name": "Hidden",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "多个值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多个值",
           "example": "无",
           "member": "string",
           "name": "Values",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "类型标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型标识",
           "example": "ID",
           "member": "string",
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展字段",
           "example": "无",
           "member": "string",
           "name": "Ext",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "document": "额外属性",
+          "example": "无",
+          "member": "TraceItem",
+          "name": "Attrs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子页面，只读",
+          "example": "无",
+          "member": "TraceData",
+          "name": "List",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "UsageQuota": {
       "document": "付费信息使用量",

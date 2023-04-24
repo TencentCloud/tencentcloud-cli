@@ -4605,7 +4605,35 @@
     },
     "CcnRegionBandwidthLimitInfo": {
       "document": "云联网（CCN）地域出带宽上限。",
-      "members": [],
+      "members": [
+        {
+          "document": "源地域，例如：ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目的地域， 例如：ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DestinationRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "出带宽上限，单位：Mbps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "BandwidthLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "CcnRoute": {
@@ -7399,7 +7427,6 @@
       "document": "CreateVpnConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPN网关实例ID。",
           "example": "vpngw-1w9tue3d",
           "member": "string",
@@ -7408,8 +7435,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。",
+          "document": "对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。",
           "example": "cgw-qa9sxpy7",
           "member": "string",
           "name": "CustomerGatewayId",
@@ -7417,7 +7443,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "通道名称，可任意命名，但不得超过60个字符。",
           "example": "TEST_CONN",
           "member": "string",
@@ -7426,7 +7451,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "预共享密钥。",
           "example": "654321",
           "member": "string",
@@ -7435,7 +7459,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。\nCCN VPN 形的通道 可以不传VPCID",
           "example": "vpc-gapcv96p",
           "member": "string",
@@ -7444,7 +7467,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。",
           "example": "无",
           "member": "SecurityPolicyDatabase",
@@ -7453,7 +7475,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议",
           "example": "无",
           "member": "IKEOptionsSpecification",
@@ -7462,7 +7483,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "IPSec配置，腾讯云提供IPSec安全会话设置",
           "example": "无",
           "member": "IPSECOptionsSpecification",
@@ -7471,7 +7491,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
           "example": "无",
           "member": "Tag",
@@ -7480,8 +7499,7 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "是否支持隧道内健康检查",
+          "document": "是否支持隧道内健康检查，默认为False。",
           "example": "无",
           "member": "bool",
           "name": "EnableHealthCheck",
@@ -7489,8 +7507,7 @@
           "type": "bool"
         },
         {
-          "default": "",
-          "document": "健康检查本端地址",
+          "document": "健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。",
           "example": "无",
           "member": "string",
           "name": "HealthCheckLocalIp",
@@ -7498,8 +7515,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "健康检查对端地址",
+          "document": "健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。",
           "example": "无",
           "member": "string",
           "name": "HealthCheckRemoteIp",
@@ -7507,7 +7523,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "通道类型, 例如:[\"STATIC\", \"StaticRoute\", \"Policy\"]",
           "example": "STATIC",
           "member": "string",
@@ -7516,7 +7531,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）",
           "example": "active",
           "member": "string",
@@ -7525,7 +7539,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）",
           "example": "1",
           "member": "int64",
@@ -7534,7 +7547,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒",
           "example": "30",
           "member": "string",
@@ -7543,7 +7555,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）",
           "example": "clear",
           "member": "string",
@@ -7562,7 +7573,6 @@
           "example": "无",
           "member": "VpnConnection",
           "name": "VpnConnection",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8576,8 +8586,8 @@
       "document": "DeleteCustomerGateway请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。",
+          "document": "对端网关ID，例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/api/215/17516)接口查询对端网关。",
+          "example": "cgw-2wqq41m9",
           "member": "string",
           "name": "CustomerGatewayId",
           "required": true,
@@ -18406,16 +18416,16 @@
       "document": "ModifyCustomerGatewayAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。",
+          "document": "对端网关ID，例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/api/215/17516)接口查询对端网关。",
+          "example": "cgw-mgp33pll",
           "member": "string",
           "name": "CustomerGatewayId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "对端网关名称，可任意命名，但不得超过60个字符。",
+          "example": "NewName",
           "member": "string",
           "name": "CustomerGatewayName",
           "required": true,
@@ -19888,7 +19898,6 @@
       "document": "ModifyVpnConnectionAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "VPN通道实例ID。形如：vpnx-f49l6u0z。",
           "example": "vpnx-i0f4fo4m",
           "member": "string",
@@ -19897,7 +19906,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "VPN通道名称，可任意命名，但不得超过60个字符。",
           "example": "new_name",
           "member": "string",
@@ -19906,7 +19914,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "预共享密钥。",
           "example": "tencent",
           "member": "string",
@@ -19915,8 +19922,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。",
+          "document": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段，172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。",
           "example": "无",
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabases",
@@ -19924,7 +19930,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议。",
           "example": "无",
           "member": "IKEOptionsSpecification",
@@ -19933,7 +19938,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "IPSec配置，腾讯云提供IPSec安全会话设置。",
           "example": "无",
           "member": "IPSECOptionsSpecification",
@@ -19942,8 +19946,7 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "是否启用通道健康检查",
+          "document": "是否启用通道健康检查，默认为False。",
           "example": "无",
           "member": "bool",
           "name": "EnableHealthCheck",
@@ -19951,8 +19954,7 @@
           "type": "bool"
         },
         {
-          "default": "",
-          "document": "本端通道探测ip",
+          "document": "本端通道探测IP。",
           "example": "无",
           "member": "string",
           "name": "HealthCheckLocalIp",
@@ -19960,8 +19962,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "对端通道探测ip",
+          "document": "对端通道探测IP。",
           "example": "无",
           "member": "string",
           "name": "HealthCheckRemoteIp",
@@ -19969,7 +19970,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）",
           "example": "active",
           "member": "string",
@@ -19978,7 +19978,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）",
           "example": "1",
           "member": "int64",
@@ -19987,7 +19986,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒",
           "example": "30",
           "member": "string",
@@ -19996,11 +19994,18 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）",
           "example": "clear",
           "member": "string",
           "name": "DpdAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "对端网关ID，4.0及以上网关下的通道支持更新。",
+          "example": "cgw-b6nlimbr",
+          "member": "string",
+          "name": "CustomerGatewayId",
           "required": false,
           "type": "string"
         }

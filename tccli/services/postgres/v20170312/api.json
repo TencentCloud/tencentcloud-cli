@@ -154,6 +154,13 @@
       "output": "DescribeAvailableRecoveryTimeResponse",
       "status": "online"
     },
+    "DescribeBackupDownloadRestriction": {
+      "document": "本接口（DescribeBackupDownloadRestriction）用于查询备份文件下载限制。",
+      "input": "DescribeBackupDownloadRestrictionRequest",
+      "name": "查询备份文件下载限制",
+      "output": "DescribeBackupDownloadRestrictionResponse",
+      "status": "online"
+    },
     "DescribeBackupDownloadURL": {
       "document": "本接口 (DescribeBackupDownloadURL) 用于获取备份下载链接。",
       "input": "DescribeBackupDownloadURLRequest",
@@ -427,6 +434,13 @@
       "output": "ModifyAccountRemarkResponse",
       "status": "online"
     },
+    "ModifyBackupDownloadRestriction": {
+      "document": "本接口（ModifyBackupDownloadRestriction）用于修改备份文件下载限制。",
+      "input": "ModifyBackupDownloadRestrictionRequest",
+      "name": "修改备份文件下载限制",
+      "output": "ModifyBackupDownloadRestrictionResponse",
+      "status": "online"
+    },
     "ModifyBackupPlan": {
       "document": "本接口 (ModifyBackupPlan) 用于实例备份计划的修改，默认是在每天的凌晨开始全量备份，备份保留时长是7天。可以根据此接口指定时间进行实例的备份。",
       "input": "ModifyBackupPlanRequest",
@@ -439,6 +453,13 @@
       "input": "ModifyBaseBackupExpireTimeRequest",
       "name": "修改基础备份过期时间",
       "output": "ModifyBaseBackupExpireTimeResponse",
+      "status": "online"
+    },
+    "ModifyDBInstanceChargeType": {
+      "document": "支持实例的计费类型转换（目前仅支持按量计费转包年包月）",
+      "input": "ModifyDBInstanceChargeTypeRequest",
+      "name": "修改实例计费类型",
+      "output": "ModifyDBInstanceChargeTypeResponse",
       "status": "online"
     },
     "ModifyDBInstanceDeployment": {
@@ -3714,6 +3735,63 @@
       ],
       "type": "object"
     },
+    "DescribeBackupDownloadRestrictionRequest": {
+      "document": "DescribeBackupDownloadRestriction请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBackupDownloadRestrictionResponse": {
+      "document": "DescribeBackupDownloadRestriction返回参数结构体",
+      "members": [
+        {
+          "document": "备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。",
+          "example": "NONE",
+          "member": "string",
+          "name": "RestrictionType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "vpc限制效力，ALLOW 允许；DENY 拒绝。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcRestrictionEffect",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "允许或拒绝下载备份文件的vpcId列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcIdSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "ip限制效力，ALLOW 允许；DENY 拒绝。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IpRestrictionEffect",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "允许或拒绝下载备份文件的ip列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IpSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBackupDownloadURLRequest": {
       "document": "DescribeBackupDownloadURL请求参数结构体",
       "members": [
@@ -6703,6 +6781,64 @@
       ],
       "type": "object"
     },
+    "ModifyBackupDownloadRestrictionRequest": {
+      "document": "ModifyBackupDownloadRestriction请求参数结构体",
+      "members": [
+        {
+          "document": "备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。",
+          "example": "NONE",
+          "member": "string",
+          "name": "RestrictionType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "vpc限制效力，ALLOW 允许；DENY 拒绝。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcRestrictionEffect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "允许或拒绝下载备份文件的vpcId列表。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "ip限制效力，ALLOW 允许；DENY 拒绝。",
+          "example": "无",
+          "member": "string",
+          "name": "IpRestrictionEffect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "允许或拒绝下载备份文件的ip列表。",
+          "example": "无",
+          "member": "string",
+          "name": "IpSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupDownloadRestrictionResponse": {
+      "document": "ModifyBackupDownloadRestriction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyBackupPlanRequest": {
       "document": "ModifyBackupPlan请求参数结构体",
       "members": [
@@ -6802,6 +6938,72 @@
     "ModifyBaseBackupExpireTimeResponse": {
       "document": "ModifyBaseBackupExpireTime返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceChargeTypeRequest": {
+      "document": "ModifyDBInstanceChargeType请求参数结构体",
+      "members": [
+        {
+          "document": "实例ID，形如postgres-6fego161",
+          "example": "postgres-apzvwncr\t",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "续费标记：0-正常续费（默认）；1-自动续费。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "是否自动使用代金券,1是,0否，默认不使用",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceChargeTypeResponse": {
+      "document": "ModifyDBInstanceChargeType返回参数结构体",
+      "members": [
+        {
+          "document": "订单名",
+          "example": "201806181256",
+          "member": "string",
+          "name": "DealName",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

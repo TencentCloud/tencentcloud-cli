@@ -898,7 +898,7 @@
     ],
     "ModifyAlarmPolicyCondition": [
       {
-        "document": "",
+        "document": "编辑告警策略触发条件示例如下",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmPolicyCondition\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"PolicyId\": \"policy-hi498gw3h2\",\n    \"Condition\": {\n        \"IsUnionRule\": 1,\n        \"Rules\": [\n            {\n                \"MetricName\": \"cpu_usage\",\n                \"Period\": 60,\n                \"Operator\": \"ge\",\n                \"Value\": \"85\",\n                \"ContinuePeriod\": 1,\n                \"NoticeFrequency\": 3600,\n                \"IsPowerNotice\": 0\n            }\n        ]\n    },\n    \"EventCondition\": {\n        \"Rules\": [\n            {\n                \"MetricName\": \"ping_unreach\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"29ghj2hh-45-h53h234h-23\"\n    }\n}",
         "title": "编辑告警策略触发条件"

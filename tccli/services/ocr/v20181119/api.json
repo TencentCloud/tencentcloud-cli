@@ -8174,6 +8174,14 @@
           "name": "ItemNames",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "是否开启全文字段识别",
+          "example": "无",
+          "member": "bool",
+          "name": "ReturnFullText",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8194,6 +8202,14 @@
           "example": "无",
           "member": "GroupInfo",
           "name": "StructuralList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "还原文本信息",
+          "example": "无",
+          "member": "WordItem",
+          "name": "WordList",
           "type": "list",
           "value_allowed_null": false
         },
@@ -12256,6 +12272,30 @@
           "name": "WordCoordinate",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WordItem": {
+      "document": "还原文本信息",
+      "members": [
+        {
+          "document": "文本块内容",
+          "example": "1234567",
+          "member": "string",
+          "name": "DetectedText",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "四点坐标",
+          "example": "[x1,y1,x2,y3,x3,y3,x4,y4]",
+          "member": "Polygon",
+          "name": "Coord",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

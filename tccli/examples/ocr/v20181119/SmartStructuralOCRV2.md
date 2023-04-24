@@ -21,10 +21,10 @@ Output:
                         "Lines": [
                             {
                                 "Key": {
-                                    "AutoName": "号码"
+                                    "AutoName": "abc"
                                 },
                                 "Value": {
-                                    "AutoContent": "* 2 1 0 0 0 5 8 9 8 1 2 4 *",
+                                    "AutoContent": "abc",
                                     "Coord": {
                                         "LeftTop": {
                                             "X": 0,
@@ -46,7 +46,13 @@ Output:
                 ]
             }
         ],
-        "RequestId": "1254418846"
+        "WordList": [
+            {
+                "DetectedText": "abc",
+                "Coord": {}
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

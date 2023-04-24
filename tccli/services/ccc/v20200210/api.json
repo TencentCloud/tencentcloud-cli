@@ -536,7 +536,6 @@
       "document": "呼入实时指标",
       "members": [
         {
-          "default": "",
           "document": "IVR驻留数量",
           "example": "0",
           "member": "int64",
@@ -546,7 +545,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "排队中数量",
           "example": "0",
           "member": "int64",
@@ -556,7 +554,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "振铃中数量",
           "example": "0",
           "member": "int64",
@@ -566,7 +563,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "接通中数量",
           "example": "0",
           "member": "int64",
@@ -576,7 +572,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客服转接外线中数量",
           "example": "0",
           "member": "int64",
@@ -586,7 +581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最大排队时长",
           "example": "0",
           "member": "int64",
@@ -596,7 +590,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "平均排队时长",
           "example": "0",
           "member": "int64",
@@ -606,7 +599,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最大振铃时长",
           "example": "0",
           "member": "int64",
@@ -616,7 +608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "平均振铃时长",
           "example": "0",
           "member": "int64",
@@ -626,7 +617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最大接通时长",
           "example": "0",
           "member": "int64",
@@ -636,7 +626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "平均接通时长",
           "example": "0",
           "member": "int64",
@@ -1715,7 +1704,6 @@
       "document": "DescribeCallInMetrics请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -1724,7 +1712,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否返回技能组维度信息，默认“是”",
           "example": "true",
           "member": "bool",
@@ -1733,13 +1720,20 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否返回线路维度信息，默认“否”",
           "example": "false",
           "member": "bool",
           "name": "EnabledNumber",
           "required": false,
           "type": "bool"
+        },
+        {
+          "document": "筛选技能组列表",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1752,7 +1746,6 @@
           "example": "1",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1761,7 +1754,6 @@
           "example": "无",
           "member": "CallInMetrics",
           "name": "TotalMetrics",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1770,7 +1762,6 @@
           "example": "无",
           "member": "CallInNumberMetrics",
           "name": "NumberMetrics",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1779,7 +1770,6 @@
           "example": "无",
           "member": "CallInSkillGroupMetrics",
           "name": "SkillGroupMetrics",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2595,7 +2585,6 @@
       "document": "DescribeStaffStatusMetrics请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -2604,11 +2593,26 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "筛选坐席列表，默认不传返回全部坐席信息",
           "example": "无",
           "member": "string",
           "name": "StaffList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "筛选技能组ID列表",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "筛选坐席状态列表",
+          "example": "无",
+          "member": "string",
+          "name": "StatusList",
           "required": false,
           "type": "list"
         }
@@ -2623,7 +2627,6 @@
           "example": "无",
           "member": "StaffStatusMetrics",
           "name": "Metrics",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4563,7 +4566,6 @@
       "document": "坐席状态补充信息",
       "members": [
         {
-          "default": "",
           "document": "im - 文本 | tel - 电话 | all - 全媒体",
           "example": "tel",
           "member": "string",
@@ -4573,7 +4575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "in - 呼入 | out - 呼出",
           "example": "in",
           "member": "string",

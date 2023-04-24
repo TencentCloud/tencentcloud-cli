@@ -13381,7 +13381,6 @@
       "document": "ModifyAlarmPolicyCondition请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，固定值 monitor",
           "example": "monitor",
           "member": "string",
@@ -13390,7 +13389,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警策略 ID",
           "example": "policy-hi498gw3h2",
           "member": "string",
@@ -13399,7 +13397,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "触发条件模板 Id，可不传",
           "example": "123",
           "member": "int64",
@@ -13408,7 +13405,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "指标触发条件",
           "example": "无",
           "member": "AlarmPolicyCondition",
@@ -13417,7 +13413,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "事件触发条件",
           "example": "无",
           "member": "AlarmPolicyEventCondition",
@@ -13426,7 +13421,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "全局过滤条件",
           "example": "无",
           "member": "AlarmPolicyFilter",
@@ -13435,7 +13429,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "聚合维度列表，指定按哪些维度 key 来做 group by",
           "example": "无",
           "member": "string",
@@ -13444,7 +13437,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "日志告警创建请求参数信息",
           "example": "无",
           "member": "LogAlarmReq",
@@ -13453,8 +13445,7 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "模版id，专供prom使用",
+          "document": "模板id，专供prom使用",
           "example": "[\"notice-2323\"]",
           "member": "string",
           "name": "NoticeIds",
@@ -13462,7 +13453,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "启停状态，0=停用，1=启用",
           "example": "0",
           "member": "int64",
@@ -13471,7 +13461,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "专供prom策略名称",
           "example": "\"prom-1234\"",
           "member": "string",
@@ -13480,7 +13469,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "事件配置的告警",
           "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
           "member": "string",

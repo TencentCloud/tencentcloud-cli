@@ -1,6 +1,6 @@
 **Example 1: 获取机器组列表**
 
-
+获取包含指定标签的机器组列表
 
 Input: 
 
@@ -16,21 +16,26 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 10,
         "MachineGroups": [
             {
-                "GroupId": "57f5808c-4a55-11eb-b378-0242ac130002",
-                "GroupName": "testgroup",
+                "GroupId": "4a4ee397-xxxx-466f-a04c-b3413b9db40c",
+                "GroupName": "cos-recharge",
                 "MachineGroupType": {
-                    "Type": "ip",
+                    "Type": "label",
                     "Values": [
-                        "10.10.1.119"
+                        "cos-recharge"
                     ]
                 },
-                "CreateTime": "2020-10-11 19:22:33"
+                "CreateTime": "2022-02-13 21:07:54",
+                "AutoUpdate": "",
+                "UpdateStartTime": "",
+                "UpdateEndTime": "",
+                "ServiceLogging": true,
+                "Tags": []
             }
         ],
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
+        "TotalCount": 1,
+        "RequestId": "2dc17eaa-xxxx-40ea-8cdc-650aa85ccb80"
     }
 }
 ```

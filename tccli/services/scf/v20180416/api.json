@@ -4188,7 +4188,7 @@
           "type": "string"
         },
         {
-          "document": "* Qualifier:\n函数版本，别名",
+          "document": "* Qualifier: 函数版本，别名\n* TriggerName: 函数触发器名称\n* Description: 函数触发器描述",
           "example": "Qualifier: $LATEST",
           "member": "Filter",
           "name": "Filters",
@@ -5683,8 +5683,8 @@
       "document": "触发器信息",
       "members": [
         {
-          "default": "",
           "document": "使能开关",
+          "example": "无",
           "member": "uint64",
           "name": "Enable",
           "required": true,
@@ -5692,8 +5692,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "函数版本或别名",
+          "example": "无",
           "member": "string",
           "name": "Qualifier",
           "required": true,
@@ -5701,8 +5701,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器名称",
+          "example": "无",
           "member": "string",
           "name": "TriggerName",
           "required": true,
@@ -5710,8 +5710,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器类型",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -5719,8 +5719,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器详细配置",
+          "example": "无",
           "member": "string",
           "name": "TriggerDesc",
           "required": true,
@@ -5728,8 +5728,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器是否可用",
+          "example": "无",
           "member": "string",
           "name": "AvailableStatus",
           "required": true,
@@ -5737,8 +5737,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客户自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CustomArgument",
           "required": true,
@@ -5746,8 +5746,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "触发器创建时间",
+          "example": "无",
           "member": "datetime",
           "name": "AddTime",
           "required": true,
@@ -5755,8 +5755,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器最后修改时间",
+          "example": "无",
           "member": "datetime",
           "name": "ModTime",
           "required": true,
@@ -5764,8 +5764,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器最小资源ID",
+          "example": "无",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -5773,8 +5773,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器和云函数绑定状态",
+          "example": "无",
           "member": "string",
           "name": "BindStatus",
           "required": true,
@@ -5782,13 +5782,22 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "触发器类型，双向表示两侧控制台均可操作，单向表示SCF控制台单向创建",
+          "example": "无",
           "member": "string",
           "name": "TriggerAttribute",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "客户自定义触发器描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

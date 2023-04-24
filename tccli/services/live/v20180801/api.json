@@ -346,7 +346,7 @@
     "DescribeLiveCallbackTemplate": {
       "document": "获取单个回调模板。",
       "input": "DescribeLiveCallbackTemplateRequest",
-      "name": "获取单个回调模板",
+      "name": "获取直播单个回调模板",
       "output": "DescribeLiveCallbackTemplateResponse",
       "status": "online"
     },

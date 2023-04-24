@@ -1,12 +1,11 @@
 **Example 1: 修改对端网关**
 
-
+修改对端网关
 
 Input: 
 
 ```
 tccli vpc ModifyCustomerGatewayAttribute --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --CustomerGatewayId cgw-mgp33pll \
     --CustomerGatewayName NewName
 ```

@@ -74,10 +74,10 @@
     ],
     "CreateTraceCodes": [
       {
-        "document": "",
+        "document": "批量将码和批次绑定并激活，会返回绑定后批次对应码的数量",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTraceCodes\n<公共请求参数>\n\n{\n    \"BatchId\": \"xfetmgoiky2nms6nk8\",\n    \"Codes\": [\n        {\n            \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_021351149823032923\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"ActiveCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"CodeCnt\": 1\n    }\n}",
-        "title": "批量导入二维码"
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"abc\",\n        \"ActiveCnt\": 1,\n        \"CodeCnt\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "批量将码和批次绑定"
       }
     ],
     "CreateTraceCodesAsync": [
@@ -362,9 +362,9 @@
     ],
     "ModifyTraceData": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTraceData\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"ChainStatus\": 1,\n    \"TraceId\": \"xx\",\n    \"PhaseData\": {\n        \"HeadTitle\": \"xx\",\n        \"AppName\": \"xx\",\n        \"AppPath\": \"xx\",\n        \"Key\": \"xx\",\n        \"AppId\": \"xx\",\n        \"HeadEnabled\": false\n    },\n    \"TraceTime\": \"xx\",\n    \"TraceItems\": [\n        {\n            \"Name\": \"xx\",\n            \"ReadOnly\": true,\n            \"Value\": \"xx\",\n            \"Ext\": \"xx\",\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\",\n            \"Hidden\": true,\n            \"Type\": \"xx\"\n        }\n    ],\n    \"Rank\": 1,\n    \"BatchId\": \"xx\",\n    \"ChainTime\": \"xx\",\n    \"Code\": \"xx\",\n    \"PhaseName\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"CorpId\": 1,\n    \"Phase\": 1,\n    \"ChainData\": {\n        \"BlockHeight\": \"xx\",\n        \"BlockHash\": \"xx\",\n        \"BlockTime\": \"xx\"\n    },\n    \"Type\": 1,\n    \"CreateTime\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TraceId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "修改部分溯源信息",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTraceData\n<公共请求参数>\n\n{\n    \"TraceId\": \"abc\",\n    \"BatchId\": \"abc\",\n    \"TaskId\": \"abc\",\n    \"TraceItems\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": \"abc\",\n            \"Type\": \"abc\",\n            \"ReadOnly\": true,\n            \"Hidden\": true,\n            \"Values\": [\n                \"abc\"\n            ],\n            \"Key\": \"abc\",\n            \"Ext\": \"abc\",\n            \"Attrs\": {\n                \"Name\": \"abc\",\n                \"Value\": \"abc\",\n                \"Type\": \"abc\",\n                \"ReadOnly\": true,\n                \"Hidden\": true,\n                \"Values\": [\n                    \"abc\"\n                ],\n                \"Key\": \"abc\",\n                \"Ext\": \"abc\",\n                \"Attrs\": {\n                    \"Name\": \"abc\",\n                    \"Value\": \"abc\",\n                    \"Type\": \"abc\",\n                    \"ReadOnly\": true,\n                    \"Hidden\": true,\n                    \"Values\": [\n                        \"abc\"\n                    ],\n                    \"Key\": \"abc\",\n                    \"Ext\": \"abc\"\n                }\n            }\n        }\n    ],\n    \"PhaseName\": \"abc\",\n    \"PhaseData\": {\n        \"HeadEnabled\": true,\n        \"HeadTitle\": \"abc\",\n        \"Key\": \"abc\",\n        \"AppId\": \"abc\",\n        \"AppPath\": \"abc\",\n        \"AppName\": \"abc\"\n    },\n    \"Status\": 1,\n    \"Rank\": 1,\n    \"Type\": 1,\n    \"Code\": \"abc\",\n    \"Phase\": 1,\n    \"TraceTime\": \"abc\",\n    \"CreateTime\": \"abc\",\n    \"ChainStatus\": 1,\n    \"ChainTime\": \"abc\",\n    \"ChainData\": {\n        \"BlockHash\": \"abc\",\n        \"BlockHeight\": \"abc\",\n        \"BlockTime\": \"abc\"\n    },\n    \"CorpId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改溯源信息"
       }
     ],

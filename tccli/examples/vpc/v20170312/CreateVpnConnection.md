@@ -1,6 +1,6 @@
 **Example 1: 创建VPN通道**
 
-
+创建VPN通道
 
 Input: 
 
@@ -34,53 +34,51 @@ Output:
 {
     "Response": {
         "VpnConnection": {
-            "VpnConnectionId": "vpnr-12ds042",
-            "VpnConnectionName": "TEST_CONN",
-            "PreShareKey": "654321",
-            "VpcId": "vpc-gapcv96p",
-            "HealthCheckRemoteIp": "",
-            "NetStatus": "",
-            "EnableHealthCheck": true,
-            "EncryptProto": "IKE",
+            "VpcId": "vpc-kozprpc9",
+            "VpnConnectionId": "vpnx-p0j11j28",
+            "VpnConnectionName": "test-con",
+            "VpnGatewayId": "vpngw-ecvft20x",
+            "CustomerGatewayId": "cgw-7lhl5331",
+            "State": "PENDING",
+            "PreShareKey": "123456",
+            "NegotiationType": "",
+            "DpdEnable": -1,
+            "DpdTimeout": "",
+            "DpdAction": "",
             "VpnProto": "IPSEC",
-            "IPSECOptionsSpecification": {
-                "PfsDhGroup": "",
-                "IPSECSaLifetimeTraffic": 1,
-                "EncryptAlgorithm": "",
-                "IPSECSaLifetimeSeconds": 1,
-                "IntegrityAlgorith": ""
-            },
-            "SecurityPolicyDatabaseSet": [
-                {
-                    "LocalCidrBlock": "10.8.4.0/24",
-                    "RemoteCidrBlock": [
-                        "58.211.1.0/24"
-                    ]
-                }
-            ],
-            "State": "PENGDING",
-            "HealthCheckLocalIp": "",
-            "HealthCheckStatus": "",
-            "VpnGatewayId": "vpngw-1w9tue3d",
-            "CreatedTime": "2020-09-22 00:00:00",
-            "CustomerGatewayId": "cgw-qa9sxpy7",
+            "EncryptProto": "IKE",
+            "RouteType": "STATIC",
+            "CreatedTime": "0000-00-00 00:00:00",
+            "NetStatus": "",
+            "SecurityPolicyDatabaseSet": [],
             "IKEOptionsSpecification": {
-                "IKEVersion": "",
-                "RemoteIdentity": "",
-                "PropoAuthenAlgorithm": "",
-                "RemoteAddress": "",
+                "PropoEncryAlgorithm": "AES-CBC-256",
+                "PropoAuthenAlgorithm": "SHA",
+                "ExchangeMode": "AGGRESSIVE",
+                "LocalIdentity": "ADDRESS",
+                "RemoteIdentity": "ADDRESS",
+                "LocalAddress": "122.152.199.99",
+                "RemoteAddress": "39.97.38.104",
                 "LocalFqdnName": "",
-                "LocalIdentity": "",
-                "LocalAddress": "",
                 "RemoteFqdnName": "",
-                "ExchangeMode": "",
-                "IKESaLifetimeSeconds": 1,
-                "PropoEncryAlgorithm": "",
-                "DhGroupName": ""
+                "DhGroupName": "GROUP2",
+                "IKESaLifetimeSeconds": 86400,
+                "IKEVersion": "IKEV1"
             },
-            "RouteType": "STATIC"
+            "IPSECOptionsSpecification": {
+                "EncryptAlgorithm": "AES-CBC-256",
+                "IntegrityAlgorith": "SHA1",
+                "IPSECSaLifetimeSeconds": 3600,
+                "IPSECSaLifetimeTraffic": 1843200,
+                "PfsDhGroup": "NULL"
+            },
+            "EnableHealthCheck": false,
+            "HealthCheckLocalIp": "",
+            "HealthCheckRemoteIp": "",
+            "HealthCheckStatus": "",
+            "TagSet": []
         },
-        "RequestId": "74883e1b-5901-46de-ae1e-d6e2cf591c5b"
+        "RequestId": "4b71dd4d-a3ee-4ac1-b99a-99d65f6443fd"
     }
 }
 ```
