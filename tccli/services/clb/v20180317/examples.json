@@ -622,7 +622,7 @@
     ],
     "ModifyRule": [
       {
-        "document": "",
+        "document": "修改一条转发规则的健康检查参数及转发策略。",
         "input": "https://clb.tencentcloudapi.com/?Action=ModifyRule\n&LoadBalancerId=lb-cuxw2rm0\n&ListenerId=lbl-4fbxq45k\n&LocationId=loc-9dr7bsl3\n&Url=/bar\n&Scheduler=LEAST_CONN\n&SessionExpireTime=75\n&HealthCheck.HealthSwitch=1\n&HealthCheck.IntervalTime=50\n&HealthCheck.HealthNum=3\n&HealthCheck.UnHealthNum=3\n&HealthCheck.HttpCode=7\n&HealthCheck.HttpCheckPath=/check\n&HealthCheck.HttpCheckDomain=foo.net\n&HealthCheck.HttpCheckMethod=GET\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d846dfd-27f3-4d74-bc00-ec9ae0570cb0\"\n    }\n}",
         "title": "修改一条转发规则的健康检查参数及转发策略"

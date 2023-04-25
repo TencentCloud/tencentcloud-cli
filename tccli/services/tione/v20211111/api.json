@@ -1719,14 +1719,6 @@
       "document": "CreateModelService请求参数结构体",
       "members": [
         {
-          "document": "镜像信息，配置服务运行所需的镜像地址等信息",
-          "example": "无",
-          "member": "ImageInfo",
-          "name": "ImageInfo",
-          "required": true,
-          "type": "object"
-        },
-        {
           "document": "新增版本时需要填写",
           "example": "ms-testtest",
           "member": "string",
@@ -1751,7 +1743,7 @@
           "type": "string"
         },
         {
-          "document": "付费模式,有 PREPAID 、 POSTPAID_BY_HOUR 和 HYBRID_PAID 三种",
+          "document": "付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
@@ -1775,6 +1767,14 @@
           "type": "object"
         },
         {
+          "document": "镜像信息，配置服务运行所需的镜像地址等信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
           "document": "环境变量，可选参数，用于配置容器中的环境变量",
           "example": "无",
           "member": "EnvVar",
@@ -1783,7 +1783,7 @@
           "type": "list"
         },
         {
-          "document": "资源描述，指定预付费模式下的cpu,mem,gpu等信息，后付费无需填写",
+          "document": "资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写",
           "example": "无",
           "member": "ResourceInfo",
           "name": "Resources",
@@ -3936,7 +3936,7 @@
           "type": "string"
         },
         {
-          "document": "付费模式：POSTPAID_BY_HOUR后付费、PREPAID预付费",
+          "document": "付费模式：POSTPAID_BY_HOUR按量付费、PREPAID包年包月",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
@@ -7875,7 +7875,6 @@
       "document": "定时的事务和行为",
       "members": [
         {
-          "default": "",
           "document": "是否要定时停止服务，true or false。true 则 ScheduleStopTime 必填， false 则 ScheduleStopTime 不生效",
           "example": "True",
           "member": "bool",
@@ -7885,7 +7884,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”",
           "example": "2022-01-26T19:46:22+08:00",
           "member": "string",
@@ -7895,7 +7893,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SchemaInfo": {
       "document": "表格数据集表头信息",
@@ -7973,7 +7971,6 @@
       "document": "描述在线服务",
       "members": [
         {
-          "default": "",
           "document": "服务组id",
           "example": "ms-testtest",
           "member": "string",
@@ -7983,7 +7980,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务id",
           "example": "ms-testtest-0",
           "member": "string",
@@ -7993,7 +7989,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务组名",
           "example": "ms-testtest-0",
           "member": "string",
@@ -8003,7 +7998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms-testtest-0",
           "member": "string",
@@ -8013,7 +8007,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-sssss",
           "member": "string",
@@ -8023,7 +8016,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
           "member": "string",
@@ -8033,7 +8025,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "infer-eeeee",
           "member": "string",
@@ -8043,7 +8034,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PRE_PAID",
           "member": "string",
@@ -8053,8 +8043,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "后付费资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包年包月服务的资源组id，按量计费的服务为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rr-sssss",
           "member": "string",
           "name": "ResourceGroupId",
@@ -8063,7 +8052,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1541252152",
           "member": "string",
@@ -8073,7 +8061,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms-testtest",
           "member": "string",
@@ -8083,7 +8070,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms-testtest",
           "member": "string",
@@ -8093,7 +8079,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1541252152",
           "member": "string",
@@ -8103,7 +8088,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1541252152",
           "member": "string",
@@ -8113,7 +8097,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "app_id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1541252152",
           "member": "int64",
@@ -8123,7 +8106,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8133,7 +8115,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务组下服务的最高版本号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -8143,7 +8124,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ServiceInfo",
@@ -8153,7 +8133,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务的业务状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CREATING",
           "member": "string",
@@ -8163,7 +8142,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务的创建来源\nAUTO_ML: 来自自动学习的一键发布\nDEFAULT: 其他来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AUTO_ML",
           "member": "string",
@@ -8173,7 +8151,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "费用信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "模型服务计费中：1.2元/小时",
           "member": "string",
@@ -8183,7 +8160,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务状态\nCREATING 创建中\nCREATE_FAILED 创建失败\nNormal\t正常运行中\nStopped  已停止\nStopping 停止中\nAbnormal 异常\nPending 启动中\nWaiting 就绪中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
@@ -8193,7 +8169,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模型权重\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
@@ -8203,7 +8178,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务所在的 ingress 的 name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "my-ingress",
           "member": "string",
@@ -8213,7 +8187,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务限速限流相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ServiceLimit",
@@ -8223,7 +8196,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "定时停止的配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ScheduledAction",
@@ -8233,7 +8205,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "api网关注册失败",
           "member": "string",
@@ -8243,8 +8214,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "预付费服务对应的资源组名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包年包月服务对应的资源组名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pregroup",
           "member": "string",
           "name": "ResourceGroupName",
@@ -8253,7 +8223,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Tag",
@@ -8745,6 +8714,51 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "定时伸缩策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HPC",
+          "member": "string",
+          "name": "ScaleStrategy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "定时伸缩任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CronScaleJob",
+          "name": "CronScaleJobs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例数量调节方式,默认为手动\n支持：自动 - \"AUTO\", 手动 - \"MANUAL\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AUTO",
+          "member": "string",
+          "name": "ScaleMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务限速限流相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceLimit",
+          "name": "ServiceLimit",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "定时停止的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScheduledAction",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8753,7 +8767,6 @@
       "document": "服务的限流限速等配置",
       "members": [
         {
-          "default": "",
           "document": "是否开启实例层面限流限速，true or false。true 则 InstanceRpsLimit 必填， false 则 InstanceRpsLimit 不生效",
           "example": "True",
           "member": "bool",
@@ -8763,7 +8776,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "每个服务实例的 request per second 限速, 0 为不限流",
           "example": "300",
           "member": "int64",
@@ -8773,7 +8785,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Spec": {
       "document": "计费项内容",
@@ -8903,7 +8915,6 @@
       "document": "启动命令信息",
       "members": [
         {
-          "default": "",
           "document": "启动命令",
           "example": "无",
           "member": "string",
@@ -8913,7 +8924,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "ps启动命令",
           "example": "无",
           "member": "string",
@@ -8923,7 +8933,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "worker启动命令",
           "example": "无",
           "member": "string",
@@ -8933,7 +8942,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "StartTrainingTaskRequest": {
       "document": "StartTrainingTask请求参数结构体",

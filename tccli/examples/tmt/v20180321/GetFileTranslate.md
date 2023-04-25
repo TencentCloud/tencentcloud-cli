@@ -1,6 +1,6 @@
-**Example 1: 示例1 通过文件数据来调用接口**
+**Example 1: 文件翻译结果查询调用示例**
 
-
+通过文件数据来调用接口
 
 Input: 
 
@@ -18,9 +18,9 @@ Output:
             "FileData": "",
             "TaskId": "100001",
             "Message": "",
-            "Progress": "80"
+            "Progress": 80
         },
-        "RequestId": "xx"
+        "RequestId": "1e1cffb3-3637-47f3-b6ef-5b529e08c3c8"
     }
 }
 ```

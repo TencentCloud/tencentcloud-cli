@@ -54,6 +54,7 @@ Output:
                 "LogEnable": false,
                 "LogConfig": null,
                 "AuthorizationEnable": false,
+                "ScaleMode": "MANUAL",
                 "HorizontalPodAutoscaler": null,
                 "Status": null,
                 "Weight": 0,

@@ -2239,7 +2239,6 @@
       "document": "CreateConfigExtra请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "采集配置规程名称，最长63个字符，只能包含小写字符、数字及分隔符（“-”），且必须以小写字符开头，数字或小写字符结尾",
           "example": "table-xxx1",
           "member": "string",
@@ -2248,7 +2247,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志主题id",
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
@@ -2257,7 +2255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "类型：container_stdout、container_file、host_file",
           "example": "container_stdout",
           "member": "string",
@@ -2266,7 +2263,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
           "example": "minimalist_log",
           "member": "string",
@@ -2275,7 +2271,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "采集配置标",
           "example": "label_k8s",
           "member": "string",
@@ -2284,7 +2279,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志集id",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -2293,7 +2287,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志集name",
           "example": "xxxxx",
           "member": "string",
@@ -2302,7 +2295,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志主题名称",
           "example": "xxxxx",
           "member": "string",
@@ -2311,7 +2303,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "节点文件配置信息",
           "example": "无",
           "member": "HostFileInfo",
@@ -2320,7 +2311,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "容器文件路径信息",
           "example": "无",
           "member": "ContainerFileInfo",
@@ -2329,7 +2319,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "容器标准输出信息",
           "example": "无",
           "member": "ContainerStdoutInfo",
@@ -2338,7 +2327,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "日志格式化方式",
           "example": "无",
           "member": "string",
@@ -2347,7 +2335,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
           "example": "无",
           "member": "ExtractRuleInfo",
@@ -2356,7 +2343,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "采集黑名单路径列表",
           "example": "无",
           "member": "ExcludePathInfo",
@@ -2365,7 +2351,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "用户自定义采集规则，Json格式序列化的字符串",
           "example": "无",
           "member": "string",
@@ -2374,7 +2359,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "绑定的机器组id",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
@@ -2383,7 +2367,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "绑定的机器组id列表",
           "example": "[\"11\",\"22\"]",
           "member": "string",
@@ -2402,7 +2385,6 @@
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "ConfigExtraId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -203,6 +203,13 @@
       "output": "DescribeUserQuotaResponse",
       "status": "online"
     },
+    "ModifyFileSystemAutoScaleUpRule": {
+      "document": "用来设置文件系统扩容策略",
+      "input": "ModifyFileSystemAutoScaleUpRuleRequest",
+      "name": "更新文件系统自动扩容策略",
+      "output": "ModifyFileSystemAutoScaleUpRuleResponse",
+      "status": "online"
+    },
     "ScaleUpFileSystem": {
       "document": "该接口用于对turbo 文件系统扩容使用",
       "input": "ScaleUpFileSystemRequest",
@@ -2997,6 +3004,88 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyFileSystemAutoScaleUpRuleRequest": {
+      "document": "ModifyFileSystemAutoScaleUpRule请求参数结构体",
+      "members": [
+        {
+          "document": "文件系统id",
+          "example": "cfs-x",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "扩容阈值，范围[10-90]",
+          "example": "90",
+          "member": "uint64",
+          "name": "ScaleUpThreshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "扩容后目标阈值,范围[10-90],该值要小于ScaleUpThreshold",
+          "example": "80",
+          "member": "uint64",
+          "name": "TargetThreshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "规则状态0:关闭，1 开启\n",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFileSystemAutoScaleUpRuleResponse": {
+      "document": "ModifyFileSystemAutoScaleUpRule返回参数结构体",
+      "members": [
+        {
+          "document": "文件系统id",
+          "example": "cfs-x",
+          "member": "string",
+          "name": "FileSystemId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则状态0:关闭，1 开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩容阈值,范围[10-90]",
+          "example": "85",
+          "member": "uint64",
+          "name": "ScaleUpThreshold",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩容后达到阈值,范围[10-90]",
+          "example": "75",
+          "member": "uint64",
+          "name": "TargetThreshold",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "MountInfo": {
       "document": "挂载点信息",

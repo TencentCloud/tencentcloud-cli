@@ -2,18 +2,18 @@
   "actions": {
     "FileTranslate": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: FileTranslate\nX-TC-Timestamp: 1599142560\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6B2xxxxx/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=524ed61a4a71de417f4fa41249dcb428a0c51013890f24f3492068ca7cd16953\n<公共请求参数>\n\n{\n    \"Data\": \"eGNmYXNkZmFzZmFzZGZhc2RmCg==\",\n    \"Source\": \"zh\",\n    \"Target\": \"en\",\n    \"DocumentType\": \"pdf\",\n    \"SourceType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Data\": {\n            \"TaskId\": 1396665\n        }\n    }\n}",
-        "title": "示例1 通过文件数据来调用接口"
+        "document": "通过文件数据来调用接口",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FileTranslate\n<公共请求参数>\n\n{\n    \"SourceType\": 1,\n    \"Source\": \"zh\",\n    \"Target\": \"en\",\n    \"DocumentType\": \"txt\",\n    \"Data\": \"5L2g5aW944CC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Data\": {\n            \"TaskId\": \"1396665\"\n        }\n    }\n}",
+        "title": "文件翻译请求调用示例"
       }
     ],
     "GetFileTranslate": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: GetFileTranslate\nX-TC-Timestamp: 1599142560\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6B2xxxxx/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=524ed61a4a71de417f4fa41249dcb428a0c51013890f24f3492068ca7cd16953\n<公共请求参数>\n\n{\n    \"TaskId\": \"100001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": \"Wait\",\n            \"FileData\": \"\",\n            \"TaskId\": \"100001\",\n            \"Message\": \"\",\n            \"Progress\": \"80\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "示例1 通过文件数据来调用接口"
+        "document": "通过文件数据来调用接口",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFileTranslate\n<公共请求参数>\n\n{\n    \"TaskId\": \"100001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": \"Wait\",\n            \"FileData\": \"\",\n            \"TaskId\": \"100001\",\n            \"Message\": \"\",\n            \"Progress\": 80\n        },\n        \"RequestId\": \"1e1cffb3-3637-47f3-b6ef-5b529e08c3c8\"\n    }\n}",
+        "title": "文件翻译结果查询调用示例"
       }
     ],
     "ImageTranslate": [
@@ -26,10 +26,10 @@
     ],
     "LanguageDetect": [
       {
-        "document": "",
-        "input": "https://tmt.tencentcloudapi.com/?Action=LanguageDetect\r\n&Text=hello\r\n&ProjectId=0\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Lang\": \"en\",\n        \"RequestId\": \"155a6879-2c39-4e36-b79c-50a68d073ffc\"\n    }\n}",
-        "title": "API调用"
+        "document": "语种识别",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LanguageDetect\n<公共请求参数>\n\n{\n    \"Text\": \"你好\",\n    \"ProjectId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Lang\": \"zh\",\n        \"RequestId\": \"155a6879-2c39-4e36-b79c-50a68d073ffc\"\n    }\n}",
+        "title": "语种识别调用示例"
       }
     ],
     "SpeechTranslate": [
@@ -42,18 +42,18 @@
     ],
     "TextTranslate": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslate\n<公共请求参数>\n\n{\n    \"SourceText\": \"hello\",\n    \"ProjectId\": \"0\",\n    \"Target\": \"zh\",\n    \"Source\": \"en\"\n}",
+        "document": "文本翻译",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslate\n<公共请求参数>\n\n{\n    \"SourceText\": \"hello\",\n    \"Source\": \"en\",\n    \"Target\": \"zh\",\n    \"ProjectId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TargetText\": \"你好\",\n        \"Source\": \"en\",\n        \"Target\": \"zh\",\n        \"RequestId\": \"000ee211-f19e-4a34-a214-e2bb1122d248\"\n    }\n}",
-        "title": "API调用"
+        "title": "文本翻译调用示例"
       }
     ],
     "TextTranslateBatch": [
       {
-        "document": "",
+        "document": "批量文本翻译",
         "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslateBatch\n<公共请求参数>\n\n{\n    \"SourceTextList\": [\n        \"你好\",\n        \"今天天气怎么样\"\n    ],\n    \"Source\": \"zh\",\n    \"Target\": \"en\",\n    \"ProjectId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"beb15bd7-29aa-4f0f-9a80-574d6fc3733f\",\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"TargetTextList\": [\n            \"Hello.\",\n            \"What's the weather like today?\"\n        ]\n    }\n}",
-        "title": "批量文本翻译"
+        "title": "批量文本翻译调用示例"
       }
     ]
   },

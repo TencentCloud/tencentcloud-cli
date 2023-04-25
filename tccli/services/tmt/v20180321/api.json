@@ -8,7 +8,7 @@
       "status": "online"
     },
     "GetFileTranslate": {
-      "document": "在调用文档翻译请求接口后，有回调和轮询两种方式获取识别结果。\n•当采用回调方式时，翻译完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见文档翻译结果回调 。\n• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见参数说明。",
+      "document": "在调用文档翻译请求接口后，有回调和轮询两种方式获取识别结果。\n•当采用回调方式时，翻译完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见文档翻译结果回调。\n• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见参数说明。",
       "input": "GetFileTranslateRequest",
       "name": "文件翻译结果查询",
       "output": "GetFileTranslateResponse",
@@ -36,7 +36,7 @@
       "status": "online"
     },
     "TextTranslate": {
-      "document": "提供中文到英文、英文到中文的等多种语言的文本内容翻译服务， 经过大数据语料库、多种解码算法、翻译引擎深度优化，在新闻文章、生活口语等不同语言场景中都有深厚积累，翻译结果专业评价处于行业领先水平。<br />\n提示：对于一般开发者，我们建议优先使用SDK接入简化开发。SDK使用介绍请直接查看 5. 开发者资源 部分。\n",
+      "document": "提供中文到英文、英文到中文的等多种语言的文本内容翻译服务， 经过大数据语料库、多种解码算法、翻译引擎深度优化，在新闻文章、生活口语等不同语言场景中都有深厚积累，翻译结果专业评价处于行业领先水平。<br />\n提示：对于一般开发者，我们建议优先使用SDK接入简化开发。SDK使用介绍请直接查看 5. 开发者资源 部分。",
       "input": "TextTranslateRequest",
       "name": "文本翻译",
       "output": "TextTranslateResponse",
@@ -61,7 +61,6 @@
       "document": "FileTranslate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "源语言，支持\nzh:简体中文\nzh-HK：繁体中文\nzh-TW : 繁体中文\nzh-TR:  繁体中文\nen ：英语\nar：阿拉伯语\nde：德语\nes：西班牙语\nfr：法语\nit：意大利语\nja：日语\npt：葡萄牙语\nru：俄语\nko：韩语\nkm：高棉语\nlo：老挝语",
           "example": "zh",
           "member": "string",
@@ -70,7 +69,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目标语言，各源语言的目标语言支持列表如下\nzh（简体中文）： en （英语）、 ar (阿拉伯语）、 de （德语）、  es（西班牙语） 、fr（法语）、  it（意大利语） 、 ja （日语）、 pt （葡萄牙语）、 ru（俄语）、  ko（韩语）、 km（高棉语）、   lo（老挝语）\nzh-HK（繁体中文） ：en （英语）、 ar (阿拉伯语）、 de （德语）、  es（西班牙语） 、fr（法语）、  it（意大利语） 、 ja （日语）、 pt （葡萄牙语）、 ru（俄语）、  ko（韩语）、 km（高棉语）、   lo（老挝语）\nzh-TW（繁体中文）：en （英语）、 ar (阿拉伯语）、 de （德语）、  es（西班牙语） 、fr（法语）、  it（意大利语） 、 ja （日语）、 pt （葡萄牙语）、 ru（俄语）、  ko（韩语）、 km（高棉语）、   lo（老挝语）\nzh-TR 繁体中文 : en （英语）、 ar (阿拉伯语）、 de （德语）、  es（西班牙语） 、fr（法语）、  it（意大利语） 、 ja （日语）、 pt （葡萄牙语）、 ru（俄语）、  ko（韩语）、 km（高棉语）、   lo（老挝语）\nen （英语） ：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、 zh-TR(繁体中文）、 ar (阿拉伯语）、 de （德语）、  es（西班牙语） 、fr（法语）、  it（意大利语） 、 ja （日语）、 pt （葡萄牙语）、 ru（俄语）、  ko（韩语）、 km（高棉语）、   lo（老挝语）\nar（阿拉伯语） ：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nde（德语 ）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nes（西班牙语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nfr（法语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nit（意大利语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nja（日语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\npt（葡萄牙语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nru（俄语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nko（韩语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nkm（高棉语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nlo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）",
           "example": "en",
           "member": "string",
@@ -79,7 +77,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文档类型：可支持以下几种(pdf,docx,pptx,xlsx,txt,xml,html,markdown,properties)",
           "example": "pdf",
           "member": "string",
@@ -88,7 +85,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据来源，0：url，1：直接传文件编码后数据",
           "example": "1",
           "member": "int64",
@@ -97,8 +93,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "需要翻译文件url",
+          "document": "需要翻译文件url，文件需小于100MB。",
           "example": "http://test.com",
           "member": "string",
           "name": "Url",
@@ -106,7 +101,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "原始文档类型",
           "example": "doc",
           "member": "string",
@@ -115,8 +109,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "回调url",
+          "document": "回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。",
           "example": "http://test.com",
           "member": "string",
           "name": "CallbackUrl",
@@ -124,7 +117,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。数据要小于5MB。",
           "example": "eGNmYXNkZmFzZmFzZGZhc2RmCg==",
           "member": "string",
@@ -143,7 +135,6 @@
           "example": "无",
           "member": "Task",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -216,7 +207,6 @@
       "document": "GetFileTranslate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "任务ID",
           "example": "12132323",
           "member": "string",
@@ -235,7 +225,6 @@
           "example": "2132131",
           "member": "GetFileTranslateData",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -435,16 +424,16 @@
       "document": "LanguageDetect请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "待识别的文本，文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败。单次请求的文本长度需要低于2000。",
+          "example": "你好",
           "member": "string",
           "name": "Text",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -458,6 +447,7 @@
       "members": [
         {
           "document": "识别出的语言种类，参考语言列表\n<li> zh : 中文 </li> <li> en : 英文 </li><li> jp : 日语 </li> <li> kr : 韩语 </li><li> de : 德语 </li><li> fr : 法语 </li><li> es : 西班牙文 </li> <li> it : 意大利文 </li><li> tr : 土耳其文 </li><li> ru : 俄文 </li><li> pt : 葡萄牙文 </li><li> vi : 越南文 </li><li> id : 印度尼西亚文 </li><li> ms : 马来西亚文 </li><li> th : 泰文 </li>",
+          "example": "zh",
           "member": "string",
           "name": "Lang",
           "type": "string",
@@ -672,7 +662,6 @@
       "document": "TextTranslateBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "源语言，支持： \nauto：自动识别（识别为一种语言）\nzh：简体中文\nzh-TW：繁体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印尼语\nth：泰语\nms：马来西亚语\nar：阿拉伯语\nhi：印地语",
           "example": "zh",
           "member": "string",
@@ -681,7 +670,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目标语言，各源语言的目标语言支持列表如下\n\n<li> zh（简体中文）：en（英语）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）</li>\n<li>zh-TW（繁体中文）：en（英语）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）</li>\n<li>en（英语）：zh（中文）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）、ar（阿拉伯语）、hi（印地语）</li>\n<li>ja（日语）：zh（中文）、en（英语）、ko（韩语）</li>\n<li>ko（韩语）：zh（中文）、en（英语）、ja（日语）</li>\n<li>fr（法语）：zh（中文）、en（英语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）</li>\n<li>es（西班牙语）：zh（中文）、en（英语）、fr（法语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）</li>\n<li>it（意大利语）：zh（中文）、en（英语）、fr（法语）、es（西班牙语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）</li>\n<li>de（德语）：zh（中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）</li>\n<li>tr（土耳其语）：zh（中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、ru（俄语）、pt（葡萄牙语）</li>\n<li>ru（俄语）：zh（中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、pt（葡萄牙语）</li>\n<li>pt（葡萄牙语）：zh（中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）</li>\n<li>vi（越南语）：zh（中文）、en（英语）</li>\n<li>id（印尼语）：zh（中文）、en（英语）</li>\n<li>th（泰语）：zh（中文）、en（英语）</li>\n<li>ms（马来语）：zh（中文）、en（英语）</li>\n<li>ar（阿拉伯语）：en（英语）</li>\n<li>hi（印地语）：en（英语）</li>",
           "example": "en",
           "member": "string",
@@ -690,7 +678,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0",
           "example": "0",
           "member": "int64",
@@ -699,9 +686,8 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "待翻译的文本列表，批量接口可以以数组方式在一次请求中填写多个待翻译文本。文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度总和需要低于2000字符。",
-          "example": "[\"\\u4f60\\u597d\\r\\n\",\"\\u4eca\\u5929\\u5929\\u6c14\\u600e\\u4e48\\u6837\\r\\n\"]",
+          "document": "待翻译的文本列表，批量接口可以以数组方式在一次请求中填写多个待翻译文本。文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度总和需要低于6000字符。",
+          "example": "[\"你好\",\"今天天气怎么样\"]",
           "member": "string",
           "name": "SourceTextList",
           "required": true,
@@ -714,11 +700,10 @@
       "document": "TextTranslateBatch返回参数结构体",
       "members": [
         {
-          "document": "源语言，详见入参Target",
+          "document": "源语言，详见入参Source",
           "example": "zh",
           "member": "string",
           "name": "Source",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -727,7 +712,6 @@
           "example": "en",
           "member": "string",
           "name": "Target",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -736,7 +720,6 @@
           "example": "[\"Hello.\",\"What's the weather like today?\"]",
           "member": "string",
           "name": "TargetTextList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -753,8 +736,7 @@
       "document": "TextTranslate请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "待翻译的文本，文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度需要低于2000字符。",
+          "document": "待翻译的文本，文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度需要低于6000字符。",
           "example": "hello",
           "member": "string",
           "name": "SourceText",
@@ -762,7 +744,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "源语言，支持：\nauto：自动识别（识别为一种语言）\nzh：简体中文\nzh-TW：繁体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印尼语\nth：泰语\nms：马来西亚语\nar：阿拉伯语\nhi：印地语",
           "example": "en",
           "member": "string",
@@ -771,7 +752,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目标语言，各源语言的目标语言支持列表如下\n\n<li> zh（简体中文）：en（英语）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）</li>\n<li>zh-TW（繁体中文）：en（英语）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）</li>\n<li>en（英语）：zh（中文）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）、ar（阿拉伯语）、hi（印地语）</li>\n<li>ja（日语）：zh（中文）、en（英语）、ko（韩语）</li>\n<li>ko（韩语）：zh（中文）、en（英语）、ja（日语）</li>\n<li>fr（法语）：zh（中文）、en（英语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）</li>\n<li>es（西班牙语）：zh（中文）、en（英语）、fr（法语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）</li>\n<li>it（意大利语）：zh（中文）、en（英语）、fr（法语）、es（西班牙语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）</li>\n<li>de（德语）：zh（中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）</li>\n<li>tr（土耳其语）：zh（中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、ru（俄语）、pt（葡萄牙语）</li>\n<li>ru（俄语）：zh（中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、pt（葡萄牙语）</li>\n<li>pt（葡萄牙语）：zh（中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）</li>\n<li>vi（越南语）：zh（中文）、en（英语）</li>\n<li>id（印尼语）：zh（中文）、en（英语）</li>\n<li>th（泰语）：zh（中文）、en（英语）</li>\n<li>ms（马来语）：zh（中文）、en（英语）</li>\n<li>ar（阿拉伯语）：en（英语）</li>\n<li>hi（印地语）：en（英语）</li>",
           "example": "zh",
           "member": "string",
@@ -780,7 +760,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0",
           "example": "0",
           "member": "int64",
@@ -789,7 +768,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "用来标记不希望被翻译的文本内容，如句子中的特殊符号、人名、地名等；每次请求只支持配置一个不被翻译的单词；仅支持配置人名、地名等名词，不要配置动词或短语，否则会影响翻译结果。",
           "example": "无",
           "member": "string",
@@ -808,7 +786,6 @@
           "example": "你好",
           "member": "string",
           "name": "TargetText",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -817,7 +794,6 @@
           "example": "en",
           "member": "string",
           "name": "Source",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -826,7 +802,6 @@
           "example": "zh",
           "member": "string",
           "name": "Target",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

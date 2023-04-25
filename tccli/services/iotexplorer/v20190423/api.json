@@ -7394,7 +7394,6 @@
       "document": "项目详情",
       "members": [
         {
-          "default": "",
           "document": "项目ID",
           "example": "“”",
           "member": "string",
@@ -7404,7 +7403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目名称",
           "example": "“”",
           "member": "string",
@@ -7414,7 +7412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目描述",
           "example": "“”",
           "member": "string",
@@ -7424,7 +7421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目创建时间，unix时间戳",
           "example": "0",
           "member": "uint64",
@@ -7434,7 +7430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "项目更新时间，unix时间戳",
           "example": "0",
           "member": "uint64",
@@ -7444,7 +7439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品数量",
           "example": "0",
           "member": "uint64",
@@ -7454,7 +7448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "NativeApp数量",
           "example": "0",
           "member": "uint64",
@@ -7464,7 +7457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "WebApp数量",
           "example": "0",
           "member": "uint64",
@@ -7474,7 +7466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
           "member": "string",
@@ -7484,7 +7475,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -7494,11 +7484,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "设备注册总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "DeviceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否开通物联使能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableOpenState",
           "required": true,
           "type": "int",
           "value_allowed_null": true

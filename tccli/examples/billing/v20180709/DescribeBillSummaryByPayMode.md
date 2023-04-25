@@ -35,6 +35,7 @@ Output:
                         "CashPayAmount": "0.00000000",
                         "IncentivePayAmount": "3228.80000000",
                         "VoucherPayAmount": "0.00000000",
+                        "TransferPayAmount": "0.00000000",
                         "RealTotalCostRatio": "100.00",
                         "BillMonth": "2021-12"
                     }
@@ -59,6 +60,7 @@ Output:
                         "CashPayAmount": "3.83470332",
                         "IncentivePayAmount": "15.49241354",
                         "VoucherPayAmount": "0.00000000",
+                        "TransferPayAmount": "0.00000000",
                         "RealTotalCostRatio": "96.00",
                         "BillMonth": "2021-12"
                     },
@@ -70,6 +72,7 @@ Output:
                         "CashPayAmount": "0.00000000",
                         "IncentivePayAmount": "0.80604458",
                         "VoucherPayAmount": "0.00000000",
+                        "TransferPayAmount": "0.00000000",
                         "RealTotalCostRatio": "4.00",
                         "BillMonth": "2021-12"
                     },
@@ -81,6 +84,7 @@ Output:
                         "CashPayAmount": "0.00000000",
                         "IncentivePayAmount": "0.00000000",
                         "VoucherPayAmount": "0.00000000",
+                        "TransferPayAmount": "0.00000000",
                         "RealTotalCostRatio": "0.00",
                         "BillMonth": "2021-12"
                     },
@@ -92,6 +96,7 @@ Output:
                         "CashPayAmount": "-3.83470332",
                         "IncentivePayAmount": "0.14154188",
                         "VoucherPayAmount": "0.00000000",
+                        "TransferPayAmount": "0.00000000",
                         "RealTotalCostRatio": "0.00",
                         "BillMonth": "2021-12"
                     }

@@ -232,6 +232,14 @@
         "title": "查询文件系统配额"
       }
     ],
+    "ModifyFileSystemAutoScaleUpRule": [
+      {
+        "document": "更新文件系统自动扩容策略",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCFSFileSystemAutoScaleRule\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-agaga\",\n    \"Status\": 1,\n    \"ScaleUpThreshold\": 85,\n    \"TargetThreshold\": 70\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"gagagagad-xdx\",\n        \"FileSystemId\": \"cfs-agaga\",\n        \"Status\": 1,\n        \"ScaleUpThreshold\": 85,\n        \"TargetThreshold\": 70\n    }\n}",
+        "title": "ModifyCFSFileSystemAutoScaleRule"
+      }
+    ],
     "ScaleUpFileSystem": [
       {
         "document": "扩容文件系统",

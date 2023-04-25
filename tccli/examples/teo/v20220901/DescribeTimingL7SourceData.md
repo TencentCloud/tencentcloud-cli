@@ -1,54 +1,6 @@
-**Example 1: 查询七层回源分析类时序数据**
+**Example 1: 查询指定源站的回源分析时序数据**
 
-
-
-Input: 
-
-```
-tccli teo DescribeTimingL7SourceData --cli-unfold-argument  \
-    --EndTime 2022-08-29T19:17:59+08:00 \
-    --Interval day \
-    --Area mainland \
-    --StartTime 2022-07-31T00:00:00+08:00 \
-    --MetricNames l7Flow_request_hy
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "141a7ccd-9713-43a2-91d5-1b47692d0609",
-        "TimingDataRecords": [
-            {
-                "TypeKey": "251227260",
-                "TypeValue": [
-                    {
-                        "Avg": 803,
-                        "Detail": [
-                            {
-                                "Timestamp": 1659139200,
-                                "Value": 0
-                            },
-                            {
-                                "Timestamp": 1661731200,
-                                "Value": 0
-                            }
-                        ],
-                        "Max": 7921,
-                        "MetricName": "l7Flow_request_hy",
-                        "Sum": 24918
-                    }
-                ]
-            }
-        ],
-        "TotalCount": 1
-    }
-}
-```
-
-**Example 2: 查询指定源站的回源分析时序数据**
-
-
+查询源站值为119.28.108.213的各项回源指标数据
 
 Input: 
 
@@ -202,9 +154,9 @@ Output:
 }
 ```
 
-**Example 3: 查询指定源站组的回源分析时序数据**
+**Example 2: 查询指定源站组的回源分析时序数据**
 
-
+查询源站组名称为origin-2be4c888-82a1-11ed-b61e-525400931057的各项回源指标数据
 
 Input: 
 
@@ -325,6 +277,54 @@ Output:
                         "Max": 394,
                         "MetricName": "l7Flow_inBandwidth_hy",
                         "Sum": 418
+                    }
+                ]
+            }
+        ],
+        "TotalCount": 1
+    }
+}
+```
+
+**Example 3: 查询回源分析类时序数据**
+
+查询最近三十天的回源请求数据
+
+Input: 
+
+```
+tccli teo DescribeTimingL7SourceData --cli-unfold-argument  \
+    --EndTime 2022-08-29T19:17:59+08:00 \
+    --Interval day \
+    --Area mainland \
+    --StartTime 2022-07-31T00:00:00+08:00 \
+    --MetricNames l7Flow_request_hy
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "141a7ccd-9713-43a2-91d5-1b47692d0609",
+        "TimingDataRecords": [
+            {
+                "TypeKey": "251227260",
+                "TypeValue": [
+                    {
+                        "Avg": 803,
+                        "Detail": [
+                            {
+                                "Timestamp": 1659139200,
+                                "Value": 0
+                            },
+                            {
+                                "Timestamp": 1661731200,
+                                "Value": 0
+                            }
+                        ],
+                        "Max": 7921,
+                        "MetricName": "l7Flow_request_hy",
+                        "Sum": 24918
                     }
                 ]
             }

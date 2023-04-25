@@ -912,97 +912,88 @@
       "document": "编排原子任务",
       "members": [
         {
-          "default": "",
-          "document": "视频转码任务",
+          "document": "视频转码任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TranscodeTaskInput",
           "name": "TranscodeTask",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "视频转动图任务",
+          "document": "视频转动图任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AnimatedGraphicTaskInput",
           "name": "AnimatedGraphicTask",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "视频按时间点截图任务",
+          "document": "视频按时间点截图任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SnapshotByTimeOffsetTaskInput",
           "name": "SnapshotByTimeOffsetTask",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "视频采样截图任务",
+          "document": "视频采样截图任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SampleSnapshotTaskInput",
           "name": "SampleSnapshotTask",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "视频截雪碧图任务",
+          "document": "视频截雪碧图任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageSpriteTaskInput",
           "name": "ImageSpriteTask",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "转自适应码流任务",
+          "document": "转自适应码流任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdaptiveDynamicStreamingTaskInput",
           "name": "AdaptiveDynamicStreamingTask",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "视频内容审核类型任务",
+          "document": "视频内容审核类型任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "视频内容分析类型任务",
+          "document": "视频内容分析类型任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "视频内容识别类型任务",
+          "document": "视频内容识别类型任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ActivityResItem": {
       "document": "编排子任务输出",
@@ -19693,7 +19684,7 @@
           "member": "string",
           "name": "Status",
           "required": true,
-          "type": "list",
+          "type": "string",
           "value_allowed_null": true
         },
         {

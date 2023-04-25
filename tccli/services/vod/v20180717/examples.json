@@ -1367,37 +1367,37 @@
     "ProcessMedia": [
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起转码任务，转出三种规格，使用的转码模板 ID 分别是20、30和40。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\"\n            },\n            {\n                \"Definition\": \"20\"\n            },\n            {\n                \"Definition\": \"40\"\n            }\n        ]\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": 30\n            },\n            {\n                \"Definition\": 20\n            },\n            {\n                \"Definition\": 40\n            }\n        ]\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起转码任务"
       },
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起转码任务，转出三种规格，使用的转码模板 ID 分别是20、30和40；并且所有转码视频都打上水印，水印的模板 ID 为15780。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\",\n                \"WatermarkSet\": [\n                    {\n                        \"Definition\": \"15780\"\n                    }\n                ]\n            },\n            {\n                \"Definition\": \"20\",\n                \"WatermarkSet\": [\n                    {\n                        \"Definition\": \"15780\"\n                    }\n                ]\n            },\n            {\n                \"Definition\": \"40\",\n                \"WatermarkSet\": [\n                    {\n                        \"Definition\": \"15780\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": 30,\n                \"WatermarkSet\": [\n                    {\n                        \"Definition\": 15780\n                    }\n                ]\n            },\n            {\n                \"Definition\": 20,\n                \"WatermarkSet\": [\n                    {\n                        \"Definition\": 15780\n                    }\n                ]\n            },\n            {\n                \"Definition\": 40,\n                \"WatermarkSet\": [\n                    {\n                        \"Definition\": 15780\n                    }\n                ]\n            }\n        ]\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起带水印的转码任务"
       },
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起转码任务，转出三种规格，使用的转码模板 ID 分别是20、30和40；同时还对视频做采样截图，使用的采样截图的模板 ID 是10。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\"\n            },\n            {\n                \"Definition\": \"20\"\n            },\n            {\n                \"Definition\": \"40\"\n            }\n        ],\n        \"SampleSnapshotTaskSet\": [\n            {\n                \"Definition\": \"10\"\n            }\n        ]\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": 30\n            },\n            {\n                \"Definition\": 20\n            },\n            {\n                \"Definition\": 40\n            }\n        ],\n        \"SampleSnapshotTaskSet\": [\n            {\n                \"Definition\": 10\n            }\n        ]\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起转码和采样截图任务"
       },
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起内容分析任务 (包括智能分类、智能标签、智能封面)，使用的内容分析的模板 ID 是 10。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"AiAnalysisTask\": {\n        \"Definition\": \"10\"\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"AiAnalysisTask\": {\n        \"Definition\": 10\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07586237bcecodb01fac7kdikk\"\n    }\n}",
         "title": "发起智能内容分析任务"
       },
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起内容审核任务（令人反感的信息、不安全的信息、不适宜的信息），使用的内容审核模板 ID 是 10。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"AiContentReviewTask\": {\n        \"Definition\": \"10\"\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"AiContentReviewTask\": {\n        \"Definition\": 10\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起内容审核任务"
       },
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起内容识别任务 (包括人脸识别)，使用的内容识别的模板 ID 是 10。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"AiRecognitionTask\": {\n        \"Definition\": \"10\"\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"AiRecognitionTask\": {\n        \"Definition\": 10\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc70006fje1\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07586237bcecodb01fac7kdabc\"\n    }\n}",
         "title": "发起内容识别任务"
       }

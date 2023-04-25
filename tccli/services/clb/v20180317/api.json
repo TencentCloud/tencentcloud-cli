@@ -7961,7 +7961,6 @@
       "document": "ModifyRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "负载均衡实例 ID。",
           "example": "lb-cuxw2rm0",
           "member": "string",
@@ -7970,7 +7969,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "负载均衡监听器 ID。",
           "example": "lbl-4fbxq45k",
           "member": "string",
@@ -7979,7 +7977,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "要修改的转发规则的 ID。",
           "example": "loc-9dr7bsl3",
           "member": "string",
@@ -7988,7 +7985,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "转发规则的新的转发路径，如不需修改Url，则不需提供此参数。",
           "example": "/bar",
           "member": "string",
@@ -7997,7 +7993,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "健康检查信息。",
           "example": "无",
           "member": "HealthCheck",
@@ -8006,7 +8001,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH\n分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。",
           "example": "LEAST_CONN",
           "member": "string",
@@ -8015,7 +8009,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "会话保持时间。",
           "example": "75",
           "member": "int64",
@@ -8024,7 +8017,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "负载均衡实例与后端服务之间的转发协议，默认HTTP，可取值：HTTP、HTTPS、TRPC。",
           "example": "HTTP",
           "member": "string",
@@ -8033,8 +8025,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "TRPC被调服务器路由，ForwardType为TRPC时必填。",
+          "document": "TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。",
           "example": "xyz",
           "member": "string",
           "name": "TrpcCallee",
@@ -8042,8 +8033,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "TRPC调用服务接口，ForwardType为TRPC时必填。",
+          "document": "TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。",
           "example": "abc",
           "member": "string",
           "name": "TrpcFunc",
@@ -8934,7 +8924,6 @@
       "document": "HTTP/HTTPS转发规则（输入）",
       "members": [
         {
-          "default": "",
           "document": "转发规则的路径。长度限制为：1~200。",
           "example": "/xxxx",
           "member": "string",
@@ -8944,7 +8933,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。",
           "example": "www.xxxx.com",
           "member": "string",
@@ -8954,7 +8942,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。",
           "example": "0",
           "member": "int64",
@@ -8964,7 +8951,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)",
           "example": "{\"HealthSwitch\": 1, \"TimeOut\": 5, \"IntervalTime\": 5, \"HealthNum\"",
           "member": "HealthCheck",
@@ -8974,7 +8960,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证书信息；此参数和MultiCertInfo不能同时传入。",
           "example": "{\"SSLMode\": \"UNIDIRECTIONAL\", \"CertId\": \"fF6AGfxE\"}",
           "member": "CertificateInput",
@@ -8984,7 +8969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH\n分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。",
           "example": "WRR",
           "member": "string",
@@ -8994,7 +8978,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC",
           "example": "HTTP",
           "member": "string",
@@ -9004,7 +8987,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。",
           "example": "true",
           "member": "bool",
@@ -9014,7 +8996,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启Http2，注意，只有HTTPS域名才能开启Http2。",
           "example": "true",
           "member": "bool",
@@ -9024,7 +9005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组",
           "example": "NODE",
           "member": "string",
@@ -9034,8 +9014,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "TRPC被调服务器路由，ForwardType为TRPC时必填",
+          "document": "TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。",
           "example": "trpcall",
           "member": "string",
           "name": "TrpcCallee",
@@ -9044,8 +9023,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "TRPC调用服务接口，ForwardType为TRPC时必填",
+          "document": "TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放",
           "example": "trpcFunc",
           "member": "string",
           "name": "TrpcFunc",
@@ -9054,7 +9032,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启QUIC，注意，只有HTTPS域名才能开启QUIC",
           "example": "true",
           "member": "bool",
@@ -9064,7 +9041,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。",
           "example": "[\"www.xxxx.com\"]",
           "member": "string",
@@ -9074,7 +9050,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。",
           "example": "无",
           "member": "MultiCertInfo",
@@ -9090,7 +9065,6 @@
       "document": "HTTP/HTTPS监听器的转发规则（输出）",
       "members": [
         {
-          "default": "",
           "document": "转发规则的 ID",
           "example": "loc-xxx",
           "member": "string",
@@ -9100,7 +9074,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发规则的域名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.xxxx.com",
           "member": "string",
@@ -9110,7 +9083,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "转发规则的路径。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/test",
           "member": "string",
@@ -9120,7 +9092,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "会话保持时间",
           "example": "无",
           "member": "int64",
@@ -9130,7 +9101,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "健康检查信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HealthCheck",
@@ -9140,7 +9110,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CertificateOutput",
@@ -9150,7 +9119,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则的请求转发方式",
           "example": "无",
           "member": "string",
@@ -9160,7 +9128,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发规则所属的监听器 ID",
           "example": "无",
           "member": "string",
@@ -9170,7 +9137,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发规则的重定向目标信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RewriteTarget",
@@ -9180,7 +9146,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启gzip",
           "example": "无",
           "member": "bool",
@@ -9190,7 +9155,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发规则是否为自动创建",
           "example": "无",
           "member": "bool",
@@ -9200,7 +9164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否作为默认域名",
           "example": "无",
           "member": "bool",
@@ -9210,7 +9173,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启Http2",
           "example": "无",
           "member": "bool",
@@ -9220,7 +9182,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "负载均衡与后端服务之间的转发协议",
           "example": "无",
           "member": "string",
@@ -9230,7 +9191,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转发规则的创建时间",
           "example": "无",
           "member": "string",
@@ -9240,7 +9200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "后端服务器类型",
           "example": "无",
           "member": "string",
@@ -9250,7 +9209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "绑定的目标组基本信息；当规则绑定目标组时，会返回该字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BasicTargetGroupInfo",
@@ -9260,7 +9218,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "WAF实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -9270,8 +9227,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "TRPC被调服务器路由，ForwardType为TRPC时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TrpcCallee",
@@ -9280,8 +9236,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "TRPC调用服务接口，ForwardType为TRPC时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TrpcFunc",
@@ -9290,7 +9245,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "QUIC状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -9300,7 +9254,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "转发规则的域名列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"www.xxxx.com\"]",
           "member": "string",
@@ -9310,7 +9263,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "绑定的目标组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BasicTargetGroupInfo",
