@@ -12,7 +12,6 @@ tccli tke CreateECMInstances --cli-unfold-argument  \
     --ZoneInstanceCountISPSet.0.ISP CMCC \
     --ImageId img-q9fy0if9 \
     --HostName oldhen_4986 \
-    --DataDiskSize 100 \
     --ModuleId em-0vag13d1 \
     --InstanceName 直播弹幕 \
     --EnhancedService.SecurityService.Enabled false \

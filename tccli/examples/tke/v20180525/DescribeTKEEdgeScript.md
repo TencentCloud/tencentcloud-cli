@@ -1,6 +1,6 @@
 **Example 1: 获取边缘脚本链接**
 
-
+获取边缘集群添加节点的脚本链接
 
 Input: 
 
@@ -20,7 +20,7 @@ Output:
         "Token": "123456",
         "Command": "wget www.tencent.com",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
-        "ScriptVersion": "xx"
+        "ScriptVersion": "2022112323123"
     }
 }
 ```

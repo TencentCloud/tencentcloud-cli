@@ -2240,6 +2240,13 @@
       "output": "EnableVpnGatewaySslClientCertResponse",
       "status": "online"
     },
+    "GenerateVpnConnectionDefaultHealthCheckIp": {
+      "document": "本接口（GenerateVpnConnectionDefaultHealthCheckIp）用于获取一对VPN通道健康检查地址。",
+      "input": "GenerateVpnConnectionDefaultHealthCheckIpRequest",
+      "name": "获取一对VPN通道健康检查地址",
+      "output": "GenerateVpnConnectionDefaultHealthCheckIpResponse",
+      "status": "online"
+    },
     "GetCcnRegionBandwidthLimits": {
       "document": "本接口（GetCcnRegionBandwidthLimits）用于查询云联网相关地域带宽信息，其中预付费模式的云联网仅支持地域间限速，后付费模式的云联网支持地域间限速和地域出口限速。",
       "input": "GetCcnRegionBandwidthLimitsRequest",
@@ -10991,7 +10998,6 @@
       "document": "CreateWanServiceInternal请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "原VPC OSS APIv2名称: AddWanService.detail",
           "example": "无",
           "member": "VpcOssWanService",
@@ -11011,7 +11017,6 @@
           "example": "无",
           "member": "VpcOssWanServiceResult",
           "name": "AddWanServiceResult",
-          "required": false,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 2
@@ -28957,6 +28962,51 @@
         }
       ],
       "usage": "out"
+    },
+    "GenerateVpnConnectionDefaultHealthCheckIpRequest": {
+      "document": "GenerateVpnConnectionDefaultHealthCheckIp请求参数结构体",
+      "members": [
+        {
+          "document": "VPN网关id， 例如：vpngw-1w9tue3d",
+          "example": "vpngw-1w9tue3d",
+          "member": "string",
+          "name": "VpnGatewayId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateVpnConnectionDefaultHealthCheckIpResponse": {
+      "document": "GenerateVpnConnectionDefaultHealthCheckIp返回参数结构体",
+      "members": [
+        {
+          "document": "VPN通道健康检查本端ip",
+          "example": "169.254.128.1",
+          "member": "string",
+          "name": "HealthCheckLocalIp",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "VPN通道健康检查对端ip",
+          "example": "169.254.128.2",
+          "member": "string",
+          "name": "HealthCheckRemoteIp",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetCcnRegionBandwidthLimitsRequest": {
       "document": "GetCcnRegionBandwidthLimits请求参数结构体",

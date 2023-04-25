@@ -18,9 +18,21 @@ Output:
         "Domain": "domain.com",
         "SnapshotId": "A45A0XXX",
         "Total": 63,
-        "Failed": 0,
+        "Failed": 1,
         "CostMinutes": 1,
-        "FailedRecordList": [],
+        "FailedRecordList": [
+            {
+                "RecordId": "15772994",
+                "SubDomain": "@",
+                "RecordType": "CNAME",
+                "RecordLine": "test",
+                "Value": "mailhz.qiye.163.com.",
+                "Weight": null,
+                "Reason": "线路不存在",
+                "TTL": "600",
+                "MX": "0"
+            }
+        ],
         "Timeout": null
     }
 }

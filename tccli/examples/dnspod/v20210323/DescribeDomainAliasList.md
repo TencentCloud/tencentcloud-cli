@@ -17,7 +17,8 @@ Output:
         "DomainAliasList": [
             {
                 "DomainAlias": "cc.cc",
-                "Id": 16063
+                "Id": 16063,
+                "Status": 2
             }
         ]
     }

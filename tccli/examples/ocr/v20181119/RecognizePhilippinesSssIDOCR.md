@@ -1,6 +1,6 @@
-**Example 1: 菲律宾SSSID识别**
+**Example 1: 菲律宾SSSID/UMID识别**
 
-
+菲律宾SSSID/UMID识别
 
 Input: 
 

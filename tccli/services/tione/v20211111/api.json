@@ -4247,7 +4247,7 @@
           "visibility": 1
         },
         {
-          "document": "付费模式：POSTPAID_BY_HOUR按量付费、PREPAID包年包月",
+          "document": "付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",

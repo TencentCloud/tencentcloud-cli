@@ -888,7 +888,7 @@
     ],
     "CreateWanServiceInternal": [
       {
-        "document": "",
+        "document": "添加外网服务.",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWanServiceInternal\n<公共请求参数>\n\n{\n    \"AddWanServiceSet\": [\n        {\n            \"Vip\": \"10.6.2.3\",\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"GroupId\": \"1\",\n            \"VirtualPort\": \"8181\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AddWanServiceResult\": [\n            {\n                \"Vip\": \"10.133.192.110\",\n                \"VpcId\": 1,\n                \"UniqueVpcId\": \"vpc-5k6fot41\",\n                \"Protocol\": \"tcp\",\n                \"VirtualPort\": 81,\n                \"VpcGatewayIp\": \"9.30.232.100\",\n                \"Type\": 1,\n                \"CreateTime\": \"0000-00-00 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "添加外网服务"
@@ -2906,6 +2906,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=EnableVpnGatewaySslClientCert\n&SslVpnClientId=vpnc-xxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
         "title": "启用SSL-VPN-CLIENT证书"
+      }
+    ],
+    "GenerateVpnConnectionDefaultHealthCheckIp": [
+      {
+        "document": "获取一对VPN通道健康检查地址",
+        "input": "https://vpc.tencentcloudapi.com/?Action=GenerateVpnConnectionDefaultHealthCheckIp\n&VpnGatewayId=vpn-ngenl4az\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckLocalIp\": \"169.254.128.2\",\n        \"HealthCheckRemoteIp\": \"169.254.128.5\",\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
+        "title": "获取一对VPN通道健康检查地址"
       }
     ],
     "GetCcnRegionBandwidthLimits": [

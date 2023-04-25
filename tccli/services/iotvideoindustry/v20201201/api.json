@@ -295,7 +295,7 @@
       "status": "online"
     },
     "DescribeDeviceList": {
-      "document": "本接口(DescribeDevicesList) 用于获取设备列表，支持模糊搜索",
+      "document": "本接口(DescribeDeviceList) 用于获取设备列表，支持模糊搜索",
       "input": "DescribeDeviceListRequest",
       "name": "获取设备列表",
       "output": "DescribeDeviceListResponse",
@@ -799,7 +799,8 @@
           "name": "DeviceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -809,7 +810,8 @@
           "name": "DeviceType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -819,7 +821,8 @@
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -829,7 +832,8 @@
           "name": "CreateTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -839,7 +843,8 @@
           "name": "ExtraInformation",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -849,7 +854,8 @@
           "name": "NickName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -859,7 +865,8 @@
           "name": "GroupPath",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -869,7 +876,8 @@
           "name": "DeviceCode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -879,7 +887,8 @@
           "name": "IsRecord",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -889,7 +898,8 @@
           "name": "Recordable",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -899,7 +909,8 @@
           "name": "Protocol",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -909,7 +920,8 @@
           "name": "GroupId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -919,7 +931,8 @@
           "name": "GroupName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -3233,7 +3246,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3242,7 +3256,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3251,7 +3266,8 @@
           "member": "string",
           "name": "NickName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3260,7 +3276,8 @@
           "member": "int64",
           "name": "DeviceTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3275,7 +3292,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "设备详细信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3284,7 +3302,8 @@
           "name": "Devices",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3436,38 +3455,46 @@
         {
           "default": "",
           "document": "rtsp地址",
+          "example": "https://test.com",
           "member": "string",
           "name": "RtspAddr",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "rtmp地址",
+          "example": "rtmp://test.com",
           "member": "string",
           "name": "RtmpAddr",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "hls地址",
+          "example": "https://test.com",
           "member": "string",
           "name": "HlsAddr",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "flv地址",
+          "example": "https://test.com",
           "member": "string",
           "name": "FlvAddr",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5114,7 +5141,8 @@
           "member": "string",
           "name": "Date",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5129,7 +5157,8 @@
           "name": "RecordingDevice",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "非录制设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5138,7 +5167,8 @@
           "name": "NonRecordingDevice",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "观看流量总数。为直播观看流量与点播观看流量之和。单位：GB\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5147,7 +5177,8 @@
           "name": "WatchFlux",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "累计有效存储容量总数。单位：GB\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5156,7 +5187,8 @@
           "name": "StorageUsage",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "X-P2P分享流量。单位 Byte\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5165,7 +5197,8 @@
           "name": "P2PFluxTotal",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "X-P2P峰值带宽。 单位bps\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5174,7 +5207,8 @@
           "name": "P2PPeakValue",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "RTMP推流路数 ( 直播推流)\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5183,7 +5217,8 @@
           "name": "LivePushTotal",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5915,7 +5950,8 @@
           "name": "EventTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5925,7 +5961,8 @@
           "name": "EventType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5935,7 +5972,8 @@
           "name": "EventDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5945,7 +5983,8 @@
           "name": "DeviceType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5955,7 +5994,8 @@
           "name": "DeviceAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5965,7 +6005,8 @@
           "name": "DeviceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5975,7 +6016,8 @@
           "name": "ChannelId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5985,7 +6027,8 @@
           "name": "EventLog",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5995,7 +6038,8 @@
           "name": "DeviceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -6360,7 +6404,8 @@
           "name": "DeviceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6370,7 +6415,8 @@
           "name": "NickName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6380,7 +6426,8 @@
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6390,7 +6437,8 @@
           "name": "ExtraInformation",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6400,7 +6448,8 @@
           "name": "DeviceType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6410,7 +6459,8 @@
           "name": "RTSPUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6420,7 +6470,8 @@
           "name": "DeviceCode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6430,7 +6481,8 @@
           "name": "IsRecord",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6440,7 +6492,8 @@
           "name": "Recordable",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6450,7 +6503,8 @@
           "name": "Protocol",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6460,7 +6514,8 @@
           "name": "CreateTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6470,7 +6525,8 @@
           "name": "ChannelNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6480,7 +6536,8 @@
           "name": "VideoChannelNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -7784,64 +7841,74 @@
       "document": "录制计划详情",
       "members": [
         {
-          "default": "",
           "document": "计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "planid",
           "member": "string",
           "name": "PlanId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "计划名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "planname",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "时间模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "templateid",
           "member": "string",
           "name": "TimeTemplateId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "时间模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "templatename",
           "member": "string",
           "name": "TimeTemplateName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "录制类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "EventId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "绑定的设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "DeviceItem",
           "name": "Devices",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "录像存储天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RecordStorageTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -7919,7 +7986,8 @@
           "name": "RecordTaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7929,7 +7997,8 @@
           "name": "RecordPlanId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7939,7 +8008,8 @@
           "name": "StartTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7949,7 +8019,8 @@
           "name": "EndTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7959,7 +8030,8 @@
           "name": "EventId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7969,7 +8041,8 @@
           "name": "VideoUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7979,7 +8052,8 @@
           "name": "RecordStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7989,7 +8063,8 @@
           "name": "SceneId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7999,7 +8074,8 @@
           "name": "WarnId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8009,7 +8085,8 @@
           "name": "RecordId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

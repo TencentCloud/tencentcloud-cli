@@ -12,7 +12,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckSnapshotRollback\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A45A0XXX\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8a0fd97-4a54-40ce-a7a9-a97523eaaf2e\",\n        \"Domain\": \"domain.com\",\n        \"SnapshotId\": \"A45A0XXX\",\n        \"Total\": 63,\n        \"Failed\": 0,\n        \"CostMinutes\": 1,\n        \"FailedRecordList\": [],\n        \"Timeout\": null\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8a0fd97-4a54-40ce-a7a9-a97523eaaf2e\",\n        \"Domain\": \"domain.com\",\n        \"SnapshotId\": \"A45A0XXX\",\n        \"Total\": 63,\n        \"Failed\": 1,\n        \"CostMinutes\": 1,\n        \"FailedRecordList\": [\n            {\n                \"RecordId\": \"15772994\",\n                \"SubDomain\": \"@\",\n                \"RecordType\": \"CNAME\",\n                \"RecordLine\": \"test\",\n                \"Value\": \"mailhz.qiye.163.com.\",\n                \"Weight\": null,\n                \"Reason\": \"线路不存在\",\n                \"TTL\": \"600\",\n                \"MX\": \"0\"\n            }\n        ],\n        \"Timeout\": null\n    }\n}",
         "title": "快照回滚前检查"
       }
     ],
@@ -176,7 +176,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainAliasList\n<公共请求参数>\n\n{\n    \"Domain\": \"myfm.cc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DomainAliasList\": [\n            {\n                \"DomainAlias\": \"cc.cc\",\n                \"Id\": 16063\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DomainAliasList\": [\n            {\n                \"DomainAlias\": \"cc.cc\",\n                \"Id\": 16063,\n                \"Status\": 2\n            }\n        ]\n    }\n}",
         "title": "获取域名别名列表"
       }
     ],

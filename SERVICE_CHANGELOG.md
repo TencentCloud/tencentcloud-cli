@@ -1,163 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 费用中心(billing) 版本：2018-07-09
-
-### 第 17 次发布
-
-发布时间：2023-04-25 01:04:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ActionSummaryOverviewItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#ActionSummaryOverviewItem)
-
-	* 新增成员：TransferPayAmount
-
-
-
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
-
-### 第 53 次发布
-
-发布时间：2023-04-25 01:08:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [AdjustCdbProxy](http://document.tencentcloudapi.woa.com/document/product/236/77513)
-* [AdjustCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77512)
-* [CloseCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77511)
-* [CreateCdbProxy](http://document.tencentcloudapi.woa.com/document/product/236/77510)
-* [CreateCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77509)
-* [DescribeCdbProxyInfo](http://document.tencentcloudapi.woa.com/document/product/236/77508)
-* [DescribeProxySupportParam](http://document.tencentcloudapi.woa.com/document/product/236/77507)
-* [ModifyCdbProxyAddressDesc](http://document.tencentcloudapi.woa.com/document/product/236/77506)
-* [ModifyCdbProxyAddressVipAndVPort](http://document.tencentcloudapi.woa.com/document/product/236/77505)
-* [ModifyCdbProxyParam](http://document.tencentcloudapi.woa.com/document/product/236/77504)
-
-新增数据结构：
-
-* [ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAddress)
-* [ProxyAllocation](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAllocation)
-* [ProxyGroupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyGroupInfo)
-* [ProxyInst](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyInst)
-* [ProxyNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyNode)
-* [ProxyNodeCustom](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyNodeCustom)
-
-
-
-## 文件存储(cfs) 版本：2019-07-19
-
-### 第 11 次发布
-
-发布时间：2023-04-25 01:10:31
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyFileSystemAutoScaleUpRule](http://document.tencentcloudapi.woa.com/document/product/582/77514)
-
-
-
-## 内容安全(cms) 版本：2019-03-21
-
-### 第 4 次发布
-
-发布时间：2023-04-25 01:14:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CodeDetail](http://document.tencentcloudapi.woa.com/document/product/1604/76800#CodeDetail)
-
-	* 新增成员：StrCharset, QrCodePosition, StrQrCodeText, Uint32QrCodeType
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 52 次发布
-
-发布时间：2023-04-25 01:26:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Component](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Component)
-
-	* 新增成员：Placeholder
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 全球应用加速(gaap) 版本：2018-05-29
-
-### 第 19 次发布
-
-发布时间：2023-04-25 01:27:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [SupportFeature](http://document.tencentcloudapi.woa.com/document/product/608/37023#SupportFeature)
-
-修改数据结构：
-
-* [RegionDetail](http://document.tencentcloudapi.woa.com/document/product/608/37023#RegionDetail)
-
-	* 新增成员：SupportFeature
-
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 21 次发布
-
-发布时间：2023-04-25 01:30:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ProjectEntryEx](http://document.tencentcloudapi.woa.com/document/product/1081/34988#ProjectEntryEx)
-
-	* 新增成员：EnableOpenState
-
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
+## 云硬盘(cbs) 版本：2017-03-12
 
 ### 第 25 次发布
 
-发布时间：2023-04-25 01:37:04
+发布时间：2023-04-26 01:07:18
 
 本次发布包含了以下内容：
 
@@ -165,49 +12,18 @@
 
 修改数据结构：
 
-* [SchedulesInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#SchedulesInfo)
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
 
-	* <font color="#dd0000">**修改成员**：</font>Status
-
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 41 次发布
-
-发布时间：2023-04-25 01:48:08
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [RabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVipInstance)
-
-	* 新增成员：ClusterStatus
-
-* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterInfo)
-
-	* 新增成员：InternalEndpoint, HttpInternalEndpoint
-
-* [RocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQNamespace)
-
-	* 新增成员：InternalEndpoint
-
-* [RocketMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQVipInstance)
-
-	* 新增成员：MaxRetention, MinRetention, Retention
+	* 新增成员：BurstPerformance
 
 
 
 
-## TI-ONE 训练平台(tione) 版本：2021-11-11
+## DNSPod(dnspod) 版本：2021-03-23
 
-### 第 20 次发布
+### 第 21 次发布
 
-发布时间：2023-04-25 01:49:47
+发布时间：2023-04-26 01:21:09
 
 本次发布包含了以下内容：
 
@@ -215,29 +31,29 @@
 
 修改接口：
 
-* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+* [RollbackSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76678)
 
-	* <font color="#dd0000">**修改入参**：</font>ImageInfo
+	* 新增入参：RecordList
 
 
 修改数据结构：
 
-* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
+* [DomainAliasInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainAliasInfo)
 
-	* 新增成员：ScaleStrategy, CronScaleJobs, ScaleMode, ServiceLimit, ScheduledAction
+	* 新增成员：Status
 
+* [SnapshotRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotRecord)
 
-
-
-## TI-ONE 训练平台(tione) 版本：2019-10-22
-
+	* 新增成员：Weight, Reason
 
 
-## 私有网络(vpc) 版本：2017-03-12
 
-### 第 80 次发布
 
-发布时间：2023-04-25 01:55:02
+## 物联网智能视频服务（行业版）(iotvideoindustry) 版本：2020-12-01
+
+### 第 9 次发布
+
+发布时间：2023-04-26 01:29:53
 
 本次发布包含了以下内容：
 
@@ -245,25 +61,127 @@
 
 修改数据结构：
 
-* [VpcOssNewService](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssNewService)
+* [RecordPlanItem](http://document.tencentcloudapi.woa.com/document/product/1361/53754#RecordPlanItem)
 
-	* 新增成员：Sip
+	* 新增成员：RecordStorageTime
 
-* [VpcOssServicePropertyRequest](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssServicePropertyRequest)
 
-	* 新增成员：Business
 
-* [VpcOssServiceRequest](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssServiceRequest)
 
-	* 新增成员：Sip
+## NLP服务(nlp) 版本：2019-04-08
 
-* [VpcOssUpdateMonitor](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssUpdateMonitor)
+### 第 6 次发布
 
-	* 新增成员：ReportFlag
+发布时间：2023-04-26 01:36:10
 
-* [VpcOssUpdateServiceVPCGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssUpdateServiceVPCGateway)
+本次发布包含了以下内容：
 
-	* 新增成员：SyncVpcGatewayIpFlag
+改善已有的文档。
+
+新增接口：
+
+* [EvaluateSentenceSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77526)
+* [EvaluateWordSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77525)
+* [GenerateKeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/77521)
+* [ParseWords](http://document.tencentcloudapi.woa.com/document/product/271/77524)
+* [RetrieveSimilarWords](http://document.tencentcloudapi.woa.com/document/product/271/77523)
+* [SentenceCorrection](http://document.tencentcloudapi.woa.com/document/product/271/77520)
+* [TextEmbellish](http://document.tencentcloudapi.woa.com/document/product/271/77519)
+* [TextWriting](http://document.tencentcloudapi.woa.com/document/product/271/77518)
+
+新增数据结构：
+
+* [BasicParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#BasicParticiple)
+* [CompoundParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#CompoundParticiple)
+* [CorrectionItem](http://document.tencentcloudapi.woa.com/document/product/271/35511#CorrectionItem)
+* [Embellish](http://document.tencentcloudapi.woa.com/document/product/271/35511#Embellish)
+* [Entity](http://document.tencentcloudapi.woa.com/document/product/271/35511#Entity)
+* [KeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/35511#KeywordSentence)
+* [SentencePair](http://document.tencentcloudapi.woa.com/document/product/271/35511#SentencePair)
+* [Writing](http://document.tencentcloudapi.woa.com/document/product/271/35511#Writing)
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 23 次发布
+
+发布时间：2023-04-26 01:41:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTawInstance](http://document.tencentcloudapi.woa.com/document/product/1464/69244)
+
+	* 新增入参：InstanceType
+
+
+修改数据结构：
+
+* [RumInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1464/61476#RumInstanceInfo)
+
+	* 新增成员：InstanceType
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 66 次发布
+
+发布时间：2023-04-26 01:51:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyClusterSchedulerPolicy](http://document.tencentcloudapi.woa.com/document/product/457/77529)
+
+修改接口：
+
+* [CreateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76646)
+
+	* 新增入参：TagSpecification
+
+* [DescribeTKEEdgeClusterCredential](http://document.tencentcloudapi.woa.com/document/product/457/76635)
+
+	* 新增出参：UnitCluster
+
+
+新增数据结构：
+
+* [SchedulerPolicyPriority](http://document.tencentcloudapi.woa.com/document/product/457/31866#SchedulerPolicyPriority)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 81 次发布
+
+发布时间：2023-04-26 01:55:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GenerateVpnConnectionDefaultHealthCheckIp](http://document.tencentcloudapi.woa.com/document/product/215/77530)
+
+修改接口：
+
+* [CreateWanServiceInternal](http://document.tencentcloudapi.woa.com/document/product/215/76007)
+
+	* <font color="#dd0000">**修改出参**：</font>AddWanServiceResult
 
 
 
@@ -5873,6 +5791,21 @@
 
 ## 云硬盘(cbs) 版本：2017-03-12
 
+### 第 25 次发布
+
+发布时间：2023-04-26 01:07:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
+
+	* 新增成员：BurstPerformance
+
+
 ### 第 24 次发布
 
 发布时间：2023-03-17 11:16:07
@@ -7019,25 +6952,25 @@
 
 新增接口：
 
-* [[AdjustCdbProxy](http://document.tencentcloudapi.woa.com/document/product/236/77513)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[AdjustCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77512)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CloseCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77511)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateCdbProxy](http://document.tencentcloudapi.woa.com/document/product/236/77510)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77509)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCdbProxyInfo](http://document.tencentcloudapi.woa.com/document/product/236/77508)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeProxySupportParam](http://document.tencentcloudapi.woa.com/document/product/236/77507)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyCdbProxyAddressDesc](http://document.tencentcloudapi.woa.com/document/product/236/77506)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyCdbProxyAddressVipAndVPort](http://document.tencentcloudapi.woa.com/document/product/236/77505)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyCdbProxyParam](http://document.tencentcloudapi.woa.com/document/product/236/77504)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AdjustCdbProxy](http://document.tencentcloudapi.woa.com/document/product/236/77513)
+* [AdjustCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77512)
+* [CloseCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77511)
+* [CreateCdbProxy](http://document.tencentcloudapi.woa.com/document/product/236/77510)
+* [CreateCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77509)
+* [DescribeCdbProxyInfo](http://document.tencentcloudapi.woa.com/document/product/236/77508)
+* [DescribeProxySupportParam](http://document.tencentcloudapi.woa.com/document/product/236/77507)
+* [ModifyCdbProxyAddressDesc](http://document.tencentcloudapi.woa.com/document/product/236/77506)
+* [ModifyCdbProxyAddressVipAndVPort](http://document.tencentcloudapi.woa.com/document/product/236/77505)
+* [ModifyCdbProxyParam](http://document.tencentcloudapi.woa.com/document/product/236/77504)
 
 新增数据结构：
 
-* [[ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAddress)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAddress))
-* [[ProxyAllocation](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAllocation)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ProxyAllocation](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAllocation))
-* [[ProxyGroupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyGroupInfo)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ProxyGroupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyGroupInfo))
-* [[ProxyInst](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyInst)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ProxyInst](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyInst))
-* [[ProxyNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyNode)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ProxyNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyNode))
-* [[ProxyNodeCustom](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyNodeCustom)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ProxyNodeCustom](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyNodeCustom))
+* [ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAddress)
+* [ProxyAllocation](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAllocation)
+* [ProxyGroupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyGroupInfo)
+* [ProxyInst](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyInst)
+* [ProxyNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyNode)
+* [ProxyNodeCustom](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyNodeCustom)
 
 ### 第 52 次发布
 
@@ -9562,7 +9495,7 @@
 
 新增接口：
 
-* [[ModifyFileSystemAutoScaleUpRule](http://document.tencentcloudapi.woa.com/document/product/582/77514)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyFileSystemAutoScaleUpRule](http://document.tencentcloudapi.woa.com/document/product/582/77514)
 
 ### 第 10 次发布
 
@@ -22188,6 +22121,32 @@
 
 ## DNSPod(dnspod) 版本：2021-03-23
 
+### 第 21 次发布
+
+发布时间：2023-04-26 01:21:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RollbackSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76678)
+
+	* 新增入参：RecordList
+
+
+修改数据结构：
+
+* [DomainAliasInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainAliasInfo)
+
+	* 新增成员：Status
+
+* [SnapshotRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotRecord)
+
+	* 新增成员：Weight, Reason
+
+
 ### 第 20 次发布
 
 发布时间：2023-04-21 01:20:42
@@ -27355,7 +27314,7 @@
 
 新增数据结构：
 
-* [[SupportFeature](http://document.tencentcloudapi.woa.com/document/product/608/37023#SupportFeature)](http://document.tencentcloudapi.woa.com/document/product/608/37023#[SupportFeature](http://document.tencentcloudapi.woa.com/document/product/608/37023#SupportFeature))
+* [SupportFeature](http://document.tencentcloudapi.woa.com/document/product/608/37023#SupportFeature)
 
 修改数据结构：
 
@@ -30783,6 +30742,21 @@
 
 
 ## 物联网智能视频服务（行业版）(iotvideoindustry) 版本：2020-12-01
+
+### 第 9 次发布
+
+发布时间：2023-04-26 01:29:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RecordPlanItem](http://document.tencentcloudapi.woa.com/document/product/1361/53754#RecordPlanItem)
+
+	* 新增成员：RecordStorageTime
+
 
 ### 第 8 次发布
 
@@ -36913,7 +36887,37 @@
 
 
 
-## 自然语言处理(nlp) 版本：2019-04-08
+## NLP服务(nlp) 版本：2019-04-08
+
+### 第 6 次发布
+
+发布时间：2023-04-26 01:36:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[EvaluateSentenceSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77526)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[EvaluateWordSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77525)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GenerateKeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/77521)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ParseWords](http://document.tencentcloudapi.woa.com/document/product/271/77524)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RetrieveSimilarWords](http://document.tencentcloudapi.woa.com/document/product/271/77523)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SentenceCorrection](http://document.tencentcloudapi.woa.com/document/product/271/77520)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[TextEmbellish](http://document.tencentcloudapi.woa.com/document/product/271/77519)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[TextWriting](http://document.tencentcloudapi.woa.com/document/product/271/77518)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BasicParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#BasicParticiple)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[BasicParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#BasicParticiple))
+* [[CompoundParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#CompoundParticiple)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[CompoundParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#CompoundParticiple))
+* [[CorrectionItem](http://document.tencentcloudapi.woa.com/document/product/271/35511#CorrectionItem)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[CorrectionItem](http://document.tencentcloudapi.woa.com/document/product/271/35511#CorrectionItem))
+* [[Embellish](http://document.tencentcloudapi.woa.com/document/product/271/35511#Embellish)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[Embellish](http://document.tencentcloudapi.woa.com/document/product/271/35511#Embellish))
+* [[Entity](http://document.tencentcloudapi.woa.com/document/product/271/35511#Entity)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[Entity](http://document.tencentcloudapi.woa.com/document/product/271/35511#Entity))
+* [[KeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/35511#KeywordSentence)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[KeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/35511#KeywordSentence))
+* [[SentencePair](http://document.tencentcloudapi.woa.com/document/product/271/35511#SentencePair)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[SentencePair](http://document.tencentcloudapi.woa.com/document/product/271/35511#SentencePair))
+* [[Writing](http://document.tencentcloudapi.woa.com/document/product/271/35511#Writing)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[Writing](http://document.tencentcloudapi.woa.com/document/product/271/35511#Writing))
 
 ### 第 5 次发布
 
@@ -41257,6 +41261,28 @@
 
 
 ## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 23 次发布
+
+发布时间：2023-04-26 01:41:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTawInstance](http://document.tencentcloudapi.woa.com/document/product/1464/69244)
+
+	* 新增入参：InstanceType
+
+
+修改数据结构：
+
+* [RumInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1464/61476#RumInstanceInfo)
+
+	* 新增成员：InstanceType
+
 
 ### 第 22 次发布
 
@@ -50393,6 +50419,33 @@
 
 ## 容器服务(tke) 版本：2018-05-25
 
+### 第 66 次发布
+
+发布时间：2023-04-26 01:51:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyClusterSchedulerPolicy](http://document.tencentcloudapi.woa.com/document/product/457/77529)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76646)
+
+	* 新增入参：TagSpecification
+
+* [DescribeTKEEdgeClusterCredential](http://document.tencentcloudapi.woa.com/document/product/457/76635)
+
+	* 新增出参：UnitCluster
+
+
+新增数据结构：
+
+* [[SchedulerPolicyPriority](http://document.tencentcloudapi.woa.com/document/product/457/31866#SchedulerPolicyPriority)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[SchedulerPolicyPriority](http://document.tencentcloudapi.woa.com/document/product/457/31866#SchedulerPolicyPriority))
+
 ### 第 65 次发布
 
 发布时间：2023-04-21 01:38:48
@@ -56826,6 +56879,25 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 81 次发布
+
+发布时间：2023-04-26 01:55:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GenerateVpnConnectionDefaultHealthCheckIp](http://document.tencentcloudapi.woa.com/document/product/215/77530)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateWanServiceInternal](http://document.tencentcloudapi.woa.com/document/product/215/76007)
+
+	* <font color="#dd0000">**修改出参**：</font>AddWanServiceResult
+
 
 ### 第 80 次发布
 

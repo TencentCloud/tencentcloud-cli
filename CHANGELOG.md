@@ -1,3 +1,191 @@
+# Release 3.0.751.1
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 25 次发布
+
+发布时间：2023-04-26 01:07:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
+
+	* 新增成员：BurstPerformance
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 21 次发布
+
+发布时间：2023-04-26 01:21:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RollbackSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76678)
+
+	* 新增入参：RecordList
+
+
+修改数据结构：
+
+* [DomainAliasInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainAliasInfo)
+
+	* 新增成员：Status
+
+* [SnapshotRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotRecord)
+
+	* 新增成员：Weight, Reason
+
+
+
+
+## 物联网智能视频服务（行业版）(iotvideoindustry) 版本：2020-12-01
+
+### 第 9 次发布
+
+发布时间：2023-04-26 01:29:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RecordPlanItem](http://document.tencentcloudapi.woa.com/document/product/1361/53754#RecordPlanItem)
+
+	* 新增成员：RecordStorageTime
+
+
+
+
+## NLP服务(nlp) 版本：2019-04-08
+
+### 第 6 次发布
+
+发布时间：2023-04-26 01:36:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [EvaluateSentenceSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77526)
+* [EvaluateWordSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77525)
+* [GenerateKeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/77521)
+* [ParseWords](http://document.tencentcloudapi.woa.com/document/product/271/77524)
+* [RetrieveSimilarWords](http://document.tencentcloudapi.woa.com/document/product/271/77523)
+* [SentenceCorrection](http://document.tencentcloudapi.woa.com/document/product/271/77520)
+* [TextEmbellish](http://document.tencentcloudapi.woa.com/document/product/271/77519)
+* [TextWriting](http://document.tencentcloudapi.woa.com/document/product/271/77518)
+
+新增数据结构：
+
+* [BasicParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#BasicParticiple)
+* [CompoundParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#CompoundParticiple)
+* [CorrectionItem](http://document.tencentcloudapi.woa.com/document/product/271/35511#CorrectionItem)
+* [Embellish](http://document.tencentcloudapi.woa.com/document/product/271/35511#Embellish)
+* [Entity](http://document.tencentcloudapi.woa.com/document/product/271/35511#Entity)
+* [KeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/35511#KeywordSentence)
+* [SentencePair](http://document.tencentcloudapi.woa.com/document/product/271/35511#SentencePair)
+* [Writing](http://document.tencentcloudapi.woa.com/document/product/271/35511#Writing)
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 23 次发布
+
+发布时间：2023-04-26 01:41:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTawInstance](http://document.tencentcloudapi.woa.com/document/product/1464/69244)
+
+	* 新增入参：InstanceType
+
+
+修改数据结构：
+
+* [RumInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1464/61476#RumInstanceInfo)
+
+	* 新增成员：InstanceType
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 66 次发布
+
+发布时间：2023-04-26 01:51:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyClusterSchedulerPolicy](http://document.tencentcloudapi.woa.com/document/product/457/77529)
+
+修改接口：
+
+* [CreateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76646)
+
+	* 新增入参：TagSpecification
+
+* [DescribeTKEEdgeClusterCredential](http://document.tencentcloudapi.woa.com/document/product/457/76635)
+
+	* 新增出参：UnitCluster
+
+
+新增数据结构：
+
+* [SchedulerPolicyPriority](http://document.tencentcloudapi.woa.com/document/product/457/31866#SchedulerPolicyPriority)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 81 次发布
+
+发布时间：2023-04-26 01:55:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GenerateVpnConnectionDefaultHealthCheckIp](http://document.tencentcloudapi.woa.com/document/product/215/77530)
+
+修改接口：
+
+* [CreateWanServiceInternal](http://document.tencentcloudapi.woa.com/document/product/215/76007)
+
+	* <font color="#dd0000">**修改出参**：</font>AddWanServiceResult
+
+
+
+
 # Release 3.0.750.1
 
 ## 费用中心(billing) 版本：2018-07-09
