@@ -70,11 +70,32 @@
       "output": "DescribeWordItemsResponse",
       "status": "online"
     },
+    "EvaluateSentenceSimilarity": {
+      "document": "通过计算句子间的语义相似性，帮助您快速找到文本中重复或相似的句子，用于文本聚类、相似问题检索等应用场景。",
+      "input": "EvaluateSentenceSimilarityRequest",
+      "name": "句子相似度V2",
+      "output": "EvaluateSentenceSimilarityResponse",
+      "status": "online"
+    },
+    "EvaluateWordSimilarity": {
+      "document": "评估两个词语在语义空间的相似程度，为您的场景应用提供有力支持，如关键词过滤、热门话题挖掘等。（目前仅支持中文）",
+      "input": "EvaluateWordSimilarityRequest",
+      "name": "词相似度V2",
+      "output": "EvaluateWordSimilarityResponse",
+      "status": "online"
+    },
     "GenerateCouplet": {
       "document": "根据用户输入的命题关键词自动生成一副春联，包括上联、下联和横批。（如需开通请联系商务）",
       "input": "GenerateCoupletRequest",
       "name": "智能春联",
       "output": "GenerateCoupletResponse",
+      "status": "online"
+    },
+    "GenerateKeywordSentence": {
+      "document": "提取文本中的关键信息，生成简洁明了的关键句子，便于用户快速获取核心观点。",
+      "input": "GenerateKeywordSentenceRequest",
+      "name": "句子生成",
+      "output": "GenerateKeywordSentenceResponse",
       "status": "online"
     },
     "GeneratePoetry": {
@@ -98,11 +119,32 @@
       "output": "LexicalAnalysisResponse",
       "status": "online"
     },
+    "ParseWords": {
+      "document": "通过精准地对文本进行分词、词性标注、命名实体识别等功能，助您更好地理解文本内容，挖掘出潜在的价值信息。",
+      "input": "ParseWordsRequest",
+      "name": "词法分析V2",
+      "output": "ParseWordsResponse",
+      "status": "online"
+    },
+    "RetrieveSimilarWords": {
+      "document": "基于大数据和深度学习技术，可以快速地找到与给定词语高度相似的其他词语，有助于提高搜索和推荐的准确性。（目前仅支持中文）",
+      "input": "RetrieveSimilarWordsRequest",
+      "name": "相似词召回",
+      "output": "RetrieveSimilarWordsResponse",
+      "status": "online"
+    },
     "SearchWordItems": {
       "document": "查询指定自定义词库中的词条是否存在。",
       "input": "SearchWordItemsRequest",
       "name": "检索词条",
       "output": "SearchWordItemsResponse",
+      "status": "online"
+    },
+    "SentenceCorrection": {
+      "document": "智能识别并纠正句子中的语法、拼写、用词等错误，确保文本的准确性和可读性。",
+      "input": "SentenceCorrectionRequest",
+      "name": "句子纠错",
+      "output": "SentenceCorrectionResponse",
       "status": "online"
     },
     "SentenceEmbedding": {
@@ -147,6 +189,13 @@
       "output": "TextCorrectionProResponse",
       "status": "online"
     },
+    "TextEmbellish": {
+      "document": "运用先进的自然语言处理技术，对原始文本进行优化润色，提升文本的通顺性、表达力和语言质量。",
+      "input": "TextEmbellishRequest",
+      "name": "文本润色",
+      "output": "TextEmbellishResponse",
+      "status": "online"
+    },
     "TextSimilarity": {
       "document": "句子相似度接口能够基于深度学习技术来计算一个源句子和多个目标句子的相似度，相似度分值越大的两个句子在语义上越相似。目前仅支持短文本（不超过500字符）的相似度计算，长文本的相似度计算也即将推出。\n\n鉴于句子相似度是一个应用非常广泛的功能，腾讯云自然语言处理团队在Bert等领先的深度神经网络模型的基础上，专门针对文本相似任务进行了优化，并持续迭代更新。基于句子相似度，可以轻松实现诸如文本去重、相似推荐等功能。\n\n接口将以句子数量为单位消耗资源包，而不是调用接口次数为单位。",
       "input": "TextSimilarityRequest",
@@ -159,6 +208,13 @@
       "input": "TextSimilarityProRequest",
       "name": "句子相似度高级版",
       "output": "TextSimilarityProResponse",
+      "status": "online"
+    },
+    "TextWriting": {
+      "document": "通过自动补全文本片段，帮助用户快速生成高质量、连贯的完整文本，提高创作效率。",
+      "input": "TextWritingRequest",
+      "name": "文本补全",
+      "output": "TextWritingResponse",
       "status": "online"
     },
     "UpdateDict": {
@@ -185,8 +241,8 @@
   },
   "metadata": {
     "apiVersion": "2019-04-08",
-    "api_brief": "介绍如何使用API对自然语言处理进行操作，包括对话机器人、词法分析、篇章分析、向量技术等。",
-    "serviceNameCN": "自然语言处理",
+    "api_brief": "介绍如何使用API对自然语言处理进行操作，包括词法分析、相似词召回、词相似度、句子相似度、文本润色、句子纠错、文本补全、句子生成等。",
+    "serviceNameCN": "NLP服务",
     "serviceShortName": "nlp"
   },
   "objects": {
@@ -234,6 +290,48 @@
         }
       ],
       "type": "object"
+    },
+    "BasicParticiple": {
+      "document": "基础粒度分词和词性标注的结果",
+      "members": [
+        {
+          "document": "基础词。",
+          "example": "无",
+          "member": "string",
+          "name": "Word",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "基础词在NormalText中的起始位置。",
+          "example": "无",
+          "member": "int64",
+          "name": "BeginOffset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "基础词的长度。",
+          "example": "无",
+          "member": "int64",
+          "name": "Length",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "词性。",
+          "example": "无",
+          "member": "string",
+          "name": "Pos",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CCIToken": {
       "document": "文本纠错结果",
@@ -436,6 +534,135 @@
         }
       ],
       "usage": "in"
+    },
+    "CompoundParticiple": {
+      "document": "复合粒度分词和词性标注的结果。",
+      "members": [
+        {
+          "document": "基础词。",
+          "example": "无",
+          "member": "string",
+          "name": "Word",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "基础词在NormalText中的起始位置。",
+          "example": "无",
+          "member": "int64",
+          "name": "BeginOffset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "基础词的长度。",
+          "example": "无",
+          "member": "int64",
+          "name": "Length",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "词性。",
+          "example": "无",
+          "member": "string",
+          "name": "Pos",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CorrectionItem": {
+      "document": "纠错结果列表",
+      "members": [
+        {
+          "document": "纠错句子的序号。",
+          "example": "无",
+          "member": "int64",
+          "name": "Order",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误的起始位置，从0开始。",
+          "example": "无",
+          "member": "int64",
+          "name": "BeginOffset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误内容长度。",
+          "example": "无",
+          "member": "int64",
+          "name": "Len",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Word",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "纠错结果，当为删除类错误时，结果为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CorrectWord",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "纠错类型。0：替换；1：插入；2：删除。",
+          "example": "无",
+          "member": "int64",
+          "name": "CorrectionType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "纠错信息置信度。0：error；1：warning；error的置信度更高。（仅供参考）",
+          "example": "无",
+          "member": "int64",
+          "name": "Confidence",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "纠错信息中文描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DescriptionZh",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "纠错信息英文描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DescriptionEn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateDictRequest": {
       "document": "CreateDict请求参数结构体",
@@ -855,6 +1082,157 @@
       ],
       "usage": "in"
     },
+    "Embellish": {
+      "document": "文本润色结果",
+      "members": [
+        {
+          "document": "润色后的文本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "而这一次的中国奥运健儿击败强敌，毫无悬念地勇夺了中国代表团的冬奥会首金和总分第三的金",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "润色类型。类型列表\nexpansion：扩写\nrewriting：改写\ntranslation_m2a：从现代文改写为古文\ntranslation_a2m：从古文改写为现代文\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "expansion",
+          "member": "string",
+          "name": "EmbellishType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Entity": {
+      "document": "实体识别结果。",
+      "members": [
+        {
+          "document": "基础词。",
+          "example": "无",
+          "member": "string",
+          "name": "Word",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "基础词在NormalText中的起始位置。",
+          "example": "无",
+          "member": "int64",
+          "name": "BeginOffset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "基础词的长度。",
+          "example": "无",
+          "member": "int64",
+          "name": "Length",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实体类型的标准名字。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "类型名字的自然语言表达。（中文或英文）",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EvaluateSentenceSimilarityRequest": {
+      "document": "EvaluateSentenceSimilarity请求参数结构体",
+      "members": [
+        {
+          "document": "待分析的句子对数组。句子对应不超过5对，支持中英文文本，原句子与目标句子均应不超过500字符。",
+          "example": "无",
+          "member": "SentencePair",
+          "name": "SentencePairList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EvaluateSentenceSimilarityResponse": {
+      "document": "EvaluateSentenceSimilarity返回参数结构体",
+      "members": [
+        {
+          "document": "每个句子对的相似度分值。",
+          "example": "无",
+          "member": "float",
+          "name": "ScoreList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EvaluateWordSimilarityRequest": {
+      "document": "EvaluateWordSimilarity请求参数结构体",
+      "members": [
+        {
+          "document": "计算相似度的源词。（仅支持UTF-8格式，不超过10字符）\n",
+          "example": "无",
+          "member": "string",
+          "name": "SourceWord",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "计算相似度的目标词。（仅支持UTF-8格式，不超过10字符）\n",
+          "example": "无",
+          "member": "string",
+          "name": "TargetWord",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EvaluateWordSimilarityResponse": {
+      "document": "EvaluateWordSimilarity返回参数结构体",
+      "members": [
+        {
+          "document": "词相似度分值。",
+          "example": "无",
+          "member": "float",
+          "name": "Similarity",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GenerateCoupletRequest": {
       "document": "GenerateCouplet请求参数结构体",
       "members": [
@@ -907,6 +1285,56 @@
           "name": "RandomCause",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateKeywordSentenceRequest": {
+      "document": "GenerateKeywordSentence请求参数结构体",
+      "members": [
+        {
+          "document": "生成句子的关键词，关键词个数需不超过4个，中文关键词长度应不超过10字符，英文关键词长度不超过3个单词。关键词中不可包含标点符号。",
+          "example": "无",
+          "member": "string",
+          "name": "WordList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "返回生成句子的个数。数量需>=1且<=5。\n（注意实际结果可能小于指定个数）",
+          "example": "无",
+          "member": "int64",
+          "name": "Number",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "指定生成句子的领域，支持领域列表\ngeneral：通用领域，支持中英文\nacademic：学术领域，仅支持英文\n默认为general（通用领域）。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateKeywordSentenceResponse": {
+      "document": "GenerateKeywordSentence返回参数结构体",
+      "members": [
+        {
+          "document": "生成的句子列表。",
+          "example": "无",
+          "member": "KeywordSentence",
+          "name": "KeywordSentenceList",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1004,6 +1432,21 @@
         }
       ],
       "usage": "in"
+    },
+    "KeywordSentence": {
+      "document": "通过关键词生成的句子信息",
+      "members": [
+        {
+          "document": "通过关键词生成的句子。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetText",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "KeywordsExtractionRequest": {
       "document": "KeywordsExtraction请求参数结构体",
@@ -1148,6 +1591,64 @@
       ],
       "usage": "out"
     },
+    "ParseWordsRequest": {
+      "document": "ParseWords请求参数结构体",
+      "members": [
+        {
+          "document": "待分析的文本（支持中英文文本，不超过500字符）",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParseWordsResponse": {
+      "document": "ParseWords返回参数结构体",
+      "members": [
+        {
+          "document": "输入文本正则化的结果。（包括对英文文本中的开头和实体进行大写等）",
+          "example": "无",
+          "member": "string",
+          "name": "NormalText",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "基础粒度分词和词性标注的结果。（词性表请参见附录）\n",
+          "example": "无",
+          "member": "BasicParticiple",
+          "name": "BasicParticiples",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "复合粒度分词和词性标注的结果。（词性表请参见附录）",
+          "example": "无",
+          "member": "CompoundParticiple",
+          "name": "CompoundParticiples",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实体识别结果。（实体类型数据请参见附录）\n",
+          "example": "无",
+          "member": "Entity",
+          "name": "Entities",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PosToken": {
       "document": "分词&词性标注结果",
       "members": [
@@ -1189,6 +1690,48 @@
         }
       ],
       "usage": "out"
+    },
+    "RetrieveSimilarWordsRequest": {
+      "document": "RetrieveSimilarWords请求参数结构体",
+      "members": [
+        {
+          "document": "输入的词语。（仅支持UTF-8格式，不超过10字符）",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "召回的相似词个数，取值范围为1-20。",
+          "example": "无",
+          "member": "int64",
+          "name": "Number",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RetrieveSimilarWordsResponse": {
+      "document": "RetrieveSimilarWords返回参数结构体",
+      "members": [
+        {
+          "document": "召回的相似词数组。",
+          "example": "无",
+          "member": "string",
+          "name": "WordList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SearchResult": {
       "document": "词条搜索的结果，主要描述该词条是否存在以及相关的词性。",
@@ -1277,6 +1820,40 @@
       ],
       "type": "object"
     },
+    "SentenceCorrectionRequest": {
+      "document": "SentenceCorrection请求参数结构体",
+      "members": [
+        {
+          "document": "待纠错的句子列表。可以以数组方式在一次请求中填写多个待纠错的句子。文本统一使用utf-8格式编码，每个中文句子的长度不超过150字符，每个英文句子的长度不超过100个单词，且数组长度需小于150，即句子总数需少于150句。",
+          "example": "无",
+          "member": "string",
+          "name": "TextList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SentenceCorrectionResponse": {
+      "document": "SentenceCorrection返回参数结构体",
+      "members": [
+        {
+          "document": "纠错结果列表。\n（注意仅展示错误句子的纠错结果，若句子无错则不展示，若全部待纠错句子都被认为无错，则可能返回数组为空）",
+          "example": "无",
+          "member": "CorrectionItem",
+          "name": "CorrectionList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SentenceEmbeddingRequest": {
       "document": "SentenceEmbedding请求参数结构体",
       "members": [
@@ -1316,6 +1893,30 @@
         }
       ],
       "type": "object"
+    },
+    "SentencePair": {
+      "document": "待分析的句子对",
+      "members": [
+        {
+          "document": "需要与目标句子计算相似度的源句子。（仅支持UTF-8格式，不超过500字符）",
+          "example": "无",
+          "member": "string",
+          "name": "SourceText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "目标句子。（仅支持UTF-8格式，不超过500字符）\n",
+          "example": "无",
+          "member": "string",
+          "name": "TargetText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "SentimentAnalysisRequest": {
       "document": "SentimentAnalysis请求参数结构体",
@@ -1598,6 +2199,64 @@
       ],
       "type": "object"
     },
+    "TextEmbellishRequest": {
+      "document": "TextEmbellish请求参数结构体",
+      "members": [
+        {
+          "document": "待润色的文本。中文文本长度需<=50字符；英文文本长度需<=30个单词。",
+          "example": "中国奥运健儿击败强敌，勇夺冬奥会首金",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "待润色文本的语言类型，支持语言列表\nzh：中文\nen：英文",
+          "example": "zh",
+          "member": "string",
+          "name": "SourceLang",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "返回润色结果的个数。数量需>=1且<=5。\n（注意实际结果可能小于指定个数）",
+          "example": "1",
+          "member": "int64",
+          "name": "Number",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "控制润色类型，类型列表\nboth：同时返回改写和扩写\nexpansion：扩写\nrewriting：改写\nm2a：从现代文改写为古文\na2m：从古文改写为现代文\n默认为both。",
+          "example": "both",
+          "member": "string",
+          "name": "Style",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextEmbellishResponse": {
+      "document": "TextEmbellish返回参数结构体",
+      "members": [
+        {
+          "document": "润色结果列表。",
+          "example": "无",
+          "member": "Embellish",
+          "name": "EmbellishList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TextSimilarityProRequest": {
       "document": "TextSimilarityPro请求参数结构体",
       "members": [
@@ -1676,6 +2335,72 @@
           "member": "Similarity",
           "name": "Similarity",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextWritingRequest": {
+      "document": "TextWriting请求参数结构体",
+      "members": [
+        {
+          "document": "待续写的句子，文本统一使用utf-8格式编码，长度不超过200字符。",
+          "example": "今天天气不错",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "待续写文本的语言类型，支持语言列表\nzh：中文\nen：英文",
+          "example": "zh",
+          "member": "string",
+          "name": "SourceLang",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "返回续写结果的个数。数量需>=1且<=5。\n（注意实际结果可能小于指定个数）",
+          "example": "2",
+          "member": "int64",
+          "name": "Number",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "指定续写领域，支持领域列表\ngeneral：通用领域，支持中英文补全\nacademic：学术领域，仅支持英文补全\n默认为general（通用领域）。",
+          "example": "general",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "指定续写风格，支持风格列表\nscience_fiction：科幻\nmilitary_history：军事\nxuanhuan_wuxia：武侠\nurban_officialdom：职场\n默认为xuanhuan_wuxia（武侠）。",
+          "example": "xuanhuan_wuxia",
+          "member": "string",
+          "name": "Style",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextWritingResponse": {
+      "document": "TextWriting返回参数结构体",
+      "members": [
+        {
+          "document": "续写结果列表。",
+          "example": "无",
+          "member": "Writing",
+          "name": "WritingList",
           "type": "list",
           "value_allowed_null": false
         },
@@ -1848,6 +2573,30 @@
         }
       ],
       "type": "object"
+    },
+    "Writing": {
+      "document": "文本续写结果",
+      "members": [
+        {
+          "document": "续写的文本。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetText",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "续写的前缀。",
+          "example": "无",
+          "member": "string",
+          "name": "PrefixText",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

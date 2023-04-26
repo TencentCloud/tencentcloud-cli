@@ -787,7 +787,6 @@
       "document": "CreateTawInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "片区Id，(至少大于0)",
           "example": "1",
           "member": "int64",
@@ -796,7 +795,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "计费类型, (1=后付费)",
           "example": "1",
           "member": "int64",
@@ -805,7 +803,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "数据保存时间，(至少大于0)",
           "example": "30",
           "member": "int64",
@@ -814,7 +811,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例名称，(最大长度不超过255字节)",
           "example": "实例名称",
           "member": "string",
@@ -823,7 +819,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签列表",
           "example": "无",
           "member": "Tag",
@@ -832,7 +827,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例描述，(最大长度不超过1024字节)",
           "example": "实例描述",
           "member": "string",
@@ -841,7 +835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "每天数据上报量",
           "example": "100",
           "member": "string",
@@ -850,7 +843,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据存储时长计费",
           "example": "30",
           "member": "string",
@@ -859,7 +851,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例购买渠道(\"cdn\" 等)",
           "example": "\"\"",
           "member": "string",
@@ -868,7 +859,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "预付费资源包类型(仅预付费需要)",
           "example": "1",
           "member": "uint64",
@@ -877,11 +867,18 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "预付费资源包数量(仅预付费需要)",
           "example": "1",
           "member": "uint64",
           "name": "ResourcePackageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "实例类型 1:原web相关类型 2:app端类型",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceType",
           "required": false,
           "type": "int"
         }
@@ -896,7 +893,6 @@
           "example": "taw-12345678",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -905,7 +901,6 @@
           "example": "20211011688006794751081",
           "member": "string",
           "name": "DealName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7381,7 +7376,6 @@
       "document": "Rum实例信息",
       "members": [
         {
-          "default": "",
           "document": "实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=已删除)",
           "example": "2",
           "member": "int64",
@@ -7391,7 +7385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "片区Id",
           "example": "1",
           "member": "int64",
@@ -7401,7 +7394,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签列表",
           "example": "无",
           "member": "Tag",
@@ -7411,7 +7403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例Id",
           "example": "taw-12345678",
           "member": "string",
@@ -7421,7 +7412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群Id",
           "example": "1",
           "member": "int64",
@@ -7431,7 +7421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例描述",
           "example": "测试",
           "member": "string",
@@ -7441,7 +7430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "计费状态(1=使用中，2=已过期，3=已销毁，4=分配中，5=分配失败)",
           "example": "1",
           "member": "int64",
@@ -7451,7 +7439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "计费类型(1=免费版，2=预付费，3=后付费)",
           "example": "1",
           "member": "int64",
@@ -7461,7 +7448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "更新时间",
           "example": "2021-01-01 00:00:00",
           "member": "string",
@@ -7471,7 +7457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据保留时间(天)",
           "example": "30",
           "member": "int64",
@@ -7481,7 +7466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名称",
           "example": "测试",
           "member": "string",
@@ -7491,7 +7475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2021-01-01 00:00:00",
           "member": "string",
@@ -7499,6 +7482,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "实例类型 1:原web相关类型 2:app端类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7929,7 +7921,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "document": "标签key",
           "example": "key",
           "member": "string",
@@ -7939,7 +7930,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签value",
           "example": "value",
           "member": "string",
@@ -7949,7 +7939,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Whitelist": {
       "document": "白名单",

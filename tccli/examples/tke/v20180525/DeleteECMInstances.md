@@ -1,6 +1,6 @@
 **Example 1: 删除ECM实例**
 
-
+删除ECM节点实例
 
 Input: 
 

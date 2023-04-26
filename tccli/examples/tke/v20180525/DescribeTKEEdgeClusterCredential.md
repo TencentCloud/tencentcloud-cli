@@ -32,16 +32,17 @@ Output:
         "CoreDns": "yes",
         "HealthRegion": "yes",
         "Health": "yes",
+        "UnitCluster": "yes",
         "GridDaemon": "yes",
         "PublicLB": {
             "Enabled": true,
             "AllowFromCidrs": [
-                "xx"
+                "160/254.0.0/16"
             ]
         },
         "InternalLB": {
             "SubnetId": [
-                "xx"
+                "vpc-12345"
             ],
             "Enabled": true
         },

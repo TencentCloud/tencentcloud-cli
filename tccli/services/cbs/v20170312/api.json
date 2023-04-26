@@ -1280,12 +1280,12 @@
       "document": "CreateSnapshot返回参数结构体",
       "members": [
         {
-          "document": "新创建的快照ID。",
+          "document": "新创建的快照ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "snap-3xvkxyxp",
           "member": "string",
           "name": "SnapshotId",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2633,6 +2633,15 @@
           "name": "ErrorPrompt",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "云盘是否开启性能突发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "BurstPerformance",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

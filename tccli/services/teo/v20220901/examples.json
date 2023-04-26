@@ -34,7 +34,7 @@
     ],
     "CreateApplicationProxy": [
       {
-        "document": "",
+        "document": "创建应用代理。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationProxy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-21xfqlh4qjee\",\n    \"ProxyName\": \"instancd-name\",\n    \"ProxyType\": \"instance\",\n    \"PlatType\": \"ip\",\n    \"SecurityType\": 1,\n    \"AccelerateType\": 1,\n    \"SessionPersistTime\": 3600,\n    \"Ipv6\": {\n        \"Switch\": \"on\"\n    },\n    \"ApplicationProxyRules\": [\n        {\n            \"Proto\": \"TCP\",\n            \"Port\": [\n                \"80\",\n                \"90\",\n                \"99-110\"\n            ],\n            \"OriginType\": \"custom\",\n            \"OriginValue\": [\n                \"1.1.1.1:80\"\n            ]\n        },\n        {\n            \"Proto\": \"UDP\",\n            \"Port\": [\n                \"999\",\n                \"888\",\n                \"99-110\"\n            ],\n            \"OriginType\": \"custom\",\n            \"OriginValue\": [\n                \"1.1.1.1:80\",\n                \"2.2.2.2:80\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"ProxyId\": \"proxy-537f5b41-162a-11ed-abaa-525400c5da15\"\n    }\n}",
         "title": "创建应用代理"
@@ -152,6 +152,14 @@
         "title": "参数为 OBJECT 类型的创建"
       }
     ],
+    "CreateSecurityIPGroup": [
+      {
+        "document": "正常创建安全 IP 组",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 0,\n        \"Name\": \"testip\",\n        \"Content\": [\n            \"2.2.2.2\"\n        ]\n    },\n    \"ZoneId\": \"zone-j94jf0a1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09ce3d28-1119-49cd-xxxx-27cb34dac669\",\n        \"GroupId\": 128\n    }\n}",
+        "title": "创建安全 IP 组"
+      }
+    ],
     "CreateSpeedTesting": [
       {
         "document": "",
@@ -214,6 +222,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRules\n<公共请求参数>\n\n{\n    \"RuleIds\": [\n        \"rule-66tjz30m\",\n        \"rule-bx3zke8q\"\n    ],\n    \"ZoneId\": \"zone-26r78x31ny86\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ace05891-744c-40f8-94de-4e1c08d954c2\"\n    }\n}",
         "title": "批量删除规则引擎规则"
+      }
+    ],
+    "DeleteSecurityIPGroup": [
+      {
+        "document": "正常删除安全 IP 组",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityIPGroup\n<公共请求参数>\n\n{\n    \"GroupId\": 85,\n    \"ZoneId\": \"zone-qdwibsa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09ce3d28-1119-49cd-xxxx-27cb34dac669\"\n    }\n}",
+        "title": "删除安全 IP 组"
       }
     ],
     "DeleteZone": [
@@ -756,7 +772,7 @@
     ],
     "ModifyApplicationProxy": [
       {
-        "document": "",
+        "document": "修改应用代理。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationProxy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-21xfqlh4qjee\",\n    \"ProxyId\": \"proxy-537f5b41-162a-11ed-abaa-525400c5da15\",\n    \"ProxyName\": \"test.com\",\n    \"ProxyType\": \"hostname\",\n    \"SessionPersistTime\": 3600,\n    \"Ipv6\": {\n        \"Switch\": \"on\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b03fe5dd-be04-444c-a2e1-49f1bf2f399a\"\n    }\n}",
         "title": "修改应用代理"
@@ -826,6 +842,26 @@
         "title": "ModifyRulePriority"
       }
     ],
+    "ModifySecurityIPGroup": [
+      {
+        "document": "修改安全 IP 组，其中操作类型是 append",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.3.1.1/16\",\n            \"6.6.6.6\"\n        ]\n    },\n    \"Mode\": \"append\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"728cb059-8595-44c7-b6c6-b4a539ae823f\"\n    }\n}",
+        "title": "修改安全 IP 组，其中操作类型是 append"
+      },
+      {
+        "document": "修改安全 IP 组，其中操作类型是 remove",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.3.1.1/16\",\n            \"6.6.6.6\"\n        ]\n    },\n    \"Mode\": \"remove\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5bdc699c-68df-4cb7-9d0a-1c174b0374ad\"\n    }\n}",
+        "title": "修改安全 IP 组，其中操作类型是 remove"
+      },
+      {
+        "document": "修改安全 IP 组，其中操作类型是 update",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.2.1.1/24\",\n            \"3.3.3.3\"\n        ]\n    },\n    \"Mode\": \"update\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sh1u8a90-xxxx-49cd-swui-27cb34daa779\"\n    }\n}",
+        "title": "修改安全 IP 组，其中操作类型是 update"
+      }
+    ],
     "ModifySecurityPolicy": [
       {
         "document": "修改a.eotest.com域名七层安全配置",
@@ -864,19 +900,19 @@
     ],
     "ModifyZoneSetting": [
       {
-        "document": "",
+        "document": "修改站点Ipv6访问配置。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneSetting\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-21xfqlh4qjee\",\n    \"Ipv6\": {\n        \"Switch\": \"on\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "修改站点Ipv6访问配置"
       },
       {
-        "document": "",
+        "document": "修改站点Quic访问配置。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneSetting\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-21xfqlh4qjee\",\n    \"Quic\": {\n        \"Switch\": \"on\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "修改站点Quic访问配置"
       },
       {
-        "document": "",
+        "document": "修改站点缓存过期时间配置。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneSetting\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-21xfqlh4qjee\",\n    \"CacheConfig\": {\n        \"NoCache\": {\n            \"Switch\": \"on\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "修改站点缓存过期时间配置"

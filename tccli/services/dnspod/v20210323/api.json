@@ -3786,7 +3786,6 @@
       "document": "域名别名信息",
       "members": [
         {
-          "default": "",
           "document": "域名别名ID",
           "example": "1",
           "member": "int64",
@@ -3796,13 +3795,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "域名别名",
           "example": "mm.com",
           "member": "string",
           "name": "DomainAlias",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "别名状态：1-DNS不正确；2-正常；3-封禁。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -6568,6 +6575,14 @@
           "name": "DomainId",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "指定需要回滚的记录",
+          "example": "无",
+          "member": "SnapshotRecord",
+          "name": "RecordList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6754,7 +6769,6 @@
       "document": "快照解析记录",
       "members": [
         {
-          "default": "",
           "document": "子域名",
           "example": "test",
           "member": "string",
@@ -6764,7 +6778,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录类型",
           "example": "A",
           "member": "string",
@@ -6774,7 +6787,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "解析线路",
           "example": "默认",
           "member": "string",
@@ -6784,7 +6796,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "解析值",
           "example": "0.0.0.0",
           "member": "string",
@@ -6794,7 +6805,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "TTL(秒)",
           "example": "600",
           "member": "string",
@@ -6804,7 +6814,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "解析记录 ID",
           "example": "15689601",
           "member": "string",
@@ -6814,11 +6823,28 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "MX优先级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "MX",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "string",
+          "name": "Weight",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "线路不存在",
+          "member": "string",
+          "name": "Reason",
           "required": false,
           "type": "string",
           "value_allowed_null": true

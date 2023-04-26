@@ -8368,7 +8368,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "备份ID。",
+          "document": "备份任务ID。",
           "example": "\"999b6b89c60-f01a-11eb-9d37-7d65897b5c22\"",
           "member": "string",
           "name": "BackupId",
@@ -8377,7 +8377,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "备份类型。\n\n- 1：用户发起的手动备份。\n- 0：凌晨系统发起的备份。",
+          "document": "备份类型。\n- 1：凌晨系统发起的备份。\n- 0：用户发起的手动备份。",
           "example": "\"1\"",
           "member": "string",
           "name": "BackupType",
@@ -8386,7 +8386,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "备份状态。 \n\n- 1：备份被其它流程锁定。\n- 2：备份正常，没有被任何流程锁定。\n- -1：备份已过期。\n- 3：备份正在被导出。\n- 4：备份导出成功。",
+          "document": "备份状态。 \n- 1：备份被其它流程锁定。\n- 2：备份正常，没有被任何流程锁定。\n- -1：备份已过期。\n- 3：备份正在被导出。\n- 4：备份导出成功。",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -8404,7 +8404,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "备份是否被锁定。\n\n- 0：未被锁定。\n- 1：已被锁定。",
+          "document": "备份是否被锁定。\n- 0：未被锁定。\n- 1：已被锁定。",
           "example": "0",
           "member": "int64",
           "name": "Locked",

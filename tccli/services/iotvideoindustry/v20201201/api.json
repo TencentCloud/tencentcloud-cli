@@ -295,7 +295,7 @@
       "status": "online"
     },
     "DescribeDeviceList": {
-      "document": "本接口(DescribeDevicesList) 用于获取设备列表，支持模糊搜索",
+      "document": "本接口(DescribeDeviceList) 用于获取设备列表，支持模糊搜索",
       "input": "DescribeDeviceListRequest",
       "name": "获取设备列表",
       "output": "DescribeDeviceListResponse",
@@ -3436,6 +3436,7 @@
         {
           "default": "",
           "document": "rtsp地址",
+          "example": "https://test.com",
           "member": "string",
           "name": "RtspAddr",
           "required": true,
@@ -3445,6 +3446,7 @@
         {
           "default": "",
           "document": "rtmp地址",
+          "example": "rtmp://test.com",
           "member": "string",
           "name": "RtmpAddr",
           "required": true,
@@ -3454,6 +3456,7 @@
         {
           "default": "",
           "document": "hls地址",
+          "example": "https://test.com",
           "member": "string",
           "name": "HlsAddr",
           "required": true,
@@ -3463,6 +3466,7 @@
         {
           "default": "",
           "document": "flv地址",
+          "example": "https://test.com",
           "member": "string",
           "name": "FlvAddr",
           "required": true,
@@ -7781,7 +7785,6 @@
       "document": "录制计划详情",
       "members": [
         {
-          "default": "",
           "document": "计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "planid",
           "member": "string",
@@ -7791,7 +7794,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "计划名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "planname",
           "member": "string",
@@ -7801,7 +7803,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "时间模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "templateid",
           "member": "string",
@@ -7811,7 +7812,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "时间模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "templatename",
           "member": "string",
@@ -7821,7 +7821,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "录制类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -7831,13 +7830,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "绑定的设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "DeviceItem",
           "name": "Devices",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "录像存储天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RecordStorageTime",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

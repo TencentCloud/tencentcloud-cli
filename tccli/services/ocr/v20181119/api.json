@@ -365,7 +365,7 @@
       "status": "online"
     },
     "RecognizePhilippinesSssIDOCR": {
-      "document": "菲律宾SSSID识别",
+      "document": "菲律宾SSSID/UMID识别",
       "input": "RecognizePhilippinesSssIDOCRRequest",
       "name": "菲律宾SSSID识别",
       "output": "RecognizePhilippinesSssIDOCRResponse",
@@ -6665,7 +6665,6 @@
       "document": "RecognizePhilippinesSssIDOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "是否返回人像照片。",
           "example": "true",
           "member": "bool",
@@ -6674,7 +6673,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "image",
           "member": "string",
@@ -6683,7 +6681,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
           "member": "string",
@@ -6702,7 +6699,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "HeadPortrait",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6711,7 +6707,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "LicenseNumber",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6720,7 +6715,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "FullName",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6729,7 +6723,6 @@
           "example": "无",
           "member": "TextDetectionResult",
           "name": "Birthday",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

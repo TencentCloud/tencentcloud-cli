@@ -1,6 +1,6 @@
 **Example 1: 获取边缘计算外部访问的kubeconfig**
 
-
+获取边缘计算外部访问的kubeconfig
 
 Input: 
 

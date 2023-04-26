@@ -86,12 +86,36 @@
         "title": "查询自定义词库的词条接口示例"
       }
     ],
+    "EvaluateSentenceSimilarity": [
+      {
+        "document": "分析句子相似度",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EvaluateSentenceSimilarity\n<公共请求参数>\n\n{\n    \"SentencePairList\": [\n        {\n            \"SourceText\": \"北京到上海的火车票\",\n            \"TargetText\": \"上海到北京的火车票\"\n        },\n        {\n            \"SourceText\": \"北京到上海的火车票\",\n            \"TargetText\": \"北京到上海的高铁票\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd4ea683-422a-4149-8ba8-501458bd826e\",\n        \"ScoreList\": [\n            0.965566,\n            0.798171\n        ]\n    }\n}",
+        "title": "句子相似度调用示例"
+      }
+    ],
+    "EvaluateWordSimilarity": [
+      {
+        "document": "分析词相似度",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:EvaluateWordSimilarity\n<公共请求参数>\n\n{\n    \"SourceWord\": \"香港\",\n    \"TargetWord\": \"北京\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02bd6796-515a-452e-a455-23523fd6cfd9\",\n        \"Similarity\": 0.5935152769088745\n    }\n}",
+        "title": "词相似度调用示例"
+      }
+    ],
     "GenerateCouplet": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateCouplet\n<公共请求参数>\n\n{\n    \"Text\": \"小鸡\",\n    \"TargetType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TopScroll\": \"满园春色\",\n        \"Content\": [\n            \"小龙昂首开新局\",\n            \"鸡犬登楼展宏图\"\n        ],\n        \"RandomCause\": \"\",\n        \"RequestId\": \"9a7a1615-3e09-4db2-8032-5c6f497f7e6a\"\n    }\n}",
         "title": "智能春联调用示例"
+      }
+    ],
+    "GenerateKeywordSentence": [
+      {
+        "document": "通过输入两个中文关键词生成句子。",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:GenerateKeywordSentence\n<公共请求参数>\n\n{\n    \"WordList\": [\n        \"老鼠\",\n        \"月光\"\n    ],\n    \"Number\": 2,\n    \"Domain\": \"general\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KeywordSentenceList\": [\n            {\n                \"TargetText\": \"12月下旬，老鼠渐渐苏醒，月光温柔，生肖鼠喜从天降。\"\n            },\n            {\n                \"TargetText\": \"在这里，老鼠看到了月亮，这就是月光。\"\n            }\n        ],\n        \"RequestId\": \"033daa29-dd1a-4f18-aa3b-b7a6b4d4dada\"\n    }\n}",
+        "title": "关键词句子生成调用示例"
       }
     ],
     "GeneratePoetry": [
@@ -118,12 +142,36 @@
         "title": "词法分析示例"
       }
     ],
+    "ParseWords": [
+      {
+        "document": "词法分析",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ParseWords\n<公共请求参数>\n\n{\n    \"Text\": \"我很喜欢看流浪地球这个电影\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BasicParticiples\": [\n            {\n                \"BeginOffset\": 0,\n                \"Length\": 1,\n                \"Pos\": \"PN\",\n                \"Word\": \"我\"\n            },\n            {\n                \"BeginOffset\": 1,\n                \"Length\": 1,\n                \"Pos\": \"AD\",\n                \"Word\": \"很\"\n            },\n            {\n                \"BeginOffset\": 2,\n                \"Length\": 2,\n                \"Pos\": \"VV\",\n                \"Word\": \"喜欢\"\n            },\n            {\n                \"BeginOffset\": 4,\n                \"Length\": 1,\n                \"Pos\": \"VV\",\n                \"Word\": \"看\"\n            },\n            {\n                \"BeginOffset\": 5,\n                \"Length\": 2,\n                \"Pos\": \"VV\",\n                \"Word\": \"流浪\"\n            },\n            {\n                \"BeginOffset\": 7,\n                \"Length\": 2,\n                \"Pos\": \"NN\",\n                \"Word\": \"地球\"\n            },\n            {\n                \"BeginOffset\": 9,\n                \"Length\": 2,\n                \"Pos\": \"DT\",\n                \"Word\": \"这个\"\n            },\n            {\n                \"BeginOffset\": 11,\n                \"Length\": 2,\n                \"Pos\": \"NN\",\n                \"Word\": \"电影\"\n            }\n        ],\n        \"CompoundParticiples\": [\n            {\n                \"BeginOffset\": 0,\n                \"Length\": 1,\n                \"Pos\": \"PN\",\n                \"Word\": \"我\"\n            },\n            {\n                \"BeginOffset\": 1,\n                \"Length\": 1,\n                \"Pos\": \"AD\",\n                \"Word\": \"很\"\n            },\n            {\n                \"BeginOffset\": 2,\n                \"Length\": 2,\n                \"Pos\": \"VV\",\n                \"Word\": \"喜欢\"\n            },\n            {\n                \"BeginOffset\": 4,\n                \"Length\": 1,\n                \"Pos\": \"VV\",\n                \"Word\": \"看\"\n            },\n            {\n                \"BeginOffset\": 5,\n                \"Length\": 4,\n                \"Pos\": \"NN\",\n                \"Word\": \"流浪地球\"\n            },\n            {\n                \"BeginOffset\": 9,\n                \"Length\": 2,\n                \"Pos\": \"DT\",\n                \"Word\": \"这个\"\n            },\n            {\n                \"BeginOffset\": 11,\n                \"Length\": 2,\n                \"Pos\": \"NN\",\n                \"Word\": \"电影\"\n            }\n        ],\n        \"Entities\": [\n            {\n                \"BeginOffset\": 5,\n                \"Length\": 4,\n                \"Name\": \"电影\",\n                \"Type\": \"work.movie\",\n                \"Word\": \"流浪地球\"\n            }\n        ],\n        \"NormalText\": \"我很喜欢看流浪地球这个电影\",\n        \"RequestId\": \"6cd06531-5b5e-46ee-8ec2-ab66a9730e74\"\n    }\n}",
+        "title": "词法分析调用示例"
+      }
+    ],
+    "RetrieveSimilarWords": [
+      {
+        "document": "相似词召回",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:RetrieveSimilarWords\n<公共请求参数>\n\n{\n    \"Text\": \"林丹\",\n    \"Number\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e246e84f-de88-46d0-b5dd-68ff94db40ad\",\n        \"WordList\": [\n            \"李宗伟\",\n            \"桃田贤斗\",\n            \"马龙\",\n            \"纳达尔\",\n            \"刘翔\",\n            \"张本智和\",\n            \"费德勒\",\n            \"孙杨\",\n            \"宁泽涛\",\n            \"朱婷\"\n        ]\n    }\n}",
+        "title": "相似词召回调用示例"
+      }
+    ],
     "SearchWordItems": [
       {
         "document": "",
         "input": "https://nlp.tencentcloudapi.com/?Action=SearchWordItems\n&DictId=udf-066edc3449\n&WordItems.0.Text=理想型\n&WordItems.0.Pos=nr\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb716d37-6669-405b-93ff-f4187f95576f\",\n        \"Results\": [\n            {\n                \"IsExist\": 1,\n                \"Pos\": \"\",\n                \"MatchText\": \"理想型\",\n                \"Text\": \"理想型\"\n            }\n        ]\n    }\n}",
         "title": "检索词条接口示例"
+      }
+    ],
+    "SentenceCorrection": [
+      {
+        "document": "对包含错别字的中文句子以及包含语法错误的英文句子进行纠错。",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:SentenceCorrection\n<公共请求参数>\n\n{\n    \"TextList\": [\n        \"这位外国网友说：这是地球最安全的锅加，在这里，我从未感到过害啪！\",\n        \"We always rent a little cottages from a sheep farmer and now we know his family.\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CorrectionList\": [\n            {\n                \"BeginOffset\": 16,\n                \"Confidence\": 0,\n                \"CorrectWord\": [\n                    \"国家\"\n                ],\n                \"CorrectionType\": 0,\n                \"DescriptionEn\": null,\n                \"DescriptionZh\": null,\n                \"Len\": 2,\n                \"Order\": 1,\n                \"Word\": \"锅加\"\n            },\n            {\n                \"BeginOffset\": 30,\n                \"Confidence\": 0,\n                \"CorrectWord\": [\n                    \"怕\"\n                ],\n                \"CorrectionType\": 0,\n                \"DescriptionEn\": null,\n                \"DescriptionZh\": null,\n                \"Len\": 1,\n                \"Order\": 1,\n                \"Word\": \"啪\"\n            },\n            {\n                \"BeginOffset\": 24,\n                \"Confidence\": 0,\n                \"CorrectWord\": [\n                    \"cottage\"\n                ],\n                \"CorrectionType\": 0,\n                \"DescriptionEn\": \"It appears that the noun \\\"cottage\\\" doesn't agree with \\\"a little\\\".\",\n                \"DescriptionZh\": \"在当前语境下，“cottages”作为名词和量词“a little”没有保持单复数一致，建议使用“cottage”以保持名词一致性。\",\n                \"Len\": 8,\n                \"Order\": 2,\n                \"Word\": \"cottages\"\n            }\n        ],\n        \"RequestId\": \"b183f9d5-b35a-4880-8a36-86883b9eea11\"\n    }\n}",
+        "title": "句子纠错调用示例"
       }
     ],
     "SentenceEmbedding": [
@@ -174,6 +222,14 @@
         "title": "文本纠错示例"
       }
     ],
+    "TextEmbellish": [
+      {
+        "document": "对中文文本进行扩写。",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:TextEmbellish\n<公共请求参数>\n\n{\n    \"Text\": \"中国奥运健儿击败强敌，勇夺冬奥会首金\",\n    \"SourceLang\": \"zh\",\n    \"Number\": 2,\n    \"Style\": \"expansion\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EmbellishList\": [\n            {\n                \"EmbellishType\": \"expansion\",\n                \"Text\": \"现在的中国跳水奥运健儿一路高歌猛进击败强敌，不负众望的勇夺温哥华冬奥会单板滑雪首金\"\n            },\n            {\n                \"EmbellishType\": \"expansion\",\n                \"Text\": \"年轻的中国冰雪奥运健儿一次次击败强敌，历史性的勇夺温哥华冬奥会史无前例的首金\"\n            }\n        ],\n        \"RequestId\": \"fd345650-b62b-4949-bdd7-d774152dba9a\"\n    }\n}",
+        "title": "文本润色调用示例"
+      }
+    ],
     "TextSimilarity": [
       {
         "document": "",
@@ -188,6 +244,14 @@
         "input": "https://nlp.tencentcloudapi.com/?Action=TextSimilarityPro\n&SrcText=\"北京到上海的火车票\"\n&TargetText.0=\"北京到上海的飞机票\"\n&TargetText.1=\"北京到上海的高铁票\"\n&TargetText.2=\"上海到北京的火车票\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Similarity\": [\n            {\n                \"Score\": 0.9943903139727261,\n                \"Text\": \"北京到上海的飞机票\"\n            },\n            {\n                \"Score\": 0.9823085983303148,\n                \"Text\": \"北京到上海的高铁票\"\n            },\n            {\n                \"Score\": 0.6515947587356785,\n                \"Text\": \"上海到北京的火车票\"\n            }\n        ],\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\"\n    }\n}",
         "title": "句子相似度示例"
+      }
+    ],
+    "TextWriting": [
+      {
+        "document": "对中文文本进行续写。",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:TextWriting\n<公共请求参数>\n\n{\n    \"Text\": \"今天天气不错\",\n    \"SourceLang\": \"此事还得从这说起，\",\n    \"Number\": 2,\n    \"Domain\": \"general\",\n    \"Style\": \"xuanhuan_wuxia\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40abc589-8603-458b-82a7-fe174e799085\",\n        \"WritingList\": [\n            {\n                \"PrefixText\": \"此事还得从这说起，\",\n                \"TargetText\": \"此事还得从这说起，他一路行来，不知不觉已到了洛阳城，这一日，他来到一处客栈，打听一下萧月生的消息。“师父，他来了！”江南云忽然开口，声音清脆悦耳，仿\"\n            },\n            {\n                \"PrefixText\": \"此事还得从这说起，\",\n                \"TargetText\": \"此事还得从这说起，那日在山东大会上，萧月生一眼看出，这个赵小四是武林中人，心中不由一动，觉得此人极有可能是华山派的弟子。“师父，他的轻功如何？”江南\"\n            }\n        ]\n    }\n}",
+        "title": "文本续写调用示例"
       }
     ],
     "UpdateDict": [
