@@ -4053,49 +4053,49 @@
       "document": "CreateRocketMQNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”",
           "example": "prod",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "未消费消息的保留时间，以毫秒为单位，60秒-15天",
+          "document": "已废弃",
           "example": "100000",
           "member": "uint64",
           "name": "Ttl",
-          "required": true,
-          "type": "int"
+          "required": false,
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "消息持久化后保留的时间，以毫秒为单位",
+          "document": "已废弃",
           "example": "100000",
           "member": "uint64",
           "name": "RetentionTime",
-          "required": true,
-          "type": "int"
+          "required": false,
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "说明，最大128个字符",
           "example": "备注",
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10176,49 +10176,49 @@
       "document": "ModifyRocketMQNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”",
           "example": "prod",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "未消费消息的保留时间，以毫秒为单位，60秒-15天",
+          "document": "已废弃",
           "example": "100000",
           "member": "uint64",
           "name": "Ttl",
-          "required": true,
-          "type": "int"
+          "required": false,
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "消息持久化后保留的时间，以毫秒为单位",
+          "document": "已废弃",
           "example": "100000",
           "member": "uint64",
           "name": "RetentionTime",
-          "required": true,
-          "type": "int"
+          "required": false,
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "说明，最大128个字符",
           "example": "备注",
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

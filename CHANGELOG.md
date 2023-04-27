@@ -1,3 +1,172 @@
+# Release 3.0.752.1
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 47 次发布
+
+发布时间：2023-04-27 01:15:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAccountQuota](http://document.tencentcloudapi.woa.com/document/product/213/55628)
+
+	* <font color="#dd0000">**修改出参**：</font>AppId
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 16 次发布
+
+发布时间：2023-04-27 01:18:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteDBDiagReportTasks](http://document.tencentcloudapi.woa.com/document/product/1130/77425)
+
+	* <font color="#dd0000">**修改入参**：</font>Product
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 46 次发布
+
+发布时间：2023-04-27 01:19:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+	* 新增入参：EmrLivyInfo
+
+
+修改数据结构：
+
+* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
+
+	* 新增成员：DataEngineClusterType, DataEngineImageVersion
+
+
+
+
+## 全站加速网络(ecdn) 版本：2019-10-12
+
+### 第 4 次发布
+
+发布时间：2023-04-27 01:20:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* AddEcdnDomain
+* CreateVerifyRecord
+* DeleteEcdnDomain
+* PurgePathCache
+* StartEcdnDomain
+* StopEcdnDomain
+* UpdateDomainConfig
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 20 次发布
+
+发布时间：2023-04-27 01:22:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAuthSignature](http://document.tencentcloudapi.woa.com/document/product/608/77531)
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 31 次发布
+
+发布时间：2023-04-27 01:31:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [KillMasterGroup](http://document.tencentcloudapi.woa.com/document/product/239/58399)
+
+	* <font color="#dd0000">**修改入参**：</font>Password
+
+
+
+
+## 凭据管理系统(ssm) 版本：2019-09-23
+
+### 第 7 次发布
+
+发布时间：2023-04-27 01:33:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SecretMetadata](http://document.tencentcloudapi.woa.com/document/product/1140/40530#SecretMetadata)
+
+	* 新增成员：RotationFrequency, ResourceID, RotationBeginTime
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 42 次发布
+
+发布时间：2023-04-27 01:34:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/63427)
+
+	* <font color="#dd0000">**修改入参**：</font>Ttl, RetentionTime
+
+* [ModifyRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/63415)
+
+	* <font color="#dd0000">**修改入参**：</font>Ttl, RetentionTime
+
+
+
+
 # Release 3.0.751.1
 
 ## 云硬盘(cbs) 版本：2017-03-12

@@ -1,29 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云硬盘(cbs) 版本：2017-03-12
+## 云服务器(cvm) 版本：2017-03-12
 
-### 第 25 次发布
+### 第 47 次发布
 
-发布时间：2023-04-26 01:07:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
-
-	* 新增成员：BurstPerformance
-
-
-
-
-## DNSPod(dnspod) 版本：2021-03-23
-
-### 第 21 次发布
-
-发布时间：2023-04-26 01:21:09
+发布时间：2023-04-27 01:15:55
 
 本次发布包含了以下内容：
 
@@ -31,48 +12,89 @@
 
 修改接口：
 
-* [RollbackSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76678)
+* [DescribeAccountQuota](http://document.tencentcloudapi.woa.com/document/product/213/55628)
 
-	* 新增入参：RecordList
-
-
-修改数据结构：
-
-* [DomainAliasInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainAliasInfo)
-
-	* 新增成员：Status
-
-* [SnapshotRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotRecord)
-
-	* 新增成员：Weight, Reason
+	* <font color="#dd0000">**修改出参**：</font>AppId
 
 
 
 
-## 物联网智能视频服务（行业版）(iotvideoindustry) 版本：2020-12-01
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
-### 第 9 次发布
+### 第 16 次发布
 
-发布时间：2023-04-26 01:29:53
+发布时间：2023-04-27 01:18:32
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [DeleteDBDiagReportTasks](http://document.tencentcloudapi.woa.com/document/product/1130/77425)
+
+	* <font color="#dd0000">**修改入参**：</font>Product
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 46 次发布
+
+发布时间：2023-04-27 01:19:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+	* 新增入参：EmrLivyInfo
+
+
 修改数据结构：
 
-* [RecordPlanItem](http://document.tencentcloudapi.woa.com/document/product/1361/53754#RecordPlanItem)
+* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
 
-	* 新增成员：RecordStorageTime
-
-
+	* 新增成员：DataEngineClusterType, DataEngineImageVersion
 
 
-## NLP服务(nlp) 版本：2019-04-08
 
-### 第 6 次发布
 
-发布时间：2023-04-26 01:36:10
+## 全站加速网络(ecdn) 版本：2019-10-12
+
+### 第 4 次发布
+
+发布时间：2023-04-27 01:20:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* AddEcdnDomain
+* CreateVerifyRecord
+* DeleteEcdnDomain
+* PurgePathCache
+* StartEcdnDomain
+* StopEcdnDomain
+* UpdateDomainConfig
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 20 次发布
+
+发布时间：2023-04-27 01:22:42
 
 本次发布包含了以下内容：
 
@@ -80,33 +102,15 @@
 
 新增接口：
 
-* [EvaluateSentenceSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77526)
-* [EvaluateWordSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77525)
-* [GenerateKeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/77521)
-* [ParseWords](http://document.tencentcloudapi.woa.com/document/product/271/77524)
-* [RetrieveSimilarWords](http://document.tencentcloudapi.woa.com/document/product/271/77523)
-* [SentenceCorrection](http://document.tencentcloudapi.woa.com/document/product/271/77520)
-* [TextEmbellish](http://document.tencentcloudapi.woa.com/document/product/271/77519)
-* [TextWriting](http://document.tencentcloudapi.woa.com/document/product/271/77518)
-
-新增数据结构：
-
-* [BasicParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#BasicParticiple)
-* [CompoundParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#CompoundParticiple)
-* [CorrectionItem](http://document.tencentcloudapi.woa.com/document/product/271/35511#CorrectionItem)
-* [Embellish](http://document.tencentcloudapi.woa.com/document/product/271/35511#Embellish)
-* [Entity](http://document.tencentcloudapi.woa.com/document/product/271/35511#Entity)
-* [KeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/35511#KeywordSentence)
-* [SentencePair](http://document.tencentcloudapi.woa.com/document/product/271/35511#SentencePair)
-* [Writing](http://document.tencentcloudapi.woa.com/document/product/271/35511#Writing)
+* [DescribeAuthSignature](http://document.tencentcloudapi.woa.com/document/product/608/77531)
 
 
 
-## 前端性能监控(rum) 版本：2021-06-22
+## 云数据库Redis(redis) 版本：2018-04-12
 
-### 第 23 次发布
+### 第 31 次发布
 
-发布时间：2023-04-26 01:41:41
+发布时间：2023-04-27 01:31:01
 
 本次发布包含了以下内容：
 
@@ -114,74 +118,51 @@
 
 修改接口：
 
-* [CreateTawInstance](http://document.tencentcloudapi.woa.com/document/product/1464/69244)
+* [KillMasterGroup](http://document.tencentcloudapi.woa.com/document/product/239/58399)
 
-	* 新增入参：InstanceType
+	* <font color="#dd0000">**修改入参**：</font>Password
 
+
+
+
+## 凭据管理系统(ssm) 版本：2019-09-23
+
+### 第 7 次发布
+
+发布时间：2023-04-27 01:33:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [RumInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1464/61476#RumInstanceInfo)
+* [SecretMetadata](http://document.tencentcloudapi.woa.com/document/product/1140/40530#SecretMetadata)
 
-	* 新增成员：InstanceType
-
-
-
-
-## 容器服务(tke) 版本：2022-05-01
+	* 新增成员：RotationFrequency, ResourceID, RotationBeginTime
 
 
 
-## 容器服务(tke) 版本：2018-05-25
 
-### 第 66 次发布
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-发布时间：2023-04-26 01:51:24
+### 第 42 次发布
+
+发布时间：2023-04-27 01:34:58
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
-
-* [ModifyClusterSchedulerPolicy](http://document.tencentcloudapi.woa.com/document/product/457/77529)
-
 修改接口：
 
-* [CreateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76646)
+* [CreateRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/63427)
 
-	* 新增入参：TagSpecification
+	* <font color="#dd0000">**修改入参**：</font>Ttl, RetentionTime
 
-* [DescribeTKEEdgeClusterCredential](http://document.tencentcloudapi.woa.com/document/product/457/76635)
+* [ModifyRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/63415)
 
-	* 新增出参：UnitCluster
-
-
-新增数据结构：
-
-* [SchedulerPolicyPriority](http://document.tencentcloudapi.woa.com/document/product/457/31866#SchedulerPolicyPriority)
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 81 次发布
-
-发布时间：2023-04-26 01:55:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GenerateVpnConnectionDefaultHealthCheckIp](http://document.tencentcloudapi.woa.com/document/product/215/77530)
-
-修改接口：
-
-* [CreateWanServiceInternal](http://document.tencentcloudapi.woa.com/document/product/215/76007)
-
-	* <font color="#dd0000">**修改出参**：</font>AddWanServiceResult
+	* <font color="#dd0000">**修改入参**：</font>Ttl, RetentionTime
 
 
 
@@ -15904,6 +15885,21 @@
 
 ## 云服务器(cvm) 版本：2017-03-12
 
+### 第 47 次发布
+
+发布时间：2023-04-27 01:15:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAccountQuota](http://document.tencentcloudapi.woa.com/document/product/213/55628)
+
+	* <font color="#dd0000">**修改出参**：</font>AppId
+
+
 ### 第 46 次发布
 
 发布时间：2023-04-03 01:09:23
@@ -20054,6 +20050,21 @@
 
 ## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
+### 第 16 次发布
+
+发布时间：2023-04-27 01:18:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteDBDiagReportTasks](http://document.tencentcloudapi.woa.com/document/product/1130/77425)
+
+	* <font color="#dd0000">**修改入参**：</font>Product
+
+
 ### 第 15 次发布
 
 发布时间：2023-04-21 01:19:29
@@ -21038,6 +21049,28 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 46 次发布
+
+发布时间：2023-04-27 01:19:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+	* 新增入参：EmrLivyInfo
+
+
+修改数据结构：
+
+* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
+
+	* 新增成员：DataEngineClusterType, DataEngineImageVersion
+
 
 ### 第 45 次发布
 
@@ -23284,6 +23317,24 @@
 
 
 ## 全站加速网络(ecdn) 版本：2019-10-12
+
+### 第 4 次发布
+
+发布时间：2023-04-27 01:20:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* AddEcdnDomain
+* CreateVerifyRecord
+* DeleteEcdnDomain
+* PurgePathCache
+* StartEcdnDomain
+* StopEcdnDomain
+* UpdateDomainConfig
 
 ### 第 3 次发布
 
@@ -27303,6 +27354,18 @@
 
 
 ## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 20 次发布
+
+发布时间：2023-04-27 01:22:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAuthSignature](http://document.tencentcloudapi.woa.com/document/product/608/77531)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 19 次发布
 
@@ -36887,7 +36950,7 @@
 
 
 
-## NLP服务(nlp) 版本：2019-04-08
+## NLP 服务(nlp) 版本：2019-04-08
 
 ### 第 6 次发布
 
@@ -36899,25 +36962,25 @@
 
 新增接口：
 
-* [[EvaluateSentenceSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77526)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[EvaluateWordSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77525)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GenerateKeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/77521)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ParseWords](http://document.tencentcloudapi.woa.com/document/product/271/77524)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RetrieveSimilarWords](http://document.tencentcloudapi.woa.com/document/product/271/77523)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SentenceCorrection](http://document.tencentcloudapi.woa.com/document/product/271/77520)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[TextEmbellish](http://document.tencentcloudapi.woa.com/document/product/271/77519)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[TextWriting](http://document.tencentcloudapi.woa.com/document/product/271/77518)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [EvaluateSentenceSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77526)
+* [EvaluateWordSimilarity](http://document.tencentcloudapi.woa.com/document/product/271/77525)
+* [GenerateKeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/77521)
+* [ParseWords](http://document.tencentcloudapi.woa.com/document/product/271/77524)
+* [RetrieveSimilarWords](http://document.tencentcloudapi.woa.com/document/product/271/77523)
+* [SentenceCorrection](http://document.tencentcloudapi.woa.com/document/product/271/77520)
+* [TextEmbellish](http://document.tencentcloudapi.woa.com/document/product/271/77519)
+* [TextWriting](http://document.tencentcloudapi.woa.com/document/product/271/77518)
 
 新增数据结构：
 
-* [[BasicParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#BasicParticiple)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[BasicParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#BasicParticiple))
-* [[CompoundParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#CompoundParticiple)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[CompoundParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#CompoundParticiple))
-* [[CorrectionItem](http://document.tencentcloudapi.woa.com/document/product/271/35511#CorrectionItem)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[CorrectionItem](http://document.tencentcloudapi.woa.com/document/product/271/35511#CorrectionItem))
-* [[Embellish](http://document.tencentcloudapi.woa.com/document/product/271/35511#Embellish)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[Embellish](http://document.tencentcloudapi.woa.com/document/product/271/35511#Embellish))
-* [[Entity](http://document.tencentcloudapi.woa.com/document/product/271/35511#Entity)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[Entity](http://document.tencentcloudapi.woa.com/document/product/271/35511#Entity))
-* [[KeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/35511#KeywordSentence)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[KeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/35511#KeywordSentence))
-* [[SentencePair](http://document.tencentcloudapi.woa.com/document/product/271/35511#SentencePair)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[SentencePair](http://document.tencentcloudapi.woa.com/document/product/271/35511#SentencePair))
-* [[Writing](http://document.tencentcloudapi.woa.com/document/product/271/35511#Writing)](http://document.tencentcloudapi.woa.com/document/product/271/35511#[Writing](http://document.tencentcloudapi.woa.com/document/product/271/35511#Writing))
+* [BasicParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#BasicParticiple)
+* [CompoundParticiple](http://document.tencentcloudapi.woa.com/document/product/271/35511#CompoundParticiple)
+* [CorrectionItem](http://document.tencentcloudapi.woa.com/document/product/271/35511#CorrectionItem)
+* [Embellish](http://document.tencentcloudapi.woa.com/document/product/271/35511#Embellish)
+* [Entity](http://document.tencentcloudapi.woa.com/document/product/271/35511#Entity)
+* [KeywordSentence](http://document.tencentcloudapi.woa.com/document/product/271/35511#KeywordSentence)
+* [SentencePair](http://document.tencentcloudapi.woa.com/document/product/271/35511#SentencePair)
+* [Writing](http://document.tencentcloudapi.woa.com/document/product/271/35511#Writing)
 
 ### 第 5 次发布
 
@@ -40538,6 +40601,21 @@
 
 
 ## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 31 次发布
+
+发布时间：2023-04-27 01:31:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [KillMasterGroup](http://document.tencentcloudapi.woa.com/document/product/239/58399)
+
+	* <font color="#dd0000">**修改入参**：</font>Password
+
 
 ### 第 30 次发布
 
@@ -44218,6 +44296,21 @@
 
 ## 凭据管理系统(ssm) 版本：2019-09-23
 
+### 第 7 次发布
+
+发布时间：2023-04-27 01:33:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SecretMetadata](http://document.tencentcloudapi.woa.com/document/product/1140/40530#SecretMetadata)
+
+	* 新增成员：RotationFrequency, ResourceID, RotationBeginTime
+
+
 ### 第 6 次发布
 
 发布时间：2022-07-18 06:04:37
@@ -47207,6 +47300,25 @@
 
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 42 次发布
+
+发布时间：2023-04-27 01:34:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/63427)
+
+	* <font color="#dd0000">**修改入参**：</font>Ttl, RetentionTime
+
+* [ModifyRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/63415)
+
+	* <font color="#dd0000">**修改入参**：</font>Ttl, RetentionTime
+
 
 ### 第 41 次发布
 
@@ -50429,7 +50541,7 @@
 
 新增接口：
 
-* [[ModifyClusterSchedulerPolicy](http://document.tencentcloudapi.woa.com/document/product/457/77529)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyClusterSchedulerPolicy](http://document.tencentcloudapi.woa.com/document/product/457/77529)
 
 修改接口：
 
@@ -50444,7 +50556,7 @@
 
 新增数据结构：
 
-* [[SchedulerPolicyPriority](http://document.tencentcloudapi.woa.com/document/product/457/31866#SchedulerPolicyPriority)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[SchedulerPolicyPriority](http://document.tencentcloudapi.woa.com/document/product/457/31866#SchedulerPolicyPriority))
+* [SchedulerPolicyPriority](http://document.tencentcloudapi.woa.com/document/product/457/31866#SchedulerPolicyPriority)
 
 ### 第 65 次发布
 
@@ -56890,7 +57002,7 @@
 
 新增接口：
 
-* [[GenerateVpnConnectionDefaultHealthCheckIp](http://document.tencentcloudapi.woa.com/document/product/215/77530)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GenerateVpnConnectionDefaultHealthCheckIp](http://document.tencentcloudapi.woa.com/document/product/215/77530)
 
 修改接口：
 

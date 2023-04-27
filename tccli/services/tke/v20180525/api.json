@@ -12539,36 +12539,40 @@
       "document": "DescribeTKEEdgeClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID列表(为空时，\n表示获取账号下所有集群)",
+          "example": "[\"cls-s33cvdaa\"]",
           "member": "string",
           "name": "ClusterIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量,默认0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "最大输出条数，默认20",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "过滤条件,当前只支持按照单个条件ClusterName进行过滤",
+          "document": "过滤条件,当前只支持按照ClusterName和云标签进行过滤",
+          "example": "*",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12578,17 +12582,21 @@
       "members": [
         {
           "document": "集群总个数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群信息列表",
+          "example": "*",
           "member": "EdgeCluster",
           "name": "Clusters",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

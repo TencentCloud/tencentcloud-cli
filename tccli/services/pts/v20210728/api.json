@@ -820,54 +820,54 @@
       "document": "采样日志附带属性",
       "members": [
         {
-          "default": "",
           "document": "采用请求返回码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "200",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "采样请求结果码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ok",
           "member": "string",
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "采样请求API\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://www.baidu.com",
           "member": "string",
           "name": "Service",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "采样请求调用方法\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "get",
           "member": "string",
           "name": "Method",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "采样请求延时时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "string",
           "name": "Duration",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3528,148 +3528,148 @@
       "document": "DescribeSampleLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "测试项目ID",
           "example": "project-xxx",
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "测试场景ID",
           "example": "scenario-xxx",
           "member": "string",
           "name": "ScenarioId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "测试任务ID",
           "example": "job-xxxx",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时",
           "example": "csdfeee-dsfll09ds-sdsf",
           "member": "string",
           "name": "Context",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "日志开始时间",
           "example": "2021-09-02T03:18:35+08:00",
           "member": "datetime_iso",
           "name": "From",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "日志结束时间",
           "example": "2021-09-02T03:18:35+08:00",
           "member": "datetime_iso",
           "name": "To",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "日志级别debug,info,error",
           "example": "info",
           "member": "string",
           "name": "SeverityText",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "ap-shanghai, ap-guangzhou",
           "example": "地域",
           "member": "string",
           "name": "InstanceRegion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "施压引擎节点IP",
           "example": "节点IP",
           "member": "string",
           "name": "Instance",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "request 代表采样日志,可为不填",
           "example": "日志类型",
           "member": "string",
           "name": "LogType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "返回日志条数，最大100",
           "example": "50",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "采样日志响应时间范围",
           "example": "无",
           "member": "ReactionTimeRange",
           "name": "ReactionTimeRange",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "采样请求状态码",
           "example": "200",
           "member": "string",
           "name": "Status",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "采样请求结果码",
           "example": "ok",
           "member": "string",
           "name": "Result",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "采样请求方法",
           "example": "Get",
           "member": "string",
           "name": "Method",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "采样服务API",
           "example": "http://www.baidu.com",
           "member": "string",
           "name": "Service",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3682,27 +3682,27 @@
           "example": "100",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2340-324234-32423",
           "member": "string",
           "name": "Context",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "采样日志数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SampleLog",
           "name": "SampleLogs",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
