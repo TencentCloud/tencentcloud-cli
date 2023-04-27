@@ -1,29 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云服务器(cvm) 版本：2017-03-12
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
-### 第 47 次发布
+### 第 45 次发布
 
-发布时间：2023-04-27 01:15:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeAccountQuota](http://document.tencentcloudapi.woa.com/document/product/213/55628)
-
-	* <font color="#dd0000">**修改出参**：</font>AppId
-
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
-
-### 第 16 次发布
-
-发布时间：2023-04-27 01:18:32
+发布时间：2023-04-28 01:10:32
 
 本次发布包含了以下内容：
 
@@ -31,22 +12,56 @@
 
 修改接口：
 
-* [DeleteDBDiagReportTasks](http://document.tencentcloudapi.woa.com/document/product/1130/77425)
+* [DescribePayType](http://document.tencentcloudapi.woa.com/document/product/228/31295)
 
-	* <font color="#dd0000">**修改入参**：</font>Product
-
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+	* 新增入参：Type
 
 
 
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 46 次发布
+## 云防火墙(cfw) 版本：2019-09-04
 
-发布时间：2023-04-27 01:19:14
+### 第 23 次发布
+
+发布时间：2023-04-28 01:11:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BlockIgnoreRule)
+
+	* 新增成员：Comment
+
+
+
+
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 51 次发布
+
+发布时间：2023-04-28 01:13:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PaymentOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderResult)
+
+	* 新增成员：FundingAccountSubType
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 9 次发布
+
+发布时间：2023-04-28 01:16:16
 
 本次发布包含了以下内容：
 
@@ -54,47 +69,41 @@
 
 修改接口：
 
-* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+* [CreateCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1492/77136)
 
-	* 新增入参：EmrLivyInfo
+	* 新增入参：Encoding
+
+* [SearchCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77438)
+
+	* 新增入参：Encoding
+
+* [SearchCommandBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77437)
+
+	* 新增入参：Encoding
+
+* [SearchSessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77433)
+
+	* 新增入参：Encoding
 
 
 修改数据结构：
 
-* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
 
-	* 新增成员：DataEngineClusterType, DataEngineImageVersion
+	* 新增成员：Sid, UserName, Account, InstanceId, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
 
+* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
 
-
-
-## 全站加速网络(ecdn) 版本：2019-10-12
-
-### 第 4 次发布
-
-发布时间：2023-04-27 01:20:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* AddEcdnDomain
-* CreateVerifyRecord
-* DeleteEcdnDomain
-* PurgePathCache
-* StartEcdnDomain
-* StopEcdnDomain
-* UpdateDomainConfig
+	* 新增成员：Account, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
 
 
 
-## 全球应用加速(gaap) 版本：2018-05-29
 
-### 第 20 次发布
+## 密钥管理系统(kms) 版本：2019-01-18
 
-发布时间：2023-04-27 01:22:42
+### 第 6 次发布
+
+发布时间：2023-04-28 01:23:43
 
 本次发布包含了以下内容：
 
@@ -102,15 +111,18 @@
 
 新增接口：
 
-* [DescribeAuthSignature](http://document.tencentcloudapi.woa.com/document/product/608/77531)
+* [PostQuantumCryptoDecrypt](http://document.tencentcloudapi.woa.com/document/product/573/77535)
+* [PostQuantumCryptoEncrypt](http://document.tencentcloudapi.woa.com/document/product/573/77534)
+* [PostQuantumCryptoSign](http://document.tencentcloudapi.woa.com/document/product/573/77533)
+* [PostQuantumCryptoVerify](http://document.tencentcloudapi.woa.com/document/product/573/77532)
 
 
 
-## 云数据库Redis(redis) 版本：2018-04-12
+## 云直播CSS(live) 版本：2018-08-01
 
-### 第 31 次发布
+### 第 32 次发布
 
-发布时间：2023-04-27 01:31:01
+发布时间：2023-04-28 01:24:22
 
 本次发布包含了以下内容：
 
@@ -118,18 +130,56 @@
 
 修改接口：
 
-* [KillMasterGroup](http://document.tencentcloudapi.woa.com/document/product/239/58399)
+* [CreateLiveCallbackTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32637)
 
-	* <font color="#dd0000">**修改入参**：</font>Password
-
-
+	* 新增入参：AudioAuditNotifyUrl
 
 
-## 凭据管理系统(ssm) 版本：2019-09-23
 
-### 第 7 次发布
 
-发布时间：2023-04-27 01:33:13
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 26 次发布
+
+发布时间：2023-04-28 01:26:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ProcessLiveStream](http://document.tencentcloudapi.woa.com/document/product/862/39227)
+
+	* 新增入参：AiAnalysisTask
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 19 次发布
+
+发布时间：2023-04-28 01:30:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackupByFlowId](http://document.tencentcloudapi.woa.com/document/product/238/47203)
+
+	* 新增出参：BackupFormat, Region, CrossBackupAddr, CrossBackupStatus
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 59 次发布
+
+发布时间：2023-04-28 01:36:02
 
 本次发布包含了以下内容：
 
@@ -137,18 +187,18 @@
 
 修改数据结构：
 
-* [SecretMetadata](http://document.tencentcloudapi.woa.com/document/product/1140/40530#SecretMetadata)
+* [DescribeFileAttributesTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTaskOutput)
 
-	* 新增成员：RotationFrequency, ResourceID, RotationBeginTime
-
-
+	* 新增成员：Sha1
 
 
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-### 第 42 次发布
 
-发布时间：2023-04-27 01:34:58
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 36 次发布
+
+发布时间：2023-04-28 01:38:39
 
 本次发布包含了以下内容：
 
@@ -156,13 +206,30 @@
 
 修改接口：
 
-* [CreateRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/63427)
+* [ModifyWafThreatenIntelligence](http://document.tencentcloudapi.woa.com/document/product/627/72637)
 
-	* <font color="#dd0000">**修改入参**：</font>Ttl, RetentionTime
+	* <font color="#dd0000">**修改入参**：</font>WafThreatenIntelligenceDetails
 
-* [ModifyRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/63415)
+	* <font color="#dd0000">**修改出参**：</font>WafThreatenIntelligenceDetails
 
-	* <font color="#dd0000">**修改入参**：</font>Ttl, RetentionTime
+
+修改数据结构：
+
+* [BotPkg](http://document.tencentcloudapi.woa.com/document/product/627/53609#BotPkg)
+
+	* 新增成员：RenewFlag
+
+* [BotQPS](http://document.tencentcloudapi.woa.com/document/product/627/53609#BotQPS)
+
+	* 新增成员：RenewFlag
+
+* [FraudPkg](http://document.tencentcloudapi.woa.com/document/product/627/53609#FraudPkg)
+
+	* 新增成员：RenewFlag
+
+* [WafThreatenIntelligenceDetails](http://document.tencentcloudapi.woa.com/document/product/627/53609#WafThreatenIntelligenceDetails)
+
+	* <font color="#dd0000">**修改成员**：</font>DefenseStatus
 
 
 
@@ -8220,6 +8287,21 @@
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
+### 第 45 次发布
+
+发布时间：2023-04-28 01:10:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePayType](http://document.tencentcloudapi.woa.com/document/product/228/31295)
+
+	* 新增入参：Type
+
+
 ### 第 44 次发布
 
 发布时间：2023-04-19 01:08:12
@@ -9704,6 +9786,21 @@
 
 
 ## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 23 次发布
+
+发布时间：2023-04-28 01:11:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BlockIgnoreRule)
+
+	* 新增成员：Comment
+
 
 ### 第 22 次发布
 
@@ -14407,6 +14504,21 @@
 
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 51 次发布
+
+发布时间：2023-04-28 01:13:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PaymentOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderResult)
+
+	* 新增成员：FundingAccountSubType
+
 
 ### 第 50 次发布
 
@@ -19511,6 +19623,44 @@
 
 
 ## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 9 次发布
+
+发布时间：2023-04-28 01:16:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1492/77136)
+
+	* 新增入参：Encoding
+
+* [SearchCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77438)
+
+	* 新增入参：Encoding
+
+* [SearchCommandBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77437)
+
+	* 新增入参：Encoding
+
+* [SearchSessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77433)
+
+	* 新增入参：Encoding
+
+
+修改数据结构：
+
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
+
+	* 新增成员：Sid, UserName, Account, InstanceId, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
+
+* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
+
+	* 新增成员：Account, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
+
 
 ### 第 8 次发布
 
@@ -27365,7 +27515,7 @@
 
 新增接口：
 
-* [[DescribeAuthSignature](http://document.tencentcloudapi.woa.com/document/product/608/77531)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAuthSignature](http://document.tencentcloudapi.woa.com/document/product/608/77531)
 
 ### 第 19 次发布
 
@@ -31099,6 +31249,21 @@
 
 ## 密钥管理系统(kms) 版本：2019-01-18
 
+### 第 6 次发布
+
+发布时间：2023-04-28 01:23:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[PostQuantumCryptoDecrypt](http://document.tencentcloudapi.woa.com/document/product/573/77535)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[PostQuantumCryptoEncrypt](http://document.tencentcloudapi.woa.com/document/product/573/77534)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[PostQuantumCryptoSign](http://document.tencentcloudapi.woa.com/document/product/573/77533)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[PostQuantumCryptoVerify](http://document.tencentcloudapi.woa.com/document/product/573/77532)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 5 次发布
 
 发布时间：2023-03-03 01:25:44
@@ -31876,6 +32041,21 @@
 
 
 ## 云直播CSS(live) 版本：2018-08-01
+
+### 第 32 次发布
+
+发布时间：2023-04-28 01:24:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLiveCallbackTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32637)
+
+	* 新增入参：AudioAuditNotifyUrl
+
 
 ### 第 31 次发布
 
@@ -35439,6 +35619,21 @@
 
 
 ## 媒体处理(mps) 版本：2019-06-12
+
+### 第 26 次发布
+
+发布时间：2023-04-28 01:26:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ProcessLiveStream](http://document.tencentcloudapi.woa.com/document/product/862/39227)
+
+	* 新增入参：AiAnalysisTask
+
 
 ### 第 25 次发布
 
@@ -42986,6 +43181,21 @@
 
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 19 次发布
+
+发布时间：2023-04-28 01:30:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackupByFlowId](http://document.tencentcloudapi.woa.com/document/product/238/47203)
+
+	* 新增出参：BackupFormat, Region, CrossBackupAddr, CrossBackupStatus
+
 
 ### 第 18 次发布
 
@@ -55080,6 +55290,21 @@
 
 ## 云点播(vod) 版本：2018-07-17
 
+### 第 59 次发布
+
+发布时间：2023-04-28 01:36:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DescribeFileAttributesTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTaskOutput)
+
+	* 新增成员：Sha1
+
+
 ### 第 58 次发布
 
 发布时间：2023-04-24 01:37:58
@@ -59395,6 +59620,42 @@
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 36 次发布
+
+发布时间：2023-04-28 01:38:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyWafThreatenIntelligence](http://document.tencentcloudapi.woa.com/document/product/627/72637)
+
+	* <font color="#dd0000">**修改入参**：</font>WafThreatenIntelligenceDetails
+
+	* <font color="#dd0000">**修改出参**：</font>WafThreatenIntelligenceDetails
+
+
+修改数据结构：
+
+* [BotPkg](http://document.tencentcloudapi.woa.com/document/product/627/53609#BotPkg)
+
+	* 新增成员：RenewFlag
+
+* [BotQPS](http://document.tencentcloudapi.woa.com/document/product/627/53609#BotQPS)
+
+	* 新增成员：RenewFlag
+
+* [FraudPkg](http://document.tencentcloudapi.woa.com/document/product/627/53609#FraudPkg)
+
+	* 新增成员：RenewFlag
+
+* [WafThreatenIntelligenceDetails](http://document.tencentcloudapi.woa.com/document/product/627/53609#WafThreatenIntelligenceDetails)
+
+	* <font color="#dd0000">**修改成员**：</font>DefenseStatus
+
 
 ### 第 35 次发布
 

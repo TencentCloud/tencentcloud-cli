@@ -210,13 +210,13 @@
     ],
     "DescribeBackupByFlowId": [
       {
-        "document": "",
+        "document": "流程ID查询备份详情（备份已完成）",
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupByFlowId\n&InstanceId=mssql-6upluvd5\n&FlowId=1000797\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"BackupName\": \"mssql-6upluvd5_202007311206\",\n        \"BackupWay\": 0,\n        \"DBs\": [\n            \"db1\",\n            \"db2\"\n        ],\n        \"EndTime\": \"2020-07-31 15:10:27\",\n        \"ExternalAddr\": \"https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDpY8YnsLYAbq352rW0KaAnIeqrgJjE0ra%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c\",\n        \"FileName\": \"autoed_instance_58037_20200728011545.bak.tar\",\n        \"Id\": 1234568,\n        \"InternalAddr\": \"https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDpY8YnsLYAbq352rW0KaAnIeqrgJjE0ra%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c\",\n        \"RequestId\": \"3f49f6d4-692b-414b-999c-55b38922e049\",\n        \"Size\": 1356532,\n        \"StartTime\": \"2020-07-31 14:28:51\",\n        \"Status\": 1,\n        \"Strategy\": 0,\n        \"GroupId\": \"558800\"\n    }\n}",
         "title": "流程ID查询备份详情（备份已完成）"
       },
       {
-        "document": "",
+        "document": "流程ID查询备份详情（备份创建中）",
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupByFlowId\n&InstanceId=mssql-6upluvd5\n&FlowId=1000796\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"BackupName\": \"mssql-6upluvd5_202007311206\",\n        \"BackupWay\": 0,\n        \"DBs\": [\n            \"db1\",\n            \"db2\"\n        ],\n        \"EndTime\": \"0000-00-00 00:00:00\",\n        \"ExternalAddr\": \"\",\n        \"FileName\": \"\",\n        \"Id\": 0,\n        \"InternalAddr\": \"\",\n        \"RequestId\": \"de6cf7f3-ff88-4baf-a933-4714df850efa\",\n        \"Size\": 0,\n        \"StartTime\": \"2020-07-31 14:27:33\",\n        \"Status\": 0,\n        \"Strategy\": 0,\n        \"GroupId\": \"558800\"\n    }\n}",
         "title": "流程ID查询备份详情（备份创建中）"

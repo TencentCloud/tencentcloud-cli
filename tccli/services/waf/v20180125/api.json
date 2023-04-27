@@ -1621,6 +1621,16 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "续费标志\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -1676,6 +1686,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "续费标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -4768,10 +4788,13 @@
       "members": [
         {
           "document": "WAF 威胁情报封禁信息",
+          "example": "无",
           "member": "WafThreatenIntelligenceDetails",
           "name": "WafThreatenIntelligenceDetails",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5860,6 +5883,16 @@
           "example": "0",
           "member": "int64",
           "name": "UsedNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "续费标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
           "required": false,
           "type": "int",
           "value_allowed_null": true,
@@ -7452,12 +7485,13 @@
       "document": "ModifyWafThreatenIntelligence请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "配置WAF威胁情报封禁模块详情",
+          "example": "无",
           "member": "WafThreatenIntelligenceDetails",
           "name": "WafThreatenIntelligenceDetails",
-          "required": true,
-          "type": "object"
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7467,10 +7501,13 @@
       "members": [
         {
           "document": "当前WAF威胁情报封禁模块详情",
+          "example": "无",
           "member": "WafThreatenIntelligenceDetails",
           "name": "WafThreatenIntelligenceDetails",
+          "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9071,34 +9108,37 @@
       "usage": "out"
     },
     "WafThreatenIntelligenceDetails": {
-      "document": "Waf 威胁情报封禁模块配置详情",
+      "document": "当前WAF威胁情报封禁模块详情",
       "members": [
         {
-          "default": "",
-          "document": "封禁模组启用状态",
-          "member": "int64",
-          "name": "DefenseStatus",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "封禁属性标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
           "member": "string",
           "name": "Tags",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
+          "document": "封禁模组启用状态",
+          "example": "-",
+          "member": "int64",
+          "name": "DefenseStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "document": "最后更新时间",
+          "example": "-",
           "member": "datetime_iso",
           "name": "LastUpdateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

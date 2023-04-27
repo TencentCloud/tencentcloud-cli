@@ -2365,7 +2365,6 @@
       "document": "CreateLiveCallbackTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
           "example": "testName",
           "member": "string",
@@ -2375,7 +2374,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
           "example": "test",
           "member": "string",
@@ -2385,7 +2383,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "开播回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
           "example": "无",
           "member": "string",
@@ -2395,7 +2392,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "断流回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
           "example": "无",
           "member": "string",
@@ -2405,7 +2401,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "录制回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
           "example": "无",
           "member": "string",
@@ -2415,7 +2410,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "截图回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
           "example": "无",
           "member": "string",
@@ -2425,8 +2419,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "鉴黄回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32741)。",
+          "document": "鉴黄回调 URL ，\n相关协议文档：[事件消息通知](/document/product/267/32741)。",
           "example": "无",
           "member": "string",
           "name": "PornCensorshipNotifyUrl",
@@ -2435,7 +2428,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "回调 Key，回调 URL 公用，回调签名详见事件消息通知文档。\n[事件消息通知](/document/product/267/32744)。",
           "example": "adasda131312",
           "member": "string",
@@ -2445,7 +2437,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数已弃用。",
           "example": "asdsad",
           "member": "string",
@@ -2455,11 +2446,19 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "推流异常回调 URL。",
           "example": "http://abc.com/abc",
           "member": "string",
           "name": "PushExceptionNotifyUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "音频审核回调 URL。",
+          "example": "无",
+          "member": "string",
+          "name": "AudioAuditNotifyUrl",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -2475,7 +2474,6 @@
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1

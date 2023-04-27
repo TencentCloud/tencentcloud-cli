@@ -23607,7 +23607,6 @@
       "document": "付款订单结果",
       "members": [
         {
-          "default": "",
           "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得",
           "example": "无",
           "member": "string",
@@ -23618,7 +23617,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "税前金额",
           "example": "无",
           "member": "string",
@@ -23629,7 +23627,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "税后金额",
           "example": "无",
           "member": "string",
@@ -23640,7 +23637,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "税金",
           "example": "无",
           "member": "string",
@@ -23651,7 +23647,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "外部订单ID",
           "example": "无",
           "member": "string",
@@ -23662,7 +23657,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "订单ID",
           "example": "无",
           "member": "string",
@@ -23673,7 +23667,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "发起时间",
           "example": "无",
           "member": "string",
@@ -23684,7 +23677,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -23695,7 +23687,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "状态\nACCEPTED:已受理\nACCOUNTED:已记账\nPAYING:付款中\nPAYED:完成付款渠道调用\nSUCCEED:已成功\nFAILED:已失败",
           "example": "无",
           "member": "string",
@@ -23706,7 +23697,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "状态描述",
           "example": "无",
           "member": "string",
@@ -23717,7 +23707,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "提现备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -23728,7 +23717,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "收款用户ID",
           "example": "无",
           "member": "string",
@@ -23739,7 +23727,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "外部用户ID",
           "example": "无",
           "member": "string",
@@ -23750,7 +23737,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "渠道支付订单号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -23761,7 +23747,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "增值税\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -23772,7 +23757,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "个人所得税\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -23783,7 +23767,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "附加税总税额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -23794,7 +23777,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "附加税税项。格式为JSON格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -23805,12 +23787,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "失败原因。当Status为FAILED时，改字段为失败的原因。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "FailReason",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "资金账户字类型: WECHATPAY_ACCOUNT 微信零钱, BANK_ACCOUNT 银行卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountSubType",
+          "required": false,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
