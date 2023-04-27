@@ -334,6 +334,14 @@
         "title": "根据源站区域查询可用加速区域"
       }
     ],
+    "DescribeAuthSignature": [
+      {
+        "document": " ",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuthSignature\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询签名信息"
+      }
+    ],
     "DescribeBlackHeader": [
       {
         "document": "",

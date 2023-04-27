@@ -1709,7 +1709,6 @@
       "document": "凭据的基础信息",
       "members": [
         {
-          "default": "",
           "document": "凭据名称",
           "example": "testName",
           "member": "string",
@@ -1719,7 +1718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "凭据的描述信息",
           "example": "test",
           "member": "string",
@@ -1729,7 +1727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用于加密凭据的KMS KeyId",
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
@@ -1739,7 +1736,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建者UIN",
           "example": "12345",
           "member": "uint64",
@@ -1749,7 +1745,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "凭据状态：Enabled、Disabled、PendingDelete、Creating、Failed",
           "example": "Initializing",
           "member": "string",
@@ -1759,7 +1754,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "凭据删除日期，对于status为PendingDelete 的有效，unix时间戳",
           "example": "1234",
           "member": "uint64",
@@ -1769,7 +1763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "凭据创建时间，unix时间戳",
           "example": "1234",
           "member": "uint64",
@@ -1779,7 +1772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用于加密凭据的KMS CMK类型，DEFAULT 表示SecretsManager 创建的默认密钥， CUSTOMER 表示用户指定的密钥",
           "example": "DEFAULT",
           "member": "string",
@@ -1789,7 +1781,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "1:--开启轮转；0--禁止轮转\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Enabled",
           "member": "int64",
@@ -1799,7 +1790,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "下一次轮转开始时间，uinx 时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1574160561",
           "member": "uint64",
@@ -1809,7 +1799,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "0 -- 用户自定义凭据；\n1 -- 云产品凭据；\n2 -- SSH密钥对凭据；\n3 -- 云API密钥对凭据；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CloudProduct",
           "member": "int64",
@@ -1819,7 +1808,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MYSQL",
           "member": "string",
@@ -1829,7 +1817,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1839,7 +1826,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -1849,7 +1835,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1859,13 +1844,39 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "TargetUin",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "轮转的频率，以天作为单位，在轮转开启状态下生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "int64",
+          "name": "RotationFrequency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "云产品凭据对应的云产品实例 ID 号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "skey-a1b2c3d4",
+          "member": "string",
+          "name": "ResourceID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户指定的轮转开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-12-28 15:07:11",
+          "member": "string",
+          "name": "RotationBeginTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

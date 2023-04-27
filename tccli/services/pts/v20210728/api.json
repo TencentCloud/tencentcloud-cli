@@ -765,7 +765,6 @@
       "document": "采样日志附带属性",
       "members": [
         {
-          "default": "",
           "document": "采用请求返回码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "200",
           "member": "string",
@@ -775,7 +774,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "采样请求结果码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ok",
           "member": "string",
@@ -785,7 +783,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "采样请求API\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://www.baidu.com",
           "member": "string",
@@ -795,7 +792,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "采样请求调用方法\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "get",
           "member": "string",
@@ -805,7 +801,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "采样请求延时时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "string",
@@ -3279,7 +3274,6 @@
       "document": "DescribeSampleLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "测试项目ID",
           "example": "project-xxx",
           "member": "string",
@@ -3288,7 +3282,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "测试场景ID",
           "example": "scenario-xxx",
           "member": "string",
@@ -3297,7 +3290,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "测试任务ID",
           "example": "job-xxxx",
           "member": "string",
@@ -3306,7 +3298,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时",
           "example": "csdfeee-dsfll09ds-sdsf",
           "member": "string",
@@ -3315,7 +3306,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志开始时间",
           "example": "2021-09-02T03:18:35+08:00",
           "member": "datetime_iso",
@@ -3324,7 +3314,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志结束时间",
           "example": "2021-09-02T03:18:35+08:00",
           "member": "datetime_iso",
@@ -3333,7 +3322,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志级别debug,info,error",
           "example": "info",
           "member": "string",
@@ -3342,7 +3330,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "ap-shanghai, ap-guangzhou",
           "example": "地域",
           "member": "string",
@@ -3351,7 +3338,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "施压引擎节点IP",
           "example": "节点IP",
           "member": "string",
@@ -3360,7 +3346,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "request 代表采样日志,可为不填",
           "example": "日志类型",
           "member": "string",
@@ -3369,7 +3354,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回日志条数，最大100",
           "example": "50",
           "member": "int64",
@@ -3378,7 +3362,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "采样日志响应时间范围",
           "example": "无",
           "member": "ReactionTimeRange",
@@ -3387,7 +3370,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "采样请求状态码",
           "example": "200",
           "member": "string",
@@ -3396,7 +3378,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "采样请求结果码",
           "example": "ok",
           "member": "string",
@@ -3405,7 +3386,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "采样请求方法",
           "example": "Get",
           "member": "string",
@@ -3414,7 +3394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "采样服务API",
           "example": "http://www.baidu.com",
           "member": "string",
@@ -3433,7 +3412,6 @@
           "example": "100",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3442,7 +3420,6 @@
           "example": "2340-324234-32423",
           "member": "string",
           "name": "Context",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3451,7 +3428,6 @@
           "example": "无",
           "member": "SampleLog",
           "name": "SampleLogs",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

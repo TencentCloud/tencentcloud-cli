@@ -29,7 +29,8 @@ Output:
                 "RealEndTime": 1,
                 "Resolution": 1,
                 "MaxRTCMember": 1,
-                "ReplayUrl": "abc"
+                "ReplayUrl": "abc",
+                "EnableDirectControl": 0
             }
         ],
         "RequestId": "abc"

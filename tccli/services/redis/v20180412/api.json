@@ -449,7 +449,7 @@
       "status": "online"
     },
     "KillMasterGroup": {
-      "document": "模拟故障",
+      "document": "本接口（KillMasterGroup）模拟故障。",
       "input": "KillMasterGroupRequest",
       "name": "模拟故障接口",
       "output": "KillMasterGroupResponse",
@@ -3736,7 +3736,6 @@
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "每页输出实例的数量，参数默认值20，最大值为1000。",
           "example": "1",
           "member": "uint64",
@@ -3745,7 +3744,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页偏移量，取Limit整数倍。",
           "example": "0",
           "member": "uint64",
@@ -3754,7 +3752,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例 ID，如：crs-6ubhgouj。",
           "example": "无",
           "member": "string",
@@ -3763,7 +3760,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例排序依据，枚举值如下所示：<ul><li>projectId：项目ID。</li><li>createtime：实例创建时间。</li><li>instancename：实例名称。</li><li>type：实例类型。</li><li>curDeadline：实例到期时间。</li></ul>",
           "example": "无",
           "member": "string",
@@ -3772,7 +3768,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例排序方式，默认为倒序排序。<ul><li>1：倒序。</li><li>0：顺序。</li></ul>",
           "example": "无",
           "member": "int64",
@@ -3781,7 +3776,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "私有网络 ID 数组。如果不配置该参数或设置数组为空则默认选择基础网络。例如47525。该参数暂时保留，可忽略。请根据 UniqVpcIds 参数格式设置私有网络ID数组。",
           "example": "无",
           "member": "string",
@@ -3790,7 +3784,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "私有网络所属子网 ID 数组，例如：56854。该参数暂时保留，可忽略。请根据 UniqSubnetIds 参数格式设置私有网络子网 ID 数组。",
           "example": "无",
           "member": "string",
@@ -3799,7 +3792,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "设置模糊查询关键字，支持根据实例名称或实例ID模糊查询实例。",
           "example": "无",
           "member": "string",
@@ -3808,7 +3800,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "项目 ID 组成的数组。",
           "example": "无",
           "member": "int64",
@@ -3817,7 +3808,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例名称。",
           "example": "无",
           "member": "string",
@@ -3826,7 +3816,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "私有网络 ID 数组。如果不配置该参数或者设置数组为空则默认选择基础网络，如：vpc-sad23jfdfk。",
           "example": "无",
           "member": "string",
@@ -3835,7 +3824,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "私有网络所属子网 ID 数组，如：subnet-fdj24n34j2。",
           "example": "无",
           "member": "string",
@@ -3844,7 +3832,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "地域 ID 数组，该参数已经弃用，可通过公共参数Region查询对应地域。",
           "example": "无",
           "member": "int64",
@@ -3853,7 +3840,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>",
           "example": "无",
           "member": "int64",
@@ -3862,7 +3848,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例架构版本。<ul><li>1：单机版。</li><li>2：主从版。</li><li>3：集群版。</li></ul>",
           "example": "无",
           "member": "int64",
@@ -3871,7 +3856,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "存储引擎信息。可设置为Redis-2.8、Redis-4.0、Redis-5.0、Redis-6.0 或者 CKV。",
           "example": "无",
           "member": "string",
@@ -3880,7 +3864,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "续费模式。<ul><li>0：默认状态（手动续费）。</li><li>1：自动续费。</li><li>2：明确不自动续费。</ul>",
           "example": "无",
           "member": "int64",
@@ -3889,7 +3872,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>",
           "example": "无",
           "member": "string",
@@ -3898,7 +3880,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例类型。<ul><li>1：Redis 老集群版。</li><li>2：Redis 2.8 主从版。</li><li>3：CKV 主从版。</li><li>4：CKV 集群版。</li><li>5：Redis 2.8 单机版。</li><li>6：Redis 4.0主从版。</li><li>7：Redis 4.0 集群版。</li><li>8：Redis 5.0 主从版。</li><li>9：Redis 5.0 集群版。</li></ul>",
           "example": "无",
           "member": "int64",
@@ -3907,7 +3888,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "设置搜索关键字数组，可根据实例ID、实例名称、完整IP地址查询实例。",
           "example": "无",
           "member": "string",
@@ -3916,7 +3896,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "内部参数，用户可忽略。",
           "example": "无",
           "member": "int64",
@@ -3925,7 +3904,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "内部参数，用户可忽略。",
           "example": "无",
           "member": "string",
@@ -3934,7 +3912,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。",
           "example": "无",
           "member": "InstanceTagInfo",
@@ -3943,7 +3920,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。",
           "example": "无",
           "member": "string",
@@ -3952,7 +3928,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。<ul><li>local：本地盘版。</li><li>cloud：云盘版。</li><li>cdc：独享集群版。</li></ul>",
           "example": "[\"cdc\"]",
           "member": "string",
@@ -3961,7 +3936,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "批量查询指定的实例 ID，返回结果已 Limit 限制为主。",
           "example": "[\"crs-fljrtizn\",\"crs-0tbmwtop\",\"crs-i0n3dutj\"]",
           "member": "string",
@@ -3970,7 +3944,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "可用区模式。<ul><li>singleaz：单可用区。</li><li>multiaz：多可用区。</li></ul>",
           "example": "multiaz",
           "member": "string",
@@ -3989,7 +3962,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3998,7 +3970,6 @@
           "example": "无",
           "member": "InstanceSet",
           "name": "InstanceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5582,8 +5553,8 @@
       "document": "实例节点类型",
       "members": [
         {
-          "default": "",
-          "document": "节点名称",
+          "document": "节点名称。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5591,8 +5562,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "实例运行时节点Id",
+          "document": "实例运行时节点 ID。",
+          "example": "无",
           "member": "string",
           "name": "RunId",
           "required": true,
@@ -5600,8 +5571,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "集群角色：0-master；1-slave",
+          "document": "集群角色。\n- 0：master。\n- 1：slave。",
+          "example": "无",
           "member": "int64",
           "name": "Role",
           "required": true,
@@ -5609,8 +5580,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点状态：0-readwrite, 1-read, 2-backup",
+          "document": "节点状态。\n- 0：readwrite,。\n- 1：read。\n- 2：backup。",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -5618,8 +5589,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "服务状态：0-down；1-on",
+          "document": "服务状态。\n0-down。\n1-on",
+          "example": "无",
           "member": "int64",
           "name": "Connected",
           "required": true,
@@ -5627,8 +5598,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点创建时间",
+          "document": "节点创建时间。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -5636,8 +5607,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点下线时间",
+          "document": "节点下线时间。",
+          "example": "无",
           "member": "string",
           "name": "DownTime",
           "required": true,
@@ -5645,8 +5616,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点slot分布",
+          "document": "节点 Slot 分布区间。",
+          "example": "无",
           "member": "string",
           "name": "Slots",
           "required": true,
@@ -5654,8 +5625,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点key分布",
+          "document": "节点 Key分布。",
+          "example": "无",
           "member": "int64",
           "name": "Keys",
           "required": true,
@@ -5663,8 +5634,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点qps",
+          "document": "节点 QPS。分片节点每秒执行次数。单位：次/秒。",
+          "example": "无",
           "member": "int64",
           "name": "Qps",
           "required": true,
@@ -5672,8 +5643,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点qps倾斜度",
+          "document": "节点 QPS 倾斜度。",
+          "example": "无",
           "member": "float",
           "name": "QpsSlope",
           "required": true,
@@ -5681,8 +5652,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点存储",
+          "document": "节点存储。",
+          "example": "无",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -5690,8 +5661,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点存储倾斜度",
+          "document": "节点存储倾斜度。",
+          "example": "无",
           "member": "float",
           "name": "StorageSlope",
           "required": true,
@@ -6044,8 +6015,8 @@
       "document": "实例节点",
       "members": [
         {
-          "default": "",
-          "document": "Id",
+          "document": "实例 ID。",
+          "example": "无",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -6053,8 +6024,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "节点详细信息",
+          "document": "节点详细信息。",
+          "example": "无",
           "member": "InstanceClusterNode",
           "name": "InstanceClusterNode",
           "required": true,
@@ -6781,8 +6752,8 @@
       "document": "实例标签信息",
       "members": [
         {
-          "default": "",
-          "document": "标签键",
+          "document": "标签键。",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -6790,8 +6761,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "标签值",
+          "document": "标签值。",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -6799,7 +6770,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "InstanceTextParam": {
       "document": "实例字符型参数描述",
@@ -7069,8 +7040,7 @@
       "document": "KillMasterGroup请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
           "example": "crs-dfndi7de",
           "member": "string",
           "name": "InstanceId",
@@ -7078,17 +7048,15 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "1.长度8-30位,推荐使用12位以上的密码\n2.不能以\"/\"开头\n3.至少包含两项\n    a.小写字母a-z\n    b.大写字母A-Z\n    c.数字0-9\n    d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/",
+          "document": "该参数用于配置指定实例的访问密码。若为免密认证，该参数则无需配置。密码复杂度要求如下所示。\n- 长度8-30位,推荐使用12位以上的密码\n- 不能以\"/\"开头\n- 至少包含小写字母a-z、大写字母A-Z、数字0-9及其 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。",
           "example": "12345Aa",
           "member": "string",
           "name": "Password",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "单AZ实例节点信息",
+          "document": "分片集群的分片 ID。",
           "example": "null",
           "member": "int64",
           "name": "ShardIds",
@@ -7102,11 +7070,10 @@
       "document": "KillMasterGroup返回参数结构体",
       "members": [
         {
-          "document": "异步任务ID",
+          "document": "异步任务ID。",
           "example": "156156",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

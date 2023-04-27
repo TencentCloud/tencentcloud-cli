@@ -38,7 +38,10 @@ Output:
                     "JsonStandard": 0,
                     "Protocol": "",
                     "Address": "",
-                    "ParseProtocol": ""
+                    "ParseProtocol": "",
+                    "MetadataType": 0,
+                    "PathRegex": "",
+                    "MetaTags": []
                 },
                 "ExcludePaths": null,
                 "Output": "97e8a872-xxxx-4644-9d3c-603d95051458",

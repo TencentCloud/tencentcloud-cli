@@ -242,7 +242,7 @@
   "metadata": {
     "apiVersion": "2019-04-08",
     "api_brief": "介绍如何使用API对自然语言处理进行操作，包括词法分析、相似词召回、词相似度、句子相似度、文本润色、句子纠错、文本补全、句子生成等。",
-    "serviceNameCN": "NLP服务",
+    "serviceNameCN": "NLP 服务",
     "serviceShortName": "nlp"
   },
   "objects": {

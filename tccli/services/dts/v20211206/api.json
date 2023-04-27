@@ -1354,8 +1354,7 @@
       "document": "CreateMigrationService请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "源实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb",
+          "document": "源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql",
           "example": "mysql",
           "member": "string",
           "name": "SrcDatabaseType",
@@ -1363,8 +1362,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "目标实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb",
+          "document": "目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql",
           "example": "mysql",
           "member": "string",
           "name": "DstDatabaseType",
@@ -1372,7 +1370,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "源实例地域，如：ap-guangzhou",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1381,7 +1378,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1390,7 +1386,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例规格，包括：small、medium、large、xlarge、2xlarge",
           "example": "large",
           "member": "string",
@@ -1399,7 +1394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "购买数量，范围为[1,15]，默认为1",
           "example": "1",
           "member": "uint64",
@@ -1408,7 +1402,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "迁移服务名称，最大长度128",
           "example": "migrate_test",
           "member": "string",
@@ -1417,7 +1410,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签信息",
           "example": "无",
           "member": "TagItem",
@@ -1436,7 +1428,6 @@
           "example": "[\"dts-amm1jw5q\"]",
           "member": "string",
           "name": "JobIds",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

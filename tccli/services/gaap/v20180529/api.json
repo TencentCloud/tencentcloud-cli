@@ -266,6 +266,13 @@
       "output": "DescribeAccessRegionsByDestRegionResponse",
       "status": "online"
     },
+    "DescribeAuthSignature": {
+      "document": "为了防止在下单、询价、后付费开通等过程中确保来源合法以及订单参数没有被篡改过，各个业务方使用下单、询价等场景需调用计费签名接口获取签名，获取签名的请求需带上签名以验证身份，本接口可以获取计费签名。",
+      "input": "DescribeAuthSignatureRequest",
+      "name": "获取计费签名",
+      "output": "DescribeAuthSignatureResponse",
+      "status": "online"
+    },
     "DescribeBlackHeader": {
       "document": "本接口（DescribeBlackHeader）用于查询禁用的自定义header 名称",
       "input": "DescribeBlackHeaderRequest",
@@ -3750,6 +3757,23 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthSignatureRequest": {
+      "document": "DescribeAuthSignature请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAuthSignatureResponse": {
+      "document": "DescribeAuthSignature返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

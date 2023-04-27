@@ -720,7 +720,6 @@
       "document": "AttachDisks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-5vmz00i3\"]",
           "member": "string",
@@ -729,7 +728,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例ID。",
           "example": "lhins-qg08np8l",
           "member": "string",
@@ -738,7 +736,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "续费标识。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
@@ -1307,7 +1304,6 @@
       "document": "CreateDiskBackup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云硬盘 ID。当前只支持数据盘创建备份点。",
           "example": "lhdisk-p1zflrif",
           "member": "string",
@@ -1316,7 +1312,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云硬盘备份点名称，最大长度90。",
           "example": "disk-backup-01",
           "member": "string",
@@ -1335,7 +1330,6 @@
           "example": "lhbak-g7w4rd71",
           "member": "string",
           "name": "DiskBackupId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1397,7 +1391,6 @@
       "document": "CreateInstanceSnapshot请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要创建快照的实例 ID。",
           "example": "lhins-k31c771o",
           "member": "string",
@@ -1406,7 +1399,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "快照名称，最长为 60 个字符。",
           "example": "snap_20200903",
           "member": "string",
@@ -1425,7 +1417,6 @@
           "example": "lhsnap-nv6aqcv6",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2058,7 +2049,6 @@
       "document": "DescribeBundles请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "套餐 ID 列表。",
           "example": "bundle_ntp_small1_500",
           "member": "string",
@@ -2067,7 +2057,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -2076,7 +2065,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "20",
           "member": "int64",
@@ -2085,7 +2073,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n<li>bundle-type</li>按照 【套餐类型进行过滤】。\n取值：GENERAL_BUNDLE (通用型套餐); STORAGE_BUNDLE(存储型套餐);ENTERPRISE_BUNDLE( 企业型套餐);EXCLUSIVE_BUNDLE(专属型套餐);BEFAST_BUNDLE(蜂驰型套餐);\n类型：String\n必选：否\n<li>bundle-state</li>按照【套餐状态】进行过滤。\n取值: ‘ONLINE’(在线); ‘OFFLINE’(下线);\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BundleIds 和 Filters。",
           "example": "无",
           "member": "Filter",
@@ -2094,7 +2081,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "可用区列表。默认为全部可用区。",
           "example": "无",
           "member": "string",
@@ -2113,7 +2099,6 @@
           "example": "无",
           "member": "Bundle",
           "name": "BundleSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2122,7 +2107,6 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5437,7 +5421,6 @@
       "document": "IsolateInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求退还实例和数据盘数量总计上限为20。",
           "example": "[\"lhins-7ofik5q9\"]",
           "member": "string",
@@ -5446,7 +5429,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否退还挂载的数据盘。取值范围：\nTRUE：表示退还实例同时退还其挂载的数据盘。\nFALSE：表示退还实例同时不再退还其挂载的数据盘。\n默认取值：TRUE。",
           "example": "true",
           "member": "bool",
@@ -5574,7 +5556,6 @@
       "document": "ModifyBlueprintAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "镜像 ID。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。",
           "example": "lhbp-aaaabbbb",
           "member": "string",
@@ -5583,7 +5564,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设置新的镜像名称。最大长度60。",
           "example": "test-blueprint",
           "member": "string",
@@ -5592,7 +5572,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设置新的镜像描述。最大长度60。",
           "example": "test-blueprint",
           "member": "string",

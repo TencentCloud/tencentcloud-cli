@@ -34,7 +34,7 @@
     ],
     "AttachDisks": [
       {
-        "document": "",
+        "document": "挂载云盘",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-5vmz00i3\"\n    ],\n    \"InstanceId\": \"lhins-qg08np8l\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d5e192e-10a2-44a6-a6ce-2ac6b01f7646\"\n    }\n}",
         "title": "挂载云盘"
@@ -50,7 +50,7 @@
     ],
     "CreateDiskBackup": [
       {
-        "document": "",
+        "document": "创建云硬盘备份点",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDiskBackup\n<公共请求参数>\n\n{\n    \"DiskBackupName\": \"disk-backup-01\",\n    \"DiskId\": \"lhdisk-qtovvuzq\"\n}",
         "output": "{\n    \"Response\": {\n        \"DiskBackupId\": \"lhbak-6068cwhv\",\n        \"RequestId\": \"ef009de9-1bf7-44b3-a30e-adfb328aff8c\"\n    }\n}",
         "title": "创建云硬盘备份点"
@@ -66,7 +66,7 @@
     ],
     "CreateInstanceSnapshot": [
       {
-        "document": "",
+        "document": "创建实例快照",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=CreateInstanceSnapshot\n&InstanceId=lhins-k31c771o\n&SnapshotName=snap_20200903\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SnapshotId\": \"lhsnap-nv6aqcv6\",\n        \"RequestId\": \"0580622c-03ef-4ae0-8192-016783412094\"\n    }\n}",
         "title": "创建实例快照"
@@ -162,9 +162,9 @@
     ],
     "DescribeBundles": [
       {
-        "document": "",
+        "document": "查询套餐-成功返回",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBundles\n<公共请求参数>\n\n{\n    \"BundleIds\": [\n        \"bundle_ntp_small1_500\",\n        \"bundle_bw_small1_1\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"BundleSet\": [\n            {\n                \"BundleId\": \"bundle_bw_small1_1\",\n                \"CPU\": 1,\n                \"Memory\": 1,\n                \"SystemDiskType\": \"CLOUD_SSD\",\n                \"SystemDiskSize\": 20,\n                \"InternetMaxBandwidthOut\": 1,\n                \"InternetChargeType\": \"BANDWIDTH_POSTPAID_BY_HOUR\",\n                \"MonthlyTraffic\": 1,\n                \"Price\": {\n                    \"InstancePrice\": {\n                        \"OriginalBundlePrice\": 60,\n                        \"OriginalPrice\": 60,\n                        \"Discount\": 65,\n                        \"DiscountPrice\": 39\n                    }\n                },\n                \"SupportLinuxUnixPlatform\": true,\n                \"SupportWindowsPlatform\": false,\n                \"BundleType\": \"GENERAL_BUNDLE\",\n                \"BundleSalesState\": \"AVAILABLE\",\n                \"BundleDisplayLabel\": \"NORMAL\"\n            },\n            {\n                \"BundleId\": \"bundle_ntp_small1_500\",\n                \"CPU\": 1,\n                \"Memory\": 1,\n                \"SystemDiskType\": \"CLOUD_SSD\",\n                \"SystemDiskSize\": 40,\n                \"InternetMaxBandwidthOut\": 3,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"MonthlyTraffic\": 500,\n                \"Price\": {\n                    \"InstancePrice\": {\n                        \"OriginalBundlePrice\": 90,\n                        \"OriginalPrice\": 90,\n                        \"Discount\": 65,\n                        \"DiscountPrice\": 58.5\n                    }\n                },\n                \"SupportLinuxUnixPlatform\": true,\n                \"SupportWindowsPlatform\": true,\n                \"BundleType\": \"GENERAL_BUNDLE\",\n                \"BundleSalesState\": \"AVAILABLE\",\n                \"BundleDisplayLabel\": \"NORMAL\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6d4c966d-bc42-4425-8c98-a39f36c7ad1b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BundleSet\": [\n            {\n                \"BundleId\": \"bundle2022_gen_02\",\n                \"CPU\": 2,\n                \"Memory\": 2,\n                \"SystemDiskType\": \"CLOUD_SSD\",\n                \"SystemDiskSize\": 50,\n                \"InternetMaxBandwidthOut\": 5,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"MonthlyTraffic\": 500,\n                \"Price\": {\n                    \"InstancePrice\": {\n                        \"Currency\": \"CNY\",\n                        \"OriginalBundlePrice\": 60.0,\n                        \"OriginalPrice\": 60.0,\n                        \"Discount\": 66.229933,\n                        \"DiscountPrice\": 39.74\n                    }\n                },\n                \"SupportLinuxUnixPlatform\": true,\n                \"SupportWindowsPlatform\": true,\n                \"BundleType\": \"GENERAL_BUNDLE\",\n                \"BundleTypeDescription\": \"通用型\",\n                \"BundleSalesState\": \"AVAILABLE\",\n                \"BundleDisplayLabel\": \"NORMAL\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b2563b1d-e93f-4e05-9c6f-096e0c403add\"\n    }\n}",
         "title": "查询套餐-成功返回"
       }
     ],
@@ -456,7 +456,7 @@
     ],
     "IsolateInstances": [
       {
-        "document": "",
+        "document": "退还实例",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-lfdnmikp\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"35eee594-4644-401a-815a-1c9075b5f39c\"\n    }\n}",
         "title": "退还实例"
@@ -464,7 +464,7 @@
     ],
     "ModifyBlueprintAttribute": [
       {
-        "document": "",
+        "document": "修改镜像的名称与描述",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlueprintAttribute\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-1ynlfst1\",\n    \"BlueprintName\": \"new-blueprint\",\n    \"Description\": \"new-blueprint\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896682bb-fb47-4fce-94d9-9a4f2abbfaac\"\n    }\n}",
         "title": "修改镜像的名称与描述"

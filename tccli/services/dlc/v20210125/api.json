@@ -407,7 +407,7 @@
       "status": "online"
     },
     "DescribeSparkAppJobs": {
-      "document": "获取spark应用列表",
+      "document": "获取spark应用列表。",
       "input": "DescribeSparkAppJobsRequest",
       "name": "获取spark应用列表",
       "output": "DescribeSparkAppJobsResponse",
@@ -9562,6 +9562,24 @@
           "example": "931a72aa-4f83-4d6a-adf1-2sdda0234a655",
           "member": "string",
           "name": "SessionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "spark_emr_livy\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "引擎类型",
+          "member": "string",
+          "name": "DataEngineClusterType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Spark 3.2-EMR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "引擎镜像版本",
+          "member": "string",
+          "name": "DataEngineImageVersion",
           "required": false,
           "type": "string",
           "value_allowed_null": true

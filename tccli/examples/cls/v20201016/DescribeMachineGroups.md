@@ -31,6 +31,7 @@ Output:
                 "UpdateStartTime": "",
                 "UpdateEndTime": "",
                 "ServiceLogging": true,
+                "MetaTags": [],
                 "Tags": []
             }
         ],

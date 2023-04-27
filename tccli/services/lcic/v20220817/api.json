@@ -1382,6 +1382,14 @@
           "name": "GroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "打开学生麦克风/摄像头的授权开关",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableDirectControl",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2606,6 +2614,14 @@
           "name": "GroupId",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "打开学生麦克风/摄像头的授权开关",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableDirectControl",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4073,6 +4089,14 @@
           "name": "GroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "打开学生麦克风/摄像头的授权开关",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableDirectControl",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4400,6 +4424,15 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "打开学生麦克风/摄像头的授权开关",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableDirectControl",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -4504,6 +4537,24 @@
           "name": "RecordUrl",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最高房间内人数（包括老师），0表示不限制，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxMicNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "打开学生麦克风/摄像头的授权开关 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "EnableDirectControl",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

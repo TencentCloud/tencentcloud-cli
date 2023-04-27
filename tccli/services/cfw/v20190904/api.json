@@ -5384,8 +5384,7 @@
       "document": "ModifyEnterpriseSecurityDispatchStatus请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "状态，0：立即下发，1：停止下发",
+          "document": "0：打开立即下发开关；\n\n1：关闭立即下发开关；\n\n2：关闭立即下发开关下，触发开始下发",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -5403,7 +5402,6 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

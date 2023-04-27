@@ -22,7 +22,8 @@ tccli lcic CreateRoom --cli-unfold-argument  \
     --RTCAudienceNumber 1 \
     --AudienceType 1 \
     --RecordLayout 1 \
-    --GroupId abc
+    --GroupId abc \
+    --EnableDirectControl 0
 ```
 
 Output: 

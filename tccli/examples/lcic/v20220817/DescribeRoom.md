@@ -30,6 +30,7 @@ Output:
         "Resolution": 1,
         "DisableRecord": 1,
         "Status": 0,
+        "EnableDirectControl": 0,
         "GroupId": "afdg"
     }
 }

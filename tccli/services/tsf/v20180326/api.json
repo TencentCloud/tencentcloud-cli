@@ -1050,6 +1050,13 @@
       "output": "DescribeUnitRulesResponse",
       "status": "online"
     },
+    "DescribeUnitRulesV2": {
+      "document": "查询单元化规则列表V2",
+      "input": "DescribeUnitRulesV2Request",
+      "name": "查询单元化规则列表V2",
+      "output": "DescribeUnitRulesV2Response",
+      "status": "online"
+    },
     "DescribeUploadInfo": {
       "document": "TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436",
       "input": "DescribeUploadInfoRequest",
@@ -15578,6 +15585,72 @@
       ],
       "type": "object"
     },
+    "DescribeUnitRulesV2Request": {
+      "document": "DescribeUnitRulesV2请求参数结构体",
+      "members": [
+        {
+          "document": "网关实体ID",
+          "example": "gw-ins-123456",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "根据规则名或备注内容模糊查询",
+          "example": "desc",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "启用状态, disabled: 未发布， enabled: 发布",
+          "example": "disabled",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "翻页查询偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "翻页查询每页记录数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnitRulesV2Response": {
+      "document": "DescribeUnitRulesV2返回参数结构体",
+      "members": [
+        {
+          "document": "分页列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TsfPageUnitRuleV2",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUploadInfoRequest": {
       "document": "DescribeUploadInfo请求参数结构体",
       "members": [
@@ -25386,6 +25459,30 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TsfPageUnitRuleV2": {
+      "document": "单元化规则翻页对象",
+      "members": [
+        {
+          "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "记录实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UnitRule",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

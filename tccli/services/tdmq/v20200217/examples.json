@@ -150,7 +150,7 @@
     ],
     "CreateRocketMQNamespace": [
       {
-        "document": "",
+        "document": "创建命名空间",
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=CreateRocketMQNamespace\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&Ttl=60000\n&RetentionTime=600000\n&Remark=example\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf71e2ae-8b56-4231-87cf-0cbb6f421caa\"\n    }\n}",
         "title": "创建命名空间"
@@ -766,7 +766,7 @@
     ],
     "ModifyRocketMQNamespace": [
       {
-        "document": "",
+        "document": "修改命名空间信息",
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=ModifyRocketMQNamespace\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&Ttl=65000\n&RetentionTime=650000\n&Remark=example\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c995fd0-9a78-4985-8874-244a20a1d47b\"\n    }\n}",
         "title": "修改命名空间信息"

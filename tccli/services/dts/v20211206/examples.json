@@ -64,7 +64,7 @@
     ],
     "CreateMigrationService": [
       {
-        "document": "",
+        "document": "购买迁移任务",
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrationService\n<公共请求参数>\n\n{\n    \"SrcDatabaseType\": \"mysql\",\n    \"DstDatabaseType\": \"mysql\",\n    \"InstanceClass\": \"xlarge\",\n    \"SrcRegion\": \"ap-guangzhou\",\n    \"DstRegion\": \"ap-guangzhou\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"testkey\",\n            \"TagValue\": \"testvalue\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"JobIds\": [\n            \"dts-1ewjspuw\"\n        ],\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
         "title": "购买迁移任务"

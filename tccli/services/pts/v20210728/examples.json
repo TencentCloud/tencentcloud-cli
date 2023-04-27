@@ -242,9 +242,9 @@
     ],
     "DescribeSampleLogs": [
       {
-        "document": "",
+        "document": "查询采样日志",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleLogs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-fjs583kq\",\n    \"ScenarioId\": \"scenario-q63bkqsa\",\n    \"JobId\": \"job-657v4tmi\",\n    \"LogType\": \"request\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Total\": 10,\n        \"Context\": \"12353-2432423\",\n        \"SampleLogs\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85f22814-36b9-44e0-bfaa-18fad9accaf8\",\n        \"Total\": 10,\n        \"Context\": \"12353-2432423\",\n        \"SampleLogs\": []\n    }\n}",
         "title": "查询采样日志"
       }
     ],
