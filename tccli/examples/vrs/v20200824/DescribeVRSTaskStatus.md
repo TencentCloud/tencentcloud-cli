@@ -15,9 +15,9 @@ Output:
     "Response": {
         "Data": {
             "TaskId": "ed461a019355c5cd1ce31ab4dfb8cb12",
-            "Status": 0,
+            "Status": 2,
             "StatusStr": "waiting in queue",
-            "VoiceType": 1000,
+            "VoiceType": 100000,
             "ErrorMsg": ""
         },
         "RequestId": "63f43c3d6e30af6bd63735b0"

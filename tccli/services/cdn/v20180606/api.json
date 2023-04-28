@@ -6226,8 +6226,7 @@
       "document": "DescribePayType请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "指定服务地域查询\nmainland：境内计费方式查询\noverseas：境外计费方式查询\n未填充时默认为 mainland",
+          "document": "指定服务地域查询\nmainland：境内计费方式查询\noverseas：境外计费方式查询\nglobal：全球计费方式查询\n未填充时，默认为 mainland",
           "example": "mainland",
           "member": "string",
           "name": "Area",
@@ -6235,11 +6234,18 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定查询的产品数据，可选为cdn或者ecdn，默认为cdn",
           "example": "cdn",
           "member": "string",
           "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "指定资源包查询\nflux：流量包\nhttps：HTTPS请求包\n未填充时，默认为 flux",
+          "example": "https",
+          "member": "string",
+          "name": "Type",
           "required": false,
           "type": "string"
         }
@@ -6250,47 +6256,42 @@
       "document": "DescribePayType返回参数结构体",
       "members": [
         {
-          "document": "计费类型：\nflux：流量计费\nbandwidth：带宽计费\nrequest：请求数计费\nflux_sep：动静分离流量计费\nbandwidth_sep：动静分离带宽计费\n日结计费方式切换时，若当日产生消耗，则此字段表示第二天即将生效的计费方式，若未产生消耗，则表示已经生效的计费方式。",
+          "document": "计费类型\nflux：流量计费\nbandwidth：带宽计费\nrequest：请求数计费\nflux_sep：动静分离流量计费\nbandwidth_sep：动静分离带宽计费\n日结计费方式切换时，若当日产生消耗，则此字段表示第二天即将生效的计费方式，若未产生消耗，则表示已经生效的计费方式。",
           "example": "flux",
           "member": "string",
           "name": "PayType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "计费周期：\nday：日结计费\nmonth：月结计费\nhour：小时结计费",
+          "document": "计费周期\nday：日结计费\nmonth：月结计费\nhour：小时结计费",
           "example": "day",
           "member": "string",
           "name": "BillingCycle",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "monthMax：日峰值月平均，月结模式\nday95：日 95 带宽，月结模式\nmonth95：月95带宽，月结模式\nsum：总流量/总请求数，日结或月结模式\nmax：峰值带宽，日结模式",
+          "document": "统计类型\nmonthMax：日峰值月平均，月结模式\nday95：日 95 带宽，月结模式\nmonth95：月95带宽，月结模式\nsum：总流量/总请求数，日结或月结模式\nmax：峰值带宽，日结模式",
           "example": "sum",
           "member": "string",
           "name": "StatType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "境外计费类型：\nall：全地区统一计费\nmultiple：分地区计费",
+          "document": "计费区域\nall：全地区统一计费\nmultiple：分地区计费",
           "example": "all",
           "member": "string",
           "name": "RegionType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "当前生效计费类型：\nflux：流量计费\nbandwidth：带宽计费\nrequest：请求数计费\nflux_sep：动静分离流量计费\nbandwidth_sep：动静分离带宽计费",
+          "document": "当前生效计费类型\nflux：流量计费\nbandwidth：带宽计费\nrequest：请求数计费\nflux_sep：动静分离流量计费\nbandwidth_sep：动静分离带宽计费",
           "example": "flux",
           "member": "string",
           "name": "CurrentPayType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

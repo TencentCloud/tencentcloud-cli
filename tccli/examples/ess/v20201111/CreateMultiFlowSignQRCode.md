@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli ess CreateMultiFlowSignQRCode --cli-unfold-argument  \
-    --FlowName xx \
+    --FlowName 测试合同 \
     --MaxFlowNum 0 \
     --FlowEffectiveDay 0 \
-    --Operator.UserId xx \
-    --TemplateId xx \
+    --Operator.UserId userId \
+    --TemplateId templateid \
     --QrEffectiveDay 0 \
-    --CallbackUrl xx
+    --CallbackUrl 
 ```
 
 Output: 
@@ -20,16 +20,16 @@ Output:
 {
     "Response": {
         "QrCode": {
-            "QrCodeUrl": "xx",
+            "QrCodeUrl": "http://www.qrcode.com/url/qrcode",
             "ExpiredTime": 5,
-            "QrCodeId": "xx"
+            "QrCodeId": "qr_code_id"
         },
         "SignUrls": {
-            "EffectiveTime": "xx",
-            "HttpSignUrl": "xx",
-            "AppSignUrl": "xx"
+            "EffectiveTime": "",
+            "HttpSignUrl": "http://www.qrcode.com/url/HttpSignUrl",
+            "AppSignUrl": "/Pages/xxxxxx"
         },
-        "RequestId": "xx"
+        "RequestId": "s19873636434111"
     }
 }
 ```

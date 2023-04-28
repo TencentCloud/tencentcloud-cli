@@ -18004,7 +18004,6 @@
       "document": "ProcessLiveStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv 等）。",
           "example": "http://www.abc.com/abc.m3u8",
           "member": "string",
@@ -18013,7 +18012,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务的事件通知信息，用于指定直播流处理的结果。",
           "example": "无",
           "member": "LiveStreamTaskNotifyConfig",
@@ -18022,7 +18020,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "直播流处理输出文件的目标存储。如处理有文件输出，该参数为必填项。",
           "example": "无",
           "member": "TaskOutputStorage",
@@ -18031,7 +18028,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "直播流处理生成的文件输出的目标目录，如`/movie/201909/`，如果不填为 `/` 目录。",
           "example": "无",
           "member": "string",
@@ -18040,7 +18036,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "视频内容审核类型任务参数。",
           "example": "无",
           "member": "AiContentReviewTaskInput",
@@ -18049,7 +18044,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "视频内容识别类型任务参数。",
           "example": "无",
           "member": "AiRecognitionTaskInput",
@@ -18058,7 +18052,14 @@
           "type": "object"
         },
         {
-          "default": "",
+          "document": "视频内容分析类型任务参数。",
+          "example": "无",
+          "member": "AiAnalysisTaskInput",
+          "name": "AiAnalysisTask",
+          "required": false,
+          "type": "object"
+        },
+        {
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
           "example": "无",
           "member": "string",
@@ -18067,7 +18068,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
           "example": "无",
           "member": "string",
@@ -18086,7 +18086,6 @@
           "example": "125xxxxxx07-live-procedure-813dc41e6fdc22dcf24aa6e9c61cp92",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

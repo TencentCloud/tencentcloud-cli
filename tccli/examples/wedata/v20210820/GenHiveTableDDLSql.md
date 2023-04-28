@@ -6,40 +6,41 @@ Input:
 
 ```
 tccli wedata GenHiveTableDDLSql --cli-unfold-argument  \
-    --TableVersion xx \
-    --SourceDatabase xx \
-    --ProjectId xx \
-    --SourceFieldInfoList.0.Alias xx \
-    --SourceFieldInfoList.0.FieldName xx \
-    --SourceFieldInfoList.0.FieldType xx \
-    --TableName xx \
-    --UpsertFlag True \
-    --SinkDatabase xx \
-    --Properties.0.Value xx \
-    --Properties.0.Key xx \
-    --SinkType xx \
-    --DatasourceId xx \
-    --SchemaName xx \
+    --Id abc \
+    --ProjectId abc \
+    --MsType abc \
+    --DatasourceId abc \
+    --SourceDatabase abc \
+    --TableName abc \
+    --SinkDatabase abc \
+    --SinkType abc \
+    --SchemaName abc \
+    --SourceFieldInfoList.0.FieldName abc \
+    --SourceFieldInfoList.0.FieldType abc \
+    --SourceFieldInfoList.0.Alias abc \
+    --Partitions.0.Transform abc \
+    --Partitions.0.Name abc \
+    --Partitions.0.TransformArgs abc \
+    --Properties.0.Key abc \
+    --Properties.0.Value abc \
     --TableMode 0 \
-    --MsType xx \
-    --Id xx \
-    --TableComment xx \
-    --AddDataFiles 1000 \
-    --AddEqualityDeletes 1000 \
-    --AddPositionDeletes 1000 \
-    --AddDeleteFiles 1000 \
-    --Partitions.0.Transform xx \
-    --Partitions.0.TransformArgs xx \
-    --Partitions.0.Name xx
+    --TableVersion abc \
+    --UpsertFlag True \
+    --TableComment abc \
+    --AddDataFiles 0 \
+    --AddEqualityDeletes 0 \
+    --AddPositionDeletes 0 \
+    --AddDeleteFiles 0 \
+    --TargetDatasourceId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "Data": "xx",
-        "DDLSql": "xx"
+        "DDLSql": "abc",
+        "Data": "abc",
+        "RequestId": "abc"
     }
 }
 ```

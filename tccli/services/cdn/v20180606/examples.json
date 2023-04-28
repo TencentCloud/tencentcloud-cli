@@ -258,7 +258,7 @@
     ],
     "DescribePayType": [
       {
-        "document": "",
+        "document": "计费方式查询",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribePayType\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1732a0dd-48d8-4ff1-8dcb-7f04ca139825\",\n        \"PayType\": \"flux\",\n        \"StatType\": \"sum\",\n        \"BillingCycle\": \"day\",\n        \"RegionType\": \"all\",\n        \"CurrentPayType\": \"flux\"\n    }\n}",
         "title": "计费方式查询"

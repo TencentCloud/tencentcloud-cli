@@ -6,24 +6,26 @@ Input:
 
 ```
 tccli wedata DescribeRealTimeTaskMetricOverview --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskId xx
+    --ProjectId abc \
+    --TaskId 123 \
+    --StartTime 1669693200000 \
+    --EndTime 1669693200000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalRecordNumOfWrite": 1,
-        "TotalDirtyRecordByte": 1,
-        "TotalDirtyRecordNum": 1,
-        "EndRunTime": "xx",
-        "RequestId": "xx",
         "TotalRecordNumOfRead": 1,
         "TotalRecordByteNumOfRead": 1,
-        "BeginRunTime": "xx",
+        "TotalRecordNumOfWrite": 1,
         "TotalRecordByteNumOfWrite": 1,
-        "TotalDuration": 1
+        "TotalDirtyRecordNum": 1,
+        "TotalDirtyRecordByte": 1,
+        "TotalDuration": 1,
+        "BeginRunTime": "abc",
+        "EndRunTime": "abc",
+        "RequestId": "abc"
     }
 }
 ```

@@ -14175,7 +14175,6 @@
       "document": "站点信息",
       "members": [
         {
-          "default": "",
           "document": "站点ID。",
           "example": "zone-27q0p0bali16",
           "member": "string",
@@ -14185,7 +14184,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点名称。",
           "example": "example.com",
           "member": "string",
@@ -14195,7 +14193,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点当前使用的 NS 列表。",
           "example": "[\"ns1.example.com.\",\"ns2.example.com.\"]",
           "member": "string",
@@ -14205,7 +14202,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "腾讯云分配的 NS 列表。",
           "example": "[\"ns1.teodns.com.\",\"\"ns2.teodns.com.\"]",
           "member": "string",
@@ -14215,7 +14211,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点状态，取值有：\n<li> active：NS 已切换； </li>\n<li> pending：NS 未切换；</li>\n<li> moved：NS 已切走；</li>\n<li> deactivated：被封禁。 </li>",
           "example": "active",
           "member": "string",
@@ -14225,7 +14220,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点接入方式，取值有\n<li> full：NS 接入； </li>\n<li> partial：CNAME 接入。</li>",
           "example": "full",
           "member": "string",
@@ -14235,7 +14229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点是否关闭。",
           "example": "false",
           "member": "bool",
@@ -14245,7 +14238,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启 CNAME 加速，取值有：\n<li> enabled：开启；</li>\n<li> disabled：关闭。</li>",
           "example": "无",
           "member": "string",
@@ -14255,7 +14247,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "CNAME 接入状态，取值有：\n<li> finished：站点已验证；</li>\n<li> pending：站点验证中。</li>",
           "example": "finished",
           "member": "string",
@@ -14265,7 +14256,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源标签列表。",
           "example": "无",
           "member": "Tag",
@@ -14275,7 +14265,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "计费资源列表。",
           "example": "无",
           "member": "Resource",
@@ -14285,7 +14274,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点创建时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -14295,7 +14283,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点修改时间。",
           "example": "无",
           "member": "datetime_iso",
@@ -14305,7 +14292,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点接入地域，取值有：\n<li> global：全球；</li>\n<li> mainland：中国大陆；</li>\n<li> overseas：境外区域。</li>",
           "example": "overseas",
           "member": "string",
@@ -14315,7 +14301,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户自定义 NS 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VanityNameServers",
@@ -14325,7 +14310,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户自定义 NS IP 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VanityNameServersIps",
@@ -14335,7 +14319,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "展示状态，取值有：\n<li> active：已启用；</li>\n<li> inactive：未生效；</li>\n<li> paused：已停用。</li>",
           "example": "active",
           "member": "string",
@@ -14345,7 +14328,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "站点别名。数字、英文、-和_组合，限制20个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zone-example",
           "member": "string",
@@ -14355,14 +14337,22 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "是否伪站点，取值有：\n<li> 0：非伪站点；</li>\n<li> 1：伪站点。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否伪站点，取值有：\n<li> 0：非伪站点；</li>\n<li> 1：伪站点。</li>",
           "example": "1",
           "member": "int64",
           "name": "IsFake",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "document": "锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>",
+          "example": "enable",
+          "member": "string",
+          "name": "LockStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

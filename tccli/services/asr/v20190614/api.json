@@ -828,7 +828,6 @@
       "document": "GetAsrVocabList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”",
           "example": "无",
           "member": "string",
@@ -837,7 +836,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页Offset",
           "example": "无",
           "member": "uint64",
@@ -846,7 +844,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页Limit",
           "example": "无",
           "member": "uint64",
@@ -865,7 +862,6 @@
           "example": "无",
           "member": "Vocab",
           "name": "VocabList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -874,7 +870,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -966,7 +961,6 @@
       "document": "GetCustomizationList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”",
           "example": "无",
           "member": "string",
@@ -975,7 +969,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页大小，默认1000",
           "example": "无",
           "member": "uint64",
@@ -984,7 +977,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页offset，默认0",
           "example": "无",
           "member": "uint64",
@@ -1003,7 +995,6 @@
           "example": "无",
           "member": "Model",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1012,7 +1003,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

@@ -1,47 +1,48 @@
-**Example 1: 查询蜜罐服务列表**
+**Example 1: 查询入侵防御放通封禁列表**
 
-查询蜜罐服务列表
+查询入侵防御放通封禁列表
 
 Input: 
 
 ```
 tccli cfw DescribeBlockIgnoreList --cli-unfold-argument  \
-    --Direction xx \
-    --SearchValue xx \
-    --RuleType 1 \
-    --By xx \
-    --Limit 10 \
+    --Limit 0 \
     --Offset 0 \
-    --Order xx
+    --SearchValue abc \
+    --Direction abc \
+    --RuleType 1 \
+    --Order abc \
+    --By abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ReturnMsg": "xx",
-        "ReturnCode": 0,
         "Data": [
             {
-                "Domain": "xx",
-                "Protocol": "xx",
-                "UniqueId": "xx",
-                "Level": "xx",
-                "Country": "xx",
+                "Domain": "abc",
+                "Ioc": "abc",
+                "Level": "abc",
+                "EventName": "abc",
                 "Direction": 0,
-                "EventName": "xx",
-                "Source": "xx",
-                "MatchTimes": 0,
-                "StartTime": "xx",
-                "Address": "xx",
+                "Protocol": "abc",
+                "Address": "abc",
                 "Action": 0,
-                "EndTime": "xx",
-                "Ioc": "xx",
-                "IgnoreReason": "xx"
+                "StartTime": "abc",
+                "EndTime": "abc",
+                "IgnoreReason": "abc",
+                "Source": "abc",
+                "UniqueId": "abc",
+                "MatchTimes": 0,
+                "Country": "abc",
+                "Comment": "abc"
             }
         ],
-        "RequestId": "xx",
-        "Total": 1
+        "Total": 0,
+        "ReturnCode": 0,
+        "ReturnMsg": "abc",
+        "RequestId": "abc"
     }
 }
 ```

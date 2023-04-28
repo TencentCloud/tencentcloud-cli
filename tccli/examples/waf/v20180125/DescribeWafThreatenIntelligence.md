@@ -1,6 +1,6 @@
 **Example 1: 描述WAF威胁情报封禁模块详情**
 
-
+描述WAF威胁情报封禁模块详情
 
 Input: 
 
@@ -18,7 +18,7 @@ Output:
                 "global"
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "1234"
     }
 }
 ```

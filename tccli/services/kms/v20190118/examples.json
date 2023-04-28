@@ -342,6 +342,38 @@
         "title": "覆盖指定密钥的设备指纹信息"
       }
     ],
+    "PostQuantumCryptoDecrypt": [
+      {
+        "document": "使用后量子密码算法解密。",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PostQuantumCryptoDecrypt\n<公共请求参数>\n\n{\n    \"CiphertextBlob\": \"abc\",\n    \"EncryptionPublicKey\": \"abc\",\n    \"EncryptionAlgorithm\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KeyId\": \"abc\",\n        \"PlainText\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "使用后量子密码算法解密"
+      }
+    ],
+    "PostQuantumCryptoEncrypt": [
+      {
+        "document": "使用后量子密码算法密钥进行数据加密。",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PostQuantumCryptoEncrypt\n<公共请求参数>\n\n{\n    \"KeyId\": \"abc\",\n    \"PlainText\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CiphertextBlob\": \"abc\",\n        \"KeyId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "使用后量子密码算法密钥进行数据加密"
+      }
+    ],
+    "PostQuantumCryptoSign": [
+      {
+        "document": "后量子密码算法签名。",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PostQuantumCryptoSign\n<公共请求参数>\n\n{\n    \"Message\": \"abc\",\n    \"KeyId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Signature\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "后量子密码算法签名"
+      }
+    ],
+    "PostQuantumCryptoVerify": [
+      {
+        "document": "后量子密码算法验签。",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PostQuantumCryptoVerify\n<公共请求参数>\n\n{\n    \"KeyId\": \"abc\",\n    \"SignatureValue\": \"abc\",\n    \"Message\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SignatureValid\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "后量子密码算法验签"
+      }
+    ],
     "ReEncrypt": [
       {
         "document": "对密文进行重新加密。",

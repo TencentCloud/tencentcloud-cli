@@ -2055,7 +2055,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "队列中弹性节点数量最小值。取值范围0～200。",
+          "document": "队列中弹性节点数量最小值。默认值：0。取值范围：0～200。",
           "example": "0",
           "member": "uint64",
           "name": "MinSize",
@@ -2064,7 +2064,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "队列中弹性节点数量最大值。取值范围0～200。",
+          "document": "队列中弹性节点数量最大值。默认值：10。取值范围：0～200。",
           "example": "10",
           "member": "uint64",
           "name": "MaxSize",

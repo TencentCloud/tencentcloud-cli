@@ -106,7 +106,7 @@
       "status": "online"
     },
     "CreateMultiFlowSignQRCode": {
-      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n适用的模板仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模板，且模板中发起方没有填写控件。",
+      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**本接口适用于发起方没有填写控件的 B2C或者单C模板**\n\n**若是B2C模板,还要满足以下任意一个条件**\n- 模板中配置的签署顺序是无序\n- B端企业的签署方式是静默签署\n- B端企业是非首位签署",
       "input": "CreateMultiFlowSignQRCodeRequest",
       "name": "创建一码多扫流程签署二维码",
       "output": "CreateMultiFlowSignQRCodeResponse",
@@ -120,7 +120,7 @@
       "status": "online"
     },
     "CreatePreparedPersonalEsign": {
-      "document": "本接口（CreatePreparedPersonalEsign）用于创建导入个人印章。",
+      "document": "本接口（CreatePreparedPersonalEsign）用于创建导入个人印章（处方单场景专用，在开通个人自动签之后调用，使用此接口请与客户经理确认）。",
       "input": "CreatePreparedPersonalEsignRequest",
       "name": "创建导入个人印章",
       "output": "CreatePreparedPersonalEsignResponse",
@@ -148,7 +148,7 @@
       "status": "online"
     },
     "CreateUserAutoSignEnableUrl": {
-      "document": "企业方可以通过此接口获取个人用户开启自动签的跳转链接",
+      "document": "企业方可以通过此接口获取个人用户开启自动签的跳转链接（处方单场景专用，使用此接口请与客户经理确认）",
       "input": "CreateUserAutoSignEnableUrlRequest",
       "name": "获取个人用户自动签开启链接",
       "output": "CreateUserAutoSignEnableUrlResponse",
@@ -253,14 +253,14 @@
       "status": "online"
     },
     "DescribeUserAutoSignStatus": {
-      "document": "企业方可以通过此接口查询个人用户自动签开启状态",
+      "document": "企业方可以通过此接口查询个人用户自动签开启状态。（处方单场景专用，使用此接口请与客户经理确认）",
       "input": "DescribeUserAutoSignStatusRequest",
       "name": "查询个人用户开通自动签状态",
       "output": "DescribeUserAutoSignStatusResponse",
       "status": "online"
     },
     "DisableUserAutoSign": {
-      "document": "企业方可以通过此接口关闭个人的自动签功能",
+      "document": "企业方可以通过此接口关闭个人的自动签功能（处方单场景专用，使用此接口请与客户经理确认）",
       "input": "DisableUserAutoSignRequest",
       "name": "关闭个人自动签功能",
       "output": "DisableUserAutoSignResponse",
@@ -2735,7 +2735,7 @@
           "type": "string"
         },
         {
-          "document": "通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。",
+          "document": "通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。",
           "example": "无",
           "member": "string",
           "name": "NotifyType",
@@ -3129,7 +3129,7 @@
       "document": "DescribeFileUrls返回参数结构体",
       "members": [
         {
-          "document": "URL信息",
+          "document": "文件URL信息；\n链接不是永久链接，有效期5分钟后链接失效。",
           "example": "无",
           "member": "FileUrl",
           "name": "FileUrls",
@@ -4498,7 +4498,6 @@
       "document": "创建流程的签署方信息",
       "members": [
         {
-          "default": "",
           "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。",
           "example": "无",
           "member": "int64",
@@ -4508,7 +4507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "如果签署方为企业，需要填入企业全称",
           "example": "无",
           "member": "string",
@@ -4518,7 +4516,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署方经办人姓名",
           "example": "无",
           "member": "string",
@@ -4528,7 +4525,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署方经办人手机号码",
           "example": "无",
           "member": "string",
@@ -4538,7 +4534,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署方经办人证件类型ID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
           "example": "无",
           "member": "string",
@@ -4548,7 +4543,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署方经办人证件号码",
           "example": "无",
           "member": "string",
@@ -4558,7 +4552,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署方经办人在模板中的角色ID",
           "example": "无",
           "member": "string",
@@ -4568,7 +4561,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署意愿确认渠道,WEIXINAPP:人脸识别",
           "example": "[\"WEIXINAPP\"]",
           "member": "string",
@@ -4578,7 +4570,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否发送短信，sms--短信通知，none--不通知，默认为sms；发起方=签署方时不发送短信",
           "example": "无",
           "member": "string",
@@ -4588,8 +4579,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "签署前置条件：是否需要阅读全文，默认为不需要",
+          "document": "合同强制需要阅读全文，无需传此参数",
           "example": "无",
           "member": "bool",
           "name": "IsFullText",
@@ -4598,8 +4588,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "签署前置条件：阅读时长限制，单位秒，默认为不需要",
+          "document": "合同的强制预览时间：3~300s，未指定则按合同页数计算",
           "example": "无",
           "member": "uint64",
           "name": "PreReadTime",
@@ -4608,7 +4597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。",
           "example": "无",
           "member": "string",
@@ -4618,7 +4606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当前只支持true，默认为true",
           "example": "无",
           "member": "bool",
@@ -4628,7 +4615,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人用户来源,企微侧用户请传入：WEWORKAPP",
           "example": "无",
           "member": "string",
@@ -4638,7 +4624,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客户自定义签署人标识，64位长度，保证唯一。非企微场景不使用此字段",
           "example": "无",
           "member": "string",
@@ -4648,7 +4633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "快速注册相关信息，目前暂未开放！",
           "example": "无",
           "member": "RegisterInfo",
@@ -4658,7 +4642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "签署人个性化能力值",
           "example": "无",
           "member": "ApproverOption",

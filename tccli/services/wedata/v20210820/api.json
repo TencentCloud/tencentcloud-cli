@@ -658,6 +658,13 @@
       "output": "DescribeOfflineTaskTokenResponse",
       "status": "online"
     },
+    "DescribeOperateTasks": {
+      "document": "任务运维列表组合条件查询",
+      "input": "DescribeOperateTasksRequest",
+      "name": "任务运维列表组合条件查询",
+      "output": "DescribeOperateTasksResponse",
+      "status": "online"
+    },
     "DescribeOrganizationalFunctions": {
       "document": "查询全量函数",
       "input": "DescribeOrganizationalFunctionsRequest",
@@ -1553,7 +1560,6 @@
       "document": "告警指标",
       "members": [
         {
-          "default": "",
           "document": "指标id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "string",
@@ -1563,7 +1569,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "uint64",
@@ -1573,7 +1578,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "告警指标描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "string",
@@ -1583,7 +1587,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "指标阈值，1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "uint64",
@@ -1593,7 +1596,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "预计的超时时间，分钟级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "uint64",
@@ -1603,13 +1605,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实时任务告警需要的参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "uint64",
           "name": "Operator",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "告警指标阈值单位：ms(毫秒)、s(秒)、min(分钟)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms",
+          "member": "string",
+          "name": "AlarmIndicatorUnit",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5390,7 +5400,6 @@
       "document": "数据源对象",
       "members": [
         {
-          "default": "",
           "document": "若数据源列表为绑定数据库，则为db名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5400,9 +5409,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "desc",
+          "example": "Desc",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -5410,7 +5418,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -5420,7 +5427,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源引擎的实例ID，如CDB实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "uuid",
           "member": "string",
@@ -5430,7 +5436,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源名称，在相同SpaceName下，数据源名称不能为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -5440,7 +5445,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源引擎所属区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "beijing",
           "member": "string",
@@ -5450,7 +5454,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源类型:枚举值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MYSQL",
           "member": "string",
@@ -5460,7 +5463,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源所属的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -5470,7 +5472,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用ID AppId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "87654321345678",
           "member": "uint64",
@@ -5480,7 +5481,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "业务侧数据源的配置信息扩展\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"key\":\"value\"}",
           "member": "string",
@@ -5490,7 +5490,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源类别：绑定引擎、绑定数据库\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DB",
           "member": "string",
@@ -5500,7 +5499,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源展示名，为了可视化查看\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -5510,7 +5508,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源责任人账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -5520,7 +5517,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"key\":\"value\"}",
           "member": "string",
@@ -5530,7 +5526,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源数据源的可见性，1为可见、0为不可见。默认为1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -5540,7 +5535,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源责任人账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "admin",
           "member": "string",
@@ -5550,7 +5544,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "emr-7ih89qvf",
           "member": "string",
@@ -5560,7 +5553,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "归属项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -5570,7 +5562,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "归属项目Name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -5580,7 +5571,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "归属项目标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test_ident",
           "member": "string",
@@ -5590,7 +5580,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "授权项目\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -5600,7 +5589,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "授权用户\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a",
           "member": "string",
@@ -5610,7 +5598,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否有编辑权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -5620,7 +5607,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否有授权权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -5630,7 +5616,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否有转交权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -5640,7 +5625,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Available",
           "member": "string",
@@ -5650,7 +5634,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "int64",
@@ -5660,7 +5643,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Params json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "string",
@@ -5670,13 +5652,21 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "BizParams json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "string",
           "name": "BizParamsString",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -7257,7 +7247,14 @@
       "document": "DescribeDatabaseInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
+          "document": "过滤参数",
+          "example": "[{\"Name\":\"type\",\"Values\":[\"HIVE\"]},{\"Name\":\"datasourceId\",\"Values\":[\"xcd-erere\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
           "document": "如果是hive这里写rpc，如果是其他类型不传",
           "example": "rpc",
           "member": "string",
@@ -9442,6 +9439,168 @@
       ],
       "type": "object"
     },
+    "DescribeOperateTasksRequest": {
+      "document": "DescribeOperateTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目id",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件夹id，多个文件夹以逗号分隔",
+          "example": "\"11,2222\"",
+          "member": "string",
+          "name": "FolderIdList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作流id，多个工作流id之间以英文字符逗号分隔",
+          "example": "\"111,222\"",
+          "member": "string",
+          "name": "WorkFlowIdList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作流名称，多个工作流名称之间以英文字符逗号分隔",
+          "example": "\"111,222\"",
+          "member": "string",
+          "name": "WorkFlowNameList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称，多个任务名称之间以英文字符逗号分隔",
+          "example": "\"111,222\"",
+          "member": "string",
+          "name": "TaskNameList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务id，多个任务id之间以英文字符逗号分隔",
+          "example": "\"111,222\"",
+          "member": "string",
+          "name": "TaskIdList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页号",
+          "example": "1",
+          "member": "string",
+          "name": "PageNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页大小",
+          "example": "15",
+          "member": "string",
+          "name": "PageSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持字段为FirstSubmitTime和FirstRunTime，标识最近提交和首次执行事件",
+          "example": "LastUpdate",
+          "member": "string",
+          "name": "SortItem",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型。两种取值 DESC、ASC",
+          "example": "DESC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "责任人，多个责任人之间以英文字符逗号分隔",
+          "example": "\"111,222\"",
+          "member": "string",
+          "name": "InChargeList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务类型Id字符串，多个任务类型id之间以英文字符逗号分隔",
+          "example": "\"34,35\"",
+          "member": "string",
+          "name": "TaskTypeIdList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务状态字符串，多个任务状态之间以英文字符逗号分隔",
+          "example": "\"INVALID,Y\"",
+          "member": "string",
+          "name": "StatusList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务周期类型字符串，多个任务周期之间以英文字符逗号分隔",
+          "example": "\"H,D\"",
+          "member": "string",
+          "name": "TaskCycleUnitList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务所属产品类型",
+          "example": "\"dev\"",
+          "member": "string",
+          "name": "ProductNameList",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOperateTasksResponse": {
+      "document": "DescribeOperateTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务列表信息",
+          "example": "无",
+          "member": "TaskInfoPage",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOrganizationalFunctionsRequest": {
       "document": "DescribeOrganizationalFunctions请求参数结构体",
       "members": [
@@ -9824,22 +9983,36 @@
       "document": "DescribeRealTimeTaskMetricOverview请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "无",
-          "example": "无",
+          "document": "要查看的实时任务的任务Id",
+          "example": "123",
           "member": "string",
           "name": "TaskId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "无",
           "example": "无",
           "member": "string",
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "document": "开始时间",
+          "example": "1669693200000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "结束时间",
+          "example": "1669693200000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9852,7 +10025,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalRecordNumOfRead",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9861,7 +10033,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalRecordByteNumOfRead",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9870,7 +10041,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalRecordNumOfWrite",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9879,7 +10049,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalRecordByteNumOfWrite",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9888,7 +10057,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalDirtyRecordNum",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9897,7 +10065,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalDirtyRecordByte",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9906,7 +10073,6 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalDuration",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9915,7 +10081,6 @@
           "example": "无",
           "member": "string",
           "name": "BeginRunTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9924,7 +10089,6 @@
           "example": "无",
           "member": "string",
           "name": "EndRunTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13781,7 +13945,6 @@
       "document": "GenHiveTableDDLSql请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "项目id",
           "example": "123",
           "member": "string",
@@ -13790,7 +13953,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目标数据库",
           "example": "123",
           "member": "string",
@@ -13799,7 +13961,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "节点id",
           "example": "123",
           "member": "string",
@@ -13808,7 +13969,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "元数据类型(MYSQL、ORACLE)",
           "example": "123",
           "member": "string",
@@ -13817,7 +13977,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据源id",
           "example": "123",
           "member": "string",
@@ -13826,7 +13985,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源库",
           "example": "123",
           "member": "string",
@@ -13835,7 +13993,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源表",
           "example": "123",
           "member": "string",
@@ -13844,7 +14001,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目标表元数据类型(HIVE、GBASE)",
           "example": "HIVE",
           "member": "string",
@@ -13853,7 +14009,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "schema名称",
           "example": "3424",
           "member": "string",
@@ -13862,7 +14017,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "上游节点的字段信息",
           "example": "无",
           "member": "SourceFieldInfo",
@@ -13871,7 +14025,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分区字段",
           "example": "pt",
           "member": "Partition",
@@ -13880,7 +14033,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "建表属性",
           "example": "无",
           "member": "Property",
@@ -13889,7 +14041,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "建表模式，0:向导模式，1:ddl",
           "example": "0",
           "member": "int64",
@@ -13898,7 +14049,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "DLC表版本，v1/v2",
           "example": "v1",
           "member": "string",
@@ -13907,7 +14057,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否upsert写入",
           "example": "true",
           "member": "bool",
@@ -13916,7 +14065,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "表描述信息",
           "example": "hghe",
           "member": "string",
@@ -13925,7 +14073,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "增加的文件数量阈值, 超过值将触发小文件合并",
           "example": "1000",
           "member": "int64",
@@ -13934,7 +14081,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "增加的Equality delete数量阈值, 超过值将触发小文件合并",
           "example": "1000",
           "member": "int64",
@@ -13943,7 +14089,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "增加的Position delete数量阈值, 超过值将触发小文件合并",
           "example": "1000",
           "member": "int64",
@@ -13952,13 +14097,20 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "增加的delete file数量阈值",
           "example": "1000",
           "member": "int64",
           "name": "AddDeleteFiles",
           "required": false,
           "type": "int"
+        },
+        {
+          "document": "下游节点数据源ID",
+          "example": "123",
+          "member": "string",
+          "name": "TargetDatasourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13971,7 +14123,6 @@
           "example": "123",
           "member": "string",
           "name": "DDLSql",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13980,7 +14131,6 @@
           "example": "123",
           "member": "string",
           "name": "Data",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -24279,6 +24429,52 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskInfoPage": {
+      "document": "任务分页查询",
+      "members": [
+        {
+          "default": "",
+          "document": "页号",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "页大小",
+          "example": "15",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作流列表信息",
+          "example": "无",
+          "member": "TaskCanvasInfo",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总页数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalPage",
           "required": true,
           "type": "int",
           "value_allowed_null": false

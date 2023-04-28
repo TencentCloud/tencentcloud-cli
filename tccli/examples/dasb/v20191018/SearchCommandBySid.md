@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dasb SearchCommandBySid --cli-unfold-argument  \
-    --Sid xxx
+    --Sid 123
 ```
 
 Output: 
@@ -14,13 +14,13 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "abc123",
         "CommandSet": [
             {
                 "TimeOffset": 1,
                 "Action": 0,
-                "Cmd": "xx",
-                "Time": "xx"
+                "Cmd": "rm",
+                "Time": "2023-04-23T14:24:39+0800"
             }
         ]
     }

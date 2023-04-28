@@ -468,7 +468,6 @@
       "document": "DescribeKTVMusicsByTag请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "应用名称。",
           "example": "无",
           "member": "string",
@@ -477,7 +476,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户标识。",
           "example": "无",
           "member": "string",
@@ -486,7 +484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签 Id。",
           "example": "无",
           "member": "string",
@@ -495,7 +492,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "滚动标记。",
           "example": "无",
           "member": "string",
@@ -504,7 +500,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回条数限制，默认 20，最大 50。",
           "example": "无",
           "member": "int64",
@@ -513,11 +508,18 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
           "example": "无",
           "member": "string",
           "name": "RightFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialFilters",
           "required": false,
           "type": "list"
         }
@@ -532,7 +534,6 @@
           "example": "无",
           "member": "KTVMusicBaseInfo",
           "name": "KTVMusicInfoSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -541,7 +542,6 @@
           "example": "无",
           "member": "string",
           "name": "ScrollToken",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -612,6 +612,14 @@
           "name": "PlayScene",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1906,6 +1914,14 @@
           "name": "PlayScene",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -498,9 +498,9 @@
     ],
     "DescribeDatabaseInfoList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseInfoList\n<公共请求参数>\n\n{\n    \"ConnectionType\": \"rpc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "获取数据库信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseInfoList\n<公共请求参数>\n\n{\n    \"ConnectionType\": \"rpc\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"cdlq-34sfds\"\n            ],\n            \"Name\": \"datasourceId\"\n        },\n        {\n            \"Values\": [\n                \"hive\"\n            ],\n            \"Name\": \"type\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21cf31f1-f8fd-4ecd-9217-594bba69d8ab\"\n    }\n}",
         "title": "获取数据库信息"
       }
     ],
@@ -752,6 +752,14 @@
         "title": "获取离线任务长连接Token"
       }
     ],
+    "DescribeOperateTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOperateTasks\n<公共请求参数>\n\n{\n    \"StatusList\": \"xx\",\n    \"InChargeList\": \"xx\",\n    \"SortType\": \"xx\",\n    \"PageSize\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"TaskNameList\": \"xx\",\n    \"FolderIdList\": \"xx\",\n    \"TaskTypeIdList\": \"xx\",\n    \"TaskIdList\": \"xx\",\n    \"PageNumber\": \"xx\",\n    \"WorkFlowIdList\": \"xx\",\n    \"SortItem\": \"xx\",\n    \"WorkFlowNameList\": \"xx\",\n    \"TaskCycleUnitList\": \"xx\",\n    \"ProductNameList\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Status\": \"xx\",\n                    \"CycleUnit\": \"xx\",\n                    \"WorkflowId\": \"xx\",\n                    \"LeftCoordinate\": 0.0,\n                    \"TaskTypeDesc\": \"xx\",\n                    \"TaskId\": \"xx\",\n                    \"TopCoordinate\": 0.0,\n                    \"ProjectName\": \"xx\",\n                    \"InCharge\": \"xx\",\n                    \"FolderName\": \"xx\",\n                    \"TaskTypeId\": 1,\n                    \"ScheduleDesc\": \"xx\",\n                    \"WorkflowName\": \"xx\",\n                    \"ProjectId\": \"xx\",\n                    \"FirstSubmitTime\": \"xx\",\n                    \"TaskName\": \"xx\",\n                    \"FolderId\": \"xx\",\n                    \"FirstRunTime\": \"xx\",\n                    \"ProjectIdent\": \"xx\"\n                },\n                {\n                    \"Status\": \"xx\",\n                    \"CycleUnit\": \"xx\",\n                    \"WorkflowId\": \"xx\",\n                    \"LeftCoordinate\": 0.0,\n                    \"TaskTypeDesc\": \"xx\",\n                    \"TaskTypeId\": 1,\n                    \"WorkflowName\": \"xx\",\n                    \"ProjectName\": \"xx\",\n                    \"InCharge\": \"xx\",\n                    \"FolderName\": \"xx\",\n                    \"TopCoordinate\": 0.0,\n                    \"ScheduleDesc\": \"xx\",\n                    \"TaskId\": \"xx\",\n                    \"ProjectId\": \"xx\",\n                    \"FirstSubmitTime\": \"xx\",\n                    \"TaskName\": \"xx\",\n                    \"FolderId\": \"xx\",\n                    \"FirstRunTime\": \"xx\",\n                    \"ProjectIdent\": \"xx\"\n                },\n                {\n                    \"Status\": \"xx\",\n                    \"CycleUnit\": \"xx\",\n                    \"WorkflowId\": \"xx\",\n                    \"LeftCoordinate\": 0.0,\n                    \"TaskTypeDesc\": \"xx\",\n                    \"TaskTypeId\": 1,\n                    \"WorkflowName\": \"xx\",\n                    \"ProjectName\": \"xx\",\n                    \"InCharge\": \"xx\",\n                    \"FolderName\": \"xx\",\n                    \"TopCoordinate\": 0.0,\n                    \"ScheduleDesc\": \"xx\",\n                    \"TaskId\": \"xx\",\n                    \"ProjectId\": \"xx\",\n                    \"FirstSubmitTime\": \"xx\",\n                    \"TaskName\": \"xx\",\n                    \"FolderId\": \"xx\",\n                    \"FirstRunTime\": \"xx\",\n                    \"ProjectIdent\": \"xx\"\n                }\n            ],\n            \"TotalPage\": 1,\n            \"PageNumber\": 1,\n            \"PageSize\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeOperateTasks"
+      }
+    ],
     "DescribeOrganizationalFunctions": [
       {
         "document": "",
@@ -815,8 +823,8 @@
     "DescribeRealTimeTaskMetricOverview": [
       {
         "document": "实时任务运行指标概览",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealTimeTaskMetricOverview\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalRecordNumOfWrite\": 1,\n        \"TotalDirtyRecordByte\": 1,\n        \"TotalDirtyRecordNum\": 1,\n        \"EndRunTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TotalRecordNumOfRead\": 1,\n        \"TotalRecordByteNumOfRead\": 1,\n        \"BeginRunTime\": \"xx\",\n        \"TotalRecordByteNumOfWrite\": 1,\n        \"TotalDuration\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealTimeTaskMetricOverview\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"TaskId\": \"123\",\n    \"StartTime\": 1669693200000,\n    \"EndTime\": 1669693200000\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalRecordNumOfRead\": 1,\n        \"TotalRecordByteNumOfRead\": 1,\n        \"TotalRecordNumOfWrite\": 1,\n        \"TotalRecordByteNumOfWrite\": 1,\n        \"TotalDirtyRecordNum\": 1,\n        \"TotalDirtyRecordByte\": 1,\n        \"TotalDuration\": 1,\n        \"BeginRunTime\": \"abc\",\n        \"EndRunTime\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "实时任务运行指标概览"
       }
     ],
@@ -1235,8 +1243,8 @@
     "GenHiveTableDDLSql": [
       {
         "document": "生成建hive表的sql",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenHiveTableDDLSql\n<公共请求参数>\n\n{\n    \"TableVersion\": \"xx\",\n    \"SourceDatabase\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"SourceFieldInfoList\": [\n        {\n            \"Alias\": \"xx\",\n            \"FieldName\": \"xx\",\n            \"FieldType\": \"xx\"\n        }\n    ],\n    \"TableName\": \"xx\",\n    \"UpsertFlag\": true,\n    \"SinkDatabase\": \"xx\",\n    \"Properties\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"SinkType\": \"xx\",\n    \"DatasourceId\": \"xx\",\n    \"SchemaName\": \"xx\",\n    \"TableMode\": 0,\n    \"MsType\": \"xx\",\n    \"Id\": \"xx\",\n    \"TableComment\": \"xx\",\n    \"AddDataFiles\": 1000,\n    \"AddEqualityDeletes\": 1000,\n    \"AddPositionDeletes\": 1000,\n    \"AddDeleteFiles\": 1000,\n    \"Partitions\": [\n        {\n            \"Transform\": \"xx\",\n            \"TransformArgs\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": \"xx\",\n        \"DDLSql\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenHiveTableDDLSql\n<公共请求参数>\n\n{\n    \"Id\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"MsType\": \"abc\",\n    \"DatasourceId\": \"abc\",\n    \"SourceDatabase\": \"abc\",\n    \"TableName\": \"abc\",\n    \"SinkDatabase\": \"abc\",\n    \"SinkType\": \"abc\",\n    \"SchemaName\": \"abc\",\n    \"SourceFieldInfoList\": [\n        {\n            \"FieldName\": \"abc\",\n            \"FieldType\": \"abc\",\n            \"Alias\": \"abc\"\n        }\n    ],\n    \"Partitions\": [\n        {\n            \"Transform\": \"abc\",\n            \"Name\": \"abc\",\n            \"TransformArgs\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Properties\": [\n        {\n            \"Key\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ],\n    \"TableMode\": 0,\n    \"TableVersion\": \"abc\",\n    \"UpsertFlag\": true,\n    \"TableComment\": \"abc\",\n    \"AddDataFiles\": 0,\n    \"AddEqualityDeletes\": 0,\n    \"AddPositionDeletes\": 0,\n    \"AddDeleteFiles\": 0,\n    \"TargetDatasourceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DDLSql\": \"abc\",\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "GenHiveTableDDLSql"
       }
     ],

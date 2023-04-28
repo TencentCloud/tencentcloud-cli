@@ -70,7 +70,7 @@
     ],
     "CreateLiveCallbackTemplate": [
       {
-        "document": "",
+        "document": "请求示例",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveCallbackTemplate\n<公共请求参数>\n\n{\n    \"StreamBeginNotifyUrl\": \"http://www.yourdomain.com/api/notify?action=streamBegin\",\n    \"StreamEndNotifyUrl\": \"http://www.yourdomain.com/api/notify?action=streamEnd\",\n    \"TemplateName\": \"testName\",\n    \"RecordNotifyUrl\": \"http://www.yourdomain.com/api/notify?action=record\",\n    \"SnapshotNotifyUrl\": \"http://www.yourdomain.com/api/notify?action=snapshot\",\n    \"PornCensorshipNotifyUrl\": \"http://www.yourdomain.com/api/notify?action=porn\",\n    \"CallbackKey\": \"adasda131312\",\n    \"Description\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"

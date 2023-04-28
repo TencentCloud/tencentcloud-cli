@@ -11968,12 +11968,20 @@
       "document": "获取文件属性任务输出",
       "members": [
         {
-          "default": "",
           "document": "媒体文件的 Md5 值。",
           "example": "123",
           "member": "string",
           "name": "Md5",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "媒体文件的 Sha1 值。",
+          "example": "891fedd90cac00fa0e0c183094d3306e13a7d415",
+          "member": "string",
+          "name": "Sha1",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -16089,7 +16097,7 @@
       "document": "单个图片处理操作。",
       "members": [
         {
-          "document": "图片处理类型。可选类型有：\n<li>Scale : 图片缩略处理。</li>\n<li>CenterCut : 图片裁剪处理。</li>",
+          "document": "图片处理类型。可选类型有：\n<li>Scale : 图片缩略处理；</li>\n<li>CenterCut : 图片裁剪处理；</li>\n<li>Blur : 图片模糊处理。</li>",
           "example": "无",
           "member": "string",
           "name": "Type",

@@ -1158,6 +1158,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "comment",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2855,7 +2865,6 @@
       "document": "DescribeBlockIgnoreList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "单页数量",
           "example": "10",
           "member": "int64",
@@ -2864,7 +2873,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页偏移量",
           "example": "0",
           "member": "int64",
@@ -2873,7 +2881,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "方向：1互联网入站，0互联网出站，3内网，空 全部方向",
           "example": "in",
           "member": "string",
@@ -2882,7 +2889,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则类型：1封禁，2放通",
           "example": "block",
           "member": "uint64",
@@ -2891,25 +2897,22 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数",
-          "example": "EndTime",
+          "document": "排序类型：desc降序，asc正序",
+          "example": "desc",
           "member": "string",
           "name": "Order",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "排序类型：desc降序，asc正序",
-          "example": "desc",
+          "document": "排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数",
+          "example": "EndTime",
           "member": "string",
           "name": "By",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "搜索参数，json格式字符串，空则传\"{}\"，域名：domain，危险等级：level，放通原因：ignore_reason，安全事件来源：rule_source，地理位置：address，模糊搜索：common",
           "example": "{\\\"service_type\\\":\"1\",\\\"service_name\\\":\\\"\\\"}",
           "member": "string",
@@ -2928,7 +2931,6 @@
           "example": "无",
           "member": "BlockIgnoreRule",
           "name": "Data",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2937,7 +2939,6 @@
           "example": "100",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2946,7 +2947,6 @@
           "example": "0",
           "member": "int64",
           "name": "ReturnCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2955,7 +2955,6 @@
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -4554,7 +4554,6 @@
       "document": "DescribeBackupByFlowId请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID，格式如：mssql-3l3fgqn7",
           "example": "mssql-6upluvd5",
           "member": "string",
@@ -4563,7 +4562,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "创建备份流程ID，可通过 [CreateBackup](https://cloud.tencent.com/document/product/238/19946) 接口获取",
           "example": "1000797",
           "member": "string",
@@ -4582,7 +4580,6 @@
           "example": "1234568",
           "member": "uint64",
           "name": "Id",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4591,7 +4588,6 @@
           "example": "autoed_instance_58037_20200728011545.bak.tar",
           "member": "string",
           "name": "FileName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4600,7 +4596,6 @@
           "example": "mssql-6upluvd5_202007311206",
           "member": "string",
           "name": "BackupName",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4609,7 +4604,6 @@
           "example": "2020-07-31 14:28:51",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4618,7 +4612,6 @@
           "example": "2020-07-31 15:10:27",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4627,7 +4620,6 @@
           "example": "1356532",
           "member": "uint64",
           "name": "Size",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4636,7 +4628,6 @@
           "example": "0",
           "member": "int64",
           "name": "Strategy",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4645,7 +4636,6 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4654,7 +4644,6 @@
           "example": "0",
           "member": "int64",
           "name": "BackupWay",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4663,7 +4652,6 @@
           "example": "[\"db1\",\"db2\"]",
           "member": "string",
           "name": "DBs",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4672,7 +4660,6 @@
           "example": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDpY8YnsLYAbq352rW0KaAnIeqrgJjE0ra%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
           "member": "string",
           "name": "InternalAddr",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4681,7 +4668,6 @@
           "example": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3dAKIDpY8YnsLYAbq352rW0KaAnIeqrgJjE0ra%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
           "member": "string",
           "name": "ExternalAddr",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4690,7 +4676,6 @@
           "example": "558800",
           "member": "string",
           "name": "GroupId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

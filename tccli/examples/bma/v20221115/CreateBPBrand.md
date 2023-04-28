@@ -1,6 +1,6 @@
 **Example 1: 添加品牌**
 
-
+添加品牌
 
 Input: 
 
@@ -8,6 +8,7 @@ Input:
 tccli bma CreateBPBrand --cli-unfold-argument  \
     --CompanyName 企业名称 \
     --BrandName 品牌名称 \
+    --BrandLogo 品牌Logo \
     --Phone 联系电话 \
     --License 营业执照 \
     --Authorization 授权书 \

@@ -58,9 +58,9 @@
     ],
     "CreateCmdTemplate": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmdTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"CmdList\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "控制台页面新增高危命令模版",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmdTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"高危模版1\",\n    \"CmdList\": \"rm -rf /*\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"as1212j\"\n    }\n}",
         "title": "新建高危命令模板"
       }
     ],
@@ -381,16 +381,16 @@
     "SearchCommand": [
       {
         "document": "命令执行检索",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommand\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"DeviceName\": \"xx\",\n    \"RealName\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Cmd\": \"xx\",\n    \"AuditAction\": [\n        1\n    ],\n    \"PrivateIp\": \"xx\",\n    \"PublicIp\": \"xx\",\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Offset\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Commands\": [\n            {\n                \"UserName\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"RealName\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Cmd\": \"xx\",\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"TimeOffset\": 1,\n                \"Sid\": \"xx\",\n                \"Time\": \"xx\",\n                \"Action\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommand\n<公共请求参数>\n\n{\n    \"UserName\": \"ac\",\n    \"DeviceName\": \"abc\",\n    \"RealName\": \"abc\",\n    \"InstanceId\": \"asl123\",\n    \"Cmd\": \"abc\",\n    \"AuditAction\": [\n        1\n    ],\n    \"PrivateIp\": \"1.1.1.1\",\n    \"PublicIp\": \"2.2.2.2\",\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Offset\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Commands\": [\n            {\n                \"UserName\": \"abc\",\n                \"DeviceName\": \"ab\",\n                \"RealName\": \"cc\",\n                \"InstanceId\": \"abc123\",\n                \"Cmd\": \"rm\",\n                \"PrivateIp\": \"1.1.1.1\",\n                \"PublicIp\": \"2.2.2.2\",\n                \"TimeOffset\": 1,\n                \"Sid\": \"123\",\n                \"Time\": \"2020-09-22T00:00:00+00:00\",\n                \"Action\": 1\n            }\n        ],\n        \"RequestId\": \"x123456x\"\n    }\n}",
         "title": "命令执行检索"
       }
     ],
     "SearchCommandBySid": [
       {
         "document": "根据会话Id搜索Command",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommandBySid\n<公共请求参数>\n\n{\n    \"Sid\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"CommandSet\": [\n            {\n                \"TimeOffset\": 1,\n                \"Action\": 0,\n                \"Cmd\": \"xx\",\n                \"Time\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommandBySid\n<公共请求参数>\n\n{\n    \"Sid\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc123\",\n        \"CommandSet\": [\n            {\n                \"TimeOffset\": 1,\n                \"Action\": 0,\n                \"Cmd\": \"rm\",\n                \"Time\": \"2023-04-23T14:24:39+0800\"\n            }\n        ]\n    }\n}",
         "title": "根据会话Id搜索Command"
       }
     ],
@@ -422,7 +422,7 @@
       {
         "document": "命令检索",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSessionCommand\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Cmd\": \"pwd\",\n    \"StartTime\": \"2020-01-01T01:01:01Z\",\n    \"EndTime\": \"2020-01-01T01:01:01Z\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"CommandSessionSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"Commands\": [\n                    {\n                        \"TimeOffset\": 1,\n                        \"Action\": 0,\n                        \"Cmd\": \"xx\",\n                        \"Time\": \"xx\"\n                    }\n                ],\n                \"RealName\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"Count\": 1,\n                \"StartTime\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"Id\": \"xx\",\n                \"ApCode\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"CommandSessionSet\": [\n            {\n                \"UserName\": \"aa\",\n                \"DeviceName\": \"aa\",\n                \"Commands\": [\n                    {\n                        \"TimeOffset\": 1,\n                        \"Action\": 0,\n                        \"Cmd\": \"cd\",\n                        \"Time\": \"2020-01-01T01:01:01Z\"\n                    }\n                ],\n                \"RealName\": \"aa\",\n                \"InstanceId\": \"aa\",\n                \"PrivateIp\": \"aa\",\n                \"PublicIp\": \"aa\",\n                \"Count\": 1,\n                \"StartTime\": \"2020-01-01T01:01:01Z\",\n                \"EndTime\": \"2020-01-01T01:01:01Z\",\n                \"Id\": \"123\",\n                \"ApCode\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"asd123\"\n    }\n}",
         "title": "命令检索"
       }
     ]

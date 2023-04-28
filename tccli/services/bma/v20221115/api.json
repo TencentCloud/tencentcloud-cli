@@ -221,7 +221,6 @@
       "document": "CreateBPBrand请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "品牌名称",
           "example": "腾讯安全管家",
           "member": "string",
@@ -230,7 +229,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "企业名称",
           "example": "腾讯科技有限公司",
           "member": "string",
@@ -239,7 +237,14 @@
           "type": "string"
         },
         {
-          "default": "",
+          "document": "品牌logo",
+          "example": "品牌logo",
+          "member": "string",
+          "name": "BrandLogo",
+          "required": false,
+          "type": "string"
+        },
+        {
           "document": "联系电话",
           "example": "13012345678",
           "member": "string",
@@ -248,7 +253,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "营业执照",
           "example": "https://test.com",
           "member": "string",
@@ -257,7 +261,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "授权书",
           "example": "https://test.com",
           "member": "string",
@@ -266,7 +269,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "商标名称",
           "example": "[\"https://test.com\"]",
           "member": "string",
@@ -275,7 +277,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "商标证明",
           "example": "[\"https://test.com\"]",
           "member": "string",
@@ -284,7 +285,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否涉及转让: 0-不转让 1-转让",
           "example": "[\"1\"]",
           "member": "string",
@@ -293,7 +293,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "转让证明",
           "example": "[\"https://test.com\"]",
           "member": "string",
@@ -302,7 +301,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "保护网址",
           "example": "[\"qq.com\"]",
           "member": "string",
@@ -311,7 +309,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "保护应用",
           "example": "[\"腾讯安全管家\"]",
           "member": "string",
@@ -320,7 +317,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "保护公众号",
           "example": "[\"腾讯安全管家\"]",
           "member": "string",
@@ -329,7 +325,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "保护小程序",
           "example": "[\"腾讯安全管家\"]",
           "member": "string",
@@ -348,7 +343,6 @@
           "example": "123",
           "member": "int64",
           "name": "CompanyId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1160,6 +1154,15 @@
           "name": "Snapshot",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "账户资源状态：0-不可用 1-可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AccountStatus",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

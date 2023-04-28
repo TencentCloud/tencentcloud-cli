@@ -25,7 +25,7 @@ Output:
                     }
                 ],
                 "TagInfos": [
-                    "xx"
+                    "tag"
                 ],
                 "CreateTime": "2020-01-09T19:26:42+08:00",
                 "UpdateTime": "2020-01-14T10:43:07+08:00",
@@ -42,7 +42,7 @@ Output:
                     }
                 ],
                 "TagInfos": [
-                    "xx"
+                    "tag"
                 ],
                 "CreateTime": "2020-01-14T10:24:07+08:00",
                 "UpdateTime": "2020-01-14T10:24:07+08:00",
@@ -59,7 +59,7 @@ Output:
                     }
                 ],
                 "TagInfos": [
-                    "xx"
+                    "tag"
                 ],
                 "CreateTime": "2020-01-09T19:29:41+08:00",
                 "UpdateTime": "2020-01-09T19:29:42+08:00",

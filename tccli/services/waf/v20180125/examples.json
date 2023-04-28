@@ -300,9 +300,9 @@
     ],
     "DescribeWafThreatenIntelligence": [
       {
-        "document": "",
+        "document": "描述WAF威胁情报封禁模块详情",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWafThreatenIntelligence\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"WafThreatenIntelligenceDetails\": {\n            \"DefenseStatus\": 0,\n            \"LastUpdateTime\": \"2020-09-22T00:00:00+00:00\",\n            \"Tags\": [\n                \"global\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"WafThreatenIntelligenceDetails\": {\n            \"DefenseStatus\": 0,\n            \"LastUpdateTime\": \"2020-09-22T00:00:00+00:00\",\n            \"Tags\": [\n                \"global\"\n            ]\n        },\n        \"RequestId\": \"1234\"\n    }\n}",
         "title": "描述WAF威胁情报封禁模块详情"
       }
     ],
@@ -373,8 +373,8 @@
     "ModifyWafThreatenIntelligence": [
       {
         "document": "配置管理WAF 威胁情报封禁模块",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWafThreatenIntelligence\n<公共请求参数>\n\n{\n    \"WafThreatenIntelligenceDetails\": {\n        \"DefenseStatus\": 0,\n        \"Tags\": [\n            \"xx\"\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"WafThreatenIntelligenceDetails\": {\n            \"DefenseStatus\": 0,\n            \"LastUpdateTime\": \"2020-09-22T00:00:00+00:00\",\n            \"Tags\": [\n                \"xx\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWafThreatenIntelligence\n<公共请求参数>\n\n{\n    \"WafThreatenIntelligenceDetails\": {\n        \"DefenseStatus\": 0,\n        \"Tags\": [\n            \"abc\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"WafThreatenIntelligenceDetails\": {\n            \"DefenseStatus\": 0,\n            \"LastUpdateTime\": \"2020-09-22T00:00:00+00:00\",\n            \"Tags\": [\n                \"abc\"\n            ]\n        },\n        \"RequestId\": \"cdf\"\n    }\n}",
         "title": "配置WAF威胁情报封禁模块详情"
       }
     ],

@@ -153,8 +153,8 @@
     "CreateMultiFlowSignQRCode": [
       {
         "document": "创建一码多扫流程签署二维码",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"FlowName\": \"xx\",\n    \"MaxFlowNum\": 0,\n    \"FlowEffectiveDay\": 0,\n    \"Operator\": {\n        \"UserId\": \"xx\"\n    },\n    \"TemplateId\": \"xx\",\n    \"QrEffectiveDay\": 0,\n    \"CallbackUrl\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"QrCode\": {\n            \"QrCodeUrl\": \"xx\",\n            \"ExpiredTime\": 5,\n            \"QrCodeId\": \"xx\"\n        },\n        \"SignUrls\": {\n            \"EffectiveTime\": \"xx\",\n            \"HttpSignUrl\": \"xx\",\n            \"AppSignUrl\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"FlowName\": \"测试合同\",\n    \"MaxFlowNum\": 0,\n    \"FlowEffectiveDay\": 0,\n    \"Operator\": {\n        \"UserId\": \"userId\"\n    },\n    \"TemplateId\": \"templateid\",\n    \"QrEffectiveDay\": 0,\n    \"CallbackUrl\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QrCode\": {\n            \"QrCodeUrl\": \"http://www.qrcode.com/url/qrcode\",\n            \"ExpiredTime\": 5,\n            \"QrCodeId\": \"qr_code_id\"\n        },\n        \"SignUrls\": {\n            \"EffectiveTime\": \"\",\n            \"HttpSignUrl\": \"http://www.qrcode.com/url/HttpSignUrl\",\n            \"AppSignUrl\": \"/Pages/xxxxxx\"\n        },\n        \"RequestId\": \"s19873636434111\"\n    }\n}",
         "title": "CreateMultiFlowSignQRCode"
       }
     ],

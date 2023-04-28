@@ -1,6 +1,6 @@
 **Example 1: 获取标签歌曲**
 
-
+获取标签歌曲信息
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli yinsuda DescribeKTVMusicsByTag --cli-unfold-argument  \
     --UserId 20220123abc \
     --Limit 10 \
-    --TagId 1111 \
+    --TagId id1111 \
     --AppName test
 ```
 

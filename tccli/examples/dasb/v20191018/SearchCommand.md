@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli dasb SearchCommand --cli-unfold-argument  \
-    --UserName xx \
-    --DeviceName xx \
-    --RealName xx \
-    --InstanceId xx \
-    --Cmd xx \
+    --UserName ac \
+    --DeviceName abc \
+    --RealName abc \
+    --InstanceId asl123 \
+    --Cmd abc \
     --AuditAction 1 \
-    --PrivateIp xx \
-    --PublicIp xx \
+    --PrivateIp 1.1.1.1 \
+    --PublicIp 2.2.2.2 \
     --Limit 1 \
     --StartTime 2020-09-22T00:00:00+00:00 \
     --Offset 1 \
@@ -27,20 +27,20 @@ Output:
         "TotalCount": 1,
         "Commands": [
             {
-                "UserName": "xx",
-                "DeviceName": "xx",
-                "RealName": "xx",
-                "InstanceId": "xx",
-                "Cmd": "xx",
-                "PrivateIp": "xx",
-                "PublicIp": "xx",
+                "UserName": "abc",
+                "DeviceName": "ab",
+                "RealName": "cc",
+                "InstanceId": "abc123",
+                "Cmd": "rm",
+                "PrivateIp": "1.1.1.1",
+                "PublicIp": "2.2.2.2",
                 "TimeOffset": 1,
-                "Sid": "xx",
-                "Time": "xx",
+                "Sid": "123",
+                "Time": "2020-09-22T00:00:00+00:00",
                 "Action": 1
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "x123456x"
     }
 }
 ```
