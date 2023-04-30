@@ -46,7 +46,7 @@
 | cme | [多媒体创作引擎](http://document.tencentcloudapi.woa.com/document/product/1156) | 2023-04-19 01:10:37 |
 | cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2023-03-30 01:09:02 |
 | cms | [内容安全](http://document.tencentcloudapi.woa.com/document/product/669) | 2023-04-25 01:14:12 |
-| cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2023-04-28 01:13:19 |
+| cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2023-05-01 01:13:10 |
 | cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2023-04-27 01:15:55 |
 | cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2023-04-19 01:14:17 |
 | cynosdb | [TDSQL-C MySQL 版](http://document.tencentcloudapi.woa.com/document/product/1003) | 2023-03-31 01:18:04 |
@@ -102,7 +102,7 @@
 | mgobe | [游戏联机对战引擎](http://document.tencentcloudapi.woa.com/document/product/1038) | 2022-07-08 06:02:35 |
 | mna | [移动网络加速](http://document.tencentcloudapi.woa.com/document/product/1385) | 2023-03-30 01:28:00 |
 | mongodb | [云数据库 MongoDB](http://document.tencentcloudapi.woa.com/document/product/240) | 2023-04-11 01:26:07 |
-| monitor | [腾讯云可观测平台](http://document.tencentcloudapi.woa.com/document/product/248) | 2023-04-24 01:26:03 |
+| monitor | [腾讯云可观测平台](http://document.tencentcloudapi.woa.com/document/product/248) | 2023-05-01 01:25:27 |
 | mps | [媒体处理](http://document.tencentcloudapi.woa.com/document/product/862) | 2023-04-28 01:26:28 |
 | mrs | [医疗报告结构化](http://document.tencentcloudapi.woa.com/document/product/1314) | 2023-03-30 01:30:01 |
 | msp | [迁移服务平台](http://document.tencentcloudapi.woa.com/document/product/659) | 2023-03-30 01:30:10 |
@@ -117,7 +117,7 @@
 | privatedns | [私有域解析 Private DNS](http://document.tencentcloudapi.woa.com/document/product/1338) | 2023-04-27 01:30:22 |
 | pts | [云压测](http://document.tencentcloudapi.woa.com/document/product/1484) | 2023-04-27 01:30:41 |
 | rce | [全栈式风控引擎](http://document.tencentcloudapi.woa.com/document/product/1343) | 2023-04-26 01:40:51 |
-| redis | [云数据库Redis](http://document.tencentcloudapi.woa.com/document/product/239) | 2023-04-27 01:31:01 |
+| redis | [云数据库Redis](http://document.tencentcloudapi.woa.com/document/product/239) | 2023-05-01 01:28:47 |
 | region | [地域管理系统](http://document.tencentcloudapi.woa.com/document/product/1596) | 2023-04-25 01:42:13 |
 | rkp | [风险探针](http://document.tencentcloudapi.woa.com/document/product/1169) | 2023-03-30 01:32:33 |
 | rp | [注册保护](http://document.tencentcloudapi.woa.com/document/product/1191) | 2022-03-08 08:03:09 |
@@ -164,7 +164,7 @@
 | vm | [视频内容安全](http://document.tencentcloudapi.woa.com/document/product/1265) | 2023-03-30 01:44:42 |
 | vms | [语音消息](http://document.tencentcloudapi.woa.com/document/product/1128) | 2023-03-30 01:44:45 |
 | vod | [云点播](http://document.tencentcloudapi.woa.com/document/product/266) | 2023-04-28 01:36:02 |
-| vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | 2023-04-26 01:55:39 |
+| vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | 2023-05-01 01:36:39 |
 | waf | [Web 应用防火墙](http://document.tencentcloudapi.woa.com/document/product/627) | 2023-04-28 01:38:39 |
 | wav | [企业微信汽车行业版](http://document.tencentcloudapi.woa.com/document/product/1318) | 2023-03-30 01:47:38 |
 | yunsou | [腾讯云搜TCS](http://document.tencentcloudapi.woa.com/document/product/270) | 2023-03-30 01:47:46 |

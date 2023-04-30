@@ -1,109 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 内容分发网络 CDN(cdn) 版本：2018-06-06
-
-### 第 45 次发布
-
-发布时间：2023-04-28 01:10:32
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribePayType](http://document.tencentcloudapi.woa.com/document/product/228/31295)
-
-	* 新增入参：Type
-
-
-
-
-## 云防火墙(cfw) 版本：2019-09-04
-
-### 第 23 次发布
-
-发布时间：2023-04-28 01:11:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [BlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BlockIgnoreRule)
-
-	* 新增成员：Comment
-
-
-
-
 ## 企业收付平台(cpdp) 版本：2019-08-20
 
-### 第 51 次发布
+### 第 52 次发布
 
-发布时间：2023-04-28 01:13:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [PaymentOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderResult)
-
-	* 新增成员：FundingAccountSubType
-
-
-
-
-## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
-
-### 第 9 次发布
-
-发布时间：2023-04-28 01:16:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1492/77136)
-
-	* 新增入参：Encoding
-
-* [SearchCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77438)
-
-	* 新增入参：Encoding
-
-* [SearchCommandBySid](http://document.tencentcloudapi.woa.com/document/product/1492/77437)
-
-	* 新增入参：Encoding
-
-* [SearchSessionCommand](http://document.tencentcloudapi.woa.com/document/product/1492/77433)
-
-	* 新增入参：Encoding
-
-
-修改数据结构：
-
-* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
-
-	* 新增成员：Sid, UserName, Account, InstanceId, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
-
-* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
-
-	* 新增成员：Account, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
-
-
-
-
-## 密钥管理系统(kms) 版本：2019-01-18
-
-### 第 6 次发布
-
-发布时间：2023-04-28 01:23:43
+发布时间：2023-05-01 01:13:10
 
 本次发布包含了以下内容：
 
@@ -111,37 +12,21 @@
 
 新增接口：
 
-* [PostQuantumCryptoDecrypt](http://document.tencentcloudapi.woa.com/document/product/573/77535)
-* [PostQuantumCryptoEncrypt](http://document.tencentcloudapi.woa.com/document/product/573/77534)
-* [PostQuantumCryptoSign](http://document.tencentcloudapi.woa.com/document/product/573/77533)
-* [PostQuantumCryptoVerify](http://document.tencentcloudapi.woa.com/document/product/573/77532)
+* [ApplyFlexWechatPreAuth](http://document.tencentcloudapi.woa.com/document/product/1122/77537)
+* [QueryFlexWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/77536)
+
+新增数据结构：
+
+* [QueryWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryWechatAuthResult)
+* [WechatPreAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#WechatPreAuthResult)
 
 
 
-## 云直播CSS(live) 版本：2018-08-01
+## 私有网络(vpc) 版本：2017-03-12
 
-### 第 32 次发布
+### 第 82 次发布
 
-发布时间：2023-04-28 01:24:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateLiveCallbackTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32637)
-
-	* 新增入参：AudioAuditNotifyUrl
-
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 26 次发布
-
-发布时间：2023-04-28 01:26:28
+发布时间：2023-05-01 01:36:39
 
 本次发布包含了以下内容：
 
@@ -149,87 +34,28 @@
 
 修改接口：
 
-* [ProcessLiveStream](http://document.tencentcloudapi.woa.com/document/product/862/39227)
+* [AssignPrivateIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/15813)
 
-	* 新增入参：AiAnalysisTask
+	* 新增入参：QosLevel
 
+* [CreateAndAttachNetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/43370)
 
+	* 新增入参：QosLevel
 
+* [CreateNetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15818)
 
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
-
-### 第 19 次发布
-
-发布时间：2023-04-28 01:30:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeBackupByFlowId](http://document.tencentcloudapi.woa.com/document/product/238/47203)
-
-	* 新增出参：BackupFormat, Region, CrossBackupAddr, CrossBackupStatus
-
-
-
-
-## 云点播(vod) 版本：2018-07-17
-
-### 第 59 次发布
-
-发布时间：2023-04-28 01:36:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DescribeFileAttributesTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTaskOutput)
-
-	* 新增成员：Sha1
-
-
-
-
-## Web 应用防火墙(waf) 版本：2018-01-25
-
-### 第 36 次发布
-
-发布时间：2023-04-28 01:38:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyWafThreatenIntelligence](http://document.tencentcloudapi.woa.com/document/product/627/72637)
-
-	* <font color="#dd0000">**修改入参**：</font>WafThreatenIntelligenceDetails
-
-	* <font color="#dd0000">**修改出参**：</font>WafThreatenIntelligenceDetails
+	* 新增入参：QosLevel
 
 
 修改数据结构：
 
-* [BotPkg](http://document.tencentcloudapi.woa.com/document/product/627/53609#BotPkg)
+* [NetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkInterface)
 
-	* 新增成员：RenewFlag
+	* 新增成员：Synchronized, EnableDirectSend
 
-* [BotQPS](http://document.tencentcloudapi.woa.com/document/product/627/53609#BotQPS)
+* [PrivateIpAddressSpecification](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateIpAddressSpecification)
 
-	* 新增成员：RenewFlag
-
-* [FraudPkg](http://document.tencentcloudapi.woa.com/document/product/627/53609#FraudPkg)
-
-	* 新增成员：RenewFlag
-
-* [WafThreatenIntelligenceDetails](http://document.tencentcloudapi.woa.com/document/product/627/53609#WafThreatenIntelligenceDetails)
-
-	* <font color="#dd0000">**修改成员**：</font>DefenseStatus
+	* 新增成员：QosLevel
 
 
 
@@ -14504,6 +14330,24 @@
 
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 52 次发布
+
+发布时间：2023-05-01 01:13:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ApplyFlexWechatPreAuth](http://document.tencentcloudapi.woa.com/document/product/1122/77537)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[QueryFlexWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/77536)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[QueryWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryWechatAuthResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[QueryWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryWechatAuthResult))
+* [[WechatPreAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#WechatPreAuthResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[WechatPreAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#WechatPreAuthResult))
 
 ### 第 51 次发布
 
@@ -31259,10 +31103,10 @@
 
 新增接口：
 
-* [[PostQuantumCryptoDecrypt](http://document.tencentcloudapi.woa.com/document/product/573/77535)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[PostQuantumCryptoEncrypt](http://document.tencentcloudapi.woa.com/document/product/573/77534)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[PostQuantumCryptoSign](http://document.tencentcloudapi.woa.com/document/product/573/77533)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[PostQuantumCryptoVerify](http://document.tencentcloudapi.woa.com/document/product/573/77532)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [PostQuantumCryptoDecrypt](http://document.tencentcloudapi.woa.com/document/product/573/77535)
+* [PostQuantumCryptoEncrypt](http://document.tencentcloudapi.woa.com/document/product/573/77534)
+* [PostQuantumCryptoSign](http://document.tencentcloudapi.woa.com/document/product/573/77533)
+* [PostQuantumCryptoVerify](http://document.tencentcloudapi.woa.com/document/product/573/77532)
 
 ### 第 5 次发布
 
@@ -57216,6 +57060,40 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 82 次发布
+
+发布时间：2023-05-01 01:36:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AssignPrivateIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/15813)
+
+	* 新增入参：QosLevel
+
+* [CreateAndAttachNetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/43370)
+
+	* 新增入参：QosLevel
+
+* [CreateNetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15818)
+
+	* 新增入参：QosLevel
+
+
+修改数据结构：
+
+* [NetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkInterface)
+
+	* 新增成员：Synchronized, EnableDirectSend
+
+* [PrivateIpAddressSpecification](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateIpAddressSpecification)
+
+	* 新增成员：QosLevel
+
 
 ### 第 81 次发布
 

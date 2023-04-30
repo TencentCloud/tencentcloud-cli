@@ -4747,7 +4747,6 @@
       "document": "AssignPrivateIpAddresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
           "example": "eni-afo43z61",
           "member": "string",
@@ -4757,7 +4756,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。",
           "example": "无",
           "member": "PrivateIpAddressSpecification",
@@ -4767,13 +4765,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数，详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。",
           "example": "2",
           "member": "uint64",
           "name": "SecondaryPrivateIpAddressCount",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。",
+          "example": "PT",
+          "member": "string",
+          "name": "QosLevel",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],
@@ -4787,7 +4793,6 @@
           "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddressSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -7266,6 +7271,15 @@
           "visibility": 1
         },
         {
+          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。",
+          "example": "PT",
+          "member": "string",
+          "name": "QosLevel",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
           "document": "指定绑定的安全组，例如：['sg-1dd51d']。",
           "example": "--",
           "member": "string",
@@ -9038,6 +9052,15 @@
           "name": "SecondaryPrivateIpAddressCount",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。",
+          "example": "PT",
+          "member": "string",
+          "name": "QosLevel",
+          "required": false,
+          "type": "string",
           "visibility": 1
         },
         {
@@ -33982,7 +34005,6 @@
       "document": "弹性网卡",
       "members": [
         {
-          "default": "",
           "document": "弹性网卡实例ID，例如：eni-f1xjkw1b。",
           "example": "-",
           "member": "string",
@@ -33993,7 +34015,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡名称。",
           "example": "-",
           "member": "string",
@@ -34004,7 +34025,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡描述。",
           "example": "-",
           "member": "string",
@@ -34015,7 +34035,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网实例ID。",
           "example": "-",
           "member": "string",
@@ -34026,7 +34045,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC实例ID。",
           "example": "-",
           "member": "string",
@@ -34037,7 +34055,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "绑定的安全组。",
           "example": "-",
           "member": "string",
@@ -34048,7 +34065,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否是主网卡。",
           "example": "-",
           "member": "bool",
@@ -34059,7 +34075,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "MAC地址。",
           "example": "-",
           "member": "string",
@@ -34070,7 +34085,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡状态：\n<li>`PENDING`：创建中</li>\n<li>`AVAILABLE`：可用的</li>\n<li>`ATTACHING`：绑定中</li>\n<li>`DETACHING`：解绑中</li>\n<li>`DELETING`：删除中</li>",
           "example": "-",
           "member": "string",
@@ -34081,7 +34095,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "内网IP信息。",
           "example": "-",
           "member": "PrivateIpAddressSpecification",
@@ -34092,7 +34105,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "绑定的云服务器对象。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "NetworkInterfaceAttachment",
@@ -34103,7 +34115,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "可用区。",
           "example": "-",
           "member": "string",
@@ -34114,7 +34125,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间。",
           "example": "-",
           "member": "string",
@@ -34125,7 +34135,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "`IPv6`地址列表。",
           "example": "-",
           "member": "Ipv6Address",
@@ -34136,7 +34145,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签键值对。",
           "example": "-",
           "member": "Tag",
@@ -34147,7 +34155,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网卡类型。0 - 弹性网卡；1 - evm弹性网卡。",
           "example": "-",
           "member": "uint64",
@@ -34158,7 +34165,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网卡绑定的子机类型：cvm，eks。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
@@ -34169,7 +34175,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "网卡所关联的CDC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cluster-gbo27yc4",
           "member": "string",
@@ -34180,7 +34185,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "弹性网卡类型：0:标准型/1:扩展型。默认值为0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
@@ -34191,7 +34195,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "该网卡关联的中继网卡实例列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
@@ -34202,7 +34205,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "是否为RDMA弹性网卡，true-是rdma弹性网卡，false-不是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -34213,7 +34215,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-j85c20d4-reserved",
           "member": "string",
@@ -34224,7 +34225,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "服务质量级别：\n<li>`DEFAULT`：默认</li>\n<li>`PT`：云金</li>\n<li>`AU`：云银</li>\n<li>`AG`：云铜</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AG",
           "member": "string",
@@ -34235,7 +34235,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "地域。",
           "example": "ap-guangzhou",
           "member": "string",
@@ -34246,11 +34245,30 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "是否刷新子网卡Havip的开关。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "FlushSubEniHavipFlag",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "接口是否为同步模式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Synchronized",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "启用DirectSend标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDirectSend",
           "required": false,
           "type": "bool",
           "value_allowed_null": true,
@@ -34363,74 +34381,84 @@
       "document": "内网IP信息",
       "members": [
         {
-          "default": "",
           "document": "内网IP地址。",
           "example": "无",
           "member": "string",
           "name": "PrivateIpAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否是主IP。",
           "example": "无",
           "member": "bool",
           "name": "Primary",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "公网IP地址。",
           "example": "无",
           "member": "string",
           "name": "PublicIpAddress",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "EIP实例ID，例如：eip-11112222。",
           "example": "无",
           "member": "string",
           "name": "AddressId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "内网IP描述信息。",
           "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "公网IP是否被封堵。",
           "example": "无",
           "member": "bool",
           "name": "IsWanIpBlocked",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "IP状态：\nPENDING：生产中\nMIGRATING：迁移中\nDELETING：删除中\nAVAILABLE：可用的",
           "example": "无",
           "member": "string",
           "name": "State",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。",
+          "example": "PT",
+          "member": "string",
+          "name": "QosLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
