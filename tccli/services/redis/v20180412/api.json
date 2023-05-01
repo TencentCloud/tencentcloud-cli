@@ -281,7 +281,7 @@
       "status": "online"
     },
     "DescribeInstanceShards": {
-      "document": "获取集群版实例分片信息",
+      "document": "本接口（DescribeInstanceShards）用于获取集群架构实例的分片信息。",
       "input": "DescribeInstanceShardsRequest",
       "name": "获取集群版实例分片信息",
       "output": "DescribeInstanceShardsResponse",
@@ -295,7 +295,7 @@
       "status": "online"
     },
     "DescribeInstances": {
-      "document": "查询Redis实例列表",
+      "document": "本接口（DescribeInstances）用于查询Redis实例列表。",
       "input": "DescribeInstancesRequest",
       "name": "查询Redis实例列表",
       "output": "DescribeInstancesResponse",
@@ -3637,8 +3637,7 @@
       "document": "DescribeInstanceShards请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
           "example": "crs-7ponppu3",
           "member": "string",
           "name": "InstanceId",
@@ -3646,8 +3645,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "是否过滤掉从节信息",
+          "document": "是否过滤掉从节信息。\n- true；过滤从节点。\n- false：不过滤。",
           "example": "false",
           "member": "bool",
           "name": "FilterSlave",
@@ -3661,20 +3659,18 @@
       "document": "DescribeInstanceShards返回参数结构体",
       "members": [
         {
-          "document": "实例分片列表信息",
+          "document": "实例分片列表信息，包括：节点信息、节点ID、Key数量、使用容量、容量倾斜率等信息。",
           "example": "无",
           "member": "InstanceClusterShard",
           "name": "InstanceShards",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "实例分片节点总数",
+          "document": "实例分片节点数量。",
           "example": "6",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3744,7 +3740,7 @@
           "type": "int"
         },
         {
-          "document": "分页偏移量，取Limit整数倍。",
+          "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -3752,7 +3748,7 @@
           "type": "int"
         },
         {
-          "document": "实例 ID，如：crs-6ubhgouj。",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。\n\n",
           "example": "无",
           "member": "string",
           "name": "InstanceId",
@@ -3760,7 +3756,7 @@
           "type": "string"
         },
         {
-          "document": "实例排序依据，枚举值如下所示：<ul><li>projectId：项目ID。</li><li>createtime：实例创建时间。</li><li>instancename：实例名称。</li><li>type：实例类型。</li><li>curDeadline：实例到期时间。</li></ul>",
+          "document": "实例列表排序依据，枚举值如下所示：<ul><li>projectId：依据项目ID排序。</li><li>createtime：依据实例创建时间排序。</li><li>instancename：依据实例名称排序。</li><li>type：依据实例类型排序。</li><li>curDeadline：依据实例到期时间排序。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "OrderBy",
@@ -3864,7 +3860,7 @@
           "type": "string"
         },
         {
-          "document": "续费模式。<ul><li>0：默认状态（手动续费）。</li><li>1：自动续费。</li><li>2：明确不自动续费。</ul>",
+          "document": "续费模式。<ul><li>0：手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>",
           "example": "无",
           "member": "int64",
           "name": "AutoRenew",
@@ -3928,7 +3924,7 @@
           "type": "list"
         },
         {
-          "document": "实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。<ul><li>local：本地盘版。</li><li>cloud：云盘版。</li><li>cdc：独享集群版。</li></ul>",
+          "document": "实例的产品版本。如果该参数不配置或者数组设置为空值，则默认不依据此参数过滤实例。<ul><li>local：本地盘版。</li><li>cdc：独享集群版。</li></ul>",
           "example": "[\"cdc\"]",
           "member": "string",
           "name": "ProductVersions",
@@ -4537,7 +4533,7 @@
       "document": "DescribeSlowLog请求参数结构体",
       "members": [
         {
-          "document": "实例Id。",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。\n",
           "example": "crs-asdasdas",
           "member": "string",
           "name": "InstanceId",
@@ -4545,7 +4541,7 @@
           "type": "string"
         },
         {
-          "document": "开始时间。",
+          "document": "预查询慢日志的起始时间。",
           "example": "2019-09-08 12:12:41",
           "member": "string",
           "name": "BeginTime",
@@ -4553,7 +4549,7 @@
           "type": "string"
         },
         {
-          "document": "结束时间。",
+          "document": "预查询慢日志的结束时间。",
           "example": "2019-09-09 12:12:41",
           "member": "string",
           "name": "EndTime",
@@ -4561,7 +4557,7 @@
           "type": "string"
         },
         {
-          "document": "慢查询平均执行时间阈值（单位：毫秒）。",
+          "document": "慢查询平均执行时间阈值，单位：毫秒。",
           "example": "100",
           "member": "int64",
           "name": "MinQueryTime",
@@ -4577,7 +4573,7 @@
           "type": "int"
         },
         {
-          "document": "慢查询条数的偏移量，取Limit整数倍。",
+          "document": "慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",

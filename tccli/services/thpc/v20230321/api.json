@@ -98,6 +98,13 @@
       "output": "DescribeQueuesResponse",
       "status": "online"
     },
+    "ModifyInitNodeScripts": {
+      "document": "本接口 (ModifyInitNodeScripts) 用于修改节点初始化脚本。",
+      "input": "ModifyInitNodeScriptsRequest",
+      "name": "修改节点初始化脚本",
+      "output": "ModifyInitNodeScriptsResponse",
+      "status": "online"
+    },
     "SetAutoScalingConfiguration": {
       "document": "本接口(SetAutoScalingConfiguration)用于为集群设置集群弹性伸缩配置信息。",
       "input": "SetAutoScalingConfigurationRequest",
@@ -901,6 +908,14 @@
           "name": "AutoScalingType",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "节点初始化脚本信息列表。",
+          "example": "无",
+          "member": "NodeScript",
+          "name": "InitNodeScripts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1916,6 +1931,40 @@
       ],
       "usage": "out"
     },
+    "ModifyInitNodeScriptsRequest": {
+      "document": "ModifyInitNodeScripts请求参数结构体",
+      "members": [
+        {
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "节点初始化脚本信息列表。",
+          "example": "无",
+          "member": "NodeScript",
+          "name": "InitNodeScripts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInitNodeScriptsResponse": {
+      "document": "ModifyInitNodeScripts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "NodeActivity": {
       "document": "节点活动信息。",
       "members": [
@@ -2027,6 +2076,30 @@
       ],
       "usage": "out"
     },
+    "NodeScript": {
+      "document": "描述节点执行脚本信息。",
+      "members": [
+        {
+          "document": "节点执行脚本获取地址。\n目前仅支持cos地址。地址最大长度：255。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cos://demo-xxxxxxxx.cos.ap-guangzhou.myqcloud.com/test/echo.sh",
+          "member": "string",
+          "name": "ScriptPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "脚本执行超时时间（包含拉取脚本的时间）。单位秒，默认值：30。取值范围：10～1200。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Placement": {
       "document": "描述了实例的抽象位置",
       "members": [
@@ -2134,6 +2207,15 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "队列中期望的空闲节点数量（包含弹性节点和静态节点）。默认值：0。队列中，处于空闲状态的节点小于此值，集群会扩容弹性节点；处于空闲状态的节点大于此值，集群会缩容弹性节点。",
+          "example": "5",
+          "member": "int64",
+          "name": "DesiredIdleNodeCapacity",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -2194,6 +2276,15 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "队列中期望的空闲节点数量（包含弹性节点和静态节点）。默认值：0。队列中，处于空闲状态的节点小于此值，集群会扩容弹性节点；处于空闲状态的节点大于此值，集群会缩容弹性节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "DesiredIdleNodeCapacity",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

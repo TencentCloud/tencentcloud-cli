@@ -23,42 +23,61 @@ Output:
 {
     "Response": {
         "NetworkInterface": {
-            "NetworkInterfaceId": "eni-irk5qhhl",
-            "VpcId": "vpc-0akbol5v",
-            "SubnetId": "subnet-76r802pg",
-            "NetworkInterfaceName": "TestNIC",
-            "NetworkInterfaceDescription": "TestDesc",
-            "MacAddress": "20:90:6F:62:33:E2",
-            "Business": "xx",
-            "CdcId": "xx",
-            "EniType": 1,
-            "AttachType": 1,
+            "NetworkInterfaceId": "abc",
+            "NetworkInterfaceName": "abc",
+            "NetworkInterfaceDescription": "abc",
+            "SubnetId": "abc",
+            "VpcId": "abc",
+            "GroupSet": [
+                "abc"
+            ],
+            "Primary": true,
+            "MacAddress": "abc",
+            "State": "abc",
             "PrivateIpAddressSet": [
                 {
-                    "PrivateIpAddress": "172.16.64.13",
+                    "PrivateIpAddress": "abc",
                     "Primary": true,
-                    "AddressId": "",
-                    "PublicIpAddress": "",
-                    "Description": "",
-                    "IsWanIpBlocked": false,
-                    "State": "PENDING"
+                    "PublicIpAddress": "abc",
+                    "AddressId": "abc",
+                    "Description": "abc",
+                    "IsWanIpBlocked": true,
+                    "State": "abc",
+                    "QosLevel": "abc"
                 }
             ],
-            "Attachment": null,
-            "GroupSet": [],
-            "Primary": false,
-            "State": "PENDING",
-            "Zone": "",
-            "CreatedTime": "",
-            "Ipv6AddressSet": [],
+            "Attachment": {
+                "InstanceId": "abc",
+                "DeviceIndex": 1,
+                "InstanceAccountId": "abc",
+                "AttachTime": "abc"
+            },
+            "Zone": "abc",
+            "CreatedTime": "abc",
+            "Ipv6AddressSet": [
+                {
+                    "Address": "abc",
+                    "Primary": true,
+                    "AddressId": "abc",
+                    "Description": "abc",
+                    "IsWanIpBlocked": true,
+                    "State": "abc"
+                }
+            ],
             "TagSet": [
                 {
-                    "Key": "city",
-                    "Value": "shanghai"
+                    "Key": "abc",
+                    "Value": "abc"
                 }
-            ]
+            ],
+            "EniType": 1,
+            "Business": "abc",
+            "CdcId": "abc",
+            "AttachType": 1,
+            "ResourceId": "abc",
+            "QosLevel": "abc"
         },
-        "RequestId": "5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1"
+        "RequestId": "abc"
     }
 }
 ```

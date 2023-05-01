@@ -63,6 +63,13 @@
       "output": "ApplyFlexSettlementResponse",
       "status": "online"
     },
+    "ApplyFlexWechatPreAuth": {
+      "document": "微工卡开通预核身接口",
+      "input": "ApplyFlexWechatPreAuthRequest",
+      "name": "灵云V2-微工卡开通预核身接口",
+      "output": "ApplyFlexWechatPreAuthResponse",
+      "status": "online"
+    },
     "ApplyOpenBankOrderDetailReceipt": {
       "document": "云企付-申请单笔交易回单",
       "input": "ApplyOpenBankOrderDetailReceiptRequest",
@@ -943,6 +950,13 @@
       "input": "QueryFlexSettlementOrderListRequest",
       "name": "灵云V2-查询结算订单列表",
       "output": "QueryFlexSettlementOrderListResponse",
+      "status": "online"
+    },
+    "QueryFlexWechatAuthResult": {
+      "document": "查询微工卡核身结果",
+      "input": "QueryFlexWechatAuthResultRequest",
+      "name": "灵云V2-查询微工卡核身结果",
+      "output": "QueryFlexWechatAuthResultResponse",
       "status": "online"
     },
     "QueryFundsTransactionDetails": {
@@ -3899,6 +3913,120 @@
         }
       ],
       "usage": "out"
+    },
+    "ApplyFlexWechatPreAuthRequest": {
+      "document": "ApplyFlexWechatPreAuth请求参数结构体",
+      "members": [
+        {
+          "document": "商家核身单号",
+          "example": "无",
+          "member": "string",
+          "name": "AuthNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "微信用户标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "项目名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用工单位名称",
+          "example": "无",
+          "member": "string",
+          "name": "EmployerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用户姓名",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用户证件号",
+          "example": "无",
+          "member": "string",
+          "name": "IdNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "用工类型\nLONG_TERM_EMPLOYMENT：长期用工，\nSHORT_TERM_EMPLOYMENT： 短期用工，\nCOOPERATION_EMPLOYMENT：合作关系",
+          "example": "无",
+          "member": "string",
+          "name": "EmploymentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "核身类型\nSIGN_IN：考勤、签到打卡类型\nINSURANCE：投保类型\nCONTRACT：签约类型",
+          "example": "无",
+          "member": "string",
+          "name": "AuthType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "环境类型\ntest 测试\nrelease 生产\nsandbox 沙箱",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyFlexWechatPreAuthResponse": {
+      "document": "ApplyFlexWechatPreAuth返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WechatPreAuthResult",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ApplyOpenBankOrderDetailReceiptRequest": {
       "document": "ApplyOpenBankOrderDetailReceipt请求参数结构体",
@@ -27517,6 +27645,64 @@
       ],
       "type": "object"
     },
+    "QueryFlexWechatAuthResultRequest": {
+      "document": "QueryFlexWechatAuthResult请求参数结构体",
+      "members": [
+        {
+          "document": "商户核身单号",
+          "example": "无",
+          "member": "string",
+          "name": "AuthNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "环境类型\ntest 测试\nrelease 生产\nsandbox 沙箱",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexWechatAuthResultResponse": {
+      "document": "QueryFlexWechatAuthResult返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryWechatAuthResult",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryFundsTransactionDetailsRequest": {
       "document": "QueryFundsTransactionDetails请求参数结构体",
       "members": [
@@ -35442,6 +35628,120 @@
       ],
       "type": "object"
     },
+    "QueryWechatAuthResult": {
+      "document": "查询用户微工卡核身结果",
+      "members": [
+        {
+          "document": "商户核身单号",
+          "example": "无",
+          "member": "string",
+          "name": "AuthNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信用户标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "商户号",
+          "example": "无",
+          "member": "string",
+          "name": "MchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子商户号",
+          "example": "无",
+          "member": "string",
+          "name": "SubMchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "核身渠道\nFROM_MINI_APP：来自小程序方式核身\nFROM_HARDWARE：来自硬件设备方式核身",
+          "example": "无",
+          "member": "string",
+          "name": "AuthScene",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "核身渠道标识\n\n用于定位渠道具体来源，如果是扫码打卡渠道标识就是具体的小程序appid，若是硬件设备，则是设备的序列号等",
+          "example": "无",
+          "member": "string",
+          "name": "AuthSource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所属单位名称",
+          "example": "无",
+          "member": "string",
+          "name": "EmployerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "核身时间\nyyyy-MM-DDTHH:mm:ss+TIMEZONE\n\n示例值：2015-05-20T13:29:35+08:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "核身类型\n\nSIGN_IN：考勤、签到打卡类型\nINSURANCE：投保类型\nCONTRACT：签约类型",
+          "example": "无",
+          "member": "string",
+          "name": "AuthType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "核身状态\nAUTHENTICATE_PROCESSING：核身中\nAUTHENTICATE_SUCCESS：核身成功\nAUTHENTICATE_FAILED：核身失败",
+          "example": "无",
+          "member": "string",
+          "name": "AuthState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "核身失败原因描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthFailReason",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RechargeByThirdPayRequest": {
       "document": "RechargeByThirdPay请求参数结构体",
       "members": [
@@ -43324,6 +43624,66 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WechatPreAuthResult": {
+      "document": "微工卡预核身结果",
+      "members": [
+        {
+          "document": "商户核身单号",
+          "example": "无",
+          "member": "string",
+          "name": "AuthNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信用户标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "商户号",
+          "example": "无",
+          "member": "string",
+          "name": "MchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子商户号",
+          "example": "无",
+          "member": "string",
+          "name": "SubMchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预核身token值",
+          "example": "无",
+          "member": "string",
+          "name": "Token",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "token有效期时间，单位：秒",
+          "example": "无",
+          "member": "int64",
+          "name": "Expire",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

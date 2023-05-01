@@ -72,6 +72,14 @@
         "title": "结算"
       }
     ],
+    "ApplyFlexWechatPreAuth": [
+      {
+        "document": "微工卡预核身",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: WechatPreAuth\n<公共请求参数>\n\n{\n    \"AuthNo\": \"abc\",\n    \"OpenId\": \"abc\",\n    \"ProjectName\": \"abc\",\n    \"EmployerName\": \"abc\",\n    \"UserName\": \"abc\",\n    \"IdNo\": \"abc\",\n    \"EmploymentType\": \"abc\",\n    \"AuthType\": \"abc\",\n    \"Environment\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"abc\",\n        \"ErrMessage\": \"abc\",\n        \"Result\": {},\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "微工卡预核身"
+      }
+    ],
     "ApplyOpenBankOrderDetailReceipt": [
       {
         "document": "",
@@ -1138,6 +1146,14 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexSettlementOrderList\n<公共请求参数>\n\n{\n    \"PageNumber\": {\n        \"Count\": \"10\",\n        \"Index\": \"1\"\n    },\n    \"EndTime\": \"2022-05-12 00:00:00\",\n    \"PayeeId\": \"1524013479128928256\",\n    \"StartTime\": \"2022-05-06 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"List\": null,\n            \"Count\": null\n        },\n        \"RequestId\": \"66a06170-e747-41ec-b6cc-ff81bd7f43f3\"\n    }\n}",
         "title": "结算中心-查询结算单"
+      }
+    ],
+    "QueryFlexWechatAuthResult": [
+      {
+        "document": "微工卡预核身结果查询",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexWechatAuthResult\n<公共请求参数>\n\n{\n    \"AuthNo\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"abc\",\n        \"ErrMessage\": \"abc\",\n        \"Result\": {\n            \"AuthNo\": \"abc\",\n            \"OpenId\": \"abc\",\n            \"MchId\": \"abc\",\n            \"SubMchId\": \"abc\",\n            \"AuthScene\": \"abc\",\n            \"AuthSource\": \"abc\",\n            \"ProjectName\": \"abc\",\n            \"EmployerName\": \"abc\",\n            \"AuthTime\": \"abc\",\n            \"AuthType\": \"abc\",\n            \"AuthState\": \"abc\",\n            \"AuthFailReason\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "微工卡预核身结果查询"
       }
     ],
     "QueryFundsTransactionDetails": [

@@ -112,6 +112,14 @@
         "title": "查询集群队列概览信息列表"
       }
     ],
+    "ModifyInitNodeScripts": [
+      {
+        "document": "修改节点初始化脚本。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInitNodeScripts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-5lyv94lq\",\n    \"InitNodeScripts\": [\n        {\n            \"ScriptPath\": \"cos://test-xxxxxxxx.cos.ap-guangzhou.myqcloud.com/test/echo.sh\",\n            \"Timeout\": 30\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b40ac3ec-f0ac-4eaaa-8af8-ef2d93f37982\"\n    }\n}",
+        "title": "修改节点初始化脚本"
+      }
+    ],
     "SetAutoScalingConfiguration": [
       {
         "document": "集群配置弹性伸缩策略信息。",
