@@ -1,62 +1,18 @@
 # 本版本更新包含以下内容：
 
-## 企业收付平台(cpdp) 版本：2019-08-20
+## 全站加速网络(ecdn) 版本：2019-10-12
 
-### 第 52 次发布
+### 第 5 次发布
 
-发布时间：2023-05-01 01:13:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ApplyFlexWechatPreAuth](http://document.tencentcloudapi.woa.com/document/product/1122/77537)
-* [QueryFlexWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/77536)
-
-新增数据结构：
-
-* [QueryWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryWechatAuthResult)
-* [WechatPreAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#WechatPreAuthResult)
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 82 次发布
-
-发布时间：2023-05-01 01:36:39
+发布时间：2023-05-05 01:14:28
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [AssignPrivateIpAddresses](http://document.tencentcloudapi.woa.com/document/product/215/15813)
-
-	* 新增入参：QosLevel
-
-* [CreateAndAttachNetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/43370)
-
-	* 新增入参：QosLevel
-
-* [CreateNetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15818)
-
-	* 新增入参：QosLevel
-
-
-修改数据结构：
-
-* [NetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkInterface)
-
-	* 新增成员：Synchronized, EnableDirectSend
-
-* [PrivateIpAddressSpecification](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateIpAddressSpecification)
-
-	* 新增成员：QosLevel
-
+* DescribePurgeQuota
 
 
 
@@ -14341,13 +14297,13 @@
 
 新增接口：
 
-* [[ApplyFlexWechatPreAuth](http://document.tencentcloudapi.woa.com/document/product/1122/77537)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[QueryFlexWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/77536)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ApplyFlexWechatPreAuth](http://document.tencentcloudapi.woa.com/document/product/1122/77537)
+* [QueryFlexWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/77536)
 
 新增数据结构：
 
-* [[QueryWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryWechatAuthResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[QueryWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryWechatAuthResult))
-* [[WechatPreAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#WechatPreAuthResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[WechatPreAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#WechatPreAuthResult))
+* [QueryWechatAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryWechatAuthResult)
+* [WechatPreAuthResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#WechatPreAuthResult)
 
 ### 第 51 次发布
 
@@ -23311,6 +23267,18 @@
 
 
 ## 全站加速网络(ecdn) 版本：2019-10-12
+
+### 第 5 次发布
+
+发布时间：2023-05-05 01:14:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribePurgeQuota
 
 ### 第 4 次发布
 

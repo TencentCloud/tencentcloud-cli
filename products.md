@@ -13,7 +13,7 @@
 | apigateway | [API 网关](http://document.tencentcloudapi.woa.com/document/product/628) | 2023-03-30 01:02:20 |
 | apm | [应用性能观测](http://document.tencentcloudapi.woa.com/document/product/1463) | 2023-04-21 01:09:35 |
 | as | [弹性伸缩](http://document.tencentcloudapi.woa.com/document/product/377) | 2023-03-30 01:02:50 |
-| asr | [语音识别](http://document.tencentcloudapi.woa.com/document/product/1093) | 2023-04-28 01:07:23 |
+| asr | [语音识别](http://document.tencentcloudapi.woa.com/document/product/1093) | 2023-05-05 01:02:56 |
 | asw | [应用与服务编排工作流](http://document.tencentcloudapi.woa.com/document/product/1272) | 2023-03-30 01:03:14 |
 | ba | [网站备案](http://document.tencentcloudapi.woa.com/document/product/243) | 2023-04-20 01:07:55 |
 | batch | [批量计算](http://document.tencentcloudapi.woa.com/document/product/599) | 2023-04-12 01:07:35 |
@@ -64,7 +64,7 @@
 | dts | [数据传输服务](http://document.tencentcloudapi.woa.com/document/product/571) | 2023-03-30 01:21:16 |
 | eb | [事件总线](http://document.tencentcloudapi.woa.com/document/product/1359) | 2023-04-11 01:19:24 |
 | ecc | [英文作文批改](http://document.tencentcloudapi.woa.com/document/product/1076) | 2023-03-30 01:21:32 |
-| ecdn | [全站加速网络](http://document.tencentcloudapi.woa.com/document/product/570) | 2023-04-27 01:20:39 |
+| ecdn | [全站加速网络](http://document.tencentcloudapi.woa.com/document/product/570) | 2023-05-05 01:14:28 |
 | ecm | [边缘计算机器](http://document.tencentcloudapi.woa.com/document/product/1108) | 2023-04-24 01:16:47 |
 | eiam | [数字身份管控平台（员工版）](http://document.tencentcloudapi.woa.com/document/product/1442) | 2023-03-30 01:22:13 |
 | eis | [数据连接器](http://document.tencentcloudapi.woa.com/document/product/1270) | 2023-04-20 01:21:36 |
@@ -163,7 +163,7 @@
 | ump | [客流数字化平台](http://document.tencentcloudapi.woa.com/document/product/1320) | 2023-03-30 01:44:37 |
 | vm | [视频内容安全](http://document.tencentcloudapi.woa.com/document/product/1265) | 2023-03-30 01:44:42 |
 | vms | [语音消息](http://document.tencentcloudapi.woa.com/document/product/1128) | 2023-03-30 01:44:45 |
-| vod | [云点播](http://document.tencentcloudapi.woa.com/document/product/266) | 2023-04-28 01:36:02 |
+| vod | [云点播](http://document.tencentcloudapi.woa.com/document/product/266) | 2023-05-05 01:31:09 |
 | vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | 2023-05-01 01:36:39 |
 | waf | [Web 应用防火墙](http://document.tencentcloudapi.woa.com/document/product/627) | 2023-04-28 01:38:39 |
 | wav | [企业微信汽车行业版](http://document.tencentcloudapi.woa.com/document/product/1318) | 2023-03-30 01:47:38 |
