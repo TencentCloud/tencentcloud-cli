@@ -756,6 +756,13 @@
       "output": "SendMsgResponse",
       "status": "online"
     },
+    "SetCMQRegionMigrate": {
+      "document": "设置全地域迁移状态",
+      "input": "SetCMQRegionMigrateRequest",
+      "name": "设置全地域迁移状态",
+      "output": "SetCMQRegionMigrateResponse",
+      "status": "online"
+    },
     "UnbindCmqDeadLetter": {
       "document": "解绑cmq死信队列",
       "input": "UnbindCmqDeadLetterRequest",
@@ -13611,6 +13618,23 @@
     },
     "SendMsgResponse": {
       "document": "SendMsg返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetCMQRegionMigrateRequest": {
+      "document": "SetCMQRegionMigrate请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SetCMQRegionMigrateResponse": {
+      "document": "SetCMQRegionMigrate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

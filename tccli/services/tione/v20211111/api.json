@@ -2465,7 +2465,6 @@
       "document": "CreateTrainingTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "训练任务名称，不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
           "example": "test",
           "member": "string",
@@ -2475,8 +2474,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费",
+          "document": "计费模式，eg：PREPAID 包年包月（资源组）;\nPOSTPAID_BY_HOUR 按量计费",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
@@ -2485,7 +2483,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源配置，需填写对应算力规格ID和节点数量，算力规格ID查询接口为DescribeBillingSpecsPrice，eg：[{\"Role\":\"WORKER\", \"InstanceType\": \"TI.S.MEDIUM.POST\", \"InstanceNum\": 1}]",
           "example": "[]",
           "member": "ResourceConfigInfo",
@@ -2495,7 +2492,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "COS代码包路径",
           "example": "无",
           "member": "CosPathInfo",
@@ -2505,7 +2501,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD",
           "example": "PS_WORKER",
           "member": "string",
@@ -2515,7 +2510,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "COS训练输出路径",
           "example": "无",
           "member": "CosPathInfo",
@@ -2525,7 +2519,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否上报日志",
           "example": "true",
           "member": "bool",
@@ -2535,7 +2528,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH",
           "example": "TENSORFLOW",
           "member": "string",
@@ -2545,7 +2537,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9",
           "example": "1.15",
           "member": "string",
@@ -2555,7 +2546,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu",
           "example": "tf1.15-py3.7-cpu",
           "member": "string",
@@ -2565,7 +2555,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询",
           "example": "test",
           "member": "string",
@@ -2575,7 +2564,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签配置",
           "example": "[]",
           "member": "Tag",
@@ -2585,7 +2573,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义镜像信息",
           "example": "无",
           "member": "ImageInfo",
@@ -2595,7 +2582,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "启动命令信息，默认为sh start.sh",
           "example": "无",
           "member": "StartCmdInfo",
@@ -2605,7 +2591,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据配置，依赖DataSource字段",
           "example": "[]",
           "member": "DataConfig",
@@ -2615,7 +2600,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC Id",
           "example": "无",
           "member": "string",
@@ -2625,7 +2609,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网Id",
           "example": "无",
           "member": "string",
@@ -2635,7 +2618,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "CLS日志配置",
           "example": "无",
           "member": "LogConfig",
@@ -2645,7 +2627,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "调优参数",
           "example": "无",
           "member": "string",
@@ -2655,7 +2636,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "备注，最多500个字",
           "example": "无",
           "member": "string",
@@ -2665,7 +2645,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据来源，eg：DATASET、COS、CFS、HDFS",
           "example": "DATASET",
           "member": "string",
@@ -2675,7 +2654,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "回调地址，用于创建/启动/停止训练任务的异步回调。回调格式&内容详见：[[TI-ONE接口回调说明]](https://cloud.tencent.com/document/product/851/84292)",
           "example": "无",
           "member": "string",
@@ -2695,7 +2673,6 @@
           "example": "12312313",
           "member": "string",
           "name": "Id",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2956,6 +2933,16 @@
           "example": "无",
           "member": "HDFSConfig",
           "name": "HDFSSource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "配饰GooseFS的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GooseFS",
+          "name": "GooseFSSource",
           "required": false,
           "type": "object",
           "value_allowed_null": true,
@@ -6315,6 +6302,22 @@
       ],
       "usage": "both"
     },
+    "GooseFS": {
+      "document": "配置GooseFS参数",
+      "members": [
+        {
+          "document": "goosefs实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "goosefs-instance-id",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "GpuDetail": {
       "document": "gpu 详情",
       "members": [
@@ -8002,11 +8005,26 @@
       ],
       "type": "object"
     },
+    "RDMAConfig": {
+      "document": "RDMA配置",
+      "members": [
+        {
+          "document": "是否开启RDMA\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "ResourceConfigInfo": {
       "document": "资源配置",
       "members": [
         {
-          "default": "",
           "document": "角色，eg：PS、WORKER、DRIVER、EXECUTOR",
           "example": "PS",
           "member": "string",
@@ -8017,7 +8035,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "cpu核数，1000=1核",
           "example": "1000",
           "member": "uint64",
@@ -8028,7 +8045,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "内存，单位为MB",
           "example": "1",
           "member": "uint64",
@@ -8039,7 +8055,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "gpu卡类型",
           "example": "V100",
           "member": "string",
@@ -8050,7 +8065,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "gpu数",
           "example": "1",
           "member": "uint64",
@@ -8061,7 +8075,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "算力规格ID\n计算规格 (for后付费)，可选值如下：\nTI.S.LARGE.POST: 4C8G \nTI.S.2XLARGE16.POST:  8C16G \nTI.S.2XLARGE32.POST:  8C32G \nTI.S.4XLARGE32.POST:  16C32G\nTI.S.4XLARGE64.POST:  16C64G\nTI.S.6XLARGE48.POST:  24C48G\nTI.S.6XLARGE96.POST:  24C96G\nTI.S.8XLARGE64.POST:  32C64G\nTI.S.8XLARGE128.POST : 32C128G\nTI.GN10.2XLARGE40.POST: 8C40G V100*1 \nTI.GN10.5XLARGE80.POST:  18C80G V100*2 \nTI.GN10.10XLARGE160.POST :  32C160G V100*4\nTI.GN10.20XLARGE320.POST :  72C320G V100*8\nTI.GN7.8XLARGE128.POST: 32C128G T4*1 \nTI.GN7.10XLARGE160.POST: 40C160G T4*2 \nTI.GN7.20XLARGE320.POST: 80C32",
           "example": "TI.GN10.2XLARGE40",
           "member": "string",
@@ -8072,7 +8085,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "计算节点数",
           "example": "4",
           "member": "uint64",
@@ -8083,7 +8095,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "算力规格名称\n计算规格 (for后付费)，可选值如下：\n4C8G \n8C16G \n8C32G \n16C32G\n6C64G\n24C48G\n24C96G\n32C64G\n32C128G\n8C40G V100*1 \n8C80G V100*2 \n32C160G V100*4\n72C320G V100*8\n32C128G T4*1 \n40C160G T4*2 \n80C32",
           "example": "2核4G",
           "member": "string",
@@ -8091,6 +8102,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "RDMA配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Enable\": false}",
+          "member": "RDMAConfig",
+          "name": "RDMAConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],

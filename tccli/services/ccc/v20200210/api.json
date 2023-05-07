@@ -4699,174 +4699,184 @@
       "document": "参与者信息",
       "members": [
         {
-          "default": "",
           "document": "坐席邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "foo@tencent.com",
           "member": "string",
           "name": "Mail",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "坐席电话\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "008613012345678",
           "member": "string",
           "name": "Phone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "振铃时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
           "name": "RingTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "接听时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
           "name": "AcceptTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "结束时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631891",
           "member": "int64",
           "name": "EndedTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "录音 ID，能够索引到坐席侧的录音\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "string",
           "name": "RecordId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "参与者类型，\"staffSeat\", \"outboundSeat\", \"staffPhoneSeat\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "staffSeat",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "转接来源坐席信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bar@tencent.com",
           "member": "string",
           "name": "TransferFrom",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
+          "document": "转接来源参与者类型，取值与 Type 一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "staffSeat",
+          "member": "string",
+          "name": "TransferFromType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "document": "转接去向坐席信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "san@tencent.com",
           "member": "string",
           "name": "TransferTo",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "转接去向参与者类型，取值与 Type 一致\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "staffSeat",
           "member": "string",
           "name": "TransferToType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "技能组 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1101",
           "member": "int64",
           "name": "SkillGroupId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "结束状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ok unconnected seatGiveUp seatForward outboundForward ivrGiveUp ",
           "member": "string",
           "name": "EndStatusString",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "录音 URL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxxxxx",
           "member": "string",
           "name": "RecordURL",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "参与者序号，从 0 开始\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Sequence",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "开始时间戳，Unix 秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
           "name": "StartTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "技能组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tel",
           "member": "string",
           "name": "SkillGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "录音转存第三方COS地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxxxxx",
           "member": "string",
           "name": "CustomRecordURL",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

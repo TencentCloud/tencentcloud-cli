@@ -1528,7 +1528,6 @@
       "document": "DeleteSqlFilters请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -1538,7 +1537,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
           "example": "cauth",
           "member": "string",
@@ -1548,13 +1546,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "限流任务ID列表。",
           "example": "1234",
           "member": "int64",
           "name": "FilterIds",
           "required": true,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],
@@ -3805,7 +3811,6 @@
       "document": "DescribeSqlFilters请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -3815,7 +3820,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务ID列表，用于筛选任务列表。",
           "example": "1234",
           "member": "int64",
@@ -3825,7 +3829,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务状态列表，用于筛选任务列表，取值包括RUNNING - 运行中, FINISHED - 已完成, TERMINATED - 已终止。",
           "example": "RUNNING",
           "member": "string",
@@ -3835,7 +3838,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
@@ -3845,13 +3847,21 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],
@@ -3865,7 +3875,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3875,7 +3884,6 @@
           "example": "无",
           "member": "SQLFilter",
           "name": "Items",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5417,49 +5425,58 @@
       "document": "KillMySqlThreads请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例ID。",
           "example": "cdb-test1",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "kill会话任务的阶段，取值包括：\"Prepare\"-准备阶段，\"Commit\"-提交阶段。",
           "example": "Commit",
           "member": "string",
           "name": "Stage",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "需要kill的sql会话ID列表，此参数用于Prepare阶段。",
           "example": "[\"4714056\"]",
           "member": "int64",
           "name": "Threads",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "执行ID，此参数用于Commit阶段。",
           "example": "ItNrO0i3lvE3",
           "member": "string",
           "name": "SqlExecId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "默认是ture, 记录下kill的记录，为了加快kill，可设置为false。",
+          "example": "false",
+          "member": "bool",
+          "name": "RecordHistory",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5472,18 +5489,18 @@
           "example": "[536284]",
           "member": "int64",
           "name": "Threads",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "执行ID， Prepare阶段的任务输出，用于Commit阶段中指定执行kill操作的会话ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"AEnnKexGijsX\"",
           "member": "string",
           "name": "SqlExecId",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

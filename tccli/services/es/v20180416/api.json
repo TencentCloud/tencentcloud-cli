@@ -1481,6 +1481,24 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "document": "标签信息",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "kibana公网白名单",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaWhiteIpList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3031,7 +3049,6 @@
       "document": "DescribeServerlessInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "索引集群ID",
           "example": "[\"index-abcdefgh\"]",
           "member": "string",
@@ -3041,7 +3058,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引名",
           "example": "[\"test\"]",
           "member": "string",
@@ -3051,7 +3067,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "分页起始位置",
           "example": "10",
           "member": "int64",
@@ -3061,7 +3076,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "一页展示数量",
           "example": "20",
           "member": "int64",
@@ -3071,7 +3085,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime",
           "example": "storage",
           "member": "string",
@@ -3081,7 +3094,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "过滤索引状态",
           "example": "[\"GREEN\"]",
           "member": "string",
@@ -3091,7 +3103,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序顺序，支持asc、desc，默认为desc",
           "example": "asc",
           "member": "string",
@@ -3101,7 +3112,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "索引空间ID列表",
           "example": "[space-12345]",
           "member": "string",
@@ -3111,11 +3121,19 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据链路数据源类型",
           "example": "[\"cvm_collector\",\"tke_collector\"]",
           "member": "string",
           "name": "DiSourceTypes",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "标签信息",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
           "required": false,
           "type": "list",
           "visibility": 1
@@ -3131,7 +3149,6 @@
           "example": "无",
           "member": "ServerlessIndexMetaField",
           "name": "IndexMetaFields",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3141,7 +3158,6 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3479,7 +3495,6 @@
       "document": "数据接入tke数据源信息",
       "members": [
         {
-          "default": "",
           "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxx",
           "member": "string",
@@ -3490,7 +3505,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "tke实例id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-xxxx",
           "member": "string",
@@ -3501,7 +3515,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "采集源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3512,7 +3525,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "采集器版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7.14.0",
           "member": "string",
@@ -3523,7 +3535,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "采集器类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "filebeat",
           "member": "string",
@@ -3534,7 +3545,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "tke包含的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3545,7 +3555,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "tke不包含的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3556,7 +3565,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "tke pod标签名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3567,7 +3575,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "tke pod标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3578,7 +3585,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "tke容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3589,7 +3595,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "tke采集器beat配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3600,12 +3605,31 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "采集器id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "coll-xxxxxxxx",
           "member": "string",
           "name": "CollectorId",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "TKE 日志采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputPath",
+          "required": false,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3771,6 +3795,26 @@
           "name": "PodLabel",
           "required": false,
           "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "/",
+          "example": "无",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "tke 日志采集路径",
+          "example": "无",
+          "member": "string",
+          "name": "InputPath",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -7327,6 +7371,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "标签信息",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
           "visibility": 1
         }
       ],

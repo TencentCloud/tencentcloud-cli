@@ -9909,7 +9909,6 @@
       "document": "CDN HTTPS请求包。",
       "members": [
         {
-          "default": "",
           "document": "HTTPS请求包 Id",
           "example": "123",
           "member": "int64",
@@ -9920,7 +9919,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包类型",
           "example": "无",
           "member": "string",
@@ -9931,7 +9929,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包大小（单位为：次）",
           "example": "10000",
           "member": "int64",
@@ -9942,7 +9939,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "已消耗HTTPS请求包（单位为：次）",
           "example": "100",
           "member": "int64",
@@ -9953,7 +9949,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包状态\nenabled：已启用\nexpired：已过期\ndisabled：未启用",
           "example": "enable",
           "member": "string",
@@ -9964,7 +9959,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包发放时间",
           "example": "2021-09-01 00:00:00",
           "member": "string",
@@ -9975,7 +9969,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包生效时间",
           "example": "2021-09-01 00:00:00",
           "member": "string",
@@ -9986,7 +9979,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包过期时间",
           "example": "2021-09-01 00:00:00",
           "member": "string",
@@ -9997,7 +9989,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包来源",
           "example": "CDN_GIFT",
           "member": "string",
@@ -10008,7 +9999,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包生命周期月数",
           "example": "1",
           "member": "int64",
@@ -10019,7 +10009,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包是否支持退费",
           "example": "false",
           "member": "bool",
@@ -10030,7 +10019,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包类型id",
           "example": "101",
           "member": "int64",
@@ -10041,7 +10029,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包实际生效时间",
           "example": "2022-08-02 10:00:00",
           "member": "string",
@@ -10052,7 +10039,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包实际过期时间",
           "example": "2022-08-02 23:59:59",
           "member": "string",
@@ -10063,7 +10049,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包生效区域 \nglobal：全球",
           "example": "global",
           "member": "string",
@@ -10074,7 +10059,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包是否续订",
           "example": "false",
           "member": "bool",
@@ -10085,7 +10069,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包是否支持续订",
           "example": "false",
           "member": "bool",
@@ -10096,7 +10079,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "HTTPS请求包当前续订模式\n0：未续订\n1：到期续订\n2：用完续订\n3：到期或用完续订",
           "example": "0",
           "member": "uint64",
@@ -10104,6 +10086,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "HTTPS请求包是否自动续订\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoExtension",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],

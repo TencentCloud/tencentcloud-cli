@@ -1084,7 +1084,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseGeneral\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AutoOpenStatus\": true,\n        \"AvailableFlagshipVersionLicenseCnt\": 1,\n        \"AvailableLHLicenseCnt\": 0,\n        \"AvailableLicenseCnt\": 3,\n        \"AvailableProVersionLicenseCnt\": 2,\n        \"CwpVersionLicenseCnt\": 0,\n        \"ExpireLicenseCnt\": 0,\n        \"FlagshipVersionLicenseCnt\": 1,\n        \"IsOpenStatusHistory\": true,\n        \"LicenseCnt\": 3,\n        \"NearExpiryLicenseCnt\": 0,\n        \"NotExpiredLicenseCnt\": 3,\n        \"ProVersionLicenseCnt\": 2,\n        \"ProtectType\": \"FLAGSHIP_PREPAY\",\n        \"RequestId\": \"d9a5456b-a2db-4106-bd12-32e2c735435d\",\n        \"UsedLicenseCnt\": 0,\n        \"AutoRepurchaseSwitch\": false,\n        \"AutoRepurchaseRenewSwitch\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoOpenStatus\": true,\n        \"AvailableFlagshipVersionLicenseCnt\": 1,\n        \"AvailableLHLicenseCnt\": 0,\n        \"AvailableLicenseCnt\": 3,\n        \"AvailableProVersionLicenseCnt\": 2,\n        \"CwpVersionLicenseCnt\": 0,\n        \"ExpireLicenseCnt\": 0,\n        \"FlagshipVersionLicenseCnt\": 1,\n        \"IsOpenStatusHistory\": true,\n        \"LicenseCnt\": 3,\n        \"NearExpiryLicenseCnt\": 0,\n        \"NotExpiredLicenseCnt\": 3,\n        \"ProVersionLicenseCnt\": 2,\n        \"ProtectType\": \"FLAGSHIP_PREPAY\",\n        \"RequestId\": \"d9a5456b-a2db-4106-bd12-32e2c735435d\",\n        \"UsedLicenseCnt\": 0,\n        \"AutoRepurchaseSwitch\": false,\n        \"AutoRepurchaseRenewSwitch\": false,\n        \"DestroyOrderNum\": 0\n    }\n}",
         "title": "示例"
       }
     ],
@@ -1282,7 +1282,7 @@
     ],
     "DescribeProtectDirList": [
       {
-        "document": "",
+        "document": "示例",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProtectDirList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": \"/root\",\n                \"DirName\": \"网站名称1\",\n                \"DirPath\": \"网站防护目录地址1\",\n                \"NoProtectServerNum\": 0,\n                \"ProtectServerNum\": 0,\n                \"RelatedServerNum\": 0,\n                \"ProtectException\": 0,\n                \"ProtectStatus\": 2,\n                \"AutoRestoreSwitchStatus\": 1\n            }\n        ],\n        \"RequestId\": \"\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "示例"

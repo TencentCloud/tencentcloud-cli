@@ -13725,7 +13725,6 @@
       "document": "指标，可用于设置告警、查询数据",
       "members": [
         {
-          "default": "",
           "document": "告警策略类型",
           "example": "cvm_device",
           "member": "string",
@@ -13736,7 +13735,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指标名",
           "example": "CpuUsage",
           "member": "string",
@@ -13747,7 +13745,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指标展示名",
           "example": "CPU利用率",
           "member": "string",
@@ -13758,7 +13755,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最小值",
           "example": "0",
           "member": "float",
@@ -13769,7 +13765,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最大值",
           "example": "100",
           "member": "float",
@@ -13780,7 +13775,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "维度列表",
           "example": "vm_uuid",
           "member": "string",
@@ -13791,7 +13785,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "单位",
           "example": "%",
           "member": "string",
@@ -13802,7 +13795,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指标配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MetricConfig",
@@ -13813,7 +13805,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否为高级指标。1是 0否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -13824,7 +13815,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "高级指标是否开通。1是 0否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -13835,13 +13825,32 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "集成中心产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ProductId",
           "required": true,
           "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "匹配运算符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Operator",
+          "name": "Operators",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "指标触发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Periods",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true,
           "visibility": 1
         }

@@ -18395,31 +18395,34 @@
       "document": "点播文件音频流信息",
       "members": [
         {
-          "default": "",
           "document": "音频流的码率，单位：bps。",
+          "example": "无",
           "member": "int64",
           "name": "Bitrate",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "音频流的采样率，单位：hz。",
+          "example": "无",
           "member": "int64",
           "name": "SamplingRate",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "音频流的编码格式，例如 aac。",
+          "example": "无",
           "member": "string",
           "name": "Codec",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -21000,7 +21003,6 @@
       "document": "点播文件视频流信息",
       "members": [
         {
-          "default": "",
           "document": "视频流的码率，单位：bps。",
           "example": "100",
           "member": "int64",
@@ -21011,7 +21013,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频流的高度，单位：px。",
           "example": "1080",
           "member": "int64",
@@ -21022,7 +21023,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频流的宽度，单位：px。",
           "example": "720",
           "member": "int64",
@@ -21033,7 +21033,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频流的编码格式，例如 h264。",
           "example": "h264",
           "member": "string",
@@ -21044,7 +21043,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "帧率，单位：hz。",
           "example": "25",
           "member": "int64",
@@ -21055,7 +21053,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "编码标签，仅当 Codec 为 hevc 时有效。",
           "example": "hev1",
           "member": "string",
@@ -21066,7 +21063,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "画面动态范围信息。\n<li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>",
           "example": "无",
           "member": "DynamicRangeInfo",

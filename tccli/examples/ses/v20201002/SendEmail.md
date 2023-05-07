@@ -1,6 +1,6 @@
 **Example 1: 发送纯文本邮件**
 
-
+ 
 
 Input: 
 
@@ -25,7 +25,7 @@ Output:
 
 **Example 2: 发送富文本邮件**
 
-
+ 
 
 Input: 
 
@@ -51,7 +51,7 @@ Output:
 
 **Example 3: 发送模板邮件**
 
-
+ 
 
 Input: 
 

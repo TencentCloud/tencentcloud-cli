@@ -1,12 +1,12 @@
 **Example 1: 删除快照**
 
-
+删除指定快照
 
 Input: 
 
 ```
 tccli cbs DeleteSnapshots --cli-unfold-argument  \
-    --SnapshotIds snap-gybrif0z
+    --SnapshotIds snap-cgrmci8t
 ```
 
 Output: 

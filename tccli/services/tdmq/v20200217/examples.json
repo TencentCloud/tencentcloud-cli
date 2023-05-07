@@ -876,6 +876,14 @@
         "title": "发送一个消息"
       }
     ],
+    "SetCMQRegionMigrate": [
+      {
+        "document": "设置地域级迁移完成",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetCMQRegionMigrate\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "设置迁移完成"
+      }
+    ],
     "UnbindCmqDeadLetter": [
       {
         "document": "",

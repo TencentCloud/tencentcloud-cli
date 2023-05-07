@@ -4653,30 +4653,10 @@
       "document": "签署人签署链接信息",
       "members": [
         {
-          "document": "签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。",
+          "document": "签署链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。",
           "example": "xx",
           "member": "string",
           "name": "SignUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "document": "签署人手机号",
-          "example": "xx",
-          "member": "string",
-          "name": "Mobile",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
-        },
-        {
-          "document": "签署人姓名",
-          "example": "xx",
-          "member": "string",
-          "name": "Name",
           "required": true,
           "type": "string",
           "value_allowed_null": false,
@@ -4693,6 +4673,36 @@
           "visibility": 1
         },
         {
+          "document": "签署人姓名",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "签署人手机号",
+          "example": "xx",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "签署长链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LongUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "document": "签署链接过期时间",
           "example": "xx",
           "member": "string",
@@ -4703,17 +4713,7 @@
           "visibility": 2
         },
         {
-          "document": "签署长链接，不对外展示\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "LongUrl",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
-        },
-        {
-          "document": "签署场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "废弃参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SignScene",

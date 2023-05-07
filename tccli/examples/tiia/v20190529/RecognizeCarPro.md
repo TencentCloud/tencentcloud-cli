@@ -1,133 +1,109 @@
 **Example 1: 车辆识别示例代码**
 
-
+输入图片URL，成功检测到车辆信息。
 
 Input: 
 
 ```
 tccli tiia RecognizeCarPro --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl http://www.test.com/b.jpg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CarTags": [
+        "CarCoords": [
             {
-                "PlateContent": {
-                    "Color": "蓝色",
-                    "PlateLocation": [
-                        {
-                            "Y": 727,
-                            "X": 508
-                        },
-                        {
-                            "Y": 634,
-                            "X": 508
-                        },
-                        {
-                            "Y": 634,
-                            "X": 777
-                        },
-                        {
-                            "X": 777,
-                            "Y": 727
-                        }
-                    ],
-                    "Plate": "粤BT****",
-                    "Type": "普通蓝牌"
-                },
-                "Serial": "飞驰",
-                "Brand": "宾利",
-                "Type": "轿车",
-                "Color": "黑",
-                "Confidence": 99,
-                "Year": 0,
-                "CarLocation": [
-                    {
-                        "X": 135,
-                        "Y": 826
-                    },
-                    {
-                        "Y": 191,
-                        "X": 135
-                    },
-                    {
-                        "Y": 191,
-                        "X": 1116
-                    },
-                    {
-                        "X": 1116,
-                        "Y": 826
-                    }
-                ]
+                "X": 87,
+                "Y": 291
             },
             {
+                "X": 87,
+                "Y": 1
+            },
+            {
+                "X": 540,
+                "Y": 1
+            },
+            {
+                "X": 540,
+                "Y": 291
+            }
+        ],
+        "CarTags": [
+            {
+                "Brand": "奔驰",
                 "CarLocation": [
                     {
-                        "X": 0,
-                        "Y": 488
+                        "X": 87,
+                        "Y": 291
                     },
                     {
-                        "X": 0,
-                        "Y": 368
+                        "X": 87,
+                        "Y": 1
                     },
                     {
-                        "X": 125,
-                        "Y": 368
+                        "X": 540,
+                        "Y": 1
                     },
                     {
-                        "X": 125,
-                        "Y": 488
+                        "X": 540,
+                        "Y": 291
                     }
                 ],
+                "Color": "绿",
+                "ColorConfidence": 67,
+                "Confidence": 64,
+                "Orientation": "车头",
+                "OrientationConfidence": 99,
+                "PlateConfidence": 99,
                 "PlateContent": {
-                    "PlateLocation": [],
-                    "Plate": "",
-                    "Type": "",
-                    "Color": ""
+                    "Color": "蓝色",
+                    "Plate": "浙G29XY9",
+                    "PlateAngle": 13.560508,
+                    "PlateLocation": [
+                        {
+                            "X": 452,
+                            "Y": 227
+                        },
+                        {
+                            "X": 452,
+                            "Y": 190
+                        },
+                        {
+                            "X": 507,
+                            "Y": 190
+                        },
+                        {
+                            "X": 507,
+                            "Y": 227
+                        }
+                    ],
+                    "PlateStatus": "正常车牌",
+                    "PlateStatusConfidence": 99,
+                    "Type": "普通蓝牌"
                 },
-                "Serial": "五菱之光",
-                "Brand": "东风",
-                "Type": "面包车",
-                "Color": "黄",
-                "Confidence": 0,
+                "Serial": "奔驰GLC级",
+                "Type": "SUV",
+                "TypeConfidence": 54,
                 "Year": 0
             }
         ],
-        "RequestId": "dabc3980-1f8d-4e8a-a943-4412d82e5df9",
-        "CarCoords": [
-            {
-                "X": 135,
-                "Y": 826
-            },
-            {
-                "X": 135,
-                "Y": 191
-            },
-            {
-                "X": 1116,
-                "Y": 191
-            },
-            {
-                "X": 1116,
-                "Y": 826
-            }
-        ]
+        "RequestId": "2aba0901-31b9-456f-ad38-a2e7075d0965"
     }
 }
 ```
 
 **Example 2: 调用失败示例**
 
-
+输入图片URL，未检测到车辆信息。
 
 Input: 
 
 ```
 tccli tiia RecognizeCarPro --cli-unfold-argument  \
-    --ImageUrl https://test.jpg
+    --ImageUrl http://www.test.com/a.jpg
 ```
 
 Output: 

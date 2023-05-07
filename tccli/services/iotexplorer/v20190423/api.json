@@ -4430,24 +4430,44 @@
       "document": "设备的用户",
       "members": [
         {
-          "default": "",
           "document": "用户ID",
           "example": "userId",
           "member": "string",
           "name": "UserId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "用户角色 1所有者，0：其他分享者",
           "example": "0",
           "member": "int64",
           "name": "Role",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "家庭ID，所有者带该参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f_1234567",
+          "member": "string",
+          "name": "FamilyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "家庭名称，所有者带该参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "家庭名称",
+          "member": "string",
+          "name": "FamilyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5376,22 +5396,22 @@
       "document": "GetFamilyDeviceUserList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "example": "productID",
           "member": "string",
           "name": "ProductId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "设备名称",
           "example": "DeviceName",
           "member": "string",
           "name": "DeviceName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5404,9 +5424,9 @@
           "example": "无",
           "member": "DeviceUser",
           "name": "UserList",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

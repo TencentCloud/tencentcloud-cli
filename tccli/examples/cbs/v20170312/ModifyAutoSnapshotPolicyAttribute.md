@@ -20,30 +20,9 @@ Output:
 }
 ```
 
-**Example 2: 示例请求**
+**Example 2: 启用自动快照策略**
 
-
-
-Input: 
-
-```
-tccli cbs ModifyAutoSnapshotPolicyAttribute --cli-unfold-argument  \
-    --AutoSnapshotPolicyId asp-01928374 \
-    --IsActivated true
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "88a4815c-4a09-4948-b0c9-fa6fdefe8e4a"
-    }
-}
-```
-
-**Example 3: 示例请求2**
-
-
+启用自动快照策略
 
 Input: 
 

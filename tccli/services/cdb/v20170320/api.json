@@ -15273,7 +15273,6 @@
       "document": "实例参数的详细描述",
       "members": [
         {
-          "default": "",
           "document": "参数名称",
           "example": "test",
           "member": "string",
@@ -15284,7 +15283,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数类型：integer，enum，float，string，func",
           "example": "string",
           "member": "string",
@@ -15295,7 +15293,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数默认值",
           "example": "OFF",
           "member": "string",
@@ -15306,7 +15303,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数描述",
           "example": "Controls the sensitivity of linear read-ahead that InnoDB uses t",
           "member": "string",
@@ -15317,7 +15313,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数当前值",
           "example": "56",
           "member": "string",
@@ -15328,7 +15323,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "修改参数后，是否需要重启数据库以使参数生效。可能的值包括：0-不需要重启；1-需要重启",
           "example": "1",
           "member": "int64",
@@ -15339,7 +15333,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数允许的最大值",
           "example": "64",
           "member": "int64",
@@ -15350,7 +15343,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数允许的最小值",
           "example": "1",
           "member": "int64",
@@ -15361,7 +15353,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数的可选枚举值。如果为非枚举参数，则为空",
           "example": "[]",
           "member": "string",
@@ -15372,7 +15363,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数是公式类型时，该字段有效，表示公式类型最大值",
           "example": "64",
           "member": "string",
@@ -15383,7 +15373,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数是公式类型时，该字段有效，表示公式类型最小值",
           "example": "1",
           "member": "string",
@@ -15394,7 +15383,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "参数快照值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -15405,7 +15393,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "参数快照是否存在\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -15414,6 +15401,16 @@
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "document": "参数是否不支持修改\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNotSupportEdit",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

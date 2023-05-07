@@ -751,7 +751,7 @@
           "visibility": 1
         },
         {
-          "document": "续费标识。",
+          "document": "自动续费标识。取值范围：\n\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费。 NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费。 DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云盘到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -4270,34 +4270,34 @@
       "document": "云硬盘包年包月相关参数设置",
       "members": [
         {
-          "default": "",
           "document": "新购周期。",
           "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "续费标识。",
+          "document": "自动续费标识。取值范围：\n\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费。\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费。\nDISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云盘到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "新购单位. 默认值: \"m\"。",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
