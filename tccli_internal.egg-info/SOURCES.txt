@@ -790,6 +790,10 @@ tccli/services/wav/__init__.py
 tccli/services/wav/wav_client.py
 tccli/services/wav/v20210129/api.json
 tccli/services/wav/v20210129/examples.json
+tccli/services/wedata/__init__.py
+tccli/services/wedata/wedata_client.py
+tccli/services/wedata/v20210820/api.json
+tccli/services/wedata/v20210820/examples.json
 tccli/services/wss/__init__.py
 tccli/services/wss/wss_client.py
 tccli/services/youmall/__init__.py

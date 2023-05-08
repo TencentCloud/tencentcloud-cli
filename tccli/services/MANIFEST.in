@@ -381,6 +381,8 @@ include tccli/services/waf/v20180125/api.json
 include tccli/services/waf/v20180125/examples.json
 include tccli/services/wav/v20210129/api.json
 include tccli/services/wav/v20210129/examples.json
+include tccli/services/wedata/v20210820/api.json
+include tccli/services/wedata/v20210820/examples.json
 include tccli/services/yunsou/v20191115/api.json
 include tccli/services/yunsou/v20191115/examples.json
 include tccli/services/yunsou/v20180504/api.json

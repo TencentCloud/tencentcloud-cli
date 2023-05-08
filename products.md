@@ -167,4 +167,5 @@
 | vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | 2023-05-01 01:36:39 |
 | waf | [Web 应用防火墙](http://document.tencentcloudapi.woa.com/document/product/627) | 2023-05-08 01:43:56 |
 | wav | [企业微信汽车行业版](http://document.tencentcloudapi.woa.com/document/product/1318) | 2023-03-30 01:47:38 |
+| wedata | [数据开发治理平台 WeData](http://document.tencentcloudapi.woa.com/document/product/1267) | 2023-05-08 11:17:18 |
 | yunsou | [腾讯云搜TCS](http://document.tencentcloudapi.woa.com/document/product/270) | 2023-03-30 01:47:46 |
