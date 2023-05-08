@@ -49,6 +49,13 @@
       "output": "CreateDiskBackupResponse",
       "status": "online"
     },
+    "CreateDisks": {
+      "document": "本接口(CreateDisks)用于创建一个或多个云硬盘。",
+      "input": "CreateDisksRequest",
+      "name": "创建云硬盘",
+      "output": "CreateDisksResponse",
+      "status": "online"
+    },
     "CreateFirewallRules": {
       "document": "本接口（CreateFirewallRules）用于在实例上添加防火墙规则。\n\n\n* FirewallVersion 为防火墙版本号，用户每次更新防火墙规则版本会自动加1，防止您更新的规则已过期，不填不考虑冲突。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "CreateFirewallRulesRequest",
@@ -774,6 +781,42 @@
       ],
       "type": "object"
     },
+    "AutoMountConfiguration": {
+      "document": "自动挂载并初始化该数据盘。",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "document": "待挂载的实例ID。指定的实例必须处于“运行中”状态。",
+          "example": "lhins-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "实例内的挂载点。仅Linux操作系统的实例可传入该参数, 不传则默认挂载在“/data/disk”路径下。",
+          "example": "/data/disk",
+          "member": "string",
+          "name": "MountPoint",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "ValueAllowedNull": true,
+          "document": "文件系统类型。取值: “ext4”、“xfs”。仅Linux操作系统的实例可传入该参数, 不传则默认为“ext4”。",
+          "example": "ext4",
+          "member": "string",
+          "name": "FileSystemType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
     "Blueprint": {
       "document": "描述了镜像信息。",
       "members": [
@@ -1403,6 +1446,114 @@
           "member": "string",
           "name": "DiskBackupId",
           "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDisksRequest": {
+      "document": "CreateDisks请求参数结构体",
+      "members": [
+        {
+          "document": "可用区。可通过[DescribeZones](https://cloud.tencent.com/document/product/1207/57513)返回值中的Zone获取。",
+          "example": "ap-hongkong-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "云硬盘大小, 单位: GB。",
+          "example": "20",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "云硬盘介质类型。取值: \"CLOUD_PREMIUM\"(高性能云盘), \"CLOUD_SSD\"(SSD云硬盘)。",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "云硬盘包年包月相关参数设置。",
+          "example": "无",
+          "member": "DiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "云硬盘名称。最大长度60。",
+          "example": "test",
+          "member": "string",
+          "name": "DiskName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "云硬盘个数。取值范围: [1, 30]。默认值: 1。",
+          "example": "1",
+          "member": "int64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置1个云硬盘备份点配额。",
+          "example": "1",
+          "member": "int64",
+          "name": "DiskBackupQuota",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "是否自动使用代金券。默认不使用。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "document": "自动挂载并初始化数据盘。",
+          "example": "无",
+          "member": "AutoMountConfiguration",
+          "name": "AutoMountConfiguration",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDisksResponse": {
+      "document": "CreateDisks返回参数结构体",
+      "members": [
+        {
+          "document": "当通过本接口来创建云硬盘时会返回该参数，表示一个或多个云硬盘ID。返回云硬盘ID列表并不代表云硬盘创建成功。\n\n可根据 [DescribeDisks](https://cloud.tencent.com/document/product/1207/66093) 接口查询返回的DiskSet中对应云硬盘的ID的状态来判断创建是否完成；如果云硬盘状态由“PENDING”变为“UNATTACHED”或“ATTACHED”，则为创建成功。",
+          "example": "无",
+          "member": "string",
+          "name": "DiskIdSet",
+          "type": "list",
           "value_allowed_null": false,
           "visibility": 1
         },
@@ -6442,30 +6593,30 @@
         {
           "document": "用户折扣。",
           "example": "无",
-          "member": "int64",
+          "member": "float",
           "name": "UserDiscount",
           "required": false,
-          "type": "int",
+          "type": "float",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "document": "公共折扣。",
           "example": "无",
-          "member": "int64",
+          "member": "float",
           "name": "CommonDiscount",
           "required": false,
-          "type": "int",
+          "type": "float",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "document": "最终折扣。",
           "example": "无",
-          "member": "int64",
+          "member": "float",
           "name": "FinalDiscount",
           "required": false,
-          "type": "int",
+          "type": "float",
           "value_allowed_null": false,
           "visibility": 1
         },

@@ -1,4 +1,4 @@
-**Example 1: 获取慢SQL模版列表 **
+**Example 1: 获取慢SQL模板列表 **
 
 按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。
 

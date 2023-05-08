@@ -58,8 +58,8 @@
     ],
     "CreateCmdTemplate": [
       {
-        "document": "控制台页面新增高危命令模版",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmdTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"高危模版1\",\n    \"CmdList\": \"rm -rf /*\"\n}",
+        "document": "控制台页面新增高危命令模板",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmdTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"高危模板1\",\n    \"CmdList\": \"rm -rf /*\"\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"as1212j\"\n    }\n}",
         "title": "新建高危命令模板"
       }

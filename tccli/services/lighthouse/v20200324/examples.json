@@ -56,6 +56,14 @@
         "title": "创建云硬盘备份点"
       }
     ],
+    "CreateDisks": [
+      {
+        "document": "创建云硬盘",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisks\n<公共请求参数>\n\n{\n    \"DiskCount\": 1,\n    \"DiskChargePrepaid\": {\n        \"Period\": 1,\n        \"TimeUnit\": \"m\"\n    },\n    \"DiskName\": \"test\",\n    \"DiskType\": \"CLOUD_PREMIUM\",\n    \"DiskSize\": 20,\n    \"Zone\": \"ap-hongkong-2\",\n    \"DiskBackupQuota\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskIdSet\": [\n            \"lhdisk-2q0cs4oe\"\n        ],\n        \"RequestId\": \"69765fd3-56a6-4633-8afd-72ca7805226b\"\n    }\n}",
+        "title": "创建云硬盘"
+      }
+    ],
     "CreateFirewallRules": [
       {
         "document": "",

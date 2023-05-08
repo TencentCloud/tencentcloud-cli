@@ -13,22 +13,22 @@
 | apigateway | [API 网关](http://document.tencentcloudapi.woa.com/document/product/628) | 2023-03-30 01:02:20 |
 | apm | [应用性能观测](http://document.tencentcloudapi.woa.com/document/product/1463) | 2023-05-08 01:07:13 |
 | as | [弹性伸缩](http://document.tencentcloudapi.woa.com/document/product/377) | 2023-03-30 01:02:50 |
-| asr | [语音识别](http://document.tencentcloudapi.woa.com/document/product/1093) | 2023-05-08 01:07:33 |
+| asr | [语音识别](http://document.tencentcloudapi.woa.com/document/product/1093) | 2023-05-09 01:07:22 |
 | asw | [应用与服务编排工作流](http://document.tencentcloudapi.woa.com/document/product/1272) | 2023-03-30 01:03:14 |
 | ba | [网站备案](http://document.tencentcloudapi.woa.com/document/product/243) | 2023-04-20 01:07:55 |
-| batch | [批量计算](http://document.tencentcloudapi.woa.com/document/product/599) | 2023-04-12 01:07:35 |
+| batch | [批量计算](http://document.tencentcloudapi.woa.com/document/product/599) | 2023-05-09 01:07:35 |
 | bda | [人体分析](http://document.tencentcloudapi.woa.com/document/product/1208) | 2023-03-30 01:03:30 |
-| billing | [费用中心](http://document.tencentcloudapi.woa.com/document/product/555) | 2023-04-25 01:04:54 |
+| billing | [费用中心](http://document.tencentcloudapi.woa.com/document/product/555) | 2023-05-09 01:07:51 |
 | bm | [黑石物理服务器CPM](http://document.tencentcloudapi.woa.com/document/product/386) | 2023-03-30 01:03:47 |
 | bmeip | [黑石弹性公网IP](http://document.tencentcloudapi.woa.com/document/product/1028) | 2023-03-30 01:04:00 |
 | bmlb | [黑石负载均衡](http://document.tencentcloudapi.woa.com/document/product/1027) | 2023-03-30 01:04:06 |
 | bmvpc | [黑石私有网络](http://document.tencentcloudapi.woa.com/document/product/1024) | 2023-03-30 01:04:20 |
 | bsca | [二进制软件成分分析](http://document.tencentcloudapi.woa.com/document/product/1483) | 2021-11-18 08:00:03 |
 | btoe | [区块链可信取证](http://document.tencentcloudapi.woa.com/document/product/1259) | 2023-03-30 01:04:34 |
-| cam | [访问管理](http://document.tencentcloudapi.woa.com/document/product/598) | 2023-04-28 01:08:54 |
+| cam | [访问管理](http://document.tencentcloudapi.woa.com/document/product/598) | 2023-05-09 01:08:53 |
 | captcha | [验证码](http://document.tencentcloudapi.woa.com/document/product/1110) | 2023-04-07 01:10:40 |
 | cat | [云拨测](http://document.tencentcloudapi.woa.com/document/product/280) | 2023-04-24 01:05:38 |
-| cbs | [云硬盘](http://document.tencentcloudapi.woa.com/document/product/362) | 2023-05-08 01:09:36 |
+| cbs | [云硬盘](http://document.tencentcloudapi.woa.com/document/product/362) | 2023-05-09 01:09:28 |
 | ccc | [云呼叫中心](http://document.tencentcloudapi.woa.com/document/product/679) | 2023-05-08 01:10:00 |
 | cdb | [云数据库 MySQL](http://document.tencentcloudapi.woa.com/document/product/236) | 2023-05-08 01:10:16 |
 | cdn | [内容分发网络 CDN](http://document.tencentcloudapi.woa.com/document/product/228) | 2023-05-08 01:10:57 |
@@ -47,17 +47,17 @@
 | cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2023-03-30 01:09:02 |
 | cms | [内容安全](http://document.tencentcloudapi.woa.com/document/product/669) | 2023-04-25 01:14:12 |
 | cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2023-05-01 01:13:10 |
-| cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2023-04-27 01:15:55 |
-| cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2023-05-08 01:15:07 |
-| cynosdb | [TDSQL-C MySQL 版](http://document.tencentcloudapi.woa.com/document/product/1003) | 2023-03-31 01:18:04 |
+| cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2023-05-09 01:14:15 |
+| cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2023-05-09 01:14:46 |
+| cynosdb | [TDSQL-C MySQL 版](http://document.tencentcloudapi.woa.com/document/product/1003) | 2023-05-09 01:15:56 |
 | dasb | [T-Sec-堡垒机（BH）](http://document.tencentcloudapi.woa.com/document/product/1025) | 2023-04-28 01:16:16 |
 | dayu | [DDoS 高防包](http://document.tencentcloudapi.woa.com/document/product/1021) | 2023-03-30 01:19:07 |
-| dbbrain | [数据库智能管家 DBbrain](http://document.tencentcloudapi.woa.com/document/product/1130) | 2023-05-08 01:17:22 |
+| dbbrain | [数据库智能管家 DBbrain](http://document.tencentcloudapi.woa.com/document/product/1130) | 2023-05-09 01:17:01 |
 | dc | [专线接入](http://document.tencentcloudapi.woa.com/document/product/216) | 2023-04-07 01:27:20 |
 | dcdb | [TDSQL MySQL 版](http://document.tencentcloudapi.woa.com/document/product/557) | 2023-04-04 01:17:16 |
 | dlc | [数据湖计算 DLC](http://document.tencentcloudapi.woa.com/document/product/1342) | 2023-04-27 01:19:14 |
 | dnspod | [DNSPod](http://document.tencentcloudapi.woa.com/document/product/1427) | 2023-04-26 01:21:09 |
-| domain | [域名注册](http://document.tencentcloudapi.woa.com/document/product/242) | 2023-04-19 01:18:07 |
+| domain | [域名注册](http://document.tencentcloudapi.woa.com/document/product/242) | 2023-05-09 01:18:29 |
 | drm | [数字版权管理](http://document.tencentcloudapi.woa.com/document/product/1000) | 2023-03-30 01:21:08 |
 | ds | [文档服务](http://document.tencentcloudapi.woa.com/document/product/869) | 2023-03-30 01:21:11 |
 | dtf | [分布式事务](http://document.tencentcloudapi.woa.com/document/product/1224) | 2022-03-08 08:00:26 |
@@ -68,24 +68,24 @@
 | ecm | [边缘计算机器](http://document.tencentcloudapi.woa.com/document/product/1108) | 2023-04-24 01:16:47 |
 | eiam | [数字身份管控平台（员工版）](http://document.tencentcloudapi.woa.com/document/product/1442) | 2023-03-30 01:22:13 |
 | eis | [数据连接器](http://document.tencentcloudapi.woa.com/document/product/1270) | 2023-04-20 01:21:36 |
-| emr | [弹性 MapReduce](http://document.tencentcloudapi.woa.com/document/product/589) | 2023-04-11 01:20:30 |
-| es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | 2023-05-08 01:20:33 |
+| emr | [弹性 MapReduce](http://document.tencentcloudapi.woa.com/document/product/589) | 2023-05-09 01:20:02 |
+| es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | 2023-05-09 01:20:17 |
 | essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | 2023-05-08 01:20:51 |
 | facefusion | [人脸融合](http://document.tencentcloudapi.woa.com/document/product/670) | 2023-03-30 01:23:06 |
 | faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | 2023-04-28 01:20:38 |
 | fmu | [人脸试妆](http://document.tencentcloudapi.woa.com/document/product/1172) | 2023-03-30 01:23:21 |
 | ft | [人像变换](http://document.tencentcloudapi.woa.com/document/product/1202) | 2023-03-30 01:23:25 |
-| gaap | [全球应用加速](http://document.tencentcloudapi.woa.com/document/product/608) | 2023-04-27 01:22:42 |
+| gaap | [全球应用加速](http://document.tencentcloudapi.woa.com/document/product/608) | 2023-05-09 01:21:10 |
 | gme | [游戏多媒体引擎](http://document.tencentcloudapi.woa.com/document/product/607) | 2023-04-21 01:24:15 |
 | gpm | [游戏玩家匹配](http://document.tencentcloudapi.woa.com/document/product/1294) | 2022-07-11 06:02:36 |
 | gs | [云游戏](http://document.tencentcloudapi.woa.com/document/product/1162) | 2023-03-30 01:24:03 |
 | gse | [游戏服务器伸缩](http://document.tencentcloudapi.woa.com/document/product/1165) | 2022-07-11 06:04:20 |
 | hcm | [数学作业批改](http://document.tencentcloudapi.woa.com/document/product/1004) | 2023-03-30 01:24:10 |
-| iai | [人脸识别](http://document.tencentcloudapi.woa.com/document/product/867) | 2023-04-04 01:21:52 |
+| iai | [人脸识别](http://document.tencentcloudapi.woa.com/document/product/867) | 2023-05-09 01:22:05 |
 | ic | [图片瘦身](http://document.tencentcloudapi.woa.com/document/product/636) | 2023-03-30 01:24:22 |
 | ie | [智能编辑](http://document.tencentcloudapi.woa.com/document/product/1186) | 2023-03-30 01:24:26 |
 | iir | [智能识图](http://document.tencentcloudapi.woa.com/document/product/1217) | 2022-03-08 08:03:12 |
-| ims | [图片内容安全](http://document.tencentcloudapi.woa.com/document/product/1125) | 2023-03-30 01:24:32 |
+| ims | [图片内容安全](http://document.tencentcloudapi.woa.com/document/product/1125) | 2023-05-09 01:22:32 |
 | iot | [加速物联网套件](http://document.tencentcloudapi.woa.com/document/product/568) | 2023-03-30 01:24:35 |
 | iotcloud | [物联网通信](http://document.tencentcloudapi.woa.com/document/product/634) | 2023-03-30 01:24:47 |
 | iotexplorer | [物联网开发平台](http://document.tencentcloudapi.woa.com/document/product/1081) | 2023-05-08 01:22:48 |
@@ -93,7 +93,7 @@
 | iotvideo | [物联网智能视频服务](http://document.tencentcloudapi.woa.com/document/product/1131) | 2023-04-12 01:23:56 |
 | iotvideoindustry | [物联网智能视频服务（行业版）](http://document.tencentcloudapi.woa.com/document/product/1361) | 2023-04-26 01:29:53 |
 | kms | [密钥管理系统](http://document.tencentcloudapi.woa.com/document/product/573) | 2023-04-28 01:23:43 |
-| lighthouse | [轻量应用服务器](http://document.tencentcloudapi.woa.com/document/product/1207) | 2023-05-08 01:24:15 |
+| lighthouse | [轻量应用服务器](http://document.tencentcloudapi.woa.com/document/product/1207) | 2023-05-09 01:25:15 |
 | live | [云直播CSS](http://document.tencentcloudapi.woa.com/document/product/267) | 2023-05-08 01:25:15 |
 | lowcode | [云开发低码](http://document.tencentcloudapi.woa.com/document/product/1301) | 2023-04-20 01:26:53 |
 | lp | [登录保护](http://document.tencentcloudapi.woa.com/document/product/1190) | 2022-03-08 08:03:08 |
@@ -106,9 +106,9 @@
 | mps | [媒体处理](http://document.tencentcloudapi.woa.com/document/product/862) | 2023-04-28 01:26:28 |
 | mrs | [医疗报告结构化](http://document.tencentcloudapi.woa.com/document/product/1314) | 2023-03-30 01:30:01 |
 | msp | [迁移服务平台](http://document.tencentcloudapi.woa.com/document/product/659) | 2023-03-30 01:30:10 |
-| nlp | [NLP 服务](http://document.tencentcloudapi.woa.com/document/product/271) | 2023-05-08 01:30:22 |
+| nlp | [NLP 服务](http://document.tencentcloudapi.woa.com/document/product/271) | 2023-05-09 01:29:33 |
 | oceanus | [流计算 Oceanus](http://document.tencentcloudapi.woa.com/document/product/849) | 2023-03-30 01:30:21 |
-| ocr | [文字识别](http://document.tencentcloudapi.woa.com/document/product/866) | 2023-05-08 01:30:59 |
+| ocr | [文字识别](http://document.tencentcloudapi.woa.com/document/product/866) | 2023-05-09 01:29:59 |
 | opc | [运营产品中心](http://document.tencentcloudapi.woa.com/document/product/) | 2023-04-24 01:28:40 |
 | organization | [集团账号管理](http://document.tencentcloudapi.woa.com/document/product/850) | 2023-03-30 01:31:02 |
 | partners | [渠道合作伙伴](http://document.tencentcloudapi.woa.com/document/product/563) | 2023-03-30 01:31:09 |
@@ -117,19 +117,19 @@
 | privatedns | [私有域解析 Private DNS](http://document.tencentcloudapi.woa.com/document/product/1338) | 2023-04-27 01:30:22 |
 | pts | [云压测](http://document.tencentcloudapi.woa.com/document/product/1484) | 2023-04-27 01:30:41 |
 | rce | [全栈式风控引擎](http://document.tencentcloudapi.woa.com/document/product/1343) | 2023-04-26 01:40:51 |
-| redis | [云数据库Redis](http://document.tencentcloudapi.woa.com/document/product/239) | 2023-05-08 01:32:36 |
+| redis | [云数据库Redis](http://document.tencentcloudapi.woa.com/document/product/239) | 2023-05-09 01:32:06 |
 | region | [地域管理系统](http://document.tencentcloudapi.woa.com/document/product/1596) | 2023-04-25 01:42:13 |
 | rkp | [风险探针](http://document.tencentcloudapi.woa.com/document/product/1169) | 2023-03-30 01:32:33 |
 | rp | [注册保护](http://document.tencentcloudapi.woa.com/document/product/1191) | 2022-03-08 08:03:09 |
 | rum | [前端性能监控](http://document.tencentcloudapi.woa.com/document/product/1464) | 2023-04-26 01:41:41 |
-| scf | [云函数](http://document.tencentcloudapi.woa.com/document/product/583) | 2023-04-24 01:30:54 |
-| ses | [邮件推送](http://document.tencentcloudapi.woa.com/document/product/1288) | 2023-05-08 01:34:52 |
+| scf | [云函数](http://document.tencentcloudapi.woa.com/document/product/583) | 2023-05-09 01:33:09 |
+| ses | [邮件推送](http://document.tencentcloudapi.woa.com/document/product/1288) | 2023-05-09 01:33:29 |
 | smpn | [营销号码安全](http://document.tencentcloudapi.woa.com/document/product/1127) | 2023-03-30 01:33:14 |
 | sms | [短信](http://document.tencentcloudapi.woa.com/document/product/382) | 2023-03-30 01:33:18 |
 | soe | [智聆口语评测](http://document.tencentcloudapi.woa.com/document/product/884) | 2023-03-30 01:33:24 |
 | sqlserver | [云数据库 SQL Server](http://document.tencentcloudapi.woa.com/document/product/238) | 2023-04-28 01:30:25 |
 | ssa | [安全运营中心](http://document.tencentcloudapi.woa.com/document/product/664) | 2023-05-08 01:35:42 |
-| ssl | [SSL 证书](http://document.tencentcloudapi.woa.com/document/product/400) | 2023-04-21 01:35:05 |
+| ssl | [SSL 证书](http://document.tencentcloudapi.woa.com/document/product/400) | 2023-05-09 01:34:44 |
 | sslpod | [证书监控 SSLPod](http://document.tencentcloudapi.woa.com/document/product/1084) | 2023-03-30 01:34:13 |
 | ssm | [凭据管理系统](http://document.tencentcloudapi.woa.com/document/product/1140) | 2023-04-27 01:33:13 |
 | sts | [安全凭证服务](http://document.tencentcloudapi.woa.com/document/product/1312) | 2023-03-30 01:34:24 |
@@ -144,18 +144,18 @@
 | tcm | [服务网格](http://document.tencentcloudapi.woa.com/document/product/1261) | 2023-03-30 01:36:32 |
 | tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2023-04-26 01:46:41 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | 2023-03-30 01:37:11 |
-| tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | 2023-05-08 01:37:49 |
+| tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | 2023-05-09 01:37:23 |
 | tem | [弹性微服务](http://document.tencentcloudapi.woa.com/document/product/1371) | 2023-04-20 01:36:28 |
 | tic | [资源编排 TIC](http://document.tencentcloudapi.woa.com/document/product/1213) | 2023-03-30 01:38:06 |
 | tics | [威胁情报云查服务](http://document.tencentcloudapi.woa.com/document/product/1013) | 2023-03-30 01:38:10 |
 | tiems | [腾讯云 TI 平台 TI-EMS ](http://document.tencentcloudapi.woa.com/document/product/1120) | 2022-07-19 06:12:58 |
 | tiia | [图像分析](http://document.tencentcloudapi.woa.com/document/product/865) | 2023-05-08 01:39:03 |
-| tione | [TI-ONE 训练平台](http://document.tencentcloudapi.woa.com/document/product/851) | 2023-05-08 01:39:13 |
+| tione | [TI-ONE 训练平台](http://document.tencentcloudapi.woa.com/document/product/851) | 2023-05-09 01:38:43 |
 | tiw | [互动白板](http://document.tencentcloudapi.woa.com/document/product/1137) | 2023-04-14 01:40:23 |
 | tke | [容器服务](http://document.tencentcloudapi.woa.com/document/product/457) | 2022-09-09 06:30:19 |
 | tms | [文本内容安全](http://document.tencentcloudapi.woa.com/document/product/1124) | 2023-03-30 01:44:03 |
 | tmt | [机器翻译](http://document.tencentcloudapi.woa.com/document/product/551) | 2023-04-25 01:52:15 |
-| trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2023-05-08 01:40:44 |
+| trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2023-05-09 01:40:47 |
 | tse | [微服务引擎 TSE](http://document.tencentcloudapi.woa.com/document/product/1364) | 2023-04-20 01:39:45 |
 | tsf | [微服务平台 TSF](http://document.tencentcloudapi.woa.com/document/product/649) | 2023-02-23 01:42:59 |
 | tsw | [微服务观测平台 TSW](http://document.tencentcloudapi.woa.com/document/product/1311) | 2023-03-30 01:44:31 |
@@ -163,9 +163,9 @@
 | ump | [客流数字化平台](http://document.tencentcloudapi.woa.com/document/product/1320) | 2023-03-30 01:44:37 |
 | vm | [视频内容安全](http://document.tencentcloudapi.woa.com/document/product/1265) | 2023-03-30 01:44:42 |
 | vms | [语音消息](http://document.tencentcloudapi.woa.com/document/product/1128) | 2023-03-30 01:44:45 |
-| vod | [云点播](http://document.tencentcloudapi.woa.com/document/product/266) | 2023-05-08 01:41:22 |
-| vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | 2023-05-01 01:36:39 |
+| vod | [云点播](http://document.tencentcloudapi.woa.com/document/product/266) | 2023-05-09 01:41:38 |
+| vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | 2023-05-09 01:42:50 |
 | waf | [Web 应用防火墙](http://document.tencentcloudapi.woa.com/document/product/627) | 2023-05-08 01:43:56 |
-| wav | [企业微信汽车行业版](http://document.tencentcloudapi.woa.com/document/product/1318) | 2023-03-30 01:47:38 |
+| wav | [企业微信汽车行业版](http://document.tencentcloudapi.woa.com/document/product/1318) | 2023-05-09 01:45:40 |
 | wedata | [数据开发治理平台 WeData](http://document.tencentcloudapi.woa.com/document/product/1267) | 2023-05-08 11:17:18 |
 | yunsou | [腾讯云搜TCS](http://document.tencentcloudapi.woa.com/document/product/270) | 2023-03-30 01:47:46 |

@@ -124,12 +124,28 @@
         "title": "创建环境角色关系映射"
       }
     ],
+    "CreateRabbitMQUser": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"User\": \"test_user\",\n    \"Password\": \"abc123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"User\": \"test_user\"\n    }\n}",
+        "title": "创建RabbitMQ用户"
+      }
+    ],
     "CreateRabbitMQVipInstance": [
       {
         "document": "创建RabbitMQ专享版实例",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQVipInstance\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        190001\n    ],\n    \"NodeSpec\": \"rabbit-vip-basic-2\",\n    \"NodeNum\": 1,\n    \"StorageSize\": 100,\n    \"VpcId\": \"vpc-xxx\",\n    \"SubnetId\": \"subnet-xxx\",\n    \"ClusterName\": \"ApiCreate\",\n    \"EnableCreateDefaultHaMirrorQueue\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"sadasfdsfs\",\n        \"TranId\": \"20230110002025620411234\",\n        \"InstanceId\": \"amqp-aegnagjg\"\n    }\n}",
         "title": "创建RabbitMQ专享版实例"
+      }
+    ],
+    "CreateRabbitMQVirtualHost": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\",\n    \"Description\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"VirtualHost\": \"testVhost\"\n    }\n}",
+        "title": "创建RabbitMQ的vhost"
       }
     ],
     "CreateRocketMQCluster": [

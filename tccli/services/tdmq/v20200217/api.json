@@ -98,11 +98,25 @@
       "output": "CreateEnvironmentRoleResponse",
       "status": "online"
     },
+    "CreateRabbitMQUser": {
+      "document": "创建RabbitMQ的用户",
+      "input": "CreateRabbitMQUserRequest",
+      "name": "创建RabbitMQ的用户",
+      "output": "CreateRabbitMQUserResponse",
+      "status": "online"
+    },
     "CreateRabbitMQVipInstance": {
       "document": "创建RabbitMQ专享版实例",
       "input": "CreateRabbitMQVipInstanceRequest",
       "name": "创建RabbitMQ专享版实例",
       "output": "CreateRabbitMQVipInstanceResponse",
+      "status": "online"
+    },
+    "CreateRabbitMQVirtualHost": {
+      "document": "创建RabbitMQ的vhost",
+      "input": "CreateRabbitMQVirtualHostRequest",
+      "name": "创建RabbitMQ的vhost",
+      "output": "CreateRabbitMQVirtualHostResponse",
       "status": "online"
     },
     "CreateRocketMQCluster": {
@@ -3784,6 +3798,96 @@
       ],
       "type": "object"
     },
+    "CreateRabbitMQUserRequest": {
+      "document": "CreateRabbitMQUser请求参数结构体",
+      "members": [
+        {
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "用户名，登录时使用",
+          "example": "test_user",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "密码，登录时使用",
+          "example": "abc123",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "描述",
+          "example": "hello",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "用户标签，用于决定改用户访问RabbitMQ Management的权限范围\nmanagement：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户",
+          "example": "monitoring",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "该用户的最大连接数，不填写则不限制",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxConnections",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "该用户的最大channel数，不填写则不限制",
+          "example": "2000",
+          "member": "int64",
+          "name": "MaxChannels",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRabbitMQUserResponse": {
+      "document": "CreateRabbitMQUser返回参数结构体",
+      "members": [
+        {
+          "document": "用户名，登录时使用",
+          "example": "test_user",
+          "member": "string",
+          "name": "User",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRabbitMQVipInstanceRequest": {
       "document": "CreateRabbitMQVipInstance请求参数结构体",
       "members": [
@@ -3899,6 +4003,74 @@
           "name": "InstanceId",
           "type": "string",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRabbitMQVirtualHostRequest": {
+      "document": "CreateRabbitMQVirtualHost请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "vhost名",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "hello",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "消息轨迹开关,true打开,false关闭,默认关闭",
+          "example": "true",
+          "member": "bool",
+          "name": "TraceFlag",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRabbitMQVirtualHostResponse": {
+      "document": "CreateRabbitMQVirtualHost返回参数结构体",
+      "members": [
+        {
+          "document": "vhost名",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
           "visibility": 1
         },
         {

@@ -11765,6 +11765,15 @@
           "required": true,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "document": "告警来源表ID",
+          "example": "115920",
+          "member": "int64",
+          "name": "TableId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

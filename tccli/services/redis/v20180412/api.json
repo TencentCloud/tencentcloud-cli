@@ -43,7 +43,7 @@
       "status": "online"
     },
     "ChangeReplicaToMaster": {
-      "document": "该接口仅支持多AZ实例副本组提主和单AZ副本提主",
+      "document": "本接口（ChangeReplicaToMaster）适用于实例副本组提主或副本提主。",
       "input": "ChangeReplicaToMasterRequest",
       "name": "副本组提主",
       "output": "ChangeReplicaToMasterResponse",
@@ -379,7 +379,7 @@
       "status": "online"
     },
     "DescribeTaskList": {
-      "document": "查询任务列表信息",
+      "document": "本接口（DescribeTaskList）用于查询指定实例的任务列表信息。",
       "input": "DescribeTaskListRequest",
       "name": "查询任务列表信息",
       "output": "DescribeTaskListResponse",
@@ -1176,22 +1176,22 @@
       "document": "ChangeReplicaToMaster请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例Id",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。\n",
           "example": "crs-cdbdbncd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "副本组Id，多AZ实例必填",
+          "document": "副本节点组 ID，请通过接口[DescribeInstanceZoneInfo](https://cloud.tencent.com/document/product/239/50312)获取多 AZ备节点组的 ID 信息。单 AZ，则无需配置该参数。",
           "example": "354266",
           "member": "int64",
           "name": "GroupId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1200,13 +1200,13 @@
       "document": "ChangeReplicaToMaster返回参数结构体",
       "members": [
         {
-          "document": "异步任务ID",
+          "document": "异步任务ID。",
           "example": "626515",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4008,7 +4008,7 @@
           "visibility": 1
         },
         {
-          "document": "实例类型。<ul><li>1：Redis 老集群版。</li><li>2：Redis 2.8 主从版。</li><li>3：CKV 主从版。</li><li>4：CKV 集群版。</li><li>5：Redis 2.8 单机版。</li><li>6：Redis 4.0主从版。</li><li>7：Redis 4.0 集群版。</li><li>8：Redis 5.0 主从版。</li><li>9：Redis 5.0 集群版。</li></ul>",
+          "document": "实例类型。\n- 2：Redis 2.8内存版（标准架构）。\n- 3：CKV 3.2内存版（标准架构）。\n- 4：CKV 3.2内存版（集群架构）。\n- 5：Redis 2.8内存版（单机）。\n- 6：Redis 4.0内存版（标准架构）。\n- 7：Redis 4.0内存版（集群架构）。\n- 8：Redis 5.0内存版（标准架构）。\n- 9：Redis 5.0内存版（集群架构）。\n- 15：Redis 6.2内存版（标准架构）。\n- 16：Redis 6.2内存版（集群架构）。",
           "example": "无",
           "member": "int64",
           "name": "Type",
@@ -4874,8 +4874,7 @@
       "document": "DescribeTaskList请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例Id",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
           "example": "crs-opcazbrb",
           "member": "string",
           "name": "InstanceId",
@@ -4884,8 +4883,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "实例名称",
+          "document": "实例名称。",
           "example": "crs-rhlppeye",
           "member": "string",
           "name": "InstanceName",
@@ -4894,8 +4892,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "分页大小,默认20，上限不大于100",
+          "document": "每页输出的任务列表大小。默认为 20，最多输出100条。",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -4904,8 +4901,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "偏移量，取Limit整数倍（自动向下取整）",
+          "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4914,8 +4910,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "项目Id",
+          "document": "项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。",
           "example": "11322",
           "member": "int64",
           "name": "ProjectIds",
@@ -4924,8 +4919,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "任务类型",
+          "document": "任务类型。\n- FLOW_CREATE：创建实例。\n- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。\n- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。\n- FLOW_CLEARNETWORK：VPC退还中。\n- FLOW_SETPWD：设置访问密码。\n- FLOW_EXPORSHR：扩缩容流程。\n- FLOW_UpgradeArch：实例架构升级流程。\n- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。\n- FLOW_MODIFYINSTACEREADONLY：只读变更流程。\n- FLOW_CLOSE：关闭实例。\n- FLOW_DELETE：删除实例。\n- FLOW_OPEN_WAN：开启外网。\n- FLOW_CLEAN：清空实例。      \n- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。\n- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。\n- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。\n- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。\n- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。\n- FLOW_BACKUPINSTANCE：备份实例。",
           "example": "无",
           "member": "string",
           "name": "TaskTypes",
@@ -4934,8 +4928,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "起始时间",
+          "document": "任务执行的起始时间。格式如：2021-12-30 00:00:00。",
           "example": "2021-12-30 00:00:00",
           "member": "string",
           "name": "BeginTime",
@@ -4944,8 +4937,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "终止时间",
+          "document": "任务运行的终止时间。格式如：2021-12-30 20:59:35",
           "example": "2021-12-30 20:59:35",
           "member": "string",
           "name": "EndTime",
@@ -4954,8 +4946,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "任务状态",
+          "document": "该参数为内部使用，请忽略。",
           "example": "[0.1.2]",
           "member": "int64",
           "name": "TaskStatus",
@@ -4964,8 +4955,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "任务状态",
+          "document": "任务执行状态。\n- 0：任务初始化。\n- 1：执行中。\n- 2：完成。\n- 4：失败。",
           "example": "[0,1,2]",
           "member": "int64",
           "name": "Result",
@@ -4974,8 +4964,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "操作者Uin，该字段已废弃，使用OperateUin代替",
+          "document": "该字段已废弃，使用OperateUin代替，请忽略。",
           "example": "[10002274123]",
           "member": "int64",
           "name": "OperatorUin",
@@ -4984,8 +4973,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "操作者Uin",
+          "document": "操作者账号 ID，UIN。",
           "example": "[\"10002274123\"]",
           "member": "string",
           "name": "OperateUin",
@@ -5000,21 +4988,19 @@
       "document": "DescribeTaskList返回参数结构体",
       "members": [
         {
-          "document": "任务总数",
+          "document": "任务总数。",
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "document": "任务详细信息",
+          "document": "任务详细信息。",
           "example": "无",
           "member": "TaskInfoDetail",
           "name": "Tasks",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -9953,85 +9939,94 @@
       "document": "任务信息详情",
       "members": [
         {
-          "default": "",
-          "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务类型。\n- FLOW_CREATE：创建实例。\n- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。\n- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。\n- FLOW_CLEARNETWORK：VPC退还中。\n- FLOW_SETPWD：设置访问密码。\n- FLOW_EXPORSHR：扩缩容流程。\n- FLOW_UpgradeArch：实例架构升级流程。\n- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。\n- FLOW_MODIFYINSTACEREADONLY：只读变更流程。\n- FLOW_CLOSE：关闭实例。\n- FLOW_DELETE：删除实例。\n- FLOW_OPEN_WAN：开启外网。\n- FLOW_CLEAN：清空实例。      \n- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。\n- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。\n- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。\n- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。\n- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。\n- FLOW_BACKUPINSTANCE：备份实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TaskType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "项目Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "任务进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "Progress",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行状态。\n\n0：任务初始化。\n1：执行中。\n2：完成。\n4：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Result",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

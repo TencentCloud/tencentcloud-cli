@@ -1,6 +1,6 @@
 **Example 1: 查询外部联系人详情**
 
-
+通过外部联系人ID获取相应的详情信息
 
 Input: 
 
@@ -15,34 +15,34 @@ Output:
 ```
 {
     "Response": {
-        "NextCursor": "",
-        "RequestId": "482482d3-1631-4c41-a42a-41809d0e5593",
+        "NextCursor": "abc",
         "Customer": {
+            "ExternalUserId": "abc",
+            "Gender": 0,
+            "Name": "abc",
             "Type": 1,
-            "Phone": "",
-            "UnionId": "o1MJd6WzhNPBPLuXID6gpbHY2Mko",
-            "ExternalUserId": "wmpqy2CAAALJVRD88JLOUVONlJS9c7nA",
-            "Gender": 1,
-            "Name": "艺术就是派大星"
+            "UnionId": "abc",
+            "Phone": "abc"
         },
         "FollowUser": [
             {
-                "OperUserId": "wmpqy2CAAALJVRD88JLOUVONlJS9c7nA",
-                "Description": "",
-                "AddWay": 3,
-                "UserId": "TaXun",
-                "CreateTime": 1621849569,
+                "UserId": "abc",
+                "Remark": "abc",
+                "Description": "abc",
+                "CreateTime": 1,
+                "AddWay": 0,
+                "OperUserId": "abc",
                 "Tags": [
                     {
-                        "GroupName": "个人标签",
-                        "Type": 2,
-                        "TagId": "etpqy2CAAA4au5I00lvVcnlZ_berhx1g",
-                        "TagName": "标签名称"
+                        "GroupName": "abc",
+                        "TagName": "abc",
+                        "Type": 1,
+                        "TagId": "abc"
                     }
-                ],
-                "Remark": "备注"
+                ]
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

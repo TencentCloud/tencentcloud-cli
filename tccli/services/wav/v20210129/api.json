@@ -3656,31 +3656,31 @@
       "document": "QueryExternalContactDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "外部联系人的userid，注意不是企业成员的帐号",
           "example": "woAJ2GCAAAXtWyujaWJHDDGi0mACHAAA",
           "member": "string",
           "name": "ExternalUserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填。当客户在企业内的跟进人超过500人时需要使用cursor参数进行分页获取",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "Cursor",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "当前接口Limit不需要传参， 保留Limit只是为了保持向后兼容性， Limit默认值为500，当返回结果超过500时， NextCursor才有返回值",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3693,27 +3693,27 @@
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
           "member": "string",
           "name": "NextCursor",
-          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "客户信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExternalContact",
           "name": "Customer",
-          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "添加了此外部联系人的企业成员信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FollowUser",
           "name": "FollowUser",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

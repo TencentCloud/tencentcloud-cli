@@ -1,12 +1,12 @@
 **Example 1: 请求示例**
 
-
+多AZ、单AZ场景下的副本提主
 
 Input: 
 
 ```
 tccli redis ChangeReplicaToMaster --cli-unfold-argument  \
-    --InstanceId crs-sa5dsfs \
+    --InstanceId crs-sa5**** \
     --GroupId 301524
 ```
 

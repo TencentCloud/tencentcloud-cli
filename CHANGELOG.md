@@ -1,3 +1,137 @@
+# Release 3.0.758.1
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 48 次发布
+
+发布时间：2023-05-09 01:14:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DisasterRecoverGroup](http://document.tencentcloudapi.woa.com/document/product/213/15753#DisasterRecoverGroup)
+
+	* <font color="#dd0000">**修改成员**：</font>CreateTime
+
+* [HostItem](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostItem)
+
+	* 新增成员：Tags
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
+
+	* 新增成员：UnderwriteExpiredTime
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 59 次发布
+
+发布时间：2023-05-09 01:14:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAlarmIncidentNodes](http://document.tencentcloudapi.woa.com/document/product/296/77420)
+
+	* 新增入参：TableId
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 40 次发布
+
+发布时间：2023-05-09 01:15:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NetAddr)
+
+	* 新增成员：InstanceGroupId
+
+
+
+
+## 图片内容安全(ims) 版本：2020-12-29
+
+### 第 6 次发布
+
+发布时间：2023-05-09 01:22:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ObjectDetail](http://document.tencentcloudapi.woa.com/document/product/1125/53274#ObjectDetail)
+
+	* 新增成员：ObjectId
+
+
+
+
+## 图片内容安全(ims) 版本：2020-07-13
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 29 次发布
+
+发布时间：2023-05-09 01:25:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateDisks](http://document.tencentcloudapi.woa.com/document/product/1207/77759)
+
+新增数据结构：
+
+* [AutoMountConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AutoMountConfiguration)
+
+修改数据结构：
+
+* [PolicyDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#PolicyDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>UserDiscount, CommonDiscount, FinalDiscount
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 44 次发布
+
+发布时间：2023-05-09 01:37:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateRabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/77761)
+* [CreateRabbitMQVirtualHost](http://document.tencentcloudapi.woa.com/document/product/1179/77760)
+
+
+
 # Release 3.0.757.1
 
 ## 语音识别(asr) 版本：2019-06-14

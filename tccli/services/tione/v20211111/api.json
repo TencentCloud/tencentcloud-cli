@@ -10620,7 +10620,6 @@
       "document": "训练任务详情",
       "members": [
         {
-          "default": "",
           "document": "训练任务ID",
           "example": "train-123311",
           "member": "string",
@@ -10631,7 +10630,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练任务名称",
           "example": "test",
           "member": "string",
@@ -10642,7 +10640,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "主账号uin",
           "example": "23131",
           "member": "string",
@@ -10653,7 +10650,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子账号uin",
           "example": "31213",
           "member": "string",
@@ -10664,7 +10660,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "地域",
           "example": "ap-shenzhen",
           "member": "string",
@@ -10675,7 +10670,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TENSORFLOW",
           "member": "string",
@@ -10686,7 +10680,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练框架版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.12",
           "member": "string",
@@ -10697,7 +10690,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "框架运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tf2.4-py3.8-cpu",
           "member": "string",
@@ -10708,7 +10700,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "计费模式",
           "example": "无",
           "member": "string",
@@ -10719,7 +10710,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -10730,7 +10720,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源配置",
           "example": "[]",
           "member": "ResourceConfigInfo",
@@ -10741,7 +10730,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Tag",
@@ -10752,7 +10740,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -10763,7 +10750,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "代码包",
           "example": "无",
           "member": "CosPathInfo",
@@ -10774,7 +10760,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "启动命令信息",
           "example": "无",
           "member": "StartCmdInfo",
@@ -10785,7 +10770,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据来源，eg：DATASET、COS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DATASET",
           "member": "string",
@@ -10796,7 +10780,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "数据配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "DataConfig",
@@ -10807,7 +10790,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "调优参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -10818,7 +10800,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练输出",
           "example": "无",
           "member": "CosPathInfo",
@@ -10829,7 +10810,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "是否上报日志",
           "example": "true",
           "member": "bool",
@@ -10840,7 +10820,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogConfig",
@@ -10851,7 +10830,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -10862,7 +10840,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -10873,7 +10850,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageInfo",
@@ -10884,7 +10860,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "uint64",
@@ -10895,7 +10870,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "无",
           "member": "string",
@@ -10906,7 +10880,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -10917,7 +10890,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中",
           "example": "无",
           "member": "string",
@@ -10928,7 +10900,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "最近一次实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "567233",
           "member": "string",
@@ -10939,7 +10910,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "TensorBoard ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tensorborad-123311",
           "member": "string",
@@ -10950,7 +10920,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -10961,7 +10930,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -10972,7 +10940,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "更新时间",
           "example": "无",
           "member": "string",
@@ -10983,7 +10950,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -10994,8 +10960,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "计费金额信息，eg：2.00元/小时 (for后付费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费金额信息，eg：2.00元/小时 (按量计费)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.00元/小时",
           "member": "string",
           "name": "BillingInfo",
@@ -11005,7 +10970,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "预付费专用资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -11016,7 +10980,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -11027,7 +10990,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成",
           "example": "无",
           "member": "string",
@@ -11038,7 +11000,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "回调地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -11055,7 +11016,6 @@
       "document": "出参类型",
       "members": [
         {
-          "default": "",
           "document": "训练任务ID",
           "example": "train-123311",
           "member": "string",
@@ -11066,7 +11026,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练任务名称",
           "example": "test",
           "member": "string",
@@ -11077,7 +11036,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "框架名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TENSORFLOW",
           "member": "string",
@@ -11088,7 +11046,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练框架版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.12",
           "member": "string",
@@ -11099,7 +11056,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "框架运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tf2.4-py3.8-cpu",
           "member": "string",
@@ -11110,7 +11066,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "计费模式",
           "example": "PREPAID",
           "member": "string",
@@ -11121,7 +11076,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中",
           "example": "NOT_BILLING",
           "member": "string",
@@ -11132,7 +11086,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -11143,7 +11096,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "资源配置",
           "example": "[]",
           "member": "ResourceConfigInfo",
@@ -11154,7 +11106,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练模式eg：PS_WORKER、DDP、MPI、HOROVOD\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PS_WORKER",
           "member": "string",
@@ -11165,7 +11116,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成",
           "example": "无",
           "member": "string",
@@ -11176,7 +11126,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
@@ -11187,7 +11136,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "无",
           "member": "string",
@@ -11198,7 +11146,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -11209,7 +11156,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -11220,7 +11166,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "训练输出",
           "example": "无",
           "member": "CosPathInfo",
@@ -11231,7 +11176,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -11242,7 +11186,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "更新时间",
           "example": "无",
           "member": "string",
@@ -11253,8 +11196,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "计费金额信息，eg：2.00元/小时 (for后付费)",
+          "document": "计费金额信息，eg：2.00元/小时 (按量计费)",
           "example": "2.00元/小时",
           "member": "string",
           "name": "BillingInfo",
@@ -11264,7 +11206,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "预付费专用资源组名称",
           "example": "无",
           "member": "string",
@@ -11275,7 +11216,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "自定义镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageInfo",
@@ -11286,7 +11226,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -11297,7 +11236,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Tag",
@@ -11308,7 +11246,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "回调地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
