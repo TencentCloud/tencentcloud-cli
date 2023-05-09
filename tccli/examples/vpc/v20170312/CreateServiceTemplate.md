@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc CreateServiceTemplate --cli-unfold-argument  \
     --ServiceTemplateName TestName \
-    --Services TCP:8080 UDP:99
+    --Services TCP:8080
 ```
 
 Output: 
@@ -16,16 +16,15 @@ Output:
     "Response": {
         "ServiceTemplate": {
             "ServiceTemplateName": "TestName",
-            "ServiceTemplateId": "ppm-bu8cir16",
+            "ServiceTemplateId": "ppm-xxxxxxxx",
             "ServiceSet": [
-                "tcp: 8080",
-                "udp: 99"
+                "tcp: 8080"
             ],
             "CreatedTime": "2018-04-03 21:19:31",
             "ServiceExtraSet": [
                 {
-                    "Description": "xx",
-                    "Service": "xx"
+                    "Description": "test",
+                    "Service": "tcp:8080"
                 }
             ]
         },

@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc ModifyDhcpIpAttribute --cli-unfold-argument  \
     --DhcpIpId dhcpip-9o233uri \
-    --DhcpIpName 'new name'
+    --DhcpIpName new name
 ```
 
 Output: 

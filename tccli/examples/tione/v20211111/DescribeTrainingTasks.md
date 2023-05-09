@@ -1,81 +1,87 @@
 **Example 1: 训练任务列表**
 
-
+获取训练任务列表
 
 Input: 
 
 ```
 tccli tione DescribeTrainingTasks --cli-unfold-argument  \
     --Filters.0.Fuzzy True \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
+    --Filters.0.Values string \
+    --Filters.0.Name string \
     --Filters.0.Negative True \
-    --TagFilters.0.TagValues xx \
-    --TagFilters.0.TagKey xx \
+    --TagFilters.0.TagValues string \
+    --TagFilters.0.TagKey string \
     --Limit 1 \
-    --OrderField xx \
+    --OrderField string \
     --Offset 1 \
-    --Order xx
+    --Order string
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "TrainingTaskSet": [
             {
-                "Status": "xx",
-                "UpdateTime": "xx",
-                "EndTime": "xx",
-                "Name": "xx",
-                "BillingInfo": "xx",
-                "Tags": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "ResourceGroupId": "xx",
+                "Id": "abc",
+                "Name": "abc",
+                "FrameworkName": "abc",
+                "FrameworkVersion": "abc",
+                "FrameworkEnvironment": "abc",
+                "ChargeType": "abc",
+                "ChargeStatus": "abc",
+                "ResourceGroupId": "abc",
                 "ResourceConfigInfos": [
                     {
-                        "InstanceType": "xx",
-                        "InstanceNum": 1,
+                        "Role": "abc",
                         "Cpu": 1,
-                        "Role": "xx",
                         "Memory": 1,
+                        "GpuType": "abc",
                         "Gpu": 1,
-                        "GpuType": "xx",
-                        "InstanceTypeAlias": "xx"
+                        "InstanceType": "abc",
+                        "InstanceNum": 1,
+                        "InstanceTypeAlias": "abc",
+                        "RDMAConfig": {
+                            "Enable": true
+                        }
                     }
                 ],
-                "ResourceGroupName": "xx",
-                "CreateTime": "xx",
+                "TrainingMode": "abc",
+                "Status": "abc",
                 "RuntimeInSeconds": 1,
-                "ImageInfo": {
-                    "ImageUrl": "xx",
-                    "RegistryRegion": "xx",
-                    "RegistryId": "xx",
-                    "ImageType": "xx"
-                },
-                "FrameworkName": "xx",
-                "ChargeType": "xx",
-                "StartTime": "xx",
+                "CreateTime": "abc",
+                "StartTime": "abc",
+                "EndTime": "abc",
                 "Output": {
+                    "Bucket": "abc",
+                    "Region": "abc",
                     "Paths": [
-                        "xx"
-                    ],
-                    "Region": "xx",
-                    "Bucket": "xx"
+                        "abc"
+                    ]
                 },
-                "TrainingMode": "xx",
-                "FrameworkVersion": "xx",
-                "Id": "xx",
-                "ChargeStatus": "xx",
-                "FailureReason": "xx"
+                "FailureReason": "abc",
+                "UpdateTime": "abc",
+                "BillingInfo": "abc",
+                "ResourceGroupName": "abc",
+                "ImageInfo": {
+                    "ImageType": "abc",
+                    "ImageUrl": "abc",
+                    "RegistryRegion": "abc",
+                    "RegistryId": "abc"
+                },
+                "Message": "abc",
+                "Tags": [
+                    {
+                        "TagKey": "abc",
+                        "TagValue": "abc"
+                    }
+                ],
+                "CallbackUrl": "abc"
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

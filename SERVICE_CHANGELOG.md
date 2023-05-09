@@ -1,37 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云服务器(cvm) 版本：2017-03-12
+## 访问管理(cam) 版本：2019-01-16
 
-### 第 48 次发布
+### 第 19 次发布
 
-发布时间：2023-05-09 01:14:15
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DisasterRecoverGroup](http://document.tencentcloudapi.woa.com/document/product/213/15753#DisasterRecoverGroup)
-
-	* <font color="#dd0000">**修改成员**：</font>CreateTime
-
-* [HostItem](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostItem)
-
-	* 新增成员：Tags
-
-* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
-
-	* 新增成员：UnderwriteExpiredTime
-
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 59 次发布
-
-发布时间：2023-05-09 01:14:46
+发布时间：2023-05-10 01:10:21
 
 本次发布包含了以下内容：
 
@@ -39,60 +12,41 @@
 
 修改接口：
 
-* [DescribeAlarmIncidentNodes](http://document.tencentcloudapi.woa.com/document/product/296/77420)
+* [DescribeSafeAuthFlagColl](http://document.tencentcloudapi.woa.com/document/product/598/48602)
 
-	* 新增入参：TableId
+	* 新增出参：PromptTrust
 
 
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 40 次发布
+### 第 41 次发布
 
-发布时间：2023-05-09 01:15:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NetAddr)
-
-	* 新增成员：InstanceGroupId
-
-
-
-
-## 图片内容安全(ims) 版本：2020-12-29
-
-### 第 6 次发布
-
-发布时间：2023-05-09 01:22:32
+发布时间：2023-05-10 01:19:52
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [ObjectDetail](http://document.tencentcloudapi.woa.com/document/product/1125/53274#ObjectDetail)
+* [DescribeInstanceErrorLogs](http://document.tencentcloudapi.woa.com/document/product/1003/77765)
+* [ExportInstanceErrorLogs](http://document.tencentcloudapi.woa.com/document/product/1003/77764)
+* [OpenReadOnlyInstanceExclusiveAccess](http://document.tencentcloudapi.woa.com/document/product/1003/77766)
 
-	* 新增成员：ObjectId
+新增数据结构：
 
-
-
-
-## 图片内容安全(ims) 版本：2020-07-13
+* [CynosdbErrorLogItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbErrorLogItem)
+* [ErrorLogItemExport](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ErrorLogItemExport)
 
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 29 次发布
+### 第 30 次发布
 
-发布时间：2023-05-09 01:25:15
+发布时间：2023-05-10 01:30:47
 
 本次发布包含了以下内容：
 
@@ -100,35 +54,136 @@
 
 新增接口：
 
-* [CreateDisks](http://document.tencentcloudapi.woa.com/document/product/1207/77759)
+* [IsolateDisks](http://document.tencentcloudapi.woa.com/document/product/1207/77768)
+* [RenewDisks](http://document.tencentcloudapi.woa.com/document/product/1207/77767)
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 33 次发布
+
+发布时间：2023-05-10 01:31:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLiveXP2PDetailInfoList](http://document.tencentcloudapi.woa.com/document/product/267/77769)
 
 新增数据结构：
 
-* [AutoMountConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AutoMountConfiguration)
-
-修改数据结构：
-
-* [PolicyDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#PolicyDetail)
-
-	* <font color="#dd0000">**修改成员**：</font>UserDiscount, CommonDiscount, FinalDiscount
+* [XP2PDetailInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#XP2PDetailInfo)
 
 
 
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+### 第 23 次发布
 
-### 第 44 次发布
-
-发布时间：2023-05-09 01:37:23
+发布时间：2023-05-10 01:35:31
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [CreateRabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/77761)
-* [CreateRabbitMQVirtualHost](http://document.tencentcloudapi.woa.com/document/product/1179/77760)
+* [CopyJobItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#CopyJobItem)
+
+	* 新增成员：SourceId, TargetClusterId, SourceName, TargetName, TargetFolderId, JobType
+
+* [CopyJobResult](http://document.tencentcloudapi.woa.com/document/product/849/52010#CopyJobResult)
+
+	* 新增成员：JobId, JobName, TargetJobName, TargetJobId, Message, Result, ClusterName, ClusterId, JobType
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 67 次发布
+
+发布时间：2023-05-10 01:45:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/31866#EdgeCluster)
+
+	* 新增成员：TagSpecification
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 60 次发布
+
+发布时间：2023-05-10 01:47:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HeadTailTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#HeadTailTemplate)
+
+	* 新增成员：CreateTime, UpdateTime
+
+* [MediaProcessTaskAdaptiveDynamicStreamingResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskAdaptiveDynamicStreamingResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskAnimatedGraphicResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskAnimatedGraphicResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskCoverBySnapshotResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskCoverBySnapshotResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskImageSpriteResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskImageSpriteResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskSampleSnapshotResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskSampleSnapshotResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskSnapshotByTimeOffsetResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskSnapshotByTimeOffsetResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 83 次发布
+
+发布时间：2023-05-10 01:49:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NetDetect](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetDetect)
+
+	* 新增成员：Status
+
 
 
 
@@ -4852,6 +4907,21 @@
 
 
 ## 访问管理(cam) 版本：2019-01-16
+
+### 第 19 次发布
+
+发布时间：2023-05-10 01:10:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSafeAuthFlagColl](http://document.tencentcloudapi.woa.com/document/product/598/48602)
+
+	* 新增出参：PromptTrust
+
 
 ### 第 18 次发布
 
@@ -18804,6 +18874,25 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 41 次发布
+
+发布时间：2023-05-10 01:19:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeInstanceErrorLogs](http://document.tencentcloudapi.woa.com/document/product/1003/77765)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ExportInstanceErrorLogs](http://document.tencentcloudapi.woa.com/document/product/1003/77764)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[OpenReadOnlyInstanceExclusiveAccess](http://document.tencentcloudapi.woa.com/document/product/1003/77766)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[CynosdbErrorLogItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbErrorLogItem)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[CynosdbErrorLogItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbErrorLogItem))
+* [[ErrorLogItemExport](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ErrorLogItemExport)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ErrorLogItemExport](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ErrorLogItemExport))
+
 ### 第 40 次发布
 
 发布时间：2023-05-09 01:15:56
@@ -31581,6 +31670,19 @@
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
+### 第 30 次发布
+
+发布时间：2023-05-10 01:30:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[IsolateDisks](http://document.tencentcloudapi.woa.com/document/product/1207/77768)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RenewDisks](http://document.tencentcloudapi.woa.com/document/product/1207/77767)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 29 次发布
 
 发布时间：2023-05-09 01:25:15
@@ -31591,11 +31693,11 @@
 
 新增接口：
 
-* [[CreateDisks](http://document.tencentcloudapi.woa.com/document/product/1207/77759)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateDisks](http://document.tencentcloudapi.woa.com/document/product/1207/77759)
 
 新增数据结构：
 
-* [[AutoMountConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AutoMountConfiguration)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[AutoMountConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AutoMountConfiguration))
+* [AutoMountConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AutoMountConfiguration)
 
 修改数据结构：
 
@@ -32221,6 +32323,22 @@
 
 
 ## 云直播CSS(live) 版本：2018-08-01
+
+### 第 33 次发布
+
+发布时间：2023-05-10 01:31:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeLiveXP2PDetailInfoList](http://document.tencentcloudapi.woa.com/document/product/267/77769)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[XP2PDetailInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#XP2PDetailInfo)](http://document.tencentcloudapi.woa.com/document/product/267/20474#[XP2PDetailInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#XP2PDetailInfo))
 
 ### 第 32 次发布
 
@@ -37524,6 +37642,25 @@
 
 
 ## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 23 次发布
+
+发布时间：2023-05-10 01:35:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CopyJobItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#CopyJobItem)
+
+	* 新增成员：SourceId, TargetClusterId, SourceName, TargetName, TargetFolderId, JobType
+
+* [CopyJobResult](http://document.tencentcloudapi.woa.com/document/product/849/52010#CopyJobResult)
+
+	* 新增成员：JobId, JobName, TargetJobName, TargetJobId, Message, Result, ClusterName, ClusterId, JobType
+
 
 ### 第 22 次发布
 
@@ -47832,8 +47969,8 @@
 
 新增接口：
 
-* [[CreateRabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/77761)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateRabbitMQVirtualHost](http://document.tencentcloudapi.woa.com/document/product/1179/77760)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateRabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/77761)
+* [CreateRabbitMQVirtualHost](http://document.tencentcloudapi.woa.com/document/product/1179/77760)
 
 ### 第 43 次发布
 
@@ -51100,6 +51237,21 @@
 
 
 ## 容器服务(tke) 版本：2018-05-25
+
+### 第 67 次发布
+
+发布时间：2023-05-10 01:45:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/31866#EdgeCluster)
+
+	* 新增成员：TagSpecification
+
 
 ### 第 66 次发布
 
@@ -55650,6 +55802,45 @@
 
 ## 云点播(vod) 版本：2018-07-17
 
+### 第 60 次发布
+
+发布时间：2023-05-10 01:47:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HeadTailTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#HeadTailTemplate)
+
+	* 新增成员：CreateTime, UpdateTime
+
+* [MediaProcessTaskAdaptiveDynamicStreamingResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskAdaptiveDynamicStreamingResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskAnimatedGraphicResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskAnimatedGraphicResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskCoverBySnapshotResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskCoverBySnapshotResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskImageSpriteResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskImageSpriteResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskSampleSnapshotResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskSampleSnapshotResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskSnapshotByTimeOffsetResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskSnapshotByTimeOffsetResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+
 ### 第 59 次发布
 
 发布时间：2023-04-28 01:36:02
@@ -57576,6 +57767,21 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 83 次发布
+
+发布时间：2023-05-10 01:49:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NetDetect](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetDetect)
+
+	* 新增成员：Status
+
 
 ### 第 82 次发布
 

@@ -1,12 +1,11 @@
 **Example 1: 修改协议端口模板集合**
 
-
+修改协议端口模板集合
 
 Input: 
 
 ```
 tccli vpc ModifyServiceTemplateGroupAttribute --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --ServiceTemplateGroupId ppmg-ei8hfd9a \
     --ServiceTemplateGroupName TestName
 ```

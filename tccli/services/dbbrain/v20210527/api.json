@@ -3685,7 +3685,7 @@
           "visibility": 1
         },
         {
-          "document": "sql模版的md5值",
+          "document": "sql模板的md5值",
           "example": "2693831786114179882",
           "member": "string",
           "name": "Md5",

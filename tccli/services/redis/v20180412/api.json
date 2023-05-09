@@ -253,7 +253,7 @@
       "status": "online"
     },
     "DescribeInstanceNodeInfo": {
-      "document": "查询实例节点信息",
+      "document": "本接口（DescribeInstanceNodeInfo）用于查询实例节点信息。",
       "input": "DescribeInstanceNodeInfoRequest",
       "name": "查询实例节点信息",
       "output": "DescribeInstanceNodeInfoResponse",
@@ -3477,31 +3477,31 @@
       "document": "DescribeInstanceNodeInfo请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "实例ID",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
           "example": "crs-asdasdas",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "列表大小",
+          "document": "列表大小。每页输出的节点信息大小。默认为 20，最多输出1000条。该字段已不再使用，请忽略。",
           "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "偏移量",
+          "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。该字段已不再使用，请忽略。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3510,58 +3510,58 @@
       "document": "DescribeInstanceNodeInfo返回参数结构体",
       "members": [
         {
-          "document": "proxy节点数量",
+          "document": "Proxy节点数量。",
           "example": "10",
           "member": "int64",
           "name": "ProxyCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "proxy节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Proxy节点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ProxyNodes",
           "name": "Proxy",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "document": "redis节点数量",
+          "document": "Redis节点数量。",
           "example": "10",
           "member": "int64",
           "name": "RedisCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "redis节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Redis节点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RedisNodes",
           "name": "Redis",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "document": "tendis节点数量",
+          "document": "该参数不再使用，请忽略。",
           "example": "5",
           "member": "int64",
           "name": "TendisCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "tendis节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该参数不再使用，请忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TendisNodes",
           "name": "Tendis",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9115,44 +9115,44 @@
       "document": "Redis节点信息",
       "members": [
         {
-          "default": "",
-          "document": "节点ID",
+          "document": "节点 ID。",
           "example": "edcfcc21cef97eabbbeeb52067de8eddffc85772",
           "member": "string",
           "name": "NodeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "节点角色",
+          "document": "节点角色。",
           "example": "master",
           "member": "string",
           "name": "NodeRole",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "分片ID",
+          "document": "分片 ID。",
           "example": "1",
           "member": "int64",
           "name": "ClusterId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "可用区ID",
+          "document": "可用区 ID。",
           "example": "100002",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

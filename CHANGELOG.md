@@ -1,3 +1,192 @@
+# Release 3.0.759.1
+
+## 访问管理(cam) 版本：2019-01-16
+
+### 第 19 次发布
+
+发布时间：2023-05-10 01:10:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSafeAuthFlagColl](http://document.tencentcloudapi.woa.com/document/product/598/48602)
+
+	* 新增出参：PromptTrust
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 41 次发布
+
+发布时间：2023-05-10 01:19:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceErrorLogs](http://document.tencentcloudapi.woa.com/document/product/1003/77765)
+* [ExportInstanceErrorLogs](http://document.tencentcloudapi.woa.com/document/product/1003/77764)
+* [OpenReadOnlyInstanceExclusiveAccess](http://document.tencentcloudapi.woa.com/document/product/1003/77766)
+
+新增数据结构：
+
+* [CynosdbErrorLogItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbErrorLogItem)
+* [ErrorLogItemExport](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ErrorLogItemExport)
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 30 次发布
+
+发布时间：2023-05-10 01:30:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [IsolateDisks](http://document.tencentcloudapi.woa.com/document/product/1207/77768)
+* [RenewDisks](http://document.tencentcloudapi.woa.com/document/product/1207/77767)
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 33 次发布
+
+发布时间：2023-05-10 01:31:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLiveXP2PDetailInfoList](http://document.tencentcloudapi.woa.com/document/product/267/77769)
+
+新增数据结构：
+
+* [XP2PDetailInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#XP2PDetailInfo)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 23 次发布
+
+发布时间：2023-05-10 01:35:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CopyJobItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#CopyJobItem)
+
+	* 新增成员：SourceId, TargetClusterId, SourceName, TargetName, TargetFolderId, JobType
+
+* [CopyJobResult](http://document.tencentcloudapi.woa.com/document/product/849/52010#CopyJobResult)
+
+	* 新增成员：JobId, JobName, TargetJobName, TargetJobId, Message, Result, ClusterName, ClusterId, JobType
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 67 次发布
+
+发布时间：2023-05-10 01:45:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/31866#EdgeCluster)
+
+	* 新增成员：TagSpecification
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 60 次发布
+
+发布时间：2023-05-10 01:47:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HeadTailTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#HeadTailTemplate)
+
+	* 新增成员：CreateTime, UpdateTime
+
+* [MediaProcessTaskAdaptiveDynamicStreamingResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskAdaptiveDynamicStreamingResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskAnimatedGraphicResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskAnimatedGraphicResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskCoverBySnapshotResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskCoverBySnapshotResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskImageSpriteResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskImageSpriteResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskSampleSnapshotResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskSampleSnapshotResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+* [MediaProcessTaskSnapshotByTimeOffsetResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskSnapshotByTimeOffsetResult)
+
+	* 新增成员：BeginProcessTime, FinishTime
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 83 次发布
+
+发布时间：2023-05-10 01:49:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NetDetect](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetDetect)
+
+	* 新增成员：Status
+
+
+
+
 # Release 3.0.758.1
 
 ## 云服务器(cvm) 版本：2017-03-12

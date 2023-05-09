@@ -1,6 +1,6 @@
 **Example 1: 删除DhcpIp**
 
-
+删除DhcpIp
 
 Input: 
 

@@ -5792,7 +5792,6 @@
       "document": "DescribeTrainingTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"train-23091792777383936\"] }]\n\n取值范围：\nName（名称）：task1\nId（task ID）：train-23091792777383936\nStatus（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED\nChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）\nCHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）",
           "example": "[{ \"Name\": \"TaskStatus\", \"Values\": [\"Running\"] }]",
           "member": "Filter",
@@ -5802,7 +5801,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "标签过滤器，eg：[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
           "example": "[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
           "member": "TagFilter",
@@ -5812,7 +5810,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "偏移量，默认为0",
           "example": "1",
           "member": "uint64",
@@ -5822,7 +5819,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大为50",
           "example": "10",
           "member": "uint64",
@@ -5832,7 +5828,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "输出列表的排列顺序。取值范围：ASC（升序排列）/ DESC（降序排列），默认为DESC",
           "example": "DESC",
           "member": "string",
@@ -5842,7 +5837,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "排序的依据字段， 取值范围 \"CreateTime\" \"UpdateTime\"",
           "example": "CreateTime",
           "member": "string",
@@ -5862,7 +5856,6 @@
           "example": "无",
           "member": "TrainingTaskSetItem",
           "name": "TrainingTaskSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5872,7 +5865,6 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -9680,7 +9672,6 @@
       "document": "StartTrainingTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "训练任务ID",
           "example": "train-123311",
           "member": "string",

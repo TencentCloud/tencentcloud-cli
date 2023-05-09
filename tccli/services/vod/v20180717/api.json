@@ -15143,14 +15143,14 @@
       "document": "域名 HTTPS 配置信息",
       "members": [
         {
-          "default": "",
           "document": "证书过期时间。\n<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>",
           "example": "无",
           "member": "string",
           "name": "CertExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -16943,6 +16943,26 @@
           "member": "string",
           "name": "FillType",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -19653,7 +19673,6 @@
       "document": "对视频转自适应码流任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "PROCESSING",
           "member": "string",
@@ -19664,7 +19683,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
@@ -19675,7 +19693,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "0",
           "member": "int64",
@@ -19686,7 +19703,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "SUCCESS",
           "member": "string",
@@ -19697,7 +19713,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "转自适应码流任务进度，取值范围 [0-100] 。",
           "example": "100",
           "member": "int64",
@@ -19708,7 +19723,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频转自适应码流任务的输入。",
           "example": "无",
           "member": "AdaptiveDynamicStreamingTaskInput",
@@ -19719,13 +19733,32 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频转自适应码流任务的输出。",
           "example": "无",
           "member": "AdaptiveDynamicStreamingInfoItem",
           "name": "Output",
           "required": true,
           "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "转自适应码流任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "转自适应码流任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }
@@ -19736,7 +19769,6 @@
       "document": "转动图任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "PROCESSING",
           "member": "string",
@@ -19747,7 +19779,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
@@ -19758,7 +19789,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "0",
           "member": "int64",
@@ -19769,7 +19799,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "\"\"",
           "member": "string",
@@ -19780,7 +19809,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "转动图任务的输入。",
           "example": "无",
           "member": "AnimatedGraphicTaskInput",
@@ -19791,7 +19819,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "转动图任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaAnimatedGraphicsItem",
@@ -19802,13 +19829,32 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "转动图任务进度，取值范围 [0-100] 。",
           "example": "100",
           "member": "int64",
           "name": "Progress",
           "required": true,
           "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "转动图任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "转动图任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }
@@ -19819,7 +19865,6 @@
       "document": "对视频截图做封面任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "PROCESSING",
           "member": "string",
@@ -19830,7 +19875,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
@@ -19841,7 +19885,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "0",
           "member": "int64",
@@ -19852,7 +19895,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "\"\"",
           "member": "string",
@@ -19863,7 +19905,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频截图做封面任务的输入。",
           "example": "无",
           "member": "CoverBySnapshotTaskInput",
@@ -19874,7 +19915,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频截图做封面任务的输出。",
           "example": "无",
           "member": "CoverBySnapshotTaskOutput",
@@ -19885,13 +19925,32 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频截图做封面任务进度，取值范围 [0-100] 。",
           "example": "100",
           "member": "int64",
           "name": "Progress",
           "required": true,
           "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "截图做封面任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "截图做封面任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }
@@ -19902,7 +19961,6 @@
       "document": "对视频截雪碧图任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "PROCESSING",
           "member": "string",
@@ -19913,7 +19971,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
@@ -19924,7 +19981,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "0",
           "member": "int64",
@@ -19935,7 +19991,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "\"\"",
           "member": "string",
@@ -19946,7 +20001,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频截雪碧图任务的输入。",
           "example": "无",
           "member": "ImageSpriteTaskInput",
@@ -19957,7 +20011,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频截雪碧图任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaImageSpriteItem",
@@ -19968,13 +20021,32 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频截雪碧图任务进度，取值范围 [0-100] 。",
           "example": "100",
           "member": "int64",
           "name": "Progress",
           "required": true,
           "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "截雪碧图任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "截雪碧图任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }
@@ -20132,7 +20204,6 @@
       "document": "对视频做采样截图任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "PROCESSING",
           "member": "string",
@@ -20143,7 +20214,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
@@ -20154,7 +20224,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "0",
           "member": "int64",
@@ -20165,7 +20234,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "\"\"",
           "member": "string",
@@ -20176,7 +20244,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频做采样截图任务输入。",
           "example": "无",
           "member": "SampleSnapshotTaskInput",
@@ -20187,7 +20254,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频做采样截图任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaSampleSnapshotItem",
@@ -20198,13 +20264,32 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频做采样截图任务进度，取值范围 [0-100] 。",
           "example": "100",
           "member": "int64",
           "name": "Progress",
           "required": true,
           "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "采样截图任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "采样截图任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }
@@ -20215,7 +20300,6 @@
       "document": "对视频按指定时间点截图任务结果类型",
       "members": [
         {
-          "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
           "example": "PROCESSING",
           "member": "string",
@@ -20226,7 +20310,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
@@ -20237,7 +20320,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
           "example": "0",
           "member": "int64",
@@ -20248,7 +20330,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "\"\"",
           "member": "string",
@@ -20259,7 +20340,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频按指定时间点截图任务输入。",
           "example": "无",
           "member": "SnapshotByTimeOffsetTaskInput",
@@ -20270,7 +20350,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频按指定时间点截图任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaSnapshotByTimeOffsetItem",
@@ -20281,13 +20360,32 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "对视频按指定时间点截图任务进度，取值范围 [0-100] 。",
           "example": "100",
           "member": "int64",
           "name": "Progress",
           "required": true,
           "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "时间点截图任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "时间点截图任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }
@@ -29397,22 +29495,24 @@
       "document": "对视频做采样截图任务输入参数类型",
       "members": [
         {
-          "default": "",
           "document": "采样截图模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
+          "example": "无",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

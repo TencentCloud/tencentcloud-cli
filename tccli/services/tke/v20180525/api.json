@@ -3230,44 +3230,44 @@
       "document": "集群master自定义参数",
       "members": [
         {
-          "default": "",
           "document": "kube-apiserver自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"max-requests-inflight=500\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"max-requests-inflight=200\"]",
           "member": "string",
           "name": "KubeAPIServer",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "kube-controller-manager自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"kube-api-burst=500\"]",
           "member": "string",
           "name": "KubeControllerManager",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "kube-scheduler自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"kube-api-burst=500\"]",
           "member": "string",
           "name": "KubeScheduler",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "etcd自定义参数，只支持独立集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"node-data-dir=/data\"]",
           "member": "string",
           "name": "Etcd",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -13403,6 +13403,16 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "集群绑定的云标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -21395,49 +21405,49 @@
       "document": "UpdateClusterVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群 Id",
           "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "需要升级到的版本",
           "example": "1.18.4",
           "member": "string",
           "name": "DstVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "集群自定义参数",
           "example": "无",
           "member": "ClusterExtraArgs",
           "name": "ExtraArgs",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "可容忍的最大不可用pod数目",
           "example": "100",
           "member": "float",
           "name": "MaxNotReadyPercent",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否跳过预检查阶段",
           "example": "false",
           "member": "bool",
           "name": "SkipPreCheck",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"

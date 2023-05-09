@@ -1,6 +1,6 @@
 **Example 1: 启动训练任务**
 
-
+启动训练任务
 
 Input: 
 
@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "test-request-id"
     }
 }
 ```
